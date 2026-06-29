@@ -1,3 +1,22 @@
-git add .
-git commit -m "Sikkerhedsopdatering og automatisk workflow"
-git push
+name: YouTube Auto Update
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Installer dependencies
+        run: npm install
+      - name: Kør YouTube Robot
+        run: node auto-youtube.mjs
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
