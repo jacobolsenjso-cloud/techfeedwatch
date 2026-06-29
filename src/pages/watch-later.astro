@@ -1,0 +1,83 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Watch Later">
+  
+  <style is:global>
+    .watch-later-wrapper { 
+      padding: 30px 20px; 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      flex: 1; 
+      width: 100%; 
+      box-sizing: border-box; 
+    }
+
+    .header-title { 
+      font-size: 2.2rem; 
+      margin-top: 0;
+      margin-bottom: 40px; 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+    }
+
+    /* Video Grid (Matchende med resten af sitet) */
+    #saved-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+      gap: 20px; 
+    }
+    
+    .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
+    .watch-card:hover { transform: translateY(-3px); }
+    
+    .watch-card-thumb { aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 10px; position: relative; overflow: hidden; }
+    
+    .tma-grid-title { margin: 0 0 5px 0; font-size: 15px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+    .watch-card:hover .tma-grid-title { color: #3b82f6; }
+    
+    .empty-msg { font-size: 1.1rem; color: #6b7280; margin-top: 20px; }
+    body.dark-mode .empty-msg { color: #9ca3af; }
+
+    @media (max-width: 768px) { 
+      .watch-later-wrapper { padding: 15px; }
+      .header-title { font-size: 1.8rem; }
+      #saved-grid { grid-template-columns: 1fr; gap: 20px; }
+      .watch-card-thumb { border-radius: 8px; }
+    }
+  </style>
+
+  <div class="watch-later-wrapper">
+    <h1 class="header-title">⏱️ Watch Later</h1>
+    <p id="emptyMsg" class="empty-msg" style="display: none;">You haven't saved any videos yet.</p>
+    <div id="saved-grid"></div>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Henter de gemte videoer fra browserens hukommelse
+      const watchLater = JSON.parse(localStorage.getItem('watchLater') || '[]');
+      const grid = document.getElementById('saved-grid');
+      const emptyMsg = document.getElementById('emptyMsg');
+
+      // Tjekker om der er gemt noget
+      if (watchLater.length === 0) {
+        if(emptyMsg) emptyMsg.style.display = 'block';
+      } else {
+        // Bygger gitteret med de gemte videoer
+        if(grid) {
+          watchLater.forEach(video => {
+            grid.innerHTML += `
+              <a href="/video/${video.slug}" class="watch-card">
+                <div class="watch-card-thumb" style="background-image: url('${video.img}');"></div>
+                <h3 class="tma-grid-title">${video.title}</h3>
+              </a>
+            `;
+          });
+        }
+      }
+    });
+  </script>
+</MainLayout>

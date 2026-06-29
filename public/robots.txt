@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://techfeedwatch.com/sitemap-index.xml

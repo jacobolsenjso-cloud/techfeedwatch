@@ -1,0 +1,49 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = Object.values(import.meta.glob('../content/pages/*.md', { eager: true }));
+  return pages.map((page: any) => ({
+    params: { slug: page.file.split('/').pop().replace('.md', '') },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = page;
+const { title, description } = page.frontmatter;
+---
+
+<MainLayout title={title} description={description}>
+  
+  <style is:global>
+    .text-container { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 40px 20px; 
+      flex: 1; 
+      width: 100%; 
+      box-sizing: border-box; 
+      line-height: 1.6; 
+    }
+    
+    /* Styling til Markdown-indholdet */
+    .text-container h1 { margin-top: 0; font-size: 2.2rem; }
+    .text-container h2 { margin-top: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; font-size: 1.5rem; }
+    .text-container p, .text-container ul { margin: 16px 0; color: #374151; font-size: 1.05rem; }
+    .text-container li { margin-bottom: 10px; }
+    body.dark-mode .text-container p, body.dark-mode .text-container ul { color: #d1d5db; }
+    .text-container a { color: #3b82f6; text-decoration: none; }
+    .text-container a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) { 
+      .text-container { padding: 25px 15px; }
+      .text-container h1 { font-size: 1.8rem; }
+    }
+  </style>
+
+  <article class="text-container">
+    <Content />
+  </article>
+
+</MainLayout>

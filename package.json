@@ -1,0 +1,22 @@
+{
+  "name": "techfeedwatch",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "add-video": "node add-video.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@google/generative-ai": "^0.24.1",
+    "astro": "^6.4.6",
+    "dotenv": "^17.4.2",
+    "youtube-transcript": "^1.3.1"
+  }
+}

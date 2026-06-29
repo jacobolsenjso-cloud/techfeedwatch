@@ -1,0 +1,77 @@
+---
+const { faqs } = Astro.props;
+
+// Automatisk SEO Schema generering til Google
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq: any) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<div class="faq-section">
+  <h2 class="faq-title">Ofte Stillede Spørgsmål</h2>
+  
+  <div class="faq-list">
+    {faqs.map((faq: any) => (
+      <details class="faq-item">
+        <summary class="faq-question">{faq.question}</summary>
+        <div class="faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+{/* Usynlig SEO data til Google */}
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+<style>
+  .faq-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+  .faq-title { font-size: 1.5rem; margin-bottom: 20px; }
+  
+  .faq-item { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    margin-bottom: 12px; 
+    overflow: hidden; 
+  }
+  
+  .faq-question { 
+    font-weight: 600; 
+    padding: 16px 20px; 
+    cursor: pointer; 
+    background: var(--hover-bg); 
+    list-style: none; 
+    position: relative;
+    color: var(--text-color);
+  }
+  
+  /* Fjerner standard pil og laver vores eget +/- ikon */
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question::after { 
+    content: '+'; 
+    position: absolute; 
+    right: 20px; 
+    font-size: 1.4rem; 
+    font-weight: 400;
+  }
+  details[open] .faq-question::after { content: '−'; }
+  
+  .faq-answer { 
+    padding: 16px 20px; 
+    line-height: 1.6; 
+    color: #4b5563; 
+    border-top: 1px solid var(--border-color); 
+  }
+  body.dark-mode .faq-answer { color: #9ca3af; }
+</style>

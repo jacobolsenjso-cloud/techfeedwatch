@@ -1,0 +1,95 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'; 
+
+const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
+
+// NY LOGIK: Finder alle unikke tags automatisk, selvom en video har flere tags
+const uniqueTags = [...new Set(allVideos.flatMap((v: any) => {
+  const t = v.frontmatter.tags || v.frontmatter.tag || [];
+  return Array.isArray(t) ? t : [t];
+}))].filter(Boolean).sort();
+---
+
+<MainLayout title="Library">
+  
+  <style is:global>
+    .library-wrapper { 
+      padding: 30px 20px; 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      flex: 1; 
+      width: 100%; 
+      box-sizing: border-box; 
+    }
+
+    .header-title { 
+      font-size: 2.2rem; 
+      margin-top: 0;
+      margin-bottom: 40px; 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+    }
+    
+    .tag-section { margin-bottom: 50px; }
+    .tag-title { font-size: 1.5rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
+
+    /* Video Grid */
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
+    .watch-card:hover { transform: translateY(-3px); }
+    
+    .watch-card-thumb { aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 10px; position: relative; overflow: hidden; }
+    .duration-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+
+    .tma-grid-title { margin: 0 0 5px 0; font-size: 15px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+    .watch-card:hover .tma-grid-title { color: #3b82f6; }
+    .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
+    body.dark-mode .tma-grid-meta { color: #9ca3af; }
+
+    @media (max-width: 768px) { 
+      .library-wrapper { padding: 15px; }
+      .header-title { font-size: 1.8rem; }
+      .video-grid { grid-template-columns: 1fr; gap: 20px; }
+      .watch-card-thumb { border-radius: 8px; }
+    }
+  </style>
+
+  <div class="library-wrapper">
+    <h1 class="header-title">📚 Full Video Library</h1>
+    
+    {uniqueTags.map((tag: string) => {
+      // NY LOGIK: Tjekker om videoen indeholder det specifikke tag i sit array
+      const categoryVideos = allVideos
+        .filter((v: any) => {
+          const vTags = v.frontmatter.tags || v.frontmatter.tag || [];
+          const tagsArray = Array.isArray(vTags) ? vTags : [vTags];
+          return tagsArray.includes(tag);
+        })
+        .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+        
+      // Sikkerheds-tjek: Vis ikke overskriften, hvis der ingen videoer er
+      if (categoryVideos.length === 0) return null;
+
+      return (
+        <div class="tag-section">
+          <h2 class="tag-title">{tag}</h2>
+          <div class="video-grid">
+            {categoryVideos.map((video: any) => (
+              <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
+                <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg');`}>
+                  <div class="duration-badge">{video.frontmatter.duration || (video.frontmatter.isShort ? 'Short' : '0:00')}</div>
+                </div>
+                <div>
+                  <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
+                  <p class="tma-grid-meta">Tech Feed Watch • {video.frontmatter.date}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+
+  </div>
+</MainLayout>

@@ -1,0 +1,188 @@
+---
+const { title, description, image, schema } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+// Standard SEO beskrivelse hvis ingen er angivet
+const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
+
+// NYT: Automatisk Breadcrumb Schema til Google
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Frontpage", "item": "https://techfeedwatch.com/" }
+  ]
+};
+
+// Bygger dynamisk stien til Google ud fra hvor vi er
+if (currentPath.startsWith('/video/')) {
+  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Video Archive", "item": "https://techfeedwatch.com/library" });
+  if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
+} else if (currentPath.startsWith('/tag/')) {
+  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Tags", "item": "https://techfeedwatch.com/" });
+  if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
+} else if (currentPath !== '/') {
+  // Gør f.eks. '/watch-later' til 'Watch later'
+  let sectionName = currentPath.replace('/', '').replace(/-/g, ' ');
+  sectionName = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
+  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": sectionName, "item": `https://techfeedwatch.com${currentPath}` });
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} | TechFeedWatch` : "TechFeedWatch"}</title>
+    
+    {/* NYT: Google AdSense Verificeringskode indsættes her øverst i head */}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9695260339642032" crossorigin="anonymous"></script>
+
+    <meta name="description" content={description || defaultDesc} />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title ? `${title} | TechFeedWatch` : "TechFeedWatch"} />
+    <meta property="og:description" content={description || defaultDesc} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {/* Indsætter video schema hvis det findes på siden */}
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+    
+    {/* Indsætter vores nye Breadcrumb Schema på alle sider */}
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <style is:global>
+      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; }
+      body.dark-mode { --bg-color: #0f1115; --text-color: #f1f5f9; --card-bg: #1e293b; --border-color: #334155; --sidebar-bg: #0f1115; --hover-bg: #1e293b; }
+      body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: system-ui, -apple-system, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+      
+      .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
+      .header-hidden { transform: none !important; margin-top: -60px !important; } 
+      body.focus-mode .top-navbar { transform: translateY(0) !important; border-bottom: none; }
+      .nav-left { display: flex; align-items: center; gap: 15px; }
+      .nav-right { display: flex; align-items: center; gap: 8px; }
+      .icon-btn { background: none; border: none; font-size: 1.2rem; color: var(--text-color); cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+      .icon-btn:hover { background: var(--hover-bg); }
+
+      .search-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 60px; background: var(--sidebar-bg); display: none; align-items: center; padding: 0 20px; box-sizing: border-box; z-index: 40; }
+      .search-overlay.active { display: flex; }
+      .search-input-wrapper { flex: 1; margin-right: 10px; }
+      .search-input-wrapper input { width: 100%; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); outline: none; font-size: 1rem; }
+
+      .content-area { overflow-y: scroll !important; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: #cbd5e1 var(--bg-color); }
+      .content-area::-webkit-scrollbar { width: 14px; }
+      .content-area::-webkit-scrollbar-track { background: var(--bg-color); }
+      .content-area::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; border: 3px solid var(--bg-color); }
+      body.dark-mode .content-area { scrollbar-color: #475569 #0f1115; }
+      body.dark-mode .content-area::-webkit-scrollbar-track { background: #0f1115; }
+      body.dark-mode .content-area::-webkit-scrollbar-thumb { background-color: #475569; border: 3px solid #0f1115; }
+
+      .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-color); cursor: pointer; padding: 0; }
+      .logo { font-size: 1.2rem; font-weight: bold; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
+      .logo-icon { color: #ef4444; font-size: 1.5rem; }
+      .main-layout { display: flex; flex: 1; overflow: hidden; position: relative; }
+      .sidebar { width: 220px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 15px 10px; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; z-index: 20; transition: left 0.3s ease; }
+      .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; }
+      .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: #ef4444; } 
+      .content-area { flex: 1; background: var(--bg-color); position: relative; display: flex; flex-direction: column; scroll-behavior: smooth; }
+      .site-footer { padding: 20px; text-align: center; border-top: 1px solid var(--border-color); font-size: 14px; color: #6b7280; margin-top: auto; }
+      body.dark-mode .site-footer { color: #9ca3af; }
+
+      body.shorts-mode .top-navbar, body.shorts-mode .sidebar, body.shorts-mode .site-footer { display: none !important; }
+      body.shorts-mode .content-area { padding: 0 !important; background: #000; overflow-y: hidden !important; }
+
+      @media (max-width: 768px) { 
+        .mobile-menu-btn { display: block; }
+        /* MENU FIX: z-index hævet til 2000 for at sikre at den dækker videoen */
+        .sidebar { position: fixed; top: 60px; left: 0; height: calc(100vh - 60px); transform: translateX(-100%); box-shadow: 2px 0 15px rgba(0,0,0,0.2); z-index: 2000; }
+        .sidebar.open { transform: translateX(0); }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header class="top-navbar" id="mainHeader">
+      <div class="nav-left">
+        {/* Tilføjet aria-expanded og aria-controls til AI Agenter */}
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="sidebar">☰</button>
+        <a href="/" class="logo"><span class="logo-icon">▶</span> TechFeedWatch</a>
+      </div>
+      <div class="nav-right">
+        {/* Tilføjet aria-expanded og aria-controls til AI Agenter */}
+        <button id="searchBtn" class="icon-btn" aria-label="Open search" aria-expanded="false" aria-controls="searchOverlay">🔍</button>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode">🌙</button>
+      </div>
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-input-wrapper">
+          <input type="text" placeholder="Search videos..." id="topSearchInput" />
+        </div>
+        <button id="closeSearchBtn" class="icon-btn" aria-label="Close search">❌</button>
+      </div>
+    </header>
+
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+        <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>🏠 Home</a>
+        <a href="/shorts" class={`nav-item ${currentPath.startsWith('/shorts') ? 'active' : ''}`}>⚡ Shorts</a>
+        <hr style="width: 100%; border: 0; border-top: 1px solid var(--border-color); margin: 10px 0;" />
+        <a href="/library" class={`nav-item ${currentPath.startsWith('/library') ? 'active' : ''}`}>📚 Library</a>
+        <a href="/watch-later" class={`nav-item ${currentPath.startsWith('/watch-later') ? 'active' : ''}`}>⏱️ Watch Later</a>
+        <a href="/history" class={`nav-item ${currentPath.startsWith('/history') ? 'active' : ''}`}>🕒 History</a>
+      </aside>
+
+      <main class="content-area">
+        <slot /> 
+        
+        <footer class="site-footer">
+          <p>&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
+          <p style="margin-top: 8px;">
+            <a href="/about" style="color: inherit; text-decoration: none; margin: 0 10px;">About Us</a> | 
+            <a href="/terms" style="color: inherit; text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
+            <a href="/privacy-policy" style="color: inherit; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        const themeBtn = document.getElementById('themeToggle');
+        const body = document.body;
+        const updateIcon = () => { if(themeBtn) themeBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙'; };
+        if (localStorage.getItem('theme') === 'dark') { body.classList.add('dark-mode'); updateIcon(); }
+        if (themeBtn) {
+          themeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            updateIcon();
+          });
+        }
+        
+        const searchBtn = document.getElementById('searchBtn');
+        const closeSearchBtn = document.getElementById('closeSearchBtn');
+        const searchOverlay = document.getElementById('searchOverlay');
+        if(searchBtn && closeSearchBtn && searchOverlay) {
+          searchBtn.addEventListener('click', () => {
+            searchOverlay.classList.add('active');
+            searchBtn.setAttribute('aria-expanded', 'true');
+          });
+          closeSearchBtn.addEventListener('click', () => {
+            searchOverlay.classList.remove('active');
+            searchBtn.setAttribute('aria-expanded', 'false');
+          });
+        }
+        
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        if (mobileMenuBtn && sidebar) {
+          mobileMenuBtn.addEventListener('click', () => { 
+            const isOpen = sidebar.classList.toggle('open'); 
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
