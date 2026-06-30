@@ -201,51 +201,63 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      /* --- HER STARTER DEN TOTALT RENSEDE FOCUS-MODE KODE --- */
+      /* --- DEN ABSOLUTTE LØSNING TIL FOCUS-MODE (FIXED I STEDET FOR STICKY) --- */
       
-      /* 1. Skjuler top-fyld så videoen får plads */
+      /* 1. Vi fjerner alt fyld i toppen (også top-baren) for at lave ren biograf */
+      body.focus-mode .top-navbar,
       body.focus-mode .breadcrumbs-bar, 
       body.focus-mode .title-row, 
-      body.focus-mode .tag-container, 
-      body.focus-mode .summary-box, 
+      body.focus-mode .summary-box,
+      body.focus-mode .focus-tags-bar, 
       body.focus-mode .site-footer { 
         display: none !important; 
       }
       
       body.focus-mode .video-page-layout { padding: 0 !important; display: block !important; }
-      body.focus-mode .top-navbar { margin-top: 0 !important; }
       
-      /* 2. OVERSTYRER ALLE TIDLIGERE LÅSE PÅ HOVEDKOLONNEN! Dette løser scroll-problemet. */
+      /* 2. HOVEDKASSEN GØRES NORMAL - men vi skubber den ned med præcis videoens højde (56.25vw) */
       body.focus-mode .video-primary { 
         position: static !important; 
         display: block !important; 
         margin: 0 !important; 
         width: 100% !important; 
+        padding-top: 56.25vw !important; /* MAGIEN: Holder annoncerne nede, til du scroller */
         transform: none !important; 
         box-shadow: none !important; 
         z-index: auto !important;
       }
       
-      body.focus-mode .focus-tags-bar { display: flex; gap: 10px; overflow-x: auto; position: relative; top: 0; z-index: 90; background: var(--bg-color); padding: 10px 15px; border-bottom: none; scrollbar-width: none; margin: 0; width: 100%; box-sizing: border-box; height: 50px; align-items: center; }
-      
-      /* 3. LÅSER KUN VIDEOEN FAST I TOPPEN (Ligesom på YouTube) */
+      /* 3. VIDEOEN RIVES UD OG LÅSES FAST TIL MOBILSKÆRMEN MED FIXED */
       body.focus-mode .iframe-wrapper { 
-        position: sticky !important; 
-        top: -1px !important; 
-        z-index: 9999 !important; 
+        position: fixed !important; 
+        top: 0 !important; 
+        left: 0 !important;
+        z-index: 99999 !important; 
         margin: 0 !important; 
-        width: 100% !important; 
+        width: 100vw !important; 
+        height: 56.25vw !important; /* Låst til 16:9 format */
+        padding-bottom: 0 !important; /* Fjerner det gamle Astro-hack */
         border-radius: 0 !important; 
         background: #000 !important; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.8) !important; 
+      }
+
+      body.focus-mode .iframe-wrapper iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
       }
       
-      /* 4. SIKRER AT KNAPPER, ANNONCE OG TOC KØRER UNDER VIDEOEN NÅR MAN SCROLLER */
+      /* 4. ANNONCER, TOC OG KNAPPER GLIDER NU FRIT UNDER DEN FASTE VIDEO */
       body.focus-mode .action-bar,
       body.focus-mode .adsense-container,
+      body.focus-mode .tag-container,
       body.focus-mode .toc-container,
       body.focus-mode .video-content,
-      body.focus-mode .video-actions { 
+      body.focus-mode .video-actions,
+      body.focus-mode .video-secondary { 
         position: relative !important; 
         z-index: 1 !important; 
         top: auto !important;
@@ -253,17 +265,7 @@ const videoSchema = {
       }
       
       body.focus-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
-      
-      /* Sikrer at dine relaterede videoer også ligger pænt i bunden og kan scrolle */
-      body.focus-mode .video-secondary {
-        position: relative !important;
-        z-index: 1 !important;
-        display: block !important;
-        width: 100% !important;
-        padding: 15px !important;
-        box-sizing: border-box !important;
-      }
-      /* --- SLUT PÅ DEN RENSEDE FOCUS-MODE KODE --- */
+      /* --- SLUT PÅ LØSNING --- */
 
       body.shorts-mode .top-navbar { display: none !important; }
       body.shorts-mode .sidebar { display: none !important; }
