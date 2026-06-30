@@ -201,9 +201,9 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      /* --- START PÅ FOCUS-MODE --- */
+      /* --- HER STARTER DEN TOTALT RENSEDE FOCUS-MODE KODE --- */
       
-      /* Skjuler top-fyld */
+      /* 1. Skjuler top-fyld så videoen får plads */
       body.focus-mode .breadcrumbs-bar, 
       body.focus-mode .title-row, 
       body.focus-mode .tag-container, 
@@ -212,26 +212,27 @@ const videoSchema = {
         display: none !important; 
       }
       
-      body.focus-mode .video-page-layout { padding: 0 !important; }
+      body.focus-mode .video-page-layout { padding: 0 !important; display: block !important; }
       body.focus-mode .top-navbar { margin-top: 0 !important; }
       
-      /* 1. LÅSER HOVEDKASSEN OP (Det er denne, der løser problemet) */
+      /* 2. OVERSTYRER ALLE TIDLIGERE LÅSE PÅ HOVEDKOLONNEN! Dette løser scroll-problemet. */
       body.focus-mode .video-primary { 
-        position: static !important; /* Tvinger kolonnen til at scrolle */
+        position: static !important; 
         display: block !important; 
         margin: 0 !important; 
         width: 100% !important; 
         transform: none !important; 
         box-shadow: none !important; 
+        z-index: auto !important;
       }
       
       body.focus-mode .focus-tags-bar { display: flex; gap: 10px; overflow-x: auto; position: relative; top: 0; z-index: 90; background: var(--bg-color); padding: 10px 15px; border-bottom: none; scrollbar-width: none; margin: 0; width: 100%; box-sizing: border-box; height: 50px; align-items: center; }
       
-      /* 2. GØR KUN VIDEOEN STICKY */
+      /* 3. LÅSER KUN VIDEOEN FAST I TOPPEN (Ligesom på YouTube) */
       body.focus-mode .iframe-wrapper { 
         position: sticky !important; 
         top: -1px !important; 
-        z-index: 100 !important; 
+        z-index: 9999 !important; 
         margin: 0 !important; 
         width: 100% !important; 
         border-radius: 0 !important; 
@@ -239,18 +240,30 @@ const videoSchema = {
         box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important; 
       }
       
-      /* 3. SIKRER AT KNAPPER, ANNONCE OG TOC BLIVER UNDER VIDEOEN */
+      /* 4. SIKRER AT KNAPPER, ANNONCE OG TOC KØRER UNDER VIDEOEN NÅR MAN SCROLLER */
       body.focus-mode .action-bar,
       body.focus-mode .adsense-container,
       body.focus-mode .toc-container,
-      body.focus-mode .video-content { 
+      body.focus-mode .video-content,
+      body.focus-mode .video-actions { 
         position: relative !important; 
         z-index: 1 !important; 
         top: auto !important;
+        transform: none !important;
       }
-      body.focus-mode .action-bar { padding: 10px 15px !important; box-sizing: border-box !important; margin: 0 !important; }
       
-      /* --- SLUT PÅ FOCUS-MODE --- */
+      body.focus-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
+      
+      /* Sikrer at dine relaterede videoer også ligger pænt i bunden og kan scrolle */
+      body.focus-mode .video-secondary {
+        position: relative !important;
+        z-index: 1 !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+      }
+      /* --- SLUT PÅ DEN RENSEDE FOCUS-MODE KODE --- */
 
       body.shorts-mode .top-navbar { display: none !important; }
       body.shorts-mode .sidebar { display: none !important; }
@@ -373,7 +386,6 @@ const videoSchema = {
           {summary}
         </div>
 
-        {/* HER ER DEN KORREKTE HTML - UDEN EKSTRA KASSER */}
         <div class="iframe-wrapper" id="stickyVideo">
           <iframe 
             id="ytIframe" 
