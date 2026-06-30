@@ -210,11 +210,11 @@ const videoSchema = {
       body.focus-mode .video-primary { display: block !important; margin: 0; width: 100%; }
       body.focus-mode .focus-tags-bar { display: flex; gap: 10px; overflow-x: auto; position: relative; top: 0; z-index: 90; background: var(--bg-color); padding: 10px 15px; border-bottom: none; scrollbar-width: none; margin: 0; width: 100%; box-sizing: border-box; height: 50px; align-items: center; }
       
-      /* RETTELSE 2: Tilføjet sticky til den nye gruppe der indeholder video + knapper */
-      body.focus-mode .sticky-video-group { position: sticky; top: -1px; z-index: 100; background: var(--bg-color); margin: 0; width: 100%; padding-bottom: 10px; transform: translateZ(0); box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+      /* RETTELSE 2: Nu er det KUN videoen der er sticky (knapper scroller) */
+      body.focus-mode .sticky-video-group { position: sticky; top: -1px; z-index: 100; background: #000; margin: 0; width: 100%; padding-bottom: 0; transform: translateZ(0); box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
       
       body.focus-mode .iframe-wrapper { position: relative; top: 0; z-index: 100; margin: 0; width: 100%; border-radius: 0; box-shadow: none; }
-      body.focus-mode .action-bar { margin: 0; padding: 10px 15px 0 15px; width: 100%; box-sizing: border-box; }
+      body.focus-mode .action-bar { margin: 0; padding: 15px; width: 100%; box-sizing: border-box; }
 
       body.shorts-mode .top-navbar { display: none !important; }
       body.shorts-mode .sidebar { display: none !important; }
