@@ -16,7 +16,7 @@ const tagCounts = allVideos.reduce((acc: any, video: any) => {
   const tag = video.frontmatter.tag;
   if (tag) acc[tag] = (acc[tag] || 0) + 1;
   return acc;
-}, {});
+}, {}) as Record<string, number>;
 const topTags = Object.keys(tagCounts)
   .sort((a, b) => tagCounts[b] - tagCounts[a])
   .slice(0, 20);
