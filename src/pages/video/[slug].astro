@@ -201,11 +201,9 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      /* --- START PÅ FOCUS-MODE RETTELSER --- */
-      body.focus-mode .video-page-layout { padding: 0; }
-      body.focus-mode .top-navbar { margin-top: 0 !important; }
+      /* --- START PÅ FOCUS-MODE --- */
       
-      /* Skjuler kun de uvæsentlige elementer i toppen */
+      /* Skjuler top-fyld */
       body.focus-mode .breadcrumbs-bar, 
       body.focus-mode .title-row, 
       body.focus-mode .tag-container, 
@@ -214,42 +212,45 @@ const videoSchema = {
         display: none !important; 
       }
       
-      /* 1. Låser hovedkassen HELT op, så intet hænger fast */
+      body.focus-mode .video-page-layout { padding: 0 !important; }
+      body.focus-mode .top-navbar { margin-top: 0 !important; }
+      
+      /* 1. LÅSER HOVEDKASSEN OP (Det er denne, der løser problemet) */
       body.focus-mode .video-primary { 
+        position: static !important; /* Tvinger kolonnen til at scrolle */
         display: block !important; 
-        position: relative !important; 
-        top: auto !important; 
-        margin: 0; 
-        width: 100%; 
+        margin: 0 !important; 
+        width: 100% !important; 
         transform: none !important; 
         box-shadow: none !important; 
       }
       
       body.focus-mode .focus-tags-bar { display: flex; gap: 10px; overflow-x: auto; position: relative; top: 0; z-index: 90; background: var(--bg-color); padding: 10px 15px; border-bottom: none; scrollbar-width: none; margin: 0; width: 100%; box-sizing: border-box; height: 50px; align-items: center; }
-      body.focus-mode .focus-primary { display: block !important; }
       
-      /* 2. Gør KUN videoen sticky i toppen (øverste lag) */
+      /* 2. GØR KUN VIDEOEN STICKY */
       body.focus-mode .iframe-wrapper { 
         position: sticky !important; 
         top: -1px !important; 
         z-index: 100 !important; 
-        margin: 0; 
-        width: 100%; 
-        border-radius: 0; 
-        background: #000; 
+        margin: 0 !important; 
+        width: 100% !important; 
+        border-radius: 0 !important; 
+        background: #000 !important; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important; 
       }
       
-      /* 3. Tvinger knapper, annoncer og TOC til at glide UNDER videoen (nederste lag) */
+      /* 3. SIKRER AT KNAPPER, ANNONCE OG TOC BLIVER UNDER VIDEOEN */
       body.focus-mode .action-bar,
       body.focus-mode .adsense-container,
       body.focus-mode .toc-container,
       body.focus-mode .video-content { 
         position: relative !important; 
         z-index: 1 !important; 
+        top: auto !important;
       }
-      body.focus-mode .action-bar { padding: 10px 15px; box-sizing: border-box; }
-      /* --- SLUT PÅ FOCUS-MODE RETTELSER --- */
+      body.focus-mode .action-bar { padding: 10px 15px !important; box-sizing: border-box !important; margin: 0 !important; }
+      
+      /* --- SLUT PÅ FOCUS-MODE --- */
 
       body.shorts-mode .top-navbar { display: none !important; }
       body.shorts-mode .sidebar { display: none !important; }
