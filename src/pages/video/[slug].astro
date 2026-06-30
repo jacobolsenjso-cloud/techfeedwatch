@@ -201,48 +201,46 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      /* --- DEN ABSOLUTTE LØSNING TIL FOCUS-MODE (FIXED I STEDET FOR STICKY) --- */
-      
-      /* 1. Vi fjerner alt fyld i toppen (også top-baren) for at lave ren biograf */
-      body.focus-mode .top-navbar,
-      body.focus-mode .breadcrumbs-bar, 
-      body.focus-mode .title-row, 
-      body.focus-mode .summary-box,
-      body.focus-mode .focus-tags-bar, 
-      body.focus-mode .site-footer { 
+      /* --- CACHE BUSTER: OMDØBT TIL CINEMA-MODE --- */
+      body.cinema-mode .top-navbar,
+      body.cinema-mode .breadcrumbs-bar, 
+      body.cinema-mode .title-row, 
+      body.cinema-mode .summary-box,
+      body.cinema-mode .focus-tags-bar, 
+      body.cinema-mode .site-footer { 
         display: none !important; 
       }
       
-      body.focus-mode .video-page-layout { padding: 0 !important; display: block !important; }
+      body.cinema-mode .video-page-layout { padding: 0 !important; display: block !important; }
       
-      /* 2. HOVEDKASSEN GØRES NORMAL - men vi skubber den ned med præcis videoens højde (56.25vw) */
-      body.focus-mode .video-primary { 
+      /* GØR HOVEDKASSEN NORMAL: Indhold skubbes ned, så det ikke gemmer sig bag videoen */
+      body.cinema-mode .video-primary { 
         position: static !important; 
         display: block !important; 
         margin: 0 !important; 
         width: 100% !important; 
-        padding-top: 56.25vw !important; /* MAGIEN: Holder annoncerne nede, til du scroller */
+        padding-top: 56.25vw !important; 
         transform: none !important; 
         box-shadow: none !important; 
         z-index: auto !important;
       }
       
-      /* 3. VIDEOEN RIVES UD OG LÅSES FAST TIL MOBILSKÆRMEN MED FIXED */
-      body.focus-mode .iframe-wrapper { 
+      /* RIV VIDEOEN HELT UD OG LÅS DEN FAST I TOPPEN (FIXED I STEDET FOR STICKY) */
+      body.cinema-mode .iframe-wrapper { 
         position: fixed !important; 
         top: 0 !important; 
         left: 0 !important;
         z-index: 99999 !important; 
         margin: 0 !important; 
         width: 100vw !important; 
-        height: 56.25vw !important; /* Låst til 16:9 format */
-        padding-bottom: 0 !important; /* Fjerner det gamle Astro-hack */
+        height: 56.25vw !important;
+        padding-bottom: 0 !important;
         border-radius: 0 !important; 
         background: #000 !important; 
         box-shadow: 0 4px 15px rgba(0,0,0,0.8) !important; 
       }
 
-      body.focus-mode .iframe-wrapper iframe {
+      body.cinema-mode .iframe-wrapper iframe {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
@@ -250,40 +248,21 @@ const videoSchema = {
         height: 100% !important;
       }
       
-      /* 4. ANNONCER, TOC OG KNAPPER GLIDER NU FRIT UNDER DEN FASTE VIDEO */
-      body.focus-mode .action-bar,
-      body.focus-mode .adsense-container,
-      body.focus-mode .tag-container,
-      body.focus-mode .toc-container,
-      body.focus-mode .video-content,
-      body.focus-mode .video-actions,
-      body.focus-mode .video-secondary { 
+      /* SIKRER AT ALT ANDET KAN SCROLLE FRIT UNDER VIDEOEN */
+      body.cinema-mode .action-bar,
+      body.cinema-mode .adsense-container,
+      body.cinema-mode .tag-container,
+      body.cinema-mode .toc-container,
+      body.cinema-mode .video-content,
+      body.cinema-mode .video-actions,
+      body.cinema-mode .video-secondary { 
         position: relative !important; 
         z-index: 1 !important; 
         top: auto !important;
         transform: none !important;
       }
       
-      body.focus-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
-      /* --- SLUT PÅ LØSNING --- */
-
-      body.shorts-mode .top-navbar { display: none !important; }
-      body.shorts-mode .sidebar { display: none !important; }
-      .shorts-wrapper { height: 100vh; background: #000; }
-      .shorts-content-area { height: 100vh; max-height: none; width: 100%; gap: 0; align-items: center; justify-content: center; padding: 0; }
-      .shorts-video-frame { width: 100%; height: 100%; border-radius: 0; aspect-ratio: auto; box-shadow: none; }
-      
-      .shorts-mobile-info { display: block; position: absolute; bottom: 30px; left: 15px; right: 85px; color: white; z-index: 50; max-height: 130px; overflow-y: auto; pointer-events: auto; scrollbar-width: none; background: linear-gradient(transparent, rgba(0,0,0,0.7)); padding: 10px; border-radius: 8px; }
-      .shorts-mobile-info::-webkit-scrollbar { display: none; }
-      .shorts-mobile-info h2 { font-size: 1.05rem; margin: 0 0 4px 0; text-shadow: 0 2px 4px rgba(0,0,0,0.9); }
-      .shorts-mobile-info .shorts-author { margin: 0 0 8px 0; font-size: 0.85rem; opacity: 0.9; font-weight: 700; color: #ef4444; }
-      .shorts-mobile-text { font-size: 0.85rem; line-height: 1.5; opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
-
-      .shorts-actions-col { position: absolute; right: 15px; bottom: 40px; z-index: 60; padding-bottom: 0; height: auto; }
-      .shorts-circle-btn { background: rgba(255,255,255,0.15) !important; color: white !important; border: none !important; backdrop-filter: blur(10px); }
-      .shorts-circle-btn.btn-active { background: rgba(255,255,255,0.9) !important; }
-      .shorts-label { color: white !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8); }
-      .shorts-back-btn { display: flex; position: absolute; top: 20px; left: 15px; color: white; text-decoration: none; font-size: 1.2rem; font-weight: bold; background: rgba(255,255,255,0.15); width: 45px; height: 45px; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(10px); z-index: 100; }
+      body.cinema-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
     }
   </style>
 
@@ -611,7 +590,8 @@ const videoSchema = {
         window.addEventListener('blur', () => {
           setTimeout(() => {
             if (document.activeElement === iframe && window.innerWidth <= 768) {
-              document.body.classList.add('focus-mode');
+              /* CACHE-BUSTER: Koden herunder er omdøbt til cinema-mode */
+              document.body.classList.add('cinema-mode');
               const scrollTarget = document.querySelector('.content-area') || window;
               scrollTarget.scrollTo({ top: 0, behavior: 'smooth' });
             }
