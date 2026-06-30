@@ -201,20 +201,39 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      body.focus-mode .breadcrumbs-bar, body.focus-mode .title-row, body.focus-mode .tag-container, body.focus-mode .summary-box, body.focus-mode .video-content, body.focus-mode .video-actions, body.focus-mode .site-footer { display: none !important; }
+      /* Skjuler fyld for at give en ren biograf-oplevelse */
+      body.focus-mode .breadcrumbs-bar, 
+      body.focus-mode .title-row, 
+      body.focus-mode .tag-container, 
+      body.focus-mode .summary-box, 
+      body.focus-mode .video-content, 
+      body.focus-mode .video-actions, 
+      body.focus-mode .site-footer, 
+      body.focus-mode .toc-container { 
+        display: none !important; 
+      }
       
       body.focus-mode .video-page-layout { padding: 0; }
       body.focus-mode .top-navbar { margin-top: 0 !important; }
       
-      /* RETTELSE 1: Fjernet sticky fra hele containeren */
+      /* Fjerner alle "låse" fra den store container */
       body.focus-mode .video-primary { display: block !important; margin: 0; width: 100%; }
       body.focus-mode .focus-tags-bar { display: flex; gap: 10px; overflow-x: auto; position: relative; top: 0; z-index: 90; background: var(--bg-color); padding: 10px 15px; border-bottom: none; scrollbar-width: none; margin: 0; width: 100%; box-sizing: border-box; height: 50px; align-items: center; }
       
-      /* RETTELSE 2: Nu er det KUN videoen der er sticky (knapper scroller) */
-      body.focus-mode .sticky-video-group { position: sticky; top: -1px; z-index: 100; background: #000; margin: 0; width: 100%; padding-bottom: 0; transform: translateZ(0); box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
+      /* GØR KUN VIDEOEN STICKY */
+      body.focus-mode .iframe-wrapper { 
+        position: sticky !important; 
+        top: -1px; 
+        z-index: 100; 
+        margin: 0; 
+        width: 100%; 
+        border-radius: 0; 
+        background: #000; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6); 
+      }
       
-      body.focus-mode .iframe-wrapper { position: relative; top: 0; z-index: 100; margin: 0; width: 100%; border-radius: 0; box-shadow: none; }
-      body.focus-mode .action-bar { margin: 0; padding: 15px; width: 100%; box-sizing: border-box; }
+      /* Knapper og annoncer ligger under og ruller normalt op under videoen */
+      body.focus-mode .action-bar { margin: 0; padding: 10px 15px; width: 100%; box-sizing: border-box; position: relative; z-index: 1; }
 
       body.shorts-mode .top-navbar { display: none !important; }
       body.shorts-mode .sidebar { display: none !important; }
@@ -337,47 +356,40 @@ const videoSchema = {
           {summary}
         </div>
 
-        {/* RETTELSE: Her starter den nye kasse */}
-        <div class="sticky-video-group">
-          
-          <div class="iframe-wrapper" id="stickyVideo">
-            <iframe 
-              id="ytIframe" 
-              src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} 
-              srcdoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto;object-fit:cover;}span{height:46px;width:68px;text-align:center;font:24px/46px sans-serif;color:white;background:#ef4444;border-radius:12px;left:50%;transform:translateX(-50%);}</style><a href=https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1><img src=https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg alt='Video Thumbnail'><span>▶</span></a>`}
-              title={`${title} - Video Player`}
-              allow="autoplay; encrypted-media"
-              allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="action-bar">
-            <div class="pill-group">
-              <button id="likeBtn" data-likes={baseLikes} aria-label="Like Video" title="Like">
-                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-                <span id="likeCount">...</span>
-              </button>
-              <div class="pill-divider"></div>
-              <button id="dislikeBtn" aria-label="Dislike Video" title="Dislike">
-                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-              </button>
-            </div>
-            
-            <button class="action-pill" id="shareBtn" aria-label="Share Video" title="Share">
-              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-              <span id="shareText">Share</span>
-            </button>
-
-            <button class="action-pill" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
-              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-              <span id="saveText">Save</span>
-            </button>
-          </div>
-
+        {/* HER ER DEN KORREKTE HTML - UDEN EKSTRA KASSER */}
+        <div class="iframe-wrapper" id="stickyVideo">
+          <iframe 
+            id="ytIframe" 
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} 
+            srcdoc={`<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto;object-fit:cover;}span{height:46px;width:68px;text-align:center;font:24px/46px sans-serif;color:white;background:#ef4444;border-radius:12px;left:50%;transform:translateX(-50%);}</style><a href=https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1><img src=https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg alt='Video Thumbnail'><span>▶</span></a>`}
+            title={`${title} - Video Player`}
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
         </div>
-        {/* RETTELSE: Her slutter den nye kasse */}
 
-        <div class="adsense-container">
+        <div class="action-bar">
+          <div class="pill-group">
+            <button id="likeBtn" data-likes={baseLikes} aria-label="Like Video" title="Like">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+              <span id="likeCount">...</span>
+            </button>
+            <div class="pill-divider"></div>
+            <button id="dislikeBtn" aria-label="Dislike Video" title="Dislike">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
+            </button>
+          </div>
+          
+          <button class="action-pill" id="shareBtn" aria-label="Share Video" title="Share">
+            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            <span id="shareText">Share</span>
+          </button>
+
+          <button class="action-pill" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
+            <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <span id="saveText">Save</span>
+          </button>
+        </div>
 
         <div class="adsense-container">
           <span class="ad-label">Annonce</span>
