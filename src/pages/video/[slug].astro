@@ -204,7 +204,9 @@ const videoSchema = {
       .nav-row { flex-direction: column; }
       .related-grid { grid-template-columns: 1fr; gap: 20px; }
 
-      body.focus-mode .breadcrumbs-bar, body.focus-mode .title-row, body.focus-mode .tag-container, body.focus-mode .summary-box, body.focus-mode .video-content, body.focus-mode .video-actions, body.focus-mode .site-footer { display: none !important; }
+      /* RETTET: Tilføjet toc-container og video-primary adsense-container til at skjules i focus-mode */
+      body.focus-mode .breadcrumbs-bar, body.focus-mode .title-row, body.focus-mode .tag-container, body.focus-mode .summary-box, body.focus-mode .video-content, body.focus-mode .video-actions, body.focus-mode .site-footer, body.focus-mode .toc-container, body.focus-mode .video-primary .adsense-container { display: none !important; }
+      
       body.focus-mode .video-page-layout { padding: 0; }
       body.focus-mode .top-navbar { margin-top: 0 !important; }
       body.focus-mode .video-primary { display: block !important; position: sticky; top: -1px; z-index: 100; background: var(--bg-color); margin: 0; width: 100%; transform: translateZ(0); box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
