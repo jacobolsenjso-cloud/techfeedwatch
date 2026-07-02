@@ -58,6 +58,7 @@ async function run() {
     2. Use Markdown bullet points (-) and **bold text** for key terms to ensure "Agentic Accessibility".
     3. Keep paragraphs short and punchy.
     4. Ensure internal links are written strictly like this: [Link text](/video/slug) with no invisible slashes or spaces.
+    5. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
     ${internalLinksContext}
     
     Transcript: ${text.substring(0, 20000)}`;
