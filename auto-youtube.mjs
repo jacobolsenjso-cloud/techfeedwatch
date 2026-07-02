@@ -8,8 +8,8 @@ async function findNewestVideos() {
     return;
   }
 
-  // Henter de 5 nyeste videoer fra Kategori 28 (Science & Technology) med søgeord
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&q=technology|AI&type=video&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
+  // Henter de 5 nyeste videoer (KUN dem der tillader indlejring og er alders-sikre)
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&q=technology|AI&type=video&videoEmbeddable=true&safeSearch=strict&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
 
   try {
     const response = await fetch(url);
