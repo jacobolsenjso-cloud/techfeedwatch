@@ -210,11 +210,15 @@ const videoSchema = {
         display: none !important; 
       }
 
-      /* TILFØJET: Tvinger topmenuen til at blive vist øverst */
+      /* TILFØJET: Tvinger topmenuen og mobil-menuen til at ligge over videoen */
       body.cinema-mode .top-navbar {
         display: flex !important;
         margin-top: 0 !important;
         z-index: 99999 !important;
+      }
+      
+      body.cinema-mode .sidebar {
+        z-index: 100000 !important;
       }
       
       body.cinema-mode .video-page-layout { padding: 0 !important; display: block !important; }
