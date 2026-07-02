@@ -68,13 +68,19 @@ async function run() {
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagMatch = rawText.match(/TAG:\s*(.*)/i);
-    const summaryMatch = rawText.match(/SUMMARY:\s*(.*)/i);
+    // RETTELSE 1: Fanger nu hele summary-blokken, selvom Gemini laver linjeskift
+    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=CONTENT:)/i);
     const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
 
-    const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").trim();
-    const safeTag = (tagMatch ? tagMatch[1] : "AI").replace(/"/g, "'").trim();
-    const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").trim();
-    const content = contentMatch ? contentMatch[1].trim() : "";
+    // RETTELSE 2: Fjerner linebreaks (\n) fra metadata for at forhindre YAML frontmatter crashes
+    const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    const safeTag = (tagMatch ? tagMatch[1] : "AI").replace(/"/g, "'").replace(/\n/g, "").trim();
+    const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    
+    // RETTELSE 3: Stripper skjulte kodeblok-tegn væk
+    let content = contentMatch ? contentMatch[1].trim() : "";
+    content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
+    
     const date = new Date().toISOString().split('T')[0];
     
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\ntag: "${safeTag}"\nsummary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n---\n\n${content}\n`;
