@@ -1,4 +1,3 @@
-// auto-youtube.mjs
 import { execSync } from 'child_process';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
@@ -9,28 +8,27 @@ async function findNewestVideos() {
     return;
   }
 
-  // Henter de 10 nyeste videoer fra Kategori 28 (Science & Technology)
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&type=video&order=date&maxResults=10&key=${YOUTUBE_API_KEY}`;
-  
+  // Henter de 5 nyeste videoer fra Kategori 28 (Science & Technology)
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&type=video&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
+
   try {
     const response = await fetch(url);
     const data = await response.json();
 
     if (data.items && data.items.length > 0) {
-      console.log(`ℹ️ Info: Fandt ${data.items.length} videoer på YouTube. Tjekker for nye...`);
+      console.log(`Info: Fandt ${data.items.length} videoer på YouTube. Tjekker for nye..`);
       
-      // Vender listen om, så vi opretter de ældste af de nye videoer først (kronologisk rækkefølge)
       const videos = data.items.reverse();
 
-      // Kører videoerne igennem en kø én efter én
       for (const item of videos) {
+        // Sikrer at vi kun bruger videoId, da API'et også kan returnere kanaler/playlists
         const videoId = item.id.videoId;
+        if (!videoId) continue;
+
         const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-        
-        console.log(`🔄 Behandler video: ${videoUrl}`);
-        
+        console.log(`Behandler video: ${videoUrl}`);
+
         try {
-          // execSync venter på at add-video.mjs er helt færdig med AI og filoprettelse, før den næste starter
           execSync(`node add-video.mjs "${videoUrl}"`, { stdio: 'inherit' });
         } catch (subError) {
           console.error(`❌ Fejl ved oprettelse af video ${videoId}:`, subError.message);
