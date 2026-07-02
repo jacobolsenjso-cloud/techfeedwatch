@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
-
-User-agent: Google-Extended
-Disallow: /
+Disallow: /cdn-cgi/
+Disallow: /cguz/
 
 Sitemap: https://techfeedwatch.com/sitemap-index.xml
