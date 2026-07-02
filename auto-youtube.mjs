@@ -8,8 +8,8 @@ async function findNewestVideos() {
     return;
   }
 
-  // Henter de 5 nyeste videoer fra Kategori 28 (Science & Technology)
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&type=video&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
+  // Henter de 5 nyeste videoer fra Kategori 28 (Science & Technology) med søgeord
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&q=technology|AI&type=video&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
 
   try {
     const response = await fetch(url);
@@ -21,7 +21,6 @@ async function findNewestVideos() {
       const videos = data.items.reverse();
 
       for (const item of videos) {
-        // Sikrer at vi kun bruger videoId, da API'et også kan returnere kanaler/playlists
         const videoId = item.id.videoId;
         if (!videoId) continue;
 
