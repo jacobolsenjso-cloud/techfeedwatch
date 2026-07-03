@@ -223,13 +223,16 @@ const videoSchema = {
       
       body.cinema-mode .video-page-layout { padding: 0 !important; display: block !important; }
       
-      /* RETTET: padding-top er øget med 60px, så teksten starter under video + menu */
+      /* RETTET: Tilføjet luft i siderne og lidt ekstra plads i toppen */
       body.cinema-mode .video-primary { 
         position: static !important; 
         display: block !important; 
         margin: 0 !important; 
         width: 100% !important; 
-        padding-top: calc(56.25vw + 60px) !important; 
+        padding-top: calc(56.25vw + 75px) !important; /* Lidt mere luft ned til overskriften */
+        padding-left: 15px !important;  /* NYT: Luft til venstre */
+        padding-right: 15px !important; /* NYT: Luft til højre */
+        box-sizing: border-box !important; /* NYT: Holder layoutet inden for skærmen */
         transform: none !important; 
         box-shadow: none !important; 
         z-index: auto !important;
