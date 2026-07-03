@@ -184,5 +184,21 @@ if (currentPath.startsWith('/video/')) {
         }
       });
     </script>
+    <script is:inline>
+  document.addEventListener('click', (event) => {
+    const sidebar = document.querySelector('.sidebar');
+    const menuButton = document.querySelector('.menu-btn'); // VIGTIGT: Ret '.menu-btn' til din knaps class eller ID
+
+    // Hvis vi klikker uden for både sidebaren og menu-knappen
+    if (sidebar && !sidebar.contains(event.target) && menuButton && !menuButton.contains(event.target)) {
+      
+      // Fjern den class, der åbner din menu. (Ret 'active' til 'open', 'show' eller det du bruger)
+      sidebar.classList.remove('active'); 
+      
+      // Hvis du også tilføjer en class på body, når menuen er åben, slettes den sådan her:
+      // document.body.classList.remove('sidebar-open'); 
+    }
+  });
+</script>
   </body>
 </html>
