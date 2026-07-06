@@ -35,14 +35,12 @@ async function run() {
     const transcript = await YoutubeTranscript.fetchTranscript(videoId);
     const text = transcript.map(t => t.text).join(' ');
     
-    // BEREGNER LÆNGDE UD FRA SIDSTE UNDERTEKST
     const lastT = transcript[transcript.length - 1];
     const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = (totalSeconds % 60).toString().padStart(2, '0');
     const duration = isShort ? "Short" : `${minutes}:${seconds}`;
 
-    // --- NY GEO OPTIMERET MASTER PROMPT ---
     const prompt = `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch". 
     Analyze this video transcript and provide a highly valuable, value-first article.
     
@@ -54,10 +52,10 @@ async function run() {
     Write a comprehensive, value-first article based on the video.
     
     CRITICAL STRUCTURE RULES FOR CONTENT:
-    1. Break the text into clear, logical sections using strict Markdown headings '##' (H2) and '###' (H3). This is MANDATORY for our automated Table of Contents. Do not use HTML tags.
-    2. Use Markdown bullet points (-) and **bold text** for key terms to ensure "Agentic Accessibility".
+    1. Break the text into clear, logical sections using strict Markdown headings '##' (H2) and '###' (H3).
+    2. Use Markdown bullet points (-) and **bold text** for key terms.
     3. Keep paragraphs short and punchy.
-    4. Ensure internal links are written strictly like this: [Link text](/video/slug) with no invisible slashes or spaces.
+    4. Ensure internal links are written strictly like this: [Link text](/video/slug).
     5. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
     ${internalLinksContext}
     
@@ -68,16 +66,13 @@ async function run() {
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagMatch = rawText.match(/TAG:\s*(.*)/i);
-    // RETTELSE 1: Fanger nu hele summary-blokken, selvom Gemini laver linjeskift
     const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=CONTENT:)/i);
     const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
 
-    // RETTELSE 2: Fjerner linebreaks (\n) fra metadata for at forhindre YAML frontmatter crashes
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
     const safeTag = (tagMatch ? tagMatch[1] : "AI").replace(/"/g, "'").replace(/\n/g, "").trim();
     const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
     
-    // RETTELSE 3: Stripper skjulte kodeblok-tegn væk
     let content = contentMatch ? contentMatch[1].trim() : "";
     content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
     
