@@ -166,6 +166,22 @@ const videoSchema = {
     .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #ef4444; font-weight: 600; text-align: left; }
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
+    body.dark-mode .shorts-desktop-text { color: #9ca3af; }
+
+    /* Mobil-responsivt fix */
+    @media (max-width: 900px) {
+      .video-page-layout {
+        flex-direction: column !important;
+        padding: 15px 10px !important;
+      }
+      .video-secondary {
+        width: 100% !important;
+        position: static !important;
+      }
+      h1 {
+        font-size: 1.5rem !important;
+      }
+    }
   </style>
 
   {isShort ? (
