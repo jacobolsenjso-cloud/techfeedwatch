@@ -140,11 +140,13 @@ const videoSchema = {
 
     .related-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; }
     .related-grid { display: flex; flex-direction: column; gap: 12px; }
-    .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
-    .watch-card:hover { transform: translateY(-3px); }
-    .watch-card-thumb { width: 160px; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
-    .duration-badge { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.8); color: white; padding: 2px 5px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
-    .tma-grid-title { margin: 0; font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    
+    /* FIX FOR COMPUTER: Vi isolerer relaterede videoer, så koden ikke bløder ud og smadrer sidebar-menuen */
+    .video-secondary .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
+    .video-secondary .watch-card:hover { transform: translateY(-3px); }
+    .video-secondary .watch-card-thumb { width: 160px; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
+    .video-secondary .duration-badge { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.8); color: white; padding: 2px 5px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+    .video-secondary .tma-grid-title { margin: 0; font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
     .explore-section { margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-color); }
     .explore-tags-grid { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -166,55 +168,8 @@ const videoSchema = {
     .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #ef4444; font-weight: 600; text-align: left; }
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
-    body.dark-mode .shorts-desktop-text { color: #9ca3af; }
 
-    @media (max-width: 768px) {
-      /*--- CACHE BUSTER: CINEMA-MODE ---*/
-      body.cinema-mode .top-navbar,
-      body.cinema-mode .breadcrumbs-bar,
-      body.cinema-mode .title-row,
-      body.cinema-mode .summary-box,
-      body.cinema-mode .focus-tags-bar,
-      body.cinema-mode .site-footer {
-        display: none !important;
-      }
-      body.cinema-mode .video-page-layout { padding: 0 !important; display: block !important; }
-      
-      /* GØR HOVEDKASSEN NORMAL: Indhold skubbes ned, så det ikke gemmer sig bag videoen */
-      body.cinema-mode .video-primary {
-        position: static !important;
-        display: block !important;
-        margin: 0 !important;
-        width: 100% !important;
-        padding-top: 56.25vw !important;
-        transform: none !important;
-        box-shadow: none !important;
-        z-index: auto !important;
-      }
-      
-      /* RIV VIDEOEN HELT UD OG LÅS DEN FAST I TOPPEN (FIXED I STEDET FOR STICKY) */
-      body.cinema-mode .iframe-wrapper {
-        position: fixed !important;
-        top: 0 !important; left: 0 !important; z-index: 99999 !important;
-        margin: 0 !important; width: 100vw !important; height: 56.25vw !important;
-        padding-bottom: 0 !important; border-radius: 0 !important;
-        background: #000 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.8) !important;
-      }
-      body.cinema-mode .iframe-wrapper iframe {
-        position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
-      }
-      
-      /* SIKRER AT ALT ANDET KAN SCROLLE FRIT UNDER VIDEOEN */
-      body.cinema-mode .action-bar, body.cinema-mode .adsense-container,
-      body.cinema-mode .tag-container, body.cinema-mode .toc-container,
-      body.cinema-mode .video-content, body.cinema-mode .video-actions,
-      body.cinema-mode .video-secondary {
-        position: relative !important; z-index: 1 !important; top: auto !important; transform: none !important;
-      }
-      body.cinema-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
-    }
-
-    /* Mobil-responsivt fix */
+    /* Mobil-responsivt fix (Normal visning, INGEN Cinema Mode hack) */
     @media (max-width: 900px) {
       .video-page-layout {
         flex-direction: column !important;
@@ -545,20 +500,6 @@ const videoSchema = {
             shareText.innerText = 'Copied!';
             setTimeout(() => shareText.innerText = originalText, 2000);
           }
-        });
-      }
-
-      const iframe = document.getElementById('ytIframe');
-      if (iframe && !document.body.classList.contains('shorts-mode')) {
-        window.addEventListener('blur', () => {
-          setTimeout(() => {
-            if (document.activeElement === iframe && window.innerWidth <= 768) {
-              /* CACHE-BUSTER: Koden herunder er omdøbt til cinema-mode */
-              document.body.classList.add('cinema-mode');
-              const scrollTarget = document.querySelector('.content-area') || window;
-              scrollTarget.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }, 100);
         });
       }
 
