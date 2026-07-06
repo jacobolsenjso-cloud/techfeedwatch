@@ -22,7 +22,7 @@ jobs:
         run: node auto-youtube.mjs
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - name: Commit & Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
