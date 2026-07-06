@@ -186,6 +186,52 @@ const videoSchema = {
       transition: all 0.5s ease; 
     }
 
+    @media (max-width: 768px) {
+      /*--- CACHE BUSTER: CINEMA-MODE ---*/
+      body.cinema-mode .top-navbar,
+      body.cinema-mode .breadcrumbs-bar,
+      body.cinema-mode .title-row,
+      body.cinema-mode .summary-box,
+      body.cinema-mode .focus-tags-bar,
+      body.cinema-mode .site-footer {
+        display: none !important;
+      }
+      body.cinema-mode .video-page-layout { padding: 0 !important; display: block !important; }
+      
+      /* GØR HOVEDKASSEN NORMAL: Indhold skubbes ned, så det ikke gemmer sig bag videoen */
+      body.cinema-mode .video-primary {
+        position: static !important;
+        display: block !important;
+        margin: 0 !important;
+        width: 100% !important;
+        padding-top: 56.25vw !important;
+        transform: none !important;
+        box-shadow: none !important;
+        z-index: auto !important;
+      }
+      
+      /* RIV VIDEOEN HELT UD OG LÅS DEN FAST I TOPPEN (FIXED I STEDET FOR STICKY) */
+      body.cinema-mode .iframe-wrapper {
+        position: fixed !important;
+        top: 0 !important; left: 0 !important; z-index: 99999 !important;
+        margin: 0 !important; width: 100vw !important; height: 56.25vw !important;
+        padding-bottom: 0 !important; border-radius: 0 !important;
+        background: #000 !important; box-shadow: 0 4px 15px rgba(0,0,0,0.8) !important;
+      }
+      body.cinema-mode .iframe-wrapper iframe {
+        position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+      }
+      
+      /* SIKRER AT ALT ANDET KAN SCROLLE FRIT UNDER VIDEOEN */
+      body.cinema-mode .action-bar, body.cinema-mode .adsense-container,
+      body.cinema-mode .tag-container, body.cinema-mode .toc-container,
+      body.cinema-mode .video-content, body.cinema-mode .video-actions,
+      body.cinema-mode .video-secondary {
+        position: relative !important; z-index: 1 !important; top: auto !important; transform: none !important;
+      }
+      body.cinema-mode .action-bar { padding: 10px 15px !important; margin: 0 !important; width: 100% !important; box-sizing: border-box !important; }
+    }
+
     /* Mobil-responsivt fix */
     @media (max-width: 900px) {
       .video-page-layout {
