@@ -32,17 +32,51 @@ async function run() {
   console.log(`Henter data for video: ${videoId}...`);
   
   try {
-    const transcript = await YoutubeTranscript.fetchTranscript(videoId);
-    const text = transcript.map(t => t.text).join(' ');
-    
-    const lastT = transcript[transcript.length - 1];
-    const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = (totalSeconds % 60).toString().padStart(2, '0');
-    const duration = isShort ? "Short" : `${minutes}:${seconds}`;
+    let text = "";
+    let duration = isShort ? "Short" : "0:00";
+
+    try {
+      // PLAN A: Prøv at hente undertekster
+      const transcript = await YoutubeTranscript.fetchTranscript(videoId);
+      text = transcript.map(t => t.text).join(' ');
+      
+      const lastT = transcript[transcript.length - 1];
+      const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = (totalSeconds % 60).toString().padStart(2, '0');
+      duration = isShort ? "Short" : `${minutes}:${seconds}`;
+    } catch (transcriptError) {
+      console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
+      
+      // PLAN B: Hent titel og beskrivelse via YouTube API
+      const ytApiKey = process.env.YOUTUBE_API_KEY;
+      if (!ytApiKey) throw new Error("Mangler YOUTUBE_API_KEY til Plan B.");
+      
+      const ytUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${ytApiKey}`;
+      const response = await fetch(ytUrl);
+      const data = await response.json();
+      
+      if (data.items && data.items.length > 0) {
+        const snippet = data.items[0].snippet;
+        const contentDetails = data.items[0].contentDetails;
+        text = `Videotitel: ${snippet.title}\n\nVideobeskrivelse:\n${snippet.description}`;
+        
+        // Udregn varighed, hvis det ikke er en Short
+        if (!isShort && contentDetails && contentDetails.duration) {
+          const match = contentDetails.duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+          const h = match[1] ? parseInt(match[1]) : 0;
+          const m = match[2] ? parseInt(match[2]) : 0;
+          const s = match[3] ? parseInt(match[3]) : 0;
+          const totalMins = h * 60 + m;
+          duration = `${totalMins}:${s.toString().padStart(2, '0')}`;
+        }
+      } else {
+        throw new Error("Kunne hverken hente undertekster eller videodata fra YouTube.");
+      }
+    }
 
     const prompt = `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch". 
-    Analyze this video transcript and provide a highly valuable, value-first article.
+    Analyze this video content (either transcript or title/description) and provide a highly valuable, value-first article.
     
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
@@ -59,7 +93,7 @@ async function run() {
     5. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
     ${internalLinksContext}
     
-    Transcript: ${text.substring(0, 20000)}`;
+    Video Content Data: ${text.substring(0, 20000)}`;
 
     const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
     const rawText = result.response.text();

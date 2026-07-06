@@ -168,6 +168,24 @@ const videoSchema = {
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
 
+    /* Cinema Mode (Fokus på video) */
+    body.cinema-mode { background-color: #0f172a !important; transition: background-color 0.5s ease; }
+    body.dark-mode.cinema-mode { background-color: #000 !important; }
+    body.cinema-mode .top-navbar, body.cinema-mode .video-secondary, body.cinema-mode .video-content, 
+    body.cinema-mode .title-row, body.cinema-mode .summary-box, body.cinema-mode .action-bar, 
+    body.cinema-mode .adsense-container, body.cinema-mode .tag-container, body.cinema-mode .toc-container, 
+    body.cinema-mode .breadcrumbs-bar, body.cinema-mode .site-footer { 
+      opacity: 0.1; 
+      pointer-events: none; 
+      transition: opacity 0.5s ease; 
+    }
+    body.cinema-mode .iframe-wrapper { 
+      z-index: 50; 
+      box-shadow: 0 0 50px rgba(0,0,0,0.8); 
+      transform: scale(1.02); 
+      transition: all 0.5s ease; 
+    }
+
     /* Mobil-responsivt fix */
     @media (max-width: 900px) {
       .video-page-layout {
