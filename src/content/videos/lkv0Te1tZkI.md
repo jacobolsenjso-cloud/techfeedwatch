@@ -2,6 +2,7 @@
 title: "Google Flow's AI Video Play: Disrupting the Creator Economy at €0.50/Minute"
 youtubeId: "lkv0Te1tZkI"
 date: "2026-06-12"
+duration: "14:07"
 tag: "AI & Tech"
 summary: "Google Flow is aggressively disrupting the AI video generation market with deeply discounted Pro subscriptions, making advanced tools highly accessible. Its 'Omniflash' multishot and 'Agent' modes empower creators to generate complex video sequences, though it requires an iterative, conversational approach to prompting. This move by Google signals a major push into democratizing high-quality video production, challenging existing players and redefining the role of the digital artist at an unprecedented value proposition."
 isShort: false

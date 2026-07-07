@@ -2,6 +2,7 @@
 title: "AI Business Revolution: One Prompt, Full Launch, Revenue-Ready Platforms in Minutes"
 youtubeId: "CILRCeupuFQ"
 date: "2026-06-12"
+duration: "9:57"
 tag: "AI & Tech"
 summary: "This video unveils Atoms (formerly MetaGPTX), an advanced AI platform that transcends mere code generation to build entire, revenue-ready online businesses from a single prompt. Leveraging a sophisticated multi-agent AI architecture and unique 'race mode' for quality assurance, Atoms automates everything from deep market research and backend infrastructure to integrated payment systems and SEO/ad campaigns. This fundamentally shifts the paradigm for solo entrepreneurs and non-technical founders, drastically reducing the friction between idea conception and business launch, making complex technical stacks accessible in minutes."
 ---

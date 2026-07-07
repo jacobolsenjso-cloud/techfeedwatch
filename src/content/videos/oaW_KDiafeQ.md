@@ -2,6 +2,7 @@
 title: "Unlock Passive Income: Build Your Own Paid Community on WordPress!"
 youtubeId: "oaW_KDiafeQ"
 date: "2026-06-11"
+duration: "41:54"
 tag: "AI & Tech"
 summary: "Discover how to generate substantial monthly income by building your own paid online community, avoiding hefty platform fees from services like School or Circle. This video provides a step-by-step blueprint to create a fully owned membership site using WordPress and powerful, cost-effective plugins. Learn to set up your infrastructure, integrate payment gateways, and design membership tiers that put more money back into your pocket, saving you thousands annually."
 ---

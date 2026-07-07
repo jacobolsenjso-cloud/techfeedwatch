@@ -2,6 +2,7 @@
 title: "Unlock AI Visibility: Your Guide to Generative Engine Optimization (GEO)"
 youtubeId: "20pTTT8jcEw"
 date: "2026-06-12"
+duration: "20:08"
 tag: "AI & Tech"
 summary: "This video introduces 'Generative Engine Optimization (GEO)' as the critical successor to traditional SEO, driven by consumers increasingly turning to Large Language Models (LLMs) for product and service discovery. It highlights a fundamental shift in how businesses must optimize their online presence, moving beyond keywords and backlinks to focus on structured data, verifiable content authority, and semantic brand associations. This shift demands a strategic re-evaluation of content creation and technical website architecture to ensure visibility in the AI-driven search landscape of 2026 and beyond."
 isShort: false
