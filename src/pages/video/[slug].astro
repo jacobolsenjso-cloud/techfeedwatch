@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 
 const { video, allVideos, slug } = Astro.props as { video: any, allVideos: any[], slug: string };
 const { title, youtubeId, date, summary, isShort } = video.frontmatter;
+const faqs = video.frontmatter.faqs || [];
 
 const headings = video.getHeadings ? video.getHeadings() : [];
 const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
@@ -427,6 +428,8 @@ const videoSchema = {
         <article class="video-content">
           <video.Content />
         </article>
+
+        {faqs.length > 0 && <FAQ faqs={faqs} />}
 
         <div class="video-actions">
           <div class="nav-row">
