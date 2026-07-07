@@ -3,6 +3,14 @@ import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
 
+function formatDuration(totalSeconds) {
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = totalSeconds % 60;
+  if (h > 0) return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
 const url = process.argv[2];
 const videoId = url?.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)?.[1];
 
@@ -42,9 +50,7 @@ async function run() {
       
       const lastT = transcript[transcript.length - 1];
       const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
-      const minutes = Math.floor(totalSeconds / 60);
-      const seconds = (totalSeconds % 60).toString().padStart(2, '0');
-      duration = isShort ? "Short" : `${minutes}:${seconds}`;
+      duration = isShort ? "Short" : formatDuration(totalSeconds);
     } catch (transcriptError) {
       console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
       
@@ -67,8 +73,8 @@ async function run() {
           const h = match[1] ? parseInt(match[1]) : 0;
           const m = match[2] ? parseInt(match[2]) : 0;
           const s = match[3] ? parseInt(match[3]) : 0;
-          const totalMins = h * 60 + m;
-          duration = `${totalMins}:${s.toString().padStart(2, '0')}`;
+          const totalSeconds = h * 3600 + m * 60 + s;
+          duration = formatDuration(totalSeconds);
         }
       } else {
         throw new Error("Kunne hverken hente undertekster eller videodata fra YouTube.");
