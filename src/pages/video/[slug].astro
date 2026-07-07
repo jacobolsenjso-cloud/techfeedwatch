@@ -200,11 +200,22 @@ const videoSchema = {
     }
 
     @media (max-width: 768px) {
+      /* Sikrer at en skjult menu ikke skubber videoen fra venstre */
+      body.shorts-mode .sidebar { display: none !important; } 
+
       .shorts-content-area { 
         position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important; 
-        display: flex !important; justify-content: center !important; align-items: center !important; 
+        display: block !important; 
       }
-      .shorts-video-frame { width: 100% !important; height: 100% !important; max-width: 100vw !important; border-radius: 0 !important; margin: 0 auto !important; }
+      .shorts-video-frame { 
+        width: 100% !important; 
+        height: 100% !important; 
+        max-width: 100% !important; 
+        border-radius: 0 !important; 
+        margin: 0 !important; 
+        aspect-ratio: auto !important; /* Fjerner den faste højkants-ramme, så den fylder skærmen ud til kanterne */
+        background: #000 !important; /* Sørger for at eventuel baggrund er sort i stedet for hvid */
+      }
       .shorts-actions-col { position: absolute !important; right: 10px !important; bottom: 30px !important; height: auto !important; padding-bottom: 0 !important; z-index: 50 !important; }
 
       .shorts-mobile-info {
