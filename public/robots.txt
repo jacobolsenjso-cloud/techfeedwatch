@@ -16,7 +16,7 @@ User-agent: anthropic-ai
 Allow: /
 
 # Deklaration af AI-rettigheder
-Content-Signal: ai-train=no, search=yes, ai-input=no
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 Sitemap: https://techfeedwatch.com/sitemap-index.xml
 Sitemap: https://techfeedwatch.com/sitemap.xml
