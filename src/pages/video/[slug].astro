@@ -141,7 +141,6 @@ const videoSchema = {
     .related-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; }
     .related-grid { display: flex; flex-direction: column; gap: 12px; }
     
-    /* FIX FOR COMPUTER: Vi isolerer relaterede videoer, så koden ikke bløder ud og smadrer sidebar-menuen */
     .video-secondary .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
     .video-secondary .watch-card:hover { transform: translateY(-3px); }
     .video-secondary .watch-card-thumb { width: 160px; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
@@ -168,8 +167,13 @@ const videoSchema = {
     .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #ef4444; font-weight: 600; text-align: left; }
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
+
+    /* --- TILFØJET LUFT I TEKSTEN --- */
+    .shorts-desktop-text p, .shorts-mobile-text p { margin-bottom: 15px !important; line-height: 1.6 !important; }
+    .shorts-desktop-text ul, .shorts-mobile-text ul { margin-bottom: 15px !important; padding-left: 20px; }
+    .shorts-desktop-text li, .shorts-mobile-text li { margin-bottom: 8px !important; line-height: 1.6 !important; }
+
     /* --- SHORTS KORREKT OPSÆTNING --- */
-    /* Desktop (Tekst ved siden af video) */
     .shorts-mobile-info { display: none; }
     .shorts-video-frame { aspect-ratio: 9/16; height: 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); background: #111; flex-shrink: 0; }
     .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -184,14 +188,23 @@ const videoSchema = {
     .shorts-circle-btn.btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
     .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
 
-    /* Mobil (Reels / Shorts overlay) */
     @media (max-width: 1024px) {
       .shorts-desktop-info { display: none !important; }
     }
 
+    /* Mobil-responsivt fix (Centrering & Scrollbar tekst overlay) */
+    @media (max-width: 900px) {
+      .video-page-layout { flex-direction: column !important; padding: 15px 10px !important; }
+      .video-secondary { width: 100% !important; position: static !important; }
+      h1 { font-size: 1.5rem !important; }
+    }
+
     @media (max-width: 768px) {
-      .shorts-content-area { position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important; display: block !important; }
-      .shorts-video-frame { width: 100% !important; height: 100% !important; max-width: 100vw !important; border-radius: 0 !important; }
+      .shorts-content-area { 
+        position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important; 
+        display: flex !important; justify-content: center !important; align-items: center !important; 
+      }
+      .shorts-video-frame { width: 100% !important; height: 100% !important; max-width: 100vw !important; border-radius: 0 !important; margin: 0 auto !important; }
       .shorts-actions-col { position: absolute !important; right: 10px !important; bottom: 30px !important; height: auto !important; padding-bottom: 0 !important; z-index: 50 !important; }
 
       .shorts-mobile-info {
@@ -204,29 +217,27 @@ const videoSchema = {
         z-index: 40;
         color: white;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        max-height: 35vh !important;
+        overflow-y: auto !important;
+        touch-action: pan-y !important;
+        pointer-events: auto !important;
+        overscroll-behavior: contain;
+        padding-right: 10px;
+        scrollbar-width: none;
       }
+      .shorts-mobile-info::-webkit-scrollbar { display: none; }
       .shorts-mobile-info h2 { font-size: 1.1rem; margin: 0 0 5px 0; color: #fff; }
       .shorts-mobile-info .shorts-author { font-size: 0.9rem; margin: 0 0 10px 0; font-weight: bold; color: #fff; }
-      .shorts-mobile-info .shorts-mobile-text { font-size: 0.85rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      
+      .shorts-mobile-info .shorts-mobile-text { 
+        font-size: 0.85rem; 
+        display: block !important; 
+        overflow: visible !important; 
+      }
       .shorts-mobile-info .shorts-mobile-text p { margin: 0; color: #fff; }
 
       .shorts-circle-btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; color: #fff !important; }
       .shorts-label { color: #fff !important; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important; }
-    }
-
-    /* Mobil-responsivt fix (Normal visning, INGEN Cinema Mode hack) */
-    @media (max-width: 900px) {
-      .video-page-layout {
-        flex-direction: column !important;
-        padding: 15px 10px !important;
-      }
-      .video-secondary {
-        width: 100% !important;
-        position: static !important;
-      }
-      h1 {
-        font-size: 1.5rem !important;
-      }
     }
   </style>
 
@@ -465,6 +476,12 @@ const videoSchema = {
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       
+      // Rens grimme interne markdown-links fra Shorts-teksten
+      document.querySelectorAll('.shorts-desktop-text, .shorts-mobile-text').forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/\[([^\]]+)\]\(\/video\/[^)]+\)/g, '$1');
+        el.innerHTML = el.innerHTML.replace(/\(\/video\/[^)]+\)/g, ''); // Fanger resterende parenteser
+      });
+
       const slug = document.getElementById('saveBtn')?.getAttribute('data-slug');
       if (slug) {
         const btn = document.getElementById('saveBtn');
