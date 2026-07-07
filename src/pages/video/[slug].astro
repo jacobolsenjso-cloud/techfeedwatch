@@ -168,6 +168,51 @@ const videoSchema = {
     .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #ef4444; font-weight: 600; text-align: left; }
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
+    /* --- SHORTS KORREKT OPSÆTNING --- */
+    /* Desktop (Tekst ved siden af video) */
+    .shorts-mobile-info { display: none; }
+    .shorts-video-frame { aspect-ratio: 9/16; height: 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); background: #111; flex-shrink: 0; }
+    .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .shorts-actions-col { display: flex; flex-direction: column; gap: 20px; justify-content: flex-end; height: 100%; padding-bottom: 20px; box-sizing: border-box; width: 80px; align-items: center; }
+    .shorts-btn-group { display: flex; flex-direction: column; align-items: center; }
+    .shorts-circle-btn { background: var(--hover-bg); border: 1px solid var(--border-color); color: var(--text-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.1s; position: relative; }
+    .shorts-circle-btn:hover { background: #e5e7eb; transform: scale(1.05); }
+    body.dark-mode .shorts-circle-btn { background: #1e293b; border-color: transparent; color: #f1f5f9; }
+    body.dark-mode .shorts-circle-btn:hover { background: #334155; }
+    .shorts-circle-btn.btn-active { color: #3b82f6 !important; background: var(--card-bg); border-color: #3b82f6; }
+    .shorts-circle-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
+    .shorts-circle-btn.btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
+    .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
+
+    /* Mobil (Reels / Shorts overlay) */
+    @media (max-width: 1024px) {
+      .shorts-desktop-info { display: none !important; }
+    }
+
+    @media (max-width: 768px) {
+      .shorts-content-area { position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important; display: block !important; }
+      .shorts-video-frame { width: 100% !important; height: 100% !important; max-width: 100vw !important; border-radius: 0 !important; }
+      .shorts-actions-col { position: absolute !important; right: 10px !important; bottom: 30px !important; height: auto !important; padding-bottom: 0 !important; z-index: 50 !important; }
+
+      .shorts-mobile-info {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        bottom: 30px;
+        left: 15px;
+        width: calc(100% - 90px);
+        z-index: 40;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      }
+      .shorts-mobile-info h2 { font-size: 1.1rem; margin: 0 0 5px 0; color: #fff; }
+      .shorts-mobile-info .shorts-author { font-size: 0.9rem; margin: 0 0 10px 0; font-weight: bold; color: #fff; }
+      .shorts-mobile-info .shorts-mobile-text { font-size: 0.85rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      .shorts-mobile-info .shorts-mobile-text p { margin: 0; color: #fff; }
+
+      .shorts-circle-btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; color: #fff !important; }
+      .shorts-label { color: #fff !important; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important; }
+    }
 
     /* Mobil-responsivt fix (Normal visning, INGEN Cinema Mode hack) */
     @media (max-width: 900px) {
