@@ -13,13 +13,22 @@ const shorts = allVideos
 
 // Finder automatisk de 20 mest populære tags
 const tagCounts = allVideos.reduce((acc: any, video: any) => {
-  const tag = video.frontmatter.tag;
-  if (tag) acc[tag] = (acc[tag] || 0) + 1;
+  const t = video.frontmatter.tags || video.frontmatter.tag || [];
+  const tagsArray = Array.isArray(t) ? t : [t];
+  tagsArray.filter(Boolean).forEach((tag: string) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+  });
   return acc;
 }, {}) as Record<string, number>;
 const topTags = Object.keys(tagCounts)
   .sort((a, b) => tagCounts[b] - tagCounts[a])
   .slice(0, 20);
+
+// Samler en videos tags (frontmatter.tags eller frontmatter.tag) til en kommasepareret liste
+function tagList(v: any): string {
+  const t = v.frontmatter.tags || v.frontmatter.tag || [];
+  return (Array.isArray(t) ? t : [t]).filter(Boolean).join(',');
+}
 
 // Opdeler indholdet i blokke (rækker)
 const vRow1 = regularVideos.slice(0, 4);
@@ -111,7 +120,7 @@ const vRest = regularVideos.slice(8);
     {vRow1.length > 0 && (
       <div class="video-grid">
         {vRow1.map((video: any) => (
-          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={video.frontmatter.tag}>
+          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={tagList(video)}>
             <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg');`}>
               <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
             </div>
@@ -129,7 +138,7 @@ const vRest = regularVideos.slice(8);
         <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #ef4444;">⚡</span> Shorts</h2>
         <div class="shorts-shelf">
           {sRow1.map((short: any) => (
-            <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={short.frontmatter.title.toLowerCase()} data-tag={short.frontmatter.tag}>
+            <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={short.frontmatter.title.toLowerCase()} data-tag={tagList(short)}>
               <div class="short-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg');`}>
                 <div class="duration-badge">{short.frontmatter.duration || 'Short'}</div>
               </div>
@@ -143,7 +152,7 @@ const vRest = regularVideos.slice(8);
     {vRow2.length > 0 && (
       <div class="video-grid">
         {vRow2.map((video: any) => (
-          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={video.frontmatter.tag}>
+          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={tagList(video)}>
             <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg');`}>
               <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
             </div>
@@ -161,7 +170,7 @@ const vRest = regularVideos.slice(8);
         <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #ef4444;">⚡</span> More Shorts</h2>
         <div class="shorts-shelf">
           {sRow2.map((short: any) => (
-            <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={short.frontmatter.title.toLowerCase()} data-tag={short.frontmatter.tag}>
+            <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={short.frontmatter.title.toLowerCase()} data-tag={tagList(short)}>
               <div class="short-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg');`}>
                 <div class="duration-badge">{short.frontmatter.duration || 'Short'}</div>
               </div>
@@ -175,7 +184,7 @@ const vRest = regularVideos.slice(8);
     {vRest.length > 0 && (
       <div class="video-grid">
         {vRest.map((video: any) => (
-          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={video.frontmatter.tag}>
+          <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card filterable-card" data-title={video.frontmatter.title.toLowerCase()} data-tag={tagList(video)}>
             <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg');`}>
               <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
             </div>
@@ -203,10 +212,10 @@ const vRest = regularVideos.slice(8);
 
         cards.forEach(card => {
           const title = card.getAttribute('data-title');
-          const tag = card.getAttribute('data-tag');
-          
+          const tags = (card.getAttribute('data-tag') || '').split(',');
+
           const matchesSearch = title.includes(query);
-          const matchesTag = activeTag === 'All' || tag === activeTag;
+          const matchesTag = activeTag === 'All' || tags.includes(activeTag);
 
           if (matchesSearch && matchesTag) {
             card.style.display = 'block';
