@@ -88,6 +88,11 @@ async function run() {
     TITLE: A highly engaging, click-worthy headline
     TAG: AI & Tech
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
+    FAQ:
+    Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
+    Q: [question]
+    A: [answer]
+    Each answer max 2 sentences. Do not use markdown links in the answers.
     CONTENT:
     Write a comprehensive, value-first article based on the video.
     
@@ -106,19 +111,50 @@ async function run() {
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagMatch = rawText.match(/TAG:\s*(.*)/i);
-    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=CONTENT:)/i);
+    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:)/i);
+    const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
     const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
 
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
     const safeTag = (tagMatch ? tagMatch[1] : "AI").replace(/"/g, "'").replace(/\n/g, "").trim();
     const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
-    
+
+    // Saniter FAQ-tekst: fjern anførselstegn, klip markdown-links til bare teksten, trim
+    function sanitizeFaqText(str) {
+      return str
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+        .replace(/"/g, "'")
+        .replace(/\n/g, ' ')
+        .trim();
+    }
+
+    // YAML-escape til dobbelt-anførte strenge (håndterer backslash og resterende anførselstegn)
+    function toYamlDoubleQuoted(str) {
+      return `"${str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
+    }
+
+    const faqBlock = faqMatch ? faqMatch[1] : "";
+    const faqs = [];
+    const faqPairRegex = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
+    let faqPairMatch;
+    while ((faqPairMatch = faqPairRegex.exec(faqBlock)) !== null) {
+      const question = sanitizeFaqText(faqPairMatch[1]);
+      const answer = sanitizeFaqText(faqPairMatch[2]);
+      if (question && answer) {
+        faqs.push({ question, answer });
+      }
+    }
+
     let content = contentMatch ? contentMatch[1].trim() : "";
     content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
-    
+
     const date = new Date().toISOString().split('T')[0];
-    
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\ntag: "${safeTag}"\nsummary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n---\n\n${content}\n`;
+
+    const faqsYaml = faqs.length > 0
+      ? "faqs:\n" + faqs.map(f => `  - question: ${toYamlDoubleQuoted(f.question)}\n    answer: ${toYamlDoubleQuoted(f.answer)}`).join('\n') + "\n"
+      : "";
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\ntag: "${safeTag}"\nsummary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${videoId}.md`, markdown);
