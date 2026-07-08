@@ -44,6 +44,7 @@ async function run() {
     let text = "";
     let duration = "0:00";
     let isShort = false;
+    let youtubeTitle = null;
 
     try {
       // PLAN A: Prøv at hente undertekster
@@ -56,20 +57,21 @@ async function run() {
       duration = formatDuration(totalSeconds);
     } catch (transcriptError) {
       console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
-      
+
       // PLAN B: Hent titel og beskrivelse via YouTube API
       const ytApiKey = process.env.YOUTUBE_API_KEY;
       if (!ytApiKey) throw new Error("Mangler YOUTUBE_API_KEY til Plan B.");
-      
+
       const ytUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${ytApiKey}`;
       const response = await fetch(ytUrl);
       const data = await response.json();
-      
+
       if (data.items && data.items.length > 0) {
         const snippet = data.items[0].snippet;
         const contentDetails = data.items[0].contentDetails;
         text = `Videotitel: ${snippet.title}\n\nVideobeskrivelse:\n${snippet.description}`;
-        
+        youtubeTitle = snippet.title;
+
         // Udregn varighed og afgør ud fra den om videoen er en Short
         if (contentDetails && contentDetails.duration) {
           const match = contentDetails.duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
@@ -85,7 +87,22 @@ async function run() {
       }
     }
 
-    const prompt = `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch". 
+    // Sprogtjek: kasser videoen FØR den dyre artikel-prompt, hvis den ikke er på engelsk
+    const langCheckPrompt = [
+      "Answer with only one word: YES or NO. Is BOTH the spoken content and the title of this video primarily in English?",
+      ...(youtubeTitle ? [`Title: ${youtubeTitle}`] : []),
+      `Content: ${text.substring(0, 1500)}`
+    ].join('\n');
+
+    const langResult = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(langCheckPrompt);
+    const langAnswer = langResult.response.text().trim();
+
+    if (!/^YES/i.test(langAnswer)) {
+      console.log(`Sprunget over: video er ikke på engelsk (${videoId})`);
+      return;
+    }
+
+    const prompt = `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch".
     Analyze this video content (either transcript or title/description) and provide a highly valuable, value-first article.
     
     Return EXACTLY in this format:
