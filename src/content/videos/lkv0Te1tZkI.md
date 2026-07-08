@@ -6,6 +6,15 @@ duration: "14:07"
 tag: "AI & Tech"
 summary: "Google Flow is aggressively disrupting the AI video generation market with deeply discounted Pro subscriptions, making advanced tools highly accessible. Its 'Omniflash' multishot and 'Agent' modes empower creators to generate complex video sequences, though it requires an iterative, conversational approach to prompting. This move by Google signals a major push into democratizing high-quality video production, challenging existing players and redefining the role of the digital artist at an unprecedented value proposition."
 isShort: false
+faqs:
+  - question: "What is Google Flow and what is its primary function?"
+    answer: "Google Flow, a tool available within Google Labs, is designed for generating videos. It utilizes features like the Omniflash mode for multi-shot sequences and an integrated agent for automated scene creation."
+  - question: "What are the current promotional prices for Google Flow's Pro subscription?"
+    answer: "The Pro subscription is currently available for €5.49 per month for the first three months. After this promotional period, the price reverts to its standard rate of €22 per month."
+  - question: "How does Google Flow assist users in generating video content with specific characters?"
+    answer: "Users can define reference characters by importing images, naming them, and describing their traits or behavior. The agent then helps create multi-shot scenes and storyboards, striving to maintain consistency in character appearance and attire."
+  - question: "Does the Google Flow Pro subscription allow users to remove watermarks from generated videos?"
+    answer: "No, the Pro subscription does not include the option to remove watermarks from generated videos. To eliminate watermarks, users are required to subscribe to the higher-tier Ultra plan."
 ---
 
 <ul>

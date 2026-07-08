@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Anthropic has launched Claude Science, a groundbreaking desktop application powered by the new Sonnet 5 model, designed to revolutionize scientific research. This autonomous AI acts as a 'PhD scholar,' connecting to over 60 scientific databases, self-debugging code, and even catching its own fabricated references. Promising to transform complex, multi-tool workflows into a single, intuitive experience, Claude Science positions itself as a co-pilot, enhancing human researchers' capabilities rather than replacing them."
 duration: "56:31"
 isShort: false
+faqs:
+  - question: "What is Claude Science?"
+    answer: "Claude Science is Anthropic's new flagship desktop app, currently in beta, designed to help scientists research and solve complex problems efficiently. It integrates various research workflows into one platform, connecting to over 60 scientific databases."
+  - question: "What are some key capabilities of Claude Science?"
+    answer: "It can perform comprehensive literature reviews, visualize protein structures in 3D, clean and plot messy data from spreadsheets, and create specialized sub-agents. The tool writes, runs, and debugs its own code to execute tasks from plain English prompts."
+  - question: "How does Claude Science ensure accuracy and handle errors?"
+    answer: "Claude Science features an auto-review function that flags and corrects its own mistakes, such as fabricated citations, in real-time. It also autonomously debugs its own code by reading errors, rewriting, and rerunning it without human intervention."
+  - question: "What AI model powers Claude Science?"
+    answer: "Claude Science utilizes Anthropic's new Sonnet 5 model, which is highly 'agentic' and benchmarks similarly to Opus 4.8. This model is integral to its ability to plan, execute, and self-correct complex research tasks."
 ---
 
 ## The Era of Autonomous Scientific Discovery Begins

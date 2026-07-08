@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "This transcript offers a refreshingly transparent look into building a successful AI-powered side hustle, revealing the dedication beyond the hype. The speaker details her journey from content creation burnout and fear of AI obsolescence to generating $44,000 monthly, all while balancing a full-time job and family. She emphasizes the critical role of personal branding, consistent effort, and strategic AI tool adoption, not just for financial gain but also for reclaiming stability and purpose. Her story debunks the 'easy money' narrative, highlighting the often-unseen struggles and strategic pivots required for true success in the AI era."
 duration: "69:15"
 isShort: false
+faqs:
+  - question: "How did the speaker generate $44,000 in a month with AI?"
+    answer: "She built an AI-driven content strategy business, securing clients and automating content generation. This allowed her to scale her services and earn significant income alongside her full-time job."
+  - question: "What was the speaker's motivation to start an AI side hustle?"
+    answer: "She sought to create multiple income streams after experiencing job insecurity and living paycheck-to-paycheck. She also feared AI replacing her and wanted a backup plan for her family."
+  - question: "What key advice does the speaker offer for starting an AI side hustle?"
+    answer: "She emphasizes consistency, self-belief, and building a personal brand through content creation. A crucial first step is to complete a 'personal blueprint' to define your unique content niche."
+  - question: "What specific resources or methods did the speaker use in her AI journey?"
+    answer: "She invested in coaches, used AI tools like CloudCode for building and automation, and acquired clients through platforms like Upwork. She also recommends the Ikigai framework for her personal blueprint."
 ---
 
 <ul>

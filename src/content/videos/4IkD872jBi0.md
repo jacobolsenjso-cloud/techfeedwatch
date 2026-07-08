@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "This video breaks down how to quickly integrate a custom Lorem Ipsum generator into any WordPress site using basic plugins and HTML. While a seemingly simple tool, it underscores the importance of efficient placeholder content in modern web design workflows. As development cycles accelerate, optimizing every stage, from wireframing to content staging, becomes critical for delivering high-quality digital experiences. This foundational approach to content management is key even as AI transforms other aspects of web development."
 duration: "50:01"
 isShort: false
+faqs:
+  - question: "What is the purpose of the Lorem Ipsum generator tool?"
+    answer: "This tool helps website designers create placeholder text to fill layouts and designs. It allows them to quickly generate dummy content that can be replaced with original text later."
+  - question: "How is the Lorem Ipsum generator installed on a WordPress website?"
+    answer: "You need to install the Cadence theme and Cadence Blocks plugin. Then, create a new page, adjust its layout settings, and paste the provided tool's HTML code into a Custom HTML block."
+  - question: "Can I customize the generated Lorem Ipsum content?"
+    answer: "Yes, you can control the number of paragraphs, the average words per sentence, and the average sentences per paragraph. You can also adjust the default values for these settings by modifying the tool's code."
+  - question: "Where can I find the source code for this Lorem Ipsum generator tool?"
+    answer: "The link to download the source code for this tool will be included in the pinned comment of the video. You should check there for the download link."
 ---
 
 <ul>

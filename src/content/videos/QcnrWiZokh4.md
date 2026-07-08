@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "The market is flooded with agentic AI tools promising to automate your work, but which ones truly deliver beyond simple Q&A? We put popular options like Open Claw, Claude Code, Paperclip, and Hermes through rigorous real-world tasks. Discover the hidden factor that separates effective, self-sufficient AI assistants from those that crumble under reliance, and learn which tools are poised to revolutionize your workflow from everyday tasks to complex development."
 duration: "62:46"
 isShort: false
+faqs:
+  - question: "What is Open Claw and what are its main uses?"
+    answer: "Open Claw is a popular agentic AI tool designed as a personal assistant that handles tasks like drafting emails, searching for flights, and acting on voice notes. It works through messaging apps such as WhatsApp or Telegram, removing the need for a separate dashboard."
+  - question: "How does Claude Code help in software development?"
+    answer: "Claude Code assists developers by building software applications from scratch. Users describe their desired tool in plain English, and it plans, writes, runs, and debugs the code until it works."
+  - question: "What makes Hermes unique compared to other agentic AI tools?"
+    answer: "Hermes uniquely learns and improves itself over time by remembering user preferences and transforming repeated tasks into reusable skills. This allows it to become more useful and adapt to your habits the longer you run it."
+  - question: "Why is a continuous server important for running agentic AI tools?"
+    answer: "Agentic AI tools are designed to work autonomously and continuously, even when your personal device is off. Running them on an always-on server, like a VPS, ensures they remain accessible and operational 24/7."
 ---
 
 ## The Silent Revolution of Agentic AI: Beyond the Chatbot

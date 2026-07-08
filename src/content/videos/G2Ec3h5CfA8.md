@@ -6,6 +6,15 @@ duration: "11:51"
 tag: "AI & Tech"
 summary: "The video transcript reveals a pivotal shift in AI video generation: moving powerful, open-source models like LTX-2 and Wan from the cloud directly to personal computers. This democratizes access to advanced capabilities, sidestepping hefty subscription fees and bolstering user privacy. The emergence of simplified deployment tools like Pinokio is critical, abstracting complex technical setups and making cutting-edge AI accessible to a broader audience of creators."
 isShort: false
+faqs:
+  - question: "How can I generate AI videos for free on my PC?"
+    answer: "You can generate AI videos for free on your PC using open-source models like LTX-2 and Wan. A tool called Pinokio simplifies the installation and management of these AI tools."
+  - question: "What are the system requirements for running these AI video models locally?"
+    answer: "A computer with a dedicated graphics card, preferably an NVIDIA GPU, is required. You'll need at least 6-8 gigabytes of VRAM, with more VRAM improving performance and enabling longer video clips."
+  - question: "What AI video models are demonstrated and what are their capabilities?"
+    answer: "The video demonstrates using the Wan2GP script, which includes models like Wan and LTX-2. The LTX-2 model can generate both video and accompanying sound or narration from text or image prompts."
+  - question: "What are the main benefits of generating AI videos locally on my PC?"
+    answer: "Generating AI videos locally provides benefits such as no usage limits, no subscriptions, and enhanced privacy, as all generation occurs on your own hardware. This gives you full control over your files and processes."
 ---
 
 <ul>

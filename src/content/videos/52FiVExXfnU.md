@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Recent research reveals a concerning trend: the widespread, uncritical use of general-purpose AI is measurably degrading human cognitive functions, from critical thinking to memory. Studies on both students and knowledge workers show a 'cognitive debt' where brains disengage, leading to diminished independent problem-solving. This analysis cuts through the hype, exploring the nuanced impacts of outsourcing our thinking to machines and proposing a shift towards purpose-built AI that fosters, rather than replaces, human intellect."
 duration: "71:05"
 isShort: false
+faqs:
+  - question: "Does using AI tools like ChatGPT negatively impact brain activity and cognitive skills?"
+    answer: "Research, including an MIT study, indicates that participants using ChatGPT show weaker neural connectivity and lower brain engagement in areas like memory, attention, and critical thinking. This 'cognitive debt' can persist even after the AI tool is no longer in use."
+  - question: "Are these cognitive effects of AI only observed in students?"
+    answer: "No, the research suggests that this is a 'use it or lose it' phenomenon that applies to everyone, regardless of age. Studies on adult knowledge workers and professionals also show diminished critical thinking and problem-solving skills with increased AI reliance."
+  - question: "Can AI ever be used in a way that benefits learning and critical thinking?"
+    answer: "Yes, studies indicate that critical engagement with AI—such as asking questions, editing, and thoughtfully revising its outputs—can improve learning outcomes and reduce mental fatigue. The key is the process of interaction, not merely the presence of the tool."
+  - question: "What is the speaker's proposed solution for integrating AI into education responsibly?"
+    answer: "The speaker advocates for developing highly specialized, purpose-built AI applications, such as an educational AI designed around the Socratic method, rather than using general large language models. These tools would challenge students to think deeper and build understanding, fostering cognitive development."
 ---
 
 <ul>

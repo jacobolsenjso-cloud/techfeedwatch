@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "This deep dive reveals a fully repeatable AI-powered blueprint for generating significant local business revenue. By strategically combining a robust tech stack, targeted SEO, AI-driven CRM, and optimized local Google Ads, a new hospitality venture scaled to $10,000/month within three months. It highlights the untapped potential in local markets, proving that smart AI integration can transform nascent operations into profitable enterprises."
 duration: "80:01"
 isShort: false
+faqs:
+  - question: "What is the primary business strategy described for making money with AI?"
+    answer: "The strategy involves building a 'local business lead machine' using AI, focusing on local Google Ads, a fast, high-converting website, and a robust CRM. This model is repeatable and applicable to various local service businesses."
+  - question: "What technical stack is recommended for building the marketing website and system?"
+    answer: "A recommended stack includes Astro for the front-end, Convex for backend/database, Stripe for payments, Resend for emails, Clerk for user accounts, Vercel for hosting, and PostHog for product tracking. Cloud Code is suggested for development assistance."
+  - question: "How does the SEO strategy aim to improve rankings and conversions?"
+    answer: "The SEO strategy prioritizes creating high-converting landing and location pages. It then uses AI to generate supporting blog content, which includes internal links to these primary pages to boost their authority and rankings."
+  - question: "What kind of financial results and timeline can be expected from this approach?"
+    answer: "The speaker achieved €10,000 per month in a new business within three months using this method. This demonstrates the potential for significant and relatively quick financial returns."
 ---
 
 <ul>

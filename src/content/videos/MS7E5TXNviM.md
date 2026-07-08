@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Claude has evolved from a simple conversational AI into a sophisticated, multi-faceted ecosystem designed to automate and streamline complex workflows. This analysis unpacks its four core products—Chat, Co-work, Code, and Design—each serving distinct functions from collaborative thinking to autonomous development. We delve into how features like Skills, Connectors, and Projects transform Claude from a reactive tool into a proactive, intelligent partner capable of delegating tasks and building solutions. The true power lies in its integrated capabilities for an unparalleled AI-driven workflow."
 duration: "72:45"
 isShort: false
+faqs:
+  - question: "What are the main Claude products and their primary functions?"
+    answer: "Claude offers four main products: Chat for thinking and conversation, Co-work for delegating tasks and automation, Code for building applications, and Design for creating visual prototypes and assets. Each serves a distinct purpose, from collaborative ideation to hands-on development and design."
+  - question: "How do Skills, Connectors, and Plugins enhance Claude's functionality?"
+    answer: "Skills help Claude execute tasks repeatedly and consistently, often based on custom instructions or expertise packages. Connectors link Claude to external applications like Gmail or Slack, enabling data access and actions. Plugins are bundles of skills and connectors designed for specific roles, tools, or industry workflows."
+  - question: "How does Claude manage context and memory for ongoing work?"
+    answer: "Claude uses 'Projects' to organize related conversations and store custom instructions, uploaded files, and built-in memory specific to that project. For Code and Co-work, 'cloud.md' files provide persistent context and instructions within a project folder, ensuring consistent operation."
+  - question: "What are some ways Claude can automate tasks autonomously?"
+    answer: "Claude Co-work can use 'Scheduled Tasks' to automatically run operations on a set schedule, such as generating a morning brief. Claude Code offers 'Routines' that trigger code execution automatically based on schedules, GitHub events, or API calls, even without your computer running."
 ---
 
 <ul>

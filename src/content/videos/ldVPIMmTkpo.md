@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Google has quietly rolled out five significant Gemini updates in a single week, fundamentally redefining the landscape of AI-powered workflows. These advancements span real-time global communication, autonomous research, interactive 3D world creation, and next-gen text generation, pushing the boundaries of what consumers and developers can achieve with artificial intelligence. This wave of innovation suggests a future where AI isn't just a tool, but a deeply integrated, proactive partner in daily tasks."
 duration: "58:50"
 isShort: false
+faqs:
+  - question: "What is Gemini 3.5 Live Translate and where can I use it?"
+    answer: "Gemini 3.5 Live Translate offers real-time voice translation, allowing conversations to flow continuously by translating spoken words a few seconds behind you. It is live now globally in the Google Translate app for Android and iPhone, and will roll out to Google Meet for business workspace customers later this year."
+  - question: "What new capabilities does the Notebook LM upgrade offer?"
+    answer: "Notebook LM now runs on a smarter Gemini version for more accurate answers and includes a secure cloud computer that can write and run code for deeper research. It can generate and download various outputs like PDF reports with charts, spreadsheets, and PowerPoint presentations directly from your uploaded sources."
+  - question: "What is Project Genie and how does it create interactive environments?"
+    answer: "Project Genie is an experimental Google DeepMind prototype that builds interactive 3D environments from a single sentence or image description. Users can explore these generated worlds on foot, by riding, flying, or driving, and the environments respond with dynamic elements like light and weather."
+  - question: "How do Notebooks enhance the Gemini app experience?"
+    answer: "Notebooks in the Gemini app provide a dedicated space to organize your chats and files, functioning as a personal knowledge base. You can give Gemini custom instructions and add documents or PDFs for context, with all sources syncing across the Gemini app and Notebook LM."
 ---
 
 <ul>

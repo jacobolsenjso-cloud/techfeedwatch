@@ -6,6 +6,13 @@ tag: "AI & Tech"
 summary: "The S&P 500's record highs obscure a growing concentration risk, largely driven by the 'Magnificent 7' tech giants heavily investing in AI. This deep dive reveals how the market's enthusiasm for AI echoes past tech bubbles, prompting a reevaluation of traditional investment strategies. We explore why true diversification in the age of AI means looking beyond US borders and reassessing portfolio allocations. This analysis provides critical insights for investors navigating the evolving landscape where AI's influence extends far beyond mere technological innovation."
 duration: "62:39"
 isShort: false
+faqs:
+  - question: "What is the S&P 500 index fund?"
+    answer: "The S&P 500 is an index fund that allows investment in approximately 500 of the largest companies in the United States. It helps investors diversify by spreading money across many businesses, aiming for long-term growth."
+  - question: "Why is the speaker rethinking her investment strategy regarding the S&P 500?"
+    answer: "The S&P 500 is heavily concentrated in the 'Magnificent Seven' companies, all deeply invested in AI. The speaker is concerned about potential market overheating and a lack of diversification if these companies' valuations become overhyped, similar to the dot-com bubble."
+  - question: "How is the speaker evolving her investment approach?"
+    answer: "She is directing a larger percentage of her investments towards global stocks, rather than solely focusing on the US S&P 500. This strategy aims to reduce risk and ensure broader diversification across different countries and industries, preparing for various future scenarios."
 ---
 
 <ul>

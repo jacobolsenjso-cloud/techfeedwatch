@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Businesses can now deploy powerful, production-grade WhatsApp AI assistants without writing a single line of code, thanks to tools like Claude Code. This transcript reveals a streamlined process for developing bots that handle customer queries, book appointments, and integrate seamlessly with existing business tools. By leveraging plain English prompts and iterative feedback, even non-technical users can build sophisticated AI solutions, significantly boosting customer service and operational efficiency."
 duration: "105:10"
 isShort: false
+faqs:
+  - question: "What is the WhatsApp AI assistant demonstrated in the video designed for?"
+    answer: "The AI assistant is built for a pet salon and spa called Petsee. Its purpose is to handle inbound customer conversations, answer queries, and book appointments."
+  - question: "How was the entire WhatsApp AI assistant developed?"
+    answer: "The assistant was completely built using Claude Code, an AI coding assistant. The developer simply prompted it in plain English, and Claude Code generated all the necessary code."
+  - question: "What key functions does the AI assistant perform for customers?"
+    answer: "It answers customer questions regarding pricing and services, provides recommendations, and handles appointment bookings. It integrates with a calendar system to manage available slots and client details."
+  - question: "Do users need technical coding skills to create this AI assistant?"
+    answer: "No, the process is designed for non-technical users. Claude Code allows you to prompt it in plain English, and it builds the project, making it accessible to follow along."
 ---
 
 ## The Dawn of Effortless AI Assistants: Bridging the Business-Tech Divide

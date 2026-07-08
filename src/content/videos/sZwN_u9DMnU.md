@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Google Gemini is rapidly evolving beyond a simple chatbot, embedding powerful AI capabilities directly into core workflows. This article unveils seven game-changing Gemini hacks—from live design iterations in AI Studio to automated content creation with AI avatars and intelligent data analysis in Sheets. Mastering these new features and settings is crucial for maximizing efficiency, streamlining operations, and unlocking unprecedented levels of productivity in the AI era."
 duration: "68:57"
 isShort: false
+faqs:
+  - question: "What new design features are available in Google Gemini's AI Studio?"
+    answer: "Users can now annotate specific areas for changes and generate multiple design variations live within AI Studio. This allows for dynamic adjustments and the creation of new design options on demand."
+  - question: "How can 'skills' be utilized with Google Gemini?"
+    answer: "Skills serve as Standard Operating Procedures (SOPs) or checklists that Gemini follows for recurring tasks. You can create them by instructing Gemini on what to do, and then activate them by typing '/' or requesting a specific skill."
+  - question: "In what ways is Gemini integrated with other Google applications?"
+    answer: "Gemini is integrated across Google Docs, Sheets, Slides, Forms, and Videos. It can analyze data, match writing styles, and search across Drive, Gmail, and the web directly within these applications to assist with various tasks."
+  - question: "What is the avatar feature in Gemini and how can it be used?"
+    answer: "The avatar feature allows users to create a personalized video avatar of themselves through a scanning process. This avatar can then generate videos, for instance, to create daily briefs or social media content with your likeness."
 ---
 
 In the fast-paced world of artificial intelligence, staying ahead means constantly adapting to new tools and features. Google Gemini, once primarily recognized as a conversational AI, has quietly rolled out a suite of powerful updates that transform it into an indispensable productivity engine. For those ready to move beyond basic prompts, these seven Gemini hacks promise to revolutionize how you work, create, and analyze.

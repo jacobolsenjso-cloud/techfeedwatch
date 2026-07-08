@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Alibaba's Quen is aggressively challenging Western AI giants, committing over $50 billion to build a comprehensive, often free, AI ecosystem. This transcript reveals Quen's unique strategy, integrating powerful generative models with desktop control and full-stack application development. It positions itself as a disruptive force, offering accessible and advanced AI capabilities directly to users, signaling a significant shift in the global AI landscape."
 duration: "129:34"
 isShort: false
+faqs:
+  - question: "What is Quen?"
+    answer: "Quen is an evolving artificial intelligence ecosystem from China, developed by Alibaba. It originated as an open-source project and is now positioned as a major challenger to Silicon Valley AI companies."
+  - question: "What are some of Quen's main functionalities?"
+    answer: "Quen enables users to control their computers and other tools, create advanced AI agents, and design various formats like images, long videos, websites, and applications. It offers capabilities for task automation, content generation, and simplifying daily routines."
+  - question: "How does Quen compare to AI platforms from Silicon Valley companies?"
+    answer: "Quen stands out by offering many of its functionalities completely free of charge and without limits, unlike some Silicon Valley companies that seek to monetize their AI dependencies. Alibaba is aggressively investing in Quen with optimized costs and free product offers."
+  - question: "Can Quen interact with a user's computer and local files?"
+    answer: "Yes, Quen's desktop application, combined with its Model Context Protocol (MCP), allows it to connect with and manage a user's computer and various tools. This enables it to automate tasks, analyze files, and even generate or store documents directly on the device."
 ---
 
 <ul>

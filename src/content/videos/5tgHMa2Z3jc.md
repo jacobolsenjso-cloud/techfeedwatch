@@ -6,6 +6,15 @@ tag: "AI & Tech"
 summary: "Anthropic's Claude Code is revolutionizing app development by enabling anyone, regardless of technical skill, to build websites, automations, and custom tools using natural language. This powerful agentic AI can independently plan, build, test, and even self-correct its creations, drastically lowering the barrier to entry for software development. From integrating external apps to deploying live projects, Claude Code offers a comprehensive, intuitive platform for turning ideas into functional realities."
 duration: "63:08"
 isShort: false
+faqs:
+  - question: "Do I need to know how to code to use Claude Code?"
+    answer: "No, absolutely not. Anyone can use Claude Code to build apps, websites, automations, and more, even as a complete beginner, without knowing any code."
+  - question: "What do I need to get started with Claude Code?"
+    answer: "You need a paid Claude account (Pro or Max plan) and must download and install the Claude desktop application. Once installed, navigate to the 'Code' tab to begin building projects."
+  - question: "How does Claude Code create and manage projects on my computer?"
+    answer: "Claude Code creates and edits files directly on your computer within a dedicated folder you grant it access to. It uses a 'plan mode' to outline build steps for your approval, making adjustments easier before development."
+  - question: "How can Claude Code interact with external services and enhance its capabilities?"
+    answer: "Claude Code connects to external tools via MCPs (Connectors) for services like Gmail or Notion. It also utilizes 'Skills' and 'Plugins' to perform repeatable tasks, debug code, or access current documentation automatically."
 ---
 
 <ul>
