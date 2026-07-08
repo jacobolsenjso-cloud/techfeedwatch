@@ -6,7 +6,7 @@ tags:
   - "Coding"
   - "Automation"
 summary: "This video breaks down how to quickly integrate a custom Lorem Ipsum generator into any WordPress site using basic plugins and HTML. While a seemingly simple tool, it underscores the importance of efficient placeholder content in modern web design workflows. As development cycles accelerate, optimizing every stage, from wireframing to content staging, becomes critical for delivering high-quality digital experiences. This foundational approach to content management is key even as AI transforms other aspects of web development."
-duration: "50:01"
+duration: "4:43"
 isShort: false
 faqs:
   - question: "What is the purpose of the Lorem Ipsum generator tool?"

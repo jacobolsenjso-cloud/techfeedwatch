@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Automation"
 summary: "Google has quietly rolled out five significant Gemini updates in a single week, fundamentally redefining the landscape of AI-powered workflows. These advancements span real-time global communication, autonomous research, interactive 3D world creation, and next-gen text generation, pushing the boundaries of what consumers and developers can achieve with artificial intelligence. This wave of innovation suggests a future where AI isn't just a tool, but a deeply integrated, proactive partner in daily tasks."
-duration: "58:50"
+duration: "8:53"
 isShort: false
 faqs:
   - question: "What is Gemini 3.5 Live Translate and where can I use it?"

@@ -1,6 +1,7 @@
 ---
 title: "Gemini's Google Drive Integration: A Glimpse into AI-Powered Workflow Revolution"
 youtubeId: "qqNQPv3Y-m8"
+duration: "0:38"
 date: "2026-06-12"
 tags:
   - "AI & Tech"

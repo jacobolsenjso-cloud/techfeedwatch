@@ -6,7 +6,7 @@ tags:
   - "Business & Money"
   - "AI & Tech"
 summary: "The S&P 500's record highs obscure a growing concentration risk, largely driven by the 'Magnificent 7' tech giants heavily investing in AI. This deep dive reveals how the market's enthusiasm for AI echoes past tech bubbles, prompting a reevaluation of traditional investment strategies. We explore why true diversification in the age of AI means looking beyond US borders and reassessing portfolio allocations. This analysis provides critical insights for investors navigating the evolving landscape where AI's influence extends far beyond mere technological innovation."
-duration: "62:39"
+duration: "12:02"
 isShort: false
 faqs:
   - question: "What is the S&P 500 index fund?"

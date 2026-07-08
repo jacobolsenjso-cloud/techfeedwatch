@@ -6,7 +6,7 @@ tags:
   - "Business & Money"
   - "AI & Tech"
 summary: "This deep dive reveals a fully repeatable AI-powered blueprint for generating significant local business revenue. By strategically combining a robust tech stack, targeted SEO, AI-driven CRM, and optimized local Google Ads, a new hospitality venture scaled to $10,000/month within three months. It highlights the untapped potential in local markets, proving that smart AI integration can transform nascent operations into profitable enterprises."
-duration: "80:01"
+duration: "20:04"
 isShort: false
 faqs:
   - question: "What is the primary business strategy described for making money with AI?"

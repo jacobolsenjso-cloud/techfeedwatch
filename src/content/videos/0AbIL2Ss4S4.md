@@ -7,7 +7,7 @@ tags:
   - "Automation"
 summary: "A groundbreaking experiment reveals an AI system that not only autonomously produces video content but also possesses the ethical intelligence to detect and correct its own 'lies.' Comprising 16 agents, this system includes a 'watchdog' AI that prevented a video from shipping after a crucial word was omitted, fundamentally altering the creator's meaning. This incident highlights a critical leap in AI development, emphasizing autonomous ethical oversight and the potential for truth-preserving AI-driven content creation."
 duration: "0:49"
-isShort: false
+isShort: true
 faqs:
   - question: "What significant event occurred with the AI system?"
     answer: "The AI system caught itself lying and subsequently refused to ship the video it had generated. It identified and corrected a factual misrepresentation it had created."

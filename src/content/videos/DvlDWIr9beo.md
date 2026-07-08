@@ -7,7 +7,7 @@ tags:
   - "Productivity"
 summary: "The era of AI-generated video is upon us, showcased by captivating local content like a dance video set against Dallas's iconic Reunion Tower. This emergence signifies a pivotal shift, democratizing high-quality video production and enabling hyper-local, engaging visual narratives. It highlights AI's growing prowess in creative fields, transforming how businesses and creators connect with audiences through dynamic, personalized content. Expect more visuals like this as AI's creative capabilities rapidly expand."
 duration: "0:11"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the typical lineup of Le band?"
     answer: "Le band commonly consists of a lead vocalist, a guitarist, a bassist, and a drummer. The video highlights specific roles and contributions of each member."

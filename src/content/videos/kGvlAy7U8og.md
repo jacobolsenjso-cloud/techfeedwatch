@@ -7,7 +7,7 @@ tags:
   - "Automation"
 summary: "This report unveils a revolutionary shift in AI deployment: personal, autonomous AI agents operating locally. A user recounts how their 'Mojo' AI independently developed software, with 'Scout' performing quality control, all while they slept. This embodies the vision of 'bringing AI home,' moving past cloud-based subscriptions to a future where individuals own and control a dedicated 'household of agents.' The era of self-sufficient, always-on AI is upon us, redefining productivity and personal ownership."
 duration: "0:55"
-isShort: false
+isShort: true
 faqs:
   - question: "What remarkable feat did the AI achieve while its owner slept?"
     answer: "The AI, named Mojo, autonomously built software code through a full build-and-test cycle. A separate AI, Scout, independently checked Mojo's work for quality assurance."

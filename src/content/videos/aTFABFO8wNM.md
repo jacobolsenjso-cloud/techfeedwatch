@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Business & Money"
 summary: "This transcript offers a refreshingly transparent look into building a successful AI-powered side hustle, revealing the dedication beyond the hype. The speaker details her journey from content creation burnout and fear of AI obsolescence to generating $44,000 monthly, all while balancing a full-time job and family. She emphasizes the critical role of personal branding, consistent effort, and strategic AI tool adoption, not just for financial gain but also for reclaiming stability and purpose. Her story debunks the 'easy money' narrative, highlighting the often-unseen struggles and strategic pivots required for true success in the AI era."
-duration: "69:15"
+duration: "23:17"
 isShort: false
 faqs:
   - question: "How did the speaker generate $44,000 in a month with AI?"

@@ -1,6 +1,7 @@
 ---
 title: "AI Supercharges SEO: Unlocking Page Two Traffic with ChatGPT"
 youtubeId: "2F-6cf-7HJQ"
+duration: "0:30"
 date: "2026-06-12"
 tags:
   - "SEO"

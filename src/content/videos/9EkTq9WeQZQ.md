@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "SEO"
 summary: "This analysis unpacks a groundbreaking demonstration where a complete niche blog website is conceptualized, researched, and structured in mere minutes using a powerful AI-driven workflow. By combining Perplexity AI for in-depth market research and Claude AI for sophisticated web design and content architecture, the process showcases an unparalleled leap in automated web development. The workflow highlights AI's capacity to generate modern, SEO-friendly site foundations, offering significant time and resource savings for entrepreneurs and content creators."
-duration: "54:08"
+duration: "11:30"
 isShort: false
 faqs:
   - question: "What AI tools are primarily used to build the niche blog website?"

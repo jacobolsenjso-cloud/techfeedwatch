@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "The LG G7 ThinQ, a 2018 flagship, offered a compelling blend of premium design, advanced audio, and a notched display, reflecting the pinnacle of mobile innovation at the time. Revisiting this device today provides a crucial lens through which to understand the dramatic evolution of smartphone technology, particularly with the explosive growth of AI. It highlights how hardware-centric battles have given way to software prowess and intelligent features, reshaping user expectations and the very definition of a 'flagship' in an era increasingly dominated by generative AI."
 duration: "0:51"
-isShort: false
+isShort: true
 faqs:
   - question: "What distinguished the LG G7 ThinQ as a 2018 flagship?"
     answer: "The LG G7 ThinQ was known for its bright 'Super Bright Display,' powerful 'Boombox Speaker' audio, and a dedicated AI button. It aimed to compete with the best phones of its year by focusing on multimedia experiences and smart features."

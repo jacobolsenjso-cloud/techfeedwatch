@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "The simple hashtag #ai on a repair video hints at a profound shift in the tech repair industry. From intricate 'combo changes' to optimizing technician workflows, Artificial intelligence is no longer just a futuristic concept; it's a vital tool enhancing precision, efficiency, and even the virality of repair content. This deep dive explores how AI is transforming diagnostics, streamlining operations, and empowering a new generation of repair specialists."
 duration: "0:11"
-isShort: false
+isShort: true
 faqs:
   - question: "My phone screen is broken, what should I do first?"
     answer: "If your phone screen is broken, first assess the extent of the damage. You might consider professional repair services for effective solutions."

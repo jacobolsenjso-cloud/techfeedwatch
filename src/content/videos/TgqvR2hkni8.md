@@ -7,7 +7,7 @@ tags:
   - "Productivity"
 summary: "A groundbreaking automated wall-building machine, powered by AI, is setting new benchmarks in construction speed and efficiency. This innovation promises to erect brick walls faster than ten human workers combined, signaling a significant shift in traditional manual labor roles within the construction industry. We explore the profound implications of such technology on productivity, job markets, and the future of skilled trades in an increasingly automated world."
 duration: "0:09"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the core innovation described?"
     answer: "The video highlights an amazing automatic wall-building machine that uses AI and technology to construct brick walls at an unprecedented speed."

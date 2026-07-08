@@ -7,7 +7,7 @@ tags:
   - "Business & Money"
 summary: "A fascinating DIY short from LAL ELECTRIC demonstrates the creation of a functional fan powered entirely by a mechanical gear system, bypassing the need for motors or batteries. This ingenious project showcases the power of fundamental engineering principles and 'Jugaad' innovation in crafting sustainable solutions. It challenges our reliance on conventional power sources, proving that resourcefulness can lead to remarkable, eco-conscious technology. This hands-on experiment highlights the potential for accessible, low-tech alternatives in a hyper-connected world."
 duration: "0:32"
-isShort: false
+isShort: true
 faqs:
   - question: "How does the gear system fan operate without a motor or battery?"
     answer: "The fan operates by converting manual mechanical input, likely from a hand crank, into rotational energy via a clever series of interconnected gears. This simple yet effective design relies on basic physics and mechanical advantage."

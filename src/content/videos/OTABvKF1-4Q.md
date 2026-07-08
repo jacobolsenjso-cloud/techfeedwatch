@@ -7,7 +7,7 @@ tags:
   - "AI & Tech"
 summary: "The simple phrase 'Now your phone will tell you to 'ON' the Switch' hints at a profound shift in how we interact with our environment. This isn't just about remote control; it's about an integrated ecosystem where smartphones become the central nervous system of our homes and offices. Dive into how this seemingly minor convenience is part of a larger, AI-driven revolution in smart living, promising efficiency, comfort, and unprecedented control over our daily tech."
 duration: "0:45"
-isShort: false
+isShort: true
 faqs:
   - question: "What does 'ON the Switch' imply in the context of phone control?"
     answer: "It implies the ability to remotely activate or deactivate physical devices, like lights, appliances, or even entire home systems, directly from a smartphone application. This transforms your phone into a universal remote for your smart environment."

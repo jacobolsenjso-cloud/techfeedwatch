@@ -7,7 +7,7 @@ tags:
   - "AI Video"
 summary: "The digital landscape is witnessing a fascinating shift as AI takes center stage in short-form animation. Content like 'Apple & Banana's Crazy Village Story' exemplifies how generative AI tools are democratizing visual storytelling, enabling quick creation of quirky, engaging narratives. This trend not only makes animated content accessible to a broader range of creators but also signals a new era for viral video and digital entertainment. It underscores AI's expanding role in creative industries, moving beyond text generation into dynamic visual experiences."
 duration: "0:16"
-isShort: false
+isShort: true
 faqs:
   - question: "What is AI cartoon animation?"
     answer: "AI cartoon animation refers to the process of using artificial intelligence models and tools to generate animated short films, characters, and scenes with minimal human input. These tools can interpret prompts to create visual narratives quickly."

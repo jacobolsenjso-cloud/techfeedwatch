@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Automation"
 summary: "Google Gemini is rapidly evolving beyond a simple chatbot, embedding powerful AI capabilities directly into core workflows. This article unveils seven game-changing Gemini hacks—from live design iterations in AI Studio to automated content creation with AI avatars and intelligent data analysis in Sheets. Mastering these new features and settings is crucial for maximizing efficiency, streamlining operations, and unlocking unprecedented levels of productivity in the AI era."
-duration: "68:57"
+duration: "11:40"
 isShort: false
 faqs:
   - question: "What new design features are available in Google Gemini's AI Studio?"

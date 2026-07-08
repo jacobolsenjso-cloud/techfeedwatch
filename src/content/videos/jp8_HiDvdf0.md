@@ -7,7 +7,7 @@ tags:
   - "Coding"
 summary: "A recent experiment put six prominent AI app builders to the test, challenging them to create a calorie tracking application from a single prompt with zero edits. The rigorous evaluation focused not on aesthetics but on critical functionalities like user authentication, data storage, and live deployment. Surprisingly, Base44 emerged as the clear winner, demonstrating superior capability in delivering a fully functional, production-ready app fastest, highlighting a crucial shift in how we should assess AI development tools."
 duration: "1:11"
-isShort: false
+isShort: true
 faqs:
   - question: "What was the main objective of the AI app builder comparison?"
     answer: "The main objective was to test if a beginner could ship a real app with essential features like login, storage, AI calls, and a public link using various AI tools. It aimed to identify which builders were genuinely effective for practical application development."

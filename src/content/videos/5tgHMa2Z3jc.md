@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Automation"
 summary: "Anthropic's Claude Code is revolutionizing app development by enabling anyone, regardless of technical skill, to build websites, automations, and custom tools using natural language. This powerful agentic AI can independently plan, build, test, and even self-correct its creations, drastically lowering the barrier to entry for software development. From integrating external apps to deploying live projects, Claude Code offers a comprehensive, intuitive platform for turning ideas into functional realities."
-duration: "63:08"
+duration: "19:10"
 isShort: false
 faqs:
   - question: "Do I need to know how to code to use Claude Code?"

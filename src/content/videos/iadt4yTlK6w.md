@@ -3,6 +3,7 @@ title: "Unlock Your AI's Full Potential: Build a Self-Improving AI Brain with th
 youtubeId: "iadt4yTlK6w"
 date: "2026-06-11"
 duration: "7:50"
+isShort: false
 tags:
   - "AI & Tech"
   - "Productivity"

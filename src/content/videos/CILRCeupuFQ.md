@@ -3,6 +3,7 @@ title: "AI Business Revolution: One Prompt, Full Launch, Revenue-Ready Platforms
 youtubeId: "CILRCeupuFQ"
 date: "2026-06-12"
 duration: "9:57"
+isShort: false
 tags:
   - "AI & Tech"
   - "Business & Money"

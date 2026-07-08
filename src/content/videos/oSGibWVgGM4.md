@@ -7,7 +7,7 @@ tags:
   - "SEO"
 summary: "A young woman's ingenious 'desi jugaad' from rural India, transforming bicycle wheels into an efficient roti maker, has captivated audiences. This seemingly low-tech innovation brilliantly solves a daily problem, saving time and effort. It challenges our perception of what constitutes 'innovation' in the AI age, underscoring the enduring power of human creativity and resourcefulness. The story prompts us to consider how grassroots solutions can stand alongside, and even inspire, advanced technological progress."
 duration: "0:11"
-isShort: false
+isShort: true
 faqs:
   - question: "What type of vehicle was created?"
     answer: "A four-wheeler vehicle was created. It was transformed from a motorcycle."

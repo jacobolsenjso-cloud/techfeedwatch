@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "Mobile phones are our constant companions, but their fragility often means a visit to the repair shop. This video content highlights the critical, yet often overlooked, role of mobile repair technicians, particularly in regions like Bihar. These skilled individuals are the backbone of our digital connectivity, ensuring devices remain functional and accessible. Their work underscores the growing importance of local tech support in a hyper-connected world."
 duration: "0:42"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the primary focus of the video content?"
     answer: "The video content centers on mobile phone service and repair, emphasizing the essential work performed by technicians in maintaining our devices. It specifically references Bihar, highlighting the regional context of these vital services."

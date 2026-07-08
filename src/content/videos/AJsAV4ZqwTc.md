@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "AI Video"
 summary: "Alibaba's Quen is aggressively challenging Western AI giants, committing over $50 billion to build a comprehensive, often free, AI ecosystem. This transcript reveals Quen's unique strategy, integrating powerful generative models with desktop control and full-stack application development. It positions itself as a disruptive force, offering accessible and advanced AI capabilities directly to users, signaling a significant shift in the global AI landscape."
-duration: "129:34"
+duration: "29:54"
 isShort: false
 faqs:
   - question: "What is Quen?"

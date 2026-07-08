@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "Experiencing the dreaded 'no network' issue on your smartphone can severely disrupt productivity and communication. This article dives into common causes behind lost connectivity, from fleeting software glitches to underlying hardware challenges. We provide a value-first guide, offering practical, step-by-step solutions to help you restore your signal and stay connected in our hyper-digital world, minimizing downtime and frustration."
 duration: "0:15"
-isShort: false
+isShort: true
 faqs:
   - question: "What are the most common reasons for a smartphone losing network?"
     answer: "Common reasons include software bugs, incorrect network settings, SIM card issues, physical damage, or problems with your cellular service provider's network in your area."

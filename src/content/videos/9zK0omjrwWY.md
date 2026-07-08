@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Productivity"
 summary: "Anthropic has launched Claude Science, a groundbreaking desktop application powered by the new Sonnet 5 model, designed to revolutionize scientific research. This autonomous AI acts as a 'PhD scholar,' connecting to over 60 scientific databases, self-debugging code, and even catching its own fabricated references. Promising to transform complex, multi-tool workflows into a single, intuitive experience, Claude Science positions itself as a co-pilot, enhancing human researchers' capabilities rather than replacing them."
-duration: "56:31"
+duration: "12:33"
 isShort: false
 faqs:
   - question: "What is Claude Science?"

@@ -3,6 +3,7 @@ title: "Unlock Passive Income: Build Your Own Paid Community on WordPress!"
 youtubeId: "oaW_KDiafeQ"
 date: "2026-06-11"
 duration: "41:54"
+isShort: false
 tags:
   - "Business & Money"
   - "Automation"

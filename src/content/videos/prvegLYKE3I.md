@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "AI innovation represents a new, critical frontier for state-level espionage, a threat frequently underestimated by even advanced labs. AI researcher Leopold Aschenbrenner reveals how sophisticated intelligence agencies and cyber operations, drawing parallels to historical events like Stuxnet, are now targeting cutting-edge AI. This analysis underscores why protecting advanced AI isn't merely an intellectual property concern, but a paramount national security challenge in an increasingly AI-driven world. This article explores the hidden battle for AI supremacy and the urgent need for robust defense."
 duration: "1:54"
-isShort: false
+isShort: true
 faqs:
   - question: "Why do many people underestimate state-level espionage?"
     answer: "The speaker suggests that even smart individuals often underrate espionage and do not realize how intense state-level operations can be. They may not grasp the extreme measures and sophisticated tactics employed by intelligence agencies."

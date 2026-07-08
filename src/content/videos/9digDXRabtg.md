@@ -7,7 +7,7 @@ tags:
   - "Business & Money"
 summary: "The widespread concern about YouTube banning AI content monetization by 2026 appears to be a misconception. This analysis reveals YouTube's evolving stance, emphasizing that **AI-generated content can indeed be monetized** if it adheres to platform guidelines focused on originality, value, and a human touch. For AI creators leveraging tools like ChatGPT, this update signals an opportunity rather than a restriction, underscoring the importance of unique perspectives and thoughtful integration of AI. The key lies in using AI as an enhancement tool, not a full replacement for creative input."
 duration: "1:43"
-isShort: false
+isShort: true
 faqs:
   - question: "Does YouTube currently monetize AI-generated video content?"
     answer: "Yes, YouTube can monetize AI-generated videos provided they meet the platform's stringent guidelines for originality, value, and human input. Purely automated, low-effort content is generally not eligible."

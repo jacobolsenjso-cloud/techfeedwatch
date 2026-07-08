@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "America250 has sealed a remarkable time capsule in Philadelphia, designed to be opened in 2276, offering a unique snapshot of contemporary technology and foresight. Among its eclectic contents are an **iPhone 17 Pro Max** and a future prediction crafted by **Claude AI**, posing fascinating questions about future technological perception. This initiative brilliantly blends historical preservation with cutting-edge innovation, serving as a powerful marker of human progress and our enduring fascination with the future."
 duration: "1:39"
-isShort: false
+isShort: true
 faqs:
   - question: "What is America's Time Capsule?"
     answer: "It's a collection of artifacts buried by America250 in Philadelphia to be opened in the year 2276. It commemorates the 250th anniversary of the United States and offers a glimpse into our current era."

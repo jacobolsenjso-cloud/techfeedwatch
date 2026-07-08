@@ -7,7 +7,7 @@ tags:
   - "Automation"
 summary: "The concept of AI handling civil complaints signals a significant shift in public administration, promising unprecedented efficiency and accessibility. This series explores how artificial intelligence, including humanoid robots, is poised to revolutionize citizen services, moving past traditional bureaucratic hurdles. We delve into the implications for governments and citizens, examining both the immense potential and critical challenges of this emerging paradigm."
 duration: "0:11"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the initial request made by the person?"
     answer: "The person asks to quickly '떼주세요' their resident registration. This is a common colloquial phrase in Korean for requesting a document copy."

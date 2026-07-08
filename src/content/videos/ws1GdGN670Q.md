@@ -6,7 +6,7 @@ tags:
   - "AI Video"
 summary: "In an age dominated by AI-driven content, the short film 'Maa Ke Haath Ki Roti' cuts through the digital noise with a profoundly human narrative. This emotional story of a son's journey back to his mother's love serves as a powerful reminder of the enduring impact of authentic storytelling. It highlights the critical difference between AI's ability to generate content and the irreplaceable human capacity to evoke genuine empathy and connection, prompting creators to reconsider their content strategies for true resonance."
 duration: "0:31"
-isShort: false
+isShort: true
 faqs:
   - question: "रोहन की अपनी मां की रोटी के प्रति शुरुआती प्रतिक्रिया क्या थी?"
     answer: "रोहन शुरुआत में अपनी मां की रोज़ बनाई हुई रोटी से ऊब गया था। उसने अपनी मां से शिकायत की कि उसे रोज़ वही रोटी नहीं चाहिए।"

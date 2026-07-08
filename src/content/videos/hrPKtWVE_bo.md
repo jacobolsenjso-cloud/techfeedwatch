@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Coding"
 summary: "Generic, 'vibe coded' AI websites are a thing of the past. This deep dive reveals how to leverage Claude Code, paired with strategic design principles, to craft stunning, agency-level web experiences. Learn the two critical steps – an intelligent MD file and precise design inspiration – to transform your AI-generated sites from bland to brilliant, complete with real-time iteration and seamless deployment. Stop settling for subpar and start building websites that impress."
-duration: "49:44"
+duration: "16:05"
 isShort: false
 faqs:
   - question: "What are the two main steps to create a beautifully designed website using Claude Code?"

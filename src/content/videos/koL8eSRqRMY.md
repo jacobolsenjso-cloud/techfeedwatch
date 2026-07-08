@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Coding"
 summary: "A comprehensive, nine-module learning path for Claude AI is being revealed, offering an unparalleled opportunity for users to master everything from foundational AI concepts to advanced agent building. This free curriculum emphasizes practical applications for business owners, delving into Claude's API and sophisticated agent development. It represents a significant, often overlooked, resource for anyone looking to truly leverage Anthropic's powerful AI."
-duration: "Short"
+duration: "0:30"
 isShort: true
 ---
 

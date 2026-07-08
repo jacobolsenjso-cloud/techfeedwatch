@@ -6,7 +6,7 @@ tags:
   - "AI Video"
   - "Business & Money"
 summary: "A groundbreaking, free AI tool from Google is democratizing content creation, allowing anyone to generate hyper-realistic influencer videos for affiliate marketing. This step-by-step guide reveals how to craft digital personas, animate them with sophisticated movements via Omniplace, and upscale them for professional-grade quality. Leverage this accessible technology to build profitable video content across major platforms, transforming how individuals approach online monetization."
-duration: "71:49"
+duration: "9:11"
 isShort: false
 faqs:
   - question: "What is the main purpose of this video tutorial?"

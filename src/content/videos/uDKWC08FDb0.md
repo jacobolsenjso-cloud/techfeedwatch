@@ -7,7 +7,7 @@ tags:
   - "Coding"
 summary: "The buzz around 'secret codes' for Claude AI points to a new frontier in human-AI interaction. Beyond basic commands, these advanced prompting techniques unlock deeper functionalities, transforming Claude from a simple chatbot into an indispensable business and productivity partner. This article dives into what these 'codes' truly represent and how mastering them can revolutionize your daily tasks, yielding unparalleled precision and efficiency from your AI."
 duration: "0:30"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the purpose of the /review code?"
     answer: "The /review code helps ensure high code quality. It allows Claude to check its own work, so you are never embarrassed by your code."

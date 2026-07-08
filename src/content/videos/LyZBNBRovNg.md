@@ -6,7 +6,7 @@ tags:
   - "Productivity"
 summary: "The digital landscape is buzzing with 'free AI' tools, promising to revolutionize how we work and create without the hefty price tag. This article dives into the undeniable power of accessible artificial intelligence, highlighting its ability to dramatically boost productivity, democratize advanced tech, and unlock unprecedented efficiency for everyone from individuals to burgeoning businesses. Discover how leveraging these complimentary resources can truly 'change everything' in your daily workflow."
 duration: "0:58"
-isShort: false
+isShort: true
 faqs:
   - question: "What was the speaker's main acting challenge mentioned in the clip?"
     answer: "The speaker, an American, had to perform an entire film with a British accent for the first time. This was particularly challenging as they were the only American in an otherwise British cast."

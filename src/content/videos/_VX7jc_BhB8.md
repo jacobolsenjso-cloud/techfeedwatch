@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
   - "Automation"
 summary: "Businesses can now deploy powerful, production-grade WhatsApp AI assistants without writing a single line of code, thanks to tools like Claude Code. This transcript reveals a streamlined process for developing bots that handle customer queries, book appointments, and integrate seamlessly with existing business tools. By leveraging plain English prompts and iterative feedback, even non-technical users can build sophisticated AI solutions, significantly boosting customer service and operational efficiency."
-duration: "105:10"
+duration: "33:53"
 isShort: false
 faqs:
   - question: "What is the WhatsApp AI assistant demonstrated in the video designed for?"

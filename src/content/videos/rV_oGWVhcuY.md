@@ -7,7 +7,7 @@ tags:
   - "Business & Money"
 summary: "Apple frequently faces consumer backlash, with many users feeling trapped or unfairly treated by its ecosystem. Critics point to restrictive repair policies, high proprietary costs, and deliberate lock-in tactics as key reasons behind this perception of 'cruelty.' This article delves into the core arguments fueling these frustrations, examining the implications of Apple's strategic choices on user freedom and the broader tech landscape."
 duration: "0:33"
-isShort: false
+isShort: true
 faqs:
   - question: "Why do some users feel Apple's practices are 'cruel'?"
     answer: "Many users criticize Apple for its stringent repair policies, high cost of official repairs and parts, and deliberate ecosystem lock-in, which limits user freedom and choice. This often forces reliance on Apple's services and authorized channels."

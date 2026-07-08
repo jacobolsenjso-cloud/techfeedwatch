@@ -7,7 +7,7 @@ tags:
   - "AI Video"
 summary: "The AI landscape evolves at a breathtaking pace, making it challenging to filter noise from genuine breakthroughs. This article explores the critical role of specialized communities and curated platforms in discovering advanced AI knowledge and staying ahead of the curve. Learn how to strategically navigate the information deluge and leverage focused channels for unparalleled insights into neural networks and artificial intelligence."
 duration: "0:32"
-isShort: false
+isShort: true
 faqs:
   - question: "What kind of videos can be generated using this technique?"
     answer: "This technique allows for the creation of realistic drone flight videos. You simply draw a flight path on an image, and a neural network transforms it into a dynamic drone perspective."
