@@ -7,7 +7,7 @@ tags:
   - "Productivity"
 summary: "AMD has quietly disrupted the consumer CPU market by making certain EPYC server processors compatible with standard AM5 motherboards. These EPYC chips, typically reserved for data centers, offer a surprising alternative to high-end Ryzen CPUs at an identical $699 price point. While restricted in overclocking and TDP for stability, they boast server-grade features like ECC memory support and IPMI. This unexpected convergence raises critical questions for consumers and industry experts regarding future purchasing decisions and AMD's strategic direction."
 duration: "1:06"
-isShort: false
+isShort: true
 faqs:
   - question: "Can EPYC processors really be installed in consumer AM5 motherboards?"
     answer: "Yes, AMD has released specific EPYC server processors that are designed to be compatible with standard AM5 consumer motherboards, expanding their utility beyond traditional server environments."

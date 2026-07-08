@@ -7,7 +7,7 @@ tags:
   - "Coding"
 summary: "A recent viral video explored whether AI can fix 100 coding bugs in under a minute, showcasing the startling capabilities of modern AI coding tools. The results are indeed mind-blowing, prompting critical questions about the future of software engineering. This isn't just about speed; it's about whether AI will be a programmer's ultimate superpower or signal the end of human-centric coding as we know it."
 duration: "0:41"
-isShort: false
+isShort: true
 faqs:
   - question: "Can AI genuinely fix a large number of coding bugs in a very short time?"
     answer: "Yes, the video demonstrates a test where AI coding tools were tasked with fixing 100 bugs in just 60 seconds, yielding remarkable results that highlight AI's rapid diagnostic and correction capabilities."

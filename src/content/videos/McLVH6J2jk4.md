@@ -6,7 +6,7 @@ tags:
   - "AI & Tech"
 summary: "NVIDIA CEO Jensen Huang has declared that the traditional PC, as we know it, is becoming obsolete in the age of generative AI. This isn't just about faster processing; it's a fundamental shift from CPU-centric computing to an era dominated by specialized AI accelerators. Huang envisions a future where AI will not just augment, but redefine the core architecture and purpose of our personal computing devices. This transformation promises unprecedented capabilities, moving beyond simple application execution to intelligent, dynamic co-creation."
 duration: "0:46"
-isShort: false
+isShort: true
 faqs:
   - question: "Why does NVIDIA's CEO believe current PCs are becoming obsolete?"
     answer: "Jensen Huang argues that generative AI marks a paradigm shift, requiring specialized accelerated computing units rather than general-purpose CPUs. This fundamental change in workload demands a new computer architecture."

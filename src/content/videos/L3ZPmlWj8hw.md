@@ -7,7 +7,7 @@ tags:
   - "Automation"
 summary: "A viral short video is sparking conversations about the future of farming by showcasing a mysterious new agricultural device. This innovative machinery promises to streamline traditional farming practices, hinting at significant strides in efficiency and productivity for farmers globally. It underscores the growing integration of cutting-edge technology to address the complex demands of modern agriculture. The video serves as a compelling glimpse into how automation and smart tools are poised to redefine the agricultural landscape."
 duration: "0:34"
-isShort: false
+isShort: true
 faqs:
   - question: "What is the primary focus of the viral video?"
     answer: "The video highlights a new and seemingly impressive agricultural device designed to enhance efficiency in farming tasks. It positions this technology as a significant development for the sector."

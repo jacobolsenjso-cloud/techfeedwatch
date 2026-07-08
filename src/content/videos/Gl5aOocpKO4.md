@@ -7,7 +7,7 @@ tags:
   - "AI & Tech"
 summary: "A seemingly simple video of a parrot eating guava, tagged with #AI and #cartoon, quietly signals a massive shift in content creation. This micro-animation exemplifies the democratization of video production, making niche and localized content accessible to anyone. It highlights how AI is lowering the barrier to entry for animation, enabling personalized storytelling and infotainment, even in specific regional languages like Telugu. This trend is set to revolutionize how we consume and create visual narratives."
 duration: "0:11"
-isShort: false
+isShort: true
 faqs:
   - question: "What does a 'parrot eating guava' video reveal about AI?"
     answer: "It demonstrates the increasing ease and accessibility of AI-powered video generation, allowing for the creation of simple, niche animations without extensive traditional resources."
