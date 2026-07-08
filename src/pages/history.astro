@@ -53,7 +53,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         
         historyGrid.innerHTML = history.map(video => `
           <a href="/video/${video.slug}" class="watch-card">
-            <div class="watch-card-thumb" style="background-image: url('${video.img}');"></div>
+            <div class="watch-card-thumb" style="background-image: url('${video.img.replace('mqdefault', 'hqdefault')}');"></div>
             <div>
               <h3 class="tma-grid-title">${video.title}</h3>
             </div>

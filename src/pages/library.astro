@@ -77,7 +77,7 @@ const uniqueTags = [...new Set(allVideos.flatMap((v: any) => {
           <div class="video-grid">
             {categoryVideos.map((video: any) => (
               <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-                <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg');`}>
+                <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${video.frontmatter.youtubeId}/hqdefault.jpg');`}>
                   <div class="duration-badge">{video.frontmatter.duration || (video.frontmatter.isShort ? 'Short' : '0:00')}</div>
                 </div>
                 <div>
