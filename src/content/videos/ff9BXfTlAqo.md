@@ -2,7 +2,9 @@
 title: "Google Anti-gravity: The AI That Doesn't Just Code, It Builds Your Entire App"
 youtubeId: "ff9BXfTlAqo"
 date: "2026-06-15"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Google Anti-gravity isn't merely another AI coding assistant; it represents a profound paradigm shift towards 'agent-first development.' This environment empowers developers to transition from writing code to strategically directing autonomous AI agents capable of planning, executing, and verifying complex tasks across the entire development lifecycle. By integrating across the editor, terminal, and browser, it redefines efficiency, enabling parallel execution and end-to-end project construction with unprecedented autonomy."
 duration: "76:55"
 isShort: false

@@ -2,7 +2,8 @@
 title: "Beyond Nostalgia: What the LG G7 ThinQ's 2018 Flagship Status Reveals About Today's AI-Driven Mobile Landscape"
 youtubeId: "p1jqhfSPlk8"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "The LG G7 ThinQ, a 2018 flagship, offered a compelling blend of premium design, advanced audio, and a notched display, reflecting the pinnacle of mobile innovation at the time. Revisiting this device today provides a crucial lens through which to understand the dramatic evolution of smartphone technology, particularly with the explosive growth of AI. It highlights how hardware-centric battles have given way to software prowess and intelligent features, reshaping user expectations and the very definition of a 'flagship' in an era increasingly dominated by generative AI."
 duration: "0:51"
 isShort: false

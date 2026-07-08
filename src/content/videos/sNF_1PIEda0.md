@@ -2,7 +2,8 @@
 title: "AI's 'Artificial' Truth: Why Your Bots Will Never Replace Revelation"
 youtubeId: "sNF_1PIEda0"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "Artificial intelligence promises a new era of effortless information access, instantly generating essays and answering complex queries. However, a recent analysis by Tech Feed Watch delves into AI's inherent limitations, arguing that its artificial nature means it can only process existing data, offering 'information' but never true 'revelation.' This distinction is critical for users seeking deeper understanding beyond mere facts, highlighting a fundamental gap AI may never bridge. The article explores AI's potent utility alongside its profound spiritual and personal shortcomings."
 duration: "94:38"
 isShort: false

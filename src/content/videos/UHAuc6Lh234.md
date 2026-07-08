@@ -2,7 +2,9 @@
 title: "Google Unleashes NotebookLM: The Autonomous AI That Just Made Your Workflow Obsolete"
 youtubeId: "UHAuc6Lh234"
 date: "2026-06-18"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Google has quietly supercharged NotebookLM with its Gemini 3.5 model, transforming it from a mere note-taking tool into a proactive, autonomous AI agent. This update fundamentally reshapes knowledge work, allowing users to delegate complex tasks like deep research, data verification, and multi-format content creation to a single, unified platform. The AI's new 'Agentic Brain' and 'anti-gravity framework' enable it to independently plan and execute projects, threatening to disrupt numerous standalone software solutions. This evolution marks a significant paradigm shift, positioning NotebookLM as a potential game-changer for productivity and a formidable competitor in the AI landscape."
 duration: "48:06"
 isShort: false

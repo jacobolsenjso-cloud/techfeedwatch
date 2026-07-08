@@ -2,7 +2,8 @@
 title: "AI's Silent Sabotage: Why Global Powers Are Covertly Targeting Your Next Breakthrough"
 youtubeId: "prvegLYKE3I"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "AI innovation represents a new, critical frontier for state-level espionage, a threat frequently underestimated by even advanced labs. AI researcher Leopold Aschenbrenner reveals how sophisticated intelligence agencies and cyber operations, drawing parallels to historical events like Stuxnet, are now targeting cutting-edge AI. This analysis underscores why protecting advanced AI isn't merely an intellectual property concern, but a paramount national security challenge in an increasingly AI-driven world. This article explores the hidden battle for AI supremacy and the urgent need for robust defense."
 duration: "1:54"
 isShort: false

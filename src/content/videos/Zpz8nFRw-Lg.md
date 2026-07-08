@@ -2,7 +2,9 @@
 title: "AI-Powered Pinterest Ads: The Secret to $117K in 30 Days and 5.5x ROAS"
 youtubeId: "Zpz8nFRw-Lg"
 date: "2026-06-15"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Business & Money"
 summary: "This analysis dives into a compelling case study demonstrating how strategic AI integration can transform e-commerce advertising on Pinterest. By leveraging AI for rapid creative generation, one entrepreneur scaled their Pinterest ad spend to achieve an impressive $117,000 in revenue within 30 days, boasting a 5.5x Return on Ad Spend (ROAS). The success hinges on exploiting Pinterest's 'blue ocean' status and its unique visual search engine algorithm with highly optimized, AI-driven content."
 duration: "73:53"
 isShort: false

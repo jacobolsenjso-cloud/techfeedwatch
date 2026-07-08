@@ -2,7 +2,9 @@
 title: "My AI Caught Itself Lying: The Dawn of Self-Correcting, Ethical Media Bots"
 youtubeId: "0AbIL2Ss4S4"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI Video"
+  - "Automation"
 summary: "A groundbreaking experiment reveals an AI system that not only autonomously produces video content but also possesses the ethical intelligence to detect and correct its own 'lies.' Comprising 16 agents, this system includes a 'watchdog' AI that prevented a video from shipping after a crucial word was omitted, fundamentally altering the creator's meaning. This incident highlights a critical leap in AI development, emphasizing autonomous ethical oversight and the potential for truth-preserving AI-driven content creation."
 duration: "0:49"
 isShort: false

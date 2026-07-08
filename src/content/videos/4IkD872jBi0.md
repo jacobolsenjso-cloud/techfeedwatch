@@ -2,7 +2,9 @@
 title: "Master Rapid Web Design: Build Your Own Lorem Ipsum Generator on WordPress"
 youtubeId: "4IkD872jBi0"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "Coding"
+  - "Automation"
 summary: "This video breaks down how to quickly integrate a custom Lorem Ipsum generator into any WordPress site using basic plugins and HTML. While a seemingly simple tool, it underscores the importance of efficient placeholder content in modern web design workflows. As development cycles accelerate, optimizing every stage, from wireframing to content staging, becomes critical for delivering high-quality digital experiences. This foundational approach to content management is key even as AI transforms other aspects of web development."
 duration: "50:01"
 isShort: false

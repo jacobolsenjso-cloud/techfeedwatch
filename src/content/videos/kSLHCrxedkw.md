@@ -2,7 +2,9 @@
 title: "Your Google Drive Just Went Pro: Gemini Unlocks AI Superpowers for Your Files"
 youtubeId: "kSLHCrxedkw"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Productivity"
 summary: "Google Gemini is fundamentally redefining Google Drive, transforming it from a static storage platform into an intelligent, active helper. Users can now leverage AI to synthesize data across documents, engage in conversational searches, and gain rapid insights from complex projects with unprecedented ease. These advanced capabilities, including 'Ask Gemini' and AI Overviews, dramatically enhance productivity and information retrieval within the Google Workspace ecosystem. The rollout is primarily targeted at Google AI Pro, Ultra, and Gemini Alpha business customers, signaling a significant leap in enterprise-level AI integration."
 duration: "67:37"
 isShort: false

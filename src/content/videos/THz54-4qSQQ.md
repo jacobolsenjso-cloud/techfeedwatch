@@ -2,7 +2,9 @@
 title: "No Motor, No Battery: This Gear System Fan Redefines Sustainable DIY Tech"
 youtubeId: "THz54-4qSQQ"
 date: "2026-07-08"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Business & Money"
 summary: "A fascinating DIY short from LAL ELECTRIC demonstrates the creation of a functional fan powered entirely by a mechanical gear system, bypassing the need for motors or batteries. This ingenious project showcases the power of fundamental engineering principles and 'Jugaad' innovation in crafting sustainable solutions. It challenges our reliance on conventional power sources, proving that resourcefulness can lead to remarkable, eco-conscious technology. This hands-on experiment highlights the potential for accessible, low-tech alternatives in a hyper-connected world."
 duration: "0:32"
 isShort: false

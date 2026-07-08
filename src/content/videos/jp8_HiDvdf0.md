@@ -2,7 +2,9 @@
 title: "AI App Builder Showdown: Base44 Crowned Champion in Real-World Application Test"
 youtubeId: "jp8_HiDvdf0"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Coding"
 summary: "A recent experiment put six prominent AI app builders to the test, challenging them to create a calorie tracking application from a single prompt with zero edits. The rigorous evaluation focused not on aesthetics but on critical functionalities like user authentication, data storage, and live deployment. Surprisingly, Base44 emerged as the clear winner, demonstrating superior capability in delivering a fully functional, production-ready app fastest, highlighting a crucial shift in how we should assess AI development tools."
 duration: "1:11"
 isShort: false

@@ -2,7 +2,9 @@
 title: "Ditch the 'Vibe Coded' Slop: Build Agency-Quality Websites with Claude Code in Minutes"
 youtubeId: "hrPKtWVE_bo"
 date: "2026-07-02"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Coding"
 summary: "Generic, 'vibe coded' AI websites are a thing of the past. This deep dive reveals how to leverage Claude Code, paired with strategic design principles, to craft stunning, agency-level web experiences. Learn the two critical steps – an intelligent MD file and precise design inspiration – to transform your AI-generated sites from bland to brilliant, complete with real-time iteration and seamless deployment. Stop settling for subpar and start building websites that impress."
 duration: "49:44"
 isShort: false

@@ -2,7 +2,9 @@
 title: "Unleash 90% More AI Power: 10 Notebook LM Hacks You NEED to Know for Ultimate Workflow Domination"
 youtubeId: "gTGAkxx4ItU"
 date: "2026-06-22"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Productivity"
 summary: "The latest insights reveal that most users are severely underutilizing powerful AI tools like Google's Notebook LM, missing out on up to 90% of its potential. Far from being a mere summarizer, Notebook LM has evolved into a sophisticated AI operating system designed for comprehensive knowledge management. This analysis pinpoints ten critical, often overlooked strategies that elevate user interaction from basic data queries to advanced, automated workflows. By integrating these expert hacks, professionals can gain a significant competitive advantage, transforming raw information into actionable, unified intelligence."
 duration: "72:40"
 isShort: false

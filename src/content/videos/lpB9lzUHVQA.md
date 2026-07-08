@@ -2,7 +2,9 @@
 title: "Beyond Bureaucracy: How AI and Humanoid Robots Are Reshaping Public Services"
 youtubeId: "lpB9lzUHVQA"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "The concept of AI handling civil complaints signals a significant shift in public administration, promising unprecedented efficiency and accessibility. This series explores how artificial intelligence, including humanoid robots, is poised to revolutionize citizen services, moving past traditional bureaucratic hurdles. We delve into the implications for governments and citizens, examining both the immense potential and critical challenges of this emerging paradigm."
 duration: "0:11"
 isShort: false

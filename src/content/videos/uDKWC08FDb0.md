@@ -2,7 +2,9 @@
 title: "Unlocking Claude's 'Secret Codes': How Advanced Prompts Revolutionize Your AI Workflow"
 youtubeId: "uDKWC08FDb0"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Coding"
 summary: "The buzz around 'secret codes' for Claude AI points to a new frontier in human-AI interaction. Beyond basic commands, these advanced prompting techniques unlock deeper functionalities, transforming Claude from a simple chatbot into an indispensable business and productivity partner. This article dives into what these 'codes' truly represent and how mastering them can revolutionize your daily tasks, yielding unparalleled precision and efficiency from your AI."
 duration: "0:30"
 isShort: false

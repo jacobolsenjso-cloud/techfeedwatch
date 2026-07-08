@@ -2,7 +2,9 @@
 title: "AI's Cognitive Cost: Is Your Brain on Screensaver Mode?"
 youtubeId: "52FiVExXfnU"
 date: "2026-06-22"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Productivity"
 summary: "Recent research reveals a concerning trend: the widespread, uncritical use of general-purpose AI is measurably degrading human cognitive functions, from critical thinking to memory. Studies on both students and knowledge workers show a 'cognitive debt' where brains disengage, leading to diminished independent problem-solving. This analysis cuts through the hype, exploring the nuanced impacts of outsourcing our thinking to machines and proposing a shift towards purpose-built AI that fosters, rather than replaces, human intellect."
 duration: "71:05"
 isShort: false

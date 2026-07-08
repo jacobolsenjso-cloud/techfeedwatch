@@ -2,7 +2,9 @@
 title: "Beyond Chatbots: We Tested 4 Agentic AI Tools – And One Gets Smarter Every Day"
 youtubeId: "QcnrWiZokh4"
 date: "2026-07-02"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "The market is flooded with agentic AI tools promising to automate your work, but which ones truly deliver beyond simple Q&A? We put popular options like Open Claw, Claude Code, Paperclip, and Hermes through rigorous real-world tasks. Discover the hidden factor that separates effective, self-sufficient AI assistants from those that crumble under reliance, and learn which tools are poised to revolutionize your workflow from everyday tasks to complex development."
 duration: "62:46"
 isShort: false

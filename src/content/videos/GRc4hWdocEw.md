@@ -3,7 +3,9 @@ title: "AI Billionaires' 'Conscience' Awakens: The Real Reason Behind Their Sudd
 youtubeId: "GRc4hWdocEw"
 date: "2026-06-12"
 duration: "20:02"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Business & Money"
 summary: "The AI industry's leading figures are suddenly sounding the alarm on inequality and job displacement, proposing solutions like UBI and public wealth funds. This video dissects this dramatic rhetorical shift, revealing it less as a moral awakening and more as a direct response to a burgeoning grassroots backlash against AI's rapid, unchecked deployment. From local data center bans to widespread job losses and growing public distrust, the increasing political cost of ignoring societal impacts is forcing a re-evaluation of AI's future, but the proposed 'solutions' still avoid slowing down the technological acceleration."
 isShort: false
 faqs:

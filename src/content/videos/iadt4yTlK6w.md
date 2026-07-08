@@ -3,7 +3,9 @@ title: "Unlock Your AI's Full Potential: Build a Self-Improving AI Brain with th
 youtubeId: "iadt4yTlK6w"
 date: "2026-06-11"
 duration: "7:50"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Productivity"
 summary: "Discover how power users are building personal, self-improving AI brains to overcome the 'amnesia' of traditional chatbots and transform their workflows.
 Learn about the three-tool AI BrainStack—Notebook LM, Gemini, and Hermes—and how they combine memory, reasoning, and private execution for unparalleled AI customization and productivity."
 faqs:

@@ -2,7 +2,9 @@
 title: "Google's Secret AI Overhaul: 5 Gemini Updates Changing Everything You Thought You Knew About Work"
 youtubeId: "ldVPIMmTkpo"
 date: "2026-06-22"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Google has quietly rolled out five significant Gemini updates in a single week, fundamentally redefining the landscape of AI-powered workflows. These advancements span real-time global communication, autonomous research, interactive 3D world creation, and next-gen text generation, pushing the boundaries of what consumers and developers can achieve with artificial intelligence. This wave of innovation suggests a future where AI isn't just a tool, but a deeply integrated, proactive partner in daily tasks."
 duration: "58:50"
 isShort: false

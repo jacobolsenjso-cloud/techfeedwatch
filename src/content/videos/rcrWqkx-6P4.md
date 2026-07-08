@@ -2,7 +2,9 @@
 title: "Beyond the Feed: How to Uncover Cutting-Edge AI Insights in a Hyper-Connected World"
 youtubeId: "rcrWqkx-6P4"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "AI Video"
 summary: "The AI landscape evolves at a breathtaking pace, making it challenging to filter noise from genuine breakthroughs. This article explores the critical role of specialized communities and curated platforms in discovering advanced AI knowledge and staying ahead of the curve. Learn how to strategically navigate the information deluge and leverage focused channels for unparalleled insights into neural networks and artificial intelligence."
 duration: "0:32"
 isShort: false

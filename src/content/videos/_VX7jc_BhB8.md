@@ -2,7 +2,9 @@
 title: "Code-Free Revolution: How Claude Code Builds Production-Ready WhatsApp AI Bots for Any Business"
 youtubeId: "_VX7jc_BhB8"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Businesses can now deploy powerful, production-grade WhatsApp AI assistants without writing a single line of code, thanks to tools like Claude Code. This transcript reveals a streamlined process for developing bots that handle customer queries, book appointments, and integrate seamlessly with existing business tools. By leveraging plain English prompts and iterative feedback, even non-technical users can build sophisticated AI solutions, significantly boosting customer service and operational efficiency."
 duration: "105:10"
 isShort: false

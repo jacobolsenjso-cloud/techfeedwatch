@@ -2,7 +2,9 @@
 title: "Google's AI 'Anti-gravity' Reimagines Workflows with Notebook LM: Days to Seconds"
 youtubeId: "by0SxdYc0qE"
 date: "2026-06-12"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "AI Video"
 summary: "The unveiling of Google's Notebook LM in conjunction with a purported 'Anti-gravity' system marks a significant leap in AI-driven productivity. This powerful combination aims to transform multi-day tasks into instantaneous, autonomously executed workflows, leveraging context-aware research with agentic building capabilities. Our analysis dissects how this integrated approach redefines human-AI collaboration and raises the bar for intelligent automation in the enterprise."
 isShort: true
 ---

@@ -2,7 +2,9 @@
 title: "Unleash AI Autopilot: Automate Your SEO & Social Media for Explosive Growth"
 youtubeId: "DYkZ5CXmkxo"
 date: "2026-06-18"
-tag: "AI & Tech"
+tags:
+  - "SEO"
+  - "Automation"
 summary: "In an era where digital presence is paramount, traditional SEO and social media strategies often demand extensive manual effort. This cutting-edge workflow demonstrates how to fully automate these critical functions using advanced AI platforms like Claude or ChatGPT Codex, integrated with specialized tools like Arvo and Blotato. The result is a powerful, hands-free system designed to generate rapid organic traffic growth, amplify brand visibility, and significantly boost AI citations across leading LLMs. This innovation promises to redefine how businesses approach their online content strategy."
 duration: "65:50"
 isShort: false

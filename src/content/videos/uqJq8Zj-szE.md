@@ -2,7 +2,8 @@
 title: "Beyond the Cracked Screen: Why Mobile Repair Technicians Are the Unsung Heroes of Our Digital Age"
 youtubeId: "uqJq8Zj-szE"
 date: "2026-07-08"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "Mobile phones are our constant companions, but their fragility often means a visit to the repair shop. This video content highlights the critical, yet often overlooked, role of mobile repair technicians, particularly in regions like Bihar. These skilled individuals are the backbone of our digital connectivity, ensuring devices remain functional and accessible. Their work underscores the growing importance of local tech support in a hyper-connected world."
 duration: "0:42"
 isShort: false

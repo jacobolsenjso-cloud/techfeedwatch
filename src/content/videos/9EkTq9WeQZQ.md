@@ -2,7 +2,9 @@
 title: "AI Breakthrough: Build a Full Niche Website in Minutes with Perplexity & Claude!"
 youtubeId: "9EkTq9WeQZQ"
 date: "2026-06-22"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "SEO"
 summary: "This analysis unpacks a groundbreaking demonstration where a complete niche blog website is conceptualized, researched, and structured in mere minutes using a powerful AI-driven workflow. By combining Perplexity AI for in-depth market research and Claude AI for sophisticated web design and content architecture, the process showcases an unparalleled leap in automated web development. The workflow highlights AI's capacity to generate modern, SEO-friendly site foundations, offering significant time and resource savings for entrepreneurs and content creators."
 duration: "54:08"
 isShort: false

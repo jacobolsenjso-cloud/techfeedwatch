@@ -2,7 +2,9 @@
 title: "Gemini's Hidden Arsenal: 7 Next-Level Hacks to Supercharge Your AI Productivity"
 youtubeId: "sZwN_u9DMnU"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Google Gemini is rapidly evolving beyond a simple chatbot, embedding powerful AI capabilities directly into core workflows. This article unveils seven game-changing Gemini hacks—from live design iterations in AI Studio to automated content creation with AI avatars and intelligent data analysis in Sheets. Mastering these new features and settings is crucial for maximizing efficiency, streamlining operations, and unlocking unprecedented levels of productivity in the AI era."
 duration: "68:57"
 isShort: false

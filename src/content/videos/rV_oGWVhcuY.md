@@ -2,7 +2,9 @@
 title: "Apple's Iron Grip: Unpacking the 'Cruelty' Behind Its Ecosystem Design"
 youtubeId: "rV_oGWVhcuY"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Business & Money"
 summary: "Apple frequently faces consumer backlash, with many users feeling trapped or unfairly treated by its ecosystem. Critics point to restrictive repair policies, high proprietary costs, and deliberate lock-in tactics as key reasons behind this perception of 'cruelty.' This article delves into the core arguments fueling these frustrations, examining the implications of Apple's strategic choices on user freedom and the broader tech landscape."
 duration: "0:33"
 isShort: false

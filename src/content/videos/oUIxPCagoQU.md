@@ -2,7 +2,9 @@
 title: "Claude Co-work: Why This AI Isn't Just Chatting – It's *Doing* Your Business Tasks"
 youtubeId: "oUIxPCagoQU"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Claude Co-work emerges as a formidable AI tool, fundamentally distinct from ChatGPT by actively integrating with and executing tasks across a user's business applications. This analysis highlights its unique capabilities for workflow automation, personalized AI assistance, and strategic business integration. Rather than a simple conversational agent, Claude Co-work acts as a proactive assistant, capable of transforming daily operations for professionals like real estate agents."
 duration: "80:02"
 isShort: false

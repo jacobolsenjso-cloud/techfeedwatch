@@ -2,7 +2,9 @@
 title: "Your Phone, Your Master Switch: Unlocking the Era of Seamless Smart Control"
 youtubeId: "OTABvKF1-4Q"
 date: "2026-07-08"
-tag: "AI & Tech"
+tags:
+  - "Automation"
+  - "AI & Tech"
 summary: "The simple phrase 'Now your phone will tell you to 'ON' the Switch' hints at a profound shift in how we interact with our environment. This isn't just about remote control; it's about an integrated ecosystem where smartphones become the central nervous system of our homes and offices. Dive into how this seemingly minor convenience is part of a larger, AI-driven revolution in smart living, promising efficiency, comfort, and unprecedented control over our daily tech."
 duration: "0:45"
 isShort: false

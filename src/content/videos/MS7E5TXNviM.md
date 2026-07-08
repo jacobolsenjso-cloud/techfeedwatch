@@ -2,7 +2,9 @@
 title: "Claude Unlocked: Beyond the Chatbot — Your Guide to the Full AI Ecosystem!"
 youtubeId: "MS7E5TXNviM"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Claude has evolved from a simple conversational AI into a sophisticated, multi-faceted ecosystem designed to automate and streamline complex workflows. This analysis unpacks its four core products—Chat, Co-work, Code, and Design—each serving distinct functions from collaborative thinking to autonomous development. We delve into how features like Skills, Connectors, and Projects transform Claude from a reactive tool into a proactive, intelligent partner capable of delegating tasks and building solutions. The true power lies in its integrated capabilities for an unparalleled AI-driven workflow."
 duration: "72:45"
 isShort: false

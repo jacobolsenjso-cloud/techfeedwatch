@@ -2,7 +2,8 @@
 title: "Beyond 2026: An iPhone 17 Pro and AI's Prophecy Sealed for 250 Years"
 youtubeId: "Fr5TQvfdYtU"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "America250 has sealed a remarkable time capsule in Philadelphia, designed to be opened in 2276, offering a unique snapshot of contemporary technology and foresight. Among its eclectic contents are an **iPhone 17 Pro Max** and a future prediction crafted by **Claude AI**, posing fascinating questions about future technological perception. This initiative brilliantly blends historical preservation with cutting-edge innovation, serving as a powerful marker of human progress and our enduring fascination with the future."
 duration: "1:39"
 isShort: false

@@ -2,7 +2,9 @@
 title: "Beyond the Cloud: My Desk AI Built Software Autonomously Overnight"
 youtubeId: "kGvlAy7U8og"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "This report unveils a revolutionary shift in AI deployment: personal, autonomous AI agents operating locally. A user recounts how their 'Mojo' AI independently developed software, with 'Scout' performing quality control, all while they slept. This embodies the vision of 'bringing AI home,' moving past cloud-based subscriptions to a future where individuals own and control a dedicated 'household of agents.' The era of self-sufficient, always-on AI is upon us, redefining productivity and personal ownership."
 duration: "0:55"
 isShort: false

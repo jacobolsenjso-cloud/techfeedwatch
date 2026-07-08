@@ -3,7 +3,9 @@ title: "Beyond Sora: Free & Private AI Video Generation Hits Your Desktop"
 youtubeId: "G2Ec3h5CfA8"
 date: "2026-06-12"
 duration: "11:51"
-tag: "AI & Tech"
+tags:
+  - "AI Video"
+  - "AI & Tech"
 summary: "The video transcript reveals a pivotal shift in AI video generation: moving powerful, open-source models like LTX-2 and Wan from the cloud directly to personal computers. This democratizes access to advanced capabilities, sidestepping hefty subscription fees and bolstering user privacy. The emergence of simplified deployment tools like Pinokio is critical, abstracting complex technical setups and making cutting-edge AI accessible to a broader audience of creators."
 isShort: false
 faqs:

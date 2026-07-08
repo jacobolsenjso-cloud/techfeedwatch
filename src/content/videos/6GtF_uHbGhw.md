@@ -2,7 +2,9 @@
 title: "Beyond Chatbots: How Hermes Agent's 7 Levels Transform You Into an AI Power User"
 youtubeId: "6GtF_uHbGhw"
 date: "2026-06-18"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "The transcript unveils the 'seven levels' of Hermes Agent mastery, progressing users from basic installation to highly integrated, personalized AI automation. It highlights Hermes not as a mere chatbot but as a powerful agent capable of executing complex tasks, remembering user context, and optimizing workflows. By understanding each level, users can significantly reduce administrative burden, save substantial time, and gain a competitive edge in leveraging AI for productivity."
 duration: "90:53"
 isShort: false

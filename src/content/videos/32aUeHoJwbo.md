@@ -2,7 +2,9 @@
 title: "The First Spark: How a Simple Command Ignites a Robot's Journey"
 youtubeId: "32aUeHoJwbo"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Coding"
 summary: "In a momentous 'Power On, Hit Enter' event, a newly built garage assistant robot took its first steps, powered by a Raspberry Pi. This initial test highlights the incredible accessibility of modern robotics and the thrill of bringing a mechanical creation to life. It's a foundational moment demonstrating how readily available technology can be harnessed for practical, everyday automation projects, signaling a vibrant future for DIY robotics."
 duration: "0:25"
 isShort: false

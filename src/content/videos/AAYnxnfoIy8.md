@@ -2,7 +2,9 @@
 title: "Sky-High Commutes: FAA Clears Air Taxis for Takeoff, Reshaping Urban Mobility"
 youtubeId: "AAYnxnfoIy8"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Business & Money"
 summary: "The FAA has begun clearing the path for electric Vertical Take-Off and Landing (eVTOL) aircraft, commonly known as air taxis, marking a significant step towards urban air mobility becoming a reality. These next-generation vehicles promise to alleviate traffic congestion, drastically cut travel times within cities, and offer a zero-emission alternative for personal and commercial transport. With rooftop takeoffs and advanced technology, the future of urban commutes is literally looking up, bringing a sci-fi vision closer to our everyday lives."
 duration: "0:34"
 isShort: false

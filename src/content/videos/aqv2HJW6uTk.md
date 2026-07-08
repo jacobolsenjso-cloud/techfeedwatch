@@ -2,7 +2,9 @@
 title: "Viral by Design: How AI Animation is Redefining Short-Form Storytelling"
 youtubeId: "aqv2HJW6uTk"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "AI Video"
 summary: "The digital landscape is witnessing a fascinating shift as AI takes center stage in short-form animation. Content like 'Apple & Banana's Crazy Village Story' exemplifies how generative AI tools are democratizing visual storytelling, enabling quick creation of quirky, engaging narratives. This trend not only makes animated content accessible to a broader range of creators but also signals a new era for viral video and digital entertainment. It underscores AI's expanding role in creative industries, moving beyond text generation into dynamic visual experiences."
 duration: "0:16"
 isShort: false

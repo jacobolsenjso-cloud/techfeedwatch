@@ -2,7 +2,8 @@
 title: "Beyond Punctuation: Mastering Authentic Writing in the Age of AI Detectors"
 youtubeId: "hSNifAmbOFs"
 date: "2026-07-06"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
 summary: "The specter of AI detection is causing many to strip their unique voice from their work, believing it's the only way to avoid being flagged. This counterproductive approach degrades quality and fails to address the core issue. This article unpacks the flaws of current AI detectors and provides actionable strategies to cultivate an unmistakably human writing style, ensuring your content stands out, not just avoids detection."
 duration: "0:59"
 isShort: false

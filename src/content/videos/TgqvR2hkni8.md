@@ -2,7 +2,9 @@
 title: "Robotic Masons: The AI Machine Building Walls 10X Faster Than Humans"
 youtubeId: "TgqvR2hkni8"
 date: "2026-07-07"
-tag: "AI & Tech"
+tags:
+  - "Automation"
+  - "Productivity"
 summary: "A groundbreaking automated wall-building machine, powered by AI, is setting new benchmarks in construction speed and efficiency. This innovation promises to erect brick walls faster than ten human workers combined, signaling a significant shift in traditional manual labor roles within the construction industry. We explore the profound implications of such technology on productivity, job markets, and the future of skilled trades in an increasingly automated world."
 duration: "0:09"
 isShort: false

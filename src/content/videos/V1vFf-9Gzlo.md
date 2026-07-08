@@ -2,7 +2,9 @@
 title: "AI's Local Goldmine: How a Brand New Business Hit $10K/Month in 3 Months"
 youtubeId: "V1vFf-9Gzlo"
 date: "2026-06-29"
-tag: "AI & Tech"
+tags:
+  - "Business & Money"
+  - "AI & Tech"
 summary: "This deep dive reveals a fully repeatable AI-powered blueprint for generating significant local business revenue. By strategically combining a robust tech stack, targeted SEO, AI-driven CRM, and optimized local Google Ads, a new hospitality venture scaled to $10,000/month within three months. It highlights the untapped potential in local markets, proving that smart AI integration can transform nascent operations into profitable enterprises."
 duration: "80:01"
 isShort: false

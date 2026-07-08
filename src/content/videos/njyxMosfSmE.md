@@ -2,7 +2,9 @@
 title: "The One-Person Empire: How AI CEOs Are Building Self-Operating Businesses"
 youtubeId: "njyxMosfSmE"
 date: "2026-07-02"
-tag: "AI & Tech"
+tags:
+  - "AI & Tech"
+  - "Automation"
 summary: "Forget managing endless AI chats; a new paradigm is emerging. Tools like Paperclip and Hermes Agent are enabling 'one-person empires' – companies run entirely by autonomous AI agents. This innovation offers a structured, goal-driven approach to AI deployment, complete with organizational charts, task management, and crucial oversight, turning chaotic AI interactions into a powerful, always-on workforce."
 duration: "53:07"
 isShort: false
