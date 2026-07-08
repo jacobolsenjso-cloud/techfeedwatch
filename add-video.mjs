@@ -3,7 +3,7 @@ import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity"];
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
 function formatDuration(totalSeconds) {
   const h = Math.floor(totalSeconds / 3600);
@@ -21,7 +21,6 @@ if (!videoId) {
   process.exit(1);
 }
 
-const isShort = url.includes('/shorts/');
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 let internalLinksContext = "";
@@ -43,16 +42,18 @@ async function run() {
   
   try {
     let text = "";
-    let duration = isShort ? "Short" : "0:00";
+    let duration = "0:00";
+    let isShort = false;
 
     try {
       // PLAN A: Prøv at hente undertekster
       const transcript = await YoutubeTranscript.fetchTranscript(videoId);
       text = transcript.map(t => t.text).join(' ');
-      
+
       const lastT = transcript[transcript.length - 1];
       const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
-      duration = isShort ? "Short" : formatDuration(totalSeconds);
+      isShort = totalSeconds <= 180;
+      duration = formatDuration(totalSeconds);
     } catch (transcriptError) {
       console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
       
@@ -69,13 +70,14 @@ async function run() {
         const contentDetails = data.items[0].contentDetails;
         text = `Videotitel: ${snippet.title}\n\nVideobeskrivelse:\n${snippet.description}`;
         
-        // Udregn varighed, hvis det ikke er en Short
-        if (!isShort && contentDetails && contentDetails.duration) {
+        // Udregn varighed og afgør ud fra den om videoen er en Short
+        if (contentDetails && contentDetails.duration) {
           const match = contentDetails.duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
           const h = match[1] ? parseInt(match[1]) : 0;
           const m = match[2] ? parseInt(match[2]) : 0;
           const s = match[3] ? parseInt(match[3]) : 0;
           const totalSeconds = h * 3600 + m * 60 + s;
+          isShort = totalSeconds <= 180;
           duration = formatDuration(totalSeconds);
         }
       } else {
@@ -88,7 +90,7 @@ async function run() {
     
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
-    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     FAQ:
     Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
