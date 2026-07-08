@@ -3,6 +3,8 @@ import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
 
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity"];
+
 function formatDuration(totalSeconds) {
   const h = Math.floor(totalSeconds / 3600);
   const m = Math.floor((totalSeconds % 3600) / 60);
@@ -86,7 +88,7 @@ async function run() {
     
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
-    TAG: AI & Tech
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     FAQ:
     Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
@@ -110,13 +112,15 @@ async function run() {
     const rawText = result.response.text();
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
-    const tagMatch = rawText.match(/TAG:\s*(.*)/i);
+    const tagsMatch = rawText.match(/TAGS:\s*(.*)/i);
     const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:)/i);
     const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
     const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
 
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
-    const safeTag = (tagMatch ? tagMatch[1] : "AI").replace(/"/g, "'").replace(/\n/g, "").trim();
+    const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
+    const safeTags = rawTagsList.filter(t => ALLOWED_TAGS.includes(t));
+    const finalTags = safeTags.length > 0 ? safeTags : ["AI & Tech"];
     const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
 
     // Saniter FAQ-tekst: fjern anførselstegn, klip markdown-links til bare teksten, trim
@@ -154,7 +158,9 @@ async function run() {
       ? "faqs:\n" + faqs.map(f => `  - question: ${toYamlDoubleQuoted(f.question)}\n    answer: ${toYamlDoubleQuoted(f.answer)}`).join('\n') + "\n"
       : "";
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\ntag: "${safeTag}"\nsummary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    const tagsYaml = "tags:\n" + finalTags.map(t => `  - ${toYamlDoubleQuoted(t)}`).join('\n') + "\n";
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\n${tagsYaml}summary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${videoId}.md`, markdown);
