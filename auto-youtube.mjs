@@ -10,7 +10,7 @@ async function findNewestVideos() {
   }
 
   // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
-  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&q=technology|AI&type=video&videoEmbeddable=true&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
+  const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&videoCategoryId=28&q=technology|AI&type=video&videoEmbeddable=true&order=date&maxResults=5&relevanceLanguage=en&regionCode=US&key=${YOUTUBE_API_KEY}`;
 
   try {
     const response = await fetch(url);
