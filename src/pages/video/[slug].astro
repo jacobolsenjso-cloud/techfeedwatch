@@ -254,6 +254,25 @@ const videoSchema = {
 
       .shorts-circle-btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; color: #fff !important; }
       .shorts-label { color: #fff !important; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important; }
+
+      /* Sticky video: låser #stickyVideo fast under topbaren når man scroller forbi den */
+      body.cinema-mode #stickyVideo {
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 56.25vw !important;
+        padding-bottom: 0 !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        z-index: 900 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+      }
+      body.cinema-mode .video-primary {
+        padding-top: calc(56.25vw + 15px) !important;
+      }
+      body.cinema-mode .top-navbar { z-index: 1000 !important; }
+      body.cinema-mode .sidebar { z-index: 2000 !important; }
     }
   </style>
 
@@ -358,10 +377,11 @@ const videoSchema = {
           {summary}
         </div>
 
+        <div id="stickyVideoSentinel"></div>
         <div class="iframe-wrapper" id="stickyVideo">
-          <iframe 
-            id="ytIframe" 
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}`} 
+          <iframe
+            id="ytIframe"
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
             title={`${title} - Video Player`}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowfullscreen>
@@ -581,6 +601,27 @@ const videoSchema = {
             setTimeout(() => shareText.innerText = originalText, 2000);
           }
         });
+      }
+
+      const stickyVideo = document.getElementById('stickyVideo');
+      const stickyVideoSentinel = document.getElementById('stickyVideoSentinel');
+      if (stickyVideo && stickyVideoSentinel) {
+        const scrollContainer = document.querySelector('.content-area') || window;
+        const updateCinemaMode = () => {
+          if (window.innerWidth > 768 || document.body.classList.contains('shorts-mode')) {
+            document.body.classList.remove('cinema-mode');
+            return;
+          }
+          const sentinelTop = stickyVideoSentinel.getBoundingClientRect().top;
+          if (sentinelTop <= 60) {
+            document.body.classList.add('cinema-mode');
+          } else {
+            document.body.classList.remove('cinema-mode');
+          }
+        };
+        scrollContainer.addEventListener('scroll', updateCinemaMode);
+        window.addEventListener('resize', updateCinemaMode);
+        updateCinemaMode();
       }
 
       const shortsWrapper = document.getElementById('shortsWrapper');
