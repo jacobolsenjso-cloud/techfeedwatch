@@ -104,6 +104,7 @@ const videoSchema = {
     .tag-badge:hover { background-color: #cbd5e1; color: #0f172a; transform: translateY(-1px); }
     .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: #000; }
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
     .action-bar::-webkit-scrollbar { display: none; }
     .action-pill, .pill-group { display: inline-flex; align-items: center; background: var(--hover-bg); border-radius: 20px; height: 36px; border: 1px solid var(--border-color); color: var(--text-color); font-size: 0.9rem; font-weight: 600; }
@@ -255,7 +256,7 @@ const videoSchema = {
       .shorts-circle-btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; color: #fff !important; }
       .shorts-label { color: #fff !important; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important; }
 
-      /* Sticky video: låser #stickyVideo fast under topbaren når man scroller forbi den */
+      /* Sticky video: låser #stickyVideo fast under topbaren når afspilning starter */
       body.cinema-mode #stickyVideo {
         position: fixed !important;
         top: 60px !important;
@@ -273,6 +274,7 @@ const videoSchema = {
       }
       body.cinema-mode .top-navbar { z-index: 1000 !important; }
       body.cinema-mode .sidebar { z-index: 2000 !important; }
+      body.cinema-mode #stickyVideo .cinema-close-btn { display: flex; }
     }
   </style>
 
@@ -377,15 +379,15 @@ const videoSchema = {
           {summary}
         </div>
 
-        <div id="stickyVideoSentinel"></div>
         <div class="iframe-wrapper" id="stickyVideo">
           <iframe
             id="ytIframe"
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
             title={`${title} - Video Player`}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowfullscreen>
           </iframe>
+          <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
         </div>
 
         <div class="action-bar">
@@ -603,25 +605,47 @@ const videoSchema = {
         });
       }
 
+      // Sticky video: kun normale videoer på mobil, aktiveres når afspilning starter (ikke ved scroll)
       const stickyVideo = document.getElementById('stickyVideo');
-      const stickyVideoSentinel = document.getElementById('stickyVideoSentinel');
-      if (stickyVideo && stickyVideoSentinel) {
-        const scrollContainer = document.querySelector('.content-area') || window;
-        const updateCinemaMode = () => {
-          if (window.innerWidth > 768 || document.body.classList.contains('shorts-mode')) {
-            document.body.classList.remove('cinema-mode');
-            return;
-          }
-          const sentinelTop = stickyVideoSentinel.getBoundingClientRect().top;
-          if (sentinelTop <= 60) {
+      const cinemaCloseBtn = document.getElementById('cinemaCloseBtn');
+      if (stickyVideo) {
+        let ytPlayer = null;
+
+        const onPlayerStateChange = (event) => {
+          if (event.data === YT.PlayerState.PLAYING && window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
             document.body.classList.add('cinema-mode');
-          } else {
-            document.body.classList.remove('cinema-mode');
           }
         };
-        scrollContainer.addEventListener('scroll', updateCinemaMode);
-        window.addEventListener('resize', updateCinemaMode);
-        updateCinemaMode();
+
+        const createPlayer = () => {
+          ytPlayer = new YT.Player('ytIframe', {
+            events: { onStateChange: onPlayerStateChange }
+          });
+        };
+
+        if (window.YT && window.YT.Player) {
+          createPlayer();
+        } else {
+          const existingCallback = window.onYouTubeIframeAPIReady;
+          window.onYouTubeIframeAPIReady = () => {
+            if (existingCallback) existingCallback();
+            createPlayer();
+          };
+          if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+            const apiScript = document.createElement('script');
+            apiScript.src = 'https://www.youtube.com/iframe_api';
+            document.head.appendChild(apiScript);
+          }
+        }
+
+        if (cinemaCloseBtn) {
+          cinemaCloseBtn.addEventListener('click', () => {
+            document.body.classList.remove('cinema-mode');
+            if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+              ytPlayer.pauseVideo();
+            }
+          });
+        }
       }
 
       const shortsWrapper = document.getElementById('shortsWrapper');
