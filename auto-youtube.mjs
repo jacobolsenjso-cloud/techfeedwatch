@@ -1,6 +1,6 @@
+import 'dotenv/config';
 import { execSync } from 'child_process';
 import fs from 'fs';
-import 'dotenv/config';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
