@@ -96,8 +96,11 @@ async function run() {
 
     const langResult = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(langCheckPrompt);
     const langAnswer = langResult.response.text().trim();
+    console.log("Sprogtjek-svar:", langAnswer);
 
-    if (!/^YES/i.test(langAnswer)) {
+    const cleanedLangAnswer = langAnswer.replace(/[*.]/g, '').trim();
+
+    if (cleanedLangAnswer.toUpperCase() !== "YES") {
       console.log(`Sprunget over: video er ikke på engelsk (${videoId})`);
       return;
     }
