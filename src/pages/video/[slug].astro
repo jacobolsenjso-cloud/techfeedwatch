@@ -105,6 +105,7 @@ const videoSchema = {
     .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background-color: #000; }
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
+    #cinemaBrowser { display: none; }
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
     .action-bar::-webkit-scrollbar { display: none; }
     .action-pill, .pill-group { display: inline-flex; align-items: center; background: var(--hover-bg); border-radius: 20px; height: 36px; border: 1px solid var(--border-color); color: var(--text-color); font-size: 0.9rem; font-weight: 600; }
@@ -270,11 +271,43 @@ const videoSchema = {
         box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
       }
       body.cinema-mode .video-primary {
-        padding-top: calc(56.25vw + 15px) !important;
+        padding-top: calc(56.25vw + 15px + 55px) !important;
       }
       body.cinema-mode .top-navbar { z-index: 1000 !important; }
       body.cinema-mode .sidebar { z-index: 2000 !important; }
       body.cinema-mode #stickyVideo .cinema-close-btn { display: flex; }
+
+      /* Cinema-browser: video-liste under den sticky video, kun mobil + cinema-mode */
+      body.cinema-mode #cinemaBrowser { display: block; }
+      body.cinema-mode .cinema-reading-block { display: none; }
+      body.cinema-mode.cinema-reading #cinemaList { display: none; }
+      body.cinema-mode.cinema-reading .cinema-reading-block { display: block; }
+
+      /* Chip-baren låses fast lige under videoen, uanset scroll */
+      body.cinema-mode #cinemaChips {
+        position: fixed !important;
+        top: calc(60px + 56.25vw) !important;
+        left: 0 !important;
+        width: 100vw !important;
+        z-index: 899 !important;
+        background: var(--bg-color) !important;
+        margin: 0 !important;
+        padding: 12px 15px !important;
+        box-sizing: border-box !important;
+      }
+
+      .cinema-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; white-space: nowrap; padding: 12px 0; }
+      .cinema-chips::-webkit-scrollbar { display: none; }
+      .cinema-chip { background: var(--hover-bg); color: var(--text-color); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+      .cinema-chip.active { background: #111; color: #fff; border-color: #111; }
+      body.dark-mode .cinema-chip.active { background: #f1f5f9; color: #111; }
+
+      .cinema-list { display: flex; flex-direction: column; gap: 12px; padding-bottom: 20px; }
+      .cinema-card { display: flex; gap: 12px; text-decoration: none; color: inherit; align-items: flex-start; }
+      .cinema-card-thumb { width: 160px; flex-shrink: 0; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; }
+      .cinema-card-duration { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.8); color: #fff; padding: 2px 5px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
+      .cinema-card-title { font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+      .cinema-ad { margin: 4px 0; }
     }
   </style>
 
@@ -366,17 +399,19 @@ const videoSchema = {
           </div>
         )}
         
-        <div class="breadcrumbs-bar">
-          <a href="/">Frontpage</a> <span>/</span> 
-          <a href="/library">Video Archive</a>
-        </div>
-        
-        <div class="title-row">
-          <h1>{title}</h1>
-        </div>
+        <div class="cinema-reading-block">
+          <div class="breadcrumbs-bar">
+            <a href="/">Frontpage</a> <span>/</span>
+            <a href="/library">Video Archive</a>
+          </div>
 
-        <div class="summary-box">
-          {summary}
+          <div class="title-row">
+            <h1>{title}</h1>
+          </div>
+
+          <div class="summary-box">
+            {summary}
+          </div>
         </div>
 
         <div class="iframe-wrapper" id="stickyVideo">
@@ -390,6 +425,20 @@ const videoSchema = {
           <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
         </div>
 
+        <div id="cinemaBrowser" data-current-slug={slug} data-current-tags={tagsArray.join(',')}>
+          <div id="cinemaChips" class="cinema-chips">
+            <button type="button" class="cinema-chip active" data-filter="all">All</button>
+            <button type="button" class="cinema-chip" data-filter="related">Related</button>
+            <button type="button" class="cinema-chip" data-filter="foryou">For You</button>
+            <button type="button" class="cinema-chip" data-filter="article">Read Article</button>
+            {allUniqueTags.map((t: string) => (
+              <button type="button" class="cinema-chip" data-filter="tag" data-tag={t}>{t}</button>
+            ))}
+          </div>
+          <div id="cinemaList" class="cinema-list"></div>
+        </div>
+
+        <div class="cinema-reading-block">
         <div class="action-bar">
           <div class="pill-group">
             <button id="likeBtn" data-likes={baseLikes} aria-label="Like Video" title="Like">
@@ -464,6 +513,7 @@ const videoSchema = {
               <span class="nav-title">{nextVideo ? nextVideo.frontmatter.title : 'No newer videos'}</span>
             </a>
           </div>
+        </div>
         </div>
       </div>
 
@@ -608,12 +658,138 @@ const videoSchema = {
       // Sticky video: kun normale videoer på mobil, aktiveres når afspilning starter (ikke ved scroll)
       const stickyVideo = document.getElementById('stickyVideo');
       const cinemaCloseBtn = document.getElementById('cinemaCloseBtn');
+      const cinemaBrowser = document.getElementById('cinemaBrowser');
+      const cinemaChips = document.getElementById('cinemaChips');
+      const cinemaList = document.getElementById('cinemaList');
+
       if (stickyVideo) {
         let ytPlayer = null;
+
+        // Cinema-browser: video-liste under den sticky video (kun mobil, kun i cinema-mode)
+        const currentSlug = cinemaBrowser ? cinemaBrowser.dataset.currentSlug : '';
+        const currentTags = cinemaBrowser ? cinemaBrowser.dataset.currentTags.split(',').filter(Boolean) : [];
+        let allVideos = [];
+        let videosReady = false;
+        let cinemaBrowserInitialized = false;
+
+        const buildAdSlot = () => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'adsense-container cinema-ad';
+          const label = document.createElement('span');
+          label.className = 'ad-label';
+          label.textContent = 'Annonce';
+          const ins = document.createElement('ins');
+          ins.className = 'adsbygoogle';
+          ins.style.display = 'block';
+          ins.setAttribute('data-ad-client', 'ca-pub-9695260339642032');
+          ins.setAttribute('data-ad-slot', 'XXXXX');
+          ins.setAttribute('data-ad-format', 'auto');
+          ins.setAttribute('data-full-width-responsive', 'true');
+          wrapper.appendChild(label);
+          wrapper.appendChild(ins);
+          setTimeout(() => {
+            try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {}
+          }, 0);
+          return wrapper;
+        };
+
+        const renderCards = (list) => {
+          if (!cinemaList) return;
+          cinemaList.innerHTML = '';
+          list.forEach((v, i) => {
+            const card = document.createElement('a');
+            card.href = `/video/${v.slug}`;
+            card.className = 'cinema-card';
+
+            const thumb = document.createElement('div');
+            thumb.className = 'cinema-card-thumb';
+            thumb.style.backgroundImage = `url('https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg')`;
+
+            const duration = document.createElement('span');
+            duration.className = 'cinema-card-duration';
+            duration.textContent = v.duration || (v.isShort ? 'Short' : '0:00');
+            thumb.appendChild(duration);
+
+            const titleEl = document.createElement('span');
+            titleEl.className = 'cinema-card-title';
+            titleEl.textContent = v.title;
+
+            card.appendChild(thumb);
+            card.appendChild(titleEl);
+            cinemaList.appendChild(card);
+
+            if ((i + 1) % 4 === 0) {
+              cinemaList.appendChild(buildAdSlot());
+            }
+          });
+        };
+
+        const getForYouList = () => {
+          const history = JSON.parse(localStorage.getItem('videoHistory') || '[]');
+          if (history.length === 0) {
+            return allVideos.filter(v => v.tags.some(t => currentTags.includes(t)));
+          }
+          const historySlugs = new Set(history.map(h => h.slug));
+          const tagCounts = {};
+          allVideos.forEach(v => {
+            if (historySlugs.has(v.slug)) {
+              v.tags.forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+            }
+          });
+          const topTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]);
+          if (topTags.length === 0) {
+            return allVideos.filter(v => v.tags.some(t => currentTags.includes(t)));
+          }
+          return allVideos.filter(v => v.tags.some(t => topTags.includes(t)));
+        };
+
+        const renderList = (filter, tag) => {
+          let list = [];
+          if (filter === 'all') {
+            list = allVideos.slice();
+          } else if (filter === 'related') {
+            list = allVideos.filter(v => v.tags.some(t => currentTags.includes(t)));
+          } else if (filter === 'foryou') {
+            list = getForYouList();
+          } else if (filter === 'tag') {
+            list = allVideos.filter(v => v.tags.includes(tag));
+          }
+          renderCards(list.filter(v => v.slug !== currentSlug));
+        };
+
+        const tryInitCinemaBrowser = () => {
+          if (cinemaBrowserInitialized || !videosReady || !document.body.classList.contains('cinema-mode')) return;
+          cinemaBrowserInitialized = true;
+          renderList('all', null);
+        };
+
+        if (cinemaBrowser) {
+          fetch('/videos.json')
+            .then(res => res.json())
+            .then(data => { allVideos = data; videosReady = true; tryInitCinemaBrowser(); })
+            .catch(() => { allVideos = []; videosReady = true; tryInitCinemaBrowser(); });
+
+          if (cinemaChips) {
+            cinemaChips.addEventListener('click', (e) => {
+              const btn = e.target.closest('.cinema-chip');
+              if (!btn) return;
+              cinemaChips.querySelectorAll('.cinema-chip').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+
+              if (btn.dataset.filter === 'article') {
+                document.body.classList.add('cinema-reading');
+                return;
+              }
+              document.body.classList.remove('cinema-reading');
+              renderList(btn.dataset.filter, btn.dataset.tag);
+            });
+          }
+        }
 
         const onPlayerStateChange = (event) => {
           if (event.data === YT.PlayerState.PLAYING && window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
             document.body.classList.add('cinema-mode');
+            tryInitCinemaBrowser();
           }
         };
 
@@ -640,7 +816,7 @@ const videoSchema = {
 
         if (cinemaCloseBtn) {
           cinemaCloseBtn.addEventListener('click', () => {
-            document.body.classList.remove('cinema-mode');
+            document.body.classList.remove('cinema-mode', 'cinema-reading');
             if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
               ytPlayer.pauseVideo();
             }
