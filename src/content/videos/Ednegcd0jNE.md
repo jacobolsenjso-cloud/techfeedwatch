@@ -10,15 +10,6 @@ summary: "The long-standing misconception of conflict between SEOs and web devel
 duration: "21:56"
 isShort: false
 faqs:
-  - question: "Why do SEOs and developers often view each other as adversaries?"
-    answer: "Historically, developers saw SEO requirements as additional constraints hindering their work, while SEOs felt developers didn't prioritize discoverability. This often stemmed from a lack of mutual understanding of their respective goals."
-  - question: "How can SEOs provide concrete value to web developers?"
-    answer: "SEOs can act as valuable partners by clearly articulating user experience, performance, and accessibility requirements. They bring a crucial user-centric and search engine perspective that ensures development efforts align with discoverability and engagement goals."
-  - question: "What are the primary benefits of strong collaboration between SEOs and developers?"
-    answer: "Collaboration results in faster, more accessible, and user-friendly websites that perform exceptionally well in search engines. It leads to a holistic approach where technical excellence meets market visibility, benefiting both the site owners and end-users."
-  - question: "Why is it crucial for SEO professionals to stay updated on web development trends?"
-    answer: "Staying current with web development trends allows SEOs to better understand technical possibilities and limitations. This knowledge enables more effective communication with developers, informs strategy, and ensures SEO recommendations are practical and future-proof."
-faqs:
   - question: "Why do developers often see SEO as a 'constraint'?"
     answer: "Developers perceive SEO as another set of rules to balance alongside browser compatibility, performance, design, and framework choices, often feeling like an external imposition on their technical and creative work. Historically, some SEO advice also seemed to conflict with modern web development practices."
   - question: "How do Core Web Vitals foster collaboration between developers and SEOs?"

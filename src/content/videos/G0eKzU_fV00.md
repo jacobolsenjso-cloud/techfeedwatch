@@ -9,15 +9,6 @@ summary: "Marques Brownlee (MKBHD) takes us on a journey into the world of truly
 duration: "20:29"
 isShort: false
 faqs:
-  - question: "What distinguishes 'real' AR glasses from conventional smart glasses or VR headsets?"
-    answer: "'Real' AR glasses seamlessly overlay digital information directly onto the user's view of the actual physical world, rather than displaying information on a small screen or fully immersing the user in a virtual environment. They aim for natural, contextual interaction with digital elements in real space."
-  - question: "What are the primary types of experiences or applications demonstrated by these AR glasses?"
-    answer: "The video generally explores interactive digital content, such as gaming, displaying contextual information, and manipulating virtual objects within a real-world setting. This suggests applications spanning entertainment, information access, and potentially productivity."
-  - question: "Are these augmented reality glasses ready for widespread consumer adoption?"
-    answer: "While the video highlights the impressive capabilities and significant progress in AR technology, it implies that current iterations are likely still in an experimental or early adopter phase. Factors like form factor, battery life, and overall user experience still need refinement for mass market appeal."
-  - question: "What are some of the key challenges AR technology still needs to overcome?"
-    answer: "Challenges include achieving a wider field of view without bulk, improving battery longevity, making the devices more comfortable and aesthetically pleasing, and developing robust ecosystems of compelling applications. Cost also remains a significant barrier for many."
-faqs:
   - question: "What is the 'Goldilocks Zone' in the context of AR glasses?"
     answer: "It refers to the ideal balance between the immersive but bulky nature of VR headsets and the discreet but limited functionality of current smartglasses, aiming for a device that is both powerful and seamlessly wearable."
   - question: "How do Meta's Orion glasses approach user input differently?"

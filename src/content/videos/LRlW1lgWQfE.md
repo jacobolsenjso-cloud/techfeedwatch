@@ -10,15 +10,6 @@ summary: "In today's digital landscape, effective Search Engine Optimization (SE
 duration: "59:53"
 isShort: false
 faqs:
-  - question: "What is the primary goal of Search Engine Optimization (SEO)?"
-    answer: "The primary goal of SEO is to improve a website's visibility in search engine results, thereby increasing the quality and quantity of organic (unpaid) traffic to the site. It ensures your content reaches the right audience at the right time."
-  - question: "Which Google platforms are essential for basic SEO setup and data collection?"
-    answer: "Essential Google platforms include Google Analytics for tracking website traffic, Google Search Console for monitoring search performance and indexing, and Google Tag Manager for managing tracking codes efficiently. These tools provide critical insights into user behavior and search engine interaction."
-  - question: "How do these Google tools specifically benefit web developers?"
-    answer: "For web developers, these platforms are crucial for enabling proper website indexing on Google and gathering invaluable traffic data. They help identify technical SEO issues, monitor site health, and validate the effectiveness of development choices impacting search visibility."
-  - question: "Who is Mathew Perrow and what insights does he provide?"
-    answer: "Mathew Perrow is a Search Engine Optimization Specialist who graduated from The Tech Academy. He shares his expertise on setting up and utilizing Google Analytics, Google Search Console, and Google Tag Manager, demonstrating a practical implementation on a WordPress instance."
-faqs:
   - question: "Why is Google Search Console important even with the rise of AI in search?"
     answer: "Search Console remains crucial because it provides direct feedback on how Google's crawling bots perceive your site's technical health and content. This foundational understanding is essential for any search engine, including AI-driven ones, to properly index and present your content."
   - question: "How do Google Tag Manager and Google Analytics differ, and why use both?"

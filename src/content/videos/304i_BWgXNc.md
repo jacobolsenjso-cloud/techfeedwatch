@@ -10,15 +10,6 @@ summary: "Diving into AI engineering can feel daunting, but understanding the co
 duration: "10:08"
 isShort: false
 faqs:
-  - question: "What is the primary difference between AI, ML, and DL?"
-    answer: "AI is the broad concept of machines performing tasks that typically require human intelligence. ML is a subset of AI enabling systems to learn from data without explicit programming, while DL is a specialized subset of ML using multi-layered neural networks for complex pattern recognition."
-  - question: "Why are Neural Networks so important in AI engineering?"
-    answer: "Neural Networks are critical because they form the backbone of Deep Learning, allowing AI models to process vast amounts of data, recognize intricate patterns, and make sophisticated predictions or decisions, much like the human brain."
-  - question: "What programming languages are commonly used in AI engineering?"
-    answer: "Python is extremely popular due to its rich ecosystem of AI libraries. Java is also significant, especially for enterprise-level applications and agentic AI systems, alongside other languages like R and C++."
-  - question: "How can I start learning AI basics for engineering?"
-    answer: "Begin by understanding the theoretical foundations of AI, ML, and DL. Then, gain practical experience through programming languages like Python or Java, exploring relevant frameworks, and engaging with structured courses or bootcamps."
-faqs:
   - question: "What is the primary difference between Machine Learning and Deep Learning?"
     answer: "Machine Learning is a broad field allowing machines to learn from data without explicit programming. Deep Learning is a specialized subset of Machine Learning that uses multi-layered neural networks to learn intricate patterns from vast, often unstructured, datasets."
   - question: "How do 'weights' contribute to a neural network's learning process?"

@@ -10,15 +10,6 @@ summary: "Meta has significantly upped its generative AI game by releasing Muse 
 duration: "20:45"
 isShort: false
 faqs:
-  - question: "What are Meta Muse Image and Muse Video?"
-    answer: "Meta Muse Image is a free, 'thinking' AI image generation model available at meta.ai, capable of prompt adherence and image editing. Muse Video is Meta's upcoming AI video generation model, with initial samples already released."
-  - question: "How does Meta Muse Image perform against other leading AI image models?"
-    answer: "While it may not surpass the absolute top-tier models like GPT Image 2 or Nano Banana 2 in every benchmark, Muse Image's 'thinking mode' and overall capabilities are impressive, especially considering it's free. It performs well in prompt adherence and image editing tests."
-  - question: "What is the significance of the free AI video tool mentioned in the video?"
-    answer: "This tool converts any video into OpenPose skeletons and depth maps, providing precise motion control for AI video generation. It enables features like multi-character tracking and custom in/out points for platforms like Seedance and Runway."
-  - question: "How does the new AI video tool benefit creators?"
-    answer: "Creators gain unparalleled control over character motion and scene depth in their AI-generated videos. This allows for complex video-to-video conversions and opens new avenues for creative expression without needing advanced technical skills."
-faqs:
   - question: "What makes Meta's Muse Image different from previous AI image generators?"
     answer: "Muse Image is a 'thinking' or autoregressive model, allowing it to iterate on prompts for better adherence and coherence. Crucially, it's also offered for free, distinguishing it from many commercial competitors."
   - question: "What are the key focus areas for the upcoming Muse Video model?"

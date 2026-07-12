@@ -9,15 +9,6 @@ summary: "Augmented Reality (AR) is rapidly moving from niche tech to a transfor
 duration: "7:17"
 isShort: false
 faqs:
-  - question: "What is Augmented Reality (AR)?"
-    answer: "Augmented Reality overlays digital information and imagery onto the real world, enhancing our perception of reality through devices like smartphones, tablets, or smart glasses. Unlike Virtual Reality, AR doesn't create a completely simulated environment but rather augments the existing one."
-  - question: "How does AR differ from Virtual Reality (VR)?"
-    answer: "While both are immersive technologies, AR superimposes virtual elements onto a real-world view, maintaining user presence in their physical environment. VR, conversely, completely immerses users in a simulated digital world, shutting out the physical surroundings."
-  - question: "What are some key industries poised for disruption by AR?"
-    answer: "Industries like healthcare, education, retail, manufacturing, and automotive are set to experience significant transformation through AR. Its applications range from surgical training and interactive learning to virtual try-ons and streamlined assembly instructions.  Q"
-  - question: "What is Mojo Vision's role in the future of AR?"
-    answer: "Mojo Vision is a notable innovator in the AR space, particularly recognized for its work on 'invisible computing' and smart contact lenses. Their advancements aim to integrate AR seamlessly and discreetly into daily life without cumbersome hardware."
-faqs:
   - question: "How does AR differ from Virtual Reality (VR)?"
     answer: "AR overlays digital content onto the real world, enhancing what you see around you. VR, conversely, creates an entirely immersive digital environment, fully replacing your view of the real world."
   - question: "What role does AI play in advanced AR applications?"

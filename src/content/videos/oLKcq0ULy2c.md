@@ -10,15 +10,6 @@ summary: "AR Engineering is at the forefront of transforming traditional trainin
 duration: "1:04:19"
 isShort: false
 faqs:
-  - question: "What is AR Engineering's primary focus?"
-    answer: "AR Engineering specializes in transforming traditional training by implementing new interactive learning methods using Augmented Reality (AR) and Mixed Reality (MR) technologies. They aim to create more engaging and effective educational experiences across various industries."
-  - question: "What industries primarily benefit from AR Engineering's solutions?"
-    answer: "Their immersive technology is being applied across diverse sectors, including high-stakes environments like Formula 1 (specifically McLaren), aviation, complex engineering systems, and the medical field. The goal is to enhance skill development and operational efficiency."
-  - question: "What is the key difference between Augmented Reality (AR) and Mixed Reality (MR) as utilized by AR Engineering?"
-    answer: "Augmented Reality overlays digital information onto the real world, whereas Mixed Reality goes further by allowing real-time interaction with virtual objects that are aware of and anchored to the physical environment. MR provides a deeper level of immersion and interactivity crucial for complex engineering and training simulations."
-  - question: "How did AR Engineering approach securing its initial clients and projects as a startup?"
-    answer: "The startup strategically focused on demonstrating tangible value and even offered their technology for free initially to land their first clients and projects. This approach allowed them to prove the effectiveness and demand for their immersive training solutions."
-faqs:
   - question: "What core problem does AR Engineering's immersive tech solve in industrial training?"
     answer: "It addresses the limitations of traditional 2D schematics and physical models by providing interactive, full-scale 3D visualizations of complex engineering systems, improving spatial understanding and knowledge retention."
   - question: "Why has the B2B sector adopted AR training more readily than academic institutions?"

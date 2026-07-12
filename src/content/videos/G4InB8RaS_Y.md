@@ -10,15 +10,6 @@ summary: "The digital age has ushered in a new era of wealth creation, making pa
 duration: "13:10"
 isShort: false
 faqs:
-  - question: "What types of fintech apps are best for beginners seeking passive income?"
-    answer: "For beginners, apps in categories like cashback & rewards, high-yield savings accounts, and micro-investing are generally lower risk and require less capital to start. These offer a gentle introduction to earning passively without significant market exposure."
-  - question: "What are the primary risks associated with earning passive income through fintech apps?"
-    answer: "Risks vary by app category, ranging from market volatility in cryptocurrency and investment apps to default risk in peer-to-peer lending, and the potential for platform-specific security breaches. It's crucial to research and understand the risks of each app before committing funds."
-  - question: "Can fintech apps be used to invest in cryptocurrency for passive income?"
-    answer: "Yes, cryptocurrency apps allow users to invest in digital assets, with options like staking, lending, and yield farming potentially generating passive income. However, this category carries significant volatility and regulatory risks."
-  - question: "Are there suitable fintech options specifically highlighted for users in Africa?"
-    answer: "The video description mentions specific examples of popular fintech apps, including some great options from Africa. While not detailed in the provided transcript, the intent is to highlight diverse geographical options for users."
-faqs:
   - question: "What role does AI play in fintech passive income apps?"
     answer: "AI is crucial for personalizing investment advice, optimizing savings strategies, assessing credit risk for P2P lending, and enhancing fraud detection, all contributing to automated passive income generation."
   - question: "Are fintech passive income apps truly risk-free?"

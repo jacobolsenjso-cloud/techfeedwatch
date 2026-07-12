@@ -9,15 +9,6 @@ summary: "The Code of Entry Podcast's inaugural episode boldly declares that the
 duration: "19:24"
 isShort: false
 faqs:
-  - question: "What is the main takeaway regarding the 'secret' to SEO?"
-    answer: "The main takeaway is that there is no secret to SEO. Success hinges on consistently 'doing the right thing' and providing genuine value to your audience."
-  - question: "What is the Code of Entry Podcast, according to this episode?"
-    answer: "The Code of Entry Podcast is a new show, with this being its first episode, introducing the team and explaining core concepts of SEO. It aims to guide listeners through the world of technology and digital innovation."
-  - question: "Why is 'doing the right thing' crucial for SEO success?"
-    answer: "'Doing the right thing' in SEO involves creating high-quality, helpful content and employing ethical strategies that prioritize the user. This approach builds long-term authority and trust with search engines and audiences alike."
-  - question: "How can businesses begin implementing a value-first SEO strategy?"
-    answer: "Businesses can start by deeply understanding their target audience's needs and crafting content that directly addresses those needs. Focusing on user experience and the helpfulness of information over keyword stuffing is a critical first step."
-faqs:
   - question: "How has AI impacted the importance of value in SEO?"
     answer: "AI in search algorithms makes Google much better at understanding user intent and evaluating content quality. This amplifies the need for genuine, authoritative content, as AI can easily spot and de-prioritize superficial or low-quality information."
   - question: "Why is local SEO highlighted as a key strategy for value?"

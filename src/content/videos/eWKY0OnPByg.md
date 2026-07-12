@@ -9,15 +9,6 @@ summary: "The tech world is embroiled in a heated debate: did Apple lose the AI 
 duration: "7:04"
 isShort: false
 faqs:
-  - question: "What is the core debate surrounding Apple's AI strategy?"
-    answer: "The debate centers on whether Apple has fallen behind in the generative AI 'race' compared to competitors, or if its privacy-focused, on-device approach represents a long-term winning strategy."
-  - question: "Why do some critics suggest Apple has 'lost' the AI race?"
-    answer: "Critics often point to Siri's perceived lack of advancement relative to other AI assistants and Apple's quieter, slower entry into the public-facing generative AI applications seen from rivals."
-  - question: "What defines Apple's unique approach to artificial intelligence?"
-    answer: "Apple's strategy prioritizes user privacy and integrates AI deeply into its hardware and software ecosystem, often focusing on on-device processing for security and performance benefits."
-  - question: "How might Apple redefine success in the AI landscape?"
-    answer: "Instead of leading with flashy, cloud-based generative AI, Apple may define success through seamless, secure, and personalized user experiences powered by deeply integrated, often invisible AI."
-faqs:
   - question: "Why is Apple perceived as having 'lost' the initial AI race?"
     answer: "Apple was late to announce its AI strategy, struggled with internal development, and is reportedly paying Google billions to integrate its foundational models, suggesting it lagged behind rivals like OpenAI and Google in generative AI capabilities."
   - question: "How might Apple's 'loss' turn into a 'win'?"

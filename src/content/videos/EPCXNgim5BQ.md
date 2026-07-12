@@ -10,15 +10,6 @@ summary: "While you don't need to be a full-stack developer to master SEO, under
 duration: "5:40"
 isShort: false
 faqs:
-  - question: "Do SEO professionals need to write code to be effective?"
-    answer: "No, SEO professionals generally do not need to write complex code. However, it is imperative to be able to identify and understand key code elements on a webpage to perform effective technical SEO."
-  - question: "What specific HTML elements are crucial for SEOs to understand?"
-    answer: "Essential HTML elements include the Head tag, Meta tags, Title tag, H tags (H1, H2, H3, etc.), Canonical tags, and Image tags. Understanding these allows SEOs to properly structure content and provide critical information to search engines."
-  - question: "Why is knowledge of XML sitemaps important for SEO?"
-    answer: "Knowing XML sitemaps is crucial because they tell search engines which pages to crawl and index. An SEO needs to be able to identify if a sitemap is broken or incorrectly configured, which can lead to indexation problems."
-  - question: "How does proper website code structure contribute to better SEO performance?"
-    answer: "Proper code structure, including clean HTML, correct heading use, and descriptive meta tags, ensures that search engines can easily understand, crawl, and index your website. This clarity helps improve search rankings, user experience, and overall site health."
-faqs:
   - question: "Why are basic HTML/XML skills still relevant with advanced SEO tools and AI?"
     answer: "While advanced tools assist, they operate on underlying web structure. Understanding HTML and XML allows professionals to diagnose issues tools miss, debug complex problems, and ensure data integrity for optimal AI processing, acting as an informed overseer."
   - question: "How do these skills specifically benefit industries like AI, Fintech, and Crypto?"

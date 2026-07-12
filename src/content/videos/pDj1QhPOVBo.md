@@ -10,15 +10,6 @@ summary: "Despite a thriving field, supportive colleagues, and a passion for res
 duration: "21:14"
 isShort: false
 faqs:
-  - question: "What was the individual's background in quantum computing?"
-    answer: "The individual completed a PhD in quantum computing in 2020. They had a strong passion for the research and a supportive academic environment."
-  - question: "What was the state of the quantum computing field when they decided to leave?"
-    answer: "The field was booming, with numerous new startups emerging. This indicated significant growth and opportunity within the sector."
-  - question: "Did the individual enjoy their time in quantum computing research?"
-    answer: "Yes, they explicitly stated they loved the research, and their supervisor and colleagues were highly supportive and amazing."
-  - question: "Why did the individual ultimately choose to leave the field?"
-    answer: "The video's primary purpose is to explain the specific reasons behind this decision, despite the positive aspects of their experience. The full article delves into potential motivations."
-faqs:
   - question: "Why did an expert leave the quantum computing field despite its booming growth?"
     answer: "The expert left in 2020 due to concerns that quantum computers, despite hardware advancements, might not prove as useful in real-world applications as hoped, particularly citing a lack of progress in quantum algorithms."
   - question: "What is the main challenge preventing quantum computers from being generally useful?"

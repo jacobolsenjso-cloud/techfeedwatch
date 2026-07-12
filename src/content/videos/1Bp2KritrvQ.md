@@ -10,15 +10,6 @@ summary: "Understanding the two fundamental types of Ethereum accounts—Externa
 duration: "4:49"
 isShort: false
 faqs:
-  - question: "What is the primary difference between an EOA and a Contract Account on Ethereum?"
-    answer: "An Externally Owned Account (EOA) is controlled by a private key held by a human user and can initiate transactions. A Contract Account is controlled by its deployed code and can only execute transactions when triggered by an EOA or another contract."
-  - question: "How do private keys relate to Ethereum accounts?"
-    answer: "Private keys are essential for EOAs, granting their owner complete control to sign transactions and manage funds. Contract Accounts, being code-controlled, do not possess or require private keys."
-  - question: "Can Contract Accounts initiate transactions on their own?"
-    answer: "No, Contract Accounts cannot initiate transactions independently. They only react to incoming transactions, executing their defined logic when called by an EOA or another smart contract."
-  - question: "Why is understanding both account types important for Web3 development?"
-    answer: "Grasping the interplay between EOAs and Contract Accounts is fundamental for designing secure and functional decentralized applications. It clarifies how users interact with smart contracts and how automated processes operate on the blockchain."
-faqs:
   - question: "What is the primary difference in how EOAs and Contract Accounts are controlled?"
     answer: "Externally Owned Accounts (EOAs) are controlled by private cryptographic keys held by an individual, while Contract Accounts are controlled by the immutable smart contract code deployed on the blockchain itself."
   - question: "Can both account types hold Ether?"

@@ -10,15 +10,6 @@ summary: "Neobanks are rapidly transforming the global financial landscape, prom
 duration: "34:12"
 isShort: false
 faqs:
-  - question: "What are the primary challenges facing neobanks today?"
-    answer: "Neobanks face significant hurdles including navigating complex government regulations, ensuring robust data confidentiality, and preventing sophisticated fraud while maintaining a seamless user experience. Balancing these elements is crucial for their success."
-  - question: "How does AI contribute to enhancing security in digital banking?"
-    answer: "AI-based authentication platforms, like Callsign, leverage artificial intelligence to analyze user behavior and risk signals in real-time. This allows for intelligent verification processes that protect against fraud without disrupting legitimate user journeys."
-  - question: "What is Callsign's core mission in the digital banking sector?"
-    answer: "Callsign aims to harmonize user experience (UX) with stringent fraud prevention and regulatory compliance through its innovative AI-powered authentication system. Their vision is to create a secure yet friction-free digital banking environment."
-  - question: "Who is Amir Nooriala and what is his relevance to this topic?"
-    answer: "Amir Nooriala is the Chief Commercial Officer at Callsign, a leading AI-based authentication platform. With previous experience as CSO at OakNorth, he brings expert insight into implementing advanced security systems within the rapidly evolving digital banking landscape."
-faqs:
   - question: "What are passive biometrics in AI authentication?"
     answer: "Passive biometrics refer to unique, subconscious behavioral patterns like typing rhythm, mouse movements, or how a user holds their phone. AI analyzes these patterns in real-time to verify identity without explicit user input."
   - question: "How does AI authentication improve upon traditional multi-factor authentication (MFA)?"

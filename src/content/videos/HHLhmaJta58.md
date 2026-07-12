@@ -10,15 +10,6 @@ summary: "This guide, based on an insightful video, breaks down the crucial proc
 duration: "21:44"
 isShort: false
 faqs:
-  - question: "What is the primary focus of the video 'A Beginners Guide to Investigating Smart Contracts'?"
-    answer: "The video provides a methodology for investigating smart contracts, starting with non-code analysis, and then progressing to targeted code examination for developers. It aims to make the investigation process accessible and efficient."
-  - question: "Is this guide suitable for individuals without coding experience?"
-    answer: "Yes, absolutely. The first five minutes of the video, and the initial phase of the investigation process, are designed for non-developers, focusing on understanding the contract's purpose and context without looking at any code."
-  - question: "How does the video assist developers in analyzing smart contracts?"
-    answer: "For developers, the video teaches how to use the initial understanding and 'gut feeling' developed from the non-code analysis to quickly identify the most critical and relevant sections of a smart contract's code, bypassing unnecessary scaffolding."
-  - question: "What is the core principle emphasized for effective smart contract investigation?"
-    answer: "The core principle is to build a foundational understanding of the project's intent and ecosystem before deep-diving into the technical code. This holistic approach helps in forming a critical 'gut feeling' about the contract's functionality and potential implications."
-faqs:
   - question: "What is the main purpose of Etherscan in smart contract investigation?"
     answer: "Etherscan acts as a block explorer, providing a user-friendly interface to view and interpret data on the Ethereum blockchain, including detailed information about smart contracts, without needing to run a node."
   - question: "What does 'source code verified' mean on Etherscan?"

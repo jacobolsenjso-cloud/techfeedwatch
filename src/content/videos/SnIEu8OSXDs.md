@@ -10,15 +10,6 @@ summary: "Despite bold promises from politicians and tech giants like IBM and Mi
 duration: "25:56"
 isShort: false
 faqs:
-  - question: "What is the main disconnect regarding quantum computing?"
-    answer: "The main disconnect is between the immense hype and billions in investment from major tech players and governments, and the current reality where quantum computers offer almost no practical, real-world applications. The technology is still in its nascent, experimental stages."
-  - question: "What are some of the proposed future applications of quantum computing?"
-    answer: "Potential future applications include revolutionary advancements in drug discovery, material science, and the ability to break current encryption standards. However, these uses are theoretical and contingent on overcoming significant technical hurdles."
-  - question: "What are the biggest challenges facing quantum computing hardware development?"
-    answer: "The biggest challenges involve maintaining stable quantum states (qubits), which are incredibly fragile and prone to errors. Building scalable, fault-tolerant quantum computers that can operate outside highly controlled lab environments remains a monumental engineering task."
-  - question: "How do geopolitical interests influence the quantum computing race?"
-    answer: "Geopolitical interests, particularly the competition between China and the US, are heavily influencing quantum computing research due to its perceived impact on national security and economic dominance. This rivalry fuels massive public and private sector investments in the technology."
-faqs:
   - question: "What is the fundamental difference between a quantum computer and a classical computer?"
     answer: "Classical computers use binary bits (0 or 1) to process information. Quantum computers use qubits, which can exist as a probability of both 0 and 1 simultaneously, allowing for different types of calculations."
   - question: "Are current quantum computers commercially useful?"

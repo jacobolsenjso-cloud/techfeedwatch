@@ -10,15 +10,6 @@ summary: "Smart contracts are self-executing, unalterable digital agreements emb
 duration: "8:30"
 isShort: false
 faqs:
-  - question: "What is a smart contract?"
-    answer: "A smart contract is a self-executing digital agreement where the terms are directly written into computer code. Once created, its conditions are automatically enforced without intermediaries, making transactions transparent and tamper-proof."
-  - question: "How do smart contracts differ from traditional contracts?"
-    answer: "Unlike traditional contracts that rely on legal systems and third parties for enforcement, smart contracts are automated and execute their terms instantly upon predefined conditions being met. They remove human intervention, offering greater speed and reduced costs."
-  - question: "What are the main challenges associated with smart contracts?"
-    answer: "Key challenges include the immutability of code, meaning errors or vulnerabilities are difficult to fix once deployed. Additionally, their legal recognition and enforceability across different jurisdictions are still evolving, posing potential complexities."
-  - question: "Can smart contracts be used for NFTs?"
-    answer: "Yes, smart contracts are fundamental to NFTs (Non-Fungible Tokens). They define the ownership, transfer rules, and royalties for digital assets, ensuring their unique identity and verifiable transactions on the blockchain."
-faqs:
   - question: "What is the main difference between a smart contract and a traditional contract?"
     answer: "Smart contracts are self-executing, with terms embedded in computer code on a blockchain, removing the need for third-party intermediaries. Traditional contracts rely on manual processes and external legal or financial oversight for enforcement."
   - question: "How do smart contracts contribute to the 'decentralized' aspect of blockchain technologies?"

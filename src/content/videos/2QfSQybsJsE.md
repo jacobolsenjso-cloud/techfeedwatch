@@ -10,15 +10,6 @@ summary: "A global 'financial arms race' is heating up as banks, big tech, and c
 duration: "12:59"
 isShort: false
 faqs:
-  - question: "What is the 'stablecoin arms race'?"
-    answer: "The stablecoin arms race refers to the intensifying competition among traditional banks, big tech companies, and decentralized crypto platforms to control digital money, stablecoin yields, and future financial rails. This battle has significant implications for global finance and individual economic freedom."
-  - question: "What is the CLARITY Act?"
-    answer: "The CLARITY Act is proposed legislation aimed at providing regulatory clarity for stablecoin issuers and their yield-generating activities. Its goal is to ensure consumer protection and financial stability within the evolving digital asset landscape."
-  - question: "How do Open USD and X Money fit into this competition?"
-    answer: "Open USD (OUSD) is an open-standard stablecoin offering yield-bearing opportunities, representing a decentralized approach to digital currency. X Money, associated with Elon Musk's X platform, aims to integrate comprehensive financial services, challenging traditional banking and payment systems with a centralized, big-tech approach."
-  - question: "Why is financial sovereignty a key concern in this digital money battle?"
-    answer: "Financial sovereignty emphasizes an individual's control over their assets and economic decisions. In this arms race, as different entities strive for control over digital money, understanding the mechanisms and regulations is vital to ensure personal financial freedom and resist over-centralization."
-faqs:
   - question: "What is the main conflict in 'The Digital Money War'?"
     answer: "The conflict is over who controls digital money, earns yield, owns customer relationships, and whether the financial system will become more open or remain centrally controlled by traditional institutions. It involves banks, stablecoins, big tech, and governments."
   - question: "How are traditional banks responding to the rise of stablecoins and new digital money initiatives?"

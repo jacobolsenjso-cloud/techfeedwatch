@@ -10,15 +10,6 @@ summary: "Dive into the world of blockchain with a practical guide to creating a
 duration: "24:52"
 isShort: false
 faqs:
-  - question: "What is a smart contract?"
-    answer: "Smart contracts are self-executing agreements with the terms directly written into code. They operate on a blockchain, automatically enforcing the agreement without the need for intermediaries."
-  - question: "What is Solidity used for in this context?"
-    answer: "Solidity is an object-oriented, high-level programming language specifically designed for writing smart contracts. It is the primary language used to implement the logic for decentralized applications on the Ethereum blockchain."
-  - question: "What is the Remix IDE?"
-    answer: "Remix IDE is a powerful, open-source online integrated development environment. It allows developers to write, compile, deploy, and debug Solidity smart contracts directly within a web browser, making it ideal for learning and rapid prototyping."
-  - question: "How are smart contracts tested in the tutorial?"
-    answer: "The tutorial utilizes the Javascript VM (Virtual Machine) within Remix. This virtual environment simulates a blockchain, enabling developers to test their smart contract's methods and functionality thoroughly without deploying it to a live network."
-faqs:
   - question: "What is the primary difference between a smart contract and traditional software?"
     answer: "Smart contracts are immutable programs deployed on a blockchain, meaning their code and execution cannot be altered or censored once live. Traditional software can typically be updated, patched, and is often controlled by a central entity."
   - question: "Why is Solidity the preferred language for Ethereum smart contracts?"

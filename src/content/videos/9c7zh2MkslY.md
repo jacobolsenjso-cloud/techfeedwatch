@@ -10,15 +10,6 @@ summary: "Feeling overwhelmed by the rapid pace of AI innovation? This essential
 duration: "29:00"
 isShort: false
 faqs:
-  - question: "What are the three primary paths to learning AI outlined in the video?"
-    answer: "The video identifies three paths: the Explorer, who seeks understanding; the Power User, focused on leveraging tools for efficiency; and the Builder, aiming to create AI-driven solutions. Each path caters to different levels of technical ambition and goals."
-  - question: "What are some core AI concepts covered that won't go out of date?"
-    answer: "Key concepts include Large Language Models (LLMs), which are foundational for many AI applications, and **prompt engineering**, the skill of crafting effective inputs to guide AI tools. These skills are crucial for maximizing AI's utility."
-  - question: "Does the roadmap require deep technical knowledge or coding skills?"
-    answer: "No, the roadmap is designed specifically for individuals who want to learn AI without needing to be technical or chase every new model. It focuses on practical application, tool literacy, and workflow integration."
-  - question: "What is 'Vibe Coding' and why is it considered an advanced skill?"
-    answer: "'Vibe Coding' refers to the ability to intuitively guide AI through iterative prompting and feedback to achieve a desired creative or functional outcome, often beyond explicit instructions. It's an advanced skill because it requires a nuanced understanding of AI behavior and effective communication."
-faqs:
   - question: "Do I need to be a programmer or technical expert to master AI?"
     answer: "No, the roadmap emphasizes that most modern AI tools are built for non-technical users. If you are curious and willing to experiment, you can leverage AI effectively without writing any code."
   - question: "With so many AI tools emerging, how do I choose the right ones?"

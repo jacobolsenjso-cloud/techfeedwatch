@@ -10,15 +10,6 @@ summary: "Dive into the essentials of quantitative finance with Python and Panda
 duration: "9:01"
 isShort: false
 faqs:
-  - question: "What is quantitative finance and why is Python used for it?"
-    answer: "Quantitative finance applies mathematical and statistical methods to financial problems. Python, with its robust libraries like Pandas, NumPy, and Matplotlib, is favored for its flexibility, powerful data manipulation capabilities, and strong community support, making it ideal for modeling, analysis, and visualization."
-  - question: "What key financial concepts are covered in the video?"
-    answer: "The video covers essential concepts such as data sourcing and preparation, calculating various types of returns, understanding risk measures like standard deviation and the Sharpe Ratio, constructing a wealth index, and analyzing drawdowns to assess portfolio performance."
-  - question: "Is this video suitable for beginners in finance or Python?"
-    answer: "Yes, this video is designed as a 'Getting Started' guide, making complex quantitative finance concepts accessible. It focuses on practical application using Python libraries, serving as an excellent entry point for those new to either financial modeling or Python programming in a finance context."
-  - question: "Where can I find the source code demonstrated in the video?"
-    answer: "The source code for the concepts demonstrated in the video is available on GitHub, allowing viewers to follow along, experiment, and apply the techniques discussed directly."
-faqs:
   - question: "Why is Python preferred for computational finance over other languages?"
     answer: "Python's extensive open-source libraries like Pandas and NumPy offer powerful, intuitive tools for data manipulation and numerical computation, making complex financial analysis accessible and efficient for a broad user base. Its ease of learning and large community support also contribute to its widespread adoption."
   - question: "What is the significance of geometric returns compared to simple arithmetic returns?"

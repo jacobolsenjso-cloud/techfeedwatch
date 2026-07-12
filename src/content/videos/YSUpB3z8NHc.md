@@ -9,15 +9,6 @@ summary: "This video unveils the transformative power of Augmented Reality (AR) 
 duration: "10:35"
 isShort: false
 faqs:
-  - question: "What is the main benefit of using AR for interior design?"
-    answer: "AR allows you to visualize furniture and design elements within your real-world space before making any purchases, helping you make informed decisions and avoid costly mistakes. This immersive preview ensures design choices align perfectly with your existing environment."
-  - question: "What key tools are utilized in the video for AR interior design?"
-    answer: "The video primarily features AT+Explore, a multiplatform interaction system within Unity 3D, along with AT+Materials for diverse textures and AT+VideoClip for capturing high-quality project videos. These tools streamline the AR creation process."
-  - question: "Is prior coding experience necessary to create AR interior designs with these tools?"
-    answer: "No, AT+Explore is specifically highlighted as a 'no-code tool' designed for interactive B2B projects, making advanced AR design accessible even to those without extensive programming knowledge. This lowers the barrier to entry significantly."
-  - question: "Can AR interior design projects created with these methods be shared across different mobile platforms?"
-    answer: "Yes, the video explicitly demonstrates the capability to build and test AR projects on both Android and iOS devices. This ensures broad accessibility and ease of sharing your virtual designs."
-faqs:
   - question: "What is the primary benefit of using AR in interior design?"
     answer: "AR allows users to visualize furniture and decor in their actual physical space in real-time, bridging the gap between digital concepts and real-world application. This significantly reduces uncertainty and helps make informed design decisions before making purchases."
   - question: "Is this technology only for professional designers?"

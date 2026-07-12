@@ -9,15 +9,6 @@ summary: "Quantum computing is often mistakenly seen as a replacement for classi
 duration: "0:00"
 isShort: false
 faqs:
-  - question: "Will quantum computing replace traditional AI systems?"
-    answer: "No, quantum computing is not expected to replace classical AI. Instead, it will likely work alongside classical systems in a **hybrid computing model**, accelerating specialized tasks."
-  - question: "What specific areas could benefit most from quantum computing?"
-    answer: "Quantum computing shows promise in optimizing complex problems, drug discovery, molecular simulation, materials science, and specialized machine learning research."
-  - question: "What are the main challenges facing quantum computing's widespread adoption?"
-    answer: "Current challenges include limited fault-tolerant hardware, high error rates, and the need for scalable quantum error correction to improve reliability and performance."
-  - question: "What is the 'hybrid computing model' for AI and quantum?"
-    answer: "This model envisions classical systems handling large-scale AI training and inference, while quantum processors accelerate highly specialized computational tasks, leveraging each technology's strengths."
-faqs:
   - question: "Can quantum computers train large AI models faster than classical supercomputers today?"
     answer: "No, current quantum computers are still in experimental stages with high error rates and cannot train large AI models faster than modern classical GPU clusters. Classical hardware remains superior for general-purpose, large-scale AI training."
   - question: "What are the primary areas where quantum computing can benefit AI?"

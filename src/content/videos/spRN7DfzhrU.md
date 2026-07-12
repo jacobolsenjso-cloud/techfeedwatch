@@ -9,15 +9,6 @@ summary: "Quantum computing, once hailed as a revolutionary technology poised to
 duration: "7:08"
 isShort: false
 faqs:
-  - question: "What is the main paradox observed in quantum computing?"
-    answer: "The main paradox is that while the practical use cases initially promised for quantum computing appear to be eroding, investment in the technology has paradoxically increased significantly."
-  - question: "Which industries were initially expected to benefit most from quantum computing?"
-    answer: "Quantum computing was initially expected to revolutionize industries such as chemistry, material science, logistics, and finance due to its potential for unprecedented computational power."
-  - question: "Why might investment continue to grow despite a reduction in clear use cases?"
-    answer: "Continued investment could be driven by factors like the long-term speculative potential, the competitive race among nations and corporations for technological supremacy, and the sheer scale of R&D required for such foundational technology."
-  - question: "What does this trend suggest about the future of quantum technology?"
-    answer: "This trend suggests a complex future where quantum computing might be a longer-term bet with a high-risk, high-reward profile, potentially signaling a shift from immediate commercial applications to foundational scientific and strategic advancements."
-faqs:
   - question: "What is the primary paradox discussed regarding quantum computing?"
     answer: "The paradox is the massive increase in investment and industry hype despite a simultaneous decline in proven practical use cases and a scaling back of ambitious qubit roadmap targets by leading companies."
   - question: "Why are 'hybrid' or 'quantum-centric' approaches viewed with skepticism?"

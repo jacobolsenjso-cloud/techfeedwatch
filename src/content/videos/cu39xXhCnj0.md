@@ -10,15 +10,6 @@ summary: "The inaugural 'FinTech Friday' podcast episode dives deep into the dyn
 duration: "28:41"
 isShort: false
 faqs:
-  - question: "What major regulatory concerns are impacting trading apps?"
-    answer: "Regulators are scrutinizing issues like **Payment for Order Flow (PFOF)**, which can create conflicts of interest, and **gamification**, where app features may encourage excessive or risky trading behavior. Recent hearings highlight concerns over transparency and investor protection."
-  - question: "What is the current state of the SPAC market in FinTech?"
-    answer: "The FinTech SPAC market has been red hot, attracting significant attention, but it's experiencing a slowdown due to increased SEC scrutiny. This pause is seen by some as beneficial, preventing an unsustainable bubble reminiscent of the 2017 ICO boom."
-  - question: "Why has Buy Now, Pay Later (BNPL) seen such rapid growth?"
-    answer: "BNPL has surged in popularity by addressing pandemic-era shopping needs, offering flexible payment solutions that span the entire buying cycle from credit decisions to checkout. However, the high valuations of these companies are now facing a reality check."
-  - question: "Are the high valuations in FinTech sustainable, or are they a fad?"
-    answer: "While some FinTech valuations have been astronomical, experts suggest that sustainability depends on underlying product value and strong market traction. VCs are becoming more discerning, willing to pay high prices for truly innovative and scalable solutions, but overall market adjustments are occurring."
-faqs:
   - question: "What is 'Payment for Order Flow' (PFOF) and why is it a concern?"
     answer: "PFOF is when brokerage firms receive payments from market makers for routing customer orders to them. Regulators are concerned it creates a conflict of interest, potentially leading to less favorable trade execution for retail investors, despite enabling 'commission-free' trading."
   - question: "How has the SEC impacted the SPAC market?"

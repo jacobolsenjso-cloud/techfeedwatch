@@ -10,15 +10,6 @@ summary: "OPNET, developed by Danny Plainview and Chad Master, introduces Ethere
 duration: "1:46:40"
 isShort: false
 faqs:
-  - question: "What problem does OPNET aim to solve?"
-    answer: "OPNET seeks to bring the rich functionality of Ethereum's smart contracts directly to Bitcoin's secure Layer 1 blockchain. This allows for complex DeFi applications and programmable money on Bitcoin without relying on separate sidechains or pegged token systems."
-  - question: "How does OPNET achieve EVM compatibility on Bitcoin's Layer 1?"
-    answer: "OPNET utilizes Bitcoin's witness field and native scripting capabilities to embed Ethereum Virtual Machine (EVM) transactions. It effectively 'ports' the EVM onto Bitcoin as a meta-protocol, ensuring Bitcoin compliance while enabling smart contract execution."
-  - question: "What are the primary criticisms OPNET faces?"
-    answer: "Bitcoin maximalists raise concerns about OPNET potentially 'spamming' the Bitcoin blockchain, leading to UTXO bloat and congestion. There are also debates around miner incentives, MEV, and whether Bitcoin's primary role should remain peer-to-peer cash or evolve into a broader financial layer."
-  - question: "How does OPNET address scalability concerns given Bitcoin's limitations?"
-    answer: "OPNET aims to optimize transaction processing and considers future scaling solutions beyond Bitcoin's inherent block size and time limits. While acknowledging the challenges of a high-fee environment, it explores efficient use of the network and emergent use cases for adoption."
-faqs:
   - question: "How does OPNET enable smart contracts without bridging or sidechains?"
     answer: "OPNET operates as a 'consensus protocol' directly on Bitcoin Layer 1, utilizing the witness field of standard Bitcoin transactions to store smart contract bytecode and call data. This allows for a deterministic state to be recreated from 100% on-chain data, eliminating the need for external bridges or separate chains."
   - question: "Is OPNET EVM compatible? Can I use Solidity?"

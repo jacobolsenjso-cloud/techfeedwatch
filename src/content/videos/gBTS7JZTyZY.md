@@ -9,15 +9,6 @@ summary: "Despite earlier predictions of a crash, quantum computing hype is not 
 duration: "7:27"
 isShort: false
 faqs:
-  - question: "What was the initial prediction about quantum computing?"
-    answer: "The initial prediction was that the hype surrounding quantum computing would significantly decline or crash by 2024. This forecast has proven incorrect as the sector continues to garner substantial interest and investment."
-  - question: "What is driving the continued quantum computing hype?"
-    answer: "The sustained excitement is fueled by significant technological advancements, particularly breakthroughs in the mass production of quantum computers, alongside substantial strategic investments from governments, especially the U.S."
-  - question: "How is the U.S. government influencing quantum computing's development?"
-    answer: "The U.S. government is playing a critical role through substantial funding, supporting advanced research initiatives, and strategic policies aimed at accelerating quantum technology development. This national commitment helps maintain momentum and public confidence."
-  - question: "What are the implications of mass-producing quantum computers?"
-    answer: "The ability to mass-produce quantum computers could dramatically reduce manufacturing costs and increase accessibility, thereby accelerating research and the development of practical applications across diverse industries. This represents a significant leap towards broader commercial viability."
-faqs:
   - question: "What is the main paradox discussed regarding quantum computing?"
     answer: "The main paradox is that quantum computing hype, investment, and claims of mass production are rapidly increasing, even though fundamental engineering challenges, such as cooling and error rates for scalable systems, are largely unresolved."
   - question: "What are the primary technical hurdles facing current quantum computers?"

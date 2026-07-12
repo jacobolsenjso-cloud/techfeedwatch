@@ -10,15 +10,6 @@ summary: "OpenAI's Alexander Embiricos and Romain Huet reveal how AI engineering
 duration: "25:13"
 isShort: false
 faqs:
-  - question: "What is the primary advancement in AI engineering highlighted by OpenAI?"
-    answer: "The most significant advancement is the shift towards AI models that can autonomously test and refine their own code, dramatically accelerating development cycles and enabling more complex, self-managed operations."
-  - question: "How has the development cycle for OpenAI's models like Codex evolved recently?"
-    answer: "The development cycle has drastically reduced from approximately 15 months per new model release to roughly every 6 weeks, indicating an unprecedented pace of innovation and deployment."
-  - question: "What role do 'agents' play in this new era of AI engineering?"
-    answer: "AI agents are models designed to manage and execute complex workflows autonomously, from code generation and testing to resolving open-source issues, thereby scaling engineering capabilities beyond human limits."
-  - question: "What are the key efficiency metrics for frontier-level AI intelligence discussed?"
-    answer: "New OpenAI models offer frontier-level intelligence at an impressive cost of $1 per million input tokens and $6 per million output tokens, capable of generating 750 tokens per second for rapid real-time applications."
-faqs:
   - question: "What does 'autonomous AI engineering' mean in the context of Codex?"
     answer: "It refers to AI agents, powered by models like Codex, moving beyond basic code assistance to independently perform complex engineering tasks, including problem definition, coding, testing, and deployment, across multiple stages until a goal is achieved. This empowers human engineers to focus on higher-level strategic problems."
   - question: "How does Codex enable better decision-making for engineers?"

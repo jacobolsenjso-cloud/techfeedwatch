@@ -10,15 +10,6 @@ summary: "In a rapidly evolving digital landscape, comprehending the myriad of A
 duration: "20:35"
 isShort: false
 faqs:
-  - question: "What is the primary focus of 'Every AI Model Explained in 20 Minutes'?"
-    answer: "The video aims to provide a comprehensive yet concise overview of various significant AI models, explaining their core functionalities and distinctions within a short timeframe. It breaks down complex AI concepts into easily digestible information."
-  - question: "Why is it crucial to understand different AI models?"
-    answer: "Understanding various AI models helps individuals and businesses make informed decisions about which tools to use for specific tasks, optimize workflows, and innovate. It enables users to harness AI's full potential, enhancing productivity and problem-solving."
-  - question: "Does the video cover practical applications of these AI models?"
-    answer: "While primarily focused on explaining the models themselves, the implicit value lies in enabling viewers to connect the explained models to real-world applications. This foundational knowledge is key to knowing which AI is best suited for tasks from content creation to data analysis."
-  - question: "How can I further my understanding of AI after watching this video?"
-    answer: "To deepen your understanding, consider exploring specialized resources on specific AI models or applications. Engaging with AI development communities and hands-on experimentation with different AI tools can also provide valuable practical experience."
-faqs:
   - question: "What is the primary difference between proprietary and open-source AI models?"
     answer: "Proprietary models are developed and owned by companies, often offering frontier performance and ease of use through hosted services. Open-source models, on the other hand, can be downloaded and run locally, providing benefits like enhanced privacy, greater control, and effective freedom from usage fees, though often requiring more technical setup."
   - question: "How do 'world models' differ from traditional video generation models?"

@@ -9,15 +9,6 @@ summary: "Search Engine Optimization (SEO) is the critical backbone for any webs
 duration: "21:05"
 isShort: false
 faqs:
-  - question: "What is Search Engine Optimization (SEO)?"
-    answer: "SEO stands for Search Engine Optimization, a practice designed to increase the quantity and quality of traffic to your website through organic search engine results. It involves optimizing your site to rank higher in search engine results pages (SERPs)."
-  - question: "Why is SEO a primary factor for website presence?"
-    answer: "SEO is crucial because it directly influences how easily users can find your website through search engines like Google. Without effective SEO, even excellent content or services may remain undiscovered, limiting visibility and potential business growth."
-  - question: "What does it mean for a website to be 'SEOed'?"
-    answer: "A website that is 'SEOed' has been optimized across various parameters—technical, on-page, and off-page—to align with search engine algorithms. This includes using relevant keywords, having a mobile-friendly design, fast loading speeds, and high-quality content."
-  - question: "How can SEO help increase a website's visibility?"
-    answer: "By implementing effective SEO strategies, a website can achieve higher rankings in search engine results for relevant queries. This increased visibility leads to more organic traffic, greater brand recognition, and a stronger competitive edge in the digital marketplace."
-faqs:
   - question: "Why is SEO considered 'non-negotiable' for modern businesses?"
     answer: "In a crowded digital landscape, strong SEO is essential for ensuring a business is discoverable by its target audience via Google, which remains the dominant search engine. Without it, even excellent products or services risk being unseen, hindering growth and market penetration."
   - question: "How does AI influence current SEO strategies?"

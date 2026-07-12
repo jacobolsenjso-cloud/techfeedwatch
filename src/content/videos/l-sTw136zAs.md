@@ -10,15 +10,6 @@ summary: "In a compelling discussion with Lex Fridman, Chainlink CEO Sergey Naza
 duration: "11:25"
 isShort: false
 faqs:
-  - question: "What are smart contracts?"
-    answer: "Smart contracts are self-executing agreements with the terms of the agreement directly written into lines of code. They run on a blockchain, automatically executing actions when predefined conditions are met, without the need for intermediaries."
-  - question: "Why do smart contracts need external data?"
-    answer: "By design, smart contracts on a blockchain cannot directly access information from the outside world. To operate on real-world events or data (like stock prices, weather, or IoT sensor readings), they require secure and reliable external data feeds."
-  - question: "What is Chainlink's role in the smart contract ecosystem?"
-    answer: "Chainlink functions as a decentralized oracle network, providing smart contracts with secure and reliable access to off-chain data and computations. This enables smart contracts to react to real-world events and execute agreements based on information beyond their native blockchain."
-  - question: "What types of applications benefit most from smart contracts and decentralized oracles?"
-    answer: "Industries like decentralized finance (DeFi), insurance, supply chain management, gaming, and real estate significantly benefit. Smart contracts automate payouts, verify conditions, and streamline operations based on tamper-proof external data."
-faqs:
   - question: "What is the core problem smart contracts aim to solve, according to Nazarov?"
     answer: "Smart contracts fundamentally aim to solve trust issues in agreements by converting ambiguous natural language contracts into formal, deterministic, and verifiable code, eliminating reliance on subjective interpretation or intermediaries."
   - question: "How do oracle networks enhance the power of smart contracts?"

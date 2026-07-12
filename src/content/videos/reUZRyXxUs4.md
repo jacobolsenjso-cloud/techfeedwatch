@@ -10,15 +10,6 @@ summary: "Andrew Ng, a leading voice in AI, challenges the notion that artificia
 duration: "11:17"
 isShort: false
 faqs:
-  - question: "What is Andrew Ng's core argument about AI's current state?"
-    answer: "Ng argues that AI systems are currently too expensive and complex, requiring vast data and skilled engineers, making them exclusive to large tech companies. He believes this limits AI's potential societal benefits."
-  - question: "How does Ng envision small businesses using AI?"
-    answer: "He proposes that small businesses, such as a local pizza shop, could use AI to make data-driven decisions, like predicting popular flavors, to boost profits and operational efficiency. This empowers them without needing extensive resources."
-  - question: "What makes this vision of AI accessibility unique?"
-    answer: "Ng's vision focuses on enabling businesses to use AI with 'just a few self-provided data points,' significantly lowering the barrier to entry compared to traditional AI deployments. This reduces the need for large datasets and highly specialized engineers."
-  - question: "What is the ultimate goal of democratizing AI, according to Ng?"
-    answer: "By making AI accessible to all businesses, Ng believes we can build a richer, more productive society. Widespread adoption of AI would lead to broader innovation and economic growth across diverse sectors."
-faqs:
   - question: "Why is AI development currently concentrated in big tech companies?"
     answer: "It's due to the high cost of developing sophisticated AI, requiring vast financial resources, specialized talent, and large user bases to generate sufficient returns on investment. This makes bespoke AI solutions uneconomical for smaller businesses."
   - question: "What does Andrew Ng mean by the 'long tail' of AI?"

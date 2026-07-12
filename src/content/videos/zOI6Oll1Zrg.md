@@ -10,15 +10,6 @@ summary: "Andrew Ng's 'Artificial Intelligence for Everyone' course demystifies 
 duration: "1:41:53"
 isShort: false
 faqs:
-  - question: "Who is the target audience for Andrew Ng's 'AI for Everyone' course?"
-    answer: "The course is primarily designed for non-technical professionals who want to understand AI's impact and applications within their organizations. Engineers can also benefit by learning the business aspects of AI."
-  - question: "What key concepts are covered in the tutorial?"
-    answer: "It covers common AI terminology like machine learning, deep learning, and neural networks, along with AI's realistic capabilities and limitations. Participants also learn to spot AI opportunities and build organizational strategies."
-  - question: "Does this course require prior technical knowledge in AI or coding?"
-    answer: "No, the course is largely non-technical, making it suitable for a broad audience without prior engineering or coding experience. It focuses on conceptual understanding and strategic application."
-  - question: "How does this course help organizations leverage AI?"
-    answer: "It teaches how to identify AI application opportunities, build an AI strategy, and effectively work with AI teams. It also addresses navigating ethical and societal discussions around AI implementation."
-faqs:
   - question: "What is supervised learning and why is it so important in AI today?"
     answer: "Supervised learning is a type of machine learning that learns to map inputs (A) to desired outputs (B). It's crucial because it underpins many practical AI applications like spam filters, speech recognition, and fraud detection, and has become highly effective due to the rise of large datasets and neural networks."
   - question: "How does Andrew Ng differentiate between Machine Learning and Data Science?"

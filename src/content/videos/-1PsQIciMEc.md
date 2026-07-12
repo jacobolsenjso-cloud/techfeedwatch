@@ -9,15 +9,6 @@ summary: "Quantum computing promises an exponential speedup over classical compu
 duration: "44:45"
 isShort: false
 faqs:
-  - question: "What is the core debate surrounding quantum computing?"
-    answer: "The debate centers on the discrepancy between the tremendous promise of exponential speedup and the current practical challenges in achieving this power. Experts discuss whether the hype truly aligns with the existing technological and algorithmic realities."
-  - question: "Who are the key participants in this discussion?"
-    answer: "The discussion features Seth Lloyd, a pioneer in quantum computation, and is moderated by renowned physicist and author Brian Greene. They provide insights into the scientific and engineering hurdles."
-  - question: "What fundamental principles of quantum mechanics are relevant to quantum computing?"
-    answer: "Quantum computers leverage principles such as the double-slit experiment, wave-particle duality, and particle spin to create qubits. These concepts enable phenomena like superposition and entanglement, which are critical for quantum computation."
-  - question: "What are the main challenges in developing functional quantum computers?"
-    answer: "Significant challenges include maintaining quantum states (decoherence), error correction, and developing scalable hardware. Algorithmic hurdles also persist in translating theoretical quantum advantages into practical, real-world applications."
-faqs:
   - question: "What is the fundamental difference between a classical bit and a quantum qubit?"
     answer: "A classical bit can only represent a 0 or a 1 at any given time. A quantum qubit can represent 0, 1, or a superposition of both simultaneously, allowing it to hold significantly more information and process multiple possibilities in parallel."
   - question: "How does quantum computing pose a threat to current cryptographic methods?"

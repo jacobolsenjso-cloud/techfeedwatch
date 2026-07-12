@@ -9,15 +9,6 @@ summary: "Quantum computing is poised to redefine our understanding of reality, 
 duration: "40:41"
 isShort: false
 faqs:
-  - question: "What is quantum computing and how does it differ from classical computing?"
-    answer: "Quantum computing utilizes quantum-mechanical phenomena like superposition and entanglement to process information using qubits, which can exist in multiple states simultaneously. This fundamentally differs from classical computers that use bits, which can only be in a 0 or 1 state at any given time."
-  - question: "What are some of the key applications of quantum computing?"
-    answer: "Quantum computing holds immense potential for drug discovery, material science, breaking current encryption standards (with quantum cryptography offering new security), and optimizing complex logistical and financial systems. Its unique capabilities can solve problems beyond the reach of even the most powerful classical supercomputers."
-  - question: "Who were some of the pioneers of the quantum computing dream?"
-    answer: "Visionaries like Paul Benioff and Richard Feynman are credited with laying crucial groundwork for the field of quantum computing. Their early theoretical work helped conceptualize how quantum mechanics could be harnessed for computation."
-  - question: "What are the primary challenges facing quantum computing's widespread adoption?"
-    answer: "Despite its promise, quantum computing faces significant hurdles, including maintaining quantum coherence, error correction, and the sheer complexity of building and scaling stable quantum processors. The technology is still in its early development, and practical, widespread use cases are still emerging."
-faqs:
   - question: "How will quantum computing impact current encryption methods used in fintech and crypto?"
     answer: "Quantum computers, particularly with Shor's algorithm, could break the mathematical foundations of widely used encryption like RSA, which secures much of our online finance and blockchain transactions. This necessitates a global race to develop and adopt 'post-quantum cryptography' to protect digital assets and financial data."
   - question: "Are quantum computers designed to replace classical computers for everyday tasks?"

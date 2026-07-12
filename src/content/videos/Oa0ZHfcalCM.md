@@ -10,15 +10,6 @@ summary: "Three of the world's foremost engineers — Regina Barzilay (MIT), Dav
 duration: "25:48"
 isShort: false
 faqs:
-  - question: "How is AI transforming early cancer detection and drug discovery?"
-    answer: "Regina Barzilay from MIT developed AI that can detect early-stage breast cancer with unprecedented accuracy. Her team also utilized machine learning to discover Halicin, the first new antibiotic in three decades, showcasing AI's potential in accelerating medical breakthroughs."
-  - question: "What was the significance of Google DeepMind's AlphaGo achievement?"
-    answer: "David Silver led the AlphaGo team, which built an AI capable of defeating the world's best human player of Go. This milestone demonstrated AI's ability to master complex strategic tasks through reinforcement learning, pushing the boundaries of machine intelligence."
-  - question: "How can emotionally intelligent robots benefit human development?"
-    answer: "Paolo Pirjanian, founder of Embodied, pioneers robots designed to build emotional bonds and aid child development. These robots can provide companionship and support, potentially enhancing social-emotional learning and interaction for children."
-  - question: "What is the distinction between Narrow AI and Artificial General Intelligence (AGI)?"
-    answer: "Narrow AI excels at specific tasks, like playing Go or detecting cancer, whereas AGI refers to AI with human-like cognitive abilities across a broad range of tasks, capable of learning and applying intelligence generally. The discussion highlights that current AI is largely narrow, with AGI remaining a long-term goal."
-faqs:
   - question: "What is the main difference between narrow AI and AGI?"
     answer: "Narrow AI is designed to perform a specific task, like playing chess or detecting cancer, and is limited to that domain. Artificial General Intelligence (AGI) aims to possess human-like intelligence across a wide range of tasks and problems, learning and adapting to new situations."
   - question: "Why is AI adoption in healthcare so slow despite its potential?"

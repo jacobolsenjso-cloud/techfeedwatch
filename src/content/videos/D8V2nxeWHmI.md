@@ -9,15 +9,6 @@ summary: "By 2030, Augmented Reality (AR) is poised to fundamentally transform h
 duration: "5:06"
 isShort: false
 faqs:
-  - question: "What will be the most significant hardware advancement for AR by 2030?"
-    answer: "By 2030, AR hardware is expected to move beyond current headsets to more discreet forms like lightweight glasses and even contact lenses. These advancements will enable seamless, all-day wear and truly ubiquitous integration into daily life."
-  - question: "How will AI enhance Augmented Reality experiences in the next decade?"
-    answer: "AI will be AR's co-pilot, providing contextual awareness, predictive insights, and hyper-personalization. This means AR will anticipate user needs, intelligently filter information, and adapt experiences in real-time, making interactions far more intuitive and relevant."
-  - question: "Which industries are expected to be most impacted by AR by 2030?"
-    answer: "AR will profoundly impact sectors such as education, healthcare, manufacturing, retail, and entertainment. It will enable immersive learning, assist in complex surgical procedures, optimize industrial workflows, and revolutionize shopping and gaming experiences."
-  - question: "What are the key underlying technologies supporting widespread AR adoption by 2030?"
-    answer: "Widespread AR adoption will heavily rely on advancements in 5G connectivity, powerful edge computing, and highly efficient AI algorithms. These technologies are crucial for processing vast amounts of data in real-time and delivering seamless, low-latency augmented experiences."
-faqs:
   - question: "What makes AR glasses and contact lenses 'mainstream' by 2030?"
     answer: "They will look identical to regular eyewear, removing social barriers, and offer seamless access to everyday applications like calls, emails, and navigation, replacing smartphones for many tasks."
   - question: "How will AR enhance communication for those with language barriers or hearing loss?"

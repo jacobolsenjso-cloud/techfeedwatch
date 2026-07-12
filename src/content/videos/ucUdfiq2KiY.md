@@ -10,15 +10,6 @@ summary: "The financial landscape is poised for a monumental shift by 2026, driv
 duration: "5:36"
 isShort: false
 faqs:
-  - question: "What are the primary drivers of fintech innovation for 2026?"
-    answer: "The main drivers include the integration of artificial intelligence into financial tools, the push for instant and global digital payments, and the demand for personalized, secure, and sustainable financial solutions."
-  - question: "How will AI specifically impact personal finance?"
-    answer: "AI will deliver highly personalized financial advice through robo-advisors, enhance fraud detection and cybersecurity, and streamline financial planning, making complex financial management more accessible to individuals."
-  - question: "What is 'Green Fintech' and why is it important?"
-    answer: "Green Fintech leverages technology to promote sustainable and environmentally responsible financial practices. It's important because it aligns financial decisions with ecological values, offering tools for impact investing and carbon footprint tracking."
-  - question: "What role will Decentralized Finance (DeFi) play in the future of fintech?"
-    answer: "DeFi, built on blockchain technology, will continue to grow as an alternative to traditional banking, offering peer-to-peer lending, trading, and asset management without intermediaries, promising greater transparency and accessibility."
-faqs:
   - question: "What is the primary benefit of Open Banking 2.0?"
     answer: "It gives consumers greater control over their financial data, enabling seamless sharing with trusted apps and fostering increased competition among banks for user loyalty."
   - question: "How do 'pay by bank' systems differ from traditional credit cards?"

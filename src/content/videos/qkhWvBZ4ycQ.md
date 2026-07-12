@@ -10,15 +10,6 @@ summary: "Xavier Gomez, Founder and COO of INVYO, offers an expert perspective o
 duration: "49:06"
 isShort: false
 faqs:
-  - question: "Who is Xavier Gomez and what is his primary expertise?"
-    answer: "Xavier Gomez is the Founder and COO of INVYO, a SaaS company focused on Fintech insights. He is a recognized Fintech thought leader and WealthTech specialist with over 18 years of experience in private equity, wealth management, and digital finance."
-  - question: "What is INVYO, and how does it utilize technology?"
-    answer: "INVYO is a SaaS company that employs machine learning and Natural Language Processing (NLP) to help financial institutions identify future opportunities in Fintech. Its goal is to provide foresight and analysis on emerging trends in digital banking, payments, blockchain, and AI."
-  - question: "How does Xavier Gomez view the role of AI and ML in the financial industry?"
-    answer: "Gomez sees AI and Machine Learning as crucial for transforming capital markets and the financial industry at large. INVYO, for instance, uses these technologies to analyze vast amounts of data to predict market shifts and opportunities."
-  - question: "What are the key areas of disruption Xavier Gomez focuses on in finance?"
-    answer: "He focuses on disruptive innovations across Fintech, WealthTech, and the integration of crypto/bitcoin trading into traditional banking. He also considers the impact of ESG and social impact criteria on redesigning society through finance post-COVID-19."
-faqs:
   - question: "What is the primary challenge traditional banks face in the current financial landscape?"
     answer: "Traditional banks are caught between stringent regulations (like Basel III) limiting their activities and aggressive competition from Big Tech companies offering superior customer experiences and lower-cost services. This dual pressure necessitates significant investment in digital transformation."
   - question: "How is the role of a 'trader' evolving due to technology?"

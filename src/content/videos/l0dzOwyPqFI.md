@@ -10,15 +10,6 @@ summary: "Discover the power of blockchain nodes as a legitimate pathway to gene
 duration: "9:36"
 isShort: false
 faqs:
-  - question: "What are blockchain nodes and why are they important?"
-    answer: "Blockchain nodes are computers that run the software for a specific blockchain, verifying and storing transaction data to maintain the network's integrity and security. They are crucial for decentralization and the overall functionality of any blockchain."
-  - question: "How can running a blockchain node generate passive income?"
-    answer: "Nodes can generate passive income through various mechanisms, including staking rewards on Proof-of-Stake blockchains, transaction fees, participation incentives for specific network services, or by potentially receiving future airdrops. The specific rewards depend on the blockchain and the node's role."
-  - question: "Is specialized technical knowledge required to run a blockchain node?"
-    answer: "While some technical proficiency in areas like server management, command-line interfaces, and network security is beneficial, many projects offer user-friendly interfaces or detailed guides. Resources like dApp University's bootcamp can help aspiring node operators gain the necessary skills."
-  - question: "What are some common ways to earn income by running nodes?"
-    answer: "Common methods include running validator nodes in PoS systems, providing infrastructure for decentralized applications (dApps), contributing to decentralized storage or computing networks, or simply participating as a full node to support a network and potentially qualify for future incentives."
-faqs:
   - question: "What is the primary difference between running a full mainnet node and participating in a staking pool?"
     answer: "Running a full mainnet node typically requires a significant direct capital investment (e.g., 32 ETH) and full responsibility for node operation. Staking pools allow users to contribute smaller amounts of capital, with the pool's operators managing the nodes on their behalf."
   - question: "Are there significant risks associated with running a blockchain node for passive income?"

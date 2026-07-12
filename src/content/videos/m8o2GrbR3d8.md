@@ -10,15 +10,6 @@ summary: "This insightful guide cuts through the noise and jargon, offering a re
 duration: "26:19"
 isShort: false
 faqs:
-  - question: "What is the fundamental difference between traditional software and Artificial Intelligence?"
-    answer: "Traditional software follows rigid, pre-programmed rules, whereas AI systems are designed to learn from data, adapt, and make decisions based on patterns, often improving over time. This learning capability allows AI to handle complex, evolving tasks."
-  - question: "How do modern AI systems like ChatGPT 'learn'?"
-    answer: "Modern AI learns by processing massive datasets, identifying patterns, and utilizing feedback loops to refine its understanding. This process often involves neural networks, which mimic the human brain's structure to process information and make connections."
-  - question: "What is the 'black box problem' in Artificial Intelligence?"
-    answer: "The 'black box problem' refers to situations where even AI developers struggle to fully explain or trace the exact reasoning behind an AI system's complex decisions. This can make understanding and debugging advanced AI challenging."
-  - question: "What are the main categories of AI discussed in terms of their capabilities?"
-    answer: "The video clarifies **Weak AI**, which is designed for specific tasks; **Strong AI (AGI)**, which hypothetically possesses human-level general intelligence; and **Super AI**, which would surpass human intelligence across all domains."
-faqs:
   - question: "What is the main difference between today's AI and the AI seen in movies like Terminator?"
     answer: "Today's AI, known as narrow AI, is designed for specific tasks and lacks consciousness or general intelligence. Sci-fi AI often depicts Artificial General Intelligence (AGI) or Artificial Super Intelligence (ASI), which are theoretical concepts capable of human-like or superior intelligence across all domains."
   - question: "How does AI learn, and why is data so important?"

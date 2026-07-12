@@ -10,15 +10,6 @@ summary: "Smart contracts are self-executing agreements coded directly onto a bl
 duration: "5:24"
 isShort: false
 faqs:
-  - question: "What is a smart contract?"
-    answer: "A smart contract is a self-executing agreement where the terms between buyer and seller are directly written into lines of code. The code and the agreements contained therein exist across a distributed, decentralized blockchain network."
-  - question: "How do smart contracts work?"
-    answer: "They operate on an 'if-then' logic. When predetermined conditions are met, the contract automatically executes the next step, such as releasing funds or transferring ownership, without the need for an intermediary."
-  - question: "What problems do smart contracts solve?"
-    answer: "Smart contracts enhance trust, transparency, and efficiency by eliminating intermediaries, reducing costs, and preventing manipulation. They ensure that agreements are executed exactly as programmed."
-  - question: "Who created the concept of smart contracts?"
-    answer: "The concept of smart contracts was first introduced by cryptographer Nick Szabo in 1994, well before the advent of Bitcoin and Ethereum. He envisioned them as digital versions of real-world contracts."
-faqs:
   - question: "What is the primary difference between early blockchains like Bitcoin and Ethereum in terms of smart contracts?"
     answer: "Bitcoin offered 'application-specific' smart contracts focused solely on transferring Bitcoin, requiring new blockchains for each unique application. Ethereum introduced a general-purpose virtual machine (EVM) that allows developers to deploy and run arbitrary, complex code, making it a programmable blockchain."
   - question: "What are the main programming languages used for smart contracts today?"

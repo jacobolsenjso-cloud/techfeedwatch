@@ -10,15 +10,6 @@ summary: "This comprehensive course offers a foundational yet deep dive into blo
 duration: "8:24:05"
 isShort: false
 faqs:
-  - question: "What core concepts are covered in this blockchain development course?"
-    answer: "The course provides a full introduction to blockchain basics, Solidity programming, smart contracts, ERC20 tokens, full-stack Web3 dapps, and decentralized finance (DeFi). It also touches on Chainlink, Ethereum, upgradable smart contracts, DAOs, and IPFS."
-  - question: "How does Artificial Intelligence (AI) integrate into this learning experience?"
-    answer: "A dedicated lesson focuses on AI Prompting, demonstrating how AI tools can be leveraged to accelerate learning and enhance efficiency in blockchain development workflows. This helps developers optimize their coding and problem-solving processes."
-  - question: "What practical development tools and environments are explored?"
-    answer: "The course introduces popular tools like Remix for initial smart contract development and Foundry for more advanced, practical application and testing. These tools enable hands-on experience with Solidity coding and deployment."
-  - question: "Who is the target audience for this full course?"
-    answer: "This course is designed for anyone interested in becoming a 'blockchain wizard,' from beginners seeking a thorough introduction to experienced developers looking to transition into Web3, Solidity, and smart contract development."
-faqs:
   - question: "What makes this Web3 development course stand out from others?"
     answer: "It's positioned as the 'most Cutting Edge' course, focusing on pure Solidity with the Foundry framework and uniquely integrating AI tools to accelerate learning while stressing the importance of human oversight."
   - question: "What is the 'Oracle Problem' and why is it significant for smart contract development?"

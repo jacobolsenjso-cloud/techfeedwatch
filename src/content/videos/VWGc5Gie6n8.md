@@ -10,15 +10,6 @@ summary: "Meta AI capabilities are back and better than ever, offering creators 
 duration: "6:04"
 isShort: false
 faqs:
-  - question: "What is Vibes.AI and how does it relate to Meta AI?"
-    answer: "Vibes.AI is a new, currently beta platform that serves as a powerful alternative for generating AI videos, effectively bringing back and enhancing capabilities associated with Meta AI. It allows users to bypass previous generation limits and create videos freely."
-  - question: "Can I really generate unlimited AI videos for free without watermarks using Vibes.AI?"
-    answer: "Yes, the platform promises unlimited AI video generation completely free of charge and without any watermarks, making it an incredibly valuable tool for content creators."
-  - question: "What types of AI video generation does Vibes.AI support?"
-    answer: "Vibes.AI supports both text-to-video and image-to-video AI generation, giving creators flexibility in how they bring their concepts to life."
-  - question: "How can Vibes.AI help with content creation for social media platforms?"
-    answer: "Vibes.AI facilitates bulk AI video generation and automation workflows, making it ideal for quickly producing content for platforms like YouTube Shorts, Instagram Reels, and TikTok."
-faqs:
   - question: "Is Vibes.AI an official Meta AI product?"
     answer: "The source material claims it is 'Meta AI's website' and shows a Meta AI watermark on generated images, but the methods for watermark removal and bulk automation via a third-party extension suggest it operates outside official Meta endorsement or direct integration."
   - question: "How does Vibes.AI offer 'watermark-free' videos?"

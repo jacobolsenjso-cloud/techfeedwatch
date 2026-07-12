@@ -10,15 +10,6 @@ summary: "This article dissects a groundbreaking experiment where top AI modelsâ
 duration: "10:46"
 isShort: false
 faqs:
-  - question: "Can AI language models truly build a functional crypto trading bot?"
-    answer: "Yes, the video puts this to the ultimate test, challenging ChatGPT, Grok, and Claude to generate code for an automated trading bot that's then deployed live. It showcases the surprising capabilities of these models in generating complex smart contract code."
-  - question: "Which AI performed best in the coding challenge?"
-    answer: "The video provides a clear verdict after live on-chain testing, evaluating each AI's output for accuracy, security, and efficiency in building a crypto trading bot. Viewers will learn precisely which model delivered the most reliable results."
-  - question: "What is 'prompt engineering' in this context?"
-    answer: "Prompt engineering refers to crafting the exact commands and instructions given to the AI models (Grok, ChatGPT, Claude) to guide them in generating effective and functional trading bot code. It's crucial for eliciting the desired technical output."
-  - question: "Is AI crypto trading safe or risk-free?"
-    answer: "Absolutely not. The video clearly states that cryptocurrency trading involves significant risk and is not suitable for everyone, emphasizing that viewers could lose their entire investment. It is strictly for educational and entertainment purposes and does not constitute financial advice."
-faqs:
   - question: "What was the primary goal of the experiment described in the article?"
     answer: "The primary goal was to determine which AI model (ChatGPT, Grok, or Claude) could generate the most efficient code for an automated crypto trading bot, capable of executing a 'buy low, sell high' strategy on the blockchain."
   - question: "Why was Claude considered the 'winner' in this AI code generation contest?"

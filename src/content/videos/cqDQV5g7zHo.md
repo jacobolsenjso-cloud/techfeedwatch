@@ -11,15 +11,6 @@ duration: "5:37"
 isShort: false
 faqs:
   - question: "What is the primary difference between an ML Engineer and an AI Engineer?"
-    answer: "An **ML Engineer** primarily focuses on the research, development, and training of machine learning models, often requiring deep theoretical knowledge and academic backgrounds. An **AI Engineer** focuses more on integrating these models into functional software systems and products, emphasizing software engineering principles and practical deployment."
-  - question: "Why is AI Engineering currently experiencing a boom?"
-    answer: "AI Engineering is booming due to the rapid demand for integrating existing AI models and APIs into practical applications and business solutions. As companies seek to leverage AI without necessarily building models from scratch, the role of an AI Engineer, capable of deployment and system integration, has become critical."
-  - question: "What core skills are essential for aspiring AI Engineers?"
-    answer: "Aspiring AI Engineers should possess strong software engineering fundamentals, including proficiency in programming languages like Python, understanding of APIs, data structures, and system architecture. Practical experience in deploying and maintaining AI-powered applications is also highly valued."
-  - question: "How can one effectively choose between an ML and an AI engineering career path?"
-    answer: "The video suggests assessing your interests: if you're drawn to research, algorithms, and deep statistical analysis, ML engineering might be for you. If you prefer building, integrating, and deploying practical AI solutions as a software developer, AI engineering is likely the better fit."
-faqs:
-  - question: "What is the primary difference between an ML Engineer and an AI Engineer?"
     answer: "An ML Engineer primarily focuses on training machine learning models from scratch, requiring deep mathematical and statistical knowledge. An AI Engineer integrates existing AI models (like LLMs) into applications to solve practical problems, emphasizing software and data engineering skills for deployment."
   - question: "Which role is more accessible for someone with a software development background?"
     answer: "The AI Engineer role is generally more accessible for experienced software developers. It builds upon traditional coding skills, augmenting them with the ability to integrate and deploy AI models, without necessarily requiring a deep academic background in AI theory."

@@ -10,15 +10,6 @@ summary: "Smart contracts are self-executing digital agreements stored on a bloc
 duration: "4:17"
 isShort: false
 faqs:
-  - question: "What is a smart contract?"
-    answer: "A smart contract is a self-executing agreement with the terms of the agreement directly written into lines of code. It runs on a blockchain network, automatically triggering actions when predefined conditions are met without requiring intermediaries."
-  - question: "How do smart contracts relate to blockchain and cryptocurrencies?"
-    answer: "Smart contracts live on a blockchain, leveraging its decentralized and immutable ledger to ensure transparency and security. They are fundamental to many cryptocurrencies, especially those like Ethereum, which was designed to host and execute these programmable agreements."
-  - question: "What are the primary benefits of using smart contracts?"
-    answer: "Smart contracts offer enhanced transparency, security, and efficiency by automating agreements and removing the need for third-party involvement. They reduce costs, minimize human error, and provide an unchangeable record of all transactions."
-  - question: "Are smart contracts truly 'smart' or just automated?"
-    answer: "While they don't possess artificial intelligence, they are 'smart' in their ability to autonomously execute complex logic based on predefined conditions. This automation makes them incredibly powerful for digital agreements, though their intelligence is deterministic."
-faqs:
   - question: "Who first coined the term 'smart contract' and when?"
     answer: "The term 'smart contract' was first coined by computer scientist, legal scholar, and cryptographer Nick Szabo in 1997, long before the creation of Bitcoin."
   - question: "How do smart contracts eliminate the need for third parties?"
