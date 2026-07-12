@@ -94,6 +94,42 @@ function buildFaqsYaml(faqs) {
   ).join('\n') + "\n";
 }
 
+// Finder start/slut (linje-index, slut eksklusiv) for hver "faqs:"-blok i frontmatterens linjer.
+// En blok er linjen "faqs:" plus alle efterfølgende linjer der starter med to mellemrum.
+function findFaqBlocks(lines) {
+  const blocks = [];
+  for (let i = 0; i < lines.length; i++) {
+    if (/^faqs:$/.test(lines[i])) {
+      let end = i + 1;
+      while (end < lines.length && lines[end].startsWith('  ')) {
+        end++;
+      }
+      blocks.push({ start: i, end });
+    }
+  }
+  return blocks;
+}
+
+// Fjerner ALLE faqs-blokke fra frontmatterens linjer (bruges før en ny faqs-blok tilføjes,
+// så der aldrig opstår to "faqs:"-nøgler og brækker YAML-parsingen).
+function removeAllFaqBlocks(lines) {
+  const blocks = findFaqBlocks(lines);
+  if (blocks.length === 0) return lines;
+
+  const newLines = [];
+  let i = 0;
+  while (i < lines.length) {
+    const block = blocks.find(b => b.start === i);
+    if (block) {
+      i = block.end; // spring hele blokken over
+      continue;
+    }
+    newLines.push(lines[i]);
+    i++;
+  }
+  return newLines;
+}
+
 async function backfill() {
   if (!GEMINI_API_KEY) { console.error("Fejl: GEMINI_API_KEY er ikke sat!"); process.exit(1); }
 
@@ -126,16 +162,27 @@ async function backfill() {
         continue;
       }
 
+      // Filer kan ligge som CRLF på disk (Windows-checkout); normaliser til LF for parsingen
+      // og konverter tilbage ved skrivning hvis filen brugte det.
+      const usesCRLF = v.content.includes('\r\n');
+      const normalized = usesCRLF ? v.content.replace(/\r\n/g, '\n') : v.content;
+
       // Frontmatter er alt mellem første "---" og næste "\n---".
-      const fmEnd = v.content.indexOf('\n---', 4);
+      const fmEnd = normalized.indexOf('\n---', 4);
       if (fmEnd === -1) { console.log(`Sprang over ${v.file}: ingen frontmatter-slut.`); failed++; continue; }
 
-      // Fjern gammel faqs-blok fra frontmatteren, og indsæt ny.
-      let frontmatter = v.content.slice(4, fmEnd); // uden de ydre ---
-      frontmatter = frontmatter.replace(/faqs:\n(?:  - question:[\s\S]*?\n    answer:.*\n?)+/g, '').trimEnd();
+      // Fjern ALLE eksisterende faqs-blokke linje-for-linje, FØR den nye tilføjes -
+      // forhindrer at der nogensinde opstår to "faqs:"-nøgler.
+      let frontmatterLines = normalized.slice(4, fmEnd).split('\n');
+      frontmatterLines = removeAllFaqBlocks(frontmatterLines);
+      while (frontmatterLines.length && frontmatterLines[frontmatterLines.length - 1] === '') {
+        frontmatterLines.pop();
+      }
+      const frontmatter = frontmatterLines.join('\n');
       const newFaqsYaml = buildFaqsYaml(faqs);
 
-      const newFile = `---\n${frontmatter}\n${newFaqsYaml}---\n\n${article}\n`;
+      let newFile = `---\n${frontmatter}\n${newFaqsYaml}---\n\n${article}\n`;
+      if (usesCRLF) newFile = newFile.replace(/\n/g, '\r\n');
       fs.writeFileSync(v.path, newFile);
       console.log(`OK ${v.file} -> ${article.length} tegn, ${faqs.length} FAQ`);
       done++;
