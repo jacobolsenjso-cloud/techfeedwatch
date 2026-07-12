@@ -105,9 +105,18 @@ async function run() {
       return;
     }
 
-    const prompt = `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch".
-    Analyze this video content (either transcript or title/description) and provide a highly valuable, value-first article.
-    
+    // Shorts får kun en let metadata-prompt (title/tags/summary) - ingen dyr artikel- eller FAQ-generering
+    const prompt = isShort
+      ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
+    Analyze this Short's content (transcript or title/description) and return EXACTLY in this format:
+    TITLE: A concise, engaging headline
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    SUMMARY: A sharp 1-2 sentence summary of the Short.
+
+    Video Content Data: ${text.substring(0, 5000)}`
+      : `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch".
+    Analyze this video content (either transcript or title/description) and write an original, analytical article - not a summary or transcription of the video.
+
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
@@ -118,16 +127,21 @@ async function run() {
     A: [answer]
     Each answer max 2 sentences. Do not use markdown links in the answers.
     CONTENT:
-    Write a comprehensive, value-first article based on the video.
-    
+    Write an original, analytical article of at least 600-800 words based on the video.
+
     CRITICAL STRUCTURE RULES FOR CONTENT:
-    1. Break the text into clear, logical sections using strict Markdown headings '##' (H2) and '###' (H3).
-    2. Use Markdown bullet points (-) and **bold text** for key terms.
-    3. Keep paragraphs short and punchy.
-    4. Ensure internal links are written strictly like this: [Link text](/video/slug).
-    5. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
+    1. Do not transcribe or recap the video chronologically. Write as an editor who ANALYZES the topic, adding your own angle and interpretation - not someone describing what happens in a video.
+    2. Add context: explain why this topic matters in the broader tech/AI/fintech/crypto landscape, and connect it to trends, implications, or consequences beyond the video itself.
+    3. Break the text into clear, logical sections using strict Markdown headings '##' (H2) and '###' (H3). Use at least 3-4 H2 sections.
+    4. Include a "## Key Takeaways" section with 3-5 concise bullet points.
+    5. End with a short closing section giving your own assessment or perspective on where this is headed.
+    6. Use Markdown bullet points (-) and **bold text** for key terms.
+    7. Keep paragraphs short and punchy.
+    8. Ensure internal links are written strictly like this: [Link text](/video/slug).
+    9. Never use filler phrases like "in this video" or "the video discusses" - write as an independent editorial piece, in natural language.
+    10. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
     ${internalLinksContext}
-    
+
     Video Content Data: ${text.substring(0, 20000)}`;
 
     const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
@@ -135,9 +149,7 @@ async function run() {
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagsMatch = rawText.match(/TAGS:\s*(.*)/i);
-    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:)/i);
-    const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
-    const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
+    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:|$)/i);
 
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
@@ -159,20 +171,28 @@ async function run() {
       return `"${str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
     }
 
-    const faqBlock = faqMatch ? faqMatch[1] : "";
+    // Shorts får hverken FAQ eller brødtekst
     const faqs = [];
-    const faqPairRegex = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
-    let faqPairMatch;
-    while ((faqPairMatch = faqPairRegex.exec(faqBlock)) !== null) {
-      const question = sanitizeFaqText(faqPairMatch[1]);
-      const answer = sanitizeFaqText(faqPairMatch[2]);
-      if (question && answer) {
-        faqs.push({ question, answer });
-      }
-    }
+    let content = "";
 
-    let content = contentMatch ? contentMatch[1].trim() : "";
-    content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
+    if (!isShort) {
+      const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
+      const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
+
+      const faqBlock = faqMatch ? faqMatch[1] : "";
+      const faqPairRegex = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
+      let faqPairMatch;
+      while ((faqPairMatch = faqPairRegex.exec(faqBlock)) !== null) {
+        const question = sanitizeFaqText(faqPairMatch[1]);
+        const answer = sanitizeFaqText(faqPairMatch[2]);
+        if (question && answer) {
+          faqs.push({ question, answer });
+        }
+      }
+
+      content = contentMatch ? contentMatch[1].trim() : "";
+      content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
+    }
 
     const date = new Date().toISOString().split('T')[0];
 
