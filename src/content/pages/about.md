@@ -1,34 +1,31 @@
 ---
-title: "About Us"
-description: "Learn more about Tech Feed Watch, your authoritative source for AI news, reviews, and in-depth articles."
+title: "About Tech Feed Watch"
+description: "How Tech Feed Watch turns the best AI, tech, fintech, and crypto videos into fast, readable analysis."
 ---
 
-# About Us
+# About Tech Feed Watch
 
-**Tech Feed Watch: Your Authoritative Source for AI News, Reviews, and In-Depth Articles**
+Tech Feed Watch is a curated tech media project built around a simple idea: most people don't have time to watch every important video about AI, technology, fintech, and crypto — but they still want to understand what matters.
 
-Staying informed is crucial in the rapidly evolving world of Artificial Intelligence. Tech Feed Watch is your comprehensive resource, dedicated to providing individuals and professionals with the insights they need to navigate this dynamic landscape. Our team of AI experts rigorously analyzes the latest news, breakthroughs, and trends, delivering unbiased, comprehensive information you can trust.
+I started this site because I noticed a gap. The tech world moves fast, and the best insights are often buried inside long videos. Watching all of them isn't realistic. So I built a place that does the watching for you and turns the most relevant videos into clear, readable analysis you can absorb in minutes.
 
-## Our Mission: Empowering Informed Decisions in the AI Era
-We understand the challenge of keeping pace with the speed of AI innovation. Tech Feed Watch alleviates this burden by curating, analyzing, and evaluating critical AI news and research. Whether you're a seasoned technology professional, a curious enthusiast, or just beginning your AI journey, we provide the knowledge and perspectives necessary to make informed decisions.
+## How This Site Works
 
-## Beyond the Headlines: Demystifying AI for Everyone
-We go beyond simply reporting AI news. Tech Feed Watch is committed to demystifying complex AI concepts and making them accessible to a broad audience. Through clear explanations, insightful articles, and actionable analysis, we break down intricate technologies into understandable terms.
+Every article here is based on a real video from an independent creator — people recording genuine tech content, sharing hands-on experience, tests, and perspectives. I select videos across AI, technology, fintech, and crypto, and produce a written analysis that captures the core ideas, adds context, and offers an objective take on why the topic matters.
 
-## Who We Are
-Jacob Olsen, Founder & CEO of Tech Media Arch, helps you navigate the future of AI with unbiased insights.
+I use AI as a tool in this process — to help draft and structure the analysis — but the editorial direction, topic selection, and quality standards are mine. The goal is never to replace the original creator, but to make their insights faster to access and easier to understand.
 
-## Embark on Your AI Exploration
-By exploring Tech Feed Watch, you gain access to a wealth of valuable resources designed to enhance your understanding of AI:
+## Why It's Different
 
-* **Cutting-Edge Discoveries:** Unearth innovative AI software, tools, and solutions, including advancements in crypto and related technologies, tailored to meet diverse needs.
-* **Valuable Insights:** in-depth knowledge through our meticulous research with API and analysis of the latest AI developments, market trends, and industry news with video info.
-* **Informed Decision-Making:** Make confident choices based on our unbiased reviews, comprehensive reporting, and expert analysis of AI technologies.
-* **Future-Proof Knowledge:** Stay ahead of the curve by understanding emerging trends and breakthroughs shaping the future of the AI industry.
+Most tech sites either republish press releases or chase the same trending stories. This site does something few others do systematically: it treats video as a primary source and turns it into structured, time-saving reading. If a video would take twenty minutes, the article gets you the substance in three.
 
-Embrace the future of AI with Tech Feed Watch. Join us as we embark on a collaborative exploration of the transformative world of artificial intelligence. Let's navigate the dawn of this new era together through insightful videoes.
+## What You Can Expect
 
----
+Objective analysis, not hype. A focus on AI, technology, fintech, and crypto. English-language coverage of creators from around the world. And a growing set of free tools designed to be genuinely useful to people working in tech.
+
+## Get in Touch
+
+Have feedback, a correction, or a video worth covering? I'd genuinely like to hear from you at info@techfeedwatch.com.
 
 ### Website Security & Transparency
 If you would like to test if our website is safe to use, you are welcome to test on this tool (we are not partners with this company):
@@ -36,8 +33,6 @@ If you would like to test if our website is safe to use, you are welcome to test
 
 For your information, we are just a normal website/blog that provides video information about what is happening in the technology AI world. 
 
-### Affiliate Disclosure
-Please note that we earn a commission from our affiliates' partners:
-Some of our links on TechFeedWatch.com are affiliate links. We may receive a commission, but it's not an extra cost if you click through our links and purchase from one of our partners.
+## Affiliate Disclosure
 
-We hope you will enjoy our website.
+Some articles on Tech Feed Watch may contain affiliate links. If you click one of these links and make a purchase, I may earn a small commission at no extra cost to you. This never affects the analysis or opinions on this site — coverage is based on the merits of the topic, not on any commercial relationship.
