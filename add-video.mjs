@@ -114,8 +114,7 @@ async function run() {
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `Act as an expert tech journalist and GEO (Generative Engine Optimization) specialist for "Tech Feed Watch".
-    Analyze this video content (either transcript or title/description) and write an original, analytical article - not a summary or transcription of the video.
+      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Analyze this video content (either transcript or title/description) and write an original, analytical text article based on the source material.
 
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
@@ -127,19 +126,25 @@ async function run() {
     A: [answer]
     Each answer max 2 sentences. Do not use markdown links in the answers.
     CONTENT:
-    Write an original, analytical article of at least 600-800 words based on the video.
+    Write the article following these STRICT RULES:
+    1. Objectivity is mandatory - do not hype any product or technology.
+    2. No author bio, greetings, sign-offs, or affiliate disclaimers.
+    3. Do NOT start with an H1 or the video title (the page already shows the title). Start directly with a 2-3 sentence executive summary paragraph, no label.
+    4. Avoid commodity/listicle filler unless backed by real analysis.
+    5. BANNED WORDS - never use: delve, tapestry, realm, navigate, landscape, testament, crucial, robust, demystify, unlock, unleash, elevate, seamless, paradigm shift, "in today's digital age", firstly, moreover, furthermore, "in conclusion".
+    6. Write with high burstiness: mix short punchy sentences with longer analytical ones. Active voice only.
+    7. Minimum 600-800 words.
+    8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece.
+    9. Ensure internal links are written strictly like this: [Link text](/video/slug).
 
-    CRITICAL STRUCTURE RULES FOR CONTENT:
-    1. Do not transcribe or recap the video chronologically. Write as an editor who ANALYZES the topic, adding your own angle and interpretation - not someone describing what happens in a video.
-    2. Add context: explain why this topic matters in the broader tech/AI/fintech/crypto landscape, and connect it to trends, implications, or consequences beyond the video itself.
-    3. Break the text into clear, logical sections using strict Markdown headings '##' (H2) and '###' (H3). Use at least 3-4 H2 sections.
-    4. Include a "## Key Takeaways" section with 3-5 concise bullet points.
-    5. End with a short closing section giving your own assessment or perspective on where this is headed.
-    6. Use Markdown bullet points (-) and **bold text** for key terms.
-    7. Keep paragraphs short and punchy.
-    8. Ensure internal links are written strictly like this: [Link text](/video/slug).
-    9. Never use filler phrases like "in this video" or "the video discusses" - write as an independent editorial piece, in natural language.
-    10. DU MÅ IKKE inkludere teksten 'Search Description' eller lignende metadata i toppen af artiklen. Start direkte med artiklens indhold.
+    STRUCTURE (use ## for each H2 heading):
+    - Opening: 2-3 sentence executive summary (no heading, no label).
+    - A captivating intro paragraph with a data-driven hook or bold contrarian statement.
+    - "## Key Takeaways" - 3-4 bullets with the most critical, non-obvious insights.
+    - "## Technical Breakdown" - explain the core concepts objectively and clearly.
+    - "## Why This Matters" - the concrete real-world impact on workflows, security, or industry.
+    - "## What Others Missed" - unbiased breakdown of risks, limitations, costs, or unexpected angles.
+    - "## The Verdict" - final objective assessment: passing trend or permanent shift?
     ${internalLinksContext}
 
     Video Content Data: ${text.substring(0, 20000)}`;
