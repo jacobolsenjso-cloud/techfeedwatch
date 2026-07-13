@@ -93,11 +93,19 @@ if (currentPath.startsWith('/video/')) {
       body.shorts-mode .top-navbar, body.shorts-mode .sidebar, body.shorts-mode .site-footer { display: none !important; }
       body.shorts-mode .content-area { padding: 0 !important; background: #000; overflow-y: hidden !important; }
 
-      @media (max-width: 768px) { 
+      .scroll-top-btn { display: none; position: fixed; bottom: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.15); align-items: center; justify-content: center; cursor: pointer; z-index: 500; font-size: 1.3rem; line-height: 1; padding: 0; }
+      body.dark-mode .scroll-top-btn { box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+
+      @media (max-width: 768px) {
         .mobile-menu-btn { display: block; }
         /* MENU FIX: z-index hævet til 2000 for at sikre at den dækker videoen */
         .sidebar { position: fixed; top: 60px; left: 0; height: calc(100vh - 60px); transform: translateX(-100%); box-shadow: 2px 0 15px rgba(0,0,0,0.2); z-index: 2000; }
         .sidebar.open { transform: translateX(0); }
+
+        .scroll-top-btn.visible { display: flex; }
+
+        /* Giver plads til mobilbrowserens nederste UI-bjælke/safe area */
+        .site-footer { padding-top: 30px; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
       }
     </style>
   </head>
@@ -148,6 +156,8 @@ if (currentPath.startsWith('/video/')) {
       </main>
     </div>
 
+    <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">↑</button>
+
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
         const themeBtn = document.getElementById('themeToggle');
@@ -179,9 +189,28 @@ if (currentPath.startsWith('/video/')) {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         if (mobileMenuBtn && sidebar) {
-          mobileMenuBtn.addEventListener('click', () => { 
-            const isOpen = sidebar.classList.toggle('open'); 
+          mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = sidebar.classList.toggle('open');
             mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+          });
+        }
+
+        // "Til toppen"-knap: kun mobil, kun når der er scrollet forbi 400px.
+        // Siden scroller i .content-area, ikke window - lyt/scroll på det rigtige element.
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        const scrollContainer = document.querySelector('.content-area') || window;
+        if (scrollTopBtn) {
+          const getScrollTop = () => (scrollContainer === window ? window.scrollY : scrollContainer.scrollTop);
+          const updateScrollTopBtn = () => {
+            const shouldShow = window.innerWidth <= 768 && getScrollTop() > 400;
+            scrollTopBtn.classList.toggle('visible', shouldShow);
+          };
+          scrollContainer.addEventListener('scroll', updateScrollTopBtn);
+          window.addEventListener('resize', updateScrollTopBtn);
+          updateScrollTopBtn();
+
+          scrollTopBtn.addEventListener('click', () => {
+            scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
           });
         }
       });
