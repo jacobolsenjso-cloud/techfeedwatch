@@ -89,6 +89,10 @@ if (currentPath.startsWith('/video/')) {
       .content-area { flex: 1; background: var(--bg-color); position: relative; display: flex; flex-direction: column; scroll-behavior: smooth; }
       .site-footer { padding: 20px; text-align: center; border-top: 1px solid var(--border-color); font-size: 14px; color: #6b7280; margin-top: auto; }
       body.dark-mode .site-footer { color: #9ca3af; }
+      .footer-copy { margin: 0; }
+      .footer-links { margin-top: 8px; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+      .footer-link { color: inherit; text-decoration: none; margin: 0 10px; }
+      .footer-sep { opacity: 0.6; }
 
       body.shorts-mode .top-navbar, body.shorts-mode .sidebar, body.shorts-mode .site-footer { display: none !important; }
       body.shorts-mode .content-area { padding: 0 !important; background: #000; overflow-y: hidden !important; }
@@ -104,8 +108,12 @@ if (currentPath.startsWith('/video/')) {
 
         .scroll-top-btn.visible { display: flex; }
 
-        /* Giver plads til mobilbrowserens nederste UI-bjælke/safe area */
+        /* Balanceret padding: løfter teksten fra bunden og giver plads til mobilbrowserens nederste UI-bjælke/safe area */
         .site-footer { padding-top: 30px; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
+        .footer-copy { margin-bottom: 12px; }
+        .footer-links { flex-direction: column; gap: 10px; margin-top: 0; }
+        .footer-link { margin: 0; }
+        .footer-sep { display: none; }
       }
     </style>
   </head>
@@ -146,12 +154,14 @@ if (currentPath.startsWith('/video/')) {
         <slot /> 
         
         <footer class="site-footer">
-          <p>&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
-          <p style="margin-top: 8px;">
-            <a href="/about" style="color: inherit; text-decoration: none; margin: 0 10px;">About Us</a> | 
-            <a href="/terms" style="color: inherit; text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
-            <a href="/privacy-policy" style="color: inherit; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
-          </p>
+          <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="/about" class="footer-link">About Us</a>
+            <span class="footer-sep">|</span>
+            <a href="/terms" class="footer-link">Terms of Service</a>
+            <span class="footer-sep">|</span>
+            <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+          </div>
         </footer>
       </main>
     </div>
@@ -201,8 +211,13 @@ if (currentPath.startsWith('/video/')) {
         const scrollContainer = document.querySelector('.content-area') || window;
         if (scrollTopBtn) {
           const getScrollTop = () => (scrollContainer === window ? window.scrollY : scrollContainer.scrollTop);
+          const getScrollHeight = () => (scrollContainer === window ? document.documentElement.scrollHeight : scrollContainer.scrollHeight);
+          const getClientHeight = () => (scrollContainer === window ? window.innerHeight : scrollContainer.clientHeight);
           const updateScrollTopBtn = () => {
-            const shouldShow = window.innerWidth <= 768 && getScrollTop() > 400;
+            const scrollTop = getScrollTop();
+            // Skjul knappen når footeren er inden for synsvidde, så den ikke overlapper footer-teksten
+            const nearBottom = scrollTop + getClientHeight() >= getScrollHeight() - 120;
+            const shouldShow = window.innerWidth <= 768 && scrollTop > 400 && !nearBottom;
             scrollTopBtn.classList.toggle('visible', shouldShow);
           };
           scrollContainer.addEventListener('scroll', updateScrollTopBtn);
