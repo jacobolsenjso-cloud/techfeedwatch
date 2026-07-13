@@ -1,0 +1,143 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Vejledende priser pr. 1M input-tokens (USD). Opdatér her når priserne ændrer sig.
+const MODEL_PRICING = [
+  { name: 'GPT-4o', pricePerMillion: 2.50 },
+  { name: 'GPT-4o mini', pricePerMillion: 0.15 },
+  { name: 'Claude (Sonnet)', pricePerMillion: 3.00 },
+  { name: 'Claude (Haiku)', pricePerMillion: 0.80 },
+  { name: 'Gemini 1.5 Pro', pricePerMillion: 1.25 },
+  { name: 'Gemini 1.5 Flash', pricePerMillion: 0.075 },
+];
+
+const title = "AI Token & Cost Calculator";
+const description = "Estimate token count and input cost for GPT-4o, Claude, and Gemini models - free, instant, and runs entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .calc-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .calc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .calc-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .calc-header p { color: #9ca3af; }
+
+    .calc-textarea { width: 100%; min-height: 220px; padding: 16px; border-radius: 12px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; resize: vertical; box-sizing: border-box; }
+    .calc-textarea:focus { outline: none; border-color: #ef4444; }
+
+    .calc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+    .calc-stat { background: var(--hover-bg); border-radius: 10px; padding: 16px; text-align: center; }
+    .calc-stat-value { font-size: 1.6rem; font-weight: 700; display: block; }
+    .calc-stat-label { font-size: 0.8rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+    body.dark-mode .calc-stat-label { color: #9ca3af; }
+
+    .calc-note { font-size: 0.85rem; color: #6b7280; margin: 8px 0 30px 0; }
+    body.dark-mode .calc-note { color: #9ca3af; }
+
+    .calc-table-wrapper { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 12px; }
+    .calc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .calc-table th, .calc-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-color); }
+    .calc-table th { background: var(--hover-bg); font-weight: 700; }
+    .calc-table tr:last-child td { border-bottom: none; }
+    .calc-table td.calc-cost { font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .calc-wrapper { padding: 20px 15px; }
+      .calc-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="calc-wrapper">
+    <div class="calc-header">
+      <h1>🧮 AI Token & Cost Calculator</h1>
+      <p>Paste your text below to estimate the token count and the input cost across popular AI models. Everything runs locally in your browser - nothing is sent anywhere.</p>
+    </div>
+
+    <textarea id="calcInput" class="calc-textarea" placeholder="Paste or type your text here..."></textarea>
+
+    <div class="calc-stats">
+      <div class="calc-stat">
+        <span class="calc-stat-value" id="statChars">0</span>
+        <span class="calc-stat-label">Characters</span>
+      </div>
+      <div class="calc-stat">
+        <span class="calc-stat-value" id="statWords">0</span>
+        <span class="calc-stat-label">Words</span>
+      </div>
+      <div class="calc-stat">
+        <span class="calc-stat-value" id="statTokens">0</span>
+        <span class="calc-stat-label">Estimated Tokens</span>
+      </div>
+    </div>
+    <p class="calc-note">⚠️ Token count is an ESTIMATE (average of characters÷4 and words×1.33). Actual tokenization varies by model.</p>
+
+    <div class="calc-table-wrapper">
+      <table class="calc-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Price / 1M input tokens</th>
+            <th>Estimated cost</th>
+          </tr>
+        </thead>
+        <tbody id="calcTableBody"></tbody>
+      </table>
+    </div>
+    <p class="calc-note">Prices are indicative (USD, per 1M input tokens) and may change. Always check the provider's official pricing page before relying on these figures.</p>
+  </div>
+
+  <script define:vars={{ MODEL_PRICING }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('calcInput');
+      const statChars = document.getElementById('statChars');
+      const statWords = document.getElementById('statWords');
+      const statTokens = document.getElementById('statTokens');
+      const tableBody = document.getElementById('calcTableBody');
+
+      const formatNumber = (n) => n.toLocaleString('en-US');
+
+      const formatCost = (cost) => {
+        if (cost > 0 && cost < 0.01) return `$${cost.toFixed(4)}`;
+        return `$${cost.toFixed(2)}`;
+      };
+
+      const update = () => {
+        const text = input.value;
+        const chars = text.length;
+        const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+
+        const tokensByChars = chars / 4;
+        const tokensByWords = words * 1.33;
+        const estimatedTokens = Math.round((tokensByChars + tokensByWords) / 2);
+
+        statChars.textContent = formatNumber(chars);
+        statWords.textContent = formatNumber(words);
+        statTokens.textContent = formatNumber(estimatedTokens);
+
+        tableBody.innerHTML = '';
+        MODEL_PRICING.forEach((model) => {
+          const cost = (estimatedTokens / 1000000) * model.pricePerMillion;
+          const row = document.createElement('tr');
+
+          const nameCell = document.createElement('td');
+          nameCell.textContent = model.name;
+
+          const priceCell = document.createElement('td');
+          priceCell.textContent = `$${model.pricePerMillion.toFixed(2)}`;
+
+          const costCell = document.createElement('td');
+          costCell.className = 'calc-cost';
+          costCell.textContent = formatCost(cost);
+
+          row.appendChild(nameCell);
+          row.appendChild(priceCell);
+          row.appendChild(costCell);
+          tableBody.appendChild(row);
+        });
+      };
+
+      input.addEventListener('input', update);
+      update();
+    });
+  </script>
+</MainLayout>

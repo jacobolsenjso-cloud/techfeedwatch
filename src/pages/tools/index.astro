@@ -1,0 +1,56 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Tilføj nye værktøjer her - siden bygger listen automatisk
+const TOOLS = [
+  {
+    slug: 'ai-token-calculator',
+    icon: '🧮',
+    title: 'AI Token & Cost Calculator',
+    description: 'Estimate token count and input cost for your text across GPT-4o, Claude, and Gemini models.',
+  },
+];
+
+const title = "Free Tools";
+const description = "Free, browser-based tools for AI and tech work - starting with an AI token and cost calculator.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .tools-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .tools-header { margin-bottom: 30px; }
+    .tools-header h1 { margin: 0 0 10px 0; font-size: 2rem; }
+    .tools-header p { color: #6b7280; font-size: 1.05rem; margin: 0; }
+    body.dark-mode .tools-header p { color: #9ca3af; }
+
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .tool-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-color: #ef4444; }
+    .tool-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .tool-card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 8px 0; }
+    .tool-card-desc { font-size: 0.95rem; color: #6b7280; margin: 0; line-height: 1.5; }
+    body.dark-mode .tool-card-desc { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .tools-wrapper { padding: 20px 15px; }
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="tools-wrapper">
+    <div class="tools-header">
+      <h1>🛠️ Free Tools</h1>
+      <p>Small, focused tools for working faster with AI. All calculations run in your browser - nothing is uploaded.</p>
+    </div>
+
+    <div class="tools-grid">
+      {TOOLS.map((tool) => (
+        <a href={`/tools/${tool.slug}`} class="tool-card">
+          <span class="tool-card-icon">{tool.icon}</span>
+          <h2 class="tool-card-title">{tool.title}</h2>
+          <p class="tool-card-desc">{tool.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</MainLayout>
