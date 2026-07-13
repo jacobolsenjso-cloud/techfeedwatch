@@ -110,8 +110,11 @@ if (currentPath.startsWith('/video/')) {
 
         /* Balanceret padding: løfter teksten fra bunden og giver plads til mobilbrowserens nederste UI-bjælke/safe area */
         .site-footer { padding-top: 30px; padding-bottom: calc(30px + env(safe-area-inset-bottom)); }
+
+        /* Gruppen centreres som blok på skærmen, men teksten indeni er venstrejusteret */
+        .footer-inner { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: fit-content; margin: 0 auto; }
         .footer-copy { margin-bottom: 12px; }
-        .footer-links { flex-direction: column; gap: 10px; margin-top: 0; }
+        .footer-links { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 0; }
         .footer-link { margin: 0; }
         .footer-sep { display: none; }
       }
@@ -154,13 +157,15 @@ if (currentPath.startsWith('/video/')) {
         <slot /> 
         
         <footer class="site-footer">
-          <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="/about" class="footer-link">About Us</a>
-            <span class="footer-sep">|</span>
-            <a href="/terms" class="footer-link">Terms of Service</a>
-            <span class="footer-sep">|</span>
-            <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+          <div class="footer-inner">
+            <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
+            <div class="footer-links">
+              <a href="/about" class="footer-link">About Us</a>
+              <span class="footer-sep">|</span>
+              <a href="/terms" class="footer-link">Terms of Service</a>
+              <span class="footer-sep">|</span>
+              <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+            </div>
           </div>
         </footer>
       </main>
