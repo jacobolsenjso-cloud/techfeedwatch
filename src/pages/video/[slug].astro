@@ -19,7 +19,8 @@ const faqs = video.frontmatter.faqs || [];
 
 const TOOL_SUGGESTIONS = [
   { tags: ["AI & Tech", "Coding", "AI Video"], title: "AI Token & Cost Calculator", description: "Estimate token count and input cost across GPT-4o, Claude, and Gemini.", href: "/tools/ai-token-calculator" },
-  { tags: ["Fintech", "Crypto", "Business & Money"], title: "Compound Growth & Staking Calculator", description: "Project compound interest, savings growth, and crypto staking returns over time.", href: "/tools/compound-calculator" }
+  { tags: ["Fintech", "Crypto", "Business & Money"], title: "Compound Growth & Staking Calculator", description: "Project compound interest, savings growth, and crypto staking returns over time.", href: "/tools/compound-calculator" },
+  { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const matchedTool = TOOL_SUGGESTIONS.find(tool => tool.tags.some(t => videoTags.includes(t)));

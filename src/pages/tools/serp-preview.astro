@@ -1,0 +1,218 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Meta Tag & SERP Snippet Preview";
+const description = "Preview how your page title and meta description will look in Google search results, and generate ready-to-use meta tags.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .serp-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .serp-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .serp-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .serp-header p { color: #9ca3af; }
+
+    .serp-field { margin-bottom: 20px; }
+    .serp-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .serp-field input, .serp-field textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; resize: vertical; }
+    .serp-field input:focus, .serp-field textarea:focus { outline: none; border-color: #ef4444; }
+    .serp-field textarea { min-height: 80px; }
+
+    .serp-counter { display: inline-block; margin-top: 6px; font-size: 0.8rem; font-weight: 600; }
+    .serp-counter-ok { color: #16a34a; }
+    .serp-counter-over { color: #dc2626; }
+
+    .serp-previews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+    .serp-preview-label { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin: 0 0 10px 0; }
+    body.dark-mode .serp-preview-label { color: #9ca3af; }
+
+    .serp-result { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; font-family: arial, sans-serif; overflow: hidden; }
+    body.dark-mode .serp-result { background: #202124; }
+
+    .serp-url { color: #202124; font-size: 0.85rem; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    body.dark-mode .serp-url { color: #bdc1c6; }
+    .serp-title { color: #1a0dab; font-size: 1.2rem; line-height: 1.3; margin-bottom: 3px; cursor: pointer; overflow-wrap: break-word; }
+    .serp-title:hover { text-decoration: underline; }
+    body.dark-mode .serp-title { color: #8ab4f8; }
+    .serp-desc { color: #4d5156; font-size: 0.9rem; line-height: 1.4; overflow-wrap: break-word; }
+    body.dark-mode .serp-desc { color: #bdc1c6; }
+
+    .serp-result-mobile { max-width: 320px; }
+    .serp-result-mobile .serp-title { font-size: 1.05rem; }
+    .serp-result-mobile .serp-desc { font-size: 0.85rem; }
+
+    .serp-generate-btn { padding: 12px 20px; border-radius: 8px; border: none; background: #ef4444; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .serp-generate-btn:hover { background: #dc2626; }
+
+    .serp-code-wrapper { margin-top: 20px; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+    .serp-code-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--hover-bg); font-size: 0.85rem; font-weight: 600; }
+    .serp-copy-btn { padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); cursor: pointer; font-size: 0.8rem; }
+    .serp-copy-btn:hover { border-color: #ef4444; }
+    .serp-code { margin: 0; padding: 14px; overflow-x: auto; background: var(--card-bg); font-size: 0.85rem; }
+    .serp-code code { color: var(--text-color); white-space: pre; }
+
+    .serp-note { font-size: 0.85rem; color: #6b7280; margin: 20px 0 0 0; }
+    body.dark-mode .serp-note { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .serp-wrapper { padding: 20px 15px; }
+    }
+  </style>
+
+  <div class="serp-wrapper">
+    <div class="serp-header">
+      <h1>🔎 Meta Tag & SERP Snippet Preview</h1>
+      <p>See how your title and description will look in Google search results before you publish. Everything runs locally in your browser - nothing is sent anywhere.</p>
+    </div>
+
+    <div class="serp-field">
+      <label for="serpTitle">Page title (meta title)</label>
+      <input type="text" id="serpTitle" placeholder="Your page title" value="Example Page Title - Your Site Name" />
+      <span class="serp-counter" id="serpTitleCounter">0 / 60</span>
+    </div>
+
+    <div class="serp-field">
+      <label for="serpDescription">Meta description</label>
+      <textarea id="serpDescription" placeholder="A concise, compelling description of the page...">This is an example meta description. Write a clear, compelling summary of the page content to encourage clicks from search results.</textarea>
+      <span class="serp-counter" id="serpDescCounter">0 / 160</span>
+    </div>
+
+    <div class="serp-field">
+      <label for="serpUrl">URL</label>
+      <input type="text" id="serpUrl" placeholder="https://example.com/page" value="https://example.com/page" />
+    </div>
+
+    <div class="serp-previews">
+      <div>
+        <h3 class="serp-preview-label">Desktop Preview</h3>
+        <div class="serp-result serp-result-desktop">
+          <div class="serp-url" id="serpUrlDesktop"></div>
+          <div class="serp-title" id="serpTitleDesktop"></div>
+          <div class="serp-desc" id="serpDescDesktop"></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="serp-preview-label">Mobile Preview</h3>
+        <div class="serp-result serp-result-mobile">
+          <div class="serp-url" id="serpUrlMobile"></div>
+          <div class="serp-title" id="serpTitleMobile"></div>
+          <div class="serp-desc" id="serpDescMobile"></div>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" id="serpGenerateBtn" class="serp-generate-btn">Generate meta tags</button>
+
+    <div class="serp-code-wrapper" id="serpCodeWrapper" style="display:none;">
+      <div class="serp-code-header">
+        <span>HTML</span>
+        <button type="button" id="serpCopyBtn" class="serp-copy-btn">Copy</button>
+      </div>
+      <pre class="serp-code"><code id="serpCodeOutput"></code></pre>
+    </div>
+
+    <p class="serp-note">⚠️ Google decides how snippets are displayed and may rewrite titles/descriptions or truncate them based on pixel width rather than a fixed character count. This tool is a close approximation for planning purposes.</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const TITLE_LIMIT = 60;
+      const DESC_LIMIT = 160;
+
+      const titleInput = document.getElementById('serpTitle');
+      const descInput = document.getElementById('serpDescription');
+      const urlInput = document.getElementById('serpUrl');
+
+      const titleCounter = document.getElementById('serpTitleCounter');
+      const descCounter = document.getElementById('serpDescCounter');
+
+      const urlDesktopEl = document.getElementById('serpUrlDesktop');
+      const titleDesktopEl = document.getElementById('serpTitleDesktop');
+      const descDesktopEl = document.getElementById('serpDescDesktop');
+      const urlMobileEl = document.getElementById('serpUrlMobile');
+      const titleMobileEl = document.getElementById('serpTitleMobile');
+      const descMobileEl = document.getElementById('serpDescMobile');
+
+      const generateBtn = document.getElementById('serpGenerateBtn');
+      const codeWrapper = document.getElementById('serpCodeWrapper');
+      const codeOutput = document.getElementById('serpCodeOutput');
+      const copyBtn = document.getElementById('serpCopyBtn');
+
+      const truncate = (text, limit) => {
+        if (text.length <= limit) return text;
+        return text.slice(0, limit).trimEnd() + '...';
+      };
+
+      const updateCounter = (el, length, limit) => {
+        el.textContent = `${length} / ${limit}`;
+        el.classList.toggle('serp-counter-ok', length <= limit);
+        el.classList.toggle('serp-counter-over', length > limit);
+      };
+
+      const formatDisplayUrl = (rawUrl) => {
+        try {
+          const u = new URL(rawUrl);
+          const path = u.pathname !== '/' ? u.pathname : '';
+          return `${u.hostname}${path}`;
+        } catch {
+          return rawUrl;
+        }
+      };
+
+      const update = () => {
+        const titleValue = titleInput.value || '';
+        const descValue = descInput.value || '';
+        const urlValue = urlInput.value || '';
+
+        updateCounter(titleCounter, titleValue.length, TITLE_LIMIT);
+        updateCounter(descCounter, descValue.length, DESC_LIMIT);
+
+        const displayUrl = formatDisplayUrl(urlValue);
+        const truncatedTitle = truncate(titleValue, TITLE_LIMIT) || 'Your page title will appear here';
+        const truncatedDesc = truncate(descValue, DESC_LIMIT) || 'Your meta description will appear here.';
+
+        urlDesktopEl.textContent = displayUrl;
+        urlMobileEl.textContent = displayUrl;
+        titleDesktopEl.textContent = truncatedTitle;
+        titleMobileEl.textContent = truncatedTitle;
+        descDesktopEl.textContent = truncatedDesc;
+        descMobileEl.textContent = truncatedDesc;
+      };
+
+      [titleInput, descInput, urlInput].forEach((el) => {
+        el.addEventListener('input', update);
+      });
+      update();
+
+      const escapeHtml = (str) => str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+
+      generateBtn.addEventListener('click', () => {
+        const titleValue = titleInput.value || '';
+        const descValue = descInput.value || '';
+        const urlValue = urlInput.value || '';
+
+        const html = `<title>${escapeHtml(titleValue)}</title>
+<meta name="description" content="${escapeHtml(descValue)}">
+<meta property="og:title" content="${escapeHtml(titleValue)}">
+<meta property="og:description" content="${escapeHtml(descValue)}">
+<meta property="og:url" content="${escapeHtml(urlValue)}">`;
+
+        codeOutput.textContent = html;
+        codeWrapper.style.display = 'block';
+      });
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codeOutput.textContent);
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+    });
+  </script>
+</MainLayout>
