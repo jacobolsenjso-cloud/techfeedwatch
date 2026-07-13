@@ -234,8 +234,9 @@ const videoSchema = {
     }
 
     @media (max-width: 768px) {
-      /* Sikrer at en skjult menu ikke skubber videoen fra venstre */
-      body.shorts-mode .sidebar { display: none !important; }
+      /* Menuen skal kunne åbnes over Shorts-videoen, ligesom cinema-mode gør med sticky video */
+      body.shorts-mode .top-navbar { z-index: 1000 !important; }
+      body.shorts-mode .sidebar { z-index: 2000 !important; }
 
       .shorts-content-area {
         position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important;
