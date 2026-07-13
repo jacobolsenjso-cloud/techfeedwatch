@@ -17,6 +17,12 @@ const { video, allVideos, slug } = Astro.props as { video: any, allVideos: any[]
 const { title, youtubeId, date, summary, isShort } = video.frontmatter;
 const faqs = video.frontmatter.faqs || [];
 
+const TOOL_SUGGESTIONS = [
+  { tags: ["AI & Tech", "Coding", "AI Video"], title: "AI Token & Cost Calculator", description: "Estimate token count and input cost across GPT-4o, Claude, and Gemini.", href: "/tools/ai-token-calculator" }
+];
+const videoTags = video.frontmatter.tags || [];
+const matchedTool = TOOL_SUGGESTIONS.find(tool => tool.tags.some(t => videoTags.includes(t)));
+
 const headings = video.getHeadings ? video.getHeadings() : [];
 const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
 
@@ -136,6 +142,14 @@ const videoSchema = {
 
     .adsense-container { background: var(--card-bg); border-radius: 8px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border-color); text-align: center; padding: 10px; position: relative; z-index: 1; pointer-events: auto; }
     .ad-label { display: block; font-size: 0.7rem; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; margin-bottom: 5px; }
+
+    .tool-suggestion { background: var(--hover-bg); border-radius: 8px; padding: 20px; margin-bottom: 30px; border: 1px solid var(--border-color); }
+    .tool-suggestion h3 { margin: 0 0 12px 0; font-size: 1.1rem; }
+    .tool-suggestion a { display: block; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; transition: border-color 0.2s, transform 0.2s; }
+    .tool-suggestion a:hover { border-color: #ef4444; transform: translateY(-2px); }
+    .tool-suggestion strong { display: block; margin-bottom: 5px; font-size: 1rem; }
+    .tool-suggestion p { margin: 0; font-size: 0.9rem; color: #6b7280; }
+    body.dark-mode .tool-suggestion p { color: #9ca3af; }
 
     .video-actions { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px; margin-bottom: 40px; }
     .nav-row { display: flex; gap: 20px; }
@@ -501,6 +515,16 @@ const videoSchema = {
         </article>
 
         {faqs.length > 0 && <FAQ faqs={faqs} />}
+
+        {matchedTool && (
+          <div class="tool-suggestion">
+            <h3>Try This Tool</h3>
+            <a href={matchedTool.href}>
+              <strong>{matchedTool.title}</strong>
+              <p>{matchedTool.description}</p>
+            </a>
+          </div>
+        )}
 
         <div class="video-actions">
           <div class="nav-row">
