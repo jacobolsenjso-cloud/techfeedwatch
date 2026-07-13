@@ -1,0 +1,214 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Compound Growth & Crypto Staking Calculator";
+const description = "Project compound interest, savings growth, and crypto staking returns over time - free, instant, and runs entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .cc-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .cc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .cc-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .cc-header p { color: #9ca3af; }
+
+    .cc-input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 30px; }
+    .cc-field { display: flex; flex-direction: column; gap: 6px; }
+    .cc-field label { font-size: 0.85rem; font-weight: 600; color: var(--text-color); }
+    .cc-field input, .cc-field select { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+    .cc-field input:focus, .cc-field select:focus { outline: none; border-color: #ef4444; }
+
+    .cc-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .cc-stat { background: var(--hover-bg); border-radius: 10px; padding: 16px; text-align: center; }
+    .cc-stat-value { font-size: 1.5rem; font-weight: 700; display: block; word-break: break-word; }
+    .cc-stat-label { font-size: 0.8rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+    body.dark-mode .cc-stat-label { color: #9ca3af; }
+
+    .cc-note { font-size: 0.85rem; color: #6b7280; margin: 8px 0 30px 0; }
+    body.dark-mode .cc-note { color: #9ca3af; }
+
+    .cc-table-wrapper { overflow-x: auto; border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 20px; }
+    .cc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .cc-table th, .cc-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
+    .cc-table th { background: var(--hover-bg); font-weight: 700; }
+    .cc-table tr:last-child td { border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .cc-wrapper { padding: 20px 15px; }
+      .cc-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="cc-wrapper">
+    <div class="cc-header">
+      <h1>📈 Compound Growth & Crypto Staking Calculator</h1>
+      <p>Model how a starting amount grows over time with recurring contributions - for savings, interest-bearing accounts, or crypto staking. Everything runs locally in your browser - nothing is sent anywhere.</p>
+    </div>
+
+    <div class="cc-input-grid">
+      <div class="cc-field">
+        <label for="ccInitial">Initial amount</label>
+        <input type="number" id="ccInitial" min="0" step="1" value="1000" />
+      </div>
+      <div class="cc-field">
+        <label for="ccMonthly">Monthly contribution</label>
+        <input type="number" id="ccMonthly" min="0" step="1" value="0" />
+      </div>
+      <div class="cc-field">
+        <label for="ccRate">Annual rate / APY (%)</label>
+        <input type="number" id="ccRate" min="0" step="0.01" value="5" />
+      </div>
+      <div class="cc-field">
+        <label for="ccYears">Number of years</label>
+        <input type="number" id="ccYears" min="1" step="1" value="10" />
+      </div>
+      <div class="cc-field">
+        <label for="ccFrequency">Compounding frequency</label>
+        <select id="ccFrequency">
+          <option value="daily">Daily</option>
+          <option value="monthly" selected>Monthly</option>
+          <option value="yearly">Yearly</option>
+        </select>
+      </div>
+      <div class="cc-field">
+        <label for="ccCurrency">Currency</label>
+        <select id="ccCurrency">
+          <option value="USD" selected>USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="cc-stats">
+      <div class="cc-stat">
+        <span class="cc-stat-value" id="ccFinalBalance">$0</span>
+        <span class="cc-stat-label">Final Balance</span>
+      </div>
+      <div class="cc-stat">
+        <span class="cc-stat-value" id="ccTotalContributed">$0</span>
+        <span class="cc-stat-label">Total Contributed</span>
+      </div>
+      <div class="cc-stat">
+        <span class="cc-stat-value" id="ccTotalGrowth">$0</span>
+        <span class="cc-stat-label">Total Growth Earned</span>
+      </div>
+    </div>
+
+    <div class="cc-table-wrapper">
+      <table class="cc-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Balance at year end</th>
+            <th>Growth that year</th>
+          </tr>
+        </thead>
+        <tbody id="ccTableBody"></tbody>
+      </table>
+    </div>
+
+    <p class="cc-note">⚠️ This is an estimate for educational purposes and not financial advice. Crypto staking rates and returns vary and are not guaranteed.</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const initialInput = document.getElementById('ccInitial');
+      const monthlyInput = document.getElementById('ccMonthly');
+      const rateInput = document.getElementById('ccRate');
+      const yearsInput = document.getElementById('ccYears');
+      const frequencySelect = document.getElementById('ccFrequency');
+      const currencySelect = document.getElementById('ccCurrency');
+
+      const finalBalanceEl = document.getElementById('ccFinalBalance');
+      const totalContributedEl = document.getElementById('ccTotalContributed');
+      const totalGrowthEl = document.getElementById('ccTotalGrowth');
+      const tableBody = document.getElementById('ccTableBody');
+
+      const PERIODS_PER_YEAR = { daily: 365, monthly: 12, yearly: 1 };
+
+      const formatCurrency = (value, currency) => {
+        return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency,
+          maximumFractionDigits: 2,
+        }).format(value);
+      };
+
+      const simulate = (initial, monthlyContribution, apyPercent, years, frequency) => {
+        const periodsPerYear = PERIODS_PER_YEAR[frequency] || 12;
+        const ratePerPeriod = (apyPercent / 100) / periodsPerYear;
+        const periodsPerMonth = periodsPerYear / 12;
+
+        let balance = initial;
+        let totalContributed = initial;
+        const yearlyRows = [];
+        const wholeYears = Math.max(1, Math.floor(years) || 0);
+
+        for (let year = 1; year <= wholeYears; year++) {
+          const balanceStartOfYear = balance;
+          let contributedThisYear = 0;
+
+          for (let month = 1; month <= 12; month++) {
+            balance *= Math.pow(1 + ratePerPeriod, periodsPerMonth);
+            balance += monthlyContribution;
+            totalContributed += monthlyContribution;
+            contributedThisYear += monthlyContribution;
+          }
+
+          const growthThisYear = balance - balanceStartOfYear - contributedThisYear;
+          yearlyRows.push({ year, balance, growth: growthThisYear });
+        }
+
+        return {
+          finalBalance: balance,
+          totalContributed,
+          totalGrowth: balance - totalContributed,
+          yearlyRows,
+        };
+      };
+
+      const update = () => {
+        const initial = parseFloat(initialInput.value) || 0;
+        const monthlyContribution = parseFloat(monthlyInput.value) || 0;
+        const apyPercent = parseFloat(rateInput.value) || 0;
+        const years = parseFloat(yearsInput.value) || 0;
+        const frequency = frequencySelect.value;
+        const currency = currencySelect.value;
+
+        const result = simulate(initial, monthlyContribution, apyPercent, years, frequency);
+
+        finalBalanceEl.textContent = formatCurrency(result.finalBalance, currency);
+        totalContributedEl.textContent = formatCurrency(result.totalContributed, currency);
+        totalGrowthEl.textContent = formatCurrency(result.totalGrowth, currency);
+
+        tableBody.innerHTML = '';
+        result.yearlyRows.forEach((row) => {
+          const tr = document.createElement('tr');
+
+          const yearCell = document.createElement('td');
+          yearCell.textContent = row.year;
+
+          const balanceCell = document.createElement('td');
+          balanceCell.textContent = formatCurrency(row.balance, currency);
+
+          const growthCell = document.createElement('td');
+          growthCell.textContent = formatCurrency(row.growth, currency);
+
+          tr.appendChild(yearCell);
+          tr.appendChild(balanceCell);
+          tr.appendChild(growthCell);
+          tableBody.appendChild(tr);
+        });
+      };
+
+      [initialInput, monthlyInput, rateInput, yearsInput].forEach((el) => {
+        el.addEventListener('input', update);
+      });
+      [frequencySelect, currencySelect].forEach((el) => {
+        el.addEventListener('change', update);
+      });
+
+      update();
+    });
+  </script>
+</MainLayout>
