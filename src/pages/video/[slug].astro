@@ -23,7 +23,18 @@ const TOOL_SUGGESTIONS = [
   { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" }
 ];
 const videoTags = video.frontmatter.tags || [];
-const matchedTool = TOOL_SUGGESTIONS.find(tool => tool.tags.some(t => videoTags.includes(t)));
+const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
+
+// Prioriteret matching: mest specifikke tag vinder, i stedet for første match i listen
+// (næsten alle videoer har "AI & Tech", så den må komme sidst).
+let matchedTool = null;
+if (videoTags.includes("SEO")) {
+  matchedTool = findTool("/tools/serp-preview");
+} else if (videoTags.includes("Fintech") || videoTags.includes("Crypto")) {
+  matchedTool = findTool("/tools/compound-calculator");
+} else if (videoTags.includes("AI & Tech") || videoTags.includes("Coding") || videoTags.includes("AI Video")) {
+  matchedTool = findTool("/tools/ai-token-calculator");
+}
 
 const headings = video.getHeadings ? video.getHeadings() : [];
 const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
