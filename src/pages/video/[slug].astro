@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro'; 
+import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 
 export async function getStaticPaths() {
@@ -58,9 +58,9 @@ const relatedVideos = allVideos
     const vTagsArray = Array.isArray(vTags) ? vTags : [vTags];
     return vTagsArray.some(t => tagsArray.includes(t));
   })
-  .slice(0, 8); 
+  .slice(0, 8);
 
-const baseUrl = "https://techfeedwatch.com"; 
+const baseUrl = "https://techfeedwatch.com";
 const currentUrl = `${baseUrl}/video/${slug}`;
 
 const stringHash = (str: string) => {
@@ -68,7 +68,7 @@ const stringHash = (str: string) => {
   for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
   return Math.abs(hash);
 };
-const baseLikes = (stringHash(youtubeId) % 4000) + 500; 
+const baseLikes = (stringHash(youtubeId) % 4000) + 500;
 
 const videoSchema = {
   "@context": "https://schema.org",
@@ -85,7 +85,7 @@ const videoSchema = {
 ---
 
 <MainLayout title={title} description={summary} image={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`} schema={videoSchema}>
-  
+
   {isShort && <script is:inline>document.body.classList.add('shorts-mode');</script>}
 
   <style is:global>
@@ -126,7 +126,7 @@ const videoSchema = {
     .btn-active { color: #3b82f6 !important; }
     .btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
     .summary-box { background-color: var(--hover-bg); border-left: 4px solid #ef4444; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
-    
+
     .video-content { line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem; }
     .video-content a { color: #3b82f6; text-decoration: none; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     .video-content a:hover { border-bottom-color: #3b82f6; }
@@ -146,8 +146,8 @@ const videoSchema = {
 
     .tool-suggestion { background: var(--hover-bg); border-radius: 8px; padding: 20px; margin-bottom: 30px; border: 1px solid var(--border-color); }
     .tool-suggestion h3 { margin: 0 0 12px 0; font-size: 1.1rem; }
-    .tool-suggestion a { display: block; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; transition: border-color 0.2s, transform 0.2s; }
-    .tool-suggestion a:hover { border-color: #ef4444; transform: translateY(-2px); }
+    .tool-suggestion-link { display: block; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; transition: border-color 0.2s, transform 0.2s; }
+    .tool-suggestion-link:hover { border-color: #ef4444; transform: translateY(-2px); }
     .tool-suggestion strong { display: block; margin-bottom: 5px; font-size: 1rem; }
     .tool-suggestion p { margin: 0; font-size: 0.9rem; color: #6b7280; }
     body.dark-mode .tool-suggestion p { color: #9ca3af; }
@@ -162,7 +162,7 @@ const videoSchema = {
 
     .related-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; }
     .related-grid { display: flex; flex-direction: column; gap: 12px; }
-    
+
     .video-secondary .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
     .video-secondary .watch-card:hover { transform: translateY(-3px); }
     .video-secondary .watch-card-thumb { width: 160px; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
@@ -178,7 +178,7 @@ const videoSchema = {
 
     body.shorts-mode .top-navbar { display: flex !important; }
     body.shorts-mode .sidebar { display: flex !important; }
-    body.shorts-mode .site-footer { display: none !important; } 
+    body.shorts-mode .site-footer { display: none !important; }
     body.shorts-mode .content-area { padding: 0 !important; background: var(--bg-color); }
 
     .shorts-wrapper { display: flex; justify-content: center; align-items: center; height: calc(100vh - 60px); width: 100%; position: relative; overflow: hidden; touch-action: none; background: var(--bg-color); }
@@ -223,18 +223,18 @@ const videoSchema = {
 
     @media (max-width: 768px) {
       /* Sikrer at en skjult menu ikke skubber videoen fra venstre */
-      body.shorts-mode .sidebar { display: none !important; } 
+      body.shorts-mode .sidebar { display: none !important; }
 
-      .shorts-content-area { 
-        position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important; 
-        display: block !important; 
+      .shorts-content-area {
+        position: relative !important; width: 100% !important; height: calc(100vh - 60px) !important; max-height: none !important; padding: 0 !important;
+        display: block !important;
       }
-      .shorts-video-frame { 
-        width: 100% !important; 
-        height: 100% !important; 
-        max-width: 100% !important; 
-        border-radius: 0 !important; 
-        margin: 0 !important; 
+      .shorts-video-frame {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
         aspect-ratio: auto !important; /* Fjerner den faste højkants-ramme, så den fylder skærmen ud til kanterne */
         background: #000 !important; /* Sørger for at eventuel baggrund er sort i stedet for hvid */
       }
@@ -261,11 +261,11 @@ const videoSchema = {
       .shorts-mobile-info::-webkit-scrollbar { display: none; }
       .shorts-mobile-info h2 { font-size: 1.1rem; margin: 0 0 5px 0; color: #fff; }
       .shorts-mobile-info .shorts-author { font-size: 0.9rem; margin: 0 0 10px 0; font-weight: bold; color: #fff; }
-      
-      .shorts-mobile-info .shorts-mobile-text { 
-        font-size: 0.85rem; 
-        display: block !important; 
-        overflow: visible !important; 
+
+      .shorts-mobile-info .shorts-mobile-text {
+        font-size: 0.85rem;
+        display: block !important;
+        overflow: visible !important;
       }
       .shorts-mobile-info .shorts-mobile-text p { margin: 0; color: #fff; }
 
@@ -329,7 +329,7 @@ const videoSchema = {
   {isShort ? (
     <div class="shorts-wrapper" id="shortsWrapper" data-next={nextShortSlug} data-prev={prevShortSlug}>
       <a href="/shorts" class="shorts-back-btn" title="Back">←</a>
-      
+
       <div class="shorts-content-area">
         <div class="shorts-desktop-info">
           <h2>{title}</h2>
@@ -341,14 +341,14 @@ const videoSchema = {
         </div>
 
         <div class="shorts-video-frame">
-          <iframe 
-            id="ytIframe" 
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1&autoplay=1&loop=1&playlist=${youtubeId}&controls=0`} 
-            allowfullscreen 
+          <iframe
+            id="ytIframe"
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1&autoplay=1&loop=1&playlist=${youtubeId}&controls=0`}
+            allowfullscreen
             allow="autoplay"
             title={`${title} - Short Video`}
           ></iframe>
-          
+
           <div class="shorts-mobile-info">
             <h2>{title}</h2>
             <p class="shorts-author">@TechFeedWatch</p>
@@ -358,7 +358,7 @@ const videoSchema = {
             </div>
           </div>
         </div>
-        
+
         <div class="shorts-actions-col">
           <div class="shorts-btn-group">
             <button class="shorts-circle-btn" id="prevShortBtn" aria-label="Previous Video" title="Previous Video" data-url={prevShortSlug ? `/video/${prevShortSlug}` : ''} style={!prevShortSlug ? 'opacity:0.3; pointer-events:none;' : ''}>
@@ -370,7 +370,7 @@ const videoSchema = {
               <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
           </div>
-          
+
           <div style="width: 30px; height: 1px; background: rgba(150,150,150,0.3); margin: 5px 0;"></div>
 
           <div class="shorts-btn-group">
@@ -402,7 +402,7 @@ const videoSchema = {
     </div>
   ) : (
     <div class="video-page-layout">
-      
+
       <div class="video-primary">
         {tagsArray.length > 0 && (
           <div class="focus-tags-bar">
@@ -413,7 +413,7 @@ const videoSchema = {
             <a href="/shorts" class="focus-chip">Shorts</a>
           </div>
         )}
-        
+
         <div class="cinema-reading-block">
           <div class="breadcrumbs-bar">
             <a href="/">Frontpage</a> <span>/</span>
@@ -465,7 +465,7 @@ const videoSchema = {
               <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
             </button>
           </div>
-          
+
           <button class="action-pill" id="shareBtn" aria-label="Share Video" title="Share">
             <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             <span id="shareText">Share</span>
@@ -497,7 +497,7 @@ const videoSchema = {
             ))}
           </div>
         )}
-        
+
         {toc.length > 0 && (
           <div class="toc-container">
             <div class="toc-title">Table of Contents</div>
@@ -520,7 +520,7 @@ const videoSchema = {
         {matchedTool && (
           <div class="tool-suggestion">
             <h3>Try This Tool</h3>
-            <a href={matchedTool.href}>
+            <a href={matchedTool.href} class="tool-suggestion-link">
               <strong>{matchedTool.title}</strong>
               <p>{matchedTool.description}</p>
             </a>
@@ -543,7 +543,7 @@ const videoSchema = {
       </div>
 
       <div class="video-secondary">
-        
+
         <div class="adsense-container">
           <span class="ad-label">Annonce</span>
           <ins class="adsbygoogle"
@@ -590,7 +590,7 @@ const videoSchema = {
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      
+
       // Rens grimme interne markdown-links fra Shorts-teksten
       document.querySelectorAll('.shorts-desktop-text, .shorts-mobile-text').forEach(el => {
         el.innerHTML = el.innerHTML.replace(/\[([^\]]+)\]\(\/video\/[^)]+\)/g, '$1');
@@ -603,9 +603,9 @@ const videoSchema = {
         const vTitle = btn.getAttribute('data-title');
         const vImg = btn.getAttribute('data-img');
         let history = JSON.parse(localStorage.getItem('videoHistory') || '[]');
-        history = history.filter(v => v.slug !== slug); 
-        history.unshift({ slug, title: vTitle, img: vImg }); 
-        if (history.length > 50) history.pop(); 
+        history = history.filter(v => v.slug !== slug);
+        history.unshift({ slug, title: vTitle, img: vImg });
+        if (history.length > 50) history.pop();
         localStorage.setItem('videoHistory', JSON.stringify(history));
       }
 
@@ -613,7 +613,7 @@ const videoSchema = {
       const prevShortBtn = document.getElementById('prevShortBtn');
       if (nextShortBtn && nextShortBtn.dataset.url) nextShortBtn.addEventListener('click', () => window.location.href = nextShortBtn.dataset.url);
       if (prevShortBtn && prevShortBtn.dataset.url) prevShortBtn.addEventListener('click', () => window.location.href = prevShortBtn.dataset.url);
-      
+
       const saveBtn = document.getElementById('saveBtn');
       const saveText = document.getElementById('saveText');
       if (saveBtn && saveText && slug) {
@@ -647,7 +647,7 @@ const videoSchema = {
           likeBtn.classList.remove('btn-active');
           dislikeBtn.classList.remove('btn-active');
           let displayNum = baseLikes;
-          if (state === 'liked') { likeBtn.classList.add('btn-active'); displayNum++; } 
+          if (state === 'liked') { likeBtn.classList.add('btn-active'); displayNum++; }
           else if (state === 'disliked') { dislikeBtn.classList.add('btn-active'); }
           likeCount.innerText = displayNum >= 1000 ? (displayNum / 1000).toFixed(1) + 'K' : displayNum;
         };
@@ -669,7 +669,7 @@ const videoSchema = {
       if (shareBtn && shareText) {
         shareBtn.addEventListener('click', async () => {
           if (navigator.share) {
-            try { await navigator.share({ title: document.title, url: window.location.href }); } 
+            try { await navigator.share({ title: document.title, url: window.location.href }); }
             catch (err) { }
           } else {
             navigator.clipboard.writeText(window.location.href);
@@ -857,15 +857,15 @@ const videoSchema = {
 
         shortsWrapper.addEventListener('wheel', (e) => {
           if (isNavigating) return;
-          
+
           if (e.target.closest('.shorts-desktop-info') || e.target.closest('.shorts-mobile-info')) return;
-          
+
           if (e.deltaY > 25 && nextUrl) {
-            isNavigating = true; 
-            window.location.href = nextUrl; 
-          } else if (e.deltaY < -25 && prevUrl) { 
-            isNavigating = true; 
-            window.location.href = prevUrl; 
+            isNavigating = true;
+            window.location.href = nextUrl;
+          } else if (e.deltaY < -25 && prevUrl) {
+            isNavigating = true;
+            window.location.href = prevUrl;
           }
         });
       }
