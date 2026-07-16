@@ -1,0 +1,12 @@
+---
+title: "AI Tokens Explained: The Core of ChatGPT & LLMs"
+youtubeId: "8z8Tvr1O-S0"
+date: "2026-07-16"
+tags:
+  - "AI & Tech"
+summary: "This Short demystifies AI Tokens, explaining their crucial role and importance in Large Language Models like ChatGPT and Generative AI for beginners."
+duration: "0:37"
+isShort: true
+---
+
+
