@@ -57,6 +57,23 @@ async function isEnglishAudio(videoId) {
   return true; // Sprog ukendt -> lad add-video.mjs's Gemini-tjek afgøre det
 }
 
+// Bygger ét sæt af youtubeIds der allerede findes i src/content/videos, ved at læse frontmatter
+// i alle .md-filer. Filnavnet er nu en titel-slug, ikke videoId, så fs.existsSync(`${videoId}.md`)
+// virker ikke længere - vi må slå youtubeId op inde i filerne i stedet.
+function loadExistingVideoIds() {
+  const dir = './src/content/videos';
+  const ids = new Set();
+  if (!fs.existsSync(dir)) return ids;
+
+  const files = fs.readdirSync(dir).filter(f => f.endsWith('.md'));
+  for (const file of files) {
+    const content = fs.readFileSync(`${dir}/${file}`, 'utf-8');
+    const match = content.match(/youtubeId:\s*"(.*?)"/);
+    if (match) ids.add(match[1]);
+  }
+  return ids;
+}
+
 // Fjerner dubletter på videoId. `seen` deles på tværs af kald, så normale og shorts aldrig overlapper.
 function dedupeById(items, seen) {
   return items.filter(item => {
@@ -68,7 +85,7 @@ function dedupeById(items, seen) {
 }
 
 // Behandler op til maxCount videoer fra én gruppe (normale ELLER shorts). Robottens links er altid /watch?v=.
-async function processGroup(items, label, maxCount) {
+async function processGroup(items, label, maxCount, existingIds) {
   let processed = 0;
 
   for (const item of items) {
@@ -77,8 +94,9 @@ async function processGroup(items, label, maxCount) {
     const videoId = item.id?.videoId;
     if (!videoId) continue;
 
-    // RETTELSE: Tjekker om markdown-filen allerede eksisterer
-    if (fs.existsSync(`./src/content/videos/${videoId}.md`)) {
+    // Filnavnet er en titel-slug, ikke videoId - tjekker derfor mod det forudindlæste sæt af
+    // youtubeIds i stedet for fs.existsSync(`${videoId}.md`)
+    if (existingIds.has(videoId)) {
       console.log(`ℹ️ Springer over: Video ${videoId} er allerede udgivet.`);
       continue;
     }
@@ -92,6 +110,7 @@ async function processGroup(items, label, maxCount) {
     try {
       execSync(`node add-video.mjs "${videoUrl}"`, { stdio: 'inherit' });
       processed++;
+      existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
     } catch (subError) {
       console.error(`❌ Fejl ved oprettelse af video ${videoId}:`, subError.message);
     }
@@ -129,9 +148,12 @@ async function findNewestVideos() {
 
     console.log(`Info: Fandt ${normalItems.length} normale og ${shortItems.length} shorts. Behandler normale først (maks ${MAX_NORMAL_PER_RUN}/${MAX_SHORTS_PER_RUN})...`);
 
+    // Indlæses én gang her (effektivt), og genbruges/opdateres på tværs af begge grupper
+    const existingIds = loadExistingVideoIds();
+
     // 70/30-styring: normale prioriteres først, hver gruppe har sit eget loft pr. kørsel.
-    const normalProcessed = await processGroup(normalItems, 'normal video', MAX_NORMAL_PER_RUN);
-    const shortsProcessed = await processGroup(shortItems, 'Short', MAX_SHORTS_PER_RUN);
+    const normalProcessed = await processGroup(normalItems, 'normal video', MAX_NORMAL_PER_RUN, existingIds);
+    const shortsProcessed = await processGroup(shortItems, 'Short', MAX_SHORTS_PER_RUN, existingIds);
 
     console.log(`✅ Succes: Robot-kørsel er færdig. ${normalProcessed} normale og ${shortsProcessed} shorts behandlet.`);
   } catch (error) {

@@ -5,6 +5,54 @@ import 'dotenv/config';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
+// Laver en URL-venlig slug ud fra en titel: lowercase, uden accenter/specialtegn, bindestreg-separeret.
+function slugify(title) {
+  return title
+    // æ/ø/œ/ß har ingen NFKD-dekomposition (i modsætning til fx é/å), så de translittereres eksplicit her
+    .replace(/æ/gi, 'ae')
+    .replace(/œ/gi, 'oe')
+    .replace(/ø/gi, 'o')
+    .replace(/ß/g, 'ss')
+    .normalize('NFKD')
+    .replace(/\p{Diacritic}/gu, '') // fjerner resterende accenter (é -> e, å -> a, osv.)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 70)
+    .replace(/-+$/g, '');
+}
+
+// Gør en slug unik hvis den allerede er brugt af en ANDEN video (samme youtubeId genbruger blot filen).
+function resolveUniqueSlug(baseSlug, videoId) {
+  const dir = './src/content/videos';
+  const readExistingId = (path) => {
+    const content = fs.readFileSync(path, 'utf-8');
+    const match = content.match(/youtubeId:\s*"(.*?)"/);
+    return match ? match[1] : null;
+  };
+
+  let candidate = baseSlug;
+  let candidatePath = `${dir}/${candidate}.md`;
+  if (!fs.existsSync(candidatePath) || readExistingId(candidatePath) === videoId) {
+    return candidate;
+  }
+
+  // Kollision med en anden video: tilføj et kort, deterministisk suffiks fra videoId'et
+  const suffix = videoId.slice(0, 6).toLowerCase();
+  candidate = `${baseSlug}-${suffix}`;
+  candidatePath = `${dir}/${candidate}.md`;
+
+  let attempt = 1;
+  while (fs.existsSync(candidatePath) && readExistingId(candidatePath) !== videoId) {
+    attempt++;
+    candidate = `${baseSlug}-${suffix}-${attempt}`;
+    candidatePath = `${dir}/${candidate}.md`;
+  }
+
+  return candidate;
+}
+
 function formatDuration(totalSeconds) {
   const h = Math.floor(totalSeconds / 3600);
   const m = Math.floor((totalSeconds % 3600) / 60);
@@ -157,6 +205,8 @@ async function run() {
     const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:|$)/i);
 
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
+    const slug = resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
     const safeTags = rawTagsList.filter(t => ALLOWED_TAGS.includes(t));
     const finalTags = safeTags.length > 0 ? safeTags : ["AI & Tech"];
@@ -210,8 +260,8 @@ async function run() {
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\n${tagsYaml}summary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
-    fs.writeFileSync(`./src/content/videos/${videoId}.md`, markdown);
-    console.log(`✅ Succes! Fil oprettet med varighed (${duration}).`);
+    fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);
+    console.log(`✅ Succes! Fil oprettet: ${slug}.md (varighed ${duration}).`);
   } catch (error) {
     console.log("❌ Fejl:", error.message);
   }
