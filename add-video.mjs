@@ -6,8 +6,10 @@ import 'dotenv/config';
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
 // Laver en URL-venlig slug ud fra en titel: lowercase, uden accenter/specialtegn, bindestreg-separeret.
+const SLUG_MAX_LENGTH = 70;
+
 function slugify(title) {
-  return title
+  const raw = title
     // æ/ø/œ/ß har ingen NFKD-dekomposition (i modsætning til fx é/å), så de translittereres eksplicit her
     .replace(/æ/gi, 'ae')
     .replace(/œ/gi, 'oe')
@@ -18,9 +20,17 @@ function slugify(title) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/-+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 70)
-    .replace(/-+$/g, '');
+    .replace(/^-+|-+$/g, '');
+
+  if (raw.length <= SLUG_MAX_LENGTH) return raw;
+
+  // Klip ved sidste hele bindestreg-adskilte del inden for grænsen, så vi aldrig skærer midt i et ord.
+  // Findes ingen bindestreg inden for grænsen (ét langt ord), falder vi tilbage til det hårde snit.
+  const hardCut = raw.slice(0, SLUG_MAX_LENGTH);
+  const lastHyphen = hardCut.lastIndexOf('-');
+  const wholeWordCut = lastHyphen > 0 ? hardCut.slice(0, lastHyphen) : '';
+
+  return (wholeWordCut || hardCut).replace(/-+$/g, '');
 }
 
 // Gør en slug unik hvis den allerede er brugt af en ANDEN video (samme youtubeId genbruger blot filen).
