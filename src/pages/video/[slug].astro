@@ -48,6 +48,13 @@ const allUniqueTags = [...new Set(allVideos.flatMap((v: any) => {
   return Array.isArray(t) ? t : [t];
 }))].filter(Boolean).sort();
 
+// Emne-farvesystem, defineret lokalt (samme palette som forside, sitemap og tag-sider)
+const TAG_COLORS: Record<string, string> = {
+  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
+  "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
+  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+};
+
 // Sort by date (newest first) so Next/Previous follow chronological order
 const sortedVideos = [...allVideos].sort(
   (a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
@@ -187,6 +194,12 @@ const videoSchema = {
     .explore-chip:hover { background: #e2e8f0; transform: translateY(-1px); }
     body.dark-mode .explore-chip { background: #1e293b; border-color: #334155; color: #d1d5db; }
     body.dark-mode .explore-chip:hover { background: #334155; color: #fff; }
+
+    .explore-chip-accent { border-color: var(--tag-accent); color: var(--tag-accent); }
+    .explore-chip-accent::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-accent); margin-right: 6px; vertical-align: middle; }
+    .explore-chip-accent:hover { background: var(--tag-accent); color: #fff; }
+    body.dark-mode .explore-chip-accent { border-color: var(--tag-accent); color: var(--tag-accent); }
+    body.dark-mode .explore-chip-accent:hover { background: var(--tag-accent); color: #fff; }
 
     body.shorts-mode .top-navbar { display: flex !important; }
     body.shorts-mode .sidebar { display: flex !important; }
@@ -591,7 +604,11 @@ const videoSchema = {
             <h3 class="related-title">Explore Topics</h3>
             <div class="explore-tags-grid">
               {allUniqueTags.map((t: string) => (
-                <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip">{t}</a>
+                TAG_COLORS[t] ? (
+                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip explore-chip-accent" style={`--tag-accent: ${TAG_COLORS[t]}`}>{t}</a>
+                ) : (
+                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip">{t}</a>
+                )
               ))}
             </div>
           </div>
