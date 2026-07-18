@@ -1,0 +1,128 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
+
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
+
+function getTags(v: any): string[] {
+  const t = v.frontmatter.tags || v.frontmatter.tag || [];
+  return Array.isArray(t) ? t : [t];
+}
+
+// Grupperer alle videoer under hvert tag (en video kan optræde under flere tags), nyeste først.
+// Tags uden videoer springes over.
+const videosByTag = ALLOWED_TAGS.map((tag) => {
+  const videos = allVideos
+    .filter((v: any) => getTags(v).includes(tag))
+    .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  return { tag, videos };
+}).filter((group) => group.videos.length > 0);
+
+const MAIN_PAGES = [
+  { href: '/', label: 'Home' },
+  { href: '/shorts', label: 'Shorts' },
+  { href: '/library', label: 'Library' },
+  { href: '/watch-later', label: 'Watch Later' },
+  { href: '/history', label: 'History' },
+  { href: '/tools', label: 'Tools' },
+  { href: '/about', label: 'About' },
+  { href: '/terms', label: 'Terms' },
+  { href: '/privacy-policy', label: 'Privacy Policy' },
+];
+
+const TOOLS = [
+  { href: '/tools/ai-token-calculator', label: 'AI Token & Cost Calculator' },
+  { href: '/tools/compound-calculator', label: 'Compound Growth & Crypto Staking Calculator' },
+  { href: '/tools/serp-preview', label: 'Meta Tag & SERP Snippet Preview' },
+];
+
+const title = "Site Map";
+const description = "Browse every page, tool, and video on Tech Feed Watch, organized by topic for easy navigation.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .sitemap-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .sitemap-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .sitemap-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .sitemap-header p { color: #9ca3af; }
+
+    .sitemap-section { margin-bottom: 40px; }
+    .sitemap-section h2 { font-size: 1.3rem; margin: 0 0 15px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+
+    .sitemap-link-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .sitemap-link-list li a { display: inline-block; padding: 8px 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+    .sitemap-link-list li a:hover { background: #e5e7eb; }
+    body.dark-mode .sitemap-link-list li a:hover { background: #334155; }
+
+    .sitemap-tag { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+    .sitemap-tag summary {
+      cursor: pointer;
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      list-style: none;
+      background: var(--hover-bg);
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .sitemap-tag summary:hover { background: #e5e7eb; }
+    body.dark-mode .sitemap-tag summary:hover { background: #334155; }
+    .sitemap-tag summary::-webkit-details-marker { display: none; }
+    .sitemap-tag summary::after { content: '+'; font-size: 1.3rem; font-weight: 400; margin-left: auto; padding-left: 12px; }
+    .sitemap-tag[open] summary::after { content: '−'; }
+    .sitemap-count { font-weight: 500; color: #6b7280; font-size: 0.9rem; margin-left: 6px; }
+    body.dark-mode .sitemap-count { color: #9ca3af; }
+
+    .sitemap-video-list { list-style: none; margin: 0; padding: 10px 18px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+    .sitemap-video-list li a { color: var(--text-color); text-decoration: none; font-size: 0.95rem; }
+    .sitemap-video-list li a:hover { color: #3b82f6; text-decoration: underline; }
+    body.dark-mode .sitemap-video-list li a:hover { color: #60a5fa; }
+
+    @media (max-width: 768px) {
+      .sitemap-wrapper { padding: 20px 15px; }
+      .sitemap-header h1 { font-size: 1.6rem; }
+    }
+  </style>
+
+  <div class="sitemap-wrapper">
+    <div class="sitemap-header">
+      <h1>🗺️ Site Map</h1>
+      <p>Browse every page, tool, and video on Tech Feed Watch — organized by topic for easy navigation.</p>
+    </div>
+
+    <section class="sitemap-section">
+      <h2>Main Pages</h2>
+      <ul class="sitemap-link-list">
+        {MAIN_PAGES.map((p) => (
+          <li><a href={p.href}>{p.label}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="sitemap-section">
+      <h2>Tools</h2>
+      <ul class="sitemap-link-list">
+        {TOOLS.map((t) => (
+          <li><a href={t.href}>{t.label}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="sitemap-section">
+      <h2>Videos by Topic</h2>
+      {videosByTag.map(({ tag, videos }) => (
+        <details class="sitemap-tag">
+          <summary>{tag}<span class="sitemap-count">({videos.length})</span></summary>
+          <ul class="sitemap-video-list">
+            {videos.map((v: any) => (
+              <li><a href={`/video/${v.file.split('/').pop().replace('.md', '')}`}>{v.frontmatter.title}</a></li>
+            ))}
+          </ul>
+        </details>
+      ))}
+    </section>
+  </div>
+</MainLayout>
