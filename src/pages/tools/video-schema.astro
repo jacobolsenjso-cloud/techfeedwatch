@@ -1,0 +1,195 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Video Schema Generator";
+const description = "Generate valid VideoObject JSON-LD schema markup for any YouTube video to improve SEO and search appearance.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .vsg-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .vsg-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .vsg-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .vsg-header p { color: #9ca3af; }
+
+    .vsg-field { margin-bottom: 16px; }
+    .vsg-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .vsg-field input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+    .vsg-field input:focus { outline: none; border-color: #ef4444; }
+
+    .vsg-generate-btn { padding: 12px 20px; border-radius: 8px; border: none; background: #ef4444; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .vsg-generate-btn:hover { background: #dc2626; }
+    .vsg-generate-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .vsg-error { display: none; margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; font-size: 0.9rem; }
+    body.dark-mode .vsg-error { background: #3f1d1d; border-color: #7f1d1d; color: #fca5a5; }
+
+    .vsg-preview { display: none; margin-top: 24px; gap: 16px; align-items: flex-start; }
+    .vsg-preview-thumb { width: 160px; border-radius: 8px; flex-shrink: 0; }
+    .vsg-preview-meta h3 { margin: 0 0 6px 0; font-size: 1.05rem; }
+    .vsg-preview-meta p { margin: 0; font-size: 0.85rem; color: #6b7280; }
+    body.dark-mode .vsg-preview-meta p { color: #9ca3af; }
+
+    .vsg-code-wrapper { margin-top: 20px; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: none; }
+    .vsg-code-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #1e293b; color: #d1d5db; font-size: 0.85rem; font-weight: 600; }
+    .vsg-copy-btn { padding: 4px 10px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: #d1d5db; cursor: pointer; font-size: 0.8rem; }
+    .vsg-copy-btn:hover { border-color: #ef4444; }
+    .vsg-code { margin: 0; padding: 14px; overflow-x: auto; background: #0f172a; font-size: 0.85rem; max-height: 420px; }
+    .vsg-code code { color: #e2e8f0; white-space: pre; }
+
+    .vsg-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .vsg-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .vsg-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .vsg-info-section p { color: #9ca3af; }
+    .vsg-info-section ul { margin: 0 0 15px 0; padding-left: 20px; }
+    .vsg-info-section li { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin-bottom: 6px; }
+    body.dark-mode .vsg-info-section li { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .vsg-wrapper { padding: 20px 15px; }
+      .vsg-preview { flex-direction: column; }
+      .vsg-preview-thumb { width: 100%; }
+    }
+  </style>
+
+  <div class="vsg-wrapper">
+    <div class="vsg-header">
+      <h1>🎬 Video Schema Generator</h1>
+      <p>Paste a YouTube link and instantly generate valid VideoObject JSON-LD schema markup to help search engines understand and showcase your video.</p>
+    </div>
+
+    <div class="vsg-field">
+      <label for="vsgInput">YouTube video URL</label>
+      <input type="text" id="vsgInput" placeholder="https://www.youtube.com/watch?v=..." />
+    </div>
+
+    <button type="button" id="vsgGenerateBtn" class="vsg-generate-btn">Generate Video Schema</button>
+
+    <div class="vsg-error" id="vsgError"></div>
+
+    <div class="vsg-preview" id="vsgPreview">
+      <img class="vsg-preview-thumb" id="vsgPreviewThumb" src="" alt="" />
+      <div class="vsg-preview-meta">
+        <h3 id="vsgPreviewTitle"></h3>
+        <p id="vsgPreviewMeta"></p>
+      </div>
+    </div>
+
+    <div class="vsg-code-wrapper" id="vsgCodeWrapper">
+      <div class="vsg-code-header">
+        <span>JSON-LD</span>
+        <button type="button" id="vsgCopyBtn" class="vsg-copy-btn">Copy</button>
+      </div>
+      <pre class="vsg-code"><code id="vsgCodeOutput"></code></pre>
+    </div>
+
+    <div class="vsg-info-section">
+      <h2>What is Video Schema?</h2>
+      <p>Video schema (technically <code>VideoObject</code> structured data from Schema.org) is a snippet of JSON-LD code you add to a page that tells search engines exactly what a video is about - its title, description, thumbnail, publish date, and duration - in a format machines can read directly, rather than guessing from surrounding text.</p>
+
+      <h2>Why it matters for SEO</h2>
+      <p>Pages with valid video schema are eligible for rich results in Google Search, such as video thumbnails, duration badges, and preview carousels. This can significantly increase click-through rate, and it also helps AI-driven search engines and answer engines correctly summarize and cite your video content.</p>
+
+      <h2>How to use this tool</h2>
+      <ul>
+        <li>Paste the full YouTube URL (or a Shorts/youtu.be link) into the field above.</li>
+        <li>Click "Generate Video Schema" to fetch the video's public metadata.</li>
+        <li>Copy the generated JSON-LD block and paste it inside a <code>&lt;script type="application/ld+json"&gt;</code> tag in your page's <code>&lt;head&gt;</code>.</li>
+        <li>Validate the result with Google's Rich Results Test before publishing.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('vsgInput') as HTMLInputElement;
+      const generateBtn = document.getElementById('vsgGenerateBtn') as HTMLButtonElement;
+      const errorBox = document.getElementById('vsgError') as HTMLDivElement;
+
+      const preview = document.getElementById('vsgPreview') as HTMLDivElement;
+      const previewThumb = document.getElementById('vsgPreviewThumb') as HTMLImageElement;
+      const previewTitle = document.getElementById('vsgPreviewTitle') as HTMLHeadingElement;
+      const previewMeta = document.getElementById('vsgPreviewMeta') as HTMLParagraphElement;
+
+      const codeWrapper = document.getElementById('vsgCodeWrapper') as HTMLDivElement;
+      const codeOutput = document.getElementById('vsgCodeOutput') as HTMLElement;
+      const copyBtn = document.getElementById('vsgCopyBtn') as HTMLButtonElement;
+
+      const showError = (message: string) => {
+        errorBox.textContent = message;
+        errorBox.style.display = 'block';
+        preview.style.display = 'none';
+        codeWrapper.style.display = 'none';
+      };
+
+      const hideError = () => {
+        errorBox.style.display = 'none';
+        errorBox.textContent = '';
+      };
+
+      generateBtn.addEventListener('click', async () => {
+        const value = input.value.trim();
+        hideError();
+
+        if (!value) {
+          showError('Please enter a YouTube video URL.');
+          return;
+        }
+
+        generateBtn.disabled = true;
+        const originalLabel = generateBtn.textContent;
+        generateBtn.textContent = 'Generating...';
+
+        try {
+          const res = await fetch('/api/video-data?id=' + encodeURIComponent(value));
+          const data = await res.json();
+
+          if (!res.ok) {
+            showError(data.error || 'Failed to fetch video data.');
+            return;
+          }
+
+          const pageUrl = `https://www.youtube.com/watch?v=${data.videoId}`;
+          const embedUrl = `https://www.youtube.com/embed/${data.videoId}`;
+
+          const schema = {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": data.title,
+            "description": data.description,
+            "thumbnailUrl": data.thumbnailUrl,
+            "uploadDate": data.publishedAt,
+            "duration": data.duration,
+            "contentUrl": pageUrl,
+            "embedUrl": embedUrl,
+          };
+
+          const jsonLd = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
+
+          previewThumb.src = data.thumbnailUrl || '';
+          previewThumb.alt = data.title || '';
+          previewTitle.textContent = data.title || '';
+          previewMeta.textContent = `Published ${data.publishedAt} · Duration ${data.duration}`;
+          preview.style.display = 'flex';
+
+          codeOutput.textContent = jsonLd;
+          codeWrapper.style.display = 'block';
+        } catch (e) {
+          showError('Something went wrong while fetching video data. Please try again.');
+        } finally {
+          generateBtn.disabled = false;
+          generateBtn.textContent = originalLabel;
+        }
+      });
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codeOutput.textContent || '');
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+    });
+  </script>
+</MainLayout>

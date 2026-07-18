@@ -20,7 +20,8 @@ const faqs = video.frontmatter.faqs || [];
 const TOOL_SUGGESTIONS = [
   { tags: ["AI & Tech", "Coding", "AI Video"], title: "AI Token & Cost Calculator", description: "Estimate token count and input cost across GPT-4o, Claude, and Gemini.", href: "/tools/ai-token-calculator" },
   { tags: ["Fintech", "Crypto", "Business & Money"], title: "Compound Growth & Staking Calculator", description: "Project compound interest, savings growth, and crypto staking returns over time.", href: "/tools/compound-calculator" },
-  { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" }
+  { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" },
+  { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
@@ -28,11 +29,13 @@ const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === h
 // Prioriteret matching: mest specifikke tag vinder, i stedet for første match i listen
 // (næsten alle videoer har "AI & Tech", så den må komme sidst).
 let matchedTool = null;
-if (videoTags.includes("SEO")) {
+if (videoTags.includes("AI Video")) {
+  matchedTool = findTool("/tools/video-schema");
+} else if (videoTags.includes("SEO")) {
   matchedTool = findTool("/tools/serp-preview");
 } else if (videoTags.includes("Fintech") || videoTags.includes("Crypto")) {
   matchedTool = findTool("/tools/compound-calculator");
-} else if (videoTags.includes("AI & Tech") || videoTags.includes("Coding") || videoTags.includes("AI Video")) {
+} else if (videoTags.includes("AI & Tech") || videoTags.includes("Coding")) {
   matchedTool = findTool("/tools/ai-token-calculator");
 }
 
