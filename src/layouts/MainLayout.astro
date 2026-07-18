@@ -54,20 +54,7 @@ if (currentPath.startsWith('/video/')) {
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <style is:global>
-      :root {
-        --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9;
-        /* Emne-farvesystem: ét centralt sted for alle tag-accentfarver på tværs af sitemap, forsidens
-           tag-chips og tag-siderne. Slug-mønster: lowercase, ikke-alfanumerisk -> "-" (fx "AI & Tech" -> ai-tech). */
-        --tag-ai-tech: #3b82f6;
-        --tag-seo: #10b981;
-        --tag-automation: #f59e0b;
-        --tag-coding: #8b5cf6;
-        --tag-business-money: #059669;
-        --tag-ai-video: #ec4899;
-        --tag-productivity: #06b6d4;
-        --tag-fintech: #6366f1;
-        --tag-crypto: #f97316;
-      }
+      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; }
       body.dark-mode { --bg-color: #0f1115; --text-color: #f1f5f9; --card-bg: #1e293b; --border-color: #334155; --sidebar-bg: #0f1115; --hover-bg: #1e293b; }
       body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: system-ui, -apple-system, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
       
