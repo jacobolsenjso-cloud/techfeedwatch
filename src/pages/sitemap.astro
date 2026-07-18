@@ -5,6 +5,13 @@ const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eag
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
+// Emne-farvesystem, defineret lokalt (kun brugt på denne side)
+const TAG_COLORS: Record<string, string> = {
+  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
+  "Coding": "#8b5cf6", "Business & Money": "#059669", "AI Video": "#ec4899",
+  "Productivity": "#06b6d4", "Fintech": "#6366f1", "Crypto": "#f97316"
+};
+
 function getTags(v: any): string[] {
   const t = v.frontmatter.tags || v.frontmatter.tag || [];
   return Array.isArray(t) ? t : [t];
@@ -56,7 +63,8 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
     .sitemap-link-list li a:hover { background: #e5e7eb; }
     body.dark-mode .sitemap-link-list li a:hover { background: #334155; }
 
-    .sitemap-tag { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+    .sitemap-tag { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--tag-accent, var(--border-color)); border-radius: 8px; margin-bottom: 10px; overflow: hidden; transition: border-left-width 0.2s; }
+    .sitemap-tag:hover { border-left-width: 7px; }
     .sitemap-tag summary {
       cursor: pointer;
       padding: 14px 18px;
@@ -73,8 +81,7 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
     .sitemap-tag summary::-webkit-details-marker { display: none; }
     .sitemap-tag summary::after { content: '+'; font-size: 1.3rem; font-weight: 400; margin-left: auto; padding-left: 12px; }
     .sitemap-tag[open] summary::after { content: '−'; }
-    .sitemap-count { font-weight: 500; color: #6b7280; font-size: 0.9rem; margin-left: 6px; }
-    body.dark-mode .sitemap-count { color: #9ca3af; }
+    .sitemap-count { font-weight: 600; color: var(--tag-accent, #6b7280); font-size: 0.9rem; margin-left: 6px; }
 
     .sitemap-video-list { list-style: none; margin: 0; padding: 10px 18px 16px 18px; display: flex; flex-direction: column; gap: 8px; }
     .sitemap-video-list li a { color: var(--text-color); text-decoration: none; font-size: 0.95rem; }
@@ -114,7 +121,7 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
     <section class="sitemap-section">
       <h2>Videos by Topic</h2>
       {videosByTag.map(({ tag, videos }) => (
-        <details class="sitemap-tag">
+        <details class="sitemap-tag" style={`--tag-accent: ${TAG_COLORS[tag] || 'var(--border-color)'}`}>
           <summary>{tag}<span class="sitemap-count">({videos.length})</span></summary>
           <ul class="sitemap-video-list">
             {videos.map((v: any) => (
