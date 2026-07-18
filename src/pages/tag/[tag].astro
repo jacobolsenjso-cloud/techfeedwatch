@@ -53,6 +53,14 @@ const faqDictionary: Record<string, {question: string, answer: string}[]> = {
 
 const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
 
+// Emne-farvesystem, defineret lokalt (samme palette som forsiden og sitemap)
+const TAG_COLORS: Record<string, string> = {
+  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
+  "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
+  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+};
+const tagAccent = TAG_COLORS[tagName] || "#6b7280";
+
 ---
 
 <MainLayout title={`${tagName} Archive`} description={currentDescription}>
@@ -63,8 +71,8 @@ const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
     .breadcrumbs-bar a { color: #3b82f6; text-decoration: none; font-weight: 500; }
     body.dark-mode .breadcrumbs-bar a { color: #60a5fa; }
     .breadcrumbs-bar span { opacity: 0.5; }
-    .header-title { font-size: 2rem; margin-top: 0; margin-bottom: 15px; }
-    .header-title span { color: #ef4444; }
+    .header-title { font-size: 2rem; margin-top: 0; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 3px solid var(--tag-accent, #6b7280); }
+    .header-title span { color: var(--tag-accent, #6b7280); }
     .tag-description { font-size: 1.1rem; line-height: 1.6; color: #4b5563; margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); max-width: 1000px; }
     body.dark-mode .tag-description { color: #9ca3af; }
 
@@ -101,7 +109,7 @@ const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
       <span>{tagName}</span>
     </div>
 
-    <h1 class="header-title">Videos in <span>#{tagName}</span></h1>
+    <h1 class="header-title" style={`--tag-accent: ${tagAccent}`}>Videos in <span>#{tagName}</span></h1>
     <p class="tag-description">{currentDescription}</p>
     
     <div class="video-grid">
