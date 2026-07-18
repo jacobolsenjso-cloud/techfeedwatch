@@ -45,6 +45,12 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
     .vsg-info-section li { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin-bottom: 6px; }
     body.dark-mode .vsg-info-section li { color: #9ca3af; }
 
+    .vsg-pro-tip { margin-top: 25px; padding: 14px 18px; border-left: 4px solid #ef4444; background: var(--hover-bg); border-radius: 6px; }
+    .vsg-pro-tip p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-color); }
+    .vsg-pro-tip a { color: #ef4444; font-weight: 600; text-decoration: none; }
+    .vsg-pro-tip a:hover { text-decoration: underline; }
+    body.dark-mode .vsg-pro-tip a { color: #f87171; }
+
     @media (max-width: 768px) {
       .vsg-wrapper { padding: 20px 15px; }
       .vsg-preview { flex-direction: column; }
@@ -97,6 +103,10 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
         <li>Copy the generated JSON-LD block and paste it inside a <code>&lt;script type="application/ld+json"&gt;</code> tag in your page's <code>&lt;head&gt;</code>.</li>
         <li>Validate the result with Google's Rich Results Test before publishing.</li>
       </ul>
+    </div>
+
+    <div class="vsg-pro-tip">
+      <p><strong>Pro Tip:</strong> Always test your generated code in the <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Google Rich Results Test Tool</a> to ensure it gets the green checkmark before hitting publish!</p>
     </div>
   </div>
 
