@@ -26,6 +26,13 @@ const topTags = Object.keys(tagCounts)
   .sort((a, b) => tagCounts[b] - tagCounts[a])
   .slice(0, 20);
 
+// Emne-farvesystem, defineret lokalt (samme farver som sitemap.astro)
+const TAG_COLORS: Record<string, string> = {
+  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
+  "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
+  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+};
+
 // Side 1: kun de første 24 normale videoer. Resten pagineres via /page/2, /page/3 osv.
 const pageOneVideos = regularVideos.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(regularVideos.length / PAGE_SIZE));
@@ -73,6 +80,11 @@ const vRest = pageOneVideos.slice(8);
     .filter-tag.active { background: #111; color: #fff; }
     body.dark-mode .filter-tag:hover { background: #334155; }
     body.dark-mode .filter-tag.active { background: #f1f5f9; color: #111; }
+
+    /* Emne-farvesystem: diskret accent-prik pr. tag, fyldt farve når chippen er aktiv */
+    .filter-tag-accent { border-color: var(--tag-accent); }
+    .filter-tag-accent::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--tag-accent); margin-right: 7px; vertical-align: middle; }
+    .filter-tag-accent.active { background: var(--tag-accent); color: #fff; border-color: var(--tag-accent); }
 
     .frontpage-wrapper { padding: 0 20px 20px 20px; max-width: 1600px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
 
@@ -127,7 +139,11 @@ const vRest = pageOneVideos.slice(8);
   <div class="tag-bar-container">
     <button class="filter-tag active" data-tag="All">All</button>
     {topTags.map((tag: any) => (
-      <button class="filter-tag" data-tag={tag}>{tag}</button>
+      TAG_COLORS[tag] ? (
+        <button class="filter-tag filter-tag-accent" data-tag={tag} style={`--tag-accent: ${TAG_COLORS[tag]}`}>{tag}</button>
+      ) : (
+        <button class="filter-tag" data-tag={tag}>{tag}</button>
+      )
     ))}
   </div>
 
