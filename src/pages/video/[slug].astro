@@ -24,7 +24,8 @@ const TOOL_SUGGESTIONS = [
   { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" },
   { tags: ["Coding"], title: "JSON Formatter & Validator", description: "Format, minify, and validate JSON online with instant error messages.", href: "/tools/json-formatter" },
   { tags: ["AI & Tech"], title: "Password Generator & Strength Checker", description: "Generate cryptographically secure passwords and check the strength of an existing one.", href: "/tools/password-generator" },
-  { tags: ["Coding"], title: "Base64 & URL Encoder/Decoder", description: "Encode and decode text as Base64 or URL-safe strings, with full UTF-8 support.", href: "/tools/encoder-decoder" }
+  { tags: ["Coding"], title: "Base64 & URL Encoder/Decoder", description: "Encode and decode text as Base64 or URL-safe strings, with full UTF-8 support.", href: "/tools/encoder-decoder" },
+  { tags: ["AI Video"], title: "YouTube Thumbnail Downloader", description: "Preview and download YouTube video thumbnails in every available resolution.", href: "/tools/thumbnail-downloader" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
@@ -33,7 +34,10 @@ const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === h
 // (næsten alle videoer har "AI & Tech", så den må komme sidst).
 let matchedTool = null;
 if (videoTags.includes("AI Video")) {
-  matchedTool = findTool("/tools/video-schema");
+  // Samme mønster som Coding/AI & Tech: har videoen et ekstra tag ud over "AI Video",
+  // foreslås Thumbnail Downloader; står "AI Video" helt alene, beholder Video Schema Generator pladsen.
+  const hasOtherAiVideoTag = videoTags.some((t: string) => t !== "AI Video");
+  matchedTool = hasOtherAiVideoTag ? findTool("/tools/thumbnail-downloader") : findTool("/tools/video-schema");
 } else if (videoTags.includes("SEO")) {
   matchedTool = findTool("/tools/serp-preview");
 } else if (videoTags.includes("Fintech") || videoTags.includes("Crypto")) {

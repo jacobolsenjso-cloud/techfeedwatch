@@ -1,0 +1,213 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "YouTube Thumbnail Downloader";
+const description = "Download YouTube video thumbnails in every available resolution - maximum, high, standard, and medium - directly from the public YouTube thumbnail URLs.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .td-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .td-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .td-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .td-header p { color: #9ca3af; }
+
+    .td-field { margin-bottom: 16px; }
+    .td-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .td-input-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .td-input { flex: 1; min-width: 240px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+    .td-input:focus { outline: none; border-color: #ef4444; }
+
+    .td-btn { padding: 12px 20px; border-radius: 8px; border: none; background: #ef4444; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+    .td-btn:hover { background: #dc2626; }
+    .td-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .td-status { display: none; margin-top: 16px; padding: 10px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; }
+    body.dark-mode .td-status { background: #3f1d1d; border-color: #7f1d1d; color: #fca5a5; }
+
+    .td-grid { display: none; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 24px; }
+    .td-card { border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; background: var(--card-bg); }
+    .td-card-thumb { aspect-ratio: 16/9; background: #000; position: relative; overflow: hidden; }
+    .td-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .td-card-body { padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .td-card-label { font-size: 0.85rem; font-weight: 600; }
+    .td-card-dims { font-size: 0.75rem; color: #6b7280; margin-top: 2px; }
+    body.dark-mode .td-card-dims { color: #9ca3af; }
+    .td-download-btn { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); cursor: pointer; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+    .td-download-btn:hover { border-color: #ef4444; }
+
+    .td-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .td-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .td-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .td-info-section p { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .td-wrapper { padding: 20px 15px; }
+      .td-input-row { flex-direction: column; }
+      .td-btn { width: 100%; text-align: center; }
+    }
+  </style>
+
+  <div class="td-wrapper">
+    <div class="td-header">
+      <h1>🖼️ YouTube Thumbnail Downloader</h1>
+      <p>Paste a YouTube link to preview and download its thumbnail in every available resolution.</p>
+    </div>
+
+    <div class="td-field">
+      <label for="tdInput">YouTube video URL or ID</label>
+      <div class="td-input-row">
+        <input type="text" id="tdInput" class="td-input" placeholder="https://www.youtube.com/watch?v=..." />
+        <button type="button" id="tdGetBtn" class="td-btn">Get Thumbnails</button>
+      </div>
+    </div>
+
+    <div class="td-status" id="tdStatus"></div>
+
+    <div class="td-grid" id="tdGrid"></div>
+
+    <div class="td-info-section">
+      <h2>How this works</h2>
+      <p>YouTube automatically generates several thumbnail images for every uploaded video and hosts them at public, predictable URLs (<code>img.youtube.com/vi/{'{'}videoId{'}'}/...</code>). This tool simply extracts the video ID from the link you paste and loads those public images directly - no API key or server involved. Not every resolution exists for every video (older or shorter videos may lack a maximum-resolution version), so only the resolutions that actually load for the given video are shown.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const RESOLUTIONS = [
+        { file: 'maxresdefault.jpg', label: 'Maximum Resolution', dims: '1280 × 720' },
+        { file: 'sddefault.jpg', label: 'Standard Definition', dims: '640 × 480' },
+        { file: 'hqdefault.jpg', label: 'High Quality', dims: '480 × 360' },
+        { file: 'mqdefault.jpg', label: 'Medium Quality', dims: '320 × 180' },
+      ];
+
+      // YouTube-fejlbillede for manglende opløsninger (fx maxresdefault på video uden nok kildeopløsning) er altid 120×90
+      const PLACEHOLDER_WIDTH = 120;
+
+      const input = document.getElementById('tdInput') as HTMLInputElement;
+      const getBtn = document.getElementById('tdGetBtn') as HTMLButtonElement;
+      const status = document.getElementById('tdStatus') as HTMLDivElement;
+      const grid = document.getElementById('tdGrid') as HTMLDivElement;
+
+      const extractVideoId = (raw: string): string | null => {
+        if (!raw) return null;
+        const value = raw.trim();
+
+        if (/^[a-zA-Z0-9_-]{11}$/.test(value)) return value;
+
+        try {
+          const url = new URL(value);
+
+          if (url.hostname === 'youtu.be') {
+            const id = url.pathname.slice(1).split('/')[0];
+            return id || null;
+          }
+
+          if (url.hostname.includes('youtube.com')) {
+            if (url.pathname === '/watch') {
+              return url.searchParams.get('v');
+            }
+            const shortsMatch = url.pathname.match(/^\/shorts\/([a-zA-Z0-9_-]{11})/);
+            if (shortsMatch) return shortsMatch[1];
+            const embedMatch = url.pathname.match(/^\/embed\/([a-zA-Z0-9_-]{11})/);
+            if (embedMatch) return embedMatch[1];
+          }
+        } catch {
+          // Ikke en gyldig URL
+        }
+
+        return null;
+      };
+
+      const showError = (message: string) => {
+        status.textContent = message;
+        status.style.display = 'block';
+        grid.style.display = 'none';
+        grid.innerHTML = '';
+      };
+
+      const downloadImage = async (url: string, filename: string) => {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error('fetch failed');
+          const blob = await res.blob();
+          const objectUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = objectUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(objectUrl);
+        } catch (e) {
+          window.open(url, '_blank');
+        }
+      };
+
+      const buildCard = (videoId: string, res: { file: string; label: string; dims: string }) => {
+        const card = document.createElement('div');
+        card.className = 'td-card';
+        card.style.display = 'none';
+
+        const thumbUrl = `https://img.youtube.com/vi/${videoId}/${res.file}`;
+
+        card.innerHTML = `
+          <div class="td-card-thumb">
+            <img src="${thumbUrl}" alt="${res.label} thumbnail" />
+          </div>
+          <div class="td-card-body">
+            <div>
+              <div class="td-card-label">${res.label}</div>
+              <div class="td-card-dims">${res.dims}</div>
+            </div>
+            <button type="button" class="td-download-btn">Download</button>
+          </div>
+        `;
+
+        const img = card.querySelector('img') as HTMLImageElement;
+        const downloadBtn = card.querySelector('.td-download-btn') as HTMLButtonElement;
+
+        img.addEventListener('load', () => {
+          // En YouTube-placeholder for en manglende opløsning er altid 120px bred - skjul kortet i det tilfælde
+          if (img.naturalWidth <= PLACEHOLDER_WIDTH) {
+            card.remove();
+            return;
+          }
+          card.style.display = 'block';
+        });
+
+        img.addEventListener('error', () => {
+          card.remove();
+        });
+
+        downloadBtn.addEventListener('click', () => {
+          downloadImage(thumbUrl, `${videoId}-${res.file}`);
+        });
+
+        return card;
+      };
+
+      const getThumbnails = () => {
+        const videoId = extractVideoId(input.value);
+
+        if (!videoId) {
+          showError('Please enter a valid YouTube video URL or ID.');
+          return;
+        }
+
+        status.style.display = 'none';
+        grid.innerHTML = '';
+        grid.style.display = 'grid';
+
+        RESOLUTIONS.forEach((res) => {
+          grid.appendChild(buildCard(videoId, res));
+        });
+      };
+
+      getBtn.addEventListener('click', getThumbnails);
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') getThumbnails();
+      });
+    });
+  </script>
+</MainLayout>
