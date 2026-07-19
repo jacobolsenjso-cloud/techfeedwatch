@@ -21,7 +21,8 @@ const TOOL_SUGGESTIONS = [
   { tags: ["AI & Tech", "Coding", "AI Video"], title: "AI Token & Cost Calculator", description: "Estimate token count and input cost across GPT-4o, Claude, and Gemini.", href: "/tools/ai-token-calculator" },
   { tags: ["Fintech", "Crypto", "Business & Money"], title: "Compound Growth & Staking Calculator", description: "Project compound interest, savings growth, and crypto staking returns over time.", href: "/tools/compound-calculator" },
   { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" },
-  { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" }
+  { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" },
+  { tags: ["Coding"], title: "JSON Formatter & Validator", description: "Format, minify, and validate JSON online with instant error messages.", href: "/tools/json-formatter" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
@@ -35,7 +36,9 @@ if (videoTags.includes("AI Video")) {
   matchedTool = findTool("/tools/serp-preview");
 } else if (videoTags.includes("Fintech") || videoTags.includes("Crypto")) {
   matchedTool = findTool("/tools/compound-calculator");
-} else if (videoTags.includes("AI & Tech") || videoTags.includes("Coding")) {
+} else if (videoTags.includes("Coding")) {
+  matchedTool = findTool("/tools/json-formatter");
+} else if (videoTags.includes("AI & Tech")) {
   matchedTool = findTool("/tools/ai-token-calculator");
 }
 
