@@ -1,0 +1,13 @@
+---
+title: "Will AI Replace Senior Engineers?"
+youtubeId: "9ZyM0tlU3hA"
+date: "2026-07-19"
+tags:
+  - "AI & Tech"
+  - "Automation"
+summary: "This Short explores the hot debate regarding whether artificial intelligence will replace senior engineers, especially in engineering management. It questions if seasoned professionals will be pushed aside by AI's rapid decision-making or if their expertise will remain irreplaceable."
+duration: "1:47"
+isShort: true
+---
+
+
