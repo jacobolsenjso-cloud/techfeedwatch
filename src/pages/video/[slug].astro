@@ -22,7 +22,8 @@ const TOOL_SUGGESTIONS = [
   { tags: ["Fintech", "Crypto", "Business & Money"], title: "Compound Growth & Staking Calculator", description: "Project compound interest, savings growth, and crypto staking returns over time.", href: "/tools/compound-calculator" },
   { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" },
   { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" },
-  { tags: ["Coding"], title: "JSON Formatter & Validator", description: "Format, minify, and validate JSON online with instant error messages.", href: "/tools/json-formatter" }
+  { tags: ["Coding"], title: "JSON Formatter & Validator", description: "Format, minify, and validate JSON online with instant error messages.", href: "/tools/json-formatter" },
+  { tags: ["AI & Tech"], title: "Password Generator & Strength Checker", description: "Generate cryptographically secure passwords and check the strength of an existing one.", href: "/tools/password-generator" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
@@ -39,7 +40,10 @@ if (videoTags.includes("AI Video")) {
 } else if (videoTags.includes("Coding")) {
   matchedTool = findTool("/tools/json-formatter");
 } else if (videoTags.includes("AI & Tech")) {
-  matchedTool = findTool("/tools/ai-token-calculator");
+  // Har videoen et ekstra tag ud over "AI & Tech" (fx Automation, Productivity, Business & Money),
+  // foreslås Password Generator; står "AI & Tech" helt alene, beholder AI Token Calculator pladsen.
+  const hasOtherTag = videoTags.some((t: string) => t !== "AI & Tech");
+  matchedTool = hasOtherTag ? findTool("/tools/password-generator") : findTool("/tools/ai-token-calculator");
 }
 
 const headings = video.getHeadings ? video.getHeadings() : [];
