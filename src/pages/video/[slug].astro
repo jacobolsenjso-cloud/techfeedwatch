@@ -23,7 +23,8 @@ const TOOL_SUGGESTIONS = [
   { tags: ["SEO", "AI Video"], title: "Meta Tag & SERP Preview", description: "Preview how your page appears in Google search and generate optimized meta tags.", href: "/tools/serp-preview" },
   { tags: ["SEO", "AI Video", "Coding"], title: "Video Schema Generator", description: "Generate valid VideoObject JSON-LD schema markup for any YouTube video.", href: "/tools/video-schema" },
   { tags: ["Coding"], title: "JSON Formatter & Validator", description: "Format, minify, and validate JSON online with instant error messages.", href: "/tools/json-formatter" },
-  { tags: ["AI & Tech"], title: "Password Generator & Strength Checker", description: "Generate cryptographically secure passwords and check the strength of an existing one.", href: "/tools/password-generator" }
+  { tags: ["AI & Tech"], title: "Password Generator & Strength Checker", description: "Generate cryptographically secure passwords and check the strength of an existing one.", href: "/tools/password-generator" },
+  { tags: ["Coding"], title: "Base64 & URL Encoder/Decoder", description: "Encode and decode text as Base64 or URL-safe strings, with full UTF-8 support.", href: "/tools/encoder-decoder" }
 ];
 const videoTags = video.frontmatter.tags || [];
 const findTool = (href: string) => TOOL_SUGGESTIONS.find(tool => tool.href === href);
@@ -38,7 +39,10 @@ if (videoTags.includes("AI Video")) {
 } else if (videoTags.includes("Fintech") || videoTags.includes("Crypto")) {
   matchedTool = findTool("/tools/compound-calculator");
 } else if (videoTags.includes("Coding")) {
-  matchedTool = findTool("/tools/json-formatter");
+  // Har videoen et ekstra tag ud over "Coding", foreslås Encoder/Decoder;
+  // står "Coding" helt alene, beholder JSON Formatter pladsen.
+  const hasOtherCodingTag = videoTags.some((t: string) => t !== "Coding");
+  matchedTool = hasOtherCodingTag ? findTool("/tools/encoder-decoder") : findTool("/tools/json-formatter");
 } else if (videoTags.includes("AI & Tech")) {
   // Har videoen et ekstra tag ud over "AI & Tech" (fx Automation, Productivity, Business & Money),
   // foreslås Password Generator; står "AI & Tech" helt alene, beholder AI Token Calculator pladsen.

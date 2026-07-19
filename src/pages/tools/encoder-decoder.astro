@@ -1,0 +1,181 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Base64 & URL Encoder/Decoder";
+const description = "Encode and decode text as Base64 or URL-safe strings, with full UTF-8 support for special characters and emojis. Runs entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .ed-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .ed-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .ed-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .ed-header p { color: #9ca3af; }
+
+    .ed-tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+    .ed-tab { padding: 10px 20px; border: none; background: none; color: #6b7280; font-size: 0.95rem; font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s, border-color 0.2s; }
+    .ed-tab:hover { color: var(--text-color); }
+    .ed-tab.active { color: #ef4444; border-bottom-color: #ef4444; }
+    body.dark-mode .ed-tab { color: #9ca3af; }
+
+    .ed-field { margin-bottom: 16px; }
+    .ed-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .ed-textarea { width: 100%; min-height: 160px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.9rem; font-family: 'Courier New', Consolas, monospace; box-sizing: border-box; resize: vertical; line-height: 1.5; }
+    .ed-textarea:focus { outline: none; border-color: #ef4444; }
+
+    .ed-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .ed-btn { padding: 12px 20px; border-radius: 8px; border: none; background: #ef4444; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .ed-btn:hover { background: #dc2626; }
+    .ed-btn-secondary { background: var(--hover-bg); color: var(--text-color); border: 1px solid var(--border-color); }
+    .ed-btn-secondary:hover { background: #e5e7eb; border-color: #9ca3af; }
+    body.dark-mode .ed-btn-secondary:hover { background: #334155; }
+
+    .ed-status { display: none; margin-bottom: 16px; padding: 10px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; }
+    body.dark-mode .ed-status { background: #3f1d1d; border-color: #7f1d1d; color: #fca5a5; }
+
+    .ed-output-row { display: none; align-items: flex-start; gap: 10px; }
+    .ed-output-row .ed-textarea { flex: 1; }
+    .ed-copy-btn { padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); cursor: pointer; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    .ed-copy-btn:hover { border-color: #ef4444; }
+
+    .ed-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .ed-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .ed-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .ed-info-section p { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .ed-wrapper { padding: 20px 15px; }
+      .ed-btn { flex: 1; text-align: center; }
+      .ed-output-row { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+
+  <div class="ed-wrapper">
+    <div class="ed-header">
+      <h1>🔗 Base64 & URL Encoder/Decoder</h1>
+      <p>Encode or decode text as Base64 or URL-safe strings, with full support for special characters and emojis. Everything runs locally in your browser.</p>
+    </div>
+
+    <div class="ed-tabs" role="tablist">
+      <button type="button" id="edTabBase64" class="ed-tab active" data-mode="base64">Base64</button>
+      <button type="button" id="edTabUrl" class="ed-tab" data-mode="url">URL</button>
+    </div>
+
+    <div class="ed-field">
+      <label for="edInput">Input</label>
+      <textarea id="edInput" class="ed-textarea" placeholder="Paste text here..."></textarea>
+    </div>
+
+    <div class="ed-actions">
+      <button type="button" id="edEncodeBtn" class="ed-btn">Encode</button>
+      <button type="button" id="edDecodeBtn" class="ed-btn ed-btn-secondary">Decode</button>
+      <button type="button" id="edClearBtn" class="ed-btn ed-btn-secondary">Clear</button>
+    </div>
+
+    <div class="ed-status" id="edStatus"></div>
+
+    <div class="ed-field ed-output-row" id="edOutputRow">
+      <textarea id="edOutput" class="ed-textarea" readonly placeholder="Result will appear here..."></textarea>
+      <button type="button" id="edCopyBtn" class="ed-copy-btn">Copy</button>
+    </div>
+
+    <div class="ed-info-section">
+      <h2>What is Base64 and URL encoding?</h2>
+      <p><strong>Base64</strong> converts arbitrary text or binary data into a string of printable ASCII characters. It's commonly used to embed data (like images or tokens) inside JSON, HTML, or email, where raw binary or special characters wouldn't survive transport unchanged.</p>
+      <p><strong>URL encoding</strong> (percent-encoding) replaces characters that aren't safe in a URL - such as spaces, `&`, or `?` - with a `%XX` escape sequence, so the string can be safely used as a query parameter or part of a URL path.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('edInput') as HTMLTextAreaElement;
+      const output = document.getElementById('edOutput') as HTMLTextAreaElement;
+      const outputRow = document.getElementById('edOutputRow') as HTMLDivElement;
+      const status = document.getElementById('edStatus') as HTMLDivElement;
+      const encodeBtn = document.getElementById('edEncodeBtn') as HTMLButtonElement;
+      const decodeBtn = document.getElementById('edDecodeBtn') as HTMLButtonElement;
+      const clearBtn = document.getElementById('edClearBtn') as HTMLButtonElement;
+      const copyBtn = document.getElementById('edCopyBtn') as HTMLButtonElement;
+      const tabBase64 = document.getElementById('edTabBase64') as HTMLButtonElement;
+      const tabUrl = document.getElementById('edTabUrl') as HTMLButtonElement;
+
+      let mode: 'base64' | 'url' = 'base64';
+
+      const setMode = (newMode: 'base64' | 'url') => {
+        mode = newMode;
+        tabBase64.classList.toggle('active', mode === 'base64');
+        tabUrl.classList.toggle('active', mode === 'url');
+      };
+
+      tabBase64.addEventListener('click', () => setMode('base64'));
+      tabUrl.addEventListener('click', () => setMode('url'));
+
+      // UTF-8-sikker Base64: konverterer via TextEncoder/TextDecoder, så æøå og emojis rundtrippes korrekt
+      const base64Encode = (str: string): string => {
+        const bytes = new TextEncoder().encode(str);
+        let binary = '';
+        bytes.forEach((b) => { binary += String.fromCharCode(b); });
+        return btoa(binary);
+      };
+
+      const base64Decode = (b64: string): string => {
+        const binary = atob(b64);
+        const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+        return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+      };
+
+      const showError = (message: string) => {
+        status.textContent = message;
+        status.style.display = 'block';
+        outputRow.style.display = 'none';
+      };
+
+      const showOutput = (result: string) => {
+        status.style.display = 'none';
+        output.value = result;
+        outputRow.style.display = 'flex';
+      };
+
+      const run = (action: 'encode' | 'decode') => {
+        const raw = input.value;
+
+        if (!raw) {
+          showError('Please enter some text first.');
+          return;
+        }
+
+        try {
+          let result: string;
+          if (mode === 'base64') {
+            result = action === 'encode' ? base64Encode(raw) : base64Decode(raw.trim());
+          } else {
+            result = action === 'encode' ? encodeURIComponent(raw) : decodeURIComponent(raw);
+          }
+          showOutput(result);
+        } catch (e) {
+          const label = mode === 'base64' ? 'Base64' : 'URL';
+          showError(`Invalid ${label} input: could not ${action} this text.`);
+        }
+      };
+
+      encodeBtn.addEventListener('click', () => run('encode'));
+      decodeBtn.addEventListener('click', () => run('decode'));
+
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        output.value = '';
+        status.style.display = 'none';
+        outputRow.style.display = 'none';
+      });
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(output.value);
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+    });
+  </script>
+</MainLayout>
