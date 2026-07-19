@@ -57,27 +57,71 @@ import MainLayout from '../layouts/MainLayout.astro';
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-      // Henter de gemte videoer fra browserens hukommelse
-      const watchLater = JSON.parse(localStorage.getItem('watchLater') || '[]');
       const grid = document.getElementById('saved-grid');
       const emptyMsg = document.getElementById('emptyMsg');
 
-      // Tjekker om der er gemt noget
-      if (watchLater.length === 0) {
-        if(emptyMsg) emptyMsg.style.display = 'block';
-      } else {
-        // Bygger gitteret med de gemte videoer
-        if(grid) {
-          watchLater.forEach(video => {
-            grid.innerHTML += `
-              <a href="/video/${video.slug}" class="watch-card">
-                <div class="watch-card-thumb" style="background-image: url('${video.img.replace('mqdefault', 'hqdefault')}');"></div>
-                <h3 class="tma-grid-title">${video.title}</h3>
-              </a>
-            `;
-          });
+      // Selvhelbredende: opslag fra youtubeId -> nuværende titel-slug, hentet fra videos.json
+      let idToSlug = {};
+      let validSlugs = null;
+
+      // Retter gamle ID-baserede links til nye titel-slugs, og fjerner videoer der ikke længere findes
+      const healVideos = (videos) => {
+        if (!validSlugs) return { healed: videos, changed: false };
+        let changed = false;
+        const healed = [];
+        videos.forEach(video => {
+          let youtubeId = video.youtubeId || null;
+          if (!youtubeId && video.slug && /^[a-zA-Z0-9_-]{11}$/.test(video.slug) && idToSlug[video.slug]) {
+            youtubeId = video.slug;
+          }
+          let newSlug = video.slug;
+          if (youtubeId && idToSlug[youtubeId]) {
+            newSlug = idToSlug[youtubeId];
+          }
+          if (!validSlugs.has(newSlug)) {
+            changed = true;
+            return;
+          }
+          if (newSlug !== video.slug) changed = true;
+          healed.push(newSlug === video.slug ? video : { ...video, slug: newSlug });
+        });
+        return { healed, changed };
+      };
+
+      const render = () => {
+        const watchLater = JSON.parse(localStorage.getItem('watchLater') || '[]');
+        const { healed, changed } = healVideos(watchLater);
+        if (changed) localStorage.setItem('watchLater', JSON.stringify(healed));
+
+        if (healed.length === 0) {
+          if (grid) grid.innerHTML = '';
+          if (emptyMsg) emptyMsg.style.display = 'block';
+          return;
         }
-      }
+
+        if (emptyMsg) emptyMsg.style.display = 'none';
+        if (grid) {
+          grid.innerHTML = healed.map(video => `
+            <a href="/video/${video.slug}" class="watch-card">
+              <div class="watch-card-thumb" style="background-image: url('${video.img.replace('mqdefault', 'hqdefault')}');"></div>
+              <h3 class="tma-grid-title">${video.title}</h3>
+            </a>
+          `).join('');
+        }
+      };
+
+      fetch('/videos.json')
+        .then(res => res.json())
+        .then(allVideos => {
+          allVideos.forEach(v => {
+            if (v.youtubeId) idToSlug[v.youtubeId] = v.slug;
+          });
+          validSlugs = new Set(allVideos.map(v => v.slug));
+          render();
+        })
+        .catch(() => {
+          render();
+        });
     });
   </script>
 </MainLayout>

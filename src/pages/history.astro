@@ -37,11 +37,41 @@ import MainLayout from '../layouts/MainLayout.astro';
       const historyGrid = document.getElementById('historyGrid');
       const emptyState = document.getElementById('emptyState');
       const clearBtn = document.getElementById('clearHistoryBtn');
-      
+
+      // Selvhelbredende: opslag fra youtubeId -> nuværende titel-slug, hentet fra videos.json
+      let idToSlug = {};
+      let validSlugs = null;
+
+      // Retter gamle ID-baserede links til nye titel-slugs, og fjerner videoer der ikke længere findes
+      const healVideos = (videos) => {
+        if (!validSlugs) return { healed: videos, changed: false };
+        let changed = false;
+        const healed = [];
+        videos.forEach(video => {
+          let youtubeId = video.youtubeId || null;
+          if (!youtubeId && video.slug && /^[a-zA-Z0-9_-]{11}$/.test(video.slug) && idToSlug[video.slug]) {
+            youtubeId = video.slug;
+          }
+          let newSlug = video.slug;
+          if (youtubeId && idToSlug[youtubeId]) {
+            newSlug = idToSlug[youtubeId];
+          }
+          if (!validSlugs.has(newSlug)) {
+            changed = true;
+            return;
+          }
+          if (newSlug !== video.slug) changed = true;
+          healed.push(newSlug === video.slug ? video : { ...video, slug: newSlug });
+        });
+        return { healed, changed };
+      };
+
       const loadHistory = () => {
         const history = JSON.parse(localStorage.getItem('videoHistory') || '[]');
-        
-        if (history.length === 0) {
+        const { healed, changed } = healVideos(history);
+        if (changed) localStorage.setItem('videoHistory', JSON.stringify(healed));
+
+        if (healed.length === 0) {
           historyGrid.innerHTML = '';
           emptyState.style.display = 'block';
           clearBtn.style.display = 'none';
@@ -50,8 +80,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         emptyState.style.display = 'none';
         clearBtn.style.display = 'inline-block';
-        
-        historyGrid.innerHTML = history.map(video => `
+
+        historyGrid.innerHTML = healed.map(video => `
           <a href="/video/${video.slug}" class="watch-card">
             <div class="watch-card-thumb" style="background-image: url('${video.img.replace('mqdefault', 'hqdefault')}');"></div>
             <div>
@@ -61,7 +91,18 @@ import MainLayout from '../layouts/MainLayout.astro';
         `).join('');
       };
 
-      loadHistory();
+      fetch('/videos.json')
+        .then(res => res.json())
+        .then(allVideos => {
+          allVideos.forEach(v => {
+            if (v.youtubeId) idToSlug[v.youtubeId] = v.slug;
+          });
+          validSlugs = new Set(allVideos.map(v => v.slug));
+          loadHistory();
+        })
+        .catch(() => {
+          loadHistory();
+        });
 
       // Slet historik knap
       clearBtn.addEventListener('click', () => {
