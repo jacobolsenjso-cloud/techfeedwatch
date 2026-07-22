@@ -1,7 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
+// Shorts er noindex'ede (se video/[slug].astro), så de udelades her for ikke at lede Google til dem
+const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }))
+  .filter((v: any) => !v.frontmatter.isShort);
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
