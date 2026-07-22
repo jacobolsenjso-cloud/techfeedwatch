@@ -117,7 +117,11 @@ const videoSchema = {
     `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`
   ],
   "uploadDate": new Date(date).toISOString(),
-  "embedUrl": `https://www.youtube-nocookie.com/embed/${youtubeId}`
+  "embedUrl": `https://www.youtube-nocookie.com/embed/${youtubeId}`,
+  "author": {
+    "@type": "Person",
+    "name": "Jacob Olsen"
+  }
 };
 ---
 
@@ -188,6 +192,20 @@ const videoSchema = {
     .tool-suggestion strong { display: block; margin-bottom: 5px; font-size: 1rem; }
     .tool-suggestion p { margin: 0; font-size: 0.9rem; color: #6b7280; }
     body.dark-mode .tool-suggestion p { color: #9ca3af; }
+
+    .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #ef4444; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
+    .author-box-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .author-box-name { font-weight: 700; font-size: 1.15rem; margin: 0; }
+    .author-box-title { font-size: 0.9rem; font-weight: 600; color: #ef4444; margin: 4px 0 14px 0; }
+    body.dark-mode .author-box-title { color: #f87171; }
+    .author-box-bio { font-size: 1rem; line-height: 1.7; margin: 0 0 16px 0; }
+    .author-box-ai-note { font-size: 0.82rem; font-style: italic; color: #6b7280; margin: 0; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--border-color); }
+    body.dark-mode .author-box-ai-note { color: #9ca3af; }
+
+    @media (max-width: 600px) {
+      .author-box { flex-direction: column; align-items: center; text-align: center; padding: 24px; gap: 16px; }
+      .author-box-title { margin-bottom: 16px; }
+    }
 
     .video-actions { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px; margin-bottom: 40px; }
     .nav-row { display: flex; gap: 20px; }
@@ -560,6 +578,16 @@ const videoSchema = {
         </article>
 
         {faqs.length > 0 && <FAQ faqs={faqs} />}
+
+        <div class="author-box">
+          <img src="/jacob-olsen.png" alt="Jacob Olsen" class="author-box-photo" width="80" height="80" />
+          <div>
+            <p class="author-box-name">Jacob Olsen</p>
+            <p class="author-box-title">Founder & CEO of Tech Feed Watch</p>
+            <p class="author-box-bio">Jacob Olsen, Founder and CEO of Tech Feed Watch, helps you navigate the future of AI with unbiased insights.</p>
+            <p class="author-box-ai-note">This analysis was produced with AI assistance and edited for accuracy and perspective by Jacob Olsen, founder of Tech Feed Watch.</p>
+          </div>
+        </div>
 
         {matchedTool && (
           <div class="tool-suggestion">
