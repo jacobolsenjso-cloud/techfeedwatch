@@ -1,0 +1,96 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const allEntries = Object.values(import.meta.glob('../../content/glossary/*.md', { eager: true }));
+  return allEntries.map((entry: any) => ({
+    params: { slug: entry.frontmatter.slug },
+    props: { entry, allEntries },
+  }));
+}
+
+const { entry, allEntries } = Astro.props as { entry: any; allEntries: any[] };
+const { term, category, definition } = entry.frontmatter;
+
+const CATEGORY_COLORS: Record<string, string> = {
+  AI: "#3b82f6",
+  Tech: "#8b5cf6",
+  SEO: "#10b981",
+  Fintech: "#ef4444",
+  Crypto: "#d97706",
+};
+const categoryColor = CATEGORY_COLORS[category] || "#6b7280";
+
+// Andre termer i samme kategori, alfabetisk, ekskl. den nuværende term
+const relatedTerms = allEntries
+  .filter((e: any) => e.frontmatter.category === category && e.frontmatter.slug !== entry.frontmatter.slug)
+  .sort((a: any, b: any) => a.frontmatter.term.localeCompare(b.frontmatter.term))
+  .slice(0, 5);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": term,
+  "description": definition,
+};
+
+const title = `${term} — Glossary`;
+---
+
+<MainLayout title={title} description={definition} schema={schema}>
+  <style is:global>
+    .glossary-term-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+
+    .glossary-back-link { display: inline-block; margin-bottom: 24px; color: #3b82f6; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .glossary-back-link:hover { text-decoration: underline; }
+    body.dark-mode .glossary-back-link { color: #60a5fa; }
+
+    .glossary-term-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+    .glossary-term-header h1 { margin: 0; font-size: 2rem; }
+    .glossary-term-badge { flex-shrink: 0; background: var(--badge-color); color: #fff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 5px 12px; border-radius: 12px; }
+
+    .glossary-term-definition { font-size: 1.15rem; font-weight: 600; line-height: 1.5; padding: 16px 20px; background: var(--hover-bg); border-left: 4px solid var(--badge-color); border-radius: 8px; margin: 0 0 30px 0; }
+
+    .glossary-term-body { font-size: 1rem; line-height: 1.75; color: #4b5563; }
+    body.dark-mode .glossary-term-body { color: #9ca3af; }
+    .glossary-term-body p { margin: 0 0 18px 0; }
+
+    .glossary-related { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-color); }
+    .glossary-related h2 { font-size: 1.2rem; margin: 0 0 14px 0; }
+    .glossary-related-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .glossary-related-list li a { display: inline-block; padding: 8px 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+    .glossary-related-list li a:hover { background: #e5e7eb; }
+    body.dark-mode .glossary-related-list li a:hover { background: #334155; }
+
+    @media (max-width: 768px) {
+      .glossary-term-wrapper { padding: 20px 15px; }
+      .glossary-term-header h1 { font-size: 1.6rem; }
+    }
+  </style>
+
+  <div class="glossary-term-wrapper">
+    <a href="/glossary" class="glossary-back-link">← Back to Glossary</a>
+
+    <div class="glossary-term-header">
+      <h1>{term}</h1>
+      <span class="glossary-term-badge" style={`--badge-color: ${categoryColor}`}>{category}</span>
+    </div>
+
+    <p class="glossary-term-definition" style={`--badge-color: ${categoryColor}`}>{definition}</p>
+
+    <div class="glossary-term-body">
+      <entry.Content />
+    </div>
+
+    {relatedTerms.length > 0 && (
+      <div class="glossary-related">
+        <h2>Related terms</h2>
+        <ul class="glossary-related-list">
+          {relatedTerms.map((r: any) => (
+            <li><a href={`/glossary/${r.frontmatter.slug}`}>{r.frontmatter.term}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</MainLayout>

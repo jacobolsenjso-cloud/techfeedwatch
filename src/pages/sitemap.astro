@@ -33,10 +33,33 @@ const MAIN_PAGES = [
   { href: '/watch-later', label: 'Watch Later' },
   { href: '/history', label: 'History' },
   { href: '/tools', label: 'Tools' },
+  { href: '/glossary', label: 'Glossary' },
   { href: '/about', label: 'About' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
 ];
+
+// Emne-farvesystem for glossary-kategorier, defineret lokalt (samme farver som glossary-siderne)
+const GLOSSARY_CATEGORIES = ["AI", "Tech", "SEO", "Fintech", "Crypto"];
+const GLOSSARY_CATEGORY_COLORS: Record<string, string> = {
+  AI: "#3b82f6", Tech: "#8b5cf6", SEO: "#10b981", Fintech: "#ef4444", Crypto: "#d97706",
+};
+
+const glossaryTerms = Object.values(import.meta.glob('../content/glossary/*.md', { eager: true }))
+  .map((e: any) => ({
+    term: e.frontmatter.term,
+    slug: e.frontmatter.slug,
+    category: e.frontmatter.category,
+  }))
+  .filter((t: any) => t.term && t.slug);
+
+// Grupperer glossary-termer under hver kategori, alfabetisk. Kategorier uden termer springes over.
+const glossaryByCategory = GLOSSARY_CATEGORIES.map((category) => {
+  const terms = glossaryTerms
+    .filter((t: any) => t.category === category)
+    .sort((a: any, b: any) => a.term.localeCompare(b.term));
+  return { category, terms };
+}).filter((group) => group.terms.length > 0);
 
 const TOOLS = [
   { href: '/tools/ai-token-calculator', label: 'AI Token & Cost Calculator' },
@@ -121,6 +144,20 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
           <li><a href={t.href}>{t.label}</a></li>
         ))}
       </ul>
+    </section>
+
+    <section class="sitemap-section">
+      <h2>Glossary Terms</h2>
+      {glossaryByCategory.map(({ category, terms }) => (
+        <details class="sitemap-tag" style={`--tag-accent: ${GLOSSARY_CATEGORY_COLORS[category] || 'var(--border-color)'}`}>
+          <summary>{category}<span class="sitemap-count">({terms.length})</span></summary>
+          <ul class="sitemap-video-list">
+            {terms.map((t: any) => (
+              <li><a href={`/glossary/${t.slug}`}>{t.term}</a></li>
+            ))}
+          </ul>
+        </details>
+      ))}
     </section>
 
     <section class="sitemap-section">

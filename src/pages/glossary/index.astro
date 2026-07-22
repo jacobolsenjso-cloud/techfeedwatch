@@ -1,0 +1,148 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const allTerms = Object.values(import.meta.glob('../../content/glossary/*.md', { eager: true }))
+  .map((entry: any) => ({
+    term: entry.frontmatter.term,
+    slug: entry.frontmatter.slug,
+    category: entry.frontmatter.category,
+    definition: entry.frontmatter.definition,
+  }))
+  .filter((t) => t.term && t.slug)
+  .sort((a, b) => a.term.localeCompare(b.term));
+
+const CATEGORY_COLORS: Record<string, string> = {
+  AI: "#3b82f6",
+  Tech: "#8b5cf6",
+  SEO: "#10b981",
+  Fintech: "#ef4444",
+  Crypto: "#d97706",
+};
+
+// Grupperer alfabetisk efter termens første bogstav, så sektioner kan skjules individuelt ved live-søgning
+const sections = allTerms.reduce((acc: { letter: string; terms: typeof allTerms }[], t) => {
+  const letter = t.term.charAt(0).toUpperCase();
+  const last = acc[acc.length - 1];
+  if (last && last.letter === letter) {
+    last.terms.push(t);
+  } else {
+    acc.push({ letter, terms: [t] });
+  }
+  return acc;
+}, []);
+
+const title = "Glossary";
+const description = "Clear, concise explanations of key terms in AI, tech, fintech, and crypto - your quick reference for the jargon used across Tech Feed Watch.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .glossary-wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .glossary-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .glossary-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .glossary-header p { color: #9ca3af; }
+
+    .glossary-search-row { margin-bottom: 30px; }
+    .glossary-search { width: 100%; max-width: 420px; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+    .glossary-search:focus { outline: none; border-color: #ef4444; }
+
+    .glossary-empty { display: none; text-align: center; padding: 50px 20px; color: #6b7280; font-size: 1.1rem; }
+    body.dark-mode .glossary-empty { color: #9ca3af; }
+
+    .glossary-letter-section { margin-bottom: 36px; }
+    .glossary-letter-heading { font-size: 1.4rem; margin: 0 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); color: #ef4444; }
+
+    .glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .glossary-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 18px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+    .glossary-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-color: #ef4444; }
+    .glossary-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .glossary-card-term { font-size: 1.05rem; font-weight: 700; margin: 0; }
+    .glossary-badge { flex-shrink: 0; background: var(--badge-color); color: #fff; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 10px; }
+    .glossary-card-def { font-size: 0.9rem; line-height: 1.5; color: #4b5563; margin: 0; }
+    body.dark-mode .glossary-card-def { color: #9ca3af; }
+
+    .glossary-coming-soon { text-align: center; padding: 60px 20px; color: #6b7280; font-size: 1.1rem; border: 1px dashed var(--border-color); border-radius: 12px; }
+    body.dark-mode .glossary-coming-soon { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .glossary-wrapper { padding: 20px 15px; }
+      .glossary-search { max-width: 100%; }
+      .glossary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="glossary-wrapper">
+    <div class="glossary-header">
+      <h1>📖 Glossary</h1>
+      <p>Clear, concise explanations of key terms in AI, tech, fintech, and crypto.</p>
+    </div>
+
+    {allTerms.length === 0 ? (
+      <div class="glossary-coming-soon">More terms are on the way. Check back soon.</div>
+    ) : (
+      <>
+        <div class="glossary-search-row">
+          <input type="text" id="glossarySearch" class="glossary-search" placeholder="Search terms..." />
+        </div>
+
+        <p class="glossary-empty" id="glossaryEmpty">No terms match your search.</p>
+
+        {sections.map(({ letter, terms }) => (
+          <section class="glossary-letter-section" data-letter-section>
+            <h2 class="glossary-letter-heading">{letter}</h2>
+            <div class="glossary-grid">
+              {terms.map((t) => (
+                <a
+                  href={`/glossary/${t.slug}`}
+                  class="glossary-card"
+                  data-term={t.term.toLowerCase()}
+                  data-definition={(t.definition || '').toLowerCase()}
+                >
+                  <div class="glossary-card-top">
+                    <h3 class="glossary-card-term">{t.term}</h3>
+                    <span class="glossary-badge" style={`--badge-color: ${CATEGORY_COLORS[t.category] || '#6b7280'}`}>{t.category}</span>
+                  </div>
+                  <p class="glossary-card-def">{t.definition}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </>
+    )}
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('glossarySearch') as HTMLInputElement | null;
+      const emptyMsg = document.getElementById('glossaryEmpty') as HTMLElement | null;
+      if (!searchInput) return;
+
+      const letterSections = Array.from(document.querySelectorAll('[data-letter-section]')) as HTMLElement[];
+      const cards = Array.from(document.querySelectorAll('.glossary-card')) as HTMLAnchorElement[];
+
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim().toLowerCase();
+        let totalVisible = 0;
+
+        letterSections.forEach((section) => {
+          const sectionCards = Array.from(section.querySelectorAll('.glossary-card')) as HTMLAnchorElement[];
+          let visibleInSection = 0;
+
+          sectionCards.forEach((card) => {
+            const matches = !query
+              || (card.dataset.term || '').includes(query)
+              || (card.dataset.definition || '').includes(query);
+            card.style.display = matches ? 'block' : 'none';
+            if (matches) visibleInSection++;
+          });
+
+          section.style.display = visibleInSection > 0 ? 'block' : 'none';
+          totalVisible += visibleInSection;
+        });
+
+        if (emptyMsg) emptyMsg.style.display = totalVisible === 0 ? 'block' : 'none';
+      });
+    });
+  </script>
+</MainLayout>
