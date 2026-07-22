@@ -1,5 +1,5 @@
 ---
-const { title, description, image, schema } = Astro.props;
+const { title, description, image, schema, noindex } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 // Standard SEO beskrivelse hvis ingen er angivet
@@ -39,7 +39,8 @@ if (currentPath.startsWith('/video/')) {
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9695260339642032" crossorigin="anonymous"></script>
 
     <meta name="description" content={description || defaultDesc} />
-    
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title ? `${title} | TechFeedWatch` : "TechFeedWatch"} />
