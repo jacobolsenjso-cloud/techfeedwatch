@@ -656,6 +656,19 @@ const videoSchema = {
           </div>
         )}
 
+        <div class="video-actions">
+          <div class="nav-row">
+            <a href={prevVideo ? `/video/${prevVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card ${!prevVideo ? 'disabled' : ''}`}>
+              <span class="nav-label">← Previous Video</span>
+              <span class="nav-title">{prevVideo ? prevVideo.frontmatter.title : 'No older videos'}</span>
+            </a>
+            <a href={nextVideo ? `/video/${nextVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card right ${!nextVideo ? 'disabled' : ''}`}>
+              <span class="nav-label">Next Video →</span>
+              <span class="nav-title">{nextVideo ? nextVideo.frontmatter.title : 'No newer videos'}</span>
+            </a>
+          </div>
+        </div>
+
         {relatedGuides.length > 0 && (
           <div class="related-guides">
             <h2 class="related-guides-title">Related Guides</h2>
@@ -670,19 +683,6 @@ const videoSchema = {
             </div>
           </div>
         )}
-
-        <div class="video-actions">
-          <div class="nav-row">
-            <a href={prevVideo ? `/video/${prevVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card ${!prevVideo ? 'disabled' : ''}`}>
-              <span class="nav-label">← Previous Video</span>
-              <span class="nav-title">{prevVideo ? prevVideo.frontmatter.title : 'No older videos'}</span>
-            </a>
-            <a href={nextVideo ? `/video/${nextVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card right ${!nextVideo ? 'disabled' : ''}`}>
-              <span class="nav-label">Next Video →</span>
-              <span class="nav-title">{nextVideo ? nextVideo.frontmatter.title : 'No newer videos'}</span>
-            </a>
-          </div>
-        </div>
         </div>
       </div>
 
