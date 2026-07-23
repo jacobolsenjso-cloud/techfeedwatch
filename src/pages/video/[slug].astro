@@ -347,23 +347,26 @@ const videoSchema = {
         z-index: 40;
         color: white;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        max-height: 35vh !important;
-        overflow-y: auto !important;
+        max-height: 55vh;
         touch-action: pan-y !important;
         pointer-events: auto !important;
         overscroll-behavior: contain;
         padding-right: 10px;
         scrollbar-width: none;
+        cursor: pointer;
       }
+      .shorts-mobile-info:not(.expanded) { overflow: hidden; }
+      .shorts-mobile-info.expanded { overflow-y: auto; }
       .shorts-mobile-info::-webkit-scrollbar { display: none; }
       .shorts-mobile-info h2 { font-size: 1.1rem; margin: 0 0 5px 0; color: #fff; }
       .shorts-mobile-info .shorts-author { font-size: 0.9rem; margin: 0 0 10px 0; font-weight: bold; color: #fff; }
 
-      .shorts-mobile-info .shorts-mobile-text {
-        font-size: 0.85rem;
-        display: block !important;
-        overflow: visible !important;
-      }
+      .shorts-mobile-info .shorts-mobile-text { font-size: 0.85rem; }
+      .shorts-mobile-info:not(.expanded) .shorts-mobile-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .shorts-mobile-info.expanded .shorts-mobile-text { display: block; overflow: visible; }
+      .shorts-tap-hint { display: block; font-size: 0.8rem; font-weight: 700; margin-top: 8px; color: #fff; opacity: 0.9; }
+      .shorts-mobile-info:not(.expanded) .shorts-tap-hint::before { content: 'Tap to read more ▾'; }
+      .shorts-mobile-info.expanded .shorts-tap-hint::before { content: 'Tap to close ▴'; }
       .shorts-mobile-info .shorts-mobile-text p { margin: 0; color: #fff; }
 
       .shorts-circle-btn { background: rgba(0, 0, 0, 0.5) !important; border: none !important; color: #fff !important; }
@@ -453,6 +456,7 @@ const videoSchema = {
               <p>{summary}</p>
               <video.Content />
             </div>
+            <span class="shorts-tap-hint" aria-hidden="true"></span>
           </div>
         </div>
 
@@ -760,6 +764,15 @@ const videoSchema = {
           if (e.key === 'ArrowDown' && nextShortBtn && nextShortBtn.dataset.url) { e.preventDefault(); window.location.href = nextShortBtn.dataset.url; }
           else if (e.key === 'ArrowUp' && prevShortBtn && prevShortBtn.dataset.url) { e.preventDefault(); window.location.href = prevShortBtn.dataset.url; }
           else if (e.key === 'Escape') { window.location.href = '/shorts'; }
+        });
+      }
+
+      // Mobil Shorts-tekst: vis kun et par linjer, fold hele teksten ud/ind ved tryk på teksten
+      const shortsMobileInfo = document.querySelector('.shorts-mobile-info');
+      if (shortsMobileInfo) {
+        shortsMobileInfo.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return; // lad evt. links virke normalt
+          shortsMobileInfo.classList.toggle('expanded');
         });
       }
 
