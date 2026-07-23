@@ -82,6 +82,18 @@ if (currentPath.startsWith('/video/')) {
       .tfw-reveal.is-visible { animation: tfwReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
       @keyframes tfwReveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
       @media (prefers-reduced-motion: reduce) { .tfw-reveal { opacity: 1 !important; } .tfw-reveal.is-visible { animation: none !important; } }
+
+      /* --- Delt video-kort polish (zoom, play-ikon, blød skygge, skeleton) - gælder alle lister-sider --- */
+      .watch-card-thumb:has(img), .short-card-thumb:has(img) { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
+      body.dark-mode .watch-card-thumb:has(img), body.dark-mode .short-card-thumb:has(img) { background-color: #26242c; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
+      .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { animation: none; background-image: none; background-color: #000; }
+      .watch-card-thumb img, .short-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+      .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
+      .watch-card:hover .watch-card-thumb, .watch-card:hover .short-card-thumb { box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05); }
+      .watch-card-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; padding-left: 3px; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none; }
+      .watch-card:hover .watch-card-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      @keyframes tfwShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
+      @media (prefers-reduced-motion: reduce) { .watch-card-thumb, .short-card-thumb { animation: none; } .watch-card-thumb img, .short-card-thumb img { transition: none; } .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: none; } }
       
       .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
       .header-hidden { transform: none !important; margin-top: -60px !important; } 
@@ -304,6 +316,17 @@ if (currentPath.startsWith('/video/')) {
             revealEls.forEach((el) => { el.classList.add('tfw-reveal'); revObserver.observe(el); });
           }
         }
+
+        // Skeleton: fjern shimmer når et thumbnail er hentet. Capture-fasen fanger også dynamisk tilføjede kort (søgning, history, watch-later).
+        const markThumbLoaded = (img) => {
+          const t = img.closest && img.closest('.watch-card-thumb, .short-card-thumb');
+          if (t) t.classList.add('is-loaded');
+        };
+        document.addEventListener('load', (e) => { if (e.target && e.target.tagName === 'IMG') markThumbLoaded(e.target); }, true);
+        document.addEventListener('error', (e) => { if (e.target && e.target.tagName === 'IMG') markThumbLoaded(e.target); }, true);
+        document.querySelectorAll('.watch-card-thumb img, .short-card-thumb img').forEach((img) => {
+          if (img.complete && img.naturalWidth > 0) markThumbLoaded(img);
+        });
       });
     </script>
     <script is:inline>
