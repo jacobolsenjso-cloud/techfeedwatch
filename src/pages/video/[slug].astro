@@ -66,6 +66,15 @@ const allUniqueTags = [...new Set(allVideos.flatMap((v: any) => {
   return Array.isArray(t) ? t : [t];
 }))].filter(Boolean).sort();
 
+// Relaterede guides: guides hvis tag matcher videoens tags. Fylder bunden af siden og skaber intern linking til det redaktionelle indhold.
+const relatedGuides = Object.values(import.meta.glob('../../content/guides/*.md', { eager: true }))
+  .map((g: any) => g.frontmatter)
+  .filter((g: any) => {
+    const gTags = Array.isArray(g.tags) ? g.tags : [g.tags].filter(Boolean);
+    return gTags.some((t: string) => tagsArray.includes(t));
+  })
+  .slice(0, 3);
+
 // Emne-farvesystem, defineret lokalt (samme palette som forside, sitemap og tag-sider)
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
@@ -219,6 +228,15 @@ const videoSchema = {
       .share-cta { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px; }
       .share-cta-btn { width: 100%; justify-content: center; }
     }
+
+    .related-guides { margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-color); margin-bottom: 40px; }
+    .related-guides-title { font-size: 1.2rem; margin: 0 0 15px 0; }
+    .related-guides-grid { display: flex; flex-direction: column; gap: 12px; }
+    .related-guide-card { display: flex; flex-direction: column; gap: 5px; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 10px; padding: 16px 18px; transition: transform 0.2s, box-shadow 0.2s; }
+    .related-guide-card:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.08); }
+    .related-guide-badge { align-self: flex-start; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 10px; }
+    .related-guide-name { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
+    .related-guide-cta { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
 
     .video-actions { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px; margin-bottom: 40px; }
     .nav-row { display: flex; gap: 20px; }
@@ -635,6 +653,21 @@ const videoSchema = {
               <strong>{matchedTool.title}</strong>
               <p>{matchedTool.description}</p>
             </a>
+          </div>
+        )}
+
+        {relatedGuides.length > 0 && (
+          <div class="related-guides">
+            <h2 class="related-guides-title">Related Guides</h2>
+            <div class="related-guides-grid">
+              {relatedGuides.map((g: any) => (
+                <a href={`/guides/${g.slug}`} class="related-guide-card" style={`--accent: ${TAG_COLORS[g.category] || '#ef4444'}`}>
+                  <span class="related-guide-badge">{g.category}</span>
+                  <span class="related-guide-name">{g.title}</span>
+                  <span class="related-guide-cta">Read the guide →</span>
+                </a>
+              ))}
+            </div>
           </div>
         )}
 
