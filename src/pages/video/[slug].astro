@@ -1053,6 +1053,8 @@ const videoSchema = {
         if (window.matchMedia('(max-width: 768px)').matches) {
           const HIDE_DELAY = 3000;
           let hideTimer = null, watchTimer = null, ytShortsPlayer = null, nearEnd = false;
+          // Lydløs-autoplay-workarounden gælder KUN iOS (iPhone/iPad). Android beholder lyd fra start.
+          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
           const isNearEnd = () => {
             if (!ytShortsPlayer || typeof ytShortsPlayer.getDuration !== 'function') return false;
             const d = ytShortsPlayer.getDuration();
@@ -1091,9 +1093,11 @@ const videoSchema = {
             ytShortsPlayer = new YT.Player('ytIframe', {
               events: {
                 onReady: () => {
-                  // iOS tillader kun autoplay uden lyd - start lydløst, tryk slår lyden til
-                  try { ytShortsPlayer.mute(); ytShortsPlayer.playVideo(); } catch (err) {}
-                  document.body.classList.add('shorts-muted');
+                  if (isIOS) {
+                    // Kun iOS: start lydløst (Apple blokerer autoplay med lyd), tryk slår lyden til
+                    try { ytShortsPlayer.mute(); ytShortsPlayer.playVideo(); } catch (err) {}
+                    document.body.classList.add('shorts-muted');
+                  }
                   showControls();
                   startWatch();
                 },
