@@ -251,7 +251,7 @@ const videoSchema = {
 
     .video-secondary .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
     .video-secondary .watch-card:hover { transform: translateY(-3px); }
-    .video-secondary .watch-card-thumb { width: 160px; aspect-ratio: 16/9; background-color: #000; background-size: cover; background-position: center; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
+    .video-secondary .watch-card-thumb { width: 160px; aspect-ratio: 16/9; border-radius: 8px; position: relative; overflow: hidden; flex-shrink: 0; }
     .video-secondary .duration-badge { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.8); color: white; padding: 2px 5px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; }
     .video-secondary .tma-grid-title { margin: 0; font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
@@ -274,6 +274,10 @@ const videoSchema = {
     body.shorts-mode .content-area { padding: 0 !important; background: var(--bg-color); }
 
     .shorts-wrapper { display: flex; justify-content: center; align-items: center; height: calc(100vh - 60px); width: 100%; position: relative; overflow: hidden; touch-action: none; background: var(--bg-color); }
+    .shorts-back-btn { position: absolute; top: 16px; left: 16px; z-index: 60; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); text-decoration: none; font-size: 1.35rem; line-height: 1; box-shadow: 0 4px 14px rgba(0,0,0,0.12); transition: transform 0.2s ease, background 0.2s ease; }
+    .shorts-back-btn:hover { transform: translateX(-2px) scale(1.06); background: var(--hover-bg); }
+    body.dark-mode .shorts-back-btn { box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+    @media (max-width: 768px) { .shorts-back-btn { top: 12px; left: 12px; background: rgba(0,0,0,0.55); color: #fff; border: none; } }
     .shorts-content-area { display: flex; flex-direction: row; gap: 30px; align-items: center; justify-content: center; height: 85vh; max-height: 800px; width: 100%; max-width: 1200px; padding: 0 20px; box-sizing: border-box; }
     .shorts-desktop-info { display: flex; flex-direction: column; width: 300px; height: 100%; padding: 20px 0; box-sizing: border-box; overflow-y: auto; scrollbar-width: none; }
     .shorts-desktop-info::-webkit-scrollbar { display: none; }
@@ -297,9 +301,9 @@ const videoSchema = {
     .shorts-circle-btn:hover { background: #e5e7eb; transform: scale(1.05); }
     body.dark-mode .shorts-circle-btn { background: #1e293b; border-color: transparent; color: #f1f5f9; }
     body.dark-mode .shorts-circle-btn:hover { background: #334155; }
-    .shorts-circle-btn.btn-active { color: #3b82f6 !important; background: var(--card-bg); border-color: #3b82f6; }
+    .shorts-circle-btn.btn-active { color: #ef4444 !important; background: var(--card-bg); border-color: #ef4444; }
     .shorts-circle-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
-    .shorts-circle-btn.btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
+    .shorts-circle-btn.btn-active svg { fill: #ef4444; stroke: #ef4444; }
     .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
 
     @media (max-width: 1024px) {
@@ -707,8 +711,10 @@ const videoSchema = {
             <div class="related-grid">
               {relatedVideos.map((rel: any) => (
                 <a href={`/video/${rel.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-                  <div class="watch-card-thumb" style={`background-image: url('https://img.youtube.com/vi/${rel.frontmatter.youtubeId}/mqdefault.jpg');`}>
+                  <div class="watch-card-thumb">
+                    <img src={`https://img.youtube.com/vi/${rel.frontmatter.youtubeId}/mqdefault.jpg`} alt={rel.frontmatter.title} loading="lazy" />
                     <div class="duration-badge">{rel.frontmatter.duration || (rel.frontmatter.isShort ? 'Short' : '0:00')}</div>
+                    <span class="watch-card-play" aria-hidden="true">▶</span>
                   </div>
                   <h4 class="tma-grid-title">{rel.frontmatter.title}</h4>
                 </a>
@@ -747,6 +753,15 @@ const videoSchema = {
       const prevShortBtn = document.getElementById('prevShortBtn');
       if (nextShortBtn && nextShortBtn.dataset.url) nextShortBtn.addEventListener('click', () => window.location.href = nextShortBtn.dataset.url);
       if (prevShortBtn && prevShortBtn.dataset.url) prevShortBtn.addEventListener('click', () => window.location.href = prevShortBtn.dataset.url);
+
+      // Tastatur-navigation i Shorts: pil ned = næste, pil op = forrige, Escape = tilbage til oversigten
+      if (nextShortBtn || prevShortBtn) {
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowDown' && nextShortBtn && nextShortBtn.dataset.url) { e.preventDefault(); window.location.href = nextShortBtn.dataset.url; }
+          else if (e.key === 'ArrowUp' && prevShortBtn && prevShortBtn.dataset.url) { e.preventDefault(); window.location.href = prevShortBtn.dataset.url; }
+          else if (e.key === 'Escape') { window.location.href = '/shorts'; }
+        });
+      }
 
       const saveBtn = document.getElementById('saveBtn');
       const saveText = document.getElementById('saveText');
