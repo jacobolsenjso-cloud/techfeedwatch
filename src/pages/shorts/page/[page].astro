@@ -1,16 +1,21 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import MainLayout from '../../../layouts/MainLayout.astro';
 
-const PAGE_SIZE = 24;
+export async function getStaticPaths({ paginate }: any) {
+  const allVideos = Object.values(import.meta.glob('../../../content/videos/*.md', { eager: true }));
+  const shorts = allVideos
+    .filter((v: any) => v.frontmatter.isShort === true)
+    .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  // Side 1 bor på "/shorts" - drop paginate's side-1-rute, så denne fil kun laver /shorts/page/2, /3 osv.
+  return paginate(shorts, { pageSize: 24 }).slice(1);
+}
 
-const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
+const { page } = Astro.props as { page: any };
 
-const shorts = allVideos
-  .filter((v: any) => v.frontmatter.isShort === true)
-  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+const allVideos = Object.values(import.meta.glob('../../../content/videos/*.md', { eager: true }));
+const allShorts = allVideos.filter((v: any) => v.frontmatter.isShort === true);
 
-// Top tags blandt Shorts (til filter-baren)
-const tagCounts = shorts.reduce((acc: any, video: any) => {
+const tagCounts = allShorts.reduce((acc: any, video: any) => {
   const t = video.frontmatter.tags || video.frontmatter.tag || [];
   const tagsArray = Array.isArray(t) ? t : [t];
   tagsArray.filter(Boolean).forEach((tag: string) => { acc[tag] = (acc[tag] || 0) + 1; });
@@ -29,11 +34,11 @@ const formatDate = (d: string) => {
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
 
-const pageShorts = shorts.slice(0, PAGE_SIZE);
-const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
+const prevUrl = page.currentPage <= 2 ? '/shorts' : `/shorts/page/${page.currentPage - 1}`;
+const nextUrl = page.currentPage < page.lastPage ? `/shorts/page/${page.currentPage + 1}` : null;
 ---
 
-<MainLayout title="Shorts">
+<MainLayout title={`Shorts – Page ${page.currentPage}`}>
   <style is:global>
     .tag-bar-container { position: sticky; top: -1px; background: var(--bg-color); z-index: 25; padding: 12px 20px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; min-height: 55px; box-sizing: border-box; margin-bottom: 25px; }
     .tag-bar-container::-webkit-scrollbar { display: none; }
@@ -63,8 +68,6 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
 
     .no-results { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #6b7280; font-size: 1rem; }
     body.dark-mode .no-results { color: #9ca3af; }
-    .empty-msg { font-size: 1.1rem; color: #6b7280; margin-top: 20px; }
-    body.dark-mode .empty-msg { color: #9ca3af; }
 
     .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px 0 40px 0; flex-wrap: wrap; }
     .pagination-btn, .pagination-num { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; border: none; box-sizing: border-box; cursor: pointer; }
@@ -100,7 +103,7 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
 
     <div id="defaultView">
       <div class="shorts-grid">
-        {pageShorts.map((short: any) => (
+        {page.data.map((short: any) => (
           <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
             <div class="short-card-thumb">
               <img src={`https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg`} alt={short.frontmatter.title} loading="lazy" />
@@ -110,22 +113,23 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
             <p class="tma-grid-meta">Tech Feed Watch • {formatDate(short.frontmatter.date)}</p>
           </a>
         ))}
-        {pageShorts.length === 0 && <p class="empty-msg">No Shorts yet.</p>}
       </div>
 
-      {totalPages > 1 && (
-        <nav class="pagination" aria-label="Pagination">
-          <span class="pagination-btn pagination-disabled" aria-disabled="true">← Previous</span>
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((n: number) => (
-            n === 1 ? (
-              <span class="pagination-num active" aria-current="page">{n}</span>
-            ) : (
-              <a href={`/shorts/page/${n}`} class="pagination-num">{n}</a>
-            )
-          ))}
-          <a href="/shorts/page/2" class="pagination-btn">Next →</a>
-        </nav>
-      )}
+      <nav class="pagination" aria-label="Pagination">
+        <a href={prevUrl} class="pagination-btn">← Previous</a>
+        {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((n: number) => (
+          n === page.currentPage ? (
+            <span class="pagination-num active" aria-current="page">{n}</span>
+          ) : (
+            <a href={n === 1 ? '/shorts' : `/shorts/page/${n}`} class="pagination-num">{n}</a>
+          )
+        ))}
+        {nextUrl ? (
+          <a href={nextUrl} class="pagination-btn">Next →</a>
+        ) : (
+          <span class="pagination-btn pagination-disabled" aria-disabled="true">Next →</span>
+        )}
+      </nav>
     </div>
 
     <div id="filteredResults" class="shorts-grid" style="display:none;"></div>
@@ -150,7 +154,6 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         const card = document.createElement('a');
         card.href = `/video/${video.slug}`;
         card.className = 'watch-card';
-
         const thumb = document.createElement('div');
         thumb.className = 'short-card-thumb';
         const img = document.createElement('img');
@@ -162,11 +165,9 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         overlay.className = 'play-overlay';
         overlay.innerHTML = '<div class="play-icon">▶</div>';
         thumb.appendChild(overlay);
-
         const titleEl = document.createElement('h3');
         titleEl.className = 'tma-grid-title';
         titleEl.textContent = video.title;
-
         card.appendChild(thumb);
         card.appendChild(titleEl);
         return card;
@@ -194,7 +195,6 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         const activeTagBtn = document.querySelector('.filter-tag.active');
         const activeTag = activeTagBtn ? activeTagBtn.getAttribute('data-tag') : 'All';
         const isFiltering = activeTag !== 'All' || query !== '';
-
         if (!isFiltering) {
           if (defaultView) defaultView.style.display = '';
           if (filteredResults) filteredResults.style.display = 'none';

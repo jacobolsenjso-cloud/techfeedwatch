@@ -359,10 +359,12 @@ const videoSchema = {
       .shorts-mobile-info.expanded { overflow-y: auto; }
       .shorts-mobile-info::-webkit-scrollbar { display: none; }
       .shorts-mobile-info h2 { font-size: 1.1rem; margin: 0 0 5px 0; color: #fff; }
+      .shorts-mobile-info:not(.expanded) h2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
       .shorts-mobile-info .shorts-author { font-size: 0.9rem; margin: 0 0 10px 0; font-weight: bold; color: #fff; }
 
       .shorts-mobile-info .shorts-mobile-text { font-size: 0.85rem; }
-      .shorts-mobile-info:not(.expanded) .shorts-mobile-text { max-height: 3.1em; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
+      .shorts-mobile-info:not(.expanded) .shorts-author { display: none; }
+      .shorts-mobile-info:not(.expanded) .shorts-mobile-text { display: none; }
       .shorts-mobile-info.expanded .shorts-mobile-text { display: block; overflow: visible; }
       .shorts-tap-hint { display: block; font-size: 0.8rem; font-weight: 700; margin-top: 8px; color: #fff; opacity: 0.9; }
       .shorts-mobile-info:not(.expanded) .shorts-tap-hint::before { content: 'Tap to read more ▾'; }
