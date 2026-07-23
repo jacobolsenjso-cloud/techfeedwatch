@@ -297,6 +297,7 @@ const videoSchema = {
     .shorts-tap-catch { display: none; }
     .shorts-play-cue { display: none; }
     .shorts-muted-cue { display: none; }
+    .shorts-progress { display: none; }
     .shorts-actions-col { transition: opacity 0.45s ease, transform 0.45s ease; }
     body.shorts-controls-hidden .shorts-actions-col { opacity: 0; transform: translateX(60px); pointer-events: none; }
     .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -346,6 +347,8 @@ const videoSchema = {
       body.shorts-playing .shorts-play-cue { opacity: 0; }
       .shorts-muted-cue { display: none; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; z-index: 45; pointer-events: none; white-space: nowrap; }
       body.shorts-muted.shorts-playing .shorts-muted-cue { display: block; }
+      .shorts-progress { display: block; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.25); z-index: 46; }
+      .shorts-progress-fill { display: block; height: 100%; width: 0%; background: #ef4444; transition: width 0.25s linear; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -460,6 +463,8 @@ const videoSchema = {
             allow="autoplay"
             title={`${title} - Short Video`}
           ></iframe>
+
+          <div class="shorts-progress" aria-hidden="true"><span class="shorts-progress-fill"></span></div>
 
           <div class="shorts-tap-catch" aria-hidden="true"></div>
           <div class="shorts-play-cue" aria-hidden="true">▶</div>
@@ -1070,24 +1075,37 @@ const videoSchema = {
           shortsWrapper.addEventListener('click', (e) => {
             if (e.target.closest('.shorts-actions-col') || e.target.closest('.shorts-mobile-info') || e.target.closest('.shorts-back-btn')) return;
             if (ytShortsPlayer) {
-              // Første tryk slår lyden til (efter lydløs autoplay)
               if (typeof ytShortsPlayer.isMuted === 'function' && ytShortsPlayer.isMuted()) {
+                // iOS: første tryk slår lyden til (uden at pause)
                 ytShortsPlayer.unMute();
                 if (typeof ytShortsPlayer.setVolume === 'function') ytShortsPlayer.setVolume(100);
                 document.body.classList.remove('shorts-muted');
+                if (typeof ytShortsPlayer.playVideo === 'function' && !isPlaying()) ytShortsPlayer.playVideo();
+              } else if (isPlaying()) {
+                // Tryk mens den spiller = pause
+                ytShortsPlayer.pauseVideo();
+              } else if (typeof ytShortsPlayer.playVideo === 'function') {
+                // Tryk mens den er på pause = genoptag
+                ytShortsPlayer.playVideo();
               }
-              // Sørg for at den spiller (bruger-gesture starter den hvis iOS stoppede den)
-              if (typeof ytShortsPlayer.playVideo === 'function' && !isPlaying()) ytShortsPlayer.playVideo();
             }
             showControls();
           });
+          const progressFill = document.querySelector('.shorts-progress-fill');
+          const updateProgress = () => {
+            if (!ytShortsPlayer || typeof ytShortsPlayer.getDuration !== 'function' || !progressFill) return;
+            const d = ytShortsPlayer.getDuration();
+            const c = ytShortsPlayer.getCurrentTime();
+            progressFill.style.width = (d > 0 ? Math.min(100, (c / d) * 100) : 0) + '%';
+          };
           const startWatch = () => {
             clearInterval(watchTimer);
             watchTimer = setInterval(() => {
+              updateProgress();
               const end = isNearEnd();
               if (end && !nearEnd) { nearEnd = true; document.body.classList.remove('shorts-controls-hidden'); clearTimeout(hideTimer); }
               else if (!end && nearEnd) { nearEnd = false; showControls(); }
-            }, 500);
+            }, 250);
           };
           const initShortsPlayer = () => {
             ytShortsPlayer = new YT.Player('ytIframe', {
