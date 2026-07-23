@@ -172,7 +172,7 @@ async function run() {
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Analyze this video content (either transcript or title/description) and write an original, analytical text article based on the source material.
+      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this video only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the video revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the video told them.
 
     Return EXACTLY in this format:
     TITLE: A highly engaging, click-worthy headline
@@ -194,6 +194,8 @@ async function run() {
     7. Minimum 600-800 words.
     8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece.
     9. Ensure internal links are written strictly like this: [Link text](/video/slug).
+    10. ADD ORIGINAL VALUE beyond the source: include relevant context, history, comparisons to alternatives or competitors, or second-order implications the video did not mention - but only well-established, generally-known facts. Never fabricate statistics, quotes, dates, or events, and never merely restate what the video said.
+    11. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
 
     STRUCTURE (use ## for each H2 heading):
     - Opening: 2-3 sentence executive summary (no heading, no label).
