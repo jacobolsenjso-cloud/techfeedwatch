@@ -1,0 +1,13 @@
+---
+title: "AI's Medical Revolution: Faster Disease Diagnosis with Neural Networks"
+youtubeId: "MPMYT3JuGf4"
+date: "2026-07-23"
+tags:
+  - "AI & Tech"
+  - "Automation"
+summary: "This video reveals how AI in medical engineering, particularly neural networks, is revolutionizing disease diagnosis by enabling faster and more accurate detection from scans to heart signals. Discover its proven accuracy and future impact, positioning AI as a vital diagnostic partner in healthcare."
+duration: "1:40"
+isShort: true
+---
+
+
