@@ -36,6 +36,7 @@ const MAIN_PAGES = [
   { href: '/history', label: 'History' },
   { href: '/tools', label: 'Tools' },
   { href: '/glossary', label: 'Glossary' },
+  { href: '/guides', label: 'Guides' },
   { href: '/about', label: 'About' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -62,6 +63,11 @@ const glossaryByCategory = GLOSSARY_CATEGORIES.map((category) => {
     .sort((a: any, b: any) => a.term.localeCompare(b.term));
   return { category, terms };
 }).filter((group) => group.terms.length > 0);
+
+const guidePages = Object.values(import.meta.glob('../content/guides/*.md', { eager: true }))
+  .map((g: any) => ({ title: g.frontmatter.title, slug: g.frontmatter.slug }))
+  .filter((g: any) => g.title && g.slug)
+  .sort((a: any, b: any) => a.title.localeCompare(b.title));
 
 const TOOLS = [
   { href: '/tools/ai-token-calculator', label: 'AI Token & Cost Calculator' },
@@ -147,6 +153,17 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
         ))}
       </ul>
     </section>
+
+    {guidePages.length > 0 && (
+      <section class="sitemap-section">
+        <h2>Guides</h2>
+        <ul class="sitemap-link-list">
+          {guidePages.map((g: any) => (
+            <li><a href={`/guides/${g.slug}`}>{g.title}</a></li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <section class="sitemap-section">
       <h2>Glossary Terms</h2>

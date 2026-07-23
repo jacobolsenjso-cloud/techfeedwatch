@@ -1,0 +1,84 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const allGuidesRaw = Object.values(import.meta.glob('../../content/guides/*.md', { eager: true }));
+const videos = Object.values(import.meta.glob('../../content/videos/*.md', { eager: true }));
+
+const TAG_COLORS: Record<string, string> = {
+  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
+  "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
+  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+};
+
+const guides = allGuidesRaw
+  .map((g: any) => {
+    const tags = Array.isArray(g.frontmatter.tags) ? g.frontmatter.tags : [g.frontmatter.tags].filter(Boolean);
+    const count = videos.filter((v: any) => {
+      if (v.frontmatter.isShort) return false;
+      const vTags = v.frontmatter.tags || v.frontmatter.tag || [];
+      const tagsArray = Array.isArray(vTags) ? vTags : [vTags];
+      return tagsArray.some((t: string) => tags.includes(t));
+    }).length;
+    return {
+      title: g.frontmatter.title,
+      slug: g.frontmatter.slug,
+      description: g.frontmatter.description,
+      category: g.frontmatter.category,
+      count,
+    };
+  })
+  .filter((g) => g.title && g.slug)
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+const title = "Guides";
+const description = "In-depth guides that pull together the most important videos on a topic with original editorial analysis - your starting point for AI, tech, fintech, and crypto.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .guides-wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .guides-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .guides-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; max-width: 760px; }
+    body.dark-mode .guides-header p { color: #9ca3af; }
+
+    .guides-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .guide-index-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-left: 5px solid var(--accent); border-radius: 12px; padding: 22px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .guide-index-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+    .guide-index-badge { align-self: flex-start; background: var(--accent); color: #fff; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 10px; border-radius: 10px; margin-bottom: 12px; }
+    .guide-index-title { font-size: 1.2rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.3; }
+    .guide-index-desc { font-size: 0.92rem; line-height: 1.55; color: #4b5563; margin: 0 0 16px 0; flex: 1; }
+    body.dark-mode .guide-index-desc { color: #9ca3af; }
+    .guide-index-meta { font-size: 0.82rem; font-weight: 600; color: #6b7280; }
+    body.dark-mode .guide-index-meta { color: #9ca3af; }
+
+    .guides-empty { text-align: center; padding: 60px 20px; color: #6b7280; font-size: 1.1rem; border: 1px dashed var(--border-color); border-radius: 12px; }
+    body.dark-mode .guides-empty { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .guides-wrapper { padding: 24px 15px; }
+      .guides-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="guides-wrapper">
+    <div class="guides-header">
+      <h1>🧭 Guides</h1>
+      <p>{description}</p>
+    </div>
+
+    {guides.length === 0 ? (
+      <div class="guides-empty">More guides are on the way. Check back soon.</div>
+    ) : (
+      <div class="guides-grid">
+        {guides.map((g) => (
+          <a href={`/guides/${g.slug}`} class="guide-index-card" style={`--accent: ${TAG_COLORS[g.category] || '#ef4444'}`}>
+            <span class="guide-index-badge">{g.category}</span>
+            <h2 class="guide-index-title">{g.title}</h2>
+            <p class="guide-index-desc">{g.description}</p>
+            <span class="guide-index-meta">{g.count} {g.count === 1 ? 'video' : 'videos'}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</MainLayout>
