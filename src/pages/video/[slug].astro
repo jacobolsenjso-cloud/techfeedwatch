@@ -294,6 +294,9 @@ const videoSchema = {
     /* --- SHORTS KORREKT OPSÆTNING --- */
     .shorts-mobile-info { display: none; }
     .shorts-video-frame { aspect-ratio: 9/16; height: 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); background: #111; flex-shrink: 0; }
+    .shorts-tap-catch { display: none; }
+    .shorts-actions-col { transition: opacity 0.45s ease, transform 0.45s ease; }
+    body.shorts-controls-hidden .shorts-actions-col { opacity: 0; transform: translateX(60px); pointer-events: none; }
     .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .shorts-actions-col { display: flex; flex-direction: column; gap: 20px; justify-content: flex-end; height: 100%; padding-bottom: 20px; box-sizing: border-box; width: 80px; align-items: center; }
     .shorts-btn-group { display: flex; flex-direction: column; align-items: center; }
@@ -336,6 +339,7 @@ const videoSchema = {
         background: #000 !important; /* Sørger for at eventuel baggrund er sort i stedet for hvid */
       }
       .shorts-actions-col { position: absolute !important; right: 10px !important; bottom: 30px !important; height: auto !important; padding-bottom: 0 !important; z-index: 50 !important; }
+      .shorts-tap-catch { display: block; position: absolute; inset: 0; z-index: 5; background: transparent; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -450,6 +454,8 @@ const videoSchema = {
             allow="autoplay"
             title={`${title} - Short Video`}
           ></iframe>
+
+          <div class="shorts-tap-catch" aria-hidden="true"></div>
 
           <div class="shorts-mobile-info">
             <h2>{title}</h2>
@@ -1034,6 +1040,51 @@ const videoSchema = {
             window.location.href = prevUrl;
           }
         });
+
+        // Mobil: skjul handlings-knapperne efter et par sek. afspilning (fade mod højre), vis igen de sidste 5 sek. eller ved tryk midt på skærmen
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          const HIDE_DELAY = 3000;
+          let hideTimer = null, watchTimer = null, ytShortsPlayer = null, nearEnd = false;
+          const isNearEnd = () => {
+            if (!ytShortsPlayer || typeof ytShortsPlayer.getDuration !== 'function') return false;
+            const d = ytShortsPlayer.getDuration();
+            return d > 0 && (d - ytShortsPlayer.getCurrentTime()) <= 5;
+          };
+          const hideControls = () => document.body.classList.add('shorts-controls-hidden');
+          const showControls = () => {
+            document.body.classList.remove('shorts-controls-hidden');
+            clearTimeout(hideTimer);
+            if (!isNearEnd()) hideTimer = setTimeout(hideControls, HIDE_DELAY);
+          };
+          shortsWrapper.addEventListener('click', (e) => {
+            if (e.target.closest('.shorts-actions-col') || e.target.closest('.shorts-mobile-info') || e.target.closest('.shorts-back-btn')) return;
+            showControls();
+          });
+          const startWatch = () => {
+            clearInterval(watchTimer);
+            watchTimer = setInterval(() => {
+              const end = isNearEnd();
+              if (end && !nearEnd) { nearEnd = true; document.body.classList.remove('shorts-controls-hidden'); clearTimeout(hideTimer); }
+              else if (!end && nearEnd) { nearEnd = false; showControls(); }
+            }, 500);
+          };
+          const initShortsPlayer = () => {
+            ytShortsPlayer = new YT.Player('ytIframe', {
+              events: {
+                onReady: () => { showControls(); startWatch(); },
+                onStateChange: (ev) => { if (ev.data === YT.PlayerState.PLAYING) { showControls(); startWatch(); } }
+              }
+            });
+          };
+          if (window.YT && window.YT.Player) initShortsPlayer();
+          else {
+            const existing = window.onYouTubeIframeAPIReady;
+            window.onYouTubeIframeAPIReady = () => { if (existing) existing(); initShortsPlayer(); };
+            if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+              const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+            }
+          }
+        }
       }
     });
   </script>
