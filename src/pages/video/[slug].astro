@@ -295,6 +295,7 @@ const videoSchema = {
     .shorts-mobile-info { display: none; }
     .shorts-video-frame { aspect-ratio: 9/16; height: 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); background: #111; flex-shrink: 0; }
     .shorts-tap-catch { display: none; }
+    .shorts-play-cue { display: none; }
     .shorts-actions-col { transition: opacity 0.45s ease, transform 0.45s ease; }
     body.shorts-controls-hidden .shorts-actions-col { opacity: 0; transform: translateX(60px); pointer-events: none; }
     .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -340,6 +341,8 @@ const videoSchema = {
       }
       .shorts-actions-col { position: absolute !important; right: 10px !important; bottom: 30px !important; height: auto !important; padding-bottom: 0 !important; z-index: 50 !important; }
       .shorts-tap-catch { display: block; position: absolute; inset: 0; z-index: 5; background: transparent; }
+      .shorts-play-cue { display: flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; align-items: center; justify-content: center; font-size: 28px; padding-left: 5px; box-sizing: border-box; z-index: 6; pointer-events: none; transition: opacity 0.3s ease; }
+      body.shorts-playing .shorts-play-cue { opacity: 0; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -449,13 +452,14 @@ const videoSchema = {
         <div class="shorts-video-frame">
           <iframe
             id="ytIframe"
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1&autoplay=1&loop=1&playlist=${youtubeId}&controls=0`}
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1&autoplay=1&loop=1&playlist=${youtubeId}&controls=0&playsinline=1`}
             allowfullscreen
             allow="autoplay"
             title={`${title} - Short Video`}
           ></iframe>
 
           <div class="shorts-tap-catch" aria-hidden="true"></div>
+          <div class="shorts-play-cue" aria-hidden="true">▶</div>
 
           <div class="shorts-mobile-info">
             <h2>{title}</h2>
@@ -1050,14 +1054,17 @@ const videoSchema = {
             const d = ytShortsPlayer.getDuration();
             return d > 0 && (d - ytShortsPlayer.getCurrentTime()) <= 5;
           };
+          const isPlaying = () => ytShortsPlayer && typeof ytShortsPlayer.getPlayerState === 'function' && ytShortsPlayer.getPlayerState() === 1;
           const hideControls = () => document.body.classList.add('shorts-controls-hidden');
           const showControls = () => {
             document.body.classList.remove('shorts-controls-hidden');
             clearTimeout(hideTimer);
-            if (!isNearEnd()) hideTimer = setTimeout(hideControls, HIDE_DELAY);
+            if (isPlaying() && !isNearEnd()) hideTimer = setTimeout(hideControls, HIDE_DELAY);
           };
           shortsWrapper.addEventListener('click', (e) => {
             if (e.target.closest('.shorts-actions-col') || e.target.closest('.shorts-mobile-info') || e.target.closest('.shorts-back-btn')) return;
+            // iOS blokerer autoplay: et tryk (bruger-gesture) starter/genoptager afspilningen
+            if (ytShortsPlayer && typeof ytShortsPlayer.playVideo === 'function' && !isPlaying()) ytShortsPlayer.playVideo();
             showControls();
           });
           const startWatch = () => {
@@ -1072,7 +1079,10 @@ const videoSchema = {
             ytShortsPlayer = new YT.Player('ytIframe', {
               events: {
                 onReady: () => { showControls(); startWatch(); },
-                onStateChange: (ev) => { if (ev.data === YT.PlayerState.PLAYING) { showControls(); startWatch(); } }
+                onStateChange: (ev) => {
+                  document.body.classList.toggle('shorts-playing', ev.data === YT.PlayerState.PLAYING);
+                  if (ev.data === YT.PlayerState.PLAYING) { showControls(); startWatch(); }
+                }
               }
             });
           };
