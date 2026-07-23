@@ -57,7 +57,15 @@ if (currentPath.startsWith('/video/')) {
     <style is:global>
       :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; }
       body.dark-mode { --bg-color: #0f1115; --text-color: #f1f5f9; --card-bg: #1e293b; --border-color: #334155; --sidebar-bg: #0f1115; --hover-bg: #1e293b; }
-      body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: system-ui, -apple-system, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+      body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+      * { -webkit-tap-highlight-color: transparent; }
+      h1, h2, h3, h4 { letter-spacing: -0.02em; }
+      a { transition: color 0.15s ease, opacity 0.15s ease; }
+      ::selection { background: rgba(239, 68, 68, 0.22); }
+      :focus-visible { outline: 2px solid #ef4444; outline-offset: 2px; border-radius: 4px; }
+      .tfw-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #ef4444, #f87171); z-index: 1100; transition: width 0.1s linear; pointer-events: none; box-shadow: 0 0 8px rgba(239, 68, 68, 0.5); }
+      body.shorts-mode .tfw-progress { display: none; }
+      @media (prefers-reduced-motion: reduce) { .tfw-progress { transition: none; } }
       
       .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
       .header-hidden { transform: none !important; margin-top: -60px !important; } 
@@ -127,6 +135,7 @@ if (currentPath.startsWith('/video/')) {
     </style>
   </head>
   <body>
+    <div class="tfw-progress" id="tfwProgress"></div>
     
     <header class="top-navbar" id="mainHeader">
       <div class="nav-left">
@@ -242,6 +251,22 @@ if (currentPath.startsWith('/video/')) {
           scrollTopBtn.addEventListener('click', () => {
             scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
           });
+        }
+
+        // Læse-progressbar i toppen: fyldes ud fra hvor langt der er scrollet i indholdet.
+        const progressBar = document.getElementById('tfwProgress');
+        if (progressBar) {
+          const updateProgress = () => {
+            const st = scrollContainer === window ? window.scrollY : scrollContainer.scrollTop;
+            const sh = scrollContainer === window ? document.documentElement.scrollHeight : scrollContainer.scrollHeight;
+            const ch = scrollContainer === window ? window.innerHeight : scrollContainer.clientHeight;
+            const max = sh - ch;
+            const pct = max > 0 ? (st / max) * 100 : 0;
+            progressBar.style.width = pct + '%';
+          };
+          scrollContainer.addEventListener('scroll', updateProgress, { passive: true });
+          window.addEventListener('resize', updateProgress);
+          updateProgress();
         }
       });
     </script>
