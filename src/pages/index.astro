@@ -120,6 +120,12 @@ const vRest = pageOneVideos.slice(8);
     .watch-card-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; padding-left: 3px; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none; }
     .watch-card:hover .watch-card-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     @media (prefers-reduced-motion: reduce) { .watch-card-thumb img, .short-card-thumb img { transition: none; } .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: none; } }
+    /* Loading-skeleton: shimmer bag thumbnailen indtil billedet er loadet, hvorefter JS tilføjer .is-loaded */
+    .watch-card-thumb, .short-card-thumb { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
+    body.dark-mode .watch-card-thumb, body.dark-mode .short-card-thumb { background-color: #26242c; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
+    .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { animation: none; background-image: none; background-color: #000; }
+    @keyframes tfwShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
+    @media (prefers-reduced-motion: reduce) { .watch-card-thumb, .short-card-thumb { animation: none; } }
     .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
     body.dark-mode .tma-grid-meta { color: #9ca3af; }
 
@@ -314,6 +320,14 @@ const vRest = pageOneVideos.slice(8);
         return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
       }
 
+      function markLoaded(img) {
+        const thumb = img.closest('.watch-card-thumb, .short-card-thumb');
+        if (!thumb) return;
+        const done = () => thumb.classList.add('is-loaded');
+        if (img.complete && img.naturalWidth > 0) done();
+        else { img.addEventListener('load', done); img.addEventListener('error', done); }
+      }
+
       function buildCard(video) {
         const thumbUrl = video.isShort
           ? `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
@@ -331,6 +345,7 @@ const vRest = pageOneVideos.slice(8);
         img.alt = video.title;
         img.loading = 'lazy';
         thumb.appendChild(img);
+        markLoaded(img);
 
         const duration = document.createElement('div');
         duration.className = 'duration-badge';
@@ -411,6 +426,9 @@ const vRest = pageOneVideos.slice(8);
           filterVideos();
         });
       });
+
+      // Loading-skeleton: marker thumbnails som loadet, så shimmer stopper når billedet er hentet
+      document.querySelectorAll('.watch-card-thumb img, .short-card-thumb img').forEach(markLoaded);
     });
   </script>
 </MainLayout>
