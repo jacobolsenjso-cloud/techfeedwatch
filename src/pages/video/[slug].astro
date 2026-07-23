@@ -296,6 +296,7 @@ const videoSchema = {
     .shorts-video-frame { aspect-ratio: 9/16; height: 100%; position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); background: #111; flex-shrink: 0; }
     .shorts-tap-catch { display: none; }
     .shorts-play-cue { display: none; }
+    .shorts-muted-cue { display: none; }
     .shorts-actions-col { transition: opacity 0.45s ease, transform 0.45s ease; }
     body.shorts-controls-hidden .shorts-actions-col { opacity: 0; transform: translateX(60px); pointer-events: none; }
     .shorts-video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
@@ -343,6 +344,8 @@ const videoSchema = {
       .shorts-tap-catch { display: block; position: absolute; inset: 0; z-index: 5; background: transparent; }
       .shorts-play-cue { display: flex; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; align-items: center; justify-content: center; font-size: 28px; padding-left: 5px; box-sizing: border-box; z-index: 6; pointer-events: none; transition: opacity 0.3s ease; }
       body.shorts-playing .shorts-play-cue { opacity: 0; }
+      .shorts-muted-cue { display: none; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; z-index: 45; pointer-events: none; white-space: nowrap; }
+      body.shorts-muted.shorts-playing .shorts-muted-cue { display: block; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -460,6 +463,7 @@ const videoSchema = {
 
           <div class="shorts-tap-catch" aria-hidden="true"></div>
           <div class="shorts-play-cue" aria-hidden="true">▶</div>
+          <div class="shorts-muted-cue" aria-hidden="true">🔊 Tap for sound</div>
 
           <div class="shorts-mobile-info">
             <h2>{title}</h2>
@@ -1063,8 +1067,16 @@ const videoSchema = {
           };
           shortsWrapper.addEventListener('click', (e) => {
             if (e.target.closest('.shorts-actions-col') || e.target.closest('.shorts-mobile-info') || e.target.closest('.shorts-back-btn')) return;
-            // iOS blokerer autoplay: et tryk (bruger-gesture) starter/genoptager afspilningen
-            if (ytShortsPlayer && typeof ytShortsPlayer.playVideo === 'function' && !isPlaying()) ytShortsPlayer.playVideo();
+            if (ytShortsPlayer) {
+              // Første tryk slår lyden til (efter lydløs autoplay)
+              if (typeof ytShortsPlayer.isMuted === 'function' && ytShortsPlayer.isMuted()) {
+                ytShortsPlayer.unMute();
+                if (typeof ytShortsPlayer.setVolume === 'function') ytShortsPlayer.setVolume(100);
+                document.body.classList.remove('shorts-muted');
+              }
+              // Sørg for at den spiller (bruger-gesture starter den hvis iOS stoppede den)
+              if (typeof ytShortsPlayer.playVideo === 'function' && !isPlaying()) ytShortsPlayer.playVideo();
+            }
             showControls();
           });
           const startWatch = () => {
@@ -1078,7 +1090,13 @@ const videoSchema = {
           const initShortsPlayer = () => {
             ytShortsPlayer = new YT.Player('ytIframe', {
               events: {
-                onReady: () => { showControls(); startWatch(); },
+                onReady: () => {
+                  // iOS tillader kun autoplay uden lyd - start lydløst, tryk slår lyden til
+                  try { ytShortsPlayer.mute(); ytShortsPlayer.playVideo(); } catch (err) {}
+                  document.body.classList.add('shorts-muted');
+                  showControls();
+                  startWatch();
+                },
                 onStateChange: (ev) => {
                   document.body.classList.toggle('shorts-playing', ev.data === YT.PlayerState.PLAYING);
                   if (ev.data === YT.PlayerState.PLAYING) { showControls(); startWatch(); }
