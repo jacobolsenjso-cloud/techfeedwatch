@@ -5,6 +5,77 @@ import 'dotenv/config';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
+// Artikel-profiler: hver normal video roterer gennem én af disse, valgt deterministisk ud fra video-ID.
+// Formålet er at bryde ensartetheden (samme struktur/længde = "masseproduceret"-signal hos Google).
+// Format-kontrakten (TITLE/TAGS/SUMMARY/FAQ/CONTENT) og banned-words gælder stadig for alle profiler.
+const ARTICLE_PROFILES = [
+  {
+    name: "Deep Analysis",
+    min: 850, max: 1100,
+    structure: `STRUCTURE (use ## for each H2 heading):
+    - Opening: 2-3 sentence executive summary (no heading, no label).
+    - A short intro paragraph with a data-driven hook or a bold contrarian statement.
+    - "## Key Takeaways" - 3-4 bullets with the most critical, non-obvious insights.
+    - "## Technical Breakdown" - explain the core concepts objectively and clearly.
+    - "## Why This Matters" - the concrete real-world impact on workflows, security, or industry.
+    - "## What Others Missed" - unbiased breakdown of risks, limitations, costs, or unexpected angles.
+    - "## The Verdict" - final objective assessment: passing trend or permanent shift?`
+  },
+  {
+    name: "News Brief",
+    min: 350, max: 550,
+    structure: `STRUCTURE (keep it tight and punchy - this is a short news brief):
+    - Opening: 1-2 sentence summary of what happened (no heading, no label).
+    - Two or three short paragraphs covering the essentials and why they matter. Use at most one "## " subheading, or none.
+    - "## The Bottom Line" - one tight closing paragraph with your read on it.`
+  },
+  {
+    name: "Explainer",
+    min: 550, max: 750,
+    structure: `STRUCTURE (use ## for each H2 heading):
+    - Opening: a 2 sentence plain-language summary (no heading, no label).
+    - "## What It Is" - define the subject clearly for a smart non-expert.
+    - "## How It Works" - the mechanics, explained simply and accurately.
+    - "## Who It's For" - who benefits, and who does not.
+    - "## The Bottom Line" - a short, practical takeaway.`
+  },
+  {
+    name: "Editorial",
+    min: 500, max: 750,
+    structure: `STRUCTURE (an opinionated editorial - take a clear, reasoned stance while staying factually honest):
+    - Opening: state your thesis or argument in 2-3 sentences (no heading, no label).
+    - Two or three "## " sections that build the argument, with your own topic-specific headings.
+    - "## Where This Lands" - a decisive editorial conclusion that commits to a view.`
+  },
+  {
+    name: "Practical Q&A",
+    min: 550, max: 750,
+    structure: `STRUCTURE (a practical, reader-first piece):
+    - Opening: a 2 sentence summary of the practical question at stake (no heading, no label).
+    - Two or three "## " headings phrased as the real questions readers are asking.
+    - "## What To Actually Do" - concrete, honest guidance.`
+  },
+  {
+    name: "Context & Implications",
+    min: 650, max: 900,
+    structure: `STRUCTURE (use ## for each H2 heading):
+    - Opening: a 2 sentence summary (no heading, no label).
+    - "## The Background" - the context and history the source skipped over.
+    - "## What Changed" - what is actually new or different here.
+    - "## The Ripple Effects" - the second-order consequences across the industry.
+    - "## What To Watch Next" - where this is heading and the signals to track.`
+  },
+];
+
+// Stabil hash af en streng, så profil-valg og længde er deterministisk pr. video (samme video = samme profil).
+function hashString(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
+  }
+  return Math.abs(h);
+}
+
 // Laver en URL-venlig slug ud fra en titel: lowercase, uden accenter/specialtegn, bindestreg-separeret.
 const SLUG_MAX_LENGTH = 70;
 
@@ -163,6 +234,12 @@ async function run() {
       return;
     }
 
+    // Vælg artikel-profil deterministisk ud fra video-ID, så artiklerne varierer i struktur og længde. Kun normale artikler bruger den.
+    const profileHash = hashString(videoId || '');
+    const articleProfile = ARTICLE_PROFILES[profileHash % ARTICLE_PROFILES.length];
+    const targetWords = articleProfile.min + (Math.floor(profileHash / ARTICLE_PROFILES.length) % (articleProfile.max - articleProfile.min + 1));
+    if (!isShort) console.log(`Artikel-profil: ${articleProfile.name} (~${targetWords} ord)`);
+
     // Shorts får kun en let metadata-prompt (title/tags/summary) - ingen dyr artikel- eller FAQ-generering
     const prompt = isShort
       ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
@@ -191,20 +268,15 @@ async function run() {
     4. Avoid commodity/listicle filler unless backed by real analysis.
     5. BANNED WORDS - never use: delve, tapestry, realm, navigate, landscape, testament, crucial, robust, demystify, unlock, unleash, elevate, seamless, paradigm shift, "in today's digital age", firstly, moreover, furthermore, "in conclusion".
     6. Write with high burstiness: mix short punchy sentences with longer analytical ones. Active voice only.
-    7. Minimum 600-800 words.
+    7. Aim for approximately ${targetWords} words.
     8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece.
     9. Ensure internal links are written strictly like this: [Link text](/video/slug).
     10. ADD ORIGINAL VALUE beyond the source: include relevant context, history, comparisons to alternatives or competitors, or second-order implications the video did not mention - but only well-established, generally-known facts. Never fabricate statistics, quotes, dates, or events, and never merely restate what the video said.
     11. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
 
-    STRUCTURE (use ## for each H2 heading):
-    - Opening: 2-3 sentence executive summary (no heading, no label).
-    - A captivating intro paragraph with a data-driven hook or bold contrarian statement.
-    - "## Key Takeaways" - 3-4 bullets with the most critical, non-obvious insights.
-    - "## Technical Breakdown" - explain the core concepts objectively and clearly.
-    - "## Why This Matters" - the concrete real-world impact on workflows, security, or industry.
-    - "## What Others Missed" - unbiased breakdown of risks, limitations, costs, or unexpected angles.
-    - "## The Verdict" - final objective assessment: passing trend or permanent shift?
+    This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
+
+    ${articleProfile.structure}
     ${internalLinksContext}
 
     Video Content Data: ${text.substring(0, 20000)}`;
