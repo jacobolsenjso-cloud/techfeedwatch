@@ -9,9 +9,9 @@ faqs:
   - question: "Will AI coding tools replace developers?"
     answer: "Not in the near term. They speed up writing and reduce boilerplate, but someone still has to design the system, judge the output, and own the result. The skill shifts toward review and architecture."
   - question: "Can beginners learn to code with AI help?"
-    answer: "Yes, and it lowers the barrier a lot. The risk is leaning on it so heavily that you never learn the fundamentals. Use it to explain, not just to write, so you understand what ships."
+    answer: "Yes of cores, and it lowers the barrier a lot. The risk is leaning it,it´s so heavily that you never learn the fundamentals. Use it to explain things, not just to write, so you understand what´s working."
   - question: "Is AI-written code safe to ship?"
-    answer: "Only after review. These tools can produce code that looks right but hides security flaws or edge-case bugs. Treat every suggestion as a draft that needs testing."
+    answer: "Yes, but only after review. These tools can produce code that looks right but hides security flaws or edge-case bugs. Treat every suggestion as a draft that needs testing, is a must."
   - question: "Which assistant is best?"
     answer: "The one that lives inside your editor and fits your language. Fit and workflow integration matter more than small differences in raw model quality."
 ---

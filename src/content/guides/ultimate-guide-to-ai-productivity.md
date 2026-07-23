@@ -7,13 +7,13 @@ category: "Productivity"
 date: "2026-07-23"
 faqs:
   - question: "Does AI really make you more productive?"
-    answer: "It can, on the right tasks - drafting, summarising, planning, and searching your own notes. It wastes time when used for work that needs your own judgment or when it adds steps instead of removing them."
+    answer: "It can be, on the right tasks - drafting, summarising, planning, and searching your own notes and more. It wastes time when used for work that needs your own judgment or when it adds steps instead of removing them."
   - question: "Which tasks should I hand to AI first?"
-    answer: "First drafts, summaries of long material, reformatting, and brainstorming. These are low-risk, repetitive, and easy to check, so you feel the time savings fast."
+    answer: "First drafts, and then summaries the long material, reformatting, and brainstorming. These are low-risk, repetitive, and easy to check, so you feel the time savings fast."
   - question: "Won't relying on AI make my own thinking weaker?"
     answer: "It can, if you outsource the thinking itself. Use it for the mechanical parts and keep the judgment, decisions, and final voice yours."
   - question: "How do I avoid tool overload?"
-    answer: "Adopt one assistant, learn it deeply, and only add a tool when you hit a real limit. More apps usually means more friction, not more output."
+    answer: "Adopt one or to assistant, learn to master it, and only add a tool when you hit a real limit. More apps usually means more work, not more output."
 ---
 
 AI productivity is easy to get wrong. People sign up for a dozen tools, feel busy configuring them, and end up no better off. Used with intent, though, AI removes real friction from your day. This guide covers the workflows that save genuine time, the ones that quietly waste it, and how to build habits that last.
