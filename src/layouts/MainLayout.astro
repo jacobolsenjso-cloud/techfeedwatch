@@ -85,9 +85,14 @@ if (currentPath.startsWith('/video/')) {
       .logo-icon { color: #ef4444; font-size: 1.5rem; }
       .main-layout { display: flex; flex: 1; overflow: hidden; position: relative; }
       .sidebar { width: 220px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 15px 10px; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; z-index: 20; transition: left 0.3s ease; }
-      .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; }
+      .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
       .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: #ef4444; } 
+      .nav-item:hover { transform: translateX(3px); }
       .content-area { flex: 1; background: var(--bg-color); position: relative; display: flex; flex-direction: column; scroll-behavior: smooth; }
+      /* Blød sideovergang: indholdet fader ind ved hver sideindlæsning (kun opacity - transform ville bryde position:fixed cinema/scroll-knap). */
+      @keyframes tfwFadeIn { from { opacity: 0; } to { opacity: 1; } }
+      .content-area { animation: tfwFadeIn 0.4s ease backwards; }
+      @media (prefers-reduced-motion: reduce) { .content-area { animation: none; } .nav-item:hover { transform: none; } }
       .site-footer { padding: 20px; text-align: center; border-top: 1px solid var(--border-color); font-size: 14px; color: #6b7280; margin-top: auto; }
       body.dark-mode .site-footer { color: #9ca3af; }
       .footer-copy { margin: 0; }
