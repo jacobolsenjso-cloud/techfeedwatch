@@ -203,7 +203,8 @@ const videoSchema = {
     body.dark-mode .author-box-ai-note { color: #9ca3af; }
 
     @media (max-width: 600px) {
-      .author-box { flex-direction: column; align-items: center; text-align: center; padding: 24px; gap: 16px; }
+      .author-box { padding: 20px; gap: 14px; }
+      .author-box-photo { width: 60px; height: 60px; }
       .author-box-title { margin-bottom: 16px; }
     }
 
@@ -591,6 +592,21 @@ const videoSchema = {
 
         {faqs.length > 0 && <FAQ faqs={faqs} />}
 
+        {allUniqueTags.length > 0 && (
+          <div class="explore-section">
+            <h3 class="related-title">Explore Topics</h3>
+            <div class="explore-tags-grid">
+              {allUniqueTags.map((t: string) => (
+                TAG_COLORS[t] ? (
+                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip explore-chip-accent" style={`--tag-accent: ${TAG_COLORS[t]}`}>{t}</a>
+                ) : (
+                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip">{t}</a>
+                )
+              ))}
+            </div>
+          </div>
+        )}
+
         <div class="author-box">
           <img src="/jacob-olsen.png" alt="Jacob Olsen" class="author-box-photo" width="80" height="80" />
           <div>
@@ -668,20 +684,6 @@ const videoSchema = {
           </div>
         )}
 
-        {allUniqueTags.length > 0 && (
-          <div class="explore-section">
-            <h3 class="related-title">Explore Topics</h3>
-            <div class="explore-tags-grid">
-              {allUniqueTags.map((t: string) => (
-                TAG_COLORS[t] ? (
-                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip explore-chip-accent" style={`--tag-accent: ${TAG_COLORS[t]}`}>{t}</a>
-                ) : (
-                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip">{t}</a>
-                )
-              ))}
-            </div>
-          </div>
-        )}
       </div>
 
     </div>
