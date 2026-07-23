@@ -207,6 +207,18 @@ const videoSchema = {
       .author-box-title { margin-bottom: 16px; }
     }
 
+    .share-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; margin-bottom: 40px; }
+    .share-cta-title { font-weight: 700; font-size: 1.05rem; margin: 0 0 4px 0; }
+    .share-cta-sub { font-size: 0.9rem; color: #6b7280; margin: 0; }
+    body.dark-mode .share-cta-sub { color: #9ca3af; }
+    .share-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #ef4444; color: #fff; border: none; border-radius: 8px; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.2s; font-family: inherit; }
+    .share-cta-btn:hover { background: #dc2626; transform: translateY(-1px); }
+    .share-cta-btn svg { width: 16px; height: 16px; }
+    @media (max-width: 600px) {
+      .share-cta { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px; }
+      .share-cta-btn { width: 100%; justify-content: center; }
+    }
+
     .video-actions { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px; margin-bottom: 40px; }
     .nav-row { display: flex; gap: 20px; }
     .nav-card { flex: 1; background: var(--card-bg); border: 2px solid var(--border-color); padding: 15px 20px; border-radius: 8px; text-decoration: none; color: var(--text-color); transition: all 0.2s ease; display: flex; flex-direction: column; gap: 5px; box-sizing: border-box; overflow: hidden; }
@@ -448,10 +460,10 @@ const videoSchema = {
             <span class="shorts-label">Dislike</span>
           </div>
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="shareBtn" aria-label="Share Video" title="Share">
+            <button class="shorts-circle-btn share-trigger" id="shareBtn" aria-label="Share Video" title="Share">
               <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             </button>
-            <span class="shorts-label" id="shareText">Share</span>
+            <span class="shorts-label share-text" id="shareText">Share</span>
           </div>
           <div class="shorts-btn-group">
             <button class="shorts-circle-btn" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
@@ -528,9 +540,9 @@ const videoSchema = {
             </button>
           </div>
 
-          <button class="action-pill" id="shareBtn" aria-label="Share Video" title="Share">
+          <button class="action-pill share-trigger" id="shareBtn" aria-label="Share Video" title="Share">
             <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-            <span id="shareText">Share</span>
+            <span id="shareText" class="share-text">Share</span>
           </button>
 
           <button class="action-pill" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
@@ -587,6 +599,17 @@ const videoSchema = {
             <p class="author-box-bio">Jacob Olsen, Founder and CEO of Tech Feed Watch, helps you navigate the future of AI with unbiased insights.</p>
             <p class="author-box-ai-note">This analysis was produced with AI assistance and edited for accuracy and perspective by Jacob Olsen, founder of Tech Feed Watch.</p>
           </div>
+        </div>
+
+        <div class="share-cta">
+          <div>
+            <p class="share-cta-title">Share this article</p>
+            <p class="share-cta-sub">Share this analysis with your network or save the link for later.</p>
+          </div>
+          <button type="button" class="share-cta-btn share-trigger" aria-label="Share this article">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            <span class="share-text">Share</span>
+          </button>
         </div>
 
         {matchedTool && (
@@ -740,21 +763,23 @@ const videoSchema = {
         });
       }
 
-      const shareBtn = document.getElementById('shareBtn');
-      const shareText = document.getElementById('shareText');
-      if (shareBtn && shareText) {
-        shareBtn.addEventListener('click', async () => {
+      const shareTriggers = document.querySelectorAll('.share-trigger');
+      shareTriggers.forEach((btn) => {
+        btn.addEventListener('click', async () => {
           if (navigator.share) {
             try { await navigator.share({ title: document.title, url: window.location.href }); }
             catch (err) { }
           } else {
             navigator.clipboard.writeText(window.location.href);
-            const originalText = shareText.innerText;
-            shareText.innerText = 'Copied!';
-            setTimeout(() => shareText.innerText = originalText, 2000);
+            const label = btn.querySelector('.share-text') || (btn.parentElement && btn.parentElement.querySelector('.share-text'));
+            if (label) {
+              const originalText = label.innerText;
+              label.innerText = 'Copied!';
+              setTimeout(() => label.innerText = originalText, 2000);
+            }
           }
         });
-      }
+      });
 
       // Sticky video: kun normale videoer på mobil, aktiveres når afspilning starter (ikke ved scroll)
       const stickyVideo = document.getElementById('stickyVideo');
