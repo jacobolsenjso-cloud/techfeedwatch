@@ -118,26 +118,16 @@ const nextUrl = page.currentPage < page.lastPage ? `/shorts/page/${page.currentP
     <h1 class="header-title"><span style="color: #ef4444;">⚡</span> Shorts</h1>
 
     <div id="defaultView">
-      <div class="shorts-grid">
-        {page.data.map((short: any, i: number) => (
-          <>
-            {(i === 6 || i === 12) && promoPool.length > 0 && (
-              <div class="shorts-promo" data-pool={JSON.stringify(promoPool)} data-offset={i === 6 ? 0 : 4}>
-                <div class="shorts-promo-inner">
-                  <span class="shorts-promo-label">📚 Recommended reading</span>
-                  <div class="shorts-promo-list"></div>
-                </div>
-              </div>
-            )}
-            <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-              <div class="short-card-thumb">
-                <img src={`https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg`} alt={short.frontmatter.title} loading="lazy" />
-                <div class="play-overlay"><div class="play-icon">▶</div></div>
-              </div>
-              <h3 class="tma-grid-title">{short.frontmatter.title}</h3>
-              <p class="tma-grid-meta">Tech Feed Watch • {formatDate(short.frontmatter.date)}</p>
-            </a>
-          </>
+      <div class="shorts-grid" data-promo-pool={JSON.stringify(promoPool)}>
+        {page.data.map((short: any) => (
+          <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
+            <div class="short-card-thumb">
+              <img src={`https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg`} alt={short.frontmatter.title} loading="lazy" />
+              <div class="play-overlay"><div class="play-icon">▶</div></div>
+            </div>
+            <h3 class="tma-grid-title">{short.frontmatter.title}</h3>
+            <p class="tma-grid-meta">Tech Feed Watch • {formatDate(short.frontmatter.date)}</p>
+          </a>
         ))}
       </div>
 
@@ -243,31 +233,52 @@ const nextUrl = page.currentPage < page.lastPage ? `/shorts/page/${page.currentP
         });
       });
 
-      // Roterende 'Recommended reading'-striber mellem Shorts-rækkerne (skift hver 4. sek, blød fade)
-      document.querySelectorAll('.shorts-promo').forEach((band) => {
+      // Roterende 'Recommended reading'-striber - placeres på rigtige række-grænser (responsivt), skift hver 10. sek
+      (function setupPromo() {
+        const grid = document.querySelector('.shorts-grid');
+        if (!grid) return;
         let pool = [];
-        try { pool = JSON.parse(band.dataset.pool || '[]'); } catch (e) {}
-        const list = band.querySelector('.shorts-promo-list');
-        if (!pool.length || !list) return;
+        try { pool = JSON.parse(grid.dataset.promoPool || '[]'); } catch (e) {}
+        if (pool.length < 4) return;
         const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         const PER = 4;
-        let idx = (parseInt(band.dataset.offset || '0', 10)) % pool.length;
-        const render = () => {
-          let html = '';
-          for (let i = 0; i < Math.min(PER, pool.length); i++) {
-            const v = pool[(idx + i) % pool.length];
-            html += `<a href="/video/${v.slug}" class="shorts-promo-card"><div class="shorts-promo-thumb"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></div><span class="shorts-promo-title">${esc(v.title)}</span></a>`;
+        let intervals = [];
+        const buildBand = (offset) => {
+          const band = document.createElement('div');
+          band.className = 'shorts-promo';
+          band.innerHTML = '<div class="shorts-promo-inner"><span class="shorts-promo-label">📚 Recommended reading</span><div class="shorts-promo-list"></div></div>';
+          const list = band.querySelector('.shorts-promo-list');
+          let idx = offset % pool.length;
+          const render = () => {
+            let html = '';
+            for (let i = 0; i < Math.min(PER, pool.length); i++) {
+              const v = pool[(idx + i) % pool.length];
+              html += `<a href="/video/${v.slug}" class="shorts-promo-card"><div class="shorts-promo-thumb"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></div><span class="shorts-promo-title">${esc(v.title)}</span></a>`;
+            }
+            list.innerHTML = html;
+          };
+          render();
+          if (pool.length > PER) {
+            intervals.push(setInterval(() => {
+              list.style.opacity = '0';
+              setTimeout(() => { idx = (idx + PER) % pool.length; render(); list.style.opacity = '1'; }, 700);
+            }, 10000));
           }
-          list.innerHTML = html;
+          return band;
         };
-        render();
-        if (pool.length > PER) {
-          setInterval(() => {
-            list.style.opacity = '0';
-            setTimeout(() => { idx = (idx + PER) % pool.length; render(); list.style.opacity = '1'; }, 700);
-          }, 4000);
-        }
-      });
+        const place = () => {
+          intervals.forEach(clearInterval); intervals = [];
+          grid.querySelectorAll('.shorts-promo').forEach((b) => b.remove());
+          const cards = Array.from(grid.querySelectorAll('.watch-card'));
+          if (!cards.length) return;
+          const cols = (getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length) || 1;
+          const positions = cols <= 3 ? [cols * 2, cols * 4] : [cols, cols * 2];
+          positions.forEach((pos, k) => { if (pos < cards.length) grid.insertBefore(buildBand(k * PER), cards[pos]); });
+        };
+        place();
+        let rt;
+        window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(place, 300); });
+      })();
     });
   </script>
 </MainLayout>
