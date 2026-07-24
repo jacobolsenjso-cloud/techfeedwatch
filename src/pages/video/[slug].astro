@@ -134,7 +134,7 @@ const videoSchema = {
 };
 ---
 
-<MainLayout title={title} description={summary} image={`https://img.youtube.com/vi/${youtubeId}/${isShort ? 'hqdefault' : 'maxresdefault'}.jpg`} imageWidth={isShort ? 480 : 1280} imageHeight={isShort ? 360 : 720} schema={videoSchema} noindex={isShort === true}>
+<MainLayout title={title} description={summary} image={`https://techfeedwatch.com/og/${slug}.jpg`} imageWidth={1200} imageHeight={630} schema={videoSchema} noindex={isShort === true}>
 
   {isShort && <script is:inline>document.body.classList.add('shorts-mode');</script>}
 

@@ -98,6 +98,8 @@ async function run() {
   for (const e of dead) {
     try {
       fs.unlinkSync(e.full);
+      // Fjern også delekortet hvis det findes
+      try { fs.unlinkSync(`./public/og/${e.file.replace(/\.md$/, '')}.jpg`); } catch (e2) {}
       deleted++;
       console.log(`🗑️ Slettet: ${e.file}`);
     } catch (err) {

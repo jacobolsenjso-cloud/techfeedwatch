@@ -2,6 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
+import { generateOgCard } from './og-card.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 
@@ -346,6 +347,8 @@ async function run() {
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);
     console.log(`✅ Succes! Fil oprettet: ${slug}.md (varighed ${duration}).`);
+    // Lav delekort til sociale medier (fejler stille - videoen er allerede oprettet)
+    await generateOgCard(videoId, slug);
   } catch (error) {
     console.log("❌ Fejl:", error.message);
   }
