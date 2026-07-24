@@ -188,6 +188,17 @@ const videoSchema = {
     .btn-active { color: #3b82f6 !important; }
     .btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
     .summary-box { background-color: var(--hover-bg); border-left: 4px solid #ef4444; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
+    .inline-recs { margin: 34px 0; padding: 20px 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--hover-bg); }
+    .inline-recs-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
+    body.dark-mode .inline-recs-label { color: #a1a1aa; }
+    .inline-recs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .inline-recs-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--text-color); border-radius: 10px; transition: transform 0.2s ease; }
+    .inline-recs-card:hover { transform: translateY(-3px); }
+    .inline-recs-thumb { display: block; position: relative; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 14px rgba(0,0,0,0.10); }
+    .inline-recs-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .inline-recs-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .inline-recs-card:hover .inline-recs-title { color: #3b82f6; }
+    @media (max-width: 600px) { .inline-recs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
 
     .video-content { line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem; }
     .video-content a { color: #3b82f6; text-decoration: none; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
@@ -667,6 +678,36 @@ const videoSchema = {
         <article class="video-content">
           <video.Content />
         </article>
+
+        <div id="tfw-inline-recs" data-recs={JSON.stringify(recommendPool.slice(0, 6))} hidden></div>
+        <script is:inline>
+          (function () {
+            function init() {
+              var host = document.getElementById('tfw-inline-recs');
+              if (!host) return;
+              var recs = [];
+              try { recs = JSON.parse(host.getAttribute('data-recs') || '[]'); } catch (e) {}
+              if (recs.length < 3) return;
+              var article = document.querySelector('article.video-content');
+              if (!article) return;
+              var h2s = article.querySelectorAll(':scope > h2');
+              if (h2s.length < 2) return;
+              // Ved 4 sektioner rammer dette lige før 3. overskrift = mellem 2. og 3. tekstblok
+              var targetIdx = Math.floor(h2s.length / 2);
+              var target = h2s[targetIdx] || null;
+              var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+              var cards = recs.slice(0, 3).map(function (v) {
+                return '<a class="inline-recs-card" href="/video/' + v.slug + '"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
+              }).join('');
+              var block = document.createElement('aside');
+              block.className = 'inline-recs';
+              block.innerHTML = '<div class="inline-recs-label">🔎 You might also like</div><div class="inline-recs-grid">' + cards + '</div>';
+              if (target) { article.insertBefore(block, target); } else { article.appendChild(block); }
+            }
+            if (document.readyState !== 'loading') init();
+            else document.addEventListener('DOMContentLoaded', init);
+          })();
+        </script>
 
         {faqs.length > 0 && <FAQ faqs={faqs} />}
 
