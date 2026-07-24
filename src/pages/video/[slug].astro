@@ -198,7 +198,8 @@ const videoSchema = {
     .inline-recs-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .inline-recs-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .inline-recs-card:hover .inline-recs-title { color: #3b82f6; }
-    @media (max-width: 600px) { .inline-recs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+    .inline-recs-card-extra { display: none; }
+    @media (max-width: 600px) { .inline-recs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .inline-recs-card-extra { display: flex; } }
 
     .video-content { line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem; }
     .video-content a { color: #3b82f6; text-decoration: none; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
@@ -696,8 +697,9 @@ const videoSchema = {
               var targetIdx = Math.floor(h2s.length / 2);
               var target = h2s[targetIdx] || null;
               var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
-              var cards = recs.slice(0, 3).map(function (v) {
-                return '<a class="inline-recs-card" href="/video/' + v.slug + '"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
+              var cards = recs.slice(0, 4).map(function (v, i) {
+                var extra = i === 3 ? ' inline-recs-card-extra' : '';
+                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
               }).join('');
               var block = document.createElement('aside');
               block.className = 'inline-recs';
