@@ -107,7 +107,7 @@ const relatedVideos = allVideos
   .slice(0, 8);
 
 // Anbefalede artikler (kun normale videoer) til cross-promotion i desktop-Shorts - tag-match først, ellers nyeste
-const recommendedArticles = allVideos
+const recommendPool = allVideos
   .filter((v: any) => !v.frontmatter.isShort && v.frontmatter.youtubeId !== youtubeId)
   .map((v: any) => {
     const vt = v.frontmatter.tags || v.frontmatter.tag || [];
@@ -115,8 +115,8 @@ const recommendedArticles = allVideos
     return { v, match: vTags.some((t: string) => tagsArray.includes(t)) ? 1 : 0, d: new Date(v.frontmatter.date).valueOf() };
   })
   .sort((a: any, b: any) => (b.match - a.match) || (b.d - a.d))
-  .slice(0, 5)
-  .map((s: any) => s.v);
+  .slice(0, 24)
+  .map((s: any) => ({ slug: s.v.file.split('/').pop().replace('.md', ''), title: s.v.frontmatter.title, youtubeId: s.v.frontmatter.youtubeId }));
 
 const baseUrl = "https://techfeedwatch.com";
 const currentUrl = `${baseUrl}/video/${slug}`;
@@ -298,7 +298,9 @@ const videoSchema = {
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
 
-    .shorts-recommends { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-color); animation: tfwRecFade 0.7s ease 0.15s both; }
+    .shorts-recommends { width: 260px; height: 85vh; max-height: 800px; overflow-y: auto; scrollbar-width: none; padding: 20px 0; box-sizing: border-box; flex-shrink: 0; animation: tfwRecFade 0.7s ease 0.15s both; }
+    .shorts-recommends::-webkit-scrollbar { display: none; }
+    .shorts-rec-list { transition: opacity 0.9s ease; }
     .shorts-recommends h3 { font-size: 0.8rem; margin: 0 0 14px 0; color: var(--text-color); text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; }
     .shorts-rec-card { display: flex; gap: 10px; text-decoration: none; color: var(--text-color); margin-bottom: 12px; align-items: flex-start; transition: transform 0.2s ease; }
     .shorts-rec-card:hover { transform: translateX(3px); }
@@ -336,7 +338,7 @@ const videoSchema = {
     .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
 
     @media (max-width: 1024px) {
-      .shorts-desktop-info { display: none !important; }
+      .shorts-desktop-info, .shorts-recommends { display: none !important; }
     }
 
     /* Mobil-responsivt fix (Centrering & Scrollbar tekst overlay) */
@@ -469,6 +471,12 @@ const videoSchema = {
       <a href="/shorts" class="shorts-back-btn" title="Back">←</a>
 
       <div class="shorts-content-area">
+        {recommendPool.length > 0 && (
+          <div class="shorts-recommends" id="shortsRecommends" data-pool={JSON.stringify(recommendPool)}>
+            <h3>You might also like</h3>
+            <div class="shorts-rec-list" id="shortsRecList"></div>
+          </div>
+        )}
         <div class="shorts-desktop-info">
           <h2>{title}</h2>
           <p class="shorts-author">@TechFeedWatch</p>
@@ -476,17 +484,6 @@ const videoSchema = {
             <p>{summary}</p>
             <video.Content />
           </div>
-          {recommendedArticles.length > 0 && (
-            <div class="shorts-recommends">
-              <h3>You might also like</h3>
-              {recommendedArticles.map((rec: any) => (
-                <a href={`/video/${rec.file.split('/').pop().replace('.md', '')}`} class="shorts-rec-card">
-                  <div class="shorts-rec-thumb"><img src={`https://img.youtube.com/vi/${rec.frontmatter.youtubeId}/mqdefault.jpg`} alt={rec.frontmatter.title} loading="lazy" /></div>
-                  <span class="shorts-rec-title">{rec.frontmatter.title}</span>
-                </a>
-              ))}
-            </div>
-          )}
         </div>
 
         <div class="shorts-video-frame">
@@ -1166,6 +1163,36 @@ const videoSchema = {
             window.onYouTubeIframeAPIReady = () => { if (existing) existing(); initShortsPlayer(); };
             if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
               const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+            }
+          }
+        }
+
+        // Desktop: 'You might also like'-rail der roterer 5 nye artikler ind hver 8. sekund (blød fade)
+        if (window.matchMedia('(min-width: 1025px)').matches) {
+          const recEl = document.getElementById('shortsRecommends');
+          const list = document.getElementById('shortsRecList');
+          if (recEl && list) {
+            let pool = [];
+            try { pool = JSON.parse(recEl.dataset.pool || '[]'); } catch (e) {}
+            const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const PER = 5;
+            let idx = 0;
+            const render = () => {
+              let html = '';
+              for (let i = 0; i < Math.min(PER, pool.length); i++) {
+                const v = pool[(idx + i) % pool.length];
+                html += `<a href="/video/${v.slug}" class="shorts-rec-card"><div class="shorts-rec-thumb"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></div><span class="shorts-rec-title">${esc(v.title)}</span></a>`;
+              }
+              list.innerHTML = html;
+            };
+            if (pool.length) {
+              render();
+              if (pool.length > PER) {
+                setInterval(() => {
+                  list.style.opacity = '0';
+                  setTimeout(() => { idx = (idx + PER) % pool.length; render(); list.style.opacity = '1'; }, 900);
+                }, 8000);
+              }
             }
           }
         }
