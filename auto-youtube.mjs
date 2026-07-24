@@ -25,8 +25,8 @@ const CHANNELS = [
   { id: 'UCqK_GSMbpiV8spgD3ZGloSw', name: 'Coin Bureau' },
 ];
 
-const MAX_NORMAL_PER_RUN = 7;
-const MAX_SHORTS_PER_RUN = 3;
+const MAX_NORMAL_PER_RUN = 9;
+const MAX_SHORTS_PER_RUN = 1;
 
 // Vælger klynge ud fra tidspunktet, så en 2-timers kørsel altid tager næste klynge i rækken.
 function pickTopicCluster() {
