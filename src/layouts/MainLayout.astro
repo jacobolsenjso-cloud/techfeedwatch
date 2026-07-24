@@ -1,7 +1,7 @@
 ---
 import '@fontsource-variable/inter';
 
-const { title, description, image, schema, noindex } = Astro.props;
+const { title, description, image, imageWidth, imageHeight, schema, noindex } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 // Standard SEO beskrivelse hvis ingen er angivet
@@ -9,6 +9,8 @@ const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech
 
 // Standard OG-delebillede hvis siden ikke selv angiver et (fx bruger videosider deres thumbnail)
 const ogImage = image || "https://techfeedwatch.com/og-default.png";
+const ogImageWidth = imageWidth || 1200;
+const ogImageHeight = imageHeight || 630;
 const ogTitle = title ? `${title} | TechFeedWatch` : "TechFeedWatch";
 
 // NYT: Automatisk Breadcrumb Schema til Google
@@ -53,8 +55,8 @@ if (currentPath.startsWith('/video/')) {
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description || defaultDesc} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content={ogImageWidth} />
+    <meta property="og:image:height" content={ogImageHeight} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={description || defaultDesc} />
