@@ -156,11 +156,12 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
       const filteredResults = document.getElementById('filteredResults');
 
       let allShortsData = [];
+      let allArticlesData = [];
       let ready = false;
 
       fetch('/videos.json')
         .then(res => res.json())
-        .then(data => { allShortsData = data.filter(v => v.isShort); ready = true; filterVideos(); })
+        .then(data => { allShortsData = data.filter(v => v.isShort); allArticlesData = data.filter(v => !v.isShort); ready = true; filterVideos(); })
         .catch(() => { allShortsData = []; ready = true; });
 
       function buildCard(video) {
@@ -201,9 +202,17 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
           empty.className = 'no-results';
           empty.textContent = 'No Shorts found.';
           filteredResults.appendChild(empty);
+          if (filteredInserter) filteredInserter.clear();
           return;
         }
         matches.forEach(video => filteredResults.appendChild(buildCard(video)));
+        // Tag-relevante artikel-forslag i den filtrerede visning
+        const tagPool = allArticlesData
+          .filter(v => activeTag === 'All' || (v.tags || []).includes(activeTag))
+          .sort((a, b) => new Date(b.date) - new Date(a.date))
+          .slice(0, 24)
+          .map(v => ({ slug: v.slug, title: v.title, youtubeId: v.youtubeId }));
+        if (filteredInserter) filteredInserter.place(tagPool);
       }
 
       function filterVideos() {
@@ -215,6 +224,7 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         if (!isFiltering) {
           if (defaultView) defaultView.style.display = '';
           if (filteredResults) filteredResults.style.display = 'none';
+          if (filteredInserter) filteredInserter.clear();
           return;
         }
         if (defaultView) defaultView.style.display = 'none';
@@ -234,17 +244,12 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         });
       });
 
-      // Roterende 'Recommended reading'-striber - placeres på rigtige række-grænser (responsivt), skift hver 10. sek
-      (function setupPromo() {
-        const grid = document.querySelector('.shorts-grid');
-        if (!grid) return;
-        let pool = [];
-        try { pool = JSON.parse(grid.dataset.promoPool || '[]'); } catch (e) {}
-        if (pool.length < 4) return;
+      // Roterende 'Recommended reading'-striber - genbrugelig indsætter (standard + filtreret visning), skift hver 10. sek
+      function createPromoInserter(gridEl) {
         const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         const PER = 4;
         let intervals = [];
-        const buildBand = (offset) => {
+        const buildBand = (pool, offset) => {
           const band = document.createElement('div');
           band.className = 'shorts-promo';
           band.innerHTML = '<div class="shorts-promo-inner"><span class="shorts-promo-label">📚 Recommended reading</span><div class="shorts-promo-list"></div></div>';
@@ -267,19 +272,35 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
           }
           return band;
         };
-        const place = () => {
-          intervals.forEach(clearInterval); intervals = [];
-          grid.querySelectorAll('.shorts-promo').forEach((b) => b.remove());
-          const cards = Array.from(grid.querySelectorAll('.watch-card'));
-          if (!cards.length) return;
-          const cols = (getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length) || 1;
-          const positions = cols <= 3 ? [cols * 2, cols * 4] : [cols, cols * 2];
-          positions.forEach((pos, k) => { if (pos < cards.length) grid.insertBefore(buildBand(k * PER), cards[pos]); });
+        return {
+          clear() { intervals.forEach(clearInterval); intervals = []; gridEl.querySelectorAll('.shorts-promo').forEach((b) => b.remove()); },
+          place(pool) {
+            this.clear();
+            if (!pool || pool.length < 4) return;
+            const cards = Array.from(gridEl.querySelectorAll('.watch-card'));
+            if (!cards.length) return;
+            const cols = (getComputedStyle(gridEl).gridTemplateColumns.split(' ').filter(Boolean).length) || 1;
+            const positions = cols <= 3 ? [cols * 2, cols * 4] : [cols, cols * 2];
+            positions.forEach((pos, k) => { if (pos < cards.length) gridEl.insertBefore(buildBand(pool, k * PER), cards[pos]); });
+          }
         };
-        place();
-        let rt;
-        window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(place, 300); });
-      })();
+      }
+
+      const defaultGrid = defaultView ? defaultView.querySelector('.shorts-grid') : null;
+      const defaultInserter = defaultGrid ? createPromoInserter(defaultGrid) : null;
+      const filteredInserter = filteredResults ? createPromoInserter(filteredResults) : null;
+      let defaultPool = [];
+      if (defaultGrid) { try { defaultPool = JSON.parse(defaultGrid.dataset.promoPool || '[]'); } catch (e) {} }
+      const placeDefault = () => { if (defaultInserter && defaultView && defaultView.style.display !== 'none') defaultInserter.place(defaultPool); };
+      placeDefault();
+      let promoRt;
+      window.addEventListener('resize', () => {
+        clearTimeout(promoRt);
+        promoRt = setTimeout(() => {
+          placeDefault();
+          if (filteredResults && filteredResults.style.display !== 'none') filterVideos();
+        }, 300);
+      });
     });
   </script>
 </MainLayout>
