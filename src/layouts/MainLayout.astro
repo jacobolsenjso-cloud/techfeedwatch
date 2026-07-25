@@ -200,7 +200,15 @@ if (currentPath.startsWith('/video/')) {
       body.shorts-mode .scroll-top-btn { display: none !important; }
 
       @media (max-width: 768px) {
-        .mobile-menu-btn { display: block; }
+        .mobile-menu-btn { display: block; font-size: 1.35rem; }
+        /* Kompakt topbar på mobil, så alle 3 ikoner er synlige */
+        .top-navbar { padding: 0 10px; }
+        .nav-left { gap: 8px; }
+        .logo { font-size: 1rem; gap: 5px; }
+        .logo-icon { font-size: 1.15rem; }
+        .nav-right { gap: 0; }
+        .nav-right .icon-btn { width: 36px; height: 36px; font-size: 1.05rem; }
+        .notif-badge { top: 2px; right: 2px; min-width: 15px; height: 15px; font-size: 9px; }
         /* MENU FIX: z-index hævet til 2000 for at sikre at den dækker videoen */
         .sidebar { position: fixed; top: 60px; left: 0; height: calc(100vh - 60px); transform: translateX(-100%); box-shadow: 2px 0 15px rgba(0,0,0,0.2); z-index: 2000; }
         .sidebar.open { transform: translateX(0); }
