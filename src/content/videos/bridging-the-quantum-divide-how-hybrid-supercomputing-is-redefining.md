@@ -8,6 +8,7 @@ tags:
 summary: "Hybrid quantum-classical supercomputing combines the specialized power of quantum processing units (QPUs) with the broad capabilities of traditional high-performance computing (HPC) systems. This integration addresses the limitations of current quantum hardware, which remains experimental and error-prone, by offloading specific, intractable problems to quantum accelerators while classical systems handle data management, control, and broader computational tasks. Frameworks like QBitBridge facilitate these complex workflows, offering a practical path towards solving problems beyond the reach of classical supercomputers alone. This approach aims to accelerate advancements in fields ranging from materials science to financial modeling and AI."
 duration: "39:06"
 isShort: false
+revised: true
 faqs:
   - question: "What is hybrid quantum-classical computing?"
     answer: "It is a computing approach that combines classical supercomputers (CPUs, GPUs) with quantum processing units (QPUs) to tackle complex computational problems. This setup allows each component to handle tasks best suited to its architecture."

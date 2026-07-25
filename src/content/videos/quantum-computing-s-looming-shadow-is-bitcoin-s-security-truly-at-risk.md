@@ -8,6 +8,7 @@ tags:
 summary: "The emergence of quantum computing capabilities introduces theoretical threats to the cryptographic foundations underpinning major blockchain networks like Bitcoin. While not an immediate danger, the potential for advanced algorithms like Shor's to compromise public-key cryptography demands serious consideration and proactive development from the crypto community. Understanding the distinction between encryption and digital signatures is crucial for assessing the true extent of this long-term challenge."
 duration: "20:41"
 isShort: false
+revised: true
 faqs:
   - question: "What is the primary quantum computing threat to Bitcoin?"
     answer: "The main threat stems from quantum algorithms, like Shor's, which could efficiently break the elliptical curve digital signature algorithm (ECDSA) used to secure Bitcoin transactions. This compromises the integrity of digital signatures."

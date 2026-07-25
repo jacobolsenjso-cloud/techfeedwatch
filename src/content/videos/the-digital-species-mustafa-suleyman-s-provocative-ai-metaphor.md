@@ -7,6 +7,7 @@ tags:
 summary: "Microsoft AI CEO Mustafa Suleyman posits that humanity is creating a 'new digital species' with artificial intelligence, challenging conventional definitions of the technology. He argues that even those closest to AI's development struggle to articulate its future trajectory. This metaphor aims to focus attention on the profound, uncharted territory AI represents, moving beyond viewing it merely as a tool. Suleyman’s perspective calls for a fundamental reassessment of AI's nature and its role in society."
 duration: "22:02"
 isShort: false
+revised: true
 faqs:
   - question: "Who is Mustafa Suleyman?"
     answer: "Mustafa Suleyman is the CEO of Microsoft AI and a co-founder of DeepMind. He is recognized as a primary architect behind many of the advanced AI models in use today."

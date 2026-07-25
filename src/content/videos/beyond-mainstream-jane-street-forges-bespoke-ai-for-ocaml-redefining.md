@@ -8,6 +8,7 @@ tags:
 summary: "Jane Street, a prominent quantitative trading firm, has custom-engineered AI-powered coding assistants for OCaml, a powerful but less common functional programming language. This initiative addresses the scarcity of mainstream AI tooling for specialized development environments, demonstrating a significant investment in developer productivity. Their process involved comprehensive data collection, bespoke model training, and deep editor integration, providing a blueprint for bringing advanced AI capabilities to niche technological stacks. This development highlights the increasing necessity of tailored AI solutions in high-stakes, specialized industries."
 duration: "16:57"
 isShort: false
+revised: true
 faqs:
   - question: "What is OCaml, and why did Jane Street need custom AI tools for it?"
     answer: "OCaml is a powerful functional programming language favored in finance for its performance and reliability. Jane Street needed custom AI tools because OCaml lacks the robust AI coding assistants readily available for more mainstream languages, necessitating a bespoke solution."

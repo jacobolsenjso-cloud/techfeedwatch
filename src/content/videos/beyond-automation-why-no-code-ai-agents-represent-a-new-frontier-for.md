@@ -8,6 +8,7 @@ tags:
 summary: "The rapid evolution of AI agents is democratizing advanced computational capabilities, allowing individuals without coding expertise to build sophisticated, goal-oriented systems. These agents distinguish themselves from traditional automation by thinking, remembering, and adapting to dynamic situations, rather than merely executing pre-defined rules. Platforms facilitating no-code agent creation are making powerful AI accessible for practical, real-world applications across various industries. This shift empowers a broader range of users to design intelligent workflows that previously required specialized programming skills."
 duration: "25:58"
 isShort: false
+revised: true
 faqs:
   - question: "What defines an AI agent compared to traditional automation?"
     answer: "An AI agent possesses a 'brain' (LLM), 'memory,' and 'tools' to interpret goals, make decisions, and take actions autonomously. Traditional automation follows predefined, rigid rules without independent decision-making or learning."
