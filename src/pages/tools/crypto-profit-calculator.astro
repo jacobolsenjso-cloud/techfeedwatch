@@ -1,0 +1,143 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Crypto Profit & ROI Calculator";
+const description = "Calculate your crypto profit, loss, and ROI from buy and sell price, including trading fees. Free and runs entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .cp-wrapper { max-width: 760px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .cp-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .cp-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+    body.dark-mode .cp-header p { color: #9ca3af; }
+
+    .cp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .cp-field { display: flex; flex-direction: column; }
+    .cp-field.full { grid-column: 1 / -1; }
+    .cp-field label { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .cp-input { padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .cp-input:focus { outline: none; border-color: #ef4444; }
+
+    .cp-results { margin-top: 26px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .cp-result-card { background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; }
+    .cp-result-card.full { grid-column: 1 / -1; }
+    .cp-result-label { font-size: 0.8rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+    body.dark-mode .cp-result-label { color: #9ca3af; }
+    .cp-result-value { font-size: 1.6rem; font-weight: 800; }
+    .cp-pos { color: #16a34a; }
+    .cp-neg { color: #dc2626; }
+
+    .cp-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .cp-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .cp-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .cp-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) {
+      .cp-wrapper { padding: 20px 15px; }
+      .cp-grid, .cp-results { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="cp-wrapper">
+    <div class="cp-header">
+      <h1>💰 Crypto Profit & ROI Calculator</h1>
+      <p>Enter your investment, buy price, and sell price to see your net profit, ROI, and exit value - including trading fees. Nothing leaves your browser.</p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-field">
+        <label for="cpInvest">Investment amount ($)</label>
+        <input type="number" id="cpInvest" class="cp-input" value="1000" min="0" step="any" />
+      </div>
+      <div class="cp-field">
+        <label for="cpFee">Trading fee (%) per side</label>
+        <input type="number" id="cpFee" class="cp-input" value="0.1" min="0" step="any" />
+      </div>
+      <div class="cp-field">
+        <label for="cpBuy">Buy price ($)</label>
+        <input type="number" id="cpBuy" class="cp-input" value="30000" min="0" step="any" />
+      </div>
+      <div class="cp-field">
+        <label for="cpSell">Sell price ($)</label>
+        <input type="number" id="cpSell" class="cp-input" value="45000" min="0" step="any" />
+      </div>
+    </div>
+
+    <div class="cp-results">
+      <div class="cp-result-card full">
+        <div class="cp-result-label">Net profit / loss</div>
+        <div class="cp-result-value" id="cpProfit">$0.00</div>
+      </div>
+      <div class="cp-result-card">
+        <div class="cp-result-label">Return on investment</div>
+        <div class="cp-result-value" id="cpRoi">0%</div>
+      </div>
+      <div class="cp-result-card">
+        <div class="cp-result-label">Exit value (after fees)</div>
+        <div class="cp-result-value" id="cpExit">$0.00</div>
+      </div>
+      <div class="cp-result-card">
+        <div class="cp-result-label">Quantity bought</div>
+        <div class="cp-result-value" id="cpQty">0</div>
+      </div>
+      <div class="cp-result-card">
+        <div class="cp-result-label">Total fees paid</div>
+        <div class="cp-result-value" id="cpFees">$0.00</div>
+      </div>
+    </div>
+
+    <div class="cp-info-section">
+      <h2>How crypto profit and ROI are calculated</h2>
+      <p>Your <strong>quantity</strong> is the investment amount divided by the buy price. The <strong>exit value</strong> is that quantity multiplied by the sell price, minus trading fees charged on both the entry and the exit. <strong>Net profit</strong> is the exit value minus your original investment and total fees, and <strong>ROI</strong> expresses that profit as a percentage of what you put in.</p>
+      <p>Remember that this tool models a single trade and does not account for taxes, slippage, funding rates, or the price impact of large orders. Always treat the result as an estimate, not financial advice.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ids = ['cpInvest', 'cpFee', 'cpBuy', 'cpSell'];
+      const inputs = ids.map((id) => document.getElementById(id) as HTMLInputElement);
+      const elProfit = document.getElementById('cpProfit') as HTMLDivElement;
+      const elRoi = document.getElementById('cpRoi') as HTMLDivElement;
+      const elExit = document.getElementById('cpExit') as HTMLDivElement;
+      const elQty = document.getElementById('cpQty') as HTMLDivElement;
+      const elFees = document.getElementById('cpFees') as HTMLDivElement;
+
+      const money = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      const calc = () => {
+        const invest = parseFloat(inputs[0].value) || 0;
+        const feePct = parseFloat(inputs[1].value) || 0;
+        const buy = parseFloat(inputs[2].value) || 0;
+        const sell = parseFloat(inputs[3].value) || 0;
+
+        if (invest <= 0 || buy <= 0) {
+          elProfit.textContent = '$0.00'; elProfit.className = 'cp-result-value';
+          elRoi.textContent = '0%'; elRoi.className = 'cp-result-value';
+          elExit.textContent = '$0.00'; elQty.textContent = '0'; elFees.textContent = '$0.00';
+          return;
+        }
+
+        const qty = invest / buy;
+        const grossExit = qty * sell;
+        const fees = (invest + grossExit) * (feePct / 100);
+        const netExit = grossExit - fees;
+        const profit = netExit - invest;
+        const roi = (profit / invest) * 100;
+
+        const cls = profit >= 0 ? 'cp-result-value cp-pos' : 'cp-result-value cp-neg';
+        elProfit.className = cls;
+        elProfit.textContent = (profit >= 0 ? '+' : '') + money(profit);
+        elRoi.className = cls;
+        elRoi.textContent = (roi >= 0 ? '+' : '') + roi.toFixed(2) + '%';
+        elExit.textContent = money(netExit);
+        elQty.textContent = qty.toLocaleString('en-US', { maximumFractionDigits: 8 });
+        elFees.textContent = money(fees);
+      };
+
+      inputs.forEach((i) => i.addEventListener('input', calc));
+      calc();
+    });
+  </script>
+</MainLayout>

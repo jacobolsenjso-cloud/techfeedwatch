@@ -1,0 +1,115 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Word & Character Counter";
+const description = "Count words, characters, sentences, and paragraphs in your text, with live reading and speaking time estimates. Free, private, browser-based.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .wc-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .wc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .wc-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .wc-header p { color: #9ca3af; }
+
+    .wc-textarea { width: 100%; min-height: 220px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; resize: vertical; line-height: 1.6; }
+    .wc-textarea:focus { outline: none; border-color: #ef4444; }
+
+    .wc-stats { margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .wc-stat { background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; text-align: center; }
+    .wc-stat-value { font-size: 1.7rem; font-weight: 800; }
+    .wc-stat-label { font-size: 0.78rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 4px; }
+    body.dark-mode .wc-stat-label { color: #9ca3af; }
+
+    .wc-actions { margin-top: 18px; display: flex; gap: 10px; }
+    .wc-btn { padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+    .wc-btn:hover { border-color: #ef4444; }
+
+    .wc-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .wc-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .wc-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .wc-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) {
+      .wc-wrapper { padding: 20px 15px; }
+      .wc-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+
+  <div class="wc-wrapper">
+    <div class="wc-header">
+      <h1>📝 Word & Character Counter</h1>
+      <p>Paste or type your text to see live counts and reading time. Everything stays in your browser - nothing is uploaded.</p>
+    </div>
+
+    <textarea id="wcInput" class="wc-textarea" placeholder="Start typing or paste your text here..."></textarea>
+
+    <div class="wc-stats">
+      <div class="wc-stat"><div class="wc-stat-value" id="wcWords">0</div><div class="wc-stat-label">Words</div></div>
+      <div class="wc-stat"><div class="wc-stat-value" id="wcChars">0</div><div class="wc-stat-label">Characters</div></div>
+      <div class="wc-stat"><div class="wc-stat-value" id="wcCharsNs">0</div><div class="wc-stat-label">No spaces</div></div>
+      <div class="wc-stat"><div class="wc-stat-value" id="wcSentences">0</div><div class="wc-stat-label">Sentences</div></div>
+      <div class="wc-stat"><div class="wc-stat-value" id="wcParas">0</div><div class="wc-stat-label">Paragraphs</div></div>
+      <div class="wc-stat"><div class="wc-stat-value" id="wcRead">0s</div><div class="wc-stat-label">Reading time</div></div>
+    </div>
+
+    <div class="wc-actions">
+      <button type="button" id="wcClear" class="wc-btn">Clear</button>
+      <button type="button" id="wcCopy" class="wc-btn">Copy text</button>
+    </div>
+
+    <div class="wc-info-section">
+      <h2>Why word and character counts matter</h2>
+      <p>Character limits shape a lot of digital writing: meta descriptions are cut off by Google around 155-160 characters, title tags around 60, and social platforms enforce their own caps. Keeping an eye on your counts helps your content display cleanly everywhere it appears.</p>
+      <p>Reading time is estimated at about 200 words per minute, a common average for silent reading. Use it as a rough guide for blog posts, scripts, and newsletters - it is an approximation, not an exact measure, since reading speed varies by reader and topic.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('wcInput') as HTMLTextAreaElement;
+      const elWords = document.getElementById('wcWords') as HTMLDivElement;
+      const elChars = document.getElementById('wcChars') as HTMLDivElement;
+      const elCharsNs = document.getElementById('wcCharsNs') as HTMLDivElement;
+      const elSentences = document.getElementById('wcSentences') as HTMLDivElement;
+      const elParas = document.getElementById('wcParas') as HTMLDivElement;
+      const elRead = document.getElementById('wcRead') as HTMLDivElement;
+
+      const fmtTime = (words: number) => {
+        const seconds = Math.round((words / 200) * 60);
+        if (seconds < 60) return seconds + 's';
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return s === 0 ? m + 'm' : m + 'm ' + s + 's';
+      };
+
+      const update = () => {
+        const text = input.value;
+        const trimmed = text.trim();
+        const words = trimmed ? trimmed.split(/\s+/).length : 0;
+        const sentences = trimmed ? (trimmed.match(/[^.!?]+[.!?]+(\s|$)/g) || [trimmed]).length : 0;
+        const paras = trimmed ? trimmed.split(/\n{2,}|\n/).filter((p) => p.trim().length > 0).length : 0;
+
+        elWords.textContent = words.toLocaleString('en-US');
+        elChars.textContent = text.length.toLocaleString('en-US');
+        elCharsNs.textContent = text.replace(/\s/g, '').length.toLocaleString('en-US');
+        elSentences.textContent = sentences.toLocaleString('en-US');
+        elParas.textContent = paras.toLocaleString('en-US');
+        elRead.textContent = fmtTime(words);
+      };
+
+      input.addEventListener('input', update);
+      document.getElementById('wcClear')!.addEventListener('click', () => { input.value = ''; update(); input.focus(); });
+      document.getElementById('wcCopy')!.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(input.value);
+          const btn = document.getElementById('wcCopy') as HTMLButtonElement;
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+      update();
+    });
+  </script>
+</MainLayout>

@@ -1,0 +1,122 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "URL Slug Generator";
+const description = "Turn any title or phrase into a clean, SEO-friendly URL slug - lowercase, hyphenated, and stripped of accents and special characters. Free and browser-based.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .sg-wrapper { max-width: 760px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .sg-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .sg-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .sg-header p { color: #9ca3af; }
+
+    .sg-field { margin-bottom: 18px; }
+    .sg-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .sg-input { width: 100%; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .sg-input:focus { outline: none; border-color: #ef4444; }
+
+    .sg-options { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 22px; }
+    .sg-option { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; font-weight: 500; cursor: pointer; }
+
+    .sg-output-wrap { display: flex; gap: 10px; align-items: stretch; }
+    .sg-output { flex: 1; padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 1rem; word-break: break-all; min-height: 24px; }
+    .sg-copy { padding: 0 18px; border-radius: 8px; border: 1px solid var(--border-color); background: #ef4444; color: #fff; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .sg-copy:hover { background: #dc2626; }
+
+    .sg-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .sg-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .sg-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .sg-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) {
+      .sg-wrapper { padding: 20px 15px; }
+      .sg-output-wrap { flex-direction: column; }
+      .sg-copy { padding: 12px; }
+    }
+  </style>
+
+  <div class="sg-wrapper">
+    <div class="sg-header">
+      <h1>🔗 URL Slug Generator</h1>
+      <p>Paste a title or headline to get a clean, SEO-friendly URL slug. Accents and special characters are removed automatically.</p>
+    </div>
+
+    <div class="sg-field">
+      <label for="sgInput">Title or phrase</label>
+      <input type="text" id="sgInput" class="sg-input" placeholder="e.g. How AI Is Reshaping SEO in 2026" value="How AI Is Reshaping SEO in 2026" />
+    </div>
+
+    <div class="sg-options">
+      <label class="sg-option"><input type="radio" name="sgSep" value="-" checked /> Hyphens ( - )</label>
+      <label class="sg-option"><input type="radio" name="sgSep" value="_" /> Underscores ( _ )</label>
+      <label class="sg-option"><input type="checkbox" id="sgStop" /> Remove common stop words</label>
+    </div>
+
+    <div class="sg-field">
+      <label for="sgOutput">Slug</label>
+      <div class="sg-output-wrap">
+        <div id="sgOutput" class="sg-output"></div>
+        <button type="button" id="sgCopy" class="sg-copy">Copy</button>
+      </div>
+    </div>
+
+    <div class="sg-info-section">
+      <h2>What makes a good URL slug?</h2>
+      <p>A slug is the human-readable part of a URL that identifies a page. Clean slugs are lowercase, use hyphens to separate words, and avoid spaces, accents, and special characters that browsers have to encode. Descriptive slugs that include your main keyword help both readers and search engines understand what a page is about before they even open it.</p>
+      <p>Keeping slugs short and focused - a few meaningful words rather than a whole sentence - tends to perform better. Optionally removing filler stop words like "the", "and", or "of" can tighten a slug without losing its meaning.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('sgInput') as HTMLInputElement;
+      const output = document.getElementById('sgOutput') as HTMLDivElement;
+      const stopToggle = document.getElementById('sgStop') as HTMLInputElement;
+      const sepRadios = Array.from(document.querySelectorAll('input[name="sgSep"]')) as HTMLInputElement[];
+
+      const STOP_WORDS = new Set(['a','an','and','the','of','to','in','on','for','with','at','by','from','is','are','be','or','as','it','this','that','your']);
+
+      const getSep = () => (sepRadios.find((r) => r.checked)?.value) || '-';
+
+      const slugify = (text: string): string => {
+        let words = text
+          .normalize('NFKD')
+          .replace(/[̀-ͯ]/g, '')      // fjern accenter (combining marks)
+          .replace(/æ/gi, 'ae').replace(/ø/gi, 'o').replace(/å/gi, 'a').replace(/ß/g, 'ss')
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-_]/g, ' ')        // kun sikre tegn
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean);
+
+        if (stopToggle.checked) {
+          const filtered = words.filter((w) => !STOP_WORDS.has(w));
+          if (filtered.length > 0) words = filtered;
+        }
+
+        const sep = getSep();
+        return words.join(sep).replace(new RegExp(`[${sep === '-' ? '-' : '_'}]{2,}`, 'g'), sep);
+      };
+
+      const update = () => { output.textContent = slugify(input.value); };
+
+      input.addEventListener('input', update);
+      stopToggle.addEventListener('change', update);
+      sepRadios.forEach((r) => r.addEventListener('change', update));
+
+      document.getElementById('sgCopy')!.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(output.textContent || '');
+          const btn = document.getElementById('sgCopy') as HTMLButtonElement;
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+
+      update();
+    });
+  </script>
+</MainLayout>
