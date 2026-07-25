@@ -15,6 +15,7 @@ export const GET: APIRoute = () => {
         date: video.frontmatter.date,
         duration: video.frontmatter.duration,
         isShort: video.frontmatter.isShort,
+        summary: video.frontmatter.summary || '',
         tags,
       };
     })

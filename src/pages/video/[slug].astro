@@ -216,6 +216,9 @@ const metaDesc = rawMeta.length > 157
     .btn-active { color: #3b82f6 !important; }
     .btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
     .summary-box { background-color: var(--hover-bg); border-left: 4px solid #ef4444; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
+    .article-meta { display: flex; align-items: center; gap: 8px; margin: -5px 0 18px 0; font-size: 0.9rem; color: #6b7280; font-weight: 500; }
+    body.dark-mode .article-meta { color: #9ca3af; }
+    .article-meta-sep { opacity: 0.5; }
     .inline-recs { margin: 34px 0; padding: 20px 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--hover-bg); }
     .inline-recs-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
     body.dark-mode .inline-recs-label { color: #a1a1aa; }
@@ -615,6 +618,12 @@ const metaDesc = rawMeta.length > 157
 
           <div class="title-row">
             <h1>{title}</h1>
+          </div>
+
+          <div class="article-meta">
+            <span class="article-meta-item">🕒 {video.frontmatter.minutesRead || 1} min read</span>
+            <span class="article-meta-sep">·</span>
+            <time class="article-meta-item" datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
           </div>
 
           <div class="summary-box">

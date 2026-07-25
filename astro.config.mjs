@@ -95,11 +95,29 @@ function rehypeGlossaryLinks() {
   };
 }
 
+// Remark-plugin: beregner læsetid (ord / 200 wpm) og lægger den i frontmatter som minutesRead
+function remarkReadingTime() {
+  return (tree, file) => {
+    let text = '';
+    const visit = (node) => {
+      if (node.type === 'text' || node.type === 'inlineCode') text += node.value + ' ';
+      if (node.children) node.children.forEach(visit);
+    };
+    visit(tree);
+    const words = text.trim().split(/\s+/).filter(Boolean).length;
+    const minutes = Math.max(1, Math.round(words / 200));
+    file.data.astro = file.data.astro || {};
+    file.data.astro.frontmatter = file.data.astro.frontmatter || {};
+    file.data.astro.frontmatter.minutesRead = minutes;
+  };
+}
+
 export default defineConfig({
   site: 'https://techfeedwatch.com',
   markdown: {
     // Astro 6.4+: rehype/remark-plugins sættes via unified()-processoren
     processor: unified({
+      remarkPlugins: [remarkReadingTime],
       rehypePlugins: [rehypeGlossaryLinks],
     }),
   },

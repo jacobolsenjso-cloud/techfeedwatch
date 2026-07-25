@@ -1,0 +1,114 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "Search";
+const description = "Search across every article and analysis on Tech Feed Watch.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .search-page { max-width: 1200px; margin: 0 auto; padding: 30px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .search-page h1 { font-size: 1.8rem; margin: 0 0 18px 0; }
+    .search-page-box { display: flex; gap: 10px; margin-bottom: 12px; }
+    .search-page-input { flex: 1; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1.05rem; box-sizing: border-box; }
+    .search-page-input:focus { outline: none; border-color: #ef4444; }
+    .search-count { color: #6b7280; font-size: 0.95rem; margin: 0 0 22px 0; }
+    body.dark-mode .search-count { color: #9ca3af; }
+
+    .search-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
+    .search-empty { color: #6b7280; font-size: 1.05rem; padding: 30px 0; }
+    body.dark-mode .search-empty { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .search-page { padding: 20px 15px; }
+      .search-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+    }
+  </style>
+
+  <div class="search-page">
+    <h1>Search</h1>
+    <div class="search-page-box">
+      <input type="text" id="searchPageInput" class="search-page-input" placeholder="Search articles..." autocomplete="off" />
+    </div>
+    <p class="search-count" id="searchCount"></p>
+    <div class="search-grid" id="searchGrid"></div>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('searchPageInput');
+      const grid = document.getElementById('searchGrid');
+      const count = document.getElementById('searchCount');
+      let data = [];
+      let ready = false;
+
+      const params = new URLSearchParams(window.location.search);
+      const initialQ = (params.get('q') || '').trim();
+      if (input) input.value = initialQ;
+
+      const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      const fmtDate = (d) => {
+        try { return new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }); }
+        catch (e) { return ''; }
+      };
+
+      const buildCard = (v) => {
+        return (
+          '<a href="/video/' + v.slug + '" class="watch-card">' +
+            '<div class="watch-card-thumb">' +
+              '<img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
+              '<div class="duration-badge">' + esc(v.duration || '0:00') + '</div>' +
+              '<span class="watch-card-play" aria-hidden="true">▶</span>' +
+            '</div>' +
+            '<div>' +
+              '<h3 class="tma-grid-title">' + esc(v.title) + '</h3>' +
+              '<p class="tma-grid-meta">Tech Feed Watch • ' + esc(fmtDate(v.date)) + '</p>' +
+            '</div>' +
+          '</a>'
+        );
+      };
+
+      const render = () => {
+        const q = (input ? input.value : '').toLowerCase().trim();
+        if (!ready) { count.textContent = 'Loading...'; return; }
+        if (!q) {
+          grid.innerHTML = '';
+          count.textContent = 'Type a word to search across all articles.';
+          return;
+        }
+        const matches = data.filter((v) => {
+          const inTitle = (v.title || '').toLowerCase().includes(q);
+          const inSummary = (v.summary || '').toLowerCase().includes(q);
+          const inTags = (v.tags || []).some((t) => (t || '').toLowerCase().includes(q));
+          return inTitle || inSummary || inTags;
+        });
+        count.textContent = matches.length + (matches.length === 1 ? ' result' : ' results') + ' for "' + q + '"';
+        grid.innerHTML = matches.length
+          ? matches.map(buildCard).join('')
+          : '';
+        if (!matches.length) grid.innerHTML = '<p class="search-empty">No articles found. Try a different word.</p>';
+      };
+
+      fetch('/videos.json')
+        .then((r) => r.json())
+        .then((all) => {
+          // Kun rigtige artikler (ikke Shorts), nyeste først
+          data = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date));
+          ready = true;
+          render();
+        })
+        .catch(() => { ready = true; count.textContent = 'Could not load the article index.'; });
+
+      if (input) {
+        input.addEventListener('input', () => {
+          render();
+          const q = input.value.trim();
+          const url = q ? ('/search?q=' + encodeURIComponent(q)) : '/search';
+          window.history.replaceState(null, '', url);
+        });
+        input.focus();
+      }
+    });
+  </script>
+</MainLayout>

@@ -54,6 +54,7 @@ if (currentPath.startsWith('/video/')) {
 
     <meta name="description" content={description || defaultDesc} />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" type="application/rss+xml" title="Tech Feed Watch RSS" href="https://techfeedwatch.com/rss.xml" />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content={ogType} />
@@ -154,6 +155,9 @@ if (currentPath.startsWith('/video/')) {
 
       .scroll-top-btn { display: none; position: fixed; bottom: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.15); align-items: center; justify-content: center; cursor: pointer; z-index: 500; font-size: 1.3rem; line-height: 1; padding: 0; }
       body.dark-mode .scroll-top-btn { box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+      .scroll-top-btn.visible { display: flex; }
+      .scroll-top-btn:hover { border-color: #ef4444; color: #ef4444; }
+      body.shorts-mode .scroll-top-btn { display: none !important; }
 
       @media (max-width: 768px) {
         .mobile-menu-btn { display: block; }
@@ -225,6 +229,8 @@ if (currentPath.startsWith('/video/')) {
               <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
               <span class="footer-sep">|</span>
               <a href="/sitemap" class="footer-link">Sitemap</a>
+              <span class="footer-sep">|</span>
+              <a href="/rss.xml" class="footer-link">RSS</a>
             </div>
           </div>
         </footer>
@@ -260,6 +266,17 @@ if (currentPath.startsWith('/video/')) {
             searchBtn.setAttribute('aria-expanded', 'false');
           });
         }
+
+        // Global søgning: Enter i søge-boksen går til den fulde søgeside (virker på alle sider)
+        const topSearchInput = document.getElementById('topSearchInput');
+        if (topSearchInput) {
+          topSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+              const q = topSearchInput.value.trim();
+              if (q) window.location.href = '/search?q=' + encodeURIComponent(q);
+            }
+          });
+        }
         
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
@@ -282,7 +299,7 @@ if (currentPath.startsWith('/video/')) {
             const scrollTop = getScrollTop();
             // Skjul knappen når footeren er inden for synsvidde, så den ikke overlapper footer-teksten
             const nearBottom = scrollTop + getClientHeight() >= getScrollHeight() - 120;
-            const shouldShow = window.innerWidth <= 768 && scrollTop > 400 && !nearBottom;
+            const shouldShow = scrollTop > 400 && !nearBottom;
             scrollTopBtn.classList.toggle('visible', shouldShow);
           };
           scrollContainer.addEventListener('scroll', updateScrollTopBtn);
