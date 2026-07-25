@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
 import fs from 'fs';
 import path from 'path';
@@ -97,7 +98,10 @@ function rehypeGlossaryLinks() {
 export default defineConfig({
   site: 'https://techfeedwatch.com',
   markdown: {
-    rehypePlugins: [rehypeGlossaryLinks],
+    // Astro 6.4+: rehype/remark-plugins sættes via unified()-processoren
+    processor: unified({
+      rehypePlugins: [rehypeGlossaryLinks],
+    }),
   },
   integrations: [
     sitemap({
