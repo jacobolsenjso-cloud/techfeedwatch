@@ -415,10 +415,7 @@ const vRest = pageOneVideos.slice(8);
         }
       }
 
-      if (searchInput) {
-        searchInput.addEventListener('input', filterVideos);
-      }
-
+      // Tekstsøgning håndteres nu globalt via dropdown i toppen (MainLayout). Tag-filtrering bevares.
       filterTags.forEach(tagBtn => {
         tagBtn.addEventListener('click', (e) => {
           filterTags.forEach(btn => btn.classList.remove('active'));

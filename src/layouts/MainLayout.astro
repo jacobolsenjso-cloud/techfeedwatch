@@ -119,8 +119,21 @@ if (currentPath.startsWith('/video/')) {
 
       .search-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 60px; background: var(--sidebar-bg); display: none; align-items: center; padding: 0 20px; box-sizing: border-box; z-index: 40; }
       .search-overlay.active { display: flex; }
-      .search-input-wrapper { flex: 1; margin-right: 10px; }
-      .search-input-wrapper input { width: 100%; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); outline: none; font-size: 1rem; }
+      .search-input-wrapper { flex: 0 1 520px; margin-right: 10px; position: relative; }
+      .search-overlay .icon-btn { margin-left: auto; }
+      .search-input-wrapper input { width: 100%; padding: 10px 15px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); outline: none; font-size: 1rem; box-sizing: border-box; }
+      .search-suggest { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 14px 36px rgba(0,0,0,0.18); overflow-y: auto; max-height: 72vh; display: none; z-index: 60; }
+      .search-suggest.active { display: block; }
+      .search-suggest-item { display: flex; gap: 12px; align-items: center; padding: 9px 12px; text-decoration: none; color: var(--text-color); }
+      .search-suggest-item:hover, .search-suggest-item.is-active { background: var(--hover-bg); }
+      .search-suggest-thumb { width: 68px; height: 40px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: #000; }
+      .search-suggest-body { min-width: 0; display: flex; flex-direction: column; }
+      .search-suggest-title { font-size: 0.9rem; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+      .search-suggest-badge { font-size: 0.7rem; font-weight: 700; color: #ef4444; margin-top: 2px; }
+      .search-suggest-footer { display: block; padding: 11px 12px; text-align: center; font-size: 0.85rem; font-weight: 700; color: #ef4444; text-decoration: none; border-top: 1px solid var(--border-color); }
+      .search-suggest-footer.is-active { background: var(--hover-bg); }
+      .search-suggest-empty { padding: 16px 12px; color: #6b7280; font-size: 0.9rem; text-align: center; }
+      body.dark-mode .search-suggest-empty { color: #9ca3af; }
 
       .content-area { overflow-y: scroll !important; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: #cbd5e1 var(--bg-color); }
       .content-area::-webkit-scrollbar { width: 14px; }
@@ -195,7 +208,8 @@ if (currentPath.startsWith('/video/')) {
       </div>
       <div class="search-overlay" id="searchOverlay">
         <div class="search-input-wrapper">
-          <input type="text" placeholder="Search videos..." id="topSearchInput" />
+          <input type="text" placeholder="Search articles..." id="topSearchInput" autocomplete="off" />
+          <div class="search-suggest" id="searchSuggest" role="listbox"></div>
         </div>
         <button id="closeSearchBtn" class="icon-btn" aria-label="Close search">❌</button>
       </div>
@@ -267,15 +281,55 @@ if (currentPath.startsWith('/video/')) {
           });
         }
 
-        // Global søgning: Enter i søge-boksen går til den fulde søgeside (virker på alle sider)
+        // Global søgning: instant-forslag i dropdown lige under søgefeltet (+ Enter = fuld søgeside)
         const topSearchInput = document.getElementById('topSearchInput');
-        if (topSearchInput) {
+        const searchSuggest = document.getElementById('searchSuggest');
+        if (searchBtn && topSearchInput) {
+          searchBtn.addEventListener('click', () => setTimeout(() => topSearchInput.focus(), 30));
+        }
+        if (topSearchInput && searchSuggest) {
+          let sData = null, sLoading = false, activeIdx = -1;
+          const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+          const hideSuggest = () => { searchSuggest.classList.remove('active'); searchSuggest.innerHTML = ''; activeIdx = -1; };
+          const goSearch = () => { const q = topSearchInput.value.trim(); if (q) window.location.href = '/search?q=' + encodeURIComponent(q); };
+
+          const loadData = () => {
+            if (sData || sLoading) return;
+            sLoading = true;
+            fetch('/videos.json').then((r) => r.json()).then((d) => { sData = d; sLoading = false; if (document.activeElement === topSearchInput) renderSuggest(); }).catch(() => { sLoading = false; });
+          };
+
+          const renderSuggest = () => {
+            activeIdx = -1;
+            const q = topSearchInput.value.toLowerCase().trim();
+            if (!q) { hideSuggest(); return; }
+            if (!sData) { loadData(); searchSuggest.innerHTML = '<div class="search-suggest-empty">Searching…</div>'; searchSuggest.classList.add('active'); return; }
+            const matches = sData.filter((v) => (v.title || '').toLowerCase().includes(q) || (v.summary || '').toLowerCase().includes(q) || (v.tags || []).some((t) => (t || '').toLowerCase().includes(q))).slice(0, 7);
+            if (!matches.length) { searchSuggest.innerHTML = '<div class="search-suggest-empty">No matches. Press Enter to search anyway.</div>'; searchSuggest.classList.add('active'); return; }
+            let html = matches.map((v) => (
+              '<a class="search-suggest-item" href="/video/' + v.slug + '">' +
+                '<img class="search-suggest-thumb" src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
+                '<span class="search-suggest-body">' +
+                  '<span class="search-suggest-title">' + escHtml(v.title) + '</span>' +
+                  (v.isShort ? '<span class="search-suggest-badge">⚡ Short</span>' : '') +
+                '</span>' +
+              '</a>'
+            )).join('');
+            html += '<a class="search-suggest-footer" href="/search?q=' + encodeURIComponent(topSearchInput.value.trim()) + '">See all results →</a>';
+            searchSuggest.innerHTML = html;
+            searchSuggest.classList.add('active');
+          };
+
+          topSearchInput.addEventListener('focus', loadData);
+          topSearchInput.addEventListener('input', renderSuggest);
           topSearchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-              const q = topSearchInput.value.trim();
-              if (q) window.location.href = '/search?q=' + encodeURIComponent(q);
-            }
+            const items = Array.from(searchSuggest.querySelectorAll('.search-suggest-item, .search-suggest-footer'));
+            if (e.key === 'ArrowDown' && items.length) { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, items.length - 1); items.forEach((el, i) => el.classList.toggle('is-active', i === activeIdx)); items[activeIdx].scrollIntoView({ block: 'nearest' }); }
+            else if (e.key === 'ArrowUp' && items.length) { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); items.forEach((el, i) => el.classList.toggle('is-active', i === activeIdx)); items[activeIdx].scrollIntoView({ block: 'nearest' }); }
+            else if (e.key === 'Enter') { if (activeIdx >= 0 && items[activeIdx]) { window.location.href = items[activeIdx].getAttribute('href'); } else { goSearch(); } }
+            else if (e.key === 'Escape') { hideSuggest(); }
           });
+          document.addEventListener('click', (e) => { if (!searchSuggest.contains(e.target) && e.target !== topSearchInput) hideSuggest(); });
         }
         
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');

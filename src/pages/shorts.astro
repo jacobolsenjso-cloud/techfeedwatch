@@ -235,7 +235,7 @@ const totalPages = Math.max(1, Math.ceil(shorts.length / PAGE_SIZE));
         }
       }
 
-      if (searchInput) searchInput.addEventListener('input', filterVideos);
+      // Tekstsøgning håndteres nu globalt via dropdown i toppen (MainLayout). Tag-filtrering bevares.
       filterTags.forEach(tagBtn => {
         tagBtn.addEventListener('click', (e) => {
           filterTags.forEach(btn => btn.classList.remove('active'));
