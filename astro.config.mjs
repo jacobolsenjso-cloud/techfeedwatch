@@ -17,8 +17,88 @@ const shortSlugs = new Set(
     .map((file) => file.replace(/\.md$/, ''))
 );
 
+// --- Auto-glossar-links: byg term -> slug-kort fra glossar-filerne (læses ved build-tid) ---
+const glossaryDir = path.join(__dirname, 'src/content/glossary');
+const glossaryTerms = fs.existsSync(glossaryDir)
+  ? fs.readdirSync(glossaryDir)
+      .filter((f) => f.endsWith('.md'))
+      .map((f) => {
+        const c = fs.readFileSync(path.join(glossaryDir, f), 'utf-8');
+        const term = (c.match(/term:\s*"(.*?)"/) || [])[1];
+        const slug = (c.match(/slug:\s*"(.*?)"/) || [])[1];
+        return term && slug ? { term, slug } : null;
+      })
+      .filter(Boolean)
+      // Længste termer først, så fx "Machine Learning" vinder over kortere delmatch
+      .sort((a, b) => b.term.length - a.term.length)
+  : [];
+
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// Rehype-plugin: linker første forekomst af hvert glossar-ord i videoer/guides (ikke i selve glossaret).
+function rehypeGlossaryLinks() {
+  const SKIP = new Set(['a', 'code', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'script', 'style']);
+  const MAX_LINKS = 8;
+  return (tree, file) => {
+    const src = (file && (file.path || (file.history && file.history[0]))) || '';
+    if (!/[\\/]content[\\/](videos|guides)[\\/]/.test(src)) return;
+    if (glossaryTerms.length === 0) return;
+    const remaining = glossaryTerms.map((t) => ({ ...t, re: new RegExp('\\b' + escapeRegExp(t.term) + '\\b', 'i') }));
+    let linked = 0;
+
+    const tryLinkText = (value) => {
+      if (!remaining.length) return null;
+      let best = null;
+      for (const t of remaining) {
+        const m = t.re.exec(value);
+        if (m && (best === null || m.index < best.index)) best = { index: m.index, matched: m[0], slug: t.slug, term: t.term };
+      }
+      if (!best) return null;
+      // Fjern termen fra puljen, så den kun linkes én gang pr. side
+      const idx = remaining.findIndex((t) => t.term === best.term);
+      if (idx !== -1) remaining.splice(idx, 1);
+      const before = value.slice(0, best.index);
+      const after = value.slice(best.index + best.matched.length);
+      const nodes = [];
+      if (before) nodes.push({ type: 'text', value: before });
+      nodes.push({
+        type: 'element', tagName: 'a',
+        properties: { href: `/glossary/${best.slug}`, className: ['glossary-link'] },
+        children: [{ type: 'text', value: best.matched }],
+      });
+      if (after) nodes.push({ type: 'text', value: after });
+      return nodes;
+    };
+
+    const walk = (node) => {
+      if (linked >= MAX_LINKS) return;
+      if (!node.children) return;
+      for (let i = 0; i < node.children.length; i++) {
+        if (linked >= MAX_LINKS) return;
+        const child = node.children[i];
+        if (child.type === 'element') {
+          if (SKIP.has(child.tagName)) continue;
+          walk(child);
+        } else if (child.type === 'text') {
+          const replacement = tryLinkText(child.value);
+          if (replacement) {
+            node.children.splice(i, 1, ...replacement);
+            i += replacement.length - 1;
+            linked++;
+          }
+        }
+      }
+    };
+
+    try { walk(tree); } catch (e) { /* aldrig lade et link-fejl vælte hele buildet */ }
+  };
+}
+
 export default defineConfig({
   site: 'https://techfeedwatch.com',
+  markdown: {
+    rehypePlugins: [rehypeGlossaryLinks],
+  },
   integrations: [
     sitemap({
       filter: (page) => {

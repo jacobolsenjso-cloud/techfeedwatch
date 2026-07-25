@@ -256,6 +256,7 @@ async function run() {
     TITLE: A highly engaging, click-worthy headline
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
+    META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
     FAQ:
     Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
     Q: [question]
@@ -287,7 +288,8 @@ async function run() {
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagsMatch = rawText.match(/TAGS:\s*(.*)/i);
-    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=FAQ:|CONTENT:|$)/i);
+    const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=META:|FAQ:|CONTENT:|$)/i);
+    const metaMatch = rawText.match(/META:\s*(.*)/i);
 
     const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
     const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
@@ -296,6 +298,10 @@ async function run() {
     const safeTags = rawTagsList.filter(t => ALLOWED_TAGS.includes(t));
     const finalTags = safeTags.length > 0 ? safeTags : ["AI & Tech"];
     const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
+    let safeMeta = (metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    if (!safeMeta) safeMeta = safeSummary;
+    if (safeMeta.length > 157) safeMeta = safeMeta.slice(0, 157).replace(/\s+\S*$/, '').trim() + '…';
 
     // Saniter FAQ-tekst: fjern anførselstegn, klip markdown-links til bare teksten, trim
     function sanitizeFaqText(str) {
@@ -342,7 +348,9 @@ async function run() {
 
     const tagsYaml = "tags:\n" + finalTags.map(t => `  - ${toYamlDoubleQuoted(t)}`).join('\n') + "\n";
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\n${tagsYaml}summary: "${safeSummary}"\nduration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    const metaYaml = (!isShort && safeMeta) ? `metaDescription: ${toYamlDoubleQuoted(safeMeta)}\n` : "";
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

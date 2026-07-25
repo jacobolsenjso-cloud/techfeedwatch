@@ -144,9 +144,37 @@ const videoSchema = {
     "name": "Jacob Olsen"
   }
 };
+
+// Article-schema styrker E-E-A-T (forfatter + dato) på de rigtige artikelsider (ikke Shorts)
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": summary || title,
+  "image": `https://techfeedwatch.com/og/${slug}.jpg`,
+  "datePublished": new Date(date).toISOString(),
+  "dateModified": new Date(date).toISOString(),
+  "author": { "@type": "Person", "name": "Jacob Olsen", "url": "https://techfeedwatch.com/about" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tech Feed Watch",
+    "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/og-default.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl }
+};
+
+// Shorts: kun VideoObject. Artikler: både VideoObject og Article (array = flere schema-noder)
+const pageSchema = isShort ? videoSchema : [videoSchema, articleSchema];
+
+// Kort meta-beskrivelse så Google ikke klipper den af (~155 tegn). Nye artikler kan angive metaDescription;
+// ellers trunkeres summary pænt ved ordgrænse.
+const rawMeta = (video.frontmatter.metaDescription || summary || "").trim();
+const metaDesc = rawMeta.length > 157
+  ? rawMeta.slice(0, 157).replace(/\s+\S*$/, '').trim() + '…'
+  : rawMeta;
 ---
 
-<MainLayout title={title} description={summary} image={`https://techfeedwatch.com/og/${slug}.jpg`} imageWidth={1200} imageHeight={630} schema={videoSchema} noindex={isShort === true}>
+<MainLayout title={title} description={metaDesc} image={`https://techfeedwatch.com/og/${slug}.jpg`} imageWidth={1200} imageHeight={630} schema={pageSchema} noindex={isShort === true}>
 
   {isShort && <script is:inline>document.body.classList.add('shorts-mode');</script>}
 
