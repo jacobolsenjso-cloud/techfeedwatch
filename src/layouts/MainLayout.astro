@@ -52,6 +52,15 @@ if (currentPath.startsWith('/video/')) {
     {/* NYT: Google AdSense Verificeringskode indsættes her øverst i head */}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9695260339642032" crossorigin="anonymous"></script>
 
+    {/* Google Analytics (GA4) */}
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-2C7N1GP697"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2C7N1GP697');
+    </script>
+
     <meta name="description" content={description || defaultDesc} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" type="application/rss+xml" title="Tech Feed Watch RSS" href="https://techfeedwatch.com/rss.xml" />
