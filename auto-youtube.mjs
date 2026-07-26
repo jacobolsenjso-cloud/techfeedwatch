@@ -23,6 +23,7 @@ const CHANNELS = [
   { id: 'UCbfYPyITQ-7l4upoX8nvctg', name: 'Two Minute Papers' },
   { id: 'UCsBjURrPoezykLs9EqgamOA', name: 'Fireship' },
   { id: 'UCqK_GSMbpiV8spgD3ZGloSw', name: 'Coin Bureau' },
+  { id: 'UCknLrEdhRCp1aegoMqRaCZg', name: 'DW News' },
 ];
 
 const MAX_NORMAL_PER_RUN = 9;
