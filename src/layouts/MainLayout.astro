@@ -201,6 +201,10 @@ const siteSchema = [
       .notif-newdot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; flex-shrink: 0; }
       .notif-empty { padding: 24px 14px; text-align: center; color: #6b7280; font-size: 0.88rem; }
       body.dark-mode .notif-empty { color: #9ca3af; }
+      /* Mobil: panelet ankres til viewporten med lige margener, så det er centreret og aldrig klippes */
+      @media (max-width: 768px) {
+        .notif-panel { position: fixed; top: 64px; left: 12px; right: 12px; width: auto; max-width: none; z-index: 1100; }
+      }
 
       .content-area { overflow-y: scroll !important; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: #cbd5e1 var(--bg-color); }
       .content-area::-webkit-scrollbar { width: 14px; }
