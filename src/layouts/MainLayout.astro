@@ -269,6 +269,7 @@ if (currentPath.startsWith('/video/')) {
     <div class="main-layout">
         <aside class="sidebar" id="sidebar">
         <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>🏠 Home</a>
+        <a href="/latest" class={`nav-item ${currentPath.startsWith('/latest') ? 'active' : ''}`}>🆕 Latest</a>
         <a href="/shorts" class={`nav-item ${currentPath.startsWith('/shorts') ? 'active' : ''}`}>⚡ Shorts</a>
         <hr style="width: 100%; border: 0; border-top: 1px solid var(--border-color); margin: 10px 0;" />
         <a href="/library" class={`nav-item ${currentPath.startsWith('/library') ? 'active' : ''}`}>📚 Library</a>

@@ -1,0 +1,104 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
+
+const toDay = (d) => new Date(d).toISOString().split('T')[0];
+const todayStr = new Date().toISOString().split('T')[0];
+const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+const formatDate = (d: string) => {
+  const parsed = new Date(d);
+  return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+
+// Kun rigtige artikler (ikke Shorts), nyeste først
+const articles = allVideos
+  .filter((v: any) => !v.frontmatter.isShort)
+  .map((v: any) => ({ slug: v.file.split('/').pop().replace('.md', ''), fm: v.frontmatter, day: toDay(v.frontmatter.date) }))
+  .sort((a: any, b: any) => new Date(b.fm.date).valueOf() - new Date(a.fm.date).valueOf());
+
+const today = articles.filter((a: any) => a.day === todayStr);
+const yesterday = articles.filter((a: any) => a.day === yesterdayStr);
+
+// Sikkerheds-fallback: hvis i dag + i går er tyndt, fyldes op med de nyeste artikler udenom
+const shown = new Set([...today, ...yesterday].map((a: any) => a.slug));
+let earlier: any[] = [];
+if (today.length + yesterday.length < 6) {
+  earlier = articles.filter((a: any) => !shown.has(a.slug)).slice(0, 12 - (today.length + yesterday.length));
+}
+
+const sections = [
+  { title: 'Today', items: today },
+  { title: 'Yesterday', items: yesterday },
+  { title: 'Recently added', items: earlier },
+].filter((s) => s.items.length > 0);
+
+const description = "The newest AI, tech, fintech, and crypto articles on Tech Feed Watch - published today and yesterday.";
+---
+
+<MainLayout title="Latest" description={description}>
+  <style is:global>
+    .latest-wrapper { padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
+    .latest-header { font-size: 2.2rem; margin: 0 0 8px 0; display: flex; align-items: center; gap: 12px; }
+    .latest-sub { color: #6b7280; font-size: 1.05rem; margin: 0 0 34px 0; }
+    body.dark-mode .latest-sub { color: #9ca3af; }
+
+    .latest-section { margin-bottom: 44px; }
+    .latest-day-title { font-size: 1.4rem; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
+    .latest-count { font-size: 0.85rem; font-weight: 600; color: #6b7280; background: var(--hover-bg); border-radius: 20px; padding: 2px 10px; }
+    body.dark-mode .latest-count { color: #9ca3af; }
+
+    .latest-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
+    .watch-card:hover { transform: translateY(-3px); }
+    .watch-card-thumb { aspect-ratio: 16/9; border-radius: 12px; margin-bottom: 10px; position: relative; overflow: hidden; }
+    .duration-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
+    .new-badge { position: absolute; top: 8px; left: 8px; background: #ef4444; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .tma-grid-title { margin: 0 0 5px 0; font-size: 15px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .watch-card:hover .tma-grid-title { color: #ef4444; }
+    .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
+    body.dark-mode .tma-grid-meta { color: #9ca3af; }
+
+    .latest-empty { color: #6b7280; font-size: 1.05rem; padding: 20px 0; }
+    body.dark-mode .latest-empty { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .latest-wrapper { padding: 15px; }
+      .latest-header { font-size: 1.8rem; }
+      .latest-grid { grid-template-columns: 1fr; gap: 20px; }
+      .watch-card-thumb { border-radius: 8px; }
+    }
+  </style>
+
+  <div class="latest-wrapper">
+    <h1 class="latest-header">🆕 Latest</h1>
+    <p class="latest-sub">Fresh analysis from the last couple of days — AI, tech, fintech, and crypto.</p>
+
+    {sections.length === 0 && (
+      <p class="latest-empty">No new articles right now. Check back shortly!</p>
+    )}
+
+    {sections.map((section) => (
+      <div class="latest-section">
+        <h2 class="latest-day-title">{section.title} <span class="latest-count">{section.items.length}</span></h2>
+        <div class="latest-grid">
+          {section.items.map((item: any) => (
+            <a href={`/video/${item.slug}`} class="watch-card">
+              <div class="watch-card-thumb">
+                <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
+                {section.title === 'Today' && <div class="new-badge">NEW</div>}
+                <div class="duration-badge">{item.fm.duration || '0:00'}</div>
+                <span class="watch-card-play" aria-hidden="true">▶</span>
+              </div>
+              <div>
+                <h3 class="tma-grid-title">{item.fm.title}</h3>
+                <p class="tma-grid-meta">Tech Feed Watch • {formatDate(item.fm.date)}{item.fm.minutesRead ? ` • ${item.fm.minutesRead} min read` : ''}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</MainLayout>
