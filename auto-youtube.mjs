@@ -24,6 +24,12 @@ const CHANNELS = [
   { id: 'UCsBjURrPoezykLs9EqgamOA', name: 'Fireship' },
   { id: 'UCqK_GSMbpiV8spgD3ZGloSw', name: 'Coin Bureau' },
   { id: 'UCknLrEdhRCp1aegoMqRaCZg', name: 'DW News' },
+  { id: 'UCrM7B7SL_g1edFOnmj-SDKg', name: 'Bloomberg Tech' },
+  { id: 'UCIALMKvObZNtJ6AmdCLP7Lg', name: 'Bloomberg Television' },
+  { id: 'UCUMZ7gohGI9HcU9VNsr2FJQ', name: 'Bloomberg Originals' },
+  { id: 'UCEAZeUIeJs0IjQiqTCdVSIg', name: 'Yahoo Finance' },
+  { id: 'UC_fyAp919RnkKmBrMXGwnUQ', name: 'Google Career Certificates' },
+  { id: 'UCeeFfhMcJa1kjtfZAGskOCA', name: 'TechLinked' },
 ];
 
 const MAX_NORMAL_PER_RUN = 9;
