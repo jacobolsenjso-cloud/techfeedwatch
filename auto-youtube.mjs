@@ -44,7 +44,7 @@ const CHANNELS = [
   { id: 'UCeeFfhMcJa1kjtfZAGskOCA', name: 'TechLinked' },
 ];
 
-const MAX_NORMAL_PER_RUN = 9;
+const MAX_NORMAL_PER_RUN = 3;
 const MAX_SHORTS_PER_RUN = 1;
 
 // Friskheds-vindue: kun videoer nyere end dette, så feedet føles aktuelt. Nem at justere.
