@@ -1,0 +1,69 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Jacob Olsen";
+const description = "Jacob Olsen is the founder and editor of Tech Feed Watch, covering AI, technology, fintech, and crypto with clear, unbiased analysis.";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jacob Olsen",
+  "url": "https://techfeedwatch.com/author/jacob-olsen",
+  "image": "https://techfeedwatch.com/jacob-olsen.png",
+  "jobTitle": "Founder & Editor",
+  "worksFor": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "description": "Jacob Olsen is the founder and editor of Tech Feed Watch, turning the best AI, tech, fintech, and crypto videos into clear, unbiased written analysis.",
+  "knowsAbout": ["Artificial Intelligence", "Technology", "Fintech", "Cryptocurrency", "SEO", "Automation"],
+  "email": "mailto:info@techfeedwatch.com"
+};
+---
+
+<MainLayout title={title} description={description} schema={personSchema}>
+  <style is:global>
+    .author-page { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .author-hero { display: flex; gap: 22px; align-items: center; margin-bottom: 30px; }
+    .author-hero img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--border-color); }
+    .author-hero h1 { margin: 0 0 4px 0; font-size: 2rem; }
+    .author-hero .role { color: #ef4444; font-weight: 700; font-size: 1rem; margin: 0 0 8px 0; }
+    .author-hero .expertise { color: #6b7280; font-size: 0.92rem; margin: 0; }
+    body.dark-mode .author-hero .expertise { color: #9ca3af; }
+
+    .author-body { line-height: 1.7; font-size: 1.05rem; }
+    .author-body h2 { font-size: 1.4rem; margin: 32px 0 12px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+    .author-body p { margin: 0 0 16px 0; color: #374151; }
+    body.dark-mode .author-body p { color: #d1d5db; }
+    .author-body a { color: #3b82f6; text-decoration: none; }
+    .author-body a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .author-page { padding: 25px 15px; }
+      .author-hero { flex-direction: column; text-align: center; }
+      .author-hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+
+  <div class="author-page">
+    <div class="author-hero">
+      <img src="/jacob-olsen.png" alt="Jacob Olsen" width="110" height="110" />
+      <div>
+        <h1>Jacob Olsen</h1>
+        <p class="role">Founder &amp; Editor, Tech Feed Watch</p>
+        <p class="expertise">Writes about AI, technology, fintech, and crypto.</p>
+      </div>
+    </div>
+
+    <div class="author-body">
+      <p>Jacob Olsen is the founder and editor of <a href="/about">Tech Feed Watch</a>, a project built on a simple belief: the most important ideas in technology shouldn't be locked inside hour-long videos that most people never have time to watch.</p>
+
+      <h2>What I cover</h2>
+      <p>My focus is the fast-moving world of artificial intelligence, technology, fintech, and crypto. I follow reputable creators and outlets across YouTube — from independent builders and researchers to major newsrooms — and turn the most relevant videos into clear, structured written analysis that gets you the substance in a few minutes.</p>
+
+      <h2>How I work</h2>
+      <p>Every article starts with a real video as its primary source. I use AI as a drafting and structuring tool, but the topic selection, editorial judgement, fact-checking, and quality standards are mine. The aim is never to replace the original creator — it's to make their insight faster to access and easier to understand, while adding context and an objective take on why it matters.</p>
+      <p>I care about getting things right. If you ever spot an error, I want to hear about it and fix it.</p>
+
+      <h2>Get in touch</h2>
+      <p>You can reach me at <a href="/contact">the contact page</a> or directly at <strong>info@techfeedwatch.com</strong> — for feedback, corrections, or a video worth covering.</p>
+    </div>
+  </div>
+</MainLayout>

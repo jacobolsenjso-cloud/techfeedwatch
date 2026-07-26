@@ -41,12 +41,40 @@ if (currentPath.startsWith('/video/')) {
   sectionName = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
   breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": sectionName, "item": `https://techfeedwatch.com${currentPath}` });
 }
+
+// WebSite- + Organization-schema (kun forside): giver Google mulighed for søgefelt-udvidelse (sitelinks searchbox)
+const siteSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tech Feed Watch",
+    "url": "https://techfeedwatch.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": { "@type": "EntryPoint", "urlTemplate": "https://techfeedwatch.com/search?q={search_term_string}" },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tech Feed Watch",
+    "url": "https://techfeedwatch.com/",
+    "logo": "https://techfeedwatch.com/og-default.png"
+  }
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://img.youtube.com" />
+    <link rel="dns-prefetch" href="https://img.youtube.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <title>{title ? `${title} | TechFeedWatch` : "TechFeedWatch"}</title>
     
     {/* NYT: Google AdSense Verificeringskode indsættes her øverst i head */}
@@ -84,6 +112,9 @@ if (currentPath.startsWith('/video/')) {
     
     {/* Indsætter vores nye Breadcrumb Schema på alle sider */}
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    {/* WebSite + Organization schema, kun på forsiden */}
+    {currentPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />}
 
     <style is:global>
       :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; }

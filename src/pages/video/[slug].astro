@@ -154,7 +154,7 @@ const articleSchema = {
   "image": `https://techfeedwatch.com/og/${slug}.jpg`,
   "datePublished": new Date(date).toISOString(),
   "dateModified": new Date(date).toISOString(),
-  "author": { "@type": "Person", "name": "Jacob Olsen", "url": "https://techfeedwatch.com/about" },
+  "author": { "@type": "Person", "name": "Jacob Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen" },
   "publisher": {
     "@type": "Organization",
     "name": "Tech Feed Watch",
@@ -260,11 +260,18 @@ const metaDesc = rawMeta.length > 157
     .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #ef4444; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
     .author-box-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
     .author-box-name { font-weight: 700; font-size: 1.15rem; margin: 0; }
+    .author-box-link { color: inherit; text-decoration: none; }
+    .author-box-link:hover { color: #ef4444; }
     .author-box-title { font-size: 0.9rem; font-weight: 600; color: #ef4444; margin: 4px 0 14px 0; }
     body.dark-mode .author-box-title { color: #f87171; }
     .author-box-bio { font-size: 1rem; line-height: 1.7; margin: 0 0 16px 0; }
     .author-box-ai-note { font-size: 0.82rem; font-style: italic; color: #6b7280; margin: 0; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--border-color); }
     body.dark-mode .author-box-ai-note { color: #9ca3af; }
+
+    .related-articles { margin-top: 45px; }
+    .related-articles-title { font-size: 1.4rem; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
+    .related-articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+    @media (max-width: 600px) { .related-articles-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 
     @media (max-width: 600px) {
       .author-box { padding: 20px; gap: 14px; }
@@ -779,7 +786,7 @@ const metaDesc = rawMeta.length > 157
         <div class="author-box">
           <img src="/jacob-olsen.png" alt="Jacob Olsen" class="author-box-photo" width="80" height="80" />
           <div>
-            <p class="author-box-name">Jacob Olsen</p>
+            <p class="author-box-name"><a href="/author/jacob-olsen" class="author-box-link">Jacob Olsen</a></p>
             <p class="author-box-title">Founder & CEO of Tech Feed Watch</p>
             <p class="author-box-bio">Jacob Olsen, Founder and CEO of Tech Feed Watch, helps you navigate the future of AI with unbiased insights.</p>
             <p class="author-box-ai-note">This analysis was produced with AI assistance and edited for accuracy and perspective by Jacob Olsen, founder of Tech Feed Watch.</p>
@@ -818,6 +825,23 @@ const metaDesc = rawMeta.length > 157
                   <span class="related-guide-badge">{g.category}</span>
                   <span class="related-guide-name">{g.title}</span>
                   <span class="related-guide-cta">Read the guide →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {recommendPool.length > 0 && (
+          <div class="related-articles">
+            <h2 class="related-articles-title">Related articles</h2>
+            <div class="related-articles-grid">
+              {recommendPool.slice(0, 8).map((r: any) => (
+                <a href={`/video/${r.slug}`} class="watch-card">
+                  <div class="watch-card-thumb">
+                    <img src={`https://img.youtube.com/vi/${r.youtubeId}/mqdefault.jpg`} alt={r.title} loading="lazy" />
+                    <span class="watch-card-play" aria-hidden="true">▶</span>
+                  </div>
+                  <h3 class="tma-grid-title">{r.title}</h3>
                 </a>
               ))}
             </div>
