@@ -191,16 +191,20 @@ async function findNewestVideos() {
 
   const topic = pickTopicCluster();
   const channel = pickChannel();
+  // Shorts tjener ikke penge (noindex, ingen annoncer), så de laves kun hver 3. kørsel (~hver 6. time).
+  // Sparer samtidig API-kvote de øvrige kørsler, hvor short-søgningen springes helt over.
+  const isShortsRun = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % 3 === 0;
   console.log(`Info: Vælger emneklynge: "${topic}"`);
   console.log(`Info: Vælger kanal: "${channel.name}"`);
+  console.log(`Info: Shorts denne kørsel: ${isShortsRun ? 'JA' : 'nej'}`);
 
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
-    // Normale: medium + long (relevance) + én roterende kvalitetskanal. Shorts: short (date), maxResults=4, mål ~3.
+    // Normale: medium (relevance) + long (date) + én roterende kvalitetskanal. Shorts: kun hver 3. kørsel.
     const [mediumVideos, longVideos, shortVideos, channelVideos] = await Promise.all([
       searchVideos(topic, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
       searchVideos(topic, { videoDuration: 'long', order: 'date', maxResults: 5 }),
-      searchVideos(topic, { videoDuration: 'short', order: 'date', maxResults: 4 }),
+      isShortsRun ? searchVideos(topic, { videoDuration: 'short', order: 'date', maxResults: 4 }) : Promise.resolve([]),
       searchChannel(channel.id, topic, 3),
     ]);
 
