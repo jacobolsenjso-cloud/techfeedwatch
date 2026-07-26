@@ -1,0 +1,115 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Case Converter";
+const description = "Convert text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case and more. Free and browser-based.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .cc-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .cc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .cc-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .cc-header p { color: #9ca3af; }
+
+    .cc-textarea { width: 100%; min-height: 150px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; resize: vertical; line-height: 1.6; }
+    .cc-textarea:focus { outline: none; border-color: #ef4444; }
+
+    .cc-btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .cc-btn { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .cc-btn:hover { border-color: #ef4444; color: #ef4444; }
+
+    .cc-output-label { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block; }
+    .cc-actions { display: flex; gap: 10px; margin-top: 12px; }
+    .cc-action { padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+    .cc-action.primary { background: #ef4444; color: #fff; border-color: #ef4444; }
+    .cc-action:hover { border-color: #ef4444; }
+
+    .cc-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .cc-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .cc-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .cc-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .cc-wrapper { padding: 20px 15px; } }
+  </style>
+
+  <div class="cc-wrapper">
+    <div class="cc-header">
+      <h1>🔤 Case Converter</h1>
+      <p>Paste text and convert it to any case with one click — great for titles, code, slugs, and variable names. Everything stays in your browser.</p>
+    </div>
+
+    <textarea id="ccInput" class="cc-textarea" placeholder="Type or paste your text here..."></textarea>
+
+    <div class="cc-btns">
+      <button type="button" class="cc-btn" data-case="upper">UPPERCASE</button>
+      <button type="button" class="cc-btn" data-case="lower">lowercase</button>
+      <button type="button" class="cc-btn" data-case="title">Title Case</button>
+      <button type="button" class="cc-btn" data-case="sentence">Sentence case</button>
+      <button type="button" class="cc-btn" data-case="camel">camelCase</button>
+      <button type="button" class="cc-btn" data-case="pascal">PascalCase</button>
+      <button type="button" class="cc-btn" data-case="snake">snake_case</button>
+      <button type="button" class="cc-btn" data-case="kebab">kebab-case</button>
+    </div>
+
+    <label class="cc-output-label" for="ccOutput">Result</label>
+    <textarea id="ccOutput" class="cc-textarea" readonly placeholder="Your converted text appears here..."></textarea>
+
+    <div class="cc-actions">
+      <button type="button" id="ccCopy" class="cc-action primary">Copy result</button>
+      <button type="button" id="ccClear" class="cc-action">Clear</button>
+    </div>
+
+    <div class="cc-info-section">
+      <h2>Which case should you use?</h2>
+      <p><strong>Title Case</strong> suits headlines, <strong>Sentence case</strong> suits body text and UI copy. For code, <strong>camelCase</strong> and <strong>PascalCase</strong> are common in JavaScript and many languages, <strong>snake_case</strong> in Python and databases, and <strong>kebab-case</strong> for URLs, CSS classes, and file names.</p>
+      <p>All conversion happens locally in your browser, so you can safely paste sensitive text — nothing is sent anywhere.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('ccInput') as HTMLTextAreaElement;
+      const output = document.getElementById('ccOutput') as HTMLTextAreaElement;
+
+      const words = (s: string) => s.replace(/[_-]+/g, ' ').replace(/([a-z0-9])([A-Z])/g, '$1 $2').trim().split(/\s+/).filter(Boolean);
+      const cap = (w: string) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+
+      const convert = (text: string, mode: string): string => {
+        if (!text.trim()) return '';
+        switch (mode) {
+          case 'upper': return text.toUpperCase();
+          case 'lower': return text.toLowerCase();
+          case 'title': return words(text).map(cap).join(' ');
+          case 'sentence': {
+            const lower = text.toLowerCase();
+            return lower.replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
+          }
+          case 'camel': { const w = words(text).map((x) => x.toLowerCase()); return w.map((x, i) => i === 0 ? x : cap(x)).join(''); }
+          case 'pascal': return words(text).map(cap).join('');
+          case 'snake': return words(text).map((x) => x.toLowerCase()).join('_');
+          case 'kebab': return words(text).map((x) => x.toLowerCase()).join('-');
+          default: return text;
+        }
+      };
+
+      document.querySelectorAll('.cc-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const mode = (btn as HTMLElement).getAttribute('data-case') || '';
+          output.value = convert(input.value, mode);
+        });
+      });
+
+      document.getElementById('ccClear')!.addEventListener('click', () => { input.value = ''; output.value = ''; input.focus(); });
+      document.getElementById('ccCopy')!.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(output.value);
+          const btn = document.getElementById('ccCopy') as HTMLButtonElement;
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+    });
+  </script>
+</MainLayout>

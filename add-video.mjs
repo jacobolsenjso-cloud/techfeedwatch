@@ -235,6 +235,14 @@ async function run() {
       return;
     }
 
+    // Kvalitets-bund: normale artikler kræver en vis mængde kilde-tekst, så tynde videoer ikke
+    // bliver til tynde artikler. Beskytter mod "low value content" hos Google/AdSense.
+    const MIN_SOURCE_CHARS = 400;
+    if (!isShort && text.trim().length < MIN_SOURCE_CHARS) {
+      console.log(`Sprunget over: kilde for tynd (${text.trim().length} tegn) for ${videoId}`);
+      return;
+    }
+
     // Vælg artikel-profil deterministisk ud fra video-ID, så artiklerne varierer i struktur og længde. Kun normale artikler bruger den.
     const profileHash = hashString(videoId || '');
     const articleProfile = ARTICLE_PROFILES[profileHash % ARTICLE_PROFILES.length];

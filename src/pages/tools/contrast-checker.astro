@@ -1,0 +1,128 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Color Contrast Checker";
+const description = "Check color contrast against WCAG accessibility standards. Enter a text and background color to see the contrast ratio and AA/AAA pass or fail. Free and browser-based.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .con-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .con-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .con-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .con-header p { color: #9ca3af; }
+
+    .con-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .con-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .con-row { display: flex; gap: 8px; align-items: center; }
+    .con-swatch { width: 46px; height: 46px; border: 1px solid var(--border-color); border-radius: 8px; padding: 0; cursor: pointer; background: none; }
+    .con-hex { flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: 'Courier New', Consolas, monospace; box-sizing: border-box; }
+    .con-hex:focus { outline: none; border-color: #ef4444; }
+
+    .con-preview { margin-top: 24px; border-radius: 12px; padding: 30px 24px; text-align: center; border: 1px solid var(--border-color); }
+    .con-preview .big { font-size: 1.7rem; font-weight: 700; margin-bottom: 8px; }
+    .con-preview .small { font-size: 0.95rem; }
+
+    .con-result { margin-top: 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .con-ratio { font-size: 2rem; font-weight: 800; }
+    .con-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .con-badge { padding: 6px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; }
+    .con-pass { background: rgba(22,163,74,0.15); color: #16a34a; }
+    .con-fail { background: rgba(220,38,38,0.15); color: #dc2626; }
+
+    .con-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .con-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .con-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .con-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .con-wrapper { padding: 20px 15px; } .con-controls { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="con-wrapper">
+    <div class="con-header">
+      <h1>🎨 Color Contrast Checker</h1>
+      <p>Check whether your text and background colors meet WCAG accessibility standards. Good contrast also helps readability and SEO. Runs entirely in your browser.</p>
+    </div>
+
+    <div class="con-controls">
+      <div class="con-field">
+        <label for="conFgHex">Text color</label>
+        <div class="con-row">
+          <input type="color" id="conFg" class="con-swatch" value="#111111" />
+          <input type="text" id="conFgHex" class="con-hex" value="#111111" />
+        </div>
+      </div>
+      <div class="con-field">
+        <label for="conBgHex">Background color</label>
+        <div class="con-row">
+          <input type="color" id="conBg" class="con-swatch" value="#ffffff" />
+          <input type="text" id="conBgHex" class="con-hex" value="#ffffff" />
+        </div>
+      </div>
+    </div>
+
+    <div class="con-preview" id="conPreview">
+      <div class="big">Large text preview</div>
+      <div class="small">Normal body text preview — the quick brown fox jumps over the lazy dog.</div>
+    </div>
+
+    <div class="con-result">
+      <span class="con-ratio" id="conRatio">21.00</span>
+      <div class="con-badges" id="conBadges"></div>
+    </div>
+
+    <div class="con-info-section">
+      <h2>What do AA and AAA mean?</h2>
+      <p>The WCAG accessibility guidelines set minimum contrast ratios so text stays readable for everyone, including people with low vision. <strong>AA</strong> requires at least 4.5:1 for normal text and 3:1 for large text (18pt bold or 24pt regular). <strong>AAA</strong> is stricter: 7:1 for normal text and 4.5:1 for large text.</p>
+      <p>Beyond compliance, strong contrast simply makes your content easier to read on every screen and in bright sunlight — which keeps visitors on the page longer.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const fg = document.getElementById('conFg') as HTMLInputElement;
+      const bg = document.getElementById('conBg') as HTMLInputElement;
+      const fgHex = document.getElementById('conFgHex') as HTMLInputElement;
+      const bgHex = document.getElementById('conBgHex') as HTMLInputElement;
+      const preview = document.getElementById('conPreview') as HTMLDivElement;
+      const ratioEl = document.getElementById('conRatio') as HTMLSpanElement;
+      const badges = document.getElementById('conBadges') as HTMLDivElement;
+
+      const parseHex = (h: string): [number, number, number] | null => {
+        let s = h.trim().replace(/^#/, '');
+        if (s.length === 3) s = s.split('').map((c) => c + c).join('');
+        if (!/^[0-9a-fA-F]{6}$/.test(s)) return null;
+        return [parseInt(s.slice(0, 2), 16), parseInt(s.slice(2, 4), 16), parseInt(s.slice(4, 6), 16)];
+      };
+      const lum = ([r, g, b]: number[]) => {
+        const a = [r, g, b].map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+        return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+      };
+      const badge = (label: string, pass: boolean) => '<span class="con-badge ' + (pass ? 'con-pass' : 'con-fail') + '">' + label + ' ' + (pass ? '✓' : '✗') + '</span>';
+
+      const update = () => {
+        const f = parseHex(fgHex.value); const b = parseHex(bgHex.value);
+        if (!f || !b) { ratioEl.textContent = '—'; badges.innerHTML = '<span class="con-badge con-fail">Invalid hex</span>'; return; }
+        const L1 = lum(f), L2 = lum(b);
+        const ratio = (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05);
+        ratioEl.textContent = ratio.toFixed(2) + ':1';
+        preview.style.color = fgHex.value;
+        preview.style.background = bgHex.value;
+        badges.innerHTML =
+          badge('AA normal', ratio >= 4.5) +
+          badge('AA large', ratio >= 3) +
+          badge('AAA normal', ratio >= 7) +
+          badge('AAA large', ratio >= 4.5);
+      };
+
+      const syncFrom = (picker: HTMLInputElement, hex: HTMLInputElement) => { hex.value = picker.value; update(); };
+      const syncTo = (hex: HTMLInputElement, picker: HTMLInputElement) => { const p = parseHex(hex.value); if (p) picker.value = '#' + p.map((n) => n.toString(16).padStart(2, '0')).join(''); update(); };
+
+      fg.addEventListener('input', () => syncFrom(fg, fgHex));
+      bg.addEventListener('input', () => syncFrom(bg, bgHex));
+      fgHex.addEventListener('input', () => syncTo(fgHex, fg));
+      bgHex.addEventListener('input', () => syncTo(bgHex, bg));
+      update();
+    });
+  </script>
+</MainLayout>

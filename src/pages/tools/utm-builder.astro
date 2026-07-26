@@ -1,0 +1,116 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "UTM Campaign URL Builder";
+const description = "Build trackable campaign URLs with UTM parameters for Google Analytics. Free, instant, and runs entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .utm-wrapper { max-width: 760px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .utm-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .utm-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .utm-header p { color: #9ca3af; }
+
+    .utm-field { margin-bottom: 16px; }
+    .utm-field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+    .utm-field .req { color: #ef4444; }
+    .utm-field .hint { font-weight: 400; color: #9ca3af; font-size: 0.78rem; }
+    .utm-input { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .utm-input:focus { outline: none; border-color: #ef4444; }
+
+    .utm-output-wrap { margin-top: 24px; }
+    .utm-output { width: 100%; min-height: 90px; padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.95rem; word-break: break-all; box-sizing: border-box; }
+    .utm-copy { margin-top: 12px; padding: 12px 20px; border-radius: 8px; border: none; background: #ef4444; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .utm-copy:hover { background: #dc2626; }
+
+    .utm-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .utm-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .utm-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .utm-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .utm-wrapper { padding: 20px 15px; } }
+  </style>
+
+  <div class="utm-wrapper">
+    <div class="utm-header">
+      <h1>🔗 UTM Campaign URL Builder</h1>
+      <p>Add UTM parameters to any link so you can track exactly where your traffic comes from in Google Analytics. Nothing is uploaded.</p>
+    </div>
+
+    <div class="utm-field">
+      <label for="utmUrl">Website URL <span class="req">*</span></label>
+      <input type="text" id="utmUrl" class="utm-input" placeholder="https://techfeedwatch.com/article" />
+    </div>
+    <div class="utm-field">
+      <label for="utmSource">Campaign source <span class="req">*</span> <span class="hint">(utm_source — e.g. newsletter, twitter)</span></label>
+      <input type="text" id="utmSource" class="utm-input" placeholder="twitter" />
+    </div>
+    <div class="utm-field">
+      <label for="utmMedium">Campaign medium <span class="hint">(utm_medium — e.g. social, email, cpc)</span></label>
+      <input type="text" id="utmMedium" class="utm-input" placeholder="social" />
+    </div>
+    <div class="utm-field">
+      <label for="utmCampaign">Campaign name <span class="hint">(utm_campaign — e.g. launch2026)</span></label>
+      <input type="text" id="utmCampaign" class="utm-input" placeholder="launch2026" />
+    </div>
+    <div class="utm-field">
+      <label for="utmTerm">Campaign term <span class="hint">(utm_term — optional, paid keywords)</span></label>
+      <input type="text" id="utmTerm" class="utm-input" placeholder="ai tools" />
+    </div>
+    <div class="utm-field">
+      <label for="utmContent">Campaign content <span class="hint">(utm_content — optional, A/B variant)</span></label>
+      <input type="text" id="utmContent" class="utm-input" placeholder="hero-button" />
+    </div>
+
+    <div class="utm-output-wrap">
+      <label for="utmResult" style="font-size:0.85rem;font-weight:600;">Your campaign URL</label>
+      <div id="utmResult" class="utm-output"></div>
+      <button type="button" id="utmCopy" class="utm-copy">Copy URL</button>
+    </div>
+
+    <div class="utm-info-section">
+      <h2>What are UTM parameters?</h2>
+      <p>UTM parameters are small tags added to the end of a URL — like <strong>?utm_source=twitter&amp;utm_medium=social</strong> — that tell analytics tools where a visitor came from. When someone clicks the tagged link, Google Analytics records the source, medium, and campaign, so you can see exactly which posts, emails, or ads actually drive traffic.</p>
+      <p>The two required fields are <strong>source</strong> (where the link lives) and <strong>medium</strong> (the type of channel). Term and content are optional and mostly used for paid search and A/B testing.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ids = ['utmUrl', 'utmSource', 'utmMedium', 'utmCampaign', 'utmTerm', 'utmContent'];
+      const inputs: Record<string, HTMLInputElement> = {};
+      ids.forEach((id) => { inputs[id] = document.getElementById(id) as HTMLInputElement; });
+      const out = document.getElementById('utmResult') as HTMLDivElement;
+
+      const build = () => {
+        const base = inputs.utmUrl.value.trim();
+        if (!base) { out.textContent = 'Enter a website URL to generate your link…'; return; }
+        const params: string[] = [];
+        const add = (key: string, val: string) => { if (val.trim()) params.push(key + '=' + encodeURIComponent(val.trim())); };
+        add('utm_source', inputs.utmSource.value);
+        add('utm_medium', inputs.utmMedium.value);
+        add('utm_campaign', inputs.utmCampaign.value);
+        add('utm_term', inputs.utmTerm.value);
+        add('utm_content', inputs.utmContent.value);
+        if (!params.length) { out.textContent = base; return; }
+        const sep = base.includes('?') ? '&' : '?';
+        out.textContent = base + sep + params.join('&');
+      };
+
+      ids.forEach((id) => inputs[id].addEventListener('input', build));
+
+      document.getElementById('utmCopy')!.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(out.textContent || '');
+          const btn = document.getElementById('utmCopy') as HTMLButtonElement;
+          const original = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => { btn.textContent = original; }, 2000);
+        } catch (e) {}
+      });
+
+      build();
+    });
+  </script>
+</MainLayout>

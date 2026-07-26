@@ -51,10 +51,15 @@ const MAX_SHORTS_PER_RUN = 1;
 const FRESHNESS_DAYS = 180;
 const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-// Vælger klynge ud fra tidspunktet, så en 2-timers kørsel altid tager næste klynge i rækken.
+// Vægtet rotation: fintech/business (idx 6) og crypto (idx 7) har typisk højest annonce-CPC,
+// dernæst SEO/automation (3) og AI (0). De rammes derfor oftere, men ALLE 8 emner er stadig med.
+// Tallene er indeks ind i TOPIC_CLUSTERS. 14 slots i cyklussen.
+const TOPIC_ROTATION = [0, 0, 1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 7, 7];
+
+// Vælger klynge ud fra tidspunktet via den vægtede rotation, så en 2-timers kørsel tager næste i rækken.
 function pickTopicCluster() {
-  const clusterIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % TOPIC_CLUSTERS.length;
-  return TOPIC_CLUSTERS[clusterIndex];
+  const slot = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % TOPIC_ROTATION.length;
+  return TOPIC_CLUSTERS[TOPIC_ROTATION[slot]];
 }
 
 // Vælger kanal ud fra tidspunktet, så hver kørsel også tager næste kanal i rækken (roterer uafhængigt af klynger).
