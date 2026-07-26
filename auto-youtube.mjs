@@ -4,13 +4,25 @@ import fs from 'fs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-// Fem emneklynger. Robotten roterer mellem dem, så alle dækkes i løbet af dagen.
+// Otte emneklynger (én pr. hovedemne). Robotten roterer mellem dem, så alle dækkes i løbet af dagen.
+// "|" betyder ELLER i YouTube-søgningen, så hver klynge matcher videoer med et af ordene.
 const TOPIC_CLUSTERS = [
-  "artificial intelligence|machine learning|LLM|ChatGPT|Gemini|generative AI|prompt engineering",
-  "technology|quantum computing|GPU|robotics|5G|IoT|augmented reality|virtual reality",
-  "web development|SEO|search engine optimization|no-code|automation|SaaS",
-  "fintech|financial technology|neobank|algorithmic trading|passive income|open banking",
-  "cryptocurrency|bitcoin|ethereum|DeFi|blockchain|Web3|smart contracts",
+  // AI & Tech
+  "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|generative AI|AI agents|AGI",
+  // Tech / hardware
+  "tech|technology|tech news|quantum computing|GPU|semiconductors|AI chips|robotics|smart glasses|spatial computing|AR|VR",
+  // Coding
+  "coding|programming|software engineering|Python|JavaScript|developer tools|vibe coding|AI coding|open source",
+  // SEO & Automation
+  "SEO|search engine optimization|generative engine optimization|AEO|no-code|workflow automation|AI automation|n8n|SaaS",
+  // AI Video & AI image
+  "AI video|text to video|Sora|Runway|Veo|Kling|AI filmmaking|Midjourney|AI image generation|AI content creation",
+  // Productivity
+  "productivity|AI assistant|Notion|NotebookLM|second brain|note taking|AI workflow|automation tools|digital productivity",
+  // Business & Money + Fintech
+  "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|startup",
+  // Crypto
+  "cryptocurrency|crypto|bitcoin|ethereum|solana|DeFi|blockchain|Web3|smart contracts|tokenization|altcoins",
 ];
 
 // Kuraterede kvalitetskanaler. Robotten henter også fra én roterende kanal pr. kørsel, kombineret med
@@ -35,6 +47,10 @@ const CHANNELS = [
 const MAX_NORMAL_PER_RUN = 9;
 const MAX_SHORTS_PER_RUN = 1;
 
+// Friskheds-vindue: kun videoer nyere end dette, så feedet føles aktuelt. Nem at justere.
+const FRESHNESS_DAYS = 180;
+const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 1000).toISOString();
+
 // Vælger klynge ud fra tidspunktet, så en 2-timers kørsel altid tager næste klynge i rækken.
 function pickTopicCluster() {
   const clusterIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % TOPIC_CLUSTERS.length;
@@ -58,6 +74,7 @@ async function searchVideos(query, { videoDuration, order, maxResults }) {
     regionCode: 'US',
     videoDuration,
     order,
+    publishedAfter: PUBLISHED_AFTER,
     maxResults: String(maxResults),
     key: YOUTUBE_API_KEY,
   });
@@ -79,6 +96,7 @@ async function searchChannel(channelId, query, maxResults) {
     relevanceLanguage: 'en',
     regionCode: 'US',
     order: 'relevance',
+    publishedAfter: PUBLISHED_AFTER,
     maxResults: String(maxResults),
     key: YOUTUBE_API_KEY,
   });
@@ -181,7 +199,7 @@ async function findNewestVideos() {
     // Normale: medium + long (relevance) + én roterende kvalitetskanal. Shorts: short (date), maxResults=4, mål ~3.
     const [mediumVideos, longVideos, shortVideos, channelVideos] = await Promise.all([
       searchVideos(topic, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
-      searchVideos(topic, { videoDuration: 'long', order: 'relevance', maxResults: 5 }),
+      searchVideos(topic, { videoDuration: 'long', order: 'date', maxResults: 5 }),
       searchVideos(topic, { videoDuration: 'short', order: 'date', maxResults: 4 }),
       searchChannel(channel.id, topic, 3),
     ]);
