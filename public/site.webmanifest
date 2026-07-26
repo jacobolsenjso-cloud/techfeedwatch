@@ -1,0 +1,13 @@
+{
+  "name": "Tech Feed Watch",
+  "short_name": "TechFeedWatch",
+  "description": "The best AI, tech, fintech, and crypto videos turned into fast, readable analysis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#141317",
+  "theme_color": "#ef4444",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
