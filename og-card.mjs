@@ -26,7 +26,7 @@ const overlaySvg = Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://ww
     <stop offset="100%" stop-color="#000000" stop-opacity="0.82"/>
   </linearGradient></defs>
   <rect width="${W}" height="${H}" fill="url(#g)"/>
-  <polygon points="56,548 56,590 98,569" fill="#ef4444"/>
+  <polygon points="56,548 56,590 98,569" fill="#7c3aed"/>
   <text x="116" y="583" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff">Tech Feed Watch</text>
 </svg>`);
 

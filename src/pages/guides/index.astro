@@ -7,7 +7,7 @@ const videos = Object.values(import.meta.glob('../../content/videos/*.md', { eag
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
   "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
-  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+  "Productivity": "#eab308", "Fintech": "#7c3aed", "Crypto": "#d97706"
 };
 
 const guides = allGuidesRaw
@@ -71,7 +71,7 @@ const description = "In-depth guides that pull together the most important video
     ) : (
       <div class="guides-grid">
         {guides.map((g) => (
-          <a href={`/guides/${g.slug}`} class="guide-index-card" style={`--accent: ${TAG_COLORS[g.category] || '#ef4444'}`}>
+          <a href={`/guides/${g.slug}`} class="guide-index-card" style={`--accent: ${TAG_COLORS[g.category] || '#7c3aed'}`}>
             <span class="guide-index-badge">{g.category}</span>
             <h2 class="guide-index-title">{g.title}</h2>
             <p class="guide-index-desc">{g.description}</p>

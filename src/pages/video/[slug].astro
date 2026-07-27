@@ -79,7 +79,7 @@ const relatedGuides = Object.values(import.meta.glob('../../content/guides/*.md'
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
   "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
-  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+  "Productivity": "#eab308", "Fintech": "#7c3aed", "Crypto": "#d97706"
 };
 
 // Sort by date (newest first) so Next/Previous follow chronological order
@@ -215,7 +215,7 @@ const metaDesc = rawMeta.length > 157
     .action-icon { width: 18px; height: 18px; }
     .btn-active { color: #3b82f6 !important; }
     .btn-active svg { fill: #3b82f6; stroke: #3b82f6; }
-    .summary-box { background-color: var(--hover-bg); border-left: 4px solid #ef4444; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
+    .summary-box { background-color: var(--hover-bg); border-left: 4px solid #7c3aed; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
     .article-meta { display: flex; align-items: center; gap: 8px; margin: -5px 0 18px 0; font-size: 0.9rem; color: #6b7280; font-weight: 500; }
     body.dark-mode .article-meta { color: #9ca3af; }
     .article-meta-sep { opacity: 0.5; }
@@ -252,18 +252,18 @@ const metaDesc = rawMeta.length > 157
     .tool-suggestion { background: var(--hover-bg); border-radius: 8px; padding: 20px; margin-bottom: 30px; border: 1px solid var(--border-color); }
     .tool-suggestion h3 { margin: 0 0 12px 0; font-size: 1.1rem; }
     .tool-suggestion-link { display: block; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; transition: border-color 0.2s, transform 0.2s; }
-    .tool-suggestion-link:hover { border-color: #ef4444; transform: translateY(-2px); }
+    .tool-suggestion-link:hover { border-color: #7c3aed; transform: translateY(-2px); }
     .tool-suggestion strong { display: block; margin-bottom: 5px; font-size: 1rem; }
     .tool-suggestion p { margin: 0; font-size: 0.9rem; color: #6b7280; }
     body.dark-mode .tool-suggestion p { color: #9ca3af; }
 
-    .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #ef4444; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
+    .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #7c3aed; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
     .author-box-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
     .author-box-name { font-weight: 700; font-size: 1.15rem; margin: 0; }
     .author-box-link { color: inherit; text-decoration: none; }
-    .author-box-link:hover { color: #ef4444; }
-    .author-box-title { font-size: 0.9rem; font-weight: 600; color: #ef4444; margin: 4px 0 14px 0; }
-    body.dark-mode .author-box-title { color: #f87171; }
+    .author-box-link:hover { color: #7c3aed; }
+    .author-box-title { font-size: 0.9rem; font-weight: 600; color: #7c3aed; margin: 4px 0 14px 0; }
+    body.dark-mode .author-box-title { color: #a78bfa; }
     .author-box-bio { font-size: 1rem; line-height: 1.7; margin: 0 0 16px 0; }
     .author-box-ai-note { font-size: 0.82rem; font-style: italic; color: #6b7280; margin: 0; padding-top: 16px; margin-top: 4px; border-top: 1px solid var(--border-color); }
     body.dark-mode .author-box-ai-note { color: #9ca3af; }
@@ -283,8 +283,8 @@ const metaDesc = rawMeta.length > 157
     .share-cta-title { font-weight: 700; font-size: 1.05rem; margin: 0 0 4px 0; }
     .share-cta-sub { font-size: 0.9rem; color: #6b7280; margin: 0; }
     body.dark-mode .share-cta-sub { color: #9ca3af; }
-    .share-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #ef4444; color: #fff; border: none; border-radius: 8px; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.2s; font-family: inherit; }
-    .share-cta-btn:hover { background: #dc2626; transform: translateY(-1px); }
+    .share-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #7c3aed; color: #fff; border: none; border-radius: 8px; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.2s; font-family: inherit; }
+    .share-cta-btn:hover { background: #6d28d9; transform: translateY(-1px); }
     .share-cta-btn svg { width: 16px; height: 16px; }
     @media (max-width: 600px) {
       .share-cta { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px; }
@@ -303,8 +303,8 @@ const metaDesc = rawMeta.length > 157
     .video-actions { display: flex; flex-direction: column; gap: 20px; border-top: 1px solid var(--border-color); padding-top: 25px; margin-bottom: 40px; }
     .nav-row { display: flex; gap: 20px; }
     .nav-card { flex: 1; background: var(--card-bg); border: 2px solid var(--border-color); padding: 15px 20px; border-radius: 8px; text-decoration: none; color: var(--text-color); transition: all 0.2s ease; display: flex; flex-direction: column; gap: 5px; box-sizing: border-box; overflow: hidden; }
-    .nav-card:hover { transform: translateY(-3px); border-color: #ef4444; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
-    .nav-label { font-size: 0.8rem; color: #ef4444; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+    .nav-card:hover { transform: translateY(-3px); border-color: #7c3aed; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
+    .nav-label { font-size: 0.8rem; color: #7c3aed; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
     .nav-title { font-size: 1rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .nav-card.disabled { opacity: 0.4; pointer-events: none; border-color: var(--border-color); }
 
@@ -344,7 +344,7 @@ const metaDesc = rawMeta.length > 157
     .shorts-desktop-info { display: flex; flex-direction: column; width: 300px; height: 100%; padding: 20px 0; box-sizing: border-box; overflow-y: auto; scrollbar-width: none; }
     .shorts-desktop-info::-webkit-scrollbar { display: none; }
     .shorts-desktop-info h2 { font-size: 1.3rem; margin: 0 0 5px 0; color: var(--text-color); line-height: 1.4; text-align: left; }
-    .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #ef4444; font-weight: 600; text-align: left; }
+    .shorts-desktop-info .shorts-author { margin: 0 0 15px 0; font-size: 1rem; color: #7c3aed; font-weight: 600; text-align: left; }
     .shorts-desktop-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; text-align: left; }
     body.dark-mode .shorts-desktop-text { color: #9ca3af; }
 
@@ -357,7 +357,7 @@ const metaDesc = rawMeta.length > 157
     .shorts-rec-thumb { width: 108px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #000; }
     .shorts-rec-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .shorts-rec-title { font-size: 0.82rem; line-height: 1.35; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .shorts-rec-card:hover .shorts-rec-title { color: #ef4444; }
+    .shorts-rec-card:hover .shorts-rec-title { color: #7c3aed; }
     @keyframes tfwRecFade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
     @media (prefers-reduced-motion: reduce) { .shorts-recommends { animation: none; } }
 
@@ -382,9 +382,9 @@ const metaDesc = rawMeta.length > 157
     .shorts-circle-btn:hover { background: #e5e7eb; transform: scale(1.05); }
     body.dark-mode .shorts-circle-btn { background: #1e293b; border-color: transparent; color: #f1f5f9; }
     body.dark-mode .shorts-circle-btn:hover { background: #334155; }
-    .shorts-circle-btn.btn-active { color: #ef4444 !important; background: var(--card-bg); border-color: #ef4444; }
+    .shorts-circle-btn.btn-active { color: #7c3aed !important; background: var(--card-bg); border-color: #7c3aed; }
     .shorts-circle-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
-    .shorts-circle-btn.btn-active svg { fill: #ef4444; stroke: #ef4444; }
+    .shorts-circle-btn.btn-active svg { fill: #7c3aed; stroke: #7c3aed; }
     .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
 
     @media (max-width: 1024px) {
@@ -423,7 +423,7 @@ const metaDesc = rawMeta.length > 157
       .shorts-muted-cue { display: none; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; z-index: 45; pointer-events: none; white-space: nowrap; }
       body.shorts-muted.shorts-playing .shorts-muted-cue { display: block; }
       .shorts-progress { display: block; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.25); z-index: 46; }
-      .shorts-progress-fill { display: block; height: 100%; width: 0%; background: #ef4444; transition: width 0.25s linear; }
+      .shorts-progress-fill { display: block; height: 100%; width: 0%; background: #7c3aed; transition: width 0.25s linear; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -821,7 +821,7 @@ const metaDesc = rawMeta.length > 157
             <h2 class="related-guides-title">Related Guides</h2>
             <div class="related-guides-grid">
               {relatedGuides.map((g: any) => (
-                <a href={`/guides/${g.slug}`} class="related-guide-card" style={`--accent: ${TAG_COLORS[g.category] || '#ef4444'}`}>
+                <a href={`/guides/${g.slug}`} class="related-guide-card" style={`--accent: ${TAG_COLORS[g.category] || '#7c3aed'}`}>
                   <span class="related-guide-badge">{g.category}</span>
                   <span class="related-guide-name">{g.title}</span>
                   <span class="related-guide-cta">Read the guide →</span>

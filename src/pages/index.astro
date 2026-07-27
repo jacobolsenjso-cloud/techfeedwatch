@@ -30,7 +30,7 @@ const topTags = Object.keys(tagCounts)
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
   "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
-  "Productivity": "#eab308", "Fintech": "#ef4444", "Crypto": "#d97706"
+  "Productivity": "#eab308", "Fintech": "#7c3aed", "Crypto": "#d97706"
 };
 
 // Pæn dato-formatering: "2026-07-23" -> "Jul 23, 2026"
@@ -93,14 +93,14 @@ const vRest = pageOneVideos.slice(8);
     .filter-tag-accent.active { background: var(--tag-accent); color: #fff; border-color: var(--tag-accent); }
 
     .home-hero { max-width: 1600px; margin: 22px auto 6px auto; padding: 0 20px; box-sizing: border-box; width: 100%; }
-    .home-hero-card { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(239,68,68,0.10), rgba(239,68,68,0.02) 62%); padding: 38px 34px; }
-    .home-hero-card::after { content: ''; position: absolute; top: -45%; right: -8%; width: 360px; height: 360px; background: radial-gradient(circle, rgba(239,68,68,0.16), transparent 70%); pointer-events: none; }
+    .home-hero-card { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(124, 58, 237,0.10), rgba(124, 58, 237,0.02) 62%); padding: 38px 34px; }
+    .home-hero-card::after { content: ''; position: absolute; top: -45%; right: -8%; width: 360px; height: 360px; background: radial-gradient(circle, rgba(124, 58, 237,0.16), transparent 70%); pointer-events: none; }
     .home-hero-title { margin: 0 0 10px 0; font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em; }
     .home-hero-sub { margin: 0 0 20px 0; font-size: 1.05rem; line-height: 1.6; color: #4b5563; max-width: 640px; position: relative; }
     body.dark-mode .home-hero-sub { color: #b8b3bd; }
     .home-hero-links { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
     .home-hero-link { display: inline-flex; align-items: center; gap: 7px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); text-decoration: none; padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
-    .home-hero-link:hover { transform: translateY(-2px); border-color: #ef4444; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
+    .home-hero-link:hover { transform: translateY(-2px); border-color: #7c3aed; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
     @media (max-width: 768px) { .home-hero { margin: 15px auto 4px; padding: 0 15px; } .home-hero-card { padding: 26px 20px; border-radius: 14px; } .home-hero-title { font-size: 1.6rem; } .home-hero-sub { font-size: 0.98rem; } }
 
     .frontpage-wrapper { padding: 0 20px 20px 20px; max-width: 1600px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
@@ -113,7 +113,7 @@ const vRest = pageOneVideos.slice(8);
     .duration-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
 
     .tma-grid-title { margin: 0 0 5px 0; font-size: 15px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
-    .watch-card:hover .tma-grid-title { color: #ef4444; }
+    .watch-card:hover .tma-grid-title { color: #7c3aed; }
     .watch-card-thumb img, .short-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
     .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
     .watch-card:hover .watch-card-thumb, .watch-card:hover .short-card-thumb { box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05); }
@@ -211,7 +211,7 @@ const vRest = pageOneVideos.slice(8);
 
       {sRow1.length > 0 && (
         <div class="shorts-section">
-          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #ef4444;">⚡</span> Shorts</h2>
+          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #7c3aed;">⚡</span> Shorts</h2>
           <div class="shorts-shelf">
             {sRow1.map((short: any) => (
               <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
@@ -246,7 +246,7 @@ const vRest = pageOneVideos.slice(8);
 
       {sRow2.length > 0 && (
         <div class="shorts-section">
-          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #ef4444;">⚡</span> More Shorts</h2>
+          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #7c3aed;">⚡</span> More Shorts</h2>
           <div class="shorts-shelf">
             {sRow2.map((short: any) => (
               <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
