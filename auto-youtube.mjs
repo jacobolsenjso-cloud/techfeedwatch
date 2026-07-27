@@ -23,6 +23,14 @@ const TOPIC_CLUSTERS = [
   "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|startup",
   // Crypto
   "cryptocurrency|crypto|bitcoin|ethereum|solana|DeFi|blockchain|Web3|smart contracts|tokenization|altcoins",
+  // Cybersecurity (høj CPC)
+  "cybersecurity|infosec|data breach|ransomware|zero trust|network security|ethical hacking|penetration testing|cloud security|AI security",
+  // Cloud & SaaS (høj CPC)
+  "cloud computing|AWS|Azure|Google Cloud|Kubernetes|DevOps|serverless|SaaS|enterprise software|data engineering",
+  // Personlig økonomi & investering (høj CPC)
+  "personal finance|investing|stock market|index funds|passive income|retirement planning|wealth building|dividends|financial freedom|money management",
+  // E-commerce & online business (høj CPC)
+  "ecommerce|Shopify|dropshipping|online business|Amazon FBA|digital products|print on demand|online store|D2C|selling online",
 ];
 
 // Kuraterede kvalitetskanaler. Robotten henter også fra én roterende kanal pr. kørsel, kombineret med
@@ -42,6 +50,16 @@ const CHANNELS = [
   { id: 'UCEAZeUIeJs0IjQiqTCdVSIg', name: 'Yahoo Finance' },
   { id: 'UC_fyAp919RnkKmBrMXGwnUQ', name: 'Google Career Certificates' },
   { id: 'UCeeFfhMcJa1kjtfZAGskOCA', name: 'TechLinked' },
+  // Nye høj-CPC / analyse-tunge kanaler. ID'er opløses fra @handle ved kørsel (forHandle),
+  // så en evt. forkert handle bare springes pænt over uden at stoppe robotten.
+  { handle: '@mreflow', name: 'Matt Wolfe' },
+  { handle: '@matthew_berman', name: 'Matthew Berman' },
+  { handle: '@IBMTechnology', name: 'IBM Technology' },
+  { handle: '@ColdFusion', name: 'ColdFusion' },
+  { handle: '@GrahamStephan', name: 'Graham Stephan' },
+  { handle: '@CNBC', name: 'CNBC' },
+  { handle: '@AhrefsCom', name: 'Ahrefs' },
+  { handle: '@NetworkChuck', name: 'NetworkChuck' },
 ];
 
 const MAX_NORMAL_PER_RUN = 3;
@@ -51,10 +69,10 @@ const MAX_SHORTS_PER_RUN = 1;
 const FRESHNESS_DAYS = 180;
 const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-// Vægtet rotation: fintech/business (idx 6) og crypto (idx 7) har typisk højest annonce-CPC,
-// dernæst SEO/automation (3) og AI (0). De rammes derfor oftere, men ALLE 8 emner er stadig med.
-// Tallene er indeks ind i TOPIC_CLUSTERS. 14 slots i cyklussen.
-const TOPIC_ROTATION = [0, 0, 1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 7, 7];
+// Vægtet rotation mod høj-CPC-emner. Tallene er indeks ind i TOPIC_CLUSTERS (0-11).
+// Høj CPC rammes oftest: fintech(6), crypto(7), SEO/automation(3), cybersikkerhed(8),
+// cloud/SaaS(9), privatøkonomi(10), e-commerce(11) og AI(0). Alle 12 emner er dog stadig med.
+const TOPIC_ROTATION = [0, 0, 1, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
 
 // Vælger klynge ud fra tidspunktet via den vægtede rotation, så en 2-timers kørsel tager næste i rækken.
 function pickTopicCluster() {
@@ -87,6 +105,20 @@ async function searchVideos(query, { videoDuration, order, maxResults }) {
   const response = await fetch(url);
   const data = await response.json();
   return data.items || [];
+}
+
+// Opløser en @handle til et UC-kanal-ID via YouTube API (kanaler tilføjet med handle i stedet for fast id).
+// Returnerer null ved fejl/ukendt handle, så robotten bare fortsætter med de øvrige søgninger.
+async function resolveChannelId(handle) {
+  const h = handle.startsWith('@') ? handle : '@' + handle;
+  const url = `https://www.googleapis.com/youtube/v3/channels?part=id&forHandle=${encodeURIComponent(h)}&key=${YOUTUBE_API_KEY}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.items?.[0]?.id || null;
+  } catch (e) {
+    return null;
+  }
 }
 
 // Henter videoer fra én specifik kanal, kombineret med dagens emne-query så vi holder os på-emne.
@@ -196,11 +228,13 @@ async function findNewestVideos() {
 
   const topic = pickTopicCluster();
   const channel = pickChannel();
+  // Kanaler kan være defineret med fast id ELLER @handle (opløses her ved kørsel via forHandle).
+  const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
   // Shorts tjener ikke penge (noindex, ingen annoncer), så de laves kun hver 3. kørsel (~hver 6. time).
   // Sparer samtidig API-kvote de øvrige kørsler, hvor short-søgningen springes helt over.
   const isShortsRun = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % 3 === 0;
   console.log(`Info: Vælger emneklynge: "${topic}"`);
-  console.log(`Info: Vælger kanal: "${channel.name}"`);
+  console.log(`Info: Vælger kanal: "${channel.name}"${channel.handle ? ` (${channel.handle} -> ${channelId || 'intet id'})` : ''}`);
   console.log(`Info: Shorts denne kørsel: ${isShortsRun ? 'JA' : 'nej'}`);
 
   try {
@@ -210,7 +244,7 @@ async function findNewestVideos() {
       searchVideos(topic, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
       searchVideos(topic, { videoDuration: 'long', order: 'date', maxResults: 5 }),
       isShortsRun ? searchVideos(topic, { videoDuration: 'short', order: 'date', maxResults: 4 }) : Promise.resolve([]),
-      searchChannel(channel.id, topic, 3),
+      searchChannel(channelId, topic, 3),
     ]);
 
     const seen = new Set();
