@@ -5,7 +5,7 @@ description: "Privacy Policy for Tech Feed Watch and information on how we handl
 
 # Privacy Policy
 
-**Last updated:** June 13, 2026
+**Last updated:** July 27, 2026
 
 This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
 
@@ -50,6 +50,17 @@ We use Cookies and similar tracking technologies to track the activity on Our Se
 * **Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons.
 
 We use both Session and Persistent Cookies for purposes such as Necessary/Essential Cookies, Cookies Policy Acceptance Cookies, and Functionality Cookies.
+
+## Advertising and Third-Party Vendors
+
+We display advertising on this Website through **Google AdSense**, an advertising service provided by Google. To support this, third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this Website or other websites.
+
+* Google's use of advertising cookies enables it and its partners to serve ads to our users based on their visit to our sites and/or other sites on the Internet.
+* Third-party vendors and ad networks may also use cookies, web beacons, and similar technologies to collect information such as your IP address, browser type, and the pages you visit, in order to measure and improve the ads shown to you.
+
+You may opt out of personalized advertising at any time by visiting [Google Ads Settings](https://www.google.com/settings/ads), or opt out of third-party vendors' use of cookies for personalized advertising by visiting [www.aboutads.info](https://www.aboutads.info/choices/). You can learn more about how Google uses data from sites and apps that use its services at [Google's Privacy & Terms](https://policies.google.com/technologies/partner-sites).
+
+For visitors in the European Economic Area (EEA), the United Kingdom, and Switzerland, we use a Google-certified Consent Management Platform (CMP) to request your consent before personalized ads and non-essential cookies are used, in accordance with applicable data protection laws.
 
 ## Use of Your Personal Data
 
