@@ -1,68 +1,50 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro'; 
-import FAQ from '../../components/FAQ.astro';
+import MainLayout from '../../../../layouts/MainLayout.astro'; 
+import FAQ from '../../../../components/FAQ.astro';
 
 const PAGE_SIZE = 24;
 
 export async function getStaticPaths() {
-  const videos = Object.values(import.meta.glob('../../content/videos/*.md', { eager: true }));
-  
+  const PAGE_SIZE = 24;
+  const videos = Object.values(import.meta.glob('../../../../content/videos/*.md', { eager: true }));
+
   const uniqueTags = [...new Set(videos.flatMap((v: any) => {
     const t = v.frontmatter.tags || v.frontmatter.tag || [];
     return Array.isArray(t) ? t : [t];
   }))].filter(Boolean);
-  
-  return uniqueTags.map((tag: any) => {
-    const filteredVideos = videos
+
+  const paths: any[] = [];
+  uniqueTags.forEach((tag: any) => {
+    const filtered = videos
       .filter((v: any) => {
         const vTags = v.frontmatter.tags || v.frontmatter.tag || [];
         const tagsArray = Array.isArray(vTags) ? vTags : [vTags];
         return tagsArray.includes(tag);
       })
       .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
-    return {
-      params: { tag: tag.toLowerCase().replace(/\s+/g, '-') },
-      props: { tagName: tag, videos: filteredVideos },
-    };
+
+    const lastPage = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
+
+    // Side 1 bor på /tag/[tag]; her genereres kun 2..lastPage
+    for (let p = 2; p <= lastPage; p++) {
+      paths.push({
+        params: { tag: tagSlug, page: String(p) },
+        props: {
+          tagName: tag,
+          tagSlug,
+          pageVideos: filtered.slice((p - 1) * PAGE_SIZE, p * PAGE_SIZE),
+          currentPage: p,
+          lastPage,
+        },
+      });
+    }
   });
+  return paths;
 }
 
-const { tagName, videos } = Astro.props;
-const tagSlug = tagName.toLowerCase().replace(/\s+/g, '-');
-const totalCount = videos.length;
-const lastPage = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
-const pageVideos = videos.slice(0, PAGE_SIZE);
-const nextUrl = lastPage > 1 ? `/tag/${tagSlug}/page/2` : null;
+const { tagName, tagSlug, pageVideos, currentPage, lastPage } = Astro.props as any;
 
-const descriptionDictionary: Record<string, string> = {
-  "AI & Tech": "Explore our in-depth videos on artificial intelligence and the latest technology. We curate the most important news, reviews, and analyses of AI tools and tech trends shaping the future of digital workflows.",
-  "SEO": "Master Search Engine Optimization (SEO) and Generative Engine Optimization (GEO). Discover videos featuring strategies, tips, and hacks to dominate search results and drive organic traffic to your website.",
-  "Default": `Explore our curated collection of videos related to ${tagName}. Discover the latest news, tutorials, and insights to stay ahead in the fast-paced world of tech and artificial intelligence.`
-};
-
-const currentDescription = descriptionDictionary[tagName] || descriptionDictionary["Default"];
-
-const faqDictionary: Record<string, {question: string, answer: string}[]> = {
-  "AI & Tech": [
-    { question: "What is Artificial Intelligence (AI)?", answer: "AI refers to computer systems designed to perform tasks that typically require human intelligence, such as visual perception, speech recognition, and decision-making. Our videos cover the latest breakthroughs in this fast-moving field." },
-    { question: "How often do you update your AI content?", answer: "We curate and post the most relevant AI and tech videos daily to ensure you stay ahead of the curve in a rapidly evolving industry." },
-    { question: "Can I use AI tools for my own business?", answer: "Absolutely. Many of the tools featured in our videos, such as ChatGPT and Midjourney, offer accessible tiers for beginners and businesses looking to automate workflows." }
-  ],
-  "SEO": [
-    { question: "What does SEO stand for?", answer: "SEO stands for Search Engine Optimization. It is the practice of increasing both the quality and quantity of website traffic, as well as exposure to your brand, through non-paid search engine results." },
-    { question: "Is SEO still relevant with AI search engines?", answer: "Yes, but it is evolving. Traditional SEO is shifting towards 'Generative Engine Optimization' (GEO), meaning content must be structured to be easily understood by AI models like Google's AI Overviews." },
-    { question: "How long does it take to see SEO results?", answer: "SEO is a long-term strategy. While technical fixes can show improvements in weeks, content-driven ranking changes typically take 3 to 6 months to mature." }
-  ],
-  "Default": [
-    { question: "How often are new videos added to the archive?", answer: "Our library is updated continuously. We curate the best tech and AI videos daily to keep our archive fresh and highly relevant." },
-    { question: "Are these videos free to watch?", answer: "Yes, all videos embedded on Tech Feed Watch are completely free to watch." },
-    { question: "Can I save videos to watch later?", answer: "Yes! Click the 'Save' button under any video, and it will be added to your personal 'Watch Later' list in the sidebar." }
-  ]
-};
-
-const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
-
-// Emne-farvesystem, defineret lokalt (samme palette som forsiden og sitemap)
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
   "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
@@ -70,13 +52,24 @@ const TAG_COLORS: Record<string, string> = {
 };
 const tagAccent = TAG_COLORS[tagName] || "#6b7280";
 
+const currentDescription = `Explore our curated collection of videos related to ${tagName}. Page ${currentPage} of ${lastPage}.`;
+
+const prevUrl = currentPage <= 2 ? `/tag/${tagSlug}` : `/tag/${tagSlug}/page/${currentPage - 1}`;
+const nextUrl = currentPage < lastPage ? `/tag/${tagSlug}/page/${currentPage + 1}` : null;
+
+const currentFAQs = [
+  { question: "How often are new videos added to the archive?", answer: "Our library is updated continuously. We curate the best tech and AI videos daily to keep our archive fresh and highly relevant." },
+  { question: "Are these videos free to watch?", answer: "Yes, all videos embedded on Tech Feed Watch are completely free to watch." },
+  { question: "Can I save videos to watch later?", answer: "Yes! Click the 'Save' button under any video, and it will be added to your personal 'Watch Later' list in the sidebar." }
+];
+
 const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
 ---
 
-<MainLayout title={`${tagName} Archive`} description={currentDescription}>
+<MainLayout title={`${tagName} Archive – Page ${currentPage}`} description={currentDescription}>
   
   <style is:global>
     .tag-page-wrapper { padding: 30px 20px; max-width: 1600px; margin: 0 auto; width: 100%; box-sizing: border-box; }
@@ -127,7 +120,8 @@ const formatDate = (d: string) => {
     <div class="breadcrumbs-bar">
       <a href="/">Frontpage</a> <span>/</span> 
       <a href="/library">Library</a> <span>/</span> 
-      <span>{tagName}</span>
+      <a href={`/tag/${tagSlug}`}>{tagName}</a> <span>/</span> 
+      <span>Page {currentPage}</span>
     </div>
 
     <h1 class="header-title" style={`--tag-accent: ${tagAccent}`}>Videos in <span>#{tagName}</span></h1>
@@ -149,23 +143,21 @@ const formatDate = (d: string) => {
       ))}
     </div>
 
-    {lastPage > 1 && (
-      <nav class="pagination" aria-label="Sidenavigation">
-        <span class="pagination-btn pagination-disabled" aria-disabled="true">← Previous</span>
-        {Array.from({ length: lastPage }, (_, i) => i + 1).map((n: number) => (
-          n === 1 ? (
-            <span class="pagination-num active" aria-current="page">{n}</span>
-          ) : (
-            <a href={`/tag/${tagSlug}/page/${n}`} class="pagination-num">{n}</a>
-          )
-        ))}
-        {nextUrl ? (
-          <a href={nextUrl} class="pagination-btn">Next →</a>
+    <nav class="pagination" aria-label="Sidenavigation">
+      <a href={prevUrl} class="pagination-btn">← Previous</a>
+      {Array.from({ length: lastPage }, (_, i) => i + 1).map((n: number) => (
+        n === currentPage ? (
+          <span class="pagination-num active" aria-current="page">{n}</span>
         ) : (
-          <span class="pagination-btn pagination-disabled" aria-disabled="true">Next →</span>
-        )}
-      </nav>
-    )}
+          <a href={n === 1 ? `/tag/${tagSlug}` : `/tag/${tagSlug}/page/${n}`} class="pagination-num">{n}</a>
+        )
+      ))}
+      {nextUrl ? (
+        <a href={nextUrl} class="pagination-btn">Next →</a>
+      ) : (
+        <span class="pagination-btn pagination-disabled" aria-disabled="true">Next →</span>
+      )}
+    </nav>
     
     <FAQ faqs={currentFAQs} />
     
