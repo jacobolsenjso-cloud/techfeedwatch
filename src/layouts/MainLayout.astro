@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
 const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
 
 // Standard OG-delebillede hvis siden ikke selv angiver et (fx bruger videosider deres thumbnail)
-const ogImage = image || "https://techfeedwatch.com/og-default.png";
+const ogImage = image || "https://techfeedwatch.com/og-default-v2.png";
 const ogImageWidth = imageWidth || 1200;
 const ogImageHeight = imageHeight || 630;
 const ogTitle = title ? `${title} | TechFeedWatch` : "TechFeedWatch";
@@ -60,7 +60,7 @@ const siteSchema = [
     "@type": "Organization",
     "name": "Tech Feed Watch",
     "url": "https://techfeedwatch.com/",
-    "logo": "https://techfeedwatch.com/og-default.png"
+    "logo": "https://techfeedwatch.com/og-default-v2.png"
   }
 ];
 ---
