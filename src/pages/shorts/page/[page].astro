@@ -24,9 +24,9 @@ const tagCounts = allShorts.reduce((acc: any, video: any) => {
 const topTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]).slice(0, 20);
 
 const TAG_COLORS: Record<string, string> = {
-  "AI & Tech": "#3b82f6", "SEO": "#10b981", "Automation": "#f59e0b",
-  "Coding": "#8b5cf6", "Business & Money": "#0d9488", "AI Video": "#ec4899",
-  "Productivity": "#eab308", "Fintech": "#0891b2", "Crypto": "#d97706"
+  "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
+  "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
+  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b"
 };
 
 const formatDate = (d: string) => {

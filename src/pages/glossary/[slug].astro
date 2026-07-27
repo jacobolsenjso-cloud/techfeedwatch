@@ -13,7 +13,7 @@ const { entry, allEntries } = Astro.props as { entry: any; allEntries: any[] };
 const { term, category, definition } = entry.frontmatter;
 
 const CATEGORY_COLORS: Record<string, string> = {
-  AI: "#3b82f6",
+  AI: "#0891b2",
   Tech: "#8b5cf6",
   SEO: "#10b981",
   Fintech: "#0891b2",
@@ -41,9 +41,9 @@ const title = `${term} — Glossary`;
   <style is:global>
     .glossary-term-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
 
-    .glossary-back-link { display: inline-block; margin-bottom: 24px; color: #3b82f6; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .glossary-back-link { display: inline-block; margin-bottom: 24px; color: #0891b2; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
     .glossary-back-link:hover { text-decoration: underline; }
-    body.dark-mode .glossary-back-link { color: #60a5fa; }
+    body.dark-mode .glossary-back-link { color: #22d3ee; }
 
     .glossary-term-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
     .glossary-term-header h1 { margin: 0; font-size: 2rem; }
