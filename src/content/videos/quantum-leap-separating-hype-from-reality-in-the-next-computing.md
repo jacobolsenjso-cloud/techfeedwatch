@@ -5,6 +5,7 @@ youtubeId: "B3U1NDUiwSA"
 date: "2026-07-16"
 tags:
   - "AI & Tech"
+  - "Cybersecurity"
 summary: "Quantum computing represents a profound shift from classical binary processing, utilizing quantum mechanical phenomena like superposition and entanglement to solve complex problems intractable for conventional machines. This computational paradigm holds immense promise for scientific discovery, AI advancement, and cybersecurity, but remains in its foundational stages. Overcoming significant engineering hurdles in stability and error correction determines its timeline for practical, widespread application."
 duration: "5:41"
 isShort: false

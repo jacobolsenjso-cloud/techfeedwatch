@@ -6,6 +6,7 @@ date: "2026-07-28"
 tags:
   - "AI & Tech"
   - "Coding"
+  - "Cybersecurity"
 summary: "The rapid integration of AI, particularly large language models, into daily operations presents significant new security challenges. Understanding and proactively testing for vulnerabilities like prompt injection is becoming a critical skill. This article argues that practical AI security testing, often dubbed 'AI hacking,' is now essential and accessible, requiring a shift in cybersecurity focus. Organizations and individuals must embrace these methods to defend against emerging AI-specific threats."
 metaDescription: "Discover why practical AI security testing, from prompt injection to red teaming, is essential for securing AI systems and LLM deployments."
 duration: "16:46"
