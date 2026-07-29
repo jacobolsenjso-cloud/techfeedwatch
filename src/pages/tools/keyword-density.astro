@@ -1,0 +1,141 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Keyword Density Analyzer";
+const description = "Paste any text or article and instantly see the most-used words and phrases with their density percentage. Free on-page SEO tool that runs in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .kd-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .kd-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .kd-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .kd-header p { color: #9ca3af; }
+
+    .kd-textarea { width: 100%; min-height: 200px; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; line-height: 1.6; box-sizing: border-box; resize: vertical; }
+    .kd-textarea:focus { outline: none; border-color: #0891b2; }
+
+    .kd-controls { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin: 16px 0 8px; }
+    .kd-control { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; font-weight: 500; }
+    .kd-control select { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); }
+
+    .kd-stats { display: flex; flex-wrap: wrap; gap: 22px; margin: 18px 0 22px; }
+    .kd-stat b { font-size: 1.4rem; display: block; }
+    .kd-stat span { font-size: 0.8rem; color: #6b7280; }
+    body.dark-mode .kd-stat span { color: #9ca3af; }
+
+    .kd-table { width: 100%; border-collapse: collapse; }
+    .kd-table th, .kd-table td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border-color); font-size: 0.92rem; }
+    .kd-table th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: #6b7280; }
+    .kd-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .kd-bar-cell { width: 34%; }
+    .kd-bar { height: 8px; border-radius: 4px; background: #0891b2; }
+
+    .kd-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .kd-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .kd-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .kd-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .kd-wrapper { padding: 20px 15px; } .kd-bar-cell { display: none; } }
+  </style>
+
+  <div class="kd-wrapper">
+    <div class="kd-header">
+      <h1>📊 Keyword Density Analyzer</h1>
+      <p>Paste your article or copy below to see which words and phrases you use most, and how dense they are. Everything runs in your browser — nothing is uploaded.</p>
+    </div>
+
+    <textarea id="kdText" class="kd-textarea" placeholder="Paste your text here..."></textarea>
+
+    <div class="kd-controls">
+      <label class="kd-control">Phrase length
+        <select id="kdN">
+          <option value="1">1 word</option>
+          <option value="2">2 words</option>
+          <option value="3">3 words</option>
+        </select>
+      </label>
+      <label class="kd-control"><input type="checkbox" id="kdStop" checked /> Ignore common stop words</label>
+      <label class="kd-control">Min length
+        <select id="kdMin">
+          <option value="1">1+</option>
+          <option value="3" selected>3+</option>
+          <option value="4">4+</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="kd-stats">
+      <div class="kd-stat"><b id="kdWords">0</b><span>Words</span></div>
+      <div class="kd-stat"><b id="kdUnique">0</b><span>Unique terms</span></div>
+      <div class="kd-stat"><b id="kdChars">0</b><span>Characters</span></div>
+    </div>
+
+    <table class="kd-table">
+      <thead><tr><th>Keyword / phrase</th><th class="num">Count</th><th class="num">Density</th><th class="kd-bar-cell"></th></tr></thead>
+      <tbody id="kdBody"></tbody>
+    </table>
+
+    <div class="kd-info-section">
+      <h2>What is keyword density and what is a good ratio?</h2>
+      <p>Keyword density is the percentage of times a word or phrase appears relative to the total word count of a page. It helps you check that your main topic is clearly present without being overused. Modern search engines are sophisticated, so there is no magic number — but if a single keyword climbs much above roughly 2–3%, the writing can start to feel repetitive or spammy, which is worth fixing for readers first and search engines second.</p>
+      <p>Use this tool to confirm your target term and its natural variations show up, to spot accidental over-repetition, and to find secondary phrases you can turn into headings. Ignoring stop words like "the" and "and" gives you a cleaner view of the terms that actually carry meaning.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = document.getElementById('kdText') as HTMLTextAreaElement;
+      const nSel = document.getElementById('kdN') as HTMLSelectElement;
+      const stop = document.getElementById('kdStop') as HTMLInputElement;
+      const minSel = document.getElementById('kdMin') as HTMLSelectElement;
+      const body = document.getElementById('kdBody') as HTMLElement;
+
+      const STOP = new Set(['the','a','an','and','or','but','of','to','in','on','for','with','at','by','from','as','is','are','was','were','be','been','being','it','its','this','that','these','those','i','you','he','she','they','we','your','their','our','my','me','him','her','them','us','not','no','so','if','then','than','too','very','can','will','just','do','does','did','has','have','had','about','into','over','out','up','down','more','most','some','such','only','also','which','who','what','when','where','why','how']);
+
+      const analyze = () => {
+        const raw = text.value || '';
+        const chars = raw.length;
+        const tokens = (raw.toLowerCase().match(/[a-z0-9']+/g) || []);
+        const totalWords = tokens.length;
+
+        const n = parseInt(nSel.value, 10);
+        const minLen = parseInt(minSel.value, 10);
+        const useStop = stop.checked;
+
+        const counts = new Map<string, number>();
+        for (let i = 0; i + n <= tokens.length; i++) {
+          const gram = tokens.slice(i, i + n);
+          if (useStop && gram.some((w) => STOP.has(w))) continue;
+          if (gram.some((w) => w.length < minLen)) continue;
+          const key = gram.join(' ');
+          counts.set(key, (counts.get(key) || 0) + 1);
+        }
+
+        const rows = Array.from(counts.entries())
+          .filter(([, c]) => c > 1 || totalWords < 40)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 25);
+
+        const maxCount = rows.length ? rows[0][1] : 1;
+        const denomWords = Math.max(1, totalWords - (n - 1));
+
+        (document.getElementById('kdWords') as HTMLElement).textContent = String(totalWords);
+        (document.getElementById('kdUnique') as HTMLElement).textContent = String(counts.size);
+        (document.getElementById('kdChars') as HTMLElement).textContent = String(chars);
+
+        body.innerHTML = rows.length ? rows.map(([term, c]) => {
+          const density = ((c / denomWords) * 100).toFixed(2);
+          const w = Math.round((c / maxCount) * 100);
+          return '<tr><td>' + term.replace(/</g, '&lt;') + '</td><td class="num">' + c + '</td><td class="num">' + density + '%</td>' +
+            '<td class="kd-bar-cell"><div class="kd-bar" style="width:' + w + '%"></div></td></tr>';
+        }).join('') : '<tr><td colspan="4" style="color:#6b7280;padding:18px 12px;">Paste some text to see keyword density.</td></tr>';
+      };
+
+      [text, nSel, stop, minSel].forEach((el) => el.addEventListener('input', analyze));
+      minSel.addEventListener('change', analyze);
+      nSel.addEventListener('change', analyze);
+      analyze();
+    });
+  </script>
+</MainLayout>

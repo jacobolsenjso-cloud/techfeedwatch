@@ -1,0 +1,175 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Schema Markup Generator (JSON-LD)";
+const description = "Generate valid Article, FAQPage, and BreadcrumbList JSON-LD structured data for your pages. Free schema markup generator that runs in your browser — just fill in the fields and copy.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .sc-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .sc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .sc-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .sc-header p { color: #9ca3af; }
+
+    .sc-types { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+    .sc-type { padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+    .sc-type.active { background: #0891b2; color: #fff; border-color: #0891b2; }
+
+    .sc-field { margin-bottom: 14px; }
+    .sc-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .sc-input, .sc-area { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
+    .sc-area { min-height: 70px; resize: vertical; line-height: 1.5; }
+    .sc-input:focus, .sc-area:focus { outline: none; border-color: #0891b2; }
+    .sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .sc-panel { display: none; }
+    .sc-panel.active { display: block; }
+
+    .sc-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: start; }
+    .sc-row .sc-area { min-height: 44px; }
+    .sc-del { border: 1px solid var(--border-color); background: var(--hover-bg); color: #ef4444; border-radius: 8px; padding: 0 12px; cursor: pointer; font-weight: 700; height: 42px; }
+    .sc-add { margin-top: 4px; padding: 9px 16px; border-radius: 8px; border: 1px dashed var(--border-color); background: none; color: #0891b2; font-weight: 600; cursor: pointer; }
+
+    .sc-out-head { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 8px; }
+    .sc-out-head h2 { font-size: 1.1rem; margin: 0; }
+    .sc-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
+    .sc-copy:hover { background: #0e7490; }
+    .sc-output { width: 100%; min-height: 220px; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; box-sizing: border-box; white-space: pre; overflow: auto; }
+
+    .sc-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .sc-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .sc-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .sc-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .sc-wrapper { padding: 20px 15px; } .sc-grid { grid-template-columns: 1fr; } .sc-row { grid-template-columns: 1fr; } .sc-del { height: auto; padding: 10px; } }
+  </style>
+
+  <div class="sc-wrapper">
+    <div class="sc-header">
+      <h1>🧩 Schema Markup Generator</h1>
+      <p>Create valid JSON-LD structured data for your pages. Pick a type, fill in the fields, then paste the output into your page's &lt;head&gt;. Everything runs in your browser.</p>
+    </div>
+
+    <div class="sc-types">
+      <button type="button" class="sc-type active" data-type="Article">Article</button>
+      <button type="button" class="sc-type" data-type="FAQPage">FAQ</button>
+      <button type="button" class="sc-type" data-type="BreadcrumbList">Breadcrumb</button>
+    </div>
+
+    <div class="sc-panel active" data-panel="Article">
+      <div class="sc-field"><label>Headline / title</label><input class="sc-input" id="a_headline" value="How Open Banking Is Changing Finance" /></div>
+      <div class="sc-field"><label>Description</label><textarea class="sc-area" id="a_desc">A clear explanation of open banking and what it means for consumers and businesses.</textarea></div>
+      <div class="sc-grid">
+        <div class="sc-field"><label>Author name</label><input class="sc-input" id="a_author" value="Jacob Olsen" /></div>
+        <div class="sc-field"><label>Date published</label><input class="sc-input" id="a_date" type="date" /></div>
+      </div>
+      <div class="sc-field"><label>Page URL</label><input class="sc-input" id="a_url" value="https://techfeedwatch.com/video/example" /></div>
+      <div class="sc-field"><label>Image URL</label><input class="sc-input" id="a_image" value="https://techfeedwatch.com/og-default-v2.png" /></div>
+      <div class="sc-grid">
+        <div class="sc-field"><label>Publisher name</label><input class="sc-input" id="a_pub" value="Tech Feed Watch" /></div>
+        <div class="sc-field"><label>Publisher logo URL</label><input class="sc-input" id="a_logo" value="https://techfeedwatch.com/icon-512.png" /></div>
+      </div>
+    </div>
+
+    <div class="sc-panel" data-panel="FAQPage">
+      <div id="faqRows"></div>
+      <button type="button" class="sc-add" id="faqAdd">+ Add question</button>
+    </div>
+
+    <div class="sc-panel" data-panel="BreadcrumbList">
+      <div id="bcRows"></div>
+      <button type="button" class="sc-add" id="bcAdd">+ Add breadcrumb</button>
+    </div>
+
+    <div class="sc-out-head">
+      <h2>Generated JSON-LD</h2>
+      <button type="button" class="sc-copy" id="scCopy">Copy</button>
+    </div>
+    <pre class="sc-output" id="scOut"></pre>
+
+    <div class="sc-info-section">
+      <h2>What is schema markup and where does it go?</h2>
+      <p>Schema markup (structured data) is code that tells search engines exactly what your content means — an article, a set of FAQs, a navigation breadcrumb — rather than leaving them to guess. Google uses it to power rich results like FAQ drop-downs, breadcrumb trails, and article cards, which can improve how your listing looks and how often it gets clicked.</p>
+      <p>This tool outputs JSON-LD, Google's recommended format. Copy the full &lt;script&gt; block and paste it into the &lt;head&gt; of the matching page. Always make sure the markup describes content that is actually visible on that page, then validate it with Google's Rich Results Test before publishing.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let type = 'Article';
+      const out = document.getElementById('scOut') as HTMLElement;
+      const val = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement)?.value.trim() || '';
+
+      const faqRows = document.getElementById('faqRows') as HTMLElement;
+      const bcRows = document.getElementById('bcRows') as HTMLElement;
+
+      const faqRow = (q = '', a = '') =>
+        '<div class="sc-row"><textarea class="sc-area faq-q" placeholder="Question">' + q + '</textarea>' +
+        '<textarea class="sc-area faq-a" placeholder="Answer">' + a + '</textarea>' +
+        '<button type="button" class="sc-del">✕</button></div>';
+      const bcRow = (n = '', u = '') =>
+        '<div class="sc-row"><input class="sc-input bc-n" placeholder="Name" value="' + n + '">' +
+        '<input class="sc-input bc-u" placeholder="URL" value="' + u + '">' +
+        '<button type="button" class="sc-del">✕</button></div>';
+
+      faqRows.innerHTML = faqRow('What is open banking?', 'Open banking lets third-party providers securely access your bank data through APIs, with your consent.') + faqRow('Is open banking safe?', 'Yes — it uses regulated APIs and explicit consent, and providers must be authorised.');
+      bcRows.innerHTML = bcRow('Home', 'https://techfeedwatch.com/') + bcRow('Fintech', 'https://techfeedwatch.com/tag/fintech') + bcRow('Open Banking', 'https://techfeedwatch.com/video/example');
+
+      const esc = (s: string) => s;
+
+      const gen = () => {
+        let obj: any = {};
+        if (type === 'Article') {
+          obj = {
+            '@context': 'https://schema.org', '@type': 'Article',
+            headline: val('a_headline'), description: val('a_desc'),
+            image: val('a_image') ? [val('a_image')] : undefined,
+            datePublished: val('a_date') || undefined,
+            author: { '@type': 'Person', name: val('a_author') },
+            publisher: { '@type': 'Organization', name: val('a_pub'), logo: { '@type': 'ImageObject', url: val('a_logo') } },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': val('a_url') },
+          };
+        } else if (type === 'FAQPage') {
+          const items: any[] = [];
+          faqRows.querySelectorAll('.sc-row').forEach((r) => {
+            const q = (r.querySelector('.faq-q') as HTMLTextAreaElement).value.trim();
+            const a = (r.querySelector('.faq-a') as HTMLTextAreaElement).value.trim();
+            if (q && a) items.push({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } });
+          });
+          obj = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items };
+        } else {
+          const items: any[] = [];
+          bcRows.querySelectorAll('.sc-row').forEach((r, i) => {
+            const n = (r.querySelector('.bc-n') as HTMLInputElement).value.trim();
+            const u = (r.querySelector('.bc-u') as HTMLInputElement).value.trim();
+            if (n) items.push({ '@type': 'ListItem', position: i + 1, name: n, item: u || undefined });
+          });
+          obj = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: items };
+        }
+        const clean = JSON.parse(JSON.stringify(obj));
+        out.textContent = '<script type="application/ld+json">\n' + JSON.stringify(clean, null, 2) + '\n<\/script>';
+      };
+
+      document.querySelectorAll('.sc-type').forEach((b) => b.addEventListener('click', () => {
+        type = (b as HTMLElement).dataset.type || 'Article';
+        document.querySelectorAll('.sc-type').forEach((x) => x.classList.toggle('active', x === b));
+        document.querySelectorAll('.sc-panel').forEach((p) => p.classList.toggle('active', (p as HTMLElement).dataset.panel === type));
+        gen();
+      }));
+
+      document.getElementById('faqAdd')!.addEventListener('click', () => { faqRows.insertAdjacentHTML('beforeend', faqRow()); gen(); });
+      document.getElementById('bcAdd')!.addEventListener('click', () => { bcRows.insertAdjacentHTML('beforeend', bcRow()); gen(); });
+      document.querySelector('.sc-wrapper')!.addEventListener('input', gen);
+      document.querySelector('.sc-wrapper')!.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).classList.contains('sc-del')) { (e.target as HTMLElement).closest('.sc-row')?.remove(); gen(); }
+      });
+
+      document.getElementById('scCopy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+
+      gen();
+    });
+  </script>
+</MainLayout>

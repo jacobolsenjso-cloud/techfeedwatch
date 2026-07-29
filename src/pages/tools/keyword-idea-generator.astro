@@ -1,0 +1,137 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Keyword Idea Generator";
+const description = "Turn one seed keyword into hundreds of long-tail keyword ideas using questions, prepositions, comparisons, and intent modifiers. Free, browser-based, no login.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .kw-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .kw-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .kw-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; }
+    body.dark-mode .kw-header p { color: #9ca3af; }
+
+    .kw-bar { display: flex; gap: 10px; margin-bottom: 16px; }
+    .kw-input { flex: 1; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .kw-input:focus { outline: none; border-color: #0891b2; }
+    .kw-go { padding: 0 22px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .kw-go:hover { background: #0e7490; }
+
+    .kw-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+    .kw-count { font-size: 0.9rem; color: #6b7280; }
+    body.dark-mode .kw-count { color: #9ca3af; }
+    .kw-copyall { padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+    .kw-copyall:hover { border-color: #0891b2; }
+
+    .kw-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .kw-group { border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; }
+    .kw-group-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; background: var(--hover-bg); font-weight: 700; font-size: 0.95rem; }
+    .kw-group-copy { background: none; border: none; color: #0891b2; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
+    .kw-list { list-style: none; margin: 0; padding: 6px 0; max-height: 320px; overflow-y: auto; }
+    .kw-list li { padding: 7px 15px; font-size: 0.92rem; border-top: 1px solid var(--border-color); cursor: pointer; }
+    .kw-list li:first-child { border-top: none; }
+    .kw-list li:hover { background: var(--hover-bg); color: #0891b2; }
+
+    .kw-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .kw-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .kw-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .kw-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) {
+      .kw-wrapper { padding: 20px 15px; }
+      .kw-groups { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="kw-wrapper">
+    <div class="kw-header">
+      <h1>🌱 Keyword Idea Generator</h1>
+      <p>Type one seed keyword and get hundreds of long-tail ideas — grouped by questions, prepositions, comparisons, and intent modifiers. Click any idea to copy it.</p>
+    </div>
+
+    <div class="kw-bar">
+      <input type="text" id="kwInput" class="kw-input" placeholder="e.g. open banking" value="open banking" />
+      <button type="button" id="kwGo" class="kw-go">Generate</button>
+    </div>
+
+    <div class="kw-meta">
+      <span class="kw-count" id="kwCount"></span>
+      <button type="button" id="kwCopyAll" class="kw-copyall">Copy all</button>
+    </div>
+
+    <div class="kw-groups" id="kwGroups"></div>
+
+    <div class="kw-info-section">
+      <h2>How to use these keyword ideas</h2>
+      <p>This tool expands a single seed keyword into long-tail variations by combining it with the question words, prepositions, comparison words, and buyer-intent modifiers that people actually type into Google. It does not show search volume — that data is licensed and paid — but it is excellent for content ideation, mapping out an article's subtopics and headings, and finding angles you had not considered.</p>
+      <p>A practical workflow: generate ideas here, pick the ones that match what your audience is trying to do, then validate the most promising ones in Google Search Console or a volume tool later. Question-style keywords ("how", "what is", "why") are especially useful for FAQ sections and featured snippets.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('kwInput') as HTMLInputElement;
+      const groupsEl = document.getElementById('kwGroups') as HTMLDivElement;
+      const countEl = document.getElementById('kwCount') as HTMLSpanElement;
+
+      const QUESTIONS = ['how to', 'what is', 'what are', 'why', 'when', 'where', 'which', 'who', 'can', 'is', 'are', 'does', 'will', 'should', 'how does', 'how much'];
+      const PREPOSITIONS = ['for', 'with', 'without', 'near me', 'to', 'in', 'on', 'like', 'versus', 'per'];
+      const COMPARISONS = ['vs', 'or', 'and', 'compared to', 'alternative to'];
+      const MODIFIERS_PRE = ['best', 'top', 'free', 'cheap', 'easy', 'simple', 'advanced', 'professional'];
+      const MODIFIERS_POST = ['tutorial', 'guide', 'examples', 'tips', 'tools', 'software', 'app', 'platform', 'services', 'for beginners', 'explained', 'meaning', 'review', 'pricing', 'alternatives', 'checklist', 'template', '2026'];
+
+      const build = (seed: string) => {
+        const s = seed.trim().toLowerCase().replace(/\s+/g, ' ');
+        if (!s) return [] as { title: string; items: string[] }[];
+        const uniq = (arr: string[]) => Array.from(new Set(arr));
+        return [
+          { title: 'Questions', items: uniq(QUESTIONS.map((q) => `${q} ${s}`)) },
+          { title: 'Prepositions', items: uniq(PREPOSITIONS.map((p) => `${s} ${p}`)) },
+          { title: 'Comparisons', items: uniq(COMPARISONS.map((c) => `${s} ${c}`)) },
+          { title: 'Modifiers (before)', items: uniq(MODIFIERS_PRE.map((m) => `${m} ${s}`)) },
+          { title: 'Modifiers (after)', items: uniq(MODIFIERS_POST.map((m) => `${s} ${m}`)) },
+        ];
+      };
+
+      const copy = async (text: string, btn?: HTMLElement) => {
+        try {
+          await navigator.clipboard.writeText(text);
+          if (btn) { const o = btn.textContent; btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = o; }, 1500); }
+        } catch (e) {}
+      };
+
+      let allFlat: string[] = [];
+
+      const render = () => {
+        const groups = build(input.value);
+        allFlat = groups.flatMap((g) => g.items);
+        countEl.textContent = allFlat.length ? `${allFlat.length} keyword ideas` : '';
+        groupsEl.innerHTML = groups.map((g) => (
+          '<div class="kw-group">' +
+            '<div class="kw-group-head"><span>' + g.title + '</span>' +
+            '<button type="button" class="kw-group-copy" data-group="' + g.title + '">Copy group</button></div>' +
+            '<ul class="kw-list">' + g.items.map((it) => '<li>' + it + '</li>').join('') + '</ul>' +
+          '</div>'
+        )).join('');
+
+        groupsEl.querySelectorAll('.kw-list li').forEach((li) => {
+          li.addEventListener('click', () => copy((li as HTMLElement).textContent || ''));
+        });
+        groupsEl.querySelectorAll('.kw-group-copy').forEach((b) => {
+          b.addEventListener('click', () => {
+            const name = (b as HTMLElement).dataset.group;
+            const g = groups.find((x) => x.title === name);
+            if (g) copy(g.items.join('\n'), b as HTMLElement);
+          });
+        });
+      };
+
+      document.getElementById('kwGo')!.addEventListener('click', render);
+      input.addEventListener('keydown', (e) => { if ((e as KeyboardEvent).key === 'Enter') render(); });
+      document.getElementById('kwCopyAll')!.addEventListener('click', (e) => copy(allFlat.join('\n'), e.currentTarget as HTMLElement));
+
+      render();
+    });
+  </script>
+</MainLayout>
