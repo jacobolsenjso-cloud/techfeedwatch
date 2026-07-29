@@ -1,5 +1,6 @@
 ---
-title: "The Solo App Millionaire: How AI is Reshaping Indie Hacking's Bold Ambitions"
+title: "AI for Indie Hackers: Build Solo Million-Dollar Apps"
+seoTitled: true
 youtubeId: "ggU7YANSojI"
 date: "2026-07-27"
 tags:

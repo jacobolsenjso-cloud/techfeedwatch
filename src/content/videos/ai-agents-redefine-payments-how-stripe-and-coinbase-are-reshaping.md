@@ -1,5 +1,6 @@
 ---
-title: "AI Agents Redefine Payments: How Stripe and Coinbase Are Reshaping Global Commerce"
+title: "AI Agent Payments Redefine Commerce with Stripe, Coinbase"
+seoTitled: true
 youtubeId: "I-BRrCkz-F4"
 date: "2026-07-25"
 tags:

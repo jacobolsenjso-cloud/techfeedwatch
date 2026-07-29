@@ -1,5 +1,6 @@
 ---
-title: "The Data Bridge: Why Blockchain Oracles Are Essential for Real-World Smart Contracts"
+title: "Blockchain Oracles: Essential for Real-World Smart Contracts"
+seoTitled: true
 youtubeId: "m64dLRjJ9Bs"
 date: "2026-07-14"
 tags:

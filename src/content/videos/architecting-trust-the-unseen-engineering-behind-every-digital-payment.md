@@ -1,5 +1,6 @@
 ---
-title: "Architecting Trust: The Unseen Engineering Behind Every Digital Payment"
+title: "Digital Payment System Engineering: Security, Scale, Reliability"
+seoTitled: true
 youtubeId: "olfaBgJrUBI"
 date: "2026-07-15"
 tags:

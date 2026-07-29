@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Bling: What a $90,000 Website Reveals About Premium Design in the AI Era"
+seoTitled: true
 youtubeId: "VGBVW_rYHaA"
 date: "2026-06-18"
 tags:

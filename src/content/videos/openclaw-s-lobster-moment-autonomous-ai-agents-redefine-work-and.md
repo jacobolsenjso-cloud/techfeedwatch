@@ -1,5 +1,6 @@
 ---
-title: "OpenClaw's Lobster Moment: Autonomous AI Agents Redefine Work and Creation"
+title: "Autonomous AI Agents Redefine Future of Work: OpenClaw"
+seoTitled: true
 youtubeId: "7rzYDM6vMtI"
 date: "2026-07-27"
 tags:

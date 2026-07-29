@@ -1,5 +1,6 @@
 ---
 title: "The Genius Behind Visa's Billion-Dollar Business Model"
+seoTitled: true
 youtubeId: "MRLyhz3dPno"
 date: "2026-07-20"
 tags:

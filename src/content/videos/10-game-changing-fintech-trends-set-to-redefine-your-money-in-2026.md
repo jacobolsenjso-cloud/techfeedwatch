@@ -1,5 +1,6 @@
 ---
-title: "10 Game-Changing Fintech Trends Set to Redefine Your Money in 2026"
+title: "Fintech Trends 2026: 10 Innovations Reshaping Digital Finance"
+seoTitled: true
 youtubeId: "ucUdfiq2KiY"
 date: "2026-07-12"
 tags:

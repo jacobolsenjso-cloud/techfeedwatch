@@ -1,5 +1,6 @@
 ---
-title: "Crypto's Maturation: Why Onchain Development is Entering a New Era of Utility, Not Speculation"
+title: "Onchain Utility: Crypto Development Prioritizes Real-World Use"
+seoTitled: true
 youtubeId: "Pdne9xaRLUc"
 date: "2026-07-24"
 tags:

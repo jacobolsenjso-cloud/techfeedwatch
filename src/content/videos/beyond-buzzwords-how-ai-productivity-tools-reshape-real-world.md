@@ -1,5 +1,6 @@
 ---
-title: "Beyond Buzzwords: How AI Productivity Tools Reshape Real-World Workflows"
+title: "AI Productivity Tools: Transform Workflows, Boost Efficiency"
+seoTitled: true
 youtubeId: "RcXG_b1_GB0"
 date: "2026-07-27"
 tags:

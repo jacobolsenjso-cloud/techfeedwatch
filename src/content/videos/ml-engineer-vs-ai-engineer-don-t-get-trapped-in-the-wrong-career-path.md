@@ -1,5 +1,6 @@
 ---
-title: "ML Engineer vs. AI Engineer: Don't Get Trapped in the Wrong Career Path for 2026"
+title: "ML Engineer vs AI Engineer: Which Career Path Is Right for You?"
+seoTitled: true
 youtubeId: "cqDQV5g7zHo"
 date: "2026-07-11"
 tags:

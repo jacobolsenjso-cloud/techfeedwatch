@@ -1,5 +1,6 @@
 ---
 title: "You're Training AI Daily: The Unseen Impact of Your Actions"
+seoTitled: true
 youtubeId: "-lBzSGIJyFw"
 date: "2026-07-23"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "The First Spark: How a Simple Command Ignites a Robot's Journey"
+seoTitled: true
 youtubeId: "32aUeHoJwbo"
 date: "2026-07-06"
 tags:

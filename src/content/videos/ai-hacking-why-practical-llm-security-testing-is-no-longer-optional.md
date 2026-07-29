@@ -1,5 +1,6 @@
 ---
-title: "AI Hacking: Why Practical LLM Security Testing is No Longer Optional"
+title: "LLM Security Testing: Practical AI Vulnerability Defense"
+seoTitled: true
 youtubeId: "_yfiUQSbdPY"
 date: "2026-07-28"
 tags:

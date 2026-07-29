@@ -1,5 +1,6 @@
 ---
-title: "Xavier Gomez Unpacks the Future of Finance: AI, Fintech, and Reshaping Wealth Management"
+title: "AI in Finance: Fintech Drives Wealth Management Transformation"
+seoTitled: true
 youtubeId: "qkhWvBZ4ycQ"
 date: "2026-07-11"
 tags:

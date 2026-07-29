@@ -1,5 +1,6 @@
 ---
-title: "Beyond Keywords: Why AI-Powered Search Engines Are Redefining Information Retrieval"
+title: "AI Web App Development: Prompt to Rapid Full-Stack Deployment"
+seoTitled: true
 youtubeId: "Id5MsznWGwM"
 date: "2026-07-24"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Quantum Leap: How Breakthroughs Are Rewriting Reality"
+seoTitled: true
 youtubeId: "fT3Zhu-W1e4"
 date: "2026-07-16"
 tags:

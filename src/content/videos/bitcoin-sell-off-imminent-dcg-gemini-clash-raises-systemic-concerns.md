@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Sell-Off Imminent? DCG-Gemini Clash Raises Systemic Concerns"
+title: "Bitcoin Sell-Off Threat: DCG Debt to Gemini Spurs Market Stability Fears"
+seoTitled: true
 youtubeId: "FDU7KB2BF1Q"
 date: "2026-07-23"
 tags:

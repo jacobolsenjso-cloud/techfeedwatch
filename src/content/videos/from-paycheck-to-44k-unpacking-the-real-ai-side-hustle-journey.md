@@ -1,5 +1,6 @@
 ---
-title: "From Paycheck to $44K: Unpacking the Real AI Side Hustle Journey"
+title: "AI Side Hustle: Earn $44K with Accessible AI Tools"
+seoTitled: true
 youtubeId: "aTFABFO8wNM"
 date: "2026-06-22"
 tags:

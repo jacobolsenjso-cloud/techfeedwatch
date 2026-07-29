@@ -1,5 +1,6 @@
 ---
-title: "Beyond Disruption: How Web3 and XR Are Forcing Fintech's Next Evolution"
+title: "Fintech Web3 & XR: Redefining Financial Services Now"
+seoTitled: true
 youtubeId: "XJZovt0w3cU"
 date: "2026-07-19"
 tags:

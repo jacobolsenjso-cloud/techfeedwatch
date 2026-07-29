@@ -1,5 +1,6 @@
 ---
 title: "How AI Understands Words: Embeddings Demystified"
+seoTitled: true
 youtubeId: "SSflyyueWz0"
 date: "2026-07-13"
 tags:

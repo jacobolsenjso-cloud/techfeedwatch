@@ -1,5 +1,6 @@
 ---
-title: "AI Accelerates Front-End Development: Reshaping UI Creation and Developer Roles"
+title: "AI Front-End Development: Generative UI Tools & Dev Roles"
+seoTitled: true
 youtubeId: "TBIjgBVFjVI"
 date: "2026-07-25"
 tags:

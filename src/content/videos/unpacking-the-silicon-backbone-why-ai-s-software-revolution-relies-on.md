@@ -1,5 +1,6 @@
 ---
-title: "Unpacking the Silicon Backbone: Why AI's Software Revolution Relies on Hardware Dominance"
+title: "AI Hardware & Chips: Nvidia's Dominance Powers Generative AI"
+seoTitled: true
 youtubeId: "-s_Ui5j0Guw"
 date: "2026-07-25"
 tags:

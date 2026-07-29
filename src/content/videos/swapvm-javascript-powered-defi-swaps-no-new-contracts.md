@@ -1,5 +1,6 @@
 ---
 title: "SwapVM: JavaScript-Powered DeFi Swaps, No New Contracts"
+seoTitled: true
 youtubeId: "S93lkr1uL0Q"
 date: "2026-07-20"
 tags:

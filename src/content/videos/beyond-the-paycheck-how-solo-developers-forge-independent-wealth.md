@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Paycheck: How Solo Developers Forge Independent Wealth"
+title: "Solo Developers: Build Independent Wealth Creating Software"
+seoTitled: true
 youtubeId: "A4_TFHzqAAg"
 date: "2026-07-24"
 tags:

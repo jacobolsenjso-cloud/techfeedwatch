@@ -1,5 +1,6 @@
 ---
 title: "Ignite Your Creativity: The Definitive Guide to Mastering Generative AI for Visual Storytelling"
+seoTitled: true
 youtubeId: "5MpKW68dcT8"
 date: "2026-07-11"
 tags:

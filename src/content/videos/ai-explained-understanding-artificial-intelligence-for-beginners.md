@@ -1,5 +1,6 @@
 ---
 title: "AI Explained: Understanding Artificial Intelligence for Beginners"
+seoTitled: true
 youtubeId: "UufEnQgmgIk"
 date: "2026-07-24"
 tags:

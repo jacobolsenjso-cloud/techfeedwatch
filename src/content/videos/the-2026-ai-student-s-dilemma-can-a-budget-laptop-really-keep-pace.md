@@ -1,5 +1,6 @@
 ---
-title: "The 2026 AI Student's Dilemma: Can a Budget Laptop Really Keep Pace?"
+title: "AI Student Laptops: Run Sophisticated ML Models Locally"
+seoTitled: true
 youtubeId: "ELFigJ3gzXg"
 date: "2026-07-18"
 tags:

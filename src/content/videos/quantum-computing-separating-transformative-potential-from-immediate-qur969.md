@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Separating Transformative Potential from Immediate Hype"
+title: "Quantum Computing Explained: Real Potential, Current Limits"
+seoTitled: true
 youtubeId: "QuR969uMICM"
 date: "2026-07-26"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI's Inexorable Advance: Is the SaaS Business Model Under Threat?"
+title: "SaaS Business Model Under Threat: AI Agents Disrupt Subscriptions"
+seoTitled: true
 youtubeId: "cxcb55zr2Q8"
 date: "2026-07-24"
 tags:

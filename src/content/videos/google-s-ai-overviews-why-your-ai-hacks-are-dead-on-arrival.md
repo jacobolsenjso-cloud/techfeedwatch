@@ -1,5 +1,6 @@
 ---
-title: "Google's AI Overviews: Why Your 'AI Hacks' Are Dead on Arrival"
+title: "Google AI Overviews SEO: Ignore 'AI Hacks', Use Standard SEO"
+seoTitled: true
 youtubeId: "1GiYkMYJLPs"
 date: "2026-07-24"
 tags:

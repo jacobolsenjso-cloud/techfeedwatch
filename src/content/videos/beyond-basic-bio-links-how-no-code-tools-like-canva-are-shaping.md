@@ -1,5 +1,6 @@
 ---
 title: "Beyond Basic Bio Links: How No-Code Tools Like Canva Are Shaping Digital Presence in the AI Era"
+seoTitled: true
 youtubeId: "EY8UWm5XwFk"
 date: "2026-06-15"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Generative AI: Understanding the Engine Behind Tomorrow's Digital Reality"
+title: "Generative AI: What Makes It Powerful (Deep Learning, Data, Compute)"
+seoTitled: true
 youtubeId: "b76gsOSkHB4"
 date: "2026-07-23"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Human Emotions vs. AI Logic: Why the Future of Trading is Emotionless"
+seoTitled: true
 youtubeId: "rh7EHlpd1eY"
 date: "2026-06-18"
 tags:

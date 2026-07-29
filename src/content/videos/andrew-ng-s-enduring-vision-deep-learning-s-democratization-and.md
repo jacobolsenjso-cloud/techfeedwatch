@@ -1,5 +1,6 @@
 ---
-title: "Andrew Ng's Enduring Vision: Deep Learning's Democratization and Practical AI"
+title: "Andrew Ng AI Education: Practical Deep Learning for Developers"
+seoTitled: true
 youtubeId: "0jspaMLxBig"
 date: "2026-07-18"
 tags:

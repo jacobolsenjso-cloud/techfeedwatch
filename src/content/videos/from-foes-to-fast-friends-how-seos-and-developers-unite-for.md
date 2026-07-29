@@ -1,5 +1,6 @@
 ---
-title: "From Foes to Fast Friends: How SEOs and Developers Unite for Unstoppable Web Performance"
+title: "SEO & Developers Team Up for Performance & Discoverability"
+seoTitled: true
 youtubeId: "Ednegcd0jNE"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Quantum Leap: Separating Hype from Reality in the Next Computing Revolution"
+title: "Quantum Computing Reality: Separating Hype from Practical Future"
+seoTitled: true
 youtubeId: "B3U1NDUiwSA"
 date: "2026-07-16"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Meta AI's Secret Weapon: Unlock FREE, Unlimited, Watermark-Free Videos with Vibes.AI!"
+title: "Meta AI Video Generator Free: Unlimited, No Watermark Videos"
+seoTitled: true
 youtubeId: "VWGc5Gie6n8"
 date: "2026-07-10"
 tags:

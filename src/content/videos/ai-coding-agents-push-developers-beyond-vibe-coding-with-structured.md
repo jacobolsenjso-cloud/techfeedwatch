@@ -1,5 +1,6 @@
 ---
-title: "AI Coding Agents Push Developers Beyond 'Vibe Coding' with Structured, Spec-Driven Development"
+title: "AI Coding Agents: Structured Dev Replaces Vibe Coding"
+seoTitled: true
 youtubeId: "7cOAayWzYDY"
 date: "2026-07-29"
 tags:

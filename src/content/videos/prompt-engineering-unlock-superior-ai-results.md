@@ -1,5 +1,6 @@
 ---
 title: "Prompt Engineering: Unlock Superior AI Results"
+seoTitled: true
 youtubeId: "UhkYsFcEixQ"
 date: "2026-07-21"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Sam Altman's Bold Vision: How AI Will Radically Reshape Our Work, Learning, and Creative Futures"
+seoTitled: true
 youtubeId: "Kwt4H5xMkBU"
 date: "2026-07-09"
 tags:

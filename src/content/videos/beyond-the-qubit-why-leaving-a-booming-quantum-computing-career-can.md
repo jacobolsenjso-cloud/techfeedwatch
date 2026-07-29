@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Qubit: Why Leaving a Booming Quantum Computing Career Can Be the Smartest Move"
+title: "Quantum Computing Career: Why Leaving Early Can Be Your Smartest Move"
+seoTitled: true
 youtubeId: "pDj1QhPOVBo"
 date: "2026-07-11"
 tags:

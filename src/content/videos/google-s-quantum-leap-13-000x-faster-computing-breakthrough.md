@@ -1,5 +1,6 @@
 ---
 title: "Google's Quantum Leap: 13,000x Faster Computing Breakthrough"
+seoTitled: true
 youtubeId: "m53jrYBLD_M"
 date: "2026-07-16"
 tags:

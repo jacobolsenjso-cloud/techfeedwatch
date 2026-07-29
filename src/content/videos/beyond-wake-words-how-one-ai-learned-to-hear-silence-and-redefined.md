@@ -1,5 +1,6 @@
 ---
 title: "Beyond Wake Words: How One AI Learned to 'Hear Silence' and Redefined Interaction"
+seoTitled: true
 youtubeId: "CsY3cV072Nk"
 date: "2026-07-08"
 tags:

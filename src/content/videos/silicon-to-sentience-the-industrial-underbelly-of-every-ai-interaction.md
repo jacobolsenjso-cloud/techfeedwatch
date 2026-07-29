@@ -1,5 +1,6 @@
 ---
-title: "Silicon to Sentience: The Industrial Underbelly of Every AI Interaction"
+title: "AI Infrastructure: Servers, Data Centers, Global Manufacturing"
+seoTitled: true
 youtubeId: "WsWLSkt7d2w"
 date: "2026-07-15"
 tags:

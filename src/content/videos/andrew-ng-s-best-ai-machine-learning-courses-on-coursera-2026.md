@@ -1,5 +1,6 @@
 ---
 title: "Andrew Ng's Best AI & Machine Learning Courses on Coursera (2026)"
+seoTitled: true
 youtubeId: "kaJJ_2_j5Kg"
 date: "2026-07-14"
 tags:

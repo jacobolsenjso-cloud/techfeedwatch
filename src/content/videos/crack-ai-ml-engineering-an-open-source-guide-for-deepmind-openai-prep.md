@@ -1,5 +1,6 @@
 ---
 title: "Crack AI/ML Engineering: An Open-Source Guide for DeepMind & OpenAI Prep"
+seoTitled: true
 youtubeId: "HzNQWkjjTo8"
 date: "2026-07-25"
 tags:

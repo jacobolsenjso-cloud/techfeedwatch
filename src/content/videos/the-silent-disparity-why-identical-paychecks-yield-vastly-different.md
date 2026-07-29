@@ -1,5 +1,6 @@
 ---
-title: "The Silent Disparity: Why Identical Paychecks Yield Vastly Different Fortunes"
+title: "Build Wealth: Why Similar Incomes Create Vastly Different Fortunes"
+seoTitled: true
 youtubeId: "uFLz0MexCSY"
 date: "2026-07-29"
 tags:

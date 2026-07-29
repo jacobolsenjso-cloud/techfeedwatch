@@ -1,5 +1,6 @@
 ---
-title: "Critical Infrastructure Under Siege: Why State-Sponsored Cyberattacks Are Escalating"
+title: "State-sponsored APT cyberattacks target critical infrastructure"
+seoTitled: true
 youtubeId: "52HdL_uRal8"
 date: "2026-07-28"
 tags:

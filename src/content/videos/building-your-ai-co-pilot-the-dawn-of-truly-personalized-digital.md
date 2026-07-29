@@ -1,5 +1,6 @@
 ---
-title: "Building Your AI Co-Pilot: The Dawn of Truly Personalized Digital Assistants"
+title: "Personalized AI Digital Assistants: Custom Systems & Productivity"
+seoTitled: true
 youtubeId: "CvLkhGWZlvE"
 date: "2026-07-27"
 tags:

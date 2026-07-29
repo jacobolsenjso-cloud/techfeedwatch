@@ -1,5 +1,6 @@
 ---
-title: "AI & The S&P 500: Why Tech's Hottest Trend is Redefining Diversification"
+title: "AI S&P 500 Diversification: New Risks from Tech Concentration"
+seoTitled: true
 youtubeId: "HNVg81nA2J8"
 date: "2026-06-18"
 tags:

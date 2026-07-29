@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Buzz: Deconstructing the Business Models Driving FinTech's Trillion-Dollar Ascent"
+title: "Fintech Business Models: Value & Revenue Strategies Explained"
+seoTitled: true
 youtubeId: "EAcoLD_Md7g"
 date: "2026-07-14"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Building Fintech Trust: How Prove Identity Secures Your Data"
+seoTitled: true
 youtubeId: "xhtSopaXDm4"
 date: "2026-07-15"
 tags:

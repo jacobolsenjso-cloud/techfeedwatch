@@ -1,5 +1,6 @@
 ---
-title: "From Niche to AI-Native: Unpacking the Playbook for Next-Gen Service Companies"
+title: "AI-Native Service Companies: The Playbook for Next-Gen Business"
+seoTitled: true
 youtubeId: "gSNFJbgoaHI"
 date: "2026-07-23"
 tags:

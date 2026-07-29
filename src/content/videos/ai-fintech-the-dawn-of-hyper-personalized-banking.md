@@ -1,5 +1,6 @@
 ---
 title: "AI & Fintech: The Dawn of Hyper-Personalized Banking"
+seoTitled: true
 youtubeId: "UUt0f2yRUjw"
 date: "2026-07-27"
 tags:

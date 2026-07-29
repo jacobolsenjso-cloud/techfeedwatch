@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Algorithm: What a Mother's Love Story Teaches Us About Human-Centric Content in the AI Era"
+seoTitled: true
 youtubeId: "ws1GdGN670Q"
 date: "2026-07-07"
 tags:

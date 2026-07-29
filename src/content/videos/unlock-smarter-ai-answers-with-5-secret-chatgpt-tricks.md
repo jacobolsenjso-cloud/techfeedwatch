@@ -1,5 +1,6 @@
 ---
 title: "Unlock Smarter AI Answers with 5 Secret ChatGPT Tricks"
+seoTitled: true
 youtubeId: "EoLOoOXYjGI"
 date: "2026-07-17"
 tags:

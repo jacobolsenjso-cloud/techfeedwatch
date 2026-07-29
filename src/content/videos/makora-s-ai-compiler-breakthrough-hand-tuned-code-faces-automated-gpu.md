@@ -1,5 +1,6 @@
 ---
-title: "Makora's AI Compiler Breakthrough: Hand-Tuned Code Faces Automated GPU Optimization"
+title: "Automated GPU AI Compiler Beats Hand-Tuned CUDA for LLMs"
+seoTitled: true
 youtubeId: "ukzACWrk0W0"
 date: "2026-07-29"
 tags:

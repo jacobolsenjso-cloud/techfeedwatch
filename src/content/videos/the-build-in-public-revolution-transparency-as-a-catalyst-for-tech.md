@@ -1,5 +1,6 @@
 ---
-title: "The 'Build in Public' Revolution: Transparency as a Catalyst for Tech Innovation"
+title: "Build in Public Software Development: Catalyst for Tech Innovation"
+seoTitled: true
 youtubeId: "Jv2tZj8Cs8U"
 date: "2026-07-27"
 tags:

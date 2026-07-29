@@ -1,5 +1,6 @@
 ---
-title: "Blockchain's Quiet Revolution: Beyond Crypto Hype to Real-World Business Transformation"
+title: "Blockchain Business Transformation: Real-World Impact Beyond Crypto"
+seoTitled: true
 youtubeId: "Pl8OlkkwRpc"
 date: "2026-07-25"
 tags:

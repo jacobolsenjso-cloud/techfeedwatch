@@ -1,5 +1,6 @@
 ---
-title: "Fintech's Fragmented Future: Deconstructing the Six Pillars of Digital Finance"
+title: "Fintech Subdomains: The Six Pillars of Digital Finance"
+seoTitled: true
 youtubeId: "zvw_DMamBhM"
 date: "2026-07-14"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "iPhone's AI Overhaul: Beyond Productivity Hacks to a New Era of Personalized Computing"
+title: "iPhone AI Productivity Machine: Personalized Tasks Automation"
+seoTitled: true
 youtubeId: "iCUB7JZmmig"
 date: "2026-07-27"
 tags:

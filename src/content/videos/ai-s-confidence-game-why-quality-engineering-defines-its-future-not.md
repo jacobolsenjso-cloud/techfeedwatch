@@ -1,5 +1,6 @@
 ---
-title: "AI's Confidence Game: Why Quality Engineering Defines Its Future, Not Just Its Capabilities"
+title: "AI Quality Engineering: Validating AI Outputs for Trust & Safety"
+seoTitled: true
 youtubeId: "XLMPIRtsrDs"
 date: "2026-07-18"
 tags:

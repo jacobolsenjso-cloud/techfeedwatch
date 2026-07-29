@@ -1,5 +1,6 @@
 ---
 title: "Rich Snippets Await: Master Structured Data Testing with Schema.org"
+seoTitled: true
 youtubeId: "meTID45bmwk"
 date: "2026-07-12"
 tags:

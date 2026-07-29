@@ -1,5 +1,6 @@
 ---
 title: "The Terrifying Reality of AI & Quantum Computing"
+seoTitled: true
 youtubeId: "YKbN-D34AsM"
 date: "2026-07-19"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI's Local Goldmine: How a Brand New Business Hit $10K/Month in 3 Months"
+title: "AI for Local Business: Hit $10K/Month Revenue in 3 Months"
+seoTitled: true
 youtubeId: "V1vFf-9Gzlo"
 date: "2026-06-29"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "AMD's AM5 Revolution: Server EPYC Chips Crash the Consumer Party (And Threaten Ryzen's Reign!)"
+seoTitled: true
 youtubeId: "n32D78acofk"
 date: "2026-07-08"
 tags:

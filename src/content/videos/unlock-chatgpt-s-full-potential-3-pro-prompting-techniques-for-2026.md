@@ -1,5 +1,6 @@
 ---
 title: "Unlock ChatGPT's Full Potential: 3 Pro Prompting Techniques for 2026"
+seoTitled: true
 youtubeId: "Q07k_UlB4QA"
 date: "2026-07-25"
 tags:

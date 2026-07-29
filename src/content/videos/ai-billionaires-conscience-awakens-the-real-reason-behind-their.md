@@ -1,5 +1,6 @@
 ---
-title: "AI Billionaires' 'Conscience' Awakens: The Real Reason Behind Their Sudden Philanthropic Turn"
+title: "AI Billionaires' Shift: Public Backlash Fuels Philanthropy"
+seoTitled: true
 youtubeId: "GRc4hWdocEw"
 date: "2026-06-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI Sub-Agents and Search Rankings: The Automated SEO Frontier or a Fleeting Edge?"
+title: "AI SEO Strategy: Automating Tasks, Human Oversight for Rankings"
+seoTitled: true
 youtubeId: "yCxlgCkw7as"
 date: "2026-07-18"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "SEO's Automated Future: The AI-Powered Engine Redefining Digital Visibility"
+title: "AI SEO Strategy: Gain AI Citations from Generative Overviews"
+seoTitled: true
 youtubeId: "RZGDkMlmQ18"
 date: "2026-07-14"
 tags:

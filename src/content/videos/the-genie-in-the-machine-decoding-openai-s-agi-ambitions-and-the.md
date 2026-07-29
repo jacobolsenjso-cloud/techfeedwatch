@@ -1,5 +1,6 @@
 ---
-title: "The Genie in the Machine: Decoding OpenAI's AGI Ambitions and the Unseen Control Problem"
+title: "OpenAI AGI Ambitions: Decoding the Unseen AI Control Problem"
+seoTitled: true
 youtubeId: "vfSplCaxHzM"
 date: "2026-07-29"
 tags:

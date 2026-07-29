@@ -1,5 +1,6 @@
 ---
 title: "Unveiling the AI's 'Brain': How Agentic Systems Master Deep Research in Minutes"
+seoTitled: true
 youtubeId: "-w1mjvt4r9w"
 date: "2026-07-12"
 tags:

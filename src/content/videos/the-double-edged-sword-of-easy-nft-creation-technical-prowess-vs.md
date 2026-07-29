@@ -1,5 +1,6 @@
 ---
-title: "The Double-Edged Sword of Easy NFT Creation: Technical Prowess vs. Market Value"
+title: "Easy NFT Creation Challenges NFT Market Value & Scarcity"
+seoTitled: true
 youtubeId: "meTpMP0J5E8"
 date: "2026-07-26"
 tags:

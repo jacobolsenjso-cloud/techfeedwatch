@@ -1,5 +1,6 @@
 ---
-title: "Code is Sawdust: How AI Agents are Reshaping Software Development"
+title: "AI Agents Reshape Software Development: From Code to Orchestration"
+seoTitled: true
 youtubeId: "fQmlML9Lay4"
 date: "2026-07-29"
 tags:

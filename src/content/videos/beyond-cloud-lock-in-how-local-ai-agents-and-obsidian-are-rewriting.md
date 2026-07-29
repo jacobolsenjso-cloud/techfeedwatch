@@ -1,5 +1,6 @@
 ---
-title: "Beyond Cloud Lock-In: How Local AI Agents and Obsidian are Rewriting Personal Knowledge Management"
+title: "Local AI Agents & Obsidian for Personal Knowledge Management"
+seoTitled: true
 youtubeId: "XEYh38XGoSA"
 date: "2026-07-28"
 tags:

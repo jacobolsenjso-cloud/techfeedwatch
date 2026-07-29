@@ -1,5 +1,6 @@
 ---
-title: "Bridging the Quantum Divide: How Hybrid Supercomputing is Redefining Computational Power"
+title: "Hybrid Quantum-Classical Supercomputing Solves Intractable Problems"
+seoTitled: true
 youtubeId: "HgXqbnSxtZQ"
 date: "2026-07-25"
 tags:

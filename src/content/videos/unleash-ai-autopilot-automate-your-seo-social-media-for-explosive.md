@@ -1,5 +1,6 @@
 ---
-title: "Unleash AI Autopilot: Automate Your SEO & Social Media for Explosive Growth"
+title: "AI for SEO & Social Media: Automate Digital Marketing"
+seoTitled: true
 youtubeId: "DYkZ5CXmkxo"
 date: "2026-06-18"
 tags:

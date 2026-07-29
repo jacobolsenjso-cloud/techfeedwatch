@@ -1,5 +1,6 @@
 ---
-title: "Beyond Mainstream: Jane Street Forges Bespoke AI for OCaml, Redefining Niche Language Productivity"
+title: "Jane Street Builds Bespoke AI for OCaml Productivity"
+seoTitled: true
 youtubeId: "0ML7ZLMdcl4"
 date: "2026-07-20"
 tags:

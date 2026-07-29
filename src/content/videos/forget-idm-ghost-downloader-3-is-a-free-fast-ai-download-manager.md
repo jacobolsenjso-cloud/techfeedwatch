@@ -1,5 +1,6 @@
 ---
 title: "Forget IDM! Ghost Downloader 3 is a FREE & Fast AI Download Manager"
+seoTitled: true
 youtubeId: "kgxAuZZFyCw"
 date: "2026-07-26"
 tags:

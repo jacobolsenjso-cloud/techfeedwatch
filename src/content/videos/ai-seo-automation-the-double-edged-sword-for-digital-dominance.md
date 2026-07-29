@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Automation: The Double-Edged Sword for Digital Dominance"
+title: "AI SEO Automation: Benefits & Risks for Digital Strategy"
+seoTitled: true
 youtubeId: "p__wg34jz64"
 date: "2026-07-28"
 tags:

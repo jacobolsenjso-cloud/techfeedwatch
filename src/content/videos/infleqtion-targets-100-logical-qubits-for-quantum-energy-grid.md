@@ -1,5 +1,6 @@
 ---
 title: "Infleqtion Targets 100 Logical Qubits for Quantum Energy Grid"
+seoTitled: true
 youtubeId: "aDc6YLAZm3Q"
 date: "2026-07-24"
 tags:

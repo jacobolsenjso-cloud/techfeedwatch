@@ -1,5 +1,6 @@
 ---
-title: "Google Maps Data Scraping: The No-Code Frontier for Business Intelligence"
+title: "Google Maps Data Scraping: No-Code Tools for Leads & Research"
+seoTitled: true
 youtubeId: "NNYUGS_PbTo"
 date: "2026-07-14"
 tags:

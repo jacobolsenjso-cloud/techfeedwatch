@@ -1,5 +1,6 @@
 ---
 title: "Japan Unveils Infinite VR Floor for Endless Virtual Exploration"
+seoTitled: true
 youtubeId: "QpaNET3jzeE"
 date: "2026-07-16"
 tags:

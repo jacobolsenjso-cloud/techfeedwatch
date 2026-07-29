@@ -1,5 +1,6 @@
 ---
 title: "New to AI? Start with These Top Coursera Courses (2026)"
+seoTitled: true
 youtubeId: "43jDAEAEL-U"
 date: "2026-07-15"
 tags:

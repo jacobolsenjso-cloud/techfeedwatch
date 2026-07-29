@@ -1,5 +1,6 @@
 ---
-title: "Claude Science: Anthropic's Game-Changing AI Debuts Self-Correcting Research and a 'PhD in Your Pocket'"
+title: "Claude Science: Anthropic AI Automates Self-Correcting Scientific Research"
+seoTitled: true
 youtubeId: "9zK0omjrwWY"
 date: "2026-07-02"
 tags:

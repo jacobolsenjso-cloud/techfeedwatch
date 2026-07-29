@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Desktop: Laptops Now Power Large Language Models with Unprecedented Local Capability"
+title: "Local LLM Performance on Laptops: Optimize CPU & GPU Memory"
+seoTitled: true
 youtubeId: "AcTmeGpzhBk"
 date: "2026-07-21"
 tags:

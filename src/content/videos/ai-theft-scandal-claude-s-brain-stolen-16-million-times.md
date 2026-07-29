@@ -1,5 +1,6 @@
 ---
 title: "AI Theft Scandal: Claude's Brain Stolen 16 Million Times"
+seoTitled: true
 youtubeId: "lO961HRQn5Q"
 date: "2026-07-29"
 tags:

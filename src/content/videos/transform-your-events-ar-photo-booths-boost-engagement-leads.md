@@ -1,5 +1,6 @@
 ---
 title: "Transform Your Events: AR Photo Booths Boost Engagement & Leads"
+seoTitled: true
 youtubeId: "g26HbhYepw0"
 date: "2026-07-20"
 tags:

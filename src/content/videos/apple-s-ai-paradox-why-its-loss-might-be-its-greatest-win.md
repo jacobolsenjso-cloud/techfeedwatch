@@ -1,5 +1,6 @@
 ---
-title: "Apple's AI Paradox: Why Its 'Loss' Might Be Its Greatest Win"
+title: "Apple AI: On-Device Focus & Privacy Secure Long-Term Advantage"
+seoTitled: true
 youtubeId: "eWKY0OnPByg"
 date: "2026-07-08"
 tags:

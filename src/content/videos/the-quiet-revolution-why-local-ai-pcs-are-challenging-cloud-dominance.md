@@ -1,5 +1,6 @@
 ---
-title: "The Quiet Revolution: Why Local AI PCs Are Challenging Cloud Dominance"
+title: "Local AI PCs Build: High-VRAM GPU & PCIe 5.0 for LLMs"
+seoTitled: true
 youtubeId: "ebqX46CHTaY"
 date: "2026-07-18"
 tags:

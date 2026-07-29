@@ -1,5 +1,6 @@
 ---
 title: "Quantum Reality Simplified: No More Imaginary Numbers?"
+seoTitled: true
 youtubeId: "KzR8knXotAQ"
 date: "2026-07-14"
 tags:

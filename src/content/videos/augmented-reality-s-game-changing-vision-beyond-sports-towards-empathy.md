@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality's Game-Changing Vision: Beyond Sports, Towards Empathy"
+title: "Augmented Reality: Empathy Beyond Sports & Entertainment"
+seoTitled: true
 youtubeId: "AgMOJC5R4F8"
 date: "2026-07-14"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Why 90% of AI Projects Fail: An Expert Explains"
+seoTitled: true
 youtubeId: "k5dJV_QvNSM"
 date: "2026-07-23"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "AR Shopping: How 'Try Before You Buy' Transforms Retail"
+seoTitled: true
 youtubeId: "yvSVu1BSLfQ"
 date: "2026-07-17"
 tags:

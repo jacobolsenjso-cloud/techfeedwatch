@@ -1,5 +1,6 @@
 ---
 title: "The Power of Nothing: What a Single Syllable Reveals About AI's Future"
+seoTitled: true
 youtubeId: "zB6j7BYLdDo"
 date: "2026-06-18"
 tags:

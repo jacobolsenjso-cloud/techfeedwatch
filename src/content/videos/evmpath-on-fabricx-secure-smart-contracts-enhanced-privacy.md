@@ -1,5 +1,6 @@
 ---
 title: "EVMPath on FabricX: Secure Smart Contracts & Enhanced Privacy"
+seoTitled: true
 youtubeId: "qrmF3UgHzB8"
 date: "2026-07-15"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Groundbreaking Quantum Discovery Reveals Where Time Itself Began"
+seoTitled: true
 youtubeId: "WN3xaj6OAXk"
 date: "2026-07-20"
 tags:

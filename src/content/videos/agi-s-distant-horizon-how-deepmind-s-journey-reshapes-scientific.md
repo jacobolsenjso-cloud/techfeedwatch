@@ -1,5 +1,6 @@
 ---
-title: "AGI's Distant Horizon: How DeepMind's Journey Reshapes Scientific Discovery Today"
+title: "DeepMind AI Revolutionizes Scientific Discovery Today"
+seoTitled: true
 youtubeId: "JNyuX1zoOgU"
 date: "2026-07-27"
 tags:

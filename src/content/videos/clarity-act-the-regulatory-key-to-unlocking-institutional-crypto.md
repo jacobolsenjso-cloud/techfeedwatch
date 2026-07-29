@@ -1,5 +1,6 @@
 ---
-title: "Clarity Act: The Regulatory Key to Unlocking Institutional Crypto Trillions"
+title: "Institutional Crypto Regulatory Clarity Unlocks Trillions"
+seoTitled: true
 youtubeId: "zR3XAvr6uLw"
 date: "2026-07-27"
 tags:

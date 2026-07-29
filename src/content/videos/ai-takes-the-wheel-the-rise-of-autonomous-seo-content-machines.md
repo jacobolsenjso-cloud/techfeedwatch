@@ -1,5 +1,6 @@
 ---
-title: "AI Takes the Wheel: The Rise of Autonomous SEO Content Machines"
+title: "AI SEO Content Machines: Automate Article Generation & Optimization"
+seoTitled: true
 youtubeId: "9hozIpuv8wM"
 date: "2026-07-26"
 tags:

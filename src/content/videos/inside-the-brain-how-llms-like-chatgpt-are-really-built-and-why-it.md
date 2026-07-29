@@ -1,5 +1,6 @@
 ---
-title: "Inside the Brain: How LLMs Like ChatGPT Are Really Built and Why It Matters"
+title: "How ChatGPT & LLMs Are Built: Data Prep & Tokenization"
+seoTitled: true
 youtubeId: "7xTGNNLPyMI"
 date: "2026-07-24"
 tags:

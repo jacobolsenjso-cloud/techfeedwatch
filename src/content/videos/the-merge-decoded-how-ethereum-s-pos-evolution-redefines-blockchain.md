@@ -1,5 +1,6 @@
 ---
-title: "The Merge Decoded: How Ethereum's PoS Evolution Redefines Blockchain Security and Scale"
+title: "Ethereum Merge: How PoS Boosts Security and Sustainability"
+seoTitled: true
 youtubeId: "8-czXYEpqvE"
 date: "2026-07-15"
 tags:

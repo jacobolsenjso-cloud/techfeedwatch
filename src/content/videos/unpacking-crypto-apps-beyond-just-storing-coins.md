@@ -1,5 +1,6 @@
 ---
 title: "Unpacking Crypto Apps: Beyond Just Storing Coins"
+seoTitled: true
 youtubeId: "E_Zv-gyIaYc"
 date: "2026-07-23"
 tags:

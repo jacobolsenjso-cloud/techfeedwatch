@@ -1,5 +1,6 @@
 ---
 title: "Nobel Laureate's Vision: Architecting Compassion into the Core of AI"
+seoTitled: true
 youtubeId: "ZvFUbpuGCS8"
 date: "2026-07-09"
 tags:

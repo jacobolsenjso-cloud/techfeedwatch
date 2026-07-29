@@ -1,5 +1,6 @@
 ---
 title: "Master AI Workflow: A Beginner's Guide to AI Processes"
+seoTitled: true
 youtubeId: "JrbVvJpMx-U"
 date: "2026-07-16"
 tags:

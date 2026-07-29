@@ -1,5 +1,6 @@
 ---
-title: "Beyond SEO: Build Your Own AEO Service and Dominate the AI-Powered Search Revolution"
+title: "Answer Engine Optimization (AEO): Dominate AI Search & Answers"
+seoTitled: true
 youtubeId: "LxGyfu8A10M"
 date: "2026-07-11"
 tags:

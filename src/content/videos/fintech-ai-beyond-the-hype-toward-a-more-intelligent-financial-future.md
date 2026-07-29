@@ -1,5 +1,6 @@
 ---
-title: "FinTech AI: Beyond the Hype, Toward a More Intelligent Financial Future"
+title: "FinTech AI: Opportunities & Challenges in Modern Finance"
+seoTitled: true
 youtubeId: "b1gszMjehF0"
 date: "2026-07-28"
 tags:

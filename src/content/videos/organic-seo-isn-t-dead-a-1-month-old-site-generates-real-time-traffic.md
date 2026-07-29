@@ -1,5 +1,6 @@
 ---
 title: "Organic SEO Isn't Dead: A 1-Month-Old Site Generates Real-Time Traffic!"
+seoTitled: true
 youtubeId: "RL8sinwhPh8"
 date: "2026-06-29"
 tags:

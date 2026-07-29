@@ -1,5 +1,6 @@
 ---
-title: "Beyond Prompts: The Dawn of Self-Building AI Workflow Skills and Autonomous Agents"
+title: "Self-Building AI Workflow Skills for Autonomous AI Agents"
+seoTitled: true
 youtubeId: "mOGLdUOLAu0"
 date: "2026-07-26"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "AI & Smart Contracts Automate Global Trade with Digital ID"
+seoTitled: true
 youtubeId: "ChBk-fQA0Mg"
 date: "2026-07-22"
 tags:

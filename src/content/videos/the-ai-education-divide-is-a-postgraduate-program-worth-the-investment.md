@@ -1,5 +1,6 @@
 ---
-title: "The AI Education Divide: Is a Postgraduate Program Worth the Investment?"
+title: "AI Postgraduate Program ROI: Is It Worth the Investment?"
+seoTitled: true
 youtubeId: "AnTpZQnlEj4"
 date: "2026-07-22"
 tags:

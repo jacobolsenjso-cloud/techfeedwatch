@@ -1,5 +1,6 @@
 ---
 title: "Top 5 AI Jobs: High-Paying Careers Dominating 2026"
+seoTitled: true
 youtubeId: "NuedZx5jfRc"
 date: "2026-07-23"
 tags:

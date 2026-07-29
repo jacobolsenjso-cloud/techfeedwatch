@@ -1,5 +1,6 @@
 ---
 title: "The $40,000 AI Chip: NVIDIA's Dominance Explained"
+seoTitled: true
 youtubeId: "ebS3HNbTjRI"
 date: "2026-07-22"
 tags:

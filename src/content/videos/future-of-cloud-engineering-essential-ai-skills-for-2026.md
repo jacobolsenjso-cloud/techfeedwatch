@@ -1,5 +1,6 @@
 ---
 title: "Future of Cloud Engineering: Essential AI Skills for 2026"
+seoTitled: true
 youtubeId: "0666fFq_-yM"
 date: "2026-07-20"
 tags:

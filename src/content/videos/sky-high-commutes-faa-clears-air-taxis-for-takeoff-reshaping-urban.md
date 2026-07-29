@@ -1,5 +1,6 @@
 ---
 title: "Sky-High Commutes: FAA Clears Air Taxis for Takeoff, Reshaping Urban Mobility"
+seoTitled: true
 youtubeId: "AAYnxnfoIy8"
 date: "2026-07-07"
 tags:

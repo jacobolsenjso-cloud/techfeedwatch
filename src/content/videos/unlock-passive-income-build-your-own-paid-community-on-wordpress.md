@@ -1,5 +1,6 @@
 ---
-title: "Unlock Passive Income: Build Your Own Paid Community on WordPress!"
+title: "Build Paid Community on WordPress: Maximize Creator Revenue"
+seoTitled: true
 youtubeId: "oaW_KDiafeQ"
 date: "2026-06-11"
 tags:

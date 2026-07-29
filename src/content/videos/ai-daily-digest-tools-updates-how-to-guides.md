@@ -1,5 +1,6 @@
 ---
 title: "AI Daily Digest: Tools, Updates & How-To Guides"
+seoTitled: true
 youtubeId: "tOeZ8m85ivs"
 date: "2026-07-26"
 tags:

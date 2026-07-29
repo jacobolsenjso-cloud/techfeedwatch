@@ -1,5 +1,6 @@
 ---
 title: "Beyond Nostalgia: What the LG G7 ThinQ's 2018 Flagship Status Reveals About Today's AI-Driven Mobile Landscape"
+seoTitled: true
 youtubeId: "p1jqhfSPlk8"
 date: "2026-07-07"
 tags:

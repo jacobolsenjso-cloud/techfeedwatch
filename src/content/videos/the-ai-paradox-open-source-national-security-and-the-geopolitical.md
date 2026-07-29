@@ -1,5 +1,6 @@
 ---
-title: "The AI Paradox: Open Source, National Security, and the Geopolitical Chessboard"
+title: "AI Open Source vs National Security: Geopolitical Challenges"
+seoTitled: true
 youtubeId: "f2E5iQMZxvM"
 date: "2026-07-26"
 tags:

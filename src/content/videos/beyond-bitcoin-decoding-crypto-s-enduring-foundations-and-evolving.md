@@ -1,5 +1,6 @@
 ---
-title: "Beyond Bitcoin: Decoding Crypto's Enduring Foundations and Evolving Future"
+title: "Cryptocurrency Explained: Blockchain, Digital Assets & Value"
+seoTitled: true
 youtubeId: "yiRCdMgkkFY"
 date: "2026-07-23"
 tags:

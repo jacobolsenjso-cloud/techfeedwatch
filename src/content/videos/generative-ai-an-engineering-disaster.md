@@ -1,5 +1,6 @@
 ---
 title: "Generative AI: An Engineering Disaster"
+seoTitled: true
 youtubeId: "RbvreT8qu0w"
 date: "2026-07-20"
 tags:

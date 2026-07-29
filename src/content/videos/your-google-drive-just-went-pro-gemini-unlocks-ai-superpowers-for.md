@@ -1,5 +1,6 @@
 ---
-title: "Your Google Drive Just Went Pro: Gemini Unlocks AI Superpowers for Your Files"
+title: "Gemini AI for Google Drive: Smart File Management"
+seoTitled: true
 youtubeId: "kSLHCrxedkw"
 date: "2026-06-29"
 tags:

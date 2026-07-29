@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Piggy Bank: Why Your Savings Need to Work Harder for Wealth Building"
+title: "How to Invest Savings: Wealth Building Strategies for Beginners"
+seoTitled: true
 youtubeId: "aQq-pRAEtzU"
 date: "2026-07-29"
 tags:

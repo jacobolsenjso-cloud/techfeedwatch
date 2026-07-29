@@ -1,5 +1,6 @@
 ---
 title: "Farming's Next Leap: Unveiling the Tech That's Revolutionizing Agriculture"
+seoTitled: true
 youtubeId: "L3ZPmlWj8hw"
 date: "2026-07-08"
 tags:

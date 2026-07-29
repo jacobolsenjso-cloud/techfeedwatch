@@ -1,5 +1,6 @@
 ---
 title: "Rayneo X-III Pro: The Future of AI Smart Glasses is Here!"
+seoTitled: true
 youtubeId: "JkgwW-Vi4YY"
 date: "2026-07-19"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Google's AI Gambit: What iPhone Users Need to Know About Gemini and Android XR"
+title: "Google Gemini & Android XR AI for iPhone Users"
+seoTitled: true
 youtubeId: "S6XIxnb7AsQ"
 date: "2026-07-27"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Clarity Act Discussions Signal Major Shift for Crypto Regulatory Future"
+title: "Clarity Act: Crypto Regulation Aims to Define Digital Assets"
+seoTitled: true
 youtubeId: "Up9AcAKAVSY"
 date: "2026-07-27"
 tags:

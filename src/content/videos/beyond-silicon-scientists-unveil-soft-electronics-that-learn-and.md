@@ -1,5 +1,6 @@
 ---
 title: "Beyond Silicon: Scientists Unveil Soft Electronics That Learn and Remember Like AI"
+seoTitled: true
 youtubeId: "kINF265F9nA"
 date: "2026-07-11"
 tags:

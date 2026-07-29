@@ -1,5 +1,6 @@
 ---
 title: "DeepSeek V4 Shakes Up AI Market with Unbeatable Cost and Performance"
+seoTitled: true
 youtubeId: "1P3h36Lz5bI"
 date: "2026-07-28"
 tags:

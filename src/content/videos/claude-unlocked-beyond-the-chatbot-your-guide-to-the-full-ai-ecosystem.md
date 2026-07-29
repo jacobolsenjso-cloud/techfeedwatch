@@ -1,5 +1,6 @@
 ---
-title: "Claude Unlocked: Beyond the Chatbot — Your Guide to the Full AI Ecosystem!"
+title: "Claude AI: Advanced Features, Workflow Automation & App Building"
+seoTitled: true
 youtubeId: "MS7E5TXNviM"
 date: "2026-06-29"
 tags:

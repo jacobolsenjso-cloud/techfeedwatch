@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing's Looming Shadow: Is Bitcoin's Security Truly at Risk?"
+title: "Quantum Computing Bitcoin Security Risk Explained"
+seoTitled: true
 youtubeId: "Ph5ihHhx_rQ"
 date: "2026-07-25"
 tags:

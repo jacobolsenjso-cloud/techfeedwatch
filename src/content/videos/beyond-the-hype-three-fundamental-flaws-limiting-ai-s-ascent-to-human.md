@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Hype: Three Fundamental Flaws Limiting AI's Ascent to Human Reasoning"
+title: "Why AI Won't Reach Human Reasoning: 3 AGI Design Flaws"
+seoTitled: true
 youtubeId: "984qBh164fo"
 date: "2026-07-18"
 tags:

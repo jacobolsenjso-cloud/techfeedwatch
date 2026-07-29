@@ -1,5 +1,6 @@
 ---
-title: "AI Search Rewrites SEO Rules: Why Your Current Strategy Might Be Obsolete"
+title: "AI Search SEO: Your Strategy for Google AI Overviews & Rankings"
+seoTitled: true
 youtubeId: "zawsAmcN71M"
 date: "2026-07-21"
 tags:

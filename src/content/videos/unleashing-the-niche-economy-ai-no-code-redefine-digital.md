@@ -1,5 +1,6 @@
 ---
-title: "Unleashing the Niche Economy: AI & No-Code Redefine Digital Entrepreneurship"
+title: "AI No-Code: Build Niche Websites & Online Businesses"
+seoTitled: true
 youtubeId: "Y-zKVrSRsiM"
 date: "2026-07-13"
 tags:

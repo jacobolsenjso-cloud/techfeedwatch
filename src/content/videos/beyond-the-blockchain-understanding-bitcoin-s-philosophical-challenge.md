@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Blockchain: Understanding Bitcoin's Philosophical Challenge to Modern Money"
+title: "Bitcoin Challenges Modern Money: Sovereignty & Digital Property"
+seoTitled: true
 youtubeId: "HrehEWYj16s"
 date: "2026-07-25"
 tags:

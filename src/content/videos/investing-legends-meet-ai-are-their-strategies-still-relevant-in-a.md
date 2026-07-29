@@ -1,5 +1,6 @@
 ---
-title: "Investing Legends Meet AI: Are Their Strategies Still Relevant in a Quant-Driven World?"
+title: "Traditional Investment Strategies & AI: Relevance in Quant Markets"
+seoTitled: true
 youtubeId: "q1tLnU_UzUg"
 date: "2026-07-25"
 tags:

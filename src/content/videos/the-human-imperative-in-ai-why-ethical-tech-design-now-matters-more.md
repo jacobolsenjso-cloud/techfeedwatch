@@ -1,5 +1,6 @@
 ---
-title: "The Human Imperative in AI: Why Ethical Tech Design Now Matters More Than Ever"
+title: "Ethical AI Design: Ensuring Human Needs & Societal Benefit"
+seoTitled: true
 youtubeId: "_JlQOnnEwxc"
 date: "2026-07-27"
 tags:

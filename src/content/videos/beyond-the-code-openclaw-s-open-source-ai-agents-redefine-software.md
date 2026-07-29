@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Code: OpenClaw's Open-Source AI Agents Redefine Software Development"
+title: "OpenClaw Open-Source AI Agents Automate Code Development"
+seoTitled: true
 youtubeId: "YFjfBk8HI5o"
 date: "2026-07-26"
 tags:

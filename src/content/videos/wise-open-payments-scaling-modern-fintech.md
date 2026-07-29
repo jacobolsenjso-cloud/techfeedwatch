@@ -1,5 +1,6 @@
 ---
 title: "Wise & Open Payments: Scaling Modern Fintech"
+seoTitled: true
 youtubeId: "n9kOxmT6s64"
 date: "2026-07-13"
 tags:

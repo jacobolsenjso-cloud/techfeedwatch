@@ -1,5 +1,6 @@
 ---
 title: "Demystifying AI: What Artificial Intelligence Really Is"
+seoTitled: true
 youtubeId: "AIAc2w5OWqc"
 date: "2026-07-13"
 tags:

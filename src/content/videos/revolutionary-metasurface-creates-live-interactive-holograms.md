@@ -1,5 +1,6 @@
 ---
 title: "Revolutionary Metasurface Creates Live, Interactive Holograms"
+seoTitled: true
 youtubeId: "RWg3FWssSDw"
 date: "2026-07-22"
 tags:

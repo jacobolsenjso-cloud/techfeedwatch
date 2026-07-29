@@ -1,5 +1,6 @@
 ---
-title: "The Algorithmic Artistry: Deconstructing Hyper-Realistic Fluid Simulation"
+title: "Hyper-Realistic Fluid Simulation: Computational Methods & Realism"
+seoTitled: true
 youtubeId: "O-52enqUSNw"
 date: "2026-07-24"
 tags:

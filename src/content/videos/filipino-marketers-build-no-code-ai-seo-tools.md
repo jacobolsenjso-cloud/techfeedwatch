@@ -1,5 +1,6 @@
 ---
 title: "Filipino Marketers Build No-Code AI SEO Tools"
+seoTitled: true
 youtubeId: "spMkhBy6JtE"
 date: "2026-07-29"
 tags:

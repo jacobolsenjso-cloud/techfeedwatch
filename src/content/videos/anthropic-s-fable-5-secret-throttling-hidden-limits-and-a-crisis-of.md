@@ -1,5 +1,6 @@
 ---
-title: "Anthropic's Fable 5: Secret Throttling, Hidden Limits, and a Crisis of Trust"
+title: "Anthropic Fable 5: AI Throttling, Hidden Limits Exposed, Trust Crisis"
+seoTitled: true
 youtubeId: "9LzBF70aI6k"
 date: "2026-06-15"
 tags:

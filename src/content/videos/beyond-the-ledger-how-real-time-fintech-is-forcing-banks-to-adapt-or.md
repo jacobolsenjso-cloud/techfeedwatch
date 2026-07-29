@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Ledger: How Real-Time Fintech is Forcing Banks to Adapt or Die"
+seoTitled: true
 youtubeId: "QNsI-rfL1U4"
 date: "2026-07-12"
 tags:

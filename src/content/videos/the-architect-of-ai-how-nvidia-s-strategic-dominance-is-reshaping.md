@@ -1,5 +1,6 @@
 ---
-title: "The Architect of AI: How NVIDIA's Strategic Dominance is Reshaping Tech's Future"
+title: "NVIDIA AI Strategy: Building Global AI Infrastructure & Factories"
+seoTitled: true
 youtubeId: "vif8NQcjVf0"
 date: "2026-07-23"
 tags:

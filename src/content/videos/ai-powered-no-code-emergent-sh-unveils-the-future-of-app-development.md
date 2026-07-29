@@ -1,5 +1,6 @@
 ---
 title: "AI-Powered No-Code: Emergent.sh Unveils the Future of App Development and Iteration"
+seoTitled: true
 youtubeId: "gwbbzxQ_L-o"
 duration: "1:24"
 date: "2026-06-12"

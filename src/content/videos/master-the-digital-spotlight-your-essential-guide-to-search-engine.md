@@ -1,5 +1,6 @@
 ---
-title: "Master the Digital Spotlight: Your Essential Guide to Search Engine Optimization"
+title: "Modern SEO Guide: Master Evolving Search Engine Algorithms"
+seoTitled: true
 youtubeId: "COL_qPL5xsg"
 date: "2026-07-11"
 tags:

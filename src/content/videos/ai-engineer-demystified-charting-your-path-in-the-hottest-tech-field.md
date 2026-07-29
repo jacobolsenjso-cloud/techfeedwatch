@@ -1,5 +1,6 @@
 ---
-title: "AI Engineer Demystified: Charting Your Path in the Hottest Tech Field"
+title: "AI Engineer Career Path: Skills, Roles, & Future Outlook"
+seoTitled: true
 youtubeId: "TQwwK7P_J4I"
 date: "2026-07-12"
 tags:

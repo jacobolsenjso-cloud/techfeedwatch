@@ -1,5 +1,6 @@
 ---
-title: "Beyond Digital Cash: The Evolving Utility of Crypto Networks"
+title: "Crypto Utility: Smart Contracts, DApps, & Decentralized Finance"
+seoTitled: true
 youtubeId: "LEu_sRbfNns"
 date: "2026-07-23"
 tags:

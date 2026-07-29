@@ -1,5 +1,6 @@
 ---
-title: "AR's Invisible Anchors: The Precision Engineering Keeping Digital Worlds Grounded"
+title: "Augmented Reality Stability: How SLAM Grounds Digital Objects"
+seoTitled: true
 youtubeId: "RLeKWTo2kUs"
 date: "2026-07-21"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "No Code Netflix? Launch Your Own Streaming Platform in Minutes"
+seoTitled: true
 youtubeId: "KHsdhV3slQk"
 date: "2026-07-11"
 tags:

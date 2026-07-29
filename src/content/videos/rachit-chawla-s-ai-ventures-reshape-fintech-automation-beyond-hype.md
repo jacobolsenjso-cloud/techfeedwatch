@@ -1,5 +1,6 @@
 ---
-title: "Rachit Chawla's AI Ventures Reshape Fintech: Automation Beyond Hype"
+title: "AI Algorithmic Trading Reshapes Fintech Capital Markets"
+seoTitled: true
 youtubeId: "XzYP5_K90q8"
 date: "2026-07-17"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "You're Not Behind (Yet): Your 29-Minute Roadmap to Mastering AI in 2025"
+title: "Learn Practical AI Skills in 29 Min for 2025 Productivity"
+seoTitled: true
 youtubeId: "9c7zh2MkslY"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The Quiet Tech Recalibration: Why AI Isn't Replacing Software Engineers, It's Reshaping Them"
+title: "AI Replacing Software Engineers? Why AI Is Reshaping Roles, Not Replacing Them"
+seoTitled: true
 youtubeId: "VGE84CeeaMo"
 date: "2026-07-26"
 tags:

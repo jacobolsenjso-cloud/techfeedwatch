@@ -1,5 +1,6 @@
 ---
 title: "AI: The Tsunami Reshaping Finance, According to Chris Skinner"
+seoTitled: true
 youtubeId: "pxxbO17rgHQ"
 date: "2026-07-20"
 tags:

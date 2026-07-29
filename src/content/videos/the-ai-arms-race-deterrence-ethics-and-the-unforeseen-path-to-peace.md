@@ -1,5 +1,6 @@
 ---
-title: "The AI Arms Race: Deterrence, Ethics, and the Unforeseen Path to Peace"
+title: "AI Weapons for Peace: Autonomous Deterrence Strategy"
+seoTitled: true
 youtubeId: "ooMXEwl7N8Y"
 date: "2026-07-24"
 tags:

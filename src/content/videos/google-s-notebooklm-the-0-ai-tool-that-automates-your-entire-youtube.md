@@ -1,5 +1,6 @@
 ---
-title: "Google's NotebookLM: The $0 AI Tool That Automates Your Entire YouTube Channel!"
+title: "Google NotebookLM Free AI Automates Your YouTube Channel"
+seoTitled: true
 youtubeId: "LpkOt5nClFA"
 date: "2026-06-18"
 tags:

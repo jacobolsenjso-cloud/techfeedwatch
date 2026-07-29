@@ -1,5 +1,6 @@
 ---
-title: "Google's 2010 SEO Playbook: A Relic or a Foundation for AI-Driven Search?"
+title: "SEO Fundamentals: The Foundation for AI Search & Web Trust"
+seoTitled: true
 youtubeId: "7Hk5uVv8JpM"
 date: "2026-07-17"
 tags:

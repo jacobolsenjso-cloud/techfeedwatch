@@ -1,5 +1,6 @@
 ---
 title: "Trustive Browser: Your Secure Highway to Web3"
+seoTitled: true
 youtubeId: "V_bjlQJ0PXg"
 date: "2026-07-24"
 tags:

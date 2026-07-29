@@ -1,5 +1,6 @@
 ---
-title: "Bridging Blockchains: How Oracle Networks Connect Smart Contracts to the Real World"
+title: "Oracle Networks: Real-World Data for Smart Contracts & DeFi"
+seoTitled: true
 youtubeId: "TPXTmVdlyoc"
 date: "2026-07-25"
 tags:

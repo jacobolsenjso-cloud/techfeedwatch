@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Bell: How AI, VR, and Robotics Are Rewriting the Future of Education"
+seoTitled: true
 youtubeId: "EIscdskUfz0"
 date: "2026-07-11"
 tags:

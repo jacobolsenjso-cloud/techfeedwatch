@@ -1,5 +1,6 @@
 ---
 title: "SEO's Worst Nightmare Just Got an AI-Powered Upgrade: Free Backlink Finder Emerges!"
+seoTitled: true
 youtubeId: "JtmoqvUmzq0"
 date: "2026-06-15"
 tags:

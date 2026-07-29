@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality Demystified: How Digital Overlays are Revolutionizing Our World – And Your Business"
+title: "Augmented Reality: How AR Layers Digital Info for Business Growth"
+seoTitled: true
 youtubeId: "Gy05tGLW3PE"
 date: "2026-07-11"
 tags:

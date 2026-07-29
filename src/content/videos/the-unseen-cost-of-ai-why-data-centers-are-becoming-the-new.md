@@ -1,5 +1,6 @@
 ---
-title: "The Unseen Cost of AI: Why Data Centers Are Becoming the New Battleground"
+title: "AI Data Centers Strain Grids: High Energy & Space Demands"
+seoTitled: true
 youtubeId: "5QT3y9Gp3Rg"
 date: "2026-07-28"
 tags:

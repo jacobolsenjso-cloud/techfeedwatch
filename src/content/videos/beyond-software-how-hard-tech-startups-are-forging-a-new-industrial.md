@@ -1,5 +1,6 @@
 ---
-title: "Beyond Software: How Hard Tech Startups Are Forging a New Industrial Frontier"
+title: "Hard Tech Startups Accelerate Capital-Efficient Deep Tech"
+seoTitled: true
 youtubeId: "erDE2e69dlc"
 date: "2026-07-24"
 tags:

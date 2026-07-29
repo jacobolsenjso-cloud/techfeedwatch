@@ -1,5 +1,6 @@
 ---
-title: "Master Quant Finance in 9 Minutes: Your Python & Pandas Roadmap to Smart Investing"
+title: "Quant Finance with Python & Pandas for Data-Driven Investing"
+seoTitled: true
 youtubeId: "b9RgHa1CnH4"
 date: "2026-07-11"
 tags:

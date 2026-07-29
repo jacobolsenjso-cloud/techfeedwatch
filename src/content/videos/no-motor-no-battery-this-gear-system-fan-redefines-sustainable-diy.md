@@ -1,5 +1,6 @@
 ---
 title: "No Motor, No Battery: This Gear System Fan Redefines Sustainable DIY Tech"
+seoTitled: true
 youtubeId: "THz54-4qSQQ"
 date: "2026-07-08"
 tags:

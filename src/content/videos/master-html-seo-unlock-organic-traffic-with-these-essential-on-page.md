@@ -1,5 +1,6 @@
 ---
-title: "Master HTML SEO: Unlock Organic Traffic with These Essential On-Page Optimization Secrets"
+title: "HTML SEO On-Page Optimization: Boost Organic Traffic"
+seoTitled: true
 youtubeId: "R4EYtFoiSrg"
 date: "2026-07-11"
 tags:

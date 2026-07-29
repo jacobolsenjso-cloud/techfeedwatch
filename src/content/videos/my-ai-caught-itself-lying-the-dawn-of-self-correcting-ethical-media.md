@@ -1,5 +1,6 @@
 ---
 title: "My AI Caught Itself Lying: The Dawn of Self-Correcting, Ethical Media Bots"
+seoTitled: true
 youtubeId: "0AbIL2Ss4S4"
 date: "2026-07-06"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Solidity Inheritance: Build Reusable, Modular Smart Contracts"
+seoTitled: true
 youtubeId: "AbzhG--zt98"
 date: "2026-07-14"
 tags:

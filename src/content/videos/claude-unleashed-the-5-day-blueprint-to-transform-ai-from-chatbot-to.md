@@ -1,5 +1,6 @@
 ---
 title: "Claude Unleashed: The 5-Day Blueprint to Transform AI from Chatbot to Autonomous Assistant"
+seoTitled: true
 youtubeId: "16PhlyStJSU"
 date: "2026-06-22"
 tags:

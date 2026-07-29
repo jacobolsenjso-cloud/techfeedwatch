@@ -1,5 +1,6 @@
 ---
-title: "AI Coders Need Human Discipline: Why Test-Driven Development is More Critical Than Ever"
+title: "Test-Driven Development for AI Code Quality & Oversight"
+seoTitled: true
 youtubeId: "bDLdZIAjH5Y"
 date: "2026-07-26"
 tags:

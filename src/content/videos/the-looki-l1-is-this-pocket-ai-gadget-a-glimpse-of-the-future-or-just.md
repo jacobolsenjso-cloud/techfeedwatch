@@ -1,5 +1,6 @@
 ---
-title: "The Looki L1: Is This Pocket AI Gadget a Glimpse of the Future, or Just a Gimmick?"
+title: "Looki L1 AI Life-Logger Review: Automated Memory & Storytelling"
+seoTitled: true
 youtubeId: "3RT_TDgEkb0"
 date: "2026-07-13"
 tags:

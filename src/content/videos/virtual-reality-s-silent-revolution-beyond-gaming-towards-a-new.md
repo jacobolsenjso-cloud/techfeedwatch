@@ -1,5 +1,6 @@
 ---
-title: "Virtual Reality's Silent Revolution: Beyond Gaming, Towards a New Computing Frontier"
+title: "Virtual Reality Beyond Gaming: Enterprise, Education, Training"
+seoTitled: true
 youtubeId: "sYz8D_ZbB2I"
 date: "2026-07-24"
 tags:

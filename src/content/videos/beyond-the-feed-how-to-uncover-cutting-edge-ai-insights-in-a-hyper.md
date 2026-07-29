@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Feed: How to Uncover Cutting-Edge AI Insights in a Hyper-Connected World"
+seoTitled: true
 youtubeId: "rcrWqkx-6P4"
 date: "2026-07-07"
 tags:

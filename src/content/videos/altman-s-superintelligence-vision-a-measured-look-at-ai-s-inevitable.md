@@ -1,5 +1,6 @@
 ---
-title: "Altman's Superintelligence Vision: A Measured Look at AI's Inevitable Ascent and Its Governance Challenges"
+title: "Sam Altman Superintelligence: AI Governance & Safety Challenges"
+seoTitled: true
 youtubeId: "5MWT_doo68k"
 date: "2026-07-24"
 tags:

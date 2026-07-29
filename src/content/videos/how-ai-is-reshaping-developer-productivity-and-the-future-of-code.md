@@ -1,5 +1,6 @@
 ---
-title: "How AI is Reshaping Developer Productivity and the Future of Code"
+title: "AI Coding Assistants Boost Developer Productivity & Code Generation"
+seoTitled: true
 youtubeId: "wwfJlSF34n8"
 date: "2026-07-28"
 tags:

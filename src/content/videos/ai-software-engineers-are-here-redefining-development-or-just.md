@@ -1,5 +1,6 @@
 ---
-title: "AI Software Engineers Are Here: Redefining Development or Just Augmenting Teams?"
+title: "Autonomous AI Software Engineers: Devin Changes Dev Teams"
+seoTitled: true
 youtubeId: "SdZiYRfGdKU"
 date: "2026-07-23"
 tags:

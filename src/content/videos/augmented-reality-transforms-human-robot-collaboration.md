@@ -1,5 +1,6 @@
 ---
 title: "Augmented Reality Transforms Human-Robot Collaboration"
+seoTitled: true
 youtubeId: "TSl2ryztxVg"
 date: "2026-07-16"
 tags:

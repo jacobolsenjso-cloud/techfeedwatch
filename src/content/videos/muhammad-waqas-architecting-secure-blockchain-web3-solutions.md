@@ -1,5 +1,6 @@
 ---
 title: "Muhammad Waqas: Architecting Secure Blockchain & Web3 Solutions"
+seoTitled: true
 youtubeId: "9E3iNGPNKDY"
 date: "2026-07-24"
 tags:

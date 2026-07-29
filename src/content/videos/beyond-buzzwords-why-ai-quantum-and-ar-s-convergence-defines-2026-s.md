@@ -1,5 +1,6 @@
 ---
-title: "Beyond Buzzwords: Why AI, Quantum, and AR's Convergence Defines 2026's True Tech Revolution"
+title: "AI, Quantum, AR Convergence: Reshaping 2026 Tech Innovation"
+seoTitled: true
 youtubeId: "6OlUMND1htQ"
 date: "2026-07-27"
 tags:

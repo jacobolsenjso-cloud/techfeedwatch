@@ -1,5 +1,6 @@
 ---
-title: "Master Rapid Web Design: Build Your Own Lorem Ipsum Generator on WordPress"
+title: "Build Lorem Ipsum Generator on WordPress for Fast Design"
+seoTitled: true
 youtubeId: "4IkD872jBi0"
 date: "2026-06-29"
 tags:

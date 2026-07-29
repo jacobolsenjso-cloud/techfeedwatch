@@ -1,5 +1,6 @@
 ---
-title: "Demystifying AI: The Layman's Guide to Understanding Our Intelligent Future (No Jargon!)"
+title: "AI Explained: A Simple Guide to How Artificial Intelligence Works"
+seoTitled: true
 youtubeId: "m8o2GrbR3d8"
 date: "2026-07-11"
 tags:

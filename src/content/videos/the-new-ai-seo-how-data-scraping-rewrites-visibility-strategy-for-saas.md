@@ -1,5 +1,6 @@
 ---
-title: "The New AI SEO: How Data Scraping Rewrites Visibility Strategy for SaaS"
+title: "SaaS AI SEO: Data Scraping for AI Model Visibility Strategy"
+seoTitled: true
 youtubeId: "RIKeDA9t2uA"
 date: "2026-07-28"
 tags:

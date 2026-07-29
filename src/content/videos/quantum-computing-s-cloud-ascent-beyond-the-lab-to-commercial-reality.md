@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing's Cloud Ascent: Beyond the Lab to Commercial Reality"
+title: "Quantum Computing Commercialization: Cloud Platforms & Access"
+seoTitled: true
 youtubeId: "bVP3q8-e4sE"
 date: "2026-07-24"
 tags:

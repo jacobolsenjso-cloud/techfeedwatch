@@ -1,5 +1,6 @@
 ---
-title: "Fintech Founders' Blueprint: Why Agility Outmaneuvers Incumbents in 2023"
+title: "Fintech Founder Strategy: Agility & Profitability Beat Incumbents"
+seoTitled: true
 youtubeId: "b-z-1eK-x7c"
 date: "2026-07-17"
 tags:

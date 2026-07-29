@@ -1,5 +1,6 @@
 ---
-title: "Smart Contracts Demystified: The Invisible Engine Powering Crypto and Beyond"
+title: "Smart Contracts: How They Work, Benefits & Overcoming Challenges"
+seoTitled: true
 youtubeId: "ZE2HxTmxfrI"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Physics-Informed AI: The Next Frontier for Engineering Accuracy and Scientific Discovery"
+title: "Physics-Informed AI for Engineering Accuracy, Science Discovery"
+seoTitled: true
 youtubeId: "JoFW2uSd3Uo"
 date: "2026-07-17"
 tags:

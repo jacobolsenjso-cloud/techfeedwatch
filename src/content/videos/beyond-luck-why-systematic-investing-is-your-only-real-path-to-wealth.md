@@ -1,5 +1,6 @@
 ---
-title: "Beyond Luck: Why Systematic Investing Is Your Only Real Path to Wealth"
+title: "Systematic Investing: Build Wealth with Index Funds & Compound Interest"
+seoTitled: true
 youtubeId: "RPDoEIqbwYs"
 date: "2026-07-29"
 tags:

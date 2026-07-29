@@ -1,5 +1,6 @@
 ---
-title: "Kaspa's Smart Contracts: A Proof-of-Work Network's Bid for DeFi Relevancy"
+title: "Kaspa Smart Contracts: Adoption Needed for DeFi Relevancy"
+seoTitled: true
 youtubeId: "FJwBBr-Ndao"
 date: "2026-07-19"
 tags:

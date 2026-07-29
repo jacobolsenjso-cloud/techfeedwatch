@@ -1,5 +1,6 @@
 ---
 title: "MetaFi Explained: How Ethereum Fuels the Metaverse Economy"
+seoTitled: true
 youtubeId: "dQRhn_pBiUM"
 date: "2026-07-14"
 tags:

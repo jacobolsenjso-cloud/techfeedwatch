@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Accounts Demystified: The EOA vs. Contract Showdown Every Web3 Enthusiast Needs to Master"
+title: "Ethereum Accounts: EOA vs Contract, Key Differences"
+seoTitled: true
 youtubeId: "1Bp2KritrvQ"
 date: "2026-07-11"
 tags:

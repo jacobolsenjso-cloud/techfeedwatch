@@ -1,5 +1,6 @@
 ---
-title: "Robinhood's Blockchain Play: A Calculated Bet to Reshape Global Finance"
+title: "Robinhood Blockchain: Launching DeFi, Tokenized Assets, 24/7 Markets"
+seoTitled: true
 youtubeId: "s9_IQUx_QW4"
 date: "2026-07-27"
 tags:

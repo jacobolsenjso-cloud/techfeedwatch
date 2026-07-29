@@ -1,5 +1,6 @@
 ---
 title: "No-Code Clicker Game Maker: Build for Android, PC & Web with AdMob"
+seoTitled: true
 youtubeId: "vJ41r1rhAv8"
 date: "2026-07-24"
 tags:

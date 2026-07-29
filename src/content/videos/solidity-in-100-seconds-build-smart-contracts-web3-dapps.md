@@ -1,5 +1,6 @@
 ---
 title: "Solidity in 100 Seconds: Build Smart Contracts & Web3 dApps"
+seoTitled: true
 youtubeId: "kdvVwGrV7ec"
 date: "2026-07-26"
 tags:

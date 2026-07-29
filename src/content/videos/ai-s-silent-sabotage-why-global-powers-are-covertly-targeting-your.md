@@ -1,5 +1,6 @@
 ---
 title: "AI's Silent Sabotage: Why Global Powers Are Covertly Targeting Your Next Breakthrough"
+seoTitled: true
 youtubeId: "prvegLYKE3I"
 date: "2026-07-06"
 tags:

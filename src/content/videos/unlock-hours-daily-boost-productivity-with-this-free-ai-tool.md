@@ -1,5 +1,6 @@
 ---
 title: "Unlock Hours Daily: Boost Productivity with This Free AI Tool"
+seoTitled: true
 youtubeId: "VVnTeMRH9mg"
 date: "2026-07-16"
 tags:

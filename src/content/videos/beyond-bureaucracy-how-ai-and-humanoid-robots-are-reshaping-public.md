@@ -1,5 +1,6 @@
 ---
 title: "Beyond Bureaucracy: How AI and Humanoid Robots Are Reshaping Public Services"
+seoTitled: true
 youtubeId: "lpB9lzUHVQA"
 date: "2026-07-06"
 tags:

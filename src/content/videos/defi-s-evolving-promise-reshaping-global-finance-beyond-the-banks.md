@@ -1,5 +1,6 @@
 ---
-title: "DeFi's Evolving Promise: Reshaping Global Finance Beyond the Banks"
+title: "DeFi: Decentralized Finance Bypassing Traditional Banks"
+seoTitled: true
 youtubeId: "Vq1bxcoW1jQ"
 date: "2026-07-24"
 tags:

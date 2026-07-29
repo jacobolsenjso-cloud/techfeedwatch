@@ -1,5 +1,6 @@
 ---
 title: "Samsung's Silent Surge: The AI Memory Strategy That Overtook NVIDIA"
+seoTitled: true
 youtubeId: "7BqekV6U1us"
 date: "2026-07-10"
 tags:

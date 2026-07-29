@@ -1,5 +1,6 @@
 ---
-title: "Solana Escrow: The Smart Contract Mechanism Rewriting Digital Transaction Security"
+title: "Solana Escrow Explained: Smart Contracts Secure Web3 Transactions"
+seoTitled: true
 youtubeId: "8FUlQda-8fU"
 date: "2026-07-19"
 tags:

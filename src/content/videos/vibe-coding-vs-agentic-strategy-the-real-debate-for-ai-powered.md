@@ -1,5 +1,6 @@
 ---
-title: "'Vibe Coding' vs. Agentic Strategy: The Real Debate for AI-Powered Business Sites"
+title: "AI-Powered Business Sites: Building for Strategic Automation"
+seoTitled: true
 youtubeId: "kvyNjg49Ad8"
 date: "2026-07-28"
 tags:

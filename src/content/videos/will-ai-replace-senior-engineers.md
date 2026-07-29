@@ -1,5 +1,6 @@
 ---
 title: "Will AI Replace Senior Engineers?"
+seoTitled: true
 youtubeId: "9ZyM0tlU3hA"
 date: "2026-07-19"
 tags:

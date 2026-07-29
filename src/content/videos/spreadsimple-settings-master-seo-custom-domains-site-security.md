@@ -1,5 +1,6 @@
 ---
 title: "SpreadSimple Settings: Master SEO, Custom Domains & Site Security"
+seoTitled: true
 youtubeId: "SyStvFtc_wg"
 date: "2026-07-18"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI Breakthrough: Build a Full Niche Website in Minutes with Perplexity & Claude!"
+title: "Generate Niche Website with AI: Perplexity & Claude in Minutes"
+seoTitled: true
 youtubeId: "9EkTq9WeQZQ"
 date: "2026-06-22"
 tags:

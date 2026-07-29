@@ -1,5 +1,6 @@
 ---
-title: "Quantum Unveiled: The Microscopic Mechanics Driving Tomorrow's Macroscopic Tech Shifts"
+title: "Quantum Mechanics: Future Tech from Sensors to Quantum Computers"
+seoTitled: true
 youtubeId: "t06aTX9jM34"
 date: "2026-07-14"
 tags:

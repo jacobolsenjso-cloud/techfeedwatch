@@ -1,5 +1,6 @@
 ---
-title: "Loop Engineering: How AI Agents Are Reshaping Business Automation with Iterative Growth"
+title: "AI Agent Loops Automate Business: Self-Optimizing LLMs"
+seoTitled: true
 youtubeId: "5p_BBdfvzgQ"
 date: "2026-07-14"
 tags:

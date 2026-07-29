@@ -1,5 +1,6 @@
 ---
-title: "Unlocking Ethereum's Power: Your First Smart Contract with Solidity & Remix"
+title: "Create Your First Ethereum Smart Contract: Solidity & Remix"
+seoTitled: true
 youtubeId: "bNXJNeaYl8Q"
 date: "2026-07-12"
 tags:

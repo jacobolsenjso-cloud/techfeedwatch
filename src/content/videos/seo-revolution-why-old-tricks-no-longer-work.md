@@ -1,5 +1,6 @@
 ---
 title: "SEO REVOLUTION: Why Old Tricks NO LONGER Work!"
+seoTitled: true
 youtubeId: "Kn5X9IzJlTU"
 date: "2026-07-18"
 tags:

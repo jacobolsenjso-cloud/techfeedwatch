@@ -1,5 +1,6 @@
 ---
-title: "ADHD and AI: A Symbiotic Leap in Executive Function Support"
+title: "ADHD AI Solutions: Boost Executive Function & Independence"
+seoTitled: true
 youtubeId: "ZssxnYgc2wI"
 date: "2026-07-28"
 tags:

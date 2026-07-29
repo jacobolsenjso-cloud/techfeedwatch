@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Screen: 10 Mind-Blowing AR Use Cases Shaping Our Future"
+title: "Augmented Reality Use Cases: 10 Future AR Applications"
+seoTitled: true
 youtubeId: "WxzcD04rwc8"
 date: "2026-07-11"
 tags:

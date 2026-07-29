@@ -1,5 +1,6 @@
 ---
-title: "Stephen Wolfram's Radical Idea: Is the Universe Just a Giant Computation?"
+title: "Universe as Computation: Stephen Wolfram Hypergraph Theory"
+seoTitled: true
 youtubeId: "4-SGpEInX_c"
 date: "2026-07-26"
 tags:

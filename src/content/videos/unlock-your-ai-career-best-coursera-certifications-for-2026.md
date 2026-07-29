@@ -1,5 +1,6 @@
 ---
 title: "Unlock Your AI Career: Best Coursera Certifications for 2026"
+seoTitled: true
 youtubeId: "1sm3XBHTSDA"
 date: "2026-07-14"
 tags:

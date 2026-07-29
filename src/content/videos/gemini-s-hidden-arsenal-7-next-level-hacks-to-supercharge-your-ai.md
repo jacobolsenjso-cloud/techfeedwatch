@@ -1,5 +1,6 @@
 ---
-title: "Gemini's Hidden Arsenal: 7 Next-Level Hacks to Supercharge Your AI Productivity"
+title: "Google Gemini Productivity: 7 Hacks to Supercharge AI Workflows"
+seoTitled: true
 youtubeId: "sZwN_u9DMnU"
 date: "2026-06-29"
 tags:

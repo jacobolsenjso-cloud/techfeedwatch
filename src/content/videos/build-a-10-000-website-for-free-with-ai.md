@@ -1,5 +1,6 @@
 ---
 title: "Build a $10,000 Website for Free with AI"
+seoTitled: true
 youtubeId: "jLa5-BqsG10"
 date: "2026-07-25"
 tags:

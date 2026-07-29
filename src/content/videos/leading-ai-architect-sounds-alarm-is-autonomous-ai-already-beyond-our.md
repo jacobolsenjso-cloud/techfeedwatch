@@ -1,5 +1,6 @@
 ---
-title: "Leading AI Architect Sounds Alarm: Is Autonomous AI Already Beyond Our Control?"
+title: "Autonomous AI Control Loss: Bengio Warns of Existential Risk"
+seoTitled: true
 youtubeId: "qe9QSCF-d88"
 date: "2026-07-25"
 tags:

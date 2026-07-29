@@ -1,5 +1,6 @@
 ---
 title: "Claude's Hidden University: The FREE Path to Advanced AI Agent Mastery You Didn't Know Existed"
+seoTitled: true
 youtubeId: "koL8eSRqRMY"
 date: "2026-06-18"
 tags:

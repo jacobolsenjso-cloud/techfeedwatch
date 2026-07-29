@@ -1,5 +1,6 @@
 ---
 title: "Neural Rendering: AI's Game-Changing Visual Tech"
+seoTitled: true
 youtubeId: "Otlw_mUtVn8"
 date: "2026-07-24"
 tags:

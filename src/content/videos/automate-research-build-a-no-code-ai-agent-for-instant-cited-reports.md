@@ -1,5 +1,6 @@
 ---
 title: "Automate Research: Build a No-Code AI Agent for Instant, Cited Reports"
+seoTitled: true
 youtubeId: "FWbG3WnqMpU"
 date: "2026-07-19"
 tags:

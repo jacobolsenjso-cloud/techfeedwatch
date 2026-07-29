@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Rulebook: Unpacking AI's 'Amnesia' and the Rise of Autonomous Agent Swarms"
+seoTitled: true
 youtubeId: "FWCygKUrpYE"
 date: "2026-07-12"
 tags:

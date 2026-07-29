@@ -1,5 +1,6 @@
 ---
-title: "The Algorithmic Edge: Deconstructing the APIs Powering Modern Financial Analysis"
+title: "Alternative Data APIs for Algorithmic Trading & Quant Finance"
+seoTitled: true
 youtubeId: "HIPlOXGWGIE"
 date: "2026-07-17"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Cloud Security's Rapid Evolution: Why 'Architecture-First' Consulting Now Dominates"
+title: "Architecture-First Cloud Security Consulting for Businesses"
+seoTitled: true
 youtubeId: "LCa-ioVi8Fs"
 date: "2026-07-28"
 tags:

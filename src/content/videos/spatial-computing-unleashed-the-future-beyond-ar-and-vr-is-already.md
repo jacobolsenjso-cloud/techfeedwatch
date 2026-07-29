@@ -1,5 +1,6 @@
 ---
-title: "Spatial Computing Unleashed: The Future Beyond AR and VR is Already Here"
+title: "Spatial Computing: Beyond AR/VR, Merging Digital & Physical"
+seoTitled: true
 youtubeId: "Xe1WbZINhkk"
 date: "2026-07-11"
 tags:

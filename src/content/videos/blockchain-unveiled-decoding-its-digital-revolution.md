@@ -1,5 +1,6 @@
 ---
 title: "Blockchain Unveiled: Decoding Its Digital Revolution"
+seoTitled: true
 youtubeId: "1OmL2wXr-KI"
 date: "2026-07-19"
 tags:

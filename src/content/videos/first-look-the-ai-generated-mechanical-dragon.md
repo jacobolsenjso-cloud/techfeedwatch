@@ -1,5 +1,6 @@
 ---
 title: "First Look: The AI-Generated Mechanical Dragon"
+seoTitled: true
 youtubeId: "ny6bhFLhx-o"
 date: "2026-07-22"
 tags:

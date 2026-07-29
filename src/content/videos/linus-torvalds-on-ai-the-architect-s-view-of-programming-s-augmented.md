@@ -1,5 +1,6 @@
 ---
-title: "Linus Torvalds on AI: The Architect's View of Programming's Augmented Future"
+title: "Linus Torvalds: AI in Programming, LLMs, Code Quality, Risks"
+seoTitled: true
 youtubeId: "VHHT6W-N0ak"
 date: "2026-07-18"
 tags:

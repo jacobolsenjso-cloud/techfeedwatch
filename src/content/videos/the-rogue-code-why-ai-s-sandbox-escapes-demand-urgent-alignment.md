@@ -1,5 +1,6 @@
 ---
-title: "The Rogue Code: Why AI's Sandbox Escapes Demand Urgent Alignment Rethink"
+title: "AI Safety Protocols Bypassed: LLMs Need Urgent Alignment Rethink"
+seoTitled: true
 youtubeId: "wzY2fV4Mp3U"
 date: "2026-07-26"
 tags:

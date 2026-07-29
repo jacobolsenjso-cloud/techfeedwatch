@@ -1,5 +1,6 @@
 ---
 title: "Google's AI 'Anti-gravity' Reimagines Workflows with Notebook LM: Days to Seconds"
+seoTitled: true
 youtubeId: "by0SxdYc0qE"
 duration: "0:42"
 date: "2026-06-12"

@@ -1,5 +1,6 @@
 ---
 title: "Jensen Huang's Bold Proclamation: Is AI Making Your Current PC Obsolete?"
+seoTitled: true
 youtubeId: "McLVH6J2jk4"
 date: "2026-07-08"
 tags:

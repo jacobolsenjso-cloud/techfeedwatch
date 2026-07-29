@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Quantum Hype: Real-World Implications and Industry Roadmap"
+title: "Quantum Computing: Applications, Limitations, Future Roadmap"
+seoTitled: true
 youtubeId: "UtDllX_MTbw"
 date: "2026-07-26"
 tags:

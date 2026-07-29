@@ -1,5 +1,6 @@
 ---
-title: "Beyond Automation: Why No-Code AI Agents Represent a New Frontier for Every Professional"
+title: "No-Code AI Agents: Build Smart AI Without Coding Skills"
+seoTitled: true
 youtubeId: "EH5jx5qPabU"
 date: "2026-07-19"
 tags:

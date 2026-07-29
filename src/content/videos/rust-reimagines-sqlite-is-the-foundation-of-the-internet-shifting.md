@@ -1,5 +1,6 @@
 ---
-title: "Rust Reimagines SQLite: Is the Foundation of the Internet Shifting?"
+title: "Rust SQLite Turso: Secure, Distributed Database Solution"
+seoTitled: true
 youtubeId: "Sntj4HmuykI"
 date: "2026-07-26"
 tags:

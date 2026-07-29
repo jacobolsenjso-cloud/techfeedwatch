@@ -1,5 +1,6 @@
 ---
-title: "The Unseen Hand: How Algorithmic Bias Shapes Your Digital Reality"
+title: "Algorithmic Bias: How It Skews Search Results and Online Information"
+seoTitled: true
 youtubeId: "_vBggxCNNno"
 date: "2026-07-25"
 tags:

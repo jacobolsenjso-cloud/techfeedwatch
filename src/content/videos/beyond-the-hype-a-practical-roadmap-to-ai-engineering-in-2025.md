@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Hype: A Practical Roadmap to AI Engineering in 2025"
+title: "AI Engineering Roadmap 2025: LLM Prompt Design & Systems"
+seoTitled: true
 youtubeId: "PSWUr5E_OKY"
 date: "2026-07-16"
 tags:

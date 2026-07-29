@@ -1,5 +1,6 @@
 ---
 title: "Trustive Browser: Safe Smart Contract Signing with Plain-English Previews"
+seoTitled: true
 youtubeId: "IXGOgWn7-Kk"
 date: "2026-07-24"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Beyond SEO: Why Generative Engine Optimization (GEO) is Your 2026 Must-Have for AI Visibility"
+title: "Generative Engine Optimization (GEO) for LLM & AI Search Visibility"
+seoTitled: true
 youtubeId: "Pi9GjgNFwqo"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Beyond The Sticker Price: Mastering B2B Pricing For Sustainable Startup Growth"
+title: "SaaS B2B Pricing Strategy: Drive Startup Growth with Value"
+seoTitled: true
 youtubeId: "4hjiRmgmHiU"
 date: "2026-07-24"
 tags:

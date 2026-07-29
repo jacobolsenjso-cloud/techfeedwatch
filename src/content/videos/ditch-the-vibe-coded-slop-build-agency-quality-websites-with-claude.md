@@ -1,5 +1,6 @@
 ---
-title: "Ditch the 'Vibe Coded' Slop: Build Agency-Quality Websites with Claude Code in Minutes"
+title: "Agency-Quality Websites: Avoid Generic AI Designs with Claude Code"
+seoTitled: true
 youtubeId: "hrPKtWVE_bo"
 date: "2026-07-02"
 tags:

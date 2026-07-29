@@ -1,5 +1,6 @@
 ---
 title: "Blockchain 2.0: Securing Supply Chains, Ending Counterfeits"
+seoTitled: true
 youtubeId: "oXIKpLKrwoU"
 date: "2026-07-25"
 tags:

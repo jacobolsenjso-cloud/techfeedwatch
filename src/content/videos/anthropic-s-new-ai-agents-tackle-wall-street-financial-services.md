@@ -1,5 +1,6 @@
 ---
 title: "Anthropic's New AI Agents Tackle Wall Street Financial Services"
+seoTitled: true
 youtubeId: "W3RLgeUiUXY"
 date: "2026-07-27"
 tags:

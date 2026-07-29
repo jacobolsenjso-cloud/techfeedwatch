@@ -1,5 +1,6 @@
 ---
 title: "Top AI Careers 2026: Highest Paying Jobs Revealed"
+seoTitled: true
 youtubeId: "CNZEVl4gTss"
 date: "2026-07-23"
 tags:

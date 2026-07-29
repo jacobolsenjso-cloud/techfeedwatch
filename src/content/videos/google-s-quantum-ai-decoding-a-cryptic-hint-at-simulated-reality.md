@@ -1,5 +1,6 @@
 ---
-title: "Google's Quantum AI: Decoding a Cryptic Hint at Simulated Reality"
+title: "Google Quantum AI Explores Simulated Reality Theory"
+seoTitled: true
 youtubeId: "pIj-oBWJzS0"
 date: "2026-07-14"
 tags:

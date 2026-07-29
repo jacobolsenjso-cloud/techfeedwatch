@@ -1,5 +1,6 @@
 ---
-title: "The No-Code Conundrum: Is Grok 4.5 and Grok Build a Developer's Demise or a Productivity Leap?"
+title: "Grok 4.5 & Grok Build: No-Code AI Business Tools for Entrepreneurs"
+seoTitled: true
 youtubeId: "o3t-XtLnXi8"
 date: "2026-07-14"
 tags:

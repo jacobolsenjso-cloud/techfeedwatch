@@ -1,5 +1,6 @@
 ---
-title: "Open-Source AI: How Developer Tools Are Fueling the Next Wave of Innovation"
+title: "Open-Source AI Tools Accelerate AI Innovation for Developers"
+seoTitled: true
 youtubeId: "Xn-gtHDsaPY"
 date: "2026-07-26"
 tags:

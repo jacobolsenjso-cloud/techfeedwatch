@@ -1,5 +1,6 @@
 ---
-title: "Claude Co-work: Why This AI Isn't Just Chatting – It's *Doing* Your Business Tasks"
+title: "Claude Co-work: Your AI Partner for Business Task Automation"
+seoTitled: true
 youtubeId: "oUIxPCagoQU"
 date: "2026-06-29"
 tags:

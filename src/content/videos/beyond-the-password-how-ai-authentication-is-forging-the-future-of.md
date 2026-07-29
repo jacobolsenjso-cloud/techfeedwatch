@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Password: How AI Authentication is Forging the Future of Secure Digital Banking"
+title: "AI Authentication: Boost Digital Banking Security & Profit"
+seoTitled: true
 youtubeId: "O1FOLLPEdfY"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "See Your Future Home Today: How Augmented Reality is Revolutionizing Interior Design"
+title: "Augmented Reality Interior Design: Visualize Your Home Space"
+seoTitled: true
 youtubeId: "YSUpB3z8NHc"
 date: "2026-07-11"
 tags:

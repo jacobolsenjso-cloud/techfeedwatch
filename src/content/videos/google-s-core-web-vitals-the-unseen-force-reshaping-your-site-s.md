@@ -1,5 +1,6 @@
 ---
-title: "Google's Core Web Vitals: The Unseen Force Reshaping Your Site's Digital Destiny"
+title: "Google Core Web Vitals: Key Metrics for SEO & Site Performance"
+seoTitled: true
 youtubeId: "-prOfvIV4Ns"
 date: "2026-07-17"
 tags:

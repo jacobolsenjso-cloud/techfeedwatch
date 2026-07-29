@@ -1,5 +1,6 @@
 ---
-title: "AI's Cognitive Cost: Is Your Brain on Screensaver Mode?"
+title: "AI Cognitive Decline: Passive Use Harms Critical Thinking, Memory"
+seoTitled: true
 youtubeId: "52FiVExXfnU"
 date: "2026-06-22"
 tags:

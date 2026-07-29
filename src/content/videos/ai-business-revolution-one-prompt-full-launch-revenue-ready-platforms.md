@@ -1,5 +1,6 @@
 ---
-title: "AI Business Revolution: One Prompt, Full Launch, Revenue-Ready Platforms in Minutes"
+title: "AI Business Creation: One Prompt to Revenue-Ready Online Business"
+seoTitled: true
 youtubeId: "CILRCeupuFQ"
 date: "2026-06-12"
 tags:

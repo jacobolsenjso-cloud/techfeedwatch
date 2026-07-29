@@ -1,5 +1,6 @@
 ---
-title: "Google Gemini's Ecosystem Play: Moving Beyond Chatbots to Autonomous AI Integration"
+title: "Google Gemini AI: Autonomous Agents & Workspace Integration"
+seoTitled: true
 youtubeId: "xz-pG1gUS4c"
 date: "2026-07-26"
 tags:

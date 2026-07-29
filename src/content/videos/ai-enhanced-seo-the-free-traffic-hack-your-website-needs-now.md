@@ -1,5 +1,6 @@
 ---
 title: "AI-Enhanced SEO: The Free Traffic Hack Your Website Needs Now!"
+seoTitled: true
 youtubeId: "ud0Ne7efqMU"
 date: "2026-06-22"
 tags:

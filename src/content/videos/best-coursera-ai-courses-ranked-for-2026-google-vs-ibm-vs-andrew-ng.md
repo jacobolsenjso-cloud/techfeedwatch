@@ -1,5 +1,6 @@
 ---
 title: "Best Coursera AI Courses Ranked for 2026: Google vs IBM vs Andrew Ng"
+seoTitled: true
 youtubeId: "QlPA6ovt4jE"
 date: "2026-07-14"
 tags:

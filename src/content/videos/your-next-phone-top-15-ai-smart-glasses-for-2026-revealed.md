@@ -1,5 +1,6 @@
 ---
 title: "Your Next Phone? Top 15 AI Smart Glasses for 2026 Revealed"
+seoTitled: true
 youtubeId: "VBT2ZIAVR5g"
 date: "2026-07-26"
 tags:

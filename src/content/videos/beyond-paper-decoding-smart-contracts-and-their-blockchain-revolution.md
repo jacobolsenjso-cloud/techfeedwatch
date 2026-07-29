@@ -1,5 +1,6 @@
 ---
-title: "Beyond Paper: Decoding Smart Contracts and Their Blockchain Revolution"
+title: "Smart Contracts Guide: Blockchain Benefits & Challenges"
+seoTitled: true
 youtubeId: "srjUFqnfKIs"
 date: "2026-07-11"
 tags:

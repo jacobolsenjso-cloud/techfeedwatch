@@ -1,5 +1,6 @@
 ---
-title: "Dominating Google: Why SEO is Non-Negotiable for Online Visibility and Growth"
+title: "Google SEO: Essential for Online Visibility & Business Growth"
+seoTitled: true
 youtubeId: "lx0lVq8geoo"
 date: "2026-07-12"
 tags:

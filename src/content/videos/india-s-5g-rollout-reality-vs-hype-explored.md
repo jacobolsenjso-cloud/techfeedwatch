@@ -1,5 +1,6 @@
 ---
 title: "India's 5G Rollout: Reality vs. Hype Explored"
+seoTitled: true
 youtubeId: "Mu4LG30-9AU"
 date: "2026-07-19"
 tags:

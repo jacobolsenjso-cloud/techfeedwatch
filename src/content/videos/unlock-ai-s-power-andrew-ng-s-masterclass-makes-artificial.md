@@ -1,5 +1,6 @@
 ---
-title: "Unlock AI's Power: Andrew Ng's Masterclass Makes Artificial Intelligence Accessible to Everyone"
+title: "Organizational AI Strategy: Transform Businesses for AI Success"
+seoTitled: true
 youtubeId: "zOI6Oll1Zrg"
 date: "2026-07-12"
 tags:

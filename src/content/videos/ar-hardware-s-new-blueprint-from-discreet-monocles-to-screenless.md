@@ -1,5 +1,6 @@
 ---
-title: "AR Hardware's New Blueprint: From Discreet Monocles to Screenless Computing"
+title: "AR Hardware: Consumer Devices, Screenless Computing Trends"
+seoTitled: true
 youtubeId: "4N6yyXdYUU4"
 date: "2026-07-18"
 tags:

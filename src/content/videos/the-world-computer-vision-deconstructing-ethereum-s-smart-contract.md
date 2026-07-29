@@ -1,5 +1,6 @@
 ---
-title: "The 'World Computer' Vision: Deconstructing Ethereum's Smart Contract Architecture"
+title: "Ethereum Smart Contracts: Architecture, Mechanics & EVM Explained"
+seoTitled: true
 youtubeId: "PLgawr4pbqE"
 date: "2026-07-18"
 tags:

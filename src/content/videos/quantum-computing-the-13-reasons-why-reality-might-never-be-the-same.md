@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: The 13 Reasons Why Reality Might Never Be the Same"
+title: "Quantum Computing: Exponential Power for Advanced Problems"
+seoTitled: true
 youtubeId: "OZeHj48g9Rc"
 date: "2026-07-11"
 tags:

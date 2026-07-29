@@ -1,5 +1,6 @@
 ---
-title: "The Decentralization Dilemma: Separating Web3's Promise from Its Pragmatic Pitfalls"
+title: "Web3 Decentralization: Promise vs. Real-World Challenges"
+seoTitled: true
 youtubeId: "wHTcrmhskto"
 date: "2026-07-26"
 tags:

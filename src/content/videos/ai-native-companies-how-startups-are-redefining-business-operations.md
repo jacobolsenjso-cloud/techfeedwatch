@@ -1,5 +1,6 @@
 ---
-title: "AI-Native Companies: How Startups Are Redefining Business Operations"
+title: "AI-Native Startups Use AI as Core OS for Business Operations"
+seoTitled: true
 youtubeId: "EN7frwQIbKc"
 date: "2026-07-29"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Algorand's Ascent: Reimagining Blockchain's Core Trade-offs for the Decentralized Future"
+title: "Algorand Balances Blockchain Scalability, Security, Decentralization"
+seoTitled: true
 youtubeId: "zNdhgOk4-fE"
 date: "2026-07-25"
 tags:

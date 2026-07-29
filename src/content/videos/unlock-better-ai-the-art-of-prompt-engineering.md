@@ -1,5 +1,6 @@
 ---
 title: "Unlock Better AI: The Art of Prompt Engineering"
+seoTitled: true
 youtubeId: "N3i2HgmU00g"
 date: "2026-07-25"
 tags:

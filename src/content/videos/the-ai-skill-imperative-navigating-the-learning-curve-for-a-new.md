@@ -1,5 +1,6 @@
 ---
-title: "The AI Skill Imperative: Navigating the Learning Curve for a New Professional Era"
+title: "AI Skills for Beginners: Learn Foundational AI & Career Growth"
+seoTitled: true
 youtubeId: "gUvSjFO15G0"
 date: "2026-07-22"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The AI Content Deluge: How Automation Reshapes SEO and Digital Publishing"
+title: "AI Content SEO: Automation Changes Publishing, Search Visibility"
+seoTitled: true
 youtubeId: "ZBSJ_8nFJpw"
 date: "2026-07-29"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Ethereum's 2026 Blueprint: Programmable Money's Promise or Persistent Hurdles?"
+title: "Ethereum 2026: Programmable Money, Scaling, DeFi & NFTs"
+seoTitled: true
 youtubeId: "JsSQ0F6V9nQ"
 date: "2026-07-18"
 tags:

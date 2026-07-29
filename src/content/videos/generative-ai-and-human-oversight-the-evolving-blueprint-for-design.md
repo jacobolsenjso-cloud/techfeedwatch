@@ -1,5 +1,6 @@
 ---
-title: "Generative AI and Human Oversight: The Evolving Blueprint for Design Automation"
+title: "Generative AI Design: Human Oversight in CAD Automation"
+seoTitled: true
 youtubeId: "IBrU7fRg3pk"
 date: "2026-07-15"
 tags:

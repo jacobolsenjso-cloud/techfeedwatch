@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Screen: Samsung's Gemini AI Smart Glasses Reshape Wearable Computing"
+title: "Samsung Gemini AI Smart Glasses Arrive: Next-Gen Wearable Tech"
+seoTitled: true
 youtubeId: "JT1GjLtshf8"
 date: "2026-07-27"
 tags:

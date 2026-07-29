@@ -1,5 +1,6 @@
 ---
 title: "Why a Rural Roti Maker Is the Ultimate 'AI Story' You Haven't Heard Yet"
+seoTitled: true
 youtubeId: "oSGibWVgGM4"
 date: "2026-07-07"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "AI App Builder Showdown: Base44 Crowned Champion in Real-World Application Test"
+seoTitled: true
 youtubeId: "jp8_HiDvdf0"
 date: "2026-07-06"
 tags:

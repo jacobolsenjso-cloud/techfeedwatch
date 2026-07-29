@@ -1,5 +1,6 @@
 ---
-title: "Crack the SEO Code: Unpacking Why Basic HTML & XML Skills Are Non-Negotiable for Ranking Success"
+title: "Basic HTML & XML Skills Essential for SEO Ranking Success"
+seoTitled: true
 youtubeId: "EPCXNgim5BQ"
 date: "2026-07-11"
 tags:

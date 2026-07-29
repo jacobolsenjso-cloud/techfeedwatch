@@ -1,5 +1,6 @@
 ---
-title: "The AI Whisperers: Dissecting the Rise and Realities of Prompt Engineering"
+title: "Prompt Engineering Explained: Bridge Human Intent & AI Output"
+seoTitled: true
 youtubeId: "PFsbWAC4_rk"
 date: "2026-07-25"
 tags:

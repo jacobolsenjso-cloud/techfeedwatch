@@ -1,5 +1,6 @@
 ---
 title: "Leonardo 2.0: The AI-Powered Paintball Mona Lisa Machine? Art's New Frontier"
+seoTitled: true
 youtubeId: "bVAdFrDghtg"
 date: "2026-06-18"
 tags:

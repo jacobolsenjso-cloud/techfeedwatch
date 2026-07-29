@@ -1,5 +1,6 @@
 ---
 title: "Unlocking Wall Street's Hidden Gems: Why Smart Money is Stacking Sub-$20 Fintech & Financial Stocks"
+seoTitled: true
 youtubeId: "XCEuCA_2m9w"
 date: "2026-07-11"
 tags:

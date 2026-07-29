@@ -1,5 +1,6 @@
 ---
-title: "FIX Protocol: The Enduring Engine Behind Trillions in Global Electronic Trading"
+title: "FIX Protocol: Standardizing Communication in Electronic Trading"
+seoTitled: true
 youtubeId: "uZ8UEVhtPAo"
 date: "2026-07-17"
 tags:

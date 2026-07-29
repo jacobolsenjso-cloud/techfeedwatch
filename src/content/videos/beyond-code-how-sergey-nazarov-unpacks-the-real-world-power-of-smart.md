@@ -1,5 +1,6 @@
 ---
-title: "Beyond Code: How Sergey Nazarov Unpacks the Real-World Power of Smart Contracts"
+title: "Smart Contracts Reshape Industries: Real-World Use & Efficiency"
+seoTitled: true
 youtubeId: "l-sTw136zAs"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Optimizing for Generative AI Search: The New Frontier Beyond Traditional SEO"
+title: "Generative AI SEO: Optimize Content for AI Search Engines"
+seoTitled: true
 youtubeId: "kpvA-bDD180"
 date: "2026-07-29"
 tags:

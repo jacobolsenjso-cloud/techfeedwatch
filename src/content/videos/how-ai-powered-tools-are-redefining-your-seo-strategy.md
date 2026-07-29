@@ -1,5 +1,6 @@
 ---
-title: "How AI-Powered Tools Are Redefining Your SEO Strategy"
+title: "AI SEO Tools Transform Your Search Engine Optimization Strategy"
+seoTitled: true
 youtubeId: "COMnNlUakQk"
 date: "2026-07-26"
 tags:

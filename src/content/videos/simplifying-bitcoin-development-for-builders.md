@@ -1,5 +1,6 @@
 ---
 title: "Simplifying Bitcoin Development for Builders"
+seoTitled: true
 youtubeId: "mtX4BKaZo-U"
 date: "2026-07-25"
 tags:

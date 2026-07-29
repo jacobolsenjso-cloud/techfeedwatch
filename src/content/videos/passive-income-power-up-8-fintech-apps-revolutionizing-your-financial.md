@@ -1,5 +1,6 @@
 ---
-title: "Passive Income Power-Up: 8 Fintech Apps Revolutionizing Your Financial Future"
+title: "Passive Income Apps: Top 8 Fintech Tools to Build Wealth"
+seoTitled: true
 youtubeId: "G4InB8RaS_Y"
 date: "2026-07-11"
 tags:

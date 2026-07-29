@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Algorithm: How AI Reconfigures Our Understanding of Truth and Computation"
+title: "AI Redefines Truth: Impact on Reality, Computation"
+seoTitled: true
 youtubeId: "PdE-waSx-d8"
 date: "2026-07-26"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Is Your Business Invisible to AI? Unlock Generative Engine Optimization (GEO)"
+seoTitled: true
 youtubeId: "P1zFsc2h0Ew"
 date: "2026-07-19"
 tags:

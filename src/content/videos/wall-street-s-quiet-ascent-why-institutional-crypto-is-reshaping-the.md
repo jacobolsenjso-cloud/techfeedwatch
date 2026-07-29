@@ -1,5 +1,6 @@
 ---
-title: "Wall Street's Quiet Ascent: Why Institutional Crypto is Reshaping the Market Beyond Bitcoin Accumulation"
+title: "Institutional Crypto Reshaping Market: Wall Street's Utility Push"
+seoTitled: true
 youtubeId: "G87Vy-dZbdw"
 date: "2026-07-28"
 tags:

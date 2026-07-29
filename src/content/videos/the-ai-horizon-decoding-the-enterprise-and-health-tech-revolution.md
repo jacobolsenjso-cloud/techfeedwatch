@@ -1,5 +1,6 @@
 ---
-title: "The AI Horizon: Decoding the Enterprise and Health Tech Revolution"
+title: "Enterprise AI: Practical Solutions for Business & Healthcare"
+seoTitled: true
 youtubeId: "5dfu6NvnTZM"
 date: "2026-07-28"
 tags:

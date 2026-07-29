@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Separating Transformative Potential From Immediate Reality"
+title: "Quantum Computing: Present Reality, Future Potential & Challenges"
+seoTitled: true
 youtubeId: "VyX8E4KUkWw"
 date: "2026-07-25"
 tags:

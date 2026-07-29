@@ -1,5 +1,6 @@
 ---
 title: "Beyond Punctuation: Mastering Authentic Writing in the Age of AI Detectors"
+seoTitled: true
 youtubeId: "hSNifAmbOFs"
 date: "2026-07-06"
 tags:

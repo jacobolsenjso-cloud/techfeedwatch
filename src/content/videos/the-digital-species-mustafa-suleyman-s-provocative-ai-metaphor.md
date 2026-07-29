@@ -1,5 +1,6 @@
 ---
-title: "The Digital Species: Mustafa Suleyman's Provocative AI Metaphor Redefines the Human-Machine Frontier"
+title: "Mustafa Suleyman: AI is new digital species, not merely a tool"
+seoTitled: true
 youtubeId: "KKNCiRWd_j0"
 date: "2026-07-15"
 tags:

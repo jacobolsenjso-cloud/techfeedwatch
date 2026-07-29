@@ -1,5 +1,6 @@
 ---
-title: "The One-Person Empire: How AI CEOs Are Building Self-Operating Businesses"
+title: "Self-Operating Businesses: How AI Agents Automate Operations"
+seoTitled: true
 youtubeId: "njyxMosfSmE"
 date: "2026-07-02"
 tags:

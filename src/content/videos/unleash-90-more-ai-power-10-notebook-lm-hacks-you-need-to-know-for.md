@@ -1,5 +1,6 @@
 ---
-title: "Unleash 90% More AI Power: 10 Notebook LM Hacks You NEED to Know for Ultimate Workflow Domination"
+title: "Notebook LM Hacks: 10 Tips for Advanced AI Workflow Power"
+seoTitled: true
 youtubeId: "gTGAkxx4ItU"
 date: "2026-06-22"
 tags:

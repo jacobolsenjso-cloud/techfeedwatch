@@ -1,5 +1,6 @@
 ---
-title: "Ethereum's Enduring Vision: More Than Just Digital Money"
+title: "Ethereum: Programmable Blockchain & Decentralized Web Foundation"
+seoTitled: true
 youtubeId: "NzNNu49eZvc"
 date: "2026-07-13"
 tags:

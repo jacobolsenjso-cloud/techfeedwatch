@@ -1,5 +1,6 @@
 ---
-title: "The Illusion of Sentience: Why AI Consciousness Is a Misdirection"
+title: "AI Consciousness Myth: Why Current AI Lacks True Sentience"
+seoTitled: true
 youtubeId: "tJV-vdbZ388"
 date: "2026-07-27"
 tags:

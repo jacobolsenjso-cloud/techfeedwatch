@@ -1,5 +1,6 @@
 ---
 title: "Unlock Google Rich Results: Easy FAQ Schema Tutorial"
+seoTitled: true
 youtubeId: "3qpTB0htivw"
 date: "2026-07-14"
 tags:

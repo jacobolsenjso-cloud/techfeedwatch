@@ -1,5 +1,6 @@
 ---
-title: "From Trading Apps to Sky-High Valuations: Unpacking FinTech's Regulatory Tightrope & SPAC Boom"
+title: "FinTech Regulation: Investor Protection, AI, Trading, SPAC Risks"
+seoTitled: true
 youtubeId: "cu39xXhCnj0"
 date: "2026-07-12"
 tags:

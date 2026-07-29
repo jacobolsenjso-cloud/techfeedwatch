@@ -1,5 +1,6 @@
 ---
 title: "Viral by Design: How AI Animation is Redefining Short-Form Storytelling"
+seoTitled: true
 youtubeId: "aqv2HJW6uTk"
 date: "2026-07-07"
 tags:

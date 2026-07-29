@@ -1,5 +1,6 @@
 ---
-title: "Demystifying AI: Your 20-Minute Blueprint to Understanding Every Essential Model"
+title: "Essential AI Models: Types & Applications Explained"
+seoTitled: true
 youtubeId: "I0me2uEbfuE"
 date: "2026-07-12"
 tags:

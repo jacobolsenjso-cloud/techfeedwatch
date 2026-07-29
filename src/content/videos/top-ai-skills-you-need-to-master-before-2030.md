@@ -1,5 +1,6 @@
 ---
 title: "Top AI Skills You Need to Master Before 2030"
+seoTitled: true
 youtubeId: "qJ_6GEN3_oE"
 date: "2026-07-17"
 tags:

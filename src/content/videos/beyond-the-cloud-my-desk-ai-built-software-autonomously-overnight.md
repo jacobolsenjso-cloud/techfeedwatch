@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Cloud: My Desk AI Built Software Autonomously Overnight"
+seoTitled: true
 youtubeId: "kGvlAy7U8og"
 date: "2026-07-07"
 tags:

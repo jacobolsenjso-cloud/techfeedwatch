@@ -1,5 +1,6 @@
 ---
-title: "Google's Quantum AI: The Willow Chip and Its Multiverse Mystery"
+title: "Google Willow Quantum Chip Solves Problem, Fuels Many-Worlds Theory"
+seoTitled: true
 youtubeId: "lwiRg_TNrek"
 date: "2026-07-19"
 tags:

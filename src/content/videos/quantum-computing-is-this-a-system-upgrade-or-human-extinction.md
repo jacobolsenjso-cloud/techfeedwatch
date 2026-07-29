@@ -1,5 +1,6 @@
 ---
 title: "Quantum Computing: Is This a System Upgrade or Human Extinction?"
+seoTitled: true
 youtubeId: "nUbMQM6KsXE"
 date: "2026-07-13"
 tags:

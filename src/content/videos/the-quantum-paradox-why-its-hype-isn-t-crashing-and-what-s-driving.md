@@ -1,5 +1,6 @@
 ---
-title: "The Quantum Paradox: Why Its Hype Isn't Crashing – And What's Driving Its Exponential Growth"
+title: "Quantum Computing's Growth: Why Investment & Progress Continue"
+seoTitled: true
 youtubeId: "gBTS7JZTyZY"
 date: "2026-07-11"
 tags:

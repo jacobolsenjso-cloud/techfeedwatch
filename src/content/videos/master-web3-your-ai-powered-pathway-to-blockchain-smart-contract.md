@@ -1,5 +1,6 @@
 ---
-title: "Master Web3: Your AI-Powered Pathway to Blockchain & Smart Contract Development"
+title: "Web3 Smart Contract Development with AI & Blockchain"
+seoTitled: true
 youtubeId: "umepbfKp5rI"
 date: "2026-07-11"
 tags:

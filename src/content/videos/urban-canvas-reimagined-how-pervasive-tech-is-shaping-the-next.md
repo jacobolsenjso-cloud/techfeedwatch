@@ -1,5 +1,6 @@
 ---
-title: "Urban Canvas Reimagined: How Pervasive Tech is Shaping the Next Generation of Cities"
+title: "Future Cities: Pervasive AI Tech Shaping Next-Gen Urban Environments"
+seoTitled: true
 youtubeId: "Fm4kPJpKcrM"
 date: "2026-07-23"
 tags:

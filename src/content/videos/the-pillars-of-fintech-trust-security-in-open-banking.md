@@ -1,5 +1,6 @@
 ---
 title: "The Pillars of Fintech Trust: Security in Open Banking"
+seoTitled: true
 youtubeId: "KIBcJpVgh_w"
 date: "2026-07-24"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Crypto Clarity Act: Why Regulation (Or Its Absence) Could Reshape Your Digital Portfolio"
+title: "US Crypto Legislation: CLARITY Act's Impact on Altcoins & Values"
+seoTitled: true
 youtubeId: "WbllezOMtQw"
 date: "2026-07-28"
 tags:

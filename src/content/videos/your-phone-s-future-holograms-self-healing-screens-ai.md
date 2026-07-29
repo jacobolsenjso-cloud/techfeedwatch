@@ -1,5 +1,6 @@
 ---
 title: "Your Phone's Future: Holograms, Self-Healing Screens & AI"
+seoTitled: true
 youtubeId: "cINX0c3NdUc"
 date: "2026-07-20"
 tags:

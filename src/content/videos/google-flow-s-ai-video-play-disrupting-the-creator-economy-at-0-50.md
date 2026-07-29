@@ -1,5 +1,6 @@
 ---
-title: "Google Flow's AI Video Play: Disrupting the Creator Economy at €0.50/Minute"
+title: "Google Flow AI Video Platform: Pricing & Creator Impact"
+seoTitled: true
 youtubeId: "lkv0Te1tZkI"
 date: "2026-06-12"
 tags:

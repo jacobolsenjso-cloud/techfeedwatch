@@ -1,5 +1,6 @@
 ---
 title: "Mono Racer: The Enclosed Motorcycle Redefining Personal Mobility & Safety"
+seoTitled: true
 youtubeId: "Zb2ZEhs_5hI"
 date: "2026-06-18"
 tags:

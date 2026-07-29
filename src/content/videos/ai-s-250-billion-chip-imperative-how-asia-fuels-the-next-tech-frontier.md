@@ -1,5 +1,6 @@
 ---
-title: "AI's $250 Billion Chip Imperative: How Asia Fuels the Next Tech Frontier"
+title: "AI chip market: Asia fuels $250B growth led by Nvidia"
+seoTitled: true
 youtubeId: "QycryeG7OJw"
 date: "2026-07-27"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Algorithm Hijack: The 5-Step Social Media Hack to Explode Your Website Traffic"
+title: "Website Traffic: 5-Step Social Media Algorithm Hack"
+seoTitled: true
 youtubeId: "gCJJWThZy2U"
 date: "2026-06-22"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "The Unspoken Future: AI's Silent Influence on Tech's Next Frontier"
+seoTitled: true
 youtubeId: "ZicFwWYosKc"
 date: "2026-06-15"
 tags:

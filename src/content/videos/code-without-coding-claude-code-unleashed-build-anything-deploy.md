@@ -1,5 +1,6 @@
 ---
-title: "Code Without Coding: Claude Code Unleashed – Build Anything, Deploy Anywhere"
+title: "Build Apps Without Coding: Claude Code AI for Non-Developers"
+seoTitled: true
 youtubeId: "5tgHMa2Z3jc"
 date: "2026-06-18"
 tags:

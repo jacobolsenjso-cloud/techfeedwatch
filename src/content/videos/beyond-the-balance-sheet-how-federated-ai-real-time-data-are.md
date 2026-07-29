@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Balance Sheet: How Federated AI & Real-Time Data Are Redefining Credit for a New Era"
+seoTitled: true
 youtubeId: "MR2uEbqVHZA"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Forget Flat Screens: AR Engineering's Immersive Tech is Reshaping Industry Training"
+title: "AR Engineering Training: Immersive Tech Transforms Industry"
+seoTitled: true
 youtubeId: "oLKcq0ULy2c"
 date: "2026-07-11"
 tags:

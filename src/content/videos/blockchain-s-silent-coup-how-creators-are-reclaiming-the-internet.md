@@ -1,5 +1,6 @@
 ---
-title: "Blockchain's Silent Coup: How Creators Are Reclaiming the Internet from Platform Giants"
+title: "Creators Use Blockchain & NFTs for Direct Ownership & Monetization"
+seoTitled: true
 youtubeId: "rWTwcySGvrE"
 date: "2026-07-25"
 tags:

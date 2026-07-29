@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Screen: How Augmented Reality Will Reshape Our World by 2030"
+title: "Augmented Reality 2030: How AR Transforms Daily Life"
+seoTitled: true
 youtubeId: "D8V2nxeWHmI"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Beyond Human: Deconstructing the 10 Hypothetical Stages of AI Evolution"
+title: "10 Stages of AI Evolution: From Basic AI to Superintelligence"
+seoTitled: true
 youtubeId: "tFx_UNW9I1U"
 date: "2026-07-22"
 tags:

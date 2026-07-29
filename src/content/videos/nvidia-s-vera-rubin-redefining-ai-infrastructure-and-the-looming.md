@@ -1,5 +1,6 @@
 ---
-title: "Nvidia's Vera Rubin: Redefining AI Infrastructure and the Looming Battle for Compute Supremacy"
+title: "Nvidia Vera Rubin: Next-Gen AI Infrastructure, 10x Power Efficiency"
+seoTitled: true
 youtubeId: "ZkPU5GHDqkQ"
 date: "2026-07-29"
 tags:

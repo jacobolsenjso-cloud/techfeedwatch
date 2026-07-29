@@ -1,5 +1,6 @@
 ---
-title: "OPNET Unlocks Ethereum Smart Contracts on Bitcoin Layer 1: A Game Changer or Maximalist's Nightmare?"
+title: "Ethereum Smart Contracts on Bitcoin Layer 1 with OPNET Protocol"
+seoTitled: true
 youtubeId: "WLm9wPw8b5U"
 date: "2026-07-12"
 tags:

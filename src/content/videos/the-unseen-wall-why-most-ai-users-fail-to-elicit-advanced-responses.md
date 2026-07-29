@@ -1,5 +1,6 @@
 ---
-title: "The Unseen Wall: Why Most AI Users Fail to Elicit Advanced Responses"
+title: "AI Prompt Engineering: Get Advanced AI Responses from LLMs"
+seoTitled: true
 youtubeId: "VnEoS2eQXsw"
 date: "2026-07-13"
 tags:

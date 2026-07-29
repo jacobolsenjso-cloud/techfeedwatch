@@ -1,5 +1,6 @@
 ---
 title: "Skyeora's Growth: Smart Contracts Powering a Structured Ecosystem"
+seoTitled: true
 youtubeId: "0LaXimPv_Sc"
 date: "2026-07-18"
 tags:

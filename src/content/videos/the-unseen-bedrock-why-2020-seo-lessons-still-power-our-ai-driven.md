@@ -1,5 +1,6 @@
 ---
-title: "The Unseen Bedrock: Why 2020 SEO Lessons Still Power Our AI-Driven Search Future"
+title: "AI SEO: Foundational Principles for Future Search Success"
+seoTitled: true
 youtubeId: "xpSRdok0qUM"
 date: "2026-07-13"
 tags:

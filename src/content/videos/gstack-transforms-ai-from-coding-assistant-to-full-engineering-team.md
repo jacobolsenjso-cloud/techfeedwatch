@@ -1,5 +1,6 @@
 ---
-title: "GStack Transforms AI from Coding Assistant to Full Engineering Team"
+title: "GStack: AI Engineering Team Handles Software Dev & QA"
+seoTitled: true
 youtubeId: "wkv2ifxPpF8"
 date: "2026-07-27"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The Future on Your Face: MKBHD Tests 'Real' AR Glasses – Is This the Next Big Tech Leap?"
+title: "AR Glasses: MKBHD Tests Early Prototypes & Tech Challenges"
+seoTitled: true
 youtubeId: "G0eKzU_fV00"
 date: "2026-07-11"
 tags:

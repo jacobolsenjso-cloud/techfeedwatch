@@ -1,5 +1,6 @@
 ---
-title: "Google's Secret AI Overhaul: 5 Gemini Updates Changing Everything You Thought You Knew About Work"
+title: "Google Gemini: 5 AI Updates for Workspace Productivity"
+seoTitled: true
 youtubeId: "ldVPIMmTkpo"
 date: "2026-06-22"
 tags:

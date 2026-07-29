@@ -1,5 +1,6 @@
 ---
 title: "ARLOOPA: Bringing 3D Models to Life in Augmented Reality"
+seoTitled: true
 youtubeId: "_mTfzEcR9BA"
 date: "2026-07-21"
 tags:

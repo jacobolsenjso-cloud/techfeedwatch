@@ -1,5 +1,6 @@
 ---
 title: "YouTube's AI Monetization Unpacked: Good News for Creators, Not a Ban by 2026!"
+seoTitled: true
 youtubeId: "9digDXRabtg"
 date: "2026-07-08"
 tags:

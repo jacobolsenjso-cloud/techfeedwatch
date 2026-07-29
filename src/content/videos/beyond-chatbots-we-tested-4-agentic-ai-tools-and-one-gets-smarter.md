@@ -1,5 +1,6 @@
 ---
-title: "Beyond Chatbots: We Tested 4 Agentic AI Tools – And One Gets Smarter Every Day"
+title: "Agentic AI Tools Tested: Review of 4 AI Agents for Automation"
+seoTitled: true
 youtubeId: "QcnrWiZokh4"
 date: "2026-07-02"
 tags:

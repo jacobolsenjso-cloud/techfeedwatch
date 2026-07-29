@@ -1,5 +1,6 @@
 ---
-title: "Offensive Security: Why Simulating Attacks is Essential for Digital Defense"
+title: "Offensive Security: Why Attack Simulation Boosts Digital Defense"
+seoTitled: true
 youtubeId: "fQJ8OUs1Sog"
 date: "2026-07-28"
 tags:

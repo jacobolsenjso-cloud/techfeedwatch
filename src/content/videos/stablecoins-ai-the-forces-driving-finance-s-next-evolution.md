@@ -1,5 +1,6 @@
 ---
-title: "Stablecoins & AI: The Forces Driving Finance's Next Evolution"
+title: "Stablecoins & AI Drive Global Finance, Payments & Banking"
+seoTitled: true
 youtubeId: "0biSwEL5eMQ"
 date: "2026-07-23"
 tags:

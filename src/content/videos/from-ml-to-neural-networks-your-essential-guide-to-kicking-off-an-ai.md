@@ -1,5 +1,6 @@
 ---
-title: "From ML to Neural Networks: Your Essential Guide to Kicking Off an AI Engineering Career"
+title: "AI Engineering Career Guide: ML, Neural Networks, LLMs Explained"
+seoTitled: true
 youtubeId: "304i_BWgXNc"
 date: "2026-07-12"
 tags:

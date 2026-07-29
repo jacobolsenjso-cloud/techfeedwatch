@@ -1,5 +1,6 @@
 ---
-title: "Open-Source AI's Ascent: Why Models Like GLM-5.2 Are Shaking Up Enterprise Costs"
+title: "Open Source AI Lowers Enterprise Costs with Models like GLM-5.2"
+seoTitled: true
 youtubeId: "XbHeJL45USQ"
 date: "2026-07-28"
 tags:

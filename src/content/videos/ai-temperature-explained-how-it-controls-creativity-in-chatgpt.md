@@ -1,5 +1,6 @@
 ---
 title: "AI Temperature Explained: How it Controls Creativity in ChatGPT"
+seoTitled: true
 youtubeId: "1T_XK-F1DnE"
 date: "2026-07-19"
 tags:

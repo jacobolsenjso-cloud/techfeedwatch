@@ -1,5 +1,6 @@
 ---
-title: "Beyond the 'Hello World': The Realities of Coding Ethereum Smart Contracts"
+title: "Coding Ethereum Smart Contracts: Basics with Solidity & Remix"
+seoTitled: true
 youtubeId: "ooN6kZ9vqNQ"
 date: "2026-07-14"
 tags:

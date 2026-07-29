@@ -1,5 +1,6 @@
 ---
 title: "Apple's Secret Wearable, XR Surgery & Smart Home Wars"
+seoTitled: true
 youtubeId: "201QokU4uAc"
 date: "2026-07-13"
 tags:

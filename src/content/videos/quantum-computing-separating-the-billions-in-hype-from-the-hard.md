@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Separating the Billions in Hype from the Hard Reality"
+title: "Quantum Computing: Hype vs Reality, Real Challenges & Future"
+seoTitled: true
 youtubeId: "SnIEu8OSXDs"
 date: "2026-07-11"
 tags:

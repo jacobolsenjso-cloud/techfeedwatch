@@ -1,5 +1,6 @@
 ---
 title: "Augmented Reality Transforms Shopping: Try Before You Buy in 3D"
+seoTitled: true
 youtubeId: "5tcDgCs5n_s"
 date: "2026-07-17"
 tags:

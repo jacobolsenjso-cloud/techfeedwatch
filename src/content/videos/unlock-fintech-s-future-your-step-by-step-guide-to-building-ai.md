@@ -1,5 +1,6 @@
 ---
-title: "Unlock FinTech's Future: Your Step-by-Step Guide to Building AI-Powered Finance Apps by 2026"
+title: "Build AI FinTech Apps: Guide for Regulatory Compliance & Growth"
+seoTitled: true
 youtubeId: "PvjFuxCjygc"
 date: "2026-07-12"
 tags:

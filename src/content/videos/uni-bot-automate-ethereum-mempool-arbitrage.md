@@ -1,5 +1,6 @@
 ---
 title: "uNI-Bot: Automate Ethereum Mempool Arbitrage"
+seoTitled: true
 youtubeId: "wKm4CV8ZiXE"
 date: "2026-07-26"
 tags:

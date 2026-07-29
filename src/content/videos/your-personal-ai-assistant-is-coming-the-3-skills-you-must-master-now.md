@@ -1,5 +1,6 @@
 ---
 title: "Your Personal AI Assistant is Coming: The 3 Skills You *Must* Master Now"
+seoTitled: true
 youtubeId: "6fSTVx-E0ig"
 date: "2026-06-18"
 tags:

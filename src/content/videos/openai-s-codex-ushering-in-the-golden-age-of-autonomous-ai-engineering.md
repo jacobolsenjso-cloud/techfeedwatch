@@ -1,5 +1,6 @@
 ---
-title: "OpenAI's Codex: Ushering in the Golden Age of Autonomous AI Engineering"
+title: "Autonomous AI Engineering: Focus on Problem Solving & System Design"
+seoTitled: true
 youtubeId: "pMggiOb18tc"
 date: "2026-07-12"
 tags:

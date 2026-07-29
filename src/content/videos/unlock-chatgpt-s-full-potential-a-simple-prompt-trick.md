@@ -1,5 +1,6 @@
 ---
 title: "Unlock ChatGPT's Full Potential: A Simple Prompt Trick"
+seoTitled: true
 youtubeId: "7bjfJcA98rU"
 date: "2026-07-17"
 tags:

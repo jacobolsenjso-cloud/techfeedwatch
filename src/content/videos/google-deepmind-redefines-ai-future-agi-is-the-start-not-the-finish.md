@@ -1,5 +1,6 @@
 ---
-title: "Google DeepMind Redefines AI Future: AGI is the Start, Not the Finish Line"
+title: "AGI to ASI: DeepMind Predicts Exponential Superintelligence Leap"
+seoTitled: true
 youtubeId: "haB_od-xCWY"
 date: "2026-07-26"
 tags:

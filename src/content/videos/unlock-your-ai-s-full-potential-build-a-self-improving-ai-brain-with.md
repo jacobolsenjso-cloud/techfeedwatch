@@ -1,5 +1,6 @@
 ---
-title: "Unlock Your AI's Full Potential: Build a Self-Improving AI Brain with the AI BrainStack"
+title: "Build Self-Improving AI Brains for Personalized Expert Assistance"
+seoTitled: true
 youtubeId: "iadt4yTlK6w"
 date: "2026-06-11"
 tags:

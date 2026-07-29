@@ -1,5 +1,6 @@
 ---
-title: "The Silent Revolution: How Stablecoins Are Reshaping the Global Battle for Your Financial Data"
+title: "Stablecoins & Financial Data: The Battle for Customer Control"
+seoTitled: true
 youtubeId: "u0SfAX3eIqk"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The AI Engineer's Dilemma: Future-Proofing Careers Against Advanced Automation"
+title: "AI Impact on Programmer Careers: Essential Skills for Automation"
+seoTitled: true
 youtubeId: "gXqpTUy5czc"
 date: "2026-07-16"
 tags:

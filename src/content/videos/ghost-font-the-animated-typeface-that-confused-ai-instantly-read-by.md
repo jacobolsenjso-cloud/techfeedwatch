@@ -1,5 +1,6 @@
 ---
 title: "Ghost Font: The Animated Typeface That Confused AI, Instantly Read by Humans"
+seoTitled: true
 youtubeId: "I4nFtAkvvpc"
 date: "2026-07-14"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Zand's Digital Ascent: Is This the End for Traditional Banking's Dominance?"
+title: "Digital Banks UAE: Zand Disrupts Traditional Banking Models"
+seoTitled: true
 youtubeId: "N0CRAhi4qo0"
 date: "2026-07-17"
 tags:

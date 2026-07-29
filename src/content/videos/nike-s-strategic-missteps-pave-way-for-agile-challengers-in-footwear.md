@@ -1,5 +1,6 @@
 ---
-title: "Nike's Strategic Missteps Pave Way for Agile Challengers in Footwear's Digital Arena"
+title: "Nike's Footwear Missteps Fuel Agile Challengers' Digital Growth"
+seoTitled: true
 youtubeId: "8s7t64aXaEA"
 date: "2026-07-29"
 tags:

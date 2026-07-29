@@ -1,5 +1,6 @@
 ---
-title: "Hype or Harmony? Why Quantum Computing Won't Replace AI, But Power Its Hybrid Future"
+title: "Quantum Computing Powers AI: Hybrid Future, Not Replacement"
+seoTitled: true
 youtubeId: "89gnHLDnOdE"
 date: "2026-07-11"
 tags:

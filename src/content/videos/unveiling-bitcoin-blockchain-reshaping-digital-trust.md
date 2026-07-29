@@ -1,5 +1,6 @@
 ---
 title: "Unveiling Bitcoin & Blockchain: Reshaping Digital Trust"
+seoTitled: true
 youtubeId: "-vc1IkGDI4U"
 date: "2026-07-16"
 tags:

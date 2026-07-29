@@ -1,5 +1,6 @@
 ---
-title: "Automating Alpha: How AI Trading Bots Are Rewriting Crypto Investment Rules"
+title: "AI Crypto Trading Bots: Risks & Rewards for Investors"
+seoTitled: true
 youtubeId: "wYbf5XwdcPI"
 date: "2026-07-23"
 tags:

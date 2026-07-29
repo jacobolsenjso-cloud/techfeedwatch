@@ -1,5 +1,6 @@
 ---
-title: "AI-Powered Search Confronts Traditional Models: A New Era for Information Retrieval"
+title: "Perplexity AI Challenges Google with Direct Answer Engine"
+seoTitled: true
 youtubeId: "e-gwvmhyU7A"
 date: "2026-07-24"
 tags:

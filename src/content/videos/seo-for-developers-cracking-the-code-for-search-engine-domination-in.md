@@ -1,5 +1,6 @@
 ---
-title: "SEO for Developers: Cracking the Code for Search Engine Domination in 100 Seconds"
+title: "Technical SEO for Developers: Boost Rankings & User Experience"
+seoTitled: true
 youtubeId: "-B58GgsehKQ"
 date: "2026-07-11"
 tags:

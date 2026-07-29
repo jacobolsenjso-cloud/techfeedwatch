@@ -1,5 +1,6 @@
 ---
-title: "Quantum Leap for AI? Assessing the Near-Term Impact of QPU Advancements"
+title: "Quantum AI for LLMs: Near-Term Impact & Training Challenges"
+seoTitled: true
 youtubeId: "sQSQBYHR0ms"
 date: "2026-07-18"
 tags:

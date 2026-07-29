@@ -1,5 +1,6 @@
 ---
 title: "How XO Invitations Are Revolutionizing Smart Contracts on Bitcoin Cash"
+seoTitled: true
 youtubeId: "NJi0QnsSxMs"
 date: "2026-07-12"
 tags:

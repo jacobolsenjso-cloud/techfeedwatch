@@ -1,5 +1,6 @@
 ---
 title: "Avoid the #1 ChatGPT Mistake: Master Better Prompts"
+seoTitled: true
 youtubeId: "ii0dneS958U"
 date: "2026-07-21"
 tags:

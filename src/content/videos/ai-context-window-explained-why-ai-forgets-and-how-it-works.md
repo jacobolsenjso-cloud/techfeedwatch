@@ -1,5 +1,6 @@
 ---
 title: "AI Context Window Explained: Why AI Forgets and How It Works"
+seoTitled: true
 youtubeId: "Ry6RmKQ1I20"
 date: "2026-07-17"
 tags:

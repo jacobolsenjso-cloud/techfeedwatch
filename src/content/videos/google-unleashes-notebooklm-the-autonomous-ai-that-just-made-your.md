@@ -1,5 +1,6 @@
 ---
-title: "Google Unleashes NotebookLM: The Autonomous AI That Just Made Your Workflow Obsolete"
+title: "Google NotebookLM: Autonomous AI Agent Transforms Knowledge Work"
+seoTitled: true
 youtubeId: "UHAuc6Lh234"
 date: "2026-06-18"
 tags:

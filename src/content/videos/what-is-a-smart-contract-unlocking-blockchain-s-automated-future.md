@@ -1,5 +1,6 @@
 ---
-title: "What is a Smart Contract? Unlocking Blockchain's Automated Future"
+title: "What is a Smart Contract? Explained: Benefits, Risks, Blockchain"
+seoTitled: true
 youtubeId: "Un7-hW6GAec"
 date: "2026-07-11"
 tags:

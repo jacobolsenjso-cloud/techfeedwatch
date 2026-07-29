@@ -1,5 +1,6 @@
 ---
 title: "NPTEL AI & Robotics: Week 0 Assignment Solutions for 2026"
+seoTitled: true
 youtubeId: "Wp8OkxnHckE"
 date: "2026-07-22"
 tags:

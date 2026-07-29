@@ -1,5 +1,6 @@
 ---
 title: "The General Ledger: Crypto's Ultimate Control Point"
+seoTitled: true
 youtubeId: "Bsvgc-OWpKI"
 date: "2026-07-13"
 tags:

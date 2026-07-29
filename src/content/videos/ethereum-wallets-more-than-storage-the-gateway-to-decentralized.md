@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Wallets: More Than Storage, The Gateway to Decentralized Finance"
+title: "Ethereum Wallets Explained: Accounts, Gas, & DeFi Interaction"
+seoTitled: true
 youtubeId: "qLZ1IoezucE"
 date: "2026-07-20"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Clear Up Common Tech Confusions: Wi-Fi, VR, and Laptop Differences Explained"
+seoTitled: true
 youtubeId: "gPlLHiG0sc4"
 date: "2026-07-13"
 tags:

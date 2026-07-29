@@ -1,5 +1,6 @@
 ---
-title: "Zero Trust: The Essential Security Shift Your Business Needs Now"
+title: "Zero Trust Security Model: Protect Your Business from Cyber Threats"
+seoTitled: true
 youtubeId: "gb2CJP8oUuw"
 date: "2026-07-28"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The AGI Horizon: Demis Hassabis on Simulating Reality and Redefining Intelligence"
+title: "Demis Hassabis AGI Vision: Simulating Reality, Redefining AI"
+seoTitled: true
 youtubeId: "-HzgcbRXUK8"
 date: "2026-07-26"
 tags:

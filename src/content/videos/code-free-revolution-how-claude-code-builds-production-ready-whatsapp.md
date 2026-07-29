@@ -1,5 +1,6 @@
 ---
-title: "Code-Free Revolution: How Claude Code Builds Production-Ready WhatsApp AI Bots for Any Business"
+title: "WhatsApp AI Bots: Code-Free Development with Claude Code for Business"
+seoTitled: true
 youtubeId: "_VX7jc_BhB8"
 date: "2026-06-29"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Tech Titans Unpack the AI Revolution: From Curing Cancer to Emotional Robots"
+title: "AI Potential: Curing Cancer, Emotional Robots, Overcoming Barriers"
+seoTitled: true
 youtubeId: "Oa0ZHfcalCM"
 date: "2026-07-11"
 tags:

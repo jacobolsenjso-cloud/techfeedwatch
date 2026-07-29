@@ -1,5 +1,6 @@
 ---
-title: "Unlock AI Visibility: Your Guide to Generative Engine Optimization (GEO)"
+title: "Generative Engine Optimization (GEO) for Business AI Visibility"
+seoTitled: true
 youtubeId: "20pTTT8jcEw"
 date: "2026-06-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Google Anti-gravity: The AI That Doesn't Just Code, It Builds Your Entire App"
+title: "Google Antigravity: Autonomous AI Builds Entire Apps"
+seoTitled: true
 youtubeId: "ff9BXfTlAqo"
 date: "2026-06-15"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Frontend SEO's Technical Core: Why User Experience Now Dominates Search Algorithms"
+title: "User Experience SEO: Core Web Vitals & Site Speed for Rankings"
+seoTitled: true
 youtubeId: "_w4uzUH1YeM"
 date: "2026-07-14"
 tags:

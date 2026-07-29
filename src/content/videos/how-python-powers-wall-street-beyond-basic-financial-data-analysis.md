@@ -1,5 +1,6 @@
 ---
-title: "How Python Powers Wall Street: Beyond Basic Financial Data Analysis"
+title: "Python Wall Street: Algorithmic Trading, Quant Models, Risk"
+seoTitled: true
 youtubeId: "i4atHI7k0Us"
 date: "2026-07-25"
 tags:

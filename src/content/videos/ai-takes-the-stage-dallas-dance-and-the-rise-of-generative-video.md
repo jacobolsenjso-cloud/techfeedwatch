@@ -1,5 +1,6 @@
 ---
 title: "AI Takes the Stage: Dallas, Dance, and the Rise of Generative Video"
+seoTitled: true
 youtubeId: "DvlDWIr9beo"
 date: "2026-07-06"
 tags:

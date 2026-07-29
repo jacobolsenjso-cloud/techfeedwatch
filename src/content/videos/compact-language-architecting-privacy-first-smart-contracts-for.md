@@ -1,5 +1,6 @@
 ---
-title: "Compact Language: Architecting Privacy-First Smart Contracts for Midnight's ZK Blockchain"
+title: "Compact Language: Build Privacy Smart Contracts on Midnight ZK"
+seoTitled: true
 youtubeId: "QWEtUJ2ymB0"
 date: "2026-07-13"
 tags:

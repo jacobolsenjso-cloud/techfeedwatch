@@ -1,5 +1,6 @@
 ---
 title: "Boost Your Productivity: This ChatGPT Prompt Saves an Hour Daily"
+seoTitled: true
 youtubeId: "0iCtbtUHSf8"
 date: "2026-07-18"
 tags:

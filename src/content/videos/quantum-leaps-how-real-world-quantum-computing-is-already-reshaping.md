@@ -1,5 +1,6 @@
 ---
-title: "Quantum Leaps: How Real-World Quantum Computing Is Already Reshaping Urban Operations"
+title: "Quantum Computing Optimizes Urban Logistics & Mobility Now"
+seoTitled: true
 youtubeId: "GQlC3NYRjK8"
 date: "2026-07-16"
 tags:

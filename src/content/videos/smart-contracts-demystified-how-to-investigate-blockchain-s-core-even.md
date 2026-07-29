@@ -1,5 +1,6 @@
 ---
-title: "Smart Contracts Demystified: How to Investigate Blockchain's Core (Even Without Code)"
+title: "Smart Contracts Explained: Verify Blockchain Logic Without Code"
+seoTitled: true
 youtubeId: "HHLhmaJta58"
 date: "2026-07-12"
 tags:

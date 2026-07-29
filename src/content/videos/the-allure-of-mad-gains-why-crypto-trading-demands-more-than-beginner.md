@@ -1,5 +1,6 @@
 ---
-title: "The Allure of 'Mad Gains': Why Crypto Trading Demands More Than Beginner Guides Suggest"
+title: "Crypto Trading: What Beginner Guides Miss About Risk & Discipline"
+seoTitled: true
 youtubeId: "14HIIUjOLGY"
 date: "2026-07-24"
 tags:

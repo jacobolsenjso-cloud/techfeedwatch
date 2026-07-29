@@ -1,5 +1,6 @@
 ---
-title: "Andrew Ng's Bold Vision: How AI Can Empower Every Business, Not Just Tech Giants"
+title: "AI for Small Businesses: Andrew Ng on Democratizing AI"
+seoTitled: true
 youtubeId: "reUZRyXxUs4"
 date: "2026-07-12"
 tags:

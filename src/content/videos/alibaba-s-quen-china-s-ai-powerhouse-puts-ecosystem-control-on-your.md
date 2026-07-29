@@ -1,5 +1,6 @@
 ---
-title: "Alibaba's Quen: China's AI Powerhouse Puts Ecosystem Control on Your Desktop, Freeing Innovation"
+title: "Alibaba Quen AI: China's Free Desktop AI Ecosystem Challenges West"
+seoTitled: true
 youtubeId: "AJsAV4ZqwTc"
 date: "2026-06-13"
 tags:

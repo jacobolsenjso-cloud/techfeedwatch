@@ -1,5 +1,6 @@
 ---
-title: "AI's Local Search Dominance: The 4-Hour Website That Challenged Traditional SEO"
+title: "Local Business AI SEO: Build & Rank in Hours, Beat Traditional SEO"
+seoTitled: true
 youtubeId: "gWNFna6fgS8"
 date: "2026-07-13"
 tags:

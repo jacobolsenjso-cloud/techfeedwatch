@@ -1,5 +1,6 @@
 ---
-title: "Beyond Google: How Marketers Win in the AI-Powered Search Era"
+title: "AI Search Strategies for Marketers: Win in AI-Powered Era"
+seoTitled: true
 youtubeId: "-8nM4ypUdUM"
 date: "2026-07-29"
 tags:

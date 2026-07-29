@@ -1,5 +1,6 @@
 ---
 title: "Unleash Your Inner Media Mogul: Build Your Own Netflix Clone in Minutes with No Code"
+seoTitled: true
 youtubeId: "V2FkOJNrzu8"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "Google Cloud's AI Play: Betting on TPUs to Reshape the Compute Landscape"
+title: "Google Cloud TPUs Cut AI Compute Costs, Boost Accessibility"
+seoTitled: true
 youtubeId: "bNdiBwXbLNw"
 date: "2026-07-28"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Top MLOps Courses on Coursera Ranked for 2026"
+seoTitled: true
 youtubeId: "1L5TxgDXxb0"
 date: "2026-07-13"
 tags:

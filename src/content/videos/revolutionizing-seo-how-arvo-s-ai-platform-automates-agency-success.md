@@ -1,5 +1,6 @@
 ---
-title: "Revolutionizing SEO: How Arvo's AI Platform Automates Agency Success & Outranks Rivals"
+title: "AI SEO Automation for Agencies: Boost Efficiency & Outrank Rivals"
+seoTitled: true
 youtubeId: "OQndX5-eauE"
 date: "2026-06-22"
 tags:

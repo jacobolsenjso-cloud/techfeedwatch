@@ -1,5 +1,6 @@
 ---
-title: "AR vs. VR: Unpacking the Reality of Immersive Tech's Impact"
+title: "AR vs VR: Differences, Applications & Future Impact"
+seoTitled: true
 youtubeId: "f9MwaH6oGEY"
 date: "2026-07-23"
 tags:

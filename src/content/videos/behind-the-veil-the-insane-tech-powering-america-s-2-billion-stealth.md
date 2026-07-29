@@ -1,5 +1,6 @@
 ---
 title: "Behind the Veil: The Insane Tech Powering America's $2 Billion Stealth Bomber"
+seoTitled: true
 youtubeId: "2TIo0Sg-uKw"
 date: "2026-07-09"
 tags:

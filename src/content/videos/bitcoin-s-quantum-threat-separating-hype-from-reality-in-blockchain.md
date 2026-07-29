@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin's Quantum Threat: Separating Hype from Reality in Blockchain Security"
+title: "Bitcoin Quantum Threat: Real security risks & post-quantum defenses"
+seoTitled: true
 youtubeId: "kLV2Cqsahbw"
 date: "2026-07-25"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "AI's Medical Revolution: Faster Disease Diagnosis with Neural Networks"
+seoTitled: true
 youtubeId: "MPMYT3JuGf4"
 date: "2026-07-23"
 tags:

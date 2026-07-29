@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Screen: How Augmented Reality Reshapes Our Digital Interaction"
+title: "Augmented Reality: Future of Human-Computer Interaction"
+seoTitled: true
 youtubeId: "H9ZOpQzjukY"
 date: "2026-07-23"
 tags:

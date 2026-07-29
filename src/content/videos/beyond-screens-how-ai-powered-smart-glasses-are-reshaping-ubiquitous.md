@@ -1,5 +1,6 @@
 ---
-title: "Beyond Screens: How AI-Powered Smart Glasses Are Reshaping Ubiquitous Computing"
+title: "AI Smart Glasses: Ubiquitous Computing & Augmented Intelligence"
+seoTitled: true
 youtubeId: "gElClXpg4J0"
 date: "2026-07-23"
 tags:

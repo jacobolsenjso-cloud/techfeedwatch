@@ -1,5 +1,6 @@
 ---
 title: "AI Smart Glasses: See, Translate, & Navigate Your World"
+seoTitled: true
 youtubeId: "0ntC3m1EPw8"
 date: "2026-07-12"
 tags:

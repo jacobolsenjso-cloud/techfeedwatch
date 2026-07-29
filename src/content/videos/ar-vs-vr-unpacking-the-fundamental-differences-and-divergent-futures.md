@@ -1,5 +1,6 @@
 ---
-title: "AR vs. VR: Unpacking the Fundamental Differences and Divergent Futures of Immersive Technologies"
+title: "AR vs. VR Differences: Future of Immersive Tech Explained"
+seoTitled: true
 youtubeId: "Hrz4aPh4wlQ"
 date: "2026-07-15"
 tags:

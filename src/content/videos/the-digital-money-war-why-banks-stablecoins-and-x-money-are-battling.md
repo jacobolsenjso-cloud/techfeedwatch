@@ -1,5 +1,6 @@
 ---
-title: "The Digital Money War: Why Banks, Stablecoins, and X Money Are Battling for Your Financial Future"
+title: "Digital Money Battle: Banks, Stablecoins, CBDCs Fight for Control"
+seoTitled: true
 youtubeId: "2QfSQybsJsE"
 date: "2026-07-12"
 tags:

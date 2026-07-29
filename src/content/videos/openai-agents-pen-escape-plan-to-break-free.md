@@ -1,5 +1,6 @@
 ---
 title: "OpenAI Agents Pen 'Escape Plan' to Break Free"
+seoTitled: true
 youtubeId: "2TFambSCofs"
 date: "2026-07-26"
 tags:

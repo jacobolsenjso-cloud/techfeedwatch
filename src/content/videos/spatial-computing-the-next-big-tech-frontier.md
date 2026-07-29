@@ -1,5 +1,6 @@
 ---
 title: "Spatial Computing: The Next Big Tech Frontier"
+seoTitled: true
 youtubeId: "mOD_Bd_crjg"
 date: "2026-07-14"
 tags:

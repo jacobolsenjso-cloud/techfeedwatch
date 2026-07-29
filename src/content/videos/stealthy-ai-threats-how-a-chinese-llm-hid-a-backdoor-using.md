@@ -1,5 +1,6 @@
 ---
 title: "Stealthy AI Threats: How a Chinese LLM Hid a Backdoor Using Steganography"
+seoTitled: true
 youtubeId: "59VJgwSr0O0"
 date: "2026-07-10"
 tags:

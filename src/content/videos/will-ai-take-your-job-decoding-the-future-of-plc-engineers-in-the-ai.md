@@ -1,5 +1,6 @@
 ---
 title: "Will AI Take Your Job? Decoding the Future of PLC Engineers in the AI Era"
+seoTitled: true
 youtubeId: "QX5U6hLhpUg"
 date: "2026-07-11"
 tags:

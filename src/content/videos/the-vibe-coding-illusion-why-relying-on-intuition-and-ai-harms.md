@@ -1,5 +1,6 @@
 ---
-title: "The Vibe Coding Illusion: Why Relying on Intuition and AI Harms Developer Growth"
+title: "Developer Growth: Avoid Intuitive Coding & AI Pitfalls"
+seoTitled: true
 youtubeId: "ya6520zh4pQ"
 date: "2026-07-26"
 tags:

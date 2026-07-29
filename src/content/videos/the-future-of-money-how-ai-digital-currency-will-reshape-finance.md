@@ -1,5 +1,6 @@
 ---
 title: "The Future of Money: How AI & Digital Currency Will Reshape Finance"
+seoTitled: true
 youtubeId: "55rUMx7GUx4"
 date: "2026-07-19"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Education Reimagined: How AI Will Transform Schools and Learning by 2050"
+seoTitled: true
 youtubeId: "Yv7RvGtqkH8"
 date: "2026-07-11"
 tags:

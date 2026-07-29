@@ -1,5 +1,6 @@
 ---
-title: "Beyond Copilots: How AI is Building Self-Improving Companies"
+title: "Autonomous AI: Continuous optimization for self-improving companies"
+seoTitled: true
 youtubeId: "X_JsIHUfUjc"
 date: "2026-07-27"
 tags:

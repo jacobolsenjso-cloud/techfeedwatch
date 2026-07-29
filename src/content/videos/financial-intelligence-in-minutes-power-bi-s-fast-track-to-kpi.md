@@ -1,5 +1,6 @@
 ---
-title: "Financial Intelligence in Minutes: Power BI's Fast-Track to KPI Dashboards"
+title: "Power BI Financial Dashboards: Real-time KPI Intelligence"
+seoTitled: true
 youtubeId: "i3AR0gt9SHA"
 date: "2026-07-18"
 tags:

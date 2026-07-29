@@ -1,5 +1,6 @@
 ---
-title: "AI-Driven Web Creation: Dissecting the $10,000 Website Promise with Claude and Nano Banana 2"
+title: "AI Website Builder: Create Pro Websites, No Code Needed"
+seoTitled: true
 youtubeId: "TZUTe7s11-I"
 date: "2026-07-19"
 tags:

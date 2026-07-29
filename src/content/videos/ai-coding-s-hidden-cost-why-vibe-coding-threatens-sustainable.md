@@ -1,5 +1,6 @@
 ---
-title: "AI Coding's Hidden Cost: Why 'Vibe Coding' Threatens Sustainable Software Development"
+title: "AI Coding Problems: Vibe Coding Causes Technical Debt"
+seoTitled: true
 youtubeId: "T539pbwTIZY"
 date: "2026-07-26"
 tags:

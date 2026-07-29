@@ -1,5 +1,6 @@
 ---
 title: "Shape-Shifting Swarms: How FloatForm's Robot Boats are Redefining Aquatic Autonomy"
+seoTitled: true
 youtubeId: "Bz-vkzQhKYU"
 date: "2026-07-10"
 tags:

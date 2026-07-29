@@ -1,5 +1,6 @@
 ---
-title: "The Unyielding Cyber Onslaught: Why June 2026 Was a Wake-Up Call for Digital Security"
+title: "Cybersecurity Incidents June 2026: Digital Security Under Threat"
+seoTitled: true
 youtubeId: "dUdl7XtRh4k"
 date: "2026-07-28"
 tags:

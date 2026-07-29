@@ -1,5 +1,6 @@
 ---
 title: "AI in 60 Seconds: The 'Never Right' Revelation"
+seoTitled: true
 youtubeId: "J9_w46ttUNM"
 date: "2026-07-22"
 tags:

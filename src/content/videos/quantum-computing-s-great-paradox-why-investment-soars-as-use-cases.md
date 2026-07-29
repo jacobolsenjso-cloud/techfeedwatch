@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing's Great Paradox: Why Investment Soars as Use Cases Dwindle"
+title: "Quantum Computing: Investment Soars, Practical Use Cases Dwindle"
+seoTitled: true
 youtubeId: "spRN7DfzhrU"
 date: "2026-07-11"
 tags:

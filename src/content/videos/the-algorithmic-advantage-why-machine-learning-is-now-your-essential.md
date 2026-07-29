@@ -1,5 +1,6 @@
 ---
-title: "The Algorithmic Advantage: Why Machine Learning is Now Your Essential Career Catalyst"
+title: "Machine Learning Career: Hands-On Skills, No Advanced Degree"
+seoTitled: true
 youtubeId: "JJCq21Dc-Us"
 date: "2026-07-13"
 tags:

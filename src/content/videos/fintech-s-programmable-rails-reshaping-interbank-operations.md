@@ -1,5 +1,6 @@
 ---
 title: "Fintech's Programmable Rails: Reshaping Interbank Operations"
+seoTitled: true
 youtubeId: "bqE67Que5RI"
 date: "2026-07-15"
 tags:

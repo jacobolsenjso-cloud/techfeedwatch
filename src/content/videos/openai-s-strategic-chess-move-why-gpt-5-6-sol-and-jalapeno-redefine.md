@@ -1,5 +1,6 @@
 ---
-title: "OpenAI's Strategic Chess Move: Why GPT-5.6 Sol and Jalapeño Redefine Frontier AI's Future"
+title: "OpenAI GPT-5.6 Sol & AI Chip Jalapeño Redefine Frontier AI"
+seoTitled: true
 youtubeId: "_AoyQcIoquA"
 date: "2026-07-26"
 tags:

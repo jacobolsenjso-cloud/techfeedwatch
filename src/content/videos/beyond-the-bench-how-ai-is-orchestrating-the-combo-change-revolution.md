@@ -1,5 +1,6 @@
 ---
 title: "Beyond the Bench: How AI is Orchestrating the 'Combo Change' Revolution in Tech Repair"
+seoTitled: true
 youtubeId: "_39pSo0ABvA"
 date: "2026-07-06"
 tags:

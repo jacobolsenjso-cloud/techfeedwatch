@@ -1,5 +1,6 @@
 ---
-title: "Wall Street's Quiet Panic: Tokenized Stocks Prepare to Reshape Global Markets"
+title: "Tokenized Stocks: SEC Eyes Exemption for Crypto Exchanges"
+seoTitled: true
 youtubeId: "gSCo1cy3FCc"
 date: "2026-07-28"
 tags:

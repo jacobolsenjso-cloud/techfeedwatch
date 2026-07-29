@@ -1,5 +1,6 @@
 ---
-title: "Google's Free AI Power-Up: Create Hyper-Realistic Influencer Videos & Monetize TikTok, YouTube, Shopee"
+title: "Google AI Influencers: Create Realistic Videos, Monetize Free"
+seoTitled: true
 youtubeId: "K6DTEvL1KWc"
 date: "2026-06-29"
 tags:

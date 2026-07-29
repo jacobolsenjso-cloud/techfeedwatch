@@ -1,5 +1,6 @@
 ---
 title: "BookBI: AI Revolutionizes Business Accounting"
+seoTitled: true
 youtubeId: "HKCSkWpkyxA"
 date: "2026-07-25"
 tags:

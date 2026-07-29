@@ -1,5 +1,6 @@
 ---
-title: "Debunking the Myth: The ONLY 'Secret' to SEO is Value"
+title: "SEO Best Practices: Prioritize User Value, Not Old Tricks"
+seoTitled: true
 youtubeId: "bHvPyTWDrFU"
 date: "2026-07-12"
 tags:

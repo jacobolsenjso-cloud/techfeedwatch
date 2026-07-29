@@ -1,5 +1,6 @@
 ---
 title: "Master ChatGPT: The Simple Prompt Trick for Better AI Responses"
+seoTitled: true
 youtubeId: "b3kVuqqNHGg"
 date: "2026-07-14"
 tags:

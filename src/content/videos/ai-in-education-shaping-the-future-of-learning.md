@@ -1,5 +1,6 @@
 ---
 title: "AI in Education: Shaping the Future of Learning"
+seoTitled: true
 youtubeId: "5itpL8VJ-PI"
 date: "2026-07-15"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Beyond 'Her': Spike Jonze Unpacks AI's Identity – Is It a Tool, a Partner, or Something More?"
+seoTitled: true
 youtubeId: "X_BTgm0wxJ0"
 date: "2026-07-10"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Crush Your AI Anxiety: The Secret to Leading the Future of Work Without Code"
+seoTitled: true
 youtubeId: "pZbgtTNSrpM"
 date: "2026-07-12"
 tags:

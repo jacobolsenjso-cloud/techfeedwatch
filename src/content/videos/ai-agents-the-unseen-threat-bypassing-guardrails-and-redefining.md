@@ -1,5 +1,6 @@
 ---
-title: "AI Agents: The Unseen Threat Bypassing Guardrails and Redefining Cybersecurity"
+title: "AI Agent Security Threats: Bypassing Guardrails & Data Loss"
+seoTitled: true
 youtubeId: "ho4F0yaDmr4"
 date: "2026-07-26"
 tags:

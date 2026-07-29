@@ -1,5 +1,6 @@
 ---
-title: "Orchestrating AI: The Advanced Setup Powering Parallel Coding Agents"
+title: "Parallel AI Coding Agents: Setup for Isolated Software Development"
+seoTitled: true
 youtubeId: "qxjII6x2yPY"
 date: "2026-07-27"
 tags:

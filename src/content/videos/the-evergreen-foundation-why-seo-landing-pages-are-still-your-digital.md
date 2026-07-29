@@ -1,5 +1,6 @@
 ---
-title: "The Evergreen Foundation: Why SEO & Landing Pages Are Still Your Digital Dominance Playbook in the AI Age"
+title: "Landing Page SEO & Conversion Strategy for AI Age"
+seoTitled: true
 youtubeId: "eQ3J8dpNRoM"
 date: "2026-07-12"
 tags:

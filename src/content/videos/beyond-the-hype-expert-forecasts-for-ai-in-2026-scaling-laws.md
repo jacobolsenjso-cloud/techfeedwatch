@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Hype: Expert Forecasts for AI in 2026 – Scaling Laws, Geopolitics, and AGI's Elusive Horizon"
+title: "AI Forecasts 2026: Competition, Open Models, Fragmented Future"
+seoTitled: true
 youtubeId: "EV7WhVT270Q"
 date: "2026-07-18"
 tags:

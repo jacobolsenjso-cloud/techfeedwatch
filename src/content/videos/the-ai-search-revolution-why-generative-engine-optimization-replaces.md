@@ -1,5 +1,6 @@
 ---
-title: "The AI Search Revolution: Why 'Generative Engine Optimization' Replaces Old SEO"
+title: "Generative Engine Optimization (GEO) Replaces SEO for AI Search"
+seoTitled: true
 youtubeId: "46vC7-BwJ_o"
 date: "2026-07-26"
 tags:

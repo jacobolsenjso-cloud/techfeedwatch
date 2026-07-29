@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: The Quantum Leap or Just a Quantum Leap of Faith?"
+title: "Quantum Computing: Real-World Potential & Current Challenges"
+seoTitled: true
 youtubeId: "-1PsQIciMEc"
 date: "2026-07-11"
 tags:

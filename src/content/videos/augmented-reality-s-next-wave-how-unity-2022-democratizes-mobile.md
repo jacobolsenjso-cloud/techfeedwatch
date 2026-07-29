@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality's Next Wave: How Unity 2022 Democratizes Mobile Development"
+title: "Mobile AR Development: Unity 2022 Makes It Accessible & Free"
+seoTitled: true
 youtubeId: "gpaq5bAjya8"
 date: "2026-07-13"
 tags:

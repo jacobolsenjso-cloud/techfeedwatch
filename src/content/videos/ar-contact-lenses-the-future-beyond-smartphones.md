@@ -1,5 +1,6 @@
 ---
 title: "AR Contact Lenses: The Future Beyond Smartphones"
+seoTitled: true
 youtubeId: "U2r46VfF3nk"
 date: "2026-07-23"
 tags:

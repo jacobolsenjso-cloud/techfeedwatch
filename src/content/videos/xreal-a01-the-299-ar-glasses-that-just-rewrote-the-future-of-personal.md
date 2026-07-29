@@ -1,5 +1,6 @@
 ---
 title: "Xreal A01+: The $299 AR Glasses That Just Rewrote the Future of Personal Computing"
+seoTitled: true
 youtubeId: "KHl5LF2otIE"
 date: "2026-07-11"
 tags:

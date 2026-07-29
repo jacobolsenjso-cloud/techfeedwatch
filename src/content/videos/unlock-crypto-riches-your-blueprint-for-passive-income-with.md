@@ -1,5 +1,6 @@
 ---
-title: "Unlock Crypto Riches: Your Blueprint for Passive Income with Blockchain Nodes"
+title: "Earn Passive Crypto Income: Blockchain Node Staking & Testnets"
+seoTitled: true
 youtubeId: "l0dzOwyPqFI"
 date: "2026-07-11"
 tags:

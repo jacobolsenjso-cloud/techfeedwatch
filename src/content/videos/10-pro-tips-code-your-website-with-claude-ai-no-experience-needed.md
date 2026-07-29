@@ -1,5 +1,6 @@
 ---
 title: "10 Pro Tips: Code Your Website with Claude AI (No Experience Needed!)"
+seoTitled: true
 youtubeId: "dgh04-71nHs"
 date: "2026-07-19"
 tags:

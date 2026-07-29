@@ -1,5 +1,6 @@
 ---
-title: "Beyond Chatbots: How Hermes Agent's 7 Levels Transform You Into an AI Power User"
+title: "AI Agents vs Chatbots: Boost Productivity with Autonomous AI"
+seoTitled: true
 youtubeId: "6GtF_uHbGhw"
 date: "2026-06-18"
 tags:

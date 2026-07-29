@@ -1,5 +1,6 @@
 ---
 title: "NumPy vs Pandas: Essential for Data Science & AI"
+seoTitled: true
 youtubeId: "KhxU9S2hWn0"
 date: "2026-07-17"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Energi & GonnaMakeItNFTs: Securing Crypto Liquidity with 20-Year LP-Bonds"
+seoTitled: true
 youtubeId: "mZYTXnyixaM"
 date: "2026-07-14"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI and the Workforce: Beyond Job Loss Hysteria"
+title: "AI Job Impact: New Professions & Required Skills, Not Loss"
+seoTitled: true
 youtubeId: "cJfKqKEyw1o"
 date: "2026-07-24"
 tags:

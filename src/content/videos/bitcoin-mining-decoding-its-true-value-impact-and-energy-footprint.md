@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Mining: Decoding Its True Value, Impact, and Energy Footprint"
+title: "Bitcoin Mining Explained: Security, Value, Energy Debate"
+seoTitled: true
 youtubeId: "lHipE05v4jg"
 date: "2026-07-25"
 tags:

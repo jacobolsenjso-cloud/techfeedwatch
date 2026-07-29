@@ -1,5 +1,6 @@
 ---
-title: "Beyond Sora: Free & Private AI Video Generation Hits Your Desktop"
+title: "Free Private AI Video Generation for Your Desktop"
+seoTitled: true
 youtubeId: "G2Ec3h5CfA8"
 date: "2026-06-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI's 'Artificial' Truth: Why Your Bots Will Never Replace Revelation"
+title: "AI Limitations: Bots Will Never Replace Human Revelation"
+seoTitled: true
 youtubeId: "sNF_1PIEda0"
 date: "2026-06-29"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Sentinel Vaults: The On-Chain Firewall Protecting Your AI Trading Capital"
+seoTitled: true
 youtubeId: "9HH7IuETEwI"
 date: "2026-07-18"
 tags:

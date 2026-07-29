@@ -1,5 +1,6 @@
 ---
 title: "Apple's Iron Grip: Unpacking the 'Cruelty' Behind Its Ecosystem Design"
+seoTitled: true
 youtubeId: "rV_oGWVhcuY"
 date: "2026-07-07"
 tags:

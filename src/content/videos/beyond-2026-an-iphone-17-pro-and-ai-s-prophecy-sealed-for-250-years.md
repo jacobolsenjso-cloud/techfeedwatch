@@ -1,5 +1,6 @@
 ---
 title: "Beyond 2026: An iPhone 17 Pro and AI's Prophecy Sealed for 250 Years"
+seoTitled: true
 youtubeId: "Fr5TQvfdYtU"
 date: "2026-07-07"
 tags:

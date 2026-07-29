@@ -1,5 +1,6 @@
 ---
 title: "Master ChatGPT: 5 Secrets for Smarter AI Use"
+seoTitled: true
 youtubeId: "gnRuJAenJkM"
 date: "2026-07-22"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Unlock Web3's Potential: The Missing Compute Layer Deep Dive"
+seoTitled: true
 youtubeId: "oGoQfbGdxcA"
 date: "2026-07-14"
 tags:

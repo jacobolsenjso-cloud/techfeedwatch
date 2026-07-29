@@ -1,5 +1,6 @@
 ---
 title: "HL Ninja: Mitsubishi's Humanoid Robot Set to Revolutionize Factory Floors"
+seoTitled: true
 youtubeId: "WHkkLea8ga4"
 date: "2026-07-09"
 tags:

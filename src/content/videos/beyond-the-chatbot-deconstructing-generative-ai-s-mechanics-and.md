@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Chatbot: Deconstructing Generative AI's Mechanics and Societal Footprint"
+title: "Generative AI Explained: Evolution, Mechanics, & Impact"
+seoTitled: true
 youtubeId: "_6R7Ym6Vy_I"
 date: "2026-07-15"
 tags:

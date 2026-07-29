@@ -1,5 +1,6 @@
 ---
-title: "AI-Powered Precision: Automating High-Intent SEO Content Without Sacrificing Quality"
+title: "Automate High-Intent SEO Content with AI; Maintain Quality"
+seoTitled: true
 youtubeId: "F2AD1C5KtzY"
 date: "2026-07-17"
 tags:

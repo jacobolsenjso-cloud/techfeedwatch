@@ -1,5 +1,6 @@
 ---
 title: "Unlock ChatGPT's Hidden Power: Master Custom Instructions for Smarter AI"
+seoTitled: true
 youtubeId: "1Z7hc1CuZUI"
 date: "2026-07-18"
 tags:

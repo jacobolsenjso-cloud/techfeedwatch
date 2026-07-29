@@ -1,5 +1,6 @@
 ---
 title: "Neal Stephenson: The Metaverse Doesn't Require AR/VR"
+seoTitled: true
 youtubeId: "HLxRXzp_Crk"
 date: "2026-07-24"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "AI-Powered Pinterest Ads: The Secret to $117K in 30 Days and 5.5x ROAS"
+title: "AI Pinterest Ads: $117K Revenue in 30 Days, 5.5x ROAS"
+seoTitled: true
 youtubeId: "Zpz8nFRw-Lg"
 date: "2026-06-15"
 tags:

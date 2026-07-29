@@ -1,5 +1,6 @@
 ---
 title: "Quantum Computing: Raw Qubits vs. Reality"
+seoTitled: true
 youtubeId: "L5R9PSAuFoA"
 date: "2026-07-23"
 tags:

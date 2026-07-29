@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Separating Engineering Reality from Theoretical Promise"
+title: "Quantum Computing: Differentiating Reality & Potential"
+seoTitled: true
 youtubeId: "sHDWnW1fXJw"
 date: "2026-07-18"
 tags:

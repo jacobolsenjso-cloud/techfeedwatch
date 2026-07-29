@@ -1,5 +1,6 @@
 ---
 title: "Master Your Workflow: The Definitive Guide to Picking the Perfect AI Tool for Every Task"
+seoTitled: true
 youtubeId: "zrI7uyaUBIw"
 date: "2026-07-10"
 tags:

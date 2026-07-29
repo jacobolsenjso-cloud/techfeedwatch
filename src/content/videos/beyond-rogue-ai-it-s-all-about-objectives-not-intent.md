@@ -1,5 +1,6 @@
 ---
 title: "Beyond Rogue AI: It's All About Objectives, Not Intent"
+seoTitled: true
 youtubeId: "Ec_jxOJ02aE"
 date: "2026-07-27"
 tags:

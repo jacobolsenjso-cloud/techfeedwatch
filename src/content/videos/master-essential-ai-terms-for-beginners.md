@@ -1,5 +1,6 @@
 ---
 title: "Master Essential AI Terms for Beginners"
+seoTitled: true
 youtubeId: "Tz6BdnUqmaQ"
 date: "2026-07-16"
 tags:

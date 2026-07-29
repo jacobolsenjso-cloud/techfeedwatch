@@ -1,5 +1,6 @@
 ---
-title: "Unlocking Organic Growth: Your Essential Guide to Google's SEO Power Tools"
+title: "Google Search Console, Analytics, Tag Manager for SEO"
+seoTitled: true
 youtubeId: "LRlW1lgWQfE"
 date: "2026-07-11"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The New Frontiers of Finance: How Open APIs and the Metaverse Reshape Payments"
+title: "Open APIs & Metaverse: Reshaping Payments in Finance"
+seoTitled: true
 youtubeId: "m10_bmtJmvE"
 date: "2026-07-25"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "The Ghost in the Machine: What 'Yes, It Is' Reveals About AI's Content Analysis Limits"
+seoTitled: true
 youtubeId: "iRLkegDJI80"
 date: "2026-06-18"
 tags:

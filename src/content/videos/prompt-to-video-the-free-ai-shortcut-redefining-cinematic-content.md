@@ -1,5 +1,6 @@
 ---
-title: "Prompt-to-Video: The 'Free' AI Shortcut Redefining Cinematic Content Creation"
+title: "Prompt-to-Video AI: Free Tools Democratize High-Quality Content"
+seoTitled: true
 youtubeId: "2cT1cb9BY_M"
 date: "2026-07-14"
 tags:

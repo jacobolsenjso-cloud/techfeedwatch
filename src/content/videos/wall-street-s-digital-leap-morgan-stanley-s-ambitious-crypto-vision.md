@@ -1,5 +1,6 @@
 ---
-title: "Wall Street's Digital Leap: Morgan Stanley's Ambitious Crypto Vision Beyond Bitcoin"
+title: "Morgan Stanley Digital Asset Strategy: Crypto, Tokenization & AI"
+seoTitled: true
 youtubeId: "g9WFO0M9KT4"
 date: "2026-07-27"
 tags:

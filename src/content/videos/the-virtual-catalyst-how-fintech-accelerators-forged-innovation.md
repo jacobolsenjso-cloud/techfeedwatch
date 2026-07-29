@@ -1,5 +1,6 @@
 ---
-title: "The Virtual Catalyst: How Fintech Accelerators Forged Innovation Amidst Global Upheaval"
+title: "Saudi Arabia Fintech Accelerators Drive Vision 2030 Innovation"
+seoTitled: true
 youtubeId: "nVvr06Ll_2U"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Anthropic Targets Wall Street with New AI Agents"
+seoTitled: true
 youtubeId: "8ufTSVz4iYM"
 date: "2026-07-27"
 tags:

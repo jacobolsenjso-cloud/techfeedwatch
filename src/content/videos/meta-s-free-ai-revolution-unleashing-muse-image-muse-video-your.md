@@ -1,5 +1,6 @@
 ---
-title: "Meta's Free AI Revolution: Unleashing Muse Image, Muse Video & Your Ultimate AI Motion Control Tool"
+title: "Meta AI: New Free Muse Image & Video Generation, Motion Control"
+seoTitled: true
 youtubeId: "epJiVrv4KVQ"
 date: "2026-07-08"
 tags:

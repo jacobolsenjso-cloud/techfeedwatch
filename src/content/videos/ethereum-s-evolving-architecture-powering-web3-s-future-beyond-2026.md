@@ -1,5 +1,6 @@
 ---
-title: "Ethereum's Evolving Architecture: Powering Web3's Future Beyond 2026"
+title: "Ethereum Architecture Evolves: PoS & Layer 2s Scale Web3"
+seoTitled: true
 youtubeId: "On-B0WGqOZ0"
 date: "2026-07-24"
 tags:

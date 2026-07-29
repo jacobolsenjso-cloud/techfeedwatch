@@ -1,5 +1,6 @@
 ---
-title: "The Digital Bank Dilemma: Why N26, Revolut, and Fintech Innovators Demand Your Scrutiny"
+title: "Digital Bank Account Freezes: N26, Revolut & AML Issues"
+seoTitled: true
 youtubeId: "yQhsU1YVJKc"
 date: "2026-07-11"
 tags:

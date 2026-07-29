@@ -1,5 +1,6 @@
 ---
 title: "Decentralized Finance: Reshaping the Future of Money"
+seoTitled: true
 youtubeId: "SRCJlgMs67o"
 date: "2026-07-23"
 tags:

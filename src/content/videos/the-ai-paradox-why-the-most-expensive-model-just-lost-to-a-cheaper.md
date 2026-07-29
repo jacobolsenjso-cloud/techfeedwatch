@@ -1,5 +1,6 @@
 ---
 title: "The AI Paradox: Why the Most Expensive Model Just Lost to a Cheaper Rival – And What It Means For Your Bottom Line"
+seoTitled: true
 youtubeId: "YLdLaqTXc_o"
 date: "2026-07-08"
 tags:

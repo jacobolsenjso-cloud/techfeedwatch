@@ -1,5 +1,6 @@
 ---
 title: "AI Conjures Windows 95 from Code: Is This the Future of Software Development?"
+seoTitled: true
 youtubeId: "3W19OvQdt8E"
 date: "2026-07-12"
 tags:

@@ -1,5 +1,6 @@
 ---
-title: "The 2026 Cyber Underground: How AI and Analog Tricks Reshape Global Fraud"
+title: "AI Fraud & Deepfakes: Escalating Global Scam Threats 2026"
+seoTitled: true
 youtubeId: "Aje4_XaSR24"
 date: "2026-07-15"
 tags:

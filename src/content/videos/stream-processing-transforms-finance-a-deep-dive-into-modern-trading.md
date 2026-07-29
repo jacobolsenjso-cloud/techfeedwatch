@@ -1,5 +1,6 @@
 ---
-title: "Stream Processing Transforms Finance: A Deep Dive into Modern Trading Systems"
+title: "Stream Processing Finance: Transforms Trading Systems & Risk Mgmt"
+seoTitled: true
 youtubeId: "ICnFZ8L_Gbc"
 date: "2026-07-17"
 tags:

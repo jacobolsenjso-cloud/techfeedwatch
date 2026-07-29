@@ -1,5 +1,6 @@
 ---
-title: "Beyond the Hype: How No-Code AI Agents Will Reshape Workflows by 2026"
+title: "No-Code AI Agents Reshape Workflows, Drive Automation by 2026"
+seoTitled: true
 youtubeId: "ibFJ--CH3cQ"
 date: "2026-07-17"
 tags:

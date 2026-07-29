@@ -1,5 +1,6 @@
 ---
-title: "Quantum Leap: Why the Future of Everything Hinges on Unlocking the Quantum Realm"
+title: "Quantum Computing: Transforming AI, Drug Discovery & Clean Energy"
+seoTitled: true
 youtubeId: "79kNOf749MA"
 date: "2026-07-12"
 tags:

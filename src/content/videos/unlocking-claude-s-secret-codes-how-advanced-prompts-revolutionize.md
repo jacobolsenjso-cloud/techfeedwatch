@@ -1,5 +1,6 @@
 ---
 title: "Unlocking Claude's 'Secret Codes': How Advanced Prompts Revolutionize Your AI Workflow"
+seoTitled: true
 youtubeId: "uDKWC08FDb0"
 date: "2026-07-06"
 tags:
