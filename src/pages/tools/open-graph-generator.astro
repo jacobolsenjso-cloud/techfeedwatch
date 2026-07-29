@@ -1,0 +1,136 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Open Graph & Twitter Card Generator";
+const description = "Generate Open Graph and Twitter Card meta tags for perfect link previews on Facebook, LinkedIn, and X. Free tool with a live social preview — fill in the fields and copy.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .og-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .og-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .og-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .og-header p { color: #9ca3af; }
+
+    .og-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .og-field { margin-bottom: 14px; }
+    .og-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .og-input, .og-area, .og-select { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
+    .og-area { min-height: 64px; resize: vertical; line-height: 1.5; }
+    .og-input:focus, .og-area:focus, .og-select:focus { outline: none; border-color: #0891b2; }
+
+    .og-preview-label { font-size: 0.82rem; font-weight: 600; margin-bottom: 8px; }
+    .og-card { border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: var(--card-bg); }
+    .og-card-img { width: 100%; aspect-ratio: 1200/630; background: var(--hover-bg) center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 0.85rem; }
+    .og-card-body { padding: 12px 14px; }
+    .og-card-domain { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.03em; }
+    .og-card-title { font-size: 1rem; font-weight: 700; margin: 4px 0; line-height: 1.3; }
+    .og-card-desc { font-size: 0.85rem; color: #6b7280; margin: 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    body.dark-mode .og-card-desc { color: #9ca3af; }
+
+    .og-out-head { display: flex; align-items: center; justify-content: space-between; margin: 26px 0 8px; }
+    .og-out-head h2 { font-size: 1.1rem; margin: 0; }
+    .og-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
+    .og-copy:hover { background: #0e7490; }
+    .og-output { width: 100%; min-height: 200px; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.82rem; line-height: 1.5; box-sizing: border-box; white-space: pre; overflow: auto; }
+
+    .og-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .og-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .og-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .og-info-section p { color: #9ca3af; }
+
+    @media (max-width: 720px) { .og-wrapper { padding: 20px 15px; } .og-cols { grid-template-columns: 1fr; gap: 10px; } }
+  </style>
+
+  <div class="og-wrapper">
+    <div class="og-header">
+      <h1>🔗 Open Graph &amp; Twitter Card Generator</h1>
+      <p>Control how your links look when shared on Facebook, LinkedIn, and X. Fill in the fields, watch the live preview, then copy the meta tags into your page's &lt;head&gt;.</p>
+    </div>
+
+    <div class="og-cols">
+      <div>
+        <div class="og-field"><label>Title</label><input class="og-input" id="ogTitle" value="How Open Banking Is Changing Finance" /></div>
+        <div class="og-field"><label>Description</label><textarea class="og-area" id="ogDesc">A clear look at open banking and what it means for consumers and businesses in 2026.</textarea></div>
+        <div class="og-field"><label>Page URL</label><input class="og-input" id="ogUrl" value="https://techfeedwatch.com/video/example" /></div>
+        <div class="og-field"><label>Image URL (1200×630 recommended)</label><input class="og-input" id="ogImage" value="https://techfeedwatch.com/og-default-v2.png" /></div>
+        <div class="og-field"><label>Site name</label><input class="og-input" id="ogSite" value="Tech Feed Watch" /></div>
+        <div class="og-field"><label>Type</label>
+          <select class="og-select" id="ogType"><option value="website">website</option><option value="article">article</option></select>
+        </div>
+        <div class="og-field"><label>X / Twitter handle (optional)</label><input class="og-input" id="ogTw" placeholder="@yourhandle" /></div>
+      </div>
+      <div>
+        <div class="og-preview-label">Live preview</div>
+        <div class="og-card">
+          <div class="og-card-img" id="ogPrevImg">No image</div>
+          <div class="og-card-body">
+            <div class="og-card-domain" id="ogPrevDomain">techfeedwatch.com</div>
+            <div class="og-card-title" id="ogPrevTitle"></div>
+            <p class="og-card-desc" id="ogPrevDesc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="og-out-head">
+      <h2>Generated meta tags</h2>
+      <button type="button" class="og-copy" id="ogCopy">Copy</button>
+    </div>
+    <pre class="og-output" id="ogOut"></pre>
+
+    <div class="og-info-section">
+      <h2>Why Open Graph tags matter</h2>
+      <p>Open Graph (og:) tags tell platforms like Facebook and LinkedIn exactly which title, description, and image to show when someone shares your link, instead of letting them guess. Twitter Cards do the same for X. A clear title, a compelling description, and a crisp 1200×630 image dramatically improve how shareable your content looks — and how many people click it.</p>
+      <p>Paste the generated tags into the &lt;head&gt; of your page. If a platform still shows an old preview after you update the tags, it has cached the page — use the platform's debugger (for example, Facebook's Sharing Debugger) to scrape it again.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement);
+      const out = document.getElementById('ogOut') as HTMLElement;
+      const esc = (s: string) => s.replace(/"/g, '&quot;');
+
+      const render = () => {
+        const t = g('ogTitle').value.trim();
+        const d = g('ogDesc').value.trim();
+        const url = g('ogUrl').value.trim();
+        const img = g('ogImage').value.trim();
+        const site = g('ogSite').value.trim();
+        const type = g('ogType').value;
+        const tw = g('ogTw').value.trim();
+
+        // preview
+        (document.getElementById('ogPrevTitle') as HTMLElement).textContent = t || 'Your title here';
+        (document.getElementById('ogPrevDesc') as HTMLElement).textContent = d || 'Your description here';
+        const prevImg = document.getElementById('ogPrevImg') as HTMLElement;
+        if (img) { prevImg.style.backgroundImage = `url("${img}")`; prevImg.textContent = ''; } else { prevImg.style.backgroundImage = 'none'; prevImg.textContent = 'No image'; }
+        let domain = 'your-site.com';
+        try { domain = new URL(url).hostname.replace(/^www\./, ''); } catch (e) {}
+        (document.getElementById('ogPrevDomain') as HTMLElement).textContent = domain;
+
+        const L: string[] = [];
+        L.push(`<meta property="og:title" content="${esc(t)}" />`);
+        L.push(`<meta property="og:description" content="${esc(d)}" />`);
+        L.push(`<meta property="og:type" content="${type}" />`);
+        if (url) L.push(`<meta property="og:url" content="${esc(url)}" />`);
+        if (img) L.push(`<meta property="og:image" content="${esc(img)}" />`);
+        if (site) L.push(`<meta property="og:site_name" content="${esc(site)}" />`);
+        L.push(`<meta name="twitter:card" content="summary_large_image" />`);
+        L.push(`<meta name="twitter:title" content="${esc(t)}" />`);
+        L.push(`<meta name="twitter:description" content="${esc(d)}" />`);
+        if (img) L.push(`<meta name="twitter:image" content="${esc(img)}" />`);
+        if (tw) L.push(`<meta name="twitter:site" content="${esc(tw.startsWith('@') ? tw : '@' + tw)}" />`);
+        out.textContent = L.join('\n');
+      };
+
+      document.querySelector('.og-wrapper')!.addEventListener('input', render);
+      document.getElementById('ogType')!.addEventListener('change', render);
+      document.getElementById('ogCopy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+      render();
+    });
+  </script>
+</MainLayout>
