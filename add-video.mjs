@@ -261,7 +261,7 @@ async function run() {
       : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this video only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the video revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the video told them.
 
     Return EXACTLY in this format:
-    TITLE: A highly engaging, click-worthy headline
+    TITLE: An SEO-optimized headline, about 50-65 characters, that FRONT-LOADS the primary keyword/topic exactly the way people search for it (e.g. "What Is Open Banking? How Agentic AI Changes Finance" or "Nvidia's $250B AI Chip Deal: What It Means"). Be concrete and specific and include the main keyword near the start. It can be engaging, but search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.

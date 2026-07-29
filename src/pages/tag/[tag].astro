@@ -35,9 +35,16 @@ const pageVideos = videos.slice(0, PAGE_SIZE);
 const nextUrl = lastPage > 1 ? `/tag/${tagSlug}/page/2` : null;
 
 const descriptionDictionary: Record<string, string> = {
-  "AI & Tech": "Explore our in-depth videos on artificial intelligence and the latest technology. We curate the most important news, reviews, and analyses of AI tools and tech trends shaping the future of digital workflows.",
-  "SEO": "Master Search Engine Optimization (SEO) and Generative Engine Optimization (GEO). Discover videos featuring strategies, tips, and hacks to dominate search results and drive organic traffic to your website.",
-  "Default": `Explore our curated collection of videos related to ${tagName}. Discover the latest news, tutorials, and insights to stay ahead in the fast-paced world of tech and artificial intelligence.`
+  "AI & Tech": "AI and technology news, tools, and analysis — from ChatGPT, Claude, and Gemini to chips, robotics, and the trends shaping how we work and build.",
+  "SEO": "SEO and generative engine optimization (GEO): practical strategies, tools, and tips to rank in Google and AI search and grow your organic traffic.",
+  "Automation": "Automation and no-code workflows — n8n, Zapier, AI agents, and SaaS tips to automate repetitive work and scale your business faster.",
+  "Coding": "Coding and software development — Python, JavaScript, AI coding tools, and developer tutorials for building software faster and smarter.",
+  "Business & Money": "Business and money in tech — startups, making money with AI, monetization, and practical strategies to grow revenue online.",
+  "AI Video": "AI video and image generation — Sora, Runway, Veo, Kling, and Midjourney tools, tutorials, and news for AI filmmaking and content creation.",
+  "Productivity": "Productivity tools and AI assistants — Notion, NotebookLM, and workflows to get more done and build a smarter second brain.",
+  "Fintech": "Fintech news and analysis — digital banking, payments, open banking, stablecoins, and how AI is reshaping money and finance.",
+  "Crypto": "Crypto news and analysis — Bitcoin, Ethereum, Solana, DeFi, Web3, and blockchain trends, explained for investors and builders.",
+  "Default": `The latest ${tagName} news, tools, and analysis — curated tech videos turned into clear, readable articles you can absorb in minutes.`
 };
 
 const currentDescription = descriptionDictionary[tagName] || descriptionDictionary["Default"];
