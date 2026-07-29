@@ -44,6 +44,7 @@ const descriptionDictionary: Record<string, string> = {
   "Productivity": "Productivity tools and AI assistants — Notion, NotebookLM, and workflows to get more done and build a smarter second brain.",
   "Fintech": "Fintech news and analysis — digital banking, payments, open banking, stablecoins, and how AI is reshaping money and finance.",
   "Crypto": "Crypto news and analysis — Bitcoin, Ethereum, Solana, DeFi, Web3, and blockchain trends, explained for investors and builders.",
+  "Cybersecurity": "Cybersecurity news and analysis — ransomware, zero trust, data breaches, cloud security, and how AI is reshaping digital defense.",
   "Default": `The latest ${tagName} news, tools, and analysis — curated tech videos turned into clear, readable articles you can absorb in minutes.`
 };
 
@@ -73,7 +74,8 @@ const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
   "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
-  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b"
+  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b",
+  "Cybersecurity": "#dc2626"
 };
 const tagAccent = TAG_COLORS[tagName] || "#6b7280";
 

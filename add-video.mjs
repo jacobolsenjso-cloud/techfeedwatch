@@ -4,7 +4,7 @@ import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity"];
 
 // Artikel-profiler: hver normal video roterer gennem én af disse, valgt deterministisk ud fra video-ID.
 // Formålet er at bryde ensartetheden (samme struktur/længde = "masseproduceret"-signal hos Google).
@@ -254,7 +254,7 @@ async function run() {
       ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
     Analyze this Short's content (transcript or title/description) and return EXACTLY in this format:
     TITLE: A concise, engaging headline
-    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
@@ -262,7 +262,7 @@ async function run() {
 
     Return EXACTLY in this format:
     TITLE: An SEO-optimized headline, about 50-65 characters, that FRONT-LOADS the primary keyword/topic exactly the way people search for it (e.g. "What Is Open Banking? How Agentic AI Changes Finance" or "Nvidia's $250B AI Chip Deal: What It Means"). Be concrete and specific and include the main keyword near the start. It can be engaging, but search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
-    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
     FAQ:

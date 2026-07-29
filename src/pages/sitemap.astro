@@ -5,13 +5,14 @@ import MainLayout from '../layouts/MainLayout.astro';
 const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }))
   .filter((v: any) => !v.frontmatter.isShort);
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity"];
 
 // Emne-farvesystem, defineret lokalt (kun brugt på denne side)
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
   "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
-  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b"
+  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b",
+  "Cybersecurity": "#dc2626"
 };
 
 function getTags(v: any): string[] {
