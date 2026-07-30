@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 
 const title = "Tech Trends — Live Google Trends for AI, Crypto & Fintech";
-const description = "Live search-interest trends for AI, cryptocurrency, fintech, and SEO, powered by Google Trends. See what the world is searching for in tech right now, updated automatically.";
+const description = "Live search-interest trends for AI, cryptocurrency, fintech, and SEO, powered by Google Trends. See what the world is searching for in tech right now — load each chart on demand.";
 ---
 
 <MainLayout title={title} description={description}>
@@ -12,15 +12,22 @@ const description = "Live search-interest trends for AI, cryptocurrency, fintech
     .tr-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; max-width: 760px; }
     body.dark-mode .tr-header p { color: #9ca3af; }
 
-    .tr-card { border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; margin-bottom: 26px; background: var(--card-bg); }
-    .tr-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+    .tr-card { border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; margin-bottom: 22px; background: var(--card-bg); }
+    .tr-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
     .tr-card h2 { font-size: 1.2rem; margin: 0; }
     .tr-card-sub { color: #6b7280; font-size: 0.9rem; margin: 0 0 14px; }
     body.dark-mode .tr-card-sub { color: #9ca3af; }
     .tr-explore { font-size: 0.85rem; font-weight: 600; color: #0891b2; text-decoration: none; white-space: nowrap; }
     .tr-explore:hover { text-decoration: underline; }
-    .tr-embed { min-height: 440px; }
-    .tr-embed.map { min-height: 520px; }
+
+    .tr-embed { min-height: 120px; }
+    .tr-embed iframe { border: 0; width: 100%; }
+    .tr-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 34px 20px; border: 1px dashed var(--border-color); border-radius: 12px; background: var(--hover-bg); text-align: center; }
+    .tr-placeholder p { margin: 0; font-size: 0.88rem; color: #6b7280; }
+    body.dark-mode .tr-placeholder p { color: #9ca3af; }
+    .tr-load { padding: 11px 22px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; font-size: 0.95rem; }
+    .tr-load:hover { background: #0e7490; }
+    .tr-loading { font-size: 0.9rem; color: #6b7280; padding: 20px; text-align: center; }
 
     .tr-info-section { margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border-color); }
     .tr-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
@@ -33,11 +40,8 @@ const description = "Live search-interest trends for AI, cryptocurrency, fintech
   <div class="tr-wrapper">
     <div class="tr-header">
       <h1>📈 Tech Trends</h1>
-      <p>Live search-interest data for the topics we cover — AI, cryptocurrency, fintech, and SEO — powered by Google Trends. The charts below update automatically to reflect what people are searching for right now.</p>
+      <p>Live search-interest data for the topics we cover — AI, cryptocurrency, fintech, and SEO — powered by Google Trends. Charts load only when you tap them, so the page stays fast.</p>
     </div>
-
-    <!-- Google Trends embed loader (loaded once, before the widgets) -->
-    <script is:inline type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3620_RC01/embed_loader.js"></script>
 
     <div class="tr-card">
       <div class="tr-card-head">
@@ -45,11 +49,7 @@ const description = "Live search-interest trends for AI, cryptocurrency, fintech
         <a class="tr-explore" href="https://trends.google.com/trends/explore?date=today%2012-m&q=artificial%20intelligence,cryptocurrency,fintech,SEO" target="_blank" rel="noopener">Explore on Google Trends ↗</a>
       </div>
       <p class="tr-card-sub">Worldwide search interest, past 12 months.</p>
-      <div class="tr-embed">
-        <script is:inline type="text/javascript">
-          trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"artificial intelligence","geo":"","time":"today 12-m"},{"keyword":"cryptocurrency","geo":"","time":"today 12-m"},{"keyword":"fintech","geo":"","time":"today 12-m"},{"keyword":"SEO","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"date=today 12-m&q=artificial intelligence,cryptocurrency,fintech,SEO","guestPath":"https://trends.google.com:443/trends/embed/"});
-        </script>
-      </div>
+      <div class="tr-embed" id="chart1"><div class="tr-placeholder"><button type="button" class="tr-load" data-chart="chart1">📊 Load live chart</button><p>Loads a live Google Trends chart</p></div></div>
     </div>
 
     <div class="tr-card">
@@ -58,11 +58,7 @@ const description = "Live search-interest trends for AI, cryptocurrency, fintech
         <a class="tr-explore" href="https://trends.google.com/trends/explore?date=today%203-m&q=artificial%20intelligence" target="_blank" rel="noopener">Explore on Google Trends ↗</a>
       </div>
       <p class="tr-card-sub">Fast-growing related queries — great for spotting emerging topics. Past 90 days.</p>
-      <div class="tr-embed">
-        <script is:inline type="text/javascript">
-          trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"artificial intelligence","geo":"","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today 3-m&q=artificial intelligence","guestPath":"https://trends.google.com:443/trends/embed/"});
-        </script>
-      </div>
+      <div class="tr-embed" id="chart2"><div class="tr-placeholder"><button type="button" class="tr-load" data-chart="chart2">📊 Load live chart</button><p>Loads a live Google Trends chart</p></div></div>
     </div>
 
     <div class="tr-card">
@@ -71,17 +67,68 @@ const description = "Live search-interest trends for AI, cryptocurrency, fintech
         <a class="tr-explore" href="https://trends.google.com/trends/explore?date=today%2012-m&q=cryptocurrency" target="_blank" rel="noopener">Explore on Google Trends ↗</a>
       </div>
       <p class="tr-card-sub">Where in the world "cryptocurrency" is searched most. Past 12 months.</p>
-      <div class="tr-embed map">
-        <script is:inline type="text/javascript">
-          trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"cryptocurrency","geo":"","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"date=today 12-m&q=cryptocurrency","guestPath":"https://trends.google.com:443/trends/embed/"});
-        </script>
-      </div>
+      <div class="tr-embed" id="chart3"><div class="tr-placeholder"><button type="button" class="tr-load" data-chart="chart3">📊 Load live chart</button><p>Loads a live Google Trends chart</p></div></div>
     </div>
 
     <div class="tr-info-section">
       <h2>About this data</h2>
       <p>These charts are live embeds from Google Trends, which measures the relative popularity of search terms over time on a 0–100 scale, where 100 is the peak interest for that term in the selected period. It shows relative interest, not absolute search volume, and is a fast way to see whether a topic is heating up or cooling down.</p>
-      <p>Use the "Rising searches" panel to find emerging subtopics worth covering, and the comparison chart to see how our core themes — AI, crypto, fintech, and SEO — stack up against each other. For deeper analysis, click "Explore on Google Trends" on any card to open the full tool with more filters. Data and charts are provided by Google Trends.</p>
+      <p>To keep the page light, each chart is only loaded when you tap it — that way Google's embed script is fetched on demand rather than all at once. Use the "Rising searches" panel to find emerging subtopics worth covering, and click "Explore on Google Trends" on any card for the full tool. Data and charts are provided by Google Trends.</p>
     </div>
   </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      var LOADER = 'https://ssl.gstatic.com/trends_nrtr/3620_RC01/embed_loader.js';
+      var GUEST = 'https://trends.google.com:443/trends/embed/';
+      var loaderPromise = null;
+
+      var CHARTS = {
+        chart1: { type: 'TIMESERIES',
+          widget: { comparisonItem: [
+            { keyword: 'artificial intelligence', geo: '', time: 'today 12-m' },
+            { keyword: 'cryptocurrency', geo: '', time: 'today 12-m' },
+            { keyword: 'fintech', geo: '', time: 'today 12-m' },
+            { keyword: 'SEO', geo: '', time: 'today 12-m' }
+          ], category: 0, property: '' },
+          opts: { exploreQuery: 'date=today 12-m&q=artificial intelligence,cryptocurrency,fintech,SEO', guestPath: GUEST } },
+        chart2: { type: 'RELATED_QUERIES',
+          widget: { comparisonItem: [{ keyword: 'artificial intelligence', geo: '', time: 'today 3-m' }], category: 0, property: '' },
+          opts: { exploreQuery: 'date=today 3-m&q=artificial intelligence', guestPath: GUEST } },
+        chart3: { type: 'GEO_MAP',
+          widget: { comparisonItem: [{ keyword: 'cryptocurrency', geo: '', time: 'today 12-m' }], category: 0, property: '' },
+          opts: { exploreQuery: 'date=today 12-m&q=cryptocurrency', guestPath: GUEST } }
+      };
+
+      function loadScript() {
+        if (loaderPromise) return loaderPromise;
+        loaderPromise = new Promise(function (resolve, reject) {
+          var s = document.createElement('script');
+          s.src = LOADER; s.async = true;
+          s.onload = function () { resolve(); };
+          s.onerror = function () { reject(); };
+          document.head.appendChild(s);
+        });
+        return loaderPromise;
+      }
+
+      function renderChart(id) {
+        var cfg = CHARTS[id];
+        var host = document.getElementById(id);
+        if (!cfg || !host) return;
+        host.innerHTML = '<div class="tr-loading">Loading live chart…</div>';
+        loadScript().then(function () {
+          if (!window.trends || !trends.embed || !trends.embed.renderExploreWidgetTo) throw new Error('no trends');
+          host.innerHTML = '';
+          trends.embed.renderExploreWidgetTo(host, cfg.type, cfg.widget, cfg.opts);
+        }).catch(function () {
+          host.innerHTML = '<div class="tr-loading">Could not load the chart. Use the “Explore on Google Trends” link above instead.</div>';
+        });
+      }
+
+      document.querySelectorAll('.tr-load').forEach(function (btn) {
+        btn.addEventListener('click', function () { renderChart(btn.getAttribute('data-chart')); });
+      });
+    });
+  </script>
 </MainLayout>
