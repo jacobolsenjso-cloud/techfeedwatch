@@ -1,0 +1,156 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Image Compressor, Resizer & Converter";
+const description = "Compress, resize, and convert images to JPG, PNG, or WebP right in your browser. Free tool — no upload, your images never leave your device. Shrink file size in seconds.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .im-wrapper { max-width: 860px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .im-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .im-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .im-header p { color: #9ca3af; }
+
+    .im-drop { border: 2px dashed var(--border-color); border-radius: 14px; padding: 34px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .im-drop.drag { border-color: #0891b2; background: rgba(8,145,178,0.06); }
+    .im-drop p { margin: 6px 0 0; color: #6b7280; font-size: 0.9rem; }
+    body.dark-mode .im-drop p { color: #9ca3af; }
+    .im-drop b { color: #0891b2; }
+
+    .im-controls { display: none; margin-top: 22px; }
+    .im-controls.on { display: block; }
+    .im-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .im-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 6px; }
+    .im-field input[type=range] { width: 100%; }
+    .im-input, .im-select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
+
+    .im-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .im-panel { border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center; }
+    .im-panel img { max-width: 100%; max-height: 220px; border-radius: 8px; }
+    .im-panel .im-meta { font-size: 0.85rem; color: #6b7280; margin-top: 8px; }
+    body.dark-mode .im-panel .im-meta { color: #9ca3af; }
+    .im-save { display: inline-block; margin-top: 12px; padding: 11px 22px; border-radius: 8px; background: #0891b2; color: #fff; font-weight: 700; text-decoration: none; }
+    .im-save:hover { background: #0e7490; }
+
+    .im-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .im-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .im-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .im-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .im-wrapper { padding: 20px 15px; } .im-row, .im-preview { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="im-wrapper">
+    <div class="im-header">
+      <h1>🗜️ Image Compressor &amp; Converter</h1>
+      <p>Resize, compress, and convert images to JPG, PNG, or WebP. Everything happens in your browser — your images are never uploaded anywhere.</p>
+    </div>
+
+    <div class="im-drop" id="imDrop">
+      <div style="font-size:2rem">🖼️</div>
+      <p><b>Click to choose an image</b> or drag &amp; drop it here</p>
+      <p>PNG, JPG, or WebP</p>
+      <input type="file" id="imFile" accept="image/*" hidden />
+    </div>
+
+    <div class="im-controls" id="imControls">
+      <div class="im-row">
+        <div class="im-field"><label>Max width (px)</label><input class="im-input" id="imWidth" type="number" min="16" value="1200" /></div>
+        <div class="im-field"><label>Output format</label>
+          <select class="im-select" id="imFormat">
+            <option value="image/jpeg">JPG</option>
+            <option value="image/webp">WebP</option>
+            <option value="image/png">PNG</option>
+          </select>
+        </div>
+      </div>
+      <div class="im-field" id="imQualityWrap"><label>Quality: <span id="imQualityVal">80%</span></label><input type="range" id="imQuality" min="10" max="100" value="80" /></div>
+
+      <div class="im-preview">
+        <div class="im-panel"><div style="font-weight:600;margin-bottom:8px">Original</div><img id="imOrigImg" alt="original" /><div class="im-meta" id="imOrigMeta"></div></div>
+        <div class="im-panel"><div style="font-weight:600;margin-bottom:8px">Result</div><img id="imOutImg" alt="result" /><div class="im-meta" id="imOutMeta"></div>
+          <a id="imSave" class="im-save" download="compressed">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="im-info-section">
+      <h2>How to shrink an image without wrecking quality</h2>
+      <p>Two things drive image file size: dimensions and compression. Most images are far larger than they need to be — a photo straight from a phone can be 4000px wide when a web page only shows it at 1200px. Resizing to the width you actually display is usually the single biggest saving. After that, lowering the quality of a JPG or WebP to around 75–85% cuts size dramatically with almost no visible difference.</p>
+      <p>WebP typically produces smaller files than JPG at the same quality and is supported by all modern browsers, so it is a great default for the web. Use PNG only when you need transparency or pixel-perfect graphics. This tool does everything locally with the Canvas API, so your images stay private on your device.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('imDrop') as HTMLElement;
+      const file = document.getElementById('imFile') as HTMLInputElement;
+      const controls = document.getElementById('imControls') as HTMLElement;
+      const widthI = document.getElementById('imWidth') as HTMLInputElement;
+      const formatS = document.getElementById('imFormat') as HTMLSelectElement;
+      const quality = document.getElementById('imQuality') as HTMLInputElement;
+      const qualityVal = document.getElementById('imQualityVal') as HTMLElement;
+      const qualityWrap = document.getElementById('imQualityWrap') as HTMLElement;
+      const origImg = document.getElementById('imOrigImg') as HTMLImageElement;
+      const outImg = document.getElementById('imOutImg') as HTMLImageElement;
+      const origMeta = document.getElementById('imOrigMeta') as HTMLElement;
+      const outMeta = document.getElementById('imOutMeta') as HTMLElement;
+      const save = document.getElementById('imSave') as HTMLAnchorElement;
+
+      let img: HTMLImageElement | null = null;
+      let origSize = 0;
+      const fmtBytes = (b: number) => b < 1024 ? b + ' B' : b < 1048576 ? (b / 1024).toFixed(1) + ' KB' : (b / 1048576).toFixed(2) + ' MB';
+
+      const process = () => {
+        if (!img) return;
+        const maxW = Math.max(16, parseInt(widthI.value, 10) || img.width);
+        const scale = Math.min(1, maxW / img.width);
+        const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d')!;
+        ctx.drawImage(img, 0, 0, w, h);
+        const type = formatS.value;
+        const isPng = type === 'image/png';
+        qualityWrap.style.display = isPng ? 'none' : 'block';
+        const q = parseInt(quality.value, 10) / 100;
+        canvas.toBlob((blob) => {
+          if (!blob) return;
+          const url = URL.createObjectURL(blob);
+          outImg.src = url;
+          const ext = type.split('/')[1].replace('jpeg', 'jpg');
+          const pct = origSize ? Math.round((1 - blob.size / origSize) * 100) : 0;
+          outMeta.textContent = `${w}×${h} · ${fmtBytes(blob.size)}` + (pct > 0 ? ` · ${pct}% smaller` : '');
+          save.href = url; save.download = 'compressed.' + ext;
+        }, type, isPng ? undefined : q);
+      };
+
+      const load = (f: File) => {
+        origSize = f.size;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const image = new Image();
+          image.onload = () => {
+            img = image; origImg.src = image.src;
+            origMeta.textContent = `${image.width}×${image.height} · ${fmtBytes(origSize)}`;
+            controls.classList.add('on');
+            process();
+          };
+          image.src = reader.result as string;
+        };
+        reader.readAsDataURL(f);
+      };
+
+      drop.addEventListener('click', () => file.click());
+      file.addEventListener('change', () => { if (file.files && file.files[0]) load(file.files[0]); });
+      ['dragover', 'dragenter'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('drag'); }));
+      ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('drag'); }));
+      drop.addEventListener('drop', (e) => { const f = (e as DragEvent).dataTransfer?.files?.[0]; if (f) load(f); });
+
+      [widthI, formatS].forEach((el) => el.addEventListener('input', process));
+      formatS.addEventListener('change', process);
+      quality.addEventListener('input', () => { qualityVal.textContent = quality.value + '%'; process(); });
+    });
+  </script>
+</MainLayout>

@@ -1,0 +1,132 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "SRT to VTT Subtitle Converter";
+const description = "Convert subtitle files between SRT and WebVTT (.vtt) formats in your browser. Free tool — paste or upload your captions, convert both ways, then copy or download. No upload to any server.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .st-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .st-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .st-header p { color: #6b7280; margin: 0 0 22px 0; font-size: 1.05rem; }
+    body.dark-mode .st-header p { color: #9ca3af; }
+
+    .st-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+    .st-dir { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
+    .st-select { padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); }
+    .st-file { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+
+    .st-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .st-col label { display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .st-area { width: 100%; min-height: 260px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; box-sizing: border-box; resize: vertical; }
+    .st-area:focus { outline: none; border-color: #0891b2; }
+    .st-btn { padding: 6px 13px; border-radius: 7px; border: none; background: #0891b2; color: #fff; font-weight: 600; font-size: 0.78rem; cursor: pointer; }
+    .st-btn.ghost { background: var(--hover-bg); color: var(--text-color); border: 1px solid var(--border-color); }
+
+    .st-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .st-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .st-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .st-info-section p { color: #9ca3af; }
+
+    @media (max-width: 720px) { .st-wrapper { padding: 20px 15px; } .st-cols { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>💬 Subtitle Converter (SRT ↔ VTT)</h1>
+      <p>Convert captions between SRT and WebVTT — the format HTML5 &lt;track&gt; needs. Paste or upload a file, and the result updates instantly. Nothing is uploaded to any server.</p>
+    </div>
+
+    <div class="st-bar">
+      <label class="st-dir">Convert
+        <select class="st-select" id="stDir">
+          <option value="srt2vtt">SRT → VTT</option>
+          <option value="vtt2srt">VTT → SRT</option>
+        </select>
+      </label>
+      <label class="st-file">📁 Upload file<input type="file" id="stFile" accept=".srt,.vtt,text/plain" hidden /></label>
+    </div>
+
+    <div class="st-cols">
+      <div class="st-col">
+        <label>Input</label>
+        <textarea class="st-area" id="stIn">1
+00:00:01,000 --> 00:00:04,000
+Welcome to Tech Feed Watch.
+
+2
+00:00:05,000 --> 00:00:08,500
+The best tech, explained.</textarea>
+      </div>
+      <div class="st-col">
+        <label><span>Output</span><span><button type="button" class="st-btn ghost" id="stCopy">Copy</button> <button type="button" class="st-btn" id="stDownload">Download</button></span></label>
+        <textarea class="st-area" id="stOut" readonly></textarea>
+      </div>
+    </div>
+
+    <div class="st-info-section">
+      <h2>SRT vs WebVTT — what's the difference?</h2>
+      <p>SRT (SubRip) is the most common subtitle format, used by most video players and editing tools. WebVTT (.vtt) is the format the web platform uses: it is required by the HTML5 &lt;track&gt; element to show captions on native &lt;video&gt; players. The two are very similar, so converting is mostly a matter of adding the <code>WEBVTT</code> header and swapping the comma in timestamps (00:00:01,000) for a dot (00:00:01.000).</p>
+      <p>If you have SRT captions and want to show them on your own website's video player, convert them to VTT here. Going the other way, VTT → SRT, is handy when a tool or editor only accepts SRT. Everything is processed locally in your browser, so your caption files stay private.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dir = document.getElementById('stDir') as HTMLSelectElement;
+      const input = document.getElementById('stIn') as HTMLTextAreaElement;
+      const output = document.getElementById('stOut') as HTMLTextAreaElement;
+      const fileInput = document.getElementById('stFile') as HTMLInputElement;
+
+      const srtToVtt = (s: string) => {
+        let out = s.replace(/\r+/g, '').trim();
+        // fjern rene index-linjer (tal alene)
+        out = out.replace(/^\d+\s*$/gm, '');
+        // komma -> punktum i tidsstempler
+        out = out.replace(/(\d{2}:\d{2}:\d{2}),(\d{3})/g, '$1.$2');
+        out = out.replace(/\n{3,}/g, '\n\n').trim();
+        return 'WEBVTT\n\n' + out + '\n';
+      };
+
+      const vttToSrt = (s: string) => {
+        let body = s.replace(/\r+/g, '');
+        body = body.replace(/^WEBVTT.*$/m, '');            // fjern header
+        body = body.replace(/^(NOTE|STYLE|REGION)[\s\S]*?(?=\n\n|\n\d{2}:|$)/gm, '');
+        body = body.replace(/(\d{2}:\d{2}:\d{2})\.(\d{3})/g, '$1,$2'); // punktum -> komma
+        const blocks = body.split(/\n{2,}/).map((b) => b.trim()).filter((b) => /\d{2}:\d{2}:\d{2},\d{3}\s*-->/.test(b));
+        return blocks.map((b, i) => {
+          // fjern evt. cue-id-linje uden tidsstempel
+          const lines = b.split('\n');
+          const start = lines.findIndex((l) => /-->/.test(l));
+          const cue = (start > 0 ? lines.slice(start) : lines).join('\n');
+          return (i + 1) + '\n' + cue;
+        }).join('\n\n') + '\n';
+      };
+
+      const convert = () => {
+        const v = input.value;
+        output.value = !v.trim() ? '' : (dir.value === 'srt2vtt' ? srtToVtt(v) : vttToSrt(v));
+      };
+
+      input.addEventListener('input', convert);
+      dir.addEventListener('change', convert);
+      fileInput.addEventListener('change', () => {
+        const f = fileInput.files?.[0]; if (!f) return;
+        const r = new FileReader();
+        r.onload = () => { input.value = r.result as string; if (/\.vtt$/i.test(f.name)) dir.value = 'vtt2srt'; else if (/\.srt$/i.test(f.name)) dir.value = 'srt2vtt'; convert(); };
+        r.readAsText(f);
+      });
+      document.getElementById('stCopy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(output.value); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+      document.getElementById('stDownload')!.addEventListener('click', () => {
+        const ext = dir.value === 'srt2vtt' ? 'vtt' : 'srt';
+        const blob = new Blob([output.value], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob); a.download = 'subtitles.' + ext; a.click();
+      });
+      convert();
+    });
+  </script>
+</MainLayout>

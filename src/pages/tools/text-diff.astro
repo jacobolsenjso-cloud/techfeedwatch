@@ -1,0 +1,116 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Text Diff Checker";
+const description = "Compare two blocks of text and see exactly what was added, removed, or changed, line by line. Free online diff tool that runs entirely in your browser — nothing is uploaded.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .df-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .df-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .df-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .df-header p { color: #9ca3af; }
+
+    .df-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .df-col label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .df-area { width: 100%; min-height: 180px; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.9rem; line-height: 1.5; box-sizing: border-box; resize: vertical; }
+    .df-area:focus { outline: none; border-color: #0891b2; }
+
+    .df-controls { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin: 16px 0; }
+    .df-control { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; font-weight: 500; }
+    .df-summary { font-size: 0.9rem; color: #6b7280; }
+    body.dark-mode .df-summary { color: #9ca3af; }
+
+    .df-result { border: 1px solid var(--border-color); border-radius: 10px; overflow: auto; font-family: 'Courier New', Consolas, monospace; font-size: 0.9rem; }
+    .df-line { display: flex; white-space: pre-wrap; word-break: break-word; padding: 2px 12px; border-top: 1px solid var(--border-color); }
+    .df-line:first-child { border-top: none; }
+    .df-line .df-sign { width: 18px; flex-shrink: 0; opacity: 0.7; }
+    .df-add { background: rgba(5,150,105,0.14); }
+    .df-del { background: rgba(220,38,38,0.13); }
+    body.dark-mode .df-add { background: rgba(5,150,105,0.22); }
+    body.dark-mode .df-del { background: rgba(220,38,38,0.22); }
+
+    .df-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .df-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .df-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .df-info-section p { color: #9ca3af; }
+
+    @media (max-width: 720px) { .df-wrapper { padding: 20px 15px; } .df-cols { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="df-wrapper">
+    <div class="df-header">
+      <h1>🔀 Text Diff Checker</h1>
+      <p>Paste two versions of a text to see what changed, line by line. Added lines are green, removed lines are red. Everything runs in your browser.</p>
+    </div>
+
+    <div class="df-cols">
+      <div class="df-col"><label>Original</label><textarea class="df-area" id="dfA">The quick brown fox
+jumps over the lazy dog.
+Line three stays the same.</textarea></div>
+      <div class="df-col"><label>Changed</label><textarea class="df-area" id="dfB">The quick red fox
+jumps over the lazy dog.
+Line three stays the same.
+A new final line.</textarea></div>
+    </div>
+
+    <div class="df-controls">
+      <label class="df-control"><input type="checkbox" id="dfCase" /> Ignore case</label>
+      <label class="df-control"><input type="checkbox" id="dfWs" /> Ignore leading/trailing spaces</label>
+      <span class="df-summary" id="dfSummary"></span>
+    </div>
+
+    <div class="df-result" id="dfResult"></div>
+
+    <div class="df-info-section">
+      <h2>How the diff works</h2>
+      <p>This tool compares your two texts line by line using a longest-common-subsequence algorithm — the same approach used by version-control systems like Git. Lines that exist only in the changed version are shown as additions, lines that exist only in the original are shown as deletions, and unchanged lines are kept for context. It is handy for proofreading edits, comparing article drafts, checking config files, or spotting exactly what a tool or teammate altered.</p>
+      <p>Nothing you paste ever leaves your device — the comparison happens entirely in your browser, so it is safe to use with private or unpublished content.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const A = document.getElementById('dfA') as HTMLTextAreaElement;
+      const B = document.getElementById('dfB') as HTMLTextAreaElement;
+      const caseBox = document.getElementById('dfCase') as HTMLInputElement;
+      const wsBox = document.getElementById('dfWs') as HTMLInputElement;
+      const result = document.getElementById('dfResult') as HTMLElement;
+      const summary = document.getElementById('dfSummary') as HTMLElement;
+
+      const norm = (s: string) => { let x = s; if (wsBox.checked) x = x.trim(); if (caseBox.checked) x = x.toLowerCase(); return x; };
+      const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      const diff = () => {
+        const a = A.value.split('\n');
+        const b = B.value.split('\n');
+        const n = a.length, m = b.length;
+        const dp: number[][] = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+        for (let i = n - 1; i >= 0; i--)
+          for (let j = m - 1; j >= 0; j--)
+            dp[i][j] = norm(a[i]) === norm(b[j]) ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+
+        const rows: string[] = [];
+        let i = 0, j = 0, added = 0, removed = 0;
+        const push = (cls: string, sign: string, text: string) =>
+          rows.push('<div class="df-line ' + cls + '"><span class="df-sign">' + sign + '</span><span>' + esc(text || ' ') + '</span></div>');
+
+        while (i < n && j < m) {
+          if (norm(a[i]) === norm(b[j])) { push('', ' ', a[i]); i++; j++; }
+          else if (dp[i + 1][j] >= dp[i][j + 1]) { push('df-del', '-', a[i]); removed++; i++; }
+          else { push('df-add', '+', b[j]); added++; j++; }
+        }
+        while (i < n) { push('df-del', '-', a[i]); removed++; i++; }
+        while (j < m) { push('df-add', '+', b[j]); added++; j++; }
+
+        result.innerHTML = rows.join('');
+        summary.textContent = (added || removed) ? `${added} added, ${removed} removed` : 'The two texts are identical';
+      };
+
+      [A, B, caseBox, wsBox].forEach((el) => el.addEventListener('input', diff));
+      caseBox.addEventListener('change', diff); wsBox.addEventListener('change', diff);
+      diff();
+    });
+  </script>
+</MainLayout>

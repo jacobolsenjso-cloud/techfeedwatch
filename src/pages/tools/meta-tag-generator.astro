@@ -1,0 +1,122 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "HTML Meta Tags Generator";
+const description = "Generate a complete, valid set of HTML head meta tags — title, description, canonical, robots, viewport, charset, author, and theme-color. Free, browser-based, copy in one click.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .mt-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .mt-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .mt-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .mt-header p { color: #9ca3af; }
+
+    .mt-field { margin-bottom: 14px; }
+    .mt-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .mt-input, .mt-area, .mt-select { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
+    .mt-area { min-height: 64px; resize: vertical; line-height: 1.5; }
+    .mt-input:focus, .mt-area:focus, .mt-select:focus { outline: none; border-color: #0891b2; }
+    .mt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .mt-len { font-size: 0.75rem; color: #6b7280; margin-top: 3px; }
+    .mt-len.warn { color: #d97706; }
+
+    .mt-out-head { display: flex; align-items: center; justify-content: space-between; margin: 24px 0 8px; }
+    .mt-out-head h2 { font-size: 1.1rem; margin: 0; }
+    .mt-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
+    .mt-copy:hover { background: #0e7490; }
+    .mt-output { width: 100%; min-height: 200px; padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.82rem; line-height: 1.5; box-sizing: border-box; white-space: pre; overflow: auto; }
+
+    .mt-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .mt-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .mt-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .mt-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .mt-wrapper { padding: 20px 15px; } .mt-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <div class="mt-wrapper">
+    <div class="mt-header">
+      <h1>🏷️ HTML Meta Tags Generator</h1>
+      <p>Build a clean, complete set of &lt;head&gt; meta tags for any page. Fill in the fields and copy — with live length hints for title and description.</p>
+    </div>
+
+    <div class="mt-field"><label>Page title</label><input class="mt-input" id="mtTitle" value="How Open Banking Is Changing Finance" />
+      <div class="mt-len" id="mtTitleLen"></div></div>
+    <div class="mt-field"><label>Meta description</label><textarea class="mt-area" id="mtDesc">A clear look at open banking and what it means for consumers and businesses in 2026.</textarea>
+      <div class="mt-len" id="mtDescLen"></div></div>
+    <div class="mt-field"><label>Canonical URL</label><input class="mt-input" id="mtCanon" value="https://techfeedwatch.com/page" /></div>
+    <div class="mt-grid">
+      <div class="mt-field"><label>Author</label><input class="mt-input" id="mtAuthor" value="Jacob Olsen" /></div>
+      <div class="mt-field"><label>Language (lang attr)</label><input class="mt-input" id="mtLang" value="en" /></div>
+    </div>
+    <div class="mt-grid">
+      <div class="mt-field"><label>Robots</label>
+        <select class="mt-select" id="mtRobots">
+          <option value="index, follow">index, follow (default)</option>
+          <option value="noindex, follow">noindex, follow</option>
+          <option value="index, nofollow">index, nofollow</option>
+          <option value="noindex, nofollow">noindex, nofollow</option>
+        </select>
+      </div>
+      <div class="mt-field"><label>Theme color</label><input class="mt-input" id="mtTheme" value="#0891b2" /></div>
+    </div>
+
+    <div class="mt-out-head">
+      <h2>Generated meta tags</h2>
+      <button type="button" class="mt-copy" id="mtCopy">Copy</button>
+    </div>
+    <pre class="mt-output" id="mtOut"></pre>
+
+    <div class="mt-info-section">
+      <h2>Which meta tags actually matter?</h2>
+      <p>A handful of head tags do the heavy lifting. The title tag is the single most important on-page SEO element and shows as the clickable headline in search results — aim for roughly 50–60 characters. The meta description does not directly affect ranking, but a compelling one (around 150–160 characters) improves click-through. The canonical tag prevents duplicate-content problems by naming the preferred URL, and the robots tag controls whether a page is indexed and its links followed.</p>
+      <p>The charset and viewport tags are technical essentials every page needs for correct rendering and mobile responsiveness. Paste the full block into your &lt;head&gt; and adjust per page — especially the title, description, and canonical, which should be unique for every URL.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const g = (id: string) => (document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement);
+      const out = document.getElementById('mtOut') as HTMLElement;
+      const esc = (s: string) => s.replace(/"/g, '&quot;');
+
+      const lenHint = (id: string, val: string, lo: number, hi: number) => {
+        const el = document.getElementById(id) as HTMLElement;
+        el.textContent = `${val.length} characters (aim ${lo}–${hi})`;
+        el.classList.toggle('warn', val.length > 0 && (val.length < lo || val.length > hi));
+      };
+
+      const gen = () => {
+        const t = g('mtTitle').value.trim();
+        const d = g('mtDesc').value.trim();
+        const canon = g('mtCanon').value.trim();
+        const author = g('mtAuthor').value.trim();
+        const lang = g('mtLang').value.trim() || 'en';
+        const robots = g('mtRobots').value;
+        const theme = g('mtTheme').value.trim();
+
+        lenHint('mtTitleLen', t, 50, 60);
+        lenHint('mtDescLen', d, 150, 160);
+
+        const L: string[] = [];
+        L.push('<meta charset="UTF-8" />');
+        L.push('<meta name="viewport" content="width=device-width, initial-scale=1" />');
+        if (t) L.push(`<title>${esc(t)}</title>`);
+        if (d) L.push(`<meta name="description" content="${esc(d)}" />`);
+        if (canon) L.push(`<link rel="canonical" href="${esc(canon)}" />`);
+        L.push(`<meta name="robots" content="${robots}" />`);
+        if (author) L.push(`<meta name="author" content="${esc(author)}" />`);
+        if (theme) L.push(`<meta name="theme-color" content="${esc(theme)}" />`);
+        out.textContent = `<!-- Set <html lang="${esc(lang)}"> on the root element -->\n` + L.join('\n');
+      };
+
+      document.querySelector('.mt-wrapper')!.addEventListener('input', gen);
+      document.getElementById('mtRobots')!.addEventListener('change', gen);
+      document.getElementById('mtCopy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+      gen();
+    });
+  </script>
+</MainLayout>

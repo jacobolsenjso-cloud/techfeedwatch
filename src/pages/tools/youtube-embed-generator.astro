@@ -1,0 +1,129 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "YouTube Embed Code Generator";
+const description = "Generate responsive YouTube embed code with options for autoplay, mute, loop, start time, and privacy-enhanced mode. Free tool with a live preview — paste a link and copy.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .yt-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .yt-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .yt-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .yt-header p { color: #9ca3af; }
+
+    .yt-field { margin-bottom: 16px; }
+    .yt-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+    .yt-input { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .yt-input:focus { outline: none; border-color: #0891b2; }
+
+    .yt-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 18px; }
+    .yt-opt { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; }
+    .yt-small { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+    .yt-small label { font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 5px; }
+    .yt-small input { width: 110px; padding: 9px 11px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); }
+
+    .yt-preview { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; margin-bottom: 20px; background: #000; }
+    .yt-preview iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    .yt-out-head { display: flex; align-items: center; justify-content: space-between; margin: 8px 0; }
+    .yt-out-head h2 { font-size: 1.1rem; margin: 0; }
+    .yt-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
+    .yt-copy:hover { background: #0e7490; }
+    .yt-output { width: 100%; min-height: 130px; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.82rem; line-height: 1.5; box-sizing: border-box; white-space: pre-wrap; word-break: break-word; overflow: auto; }
+
+    .yt-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .yt-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .yt-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .yt-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .yt-wrapper { padding: 20px 15px; } }
+  </style>
+
+  <div class="yt-wrapper">
+    <div class="yt-header">
+      <h1>🎬 YouTube Embed Code Generator</h1>
+      <p>Paste a YouTube link and get clean, responsive embed code with the options you want. Preview it live, then copy the code into your page.</p>
+    </div>
+
+    <div class="yt-field">
+      <label for="ytUrl">YouTube URL or video ID</label>
+      <input class="yt-input" id="ytUrl" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+    </div>
+
+    <div class="yt-opts">
+      <label class="yt-opt"><input type="checkbox" id="ytResponsive" checked /> Responsive (16:9)</label>
+      <label class="yt-opt"><input type="checkbox" id="ytNocookie" checked /> Privacy mode (no-cookie)</label>
+      <label class="yt-opt"><input type="checkbox" id="ytAutoplay" /> Autoplay</label>
+      <label class="yt-opt"><input type="checkbox" id="ytMute" /> Muted</label>
+      <label class="yt-opt"><input type="checkbox" id="ytLoop" /> Loop</label>
+      <label class="yt-opt"><input type="checkbox" id="ytControls" checked /> Show controls</label>
+    </div>
+
+    <div class="yt-small">
+      <div><label>Start at (seconds)</label><input id="ytStart" type="number" min="0" placeholder="0" /></div>
+      <div><label>Width (non-responsive)</label><input id="ytWidth" type="number" min="120" value="560" /></div>
+    </div>
+
+    <div class="yt-preview" id="ytPreview"></div>
+
+    <div class="yt-out-head"><h2>Embed code</h2><button type="button" class="yt-copy" id="ytCopy">Copy</button></div>
+    <pre class="yt-output" id="ytOut"></pre>
+
+    <div class="yt-info-section">
+      <h2>Responsive embeds and privacy mode</h2>
+      <p>A raw YouTube iframe has a fixed width and height, which breaks on mobile. The responsive option wraps the video in a container with a 16:9 aspect ratio so it scales fluidly to any screen. This is the approach most modern sites use, and it needs no external CSS framework — the wrapper style is included in the code.</p>
+      <p>Privacy-enhanced mode uses the youtube-nocookie.com domain, which stops YouTube from setting tracking cookies until the visitor actually plays the video. It is a simple, friendly default for consent and GDPR-conscious sites. Note that autoplay only works reliably when the video is also muted, because browsers block sound-on autoplay.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const g = (id: string) => document.getElementById(id) as HTMLInputElement;
+      const preview = document.getElementById('ytPreview') as HTMLElement;
+      const out = document.getElementById('ytOut') as HTMLElement;
+
+      const getId = (v: string): string => {
+        v = v.trim();
+        if (/^[A-Za-z0-9_-]{11}$/.test(v)) return v;
+        const m = v.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/);
+        return m ? m[1] : '';
+      };
+
+      const build = () => {
+        const id = getId(g('ytUrl').value);
+        if (!id) { preview.innerHTML = ''; out.textContent = 'Enter a valid YouTube URL or 11-character video ID.'; return; }
+        const domain = g('ytNocookie').checked ? 'www.youtube-nocookie.com' : 'www.youtube.com';
+        const p = new URLSearchParams();
+        if (g('ytAutoplay').checked) p.set('autoplay', '1');
+        if (g('ytMute').checked) p.set('mute', '1');
+        if (g('ytControls').checked ? false : true) p.set('controls', '0');
+        if (g('ytLoop').checked) { p.set('loop', '1'); p.set('playlist', id); }
+        const start = parseInt(g('ytStart').value, 10);
+        if (start > 0) p.set('start', String(start));
+        const qs = p.toString();
+        const src = `https://${domain}/embed/${id}${qs ? '?' + qs : ''}`;
+
+        preview.innerHTML = `<iframe src="${src}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+
+        let code = '';
+        if (g('ytResponsive').checked) {
+          code = `<div style="position:relative;width:100%;padding-bottom:56.25%;height:0;">\n` +
+            `  <iframe src="${src}"\n    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"\n` +
+            `    title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>\n</div>`;
+        } else {
+          const w = Math.max(120, parseInt(g('ytWidth').value, 10) || 560);
+          const h = Math.round(w * 9 / 16);
+          code = `<iframe width="${w}" height="${h}" src="${src}"\n  title="YouTube video player" frameborder="0"\n  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+        }
+        out.textContent = code;
+      };
+
+      document.querySelector('.yt-wrapper')!.addEventListener('input', build);
+      document.getElementById('ytCopy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+      build();
+    });
+  </script>
+</MainLayout>

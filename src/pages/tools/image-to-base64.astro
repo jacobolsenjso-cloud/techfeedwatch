@@ -1,0 +1,128 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Image to Base64 Converter";
+const description = "Convert any image to a Base64 data URI for inline embedding in HTML or CSS. Free browser-based tool — your image is never uploaded. Get the data URL, <img>, or CSS snippet.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .b6-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .b6-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .b6-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+    body.dark-mode .b6-header p { color: #9ca3af; }
+
+    .b6-drop { border: 2px dashed var(--border-color); border-radius: 14px; padding: 30px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .b6-drop.drag { border-color: #0891b2; background: rgba(8,145,178,0.06); }
+    .b6-drop p { margin: 6px 0 0; color: #6b7280; font-size: 0.9rem; }
+    body.dark-mode .b6-drop p { color: #9ca3af; }
+    .b6-drop b { color: #0891b2; }
+
+    .b6-result { display: none; margin-top: 22px; }
+    .b6-result.on { display: block; }
+    .b6-preview { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .b6-preview img { max-width: 120px; max-height: 90px; border-radius: 8px; border: 1px solid var(--border-color); }
+    .b6-meta { font-size: 0.88rem; color: #6b7280; }
+    body.dark-mode .b6-meta { color: #9ca3af; }
+
+    .b6-tabs { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+    .b6-tab { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+    .b6-tab.active { background: #0891b2; color: #fff; border-color: #0891b2; }
+    .b6-out-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .b6-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
+    .b6-copy:hover { background: #0e7490; }
+    .b6-output { width: 100%; min-height: 160px; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.8rem; line-height: 1.5; box-sizing: border-box; word-break: break-all; overflow: auto; resize: vertical; }
+    .b6-warn { font-size: 0.82rem; color: #d97706; margin-top: 8px; display: none; }
+    .b6-warn.on { display: block; }
+
+    .b6-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .b6-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+    .b6-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+    body.dark-mode .b6-info-section p { color: #9ca3af; }
+
+    @media (max-width: 640px) { .b6-wrapper { padding: 20px 15px; } }
+  </style>
+
+  <div class="b6-wrapper">
+    <div class="b6-header">
+      <h1>🧬 Image to Base64 Converter</h1>
+      <p>Turn an image into a Base64 data URI you can paste directly into HTML or CSS — no extra file request needed. Everything runs locally in your browser.</p>
+    </div>
+
+    <div class="b6-drop" id="b6Drop">
+      <div style="font-size:2rem">🖼️</div>
+      <p><b>Click to choose an image</b> or drag &amp; drop it here</p>
+      <p>PNG, JPG, WebP, GIF, or SVG</p>
+      <input type="file" id="b6File" accept="image/*" hidden />
+    </div>
+
+    <div class="b6-result" id="b6Result">
+      <div class="b6-preview"><img id="b6Img" alt="preview" /><div class="b6-meta" id="b6Meta"></div></div>
+      <div class="b6-tabs">
+        <button type="button" class="b6-tab active" data-fmt="raw">Data URI</button>
+        <button type="button" class="b6-tab" data-fmt="img">&lt;img&gt; tag</button>
+        <button type="button" class="b6-tab" data-fmt="css">CSS background</button>
+      </div>
+      <div class="b6-out-head"><span class="b6-meta" id="b6OutLabel">Data URI</span><button type="button" class="b6-copy" id="b6Copy">Copy</button></div>
+      <textarea class="b6-output" id="b6Out" readonly></textarea>
+      <p class="b6-warn" id="b6Warn">⚠️ This image is over 100 KB. Base64 embedding is best for small images (icons, logos); large ones bloat your HTML and are better served as normal files.</p>
+    </div>
+
+    <div class="b6-info-section">
+      <h2>When should you use Base64 images?</h2>
+      <p>A Base64 data URI encodes an image as text, so you can embed it directly in your HTML or CSS instead of linking to a separate file. This removes one network request, which can speed up rendering for tiny, frequently-used graphics like icons, small logos, or inline SVGs. Because the image travels inside the markup, there is no extra round-trip to fetch it.</p>
+      <p>The trade-off is size: Base64 makes data roughly 33% larger than the original file, and inline data cannot be cached separately by the browser. So reserve it for small assets, and keep serving larger images (photos, hero images) as normal files. This tool converts everything locally — your image never leaves your device.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('b6Drop') as HTMLElement;
+      const file = document.getElementById('b6File') as HTMLInputElement;
+      const result = document.getElementById('b6Result') as HTMLElement;
+      const imgEl = document.getElementById('b6Img') as HTMLImageElement;
+      const meta = document.getElementById('b6Meta') as HTMLElement;
+      const out = document.getElementById('b6Out') as HTMLTextAreaElement;
+      const outLabel = document.getElementById('b6OutLabel') as HTMLElement;
+      const warn = document.getElementById('b6Warn') as HTMLElement;
+
+      let dataUri = '';
+      let fmt = 'raw';
+      const fmtBytes = (b: number) => b < 1024 ? b + ' B' : b < 1048576 ? (b / 1024).toFixed(1) + ' KB' : (b / 1048576).toFixed(2) + ' MB';
+
+      const render = () => {
+        if (fmt === 'img') { out.value = `<img src="${dataUri}" alt="" />`; outLabel.textContent = '<img> tag'; }
+        else if (fmt === 'css') { out.value = `background-image: url("${dataUri}");`; outLabel.textContent = 'CSS background'; }
+        else { out.value = dataUri; outLabel.textContent = 'Data URI'; }
+      };
+
+      const load = (f: File) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          dataUri = reader.result as string;
+          imgEl.src = dataUri;
+          meta.innerHTML = `<b>${f.name}</b><br>${fmtBytes(f.size)} · Base64 ≈ ${fmtBytes(dataUri.length)}`;
+          warn.classList.toggle('on', f.size > 100 * 1024);
+          result.classList.add('on');
+          render();
+        };
+        reader.readAsDataURL(f);
+      };
+
+      drop.addEventListener('click', () => file.click());
+      file.addEventListener('change', () => { if (file.files && file.files[0]) load(file.files[0]); });
+      ['dragover', 'dragenter'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('drag'); }));
+      ['dragleave', 'drop'].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('drag'); }));
+      drop.addEventListener('drop', (e) => { const f = (e as DragEvent).dataTransfer?.files?.[0]; if (f) load(f); });
+
+      document.querySelectorAll('.b6-tab').forEach((t) => t.addEventListener('click', () => {
+        fmt = (t as HTMLElement).dataset.fmt || 'raw';
+        document.querySelectorAll('.b6-tab').forEach((x) => x.classList.toggle('active', x === t));
+        render();
+      }));
+      document.getElementById('b6Copy')!.addEventListener('click', async (e) => {
+        try { await navigator.clipboard.writeText(out.value); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      });
+    });
+  </script>
+</MainLayout>
