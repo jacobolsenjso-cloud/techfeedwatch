@@ -7,18 +7,36 @@
 //  - Kun sidste besøgte sider gemmes, med et loft, så lageret ikke løber løbsk.
 //  - Ingen caching af /api/, sitemap, rss eller adresser med query-parametre.
 
-const VERSION = 'tfw-v1';
+const VERSION = 'tfw-v2';
 const SHELL = `${VERSION}-shell`;
 const PAGES = `${VERSION}-pages`;
-const OFFLINE_URL = '/offline';
+// Med afsluttende skråstreg: sitets sider ligger på /offline/, og henter man
+// /offline får man et omdirigeret svar. Se kommentaren ved storeClean nedenfor.
+const OFFLINE_URL = '/offline/';
 const MAX_PAGES = 60;
 
+// Et Response med redirected: true må IKKE returneres til en navigation fra en
+// service worker — browseren afviser det, og brugeren ender på en fejlside i
+// stedet. Det sker for enhver adresse uden afsluttende skråstreg, da sitet
+// sender dem videre. Derfor bygges svaret om, så flaget ryger af, før det gemmes.
+async function storeClean(cacheName, request, response) {
+  const clean = new Response(await response.blob(), {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
+  const cache = await caches.open(cacheName);
+  await cache.put(request, clean);
+}
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(SHELL)
-      .then((c) => c.addAll([OFFLINE_URL, '/icon-192.png']))
-      .then(() => self.skipWaiting())
-  );
+  event.waitUntil((async () => {
+    const res = await fetch(OFFLINE_URL, { cache: 'reload' });
+    if (res.ok) await storeClean(SHELL, OFFLINE_URL, res);
+    const icon = await fetch('/icon-192.png', { cache: 'reload' });
+    if (icon.ok) await storeClean(SHELL, '/icon-192.png', icon);
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', (event) => {
@@ -57,14 +75,18 @@ self.addEventListener('fetch', (event) => {
       try {
         const fresh = await fetch(request);
         if (fresh.ok && cacheable(url)) {
-          const copy = fresh.clone();
-          caches.open(PAGES).then((c) => c.put(request, copy).then(() => trim(PAGES, MAX_PAGES)));
+          // Gem under den endelige adresse, så en senere opdatering rammer
+          // samme nøgle uanset om brugeren kom via /side eller /side/
+          storeClean(PAGES, fresh.url, fresh.clone())
+            .then(() => trim(PAGES, MAX_PAGES))
+            .catch(() => {});
         }
         return fresh;
       } catch {
-        return (await caches.match(request))
-            || (await caches.match(OFFLINE_URL))
-            || Response.error();
+        const hit = (await caches.match(request)) || (await caches.match(url.pathname + '/'));
+        if (hit) return hit;
+        const offline = await caches.match(OFFLINE_URL);
+        return offline || Response.error();
       }
     })());
     return;
