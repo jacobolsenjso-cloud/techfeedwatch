@@ -123,6 +123,10 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      // Video-sitemappet laves i src/pages/video-sitemap.xml.ts, fordi denne
+      // integration ikke kan bære video-udvidelser. Her hænges det ind i
+      // indekset, så Google finder det gennem den ene adresse vi indsender.
+      customSitemaps: ['https://techfeedwatch.com/video-sitemap.xml'],
       filter: (page) => {
         const pathname = new URL(page).pathname;
         // Sider der bevidst er noindex hører ikke hjemme i sitemappet — Google
