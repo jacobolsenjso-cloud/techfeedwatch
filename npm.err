@@ -1,6 +1,0 @@
-npm warn allow-scripts 3 packages have install scripts not yet covered by allowScripts:
-npm warn allow-scripts   esbuild@0.27.7 (postinstall: node install.js)
-npm warn allow-scripts   sharp@0.34.5 (install: node install/check.js || npm run build)
-npm warn allow-scripts   puppeteer@25.4.0 (postinstall: node install.mjs)
-npm warn allow-scripts
-npm warn allow-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
