@@ -1,5 +1,8 @@
-# Auto-genererede 301-redirects: gamle /video/{video-ID} -> nye titel-slugs.
-# Genereret 2026-07-29. Ret ikke i hånden - kør _gen-redirects.mjs.
+# Cloudflare Pages kræver statiske regler FØR dynamiske (*).
+# Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
+# og kør scriptet igen, så havner de det rigtige sted.
+
+# --- Statiske (673) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech 301
 /video/8EKlpRCE-R8 /tag/ai-tech 301
@@ -465,14 +468,8 @@
 /video/OTABvKF1-4Q /tag/automation 301
 /video/9digDXRabtg /tag/ai-video 301
 /video/N0CRAhi4qo0 /video/zand-s-digital-ascent-is-this-the-end-for-traditional-banking-s/ 301
-
-# Tag-slugs: gamle URL'er med råt '&' -> rene slugs (juli 2026)
 /tag/ai-&-tech /tag/ai-tech 301
-/tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
 /tag/business-&-money /tag/business-money 301
-/tag/business-&-money/page/* /tag/business-money/page/:splat 301
-
-# Shorts fjernet (tomme sider) -> primært emne, 2026-07-31
 /video/10-pro-tips-code-your-website-with-claude-ai-no-experience-needed /tag/ai-tech 301
 /video/100-bugs-in-60-seconds-has-ai-just-redefined-software-development /tag/ai-tech 301
 /video/5-secret-chatgpt-tricks-to-get-better-ai-answers /tag/ai-tech 301
@@ -678,7 +675,9 @@
 /video/your-phone-s-future-holograms-self-healing-screens-ai /tag/ai-tech 301
 /video/your-phone-your-master-switch-unlocking-the-era-of-seamless-smart /tag/automation 301
 /video/youtube-s-ai-monetization-unpacked-good-news-for-creators-not-a-ban /tag/ai-video 301
-
-# Shorts-sektionen er nedlagt
 /shorts /library 301
+
+# --- Dynamiske (3) ---
+/tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
+/tag/business-&-money/page/* /tag/business-money/page/:splat 301
 /shorts/* /library 301
