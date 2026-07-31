@@ -1,5 +1,6 @@
 ---
-title: "AI Potential: Curing Cancer, Emotional Robots, Overcoming Barriers"
+title: "AI: Curing Cancer, Emotional Robots, Overcoming Barriers"
+titleShortened: true
 seoTitled: true
 youtubeId: "Oa0ZHfcalCM"
 channelTitle: "BBC World Service"

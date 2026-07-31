@@ -1,5 +1,6 @@
 ---
-title: "Personal Finance Strategies: Modern Tools for Financial Growth"
+title: "Personal Finance Strategies: Modern Tools to Grow Wealth"
+titleShortened: true
 youtubeId: "z-mSoosGQdc"
 channelTitle: "Al Zhang"
 channelId: "UClysnUQyzjD5bXZ1LHJ735g"

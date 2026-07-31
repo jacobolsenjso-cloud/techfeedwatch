@@ -1,5 +1,6 @@
 ---
-title: "Free Google AI Tools Reshape Productivity and Market Dynamics"
+title: "Free Google AI Tools Drive Productivity, Change Markets"
+titleShortened: true
 youtubeId: "RIPxwxqZhVI"
 channelTitle: "Vaibhav Sisinty"
 channelId: "UClXAalunTPaX1YV185DWUeg"

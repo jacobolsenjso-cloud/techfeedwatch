@@ -1,5 +1,6 @@
 ---
-title: "Zero Trust Security Model: Protect Your Business from Cyber Threats"
+title: "Zero Trust Security Model: Secure Business from Cyberthreats"
+titleShortened: true
 seoTitled: true
 youtubeId: "gb2CJP8oUuw"
 channelTitle: "theinformationsecurity"

@@ -1,5 +1,6 @@
 ---
-title: "AI Content SEO: Automation Changes Publishing, Search Visibility"
+title: "AI Content SEO: Automation Drives Search Visibility"
+titleShortened: true
 seoTitled: true
 youtubeId: "ZBSJ_8nFJpw"
 channelTitle: "GoldieAgencySEO"

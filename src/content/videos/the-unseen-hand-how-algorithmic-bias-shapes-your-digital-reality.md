@@ -1,5 +1,6 @@
 ---
-title: "Algorithmic Bias: How It Skews Search Results and Online Information"
+title: "Algorithmic Bias Skews Search Results And Content"
+titleShortened: true
 seoTitled: true
 youtubeId: "_vBggxCNNno"
 channelTitle: "TED"

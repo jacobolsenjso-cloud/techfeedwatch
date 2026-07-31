@@ -1,5 +1,6 @@
 ---
-title: "Stablecoins & Financial Data: The Battle for Customer Control"
+title: "Stablecoins & Financial Data: Customer Control Battle"
+titleShortened: true
 seoTitled: true
 youtubeId: "u0SfAX3eIqk"
 channelTitle: "MENA Fintech Association"

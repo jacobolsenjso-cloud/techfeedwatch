@@ -453,6 +453,17 @@ const siteSchema = [
 
     <ConsentBanner />
 
+    {/* Service worker: giver den installerede app en offline-side i stedet for
+        browserens fejlside. Registreres efter load, så den ikke konkurrerer med
+        sidens egne ressourcer om båndbredden. */}
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () { /* uden er også fint */ });
+        });
+      }
+    </script>
+
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
         const themeBtn = document.getElementById('themeToggle');

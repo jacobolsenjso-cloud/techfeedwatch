@@ -1,5 +1,6 @@
 ---
-title: "AI Safety Protocols Bypassed: LLMs Need Urgent Alignment Rethink"
+title: "AI Safety Protocol Bypass: LLM Alignment Rethink Needed"
+titleShortened: true
 seoTitled: true
 youtubeId: "wzY2fV4Mp3U"
 channelTitle: "AI Explained"

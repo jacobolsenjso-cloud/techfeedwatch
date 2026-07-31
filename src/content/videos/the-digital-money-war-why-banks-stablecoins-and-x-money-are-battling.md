@@ -1,5 +1,6 @@
 ---
-title: "Digital Money Battle: Banks, Stablecoins, CBDCs Fight for Control"
+title: "Digital Money: Banks, Stablecoins, CBDCs Vie for Control"
+titleShortened: true
 seoTitled: true
 youtubeId: "2QfSQybsJsE"
 channelTitle: "Crypto Casey"

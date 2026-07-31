@@ -1,5 +1,6 @@
 ---
-title: "AI-Native Service Companies: The Playbook for Next-Gen Business"
+title: "AI-Native Service Companies: Playbook for Next-Gen Business"
+titleShortened: true
 seoTitled: true
 youtubeId: "gSNFJbgoaHI"
 channelTitle: "Y Combinator"

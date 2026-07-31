@@ -1,5 +1,6 @@
 ---
-title: "Ethereum: Programmable Blockchain & Decentralized Web Foundation"
+title: "Ethereum: Programmable Blockchain, Decentralized Web Base"
+titleShortened: true
 seoTitled: true
 youtubeId: "NzNNu49eZvc"
 channelTitle: "Next Frontier"

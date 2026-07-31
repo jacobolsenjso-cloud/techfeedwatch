@@ -1,5 +1,6 @@
 ---
-title: "Virtual Reality Beyond Gaming: Enterprise, Education, Training"
+title: "Virtual Reality Expands: Enterprise, Education, Training"
+titleShortened: true
 seoTitled: true
 youtubeId: "sYz8D_ZbB2I"
 channelTitle: "a16z"

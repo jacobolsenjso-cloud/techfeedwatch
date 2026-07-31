@@ -1,5 +1,6 @@
 ---
-title: "Generative AI: What Makes It Powerful (Deep Learning, Data, Compute)"
+title: "Generative AI: Deep Learning, Data, Compute Power"
+titleShortened: true
 seoTitled: true
 youtubeId: "b76gsOSkHB4"
 channelTitle: "The Royal Institution"

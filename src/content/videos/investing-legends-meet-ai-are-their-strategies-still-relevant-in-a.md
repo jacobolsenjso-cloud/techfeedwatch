@@ -1,5 +1,6 @@
 ---
-title: "Traditional Investment Strategies & AI: Relevance in Quant Markets"
+title: "Traditional Investment Strategies & AI: Quant Market Shift"
+titleShortened: true
 seoTitled: true
 youtubeId: "q1tLnU_UzUg"
 channelTitle: "Coin Bureau"

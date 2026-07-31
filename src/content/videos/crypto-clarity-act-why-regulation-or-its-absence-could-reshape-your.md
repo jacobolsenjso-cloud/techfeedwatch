@@ -1,5 +1,6 @@
 ---
-title: "US Crypto Legislation: CLARITY Act's Impact on Altcoins & Values"
+title: "US Crypto Legislation: CLARITY Act Impact on Altcoin Value"
+titleShortened: true
 seoTitled: true
 youtubeId: "WbllezOMtQw"
 channelTitle: "Altcoin Daily"

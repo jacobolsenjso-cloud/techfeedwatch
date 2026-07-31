@@ -1,5 +1,6 @@
 ---
-title: "Google Gemini Productivity: 7 Hacks to Supercharge AI Workflows"
+title: "Google Gemini Productivity: 7 Hacks to Supercharge Workflows"
+titleShortened: true
 seoTitled: true
 youtubeId: "sZwN_u9DMnU"
 channelTitle: "Rob The AI Guy"

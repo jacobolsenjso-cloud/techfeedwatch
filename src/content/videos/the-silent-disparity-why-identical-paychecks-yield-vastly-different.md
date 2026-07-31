@@ -1,5 +1,6 @@
 ---
-title: "Build Wealth: Why Similar Incomes Create Vastly Different Fortunes"
+title: "Build Wealth: How Similar Incomes Lead to Different Fortunes"
+titleShortened: true
 seoTitled: true
 youtubeId: "uFLz0MexCSY"
 channelTitle: "PoliCore"

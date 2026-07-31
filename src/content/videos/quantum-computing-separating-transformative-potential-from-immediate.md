@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Present Reality, Future Potential & Challenges"
+title: "Quantum Computing: Present, Future, Challenges"
+titleShortened: true
 seoTitled: true
 youtubeId: "VyX8E4KUkWw"
 channelTitle: "Domain of Science"

@@ -1,5 +1,6 @@
 ---
-title: "Google NotebookLM: Autonomous AI Agent Transforms Knowledge Work"
+title: "Google NotebookLM: Autonomous AI Transforms Knowledge Work"
+titleShortened: true
 seoTitled: true
 youtubeId: "UHAuc6Lh234"
 channelTitle: "Ai Podcast "

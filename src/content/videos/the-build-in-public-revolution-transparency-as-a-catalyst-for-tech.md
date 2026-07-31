@@ -1,5 +1,6 @@
 ---
-title: "Build in Public Software Development: Catalyst for Tech Innovation"
+title: "Build in Public Software Development Fuels Tech Innovation"
+titleShortened: true
 seoTitled: true
 youtubeId: "Jv2tZj8Cs8U"
 channelTitle: "Vibe Through Code"

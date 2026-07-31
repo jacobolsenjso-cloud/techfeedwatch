@@ -1,5 +1,6 @@
 ---
-title: "AI Coding Assistants Boost Developer Productivity & Code Generation"
+title: "AI Coding Assistants Boost Productivity & Code Generation"
+titleShortened: true
 seoTitled: true
 youtubeId: "wwfJlSF34n8"
 channelTitle: "Matthew Berman"

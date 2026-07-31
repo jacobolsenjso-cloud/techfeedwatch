@@ -1,5 +1,6 @@
 ---
-title: "Meta AI: New Free Muse Image & Video Generation, Motion Control"
+title: "Meta AI: Free Muse Image & Video Generation, Motion Control"
+titleShortened: true
 seoTitled: true
 youtubeId: "epJiVrv4KVQ"
 channelTitle: "Theoretically Media"

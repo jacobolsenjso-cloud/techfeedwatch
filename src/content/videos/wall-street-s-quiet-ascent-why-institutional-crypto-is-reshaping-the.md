@@ -1,5 +1,6 @@
 ---
-title: "Institutional Crypto Reshaping Market: Wall Street's Utility Push"
+title: "Institutional Crypto: Wall Street Utility Push Shifts Market"
+titleShortened: true
 seoTitled: true
 youtubeId: "G87Vy-dZbdw"
 channelTitle: "Yahoo Finance"

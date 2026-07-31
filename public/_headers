@@ -12,3 +12,9 @@
   # Bevidst udeladt: Content-Security-Policy. En CSP der er stram nok til at
   # gøre gavn ville skulle whiteliste AdSense, GA4 og YouTube præcist, og en
   # fejl her slukker for annoncerne uden varsel. Tages separat med test.
+
+# Service workeren må aldrig ligge i cache. Gør den det, kan brugere sidde fast
+# på en gammel version der server forældet indhold, uden vej ud.
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+  Service-Worker-Allowed: /

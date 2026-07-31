@@ -1,5 +1,6 @@
 ---
-title: "Morgan Stanley Digital Asset Strategy: Crypto, Tokenization & AI"
+title: "Morgan Stanley Digital Asset Strategy: Crypto & Tokenization"
+titleShortened: true
 seoTitled: true
 youtubeId: "g9WFO0M9KT4"
 channelTitle: "Yahoo Finance"

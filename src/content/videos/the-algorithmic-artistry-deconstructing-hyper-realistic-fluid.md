@@ -1,5 +1,6 @@
 ---
-title: "Hyper-Realistic Fluid Simulation: Computational Methods & Realism"
+title: "Hyper-Realistic Fluid Simulation: Methods, Realism"
+titleShortened: true
 seoTitled: true
 youtubeId: "O-52enqUSNw"
 channelTitle: "Two Minute Papers"

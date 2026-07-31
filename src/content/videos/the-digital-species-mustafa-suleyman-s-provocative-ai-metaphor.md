@@ -1,5 +1,6 @@
 ---
-title: "Mustafa Suleyman: AI is new digital species, not merely a tool"
+title: "Mustafa Suleyman: AI New Digital Species Not Merely a Tool"
+titleShortened: true
 seoTitled: true
 youtubeId: "KKNCiRWd_j0"
 channelTitle: "TED"

@@ -1,5 +1,6 @@
 ---
-title: "Open Source AI Lowers Enterprise Costs with Models like GLM-5.2"
+title: "Open Source AI Lowers Enterprise Costs: GLM-5.2"
+titleShortened: true
 seoTitled: true
 youtubeId: "XbHeJL45USQ"
 channelTitle: "Matt Wolfe"

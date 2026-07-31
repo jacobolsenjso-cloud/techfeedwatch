@@ -1,5 +1,6 @@
 ---
-title: "AGI to ASI: DeepMind Predicts Exponential Superintelligence Leap"
+title: "AGI to ASI: DeepMind Predicts Rapid Superintelligence Leap"
+titleShortened: true
 seoTitled: true
 youtubeId: "haB_od-xCWY"
 channelTitle: "AI Revolution"

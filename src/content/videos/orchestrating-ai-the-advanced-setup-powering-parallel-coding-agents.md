@@ -1,5 +1,6 @@
 ---
-title: "Parallel AI Coding Agents: Setup for Isolated Software Development"
+title: "Parallel AI Coding Agents: Isolated Development Setup"
+titleShortened: true
 seoTitled: true
 youtubeId: "qxjII6x2yPY"
 channelTitle: "AI LABS"

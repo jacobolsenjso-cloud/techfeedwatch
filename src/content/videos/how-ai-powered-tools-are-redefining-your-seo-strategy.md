@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Tools Transform Your Search Engine Optimization Strategy"
+title: "AI SEO Tools Transform Your SEO Strategy"
+titleShortened: true
 seoTitled: true
 youtubeId: "COMnNlUakQk"
 channelTitle: "Agrici Daniel"

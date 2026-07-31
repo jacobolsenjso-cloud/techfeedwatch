@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Automation for Agencies: Boost Efficiency & Outrank Rivals"
+title: "AI SEO Automation: Agencies Boost Efficiency, Outrank Rivals"
+titleShortened: true
 seoTitled: true
 youtubeId: "OQndX5-eauE"
 channelTitle: "Arvow"

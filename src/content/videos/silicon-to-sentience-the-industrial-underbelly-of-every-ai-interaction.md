@@ -1,5 +1,6 @@
 ---
-title: "AI Infrastructure: Servers, Data Centers, Global Manufacturing"
+title: "AI Infrastructure: Servers, Data Centers, Manufacturing"
+titleShortened: true
 seoTitled: true
 youtubeId: "WsWLSkt7d2w"
 channelTitle: "USA Factory Tour"

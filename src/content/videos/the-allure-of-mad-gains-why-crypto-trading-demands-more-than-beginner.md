@@ -1,5 +1,6 @@
 ---
-title: "Crypto Trading: What Beginner Guides Miss About Risk & Discipline"
+title: "Crypto Trading: Beginner Guides Miss Risk & Discipline"
+titleShortened: true
 seoTitled: true
 youtubeId: "14HIIUjOLGY"
 channelTitle: "Coin Bureau"

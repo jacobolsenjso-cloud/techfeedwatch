@@ -1,5 +1,6 @@
 ---
-title: "Google AI Influencers: Create Realistic Videos, Monetize Free"
+title: "Google AI Influencers Create Realistic Video, Monetize Free"
+titleShortened: true
 seoTitled: true
 youtubeId: "K6DTEvL1KWc"
 channelTitle: "Ikhsanz Tech"

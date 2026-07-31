@@ -1,5 +1,6 @@
 ---
-title: "Institutional Crypto Adoption: Tokenized Assets Drive TradFi Shift"
+title: "Institutional Crypto: Tokenized Assets Drive Financial Shift"
+titleShortened: true
 youtubeId: "6XvcvDScf1c"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

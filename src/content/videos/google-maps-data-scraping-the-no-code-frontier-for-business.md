@@ -1,5 +1,6 @@
 ---
-title: "Google Maps Data Scraping: No-Code Tools for Leads & Research"
+title: "Google Maps Data Scraping: No-Code Tools Leads & Research"
+titleShortened: true
 seoTitled: true
 youtubeId: "NNYUGS_PbTo"
 channelTitle: "NanoScrape"

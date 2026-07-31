@@ -1,5 +1,6 @@
 ---
-title: "Compact Language: Build Privacy Smart Contracts on Midnight ZK"
+title: "Compact Language Build Privacy Contracts on Midnight ZK"
+titleShortened: true
 seoTitled: true
 youtubeId: "QWEtUJ2ymB0"
 channelTitle: "Midnight"

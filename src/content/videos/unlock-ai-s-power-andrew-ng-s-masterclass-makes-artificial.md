@@ -1,5 +1,6 @@
 ---
-title: "Organizational AI Strategy: Transform Businesses for AI Success"
+title: "Organizational AI Strategy: Business Transformation for AI"
+titleShortened: true
 seoTitled: true
 youtubeId: "zOI6Oll1Zrg"
 channelTitle: "Tuitions Tonight"

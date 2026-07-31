@@ -1,5 +1,6 @@
 ---
-title: "ML Engineer vs AI Engineer: Which Career Path Is Right for You?"
+title: "ML Engineer vs AI Engineer: Key Differences"
+titleShortened: true
 seoTitled: true
 youtubeId: "cqDQV5g7zHo"
 channelTitle: "Zen van Riel"

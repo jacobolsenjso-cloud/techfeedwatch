@@ -1,5 +1,6 @@
 ---
-title: "Quantum Mechanics: Future Tech from Sensors to Quantum Computers"
+title: "Quantum Mechanics Powers Sensors and Quantum Computers"
+titleShortened: true
 seoTitled: true
 youtubeId: "t06aTX9jM34"
 channelTitle: "NOVA PBS Official"

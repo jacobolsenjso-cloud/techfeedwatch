@@ -124,7 +124,11 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => {
-        const match = new URL(page).pathname.match(/^\/video\/([^/]+)\/?$/);
+        const pathname = new URL(page).pathname;
+        // Sider der bevidst er noindex hører ikke hjemme i sitemappet — Google
+        // advarer om det i Search Console. /offline vises kun af service workeren.
+        if (/^\/offline\/?$/.test(pathname)) return false;
+        const match = pathname.match(/^\/video\/([^/]+)\/?$/);
         return match ? !shortSlugs.has(match[1]) : true;
       },
     }),

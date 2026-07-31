@@ -1,5 +1,6 @@
 ---
-title: "Google Core Web Vitals: Key Metrics for SEO & Site Performance"
+title: "Google Core Web Vitals: Key Metrics SEO & Site Performance"
+titleShortened: true
 seoTitled: true
 youtubeId: "-prOfvIV4Ns"
 channelTitle: "CodeLucky"

@@ -1,5 +1,6 @@
 ---
-title: "iPhone AI Productivity Machine: Personalized Tasks Automation"
+title: "iPhone AI Productivity: Personalized Tasks Automation"
+titleShortened: true
 seoTitled: true
 youtubeId: "iCUB7JZmmig"
 channelTitle: "Better Creating"

@@ -1,5 +1,6 @@
 ---
-title: "FIX Protocol: Standardizing Communication in Electronic Trading"
+title: "FIX Protocol: Standardizing Electronic Trading Communication"
+titleShortened: true
 seoTitled: true
 youtubeId: "uZ8UEVhtPAo"
 channelTitle: "Coding Jesus (getcracked.io)"

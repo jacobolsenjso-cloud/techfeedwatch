@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Smart Contracts: Architecture, Mechanics & EVM Explained"
+title: "Ethereum Smart Contracts: Architecture, Mechanics, EVM"
+titleShortened: true
 seoTitled: true
 youtubeId: "PLgawr4pbqE"
 channelTitle: "Jordan McKinney"

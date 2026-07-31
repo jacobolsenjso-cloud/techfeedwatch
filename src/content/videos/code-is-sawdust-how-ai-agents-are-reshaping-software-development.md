@@ -1,5 +1,6 @@
 ---
-title: "AI Agents Reshape Software Development: From Code to Orchestration"
+title: "AI Agents Shift Software Development: Code to Orchestration"
+titleShortened: true
 seoTitled: true
 youtubeId: "fQmlML9Lay4"
 channelTitle: "Y Combinator"

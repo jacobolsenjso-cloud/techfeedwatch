@@ -1,5 +1,6 @@
 ---
-title: "What is a Smart Contract? Explained: Benefits, Risks, Blockchain"
+title: "Smart Contract Defined: Benefits, Risks, Blockchain"
+titleShortened: true
 seoTitled: true
 youtubeId: "Un7-hW6GAec"
 channelTitle: "Chainlink"

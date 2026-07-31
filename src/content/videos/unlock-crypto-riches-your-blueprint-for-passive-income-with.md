@@ -1,5 +1,6 @@
 ---
-title: "Earn Passive Crypto Income: Blockchain Node Staking & Testnets"
+title: "Earn Passive Crypto Income: Node Staking & Testnets"
+titleShortened: true
 seoTitled: true
 youtubeId: "l0dzOwyPqFI"
 channelTitle: "Dapp University"

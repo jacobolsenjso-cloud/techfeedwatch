@@ -1,5 +1,6 @@
 ---
-title: "NVIDIA AI Strategy: Building Global AI Infrastructure & Factories"
+title: "NVIDIA AI Strategy: AI Infrastructure and Factories"
+titleShortened: true
 seoTitled: true
 youtubeId: "vif8NQcjVf0"
 channelTitle: "Lex Fridman"

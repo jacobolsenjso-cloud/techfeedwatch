@@ -1,5 +1,6 @@
 ---
-title: "Crypto Bull Market: Key Signals for Bitcoin & Ethereum's Next Surge"
+title: "Crypto Bull Market: Signals for Bitcoin & Ethereum Surge"
+titleShortened: true
 seoTitled: true
 youtubeId: "iuZTZHipaG0"
 channelTitle: "Crypto Capital Venture"

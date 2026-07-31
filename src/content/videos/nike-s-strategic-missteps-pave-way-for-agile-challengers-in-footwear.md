@@ -1,5 +1,6 @@
 ---
-title: "Nike's Footwear Missteps Fuel Agile Challengers' Digital Growth"
+title: "Nike Footwear Missteps Fuel Agile Challengers' Growth"
+titleShortened: true
 seoTitled: true
 youtubeId: "8s7t64aXaEA"
 channelTitle: "CNBC"

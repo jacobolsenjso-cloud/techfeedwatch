@@ -1,5 +1,6 @@
 ---
-title: "AI in Finance: Fintech Drives Wealth Management Transformation"
+title: "AI in Finance: Fintech Transforms Wealth Management"
+titleShortened: true
 seoTitled: true
 youtubeId: "qkhWvBZ4ycQ"
 channelTitle: "Dinis Guarda"

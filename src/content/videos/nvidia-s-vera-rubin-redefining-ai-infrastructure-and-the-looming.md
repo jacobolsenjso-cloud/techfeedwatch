@@ -1,5 +1,6 @@
 ---
-title: "Nvidia Vera Rubin: Next-Gen AI Infrastructure, 10x Power Efficiency"
+title: "Nvidia Vera Rubin: AI Infrastructure, 10x Power Efficiency"
+titleShortened: true
 seoTitled: true
 youtubeId: "ZkPU5GHDqkQ"
 channelTitle: "CNBC"

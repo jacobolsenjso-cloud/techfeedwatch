@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Investment Soars, Practical Use Cases Dwindle"
+title: "Quantum Computing: Investment Soars, Applications Dwindle"
+titleShortened: true
 seoTitled: true
 youtubeId: "spRN7DfzhrU"
 channelTitle: "Sabine Hossenfelder"

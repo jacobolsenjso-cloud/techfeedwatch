@@ -1,5 +1,6 @@
 ---
-title: "Free AI Video Generators: How to Create High-Quality AI Videos"
+title: "Free AI Video Generators: Create High-Quality Videos"
+titleShortened: true
 youtubeId: "3cXXYG-0Ipk"
 channelTitle: "Malva AI"
 channelId: "UCv3ZocWMnZw3aljHs4irOzA"

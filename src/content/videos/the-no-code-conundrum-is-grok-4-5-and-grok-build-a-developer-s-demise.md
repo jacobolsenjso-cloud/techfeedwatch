@@ -1,5 +1,6 @@
 ---
-title: "Grok 4.5 & Grok Build: No-Code AI Business Tools for Entrepreneurs"
+title: "Grok 4.5 & Grok Build: No-Code AI Tools for Entrepreneurs"
+titleShortened: true
 seoTitled: true
 youtubeId: "o3t-XtLnXi8"
 channelTitle: "JustAIWorld"

@@ -1,5 +1,6 @@
 ---
-title: "Physics-Informed AI for Engineering Accuracy, Science Discovery"
+title: "Physics-Informed AI Engineering Accuracy, New Science"
+titleShortened: true
 seoTitled: true
 youtubeId: "JoFW2uSd3Uo"
 channelTitle: "Steve Brunton"

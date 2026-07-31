@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Transforming AI, Drug Discovery & Clean Energy"
+title: "Quantum Computing: Powers AI, Drug Discovery & Clean Energy"
+titleShortened: true
 seoTitled: true
 youtubeId: "79kNOf749MA"
 channelTitle: "Future Business Tech"

@@ -1,5 +1,6 @@
 ---
-title: "Prompt-to-Video AI: Free Tools Democratize High-Quality Content"
+title: "Prompt-to-Video AI: Free Tools Democratize Quality Video"
+titleShortened: true
 seoTitled: true
 youtubeId: "2cT1cb9BY_M"
 channelTitle: "BigWiz Media"

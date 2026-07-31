@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Wallets Explained: Accounts, Gas, & DeFi Interaction"
+title: "Ethereum Wallets: Accounts, Gas, & DeFi Interaction"
+titleShortened: true
 seoTitled: true
 youtubeId: "qLZ1IoezucE"
 channelTitle: "99Bitcoins"

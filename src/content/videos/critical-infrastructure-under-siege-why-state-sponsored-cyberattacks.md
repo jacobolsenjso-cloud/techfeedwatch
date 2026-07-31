@@ -1,5 +1,6 @@
 ---
-title: "State-sponsored APT cyberattacks target critical infrastructure"
+title: "State-sponsored APT Attacks Target Critical Infrastructure"
+titleShortened: true
 seoTitled: true
 youtubeId: "52HdL_uRal8"
 channelTitle: "RSTCON"

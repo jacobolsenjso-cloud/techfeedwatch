@@ -1,5 +1,6 @@
 ---
-title: "FIFA World Cup 2026: Tech, Scale, and Business Challenges Ahead"
+title: "FIFA World Cup 2026: Tech, Scale, Business Challenges"
+titleShortened: true
 youtubeId: "z78E0D_RlLw"
 channelTitle: "DW News"
 channelId: "UCknLrEdhRCp1aegoMqRaCZg"

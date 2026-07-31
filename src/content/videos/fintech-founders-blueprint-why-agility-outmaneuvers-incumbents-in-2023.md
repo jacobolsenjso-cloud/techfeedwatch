@@ -1,5 +1,6 @@
 ---
-title: "Fintech Founder Strategy: Agility & Profitability Beat Incumbents"
+title: "Fintech Founder Strategy: Agility & Profit Beat Incumbents"
+titleShortened: true
 seoTitled: true
 youtubeId: "b-z-1eK-x7c"
 channelTitle: "Jeremy Quainoo"

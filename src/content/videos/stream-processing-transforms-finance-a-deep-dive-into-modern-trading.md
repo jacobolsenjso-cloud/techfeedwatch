@@ -1,5 +1,6 @@
 ---
-title: "Stream Processing Finance: Transforms Trading Systems & Risk Mgmt"
+title: "Stream Processing Optimizes Trading Systems, Risk Management"
+titleShortened: true
 seoTitled: true
 youtubeId: "ICnFZ8L_Gbc"
 channelTitle: "Flink Forward"

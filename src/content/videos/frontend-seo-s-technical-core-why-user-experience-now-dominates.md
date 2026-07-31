@@ -1,5 +1,6 @@
 ---
-title: "User Experience SEO: Core Web Vitals & Site Speed for Rankings"
+title: "User Experience SEO: Core Web Vitals, Site Speed, Rankings"
+titleShortened: true
 seoTitled: true
 youtubeId: "_w4uzUH1YeM"
 channelTitle: "Squareboat"

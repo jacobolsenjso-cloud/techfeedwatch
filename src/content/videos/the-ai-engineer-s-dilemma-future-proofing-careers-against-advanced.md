@@ -1,5 +1,6 @@
 ---
-title: "AI Impact on Programmer Careers: Essential Skills for Automation"
+title: "AI Impact on Programmers: Essential Skills for Automation"
+titleShortened: true
 seoTitled: true
 youtubeId: "gXqpTUy5czc"
 channelTitle: "NeuralNine"

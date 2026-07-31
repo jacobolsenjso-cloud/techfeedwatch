@@ -1,5 +1,6 @@
 ---
-title: "Saudi Arabia Fintech Accelerators Drive Vision 2030 Innovation"
+title: "Saudi Arabia Fintech Accelerators for Vision 2030 Innovation"
+titleShortened: true
 seoTitled: true
 youtubeId: "nVvr06Ll_2U"
 channelTitle: "Flat6Labs"

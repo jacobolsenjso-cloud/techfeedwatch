@@ -1,5 +1,6 @@
 ---
-title: "Future Cities: Pervasive AI Tech Shaping Next-Gen Urban Environments"
+title: "Future Cities: Pervasive AI in Smart Spaces"
+titleShortened: true
 seoTitled: true
 youtubeId: "Fm4kPJpKcrM"
 channelTitle: "Deepfake Reality"

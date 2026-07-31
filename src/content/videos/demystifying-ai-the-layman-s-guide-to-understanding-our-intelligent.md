@@ -1,5 +1,6 @@
 ---
-title: "AI Explained: A Simple Guide to How Artificial Intelligence Works"
+title: "AI Explained: How Artificial Intelligence Works"
+titleShortened: true
 seoTitled: true
 youtubeId: "m8o2GrbR3d8"
 channelTitle: "Science Simplified 4 All"

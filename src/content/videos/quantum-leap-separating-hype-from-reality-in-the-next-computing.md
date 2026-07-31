@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing Reality: Separating Hype from Practical Future"
+title: "Quantum Computing Reality: Hype vs. Practical Future"
+titleShortened: true
 seoTitled: true
 youtubeId: "B3U1NDUiwSA"
 channelTitle: "Science ABC"

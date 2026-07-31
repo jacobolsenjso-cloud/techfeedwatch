@@ -1,5 +1,6 @@
 ---
-title: "Generative Engine Optimization (GEO) for Business AI Visibility"
+title: "Generative Engine Optimization (GEO) Business AI Visibility"
+titleShortened: true
 seoTitled: true
 youtubeId: "20pTTT8jcEw"
 channelTitle: "Helena Liu"

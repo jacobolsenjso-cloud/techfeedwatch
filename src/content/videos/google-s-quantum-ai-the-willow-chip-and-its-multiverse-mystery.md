@@ -1,5 +1,6 @@
 ---
-title: "Google Willow Quantum Chip Solves Problem, Fuels Many-Worlds Theory"
+title: "Google Willow Quantum Chip Solves Problem, Aids Many-Worlds"
+titleShortened: true
 seoTitled: true
 youtubeId: "lwiRg_TNrek"
 channelTitle: "Beyond The Stars"

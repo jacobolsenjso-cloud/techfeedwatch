@@ -1,5 +1,6 @@
 ---
-title: "Omnichannel Retail Strategy: Print Catalogs Drive Digital Sales"
+title: "Omnichannel Retail: Print Catalogs Drive Digital Sales"
+titleShortened: true
 youtubeId: "yUHQR9lUtaE"
 channelTitle: "priint"
 channelId: "UCN_Gcq32v7lPpU5UfXH6oWg"

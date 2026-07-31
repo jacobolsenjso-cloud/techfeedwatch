@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing Commercialization: Cloud Platforms & Access"
+title: "Quantum Computing Commercialization: Cloud Platforms Access"
+titleShortened: true
 seoTitled: true
 youtubeId: "bVP3q8-e4sE"
 channelTitle: "a16z"

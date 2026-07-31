@@ -1,5 +1,6 @@
 ---
-title: "Offensive Security: Why Attack Simulation Boosts Digital Defense"
+title: "Offensive Security: Attack Simulation Boosts Digital Defense"
+titleShortened: true
 seoTitled: true
 youtubeId: "fQJ8OUs1Sog"
 channelTitle: "Tech Horizon with Anand Vemula"

@@ -1,5 +1,6 @@
 ---
-title: "Onchain Utility: Crypto Development Prioritizes Real-World Use"
+title: "Onchain Utility: Crypto Prioritizes Real-World Use"
+titleShortened: true
 seoTitled: true
 youtubeId: "Pdne9xaRLUc"
 channelTitle: "Y Combinator"

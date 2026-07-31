@@ -1,5 +1,6 @@
 ---
-title: "Machine Learning Engineer Salary & Role: AI Production, Deployment"
+title: "Machine Learning Engineer Salary AI Production Deployment"
+titleShortened: true
 seoTitled: true
 youtubeId: "xi6NN0ta6Ss"
 channelTitle: "Series of Thoughts"

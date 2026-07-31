@@ -1,5 +1,6 @@
 ---
-title: "Prompt Engineering Explained: Bridge Human Intent & AI Output"
+title: "Prompt Engineering: Bridge Human Intent & AI Output"
+titleShortened: true
 seoTitled: true
 youtubeId: "PFsbWAC4_rk"
 channelTitle: "a16z"

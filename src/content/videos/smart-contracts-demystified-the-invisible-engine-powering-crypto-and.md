@@ -1,5 +1,6 @@
 ---
-title: "Smart Contracts: How They Work, Benefits & Overcoming Challenges"
+title: "Smart Contracts: What They Are, Pros, Cons"
+titleShortened: true
 seoTitled: true
 youtubeId: "ZE2HxTmxfrI"
 channelTitle: "Simply Explained"

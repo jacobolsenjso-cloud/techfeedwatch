@@ -1,5 +1,6 @@
 ---
-title: "Alternative Data APIs for Algorithmic Trading & Quant Finance"
+title: "Alternative Data APIs Algorithmic Trading & Quant Finance"
+titleShortened: true
 seoTitled: true
 youtubeId: "HIPlOXGWGIE"
 channelTitle: "Algo Trading X"

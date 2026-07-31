@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing's Growth: Why Investment & Progress Continue"
+title: "Quantum Computing's Investment & Progress Continue"
+titleShortened: true
 seoTitled: true
 youtubeId: "gBTS7JZTyZY"
 channelTitle: "Sabine Hossenfelder"

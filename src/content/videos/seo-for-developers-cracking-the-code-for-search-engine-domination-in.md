@@ -1,5 +1,6 @@
 ---
-title: "Technical SEO for Developers: Boost Rankings & User Experience"
+title: "Technical SEO for Developers: Rankings & User Experience"
+titleShortened: true
 seoTitled: true
 youtubeId: "-B58GgsehKQ"
 channelTitle: "Fireship"

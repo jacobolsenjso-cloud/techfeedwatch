@@ -1,5 +1,6 @@
 ---
-title: "Cybersecurity Incidents June 2026: Digital Security Under Threat"
+title: "Cybersecurity Incidents June 2026: Vulnerabilities Exposed"
+titleShortened: true
 seoTitled: true
 youtubeId: "dUdl7XtRh4k"
 channelTitle: "theinformationsecurity"

@@ -1,5 +1,6 @@
 ---
-title: "Google SEO: Essential for Online Visibility & Business Growth"
+title: "Google SEO: Essential Online Visibility & Business Growth"
+titleShortened: true
 seoTitled: true
 youtubeId: "lx0lVq8geoo"
 channelTitle: "CoDe JaMMeR Technologies"

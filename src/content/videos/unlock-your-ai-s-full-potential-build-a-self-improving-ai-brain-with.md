@@ -1,5 +1,6 @@
 ---
-title: "Build Self-Improving AI Brains for Personalized Expert Assistance"
+title: "Build Self-Improving AI Brains for Personalized Expert Aid"
+titleShortened: true
 seoTitled: true
 youtubeId: "iadt4yTlK6w"
 channelTitle: "Ai Podcast "

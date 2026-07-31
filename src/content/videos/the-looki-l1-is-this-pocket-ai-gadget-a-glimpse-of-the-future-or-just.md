@@ -1,5 +1,6 @@
 ---
-title: "Looki L1 AI Life-Logger Review: Automated Memory & Storytelling"
+title: "Looki L1 AI Life-Logger Review: Automated Memory, Story"
+titleShortened: true
 seoTitled: true
 youtubeId: "3RT_TDgEkb0"
 channelTitle: "TechMagnet"

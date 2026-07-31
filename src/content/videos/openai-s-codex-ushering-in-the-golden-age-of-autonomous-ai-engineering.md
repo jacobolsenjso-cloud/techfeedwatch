@@ -1,5 +1,6 @@
 ---
-title: "Autonomous AI Engineering: Focus on Problem Solving & System Design"
+title: "Autonomous AI Engineering: Problem Solving & System Design"
+titleShortened: true
 seoTitled: true
 youtubeId: "pMggiOb18tc"
 channelTitle: "AI Engineer"
