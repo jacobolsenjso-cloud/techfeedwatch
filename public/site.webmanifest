@@ -33,6 +33,29 @@
       "purpose": "maskable"
     }
   ],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "412x915",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "The front page: the day's lead analysis, with the source channel credited"
+    },
+    {
+      "src": "/screenshots/mobile-article.png",
+      "sizes": "412x915",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "The library, browsable by topic"
+    },
+    {
+      "src": "/screenshots/wide-home.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tech Feed Watch on a desktop browser"
+    }
+  ],
   "shortcuts": [
     {
       "name": "Latest articles",

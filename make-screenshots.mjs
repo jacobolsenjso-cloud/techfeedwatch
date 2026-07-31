@@ -30,18 +30,17 @@ for (const s of shots) {
   const page = await browser.newPage();
   await page.setViewport({ width: s.width, height: s.height, deviceScaleFactor: 1 });
 
-  // Samtykkebanneret ville dække halvdelen af billedet — sæt et gemt valg først
-  await page.evaluateOnNewDocument(() => {
-    try {
-      localStorage.setItem('tfw_consent', JSON.stringify({
-        v: 1, analytics: false, ads: false,
-        ts: Date.now(), exp: Date.now() + 1000 * 60 * 60 * 24 * 180,
-      }));
-    } catch (e) {}
+  // Googles samtykkedialog dækker hele skærmen, og dens bundbjælke ligger uden
+  // for almindelig DOM-rækkevidde. Nemmest og mest pålideligt er at blokere
+  // CMP'ens netværkskald under optagelsen — så tegnes den aldrig.
+  // Dette gælder KUN skærmbilleder; på det rigtige site er CMP'en uberørt.
+  await page.setRequestInterception(true);
+  page.on('request', (req) => {
+    if (/fundingchoicesmessages\.google\.com/.test(req.url())) req.abort();
+    else req.continue();
   });
 
   await page.goto(BASE + s.url, { waitUntil: 'networkidle2', timeout: 60000 });
-  // Giv billeder tid til at lande
   await new Promise((r) => setTimeout(r, 2500));
 
   const file = `${OUT}/${s.name}.png`;
