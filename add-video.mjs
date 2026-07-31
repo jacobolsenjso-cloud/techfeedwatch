@@ -6,6 +6,11 @@ import { generateOgCard } from './og-card.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity"];
 
+// Mindste videolængde vi udgiver. Tidligere blev alt under 180s markeret som
+// "Short" og fik en side helt uden brødtekst — 205 tomme sider i alt, som blev
+// fjernet igen. Nu afvises korte videoer i stedet, før vi bruger API-kvote på dem.
+const MIN_DURATION_SECONDS = 180;
+
 // Artikel-profiler: hver normal video roterer gennem én af disse, valgt deterministisk ud fra video-ID.
 // Formålet er at bryde ensartetheden (samme struktur/længde = "masseproduceret"-signal hos Google).
 // Format-kontrakten (TITLE/TAGS/SUMMARY/FAQ/CONTENT) og banned-words gælder stadig for alle profiler.
@@ -184,7 +189,7 @@ async function run() {
     try {
       const metaKey = process.env.YOUTUBE_API_KEY;
       if (metaKey) {
-        const metaUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${metaKey}`;
+        const metaUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${metaKey}`;
         const metaRes = await fetch(metaUrl);
         const metaData = await metaRes.json();
         const sn = metaData.items?.[0]?.snippet;
@@ -193,6 +198,22 @@ async function run() {
           channelId = sn.channelId || null;
           publishedAt = sn.publishedAt || null;
           console.log(`Info: Kilde fundet — ${channelTitle}`);
+        }
+
+        // Korte videoer afvises HER — før transskription og før den dyre
+        // Gemini-prompt. En video på under MIN_DURATION_SECONDS giver ikke
+        // stof nok til en rigtig artikel, og tomme sider skader sitet.
+        const iso = metaData.items?.[0]?.contentDetails?.duration;
+        if (iso) {
+          const dm = iso.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+          const secs =
+            (dm?.[1] ? parseInt(dm[1]) : 0) * 3600 +
+            (dm?.[2] ? parseInt(dm[2]) : 0) * 60 +
+            (dm?.[3] ? parseInt(dm[3]) : 0);
+          if (secs > 0 && secs < MIN_DURATION_SECONDS) {
+            console.log(`⏭️ Sprunget over: videoen er ${secs}s (under ${MIN_DURATION_SECONDS}s). Korte videoer udgives ikke.`);
+            return;
+          }
         }
       }
     } catch (metaError) {
@@ -206,7 +227,11 @@ async function run() {
 
       const lastT = transcript[transcript.length - 1];
       const totalSeconds = Math.floor(lastT.offset / 1000 + lastT.duration);
-      isShort = totalSeconds <= 180;
+      // Sikkerhedsnet: hvis metadata-kaldet ovenfor fejlede, fanges korte videoer her
+      if (totalSeconds > 0 && totalSeconds < MIN_DURATION_SECONDS) {
+        console.log(`⏭️ Sprunget over: videoen er ${totalSeconds}s (under ${MIN_DURATION_SECONDS}s).`);
+        return;
+      }
       duration = formatDuration(totalSeconds);
     } catch (transcriptError) {
       console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
@@ -232,7 +257,10 @@ async function run() {
           const m = match[2] ? parseInt(match[2]) : 0;
           const s = match[3] ? parseInt(match[3]) : 0;
           const totalSeconds = h * 3600 + m * 60 + s;
-          isShort = totalSeconds <= 180;
+          if (totalSeconds > 0 && totalSeconds < MIN_DURATION_SECONDS) {
+            console.log(`⏭️ Sprunget over: videoen er ${totalSeconds}s (under ${MIN_DURATION_SECONDS}s).`);
+            return;
+          }
           duration = formatDuration(totalSeconds);
         }
       } else {

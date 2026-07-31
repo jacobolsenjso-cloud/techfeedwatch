@@ -10,10 +10,6 @@ const regularVideos = allVideos
   .filter((v: any) => !v.frontmatter.isShort)
   .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
-const shorts = allVideos
-  .filter((v: any) => v.frontmatter.isShort === true)
-  .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
-
 // Finder automatisk de 20 mest populære tags
 const tagCounts = allVideos.reduce((acc: any, video: any) => {
   const t = video.frontmatter.tags || video.frontmatter.tag || [];
@@ -64,11 +60,9 @@ const firstTag = (v: any): string | null => {
   return arr.filter(Boolean)[0] || null;
 };
 
-// Opdeler resten i blokke (rækker) - Shorts-hylderne vises kun her, på side 1
+// Opdeler resten i blokke (rækker)
 const vRow1 = pageOneVideos.slice(3, 7);
-const sRow1 = shorts.slice(0, 6);
 const vRow2 = pageOneVideos.slice(7, 11);
-const sRow2 = shorts.slice(6, 12);
 const vRest = pageOneVideos.slice(11);
 ---
 
@@ -336,23 +330,6 @@ const vRest = pageOneVideos.slice(11);
         </>
       )}
 
-      {sRow1.length > 0 && (
-        <div class="shorts-section">
-          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #0891b2;">⚡</span> Shorts</h2>
-          <div class="shorts-shelf">
-            {sRow1.map((short: any) => (
-              <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-                <div class="short-card-thumb">
-                  <img src={`https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg`} alt={short.frontmatter.title} loading="lazy" />
-                  <div class="duration-badge">{short.frontmatter.duration || 'Short'}</div>
-                </div>
-                <h3 class="tma-grid-title" style="margin-top: 8px;">{short.frontmatter.title}</h3>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
-
       {vRow2.length > 0 && (
         <div class="video-grid">
           {vRow2.map((video: any) => (
@@ -369,23 +346,6 @@ const vRest = pageOneVideos.slice(11);
               </div>
             </a>
           ))}
-        </div>
-      )}
-
-      {sRow2.length > 0 && (
-        <div class="shorts-section">
-          <h2 style="font-size: 1.2rem; margin-bottom: 15px;"><span style="color: #0891b2;">⚡</span> More Shorts</h2>
-          <div class="shorts-shelf">
-            {sRow2.map((short: any) => (
-              <a href={`/video/${short.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-                <div class="short-card-thumb">
-                  <img src={`https://img.youtube.com/vi/${short.frontmatter.youtubeId}/maxresdefault.jpg`} alt={short.frontmatter.title} loading="lazy" />
-                  <div class="duration-badge">{short.frontmatter.duration || 'Short'}</div>
-                </div>
-                <h3 class="tma-grid-title" style="margin-top: 8px;">{short.frontmatter.title}</h3>
-              </a>
-            ))}
-          </div>
         </div>
       )}
 

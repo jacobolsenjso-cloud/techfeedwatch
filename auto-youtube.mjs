@@ -63,7 +63,12 @@ const CHANNELS = [
 ];
 
 const MAX_NORMAL_PER_RUN = 3;
-const MAX_SHORTS_PER_RUN = 1;
+
+// Dagligt udgivelsesloft. Robotten kører fortsat hver 2. time (12 gange i døgnet),
+// men bruger de fleste kørsler på at opdage kandidater frem for at udgive. Det
+// holder det brede net over kanaler og emner, mens output-kurven ligner
+// redaktionel kuratering i stedet for en feed-maskine.
+const MAX_PER_DAY = 8;
 
 // Friskheds-vindue: kun videoer nyere end dette, så feedet føles aktuelt. Nem at justere.
 const FRESHNESS_DAYS = 180;
@@ -175,6 +180,24 @@ function loadExistingVideoIds() {
   return ids;
 }
 
+// Tæller hvor mange artikler der allerede er udgivet i dag, så MAX_PER_DAY kan
+// håndhæves på tværs af døgnets 12 kørsler. Datoen læses fra frontmatter, som
+// add-video.mjs sætter til udgivelsesdagen i UTC.
+function countPublishedToday() {
+  const dir = './src/content/videos';
+  if (!fs.existsSync(dir)) return 0;
+
+  const today = new Date().toISOString().split('T')[0];
+  let count = 0;
+
+  for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
+    const content = fs.readFileSync(`${dir}/${file}`, 'utf-8');
+    const match = content.match(/^date:\s*"(.*?)"/m);
+    if (match && match[1] === today) count++;
+  }
+  return count;
+}
+
 // Fjerner dubletter på videoId. `seen` deles på tværs af kald, så normale og shorts aldrig overlapper.
 function dedupeById(items, seen) {
   return items.filter(item => {
@@ -226,47 +249,49 @@ async function findNewestVideos() {
     return;
   }
 
+  // Dagsloftet tjekkes FØRST, så en kørsel over kvoten ikke bruger API-kald.
+  const publishedToday = countPublishedToday();
+  if (publishedToday >= MAX_PER_DAY) {
+    console.log(`⏸️ Dagsloftet er nået: ${publishedToday}/${MAX_PER_DAY} artikler udgivet i dag. Springer denne kørsel over.`);
+    return;
+  }
+  const remainingToday = MAX_PER_DAY - publishedToday;
+  // Aldrig flere end der er tilbage af dagens kvote.
+  const runBudget = Math.min(MAX_NORMAL_PER_RUN, remainingToday);
+
   const topic = pickTopicCluster();
   const channel = pickChannel();
   // Kanaler kan være defineret med fast id ELLER @handle (opløses her ved kørsel via forHandle).
   const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
-  // Shorts tjener ikke penge (noindex, ingen annoncer), så de laves kun hver 3. kørsel (~hver 6. time).
-  // Sparer samtidig API-kvote de øvrige kørsler, hvor short-søgningen springes helt over.
-  const isShortsRun = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % 3 === 0;
+  console.log(`Info: Udgivet i dag: ${publishedToday}/${MAX_PER_DAY} — plads til ${runBudget} i denne kørsel.`);
   console.log(`Info: Vælger emneklynge: "${topic}"`);
   console.log(`Info: Vælger kanal: "${channel.name}"${channel.handle ? ` (${channel.handle} -> ${channelId || 'intet id'})` : ''}`);
-  console.log(`Info: Shorts denne kørsel: ${isShortsRun ? 'JA' : 'nej'}`);
 
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
-    // Normale: medium (relevance) + long (date) + én roterende kvalitetskanal. Shorts: kun hver 3. kørsel.
-    const [mediumVideos, longVideos, shortVideos, channelVideos] = await Promise.all([
+    // Medium (relevance) + long (date) + én roterende kvalitetskanal.
+    // Korte videoer søges ikke længere — de gav sider uden brødtekst.
+    const [mediumVideos, longVideos, channelVideos] = await Promise.all([
       searchVideos(topic, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
       searchVideos(topic, { videoDuration: 'long', order: 'date', maxResults: 5 }),
-      isShortsRun ? searchVideos(topic, { videoDuration: 'short', order: 'date', maxResults: 4 }) : Promise.resolve([]),
       searchChannel(channelId, topic, 3),
     ]);
 
     const seen = new Set();
-    // Kanal-videoer sættes forrest, så de får en reel chance inden for det normale loft pr. kørsel.
+    // Kanal-videoer sættes forrest, så de får en reel chance inden for loftet pr. kørsel.
     const normalItems = dedupeById([...channelVideos, ...mediumVideos, ...longVideos], seen);
-    const shortItems = dedupeById(shortVideos, seen);
 
-    if (normalItems.length === 0 && shortItems.length === 0) {
+    if (normalItems.length === 0) {
       console.log("ℹ️ Info: Fandt ingen videoer (eller API'en afviste søgningen).");
       return;
     }
 
-    console.log(`Info: Fandt ${normalItems.length} normale og ${shortItems.length} shorts. Behandler normale først (maks ${MAX_NORMAL_PER_RUN}/${MAX_SHORTS_PER_RUN})...`);
+    console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
-    // Indlæses én gang her (effektivt), og genbruges/opdateres på tværs af begge grupper
     const existingIds = loadExistingVideoIds();
+    const processed = await processGroup(normalItems, 'video', runBudget, existingIds);
 
-    // 70/30-styring: normale prioriteres først, hver gruppe har sit eget loft pr. kørsel.
-    const normalProcessed = await processGroup(normalItems, 'normal video', MAX_NORMAL_PER_RUN, existingIds);
-    const shortsProcessed = await processGroup(shortItems, 'Short', MAX_SHORTS_PER_RUN, existingIds);
-
-    console.log(`✅ Succes: Robot-kørsel er færdig. ${normalProcessed} normale og ${shortsProcessed} shorts behandlet.`);
+    console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
   } catch (error) {
     console.error("❌ Kritisk fejl under kontakt til YouTube:", error.message);
   }
