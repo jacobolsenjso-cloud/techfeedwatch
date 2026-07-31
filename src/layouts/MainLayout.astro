@@ -12,7 +12,14 @@ const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech
 const ogImage = image || "https://techfeedwatch.com/og-default-v2.png";
 const ogImageWidth = imageWidth || 1200;
 const ogImageHeight = imageHeight || 630;
-const ogTitle = title ? `${title} | TechFeedWatch` : "TechFeedWatch";
+// Brandsuffikset tilføjes kun hvis der er plads. Google klipper omkring 60-65
+// tegn, og artikeltitlerne er allerede søgeords-forrest og lange — med suffiks
+// blev 338 sider klippet af, hvilket kostede rigtige ord i søgeresultatet.
+const BRAND = "TechFeedWatch";
+const TITLE_LIMIT = 60;
+const ogTitle = !title
+  ? BRAND
+  : (title.length + BRAND.length + 3 <= TITLE_LIMIT ? `${title} | ${BRAND}` : title);
 
 // Canonical URL - fortæller Google den originale adresse for hver side (undgår duplikat-fortynding)
 const canonicalURL = `https://techfeedwatch.com${currentPath}`;
@@ -80,7 +87,7 @@ const siteSchema = [
     <link rel="dns-prefetch" href="https://img.youtube.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <title>{title ? `${title} | TechFeedWatch` : "TechFeedWatch"}</title>
+    <title>{ogTitle}</title>
     
     {/*
       Google Consent Mode v2 — SKAL stå før alle Google-tags.
@@ -257,6 +264,11 @@ const siteSchema = [
       .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
       .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: var(--teal-text); } 
       .nav-item:hover { transform: translateX(3px); }
+      /* Kildeangivelse på kort. Defineret globalt, fordi kortlister findes på
+         forside, tag-, arkiv-, library- og latest-sider. */
+      .card-source { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+      .card-source svg { width: 14px; height: 14px; color: #ff0000; flex-shrink: 0; }
+
       /* Rigtige ikoner frem for emoji: emoji renderes forskelligt pr. styresystem
          og kan ikke farves med currentColor. */
       .nav-icon { width: 19px; height: 19px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }

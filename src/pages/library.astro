@@ -1,4 +1,5 @@
 ---
+import SourceLine from '../components/SourceLine.astro';
 import MainLayout from '../layouts/MainLayout.astro'; 
 import { tagSlug as slugify } from '../lib/tags';
 
@@ -147,8 +148,8 @@ const formatDate = (d: string) => {
                   <span class="watch-card-play" aria-hidden="true">▶</span>
                 </div>
                 <div>
-                  <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                  <p class="tma-grid-meta">Tech Feed Watch • {formatDate(video.frontmatter.date)}</p>
+                  <h2 class="tma-grid-title">{video.frontmatter.title}</h2>
+                  <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
                 </div>
               </a>
             ))}
