@@ -2,6 +2,9 @@
 title: "Beyond Punctuation: Mastering Authentic Writing in the Age of AI Detectors"
 seoTitled: true
 youtubeId: "hSNifAmbOFs"
+channelTitle: "Soon"
+channelId: "UCbYnO9HmW1MxJbTiMjp4-tQ"
+publishedAt: "2026-07-06T19:19:08Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

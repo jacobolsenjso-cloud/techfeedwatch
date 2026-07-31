@@ -2,6 +2,9 @@
 title: "Landing Page SEO & Conversion Strategy for AI Age"
 seoTitled: true
 youtubeId: "eQ3J8dpNRoM"
+channelTitle: "Situated Research"
+channelId: "UCbo22FWihvL9vwLEhpF0NbA"
+publishedAt: "2011-10-23T04:05:43Z"
 date: "2026-07-12"
 tags:
   - "SEO"

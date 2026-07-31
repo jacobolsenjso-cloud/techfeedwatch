@@ -2,6 +2,9 @@
 title: "Muhammad Waqas: Architecting Secure Blockchain & Web3 Solutions"
 seoTitled: true
 youtubeId: "9E3iNGPNKDY"
+channelTitle: "Waqas  | Fullstack Blockchain developer"
+channelId: "UCLK_lAR-ujI7rx6tdQ5EbrQ"
+publishedAt: "2026-07-24T13:07:49Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

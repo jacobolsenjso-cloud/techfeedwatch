@@ -2,6 +2,9 @@
 title: "Generative AI SEO: Optimize Content for AI Search Engines"
 seoTitled: true
 youtubeId: "kpvA-bDD180"
+channelTitle: "Systems Made Better"
+channelId: "UCNZd3Osk_AIOxz2aydFYhHg"
+publishedAt: "2026-06-20T17:00:24Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

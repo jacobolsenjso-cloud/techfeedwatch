@@ -2,6 +2,9 @@
 title: "AI-Powered No-Code: Emergent.sh Unveils the Future of App Development and Iteration"
 seoTitled: true
 youtubeId: "gwbbzxQ_L-o"
+channelTitle: "Emergent Labs"
+channelId: "UC79SBbexQQDaxGmT1dOJGzA"
+publishedAt: "2025-10-03T10:23:37Z"
 duration: "1:24"
 date: "2026-06-12"
 tags:

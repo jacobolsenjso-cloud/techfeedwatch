@@ -2,6 +2,9 @@
 title: "Solidity Inheritance: Build Reusable, Modular Smart Contracts"
 seoTitled: true
 youtubeId: "AbzhG--zt98"
+channelTitle: "Conflux Network"
+channelId: "UC-YDRdiVHm1ORSTMTi6KVMQ"
+publishedAt: "2026-07-14T15:15:41Z"
 date: "2026-07-14"
 tags:
   - "Coding"

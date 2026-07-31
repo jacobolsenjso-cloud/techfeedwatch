@@ -2,6 +2,9 @@
 title: "No-Code AI Agents: Build Smart AI Without Coding Skills"
 seoTitled: true
 youtubeId: "EH5jx5qPabU"
+channelTitle: "Futurepedia"
+channelId: "UC_RovKmk0OCbuZjA8f08opw"
+publishedAt: "2025-05-21T11:29:00Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

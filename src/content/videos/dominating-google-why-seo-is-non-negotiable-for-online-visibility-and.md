@@ -2,6 +2,9 @@
 title: "Google SEO: Essential for Online Visibility & Business Growth"
 seoTitled: true
 youtubeId: "lx0lVq8geoo"
+channelTitle: "CoDe JaMMeR Technologies"
+channelId: "UCUA4rn17R1llUJU-XZycFFA"
+publishedAt: "2012-12-07T10:53:27Z"
 date: "2026-07-12"
 tags:
   - "SEO"

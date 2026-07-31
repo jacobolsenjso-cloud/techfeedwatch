@@ -2,6 +2,9 @@
 title: "Google Maps Data Scraping: No-Code Tools for Leads & Research"
 seoTitled: true
 youtubeId: "NNYUGS_PbTo"
+channelTitle: "NanoScrape"
+channelId: "UCHKTREEeYdcysIFEvTiP9wQ"
+publishedAt: "2026-07-10T08:43:06Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

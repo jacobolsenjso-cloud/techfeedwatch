@@ -2,6 +2,9 @@
 title: "Google Antigravity: Autonomous AI Builds Entire Apps"
 seoTitled: true
 youtubeId: "ff9BXfTlAqo"
+channelTitle: "Mikey Website"
+channelId: "UCSSB338C8A9ZOXtsbfM7phg"
+publishedAt: "2026-06-13T14:15:05Z"
 date: "2026-06-15"
 tags:
   - "AI & Tech"

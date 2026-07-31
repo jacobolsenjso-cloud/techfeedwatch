@@ -2,6 +2,9 @@
 title: "What is a Smart Contract? Explained: Benefits, Risks, Blockchain"
 seoTitled: true
 youtubeId: "Un7-hW6GAec"
+channelTitle: "Chainlink"
+channelId: "UCnjkrlqaWEBSnKZQ71gdyFA"
+publishedAt: "2022-01-20T12:00:10Z"
 date: "2026-07-11"
 tags:
   - "Crypto"

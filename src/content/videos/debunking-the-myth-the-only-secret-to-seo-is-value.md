@@ -2,6 +2,9 @@
 title: "SEO Best Practices: Prioritize User Value, Not Old Tricks"
 seoTitled: true
 youtubeId: "bHvPyTWDrFU"
+channelTitle: "Code of Entry"
+channelId: "UCcyS_0IILKT51Pw_CiF15cA"
+publishedAt: "2024-03-13T18:47:40Z"
 date: "2026-07-12"
 tags:
   - "SEO"

@@ -2,6 +2,9 @@
 title: "OpenClaw Open-Source AI Agents Automate Code Development"
 seoTitled: true
 youtubeId: "YFjfBk8HI5o"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2026-02-12T03:07:03Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

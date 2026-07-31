@@ -2,6 +2,9 @@
 title: "Quantum Computing: Beyond Human Imagination"
 seoTitled: true
 youtubeId: "AG6U8oN0ir4"
+channelTitle: "An Hour of Innovation with Vit Lyoshin"
+channelId: "UCQRgaSjea-m4WtzNwjbGWtQ"
+publishedAt: "2026-07-12T12:45:33Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

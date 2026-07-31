@@ -2,6 +2,9 @@
 title: "Cybersecurity Incidents June 2026: Digital Security Under Threat"
 seoTitled: true
 youtubeId: "dUdl7XtRh4k"
+channelTitle: "theinformationsecurity"
+channelId: "UCFCotscGprUZN1DzaQ7xLLA"
+publishedAt: "2026-07-12T18:30:03Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

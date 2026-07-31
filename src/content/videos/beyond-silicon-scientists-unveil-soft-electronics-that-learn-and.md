@@ -2,6 +2,9 @@
 title: "Beyond Silicon: Scientists Unveil Soft Electronics That Learn and Remember Like AI"
 seoTitled: true
 youtubeId: "kINF265F9nA"
+channelTitle: "Future Lens Pi"
+channelId: "UCRo3Hvl8gu9RkwYDs0ERp6w"
+publishedAt: "2026-07-11T10:41:23Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

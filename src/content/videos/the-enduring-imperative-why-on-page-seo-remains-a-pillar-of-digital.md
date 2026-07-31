@@ -2,6 +2,9 @@
 title: "On-Page SEO: Essential for Higher Google Rankings & Traffic"
 seoTitled: true
 youtubeId: "w4jXFLzFU8U"
+channelTitle: "HGS Infotech"
+channelId: "UCq7dWPlsz5Qu_mQ45PCSRpQ"
+publishedAt: "2022-06-22T05:41:00Z"
 date: "2026-07-13"
 tags:
   - "SEO"

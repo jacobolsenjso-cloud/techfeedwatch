@@ -2,6 +2,9 @@
 title: "AI SEO: Foundational Principles for Future Search Success"
 seoTitled: true
 youtubeId: "xpSRdok0qUM"
+channelTitle: "Google Search Central"
+channelId: "UCWf2ZlNsCGDS89VBF_awNvA"
+publishedAt: "2021-04-15T13:00:20Z"
 date: "2026-07-13"
 tags:
   - "SEO"

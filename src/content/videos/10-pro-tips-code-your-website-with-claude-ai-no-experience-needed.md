@@ -2,6 +2,9 @@
 title: "10 Pro Tips: Code Your Website with Claude AI (No Experience Needed!)"
 seoTitled: true
 youtubeId: "dgh04-71nHs"
+channelTitle: "Sheikh Muhammad Mursil"
+channelId: "UCYRdkH5Qis7RQKlE2rDl8sg"
+publishedAt: "2026-04-23T13:21:47Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

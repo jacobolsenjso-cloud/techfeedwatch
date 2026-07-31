@@ -2,6 +2,9 @@
 title: "Crypto Utility: Smart Contracts, DApps, & Decentralized Finance"
 seoTitled: true
 youtubeId: "LEu_sRbfNns"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2018-12-15T21:03:52Z"
 date: "2026-07-23"
 tags:
   - "Fintech"

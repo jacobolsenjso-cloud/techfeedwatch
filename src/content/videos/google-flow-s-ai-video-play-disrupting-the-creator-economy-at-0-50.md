@@ -2,6 +2,9 @@
 title: "Google Flow AI Video Platform: Pricing & Creator Impact"
 seoTitled: true
 youtubeId: "lkv0Te1tZkI"
+channelTitle: "CréateurVidéoPC "
+channelId: "UCI-6E3-mWXwzn9pm3IScyiQ"
+publishedAt: "2026-06-11T16:03:43Z"
 date: "2026-06-12"
 tags:
   - "AI Video"

@@ -2,6 +2,9 @@
 title: "Jane Street Builds Bespoke AI for OCaml Productivity"
 seoTitled: true
 youtubeId: "0ML7ZLMdcl4"
+channelTitle: "AI Engineer"
+channelId: "UCLKPca3kwwd-B59HNr-_lvA"
+publishedAt: "2025-03-28T15:04:44Z"
 date: "2026-07-20"
 tags:
   - "AI & Tech"

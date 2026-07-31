@@ -1,6 +1,9 @@
 ---
 title: "Decentralized AI Banking: How Agentic AI Reshapes Finance"
 youtubeId: "c-MSAP_HBcE"
+channelTitle: "technophile"
+channelId: "UCmlnPidspm1VB1uRJXfmViA"
+publishedAt: "2026-06-26T20:57:22Z"
 date: "2026-07-30"
 tags:
   - "Fintech"

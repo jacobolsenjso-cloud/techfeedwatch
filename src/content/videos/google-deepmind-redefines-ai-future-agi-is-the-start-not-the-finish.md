@@ -2,6 +2,9 @@
 title: "AGI to ASI: DeepMind Predicts Exponential Superintelligence Leap"
 seoTitled: true
 youtubeId: "haB_od-xCWY"
+channelTitle: "AI Revolution"
+channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
+publishedAt: "2026-06-15T22:52:27Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

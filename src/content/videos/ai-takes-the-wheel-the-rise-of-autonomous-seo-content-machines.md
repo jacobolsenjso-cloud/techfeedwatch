@@ -2,6 +2,9 @@
 title: "AI SEO Content Machines: Automate Article Generation & Optimization"
 seoTitled: true
 youtubeId: "9hozIpuv8wM"
+channelTitle: "GoldieAgencySEO"
+channelId: "UCWyDll8EeWuHfTCfm7VnR_A"
+publishedAt: "2026-04-16T18:55:10Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

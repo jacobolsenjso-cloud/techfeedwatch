@@ -2,6 +2,9 @@
 title: "Automate High-Intent SEO Content with AI; Maintain Quality"
 seoTitled: true
 youtubeId: "F2AD1C5KtzY"
+channelTitle: "Shanif Dhanani"
+channelId: "UCP1IH9_V46aftVKhPss_jEw"
+publishedAt: "2026-05-05T16:17:41Z"
 date: "2026-07-17"
 tags:
   - "SEO"

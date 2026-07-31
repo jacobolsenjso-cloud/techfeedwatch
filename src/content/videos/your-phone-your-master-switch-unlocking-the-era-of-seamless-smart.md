@@ -2,6 +2,9 @@
 title: "Your Phone, Your Master Switch: Unlocking the Era of Seamless Smart Control"
 seoTitled: true
 youtubeId: "OTABvKF1-4Q"
+channelTitle: "PB Center { All in One }"
+channelId: "UC3kPjUhLi1x8wU_doYP7baw"
+publishedAt: "2026-07-08T07:03:01Z"
 date: "2026-07-08"
 tags:
   - "Automation"

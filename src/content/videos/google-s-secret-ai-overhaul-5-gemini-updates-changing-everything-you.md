@@ -2,6 +2,9 @@
 title: "Google Gemini: 5 AI Updates for Workspace Productivity"
 seoTitled: true
 youtubeId: "ldVPIMmTkpo"
+channelTitle: "Next Level AI"
+channelId: "UCh2NLN_87869ABj1LmzkAxA"
+publishedAt: "2026-06-22T07:00:31Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

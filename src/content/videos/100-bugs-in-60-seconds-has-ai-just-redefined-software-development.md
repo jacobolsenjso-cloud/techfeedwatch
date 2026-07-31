@@ -2,6 +2,9 @@
 title: "100 Bugs in 60 Seconds: Has AI Just Redefined Software Development? 😳"
 seoTitled: true
 youtubeId: "8EKlpRCE-R8"
+channelTitle: "Job Wale Codes"
+channelId: "UCwQdfNgtegOUuQUHVsir7PA"
+publishedAt: "2026-07-08T15:19:23Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

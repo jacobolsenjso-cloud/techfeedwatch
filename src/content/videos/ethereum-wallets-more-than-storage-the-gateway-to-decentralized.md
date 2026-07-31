@@ -2,6 +2,9 @@
 title: "Ethereum Wallets Explained: Accounts, Gas, & DeFi Interaction"
 seoTitled: true
 youtubeId: "qLZ1IoezucE"
+channelTitle: "99Bitcoins"
+channelId: "UCQQ_fGcMDxlKre3SEqEWrLA"
+publishedAt: "2018-08-02T08:55:10Z"
 date: "2026-07-20"
 tags:
   - "Crypto"

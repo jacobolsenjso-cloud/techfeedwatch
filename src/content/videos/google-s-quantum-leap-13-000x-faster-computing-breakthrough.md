@@ -2,6 +2,9 @@
 title: "Google's Quantum Leap: 13,000x Faster Computing Breakthrough"
 seoTitled: true
 youtubeId: "m53jrYBLD_M"
+channelTitle: "ATROX"
+channelId: "UCM2-3nQ3JbWCRUXMqUwd9uQ"
+publishedAt: "2026-07-16T02:00:05Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

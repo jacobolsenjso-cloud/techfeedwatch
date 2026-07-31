@@ -2,6 +2,9 @@
 title: "Augmented Reality: Empathy Beyond Sports & Entertainment"
 seoTitled: true
 youtubeId: "AgMOJC5R4F8"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2014-05-22T15:50:22Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

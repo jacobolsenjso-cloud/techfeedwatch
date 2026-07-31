@@ -2,6 +2,9 @@
 title: "Unveiling the AI's 'Brain': How Agentic Systems Master Deep Research in Minutes"
 seoTitled: true
 youtubeId: "-w1mjvt4r9w"
+channelTitle: "BazAI"
+channelId: "UCOthur5d9OxdqEh08Swtirw"
+publishedAt: "2026-07-12T16:47:23Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

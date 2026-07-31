@@ -2,6 +2,9 @@
 title: "AI Infrastructure: Servers, Data Centers, Global Manufacturing"
 seoTitled: true
 youtubeId: "WsWLSkt7d2w"
+channelTitle: "USA Factory Tour"
+channelId: "UCdKqDZF3cMIy8vWK4E7RvCg"
+publishedAt: "2026-07-15T14:31:16Z"
 date: "2026-07-15"
 tags:
   - "AI & Tech"

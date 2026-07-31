@@ -2,6 +2,9 @@
 title: "AI & Fintech: The Dawn of Hyper-Personalized Banking"
 seoTitled: true
 youtubeId: "UUt0f2yRUjw"
+channelTitle: "Digijanus Clips"
+channelId: "UCxf-TAW0kpq134dlySg_9sw"
+publishedAt: "2026-07-27T02:00:19Z"
 date: "2026-07-27"
 tags:
   - "Fintech"

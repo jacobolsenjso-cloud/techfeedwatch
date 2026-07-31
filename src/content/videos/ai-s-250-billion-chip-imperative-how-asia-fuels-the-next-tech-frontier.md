@@ -2,6 +2,9 @@
 title: "AI chip market: Asia fuels $250B growth led by Nvidia"
 seoTitled: true
 youtubeId: "QycryeG7OJw"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-07-27T05:44:48Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

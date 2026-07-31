@@ -2,6 +2,9 @@
 title: "AI Engineering Roadmap 2025: LLM Prompt Design & Systems"
 seoTitled: true
 youtubeId: "PSWUr5E_OKY"
+channelTitle: "Greg Kamradt"
+channelId: "UCyR2Ct3pDOeZSRyZH5hPO-Q"
+publishedAt: "2025-01-06T14:15:02Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Prompt-to-Video AI: Free Tools Democratize High-Quality Content"
 seoTitled: true
 youtubeId: "2cT1cb9BY_M"
+channelTitle: "BigWiz Media"
+channelId: "UCim8nS9qSKA1r7NMWrSL-JQ"
+publishedAt: "2026-07-12T15:15:31Z"
 date: "2026-07-14"
 tags:
   - "AI Video"

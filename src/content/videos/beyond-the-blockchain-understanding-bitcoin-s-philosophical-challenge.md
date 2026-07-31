@@ -2,6 +2,9 @@
 title: "Bitcoin Challenges Modern Money: Sovereignty & Digital Property"
 seoTitled: true
 youtubeId: "HrehEWYj16s"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2021-04-17T22:44:52Z"
 date: "2026-07-25"
 tags:
   - "Fintech"

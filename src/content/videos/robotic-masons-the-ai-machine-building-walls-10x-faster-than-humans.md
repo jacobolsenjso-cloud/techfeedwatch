@@ -2,6 +2,9 @@
 title: "Robotic Masons: The AI Machine Building Walls 10X Faster Than Humans"
 seoTitled: true
 youtubeId: "TgqvR2hkni8"
+channelTitle: "Tech Verse"
+channelId: "UCqRHMXAzEupUzQCnwtLCChA"
+publishedAt: "2026-07-07T16:45:22Z"
 date: "2026-07-07"
 tags:
   - "Automation"

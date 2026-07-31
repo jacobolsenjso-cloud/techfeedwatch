@@ -2,6 +2,9 @@
 title: "Quantum Computing: Raw Qubits vs. Reality"
 seoTitled: true
 youtubeId: "L5R9PSAuFoA"
+channelTitle: "Insight360"
+channelId: "UCThbln1_ml7piUaa6Ae7lwg"
+publishedAt: "2026-07-22T21:23:48Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

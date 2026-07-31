@@ -2,6 +2,9 @@
 title: "Neural Rendering: AI's Game-Changing Visual Tech"
 seoTitled: true
 youtubeId: "Otlw_mUtVn8"
+channelTitle: "NEXTGENET"
+channelId: "UCAaxhCym0qa-dgA2phr5LOg"
+publishedAt: "2026-07-24T10:27:38Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

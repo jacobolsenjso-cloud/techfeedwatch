@@ -2,6 +2,9 @@
 title: "The Future of Money: How AI & Digital Currency Will Reshape Finance"
 seoTitled: true
 youtubeId: "55rUMx7GUx4"
+channelTitle: " Zynovara"
+channelId: "UCwRDBUlf3ACe4ixUJEI08mg"
+publishedAt: "2026-07-19T13:40:11Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

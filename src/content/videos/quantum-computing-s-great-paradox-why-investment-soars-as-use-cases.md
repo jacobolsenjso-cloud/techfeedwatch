@@ -2,6 +2,9 @@
 title: "Quantum Computing: Investment Soars, Practical Use Cases Dwindle"
 seoTitled: true
 youtubeId: "spRN7DfzhrU"
+channelTitle: "Sabine Hossenfelder"
+channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
+publishedAt: "2026-06-30T15:00:18Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Augmented Reality: Future of Human-Computer Interaction"
 seoTitled: true
 youtubeId: "H9ZOpQzjukY"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2016-04-11T16:57:23Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

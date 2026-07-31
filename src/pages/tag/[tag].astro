@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro'; 
 import FAQ from '../../components/FAQ.astro';
+import { tagSlug } from '../../lib/tags';
 
 const PAGE_SIZE = 24;
 
@@ -21,18 +22,18 @@ export async function getStaticPaths() {
       })
       .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
     return {
-      params: { tag: tag.toLowerCase().replace(/\s+/g, '-') },
+      params: { tag: tagSlug(tag) },
       props: { tagName: tag, videos: filteredVideos },
     };
   });
 }
 
 const { tagName, videos } = Astro.props;
-const tagSlug = tagName.toLowerCase().replace(/\s+/g, '-');
+const currentSlug = tagSlug(tagName);
 const totalCount = videos.length;
 const lastPage = Math.max(1, Math.ceil(totalCount / PAGE_SIZE));
 const pageVideos = videos.slice(0, PAGE_SIZE);
-const nextUrl = lastPage > 1 ? `/tag/${tagSlug}/page/2` : null;
+const nextUrl = lastPage > 1 ? `/tag/${currentSlug}/page/2` : null;
 
 const descriptionDictionary: Record<string, string> = {
   "AI & Tech": "AI and technology news, tools, and analysis — from ChatGPT, Claude, and Gemini to chips, robotics, and the trends shaping how we work and build.",
@@ -165,7 +166,7 @@ const formatDate = (d: string) => {
           n === 1 ? (
             <span class="pagination-num active" aria-current="page">{n}</span>
           ) : (
-            <a href={`/tag/${tagSlug}/page/${n}`} class="pagination-num">{n}</a>
+            <a href={`/tag/${currentSlug}/page/${n}`} class="pagination-num">{n}</a>
           )
         ))}
         {nextUrl ? (

@@ -2,6 +2,9 @@
 title: "Free Private AI Video Generation for Your Desktop"
 seoTitled: true
 youtubeId: "G2Ec3h5CfA8"
+channelTitle: "Kevin Stratvert"
+channelId: "UCfJT_eYDTmDE-ovKaxVE1ig"
+publishedAt: "2026-01-20T08:00:17Z"
 date: "2026-06-12"
 tags:
   - "AI Video"

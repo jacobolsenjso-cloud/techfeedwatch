@@ -2,6 +2,9 @@
 title: "Stealthy AI Threats: How a Chinese LLM Hid a Backdoor Using Steganography"
 seoTitled: true
 youtubeId: "59VJgwSr0O0"
+channelTitle: "TWiT Tech Podcast Network"
+channelId: "UCwY9B5_8QDGP8niZhBtTh8w"
+publishedAt: "2026-07-10T18:02:36Z"
 date: "2026-07-10"
 tags:
   - "AI & Tech"

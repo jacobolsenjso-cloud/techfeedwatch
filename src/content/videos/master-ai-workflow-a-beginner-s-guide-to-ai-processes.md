@@ -2,6 +2,9 @@
 title: "Master AI Workflow: A Beginner's Guide to AI Processes"
 seoTitled: true
 youtubeId: "JrbVvJpMx-U"
+channelTitle: "Learn with Vijya Tulsani"
+channelId: "UCrWVhZcSx1LeRsnhkJMVVmg"
+publishedAt: "2026-07-16T09:46:42Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Beyond the Bling: What a $90,000 Website Reveals About Premium Design in the AI Era"
 seoTitled: true
 youtubeId: "VGBVW_rYHaA"
+channelTitle: "Flux Academy"
+channelId: "UCN7dywl5wDxTu1RM3eJ_h9Q"
+publishedAt: "2024-12-18T12:00:45Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

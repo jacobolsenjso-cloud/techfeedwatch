@@ -2,6 +2,9 @@
 title: "Easy NFT Creation Challenges NFT Market Value & Scarcity"
 seoTitled: true
 youtubeId: "meTpMP0J5E8"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2022-01-18T16:03:37Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

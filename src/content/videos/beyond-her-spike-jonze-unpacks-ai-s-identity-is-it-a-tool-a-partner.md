@@ -2,6 +2,9 @@
 title: "Beyond 'Her': Spike Jonze Unpacks AI's Identity – Is It a Tool, a Partner, or Something More?"
 seoTitled: true
 youtubeId: "X_BTgm0wxJ0"
+channelTitle: "Laugh District"
+channelId: "UChpnN7YWy0iHJz1O5EUqfJw"
+publishedAt: "2026-07-10T15:11:27Z"
 date: "2026-07-10"
 tags:
   - "AI & Tech"

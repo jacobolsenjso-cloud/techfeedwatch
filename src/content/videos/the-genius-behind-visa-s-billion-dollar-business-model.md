@@ -2,6 +2,9 @@
 title: "The Genius Behind Visa's Billion-Dollar Business Model"
 seoTitled: true
 youtubeId: "MRLyhz3dPno"
+channelTitle: "Elon Finance"
+channelId: "UC58ShzxUyfzBz2a1hmDKY6g"
+publishedAt: "2026-07-19T14:04:27Z"
 date: "2026-07-20"
 tags:
   - "Business & Money"

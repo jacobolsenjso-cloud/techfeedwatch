@@ -2,6 +2,9 @@
 title: "VR Hand Tracking Transforms User Interaction & VR Adoption"
 seoTitled: true
 youtubeId: "vfJz7WlRNk4"
+channelTitle: "Two Minute Papers"
+channelId: "UCbfYPyITQ-7l4upoX8nvctg"
+publishedAt: "2020-11-21T15:48:34Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

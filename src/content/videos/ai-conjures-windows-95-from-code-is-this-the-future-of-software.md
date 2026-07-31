@@ -2,6 +2,9 @@
 title: "AI Conjures Windows 95 from Code: Is This the Future of Software Development?"
 seoTitled: true
 youtubeId: "3W19OvQdt8E"
+channelTitle: "Gui Bibeau"
+channelId: "UCJZAbtkkD8UWEL1AfuodtzQ"
+publishedAt: "2026-07-12T03:54:43Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

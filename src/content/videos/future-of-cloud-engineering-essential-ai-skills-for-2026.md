@@ -2,6 +2,9 @@
 title: "Future of Cloud Engineering: Essential AI Skills for 2026"
 seoTitled: true
 youtubeId: "0666fFq_-yM"
+channelTitle: "Fast Lane Tech Training"
+channelId: "UCbtZm3juGwE-dtNGwgOMvCQ"
+publishedAt: "2026-07-20T12:15:20Z"
 date: "2026-07-20"
 tags:
   - "AI & Tech"

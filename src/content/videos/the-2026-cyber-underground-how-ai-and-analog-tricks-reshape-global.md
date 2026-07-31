@@ -2,6 +2,9 @@
 title: "AI Fraud & Deepfakes: Escalating Global Scam Threats 2026"
 seoTitled: true
 youtubeId: "Aje4_XaSR24"
+channelTitle: "ThioJoe"
+channelId: "UCQSpnDG3YsFNf5-qHocF-WQ"
+publishedAt: "2026-01-07T15:45:00Z"
 date: "2026-07-15"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Beyond Bureaucracy: How AI and Humanoid Robots Are Reshaping Public Services"
 seoTitled: true
 youtubeId: "lpB9lzUHVQA"
+channelTitle: "소공tv"
+channelId: "UCJWXdlL_cDighTdypQYWt6w"
+publishedAt: "2026-07-06T19:20:31Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

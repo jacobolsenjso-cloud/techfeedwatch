@@ -2,6 +2,9 @@
 title: "Master Your Workflow: The Definitive Guide to Picking the Perfect AI Tool for Every Task"
 seoTitled: true
 youtubeId: "zrI7uyaUBIw"
+channelTitle: "Sabrina Ramonov 🍄"
+channelId: "UCiGWNa6QK6CiKPvv5-YPv8g"
+publishedAt: "2026-07-10T18:50:34Z"
 date: "2026-07-10"
 tags:
   - "AI & Tech"

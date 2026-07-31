@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import SourceLine from '../components/SourceLine.astro';
 
 const PAGE_SIZE = 24;
 
@@ -44,12 +45,31 @@ const formatDate = (d: string) => {
 const pageOneVideos = regularVideos.slice(0, PAGE_SIZE);
 const totalPages = Math.max(1, Math.ceil(regularVideos.length / PAGE_SIZE));
 
-// Opdeler indholdet i blokke (rækker) - Shorts-hylderne vises kun her, på side 1
-const vRow1 = pageOneVideos.slice(0, 4);
+// Redaktionel topsektion: dagens hovedhistorie + to sekundære. Tekst vægtes over
+// thumbnail, så forsiden læses som en publikation frem for en videoliste.
+const leadMain = pageOneVideos[0] || null;
+const leadSide = pageOneVideos.slice(1, 3);
+
+// Kort hjælper til kortenes udpluk — summary er ofte 400+ tegn
+const excerpt = (text: string, max = 145) => {
+  const s = (text || '').trim();
+  if (s.length <= max) return s;
+  return s.slice(0, max).replace(/\s+\S*$/, '').trim() + '…';
+};
+
+// Primært tag bruges som "eyebrow" over hovedhistorien
+const firstTag = (v: any): string | null => {
+  const t = v?.frontmatter?.tags || v?.frontmatter?.tag || [];
+  const arr = Array.isArray(t) ? t : [t];
+  return arr.filter(Boolean)[0] || null;
+};
+
+// Opdeler resten i blokke (rækker) - Shorts-hylderne vises kun her, på side 1
+const vRow1 = pageOneVideos.slice(3, 7);
 const sRow1 = shorts.slice(0, 6);
-const vRow2 = pageOneVideos.slice(4, 8);
+const vRow2 = pageOneVideos.slice(7, 11);
 const sRow2 = shorts.slice(6, 12);
-const vRest = pageOneVideos.slice(8);
+const vRest = pageOneVideos.slice(11);
 ---
 
 <MainLayout title="AI, Tech, Fintech & Crypto News, Explained" description="Tech Feed Watch turns the best AI, tech, fintech, and crypto videos into clear, readable analysis you can absorb in minutes. Updated daily.">
@@ -76,6 +96,16 @@ const vRest = pageOneVideos.slice(8);
       margin-bottom: 25px;
     }
     .tag-bar-container::-webkit-scrollbar { display: none; }
+
+    /* Rækken kan scrolles vandret, men blev klippet hårdt af i højre kant uden at
+       antyde det. En fade-maske viser at der er mere at hente. */
+    .tag-bar-scroll {
+      position: relative;
+      /* Masken fjernes når rækken er scrollet helt til ende (JS sætter .at-end) */
+      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent 100%);
+      mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent 100%);
+    }
+    .tag-bar-scroll.at-end { -webkit-mask-image: none; mask-image: none; }
 
     /* Pille-design der matcher videosiden (border-radius: 20px) */
     .filter-tag {
@@ -130,6 +160,64 @@ const vRest = pageOneVideos.slice(8);
     .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
     body.dark-mode .tma-grid-meta { color: #9ca3af; }
 
+    /* Udpluk på kortene: gør listen til en artikelliste frem for en videoliste. */
+    .card-excerpt {
+      margin: 4px 0 6px 0; font-size: 13.5px; line-height: 1.5; color: #4b5563;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    body.dark-mode .card-excerpt { color: #a1a1aa; }
+
+    /* Kildeangivelse på kortene — krediterer den oprindelige kanal i stedet for
+       at sætte "Tech Feed Watch" under en video vi ikke har lavet. */
+    .card-source { display: inline-flex; align-items: center; gap: 5px; font-weight: 600; }
+    .card-source svg { width: 14px; height: 14px; color: #ff0000; flex-shrink: 0; }
+
+    /* --- Redaktionel topsektion --- */
+    .lead-section { display: grid; grid-template-columns: 1.35fr 1fr; gap: 26px; margin-bottom: 42px; align-items: start; }
+    .lead-secondary { display: flex; flex-direction: column; gap: 20px; }
+
+    .lead-card { text-decoration: none; color: inherit; display: block; }
+    .lead-card-thumb { aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; position: relative; background: #000; margin-bottom: 14px; }
+    .lead-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+    .lead-card:hover .lead-card-thumb img { transform: scale(1.04); }
+    .lead-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 9px; color: var(--tag-accent, #0891b2); }
+    .lead-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .lead-title { margin: 0 0 9px 0; font-size: 1.75rem; line-height: 1.22; font-weight: 800; letter-spacing: -0.02em; }
+    .lead-card:hover .lead-title { color: #0891b2; }
+    .lead-excerpt { margin: 0 0 11px 0; font-size: 1rem; line-height: 1.6; color: #4b5563; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    body.dark-mode .lead-excerpt { color: #a1a1aa; }
+    .lead-meta { font-size: 0.83rem; color: #6b7280; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+    body.dark-mode .lead-meta { color: #9ca3af; }
+
+    /* De to mindre historier ved siden af: vandret layout, tekst vægtet højere end billede */
+    .lead-mini { display: grid; grid-template-columns: 132px 1fr; gap: 14px; text-decoration: none; color: inherit; align-items: start; }
+    .lead-mini-thumb { aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; background: #000; }
+    .lead-mini-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .lead-mini-title { margin: 0 0 5px 0; font-size: 1rem; line-height: 1.35; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .lead-mini:hover .lead-mini-title { color: #0891b2; }
+    .lead-mini-meta { font-size: 0.78rem; color: #6b7280; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    body.dark-mode .lead-mini-meta { color: #9ca3af; }
+
+    /* Sektionsoverskrifter, så siden læses som en avis frem for et endeløst grid */
+    .section-heading {
+      display: flex; align-items: baseline; gap: 12px;
+      margin: 0 0 18px 0; padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    .section-heading h2 { margin: 0; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
+    .section-heading .section-note { font-size: 0.83rem; color: #6b7280; font-weight: 500; }
+    body.dark-mode .section-heading .section-note { color: #9ca3af; }
+
+    @media (max-width: 900px) {
+      .lead-section { grid-template-columns: 1fr; gap: 30px; }
+      .lead-title { font-size: 1.45rem; }
+    }
+    @media (max-width: 520px) {
+      .lead-mini { grid-template-columns: 110px 1fr; gap: 12px; }
+      .lead-title { font-size: 1.3rem; }
+      .lead-excerpt { -webkit-line-clamp: 2; font-size: 0.95rem; }
+    }
+
     .no-results { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #6b7280; font-size: 1rem; }
     body.dark-mode .no-results { color: #9ca3af; }
 
@@ -178,7 +266,7 @@ const vRest = pageOneVideos.slice(8);
     </div>
   </section>
 
-  <div class="tag-bar-container">
+  <div class="tag-bar-container tag-bar-scroll" id="tagBar">
     <button class="filter-tag active" data-tag="All">All</button>
     {topTags.map((tag: any) => (
       TAG_COLORS[tag] ? (
@@ -192,22 +280,60 @@ const vRest = pageOneVideos.slice(8);
   <div class="frontpage-wrapper" id="videoContainer">
 
     <div id="defaultView">
+      {leadMain && (
+        <section class="lead-section" aria-label="Latest analysis">
+          <a href={`/video/${leadMain.file.split('/').pop().replace('.md', '')}`} class="lead-card">
+            <div class="lead-card-thumb watch-card-thumb">
+              <img src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/maxresdefault.jpg`} alt="" loading="eager" fetchpriority="high" />
+              <div class="duration-badge">{leadMain.frontmatter.duration || '0:00'}</div>
+            </div>
+            {firstTag(leadMain) && (
+              <span class="lead-eyebrow" style={`--tag-accent: ${TAG_COLORS[firstTag(leadMain) as string] || '#0891b2'}`}>{firstTag(leadMain)}</span>
+            )}
+            <h2 class="lead-title">{leadMain.frontmatter.title}</h2>
+            <p class="lead-excerpt">{excerpt(leadMain.frontmatter.summary, 230)}</p>
+            <SourceLine channel={leadMain.frontmatter.channelTitle} date={leadMain.frontmatter.date} className="lead-meta" />
+          </a>
+
+          <div class="lead-secondary">
+            {leadSide.map((video: any) => (
+              <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="lead-mini">
+                <div class="lead-mini-thumb watch-card-thumb">
+                  <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
+                </div>
+                <div>
+                  <h3 class="lead-mini-title">{video.frontmatter.title}</h3>
+                  <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} className="lead-mini-meta" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       {vRow1.length > 0 && (
+        <>
+        <div class="section-heading">
+          <h2>Latest analysis</h2>
+          <span class="section-note">Every article is our own written analysis of a third-party video.</span>
+        </div>
         <div class="video-grid">
           {vRow1.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt={video.frontmatter.title} loading="lazy" />
+                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
                 <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                <p class="tma-grid-meta">Tech Feed Watch • {formatDate(video.frontmatter.date)}</p>
+                <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
               </div>
             </a>
           ))}
         </div>
+        </>
       )}
 
       {sRow1.length > 0 && (
@@ -232,13 +358,14 @@ const vRest = pageOneVideos.slice(8);
           {vRow2.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt={video.frontmatter.title} loading="lazy" />
+                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
                 <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                <p class="tma-grid-meta">Tech Feed Watch • {formatDate(video.frontmatter.date)}</p>
+                <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
               </div>
             </a>
           ))}
@@ -267,13 +394,14 @@ const vRest = pageOneVideos.slice(8);
           {vRest.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt={video.frontmatter.title} loading="lazy" />
+                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
                 <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                <p class="tma-grid-meta">Tech Feed Watch • {formatDate(video.frontmatter.date)}</p>
+                <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
               </div>
             </a>
           ))}
@@ -363,10 +491,30 @@ const vRest = pageOneVideos.slice(8);
         const titleEl = document.createElement('h3');
         titleEl.className = 'tma-grid-title';
         titleEl.textContent = video.title;
+        info.appendChild(titleEl);
+
+        // Udpluk, så filtrerede kort ser ud som de statisk renderede
+        if (video.summary) {
+          const excerptEl = document.createElement('p');
+          excerptEl.className = 'card-excerpt';
+          const s = video.summary.trim();
+          excerptEl.textContent = s.length > 145
+            ? s.slice(0, 145).replace(/\s+\S*$/, '').trim() + '…'
+            : s;
+          info.appendChild(excerptEl);
+        }
+
+        // Kilde + dato. Kanalen krediteres når vi kender den.
         const metaEl = document.createElement('p');
         metaEl.className = 'tma-grid-meta';
-        metaEl.textContent = `Tech Feed Watch • ${formatDateJS(video.date)}`;
-        info.appendChild(titleEl);
+        if (video.channelTitle) {
+          const src = document.createElement('span');
+          src.className = 'card-source';
+          src.textContent = video.channelTitle;
+          metaEl.appendChild(src);
+          metaEl.appendChild(document.createTextNode(' · '));
+        }
+        metaEl.appendChild(document.createTextNode(formatDateJS(video.date)));
         info.appendChild(metaEl);
 
         card.appendChild(thumb);
@@ -427,6 +575,18 @@ const vRest = pageOneVideos.slice(8);
 
       // Loading-skeleton: marker thumbnails som loadet, så shimmer stopper når billedet er hentet
       document.querySelectorAll('.watch-card-thumb img, .short-card-thumb img').forEach(markLoaded);
+
+      // Fade-maske i højre kant af tag-rækken fjernes når der ikke er mere at scrolle
+      const tagBar = document.getElementById('tagBar');
+      if (tagBar) {
+        const syncTagBarMask = () => {
+          const atEnd = tagBar.scrollLeft + tagBar.clientWidth >= tagBar.scrollWidth - 2;
+          tagBar.classList.toggle('at-end', atEnd);
+        };
+        syncTagBarMask();
+        tagBar.addEventListener('scroll', syncTagBarMask, { passive: true });
+        window.addEventListener('resize', syncTagBarMask);
+      }
     });
   </script>
 </MainLayout>

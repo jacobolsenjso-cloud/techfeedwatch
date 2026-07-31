@@ -2,6 +2,9 @@
 title: "SEO Fundamentals: The Foundation for AI Search & Web Trust"
 seoTitled: true
 youtubeId: "7Hk5uVv8JpM"
+channelTitle: "Google for Developers"
+channelId: "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+publishedAt: "2010-06-01T23:57:40Z"
 date: "2026-07-17"
 tags:
   - "SEO"

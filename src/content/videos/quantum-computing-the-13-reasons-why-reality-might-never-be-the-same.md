@@ -2,6 +2,9 @@
 title: "Quantum Computing: Exponential Power for Advanced Problems"
 seoTitled: true
 youtubeId: "OZeHj48g9Rc"
+channelTitle: "Top Niche Market"
+channelId: "UC-HSbErFoGmfOJ-tzc135_Q"
+publishedAt: "2025-03-23T23:34:09Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

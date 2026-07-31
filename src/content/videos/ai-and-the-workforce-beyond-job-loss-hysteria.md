@@ -2,6 +2,9 @@
 title: "AI Job Impact: New Professions & Required Skills, Not Loss"
 seoTitled: true
 youtubeId: "cJfKqKEyw1o"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2026-01-06T16:00:58Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

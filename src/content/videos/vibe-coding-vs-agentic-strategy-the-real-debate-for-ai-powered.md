@@ -2,6 +2,9 @@
 title: "AI-Powered Business Sites: Building for Strategic Automation"
 seoTitled: true
 youtubeId: "kvyNjg49Ad8"
+channelTitle: "Systems Made Better"
+channelId: "UCNZd3Osk_AIOxz2aydFYhHg"
+publishedAt: "2026-07-05T17:00:11Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

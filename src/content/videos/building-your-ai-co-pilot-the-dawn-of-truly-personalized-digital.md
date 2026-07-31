@@ -2,6 +2,9 @@
 title: "Personalized AI Digital Assistants: Custom Systems & Productivity"
 seoTitled: true
 youtubeId: "CvLkhGWZlvE"
+channelTitle: "AI Edge"
+channelId: "UC-PQKtrPhk3JXyjUleBLgQQ"
+publishedAt: "2026-05-14T19:57:57Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

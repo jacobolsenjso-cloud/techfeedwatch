@@ -2,6 +2,9 @@
 title: "Bitcoin Mining Explained: Security, Value, Energy Debate"
 seoTitled: true
 youtubeId: "lHipE05v4jg"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2025-01-17T14:00:54Z"
 date: "2026-07-25"
 tags:
   - "Crypto"

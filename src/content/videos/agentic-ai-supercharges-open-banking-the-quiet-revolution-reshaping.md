@@ -2,6 +2,9 @@
 title: "Agentic AI for Open Banking: Autonomous Finance & Data Privacy"
 seoTitled: true
 youtubeId: "U17g-GpdiLI"
+channelTitle: "AgentArum "
+channelId: "UC6bSWtvNndtRYA95VBat_DA"
+publishedAt: "2026-04-09T20:04:25Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

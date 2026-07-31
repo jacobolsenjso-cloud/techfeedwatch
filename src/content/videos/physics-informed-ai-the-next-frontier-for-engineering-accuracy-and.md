@@ -2,6 +2,9 @@
 title: "Physics-Informed AI for Engineering Accuracy, Science Discovery"
 seoTitled: true
 youtubeId: "JoFW2uSd3Uo"
+channelTitle: "Steve Brunton"
+channelId: "UCm5mt-A4w61lknZ9lCsZtBw"
+publishedAt: "2024-02-16T11:00:27Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

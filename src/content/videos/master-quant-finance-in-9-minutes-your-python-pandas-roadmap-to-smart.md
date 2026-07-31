@@ -2,6 +2,9 @@
 title: "Quant Finance with Python & Pandas for Data-Driven Investing"
 seoTitled: true
 youtubeId: "b9RgHa1CnH4"
+channelTitle: "Daniel Boctor"
+channelId: "UCWglcpI-xTAXb_QYecQ2O4g"
+publishedAt: "2023-08-17T13:00:28Z"
 date: "2026-07-11"
 tags:
   - "Coding"

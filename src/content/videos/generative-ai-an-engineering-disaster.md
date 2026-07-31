@@ -2,6 +2,9 @@
 title: "Generative AI: An Engineering Disaster"
 seoTitled: true
 youtubeId: "RbvreT8qu0w"
+channelTitle: "Mayank Chhaya"
+channelId: "UClhf3TakMAv4AE1OXMudtxg"
+publishedAt: "2026-07-20T13:09:23Z"
 date: "2026-07-20"
 tags:
   - "AI & Tech"

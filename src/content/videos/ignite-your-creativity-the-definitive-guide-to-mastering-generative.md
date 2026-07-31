@@ -2,6 +2,9 @@
 title: "Ignite Your Creativity: The Definitive Guide to Mastering Generative AI for Visual Storytelling"
 seoTitled: true
 youtubeId: "5MpKW68dcT8"
+channelTitle: "The AI Spark Studio"
+channelId: "UCJ_hVyPPOhIlVHAoN7wTeEg"
+publishedAt: "2026-07-11T16:46:35Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Monetize APIs: Strategic Usage-Based Models & Guide"
 seoTitled: true
 youtubeId: "MbqSMgMAzxU"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2021-10-28T17:07:02Z"
 date: "2026-07-24"
 tags:
   - "Business & Money"

@@ -2,6 +2,9 @@
 title: "EVMPath on FabricX: Secure Smart Contracts & Enhanced Privacy"
 seoTitled: true
 youtubeId: "qrmF3UgHzB8"
+channelTitle: "On The Block (by Espeo Software)"
+channelId: "UCMonZleKzOgmZd6joGFqS9A"
+publishedAt: "2026-07-14T17:00:25Z"
 date: "2026-07-15"
 tags:
   - "Crypto"

@@ -2,6 +2,9 @@
 title: "Open APIs & Metaverse: Reshaping Payments in Finance"
 seoTitled: true
 youtubeId: "m10_bmtJmvE"
+channelTitle: "Couchonomics with Arjun"
+channelId: "UCGvPk9BXIsM_BCRqnzkqy4Q"
+publishedAt: "2022-07-05T08:11:23Z"
 date: "2026-07-25"
 tags:
   - "Fintech"

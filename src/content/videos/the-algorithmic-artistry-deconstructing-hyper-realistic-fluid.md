@@ -2,6 +2,9 @@
 title: "Hyper-Realistic Fluid Simulation: Computational Methods & Realism"
 seoTitled: true
 youtubeId: "O-52enqUSNw"
+channelTitle: "Two Minute Papers"
+channelId: "UCbfYPyITQ-7l4upoX8nvctg"
+publishedAt: "2020-01-21T15:24:49Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

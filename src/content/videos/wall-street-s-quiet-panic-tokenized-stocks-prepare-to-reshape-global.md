@@ -2,6 +2,9 @@
 title: "Tokenized Stocks: SEC Eyes Exemption for Crypto Exchanges"
 seoTitled: true
 youtubeId: "gSCo1cy3FCc"
+channelTitle: "Yahoo Finance"
+channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"
+publishedAt: "2026-05-19T16:19:14Z"
 date: "2026-07-28"
 tags:
   - "Fintech"

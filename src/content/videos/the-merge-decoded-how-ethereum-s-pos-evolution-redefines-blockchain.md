@@ -2,6 +2,9 @@
 title: "Ethereum Merge: How PoS Boosts Security and Sustainability"
 seoTitled: true
 youtubeId: "8-czXYEpqvE"
+channelTitle: "Proof Of Tech"
+channelId: "UC6CwNfFy2lMLCLbgZDxPjig"
+publishedAt: "2026-07-15T22:44:07Z"
 date: "2026-07-15"
 tags:
   - "Crypto"

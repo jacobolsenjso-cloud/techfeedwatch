@@ -2,6 +2,9 @@
 title: "Digital Payment System Engineering: Security, Scale, Reliability"
 seoTitled: true
 youtubeId: "olfaBgJrUBI"
+channelTitle: "Code with Lucian"
+channelId: "UCfRoKBBToKjXolFYSDe7Y7g"
+publishedAt: "2023-01-11T09:55:32Z"
 date: "2026-07-15"
 tags:
   - "Fintech"

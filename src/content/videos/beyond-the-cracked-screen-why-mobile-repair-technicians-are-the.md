@@ -2,6 +2,9 @@
 title: "Beyond the Cracked Screen: Why Mobile Repair Technicians Are the Unsung Heroes of Our Digital Age"
 seoTitled: true
 youtubeId: "uqJq8Zj-szE"
+channelTitle: "new technology "
+channelId: "UCcLWBeiw--VNBvwPKG0Q9VQ"
+publishedAt: "2026-07-08T08:02:20Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

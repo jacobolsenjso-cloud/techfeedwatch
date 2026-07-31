@@ -2,6 +2,9 @@
 title: "Code Whisperer: Inside Anthropic's 100% AI-Assisted Development Revolution with Claude"
 seoTitled: true
 youtubeId: "73rlhJfADw0"
+channelTitle: "Nation Reports"
+channelId: "UCiwHsK7qjFEvynHDOB5-otA"
+publishedAt: "2026-07-09T15:40:27Z"
 date: "2026-07-09"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Smart Glasses: Ubiquitous Computing & Augmented Intelligence"
 seoTitled: true
 youtubeId: "gElClXpg4J0"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2025-04-18T15:01:12Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

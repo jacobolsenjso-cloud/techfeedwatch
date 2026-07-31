@@ -2,6 +2,9 @@
 title: "Stream Processing Finance: Transforms Trading Systems & Risk Mgmt"
 seoTitled: true
 youtubeId: "ICnFZ8L_Gbc"
+channelTitle: "Flink Forward"
+channelId: "UCY8_lgiZLZErZPF47a2hXMA"
+publishedAt: "2020-10-30T11:08:29Z"
 date: "2026-07-17"
 tags:
   - "Fintech"

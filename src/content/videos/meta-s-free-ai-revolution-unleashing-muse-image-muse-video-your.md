@@ -2,6 +2,9 @@
 title: "Meta AI: New Free Muse Image & Video Generation, Motion Control"
 seoTitled: true
 youtubeId: "epJiVrv4KVQ"
+channelTitle: "Theoretically Media"
+channelId: "UC9Ryt3XOGYBoAJVsBHNGDzA"
+publishedAt: "2026-07-08T19:28:07Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "SwapVM: JavaScript-Powered DeFi Swaps, No New Contracts"
 seoTitled: true
 youtubeId: "S93lkr1uL0Q"
+channelTitle: "Web3 Devs Underground"
+channelId: "UCRfgLdabcXDFKhv_BFazjYw"
+publishedAt: "2026-07-20T14:51:12Z"
 date: "2026-07-20"
 tags:
   - "Fintech"

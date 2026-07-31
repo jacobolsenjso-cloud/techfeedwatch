@@ -2,6 +2,9 @@
 title: "NVIDIA AI Strategy: Building Global AI Infrastructure & Factories"
 seoTitled: true
 youtubeId: "vif8NQcjVf0"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2026-03-23T16:24:14Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Local Business AI SEO: Build & Rank in Hours, Beat Traditional SEO"
 seoTitled: true
 youtubeId: "gWNFna6fgS8"
+channelTitle: "Greg Isenberg"
+channelId: "UCPjNBjflYl0-HQtUvOx0Ibw"
+publishedAt: "2025-08-04T18:00:40Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

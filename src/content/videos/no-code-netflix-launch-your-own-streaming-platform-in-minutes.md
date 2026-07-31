@@ -2,6 +2,9 @@
 title: "No Code Netflix? Launch Your Own Streaming Platform in Minutes"
 seoTitled: true
 youtubeId: "KHsdhV3slQk"
+channelTitle: "Movie Engine"
+channelId: "UCEqjg-6YfzT8GB2MMyT_DHg"
+publishedAt: "2026-07-05T12:17:40Z"
 date: "2026-07-11"
 tags:
   - "Business & Money"

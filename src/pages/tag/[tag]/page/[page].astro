@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../../../../layouts/MainLayout.astro'; 
 import FAQ from '../../../../components/FAQ.astro';
+// Alias, fordi 'tagSlug' allerede bruges som prop-navn i denne fil.
+import { tagSlug as toTagSlug } from '../../../../lib/tags';
 
 const PAGE_SIZE = 24;
 
@@ -24,7 +26,7 @@ export async function getStaticPaths() {
       .sort((a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
     const lastPage = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-    const tagSlug = tag.toLowerCase().replace(/\s+/g, '-');
+    const tagSlug = toTagSlug(tag);
 
     // Side 1 bor på /tag/[tag]; her genereres kun 2..lastPage
     for (let p = 2; p <= lastPage; p++) {

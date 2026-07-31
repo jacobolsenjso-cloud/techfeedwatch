@@ -2,6 +2,9 @@
 title: "Generate Niche Website with AI: Perplexity & Claude in Minutes"
 seoTitled: true
 youtubeId: "9EkTq9WeQZQ"
+channelTitle: "AI Content Creation"
+channelId: "UCi0XIIhG_dx3SyeEJeDOH6g"
+publishedAt: "2026-06-16T18:32:27Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

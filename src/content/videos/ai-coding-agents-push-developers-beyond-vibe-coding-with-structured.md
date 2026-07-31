@@ -2,6 +2,9 @@
 title: "AI Coding Agents: Structured Dev Replaces Vibe Coding"
 seoTitled: true
 youtubeId: "7cOAayWzYDY"
+channelTitle: "WorldofAI"
+channelId: "UC2WmuBuFq6gL08QYG-JjXKw"
+publishedAt: "2026-03-09T06:49:43Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

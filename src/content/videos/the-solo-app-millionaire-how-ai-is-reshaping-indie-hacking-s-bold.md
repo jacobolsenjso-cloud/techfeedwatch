@@ -2,6 +2,9 @@
 title: "AI for Indie Hackers: Build Solo Million-Dollar Apps"
 seoTitled: true
 youtubeId: "ggU7YANSojI"
+channelTitle: "Tech Builder Akash"
+channelId: "UCN7ZvBhjpuy-XozL2z1fnlQ"
+publishedAt: "2026-07-27T22:51:15Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

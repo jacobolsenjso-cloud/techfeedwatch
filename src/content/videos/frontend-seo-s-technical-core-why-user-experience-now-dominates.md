@@ -2,6 +2,9 @@
 title: "User Experience SEO: Core Web Vitals & Site Speed for Rankings"
 seoTitled: true
 youtubeId: "_w4uzUH1YeM"
+channelTitle: "Squareboat"
+channelId: "UCyUzPvikgKBYTfp4XBIbbOg"
+publishedAt: "2025-07-25T12:38:26Z"
 date: "2026-07-14"
 tags:
   - "SEO"

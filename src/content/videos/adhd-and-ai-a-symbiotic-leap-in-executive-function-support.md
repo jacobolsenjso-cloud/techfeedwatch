@@ -2,6 +2,9 @@
 title: "ADHD AI Solutions: Boost Executive Function & Independence"
 seoTitled: true
 youtubeId: "ZssxnYgc2wI"
+channelTitle: "Aaron Newcomer"
+channelId: "UCXym52jGe7cb5deJRWM3paw"
+publishedAt: "2026-03-25T12:01:02Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

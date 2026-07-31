@@ -2,6 +2,9 @@
 title: "AI Consciousness Myth: Why Current AI Lacks True Sentience"
 seoTitled: true
 youtubeId: "tJV-vdbZ388"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2026-05-08T15:01:48Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "My AI Caught Itself Lying: The Dawn of Self-Correcting, Ethical Media Bots"
 seoTitled: true
 youtubeId: "0AbIL2Ss4S4"
+channelTitle: "QuantumDynamX"
+channelId: "UCW-gK1tRAa_Chzc6B41mw4A"
+publishedAt: "2026-07-06T19:38:50Z"
 date: "2026-07-06"
 tags:
   - "AI Video"

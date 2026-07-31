@@ -2,6 +2,9 @@
 title: "NPTEL AI & Robotics: Week 0 Assignment Solutions for 2026"
 seoTitled: true
 youtubeId: "Wp8OkxnHckE"
+channelTitle: "About computer code "
+channelId: "UCX1WmZWbRae6zhrju3PZBvQ"
+publishedAt: "2026-07-22T00:37:18Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Search Strategies for Marketers: Win in AI-Powered Era"
 seoTitled: true
 youtubeId: "-8nM4ypUdUM"
+channelTitle: "AI4NTP (AI 4 Non Techy People)"
+channelId: "UC5edDDrIIqeayu8_CXBzKAg"
+publishedAt: "2026-05-22T00:55:23Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

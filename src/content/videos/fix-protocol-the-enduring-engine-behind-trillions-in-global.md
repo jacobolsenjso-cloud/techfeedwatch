@@ -2,6 +2,9 @@
 title: "FIX Protocol: Standardizing Communication in Electronic Trading"
 seoTitled: true
 youtubeId: "uZ8UEVhtPAo"
+channelTitle: "Coding Jesus (getcracked.io)"
+channelId: "UCgUxdfi_5-m67UDbrgcAFBg"
+publishedAt: "2020-12-23T13:49:05Z"
 date: "2026-07-17"
 tags:
   - "Fintech"

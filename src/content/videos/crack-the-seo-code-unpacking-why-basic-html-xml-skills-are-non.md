@@ -2,6 +2,9 @@
 title: "Basic HTML & XML Skills Essential for SEO Ranking Success"
 seoTitled: true
 youtubeId: "EPCXNgim5BQ"
+channelTitle: "👋  Yerain Abreu - SEO & Digital Marketing"
+channelId: "UCNnKioON9RcEX6KsYDs2q3w"
+publishedAt: "2021-10-28T01:17:49Z"
 date: "2026-07-11"
 tags:
   - "SEO"

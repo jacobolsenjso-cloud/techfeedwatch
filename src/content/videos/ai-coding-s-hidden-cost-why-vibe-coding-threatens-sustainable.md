@@ -2,6 +2,9 @@
 title: "AI Coding Problems: Vibe Coding Causes Technical Debt"
 seoTitled: true
 youtubeId: "T539pbwTIZY"
+channelTitle: "Modern Software Engineering"
+channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
+publishedAt: "2026-07-20T18:00:22Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

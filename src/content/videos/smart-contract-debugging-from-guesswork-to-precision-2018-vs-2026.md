@@ -1,6 +1,9 @@
 ---
 title: "Smart Contract Debugging: From Guesswork to Precision (2018 vs. 2026)"
 youtubeId: "P3Cy76SIexg"
+channelTitle: "Asia Tech Podcast Official"
+channelId: "UCcEKJT4mB_T-BV8cW-7yyQg"
+publishedAt: "2026-07-30T06:01:41Z"
 date: "2026-07-30"
 tags:
   - "Crypto"

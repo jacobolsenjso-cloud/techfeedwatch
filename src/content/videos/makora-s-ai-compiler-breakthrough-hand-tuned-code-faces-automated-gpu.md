@@ -2,6 +2,9 @@
 title: "Automated GPU AI Compiler Beats Hand-Tuned CUDA for LLMs"
 seoTitled: true
 youtubeId: "ukzACWrk0W0"
+channelTitle: "SemiAnalysis"
+channelId: "UCf_KhBXw5TIV0A7butjgFhg"
+publishedAt: "2026-05-27T22:15:06Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

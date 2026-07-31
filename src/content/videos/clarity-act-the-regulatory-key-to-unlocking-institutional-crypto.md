@@ -2,6 +2,9 @@
 title: "Institutional Crypto Regulatory Clarity Unlocks Trillions"
 seoTitled: true
 youtubeId: "zR3XAvr6uLw"
+channelTitle: "Yahoo Finance"
+channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"
+publishedAt: "2026-07-23T16:19:07Z"
 date: "2026-07-27"
 tags:
   - "Fintech"

@@ -2,6 +2,9 @@
 title: "Top 5 AI Jobs: High-Paying Careers Dominating 2026"
 seoTitled: true
 youtubeId: "NuedZx5jfRc"
+channelTitle: "TechVerse USA"
+channelId: "UCQL5BrpLvP4SscveUH-7wew"
+publishedAt: "2026-07-23T13:30:34Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

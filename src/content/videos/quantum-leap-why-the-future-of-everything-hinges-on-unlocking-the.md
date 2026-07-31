@@ -2,6 +2,9 @@
 title: "Quantum Computing: Transforming AI, Drug Discovery & Clean Energy"
 seoTitled: true
 youtubeId: "79kNOf749MA"
+channelTitle: "Future Business Tech"
+channelId: "UCGBO6EahCqQSyXIws1MQdDg"
+publishedAt: "2024-08-24T11:00:07Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

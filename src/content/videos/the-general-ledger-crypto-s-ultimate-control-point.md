@@ -2,6 +2,9 @@
 title: "The General Ledger: Crypto's Ultimate Control Point"
 seoTitled: true
 youtubeId: "Bsvgc-OWpKI"
+channelTitle: "Stabledash"
+channelId: "UC3YOoL5QsQ7DXnIM5cGH3PQ"
+publishedAt: "2026-07-13T17:00:13Z"
 date: "2026-07-13"
 tags:
   - "Fintech"

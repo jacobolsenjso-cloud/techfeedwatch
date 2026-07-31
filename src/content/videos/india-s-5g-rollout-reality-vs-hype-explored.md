@@ -2,6 +2,9 @@
 title: "India's 5G Rollout: Reality vs. Hype Explored"
 seoTitled: true
 youtubeId: "Mu4LG30-9AU"
+channelTitle: "Naitik"
+channelId: "UCNhk4vD0jd-FGnMMUvIZWsQ"
+publishedAt: "2026-07-18T13:30:04Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

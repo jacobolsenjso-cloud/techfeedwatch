@@ -2,6 +2,9 @@
 title: "Build in Public Software Development: Catalyst for Tech Innovation"
 seoTitled: true
 youtubeId: "Jv2tZj8Cs8U"
+channelTitle: "Vibe Through Code"
+channelId: "UCop7C-23lYcAEVbfCsLzZUw"
+publishedAt: "2026-07-28T02:50:37Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

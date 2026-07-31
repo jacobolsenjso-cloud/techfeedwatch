@@ -2,6 +2,9 @@
 title: "AI Forecasts 2026: Competition, Open Models, Fragmented Future"
 seoTitled: true
 youtubeId: "EV7WhVT270Q"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2026-01-31T22:33:33Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

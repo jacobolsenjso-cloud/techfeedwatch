@@ -2,6 +2,9 @@
 title: "Education Reimagined: How AI Will Transform Schools and Learning by 2050"
 seoTitled: true
 youtubeId: "Yv7RvGtqkH8"
+channelTitle: " Zynovara"
+channelId: "UCwRDBUlf3ACe4ixUJEI08mg"
+publishedAt: "2026-07-10T16:27:22Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

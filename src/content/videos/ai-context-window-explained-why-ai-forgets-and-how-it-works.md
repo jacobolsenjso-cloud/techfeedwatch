@@ -2,6 +2,9 @@
 title: "AI Context Window Explained: Why AI Forgets and How It Works"
 seoTitled: true
 youtubeId: "Ry6RmKQ1I20"
+channelTitle: "QuickSolve AI"
+channelId: "UCxx5WLl0G70Nns7JvrBTwJw"
+publishedAt: "2026-07-17T05:30:10Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

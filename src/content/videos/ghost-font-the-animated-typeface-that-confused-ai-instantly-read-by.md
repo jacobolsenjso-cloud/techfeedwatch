@@ -2,6 +2,9 @@
 title: "Ghost Font: The Animated Typeface That Confused AI, Instantly Read by Humans"
 seoTitled: true
 youtubeId: "I4nFtAkvvpc"
+channelTitle: "Insider Entirety"
+channelId: "UC8mr-CZmkYzUuX9NJs1bT7w"
+publishedAt: "2026-07-14T09:42:13Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Digital Banks UAE: Zand Disrupts Traditional Banking Models"
 seoTitled: true
 youtubeId: "N0CRAhi4qo0"
+channelTitle: "Couchonomics with Arjun"
+channelId: "UCGvPk9BXIsM_BCRqnzkqy4Q"
+publishedAt: "2022-06-10T09:35:51Z"
 date: "2026-07-17"
 tags:
   - "Fintech"

@@ -2,6 +2,9 @@
 title: "Blockchain Oracles: Essential for Real-World Smart Contracts"
 seoTitled: true
 youtubeId: "m64dLRjJ9Bs"
+channelTitle: "Hashoshi"
+channelId: "UCQNHKsYDGlWefzv9MAaOJGA"
+publishedAt: "2019-11-12T19:03:14Z"
 date: "2026-07-14"
 tags:
   - "Crypto"

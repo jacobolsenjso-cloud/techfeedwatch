@@ -2,6 +2,9 @@
 title: "Quantum AI for LLMs: Near-Term Impact & Training Challenges"
 seoTitled: true
 youtubeId: "sQSQBYHR0ms"
+channelTitle: "Caleb Writes Code"
+channelId: "UCuU9jE4MHHEIyYMbDfUPSew"
+publishedAt: "2025-10-19T17:46:02Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

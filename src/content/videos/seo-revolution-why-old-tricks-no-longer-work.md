@@ -2,6 +2,9 @@
 title: "SEO REVOLUTION: Why Old Tricks NO LONGER Work!"
 seoTitled: true
 youtubeId: "Kn5X9IzJlTU"
+channelTitle: "josh bachynski"
+channelId: "UC_VoVYVFhtWDhYYXSiYQbNA"
+publishedAt: "2026-07-17T16:34:23Z"
 date: "2026-07-18"
 tags:
   - "SEO"

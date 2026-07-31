@@ -2,6 +2,9 @@
 title: "AI Web App Development: Prompt to Rapid Full-Stack Deployment"
 seoTitled: true
 youtubeId: "Id5MsznWGwM"
+channelTitle: "Avra"
+channelId: "UCDMP6ATYKNXMvn2ok1gfM7Q"
+publishedAt: "2024-09-05T12:28:25Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

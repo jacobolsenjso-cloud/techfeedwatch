@@ -1,6 +1,9 @@
 ---
 title: "Free AI Video Generators: Democratizing Content Creation"
 youtubeId: "FcDu2vdhUmg"
+channelTitle: "Malva AI"
+channelId: "UCv3ZocWMnZw3aljHs4irOzA"
+publishedAt: "2026-07-24T10:36:42Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

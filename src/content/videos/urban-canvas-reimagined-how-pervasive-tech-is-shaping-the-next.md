@@ -2,6 +2,9 @@
 title: "Future Cities: Pervasive AI Tech Shaping Next-Gen Urban Environments"
 seoTitled: true
 youtubeId: "Fm4kPJpKcrM"
+channelTitle: "Deepfake Reality"
+channelId: "UC96dpXWJ9dn1otPQmzvijgw"
+publishedAt: "2026-07-23T08:49:58Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

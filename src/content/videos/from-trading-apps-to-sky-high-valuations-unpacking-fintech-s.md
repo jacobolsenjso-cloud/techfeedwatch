@@ -2,6 +2,9 @@
 title: "FinTech Regulation: Investor Protection, AI, Trading, SPAC Risks"
 seoTitled: true
 youtubeId: "cu39xXhCnj0"
+channelTitle: "Moor Insights & Strategy"
+channelId: "UC8fY_kIR5AqTmafpAzOjQ2g"
+publishedAt: "2021-05-22T06:56:38Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

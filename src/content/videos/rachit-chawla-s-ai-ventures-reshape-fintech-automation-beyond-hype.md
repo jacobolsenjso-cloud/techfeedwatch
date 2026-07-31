@@ -2,6 +2,9 @@
 title: "AI Algorithmic Trading Reshapes Fintech Capital Markets"
 seoTitled: true
 youtubeId: "XzYP5_K90q8"
+channelTitle: "Shouryaa Sharma"
+channelId: "UChk8zLux9-9orhTa4Affn6A"
+publishedAt: "2023-05-06T08:15:26Z"
 date: "2026-07-17"
 tags:
   - "Fintech"

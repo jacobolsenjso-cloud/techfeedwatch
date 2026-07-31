@@ -2,6 +2,9 @@
 title: "Virtual Reality Beyond Gaming: Enterprise, Education, Training"
 seoTitled: true
 youtubeId: "sYz8D_ZbB2I"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2019-01-02T05:32:23Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

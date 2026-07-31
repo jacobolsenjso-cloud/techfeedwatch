@@ -2,6 +2,9 @@
 title: "Google's AI 'Anti-gravity' Reimagines Workflows with Notebook LM: Days to Seconds"
 seoTitled: true
 youtubeId: "by0SxdYc0qE"
+channelTitle: "Julian Goldie SEO"
+channelId: "UCGpsgNbzdF7BECCVbB1COHw"
+publishedAt: "2026-05-29T05:00:36Z"
 duration: "0:42"
 date: "2026-06-12"
 tags:

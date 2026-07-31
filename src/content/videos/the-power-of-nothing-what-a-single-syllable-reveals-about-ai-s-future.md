@@ -2,6 +2,9 @@
 title: "The Power of Nothing: What a Single Syllable Reveals About AI's Future"
 seoTitled: true
 youtubeId: "zB6j7BYLdDo"
+channelTitle: "SkyElite Drones"
+channelId: "UC1aKExgz787cH65GwlYwkzQ"
+publishedAt: "2026-06-02T19:30:25Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

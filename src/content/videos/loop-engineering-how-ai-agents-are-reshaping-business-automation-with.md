@@ -2,6 +2,9 @@
 title: "AI Agent Loops Automate Business: Self-Optimizing LLMs"
 seoTitled: true
 youtubeId: "5p_BBdfvzgQ"
+channelTitle: "Greg Isenberg"
+channelId: "UCPjNBjflYl0-HQtUvOx0Ibw"
+publishedAt: "2026-07-13T18:15:22Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

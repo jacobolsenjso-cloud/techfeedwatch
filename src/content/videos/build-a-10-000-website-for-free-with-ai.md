@@ -2,6 +2,9 @@
 title: "Build a $10,000 Website for Free with AI"
 seoTitled: true
 youtubeId: "jLa5-BqsG10"
+channelTitle: "Triviqo⭐"
+channelId: "UCDHaKumoCGvaoY6V9lGPpXw"
+publishedAt: "2026-07-23T15:00:27Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

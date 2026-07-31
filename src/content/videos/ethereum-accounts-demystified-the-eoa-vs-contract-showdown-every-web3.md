@@ -2,6 +2,9 @@
 title: "Ethereum Accounts: EOA vs Contract, Key Differences"
 seoTitled: true
 youtubeId: "1Bp2KritrvQ"
+channelTitle: "CodeLucky"
+channelId: "UCFMdEr1H3hhCIdoKwsK80Tw"
+publishedAt: "2025-10-13T18:37:54Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

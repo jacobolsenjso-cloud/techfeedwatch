@@ -2,6 +2,9 @@
 title: "Smart Contracts Reshape Industries: Real-World Use & Efficiency"
 seoTitled: true
 youtubeId: "l-sTw136zAs"
+channelTitle: "Lex Clips"
+channelId: "UCJIfeSCssxSC_Dhc5s7woww"
+publishedAt: "2021-05-04T11:00:34Z"
 date: "2026-07-11"
 tags:
   - "Crypto"

@@ -2,6 +2,9 @@
 title: "Notebook LM Hacks: 10 Tips for Advanced AI Workflow Power"
 seoTitled: true
 youtubeId: "gTGAkxx4ItU"
+channelTitle: "Ai Podcast "
+channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
+publishedAt: "2026-06-20T13:06:11Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

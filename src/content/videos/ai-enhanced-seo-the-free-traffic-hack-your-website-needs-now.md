@@ -2,6 +2,9 @@
 title: "AI-Enhanced SEO: The Free Traffic Hack Your Website Needs Now!"
 seoTitled: true
 youtubeId: "ud0Ne7efqMU"
+channelTitle: "Marketing Shorts"
+channelId: "UCk-qPOfCX_J4aI8RE_a_KzQ"
+publishedAt: "2021-09-21T02:16:40Z"
 date: "2026-06-22"
 tags:
   - "SEO"

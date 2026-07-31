@@ -2,6 +2,9 @@
 title: "Andrew Ng AI Education: Practical Deep Learning for Developers"
 seoTitled: true
 youtubeId: "0jspaMLxBig"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2020-02-20T17:16:01Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

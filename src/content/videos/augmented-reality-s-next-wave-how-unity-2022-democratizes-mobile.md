@@ -2,6 +2,9 @@
 title: "Mobile AR Development: Unity 2022 Makes It Accessible & Free"
 seoTitled: true
 youtubeId: "gpaq5bAjya8"
+channelTitle: "Playful Technology"
+channelId: "UCF8H7dYHK6AvJF0EVonO3cw"
+publishedAt: "2022-06-27T20:06:48Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Web3 Smart Contract Development with AI & Blockchain"
 seoTitled: true
 youtubeId: "umepbfKp5rI"
+channelTitle: "Patrick Collins"
+channelId: "UCn-3f8tw_E1jZvhuHatROwA"
+publishedAt: "2023-06-07T13:14:12Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

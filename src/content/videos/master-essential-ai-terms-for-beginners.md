@@ -2,6 +2,9 @@
 title: "Master Essential AI Terms for Beginners"
 seoTitled: true
 youtubeId: "Tz6BdnUqmaQ"
+channelTitle: "Learn with Vijya Tulsani"
+channelId: "UCrWVhZcSx1LeRsnhkJMVVmg"
+publishedAt: "2026-07-16T09:47:36Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

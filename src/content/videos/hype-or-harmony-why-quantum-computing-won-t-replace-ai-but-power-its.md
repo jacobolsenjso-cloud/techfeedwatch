@@ -2,6 +2,9 @@
 title: "Quantum Computing Powers AI: Hybrid Future, Not Replacement"
 seoTitled: true
 youtubeId: "89gnHLDnOdE"
+channelTitle: "Technology Warp"
+channelId: "UCyirhZjv2lYD4K93URXFU5g"
+publishedAt: "2026-07-11T00:08:22Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Why a Rural Roti Maker Is the Ultimate 'AI Story' You Haven't Heard Yet"
 seoTitled: true
 youtubeId: "oSGibWVgGM4"
+channelTitle: "AI Aasha "
+channelId: "UC1xXUbPcRSWks092_uupZqQ"
+publishedAt: "2026-07-07T08:38:52Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

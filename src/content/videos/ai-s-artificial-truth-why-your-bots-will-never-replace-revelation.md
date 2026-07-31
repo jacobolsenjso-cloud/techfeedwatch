@@ -2,6 +2,9 @@
 title: "AI Limitations: Bots Will Never Replace Human Revelation"
 seoTitled: true
 youtubeId: "sNF_1PIEda0"
+channelTitle: "Larry Ollison Ministries"
+channelId: "UClhrXTvEZVsdMLP7SfmxuyA"
+publishedAt: "2026-06-29T22:46:01Z"
 date: "2026-06-29"
 tags:
   - "AI & Tech"

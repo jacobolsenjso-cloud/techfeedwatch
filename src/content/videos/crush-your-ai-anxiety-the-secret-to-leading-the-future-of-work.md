@@ -2,6 +2,9 @@
 title: "Crush Your AI Anxiety: The Secret to Leading the Future of Work Without Code"
 seoTitled: true
 youtubeId: "pZbgtTNSrpM"
+channelTitle: "Turn the Lens with Jeff Frick"
+channelId: "UCC-pC87Av9JA4D-fPVjsSqQ"
+publishedAt: "2026-07-12T16:16:23Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

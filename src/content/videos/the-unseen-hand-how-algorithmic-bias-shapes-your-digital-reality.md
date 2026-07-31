@@ -2,6 +2,9 @@
 title: "Algorithmic Bias: How It Skews Search Results and Online Information"
 seoTitled: true
 youtubeId: "_vBggxCNNno"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2015-12-07T16:42:25Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

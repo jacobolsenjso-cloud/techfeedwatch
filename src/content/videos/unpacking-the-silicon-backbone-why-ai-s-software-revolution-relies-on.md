@@ -2,6 +2,9 @@
 title: "AI Hardware & Chips: Nvidia's Dominance Powers Generative AI"
 seoTitled: true
 youtubeId: "-s_Ui5j0Guw"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2023-08-16T17:00:00Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

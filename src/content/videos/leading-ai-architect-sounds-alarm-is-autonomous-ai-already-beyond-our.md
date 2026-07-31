@@ -2,6 +2,9 @@
 title: "Autonomous AI Control Loss: Bengio Warns of Existential Risk"
 seoTitled: true
 youtubeId: "qe9QSCF-d88"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2025-05-21T15:01:24Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

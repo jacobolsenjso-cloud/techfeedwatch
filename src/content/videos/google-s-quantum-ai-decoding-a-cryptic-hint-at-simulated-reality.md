@@ -2,6 +2,9 @@
 title: "Google Quantum AI Explores Simulated Reality Theory"
 seoTitled: true
 youtubeId: "pIj-oBWJzS0"
+channelTitle: "OrbitraX History"
+channelId: "UC-j8zJk-Z2f5KLeRhFnlTvA"
+publishedAt: "2026-07-10T23:00:03Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

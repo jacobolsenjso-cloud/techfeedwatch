@@ -2,6 +2,9 @@
 title: "Beyond Basic Bio Links: How No-Code Tools Like Canva Are Shaping Digital Presence in the AI Era"
 seoTitled: true
 youtubeId: "EY8UWm5XwFk"
+channelTitle: "LINDSEY | Digital Marketing."
+channelId: "UCEwsk4NlZTcl_cxc3rc3z5w"
+publishedAt: "2023-05-09T17:08:37Z"
 date: "2026-06-15"
 tags:
   - "Productivity"

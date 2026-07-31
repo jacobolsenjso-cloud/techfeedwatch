@@ -2,6 +2,9 @@
 title: "I Built JARVIS! How Arduino, 3D Printing, and AI Bring the Iron Man Dream to Life"
 seoTitled: true
 youtubeId: "ecXpyw06p0I"
+channelTitle: "Technocrafts"
+channelId: "UCK3jrqgLmzcMWnBHC1fX3wA"
+publishedAt: "2026-07-11T08:59:44Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

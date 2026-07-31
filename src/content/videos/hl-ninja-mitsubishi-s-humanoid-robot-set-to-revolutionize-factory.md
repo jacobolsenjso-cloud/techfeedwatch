@@ -2,6 +2,9 @@
 title: "HL Ninja: Mitsubishi's Humanoid Robot Set to Revolutionize Factory Floors"
 seoTitled: true
 youtubeId: "WHkkLea8ga4"
+channelTitle: "Kalil 4.0"
+channelId: "UC00LYrodHro2ho2PkmhwLig"
+publishedAt: "2026-07-09T15:59:01Z"
 date: "2026-07-09"
 tags:
   - "AI & Tech"

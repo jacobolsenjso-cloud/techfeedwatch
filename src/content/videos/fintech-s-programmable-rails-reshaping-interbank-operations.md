@@ -2,6 +2,9 @@
 title: "Fintech's Programmable Rails: Reshaping Interbank Operations"
 seoTitled: true
 youtubeId: "bqE67Que5RI"
+channelTitle: "Wealth Academy"
+channelId: "UCn9MGnr_gaf3RwOp5HRPjHw"
+publishedAt: "2026-07-06T00:00:13Z"
 date: "2026-07-15"
 tags:
   - "Fintech"

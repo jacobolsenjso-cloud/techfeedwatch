@@ -2,6 +2,9 @@
 title: "Linus Torvalds: AI in Programming, LLMs, Code Quality, Risks"
 seoTitled: true
 youtubeId: "VHHT6W-N0ak"
+channelTitle: "Mastery Learning"
+channelId: "UCZoBjunTdzzT-HVI-Tb4xiw"
+publishedAt: "2024-01-17T21:37:27Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

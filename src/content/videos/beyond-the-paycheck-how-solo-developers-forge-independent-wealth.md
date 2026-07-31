@@ -2,6 +2,9 @@
 title: "Solo Developers: Build Independent Wealth Creating Software"
 seoTitled: true
 youtubeId: "A4_TFHzqAAg"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2023-05-19T15:46:56Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

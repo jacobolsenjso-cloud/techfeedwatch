@@ -2,6 +2,9 @@
 title: "Institutional Crypto Reshaping Market: Wall Street's Utility Push"
 seoTitled: true
 youtubeId: "G87Vy-dZbdw"
+channelTitle: "Yahoo Finance"
+channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"
+publishedAt: "2026-07-27T16:38:53Z"
 date: "2026-07-28"
 tags:
   - "Crypto"

@@ -2,6 +2,9 @@
 title: "Hybrid Quantum-Classical Supercomputing Solves Intractable Problems"
 seoTitled: true
 youtubeId: "HgXqbnSxtZQ"
+channelTitle: "HPC Knowledge Portal"
+channelId: "UCy2wVPPOIttCsFCsGymAWoA"
+publishedAt: "2026-07-23T10:31:29Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

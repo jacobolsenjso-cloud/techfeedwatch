@@ -2,6 +2,9 @@
 title: "Beyond the Guava: How Simple AI Animations Are Redefining Content Creation & Localized Storytelling"
 seoTitled: true
 youtubeId: "Gl5aOocpKO4"
+channelTitle: "Voice Of Anu"
+channelId: "UCBbHJJa1LYBnynvPvFPfOKA"
+publishedAt: "2026-07-08T13:30:11Z"
 date: "2026-07-08"
 tags:
   - "AI Video"

@@ -2,6 +2,9 @@
 title: "Why AI Won't Reach Human Reasoning: 3 AGI Design Flaws"
 seoTitled: true
 youtubeId: "984qBh164fo"
+channelTitle: "Sabine Hossenfelder"
+channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
+publishedAt: "2025-10-19T15:00:15Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

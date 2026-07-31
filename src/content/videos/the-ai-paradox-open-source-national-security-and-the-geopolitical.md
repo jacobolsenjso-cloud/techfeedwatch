@@ -2,6 +2,9 @@
 title: "AI Open Source vs National Security: Geopolitical Challenges"
 seoTitled: true
 youtubeId: "f2E5iQMZxvM"
+channelTitle: "Virtual Protocol"
+channelId: "UCj_hvdRNIeZ3NlJVPAfg4Tw"
+publishedAt: "2026-07-26T15:45:12Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

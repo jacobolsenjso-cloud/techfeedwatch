@@ -2,6 +2,9 @@
 title: "Developer Growth: Avoid Intuitive Coding & AI Pitfalls"
 seoTitled: true
 youtubeId: "ya6520zh4pQ"
+channelTitle: "DevForge"
+channelId: "UCLSW9SNdisXSBkdMRODwLfQ"
+publishedAt: "2026-02-11T07:53:54Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

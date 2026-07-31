@@ -2,6 +2,9 @@
 title: "Revolutionary Metasurface Creates Live, Interactive Holograms"
 seoTitled: true
 youtubeId: "RWg3FWssSDw"
+channelTitle: "uncover reality"
+channelId: "UCBeZEJAJ2AvUpIUKl-fTnMQ"
+publishedAt: "2026-07-22T09:10:03Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

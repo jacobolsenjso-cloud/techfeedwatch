@@ -2,6 +2,9 @@
 title: "Learn Practical AI Skills in 29 Min for 2025 Productivity"
 seoTitled: true
 youtubeId: "9c7zh2MkslY"
+channelTitle: "Futurepedia"
+channelId: "UC_RovKmk0OCbuZjA8f08opw"
+publishedAt: "2025-07-31T18:50:11Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

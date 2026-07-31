@@ -2,6 +2,9 @@
 title: "AI SEO Strategy: Automating Tasks, Human Oversight for Rankings"
 seoTitled: true
 youtubeId: "yCxlgCkw7as"
+channelTitle: "GoldieAgencySEO"
+channelId: "UCWyDll8EeWuHfTCfm7VnR_A"
+publishedAt: "2026-04-10T19:28:54Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

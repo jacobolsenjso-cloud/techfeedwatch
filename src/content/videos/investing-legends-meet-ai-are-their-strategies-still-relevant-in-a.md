@@ -2,6 +2,9 @@
 title: "Traditional Investment Strategies & AI: Relevance in Quant Markets"
 seoTitled: true
 youtubeId: "q1tLnU_UzUg"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2025-02-25T14:01:03Z"
 date: "2026-07-25"
 tags:
   - "Business & Money"

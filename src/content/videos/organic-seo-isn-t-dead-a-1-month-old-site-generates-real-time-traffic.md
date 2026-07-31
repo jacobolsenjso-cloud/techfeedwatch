@@ -2,6 +2,9 @@
 title: "Organic SEO Isn't Dead: A 1-Month-Old Site Generates Real-Time Traffic!"
 seoTitled: true
 youtubeId: "RL8sinwhPh8"
+channelTitle: "WP SANJEET"
+channelId: "UC-j9lBtoDlrx7F7otNZjI-w"
+publishedAt: "2025-09-27T07:08:19Z"
 date: "2026-06-29"
 tags:
   - "SEO"

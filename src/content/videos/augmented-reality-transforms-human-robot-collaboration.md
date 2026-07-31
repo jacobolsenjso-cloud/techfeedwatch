@@ -2,6 +2,9 @@
 title: "Augmented Reality Transforms Human-Robot Collaboration"
 seoTitled: true
 youtubeId: "TSl2ryztxVg"
+channelTitle: "Australian Cobotics Centre"
+channelId: "UCZgFgqrkzkfAyW3xKaZ3s9Q"
+publishedAt: "2026-07-16T06:18:23Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

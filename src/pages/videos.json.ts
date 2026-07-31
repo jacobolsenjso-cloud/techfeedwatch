@@ -16,6 +16,8 @@ export const GET: APIRoute = () => {
         duration: video.frontmatter.duration,
         isShort: video.frontmatter.isShort,
         summary: video.frontmatter.summary || '',
+        // Kildeangivelse, så klient-renderede kort kan kreditere den rigtige kanal
+        channelTitle: video.frontmatter.channelTitle || '',
         tags,
       };
     })

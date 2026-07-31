@@ -2,6 +2,9 @@
 title: "The AI Paradox: Why the Most Expensive Model Just Lost to a Cheaper Rival – And What It Means For Your Bottom Line"
 seoTitled: true
 youtubeId: "YLdLaqTXc_o"
+channelTitle: "Himanshu Chawla"
+channelId: "UCNsd5cElqRz3BLXBWRf068g"
+publishedAt: "2026-07-08T20:43:53Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Generative Engine Optimization (GEO) Replaces SEO for AI Search"
 seoTitled: true
 youtubeId: "46vC7-BwJ_o"
+channelTitle: "Zubair Trabzada | AI Workshop"
+channelId: "UC2b2wgxm0vFjQfJJ0iRcFRw"
+publishedAt: "2026-03-23T14:00:10Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

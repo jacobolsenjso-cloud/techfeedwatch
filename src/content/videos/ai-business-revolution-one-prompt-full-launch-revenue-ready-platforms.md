@@ -2,6 +2,9 @@
 title: "AI Business Creation: One Prompt to Revenue-Ready Online Business"
 seoTitled: true
 youtubeId: "CILRCeupuFQ"
+channelTitle: "Odetta Rockhead"
+channelId: "UCCkgwbNGfabPtfGFlWOaJfQ"
+publishedAt: "2026-05-31T15:00:07Z"
 date: "2026-06-12"
 tags:
   - "AI & Tech"

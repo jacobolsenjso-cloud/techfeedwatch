@@ -176,6 +176,29 @@ async function run() {
     let isShort = false;
     let youtubeTitle = null;
 
+    // Kildeangivelse hentes ALTID (uafhængigt af Plan A/B), så hver artikel kan
+    // kreditere den oprindelige kanal. Fejler dette, fortsætter vi uden kilde.
+    let channelTitle = null;
+    let channelId = null;
+    let publishedAt = null;
+    try {
+      const metaKey = process.env.YOUTUBE_API_KEY;
+      if (metaKey) {
+        const metaUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${metaKey}`;
+        const metaRes = await fetch(metaUrl);
+        const metaData = await metaRes.json();
+        const sn = metaData.items?.[0]?.snippet;
+        if (sn) {
+          channelTitle = sn.channelTitle || null;
+          channelId = sn.channelId || null;
+          publishedAt = sn.publishedAt || null;
+          console.log(`Info: Kilde fundet — ${channelTitle}`);
+        }
+      }
+    } catch (metaError) {
+      console.log(`⚠️ Kunne ikke hente kanalinfo: ${metaError.message}`);
+    }
+
     try {
       // PLAN A: Prøv at hente undertekster
       const transcript = await YoutubeTranscript.fetchTranscript(videoId);
@@ -358,7 +381,13 @@ async function run() {
 
     const metaYaml = (!isShort && safeMeta) ? `metaDescription: ${toYamlDoubleQuoted(safeMeta)}\n` : "";
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\ndate: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    // Kildeangivelse — udelades hvis YouTube ikke gav os data
+    const sourceYaml =
+      (channelTitle ? `channelTitle: ${toYamlDoubleQuoted(channelTitle)}\n` : "") +
+      (channelId ? `channelId: ${toYamlDoubleQuoted(channelId)}\n` : "") +
+      (publishedAt ? `publishedAt: ${toYamlDoubleQuoted(publishedAt)}\n` : "");
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

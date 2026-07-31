@@ -2,6 +2,9 @@
 title: "SaaS AI SEO: Data Scraping for AI Model Visibility Strategy"
 seoTitled: true
 youtubeId: "RIKeDA9t2uA"
+channelTitle: "Yaron Been"
+channelId: "UCuCwMz8aMJBFfhDnYicfdjg"
+publishedAt: "2026-05-29T11:00:12Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

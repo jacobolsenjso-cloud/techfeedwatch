@@ -2,6 +2,9 @@
 title: "AR Contact Lenses: The Future Beyond Smartphones"
 seoTitled: true
 youtubeId: "U2r46VfF3nk"
+channelTitle: "The Static Frontier"
+channelId: "UCsPfjj-EGZjZ9jEM2SKENqQ"
+publishedAt: "2026-07-22T21:44:38Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

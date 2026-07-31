@@ -2,6 +2,9 @@
 title: "Apple's Secret Wearable, XR Surgery & Smart Home Wars"
 seoTitled: true
 youtubeId: "201QokU4uAc"
+channelTitle: "TechTrendsToday"
+channelId: "UC_JE3l6GOUIvL71_RqbiHGw"
+publishedAt: "2026-07-12T23:00:18Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

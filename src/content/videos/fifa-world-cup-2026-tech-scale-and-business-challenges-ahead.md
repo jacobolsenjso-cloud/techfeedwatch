@@ -1,6 +1,9 @@
 ---
 title: "FIFA World Cup 2026: Tech, Scale, and Business Challenges Ahead"
 youtubeId: "z78E0D_RlLw"
+channelTitle: "DW News"
+channelId: "UCknLrEdhRCp1aegoMqRaCZg"
+publishedAt: "2026-06-06T04:15:10Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

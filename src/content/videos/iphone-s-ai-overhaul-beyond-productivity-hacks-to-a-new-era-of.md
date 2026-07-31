@@ -2,6 +2,9 @@
 title: "iPhone AI Productivity Machine: Personalized Tasks Automation"
 seoTitled: true
 youtubeId: "iCUB7JZmmig"
+channelTitle: "Better Creating"
+channelId: "UCdKvOz1yqCbty9TwmEUQSiA"
+publishedAt: "2026-04-18T17:00:00Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI for Small Businesses: Andrew Ng on Democratizing AI"
 seoTitled: true
 youtubeId: "reUZRyXxUs4"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2022-10-13T11:00:35Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

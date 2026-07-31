@@ -2,6 +2,9 @@
 title: "How to Invest Savings: Wealth Building Strategies for Beginners"
 seoTitled: true
 youtubeId: "aQq-pRAEtzU"
+channelTitle: "𝗙𝗶𝗻𝗠𝗶𝗻𝘁𝘅"
+channelId: "UC1nZDW4jxVcJUWHZmKJLlig"
+publishedAt: "2026-06-11T00:30:38Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

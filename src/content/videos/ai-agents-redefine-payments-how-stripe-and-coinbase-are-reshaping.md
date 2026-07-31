@@ -2,6 +2,9 @@
 title: "AI Agent Payments Redefine Commerce with Stripe, Coinbase"
 seoTitled: true
 youtubeId: "I-BRrCkz-F4"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2026-04-30T14:00:32Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

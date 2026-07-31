@@ -2,6 +2,9 @@
 title: "DeepMind AI Revolutionizes Scientific Discovery Today"
 seoTitled: true
 youtubeId: "JNyuX1zoOgU"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2026-04-29T14:00:34Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

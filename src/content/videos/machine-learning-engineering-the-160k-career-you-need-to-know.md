@@ -2,6 +2,9 @@
 title: "Machine Learning Engineering: The $160K+ Career You Need to Know"
 seoTitled: true
 youtubeId: "gI6FprB-T9U"
+channelTitle: "Series of Thoughts"
+channelId: "UC_-ZwGxVDnrYgRFFGKhsXfg"
+publishedAt: "2026-07-18T08:53:05Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

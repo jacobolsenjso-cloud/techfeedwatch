@@ -2,6 +2,9 @@
 title: "SEO & Developers Team Up for Performance & Discoverability"
 seoTitled: true
 youtubeId: "Ednegcd0jNE"
+channelTitle: "Google Search Central"
+channelId: "UCWf2ZlNsCGDS89VBF_awNvA"
+publishedAt: "2021-12-15T14:00:13Z"
 date: "2026-07-12"
 tags:
   - "SEO"

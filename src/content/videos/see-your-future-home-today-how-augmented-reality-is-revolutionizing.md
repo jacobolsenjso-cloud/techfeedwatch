@@ -2,6 +2,9 @@
 title: "Augmented Reality Interior Design: Visualize Your Home Space"
 seoTitled: true
 youtubeId: "YSUpB3z8NHc"
+channelTitle: "Ambiens"
+channelId: "UCkqMEDTMuARl75aCK5T5ryA"
+publishedAt: "2020-10-31T09:00:11Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Rich Snippets Await: Master Structured Data Testing with Schema.org"
 seoTitled: true
 youtubeId: "meTID45bmwk"
+channelTitle: "HowFlow Hub"
+channelId: "UC_GzwrS06RvLa2xHWLa3yYQ"
+publishedAt: "2026-06-20T06:36:14Z"
 date: "2026-07-12"
 tags:
   - "SEO"

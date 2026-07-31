@@ -2,6 +2,9 @@
 title: "Viral by Design: How AI Animation is Redefining Short-Form Storytelling"
 seoTitled: true
 youtubeId: "aqv2HJW6uTk"
+channelTitle: "@SAMAD YT KING"
+channelId: "UCRsSKu8_glPdFFtBOfNhsMQ"
+publishedAt: "2026-07-07T17:40:27Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

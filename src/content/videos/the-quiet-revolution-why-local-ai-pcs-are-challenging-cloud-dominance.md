@@ -2,6 +2,9 @@
 title: "Local AI PCs Build: High-VRAM GPU & PCIe 5.0 for LLMs"
 seoTitled: true
 youtubeId: "ebqX46CHTaY"
+channelTitle: "ScatterVolt"
+channelId: "UCl6ulw6cn3npwxkg_56Ee_w"
+publishedAt: "2026-07-17T17:06:12Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

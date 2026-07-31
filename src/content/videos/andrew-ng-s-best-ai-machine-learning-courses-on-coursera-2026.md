@@ -2,6 +2,9 @@
 title: "Andrew Ng's Best AI & Machine Learning Courses on Coursera (2026)"
 seoTitled: true
 youtubeId: "kaJJ_2_j5Kg"
+channelTitle: "App Unbox"
+channelId: "UCnTGx8llU6GrhACxrbLaIXw"
+publishedAt: "2026-07-14T09:15:09Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

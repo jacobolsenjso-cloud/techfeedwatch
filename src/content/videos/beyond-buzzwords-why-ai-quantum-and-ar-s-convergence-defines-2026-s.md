@@ -2,6 +2,9 @@
 title: "AI, Quantum, AR Convergence: Reshaping 2026 Tech Innovation"
 seoTitled: true
 youtubeId: "6OlUMND1htQ"
+channelTitle: "AI Creator Mastery"
+channelId: "UCf0fM_QvAoCKM2f57bT-cOg"
+publishedAt: "2026-03-16T17:00:00Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

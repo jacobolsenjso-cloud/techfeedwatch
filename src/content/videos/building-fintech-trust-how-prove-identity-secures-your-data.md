@@ -2,6 +2,9 @@
 title: "Building Fintech Trust: How Prove Identity Secures Your Data"
 seoTitled: true
 youtubeId: "xhtSopaXDm4"
+channelTitle: "TBW Advisors LLC"
+channelId: "UCyZ9qOwCvhEz84Sk2gGNfaw"
+publishedAt: "2026-07-15T11:33:02Z"
 date: "2026-07-15"
 tags:
   - "Fintech"

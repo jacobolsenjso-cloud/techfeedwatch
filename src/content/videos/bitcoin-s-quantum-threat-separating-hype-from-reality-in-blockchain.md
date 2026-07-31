@@ -2,6 +2,9 @@
 title: "Bitcoin Quantum Threat: Real security risks & post-quantum defenses"
 seoTitled: true
 youtubeId: "kLV2Cqsahbw"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2026-03-24T14:01:07Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "YouTube's AI Monetization Unpacked: Good News for Creators, Not a Ban by 2026!"
 seoTitled: true
 youtubeId: "9digDXRabtg"
+channelTitle: "Zynera Ai"
+channelId: "UC6GiTtIgI0sP7Uz0KH7bvNQ"
+publishedAt: "2026-07-08T07:45:46Z"
 date: "2026-07-08"
 tags:
   - "AI Video"

@@ -2,6 +2,9 @@
 title: "ML Engineer vs AI Engineer: Which Career Path Is Right for You?"
 seoTitled: true
 youtubeId: "cqDQV5g7zHo"
+channelTitle: "Zen van Riel"
+channelId: "UC7TUInmEJ4NmYb-krFz-SuA"
+publishedAt: "2025-12-01T13:01:25Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

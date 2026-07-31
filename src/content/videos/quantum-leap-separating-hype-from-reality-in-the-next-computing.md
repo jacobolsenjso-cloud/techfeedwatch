@@ -2,6 +2,9 @@
 title: "Quantum Computing Reality: Separating Hype from Practical Future"
 seoTitled: true
 youtubeId: "B3U1NDUiwSA"
+channelTitle: "Science ABC"
+channelId: "UCcN3IuIAR6Fn74FWMQf6lFA"
+publishedAt: "2024-09-23T11:00:14Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

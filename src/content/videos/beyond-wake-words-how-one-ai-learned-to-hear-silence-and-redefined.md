@@ -2,6 +2,9 @@
 title: "Beyond Wake Words: How One AI Learned to 'Hear Silence' and Redefined Interaction"
 seoTitled: true
 youtubeId: "CsY3cV072Nk"
+channelTitle: "QuantumDynamX"
+channelId: "UCW-gK1tRAa_Chzc6B41mw4A"
+publishedAt: "2026-07-08T18:00:07Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Beyond the Bell: How AI, VR, and Robotics Are Rewriting the Future of Education"
 seoTitled: true
 youtubeId: "EIscdskUfz0"
+channelTitle: " Zynovara"
+channelId: "UCwRDBUlf3ACe4ixUJEI08mg"
+publishedAt: "2026-07-10T16:21:36Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

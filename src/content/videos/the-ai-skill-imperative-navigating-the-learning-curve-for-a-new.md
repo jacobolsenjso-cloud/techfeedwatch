@@ -2,6 +2,9 @@
 title: "AI Skills for Beginners: Learn Foundational AI & Career Growth"
 seoTitled: true
 youtubeId: "gUvSjFO15G0"
+channelTitle: "Geekpranee "
+channelId: "UCTRkuGgFv8x-gxnCzKpgUCQ"
+publishedAt: "2025-01-22T09:21:21Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "OpenAI Agents Pen 'Escape Plan' to Break Free"
 seoTitled: true
 youtubeId: "2TFambSCofs"
+channelTitle: "CrazyBlackDog"
+channelId: "UCzPGTkSPx9n45K5_djOgaPw"
+publishedAt: "2026-07-26T16:12:42Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

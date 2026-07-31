@@ -2,6 +2,9 @@
 title: "Unleash Your Inner Media Mogul: Build Your Own Netflix Clone in Minutes with No Code"
 seoTitled: true
 youtubeId: "V2FkOJNrzu8"
+channelTitle: "Movie Engine"
+channelId: "UCEqjg-6YfzT8GB2MMyT_DHg"
+publishedAt: "2026-06-27T12:29:57Z"
 date: "2026-07-11"
 tags:
   - "Business & Money"

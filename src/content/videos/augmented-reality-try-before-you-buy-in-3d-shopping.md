@@ -2,6 +2,9 @@
 title: "Augmented Reality: Try Before You Buy in 3D Shopping"
 seoTitled: true
 youtubeId: "bfnkAkRrLNY"
+channelTitle: "NEXTGENET"
+channelId: "UCAaxhCym0qa-dgA2phr5LOg"
+publishedAt: "2026-07-17T07:52:54Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

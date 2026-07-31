@@ -2,6 +2,9 @@
 title: "Beyond the Algorithm: What a Mother's Love Story Teaches Us About Human-Centric Content in the AI Era"
 seoTitled: true
 youtubeId: "ws1GdGN670Q"
+channelTitle: "AlVerse Hindi"
+channelId: "UCyiu99Mq7IaY67jGRNkgHTA"
+publishedAt: "2026-07-07T08:30:01Z"
 date: "2026-07-07"
 tags:
   - "AI Video"

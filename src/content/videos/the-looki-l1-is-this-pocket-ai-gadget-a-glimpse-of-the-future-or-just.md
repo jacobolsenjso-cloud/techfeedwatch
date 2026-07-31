@@ -2,6 +2,9 @@
 title: "Looki L1 AI Life-Logger Review: Automated Memory & Storytelling"
 seoTitled: true
 youtubeId: "3RT_TDgEkb0"
+channelTitle: "TechMagnet"
+channelId: "UCtT2VnurQKOAA0I1EKKHSPA"
+publishedAt: "2026-07-11T16:55:39Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

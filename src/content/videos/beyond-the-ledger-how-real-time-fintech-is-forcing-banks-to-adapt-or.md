@@ -2,6 +2,9 @@
 title: "Beyond the Ledger: How Real-Time Fintech is Forcing Banks to Adapt or Die"
 seoTitled: true
 youtubeId: "QNsI-rfL1U4"
+channelTitle: "Wealth Academy"
+channelId: "UCn9MGnr_gaf3RwOp5HRPjHw"
+publishedAt: "2026-06-28T00:00:03Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

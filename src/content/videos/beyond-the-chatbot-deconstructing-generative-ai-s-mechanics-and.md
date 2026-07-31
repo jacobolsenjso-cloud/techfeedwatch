@@ -2,6 +2,9 @@
 title: "Generative AI Explained: Evolution, Mechanics, & Impact"
 seoTitled: true
 youtubeId: "_6R7Ym6Vy_I"
+channelTitle: "The Royal Institution"
+channelId: "UCYeF244yNGuFefuFKqxIAXw"
+publishedAt: "2023-10-12T16:29:50Z"
 date: "2026-07-15"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "You're Training AI Daily: The Unseen Impact of Your Actions"
 seoTitled: true
 youtubeId: "-lBzSGIJyFw"
+channelTitle: "Byte4U"
+channelId: "UC603NOUfUD3kDKZWR2TMkBg"
+publishedAt: "2026-07-23T22:00:21Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

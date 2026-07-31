@@ -2,6 +2,9 @@
 title: "Beyond Rogue AI: It's All About Objectives, Not Intent"
 seoTitled: true
 youtubeId: "Ec_jxOJ02aE"
+channelTitle: "Ember & Echo"
+channelId: "UCSuckEjY_U1bT5yRK62WPzQ"
+publishedAt: "2026-07-27T19:15:19Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

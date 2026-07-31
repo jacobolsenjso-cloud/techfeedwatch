@@ -2,6 +2,9 @@
 title: "AI SEO Strategy: Gain AI Citations from Generative Overviews"
 seoTitled: true
 youtubeId: "RZGDkMlmQ18"
+channelTitle: "CXL"
+channelId: "UCFGLqDWYMqlvPGciVO0IF3w"
+publishedAt: "2026-04-24T13:53:02Z"
 date: "2026-07-14"
 tags:
   - "SEO"

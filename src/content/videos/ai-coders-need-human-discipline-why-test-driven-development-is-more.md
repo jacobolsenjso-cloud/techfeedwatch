@@ -2,6 +2,9 @@
 title: "Test-Driven Development for AI Code Quality & Oversight"
 seoTitled: true
 youtubeId: "bDLdZIAjH5Y"
+channelTitle: "Modern Software Engineering"
+channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
+publishedAt: "2026-07-24T18:00:10Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

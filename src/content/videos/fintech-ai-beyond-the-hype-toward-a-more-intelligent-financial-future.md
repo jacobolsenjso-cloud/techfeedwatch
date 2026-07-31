@@ -2,6 +2,9 @@
 title: "FinTech AI: Opportunities & Challenges in Modern Finance"
 seoTitled: true
 youtubeId: "b1gszMjehF0"
+channelTitle: "Tech Pulse Labs"
+channelId: "UC0Yl4MdqY5y2jl2FT2ZpPtw"
+publishedAt: "2026-03-20T17:46:20Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Crypto Trading Bots: Risks & Rewards for Investors"
 seoTitled: true
 youtubeId: "wYbf5XwdcPI"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2025-10-22T14:03:00Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

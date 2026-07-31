@@ -2,6 +2,9 @@
 title: "Quantum Computing Career: Why Leaving Early Can Be Your Smartest Move"
 seoTitled: true
 youtubeId: "pDj1QhPOVBo"
+channelTitle: "Looking Glass Universe"
+channelId: "UCFk__1iexL3T5gvGcMpeHNA"
+publishedAt: "2025-06-27T15:33:56Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

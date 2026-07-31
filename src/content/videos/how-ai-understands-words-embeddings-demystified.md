@@ -2,6 +2,9 @@
 title: "How AI Understands Words: Embeddings Demystified"
 seoTitled: true
 youtubeId: "SSflyyueWz0"
+channelTitle: "Safdar Ayub"
+channelId: "UCzHlkdOjSON5HKmsS6tHWaA"
+publishedAt: "2026-07-13T19:07:19Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

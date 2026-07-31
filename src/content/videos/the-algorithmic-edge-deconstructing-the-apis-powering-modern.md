@@ -2,6 +2,9 @@
 title: "Alternative Data APIs for Algorithmic Trading & Quant Finance"
 seoTitled: true
 youtubeId: "HIPlOXGWGIE"
+channelTitle: "Algo Trading X"
+channelId: "UCZorZ8KWmTON7aO84JJBwlQ"
+publishedAt: "2024-06-09T15:00:07Z"
 date: "2026-07-17"
 tags:
   - "Fintech"

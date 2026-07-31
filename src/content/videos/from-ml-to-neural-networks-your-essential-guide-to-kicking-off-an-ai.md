@@ -2,6 +2,9 @@
 title: "AI Engineering Career Guide: ML, Neural Networks, LLMs Explained"
 seoTitled: true
 youtubeId: "304i_BWgXNc"
+channelTitle: "Telusko"
+channelId: "UC59K-uG2A5ogwIrHw4bmlEg"
+publishedAt: "2025-08-19T03:48:47Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

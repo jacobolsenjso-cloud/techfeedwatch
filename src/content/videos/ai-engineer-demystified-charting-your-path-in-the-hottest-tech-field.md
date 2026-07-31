@@ -2,6 +2,9 @@
 title: "AI Engineer Career Path: Skills, Roles, & Future Outlook"
 seoTitled: true
 youtubeId: "TQwwK7P_J4I"
+channelTitle: "CodeHead"
+channelId: "UCFVteOob_YXJHPaGTqlDV2Q"
+publishedAt: "2025-07-07T15:00:56Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

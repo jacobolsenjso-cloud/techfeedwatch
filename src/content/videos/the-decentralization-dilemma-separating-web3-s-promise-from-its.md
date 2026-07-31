@@ -2,6 +2,9 @@
 title: "Web3 Decentralization: Promise vs. Real-World Challenges"
 seoTitled: true
 youtubeId: "wHTcrmhskto"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2021-12-08T16:58:38Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

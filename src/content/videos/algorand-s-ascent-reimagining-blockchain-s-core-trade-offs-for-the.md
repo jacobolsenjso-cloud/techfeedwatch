@@ -2,6 +2,9 @@
 title: "Algorand Balances Blockchain Scalability, Security, Decentralization"
 seoTitled: true
 youtubeId: "zNdhgOk4-fE"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2021-03-15T04:56:17Z"
 date: "2026-07-25"
 tags:
   - "Crypto"

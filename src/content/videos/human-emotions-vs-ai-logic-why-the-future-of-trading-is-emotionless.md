@@ -2,6 +2,9 @@
 title: "Human Emotions vs. AI Logic: Why the Future of Trading is Emotionless"
 seoTitled: true
 youtubeId: "rh7EHlpd1eY"
+channelTitle: "Bear Bull Traders"
+channelId: "UCfO2yCpx6_XU-xovhpJuaYw"
+publishedAt: "2026-06-16T20:00:08Z"
 date: "2026-06-18"
 tags:
   - "Business & Money"

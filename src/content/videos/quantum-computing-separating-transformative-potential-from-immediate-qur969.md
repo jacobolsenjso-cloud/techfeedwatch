@@ -2,6 +2,9 @@
 title: "Quantum Computing Explained: Real Potential, Current Limits"
 seoTitled: true
 youtubeId: "QuR969uMICM"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2019-02-01T18:21:26Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

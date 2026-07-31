@@ -2,6 +2,9 @@
 title: "Google NotebookLM: Autonomous AI Agent Transforms Knowledge Work"
 seoTitled: true
 youtubeId: "UHAuc6Lh234"
+channelTitle: "Ai Podcast "
+channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
+publishedAt: "2026-06-16T13:03:39Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

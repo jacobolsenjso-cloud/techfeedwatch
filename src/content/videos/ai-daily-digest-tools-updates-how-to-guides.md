@@ -2,6 +2,9 @@
 title: "AI Daily Digest: Tools, Updates & How-To Guides"
 seoTitled: true
 youtubeId: "tOeZ8m85ivs"
+channelTitle: "AI Frontier"
+channelId: "UCaOZU5KGhAxi1bKAEqZDE4g"
+publishedAt: "2026-07-26T06:30:12Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

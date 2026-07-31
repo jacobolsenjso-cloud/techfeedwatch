@@ -2,6 +2,9 @@
 title: "Power BI Financial Dashboards: Real-time KPI Intelligence"
 seoTitled: true
 youtubeId: "i3AR0gt9SHA"
+channelTitle: "Chandoo"
+channelId: "UC8uU_wruBMHeeRma49dtZKA"
+publishedAt: "2024-04-09T08:00:17Z"
 date: "2026-07-18"
 tags:
   - "Business & Money"

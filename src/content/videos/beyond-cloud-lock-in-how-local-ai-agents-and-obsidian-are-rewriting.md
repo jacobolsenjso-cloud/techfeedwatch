@@ -2,6 +2,9 @@
 title: "Local AI Agents & Obsidian for Personal Knowledge Management"
 seoTitled: true
 youtubeId: "XEYh38XGoSA"
+channelTitle: "Christian Lempa"
+channelId: "UCZNhwA1B5YqiY1nLzmM0ZRg"
+publishedAt: "2026-07-02T14:00:34Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

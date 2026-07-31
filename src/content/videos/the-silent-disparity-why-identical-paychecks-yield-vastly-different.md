@@ -2,6 +2,9 @@
 title: "Build Wealth: Why Similar Incomes Create Vastly Different Fortunes"
 seoTitled: true
 youtubeId: "uFLz0MexCSY"
+channelTitle: "PoliCore"
+channelId: "UCCXWLOnXR_v9D-IcM2uQ_yg"
+publishedAt: "2026-04-04T11:21:03Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

@@ -2,6 +2,9 @@
 title: "Automate Research: Build a No-Code AI Agent for Instant, Cited Reports"
 seoTitled: true
 youtubeId: "FWbG3WnqMpU"
+channelTitle: "Agentlabs"
+channelId: "UCGdojOWwG81XLh2koCnX0cA"
+publishedAt: "2026-07-16T16:00:38Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

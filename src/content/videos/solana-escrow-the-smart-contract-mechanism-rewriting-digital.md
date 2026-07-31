@@ -2,6 +2,9 @@
 title: "Solana Escrow Explained: Smart Contracts Secure Web3 Transactions"
 seoTitled: true
 youtubeId: "8FUlQda-8fU"
+channelTitle: "bri"
+channelId: "UCKKLMlFFiOVV49fS5F1S-Mg"
+publishedAt: "2026-04-14T20:21:27Z"
 date: "2026-07-19"
 tags:
   - "Crypto"

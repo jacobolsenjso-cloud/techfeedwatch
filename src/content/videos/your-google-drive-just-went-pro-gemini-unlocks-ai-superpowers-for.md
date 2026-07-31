@@ -2,6 +2,9 @@
 title: "Gemini AI for Google Drive: Smart File Management"
 seoTitled: true
 youtubeId: "kSLHCrxedkw"
+channelTitle: "Tasia Custode"
+channelId: "UCNQbF87QPV685oFnHxb0zPg"
+publishedAt: "2026-06-25T14:30:02Z"
 date: "2026-06-29"
 tags:
   - "AI & Tech"

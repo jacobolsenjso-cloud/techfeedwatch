@@ -2,6 +2,9 @@
 title: "AI Authentication: Boost Digital Banking Security & Profit"
 seoTitled: true
 youtubeId: "O1FOLLPEdfY"
+channelTitle: "Couchonomics with Arjun"
+channelId: "UCGvPk9BXIsM_BCRqnzkqy4Q"
+publishedAt: "2022-07-22T08:00:11Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

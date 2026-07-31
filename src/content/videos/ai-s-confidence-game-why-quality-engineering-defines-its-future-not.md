@@ -2,6 +2,9 @@
 title: "AI Quality Engineering: Validating AI Outputs for Trust & Safety"
 seoTitled: true
 youtubeId: "XLMPIRtsrDs"
+channelTitle: "Naveen AutomationLabs"
+channelId: "UCXJKOPxx4O1f63nnfsoiEug"
+publishedAt: "2026-07-18T04:57:58Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

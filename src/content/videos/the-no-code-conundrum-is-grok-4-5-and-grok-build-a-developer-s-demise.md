@@ -2,6 +2,9 @@
 title: "Grok 4.5 & Grok Build: No-Code AI Business Tools for Entrepreneurs"
 seoTitled: true
 youtubeId: "o3t-XtLnXi8"
+channelTitle: "JustAIWorld"
+channelId: "UCJeGCtMuq24Rj9CCutVc_FQ"
+publishedAt: "2026-07-14T09:00:28Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

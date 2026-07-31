@@ -2,6 +2,9 @@
 title: "LLM Security Testing: Practical AI Vulnerability Defense"
 seoTitled: true
 youtubeId: "_yfiUQSbdPY"
+channelTitle: "NetworkChuck"
+channelId: "UC9x0AN7BWHpCDHSm9NiJFJQ"
+publishedAt: "2026-02-20T15:01:05Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

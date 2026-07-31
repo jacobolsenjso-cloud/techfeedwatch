@@ -2,6 +2,9 @@
 title: "Augmented Reality Use Cases: 10 Future AR Applications"
 seoTitled: true
 youtubeId: "WxzcD04rwc8"
+channelTitle: "Future Business Tech"
+channelId: "UCGBO6EahCqQSyXIws1MQdDg"
+publishedAt: "2021-09-21T13:00:16Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

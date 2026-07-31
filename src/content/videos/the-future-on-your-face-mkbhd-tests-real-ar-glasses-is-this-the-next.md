@@ -2,6 +2,9 @@
 title: "AR Glasses: MKBHD Tests Early Prototypes & Tech Challenges"
 seoTitled: true
 youtubeId: "G0eKzU_fV00"
+channelTitle: "Marques Brownlee"
+channelId: "UCBJycsmduvYEL83R_U4JriQ"
+publishedAt: "2024-11-01T19:30:02Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

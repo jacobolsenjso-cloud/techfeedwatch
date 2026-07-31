@@ -2,6 +2,9 @@
 title: "OpenAI GPT-5.6 Sol & AI Chip Jalapeño Redefine Frontier AI"
 seoTitled: true
 youtubeId: "_AoyQcIoquA"
+channelTitle: "AI Revolution"
+channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
+publishedAt: "2026-06-27T22:20:24Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

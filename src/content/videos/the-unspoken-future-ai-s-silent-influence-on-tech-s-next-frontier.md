@@ -2,6 +2,9 @@
 title: "The Unspoken Future: AI's Silent Influence on Tech's Next Frontier"
 seoTitled: true
 youtubeId: "ZicFwWYosKc"
+channelTitle: "With Sandra"
+channelId: "UC5qEPWtHLFRIjhW_3xd5g2A"
+publishedAt: "2023-07-21T16:00:26Z"
 date: "2026-06-15"
 tags:
   - "AI & Tech"

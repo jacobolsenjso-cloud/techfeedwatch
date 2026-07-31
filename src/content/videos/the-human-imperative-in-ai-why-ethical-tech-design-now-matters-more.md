@@ -2,6 +2,9 @@
 title: "Ethical AI Design: Ensuring Human Needs & Societal Benefit"
 seoTitled: true
 youtubeId: "_JlQOnnEwxc"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2026-07-20T15:00:14Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

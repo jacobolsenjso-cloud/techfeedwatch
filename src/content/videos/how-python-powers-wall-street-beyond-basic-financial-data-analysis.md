@@ -2,6 +2,9 @@
 title: "Python Wall Street: Algorithmic Trading, Quant Models, Risk"
 seoTitled: true
 youtubeId: "i4atHI7k0Us"
+channelTitle: "NeedCode"
+channelId: "UC3YvTrgsYsEZUPYNILlIVIA"
+publishedAt: "2023-02-09T07:31:37Z"
 date: "2026-07-25"
 tags:
   - "Fintech"

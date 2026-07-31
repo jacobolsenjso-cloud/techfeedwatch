@@ -2,6 +2,9 @@
 title: "Build AI FinTech Apps: Guide for Regulatory Compliance & Growth"
 seoTitled: true
 youtubeId: "PvjFuxCjygc"
+channelTitle: "Code Brew Labs"
+channelId: "UCh6EaKNcFhtxgF27KUQGw1w"
+publishedAt: "2025-12-10T14:15:07Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

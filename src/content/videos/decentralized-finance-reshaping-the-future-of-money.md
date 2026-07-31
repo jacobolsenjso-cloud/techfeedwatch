@@ -2,6 +2,9 @@
 title: "Decentralized Finance: Reshaping the Future of Money"
 seoTitled: true
 youtubeId: "SRCJlgMs67o"
+channelTitle: "WeAlwin Technologies"
+channelId: "UCKVqJFTVxtBJOe6HcQC6gow"
+publishedAt: "2026-07-23T13:43:14Z"
 date: "2026-07-23"
 tags:
   - "Fintech"

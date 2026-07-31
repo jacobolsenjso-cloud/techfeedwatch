@@ -2,6 +2,9 @@
 title: "Farming's Next Leap: Unveiling the Tech That's Revolutionizing Agriculture"
 seoTitled: true
 youtubeId: "L3ZPmlWj8hw"
+channelTitle: "SARDAAR SAAB REACTION "
+channelId: "UCFN08EIVm5h9YO9YVxezTOQ"
+publishedAt: "2026-07-08T15:21:11Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Fintech Trends 2026: 10 Innovations Reshaping Digital Finance"
 seoTitled: true
 youtubeId: "ucUdfiq2KiY"
+channelTitle: "The wealth matrix "
+channelId: "UCACBsyRzPLJGdyFbEd6b-HA"
+publishedAt: "2025-10-28T13:21:04Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

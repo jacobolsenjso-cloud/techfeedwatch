@@ -2,6 +2,9 @@
 title: "The $40,000 AI Chip: NVIDIA's Dominance Explained"
 seoTitled: true
 youtubeId: "ebS3HNbTjRI"
+channelTitle: "Xelquora"
+channelId: "UC0tSA5Z8MLXZgx-YuLLGKNw"
+publishedAt: "2026-07-22T15:30:22Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Postgraduate Program ROI: Is It Worth the Investment?"
 seoTitled: true
 youtubeId: "AnTpZQnlEj4"
+channelTitle: "Wes James Henderson"
+channelId: "UCo6XQkHJrY_iEpCLQv52Cwg"
+publishedAt: "2024-11-25T16:59:07Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

@@ -1,6 +1,9 @@
 ---
 title: "AI Personal Knowledge Management: Optimizing Second Brains with LLMs"
 youtubeId: "kGwYmO1GYqE"
+channelTitle: "Aditya Dutta"
+channelId: "UCxNA-8DvnGJRphruL5ovKGg"
+publishedAt: "2026-07-27T12:00:28Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

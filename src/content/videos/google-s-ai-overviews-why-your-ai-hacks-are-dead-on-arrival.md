@@ -2,6 +2,9 @@
 title: "Google AI Overviews SEO: Ignore 'AI Hacks', Use Standard SEO"
 seoTitled: true
 youtubeId: "1GiYkMYJLPs"
+channelTitle: "Drupal & SEO"
+channelId: "UC9Y8H79z97HxsS2XKjr5JSg"
+publishedAt: "2026-07-24T04:44:01Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

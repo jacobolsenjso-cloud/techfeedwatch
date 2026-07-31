@@ -2,6 +2,9 @@
 title: "Google AI Influencers: Create Realistic Videos, Monetize Free"
 seoTitled: true
 youtubeId: "K6DTEvL1KWc"
+channelTitle: "Ikhsanz Tech"
+channelId: "UCPQzKxcOrkxTEFbfuSRIiNA"
+publishedAt: "2026-06-23T05:50:26Z"
 date: "2026-06-29"
 tags:
   - "AI Video"

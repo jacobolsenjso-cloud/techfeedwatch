@@ -2,6 +2,9 @@
 title: "Samsung's Silent Surge: The AI Memory Strategy That Overtook NVIDIA"
 seoTitled: true
 youtubeId: "7BqekV6U1us"
+channelTitle: "Sanjeev Jain - AI Business Automation Coach"
+channelId: "UCh_c1FPXO8anWI9J6z6HKCg"
+publishedAt: "2026-07-10T10:11:33Z"
 date: "2026-07-10"
 tags:
   - "AI & Tech"

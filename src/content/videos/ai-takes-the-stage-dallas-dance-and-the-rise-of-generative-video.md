@@ -2,6 +2,9 @@
 title: "AI Takes the Stage: Dallas, Dance, and the Rise of Generative Video"
 seoTitled: true
 youtubeId: "DvlDWIr9beo"
+channelTitle: "lynwood jones"
+channelId: "UCc2oDhT_0FEyuN99zffAveg"
+publishedAt: "2026-07-06T17:08:27Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

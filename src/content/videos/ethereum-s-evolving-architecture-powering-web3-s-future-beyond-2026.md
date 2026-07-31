@@ -2,6 +2,9 @@
 title: "Ethereum Architecture Evolves: PoS & Layer 2s Scale Web3"
 seoTitled: true
 youtubeId: "On-B0WGqOZ0"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2026-05-23T14:00:33Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

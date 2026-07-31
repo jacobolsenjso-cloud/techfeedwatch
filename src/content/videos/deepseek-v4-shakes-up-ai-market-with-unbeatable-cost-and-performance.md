@@ -2,6 +2,9 @@
 title: "DeepSeek V4 Shakes Up AI Market with Unbeatable Cost and Performance"
 seoTitled: true
 youtubeId: "1P3h36Lz5bI"
+channelTitle: "Matt Wolfe"
+channelId: "UChpleBmo18P08aKCIgti38g"
+publishedAt: "2026-05-02T12:53:01Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

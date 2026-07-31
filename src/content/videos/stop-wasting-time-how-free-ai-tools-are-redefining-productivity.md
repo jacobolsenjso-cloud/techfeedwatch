@@ -2,6 +2,9 @@
 title: "Stop Wasting Time: How Free AI Tools Are Redefining Productivity & Innovation"
 seoTitled: true
 youtubeId: "LyZBNBRovNg"
+channelTitle: "AI Trends US"
+channelId: "UC2pMUWnWcR_nAvXyPMNPjrw"
+publishedAt: "2026-07-06T17:44:17Z"
 date: "2026-07-06"
 tags:
   - "Productivity"

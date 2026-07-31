@@ -2,6 +2,9 @@
 title: "Robinhood Blockchain: Launching DeFi, Tokenized Assets, 24/7 Markets"
 seoTitled: true
 youtubeId: "s9_IQUx_QW4"
+channelTitle: "Yahoo Finance"
+channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"
+publishedAt: "2026-07-21T16:35:18Z"
 date: "2026-07-27"
 tags:
   - "Fintech"

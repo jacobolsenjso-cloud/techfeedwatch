@@ -2,6 +2,9 @@
 title: "Google Gemini AI: Autonomous Agents & Workspace Integration"
 seoTitled: true
 youtubeId: "xz-pG1gUS4c"
+channelTitle: "Ai Podcast "
+channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
+publishedAt: "2026-07-25T13:41:17Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

@@ -1,6 +1,9 @@
 ---
 title: "AI Second Brain for Productivity: Stopping AI Tools Slowing Work"
 youtubeId: "aWB3Fe2g2oQ"
+channelTitle: "Prosperous Marketing"
+channelId: "UCg1EvxVmaE9xF7fLqHihAeg"
+publishedAt: "2026-07-29T19:04:31Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

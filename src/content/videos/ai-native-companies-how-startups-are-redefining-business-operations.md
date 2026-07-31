@@ -2,6 +2,9 @@
 title: "AI-Native Startups Use AI as Core OS for Business Operations"
 seoTitled: true
 youtubeId: "EN7frwQIbKc"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2026-04-24T14:00:21Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Unlocking Claude's 'Secret Codes': How Advanced Prompts Revolutionize Your AI Workflow"
 seoTitled: true
 youtubeId: "uDKWC08FDb0"
+channelTitle: "Dr. Josh C. Simmons"
+channelId: "UC4sdJIrKWKxymZ5lwVSBzTw"
+publishedAt: "2026-07-06T17:00:21Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Fintech Web3 & XR: Redefining Financial Services Now"
 seoTitled: true
 youtubeId: "XJZovt0w3cU"
+channelTitle: "Jeremy Quainoo"
+channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
+publishedAt: "2022-12-15T04:00:08Z"
 date: "2026-07-19"
 tags:
   - "Fintech"

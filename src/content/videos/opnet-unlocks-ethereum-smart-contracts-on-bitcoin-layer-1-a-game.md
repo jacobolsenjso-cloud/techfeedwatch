@@ -2,6 +2,9 @@
 title: "Ethereum Smart Contracts on Bitcoin Layer 1 with OPNET Protocol"
 seoTitled: true
 youtubeId: "WLm9wPw8b5U"
+channelTitle: "Bitcoin Takeover"
+channelId: "UCzdDFk3EYSyHr4eMMIxRBrg"
+publishedAt: "2026-03-24T19:09:39Z"
 date: "2026-07-12"
 tags:
   - "Crypto"

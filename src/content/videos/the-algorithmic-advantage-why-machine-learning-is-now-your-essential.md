@@ -2,6 +2,9 @@
 title: "Machine Learning Career: Hands-On Skills, No Advanced Degree"
 seoTitled: true
 youtubeId: "JJCq21Dc-Us"
+channelTitle: "NetworkChuck"
+channelId: "UC9x0AN7BWHpCDHSm9NiJFJQ"
+publishedAt: "2023-03-01T15:33:30Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

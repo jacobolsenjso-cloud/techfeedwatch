@@ -2,6 +2,9 @@
 title: "Digital Money Battle: Banks, Stablecoins, CBDCs Fight for Control"
 seoTitled: true
 youtubeId: "2QfSQybsJsE"
+channelTitle: "Crypto Casey"
+channelId: "UCi7RBPfTtRkVchV6qO8PUzg"
+publishedAt: "2026-07-11T14:40:04Z"
 date: "2026-07-12"
 tags:
   - "Fintech"

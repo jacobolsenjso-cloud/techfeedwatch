@@ -2,6 +2,9 @@
 title: "AI Pinterest Ads: $117K Revenue in 30 Days, 5.5x ROAS"
 seoTitled: true
 youtubeId: "Zpz8nFRw-Lg"
+channelTitle: "Luc Bermond - EN"
+channelId: "UCuZr-oSyZ3hndfWOvf3r_KQ"
+publishedAt: "2026-06-11T18:30:33Z"
 date: "2026-06-15"
 tags:
   - "AI & Tech"

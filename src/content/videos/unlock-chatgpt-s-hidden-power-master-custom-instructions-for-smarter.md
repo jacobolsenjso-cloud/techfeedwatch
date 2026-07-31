@@ -2,6 +2,9 @@
 title: "Unlock ChatGPT's Hidden Power: Master Custom Instructions for Smarter AI"
 seoTitled: true
 youtubeId: "1Z7hc1CuZUI"
+channelTitle: "Verry Hant"
+channelId: "UCUDdC24tJ2_RWCG8q0nmgIA"
+publishedAt: "2026-07-17T22:00:39Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'; 
+import { tagSlug as slugify } from '../lib/tags';
 
 const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
 
@@ -55,7 +56,6 @@ const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
-const slugify = (t: string) => t.toLowerCase().replace(/\s+/g, '-');
 ---
 
 <MainLayout title="Library" description="Browse the full Tech Feed Watch library by topic or by month. Curated tech, AI, fintech and crypto videos turned into readable articles.">

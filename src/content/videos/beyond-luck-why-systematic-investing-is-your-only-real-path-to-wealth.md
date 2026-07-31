@@ -2,6 +2,9 @@
 title: "Systematic Investing: Build Wealth with Index Funds & Compound Interest"
 seoTitled: true
 youtubeId: "RPDoEIqbwYs"
+channelTitle: "Financial Guinea Pig"
+channelId: "UCEdrqiBfh4HrfIH_zrov7SA"
+publishedAt: "2026-07-24T22:00:21Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

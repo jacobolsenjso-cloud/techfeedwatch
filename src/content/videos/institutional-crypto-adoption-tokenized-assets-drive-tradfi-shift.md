@@ -1,6 +1,9 @@
 ---
 title: "Institutional Crypto Adoption: Tokenized Assets Drive TradFi Shift"
 youtubeId: "6XvcvDScf1c"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-03-31T19:04:07Z"
 date: "2026-07-30"
 tags:
   - "Fintech"

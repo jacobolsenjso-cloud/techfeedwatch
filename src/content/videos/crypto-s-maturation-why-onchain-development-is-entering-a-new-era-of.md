@@ -2,6 +2,9 @@
 title: "Onchain Utility: Crypto Development Prioritizes Real-World Use"
 seoTitled: true
 youtubeId: "Pdne9xaRLUc"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2025-09-23T14:45:03Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

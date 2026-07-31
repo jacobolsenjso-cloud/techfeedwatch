@@ -2,6 +2,9 @@
 title: "Nobel Laureate's Vision: Architecting Compassion into the Core of AI"
 seoTitled: true
 youtubeId: "ZvFUbpuGCS8"
+channelTitle: "Nicholas Thompson"
+channelId: "UCz9wYvDKycD7CgYxJICU_Aw"
+publishedAt: "2026-07-09T21:06:09Z"
 date: "2026-07-09"
 tags:
   - "AI & Tech"

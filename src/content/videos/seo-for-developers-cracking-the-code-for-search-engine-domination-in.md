@@ -2,6 +2,9 @@
 title: "Technical SEO for Developers: Boost Rankings & User Experience"
 seoTitled: true
 youtubeId: "-B58GgsehKQ"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2021-02-08T16:55:52Z"
 date: "2026-07-11"
 tags:
   - "SEO"

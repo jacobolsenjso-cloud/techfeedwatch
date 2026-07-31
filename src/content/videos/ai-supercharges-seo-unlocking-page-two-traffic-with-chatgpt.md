@@ -2,6 +2,9 @@
 title: "AI Supercharges SEO: Unlocking Page Two Traffic with ChatGPT"
 seoTitled: true
 youtubeId: "2F-6cf-7HJQ"
+channelTitle: "Matt Diamante"
+channelId: "UCqFqqzB3dG6d55vLMKITqAw"
+publishedAt: "2025-09-24T16:33:32Z"
 duration: "0:30"
 date: "2026-06-12"
 tags:

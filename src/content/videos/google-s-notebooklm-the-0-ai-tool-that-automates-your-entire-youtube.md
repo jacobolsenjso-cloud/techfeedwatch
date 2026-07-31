@@ -2,6 +2,9 @@
 title: "Google NotebookLM Free AI Automates Your YouTube Channel"
 seoTitled: true
 youtubeId: "LpkOt5nClFA"
+channelTitle: "iampauljames"
+channelId: "UCj2zirDn1hkPKSARbARfeQw"
+publishedAt: "2026-06-18T00:00:06Z"
 date: "2026-06-18"
 tags:
   - "AI Video"

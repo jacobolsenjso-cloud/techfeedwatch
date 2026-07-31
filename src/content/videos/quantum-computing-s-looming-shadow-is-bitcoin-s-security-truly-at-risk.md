@@ -2,6 +2,9 @@
 title: "Quantum Computing Bitcoin Security Risk Explained"
 seoTitled: true
 youtubeId: "Ph5ihHhx_rQ"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2025-12-21T12:45:11Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

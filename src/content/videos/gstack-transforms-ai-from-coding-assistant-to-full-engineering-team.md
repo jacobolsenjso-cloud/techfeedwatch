@@ -2,6 +2,9 @@
 title: "GStack: AI Engineering Team Handles Software Dev & QA"
 seoTitled: true
 youtubeId: "wkv2ifxPpF8"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2026-04-23T14:30:49Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

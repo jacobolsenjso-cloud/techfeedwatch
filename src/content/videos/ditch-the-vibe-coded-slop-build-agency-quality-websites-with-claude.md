@@ -2,6 +2,9 @@
 title: "Agency-Quality Websites: Avoid Generic AI Designs with Claude Code"
 seoTitled: true
 youtubeId: "hrPKtWVE_bo"
+channelTitle: "Nic Conley"
+channelId: "UCj88BHCCZgiBYNv4QryNEdQ"
+publishedAt: "2026-06-29T14:47:08Z"
 date: "2026-07-02"
 tags:
   - "AI & Tech"

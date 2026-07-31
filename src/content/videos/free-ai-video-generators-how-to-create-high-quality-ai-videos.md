@@ -1,6 +1,9 @@
 ---
 title: "Free AI Video Generators: How to Create High-Quality AI Videos"
 youtubeId: "3cXXYG-0Ipk"
+channelTitle: "Malva AI"
+channelId: "UCv3ZocWMnZw3aljHs4irOzA"
+publishedAt: "2026-07-27T10:52:44Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

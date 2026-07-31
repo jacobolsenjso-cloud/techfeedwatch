@@ -2,6 +2,9 @@
 title: "Blockchain Decentralizes Commerce, Reduces Bank Reliance"
 seoTitled: true
 youtubeId: "RplnSVTzvnU"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2016-12-08T16:11:27Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

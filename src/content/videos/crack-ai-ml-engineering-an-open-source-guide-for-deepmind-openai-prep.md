@@ -2,6 +2,9 @@
 title: "Crack AI/ML Engineering: An Open-Source Guide for DeepMind & OpenAI Prep"
 seoTitled: true
 youtubeId: "HzNQWkjjTo8"
+channelTitle: "neural-nexus"
+channelId: "UCQpBEarOB8xsL-H5fRKpvwg"
+publishedAt: "2026-07-25T14:00:05Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

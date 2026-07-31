@@ -2,6 +2,9 @@
 title: "Demis Hassabis AGI Vision: Simulating Reality, Redefining AI"
 seoTitled: true
 youtubeId: "-HzgcbRXUK8"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2025-07-23T18:39:15Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

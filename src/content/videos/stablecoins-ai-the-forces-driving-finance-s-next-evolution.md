@@ -2,6 +2,9 @@
 title: "Stablecoins & AI Drive Global Finance, Payments & Banking"
 seoTitled: true
 youtubeId: "0biSwEL5eMQ"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2025-07-09T13:00:02Z"
 date: "2026-07-23"
 tags:
   - "Fintech"

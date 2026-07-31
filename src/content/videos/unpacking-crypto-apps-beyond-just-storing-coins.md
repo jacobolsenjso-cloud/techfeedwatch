@@ -2,6 +2,9 @@
 title: "Unpacking Crypto Apps: Beyond Just Storing Coins"
 seoTitled: true
 youtubeId: "E_Zv-gyIaYc"
+channelTitle: "InteresThings - Tech"
+channelId: "UCispWuLs_KZC8pZh4NAtZLA"
+publishedAt: "2026-07-23T17:00:37Z"
 date: "2026-07-23"
 tags:
   - "Crypto"

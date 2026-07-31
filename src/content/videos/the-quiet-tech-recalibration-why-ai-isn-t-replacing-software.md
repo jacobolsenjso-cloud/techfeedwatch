@@ -2,6 +2,9 @@
 title: "AI Replacing Software Engineers? Why AI Is Reshaping Roles, Not Replacing Them"
 seoTitled: true
 youtubeId: "VGE84CeeaMo"
+channelTitle: "Modern Software Engineering"
+channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
+publishedAt: "2026-07-22T18:00:34Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

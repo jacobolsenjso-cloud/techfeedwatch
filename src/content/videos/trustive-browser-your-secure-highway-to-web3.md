@@ -2,6 +2,9 @@
 title: "Trustive Browser: Your Secure Highway to Web3"
 seoTitled: true
 youtubeId: "V_bjlQJ0PXg"
+channelTitle: "Trustive AI"
+channelId: "UCOR6oZf0PwPfLQkUHyZVuoQ"
+publishedAt: "2026-07-24T06:04:34Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

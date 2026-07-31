@@ -2,6 +2,9 @@
 title: "Unlock ChatGPT's Full Potential: A Simple Prompt Trick"
 seoTitled: true
 youtubeId: "7bjfJcA98rU"
+channelTitle: "AIVentra"
+channelId: "UC_mWvHrbYO9m26NTxwbKPHA"
+publishedAt: "2026-07-17T14:33:35Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

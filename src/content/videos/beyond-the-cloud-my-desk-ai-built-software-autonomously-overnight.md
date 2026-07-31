@@ -2,6 +2,9 @@
 title: "Beyond the Cloud: My Desk AI Built Software Autonomously Overnight"
 seoTitled: true
 youtubeId: "kGvlAy7U8og"
+channelTitle: "QuantumDynamX"
+channelId: "UCW-gK1tRAa_Chzc6B41mw4A"
+publishedAt: "2026-07-07T20:17:13Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

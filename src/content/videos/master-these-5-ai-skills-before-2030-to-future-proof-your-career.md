@@ -2,6 +2,9 @@
 title: "Master These 5 AI Skills Before 2030 to Future-Proof Your Career"
 seoTitled: true
 youtubeId: "37Tr7kbAO9Y"
+channelTitle: "Future Decoded"
+channelId: "UCB2FLDkMNUytWK0Q1eWoBkw"
+publishedAt: "2026-07-23T16:16:01Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

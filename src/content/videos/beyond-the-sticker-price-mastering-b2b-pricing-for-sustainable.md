@@ -2,6 +2,9 @@
 title: "SaaS B2B Pricing Strategy: Drive Startup Growth with Value"
 seoTitled: true
 youtubeId: "4hjiRmgmHiU"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2024-07-25T17:00:04Z"
 date: "2026-07-24"
 tags:
   - "Business & Money"

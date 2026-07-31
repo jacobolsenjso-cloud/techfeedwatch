@@ -2,6 +2,9 @@
 title: "AR Engineering Training: Immersive Tech Transforms Industry"
 seoTitled: true
 youtubeId: "oLKcq0ULy2c"
+channelTitle: "Episode Up"
+channelId: "UCLZdKBaR3Bp3aqqDjFzFHBw"
+publishedAt: "2023-10-04T07:11:34Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

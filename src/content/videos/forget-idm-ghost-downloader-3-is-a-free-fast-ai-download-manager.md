@@ -2,6 +2,9 @@
 title: "Forget IDM! Ghost Downloader 3 is a FREE & Fast AI Download Manager"
 seoTitled: true
 youtubeId: "kgxAuZZFyCw"
+channelTitle: "Otteris"
+channelId: "UCVuX1FGedeK6O26qH2mwzHg"
+publishedAt: "2026-07-26T18:30:27Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

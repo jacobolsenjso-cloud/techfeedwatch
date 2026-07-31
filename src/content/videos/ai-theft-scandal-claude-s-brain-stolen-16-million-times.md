@@ -2,6 +2,9 @@
 title: "AI Theft Scandal: Claude's Brain Stolen 16 Million Times"
 seoTitled: true
 youtubeId: "lO961HRQn5Q"
+channelTitle: "NetworkChuck"
+channelId: "UC9x0AN7BWHpCDHSm9NiJFJQ"
+publishedAt: "2026-03-03T15:45:14Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

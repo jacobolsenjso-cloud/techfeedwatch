@@ -2,6 +2,9 @@
 title: "Beyond the Bench: How AI is Orchestrating the 'Combo Change' Revolution in Tech Repair"
 seoTitled: true
 youtubeId: "_39pSo0ABvA"
+channelTitle: "Technical Rihan "
+channelId: "UCzoOiRLI-U2iNTsmKOl1s_g"
+publishedAt: "2026-07-06T17:07:25Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

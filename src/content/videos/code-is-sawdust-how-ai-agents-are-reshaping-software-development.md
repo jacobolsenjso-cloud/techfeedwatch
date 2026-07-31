@@ -2,6 +2,9 @@
 title: "AI Agents Reshape Software Development: From Code to Orchestration"
 seoTitled: true
 youtubeId: "fQmlML9Lay4"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2026-06-04T14:00:22Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

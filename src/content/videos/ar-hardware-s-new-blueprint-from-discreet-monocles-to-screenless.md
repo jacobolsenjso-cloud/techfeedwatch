@@ -2,6 +2,9 @@
 title: "AR Hardware: Consumer Devices, Screenless Computing Trends"
 seoTitled: true
 youtubeId: "4N6yyXdYUU4"
+channelTitle: "Adam Savage’s Tested"
+channelId: "UCiDJtJKMICpb9B1qf7qjEOA"
+publishedAt: "2023-06-05T14:00:02Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

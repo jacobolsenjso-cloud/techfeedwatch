@@ -2,6 +2,9 @@
 title: "Quantum Computing: Real-World Potential & Current Challenges"
 seoTitled: true
 youtubeId: "-1PsQIciMEc"
+channelTitle: "World Science Festival"
+channelId: "UCShHFwKyhcDo3g7hr4f1R8A"
+publishedAt: "2024-08-30T20:00:07Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

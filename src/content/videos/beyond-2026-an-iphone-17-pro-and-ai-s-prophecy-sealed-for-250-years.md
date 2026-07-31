@@ -2,6 +2,9 @@
 title: "Beyond 2026: An iPhone 17 Pro and AI's Prophecy Sealed for 250 Years"
 seoTitled: true
 youtubeId: "Fr5TQvfdYtU"
+channelTitle: "BNR Tech"
+channelId: "UCOgljeKJb6oTt9vlrbPUe4A"
+publishedAt: "2026-07-07T18:30:13Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

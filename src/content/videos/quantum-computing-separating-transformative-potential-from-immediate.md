@@ -2,6 +2,9 @@
 title: "Quantum Computing: Present Reality, Future Potential & Challenges"
 seoTitled: true
 youtubeId: "VyX8E4KUkWw"
+channelTitle: "Domain of Science"
+channelId: "UCxqAWLTk1CmBvZFPzeZMd9A"
+publishedAt: "2010-06-30T12:27:46Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Your Personal AI Assistant is Coming: The 3 Skills You *Must* Master Now"
 seoTitled: true
 youtubeId: "6fSTVx-E0ig"
+channelTitle: "Jonathan Acuña - Doctor AI"
+channelId: "UCOJp1lsu9vCF-TllwMzcCLg"
+publishedAt: "2026-06-14T12:29:20Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

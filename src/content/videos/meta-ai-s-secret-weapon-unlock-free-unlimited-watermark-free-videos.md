@@ -2,6 +2,9 @@
 title: "Meta AI Video Generator Free: Unlimited, No Watermark Videos"
 seoTitled: true
 youtubeId: "VWGc5Gie6n8"
+channelTitle: "Tech Rush"
+channelId: "UCPBEzVBqBeBFe9xC_FNhUTQ"
+publishedAt: "2026-07-10T15:08:09Z"
 date: "2026-07-10"
 tags:
   - "AI Video"

@@ -2,6 +2,9 @@
 title: "Passive Income Apps: Top 8 Fintech Tools to Build Wealth"
 seoTitled: true
 youtubeId: "G4InB8RaS_Y"
+channelTitle: "Jeremy Quainoo"
+channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
+publishedAt: "2023-03-26T18:33:40Z"
 date: "2026-07-11"
 tags:
   - "Fintech"

@@ -2,6 +2,9 @@
 title: "The Pillars of Fintech Trust: Security in Open Banking"
 seoTitled: true
 youtubeId: "KIBcJpVgh_w"
+channelTitle: "TBW Advisors LLC"
+channelId: "UCyZ9qOwCvhEz84Sk2gGNfaw"
+publishedAt: "2026-07-21T11:33:36Z"
 date: "2026-07-24"
 tags:
   - "Fintech"

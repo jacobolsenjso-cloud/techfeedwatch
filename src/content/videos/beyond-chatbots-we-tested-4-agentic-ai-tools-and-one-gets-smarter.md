@@ -2,6 +2,9 @@
 title: "Agentic AI Tools Tested: Review of 4 AI Agents for Automation"
 seoTitled: true
 youtubeId: "QcnrWiZokh4"
+channelTitle: "Parker Prompts"
+channelId: "UCaNk22cLid93kifuVbVapcQ"
+publishedAt: "2026-07-02T12:30:25Z"
 date: "2026-07-02"
 tags:
   - "AI & Tech"

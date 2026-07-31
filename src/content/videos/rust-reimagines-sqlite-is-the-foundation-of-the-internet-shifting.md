@@ -2,6 +2,9 @@
 title: "Rust SQLite Turso: Secure, Distributed Database Solution"
 seoTitled: true
 youtubeId: "Sntj4HmuykI"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2026-06-19T17:24:47Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

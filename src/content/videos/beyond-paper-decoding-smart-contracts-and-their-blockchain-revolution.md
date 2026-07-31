@@ -2,6 +2,9 @@
 title: "Smart Contracts Guide: Blockchain Benefits & Challenges"
 seoTitled: true
 youtubeId: "srjUFqnfKIs"
+channelTitle: "CoinGecko"
+channelId: "UC-OTgwOAI7KmP0eDAtqN3Ow"
+publishedAt: "2022-04-22T13:59:06Z"
 date: "2026-07-11"
 tags:
   - "Crypto"

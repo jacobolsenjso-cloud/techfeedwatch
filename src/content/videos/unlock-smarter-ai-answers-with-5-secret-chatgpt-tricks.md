@@ -2,6 +2,9 @@
 title: "Unlock Smarter AI Answers with 5 Secret ChatGPT Tricks"
 seoTitled: true
 youtubeId: "EoLOoOXYjGI"
+channelTitle: "QuickMoneyAI"
+channelId: "UCsSFIbsGCymKn1m_NBs6Psw"
+publishedAt: "2026-07-17T01:27:13Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

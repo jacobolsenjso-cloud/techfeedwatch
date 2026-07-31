@@ -2,6 +2,9 @@
 title: "Mustafa Suleyman: AI is new digital species, not merely a tool"
 seoTitled: true
 youtubeId: "KKNCiRWd_j0"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2024-04-22T17:24:11Z"
 date: "2026-07-15"
 tags:
   - "AI & Tech"

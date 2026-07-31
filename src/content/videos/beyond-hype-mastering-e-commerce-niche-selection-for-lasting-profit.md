@@ -2,6 +2,9 @@
 title: "Find Profitable E-commerce Niche: Data-Driven Strategies"
 seoTitled: true
 youtubeId: "vsWnptm8dF4"
+channelTitle: "Exploding Topics"
+channelId: "UCsbL4d_cdG7H4coftiP2lOQ"
+publishedAt: "2026-02-06T17:12:04Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

@@ -2,6 +2,9 @@
 title: "AI & Smart Contracts Automate Global Trade with Digital ID"
 seoTitled: true
 youtubeId: "ChBk-fQA0Mg"
+channelTitle: "Asia Tech Podcast Official"
+channelId: "UCcEKJT4mB_T-BV8cW-7yyQg"
+publishedAt: "2026-07-22T07:33:20Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

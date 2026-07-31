@@ -2,6 +2,9 @@
 title: "AI Temperature Explained: How it Controls Creativity in ChatGPT"
 seoTitled: true
 youtubeId: "1T_XK-F1DnE"
+channelTitle: "QuickSolve AI"
+channelId: "UCxx5WLl0G70Nns7JvrBTwJw"
+publishedAt: "2026-07-19T05:30:25Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

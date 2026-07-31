@@ -2,6 +2,9 @@
 title: "Skyeora's Growth: Smart Contracts Powering a Structured Ecosystem"
 seoTitled: true
 youtubeId: "0LaXimPv_Sc"
+channelTitle: "SKYEORA"
+channelId: "UCo-pYKiu9pyPRt9t7kGYL9A"
+publishedAt: "2026-07-18T07:00:39Z"
 date: "2026-07-18"
 tags:
   - "Automation"

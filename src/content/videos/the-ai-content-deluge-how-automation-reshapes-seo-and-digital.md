@@ -2,6 +2,9 @@
 title: "AI Content SEO: Automation Changes Publishing, Search Visibility"
 seoTitled: true
 youtubeId: "ZBSJ_8nFJpw"
+channelTitle: "GoldieAgencySEO"
+channelId: "UCWyDll8EeWuHfTCfm7VnR_A"
+publishedAt: "2026-04-20T10:20:30Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

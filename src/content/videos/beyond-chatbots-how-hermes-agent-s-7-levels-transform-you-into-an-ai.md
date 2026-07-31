@@ -2,6 +2,9 @@
 title: "AI Agents vs Chatbots: Boost Productivity with Autonomous AI"
 seoTitled: true
 youtubeId: "6GtF_uHbGhw"
+channelTitle: "Jack Roberts"
+channelId: "UCxVxcTULO9cFU6SB9qVaisQ"
+publishedAt: "2026-06-17T19:27:42Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

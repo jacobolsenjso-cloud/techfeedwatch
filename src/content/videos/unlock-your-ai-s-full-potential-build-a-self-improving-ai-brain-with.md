@@ -2,6 +2,9 @@
 title: "Build Self-Improving AI Brains for Personalized Expert Assistance"
 seoTitled: true
 youtubeId: "iadt4yTlK6w"
+channelTitle: "Ai Podcast "
+channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
+publishedAt: "2026-06-11T13:19:40Z"
 date: "2026-06-11"
 tags:
   - "AI & Tech"

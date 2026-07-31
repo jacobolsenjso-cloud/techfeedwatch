@@ -2,6 +2,9 @@
 title: "Quantum Computing's Growth: Why Investment & Progress Continue"
 seoTitled: true
 youtubeId: "gBTS7JZTyZY"
+channelTitle: "Sabine Hossenfelder"
+channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
+publishedAt: "2025-11-05T16:01:09Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

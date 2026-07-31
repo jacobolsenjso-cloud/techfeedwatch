@@ -2,6 +2,9 @@
 title: "Alibaba Quen AI: China's Free Desktop AI Ecosystem Challenges West"
 seoTitled: true
 youtubeId: "AJsAV4ZqwTc"
+channelTitle: "Alejavi Rivera"
+channelId: "UCxcDzs-4quJV4QsairlFYNg"
+publishedAt: "2026-05-10T17:00:21Z"
 date: "2026-06-13"
 tags:
   - "AI & Tech"

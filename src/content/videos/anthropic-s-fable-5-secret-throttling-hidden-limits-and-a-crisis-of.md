@@ -2,6 +2,9 @@
 title: "Anthropic Fable 5: AI Throttling, Hidden Limits Exposed, Trust Crisis"
 seoTitled: true
 youtubeId: "9LzBF70aI6k"
+channelTitle: "AI Revolution"
+channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
+publishedAt: "2026-06-11T22:57:43Z"
 date: "2026-06-15"
 tags:
   - "AI & Tech"

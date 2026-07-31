@@ -2,6 +2,9 @@
 title: "Create Your First Ethereum Smart Contract: Solidity & Remix"
 seoTitled: true
 youtubeId: "bNXJNeaYl8Q"
+channelTitle: "Block Explorer"
+channelId: "UCTJxrTdQWFGtKxTeincy9uA"
+publishedAt: "2022-01-01T01:13:33Z"
 date: "2026-07-12"
 tags:
   - "Coding"

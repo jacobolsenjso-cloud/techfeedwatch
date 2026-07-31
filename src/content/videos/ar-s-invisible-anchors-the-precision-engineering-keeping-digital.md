@@ -2,6 +2,9 @@
 title: "Augmented Reality Stability: How SLAM Grounds Digital Objects"
 seoTitled: true
 youtubeId: "RLeKWTo2kUs"
+channelTitle: "LessFace Lab"
+channelId: "UCVo82IcSZsTCyY7MJxCTdTA"
+publishedAt: "2026-07-20T14:09:04Z"
 date: "2026-07-21"
 tags:
   - "AI & Tech"

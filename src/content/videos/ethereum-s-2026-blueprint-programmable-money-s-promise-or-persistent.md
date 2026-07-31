@@ -2,6 +2,9 @@
 title: "Ethereum 2026: Programmable Money, Scaling, DeFi & NFTs"
 seoTitled: true
 youtubeId: "JsSQ0F6V9nQ"
+channelTitle: "Teacher Everything"
+channelId: "UCZTACV0TYvHDtcpZPykA2XA"
+publishedAt: "2026-03-23T16:33:07Z"
 date: "2026-07-18"
 tags:
   - "Crypto"

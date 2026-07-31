@@ -2,6 +2,9 @@
 title: "Cryptocurrency Explained: Blockchain, Digital Assets & Value"
 seoTitled: true
 youtubeId: "yiRCdMgkkFY"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2017-12-09T00:55:42Z"
 date: "2026-07-23"
 tags:
   - "Crypto"

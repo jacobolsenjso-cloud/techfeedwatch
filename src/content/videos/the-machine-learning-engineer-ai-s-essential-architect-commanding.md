@@ -2,6 +2,9 @@
 title: "Machine Learning Engineer Salary & Role: AI Production, Deployment"
 seoTitled: true
 youtubeId: "xi6NN0ta6Ss"
+channelTitle: "Series of Thoughts"
+channelId: "UC_-ZwGxVDnrYgRFFGKhsXfg"
+publishedAt: "2026-07-17T11:15:13Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

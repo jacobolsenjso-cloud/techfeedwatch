@@ -2,6 +2,9 @@
 title: "Oracle Networks: Real-World Data for Smart Contracts & DeFi"
 seoTitled: true
 youtubeId: "TPXTmVdlyoc"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2021-05-01T07:35:52Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

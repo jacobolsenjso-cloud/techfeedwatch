@@ -2,6 +2,9 @@
 title: "AR vs. VR Differences: Future of Immersive Tech Explained"
 seoTitled: true
 youtubeId: "Hrz4aPh4wlQ"
+channelTitle: "TECH NIGHTS"
+channelId: "UCZGL0y5_Qj9iBgQBAZ-rU2A"
+publishedAt: "2023-02-03T11:36:53Z"
 date: "2026-07-15"
 tags:
   - "AI & Tech"

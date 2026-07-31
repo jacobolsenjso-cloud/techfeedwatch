@@ -2,6 +2,9 @@
 title: "AI Front-End Development: Generative UI Tools & Dev Roles"
 seoTitled: true
 youtubeId: "TBIjgBVFjVI"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2024-09-05T18:54:47Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

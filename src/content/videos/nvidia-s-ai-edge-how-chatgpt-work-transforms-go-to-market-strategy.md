@@ -2,6 +2,9 @@
 title: "NVIDIA's AI Edge: How ChatGPT Work Transforms Go-To-Market Strategy and Scales Global Teams"
 seoTitled: true
 youtubeId: "xYVfknDQHU4"
+channelTitle: "OpenAI"
+channelId: "UCXZCJLdBC09xxGZ6gcdrc6A"
+publishedAt: "2026-07-09T22:30:40Z"
 date: "2026-07-09"
 tags:
   - "AI & Tech"

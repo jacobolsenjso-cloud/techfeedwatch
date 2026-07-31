@@ -2,6 +2,9 @@
 title: "Build Lorem Ipsum Generator on WordPress for Fast Design"
 seoTitled: true
 youtubeId: "4IkD872jBi0"
+channelTitle: "Key2Blogging"
+channelId: "UC7Lunv3M_7GRHIagA7erLtg"
+publishedAt: "2026-06-23T03:29:10Z"
 date: "2026-06-29"
 tags:
   - "Coding"

@@ -2,6 +2,9 @@
 title: "AI Smart Glasses: See, Translate, & Navigate Your World"
 seoTitled: true
 youtubeId: "0ntC3m1EPw8"
+channelTitle: "TECHSARAN LABS"
+channelId: "UC6GOKfTMJ-Ba3-tXVm55FPw"
+publishedAt: "2026-07-12T15:45:44Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

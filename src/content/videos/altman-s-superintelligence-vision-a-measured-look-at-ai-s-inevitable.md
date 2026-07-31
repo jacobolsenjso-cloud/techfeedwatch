@@ -2,6 +2,9 @@
 title: "Sam Altman Superintelligence: AI Governance & Safety Challenges"
 seoTitled: true
 youtubeId: "5MWT_doo68k"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2025-04-12T11:00:06Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

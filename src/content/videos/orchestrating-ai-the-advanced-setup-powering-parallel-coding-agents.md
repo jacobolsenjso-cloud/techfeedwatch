@@ -2,6 +2,9 @@
 title: "Parallel AI Coding Agents: Setup for Isolated Software Development"
 seoTitled: true
 youtubeId: "qxjII6x2yPY"
+channelTitle: "AI LABS"
+channelId: "UCelfWQr9sXVMTvBzviPGlFw"
+publishedAt: "2026-07-20T14:02:26Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

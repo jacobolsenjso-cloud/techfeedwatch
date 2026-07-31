@@ -2,6 +2,9 @@
 title: "No-Code AI Agents Reshape Workflows, Drive Automation by 2026"
 seoTitled: true
 youtubeId: "ibFJ--CH3cQ"
+channelTitle: "Futurepedia"
+channelId: "UC_RovKmk0OCbuZjA8f08opw"
+publishedAt: "2026-02-21T00:50:43Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

@@ -1,6 +1,9 @@
 ---
 title: "Nasdaq Changes Rules for SpaceX's Massive IPO"
 youtubeId: "bIZNyJzenSk"
+channelTitle: "DW News"
+channelId: "UCknLrEdhRCp1aegoMqRaCZg"
+publishedAt: "2026-06-05T18:00:11Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"

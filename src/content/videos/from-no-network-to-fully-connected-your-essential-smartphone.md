@@ -2,6 +2,9 @@
 title: "From 'No Network' to Fully Connected: Your Essential Smartphone Troubleshooting Guide"
 seoTitled: true
 youtubeId: "fQJbwihl8V0"
+channelTitle: "sarkar telecom"
+channelId: "UCqFPZdqZVO3zCU3YUg4G2aQ"
+publishedAt: "2026-07-08T07:36:47Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

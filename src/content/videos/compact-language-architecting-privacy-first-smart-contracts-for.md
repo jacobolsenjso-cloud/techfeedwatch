@@ -2,6 +2,9 @@
 title: "Compact Language: Build Privacy Smart Contracts on Midnight ZK"
 seoTitled: true
 youtubeId: "QWEtUJ2ymB0"
+channelTitle: "Midnight"
+channelId: "UCy3oZ64F3FOtjZ5sZGQNgkA"
+publishedAt: "2024-08-20T17:00:06Z"
 date: "2026-07-13"
 tags:
   - "Coding"

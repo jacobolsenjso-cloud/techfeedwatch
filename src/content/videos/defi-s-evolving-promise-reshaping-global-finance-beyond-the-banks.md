@@ -2,6 +2,9 @@
 title: "DeFi: Decentralized Finance Bypassing Traditional Banks"
 seoTitled: true
 youtubeId: "Vq1bxcoW1jQ"
+channelTitle: "Coin Bureau"
+channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
+publishedAt: "2020-01-27T12:59:27Z"
 date: "2026-07-24"
 tags:
   - "Fintech"

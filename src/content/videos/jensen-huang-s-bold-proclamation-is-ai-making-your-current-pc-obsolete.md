@@ -2,6 +2,9 @@
 title: "Jensen Huang's Bold Proclamation: Is AI Making Your Current PC Obsolete?"
 seoTitled: true
 youtubeId: "McLVH6J2jk4"
+channelTitle: "WireUnwired Research"
+channelId: "UCyGJnlm-oFgQH_FvFq0-p3Q"
+publishedAt: "2026-07-08T14:34:51Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Trustive Browser: Safe Smart Contract Signing with Plain-English Previews"
 seoTitled: true
 youtubeId: "IXGOgWn7-Kk"
+channelTitle: "Trustive AI"
+channelId: "UCOR6oZf0PwPfLQkUHyZVuoQ"
+publishedAt: "2026-07-24T06:02:19Z"
 date: "2026-07-24"
 tags:
   - "Crypto"

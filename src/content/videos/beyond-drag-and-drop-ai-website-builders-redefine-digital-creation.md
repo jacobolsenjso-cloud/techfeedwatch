@@ -2,6 +2,9 @@
 title: "AI Website Builders Automate Design & SEO for Easy Creation"
 seoTitled: true
 youtubeId: "ghwU2bDDHhE"
+channelTitle: "DIGITOOLY"
+channelId: "UCjnF5SXCmw7qCuP7Ot2yZSQ"
+publishedAt: "2026-07-13T05:19:33Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

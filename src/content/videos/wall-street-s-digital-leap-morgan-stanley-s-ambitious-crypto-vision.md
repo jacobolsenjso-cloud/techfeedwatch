@@ -2,6 +2,9 @@
 title: "Morgan Stanley Digital Asset Strategy: Crypto, Tokenization & AI"
 seoTitled: true
 youtubeId: "g9WFO0M9KT4"
+channelTitle: "Yahoo Finance"
+channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"
+publishedAt: "2026-07-24T16:19:22Z"
 date: "2026-07-27"
 tags:
   - "Fintech"

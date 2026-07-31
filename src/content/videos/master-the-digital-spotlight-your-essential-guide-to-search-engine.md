@@ -2,6 +2,9 @@
 title: "Modern SEO Guide: Master Evolving Search Engine Algorithms"
 seoTitled: true
 youtubeId: "COL_qPL5xsg"
+channelTitle: "Techquickie"
+channelId: "UC0vBXGSyV14uvJ4hECDOl0Q"
+publishedAt: "2017-06-06T21:30:25Z"
 date: "2026-07-11"
 tags:
   - "SEO"

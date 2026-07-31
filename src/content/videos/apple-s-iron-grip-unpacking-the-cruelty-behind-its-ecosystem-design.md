@@ -2,6 +2,9 @@
 title: "Apple's Iron Grip: Unpacking the 'Cruelty' Behind Its Ecosystem Design"
 seoTitled: true
 youtubeId: "rV_oGWVhcuY"
+channelTitle: "SupremeTech"
+channelId: "UCGVruptuWYUsKrrny9vOX1A"
+publishedAt: "2026-07-07T17:34:32Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

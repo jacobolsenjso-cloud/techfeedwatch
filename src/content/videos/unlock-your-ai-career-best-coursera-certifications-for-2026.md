@@ -2,6 +2,9 @@
 title: "Unlock Your AI Career: Best Coursera Certifications for 2026"
 seoTitled: true
 youtubeId: "1sm3XBHTSDA"
+channelTitle: "App Unbox"
+channelId: "UCnTGx8llU6GrhACxrbLaIXw"
+publishedAt: "2026-07-14T16:45:01Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

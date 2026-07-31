@@ -2,6 +2,9 @@
 title: "Creators Use Blockchain & NFTs for Direct Ownership & Monetization"
 seoTitled: true
 youtubeId: "rWTwcySGvrE"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2022-05-17T16:14:07Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

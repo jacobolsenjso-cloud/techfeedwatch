@@ -2,6 +2,9 @@
 title: "Japan Unveils Infinite VR Floor for Endless Virtual Exploration"
 seoTitled: true
 youtubeId: "QpaNET3jzeE"
+channelTitle: "Ant Sant Duniya "
+channelId: "UC4lToHNO3k4akZSQUuvCz2A"
+publishedAt: "2026-07-16T07:45:50Z"
 date: "2026-07-16"
 tags:
   - "AI & Tech"

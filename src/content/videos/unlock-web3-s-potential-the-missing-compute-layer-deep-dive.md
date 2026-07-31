@@ -2,6 +2,9 @@
 title: "Unlock Web3's Potential: The Missing Compute Layer Deep Dive"
 seoTitled: true
 youtubeId: "oGoQfbGdxcA"
+channelTitle: "Cartesi"
+channelId: "UCJ2As__5GSeP6yPBGPbzSOw"
+publishedAt: "2026-07-14T04:49:20Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

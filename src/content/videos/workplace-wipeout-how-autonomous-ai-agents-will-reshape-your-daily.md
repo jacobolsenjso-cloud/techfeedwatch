@@ -2,6 +2,9 @@
 title: "Workplace Wipeout: How Autonomous AI Agents Will Reshape Your Daily Tasks by 2026"
 seoTitled: true
 youtubeId: "DDkiq4UTVfA"
+channelTitle: "The LLM Note"
+channelId: "UCiTH0JEYvtaYnppMjBRnO1w"
+publishedAt: "2026-06-07T11:00:00Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI No-Code: Build Niche Websites & Online Businesses"
 seoTitled: true
 youtubeId: "Y-zKVrSRsiM"
+channelTitle: "AI Forge"
+channelId: "UClZ4DE_kxxd_aieBXOp_knA"
+publishedAt: "2026-07-02T08:10:38Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

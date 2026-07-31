@@ -2,6 +2,9 @@
 title: "Simplifying Bitcoin Development for Builders"
 seoTitled: true
 youtubeId: "mtX4BKaZo-U"
+channelTitle: "Developer DAO"
+channelId: "UCoYk_C5So-Tec1OGzbGKhRw"
+publishedAt: "2026-07-25T20:00:00Z"
 date: "2026-07-25"
 tags:
   - "Crypto"

@@ -2,6 +2,9 @@
 title: "AI for SEO & Social Media: Automate Digital Marketing"
 seoTitled: true
 youtubeId: "DYkZ5CXmkxo"
+channelTitle: "Tim The SEO Guru"
+channelId: "UCEYla_ISXZ0-Hd_htnsBn_g"
+publishedAt: "2026-06-15T17:08:06Z"
 date: "2026-06-18"
 tags:
   - "SEO"

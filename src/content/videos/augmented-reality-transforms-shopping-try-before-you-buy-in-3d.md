@@ -2,6 +2,9 @@
 title: "Augmented Reality Transforms Shopping: Try Before You Buy in 3D"
 seoTitled: true
 youtubeId: "5tcDgCs5n_s"
+channelTitle: "NEXTGENET"
+channelId: "UCAaxhCym0qa-dgA2phr5LOg"
+publishedAt: "2026-07-17T07:51:30Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

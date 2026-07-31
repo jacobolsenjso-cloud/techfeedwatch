@@ -2,6 +2,9 @@
 title: "Top AI Skills You Need to Master Before 2030"
 seoTitled: true
 youtubeId: "qJ_6GEN3_oE"
+channelTitle: "Stick Zeen"
+channelId: "UCk3k-FZCOrqsoOa66k1iWVg"
+publishedAt: "2026-07-17T16:56:02Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

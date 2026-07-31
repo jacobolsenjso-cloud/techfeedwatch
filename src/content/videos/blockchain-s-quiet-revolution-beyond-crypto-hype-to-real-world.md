@@ -2,6 +2,9 @@
 title: "Blockchain Business Transformation: Real-World Impact Beyond Crypto"
 seoTitled: true
 youtubeId: "Pl8OlkkwRpc"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2016-09-16T15:21:38Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

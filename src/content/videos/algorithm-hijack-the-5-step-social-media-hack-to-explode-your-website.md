@@ -2,6 +2,9 @@
 title: "Website Traffic: 5-Step Social Media Algorithm Hack"
 seoTitled: true
 youtubeId: "gCJJWThZy2U"
+channelTitle: "Profit Copilot"
+channelId: "UCmBig3OTZ_YEeltNkF-ecJQ"
+publishedAt: "2026-06-22T15:00:33Z"
 date: "2026-06-22"
 tags:
   - "SEO"

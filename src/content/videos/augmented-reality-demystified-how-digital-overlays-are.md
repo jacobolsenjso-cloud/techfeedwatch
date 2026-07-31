@@ -2,6 +2,9 @@
 title: "Augmented Reality: How AR Layers Digital Info for Business Growth"
 seoTitled: true
 youtubeId: "Gy05tGLW3PE"
+channelTitle: "postindustria_"
+channelId: "UCJOEr3_V_F0V3MJPNyYR9jw"
+publishedAt: "2021-08-14T08:20:45Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Productivity Tools: Transform Workflows, Boost Efficiency"
 seoTitled: true
 youtubeId: "RcXG_b1_GB0"
+channelTitle: "Digital Brain"
+channelId: "UC5bWuLcwDgD8QrE16D8dNfA"
+publishedAt: "2026-07-21T16:59:52Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

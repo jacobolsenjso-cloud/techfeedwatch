@@ -2,6 +2,9 @@
 title: "Google Cloud TPUs Cut AI Compute Costs, Boost Accessibility"
 seoTitled: true
 youtubeId: "bNdiBwXbLNw"
+channelTitle: "Matthew Berman"
+channelId: "UCawZsQWqfGSbCI5yjkdVkTA"
+publishedAt: "2026-04-24T17:40:07Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

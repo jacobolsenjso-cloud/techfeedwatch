@@ -2,6 +2,9 @@
 title: "Shape-Shifting Swarms: How FloatForm's Robot Boats are Redefining Aquatic Autonomy"
 seoTitled: true
 youtubeId: "Bz-vkzQhKYU"
+channelTitle: "Future Lens Pi"
+channelId: "UCRo3Hvl8gu9RkwYDs0ERp6w"
+publishedAt: "2026-07-10T10:43:33Z"
 date: "2026-07-10"
 tags:
   - "AI & Tech"

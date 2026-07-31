@@ -2,6 +2,9 @@
 title: "Google Gemini & Android XR AI for iPhone Users"
 seoTitled: true
 youtubeId: "S6XIxnb7AsQ"
+channelTitle: "MacRumors"
+channelId: "UCaFGDBmGK_jw66u3av2Ysjw"
+publishedAt: "2026-05-27T13:21:24Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

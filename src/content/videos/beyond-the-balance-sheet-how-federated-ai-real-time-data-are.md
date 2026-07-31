@@ -2,6 +2,9 @@
 title: "Beyond the Balance Sheet: How Federated AI & Real-Time Data Are Redefining Credit for a New Era"
 seoTitled: true
 youtubeId: "MR2uEbqVHZA"
+channelTitle: "Wealth Academy"
+channelId: "UCn9MGnr_gaf3RwOp5HRPjHw"
+publishedAt: "2026-07-05T00:00:05Z"
 date: "2026-07-11"
 tags:
   - "Fintech"

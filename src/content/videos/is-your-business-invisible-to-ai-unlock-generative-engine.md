@@ -2,6 +2,9 @@
 title: "Is Your Business Invisible to AI? Unlock Generative Engine Optimization (GEO)"
 seoTitled: true
 youtubeId: "P1zFsc2h0Ew"
+channelTitle: "The Chimera Marketing"
+channelId: "UCLeZZyf4SadYVLrZtib7Lqw"
+publishedAt: "2026-07-19T14:41:48Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

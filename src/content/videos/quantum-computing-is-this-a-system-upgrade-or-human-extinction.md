@@ -2,6 +2,9 @@
 title: "Quantum Computing: Is This a System Upgrade or Human Extinction?"
 seoTitled: true
 youtubeId: "nUbMQM6KsXE"
+channelTitle: "Reality Drifter"
+channelId: "UCLSit0pHsZM2BB5kki-u_pg"
+publishedAt: "2026-07-13T06:52:58Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

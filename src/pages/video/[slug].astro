@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import { tagSlug } from '../../lib/tags';
 
 export async function getStaticPaths() {
   const videos = Object.values(import.meta.glob('../../content/videos/*.md', { eager: true }));
@@ -16,6 +17,16 @@ export async function getStaticPaths() {
 const { video, allVideos, slug } = Astro.props as { video: any, allVideos: any[], slug: string };
 const { title, youtubeId, date, summary, isShort } = video.frontmatter;
 const faqs = video.frontmatter.faqs || [];
+
+// Kilde: den oprindelige YouTube-kanal. Backfilles via backfill-channels.mjs og
+// sættes fremover af add-video.mjs. Kan mangle på ældre artikler.
+const sourceChannel: string | null = video.frontmatter.channelTitle || null;
+const sourceChannelId: string | null = video.frontmatter.channelId || null;
+const sourceChannelUrl: string | null = sourceChannelId
+  ? `https://www.youtube.com/channel/${sourceChannelId}`
+  : (sourceChannel ? `https://www.youtube.com/results?search_query=${encodeURIComponent(sourceChannel)}` : null);
+// Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
+const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
 const TOOL_SUGGESTIONS = [
   { tags: ["AI & Tech", "Coding", "AI Video"], title: "AI Token & Cost Calculator", description: "Estimate token count and input cost across GPT-4o, Claude, and Gemini.", href: "/tools/ai-token-calculator" },
@@ -122,13 +133,6 @@ const recommendPool = allVideos
 const baseUrl = "https://techfeedwatch.com";
 const currentUrl = `${baseUrl}/video/${slug}`;
 
-const stringHash = (str: string) => {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  return Math.abs(hash);
-};
-const baseLikes = (stringHash(youtubeId) % 4000) + 500;
-
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -138,12 +142,15 @@ const videoSchema = {
     `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
     `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`
   ],
-  "uploadDate": new Date(date).toISOString(),
+  // Videoens egen udgivelsesdato hvis vi har den; ellers artiklens dato som fallback.
+  "uploadDate": new Date(sourcePublishedAt || date).toISOString(),
   "embedUrl": `https://www.youtube-nocookie.com/embed/${youtubeId}`,
-  "author": {
-    "@type": "Person",
-    "name": "Jacob Olsen"
-  }
+  // Videoen er skabt af den oprindelige YouTube-kanal — ikke af os. Vi angiver
+  // kanalen som creator/publisher når vi kender den, og ellers slet ingen author.
+  ...(sourceChannel ? {
+    "creator": { "@type": "Organization", "name": sourceChannel, ...(sourceChannelUrl ? { "url": sourceChannelUrl } : {}) },
+    "publisher": { "@type": "Organization", "name": sourceChannel, ...(sourceChannelUrl ? { "url": sourceChannelUrl } : {}) }
+  } : {})
 };
 
 // Article-schema styrker E-E-A-T (forfatter + dato) på de rigtige artikelsider (ikke Shorts)
@@ -161,7 +168,13 @@ const articleSchema = {
     "name": "Tech Feed Watch",
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl },
+  // Artiklen er en analyse af en video fra en tredjepart — det siger vi eksplicit.
+  "isBasedOn": {
+    "@type": "VideoObject",
+    "url": `https://www.youtube.com/watch?v=${youtubeId}`,
+    ...(sourceChannel ? { "creator": { "@type": "Organization", "name": sourceChannel } } : {})
+  }
 };
 
 // Shorts: kun VideoObject. Artikler: både VideoObject og Article (array = flere schema-noder)
@@ -220,6 +233,30 @@ const metaDesc = rawMeta.length > 157
     .article-meta { display: flex; align-items: center; gap: 8px; margin: -5px 0 18px 0; font-size: 0.9rem; color: #6b7280; font-weight: 500; }
     body.dark-mode .article-meta { color: #9ca3af; }
     .article-meta-sep { opacity: 0.5; }
+
+    /* Byline øverst: forfatter + dato er E-E-A-T-signaler og bør stå før brødteksten,
+       ikke kun i forfatterboksen i bunden. */
+    .article-byline { display: flex; align-items: center; gap: 12px; margin: 0 0 14px 0; }
+    .byline-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+    .byline-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .byline-name { font-size: 0.92rem; font-weight: 600; color: var(--text-color); }
+    .byline-name a { color: inherit; text-decoration: none; }
+    .byline-name a:hover { text-decoration: underline; }
+    .byline-meta { display: flex; align-items: center; gap: 7px; font-size: 0.83rem; color: #6b7280; font-weight: 500; }
+    body.dark-mode .byline-meta { color: #9ca3af; }
+
+    /* Kildeangivelse: gør det utvetydigt at videoen er en tredjeparts værk. */
+    .source-credit {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      margin: 0 0 18px 0; padding: 10px 14px;
+      border: 1px solid var(--border-color); border-radius: 10px;
+      background: var(--hover-bg);
+      font-size: 0.86rem; color: #4b5563; line-height: 1.5;
+    }
+    body.dark-mode .source-credit { color: #a1a1aa; }
+    .source-credit svg { width: 17px; height: 17px; flex-shrink: 0; color: #ff0000; }
+    .source-credit a { color: #0891b2; font-weight: 600; text-decoration: none; }
+    .source-credit a:hover { text-decoration: underline; }
     .inline-recs { margin: 34px 0; padding: 20px 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--hover-bg); }
     .inline-recs-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
     body.dark-mode .inline-recs-label { color: #a1a1aa; }
@@ -581,16 +618,16 @@ const metaDesc = rawMeta.length > 157
           <div style="width: 30px; height: 1px; background: rgba(150,150,150,0.3); margin: 5px 0;"></div>
 
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="likeBtn" data-likes={baseLikes} aria-label="Like Video" title="Like">
+            <button class="shorts-circle-btn" id="likeBtn" aria-label="Mark as helpful" title="Helpful">
               <svg viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
             </button>
-            <span class="shorts-label" id="likeCount">...</span>
+            <span class="shorts-label">Helpful</span>
           </div>
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="dislikeBtn" aria-label="Dislike Video" title="Dislike">
+            <button class="shorts-circle-btn" id="dislikeBtn" aria-label="Mark as not helpful" title="Not helpful">
               <svg viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
             </button>
-            <span class="shorts-label">Dislike</span>
+            <span class="shorts-label">Not helpful</span>
           </div>
           <div class="shorts-btn-group">
             <button class="shorts-circle-btn share-trigger" id="shareBtn" aria-label="Share Video" title="Share">
@@ -614,7 +651,7 @@ const metaDesc = rawMeta.length > 157
         {tagsArray.length > 0 && (
           <div class="focus-tags-bar">
             {tagsArray.map((t: string) => (
-              <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="focus-chip active">#{t}</a>
+              <a href={`/tag/${tagSlug(t)}`} class="focus-chip active">#{t}</a>
             ))}
             <a href="/library" class="focus-chip">All Videos</a>
             <a href="/shorts" class="focus-chip">Shorts</a>
@@ -631,11 +668,29 @@ const metaDesc = rawMeta.length > 157
             <h1>{title}</h1>
           </div>
 
-          <div class="article-meta">
-            <span class="article-meta-item">🕒 {video.frontmatter.minutesRead || 1} min read</span>
-            <span class="article-meta-sep">·</span>
-            <time class="article-meta-item" datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+          <div class="article-byline">
+            <img src="/jacob-olsen.png" alt="" class="byline-avatar" width="40" height="40" loading="lazy" decoding="async" />
+            <div class="byline-text">
+              <span class="byline-name">Analysis by <a href="/author/jacob-olsen">Jacob Olsen</a></span>
+              <span class="byline-meta">
+                <time datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+                <span class="article-meta-sep">·</span>
+                <span>{video.frontmatter.minutesRead || 1} min read</span>
+              </span>
+            </div>
           </div>
+
+          <p class="source-credit">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+            <span>
+              Analysis of a video published on YouTube by{' '}
+              {sourceChannel && sourceChannelUrl ? (
+                <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
+              ) : (
+                <a href={`https://www.youtube.com/watch?v=${youtubeId}`} target="_blank" rel="noopener nofollow">the original creator</a>
+              )}. Tech Feed Watch is not affiliated with the creator, and all rights to the video remain theirs.
+            </span>
+          </p>
 
           <div class="summary-box">
             {summary}
@@ -673,12 +728,12 @@ const metaDesc = rawMeta.length > 157
         <div class="cinema-reading-block">
         <div class="action-bar">
           <div class="pill-group">
-            <button id="likeBtn" data-likes={baseLikes} aria-label="Like Video" title="Like">
+            <button id="likeBtn" aria-label="Mark as helpful" title="Helpful">
               <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-              <span id="likeCount">...</span>
+              <span>Helpful</span>
             </button>
             <div class="pill-divider"></div>
-            <button id="dislikeBtn" aria-label="Dislike Video" title="Dislike">
+            <button id="dislikeBtn" aria-label="Mark as not helpful" title="Not helpful">
               <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
             </button>
           </div>
@@ -697,7 +752,7 @@ const metaDesc = rawMeta.length > 157
         {tagsArray.length > 0 && (
           <div class="tag-container">
             {tagsArray.map((t: string) => (
-              <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="tag-badge">#{t}</a>
+              <a href={`/tag/${tagSlug(t)}`} class="tag-badge">#{t}</a>
             ))}
           </div>
         )}
@@ -769,9 +824,9 @@ const metaDesc = rawMeta.length > 157
             <div class="explore-tags-grid">
               {allUniqueTags.map((t: string) => (
                 TAG_COLORS[t] ? (
-                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip explore-chip-accent" style={`--tag-accent: ${TAG_COLORS[t]}`}>{t}</a>
+                  <a href={`/tag/${tagSlug(t)}`} class="explore-chip explore-chip-accent" style={`--tag-accent: ${TAG_COLORS[t]}`}>{t}</a>
                 ) : (
-                  <a href={`/tag/${t.toLowerCase().replace(/\s+/g, '-')}`} class="explore-chip">{t}</a>
+                  <a href={`/tag/${tagSlug(t)}`} class="explore-chip">{t}</a>
                 )
               ))}
             </div>
@@ -939,17 +994,15 @@ const metaDesc = rawMeta.length > 157
 
       const likeBtn = document.getElementById('likeBtn');
       const dislikeBtn = document.getElementById('dislikeBtn');
-      const likeCount = document.getElementById('likeCount');
-      if (likeBtn && dislikeBtn && likeCount && slug) {
-        const baseLikes = parseInt(likeBtn.getAttribute('data-likes'));
+      if (likeBtn && dislikeBtn && slug) {
+        // Rent lokal præference (localStorage). Vi viser ikke tal — der findes
+        // ingen rigtige stemmetal, og opdigtede tal ville vildlede læseren.
         const updateLikesUI = () => {
           const state = localStorage.getItem(`interaction_${slug}`);
           likeBtn.classList.remove('btn-active');
           dislikeBtn.classList.remove('btn-active');
-          let displayNum = baseLikes;
-          if (state === 'liked') { likeBtn.classList.add('btn-active'); displayNum++; }
+          if (state === 'liked') { likeBtn.classList.add('btn-active'); }
           else if (state === 'disliked') { dislikeBtn.classList.add('btn-active'); }
-          likeCount.innerText = displayNum >= 1000 ? (displayNum / 1000).toFixed(1) + 'K' : displayNum;
         };
         updateLikesUI();
         likeBtn.addEventListener('click', () => {

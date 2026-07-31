@@ -2,6 +2,9 @@
 title: "Claude AI: Advanced Features, Workflow Automation & App Building"
 seoTitled: true
 youtubeId: "MS7E5TXNviM"
+channelTitle: "Futurepedia"
+channelId: "UC_RovKmk0OCbuZjA8f08opw"
+publishedAt: "2026-06-24T20:05:15Z"
 date: "2026-06-29"
 tags:
   - "AI & Tech"

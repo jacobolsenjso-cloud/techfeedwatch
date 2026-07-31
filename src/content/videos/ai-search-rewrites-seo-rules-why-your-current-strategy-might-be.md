@@ -2,6 +2,9 @@
 title: "AI Search SEO: Your Strategy for Google AI Overviews & Rankings"
 seoTitled: true
 youtubeId: "zawsAmcN71M"
+channelTitle: "josh bachynski"
+channelId: "UC_VoVYVFhtWDhYYXSiYQbNA"
+publishedAt: "2026-06-24T10:04:37Z"
 date: "2026-07-21"
 tags:
   - "SEO"

@@ -2,6 +2,9 @@
 title: "Claude Science: Anthropic AI Automates Self-Correcting Scientific Research"
 seoTitled: true
 youtubeId: "9zK0omjrwWY"
+channelTitle: "Zinho Automates"
+channelId: "UC3i3qKQ5aR_guegQj5bhOMw"
+publishedAt: "2026-07-02T14:09:11Z"
 date: "2026-07-02"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Why 90% of AI Projects Fail: An Expert Explains"
 seoTitled: true
 youtubeId: "k5dJV_QvNSM"
+channelTitle: "AB Talks"
+channelId: "UCX-iRWp3bgD_lBAwhNGM3gw"
+publishedAt: "2026-07-23T13:15:34Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

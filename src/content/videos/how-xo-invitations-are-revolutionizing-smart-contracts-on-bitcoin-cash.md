@@ -2,6 +2,9 @@
 title: "How XO Invitations Are Revolutionizing Smart Contracts on Bitcoin Cash"
 seoTitled: true
 youtubeId: "NJi0QnsSxMs"
+channelTitle: "General Protocols"
+channelId: "UC5SNbrKvKHh3HAtfBWY5SxA"
+publishedAt: "2026-07-12T01:08:27Z"
 date: "2026-07-12"
 tags:
   - "Crypto"

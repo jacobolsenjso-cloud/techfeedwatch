@@ -2,6 +2,9 @@
 title: "AI for Local Business: Hit $10K/Month Revenue in 3 Months"
 seoTitled: true
 youtubeId: "V1vFf-9Gzlo"
+channelTitle: "Income stream surfers"
+channelId: "UCctL30i8tVgSS9A37Q532eg"
+publishedAt: "2026-06-27T00:02:05Z"
 date: "2026-06-29"
 tags:
   - "Business & Money"

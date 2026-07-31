@@ -2,6 +2,9 @@
 title: "AI in 60 Seconds: The 'Never Right' Revelation"
 seoTitled: true
 youtubeId: "J9_w46ttUNM"
+channelTitle: "Byte4U"
+channelId: "UC603NOUfUD3kDKZWR2TMkBg"
+publishedAt: "2026-07-21T22:00:01Z"
 date: "2026-07-22"
 tags:
   - "AI & Tech"

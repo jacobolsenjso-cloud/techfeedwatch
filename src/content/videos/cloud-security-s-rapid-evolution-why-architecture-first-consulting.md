@@ -2,6 +2,9 @@
 title: "Architecture-First Cloud Security Consulting for Businesses"
 seoTitled: true
 youtubeId: "LCa-ioVi8Fs"
+channelTitle: "Atlant Security"
+channelId: "UCikvwIKCOQQ8iXt3v8uEyzQ"
+publishedAt: "2026-07-06T06:37:33Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

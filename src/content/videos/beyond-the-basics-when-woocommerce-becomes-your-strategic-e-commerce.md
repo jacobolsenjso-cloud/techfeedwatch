@@ -2,6 +2,9 @@
 title: "WooCommerce Customization: Advanced E-commerce for Unique Businesses"
 seoTitled: true
 youtubeId: "VngFqKHftbY"
+channelTitle: "BallinDigital"
+channelId: "UCfwIDEvDRT8TvFB6YwBQLgg"
+publishedAt: "2026-07-28T21:21:18Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

@@ -2,6 +2,9 @@
 title: "Answer Engine Optimization (AEO): Dominate AI Search & Answers"
 seoTitled: true
 youtubeId: "LxGyfu8A10M"
+channelTitle: "Dedi Styawan"
+channelId: "UCexGb-0JJMsKzqp7bSD-6UQ"
+publishedAt: "2026-04-08T10:54:46Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Kaspa Smart Contracts: Adoption Needed for DeFi Relevancy"
 seoTitled: true
 youtubeId: "FJwBBr-Ndao"
+channelTitle: "Gerhard - Bitcoin Strategy"
+channelId: "UCfQaLLoJYaxg9ZNJVHCR9Lg"
+publishedAt: "2026-07-18T11:45:03Z"
 date: "2026-07-19"
 tags:
   - "Crypto"

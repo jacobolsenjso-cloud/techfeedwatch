@@ -2,6 +2,9 @@
 title: "Clarity Act: Crypto Regulation Aims to Define Digital Assets"
 seoTitled: true
 youtubeId: "Up9AcAKAVSY"
+channelTitle: "Altcoin Daily"
+channelId: "UCbLhGKVY-bJPcawebgtNfbw"
+publishedAt: "2026-07-25T23:21:23Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

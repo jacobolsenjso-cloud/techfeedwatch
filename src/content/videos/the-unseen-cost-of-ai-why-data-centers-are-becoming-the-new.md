@@ -2,6 +2,9 @@
 title: "AI Data Centers Strain Grids: High Energy & Space Demands"
 seoTitled: true
 youtubeId: "5QT3y9Gp3Rg"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-07-27T10:59:08Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

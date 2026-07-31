@@ -2,6 +2,9 @@
 title: "Quantum Computing: Differentiating Reality & Potential"
 seoTitled: true
 youtubeId: "sHDWnW1fXJw"
+channelTitle: "Modern Software Engineering"
+channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
+publishedAt: "2026-04-17T18:00:49Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

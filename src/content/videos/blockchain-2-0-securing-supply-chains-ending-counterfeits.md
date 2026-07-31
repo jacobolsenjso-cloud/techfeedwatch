@@ -2,6 +2,9 @@
 title: "Blockchain 2.0: Securing Supply Chains, Ending Counterfeits"
 seoTitled: true
 youtubeId: "oXIKpLKrwoU"
+channelTitle: "Tech Talk Insider"
+channelId: "UCLAgrMgDmUT5B8fX-tGq9dA"
+publishedAt: "2026-07-25T13:00:31Z"
 date: "2026-07-25"
 tags:
   - "AI & Tech"

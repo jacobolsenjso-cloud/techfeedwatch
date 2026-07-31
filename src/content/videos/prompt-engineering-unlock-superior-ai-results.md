@@ -2,6 +2,9 @@
 title: "Prompt Engineering: Unlock Superior AI Results"
 seoTitled: true
 youtubeId: "UhkYsFcEixQ"
+channelTitle: "AI Horizon"
+channelId: "UCLefLGNNdxzaxTr9-hM08LA"
+publishedAt: "2026-07-21T10:14:00Z"
 date: "2026-07-21"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Build Apps Without Coding: Claude Code AI for Non-Developers"
 seoTitled: true
 youtubeId: "5tgHMa2Z3jc"
+channelTitle: "Futurepedia"
+channelId: "UC_RovKmk0OCbuZjA8f08opw"
+publishedAt: "2026-06-15T15:14:25Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

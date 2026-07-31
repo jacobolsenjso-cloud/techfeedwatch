@@ -2,6 +2,9 @@
 title: "Will AI Take Your Job? Decoding the Future of PLC Engineers in the AI Era"
 seoTitled: true
 youtubeId: "QX5U6hLhpUg"
+channelTitle: "Engineering"
+channelId: "UCQI5m9fG5-3uEexB_FsCmTA"
+publishedAt: "2026-07-11T18:50:47Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

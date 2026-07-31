@@ -2,6 +2,9 @@
 title: "ARLOOPA: Bringing 3D Models to Life in Augmented Reality"
 seoTitled: true
 youtubeId: "_mTfzEcR9BA"
+channelTitle: "MindEyeMedia"
+channelId: "UCKbL1NSPZrJtrv4RlNsNKfA"
+publishedAt: "2026-07-20T16:00:28Z"
 date: "2026-07-21"
 tags:
   - "AI & Tech"

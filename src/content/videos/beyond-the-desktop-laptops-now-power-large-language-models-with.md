@@ -2,6 +2,9 @@
 title: "Local LLM Performance on Laptops: Optimize CPU & GPU Memory"
 seoTitled: true
 youtubeId: "AcTmeGpzhBk"
+channelTitle: "Alex Ziskind"
+channelId: "UCajiMK_CY9icRhLepS8_3ug"
+publishedAt: "2025-05-27T15:39:09Z"
 date: "2026-07-21"
 tags:
   - "AI & Tech"

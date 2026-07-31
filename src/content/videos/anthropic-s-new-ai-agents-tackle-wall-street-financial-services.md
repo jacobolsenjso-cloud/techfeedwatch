@@ -2,6 +2,9 @@
 title: "Anthropic's New AI Agents Tackle Wall Street Financial Services"
 seoTitled: true
 youtubeId: "W3RLgeUiUXY"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-05-06T15:32:34Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

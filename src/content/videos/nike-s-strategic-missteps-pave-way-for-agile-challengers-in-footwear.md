@@ -2,6 +2,9 @@
 title: "Nike's Footwear Missteps Fuel Agile Challengers' Digital Growth"
 seoTitled: true
 youtubeId: "8s7t64aXaEA"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2026-03-30T14:00:11Z"
 date: "2026-07-29"
 tags:
   - "Business & Money"

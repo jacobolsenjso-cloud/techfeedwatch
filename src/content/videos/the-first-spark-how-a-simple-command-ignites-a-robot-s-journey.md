@@ -2,6 +2,9 @@
 title: "The First Spark: How a Simple Command Ignites a Robot's Journey"
 seoTitled: true
 youtubeId: "32aUeHoJwbo"
+channelTitle: "Scott Preston"
+channelId: "UCmV-AUN8XdzX-TYDxddcM4w"
+publishedAt: "2026-07-06T17:53:00Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "State-sponsored APT cyberattacks target critical infrastructure"
 seoTitled: true
 youtubeId: "52HdL_uRal8"
+channelTitle: "RSTCON"
+channelId: "UC7DaXO1Sm8JB4J27X8dNJQg"
+publishedAt: "2026-07-24T20:00:06Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

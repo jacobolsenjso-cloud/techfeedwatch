@@ -2,6 +2,9 @@
 title: "MetaFi Explained: How Ethereum Fuels the Metaverse Economy"
 seoTitled: true
 youtubeId: "dQRhn_pBiUM"
+channelTitle: "Crypto Diva"
+channelId: "UC0bhBXbwb39aPlB_eZAOCNQ"
+publishedAt: "2026-07-14T14:52:21Z"
 date: "2026-07-14"
 tags:
   - "Fintech"

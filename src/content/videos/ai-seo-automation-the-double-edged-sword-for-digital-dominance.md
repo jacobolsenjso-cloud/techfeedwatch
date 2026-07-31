@@ -2,6 +2,9 @@
 title: "AI SEO Automation: Benefits & Risks for Digital Strategy"
 seoTitled: true
 youtubeId: "p__wg34jz64"
+channelTitle: "GoldieAgencySEO"
+channelId: "UCWyDll8EeWuHfTCfm7VnR_A"
+publishedAt: "2026-04-07T10:24:02Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

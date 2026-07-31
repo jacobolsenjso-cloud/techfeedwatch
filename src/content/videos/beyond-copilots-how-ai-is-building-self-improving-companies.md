@@ -2,6 +2,9 @@
 title: "Autonomous AI: Continuous optimization for self-improving companies"
 seoTitled: true
 youtubeId: "X_JsIHUfUjc"
+channelTitle: "Y Combinator"
+channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
+publishedAt: "2026-05-21T14:00:51Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"

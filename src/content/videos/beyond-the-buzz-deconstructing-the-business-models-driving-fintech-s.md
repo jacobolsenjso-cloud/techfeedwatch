@@ -2,6 +2,9 @@
 title: "Fintech Business Models: Value & Revenue Strategies Explained"
 seoTitled: true
 youtubeId: "EAcoLD_Md7g"
+channelTitle: "Jeremy Quainoo"
+channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
+publishedAt: "2023-05-06T17:00:08Z"
 date: "2026-07-14"
 tags:
   - "Fintech"

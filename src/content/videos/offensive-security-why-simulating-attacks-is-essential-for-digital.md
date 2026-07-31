@@ -2,6 +2,9 @@
 title: "Offensive Security: Why Attack Simulation Boosts Digital Defense"
 seoTitled: true
 youtubeId: "fQJ8OUs1Sog"
+channelTitle: "Tech Horizon with Anand Vemula"
+channelId: "UCBZSjsf6K2X9AOl_4AcnHeg"
+publishedAt: "2026-07-21T04:00:06Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

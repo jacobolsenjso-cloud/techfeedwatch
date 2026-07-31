@@ -2,6 +2,9 @@
 title: "AI SEO Automation for Agencies: Boost Efficiency & Outrank Rivals"
 seoTitled: true
 youtubeId: "OQndX5-eauE"
+channelTitle: "Arvow"
+channelId: "UC6znb1-zW4rfzGfNqDOxq-A"
+publishedAt: "2026-06-19T19:59:10Z"
 date: "2026-06-22"
 tags:
   - "SEO"

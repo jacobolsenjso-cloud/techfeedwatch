@@ -2,6 +2,9 @@
 title: "Sky-High Commutes: FAA Clears Air Taxis for Takeoff, Reshaping Urban Mobility"
 seoTitled: true
 youtubeId: "AAYnxnfoIy8"
+channelTitle: "Modern Mechanics 24"
+channelId: "UCM-mcHCZDX9bYV9eDwornXw"
+publishedAt: "2026-07-07T18:47:33Z"
 date: "2026-07-07"
 tags:
   - "AI & Tech"

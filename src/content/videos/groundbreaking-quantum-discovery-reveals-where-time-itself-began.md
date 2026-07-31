@@ -2,6 +2,9 @@
 title: "Groundbreaking Quantum Discovery Reveals Where Time Itself Began"
 seoTitled: true
 youtubeId: "WN3xaj6OAXk"
+channelTitle: "FYI - For Your Information"
+channelId: "UCKTET5K3KWy9YWejwzecAjQ"
+publishedAt: "2026-07-20T05:15:32Z"
 date: "2026-07-20"
 tags:
   - "AI & Tech"

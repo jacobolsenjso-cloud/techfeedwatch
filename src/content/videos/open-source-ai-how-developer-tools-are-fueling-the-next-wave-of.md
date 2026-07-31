@@ -2,6 +2,9 @@
 title: "Open-Source AI Tools Accelerate AI Innovation for Developers"
 seoTitled: true
 youtubeId: "Xn-gtHDsaPY"
+channelTitle: "Fireship"
+channelId: "UCsBjURrPoezykLs9EqgamOA"
+publishedAt: "2026-03-12T17:49:19Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

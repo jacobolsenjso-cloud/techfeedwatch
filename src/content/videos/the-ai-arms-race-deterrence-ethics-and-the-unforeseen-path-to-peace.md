@@ -2,6 +2,9 @@
 title: "AI Weapons for Peace: Autonomous Deterrence Strategy"
 seoTitled: true
 youtubeId: "ooMXEwl7N8Y"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2025-04-25T15:01:30Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

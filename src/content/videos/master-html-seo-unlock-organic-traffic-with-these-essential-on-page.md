@@ -2,6 +2,9 @@
 title: "HTML SEO On-Page Optimization: Boost Organic Traffic"
 seoTitled: true
 youtubeId: "R4EYtFoiSrg"
+channelTitle: "CodeLucky"
+channelId: "UCFMdEr1H3hhCIdoKwsK80Tw"
+publishedAt: "2025-04-05T14:18:57Z"
 date: "2026-07-11"
 tags:
   - "SEO"

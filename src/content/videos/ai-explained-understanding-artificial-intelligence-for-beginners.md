@@ -2,6 +2,9 @@
 title: "AI Explained: Understanding Artificial Intelligence for Beginners"
 seoTitled: true
 youtubeId: "UufEnQgmgIk"
+channelTitle: "Latest Technologies"
+channelId: "UCEcagvWisJq2Bnk4r309lCw"
+publishedAt: "2026-07-24T16:39:35Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

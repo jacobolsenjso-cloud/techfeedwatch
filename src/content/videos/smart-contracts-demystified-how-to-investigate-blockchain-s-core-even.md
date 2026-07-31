@@ -2,6 +2,9 @@
 title: "Smart Contracts Explained: Verify Blockchain Logic Without Code"
 seoTitled: true
 youtubeId: "HHLhmaJta58"
+channelTitle: "Thinklair"
+channelId: "UCvVohTt-jDfjbeIeVKv7LbQ"
+publishedAt: "2022-04-29T12:33:58Z"
 date: "2026-07-12"
 tags:
   - "Coding"

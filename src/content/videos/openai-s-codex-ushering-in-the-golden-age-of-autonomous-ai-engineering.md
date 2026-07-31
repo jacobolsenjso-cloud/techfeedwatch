@@ -2,6 +2,9 @@
 title: "Autonomous AI Engineering: Focus on Problem Solving & System Design"
 seoTitled: true
 youtubeId: "pMggiOb18tc"
+channelTitle: "AI Engineer"
+channelId: "UCLKPca3kwwd-B59HNr-_lvA"
+publishedAt: "2026-07-09T18:53:34Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

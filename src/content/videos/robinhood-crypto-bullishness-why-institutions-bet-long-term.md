@@ -1,6 +1,9 @@
 ---
 title: "Robinhood Crypto Bullishness: Why Institutions Bet Long-Term"
 youtubeId: "sY_PCmpVKZI"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-02-11T21:12:20Z"
 date: "2026-07-30"
 tags:
   - "Crypto"

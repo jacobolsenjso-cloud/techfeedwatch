@@ -2,6 +2,9 @@
 title: "AI Explained: A Simple Guide to How Artificial Intelligence Works"
 seoTitled: true
 youtubeId: "m8o2GrbR3d8"
+channelTitle: "Science Simplified 4 All"
+channelId: "UChbpF5QVaVr9KUJT40qhKAg"
+publishedAt: "2025-07-09T15:37:04Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

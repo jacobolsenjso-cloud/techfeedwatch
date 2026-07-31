@@ -2,6 +2,9 @@
 title: "Quantum Computing Commercialization: Cloud Platforms & Access"
 seoTitled: true
 youtubeId: "bVP3q8-e4sE"
+channelTitle: "a16z"
+channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
+publishedAt: "2019-01-02T05:39:35Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

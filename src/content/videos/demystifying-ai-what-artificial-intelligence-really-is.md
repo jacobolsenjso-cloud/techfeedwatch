@@ -2,6 +2,9 @@
 title: "Demystifying AI: What Artificial Intelligence Really Is"
 seoTitled: true
 youtubeId: "AIAc2w5OWqc"
+channelTitle: "Deep Knowledge Lab"
+channelId: "UCMO7uZBY_ZVXsOIVYby9Dtg"
+publishedAt: "2026-07-13T18:30:37Z"
 date: "2026-07-13"
 tags:
   - "AI & Tech"

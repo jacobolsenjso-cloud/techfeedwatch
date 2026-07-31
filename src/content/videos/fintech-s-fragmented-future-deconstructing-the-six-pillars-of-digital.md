@@ -2,6 +2,9 @@
 title: "Fintech Subdomains: The Six Pillars of Digital Finance"
 seoTitled: true
 youtubeId: "zvw_DMamBhM"
+channelTitle: "Jeremy Quainoo"
+channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
+publishedAt: "2022-04-03T17:15:36Z"
 date: "2026-07-14"
 tags:
   - "Fintech"

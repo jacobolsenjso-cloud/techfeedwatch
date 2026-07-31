@@ -1,6 +1,9 @@
 ---
 title: "Crypto Regulation's Clarity Act: US Legislative Hurdles"
 youtubeId: "Kz2siKZjNQA"
+channelTitle: "Bloomberg Television"
+channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
+publishedAt: "2026-07-28T20:33:08Z"
 date: "2026-07-30"
 tags:
   - "Fintech"

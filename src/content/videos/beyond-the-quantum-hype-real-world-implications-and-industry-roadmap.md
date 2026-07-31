@@ -2,6 +2,9 @@
 title: "Quantum Computing: Applications, Limitations, Future Roadmap"
 seoTitled: true
 youtubeId: "UtDllX_MTbw"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2024-07-19T14:59:39Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

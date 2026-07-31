@@ -2,6 +2,9 @@
 title: "AR Shopping: How 'Try Before You Buy' Transforms Retail"
 seoTitled: true
 youtubeId: "yvSVu1BSLfQ"
+channelTitle: "NEXTGENET"
+channelId: "UCAaxhCym0qa-dgA2phr5LOg"
+publishedAt: "2026-07-17T07:53:50Z"
 date: "2026-07-17"
 tags:
   - "AI & Tech"

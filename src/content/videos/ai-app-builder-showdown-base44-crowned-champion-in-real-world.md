@@ -2,6 +2,9 @@
 title: "AI App Builder Showdown: Base44 Crowned Champion in Real-World Application Test"
 seoTitled: true
 youtubeId: "jp8_HiDvdf0"
+channelTitle: "Sabrina Ramonov 🍄"
+channelId: "UCiGWNa6QK6CiKPvv5-YPv8g"
+publishedAt: "2026-07-06T18:50:21Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

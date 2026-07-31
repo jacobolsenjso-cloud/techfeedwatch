@@ -2,6 +2,9 @@
 title: "AMD's AM5 Revolution: Server EPYC Chips Crash the Consumer Party (And Threaten Ryzen's Reign!)"
 seoTitled: true
 youtubeId: "n32D78acofk"
+channelTitle: "ServerFlow - серверы и серверные комплектующие"
+channelId: "UCu6IKBij38DLqgv_Uh_3sDg"
+publishedAt: "2026-07-08T15:26:21Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

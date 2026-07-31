@@ -2,6 +2,9 @@
 title: "Beyond the Rulebook: Unpacking AI's 'Amnesia' and the Rise of Autonomous Agent Swarms"
 seoTitled: true
 youtubeId: "FWCygKUrpYE"
+channelTitle: "Heliox"
+channelId: "UCd5BbCEeC3Z6dp-nNjWRbBw"
+publishedAt: "2026-07-12T15:50:25Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

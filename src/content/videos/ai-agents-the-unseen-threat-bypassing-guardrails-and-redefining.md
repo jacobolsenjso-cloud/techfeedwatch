@@ -2,6 +2,9 @@
 title: "AI Agent Security Threats: Bypassing Guardrails & Data Loss"
 seoTitled: true
 youtubeId: "ho4F0yaDmr4"
+channelTitle: "Bits With Paulina"
+channelId: "UCDf3SiM0T1AWLgodsY3EXJA"
+publishedAt: "2026-07-26T13:00:06Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "OpenAI AGI Ambitions: Decoding the Unseen AI Control Problem"
 seoTitled: true
 youtubeId: "vfSplCaxHzM"
+channelTitle: "AI Revolution"
+channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
+publishedAt: "2026-07-28T00:10:27Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

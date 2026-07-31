@@ -2,6 +2,9 @@
 title: "Zero Trust Security Model: Protect Your Business from Cyber Threats"
 seoTitled: true
 youtubeId: "gb2CJP8oUuw"
+channelTitle: "theinformationsecurity"
+channelId: "UCFCotscGprUZN1DzaQ7xLLA"
+publishedAt: "2026-06-26T18:35:51Z"
 date: "2026-07-28"
 tags:
   - "AI & Tech"

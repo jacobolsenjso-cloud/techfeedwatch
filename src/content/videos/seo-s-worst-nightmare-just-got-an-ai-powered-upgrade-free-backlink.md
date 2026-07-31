@@ -2,6 +2,9 @@
 title: "SEO's Worst Nightmare Just Got an AI-Powered Upgrade: Free Backlink Finder Emerges!"
 seoTitled: true
 youtubeId: "JtmoqvUmzq0"
+channelTitle: "Matt Diamante"
+channelId: "UCqFqqzB3dG6d55vLMKITqAw"
+publishedAt: "2026-05-03T22:10:48Z"
 date: "2026-06-15"
 tags:
   - "SEO"

@@ -2,6 +2,9 @@
 title: "AI's Silent Sabotage: Why Global Powers Are Covertly Targeting Your Next Breakthrough"
 seoTitled: true
 youtubeId: "prvegLYKE3I"
+channelTitle: "Growth Engine TV"
+channelId: "UCUVklaa8yzhZwIFElAp3N7A"
+publishedAt: "2026-07-06T18:23:39Z"
 date: "2026-07-06"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Claude Unleashed: The 5-Day Blueprint to Transform AI from Chatbot to Autonomous Assistant"
 seoTitled: true
 youtubeId: "16PhlyStJSU"
+channelTitle: "Sebastian Hardy | AI Marketing"
+channelId: "UCG5HFY9PXYeIHSyRgML2tvg"
+publishedAt: "2026-06-20T19:08:35Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

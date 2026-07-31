@@ -2,6 +2,9 @@
 title: "AI Website Builder: Create Pro Websites, No Code Needed"
 seoTitled: true
 youtubeId: "TZUTe7s11-I"
+channelTitle: "Jack Roberts"
+channelId: "UCxVxcTULO9cFU6SB9qVaisQ"
+publishedAt: "2026-03-11T21:08:29Z"
 date: "2026-07-19"
 tags:
   - "AI & Tech"

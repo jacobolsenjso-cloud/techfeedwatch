@@ -2,6 +2,9 @@
 title: "AI Potential: Curing Cancer, Emotional Robots, Overcoming Barriers"
 seoTitled: true
 youtubeId: "Oa0ZHfcalCM"
+channelTitle: "BBC World Service"
+channelId: "UCQXHTFnQYFTqN0MqmNh9EIA"
+publishedAt: "2024-08-10T11:00:31Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

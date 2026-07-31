@@ -2,6 +2,9 @@
 title: "Augmented Reality 2030: How AR Transforms Daily Life"
 seoTitled: true
 youtubeId: "D8V2nxeWHmI"
+channelTitle: "Future Business Tech"
+channelId: "UCGBO6EahCqQSyXIws1MQdDg"
+publishedAt: "2022-11-19T11:00:10Z"
 date: "2026-07-11"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "AI Billionaires' Shift: Public Backlash Fuels Philanthropy"
 seoTitled: true
 youtubeId: "GRc4hWdocEw"
+channelTitle: "House of El: AI"
+channelId: "UCsoc5Ad-fC7wWie2PH4rPcw"
+publishedAt: "2026-06-08T13:30:06Z"
 date: "2026-06-12"
 tags:
   - "AI & Tech"

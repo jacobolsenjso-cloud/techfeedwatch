@@ -2,6 +2,9 @@
 title: "AI Redefines Truth: Impact on Reality, Computation"
 seoTitled: true
 youtubeId: "PdE-waSx-d8"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2023-05-09T17:10:30Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

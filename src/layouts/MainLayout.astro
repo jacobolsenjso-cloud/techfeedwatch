@@ -228,6 +228,10 @@ const siteSchema = [
       .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
       .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: #0891b2; } 
       .nav-item:hover { transform: translateX(3px); }
+      /* Rigtige ikoner frem for emoji: emoji renderes forskelligt pr. styresystem
+         og kan ikke farves med currentColor. */
+      .nav-icon { width: 19px; height: 19px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }
+      .nav-item.active .nav-icon, .nav-item:hover .nav-icon { opacity: 1; }
       .content-area { flex: 1; background: var(--bg-color); position: relative; display: flex; flex-direction: column; scroll-behavior: smooth; }
       /* Blød sideovergang: indholdet fader ind ved hver sideindlæsning (kun opacity - transform ville bryde position:fixed cinema/scroll-knap). */
       @keyframes tfwFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -323,19 +327,52 @@ const siteSchema = [
 
     <div class="main-layout">
         <aside class="sidebar" id="sidebar">
-        <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>🏠 Home</a>
-        <a href="/latest" class={`nav-item ${currentPath.startsWith('/latest') ? 'active' : ''}`}>🆕 Latest</a>
-        <a href="/shorts" class={`nav-item ${currentPath.startsWith('/shorts') ? 'active' : ''}`}>⚡ Shorts</a>
+        <a href="/" class={`nav-item ${currentPath === '/' ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/></svg>
+          Home
+        </a>
+        <a href="/latest" class={`nav-item ${currentPath.startsWith('/latest') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+          Latest
+        </a>
+        <a href="/shorts" class={`nav-item ${currentPath.startsWith('/shorts') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+          Shorts
+        </a>
         <hr style="width: 100%; border: 0; border-top: 1px solid var(--border-color); margin: 10px 0;" />
-        <a href="/library" class={`nav-item ${currentPath.startsWith('/library') ? 'active' : ''}`}>📚 Library</a>
-        <a href="/popular" class={`nav-item ${currentPath.startsWith('/popular') ? 'active' : ''}`}>🔥 Popular</a>
-        <a href="/watch-later" class={`nav-item ${currentPath.startsWith('/watch-later') ? 'active' : ''}`}>⏱️ Watch Later</a>
-        <a href="/history" class={`nav-item ${currentPath.startsWith('/history') ? 'active' : ''}`}>🕒 History</a>
+        <a href="/library" class={`nav-item ${currentPath.startsWith('/library') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H9v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M9 4h5v16H9z"/><path d="m15.5 4.8 3 .8a1 1 0 0 1 .7 1.2L16 19.4"/></svg>
+          Library
+        </a>
+        <a href="/popular" class={`nav-item ${currentPath.startsWith('/popular') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.5 3.5 3 4.5 4.5 7A6 6 0 1 1 6 13.5C7.5 11 9 9 9.5 6c1 .8 2 1.8 2.5 3 .3-2.2.2-4.3 0-6z"/></svg>
+          Popular
+        </a>
+        <a href="/watch-later" class={`nav-item ${currentPath.startsWith('/watch-later') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          Watch Later
+        </a>
+        <a href="/history" class={`nav-item ${currentPath.startsWith('/history') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v4h4"/><path d="M12 7.5V12l3 1.8"/></svg>
+          History
+        </a>
         <hr style="width: 100%; border: 0; border-top: 1px solid var(--border-color); margin: 10px 0;" />
-        <a href="/tools" class={`nav-item ${currentPath.startsWith('/tools') ? 'active' : ''}`}>🛠️ Tools</a>
-        <a href="/glossary" class={`nav-item ${currentPath.startsWith('/glossary') ? 'active' : ''}`}>📖 Glossary</a>
-        <a href="/guides" class={`nav-item ${currentPath.startsWith('/guides') ? 'active' : ''}`}>🧭 Guides</a>
-        <a href="/trends" class={`nav-item ${currentPath.startsWith('/trends') ? 'active' : ''}`}>📈 Trends</a>
+        <a href="/tools" class={`nav-item ${currentPath.startsWith('/tools') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5.1 5.1l-8 8a2.8 2.8 0 0 1-4-4z"/><path d="m5 5 3 3"/></svg>
+          Tools
+        </a>
+        <a href="/glossary" class={`nav-item ${currentPath.startsWith('/glossary') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+          Glossary
+        </a>
+        <a href="/guides" class={`nav-item ${currentPath.startsWith('/guides') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+          Guides
+        </a>
+        <a href="/trends" class={`nav-item ${currentPath.startsWith('/trends') ? 'active' : ''}`}>
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 16 5.5-5.5 3.5 3.5L21 5"/><path d="M15 5h6v6"/></svg>
+          Trends
+        </a>
       </aside>
 
       <main class="content-area">

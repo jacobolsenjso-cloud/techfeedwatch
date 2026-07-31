@@ -2,6 +2,9 @@
 title: "Smart Contracts: How They Work, Benefits & Overcoming Challenges"
 seoTitled: true
 youtubeId: "ZE2HxTmxfrI"
+channelTitle: "Simply Explained"
+channelId: "UCnxrdFPXJMeHru_b4Q_vTPQ"
+publishedAt: "2017-11-20T20:00:03Z"
 date: "2026-07-11"
 tags:
   - "Crypto"

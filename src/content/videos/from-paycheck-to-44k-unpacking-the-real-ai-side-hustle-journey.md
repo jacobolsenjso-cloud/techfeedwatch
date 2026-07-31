@@ -2,6 +2,9 @@
 title: "AI Side Hustle: Earn $44K with Accessible AI Tools"
 seoTitled: true
 youtubeId: "aTFABFO8wNM"
+channelTitle: "Sandy Lee AI"
+channelId: "UCcrH_UUxL4KFjS3pwaXvMXA"
+publishedAt: "2026-06-20T14:40:47Z"
 date: "2026-06-22"
 tags:
   - "AI & Tech"

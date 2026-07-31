@@ -2,6 +2,9 @@
 title: "Wise & Open Payments: Scaling Modern Fintech"
 seoTitled: true
 youtubeId: "n9kOxmT6s64"
+channelTitle: "Wealth Academy"
+channelId: "UCn9MGnr_gaf3RwOp5HRPjHw"
+publishedAt: "2026-06-29T00:00:40Z"
 date: "2026-07-13"
 tags:
   - "Fintech"

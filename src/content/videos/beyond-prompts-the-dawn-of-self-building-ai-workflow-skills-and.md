@@ -2,6 +2,9 @@
 title: "Self-Building AI Workflow Skills for Autonomous AI Agents"
 seoTitled: true
 youtubeId: "mOGLdUOLAu0"
+channelTitle: "QurioSkill"
+channelId: "UCTzGdR1fa3TrlqKWKPIAlZQ"
+publishedAt: "2026-07-26T15:03:32Z"
 date: "2026-07-26"
 tags:
   - "AI & Tech"

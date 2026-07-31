@@ -2,6 +2,9 @@
 title: "Mono Racer: The Enclosed Motorcycle Redefining Personal Mobility & Safety"
 seoTitled: true
 youtubeId: "Zb2ZEhs_5hI"
+channelTitle: "Sukhdev04"
+channelId: "UC-d5wVps8uknUNFf37kvDsQ"
+publishedAt: "2026-04-15T11:36:55Z"
 date: "2026-06-18"
 tags:
   - "AI & Tech"

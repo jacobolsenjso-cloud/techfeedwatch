@@ -2,6 +2,9 @@
 title: "Essential AI Models: Types & Applications Explained"
 seoTitled: true
 youtubeId: "I0me2uEbfuE"
+channelTitle: "Matthew Berman"
+channelId: "UCawZsQWqfGSbCI5yjkdVkTA"
+publishedAt: "2026-03-16T01:05:23Z"
 date: "2026-07-12"
 tags:
   - "AI & Tech"

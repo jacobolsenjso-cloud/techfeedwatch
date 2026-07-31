@@ -2,6 +2,9 @@
 title: "Master Prompt Engineering: Your 60-Second Guide to Smarter AI"
 seoTitled: true
 youtubeId: "nF3MCJSFumE"
+channelTitle: "QuickSolve AI"
+channelId: "UCxx5WLl0G70Nns7JvrBTwJw"
+publishedAt: "2026-07-18T05:30:05Z"
 date: "2026-07-18"
 tags:
   - "AI & Tech"

@@ -2,6 +2,9 @@
 title: "Quantum Mechanics: Future Tech from Sensors to Quantum Computers"
 seoTitled: true
 youtubeId: "t06aTX9jM34"
+channelTitle: "NOVA PBS Official"
+channelId: "UCjHz5SVHeMT0AViCYZvsGDA"
+publishedAt: "2024-11-07T02:00:06Z"
 date: "2026-07-14"
 tags:
   - "AI & Tech"

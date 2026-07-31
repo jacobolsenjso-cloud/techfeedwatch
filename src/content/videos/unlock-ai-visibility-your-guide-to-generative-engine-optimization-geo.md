@@ -2,6 +2,9 @@
 title: "Generative Engine Optimization (GEO) for Business AI Visibility"
 seoTitled: true
 youtubeId: "20pTTT8jcEw"
+channelTitle: "Helena Liu"
+channelId: "UCpM_g95uzZ_OyhgukvrbbiQ"
+publishedAt: "2026-06-12T16:49:50Z"
 date: "2026-06-12"
 tags:
   - "SEO"

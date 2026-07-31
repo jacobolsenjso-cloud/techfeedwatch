@@ -2,6 +2,9 @@
 title: "No Motor, No Battery: This Gear System Fan Redefines Sustainable DIY Tech"
 seoTitled: true
 youtubeId: "THz54-4qSQQ"
+channelTitle: "Lal Electric"
+channelId: "UCUiKpW20Z6_WVOuyjNijHFg"
+publishedAt: "2026-07-08T08:32:59Z"
 date: "2026-07-08"
 tags:
   - "AI & Tech"

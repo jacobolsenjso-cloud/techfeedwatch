@@ -2,6 +2,9 @@
 title: "Ethereum: Programmable Blockchain & Decentralized Web Foundation"
 seoTitled: true
 youtubeId: "NzNNu49eZvc"
+channelTitle: "Next Frontier"
+channelId: "UCB23HRxLVFuxnJRbYnkMzAw"
+publishedAt: "2026-07-12T19:23:52Z"
 date: "2026-07-13"
 tags:
   - "Crypto"

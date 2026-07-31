@@ -2,6 +2,9 @@
 title: "Behind the Veil: The Insane Tech Powering America's $2 Billion Stealth Bomber"
 seoTitled: true
 youtubeId: "2TIo0Sg-uKw"
+channelTitle: "Military & Tech Wonders "
+channelId: "UCKkNnyvp4Vu-Vl2whyujrlQ"
+publishedAt: "2026-07-09T20:00:19Z"
 date: "2026-07-09"
 tags:
   - "AI & Tech"

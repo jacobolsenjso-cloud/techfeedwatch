@@ -2,6 +2,9 @@
 title: "How ChatGPT & LLMs Are Built: Data Prep & Tokenization"
 seoTitled: true
 youtubeId: "7xTGNNLPyMI"
+channelTitle: "Andrej Karpathy"
+channelId: "UCXUPKJO5MZQN11PqgIvyuvQ"
+publishedAt: "2025-02-05T18:23:47Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

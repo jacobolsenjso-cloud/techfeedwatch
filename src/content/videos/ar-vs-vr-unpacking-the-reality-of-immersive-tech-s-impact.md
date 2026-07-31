@@ -2,6 +2,9 @@
 title: "AR vs VR: Differences, Applications & Future Impact"
 seoTitled: true
 youtubeId: "f9MwaH6oGEY"
+channelTitle: "ColdFusion"
+channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"
+publishedAt: "2017-04-01T07:50:25Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

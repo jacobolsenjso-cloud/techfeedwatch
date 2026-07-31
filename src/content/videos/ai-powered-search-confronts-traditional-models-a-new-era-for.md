@@ -2,6 +2,9 @@
 title: "Perplexity AI Challenges Google with Direct Answer Engine"
 seoTitled: true
 youtubeId: "e-gwvmhyU7A"
+channelTitle: "Lex Fridman"
+channelId: "UCSHZKyawb77ixDdsGog4iWA"
+publishedAt: "2024-06-19T20:42:46Z"
 date: "2026-07-24"
 tags:
   - "AI & Tech"

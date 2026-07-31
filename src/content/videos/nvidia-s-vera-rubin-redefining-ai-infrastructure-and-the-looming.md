@@ -2,6 +2,9 @@
 title: "Nvidia Vera Rubin: Next-Gen AI Infrastructure, 10x Power Efficiency"
 seoTitled: true
 youtubeId: "ZkPU5GHDqkQ"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2026-02-25T15:01:07Z"
 date: "2026-07-29"
 tags:
   - "AI & Tech"

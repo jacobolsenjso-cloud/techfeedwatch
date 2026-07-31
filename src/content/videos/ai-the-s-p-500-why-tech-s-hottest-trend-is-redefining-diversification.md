@@ -2,6 +2,9 @@
 title: "AI S&P 500 Diversification: New Risks from Tech Concentration"
 seoTitled: true
 youtubeId: "HNVg81nA2J8"
+channelTitle: "Nischa"
+channelId: "UCQpPo9BNwezg54N9hMFQp6Q"
+publishedAt: "2026-06-14T11:00:08Z"
 date: "2026-06-18"
 tags:
   - "Business & Money"

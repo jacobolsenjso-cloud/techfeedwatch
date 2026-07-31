@@ -2,6 +2,9 @@
 title: "Generative AI: What Makes It Powerful (Deep Learning, Data, Compute)"
 seoTitled: true
 youtubeId: "b76gsOSkHB4"
+channelTitle: "The Royal Institution"
+channelId: "UCYeF244yNGuFefuFKqxIAXw"
+publishedAt: "2023-12-19T17:29:48Z"
 date: "2026-07-23"
 tags:
   - "AI & Tech"

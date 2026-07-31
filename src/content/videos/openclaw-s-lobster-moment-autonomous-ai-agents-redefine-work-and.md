@@ -2,6 +2,9 @@
 title: "Autonomous AI Agents Redefine Future of Work: OpenClaw"
 seoTitled: true
 youtubeId: "7rzYDM6vMtI"
+channelTitle: "TED"
+channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
+publishedAt: "2026-04-18T15:00:11Z"
 date: "2026-07-27"
 tags:
   - "AI & Tech"
