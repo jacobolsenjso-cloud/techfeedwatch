@@ -1,0 +1,145 @@
+---
+// Letvægts samtykkebanner uden afhængigheder.
+//
+// Hvad det gør:
+//  - GA4 indlæses IKKE før brugeren har sagt ja. Ingen script, ingen cookies.
+//  - Google Consent Mode v2 sættes til "denied" i <head> før nogen Google-tag
+//    kører, så AdSense-scriptet kan blive i HTML'en (nødvendigt for verifikation)
+//    uden at skrive annonce-cookies.
+//  - Valget gemmes i localStorage i 6 måneder og kan altid ændres via
+//    "Cookie settings" i footeren.
+//
+// Vigtigt: dette dækker cookie-samtykke. Det erstatter IKKE den Google-
+// certificerede TCF-CMP, som kræves for personaliserede annoncer i EØS/UK.
+// Den sættes op via "Privacy & messaging" i AdSense, når kontoen er godkendt.
+---
+
+<div id="tfwConsent" class="consent" role="dialog" aria-modal="false"
+     aria-labelledby="consentTitle" aria-describedby="consentBody" hidden>
+  <div class="consent-inner">
+    <div class="consent-text">
+      <p id="consentTitle" class="consent-title">We'd like your consent</p>
+      <p id="consentBody" class="consent-body">
+        We use analytics cookies to understand which articles people read, and
+        advertising cookies to fund the site. Neither runs until you agree. You
+        can change this at any time. Read our
+        <a href="/privacy-policy">Privacy Policy</a>.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" id="consentReject" class="consent-btn consent-btn-secondary">Reject all</button>
+      <button type="button" id="consentAccept" class="consent-btn consent-btn-primary">Accept all</button>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .consent {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 3000;
+    background: var(--card-bg); border-top: 1px solid var(--border-color);
+    box-shadow: 0 -6px 28px rgba(0,0,0,0.10);
+    padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+    animation: consentUp 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  body.dark-mode .consent { box-shadow: 0 -6px 28px rgba(0,0,0,0.45); }
+  @keyframes consentUp { from { transform: translateY(100%); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .consent { animation: none; } }
+
+  .consent-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .consent-text { flex: 1 1 420px; min-width: 0; }
+  .consent-title { margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 700; }
+  .consent-body { margin: 0; font-size: 0.86rem; line-height: 1.55; color: #4b5563; }
+  body.dark-mode .consent-body { color: #a1a1aa; }
+  .consent-body a { color: var(--teal-text); font-weight: 600; }
+
+  /* Begge knapper har samme vægt: at afvise skal være lige så let som at acceptere. */
+  .consent-actions { display: flex; gap: 10px; flex: 0 0 auto; }
+  .consent-btn {
+    font: inherit; font-size: 0.88rem; font-weight: 600;
+    padding: 11px 22px; min-height: 44px; border-radius: 999px;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  }
+  .consent-btn:active { transform: translateY(1px); }
+  .consent-btn-primary { background: var(--teal-text); color: #fff; border: 1px solid var(--teal-text); }
+  .consent-btn-primary:hover { background: #0b5f75; border-color: #0b5f75; }
+  .consent-btn-secondary { background: transparent; color: var(--text-color); border: 1px solid var(--border-color); }
+  .consent-btn-secondary:hover { background: var(--hover-bg); }
+
+  @media (max-width: 640px) {
+    .consent { padding: 14px 15px calc(14px + env(safe-area-inset-bottom, 0px)); }
+    .consent-inner { gap: 14px; }
+    .consent-actions { width: 100%; }
+    .consent-btn { flex: 1; padding: 11px 12px; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'tfw_consent';
+    var GA_ID = 'G-2C7N1GP697';
+    var banner = document.getElementById('tfwConsent');
+    if (!banner) return;
+
+    function gtag() { window.dataLayer = window.dataLayer || []; window.dataLayer.push(arguments); }
+
+    function read() {
+      try {
+        var s = JSON.parse(localStorage.getItem(KEY) || 'null');
+        if (s && s.v === 1 && s.exp > Date.now()) return s;
+      } catch (e) {}
+      return null;
+    }
+
+    function loadAnalytics() {
+      if (window.__tfwGaLoaded) return;
+      window.__tfwGaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GA_ID);
+    }
+
+    function apply(granted) {
+      var v = granted ? 'granted' : 'denied';
+      gtag('consent', 'update', {
+        ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v
+      });
+      if (granted) loadAnalytics();
+    }
+
+    function save(granted) {
+      try {
+        localStorage.setItem(KEY, JSON.stringify({
+          v: 1,
+          analytics: granted,
+          ads: granted,
+          ts: Date.now(),
+          exp: Date.now() + 1000 * 60 * 60 * 24 * 180  // 6 måneder
+        }));
+      } catch (e) {}
+      apply(granted);
+      hide();
+    }
+
+    function show() { banner.hidden = false; }
+    function hide() { banner.hidden = true; }
+
+    document.getElementById('consentAccept').addEventListener('click', function () { save(true); });
+    document.getElementById('consentReject').addEventListener('click', function () { save(false); });
+
+    // Giv brugeren en vej tilbage til valget
+    window.tfwOpenConsent = show;
+    var link = document.getElementById('cookieSettingsLink');
+    if (link) link.addEventListener('click', function (e) { e.preventDefault(); show(); });
+
+    var saved = read();
+    if (saved) apply(saved.analytics);
+    else show();
+  })();
+</script>

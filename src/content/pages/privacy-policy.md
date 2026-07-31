@@ -60,7 +60,18 @@ We display advertising on this Website through **Google AdSense**, an advertisin
 
 You may opt out of personalized advertising at any time by visiting [Google Ads Settings](https://www.google.com/settings/ads), or opt out of third-party vendors' use of cookies for personalized advertising by visiting [www.aboutads.info](https://www.aboutads.info/choices/). You can learn more about how Google uses data from sites and apps that use its services at [Google's Privacy & Terms](https://policies.google.com/technologies/partner-sites).
 
-For visitors in the European Economic Area (EEA), the United Kingdom, and Switzerland, we use a Google-certified Consent Management Platform (CMP) to request your consent before personalized ads and non-essential cookies are used, in accordance with applicable data protection laws.
+## Your Cookie Choices
+
+When you first visit this Website, you are asked whether you consent to analytics and advertising cookies. Until you accept:
+
+* **No analytics are loaded.** Google Analytics is not requested, executed, or given any data about your visit.
+* **No advertising cookies are stored.** We use Google Consent Mode v2 with all advertising and analytics storage set to `denied` by default, so Google's advertising script cannot write cookies to your device.
+
+Only strictly necessary storage — such as remembering your consent choice, your dark-mode preference, and your saved articles — is used before you decide. This information stays in your browser and is never sent to us.
+
+Declining is as easy as accepting: both options are presented as equally prominent buttons, and declining does not restrict your access to any part of this Website. Your choice is stored in your browser for six months, and you can change it at any time through the **Cookie settings** link in the footer.
+
+Please note that we are currently in the process of adopting a Google-certified Consent Management Platform (CMP) integrated with the IAB Transparency and Consent Framework, which Google requires for serving personalized advertising to users in the EEA, the UK, and Switzerland. Until that is in place, personalized advertising is not served to visitors in those regions.
 
 ## Use of Your Personal Data
 
