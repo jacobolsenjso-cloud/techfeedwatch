@@ -459,7 +459,13 @@ const siteSchema = [
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/sw.js').catch(function () { /* uden er også fint */ });
+          // updateViaCache: 'none' — hent ALTID sw.js fra netværket, aldrig fra
+          // HTTP-cachen. Cloudflare Pages lader os ikke sætte Cache-Control på
+          // statiske filer via _headers (den bliver overskrevet til 4 timer),
+          // så uden det her kunne en bruger sidde fast på en gammel worker.
+          navigator.serviceWorker
+            .register('/sw.js', { scope: '/', updateViaCache: 'none' })
+            .catch(function () { /* uden service worker fungerer sitet fint */ });
         });
       }
     </script>
