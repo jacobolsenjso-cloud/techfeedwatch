@@ -1,20 +1,27 @@
+# Kommentarer står kun i kolonne 0 og ALDRIG inde i en regel-blok.
+# Indrykkede #-linjer ser ud til at forvirre Cloudflares parser, så headers
+# efter dem bliver tabt.
+#
+# Alle sider:
+#   HSTS  - tving HTTPS i to år. Sitet kører kun på HTTPS i forvejen.
+#   X-Frame-Options - andre må ikke lægge sitet i en iframe (clickjacking).
+#     Vi indlejrer selv YouTube, hvilket denne header ikke rører.
+#   Permissions-Policy - sitet beder aldrig om kamera, mikrofon eller betaling.
+#
+# Bevidst udeladt: Content-Security-Policy. En CSP der er stram nok til at gøre
+# gavn skal whiteliste AdSense, GA4 og YouTube præcist, og en fejl slukker for
+# annoncerne uden varsel. Tages separat med ordentlig test.
+
 /*
   X-Agent-Ready: true
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
-  # Tving HTTPS i to år, også for underdomæner. Sitet kører i forvejen kun på
-  # HTTPS, så der er ingen risiko for at låse noget ude.
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  # Andre må ikke lægge sitet i en iframe (clickjacking). Vi indlejrer selv
-  # YouTube, hvilket denne header ikke rører.
   X-Frame-Options: SAMEORIGIN
-  # Sitet beder aldrig om kamera, mikrofon, placering eller betalinger.
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=()
-  # Bevidst udeladt: Content-Security-Policy. En CSP der er stram nok til at
-  # gøre gavn ville skulle whiteliste AdSense, GA4 og YouTube præcist, og en
-  # fejl her slukker for annoncerne uden varsel. Tages separat med test.
 
-# Service workeren må aldrig ligge i cache. Gør den det, kan brugere sidde fast
-# på en gammel version der server forældet indhold, uden vej ud.
+# Service workeren må aldrig ligge længe i cache. Gør den det, kan brugere
+# sidde fast på en gammel version uden vej ud.
+
 /sw.js
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-cache
   Service-Worker-Allowed: /
