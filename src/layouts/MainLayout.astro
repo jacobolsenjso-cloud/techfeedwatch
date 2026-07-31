@@ -121,8 +121,12 @@ const siteSchema = [
     {currentPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />}
 
     <style is:global>
-      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; }
-      body.dark-mode { --bg-color: #141317; --text-color: #f4f2f0; --card-bg: #1f1d24; --border-color: #322e39; --sidebar-bg: #141317; --hover-bg: #262230; }
+      /* --teal er brandfarven og bruges til baggrunde, kanter og accenter.
+         --teal-text er ét trin mørkere og bruges hvor farven er TEKST: #0891b2
+         giver kun 3.4:1 på lys baggrund, hvilket er under WCAG AA's 4.5:1.
+         I mørk tilstand vendes forholdet, så der bruges en lysere tone. */
+      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; --teal: #0891b2; --teal-text: #0e7490; }
+      body.dark-mode { --bg-color: #141317; --text-color: #f4f2f0; --card-bg: #1f1d24; --border-color: #322e39; --sidebar-bg: #141317; --hover-bg: #262230; --teal: #0891b2; --teal-text: #38bdf8; }
       body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
       * { -webkit-tap-highlight-color: transparent; }
       h1, h2, h3, h4 { letter-spacing: -0.02em; }
@@ -226,7 +230,7 @@ const siteSchema = [
       .main-layout { display: flex; flex: 1; overflow: hidden; position: relative; }
       .sidebar { width: 220px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 15px 10px; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; z-index: 20; transition: left 0.3s ease; }
       .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
-      .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: #0891b2; } 
+      .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: var(--teal-text); } 
       .nav-item:hover { transform: translateX(3px); }
       /* Rigtige ikoner frem for emoji: emoji renderes forskelligt pr. styresystem
          og kan ikke farves med currentColor. */
