@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Challenges Modern Money: Sovereignty & Digital Property"
+title: "Bitcoin Challenges Modern Money: Sovereignty & Property"
+titleShortened: true
 seoTitled: true
 youtubeId: "HrehEWYj16s"
 channelTitle: "Lex Fridman"

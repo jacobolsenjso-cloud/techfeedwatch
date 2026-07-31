@@ -1,5 +1,6 @@
 ---
-title: "AI Code Agents on Google Cloud: Reshaping Software Development"
+title: "AI Code Agents on Google Cloud: Shape Software Development"
+titleShortened: true
 youtubeId: "pIq2s5BKpkw"
 channelTitle: "Google Cloud Tech"
 channelId: "UCJS9pqu9BzkAMNTmzNMNhvg"

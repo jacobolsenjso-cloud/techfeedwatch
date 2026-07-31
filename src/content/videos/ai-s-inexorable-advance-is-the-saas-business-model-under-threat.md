@@ -1,5 +1,6 @@
 ---
-title: "SaaS Business Model Under Threat: AI Agents Disrupt Subscriptions"
+title: "SaaS Business Model: AI Agents Disrupt Subscriptions"
+titleShortened: true
 seoTitled: true
 youtubeId: "cxcb55zr2Q8"
 channelTitle: "Fireship"

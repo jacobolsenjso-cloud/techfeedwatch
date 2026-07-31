@@ -1,5 +1,6 @@
 ---
-title: "AI Search SEO: Your Strategy for Google AI Overviews & Rankings"
+title: "AI Search SEO: Strategy for Google AI Overviews & Rankings"
+titleShortened: true
 seoTitled: true
 youtubeId: "zawsAmcN71M"
 channelTitle: "josh bachynski"

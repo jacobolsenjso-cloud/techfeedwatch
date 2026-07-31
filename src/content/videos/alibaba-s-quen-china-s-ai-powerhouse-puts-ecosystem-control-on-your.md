@@ -1,5 +1,6 @@
 ---
-title: "Alibaba Quen AI: China's Free Desktop AI Ecosystem Challenges West"
+title: "Alibaba Quen AI: China's Free Desktop AI Platform Faces West"
+titleShortened: true
 seoTitled: true
 youtubeId: "AJsAV4ZqwTc"
 channelTitle: "Alejavi Rivera"

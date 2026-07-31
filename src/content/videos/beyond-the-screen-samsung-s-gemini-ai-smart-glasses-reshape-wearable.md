@@ -1,5 +1,6 @@
 ---
-title: "Samsung Gemini AI Smart Glasses Arrive: Next-Gen Wearable Tech"
+title: "Samsung Gemini AI Smart Glasses Arrive: Next-Gen Wearables"
+titleShortened: true
 seoTitled: true
 youtubeId: "JT1GjLtshf8"
 channelTitle: "The Smart Glasses Guy"

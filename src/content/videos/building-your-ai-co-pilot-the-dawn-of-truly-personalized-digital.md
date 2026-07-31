@@ -1,5 +1,6 @@
 ---
-title: "Personalized AI Digital Assistants: Custom Systems & Productivity"
+title: "Personalized AI: Custom Operating Systems & Productivity"
+titleShortened: true
 seoTitled: true
 youtubeId: "CvLkhGWZlvE"
 channelTitle: "AI Edge"

@@ -1,5 +1,6 @@
 ---
-title: "Andrew Ng AI Education: Practical Deep Learning for Developers"
+title: "Andrew Ng AI Education: Deep Learning for Developers"
+titleShortened: true
 seoTitled: true
 youtubeId: "0jspaMLxBig"
 channelTitle: "Lex Fridman"

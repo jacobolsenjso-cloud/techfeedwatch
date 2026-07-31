@@ -1,5 +1,6 @@
 ---
-title: "Sam Altman Superintelligence: AI Governance & Safety Challenges"
+title: "Sam Altman Superintelligence: Governance & Safety Challenges"
+titleShortened: true
 seoTitled: true
 youtubeId: "5MWT_doo68k"
 channelTitle: "TED"

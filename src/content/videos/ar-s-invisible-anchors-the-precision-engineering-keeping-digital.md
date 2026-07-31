@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality Stability: How SLAM Grounds Digital Objects"
+title: "Augmented Reality Stability: SLAM Grounds Digital Objects"
+titleShortened: true
 seoTitled: true
 youtubeId: "RLeKWTo2kUs"
 channelTitle: "LessFace Lab"

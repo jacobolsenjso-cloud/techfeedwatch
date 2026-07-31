@@ -1,5 +1,6 @@
 ---
-title: "Generative Engine Optimization (GEO) for LLM & AI Search Visibility"
+title: "Generative Engine Optimization (GEO) Boost LLM & AI Search"
+titleShortened: true
 seoTitled: true
 youtubeId: "Pi9GjgNFwqo"
 channelTitle: "Blazly AI"

@@ -1,5 +1,6 @@
 ---
-title: "Digital Payment System Engineering: Security, Scale, Reliability"
+title: "Digital Payment System Engineering Security, Reliability"
+titleShortened: true
 seoTitled: true
 youtubeId: "olfaBgJrUBI"
 channelTitle: "Code with Lucian"

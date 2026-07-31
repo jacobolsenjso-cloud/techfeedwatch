@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality: How AR Layers Digital Info for Business Growth"
+title: "Augmented Reality: Layers Digital Info Drive Business"
+titleShortened: true
 seoTitled: true
 youtubeId: "Gy05tGLW3PE"
 channelTitle: "postindustria_"

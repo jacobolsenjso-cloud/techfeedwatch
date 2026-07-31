@@ -1,5 +1,6 @@
 ---
-title: "AI Quality Engineering: Validating AI Outputs for Trust & Safety"
+title: "AI Quality Engineering: Validating AI Outputs for Trust"
+titleShortened: true
 seoTitled: true
 youtubeId: "XLMPIRtsrDs"
 channelTitle: "Naveen AutomationLabs"

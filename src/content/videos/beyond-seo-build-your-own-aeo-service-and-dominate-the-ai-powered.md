@@ -1,5 +1,6 @@
 ---
-title: "Answer Engine Optimization (AEO): Dominate AI Search & Answers"
+title: "Answer Engine Optimization (AEO) Dominate AI Search Answers"
+titleShortened: true
 seoTitled: true
 youtubeId: "LxGyfu8A10M"
 channelTitle: "Dedi Styawan"

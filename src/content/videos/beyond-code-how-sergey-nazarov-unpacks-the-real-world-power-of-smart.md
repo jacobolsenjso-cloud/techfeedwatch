@@ -1,5 +1,6 @@
 ---
-title: "Smart Contracts Reshape Industries: Real-World Use & Efficiency"
+title: "Smart Contracts For Industry: Real-World Efficiency"
+titleShortened: true
 seoTitled: true
 youtubeId: "l-sTw136zAs"
 channelTitle: "Lex Clips"

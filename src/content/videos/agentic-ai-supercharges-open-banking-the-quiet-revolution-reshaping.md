@@ -1,5 +1,6 @@
 ---
-title: "Agentic AI for Open Banking: Autonomous Finance & Data Privacy"
+title: "Agentic AI for Open Banking: Autonomous Finance & Privacy"
+titleShortened: true
 seoTitled: true
 youtubeId: "U17g-GpdiLI"
 channelTitle: "AgentArum "

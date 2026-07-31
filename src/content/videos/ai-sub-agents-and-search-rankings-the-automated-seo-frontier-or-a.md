@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Strategy: Automating Tasks, Human Oversight for Rankings"
+title: "AI SEO Strategy: Automation, Human Oversight for Rankings"
+titleShortened: true
 seoTitled: true
 youtubeId: "yCxlgCkw7as"
 channelTitle: "GoldieAgencySEO"

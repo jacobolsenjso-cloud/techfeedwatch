@@ -1,5 +1,6 @@
 ---
-title: "Crypto Utility: Smart Contracts, DApps, & Decentralized Finance"
+title: "Crypto Utility: Smart Contracts, DApps, DeFi"
+titleShortened: true
 seoTitled: true
 youtubeId: "LEu_sRbfNns"
 channelTitle: "a16z"

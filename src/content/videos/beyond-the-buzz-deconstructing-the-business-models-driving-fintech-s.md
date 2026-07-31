@@ -1,5 +1,6 @@
 ---
-title: "Fintech Business Models: Value & Revenue Strategies Explained"
+title: "Fintech Business Models: Value & Revenue Strategies"
+titleShortened: true
 seoTitled: true
 youtubeId: "EAcoLD_Md7g"
 channelTitle: "Jeremy Quainoo"

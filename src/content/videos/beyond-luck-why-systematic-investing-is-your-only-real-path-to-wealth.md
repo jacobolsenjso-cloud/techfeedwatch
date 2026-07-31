@@ -1,5 +1,6 @@
 ---
-title: "Systematic Investing: Build Wealth with Index Funds & Compound Interest"
+title: "Systematic Investing: Index Funds, Compounding for Wealth"
+titleShortened: true
 seoTitled: true
 youtubeId: "RPDoEIqbwYs"
 channelTitle: "Financial Guinea Pig"

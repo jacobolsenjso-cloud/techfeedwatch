@@ -1,5 +1,6 @@
 ---
-title: "WooCommerce Customization: Advanced E-commerce for Unique Businesses"
+title: "WooCommerce Customization: Flexible E-commerce Solutions"
+titleShortened: true
 seoTitled: true
 youtubeId: "VngFqKHftbY"
 channelTitle: "BallinDigital"

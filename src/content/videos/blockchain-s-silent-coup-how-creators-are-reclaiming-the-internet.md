@@ -1,5 +1,6 @@
 ---
-title: "Creators Use Blockchain & NFTs for Direct Ownership & Monetization"
+title: "Creators Use Blockchain & NFTs for Ownership, Monetization"
+titleShortened: true
 seoTitled: true
 youtubeId: "rWTwcySGvrE"
 channelTitle: "TED"

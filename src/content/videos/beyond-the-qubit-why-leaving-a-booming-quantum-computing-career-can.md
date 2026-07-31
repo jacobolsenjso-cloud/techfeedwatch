@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing Career: Why Leaving Early Can Be Your Smartest Move"
+title: "Quantum Computing Career: Leaving Early Is A Smart Move"
+titleShortened: true
 seoTitled: true
 youtubeId: "pDj1QhPOVBo"
 channelTitle: "Looking Glass Universe"

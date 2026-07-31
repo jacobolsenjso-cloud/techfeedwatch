@@ -1,5 +1,6 @@
 ---
-title: "Claude AI: Advanced Features, Workflow Automation & App Building"
+title: "Claude AI Features: Workflow Automation & App Building"
+titleShortened: true
 seoTitled: true
 youtubeId: "MS7E5TXNviM"
 channelTitle: "Futurepedia"

@@ -1,5 +1,6 @@
 ---
-title: "AI Business Creation: One Prompt to Revenue-Ready Online Business"
+title: "AI Business Creation: Prompt to Revenue-Ready Business"
+titleShortened: true
 seoTitled: true
 youtubeId: "CILRCeupuFQ"
 channelTitle: "Odetta Rockhead"

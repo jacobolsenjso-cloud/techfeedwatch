@@ -1,5 +1,6 @@
 ---
-title: "AI Trading Agents: How Agentic AI Changes Retail Investing & Finance"
+title: "AI Trading Agents Revolutionize Retail Investing & Finance"
+titleShortened: true
 youtubeId: "1zW6Uu21Q40"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

@@ -1,5 +1,6 @@
 ---
-title: "Agentic AI Tools Tested: Review of 4 AI Agents for Automation"
+title: "Agentic AI Tools Tested: 4 AI Agents for Automation"
+titleShortened: true
 seoTitled: true
 youtubeId: "QcnrWiZokh4"
 channelTitle: "Parker Prompts"

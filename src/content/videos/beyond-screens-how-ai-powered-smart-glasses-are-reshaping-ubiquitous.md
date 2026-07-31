@@ -1,5 +1,6 @@
 ---
-title: "AI Smart Glasses: Ubiquitous Computing & Augmented Intelligence"
+title: "AI Smart Glasses: Ubiquitous & Augmented Intelligence"
+titleShortened: true
 seoTitled: true
 youtubeId: "gElClXpg4J0"
 channelTitle: "TED"

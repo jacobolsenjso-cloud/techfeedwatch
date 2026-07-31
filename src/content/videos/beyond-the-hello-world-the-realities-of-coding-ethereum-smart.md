@@ -1,5 +1,6 @@
 ---
-title: "Coding Ethereum Smart Contracts: Basics with Solidity & Remix"
+title: "Coding Ethereum Smart Contracts with Solidity & Remix"
+titleShortened: true
 seoTitled: true
 youtubeId: "ooN6kZ9vqNQ"
 channelTitle: "Dapp University"

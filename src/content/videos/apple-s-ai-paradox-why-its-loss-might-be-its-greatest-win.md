@@ -1,5 +1,6 @@
 ---
-title: "Apple AI: On-Device Focus & Privacy Secure Long-Term Advantage"
+title: "Apple AI: On-Device Focus & Privacy Secure Long-Term Edge"
+titleShortened: true
 seoTitled: true
 youtubeId: "eWKY0OnPByg"
 channelTitle: "Marques Brownlee"

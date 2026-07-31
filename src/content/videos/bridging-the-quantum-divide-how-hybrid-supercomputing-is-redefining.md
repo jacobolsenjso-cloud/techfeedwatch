@@ -1,5 +1,6 @@
 ---
-title: "Hybrid Quantum-Classical Supercomputing Solves Intractable Problems"
+title: "Hybrid Quantum-Classical Supercomputing Solves Complex"
+titleShortened: true
 seoTitled: true
 youtubeId: "HgXqbnSxtZQ"
 channelTitle: "HPC Knowledge Portal"

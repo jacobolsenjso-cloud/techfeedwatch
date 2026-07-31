@@ -1,5 +1,6 @@
 ---
-title: "Azure Cloud Engineer Careers: Practical Skills vs. Certifications"
+title: "Azure Cloud Engineer Practical Skills vs. Certifications"
+titleShortened: true
 youtubeId: "Py9uturi9ho"
 channelTitle: "Cloudtechexec"
 channelId: "UCcuZJFAraynfyV_TaxlA-Zg"

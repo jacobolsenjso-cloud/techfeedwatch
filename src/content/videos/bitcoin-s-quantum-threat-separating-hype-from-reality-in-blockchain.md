@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Quantum Threat: Real security risks & post-quantum defenses"
+title: "Bitcoin Quantum Threat: Security Risks Post-Quantum Defense"
+titleShortened: true
 seoTitled: true
 youtubeId: "kLV2Cqsahbw"
 channelTitle: "Coin Bureau"

@@ -1,5 +1,6 @@
 ---
-title: "Algorand Balances Blockchain Scalability, Security, Decentralization"
+title: "Algorand Balances Scalability, Security, Decentralization"
+titleShortened: true
 seoTitled: true
 youtubeId: "zNdhgOk4-fE"
 channelTitle: "Lex Fridman"

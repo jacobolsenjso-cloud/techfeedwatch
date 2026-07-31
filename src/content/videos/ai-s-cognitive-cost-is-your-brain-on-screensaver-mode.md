@@ -1,5 +1,6 @@
 ---
-title: "AI Cognitive Decline: Passive Use Harms Critical Thinking, Memory"
+title: "AI Cognitive Decline: Passive Use Harms Thinking, Memory"
+titleShortened: true
 seoTitled: true
 youtubeId: "52FiVExXfnU"
 channelTitle: "House of El: AI"

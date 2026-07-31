@@ -1,5 +1,6 @@
 ---
-title: "WhatsApp AI Bots: Code-Free Development with Claude Code for Business"
+title: "WhatsApp AI Bots: Code-Free Development with Claude Code"
+titleShortened: true
 seoTitled: true
 youtubeId: "_VX7jc_BhB8"
 channelTitle: "Yashica Jain"

@@ -1,5 +1,6 @@
 ---
-title: "Anthropic Fable 5: AI Throttling, Hidden Limits Exposed, Trust Crisis"
+title: "Anthropic Fable 5: Throttling Exposed, Trust Crisis"
+titleShortened: true
 seoTitled: true
 youtubeId: "9LzBF70aI6k"
 channelTitle: "AI Revolution"

@@ -1,5 +1,6 @@
 ---
-title: "AI Forecasts 2026: Competition, Open Models, Fragmented Future"
+title: "AI 2026: Competition, Open Models, Fragmented Future"
+titleShortened: true
 seoTitled: true
 youtubeId: "EV7WhVT270Q"
 channelTitle: "Lex Fridman"

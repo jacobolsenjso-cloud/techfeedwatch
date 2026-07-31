@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Sell-Off Threat: DCG Debt to Gemini Spurs Market Stability Fears"
+title: "Bitcoin Sell-Off: DCG Debt to Gemini Fuels Market Fear"
+titleShortened: true
 seoTitled: true
 youtubeId: "FDU7KB2BF1Q"
 channelTitle: "Coin Bureau"

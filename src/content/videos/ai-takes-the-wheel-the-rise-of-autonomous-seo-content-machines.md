@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Content Machines: Automate Article Generation & Optimization"
+title: "AI SEO Content Automation: Generate & Optimize Articles"
+titleShortened: true
 seoTitled: true
 youtubeId: "9hozIpuv8wM"
 channelTitle: "GoldieAgencySEO"

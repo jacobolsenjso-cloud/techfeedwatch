@@ -1,5 +1,6 @@
 ---
-title: "10 Stages of AI Evolution: From Basic AI to Superintelligence"
+title: "10 Stages Of AI Evolution: Basic AI To Superintelligence"
+titleShortened: true
 seoTitled: true
 youtubeId: "tFx_UNW9I1U"
 channelTitle: "Future Business Tech"

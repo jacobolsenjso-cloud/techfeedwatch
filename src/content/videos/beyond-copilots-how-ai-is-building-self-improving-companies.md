@@ -1,5 +1,6 @@
 ---
-title: "Autonomous AI: Continuous optimization for self-improving companies"
+title: "Autonomous AI: Continuous Optimization for Self-Improvement"
+titleShortened: true
 seoTitled: true
 youtubeId: "X_JsIHUfUjc"
 channelTitle: "Y Combinator"

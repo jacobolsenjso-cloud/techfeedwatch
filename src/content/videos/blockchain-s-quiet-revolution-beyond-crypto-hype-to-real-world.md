@@ -1,5 +1,6 @@
 ---
-title: "Blockchain Business Transformation: Real-World Impact Beyond Crypto"
+title: "Blockchain Business Transformation: Beyond Crypto"
+titleShortened: true
 seoTitled: true
 youtubeId: "Pl8OlkkwRpc"
 channelTitle: "TED"

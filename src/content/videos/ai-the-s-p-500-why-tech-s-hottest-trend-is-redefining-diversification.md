@@ -1,5 +1,6 @@
 ---
-title: "AI S&P 500 Diversification: New Risks from Tech Concentration"
+title: "AI S&P 500 Diversification: New Risks Tech Concentration"
+titleShortened: true
 seoTitled: true
 youtubeId: "HNVg81nA2J8"
 channelTitle: "Nischa"

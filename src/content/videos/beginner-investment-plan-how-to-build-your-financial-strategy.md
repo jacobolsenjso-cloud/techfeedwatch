@@ -1,5 +1,6 @@
 ---
-title: "Beginner Investment Plan: How to Build Your Financial Strategy"
+title: "Beginner Investment Plan: Build Your Financial Strategy"
+titleShortened: true
 youtubeId: "MbIUKeS-96w"
 channelTitle: "SmartInvest Tips"
 channelId: "UCNUvazZP0Cn9rkClE3rrDUQ"

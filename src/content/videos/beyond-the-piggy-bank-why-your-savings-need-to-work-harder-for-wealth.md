@@ -1,5 +1,6 @@
 ---
-title: "How to Invest Savings: Wealth Building Strategies for Beginners"
+title: "How To Invest Savings: Beginner Strategies"
+titleShortened: true
 seoTitled: true
 youtubeId: "aQq-pRAEtzU"
 channelTitle: "𝗙𝗶𝗻𝗠𝗶𝗻𝘁𝘅"

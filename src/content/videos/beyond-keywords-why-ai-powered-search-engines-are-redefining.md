@@ -1,5 +1,6 @@
 ---
-title: "AI Web App Development: Prompt to Rapid Full-Stack Deployment"
+title: "AI Web App Development: Prompt to Fast Full-Stack Deployment"
+titleShortened: true
 seoTitled: true
 youtubeId: "Id5MsznWGwM"
 channelTitle: "Avra"
