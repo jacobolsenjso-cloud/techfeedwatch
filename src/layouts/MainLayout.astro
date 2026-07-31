@@ -241,7 +241,9 @@ const siteSchema = [
       body.dark-mode .site-footer { color: #9ca3af; }
       .footer-copy { margin: 0; }
       .footer-links { margin-top: 8px; display: flex; flex-direction: row; justify-content: center; align-items: center; }
-      .footer-link { color: inherit; text-decoration: none; margin: 0 10px; }
+      /* Lidt luft omkring footer-links, så de er til at ramme på touch */
+      .footer-link { color: inherit; text-decoration: none; margin: 0 4px; padding: 8px 6px; display: inline-block; }
+      .footer-link:hover { color: #0891b2; }
       .footer-sep { opacity: 0.6; }
 
       body.shorts-mode .top-navbar, body.shorts-mode .sidebar, body.shorts-mode .site-footer { display: none !important; }
@@ -254,7 +256,14 @@ const siteSchema = [
       body.shorts-mode .scroll-top-btn { display: none !important; }
 
       @media (max-width: 768px) {
-        .mobile-menu-btn { display: block; font-size: 1.35rem; }
+        /* Menuknappen var kun 19x29 px — for lille at ramme med tommelen.
+           44x44 er minimum for et primært touch-mål (WCAG 2.5.5). */
+        .mobile-menu-btn {
+          display: flex; align-items: center; justify-content: center;
+          width: 44px; height: 44px; margin-left: -8px;
+          font-size: 1.35rem; border-radius: 8px;
+        }
+        .mobile-menu-btn:active { background: var(--hover-bg); }
         /* Kompakt topbar på mobil, så alle 3 ikoner er synlige */
         .top-navbar { padding: 0 10px; }
         .nav-left { gap: 8px; }

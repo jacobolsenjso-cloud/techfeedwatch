@@ -44,13 +44,16 @@ const totalPages = Math.max(1, Math.ceil(regularVideos.length / PAGE_SIZE));
 // Redaktionel topsektion: dagens hovedhistorie + to sekundære. Tekst vægtes over
 // thumbnail, så forsiden læses som en publikation frem for en videoliste.
 const leadMain = pageOneVideos[0] || null;
-const leadSide = pageOneVideos.slice(1, 3);
+// Fire sekundære, så højre kolonne er nogenlunde lige så høj som hovedhistorien
+// og ikke efterlader et stort tomt felt ved siden af.
+const leadSide = pageOneVideos.slice(1, 5);
 
-// Kort hjælper til kortenes udpluk — summary er ofte 400+ tegn
+// Kort hjælper til kortenes udpluk — summary er ofte 400+ tegn.
+// Afsluttende tegnsætning fjernes før ellipsen, ellers ender man med "sector...."
 const excerpt = (text: string, max = 145) => {
   const s = (text || '').trim();
   if (s.length <= max) return s;
-  return s.slice(0, max).replace(/\s+\S*$/, '').trim() + '…';
+  return s.slice(0, max).replace(/\s+\S*$/, '').replace(/[.,;:!?—-]+$/, '').trim() + '…';
 };
 
 // Primært tag bruges som "eyebrow" over hovedhistorien
@@ -61,9 +64,9 @@ const firstTag = (v: any): string | null => {
 };
 
 // Opdeler resten i blokke (rækker)
-const vRow1 = pageOneVideos.slice(3, 7);
-const vRow2 = pageOneVideos.slice(7, 11);
-const vRest = pageOneVideos.slice(11);
+const vRow1 = pageOneVideos.slice(5, 9);
+const vRow2 = pageOneVideos.slice(9, 13);
+const vRest = pageOneVideos.slice(13);
 ---
 
 <MainLayout title="AI, Tech, Fintech & Crypto News, Explained" description="Tech Feed Watch turns the best AI, tech, fintech, and crypto videos into clear, readable analysis you can absorb in minutes. Updated daily.">
@@ -126,6 +129,8 @@ const vRest = pageOneVideos.slice(11);
     .home-hero-links { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
     .home-hero-link { display: inline-flex; align-items: center; gap: 7px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); text-decoration: none; padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
     .home-hero-link:hover { transform: translateY(-2px); border-color: #0891b2; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
+    .hero-link-icon { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; }
+    .home-hero-link:hover .hero-link-icon { opacity: 1; color: #0891b2; }
     @media (max-width: 768px) { .home-hero { margin: 15px auto 4px; padding: 0 15px; } .home-hero-card { padding: 26px 20px; border-radius: 14px; } .home-hero-title { font-size: 1.6rem; } .home-hero-sub { font-size: 0.98rem; } }
 
     .frontpage-wrapper { padding: 0 20px 20px 20px; max-width: 1600px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
@@ -253,9 +258,18 @@ const vRest = pageOneVideos.slice(11);
       <h1 class="home-hero-title">Tech, distilled.</h1>
       <p class="home-hero-sub">The best videos in AI, tech, fintech, and crypto — turned into sharp, unbiased analysis you can actually read. Updated daily.</p>
       <div class="home-hero-links">
-        <a href="/guides" class="home-hero-link">🧭 Guides</a>
-        <a href="/tools" class="home-hero-link">🛠️ Tools</a>
-        <a href="/glossary" class="home-hero-link">📖 Glossary</a>
+        <a href="/guides" class="home-hero-link">
+          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+          Guides
+        </a>
+        <a href="/tools" class="home-hero-link">
+          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5.1 5.1l-8 8a2.8 2.8 0 0 1-4-4z"/><path d="m5 5 3 3"/></svg>
+          Tools
+        </a>
+        <a href="/glossary" class="home-hero-link">
+          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+          Glossary
+        </a>
       </div>
     </div>
   </section>
