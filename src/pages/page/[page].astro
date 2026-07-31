@@ -243,13 +243,32 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
         thumb.appendChild(play);
 
         const info = document.createElement('div');
-        const titleEl = document.createElement('h3');
+        const titleEl = document.createElement('h2');
         titleEl.className = 'tma-grid-title';
         titleEl.textContent = video.title;
+        info.appendChild(titleEl);
+
+        if (video.summary) {
+          const ex = document.createElement('p');
+          ex.className = 'card-excerpt';
+          const s = video.summary.trim();
+          ex.textContent = s.length > 145
+            ? s.slice(0, 145).replace(/\s+\S*$/, '').replace(/[.,;:!?—-]+$/, '') + '…'
+            : s;
+          info.appendChild(ex);
+        }
+
+        // Kredit den oprindelige kanal, ikke os
         const metaEl = document.createElement('p');
         metaEl.className = 'tma-grid-meta';
-        metaEl.textContent = `Tech Feed Watch • ${formatDateJS(video.date)}`;
-        info.appendChild(titleEl);
+        if (video.channelTitle) {
+          const src = document.createElement('span');
+          src.className = 'card-source';
+          src.textContent = video.channelTitle;
+          metaEl.appendChild(src);
+          metaEl.appendChild(document.createTextNode(' · '));
+        }
+        metaEl.appendChild(document.createTextNode(formatDateJS(video.date)));
         info.appendChild(metaEl);
 
         card.appendChild(thumb);
