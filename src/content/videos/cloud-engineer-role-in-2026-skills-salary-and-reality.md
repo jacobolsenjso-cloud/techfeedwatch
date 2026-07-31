@@ -1,6 +1,9 @@
 ---
 title: "Cloud Engineer Role in 2026: Skills, Salary, and Reality"
 youtubeId: "9WOcdTNLcVA"
+channelTitle: "Tech With Soleyman"
+channelId: "UCQJoT6HfpDIc_A75RLWHGuw"
+publishedAt: "2026-03-31T15:03:41Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

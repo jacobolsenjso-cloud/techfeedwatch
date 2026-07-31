@@ -1,6 +1,9 @@
 ---
 title: "Beginner Investment Plan: How to Build Your Financial Strategy"
 youtubeId: "MbIUKeS-96w"
+channelTitle: "SmartInvest Tips"
+channelId: "UCNUvazZP0Cn9rkClE3rrDUQ"
+publishedAt: "2026-07-02T17:46:07Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"

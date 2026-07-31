@@ -1,6 +1,9 @@
 ---
 title: "Azure Cloud Engineer Careers: Practical Skills vs. Certifications"
 youtubeId: "Py9uturi9ho"
+channelTitle: "Cloudtechexec"
+channelId: "UCcuZJFAraynfyV_TaxlA-Zg"
+publishedAt: "2026-03-31T20:37:08Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

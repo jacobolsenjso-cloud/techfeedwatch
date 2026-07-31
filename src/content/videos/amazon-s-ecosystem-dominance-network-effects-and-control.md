@@ -1,6 +1,9 @@
 ---
 title: "Amazon's Ecosystem Dominance: Network Effects and Control"
 youtubeId: "vKnQfkHhhnc"
+channelTitle: "Rise and Fall"
+channelId: "UC_F7peDUCIRnHnhYu1FwRJQ"
+publishedAt: "2026-07-13T17:40:37Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

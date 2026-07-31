@@ -1,6 +1,9 @@
 ---
 title: "Agentic AI Transforms Developer Velocity in Enterprise Tech"
 youtubeId: "4D6_2G6QmpM"
+channelTitle: "Google Cloud Tech"
+channelId: "UCJS9pqu9BzkAMNTmzNMNhvg"
+publishedAt: "2026-07-09T19:00:16Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

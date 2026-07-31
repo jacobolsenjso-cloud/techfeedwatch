@@ -1,6 +1,9 @@
 ---
 title: "Personal Finance Strategies: Modern Tools for Financial Growth"
 youtubeId: "z-mSoosGQdc"
+channelTitle: "Al Zhang"
+channelId: "UClysnUQyzjD5bXZ1LHJ735g"
+publishedAt: "2026-04-14T01:05:57Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"

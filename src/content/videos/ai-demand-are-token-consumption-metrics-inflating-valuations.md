@@ -1,6 +1,9 @@
 ---
 title: "AI Demand: Are Token Consumption Metrics Inflating Valuations?"
 youtubeId: "grdoOQ-sLfE"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2026-04-17T18:00:53Z"
 date: "2026-07-31"
 tags:
   - "AI & Tech"

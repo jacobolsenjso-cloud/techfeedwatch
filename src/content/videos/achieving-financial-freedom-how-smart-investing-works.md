@@ -1,6 +1,9 @@
 ---
 title: "Achieving Financial Freedom: How Smart Investing Works"
 youtubeId: "nRN9CHyQBEo"
+channelTitle: "JanyuTech"
+channelId: "UCbdCX7jnEbKwDNU_rnp-a0Q"
+publishedAt: "2026-04-22T11:56:16Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"

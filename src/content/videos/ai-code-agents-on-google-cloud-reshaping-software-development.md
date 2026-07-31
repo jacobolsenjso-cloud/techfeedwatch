@@ -1,6 +1,9 @@
 ---
 title: "AI Code Agents on Google Cloud: Reshaping Software Development"
 youtubeId: "pIq2s5BKpkw"
+channelTitle: "Google Cloud Tech"
+channelId: "UCJS9pqu9BzkAMNTmzNMNhvg"
+publishedAt: "2026-07-28T19:00:01Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

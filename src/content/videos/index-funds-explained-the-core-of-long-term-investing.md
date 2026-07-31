@@ -1,6 +1,9 @@
 ---
 title: "Index Funds Explained: The Core of Long-Term Investing"
 youtubeId: "oKmz6p_i7yI"
+channelTitle: "WealthBlueprint"
+channelId: "UCeiG-2-Qed1YiDASqXowIcQ"
+publishedAt: "2026-05-22T03:15:09Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"

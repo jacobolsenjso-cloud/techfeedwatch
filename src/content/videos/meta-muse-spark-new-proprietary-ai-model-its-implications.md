@@ -1,6 +1,9 @@
 ---
 title: "Meta Muse Spark: New Proprietary AI Model & Its Implications"
 youtubeId: "rXSPopXet1o"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2026-04-09T21:00:49Z"
 date: "2026-07-31"
 tags:
   - "AI & Tech"

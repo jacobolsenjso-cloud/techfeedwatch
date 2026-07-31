@@ -1,6 +1,9 @@
 ---
 title: "AI Security Vulnerabilities: Protecting Agents and Investments"
 youtubeId: "mJlcBVArjz8"
+channelTitle: "Indy Pixels | Abdalla Emam"
+channelId: "UCXBOkAXvRSfnC2fJNe4IbaQ"
+publishedAt: "2026-07-27T15:00:24Z"
 date: "2026-07-30"
 tags:
   - "AI & Tech"

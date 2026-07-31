@@ -1,6 +1,9 @@
 ---
 title: "AI Trading Agents: How Agentic AI Changes Retail Investing & Finance"
 youtubeId: "1zW6Uu21Q40"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2026-07-28T17:00:23Z"
 date: "2026-07-31"
 tags:
   - "Fintech"

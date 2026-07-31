@@ -1,6 +1,9 @@
 ---
 title: "Financial Freedom Investing: Building Wealth Intentionally"
 youtubeId: "50pHwCue01s"
+channelTitle: "Michael Kearse | Discussing Self Directed IRAs"
+channelId: "UCSjQQhJwfU9SfMJ2DWeenMg"
+publishedAt: "2026-06-11T13:48:22Z"
 date: "2026-07-30"
 tags:
   - "Business & Money"
