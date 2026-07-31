@@ -2,7 +2,11 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Watch Later">
+<MainLayout
+  title="Watch Later"
+  description="Your saved Tech Feed Watch articles, kept in this browser so you can come back to them whenever you have time."
+  noindex={true}
+>
   
   <style is:global>
     .watch-later-wrapper { 
@@ -107,7 +111,7 @@ import MainLayout from '../layouts/MainLayout.astro';
                 <img src="${video.img.replace('mqdefault', 'hqdefault')}" alt="${(video.title || '').replace(/"/g, '&quot;')}" loading="lazy" />
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
-              <h3 class="tma-grid-title">${video.title}</h3>
+              <h2 class="tma-grid-title">${video.title}</h2>
             </a>
           `).join('');
         }

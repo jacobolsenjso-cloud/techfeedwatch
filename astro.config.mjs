@@ -126,8 +126,9 @@ export default defineConfig({
       filter: (page) => {
         const pathname = new URL(page).pathname;
         // Sider der bevidst er noindex hører ikke hjemme i sitemappet — Google
-        // advarer om det i Search Console. /offline vises kun af service workeren.
-        if (/^\/offline\/?$/.test(pathname)) return false;
+        // advarer om det i Search Console. /offline vises kun af service
+        // workeren; history og watch-later er personlige og bor i browseren.
+        if (/^\/(offline|history|watch-later)\/?$/.test(pathname)) return false;
         const match = pathname.match(/^\/video\/([^/]+)\/?$/);
         return match ? !shortSlugs.has(match[1]) : true;
       },

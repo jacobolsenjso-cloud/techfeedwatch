@@ -62,8 +62,11 @@ const description = "Search across every article and analysis on Tech Feed Watch
               '<span class="watch-card-play" aria-hidden="true">▶</span>' +
             '</div>' +
             '<div>' +
-              '<h3 class="tma-grid-title">' + esc(v.title) + '</h3>' +
-              '<p class="tma-grid-meta">Tech Feed Watch • ' + esc(fmtDate(v.date)) + '</p>' +
+              '<h2 class="tma-grid-title">' + esc(v.title) + '</h2>' +
+              '<p class="tma-grid-meta">' +
+                (v.channelTitle ? '<span class="card-source">' + esc(v.channelTitle) + '</span> · ' : '') +
+                esc(fmtDate(v.date)) +
+              '</p>' +
             '</div>' +
           '</a>'
         );

@@ -1,5 +1,5 @@
 ---
-title: "Agency-Quality Websites: Avoid Generic AI Designs with Claude Code"
+title: "Agency-Quality Websites with Claude Code, Not Generic AI"
 seoTitled: true
 youtubeId: "hrPKtWVE_bo"
 channelTitle: "Nic Conley"
