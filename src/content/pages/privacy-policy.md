@@ -62,16 +62,16 @@ You may opt out of personalized advertising at any time by visiting [Google Ads 
 
 ## Your Cookie Choices
 
-When you first visit this Website, you are asked whether you consent to analytics and advertising cookies. Until you accept:
+When you first visit this Website, you are asked for your consent through a **Google-certified Consent Management Platform** (the Google LLC CMP, IAB TCF vendor ID 300), integrated with the IAB Europe Transparency and Consent Framework. This is the consent mechanism Google requires for serving personalized advertising to users in the European Economic Area, the United Kingdom, and Switzerland.
 
-* **No analytics are loaded.** Google Analytics is not requested, executed, or given any data about your visit.
-* **No advertising cookies are stored.** We use Google Consent Mode v2 with all advertising and analytics storage set to `denied` by default, so Google's advertising script cannot write cookies to your device.
+Until you give consent:
 
-Only strictly necessary storage — such as remembering your consent choice, your dark-mode preference, and your saved articles — is used before you decide. This information stays in your browser and is never sent to us.
+* **No analytics are loaded.** Google Analytics is not requested, executed, or given any data about your visit. It is loaded only after the consent platform confirms you have agreed to information being stored on your device.
+* **No advertising cookies are stored.** We use Google Consent Mode v2 with advertising and analytics storage set to `denied` by default, so Google's advertising script cannot write cookies to your device before you decide.
 
-Declining is as easy as accepting: both options are presented as equally prominent buttons, and declining does not restrict your access to any part of this Website. Your choice is stored in your browser for six months, and you can change it at any time through the **Cookie settings** link in the footer.
+Only strictly necessary storage — such as your dark-mode preference and your saved articles — is used before you decide. That information stays in your browser and is never sent to us.
 
-Please note that we are currently in the process of adopting a Google-certified Consent Management Platform (CMP) integrated with the IAB Transparency and Consent Framework, which Google requires for serving personalized advertising to users in the EEA, the UK, and Switzerland. Until that is in place, personalized advertising is not served to visitors in those regions.
+Declining does not restrict your access to any part of this Website. You can review or withdraw your consent at any time through the **Cookie settings** link in the footer, which reopens the same consent dialog.
 
 ## Use of Your Personal Data
 

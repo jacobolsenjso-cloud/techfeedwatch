@@ -1,6 +1,5 @@
 ---
 import '@fontsource-variable/inter';
-import ConsentBanner from '../components/ConsentBanner.astro';
 
 const { title, description, image, imageWidth, imageHeight, schema, noindex } = Astro.props;
 const currentPath = Astro.url.pathname;
@@ -108,22 +107,63 @@ const siteSchema = [
         security_storage: 'granted',
         wait_for_update: 500
       });
-      try {
-        var tfwC = JSON.parse(localStorage.getItem('tfw_consent') || 'null');
-        if (tfwC && tfwC.v === 1 && tfwC.exp > Date.now() && tfwC.analytics) {
-          gtag('consent', 'update', {
-            ad_storage: 'granted', ad_user_data: 'granted',
-            ad_personalization: 'granted', analytics_storage: 'granted'
+    </script>
+
+    {/*
+      GA4 indlæses først når Googles CMP (Funding Choices, TCF cmpId 300) melder
+      at brugeren har givet samtykke til lagring på enheden — TCF-formål 1.
+      Sitet har ikke sit eget samtykkebanner: to dialoger oven på hinanden er
+      både forvirrende og unødvendigt, når den certificerede allerede kører.
+    */}
+    <script is:inline>
+      (function () {
+        var GA_ID = 'G-2C7N1GP697';
+        var loaded = false;
+
+        function loadAnalytics() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', GA_ID);
+        }
+
+        function watchConsent() {
+          if (typeof window.__tcfapi !== 'function') return;
+          window.__tcfapi('addEventListener', 2, function (tcData, success) {
+            if (!success || !tcData) return;
+            if (tcData.eventStatus !== 'tcloaded' && tcData.eventStatus !== 'useractioncomplete') return;
+
+            // Uden for GDPR-området gælder ingen samtykkekrav via TCF
+            if (tcData.gdprApplies === false) { loadAnalytics(); return; }
+
+            var p = tcData.purpose && tcData.purpose.consents;
+            if (p && p[1]) {
+              gtag('consent', 'update', { analytics_storage: 'granted' });
+              loadAnalytics();
+            }
           });
         }
-      } catch (e) {}
+
+        if (typeof window.__tcfapi === 'function') watchConsent();
+        else {
+          // CMP'en indlæses asynkront — vent kort på den, og giv så op i stilhed
+          var tries = 0;
+          var t = setInterval(function () {
+            if (typeof window.__tcfapi === 'function') { clearInterval(t); watchConsent(); }
+            else if (++tries > 40) clearInterval(t);
+          }, 250);
+        }
+      })();
     </script>
 
     {/* Google AdSense. Bliver i HTML'en så AdSense kan verificere sitet;
         Consent Mode ovenfor forhindrer cookies indtil der er givet samtykke. */}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9695260339642032" crossorigin="anonymous"></script>
 
-    {/* GA4 indlæses IKKE her — ConsentBanner injicerer scriptet efter samtykke. */}
 
     <meta name="description" content={description || defaultDesc} />
     <link rel="canonical" href={canonicalURL} />
@@ -438,8 +478,8 @@ const siteSchema = [
               <span class="footer-sep">|</span>
               <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
               <span class="footer-sep">|</span>
-              <a href="#" id="cookieSettingsLink" class="footer-link">Cookie settings</a>
-              <span class="footer-sep">|</span>
+              <a href="#" id="cookieSettingsLink" class="footer-link" hidden>Cookie settings</a>
+              <span class="footer-sep" id="cookieSettingsSep" hidden>|</span>
               <a href="/sitemap" class="footer-link">Sitemap</a>
               <span class="footer-sep">|</span>
               <a href="/rss.xml" class="footer-link">RSS</a>
@@ -451,7 +491,35 @@ const siteSchema = [
 
     <button type="button" id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Scroll to top">↑</button>
 
-    <ConsentBanner />
+    {/* "Cookie settings" åbner Googles egen samtykkedialog igen. Linket vises
+        kun hvis CMP'en rent faktisk er indlæst — ellers ville det være en
+        blindgyde for brugeren. */}
+    <script is:inline>
+      (function () {
+        var link = document.getElementById('cookieSettingsLink');
+        var sep = document.getElementById('cookieSettingsSep');
+        if (!link) return;
+
+        function enable() {
+          link.hidden = false;
+          if (sep) sep.hidden = false;
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            try { window.googlefc.showRevocationMessage(); } catch (err) {}
+          });
+        }
+
+        if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') enable();
+        else {
+          var tries = 0;
+          var t = setInterval(function () {
+            if (window.googlefc && typeof window.googlefc.showRevocationMessage === 'function') {
+              clearInterval(t); enable();
+            } else if (++tries > 40) clearInterval(t);
+          }, 250);
+        }
+      })();
+    </script>
 
     {/* Service worker: giver den installerede app en offline-side i stedet for
         browserens fejlside. Registreres efter load, så den ikke konkurrerer med
