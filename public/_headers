@@ -1,3 +1,14 @@
 /*
   X-Agent-Ready: true
   X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  # Tving HTTPS i to år, også for underdomæner. Sitet kører i forvejen kun på
+  # HTTPS, så der er ingen risiko for at låse noget ude.
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  # Andre må ikke lægge sitet i en iframe (clickjacking). Vi indlejrer selv
+  # YouTube, hvilket denne header ikke rører.
+  X-Frame-Options: SAMEORIGIN
+  # Sitet beder aldrig om kamera, mikrofon, placering eller betalinger.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=()
+  # Bevidst udeladt: Content-Security-Policy. En CSP der er stram nok til at
+  # gøre gavn ville skulle whiteliste AdSense, GA4 og YouTube præcist, og en
+  # fejl her slukker for annoncerne uden varsel. Tages separat med test.
