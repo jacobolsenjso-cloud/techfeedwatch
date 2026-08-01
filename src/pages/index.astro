@@ -126,6 +126,20 @@ const vRest = pageOneVideos.slice(13);
     .home-hero-title { margin: 0 0 10px 0; font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em; }
     .home-hero-sub { margin: 0 0 20px 0; font-size: 1.05rem; line-height: 1.6; color: #4b5563; max-width: 640px; position: relative; }
     body.dark-mode .home-hero-sub { color: #b8b3bd; }
+    /* Tillidslinjen: mindre end underteksten, men stadig over 4,5:1 i kontrast.
+       Fluebenet er dekorativt og bliver derfor skjult for skærmlæsere. */
+    .home-hero-note {
+      display: flex; align-items: flex-start; gap: 8px;
+      margin: -8px 0 20px 0; position: relative;
+      font-size: 0.88rem; line-height: 1.5; color: #4b5563; max-width: 640px;
+    }
+    body.dark-mode .home-hero-note { color: #a1a1aa; }
+    .home-hero-note svg {
+      width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px;
+      stroke: var(--teal-text); fill: none;
+      stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+    }
+
     .home-hero-links { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
     .home-hero-link { display: inline-flex; align-items: center; gap: 7px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); text-decoration: none; padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
     .home-hero-link:hover { transform: translateY(-2px); border-color: #0891b2; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
@@ -255,8 +269,16 @@ const vRest = pageOneVideos.slice(13);
 
   <section class="home-hero">
     <div class="home-hero-card">
-      <h1 class="home-hero-title">Tech, distilled.</h1>
+      <h1 class="home-hero-title">Skip the video. Keep the insight.</h1>
       <p class="home-hero-sub">The best videos in AI, tech, fintech, and crypto — turned into sharp, unbiased analysis you can actually read. Updated daily.</p>
+
+      {/* Kildeangivelsen er sitets stærkeste tillidssignal og det, næsten ingen
+          anden aggregator gør. Den står diskret, ikke som et salgsargument. */}
+      <p class="home-hero-note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        Every article credits the original creator and links to the source.
+      </p>
+
       <div class="home-hero-links">
         <a href="/guides" class="home-hero-link">
           <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
