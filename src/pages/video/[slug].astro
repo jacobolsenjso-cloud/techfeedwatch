@@ -138,7 +138,11 @@ const videoSchema = {
   "@type": "VideoObject",
   "name": title,
   "description": summary || title,
+  // hqdefault står FØRST med vilje. 17 af videoerne har ingen maxresdefault, og
+  // den svarer da 404 — henter Google den første adresse og fejler, kan feltet
+  // blive rapporteret som manglende. hqdefault (480x360) findes altid.
   "thumbnailUrl": [
+    `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
     `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
     `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`
   ],
