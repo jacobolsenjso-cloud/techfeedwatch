@@ -56,7 +56,9 @@ export const GET: APIRoute = () => {
       '  <url>',
       `    <loc>${SITE}/video/${slug}/</loc>`,
       '    <video:video>',
-      `      <video:thumbnail_loc>https://img.youtube.com/vi/${esc(fm.youtubeId)}/maxresdefault.jpg</video:thumbnail_loc>`,
+      // hqdefault frem for maxresdefault: 17 af videoerne har ikke en maxres-udgave,
+      // og Google afviser en post hvis miniaturen svarer 404. hqdefault findes altid.
+      `      <video:thumbnail_loc>https://img.youtube.com/vi/${esc(fm.youtubeId)}/hqdefault.jpg</video:thumbnail_loc>`,
       `      <video:title>${esc(clamp(fm.title, 100))}</video:title>`,
       `      <video:description>${esc(clamp(fm.summary || fm.title))}</video:description>`,
       `      <video:player_loc>https://www.youtube-nocookie.com/embed/${esc(fm.youtubeId)}</video:player_loc>`,

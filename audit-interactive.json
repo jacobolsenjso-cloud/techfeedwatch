@@ -1,0 +1,57 @@
+[
+ {
+  "name": "Mørk tilstand skifter",
+  "ok": true,
+  "note": "gemt: dark, baggrund: rgb(20, 19, 23)"
+ },
+ {
+  "name": "Mørk tilstand huskes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "name": "Tag-filter viser resultater",
+  "ok": true,
+  "note": "47 kort, standardvisning skjult: true"
+ },
+ {
+  "name": "Filtrerede kort har kilde",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "name": "Søgeforslag i topbaren",
+  "ok": true,
+  "note": "8 forslag"
+ },
+ {
+  "name": "Gem-knap virker",
+  "ok": true,
+  "note": "1 gemt"
+ },
+ {
+  "name": "Historik registreres",
+  "ok": true,
+  "note": "1 i historik"
+ },
+ {
+  "name": "Helpful-knap markeres",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "name": "Ingen opdigtede like-tal",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "name": "Mobilmenu åbner",
+  "ok": true,
+  "note": "knap 44x44"
+ },
+ {
+  "name": "Scroll-til-top",
+  "ok": true,
+  "note": ""
+ }
+]

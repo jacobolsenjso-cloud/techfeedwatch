@@ -1,0 +1,220 @@
+[
+ {
+  "filled": 2,
+  "buttons": 0,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 0 -> output 1 (\"The quick brown fox jumps over the lazy dog. The quick brown fox jumps\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 3,
+  "buttons": 0,
+  "fields": 3,
+  "ok": true,
+  "note": "felter 3, udfyldt 3, knapper 0 -> output 3 (\"hello world from tech feed watch\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 0,
+  "buttons": 0,
+  "fields": 7,
+  "ok": false,
+  "note": "felter 7, udfyldt 0, knapper 0 -> output 0",
+  "jsErrors": []
+ },
+ {
+  "filled": 0,
+  "buttons": 0,
+  "fields": 5,
+  "ok": true,
+  "note": "felter 5, udfyldt 0, knapper 0 -> output 1 (\"18.88:1 AA normal ✓ AA large ✓ AAA normal ✓ AAA large ✓\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 0,
+  "buttons": 0,
+  "fields": 5,
+  "ok": true,
+  "note": "felter 5, udfyldt 0, knapper 0 -> output 16 (\"NET PROFIT / LOSS +$497.50 RETURN ON INVESTMENT +49.75% EXIT VALUE (AF\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 3,
+  "buttons": 2,
+  "fields": 3,
+  "ok": true,
+  "note": "felter 3, udfyldt 3, knapper 2 -> output 3 (\"Hello World æøå\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 7,
+  "buttons": 0,
+  "fields": 8,
+  "ok": true,
+  "note": "felter 8, udfyldt 7, knapper 0 -> output 4 (\"<link rel=\"alternate\" hreflang=\"https://example.com/page\" href=\"https:\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 0,
+  "buttons": 0,
+  "fields": 4,
+  "ok": false,
+  "note": "felter 4, udfyldt 0, knapper 0 -> output 0",
+  "jsErrors": []
+ },
+ {
+  "filled": 0,
+  "buttons": 0,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 0, knapper 0 -> output 2 (\"Data URI <img> tag CSS background  Data URICopy  ⚠️ This image is over\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 1,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 1 -> output 3 (\"{\"a\":1,\"b\":[2,3],\"c\":{\"d\":\"e\"}}\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 0,
+  "fields": 5,
+  "ok": true,
+  "note": "felter 5, udfyldt 2, knapper 0 -> output 1 (\"seo content marketing seo strategy seo tools content seo content marke\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 1,
+  "fields": 2,
+  "ok": false,
+  "note": "felter 2, udfyldt 2, knapper 1 -> output 0",
+  "jsErrors": []
+ },
+ {
+  "filled": 7,
+  "buttons": 0,
+  "fields": 8,
+  "ok": true,
+  "note": "felter 8, udfyldt 7, knapper 0 -> output 2 (\"My Test Page Title\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 7,
+  "buttons": 0,
+  "fields": 8,
+  "ok": false,
+  "note": "felter 8, udfyldt 7, knapper 0 -> output 2 (\"My Test Page Title\")  ⚠ konsol: Failed to load resource: the server responded with a status of 404 ()",
+  "jsErrors": [
+   "konsol: Failed to load resource: the server responded with a status of 404 ()"
+  ]
+ },
+ {
+  "filled": 0,
+  "buttons": 1,
+  "fields": 8,
+  "ok": true,
+  "note": "felter 8, udfyldt 0, knapper 1 -> output 2 (\"Copy\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 0,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 0 -> output 1 (\"The cat sat on the mat. It was a sunny day outside. Birds were singing\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 6,
+  "buttons": 0,
+  "fields": 7,
+  "ok": true,
+  "note": "felter 7, udfyldt 6, knapper 0 -> output 5 (\"https://example.com/sitemap.xml\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 19,
+  "buttons": 0,
+  "fields": 19,
+  "ok": true,
+  "note": "felter 19, udfyldt 19, knapper 0 -> output 6 (\"Test Article Headline\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 4,
+  "buttons": 1,
+  "fields": 4,
+  "ok": true,
+  "note": "felter 4, udfyldt 4, knapper 1 -> output 5 (\"My Page Title For Search Results\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 0,
+  "fields": 5,
+  "ok": true,
+  "note": "felter 5, udfyldt 2, knapper 0 -> output 2 (\"hello-world-this-is-a-test-title Copy\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 3,
+  "buttons": 0,
+  "fields": 4,
+  "ok": true,
+  "note": "felter 4, udfyldt 3, knapper 0 -> output 3 (\"1 00:00:01,000 --> 00:00:04,000 Hello world  2 00:00:05,000 --> 00:00:\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 3,
+  "buttons": 0,
+  "fields": 5,
+  "ok": true,
+  "note": "felter 5, udfyldt 3, knapper 0 -> output 3 (\"line one line two line three\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 1,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 1 -> output 1 (\"img.youtube.com/vi/{videoId}/...\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 7,
+  "buttons": 0,
+  "fields": 7,
+  "ok": true,
+  "note": "felter 7, udfyldt 7, knapper 0 -> output 2 (\"Your campaign URL https://example.com/landing?utm_source=https%3A%2F%2\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 1,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 1 -> output 5 (\"<script type=\"application/ld+json\"> {   \"@context\": \"https://schema.or\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 2,
+  "buttons": 0,
+  "fields": 2,
+  "ok": true,
+  "note": "felter 2, udfyldt 2, knapper 0 -> output 1 (\"One two three four five six seven eight nine ten.\")",
+  "jsErrors": []
+ },
+ {
+  "filled": 3,
+  "buttons": 0,
+  "fields": 10,
+  "ok": true,
+  "note": "felter 10, udfyldt 3, knapper 0 -> output 1 (\"<div style=\"position:relative;width:100%;padding-bottom:56.25%;height:\")",
+  "jsErrors": []
+ }
+]

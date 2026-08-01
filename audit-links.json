@@ -1,0 +1,124 @@
+{
+ "broken": [
+  {
+   "url": "https://img.youtube.com",
+   "count": 964,
+   "status": 404
+  },
+  {
+   "url": "https://pagead2.googlesyndication.com",
+   "count": 482,
+   "status": 404
+  },
+  {
+   "url": "https://www.googletagmanager.com",
+   "count": 482,
+   "status": 404
+  },
+  {
+   "url": "https://www.aboutads.info/choices/",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=artificial%20intelligence,cryptocurrency,fintech,SEO",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=artificial%20intelligence",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=ChatGPT",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=machine%20learning",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=cryptocurrency",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=bitcoin",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=ethereum",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=fintech",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=SEO",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=automation",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=cybersecurity",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=cloud%20computing",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=web3",
+   "count": 1,
+   "status": 429
+  },
+  {
+   "url": "https://www.wolframalpha.com",
+   "count": 1,
+   "status": 404
+  },
+  {
+   "url": "http://localhost:3000/video/shipping-10x-faster",
+   "count": 1,
+   "status": "FEJL: fetch failed"
+  },
+  {
+   "url": "https://claude.ai/login",
+   "count": 1,
+   "status": 403
+  }
+ ],
+ "missingMax": 17,
+ "missingList": [
+  "TZUTe7s11-I",
+  "zawsAmcN71M",
+  "olfaBgJrUBI",
+  "6OlUMND1htQ",
+  "Kz2siKZjNQA",
+  "xz-pG1gUS4c",
+  "7Hk5uVv8JpM",
+  "UHAuc6Lh234",
+  "6XvcvDScf1c",
+  "k6Vd_wnYbhA",
+  "VyX8E4KUkWw",
+  "sY_PCmpVKZI",
+  "AnTpZQnlEj4",
+  "eQ3J8dpNRoM",
+  "uFLz0MexCSY",
+  "gTGAkxx4ItU",
+  "iadt4yTlK6w"
+ ]
+}

@@ -292,7 +292,14 @@ const vRest = pageOneVideos.slice(13);
         <section class="lead-section" aria-label="Latest analysis">
           <a href={`/video/${leadMain.file.split('/').pop().replace('.md', '')}`} class="lead-card">
             <div class="lead-card-thumb watch-card-thumb">
-              <img src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/maxresdefault.jpg`} alt="" loading="eager" fetchpriority="high" />
+              {/* Ikke alle videoer har en maxres-udgave. Uden fallback viser
+                  YouTube en grå pladsholder på sidens mest synlige billede. */}
+              <img
+                src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/maxresdefault.jpg`}
+                alt="" loading="eager" fetchpriority="high"
+                data-fallback={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/hqdefault.jpg`}
+                onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
+              />
               <div class="duration-badge">{leadMain.frontmatter.duration || '0:00'}</div>
             </div>
             {firstTag(leadMain) && (

@@ -1,0 +1,310 @@
+[
+ {
+  "vp": "mobil",
+  "label": "forside",
+  "path": "/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "forside side 2",
+  "path": "/page/2",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "artikel",
+  "path": "/video/ai-hacking-autonomous-agents-threaten-corporate-networks/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "tag",
+  "path": "/tag/ai-tech/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "tag side 2",
+  "path": "/tag/ai-tech/page/2",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "arkiv",
+  "path": "/archive/2026-07/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "arkiv side 2",
+  "path": "/archive/2026-07/page/2",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "library",
+  "path": "/library/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "latest",
+  "path": "/latest/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "popular",
+  "path": "/popular/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "search",
+  "path": "/search/",
+  "problems": [
+   "næsten tom (284 tegn)"
+  ]
+ },
+ {
+  "vp": "mobil",
+  "label": "watch-later",
+  "path": "/watch-later/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "history",
+  "path": "/history/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "tools",
+  "path": "/tools/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "glossary",
+  "path": "/glossary/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "guides",
+  "path": "/guides/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "trends",
+  "path": "/trends/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "about",
+  "path": "/about/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "contact",
+  "path": "/contact/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "terms",
+  "path": "/terms/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "privacy",
+  "path": "/privacy-policy/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "sitemap-side",
+  "path": "/sitemap/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "forfatter",
+  "path": "/author/jacob-olsen/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "offline",
+  "path": "/offline/",
+  "problems": []
+ },
+ {
+  "vp": "mobil",
+  "label": "404",
+  "path": "/findes-ikke-xyz",
+  "problems": [
+   "konsol: Failed to load resource: the server responded with a status of 404 ()"
+  ]
+ },
+ {
+  "vp": "desktop",
+  "label": "forside",
+  "path": "/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "forside side 2",
+  "path": "/page/2",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "artikel",
+  "path": "/video/ai-hacking-autonomous-agents-threaten-corporate-networks/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "tag",
+  "path": "/tag/ai-tech/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "tag side 2",
+  "path": "/tag/ai-tech/page/2",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "arkiv",
+  "path": "/archive/2026-07/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "arkiv side 2",
+  "path": "/archive/2026-07/page/2",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "library",
+  "path": "/library/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "latest",
+  "path": "/latest/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "popular",
+  "path": "/popular/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "search",
+  "path": "/search/",
+  "problems": [
+   "næsten tom (294 tegn)"
+  ]
+ },
+ {
+  "vp": "desktop",
+  "label": "watch-later",
+  "path": "/watch-later/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "history",
+  "path": "/history/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "tools",
+  "path": "/tools/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "glossary",
+  "path": "/glossary/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "guides",
+  "path": "/guides/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "trends",
+  "path": "/trends/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "about",
+  "path": "/about/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "contact",
+  "path": "/contact/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "terms",
+  "path": "/terms/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "privacy",
+  "path": "/privacy-policy/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "sitemap-side",
+  "path": "/sitemap/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "forfatter",
+  "path": "/author/jacob-olsen/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "offline",
+  "path": "/offline/",
+  "problems": []
+ },
+ {
+  "vp": "desktop",
+  "label": "404",
+  "path": "/findes-ikke-xyz",
+  "problems": [
+   "konsol: Failed to load resource: the server responded with a status of 404 ()"
+  ]
+ }
+]

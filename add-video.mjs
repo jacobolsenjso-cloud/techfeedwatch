@@ -6,6 +6,41 @@ import { generateOgCard } from './og-card.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity"];
 
+// Renser links i den genererede brødtekst før den gemmes.
+//
+// Gemini opfandt engang et link til http://localhost:3000/video/shipping-10x-faster
+// og det lå live på sitet, hvor ingen bruger kunne nå det. Den slags skal ikke
+// kunne slippe igennem igen:
+//  - localhost og 127.0.0.1 -> linket fjernes, teksten beholdes
+//  - absolutte links til vores eget domæne -> laves relative
+//  - vi accepterer kun /video/, /tag/, /guides/, /glossary/, /tools/ og et par
+//    faste sider som interne mål. Alt andet internt afvikles til ren tekst.
+export function sanitizeLinks(md) {
+  const ALLOWED = /^\/(video|tag|guides|glossary|tools|archive|library|latest|popular|trends)(\/|$)/;
+
+  return md.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (whole, text, url) => {
+    // Udviklingsadresser er altid en fejl
+    if (/^https?:\/\/(localhost|127\.0\.0\.1)/i.test(url)) return text;
+
+    // Vores eget domæne skrevet absolut -> gør relativt
+    const own = url.match(/^https?:\/\/(?:www\.)?techfeedwatch\.com(\/.*)?$/i);
+    if (own) {
+      const path = own[1] || '/';
+      return ALLOWED.test(path) || path === '/' ? `[${text}](${path})` : text;
+    }
+
+    // Eksterne links får lov at stå
+    if (/^https?:\/\//i.test(url)) return whole;
+    if (/^(mailto:|tel:|#)/i.test(url)) return whole;
+
+    // Interne stier: kun kendte sektioner
+    if (url.startsWith('/')) return ALLOWED.test(url) ? whole : text;
+
+    // Relative stier uden skråstreg peger sjældent hvor modellen tror
+    return text;
+  });
+}
+
 // Mindste videolængde vi udgiver. Tidligere blev alt under 180s markeret som
 // "Short" og fik en side helt uden brødtekst — 205 tomme sider i alt, som blev
 // fjernet igen. Nu afvises korte videoer i stedet, før vi bruger API-kvote på dem.
@@ -397,6 +432,7 @@ async function run() {
 
       content = contentMatch ? contentMatch[1].trim() : "";
       content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
+      content = sanitizeLinks(content);
     }
 
     const date = new Date().toISOString().split('T')[0];
