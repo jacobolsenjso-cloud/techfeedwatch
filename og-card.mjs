@@ -20,14 +20,22 @@ async function fetchThumb(youtubeId) {
 }
 
 // Bund-gradient + logo, så kortet er brandet og teksten kan læses.
+//
+// Logoet er "feed bliver til play": tre stigende bjælker efterfulgt af en
+// trekant. Kortene tegnede tidligere kun trekanten, så mærket var halvt.
 const overlaySvg = Buffer.from(`<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
     <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
     <stop offset="100%" stop-color="#000000" stop-opacity="0.82"/>
   </linearGradient></defs>
   <rect width="${W}" height="${H}" fill="url(#g)"/>
-  <polygon points="56,548 56,590 98,569" fill="#0891b2"/>
-  <text x="116" y="583" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff">Tech Feed Watch</text>
+
+  <rect x="56" y="546" width="26" height="10" rx="5" fill="#d926c8"/>
+  <rect x="56" y="564" width="35" height="10" rx="5" fill="#0891b2"/>
+  <rect x="56" y="582" width="44" height="10" rx="5" fill="#22d3ee"/>
+  <polygon points="114,540 114,598 158,569" fill="#22b8e6"/>
+
+  <text x="180" y="585" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff">Tech Feed Watch</text>
 </svg>`);
 
 // Laver et 1200x630 delekort til public/og/[slug].jpg. Kaster aldrig - returnerer null ved fejl.
