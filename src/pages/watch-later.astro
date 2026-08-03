@@ -170,6 +170,15 @@ import MainLayout from '../layouts/MainLayout.astro';
           '</div>';
       };
 
+      // Nyeste øverst. Artikler gemt efter denne ændring har savedAt og sorteres
+      // på det. Ældre poster har intet tidsstempel — de blev lagt bagest i
+      // arrayet efterhånden som de blev gemt, så deres omvendte rækkefølge er
+      // den rigtige, og de placeres efter alt med tidsstempel.
+      const newestFirst = (list) => list
+        .map((v, i) => ({ v, t: v.savedAt || 0, i }))
+        .sort((a, b) => (b.t - a.t) || (b.i - a.i))
+        .map((x) => x.v);
+
       const render = () => {
         const { healed, changed } = heal(read());
         if (changed) write(healed);
@@ -184,7 +193,7 @@ import MainLayout from '../layouts/MainLayout.astro';
           return;
         }
         emptyMsg.style.display = 'none';
-        grid.innerHTML = healed.map(cardHtml).join('');
+        grid.innerHTML = newestFirst(healed).map(cardHtml).join('');
       };
 
       const toast = (text, onUndo) => {

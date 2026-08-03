@@ -985,7 +985,10 @@ const metaDesc = rawMeta.length > 157
           watchLater = JSON.parse(localStorage.getItem('watchLater') || '[]');
           const index = watchLater.findIndex((v) => v.slug === slug);
           if (index === -1) {
-            watchLater.push({ slug, title, img });
+            // unshift, ikke push: det senest gemte skal ligge øverst på
+            // Watch Later. savedAt gør rækkefølgen eksplicit, så den ikke
+            // afhænger af positionen i arrayet.
+            watchLater.unshift({ slug, title, img, savedAt: Date.now() });
             saveBtn.classList.add('btn-active'); saveText.innerHTML = 'Saved';
           } else {
             watchLater.splice(index, 1);
