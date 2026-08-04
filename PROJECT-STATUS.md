@@ -108,17 +108,45 @@ MIN_DURATION_SECONDS = 180  // i add-video.mjs: ingen Shorts
 loftet koster ingenting.
 
 **Hvorfor 1 pr. kørsel:** med 3 pr. kørsel og et lavt dagsloft landede hele
-dagens output i de første par kørsler — og dermed fra den ene eller to kanaler
-og emneklynger, som netop de kørsler ramte. Med 1 pr. kørsel fordeles dagen over
-fire forskellige tidspunkter, kanaler og klynger.
+dagens output i de første par kørsler — og dermed fra det ene eller to emner og
+kanaler, som netop de kørsler ramte. Med 1 pr. kørsel fordeles dagen over fire
+forskellige tidspunkter, emner og kanaler.
 
-**Rotation:** `CHANNELS` har **22 poster** — 14 angivet med `id` (TED, Y
+**Fordeling pr. 4. august 2026** (før det nye emnevalg begynder at virke):
+AI & Tech 280 · Business & Money 110 · Fintech 68 · Automation 50 · Crypto 50 ·
+Coding 37 · Productivity 35 · SEO 34 · Cybersecurity 13 · AI Video 13.
+Robotten arbejder sig nedefra og op, så AI & Tech får ingen nye artikler før
+de øvrige har hentet ind. Det tager måneder, ikke uger — fordelingen bliver
+jævnere, ikke jævn, medmindre noget af AI & Tech-bunken ommærkes.
+
+**Emnevalg: robotten fylder den tynde hylde.** Før hver kørsel tælles hvor
+mange artikler der bærer hvert af de 10 mærker (`countArticlesByTag()`), og
+kørslen vælger det mærke med færrest (`pickThinnestTag()`). Ved uafgjort
+afgør klokkeslættet, så to kørsler i træk ikke rammer det samme. Søgeordene
+ligger i `TOPIC_BY_TAG` — ét sæt pr. mærke.
+
+**Mærket følger med søgningen.** `auto-youtube.mjs` kalder
+`node add-video.mjs "<url>" --tag "<mærke>"`. Mærket sættes forrest i
+artiklens `tags:` og kan ikke overskrives; Gemini må højst tilføje ét mere.
+
+> **Hvorfor:** før dette bestemte Gemini selv mærkerne efter at videoen var
+> fundet, og svarede næsten altid "AI & Tech" — det gjorde reservemærket
+> også. Resultatet var 280 af 367 artikler under ét mærke, mens
+> Cybersecurity og AI Video havde 13 hver. De gamle `TOPIC_CLUSTERS` (12
+> klynger mod 10 mærker) og den vægtede rotationstabel er fjernet; der fandtes
+> ingen ren oversættelse mellem dem, og vægtningen holdt de tynde emner tynde.
+> Ingen søgeord gik tabt: cloud/SaaS ligger nu under AI & Tech,
+> privatøkonomi og e-commerce under Business & Money.
+
+**Tørt løb:** `node auto-youtube.mjs --dry-run` viser fordelingen og hvilket
+mærke der ville blive valgt. Ingen API-kald, ingen udgivelse. Kør den før du
+ændrer noget i emnevalget.
+
+**Kanalrotation:** `CHANNELS` har **22 poster** — 14 angivet med `id` (TED, Y
 Combinator, Lex Fridman, a16z, Fireship, Coin Bureau, Bloomberg m.fl.) og 8 med
 `handle`, hvis ID opløses ved kørsel. Rotationen er
-`Math.floor(Date.now() / 2 timer) % CHANNELS.length`, altså modulo 22.
-12 emneklynger (`TOPIC_CLUSTERS`) med en vægtet rotationstabel på 20 pladser,
-der rammer høj-CPC-emner oftest: fintech, krypto, SEO/automation,
-cybersikkerhed, cloud/SaaS, privatøkonomi, e-commerce, AI.
+`Math.floor(Date.now() / 2 timer) % CHANNELS.length`, altså modulo 22, og
+kører uafhængigt af emnevalget.
 
 **Vigtigt: de 22 kanaler er ikke der, hvor indholdet kommer fra.** Den brede
 emnesøgning henter fra hele YouTube. Artiklerne stammer reelt fra **234
@@ -161,8 +189,9 @@ at stå forkert i dette dokument. **Tæl poster i strukturen, ikke forekomster a
 ét felt.**
 
 **Regel: når et script melder mange fejl på én gang, er scriptet mistænkt før koden er.**
-Og: kommentarer i koden er ikke data. Kommentaren over `TOPIC_CLUSTERS` sagde
-"Otte emneklynger", mens der var 12. Tæl altid selv.
+Og: kommentarer i koden er ikke data. Kommentaren over de daværende
+`TOPIC_CLUSTERS` sagde "Otte emneklynger", mens der var 12. Tæl altid selv.
+(Klyngerne findes ikke længere — se afsnit 3 — men fælden gør.)
 
 **Astro: statiske ruter vinder over dynamiske.** `/tools/json-formatter` (egen
 fil) rammer sin egen side, selvom `[category].astro` findes i samme mappe. Det er
