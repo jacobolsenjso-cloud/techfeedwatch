@@ -1,10 +1,28 @@
 # techfeedwatch.com — teknisk status
 
-Sidst opdateret: 4. august 2026 · Commit `a241b86`
+Sidst opdateret: 4. august 2026 · Commit `20547cf`
 
 Dette dokument er en overdragelse. Det beskriver hvad siden er, hvordan den er
 bygget, hvad der er rettet, og hvad der stadig mangler. Læs det først i en ny
 session — så behøver vi ikke grave det hele frem igen.
+
+## Til dig der læser dette i en ny session
+
+**Repoet ligger på Jacobs maskine i `C:\Users\jacob\techfeedwatch`.**
+
+Antag ikke at du kun har dette dokument. Tjek dine værktøjer, før du melder at
+du ikke kan komme til koden:
+
+- Har du Desktop Commander (`mcp__Desktop_Commander__*`), kan du læse, skrive,
+  søge og køre kommandoer direkte i mappen ovenfor. Det er sådan alt arbejdet
+  hidtil er lavet — build, audit-scripts, skærmbilleder med Puppeteer, git.
+- Har du en tilkoblet mappe i Cowork, så bed Jacob vælge `techfeedwatch`.
+- Har du ingen af delene, så sig det med det samme og bed ham koble mappen på.
+  Lad være med at skrive kode i blinde, som han selv skal indsætte — den vej har
+  vi ikke arbejdet, og den er let at lave fejl i.
+
+Første handling i en ny session bør være at liste mappen og læse de filer,
+opgaven rører. Gæt aldrig på hvad en fil indeholder.
 
 ---
 
