@@ -222,6 +222,13 @@ et banner mere — det gav to dialoger oven på hinanden sidst.
   under 3 minutter.
 - **`http://localhost:3000/...` lå live i en artikel.** Rettet, og
   `sanitizeLinks()` i `add-video.mjs` forhindrer det fremover.
+- **`/popular` rangerede stadig efter opdigtede tal.** Siden sorterede 48
+  artikler efter `hash(youtubeId) % 4000 + 500`, viste tallet på hvert kort som
+  "🔥 4.2K" og kaldte det "ranked by reader engagement". Samme problem som
+  like-tallene ovenfor — **den overlevede oprydningen, fordi den ikke blev
+  tjekket.** Lærepenge: når en type opdigtet tal fjernes, så søg efter mønsteret
+  i hele kodebasen, ikke kun det sted det blev opdaget. Siden bruger nu rigtige
+  visningstal fra YouTube.
 
 ### Teknisk SEO
 
@@ -264,8 +271,10 @@ tjekket med skærmbilleder.
 
 | Opgave | Status |
 |---|---|
-| **Trend-analyse fra sitets egne data** | Aftalt, ikke påbegyndt. Første skridt er at se om der er nok data til en historie, eller om vi skal vente et par måneder. |
-| **Et originalt lag oven på artiklerne** | Konceptets svageste punkt. Se afsnit 7. |
+| **Trend-analyse fra sitets egne data** | Første halvdel gennemført: `/trends` tæller navne på tværs af alle artikler (spor B). Anden halvdel udestår: metoden er nu fast, så en måling måned for måned bliver en ægte serie — men den kræver at der går 3-4 måneder (spor A). Sæt en påmindelse; der er ingen automatik der gør det. |
+| **Et originalt lag oven på artiklerne** | Delvist. `/trends` og `/popular` er nu begge afledt af sitets egne data. Se afsnit 7. |
+| **Skarpere baseline på `/popular`** | Rangeringen bruger kanalens livstidsgennemsnit (samlede visninger / antal videoer). Kanaler med mange korte klip får et lavt gennemsnit, så deres lange videoer scorer højere end fortjent — derfor ligger NOVA nummer et. Den skarpe version sammenligner med kanalens seneste videoer: ét API-kald pr. kanal i stedet for ét pr. 50. Isoleret til `update-view-counts.mjs`. |
+| **Fordelingen på emnemærker** | Robotten fylder nu den tynde hylde (afsnit 3), men startpunktet er meget skævt: AI & Tech 280 mod 13 for Cybersecurity. Det jævner sig ud over måneder. Alternativet — at ommærke dele af AI & Tech-bunken — er ikke besluttet. |
 | **Offline-oplevelsen (PWA)** | Aldrig bevist ende-til-ende. Kræver en rigtig telefon i flytilstand — mine værktøjer kan ikke teste det. |
 
 ### Jacobs ansvar (uden for koden)
@@ -293,17 +302,28 @@ med noget originalt.
 
 Fire retninger, i den rækkefølge de blev foreslået:
 
-1. **Værktøjerne frem** — gennemført. De er sitets eneste originale aktiv og
-   den eneste realistiske kilde til backlinks. Næste skridt er at bruge dem
-   aktivt udadtil.
-2. **Skær ned, ikke op** — gennemført. 4 om dagen i stedet for 8.
-3. **Tilføj ét originalt lag** — udestående. Trend-analysen er det mest
-   nærliggende: sitet har 367 artikler med kanal, emne og dato. Det er data
-   ingen andre har.
-4. **Gør robotten til assistent, ikke udgiver** — udestående. I dag udgiver den
-   direkte. Alternativet er at den forbereder, og Jacob godkender.
+1. **Værktøjerne frem** — gennemført. De 27 værktøjer er stadig det eneste på
+   sitet der slet ikke er afledt af andres videoer, og den mest realistiske
+   kilde til backlinks. Næste skridt er at bruge dem aktivt udadtil.
+2. **Skær ned, ikke op** — gennemført. 4 om dagen i stedet for 8. Loftet bliver
+   stående til AdSense er godkendt: flere maskinskrevne artikler om dagen
+   trækker i den forkerte retning i netop den vurdering.
+3. **Tilføj ét originalt lag** — påbegyndt, ikke færdigt. To sider bygger nu på
+   sitets egne data i stedet for på andres videoer:
+   - `/trends` tæller hvilke firmaer, modeller og protokoller der nævnes på
+     tværs af alle artikler. Metoden og forbeholdene står på siden.
+   - `/popular` rangerer efter hvor langt en video slog sin egen kanals
+     gennemsnit, delt op pr. emne. Det er stadig andres tal, men sammenstillingen
+     er vores.
+   Begge er afledte tal, ikke original research. Det stærkeste originale lag —
+   et menneske der vurderer — findes stadig ikke. Se punkt 4.
+4. **Gør robotten til assistent, ikke udgiver** — udestående og ubesluttet. I
+   dag udgiver den direkte. Alternativet er at den forbereder, og Jacob
+   godkender. Et mindre skridt i samme retning er drøftet: et `featured`-flag
+   i frontmatter, som Jacob selv sætter, med `/popular` som kandidatliste —
+   maskinen finder, mennesket vælger.
 
-Punkt 3 og 4 er ikke besluttet. Tag dem ikke som givet — spørg.
+Punkt 4 er ikke besluttet. Tag det ikke som givet — spørg.
 
 ---
 
