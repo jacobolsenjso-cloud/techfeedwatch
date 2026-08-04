@@ -4,7 +4,8 @@ import fs from 'fs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-// Otte emneklynger (én pr. hovedemne). Robotten roterer mellem dem, så alle dækkes i løbet af dagen.
+// Emneklynger (én pr. hovedemne). Robotten roterer mellem dem, så alle dækkes i løbet af dagen.
+// Kommentaren sagde tidligere "Otte" — der er 12. Undlad et tal her, så det ikke forældes igen.
 // "|" betyder ELLER i YouTube-søgningen, så hver klynge matcher videoer med et af ordene.
 const TOPIC_CLUSTERS = [
   // AI & Tech

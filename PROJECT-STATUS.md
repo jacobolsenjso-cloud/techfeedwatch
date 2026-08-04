@@ -112,17 +112,24 @@ dagens output i de første par kørsler — og dermed fra den ene eller to kanal
 og emneklynger, som netop de kørsler ramte. Med 1 pr. kørsel fordeles dagen over
 fire forskellige tidspunkter, kanaler og klynger.
 
-**Rotation:** 8 kanaler (`CHANNELS`), der roteres på klokkeslæt
-(`Date.now() / 2 timer % 8`). 12 emneklynger (`TOPIC_CLUSTERS`) med en vægtet
-rotationstabel på 20 pladser, der rammer høj-CPC-emner oftest: fintech, krypto,
-SEO/automation, cybersikkerhed, cloud/SaaS, privatøkonomi, e-commerce, AI.
+**Rotation:** `CHANNELS` har **22 poster** — 14 angivet med `id` (TED, Y
+Combinator, Lex Fridman, a16z, Fireship, Coin Bureau, Bloomberg m.fl.) og 8 med
+`handle`, hvis ID opløses ved kørsel. Rotationen er
+`Math.floor(Date.now() / 2 timer) % CHANNELS.length`, altså modulo 22.
+12 emneklynger (`TOPIC_CLUSTERS`) med en vægtet rotationstabel på 20 pladser,
+der rammer høj-CPC-emner oftest: fintech, krypto, SEO/automation,
+cybersikkerhed, cloud/SaaS, privatøkonomi, e-commerce, AI.
 
-**Vigtigt: de 8 kanaler er ikke der, hvor indholdet kommer fra.** Den brede
+**Vigtigt: de 22 kanaler er ikke der, hvor indholdet kommer fra.** Den brede
 emnesøgning henter fra hele YouTube. Artiklerne stammer reelt fra **234
 forskellige kanaler**, hvoraf 194 kun har bidraget med én artikel. Toppen er
 TED (18), Lex Fridman (11), Coin Bureau (10), Y Combinator (9), Fireship (9).
 `CHANNELS` er altså en lille garanteret kerne oven på en meget lang hale — hav
 det med, hvis du analyserer kildefordelingen.
+
+> **Tæl poster, ikke felter.** Dette tal stod fejlagtigt som 8 i en tidligere
+> udgave, fordi et script talte forekomster af `handle:` og dermed sprang de 14
+> `id:`-poster over. Se faldgrube-afsnittet.
 
 `prune-videos.yml` kører `0 4 */3 * *` og fjerner artikler hvis kildevideo er
 slettet.
@@ -148,7 +155,14 @@ eksempler: `&amp;` talt som 5 tegn gav 64 falske "for lange titler". `<h1>` inde
 i JSON-LD talt som overskrift. `page.setOfflineMode()` påvirker ikke service
 workeren, så alle offline-resultater var værdiløse. Et link-tjek der skannede
 `<script>`-blokke meldte 29 døde links som alle var falske.
+Og igen 4. august: et script talte forekomster af `handle:` i `CHANNELS` og
+meldte 8 kanaler. Der er 22 — 14 af posterne bruger `id:` i stedet. Tallet nåede
+at stå forkert i dette dokument. **Tæl poster i strukturen, ikke forekomster af
+ét felt.**
+
 **Regel: når et script melder mange fejl på én gang, er scriptet mistænkt før koden er.**
+Og: kommentarer i koden er ikke data. Kommentaren over `TOPIC_CLUSTERS` sagde
+"Otte emneklynger", mens der var 12. Tæl altid selv.
 
 **Astro: statiske ruter vinder over dynamiske.** `/tools/json-formatter` (egen
 fil) rammer sin egen side, selvom `[category].astro` findes i samme mappe. Det er
