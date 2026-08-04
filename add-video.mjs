@@ -184,6 +184,18 @@ function formatDuration(totalSeconds) {
 }
 
 const url = process.argv[2];
+
+// --tag "Cybersecurity": det emne robotten LEDTE efter. Uden det bestemmer
+// Gemini selv mærket, og den svarer næsten altid "AI & Tech", fordi næsten alt
+// tech kan kaldes det. Resultatet var 280 af 367 artikler under ét mærke.
+// Med flaget bliver søgeemnet artiklens primære mærke, og Gemini må højst
+// tilføje ét mere.
+const tagFlagIndex = process.argv.indexOf('--tag');
+const forcedTagRaw = tagFlagIndex > -1 ? process.argv[tagFlagIndex + 1] : null;
+const forcedTag = ALLOWED_TAGS.includes(forcedTagRaw) ? forcedTagRaw : null;
+if (forcedTagRaw && !forcedTag) {
+  console.log(`⚠️ Ukendt mærke "${forcedTagRaw}" — ignoreret. Gemini vælger selv.`);
+}
 const videoId = url?.match(/(?:youtu\.be\/|youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)?.[1];
 
 if (!videoId) {
@@ -396,7 +408,13 @@ async function run() {
     const slug = resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
     const safeTags = rawTagsList.filter(t => ALLOWED_TAGS.includes(t));
-    const finalTags = safeTags.length > 0 ? safeTags : ["AI & Tech"];
+
+    // Søgeemnet står forrest og kan ikke overskrives. Gemini må bidrage med ét
+    // ekstra mærke, så en fintech-artikel om AI stadig kan findes begge steder —
+    // men den tæller som fintech, fordi det var dét robotten ledte efter.
+    const finalTags = forcedTag
+      ? [forcedTag, ...safeTags.filter(t => t !== forcedTag)].slice(0, 2)
+      : (safeTags.length > 0 ? safeTags : ["AI & Tech"]);
     const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
     // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
     let safeMeta = (metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();

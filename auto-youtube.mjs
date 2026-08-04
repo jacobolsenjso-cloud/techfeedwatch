@@ -4,35 +4,10 @@ import fs from 'fs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-// Emneklynger (én pr. hovedemne). Robotten roterer mellem dem, så alle dækkes i løbet af dagen.
-// Kommentaren sagde tidligere "Otte" — der er 12. Undlad et tal her, så det ikke forældes igen.
-// "|" betyder ELLER i YouTube-søgningen, så hver klynge matcher videoer med et af ordene.
-const TOPIC_CLUSTERS = [
-  // AI & Tech
-  "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|generative AI|AI agents|AGI",
-  // Tech / hardware
-  "tech|technology|tech news|quantum computing|GPU|semiconductors|AI chips|robotics|smart glasses|spatial computing|AR|VR",
-  // Coding
-  "coding|programming|software engineering|Python|JavaScript|developer tools|vibe coding|AI coding|open source",
-  // SEO & Automation
-  "SEO|search engine optimization|generative engine optimization|AEO|no-code|workflow automation|AI automation|n8n|SaaS",
-  // AI Video & AI image
-  "AI video|text to video|Sora|Runway|Veo|Kling|AI filmmaking|Midjourney|AI image generation|AI content creation",
-  // Productivity
-  "productivity|AI assistant|Notion|NotebookLM|second brain|note taking|AI workflow|automation tools|digital productivity",
-  // Business & Money + Fintech
-  "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|startup",
-  // Crypto
-  "cryptocurrency|crypto|bitcoin|ethereum|solana|DeFi|blockchain|Web3|smart contracts|tokenization|altcoins",
-  // Cybersecurity (høj CPC)
-  "cybersecurity|infosec|data breach|ransomware|zero trust|network security|ethical hacking|penetration testing|cloud security|AI security",
-  // Cloud & SaaS (høj CPC)
-  "cloud computing|AWS|Azure|Google Cloud|Kubernetes|DevOps|serverless|SaaS|enterprise software|data engineering",
-  // Personlig økonomi & investering (høj CPC)
-  "personal finance|investing|stock market|index funds|passive income|retirement planning|wealth building|dividends|financial freedom|money management",
-  // E-commerce & online business (høj CPC)
-  "ecommerce|Shopify|dropshipping|online business|Amazon FBA|digital products|print on demand|online store|D2C|selling online",
-];
+// (De gamle TOPIC_CLUSTERS er fjernet. De var 12 klynger mod 10 mærker, og
+// forbindelsen mellem "hvad vi søgte på" og "hvilket mærke artiklen fik" blev
+// smidt væk efter søgningen. Søgeemnerne bor nu i TOPIC_BY_TAG længere nede,
+// ét pr. mærke, så de to ikke kan komme ud af sync.)
 
 // Kuraterede kvalitetskanaler. Robotten henter også fra én roterende kanal pr. kørsel, kombineret med
 // dagens emneklynge, så indholdet holder sig på-emne. Alle channelId er verificeret via YouTube API.
@@ -80,15 +55,51 @@ const MAX_PER_DAY = 4;
 const FRESHNESS_DAYS = 180;
 const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-// Vægtet rotation mod høj-CPC-emner. Tallene er indeks ind i TOPIC_CLUSTERS (0-11).
-// Høj CPC rammes oftest: fintech(6), crypto(7), SEO/automation(3), cybersikkerhed(8),
-// cloud/SaaS(9), privatøkonomi(10), e-commerce(11) og AI(0). Alle 12 emner er dog stadig med.
-const TOPIC_ROTATION = [0, 0, 1, 2, 3, 3, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
+// Ét søgeemne pr. mærke — de samme mærker som artiklerne bruger, så en søgning
+// altid kan oversættes direkte til ét mærke. Tidligere var der 12 emneklynger
+// og 10 mærker, og forbindelsen mellem dem blev smidt væk efter søgningen.
+// "|" betyder ELLER i YouTube-søgningen.
+const TOPIC_BY_TAG = {
+  "AI & Tech": "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|AI agents|quantum computing|GPU|semiconductors|AI chips|robotics|smart glasses|AR|VR|cloud computing|AWS|Azure|Kubernetes|DevOps",
+  "Business & Money": "personal finance|investing|stock market|index funds|passive income|retirement planning|wealth building|ecommerce|Shopify|dropshipping|online business|digital products|startup",
+  "Fintech": "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|core banking",
+  "Automation": "workflow automation|AI automation|no-code|n8n|Zapier|business process automation|agentic workflows|RPA|automated pipelines",
+  "Crypto": "cryptocurrency|crypto|bitcoin|ethereum|solana|DeFi|blockchain|Web3|smart contracts|tokenization|altcoins",
+  "Coding": "coding|programming|software engineering|Python|JavaScript|developer tools|vibe coding|AI coding|open source|system design",
+  "Productivity": "productivity|AI assistant|Notion|NotebookLM|second brain|note taking|AI workflow|digital productivity|knowledge management",
+  "SEO": "SEO|search engine optimization|generative engine optimization|AEO|technical SEO|link building|content strategy|Google ranking",
+  "Cybersecurity": "cybersecurity|infosec|data breach|ransomware|zero trust|network security|ethical hacking|penetration testing|cloud security|AI security",
+  "AI Video": "AI video|text to video|Sora|Runway|Veo|Kling|AI filmmaking|Midjourney|AI image generation|AI content creation",
+};
 
-// Vælger klynge ud fra tidspunktet via den vægtede rotation, så en 2-timers kørsel tager næste i rækken.
-function pickTopicCluster() {
-  const slot = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % TOPIC_ROTATION.length;
-  return TOPIC_CLUSTERS[TOPIC_ROTATION[slot]];
+// Tæller hvor mange artikler der bærer hvert mærke. Bruges til at vælge det
+// mærke der halter bagud, så fordelingen retter sig selv over tid.
+function countArticlesByTag() {
+  const dir = './src/content/videos';
+  const counts = Object.fromEntries(Object.keys(TOPIC_BY_TAG).map((t) => [t, 0]));
+  if (!fs.existsSync(dir)) return counts;
+
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.md'))) {
+    const content = fs.readFileSync(`${dir}/${file}`, 'utf-8');
+    const block = content.match(/^tags:\r?\n((?:\s*-\s*.*\r?\n?)*)/m);
+    if (!block) continue;
+    for (const line of block[1].split(/\r?\n/)) {
+      const tag = line.replace(/^\s*-\s*/, '').replace(/^"|"$/g, '').trim();
+      if (tag in counts) counts[tag]++;
+    }
+  }
+  return counts;
+}
+
+// Vælger det mærke med færrest artikler. Ved uafgjort afgør klokkeslættet, så
+// to kørsler i træk ikke rammer det samme. Det erstatter den gamle vægtede
+// rotation, der med vilje favoriserede høj-CPC-emner og dermed holdt de tynde
+// emner tynde.
+function pickThinnestTag(counts) {
+  const min = Math.min(...Object.values(counts));
+  const tied = Object.keys(counts).filter((t) => counts[t] === min);
+  const slot = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % tied.length;
+  return tied[slot];
 }
 
 // Vælger kanal ud fra tidspunktet, så hver kørsel også tager næste kanal i rækken (roterer uafhængigt af klynger).
@@ -215,7 +226,7 @@ function dedupeById(items, seen) {
 }
 
 // Behandler op til maxCount videoer fra én gruppe (normale ELLER shorts). Robottens links er altid /watch?v=.
-async function processGroup(items, label, maxCount, existingIds) {
+async function processGroup(items, label, maxCount, existingIds, tag) {
   let processed = 0;
 
   for (const item of items) {
@@ -238,7 +249,8 @@ async function processGroup(items, label, maxCount, existingIds) {
     console.log(`▶️ Behandler NY ${label}: ${videoUrl}`);
 
     try {
-      execSync(`node add-video.mjs "${videoUrl}"`, { stdio: 'inherit' });
+      // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
+      execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"`, { stdio: 'inherit' });
       processed++;
       existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
     } catch (subError) {
@@ -255,6 +267,19 @@ async function findNewestVideos() {
     return;
   }
 
+  // node auto-youtube.mjs --dry-run: viser fordelingen og hvad der ville blive
+  // valgt, uden at bruge et eneste API-kald eller udgive noget. Ligger FØR
+  // dagsloftet, så man kan tjekke fordelingen selv når dagens kvote er brugt.
+  if (process.argv.includes('--dry-run')) {
+    const dryCounts = countArticlesByTag();
+    console.log('TØRT LØB — intet udgives.\n');
+    for (const [t, n] of Object.entries(dryCounts).sort((a, b) => a[1] - b[1])) {
+      console.log(`  ${String(n).padStart(4)}  ${t}`);
+    }
+    console.log(`\nVille vælge: "${pickThinnestTag(dryCounts)}"`);
+    return;
+  }
+
   // Dagsloftet tjekkes FØRST, så en kørsel over kvoten ikke bruger API-kald.
   const publishedToday = countPublishedToday();
   if (publishedToday >= MAX_PER_DAY) {
@@ -265,12 +290,16 @@ async function findNewestVideos() {
   // Aldrig flere end der er tilbage af dagens kvote.
   const runBudget = Math.min(MAX_NORMAL_PER_RUN, remainingToday);
 
-  const topic = pickTopicCluster();
+  const counts = countArticlesByTag();
+  const tag = pickThinnestTag(counts);
+  const topic = TOPIC_BY_TAG[tag];
+
   const channel = pickChannel();
   // Kanaler kan være defineret med fast id ELLER @handle (opløses her ved kørsel via forHandle).
   const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
   console.log(`Info: Udgivet i dag: ${publishedToday}/${MAX_PER_DAY} — plads til ${runBudget} i denne kørsel.`);
-  console.log(`Info: Vælger emneklynge: "${topic}"`);
+  console.log(`Info: Fordeling: ${Object.entries(counts).sort((a, b) => a[1] - b[1]).map(([t, n]) => `${t} ${n}`).join(' · ')}`);
+  console.log(`Info: Vælger emnet der halter mest: "${tag}" (${counts[tag]} artikler)`);
   console.log(`Info: Vælger kanal: "${channel.name}"${channel.handle ? ` (${channel.handle} -> ${channelId || 'intet id'})` : ''}`);
 
   try {
@@ -295,7 +324,7 @@ async function findNewestVideos() {
     console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
     const existingIds = loadExistingVideoIds();
-    const processed = await processGroup(normalItems, 'video', runBudget, existingIds);
+    const processed = await processGroup(normalItems, 'video', runBudget, existingIds, tag);
 
     console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
   } catch (error) {
