@@ -117,6 +117,13 @@ fire forskellige tidspunkter, kanaler og klynger.
 rotationstabel på 20 pladser, der rammer høj-CPC-emner oftest: fintech, krypto,
 SEO/automation, cybersikkerhed, cloud/SaaS, privatøkonomi, e-commerce, AI.
 
+**Vigtigt: de 8 kanaler er ikke der, hvor indholdet kommer fra.** Den brede
+emnesøgning henter fra hele YouTube. Artiklerne stammer reelt fra **234
+forskellige kanaler**, hvoraf 194 kun har bidraget med én artikel. Toppen er
+TED (18), Lex Fridman (11), Coin Bureau (10), Y Combinator (9), Fireship (9).
+`CHANNELS` er altså en lille garanteret kerne oven på en meget lang hale — hav
+det med, hvis du analyserer kildefordelingen.
+
 `prune-videos.yml` kører `0 4 */3 * *` og fjerner artikler hvis kildevideo er
 slettet.
 
