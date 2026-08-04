@@ -1,0 +1,134 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { TOOL_CATEGORIES, toolsInCategory, type ToolCategory } from '../../lib/tools';
+import { tagSlug } from '../../lib/tags';
+
+// De 27 værktøjssider er statiske filer i samme mappe. Astro lader statiske
+// ruter vinde over dynamiske, så /tools/json-formatter rammer stadig sin egen
+// fil — denne rute genererer kun de fem kategorislugs.
+export function getStaticPaths() {
+  return TOOL_CATEGORIES.map((category) => ({
+    params: { category: category.slug },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props as { category: ToolCategory };
+const tools = toolsInCategory(category.id);
+
+const title = category.heading;
+const description = category.description;
+
+// ItemList fortæller Google at siden er en samling af navngivne værktøjer og
+// ikke bare en tilfældig linkliste.
+const listSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: category.heading,
+  description: category.description,
+  numberOfItems: tools.length,
+  itemListElement: tools.map((tool, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: tool.title,
+    url: `https://techfeedwatch.com/tools/${tool.slug}`,
+  })),
+};
+
+const otherCategories = TOOL_CATEGORIES.filter((c) => c.id !== category.id);
+
+// Emne-links valideres mod de tags der faktisk findes i indholdet. Omdøbes eller
+// forsvinder et tag, falder linket bare væk i stedet for at pege på en 404.
+const liveTags = new Set(
+  Object.values(import.meta.glob('../../content/videos/*.md', { eager: true })).flatMap((v: any) => {
+    const t = v.frontmatter?.tags || v.frontmatter?.tag || [];
+    return Array.isArray(t) ? t : [t];
+  }).filter(Boolean)
+);
+const relatedTags = category.relatedTags.filter((t) => liveTags.has(t));
+---
+
+<MainLayout title={title} description={description} schema={listSchema}>
+  <style is:global>
+    .tcat-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+
+    .tcat-crumbs { font-size: 0.9rem; color: #6b7280; margin: 0 0 16px 0; }
+    .tcat-crumbs a { color: inherit; text-decoration: none; }
+    .tcat-crumbs a:hover { color: var(--teal-text); text-decoration: underline; }
+    body.dark-mode .tcat-crumbs { color: #9ca3af; }
+
+    .tcat-header { margin-bottom: 32px; }
+    .tcat-header h1 { margin: 0 0 12px 0; font-size: 2rem; line-height: 1.25; }
+    .tcat-count { display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--teal-text); background: rgba(8,145,178,0.1); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px; }
+    .tcat-intro { color: #6b7280; font-size: 1.05rem; line-height: 1.65; margin: 0; max-width: 68ch; }
+    body.dark-mode .tcat-intro { color: #9ca3af; }
+
+    .tcat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .tcat-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+    .tcat-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); border-color: #0891b2; }
+    .tcat-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .tcat-card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 8px 0; }
+    .tcat-card-desc { font-size: 0.95rem; color: #6b7280; margin: 0; line-height: 1.5; }
+    body.dark-mode .tcat-card-desc { color: #9ca3af; }
+
+    .tcat-section-title { font-size: 1.25rem; font-weight: 700; margin: 48px 0 16px 0; }
+
+    .tcat-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tcat-chip { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 999px; padding: 9px 16px; font-size: 0.92rem; font-weight: 600; min-height: 44px; box-sizing: border-box; transition: border-color 0.2s ease, background 0.2s ease; }
+    .tcat-chip:hover { border-color: #0891b2; background: var(--hover-bg); }
+
+    .tcat-related { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border-color); }
+    .tcat-related p { color: #6b7280; font-size: 0.98rem; margin: 0 0 14px 0; }
+    body.dark-mode .tcat-related p { color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .tcat-wrapper { padding: 20px 15px; }
+      .tcat-grid { grid-template-columns: 1fr; }
+      .tcat-header h1 { font-size: 1.6rem; }
+    }
+  </style>
+
+  <div class="tcat-wrapper">
+    <nav class="tcat-crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/tools">Free Tools</a> <span aria-hidden="true">›</span> <span>{category.name}</span>
+    </nav>
+
+    <div class="tcat-header">
+      <span class="tcat-count">{tools.length} free tools</span>
+      <h1>{category.icon} {category.heading}</h1>
+      <p class="tcat-intro">{category.intro}</p>
+    </div>
+
+    <div class="tcat-grid">
+      {tools.map((tool) => (
+        <a href={`/tools/${tool.slug}`} class="tcat-card">
+          <span class="tcat-card-icon">{tool.icon}</span>
+          <h2 class="tcat-card-title">{tool.title}</h2>
+          <p class="tcat-card-desc">{tool.description}</p>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="tcat-section-title">Other tool categories</h2>
+    <div class="tcat-chips">
+      {otherCategories.map((c) => (
+        <a href={`/tools/${c.slug}`} class="tcat-chip">
+          <span aria-hidden="true">{c.icon}</span>
+          <span>{c.name}</span>
+        </a>
+      ))}
+    </div>
+
+    {relatedTags.length > 0 && (
+      <div class="tcat-related">
+        <h2 class="tcat-section-title" style="margin-top:0">Read more on these topics</h2>
+        <p>Articles on the site covering the same ground as these tools.</p>
+        <div class="tcat-chips">
+          {relatedTags.map((tag) => (
+            <a href={`/tag/${tagSlug(tag)}`} class="tcat-chip">{tag}</a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</MainLayout>

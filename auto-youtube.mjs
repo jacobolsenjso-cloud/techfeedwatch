@@ -62,13 +62,18 @@ const CHANNELS = [
   { handle: '@NetworkChuck', name: 'NetworkChuck' },
 ];
 
-const MAX_NORMAL_PER_RUN = 3;
+// Højst én artikel pr. kørsel. Det er med vilje: med 3 pr. kørsel og et lavt
+// dagsloft blev hele dagens output udgivet i de første par kørsler, og dermed
+// hentet fra den ene eller to kanaler og emneklynger, som netop de kørsler ramte.
+// Med 1 pr. kørsel fordeles dagens artikler over fire forskellige tidspunkter,
+// kanaler og klynger.
+const MAX_NORMAL_PER_RUN = 1;
 
 // Dagligt udgivelsesloft. Robotten kører fortsat hver 2. time (12 gange i døgnet),
 // men bruger de fleste kørsler på at opdage kandidater frem for at udgive. Det
 // holder det brede net over kanaler og emner, mens output-kurven ligner
 // redaktionel kuratering i stedet for en feed-maskine.
-const MAX_PER_DAY = 8;
+const MAX_PER_DAY = 4;
 
 // Friskheds-vindue: kun videoer nyere end dette, så feedet føles aktuelt. Nem at justere.
 const FRESHNESS_DAYS = 180;

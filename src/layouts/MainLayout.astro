@@ -42,6 +42,11 @@ if (currentPath.startsWith('/video/')) {
 } else if (currentPath.startsWith('/tag/')) {
   breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Tags", "item": "https://techfeedwatch.com/" });
   if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
+} else if (currentPath.startsWith('/tools/')) {
+  // Uden denne gren blev brødkrummen "Tools/json formatter" på alle værktøjssider,
+  // fordi den generiske gren nedenfor kun fjerner den første skråstreg.
+  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://techfeedwatch.com/tools" });
+  if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
 } else if (currentPath !== '/') {
   // Gør f.eks. '/watch-later' til 'Watch later'
   let sectionName = currentPath.replace('/', '').replace(/-/g, ' ');

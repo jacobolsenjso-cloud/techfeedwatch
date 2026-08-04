@@ -1,183 +1,54 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import { TOOLS, TOOL_CATEGORIES, toolsInCategory } from '../../lib/tools';
 
-// Tilføj nye værktøjer her - siden bygger listen automatisk
-const TOOLS = [
-  {
-    slug: 'ai-token-calculator',
-    icon: '🧮',
-    title: 'AI Token & Cost Calculator',
-    description: 'Estimate token count and input cost for your text across GPT-4o, Claude, and Gemini models.',
-  },
-  {
-    slug: 'compound-calculator',
-    icon: '📈',
-    title: 'Compound Growth & Crypto Staking Calculator',
-    description: 'Project compound interest, savings growth, and crypto staking returns over time.',
-  },
-  {
-    slug: 'serp-preview',
-    icon: '🔎',
-    title: 'Meta Tag & SERP Snippet Preview',
-    description: 'Preview how your page appears in Google search and generate optimized meta tags.',
-  },
-  {
-    slug: 'video-schema',
-    icon: '🎬',
-    title: 'Video Schema Generator',
-    description: 'Generate valid VideoObject JSON-LD schema markup for any YouTube video to improve SEO.',
-  },
-  {
-    slug: 'keyword-idea-generator',
-    icon: '🌱',
-    title: 'Keyword Idea Generator',
-    description: 'Turn one seed keyword into hundreds of long-tail ideas using questions, prepositions, and intent modifiers.',
-  },
-  {
-    slug: 'keyword-density',
-    icon: '📊',
-    title: 'Keyword Density Analyzer',
-    description: 'See the most-used words and phrases in your text with their density percentage — a classic on-page SEO check.',
-  },
-  {
-    slug: 'schema-generator',
-    icon: '🧩',
-    title: 'Schema Markup Generator (JSON-LD)',
-    description: 'Generate valid Article, FAQ, and Breadcrumb JSON-LD structured data to earn rich results in Google.',
-  },
-  {
-    slug: 'robots-txt-generator',
-    icon: '🤖',
-    title: 'robots.txt Generator',
-    description: 'Build a valid robots.txt with presets or custom Allow/Disallow rules and sitemaps, then copy it.',
-  },
-  {
-    slug: 'open-graph-generator',
-    icon: '🔗',
-    title: 'Open Graph & Twitter Card Generator',
-    description: 'Generate og: and Twitter Card meta tags with a live social preview for perfect link sharing.',
-  },
-  {
-    slug: 'readability-checker',
-    icon: '📖',
-    title: 'Readability Checker',
-    description: 'Score your text with Flesch Reading Ease and grade level to keep your writing clear and accessible.',
-  },
-  {
-    slug: 'hreflang-generator',
-    icon: '🌍',
-    title: 'Hreflang Tags Generator',
-    description: 'Generate valid hreflang link tags with x-default for multilingual and multi-regional sites.',
-  },
-  {
-    slug: 'meta-tag-generator',
-    icon: '🏷️',
-    title: 'HTML Meta Tags Generator',
-    description: 'Build a complete set of head meta tags — title, description, canonical, robots, and more.',
-  },
-  {
-    slug: 'text-diff',
-    icon: '🔀',
-    title: 'Text Diff Checker',
-    description: 'Compare two texts and see exactly what was added, removed, or changed, line by line.',
-  },
-  {
-    slug: 'image-compressor',
-    icon: '🗜️',
-    title: 'Image Compressor & Converter',
-    description: 'Resize, compress, and convert images to JPG, PNG, or WebP — all in your browser, no upload.',
-  },
-  {
-    slug: 'image-to-base64',
-    icon: '🧬',
-    title: 'Image to Base64 Converter',
-    description: 'Turn an image into a Base64 data URI for inline HTML or CSS, with ready-to-copy snippets.',
-  },
-  {
-    slug: 'youtube-embed-generator',
-    icon: '▶️',
-    title: 'YouTube Embed Code Generator',
-    description: 'Create responsive YouTube embed code with autoplay, start time, and privacy-mode options.',
-  },
-  {
-    slug: 'subtitle-converter',
-    icon: '💬',
-    title: 'Subtitle Converter (SRT ↔ VTT)',
-    description: 'Convert captions between SRT and WebVTT for HTML5 video, both ways, right in your browser.',
-  },
-  {
-    slug: 'json-formatter',
-    icon: '🧾',
-    title: 'JSON Formatter & Validator',
-    description: 'Format, minify, and validate JSON online with instant error messages and quick stats.',
-  },
-  {
-    slug: 'password-generator',
-    icon: '🔐',
-    title: 'Password Generator & Strength Checker',
-    description: 'Generate cryptographically secure passwords and check the strength of an existing one.',
-  },
-  {
-    slug: 'encoder-decoder',
-    icon: '🔗',
-    title: 'Base64 & URL Encoder/Decoder',
-    description: 'Encode and decode text as Base64 or URL-safe strings, with full UTF-8 support.',
-  },
-  {
-    slug: 'thumbnail-downloader',
-    icon: '🖼️',
-    title: 'YouTube Thumbnail Downloader',
-    description: 'Preview and download YouTube video thumbnails in every available resolution.',
-  },
-  {
-    slug: 'crypto-profit-calculator',
-    icon: '💰',
-    title: 'Crypto Profit & ROI Calculator',
-    description: 'Calculate your crypto profit, loss, and ROI from buy and sell price, including trading fees.',
-  },
-  {
-    slug: 'word-counter',
-    icon: '📝',
-    title: 'Word & Character Counter',
-    description: 'Count words, characters, sentences, and paragraphs with live reading-time estimates.',
-  },
-  {
-    slug: 'slug-generator',
-    icon: '🔗',
-    title: 'URL Slug Generator',
-    description: 'Turn any title into a clean, SEO-friendly URL slug - lowercase, hyphenated, accent-free.',
-  },
-  {
-    slug: 'utm-builder',
-    icon: '🎯',
-    title: 'UTM Campaign URL Builder',
-    description: 'Build trackable campaign links with UTM parameters for Google Analytics.',
-  },
-  {
-    slug: 'case-converter',
-    icon: '🔤',
-    title: 'Case Converter',
-    description: 'Convert text between UPPERCASE, Title Case, camelCase, snake_case, kebab-case and more.',
-  },
-  {
-    slug: 'contrast-checker',
-    icon: '🎨',
-    title: 'Color Contrast Checker',
-    description: 'Check text and background colors against WCAG AA/AAA accessibility standards.',
-  },
-];
+// Værktøjer og kategorier vedligeholdes ét sted: src/lib/tools.ts.
+// Nyt værktøj skrives kun ind dér — så dukker det op her, på kategorisiden
+// og i sitemap'et af sig selv.
 
-const title = "Free Tools";
-const description = "Free, browser-based tools for AI and tech work - starting with an AI token and cost calculator.";
+const title = 'Free Tools';
+const description = `${TOOLS.length} free browser-based tools for SEO, content, development, media, and finance. No sign-up, no upload — everything runs on your own device.`;
+
+const sections = TOOL_CATEGORIES.map((category) => ({
+  category,
+  tools: toolsInCategory(category.id),
+}));
+
+const listSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Free Tools',
+  description,
+  numberOfItems: TOOLS.length,
+  itemListElement: TOOLS.map((tool, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: tool.title,
+    url: `https://techfeedwatch.com/tools/${tool.slug}`,
+  })),
+};
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={title} description={description} schema={listSchema}>
   <style is:global>
     .tools-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
-    .tools-header { margin-bottom: 30px; }
+
+    .tools-header { margin-bottom: 28px; }
     .tools-header h1 { margin: 0 0 10px 0; font-size: 2rem; }
-    .tools-header p { color: #6b7280; font-size: 1.05rem; margin: 0; }
+    .tools-header p { color: #6b7280; font-size: 1.05rem; margin: 0; max-width: 68ch; line-height: 1.6; }
     body.dark-mode .tools-header p { color: #9ca3af; }
+
+    .tools-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+    .tools-jump a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 999px; padding: 9px 16px; font-size: 0.92rem; font-weight: 600; min-height: 44px; box-sizing: border-box; transition: border-color 0.2s ease, background 0.2s ease; }
+    .tools-jump a:hover { border-color: #0891b2; background: var(--hover-bg); }
+    .tools-jump-count { color: #6b7280; font-weight: 500; }
+    body.dark-mode .tools-jump-count { color: #9ca3af; }
+
+    .tools-section { margin-bottom: 52px; scroll-margin-top: 80px; }
+    .tools-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tools-section-head h2 { font-size: 1.4rem; margin: 0; }
+    .tools-section-all { font-size: 0.92rem; font-weight: 600; color: var(--teal-text); text-decoration: none; white-space: nowrap; }
+    .tools-section-all:hover { text-decoration: underline; }
 
     .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
     .tool-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
@@ -190,23 +61,43 @@ const description = "Free, browser-based tools for AI and tech work - starting w
     @media (max-width: 768px) {
       .tools-wrapper { padding: 20px 15px; }
       .tools-grid { grid-template-columns: 1fr; }
+      .tools-header h1 { font-size: 1.6rem; }
+      .tools-jump { margin-bottom: 32px; }
     }
   </style>
 
   <div class="tools-wrapper">
     <div class="tools-header">
-      <h1>🛠️ Free Tools</h1>
-      <p>Small, focused tools for working faster with AI. All calculations run in your browser - nothing is uploaded.</p>
+      <h1>🛠️ {TOOLS.length} Free Tools</h1>
+      <p>Small, focused tools for SEO, writing, code, media, and money. Everything runs in your browser — nothing is uploaded, and there is no sign-up.</p>
     </div>
 
-    <div class="tools-grid">
-      {TOOLS.map((tool) => (
-        <a href={`/tools/${tool.slug}`} class="tool-card">
-          <span class="tool-card-icon">{tool.icon}</span>
-          <h2 class="tool-card-title">{tool.title}</h2>
-          <p class="tool-card-desc">{tool.description}</p>
+    <nav class="tools-jump" aria-label="Tool categories">
+      {sections.map(({ category, tools }) => (
+        <a href={`/tools/${category.slug}`}>
+          <span aria-hidden="true">{category.icon}</span>
+          <span>{category.name}</span>
+          <span class="tools-jump-count">{tools.length}</span>
         </a>
       ))}
-    </div>
+    </nav>
+
+    {sections.map(({ category, tools }) => (
+      <section class="tools-section" id={category.slug}>
+        <div class="tools-section-head">
+          <h2>{category.icon} {category.name}</h2>
+          <a class="tools-section-all" href={`/tools/${category.slug}`}>All {tools.length} {category.name} tools →</a>
+        </div>
+        <div class="tools-grid">
+          {tools.map((tool) => (
+            <a href={`/tools/${tool.slug}`} class="tool-card">
+              <span class="tool-card-icon">{tool.icon}</span>
+              <h3 class="tool-card-title">{tool.title}</h3>
+              <p class="tool-card-desc">{tool.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
   </div>
 </MainLayout>
