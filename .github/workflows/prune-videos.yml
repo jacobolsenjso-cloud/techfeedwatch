@@ -28,10 +28,18 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
+      # Kører EFTER oprydningen, så vi ikke bruger kvote på videoer der lige er
+      # blevet slettet. 367 artikler koster 8 kald, fordi YouTube tager 50 id'er
+      # ad gangen. Tallene vises på /popular med den dato de blev hentet.
+      - name: Opfrisk visningstal
+        run: node update-view-counts.mjs
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
       - name: Gem ændringer (Commit & Push)
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m "Automatisk fjernet døde videoer" || echo "Ingen døde videoer at fjerne."
+          git commit -m "Prune dead videos and refresh source view counts" || echo "Ingen ændringer."
           git push || echo "Intet nyt at uploade."

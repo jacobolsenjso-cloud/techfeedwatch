@@ -11,6 +11,8 @@ tags:
 summary: "A new trend sees non-traditional developers leveraging agentic AI to construct core business infrastructure. This shift moves AI from a mere assistant role to a foundational layer, enabling multi-agent workflows and democratizing software creation within organizations. Such approaches challenge conventional development paradigms and highlight AI's capacity to empower individuals without formal engineering backgrounds."
 metaDescription: "Discover how agentic AI lets non-developers build critical company infrastructure, transforming workflows and democratizing software creation."
 duration: "34:23"
+viewCount: 52
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What is an 'agentic company'?"

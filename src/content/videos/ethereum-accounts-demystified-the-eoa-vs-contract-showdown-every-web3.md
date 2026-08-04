@@ -11,6 +11,8 @@ tags:
   - "Crypto"
 summary: "Ethereum’s operational foundation relies on two distinct account types: Externally Owned Accounts (EOAs) and Contract Accounts (CAs). EOAs, controlled by private keys, represent user wallets initiating transactions and holding Ether. CAs, governed by smart contract code, execute automated logic in response to these transactions. This dual-account architecture enables the network's programmable functionality, differentiating human control from automated, immutable operations while forming the backbone of decentralized finance."
 duration: "4:49"
+viewCount: 310
+viewsUpdated: "2026-08-04"
 isShort: false
 revised: true
 faqs:

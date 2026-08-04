@@ -11,6 +11,8 @@ tags:
 summary: "AI integration within banking extends far beyond technological adoption, demanding a fundamental re-evaluation of data infrastructure, regulatory compliance, and organizational culture. Financial institutions frequently underestimate the effort required for data readiness and seamless system integration, often leading to stalled initiatives. Realizing AI's full potential necessitates strategic investment in talent reskilling and navigating complex, region-specific data sovereignty laws."
 metaDescription: "Implementing AI in banking presents complex challenges beyond technology. Learn how financial institutions navigate data readiness, regulatory hurdles, and…"
 duration: "1:02:59"
+viewCount: 38
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "Why is AI transformation in banking more than just technology?"

@@ -11,6 +11,8 @@ tags:
 summary: "Advanced AI models now demonstrate significant capability in performing autonomous, multi-step cyberattacks against corporate networks. This evolution, driven by increasing computational power, lowers the barrier to entry for sophisticated breaches without requiring extensive human technical expertise. Businesses face an escalating threat profile, necessitating a re-evaluation of current cybersecurity defenses to counter these emerging AI-powered agents. The shift marks a critical development in the ongoing digital security arms race."
 metaDescription: "AI hacking capabilities are rapidly advancing. Learn how frontier AI models pose new cybersecurity threats to corporate networks and what it means for…"
 duration: "7:02"
+viewCount: 36
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "Are AI models capable of autonomous cyberattacks?"

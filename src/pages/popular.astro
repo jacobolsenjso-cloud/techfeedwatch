@@ -1,42 +1,49 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 
-const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
-
-// Samme stabile hash som på videosiden, så "populariteten" matcher de like-tal der allerede vises på artiklerne.
-const stringHash = (str: string) => {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  return Math.abs(hash);
-};
-const scoreOf = (youtubeId: string) => (stringHash(youtubeId || '') % 4000) + 500;
+const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true })) as any[];
 
 const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
-const formatScore = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1) + 'K' : String(n));
+const formatViews = (n: number) =>
+  n >= 1_000_000 ? (n / 1_000_000).toFixed(n >= 10_000_000 ? 0 : 1) + 'M'
+  : n >= 1_000 ? (n / 1_000).toFixed(n >= 10_000 ? 0 : 1) + 'K'
+  : String(n);
 
-// Kun rigtige artikler (ikke Shorts), rangeret efter engagement-score, top 48
-const popular = allVideos
-  .filter((v: any) => !v.frontmatter.isShort)
-  .map((v: any) => ({
+// Rangeret efter kildevideoens visninger på YouTube. Artikler uden tal falder
+// ud af listen frem for at blive gættet til nul — et gæt er det vi kom fra.
+const ranked = allVideos
+  .filter((v) => !v.frontmatter.isShort && Number.isFinite(Number(v.frontmatter.viewCount)))
+  .map((v) => ({
     slug: v.file.split('/').pop().replace('.md', ''),
     fm: v.frontmatter,
-    score: scoreOf(v.frontmatter.youtubeId),
+    views: Number(v.frontmatter.viewCount),
   }))
-  .sort((a: any, b: any) => b.score - a.score)
+  .sort((a, b) => b.views - a.views)
   .slice(0, 48);
 
-const description = "The most popular articles on Tech Feed Watch, ranked by reader engagement across AI, tech, fintech, and crypto.";
+// Ældste opdateringsdato i udvalget — så datoen på siden ikke lover mere end den holder
+const oldestUpdate = ranked
+  .map((r) => r.fm.viewsUpdated)
+  .filter(Boolean)
+  .sort()[0];
+
+const withoutCount = allVideos.filter((v) => !v.frontmatter.isShort && !Number.isFinite(Number(v.frontmatter.viewCount))).length;
+
+const title = "Most-Watched Source Videos — Tech Feed Watch";
+const description = "The articles on this site are written from other people's YouTube videos. These are the ones whose source video has been watched most on YouTube.";
 ---
 
-<MainLayout title="Most Popular" description={description}>
+<MainLayout title={title} description={description}>
   <style is:global>
     .popular-wrapper { padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
-    .popular-header { font-size: 2.2rem; margin: 0 0 8px 0; display: flex; align-items: center; gap: 12px; }
-    .popular-sub { color: #6b7280; font-size: 1.05rem; margin: 0 0 34px 0; }
+    .popular-header { font-size: 2.2rem; margin: 0 0 8px 0; }
+    .popular-sub { color: #6b7280; font-size: 1.05rem; margin: 0 0 10px 0; max-width: 760px; line-height: 1.6; }
     body.dark-mode .popular-sub { color: #9ca3af; }
+    .popular-note { color: #6b7280; font-size: 0.88rem; margin: 0 0 30px 0; max-width: 760px; line-height: 1.6; }
+    body.dark-mode .popular-note { color: #9ca3af; }
 
     .popular-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
     .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
@@ -48,7 +55,9 @@ const description = "The most popular articles on Tech Feed Watch, ranked by rea
     .watch-card:hover .tma-grid-title { color: #0891b2; }
     .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     body.dark-mode .tma-grid-meta { color: #9ca3af; }
-    .pop-score { font-weight: 700; color: #0891b2; }
+    .pop-views { font-weight: 700; color: #0891b2; }
+    .pop-channel { display: block; font-size: 12.5px; color: #6b7280; margin-top: 3px; }
+    body.dark-mode .pop-channel { color: #9ca3af; }
 
     @media (max-width: 768px) {
       .popular-wrapper { padding: 15px; }
@@ -59,11 +68,20 @@ const description = "The most popular articles on Tech Feed Watch, ranked by rea
   </style>
 
   <div class="popular-wrapper">
-    <h1 class="popular-header">🔥 Most Popular</h1>
-    <p class="popular-sub">The articles readers are engaging with most right now — across AI, tech, fintech, and crypto.</p>
+    <h1 class="popular-header">Most-watched source videos</h1>
+    <p class="popular-sub">
+      Every article here is written from someone else's YouTube video. This page ranks those
+      articles by how many times the original video has been watched on YouTube — so the big
+      channels sit at the top, and a small channel with a sharp video will not.
+    </p>
+    <p class="popular-note">
+      View counts come from YouTube{oldestUpdate ? `, last refreshed ${formatDate(oldestUpdate)}` : ''}.
+      They measure the video, not the article — we do not publish our own traffic figures.
+      {withoutCount > 0 && ` ${withoutCount} articles are not listed because we have no view count for their source.`}
+    </p>
 
     <div class="popular-grid">
-      {popular.map((item: any, i: number) => (
+      {ranked.map((item, i) => (
         <a href={`/video/${item.slug}`} class="watch-card">
           <div class="watch-card-thumb">
             <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
@@ -73,7 +91,11 @@ const description = "The most popular articles on Tech Feed Watch, ranked by rea
           </div>
           <div>
             <h2 class="tma-grid-title">{item.fm.title}</h2>
-            <p class="tma-grid-meta"><span class="pop-score">🔥 {formatScore(item.score)}</span> <span>• {formatDate(item.fm.date)}</span></p>
+            <p class="tma-grid-meta">
+              <span class="pop-views">{formatViews(item.views)} views on YouTube</span>
+              <span>• {formatDate(item.fm.date)}</span>
+            </p>
+            {item.fm.channelTitle && <span class="pop-channel">Source: {item.fm.channelTitle}</span>}
           </div>
         </a>
       ))}

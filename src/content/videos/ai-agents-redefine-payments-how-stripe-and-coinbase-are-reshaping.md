@@ -12,6 +12,8 @@ tags:
 summary: "The emergence of AI agent payments, facilitated by major platforms like Stripe and Coinbase, signals a fundamental shift in how value moves across the global economy. These autonomous, crypto-powered transactions challenge the long-standing dominance of traditional banking and payment networks. This evolution pushes towards a future where machines conduct financial operations independently, demanding new infrastructure and regulatory frameworks. The transition raises critical questions about financial control and the potential for a new centralization of power."
 metaDescription: "AI agent payments, leveraging crypto infrastructure from Stripe & Coinbase, disrupt traditional banking. Understand the future of automated finance."
 duration: "18:40"
+viewCount: 69259
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What are AI agent payments?"

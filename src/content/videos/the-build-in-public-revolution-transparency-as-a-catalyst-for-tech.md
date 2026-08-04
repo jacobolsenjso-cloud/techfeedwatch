@@ -13,6 +13,8 @@ tags:
 summary: "The 'build in public' movement signals a fundamental shift in software development, moving away from traditional stealth operations towards open, real-time collaboration. This approach leverages community engagement and immediate feedback, transforming the product development lifecycle into a shared journey. It democratizes the learning process for aspiring engineers and redefines how value is created and disseminated within the tech ecosystem. This model offers unique advantages in accountability and authenticity, fostering trust with future users and stakeholders."
 metaDescription: "Explore the 'build in public' revolution in software development. Discover how transparent coding and public building are reshaping tech innovation."
 duration: "1:00:12"
+viewCount: 4
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What is the primary goal of 'vibe through code' as described?"

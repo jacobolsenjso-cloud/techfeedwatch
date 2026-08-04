@@ -12,6 +12,8 @@ tags:
 summary: "The financial services sector stands at a significant inflection point, driven by Open Finance principles and the nascent potential of immersive digital environments. This transformation demands incumbent institutions and innovative fintechs alike prioritize flexible, data-backed payment solutions. Strategic partnerships and a focus on consumer trust are becoming critical for relevance in an increasingly digital and interconnected economic system."
 metaDescription: "Explore how Open Finance and the Metaverse are reshaping payments, driving fintech innovation, and transforming financial services."
 duration: "28:32"
+viewCount: 22311
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What is Open Finance?"

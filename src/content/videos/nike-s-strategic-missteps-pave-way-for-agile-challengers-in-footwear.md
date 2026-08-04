@@ -13,6 +13,8 @@ tags:
 summary: "The footwear retail sector faces a significant transformation as established titans like Nike grapple with strategic errors and new entrants like On Running rapidly gain market share. This industry upheaval underscores the critical role of product innovation, dynamic consumer engagement, and agile business models in navigating a highly competitive landscape. Companies must adapt swiftly, leveraging digital capabilities and data insights, or risk sustained decline."
 metaDescription: "Discover how Nike's strategic errors opened the door for rivals like On Running, and how digital innovation impacts footwear retail."
 duration: "32:22"
+viewCount: 705574
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What factors contributed to Nike's recent struggles?"

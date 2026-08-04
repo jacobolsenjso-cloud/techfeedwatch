@@ -12,6 +12,8 @@ tags:
   - "Crypto"
 summary: "Individual sovereignty, defined as the authority to act as one sees fit, is increasingly understood not just as a political concept but as deeply intertwined with our financial systems and even our cognitive processes. Money, far from being a mere medium of exchange, functions as an extension of the human mind, influencing thought and decision-making. This perspective reshapes our understanding of property rights, viewing them as informational relationships rather than just physical assets, a distinction with profound implications for digital ownership and the design of decentralized financial architectures."
 duration: "4:03:49"
+viewCount: 495976
+viewsUpdated: "2026-08-04"
 isShort: false
 revised: true
 faqs:

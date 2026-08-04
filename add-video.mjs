@@ -221,13 +221,19 @@ async function run() {
     let channelTitle = null;
     let channelId = null;
     let publishedAt = null;
+    let viewCount = null;
     try {
       const metaKey = process.env.YOUTUBE_API_KEY;
       if (metaKey) {
-        const metaUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${metaKey}`;
+        // statistics koster ingen ekstra kvote i samme kald, og giver os
+        // visningstallet til /popular. Uden det ville nye artikler mangle tal
+        // indtil update-view-counts.mjs kørte næste gang.
+        const metaUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${metaKey}`;
         const metaRes = await fetch(metaUrl);
         const metaData = await metaRes.json();
         const sn = metaData.items?.[0]?.snippet;
+        const stats = metaData.items?.[0]?.statistics;
+        if (Number.isFinite(Number(stats?.viewCount))) viewCount = Number(stats.viewCount);
         if (sn) {
           channelTitle = sn.channelTitle || null;
           channelId = sn.channelId || null;
@@ -451,7 +457,12 @@ async function run() {
       (channelId ? `channelId: ${toYamlDoubleQuoted(channelId)}\n` : "") +
       (publishedAt ? `publishedAt: ${toYamlDoubleQuoted(publishedAt)}\n` : "");
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\nisShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    // Visningstal med dato, så /popular kan sige hvor gammelt tallet er.
+    const viewsYaml = viewCount === null
+      ? ""
+      : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\n`;
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

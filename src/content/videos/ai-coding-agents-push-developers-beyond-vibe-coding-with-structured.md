@@ -12,6 +12,8 @@ tags:
 summary: "The advent of AI coding agents is reshaping software development by introducing highly structured, spec-driven toolkits. These systems automate the entire development lifecycle, from planning to testing, aiming to replace less disciplined 'vibe coding' practices. This shift promises increased efficiency, consistency, and higher quality code, fundamentally altering how development teams operate."
 metaDescription: "Discover how AI coding agents and spec-driven toolkits like Superpowers are revolutionizing software development, moving beyond 'vibe coding.'"
 duration: "10:59"
+viewCount: 88609
+viewsUpdated: "2026-08-04"
 isShort: false
 faqs:
   - question: "What is spec-driven development in the context of AI coding agents?"
