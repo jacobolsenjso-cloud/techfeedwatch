@@ -1,7 +1,10 @@
 // Måler datagrundlaget for trend-analysen: hvor mange artikler, hvilke måneder,
-// hvilke kanaler og hvilke tags. Læser src/content/videos direkte, så den
-// kræver IKKE et build først — modsat de øvrige audit-scripts der læser dist/.
-// Ændrer intet.
+// hvilke kanaler og hvilke tags — og tæller navnene som /trends viser.
+// Deler ordliste og regel med siden via src/lib/trends.mjs, men når frem til
+// tallene ad sin egen vej (egen frontmatter-parser). Er de to enige, er tallet
+// sandsynligvis rigtigt; er de uenige, er der en fejl i den ene udtrækning.
+// Læser src/content/videos direkte, så den kræver IKKE et build først —
+// modsat de øvrige audit-scripts der læser dist/. Ændrer intet.
 import fs from 'node:fs';
 import path from 'node:path';
 import { tally } from './src/lib/trends.mjs';
