@@ -1,96 +1,161 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { tally, GROUPS } from '../lib/trends.mjs';
 
-const title = "Tech Trends — Explore Google Trends for AI, Crypto & Fintech";
-const description = "Jump straight into Google Trends for the topics we cover — AI, cryptocurrency, fintech, SEO, and more. Compare interest over time or see what's trending now, in one click.";
+const title = "What Tech Actually Gets Talked About — Trends From 367 Articles";
+const description = "We counted how often each company, AI model and protocol is named across every article on this site. Open method, open limits, updated on every build.";
 
-// Emne -> Google Trends søgeord (12-måneders udforskning)
+// Alle artikler (ikke Shorts). rawContent() giver brødteksten uden frontmatter.
+const modules = Object.values(import.meta.glob('../content/videos/*.md', { eager: true })) as any[];
+const articles = modules
+  .filter((m) => !m.frontmatter.isShort)
+  .map((m) => ({
+    title: m.frontmatter.title,
+    summary: m.frontmatter.summary,
+    faqs: m.frontmatter.faqs,
+    body: typeof m.rawContent === 'function' ? m.rawContent() : '',
+  }));
+
+const { total, results } = tally(articles);
+const channels = new Set(modules.map((m) => m.frontmatter.channelTitle).filter(Boolean)).size;
+const topCount = results.length ? results[0].count : 1;
+
+// Grupperet, så hver liste kan læses for sig
+const byGroup = GROUPS.map((g) => ({
+  ...g,
+  rows: results.filter((r) => r.group === g.id),
+})).filter((g) => g.rows.length);
+
+const updated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Google Trends-delen beholdes nedenfor — den var sidens oprindelige indhold.
 const TOPICS = [
   { label: "Artificial Intelligence", q: "artificial intelligence", dot: "#06b6d4" },
   { label: "ChatGPT", q: "ChatGPT", dot: "#06b6d4" },
-  { label: "Machine Learning", q: "machine learning", dot: "#06b6d4" },
   { label: "Cryptocurrency", q: "cryptocurrency", dot: "#f59e0b" },
   { label: "Bitcoin", q: "bitcoin", dot: "#f59e0b" },
   { label: "Ethereum", q: "ethereum", dot: "#f59e0b" },
   { label: "Fintech", q: "fintech", dot: "#1e3a8a" },
   { label: "SEO", q: "SEO", dot: "#6366f1" },
-  { label: "Automation", q: "automation", dot: "#14b8a6" },
   { label: "Cybersecurity", q: "cybersecurity", dot: "#dc2626" },
-  { label: "Cloud Computing", q: "cloud computing", dot: "#2563eb" },
-  { label: "Web3", q: "web3", dot: "#f59e0b" },
 ];
-
 const exploreUrl = (q: string) => `https://trends.google.com/trends/explore?date=today%2012-m&q=${encodeURIComponent(q)}`;
-const compareUrl = "https://trends.google.com/trends/explore?date=today%2012-m&q=artificial%20intelligence,cryptocurrency,fintech,SEO";
-const trendingUrl = "https://trends.google.com/trending?geo=US";
 ---
 
 <MainLayout title={title} description={description}>
   <style is:global>
     .tr-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
     .tr-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
-    .tr-header p { color: #6b7280; margin: 0 0 28px 0; font-size: 1.05rem; max-width: 760px; }
+    .tr-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; max-width: 760px; line-height: 1.6; }
     body.dark-mode .tr-header p { color: #9ca3af; }
 
-    .tr-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px; }
-    .tr-feat-card { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; transition: border-color 0.2s, transform 0.2s; }
-    .tr-feat-card:hover { border-color: #0891b2; transform: translateY(-2px); }
-    .tr-feat-card h2 { font-size: 1.1rem; margin: 0; }
-    .tr-feat-card p { font-size: 0.9rem; color: #6b7280; margin: 0; line-height: 1.45; }
-    body.dark-mode .tr-feat-card p { color: #9ca3af; }
-    .tr-feat-card .tr-go { font-size: 0.85rem; font-weight: 700; color: #0891b2; margin-top: 4px; }
+    /* Metodeboks — står før tallene med vilje */
+    .tr-method { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #0891b2; border-radius: 12px; padding: 18px 20px; margin-bottom: 34px; }
+    .tr-method h2 { font-size: 1.05rem; margin: 0 0 10px 0; }
+    .tr-method ul { margin: 0; padding-left: 20px; }
+    .tr-method li { font-size: 0.9rem; line-height: 1.6; color: #4b5563; margin-bottom: 5px; }
+    body.dark-mode .tr-method li { color: #9ca3af; }
+    .tr-method .tr-caveat { margin: 12px 0 0 0; font-size: 0.9rem; line-height: 1.6; color: #4b5563; }
+    body.dark-mode .tr-method .tr-caveat { color: #9ca3af; }
 
-    .tr-section-title { font-size: 1.15rem; margin: 8px 0 14px; }
-    .tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
-    .tr-chip { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; transition: border-color 0.2s, transform 0.2s; }
-    .tr-chip:hover { border-color: #0891b2; transform: translateY(-2px); }
-    .tr-chip-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-    .tr-chip-label { font-weight: 600; font-size: 0.95rem; flex: 1; }
-    .tr-chip-go { font-size: 0.8rem; color: #6b7280; }
-    body.dark-mode .tr-chip-go { color: #9ca3af; }
+    .tr-group { margin-bottom: 36px; }
+    .tr-group h2 { font-size: 1.25rem; margin: 0 0 4px 0; }
+    .tr-group .tr-group-sub { font-size: 0.85rem; color: #6b7280; margin: 0 0 14px 0; }
+    body.dark-mode .tr-group .tr-group-sub { color: #9ca3af; }
+
+    .tr-row { display: grid; grid-template-columns: 150px 1fr 96px; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--border-color); }
+    .tr-row:last-child { border-bottom: none; }
+    .tr-name { font-weight: 600; font-size: 0.95rem; }
+    .tr-bar { background: rgba(8, 145, 178, 0.13); border-radius: 5px; height: 12px; overflow: hidden; }
+    .tr-bar span { display: block; height: 100%; background: #0891b2; border-radius: 5px; }
+    .tr-num { font-size: 0.85rem; color: #6b7280; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    body.dark-mode .tr-num { color: #9ca3af; }
 
     .tr-info-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); }
     .tr-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
     .tr-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
     body.dark-mode .tr-info-section p { color: #9ca3af; }
 
-    @media (max-width: 640px) { .tr-wrapper { padding: 20px 15px; } .tr-feature { grid-template-columns: 1fr; } }
+    .tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 16px; }
+    .tr-chip { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 13px 15px; transition: border-color 0.2s, transform 0.2s; }
+    .tr-chip:hover { border-color: #0891b2; transform: translateY(-2px); }
+    .tr-chip-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .tr-chip-label { font-weight: 600; font-size: 0.92rem; flex: 1; }
+    .tr-chip-go { font-size: 0.8rem; color: #6b7280; }
+    body.dark-mode .tr-chip-go { color: #9ca3af; }
+
+    @media (max-width: 640px) {
+      .tr-wrapper { padding: 20px 15px; }
+      .tr-header h1 { font-size: 1.55rem; }
+      /* Navn over baren på mobil, så lange navne ikke klemmes sammen */
+      .tr-row { grid-template-columns: 1fr 84px; grid-template-areas: "name num" "bar bar"; gap: 5px 10px; padding: 9px 0; }
+      .tr-name { grid-area: name; }
+      .tr-num { grid-area: num; }
+      .tr-bar { grid-area: bar; }
+      .tr-grid { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 
   <div class="tr-wrapper">
     <div class="tr-header">
-      <h1>📈 Tech Trends</h1>
-      <p>See what the world is searching for across the topics we cover. Tap any card to open it live on Google Trends — compare interest over time, spot rising queries, and find emerging subtopics worth watching.</p>
+      <h1>What tech actually gets talked about</h1>
+      <p>
+        Every article on this site comes from a YouTube video by someone else. That means we can
+        count something nobody else can: across {total} articles drawn from {channels} different
+        channels, which companies, models and protocols keep coming up. Here is the count, the
+        method behind it, and what it cannot tell you.
+      </p>
     </div>
 
-    <div class="tr-feature">
-      <a class="tr-feat-card" href={compareUrl} target="_blank" rel="noopener">
-        <h2>Compare our core themes</h2>
-        <p>AI vs Crypto vs Fintech vs SEO — worldwide search interest over the past 12 months, side by side.</p>
-        <span class="tr-go">Open comparison on Google Trends ↗</span>
-      </a>
-      <a class="tr-feat-card" href={trendingUrl} target="_blank" rel="noopener">
-        <h2>What's trending now</h2>
-        <p>The searches spiking today, straight from Google Trends' real-time trending page.</p>
-        <span class="tr-go">Open trending now ↗</span>
-      </a>
+    <div class="tr-method">
+      <h2>How this is counted</h2>
+      <ul>
+        <li><strong>The unit is the article, not the mention.</strong> A name that appears ten times in one article counts once. Otherwise the number just rewards wordiness.</li>
+        <li><strong>Counted:</strong> the headline, the summary, the body text and the FAQ of each article.</li>
+        <li><strong>Not counted:</strong> link text pointing to our own articles (that text is another article's headline), code blocks, tags and channel names.</li>
+        <li><strong>The names are a fixed list</strong>, with spellings grouped together (NVIDIA and Nvidia are one entry). No automatic name detection — that could not be explained honestly in a box like this one.</li>
+        <li><strong>Recounted on every build</strong>, so it moves as the archive grows. Figures below are from {updated}.</li>
+      </ul>
+      <p class="tr-caveat">
+        <strong>What this does not tell you.</strong> These are names appearing in our written
+        summaries of videos, not in the videos themselves, and not across the industry. Which
+        videos get covered here is decided by our own topic rotation, which deliberately favours
+        some subjects over others. So read this as a map of what this site has covered — not as a
+        measure of what the tech world is discussing.
+      </p>
     </div>
 
-    <h2 class="tr-section-title">Explore a topic</h2>
-    <div class="tr-grid">
-      {TOPICS.map((t) => (
-        <a class="tr-chip" href={exploreUrl(t.q)} target="_blank" rel="noopener">
-          <span class="tr-chip-dot" style={`background:${t.dot}`}></span>
-          <span class="tr-chip-label">{t.label}</span>
-          <span class="tr-chip-go">↗</span>
-        </a>
-      ))}
-    </div>
+    {byGroup.map((g) => (
+      <div class="tr-group">
+        <h2>{g.label}</h2>
+        <p class="tr-group-sub">Number of articles that name it, out of {total}</p>
+        {g.rows.map((r) => (
+          <div class="tr-row">
+            <span class="tr-name">{r.name}</span>
+            <span class="tr-bar"><span style={`width:${Math.max(2, Math.round((r.count / topCount) * 100))}%`}></span></span>
+            <span class="tr-num">{r.count} · {r.share}%</span>
+          </div>
+        ))}
+      </div>
+    ))}
 
     <div class="tr-info-section">
-      <h2>About Google Trends</h2>
-      <p>Google Trends measures the relative popularity of search terms over time on a 0–100 scale, where 100 is the peak interest for that term in the selected period. It shows relative interest, not absolute search volume, and it is one of the fastest ways to tell whether a topic is heating up or cooling down before you commit to covering it.</p>
-      <p>Each link above opens Google Trends in a new tab, pre-loaded with the topic and a 12-month window — from there you can change the timeframe, add comparisons, filter by country, and open the "related and rising queries" panels to find emerging subtopics. Data and charts are provided by Google Trends.</p>
+      <h2>Compare it against the wider web</h2>
+      <p>
+        The counts above cover this archive only. To see whether a topic is rising or falling
+        outside it, Google Trends is the quickest check — it measures relative search interest on a
+        0–100 scale, where 100 is that term's peak in the period you select. Each link opens in a
+        new tab with a 12-month window already applied.
+      </p>
+      <div class="tr-grid">
+        {TOPICS.map((t) => (
+          <a class="tr-chip" href={exploreUrl(t.q)} target="_blank" rel="noopener">
+            <span class="tr-chip-dot" style={`background:${t.dot}`}></span>
+            <span class="tr-chip-label">{t.label}</span>
+            <span class="tr-chip-go">↗</span>
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </MainLayout>

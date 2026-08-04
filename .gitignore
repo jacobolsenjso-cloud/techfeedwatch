@@ -11,6 +11,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+build.err
+preview.err
+preview.out
+
+# skærmbilleder fra shot.mjs, inkl. Chromes midlertidige profil
+_shots/
 
 
 # environment variables

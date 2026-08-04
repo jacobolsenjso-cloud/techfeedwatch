@@ -4,6 +4,7 @@
 // Ændrer intet.
 import fs from 'node:fs';
 import path from 'node:path';
+import { tally } from './src/lib/trends.mjs';
 
 const DIR = 'src/content/videos';
 const files = fs.readdirSync(DIR).filter(f => f.endsWith('.md'));
@@ -23,7 +24,14 @@ function parse(raw) {
   const tags = tagBlock
     ? tagBlock[1].split(/\r?\n/).map(l => l.replace(/^\s*-\s*/, '').replace(/^"|"$/g, '').trim()).filter(Boolean)
     : [];
-  return { date: one('date'), publishedAt: one('publishedAt'), channel: one('channelTitle'), tags };
+  // Titel, resumé og FAQ-blokken tælles med i navne-optællingen — de er
+  // artiklens egne ord og vises på siden. Kanalnavn og tags tælles ikke.
+  const faqBlock = body.match(/^faqs:\r?\n([\s\S]*)$/m);
+  const article = raw.slice(m[0].length); // brødteksten efter frontmatter
+  return {
+    date: one('date'), publishedAt: one('publishedAt'), channel: one('channelTitle'), tags,
+    title: one('title'), summary: one('summary'), faqs: faqBlock ? faqBlock[1] : '', body: article,
+  };
 }
 
 const rows = [];
@@ -52,3 +60,10 @@ console.log('\nKANALER:', Object.keys(channels).length);
 for (const [k, c] of top(channels)) console.log(' ', c, k);
 console.log('\nTAGS:', Object.keys(tags).length);
 for (const [k, c] of top(tags)) console.log(' ', c, k);
+
+// --- Navne-optælling: samme liste og samme regel som /trends bruger ---
+const { total, results } = tally(rows);
+console.log('\nNAVNE (antal artikler der naevner dem), af', total);
+for (const r of results) {
+  console.log(String(r.count).padStart(4), String(r.share + '%').padStart(6), ' ', r.name, `(${r.group})`);
+}
