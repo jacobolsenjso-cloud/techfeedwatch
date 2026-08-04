@@ -11,7 +11,7 @@ tags:
 summary: "Google's AI Overviews are fundamentally altering the search engine landscape, directly impacting content creators. While traditional SEO metrics like rankings may remain stable, actual user clicks to source websites are significantly declining. This shift creates substantial economic challenges for independent publishers and raises questions about content attribution and brand integrity. The evolving dynamic between generative AI and content production necessitates new strategies for online visibility and monetization."
 metaDescription: "Google AI Overviews threaten content creators' traffic and SEO strategies. Understand the impact on publishers, attribution, and future web monetization."
 duration: "17:12"
-viewCount: 13658
+viewCount: 13667
 viewsUpdated: "2026-08-04"
 isShort: false
 faqs:

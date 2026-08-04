@@ -12,7 +12,7 @@ tags:
   - "AI & Tech"
 summary: "The unprecedented rise of AI is compelling a fundamental reassessment of traditional, long-term investment strategies. While index funds tracking the S&P 500 have delivered consistent returns, their increasing concentration in a handful of AI-centric mega-cap tech companies introduces new levels of market risk. This concentration calls into question the historical diversification benefits of such indices, prompting a shift towards more globally distributed portfolios to mitigate potential volatility and capitalize on broader economic growth."
 duration: "12:02"
-viewCount: 490582
+viewCount: 490643
 viewsUpdated: "2026-08-04"
 isShort: false
 revised: true

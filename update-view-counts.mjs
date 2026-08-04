@@ -23,7 +23,8 @@ const entries = [];
 for (const f of files) {
   const raw = fs.readFileSync(path.join(DIR, f), 'utf8');
   const id = raw.match(/^youtubeId:\s*"([^"]+)"/m)?.[1];
-  if (id) entries.push({ file: f, id, raw });
+  const channelId = raw.match(/^channelId:\s*"([^"]+)"/m)?.[1] || null;
+  if (id) entries.push({ file: f, id, channelId, raw });
 }
 console.log(`${entries.length} artikler med video-id af ${files.length} filer`);
 
@@ -71,3 +72,30 @@ for (const e of entries) {
 }
 
 console.log(`\nSkrevet: ${written}  ·  uændret: ${unchanged}  ·  uden svar fra YouTube: ${missing}`);
+
+// --- Kanalgennemsnit til /popular ---
+// /popular rangerer efter hvor mange gange flere visninger en video fik end
+// kanalens egen gennemsnitsvideo. Uden det måler listen bare kanalstørrelse.
+// Gennemsnittet er kanalens samlede visninger delt med antal videoer. Det er en
+// grov baseline: en kanal der lægger mange korte klip op får et lavt gennemsnit,
+// så deres lange videoer ser bedre ud end de er. Skal det være skarpere, skal man
+// sammenligne med kanalens seneste videoer — det koster ét kald pr. kanal i
+// stedet for ét pr. 50, og vi starter billigt.
+const channelIds = [...new Set(entries.map((e) => e.channelId).filter(Boolean))];
+const channels = {};
+for (let i = 0; i < channelIds.length; i += 50) {
+  const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelIds.slice(i, i + 50).join(',')}&key=${KEY}`;
+  const res = await fetch(url);
+  if (!res.ok) { console.error(`Kanalkald ${i / 50 + 1} fejlede: ${res.status}`); continue; }
+  const data = await res.json();
+  for (const it of data.items || []) {
+    const total = Number(it.statistics?.viewCount);
+    const count = Number(it.statistics?.videoCount);
+    if (total > 0 && count > 0) channels[it.id] = Math.round(total / count);
+  }
+}
+
+const OUT = 'src/data/channel-averages.json';
+fs.mkdirSync(path.dirname(OUT), { recursive: true });
+fs.writeFileSync(OUT, JSON.stringify({ updated: today, averageViewsPerVideo: channels }, null, 2) + '\n', 'utf8');
+console.log(`Kanalgennemsnit: ${Object.keys(channels).length} af ${channelIds.length} kanaler → ${OUT}`);

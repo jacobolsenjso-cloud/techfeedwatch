@@ -11,7 +11,7 @@ tags:
 summary: "AI agents are transforming small business operations by taking on complex administrative tasks, particularly within the often-overlooked healthcare sector. This shift moves beyond simple data storage to software that actively performs work, promising significant gains in efficiency and allowing businesses to focus on core services. The implications extend to reducing overhead, streamlining patient interactions, and setting a precedent for AI adoption across various 'Main Street' industries."
 metaDescription: "Explore how AI agents are automating small business operations, revolutionizing healthcare administration, and impacting Main Street businesses."
 duration: "58:40"
-viewCount: 13190
+viewCount: 13245
 viewsUpdated: "2026-08-04"
 isShort: false
 faqs:

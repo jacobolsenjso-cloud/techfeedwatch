@@ -1,104 +1,154 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import channelData from '../data/channel-averages.json';
+import { tagSlug } from '../lib/tags';
 
 const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true })) as any[];
+const averages: Record<string, number> = channelData.averageViewsPerVideo;
 
-const formatDate = (d: string) => {
-  const parsed = new Date(d);
-  return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-};
+// Under denne grænse afgør tilfældigheder rangeringen: en video med 300
+// visninger kan slå sin kanals gennemsnit uden at nogen har set den.
+const MIN_VIEWS = 5000;
+const PER_TAG = 5;
+
 const formatViews = (n: number) =>
   n >= 1_000_000 ? (n / 1_000_000).toFixed(n >= 10_000_000 ? 0 : 1) + 'M'
   : n >= 1_000 ? (n / 1_000).toFixed(n >= 10_000 ? 0 : 1) + 'K'
   : String(n);
 
-// Rangeret efter kildevideoens visninger på YouTube. Artikler uden tal falder
-// ud af listen frem for at blive gættet til nul — et gæt er det vi kom fra.
-const ranked = allVideos
-  .filter((v) => !v.frontmatter.isShort && Number.isFinite(Number(v.frontmatter.viewCount)))
-  .map((v) => ({
-    slug: v.file.split('/').pop().replace('.md', ''),
-    fm: v.frontmatter,
-    views: Number(v.frontmatter.viewCount),
+const candidates = allVideos
+  .filter((v) => !v.frontmatter.isShort)
+  .map((v) => {
+    const views = Number(v.frontmatter.viewCount);
+    const avg = averages[v.frontmatter.channelId];
+    return {
+      slug: v.file.split('/').pop().replace('.md', ''),
+      fm: v.frontmatter,
+      views,
+      // Gange over kanalens egen gennemsnitsvideo. Det er dét der gør at en
+      // lille kanal kan slå TED: begge måles mod sig selv, ikke mod hinanden.
+      ratio: Number.isFinite(views) && avg > 0 ? views / avg : null,
+    };
+  })
+  .filter((v) => v.ratio !== null && v.views >= MIN_VIEWS);
+
+// Én sektion pr. tag. Rækkefølgen følger hvor mange artikler tagget har i alt,
+// så de store emner står først — men alle får samme antal pladser.
+const tagTotals = new Map<string, number>();
+for (const v of allVideos) {
+  for (const t of v.frontmatter.tags || []) tagTotals.set(t, (tagTotals.get(t) || 0) + 1);
+}
+
+const sections = [...tagTotals.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .map(([tag, total]) => ({
+    tag,
+    total,
+    items: candidates
+      .filter((v) => (v.fm.tags || []).includes(tag))
+      .sort((a, b) => b.ratio! - a.ratio!)
+      .slice(0, PER_TAG),
   }))
-  .sort((a, b) => b.views - a.views)
-  .slice(0, 48);
+  .filter((s) => s.items.length > 0);
 
-// Ældste opdateringsdato i udvalget — så datoen på siden ikke lover mere end den holder
-const oldestUpdate = ranked
-  .map((r) => r.fm.viewsUpdated)
-  .filter(Boolean)
-  .sort()[0];
-
-const withoutCount = allVideos.filter((v) => !v.frontmatter.isShort && !Number.isFinite(Number(v.frontmatter.viewCount))).length;
-
-const title = "Most-Watched Source Videos — Tech Feed Watch";
-const description = "The articles on this site are written from other people's YouTube videos. These are the ones whose source video has been watched most on YouTube.";
+const title = "Best of Each Topic — Videos That Outperformed Their Own Channel";
+const description = "Ranked by how far each source video beat its own channel's average, so a small channel with a strong video can outrank a large one. Five per topic.";
 ---
 
 <MainLayout title={title} description={description}>
   <style is:global>
     .popular-wrapper { padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
     .popular-header { font-size: 2.2rem; margin: 0 0 8px 0; }
-    .popular-sub { color: #6b7280; font-size: 1.05rem; margin: 0 0 10px 0; max-width: 760px; line-height: 1.6; }
+    .popular-sub { color: #6b7280; font-size: 1.05rem; margin: 0 0 22px 0; max-width: 780px; line-height: 1.6; }
     body.dark-mode .popular-sub { color: #9ca3af; }
-    .popular-note { color: #6b7280; font-size: 0.88rem; margin: 0 0 30px 0; max-width: 760px; line-height: 1.6; }
-    body.dark-mode .popular-note { color: #9ca3af; }
 
-    .popular-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .pop-method { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #0891b2; border-radius: 12px; padding: 16px 20px; margin-bottom: 36px; max-width: 900px; }
+    .pop-method p { font-size: 0.9rem; line-height: 1.6; color: #4b5563; margin: 0 0 8px 0; }
+    .pop-method p:last-child { margin-bottom: 0; }
+    body.dark-mode .pop-method p { color: #9ca3af; }
+
+    .pop-section { margin-bottom: 40px; }
+    .pop-section-head { display: flex; align-items: baseline; gap: 12px; margin: 0 0 4px 0; flex-wrap: wrap; }
+    .pop-section-head h2 { font-size: 1.3rem; margin: 0; }
+    .pop-section-head a { font-size: 0.85rem; color: #0891b2; text-decoration: none; font-weight: 600; }
+    .pop-section-head a:hover { text-decoration: underline; }
+    .pop-section-sub { font-size: 0.85rem; color: #6b7280; margin: 0 0 14px 0; }
+    body.dark-mode .pop-section-sub { color: #9ca3af; }
+
+    /* Fem faste kolonner, så en sektions fem kort står på én række. Med
+       auto-fill blev det fire plus en enlig på næste linje. */
+    .popular-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    @media (max-width: 1250px) { .popular-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) { .popular-grid { grid-template-columns: repeat(2, 1fr); } }
     .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
     .watch-card:hover { transform: translateY(-3px); }
     .watch-card-thumb { aspect-ratio: 16/9; border-radius: 12px; margin-bottom: 10px; position: relative; overflow: hidden; }
     .duration-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.8); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; }
-    .rank-badge { position: absolute; top: 8px; left: 8px; background: rgba(8, 145, 178,0.95); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    .ratio-badge { position: absolute; top: 8px; left: 8px; background: rgba(8,145,178,0.95); color: #fff; padding: 3px 8px; border-radius: 20px; font-size: 12px; font-weight: 800; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
     .tma-grid-title { margin: 0 0 5px 0; font-size: 15px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .watch-card:hover .tma-grid-title { color: #0891b2; }
-    .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    body.dark-mode .tma-grid-meta { color: #9ca3af; }
-    .pop-views { font-weight: 700; color: #0891b2; }
-    .pop-channel { display: block; font-size: 12.5px; color: #6b7280; margin-top: 3px; }
-    body.dark-mode .pop-channel { color: #9ca3af; }
+    .pop-meta { font-size: 12.5px; color: #6b7280; margin: 0; line-height: 1.5; }
+    body.dark-mode .pop-meta { color: #9ca3af; }
 
     @media (max-width: 768px) {
       .popular-wrapper { padding: 15px; }
-      .popular-header { font-size: 1.8rem; }
-      .popular-grid { grid-template-columns: 1fr; gap: 20px; }
+      .popular-header { font-size: 1.7rem; }
+      .popular-grid { grid-template-columns: 1fr; gap: 18px; }
       .watch-card-thumb { border-radius: 8px; }
     }
   </style>
 
   <div class="popular-wrapper">
-    <h1 class="popular-header">Most-watched source videos</h1>
+    <h1 class="popular-header">Best of each topic</h1>
     <p class="popular-sub">
-      Every article here is written from someone else's YouTube video. This page ranks those
-      articles by how many times the original video has been watched on YouTube — so the big
-      channels sit at the top, and a small channel with a sharp video will not.
-    </p>
-    <p class="popular-note">
-      View counts come from YouTube{oldestUpdate ? `, last refreshed ${formatDate(oldestUpdate)}` : ''}.
-      They measure the video, not the article — we do not publish our own traffic figures.
-      {withoutCount > 0 && ` ${withoutCount} articles are not listed because we have no view count for their source.`}
+      Every article here is written from someone else's YouTube video. Ranking those videos by
+      raw view count just lists the biggest channels, so this page ranks them by how far each
+      video beat its own channel's average instead. A small channel with a strong video can
+      outrank a large one.
     </p>
 
-    <div class="popular-grid">
-      {ranked.map((item, i) => (
-        <a href={`/video/${item.slug}`} class="watch-card">
-          <div class="watch-card-thumb">
-            <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
-            <div class="rank-badge">{i + 1}</div>
-            <div class="duration-badge">{item.fm.duration || '0:00'}</div>
-            <span class="watch-card-play" aria-hidden="true">▶</span>
-          </div>
-          <div>
-            <h2 class="tma-grid-title">{item.fm.title}</h2>
-            <p class="tma-grid-meta">
-              <span class="pop-views">{formatViews(item.views)} views on YouTube</span>
-              <span>• {formatDate(item.fm.date)}</span>
-            </p>
-            {item.fm.channelTitle && <span class="pop-channel">Source: {item.fm.channelTitle}</span>}
-          </div>
-        </a>
-      ))}
+    <div class="pop-method">
+      <p>
+        <strong>How this is ranked.</strong> Each video's view count on YouTube, divided by the
+        average views of that channel's videos. "12x" means the video was watched twelve times
+        more than that channel's typical upload. Videos under {formatViews(MIN_VIEWS)} views are
+        left out — below that, chance decides the order.
+      </p>
+      <p>
+        <strong>What it does not measure.</strong> It measures how a video did against its own
+        channel, not whether it is good, and not how our article performed. The channel average
+        covers a channel's whole back catalogue, so channels that post many short clips have a
+        low average and their longer videos score higher than they deserve. View counts from
+        YouTube, refreshed {channelData.updated}.
+      </p>
     </div>
+
+    {sections.map((s) => (
+      <div class="pop-section">
+        <div class="pop-section-head">
+          <h2>{s.tag}</h2>
+          <a href={`/tag/${tagSlug(s.tag)}`}>See all {s.total} →</a>
+        </div>
+        <p class="pop-section-sub">Ranked against each channel's own average</p>
+        <div class="popular-grid">
+          {s.items.map((item) => (
+            <a href={`/video/${item.slug}`} class="watch-card">
+              <div class="watch-card-thumb">
+                <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
+                <div class="ratio-badge">{item.ratio! >= 10 ? Math.round(item.ratio!) : item.ratio!.toFixed(1)}x</div>
+                <div class="duration-badge">{item.fm.duration || '0:00'}</div>
+                <span class="watch-card-play" aria-hidden="true">▶</span>
+              </div>
+              <div>
+                <h2 class="tma-grid-title">{item.fm.title}</h2>
+                <p class="pop-meta">
+                  {formatViews(item.views)} views · {item.fm.channelTitle}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </MainLayout>
