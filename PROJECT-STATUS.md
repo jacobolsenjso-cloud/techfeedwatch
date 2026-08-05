@@ -42,7 +42,7 @@ Kodekommentarer skrives på dansk.
 ### Nøgletal
 
 | | |
-|---|---|
+| --- | --- |
 | Artikler | 367 |
 | Guides | 9 |
 | Glossar-opslag | 28 |
@@ -63,7 +63,7 @@ Kodekommentarer skrives på dansk.
 ### Vigtige filer
 
 | Fil | Rolle |
-|---|---|
+| --- | --- |
 | `auto-youtube.mjs` | Robottens indgang: finder kandidater, styrer loft og rotation |
 | `add-video.mjs` | Henter metadata, kalder Gemini, skriver markdown-filen |
 | `src/lib/tools.ts` | Eneste sandhed om de 27 værktøjer og deres 5 kategorier |
@@ -77,7 +77,7 @@ Kodekommentarer skrives på dansk.
 
 ### Byg og test
 
-```
+```bash
 npm run build      # → dist/, ca. 20-50 sek
 npm run preview    # → http://localhost:4321
 node audit-tools-nav.mjs   # verificerer værktøjsstrukturen mod dist/
@@ -270,7 +270,7 @@ tjekket med skærmbilleder.
 ### Kode / mit ansvar
 
 | Opgave | Status |
-|---|---|
+| --- | --- |
 | **Trend-analyse fra sitets egne data** | Første halvdel gennemført: `/trends` tæller navne på tværs af alle artikler (spor B). Anden halvdel udestår: metoden er nu fast, så en måling måned for måned bliver en ægte serie — men den kræver at der går 3-4 måneder (spor A). Sæt en påmindelse; der er ingen automatik der gør det. |
 | **Et originalt lag oven på artiklerne** | Delvist. `/trends` og `/popular` er nu begge afledt af sitets egne data. Se afsnit 7. |
 | **Skarpere baseline på `/popular`** | Rangeringen bruger kanalens livstidsgennemsnit (samlede visninger / antal videoer). Kanaler med mange korte klip får et lavt gennemsnit, så deres lange videoer scorer højere end fortjent — derfor ligger NOVA nummer et. Den skarpe version sammenligner med kanalens seneste videoer: ét API-kald pr. kanal i stedet for ét pr. 50. Isoleret til `update-view-counts.mjs`. |
@@ -345,7 +345,7 @@ Punkt 4 er ikke besluttet. Tag det ikke som givet — spørg.
 
 ## 9. Standard-arbejdsgang for en ændring
 
-```
+```text
 1. Læs de relevante filer først — gæt ikke på hvad de indeholder
 2. Ret
 3. npm run build          # skal give 0 fejl
