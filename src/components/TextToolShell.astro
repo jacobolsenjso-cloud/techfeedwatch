@@ -1,0 +1,270 @@
+---
+// Fælles brugerflade for tekstværktøjerne. Siden vælger sin hovedoperation via
+// `op`; resten — felter, kæde-panel, tællere, kopiér, hent — er ens overalt.
+import { OPERATIONS, OPERATION_LIST } from '../lib/text-ops';
+
+interface Props {
+  op: string;
+  emoji: string;
+  heading: string;
+  intro: string;
+  sample: string;
+}
+
+const { op, emoji, heading, intro, sample } = Astro.props;
+const primary = OPERATIONS[op];
+if (!primary) throw new Error(`Ukendt tekstoperation: ${op}`);
+
+// De øvrige operationer kan lægges ovenpå. De køres i den rækkefølge de står
+// her, så resultatet er forudsigeligt uanset hvilken side man er landet på.
+const extras = OPERATION_LIST.filter((o) => o.id !== op);
+---
+
+<div class="tt-wrapper" data-op={op}>
+  <div class="tt-header">
+    <h1>{emoji} {heading}</h1>
+    <p>{intro}</p>
+  </div>
+
+  <div class="tt-panes">
+    <div class="tt-pane">
+      <label class="tt-pane-label" for="ttInput">Your text</label>
+      <textarea id="ttInput" class="tt-area" spellcheck="false" placeholder="Paste your list or text here…">{sample}</textarea>
+      <p class="tt-count" id="ttInCount"></p>
+    </div>
+    <div class="tt-pane">
+      <label class="tt-pane-label" for="ttOutput">Result</label>
+      <textarea id="ttOutput" class="tt-area" spellcheck="false" readonly></textarea>
+      <p class="tt-count" id="ttOutCount"></p>
+    </div>
+  </div>
+
+  <div class="tt-actions">
+    <button type="button" id="ttCopy" class="tt-btn tt-btn-primary">Copy result</button>
+    <button type="button" id="ttDownload" class="tt-btn">Download as .txt</button>
+    <button type="button" id="ttSwap" class="tt-btn">Use result as input</button>
+    <button type="button" id="ttClear" class="tt-btn">Clear</button>
+  </div>
+
+  <div class="tt-settings">
+    <h2 class="tt-settings-title">{primary.label}</h2>
+    <div class="tt-options" id="ttPrimaryOptions">
+      {primary.options.map((o) => (
+        <label class={`tt-option tt-option-${o.type}`}>
+          {o.type === 'checkbox' && (
+            <input type="checkbox" data-opt={o.id} checked={o.default === true} />
+          )}
+          <span class="tt-option-label">{o.label}</span>
+          {o.type === 'text' && (
+            <input type="text" class="tt-input" data-opt={o.id} placeholder={o.placeholder} value={String(o.default ?? '')} />
+          )}
+          {o.type === 'select' && (
+            <select class="tt-input" data-opt={o.id}>
+              {o.choices?.map((c) => <option value={c.value} selected={c.value === o.default}>{c.label}</option>)}
+            </select>
+          )}
+          {o.hint && <small class="tt-hint">{o.hint}</small>}
+        </label>
+      ))}
+    </div>
+  </div>
+
+  <details class="tt-chain">
+    <summary>Also do this, in one go <span class="tt-chain-count" id="ttChainCount"></span></summary>
+    <p class="tt-chain-intro">
+      Tick anything else you need and it runs on the same text — no reloading, no copying
+      between pages. Steps run top to bottom.
+    </p>
+    {extras.map((o) => (
+      <div class="tt-chain-step">
+        <label class="tt-option">
+          <input type="checkbox" data-chain={o.id} />
+          <span class="tt-option-label">{o.label}</span>
+        </label>
+        <div class="tt-options tt-chain-options" data-chain-options={o.id} hidden>
+          {o.options.map((opt) => (
+            <label class={`tt-option tt-option-${opt.type}`}>
+              {opt.type === 'checkbox' && (
+                <input type="checkbox" data-opt={`${o.id}.${opt.id}`} checked={opt.default === true} />
+              )}
+              <span class="tt-option-label">{opt.label}</span>
+              {opt.type === 'text' && (
+                <input type="text" class="tt-input" data-opt={`${o.id}.${opt.id}`} placeholder={opt.placeholder} value={String(opt.default ?? '')} />
+              )}
+              {opt.type === 'select' && (
+                <select class="tt-input" data-opt={`${o.id}.${opt.id}`}>
+                  {opt.choices?.map((c) => <option value={c.value} selected={c.value === opt.default}>{c.label}</option>)}
+                </select>
+              )}
+            </label>
+          ))}
+        </div>
+      </div>
+    ))}
+  </details>
+
+  <p class="tt-privacy">Everything runs inside your browser. Nothing you paste is uploaded or stored.</p>
+
+  <slot />
+</div>
+
+<style is:global>
+  .tt-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+  .tt-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+  .tt-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; line-height: 1.6; max-width: 760px; }
+  body.dark-mode .tt-header p { color: #9ca3af; }
+
+  .tt-panes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .tt-pane-label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  .tt-area { width: 100%; min-height: 260px; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.92rem; line-height: 1.55; box-sizing: border-box; resize: vertical; }
+  .tt-area:focus { outline: none; border-color: #0891b2; }
+  .tt-count { font-size: 0.8rem; color: #6b7280; margin: 6px 0 0 0; font-variant-numeric: tabular-nums; }
+  body.dark-mode .tt-count { color: #9ca3af; }
+
+  .tt-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 26px 0; }
+  .tt-btn { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+  .tt-btn:hover { border-color: #0891b2; }
+  .tt-btn-primary { background: #0891b2; color: #fff; border-color: #0891b2; }
+  .tt-btn-primary:hover { background: #0e7490; }
+
+  .tt-settings { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
+  .tt-settings-title { font-size: 1rem; margin: 0 0 12px 0; }
+  .tt-options { display: flex; flex-direction: column; gap: 11px; }
+  .tt-option { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; flex-wrap: wrap; }
+  .tt-option-label { font-weight: 500; }
+  .tt-option-text, .tt-option-select { align-items: center; }
+  .tt-input { padding: 8px 11px; border-radius: 7px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.9rem; min-width: 220px; }
+  .tt-input:focus { outline: none; border-color: #0891b2; }
+  .tt-hint { flex-basis: 100%; font-size: 0.78rem; color: #6b7280; }
+  body.dark-mode .tt-hint { color: #9ca3af; }
+
+  .tt-chain { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 20px; margin-bottom: 18px; }
+  .tt-chain summary { font-weight: 600; cursor: pointer; font-size: 0.95rem; }
+  .tt-chain-count { color: #0891b2; font-weight: 700; }
+  .tt-chain-intro { font-size: 0.86rem; color: #6b7280; line-height: 1.6; margin: 10px 0 14px 0; max-width: 680px; }
+  body.dark-mode .tt-chain-intro { color: #9ca3af; }
+  .tt-chain-step { padding: 9px 0; border-top: 1px solid var(--border-color); }
+  .tt-chain-options { margin: 10px 0 4px 26px; padding-left: 14px; border-left: 2px solid var(--border-color); }
+
+  .tt-privacy { font-size: 0.83rem; color: #6b7280; margin: 0 0 10px 0; }
+  body.dark-mode .tt-privacy { color: #9ca3af; }
+
+  @media (max-width: 760px) {
+    .tt-wrapper { padding: 20px 15px; }
+    .tt-header h1 { font-size: 1.55rem; }
+    .tt-panes { grid-template-columns: 1fr; }
+    .tt-area { min-height: 180px; }
+    .tt-btn { flex: 1 1 calc(50% - 5px); }
+    .tt-input { min-width: 0; width: 100%; }
+    .tt-chain-options { margin-left: 8px; }
+  }
+</style>
+
+<script>
+  import { OPERATIONS } from '../lib/text-ops';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.querySelector('.tt-wrapper') as HTMLElement | null;
+    if (!wrapper) return;
+    const primaryId = wrapper.dataset.op!;
+
+    const input = document.getElementById('ttInput') as HTMLTextAreaElement;
+    const output = document.getElementById('ttOutput') as HTMLTextAreaElement;
+    const inCount = document.getElementById('ttInCount')!;
+    const outCount = document.getElementById('ttOutCount')!;
+    const chainCount = document.getElementById('ttChainCount')!;
+
+    const readOpts = (prefix: string) => {
+      const opts: Record<string, string | boolean> = {};
+      wrapper.querySelectorAll<HTMLInputElement | HTMLSelectElement>('[data-opt]').forEach((el) => {
+        const key = el.dataset.opt!;
+        if (prefix && !key.startsWith(prefix + '.')) return;
+        if (!prefix && key.includes('.')) return;
+        const name = prefix ? key.slice(prefix.length + 1) : key;
+        opts[name] = el instanceof HTMLInputElement && el.type === 'checkbox' ? el.checked : el.value;
+      });
+      return opts;
+    };
+
+    const chainBoxes = () =>
+      Array.from(wrapper.querySelectorAll<HTMLInputElement>('[data-chain]'));
+
+    const stats = (text: string) => {
+      const lines = text === '' ? 0 : text.split('\n').length;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      return `${lines.toLocaleString()} lines · ${words.toLocaleString()} words · ${text.length.toLocaleString()} characters`;
+    };
+
+    const run = () => {
+      const raw = input.value;
+      let lines = raw.split(/\r\n|\r|\n/);
+
+      // Hovedoperationen først, derefter de tilvalgte i fast rækkefølge.
+      lines = OPERATIONS[primaryId].run(lines, readOpts(''), raw);
+      let active = 0;
+      for (const box of chainBoxes()) {
+        const id = box.dataset.chain!;
+        const panel = wrapper.querySelector<HTMLElement>(`[data-chain-options="${id}"]`);
+        if (panel) panel.hidden = !box.checked;
+        if (!box.checked) continue;
+        active++;
+        lines = OPERATIONS[id].run(lines, readOpts(id), lines.join('\n'));
+      }
+
+      output.value = lines.join('\n');
+      inCount.textContent = stats(raw);
+      outCount.textContent = stats(output.value);
+      chainCount.textContent = active ? `(${active} extra)` : '';
+    };
+
+    input.addEventListener('input', run);
+    wrapper.addEventListener('change', run);
+    wrapper.addEventListener('keyup', (e) => {
+      if ((e.target as HTMLElement)?.matches?.('input[type="text"]')) run();
+    });
+
+    const flash = (btn: HTMLButtonElement, text: string) => {
+      const original = btn.textContent;
+      btn.textContent = text;
+      setTimeout(() => { btn.textContent = original; }, 1800);
+    };
+
+    document.getElementById('ttCopy')!.addEventListener('click', async (e) => {
+      try {
+        await navigator.clipboard.writeText(output.value);
+        flash(e.currentTarget as HTMLButtonElement, 'Copied!');
+      } catch { /* udklipsholder afvist — ikke noget at gøre ved */ }
+    });
+
+    document.getElementById('ttDownload')!.addEventListener('click', () => {
+      const blob = new Blob([output.value], { type: 'text/plain;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${primaryId}.txt`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById('ttSwap')!.addEventListener('click', () => {
+      input.value = output.value;
+      run();
+    });
+
+    document.getElementById('ttClear')!.addEventListener('click', () => {
+      input.value = '';
+      run();
+      input.focus();
+    });
+
+    run();
+  });
+</script>
+
+<style is:global>
+  .tt-info { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); max-width: 760px; }
+  .tt-info h2 { font-size: 1.2rem; margin: 26px 0 10px 0; }
+  .tt-info h2:first-child { margin-top: 0; }
+  .tt-info p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+  body.dark-mode .tt-info p { color: #9ca3af; }
+  .tt-info code { background: var(--hover-bg); padding: 1px 5px; border-radius: 4px; font-size: 0.88em; }
+</style>

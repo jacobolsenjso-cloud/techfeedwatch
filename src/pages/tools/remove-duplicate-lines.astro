@@ -1,0 +1,37 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TextToolShell from '../../components/TextToolShell.astro';
+
+const title = "Remove Duplicate Lines";
+const description = "Strip repeated lines from any list in your browser. Choose whether capitalisation and stray spaces count, and keep the first or the last copy. Nothing is uploaded.";
+const sample = `anna@example.com
+BEN@example.com
+anna@example.com
+carla@example.com
+ben@example.com`;
+---
+
+<MainLayout title={title} description={description}>
+  <TextToolShell
+    op="remove-duplicate-lines"
+    emoji="🧹"
+    heading="Remove duplicate lines"
+    intro="Paste a list and every repeated line disappears. The two options that usually matter — whether ANNA and anna count as the same, and whether a stray space at the end makes two lines different — are yours to set."
+  sample={sample}
+  >
+    <div class="tt-info">
+      <h2>What counts as a duplicate?</h2>
+      <p>More often than not, the lines that should match don't — and it is nearly always one of two reasons. A trailing space copied out of a spreadsheet makes <code>anna@example.com </code> and <code>anna@example.com</code> two different lines to a computer. And a name typed once in capitals and once in lowercase looks identical to you and different to the machine.</p>
+      <p>Both are switched on or off above, so you can see the effect immediately rather than guessing which tool made which assumption.</p>
+
+      <h2>First copy or last copy?</h2>
+      <p>When a line appears several times, one of them survives. Keeping the first preserves the original order of your list, which is what you want for anything sorted by importance. Keeping the last is useful when a file has been appended to over time and the newest version of a row sits at the bottom.</p>
+
+      <h2>Where this saves the most time</h2>
+      <p>Email lists merged from two exports, tag or keyword lists that grew by copy-paste, log files where the same error repeats hundreds of times, and CSV columns pulled out of a spreadsheet. For any of those, tick <em>Sort lines</em> under the extra steps and you get a deduplicated, alphabetised list in one pass instead of moving text between two separate tools.</p>
+
+      <h2>Is my list sent anywhere?</h2>
+      <p>No. The whole thing runs as JavaScript inside this page, which matters here more than on most tools — the lists people deduplicate tend to be customer emails, subscriber exports, and internal inventories. Your text never leaves the browser, and nothing is saved when you close the tab.</p>
+    </div>
+  </TextToolShell>
+</MainLayout>

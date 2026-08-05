@@ -1,0 +1,37 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TextToolShell from '../../components/TextToolShell.astro';
+
+const title = "Sort List Alphabetically, Numerically or at Random";
+const description = "Sort any list A-Z, Z-A, by number, by line length, reversed or shuffled. Runs in your browser with nothing uploaded.";
+const sample = `Ethereum
+bitcoin
+Solana
+Cardano
+avalanche`;
+---
+
+<MainLayout title={title} description={description}>
+  <TextToolShell
+    op="sort-list"
+    emoji="🔤"
+    heading="Sort a list"
+    intro="Eight ways to reorder a list, from plain A-Z to a genuinely random shuffle. Pick one and the result updates as you type."
+  sample={sample}
+  >
+    <div class="tt-info">
+      <h2>Sorting that handles numbers properly</h2>
+      <p>Plain alphabetical sorting puts <code>item10</code> before <code>item2</code>, because it compares character by character and 1 comes before 2. That is almost never what anyone wants. A-Z here compares embedded numbers as numbers, so <code>item2</code> lands where you expect.</p>
+      <p>If your lines are prices, scores or quantities, the two numeric options read the first number in each line instead. Lines with no number in them are pushed to the bottom rather than scattered through the results.</p>
+
+      <h2>The random shuffle is actually random</h2>
+      <p>A surprising number of shuffle tools sort the list with a comparison that returns a random answer each time. That produces a rearranged list, but not an evenly random one — some orders come up far more often than others. This uses a Fisher-Yates shuffle, where every possible order is equally likely. If you are drawing a giveaway winner or assigning people to groups, that difference is the whole point.</p>
+
+      <h2>Reverse is not the same as Z-A</h2>
+      <p>Z-A sorts alphabetically and then flips it. <em>Reverse current order</em> leaves the sorting alone and simply turns your list upside down — last line first. That is what you want for a chronological list you need newest-first, where alphabetical order would be meaningless.</p>
+
+      <h2>Combine it in one pass</h2>
+      <p>Sorting usually is not the only thing a messy list needs. Under the extra steps you can strip duplicates, drop blank lines, and tidy stray spaces at the same time, in one go, without copying the text into a second tool and back.</p>
+    </div>
+  </TextToolShell>
+</MainLayout>

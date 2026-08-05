@@ -1,0 +1,34 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TextToolShell from '../../components/TextToolShell.astro';
+
+const title = "Find and Replace Text Online";
+const description = "Search and replace across a whole block of text, with optional case matching, whole-word matching and regular expressions. Runs in your browser, nothing uploaded.";
+const sample = `The old plan was approved by the old team.
+Old habits are hard to break.
+Golden rules stay golden.`;
+---
+
+<MainLayout title={title} description={description}>
+  <TextToolShell
+    op="find-and-replace"
+    emoji="🔁"
+    heading="Find and replace"
+    intro="Replace every occurrence of a word or phrase across a whole block of text at once. Leave the replacement empty to delete what you found."
+  sample={sample}
+  >
+    <div class="tt-info">
+      <h2>Whole words matter more than people expect</h2>
+      <p>Replacing "old" with "new" in the sample text also hits "Golden" and turns it into "Gnewen". That is the single most common way a find-and-replace quietly ruins a document, and it is why <em>whole words only</em> exists. With it on, only <code>old</code> standing on its own is replaced — "Golden" is left alone.</p>
+
+      <h2>Matching capitalisation</h2>
+      <p>By default the search ignores case, so "Old", "old" and "OLD" are all found. That is usually what you want when cleaning up inconsistent text. Turn on <em>match capitalisation</em> when the difference is deliberate — replacing a variable name in code, or a brand that is written one specific way.</p>
+
+      <h2>Regular expressions, without the crash</h2>
+      <p>For anything patterned rather than literal — every number, every line starting with a date, everything between two brackets — tick the regular expression option. An unfinished or invalid pattern leaves your text exactly as it was instead of throwing an error or wiping the box, so you can type a pattern gradually and watch it take effect.</p>
+
+      <h2>Deleting rather than replacing</h2>
+      <p>Leave the replacement field empty and every match is removed. Combined with the extra steps below, that covers most cleanup jobs in one pass: strip a repeated prefix, drop the lines that are now empty, and tidy the leftover spacing without touching a second tool.</p>
+    </div>
+  </TextToolShell>
+</MainLayout>

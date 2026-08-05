@@ -196,6 +196,43 @@ export const TOOLS: Tool[] = [
     featured: true,
   },
   {
+    slug: 'remove-duplicate-lines',
+    icon: '🧹',
+    title: 'Remove Duplicate Lines',
+    short: 'Remove Duplicates',
+    description:
+      'Strip repeated lines from a list, with control over whether capitalisation and stray spaces count as a difference.',
+    category: 'content',
+    featured: true,
+  },
+  {
+    slug: 'sort-list',
+    icon: '🔤',
+    title: 'Sort a List',
+    short: 'Sort List',
+    description:
+      'Sort lines A-Z, Z-A, by number, by length, reversed, or shuffled with a genuinely even random order.',
+    category: 'content',
+  },
+  {
+    slug: 'remove-empty-lines',
+    icon: '📄',
+    title: 'Remove Empty Lines',
+    short: 'Remove Empty Lines',
+    description:
+      'Delete blank lines — including the ones holding only a space or tab — or collapse runs of them down to one.',
+    category: 'content',
+  },
+  {
+    slug: 'find-and-replace',
+    icon: '🔁',
+    title: 'Find and Replace',
+    short: 'Find & Replace',
+    description:
+      'Replace text across a whole block at once, with whole-word matching, case matching and regular expressions.',
+    category: 'content',
+  },
+  {
     slug: 'keyword-density',
     icon: '📊',
     title: 'Keyword Density Analyzer',

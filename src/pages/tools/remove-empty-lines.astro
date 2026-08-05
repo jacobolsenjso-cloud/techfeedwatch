@@ -1,0 +1,37 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import TextToolShell from '../../components/TextToolShell.astro';
+
+const title = "Remove Empty Lines";
+const description = "Delete blank lines from any text, or collapse runs of them down to one. Lines holding only spaces or tabs can count as empty too. Browser-based, nothing uploaded.";
+const sample = `First paragraph.
+
+
+Second paragraph.
+   
+Third paragraph.`;
+---
+
+<MainLayout title={title} description={description}>
+  <TextToolShell
+    op="remove-empty-lines"
+    emoji="📄"
+    heading="Remove empty lines"
+    intro="Clear the blank lines out of pasted text — including the ones that only look blank because they hold a space or a tab."
+  sample={sample}
+  >
+    <div class="tt-info">
+      <h2>The blank lines you cannot see</h2>
+      <p>Text copied out of a PDF, an email or a web page is full of lines that appear empty but contain a space, a tab, or a non-breaking space. Tools that only remove truly empty lines leave those behind, which is why text often still looks gappy after a "clean up". The first option here treats whitespace-only lines as empty, and it is on by default because that is what people almost always mean.</p>
+
+      <h2>Remove all, or keep one</h2>
+      <p>Deleting every blank line is right for lists, imports and code. It is wrong for prose, where the blank line between paragraphs is doing real work. Switch on <em>keep one blank line</em> and runs of three or four collapse to a single separator, so paragraphs stay apart without the gaping holes. Blank lines at the very top and bottom are dropped either way.</p>
+
+      <h2>Common reasons text ends up like this</h2>
+      <p>Copying from a two-column PDF, exporting a spreadsheet column where some cells were empty, converting a Word document to plain text, and pasting from tools that use double line breaks for spacing. In each case the content is fine — the layout came along for the ride.</p>
+
+      <h2>Nothing is uploaded</h2>
+      <p>This runs entirely in your browser. Whatever you paste stays on your machine and disappears when you close the tab.</p>
+    </div>
+  </TextToolShell>
+</MainLayout>
