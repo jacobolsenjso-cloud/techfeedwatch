@@ -1,8 +1,16 @@
 ---
 import '@fontsource-variable/inter';
+import RelatedTools from '../components/RelatedTools.astro';
+import { findTool } from '../lib/tools';
 
 const { title, description, image, imageWidth, imageHeight, schema, noindex } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+// Værktøjssider får automatisk relaterede værktøjer nederst. Kun rigtige
+// værktøjer rammes — /tools og kategorisiderne har ikke et slug i TOOLS,
+// så findTool() giver undefined og blokken springes over.
+const toolMatch = currentPath.match(/^\/tools\/([a-z0-9-]+)\/?$/);
+const toolSlug = toolMatch && findTool(toolMatch[1]) ? toolMatch[1] : null;
 
 // Standard SEO beskrivelse hvis ingen er angivet
 const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
@@ -468,7 +476,9 @@ const siteSchema = [
 
       <main class="content-area">
         <slot /> 
-        
+
+        {toolSlug && <RelatedTools slug={toolSlug} />}
+
         <footer class="site-footer">
           <div class="footer-inner">
             <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>

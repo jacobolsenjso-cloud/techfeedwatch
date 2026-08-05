@@ -1,0 +1,73 @@
+---
+// Relaterede værktøjer nederst på hver værktøjsside.
+//
+// Hvorfor: de 31 værktøjer kunne kun nås gennem menuen. For en læser betyder
+// det at man skal tilbage til oversigten for at finde det næste — og for Google
+// ser det ud som 31 løsrevne sider frem for ét sammenhængende værktøjssæt.
+//
+// Listen bygges ud fra tools.ts, så et nyt værktøj automatisk dukker op hos
+// sine naboer uden at nogen skal huske at rette noget.
+import { TOOLS, TOOL_CATEGORIES } from '../lib/tools';
+
+interface Props { slug: string; }
+const { slug } = Astro.props;
+
+const current = TOOLS.find((t) => t.slug === slug);
+const category = TOOL_CATEGORIES.find((c) => c.id === current?.category);
+
+// Naboer fra samme kategori først — det er dem man oftest skal bruge lige efter.
+const sameCategory = TOOLS.filter((t) => t.category === current?.category && t.slug !== slug).slice(0, 3);
+
+// Og ét fra en anden kategori, så man opdager at der er mere end det man kom efter.
+// Valget følger værktøjets plads i listen, så det er fast pr. side og ikke tilfældigt.
+const others = TOOLS.filter((t) => t.category !== current?.category);
+const pickIndex = TOOLS.findIndex((t) => t.slug === slug);
+const crossPick = others.length ? others[pickIndex % others.length] : null;
+
+const related = [...sameCategory, ...(crossPick ? [crossPick] : [])];
+---
+
+{current && related.length > 0 && (
+  <section class="rt-section" aria-labelledby="rt-heading">
+    <h2 id="rt-heading" class="rt-heading">Other tools you might need next</h2>
+    <div class="rt-grid">
+      {related.map((t) => (
+        <a href={`/tools/${t.slug}`} class="rt-card">
+          <span class="rt-icon">{t.icon}</span>
+          <span class="rt-text">
+            <span class="rt-title">{t.title}</span>
+            <span class="rt-desc">{t.description}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+    {category && (
+      <p class="rt-all">
+        See all <a href={`/tools/${category.slug}`}>{category.name}</a> tools, or browse
+        <a href="/tools"> every free tool</a> on the site.
+      </p>
+    )}
+  </section>
+)}
+
+<style is:global>
+  .rt-section { max-width: 1000px; margin: 0 auto; padding: 34px 20px 46px; border-top: 1px solid var(--border-color); }
+  .rt-heading { font-size: 1.15rem; margin: 0 0 16px 0; }
+  .rt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .rt-card { display: flex; gap: 11px; align-items: flex-start; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 13px 15px; transition: border-color 0.2s, transform 0.2s; }
+  .rt-card:hover { border-color: #0891b2; transform: translateY(-2px); }
+  .rt-icon { font-size: 1.15rem; line-height: 1.3; flex-shrink: 0; }
+  .rt-text { display: flex; flex-direction: column; gap: 3px; }
+  .rt-title { font-weight: 600; font-size: 0.92rem; }
+  .rt-desc { font-size: 0.8rem; color: #6b7280; line-height: 1.45; }
+  body.dark-mode .rt-desc { color: #9ca3af; }
+  .rt-all { font-size: 0.87rem; color: #6b7280; margin: 16px 0 0 0; }
+  body.dark-mode .rt-all { color: #9ca3af; }
+  .rt-all a { color: #0891b2; text-decoration: none; font-weight: 600; }
+  .rt-all a:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .rt-section { padding: 26px 15px 34px; }
+    .rt-grid { grid-template-columns: 1fr; }
+  }
+</style>
