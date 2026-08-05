@@ -11,6 +11,25 @@ const currentPath = Astro.url.pathname;
 // så findTool() giver undefined og blokken springes over.
 const toolMatch = currentPath.match(/^\/tools\/([a-z0-9-]+)\/?$/);
 const toolSlug = toolMatch && findTool(toolMatch[1]) ? toolMatch[1] : null;
+const toolData = toolSlug ? findTool(toolSlug) : null;
+
+// SoftwareApplication er den type Google forstår for et gratis webværktøj.
+// price: "0" er ikke pynt — uden en offers-blok med en pris afvises markeringen.
+// Vi lover ikke stjerner eller anmeldelser: opdigtede ratings er præcis den
+// slags påstand sitet er ved at komme af med.
+const toolSchema = toolData ? {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": toolData.title,
+  "url": `https://techfeedwatch.com/tools/${toolData.slug}`,
+  "description": toolData.description,
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any browser",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" }
+} : null;
 
 // Standard SEO beskrivelse hvis ingen er angivet
 const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
@@ -80,7 +99,18 @@ const siteSchema = [
     "@type": "Organization",
     "name": "Tech Feed Watch",
     "url": "https://techfeedwatch.com/",
-    "logo": "https://techfeedwatch.com/icon-512.png"
+    "logo": "https://techfeedwatch.com/icon-512.png",
+    "email": "info@techfeedwatch.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "DK" },
+    // sameAs er dét felt Google bruger til at knytte sitet til en profil andre
+    // steder. Uden det står sitet som en anonym adresse.
+    "sameAs": ["https://x.com/JacobStubbeJS"],
+    "founder": {
+      "@type": "Person",
+      "name": "Jacob S. Olsen",
+      "url": "https://techfeedwatch.com/about",
+      "sameAs": ["https://x.com/JacobStubbeJS"]
+    }
   }
 ];
 ---
@@ -204,6 +234,7 @@ const siteSchema = [
 
     {/* WebSite + Organization schema, kun på forsiden */}
     {currentPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />}
+    {toolSchema && <script type="application/ld+json" set:html={JSON.stringify(toolSchema)} />}
 
     <style is:global>
       /* --teal er brandfarven og bruges til baggrunde, kanter og accenter.
@@ -484,6 +515,8 @@ const siteSchema = [
             <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
             <div class="footer-links">
               <a href="/about" class="footer-link">About Us</a>
+              <span class="footer-sep">|</span>
+              <a href="/corrections" class="footer-link">Corrections</a>
               <span class="footer-sep">|</span>
               <a href="/library#browse-by-month" class="footer-link">Archive</a>
               <span class="footer-sep">|</span>
