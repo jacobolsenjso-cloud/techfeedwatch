@@ -350,10 +350,17 @@ Punkt 4 er ikke besluttet. Tag det ikke som givet — spørg.
 2. Ret
 3. npm run build          # skal give 0 fejl
 4. npm run preview + audit-script eller skærmbilleder
-5. git pull --rebase      # robotten pusher hver 2. time, du er næsten altid bagud
-6. git commit -F <fil>    # commit-beskeder på engelsk, forklar hvorfor
-7. git push               # Cloudflare deployer selv
+5. node stamp-updated.mjs # KUN hvis du har rettet i artikeltekst
+6. git pull --rebase      # robotten pusher hver 2. time, du er næsten altid bagud
+7. git commit -F <fil>    # commit-beskeder på engelsk, forklar hvorfor
+8. git push               # Cloudflare deployer selv
 ```
 
-Punkt 5 er ikke valgfrit. Robotten commit'er selv, så et push uden rebase bliver
+Punkt 6 er ikke valgfrit. Robotten commit'er selv, så et push uden rebase bliver
 afvist næsten hver gang.
+
+Punkt 5 sætter `updated:` i frontmatter på de artikler hvis indhold faktisk er
+ændret. Den ser bort fra `viewCount` og `viewsUpdated`, så den opfriskning
+robotten laver hver tredje dag ikke får hele arkivet til at påstå at være
+opdateret. Kør `--dry-run` først hvis du er i tvivl. Artikelsiden viser kun
+"Updated" når datoen er sat og adskiller sig fra udgivelsesdatoen.

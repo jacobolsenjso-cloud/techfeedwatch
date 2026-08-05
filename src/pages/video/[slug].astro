@@ -16,6 +16,15 @@ export async function getStaticPaths() {
 
 const { video, allVideos, slug } = Astro.props as { video: any, allVideos: any[], slug: string };
 const { title, youtubeId, date, summary, isShort } = video.frontmatter;
+// Sættes KUN når artiklens indhold faktisk er ændret — se stamp-updated.mjs.
+// Robotten rører alle filer hver tredje dag for at opfriske visningstal, og
+// hvis dét bumpede datoen, ville 367 artikler påstå at være opdaterede uden at
+// et ord var ændret. Præcis den slags falske signal sitet er ved at komme af med.
+const updated: string | null = video.frontmatter.updated || null;
+const showUpdated = updated && updated.slice(0, 10) !== String(date).slice(0, 10);
+const updatedLabel = showUpdated
+  ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
 const faqs = video.frontmatter.faqs || [];
 
 // Kilde: den oprindelige YouTube-kanal. Backfilles via backfill-channels.mjs og
@@ -165,8 +174,8 @@ const articleSchema = {
   "description": summary || title,
   "image": `https://techfeedwatch.com/og/${slug}.jpg`,
   "datePublished": new Date(date).toISOString(),
-  "dateModified": new Date(date).toISOString(),
-  "author": { "@type": "Person", "name": "Jacob Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen" },
+  "dateModified": new Date(showUpdated ? updated! : date).toISOString(),
+  "author": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] },
   "publisher": {
     "@type": "Organization",
     "name": "Tech Feed Watch",
@@ -674,9 +683,15 @@ const metaDesc = rawMeta.length > 157
           <div class="article-byline">
             <img src="/jacob-olsen.png" alt="" class="byline-avatar" width="40" height="40" loading="lazy" decoding="async" />
             <div class="byline-text">
-              <span class="byline-name">Analysis by <a href="/author/jacob-olsen">Jacob Olsen</a></span>
+              <span class="byline-name">Analysis by <a href="/author/jacob-olsen">Jacob S. Olsen</a></span>
               <span class="byline-meta">
                 <time datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+                {updatedLabel && (
+                  <>
+                    <span class="article-meta-sep">·</span>
+                    <span class="byline-updated">Updated <time datetime={updated!}>{updatedLabel}</time></span>
+                  </>
+                )}
                 <span class="article-meta-sep">·</span>
                 <span>{video.frontmatter.minutesRead || 1} min read</span>
               </span>
