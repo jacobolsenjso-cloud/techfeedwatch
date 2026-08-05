@@ -43,16 +43,25 @@ const schema = {
   "@type": "Article",
   "headline": title,
   "description": description,
+  // Google kræver et billede på Article. Guides har ikke deres eget og-billede
+  // som artiklerne har, så indtil de får det, peger vi på sitets delebillede —
+  // et rigtigt billede der findes, frem for et felt der mangler.
+  "image": "https://techfeedwatch.com/og-default-v2.png",
   "author": {
     "@type": "Person",
-    "name": "Jacob Olsen",
-    "jobTitle": "Founder & CEO of Tech Feed Watch"
+    "name": "Jacob S. Olsen",
+    "url": "https://techfeedwatch.com/author/jacob-olsen",
+    "sameAs": ["https://x.com/JacobStubbeJS"],
+    "jobTitle": "Founder of Tech Feed Watch"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Tech Feed Watch"
+    "name": "Tech Feed Watch",
+    "url": "https://techfeedwatch.com/",
+    "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
-  "datePublished": date
+  "datePublished": date,
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://techfeedwatch.com/guides/${guide.frontmatter.slug}` }
 };
 ---
 

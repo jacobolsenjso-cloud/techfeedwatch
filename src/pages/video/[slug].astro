@@ -179,15 +179,18 @@ const articleSchema = {
   "publisher": {
     "@type": "Organization",
     "name": "Tech Feed Watch",
+    "url": "https://techfeedwatch.com/",
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
   "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl },
   // Artiklen er en analyse af en video fra en tredjepart — det siger vi eksplicit.
-  "isBasedOn": {
-    "@type": "VideoObject",
-    "url": `https://www.youtube.com/watch?v=${youtubeId}`,
-    ...(sourceChannel ? { "creator": { "@type": "Organization", "name": sourceChannel } } : {})
-  }
+  //
+  // Som REN URL, ikke som en VideoObject. Da den var typet, talte Google den som
+  // en video nummer to på siden — og fordi den kun havde url og creator, manglede
+  // den name, description, thumbnailUrl og uploadDate og blev meldt ugyldig.
+  // Kilden er stadig krediteret: den rigtige VideoObject ovenfor har kanalen som
+  // creator og publisher, og den har alle felterne.
+  "isBasedOn": `https://www.youtube.com/watch?v=${youtubeId}`
 };
 
 // Shorts: kun VideoObject. Artikler: både VideoObject og Article (array = flere schema-noder)
