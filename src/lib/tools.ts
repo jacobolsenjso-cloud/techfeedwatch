@@ -233,6 +233,34 @@ export const TOOLS: Tool[] = [
     category: 'content',
   },
   {
+    slug: 'split-file',
+    icon: '✂️',
+    title: 'Split a File',
+    short: 'Split File',
+    description:
+      'Break a large file into numbered pieces small enough to email or upload — and joinable again without any tool.',
+    category: 'developer',
+    featured: true,
+  },
+  {
+    slug: 'join-files',
+    icon: '🧩',
+    title: 'Join Split Files',
+    short: 'Join Files',
+    description:
+      'Reassemble .001 and .part pieces into the original file, with the order detected and missing pieces flagged.',
+    category: 'developer',
+  },
+  {
+    slug: 'random-file-generator',
+    icon: '🎲',
+    title: 'Random File Generator',
+    short: 'Dummy File',
+    description:
+      'Generate a dummy file of an exact size, random bytes or zeros, for testing upload limits and storage.',
+    category: 'developer',
+  },
+  {
     slug: 'keyword-density',
     icon: '📊',
     title: 'Keyword Density Analyzer',

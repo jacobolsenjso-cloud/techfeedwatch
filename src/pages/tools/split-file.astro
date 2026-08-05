@@ -1,0 +1,200 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Split a File Into Smaller Parts";
+const description = "Break a large file into numbered pieces that can be joined again with any tool — or none at all. Runs in your browser; the file is never uploaded.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .fx-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .fx-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .fx-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; line-height: 1.6; }
+    body.dark-mode .fx-header p { color: #9ca3af; }
+
+    /* display:block er ikke pynt: <label> er inline som standard, og så
+       ignoreres både centrering og padding, så feltet bliver skævt. */
+    .fx-drop { display: block; border: 2px dashed var(--border-color); border-radius: 12px; padding: 34px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .fx-drop:hover, .fx-drop.fx-over { border-color: #0891b2; background: var(--hover-bg); }
+    .fx-drop strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .fx-drop span { font-size: 0.88rem; color: #6b7280; }
+    body.dark-mode .fx-drop span { color: #9ca3af; }
+    .fx-file { display: none; }
+
+    .fx-panel { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; margin-top: 18px; }
+    .fx-panel h2 { font-size: 1rem; margin: 0 0 12px 0; }
+    .fx-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .fx-label { font-size: 0.9rem; font-weight: 600; }
+    .fx-input { padding: 9px 12px; border-radius: 7px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.92rem; width: 110px; }
+    .fx-input:focus { outline: none; border-color: #0891b2; }
+    .fx-presets { display: flex; gap: 7px; flex-wrap: wrap; }
+    .fx-preset { padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.83rem; cursor: pointer; }
+    .fx-preset:hover, .fx-preset.fx-active { border-color: #0891b2; color: #0891b2; font-weight: 600; }
+
+    .fx-summary { font-size: 0.92rem; line-height: 1.6; margin: 0 0 14px 0; }
+    .fx-btn { padding: 11px 20px; border-radius: 8px; border: 1px solid #0891b2; background: #0891b2; color: #fff; font-weight: 600; font-size: 0.93rem; cursor: pointer; }
+    .fx-btn:hover { background: #0e7490; }
+    .fx-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .fx-note { font-size: 0.83rem; color: #6b7280; margin: 12px 0 0 0; line-height: 1.6; }
+    body.dark-mode .fx-note { color: #9ca3af; }
+
+    .fx-info { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .fx-info h2 { font-size: 1.2rem; margin: 26px 0 10px 0; }
+    .fx-info h2:first-child { margin-top: 0; }
+    .fx-info p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .fx-info p { color: #9ca3af; }
+    .fx-info code { background: var(--hover-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
+    .fx-info a { color: #0e7490; font-weight: 600; }
+    body.dark-mode .fx-info a { color: #38bdf8; }
+
+    @media (max-width: 640px) {
+      .fx-wrapper { padding: 20px 15px; }
+      .fx-header h1 { font-size: 1.55rem; }
+      .fx-input { width: 90px; }
+    }
+  </style>
+
+  <div class="fx-wrapper">
+    <div class="fx-header">
+      <h1>✂️ Split a file</h1>
+      <p>Break a large file into numbered pieces small enough to email, upload, or fit on a drive. The pieces are plain chunks, so whoever receives them can put the file back together with or without this site.</p>
+    </div>
+
+    <label class="fx-drop" id="fxDrop" for="fxFile">
+      <strong id="fxDropTitle">Choose a file, or drop one here</strong>
+      <span id="fxDropSub">Nothing is uploaded — the file is read directly by your browser</span>
+      <input type="file" id="fxFile" class="fx-file" />
+    </label>
+
+    <div class="fx-panel" id="fxPanel" hidden>
+      <h2>Piece size</h2>
+      <div class="fx-row">
+        <div class="fx-presets" id="fxPresets">
+          <button type="button" class="fx-preset" data-mb="5">5 MB</button>
+          <button type="button" class="fx-preset" data-mb="10">10 MB</button>
+          <button type="button" class="fx-preset fx-active" data-mb="25">25 MB</button>
+          <button type="button" class="fx-preset" data-mb="100">100 MB</button>
+          <button type="button" class="fx-preset" data-mb="700">700 MB</button>
+        </div>
+      </div>
+      <div class="fx-row">
+        <span class="fx-label">Custom</span>
+        <input type="number" id="fxSize" class="fx-input" min="1" value="25" />
+        <select id="fxUnit" class="fx-input">
+          <option value="KB">KB</option>
+          <option value="MB" selected>MB</option>
+          <option value="GB">GB</option>
+        </select>
+      </div>
+
+      <p class="fx-summary" id="fxSummary"></p>
+      <button type="button" id="fxGo" class="fx-btn">Split and download the pieces</button>
+      <p class="fx-note" id="fxProgress"></p>
+    </div>
+
+    <div class="fx-info">
+      <h2>How to put the file back together</h2>
+      <p>The pieces are numbered <code>yourfile.zip.001</code>, <code>.002</code> and so on, and each one is a plain slice of the original with nothing added. That matters, because it means the person receiving them is not dependent on this site — or on any site.</p>
+      <p>On Windows, from the folder holding the pieces: <code>copy /b yourfile.zip.* yourfile.zip</code>. On macOS or Linux: <code>cat yourfile.zip.* &gt; yourfile.zip</code>. Both work offline. If they would rather not touch a terminal, the <a href="/tools/join-files">join files tool</a> does the same thing in a browser.</p>
+
+      <h2>Choosing a piece size</h2>
+      <p>Pick the size from whatever is doing the limiting. Most email providers stop at 25 MB per message including the encoding overhead, which is why 25 MB is the default here. Chat apps and web upload forms are usually more generous but rarely say so until the upload fails. If the limit is a physical disc or an old USB stick formatted as FAT32, the ceiling is 4 GB per file regardless of how much space is free.</p>
+      <p>Fewer, larger pieces are easier to keep track of. More, smaller pieces survive a flaky connection better, because a failed transfer only costs you one piece.</p>
+
+      <h2>Your file stays on your machine</h2>
+      <p>The browser reads the file directly from disk and slices it locally. Nothing is sent anywhere, there is no server to have a copy, and closing the tab leaves no trace. That is the practical reason to split a file in a browser rather than through an online service: the files large enough to need splitting are usually the ones you would least like to hand to a stranger.</p>
+
+      <h2>Very large files</h2>
+      <p>Slicing does not load the whole file into memory, so multi-gigabyte files work. What can strain a browser is the number of downloads rather than their size — several hundred pieces will make most browsers ask whether you really want that many files. If you are heading toward triple digits, use a larger piece size.</p>
+    </div>
+  </div>
+
+  <script>
+    import { formatBytes, toBytes, saveBlob, partName } from '../../lib/file-utils';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('fxDrop')!;
+      const fileInput = document.getElementById('fxFile') as HTMLInputElement;
+      const panel = document.getElementById('fxPanel') as HTMLElement;
+      const sizeInput = document.getElementById('fxSize') as HTMLInputElement;
+      const unitInput = document.getElementById('fxUnit') as HTMLSelectElement;
+      const summary = document.getElementById('fxSummary')!;
+      const progress = document.getElementById('fxProgress')!;
+      const goBtn = document.getElementById('fxGo') as HTMLButtonElement;
+
+      let file: File | null = null;
+
+      const chunkBytes = () =>
+        toBytes(sizeInput.value, unitInput.value as 'KB' | 'MB' | 'GB');
+
+      const update = () => {
+        if (!file) return;
+        const size = chunkBytes();
+        if (size <= 0) {
+          summary.textContent = 'Enter a piece size larger than zero.';
+          goBtn.disabled = true;
+          return;
+        }
+        const parts = Math.ceil(file.size / size);
+        const lastPart = file.size - size * (parts - 1);
+        goBtn.disabled = false;
+        summary.innerHTML =
+          `<strong>${file.name}</strong> — ${formatBytes(file.size)} becomes ` +
+          `<strong>${parts} piece${parts === 1 ? '' : 's'}</strong>` +
+          (parts > 1 ? `, the last one ${formatBytes(lastPart)}.` : '.') +
+          (parts > 100 ? ' <br>That is a lot of downloads — consider a larger piece size.' : '');
+      };
+
+      const setFile = (f: File | null) => {
+        if (!f) return;
+        file = f;
+        panel.hidden = false;
+        progress.textContent = '';
+        document.getElementById('fxDropTitle')!.textContent = f.name;
+        document.getElementById('fxDropSub')!.textContent = `${formatBytes(f.size)} — choose another to replace it`;
+        update();
+      };
+
+      fileInput.addEventListener('change', () => setFile(fileInput.files?.[0] || null));
+      sizeInput.addEventListener('input', update);
+      unitInput.addEventListener('change', update);
+
+      // Forvalgene skriver bare i feltet, så der kun er ét sted sandheden ligger
+      document.getElementById('fxPresets')!.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('.fx-preset') as HTMLElement | null;
+        if (!btn) return;
+        document.querySelectorAll('.fx-preset').forEach((b) => b.classList.remove('fx-active'));
+        btn.classList.add('fx-active');
+        sizeInput.value = btn.dataset.mb!;
+        unitInput.value = 'MB';
+        update();
+      });
+
+      ['dragenter', 'dragover'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('fx-over'); }));
+      ['dragleave', 'drop'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('fx-over'); }));
+      drop.addEventListener('drop', (e) => setFile((e as DragEvent).dataTransfer?.files?.[0] || null));
+
+      goBtn.addEventListener('click', async () => {
+        if (!file) return;
+        const size = chunkBytes();
+        const parts = Math.ceil(file.size / size);
+        goBtn.disabled = true;
+
+        for (let i = 0; i < parts; i++) {
+          // slice() læser ikke filen ind i hukommelsen — den peger bare på et
+          // udsnit. Derfor kan filer på flere gigabyte klares uden problemer.
+          const blob = file.slice(i * size, Math.min((i + 1) * size, file.size));
+          saveBlob(blob, partName(file.name, i));
+          progress.textContent = `Saved ${i + 1} of ${parts}…`;
+          // Browsere afviser mange downloads i træk uden en pause imellem.
+          await new Promise((r) => setTimeout(r, 350));
+        }
+
+        progress.textContent = `Done — ${parts} piece${parts === 1 ? '' : 's'} saved. Put them back together with the join tool, or with copy /b (Windows) or cat (Mac and Linux).`;
+        goBtn.disabled = false;
+      });
+    });
+  </script>
+</MainLayout>

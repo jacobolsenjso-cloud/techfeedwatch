@@ -1,0 +1,206 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Join Split Files Back Together";
+const description = "Reassemble .001, .002 and .part files into the original file. Order is detected automatically and gaps are flagged. Runs in your browser, nothing uploaded.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .fj-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .fj-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .fj-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; line-height: 1.6; }
+    body.dark-mode .fj-header p { color: #9ca3af; }
+
+    /* display:block: <label> er inline som standard, og så ignoreres både
+       centrering og padding, så feltet bliver skævt. */
+    .fj-drop { display: block; border: 2px dashed var(--border-color); border-radius: 12px; padding: 34px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .fj-drop:hover, .fj-drop.fj-over { border-color: #0891b2; background: var(--hover-bg); }
+    .fj-drop strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+    .fj-drop span { font-size: 0.88rem; color: #6b7280; }
+    body.dark-mode .fj-drop span { color: #9ca3af; }
+    .fj-file { display: none; }
+
+    .fj-panel { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; margin-top: 18px; }
+    .fj-panel h2 { font-size: 1rem; margin: 0 0 12px 0; }
+    .fj-list { list-style: none; margin: 0 0 14px 0; padding: 0; }
+    .fj-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+    .fj-item:last-child { border-bottom: none; }
+    .fj-num { width: 26px; height: 26px; border-radius: 50%; background: var(--hover-bg); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .fj-name { flex: 1; word-break: break-all; font-family: 'Courier New', Consolas, monospace; font-size: 0.86rem; }
+    .fj-size { color: #6b7280; font-size: 0.82rem; white-space: nowrap; }
+    body.dark-mode .fj-size { color: #9ca3af; }
+    .fj-move { border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); border-radius: 6px; width: 26px; height: 26px; cursor: pointer; line-height: 1; }
+    .fj-move:hover { border-color: #0891b2; color: #0891b2; }
+
+    .fj-warn { background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.35); border-radius: 8px; padding: 11px 14px; font-size: 0.88rem; line-height: 1.55; margin-bottom: 14px; }
+    .fj-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .fj-label { font-size: 0.9rem; font-weight: 600; }
+    .fj-input { padding: 9px 12px; border-radius: 7px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.92rem; flex: 1; min-width: 200px; }
+    .fj-input:focus { outline: none; border-color: #0891b2; }
+    .fj-btn { padding: 11px 20px; border-radius: 8px; border: 1px solid #0891b2; background: #0891b2; color: #fff; font-weight: 600; font-size: 0.93rem; cursor: pointer; }
+    .fj-btn:hover { background: #0e7490; }
+    .fj-note { font-size: 0.83rem; color: #6b7280; margin: 12px 0 0 0; line-height: 1.6; }
+    body.dark-mode .fj-note { color: #9ca3af; }
+
+    .fj-info { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .fj-info h2 { font-size: 1.2rem; margin: 26px 0 10px 0; }
+    .fj-info h2:first-child { margin-top: 0; }
+    .fj-info p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .fj-info p { color: #9ca3af; }
+    .fj-info code { background: var(--hover-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
+    .fj-info a { color: #0e7490; font-weight: 600; }
+    body.dark-mode .fj-info a { color: #38bdf8; }
+
+    @media (max-width: 640px) {
+      .fj-wrapper { padding: 20px 15px; }
+      .fj-header h1 { font-size: 1.55rem; }
+    }
+  </style>
+
+  <div class="fj-wrapper">
+    <div class="fj-header">
+      <h1>🧩 Join split files</h1>
+      <p>Select all the pieces of a split file and get the original back. The order is worked out from the filenames, and you can correct it if the guess is wrong.</p>
+    </div>
+
+    <label class="fj-drop" id="fjDrop" for="fjFiles">
+      <strong id="fjDropTitle">Choose the pieces, or drop them here</strong>
+      <span id="fjDropSub">Select them all at once — Ctrl+A in the file picker</span>
+      <input type="file" id="fjFiles" class="fj-file" multiple />
+    </label>
+
+    <div class="fj-panel" id="fjPanel" hidden>
+      <h2>Order of the pieces</h2>
+      <div id="fjWarn"></div>
+      <ul class="fj-list" id="fjList"></ul>
+
+      <div class="fj-row">
+        <span class="fj-label">Save as</span>
+        <input type="text" id="fjName" class="fj-input" />
+      </div>
+
+      <button type="button" id="fjGo" class="fj-btn">Join and download</button>
+      <p class="fj-note" id="fjStatus"></p>
+    </div>
+
+    <div class="fj-info">
+      <h2>How the order is decided</h2>
+      <p>Pieces made by this site, by 7-Zip, or by the Unix <code>split</code> command all end in a number: <code>.001</code>, <code>.002</code>, <code>.003</code>. Those are read as numbers rather than as text, which matters once you pass ten pieces — sorted as text, <code>.010</code> would come before <code>.002</code> and the rebuilt file would be scrambled in a way that is hard to spot.</p>
+      <p>Names ending in <code>.part1</code>, <code>-1</code> or <code>_01</code> are handled the same way. If a set uses some other convention, the arrows beside each row let you fix the order by hand.</p>
+
+      <h2>Missing pieces are flagged, not guessed</h2>
+      <p>If the numbering jumps from 3 to 5, you are told before anything is written. A joined file with a piece missing is not obviously broken — it opens, it has roughly the right size, and it fails later in a way that looks like corruption. Better to know now.</p>
+      <p>The tool will still let you continue if you want to, because there are legitimate reasons to join an incomplete set. It just will not do it quietly.</p>
+
+      <h2>Nothing is uploaded</h2>
+      <p>The pieces are read from your disk and stitched together by the browser. No server sees them, and there is nothing to delete afterwards. Splitting and joining a file usually means it was too large or too private to hand over in one go, so sending it to someone else's machine to be reassembled would rather defeat the point.</p>
+
+      <h2>You do not actually need this page</h2>
+      <p>Worth saying plainly: joining pieces is just putting them end to end, and your operating system can already do it. On Windows: <code>copy /b file.zip.* file.zip</code>. On macOS or Linux: <code>cat file.zip.* &gt; file.zip</code>. This page is here for when a terminal is not an option, or when you would rather see the order before committing to it. To go the other way, use the <a href="/tools/split-file">split file tool</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    import { formatBytes, saveBlob } from '../../lib/file-utils';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const drop = document.getElementById('fjDrop')!;
+      const filesInput = document.getElementById('fjFiles') as HTMLInputElement;
+      const panel = document.getElementById('fjPanel') as HTMLElement;
+      const list = document.getElementById('fjList')!;
+      const warn = document.getElementById('fjWarn')!;
+      const nameInput = document.getElementById('fjName') as HTMLInputElement;
+      const status = document.getElementById('fjStatus')!;
+
+      let parts: File[] = [];
+
+      // Det sidste tal i navnet er delnummeret. Læses som TAL, ikke som tekst:
+      // sorteret som tekst ville .010 komme før .002, og den samlede fil ville
+      // være forbyttet på en måde man først opdager langt senere.
+      const numberOf = (name: string): number | null => {
+        const m = name.match(/(\d+)(?!.*\d)/);
+        return m ? parseInt(m[1], 10) : null;
+      };
+
+      const baseName = (name: string) =>
+        name.replace(/[._-]?(?:part)?\d+$/i, '') || name;
+
+      const render = () => {
+        list.innerHTML = '';
+        parts.forEach((f, i) => {
+          const li = document.createElement('li');
+          li.className = 'fj-item';
+          li.innerHTML =
+            `<span class="fj-num">${i + 1}</span>` +
+            `<span class="fj-name"></span>` +
+            `<span class="fj-size">${formatBytes(f.size)}</span>` +
+            `<button type="button" class="fj-move" data-up="${i}" title="Move up">↑</button>` +
+            `<button type="button" class="fj-move" data-down="${i}" title="Move down">↓</button>`;
+          li.querySelector('.fj-name')!.textContent = f.name;
+          list.appendChild(li);
+        });
+
+        // Advarsel om huller i nummereringen
+        const numbers = parts.map((f) => numberOf(f.name)).filter((n): n is number => n !== null);
+        const gaps: number[] = [];
+        if (numbers.length === parts.length && numbers.length > 1) {
+          const sorted = [...numbers].sort((a, b) => a - b);
+          for (let i = sorted[0]; i <= sorted[sorted.length - 1]; i++) {
+            if (!sorted.includes(i)) gaps.push(i);
+          }
+        }
+        warn.innerHTML = gaps.length
+          ? `<div class="fj-warn"><strong>Piece ${gaps.join(', ')} appears to be missing.</strong> ` +
+            `You can still join what you have, but the result will be incomplete — and an incomplete file ` +
+            `usually opens and then fails later, which is easy to mistake for corruption.</div>`
+          : '';
+
+        const total = parts.reduce((sum, f) => sum + f.size, 0);
+        status.textContent = `${parts.length} pieces · ${formatBytes(total)} in total`;
+      };
+
+      const setFiles = (fileList: FileList | null | undefined) => {
+        if (!fileList || !fileList.length) return;
+        parts = Array.from(fileList).sort((a, b) => {
+          const na = numberOf(a.name), nb = numberOf(b.name);
+          if (na !== null && nb !== null) return na - nb;
+          return a.name.localeCompare(b.name, undefined, { numeric: true });
+        });
+        panel.hidden = false;
+        nameInput.value = baseName(parts[0].name);
+        document.getElementById('fjDropTitle')!.textContent = `${parts.length} pieces selected`;
+        document.getElementById('fjDropSub')!.textContent = 'Choose again to replace the selection';
+        render();
+      };
+
+      filesInput.addEventListener('change', () => setFiles(filesInput.files));
+
+      list.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('.fj-move') as HTMLElement | null;
+        if (!btn) return;
+        const up = btn.dataset.up !== undefined;
+        const i = parseInt((up ? btn.dataset.up : btn.dataset.down)!, 10);
+        const j = up ? i - 1 : i + 1;
+        if (j < 0 || j >= parts.length) return;
+        [parts[i], parts[j]] = [parts[j], parts[i]];
+        render();
+      });
+
+      ['dragenter', 'dragover'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('fj-over'); }));
+      ['dragleave', 'drop'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('fj-over'); }));
+      drop.addEventListener('drop', (e) => setFiles((e as DragEvent).dataTransfer?.files));
+
+      document.getElementById('fjGo')!.addEventListener('click', () => {
+        if (!parts.length) return;
+        // En Blob af flere Blobs kopierer ikke indholdet — browseren kæder dem
+        // sammen. Derfor kan man samle filer større end den ledige hukommelse.
+        const joined = new Blob(parts);
+        saveBlob(joined, nameInput.value.trim() || 'joined-file');
+        status.textContent = `Joined ${parts.length} pieces into ${formatBytes(joined.size)}.`;
+      });
+    });
+  </script>
+</MainLayout>

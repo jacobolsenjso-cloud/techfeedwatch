@@ -39,6 +39,18 @@ const description = "Encode and decode text as Base64 or URL-safe strings, with 
     .ed-copy-btn:hover { border-color: #0891b2; }
 
     .ed-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .ed-file-section { margin-top: 34px; }
+    .ed-file-section h2 { font-size: 1.15rem; margin: 0 0 8px 0; }
+    .ed-file-intro { font-size: 0.92rem; line-height: 1.6; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .ed-file-intro { color: #9ca3af; }
+    .ed-file-drop { display: block; border: 2px dashed var(--border-color); border-radius: 12px; padding: 24px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .ed-file-drop:hover, .ed-file-drop.ed-over { border-color: #0891b2; background: var(--hover-bg); }
+    .ed-file-drop strong { display: block; font-size: 0.98rem; margin-bottom: 4px; }
+    .ed-file-drop span { font-size: 0.85rem; color: #6b7280; }
+    body.dark-mode .ed-file-drop span { color: #9ca3af; }
+    .ed-file-input { display: none; }
+    .ed-file-opt { display: flex; align-items: flex-start; gap: 8px; font-size: 0.87rem; line-height: 1.5; margin-top: 12px; cursor: pointer; }
+    .ed-file-opt code { background: var(--hover-bg); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
     .ed-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
     .ed-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
     body.dark-mode .ed-info-section p { color: #9ca3af; }
@@ -79,10 +91,23 @@ const description = "Encode and decode text as Base64 or URL-safe strings, with 
       <button type="button" id="edCopyBtn" class="ed-copy-btn">Copy</button>
     </div>
 
+    <div class="ed-file-section">
+      <h2>Encode a file</h2>
+      <p class="ed-file-intro">Pick any file — an image, a PDF, a certificate — and get its Base64 straight into the box above. Useful for embedding a small asset in CSS or JSON, or for pasting a key into a config file. The file is read by your browser; nothing is uploaded.</p>
+      <label class="ed-file-drop" for="edFile">
+        <strong id="edFileTitle">Choose a file</strong>
+        <span id="edFileSub">Large files make very long strings — see the note below</span>
+        <input type="file" id="edFile" class="ed-file-input" />
+      </label>
+      <label class="ed-file-opt"><input type="checkbox" id="edDataUrl" /> Wrap it as a data URL (<code>data:image/png;base64,…</code>) so it can be pasted straight into CSS or an <code>&lt;img&gt;</code> tag</label>
+    </div>
+
     <div class="ed-info-section">
       <h2>What is Base64 and URL encoding?</h2>
       <p><strong>Base64</strong> converts arbitrary text or binary data into a string of printable ASCII characters. It's commonly used to embed data (like images or tokens) inside JSON, HTML, or email, where raw binary or special characters wouldn't survive transport unchanged.</p>
       <p><strong>URL encoding</strong> (percent-encoding) replaces characters that aren't safe in a URL - such as spaces, `&`, or `?` - with a `%XX` escape sequence, so the string can be safely used as a query parameter or part of a URL path.</p>
+      <p><strong>Base64 makes data bigger, not smaller.</strong> Three bytes become four characters, so an encoded file is about a third larger than the original. That is the trade for making binary safe to paste into text. It is worth it for a 2 KB icon in a stylesheet and a bad idea for a 2 MB photo — past a few hundred kilobytes you are usually better off linking to the file than embedding it.</p>
+      <p>Base64 is not encryption. Anyone can decode it in a second, including on this page. It hides nothing.</p>
     </div>
   </div>
 
@@ -176,6 +201,52 @@ const description = "Encode and decode text as Base64 or URL-safe strings, with 
           setTimeout(() => { copyBtn.textContent = original; }, 2000);
         } catch (e) {}
       });
+
+      // --- Filer til Base64 ---
+      // btoa() kan ikke tage en Uint8Array, og String.fromCharCode(...array)
+      // sprænger kaldstakken på filer over ca. 100 KB. Derfor bygges strengen
+      // i småbidder. Det er den fejl der får den slags værktøjer til at virke
+      // på et ikon og fejle tavst på en PDF.
+      const fileInput = document.getElementById('edFile') as HTMLInputElement;
+      const fileDrop = document.querySelector('.ed-file-drop') as HTMLElement;
+      const dataUrlToggle = document.getElementById('edDataUrl') as HTMLInputElement;
+
+      const toBase64 = (bytes: Uint8Array): string => {
+        let binary = '';
+        const STEP = 8192;
+        for (let i = 0; i < bytes.length; i += STEP) {
+          binary += String.fromCharCode(...bytes.subarray(i, i + STEP));
+        }
+        return btoa(binary);
+      };
+
+      const encodeFile = async (file: File | null | undefined) => {
+        if (!file) return;
+        try {
+          const bytes = new Uint8Array(await file.arrayBuffer());
+          const base64 = toBase64(bytes);
+          const mime = file.type || 'application/octet-stream';
+          output.value = dataUrlToggle.checked ? `data:${mime};base64,${base64}` : base64;
+          outputRow.style.display = 'flex';
+          status.style.display = 'none';
+          document.getElementById('edFileTitle')!.textContent = file.name;
+          const kb = Math.round(file.size / 1024);
+          const outKb = Math.round(output.value.length / 1024);
+          document.getElementById('edFileSub')!.textContent =
+            `${kb} KB in, ${outKb} KB of Base64 out — choose another file to replace it`;
+        } catch (err) {
+          status.textContent = 'That file could not be read. Very large files may run the browser out of memory.';
+          status.style.display = 'block';
+        }
+      };
+
+      fileInput.addEventListener('change', () => encodeFile(fileInput.files?.[0]));
+      dataUrlToggle.addEventListener('change', () => encodeFile(fileInput.files?.[0]));
+      ['dragenter', 'dragover'].forEach((ev) =>
+        fileDrop.addEventListener(ev, (e) => { e.preventDefault(); fileDrop.classList.add('ed-over'); }));
+      ['dragleave', 'drop'].forEach((ev) =>
+        fileDrop.addEventListener(ev, (e) => { e.preventDefault(); fileDrop.classList.remove('ed-over'); }));
+      fileDrop.addEventListener('drop', (e) => encodeFile((e as DragEvent).dataTransfer?.files?.[0]));
     });
   </script>
 </MainLayout>
