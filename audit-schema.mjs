@@ -113,6 +113,18 @@ for (const file of pages) {
           issue: `mangler ${missing.join(', ')}${depth > 0 ? ` (indlejret i ${nodePath})` : ''}`,
         });
       }
+
+      // Datoer skal være fuld ISO-tid med tidszone. En bar "2026-07-23" bliver
+      // accepteret af Google, men meldt som ugyldig datetime — og det stod på
+      // guiderne i ugevis uden at noget her opdagede det, fordi scriptet kun
+      // ledte efter felter der MANGLEDE, ikke efter felter med forkert form.
+      for (const f of ['datePublished', 'dateModified', 'uploadDate', 'viewsUpdated']) {
+        const v = node[f];
+        if (typeof v !== 'string' || !v) continue;
+        if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(v)) {
+          problems.push({ url, type, issue: `${f} er ikke fuld ISO-tid med tidszone ("${v}")` });
+        }
+      }
     }
   }
 }

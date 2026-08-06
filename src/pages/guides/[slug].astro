@@ -69,8 +69,11 @@ const schema = {
     "url": "https://techfeedwatch.com/",
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
-  "datePublished": date,
-  "dateModified": showUpdated ? updated : date,
+  // Fuld ISO-tid med tidszone, ikke bare "2026-07-23". Google accepterer den
+  // bare dato, men melder den som ugyldig datetime — artikelsiderne har altid
+  // gjort det rigtigt, guiderne gjorde ikke.
+  "datePublished": new Date(date).toISOString(),
+  "dateModified": new Date(showUpdated ? updated! : date).toISOString(),
   "mainEntityOfPage": { "@type": "WebPage", "@id": `https://techfeedwatch.com/guides/${guide.frontmatter.slug}` }
 };
 ---
