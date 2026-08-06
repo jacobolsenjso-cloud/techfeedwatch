@@ -67,6 +67,8 @@ Put the direct answer near the top, then support it with depth. Use headings a r
 
 None of this is new. All of it still works.
 
+Two checks before you publish. Run the text through the [readability checker](/tools/readability-checker) — not to hit a target score, but because a page that scores badly is usually one where the sentences got away from the writer, and that is worth knowing before a reader finds out. And run the [keyword density tool](/tools/keyword-density) once, for the opposite reason to the one it was invented for: not to reach a percentage, but to confirm you have not repeated a phrase so often that it reads as written for a machine.
+
 ## Part two: the technical foundation
 
 This is the section the developer-facing videos in our archive keep returning to, and it is where most sites have the largest gap between what they think is true and what is actually deployed.
@@ -76,6 +78,10 @@ This is the section the developer-facing videos in our archive keep returning to
 A page that loads slowly loses before content matters. Core Web Vitals measure three things: how quickly the main content appears, how quickly the page responds to a tap, and how much the layout jumps around while loading.
 
 The third one is the most often ignored and the most infuriating to users — the button that moves as an advert loads above it. Reserving space for images and embeds fixes most of it, and it is usually an afternoon of work rather than a project.
+
+Images are the single most common cause of a slow page, and almost always the easiest to fix: most sites are serving photographs several times larger than the space they appear in. The [image compressor](/tools/image-compressor) will show you how much a file actually needs to weigh.
+
+While you are in the templates, check colour contrast with the [contrast checker](/tools/contrast-checker). Poor contrast is an accessibility failure first, and a measurable engagement problem second — people leave pages they find hard to read, and that behaviour feeds back into rankings.
 
 Test on a mid-range phone on mobile data, not on your laptop on office wifi. That is the experience most of your visitors actually have.
 
@@ -91,7 +97,7 @@ Three practical notes from doing this on this site:
 
 **Test more than one page type.** Google's Rich Results Test checks one URL at a time, so a fault present on every article page looks identical to a fault on one.
 
-Generate it with the [schema markup generator](/tools/schema-generator), and use the [video schema generator](/tools/video-schema) if you publish video, since that has its own required fields.
+Generate it with the [schema markup generator](/tools/schema-generator), and use the [video schema generator](/tools/video-schema) if you publish video, since that has its own required fields. If a block is rejected and you cannot see why, run it through the [JSON formatter](/tools/json-formatter) first — a trailing comma or an unescaped quote breaks the whole block, and the error messages are not helpful about which.
 
 ### The unglamorous rest
 
