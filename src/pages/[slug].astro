@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { durationToSeconds, formatSpan } from '../lib/time-saved.mjs';
 
 export async function getStaticPaths() {
   const pages = Object.values(import.meta.glob('../content/pages/*.md', { eager: true }));
@@ -12,6 +13,26 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = page;
 const { title, description } = page.frontmatter;
+
+// Samlet video-tid mod samlet læsetid. Regnes ved build, så tallet vokser af
+// sig selv når robotten udgiver — ingen har et tal at huske at rette.
+// Kun på /start-here og /about; andre sider har ikke brug for det.
+const showTally = ['start-here', 'about'].includes(page.file.split('/').pop().replace('.md', ''));
+let tally: { video: string; read: string; articles: number } | null = null;
+if (showTally) {
+  const all = Object.values(import.meta.glob('../content/videos/*.md', { eager: true })) as any[];
+  let videoMin = 0, readMin = 0, counted = 0;
+  for (const v of all) {
+    if (v.frontmatter.isShort) continue;
+    const secs = durationToSeconds(v.frontmatter.duration);
+    const read = Number(v.frontmatter.minutesRead);
+    if (!secs || !Number.isFinite(read) || read <= 0) continue;
+    videoMin += secs / 60;
+    readMin += read;
+    counted++;
+  }
+  tally = { video: formatSpan(videoMin)!, read: formatSpan(readMin)!, articles: counted };
+}
 ---
 
 <MainLayout title={title} description={description}>
@@ -36,13 +57,48 @@ const { title, description } = page.frontmatter;
     .text-container a { color: #0891b2; text-decoration: none; }
     .text-container a:hover { text-decoration: underline; }
 
+    /* Tids-tallet. Formuleringen siger hvad tallene ER — ikke at nogen har set
+       190 timer video. Det har ingen; en maskine har læst dem. */
+    .time-tally { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid #0891b2; border-radius: 12px; padding: 18px 22px; margin: 8px 0 30px 0; }
+    .time-tally-figures { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 10px; }
+    .time-tally-num { font-size: 1.9rem; font-weight: 800; line-height: 1.1; color: #0891b2; }
+    .time-tally-label { font-size: 0.82rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
+    body.dark-mode .time-tally-label { color: #9ca3af; }
+    .time-tally p { font-size: 0.92rem !important; line-height: 1.6; margin: 0 !important; }
+
     @media (max-width: 768px) { 
       .text-container { padding: 25px 15px; }
       .text-container h1 { font-size: 1.8rem; }
+      .time-tally-figures { gap: 18px; }
+      .time-tally-num { font-size: 1.55rem; }
     }
   </style>
 
   <article class="text-container">
+    {tally && (
+      <div class="time-tally">
+        <div class="time-tally-figures">
+          <div>
+            <div class="time-tally-num">{tally.video}</div>
+            <div class="time-tally-label">of video</div>
+          </div>
+          <div>
+            <div class="time-tally-num">{tally.read}</div>
+            <div class="time-tally-label">to read it all</div>
+          </div>
+          <div>
+            <div class="time-tally-num">{tally.articles.toLocaleString('en-US')}</div>
+            <div class="time-tally-label">articles</div>
+          </div>
+        </div>
+        <p>
+          That is the whole archive: the videos behind these articles run {tally.video},
+          and reading every article takes {tally.read}. Nobody watched all of it — a machine
+          drafted the summaries. The point is that you can decide what deserves your time
+          before you spend it.
+        </p>
+      </div>
+    )}
     <Content />
   </article>
 

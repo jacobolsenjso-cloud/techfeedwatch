@@ -2,6 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
+import { compareTimes } from '../../lib/time-saved.mjs';
 
 export async function getStaticPaths() {
   const videos = Object.values(import.meta.glob('../../content/videos/*.md', { eager: true }));
@@ -25,6 +26,10 @@ const showUpdated = updated && updated.slice(0, 10) !== String(date).slice(0, 10
 const updatedLabel = showUpdated
   ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : null;
+
+// Videoens længde mod artiklens læsetid — sitets løfte som et tal, dér hvor
+// læseren skal beslutte sig. Giver null når der intet ærligt er at sige.
+const timeCompare = compareTimes(video.frontmatter.duration, video.frontmatter.minutesRead);
 const faqs = video.frontmatter.faqs || [];
 
 // Kilde: den oprindelige YouTube-kanal. Backfilles via backfill-channels.mjs og
@@ -238,6 +243,12 @@ const metaDesc = rawMeta.length > 157
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
+
+    /* Videoens længde mod læsetiden. Står lige under afspilleren, fordi det er
+       dér beslutningen tages — ikke i en boks nederst ingen når ned til. */
+    .time-compare { font-size: 0.92rem; line-height: 1.55; color: #4b5563; background: var(--hover-bg); border-left: 3px solid #0891b2; border-radius: 6px; padding: 10px 14px; margin: 0 0 16px 0; }
+    body.dark-mode .time-compare { color: #cbd5e1; }
+    .time-compare strong { color: var(--text-color); }
     .action-bar::-webkit-scrollbar { display: none; }
     .action-pill, .pill-group { display: inline-flex; align-items: center; background: var(--hover-bg); border-radius: 20px; height: 36px; border: 1px solid var(--border-color); color: var(--text-color); font-size: 0.9rem; font-weight: 600; }
     .action-pill { padding: 0 16px; cursor: pointer; transition: background 0.2s; gap: 6px; white-space: nowrap; }
@@ -797,6 +808,12 @@ const metaDesc = rawMeta.length > 157
         </div>
 
         <div class="cinema-reading-block">
+        {timeCompare && (
+          <p class="time-compare">
+            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
+            {' '}Spend {timeCompare.readMinutes} min here to decide whether the other {timeCompare.saved} are worth it.
+          </p>
+        )}
         <div class="action-bar">
           <div class="pill-group">
             <button id="likeBtn" aria-label="Mark as helpful" title="Helpful">
