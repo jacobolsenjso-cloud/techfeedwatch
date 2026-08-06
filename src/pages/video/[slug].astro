@@ -1363,7 +1363,14 @@ const metaDesc = rawMeta.length > 157
         }
 
         const onPlayerStateChange = (event) => {
-          if (event.data === YT.PlayerState.PLAYING && window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
+          if (event.data !== YT.PlayerState.PLAYING) return;
+
+          // Oplæsningen stoppes uanset skærmbredde. To stemmer på én gang er
+          // værre end ingen af dem, og det sker på desktop lige så vel som på
+          // mobil — kun sticky-videoen er begrænset til mobil.
+          if (typeof window.__stopListening === 'function') window.__stopListening();
+
+          if (window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
             flipCinema(true);
             tryInitCinemaBrowser();
           }
@@ -1525,6 +1532,11 @@ const metaDesc = rawMeta.length > 157
         // Så skal knappen ikke stå og påstå at den spiller.
         document.addEventListener('visibilitychange', () => { if (document.hidden && state !== 'idle') stopAll(); });
         window.addEventListener('pagehide', stopAll);
+
+        // Videoafspilleren skal kunne stoppe oplæsningen. Den bor i et andet
+        // stykke kode længere oppe, så den får et håndtag her frem for at vi
+        // flytter rundt på rækkefølgen.
+        window.__stopListening = () => { if (state !== 'idle') stopAll(); };
       }
 
       const shortsWrapper = document.getElementById('shortsWrapper');
