@@ -1,54 +1,68 @@
 ---
 title: "About Tech Feed Watch"
-description: "Who runs Tech Feed Watch, how the articles are produced, and what the site does and does not claim. Written by Jacob S. Olsen, Denmark."
+description: "Why this site exists, who runs it, and exactly how the articles are made. Written by Jacob S. Olsen, Denmark."
 ---
 
 # About Tech Feed Watch
 
-Tech Feed Watch is a curated tech media project built around a simple idea: most people don't have time to watch every important video about AI, technology, fintech, and crypto — but they still want to understand what matters.
+Writing about AI and what it can do is a long story. I could fill a hundred articles with it and still not be finished. But let me try to explain what this site is about, and why I think it matters — because I would like you to come away understanding it a little better than when you arrived.
 
-I started this site because I noticed a gap. The tech world moves fast, and the best insights are often buried inside long videos. Watching all of them isn't realistic. So I built a place that does the watching for you and turns the most relevant videos into clear, readable analysis you can absorb in minutes.
+## Don't be afraid of it. Learn it.
 
-## Who Runs This Site
+A lot of people are frightened of AI. My view is that fear is the wrong response — not because there is nothing to be careful about, but because being afraid of something is a poor substitute for understanding it.
+
+There is a new way of using the internet arriving, and it opens a genuinely large set of possibilities. The people who get the most out of it will be the ones who took the time to find out what it actually does.
+
+That cuts both ways, and this is the part I care about most. You need to know what AI can do *for* you, and you need to know where the traps are — because there are a great many people around the world who will happily abuse someone's trust with these tools. Scams are exactly what most people are afraid of, and being afraid does not help. Knowing what to look for does.
+
+So ask the boring questions. What is AI? What can it actually do? What are the openings? What should I be watching for? The more you know, the better the choices you get to make. That is the whole argument.
+
+Learn it for your own sake. It will pay you back.
+
+## Why this site exists
+
+Here is what I noticed, and it is the reason Tech Feed Watch is built the way it is.
+
+Most people will not sit through a whole video about a subject. They would rather read something short first, and then decide whether the video is worth their time.
+
+And that decision matters, because — believe me — a great many videos out there are padding, or simply poor. I have watched enough of them to be confident about that.
+
+So this site does the first step for you. Every article here is a written analysis of a real video from an independent creator: what the core idea is, some context, and why it might matter. If it sounds worth your twenty minutes, the original is one click away and always credited. If it does not, you have lost three minutes instead.
+
+That is it. I am trying to make it easier for people who are interested in tech to find their way through the tech world.
+
+## Who runs this site
 
 My name is **Jacob S. Olsen**, and I run Tech Feed Watch on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
 
 You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbeJS](https://x.com/JacobStubbeJS). If something on this site is wrong, that is the fastest way to tell me.
 
-## How This Site Works
+## How the articles are made, plainly
 
-Every article here is based on a real video from an independent creator — people recording genuine tech content, sharing hands-on experience, tests, and perspectives. The article is a written analysis of that video: the core ideas, some context, and why the topic matters. Every article names the creator and links to the original.
+I would rather tell you this than have you work it out.
 
-**How much of this is automated, plainly stated.** A system I built searches YouTube for videos in the subject areas I have chosen, and a language model drafts the article from the video. Those drafts publish automatically — I do not read every article before it goes live. Four are published a day.
+A system I built searches YouTube for videos in the subjects I have chosen. A language model drafts the article from the video. Those drafts publish automatically — I do not read every one before it goes live. Four are published a day.
 
-What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what is rejected, how sources are credited, and what the site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat 300 times.
+What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times.
 
-I would rather say that clearly than imply an editorial process that does not exist. If you think that makes the writing less trustworthy, that is a fair thing to weigh — which is why it is on this page and not buried.
+That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
 
-## Why It's Different
+Where you *are* reading me is here, in the [guides](/guides), and in the [glossary](/glossary). Those I write and stand behind.
 
-Most tech sites either republish press releases or chase the same trending stories. This site treats video as a primary source and turns it into structured, time-saving reading. If a video would take twenty minutes, the article gets you the substance in three.
+If you think the automation makes the writing less trustworthy, that is a fair thing to weigh — which is why it is on this page and not buried in a footer.
 
-The site also publishes things derived from its own archive rather than from anyone's video: which companies and models come up most across every article, and which source videos outperformed their own channel. Both pages state their method and their limits openly.
+## What else is here
 
-## What You Can Expect
+**Free tools.** Thirty-four of them, and they are the part of this site that is entirely mine rather than derived from anyone's video. They all run inside your browser: nothing you paste is uploaded, and nothing is stored.
 
-Objective analysis, not hype. A focus on AI, technology, fintech, and crypto. English-language coverage of creators from around the world. And a growing set of free tools — currently 31 — that run entirely in your browser with nothing uploaded.
+**Two pages built from the site's own data.** [Trends](/trends) counts which companies, models and protocols come up most across every article. [Best of each topic](/popular) ranks source videos by how far they beat their own channel's average, so a small channel with a strong video can outrank a large one. Both state their method and their limits on the page, because a number without those is just a claim.
+
+**A glossary** of the terms that keep appearing, written for someone who wants the answer in thirty seconds and the reason underneath it.
 
 ## Corrections
 
-If an article gets something wrong, I want to know. The [corrections policy](/corrections) explains what I do about it and how quickly.
+If an article gets something wrong, I want to know. The [corrections policy](/corrections) explains what I do about it and how quickly. If you made a video covered here and you want the article changed or taken down, email me and it is done — no explanation needed.
 
-## Get in Touch
+## Get in touch
 
-Have feedback, a correction, or a video worth covering? I'd genuinely like to hear from you at info@techfeedwatch.com.
-
-### Website Security & Transparency
-If you would like to test if our website is safe to use, you are welcome to test on this tool (we are not partners with this company):
-[IPQualityScore Malicious URL Scanner](https://www.ipqualityscore.com/threat-feeds/malicious-url-scanner)
-
-For your information, we are just a normal website/blog that provides video information about what is happening in the technology AI world. 
-
-## Affiliate Disclosure
-
-Some articles on Tech Feed Watch may contain affiliate links. If you click one of these links and make a purchase, I may earn a small commission at no extra cost to you. This never affects the analysis or opinions on this site — coverage is based on the merits of the topic, not on any commercial relationship.
+Feedback, a correction, or a video worth covering: **info@techfeedwatch.com**. I read everything sent there.
