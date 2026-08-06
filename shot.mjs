@@ -87,6 +87,13 @@ for (const p of paths) {
     });
     await cdp.send('Page.navigate', { url: BASE + p });
     await sleep(1800); // nok til at CSS og skrifttyper er på plads
+    // Billeder under folden er loading="lazy" og indlæses ikke af sig selv i et
+    // højt vindue. Uden dette bliver de nederste sektioner tomme på billedet,
+    // og man tror man har ødelagt noget der virker fint.
+    await cdp.send('Runtime.evaluate', {
+      expression: `document.querySelectorAll('img[loading="lazy"]').forEach(i => i.loading = 'eager')`,
+    });
+    await sleep(2200);
     const { data } = await cdp.send('Page.captureScreenshot', { format: 'png' });
     const suffix = heightOverride ? `-${v.name}-h${heightOverride}` : `-${v.name}`;
     const file = `_shots/${slug(p)}${suffix}.png`;

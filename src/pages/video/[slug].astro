@@ -331,6 +331,21 @@ const metaDesc = rawMeta.length > 157
     .related-articles { margin-top: 45px; }
     .related-articles-title { font-size: 1.4rem; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
     .related-articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+
+    /* Kortene her bruger de samme klassenavne som forsiden, men de styles er
+       defineret i FORSIDENS stylesheet — og et Astro-stylesheet gælder kun den
+       side det står på. Derfor stod titlerne som blå, understregede
+       standardlinks, og i mørk tilstand var de næsten ulæselige mod baggrunden.
+       Reglerne herunder er scoped til .related-articles, så resten af siden
+       ikke påvirkes. */
+    .related-articles .watch-card { display: block; text-decoration: none; color: inherit; transition: transform 0.2s; }
+    .related-articles .watch-card:hover { transform: translateY(-3px); }
+    .related-articles .watch-card-thumb { position: relative; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 9px; background: var(--hover-bg); }
+    .related-articles .watch-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .related-articles .watch-card-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.5rem; text-shadow: 0 2px 8px rgba(0,0,0,0.6); opacity: 0.85; pointer-events: none; }
+    .related-articles .tma-grid-title { font-size: 0.9rem; line-height: 1.45; margin: 0; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .related-articles .watch-card:hover .tma-grid-title { color: #0891b2; }
+
     @media (max-width: 600px) { .related-articles-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 
     @media (max-width: 600px) {
