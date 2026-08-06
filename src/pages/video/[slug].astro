@@ -572,6 +572,18 @@ const metaDesc = rawMeta.length > 157
       body.cinema-mode .video-primary {
         padding-top: calc(56.25vw + 15px + 55px) !important;
       }
+
+      /* Teksten under videoen sprang ned i samme øjeblik som videoen sprang op
+         — to spring på én gang, og halvdelen af hvorfor det føltes hårdt.
+         Kun aktiv når en variant er valgt. */
+      body.fx-glide .video-primary,
+      body.fx-lift .video-primary {
+        transition: padding-top var(--fx-move, 280ms) cubic-bezier(.2,.9,.25,1);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.fx-glide .video-primary,
+        body.fx-lift .video-primary { transition: none; }
+      }
       body.cinema-mode .top-navbar { z-index: 1000 !important; }
       body.cinema-mode .sidebar { z-index: 2000 !important; }
       body.cinema-mode #stickyVideo .cinema-close-btn { display: flex; }
@@ -1230,9 +1242,90 @@ const metaDesc = rawMeta.length > 157
           }
         }
 
+        // --- Overgang til sticky video ---------------------------------
+        // position kan ikke animeres: der findes ingen mellemtilstand mellem
+        // "i teksten" og "fastlåst under topbaren", så browseren flytter
+        // videoen på ét billede. FLIP løser det: mål hvor den STOD, skift til
+        // fixed, læg en transformation på der stiller den tilbage — og fjern
+        // den med en overgang. Øjet ser ét objekt der flytter sig.
+        //
+        // Iframen flyttes ALDRIG i DOM'en. Gør man det, genindlæser YouTube
+        // den, og afspilningen starter forfra.
+        //
+        // Varianten vælges med ?fx=glide eller ?fx=lift. Uden parameter sker
+        // skiftet som hidtil, så den almindelige side er uberørt indtil vi
+        // beslutter os.
+        const FX = new URLSearchParams(location.search).get('fx');
+        // ?slow=6 gør overgangen seks gange langsommere. Kun til at se på:
+        // et skærmbillede tager længere tid at tage end animationen varer, så
+        // uden det er alle billeder taget efter at bevægelsen er slut.
+        const FX_SLOW = Math.max(1, Number(new URLSearchParams(location.search).get('slow')) || 1);
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const EASE = 'cubic-bezier(.2,.9,.25,1)';
+        const MOVE_MS = 280 * FX_SLOW;
+        const LIFT_MS = 150 * FX_SLOW;
+
+        function flipCinema(enter) {
+          const el = document.getElementById('stickyVideo');
+          const toggle = () => document.body.classList.toggle('cinema-mode', enter);
+
+          // Ingen variant valgt, ingen video, eller brugeren har bedt om mindre
+          // bevægelse: skift direkte. Bevægelse kan gøre folk fysisk utilpasse.
+          if (!el || !FX || reduceMotion) { toggle(); return; }
+
+          const first = el.getBoundingClientRect();
+          toggle();
+          const last = el.getBoundingClientRect();
+          if (!first.width || !last.width) return;
+
+          const dx = first.left - last.left;
+          const dy = first.top - last.top;
+          const sx = first.width / last.width;
+          const sy = first.height / last.height;
+
+          el.style.transformOrigin = 'top left';
+          el.style.transition = 'none';
+          el.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
+          el.style.boxShadow = enter ? '0 0 0 rgba(0,0,0,0)' : '';
+          void el.getBoundingClientRect(); // tvinger browseren til at tegne startbilledet
+
+          const settle = () => {
+            el.style.transition = `transform ${MOVE_MS}ms ${EASE}, box-shadow ${MOVE_MS}ms ease`;
+            el.style.transform = '';
+            el.style.boxShadow = '';
+          };
+
+          if (FX === 'lift' && enter) {
+            // Løft: videoen løsner sig fra siden først — 4% op med voksende
+            // skygge — og glider derefter på plads.
+            el.style.transition = `transform ${LIFT_MS}ms ease-out, box-shadow ${LIFT_MS}ms ease-out`;
+            el.style.transform = `translate(${dx}px, ${dy}px) scale(${sx * 1.045}, ${sy * 1.045})`;
+            el.style.boxShadow = '0 18px 40px rgba(0,0,0,0.35)';
+            setTimeout(settle, LIFT_MS);
+          } else {
+            requestAnimationFrame(settle);
+          }
+
+          const cleanup = () => {
+            el.style.transition = '';
+            el.style.transform = '';
+            el.style.transformOrigin = '';
+            el.style.boxShadow = '';
+          };
+          setTimeout(cleanup, (FX === 'lift' && enter ? LIFT_MS + MOVE_MS : MOVE_MS) + 40);
+        }
+
+        // Kun til demoen: gør overgangen kaldbar uden at en video skal spille.
+        if (FX) {
+          window.__fxEnter = () => flipCinema(true);
+          window.__fxExit = () => flipCinema(false);
+          document.body.classList.add(`fx-${FX}`);
+          document.body.style.setProperty('--fx-move', `${MOVE_MS}ms`);
+        }
+
         const onPlayerStateChange = (event) => {
           if (event.data === YT.PlayerState.PLAYING && window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
-            document.body.classList.add('cinema-mode');
+            flipCinema(true);
             tryInitCinemaBrowser();
           }
         };
@@ -1260,7 +1353,8 @@ const metaDesc = rawMeta.length > 157
 
         if (cinemaCloseBtn) {
           cinemaCloseBtn.addEventListener('click', () => {
-            document.body.classList.remove('cinema-mode', 'cinema-reading');
+            flipCinema(false);
+            document.body.classList.remove('cinema-reading');
             if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
               ytPlayer.pauseVideo();
             }
