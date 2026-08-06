@@ -247,6 +247,25 @@ const metaDesc = rawMeta.length > 157
     .pill-group button { background: transparent; border: none; height: 100%; display: inline-flex; align-items: center; padding: 0 16px; color: var(--text-color); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s; gap: 6px; }
     .pill-divider { width: 1px; height: 20px; background: var(--border-color); }
     .action-icon { width: 18px; height: 18px; }
+
+    /* På mobil var tommelen-ned det eneste ikon uden ord, i et tryk-mål på
+       50x36 px — under de 44 px en finger skal have. Den blev læst som pynt
+       frem for som en knap.
+       flex-shrink: 0 er ikke pynt: uden den presser rækken knapperne sammen når
+       de ikke kan være der, og fordi pillen har overflow: hidden, blev tommelen
+       klippet midt over i stedet for at rækken blev scrollbar. */
+    @media (max-width: 768px) {
+      /* Ombryd frem for at scrolle. Ved 360 px kan de fire knapper ikke være på
+         én linje, og en vandret scroll man skal opdage er lig med en knap der
+         ikke findes — "Save" lå uden for skærmen. */
+      .action-bar { gap: 8px; overflow-x: visible; flex-wrap: wrap; }
+      .action-pill, .pill-group { height: 44px; flex-shrink: 0; }
+      .action-pill { padding: 0 12px; }
+      .pill-group button { padding: 0 12px; }
+      #dislikeBtn { padding: 0 15px; }
+      .action-icon { width: 20px; height: 20px; }
+      .pill-divider { height: 26px; background: var(--text-color); opacity: 0.28; }
+    }
     .btn-active { color: #0891b2 !important; }
     .btn-active svg { fill: #0891b2; stroke: #0891b2; }
     .summary-box { background-color: var(--hover-bg); border-left: 4px solid #0891b2; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
