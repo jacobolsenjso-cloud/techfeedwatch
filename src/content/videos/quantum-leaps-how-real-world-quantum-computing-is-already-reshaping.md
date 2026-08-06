@@ -11,8 +11,9 @@ tags:
   - "Business & Money"
 summary: "Quantum computing is moving beyond theoretical research, demonstrating tangible real-world impact through hybrid systems. These systems combine classical and quantum processors to tackle complex optimization challenges, particularly in logistics and mobility. The focus has shifted from pure proof-of-concept to outcome-driven engineering, solving problems that classical computers struggle with alone. This practical application heralds a new era for quantum technology, especially as it converges with agentic AI for advanced decision-making."
 duration: "33:43"
-viewCount: 2737
-viewsUpdated: "2026-08-04"
+viewCount: 2745
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

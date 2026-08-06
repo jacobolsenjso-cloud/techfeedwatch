@@ -13,7 +13,8 @@ tags:
 summary: "Saudi Arabia's fintech ecosystem is experiencing rapid expansion, directly aligned with the nation's Vision 2030 economic diversification strategy. Initiatives like Fintech Saudi and its accelerator programs cultivate local innovation, supporting startups across digital payments, personal finance, Islamic capital markets, and alternative funding. This concerted effort positions the Kingdom as a growing hub for financial technology in the MENA region, fostering both domestic solutions and attracting international investment."
 duration: "45:59"
 viewCount: 104956
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

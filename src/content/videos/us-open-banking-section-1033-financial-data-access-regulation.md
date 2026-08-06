@@ -13,7 +13,8 @@ summary: "The US financial sector is on the cusp of a significant transformation
 metaDescription: "Learn how US Open Banking is evolving with Section 1033 of the Dodd-Frank Act. Understand its impact on consumer financial data, banks, and fintech…"
 duration: "16:58"
 viewCount: 23
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is Open Banking?"

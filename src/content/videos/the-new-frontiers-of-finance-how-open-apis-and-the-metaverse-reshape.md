@@ -13,7 +13,8 @@ summary: "The financial services sector stands at a significant inflection point
 metaDescription: "Explore how Open Finance and the Metaverse are reshaping payments, driving fintech innovation, and transforming financial services."
 duration: "28:32"
 viewCount: 22311
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is Open Finance?"

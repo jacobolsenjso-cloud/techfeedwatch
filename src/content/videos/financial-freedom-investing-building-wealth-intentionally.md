@@ -11,7 +11,8 @@ summary: "Building wealth intentionally moves beyond traditional saving, emphasi
 metaDescription: "Understand intentional wealth building and financial freedom investing. Explore strategic capital allocation, risk management, and alternative investments."
 duration: "48:34"
 viewCount: 51
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What does 'building wealth intentionally' mean?"

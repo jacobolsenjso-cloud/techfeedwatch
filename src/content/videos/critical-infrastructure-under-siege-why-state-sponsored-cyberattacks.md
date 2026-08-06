@@ -15,7 +15,8 @@ summary: "State-sponsored Advanced Persistent Threat (APT) groups have dramatica
 metaDescription: "State-sponsored cyberattacks on critical infrastructure are escalating. Learn how APTs operate, where defenses fail, and effective countermeasures."
 duration: "52:53"
 viewCount: 7
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What are state-sponsored APT groups?"

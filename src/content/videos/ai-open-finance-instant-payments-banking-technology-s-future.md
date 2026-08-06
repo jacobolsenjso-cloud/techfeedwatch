@@ -11,8 +11,9 @@ tags:
 summary: "Financial institutions face immense pressure to modernize as AI, open finance, and instant payments redefine the banking sector. Adapting legacy systems and embracing real-time data are essential for competitive survival. This technological shift impacts everything from customer experience to operational efficiency, demanding a strategic overhaul of core banking foundations. The integration of advanced tech is no longer optional but a fundamental requirement for growth and relevance."
 metaDescription: "Explore how AI, open finance, and instant payments are driving the future of banking technology, demanding core system modernization."
 duration: "16:46"
-viewCount: 23
-viewsUpdated: "2026-08-04"
+viewCount: 24
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What are the key technological trends affecting banking?"

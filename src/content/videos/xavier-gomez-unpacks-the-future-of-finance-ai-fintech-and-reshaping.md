@@ -13,7 +13,8 @@ tags:
 summary: "The financial industry is undergoing a profound transformation, driven by advancements in AI, machine learning, and comprehensive data analytics. Traditional banking structures face unprecedented pressure from agile fintech startups and dominant Big Tech entities. This shift redefines roles in capital markets, demanding a new synergy between financial acumen and technological expertise, emphasizing data-driven decision-making and strategic innovation for survival and growth."
 duration: "49:06"
 viewCount: 29857
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

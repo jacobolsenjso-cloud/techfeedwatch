@@ -12,7 +12,8 @@ summary: "South Africa introduces a new national curriculum focusing on coding a
 metaDescription: "Robotics education becomes a new national curriculum subject, preparing students for the 4IR with coding and physical computing skills."
 duration: "49:29"
 viewCount: 2
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the new subject introduced in the DBE curriculum?"

@@ -12,8 +12,9 @@ tags:
   - "Business & Money"
 summary: "Quantum computing hardware is advancing at an impressive pace, exceeding initial projections for qubit counts and engineering milestones. However, the development of practical quantum algorithms and applications lags significantly behind, challenging the perception of quantum computers as general-purpose supercomputers. They are highly specialized machines, and extracting useful information from their simultaneous calculations requires ingenious, problem-specific algorithmic design, which remains a substantial hurdle for widespread utility. While quantum simulation shows strong promise for material science and fundamental physics, the broader applicability of quantum machine learning and quantum chemistry faces significant theoretical and practical limitations."
 duration: "21:14"
-viewCount: 1442409
-viewsUpdated: "2026-08-04"
+viewCount: 1443760
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

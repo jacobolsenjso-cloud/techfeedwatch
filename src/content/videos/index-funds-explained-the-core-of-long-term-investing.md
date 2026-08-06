@@ -12,7 +12,8 @@ summary: "Index funds represent a foundational shift towards accessible, diversi
 metaDescription: "Learn how index funds simplify investing, offer broad diversification, and drive long-term wealth accumulation for both novice and experienced investors."
 duration: "8:48"
 viewCount: 4
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What distinguishes index funds from actively managed funds?"

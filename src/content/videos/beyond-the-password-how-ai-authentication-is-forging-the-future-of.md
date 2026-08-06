@@ -12,7 +12,8 @@ tags:
 summary: "Digital banking's path to sustained profitability relies less on disruptive products and more on astute market segmentation and rigorous operational efficiency. Institutions like OakNorth demonstrate that serving underserved segments, combined with meticulous cost management, creates a defensible business model. This success is increasingly intertwined with advanced digital identity solutions, which leverage behavioral biometrics to ensure secure, low-friction authentication, shifting focus from merely filtering bad actors to positively identifying legitimate users."
 duration: "34:12"
 viewCount: 547
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

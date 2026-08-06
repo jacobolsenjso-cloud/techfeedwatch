@@ -11,7 +11,8 @@ tags:
 summary: "Quantum computing and artificial intelligence are distinct technologies with complementary roles, not interchangeable ones. While classical hardware powers today's AI breakthroughs, quantum computing offers a specialized path to solve complex problems intractable for conventional systems. The future likely involves a hybrid approach, where each computational method excels at specific tasks, optimizing scientific discovery and advanced AI research rather than replacing general-purpose AI."
 duration: "0:00"
 viewCount: 0
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

@@ -14,7 +14,8 @@ summary: "Building substantial wealth extends beyond mere saving; it requires a 
 metaDescription: "Discover how systematic investing, compound interest, and index funds build real wealth, moving beyond luck for lasting financial freedom."
 duration: "8:34"
 viewCount: 8
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary difference between saving and investing for wealth building?"

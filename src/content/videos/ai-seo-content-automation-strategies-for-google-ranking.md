@@ -12,7 +12,8 @@ summary: "Artificial intelligence is rapidly transforming search engine optimiza
 metaDescription: "Explore how AI SEO content automation streamlines Google ranking strategies, boosting efficiency and scaling digital presence for businesses."
 duration: "7:20"
 viewCount: 615
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "How does AI enhance SEO strategies?"

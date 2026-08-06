@@ -12,8 +12,9 @@ tags:
   - "Business & Money"
 summary: "The conceptual framing of AI's evolution in distinct stages provides a useful lens for understanding its increasing sophistication, from rudimentary rule-based systems to highly advanced, speculative forms. While early stages are demonstrably present in everyday technology, the leap to artificial general intelligence (AGI) and subsequent superintelligence involves profound scientific and philosophical challenges. It is imperative to distinguish between current capabilities and future projections, especially concerning consciousness and agency, to foster realistic expectations and responsible development."
 duration: "11:38"
-viewCount: 1677631
-viewsUpdated: "2026-08-04"
+viewCount: 1677917
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

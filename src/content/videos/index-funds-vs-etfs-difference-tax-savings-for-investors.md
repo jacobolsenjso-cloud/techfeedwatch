@@ -12,7 +12,8 @@ summary: "Investors frequently weigh index funds against ETFs for long-term weal
 metaDescription: "Understand the critical index funds vs ETFs difference and how their tax structures impact capital gains for long-term investors. Optimize your portfolio."
 duration: "5:28"
 viewCount: 0
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary tax difference between index funds and ETFs?"

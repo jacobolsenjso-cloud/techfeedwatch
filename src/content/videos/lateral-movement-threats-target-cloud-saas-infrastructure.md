@@ -12,7 +12,8 @@ summary: "Cybersecurity experts at ACSC2024 highlighted the escalating threat of
 metaDescription: "Understand lateral movement threats in cloud, SaaS, and hybrid infrastructure. Learn how modern cybersecurity protects data from evolving attacks."
 duration: "28:15"
 viewCount: 12
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: false
 isShort: false
 faqs:
   - question: "What is lateral movement in cybersecurity?"

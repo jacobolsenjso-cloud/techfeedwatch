@@ -11,8 +11,9 @@ tags:
   - "AI & Tech"
 summary: "Sam Altman's address at TED2025 paints a future where AI, particularly through advanced agents and superintelligence, becomes deeply intertwined with human existence. This vision, while promising enhanced capabilities and human augmentation, concurrently raises profound questions regarding AI safety, ethical governance, and the concentration of power. The discourse highlights an impending transition where human intelligence might be surpassed, necessitating urgent, proactive frameworks for its societal integration and control."
 duration: "47:30"
-viewCount: 2336798
-viewsUpdated: "2026-08-04"
+viewCount: 2337566
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

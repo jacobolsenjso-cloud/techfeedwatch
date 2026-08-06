@@ -12,7 +12,8 @@ summary: "Advanced AI models now demonstrate significant capability in performin
 metaDescription: "AI hacking capabilities are rapidly advancing. Learn how frontier AI models pose new cybersecurity threats to corporate networks and what it means for…"
 duration: "7:02"
 viewCount: 36
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "Are AI models capable of autonomous cyberattacks?"

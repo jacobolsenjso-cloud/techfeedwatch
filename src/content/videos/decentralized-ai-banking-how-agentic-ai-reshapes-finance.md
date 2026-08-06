@@ -12,7 +12,8 @@ summary: "Decentralized AI banking, driven by agentic AI and tokenized finance, 
 metaDescription: "Explore decentralized AI banking, agentic AI, and tokenized finance, and how these forces are poised to reshape global financial systems by 2026."
 duration: "8:33"
 viewCount: 6
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is decentralized AI banking?"

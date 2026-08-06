@@ -12,7 +12,8 @@ summary: "Amazon's sustained market leadership stems from its intricately design
 metaDescription: "Understand Amazon's ecosystem dominance, how network effects drive its growth, and the hidden costs of convenience and control."
 duration: "46:31"
 viewCount: 42
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is meant by Amazon's 'everything machine'?"

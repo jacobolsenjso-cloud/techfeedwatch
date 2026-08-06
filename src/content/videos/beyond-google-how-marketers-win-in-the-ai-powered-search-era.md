@@ -13,7 +13,8 @@ summary: "The advent of Large Language Models (LLMs) fundamentally reshapes how 
 metaDescription: "AI is transforming marketing. Learn how AEO, GEO, and PEO are essential for ranking in LLMs and generative search engines, and how to adapt."
 duration: "1:05:57"
 viewCount: 91
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary difference between traditional SEO and new AI-driven optimization methods?"

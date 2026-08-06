@@ -152,7 +152,11 @@ const videoSchema = {
   // blive rapporteret som manglende. hqdefault (480x360) findes altid.
   "thumbnailUrl": [
     `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`,
-    `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`,
+    // maxresdefault findes kun for nogle videoer — 18 af vores har den ikke, og
+    // for dem pegede listen på et billede der gav 404. YouTubes API oplyser selv
+    // om den findes; svaret gemmes som thumbMax i frontmatter af
+    // update-view-counts.mjs, så vi kun lover et billede der faktisk er der.
+    ...(video.frontmatter.thumbMax ? [`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`] : []),
     `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`
   ],
   // Videoens egen udgivelsesdato hvis vi har den; ellers artiklens dato som fallback.

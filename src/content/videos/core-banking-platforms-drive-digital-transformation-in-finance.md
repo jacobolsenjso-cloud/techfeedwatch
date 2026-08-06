@@ -11,8 +11,9 @@ tags:
 summary: "Modern core banking platforms are proving vital for financial institutions navigating digital transformation and intense competition. Leveraging agile, cloud-native technology, these platforms enable rapid innovation, cost efficiency, and a superior customer experience. The strategic shift from legacy systems to licensed core banking solutions is democratizing advanced fintech capabilities for institutions of all sizes."
 metaDescription: "Core banking platforms like Engine are essential for financial institutions' digital transformation, enabling rapid innovation and competitive advantage."
 duration: "34:35"
-viewCount: 64
-viewsUpdated: "2026-08-04"
+viewCount: 73
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is a core banking platform?"

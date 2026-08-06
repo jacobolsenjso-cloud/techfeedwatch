@@ -14,7 +14,8 @@ summary: "The integration of Agentic AI into Open Banking represents a significa
 metaDescription: "Explore how Agentic AI is transforming Open Banking, enabling autonomous financial management and reshaping the future of fintech."
 duration: "4:19"
 viewCount: 95
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is Open Banking?"

@@ -30,16 +30,23 @@ console.log(`${entries.length} artikler med video-id af ${files.length} filer`);
 
 // YouTube tager op til 50 id'er pr. kald. 367 artikler bliver altså 8 kald i alt
 // og koster 8 kvote-enheder — ikke 367.
+//
+// Vi beder også om snippet: det koster ingen ekstra kvote, og svaret indeholder
+// thumbnails.maxres KUN når det store miniaturebillede findes. Det er den
+// eneste pålidelige måde at vide det på, og uden det lover artiklernes schema
+// et billede der giver 404 for 18 af videoerne.
 const views = new Map();
+const hasMaxres = new Map();
 for (let i = 0; i < entries.length; i += 50) {
   const batch = entries.slice(i, i + 50);
-  const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${batch.map((e) => e.id).join(',')}&key=${KEY}`;
+  const url = `https://www.googleapis.com/youtube/v3/videos?part=statistics,snippet&id=${batch.map((e) => e.id).join(',')}&key=${KEY}`;
   const res = await fetch(url);
   if (!res.ok) { console.error(`Kald ${i / 50 + 1} fejlede: ${res.status}`); continue; }
   const data = await res.json();
   for (const item of data.items || []) {
     const v = Number(item.statistics?.viewCount);
     if (Number.isFinite(v)) views.set(item.id, v);
+    hasMaxres.set(item.id, Boolean(item.snippet?.thumbnails?.maxres));
   }
   console.log(`kald ${i / 50 + 1}: ${data.items?.length || 0} svar`);
 }
@@ -54,7 +61,12 @@ for (const e of entries) {
   if (v === undefined) { missing++; continue; }
 
   const already = e.raw.match(/^viewCount:\s*(\d+)/m)?.[1];
-  if (already && Number(already) === v) { unchanged++; continue; }
+  const maxres = hasMaxres.get(e.id) === true;
+  const maxresLine = e.raw.match(/^thumbMax:\s*(true|false)\s*$/m)?.[1];
+  const maxresSame = maxresLine !== undefined && (maxresLine === 'true') === maxres;
+  // Skriv kun hvis noget faktisk har ændret sig — hverken visningstal eller
+  // thumbMax. Ellers rører vi 371 filer hver tredje dag for ingenting.
+  if (already && Number(already) === v && maxresSame) { unchanged++; continue; }
 
   let out;
   if (already !== undefined) {
@@ -67,6 +79,14 @@ for (const e of entries) {
     out = e.raw.replace(/^(duration:\s*"[^"]*"\s*)$/m, `$1\nviewCount: ${v}\nviewsUpdated: "${today}"`);
     if (out === e.raw) { console.error(`Kunne ikke finde duration i ${e.file} — sprunget over`); continue; }
   }
+
+  // thumbMax: findes det store miniaturebillede? Skrives efter viewsUpdated.
+  if (maxresLine !== undefined) {
+    out = out.replace(/^thumbMax:\s*(true|false)\s*$/m, `thumbMax: ${maxres}`);
+  } else {
+    out = out.replace(/^(viewsUpdated:\s*"[^"]*"\s*)$/m, `$1\nthumbMax: ${maxres}`);
+  }
+
   fs.writeFileSync(path.join(DIR, e.file), out, 'utf8');
   written++;
 }

@@ -14,7 +14,8 @@ summary: "The foundational investment strategies employed by titans like Buffett
 metaDescription: "Explore how legendary investing strategies stack up against modern AI and quant trading. Discover timeless lessons and new tech frontiers."
 duration: "21:03"
 viewCount: 32169
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What are the main types of investment strategies adopted by legendary investors?"

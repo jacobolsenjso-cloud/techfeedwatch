@@ -13,7 +13,8 @@ summary: "The focus on 'AI workflow skills' signifies a critical evolution in ho
 metaDescription: "Learn how AI workflow skills are transforming automation and business processes. Discover best practices for building effective AI workflows."
 duration: "1:25:54"
 viewCount: 168
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What are AI workflow skills?"

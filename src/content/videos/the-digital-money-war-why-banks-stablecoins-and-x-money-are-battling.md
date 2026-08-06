@@ -12,8 +12,9 @@ tags:
   - "Crypto"
 summary: "A global competition for control over digital money intensifies, featuring legacy banks, fintech firms, big tech, and governments. This financial arms race centers on stablecoins, tokenized deposits, and central bank digital currencies, each vying for transaction volume, yield generation, and customer relationships. The outcomes will shape the future of finance, impacting accessibility, regulatory oversight, and individual financial autonomy worldwide."
 duration: "12:59"
-viewCount: 12721
-viewsUpdated: "2026-08-04"
+viewCount: 12784
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

@@ -13,7 +13,8 @@ summary: "Many individuals with similar incomes end up in starkly different fina
 metaDescription: "Uncover why identical paychecks lead to vastly different financial outcomes. Learn about compounding, inflation, and strategic wealth building."
 duration: "5:37"
 viewCount: 2
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: false
 isShort: false
 faqs:
   - question: "What causes the disparity in wealth accumulation among people with similar incomes?"

@@ -234,6 +234,7 @@ async function run() {
     let channelId = null;
     let publishedAt = null;
     let viewCount = null;
+    let thumbMax = false;
     try {
       const metaKey = process.env.YOUTUBE_API_KEY;
       if (metaKey) {
@@ -246,6 +247,9 @@ async function run() {
         const sn = metaData.items?.[0]?.snippet;
         const stats = metaData.items?.[0]?.statistics;
         if (Number.isFinite(Number(stats?.viewCount))) viewCount = Number(stats.viewCount);
+        // Findes det store miniaturebillede? Kun nogle videoer har det, og uden
+        // dette svar ville artiklens schema love et billede der giver 404.
+        if (sn) thumbMax = Boolean(sn.thumbnails?.maxres);
         if (sn) {
           channelTitle = sn.channelTitle || null;
           channelId = sn.channelId || null;
@@ -478,7 +482,7 @@ async function run() {
     // Visningstal med dato, så /popular kan sige hvor gammelt tallet er.
     const viewsYaml = viewCount === null
       ? ""
-      : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\n`;
+      : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\nthumbMax: ${thumbMax}\n`;
 
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 

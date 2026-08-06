@@ -11,8 +11,9 @@ tags:
   - "Business & Money"
 summary: "Rapid advancements in artificial intelligence are generating widespread anxiety about job displacement, particularly among younger generations. This concern mirrors past technological fears, yet historical analysis reveals a consistent pattern where innovation, while disruptive, invariably leads to the creation of new, often more specialized and value-added, professions. The true challenge lies not in the disappearance of work, but in the accelerated pace of transition and the imperative for individuals and economies to adapt to an evolving skill requirement."
 duration: "15:28"
-viewCount: 157941
-viewsUpdated: "2026-08-04"
+viewCount: 158141
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

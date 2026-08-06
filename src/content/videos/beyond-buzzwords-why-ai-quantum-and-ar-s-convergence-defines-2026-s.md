@@ -13,7 +13,8 @@ summary: "The technological currents of Artificial Intelligence, Quantum Computi
 metaDescription: "Explore how AI, Quantum Computing, and AR/VR are converging to create 2026's tech revolution, reshaping industries and daily life."
 duration: "14:25"
 viewCount: 114
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: false
 isShort: false
 faqs:
   - question: "What core technologies are driving future change?"

@@ -12,8 +12,9 @@ tags:
   - "AI Video"
 summary: "Alibaba's Quen AI, initially an open-source project, has rapidly evolved into a comprehensive AI ecosystem challenging Western tech giants. Its strategic focus on aggressive, free-tier offerings and deep integration capabilities positions it as a significant contender in the global AI race. This initiative highlights a broader geopolitical competition in artificial intelligence, with major implications for developers, enterprises, and individual users worldwide. Quen's multimodal functionalities and open architecture present both opportunities and challenges for the future of AI adoption and market dynamics."
 duration: "29:54"
-viewCount: 205927
-viewsUpdated: "2026-08-04"
+viewCount: 206565
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

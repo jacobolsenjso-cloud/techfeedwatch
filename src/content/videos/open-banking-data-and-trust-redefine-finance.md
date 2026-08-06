@@ -12,7 +12,8 @@ summary: "The financial industry is undergoing a fundamental transformation, wit
 metaDescription: "Open banking transforms finance. Understand how data and trust are redefining financial services, from personalized products to digital payments."
 duration: "35:39"
 viewCount: 3
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is open banking's primary goal in finance?"

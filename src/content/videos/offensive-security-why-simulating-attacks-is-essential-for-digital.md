@@ -15,7 +15,8 @@ summary: "Modern cybersecurity demands proactive measures beyond traditional def
 metaDescription: "Understand offensive security and ethical hacking. Learn why simulating cyberattacks is vital for protecting your digital assets and business operations."
 duration: "5:39"
 viewCount: 9
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary purpose of ethical hacking?"

@@ -13,7 +13,8 @@ summary: "Traditional SEO principles are converging with new AI realities, deman
 metaDescription: "Discover the new AI SEO strategy that leverages data scraping to uncover AI citations, identify visibility gaps, and drive targeted outreach for SaaS."
 duration: "15:59"
 viewCount: 112
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is AI Engine Optimization (AEO)?"

@@ -11,7 +11,8 @@ summary: "Financial freedom represents the state where passive income reliably c
 metaDescription: "Learn how to achieve financial freedom through smart investing strategies, understanding returns, liquidity, and modern financial tools for wealth building."
 duration: "34:55"
 viewCount: 9
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary purpose of investing?"

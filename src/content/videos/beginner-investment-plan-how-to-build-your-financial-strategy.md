@@ -13,7 +13,8 @@ summary: "A foundational investment plan is critical for anyone beginning their 
 metaDescription: "Learn to create a beginner investment plan. This guide helps you build a solid financial strategy, manage money, and grow wealth safely."
 duration: "12:21"
 viewCount: 4
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What are the initial steps to creating a beginner investment plan?"

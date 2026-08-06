@@ -14,7 +14,8 @@ summary: "The 'build in public' movement signals a fundamental shift in software
 metaDescription: "Explore the 'build in public' revolution in software development. Discover how transparent coding and public building are reshaping tech innovation."
 duration: "1:00:12"
 viewCount: 4
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the primary goal of 'vibe through code' as described?"

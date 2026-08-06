@@ -13,7 +13,8 @@ summary: "AI-powered tools are fundamentally reshaping search engine optimizatio
 metaDescription: "Explore how AI SEO automation drives digital dominance through advanced tools and strategic insights, reshaping content and keyword research."
 duration: "5:24"
 viewCount: 53
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "How does AI automate SEO content distribution?"

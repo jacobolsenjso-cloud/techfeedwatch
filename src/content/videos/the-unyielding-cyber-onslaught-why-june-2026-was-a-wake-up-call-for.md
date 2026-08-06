@@ -15,7 +15,8 @@ summary: "The digital landscape faced an unprecedented barrage of cybersecurity 
 metaDescription: "June 2026 cyberattacks expose deep vulnerabilities in cloud, AI, and supply chains. Learn why proactive cybersecurity is essential now."
 duration: "7:55"
 viewCount: 32
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What types of organizations were primarily targeted in the recent cyberattacks?"

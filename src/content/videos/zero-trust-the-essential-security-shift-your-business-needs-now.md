@@ -15,7 +15,8 @@ summary: "The Zero Trust security model redefines how organizations protect asse
 metaDescription: "Understand the critical Zero Trust security model. Learn how 'never trust, always verify' protects modern businesses from cyber threats."
 duration: "7:59"
 viewCount: 16
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is the core principle of Zero Trust security?"

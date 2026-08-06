@@ -14,7 +14,8 @@ summary: "WooCommerce provides a highly flexible, open-source e-commerce solutio
 metaDescription: "Discover how WooCommerce offers deep e-commerce customization for B2B, subscriptions, and unique store needs. Learn when it's the right platform."
 duration: "3:44"
 viewCount: 3
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What distinguishes WooCommerce from simpler e-commerce platforms?"

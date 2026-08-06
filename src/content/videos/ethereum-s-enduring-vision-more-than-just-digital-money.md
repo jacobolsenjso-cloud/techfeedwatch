@@ -13,7 +13,8 @@ tags:
 summary: "Ethereum stands as a foundational layer in the pursuit of a decentralized internet, moving beyond a mere cryptocurrency to function as a global, programmable blockchain. Its core innovation, smart contracts, facilitates self-executing, trustless agreements, enabling a vast ecosystem of decentralized applications (dApps). While addressing historical scalability and energy consumption hurdles through significant protocol upgrades, Ethereum continues to evolve, aiming to underpin a future where digital interactions are direct and permissionless, independent of central intermediaries."
 duration: "3:29"
 viewCount: 0
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

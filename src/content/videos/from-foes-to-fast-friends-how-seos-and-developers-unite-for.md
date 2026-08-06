@@ -12,7 +12,8 @@ tags:
 summary: "Historically viewed as conflicting disciplines, web development and search engine optimization (SEO) are increasingly converging on a shared objective: exceptional user experience. Modern search engines reward sites that are fast, accessible, and semantically structured, directly aligning with core developer priorities. This shift requires both developers and SEOs to adapt, fostering collaboration to build high-quality, discoverable web projects."
 duration: "21:56"
 viewCount: 7161
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 revised: true
 faqs:

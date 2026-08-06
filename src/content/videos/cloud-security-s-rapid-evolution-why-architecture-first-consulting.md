@@ -14,7 +14,8 @@ summary: "The cybersecurity sector is shifting, with specialized cloud security 
 metaDescription: "Cloud security demands architecture-first consulting, SOC 2 readiness, and vCISO advisory for modern businesses. Learn why."
 duration: "7:18"
 viewCount: 3
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is 'architecture-first' cloud security?"

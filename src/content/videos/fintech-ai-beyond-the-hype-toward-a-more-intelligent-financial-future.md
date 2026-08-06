@@ -13,7 +13,8 @@ summary: "Artificial intelligence is rapidly redefining the financial technology
 metaDescription: "Explore how FinTech AI is revolutionizing financial services, from fraud detection to robo-advisors, and its complex implications."
 duration: "9:00"
 viewCount: 9
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is FinTech AI?"

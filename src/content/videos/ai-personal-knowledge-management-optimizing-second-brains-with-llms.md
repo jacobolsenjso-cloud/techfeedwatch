@@ -12,8 +12,9 @@ tags:
 summary: "The integration of large language models like Claude into personal knowledge management systems marks a significant shift in how individuals organize and leverage information. This evolving approach transforms static note repositories into dynamic, AI-powered 'second brains' capable of advanced analysis and synthesis. Users can move beyond mere data storage to an interactive knowledge graph, extracting deeper insights and accelerating productivity across complex projects."
 metaDescription: "AI Personal Knowledge Management systems are evolving. Discover how LLMs like Claude integrate with Obsidian to create advanced 'second brains' for enhanced…"
 duration: "7:38"
-viewCount: 69
-viewsUpdated: "2026-08-04"
+viewCount: 70
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "What is a 'second brain' in the context of personal knowledge management?"

@@ -14,7 +14,8 @@ summary: "Advanced AI models like Claude are rapidly transforming SEO strategies
 metaDescription: "AI is automating SEO article creation at scale. Discover how large language models impact digital publishing, search ranking, and content quality."
 duration: "11:20"
 viewCount: 278
-viewsUpdated: "2026-08-04"
+viewsUpdated: "2026-08-06"
+thumbMax: true
 isShort: false
 faqs:
   - question: "How are AI models like Claude being used for SEO content?"
