@@ -34,7 +34,10 @@ const sections = [
   { title: 'Recently added', items: earlier },
 ].filter((s) => s.items.length > 0);
 
-const description = "The newest AI, tech, fintech, and crypto articles on Tech Feed Watch - published today and yesterday.";
+// Beskrivelsen lovede "today and yesterday", men siden viser også en
+// "Recently added"-sektion når de to dage er tynde. Den lovede altså noget
+// den ikke altid holdt.
+const description = "The newest AI, tech, fintech, and crypto articles on Tech Feed Watch — today, yesterday, and what came in just before.";
 ---
 
 <MainLayout title="Latest" description={description}>
@@ -62,6 +65,13 @@ const description = "The newest AI, tech, fintech, and crypto articles on Tech F
 
     .latest-empty { color: #6b7280; font-size: 1.05rem; padding: 20px 0; }
     body.dark-mode .latest-empty { color: #9ca3af; }
+
+    /* Uden denne var /latest en blindgyde: tolv artikler og ingen vej videre
+       ud over ét link i sidemenuen. */
+    .latest-more { margin: 8px 0 10px 0; font-size: 0.95rem; color: #6b7280; line-height: 1.6; }
+    body.dark-mode .latest-more { color: #9ca3af; }
+    .latest-more a { color: #0891b2; text-decoration: none; font-weight: 600; }
+    .latest-more a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
       .latest-wrapper { padding: 15px; }
@@ -103,7 +113,7 @@ const description = "The newest AI, tech, fintech, and crypto articles on Tech F
                       <span aria-hidden="true"> · </span>
                     </>
                   )}
-                  <span>{formatDate(item.fm.date)}{item.fm.minutesRead ? ` · ${item.fm.minutesRead} min read` : ''}</span>
+                  <span><time datetime={item.fm.date}>{formatDate(item.fm.date)}</time>{item.fm.minutesRead ? ` · ${item.fm.minutesRead} min read` : ''}</span>
                 </p>
               </div>
             </a>
@@ -111,5 +121,12 @@ const description = "The newest AI, tech, fintech, and crypto articles on Tech F
         </div>
       </div>
     ))}
+
+    {sections.length > 0 && (
+      <p class="latest-more">
+        That is the last couple of days. <a href="/page/2">Keep reading from here</a>, or browse the
+        whole archive by month in the <a href="/library#browse-by-month">library</a>.
+      </p>
+    )}
   </div>
 </MainLayout>
