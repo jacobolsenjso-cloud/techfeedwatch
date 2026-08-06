@@ -1,49 +1,190 @@
 ---
 title: "The Ultimate Guide to SEO in the AI Era"
 slug: "ultimate-guide-to-seo"
-description: "How search really works now that AI answers sit above the results - the fundamentals that still win, and what changes when a model reads your page before a person does."
+description: "What 34 videos from 25 different SEO channels actually agree on, where they disagree, and what to do about AI answers sitting above the results."
 tags: ["SEO"]
 category: "SEO"
 date: "2026-07-23"
+updated: "2026-08-06"
 faqs:
   - question: "Is SEO dead now that AI answers questions directly?"
-    answer: "No, but it is shifting. Ranking still decides which sources an AI answer pulls from, so the work moves toward being the clearest, most trustworthy source on a topic rather than chasing keywords."
-  - question: "What is GEO?"
-    answer: "Generative Engine Optimization - structuring content so AI systems can quote it accurately. It overlaps heavily with good traditional SEO: clear structure, direct answers, and strong topical authority."
+    answer: "No, but the payoff moved. Ranking still decides which sources an AI answer is built from, so the work shifts toward being the clearest and most trustworthy source rather than chasing keyword placement. What changed is measurement: a page can influence thousands of answers and see very few clicks."
+  - question: "What is GEO, and is it a real discipline?"
+    answer: "Generative Engine Optimization means structuring content so AI systems can quote it accurately. It is a real shift, but most of what is sold as GEO expertise is guesswork, because nobody outside the model providers can verify which technique caused a citation."
+  - question: "Should I use AI to write SEO content?"
+    answer: "For drafting and structure, yes. For publishing unreviewed, that is the most common way sites get themselves demoted. Google's guidance targets content produced primarily to rank rather than to help, and volume without review is exactly that pattern."
   - question: "How long until SEO work shows results?"
-    answer: "Technical fixes can help within weeks. Content and authority gains usually take three to six months to mature, because search engines need time to re-crawl and trust new signals."
-  - question: "Do I still need keywords?"
-    answer: "Yes, as a map of what people search, not as text to stuff. Write for the intent behind the keyword, and use the terms naturally in headings and body."
+    answer: "Technical fixes can move within weeks. Content and authority gains usually take three to six months, because search engines need time to re-crawl and to trust new signals. Anyone promising faster on a new site is selling something."
+  - question: "Do keywords still matter?"
+    answer: "As a map of what people search, yes. As text to repeat, no. Ranking systems match meaning now, so a page can rank for phrasings it never contains and fail on the exact phrase it repeats."
 ---
 
-Search is changing shape. AI answers now sit above the ten blue links, summarising sources before a visitor clicks anything. That worries people, but the underlying job is the same as it always was: be the clearest, most trustworthy answer to a real question. This guide covers the fundamentals that still win, and the specific things that change when a model reads your page before a person does.
+Search changed shape in about eighteen months. AI-generated answers now sit above the results, assembled from sources the reader may never click. Every SEO channel has an opinion about what that means, and most of them are selling something.
 
-## What search rewards now
+This guide is built differently. Tech Feed Watch has covered 34 videos about search from 25 different channels — agency owners, developers, Google's own Search Central, and independent consultants. What follows is what they converge on, where they genuinely disagree, and what is worth doing about it.
 
-Google still ranks pages on relevance, quality, and trust. What shifted is how that trust gets measured. The signals grouped under E-E-A-T - experience, expertise, authoritativeness, and trustworthiness - carry more weight, especially on topics that affect money or health. A page written by a named person with real knowledge, backed by a site that covers the subject deeply, beats a thin page that merely matches keywords.
+The short version: the fundamentals did not change, the measurement did, and the largest risk right now is not being left behind by AI search. It is publishing so much unreviewed AI content that you get demoted for it.
 
-The practical takeaway: pick topics you can cover better than anyone else, and show who is behind the work.
+## What 34 videos actually agree on
 
-## On-page basics that still work
+Reading across the whole set, the surprise is not the disagreement. It is how much the advice converges — including from sources with opposite commercial interests.
 
-Give every page one clear job. Write a title that states the answer, not just the topic. Put the direct answer near the top, then support it with depth below. Use headings that a reader could scan and understand on their own. Link related pages together so both readers and crawlers see how your content connects. None of this is new, and all of it still moves rankings.
+**The loudest topic is AI search, by a wide margin.** Generative Engine Optimization or Answer Engine Optimization appears in the title of six of the 34. AI Overviews in three more. Roughly a quarter of everything published about search in this period is about the same shift.
 
-## Technical foundations
+**And the most common conclusion is that it rewards ordinary SEO done properly.** One video is titled, more or less directly, that you should ignore the AI hacks and use standard SEO. Google's own channel says the same thing in more diplomatic language. Several agency channels — who would profit from selling a new discipline — arrive there too.
 
-A page that loads slowly or breaks on a phone loses ground before content ever matters. Keep pages fast, make them work on mobile first, and give every page a clean, readable URL. Add structured data - schema markup - so search engines understand what a page is: an article, an FAQ, a product. This is also what helps AI systems quote you correctly, which brings us to the shift.
+**The second cluster is technical, and it is aimed at developers.** Core Web Vitals, HTML and XML fundamentals, site speed, the relationship between engineering and search. This is the part that is unglamorous and keeps working.
 
-## The shift to AI answers
+**The genuine disagreement is about automation.** Several videos advocate AI-generated content at scale as a competitive advantage. Several others, sometimes in the same week, warn that it is how sites destroy themselves. Both positions are argued by people with real experience. This guide takes a side, and says so below.
 
-Generative Engine Optimization, or GEO, sounds like a new discipline but mostly rewards old virtues done well. When an AI system builds an answer, it favours sources that state facts plainly, structure information clearly, and carry topical authority. Long, hedged paragraphs that bury the point get skipped. Content that answers a question in one clean sentence, then backs it with detail, gets quoted.
+## Part one: what did not change
 
-So write the way you would want to be summarised. Lead with the answer. Break complex ideas into labelled sections. Keep claims specific and checkable. If you would trust a source, a model probably will too.
+### Search still rewards being the best answer
 
-## Measuring what matters
+Google ranks on relevance, quality and trust. What shifted is how trust gets measured. The signals grouped under E-E-A-T — experience, expertise, authoritativeness, trustworthiness — carry more weight, particularly on subjects that affect money or health.
 
-Track rankings and organic traffic, but do not stop there. Watch which pages earn links and mentions, because authority spreads from those. Watch which queries you appear for in AI answers, since that is becoming its own channel. And watch engagement: if visitors arrive and leave immediately, the page is not delivering on its promise, and rankings will follow that behaviour down.
+In practice this means two things that are easy to say and hard to do. Pick subjects you can genuinely cover better than the alternatives, which usually means fewer subjects than you would like. And make it obvious who is behind the work: a named author with a real background, reachable, with a history on the topic.
 
-## Common mistakes
+The sites that struggle most are the ones with no visible owner. That is not a penalty; it is the absence of a signal that other sites have.
 
-The most common error is chasing volume over depth - publishing many shallow pages instead of a few authoritative ones. Search rewards the opposite. The second is ignoring intent: ranking for a keyword that brings the wrong visitors helps no one. The third is treating SEO as a one-time project rather than upkeep. Search is a moving target, and the sites that hold their positions are the ones that keep pages current.
+### Match the intent, not the phrase
 
-The videos below track how search keeps evolving, from technical updates to the rise of AI-driven results. Use them alongside these fundamentals rather than as a replacement for them.
+Two people searching the same words can want opposite things. "Running shoes" is either *help me choose* or *sell me a pair*, and a page built for one will not satisfy the other however often it repeats the phrase.
+
+Search engines settle this by watching what people click and stay on. So intent is not something you decide about your page — it was decided by everyone who searched before you.
+
+The check takes one minute and prevents the most common wasted effort in SEO. Search the term. Look at what already ranks. If the first page is entirely comparison articles, a product page will not rank there, no matter how well optimised, because the engine has already concluded what the query means.
+
+Write for the question rather than the phrase, then confirm the answer arrives near the top of the page. Intent includes expectations about speed: someone searching a definition wants it in the first sentence, and making them scroll past an introduction is a failure to match intent even when the content is correct.
+
+### On-page work that still moves rankings
+
+Give every page one job. A page trying to rank for four unrelated things ranks for none.
+
+Write a title that states the answer rather than the topic. "How to fix Core Web Vitals on a WordPress site" beats "Core Web Vitals: A Guide". Keep it under about 60 characters or the end gets cut in results — our [SERP snippet preview](/tools/serp-preview) shows where the cut lands before you publish.
+
+Put the direct answer near the top, then support it with depth. Use headings a reader could scan and still understand. Link related pages to each other so both readers and crawlers can see how your content connects — internal linking is the most underused lever most sites have, and it costs nothing but attention.
+
+None of this is new. All of it still works.
+
+## Part two: the technical foundation
+
+This is the section the developer-facing videos in our archive keep returning to, and it is where most sites have the largest gap between what they think is true and what is actually deployed.
+
+### Speed and Core Web Vitals
+
+A page that loads slowly loses before content matters. Core Web Vitals measure three things: how quickly the main content appears, how quickly the page responds to a tap, and how much the layout jumps around while loading.
+
+The third one is the most often ignored and the most infuriating to users — the button that moves as an advert loads above it. Reserving space for images and embeds fixes most of it, and it is usually an afternoon of work rather than a project.
+
+Test on a mid-range phone on mobile data, not on your laptop on office wifi. That is the experience most of your visitors actually have.
+
+### Structured data
+
+Schema markup tells a search engine what a page *is* — an article, a FAQ, a product, a video — rather than leaving it to infer. It is also what helps AI systems quote you correctly, which makes it more valuable now than it was two years ago, not less.
+
+Three practical notes from doing this on this site:
+
+**Nested objects count as separate items.** A typed object inside another one is validated on its own. An incomplete one there will be reported as an invalid item even though the outer object is perfect — and you will not see it by looking at the top level.
+
+**Never invent a rating.** An `aggregateRating` on a page with no reviews is a fabricated signal, and Google treats fabricated structured data far more harshly than missing structured data.
+
+**Test more than one page type.** Google's Rich Results Test checks one URL at a time, so a fault present on every article page looks identical to a fault on one.
+
+Generate it with the [schema markup generator](/tools/schema-generator), and use the [video schema generator](/tools/video-schema) if you publish video, since that has its own required fields.
+
+### The unglamorous rest
+
+Clean, readable URLs — the [slug generator](/tools/slug-generator) handles the accents and punctuation that break them. Correct meta tags, which the [meta tag generator](/tools/meta-tag-generator) will produce in full. Open Graph tags so shared links do not look broken, via the [Open Graph generator](/tools/open-graph-generator). A sane [robots.txt](/tools/robots-txt-generator). And if you publish in several languages, [hreflang tags](/tools/hreflang-generator), which are easy to get subtly and expensively wrong.
+
+Every one of those tools runs in your browser. Nothing you paste is uploaded.
+
+## Part three: the shift to AI answers
+
+Here is the honest framing, which is rarer than it should be.
+
+When someone asks an AI assistant a question, the answer is assembled from sources and often shown without a click. Traditional SEO competes for a position in a list. [Generative engine optimization](/glossary/generative-engine-optimization) competes to be one of the sources the answer is built from.
+
+That matters because the click may never happen. A page can influence thousands of answers and see almost none of that traffic — which breaks the measurement most SEO work is built around, and explains why traffic can fall while visibility rises.
+
+### What appears to help
+
+These are reasonable inferences, not established rules. The systems are opaque, the field is young, and much of what is sold as GEO expertise is guesswork with an invoice attached.
+
+**Answer the question early and plainly.** A system extracting a claim takes a clear sentence over a paragraph that circles the point.
+
+**Make claims attributable.** Specific, checkable statements are easier to quote than general assertions, and quoting is the whole mechanism.
+
+**Structure the page.** Clear headings, question-shaped subheads, a definition near the top. These give a retrieval system obvious units to pull.
+
+**Be current.** Systems favour recent sources for anything time-sensitive, and more topics are time-sensitive than people assume.
+
+### What has not changed
+
+The underlying requirement is what it always was: say something true, specific, and not available in the same form on a hundred other pages. A model summarising ten interchangeable pages cites whichever it happened to retrieve. A page with a number, a method or a first-hand observation gives it a reason to choose yours.
+
+Which is why the conclusion most of our 34 videos reach is the unexciting one. GEO is not a separate discipline you bolt on. It is what good SEO looks like when the reader is a model.
+
+Be sceptical of anyone selling a specific GEO technique. Nobody outside the model providers can currently verify that any technique caused a citation, and a claim that cannot be tested is not a finding.
+
+## Part four: the automation question
+
+This is where the archive genuinely splits, so it deserves a straight answer rather than a summary of both sides.
+
+The case for automation is real. AI drafts faster than any writer, covers more ground, and lets a small team compete on volume with a large one. Several agency channels demonstrate exactly this, with results.
+
+The case against is also real, and it is more specific than "AI content is bad". Google's guidance does not target how content was produced. It targets content produced primarily to rank rather than to help. Volume without review is that pattern almost by definition — and the failure is not gradual. Sites lose most of their traffic in a single update, and recovery takes months when it happens at all.
+
+### Where the line actually sits
+
+Three questions decide it, and they are worth answering honestly before publishing anything at scale.
+
+**Does a person read it before it goes live?** Not approve it — read it. This is the single largest difference between the sites that survive and the ones that do not.
+
+**Does the page contain anything that was not already on the internet?** A restatement of ten existing pages adds nothing a reader or a model could not get elsewhere. An original number, a test you ran, an observation from your own work is what makes the page worth retrieving.
+
+**Would you put your name on it?** Sites hide authorship precisely when the answer is no, and that absence is itself a signal.
+
+### The disclosure question
+
+If AI is substantially involved in producing your content, say so somewhere a reader can find it. Google does not require this. It costs a little trust with some readers and earns more with others.
+
+The practical argument is simpler than the ethical one: a site that describes its own process accurately can be corrected when it is wrong. A site that implies an editorial process it does not have has to keep implying it, and the gap tends to show up eventually in the writing.
+
+## Part five: measuring what actually matters
+
+Rankings and organic traffic remain the baseline, but three other things now carry more information.
+
+**Which pages earn links and mentions.** Authority spreads from those, and they are the pages worth building more of.
+
+**Whether you appear in AI answers.** Ask the assistants questions you should be the answer to and see what they cite. It is crude, it is manual, and it is currently the only reliable check available.
+
+**Engagement after arrival.** If visitors land and leave immediately, the page did not deliver what the title promised, and rankings follow that behaviour down.
+
+For campaign traffic, tag your links properly with the [UTM builder](/tools/utm-builder) — inconsistent tagging is the most common reason analytics cannot answer which channel actually worked.
+
+## The mistakes that cost the most
+
+**Publishing at volume without review.** Covered above, and it is first for a reason. It is the fastest way to lose a site.
+
+**Writing for the keyword instead of the question.** Ranking systems match meaning. A page can rank for phrasings it never contains and fail on the exact phrase it repeats twelve times.
+
+**Treating the title as a promise you do not keep.** A page called an ultimate guide that takes four minutes to read teaches every visitor to distrust your titles. Deliver on it or rename it.
+
+**Leaving your own assets unlinked.** Most sites have something genuinely useful — a tool, a dataset, a calculator — buried in a menu and mentioned nowhere in the content where it would help. That is free relevance being thrown away.
+
+**Chasing an update instead of fixing the cause.** Every core update produces a wave of tactical advice. The sites that recover are usually the ones that improved the thing the update was measuring, not the ones that found a workaround.
+
+**No named human anywhere.** For anything touching money or health, this alone can hold a site back regardless of content quality.
+
+## Where to go next
+
+If you have one afternoon: check what actually ranks for your five most important queries, and confirm your pages match that intent. It is the cheapest correction available and it invalidates a surprising amount of existing work.
+
+If you have one week: fix Core Web Vitals on your templates, add correct structured data, and link your best pages to each other properly.
+
+If you are planning for the next six months: pick a narrower subject than feels comfortable, cover it more thoroughly than anyone else, and put a name on it.
+
+---
+
+*This guide draws on 34 videos about search covered on Tech Feed Watch, from 25 channels including Google Search Central, Fireship, and a range of independent agencies and consultants. Every article links to its original video — the [SEO tag](/tag/seo) has the full set. Written and maintained by Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections) explains how to tell me.*

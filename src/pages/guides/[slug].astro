@@ -30,6 +30,15 @@ export async function getStaticPaths() {
 const { guide, matchedVideos } = Astro.props as { guide: any; matchedVideos: any[] };
 const { title, description, category, date, faqs } = guide.frontmatter;
 
+// Samme regel som artiklerne: datoen vises kun når den findes OG er forskellig
+// fra udgivelsesdatoen. En guide der står med samme dato for evigt ser forladt
+// ud, og en der påstår at være opdateret uden at være det er værre.
+const updated: string | null = guide.frontmatter.updated || null;
+const showUpdated = updated && String(updated).slice(0, 10) !== String(date).slice(0, 10);
+const updatedLabel = showUpdated
+  ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  : null;
+
 const TAG_COLORS: Record<string, string> = {
   "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
   "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
@@ -61,6 +70,7 @@ const schema = {
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
   "datePublished": date,
+  "dateModified": showUpdated ? updated : date,
   "mainEntityOfPage": { "@type": "WebPage", "@id": `https://techfeedwatch.com/guides/${guide.frontmatter.slug}` }
 };
 ---
@@ -70,6 +80,9 @@ const schema = {
     .guide-wrapper { max-width: 820px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
     .guide-breadcrumbs { background: var(--hover-bg); padding: 10px 18px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 25px; color: #6b7280; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border-color); }
     .guide-breadcrumbs a { color: #0891b2; text-decoration: none; font-weight: 500; }
+    .guide-updated { font-size: 0.88rem; color: #6b7280; margin: -8px 0 24px 0; }
+    body.dark-mode .guide-updated { color: #9ca3af; }
+    .guide-updated a { color: #0891b2; text-decoration: none; font-weight: 600; }
     body.dark-mode .guide-breadcrumbs a { color: #22d3ee; }
     .guide-breadcrumbs span { opacity: 0.5; }
 
@@ -126,6 +139,9 @@ const schema = {
     <span class="guide-badge">{category}</span>
     <h1 class="guide-title">{title}</h1>
     <p class="guide-lead">{description}</p>
+    {updatedLabel && (
+      <p class="guide-updated">Last updated <time datetime={updated!}>{updatedLabel}</time> · by <a href="/author/jacob-olsen">Jacob S. Olsen</a></p>
+    )}
 
     <div class="guide-body">
       <guide.Content />
