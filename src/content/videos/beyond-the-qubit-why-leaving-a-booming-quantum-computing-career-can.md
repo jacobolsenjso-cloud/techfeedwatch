@@ -8,7 +8,7 @@ channelId: "UCFk__1iexL3T5gvGcMpeHNA"
 publishedAt: "2025-06-27T15:33:56Z"
 date: "2026-07-11"
 tags:
-  - "AI & Tech"
+  - "Quantum Computing"
   - "Business & Money"
 summary: "Quantum computing hardware is advancing at an impressive pace, exceeding initial projections for qubit counts and engineering milestones. However, the development of practical quantum algorithms and applications lags significantly behind, challenging the perception of quantum computers as general-purpose supercomputers. They are highly specialized machines, and extracting useful information from their simultaneous calculations requires ingenious, problem-specific algorithmic design, which remains a substantial hurdle for widespread utility. While quantum simulation shows strong promise for material science and fundamental physics, the broader applicability of quantum machine learning and quantum chemistry faces significant theoretical and practical limitations."
 duration: "21:14"

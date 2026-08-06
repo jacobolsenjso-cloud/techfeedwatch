@@ -8,7 +8,7 @@ channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
 publishedAt: "2025-11-05T16:01:09Z"
 date: "2026-07-11"
 tags:
-  - "AI & Tech"
+  - "Quantum Computing"
 summary: "Early skepticism about quantum computing's near-term viability has given way to sustained momentum and increased investment, prompting a re-evaluation of its progress timeline. Advances in qubit stability and error correction, coupled with strategic national funding, drive this persistence. The shift from purely theoretical research to complex engineering challenges underscores a slow but tangible march toward practical applications."
 duration: "7:27"
 viewCount: 692710

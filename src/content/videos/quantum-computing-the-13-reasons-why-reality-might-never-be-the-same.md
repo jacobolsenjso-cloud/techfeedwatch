@@ -7,7 +7,7 @@ channelId: "UC-HSbErFoGmfOJ-tzc135_Q"
 publishedAt: "2025-03-23T23:34:09Z"
 date: "2026-07-11"
 tags:
-  - "AI & Tech"
+  - "Quantum Computing"
 summary: "Quantum computing promises to revolutionize problem-solving by leveraging principles like superposition and entanglement, offering exponential computational advantages over classical systems for specific tasks. While it excels in areas like advanced cryptography, optimization, and material science, its inherent fragility, error correction demands, and specialized nature limit its universal applicability. The technology's true impact will likely emerge from its complementary role with classical computing and even AI, addressing challenges previously considered intractable rather than replacing existing infrastructure. Its future is one of focused innovation, not broad ubiquity."
 duration: "40:41"
 viewCount: 107

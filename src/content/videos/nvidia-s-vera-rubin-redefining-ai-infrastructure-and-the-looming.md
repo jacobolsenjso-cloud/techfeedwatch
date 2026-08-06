@@ -8,7 +8,7 @@ channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
 publishedAt: "2026-02-25T15:01:07Z"
 date: "2026-07-29"
 tags:
-  - "AI & Tech"
+  - "Hardware & Chips"
   - "Business & Money"
 summary: "Nvidia's upcoming Vera Rubin AI system represents a significant leap in data center efficiency, promising ten times the performance per watt compared to its predecessor. This advancement underscores the critical industry focus on optimizing AI compute power while managing escalating operational costs. The modular design and intricate global supply chain highlight the complexities and strategic importance of next-generation AI hardware, setting the stage for intensified competition from rivals like AMD."
 metaDescription: "Nvidia's Vera Rubin AI system offers 10x more efficiency per watt, setting a new standard for AI data centers amid rising competition."

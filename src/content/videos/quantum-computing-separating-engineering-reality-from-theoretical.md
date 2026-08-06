@@ -7,7 +7,7 @@ channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
 publishedAt: "2026-04-17T18:00:49Z"
 date: "2026-07-18"
 tags:
-  - "AI & Tech"
+  - "Quantum Computing"
   - "Coding"
 summary: "Quantum computing leverages the mind-bending principles of quantum mechanics, like superposition and entanglement, to process information in fundamentally new ways. Unlike classical computers that rely on binary bits, quantum machines utilize qubits, enabling them to solve certain complex problems intractable for even the most powerful conventional systems. While still in its early stages, quantum computing holds the potential to revolutionize fields from cryptography and materials science to drug discovery and artificial intelligence."
 duration: "21:51"

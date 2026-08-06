@@ -7,7 +7,7 @@ channelId: "UCf_KhBXw5TIV0A7butjgFhg"
 publishedAt: "2026-05-27T22:15:06Z"
 date: "2026-07-29"
 tags:
-  - "AI & Tech"
+  - "Hardware & Chips"
   - "Automation"
 summary: "Makora, an AI startup, announced significant advancements in automated GPU kernel generation, capable of outperforming hand-tuned CUDA code. This innovation promises substantial speedups for large language model inference, addressing critical performance bottlenecks in AI compute. Their approach, featuring advanced speculative decoding, marks a step toward more efficient and adaptive AI hardware utilization."
 metaDescription: "Makora automates GPU kernel optimization for AI inference, beating hand-tuned code and speeding up LLMs. Discover this AI tech breakthrough."

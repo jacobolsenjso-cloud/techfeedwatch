@@ -7,7 +7,7 @@ channelId: "UC6_etbfDnWMxAuYj9qD1qmA"
 publishedAt: "2026-04-07T09:03:00Z"
 date: "2026-07-16"
 tags:
-  - "AI & Tech"
+  - "Quantum Computing"
   - "Business & Money"
 summary: "Quantum computing is moving beyond theoretical research, demonstrating tangible real-world impact through hybrid systems. These systems combine classical and quantum processors to tackle complex optimization challenges, particularly in logistics and mobility. The focus has shifted from pure proof-of-concept to outcome-driven engineering, solving problems that classical computers struggle with alone. This practical application heralds a new era for quantum technology, especially as it converges with agentic AI for advanced decision-making."
 duration: "33:43"

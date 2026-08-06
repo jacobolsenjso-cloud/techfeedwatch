@@ -60,7 +60,7 @@ const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 10
 // og 10 mærker, og forbindelsen mellem dem blev smidt væk efter søgningen.
 // "|" betyder ELLER i YouTube-søgningen.
 const TOPIC_BY_TAG = {
-  "AI & Tech": "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|AI agents|quantum computing|GPU|semiconductors|AI chips|robotics|smart glasses|AR|VR|cloud computing|AWS|Azure|Kubernetes|DevOps",
+  "AI & Tech": "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|AI agents|robotics|smart glasses|AR|VR|cloud computing|AWS|Azure|Kubernetes|DevOps",
   "Business & Money": "personal finance|investing|stock market|index funds|passive income|retirement planning|wealth building|ecommerce|Shopify|dropshipping|online business|digital products|startup",
   "Fintech": "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|core banking",
   "Automation": "workflow automation|AI automation|no-code|n8n|Zapier|business process automation|agentic workflows|RPA|automated pipelines",
@@ -70,6 +70,11 @@ const TOPIC_BY_TAG = {
   "SEO": "SEO|search engine optimization|generative engine optimization|AEO|technical SEO|link building|content strategy|Google ranking",
   "Cybersecurity": "cybersecurity|infosec|data breach|ransomware|zero trust|network security|ethical hacking|penetration testing|cloud security|AI security",
   "AI Video": "AI video|text to video|Sora|Runway|Veo|Kling|AI filmmaking|Midjourney|AI image generation|AI content creation",
+  // Kvante og hardware er egne emner, ikke undergrupper af AI. Kvantecomputere
+  // har intet med sprogmodeller at gøre, og chips er sin egen industri med sin
+  // egen søgning. De blev udskilt fra AI & Tech-paraplyen, hvor de lå begravet.
+  "Quantum Computing": "quantum computing|qubit|quantum supremacy|quantum advantage|post-quantum cryptography|quantum hardware|QPU|quantum error correction",
+  "Hardware & Chips": "AI chips|semiconductors|GPU|TPU|Nvidia|data center|AI infrastructure|chip manufacturing|foundry|silicon|compute costs|edge AI hardware",
 };
 
 // Tæller hvor mange artikler der bærer hvert mærke. Bruges til at vælge det

@@ -7,7 +7,7 @@ channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
 publishedAt: "2023-08-16T17:00:00Z"
 date: "2026-07-25"
 tags:
-  - "AI & Tech"
+  - "Hardware & Chips"
 summary: "The generative AI revolution hinges fundamentally on specialized hardware, particularly AI accelerators like GPUs and custom chips. While Moore's Law continues to drive transistor density, the limitations of Denard scaling mean power and heat are becoming critical challenges, pushing the industry towards highly parallel architectures and sophisticated cooling solutions. The dominance of Nvidia's software ecosystem, coupled with intense demand exceeding supply, shapes competition, innovation, and strategic investments across the tech world."
 duration: "15:24"
 viewCount: 62107
