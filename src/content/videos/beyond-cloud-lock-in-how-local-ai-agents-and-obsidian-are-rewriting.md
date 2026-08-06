@@ -12,7 +12,7 @@ tags:
 summary: "The advent of powerful local AI agents is fundamentally reshaping personal knowledge management, shifting user preference from centralized, proprietary platforms to open, extensible systems like Obsidian. This move underscores a growing demand for data sovereignty and highly customizable workflows, allowing individuals to integrate AI directly with their local information repositories. The ability to deploy AI agents that operate on personal notes and files offers unprecedented control and analytical capabilities, redefining how we manage and derive value from our personal data."
 metaDescription: "Local AI agents and personal knowledge management are reshaping workflows. Discover why data sovereignty and open tools like Obsidian matter."
 duration: "29:25"
-viewCount: 22078
+viewCount: 22161
 viewsUpdated: "2026-08-06"
 thumbMax: true
 isShort: false

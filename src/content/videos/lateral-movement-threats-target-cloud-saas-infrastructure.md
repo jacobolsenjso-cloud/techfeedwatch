@@ -11,7 +11,7 @@ tags:
 summary: "Cybersecurity experts at ACSC2024 highlighted the escalating threat of lateral movement techniques against cloud, SaaS, and hybrid infrastructure. As organizations embrace distributed IT environments, attackers are exploiting new vulnerabilities beyond traditional perimeters. This shift demands a re-evaluation of security postures, moving towards continuous verification and adaptive defense strategies."
 metaDescription: "Understand lateral movement threats in cloud, SaaS, and hybrid infrastructure. Learn how modern cybersecurity protects data from evolving attacks."
 duration: "28:15"
-viewCount: 12
+viewCount: 17
 viewsUpdated: "2026-08-06"
 thumbMax: false
 isShort: false

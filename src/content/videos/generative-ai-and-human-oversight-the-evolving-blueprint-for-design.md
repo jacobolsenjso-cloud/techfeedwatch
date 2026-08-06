@@ -11,7 +11,7 @@ tags:
   - "Automation"
 summary: "AI's integration into Computer-Aided Design (CAD) software like FreeCAD represents a significant advancement in generative design, allowing for rapid ideation and diverse aesthetic exploration. This methodology employs AI agents to create numerous design options based on user parameters, streamlining architectural and product development processes. Crucially, the 'human-in-the-loop' approach ensures human designers evaluate and refine AI outputs, providing essential control over quality, cost, and mitigating the risks associated with fully autonomous AI generation."
 duration: "3:36"
-viewCount: 117
+viewCount: 120
 viewsUpdated: "2026-08-06"
 thumbMax: true
 isShort: false

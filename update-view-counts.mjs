@@ -93,6 +93,53 @@ for (const e of entries) {
 
 console.log(`\nSkrevet: ${written}  ·  uændret: ${unchanged}  ·  uden svar fra YouTube: ${missing}`);
 
+// --- Historik: gem visningstallet over tid ---------------------------------
+// Robotten hentede allerede tallet hver tredje dag og OVERSKREV det gamle. Vi
+// smed altså data væk hver eneste gang. Gemmer vi det i stedet, kan vi vise
+// noget ingen andre har: hvilke videoer der tager fart efter vi dækkede dem.
+// Det kræver kun tid, og tiden går uanset — men kun hvis nogen skriver ned.
+//
+// Ét punkt om ugen pr. video. Jobbet kører hver tredje dag, så uden en
+// mindsteafstand ville filen vokse tre gange hurtigere end den behøver.
+// Ingen bagudrettede punkter: vi ved ikke hvad tallet var i går.
+const HIST = 'src/data/view-history.json';
+const MIN_DAYS = 6;
+const MAX_POINTS = 60;   // ca. et års ugentlige punkter pr. video
+
+let hist = { method: 'Visninger på kildevideoen, ét punkt pr. uge. Ikke bagudrettet.', videos: {} };
+if (fs.existsSync(HIST)) {
+  try { hist = JSON.parse(fs.readFileSync(HIST, 'utf8')); }
+  catch (e) { console.error(`Kunne ikke læse ${HIST}: ${e.message} — starter forfra`); }
+}
+
+const daysBetween = (a, b) => Math.abs(new Date(a) - new Date(b)) / 86400000;
+let added = 0, tooSoon = 0;
+
+for (const e of entries) {
+  const v = views.get(e.id);
+  if (v === undefined) continue;
+  const rec = hist.videos[e.id] || (hist.videos[e.id] = { points: [] });
+  const last = rec.points[rec.points.length - 1];
+  if (last && daysBetween(last[0], today) < MIN_DAYS) { tooSoon++; continue; }
+  rec.points.push([today, v]);
+  if (rec.points.length > MAX_POINTS) rec.points = rec.points.slice(-MAX_POINTS);
+  added++;
+}
+
+// Videoer der ikke længere er på sitet fylder bare. prune-videos.yml har
+// allerede fjernet artiklen; historikken skal følge med.
+const alive = new Set(entries.map((e) => e.id));
+let dropped = 0;
+for (const id of Object.keys(hist.videos)) {
+  if (!alive.has(id)) { delete hist.videos[id]; dropped++; }
+}
+
+fs.mkdirSync(path.dirname(HIST), { recursive: true });
+fs.writeFileSync(HIST, JSON.stringify(hist) + '\n', 'utf8');
+const withTwo = Object.values(hist.videos).filter((r) => r.points.length >= 2).length;
+console.log(`Historik: ${added} nye punkter · ${tooSoon} for tidligt · ${dropped} fjernet · ${withTwo} videoer har nok til at vise en udvikling`);
+
+
 // --- Kanalgennemsnit til /popular ---
 // /popular rangerer efter hvor mange gange flere visninger en video fik end
 // kanalens egen gennemsnitsvideo. Uden det måler listen bare kanalstørrelse.

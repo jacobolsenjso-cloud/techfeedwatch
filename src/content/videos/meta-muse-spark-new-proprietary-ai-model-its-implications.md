@@ -11,7 +11,7 @@ tags:
 summary: "Meta's launch of Muse Spark, a new proprietary AI model from its Superintelligence Lab, marks a significant departure from its previous open-source strategy. This shift indicates a clear intent to monetize its advanced AI research through paid API access, targeting new revenue streams. Positioned as a foundational step toward 'personal superintelligence,' Muse Spark underscores Meta's substantial increase in AI investment. The move intensifies competition within the AI industry, impacting future product development and developer ecosystems."
 metaDescription: "Meta launches Muse Spark, a powerful proprietary AI model, signaling a new era for AI development and potential revenue streams. Discover the future of Meta…"
 duration: "3:07"
-viewCount: 84374
+viewCount: 84412
 viewsUpdated: "2026-08-06"
 thumbMax: true
 isShort: false

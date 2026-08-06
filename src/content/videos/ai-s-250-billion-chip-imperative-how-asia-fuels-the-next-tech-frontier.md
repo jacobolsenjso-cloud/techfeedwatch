@@ -12,7 +12,7 @@ tags:
 summary: "The burgeoning demand for artificial intelligence capabilities is reshaping global capital flows and industrial strategies, with the semiconductor sector emerging as its linchpin. Reports of Nvidia pursuing substantial financing deals, coupled with its CEO's projections for exponential chip industry expansion, underscore an increasingly competitive and capital-intensive environment. Strategic alliances and regional production capabilities now dictate the pace of innovation and economic power, particularly across Asian markets."
 metaDescription: "The AI chip industry demands unprecedented investment. Discover how Asia's semiconductor giants are at the core of the global AI infrastructure race."
 duration: "1:35:14"
-viewCount: 5818
+viewCount: 5827
 viewsUpdated: "2026-08-06"
 thumbMax: true
 isShort: false

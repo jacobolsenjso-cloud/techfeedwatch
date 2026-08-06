@@ -13,7 +13,7 @@ tags:
 summary: "Deploying multiple AI coding agents simultaneously presents significant challenges, from file overwrites to dependency conflicts. Advanced setups, utilizing tools like Git worktrees and Docker sandboxes, provide crucial isolation for these agents. This approach enables efficient, parallel software development, transforming AI's role from a single assistant to a coordinated team of digital co-developers."
 metaDescription: "Master parallel AI coding with Claude Code. Discover advanced setups for efficient multi-agent development and isolation."
 duration: "12:54"
-viewCount: 17700
+viewCount: 17771
 viewsUpdated: "2026-08-06"
 thumbMax: true
 isShort: false
