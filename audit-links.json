@@ -2,26 +2,21 @@
  "broken": [
   {
    "url": "https://img.youtube.com",
-   "count": 964,
+   "count": 1066,
    "status": 404
   },
   {
    "url": "https://pagead2.googlesyndication.com",
-   "count": 482,
+   "count": 533,
    "status": 404
   },
   {
    "url": "https://www.googletagmanager.com",
-   "count": 482,
+   "count": 533,
    "status": 404
   },
   {
    "url": "https://www.aboutads.info/choices/",
-   "count": 1,
-   "status": 429
-  },
-  {
-   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=artificial%20intelligence,cryptocurrency,fintech,SEO",
    "count": 1,
    "status": 429
   },
@@ -32,11 +27,6 @@
   },
   {
    "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=ChatGPT",
-   "count": 1,
-   "status": 429
-  },
-  {
-   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=machine%20learning",
    "count": 1,
    "status": 429
   },
@@ -66,22 +56,7 @@
    "status": 429
   },
   {
-   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=automation",
-   "count": 1,
-   "status": 429
-  },
-  {
    "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=cybersecurity",
-   "count": 1,
-   "status": 429
-  },
-  {
-   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=cloud%20computing",
-   "count": 1,
-   "status": 429
-  },
-  {
-   "url": "https://trends.google.com/trends/explore?date=today%2012-m&amp;q=web3",
    "count": 1,
    "status": 429
   },
@@ -91,17 +66,12 @@
    "status": 404
   },
   {
-   "url": "http://localhost:3000/video/shipping-10x-faster",
-   "count": 1,
-   "status": "FEJL: fetch failed"
-  },
-  {
    "url": "https://claude.ai/login",
    "count": 1,
    "status": 403
   }
  ],
- "missingMax": 17,
+ "missingMax": 18,
  "missingList": [
   "TZUTe7s11-I",
   "zawsAmcN71M",
@@ -114,6 +84,7 @@
   "6XvcvDScf1c",
   "k6Vd_wnYbhA",
   "VyX8E4KUkWw",
+  "79kNOf749MA",
   "sY_PCmpVKZI",
   "AnTpZQnlEj4",
   "eQ3J8dpNRoM",

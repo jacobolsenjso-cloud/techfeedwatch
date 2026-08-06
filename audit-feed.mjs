@@ -56,9 +56,15 @@ const ok = (s) => console.log('✅ ' + s);
   for (const f of files) {
     const html = fs.readFileSync(f, 'utf-8');
     for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      const raw = m[1].trim();
+      // schema-generator og video-schema har teksten for en JSON-LD-blok inde i
+      // deres egen JavaScript, fordi de skal VISE den til brugeren. Browseren
+      // læser den aldrig som markup — kun et regex gør. Uden denne linje melder
+      // scriptet to ugyldige blokke som ikke findes.
+      if (!raw.startsWith('{') && !raw.startsWith('[')) continue;
       blocks++;
       let parsed;
-      try { parsed = JSON.parse(m[1]); }
+      try { parsed = JSON.parse(raw); }
       catch (e) { invalid++; if (badFiles.length < 5) badFiles.push(f + ': ' + e.message.slice(0, 60)); continue; }
       const arr = Array.isArray(parsed) ? parsed : [parsed];
       for (const o of arr) {
@@ -74,8 +80,11 @@ const ok = (s) => console.log('✅ ' + s);
   if (missingType) note(`${missingType} objekter uden @type`); else ok('alle objekter har @type');
   console.log('   typer: ' + Object.entries(typeCount).map(([k, v]) => `${k} ${v}`).join(', '));
 
-  // Artikelsider skal have både VideoObject og Article
-  const sample = files.find((f) => f.includes('video') && f.endsWith('index.html'));
+  // Artikelsider skal have både VideoObject og Article.
+  // Matchet skal være på MAPPEN /video/, ikke bare på ordet "video" et sted i
+  // stien: ellers rammer den tools/video-schema/index.html, som er et værktøj
+  // og aldrig har haft en VideoObject — og så meldes en fejl der ikke findes.
+  const sample = files.find((f) => /[\\/]video[\\/]/.test(f) && f.endsWith('index.html'));
   if (sample) {
     const html = fs.readFileSync(sample, 'utf-8');
     const types = [...html.matchAll(/"@type"\s*:\s*"(\w+)"/g)].map((m) => m[1]);

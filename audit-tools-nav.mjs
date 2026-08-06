@@ -12,12 +12,23 @@ const bad = (msg) => { problems.push(msg); console.log(' FEJL ' + msg); };
 
 const CATS = ['seo', 'content', 'developer', 'media', 'finance'];
 
+// Antallet læses ud af tools.ts i stedet for at stå som et tal her. Scriptet
+// meldte "forventede 27, fandt 34" længe efter at 34 var det rigtige — det var
+// scriptet der var forældet, ikke sitet. Et hardkodet tal i et målescript
+// bliver til en falsk fejl i samme øjeblik nogen tilføjer et værktøj.
+const toolsSrc = fs.readFileSync('src/lib/tools.ts', 'utf8');
+// Kun fra 'export const TOOLS' og frem: kategorilisten ovenfor har også slug-felter,
+// og talte man hele filen, blev svaret 39 i stedet for 34.
+const toolsBody = toolsSrc.slice(toolsSrc.indexOf('export const TOOLS'));
+const EXPECTED_TOOLS = (toolsBody.match(/^\s*slug:\s*'/gm) || []).length;
+const EXPECTED_FEATURED = (toolsBody.match(/^\s*featured:\s*true/gm) || []).length;
+
 console.log('\n== 1. Kategorisider er bygget ==');
 for (const c of CATS) {
   exists(`tools/${c}/index.html`) ? ok(`/tools/${c}/`) : bad(`/tools/${c}/ mangler`);
 }
 
-console.log('\n== 2. Alle 27 værktøjssider findes stadig ==');
+console.log(`\n== 2. Alle ${EXPECTED_TOOLS} værktøjssider findes stadig ==`);
 const toolsTs = fs.readFileSync('src/lib/tools.ts', 'utf8');
 const body = toolsTs.slice(toolsTs.indexOf('export const TOOLS'));
 const slugs = [...body.matchAll(/^\s+slug: '([a-z0-9-]+)',/gm)].map((m) => m[1]);
@@ -25,7 +36,7 @@ console.log(`  ${slugs.length} værktøjer i listen`);
 for (const s of slugs) {
   if (!exists(`tools/${s}/index.html`)) bad(`/tools/${s}/ mangler i dist`);
 }
-if (slugs.length === 27) ok('27 værktøjer'); else bad(`forventede 27, fandt ${slugs.length}`);
+if (slugs.length === EXPECTED_TOOLS) ok(`${EXPECTED_TOOLS} værktøjer`); else bad(`forventede ${EXPECTED_TOOLS}, fandt ${slugs.length}`);
 
 console.log('\n== 3. Hvert værktøj er linket fra sin kategoriside ==');
 for (const c of CATS) {
@@ -49,10 +60,10 @@ const home = read('index.html');
 const homeToolLinks = [...home.matchAll(/class="home-tool"[^>]*|href="\/tools\/([a-z0-9-]+)" class="home-tool"/g)];
 const featured = [...home.matchAll(/href="\/tools\/([a-z0-9-]+)"\s+class="home-tool"/g)].map((m) => m[1]);
 console.log(`  ${featured.length} værktøjer i sektionen: ${featured.join(', ')}`);
-featured.length === 6 ? ok('6 udvalgte værktøjer') : bad(`forventede 6, fandt ${featured.length}`);
+featured.length === EXPECTED_FEATURED ? ok(`${EXPECTED_FEATURED} udvalgte værktøjer`) : bad(`forventede ${EXPECTED_FEATURED}, fandt ${featured.length}`);
 const badFeatured = featured.filter((s) => !slugs.includes(s));
 if (badFeatured.length) bad(`ukendt slug på forsiden: ${badFeatured.join(', ')}`);
-home.includes('All 27 tools') ? ok('link til alle 27 værktøjer') : bad('mangler "All 27 tools"-link');
+home.includes(`All ${EXPECTED_TOOLS} tools`) ? ok(`link til alle ${EXPECTED_TOOLS} værktøjer`) : bad(`mangler "All ${EXPECTED_TOOLS} tools"-link`);
 
 console.log('\n== 6. Kategorisider i sitemap ==');
 const smFiles = fs.readdirSync(DIST).filter((f) => /^sitemap-\d+\.xml$/.test(f));

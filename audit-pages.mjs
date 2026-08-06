@@ -31,16 +31,35 @@ const PAGES = [
   ['guides', '/guides/'],
   ['trends', '/trends/'],
   ['about', '/about/'],
+  ['corrections', '/corrections/'],
   ['contact', '/contact/'],
   ['terms', '/terms/'],
   ['privacy', '/privacy-policy/'],
   ['sitemap-side', '/sitemap/'],
   ['forfatter', '/author/jacob-olsen/'],
+  ['guide', '/guides/ultimate-guide-to-ai-coding/'],
+  ['glossar-opslag', '/glossary/api/'],
+  ['vaerktoej: kategori', '/tools/developer/'],
+  ['vaerktoej: sort-list', '/tools/sort-list/'],
+  ['vaerktoej: dubletter', '/tools/remove-duplicate-lines/'],
+  ['vaerktoej: tomme linjer', '/tools/remove-empty-lines/'],
+  ['vaerktoej: erstat', '/tools/find-and-replace/'],
+  ['vaerktoej: split', '/tools/split-file/'],
+  ['vaerktoej: join', '/tools/join-files/'],
+  ['vaerktoej: dummy-fil', '/tools/random-file-generator/'],
+  ['vaerktoej: base64', '/tools/encoder-decoder/'],
+  ['vaerktoej: serp', '/tools/serp-preview/'],
   ['offline', '/offline/'],
   ['404', '/findes-ikke-xyz'],
 ];
 
-const VIEWPORTS = [['mobil', 390, 844], ['desktop', 1280, 900]];
+// Én bredde ad gangen: hele listen på begge bredder tager over fire minutter,
+// og så når man ikke at se resultatet før forbindelsen giver op.
+//   node audit-pages.mjs mobil
+//   node audit-pages.mjs desktop
+const ONLY = process.argv[2];
+const VIEWPORTS = [['mobil', 390, 844], ['desktop', 1280, 900]]
+  .filter(([name]) => !ONLY || name === ONLY);
 
 const browser = await puppeteer.launch({ browser: 'chrome', headless: true, args: ['--no-sandbox'] });
 const findings = [];
@@ -70,6 +89,10 @@ for (const [vpName, w, h] of VIEWPORTS) {
       // Annonce- og samtykke-scripts larmer uden at det er vores fejl
       // Chrome melder ERR_FAILED for de kald vi selv afbryder ovenfor
       if (/fundingchoices|googlesyndication|adsbygoogle|doubleclick|ERR_BLOCKED|ERR_FAILED|net::ERR/i.test(t)) return;
+      // 404-siden melder naturligvis 404 i konsollen. Vi undtager allerede selve
+      // svaret; uden denne linje meldes konsolbeskeden som en fejl, og så er de
+      // eneste to røde linjer i hele gennemgangen scriptets egen støj.
+      if (path === '/findes-ikke-xyz' && /status of 404/i.test(t)) return;
       consoleErrors.push(t.slice(0, 140));
     });
     page.on('response', (r) => {
@@ -127,7 +150,7 @@ for (const [vpName, w, h] of VIEWPORTS) {
   }
 }
 
-fs.writeFileSync('audit-pages.json', JSON.stringify(findings, null, 1));
+fs.writeFileSync(`audit-pages${ONLY ? '-' + ONLY : ''}.json`, JSON.stringify(findings, null, 1));
 const bad = findings.filter((f) => f.problems.length);
 console.log(`\n=== ${bad.length} af ${findings.length} sidevisninger med problemer`);
 await browser.close();

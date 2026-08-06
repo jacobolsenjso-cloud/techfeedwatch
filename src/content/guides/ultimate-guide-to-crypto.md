@@ -11,7 +11,7 @@ faqs:
   - question: "Is crypto a good investment?"
     answer: "Yes and no,it is a high-risk, highly volatile asset, but not all. Some people gain, many lose, and prices swing hard. Never put in money you cannot afford to lose, and treat confident predictions with suspicion."
   - question: "What is DeFi?"
-    answer: "Decentralised finance - financial services like lending and trading run by code on a blockchain instead of a company. It can offer access and transparency, but smart-contract bugs and scams are real risks, so you have to do some examine on it."
+    answer: "Decentralised finance - financial services like lending and trading run by code on a blockchain instead of a company. It can offer access and transparency, but smart-contract bugs and scams are real risks, so you have to do some examine onpppp it."
   - question: "How do I avoid getting scammed?"
     answer: "Be sceptical of guaranteed returns, urgency, and unknown tokens. Use reputable platforms, control your own keys where possible, and never share your recovery phrase with anyone."
 ---

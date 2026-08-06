@@ -12,6 +12,15 @@ const B = 'https://techfeedwatch.com/tools';
 // [sti, testinput pr. felttype, hvad der beviser succes]
 const TOOLS = [
   ['ai-token-calculator',     'The quick brown fox jumps over the lazy dog. '.repeat(20)],
+  // Tekstværktøjerne deler motor, men testes hver for sig — de har hver sin
+  // hovedoperation, og en fejl i én af dem ville ellers gemme sig bag de andre.
+  ['sort-list',               'Ethereum\nbitcoin\nSolana\nCardano\navalanche'],
+  ['remove-duplicate-lines',  'anna@example.com\nBEN@example.com\nanna@example.com\ncarla@example.com'],
+  ['remove-empty-lines',      'First line\n\n\nSecond line\n   \nThird line'],
+  ['find-and-replace',        'The old plan was approved by the old team.'],
+  // split-file, join-files og random-file-generator kan IKKE testes her: de
+  // arbejder på filer man vælger fra disken og leverer resultatet som en
+  // download, ikke som tekst på siden. De skal prøves i hånden.
   ['case-converter',          'hello world from tech feed watch'],
   ['compound-calculator',     null],
   ['contrast-checker',        null],
