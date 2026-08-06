@@ -36,10 +36,16 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
+      # Gemmer månedens optælling til /trends. Scriptet skriver kun hvis
+      # månedens punkt mangler, så det er ligegyldigt at jobbet kører hver
+      # tredje dag — der bliver ét punkt pr. måned uanset hvad.
+      - name: Gem månedens trend-optælling
+        run: node snapshot-trends.mjs
+
       - name: Gem ændringer (Commit & Push)
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m "Prune dead videos and refresh source view counts" || echo "Ingen ændringer."
+          git commit -m "Prune dead videos, refresh source view counts, store trend snapshot" || echo "Ingen ændringer."
           git push || echo "Intet nyt at uploade."

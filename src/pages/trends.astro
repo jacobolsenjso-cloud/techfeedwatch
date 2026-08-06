@@ -1,9 +1,18 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { tally, GROUPS } from '../lib/trends.mjs';
+import history from '../data/trend-history.json';
 
-const title = "What Tech Actually Gets Talked About — Trends From 367 Articles";
+const title = "What Tech Actually Gets Talked About — Trends From This Archive";
 const description = "We counted how often each company, AI model and protocol is named across every article on this site. Open method, open limits, updated on every build.";
+
+// Månedlige punkter fra snapshot-trends.mjs. Bevægelse måles mod det NÆSTSIDSTE
+// punkt, ikke mod dagens tal: dagens tal er allerede det man kigger på.
+const snapshotKeys = Object.keys(history.snapshots || {}).sort();
+const previousKey = snapshotKeys.length >= 2 ? snapshotKeys[snapshotKeys.length - 2] : null;
+const previous: Record<string, number> = previousKey ? history.snapshots[previousKey].counts : {};
+const monthLabel = (key: string) =>
+  new Date(`${key}-01T00:00:00Z`).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 // Alle artikler (ikke Shorts). rawContent() giver brødteksten uden frontmatter.
 const modules = Object.values(import.meta.glob('../content/videos/*.md', { eager: true })) as any[];
@@ -69,6 +78,9 @@ const exploreUrl = (q: string) => `https://trends.google.com/trends/explore?date
     .tr-bar { background: rgba(8, 145, 178, 0.13); border-radius: 5px; height: 12px; overflow: hidden; }
     .tr-bar span { display: block; height: 100%; background: #0891b2; border-radius: 5px; }
     .tr-num { font-size: 0.85rem; color: #6b7280; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .tr-delta { font-weight: 700; margin-left: 6px; }
+    .tr-delta.up { color: #059669; }
+    .tr-delta.down { color: #dc2626; }
     body.dark-mode .tr-num { color: #9ca3af; }
 
     .tr-info-section { margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color); }
@@ -123,6 +135,25 @@ const exploreUrl = (q: string) => `https://trends.google.com/trends/explore?date
         some subjects over others. So read this as a map of what this site has covered — not as a
         measure of what the tech world is discussing.
       </p>
+      <p class="tr-caveat">
+        {previousKey ? (
+          <>
+            <strong>Movement.</strong> The green and red figures show the change since
+            {' '}{monthLabel(previousKey)}. One reading is stored per month, and a stored reading is
+            never rewritten — so the comparison is against what was actually true then, not a
+            recalculation.
+          </>
+        ) : (
+          <>
+            <strong>No movement to show yet.</strong> A count on its own says what this archive
+            looks like today; the useful question is what is rising. That needs readings taken
+            months apart, and the first was stored in {monthLabel(snapshotKeys[0] || '2026-08')}.
+            Nothing is backdated: the archive was filled in over a few weeks, so a calculated
+            earlier reading would show every name growing tenfold and would be measuring the
+            backfill rather than a trend.
+          </>
+        )}
+      </p>
     </div>
 
     {byGroup.map((g) => (
@@ -133,7 +164,14 @@ const exploreUrl = (q: string) => `https://trends.google.com/trends/explore?date
           <div class="tr-row">
             <span class="tr-name">{r.name}</span>
             <span class="tr-bar"><span style={`width:${Math.max(2, Math.round((r.count / topCount) * 100))}%`}></span></span>
-            <span class="tr-num">{r.count} · {r.share}%</span>
+            <span class="tr-num">
+              {r.count} · {r.share}%
+              {previousKey && previous[r.name] !== undefined && r.count !== previous[r.name] && (
+                <span class={`tr-delta ${r.count > previous[r.name] ? 'up' : 'down'}`}>
+                  {r.count > previous[r.name] ? '+' : ''}{r.count - previous[r.name]}
+                </span>
+              )}
+            </span>
           </div>
         ))}
       </div>

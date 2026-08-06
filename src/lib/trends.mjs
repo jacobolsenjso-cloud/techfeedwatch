@@ -28,6 +28,14 @@ export const TERMS = [
   { name: 'Apple', group: 'companies', match: ['Apple'] },
   { name: 'Amazon', group: 'companies', match: ['Amazon'] },
   { name: 'Nvidia', group: 'companies', match: ['Nvidia', 'NVIDIA'] },
+  // Chip-producenterne kom med da Hardware & Chips blev sit eget emne. Tallene
+  // er beskedne (2-7 artikler), men de er målt: kandidater der ikke optrådte,
+  // er ikke taget med for at fylde listen ud.
+  { name: 'Samsung', group: 'companies', match: ['Samsung'] },
+  { name: 'Intel', group: 'companies', match: ['Intel'] },
+  { name: 'AMD', group: 'companies', match: ['AMD'] },
+  { name: 'TSMC', group: 'companies', match: ['TSMC'] },
+  { name: 'Hugging Face', group: 'companies', match: ['Hugging Face'] },
   { name: 'IBM', group: 'companies', match: ['IBM'] },
   { name: 'AWS', group: 'companies', match: ['AWS', 'Amazon Web Services'] },
   { name: 'GitHub', group: 'companies', match: ['GitHub'] },
