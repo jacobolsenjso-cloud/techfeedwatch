@@ -272,6 +272,12 @@ const metaDesc = rawMeta.length > 157
     .view-growth { font-size: 0.92rem; line-height: 1.55; color: #4b5563; background: rgba(5,150,105,0.07); border-left: 3px solid #059669; border-radius: 6px; padding: 10px 14px; margin: 0 0 16px 0; }
     body.dark-mode .view-growth { color: #cbd5e1; }
     .view-growth strong { color: #059669; }
+
+    /* Oplæsning. Knappen er skjult som udgangspunkt og vises kun af scriptet
+       når browseren faktisk kan tale — ellers ville den sidde der og ikke virke. */
+    #listenBtn.is-speaking { background: #0891b2; color: #fff; border-color: #0891b2; }
+    .listen-note { font-size: 0.8rem; color: #6b7280; margin: -18px 0 24px 0; }
+    body.dark-mode .listen-note { color: #9ca3af; }
     .action-bar::-webkit-scrollbar { display: none; }
     .action-pill, .pill-group { display: inline-flex; align-items: center; background: var(--hover-bg); border-radius: 20px; height: 36px; border: 1px solid var(--border-color); color: var(--text-color); font-size: 0.9rem; font-weight: 600; }
     .action-pill { padding: 0 16px; cursor: pointer; transition: background 0.2s; gap: 6px; white-space: nowrap; }
@@ -845,6 +851,10 @@ const metaDesc = rawMeta.length > 157
           </p>
         )}
         <div class="action-bar">
+          <button type="button" id="listenBtn" class="action-pill" hidden aria-pressed="false">
+            <svg class="action-icon" id="listenIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span id="listenLabel">Listen</span>
+          </button>
           <div class="pill-group">
             <button id="likeBtn" aria-label="Mark as helpful" title="Helpful">
               <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
@@ -866,6 +876,7 @@ const metaDesc = rawMeta.length > 157
             <span id="saveText">Save</span>
           </button>
         </div>
+        <p class="listen-note" id="listenNote" hidden>Read aloud by a synthetic voice — the one built into your browser.</p>
 
         {tagsArray.length > 0 && (
           <div class="tag-container">
@@ -1388,6 +1399,118 @@ const metaDesc = rawMeta.length > 157
             }
           });
         }
+      }
+
+      // --- Oplæsning af artiklen ------------------------------------------
+      // Browserens egen stemme. Ingen server, ingen lydfiler, ingen udgift —
+      // til gengæld afhænger kvaliteten af brugerens enhed, og lyden stopper
+      // når skærmen låses på mobil. Vi starter her for at måle om nogen
+      // overhovedet trykker, før vi betaler for rigtige stemmer.
+      const listenBtn = document.getElementById('listenBtn');
+      const listenNote = document.getElementById('listenNote');
+      const listenLabel = document.getElementById('listenLabel');
+
+      if (listenBtn && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance === 'function') {
+        listenBtn.hidden = false;
+        if (listenNote) listenNote.hidden = false;
+
+        let chunks = null;
+        let index = 0;
+        let state = 'idle';   // idle | speaking | paused
+        let keepAlive = null;
+
+        // Kun titel, resumé og brødtekst. IKKE FAQ, relaterede links eller menu
+        // — de hører ikke til artiklen. Kode og URL'er ryger ud, ellers læser
+        // den "h-t-t-p-s kolon skråstreg skråstreg" højt.
+        const buildChunks = () => {
+          const parts = [];
+          const h1 = document.querySelector('h1');
+          if (h1) parts.push(h1.textContent.trim());
+          const box = document.querySelector('.summary-box');
+          if (box) parts.push(box.textContent.trim());
+
+          const body = document.querySelector('.video-content');
+          if (body) {
+            const clone = body.cloneNode(true);
+            clone.querySelectorAll('pre, code, table, figure, .toc-box').forEach((n) => n.remove());
+            parts.push(clone.textContent);
+          }
+
+          const text = parts.join('. ')
+            .replace(/https?:\/\/\S+/g, ' ')     // rå URL'er læses bogstav for bogstav
+            .replace(/\s+/g, ' ')
+            .trim();
+
+          // Korte stykker frem for ét langt: Chrome afbryder lange oplæsninger,
+          // og korte stykker gør pause og stop øjeblikkelige.
+          const sentences = text.match(/[^.!?]+[.!?]+["')\]]*|\S+$/g) || [text];
+          const out = [];
+          let buf = '';
+          for (const s of sentences) {
+            if ((buf + s).length > 220 && buf) { out.push(buf.trim()); buf = ''; }
+            buf += s + ' ';
+          }
+          if (buf.trim()) out.push(buf.trim());
+          return out.filter(Boolean);
+        };
+
+        const setUi = (next) => {
+          state = next;
+          listenBtn.classList.toggle('is-speaking', next === 'speaking');
+          listenBtn.setAttribute('aria-pressed', String(next !== 'idle'));
+          if (listenLabel) listenLabel.textContent = next === 'speaking' ? 'Pause' : (next === 'paused' ? 'Resume' : 'Listen');
+        };
+
+        const stopAll = () => {
+          window.speechSynthesis.cancel();
+          clearInterval(keepAlive);
+          keepAlive = null;
+          index = 0;
+          setUi('idle');
+        };
+
+        const speakNext = () => {
+          if (!chunks || index >= chunks.length) { stopAll(); return; }
+          const u = new SpeechSynthesisUtterance(chunks[index]);
+          u.rate = 1;
+          u.lang = 'en-US';
+          u.onend = () => { index++; if (state === 'speaking') speakNext(); };
+          u.onerror = () => stopAll();
+          window.speechSynthesis.speak(u);
+        };
+
+        listenBtn.addEventListener('click', () => {
+          if (state === 'speaking') { window.speechSynthesis.pause(); setUi('paused'); return; }
+          if (state === 'paused') { window.speechSynthesis.resume(); setUi('speaking'); return; }
+
+          // To lydkilder på én gang giver ingen mening: sæt videoen på pause.
+          if (typeof ytPlayer !== 'undefined' && ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+            try { ytPlayer.pauseVideo(); } catch (e) {}
+          }
+
+          if (!chunks) chunks = buildChunks();
+          if (!chunks.length) return;
+          window.speechSynthesis.cancel();
+          index = 0;
+          setUi('speaking');
+          speakNext();
+
+          // Chrome stopper stille og roligt efter ca. 15 sekunder. Et lille
+          // puf holder den i gang; uden det stopper oplæsningen midt i.
+          clearInterval(keepAlive);
+          keepAlive = setInterval(() => {
+            if (state !== 'speaking') return;
+            window.speechSynthesis.pause();
+            window.speechSynthesis.resume();
+          }, 10000);
+
+          if (typeof gtag === 'function') gtag('event', 'listen_article', { article: location.pathname });
+        });
+
+        // Forlader man siden eller skifter fane på mobil, stopper lyden alligevel.
+        // Så skal knappen ikke stå og påstå at den spiller.
+        document.addEventListener('visibilitychange', () => { if (document.hidden && state !== 'idle') stopAll(); });
+        window.addEventListener('pagehide', stopAll);
       }
 
       const shortsWrapper = document.getElementById('shortsWrapper');
