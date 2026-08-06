@@ -18,6 +18,10 @@ preview.out
 # skærmbilleder fra shot.mjs, inkl. Chromes midlertidige profil
 _shots/
 
+# resultatfiler fra audit-scripterne. De skrives ved hver kørsel og læses aldrig
+# af noget, så i git giver de kun støj i hver eneste diff.
+audit-*.json
+
 
 # environment variables
 .env
