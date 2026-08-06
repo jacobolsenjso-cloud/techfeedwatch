@@ -575,14 +575,12 @@ const metaDesc = rawMeta.length > 157
 
       /* Teksten under videoen sprang ned i samme øjeblik som videoen sprang op
          — to spring på én gang, og halvdelen af hvorfor det føltes hårdt.
-         Kun aktiv når en variant er valgt. */
-      body.fx-glide .video-primary,
-      body.fx-lift .video-primary {
+         Varigheden sættes af scriptet, så ?slow også gælder her. */
+      .video-primary {
         transition: padding-top var(--fx-move, 280ms) cubic-bezier(.2,.9,.25,1);
       }
       @media (prefers-reduced-motion: reduce) {
-        body.fx-glide .video-primary,
-        body.fx-lift .video-primary { transition: none; }
+        .video-primary { transition: none; }
       }
       body.cinema-mode .top-navbar { z-index: 1000 !important; }
       body.cinema-mode .sidebar { z-index: 2000 !important; }
@@ -1252,26 +1250,22 @@ const metaDesc = rawMeta.length > 157
         // Iframen flyttes ALDRIG i DOM'en. Gør man det, genindlæser YouTube
         // den, og afspilningen starter forfra.
         //
-        // Varianten vælges med ?fx=glide eller ?fx=lift. Uden parameter sker
-        // skiftet som hidtil, så den almindelige side er uberørt indtil vi
-        // beslutter os.
-        const FX = new URLSearchParams(location.search).get('fx');
-        // ?slow=6 gør overgangen seks gange langsommere. Kun til at se på:
-        // et skærmbillede tager længere tid at tage end animationen varer, så
-        // uden det er alle billeder taget efter at bevægelsen er slut.
+        // ?slow=6 gør overgangen langsommere. Den findes fordi et skærmbillede
+        // tager længere tid at tage end animationen varer — uden den er alle
+        // kontrolbilleder taget efter bevægelsen er slut, og det ligner at
+        // animationen ikke virker.
         const FX_SLOW = Math.max(1, Number(new URLSearchParams(location.search).get('slow')) || 1);
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const EASE = 'cubic-bezier(.2,.9,.25,1)';
         const MOVE_MS = 280 * FX_SLOW;
-        const LIFT_MS = 150 * FX_SLOW;
+        const EASE = 'cubic-bezier(.2,.9,.25,1)';
 
         function flipCinema(enter) {
           const el = document.getElementById('stickyVideo');
           const toggle = () => document.body.classList.toggle('cinema-mode', enter);
 
-          // Ingen variant valgt, ingen video, eller brugeren har bedt om mindre
-          // bevægelse: skift direkte. Bevægelse kan gøre folk fysisk utilpasse.
-          if (!el || !FX || reduceMotion) { toggle(); return; }
+          // Har brugeren bedt om mindre bevægelse, skiftes der direkte.
+          // Bevægelse kan gøre folk fysisk utilpasse, og det er ikke til pynt.
+          if (!el || reduceMotion) { toggle(); return; }
 
           const first = el.getBoundingClientRect();
           toggle();
@@ -1289,38 +1283,25 @@ const metaDesc = rawMeta.length > 157
           el.style.boxShadow = enter ? '0 0 0 rgba(0,0,0,0)' : '';
           void el.getBoundingClientRect(); // tvinger browseren til at tegne startbilledet
 
-          const settle = () => {
+          requestAnimationFrame(() => {
             el.style.transition = `transform ${MOVE_MS}ms ${EASE}, box-shadow ${MOVE_MS}ms ease`;
             el.style.transform = '';
             el.style.boxShadow = '';
-          };
+          });
 
-          if (FX === 'lift' && enter) {
-            // Løft: videoen løsner sig fra siden først — 4% op med voksende
-            // skygge — og glider derefter på plads.
-            el.style.transition = `transform ${LIFT_MS}ms ease-out, box-shadow ${LIFT_MS}ms ease-out`;
-            el.style.transform = `translate(${dx}px, ${dy}px) scale(${sx * 1.045}, ${sy * 1.045})`;
-            el.style.boxShadow = '0 18px 40px rgba(0,0,0,0.35)';
-            setTimeout(settle, LIFT_MS);
-          } else {
-            requestAnimationFrame(settle);
-          }
-
-          const cleanup = () => {
+          setTimeout(() => {
             el.style.transition = '';
             el.style.transform = '';
             el.style.transformOrigin = '';
             el.style.boxShadow = '';
-          };
-          setTimeout(cleanup, (FX === 'lift' && enter ? LIFT_MS + MOVE_MS : MOVE_MS) + 40);
+          }, MOVE_MS + 40);
         }
 
-        // Kun til demoen: gør overgangen kaldbar uden at en video skal spille.
-        if (FX) {
+        document.body.style.setProperty('--fx-move', `${MOVE_MS}ms`);
+        if (FX_SLOW > 1) {
+          // Kun når man ser efter: gør overgangen kaldbar uden at en video spiller.
           window.__fxEnter = () => flipCinema(true);
           window.__fxExit = () => flipCinema(false);
-          document.body.classList.add(`fx-${FX}`);
-          document.body.style.setProperty('--fx-move', `${MOVE_MS}ms`);
         }
 
         const onPlayerStateChange = (event) => {
