@@ -1417,7 +1417,8 @@ const metaDesc = rawMeta.length > 157
         let chunks = null;
         let index = 0;
         let state = 'idle';   // idle | speaking | paused
-        let keepAlive = null;
+        let watchdog = null;
+        let current = null;   // reference til det stykke der læses op lige nu
 
         // Kun titel, resumé og brødtekst. IKKE FAQ, relaterede links eller menu
         // — de hører ikke til artiklen. Kode og URL'er ryger ud, ellers læser
@@ -1463,8 +1464,8 @@ const metaDesc = rawMeta.length > 157
 
         const stopAll = () => {
           window.speechSynthesis.cancel();
-          clearInterval(keepAlive);
-          keepAlive = null;
+          clearInterval(watchdog);
+          watchdog = null;
           index = 0;
           setUi('idle');
         };
@@ -1476,6 +1477,10 @@ const metaDesc = rawMeta.length > 157
           u.lang = 'en-US';
           u.onend = () => { index++; if (state === 'speaking') speakNext(); };
           u.onerror = () => stopAll();
+          // Hold fast i objektet. Uden en reference kan browseren rydde det af
+          // hukommelsen midt i oplæsningen, og så stopper lyden uden fejl og
+          // uden onend — en af de mest udbredte fælder ved netop dette API.
+          current = u;
           window.speechSynthesis.speak(u);
         };
 
@@ -1495,14 +1500,23 @@ const metaDesc = rawMeta.length > 157
           setUi('speaking');
           speakNext();
 
-          // Chrome stopper stille og roligt efter ca. 15 sekunder. Et lille
-          // puf holder den i gang; uden det stopper oplæsningen midt i.
-          clearInterval(keepAlive);
-          keepAlive = setInterval(() => {
+          // Vagthund i stedet for det puf der stod her før.
+          //
+          // Første udgave kaldte pause() og resume() hvert tiende sekund — den
+          // gængse omgåelse af at Chrome afbryder LANGE oplæsninger. Men vores
+          // stykker er korte, så afbrydelsen kunne ikke ramme, og på flere
+          // platforme tager resume() ikke: oplæsningen blev stående på pause
+          // efter præcis ti sekunder. Omgåelsen var altså selv fejlen.
+          //
+          // Her rører vi ikke afspilningen. Vi ser kun efter om køen er død —
+          // hverken i gang, på pause eller på vej — og starter i så fald det
+          // stykke vi stod på. Sker det ikke, gør vagthunden ingenting.
+          clearInterval(watchdog);
+          watchdog = setInterval(() => {
             if (state !== 'speaking') return;
-            window.speechSynthesis.pause();
-            window.speechSynthesis.resume();
-          }, 10000);
+            const s = window.speechSynthesis;
+            if (!s.speaking && !s.pending && !s.paused) speakNext();
+          }, 1500);
 
           if (typeof gtag === 'function') gtag('event', 'listen_article', { article: location.pathname });
         });
