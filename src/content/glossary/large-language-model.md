@@ -1,7 +1,7 @@
 ---
 term: "Large Language Model"
 slug: "large-language-model"
-aliases: ["LLM", "LLMs"]
+aliases: ["LLM", "LLMs", "Large Language Models"]
 category: "AI"
 definition: "A Large Language Model is an artificial intelligence system trained on extensive text datasets to understand, generate, and process human language."
 ---

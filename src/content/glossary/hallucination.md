@@ -1,6 +1,7 @@
 ---
 term: "Hallucination"
 slug: "hallucination"
+aliases: ["hallucinations"]
 category: "AI"
 definition: "Hallucination occurs when an artificial intelligence model generates outputs that are factually incorrect, nonsensical, or fabricated, despite appearing confident and coherent."
 ---

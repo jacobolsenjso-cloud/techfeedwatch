@@ -1,6 +1,7 @@
 ---
 term: "Neural Network"
 slug: "neural-network"
+aliases: ["neural networks"]
 category: "AI"
 definition: "A neural network is a computational model inspired by the structure and function of biological brains, designed to recognize patterns and learn from data."
 ---

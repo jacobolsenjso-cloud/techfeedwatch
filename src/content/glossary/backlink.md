@@ -1,6 +1,7 @@
 ---
 term: "Backlink"
 slug: "backlink"
+aliases: ["backlinks"]
 category: "SEO"
 definition: "A backlink is a hyperlink from one website to a page on another website."
 ---

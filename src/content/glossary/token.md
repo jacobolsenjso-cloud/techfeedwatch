@@ -1,6 +1,7 @@
 ---
 term: "Token"
 slug: "token"
+aliases: ["tokens"]
 category: "AI"
 definition: "In artificial intelligence, particularly large language models, a token is a fundamental unit of text or data that a model processes."
 ---
