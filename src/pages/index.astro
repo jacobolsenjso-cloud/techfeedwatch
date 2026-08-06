@@ -82,34 +82,49 @@ const vRest = pageOneVideos.slice(13);
     /* --- CSS specifik for forsiden --- */
 
     /* Tag Bar */
-    .tag-bar-container {
+    /* Yderste beholder er den klistrende. Knappen SKAL ligge her og ikke inde i
+       den beskårne række — første forsøg lagde den inde i rækken, hvor den selv
+       havnede på tredje linje og blev skjult af netop den beskæring den skulle
+       ophæve. */
+    .tag-bar-outer {
       position: sticky;
-      top: -1px; /* Klistrer perfekt op mod topbaren uden gab */
+      top: -1px;
       background: var(--bg-color);
       z-index: 25;
-      padding: 12px 20px;
       border-bottom: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-      min-height: 55px;
-      box-sizing: border-box;
       margin-bottom: 25px;
     }
-    .tag-bar-container::-webkit-scrollbar { display: none; }
-
-    /* Rækken kan scrolles vandret, men blev klippet hårdt af i højre kant uden at
-       antyde det. En fade-maske viser at der er mere at hente. */
-    .tag-bar-scroll {
-      position: relative;
-      /* Masken fjernes når rækken er scrollet helt til ende (JS sætter .at-end) */
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent 100%);
-      mask-image: linear-gradient(to right, #000 calc(100% - 44px), transparent 100%);
+    .tag-bar-container {
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      min-height: 55px;
+      box-sizing: border-box;
+      /* Sammenklappet viser den to rækker. Med 12 emner løb den vandrette
+         udgave ud over kanten, og et tag man skal skulle efter, findes ikke.
+         --tag-rows sættes af JS til den reelle højde af to rækker, så det
+         virker uanset skriftstørrelse og bredde. */
+      max-height: var(--tag-rows, 96px);
+      overflow: hidden;
+      transition: max-height 0.25s ease;
     }
-    .tag-bar-scroll.at-end { -webkit-mask-image: none; mask-image: none; }
+    .tag-bar-container.expanded { max-height: 600px; }
+
+    /* Knappen står på sin EGEN linje under rækken. Første forsøg placerede den
+       absolut i højre hjørne og reserverede plads med padding — den plads holdt
+       ikke på alle bredder, og knappen lagde sig oven på det sidste emne. En
+       egen linje koster 30 px og kan ikke overlappe noget. */
+    .tag-more {
+      display: block; margin: 0 auto 10px auto;
+      background: var(--bg-color); border: 1px dashed var(--border-color); color: #6b7280;
+      padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; line-height: 1.5; white-space: nowrap;
+    }
+    .tag-more:hover { border-color: #0891b2; color: #0891b2; }
+    .tag-more[hidden] { display: none; }
+    body.dark-mode .tag-more { color: #9ca3af; }
 
     /* Pille-design der matcher videosiden (border-radius: 20px) */
     .filter-tag {
@@ -337,15 +352,18 @@ const vRest = pageOneVideos.slice(13);
     </div>
   </section>
 
-  <div class="tag-bar-container tag-bar-scroll" id="tagBar">
-    <button class="filter-tag active" data-tag="All">All</button>
-    {topTags.map((tag: any) => (
-      TAG_COLORS[tag] ? (
-        <button class="filter-tag filter-tag-accent" data-tag={tag} style={`--tag-accent: ${TAG_COLORS[tag]}`}>{tag}</button>
-      ) : (
-        <button class="filter-tag" data-tag={tag}>{tag}</button>
-      )
-    ))}
+  <div class="tag-bar-outer">
+    <div class="tag-bar-container" id="tagBar">
+      <button class="filter-tag active" data-tag="All">All</button>
+      {topTags.map((tag: any) => (
+        TAG_COLORS[tag] ? (
+          <button class="filter-tag filter-tag-accent" data-tag={tag} style={`--tag-accent: ${TAG_COLORS[tag]}`}>{tag}</button>
+        ) : (
+          <button class="filter-tag" data-tag={tag}>{tag}</button>
+        )
+      ))}
+    </div>
+    <button class="tag-more" id="tagMore" type="button" hidden aria-expanded="false">More topics</button>
   </div>
 
   <div class="frontpage-wrapper" id="videoContainer">
@@ -493,6 +511,67 @@ const vRest = pageOneVideos.slice(13);
 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
+      // --- Emnerækken: to rækker, resten bag en knap ---
+      // Med 12 emner løb den gamle vandrette række ud over skærmkanten, og et
+      // tag man skal skulle efter, bliver ikke fundet. Højden på to rækker
+      // måles i stedet for at gættes, så det holder uanset skriftstørrelse,
+      // bredde og hvor lange emnenavnene bliver.
+      const tagBar = document.getElementById('tagBar');
+      const tagMore = document.getElementById('tagMore');
+
+      function setupTagRows() {
+        if (!tagBar || !tagMore) return;
+        tagBar.classList.remove('expanded');
+        tagBar.style.setProperty('--tag-rows', 'none');
+
+        const chips = Array.from(tagBar.querySelectorAll('.filter-tag'));
+        if (!chips.length) return;
+        const firstTop = chips[0].offsetTop;
+        const rowTops = [...new Set(chips.map((c) => c.offsetTop))].sort((a, b) => a - b);
+
+        // Passer alt på to rækker eller færre, er der intet at folde ud
+        if (rowTops.length <= 2) {
+          tagMore.hidden = true;
+          tagBar.style.removeProperty('--tag-rows');
+          tagBar.style.maxHeight = 'none';
+          return;
+        }
+
+        const secondRowTop = rowTops[1];
+        const rowHeight = chips[0].offsetHeight;
+        const padding = parseFloat(getComputedStyle(tagBar).paddingTop) || 12;
+        const hidden = chips.filter((c) => c.offsetTop > secondRowTop);
+
+        tagBar.style.maxHeight = '';
+        tagBar.style.setProperty('--tag-rows', `${secondRowTop - firstTop + rowHeight + padding * 2}px`);
+        tagMore.hidden = false;
+        tagMore.textContent = `+${hidden.length} more`;
+        tagMore.setAttribute('aria-expanded', 'false');
+
+        // Er det aktive emne gemt, foldes rækken ud af sig selv — ellers ser
+        // det ud som om filteret er slået fra.
+        if (hidden.some((c) => c.classList.contains('active'))) toggleTagRows(true);
+      }
+
+      function toggleTagRows(open) {
+        const expand = open !== undefined ? open : !tagBar.classList.contains('expanded');
+        tagBar.classList.toggle('expanded', expand);
+        tagMore.setAttribute('aria-expanded', String(expand));
+        if (expand) {
+          tagMore.textContent = 'Show fewer';
+        } else {
+          setupTagRows();
+        }
+      }
+
+      if (tagMore) tagMore.addEventListener('click', () => toggleTagRows());
+      setupTagRows();
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setupTagRows, 180);
+      });
+
       // Live Search & Tag Filtering (Koblet sammen med MainLayout's søgefelt)
       // Filtrerer på tværs af ALLE videoer (ikke kun den aktuelle side) via /videos.json
       const searchInput = document.getElementById('topSearchInput');
@@ -640,17 +719,11 @@ const vRest = pageOneVideos.slice(13);
       // Loading-skeleton: marker thumbnails som loadet, så shimmer stopper når billedet er hentet
       document.querySelectorAll('.watch-card-thumb img, .short-card-thumb img').forEach(markLoaded);
 
-      // Fade-maske i højre kant af tag-rækken fjernes når der ikke er mere at scrolle
-      const tagBar = document.getElementById('tagBar');
-      if (tagBar) {
-        const syncTagBarMask = () => {
-          const atEnd = tagBar.scrollLeft + tagBar.clientWidth >= tagBar.scrollWidth - 2;
-          tagBar.classList.toggle('at-end', atEnd);
-        };
-        syncTagBarMask();
-        tagBar.addEventListener('scroll', syncTagBarMask, { passive: true });
-        window.addEventListener('resize', syncTagBarMask);
-      }
+      // (Den gamle fade-maske hørte til den vandrette tag-række og er fjernet
+      // sammen med den. Den deklarerede tagBar en gang mere, og fordi begge lå
+      // i samme script, kastede siden "Identifier 'tagBar' has already been
+      // declared" — så HELE scriptet stoppede, inklusive tag-filtreringen.
+      // En dobbelt const er ikke en advarsel; den slår resten af filen ihjel.)
     });
   </script>
 </MainLayout>
