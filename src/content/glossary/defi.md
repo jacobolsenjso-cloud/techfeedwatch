@@ -1,6 +1,7 @@
 ---
 term: "DeFi"
 slug: "defi"
+aliases: ["decentralized finance"]
 category: "Crypto"
 definition: "DeFi, or Decentralized Finance, refers to a system of financial applications built on blockchain technology that operates without central intermediaries."
 ---

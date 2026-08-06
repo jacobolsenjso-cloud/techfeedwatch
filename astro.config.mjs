@@ -19,17 +19,25 @@ const shortSlugs = new Set(
 );
 
 // --- Auto-glossar-links: byg term -> slug-kort fra glossar-filerne (læses ved build-tid) ---
+//
+// Hvert opslag kan have et aliases-felt med de skrivemåder artiklerne faktisk
+// bruger. Uden det matchede kun den fulde term: opslaget "Large Language Model"
+// fandtes, men de 33 artikler der skriver "LLM" linkede ingen steder. Et alias
+// koster én linje og forbinder flere artikler end et helt nyt opslag ville.
 const glossaryDir = path.join(__dirname, 'src/content/glossary');
 const glossaryTerms = fs.existsSync(glossaryDir)
   ? fs.readdirSync(glossaryDir)
       .filter((f) => f.endsWith('.md'))
-      .map((f) => {
+      .flatMap((f) => {
         const c = fs.readFileSync(path.join(glossaryDir, f), 'utf-8');
         const term = (c.match(/term:\s*"(.*?)"/) || [])[1];
         const slug = (c.match(/slug:\s*"(.*?)"/) || [])[1];
-        return term && slug ? { term, slug } : null;
+        if (!term || !slug) return [];
+        // aliases: ["LLM", "LLMs"] — valgfri liste på én linje
+        const raw = (c.match(/aliases:\s*\[(.*?)\]/) || [])[1] || '';
+        const aliases = raw.split(',').map((s) => s.trim().replace(/^"|"$/g, '')).filter(Boolean);
+        return [{ term, slug }, ...aliases.map((a) => ({ term: a, slug }))];
       })
-      .filter(Boolean)
       // Længste termer først, så fx "Machine Learning" vinder over kortere delmatch
       .sort((a, b) => b.term.length - a.term.length)
   : [];
@@ -55,9 +63,12 @@ function rehypeGlossaryLinks() {
         if (m && (best === null || m.index < best.index)) best = { index: m.index, matched: m[0], slug: t.slug, term: t.term };
       }
       if (!best) return null;
-      // Fjern termen fra puljen, så den kun linkes én gang pr. side
-      const idx = remaining.findIndex((t) => t.term === best.term);
-      if (idx !== -1) remaining.splice(idx, 1);
+      // Fjern ALLE skrivemåder der peger på samme opslag, ikke kun den der ramte.
+      // Ellers ville en artikel der bruger både "Large Language Model" og "LLM"
+      // få to links til den samme side.
+      for (let i = remaining.length - 1; i >= 0; i--) {
+        if (remaining[i].slug === best.slug) remaining.splice(i, 1);
+      }
       const before = value.slice(0, best.index);
       const after = value.slice(best.index + best.matched.length);
       const nodes = [];

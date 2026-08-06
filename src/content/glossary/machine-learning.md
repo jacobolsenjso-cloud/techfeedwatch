@@ -1,6 +1,7 @@
 ---
 term: "Machine Learning"
 slug: "machine-learning"
+aliases: ["ML"]
 category: "AI"
 definition: "Machine learning allows computer systems to learn from data and improve their performance on tasks without explicit programming."
 ---

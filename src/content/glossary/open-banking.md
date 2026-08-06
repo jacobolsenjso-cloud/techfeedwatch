@@ -1,6 +1,7 @@
 ---
 term: "Open Banking"
 slug: "open-banking"
+aliases: ["PSD2"]
 category: "Fintech"
 definition: "Open Banking is a system that allows customers to securely share their financial data from banks with authorized third-party providers through application programming interfaces (APIs)."
 ---

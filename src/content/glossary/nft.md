@@ -1,6 +1,7 @@
 ---
 term: "NFT"
 slug: "nft"
+aliases: ["NFTs"]
 category: "Crypto"
 definition: "An NFT, or Non-Fungible Token, is a unique digital identifier recorded on a blockchain that verifies ownership of a specific item or piece of content, which can be digital or physical."
 ---

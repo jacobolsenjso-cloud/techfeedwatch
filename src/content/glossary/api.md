@@ -1,6 +1,7 @@
 ---
 term: "API"
 slug: "api"
+aliases: ["APIs"]
 category: "Tech"
 definition: "An Application Programming Interface (API) is a set of rules and protocols that allows different software applications to communicate and exchange data with each other."
 ---

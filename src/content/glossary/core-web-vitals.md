@@ -1,6 +1,7 @@
 ---
 term: "Core Web Vitals"
 slug: "core-web-vitals"
+aliases: ["Largest Contentful Paint", "Cumulative Layout Shift"]
 category: "SEO"
 definition: "Core Web Vitals are a set of specific metrics from Google that measure user experience aspects of web page loading, interactivity, and visual stability."
 ---

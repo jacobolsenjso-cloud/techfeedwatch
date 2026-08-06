@@ -1,6 +1,7 @@
 ---
 term: "Smart Contract"
 slug: "smart-contract"
+aliases: ["smart contracts"]
 category: "Crypto"
 definition: "A smart contract is a self-executing agreement where the terms between parties are directly written into lines of code, stored and executed on a blockchain."
 ---

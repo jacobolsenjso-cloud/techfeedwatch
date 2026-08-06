@@ -1,6 +1,7 @@
 ---
 term: "Schema Markup"
 slug: "schema-markup"
+aliases: ["structured data", "JSON-LD"]
 category: "SEO"
 definition: "Schema Markup is a standardized vocabulary of tags and attributes that website owners add to HTML to help search engines better understand the content on their web pages."
 ---

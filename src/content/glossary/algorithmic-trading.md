@@ -1,6 +1,7 @@
 ---
 term: "Algorithmic Trading"
 slug: "algorithmic-trading"
+aliases: ["algo trading", "quantitative trading"]
 category: "Fintech"
 definition: "Algorithmic trading uses computer programs to execute trade orders automatically based on predefined sets of rules and market conditions."
 ---

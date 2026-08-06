@@ -1,6 +1,7 @@
 ---
 term: "Retrieval-Augmented Generation"
 slug: "retrieval-augmented-generation"
+aliases: ["RAG"]
 category: "AI"
 definition: "Retrieval-Augmented Generation is an artificial intelligence technique that enhances large language models by retrieving relevant information from an external knowledge base before generating a response."
 ---

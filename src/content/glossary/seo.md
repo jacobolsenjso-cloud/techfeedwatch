@@ -1,6 +1,7 @@
 ---
 term: "SEO"
 slug: "seo"
+aliases: ["search engine optimization"]
 category: "SEO"
 definition: "SEO is the process of improving a website's visibility in unpaid search engine results to attract more relevant traffic."
 ---

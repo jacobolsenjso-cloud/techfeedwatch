@@ -1,6 +1,7 @@
 ---
 term: "Inference"
 slug: "inference"
+aliases: ["inference cost"]
 category: "AI"
 definition: "Inference is the process where a trained artificial intelligence model uses new, unseen data to make predictions or generate outputs."
 ---

@@ -1,6 +1,7 @@
 ---
 term: "Neobank"
 slug: "neobank"
+aliases: ["neobanks", "digital bank"]
 category: "Fintech"
 definition: "A neobank is a financial institution that operates exclusively online, without traditional physical branches, offering banking services entirely through digital platforms."
 ---

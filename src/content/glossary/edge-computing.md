@@ -1,6 +1,7 @@
 ---
 term: "Edge Computing"
 slug: "edge-computing"
+aliases: ["edge AI"]
 category: "Tech"
 definition: "Edge computing processes data closer to its source, rather than sending it to a centralized cloud or data center."
 ---

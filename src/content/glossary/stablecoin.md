@@ -1,6 +1,7 @@
 ---
 term: "Stablecoin"
 slug: "stablecoin"
+aliases: ["stablecoins"]
 category: "Crypto"
 definition: "A cryptocurrency designed to maintain a stable value relative to a specific asset, typically a fiat currency like the US dollar."
 ---

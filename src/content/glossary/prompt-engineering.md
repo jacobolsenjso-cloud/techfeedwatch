@@ -1,6 +1,7 @@
 ---
 term: "Prompt Engineering"
 slug: "prompt-engineering"
+aliases: ["prompt engineer"]
 category: "AI"
 definition: "Prompt Engineering is the practice of designing and refining inputs, known as prompts, to guide artificial intelligence models to produce desired outputs."
 ---

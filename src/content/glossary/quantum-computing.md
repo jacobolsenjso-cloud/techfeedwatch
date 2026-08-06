@@ -1,6 +1,7 @@
 ---
 term: "Quantum Computing"
 slug: "quantum-computing"
+aliases: ["qubit", "qubits"]
 category: "Tech"
 definition: "Quantum Computing is a new computing paradigm that uses principles of quantum mechanics, such as superposition and entanglement, to process information."
 ---

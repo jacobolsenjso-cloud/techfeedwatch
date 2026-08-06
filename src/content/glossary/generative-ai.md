@@ -1,6 +1,7 @@
 ---
 term: "Generative AI"
 slug: "generative-ai"
+aliases: ["GenAI"]
 category: "AI"
 definition: "Generative AI refers to artificial intelligence models capable of producing new and original content, such as text, images, audio, or code, that did not exist before."
 ---
