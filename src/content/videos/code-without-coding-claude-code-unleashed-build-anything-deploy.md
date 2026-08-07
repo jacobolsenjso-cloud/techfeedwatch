@@ -11,8 +11,8 @@ tags:
   - "Automation"
 summary: "The advent of agentic AI models like Claude Code significantly lowers the barrier to software development, allowing non-technical users to build functional applications, websites, and automations through natural language commands. This marks a significant evolution in no-code/low-code tools, moving from drag-and-drop interfaces to AI-driven generative creation that can plan, execute, test, and self-correct development processes. It democratizes the ability to create digital tools, potentially accelerating innovation for individuals and small businesses. However, successful implementation still requires clear communication, understanding AI capabilities, and careful oversight, highlighting a new skill set for the 'citizen developer.'"
 duration: "19:10"
-viewCount: 146322
-viewsUpdated: "2026-08-06"
+viewCount: 146417
+viewsUpdated: "2026-08-07"
 thumbMax: true
 isShort: false
 revised: true

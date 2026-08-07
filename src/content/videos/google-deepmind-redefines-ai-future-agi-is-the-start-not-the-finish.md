@@ -12,8 +12,8 @@ tags:
 summary: "Google DeepMind's 'From AGI to ASI' paper reframes Artificial General Intelligence not as the ultimate goal, but as the trigger for an exponential leap to Artificial Superintelligence. The research posits that human-level AI, once achieved, could rapidly scale into unprecedented intelligence through self-replication and recursive improvement. This perspective suggests that intelligence itself could become an industrialized process, profoundly altering technological and societal landscapes."
 metaDescription: "Google DeepMind's latest paper argues AGI is just the start of rapid AI scaling, leading to Artificial Superintelligence. Learn what comes next."
 duration: "13:33"
-viewCount: 134225
-viewsUpdated: "2026-08-06"
+viewCount: 134347
+viewsUpdated: "2026-08-07"
 thumbMax: true
 isShort: false
 faqs:

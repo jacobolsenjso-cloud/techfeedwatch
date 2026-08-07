@@ -12,8 +12,8 @@ tags:
   - "Cybersecurity"
 summary: "The threat of scams is escalating, moving beyond basic digital tricks to exploit advanced AI and emerging payment technologies. Scammers now leverage sophisticated social engineering and deepfakes to execute highly personalized and financially devastating attacks. Countering this requires enhanced digital literacy, proactive cybersecurity measures, and a collective vigilance against evolving fraudulent tactics across both digital and physical arenas."
 duration: "23:49"
-viewCount: 199297
-viewsUpdated: "2026-08-06"
+viewCount: 199373
+viewsUpdated: "2026-08-07"
 thumbMax: true
 isShort: false
 revised: true
