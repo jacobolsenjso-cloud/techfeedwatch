@@ -117,30 +117,30 @@ const extras = OPERATION_LIST.filter((o) => o.id !== op);
   .tt-panes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .tt-pane-label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
   .tt-area { width: 100%; min-height: 260px; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.92rem; line-height: 1.55; box-sizing: border-box; resize: vertical; }
-  .tt-area:focus { outline: none; border-color: #0891b2; }
+  .tt-area:focus { outline: none; border-color: var(--teal-text); }
   .tt-count { font-size: 0.8rem; color: #6b7280; margin: 6px 0 0 0; font-variant-numeric: tabular-nums; }
   body.dark-mode .tt-count { color: #9ca3af; }
 
   .tt-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 26px 0; }
   .tt-btn { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
-  .tt-btn:hover { border-color: #0891b2; }
-  .tt-btn-primary { background: #0891b2; color: #fff; border-color: #0891b2; }
+  .tt-btn:hover { border-color: var(--teal-text); }
+  .tt-btn-primary { background: #0891b2; color: #fff; border-color: var(--teal-text); }
   .tt-btn-primary:hover { background: #0e7490; }
 
   .tt-settings { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
   .tt-settings-title { font-size: 1rem; margin: 0 0 12px 0; }
   .tt-options { display: flex; flex-direction: column; gap: 11px; }
-  .tt-option { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; flex-wrap: wrap; }
+  .tt-option { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; flex-wrap: wrap; min-height: 26px; padding: 3px 0; }
   .tt-option-label { font-weight: 500; }
   .tt-option-text, .tt-option-select { align-items: center; }
   .tt-input { padding: 8px 11px; border-radius: 7px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.9rem; min-width: 220px; }
-  .tt-input:focus { outline: none; border-color: #0891b2; }
+  .tt-input:focus { outline: none; border-color: var(--teal-text); }
   .tt-hint { flex-basis: 100%; font-size: 0.78rem; color: #6b7280; }
   body.dark-mode .tt-hint { color: #9ca3af; }
 
   .tt-chain { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 20px; margin-bottom: 18px; }
   .tt-chain summary { font-weight: 600; cursor: pointer; font-size: 0.95rem; }
-  .tt-chain-count { color: #0891b2; font-weight: 700; }
+  .tt-chain-count { color: var(--teal-text); font-weight: 700; }
   .tt-chain-intro { font-size: 0.86rem; color: #6b7280; line-height: 1.6; margin: 10px 0 14px 0; max-width: 680px; }
   body.dark-mode .tt-chain-intro { color: #9ca3af; }
   .tt-chain-step { padding: 9px 0; border-top: 1px solid var(--border-color); }

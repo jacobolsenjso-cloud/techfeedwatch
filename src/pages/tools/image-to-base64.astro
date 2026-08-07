@@ -13,10 +13,10 @@ const description = "Convert any image to a Base64 data URI for inline embedding
     body.dark-mode .b6-header p { color: #9ca3af; }
 
     .b6-drop { border: 2px dashed var(--border-color); border-radius: 14px; padding: 30px 20px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-    .b6-drop.drag { border-color: #0891b2; background: rgba(8,145,178,0.06); }
+    .b6-drop.drag { border-color: var(--teal-text); background: rgba(8,145,178,0.06); }
     .b6-drop p { margin: 6px 0 0; color: #6b7280; font-size: 0.9rem; }
     body.dark-mode .b6-drop p { color: #9ca3af; }
-    .b6-drop b { color: #0891b2; }
+    .b6-drop b { color: var(--teal-text); }
 
     .b6-result { display: none; margin-top: 22px; }
     .b6-result.on { display: block; }
@@ -27,7 +27,7 @@ const description = "Convert any image to a Base64 data URI for inline embedding
 
     .b6-tabs { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
     .b6-tab { padding: 7px 14px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
-    .b6-tab.active { background: #0891b2; color: #fff; border-color: #0891b2; }
+    .b6-tab.active { background: #0891b2; color: #fff; border-color: var(--teal-text); }
     .b6-out-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
     .b6-copy { padding: 8px 16px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; }
     .b6-copy:hover { background: #0e7490; }

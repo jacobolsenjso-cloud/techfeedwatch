@@ -14,7 +14,7 @@ const description = "Turn one seed keyword into hundreds of long-tail keyword id
 
     .kw-bar { display: flex; gap: 10px; margin-bottom: 16px; }
     .kw-input { flex: 1; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
-    .kw-input:focus { outline: none; border-color: #0891b2; }
+    .kw-input:focus { outline: none; border-color: var(--teal-text); }
     .kw-go { padding: 0 22px; border-radius: 8px; border: none; background: #0891b2; color: #fff; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .kw-go:hover { background: #0e7490; }
 
@@ -22,16 +22,16 @@ const description = "Turn one seed keyword into hundreds of long-tail keyword id
     .kw-count { font-size: 0.9rem; color: #6b7280; }
     body.dark-mode .kw-count { color: #9ca3af; }
     .kw-copyall { padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
-    .kw-copyall:hover { border-color: #0891b2; }
+    .kw-copyall:hover { border-color: var(--teal-text); }
 
     .kw-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
     .kw-group { border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; }
     .kw-group-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; background: var(--hover-bg); font-weight: 700; font-size: 0.95rem; }
-    .kw-group-copy { background: none; border: none; color: #0891b2; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
+    .kw-group-copy { background: none; border: none; color: var(--teal-text); font-weight: 600; font-size: 0.8rem; cursor: pointer; }
     .kw-list { list-style: none; margin: 0; padding: 6px 0; max-height: 320px; overflow-y: auto; }
     .kw-list li { padding: 7px 15px; font-size: 0.92rem; border-top: 1px solid var(--border-color); cursor: pointer; }
     .kw-list li:first-child { border-top: none; }
-    .kw-list li:hover { background: var(--hover-bg); color: #0891b2; }
+    .kw-list li:hover { background: var(--hover-bg); color: var(--teal-text); }
 
     .kw-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
     .kw-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }

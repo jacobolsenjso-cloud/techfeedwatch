@@ -16,8 +16,12 @@ import fs from 'node:fs';
 
 const BASE = process.env.A11Y_BASE || 'http://localhost:4321';
 const ONLY = process.argv[2];
-const VIEWPORTS = [['mobil', 390, 844], ['desktop', 1280, 900]]
-  .filter(([n]) => !ONLY || n === ONLY);
+// Lys og mørk tilstand har hver sine farver. Retter man kontrasten ét sted uden
+// at se det andet, flytter man bare fejlen — en mørkere tekstfarve hjælper på
+// hvid baggrund og skader på mørk.
+const VIEWPORTS = [['mobil', 390, 844, false], ['mobil-mørk', 390, 844, true],
+                   ['desktop', 1280, 900, false], ['desktop-mørk', 1280, 900, true]]
+  .filter(([n]) => !ONLY || n.startsWith(ONLY));
 
 // Én side pr. skabelon. Flere sider af samme type finder de samme fejl igen.
 const PAGES = [
@@ -200,13 +204,17 @@ function auditInPage() {
 const browser = await puppeteer.launch({ browser: 'chrome', headless: true, args: ['--no-sandbox'] });
 const alle = [];
 
-for (const [vpNavn, w, h] of VIEWPORTS) {
+for (const [vpNavn, w, h, moerk] of VIEWPORTS) {
   for (const [label, sti] of PAGES) {
     const page = await browser.newPage();
     await page.setViewport({ width: w, height: h, isMobile: w < 800, deviceScaleFactor: 1 });
     try {
       await page.goto(BASE + sti, { waitUntil: 'networkidle2', timeout: 45000 });
       await new Promise((r) => setTimeout(r, 900));
+      if (moerk) {
+        await page.evaluate(() => document.body.classList.add('dark-mode'));
+        await new Promise((r) => setTimeout(r, 250));
+      }
       // Samtykkedialogen indsætter sine egne overskrifter og knapper. De er
       // Googles kode, ikke sitets, og de ville drukne de rigtige fund.
       await page.evaluate(() => {

@@ -40,19 +40,19 @@ const listSchema = {
 
     .tools-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
     .tools-jump a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 999px; padding: 9px 16px; font-size: 0.92rem; font-weight: 600; min-height: 44px; box-sizing: border-box; transition: border-color 0.2s ease, background 0.2s ease; }
-    .tools-jump a:hover { border-color: #0891b2; background: var(--hover-bg); }
+    .tools-jump a:hover { border-color: var(--teal-text); background: var(--hover-bg); }
     .tools-jump-count { color: #6b7280; font-weight: 500; }
     body.dark-mode .tools-jump-count { color: #9ca3af; }
 
     .tools-section { margin-bottom: 52px; scroll-margin-top: 80px; }
     .tools-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
     .tools-section-head h2 { font-size: 1.4rem; margin: 0; }
-    .tools-section-all { font-size: 0.92rem; font-weight: 600; color: var(--teal-text); text-decoration: none; white-space: nowrap; }
+    .tools-section-all { font-size: 0.92rem; font-weight: 600; color: var(--teal-text); text-decoration: none; white-space: nowrap; display: inline-block; padding: 4px 2px; }
     .tools-section-all:hover { text-decoration: underline; }
 
     .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
     .tool-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); border-color: #0891b2; }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); border-color: var(--teal-text); }
     .tool-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
     .tool-card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 8px 0; }
     .tool-card-desc { font-size: 0.95rem; color: #6b7280; margin: 0; line-height: 1.5; }

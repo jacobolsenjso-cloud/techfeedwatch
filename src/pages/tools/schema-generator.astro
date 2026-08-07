@@ -14,13 +14,13 @@ const description = "Generate valid Article, FAQPage, and BreadcrumbList JSON-LD
 
     .sc-types { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
     .sc-type { padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
-    .sc-type.active { background: #0891b2; color: #fff; border-color: #0891b2; }
+    .sc-type.active { background: #0891b2; color: #fff; border-color: var(--teal-text); }
 
     .sc-field { margin-bottom: 14px; }
     .sc-field label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
     .sc-input, .sc-area { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
     .sc-area { min-height: 70px; resize: vertical; line-height: 1.5; }
-    .sc-input:focus, .sc-area:focus { outline: none; border-color: #0891b2; }
+    .sc-input:focus, .sc-area:focus { outline: none; border-color: var(--teal-text); }
     .sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
     .sc-panel { display: none; }
@@ -29,7 +29,7 @@ const description = "Generate valid Article, FAQPage, and BreadcrumbList JSON-LD
     .sc-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: start; }
     .sc-row .sc-area { min-height: 44px; }
     .sc-del { border: 1px solid var(--border-color); background: var(--hover-bg); color: #ef4444; border-radius: 8px; padding: 0 12px; cursor: pointer; font-weight: 700; height: 42px; }
-    .sc-add { margin-top: 4px; padding: 9px 16px; border-radius: 8px; border: 1px dashed var(--border-color); background: none; color: #0891b2; font-weight: 600; cursor: pointer; }
+    .sc-add { margin-top: 4px; padding: 9px 16px; border-radius: 8px; border: 1px dashed var(--border-color); background: none; color: var(--teal-text); font-weight: 600; cursor: pointer; }
 
     .sc-out-head { display: flex; align-items: center; justify-content: space-between; margin: 28px 0 8px; }
     .sc-out-head h2 { font-size: 1.1rem; margin: 0; }

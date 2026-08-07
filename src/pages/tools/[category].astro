@@ -65,7 +65,7 @@ const relatedTags = category.relatedTags.filter((t) => liveTags.has(t));
 
     .tcat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
     .tcat-card { display: block; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
-    .tcat-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); border-color: #0891b2; }
+    .tcat-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); border-color: var(--teal-text); }
     .tcat-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
     .tcat-card-title { font-size: 1.15rem; font-weight: 700; margin: 0 0 8px 0; }
     .tcat-card-desc { font-size: 0.95rem; color: #6b7280; margin: 0; line-height: 1.5; }
@@ -75,7 +75,7 @@ const relatedTags = category.relatedTags.filter((t) => liveTags.has(t));
 
     .tcat-chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .tcat-chip { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 999px; padding: 9px 16px; font-size: 0.92rem; font-weight: 600; min-height: 44px; box-sizing: border-box; transition: border-color 0.2s ease, background 0.2s ease; }
-    .tcat-chip:hover { border-color: #0891b2; background: var(--hover-bg); }
+    .tcat-chip:hover { border-color: var(--teal-text); background: var(--hover-bg); }
 
     .tcat-related { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border-color); }
     .tcat-related p { color: #6b7280; font-size: 0.98rem; margin: 0 0 14px 0; }

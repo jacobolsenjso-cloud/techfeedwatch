@@ -55,7 +55,7 @@ const related = [...sameCategory, ...(crossPick ? [crossPick] : [])];
   .rt-heading { font-size: 1.15rem; margin: 0 0 16px 0; }
   .rt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
   .rt-card { display: flex; gap: 11px; align-items: flex-start; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 13px 15px; transition: border-color 0.2s, transform 0.2s; }
-  .rt-card:hover { border-color: #0891b2; transform: translateY(-2px); }
+  .rt-card:hover { border-color: var(--teal-text); transform: translateY(-2px); }
   .rt-icon { font-size: 1.15rem; line-height: 1.3; flex-shrink: 0; }
   .rt-text { display: flex; flex-direction: column; gap: 3px; }
   .rt-title { font-weight: 600; font-size: 0.92rem; }
@@ -63,7 +63,7 @@ const related = [...sameCategory, ...(crossPick ? [crossPick] : [])];
   body.dark-mode .rt-desc { color: #9ca3af; }
   .rt-all { font-size: 0.87rem; color: #6b7280; margin: 16px 0 0 0; }
   body.dark-mode .rt-all { color: #9ca3af; }
-  .rt-all a { color: #0891b2; text-decoration: none; font-weight: 600; }
+  .rt-all a { color: var(--teal-text); text-decoration: none; font-weight: 600; }
   .rt-all a:hover { text-decoration: underline; }
 
   @media (max-width: 640px) {

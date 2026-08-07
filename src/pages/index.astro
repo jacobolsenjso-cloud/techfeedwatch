@@ -122,7 +122,7 @@ const vRest = pageOneVideos.slice(13);
       padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;
       cursor: pointer; line-height: 1.5; white-space: nowrap;
     }
-    .tag-more:hover { border-color: #0891b2; color: #0891b2; }
+    .tag-more:hover { border-color: var(--teal-text); color: var(--teal-text); }
     .tag-more[hidden] { display: none; }
     body.dark-mode .tag-more { color: #9ca3af; }
 
@@ -164,9 +164,9 @@ const vRest = pageOneVideos.slice(13);
 
     .home-hero-links { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
     .home-hero-link { display: inline-flex; align-items: center; gap: 7px; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); text-decoration: none; padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
-    .home-hero-link:hover { transform: translateY(-2px); border-color: #0891b2; box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
+    .home-hero-link:hover { transform: translateY(-2px); border-color: var(--teal-text); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
     .hero-link-icon { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; }
-    .home-hero-link:hover .hero-link-icon { opacity: 1; color: #0891b2; }
+    .home-hero-link:hover .hero-link-icon { opacity: 1; color: var(--teal-text); }
     @media (max-width: 768px) { .home-hero { margin: 15px auto 4px; padding: 0 15px; } .home-hero-card { padding: 26px 20px; border-radius: 14px; } .home-hero-title { font-size: 1.6rem; } .home-hero-sub { font-size: 0.98rem; } }
 
     .frontpage-wrapper { padding: 0 20px 20px 20px; max-width: 1600px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
@@ -255,7 +255,7 @@ const vRest = pageOneVideos.slice(13);
     .home-tools-head h2 { margin: 0 0 4px 0; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
     .home-tools-head p { margin: 0; font-size: 0.88rem; color: #6b7280; }
     body.dark-mode .home-tools-head p { color: #9ca3af; }
-    .home-tools-all { font-size: 0.88rem; font-weight: 700; color: var(--teal-text); text-decoration: none; white-space: nowrap; padding-top: 2px; }
+    .home-tools-all { font-size: 0.88rem; font-weight: 700; color: var(--teal-text); text-decoration: none; white-space: nowrap; display: inline-block; padding: 4px 2px; }
     .home-tools-all:hover { text-decoration: underline; }
 
     /* Faste 3 kolonner: med auto-fit blev det 5 + 1, og det sidste værktøj stod
@@ -268,7 +268,7 @@ const vRest = pageOneVideos.slice(13);
       text-decoration: none; color: inherit;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
-    .home-tool:hover { border-color: #0891b2; transform: translateY(-2px); }
+    .home-tool:hover { border-color: var(--teal-text); transform: translateY(-2px); }
     .home-tool-icon { font-size: 1.25rem; line-height: 1; flex-shrink: 0; }
     .home-tool-name { font-size: 0.9rem; font-weight: 600; line-height: 1.3; }
 

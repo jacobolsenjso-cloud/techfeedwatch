@@ -17,7 +17,7 @@ const description = "Check color contrast against WCAG accessibility standards. 
     .con-row { display: flex; gap: 8px; align-items: center; }
     .con-swatch { width: 46px; height: 46px; border: 1px solid var(--border-color); border-radius: 8px; padding: 0; cursor: pointer; background: none; }
     .con-hex { flex: 1; padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; font-family: 'Courier New', Consolas, monospace; box-sizing: border-box; }
-    .con-hex:focus { outline: none; border-color: #0891b2; }
+    .con-hex:focus { outline: none; border-color: var(--teal-text); }
 
     .con-preview { margin-top: 24px; border-radius: 12px; padding: 30px 24px; text-align: center; border: 1px solid var(--border-color); }
     .con-preview .big { font-size: 1.7rem; font-weight: 700; margin-bottom: 8px; }
@@ -28,7 +28,7 @@ const description = "Check color contrast against WCAG accessibility standards. 
     .con-badges { display: flex; gap: 8px; flex-wrap: wrap; }
     .con-badge { padding: 6px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; }
     .con-pass { background: rgba(22,163,74,0.15); color: #16a34a; }
-    .con-fail { background: rgba(220,38,38,0.15); color: #0e7490; }
+    .con-fail { background: rgba(220,38,38,0.15); color: var(--teal-text); }
 
     .con-info-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
     .con-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
