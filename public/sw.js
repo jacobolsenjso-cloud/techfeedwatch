@@ -7,7 +7,15 @@
 //  - Kun sidste besøgte sider gemmes, med et loft, så lageret ikke løber løbsk.
 //  - Ingen caching af /api/, sitemap, rss eller adresser med query-parametre.
 
-const VERSION = 'tfw-v2';
+// __BUILD_ID__ erstattes af stamp-sw.mjs efter hvert build.
+//
+// Hvorfor: cachen hed før 'tfw-v2' og skiftede aldrig. Sidenavnene på sitets
+// stylesheets indeholder et hash og skifter ved hvert build — så en gemt HTML
+// fra et gammelt deploy pegede på CSS-filer der ikke fandtes længere. Svigter
+// nettet et øjeblik, serveres den gamle side, og brugeren får artiklen HELT
+// uden sidens CSS. Med et versionsnavn der følger buildet, rydder activate
+// automatisk alt fra tidligere deploys.
+const VERSION = 'tfw-__BUILD_ID__';
 const SHELL = `${VERSION}-shell`;
 const PAGES = `${VERSION}-pages`;
 // Med afsluttende skråstreg: sitets sider ligger på /offline/, og henter man

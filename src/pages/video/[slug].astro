@@ -462,9 +462,15 @@ const metaDesc = rawMeta.length > 157
     @media (max-width: 600px) { .related-articles-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 
     @media (max-width: 600px) {
-      .author-box { padding: 20px; gap: 14px; }
-      .author-box-photo { width: 60px; height: 60px; }
-      .author-box-title { margin-bottom: 16px; }
+      /* Billede og tekst side om side klemmer teksten ned i en smal søjle, og
+         så fylder boksen en hel skærm. Billedet lægges ovenpå, og teksten får
+         hele bredden — det halverer højden uden at fjerne noget. */
+      .author-box { padding: 18px; gap: 12px; flex-direction: column; align-items: flex-start; }
+      .author-box-photo { width: 56px; height: 56px; }
+      .author-box-name { font-size: 1.05rem; }
+      .author-box-title { font-size: 0.85rem; margin: 3px 0 12px 0; }
+      .author-box-bio { font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px; }
+      .author-box-ai-note { font-size: 0.78rem; padding-top: 12px; }
     }
 
     .share-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; margin-bottom: 40px; }
