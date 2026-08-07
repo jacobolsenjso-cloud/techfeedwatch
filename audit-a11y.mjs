@@ -56,10 +56,19 @@ function auditInPage() {
     return r.width > 0 && r.height > 0;
   };
 
+  // Et element uden klasse kan ikke findes igen ud fra sit navn alene — første
+  // udgave meldte 'span "Crypto"' og efterlod ingen måde at finde den på.
+  // Derfor tages forældrenes klasser med som en sti.
   const kort = (el) => {
     const t = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 42);
-    const id = el.id ? `#${el.id}` : (el.className && typeof el.className === 'string' ? '.' + el.className.trim().split(/\s+/)[0] : '');
-    return `${el.tagName.toLowerCase()}${id}${t ? ` "${t}"` : ''}`;
+    const navn = (n) => {
+      const c = (n.className && typeof n.className === 'string') ? n.className.trim().split(/\s+/)[0] : '';
+      return n.tagName.toLowerCase() + (n.id ? `#${n.id}` : (c ? `.${c}` : ''));
+    };
+    const sti = [];
+    let n = el;
+    for (let i = 0; i < 3 && n && n.tagName !== 'BODY'; i++) { sti.unshift(navn(n)); n = n.parentElement; }
+    return `${sti.join(' > ')}${t ? ` "${t}"` : ''}`;
   };
 
   // --- Kontrast ---
@@ -111,10 +120,25 @@ function auditInPage() {
 
   document.querySelectorAll('body *').forEach((el) => {
     if (!egenTekst(el) || !synlig(el)) return;
+    // WCAG undtager inaktive kontroller fra kontrastkravet. En slukket
+    // "forrige side"-knap SKAL se slukket ud, og at gøre den mørkere ville
+    // fjerne den eneste besked om at den ikke kan klikkes.
+    if (el.closest('[aria-disabled="true"], [disabled]')) return;
     const s = getComputedStyle(el);
     const fg = tilRgb(s.color);
     if (!fg || fg.a < 0.9) return;
-    const r = forhold(fg, baggrund(el));
+    const bg = baggrund(el);
+    // Opacity på elementet eller en forælder dæmper teksten mod baggrunden, og
+    // scriptet så det slet ikke: en linje med opacity 0.5 blev målt som om den
+    // var fuldt synlig. Her lægges den samlede gennemsigtighed oveni.
+    let o = 1, n2 = el;
+    while (n2 && n2 !== document.documentElement) { o *= Number(getComputedStyle(n2).opacity) || 1; n2 = n2.parentElement; }
+    const synligFg = o >= 0.999 ? fg : {
+      r: fg.r * o + bg.r * (1 - o),
+      g: fg.g * o + bg.g * (1 - o),
+      b: fg.b * o + bg.b * (1 - o),
+    };
+    const r = forhold(synligFg, bg);
     const px = parseFloat(s.fontSize);
     const fed = Number(s.fontWeight) >= 700;
     // WCAG AA: 3:1 for stor tekst (18.66px fed / 24px), ellers 4.5:1
@@ -137,12 +161,13 @@ function auditInPage() {
     // udgave meldte brødkrumme-links som fejl, og de er samme slags tekst.
     if (getComputedStyle(el).display === 'inline') return;
 
-    // Et afkrydsningsfelt inde i en label er ikke tryk-målet — labelen er.
-    // Uden dette meldte scriptet 16 fejl på tekstværktøjerne, hvor felterne
-    // er 13x13 men hele den klikbare label er langt større.
+    // Et afkrydsningsfelt INDE I en label har labelen som tryk-mål. Men en
+    // label der bare står ved siden af som overskrift er ikke tryk-målet —
+    // første udgave brugte også el.labels[0] og målte derfor tekstboksens
+    // overskrift: 360x16 meldt om et felt der er 360x180.
     let maal = el;
     if (['INPUT', 'SELECT', 'TEXTAREA'].includes(el.tagName)) {
-      const label = el.closest('label') || (el.labels && el.labels[0]);
+      const label = el.closest('label');
       if (label && getComputedStyle(label).display !== 'inline') maal = label;
     }
 

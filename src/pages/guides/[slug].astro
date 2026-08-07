@@ -87,7 +87,10 @@ const schema = {
     body.dark-mode .guide-updated { color: #9ca3af; }
     .guide-updated a { color: var(--teal-text); text-decoration: none; font-weight: 600; }
     body.dark-mode .guide-breadcrumbs a { color: #22d3ee; }
-    .guide-breadcrumbs span { opacity: 0.5; }
+    /* Samme som artikelsiden: den grå var 3,21:1 mod den mørke baggrund.
+       Brødkrummens sidste led er sidens titel — det er indhold, ikke pynt. */
+    body.dark-mode .guide-breadcrumbs { color: #b6bcc7; }
+    .guide-breadcrumbs span { opacity: 1; }
 
     .guide-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 5px 12px; border-radius: 12px; margin-bottom: 14px; }
     .guide-title { font-size: 2.1rem; margin: 0 0 14px 0; line-height: 1.2; }
@@ -115,9 +118,15 @@ const schema = {
     .guide-author { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 10px; padding: 26px; margin-top: 46px; }
     .guide-author-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
     .guide-author-name { font-weight: 700; font-size: 1.1rem; margin: 0; }
-    .guide-author-title { font-size: 0.88rem; font-weight: 600; color: var(--accent); margin: 4px 0 12px 0; }
+    /* var(--accent) er emnets farve, og som tekst gav den 3,47:1 i mørk
+       tilstand. Emnefarven står allerede på badge og kant. */
+    .guide-author-title { font-size: 0.88rem; font-weight: 600; color: var(--teal-text); margin: 4px 0 12px 0; }
     .guide-author-note { font-size: 0.82rem; font-style: italic; color: #6b7280; margin: 0; padding-top: 14px; border-top: 1px solid var(--border-color); }
     body.dark-mode .guide-author-note { color: #9ca3af; }
+    /* Uden en egen farve arvede linket noten's dæmpede grå og landede på
+       1,65:1 i mørk tilstand. Et link skal kunne skelnes fra teksten omkring. */
+    .guide-author-note a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
+    .guide-author-note a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
       .guide-wrapper { padding: 24px 15px; }
@@ -172,9 +181,9 @@ const schema = {
     <div class="guide-author">
       <img src="/jacob-olsen.png" alt="Jacob Olsen" class="guide-author-photo" width="72" height="72" />
       <div>
-        <p class="guide-author-name">Jacob Olsen</p>
-        <p class="guide-author-title">Founder & CEO of Tech Feed Watch</p>
-        <p class="guide-author-note">This guide was produced with AI assistance and edited for accuracy and perspective by Jacob Olsen, founder of Tech Feed Watch.</p>
+        <p class="guide-author-name">Jacob S. Olsen</p>
+        <p class="guide-author-title">Runs Tech Feed Watch, from Denmark</p>
+        <p class="guide-author-note">Guides are written and maintained by hand, unlike the article summaries on this site — <a href="/about">how that works</a>. If something here is wrong, <a href="/corrections">tell me</a>.</p>
       </div>
     </div>
   </div>

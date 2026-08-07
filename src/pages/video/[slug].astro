@@ -275,7 +275,10 @@ const metaDesc = rawMeta.length > 157
        24px i højden som ethvert andet tryk-mål. */
     .breadcrumbs-bar a { color: var(--teal-text); text-decoration: none; font-weight: 500; display: inline-block; padding: 4px 2px; }
     body.dark-mode .breadcrumbs-bar a { color: #22d3ee; }
-    .breadcrumbs-bar span { opacity: 0.5; }
+    /* Brødkrummelinjens grå var 3,21:1 mod den mørke baggrund. Farven er
+       årsagen, ikke opacity — det var min første og forkerte diagnose. */
+    .breadcrumbs-bar span { opacity: 1; }
+    body.dark-mode .breadcrumbs-bar { color: #b6bcc7; }
     .title-row { margin-bottom: 15px; }
     h1 { margin: 0; font-size: 2rem; line-height: 1.2; }
     .tag-container { margin-bottom: 25px; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -527,10 +530,14 @@ const metaDesc = rawMeta.length > 157
     body.dark-mode .explore-chip { background: #1e293b; border-color: #334155; color: #d1d5db; }
     body.dark-mode .explore-chip:hover { background: #334155; color: #fff; }
 
-    .explore-chip-accent { border-color: var(--tag-accent); color: var(--tag-accent); }
+    /* Emnefarven bliver på kanten og prikken, ikke på teksten. Som tekst gav de
+       lyse emner 1,96:1 (krypto) til 3,44:1 — langt under 4,5:1. Prikken bærer
+       farven lige så tydeligt uden at skulle læses, og det er samme mønster som
+       emnefiltrene på forsiden allerede bruger. */
+    .explore-chip-accent { border-color: var(--tag-accent); }
     .explore-chip-accent::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--tag-accent); margin-right: 6px; vertical-align: middle; }
     .explore-chip-accent:hover { background: var(--tag-accent); color: #fff; }
-    body.dark-mode .explore-chip-accent { border-color: var(--tag-accent); color: var(--tag-accent); }
+    body.dark-mode .explore-chip-accent { border-color: var(--tag-accent); }
     body.dark-mode .explore-chip-accent:hover { background: var(--tag-accent); color: #fff; }
 
     body.shorts-mode .top-navbar { display: flex !important; }
