@@ -314,6 +314,37 @@ const metaDesc = rawMeta.length > 157
       }
       body.pip-mode #stickyVideo .cinema-close-btn { display: flex; }
     }
+
+    /* Telefon på tværs: videoen fylder hele skærmen.
+       Årsagen til at den kun fyldte det halve er ikke en manglende regel, men
+       en der HOLDT OP med at gælde: mobilens sticky-regler står i
+       @media (max-width: 768px), og en telefon i liggende stilling er ~844px
+       bred. Ved at dreje faldt videoen tilbage til sin almindelige opførsel
+       midt i afspilningen.
+       Denne står uden for den grænse og rammer i stedet på HØJDEN — en telefon
+       på tværs er lav, en bærbar er ikke. */
+    @media (orientation: landscape) and (max-height: 500px) {
+      body.cinema-mode #stickyVideo {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;   /* dvh tager højde for browserens egne bjælker */
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        aspect-ratio: auto !important;
+        z-index: 2000 !important;    /* over topbaren, som ellers ligger ovenpå */
+        background: #000 !important;
+      }
+      body.cinema-mode #stickyVideo .cinema-close-btn { display: flex !important; z-index: 2001 !important; }
+      /* Pladsen under videoen skal ikke reserveres når videoen dækker alt. */
+      body.cinema-mode .video-primary { padding-top: 0 !important; }
+      body.cinema-mode #cinemaBrowser { display: none !important; }
+    }
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
 
     /* Videoens længde mod læsetiden. Står lige under afspilleren, fordi det er
@@ -1417,6 +1448,13 @@ const metaDesc = rawMeta.length > 157
 
         document.body.style.setProperty('--fx-move', `${MOVE_MS}ms`);
 
+        // En telefon på tværs er ~844px bred, og et rent bredde-tjek læser den
+        // derfor som en computer: så ville hjørnevinduet komme frem i stedet
+        // for fuldskærm. Højden afslører den — en telefon på tværs er lav.
+        const isPhone = () =>
+          window.innerWidth <= 768 ||
+          (window.matchMedia('(orientation: landscape)').matches && window.innerHeight <= 500);
+
         // --- Desktop: lille vindue nederst til højre ------------------------
         // Mobilens udgave låser videoen i fuld bredde under topbaren. Det ville
         // æde en tredjedel af en 1440px-skærm. Her bliver den et lille vindue,
@@ -1470,7 +1508,7 @@ const metaDesc = rawMeta.length > 157
 
           const io = new IntersectionObserver((entries) => {
             const visible = entries[0].isIntersecting;
-            if (window.innerWidth <= 768) return;   // mobil har sin egen udgave
+            if (isPhone()) return;   // telefonen har sin egen udgave, også på tværs
             if (visible) { pipClosed = false; setPip(false); }
             else if (isPlaying && !pipClosed) setPip(true);
           }, { rootMargin: '-70px 0px 0px 0px' });   // -70px: under den faste topbar
@@ -1483,8 +1521,14 @@ const metaDesc = rawMeta.length > 157
             // Trykker man afspil mens videoen allerede er scrollet forbi, skal
             // vinduet frem med det samme frem for at vente på næste scroll.
             const r = document.getElementById('videoSentinel').getBoundingClientRect();
-            if (window.innerWidth > 768 && r.bottom < 70 && !pipClosed) setPip(true);
+            if (!isPhone() && r.bottom < 70 && !pipClosed) setPip(true);
           };
+
+          // Drejer man telefonen mens hjørnevinduet er fremme, skal det væk —
+          // ellers ligger et lille vindue oven på en video der skal fylde alt.
+          window.addEventListener('orientationchange', () => {
+            setTimeout(() => { if (isPhone() && pipOn) setPip(false); }, 250);
+          });
         }
         if (FX_SLOW > 1) {
           // Kun når man ser efter: gør overgangen kaldbar uden at en video spiller.
@@ -1503,7 +1547,7 @@ const metaDesc = rawMeta.length > 157
           // mobil — kun sticky-videoen er begrænset til mobil.
           if (typeof window.__stopListening === 'function') window.__stopListening();
 
-          if (window.innerWidth <= 768 && !document.body.classList.contains('shorts-mode')) {
+          if (isPhone() && !document.body.classList.contains('shorts-mode')) {
             flipCinema(true);
             tryInitCinemaBrowser();
           }
