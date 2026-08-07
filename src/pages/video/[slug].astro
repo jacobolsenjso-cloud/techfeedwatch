@@ -262,6 +262,37 @@ const metaDesc = rawMeta.length > 157
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
+
+    /* Desktop: et lille vindue nederst til højre, ikke fuld bredde under
+       topbaren som på mobil. På en 1440px-skærm ville fuld bredde æde en
+       tredjedel af skærmen og skubbe teksten ned — det modsatte af at kunne
+       læse videre mens videoen kører.
+       Udløses når videoen scroller ud af syne, ikke når man trykker afspil:
+       er videoen synlig, er der intet at fastholde. */
+    @media (min-width: 769px) {
+      body.pip-mode #stickyVideo {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        left: auto;
+        top: auto;
+        width: 380px;
+        max-width: 34vw;
+        /* .iframe-wrapper får sin højde af padding-bottom: 56.25%, og den
+           procent regnes ud fra CONTAINERENS bredde. For et fastlåst element er
+           containeren hele skærmen — så 380px bredt blev 810px højt. Højden
+           sættes derfor eksplicit her. */
+        padding-bottom: 0;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        z-index: 900;
+        box-shadow: 0 18px 44px rgba(0,0,0,0.38);
+      }
+      body.pip-mode #stickyVideo .cinema-close-btn { display: flex; }
+    }
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
 
     /* Videoens længde mod læsetiden. Står lige under afspilleren, fordi det er
@@ -1356,6 +1387,76 @@ const metaDesc = rawMeta.length > 157
         }
 
         document.body.style.setProperty('--fx-move', `${MOVE_MS}ms`);
+
+        // --- Desktop: lille vindue nederst til højre ------------------------
+        // Mobilens udgave låser videoen i fuld bredde under topbaren. Det ville
+        // æde en tredjedel af en 1440px-skærm. Her bliver den et lille vindue,
+        // og den udløses når videoen scroller UD AF SYNE — ikke når man trykker
+        // afspil. Er videoen synlig, er der intet at fastholde.
+        let isPlaying = false;
+        let pipOn = false;
+        let pipClosed = false;   // har brugeren lukket den, skal den blive lukket
+        const videoEl = document.getElementById('stickyVideo');
+
+        if (videoEl && videoEl.parentNode) {
+          // Vagtpost dér hvor videoen HØRER hjemme. Observerer man videoen selv,
+          // er den altid synlig når den først er blevet et fast vindue, og så
+          // slår den frem og tilbage.
+          const sentinel = document.createElement('div');
+          sentinel.id = 'videoSentinel';
+          sentinel.style.cssText = 'height:1px;margin:0;padding:0;';
+          videoEl.parentNode.insertBefore(sentinel, videoEl);
+
+          // Holder pladsen når videoen forlader sit sted, så teksten ikke hopper op.
+          const placeholder = document.createElement('div');
+          placeholder.id = 'videoPlaceholder';
+          placeholder.style.cssText = 'height:0;transition:height var(--fx-move,280ms) cubic-bezier(.2,.9,.25,1);';
+          videoEl.parentNode.insertBefore(placeholder, videoEl.nextSibling);
+
+          const setPip = (on) => {
+            if (on === pipOn) return;
+            const first = videoEl.getBoundingClientRect();
+            placeholder.style.height = on ? `${first.height + 15}px` : '0px';
+            document.body.classList.toggle('pip-mode', on);
+            pipOn = on;
+
+            if (reduceMotion) return;
+            const last = videoEl.getBoundingClientRect();
+            if (!first.width || !last.width) return;
+            videoEl.style.transformOrigin = 'top left';
+            videoEl.style.transition = 'none';
+            videoEl.style.transform =
+              `translate(${first.left - last.left}px, ${first.top - last.top}px) scale(${first.width / last.width}, ${first.height / last.height})`;
+            void videoEl.getBoundingClientRect();
+            requestAnimationFrame(() => {
+              videoEl.style.transition = `transform ${MOVE_MS}ms ${EASE}`;
+              videoEl.style.transform = '';
+            });
+            setTimeout(() => {
+              videoEl.style.transition = '';
+              videoEl.style.transform = '';
+              videoEl.style.transformOrigin = '';
+            }, MOVE_MS + 40);
+          };
+
+          const io = new IntersectionObserver((entries) => {
+            const visible = entries[0].isIntersecting;
+            if (window.innerWidth <= 768) return;   // mobil har sin egen udgave
+            if (visible) { pipClosed = false; setPip(false); }
+            else if (isPlaying && !pipClosed) setPip(true);
+          }, { rootMargin: '-70px 0px 0px 0px' });   // -70px: under den faste topbar
+          io.observe(sentinel);
+
+          window.__closePip = () => { pipClosed = true; setPip(false); };
+          window.__setPlaying = (v) => {
+            isPlaying = v;
+            if (!v) return;
+            // Trykker man afspil mens videoen allerede er scrollet forbi, skal
+            // vinduet frem med det samme frem for at vente på næste scroll.
+            const r = document.getElementById('videoSentinel').getBoundingClientRect();
+            if (window.innerWidth > 768 && r.bottom < 70 && !pipClosed) setPip(true);
+          };
+        }
         if (FX_SLOW > 1) {
           // Kun når man ser efter: gør overgangen kaldbar uden at en video spiller.
           window.__fxEnter = () => flipCinema(true);
@@ -1363,6 +1464,9 @@ const metaDesc = rawMeta.length > 157
         }
 
         const onPlayerStateChange = (event) => {
+          if (typeof window.__setPlaying === 'function') {
+            window.__setPlaying(event.data === YT.PlayerState.PLAYING);
+          }
           if (event.data !== YT.PlayerState.PLAYING) return;
 
           // Oplæsningen stoppes uanset skærmbredde. To stemmer på én gang er
@@ -1399,6 +1503,10 @@ const metaDesc = rawMeta.length > 157
 
         if (cinemaCloseBtn) {
           cinemaCloseBtn.addEventListener('click', () => {
+            // Samme knap lukker begge udgaver: fuld bredde på mobil, lille
+            // vindue på desktop. Uden det første kald blev desktop-vinduet
+            // hængende når man lukkede det.
+            if (typeof window.__closePip === 'function') window.__closePip();
             flipCinema(false);
             document.body.classList.remove('cinema-reading');
             if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
