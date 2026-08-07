@@ -315,36 +315,7 @@ const metaDesc = rawMeta.length > 157
       body.pip-mode #stickyVideo .cinema-close-btn { display: flex; }
     }
 
-    /* Telefon på tværs: videoen fylder hele skærmen.
-       Årsagen til at den kun fyldte det halve er ikke en manglende regel, men
-       en der HOLDT OP med at gælde: mobilens sticky-regler står i
-       @media (max-width: 768px), og en telefon i liggende stilling er ~844px
-       bred. Ved at dreje faldt videoen tilbage til sin almindelige opførsel
-       midt i afspilningen.
-       Denne står uden for den grænse og rammer i stedet på HØJDEN — en telefon
-       på tværs er lav, en bærbar er ikke. */
-    @media (orientation: landscape) and (max-height: 500px) {
-      body.cinema-mode #stickyVideo {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        height: 100dvh !important;   /* dvh tager højde for browserens egne bjælker */
-        padding-bottom: 0 !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-        aspect-ratio: auto !important;
-        z-index: 2000 !important;    /* over topbaren, som ellers ligger ovenpå */
-        background: #000 !important;
-      }
-      body.cinema-mode #stickyVideo .cinema-close-btn { display: flex !important; z-index: 2001 !important; }
-      /* Pladsen under videoen skal ikke reserveres når videoen dækker alt. */
-      body.cinema-mode .video-primary { padding-top: 0 !important; }
-      body.cinema-mode #cinemaBrowser { display: none !important; }
-    }
+
     .action-bar { display: flex; gap: 10px; margin-bottom: 30px; overflow-x: auto; scrollbar-width: none; padding-bottom: 5px; align-items: center; }
 
     /* Videoens længde mod læsetiden. Står lige under afspilleren, fordi det er
@@ -752,6 +723,37 @@ const metaDesc = rawMeta.length > 157
       .cinema-card-title { font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
       .cinema-ad { margin: 4px 0; }
     }
+    /* Telefon på tværs: videoen fylder hele skærmen.
+       Årsagen til at den kun fyldte det halve er ikke en manglende regel, men
+       en der HOLDT OP med at gælde: mobilens sticky-regler står i
+       @media (max-width: 768px), og en telefon i liggende stilling er ~844px
+       bred. Ved at dreje faldt videoen tilbage til sin almindelige opførsel
+       midt i afspilningen.
+       Denne står uden for den grænse og rammer i stedet på HØJDEN — en telefon
+       på tværs er lav, en bærbar er ikke. */
+    @media (orientation: landscape) and (max-height: 500px) {
+      body.cinema-mode #stickyVideo {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;   /* dvh tager højde for browserens egne bjælker */
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        aspect-ratio: auto !important;
+        z-index: 2000 !important;    /* over topbaren, som ellers ligger ovenpå */
+        background: #000 !important;
+      }
+      body.cinema-mode #stickyVideo .cinema-close-btn { display: flex !important; z-index: 2001 !important; }
+      /* Pladsen under videoen skal ikke reserveres når videoen dækker alt. */
+      body.cinema-mode .video-primary { padding-top: 0 !important; }
+      body.cinema-mode #cinemaBrowser { display: none !important; }
+    }
+
   </style>
 
   {isShort ? (
