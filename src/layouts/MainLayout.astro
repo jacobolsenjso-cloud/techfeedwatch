@@ -203,6 +203,137 @@ const siteSchema = [
       })();
     </script>
 
+    {/* Scroll- og klikmåling. Svarer på det vi ellers gætter om: når nogen ned
+        til bunden af artiklerne, og bliver de relaterede artikler brugt eller
+        er de spildplads? Ingen fremmede værktøjer — begivenhederne sendes til
+        den Google Analytics der allerede ligger her.
+
+        Alt er stille hvis gtag ikke findes: uden samtykke indlæses den ikke, og
+        en måling må aldrig blive årsag til en fejl i konsollen. */}
+    <script is:inline>
+      (function () {
+        function send(navn, data) {
+          if (typeof gtag === 'function') gtag('event', navn, data);
+        }
+
+        function sidetype(p) {
+          if (p === '/' || /^\/page\/\d+/.test(p)) return 'forside';
+          if (p.startsWith('/video/')) return 'artikel';
+          if (p.startsWith('/tools/')) return 'vaerktoej';
+          if (p.startsWith('/guides/')) return 'guide';
+          if (p.startsWith('/glossary/')) return 'glossar';
+          if (p.startsWith('/tag/')) return 'tag';
+          return 'andet';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          var type = sidetype(location.pathname);
+
+          // Sitet ruller i en INDRE beholder, ikke i dokumentet. En lytter på
+          // window ville aldrig blive kaldt, og målingen ville lydløst vise nul.
+          // Beholderen findes ved at spørge hvilken der faktisk KAN rulle.
+          function rulleBeholder() {
+            var kandidater = [document.scrollingElement].concat(
+              [].slice.call(document.querySelectorAll('main, .main-layout, .content-area, body > div'))
+            );
+            for (var i = 0; i < kandidater.length; i++) {
+              var c = kandidater[i];
+              if (c && c.scrollHeight > c.clientHeight + 60) return c;
+            }
+            return document.scrollingElement;
+          }
+
+          var beholder = rulleBeholder();
+          var vinduet = beholder === document.scrollingElement;
+          var naaet = {};
+          var maerker = [25, 50, 75, 100];
+
+          function maalScroll() {
+            var top = vinduet ? (window.scrollY || document.documentElement.scrollTop) : beholder.scrollTop;
+            var hoejde = beholder.scrollHeight - beholder.clientHeight;
+            if (hoejde < 200) return;   // for kort side til at sige noget
+            var pct = Math.round((top / hoejde) * 100);
+            // Bunden måles som "er jeg nede ved den", ikke som 100 procent.
+            // Billeder indlæses mens man ruller, så siden vokser undervejs og
+            // bunden flytter sig hurtigere end man når den — 100 blev aldrig
+            // sendt, selv når læseren stod nederst.
+            if (top + beholder.clientHeight >= beholder.scrollHeight - 4) pct = 100;
+            for (var i = 0; i < maerker.length; i++) {
+              var m = maerker[i];
+              // Hvert mærke sendes ÉN gang. Uden det ville én læser der ruller
+              // op og ned tælle som tyve.
+              if (pct >= m && !naaet[m]) {
+                naaet[m] = true;
+                send('scroll_depth', { percent: m, page_type: type });
+              }
+            }
+          }
+
+          var venter = false;
+          function paaScroll() {
+            if (venter) return;
+            venter = true;
+            requestAnimationFrame(function () { venter = false; maalScroll(); });
+          }
+
+          (vinduet ? window : beholder).addEventListener('scroll', paaScroll, { passive: true });
+          maalScroll();   // korte sider er allerede "læst" ved indlæsning
+
+          // Siden vokser mens billeder indlæses. Står læseren nederst og
+          // kommer der mere til, er hun ikke længere ved bunden — og der
+          // kommer aldrig et nyt scroll-event til at måle igen. Derfor måles
+          // der også når højden ændrer sig.
+          if (typeof ResizeObserver === 'function') {
+            new ResizeObserver(paaScroll).observe(beholder);
+          }
+          window.addEventListener('load', maalScroll);
+
+          // --- Klik, opdelt efter HVOR på siden ---
+          // Rækkefølgen betyder noget: den første der passer, vinder. De
+          // snævre områder står derfor før de brede, ellers ville alt inde i
+          // artiklen blive kaldt "brødtekst".
+          var omraader = [
+            ['op_naest', '.video-secondary'],
+            ['relaterede_artikler', '.related-articles'],
+            ['inline_anbefaling', '.tfw-inline-recs, [id*="inline-rec"]'],
+            ['relaterede_guides', '.related-guides'],
+            ['relaterede_vaerktoejer', '.rt-section, .try-this-tool'],
+            ['forfatterboks', '.author-box'],
+            ['brodkrumme', '.breadcrumbs-bar, .guide-breadcrumbs'],
+            ['emne_chip', '.tag-container, .explore-chips'],
+            ['glossar_link', 'a.glossary-link'],
+            ['sidemenu', '#sidebar'],
+            ['topbar', '.top-navbar'],
+            ['sidefod', 'footer'],
+            ['broedtekst', '.video-content, .guide-body'],
+          ];
+
+          document.addEventListener('click', function (e) {
+            var a = e.target.closest ? e.target.closest('a[href]') : null;
+            if (!a) return;
+
+            var omraade = 'andet';
+            for (var i = 0; i < omraader.length; i++) {
+              if (a.closest(omraader[i][1])) { omraade = omraader[i][0]; break; }
+            }
+
+            var href = a.getAttribute('href') || '';
+            // Udgående links er interessante for sig: et klik til YouTube er et
+            // klik VÆK, og det er netop det sitet lover at hjælpe folk med at
+            // beslutte. Det er ikke et tab.
+            var udgaaende = /^https?:\/\//.test(href) && href.indexOf(location.hostname) === -1;
+
+            send('content_click', {
+              area: omraade,
+              page_type: type,
+              outbound: udgaaende ? 1 : 0,
+              link_url: href.slice(0, 100),
+            });
+          }, { passive: true, capture: true });
+        });
+      })();
+    </script>
+
     {/* Google AdSense. Bliver i HTML'en så AdSense kan verificere sitet;
         Consent Mode ovenfor forhindrer cookies indtil der er givet samtykke. */}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9695260339642032" crossorigin="anonymous"></script>
