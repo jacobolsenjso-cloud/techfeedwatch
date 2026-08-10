@@ -399,7 +399,24 @@ async function run() {
 
     Video Content Data: ${text.substring(0, 20000)}`;
 
-    const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
+    // maxOutputTokens sat eksplicit. Uden den bruger modellen sin standard, og
+    // gemini-2.5 bruger også af output-budgettet på at tænke. Prompten beder om
+    // TITLE, TAGS, SUMMARY, META, FAQ og til sidst CONTENT — så når budgettet
+    // slipper op, er brødteksten præcis dét der mangler, mens alt andet står
+    // der. 25 artikler blev udgivet som tomme skaller på den måde, og andelen
+    // voksede til tre ud af fire.
+    const result = await genAI.getGenerativeModel({
+      model: 'gemini-2.5-flash',
+      generationConfig: { maxOutputTokens: 16384 },
+    }).generateContent(prompt);
+
+    // Blev svaret klippet af? Modellen siger det selv. Uden dette tjek ser et
+    // afklippet svar ud som et gyldigt svar med et manglende afsnit.
+    const finish = result.response?.candidates?.[0]?.finishReason;
+    if (finish && finish !== 'STOP') {
+      throw new Error(`Gemini stoppede med "${finish}" — svaret er ufuldstændigt, artiklen skrives ikke.`);
+    }
+
     const rawText = result.response.text();
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
@@ -461,6 +478,24 @@ async function run() {
       content = contentMatch ? contentMatch[1].trim() : "";
       content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
       content = sanitizeLinks(content);
+
+      // Skriv ALDRIG en artikel uden brødtekst.
+      //
+      // Det her var hele fejlen: manglede CONTENT: i svaret, blev content til
+      // en tom streng, og filen blev skrevet alligevel — med titel, resumé,
+      // FAQ og video, men ingen artikel. 25 sider blev udgivet sådan uden at
+      // noget sagde fra, og et site med tomme sider er præcis hvad en
+      // AdSense-gennemgang falder over.
+      //
+      // Bedre at dagens artikel mangler end at den er tom: robotten kører hver
+      // anden time og prøver igen med en anden video.
+      const ordITekst = content ? content.split(/\s+/).length : 0;
+      if (ordITekst < 200) {
+        throw new Error(
+          `Brødteksten er ${ordITekst} ord — under grænsen på 200. Artiklen skrives ikke. ` +
+          `(Svaret var ${rawText.length} tegn; CONTENT: ${contentMatch ? 'fundet' : 'MANGLER'}.)`
+        );
+      }
     }
 
     const date = new Date().toISOString().split('T')[0];
