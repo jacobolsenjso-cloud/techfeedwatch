@@ -11,8 +11,8 @@ tags:
 summary: "South Africa introduces a new national curriculum focusing on coding and robotics, highlighting a global push for digital literacy. This initiative aims to prepare students for the Fourth Industrial Revolution by fostering physical computing skills. Organizations are working to build accessible learning ecosystems, utilizing simulators and open-source robotics to bridge educational gaps."
 metaDescription: "Robotics education becomes a new national curriculum subject, preparing students for the 4IR with coding and physical computing skills."
 duration: "49:29"
-viewCount: 2
-viewsUpdated: "2026-08-06"
+viewCount: 4
+viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false
 faqs:

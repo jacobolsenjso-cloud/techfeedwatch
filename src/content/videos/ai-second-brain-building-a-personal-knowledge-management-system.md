@@ -12,8 +12,8 @@ tags:
 summary: "The concept of a 'second brain,' a digital extension for personal knowledge management, is evolving significantly with the integration of artificial intelligence. AI tools now automate information capture, summarization, and insight generation, transforming how individuals process and retrieve vast amounts of data. This approach augments human intelligence, enabling users to manage complex information workflows more efficiently and derive deeper understanding from their accumulated knowledge."
 metaDescription: "Learn how AI is revolutionizing personal knowledge management systems. Discover how to build an AI second brain for enhanced productivity."
 duration: "2:53:51"
-viewCount: 122
-viewsUpdated: "2026-08-06"
+viewCount: 124
+viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false
 faqs:

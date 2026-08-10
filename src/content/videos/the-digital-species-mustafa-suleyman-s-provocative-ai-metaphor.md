@@ -11,8 +11,8 @@ tags:
   - "AI & Tech"
 summary: "Microsoft AI CEO Mustafa Suleyman posits that humanity is creating a 'new digital species' with artificial intelligence, challenging conventional definitions of the technology. He argues that even those closest to AI's development struggle to articulate its future trajectory. This metaphor aims to focus attention on the profound, uncharted territory AI represents, moving beyond viewing it merely as a tool. Suleyman’s perspective calls for a fundamental reassessment of AI's nature and its role in society."
 duration: "22:02"
-viewCount: 2834414
-viewsUpdated: "2026-08-07"
+viewCount: 2836253
+viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false
 revised: true

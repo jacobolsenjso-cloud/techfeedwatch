@@ -11,7 +11,7 @@ tags:
 summary: "NVIDIA's Rubin platform signals a strategic shift in AI hardware, moving beyond individual GPUs to integrated 'AI factories.' This holistic approach combines CPUs, GPUs, and advanced networking to optimize performance and reduce inference costs for large-scale AI models. The platform aims to consolidate NVIDIA's market dominance by delivering complete, highly efficient AI infrastructure solutions."
 metaDescription: "NVIDIA Rubin is an 'AI factory' integrating GPUs, CPUs, and networking to redefine AI hardware infrastructure, aiming for lower inference costs."
 duration: "11:15"
-viewCount: 14485
+viewCount: 14486
 viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false

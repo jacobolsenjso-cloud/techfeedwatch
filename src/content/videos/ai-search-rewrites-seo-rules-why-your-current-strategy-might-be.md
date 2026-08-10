@@ -12,8 +12,8 @@ tags:
   - "AI & Tech"
 summary: "Google's formal shift from traditional '10 blue links' to AI Overviews marks a fundamental transformation in how search engine results are presented and consumed. This change significantly alters the strategies for online visibility, pushing businesses and content creators to adapt to new ranking factors for Answer Engine Optimization. Early adopters stand to gain substantial advantages, including drastically higher click-through rates and enhanced brand recognition within these AI-generated summaries. The move underscores AI's growing influence across all digital interactions."
 duration: "1:34:51"
-viewCount: 22924
-viewsUpdated: "2026-08-06"
+viewCount: 22925
+viewsUpdated: "2026-08-10"
 thumbMax: false
 isShort: false
 revised: true

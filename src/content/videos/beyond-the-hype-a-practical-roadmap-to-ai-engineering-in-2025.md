@@ -11,8 +11,8 @@ tags:
   - "Productivity"
 summary: "The rise of large language models fundamentally reshapes the AI engineering profession, demanding a new array of specialized skills beyond conventional software development. Engineers now require proficiency in prompt design, context management, and system orchestration to build reliable and scalable AI applications. This shift prioritizes understanding LLM behavior, integrating external data, and ensuring application performance through robust evaluation and observability frameworks. The industry is rapidly formalizing these emerging methodologies, creating significant opportunities for skilled practitioners."
 duration: "16:01"
-viewCount: 208007
-viewsUpdated: "2026-08-07"
+viewCount: 208094
+viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false
 revised: true

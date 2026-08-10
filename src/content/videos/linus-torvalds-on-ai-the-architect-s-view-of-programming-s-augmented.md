@@ -11,8 +11,8 @@ tags:
   - "Automation"
 summary: "Large Language Models (LLMs) are increasingly integrated into software development, offering assistance from code generation to bug detection. While their capabilities are significant, the debate continues whether they represent true intelligence or advanced pattern recognition. Developers face the challenge of leveraging LLMs for productivity while mitigating risks like AI 'hallucinations' and maintaining high code quality. This shift requires a thoughtful approach to integrating AI tools into existing review processes and workflows."
 duration: "5:05"
-viewCount: 1437386
-viewsUpdated: "2026-08-07"
+viewCount: 1437569
+viewsUpdated: "2026-08-10"
 thumbMax: true
 isShort: false
 revised: true
