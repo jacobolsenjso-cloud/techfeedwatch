@@ -33,7 +33,27 @@ const dedupe = (arr) => arr.filter((r) => {
   return true;
 });
 
-const stat = dedupe(staticRules);
+// Cloudflare matcher kilden PRÆCIST — /video/abc og /video/abc/ er to forskellige
+// adresser. Reglerne var kun skrevet uden afsluttende skråstreg, og Google har
+// begge varianter i indekset: 1.228 eksponeringer, 47% af alle sitets, ramte et
+// 404 på grund af én skråstreg. Hver statisk regel får derfor en tvilling.
+//
+// Kun kilder UDEN filendelse dubleres. /noget.xml/ er ikke en rigtig adresse,
+// og en regel for den ville bare fylde op i de 2.000 vi har.
+const withSlashVariants = (rules) => {
+  const out = [];
+  for (const r of rules) {
+    out.push(r);
+    const parts = r.split(/\s+/);
+    const from = parts[0];
+    const sidsteLed = from.split('/').pop();
+    if (from.endsWith('/') || sidsteLed.includes('.')) continue;
+    out.push([from + '/', ...parts.slice(1)].join(' '));
+  }
+  return out;
+};
+
+const stat = dedupe(withSlashVariants(staticRules));
 const dyn = dedupe(dynamicRules);
 
 const out = [
