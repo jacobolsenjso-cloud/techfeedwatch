@@ -1,210 +1,248 @@
 ---
 title: "The Ultimate Guide to Fintech"
 slug: "ultimate-guide-to-fintech"
-description: "What 67 videos from thirty finance channels actually agree on — why regulation is the product, what AI changed, and what the pitch decks leave out."
+description: "What 67 videos from thirty finance channels actually agree on — why the rulebook decides everything, what AI really changed, and what the sales decks leave out."
 tags: ["Fintech"]
 category: "Fintech"
 date: "2026-07-23"
 updated: "2026-08-11"
 faqs:
   - question: "What is fintech, in one sentence?"
-    answer: "Companies using software to do things banks do — payments, lending, accounts, investing — usually faster and cheaper, and usually on top of a bank's licence rather than their own."
+    answer: "Companies using software to do things banks do — payments, lending, accounts, investing — usually faster and cheaper, and usually built on top of a real bank's licence rather than their own."
   - question: "Are neobanks actually banks?"
-    answer: "Some are, most are not. Many operate on a partner bank's licence, which means deposit protection comes from that bank rather than from the app. It is worth knowing which one you are actually a customer of."
+    answer: "Some are, most are not. Many run on a partner bank's licence, which means your deposit protection comes from that bank, not from the app on your phone. It is worth knowing which one you are really a customer of."
   - question: "Why does regulation come up in every fintech discussion?"
-    answer: "Because it is the constraint that shapes the product. What a fintech can offer, how fast it can onboard someone, and which countries it can launch in are decided by licensing long before anyone writes code."
+    answer: "Because it decides what can be built at all. What a company may offer, how fast it can open an account for you, and which countries it can launch in are settled by licensing long before anyone writes a line of code."
   - question: "Are stablecoins a real payment technology or a crypto story?"
-    answer: "Both, and the split matters. As a way to move dollars between institutions they are already in production use. As consumer payments they mostly are not, because the last mile still runs through banks and card networks."
+    answer: "Both, and the split matters. For moving dollars between big institutions they are already in daily use. For buying a coffee they are not, because the last step still runs through banks and card networks."
   - question: "What should I be most careful about?"
-    answer: "Fraud. It is the single most discussed risk across the archive, and the losses fall on individuals far more often than the marketing suggests."
+    answer: "Fraud. It is the most discussed risk in the whole archive, and the loss lands on the individual far more often than the marketing suggests."
 ---
 
-Fintech is a word that covers a banking app, a payments network, a lending
-algorithm and a stablecoin — which is another way of saying it narrows nothing
-down.
+"Fintech" covers a banking app, a payments network, a lending algorithm and a
+digital dollar. Which is a polite way of saying the word tells you almost
+nothing.
 
-This guide takes a different route. Tech Feed Watch has covered 67 videos about
-finance and technology, from around thirty channels: Yahoo Finance, a16z, Coin
-Bureau, TED, and a range of independent analysts and practitioners. What follows
-is what they converge on, where they genuinely disagree, and what the pitch
-decks leave out.
+So this guide does something different. Tech Feed Watch has covered 67 videos
+about money and technology, from around thirty channels — Yahoo Finance, a16z,
+Coin Bureau, TED, and a pile of independent analysts who actually work in this
+stuff. Below is what they agree on, where they argue, and what the sales decks
+quietly leave out.
 
-One finding shaped everything below. Counting across all 67, **regulation comes
-up in 58 of them.** Not as a footnote — as the thing that decides what gets
-built. If you take one idea from this guide, take that one.
+One number shaped the whole thing. Out of those 67 videos, **58 talk about
+regulation.** Not as a boring footnote. As the thing that decides what gets
+built at all.
+
+If you remember one idea from this guide, make it that one.
 
 ## What 67 videos agree on
 
-Read across the whole set and the shape of the field is clearer than any single
-video makes it look.
+Read all of them and the field gets a lot clearer than any single video makes it
+look.
 
-**Regulation is not a constraint on the product — it is the product.** It comes
-up in 58 of 67. What a company may offer, how fast someone can open an account,
-which countries it can launch in, and how much capital it must hold are all
-decided by licensing. Two apps that look identical can be built on completely
-different legal foundations, and that difference is invisible from the outside
-until something goes wrong.
+**The rulebook is not a speed bump. It is the road.** 58 of 67. What a company
+may sell, how quickly it can let you open an account, which countries it can
+work in, how much money it must keep in reserve — all decided by licensing. Two
+apps can look identical on your phone and stand on completely different legal
+ground. You cannot see the difference from the outside. You find out when
+something breaks.
 
-**Digital banks and lending tie for second place**, at 29 videos each. That
-pairing is not a coincidence: most consumer fintechs are lending businesses
-wearing an app.
+**Digital banks and lending are tied for second, 29 videos each.** That is not a
+coincidence. Most consumer fintech is a lending business wearing a nice app.
 
-**Fraud is discussed in 27 of them** — more than stablecoins, more than open
-banking, more than embedded finance. It is the least glamorous subject in the
-field and one of the most covered, which tells you something about the gap
-between what gets marketed and what practitioners actually worry about.
+**Fraud shows up in 27** — more than stablecoins, more than open banking. It is
+the least exciting subject in finance and one of the most discussed by people
+who actually work in it. That gap tells you where the real problems are.
 
-**Stablecoins appear in 15, open banking in 11.** Both are talked about as if
-they had already reshaped everything. Measured against the rest of the field,
-they are still emerging.
+**Stablecoins get 15, open banking 11.** Both are talked about as if they had
+already changed everything. Measured against the rest, they are still getting
+started.
 
-## The sectors, and what each one really is
+## The five parts of fintech, in plain language
 
-**Payments** is the largest and least visible. Moving money between two accounts
-sounds simple and is not: the money and the message about the money travel
-separately, through networks built in different decades. Most payment
-innovation is about making that gap shorter or hiding it better.
+**Payments.** The biggest and the most invisible. Moving money between two
+accounts sounds like it should be instant, and mostly it is not. Here is why:
+the money and the *message about the money* travel separately, along networks
+built in different decades. It is a bit like sending a parcel by ship while
+posting a letter that says "your parcel is on the way." Most payment innovation
+is about closing the gap between the letter and the ship — or at least making
+the wait less obvious.
 
-**Lending** is where most consumer fintech makes its money, including companies
-that do not describe themselves as lenders. Buy now, pay later is lending. A
-card with a grace period is lending. When a free app is not charging you, the
-lending is usually the answer to how it survives.
+**Lending.** Where most consumer fintech actually earns its money, including
+plenty of companies that would never call themselves lenders. Buy now, pay later
+is lending. A card with an interest-free period is lending. When an app is free
+and very polished, "where's the lending?" is usually a good question to ask.
 
-**Neobanks** are consumer banking without branches. See below on what they are
-and are not.
+**Neobanks.** Banking without branches. More on what they are and are not in a
+moment, because this is where most people get a surprise.
 
-**Wealth and investing** — commission-free trading, robo-advisers, fractional
-shares. The fee moved rather than disappeared; it now sits in the spread, in
-order flow, or in a subscription.
+**Wealth and investing.** Commission-free trading, robo-advisers, buying a
+sliver of a share instead of a whole one. The fee did not vanish — it moved. It
+now hides in the spread, in who gets paid for your order, or in a monthly
+subscription.
 
-**Infrastructure** is the part nobody markets: [core banking](/glossary/core-banking)
-systems, ledgers, compliance engines. It is also where most of the money is,
-because everyone else rents it.
+**Infrastructure.** The engine room: [core banking](/glossary/core-banking)
+systems, ledgers, compliance software. Nobody advertises it, and it is where an
+enormous amount of the money is, because everyone else is renting it.
 
-## Why regulation decides everything
+## Whose bank is it anyway?
 
-This is the section most fintech explainers skip, and it is the one that makes
-the rest make sense.
+This is the part most fintech explainers skip, and it makes everything else make
+sense.
 
-A bank has a licence. The licence lets it hold your deposits, and it comes with
-capital requirements, supervision, and deposit protection. Getting one takes
-years and a great deal of money. So most fintechs do not have one.
+A real bank has a licence. The licence is what lets it hold your money. It comes
+with rules, inspections, capital it must keep in reserve, and deposit protection
+if things go wrong. Getting one takes years and a mountain of money.
 
-Instead they build on someone else's. A partner bank holds the deposits and
-carries the licence; the fintech builds the app, the brand and the experience.
-This arrangement — [banking as a service](/glossary/open-banking) in the
-industry's language — is why a company can launch a card in months rather than
-years.
+So most fintechs do not bother. They rent one.
 
-It also has consequences that rarely appear in the marketing:
+A partner bank holds the deposits and carries the licence. The fintech builds
+the app, the brand, the nice onboarding, the card that looks good on a table.
+Think of it as driving a car you do not own: you are behind the wheel, but the
+registration is in somebody else's name.
+
+That arrangement is why a startup can launch a card in three months instead of
+five years. It also has three consequences that never make it into the
+marketing.
 
 **Your deposit protection comes from the partner bank, not the app.** If you
-have money in two apps that both sit on the same partner bank, your protection
-may not double the way you assumed.
+keep money in two different apps that happen to sit on the same partner bank,
+your protection may not double the way you assumed. Same bank underneath, same
+limit.
 
-**The fintech can lose access.** If the partner bank exits the business or a
-regulator objects, the product stops. This has happened repeatedly, and
-customers usually find out late.
+**The fintech can lose its ride.** If the partner bank leaves the business or a
+regulator says no, the product stops. This has happened more than once, and
+customers usually hear about it late.
 
-**Onboarding friction is not bad design.** Every account requires
-[KYC](/glossary/kyc) — verifying who you are and monitoring afterwards. It is
-the largest single cost of acquiring a customer, the point where most signups
-are abandoned, and it cannot be skipped or moved offshore. The gap between an
-app that opens an account in four minutes and a bank that takes four days is
-mostly a difference in how the same legal checks are executed.
+**All that identity checking is not bad design.** Every account needs
+[KYC](/glossary/kyc) — proving who you are, and being watched afterwards for
+anything odd. It is the bouncer at the door, and the bouncer is required by law.
+It is also the biggest single cost of getting a customer and the point where
+most people give up halfway. The difference between an app that opens an account
+in four minutes and a bank that takes four days is mostly *how* they do the same
+legally required checks, not *whether* they do them.
 
-**Rules do not travel.** Open banking in the UK, PSD2 in Europe and Section
-1033 in the United States address the same idea in incompatible ways. A
-European product does not simply cross the Atlantic; it gets rebuilt.
+And one more thing worth knowing: **rules do not travel.** Open banking in the
+UK, PSD2 in Europe and Section 1033 in the United States are three answers to
+roughly the same question, and they are not compatible. A European product does
+not simply sail across the Atlantic. It gets rebuilt.
 
 ## What AI actually changed
 
-Twelve of the 67 videos discuss AI agents in finance, and the claims run well
-ahead of what is deployed.
+Twelve of the 67 videos talk about AI in finance, and the promises are running
+well ahead of what is actually switched on.
 
-Three things have genuinely changed. **Fraud detection** improved, because
-spotting an unusual pattern across millions of transactions is exactly the shape
-of problem these systems are good at. **Underwriting** now uses more signals
-than a credit file, which widens access and also creates new ways to be unfair
-in ways that are harder to audit. And **support** absorbs the routine questions,
-which is real cost saved and rarely the revolution it is described as.
+Three things genuinely changed.
 
-What has not changed is who carries the risk. A model can decide, but a licensed
-institution answers for the decision — which is why the interesting AI work in
-finance happens inside compliance departments rather than in consumer features.
+**Spotting fraud got better.** Finding one weird transaction among millions is
+exactly the kind of needle-in-a-haystack job these systems are good at.
 
-The phrase to be sceptical of is an [AI agent](/glossary/ai-agent) that moves
-money on your behalf. The demos are impressive. The liability question — who
-pays when it is wrong — is mostly unanswered, and until it is answered these
-stay demos.
+**Deciding who gets a loan uses more than a credit file now.** That lets more
+people borrow. It also creates fresh ways to be unfair, and harder ones to spot,
+because "the model said no" is not an explanation anyone can argue with.
 
-## Stablecoins: what is real and what is not
+**Support handles the boring questions.** Real money saved. Rarely the
+revolution it gets called.
 
-Fifteen videos cover [stablecoins](/glossary/stablecoin), and they split neatly
-along a line worth understanding.
+What did *not* change is who is on the hook. A model can make the call, but a
+licensed institution answers for it. Which is why the genuinely interesting AI
+work in finance is happening in compliance departments — the least glamorous
+room in the building.
 
-**Between institutions, they work now.** Moving dollars across borders on a
-weekend, settling in minutes rather than days, without a chain of correspondent
-banks — that is in production use. The reason is unglamorous: traditional
-cross-border settlement is slow because several institutions have to reconcile
-separate ledgers, and a shared ledger removes the reconciliation rather than
-speeding it up.
+Be sceptical when someone shows you an [AI agent](/glossary/ai-agent) that moves
+money for you. The demo will be impressive. The question nobody has answered is
+who pays when it gets it wrong. Until that has a clear answer, these stay demos.
 
-**For consumer payments, they mostly are not.** The last mile still runs
-through banks and card networks. Paying a shop with a stablecoin means someone
-converts it back, and that someone charges for it. The friction moved rather
-than disappeared.
+## Stablecoins: brilliant at one job, oversold at another
 
-The honest summary from the archive: stablecoins are a settlement technology
-that found a real job in wholesale finance, being marketed as a consumer
-payments revolution that has not happened.
+Fifteen videos cover [stablecoins](/glossary/stablecoin), and they split along a
+line that is worth getting straight.
 
-## Fraud: the part nobody sells
+**Between big institutions, they already work.** Sending dollars across a border
+on a Sunday, settled in minutes instead of days, without a chain of banks each
+taking a cut. That is not a pitch — it is in daily use.
 
-Twenty-seven videos — more than any other risk topic. That imbalance between how
-much it is discussed by practitioners and how little it appears in product
-marketing is the most useful signal in the whole archive.
+The reason is dull and important. Normally, moving money internationally is slow
+because several banks each keep their own separate books, and they all have to
+agree afterwards. A shared ledger means there is nothing to agree about. The
+slowness was never the technology. It was the paperwork between institutions.
 
-Three patterns come up repeatedly.
+**For buying a sandwich, they do not work.** The last step still goes through
+banks and card networks. Paying a shop with a stablecoin means somebody converts
+it back to normal money, and that somebody charges for the favour. The friction
+did not disappear. It moved one step to the left and got quieter.
 
-**Speed cuts both ways.** Instant payments are irreversible payments. The same
-property that makes them useful makes them the preferred channel for fraud, and
-the recipient is gone before anyone notices.
+Short version: stablecoins are a shipping container. Fantastic for moving a lot
+of value between ports. Not what you want when you are buying one thing.
 
-**The attack targets the person, not the system.** Bank security is genuinely
-strong. So the attack is a convincing message that persuades you to move the
-money yourself — which no amount of encryption prevents. See
-[phishing](/glossary/phishing) for how that actually works.
+## Fraud: the part nobody puts on a billboard
 
-**Liability is unsettled.** If you are tricked into authorising a payment, who
-carries the loss varies by country and is being fought over right now. In much
-of the world the answer is still you.
+Twenty-seven videos. More than any other risk in the archive.
 
-If you take one practical step from this guide: treat any unexpected message
-about money as false until confirmed through a channel you chose yourself. Not
-a number in the message. A number you looked up.
+Think about what that means. The people who work in finance talk about fraud
+constantly. The people who sell financial products almost never mention it.
+When there is a gap that size between what practitioners discuss and what
+customers hear, the gap itself is the useful information.
 
-## What to do with this
+Three things come up again and again.
 
-**If you are choosing a product:** find out whose licence it runs on and where
-deposit protection actually sits. It is usually in the small print and it takes
-two minutes.
+**Fast means final.** Instant payments are irreversible payments. The same
+feature that makes them good makes them the favourite tool of anyone taking your
+money, because it is gone before you have finished reading the message.
 
-**If you are trying to understand the field:** follow regulation rather than
-funding rounds. The rules predict what gets built about a year ahead of the
-press releases.
+**The attack aims at you, not the bank.** Bank security is genuinely strong now.
+So the attack is not a break-in. It is a convincing message that persuades you
+to move the money yourself. No amount of encryption stops that, because from the
+system's point of view nothing went wrong — you authorised it.
+[Phishing](/glossary/phishing) explains how that works in more detail.
 
-**If you are running numbers:** the [compound growth calculator](/tools/compound-calculator)
-handles the savings and interest side, and the [crypto profit calculator](/tools/crypto-profit-calculator)
-covers the other. Both run in your browser — nothing you type is uploaded.
+**Who pays is still being argued over.** If you were tricked into approving a
+payment, whether the bank refunds you depends on where you live and is being
+fought over right now. In much of the world, the answer is still: you do.
 
-**If you want the raw material:** every article behind this guide links to its
-original video, and the [Fintech tag](/tag/fintech) has all 67.
+So here is the one instruction worth taking from this whole guide.
+
+**Treat any unexpected message about money as false until you have checked it
+through a number you looked up yourself.** Not a number in the message. Not a
+link in the message. A number you found on your own. It costs you two minutes
+when the message was real, and it costs a criminal everything when it was not.
+
+## Five things you can actually do
+
+**Find out whose licence you are standing on.** Open your banking app, look for
+the small print that names the bank holding your deposits. Two minutes. If you
+have money in two apps, check whether it is the same bank underneath — because
+your protection does not double if it is.
+
+**Follow the rules, not the funding rounds.** Regulation predicts what gets
+built about a year before the press releases do. If you want to know what your
+bank will offer next year, read what the regulator published this year. It is
+dry. It is also right more often than the pitch decks.
+
+**Assume there is lending somewhere.** When a money app is free, polished and
+generous, the question is not "how nice of them" but "where is the loan?" It is
+usually not hidden. It is just not on the front page.
+
+**Do the maths yourself before believing a number.** The
+[compound growth calculator](/tools/compound-calculator) covers savings and
+interest, and the [crypto profit calculator](/tools/crypto-profit-calculator)
+covers the other kind. Both run inside your browser — nothing you type is sent
+anywhere.
+
+**And the fraud rule again, because it is the one that matters.** Unexpected
+message about money? Check it through a number you looked up yourself.
+
+## Want the raw material?
+
+Every article behind this guide links to the original video, with the creator
+credited. The [Fintech tag](/tag/fintech) has all 67 of them, and the
+[glossary](/glossary) explains the words that keep showing up.
 
 ---
 
 *This guide draws on 67 videos covered on Tech Feed Watch, from around thirty
-channels including Yahoo Finance, a16z, Coin Bureau and TED. The counts quoted
-are from the archive itself, not from an industry report. Written and maintained
-by Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections)
-explains how to tell me.*
+channels including Yahoo Finance, a16z, Coin Bureau and TED. The counts quoted —
+58 mentioning regulation, 29 on lending, 27 on fraud — come from the archive
+itself, not from an industry report. Written and maintained by Jacob S. Olsen.
+If something here is wrong, the [corrections policy](/corrections) explains how
+to tell me.*
