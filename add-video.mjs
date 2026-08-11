@@ -192,6 +192,12 @@ const url = process.argv[2];
 // tilføje ét mere.
 const tagFlagIndex = process.argv.indexOf('--tag');
 const forcedTagRaw = tagFlagIndex > -1 ? process.argv[tagFlagIndex + 1] : null;
+
+// Spørgsmålet fra autocomplete: den søgning artiklen skal svare på. Uden det
+// blev artiklen skrevet ud fra videoen alene, og ingen i kæden havde spurgt om
+// nogen søger på emnet.
+const qFlagIndex = process.argv.indexOf('--question');
+const targetQuestion = qFlagIndex > -1 ? (process.argv[qFlagIndex + 1] || '').trim() : '';
 const forcedTag = ALLOWED_TAGS.includes(forcedTagRaw) ? forcedTagRaw : null;
 if (forcedTagRaw && !forcedTag) {
   console.log(`⚠️ Ukendt mærke "${forcedTagRaw}" — ignoreret. Gemini vælger selv.`);
@@ -368,6 +374,8 @@ async function run() {
     Video Content Data: ${text.substring(0, 5000)}`
       : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this video only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the video revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the video told them.
 
+    ${targetQuestion ? `TARGET SEARCH QUESTION: someone searching Google typed "${targetQuestion}". This article must answer that question directly and early - put a clear, plain answer in the first two paragraphs, and make sure the headline and one H2 reflect it. Do not force it if the video genuinely does not address it; in that case ignore this line entirely rather than inventing an answer.` : ''}
+
     Return EXACTLY in this format:
     TITLE: An SEO-optimized headline, about 50-65 characters, that FRONT-LOADS the primary keyword/topic exactly the way people search for it (e.g. "What Is Open Banking? How Agentic AI Changes Finance" or "Nvidia's $250B AI Chip Deal: What It Means"). Be concrete and specific and include the main keyword near the start. It can be engaging, but search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
@@ -508,6 +516,10 @@ async function run() {
 
     const metaYaml = (!isShort && safeMeta) ? `metaDescription: ${toYamlDoubleQuoted(safeMeta)}\n` : "";
 
+    // Gemmes så vi senere kan måle om artikler med et søgespørgsmål klarer sig
+    // bedre end dem uden. Uden det står vi om tre måneder med en fornemmelse.
+    const questionYaml = (!isShort && targetQuestion) ? `targetQuestion: ${toYamlDoubleQuoted(targetQuestion)}\n` : "";
+
     // Kildeangivelse — udelades hvis YouTube ikke gav os data
     const sourceYaml =
       (channelTitle ? `channelTitle: ${toYamlDoubleQuoted(channelTitle)}\n` : "") +
@@ -519,7 +531,7 @@ async function run() {
       ? ""
       : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\nthumbMax: ${thumbMax}\n`;
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

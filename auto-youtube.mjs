@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { execSync } from 'child_process';
 import fs from 'fs';
+import { hentForslag } from './src/lib/suggest.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -105,6 +106,44 @@ function pickThinnestTag(counts) {
   const tied = Object.keys(counts).filter((t) => counts[t] === min);
   const slot = Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % tied.length;
   return tied[slot];
+}
+
+// Henter spørgsmål fra Googles autocomplete og vælger ét vi ikke har brugt før.
+//
+// Emnet i TOPIC_BY_TAG er en søgestreng med lodrette streger ("AI|machine
+// learning|LLM"). Autocomplete skal have almindelig tekst, så vi tager det
+// første led — resten er alternativer til YouTube-søgningen, ikke til Google.
+//
+// Brugte spørgsmål gemmes, så robotten ikke skriver om det samme igen. Filen
+// er lille: ét spørgsmål pr. artikel.
+async function vaelgSpoergsmaal(tag, topic) {
+  const BRUGTE = 'src/data/used-questions.json';
+  let brugte = [];
+  if (fs.existsSync(BRUGTE)) {
+    try { brugte = JSON.parse(fs.readFileSync(BRUGTE, 'utf8')); } catch { brugte = []; }
+  }
+  const set = new Set(brugte.map((x) => x.q));
+
+  const frø = String(topic).split('|')[0].trim();
+  let forslag = [];
+  try {
+    forslag = await hentForslag(frø);
+  } catch (e) {
+    console.log(`Info: autocomplete svarede ikke (${e.message}) — fortsætter uden.`);
+    return null;
+  }
+
+  const ubrugte = forslag.filter((s) => !set.has(s));
+  if (!ubrugte.length) return null;
+
+  // Klokkeslættet vælger, så to kørsler i træk ikke tager det samme spørgsmål
+  // hvis den første ikke nåede at gemme.
+  const valgt = ubrugte[Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % ubrugte.length];
+
+  brugte.push({ q: valgt, tag, dato: new Date().toISOString().slice(0, 10) });
+  fs.mkdirSync('src/data', { recursive: true });
+  fs.writeFileSync(BRUGTE, JSON.stringify(brugte, null, 1) + '\n', 'utf8');
+  return valgt;
 }
 
 // Vælger kanal ud fra tidspunktet, så hver kørsel også tager næste kanal i rækken (roterer uafhængigt af klynger).
@@ -255,7 +294,8 @@ async function processGroup(items, label, maxCount, existingIds, tag) {
 
     try {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
-      execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"`, { stdio: 'inherit' });
+      const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
+      execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg}`, { stdio: 'inherit' });
       processed++;
       existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
     } catch (subError) {
@@ -281,7 +321,22 @@ async function findNewestVideos() {
     for (const [t, n] of Object.entries(dryCounts).sort((a, b) => a[1] - b[1])) {
       console.log(`  ${String(n).padStart(4)}  ${t}`);
     }
-    console.log(`\nVille vælge: "${pickThinnestTag(dryCounts)}"`);
+    const dryTag = pickThinnestTag(dryCounts);
+    console.log(`\nVille vælge mærket: "${dryTag}"`);
+
+    // Spørgsmålet hentes også i det tørre løb — ellers tester man kun halvdelen
+    // af kæden. Autocomplete koster ingenting og kræver ingen nøgle.
+    // --keep gemmer valget; uden det rulles filen tilbage, så et tjek ikke
+    // bruger et spørgsmål op.
+    const foer = fs.existsSync('src/data/used-questions.json')
+      ? fs.readFileSync('src/data/used-questions.json', 'utf8') : null;
+    const q = await vaelgSpoergsmaal(dryTag, TOPIC_BY_TAG[dryTag]);
+    if (!process.argv.includes('--keep')) {
+      if (foer === null) fs.rmSync('src/data/used-questions.json', { force: true });
+      else fs.writeFileSync('src/data/used-questions.json', foer, 'utf8');
+    }
+    console.log(`Ville søge på:   "${q || TOPIC_BY_TAG[dryTag]}"`);
+    console.log(q ? '                 (spørgsmål fra autocomplete)' : '                 (emnet alene — intet spørgsmål fundet)');
     return;
   }
 
@@ -299,6 +354,16 @@ async function findNewestVideos() {
   const tag = pickThinnestTag(counts);
   const topic = TOPIC_BY_TAG[tag];
 
+  // Emnet siger HVAD vi skriver om. Spørgsmålet siger hvad nogen faktisk
+  // søger på inden for emnet. Uden det valgte robotten et emne, fandt en
+  // video, og skrev en artikel uden at nogen i kæden spurgte om der var
+  // efterspørgsel. Fejler opslaget, kører vi videre på emnet alene — det er en
+  // forbedring, ikke en forudsætning.
+  const spoergsmaal = await vaelgSpoergsmaal(tag, topic);
+  const soegetekst = spoergsmaal || topic;
+  if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete: "${spoergsmaal}"`);
+  else console.log('Info: Intet ubrugt spørgsmål fundet — søger på emnet alene.');
+
   const channel = pickChannel();
   // Kanaler kan være defineret med fast id ELLER @handle (opløses her ved kørsel via forHandle).
   const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
@@ -312,9 +377,9 @@ async function findNewestVideos() {
     // Medium (relevance) + long (date) + én roterende kvalitetskanal.
     // Korte videoer søges ikke længere — de gav sider uden brødtekst.
     const [mediumVideos, longVideos, channelVideos] = await Promise.all([
-      searchVideos(topic, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
-      searchVideos(topic, { videoDuration: 'long', order: 'date', maxResults: 5 }),
-      searchChannel(channelId, topic, 3),
+      searchVideos(soegetekst, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
+      searchVideos(soegetekst, { videoDuration: 'long', order: 'date', maxResults: 5 }),
+      searchChannel(channelId, soegetekst, 3),
     ]);
 
     const seen = new Set();
