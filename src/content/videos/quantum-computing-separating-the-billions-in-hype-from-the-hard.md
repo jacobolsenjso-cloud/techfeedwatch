@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Hype vs Reality, Real Challenges & Future"
+title: "Quantum Computing Investment: Billions Spent, Few Uses Yet"
 seoTitled: true
 youtubeId: "SnIEu8OSXDs"
 channelTitle: "The Verge"

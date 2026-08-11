@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Reality: Hype vs. Practical Future"
+title: "Quantum Computing Predictions: Which Claims Hold Up"
 titleShortened: true
 seoTitled: true
 youtubeId: "B3U1NDUiwSA"

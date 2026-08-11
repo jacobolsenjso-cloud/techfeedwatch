@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Real-World Potential & Current Challenges"
+title: "Quantum Computing Basics: Superposition and Qubits Explained"
 seoTitled: true
 youtubeId: "-1PsQIciMEc"
 channelTitle: "World Science Festival"

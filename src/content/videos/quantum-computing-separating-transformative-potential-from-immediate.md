@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Present, Future, Challenges"
+title: "Quantum Computing Hardware: Why Building Qubits Is So Hard"
 titleShortened: true
 seoTitled: true
 youtubeId: "VyX8E4KUkWw"

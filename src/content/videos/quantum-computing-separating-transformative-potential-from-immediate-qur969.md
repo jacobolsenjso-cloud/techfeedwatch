@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Explained: Real Potential, Current Limits"
+title: "Quantum Computing Timeline: What Works Now, What Is Years Away"
 seoTitled: true
 youtubeId: "QuR969uMICM"
 channelTitle: "TED"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Differentiating Reality & Potential"
+title: "Quantum Computing for Developers: What Actually Changes"
 seoTitled: true
 youtubeId: "sHDWnW1fXJw"
 channelTitle: "Modern Software Engineering"
