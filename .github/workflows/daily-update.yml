@@ -29,6 +29,16 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      # Kigger arkivet efter tomme artikler, manglende resuméer, manglende
+      # kildeangivelse og spor fra modellen. Kører FØR commit, så en artikel
+      # med et hul aldrig når at blive udgivet.
+      #
+      # Baggrund: 25 artikler blev udgivet helt uden brødtekst og lå der i tre
+      # uger, fordi intet sagde fra. Scriptet afslutter med kode 1 ved fejl, og
+      # så standser jobbet her i stedet for at pushe.
+      - name: Tjek indholdet
+        run: node audit-content.mjs
+
       - name: Gem ændringer (Commit & Push)
         run: |
           git config --global user.name 'github-actions[bot]'
