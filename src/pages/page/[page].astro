@@ -74,7 +74,7 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
     .filter-tag {
       background: var(--hover-bg); color: var(--text-color); border: 1px solid transparent;
       padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
-      cursor: pointer; transition: background 0.2s; line-height: 1.5; display: inline-block;
+      cursor: pointer; transition: background 0.2s; line-height: 1.5; display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box;
     }
     .filter-tag:hover { background: #e5e7eb; }
     .filter-tag.active { background: #111; color: #fff; }
@@ -113,8 +113,8 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
     body.dark-mode .no-results { color: #9ca3af; }
 
     .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px 0 40px 0; flex-wrap: wrap; }
-    .pagination-btn, .pagination-num { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 40px; padding: 0 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; border: none; box-sizing: border-box; cursor: pointer; }
-    .pagination-num { min-width: 40px; padding: 0; }
+    .pagination-btn, .pagination-num { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; padding: 0 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; border: none; box-sizing: border-box; cursor: pointer; }
+    .pagination-num { min-width: 44px; padding: 0; }
     .pagination-btn:hover, .pagination-num:hover { background: #e5e7eb; }
     body.dark-mode .pagination-btn:hover, body.dark-mode .pagination-num:hover { background: #334155; }
     .pagination-num.active { background: #111; color: #fff; }
@@ -134,7 +134,7 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
       }
 
       .pagination { gap: 6px; }
-      .pagination-btn, .pagination-num { min-width: 36px; height: 36px; padding: 0 12px; font-size: 0.85rem; }
+      .pagination-btn, .pagination-num { min-width: 44px; height: 44px; padding: 0 8px; font-size: 0.85rem; }
     }
   </style>
 

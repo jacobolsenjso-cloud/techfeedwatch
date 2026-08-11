@@ -92,7 +92,7 @@ const formatDate = (d: string) => {
        — den duer som tekstfarve, men ikke som baggrund under hvid tekst.
        Første forsøg gav 2,14:1 i mørk tilstand. En baggrund der bærer hvid
        tekst skal være mørk i begge tilstande. */
-    .see-all-btn { text-decoration: none; font-size: 0.9rem; font-weight: 600; color: #fff; background: #0e7490; border-left: 4px solid var(--tag-accent, #6b7280); padding: 8px 16px; border-radius: 20px; white-space: nowrap; transition: opacity 0.2s, transform 0.2s; }
+    .see-all-btn { min-height: 44px; box-sizing: border-box; text-decoration: none; font-size: 0.9rem; font-weight: 600; color: #fff; background: #0e7490; border-left: 4px solid var(--tag-accent, #6b7280); padding: 8px 16px; border-radius: 20px; white-space: nowrap; transition: opacity 0.2s, transform 0.2s; }
     .see-all-btn:hover { opacity: 0.88; transform: translateX(2px); }
 
     /* Video Grid */

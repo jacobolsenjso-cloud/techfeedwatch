@@ -122,7 +122,7 @@ const extras = OPERATION_LIST.filter((o) => o.id !== op);
   body.dark-mode .tt-count { color: #9ca3af; }
 
   .tt-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 26px 0; }
-  .tt-btn { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
+  .tt-btn { padding: 10px 16px; min-height: 44px; box-sizing: border-box; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-weight: 600; font-size: 0.9rem; cursor: pointer; }
   .tt-btn:hover { border-color: var(--teal-text); }
   .tt-btn-primary { background: #0891b2; color: #fff; border-color: var(--teal-text); }
   .tt-btn-primary:hover { background: #0e7490; }
@@ -130,7 +130,7 @@ const extras = OPERATION_LIST.filter((o) => o.id !== op);
   .tt-settings { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; margin-bottom: 18px; }
   .tt-settings-title { font-size: 1rem; margin: 0 0 12px 0; }
   .tt-options { display: flex; flex-direction: column; gap: 11px; }
-  .tt-option { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; flex-wrap: wrap; min-height: 26px; padding: 3px 0; }
+  .tt-option { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer; flex-wrap: wrap; min-height: 44px; padding: 6px 0; }
   .tt-option-label { font-weight: 500; }
   .tt-option-text, .tt-option-select { align-items: center; }
   .tt-input { padding: 8px 11px; border-radius: 7px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 0.9rem; min-width: 220px; }

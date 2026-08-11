@@ -41,7 +41,7 @@ const title = `${term} — Glossary`;
   <style is:global>
     .glossary-term-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
 
-    .glossary-back-link { display: inline-block; margin-bottom: 24px; padding: 4px 2px; color: var(--teal-text); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .glossary-back-link { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 24px; padding: 4px 2px; color: var(--teal-text); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
     .glossary-back-link:hover { text-decoration: underline; }
     body.dark-mode .glossary-back-link { color: #22d3ee; }
 
@@ -58,7 +58,7 @@ const title = `${term} — Glossary`;
     .glossary-related { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--border-color); }
     .glossary-related h2 { font-size: 1.2rem; margin: 0 0 14px 0; }
     .glossary-related-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-    .glossary-related-list li a { display: inline-block; padding: 8px 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+    .glossary-related-list li a { display: inline-flex; align-items: center; min-height: 44px; box-sizing: border-box; padding: 8px 16px; border-radius: 20px; background: var(--hover-bg); color: var(--text-color); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
     .glossary-related-list li a:hover { background: #e5e7eb; }
     body.dark-mode .glossary-related-list li a:hover { background: #334155; }
 

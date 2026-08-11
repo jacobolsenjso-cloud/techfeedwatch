@@ -409,7 +409,9 @@ const siteSchema = [
       body.focus-mode .top-navbar { transform: translateY(0) !important; border-bottom: none; }
       .nav-left { display: flex; align-items: center; gap: 15px; }
       .nav-right { display: flex; align-items: center; gap: 8px; }
-      .icon-btn { background: none; border: none; font-size: 1.2rem; color: var(--text-color); cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+      /* 44x44 frem for 40: ikonknapperne i topbaren er de mindste mål på hele
+         sitet, og de rammes med tommelfingeren øverst på skærmen. */
+      .icon-btn { background: none; border: none; font-size: 1.2rem; color: var(--text-color); cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
       .icon-btn:hover { background: var(--hover-bg); }
 
       .search-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 60px; background: var(--sidebar-bg); display: none; align-items: center; padding: 0 20px; box-sizing: border-box; z-index: 40; }
@@ -437,7 +439,7 @@ const siteSchema = [
 
       /* Notifikations-klokke */
       .notif-wrap { position: relative; display: flex; align-items: center; }
-      #notifBtn { position: relative; }
+      #notifBtn { position: relative; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
       .notif-badge { position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #d926c8; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; line-height: 1; }
       .notif-panel { position: absolute; top: calc(100% + 10px); right: 0; width: 340px; max-width: 92vw; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 14px 36px rgba(0,0,0,0.18); display: none; z-index: 70; overflow: hidden; }
       .notif-panel.active { display: block; }
@@ -470,13 +472,17 @@ const siteSchema = [
       body.dark-mode .content-area::-webkit-scrollbar-thumb { background-color: #475569; border: 3px solid #0f1115; }
 
       .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-color); cursor: pointer; padding: 0; }
-      .logo { font-size: 1.2rem; font-weight: bold; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
+      .logo { font-size: 1.2rem; font-weight: bold; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; min-height: 44px; }
       .logo-icon { color: var(--teal-text); font-size: 1.5rem; }
       .logo-mark { height: 40px; width: auto; display: block; flex-shrink: 0; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.28)); }
       body.dark-mode .logo-mark { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.55)); }
       .main-layout { display: flex; flex: 1; overflow: hidden; position: relative; }
       .sidebar { width: 220px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 15px 10px; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; z-index: 20; transition: left 0.3s ease; }
-      .nav-item { padding: 10px 15px; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+      /* min-height 44px: WCAG 2.2 AA kræver kun 24, og punkterne var 40 — altså
+       godkendte. Men 44 er det en finger reelt har brug for, og fire pixels er
+       billige. Padding alene ville ikke gøre det: den lodrette padding er 10px
+       i forvejen, og teksten bestemmer resten. */
+    .nav-item { padding: 10px 15px; min-height: 44px; box-sizing: border-box; text-decoration: none; color: var(--text-color); border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
       .nav-item:hover, .nav-item.active { background: var(--hover-bg); color: var(--teal-text); } 
       .nav-item:hover { transform: translateX(3px); }
       /* Kildeangivelse på kort. Defineret globalt, fordi kortlister findes på
@@ -498,7 +504,9 @@ const siteSchema = [
       .footer-copy { margin: 0; }
       .footer-links { margin-top: 8px; display: flex; flex-direction: row; justify-content: center; align-items: center; }
       /* Lidt luft omkring footer-links, så de er til at ramme på touch */
-      .footer-link { color: inherit; text-decoration: none; margin: 0 4px; padding: 8px 6px; display: inline-block; }
+      /* min-height frem for at regne padding ud: linjehøjden varierer med
+         skriftstørrelsen, og 13px padding gav 43 — ét pixel fra mål. */
+      .footer-link { color: inherit; text-decoration: none; margin: 0 4px; padding: 8px 6px; min-width: 44px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; }
       .footer-link:hover { color: var(--teal-text); }
       .footer-sep { opacity: 0.6; }
 
@@ -527,7 +535,10 @@ const siteSchema = [
         .logo-icon { font-size: 1.15rem; }
         .logo-mark { height: 34px; }
         .nav-right { gap: 0; }
-        .nav-right .icon-btn { width: 36px; height: 36px; font-size: 1.05rem; }
+        /* Skruede før ikonknapperne ned til 36px på mobil — altså mindst dér hvor
+         de rammes med en finger og ikke med en musemarkør. Skriftstørrelsen
+         bliver, så knapperne ikke fylder mere visuelt; kun trykfeltet vokser. */
+      .nav-right .icon-btn { width: 44px; height: 44px; font-size: 1.05rem; }
         .notif-badge { top: 2px; right: 2px; min-width: 15px; height: 15px; font-size: 9px; }
         /* MENU FIX: z-index hævet til 2000 for at sikre at den dækker videoen */
         .sidebar { position: fixed; top: 60px; left: 0; height: calc(100vh - 60px); transform: translateX(-100%); box-shadow: 2px 0 15px rgba(0,0,0,0.2); z-index: 2000; }

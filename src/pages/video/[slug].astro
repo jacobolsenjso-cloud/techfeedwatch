@@ -273,7 +273,7 @@ const metaDesc = rawMeta.length > 157
     /* inline-block + padding: brødkrumme-links var 70x17. De er ikke links midt
        i en sætning, så undtagelsen for løbende tekst gælder ikke — de skal have
        24px i højden som ethvert andet tryk-mål. */
-    .breadcrumbs-bar a { color: var(--teal-text); text-decoration: none; font-weight: 500; display: inline-block; padding: 4px 2px; }
+    .breadcrumbs-bar a { color: var(--teal-text); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; min-height: 44px; padding: 4px 2px; }
     body.dark-mode .breadcrumbs-bar a { color: #22d3ee; }
     /* Brødkrummelinjens grå var 3,21:1 mod den mørke baggrund. Farven er
        årsagen, ikke opacity — det var min første og forkerte diagnose. */
@@ -525,7 +525,7 @@ const metaDesc = rawMeta.length > 157
 
     .explore-section { margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border-color); }
     .explore-tags-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-    .explore-chip { background: var(--hover-bg); border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; color: var(--text-color); text-decoration: none; transition: all 0.2s ease; }
+    .explore-chip { background: var(--hover-bg); border: 1px solid var(--border-color); padding: 8px 14px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 20px; font-size: 0.85rem; font-weight: 500; color: var(--text-color); text-decoration: none; transition: all 0.2s ease; }
     .explore-chip:hover { background: #e2e8f0; transform: translateY(-1px); }
     body.dark-mode .explore-chip { background: #1e293b; border-color: #334155; color: #d1d5db; }
     body.dark-mode .explore-chip:hover { background: #334155; color: #fff; }
