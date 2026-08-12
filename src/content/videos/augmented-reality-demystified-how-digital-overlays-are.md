@@ -8,7 +8,7 @@ channelId: "UCJOEr3_V_F0V3MJPNyYR9jw"
 publishedAt: "2021-08-14T08:20:45Z"
 date: "2026-07-11"
 tags:
-  - "AI & Tech"
+  - "AR & VR"
   - "Business & Money"
 summary: "Augmented Reality (AR) technology, by layering digital information onto a live camera feed, is transforming how users interact with their physical environment. Its core function relies on rapid computer vision and 3D geometry processing to accurately place virtual objects in real-time. While initially seen in mobile applications like virtual try-ons, AR's sophistication is increasing, pointing towards more immersive experiences across various industries. This evolution promises to redefine user interaction and data visualization without fully displacing the real world."
 duration: "2:33:24"

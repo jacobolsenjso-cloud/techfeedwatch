@@ -4,7 +4,7 @@ import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips"];
+const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
 // Renser links i den genererede brødtekst før den gemmes.
 //

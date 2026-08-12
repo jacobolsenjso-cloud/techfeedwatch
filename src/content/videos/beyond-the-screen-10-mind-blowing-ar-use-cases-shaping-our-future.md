@@ -7,7 +7,7 @@ channelId: "UCGBO6EahCqQSyXIws1MQdDg"
 publishedAt: "2021-09-21T13:00:16Z"
 date: "2026-07-11"
 tags:
-  - "AI & Tech"
+  - "AR & VR"
 summary: "Augmented Reality (AR) is transitioning from niche applications to a foundational technology, promising to fundamentally alter how we interact with digital information in our physical world. This shift extends beyond entertainment, impacting education, retail, healthcare, and daily navigation through immersive, context-aware overlays. As AR hardware evolves and AI integration deepens, society faces new considerations regarding data privacy, human-computer interaction, and the very definition of a connected experience."
 duration: "7:17"
 viewCount: 271380

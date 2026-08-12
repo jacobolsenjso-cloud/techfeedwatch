@@ -7,7 +7,7 @@ channelId: "UCF8H7dYHK6AvJF0EVonO3cw"
 publishedAt: "2022-06-27T20:06:48Z"
 date: "2026-07-13"
 tags:
-  - "AI & Tech"
+  - "AR & VR"
   - "Coding"
 summary: "The increasing accessibility of tools like Unity, ARKit, and ARCore has democratized Augmented Reality (AR) application development, shifting it from a niche expertise to a widespread capability. This evolution allows creators to build sophisticated AR experiences, particularly those leveraging image tracking, with free software and native platform support. The move towards self-contained AR functionality marks a significant step, reducing external dependencies and fostering more stable, integrated applications across mobile devices. This trend underscores a broader movement where advanced tech creation becomes more attainable, driving innovation beyond traditional developer circles."
 duration: "32:11"

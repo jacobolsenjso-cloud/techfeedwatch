@@ -20,11 +20,28 @@ const dryRun = process.argv.includes('--dry-run');
 const RULES = [
   { tag: 'Quantum Computing', re: /\b(quantum comput\w*|quantum (leap|ai|hardware|advantage|supremacy|mechanics)|qubit|qpu)\b/i },
   { tag: 'Hardware & Chips', re: /\b(GPU|TPU|semiconductor|AI chip|chip (supply|market|deals?)|data cent(er|re)|Nvidia|foundry|PCB|AI infrastructure|VRAM)\b/i },
+  // AR og VR skrives med STORE bogstaver. To små bogstaver rammer for let et
+  // almindeligt ord, og "ar" findes i mange sammenhænge. De udskrevne udtryk
+  // er entydige og matches uden hensyn til versaler.
+  { tag: 'AR & VR', re: /\b(AR|VR|XR)\b|augmented reality|virtual reality|mixed reality|smart glasses|spatial comput|VR headset/i },
 ];
 
 // Enkelte titler rammer et mønster uden at handle om emnet. Dem holder vi ude
 // ved navn frem for at gøre mønsteret så snævert at det også taber de rigtige.
-const EXCLUDE = [/AI Billionaires/i];
+//
+// De tre AR-undtagelser er artikler hvor emnet er noget andet: to handler om
+// fintech og nævner XR eller metaverset i forbifarten, og én er allerede
+// mærket Quantum Computing. Den fjerde er et bærbart kamera uden AR i sig.
+const EXCLUDE = [
+  /AI Billionaires/i,
+  // Handler om markedsdynamik og pengepolitik. Rammer hardware-mønsteret på en
+  // omtale af datacentre, men emnet er økonomi.
+  /AI Investment Boom/i,
+  /Fintech Web3 & XR/i,
+  /Open APIs & Metaverse/i,
+  /AI, Quantum, AR Convergence/i,
+  /Looki L1/i,
+];
 
 const files = fs.readdirSync(DIR).filter((f) => f.endsWith('.md'));
 let changed = 0, skipped = 0;

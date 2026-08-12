@@ -8,7 +8,7 @@ channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
 publishedAt: "2025-04-18T15:01:12Z"
 date: "2026-07-23"
 tags:
-  - "AI & Tech"
+  - "AR & VR"
   - "Productivity"
 summary: "The long-anticipated convergence of AI and Extended Reality (XR) is poised to redefine computing beyond conventional screens. By integrating AI models like Gemini with wearable XR devices, technology can now understand and interact with the physical world contextually, fostering a new era of 'augmented intelligence.' This shift promises more intuitive, personalized interactions, but also introduces complex questions around privacy and data processing inherent in a constantly sensing environment."
 duration: "16:07"

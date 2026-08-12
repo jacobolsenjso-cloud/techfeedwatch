@@ -76,6 +76,9 @@ const TOPIC_BY_TAG = {
   // egen søgning. De blev udskilt fra AI & Tech-paraplyen, hvor de lå begravet.
   "Quantum Computing": "quantum computing|qubit|quantum supremacy|quantum advantage|post-quantum cryptography|quantum hardware|QPU|quantum error correction",
   "Hardware & Chips": "AI chips|semiconductors|GPU|TPU|Nvidia|data center|AI infrastructure|chip manufacturing|foundry|silicon|compute costs|edge AI hardware",
+  // AR/VR laa spredt under AI & Tech og Productivity, hvor ingen fandt dem.
+  // 19 artikler — flere end Hardware & Chips havde da det blev skilt ud.
+  "AR & VR": "augmented reality|virtual reality|mixed reality|smart glasses|spatial computing|AR glasses|VR headset|immersive technology",
 };
 
 // Tæller hvor mange artikler der bærer hvert mærke. Bruges til at vælge det

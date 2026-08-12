@@ -7,7 +7,7 @@ channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"
 publishedAt: "2017-04-01T07:50:25Z"
 date: "2026-07-23"
 tags:
-  - "AI & Tech"
+  - "AR & VR"
   - "Productivity"
 summary: "Virtual Reality (VR) and Augmented Reality (AR) represent distinct yet often conflated approaches to blending digital and physical worlds. While VR immerses users entirely in simulated environments, AR overlays digital information onto real-world views, enhancing present reality rather than replacing it. Understanding their fundamental differences, historical context, and current technological advancements is crucial for discerning their practical applications and future impact across industries. The recent surge in hardware capability and software sophistication marks a significant departure from previous, underpowered iterations, hinting at a more widespread adoption."
 duration: "7:32"
