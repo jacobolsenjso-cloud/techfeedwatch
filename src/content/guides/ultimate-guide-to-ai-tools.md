@@ -1,55 +1,231 @@
 ---
-title: "The Ultimate Guide to AI Tools"
+title: "The Ultimate Guide to Understanding AI"
 slug: "ultimate-guide-to-ai-tools"
-description: "A practical, no-hype guide to the AI tools that actually matter in 2026 - how the main categories work, how to pick one that fits, and the traps to avoid before you pay."
+description: "What 262 videos actually argue about AI itself — what it is, what it cannot do, whether it is dangerous, and where the disagreements are real rather than marketing."
 tags: ["AI & Tech"]
 category: "AI & Tech"
 date: "2026-07-23"
+updated: "2026-08-12"
 faqs:
-  - question: "What counts as an AI tool?"
-    answer: "Any software that uses machine learning to generate text, images, audio, video, or code, or to automate a decision that once needed a person. Chatbots, image generators, coding assistants, and workflow builders all fit."
-  - question: "Do I need a paid plan to get value?"
-    answer: "Often no. Most leading tools ship a free tier that covers light personal use. Paid plans mainly buy speed, higher limits, and access to the strongest models."
-  - question: "How do I stop an AI tool from making things up?"
-    answer: "Treat every output as a draft. Give the tool your own source material, ask for its reasoning, and check any fact, number, or quote before you rely on it."
-  - question: "Which AI tool should a beginner start with?"
-    answer: "Start with one general chat assistant and learn to prompt it well. A single tool used properly beats ten tools used shallowly."
+  - question: "What is AI, in plain terms?"
+    answer: "Software that learned patterns from examples instead of following rules someone wrote. That single difference explains most of what people find surprising about it, in both directions."
+  - question: "Does AI understand what it is saying?"
+    answer: "The archive leans firmly towards no, and is unusually consistent about it. These systems model relationships between words extremely well. Whether that adds up to understanding is a genuine open argument, but nothing in the evidence requires it."
+  - question: "Is AI actually dangerous?"
+    answer: "Fifty-five of the 262 videos discuss safety, ethics or regulation — the largest single subject in the archive. The near-term concerns are concrete: bias, misuse, and confident errors at scale. The long-term ones are contested by serious people on both sides."
+  - question: "Will we get AGI, and when?"
+    answer: "Nobody knows, and the honest answer starts earlier: there is no agreed definition of AGI, so a forecast means nothing until you know which definition is being used. The same person with two definitions gives answers a decade apart."
+  - question: "How do I tell hype from substance?"
+    answer: "Ask what changed and how it was measured. Benchmark scores rise steadily and say little. What would be genuinely new is reliability on tasks the system was not built for — and that is the thing least often demonstrated."
 ---
 
-Picking an AI tool in 2026 is less about finding the smartest model and more about matching a tool to a job you actually do. The market is loud, most demos look identical, and the word "AI" now sits on products that range from genuine research breakthroughs to a thin wrapper around someone else's model. This guide cuts through that. It explains the main categories, gives you a way to choose, and flags the mistakes that cost people time and money.
+Tech Feed Watch has covered 262 videos tagged AI & Tech — the largest subject on
+the site by a wide margin.
 
-## The main categories of AI tools
+Counting them turned up something that changed what this guide is. Only 27 of
+the 262 are exclusively about AI itself. The other 235 also belong to a specific
+subject: money, automation, coding, security, search. Those have their own
+guides.
 
-Most tools fall into a handful of buckets. **General assistants** built on large language models handle writing, research, summarising, and reasoning across almost any topic. **Image generators** turn a text description into artwork, product shots, or concept designs. **Video and audio tools** create clips, voiceovers, and edits that used to need a studio. **Coding assistants** write, explain, and debug software inside your editor. And **automation platforms** connect apps together so a task fires on its own, from sorting an inbox to posting a report.
+What is left, once you remove everything that belongs somewhere else, is a
+single coherent subject: **the big questions.** What this technology actually
+is. What it cannot do. Whether it is dangerous. Where it might be going.
 
-The lines blur every month. A single assistant now reads documents, looks at images, browses, and writes code in one session. That convergence is good for beginners, because the first tool you learn can carry most of your early work.
+That matches the largest topic in the whole set — 55 of the 262 videos discuss
+safety, ethics or regulation. More than agents, more than hardware, more than
+any product.
 
-## How to choose an AI tool that fits
+So this guide is about the thing itself, and the arguments about it that are
+real rather than promotional.
 
-Start from the task, not the brand. Write down the specific thing you want done this week, then ask three questions.
+## What it actually is
 
-First, does the tool do this job natively, or is it a side feature bolted on? A dedicated coding assistant will beat a general chatbot at large codebases, and a dedicated video tool will beat a chatbot that recently added clips.
+Strip away the vocabulary and there is one idea underneath.
 
-Second, where does your data go? For anything sensitive, check whether inputs are used to train future models and whether you can turn that off. A free tool that keeps your work is not free.
+Ordinary software follows rules a person wrote. If the order is over 500, apply
+the discount. Someone decided that, someone can read it, and it does exactly
+that until someone changes it.
 
-Third, how well does it fit what you already use? A tool that lives inside your editor, your browser, or your documents removes friction. One that forces you to copy and paste between five tabs will quietly get abandoned.
+These systems learned from examples instead. Shown enormous quantities of text,
+they built a model of which words tend to follow which others, in which
+contexts. Nobody wrote the rules. Nobody can read them either — what exists
+afterwards is a very large set of numbers.
 
-## What the pricing really means
+That single difference explains most of what surprises people, in both
+directions. It is why the systems handle situations nobody anticipated, and why
+they fail in ways that make no sense. It is why they cannot cite where they
+learned something. And it is why they are confident when they are wrong: nothing
+in the mechanism distinguishes a well-supported answer from a plausible-sounding
+one.
 
-Free tiers are marketing, and that is fine. They exist to let you test quality before you pay. The paid step usually buys three things: access to the strongest model, higher usage limits, and faster responses at busy times. For most people the model quality is what matters, because the gap between a mid tier and a top tier model shows up directly in the usefulness of the output.
+Three entries cover the mechanics in more detail if you want them: what the
+[training data](/glossary/training-data) does and does not include, how the
+[transformer](/glossary/transformer) design made the current generation
+possible, and why a [hallucination](/glossary/hallucination) is not a
+malfunction but the same process producing an unsupported result.
 
-Watch for per-seat pricing that multiplies across a team, and for credit systems where heavy image or video work drains a monthly allowance in days. Estimate your real volume before you commit to an annual plan. Our own [AI Token & Cost Calculator](/tools/ai-token-calculator) can help you sanity-check what a workload will actually cost.
+## What it cannot do
 
-## Common mistakes to avoid
+The archive is more specific about the limits than most coverage, and the limits
+are not the ones people expect.
 
-The biggest one is trusting output at face value. These tools produce confident text that can be wrong, and they will invent a statistic or a citation without warning. Treat every result as a first draft you are responsible for.
+**It does not know when it is guessing.** A model produces the next likely token
+whether the ground underneath is solid or thin. There is no internal signal that
+says this part is invented. This is the single most consequential limitation and
+the one that causes the most trouble in practice.
 
-The second mistake is collecting tools instead of skill. People sign up for a dozen products and master none. A single assistant, prompted well and used daily, returns more than a drawer full of subscriptions you forgot about.
+**It cannot tell you where something came from.** After training, the original
+text is gone. Asked for a source, a model produces something that looks like a
+source. This is not dishonesty; it is the same mechanism doing the same thing.
 
-The third is ignoring the boring parts: data handling, export options, and whether you can leave. If a tool holds your history hostage or cannot export your work, that is a cost you pay later.
+**It has no memory between conversations.** Whatever it appears to remember was
+sent to it again as text. The [context window](/glossary/context-window) is the
+ceiling, and information buried in the middle of a long one is used less
+reliably than information at either end.
 
-## Where AI tools are heading
+**Rare things are answered worse — and it does not show.** A topic covered by
+ten thousand pages is handled fluently. One covered by three is handled
+fluently too. The confidence of the writing does not drop with the thinness of
+the evidence behind it.
 
-Two shifts are worth watching. Tools are moving from single answers toward agents that carry out multi-step tasks on your behalf, which raises both the payoff and the need for review. And capability is spreading down-market fast, so features that sat behind expensive plans last year now appear in free tiers. The practical takeaway is simple: learn the fundamentals of prompting and judgment now, because those skills carry across every tool, while any single product will be replaced.
+**Counting, spatial reasoning and arithmetic remain weak.** A model will
+describe your photograph in excellent prose and get the number of objects in it
+wrong.
 
-Use the videos below as a working reference. Each one digs into a specific tool, release, or technique, and together they track how this space actually moves rather than how it is marketed.
+## The 55 videos about safety
+
+The largest subject in the archive, and the one where the disagreement is
+genuine rather than promotional. It splits cleanly into two conversations that
+are often confused for each other.
+
+**The near-term concerns are concrete and already happening.**
+
+*Bias.* If a pattern is in the training data, it comes out in the output. A
+profession that appeared overwhelmingly with one gender in the source text will
+be associated with it. Nothing malfunctioned — the system learned exactly what
+was there.
+
+*Confident errors at scale.* One person being wrong is a mistake. A system being
+wrong the same way ten thousand times a day is a different kind of problem, and
+it looks identical to being right.
+
+*Misuse.* Convincing text and images are now cheap to produce, which changes
+what a scam costs to run and what evidence is worth.
+
+*Concentration.* Training a frontier model requires resources very few
+organisations have. That is a question about who decides, and it does not
+require anything to go wrong technically.
+
+**The long-term argument is contested by serious people on both sides.**
+
+One side argues that systems capable enough to pursue goals could pursue them in
+ways nobody intended, and that we do not know how to specify what we want
+precisely enough — the [alignment](/glossary/alignment) problem. Researchers
+with no commercial stake make this case, and so do people who run AI companies.
+
+The other side argues the risk is being overstated, sometimes conveniently:
+warning that your product might be dangerously powerful is also a claim that it
+is powerful. Meanwhile the near-term harms are already measurable and get less
+attention.
+
+This guide does not resolve that. What is worth noticing is that both sides
+agree on something practical: the checks have to sit *outside* the model,
+because a system that is confidently wrong cannot be the thing that verifies
+whether it is wrong. That is what [guardrails](/glossary/guardrails) are, and
+why they are not built into the model itself.
+
+## The AGI question
+
+Eleven videos discuss artificial general intelligence, and the honest answer
+starts before the forecast.
+
+**There is no agreed definition.** Some measure [AGI](/glossary/agi) by
+benchmarks, in which case parts of it arrived years ago. Some define it
+economically — a system that can do most remote work. Some require learning a
+genuinely new skill from few examples. Some insist on understanding rather than
+performance, which raises the problem of testing for something we cannot define
+in ourselves.
+
+So "AGI by 2030" is not a prediction until you know which definition is meant.
+The same forecaster with two definitions gives answers a decade apart, and both
+can be sincere.
+
+What the archive does contain is a real argument about whether the current
+approach gets there at all. One camp holds that scale keeps producing new
+capabilities and there is no visible ceiling. The other holds that predicting
+text is fundamentally not reasoning, and that no amount of it becomes reasoning.
+
+Both are looking at true things. Nobody has the evidence to settle it, and
+anyone who sounds certain is telling you about their position rather than about
+the technology.
+
+## Telling hype from substance
+
+Every launch arrives with a table of scores. The scores are real measurements.
+What they measure is narrower than the announcement implies.
+
+**Benchmarks decay.** They are published, so they end up in the training data of
+the next model. A high score can mean the model solved the problem or that it
+saw the answer, and telling those apart from outside is close to impossible. The
+[benchmark](/glossary/benchmark) entry covers this in more detail.
+
+**Small gaps are noise.** Two points between models means nothing without
+knowing the run-to-run variation, which is rarely published.
+
+**The useful question is not "how did it score" but "what changed."** Rising
+benchmark numbers are expected. What would be genuinely new is reliability on
+tasks the system was not built for — and that is the thing least often
+demonstrated, because it is hardest to show.
+
+**Your own test beats any leaderboard.** A handful of real examples from your
+own work, run through two models, tells you more about which to use than any
+published comparison.
+
+## What is worth doing with all this
+
+**Assume the confident tone means nothing.** It is the same tone for solid
+answers and invented ones. That is not a flaw you can train out of yourself
+either — it takes an active habit of checking.
+
+**Check anything that matters.** Names, numbers, dates, sources, quotes. These
+are exactly the categories where an unsupported answer looks identical to a
+supported one.
+
+**Give it the context rather than expecting it to know.** Most poor output is a
+poor question.
+
+**Notice what you have stopped doing.** If a model now does your first draft,
+your summarising and your working-out, those are the things you have stopped
+practising. That is a real cost and it does not appear on any invoice.
+
+**Be sceptical of certainty in both directions.** The people saying this changes
+everything and the people saying it changes nothing are both usually selling
+something — a product, a book, or a position.
+
+## The short version
+
+AI is software that learned patterns from examples rather than following rules
+someone wrote, and nearly everything surprising about it follows from that.
+
+It does not know when it is guessing. It cannot tell you where anything came
+from. It handles thin evidence with the same confidence as thick.
+
+Safety is the largest subject in this archive — 55 of 262 videos — and the
+near-term concerns are concrete while the long-term ones are genuinely
+contested. AGI has no agreed definition, which makes most forecasts about it
+unanswerable rather than wrong.
+
+And the most useful habit is the least technical one: treat confidence as
+decoration, and check the things that matter.
+
+Every article behind this guide links to its original video, with the creator
+credited. The [AI & Tech tag](/tag/ai-tech) has all 262, and the
+[glossary](/glossary) explains the terms that keep appearing.
+
+---
+
+*This guide draws on 262 videos covered on Tech Feed Watch. The counts quoted —
+55 on safety and ethics, 49 on agents, 11 on AGI — come from the archive itself,
+not from an industry report. Where sources disagree, this guide says so rather
+than picking a side. Written and maintained by Jacob S. Olsen. If something here
+is wrong, the [corrections policy](/corrections) explains how to tell me.*
