@@ -1436,12 +1436,35 @@ const metaDesc = rawMeta.length > 157
           const el = document.getElementById('stickyVideo');
           const toggle = () => document.body.classList.toggle('cinema-mode', enter);
 
+          // Nulstil rullepositionen, ellers står man i "bunden" af en side der
+          // lige er skrumpet.
+          //
+          // Når cinema-mode sættes, skjules hele artiklen (.cinema-reading-block
+          // får display: none) og kun videolisten vises. Sidens højde falder fra
+          // ~10.000 til ~1.800 px. Stod man midt i artiklen, er den position nu
+          // langt under sidens nye bund, og browseren klemmer den ned i bunden.
+          // Det ser ud som om siden ruller — den skrumper.
+          //
+          // Sitet ruller i main.content-area, ikke i dokumentet. Første forsøg
+          // løb en liste af kandidater igennem med document.scrollingElement
+          // først — og den opfylder også "kan rulle", så løkken stoppede der og
+          // nulstillede det forkerte element. Beholderen navngives derfor
+          // direkte, med de generiske kandidater kun som reserve.
+          const nulstilRul = () => {
+            const beholder = document.querySelector('main.content-area')
+              || document.querySelector('main, .content-area');
+            if (beholder) beholder.scrollTop = 0;
+            if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
+            window.scrollTo(0, 0);
+          };
+
           // Har brugeren bedt om mindre bevægelse, skiftes der direkte.
           // Bevægelse kan gøre folk fysisk utilpasse, og det er ikke til pynt.
-          if (!el || reduceMotion) { toggle(); return; }
+          if (!el || reduceMotion) { toggle(); nulstilRul(); return; }
 
           const first = el.getBoundingClientRect();
           toggle();
+          nulstilRul();
           const last = el.getBoundingClientRect();
           if (!first.width || !last.width) return;
 
