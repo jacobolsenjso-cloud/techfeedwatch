@@ -63,15 +63,13 @@ started.
 **Payments.** The biggest and the most invisible. Moving money between two
 accounts sounds like it should be instant, and mostly it is not. Here is why:
 the money and the *message about the money* travel separately, along networks
-built in different decades. It is a bit like sending a parcel by ship while
-posting a letter that says "your parcel is on the way." Most payment innovation
-is about closing the gap between the letter and the ship — or at least making
-the wait less obvious.
+built in different decades. Most payment innovation is about closing that gap, or at least making the wait
+less obvious.
 
 **Lending.** Where most consumer fintech actually earns its money, including
 plenty of companies that would never call themselves lenders. Buy now, pay later
-is lending. A card with an interest-free period is lending. When an app is free
-and very polished, "where's the lending?" is usually a good question to ask.
+is lending. A card with an interest-free period is lending. When a money app is free and very polished, it is worth asking where the
+lending is.
 
 **Neobanks.** Banking without branches. More on what they are and are not in a
 moment, because this is where most people get a surprise.
@@ -98,8 +96,7 @@ So most fintechs do not bother. They rent one.
 
 A partner bank holds the deposits and carries the licence. The fintech builds
 the app, the brand, the nice onboarding, the card that looks good on a table.
-Think of it as driving a car you do not own: you are behind the wheel, but the
-registration is in somebody else's name.
+You are behind the wheel. The registration is in somebody else's name.
 
 That arrangement is why a startup can launch a card in three months instead of
 five years. It also has three consequences that never make it into the
@@ -116,7 +113,7 @@ customers usually hear about it late.
 
 **All that identity checking is not bad design.** Every account needs
 [KYC](/glossary/kyc) — proving who you are, and being watched afterwards for
-anything odd. It is the bouncer at the door, and the bouncer is required by law.
+anything odd. It is required by law, not chosen by the product team.
 It is also the biggest single cost of getting a customer and the point where
 most people give up halfway. The difference between an app that opens an account
 in four minutes and a bank that takes four days is mostly *how* they do the same
@@ -145,9 +142,8 @@ because "the model said no" is not an explanation anyone can argue with.
 revolution it gets called.
 
 What did *not* change is who is on the hook. A model can make the call, but a
-licensed institution answers for it. Which is why the genuinely interesting AI
-work in finance is happening in compliance departments — the least glamorous
-room in the building.
+licensed institution answers for it. Which is why most of the serious AI work in finance is happening in compliance
+departments rather than in the app you see.
 
 Be sceptical when someone shows you an [AI agent](/glossary/ai-agent) that moves
 money for you. The demo will be impressive. The question nobody has answered is
@@ -172,8 +168,8 @@ banks and card networks. Paying a shop with a stablecoin means somebody converts
 it back to normal money, and that somebody charges for the favour. The friction
 did not disappear. It moved one step to the left and got quieter.
 
-Short version: stablecoins are a shipping container. Fantastic for moving a lot
-of value between ports. Not what you want when you are buying one thing.
+Short version: stablecoins solved a real problem between institutions, and are
+being marketed as if they had solved a different one for consumers.
 
 ## Fraud: the part nobody puts on a billboard
 
@@ -214,10 +210,9 @@ the small print that names the bank holding your deposits. Two minutes. If you
 have money in two apps, check whether it is the same bank underneath — because
 your protection does not double if it is.
 
-**Follow the rules, not the funding rounds.** Regulation predicts what gets
-built about a year before the press releases do. If you want to know what your
-bank will offer next year, read what the regulator published this year. It is
-dry. It is also right more often than the pitch decks.
+**Follow the rules, not the funding rounds.** Regulation predicts what gets built roughly a year before the press releases do.
+If you want to know what your bank will offer next year, read what the regulator
+published this year.
 
 **Assume there is lending somewhere.** When a money app is free, polished and
 generous, the question is not "how nice of them" but "where is the loan?" It is
