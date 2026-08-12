@@ -119,6 +119,32 @@ const siteSchema = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/* Mørk tilstand sættes FØR siden tegnes.
+
+        Blinket skyldtes at klassen blev sat af scriptet nederst i dokumentet:
+        browseren nåede at tegne en hel lys side, og først derefter blev
+        baggrunden mørk. Ved hvert sideskift.
+
+        Dette script er is:inline og står øverst i head, så det kører før
+        noget som helst er tegnet. Ingen import, ingen ventetid — derfor
+        heller ingen blink. Fejler localStorage (privat tilstand i nogle
+        browsere), falder vi tilbage til lys uden at vælte siden. */}
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark') document.documentElement.classList.add('dark-mode-preload');
+        } catch (e) {}
+      })();
+    </script>
+    <style is:inline>
+      /* Farverne skal gælde allerede før body findes, så den første optegning
+         er mørk. Derfor sættes de på html-elementet og arves nedad. */
+      html.dark-mode-preload { background: #141317; color-scheme: dark; }
+      html.dark-mode-preload body { background: #141317; color: #f4f2f0; }
+    </style>
+
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -559,6 +585,19 @@ const siteSchema = [
     </style>
   </head>
   <body>
+    {/* Klassen sættes her, umiddelbart efter <body> åbner — ikke nederst i
+        dokumentet, hvor den stod før. body findes nu, men intet indhold er
+        tegnet endnu, så kort, sidemenu og topbar er mørke fra første optegning.
+        html-reglen i head dækker øjeblikket før body overhovedet findes. */}
+    <script is:inline>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div class="tfw-progress" id="tfwProgress"></div>
     
     <header class="top-navbar" id="mainHeader">
@@ -735,11 +774,17 @@ const siteSchema = [
         const themeBtn = document.getElementById('themeToggle');
         const body = document.body;
         const updateIcon = () => { if(themeBtn) themeBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙'; };
-        if (localStorage.getItem('theme') === 'dark') { body.classList.add('dark-mode'); updateIcon(); }
+        // Klassen er allerede sat af scriptet lige efter <body>. Her sættes kun
+        // ikonet, så knappen viser den rigtige tilstand.
+        updateIcon();
         if (themeBtn) {
           themeBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            const dark = body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+            // html-klassen holdes i sync, så NÆSTE sideskift starter i den
+            // rigtige farve. Uden det ville et skift til mørk stadig blinke
+            // hvidt på den efterfølgende side.
+            document.documentElement.classList.toggle('dark-mode-preload', dark);
             updateIcon();
           });
         }
