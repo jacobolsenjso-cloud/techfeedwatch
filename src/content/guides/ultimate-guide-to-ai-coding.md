@@ -1,47 +1,173 @@
 ---
-title: "The Ultimate Guide to AI Coding Assistants"
+title: "The Ultimate Guide to Coding with AI"
 slug: "ultimate-guide-to-ai-coding"
-description: "How AI coding tools actually help - what they are good at, where they fall down, and how to use them without shipping bugs you do not understand."
+description: "What 36 videos from Fireship, Modern Software Engineering and Y Combinator actually say about AI writing code — where it helps, where it costs, and what it does to learning the job."
 tags: ["Coding"]
 category: "Coding"
 date: "2026-07-23"
+updated: "2026-08-12"
 faqs:
-  - question: "Will AI coding tools replace developers?"
-    answer: "Not in the near term. They speed up writing and reduce boilerplate, but someone still has to design the system, judge the output, and own the result. The skill shifts toward review and architecture."
-  - question: "Can beginners learn to code with AI help?"
-    answer: "Yes of cores, and it lowers the barrier a lot. The risk is leaning it,it´s so heavily that you never learn the fundamentals. Use it to explain things, not just to write, so you understand what´s working."
-  - question: "Is AI-written code safe to ship?"
-    answer: "Yes, but only after review. These tools can produce code that looks right but hides security flaws or edge-case bugs. Treat every suggestion as a draft that needs testing, is a must."
-  - question: "Which assistant is best?"
-    answer: "The one that lives inside your editor and fits your language. Fit and workflow integration matter more than small differences in raw model quality."
+  - question: "Does AI actually make developers faster?"
+    answer: "For code you already know how to write, usually yes. For code you do not understand, it produces something that looks finished, which is a different thing from being faster. The archive is clear that the gains are real and narrower than the marketing."
+  - question: "Should a beginner learn to code now?"
+    answer: "The archive leans yes, with a change in emphasis. Typing code was never the hard part; deciding what to build and recognising when something is wrong is, and that is now the whole job rather than half of it."
+  - question: "What is vibe coding?"
+    answer: "Accepting AI-generated code without fully understanding it because it appears to work. It ships quickly and creates debt that lands on whoever maintains it — often the same person a few months later."
+  - question: "Is AI-generated code secure?"
+    answer: "Not by default. It reproduces patterns from its training data, including insecure ones, and it will do so with complete confidence. Generated code needs the same review as code from a stranger."
+  - question: "Will AI replace programmers?"
+    answer: "The archive's clearest pattern is that the work shifts rather than disappears — from writing code to specifying, reviewing and orchestrating it. That is a real change in what the job feels like day to day."
 ---
 
-AI coding assistants moved from novelty to daily tool in a short time. Used well, they remove drudgery and help you learn faster. Used carelessly, they ship bugs you do not understand into code you now own. This guide covers what these tools are good at, where they fall down, and how to work with them responsibly.
+Something unusual shows up when you count what developers are actually talking
+about. Tech Feed Watch has covered 36 videos on coding, from Fireship, Modern
+Software Engineering, Y Combinator, NetworkChuck and others.
 
-## What they are actually good at
+**16 of them are about careers, skills and learning.** More than any specific
+technology. Eleven are about AI writing code.
 
-The strongest use is removing repetition. Assistants write boilerplate, translate a function from one language to another, generate tests, and explain unfamiliar code in plain words. They shine as a fast reference that sits inside your editor, so you stop breaking focus to search for syntax. For a beginner, the ability to ask "what does this do?" and get a clear answer is a real accelerator.
+That ratio is the story. The dominant question in software right now is not
+which framework to use. It is what the job becomes when the typing is handled
+for you — and whether the path into it still works.
 
-They are also good at first drafts. Describe what you want, get a working starting point, then shape it. The draft is rarely the final answer, but starting from something beats starting from nothing.
+## Where AI genuinely helps
 
-## Where they fall down
+The archive is not sceptical about the tools. It is specific about when they
+work.
 
-These tools predict plausible code, and plausible is not the same as correct. They invent function names that do not exist, miss edge cases, and produce code that runs but fails under real conditions. On security, they can introduce flaws that look completely normal - an injection risk, a leaked secret, a missing check - because the pattern looked common in training data.
+**Code you could have written yourself, faster.** Boilerplate, a familiar
+pattern in an unfamiliar language, the fiddly bits of a form. You know what
+correct looks like, so you catch the wrong version immediately. This is where
+nearly all the reported gain comes from.
 
-They also lack context about your specific system. An assistant does not know your architecture, your constraints, or why a past decision was made. It will confidently suggest something that breaks an assumption it never knew existed.
+**Understanding code someone else wrote.** Asking what a function does, or why
+a build fails, is often faster than reading it cold. The answer is a starting
+point rather than a verdict, but it is a good starting point.
 
-## How to use them without regret
+**The first draft of something tedious.** Tests, a migration script, converting
+data from one shape to another. Work that is well-defined and boring is exactly
+what these tools are good at.
 
-Treat every suggestion as a draft from a fast but junior helper. Read it before you accept it. If you cannot explain what a block does, do not ship it - ask the tool to explain it first, then decide. Keep tests around anything important, so a wrong suggestion fails loudly instead of silently. And give the assistant real context: point it at the relevant files and describe the constraints, rather than accepting a generic answer.
+**Getting unstuck.** Not the answer — a direction. Several sources describe this
+as the underrated one, because being stuck costs far more time than typing does.
 
-The habit that separates good outcomes from bad ones is simple. You stay the author. The tool drafts; you review, understand, and own what merges.
+## Where it costs
 
-## Learning to code alongside AI
+**Code you do not understand.** This is the whole risk in one sentence. Generated
+code that appears to work is not the same as code that works, and the difference
+surfaces later, usually under pressure. The archive has a name for accepting it
+anyway: vibe coding.
 
-For someone learning, the assistant is both a gift and a trap. It can explain concepts on demand and turn a confusing error into a clear lesson. But if you only ever accept generated code, you build no mental model and stall the first time the tool is wrong. Use it to understand, not just to produce. Ask why, not only what. The goal is to become a developer who uses AI, not a person who cannot work without it.
+**Security.** These models reproduce patterns from what they were trained on,
+including the insecure ones, and they do it with total confidence. Generated
+code deserves the same review you would give code from a stranger — because
+that is what it is.
 
-## Common mistakes
+**Confident wrongness.** A model does not know when it is guessing. It will
+invent a function that does not exist, an option that was never in the library,
+an approach that has been deprecated for years, and describe all of it in the
+same tone as the parts that are right.
 
-The biggest is trusting output because it looks confident. The second is skipping tests because the code "seems fine." The third is pasting sensitive code or secrets into a tool without checking how that data is handled. Avoid those three and the rest is upside.
+**Debt that arrives quietly.** Faster shipping with less understanding is a
+trade, not a win. It comes due when something breaks and nobody in the room can
+explain the code — including whoever accepted it.
 
-The videos below dig into specific assistants, workflows, and techniques. Use them to see how experienced developers fold these tools into real projects - and where they draw the line.
+## Working with it sensibly
+
+Six habits come up repeatedly across the sources.
+
+**Read everything before you accept it.** If you cannot say what a block does,
+you are not reviewing it, you are hoping.
+
+**Give it the context it needs.** Most poor output is a poor question. The
+[context window](/glossary/context-window) is finite, so what you leave out
+matters as much as what you put in.
+
+**Ask for the approach before the code.** A wrong plan produces a hundred lines
+of wrong code, and the plan is faster to check.
+
+**Keep the tests yours.** Tests generated from the same misunderstanding as the
+code will confirm the misunderstanding.
+
+**Use it hardest where you are strongest.** That is the opposite of the
+instinct, and it is what the archive supports: you catch the mistakes fastest in
+your own territory.
+
+**Commit in small pieces.** When something breaks, you want to know which
+suggestion caused it.
+
+## The career question
+
+Sixteen of the 36 videos are about careers, skills and learning — more than any
+technical subject. Worth saying plainly that the people answering have interests
+in the answer, on both sides.
+
+The pattern the archive actually supports is narrower than either headline.
+
+**The typing was never the hard part.** Deciding what to build, breaking it into
+pieces, noticing that something is subtly wrong — that was always the job.
+Generating syntax is the part that got cheap.
+
+**Which makes review the core skill.** If a model produces code faster than you
+can read it, the reading becomes the bottleneck. The developers described as
+getting the most out of these tools are the ones who read fastest and trust
+least.
+
+**The path in got stranger, not closed.** The traditional route was to write a
+lot of simple code until the patterns became instinct. If that code is now
+generated, the practice has to come from somewhere else: reading, breaking
+things on purpose, and building without help until it hurts. Several sources
+worry about this openly, and none of them claim to have solved it.
+
+**Specifying is becoming its own skill.** Describing what you want precisely
+enough that a machine produces it is close to programming, just in a different
+language. That is not a smaller job — it is the same judgement with different
+typing.
+
+## A note for people learning right now
+
+If you are starting out, the archive points at one uncomfortable piece of
+advice: **turn the assistant off sometimes.**
+
+Not out of principle. Because the skill you need is recognising when something
+is wrong, and you cannot build that by watching correct-looking code appear. You
+build it by getting it wrong yourself and finding out why.
+
+Use the tools for work you understand. Do the learning without them. It is
+slower, and that is the point — the slowness is where the understanding comes
+from.
+
+## Small things that save time
+
+Not everything needs a model. A few of these come up constantly in development
+work, and they run entirely in your browser:
+
+Reading a machine-generated response that arrived as one unbroken line — the
+[JSON formatter](/tools/json-formatter). Encoding or decoding a token, a config
+value or a small file — the [Base64 and URL encoder](/tools/encoder-decoder).
+Changing one recurring string across a block of text —
+[find and replace](/tools/find-and-replace). Splitting a file too large to send
+— [split a file](/tools/split-file), and the pieces rejoin with `cat` or
+`copy /b` without any tool at all.
+
+## The short version
+
+The loudest question in software is not technical. Sixteen of 36 videos are
+about careers and skills, eleven about AI writing code.
+
+The tools genuinely help with work you already understand, and genuinely cost
+you when they are used on work you do not. Review became the core skill, because
+generation stopped being the bottleneck. And if you are learning, the fastest
+route still runs through doing it the slow way often enough to recognise wrong
+when you see it.
+
+Every article behind this guide links to its original video, with the creator
+credited. The [Coding tag](/tag/coding) has all 36.
+
+---
+
+*This guide draws on 36 videos covered on Tech Feed Watch, from channels
+including Fireship, Modern Software Engineering, Y Combinator and NetworkChuck.
+The counts quoted come from the archive itself, not from an industry survey.
+Written and maintained by Jacob S. Olsen. If something here is wrong, the
+[corrections policy](/corrections) explains how to tell me.*
