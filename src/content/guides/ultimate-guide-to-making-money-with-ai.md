@@ -157,8 +157,9 @@ The claims in this field are mostly numbers, and most of them are easy to check.
 
 If someone quotes a return, ask over what period. A 30% return is excellent over
 a year and poor over five, and the figure alone will not tell you which. The
-[compound growth calculator](/tools/compound-calculator) does that arithmetic,
-including what a headline return actually works out to per year.
+[percentage calculator](/tools/percentage-calculator) does that arithmetic —
+including what a headline return actually works out to per year, which is the
+question most investment claims quietly avoid.
 
 If someone quotes a saving, ask what is in the cost figure and how long until it
 has repaid itself. That number is far harder to inflate than a percentage.

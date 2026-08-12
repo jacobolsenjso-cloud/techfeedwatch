@@ -396,6 +396,15 @@ export const TOOLS: Tool[] = [
 
   // ---------- Finance & Crypto ----------
   {
+    slug: 'percentage-calculator',
+    icon: '%',
+    title: 'Percentage Calculator',
+    short: 'Percentages',
+    description:
+      'Percentage change, discounts, VAT, working backwards from a total, and what a headline return actually means per year.',
+    category: 'finance',
+  },
+  {
     slug: 'compound-calculator',
     icon: '📈',
     title: 'Compound Growth & Crypto Staking Calculator',

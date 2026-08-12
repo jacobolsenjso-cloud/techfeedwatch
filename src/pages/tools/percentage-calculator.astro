@@ -1,0 +1,246 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Percentage Calculator — Change, Increase, Discount and Reverse";
+const description = "Work out percentage change, discounts, tips, VAT and what a headline return means per year. Five calculators in one, running entirely in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <style is:global>
+    .pc-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+    .pc-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+    .pc-header p { color: #6b7280; margin: 0 0 26px 0; font-size: 1.05rem; line-height: 1.6; }
+    body.dark-mode .pc-header p { color: #9ca3af; }
+
+    /* Fanerne er knapper og ikke links: skifter man regnestykke, skal siden
+       ikke hentes forfra og tallene ikke forsvinde. */
+    .pc-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .pc-tab { background: var(--hover-bg); color: var(--text-color); border: 1px solid transparent; padding: 9px 16px; border-radius: 20px; font-size: 0.88rem; font-weight: 600; cursor: pointer; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; }
+    .pc-tab:hover { border-color: var(--teal-text); }
+    .pc-tab.active { background: #0e7490; color: #fff; }
+
+    .pc-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px; }
+    .pc-question { font-size: 1.05rem; font-weight: 600; margin: 0 0 18px 0; line-height: 1.5; }
+    .pc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .pc-field { display: flex; flex-direction: column; gap: 6px; }
+    .pc-field label { font-size: 0.85rem; font-weight: 600; }
+    .pc-field input { padding: 11px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-size: 1rem; font-family: inherit; box-sizing: border-box; }
+    .pc-field input:focus { outline: none; border-color: var(--teal-text); }
+
+    .pc-result { background: var(--hover-bg); border-left: 4px solid #0e7490; border-radius: 8px; padding: 18px 20px; }
+    .pc-result-value { font-size: 1.9rem; font-weight: 800; line-height: 1.2; color: #0e7490; word-break: break-word; }
+    body.dark-mode .pc-result-value { color: var(--teal-text); }
+    .pc-result-text { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 8px 0 0 0; }
+    body.dark-mode .pc-result-text { color: #cbd5e1; }
+    .pc-result-extra { font-size: 0.88rem; color: #6b7280; margin: 10px 0 0 0; }
+    body.dark-mode .pc-result-extra { color: #9ca3af; }
+
+    .pc-info { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .pc-info h2 { font-size: 1.2rem; margin: 26px 0 10px 0; }
+    .pc-info h2:first-child { margin-top: 0; }
+    .pc-info p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .pc-info p { color: #9ca3af; }
+    .pc-info a { color: var(--teal-text); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .pc-wrapper { padding: 20px 15px; }
+      .pc-header h1 { font-size: 1.5rem; }
+      .pc-result-value { font-size: 1.5rem; }
+    }
+  </style>
+
+  <div class="pc-wrapper">
+    <div class="pc-header">
+      <h1>% Percentage Calculator</h1>
+      <p>Five of the percentage questions that actually come up — change, discounts, tips and VAT, working backwards from a total, and what a headline return means per year. Everything runs in your browser; nothing you type is sent anywhere.</p>
+    </div>
+
+    <div class="pc-tabs" id="pcTabs">
+      <button type="button" class="pc-tab active" data-mode="change">Change between two numbers</button>
+      <button type="button" class="pc-tab" data-mode="of">X% of a number</button>
+      <button type="button" class="pc-tab" data-mode="addsub">Add or subtract %</button>
+      <button type="button" class="pc-tab" data-mode="reverse">Work backwards</button>
+      <button type="button" class="pc-tab" data-mode="annual">Return per year</button>
+    </div>
+
+    <div class="pc-card">
+      <p class="pc-question" id="pcQuestion"></p>
+      <div class="pc-grid" id="pcInputs"></div>
+      <div class="pc-result">
+        <div class="pc-result-value" id="pcValue">—</div>
+        <p class="pc-result-text" id="pcText"></p>
+        <p class="pc-result-extra" id="pcExtra"></p>
+      </div>
+    </div>
+
+    <div class="pc-info">
+      <h2>Percentage change is not symmetrical</h2>
+      <p>This is the mistake that costs people the most, and it is entirely counter-intuitive. If a price falls by 50% and then rises by 50%, you are not back where you started — you are 25% down. The fall was 50% of the original number; the rise was 50% of the smaller one.</p>
+      <p>Same arithmetic, same trap: a share that drops 80% needs to rise 400% just to break even. Any time you see two percentage moves added together, check whether they were measured against the same starting number. Usually they were not.</p>
+
+      <h2>Percent versus percentage points</h2>
+      <p>If an interest rate goes from 2% to 3%, that is a rise of one percentage <em>point</em> — and a rise of 50 <em>percent</em>. Both are correct, and they sound wildly different. Whoever is presenting the number will pick whichever suits them, so the useful habit is to ask which one you are being shown.</p>
+
+      <h2>Working backwards is not the same as subtracting</h2>
+      <p>If a price includes 25% VAT, you do not find the pre-tax amount by taking 25% off. The tax was added to the smaller number, so you divide by 1.25 rather than multiplying by 0.75. On 1,000 the two methods differ by 50 — which is exactly the kind of error that survives a whole spreadsheet unnoticed.</p>
+
+      <h2>A return without a period is not a number</h2>
+      <p>"Up 30%" means something very different over one year than over five. The last tab converts a total return into an annual one, which is the only way to compare two of them fairly. It is also the question most investment claims quietly avoid answering — worth reading alongside the <a href="/guides/ultimate-guide-to-making-money-with-ai">guide to AI and money</a>, where several of the claims in circulation come apart on exactly this point.</p>
+      <p>For projecting growth forward instead of measuring it backwards, use the <a href="/tools/compound-calculator">compound growth calculator</a>.</p>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      // Alle fem regnestykker bor i ét objekt. Så er der ét sted at rette hvis
+      // en formel er forkert, og fanerne kan ikke komme ud af trit med felterne.
+      const MODES = {
+        change: {
+          spm: 'What is the percentage change from one number to another?',
+          felter: [['from', 'From', 80], ['to', 'To', 100]],
+          regn: (v) => {
+            if (!v.from) return { fejl: 'The starting number cannot be zero — there is nothing to measure the change against.' };
+            const pct = ((v.to - v.from) / Math.abs(v.from)) * 100;
+            const op = pct >= 0;
+            return {
+              vaerdi: `${op ? '+' : ''}${fmt(pct)}%`,
+              tekst: `${fmt(v.from)} to ${fmt(v.to)} is ${op ? 'an increase' : 'a decrease'} of ${fmt(Math.abs(pct))}%.`,
+              ekstra: op
+                ? `Going back down to ${fmt(v.from)} would take a fall of ${fmt((1 - v.from / v.to) * 100)}% — a smaller percentage, because it is measured against the bigger number.`
+                : `Getting back to ${fmt(v.from)} would take a rise of ${fmt((v.from / v.to - 1) * 100)}% — a bigger percentage than the fall, because it is measured against the smaller number.`,
+            };
+          },
+        },
+        of: {
+          spm: 'What is X% of a number?',
+          felter: [['pct', 'Percent', 15], ['total', 'Of', 250]],
+          regn: (v) => ({
+            vaerdi: fmt((v.pct / 100) * v.total),
+            tekst: `${fmt(v.pct)}% of ${fmt(v.total)} is ${fmt((v.pct / 100) * v.total)}.`,
+            ekstra: `As a share, ${fmt((v.pct / 100) * v.total)} out of ${fmt(v.total)}.`,
+          }),
+        },
+        addsub: {
+          spm: 'Add or subtract a percentage — discounts, tips, VAT, a pay rise.',
+          felter: [['amount', 'Amount', 1000], ['pct', 'Percent', 25]],
+          regn: (v) => {
+            const del = (v.pct / 100) * v.amount;
+            return {
+              vaerdi: `${fmt(v.amount + del)}  /  ${fmt(v.amount - del)}`,
+              tekst: `${fmt(v.pct)}% of ${fmt(v.amount)} is ${fmt(del)}. Add it and you get ${fmt(v.amount + del)}; take it off and you get ${fmt(v.amount - del)}.`,
+              ekstra: 'Left is with the percentage added, right is with it taken off.',
+            };
+          },
+        },
+        reverse: {
+          spm: 'A total already includes a percentage — what was it before?',
+          felter: [['total', 'Total including it', 1250], ['pct', 'Percent included', 25]],
+          regn: (v) => {
+            if (v.pct <= -100) return { fejl: 'That percentage would make the original number zero or negative.' };
+            // Divider — ikke gang med (1 - pct). Procenten blev lagt til det
+            // MINDRE tal, og det er præcis dér de fleste regner forkert.
+            const foer = v.total / (1 + v.pct / 100);
+            return {
+              vaerdi: fmt(foer),
+              tekst: `Before the ${fmt(v.pct)}% was added, the amount was ${fmt(foer)}. The percentage itself is ${fmt(v.total - foer)}.`,
+              ekstra: `Taking ${fmt(v.pct)}% off ${fmt(v.total)} instead would give ${fmt(v.total * (1 - v.pct / 100))} — wrong by ${fmt(Math.abs(foer - v.total * (1 - v.pct / 100)))}, because that measures the percentage against the wrong number.`,
+            };
+          },
+        },
+        annual: {
+          spm: 'A total return over several years — what is that per year?',
+          felter: [['pct', 'Total return %', 30], ['years', 'Over how many years', 5]],
+          regn: (v) => {
+            if (v.years <= 0) return { fejl: 'Enter a number of years greater than zero.' };
+            if (v.pct <= -100) return { fejl: 'A loss of 100% or more leaves nothing to annualise.' };
+            const aarlig = (Math.pow(1 + v.pct / 100, 1 / v.years) - 1) * 100;
+            return {
+              vaerdi: `${fmt(aarlig)}% per year`,
+              tekst: `A total return of ${fmt(v.pct)}% over ${fmt(v.years)} years works out to ${fmt(aarlig)}% a year, compounded.`,
+              ekstra: `Dividing instead would give ${fmt(v.pct / v.years)}% — higher, and wrong, because it ignores that each year builds on the last.`,
+            };
+          },
+        },
+      };
+
+      // Tal med tusindtalsseparator og højst to decimaler — men uden at vise
+      // ".00" på hele tal. Et regnestykke skal se ud som noget man selv ville
+      // have skrevet.
+      const fmt = (n) => {
+        if (!Number.isFinite(n)) return '—';
+        const afrundet = Math.round(n * 100) / 100;
+        return afrundet.toLocaleString('en-US', { maximumFractionDigits: 2 });
+      };
+
+      const tabs = document.getElementById('pcTabs');
+      const spmEl = document.getElementById('pcQuestion');
+      const inputsEl = document.getElementById('pcInputs');
+      const vaerdiEl = document.getElementById('pcValue');
+      const tekstEl = document.getElementById('pcText');
+      const ekstraEl = document.getElementById('pcExtra');
+      let mode = 'change';
+
+      function beregn() {
+        const m = MODES[mode];
+        const v = {};
+        let tomt = false;
+        for (const [navn] of m.felter) {
+          const el = document.getElementById('pc_' + navn);
+          if (!el || el.value.trim() === '') { tomt = true; break; }
+          const tal = parseFloat(el.value);
+          if (!Number.isFinite(tal)) { tomt = true; break; }
+          v[navn] = tal;
+        }
+        if (tomt) {
+          vaerdiEl.textContent = '—';
+          tekstEl.textContent = 'Fill in both fields to see the answer.';
+          ekstraEl.textContent = '';
+          return;
+        }
+        const r = m.regn(v);
+        if (r.fejl) {
+          vaerdiEl.textContent = '—';
+          tekstEl.textContent = r.fejl;
+          ekstraEl.textContent = '';
+          return;
+        }
+        vaerdiEl.textContent = r.vaerdi;
+        tekstEl.textContent = r.tekst;
+        ekstraEl.textContent = r.ekstra || '';
+      }
+
+      function tegn() {
+        const m = MODES[mode];
+        spmEl.textContent = m.spm;
+        inputsEl.innerHTML = '';
+        for (const [navn, label, start] of m.felter) {
+          const wrap = document.createElement('div');
+          wrap.className = 'pc-field';
+          const l = document.createElement('label');
+          l.setAttribute('for', 'pc_' + navn);
+          l.textContent = label;
+          const i = document.createElement('input');
+          i.type = 'number';
+          i.id = 'pc_' + navn;
+          i.value = String(start);
+          i.step = 'any';
+          i.addEventListener('input', beregn);
+          wrap.append(l, i);
+          inputsEl.appendChild(wrap);
+        }
+        beregn();
+      }
+
+      tabs.addEventListener('click', (e) => {
+        const b = e.target.closest('.pc-tab');
+        if (!b) return;
+        tabs.querySelectorAll('.pc-tab').forEach((x) => x.classList.remove('active'));
+        b.classList.add('active');
+        mode = b.dataset.mode;
+        tegn();
+      });
+
+      tegn();
+    })();
+  </script>
+</MainLayout>
