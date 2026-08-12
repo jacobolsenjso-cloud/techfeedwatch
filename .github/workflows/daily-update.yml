@@ -1,8 +1,22 @@
 name: YouTube Auto Update
 
+# STOPPET 12. august 2026 efter fjerde AdSense-afslag: "indhold med ringe værdi".
+#
+# Sitet havde 391 maskinskrevne referater af andres videoer mod ca. 95 originale
+# sider (guides, glossar, værktøjer) — fire til én i den forkerte retning. Hver
+# ny artikel i den gamle form gjorde forholdet værre mens vi ventede på svar.
+#
+# Robotten skal først køre igen når artiklerne handler om EMNET frem for om
+# videoen: søgespørgsmålet fra autocomplete bliver artiklens opgave, og videoen
+# bliver understøttende materiale med kreditering — ikke referatets genstand.
+#
+# Sådan startes den igen: fjern # foran de to schedule-linjer nedenfor.
+# Indtil da kan den stadig køres i hånden fra Actions-fanen (workflow_dispatch),
+# så vi kan teste ændringer uden at udgive løbende.
+
 on:
-  schedule:
-    - cron: "0 */2 * * *" # Kører præcis hver anden time
+  # schedule:
+  #   - cron: "0 */2 * * *" # Kører præcis hver anden time
   workflow_dispatch:
 
 permissions:
