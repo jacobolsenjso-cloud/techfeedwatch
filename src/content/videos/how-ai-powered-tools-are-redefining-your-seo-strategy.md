@@ -13,8 +13,8 @@ tags:
 summary: "Artificial intelligence is rapidly transforming search engine optimization, moving beyond traditional keyword analysis to offer sophisticated, automated solutions. These new AI tools can perform comprehensive site audits, optimize technical elements like schema markup, and prepare content for generative AI models. This shift demands a re-evaluation of current SEO practices for any organization aiming to maintain online visibility."
 metaDescription: "Discover how AI tools like Claude Code redefine SEO audits, schema optimization, and generative search to boost online visibility."
 duration: "12:53"
-viewCount: 63523
-viewsUpdated: "2026-08-10"
+viewCount: 63957
+viewsUpdated: "2026-08-13"
 thumbMax: true
 isShort: false
 faqs:

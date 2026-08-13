@@ -12,8 +12,8 @@ tags:
   - "Automation"
 summary: "Physics-Informed Machine Learning (PIML) is rapidly advancing, integrating established scientific principles into AI models to enhance their accuracy and predictive power. This approach moves beyond purely data-driven methods, enabling the discovery of new physical laws from complex datasets and improving performance in critical engineering and scientific applications. PIML promises to revolutionize fields from climate modeling to materials science by making AI more robust and interpretable."
 duration: "47:27"
-viewCount: 368587
-viewsUpdated: "2026-08-10"
+viewCount: 369254
+viewsUpdated: "2026-08-13"
 thumbMax: true
 isShort: false
 revised: true

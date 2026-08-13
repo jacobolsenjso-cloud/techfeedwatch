@@ -11,8 +11,8 @@ tags:
 summary: "The financial industry is undergoing a fundamental transformation, with open banking and the strategic use of data emerging as central pillars. Trust, redefined as a critical asset, dictates how financial institutions and FinTech innovators leverage customer information to offer personalized services. This shift promises enhanced competition, innovative product development, and a more interconnected financial ecosystem, fundamentally reshaping how consumers interact with their money."
 metaDescription: "Open banking transforms finance. Understand how data and trust are redefining financial services, from personalized products to digital payments."
 duration: "35:39"
-viewCount: 4
-viewsUpdated: "2026-08-10"
+viewCount: 5
+viewsUpdated: "2026-08-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -11,8 +11,8 @@ tags:
   - "Crypto"
 summary: "The emergence of quantum computing capabilities introduces theoretical threats to the cryptographic foundations underpinning major blockchain networks like Bitcoin. While not an immediate danger, the potential for advanced algorithms like Shor's to compromise public-key cryptography demands serious consideration and proactive development from the crypto community. Understanding the distinction between encryption and digital signatures is crucial for assessing the true extent of this long-term challenge."
 duration: "20:41"
-viewCount: 40687
-viewsUpdated: "2026-08-10"
+viewCount: 40705
+viewsUpdated: "2026-08-13"
 thumbMax: true
 isShort: false
 revised: true

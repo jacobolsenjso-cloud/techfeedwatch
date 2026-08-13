@@ -11,8 +11,8 @@ tags:
 summary: "AI agents, powered by large language models, are transitioning from conversational interfaces to autonomous execution systems. This evolution allows them to move beyond simply knowing information to actively performing complex tasks. The 'agentic loop'—plan, execute, reflect, and refine—drives these systems, enabling self-correcting and adaptive workflows across various sectors."
 metaDescription: "AI agents powered by LLMs are moving beyond chatbots to execute tasks autonomously. Understand the agentic loop and its impact on future automation."
 duration: "11:35"
-viewCount: 244057
-viewsUpdated: "2026-08-10"
+viewCount: 244557
+viewsUpdated: "2026-08-13"
 thumbMax: true
 isShort: false
 faqs:
