@@ -52,7 +52,7 @@ const MIN_DURATION_SECONDS = 180;
 const ARTICLE_PROFILES = [
   {
     name: "Deep Analysis",
-    min: 850, max: 1100,
+    min: 1100, max: 1500,
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: 2-3 sentence executive summary (no heading, no label).
     - A short intro paragraph with a data-driven hook or a bold contrarian statement.
@@ -64,7 +64,7 @@ const ARTICLE_PROFILES = [
   },
   {
     name: "News Brief",
-    min: 350, max: 550,
+    min: 700, max: 950,
     structure: `STRUCTURE (keep it tight and punchy - this is a short news brief):
     - Opening: 1-2 sentence summary of what happened (no heading, no label).
     - Two or three short paragraphs covering the essentials and why they matter. Use at most one "## " subheading, or none.
@@ -72,7 +72,7 @@ const ARTICLE_PROFILES = [
   },
   {
     name: "Explainer",
-    min: 550, max: 750,
+    min: 900, max: 1250,
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: a 2 sentence plain-language summary (no heading, no label).
     - "## What It Is" - define the subject clearly for a smart non-expert.
@@ -82,7 +82,7 @@ const ARTICLE_PROFILES = [
   },
   {
     name: "Editorial",
-    min: 500, max: 750,
+    min: 900, max: 1250,
     structure: `STRUCTURE (an opinionated editorial - take a clear, reasoned stance while staying factually honest):
     - Opening: state your thesis or argument in 2-3 sentences (no heading, no label).
     - Two or three "## " sections that build the argument, with your own topic-specific headings.
@@ -90,7 +90,7 @@ const ARTICLE_PROFILES = [
   },
   {
     name: "Practical Q&A",
-    min: 550, max: 750,
+    min: 900, max: 1250,
     structure: `STRUCTURE (a practical, reader-first piece):
     - Opening: a 2 sentence summary of the practical question at stake (no heading, no label).
     - Two or three "## " headings phrased as the real questions readers are asking.
@@ -98,7 +98,7 @@ const ARTICLE_PROFILES = [
   },
   {
     name: "Context & Implications",
-    min: 650, max: 900,
+    min: 900, max: 1250,
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: a 2 sentence summary (no heading, no label).
     - "## The Background" - the context and history the source skipped over.
@@ -374,7 +374,7 @@ async function run() {
     Video Content Data: ${text.substring(0, 5000)}`
       : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this video only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the video revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the video told them.
 
-    ${targetQuestion ? `TARGET SEARCH QUESTION: someone searching Google typed "${targetQuestion}". This article must answer that question directly and early - put a clear, plain answer in the first two paragraphs, and make sure the headline and one H2 reflect it. Do not force it if the video genuinely does not address it; in that case ignore this line entirely rather than inventing an answer.` : ''}
+    ${targetQuestion ? `THE READER'S QUESTION: someone searching Google typed "${targetQuestion}". That question is this article's job. Answer it plainly in the opening, then spend the article explaining the subject well enough that the answer holds up: what it is, why it works that way, what it costs, and where people get it wrong. The headline and at least one H2 must reflect the question. If the source material does not address it, still write about the subject — just do not invent an answer to the question.` : `Write about the subject itself, not about the video. A reader who never watches it must come away with a complete answer.`}
 
     Return EXACTLY in this format:
     TITLE: An SEO-optimized headline, about 50-65 characters, that FRONT-LOADS the primary keyword/topic exactly the way people search for it (e.g. "What Is Open Banking? How Agentic AI Changes Finance" or "Nvidia's $250B AI Chip Deal: What It Means"). Be concrete and specific and include the main keyword near the start. It can be engaging, but search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
@@ -397,15 +397,20 @@ async function run() {
     7. Aim for approximately ${targetWords} words.
     8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece.
     9. Ensure internal links are written strictly like this: [Link text](/video/slug).
-    10. ADD ORIGINAL VALUE beyond the source: include relevant context, history, comparisons to alternatives or competitors, or second-order implications the video did not mention - but only well-established, generally-known facts. Never fabricate statistics, quotes, dates, or events, and never merely restate what the video said.
-    11. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
+    10. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write a reference piece about the topic itself, the way an experienced writer would if they had watched this video as part of their research. The video is one input, not the subject. A reader who never watches it must get a complete, self-contained answer.
+    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. Use only well-established, generally-known facts for that context. NEVER fabricate statistics, quotes, dates, company figures or events.
+    12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - but in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
+    13. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
 
     This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
 
     ${articleProfile.structure}
     ${internalLinksContext}
 
-    Video Content Data: ${text.substring(0, 20000)}`;
+    SOURCE MATERIAL (research input — the transcript of one video on this subject).
+    Use it for the specific claims, examples and angles it contributes. Do not treat
+    it as an outline to follow, and do not write about the video itself:
+    ${text.substring(0, 20000)}`;
 
     // maxOutputTokens sat eksplicit. Uden den bruger modellen sin standard, og
     // gemini-2.5 bruger også af output-budgettet på at tænke. Prompten beder om
