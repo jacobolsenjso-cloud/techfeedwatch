@@ -204,7 +204,12 @@ const articleSchema = {
   "image": `https://techfeedwatch.com/og/${slug}.jpg`,
   "datePublished": new Date(date).toISOString(),
   "dateModified": new Date(showUpdated ? updated! : date).toISOString(),
-  "author": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] },
+  // Forfatteren er sitet, ikke en person. Artiklen er skrevet af en sprogmodel
+  // efter regler Jacob har sat — han har ikke skrevet eller læst den. Schema.org
+  // tillader en Organization som author, og det er det sande svar. Stod der en
+  // Person, ville de strukturerede data påstå et forfatterskab som siden selv
+  // modsiger nederst.
+  "author": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/", "founder": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] } },
   "publisher": {
     "@type": "Organization",
     "name": "Tech Feed Watch",
@@ -891,7 +896,13 @@ const metaDesc = rawMeta.length > 157
           <div class="article-byline">
             <img src="/jacob-olsen.png" alt="" class="byline-avatar" width="40" height="40" loading="lazy" decoding="async" />
             <div class="byline-text">
-              <span class="byline-name">Analysis by <a href="/author/jacob-olsen">Jacob S. Olsen</a></span>
+              {/* "Analysis by Jacob S. Olsen" stod her før. På samme side siger
+                  forfatterboksen nederst at artiklen udgives uden at nogen har
+                  læst den — to modsatrettede påstande på én side, og præcis den
+                  slags overpåstand vi allerede har fjernet to andre steder.
+                  Nu står der hvad der faktisk er sandt: sitet udgiver den,
+                  Jacob står bag maskineriet og reglerne. */}
+              <span class="byline-name">Published by <a href="/author/jacob-olsen">Tech Feed Watch</a></span>
               <span class="byline-meta">
                 <time datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                 {updatedLabel && (
@@ -909,7 +920,7 @@ const metaDesc = rawMeta.length > 157
           <p class="source-credit">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
             <span>
-              Analysis of a video published on YouTube by{' '}
+              Researched with a video published on YouTube by{' '}
               {sourceChannel && sourceChannelUrl ? (
                 <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
               ) : (
