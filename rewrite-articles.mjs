@@ -74,6 +74,14 @@ Write ONLY the article body in Markdown. Rules:
    unleash, elevate, seamless, paradigm shift, "in today's digital age".
 10. No links, no images, no author bio, no sign-off.
 
+After the body, output a line containing only ---FAQ--- and then 4 questions
+and answers about the SUBJECT (not about any video), in exactly this format,
+one pair per line:
+Q: the question
+A: the answer, two or three sentences, specific and useful
+The questions must be ones a reader would actually type into a search box.
+Answer them properly rather than teasing the article.
+
 SOURCE MATERIAL (research input - one video's transcript on this subject).
 Use it for what it contributes; do not write about it:
 ${tekst.substring(0, 18000)}`;
@@ -139,9 +147,25 @@ for (const k of kandidater.slice(0, limit)) {
     const finish = res.response?.candidates?.[0]?.finishReason;
     if (finish && finish !== 'STOP') throw new Error(`Gemini stoppede med "${finish}"`);
 
-    let ny = res.response.text().trim()
-      .replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim()
-      .replace(/^#\s+.*$/m, '').trim();
+    const helSvar = res.response.text().trim()
+      .replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
+
+    // Del svaret ved markøren. FAQ'en i frontmatter blev skrevet dengang
+    // artiklen var et referat, så spørgsmålene kan handle om noget den nye
+    // tekst ikke længere dækker. Derfor skrives de om sammen med brødteksten.
+    const dele = helSvar.split(/^---FAQ---\s*$/m);
+    let ny = dele[0].replace(/^#\s+.*$/m, '').trim();
+
+    const nyeFaqs = [];
+    if (dele[1]) {
+      let sidsteQ = null;
+      for (const l of dele[1].split(/\r?\n/)) {
+        const q = l.match(/^\s*Q:\s*(.+)$/);
+        const a = l.match(/^\s*A:\s*(.+)$/);
+        if (q) sidsteQ = q[1].trim();
+        else if (a && sidsteQ) { nyeFaqs.push({ q: sidsteQ, a: a[1].trim() }); sidsteQ = null; }
+      }
+    }
 
     const n = ordtal(ny);
     if (n < MIN_ORD) throw new Error(`kun ${n} ord, grænsen er ${MIN_ORD}`);
@@ -150,8 +174,20 @@ for (const k of kandidater.slice(0, limit)) {
       throw new Error('teksten omtaler stadig videoen — skrives ikke');
     }
 
-    fs.writeFileSync(path.join(DIR, k.f), `${fmAf(k.raw)}\n\n${ny}\n`, 'utf8');
-    console.log(`OK ${k.ord} -> ${n} ord${spoergsmaal ? `  ("${spoergsmaal.slice(0, 38)}")` : ''}`);
+    // Frontmatter beholdes præcis som den er — kun faqs-blokken byttes ud, og
+    // kun hvis vi fik mindst tre brugbare par. Færre end det er en halv
+    // udskiftning, og så er den gamle FAQ bedre end en amputeret ny.
+    let fm = fmAf(k.raw);
+    if (nyeFaqs.length >= 3) {
+      const yaml = 'faqs:\n' + nyeFaqs.map((f) =>
+        `  - question: "${f.q.replace(/"/g, "'")}"\n    answer: "${f.a.replace(/"/g, "'")}"`).join('\n') + '\n';
+      fm = /^faqs:/m.test(fm)
+        ? fm.replace(/^faqs:\r?\n(?:[ \t]+.*\r?\n)+/m, yaml)
+        : fm.replace(/\r?\n---\s*$/, '\n' + yaml + '---');
+    }
+
+    fs.writeFileSync(path.join(DIR, k.f), `${fm}\n\n${ny}\n`, 'utf8');
+    console.log(`OK ${k.ord} -> ${n} ord · FAQ ${nyeFaqs.length}${spoergsmaal ? `  ("${spoergsmaal.slice(0, 32)}")` : ''}`);
     rettet++;
   } catch (e) {
     console.log(`sprunget over: ${e.message.slice(0, 58)}`);
