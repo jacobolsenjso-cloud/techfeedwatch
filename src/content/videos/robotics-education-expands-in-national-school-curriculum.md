@@ -24,6 +24,7 @@ faqs:
     answer: "Effective robotics education is guided by principles such as the 'Four Ps' of creative learning: Passion, Peers, Play, and Projects. It also emphasizes designing learning environments with a 'low floor' for easy entry, a 'high ceiling' for advanced exploration, and 'tall ladders' to guide progression, fostering a 'loop of joy' for sustained engagement."
   - question: "How do real-world robotics projects inspire learning?"
     answer: "Real-world robotics projects, such as the South African Large Telescope (SALT), the Juno spacecraft, and Mars rovers, inspire learning by demonstrating the remarkable capabilities of technology and its impact on exploration and discovery. Connecting students with these projects, and even the experts behind them, helps make the field tangible and accessible, encouraging future participation."
+rewrittenAt: "2026-08-14"
 ---
 
 South Africa is pioneering a national curriculum that integrates coding and robotics, marking a significant step in preparing its youth for the evolving digital economy. This initiative reflects a broader global recognition of the need for digital literacy and practical computing skills, particularly in the context of the Fourth Industrial Revolution. The curriculum's design emphasizes hands-on learning and problem-solving, aiming to foster a deep understanding of how technology works and how it can be applied.

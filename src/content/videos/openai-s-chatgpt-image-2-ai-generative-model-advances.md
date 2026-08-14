@@ -24,6 +24,7 @@ faqs:
     answer: "Practical uses for ChatGPT Image 2 span various industries, including content creation, game development, and art. It can generate high-quality images for marketing, create detailed sprite sheets for video games, assist artists with concept generation, and produce personalized content by integrating specific faces into diverse styles."
   - question: "What are the limitations of ChatGPT Image 2?"
     answer: "Despite its capabilities, ChatGPT Image 2 has limitations, such as occasional errors in precise counting of objects or subtle instruction following. It can sometimes produce anatomical inconsistencies or struggle with less common reference images, and may not accurately infer past features when aging a person backward."
+rewrittenAt: "2026-08-14"
 ---
 
 OpenAI's ChatGPT Image 2 represents a significant leap forward in AI generative models, setting new standards for image creation and manipulation. This advanced system integrates sophisticated visual understanding with a deep grasp of world knowledge, allowing it to produce highly precise and usable visuals from complex text prompts. It marks a substantial improvement over previous models, demonstrating enhanced capabilities in realism, consistency, and intelligent instruction following.

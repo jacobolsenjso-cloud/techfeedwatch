@@ -26,6 +26,7 @@ faqs:
     answer: "Muse Video is Meta's upcoming generative AI tool for creating video content. It aims to offer competitive performance in prompt adherence, visual fidelity, and temporal consistency, with a focus on improving audio-to-video synchronization and physically accurate fast motion."
   - question: "How does Meta AI compare to other image generators?"
     answer: "Meta AI's image model is considered a strong competitor to models like GPT image 2 and Nano Banana. It excels in prompt adherence, imagination, and incorporating specific lore, but may exhibit 'waxy' character textures or 'lazy' behavior with very long prompts."
+rewrittenAt: "2026-08-14"
 ---
 
 Meta AI, a significant re-entry by Meta into the generative artificial intelligence arena, refers to a new suite of tools for creating visual content. While Meta owns popular communication platforms like WhatsApp, the generative AI capabilities discussed here, specifically for image and video creation, are not currently integrated into WhatsApp. Instead, Meta has launched a free image generation model accessible via meta.ai, with a new video generation tool, Muse Video, on the horizon.

@@ -24,6 +24,7 @@ faqs:
     answer: "Project Glasswing is Anthropic's initiative to control access to Mythos, allowing a select group of partners, including a dozen trillion-dollar companies and a bank, to use the model. The goal is to leverage Mythos's capabilities to proactively identify and patch critical software vulnerabilities worldwide."
   - question: "What are the main points of skepticism regarding Mythos?"
     answer: "Skepticism centers on whether Anthropic is exaggerating Mythos's capabilities for strategic reasons, questioning the methodology used to find exploits (e.g., high compute costs, disabled mitigations in tests), and pointing to Anthropic's own internal security issues like leaked code and API instability."
+rewrittenAt: "2026-08-14"
 ---
 
 Anthropic's recent announcement regarding its 'Mythos' AI model has ignited a significant debate within the technology community, centering on the tension between fostering innovation and ensuring public safety. The company has opted to restrict public access to Mythos, citing its extraordinary capabilities and the potential for severe societal disruption if widely released. This decision forces a critical examination of who should control advanced AI, how risks are assessed, and the delicate balance required as AI models grow increasingly powerful.

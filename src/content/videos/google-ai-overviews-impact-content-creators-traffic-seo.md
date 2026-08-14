@@ -24,6 +24,7 @@ faqs:
     answer: "Content creators are adapting by focusing on building direct community relationships through newsletters and social media, leveraging video content as a more resilient format, and advocating for fair compensation and proper attribution. They are also using tools to monitor and identify instances of content misrepresentation in AI Overviews."
   - question: "Can Google AI Overviews misrepresent branded content?"
     answer: "Yes, AI Overviews can misrepresent branded content, even for specific brand searches. They may present altered or incorrect information under a brand's name, sometimes using the brand's images, which can damage the brand's reputation and mislead users who believe they are getting the authentic content."
+rewrittenAt: "2026-08-14"
 ---
 
 Google AI Overviews are fundamentally altering how users interact with search results, directly impacting content creators by providing direct answers within Google, leading to a substantial decline in clicks to original content sources. This shift affects content creators' traffic and revenue, even while their traditional search rankings might remain stable. The introduction of these AI-generated summaries at the top of search results creates a new dynamic where information is consumed directly on Google's platform, often bypassing the websites that originally produced the content.

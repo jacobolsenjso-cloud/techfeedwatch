@@ -110,6 +110,10 @@ for (const f of filer) {
     // Nævner brødteksten videoen? Det er den tydeligste markør for et referat.
     naevnerVideo: /\bthe video\b|\bthis video\b|the speaker|the presenter|the host\b/i.test(body),
     spoergsmaal: felt(raw, 'targetQuestion'),
+    // Er den allerede skrevet om? Uden dette mærke vælger scriptet de ældste
+    // artikler hver gang — og det er netop dem der lige er blevet behandlet.
+    // Første kørsel af punkt 2 skrev fire af de samme 14 om igen.
+    alleredeOmskrevet: /^rewrittenAt:/m.test(raw),
   });
 }
 kandidater.sort((a, b) => (b.naevnerVideo - a.naevnerVideo) || a.dato.localeCompare(b.dato));
@@ -129,6 +133,12 @@ if (listeArg) {
   );
   valgte = kandidater.filter((k) => navne.has(k.f));
   console.log(`Liste: ${navne.size} navne · ${valgte.length} fundet i arkivet\n`);
+} else {
+  // Uden en liste springes de allerede omskrevne over. Ellers ville hver
+  // kørsel tage de ældste igen — altså dem der lige er blevet behandlet.
+  const foer = valgte.length;
+  valgte = valgte.filter((k) => !k.alleredeOmskrevet);
+  console.log(`${foer - valgte.length} allerede omskrevet — springes over\n`);
 }
 
 const refererende = kandidater.filter((k) => k.naevnerVideo).length;
@@ -280,6 +290,14 @@ ${ny}`
         ? fm.replace(/^faqs:\r?\n(?:[ \t]+.*\r?\n)+/m, yaml)
         : fm.replace(/\r?\n---\s*$/, '\n' + yaml + '---');
     }
+
+    // Mærk artiklen som omskrevet, så næste kørsel ikke vælger den igen.
+    // Uden det tager scriptet de ældste hver gang — og det er netop dem der
+    // lige er blevet behandlet.
+    const iDag = new Date().toISOString().slice(0, 10);
+    fm = /^rewrittenAt:/m.test(fm)
+      ? fm.replace(/^rewrittenAt:.*$/m, `rewrittenAt: "${iDag}"`)
+      : fm.replace(/\r?\n---\s*$/, `\nrewrittenAt: "${iDag}"\n---`);
 
     fs.writeFileSync(path.join(DIR, k.f), `${fm}\n\n${ny}\n`, 'utf8');
     console.log(`OK ${k.ord} -> ${n} ord · FAQ ${nyeFaqs.length}${forsoeg > 1 ? ` (forsøg ${forsoeg})` : ''}`);
