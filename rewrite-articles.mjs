@@ -60,19 +60,26 @@ Write ONLY the article body in Markdown. Rules:
 4. Use the source for the specific claims, examples and angles it contributes,
    and reflect them accurately - but in your own words and your own structure.
    Do not follow its running order. Do not quote long passages from it.
-5. Add context from well-established, generally-known facts: history, how it
-   compares to the alternatives, second-order consequences. NEVER invent
-   statistics, quotes, dates, company figures or events. If you are unsure of a
-   number, leave it out rather than approximating it.
-6. 900-1300 words. Use 4-6 H2 headings (##). No H1, no title, no FAQ section.
-7. Open with two or three sentences that state the substance - not a throat-
+5. NUMBERS: you may only use a figure that appears in the source material below.
+   Not one that seems right, not one you remember, not a rounded version of one.
+   If the source does not give a number, write the sentence without one - "a
+   large share", "most", "the majority" are all fine. This is checked
+   automatically after you finish, and the article is discarded if a number
+   appears that is not in the source. Percentages, sums of money, market sizes
+   and user counts are the ones that get discarded most often.
+6. Other context may come from well-established, generally-known facts: history,
+   how it compares to the alternatives, second-order consequences. NEVER invent
+   quotes, dates, company figures or events.
+7. 900-1300 words. Use 4-6 H2 headings (##). No H1, no title, no FAQ section.
+8. Open with two or three sentences that state the substance - not a throat-
    clearing introduction, and not a restatement of the headline.
-8. Where the subject is genuinely disputed, say so and give both cases rather
+9. Where the subject is genuinely disputed, say so and give both cases rather
    than picking one and sounding certain.
-9. Plain English. Short sentences mixed with longer ones. Active voice. Never
-   use: delve, tapestry, realm, landscape, testament, crucial, robust, unlock,
-   unleash, elevate, seamless, paradigm shift, "in today's digital age".
-10. No links, no images, no author bio, no sign-off.
+10. Plain English. Short sentences mixed with longer ones. Active voice. These
+   words are banned and the article is rejected if any appears: delve, tapestry,
+   realm, landscape, testament, crucial, robust, unlock, unleash, elevate,
+   seamless, paradigm shift, "in today's digital age".
+11. No links, no images, no author bio, no sign-off.
 
 After the body, output a line containing only ---FAQ--- and then 4 questions
 and answers about the SUBJECT (not about any video), in exactly this format,
@@ -173,6 +180,34 @@ for (const k of kandidater.slice(0, limit)) {
     if (/\bthe video\b|\bthis video\b|the speaker\b|the presenter\b/i.test(ny)) {
       throw new Error('teksten omtaler stadig videoen — skrives ikke');
     }
+
+    // Tal der ikke findes i transskriptet.
+    //
+    // Første kørsel af de 14 tilføjede 20 nye tal — 86%, 77%, $2,9 billioner —
+    // hvor kun 5 stammede fra den oprindelige artikel. Prompten forbød det
+    // allerede; et forbud i en lang prompt er ikke en kontrol. Modellen fylder
+    // huller ud med tal der lyder rigtige, og det er værre end det tynde
+    // referat vi prøvede at komme væk fra.
+    //
+    // Kilden er transskript OG den gamle artikel: står tallet ét af stederne,
+    // er det ikke fundet på her.
+    const kilde = (tekst + ' ' + k.raw).replace(/[\s,]/g, '').toLowerCase();
+    const talIArtikel = [...new Set(
+      (ny.match(/\b\d{1,3}(?:[.,]\d+)?\s?(?:percent|%)|[$€£]\s?\d[\d.,]*(?:\s?(?:billion|million|trillion))?/gi) || [])
+        .map((x) => x.replace(/[\s,]/g, '').toLowerCase())
+    )];
+    const opdigtede = talIArtikel.filter((t) => !kilde.includes(t));
+    if (opdigtede.length) {
+      throw new Error(`tal findes ikke i kilden: ${opdigtede.slice(0, 5).join(', ')}`);
+    }
+
+    // Forbudte ord. Står de der, er instruktionen ikke fulgt, og teksten lyder
+    // som alt andet maskinskrevet indhold på internettet.
+    const forbudte = [...new Set(
+      (ny.match(/\b(delve|tapestry|realm|landscape|testament|crucial|robust|unlock|unleash|elevate|seamless|paradigm shift)\b/gi) || [])
+        .map((x) => x.toLowerCase())
+    )];
+    if (forbudte.length) throw new Error(`forbudte ord: ${forbudte.join(', ')}`);
 
     // Frontmatter beholdes præcis som den er — kun faqs-blokken byttes ud, og
     // kun hvis vi fik mindst tre brugbare par. Færre end det er en halv
