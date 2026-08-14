@@ -76,8 +76,13 @@ for (const f of filer) {
   const spor = [
     [/lorem ipsum dolor sit amet/i, 'pladsholdertekst', handlerOmLorem],
     [/\[(TODO|PLACEHOLDER|INSERT)[^\]]*\]/i, 'pladsholder i kantparentes', false],
-    [/\bAs an AI (language )?model\b/i, 'modellen taler om sig selv', false],
-    [/\bI cannot\b|\bI'm sorry, but\b/i, 'afvisning fra modellen', false],
+    // "As an AI model" alene rammer også helt normale sætninger — en artikel
+    // om Anthropics Mythos skrev "described by Anthropic as an AI model
+    // possessing...", hvilket er en beskrivelse af en model og ikke en model
+    // der taler om sig selv. Mønsteret kræver derfor at sætningen starter dér
+    // OG fortsætter i første person.
+    [/(^|[.!?]\s+)As an AI (language )?model,? I\b/i, 'modellen taler om sig selv', false],
+    [/\bI cannot (assist|provide|help|comply|fulfill)\b|\bI'm sorry, but I\b/i, 'afvisning fra modellen', false],
     [/^#\s/m, 'h1 i brødteksten (kun h2 og nedefter)', false],
     [/```/, 'uafsluttet kodeblok-markering', false],
   ];

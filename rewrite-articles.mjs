@@ -169,10 +169,14 @@ for (const k of valgte.slice(0, limit)) {
       } catch { /* autocomplete er en forbedring, ikke en forudsætning */ }
     }
 
-    const res = await genAI.getGenerativeModel({
+    const model = genAI.getGenerativeModel({
       model: 'gemini-2.5-flash',
-      generationConfig: { maxOutputTokens: 16384 },
-    }).generateContent(byg(k.titel, felt(k.raw, 'summary'), spoergsmaal, tekst));
+      // Lavere temperatur. Standarden er sat til at være opfindsom, og
+      // opfindsomhed er præcis det der producerer tal der lyder rigtige.
+      // Her skal den forklare et emne, ikke digte.
+      generationConfig: { maxOutputTokens: 16384, temperature: 0.4 },
+    });
+    const res = await model.generateContent(byg(k.titel, felt(k.raw, 'summary'), spoergsmaal, tekst));
 
     const finish = res.response?.candidates?.[0]?.finishReason;
     if (finish && finish !== 'STOP') throw new Error(`Gemini stoppede med "${finish}"`);
@@ -199,38 +203,71 @@ for (const k of valgte.slice(0, limit)) {
 
     const n = ordtal(ny);
     if (n < MIN_ORD) throw new Error(`kun ${n} ord, grænsen er ${MIN_ORD}`);
-    // Sidste kontrol: er den stadig et referat, har omskrivningen fejlet.
-    if (/\bthe video\b|\bthis video\b|the speaker\b|the presenter\b/i.test(ny)) {
-      throw new Error('teksten omtaler stadig videoen — skrives ikke');
-    }
 
-    // Tal der ikke findes i transskriptet.
-    //
-    // Første kørsel af de 14 tilføjede 20 nye tal — 86%, 77%, $2,9 billioner —
-    // hvor kun 5 stammede fra den oprindelige artikel. Prompten forbød det
-    // allerede; et forbud i en lang prompt er ikke en kontrol. Modellen fylder
-    // huller ud med tal der lyder rigtige, og det er værre end det tynde
-    // referat vi prøvede at komme væk fra.
-    //
-    // Kilden er transskript OG den gamle artikel: står tallet ét af stederne,
-    // er det ikke fundet på her.
+    // Kilden til tal: transskript OG den gamle artikel. Står tallet ét af
+    // stederne, er det ikke fundet på her.
     const kilde = (tekst + ' ' + k.raw).replace(/[\s,]/g, '').toLowerCase();
-    const talIArtikel = [...new Set(
-      (ny.match(/\b\d{1,3}(?:[.,]\d+)?\s?(?:percent|%)|[$€£]\s?\d[\d.,]*(?:\s?(?:billion|million|trillion))?/gi) || [])
-        .map((x) => x.replace(/[\s,]/g, '').toLowerCase())
-    )];
-    const opdigtede = talIArtikel.filter((t) => !kilde.includes(t));
-    if (opdigtede.length) {
-      throw new Error(`tal findes ikke i kilden: ${opdigtede.slice(0, 5).join(', ')}`);
+
+    // Alle kontroller ét sted, så de kan køres igen efter en reparation.
+    const tjek = (t) => {
+      const ud = [];
+      if (/\bthe video\b|\bthis video\b|the speaker\b|the presenter\b/i.test(t)) {
+        ud.push('Remove every mention of a video, a speaker or a presenter. Rewrite those sentences to be about the subject.');
+      }
+      const tal = [...new Set(
+        (t.match(/\b\d{1,3}(?:[.,]\d+)?\s?(?:percent|%)|[$€£]\s?\d[\d.,]*(?:\s?(?:billion|million|trillion))?/gi) || [])
+          .map((x) => x.replace(/[\s,]/g, '').toLowerCase())
+      )].filter((x) => !kilde.includes(x));
+      if (tal.length) {
+        ud.push(`These figures are not in the source and must go: ${tal.join(', ')}. Replace each with wording that carries the same point without a number - "a large share", "most", "a significant sum".`);
+      }
+      const ord = [...new Set(
+        (t.match(/\b(delve|tapestry|realm|landscape|testament|crucial|robust|unlock|unleash|elevate|seamless|paradigm shift)\b/gi) || [])
+          .map((x) => x.toLowerCase())
+      )];
+      if (ord.length) {
+        ud.push(`These words are banned and must be replaced with plain alternatives: ${ord.join(', ')}.`);
+      }
+      return ud;
+    };
+
+    let mangler = tjek(ny);
+
+    // Reparation frem for at kaste alt væk.
+    //
+    // Før blev en hel artikel kasseret fordi ét ord var forkert, og næste
+    // forsøg skrev 1.200 ord forfra — altså blev terningen kastet igen på
+    // ALT. Derfor hjalp gentagelser så lidt.
+    //
+    // Her sendes udkastet tilbage med fejlen udpeget og besked om kun at rette
+    // dét. Det er en langt lettere opgave end at skrive artiklen, og den gode
+    // del af teksten overlever.
+    if (mangler.length) {
+      const rep = await model.generateContent(
+        `Below is an article that is almost finished. Fix ONLY the specific faults listed, and change nothing else - keep the same structure, headings, length and wording everywhere else.
+
+FAULTS TO FIX:
+${mangler.map((m, i) => `${i + 1}. ${m}`).join('\n')}
+
+Return the corrected article body in Markdown and nothing else. No preamble, no explanation of what you changed.
+
+ARTICLE:
+${ny}`
+      );
+      const repFinish = rep.response?.candidates?.[0]?.finishReason;
+      if (!repFinish || repFinish === 'STOP') {
+        const repareret = rep.response.text().trim()
+          .replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '')
+          .replace(/^#\s+.*$/m, '').trim();
+        // Kun hvis reparationen faktisk er en artikel og faktisk hjalp.
+        if (ordtal(repareret) >= MIN_ORD && tjek(repareret).length < mangler.length) {
+          ny = repareret;
+          mangler = tjek(ny);
+        }
+      }
     }
 
-    // Forbudte ord. Står de der, er instruktionen ikke fulgt, og teksten lyder
-    // som alt andet maskinskrevet indhold på internettet.
-    const forbudte = [...new Set(
-      (ny.match(/\b(delve|tapestry|realm|landscape|testament|crucial|robust|unlock|unleash|elevate|seamless|paradigm shift)\b/gi) || [])
-        .map((x) => x.toLowerCase())
-    )];
-    if (forbudte.length) throw new Error(`forbudte ord: ${forbudte.join(', ')}`);
+    if (mangler.length) throw new Error(mangler[0].slice(0, 70));
 
     // Frontmatter beholdes præcis som den er — kun faqs-blokken byttes ud, og
     // kun hvis vi fik mindst tre brugbare par. Færre end det er en halv
