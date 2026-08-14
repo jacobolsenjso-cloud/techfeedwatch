@@ -114,11 +114,28 @@ for (const f of filer) {
 }
 kandidater.sort((a, b) => (b.naevnerVideo - a.naevnerVideo) || a.dato.localeCompare(b.dato));
 
+// --list=<fil> begrænser kørslen til bestemte filer, én pr. linje.
+// Findes fordi de 14 første omskrivninger skal gøres om: de har opdigtede tal,
+// men de nævner ikke længere videoen, så den normale rækkefølge vil aldrig
+// vælge dem igen. Listen laves med git: filerne ændret i en bestemt commit.
+const listeArg = (process.argv.find((a) => a.startsWith('--list=')) || '').split('=')[1];
+let valgte = kandidater;
+if (listeArg) {
+  if (!fs.existsSync(listeArg)) { console.error(`Listen findes ikke: ${listeArg}`); process.exit(1); }
+  const navne = new Set(
+    fs.readFileSync(listeArg, 'utf8').split(/\r?\n/)
+      .map((l) => l.trim()).filter(Boolean)
+      .map((l) => path.basename(l))
+  );
+  valgte = kandidater.filter((k) => navne.has(k.f));
+  console.log(`Liste: ${navne.size} navne · ${valgte.length} fundet i arkivet\n`);
+}
+
 const refererende = kandidater.filter((k) => k.naevnerVideo).length;
 console.log(`${kandidater.length} artikler · ${refererende} nævner videoen direkte i teksten\n`);
 
 if (dryRun) {
-  for (const k of kandidater.slice(0, limit === Infinity ? 20 : limit)) {
+  for (const k of valgte.slice(0, limit === Infinity ? 20 : limit)) {
     console.log(`  ${k.dato} · ${k.ord} ord · ${k.naevnerVideo ? 'nævner video' : '            '} · ${k.titel.slice(0, 52)}`);
   }
   console.log('\nTØRT LØB — intet skrevet.');
@@ -128,8 +145,14 @@ if (dryRun) {
 let rettet = 0, sprunget = 0;
 const fejl = [];
 
-for (const k of kandidater.slice(0, limit)) {
+for (const k of valgte.slice(0, limit)) {
   process.stdout.write(`  ${k.dato} ${k.titel.slice(0, 44).padEnd(44)} `);
+  // Op til tre forsøg. Kontrollerne afviser ~2 ud af 3 første forsøg, og
+  // fejlene er tilfældige — et forbudt ord eller et opdigtet tal er ikke en
+  // egenskab ved artiklen, men ved den enkelte generering. Uden gentagelse
+  // kasserer vi artikler der ville være fine i andet forsøg.
+  let sidsteFejl = null;
+  for (let forsoeg = 1; forsoeg <= 3; forsoeg++) {
   try {
     const transcript = await YoutubeTranscript.fetchTranscript(k.id);
     const tekst = transcript.map((x) => x.text).join(' ');
@@ -222,14 +245,21 @@ for (const k of kandidater.slice(0, limit)) {
     }
 
     fs.writeFileSync(path.join(DIR, k.f), `${fm}\n\n${ny}\n`, 'utf8');
-    console.log(`OK ${k.ord} -> ${n} ord · FAQ ${nyeFaqs.length}${spoergsmaal ? `  ("${spoergsmaal.slice(0, 32)}")` : ''}`);
+    console.log(`OK ${k.ord} -> ${n} ord · FAQ ${nyeFaqs.length}${forsoeg > 1 ? ` (forsøg ${forsoeg})` : ''}`);
     rettet++;
+    sidsteFejl = null;
+    break;
   } catch (e) {
-    console.log(`sprunget over: ${e.message.slice(0, 58)}`);
-    fejl.push(`${k.f}: ${e.message.slice(0, 70)}`);
+    sidsteFejl = e.message;
+    if (forsoeg < 3) { await new Promise((r) => setTimeout(r, 2000)); continue; }
+  }
+  }
+  if (sidsteFejl) {
+    console.log(`sprunget over efter 3 forsøg: ${sidsteFejl.slice(0, 52)}`);
+    fejl.push(`${k.f}: ${sidsteFejl.slice(0, 70)}`);
     sprunget++;
   }
-  await new Promise((r) => setTimeout(r, 2500));
+  await new Promise((r) => setTimeout(r, 2000));
 }
 
 console.log(`\nOmskrevet: ${rettet} · sprunget over: ${sprunget}`);
