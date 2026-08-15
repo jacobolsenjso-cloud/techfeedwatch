@@ -229,7 +229,13 @@ for (const k of valgte.slice(0, limit)) {
           .map((x) => x.replace(/[\s,]/g, '').toLowerCase())
       )].filter((x) => !kilde.includes(x));
       if (tal.length) {
-        ud.push(`These figures are not in the source and must go: ${tal.join(', ')}. Replace each with wording that carries the same point without a number - "a large share", "most", "a significant sum".`);
+        // Første udgave sagde "erstat tallet med 'a large share' eller 'a
+        // significant sum'". Modellen gjorde præcis dét — mekanisk — og
+        // efterlod sætninger som "daily budgets of $50, $30, $20, $25, $100,
+        // or even a significant sum" og "a 5.5x return from a total spend of a
+        // significant sum". Instruktionen skal bede om en OMSKRIVNING, ikke om
+        // en indsættelse.
+        ud.push(`These figures are not in the source and must go: ${tal.join(', ')}. Do not substitute a phrase where the number was - rewrite the sentence so it does not need a number at all, and reads naturally. If removing it leaves the sentence pointless, delete the sentence.`);
       }
       const ord = [...new Set(
         (t.match(/\b(delve|tapestry|realm|landscape|testament|crucial|robust|unlock|unleash|elevate|seamless|paradigm shift)\b/gi) || [])
@@ -237,6 +243,21 @@ for (const k of valgte.slice(0, limit)) {
       )];
       if (ord.length) {
         ud.push(`These words are banned and must be replaced with plain alternatives: ${ord.join(', ')}.`);
+      }
+
+      // Spor efter en mislykket reparation. Står en vending som "a significant
+      // sum" i en opremsning af tal, eller lige efter et beløb, er tallet
+      // blevet byttet ud mekanisk og sætningen giver ikke længere mening.
+      // Denne kontrol findes fordi det slap igennem én gang: "daily budgets of
+      // $50, $30, $20, $25, $100, or even a significant sum".
+      const VENDING = '(a significant sum|a large share|a substantial amount|a considerable sum)';
+      const klodset = [
+        new RegExp(`[$€£]\\s?[\\d.,]+[^.]{0,40}\\b${VENDING}\\b`, 'i'),   // efter et beløb
+        new RegExp(`\\b${VENDING}\\b[^.]{0,40}[$€£]\\s?[\\d.,]+`, 'i'),   // før et beløb
+        new RegExp(`\\bof\\s+${VENDING}\\b`, 'i'),                        // "a return from a total spend of ..."
+      ].some((re) => re.test(t));
+      if (klodset) {
+        ud.push('A number was swapped for a vague phrase and the sentence no longer makes sense - for example a list of amounts ending in "a significant sum", or a return calculated from "a significant sum". Rewrite those sentences properly so they read naturally without any number, or remove them.');
       }
       return ud;
     };
