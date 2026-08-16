@@ -34,6 +34,17 @@ const felt = (raw, k) => raw.match(new RegExp(`^${k}:\\s*"([^"]*)"`, 'm'))?.[1] 
 const fmAf = (raw) => raw.match(/^---\r?\n[\s\S]*?\r?\n---/)?.[0] || '';
 const ordtal = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
 
+// Tidsgrænse på ethvert netværkskald.
+//
+// Uden den hang kørslen af bunke 1 fast på artikel 17 og lavede ingenting i 17
+// minutter: hverken transskript-hentningen eller Gemini-kaldet havde en
+// grænse, så ét svar der aldrig kom, blokerede resten. Et kald der tager mere
+// end to minutter kommer ikke igen — bedre at springe artiklen over og fortsætte.
+const medTidsgraense = (loefte, sekunder, hvad) => Promise.race([
+  loefte,
+  new Promise((_, afvis) => setTimeout(() => afvis(new Error(`${hvad} svarede ikke inden for ${sekunder}s`)), sekunder * 1000)),
+]);
+
 // Prompten er den samme tankegang som robottens nye: emnet er opgaven, videoen
 // er research. Den er skrevet ud her frem for at importeres, fordi robotten
 // også skal producere titel, mærker, resumé og FAQ — her skal vi kun bruge
@@ -164,7 +175,7 @@ for (const k of valgte.slice(0, limit)) {
   let sidsteFejl = null;
   for (let forsoeg = 1; forsoeg <= 3; forsoeg++) {
   try {
-    const transcript = await YoutubeTranscript.fetchTranscript(k.id);
+    const transcript = await medTidsgraense(YoutubeTranscript.fetchTranscript(k.id), 45, 'transskript-hentning');
     const tekst = transcript.map((x) => x.text).join(' ');
     if (ordtal(tekst) < 150) throw new Error('transskript for kort til at skrive ud fra');
 
@@ -186,7 +197,7 @@ for (const k of valgte.slice(0, limit)) {
       // Her skal den forklare et emne, ikke digte.
       generationConfig: { maxOutputTokens: 16384, temperature: 0.4 },
     });
-    const res = await model.generateContent(byg(k.titel, felt(k.raw, 'summary'), spoergsmaal, tekst));
+    const res = await medTidsgraense(model.generateContent(byg(k.titel, felt(k.raw, 'summary'), spoergsmaal, tekst)), 120, 'Gemini');
 
     const finish = res.response?.candidates?.[0]?.finishReason;
     if (finish && finish !== 'STOP') throw new Error(`Gemini stoppede med "${finish}"`);
@@ -274,7 +285,7 @@ for (const k of valgte.slice(0, limit)) {
     // dét. Det er en langt lettere opgave end at skrive artiklen, og den gode
     // del af teksten overlever.
     if (mangler.length) {
-      const rep = await model.generateContent(
+      const rep = await medTidsgraense(model.generateContent(
         `Below is an article that is almost finished. Fix ONLY the specific faults listed, and change nothing else - keep the same structure, headings, length and wording everywhere else.
 
 FAULTS TO FIX:
@@ -284,7 +295,7 @@ Return the corrected article body in Markdown and nothing else. No preamble, no 
 
 ARTICLE:
 ${ny}`
-      );
+      ), 120, 'Gemini (reparation)');
       const repFinish = rep.response?.candidates?.[0]?.finishReason;
       if (!repFinish || repFinish === 'STOP') {
         const repareret = rep.response.text().trim()
