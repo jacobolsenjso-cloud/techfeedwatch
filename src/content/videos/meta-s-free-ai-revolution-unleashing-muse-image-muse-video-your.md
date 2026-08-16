@@ -12,8 +12,8 @@ tags:
   - "AI Video"
 summary: "Meta has significantly re-entered the generative AI space with a new image model, a free and competitive offering, and an upcoming video generation tool, Muse Video. These developments highlight a broader industry push toward more intelligent, controllable, and context-aware AI for visual content creation. The emergence of 'thinking' models and advanced techniques like pose and depth control marks a shift from simple text-to-image prompts to sophisticated video-to-video manipulation, promising unprecedented creative flexibility while still presenting technical challenges."
 duration: "20:45"
-viewCount: 34477
-viewsUpdated: "2026-08-13"
+viewCount: 34565
+viewsUpdated: "2026-08-16"
 thumbMax: true
 isShort: false
 revised: true

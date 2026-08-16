@@ -13,8 +13,8 @@ tags:
 summary: "Widespread speculation about AI replacing software developers has overlooked critical data. Recent studies show AI coding assistants can reduce developer productivity and introduce significant vulnerabilities. The distinction between programming and true software engineering skills now defines market value, prompting a quiet recalibration in tech hiring. Companies are re-evaluating the actual impact of AI on complex development workflows, recognizing the enduring need for human expertise."
 metaDescription: "Uncover the real impact of AI on software engineering jobs. Data reveals AI assistants reduce productivity and increase risks, reshaping tech hiring."
 duration: "15:33"
-viewCount: 78250
-viewsUpdated: "2026-08-13"
+viewCount: 79708
+viewsUpdated: "2026-08-16"
 thumbMax: true
 isShort: false
 faqs:
