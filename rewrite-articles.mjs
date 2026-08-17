@@ -21,6 +21,7 @@ import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { hentForslag } from './src/lib/suggest.mjs';
+import { flesch, TUNGE_ORD } from './src/lib/readability.mjs';
 
 const DIR = 'src/content/videos';
 const MIN_ORD = 700;
@@ -90,7 +91,14 @@ Write ONLY the article body in Markdown. Rules:
    words are banned and the article is rejected if any appears: delve, tapestry,
    realm, landscape, testament, crucial, robust, unlock, unleash, elevate,
    seamless, paradigm shift, "in today's digital age".
-11. No links, no images, no author bio, no sign-off.
+11. SENTENCE LENGTH: average under 20 words. This is measured and the article
+   is rejected above it. Technical terms have to stay - authentication is
+   called authentication - but everything around them should be ordinary
+   English. Write "use" not "utilize", "about" not "approximately", "shows"
+   not "demonstrates", "help" not "facilitate", "people" not "individuals",
+   "how it works" not "the implementation". A sentence with two clauses is
+   usually two sentences.
+12. No links, no images, no author bio, no sign-off.
 
 After the body, output a line containing only ---FAQ--- and then 4 questions
 and answers about the SUBJECT (not about any video), in exactly this format,
@@ -267,6 +275,22 @@ for (const k of valgte.slice(0, limit)) {
       )];
       if (ord.length) {
         ud.push(`These words are banned and must be replaced with plain alternatives: ${ord.join(', ')}.`);
+      }
+
+      // Læsbarhed. Sætningslængden er det eneste af de to input vi reelt kan
+      // styre — stavelser pr. ord er bundet af emnet, og "authentication"
+      // hedder det uanset hvad. Kortere sætninger er også dét der hjælper
+      // læseren mest.
+      const l = flesch(t);
+      if (l && l.ordPrSaetning > 21) {
+        ud.push(`Sentences average ${l.ordPrSaetning.toFixed(0)} words, which is too long. Split the longest ones. A sentence with two clauses joined by "and", "which" or a comma is usually two sentences. Aim for an average under 20 without making every sentence the same length.`);
+      }
+
+      // Latinsk fyld med almindelige alternativer. Fagord røres ikke.
+      const tunge = Object.keys(TUNGE_ORD)
+        .filter((w) => new RegExp(`\\b${w}\\b`, 'i').test(t));
+      if (tunge.length >= 4) {
+        ud.push(`Replace these with everyday words: ${tunge.slice(0, 8).map((w) => `${w} -> ${TUNGE_ORD[w]}`).join(', ')}. Keep genuine technical terms as they are.`);
       }
 
       // Spor efter en mislykket reparation. Står en vending som "a significant
