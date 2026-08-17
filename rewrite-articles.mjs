@@ -235,10 +235,23 @@ for (const k of valgte.slice(0, limit)) {
       if (/\bthe video\b|\bthis video\b|the speaker\b|the presenter\b/i.test(t)) {
         ud.push('Remove every mention of a video, a speaker or a presenter. Rewrite those sentences to be about the subject.');
       }
-      const tal = [...new Set(
-        (t.match(/\b\d{1,3}(?:[.,]\d+)?\s?(?:percent|%)|[$€£]\s?\d[\d.,]*(?:\s?(?:billion|million|trillion))?/gi) || [])
-          .map((x) => x.replace(/[\s,]/g, '').toLowerCase())
-      )].filter((x) => !kilde.includes(x));
+      // Alle tal, ikke kun procenter og beløb.
+      //
+      // Den første udgave så kun efter procenter og valuta, så "1,000 free
+      // transactions a month" slap igennem — en konkret prispåstand om et
+      // rigtigt produkt, som ikke stod i kilden. Et tal er et tal.
+      //
+      // Årstal og tal under 10 undtages: de er næsten altid modellens egne
+      // optællinger ("three ways", "5 steps") og ikke påstande om verden.
+      const tal = [...new Set((t.match(/\b\d[\d.,]*\b|\b\d{1,3}(?:[.,]\d+)?\s?(?:percent|%)|[$€£]\s?\d[\d.,]*(?:\s?(?:billion|million|trillion))?/gi) || [])
+        .map((x) => x.replace(/[\s,]/g, '').replace(/[.]$/, '').toLowerCase()))]
+        .filter((x) => {
+          const rent = x.replace(/[^\d.]/g, '');
+          if (/^(19|20)\d\d$/.test(rent)) return false;
+          if (Number(rent) < 10) return false;
+          return true;
+        })
+        .filter((x) => !kilde.includes(x));
       if (tal.length) {
         // Første udgave sagde "erstat tallet med 'a large share' eller 'a
         // significant sum'". Modellen gjorde præcis dét — mekanisk — og
