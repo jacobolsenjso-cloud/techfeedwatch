@@ -69,14 +69,20 @@ export function flesch(tekst) {
 // de hedder. Men det meste af en artikel er ikke fagord; det er bindeled, og
 // dér ligger gevinsten. "shows promise" er både kortere OG klarere end
 // "demonstrates significant potential".
+//
+// Ordklassen SKAL bevares. Listen sendes som instruktion til modellen, og
+// den bytter mekanisk. Da "capabilities" stod som 'what it can do' skrev
+// den "AI what it can do" og "Offline what it can do" — 31 artikler, og alle
+// automatiske kontroller bestod. Substantiv byttes til substantiv, adverbium
+// til adverbium. En sætning kan aldrig stå i stedet for et ord.
 export const TUNGE_ORD = {
   utilize: 'use', utilizes: 'uses', utilizing: 'using',
   approximately: 'about', additionally: 'also', furthermore: 'and',
   facilitate: 'help', facilitates: 'helps', demonstrates: 'shows',
   individuals: 'people', numerous: 'many', substantial: 'large',
   fundamental: 'basic', significant: 'large', significantly: 'much',
-  implementation: 'how it works', capabilities: 'what it can do',
-  functionality: 'what it does', methodologies: 'methods',
+  implementation: 'setup', capabilities: 'abilities',
+  functionality: 'features', methodologies: 'methods',
   subsequently: 'then', consequently: 'so', nevertheless: 'but',
   encompasses: 'covers', necessitates: 'needs', predominantly: 'mostly',
   ultimately: 'in the end', comprehensive: 'complete', optimal: 'best',
