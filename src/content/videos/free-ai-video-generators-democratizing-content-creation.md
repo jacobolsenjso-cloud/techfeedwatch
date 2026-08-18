@@ -43,7 +43,7 @@ While the term 'free' is appealing, it often comes with certain trade-offs. The 
 
 ## Key Features and How They Work
 
-Free AI video generators offer a range of features designed to simplify video production. The most common functions include text-to-video, where a written description is transformed into a visual scene. Image-to-video what it can do allow users to animate static images or build sequences from a series of pictures. Many tools also provide options for creating AI avatars that can narrate a script, adding a human-like element without needing a real presenter. Some advanced features include 'agent mode.' This can analyze viral trends and automatically create product videos tailored to those styles. Other tools build a detailed plan, including scripts and visual suggestions, before generating the final video. This planning step helps ensure the output aligns with the creator's vision.
+Free AI video generators offer a range of features designed to simplify video production. The most common functions include text-to-video, where a written description is transformed into a visual scene. Image-to-video abilities allow users to animate static images or build sequences from a series of pictures. Many tools also provide options for creating AI avatars that can narrate a script, adding a human-like element without needing a real presenter. Some advanced features include 'agent mode.' This can analyze viral trends and automatically create product videos tailored to those styles. Other tools build a detailed plan, including scripts and visual suggestions, before generating the final video. This planning step helps ensure the output aligns with the creator's vision.
 
 ## Choosing the Right Tool and Maximizing Output
 

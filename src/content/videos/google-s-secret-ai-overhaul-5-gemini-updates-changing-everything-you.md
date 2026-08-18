@@ -28,11 +28,11 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Google Gemini functions as an intelligent AI system integrated across many of Google's existing applications. It helps users automate complex tasks, translate languages in real time, and even create immersive digital worlds. By embedding advanced AI what it can do directly into everyday tools, Gemini aims to streamline workflows and enhance creative processes for a wide range of users.
+Google Gemini functions as an intelligent AI system integrated across many of Google's existing applications. It helps users automate complex tasks, translate languages in real time, and even create immersive digital worlds. By embedding advanced AI abilities directly into everyday tools, Gemini aims to streamline workflows and enhance creative processes for a wide range of users.
 
 ## Real-Time Communication with Live Translate
 
-One large use for Google Gemini is real-time voice translation. The Gemini 3.5 Live Translate feature allows for actual spoken words to be translated as you talk. This what it can do is now available in the Google Translate app, Google Meet, and through a developer API.
+One large use for Google Gemini is real-time voice translation. The Gemini 3.5 Live Translate feature allows for actual spoken words to be translated as you talk. This ability is now available in the Google Translate app, Google Meet, and through a developer API.
 
 Unlike older translation methods that required pauses, this new model translates continuously. It stays just a few seconds behind the original utterance. This design allows conversations to flow more naturally. It also preserves the tone, pace, and pitch of the original utterance. This means the translated voice does not sound robotic.
 
@@ -66,7 +66,7 @@ A large benefit of this feature is its synchronization. Notebooks sync across th
 
 ## Accelerating Text Generation for Developers
 
-The fifth new what it can do is Diffusion Gemma, an experimental open model from Google DeepMind. This tool is more technical. Most AI models write text one word at a time, moving from left to right. Diffusion Gemma operates differently. It begins with a block of messy placeholder tokens. It then refines the entire block at once until clean text appears. This process is similar to how an image model transforms a blurry mess into a sharp photo, but it applies to text.
+The fifth new ability is Diffusion Gemma, an experimental open model from Google DeepMind. This tool is more technical. Most AI models write text one word at a time, moving from left to right. Diffusion Gemma operates differently. It begins with a block of messy placeholder tokens. It then refines the entire block at once until clean text appears. This process is similar to how an image model transforms a blurry mess into a sharp photo, but it applies to text.
 
 This unique approach offers a large advantage in speed. Google states that Diffusion Gemma can achieve over a thousand tokens per second on a single high-end chip. This makes it up to four times faster than comparable models. It is also effective at editing and fixing formatting on the fly.
 

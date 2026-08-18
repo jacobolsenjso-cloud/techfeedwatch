@@ -42,7 +42,7 @@ Major financial institutions support this push for clarity. Firms managing a com
 
 The proposed Clarity Act seeks to establish a clear regulatory framework for digital assets. Its primary goal is to define the legal status of various cryptocurrencies. This would help determine which regulatory bodies have jurisdiction over them. For example, some digital assets might fall under securities law, while others might be treated as commodities.
 
-The legislation also aims to address concerns about illicit finance. It seeks to incorporate provisions that enhance law enforcement what it can do in the digital asset space. Over 25 provisions have been added to the bill to address these concerns. These changes aim to ensure that digital assets are not used for illegal activities. They also seek to protect consumers and maintain market integrity. The goal is to create good regulation that benefits anyone involved in digital assets.
+The legislation also aims to address concerns about illicit finance. It seeks to incorporate provisions that enhance law enforcement abilities in the digital asset space. Over 25 provisions have been added to the bill to address these concerns. These changes aim to ensure that digital assets are not used for illegal activities. They also seek to protect consumers and maintain market integrity. The goal is to create good regulation that benefits anyone involved in digital assets.
 
 ## Impact on Market Operations and Investor Protection
 

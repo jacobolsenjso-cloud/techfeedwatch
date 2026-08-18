@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-An AI automation side hustle involves using artificial intelligence tools to automate tasks and generate income outside of a primary job. This approach allows people to create new revenue streams, often with less manual effort once systems are established. It uses AI's what it can do to streamline processes in areas like content creation, marketing, and business operations, empowering people to build businesses or supplement their income without needing extensive technical skills.
+An AI automation side hustle involves using artificial intelligence tools to automate tasks and generate income outside of a primary job. This approach allows people to create new revenue streams, often with less manual effort once systems are established. It uses AI's abilities to streamline processes in areas like content creation, marketing, and business operations, empowering people to build businesses or supplement their income without needing extensive technical skills.
 
 ## The Drive Behind AI Automation Side Hustles
 
