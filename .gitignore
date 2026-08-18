@@ -32,3 +32,11 @@ audit-*.json
 
 # jetbrains setting folder
 .idea/
+
+# Arbejdsfiler fra bunke-koersler og status-scripts
+_*.txt
+_*.out
+_*.err
+_*.json
+_*.ps1
+
