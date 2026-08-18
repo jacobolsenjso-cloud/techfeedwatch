@@ -12,8 +12,8 @@ tags:
   - "Fintech"
 summary: "Blockchain technology introduces a fundamentally new way to establish trust and maintain shared records across disparate entities without central authority. It provides a distributed ledger where transactions are immutable and transparent, forming a basis for verifiable 'common knowledge' in digital environments. This innovation challenges traditional centralized systems, particularly in finance with cryptocurrencies, by redesigning how value is exchanged and validated. However, its widespread adoption hinges on resolving inherent tensions between scalability, security, and true decentralization."
 duration: "1:53:42"
-viewCount: 527018
-viewsUpdated: "2026-08-16"
+viewCount: 527031
+viewsUpdated: "2026-08-18"
 thumbMax: true
 isShort: false
 revised: true

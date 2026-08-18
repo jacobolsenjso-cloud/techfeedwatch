@@ -11,8 +11,8 @@ tags:
 summary: "The United States' current AI strategy prioritizes hardware while largely overlooking the rapidly evolving open-source AI model ecosystem. This creates a strategic vulnerability as global competitors, particularly China, advance in developing foundational open-weight models. Securing leadership in open-source AI is critical for national innovation, economic competitiveness, and data sovereignty. Addressing this gap requires a coherent policy framework that balances security concerns with fostering widespread development and adoption."
 metaDescription: "Understand the critical need for a US open-source AI strategy. Explore the benefits, risks, and economic implications of open-weight models."
 duration: "10:45"
-viewCount: 149353
-viewsUpdated: "2026-08-16"
+viewCount: 152739
+viewsUpdated: "2026-08-18"
 thumbMax: true
 isShort: false
 faqs:

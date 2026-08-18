@@ -11,8 +11,8 @@ tags:
 summary: "Modern organizations face an escalating threat landscape, demanding proactive cybersecurity risk management. Effective strategies move beyond reactive measures, integrating threat intelligence, robust compliance frameworks, and governance. This comprehensive approach safeguards critical data and ensures business resilience against sophisticated cyber threats."
 metaDescription: "Learn about cybersecurity risk management, threat intelligence, and compliance frameworks. Protect your enterprise data and systems from evolving cyber…"
 duration: "27:01"
-viewCount: 63
-viewsUpdated: "2026-08-16"
+viewCount: 67
+viewsUpdated: "2026-08-18"
 thumbMax: true
 isShort: false
 faqs:
