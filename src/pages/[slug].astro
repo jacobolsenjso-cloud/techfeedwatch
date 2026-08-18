@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { durationToSeconds, formatSpan } from '../lib/time-saved.mjs';
+import { TOOLS } from '../lib/tools';
 
 export async function getStaticPaths() {
   const pages = Object.values(import.meta.glob('../content/pages/*.md', { eager: true }));
@@ -11,8 +12,16 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props;
-const { Content } = page;
 const { title, description } = page.frontmatter;
+
+// Tal i brødteksten regnes ved build. Markdown skriver {{TOOLS}} og
+// {{GLOSSARY}}; her byttes de ud i den færdige HTML. /start-here sagde
+// "thirty-four free tools" mens der var 35, og forsiden sagde 35 — to tal
+// for det samme, ét af dem forkert. Nu er der ét sted der tæller.
+const glossaryCount = Object.keys(import.meta.glob('../content/glossary/*.md')).length;
+const html = (await page.compiledContent())
+  .replaceAll('{{TOOLS}}', String(TOOLS.length))
+  .replaceAll('{{GLOSSARY}}', String(glossaryCount));
 
 // Samlet video-tid mod samlet læsetid. Regnes ved build, så tallet vokser af
 // sig selv når robotten udgiver — ingen har et tal at huske at rette.
@@ -99,7 +108,7 @@ if (showTally) {
         </p>
       </div>
     )}
-    <Content />
+    <div set:html={html} />
   </article>
 
 </MainLayout>

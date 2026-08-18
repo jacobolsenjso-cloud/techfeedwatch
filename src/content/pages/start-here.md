@@ -25,9 +25,9 @@ So that is what this site does. Every article here is the short version of a rea
 
 **[Guides](/guides)** — longer pieces I write myself, one per subject, drawing on everything the site has covered.
 
-**[Glossary](/glossary)** — fifty terms explained for someone who wants the answer in thirty seconds and the reason underneath it. Terms in articles link here automatically.
+**[Glossary](/glossary)** — {{GLOSSARY}} terms explained for someone who wants the answer in thirty seconds and the reason underneath it. Terms in articles link here automatically.
 
-**[Tools](/tools)** — thirty-four free tools. They run entirely in your browser: nothing you paste is uploaded, and nothing is stored.
+**[Tools](/tools)** — {{TOOLS}} free tools. They run entirely in your browser: nothing you paste is uploaded, and nothing is stored.
 
 **[Trends](/trends)** — which companies, models and protocols come up most across the whole archive, with the method and its limits stated on the page.
 
