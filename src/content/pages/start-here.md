@@ -19,7 +19,7 @@ So that is what this site does. Every article here is the short version of a rea
 
 ## What is here
 
-**[Latest](/latest)** — the newest articles. Four are published a day.
+**[Latest](/latest)** — the newest articles. When the system is running, four are published a day.
 
 **[Best of each topic](/popular)** — the source videos that most outperformed their own channel's average, five per subject. This is the page to browse if you want the good stuff rather than the recent stuff, and it is built so a small channel with a strong video can beat a large one.
 
