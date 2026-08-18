@@ -181,7 +181,14 @@ for (const k of valgte.slice(0, limit)) {
   // egenskab ved artiklen, men ved den enkelte generering. Uden gentagelse
   // kasserer vi artikler der ville være fine i andet forsøg.
   let sidsteFejl = null;
+  // Samlet frist pr. artikel. Tre forsøg med hver sit transskript-, generings-
+  // og reparationskald kan lovligt tage 15 minutter, og så ser kørslen død ud
+  // uden at være det — det kostede en unødig standsning midt i bunke 5.
+  // Fire minutter er nok til to fulde forsøg; er artiklen ikke i hus da,
+  // koster den mere end den er værd.
+  const frist = Date.now() + 4 * 60 * 1000;
   for (let forsoeg = 1; forsoeg <= 3; forsoeg++) {
+    if (Date.now() > frist) { sidsteFejl = sidsteFejl || 'tog for lang tid'; break; }
   try {
     const transcript = await medTidsgraense(YoutubeTranscript.fetchTranscript(k.id), 45, 'transskript-hentning');
     const tekst = transcript.map((x) => x.text).join(' ');
