@@ -102,14 +102,36 @@ console.log(`\nSkrevet: ${written}  ·  uændret: ${unchanged}  ·  uden svar fr
 // Ét punkt om ugen pr. video. Jobbet kører hver tredje dag, så uden en
 // mindsteafstand ville filen vokse tre gange hurtigere end den behøver.
 // Ingen bagudrettede punkter: vi ved ikke hvad tallet var i går.
+// YouTube ændrede optællingen 24. august 2026: en visning tælles nu fra det
+// øjeblik afspilningen starter, uden krav om minimums-seetid. Tallene springer
+// op på én dag for hver eneste video, og det er en definitionsændring — ikke
+// interesse.
+//
+// Uden dette skel ville "Still gaining" rapportere vækst på hele arkivet den
+// dag, og påstå at det betød noget. Punkter markeres derfor med hvilken æra de
+// er målt i, og der sammenlignes aldrig hen over skellet.
+//
+// Det gamle mål lever videre som "Engaged Views", men kun i Analytics API'et,
+// som kræver at man ejer kanalen. Vi har kun en offentlig nøgle til 234
+// kanaler vi ikke ejer, så der er intet valg at træffe — kun et brud at
+// markere ærligt.
+const NY_OPTAELLING_FRA = '2026-08-24';
+const aera = (dato) => (dato >= NY_OPTAELLING_FRA ? 2 : 1);
+
 const HIST = 'src/data/view-history.json';
 const MIN_DAYS = 6;
 const MAX_POINTS = 60;   // ca. et års ugentlige punkter pr. video
 
-let hist = { method: 'Visninger på kildevideoen, ét punkt pr. uge. Ikke bagudrettet.', videos: {} };
+let hist = { method: 'Visninger på kildevideoen, ét punkt pr. uge. Ikke bagudrettet. Tredje felt er æra: 1 = før YouTubes ændring 24. aug 2026, 2 = efter. Punkter fra to æraer må ikke sammenlignes.', videos: {} };
 if (fs.existsSync(HIST)) {
   try { hist = JSON.parse(fs.readFileSync(HIST, 'utf8')); }
   catch (e) { console.error(`Kunne ikke læse ${HIST}: ${e.message} — starter forfra`); }
+}
+
+// Punkter gemt før skellet blev bygget mangler æra-feltet. De er alle målt før
+// 24. august, så de hører til æra 1.
+for (const rec of Object.values(hist.videos)) {
+  for (const p of rec.points) if (p.length < 3) p.push(aera(p[0]));
 }
 
 const daysBetween = (a, b) => Math.abs(new Date(a) - new Date(b)) / 86400000;
@@ -121,7 +143,7 @@ for (const e of entries) {
   const rec = hist.videos[e.id] || (hist.videos[e.id] = { points: [] });
   const last = rec.points[rec.points.length - 1];
   if (last && daysBetween(last[0], today) < MIN_DAYS) { tooSoon++; continue; }
-  rec.points.push([today, v]);
+  rec.points.push([today, v, aera(today)]);
   if (rec.points.length > MAX_POINTS) rec.points = rec.points.slice(-MAX_POINTS);
   added++;
 }

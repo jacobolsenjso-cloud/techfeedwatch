@@ -36,11 +36,25 @@ const timeCompare = compareTimes(video.frontmatter.duration, video.frontmatter.m
 // Formuleringen siger "siden vi begyndte at følge den" og ikke "siden den
 // udkom": vi ved kun hvad tallet var da vi første gang skrev det ned.
 // Vises kun ved mærkbar vækst — under det er det støj, ikke en historie.
-const vhPoints: [string, number][] = (viewHistory as any).videos?.[youtubeId]?.points || [];
+// Tredje felt er æraen: 1 = før YouTubes ændring 24. august 2026, 2 = efter.
+// Ældre punkter mangler feltet og er alle fra æra 1.
+const vhPoints: [string, number, number?][] = (viewHistory as any).videos?.[youtubeId]?.points || [];
 const viewGrowth = (() => {
-  if (vhPoints.length < 2) return null;
-  const [firstDate, firstCount] = vhPoints[0];
-  const [, lastCount] = vhPoints[vhPoints.length - 1];
+  // Sammenlign KUN inden for samme æra.
+  //
+  // Den 24. august 2026 begyndte YouTube at tælle en visning fra afspilningen
+  // starter, uden krav om seetid. Tallene sprang op på alle videoer den dag.
+  // Uden denne afgrænsning ville siden melde vækst på hele arkivet og påstå at
+  // det betød noget — det ville være en definitionsændring udgivet som
+  // interesse.
+  //
+  // Prisen er at feltet er tavst i nogle uger efter skiftet, indtil den nye
+  // serie har to punkter. Et tavst felt er bedre end et der lyver.
+  const sidsteAera = vhPoints.length ? (vhPoints[vhPoints.length - 1][2] ?? 1) : 1;
+  const punkter = vhPoints.filter((p) => (p[2] ?? 1) === sidsteAera);
+  if (punkter.length < 2) return null;
+  const [firstDate, firstCount] = punkter[0];
+  const [, lastCount] = punkter[punkter.length - 1];
   const gained = lastCount - firstCount;
   if (gained < 1000 || !firstCount || gained / firstCount < 0.05) return null;
   return {
