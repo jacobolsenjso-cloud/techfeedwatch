@@ -143,7 +143,10 @@ export default defineConfig({
         // Sider der bevidst er noindex hører ikke hjemme i sitemappet — Google
         // advarer om det i Search Console. /offline vises kun af service
         // workeren; history og watch-later er personlige og bor i browseren.
-        if (/^\/(offline|history|watch-later)\/?$/.test(pathname)) return false;
+        // /search har ingen tekst uden JS. Paginering fra side 2 og frem er
+        // rene lister på 130-160 ord — 40 tynde sider i indekset uden grund.
+        if (/^\/(offline|history|watch-later|search)\/?$/.test(pathname)) return false;
+        if (/\/page\/\d+\/?$/.test(pathname)) return false;
         const match = pathname.match(/^\/video\/([^/]+)\/?$/);
         return match ? !shortSlugs.has(match[1]) : true;
       },

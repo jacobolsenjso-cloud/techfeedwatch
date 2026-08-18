@@ -47,7 +47,7 @@ const excerpt = (text: string, max = 145) => {
 const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed Watch archive — written analysis of AI, tech, fintech and crypto videos, newest first.`;
 ---
 
-<MainLayout title={`All Articles – Page ${page.currentPage}`} description={pageDesc}>
+<MainLayout noindex title={`All Articles – Page ${page.currentPage}`} description={pageDesc}>
 
   <style is:global>
     /* --- CSS specifik for forsiden (delt struktur med index.astro) --- */
