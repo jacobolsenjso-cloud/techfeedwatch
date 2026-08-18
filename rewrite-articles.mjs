@@ -57,7 +57,7 @@ supplied below.
 The article's headline and summary are already fixed:
 HEADLINE: ${titel}
 SUMMARY: ${resume}
-${spoergsmaal ? `\nTHE READER'S QUESTION: someone searching Google typed "${spoergsmaal}". That question is this article's job. Answer it plainly early on.\n` : ''}
+${spoergsmaal ? `\nTHE READER'S QUESTION: someone searching Google typed "${spoergsmaal}". That question is this article's job. Answer it plainly early on. If the material does not answer it, write the article without it - never state that information is missing or unavailable.\n` : ''}
 Write ONLY the article body in Markdown. Rules:
 
 1. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write about the topic itself, the
@@ -196,12 +196,23 @@ for (const k of valgte.slice(0, limit)) {
 
     // Har artiklen intet gemt spørgsmål, hentes ét ud fra titlen. Det giver
     // omskrivningen et mål — uden det bliver den let til et pænere referat.
+    //
+    // Frøet er ordene EFTER kolon/tankestreg hvis der er et. "Linus
+    // Torvalds: AI in Programming" gav frøet "Linus Torvalds", autocomplete
+    // svarede "linus torvalds net worth", og modellen skrev "Information
+    // regarding Linus Torvalds' net worth is not available in the research
+    // material" midt i artiklen. Et navn som frø giver personsøgninger.
+    // Svar der ligner personsøgninger kasseres uanset.
     let spoergsmaal = k.spoergsmaal;
     if (!spoergsmaal) {
-      const froe = k.titel.split(/[:\u2013\u2014|]/)[0].trim().split(/\s+/).slice(0, 4).join(' ');
+      const dele = k.titel.split(/[:\u2013\u2014|]/).map((d) => d.trim()).filter(Boolean);
+      const emne = dele.length > 1 ? dele[1] : dele[0];
+      const froe = emne.split(/\s+/).slice(0, 4).join(' ');
+      const PERSON = /\b(net worth|age|wife|husband|girlfriend|boyfriend|height|salary|house|dead|death|died|kids|children|family|religion|nationality)\b/i;
       try {
         const f = await hentForslag(froe);
-        if (f.length) spoergsmaal = f[0];
+        const brugbart = f.find((s) => !PERSON.test(s));
+        if (brugbart) spoergsmaal = brugbart;
       } catch { /* autocomplete er en forbedring, ikke en forudsætning */ }
     }
 
@@ -313,6 +324,17 @@ for (const k of valgte.slice(0, limit)) {
       ].some((re) => re.test(t));
       if (klodset) {
         ud.push('A number was swapped for a vague phrase and the sentence no longer makes sense - for example a list of amounts ending in "a significant sum", or a return calculated from "a significant sum". Rewrite those sentences properly so they read naturally without any number, or remove them.');
+      }
+
+      // Modellen taler om sit eget grundlag. Slap igennem én gang:
+      // "Information regarding Linus Torvalds' net worth is not available in
+      // the research material for this article." Alle øvrige kontroller
+      // bestod. Årsagen var et autocomplete-spørgsmål der ikke kunne
+      // besvares; det er lukket ovenfor, men sætningen kan opstå af andre
+      // grunde og skal fanges uanset.
+      const meta = t.match(/[^.\n]*\b(not (?:available|provided|covered|mentioned|included) in the (?:research|source|provided|available) (?:material|content|information|text)|the research material|based on the (?:available|provided) (?:material|information)|the source (?:material )?does not (?:mention|cover|provide|say))\b[^.\n]*/i);
+      if (meta) {
+        ud.push(`This sentence talks about the article's own sources and must be deleted entirely, not rephrased: "${meta[0].trim()}". Never tell the reader what the material does or does not contain.`);
       }
       return ud;
     };
