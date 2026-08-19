@@ -80,7 +80,7 @@ export const TUNGE_ORD = {
   approximately: 'about', additionally: 'also', furthermore: 'and',
   facilitate: 'help', facilitates: 'helps', demonstrates: 'shows',
   individuals: 'people', numerous: 'many', substantial: 'large',
-  fundamental: 'basic', significant: 'major', significantly: 'greatly',
+  significant: 'major', significantly: 'greatly',
   implementation: 'setup', capabilities: 'abilities',
   functionality: 'features', methodologies: 'methods',
   subsequently: 'then', consequently: 'so', nevertheless: 'but',

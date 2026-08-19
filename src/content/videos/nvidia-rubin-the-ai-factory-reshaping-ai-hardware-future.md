@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-NVIDIA's Rubin platform represents a basic shift in how AI hardware is conceived and built. It moves beyond individual processing units to offer an integrated "AI factory" designed for the demanding needs of large-scale artificial intelligence. This holistic approach combines various components into a single, highly optimized system, aiming to streamline the creation and deployment of advanced AI models.
+NVIDIA's Rubin platform represents a fundamental shift in how AI hardware is conceived and built. It moves beyond individual processing units to offer an integrated "AI factory" designed for the demanding needs of large-scale artificial intelligence. This holistic approach combines various components into a single, highly optimized system, aiming to streamline the creation and deployment of advanced AI models.
 
 ## The AI Factory: A Co-Designed System
 The Rubin platform is more than just a new generation of GPUs. It is a complete system, engineered from the ground up to work as a unified whole. NVIDIA refers to this design philosophy as "extreme co-design." Instead of developing a powerful GPU and expecting other data center components to keep pace, Rubin integrates every part simultaneously. This ensures all elements communicate with minimal friction.

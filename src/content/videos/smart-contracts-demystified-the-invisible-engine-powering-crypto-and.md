@@ -35,7 +35,7 @@ Smart contracts, sometimes called distributed applications, are self-executing d
 
 The core concept of a smart contract emerged long before modern blockchain technology. Computer scientist, legal scholar, and cryptographer Nick Szabo first introduced the term "smart contract" in 1997. His vision involved using a distributed ledger to store and manage contracts. This was a groundbreaking idea for its time, predating the creation of Bitcoin.
 
-In essence, a smart contract functions much like a traditional contract. The basic difference lies in its digital nature. It exists entirely as code. This code is embedded within a blockchain. It acts as a self-executing agreement. The contract automatically carries out its predefined actions. It does this when specific, pre-agreed conditions are met. This digital architecture removes the necessity for any central authority. No third party is needed to oversee or enforce the agreement.
+In essence, a smart contract functions much like a traditional contract. The fundamental difference lies in its digital nature. It exists entirely as code. This code is embedded within a blockchain. It acts as a self-executing agreement. The contract automatically carries out its predefined actions. It does this when specific, pre-agreed conditions are met. This digital architecture removes the necessity for any central authority. No third party is needed to oversee or enforce the agreement.
 
 ## How Smart Contracts Operate
 

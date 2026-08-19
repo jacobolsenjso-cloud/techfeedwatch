@@ -43,7 +43,7 @@ The observation of interference patterns with particles led to the idea that par
 
 This interpretation explains the double-slit experiment's strange results. A single particle, in a quantum mechanical sense, passes through both openings simultaneously. Its associated probability wave then interferes with itself. This creates the interference pattern on the screen. When the particle finally interacts with the detector screen, its wave function "collapses." The particle appears at a single, definite point, but the overall pattern built up by many such particles reflects the underlying probability wave.
 
-Unlike classical probabilities, which are always positive, these quantum probability amplitudes can have positive or negative values. This allows for the interference effects where probabilities can increase, decrease, or even cancel each other out. This basic difference is key to how quantum computers operate.
+Unlike classical probabilities, which are always positive, these quantum probability amplitudes can have positive or negative values. This allows for the interference effects where probabilities can increase, decrease, or even cancel each other out. This fundamental difference is key to how quantum computers operate.
 
 ## Qubits and Superposition
 
@@ -67,4 +67,4 @@ While the theoretical underpinnings of quantum computing have been around for a 
 
 However, quantum computing remains in its early stages. Building and maintaining stable qubits is a major engineering challenge. Quantum states are very fragile and easily disturbed by their environment, leading to errors. This phenomenon, called decoherence, makes it difficult to keep qubits in superposition and entanglement for long enough to perform complex calculations.
 
-Despite these hurdles, the potential of quantum computing is immense. It represents a basic shift in how information can be processed. While it will not replace conventional digital systems for most tasks, it promises exponential speedups for specific, currently intractable problems in fields like drug discovery, materials science, and cryptography. The journey from theoretical understanding to widespread application is long, but progress continues at a rapid pace.
+Despite these hurdles, the potential of quantum computing is immense. It represents a fundamental shift in how information can be processed. While it will not replace conventional digital systems for most tasks, it promises exponential speedups for specific, currently intractable problems in fields like drug discovery, materials science, and cryptography. The journey from theoretical understanding to widespread application is long, but progress continues at a rapid pace.
