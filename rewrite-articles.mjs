@@ -95,9 +95,10 @@ Write ONLY the article body in Markdown. Rules:
    is rejected above it. Technical terms have to stay - authentication is
    called authentication - but everything around them should be ordinary
    English. Write "use" not "utilize", "about" not "approximately", "shows"
-   not "demonstrates", "help" not "facilitate", "people" not "individuals",
-   "how it works" not "the implementation". A sentence with two clauses is
-   usually two sentences.
+   not "demonstrates", "help" not "facilitate". Bring the average down by
+   cutting words, not by chopping every sentence in two: a paragraph of
+   six-word sentences reads like a machine wrote it. Vary the length - some
+   sentences of five words, some of twenty-five.
 12. No links, no images, no author bio, no sign-off.
 
 After the body, output a line containing only ---FAQ--- and then 4 questions
@@ -341,6 +342,17 @@ for (const k of valgte.slice(0, limit)) {
       const meta = t.match(/[^.\n]*\b(not (?:available|provided|covered|mentioned|included) in the (?:research|source|provided|available) (?:material|content|information|text)|the research material|based on the (?:available|provided) (?:material|information)|the source (?:material )?does not (?:mention|cover|provide|say))\b[^.\n]*/i);
       if (meta) {
         ud.push(`This sentence talks about the article's own sources and must be deleted entirely, not rephrased: "${meta[0].trim()}". Never tell the reader what the material does or does not contain.`);
+      }
+
+      // Stakkato. Grænsen på 20 ord i snit fik modellen til at kløve i
+      // stedet for at stramme: "They perform the daily tasks. The benefits
+      // are clear." Målt: 12 af 354 artikler med over 35 % sætninger på
+      // højst 8 ord, mod 5 % i resten. Alle bestod snittet. Grænsen er
+      // 30 % så en almindelig artikel med nogle korte sætninger går fri.
+      const saetn = t.replace(/^#.*$/gm, '').split(/(?<=[.!?])\s+/).map((s) => s.trim().split(/\s+/).length).filter((n) => n >= 3);
+      const korte = saetn.filter((n) => n <= 8).length / Math.max(1, saetn.length);
+      if (saetn.length >= 20 && korte > 0.30) {
+        ud.push(`${Math.round(korte * 100)}% of the sentences are eight words or fewer. That reads as machine rhythm. Join related short sentences into longer ones where the meaning flows; keep the average under 20 but vary the length.`);
       }
       return ud;
     };
