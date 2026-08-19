@@ -258,8 +258,14 @@ for (const k of valgte.slice(0, limit)) {
     // Alle kontroller ét sted, så de kan køres igen efter en reparation.
     const tjek = (t) => {
       const ud = [];
-      if (/\bthe video\b|\bthis video\b|the speaker\b|the presenter\b/i.test(t)) {
-        ud.push('Remove every mention of a video, a speaker or a presenter. Rewrite those sentences to be about the subject.');
+      // "the video" er kildevideoen når den forklarer, viser eller siger
+      // noget — ikke når artiklen handler om videoer. meta-ai-s-secret-weapon
+      // (om et video-generator-værktøj) fejlede seks forsøg i træk fordi
+      // "the video it produces" og "export the video" ramte \bthe video\b.
+      // Nu kræves et verbum eller en indledning der peger på KILDEN.
+      const kildevideo = /\b(in|from|throughout|according to|as) (the|this) video\b|\b(the|this) video (explains|shows|argues|covers|says|suggests|walks|breaks|discusses|highlights|notes|points|demonstrates|goes|makes|presents|reveals|claims|describes|outlines|mentions|recommends|warns|concludes|opens|begins|ends|starts)\b|\bthe speaker\b|\bthe presenter\b/i;
+      if (kildevideo.test(t)) {
+        ud.push('Remove every mention of the source video, its speaker or its presenter. Rewrite those sentences to be about the subject.');
       }
       // Alle tal, ikke kun procenter og beløb.
       //
