@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (1348) ---
+# --- Statiske (1358) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/ucUdfiq2KiY/ /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech 301
@@ -365,8 +365,8 @@
 /video/I0me2uEbfuE/ /video/demystifying-ai-your-20-minute-blueprint-to-understanding-every/ 301
 /video/hrPKtWVE_bo /video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude/ 301
 /video/hrPKtWVE_bo/ /video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude/ 301
-/video/lx0lVq8geoo /video/dominating-google-why-seo-is-non-negotiable-for-online-visibility-and/ 301
-/video/lx0lVq8geoo/ /video/dominating-google-why-seo-is-non-negotiable-for-online-visibility-and/ 301
+/video/lx0lVq8geoo /video/the-enduring-imperative-why-on-page-seo-remains-a-pillar-of-digital/ 301
+/video/lx0lVq8geoo/ /video/the-enduring-imperative-why-on-page-seo-remains-a-pillar-of-digital/ 301
 /video/Yv7RvGtqkH8 /tag/ai-tech 301
 /video/Yv7RvGtqkH8/ /tag/ai-tech 301
 /video/mZYTXnyixaM /tag/crypto 301
@@ -479,8 +479,8 @@
 /video/NJi0QnsSxMs/ /tag/crypto 301
 /video/rh7EHlpd1eY /tag/business-money 301
 /video/rh7EHlpd1eY/ /tag/business-money 301
-/video/89gnHLDnOdE /video/hype-or-harmony-why-quantum-computing-won-t-replace-ai-but-power-its/ 301
-/video/89gnHLDnOdE/ /video/hype-or-harmony-why-quantum-computing-won-t-replace-ai-but-power-its/ 301
+/video/89gnHLDnOdE /video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/ 301
+/video/89gnHLDnOdE/ /video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/ 301
 /video/ecXpyw06p0I /tag/ai-tech 301
 /video/ecXpyw06p0I/ /tag/ai-tech 301
 /video/5MpKW68dcT8 /tag/ai-tech 301
@@ -545,8 +545,8 @@
 /video/dQRhn_pBiUM/ /tag/fintech 301
 /video/cqDQV5g7zHo /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
 /video/cqDQV5g7zHo/ /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
-/video/MbqSMgMAzxU /video/monetizing-apis-a-practical-guide-for-developers-and-saas-builders/ 301
-/video/MbqSMgMAzxU/ /video/monetizing-apis-a-practical-guide-for-developers-and-saas-builders/ 301
+/video/MbqSMgMAzxU /video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s/ 301
+/video/MbqSMgMAzxU/ /video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s/ 301
 /video/Zb2ZEhs_5hI /tag/ai-tech 301
 /video/Zb2ZEhs_5hI/ /tag/ai-tech 301
 /video/9E3iNGPNKDY /tag/ai-tech 301
@@ -725,8 +725,8 @@
 /video/YLdLaqTXc_o/ /tag/ai-tech 301
 /video/46vC7-BwJ_o /video/the-ai-search-revolution-why-generative-engine-optimization-replaces/ 301
 /video/46vC7-BwJ_o/ /video/the-ai-search-revolution-why-generative-engine-optimization-replaces/ 301
-/video/gUvSjFO15G0 /video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new/ 301
-/video/gUvSjFO15G0/ /video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new/ 301
+/video/gUvSjFO15G0 /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
+/video/gUvSjFO15G0/ /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
 /video/PFsbWAC4_rk /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
 /video/PFsbWAC4_rk/ /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
 /video/JJCq21Dc-Us /video/the-algorithmic-advantage-why-machine-learning-is-now-your-essential/ 301
@@ -1351,6 +1351,16 @@
 /shorts/ /library 301
 /video/achieving-financial-freedom-how-smart-investing-works /video/financial-freedom-investing-building-wealth-intentionally 301
 /video/achieving-financial-freedom-how-smart-investing-works/ /video/financial-freedom-investing-building-wealth-intentionally 301
+/video/dominating-google-why-seo-is-non-negotiable-for-online-visibility-and /video/the-enduring-imperative-why-on-page-seo-remains-a-pillar-of-digital/ 301
+/video/dominating-google-why-seo-is-non-negotiable-for-online-visibility-and/ /video/the-enduring-imperative-why-on-page-seo-remains-a-pillar-of-digital/ 301
+/video/hype-or-harmony-why-quantum-computing-won-t-replace-ai-but-power-its /video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/ 301
+/video/hype-or-harmony-why-quantum-computing-won-t-replace-ai-but-power-its/ /video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/ 301
+/video/monetizing-apis-a-practical-guide-for-developers-and-saas-builders /video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s/ 301
+/video/monetizing-apis-a-practical-guide-for-developers-and-saas-builders/ /video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s/ 301
+/video/securing-ai-agents-on-aws-new-attack-surface-demands-proactive-defense /video/zero-trust-for-ai-agents-securing-autonomous-systems/ 301
+/video/securing-ai-agents-on-aws-new-attack-surface-demands-proactive-defense/ /video/zero-trust-for-ai-agents-securing-autonomous-systems/ 301
+/video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
+/video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new/ /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
