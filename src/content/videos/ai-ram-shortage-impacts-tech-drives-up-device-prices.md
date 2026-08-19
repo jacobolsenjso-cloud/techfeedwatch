@@ -11,8 +11,8 @@ tags:
 summary: "The burgeoning demand from artificial intelligence applications is creating an acute RAM shortage, particularly for High Bandwidth Memory (HBM). This unprecedented demand stresses the global semiconductor supply chain, leading to significant price increases across consumer electronics and advanced computing hardware. The situation underscores a critical bottleneck in the hardware foundation required for continued AI expansion."
 metaDescription: "The AI RAM shortage is creating significant pressure on global semiconductor supply, driving up costs for consumer electronics and advanced computing…"
 duration: "21:05"
-viewCount: 1360293
-viewsUpdated: "2026-08-18"
+viewCount: 1360523
+viewsUpdated: "2026-08-19"
 thumbMax: true
 isShort: false
 faqs:

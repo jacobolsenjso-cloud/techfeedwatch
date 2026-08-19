@@ -10,8 +10,8 @@ tags:
   - "AI & Tech"
 summary: "Current mainstream AI models, predominantly deep neural networks like Large Language Models (LLMs), face inherent architectural constraints preventing them from achieving Artificial General Intelligence (AGI). These limitations stem from their purpose-bound design, susceptibility to prompt injection, and an inability to truly generalize or perform abstract reasoning beyond their training data. While useful for specific tasks, their foundational structure suggests they will not independently evolve into human-level intelligence, necessitating different research paths for AGI."
 duration: "8:01"
-viewCount: 1151691
-viewsUpdated: "2026-08-18"
+viewCount: 1151863
+viewsUpdated: "2026-08-19"
 thumbMax: true
 isShort: false
 revised: true

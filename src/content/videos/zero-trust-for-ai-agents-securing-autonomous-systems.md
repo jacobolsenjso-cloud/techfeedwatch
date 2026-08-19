@@ -11,8 +11,8 @@ tags:
 summary: "As AI agents become more autonomous and integrated into enterprise operations, new security challenges emerge beyond traditional human and device-centric models. Zero Trust principles offer a critical framework for securing these non-human identities and their interactions. This approach mandates continuous verification and strict access controls, directly addressing threats like prompt injection and ensuring the integrity of AI-driven processes. Organizations adopting AI must extend their security perimeters to encompass these intelligent systems."
 metaDescription: "Implement Zero Trust for AI agents. Learn how to secure autonomous systems, combat prompt injection, and protect non-human identities."
 duration: "13:33"
-viewCount: 189252
-viewsUpdated: "2026-08-18"
+viewCount: 189459
+viewsUpdated: "2026-08-19"
 thumbMax: true
 isShort: false
 faqs:
