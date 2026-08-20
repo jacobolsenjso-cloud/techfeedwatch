@@ -72,6 +72,10 @@ const description = "Generate a complete, valid set of HTML head meta tags — t
       <h2>Which meta tags actually matter?</h2>
       <p>A handful of head tags do the heavy lifting. The title tag is the single most important on-page SEO element and shows as the clickable headline in search results — aim for roughly 50–60 characters. The meta description does not directly affect ranking, but a compelling one (around 150–160 characters) improves click-through. The canonical tag prevents duplicate-content problems by naming the preferred URL, and the robots tag controls whether a page is indexed and its links followed.</p>
       <p>The charset and viewport tags are technical essentials every page needs for correct rendering and mobile responsiveness. Paste the full block into your &lt;head&gt; and adjust per page — especially the title, description, and canonical, which should be unique for every URL.</p>
+      <h2>The two tags that quietly cause the most damage</h2>
+      <p>The robots dropdown deserves respect: "noindex, nofollow" copied onto the wrong page removes it from search, and because nothing visibly breaks, the mistake is usually discovered weeks later in an analytics graph. The canonical is the same species of risk - point it at the wrong URL and you have told Google the page is a duplicate of something else. Both tags do exactly what they say; the danger is entirely in pasting a block built for one page onto another.</p>
+      <h2>Limits</h2>
+      <p>This generator covers the head tags every page needs. It deliberately leaves out social preview tags - Open Graph and Twitter Cards have their own generator on this site with a live preview - and site-verification tags, which the services hand you themselves. The length hints follow the character conventions; as with any snippet, the search engine has the final word on what it displays.</p>
     </div>
   </div>
 

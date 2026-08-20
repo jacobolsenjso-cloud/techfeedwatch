@@ -69,6 +69,10 @@ The best tech, explained.</textarea>
       <h2>SRT vs WebVTT — what's the difference?</h2>
       <p>SRT (SubRip) is the most common subtitle format, used by most video players and editing tools. WebVTT (.vtt) is the format the web platform uses: it is required by the HTML5 &lt;track&gt; element to show captions on native &lt;video&gt; players. The two are very similar, so converting is mostly a matter of adding the <code>WEBVTT</code> header and swapping the comma in timestamps (00:00:01,000) for a dot (00:00:01.000).</p>
       <p>If you have SRT captions and want to show them on your own website's video player, convert them to VTT here. Going the other way, VTT → SRT, is handy when a tool or editor only accepts SRT. Everything is processed locally in your browser, so your caption files stay private.</p>
+      <h2>What the conversion keeps and what it drops</h2>
+      <p>Going SRT to VTT, the converter drops the numeric index lines - VTT does not need them - adds the required header, and swaps the timestamp commas for dots. Going the other way, it strips VTT-only blocks like NOTE, STYLE, and REGION, because SRT has nowhere to put them. That last part matters: if your VTT file carries styling or positioning cues, the SRT version loses them by design, since the format cannot express them. The spoken text and the timing always survive.</p>
+      <h2>Limits</h2>
+      <p>The converter handles the two formats it names. It does not fix timing, shift subtitles, translate anything, or repair a file whose timestamps are malformed - garbage timestamps pass through as garbage. If a converted file misbehaves in a player, the quickest check is the first line: VTT must start with WEBVTT, and SRT must not.</p>
     </div>
   </div>
 

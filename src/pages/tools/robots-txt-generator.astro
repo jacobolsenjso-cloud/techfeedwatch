@@ -87,6 +87,10 @@ const description = "Create a valid robots.txt file in seconds. Choose a preset 
       <h2>How to use your robots.txt file</h2>
       <p>The robots.txt file tells search engine crawlers which parts of your site they may or may not request. It must live at the root of your domain (for example, https://example.com/robots.txt) to be found. "Allow all" — an empty Disallow — is the right choice for most content sites, because you generally want every useful page crawled and indexed.</p>
       <p>Remember that Disallow only blocks crawling, not indexing: a blocked URL can still appear in search if other pages link to it. To keep a page out of the index, use a <code>noindex</code> meta tag instead. Always include your sitemap URL here so crawlers can discover your pages efficiently, and test changes in Google Search Console before relying on them.</p>
+      <h2>The mistakes this file makes easy</h2>
+      <p>robots.txt fails loudly in one direction and silently in the other. A stray "Disallow: /" removes your whole site from crawling - the single most expensive typo in SEO, and worth re-reading before every deploy. The silent failure is subtler: Crawl-delay is ignored by Google entirely, so setting it does nothing for the crawler most people set it for. And rules are matched per user-agent block - a crawler follows its own block if one names it, and the * block otherwise, not both.</p>
+      <h2>Limits</h2>
+      <p>This generator writes the file; it cannot place it. robots.txt only works at the domain root and only for the exact host and protocol it is served on. It is also public - anyone can read yours, which means Disallow lines pointing at "secret" folders are a map for the curious, not a lock. Anything genuinely private needs authentication, not a polite request to robots.</p>
     </div>
   </div>
 

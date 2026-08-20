@@ -92,6 +92,10 @@ const description = "Generate valid Article, FAQPage, and BreadcrumbList JSON-LD
       <h2>What is schema markup and where does it go?</h2>
       <p>Schema markup (structured data) is code that tells search engines exactly what your content means — an article, a set of FAQs, a navigation breadcrumb — rather than leaving them to guess. Google uses it to power rich results like FAQ drop-downs, breadcrumb trails, and article cards, which can improve how your listing looks and how often it gets clicked.</p>
       <p>This tool outputs JSON-LD, Google's recommended format. Copy the full &lt;script&gt; block and paste it into the &lt;head&gt; of the matching page. Always make sure the markup describes content that is actually visible on that page, then validate it with Google's Rich Results Test before publishing.</p>
+      <h2>The rule that gets sites in trouble</h2>
+      <p>Structured data is a claim about what is on the page, and Google checks the claim. FAQ markup for questions that appear nowhere on the page, an author who does not exist, a date that does not match - these are the patterns that earn manual actions. The safe rule is mechanical: if a human cannot see it on the page, it does not belong in the markup. This generator fills in valid syntax; only you can make it true.</p>
+      <h2>Limits</h2>
+      <p>Three types are covered - Article, FAQ, Breadcrumb - because they are the ones a content site actually needs. Valid markup is also not a promise of rich results: Google shows them when it chooses, and it has been showing FAQ drop-downs to fewer and fewer sites over the years. Treat schema as making your page easier to understand, with rich results as a possible bonus, not the deal.</p>
     </div>
   </div>
 
