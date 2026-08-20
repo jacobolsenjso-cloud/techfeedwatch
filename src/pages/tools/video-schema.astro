@@ -103,6 +103,12 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
         <li>Copy the generated JSON-LD block and paste it inside a <code>&lt;script type="application/ld+json"&gt;</code> tag in your page's <code>&lt;head&gt;</code>.</li>
         <li>Validate the result with Google's Rich Results Test before publishing.</li>
       </ul>
+
+      <h2>One honest note about how it fetches</h2>
+      <p>Unlike most tools on this site, this one cannot work purely in your browser: the title, duration, and publish date live on YouTube's servers, so the URL you paste is sent to this site's small lookup function, which asks YouTube's public API and passes the answer straight back. Nothing is stored, and nothing else about you travels with the request.</p>
+
+      <h2>Limits</h2>
+      <p>The schema describes the video as YouTube reports it today - if the title or thumbnail changes later, the markup on your page does not follow along, so regenerate it after major edits. And the markup belongs on a page where the video is actually embedded and visible; adding VideoObject data to a page without the video is the kind of claim that costs trust with search engines rather than earning it.</p>
     </div>
 
     <div class="vsg-pro-tip">

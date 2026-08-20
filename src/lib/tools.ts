@@ -21,6 +21,8 @@ export interface ToolCategory {
   intro: string;
   /** Tags på sitet som hører emnemæssigt sammen med kategorien */
   relatedTags: string[];
+  /** Guide-afsnit nederst på kategorisiden — hvert element bliver et <p> */
+  guide: string[];
 }
 
 export interface Tool {
@@ -48,6 +50,11 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     intro:
       'Everything here writes or checks the markup search engines actually read — the title Google shows, the card that appears when someone shares your link, the structured data that earns rich results. Each tool runs entirely in your browser, so nothing you paste is sent anywhere.',
     relatedTags: ['SEO', 'Business & Money'],
+    guide: [
+      "The tools here share one idea: write the markup by hand, understand it, then paste it. Generators are quicker than remembering syntax, but the fields you fill in still decide everything - a generated title tag with a weak title is weak markup, delivered efficiently. Use the SERP preview to judge the words, then the tag generators to package them.",
+      "A workflow that covers a page in ten minutes: draft title and description in the SERP preview, generate the head tags, add Open Graph for sharing, and - if the page carries an article, FAQ, or video - the matching JSON-LD from the schema generators. Finish in Google's Rich Results Test, which has the final say this site's tools cannot have.",
+      "One exception to the everything-runs-locally rule in this category: the video schema generator sends the YouTube URL you paste to a lookup function, because the video's metadata lives on YouTube's servers. Its page says the same thing. Every other tool here works with the network cable pulled out.",
+    ],
   },
   {
     id: 'content',
@@ -60,6 +67,11 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     intro:
       'Tools for the part of SEO that happens before the markup: finding what to write about, and checking that what you wrote is readable. No account, no upload — paste your text and get an answer.',
     relatedTags: ['SEO', 'Productivity'],
+    guide: [
+      "These four cover the loop of content work: the idea generator gives you angles before writing, the word counter and readability checker measure while you write, and the density analyzer catches accidental repetition after. None of them judges quality - they count and combine, which is exactly why they are fast and private.",
+      "The honest framing for all four: they are instruments, not editors. A readability score of 65 with nonsense content is still nonsense, and a perfect keyword spread in a text nobody wants to read ranks like the text it is. The measurement that cannot be automated - reading your draft aloud, slowly - is still the one that catches what these miss.",
+      "Everything runs in your browser. Unpublished drafts, client work, and embargoed copy are safe to paste, because there is no server on the other end to see them.",
+    ],
   },
   {
     id: 'developer',
@@ -72,6 +84,11 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     intro:
       'The small utilities you reach for a dozen times a week. All of them run locally in the browser — your JSON, your tokens, and your passwords never leave the machine you are sitting at.',
     relatedTags: ['Coding', 'Automation'],
+    guide: [
+      "These are deliberately small: each does one thing you would otherwise script, search for, or do badly by hand. The JSON formatter validates with the browser's own parser, the password generator uses the cryptographic randomness your password manager uses, and the diff runs the same algorithm family as Git. Nothing here is a toy version of the real thing - for these narrow jobs, this is the real thing.",
+      "Local execution matters most in this category, because the things developers paste are the things that must not leak: API responses full of customer data, tokens, connection strings, passwords. Every tool on this page works offline once loaded. If you are ever unsure, open the network tab and watch - nothing leaves.",
+      "The limits are the flip side of the smallness: no JSON repair, no diff for binary files, no password vault. When a job outgrows the tool, the tool's own page says so and points at what to use instead.",
+    ],
   },
   {
     id: 'media',
@@ -84,6 +101,11 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     intro:
       'Handling the media side of a page: getting images down to a sensible size, embedding video without slowing everything down, and converting captions between the formats players expect. Image processing happens on your own device — nothing is uploaded to a server.',
     relatedTags: ['AI Video', 'Coding'],
+    guide: [
+      "The media tools handle the heaviest bytes on any page. The image compressor is the one with the biggest payoff: resizing a phone photo to the width a page actually displays routinely cuts the file by ninety percent before compression even starts. The embed generator solves the other common weight problem - video - by writing the responsive, privacy-mode iframe by hand instead of pasting YouTube's default.",
+      "Two honesty notes that these tools' own pages also carry. The thumbnail downloader fetches its previews straight from YouTube's servers, so it is the one image tool here that talks to the network. And the image compressor's canvas processing strips metadata - which removes GPS location (good, before publishing) and copyright fields (know it, if that matters to you).",
+      "What none of these do: edit. No cropping beyond resize, no color work, no subtitle timing changes. They convert, compress, and package media that is already right - the judgment about the media itself stays with you.",
+    ],
   },
   {
     id: 'finance',
@@ -96,6 +118,11 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     intro:
       'Three calculators for the numbers that are easy to get wrong in your head: what compounding actually does over ten years, what a trade returned once fees are counted, and what a given prompt costs across the major AI models. Estimates for planning — not financial advice.',
     relatedTags: ['Fintech', 'Crypto', 'Business & Money'],
+    guide: [
+      "Three calculators, one shared principle: show the arithmetic people skip. Compounding is unintuitive over long spans, fees on both sides of a trade eat more than the headline suggests, and AI token costs only feel small until multiplied by a batch job. Each calculator makes the skipped step visible as a number.",
+      "Read all three the same way: the math is exact, the assumptions are not. The compound calculator holds a rate steady for years, which no market does; the crypto calculator models one clean trade without slippage or tax; the token calculator estimates tokens without the model's real tokenizer. The pages state their own gaps - use the results as planning sketches with known edges.",
+      "None of this is financial advice, and everything runs in your browser - amounts, trades, and prompts stay on your machine.",
+    ],
   },
 ];
 

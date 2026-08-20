@@ -72,6 +72,10 @@ const description = "Convert any image to a Base64 data URI for inline embedding
       <h2>When should you use Base64 images?</h2>
       <p>A Base64 data URI encodes an image as text, so you can embed it directly in your HTML or CSS instead of linking to a separate file. This removes one network request, which can speed up rendering for tiny, frequently-used graphics like icons, small logos, or inline SVGs. Because the image travels inside the markup, there is no extra round-trip to fetch it.</p>
       <p>The trade-off is size: Base64 makes data roughly 33% larger than the original file, and inline data cannot be cached separately by the browser. So reserve it for small assets, and keep serving larger images (photos, hero images) as normal files. This tool converts everything locally — your image never leaves your device.</p>
+      <h2>Where the technique earns its keep</h2>
+      <p>Email templates are the classic case: many mail clients block or delay external images, while an inline data URI arrives with the message. Small icons in a CSS file, favicons in a quick prototype, and self-contained HTML files that must work offline are the others. In each, the win is the same - the document carries its own graphics.</p>
+      <h2>Limits</h2>
+      <p>The 100 KB warning is not decoration. A large photo as Base64 bloats the HTML that everything else waits for, and unlike a normal image file it is re-downloaded with every page view instead of being cached once. There is also no way back that preserves quality metadata: the encoding is reversible, but treat the original file as the master. If you find yourself encoding hero images, the better tool is the image compressor one page over.</p>
     </div>
   </div>
 
