@@ -67,6 +67,10 @@ A new final line.</textarea></div>
       <h2>How the diff works</h2>
       <p>This tool compares your two texts line by line using a longest-common-subsequence algorithm — the same approach used by version-control systems like Git. Lines that exist only in the changed version are shown as additions, lines that exist only in the original are shown as deletions, and unchanged lines are kept for context. It is handy for proofreading edits, comparing article drafts, checking config files, or spotting exactly what a tool or teammate altered.</p>
       <p>Nothing you paste ever leaves your device — the comparison happens entirely in your browser, so it is safe to use with private or unpublished content.</p>
+      <h2>How to read the output</h2>
+      <p>A changed line shows up as a pair: the old version marked as removed, the new one as added. The tool compares whole lines, so it does not highlight which words inside a line changed - for a one-word edit you see the whole line twice and spot the word yourself. The two checkboxes loosen the comparison: ignoring case treats "The" and "the" as equal, and ignoring edge spaces stops indentation changes from flooding the diff, which is exactly what you want when comparing code that has been re-indented.</p>
+      <h2>Limits</h2>
+      <p>Line-based comparison has one blind spot worth knowing: if a paragraph gets rewrapped so the same words fall on different lines, the diff reports it as fully changed even though the text is identical. Compare prose before and after reflowing, not across it. Very large texts also cost real memory - the algorithm compares every line against every line - so tens of thousands of lines will make the browser think. For everyday drafts, configs, and articles it is instant.</p>
     </div>
   </div>
 

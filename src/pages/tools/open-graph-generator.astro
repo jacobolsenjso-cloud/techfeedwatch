@@ -83,6 +83,10 @@ const description = "Generate Open Graph and Twitter Card meta tags for perfect 
       <h2>Why Open Graph tags matter</h2>
       <p>Open Graph (og:) tags tell platforms like Facebook and LinkedIn exactly which title, description, and image to show when someone shares your link, instead of letting them guess. Twitter Cards do the same for X. A clear title, a compelling description, and a crisp 1200×630 image dramatically improve how shareable your content looks — and how many people click it.</p>
       <p>Paste the generated tags into the &lt;head&gt; of your page. If a platform still shows an old preview after you update the tags, it has cached the page — use the platform's debugger (for example, Facebook's Sharing Debugger) to scrape it again.</p>
+      <h2>The image decides the click</h2>
+      <p>Of everything in the tags, the image does most of the work: a link with a sharp 1200x630 image occupies several times the screen area of one without. Use an absolute URL - platforms fetch the image from their own servers and a relative path gives them nothing - and keep the file reasonably small, since a slow image can make the platform skip it and render the bare link instead. Text baked into the image should survive being shrunk to a phone-width card.</p>
+      <h2>Limits</h2>
+      <p>The live preview here is one honest approximation, not four: every platform crops, truncates, and styles differently, and they change their rendering without notice. The tags are your proposal; the platform's debugger shows the verdict. Also worth knowing: these tags do nothing for Google ranking - they control how links look when people share them, which affects clicks, not position.</p>
     </div>
   </div>
 

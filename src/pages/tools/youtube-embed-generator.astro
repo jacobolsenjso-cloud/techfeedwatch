@@ -74,6 +74,10 @@ const description = "Generate responsive YouTube embed code with options for aut
       <h2>Responsive embeds and privacy mode</h2>
       <p>A raw YouTube iframe has a fixed width and height, which breaks on mobile. The responsive option wraps the video in a container with a 16:9 aspect ratio so it scales fluidly to any screen. This is the approach most modern sites use, and it needs no external CSS framework — the wrapper style is included in the code.</p>
       <p>Privacy-enhanced mode uses the youtube-nocookie.com domain, which stops YouTube from setting tracking cookies until the visitor actually plays the video. It is a simple, friendly default for consent and GDPR-conscious sites. Note that autoplay only works reliably when the video is also muted, because browsers block sound-on autoplay.</p>
+      <h2>Details worth knowing before you copy</h2>
+      <p>The loop option quietly adds a playlist parameter containing the same video - that is not a quirk of this tool, it is how YouTube's player requires single-video looping to be written. Hiding the controls only hides them; viewers can still pause by clicking and can still open the video on YouTube. And privacy mode reduces tracking rather than eliminating it: no cookies are set while the embed sits on the page, but once a visitor presses play, playback runs through YouTube as normal.</p>
+      <h2>Limits</h2>
+      <p>An embed is a permission, not a copy. The uploader can disable embedding for their video, in which case the iframe shows a "watch on YouTube" message instead of playing - the code is correct, the video simply is not allowed to play elsewhere. If the video is later deleted or made private, the embed dies with it. Nothing this generator produces changes who owns the video or what its license allows.</p>
     </div>
   </div>
 

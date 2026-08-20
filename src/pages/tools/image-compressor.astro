@@ -79,6 +79,10 @@ const description = "Compress, resize, and convert images to JPG, PNG, or WebP r
       <h2>How to shrink an image without wrecking quality</h2>
       <p>Two things drive image file size: dimensions and compression. Most images are far larger than they need to be — a photo straight from a phone can be 4000px wide when a web page only shows it at 1200px. Resizing to the width you actually display is usually the single biggest saving. After that, lowering the quality of a JPG or WebP to around 75–85% cuts size dramatically with almost no visible difference.</p>
       <p>WebP typically produces smaller files than JPG at the same quality and is supported by all modern browsers, so it is a great default for the web. Use PNG only when you need transparency or pixel-perfect graphics. This tool does everything locally with the Canvas API, so your images stay private on your device.</p>
+      <h2>What conversion quietly changes</h2>
+      <p>Redrawing an image on a canvas strips its metadata: EXIF fields including camera model, timestamps, and - importantly - GPS location do not survive into the output. For a photo headed to the public web that is a privacy feature, and it is also why the output is often smaller than the pixels alone explain. The same stripping removes embedded copyright fields, so if you need those preserved, this is the wrong tool. One more conversion trap: JPG has no transparency, so a transparent PNG converted to JPG gets a solid background where the transparency was. Keep transparent graphics in PNG or WebP.</p>
+      <h2>Limits</h2>
+      <p>The tool only shrinks - a max width larger than the original leaves the dimensions untouched, because upscaling adds pixels without adding detail. The quality slider disappears for PNG since PNG compression is lossless and has no quality dial. And the preview is the actual output file, not a simulation: what you see at 80% is exactly what downloads.</p>
     </div>
   </div>
 

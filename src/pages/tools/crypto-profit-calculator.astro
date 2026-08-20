@@ -91,6 +91,12 @@ const description = "Calculate your crypto profit, loss, and ROI from buy and se
       <h2>How crypto profit and ROI are calculated</h2>
       <p>Your <strong>quantity</strong> is the investment amount divided by the buy price. The <strong>exit value</strong> is that quantity multiplied by the sell price, minus trading fees charged on both the entry and the exit. <strong>Net profit</strong> is the exit value minus your original investment and total fees, and <strong>ROI</strong> expresses that profit as a percentage of what you put in.</p>
       <p>Remember that this tool models a single trade and does not account for taxes, slippage, funding rates, or the price impact of large orders. Always treat the result as an estimate, not financial advice.</p>
+      <h2>When to use it</h2>
+      <p>Before a trade, to see what a target price actually returns once fees are subtracted on both sides. After a trade, to check what really happened against what the exchange dashboard implies. And when comparing fee tiers: at 0.5% per side a round trip costs roughly ten times what it does at 0.05%, and on a break-even trade the fees are the whole result.</p>
+      <h2>How to read the numbers</h2>
+      <p>The fee is charged on the way in and on the way out, so the sell price has to clear the buy price by about twice the fee rate before the profit turns positive at all. If the profit figure looks smaller than the price move suggested, that gap is the fee line - which is exactly why it is shown separately.</p>
+      <h2>Limits</h2>
+      <p>The model is one buy and one sell of the full position. It does not handle averaging in over several buys, partial exits, funding rates on perpetuals, or the spread on "zero-fee" apps - where the cost is real but hidden inside the price rather than listed as a fee. And taxes depend entirely on where you live. For anything beyond a single spot trade, treat this as the starting sketch, not the accounting.</p>
     </div>
   </div>
 

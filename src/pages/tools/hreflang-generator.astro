@@ -56,6 +56,10 @@ const description = "Generate valid hreflang link tags for multilingual and mult
       <h2>How hreflang works</h2>
       <p>Hreflang tags tell Google which language and country each version of a page is for, so the right version is shown to the right users. The code combines a language (like <code>en</code>) and an optional region (like <code>en-us</code> or <code>en-gb</code>). Use <code>x-default</code> to name the page that should be shown to anyone whose language or region you do not explicitly target.</p>
       <p>The golden rule is reciprocity: every page in a language set must list every version, including itself. So if page A links to B and C, then B and C must link back to A (and to each other). Place the full set of tags in the &lt;head&gt; of each of those pages, and always use absolute URLs.</p>
+      <h2>When you actually need hreflang - and when you do not</h2>
+      <p>Hreflang is for the same content in several languages or regional variants: a product page in English, Danish, and German, or a US and a UK edition with different pricing. A site in one language does not need it at all, and adding it anyway is maintenance without benefit. The codes are two-letter language plus optional two-letter country - "da" reaches Danish speakers everywhere, "da-dk" only targets Denmark, and the narrower code is only better when the versions genuinely differ.</p>
+      <h2>Limits</h2>
+      <p>The generator writes tags for one page and its translations; keeping the full set present and reciprocal on every one of those pages is on you, and a missing return tag silently disables the pair. It also does not validate the codes themselves - type "dk" (a country, not a language) and the tag is generated but ignored by Google. The two-minute check after deploying: search from the wrong country and confirm the right version surfaces.</p>
     </div>
   </div>
 
