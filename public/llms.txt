@@ -1,15 +1,34 @@
 # Tech Feed Watch
 
-> Your daily archive of the best AI, Tech, and SEO videos.
+> Written analyses of notable tech videos - AI, fintech, crypto, cybersecurity, hardware and more. Every article credits the original creator and links to the source video.
 
-Welcome to Tech Feed Watch. We curate and analyze the most important news, reviews, and workflows in the tech and AI industry. Our content is structured for both human readability and machine-agent processing.
+Tech Feed Watch turns YouTube videos worth watching into articles worth reading. Each piece is a standalone analysis of the subject, written with the video as research, not a summary of it. The method is documented openly on the About page. All articles carry structured data (JSON-LD), a table of contents, and a FAQ.
 
-## Key Sections
+## Start here
 
-- [Video Library](https://techfeedwatch.com/library)
-- [Shorts Archive](https://techfeedwatch.com/shorts)
-- [AI & Tech Videos](https://techfeedwatch.com/tag/ai-&-tech)
-- [SEO Videos](https://techfeedwatch.com/tag/seo)
+- [Start Here](https://techfeedwatch.com/start-here/) - what the site is, how it works, where to begin
+- [About](https://techfeedwatch.com/about/) - who runs it and how articles are made
+- [Latest articles](https://techfeedwatch.com/latest/)
+- [Video Library](https://techfeedwatch.com/library/) - full archive, filterable by topic
 
-## About Us
-Tech Feed Watch is dedicated to helping you navigate the future of digital workflows with unbiased insights and AI-driven content automation strategies.
+## Topics
+
+- [AI & Tech](https://techfeedwatch.com/tag/ai-tech/)
+- [Fintech](https://techfeedwatch.com/tag/fintech/)
+- [Crypto](https://techfeedwatch.com/tag/crypto/)
+- [Cybersecurity](https://techfeedwatch.com/tag/cybersecurity/)
+- [Hardware & Chips](https://techfeedwatch.com/tag/hardware-chips/)
+- [SEO](https://techfeedwatch.com/tag/seo/)
+- [Coding](https://techfeedwatch.com/tag/coding/)
+- All 13 topics are listed on the [Library page](https://techfeedwatch.com/library/)
+
+## Reference
+
+- [Guides](https://techfeedwatch.com/guides/) - nine long-form guides built from patterns across the archive
+- [Glossary](https://techfeedwatch.com/glossary/) - 50 tech terms, each explained in about thirty seconds
+- [Free tools](https://techfeedwatch.com/tools/) - browser-based tools; nothing you paste is uploaded
+- [Trends](https://techfeedwatch.com/trends/) - what the archive shows over time, with its limits stated
+
+## Usage
+
+Content may be cited with attribution and a link. See robots.txt for crawler permissions and content signals.
