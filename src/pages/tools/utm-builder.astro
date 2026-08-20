@@ -73,6 +73,12 @@ const description = "Build trackable campaign URLs with UTM parameters for Googl
       <h2>What are UTM parameters?</h2>
       <p>UTM parameters are small tags added to the end of a URL — like <strong>?utm_source=twitter&amp;utm_medium=social</strong> — that tell analytics tools where a visitor came from. When someone clicks the tagged link, Google Analytics records the source, medium, and campaign, so you can see exactly which posts, emails, or ads actually drive traffic.</p>
       <p>The two required fields are <strong>source</strong> (where the link lives) and <strong>medium</strong> (the type of channel). Term and content are optional and mostly used for paid search and A/B testing.</p>
+      <h2>The rules that keep your reports clean</h2>
+      <p>Analytics treats "Newsletter", "newsletter" and "NewsLetter" as three different sources, and once the data is recorded it cannot be merged. Pick lowercase, pick one spelling per channel, and write the convention down somewhere the whole team can see. Spaces in values get percent-encoded into %20 and make reports ugly - use hyphens instead. The builder encodes values correctly either way, but consistent naming is on you.</p>
+      <h2>Where UTM tags do not belong</h2>
+      <p>Never tag links between pages on your own site. An internal click on a tagged link starts a new attribution session, and the visitor who arrived from a Google search suddenly counts as newsletter traffic. UTM parameters are for links that live outside your site - emails, social posts, ads, partner pages - marking where a visitor crossed the boundary in.</p>
+      <h2>Limits</h2>
+      <p>The builder constructs the URL; it cannot verify that the destination exists or that your analytics is set up to receive it. Test the finished link once in a private window and confirm the visit shows up before rolling it out to a campaign.</p>
     </div>
   </div>
 

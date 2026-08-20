@@ -2,7 +2,7 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 
 const title = "Word & Character Counter";
-const description = "Count words, characters, sentences, and paragraphs in your text, with live reading and speaking time estimates. Free, private, browser-based.";
+const description = "Count words, characters, sentences, and paragraphs in your text, with a live reading-time estimate. Free, private, browser-based.";
 ---
 
 <MainLayout title={title} description={description}>
@@ -62,6 +62,10 @@ const description = "Count words, characters, sentences, and paragraphs in your 
       <h2>Why word and character counts matter</h2>
       <p>Character limits shape a lot of digital writing: meta descriptions are cut off by Google around 155-160 characters, title tags around 60, and social platforms enforce their own caps. Keeping an eye on your counts helps your content display cleanly everywhere it appears.</p>
       <p>Reading time is estimated at about 200 words per minute, a common average for silent reading. Use it as a rough guide for blog posts, scripts, and newsletters - it is an approximation, not an exact measure, since reading speed varies by reader and topic.</p>
+      <h2>How the counts are computed</h2>
+      <p>Words are whatever is separated by whitespace, which matches how most editors and CMS platforms count. Sentences are counted by their end punctuation, so abbreviations play tricks: "e.g." and "Dr." each register as a sentence end. For ordinary prose the count is close; for text dense with abbreviations, trust the word count over the sentence count. Characters are counted both with and without spaces because different platforms limit different things - SMS and some ad formats count spaces, most others do not.</p>
+      <h2>Limits</h2>
+      <p>The counter reads plain text only. Paste from a word processor and any formatting is already gone, so what you see counted is what a reader gets. It does not judge quality, grade readability, or detect keyword stuffing - it counts. For how a text reads, the reading has to be done by a person.</p>
     </div>
   </div>
 

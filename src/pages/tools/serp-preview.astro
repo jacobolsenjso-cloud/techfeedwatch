@@ -54,6 +54,12 @@ const description = "Preview how your page title and meta description will look 
     .serp-note { font-size: 0.85rem; color: #6b7280; margin: 20px 0 0 0; }
     body.dark-mode .serp-note { color: #9ca3af; }
 
+    .serp-guide { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .serp-guide h2 { font-size: 1.3rem; margin: 26px 0 10px 0; }
+    .serp-guide h2:first-child { margin-top: 0; }
+    .serp-guide p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .serp-guide p { color: #9ca3af; }
+
     @media (max-width: 768px) {
       .serp-wrapper { padding: 20px 15px; }
     }
@@ -109,6 +115,16 @@ const description = "Preview how your page title and meta description will look 
         <button type="button" id="serpCopyBtn" class="serp-copy-btn">Copy</button>
       </div>
       <pre class="serp-code"><code id="serpCodeOutput"></code></pre>
+    </div>
+
+    <div class="serp-guide">
+      <h2>What this tool does</h2>
+      <p>It renders your title, description, and URL the way Google's result page styles them, on desktop and mobile side by side, and generates the matching title, description, and Open Graph tags as copy-ready HTML. Everything happens in your browser.</p>
+      <h2>The honest part about the limits</h2>
+      <p>The counters measure characters - 60 for the title, 160 for the description - but Google actually truncates by pixel width, around 600 pixels for a desktop title. A title full of wide letters like W and M gets cut earlier than one full of thin ones. Character counts are the planning guide everyone uses because they are stable and close enough; just do not treat 59 characters as a guarantee.</p>
+      <p>The second limit is bigger: Google rewrites titles and descriptions when it thinks it has something better, and it does so often - especially when the title does not match what the page delivers or the description reads like an advert. The best defense is writing a title that says what the page actually contains. This preview shows what you are proposing; Google decides what runs.</p>
+      <h2>When to use it</h2>
+      <p>Before publishing anything where the snippet matters: checking that a title survives truncation with its meaning intact, that the description front-loads the point instead of burying it at character 150, and that the two read sensibly together - because in the search results, they are the whole pitch.</p>
     </div>
 
     <p class="serp-note">⚠️ Google decides how snippets are displayed and may rewrite titles/descriptions or truncate them based on pixel width rather than a fixed character count. This tool is a close approximation for planning purposes.</p>

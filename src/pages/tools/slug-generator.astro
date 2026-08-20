@@ -66,6 +66,12 @@ const description = "Turn any title or phrase into a clean, SEO-friendly URL slu
       <h2>What makes a good URL slug?</h2>
       <p>A slug is the human-readable part of a URL that identifies a page. Clean slugs are lowercase, use hyphens to separate words, and avoid spaces, accents, and special characters that browsers have to encode. Descriptive slugs that include your main keyword help both readers and search engines understand what a page is about before they even open it.</p>
       <p>Keeping slugs short and focused - a few meaningful words rather than a whole sentence - tends to perform better. Optionally removing filler stop words like "the", "and", or "of" can tighten a slug without losing its meaning.</p>
+      <h2>What the converter actually does with special characters</h2>
+      <p>Accented letters are flattened to their base form (é becomes e), and the Scandinavian letters get real transliterations - æ becomes ae, ø becomes o, å becomes a - rather than being deleted. Anything left that is not a letter, digit, or separator is dropped. That has one honest consequence: text in scripts without Latin letters, like Chinese or Arabic, produces an empty slug. This tool is for Latin-alphabet URLs.</p>
+      <h2>One warning before you rename anything live</h2>
+      <p>A slug is part of the page's address. Changing it on a published page breaks every existing link to that page - bookmarks, backlinks, search results - unless the old address gets a 301 redirect to the new one. Generating a slug for a new page is free; renaming an old page is a small migration. This site learned that the practical way.</p>
+      <h2>The stop-word toggle, honestly</h2>
+      <p>Removing "the", "of" and "and" makes slugs tidier, but check the result still reads as meaning the same thing: "how-to-monetize-apis" survives as "monetize-apis", while some phrases lose their sense when the small words go. The toggle is off by default for exactly that reason.</p>
     </div>
   </div>
 

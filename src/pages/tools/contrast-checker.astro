@@ -75,6 +75,10 @@ const description = "Check color contrast against WCAG accessibility standards. 
       <h2>What do AA and AAA mean?</h2>
       <p>The WCAG accessibility guidelines set minimum contrast ratios so text stays readable for everyone, including people with low vision. <strong>AA</strong> requires at least 4.5:1 for normal text and 3:1 for large text (18pt bold or 24pt regular). <strong>AAA</strong> is stricter: 7:1 for normal text and 4.5:1 for large text.</p>
       <p>Beyond compliance, strong contrast simply makes your content easier to read on every screen and in bright sunlight — which keeps visitors on the page longer.</p>
+      <h2>How the ratio is calculated</h2>
+      <p>The number is the WCAG relative-luminance formula, the same one browsers' own audit tools use: each color's brightness is computed from its red, green and blue components, and the ratio compares the lighter against the darker. Pure black on pure white gives the maximum, 21:1. The math is exact - the same two colors give the same ratio everywhere.</p>
+      <h2>What a passing ratio does not cover</h2>
+      <p>The checker compares two solid colors. Text over a photo, a gradient, or a semi-transparent overlay has no single background color, so the real contrast varies across the text - check the worst spot, not the average. Interface components like input borders and icons have their own WCAG requirement of 3:1 against adjacent colors, which is a separate check from text. And contrast is not color-blindness safety: red on green can pass 4.5:1 and still be indistinguishable to someone with deuteranopia. Contrast is necessary; color choice is a second, separate decision.</p>
     </div>
   </div>
 
