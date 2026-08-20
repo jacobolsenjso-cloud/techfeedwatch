@@ -64,6 +64,10 @@ const description = "Convert text between UPPERCASE, lowercase, Title Case, came
       <h2>Which case should you use?</h2>
       <p><strong>Title Case</strong> suits headlines, <strong>Sentence case</strong> suits body text and UI copy. For code, <strong>camelCase</strong> and <strong>PascalCase</strong> are common in JavaScript and many languages, <strong>snake_case</strong> in Python and databases, and <strong>kebab-case</strong> for URLs, CSS classes, and file names.</p>
       <p>All conversion happens locally in your browser, so you can safely paste sensitive text — nothing is sent anywhere.</p>
+      <h2>How the conversions actually behave</h2>
+      <p>The converter splits words on spaces, underscores, hyphens, and existing capital letters - so <strong>myVariableName</strong> becomes <strong>my_variable_name</strong> in one click, which is the main reason developers reach for a tool instead of retyping. Sentence case capitalizes after full stops, question marks, and exclamation marks; it cannot know that "paris" is a name, so proper nouns need a manual touch afterwards.</p>
+      <h2>Limits</h2>
+      <p>Title Case here capitalizes every word, including "and", "of" and "the". Publishing style guides (AP, Chicago) keep those small words lowercase, so a headline for a publication that follows one needs a pass by hand. Numbers and symbols pass through untouched, and text in scripts without upper and lower case (Chinese, Japanese, Korean) comes back unchanged - there is nothing to convert.</p>
     </div>
   </div>
 

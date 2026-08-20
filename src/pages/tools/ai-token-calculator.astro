@@ -41,6 +41,11 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
     .calc-table tr:last-child td { border-bottom: none; }
     .calc-table td.calc-cost { font-weight: 600; }
 
+    .calc-guide { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .calc-guide h2 { font-size: 1.3rem; margin: 26px 0 10px 0; }
+    .calc-guide h2:first-child { margin-top: 0; }
+    .calc-guide p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .calc-guide p { color: #9ca3af; }
     @media (max-width: 768px) {
       .calc-wrapper { padding: 20px 15px; }
       .calc-stats { grid-template-columns: 1fr; }
@@ -84,6 +89,17 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
       </table>
     </div>
     <p class="calc-note">Prices are indicative (USD, per 1M input tokens) and may change. Always check the provider's official pricing page before relying on these figures.</p>
+
+    <div class="calc-guide">
+      <h2>What this tool does</h2>
+      <p>It estimates how many tokens a piece of text becomes when sent to a language model, and what that costs as model input. The estimate is the average of two rules of thumb - characters divided by four, and words times 1.33 - because real tokenizers land between them for ordinary English. The text never leaves your browser.</p>
+      <h2>When to use it</h2>
+      <p>Before pasting a long document into an API call, to see whether it fits a context window. When budgeting a batch job - a thousand articles at 1,200 tokens each is a number you want before running it, not after. When trimming a prompt, to see how much a cut actually saves.</p>
+      <h2>How to read the result</h2>
+      <p>Treat the token count as an order of magnitude, not an invoice. Real tokenizers differ per model, and code, URLs and non-English text tokenize heavier than prose - a text full of JSON can come out 30-50% above this estimate. The cost column covers input only; output tokens are billed separately and usually at a higher rate, so a long answer can cost more than the question.</p>
+      <h2>Limits</h2>
+      <p>The prices in the table are typed in by hand and age from the day they were written - model names and rates change often, so check the provider's own pricing page before relying on a figure. The tool has no per-model tokenizer and no way to know your output length. It answers one question well: roughly what does it cost to send this text in.</p>
+    </div>
   </div>
 
   <script define:vars={{ MODEL_PRICING }}>

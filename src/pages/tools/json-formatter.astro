@@ -88,6 +88,12 @@ const description = "Format, minify, and validate JSON online. Paste your JSON a
     <div class="jf-info-section">
       <h2>What is this tool for?</h2>
       <p>Paste any JSON payload - from an API response, a config file, or logs - and instantly pretty-print it with readable 2-space indentation, or minify it down to a single compact line. Invalid JSON is caught immediately with a clear error message describing exactly what's wrong, so you can fix malformed data without guessing.</p>
+      <h2>Reading the error message</h2>
+      <p>The validator is the browser's own JSON parser, so the error is exact rather than a guess: it names the unexpected character and the position where parsing stopped. The mistake is almost always just before that position. The three classics: a trailing comma after the last item, single quotes instead of double, and a comment - JSON allows none of those, by specification, even though JavaScript allows all three. That is not this tool being strict; it is what makes JSON portable.</p>
+      <h2>When to format, when to minify</h2>
+      <p>Format when a human needs to read it: debugging an API response, reviewing a config, comparing two payloads. Minify when a machine needs to carry it: embedding JSON in a URL, an environment variable, or a request body where every byte is billed or logged. The two buttons are inverses - formatting a minified payload and minifying it again gives you back the same bytes.</p>
+      <h2>Limits</h2>
+      <p>Everything runs locally, so file size is limited by your machine, not a server - multi-megabyte payloads are fine. The key count includes nested keys at every depth, which is why it can exceed the line count. What the tool will not do: repair broken JSON for you, sort keys, or accept JSON5 and YAML. It validates the standard, nothing looser.</p>
     </div>
   </div>
 

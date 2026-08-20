@@ -33,6 +33,11 @@ const description = "Project compound interest, savings growth, and crypto staki
     .cc-table th { background: var(--hover-bg); font-weight: 700; }
     .cc-table tr:last-child td { border-bottom: none; }
 
+    .ccg-guide { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+    .ccg-guide h2 { font-size: 1.3rem; margin: 26px 0 10px 0; }
+    .ccg-guide h2:first-child { margin-top: 0; }
+    .ccg-guide p { font-size: 0.95rem; line-height: 1.65; color: #4b5563; margin: 0 0 14px 0; }
+    body.dark-mode .ccg-guide p { color: #9ca3af; }
     @media (max-width: 768px) {
       .cc-wrapper { padding: 20px 15px; }
       .cc-stats { grid-template-columns: 1fr; }
@@ -105,6 +110,17 @@ const description = "Project compound interest, savings growth, and crypto staki
         </thead>
         <tbody id="ccTableBody"></tbody>
       </table>
+    </div>
+
+    <div class="ccg-guide">
+      <h2>What this tool does</h2>
+      <p>It simulates an amount growing period by period: the balance compounds at the rate you set, and the monthly contribution is added at the end of each month. The yearly table separates growth from contributions, so you can see which of the two is actually doing the work - in the early years it is almost always the contributions.</p>
+      <h2>When to use it</h2>
+      <p>Comparing a savings account against a staking rate. Seeing what starting two years earlier is worth. Checking whether a promised APY is doing what you think it does - a headline rate of 8% on a small balance earns less per month than most people expect, and the table makes that concrete.</p>
+      <h2>How to read the result</h2>
+      <p>Compounding frequency matters less than people assume: daily versus monthly on the same APY changes the outcome by well under one percent over a decade. The rate itself, the time span, and the contributions are what move the final number. If the growth column dwarfs the contributions early on, be suspicious of the rate you typed in.</p>
+      <h2>Limits</h2>
+      <p>The model holds the rate constant for the whole period - no real account and no staking pool does that. It ignores tax, fees, inflation, and the possibility that the underlying asset falls in value, which for crypto staking is the risk that dominates everything else in this calculation. It projects arithmetic, not the future, and it is not financial advice.</p>
     </div>
 
     <p class="cc-note">⚠️ This is an estimate for educational purposes and not financial advice. Crypto staking rates and returns vary and are not guaranteed.</p>
