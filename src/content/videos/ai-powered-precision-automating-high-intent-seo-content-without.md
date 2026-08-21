@@ -1,5 +1,5 @@
 ---
-title: "Automate High-Intent SEO Content with AI; Maintain Quality"
+title: "Automate BoF High-Intent SEO Content with AI to Avoid Slop"
 seoTitled: true
 youtubeId: "F2AD1C5KtzY"
 channelTitle: "Shanif Dhanani"

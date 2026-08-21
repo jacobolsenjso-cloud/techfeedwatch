@@ -1,5 +1,5 @@
 ---
-title: "Organizational AI Strategy: Business Transformation for AI"
+title: "What Organizational AI Strategy Means for Reshaping Business Models"
 titleShortened: true
 seoTitled: true
 youtubeId: "zOI6Oll1Zrg"

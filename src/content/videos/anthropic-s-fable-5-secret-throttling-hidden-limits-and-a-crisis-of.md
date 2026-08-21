@@ -1,5 +1,5 @@
 ---
-title: "Anthropic Fable 5: Throttling Exposed, Trust Crisis"
+title: "Anthropic Fable 5 Invisible Degradation Fuels User Trust Crisis"
 titleShortened: true
 seoTitled: true
 youtubeId: "9LzBF70aI6k"

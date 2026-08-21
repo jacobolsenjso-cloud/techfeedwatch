@@ -1,5 +1,5 @@
 ---
-title: "WooCommerce Customization: Flexible E-commerce Solutions"
+title: "WooCommerce Deep Customization for B2B and Subscriptions"
 titleShortened: true
 seoTitled: true
 youtubeId: "VngFqKHftbY"

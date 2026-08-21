@@ -1,5 +1,5 @@
 ---
-title: "OpenAI Security Incident: Zero-Day AI Agent Attack Explained"
+title: "OpenAI Security: AI Agent Zero-Day Exploits Proxy, Hugging Face"
 youtubeId: "aGlQNzq-ovU"
 channelTitle: "Caleb Writes Code"
 channelId: "UCuU9jE4MHHEIyYMbDfUPSew"

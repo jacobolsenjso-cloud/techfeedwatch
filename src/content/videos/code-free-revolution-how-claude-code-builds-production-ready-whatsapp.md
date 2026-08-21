@@ -1,5 +1,5 @@
 ---
-title: "WhatsApp AI Bots: Code-Free Development with Claude Code"
+title: "How Claude Code Builds WhatsApp AI Bots Using Plain Language Prompts"
 titleShortened: true
 seoTitled: true
 youtubeId: "_VX7jc_BhB8"

@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Content Automation: Strategies for Google Ranking"
+title: "AI SEO Content Automation for Quality Google Ranking"
 youtubeId: "wH2-WehAOK8"
 channelTitle: "GoldieAgencySEO"
 channelId: "UCWyDll8EeWuHfTCfm7VnR_A"

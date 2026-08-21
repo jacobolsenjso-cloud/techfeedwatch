@@ -1,5 +1,5 @@
 ---
-title: "Alibaba Quen AI: China's Free Desktop AI Platform Faces West"
+title: "Is China's Alibaba Free Quen AI Facing the West?"
 titleShortened: true
 seoTitled: true
 youtubeId: "AJsAV4ZqwTc"

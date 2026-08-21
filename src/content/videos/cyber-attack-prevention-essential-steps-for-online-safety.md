@@ -1,5 +1,5 @@
 ---
-title: "Cyber Attack Prevention: Essential Steps for Online Safety"
+title: "Everyday Users Prevent Cyber Attacks with MFA and Password Management"
 youtubeId: "XOy-en6yjhE"
 channelTitle: "Solavise Technologies Institute"
 channelId: "UCir8XZhXPO4mg4wfysDoNwg"

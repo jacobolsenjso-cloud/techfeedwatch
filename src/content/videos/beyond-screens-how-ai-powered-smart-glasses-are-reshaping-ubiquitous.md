@@ -1,5 +1,5 @@
 ---
-title: "AI Smart Glasses: Ubiquitous & Augmented Intelligence"
+title: "AI Smart Glasses Foster Constantly Sensing Augmented Intelligence"
 titleShortened: true
 seoTitled: true
 youtubeId: "gElClXpg4J0"

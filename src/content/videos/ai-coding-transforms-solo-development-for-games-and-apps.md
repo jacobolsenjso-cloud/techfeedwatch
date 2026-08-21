@@ -1,5 +1,5 @@
 ---
-title: "AI Coding Transforms Solo Development for Games and Apps"
+title: "AI Coding Speeds Complex Game and App Development for Solo Devs"
 youtubeId: "-QjR7xdDlT0"
 channelTitle: "Jose “The RC Flyer”"
 channelId: "UCbf3QWj4RT_nmOhdvtJqfCw"

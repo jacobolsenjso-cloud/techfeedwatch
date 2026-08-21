@@ -1,5 +1,5 @@
 ---
-title: "AI-on-a-Chip: How Edge AI Changes Data Center Compute"
+title: "AI on Chip Shifts Data Center Compute to a Hybrid Model"
 youtubeId: "nFnR1nPstig"
 channelTitle: "  Prof Simon - Science Filmmaker"
 channelId: "UCd6qylQWz49LNjE4xrKf3RA"

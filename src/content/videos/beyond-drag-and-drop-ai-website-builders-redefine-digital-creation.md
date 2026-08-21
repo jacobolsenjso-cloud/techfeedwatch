@@ -1,5 +1,5 @@
 ---
-title: "AI Website Builders Automate Design & SEO for Easy Creation"
+title: "AI Website Builders Automate Design SEO for Non-Coders"
 seoTitled: true
 youtubeId: "ghwU2bDDHhE"
 channelTitle: "DIGITOOLY"

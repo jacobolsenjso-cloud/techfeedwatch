@@ -1,5 +1,5 @@
 ---
-title: "Quant Finance with Python & Pandas for Data-Driven Investing"
+title: "Python Pandas Drives Quant Investment Decisions"
 seoTitled: true
 youtubeId: "b9RgHa1CnH4"
 channelTitle: "Daniel Boctor"

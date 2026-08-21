@@ -1,5 +1,5 @@
 ---
-title: "Web3 Decentralization: Promise vs. Real-World Challenges"
+title: "Why Web3 Decentralization's Promise Faces Real-World Hurdles"
 seoTitled: true
 youtubeId: "wHTcrmhskto"
 channelTitle: "Fireship"

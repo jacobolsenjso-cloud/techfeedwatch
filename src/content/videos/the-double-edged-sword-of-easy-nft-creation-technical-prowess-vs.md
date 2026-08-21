@@ -1,5 +1,5 @@
 ---
-title: "Easy NFT Creation Challenges NFT Market Value & Scarcity"
+title: "Reproducible NFTs Threaten Digital Scarcity and Long-Term Value"
 seoTitled: true
 youtubeId: "meTpMP0J5E8"
 channelTitle: "Fireship"

@@ -1,5 +1,5 @@
 ---
-title: "Hybrid Quantum-Classical Supercomputing Solves Complex"
+title: "How Hybrid Quantum-Classical Supercomputing Changes Problem Scope"
 titleShortened: true
 seoTitled: true
 youtubeId: "HgXqbnSxtZQ"

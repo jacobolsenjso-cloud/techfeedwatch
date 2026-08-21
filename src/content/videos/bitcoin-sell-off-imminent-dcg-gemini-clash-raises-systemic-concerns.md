@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Sell-Off: DCG Debt to Gemini Fuels Market Fear"
+title: "Why DCG Gemini Debt Could Force Bitcoin Holdings Sales"
 titleShortened: true
 seoTitled: true
 youtubeId: "FDU7KB2BF1Q"

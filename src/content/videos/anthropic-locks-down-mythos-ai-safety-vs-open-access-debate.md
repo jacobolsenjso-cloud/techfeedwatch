@@ -1,5 +1,5 @@
 ---
-title: "Anthropic Locks Down Mythos: AI Safety vs. Open Access Debate"
+title: "Why Anthropic Limits Mythos Access for AI Safety Versus Open Access"
 youtubeId: "d3Qq-rkp_to"
 channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"

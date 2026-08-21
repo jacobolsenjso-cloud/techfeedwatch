@@ -1,5 +1,5 @@
 ---
-title: "AI Algorithmic Trading Reshapes Fintech Capital Markets"
+title: "Algorithmic AI: Fintech Reshapes Capital Markets via Automation"
 seoTitled: true
 youtubeId: "XzYP5_K90q8"
 channelTitle: "Shouryaa Sharma"

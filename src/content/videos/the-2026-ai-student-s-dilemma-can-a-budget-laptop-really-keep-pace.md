@@ -1,5 +1,5 @@
 ---
-title: "AI Student Laptops: Run Sophisticated ML Models Locally"
+title: "AI Student Laptops: GPUs and NPUs Run Complex ML Models Locally"
 seoTitled: true
 youtubeId: "ELFigJ3gzXg"
 channelTitle: "GadgetGeeks"

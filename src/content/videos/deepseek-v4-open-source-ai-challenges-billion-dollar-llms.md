@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek V4: Open-Source AI Challenges Billion-Dollar LLMs"
+title: "How DeepSeek V4 Open-Source AI Outperforms Billion-Dollar LLMs"
 youtubeId: "p7K3xfViWCE"
 channelTitle: "Two Minute Papers"
 channelId: "UCbfYPyITQ-7l4upoX8nvctg"

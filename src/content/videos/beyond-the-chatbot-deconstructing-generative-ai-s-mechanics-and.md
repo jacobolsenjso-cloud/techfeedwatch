@@ -1,5 +1,5 @@
 ---
-title: "Generative AI Explained: Evolution, Mechanics, & Impact"
+title: "Generative AI: Transformer Networks, Scaling, and GPT-4 Impact"
 seoTitled: true
 youtubeId: "_6R7Ym6Vy_I"
 channelTitle: "The Royal Institution"

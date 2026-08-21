@@ -1,5 +1,5 @@
 ---
-title: "US Open Banking: Section 1033, Data Access, Regulation"
+title: "Section 1033 Compels US Open Banking Data Access Regulation"
 titleShortened: true
 youtubeId: "PnsY2vtOQj8"
 channelTitle: "Finovate TV"

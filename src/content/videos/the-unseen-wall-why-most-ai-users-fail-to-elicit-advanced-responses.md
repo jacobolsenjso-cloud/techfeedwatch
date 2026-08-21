@@ -1,5 +1,5 @@
 ---
-title: "AI Prompt Engineering: Get Advanced AI Responses from LLMs"
+title: "What Advanced AI Prompt Engineering Means for LLM Value"
 seoTitled: true
 youtubeId: "VnEoS2eQXsw"
 channelTitle: "Varun Mayya"

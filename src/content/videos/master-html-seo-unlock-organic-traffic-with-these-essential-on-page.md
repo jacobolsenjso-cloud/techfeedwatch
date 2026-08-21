@@ -1,5 +1,5 @@
 ---
-title: "HTML SEO On-Page Optimization: Boost Organic Traffic"
+title: "How Does HTML SEO On-Page Optimization Boost Organic Visibility?"
 seoTitled: true
 youtubeId: "R4EYtFoiSrg"
 channelTitle: "CodeLucky"

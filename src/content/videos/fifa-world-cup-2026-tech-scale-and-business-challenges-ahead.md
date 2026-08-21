@@ -1,5 +1,5 @@
 ---
-title: "FIFA World Cup 2026: Tech, Scale, Business Challenges"
+title: "FIFA World Cup 2026 Tech Logistical and Profit Complexities"
 titleShortened: true
 youtubeId: "z78E0D_RlLw"
 channelTitle: "DW News"

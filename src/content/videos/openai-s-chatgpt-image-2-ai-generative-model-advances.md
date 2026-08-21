@@ -1,5 +1,5 @@
 ---
-title: "OpenAI's ChatGPT Image 2: AI Generative Model Advances"
+title: "OpenAI's ChatGPT Image 2: Generative AI Converges Text and Visuals"
 youtubeId: "uvdRGC4cFhY"
 channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"

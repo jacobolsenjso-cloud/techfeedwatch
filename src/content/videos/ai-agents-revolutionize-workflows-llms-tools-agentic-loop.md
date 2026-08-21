@@ -1,5 +1,5 @@
 ---
-title: "AI Agents Revolutionize Workflows: LLMs, Tools & Agentic Loop"
+title: "Can AI Agents with LLMs and Tools Self-Correct Workflows?"
 youtubeId: "L7FF8Zgab3M"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

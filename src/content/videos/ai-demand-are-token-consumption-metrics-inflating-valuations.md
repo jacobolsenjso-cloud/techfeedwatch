@@ -1,5 +1,5 @@
 ---
-title: "AI Demand: Token Consumption Metrics Inflating Valuations?"
+title: "AI Token Consumption Overstates Demand, Inflating Valuations"
 titleShortened: true
 youtubeId: "grdoOQ-sLfE"
 channelTitle: "CNBC"

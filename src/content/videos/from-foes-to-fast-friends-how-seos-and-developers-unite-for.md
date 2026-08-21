@@ -1,5 +1,5 @@
 ---
-title: "SEO & Developers Team Up for Performance & Discoverability"
+title: "How SEO Developers Build Performance and Discoverability"
 seoTitled: true
 youtubeId: "Ednegcd0jNE"
 channelTitle: "Google Search Central"

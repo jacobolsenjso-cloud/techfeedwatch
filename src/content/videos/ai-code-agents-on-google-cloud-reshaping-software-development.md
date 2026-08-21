@@ -1,5 +1,5 @@
 ---
-title: "AI Code Agents on Google Cloud: Shape Software Development"
+title: "Do AI Code Agents on Gemini Platform Reshape Developer Roles?"
 titleShortened: true
 youtubeId: "pIq2s5BKpkw"
 channelTitle: "Google Cloud Tech"

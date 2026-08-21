@@ -1,5 +1,5 @@
 ---
-title: "Oracle Networks: Real-World Data for Smart Contracts & DeFi"
+title: "Oracle Networks Automate Real-World Data for Smart Contracts DeFi"
 seoTitled: true
 youtubeId: "TPXTmVdlyoc"
 channelTitle: "Lex Fridman"

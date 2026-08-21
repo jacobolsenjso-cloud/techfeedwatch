@@ -1,5 +1,5 @@
 ---
-title: "AI Postgraduate Program ROI: Is It Worth the Investment?"
+title: "Is an AI Postgraduate Program a Good Career Investment?"
 seoTitled: true
 youtubeId: "AnTpZQnlEj4"
 channelTitle: "Wes James Henderson"

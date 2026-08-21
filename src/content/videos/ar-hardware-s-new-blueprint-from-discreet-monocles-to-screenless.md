@@ -1,5 +1,5 @@
 ---
-title: "AR Hardware: Consumer Devices, Screenless Computing Trends"
+title: "AR Hardware Trends to Smart Glasses and Screenless Computing"
 seoTitled: true
 youtubeId: "4N6yyXdYUU4"
 channelTitle: "Adam Savage’s Tested"

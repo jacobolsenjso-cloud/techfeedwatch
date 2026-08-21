@@ -1,5 +1,5 @@
 ---
-title: "AI for SEO & Social Media: Automate Digital Marketing"
+title: "How Does AI Fully Automate SEO and Social Media Marketing?"
 seoTitled: true
 youtubeId: "DYkZ5CXmkxo"
 channelTitle: "Tim The SEO Guru"

@@ -1,5 +1,5 @@
 ---
-title: "Jane Street Builds Bespoke AI for OCaml Productivity"
+title: "Jane Street's Custom AI: OCaml Coding Assistants Boost Productivity"
 seoTitled: true
 youtubeId: "0ML7ZLMdcl4"
 channelTitle: "AI Engineer"

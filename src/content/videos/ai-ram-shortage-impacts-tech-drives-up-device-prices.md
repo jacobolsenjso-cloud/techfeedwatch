@@ -1,5 +1,5 @@
 ---
-title: "AI RAM Shortage Impacts Tech, Drives Up Device Prices"
+title: "How AI HBM Shortage Drives Up Consumer Electronics Prices"
 youtubeId: "-YNk9_e4pg4"
 channelTitle: "ColdFusion"
 channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"

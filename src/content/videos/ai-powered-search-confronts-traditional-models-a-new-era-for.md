@@ -1,5 +1,5 @@
 ---
-title: "Perplexity AI Challenges Google with Direct Answer Engine"
+title: "Perplexity AI Offers Verified Answers to Rival Google Search"
 seoTitled: true
 youtubeId: "e-gwvmhyU7A"
 channelTitle: "Lex Fridman"

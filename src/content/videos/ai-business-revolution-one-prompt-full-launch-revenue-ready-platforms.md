@@ -1,5 +1,5 @@
 ---
-title: "AI Business Creation: Prompt to Revenue-Ready Business"
+title: "Atoms AI Builds Businesses From Prompt to SEO and Ad Campaigns"
 titleShortened: true
 seoTitled: true
 youtubeId: "CILRCeupuFQ"

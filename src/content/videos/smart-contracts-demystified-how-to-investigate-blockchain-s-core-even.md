@@ -1,5 +1,5 @@
 ---
-title: "Smart Contracts: Verify Blockchain Logic Without Code"
+title: "What Inspecting Smart Contracts Without Code Means for NFTs"
 titleShortened: true
 seoTitled: true
 youtubeId: "HHLhmaJta58"

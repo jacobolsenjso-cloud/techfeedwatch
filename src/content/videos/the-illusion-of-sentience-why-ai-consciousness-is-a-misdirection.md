@@ -1,5 +1,5 @@
 ---
-title: "AI Consciousness Myth: Why Current AI Lacks True Sentience"
+title: "AI Consciousness: Why Current AI Lacks Subjective Experience"
 seoTitled: true
 youtubeId: "tJV-vdbZ388"
 channelTitle: "TED"

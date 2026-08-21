@@ -1,5 +1,5 @@
 ---
-title: "Developer Growth: Avoid Intuitive Coding & AI Pitfalls"
+title: "Vibe Coding and AI Pitfalls Block Developer Progression"
 seoTitled: true
 youtubeId: "ya6520zh4pQ"
 channelTitle: "DevForge"

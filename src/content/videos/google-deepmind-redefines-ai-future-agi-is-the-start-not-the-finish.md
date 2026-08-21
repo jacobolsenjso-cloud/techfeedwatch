@@ -1,5 +1,5 @@
 ---
-title: "AGI to ASI: DeepMind Predicts Rapid Superintelligence Leap"
+title: "DeepMind: AGI Leads to ASI Superintelligence via Self-Improvement"
 titleShortened: true
 seoTitled: true
 youtubeId: "haB_od-xCWY"

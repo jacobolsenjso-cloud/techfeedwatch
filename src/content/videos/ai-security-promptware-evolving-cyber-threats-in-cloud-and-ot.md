@@ -1,5 +1,5 @@
 ---
-title: "AI Security & Promptware: Evolving Cyber Threats in Cloud and OT"
+title: "AI Security Promptware Attacks Target Cloud OT Defenses"
 youtubeId: "HycfWDXMr5Q"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

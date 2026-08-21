@@ -1,5 +1,5 @@
 ---
-title: "Web3 Smart Contract Development with AI & Blockchain"
+title: "Modern Web3 Solidity DApps with AI Oracles and Blockchain"
 seoTitled: true
 youtubeId: "umepbfKp5rI"
 channelTitle: "Patrick Collins"

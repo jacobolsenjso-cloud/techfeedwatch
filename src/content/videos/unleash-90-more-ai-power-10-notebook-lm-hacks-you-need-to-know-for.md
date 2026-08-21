@@ -1,5 +1,5 @@
 ---
-title: "Notebook LM Hacks: 10 Tips for Advanced AI Workflow Power"
+title: "Notebook LM: 10 AI Tips for Advanced Knowledge Systems"
 seoTitled: true
 youtubeId: "gTGAkxx4ItU"
 channelTitle: "Ai Podcast "

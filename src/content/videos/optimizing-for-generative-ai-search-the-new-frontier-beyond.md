@@ -1,5 +1,5 @@
 ---
-title: "Generative AI SEO: Optimize Content for AI Search Engines"
+title: "How Generative AI Changes SEO for Semantic Content and AI Search"
 seoTitled: true
 youtubeId: "kpvA-bDD180"
 channelTitle: "Systems Made Better"

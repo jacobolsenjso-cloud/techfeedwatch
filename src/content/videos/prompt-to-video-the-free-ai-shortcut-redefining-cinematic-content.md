@@ -1,5 +1,5 @@
 ---
-title: "Prompt-to-Video AI: Free Tools Democratize Quality Video"
+title: "Video AI: Free Prompt-to-Video Tools Bring Quality to Desktop"
 titleShortened: true
 seoTitled: true
 youtubeId: "2cT1cb9BY_M"

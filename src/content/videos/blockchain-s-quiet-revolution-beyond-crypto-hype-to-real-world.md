@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Business Transformation: Beyond Crypto"
+title: "Blockchain Builds Trust in Finance and Supply Chains Beyond Crypto"
 titleShortened: true
 seoTitled: true
 youtubeId: "Pl8OlkkwRpc"

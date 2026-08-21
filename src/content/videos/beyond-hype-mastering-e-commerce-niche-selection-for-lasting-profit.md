@@ -1,5 +1,5 @@
 ---
-title: "Find Profitable E-commerce Niche: Data-Driven Strategies"
+title: "Find Profitable E-commerce Niches Through Market Analysis"
 seoTitled: true
 youtubeId: "vsWnptm8dF4"
 channelTitle: "Exploding Topics"

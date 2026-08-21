@@ -1,5 +1,5 @@
 ---
-title: "Hard Tech Startups Accelerate Capital-Efficient Deep Tech"
+title: "Hard Tech Startups Accelerate Deep Tech via Achievable Milestones"
 seoTitled: true
 youtubeId: "erDE2e69dlc"
 channelTitle: "Y Combinator"

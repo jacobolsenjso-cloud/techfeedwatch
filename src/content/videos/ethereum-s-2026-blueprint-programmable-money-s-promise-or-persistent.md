@@ -1,5 +1,5 @@
 ---
-title: "Ethereum 2026: Programmable Money, Scaling, DeFi & NFTs"
+title: "Ethereum 2026 Powers Programmable Money and Global Settlement"
 seoTitled: true
 youtubeId: "JsSQ0F6V9nQ"
 channelTitle: "Teacher Everything"

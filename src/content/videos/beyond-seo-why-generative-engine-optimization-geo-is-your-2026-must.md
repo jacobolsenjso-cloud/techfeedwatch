@@ -1,5 +1,5 @@
 ---
-title: "Generative Engine Optimization (GEO) Boost LLM & AI Search"
+title: "How Does Generative Engine Optimization Boost LLM AI Discoverability?"
 titleShortened: true
 seoTitled: true
 youtubeId: "Pi9GjgNFwqo"

@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Wallets: Accounts, Gas, & DeFi Interaction"
+title: "Ethereum Wallets: Accounts, Gas, Smart Contracts, DeFi"
 titleShortened: true
 seoTitled: true
 youtubeId: "qLZ1IoezucE"

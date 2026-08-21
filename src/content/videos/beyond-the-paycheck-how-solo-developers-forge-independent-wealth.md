@@ -1,5 +1,5 @@
 ---
-title: "Solo Developers: Build Independent Wealth Creating Software"
+title: "How Do Solo Developers Build Wealth with Direct Software Products?"
 seoTitled: true
 youtubeId: "A4_TFHzqAAg"
 channelTitle: "Fireship"

@@ -1,5 +1,5 @@
 ---
-title: "Digital Banks UAE: Zand Disrupts Traditional Banking Models"
+title: "Digital Banks UAE: Zand's Agile Platforms Challenge Legacy Banks"
 seoTitled: true
 youtubeId: "N0CRAhi4qo0"
 channelTitle: "Couchonomics with Arjun"

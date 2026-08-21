@@ -1,5 +1,5 @@
 ---
-title: "On-Page SEO: Essential for Higher Google Rankings & Traffic"
+title: "What On-Page SEO Means for Google Rankings and Relevant Traffic"
 seoTitled: true
 youtubeId: "w4jXFLzFU8U"
 channelTitle: "HGS Infotech"

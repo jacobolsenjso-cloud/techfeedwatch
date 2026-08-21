@@ -1,5 +1,5 @@
 ---
-title: "AI Coding Problems: Vibe Coding Causes Technical Debt"
+title: "Vibe Coding Practices Create Architectural AI Technical Debt"
 seoTitled: true
 youtubeId: "T539pbwTIZY"
 channelTitle: "Modern Software Engineering"

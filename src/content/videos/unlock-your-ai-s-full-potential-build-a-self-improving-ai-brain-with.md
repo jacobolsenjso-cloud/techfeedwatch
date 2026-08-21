@@ -1,5 +1,5 @@
 ---
-title: "Build Self-Improving AI Brains for Personalized Expert Aid"
+title: "Build AI Brains: Architecting Local, Self-Improving Experts"
 titleShortened: true
 seoTitled: true
 youtubeId: "iadt4yTlK6w"

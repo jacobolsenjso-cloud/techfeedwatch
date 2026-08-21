@@ -1,5 +1,5 @@
 ---
-title: "Azure Cloud Engineer Practical Skills vs. Certifications"
+title: "How Project Skills Change Azure Engineer Certifications' Role"
 titleShortened: true
 youtubeId: "Py9uturi9ho"
 channelTitle: "Cloudtechexec"

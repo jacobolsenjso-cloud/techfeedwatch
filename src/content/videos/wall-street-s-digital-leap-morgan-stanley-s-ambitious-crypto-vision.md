@@ -1,5 +1,5 @@
 ---
-title: "Morgan Stanley Digital Asset Strategy: Crypto & Tokenization"
+title: "How Morgan Stanley Digital Asset Strategy Changes Wall Street"
 titleShortened: true
 seoTitled: true
 youtubeId: "g9WFO0M9KT4"

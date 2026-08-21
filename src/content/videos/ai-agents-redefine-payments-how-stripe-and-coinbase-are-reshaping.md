@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Payments Redefine Commerce with Stripe, Coinbase"
+title: "Autonomous Payments: Stripe, Coinbase Challenge Banking Dominance"
 seoTitled: true
 youtubeId: "I-BRrCkz-F4"
 channelTitle: "Coin Bureau"

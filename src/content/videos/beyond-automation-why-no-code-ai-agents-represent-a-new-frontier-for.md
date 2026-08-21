@@ -1,5 +1,5 @@
 ---
-title: "No-Code AI Agents: Build Smart AI Without Coding Skills"
+title: "No-Code AI Agents: Design Adaptive AI Workflows Without Code"
 seoTitled: true
 youtubeId: "EH5jx5qPabU"
 channelTitle: "Futurepedia"

@@ -1,5 +1,5 @@
 ---
-title: "AI chip market: Asia fuels $250B growth led by Nvidia"
+title: "Asia's $250B AI Chip Growth Fueled by Nvidia Financing"
 seoTitled: true
 youtubeId: "QycryeG7OJw"
 channelTitle: "Bloomberg Television"

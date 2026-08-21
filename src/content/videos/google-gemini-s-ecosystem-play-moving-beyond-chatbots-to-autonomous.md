@@ -1,5 +1,5 @@
 ---
-title: "Google Gemini AI: Autonomous Agents & Workspace Integration"
+title: "Google Gemini AI Uses Autonomous Agents for Workspace Tasks"
 seoTitled: true
 youtubeId: "xz-pG1gUS4c"
 channelTitle: "Ai Podcast "

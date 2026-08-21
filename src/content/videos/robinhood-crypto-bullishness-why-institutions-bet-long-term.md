@@ -1,5 +1,5 @@
 ---
-title: "Robinhood Crypto Bullishness: Why Institutions Bet Long-Term"
+title: "Robinhood Crypto and Institutions Bet Long-Term on Blockchain"
 youtubeId: "sY_PCmpVKZI"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

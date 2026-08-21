@@ -1,5 +1,5 @@
 ---
-title: "Smart Contracts For Industry: Real-World Efficiency"
+title: "How Smart Contracts Reshape Industry's Real-World Agreements"
 titleShortened: true
 seoTitled: true
 youtubeId: "l-sTw136zAs"

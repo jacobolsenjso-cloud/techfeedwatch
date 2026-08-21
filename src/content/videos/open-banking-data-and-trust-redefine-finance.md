@@ -1,5 +1,5 @@
 ---
-title: "Open Banking: Data and Trust Redefine Finance"
+title: "Open Banking: Data and Trust Drive Personalized Finance"
 youtubeId: "wJU5sOX2NgI"
 channelTitle: "Best Innovation Group"
 channelId: "UCIucEVuY_jo5QCbZDqENW1g"

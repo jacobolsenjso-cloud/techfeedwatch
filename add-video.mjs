@@ -117,6 +117,52 @@ function hashString(str) {
   return Math.abs(h);
 }
 
+// ---- Titelform-rotation ----
+// Målt 20/8 på arkivet: 80% af titlerne havde kolon-formen "X: Y", 27% "&",
+// og kun 3 af 386 var spørgsmål — sitets mest maskinelle synlige træk. Alle
+// 386 blev omskrevet med spredte former; rotationen her sørger for at nye
+// artikler fødes varierede i stedet for at skulle repareres bagefter.
+// Formen vælges deterministisk af videoId (afkoblet fra artikel-profilen via
+// eget salt), så fordelingen bliver ~25% kolon, ~12% spørgsmål, resten udsagn.
+const TITLE_FORMS = [
+  'A plain declarative headline. No colon, no question mark.',
+  'A how/what/why headline WITHOUT a question mark. No colon.',
+  'A plain declarative headline. No colon, no question mark. Vary the opening word.',
+  'A two-part headline with ONE colon; the part before the colon is 1-3 words.',
+  'A genuine question ending in a question mark. No colon. The question a searcher would type.',
+  'A plain declarative headline. No colon, no question mark. May start with a number if the article genuinely lists things.',
+  'A "What ... Means for ..." or "How ... Changes ..." headline. No colon, no question mark.',
+  'A two-part headline with ONE colon; the substance goes after the colon.',
+];
+
+// Publikations-casing: småord i småt medmindre de indleder titlen eller står
+// lige efter kolon. Gemini skriver "And"/"For" med stort trods Title Case-krav.
+const SMAAORD = new Set(['a','an','and','as','at','but','by','for','in','nor','of','on','or','per','the','to','vs','via','with']);
+function pubCase(t) {
+  return t.split(' ').map((ord, i, alle) => {
+    const kerne = ord.toLowerCase();
+    if (i === 0 || (i > 0 && alle[i - 1].endsWith(':')) || !SMAAORD.has(kerne)) return ord;
+    return kerne;
+  }).join(' ');
+}
+
+// Åbningsords-værn: de seneste ~15 artiklers første titelord er forbudte som
+// åbning, så forsiden ikke får tre "How ..."-titler i træk. Én models sprogtone
+// konvergerer — formen kan roteres, men gentagne åbninger er det synlige symptom.
+function senesteAabningsord() {
+  const dir = './src/content/videos';
+  if (!fs.existsSync(dir)) return [];
+  const rows = [];
+  for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.md'))) {
+    const raw = fs.readFileSync(`${dir}/${f}`, 'utf-8');
+    const t = raw.match(/^title:\s*"(.+)"/m)?.[1];
+    const d = raw.match(/^date:\s*"(.*?)"/m)?.[1] || '';
+    if (t) rows.push({ d, ord: t.split(' ')[0] });
+  }
+  rows.sort((a, b) => b.d.localeCompare(a.d));
+  return [...new Set(rows.slice(0, 15).map((r) => r.ord))];
+}
+
 // Laver en URL-venlig slug ud fra en titel: lowercase, uden accenter/specialtegn, bindestreg-separeret.
 const SLUG_MAX_LENGTH = 70;
 
@@ -377,7 +423,7 @@ async function run() {
     ${targetQuestion ? `THE READER'S QUESTION: someone searching Google typed "${targetQuestion}". That question is this article's job. Answer it plainly in the opening, then spend the article explaining the subject well enough that the answer holds up: what it is, why it works that way, what it costs, and where people get it wrong. The headline and at least one H2 must reflect the question. If the source material does not address it, still write about the subject — just do not invent an answer to the question.` : `Write about the subject itself, not about the video. A reader who never watches it must come away with a complete answer.`}
 
     Return EXACTLY in this format:
-    TITLE: An SEO-optimized headline, about 50-65 characters, that FRONT-LOADS the primary keyword/topic exactly the way people search for it (e.g. "What Is Open Banking? How Agentic AI Changes Finance" or "Nvidia's $250B AI Chip Deal: What It Means"). Be concrete and specific and include the main keyword near the start. It can be engaging, but search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
+    TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
@@ -437,7 +483,10 @@ async function run() {
     const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=META:|FAQ:|CONTENT:|$)/i);
     const metaMatch = rawText.match(/META:\s*(.*)/i);
 
-    const safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    let safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    // Efterbehandling af titlen: publikations-casing (småord i småt) og
+    // og-tegn ud — de to ting Gemini oftest overhører i instruksen.
+    safeTitle = pubCase(safeTitle.replace(/\s*&\s*/g, ' and '));
     const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
     const slug = resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];

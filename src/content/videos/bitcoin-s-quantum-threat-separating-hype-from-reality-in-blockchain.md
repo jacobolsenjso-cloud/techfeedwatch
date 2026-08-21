@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Quantum Threat: Security Risks Post-Quantum Defense"
+title: "Quantum Threat to Bitcoin's ECC Needs Post-Quantum Defense"
 titleShortened: true
 seoTitled: true
 youtubeId: "kLV2Cqsahbw"

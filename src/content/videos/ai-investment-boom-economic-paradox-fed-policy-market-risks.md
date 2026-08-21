@@ -1,5 +1,5 @@
 ---
-title: "AI Investment Boom: Economic Paradox, Fed Policy, Market Risks"
+title: "AI Investment Paradox Pressures Economic Stability and Fed Policy"
 youtubeId: "Ci0Xh0ZsN1I"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

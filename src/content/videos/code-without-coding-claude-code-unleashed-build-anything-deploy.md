@@ -1,5 +1,5 @@
 ---
-title: "Build Apps Without Coding: Claude Code AI for Non-Developers"
+title: "No-Code AI: Claude Code Empowers Citizen Developers to Build Apps"
 seoTitled: true
 youtubeId: "5tgHMa2Z3jc"
 channelTitle: "Futurepedia"

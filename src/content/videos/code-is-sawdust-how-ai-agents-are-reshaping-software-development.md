@@ -1,5 +1,5 @@
 ---
-title: "AI Agents Shift Software Development: Code to Orchestration"
+title: "AI Agents Turn Software Developers Into Architects"
 titleShortened: true
 seoTitled: true
 youtubeId: "fQmlML9Lay4"

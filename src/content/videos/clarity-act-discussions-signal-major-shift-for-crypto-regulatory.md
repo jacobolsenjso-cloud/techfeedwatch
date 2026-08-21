@@ -1,5 +1,5 @@
 ---
-title: "Clarity Act: Crypto Regulation Aims to Define Digital Assets"
+title: "Clarity Act Seeks to Define Crypto Securities or Commodities"
 seoTitled: true
 youtubeId: "Up9AcAKAVSY"
 channelTitle: "Altcoin Daily"

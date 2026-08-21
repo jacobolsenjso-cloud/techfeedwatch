@@ -1,5 +1,5 @@
 ---
-title: "Agentic AI for Open Banking: Autonomous Finance & Privacy"
+title: "Does Agentic AI Risk Open Banking's Autonomous Finance Privacy?"
 titleShortened: true
 seoTitled: true
 youtubeId: "U17g-GpdiLI"

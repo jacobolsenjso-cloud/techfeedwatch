@@ -1,5 +1,5 @@
 ---
-title: "AI Second Brain: Boost Productivity, Stop AI Slowing Work"
+title: "Will an AI Second Brain Stop AI Context Rebuilding Slowing Work?"
 titleShortened: true
 youtubeId: "aWB3Fe2g2oQ"
 channelTitle: "Prosperous Marketing"

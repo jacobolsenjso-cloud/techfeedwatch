@@ -1,5 +1,5 @@
 ---
-title: "Google AI Overviews Impact Content Creators' Traffic & SEO"
+title: "Google AI Overviews Undermine Content Creators' Clicks and SEO"
 youtubeId: "J0lLvVYahNY"
 channelTitle: "Ahrefs"
 channelId: "UCWquNQV8Y0_defMKnGKrFOQ"

@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Strategy: Gain AI Citations from Generative Overviews"
+title: "How to Optimize Content for AI Citations From Generative Overviews?"
 seoTitled: true
 youtubeId: "RZGDkMlmQ18"
 channelTitle: "CXL"

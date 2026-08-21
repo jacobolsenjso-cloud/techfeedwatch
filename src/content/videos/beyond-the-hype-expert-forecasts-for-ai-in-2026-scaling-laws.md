@@ -1,5 +1,5 @@
 ---
-title: "AI 2026: Competition, Open Models, Fragmented Future"
+title: "Open Models Challenge US Incumbents Creating AI's Fragmented Future"
 titleShortened: true
 seoTitled: true
 youtubeId: "EV7WhVT270Q"

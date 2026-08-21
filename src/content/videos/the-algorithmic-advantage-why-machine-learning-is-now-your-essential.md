@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning Career: Hands-On Skills, No Advanced Degree"
+title: "Project-Based Skills Build Machine Learning Careers Without Degrees"
 seoTitled: true
 youtubeId: "JJCq21Dc-Us"
 channelTitle: "NetworkChuck"

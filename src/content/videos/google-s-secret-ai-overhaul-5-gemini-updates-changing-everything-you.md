@@ -1,5 +1,5 @@
 ---
-title: "Google Gemini: 5 AI Updates for Workspace Productivity"
+title: "Google Gemini: AI as a Core Component of Digital Workflows"
 seoTitled: true
 youtubeId: "ldVPIMmTkpo"
 channelTitle: "Next Level AI"

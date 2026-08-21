@@ -1,5 +1,5 @@
 ---
-title: "Personal Finance Strategies: Modern Tools to Grow Wealth"
+title: "How Fintech Tools Augment Personal Finance for Financial Independence"
 titleShortened: true
 youtubeId: "z-mSoosGQdc"
 channelTitle: "Al Zhang"

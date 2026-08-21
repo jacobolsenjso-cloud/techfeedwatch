@@ -1,5 +1,5 @@
 ---
-title: "SEO Best Practices: Prioritize User Value, Not Old Tricks"
+title: "SEO Best Practices: User Value Trumps Keyword Density, Link Schemes"
 seoTitled: true
 youtubeId: "bHvPyTWDrFU"
 channelTitle: "Code of Entry"

@@ -1,5 +1,5 @@
 ---
-title: "Google Gemini Productivity: 7 Hacks to Supercharge Workflows"
+title: "Google Gemini 7 AI Hacks to Automate Workflows Across Workspace"
 titleShortened: true
 seoTitled: true
 youtubeId: "sZwN_u9DMnU"

@@ -1,5 +1,5 @@
 ---
-title: "Open Source AI Lowers Enterprise Costs: GLM-5.2"
+title: "How Open Source AI GLM-5.2 Lowers Enterprise AI Costs"
 titleShortened: true
 seoTitled: true
 youtubeId: "XbHeJL45USQ"

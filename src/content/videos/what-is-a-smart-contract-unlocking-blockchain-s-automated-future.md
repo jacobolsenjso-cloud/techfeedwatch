@@ -1,5 +1,5 @@
 ---
-title: "Smart Contract Defined: Benefits, Risks, Blockchain"
+title: "How Smart Contracts Use Blockchain for Benefits and Trade-offs"
 titleShortened: true
 seoTitled: true
 youtubeId: "Un7-hW6GAec"

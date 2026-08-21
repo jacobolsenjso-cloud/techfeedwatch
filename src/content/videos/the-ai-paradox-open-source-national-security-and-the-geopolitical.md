@@ -1,5 +1,5 @@
 ---
-title: "AI Open Source vs National Security: Geopolitical Challenges"
+title: "AI Open Source: Geopolitical Security Challenges From Dual-Use Models"
 seoTitled: true
 youtubeId: "f2E5iQMZxvM"
 channelTitle: "Virtual Protocol"

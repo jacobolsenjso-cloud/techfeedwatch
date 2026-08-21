@@ -1,5 +1,5 @@
 ---
-title: "AI Weapons for Peace: Autonomous Deterrence Strategy"
+title: "Anduril's Luckey Proposes AI Weapons for Peace Through Deterrence"
 seoTitled: true
 youtubeId: "ooMXEwl7N8Y"
 channelTitle: "TED"

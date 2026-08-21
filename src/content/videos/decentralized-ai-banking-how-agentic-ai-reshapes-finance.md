@@ -1,5 +1,5 @@
 ---
-title: "Decentralized AI Banking: How Agentic AI Reshapes Finance"
+title: "Agentic AI Helps Decentralized AI Banking Disrupt Finance"
 youtubeId: "c-MSAP_HBcE"
 channelTitle: "technophile"
 channelId: "UCmlnPidspm1VB1uRJXfmViA"

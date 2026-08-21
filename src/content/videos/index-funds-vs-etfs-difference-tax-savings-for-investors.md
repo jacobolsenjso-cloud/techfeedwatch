@@ -1,5 +1,5 @@
 ---
-title: "Index Funds vs ETFs Difference: Tax Savings for Investors"
+title: "Index Funds Versus ETFs Impact Investor Capital Gains Taxes"
 youtubeId: "9j2jTuRKCaU"
 channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"

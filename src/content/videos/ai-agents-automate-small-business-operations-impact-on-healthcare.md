@@ -1,5 +1,5 @@
 ---
-title: "AI Agents Automate Small Business Operations: Impact on Healthcare"
+title: "AI Agents Automate Small Healthcare Business Administrative Tasks"
 youtubeId: "Fpg_8aiBxx4"
 channelTitle: "a16z"
 channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"

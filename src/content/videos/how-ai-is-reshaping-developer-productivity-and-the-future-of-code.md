@@ -1,5 +1,5 @@
 ---
-title: "AI Coding Assistants Boost Productivity & Code Generation"
+title: "AI Coding Assistants Boost Productivity Generating Code Faster"
 titleShortened: true
 seoTitled: true
 youtubeId: "wwfJlSF34n8"

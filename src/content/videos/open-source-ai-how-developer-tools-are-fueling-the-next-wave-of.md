@@ -1,5 +1,5 @@
 ---
-title: "Open-Source AI Tools Accelerate AI Innovation for Developers"
+title: "Open-Source AI Tools Empower Developers for Faster AI Apps"
 seoTitled: true
 youtubeId: "Xn-gtHDsaPY"
 channelTitle: "Fireship"

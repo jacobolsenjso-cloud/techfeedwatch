@@ -1,5 +1,5 @@
 ---
-title: "AI Hacking: Autonomous Agents Threaten Corporate Networks"
+title: "Autonomous AI Agents Launch Multi-Step Hacking on Corporate Networks"
 youtubeId: "4NX2LQxJl3w"
 channelTitle: "Athena AI"
 channelId: "UCyp9C2eBN1SiMiRcM2XPjBQ"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Timeline: What Works Now, What Is Years Away"
+title: "Quantum Computing Status Current Limitations and Future Potential"
 seoTitled: true
 youtubeId: "QuR969uMICM"
 channelTitle: "TED"

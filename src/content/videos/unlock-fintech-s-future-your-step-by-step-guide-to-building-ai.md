@@ -1,5 +1,5 @@
 ---
-title: "Build AI FinTech Apps: Regulatory Compliance & Growth"
+title: "How AI Powers FinTech Apps for Real-Time Compliance and Growth"
 titleShortened: true
 seoTitled: true
 youtubeId: "PvjFuxCjygc"

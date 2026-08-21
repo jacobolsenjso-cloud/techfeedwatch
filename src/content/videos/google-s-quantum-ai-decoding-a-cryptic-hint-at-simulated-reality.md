@@ -1,5 +1,5 @@
 ---
-title: "Google Quantum AI Explores Simulated Reality Theory"
+title: "Google Quantum AI Pushes Simulated Reality Into Science"
 seoTitled: true
 youtubeId: "pIj-oBWJzS0"
 channelTitle: "OrbitraX History"

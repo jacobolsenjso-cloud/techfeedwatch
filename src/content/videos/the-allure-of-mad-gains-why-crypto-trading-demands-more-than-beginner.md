@@ -1,5 +1,5 @@
 ---
-title: "Crypto Trading: Beginner Guides Miss Risk & Discipline"
+title: "Beginner Crypto Trading Guides Overlook Volatility and Discipline"
 titleShortened: true
 seoTitled: true
 youtubeId: "14HIIUjOLGY"

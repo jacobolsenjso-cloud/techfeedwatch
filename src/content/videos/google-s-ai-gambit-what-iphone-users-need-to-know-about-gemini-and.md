@@ -1,5 +1,5 @@
 ---
-title: "Google Gemini & Android XR AI for iPhone Users"
+title: "Google Gemini and Android XR AI Enter the iPhone Realm"
 seoTitled: true
 youtubeId: "S6XIxnb7AsQ"
 channelTitle: "MacRumors"

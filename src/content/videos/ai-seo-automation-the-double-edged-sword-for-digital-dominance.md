@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Automation: Benefits & Risks for Digital Strategy"
+title: "AI SEO Automation Boosts Efficiency but Risks Strategic Flaws"
 seoTitled: true
 youtubeId: "p__wg34jz64"
 channelTitle: "GoldieAgencySEO"

@@ -1,5 +1,5 @@
 ---
-title: "Financial Freedom Investing: Building Wealth Intentionally"
+title: "Building Financial Freedom with Strategic Investment Allocation"
 youtubeId: "50pHwCue01s"
 channelTitle: "Michael Kearse | Discussing Self Directed IRAs"
 channelId: "UCSjQQhJwfU9SfMJ2DWeenMg"

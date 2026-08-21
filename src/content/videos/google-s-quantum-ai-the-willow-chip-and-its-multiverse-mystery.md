@@ -1,5 +1,5 @@
 ---
-title: "Google Willow Quantum Chip Solves Problem, Aids Many-Worlds"
+title: "Did Google Willow Quantum Chip Solve a Problem Aiding Many-Worlds?"
 titleShortened: true
 seoTitled: true
 youtubeId: "lwiRg_TNrek"

@@ -1,5 +1,5 @@
 ---
-title: "iPhone AI Productivity: Personalized Tasks Automation"
+title: "iPhone AI Boosts Productivity Through Nuanced Task Automation"
 titleShortened: true
 seoTitled: true
 youtubeId: "iCUB7JZmmig"

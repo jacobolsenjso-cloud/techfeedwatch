@@ -1,5 +1,5 @@
 ---
-title: "Nvidia Vera Rubin: AI Infrastructure, 10x Power Efficiency"
+title: "Nvidia Vera Rubin Boosts Data Center AI Performance 10x per Watt"
 titleShortened: true
 seoTitled: true
 youtubeId: "ZkPU5GHDqkQ"

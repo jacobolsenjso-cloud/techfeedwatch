@@ -1,5 +1,5 @@
 ---
-title: "OpenAI GPT-5.6 Sol & AI Chip Jalapeño Redefine Frontier AI"
+title: "OpenAI GPT-5.6 Sol AI Chip Jalapeño Shift Frontier AI Paradigms"
 seoTitled: true
 youtubeId: "_AoyQcIoquA"
 channelTitle: "AI Revolution"

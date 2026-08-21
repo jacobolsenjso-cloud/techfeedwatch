@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Oracles: Essential for Real-World Smart Contracts"
+title: "Blockchain Oracles Bring Real-World Data to Smart Contracts"
 seoTitled: true
 youtubeId: "m64dLRjJ9Bs"
 channelTitle: "Hashoshi"

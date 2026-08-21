@@ -1,5 +1,5 @@
 ---
-title: "Apple Notes, Reminders, Calendar: Native Apps Embrace Siri AI"
+title: "Native Apps: Siri AI Boosts Apple Notes, Reminders, Calendar"
 youtubeId: "Y6EGHmJDVm4"
 channelTitle: "Christopher Lawley"
 channelId: "UC8raOG7HXJoCUygx219fU4A"

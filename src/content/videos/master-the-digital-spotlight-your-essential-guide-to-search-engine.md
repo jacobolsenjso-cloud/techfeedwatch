@@ -1,5 +1,5 @@
 ---
-title: "Modern SEO Guide: Master Evolving Search Engine Algorithms"
+title: "Modern SEO: Master Search Engine Algorithms Combating Manipulation"
 seoTitled: true
 youtubeId: "COL_qPL5xsg"
 channelTitle: "Techquickie"

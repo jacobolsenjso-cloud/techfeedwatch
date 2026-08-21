@@ -1,5 +1,5 @@
 ---
-title: "AI Quality Engineering: Validating AI Outputs for Trust"
+title: "AI Quality Engineering Validates AI Outputs for Accuracy and Fairness"
 titleShortened: true
 seoTitled: true
 youtubeId: "XLMPIRtsrDs"

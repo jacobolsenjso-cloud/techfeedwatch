@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Exponential Power for Advanced Problems"
+title: "Can Quantum Computing Solve Intractable Challenges?"
 seoTitled: true
 youtubeId: "OZeHj48g9Rc"
 channelTitle: "Top Niche Market"

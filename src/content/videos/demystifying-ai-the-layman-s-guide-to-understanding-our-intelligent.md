@@ -1,5 +1,5 @@
 ---
-title: "AI Explained: How Artificial Intelligence Works"
+title: "What Artificial Intelligence Means for Machine Learning"
 titleShortened: true
 seoTitled: true
 youtubeId: "m8o2GrbR3d8"

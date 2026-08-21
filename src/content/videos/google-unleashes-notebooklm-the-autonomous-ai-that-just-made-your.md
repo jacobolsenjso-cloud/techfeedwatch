@@ -1,5 +1,5 @@
 ---
-title: "Google NotebookLM: Autonomous AI Transforms Knowledge Work"
+title: "How Google NotebookLM Automates Research Tasks for Knowledge Work"
 titleShortened: true
 seoTitled: true
 youtubeId: "UHAuc6Lh234"

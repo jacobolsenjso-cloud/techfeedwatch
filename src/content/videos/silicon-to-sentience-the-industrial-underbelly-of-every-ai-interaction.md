@@ -1,5 +1,5 @@
 ---
-title: "AI Infrastructure: Servers, Data Centers, Manufacturing"
+title: "AI Servers and Data Centers Are Complex Physical Manufacturing"
 titleShortened: true
 seoTitled: true
 youtubeId: "WsWLSkt7d2w"

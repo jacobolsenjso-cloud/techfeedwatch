@@ -1,5 +1,5 @@
 ---
-title: "AR Engineering Training: Immersive Tech Transforms Industry"
+title: "AR Training: Boosting Engineering Efficiency with Immersive 3D"
 seoTitled: true
 youtubeId: "oLKcq0ULy2c"
 channelTitle: "Episode Up"

@@ -1,5 +1,5 @@
 ---
-title: "Looki L1 AI Life-Logger Review: Automated Memory, Story"
+title: "Does Looki L1 AI Life-Logger Turn Memories Into Comic Strip Stories?"
 titleShortened: true
 seoTitled: true
 youtubeId: "3RT_TDgEkb0"

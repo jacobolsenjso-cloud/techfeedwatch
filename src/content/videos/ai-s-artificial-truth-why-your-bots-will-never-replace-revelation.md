@@ -1,5 +1,5 @@
 ---
-title: "AI Limitations: Bots Will Never Replace Human Revelation"
+title: "AI's Limits: Bots Lack Subjective Human Revelation"
 seoTitled: true
 youtubeId: "sNF_1PIEda0"
 channelTitle: "Larry Ollison Ministries"

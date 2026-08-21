@@ -1,5 +1,5 @@
 ---
-title: "LLM Security Testing: Practical AI Vulnerability Defense"
+title: "How Practical AI Hacking Changes LLM Vulnerability Defense"
 seoTitled: true
 youtubeId: "_yfiUQSbdPY"
 channelTitle: "NetworkChuck"

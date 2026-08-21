@@ -1,5 +1,5 @@
 ---
-title: "Cryptocurrency Explained: Blockchain, Digital Assets & Value"
+title: "Why Cryptocurrency Blockchain Creates Immutable Digital Value"
 seoTitled: true
 youtubeId: "yiRCdMgkkFY"
 channelTitle: "a16z"

@@ -1,5 +1,5 @@
 ---
-title: "Altcoin Bull Market Signal: Decoding Macroeconomic Impact"
+title: "PMI Crossing Threshold Signals Altcoin Bull Market Onset"
 youtubeId: "Hgikc09SCgM"
 channelTitle: "Crypto Capital Venture"
 channelId: "UCnMku7J_UtwlcSfZlIuQ3Kw"

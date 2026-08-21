@@ -1,5 +1,5 @@
 ---
-title: "Lateral Movement Threats Target Cloud, SaaS, Infrastructure"
+title: "Lateral Movement: Threats Exploit Cloud, SaaS, Infrastructure"
 youtubeId: "k6Vd_wnYbhA"
 channelTitle: "Security BSides Bangalore"
 channelId: "UC0SqOU2NDDIP0bbt5OwW8Hw"

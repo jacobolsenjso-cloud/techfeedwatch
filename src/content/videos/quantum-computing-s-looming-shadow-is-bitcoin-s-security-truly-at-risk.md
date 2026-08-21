@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Bitcoin Security Risk Explained"
+title: "Shor's Algorithm: Quantum Threat to Bitcoin's Cryptography"
 seoTitled: true
 youtubeId: "Ph5ihHhx_rQ"
 channelTitle: "Coin Bureau"

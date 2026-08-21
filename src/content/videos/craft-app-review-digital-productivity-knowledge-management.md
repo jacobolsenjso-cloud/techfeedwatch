@@ -1,5 +1,5 @@
 ---
-title: "Craft App Review: Digital Productivity & Knowledge Management"
+title: "Craft App: A Unified Digital Productivity and Knowledge Hub"
 youtubeId: "2thyWgR0NdA"
 channelTitle: "That Mark Gilroy"
 channelId: "UCDYJ3BCFTGLylzCtKTrlkMw"

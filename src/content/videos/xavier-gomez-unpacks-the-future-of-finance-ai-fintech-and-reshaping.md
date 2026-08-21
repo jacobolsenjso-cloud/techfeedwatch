@@ -1,5 +1,5 @@
 ---
-title: "AI in Finance: Fintech Transforms Wealth Management"
+title: "Fintech AI Pressures Traditional Wealth Management"
 titleShortened: true
 seoTitled: true
 youtubeId: "qkhWvBZ4ycQ"

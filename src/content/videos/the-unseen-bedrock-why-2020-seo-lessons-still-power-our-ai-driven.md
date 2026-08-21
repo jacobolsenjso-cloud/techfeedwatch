@@ -1,5 +1,5 @@
 ---
-title: "AI SEO: Foundational Principles for Future Search Success"
+title: "AI SEO Strategy for Sustaining Future Search Visibility"
 seoTitled: true
 youtubeId: "xpSRdok0qUM"
 channelTitle: "Google Search Central"

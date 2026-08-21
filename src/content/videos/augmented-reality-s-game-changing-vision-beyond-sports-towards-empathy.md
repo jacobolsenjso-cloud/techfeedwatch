@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality: Empathy Beyond Sports & Entertainment"
+title: "AR Evolution: Building Empathy Beyond Sports and Entertainment"
 seoTitled: true
 youtubeId: "AgMOJC5R4F8"
 channelTitle: "TED"

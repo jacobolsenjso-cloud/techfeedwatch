@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Merge: How PoS Boosts Security and Sustainability"
+title: "How Ethereum Merge PoS Improves Network Security and Emissions"
 seoTitled: true
 youtubeId: "8-czXYEpqvE"
 channelTitle: "Proof Of Tech"

@@ -1,5 +1,5 @@
 ---
-title: "Generative Engine Optimization (GEO) Replaces AI Search SEO"
+title: "GEO Replaces AI Search SEO for Generative AI Models"
 titleShortened: true
 seoTitled: true
 youtubeId: "46vC7-BwJ_o"

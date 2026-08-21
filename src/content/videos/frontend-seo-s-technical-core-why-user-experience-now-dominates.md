@@ -1,5 +1,5 @@
 ---
-title: "User Experience SEO: Core Web Vitals, Site Speed, Rankings"
+title: "Are Core Web Vitals and Site Speed Direct SEO Ranking Factors?"
 titleShortened: true
 seoTitled: true
 youtubeId: "_w4uzUH1YeM"

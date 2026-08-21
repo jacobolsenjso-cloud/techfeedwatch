@@ -1,5 +1,5 @@
 ---
-title: "AI No-Code: Build Niche Websites & Online Businesses"
+title: "AI No-Code Lowers Barriers for Niche Online Businesses"
 seoTitled: true
 youtubeId: "Y-zKVrSRsiM"
 channelTitle: "AI Forge"

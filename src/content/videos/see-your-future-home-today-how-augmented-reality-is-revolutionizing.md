@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality Interior Design: Visualize Your Home Space"
+title: "How Augmented Reality Overlays Your Home Interior Design"
 seoTitled: true
 youtubeId: "YSUpB3z8NHc"
 channelTitle: "Ambiens"

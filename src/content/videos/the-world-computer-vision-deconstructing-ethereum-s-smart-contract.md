@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Smart Contracts: Architecture, Mechanics, EVM"
+title: "Ethereum Smart Contracts Architecture Mechanics for EVM Execution"
 titleShortened: true
 seoTitled: true
 youtubeId: "PLgawr4pbqE"

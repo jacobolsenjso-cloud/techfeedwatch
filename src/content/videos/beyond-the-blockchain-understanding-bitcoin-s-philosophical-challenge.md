@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Challenges Modern Money: Sovereignty & Property"
+title: "How Bitcoin Reshapes Modern Money, Sovereignty, Digital Property"
 titleShortened: true
 seoTitled: true
 youtubeId: "HrehEWYj16s"

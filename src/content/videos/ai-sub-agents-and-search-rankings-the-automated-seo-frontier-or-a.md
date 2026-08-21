@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Strategy: Automation, Human Oversight for Rankings"
+title: "Integrating AI SEO Requires Human Oversight for Quality Rankings"
 titleShortened: true
 seoTitled: true
 youtubeId: "yCxlgCkw7as"

@@ -1,5 +1,5 @@
 ---
-title: "Institutional Crypto: Tokenized Assets Drive Financial Shift"
+title: "Institutional Tokenized Assets Drive 24/7 Trading"
 titleShortened: true
 youtubeId: "6XvcvDScf1c"
 channelTitle: "Bloomberg Television"

@@ -1,5 +1,5 @@
 ---
-title: "Future Cities: Pervasive AI in Smart Spaces"
+title: "Future Cities: Pervasive AI Creates Hyper-Personalized Smart Spaces"
 titleShortened: true
 seoTitled: true
 youtubeId: "Fm4kPJpKcrM"

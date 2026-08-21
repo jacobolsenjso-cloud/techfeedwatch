@@ -1,5 +1,5 @@
 ---
-title: "Why AI Won't Reach Human Reasoning: 3 AGI Design Flaws"
+title: "What AI's AGI Architectural Constraints Mean for Human Reasoning"
 seoTitled: true
 youtubeId: "984qBh164fo"
 channelTitle: "Sabine Hossenfelder"

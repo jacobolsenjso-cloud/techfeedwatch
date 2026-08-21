@@ -1,5 +1,5 @@
 ---
-title: "Meta AI: Free Muse Image & Video Generation, Motion Control"
+title: "Meta AI: Free Muse Image, Muse Video, Pose and Depth Control"
 titleShortened: true
 seoTitled: true
 youtubeId: "epJiVrv4KVQ"

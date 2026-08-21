@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Smart Contracts on Bitcoin with OPNET Protocol"
+title: "OPNET Protocol Brings Ethereum Smart Contracts to Bitcoin L1 Natively"
 titleShortened: true
 seoTitled: true
 youtubeId: "WLm9wPw8b5U"

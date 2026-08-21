@@ -1,5 +1,5 @@
 ---
-title: "Build Wealth: How Similar Incomes Lead to Different Fortunes"
+title: "Build Wealth: Capital Deployment Shapes Fortunes From Similar Incomes"
 titleShortened: true
 seoTitled: true
 youtubeId: "uFLz0MexCSY"

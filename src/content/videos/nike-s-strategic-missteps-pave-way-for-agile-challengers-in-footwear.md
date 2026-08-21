@@ -1,5 +1,5 @@
 ---
-title: "Nike Footwear Missteps Fuel Agile Challengers' Growth"
+title: "Nike Footwear Strategic Errors Fuel Agile on Running Market Gains"
 titleShortened: true
 seoTitled: true
 youtubeId: "8s7t64aXaEA"

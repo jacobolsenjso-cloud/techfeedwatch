@@ -1,5 +1,5 @@
 ---
-title: "Virtual Reality Expands: Enterprise, Education, Training"
+title: "VR Moves Beyond Gaming to Enterprise Education Training"
 titleShortened: true
 seoTitled: true
 youtubeId: "sYz8D_ZbB2I"

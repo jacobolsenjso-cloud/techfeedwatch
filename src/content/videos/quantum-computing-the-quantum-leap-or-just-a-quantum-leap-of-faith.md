@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Basics: Superposition and Qubits Explained"
+title: "Quantum Computing How Superposition and Qubits Work"
 seoTitled: true
 youtubeId: "-1PsQIciMEc"
 channelTitle: "World Science Festival"

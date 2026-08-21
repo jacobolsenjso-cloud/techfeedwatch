@@ -1,5 +1,5 @@
 ---
-title: "AI Productivity Tools: Transform Workflows, Boost Efficiency"
+title: "How AI Productivity Tools Master Complex Workflows"
 seoTitled: true
 youtubeId: "RcXG_b1_GB0"
 channelTitle: "Digital Brain"

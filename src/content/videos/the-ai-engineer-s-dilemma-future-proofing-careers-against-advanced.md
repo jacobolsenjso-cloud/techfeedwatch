@@ -1,5 +1,5 @@
 ---
-title: "AI Impact on Programmers: Essential Skills for Automation"
+title: "AI Requires Programmers to Develop Architectural Thinking Skills"
 titleShortened: true
 seoTitled: true
 youtubeId: "gXqpTUy5czc"

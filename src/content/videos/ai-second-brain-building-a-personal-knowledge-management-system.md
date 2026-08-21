@@ -1,5 +1,5 @@
 ---
-title: "AI Second Brain: Build Your Personal Knowledge System"
+title: "AI Second Brain: Automate Your Personal Knowledge System"
 titleShortened: true
 youtubeId: "gMJGjwROSV8"
 channelTitle: "Brandon Lee"

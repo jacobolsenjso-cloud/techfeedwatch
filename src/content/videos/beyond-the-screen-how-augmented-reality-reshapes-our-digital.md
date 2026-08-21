@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality: Future of Human-Computer Interaction"
+title: "How Augmented Reality Redefines Human-Computer Spatial Interaction"
 seoTitled: true
 youtubeId: "H9ZOpQzjukY"
 channelTitle: "TED"

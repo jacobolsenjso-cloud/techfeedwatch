@@ -1,5 +1,5 @@
 ---
-title: "Generate Niche Website: AI, Perplexity & Claude In Minutes"
+title: "How AI Perplexity Claude Build Niche Blog Sites in Minutes"
 titleShortened: true
 seoTitled: true
 youtubeId: "9EkTq9WeQZQ"

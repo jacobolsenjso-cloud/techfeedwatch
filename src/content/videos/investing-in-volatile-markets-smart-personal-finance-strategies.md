@@ -1,5 +1,5 @@
 ---
-title: "Investing in Volatile Markets: Smart Personal Finance Strategies"
+title: "Investing in Volatility: Personal Finance for Long-Term Wealth"
 youtubeId: "yKmZnveZ-pE"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

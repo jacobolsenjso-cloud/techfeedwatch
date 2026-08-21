@@ -1,5 +1,5 @@
 ---
-title: "AI Fraud & Deepfakes: Escalating Global Scam Threats 2026"
+title: "AI Fraud and Deepfakes Power Personalized Scam Attacks by 2026"
 seoTitled: true
 youtubeId: "Aje4_XaSR24"
 channelTitle: "ThioJoe"

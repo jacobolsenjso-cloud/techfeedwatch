@@ -1,5 +1,5 @@
 ---
-title: "FIX Protocol: Standardizing Electronic Trading Communication"
+title: "FIX Protocol Standardizes Trading Data Using Key-Value Pairs"
 titleShortened: true
 seoTitled: true
 youtubeId: "uZ8UEVhtPAo"

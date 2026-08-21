@@ -1,5 +1,5 @@
 ---
-title: "Free Google AI Tools Drive Productivity, Change Markets"
+title: "How Free Google AI Tools Improve Productivity and Challenge Paid AI"
 titleShortened: true
 youtubeId: "RIPxwxqZhVI"
 channelTitle: "Vaibhav Sisinty"

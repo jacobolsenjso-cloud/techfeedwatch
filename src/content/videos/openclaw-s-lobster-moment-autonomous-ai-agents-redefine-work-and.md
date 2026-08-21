@@ -1,5 +1,5 @@
 ---
-title: "Autonomous AI Agents Redefine Future of Work: OpenClaw"
+title: "Will OpenClaw Autonomous AI Agents Independently Reshape Work?"
 seoTitled: true
 youtubeId: "7rzYDM6vMtI"
 channelTitle: "TED"

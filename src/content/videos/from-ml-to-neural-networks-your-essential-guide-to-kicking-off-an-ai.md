@@ -1,5 +1,5 @@
 ---
-title: "AI Engineering Career Guide: ML, Neural Networks, LLMs"
+title: "Foundational ML Neural Networks and LLMs for AI Engineering"
 titleShortened: true
 seoTitled: true
 youtubeId: "304i_BWgXNc"

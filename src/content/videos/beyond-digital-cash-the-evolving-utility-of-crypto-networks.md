@@ -1,5 +1,5 @@
 ---
-title: "Crypto Utility: Smart Contracts, DApps, DeFi"
+title: "Crypto Utility Reshapes Finance with Smart Contracts DApps DeFi"
 titleShortened: true
 seoTitled: true
 youtubeId: "LEu_sRbfNns"

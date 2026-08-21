@@ -1,5 +1,5 @@
 ---
-title: "Personalized AI: Custom Operating Systems & Productivity"
+title: "Personalized AI: Custom Operating Systems Use LLMs for Productivity"
 titleShortened: true
 seoTitled: true
 youtubeId: "CvLkhGWZlvE"

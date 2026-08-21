@@ -1,5 +1,5 @@
 ---
-title: "Sam Altman Superintelligence: Governance & Safety Challenges"
+title: "Sam Altman's Superintelligence Spurs New Governance Safety Questions"
 titleShortened: true
 seoTitled: true
 youtubeId: "5MWT_doo68k"

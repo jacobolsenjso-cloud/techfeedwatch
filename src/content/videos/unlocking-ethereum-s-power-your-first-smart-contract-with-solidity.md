@@ -1,5 +1,5 @@
 ---
-title: "Create Your First Ethereum Smart Contract: Solidity & Remix"
+title: "How to Code First Ethereum Smart Contract with Solidity Remix?"
 seoTitled: true
 youtubeId: "bNXJNeaYl8Q"
 channelTitle: "Block Explorer"

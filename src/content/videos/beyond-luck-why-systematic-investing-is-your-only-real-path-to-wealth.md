@@ -1,5 +1,5 @@
 ---
-title: "Systematic Investing: Index Funds, Compounding for Wealth"
+title: "What Systematic Investing with Index Funds Means for Wealth Growth"
 titleShortened: true
 seoTitled: true
 youtubeId: "RPDoEIqbwYs"

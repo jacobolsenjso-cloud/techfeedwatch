@@ -1,5 +1,5 @@
 ---
-title: "Samsung Gemini AI Smart Glasses Arrive: Next-Gen Wearables"
+title: "Samsung Gemini: Agentic AI Smart Glasses Launch"
 titleShortened: true
 seoTitled: true
 youtubeId: "JT1GjLtshf8"

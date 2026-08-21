@@ -1,5 +1,5 @@
 ---
-title: "AI Side Hustle: Earn $44K with Accessible AI Tools"
+title: "Accessible AI Earns $44K for Side Hustle Career Paths"
 seoTitled: true
 youtubeId: "aTFABFO8wNM"
 channelTitle: "Sandy Lee AI"

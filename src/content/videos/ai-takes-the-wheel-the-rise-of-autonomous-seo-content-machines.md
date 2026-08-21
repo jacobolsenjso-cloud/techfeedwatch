@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Content Automation: Generate & Optimize Articles"
+title: "AI SEO: Claude AI Generates and Optimizes Articles"
 titleShortened: true
 seoTitled: true
 youtubeId: "9hozIpuv8wM"

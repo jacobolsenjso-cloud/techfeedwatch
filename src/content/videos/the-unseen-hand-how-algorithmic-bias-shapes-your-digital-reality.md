@@ -1,5 +1,5 @@
 ---
-title: "Algorithmic Bias Skews Search Results And Content"
+title: "How Does Algorithmic Bias Skew Search From Human Decisions?"
 titleShortened: true
 seoTitled: true
 youtubeId: "_vBggxCNNno"

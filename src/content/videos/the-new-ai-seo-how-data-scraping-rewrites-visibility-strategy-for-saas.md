@@ -1,5 +1,5 @@
 ---
-title: "SaaS AI SEO: Data Scraping for AI Model Visibility Strategy"
+title: "SaaS AI SEO: Data Scraping LLM Citations for AI Model Visibility"
 seoTitled: true
 youtubeId: "RIKeDA9t2uA"
 channelTitle: "Yaron Been"

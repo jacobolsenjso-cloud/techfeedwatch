@@ -1,5 +1,5 @@
 ---
-title: "AI Video Generators: Transforming Content Creation with Text-to-Video"
+title: "AI Video Generators Harness Text to Create Cinematic Video"
 youtubeId: "kTiePtXJZ7o"
 channelTitle: "TheTech"
 channelId: "UCU7mV4u1ZErUyN9Urn--R5Q"

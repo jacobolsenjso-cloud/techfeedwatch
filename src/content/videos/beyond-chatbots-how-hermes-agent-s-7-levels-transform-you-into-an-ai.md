@@ -1,5 +1,5 @@
 ---
-title: "AI Agents vs Chatbots: Boost Productivity with Autonomous AI"
+title: "AI Agents: Chatbots Evolved for Autonomous Productivity"
 seoTitled: true
 youtubeId: "6GtF_uHbGhw"
 channelTitle: "Jack Roberts"

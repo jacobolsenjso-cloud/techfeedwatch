@@ -1,5 +1,5 @@
 ---
-title: "AI SEO Automation: Agencies Boost Efficiency, Outrank Rivals"
+title: "How Can AI SEO Automation Help Agencies Outrank with Content?"
 titleShortened: true
 seoTitled: true
 youtubeId: "OQndX5-eauE"

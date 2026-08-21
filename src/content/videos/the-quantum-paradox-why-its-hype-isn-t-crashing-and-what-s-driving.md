@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing's Investment & Progress Continue"
+title: "Quantum Computing: Investment Boosts Qubit Progress and Viability"
 titleShortened: true
 seoTitled: true
 youtubeId: "gBTS7JZTyZY"

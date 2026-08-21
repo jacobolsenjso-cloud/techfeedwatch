@@ -1,5 +1,5 @@
 ---
-title: "Python Wall Street: Algorithmic Trading, Quant Models, Risk"
+title: "What Python Means for Data-Driven Algorithmic Trading Risk"
 seoTitled: true
 youtubeId: "i4atHI7k0Us"
 channelTitle: "NeedCode"

@@ -1,5 +1,5 @@
 ---
-title: "Free AI Video Generators: Create High-Quality Videos"
+title: "Free AI Video Generators Create High-Quality Polished Content"
 titleShortened: true
 youtubeId: "3cXXYG-0Ipk"
 channelTitle: "Malva AI"

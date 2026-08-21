@@ -1,5 +1,5 @@
 ---
-title: "Google TPUs: New Inference Chips and Cloud AI Advantage"
+title: "Google's Latest TPUs Boost Cloud AI Inference Performance"
 youtubeId: "NP2Hv7v0KHQ"
 channelTitle: "Bloomberg Tech"
 channelId: "UCrM7B7SL_g1edFOnmj-SDKg"

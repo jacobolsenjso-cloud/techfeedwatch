@@ -1,5 +1,5 @@
 ---
-title: "AI Authentication: Boost Digital Banking Security & Profit"
+title: "AI: Behavioral Biometrics for Digital Banking Security, Profit"
 seoTitled: true
 youtubeId: "O1FOLLPEdfY"
 channelTitle: "Couchonomics with Arjun"

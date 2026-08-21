@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Market Cycles: Understanding Volatility and Investment Strategy"
+title: "Bitcoin Cycles and Volatility Management in AI Era"
 youtubeId: "TzuvZLuXzAE"
 channelTitle: "Graham Stephan"
 channelId: "UCV6KDgJskWaEckne5aPA0aQ"

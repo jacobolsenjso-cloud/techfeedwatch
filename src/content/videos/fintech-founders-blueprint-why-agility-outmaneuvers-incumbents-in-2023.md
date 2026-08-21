@@ -1,5 +1,5 @@
 ---
-title: "Fintech Founder Strategy: Agility & Profit Beat Incumbents"
+title: "Fintech Founder Agility and Profit Exploit Incumbent Weakness"
 titleShortened: true
 seoTitled: true
 youtubeId: "b-z-1eK-x7c"

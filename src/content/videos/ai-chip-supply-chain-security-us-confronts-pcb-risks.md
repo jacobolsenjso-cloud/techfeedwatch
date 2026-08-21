@@ -1,5 +1,5 @@
 ---
-title: "AI Chip Supply Chain Security: US Confronts PCB Risks"
+title: "AI Chips: US Confronts China PCB Malicious Component Risk"
 youtubeId: "XQWI7HdGbZ4"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

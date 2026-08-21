@@ -1,5 +1,5 @@
 ---
-title: "AI Job Impact: New Professions & Required Skills, Not Loss"
+title: "How AI Changes Jobs New Skills and Professions"
 seoTitled: true
 youtubeId: "cJfKqKEyw1o"
 channelTitle: "TED"

@@ -1,5 +1,5 @@
 ---
-title: "Basic HTML & XML Skills Essential for SEO Ranking Success"
+title: "What HTML XML Skills Mean for SEO Indexing Strategies"
 seoTitled: true
 youtubeId: "EPCXNgim5BQ"
 channelTitle: "👋  Yerain Abreu - SEO & Digital Marketing"

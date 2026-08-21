@@ -1,5 +1,5 @@
 ---
-title: "Amazon's Ecosystem Dominance: Network Effects and Control"
+title: "How Do Amazon Network Effects Create Entry Barriers and Control?"
 youtubeId: "vKnQfkHhhnc"
 channelTitle: "Rise and Fall"
 channelId: "UC_F7peDUCIRnHnhYu1FwRJQ"

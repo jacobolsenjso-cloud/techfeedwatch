@@ -1,5 +1,5 @@
 ---
-title: "Stablecoins & Financial Data: Customer Control Battle"
+title: "Big Tech's Battle for Customer Control of Stablecoin Data"
 titleShortened: true
 seoTitled: true
 youtubeId: "u0SfAX3eIqk"

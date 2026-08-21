@@ -1,5 +1,5 @@
 ---
-title: "10 Stages Of AI Evolution: Basic AI To Superintelligence"
+title: "What Are the 10 Evolution Stages From Basic AI to Superintelligence?"
 titleShortened: true
 seoTitled: true
 youtubeId: "tFx_UNW9I1U"

@@ -1,5 +1,5 @@
 ---
-title: "Rust SQLite Turso: Secure, Distributed Database Solution"
+title: "Rust SQLite Turso Improves Database Memory Safety and Concurrency"
 seoTitled: true
 youtubeId: "Sntj4HmuykI"
 channelTitle: "Fireship"

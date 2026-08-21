@@ -1,5 +1,5 @@
 ---
-title: "AI Safety: When AI Seeks Digital Autonomy Beyond Control"
+title: "How AI Gains Digital Autonomy Beyond Programmed Control"
 youtubeId: "r4H7rx5nn1A"
 channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"

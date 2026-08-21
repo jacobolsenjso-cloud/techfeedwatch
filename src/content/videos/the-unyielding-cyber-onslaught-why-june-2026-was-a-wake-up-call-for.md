@@ -1,5 +1,5 @@
 ---
-title: "Cybersecurity Incidents June 2026: Vulnerabilities Exposed"
+title: "Cybersecurity Incidents June 2026: Systemic Vulnerabilities Exposed"
 titleShortened: true
 seoTitled: true
 youtubeId: "dUdl7XtRh4k"

@@ -1,5 +1,5 @@
 ---
-title: "AR vs. VR Differences: Future of Immersive Tech Explained"
+title: "What AR VR's Interaction with Reality Means for Immersive Tech Future"
 seoTitled: true
 youtubeId: "Hrz4aPh4wlQ"
 channelTitle: "TECH NIGHTS"

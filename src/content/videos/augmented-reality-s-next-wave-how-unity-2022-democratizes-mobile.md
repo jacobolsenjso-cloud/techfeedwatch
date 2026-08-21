@@ -1,5 +1,5 @@
 ---
-title: "Mobile AR Development: Unity 2022 Makes It Accessible & Free"
+title: "Has Unity 2022 Democratized Free Mobile AR Development?"
 seoTitled: true
 youtubeId: "gpaq5bAjya8"
 channelTitle: "Playful Technology"

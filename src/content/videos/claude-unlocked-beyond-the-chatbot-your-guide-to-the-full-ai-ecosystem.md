@@ -1,5 +1,5 @@
 ---
-title: "Claude AI Features: Workflow Automation & App Building"
+title: "Claude AI Builds Applications and Automates Workflows Naturally"
 titleShortened: true
 seoTitled: true
 youtubeId: "MS7E5TXNviM"

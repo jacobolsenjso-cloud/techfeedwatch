@@ -1,5 +1,5 @@
 ---
-title: "Google AI Influencers Create Realistic Video, Monetize Free"
+title: "Google AI: Influencers Create Photorealistic Video, Monetize Assets"
 titleShortened: true
 seoTitled: true
 youtubeId: "K6DTEvL1KWc"

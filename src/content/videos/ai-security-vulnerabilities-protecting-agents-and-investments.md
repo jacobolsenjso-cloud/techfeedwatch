@@ -1,5 +1,5 @@
 ---
-title: "AI Security Vulnerabilities: Protecting Agents, Investments"
+title: "AI Security: Agent Sandbox Escapes Expose Investment Vulnerabilities"
 titleShortened: true
 youtubeId: "mJlcBVArjz8"
 channelTitle: "Indy Pixels | Abdalla Emam"

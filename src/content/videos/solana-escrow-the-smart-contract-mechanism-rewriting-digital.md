@@ -1,5 +1,5 @@
 ---
-title: "Solana Escrow: Smart Contracts Secure Web3 Transactions"
+title: "Solana Escrow Smart Contracts Remove Trust From Web3 Transactions"
 titleShortened: true
 seoTitled: true
 youtubeId: "8FUlQda-8fU"

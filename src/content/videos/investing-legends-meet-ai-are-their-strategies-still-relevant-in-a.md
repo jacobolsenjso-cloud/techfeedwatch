@@ -1,5 +1,5 @@
 ---
-title: "Traditional Investment Strategies & AI: Quant Market Shift"
+title: "Are Traditional Investment Strategies Ready for AI Quant Shift?"
 titleShortened: true
 seoTitled: true
 youtubeId: "q1tLnU_UzUg"

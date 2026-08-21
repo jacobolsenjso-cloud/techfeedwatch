@@ -1,5 +1,5 @@
 ---
-title: "Institutional Crypto Regulatory Clarity Unlocks Trillions"
+title: "Why Regulatory Clarity Shifts Trillions From Legacy to Blockchain"
 seoTitled: true
 youtubeId: "zR3XAvr6uLw"
 channelTitle: "Yahoo Finance"

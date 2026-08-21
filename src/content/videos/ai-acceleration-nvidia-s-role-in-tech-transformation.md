@@ -1,5 +1,5 @@
 ---
-title: "AI Acceleration: Nvidia's Role in Tech Transformation"
+title: "Nvidia's GPU Dominance Fuels AI Acceleration and Tech Transformation"
 youtubeId: "EPJl3bTxT3s"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

@@ -1,5 +1,5 @@
 ---
-title: "Prompt Engineering: Bridge Human Intent & AI Output"
+title: "How Prompt Engineering Delivers Precise AI Output From Human Intent"
 titleShortened: true
 seoTitled: true
 youtubeId: "PFsbWAC4_rk"

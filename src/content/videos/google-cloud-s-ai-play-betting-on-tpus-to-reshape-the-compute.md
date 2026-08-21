@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud TPUs Cut AI Compute Costs, Boost Accessibility"
+title: "Google Cloud TPUs Democratize AI Compute Through Cost Cuts"
 seoTitled: true
 youtubeId: "bNdiBwXbLNw"
 channelTitle: "Matthew Berman"

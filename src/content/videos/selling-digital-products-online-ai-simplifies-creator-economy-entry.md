@@ -1,5 +1,5 @@
 ---
-title: "Selling Digital Products Online: AI Simplifies Creator Economy Entry"
+title: "AI Democratizes Creator Economy for Digital Product Sales"
 youtubeId: "QGTLLNpKpeY"
 channelTitle: "Nas com"
 channelId: "UCUBiTeiHbOxSkyN-jy-b2pA"

@@ -1,5 +1,5 @@
 ---
-title: "Ethical AI Design: Ensuring Human Needs & Societal Benefit"
+title: "Ethical AI Design Prevents Widening Social Divides"
 seoTitled: true
 youtubeId: "_JlQOnnEwxc"
 channelTitle: "TED"

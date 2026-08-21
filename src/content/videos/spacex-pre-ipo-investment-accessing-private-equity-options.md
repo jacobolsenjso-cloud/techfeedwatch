@@ -1,5 +1,5 @@
 ---
-title: "SpaceX Pre-IPO Investment: Accessing Private Equity Options"
+title: "How to Access SpaceX Pre-IPO Shares via Secondary Markets"
 youtubeId: "EGF6sNfOTwk"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

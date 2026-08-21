@@ -1,5 +1,5 @@
 ---
-title: "AI Trading Agents Revolutionize Retail Investing & Finance"
+title: "AI Trading Agents Power Autonomous Retail Finance Trading"
 titleShortened: true
 youtubeId: "1zW6Uu21Q40"
 channelTitle: "CNBC"

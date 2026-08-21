@@ -1,5 +1,5 @@
 ---
-title: "Kaspa Smart Contracts: Adoption Needed for DeFi Relevancy"
+title: "What Kaspa Smart Contracts User Engagement Means for DeFi"
 seoTitled: true
 youtubeId: "FJwBBr-Ndao"
 channelTitle: "Gerhard - Bitcoin Strategy"

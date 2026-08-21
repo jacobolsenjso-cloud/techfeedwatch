@@ -1,5 +1,5 @@
 ---
-title: "Physics-Informed AI Engineering Accuracy, New Science"
+title: "Physics-Informed AI Elevates Engineering Accuracy, Reveals New Laws"
 titleShortened: true
 seoTitled: true
 youtubeId: "JoFW2uSd3Uo"

@@ -1,5 +1,5 @@
 ---
-title: "Google Core Web Vitals: Key Metrics SEO & Site Performance"
+title: "Google Core Web Vitals Boost SEO Visibility and User Experience"
 titleShortened: true
 seoTitled: true
 youtubeId: "-prOfvIV4Ns"

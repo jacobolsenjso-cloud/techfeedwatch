@@ -1,5 +1,5 @@
 ---
-title: "Automated GPU AI Compiler Beats Hand-Tuned CUDA for LLMs"
+title: "Makora Compiler: Beats Hand-Tuned CUDA for LLM Inference"
 seoTitled: true
 youtubeId: "ukzACWrk0W0"
 channelTitle: "SemiAnalysis"

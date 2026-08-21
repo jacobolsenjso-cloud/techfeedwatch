@@ -1,5 +1,5 @@
 ---
-title: "Build in Public Software Development Fuels Tech Innovation"
+title: "Build in Public Software Development Drives Open Tech Innovation"
 titleShortened: true
 seoTitled: true
 youtubeId: "Jv2tZj8Cs8U"

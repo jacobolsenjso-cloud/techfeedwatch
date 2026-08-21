@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Commercialization: Cloud Platforms Access"
+title: "Quantum Computing Commercialization Uses Cloud Simulators for Access"
 titleShortened: true
 seoTitled: true
 youtubeId: "bVP3q8-e4sE"

@@ -1,5 +1,5 @@
 ---
-title: "AI in Banking: Overcoming Digital Transformation Hurdles"
+title: "Banking AI: Overcoming Data Readiness and Sovereignty"
 youtubeId: "Yxjvj7sjPI4"
 channelTitle: "Techvify"
 channelId: "UCZ3ENqd3SaQyR7asZCISfsQ"

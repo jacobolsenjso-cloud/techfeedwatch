@@ -1,5 +1,5 @@
 ---
-title: "Meta Muse Spark: New Proprietary AI Model & Its Implications"
+title: "Meta Shifts to Proprietary AI Monetization with Muse Spark"
 youtubeId: "rXSPopXet1o"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

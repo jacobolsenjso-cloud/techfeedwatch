@@ -1,5 +1,5 @@
 ---
-title: "Power BI Financial Dashboards: Real-time KPI Intelligence"
+title: "How Power BI Financial Dashboards Drive Proactive KPI"
 seoTitled: true
 youtubeId: "i3AR0gt9SHA"
 channelTitle: "Chandoo"

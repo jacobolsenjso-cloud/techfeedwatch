@@ -1,5 +1,5 @@
 ---
-title: "FinTech Regulation: Investor Protection, AI, Trading, SPAC"
+title: "Proactive FinTech Regulation Protects Investors From AI Trading SPACs"
 titleShortened: true
 seoTitled: true
 youtubeId: "cu39xXhCnj0"

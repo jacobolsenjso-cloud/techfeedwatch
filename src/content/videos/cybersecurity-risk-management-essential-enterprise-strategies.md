@@ -1,5 +1,5 @@
 ---
-title: "Cybersecurity Risk Management: Essential Enterprise Strategies"
+title: "How Proactive Security Changes Enterprise Risk Management"
 youtubeId: "ErqOznWDado"
 channelTitle: "WJOB 1230"
 channelId: "UCr5CdykXHMvsAVRQXT6p16g"

@@ -1,5 +1,5 @@
 ---
-title: "ML Engineer vs AI Engineer: Key Differences"
+title: "Do ML Engineers Develop Models or AI Engineers Apply Them?"
 titleShortened: true
 seoTitled: true
 youtubeId: "cqDQV5g7zHo"

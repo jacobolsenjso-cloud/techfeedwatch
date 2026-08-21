@@ -1,5 +1,5 @@
 ---
-title: "Creators Use Blockchain & NFTs for Ownership, Monetization"
+title: "Blockchain NFTs Enable Direct Creator Ownership Monetization"
 titleShortened: true
 seoTitled: true
 youtubeId: "rWTwcySGvrE"

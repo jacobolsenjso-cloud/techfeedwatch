@@ -1,5 +1,5 @@
 ---
-title: "Google Antigravity: Autonomous AI Builds Entire Apps"
+title: "How Google Antigravity Autonomous AI Orchestrates Full App Workflows"
 seoTitled: true
 youtubeId: "ff9BXfTlAqo"
 channelTitle: "Mikey Website"

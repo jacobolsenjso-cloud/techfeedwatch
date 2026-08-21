@@ -1,5 +1,5 @@
 ---
-title: "Build Paid Community on WordPress: Maximize Creator Revenue"
+title: "WordPress Cuts Creator Costs for Paid Community Control"
 seoTitled: true
 youtubeId: "oaW_KDiafeQ"
 channelTitle: "Mr Web"

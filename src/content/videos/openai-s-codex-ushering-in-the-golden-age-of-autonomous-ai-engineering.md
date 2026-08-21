@@ -1,5 +1,5 @@
 ---
-title: "Autonomous AI Engineering: Problem Solving & System Design"
+title: "AI Engineering Shifts to Autonomous Problem Solving and Design"
 titleShortened: true
 seoTitled: true
 youtubeId: "pMggiOb18tc"

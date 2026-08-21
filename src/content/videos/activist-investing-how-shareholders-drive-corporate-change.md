@@ -1,5 +1,5 @@
 ---
-title: "Activist Investing: How Shareholders Drive Corporate Change"
+title: "How Activist Shareholders Drive Corporate Strategic Shifts"
 youtubeId: "X_t6-mze0J4"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

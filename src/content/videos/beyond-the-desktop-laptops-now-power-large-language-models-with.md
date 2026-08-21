@@ -1,5 +1,5 @@
 ---
-title: "Local LLM Performance on Laptops: Optimize CPU & GPU Memory"
+title: "Optimize Local LLM Performance on Laptops with Shared CPU GPU Memory"
 seoTitled: true
 youtubeId: "AcTmeGpzhBk"
 channelTitle: "Alex Ziskind"

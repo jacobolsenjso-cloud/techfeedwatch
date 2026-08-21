@@ -1,5 +1,5 @@
 ---
-title: "OpenAI's GPT-6 Astra: AGI Progress and Autonomous AI Systems"
+title: "How OpenAI's GPT-6 Astra Shows AGI Planning and Execution"
 youtubeId: "KbYio-N8_LU"
 channelTitle: "WorldofAI"
 channelId: "UC2WmuBuFq6gL08QYG-JjXKw"

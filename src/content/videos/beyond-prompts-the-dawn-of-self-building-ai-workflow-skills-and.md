@@ -1,5 +1,5 @@
 ---
-title: "Self-Building AI Workflow Skills for Autonomous AI Agents"
+title: "How Autonomous AI Agents Master AI Workflow Skills"
 seoTitled: true
 youtubeId: "mOGLdUOLAu0"
 channelTitle: "QurioSkill"

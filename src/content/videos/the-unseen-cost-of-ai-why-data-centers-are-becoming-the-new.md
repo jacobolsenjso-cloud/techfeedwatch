@@ -1,5 +1,5 @@
 ---
-title: "AI Data Centers Strain Grids: High Energy & Space Demands"
+title: "AI Data: Centers Push Grids' Limits, Energy, Space Bottlenecks"
 seoTitled: true
 youtubeId: "5QT3y9Gp3Rg"
 channelTitle: "Bloomberg Television"

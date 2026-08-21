@@ -1,5 +1,5 @@
 ---
-title: "Fintech Business Models: Value & Revenue Strategies"
+title: "Fintech Business Models Define Value and Revenue Strategies"
 titleShortened: true
 seoTitled: true
 youtubeId: "EAcoLD_Md7g"

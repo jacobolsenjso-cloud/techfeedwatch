@@ -1,5 +1,5 @@
 ---
-title: "Alternative Data APIs Algorithmic Trading & Quant Finance"
+title: "How Alternative Data APIs Drive Algo Trading and Quant Finance"
 titleShortened: true
 seoTitled: true
 youtubeId: "HIPlOXGWGIE"

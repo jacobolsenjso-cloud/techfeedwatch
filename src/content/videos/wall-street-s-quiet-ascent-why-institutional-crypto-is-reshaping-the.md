@@ -1,5 +1,5 @@
 ---
-title: "Institutional Crypto: Wall Street Utility Push Shifts Market"
+title: "Institutional Crypto: Wall Street Builds Tokenized Finance"
 titleShortened: true
 seoTitled: true
 youtubeId: "G87Vy-dZbdw"

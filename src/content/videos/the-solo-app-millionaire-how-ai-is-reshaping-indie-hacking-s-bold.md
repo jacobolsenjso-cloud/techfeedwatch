@@ -1,5 +1,5 @@
 ---
-title: "AI for Indie Hackers: Build Solo Million-Dollar Apps"
+title: "How AI Helps Indie Hackers Build Solo Million-Dollar SaaS Faster"
 seoTitled: true
 youtubeId: "ggU7YANSojI"
 channelTitle: "Tech Builder Akash"

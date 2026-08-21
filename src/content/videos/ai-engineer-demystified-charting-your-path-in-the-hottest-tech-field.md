@@ -1,5 +1,5 @@
 ---
-title: "AI Engineer Career Path: Skills, Roles, & Future Outlook"
+title: "What AI Engineer Skills Are Needed for System Deployment?"
 seoTitled: true
 youtubeId: "TQwwK7P_J4I"
 channelTitle: "CodeHead"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Optimizes Urban Logistics & Mobility Now"
+title: "Quantum Computing Solves Urban Logistics Mobility Problems Now"
 seoTitled: true
 youtubeId: "GQlC3NYRjK8"
 channelTitle: "D-Wave"

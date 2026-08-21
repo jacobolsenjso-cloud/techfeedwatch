@@ -1,5 +1,5 @@
 ---
-title: "AI Coding Agents: Structured Dev Replaces Vibe Coding"
+title: "How AI Coding Agents Change Vibe Coding to Spec-Driven Dev"
 seoTitled: true
 youtubeId: "7cOAayWzYDY"
 channelTitle: "WorldofAI"

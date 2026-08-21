@@ -1,5 +1,5 @@
 ---
-title: "SEO Fundamentals: The Foundation for AI Search & Web Trust"
+title: "SEO Fundamentals: Content, Security, Brand Build AI Search Trust"
 seoTitled: true
 youtubeId: "7Hk5uVv8JpM"
 channelTitle: "Google for Developers"

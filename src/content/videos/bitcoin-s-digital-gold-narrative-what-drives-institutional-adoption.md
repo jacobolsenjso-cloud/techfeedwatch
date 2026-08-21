@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin's Digital Gold Narrative: What Drives Institutional Adoption"
+title: "Bitcoin's Digital Gold: Fixed Supply Drives Institutional Adoption"
 youtubeId: "I2y6CcOiBKk"
 channelTitle: "Altcoin Daily"
 channelId: "UCbLhGKVY-bJPcawebgtNfbw"

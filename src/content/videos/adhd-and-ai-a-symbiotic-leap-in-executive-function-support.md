@@ -1,5 +1,5 @@
 ---
-title: "ADHD AI Solutions: Boost Executive Function & Independence"
+title: "ADHD AI Offers Executive Function Support Fostering Independence"
 seoTitled: true
 youtubeId: "ZssxnYgc2wI"
 channelTitle: "Aaron Newcomer"

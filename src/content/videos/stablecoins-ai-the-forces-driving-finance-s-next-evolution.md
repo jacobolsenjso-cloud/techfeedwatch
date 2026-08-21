@@ -1,5 +1,5 @@
 ---
-title: "Stablecoins & AI Drive Global Finance, Payments & Banking"
+title: "Stablecoins, AI: Powering Autonomous Finance, Decentralizing Banking"
 seoTitled: true
 youtubeId: "0biSwEL5eMQ"
 channelTitle: "a16z"

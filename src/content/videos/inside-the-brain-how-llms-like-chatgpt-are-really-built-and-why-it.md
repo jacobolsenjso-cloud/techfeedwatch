@@ -1,5 +1,5 @@
 ---
-title: "How ChatGPT & LLMs Are Built: Data Prep & Tokenization"
+title: "How Filtered Data Becomes Numerical Tokens for ChatGPT LLMs"
 seoTitled: true
 youtubeId: "7xTGNNLPyMI"
 channelTitle: "Andrej Karpathy"

@@ -1,5 +1,5 @@
 ---
-title: "Windows 10 Extended Support: Implications for Business & Security"
+title: "Windows 10 Support: New Security Vulnerabilities for Business"
 youtubeId: "5rGdKKjjizw"
 channelTitle: "TechLinked"
 channelId: "UCeeFfhMcJa1kjtfZAGskOCA"

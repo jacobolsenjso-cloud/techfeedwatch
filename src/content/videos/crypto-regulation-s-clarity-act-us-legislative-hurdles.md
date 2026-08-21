@@ -1,5 +1,5 @@
 ---
-title: "Crypto Regulation's Clarity Act: US Legislative Hurdles"
+title: "US Banking Opposition Slows Crypto Clarity Act"
 youtubeId: "Kz2siKZjNQA"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

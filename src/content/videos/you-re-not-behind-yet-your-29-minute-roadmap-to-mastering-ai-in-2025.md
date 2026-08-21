@@ -1,5 +1,5 @@
 ---
-title: "Learn Practical AI Skills in 29 Min for 2025 Productivity"
+title: "Master Prompt Engineering in 29 Min for 2025 AI Productivity"
 seoTitled: true
 youtubeId: "9c7zh2MkslY"
 channelTitle: "Futurepedia"

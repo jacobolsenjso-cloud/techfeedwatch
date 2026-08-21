@@ -1,5 +1,5 @@
 ---
-title: "AI Engineering Roadmap 2025: LLM Prompt Design & Systems"
+title: "AI Engineering 2025 Roadmap LLM Prompt Design and Orchestration"
 seoTitled: true
 youtubeId: "PSWUr5E_OKY"
 channelTitle: "Greg Kamradt"

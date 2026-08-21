@@ -1,5 +1,5 @@
 ---
-title: "Quantum AI for LLMs: Near-Term Impact & Training Challenges"
+title: "How Qubit Bit Differences Change Quantum AI for LLMs"
 seoTitled: true
 youtubeId: "sQSQBYHR0ms"
 channelTitle: "Caleb Writes Code"

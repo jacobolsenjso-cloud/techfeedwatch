@@ -1,5 +1,5 @@
 ---
-title: "SaaS B2B Pricing Strategy: Drive Startup Growth with Value"
+title: "How Does SaaS B2B Pricing Drive Startup Enterprise Value?"
 seoTitled: true
 youtubeId: "4hjiRmgmHiU"
 channelTitle: "Y Combinator"

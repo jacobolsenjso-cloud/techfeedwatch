@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Accounts: EOA vs Contract, Key Differences"
+title: "Ethereum Accounts: EOAs Use Private Keys, Contracts Use Code"
 seoTitled: true
 youtubeId: "1Bp2KritrvQ"
 channelTitle: "CodeLucky"

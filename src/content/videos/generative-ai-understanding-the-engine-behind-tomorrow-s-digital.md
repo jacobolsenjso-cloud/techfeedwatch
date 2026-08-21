@@ -1,5 +1,5 @@
 ---
-title: "Generative AI: Deep Learning, Data, Compute Power"
+title: "Generative AI's Core: Deep Learning, Abundant Data, GPU Compute"
 titleShortened: true
 seoTitled: true
 youtubeId: "b76gsOSkHB4"

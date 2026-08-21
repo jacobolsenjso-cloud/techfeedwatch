@@ -1,5 +1,5 @@
 ---
-title: "Cloud Engineer Role in 2026: Skills, Salary, and Reality"
+title: "How AI Integration Changes Cloud Engineer Skills by 2026"
 youtubeId: "9WOcdTNLcVA"
 channelTitle: "Tech With Soleyman"
 channelId: "UCQJoT6HfpDIc_A75RLWHGuw"

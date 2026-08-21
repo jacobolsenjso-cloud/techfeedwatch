@@ -1,5 +1,5 @@
 ---
-title: "Crypto Bull Market: Signals for Bitcoin & Ethereum Surge"
+title: "Are Maturing Markets Signalling Bitcoin and Ethereum Surge?"
 titleShortened: true
 seoTitled: true
 youtubeId: "iuZTZHipaG0"

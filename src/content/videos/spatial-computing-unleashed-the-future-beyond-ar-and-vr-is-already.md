@@ -1,5 +1,5 @@
 ---
-title: "Spatial Computing: Beyond AR/VR, Merging Digital & Physical"
+title: "Spatial Computing Moves Beyond AR VR Integrating Virtual Into Real"
 seoTitled: true
 youtubeId: "Xe1WbZINhkk"
 channelTitle: "Justin_tech"

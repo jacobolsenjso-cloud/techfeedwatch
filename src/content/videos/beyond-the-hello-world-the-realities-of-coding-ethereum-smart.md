@@ -1,5 +1,5 @@
 ---
-title: "Coding Ethereum Smart Contracts with Solidity & Remix"
+title: "How Remix Changes Accessibility for Solidity Ethereum Smart Contracts"
 titleShortened: true
 seoTitled: true
 youtubeId: "ooN6kZ9vqNQ"

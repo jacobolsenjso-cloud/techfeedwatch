@@ -1,5 +1,5 @@
 ---
-title: "AMD MI455X Challenges Nvidia in High-Performance AI Chips"
+title: "AMD MI455X Challenges Nvidia for Large-Scale AI"
 youtubeId: "HYExTIvfCx8"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

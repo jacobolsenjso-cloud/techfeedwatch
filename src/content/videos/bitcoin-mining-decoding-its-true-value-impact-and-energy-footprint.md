@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Mining Explained: Security, Value, Energy Debate"
+title: "What Bitcoin Mining Means for Chain Security BTC Value Energy Debate"
 seoTitled: true
 youtubeId: "lHipE05v4jg"
 channelTitle: "Coin Bureau"

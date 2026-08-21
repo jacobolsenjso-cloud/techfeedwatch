@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Career: Leaving Early Is A Smart Move"
+title: "Quantum Computing Career: Algorithmic Lag Makes Early Exit Smart"
 titleShortened: true
 seoTitled: true
 youtubeId: "pDj1QhPOVBo"

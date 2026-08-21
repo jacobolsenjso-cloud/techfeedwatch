@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Loops Automate Business: Self-Optimizing LLMs"
+title: "AI Agent Loops Automate Business with Self Optimizing LLM Cycles"
 seoTitled: true
 youtubeId: "5p_BBdfvzgQ"
 channelTitle: "Greg Isenberg"

@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality Use Cases: 10 Future AR Applications"
+title: "Future Augmented Reality Immersive Overlays Reshape Industries"
 seoTitled: true
 youtubeId: "WxzcD04rwc8"
 channelTitle: "Future Business Tech"

@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality: Layers Digital Info Drive Business"
+title: "Augmented Reality Layers Digital Info in Real Time for Business"
 titleShortened: true
 seoTitled: true
 youtubeId: "Gy05tGLW3PE"

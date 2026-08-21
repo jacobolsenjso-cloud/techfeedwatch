@@ -1,5 +1,5 @@
 ---
-title: "Google Search Console, Analytics, Tag Manager for SEO"
+title: "Google Search Console Analytics Tag Manager for SEO Insights"
 seoTitled: true
 youtubeId: "LRlW1lgWQfE"
 channelTitle: "The Tech Academy - Online Coding Bootcamps and Trade School"

@@ -1,5 +1,5 @@
 ---
-title: "Core Banking Platforms Drive Digital Transformation in Finance"
+title: "Agile Core Banking Platforms Drive Finance Innovation"
 youtubeId: "8UQqS1uYhak"
 channelTitle: "Fintech Chatter TV"
 channelId: "UC003teVeF5omUrCl78ii9xg"

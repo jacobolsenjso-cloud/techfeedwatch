@@ -1,5 +1,5 @@
 ---
-title: "AI Crypto Trading Bots: Risks & Rewards for Investors"
+title: "AI Crypto Trading Bots Offer Efficiency and AI Specific Risks"
 seoTitled: true
 youtubeId: "wYbf5XwdcPI"
 channelTitle: "Coin Bureau"

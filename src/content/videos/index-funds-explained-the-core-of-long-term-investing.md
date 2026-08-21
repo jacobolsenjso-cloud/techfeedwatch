@@ -1,5 +1,5 @@
 ---
-title: "Index Funds Explained: The Core of Long-Term Investing"
+title: "Index Funds Explained: The Low-Cost Core of Long-Term Investing"
 youtubeId: "oKmz6p_i7yI"
 channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"

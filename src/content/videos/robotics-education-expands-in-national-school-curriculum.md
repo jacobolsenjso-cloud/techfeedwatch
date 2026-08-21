@@ -1,5 +1,5 @@
 ---
-title: "Robotics Education Expands in National School Curriculum"
+title: "South Africa Education: National Curriculum Expands Robotics, Coding"
 youtubeId: "yiuiTjPaF-s"
 channelTitle: "PyCon South Africa"
 channelId: "UCu-El65PtQm46aSbXkzykYQ"

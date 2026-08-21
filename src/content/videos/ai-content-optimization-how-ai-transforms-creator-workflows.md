@@ -1,5 +1,5 @@
 ---
-title: "AI Content Optimization: How AI Transforms Creator Workflows"
+title: "How AI Automation Optimizes Content in Creator Workflows"
 youtubeId: "I1-M4XIgTIw"
 channelTitle: "Grandpa"
 channelId: "UCoPfP5Yw9g7liWhrtzHRM4w"

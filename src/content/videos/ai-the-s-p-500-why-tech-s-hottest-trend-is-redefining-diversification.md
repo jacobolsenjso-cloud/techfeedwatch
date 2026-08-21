@@ -1,5 +1,5 @@
 ---
-title: "AI S&P 500 Diversification: New Risks Tech Concentration"
+title: "Does AI Mega-Cap Tech Undermine S P 500 Diversification?"
 titleShortened: true
 seoTitled: true
 youtubeId: "HNVg81nA2J8"

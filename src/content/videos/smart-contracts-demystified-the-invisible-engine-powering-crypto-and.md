@@ -1,5 +1,5 @@
 ---
-title: "Smart Contracts: What They Are, Pros, Cons"
+title: "Smart Contracts: Trust, Efficiency, Security, and Scalability Issues"
 titleShortened: true
 seoTitled: true
 youtubeId: "ZE2HxTmxfrI"

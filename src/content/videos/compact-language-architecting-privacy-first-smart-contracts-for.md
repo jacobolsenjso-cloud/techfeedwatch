@@ -1,5 +1,5 @@
 ---
-title: "Compact Language Build Privacy Contracts on Midnight ZK"
+title: "Can Compact Language Build Private Smart Contracts Midnight ZK?"
 titleShortened: true
 seoTitled: true
 youtubeId: "QWEtUJ2ymB0"

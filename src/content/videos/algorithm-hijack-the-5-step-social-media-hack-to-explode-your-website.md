@@ -1,5 +1,5 @@
 ---
-title: "Website Traffic: 5-Step Social Media Algorithm Hack"
+title: "Website Traffic Boost From Social Algorithm Pairing Hack"
 seoTitled: true
 youtubeId: "gCJJWThZy2U"
 channelTitle: "Profit Copilot"

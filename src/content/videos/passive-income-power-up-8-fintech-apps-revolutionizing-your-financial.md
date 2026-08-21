@@ -1,5 +1,5 @@
 ---
-title: "Passive Income Apps: Top 8 Fintech Tools to Build Wealth"
+title: "Fintech Passive Income Apps Build Digital Wealth"
 seoTitled: true
 youtubeId: "G4InB8RaS_Y"
 channelTitle: "Jeremy Quainoo"

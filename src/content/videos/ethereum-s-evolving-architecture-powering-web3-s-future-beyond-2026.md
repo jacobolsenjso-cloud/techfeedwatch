@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Architecture Evolves: PoS & Layer 2s Scale Web3"
+title: "Ethereum Rollups and PoS Scale Web3 Settlement Layer"
 seoTitled: true
 youtubeId: "On-B0WGqOZ0"
 channelTitle: "Coin Bureau"

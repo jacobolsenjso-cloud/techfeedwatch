@@ -1,5 +1,5 @@
 ---
-title: "Meta AI Video Generator Free: Unlimited, No Watermark Videos"
+title: "How to Get Free Unlimited No Watermark Meta AI Video Generation"
 seoTitled: true
 youtubeId: "VWGc5Gie6n8"
 channelTitle: "Tech Rush"

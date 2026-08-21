@@ -1,5 +1,5 @@
 ---
-title: "Claude AI for Business: Launch Services & Acquire Clients Faster"
+title: "Claude AI Compresses Business Launch for Faster Client Acquisition"
 youtubeId: "AP-fOOmm02g"
 channelTitle: "Sabrina Ramonov 🍄"
 channelId: "UCiGWNa6QK6CiKPvv5-YPv8g"

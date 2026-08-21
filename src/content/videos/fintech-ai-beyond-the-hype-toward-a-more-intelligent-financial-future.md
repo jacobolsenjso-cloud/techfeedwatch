@@ -1,5 +1,5 @@
 ---
-title: "FinTech AI: Opportunities & Challenges in Modern Finance"
+title: "FinTech AI: Redefining Finance Through Fraud Detection and Data Ethics"
 seoTitled: true
 youtubeId: "b1gszMjehF0"
 channelTitle: "Tech Pulse Labs"

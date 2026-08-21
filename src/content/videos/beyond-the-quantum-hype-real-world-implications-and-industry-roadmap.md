@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Applications, Limitations, Future Roadmap"
+title: "What Quantum Computing's Potential and Hurdles Mean for Business"
 seoTitled: true
 youtubeId: "UtDllX_MTbw"
 channelTitle: "TED"

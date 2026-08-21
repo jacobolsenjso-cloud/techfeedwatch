@@ -1,5 +1,5 @@
 ---
-title: "Digital Bank Account Freezes: N26, Revolut & AML Issues"
+title: "N26 Revolut Accounts Freeze From Aggressive AML Automation"
 seoTitled: true
 youtubeId: "yQhsU1YVJKc"
 channelTitle: "Sergey Ross"

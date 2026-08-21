@@ -1,5 +1,5 @@
 ---
-title: "DeepMind AI Revolutionizes Scientific Discovery Today"
+title: "How DeepMind AlphaFold Changes Scientific Discovery"
 seoTitled: true
 youtubeId: "JNyuX1zoOgU"
 channelTitle: "Y Combinator"

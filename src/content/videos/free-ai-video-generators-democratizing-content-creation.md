@@ -1,5 +1,5 @@
 ---
-title: "Free AI Video Generators: Democratizing Content Creation"
+title: "Do Free AI Video Generators Truly Lower Creation Barriers?"
 youtubeId: "FcDu2vdhUmg"
 channelTitle: "Malva AI"
 channelId: "UCv3ZocWMnZw3aljHs4irOzA"

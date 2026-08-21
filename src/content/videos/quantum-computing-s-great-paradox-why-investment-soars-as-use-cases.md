@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Investment Soars, Applications Dwindle"
+title: "What Revised Quantum Roadmaps Mean for Investment"
 titleShortened: true
 seoTitled: true
 youtubeId: "spRN7DfzhrU"

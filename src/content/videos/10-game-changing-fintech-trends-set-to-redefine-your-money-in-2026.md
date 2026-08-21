@@ -1,5 +1,5 @@
 ---
-title: "Fintech Trends 2026: 10 Innovations in Digital Finance"
+title: "Fintech Innovations 2026 Transform Digital Finance with AI Blockchain"
 titleShortened: true
 seoTitled: true
 youtubeId: "ucUdfiq2KiY"

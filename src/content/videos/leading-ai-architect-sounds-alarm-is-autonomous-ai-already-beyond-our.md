@@ -1,5 +1,5 @@
 ---
-title: "Autonomous AI Control Loss: Bengio Warns of Existential Risk"
+title: "Bengio Warns Autonomous AI Deception Poses Existential Risk"
 seoTitled: true
 youtubeId: "qe9QSCF-d88"
 channelTitle: "TED"

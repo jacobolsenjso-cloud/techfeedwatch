@@ -1,5 +1,5 @@
 ---
-title: "How To Invest Savings: Beginner Strategies"
+title: "Beginner Investing Strategies to Build Wealth and Protect Savings"
 titleShortened: true
 seoTitled: true
 youtubeId: "aQq-pRAEtzU"

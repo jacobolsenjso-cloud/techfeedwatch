@@ -1,5 +1,5 @@
 ---
-title: "AI for Small Businesses: Andrew Ng on Democratizing AI"
+title: "How Andrew Ng Democratizes AI for Small Business Niche Solutions"
 seoTitled: true
 youtubeId: "reUZRyXxUs4"
 channelTitle: "TED"

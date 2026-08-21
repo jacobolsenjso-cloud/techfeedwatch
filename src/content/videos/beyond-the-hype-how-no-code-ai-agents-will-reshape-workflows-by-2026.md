@@ -1,5 +1,5 @@
 ---
-title: "No-Code AI Agents Drive Workflow Automation by 2026"
+title: "How No-Code AI Agents Drive Non-Technical Workflow Automation by 2026"
 titleShortened: true
 seoTitled: true
 youtubeId: "ibFJ--CH3cQ"

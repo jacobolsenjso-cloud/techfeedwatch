@@ -1,5 +1,5 @@
 ---
-title: "Anthropic Claude Computer Use: AI Agent Competition Heats Up"
+title: "Anthropic Claude Computer Use Reshapes AI Agent Competition"
 youtubeId: "wfeiCZK0mNs"
 channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"

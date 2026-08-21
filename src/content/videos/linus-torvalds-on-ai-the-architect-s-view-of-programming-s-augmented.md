@@ -1,5 +1,5 @@
 ---
-title: "Linus Torvalds: AI in Programming, LLMs, Code Quality, Risks"
+title: "Linus Torvalds on AI LLM Risks to Code Quality"
 seoTitled: true
 youtubeId: "VHHT6W-N0ak"
 channelTitle: "Mastery Learning"

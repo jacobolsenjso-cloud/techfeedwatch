@@ -1,5 +1,5 @@
 ---
-title: "Apple AI: On-Device Focus & Privacy Secure Long-Term Edge"
+title: "Does Apple's On-Device AI Focus and Privacy Secure Its Long-Term Edge?"
 titleShortened: true
 seoTitled: true
 youtubeId: "eWKY0OnPByg"

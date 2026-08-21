@@ -1,5 +1,5 @@
 ---
-title: "Tokenized Stocks: SEC Eyes Exemption for Crypto Exchanges"
+title: "SEC Eyes Crypto Exemption to Trade Wall Street Tokens"
 seoTitled: true
 youtubeId: "gSCo1cy3FCc"
 channelTitle: "Yahoo Finance"

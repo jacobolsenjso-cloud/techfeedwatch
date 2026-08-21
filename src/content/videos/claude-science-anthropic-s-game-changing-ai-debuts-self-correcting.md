@@ -1,5 +1,5 @@
 ---
-title: "Claude Science: Anthropic Powers Self-Correcting Research"
+title: "Anthropic Claude Science Plans and Executes Self-Correcting Research"
 titleShortened: true
 seoTitled: true
 youtubeId: "9zK0omjrwWY"

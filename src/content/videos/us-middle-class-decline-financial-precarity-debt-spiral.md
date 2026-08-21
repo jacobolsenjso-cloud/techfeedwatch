@@ -1,5 +1,5 @@
 ---
-title: "US Middle Class Decline: Financial Precarity & Debt Spiral"
+title: "Why Falling Savings Drive US Middle Class Debt Spirals"
 youtubeId: "pDxCC5-C9Tg"
 channelTitle: "Graham Stephan"
 channelId: "UCV6KDgJskWaEckne5aPA0aQ"

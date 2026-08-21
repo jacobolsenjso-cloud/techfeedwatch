@@ -1,5 +1,5 @@
 ---
-title: "Hyper-Realistic Fluid Simulation: Methods, Realism"
+title: "Fluid Simulation: Hybrid Methods for Visual Realism"
 titleShortened: true
 seoTitled: true
 youtubeId: "O-52enqUSNw"

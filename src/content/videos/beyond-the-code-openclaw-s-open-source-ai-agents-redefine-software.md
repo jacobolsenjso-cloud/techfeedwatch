@@ -1,5 +1,5 @@
 ---
-title: "OpenClaw Open-Source AI Agents Automate Code Development"
+title: "Can OpenClaw Open-Source AI Agents Write and Self-Modify Code?"
 seoTitled: true
 youtubeId: "YFjfBk8HI5o"
 channelTitle: "Lex Fridman"

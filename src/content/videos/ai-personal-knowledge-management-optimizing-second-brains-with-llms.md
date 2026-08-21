@@ -1,5 +1,5 @@
 ---
-title: "AI Personal Knowledge Management: LLMs for Second Brains"
+title: "LLMs Transform Personal Knowledge Management to AI Second Brains"
 titleShortened: true
 youtubeId: "kGwYmO1GYqE"
 channelTitle: "Aditya Dutta"

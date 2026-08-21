@@ -1,5 +1,5 @@
 ---
-title: "Technical SEO for Developers: Rankings & User Experience"
+title: "Technical SEO: Developers Ensure Rankings and Fast UX via Rendering"
 titleShortened: true
 seoTitled: true
 youtubeId: "-B58GgsehKQ"

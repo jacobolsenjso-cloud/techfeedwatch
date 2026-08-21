@@ -1,5 +1,5 @@
 ---
-title: "Edge AI: How On-Device Inference Changes Computing"
+title: "How Edge AI On-Device Inference Changes AI Hardware Deployment"
 youtubeId: "9frb_VfaUHw"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

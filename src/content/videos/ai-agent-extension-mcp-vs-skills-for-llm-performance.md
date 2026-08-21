@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Extension: MCP vs Skills for LLM Performance"
+title: "How MCP Versus Skills Extends AI Agent LLM Adaptability"
 youtubeId: "goU9VIXA8II"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

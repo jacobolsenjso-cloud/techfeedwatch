@@ -1,5 +1,5 @@
 ---
-title: "What Is Zero Trust Security? Protecting Modern Enterprise Networks"
+title: "Zero Trust Security Shrinks Enterprise Network Attack Surfaces"
 youtubeId: "J2apeojAMA0"
 channelTitle: "The Cyber Ledger "
 channelId: "UCzwlJoTAK7Uk965Sryhh6NA"

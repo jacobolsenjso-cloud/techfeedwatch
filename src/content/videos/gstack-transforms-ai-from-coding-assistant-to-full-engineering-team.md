@@ -1,5 +1,5 @@
 ---
-title: "GStack: AI Engineering Team Handles Software Dev & QA"
+title: "GStack AI Orchestrates LLMs for Complete Software Dev QA"
 seoTitled: true
 youtubeId: "wkv2ifxPpF8"
 channelTitle: "Y Combinator"

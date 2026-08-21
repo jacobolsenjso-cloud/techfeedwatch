@@ -1,5 +1,5 @@
 ---
-title: "NVIDIA GTC: Jensen Huang Keynote, AI Chip Deals, Cloud Strategy"
+title: "What NVIDIA GTC Means for Its AI Compute Ecosystem Strategy"
 youtubeId: "jIviHI7fqyc"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

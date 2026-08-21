@@ -1,5 +1,5 @@
 ---
-title: "AI Billionaires' Shift: Public Backlash Fuels Philanthropy"
+title: "AI Billionaires' Philanthropy Addresses Public Job Fears"
 seoTitled: true
 youtubeId: "GRc4hWdocEw"
 channelTitle: "House of El: AI"

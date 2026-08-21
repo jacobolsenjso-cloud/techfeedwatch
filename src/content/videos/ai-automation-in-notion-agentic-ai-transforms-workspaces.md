@@ -1,5 +1,5 @@
 ---
-title: "AI Automation in Notion: Agentic AI Transforms Workspaces"
+title: "AI Automation in Notion: Agentic AI Manages and Executes Tasks"
 youtubeId: "5B8_iOMzi8Y"
 channelTitle: "Krystian Wojtarowicz AI"
 channelId: "UCKlytYAOLYsiz6sY0zzmY4A"

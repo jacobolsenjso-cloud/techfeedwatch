@@ -1,5 +1,5 @@
 ---
-title: "Local AI Agents & Obsidian for Personal Knowledge Management"
+title: "Local AI Agents Shift PKM From Centralized Platforms to Obsidian"
 seoTitled: true
 youtubeId: "XEYh38XGoSA"
 channelTitle: "Christian Lempa"

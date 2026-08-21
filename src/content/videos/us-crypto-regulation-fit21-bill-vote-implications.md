@@ -1,5 +1,5 @@
 ---
-title: "US Crypto Regulation: FIT21 Bill Vote Implications"
+title: "FIT21 Vote Defines US Crypto Regulator Roles"
 youtubeId: "8TEauEFzqAI"
 channelTitle: "Altcoin Daily"
 channelId: "UCbLhGKVY-bJPcawebgtNfbw"

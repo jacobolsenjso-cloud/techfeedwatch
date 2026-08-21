@@ -1,5 +1,5 @@
 ---
-title: "US Open-Source AI Strategy: Addressing the Global Race"
+title: "US AI Strategy: Open-Source Vulnerability in Global Race"
 youtubeId: "lWMebfCc5f4"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

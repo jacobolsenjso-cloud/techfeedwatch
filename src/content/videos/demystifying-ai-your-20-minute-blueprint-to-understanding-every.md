@@ -1,5 +1,5 @@
 ---
-title: "Essential AI Models: Types & Applications Explained"
+title: "What Types of Specialized AI Models Generate Text or Video?"
 seoTitled: true
 youtubeId: "I0me2uEbfuE"
 channelTitle: "Matthew Berman"

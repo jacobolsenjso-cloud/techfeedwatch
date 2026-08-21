@@ -1,5 +1,5 @@
 ---
-title: "Claude Co-work: Your AI Partner for Business Task Automation"
+title: "Claude Co-work: AI Integrated Agents for Task Automation"
 seoTitled: true
 youtubeId: "oUIxPCagoQU"
 channelTitle: "Coffee & Contracts | Real Estate Marketing"

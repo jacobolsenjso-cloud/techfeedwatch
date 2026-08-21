@@ -1,5 +1,5 @@
 ---
-title: "Autonomous AI: Continuous Optimization for Self-Improvement"
+title: "Autonomous AI: Recursive Loops for Continuous Self-Improvement"
 titleShortened: true
 seoTitled: true
 youtubeId: "X_JsIHUfUjc"

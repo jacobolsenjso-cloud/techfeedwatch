@@ -1,5 +1,5 @@
 ---
-title: "AI for Local Business: Hit $10K/Month Revenue in 3 Months"
+title: "How AI-Driven Digital Machines Change Local Business Revenue"
 seoTitled: true
 youtubeId: "V1vFf-9Gzlo"
 channelTitle: "Income stream surfers"

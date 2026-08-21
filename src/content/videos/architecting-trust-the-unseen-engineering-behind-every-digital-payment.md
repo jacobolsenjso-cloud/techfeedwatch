@@ -1,5 +1,5 @@
 ---
-title: "Digital Payment System Engineering Security, Reliability"
+title: "Engineering Digital Payment Security Against Data Inconsistencies"
 titleShortened: true
 seoTitled: true
 youtubeId: "olfaBgJrUBI"

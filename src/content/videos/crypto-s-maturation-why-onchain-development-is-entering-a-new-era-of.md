@@ -1,5 +1,5 @@
 ---
-title: "Onchain Utility: Crypto Prioritizes Real-World Use"
+title: "Building Crypto: Onchain Utility Drives Real-World Integration"
 titleShortened: true
 seoTitled: true
 youtubeId: "Pdne9xaRLUc"

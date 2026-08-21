@@ -1,5 +1,5 @@
 ---
-title: "Open APIs & Metaverse: Reshaping Payments in Finance"
+title: "Open APIs and Metaverse Transform Payments for Finance Firms"
 seoTitled: true
 youtubeId: "m10_bmtJmvE"
 channelTitle: "Couchonomics with Arjun"

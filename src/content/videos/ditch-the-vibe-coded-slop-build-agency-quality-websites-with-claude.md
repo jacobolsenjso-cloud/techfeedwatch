@@ -1,5 +1,5 @@
 ---
-title: "Agency-Quality Websites with Claude Code, Not Generic AI"
+title: "Claude Code Builds Agency Websites with Human Design Input"
 seoTitled: true
 youtubeId: "hrPKtWVE_bo"
 channelTitle: "Nic Conley"

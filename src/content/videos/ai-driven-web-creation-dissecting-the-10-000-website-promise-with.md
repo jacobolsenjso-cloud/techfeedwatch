@@ -1,5 +1,5 @@
 ---
-title: "AI Website Builder: Create Pro Websites, No Code Needed"
+title: "AI Builder: Nanobanner 2, Claude Code No-Code Websites"
 seoTitled: true
 youtubeId: "TZUTe7s11-I"
 channelTitle: "Jack Roberts"

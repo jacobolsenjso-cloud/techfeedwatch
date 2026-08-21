@@ -1,5 +1,5 @@
 ---
-title: "Offensive Security: Attack Simulation Boosts Digital Defense"
+title: "How Offensive Security Uses Ethical Hacking to Boost Digital Defense"
 titleShortened: true
 seoTitled: true
 youtubeId: "fQJ8OUs1Sog"

@@ -1,5 +1,5 @@
 ---
-title: "Robinhood Blockchain: DeFi, Tokenized Assets & 24/7 Markets"
+title: "How Robinhood Blockchain's 24/7 DeFi Assets Change Markets"
 titleShortened: true
 seoTitled: true
 youtubeId: "s9_IQUx_QW4"

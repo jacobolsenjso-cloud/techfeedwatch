@@ -1,5 +1,5 @@
 ---
-title: "Andrew Ng AI Education: Deep Learning for Developers"
+title: "Andrew Ng’s Vision: Deep Learning as Foundational AI for Developers"
 titleShortened: true
 seoTitled: true
 youtubeId: "0jspaMLxBig"

@@ -1,5 +1,5 @@
 ---
-title: "Digital Money: Banks, Stablecoins, CBDCs Vie for Control"
+title: "Digital Money: Banks, Stablecoins, CBDCs Engage in Arms Race"
 titleShortened: true
 seoTitled: true
 youtubeId: "2QfSQybsJsE"

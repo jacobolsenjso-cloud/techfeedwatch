@@ -1,5 +1,5 @@
 ---
-title: "Universe as Computation: Stephen Wolfram Hypergraph Theory"
+title: "Does Stephen Wolfram's Hypergraph Theory Explain All Physics?"
 seoTitled: true
 youtubeId: "4-SGpEInX_c"
 channelTitle: "Lex Fridman"

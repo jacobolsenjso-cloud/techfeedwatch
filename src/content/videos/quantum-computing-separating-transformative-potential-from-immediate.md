@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Hardware: Why Building Qubits Is So Hard"
+title: "Quantum Hardware: The Engineering Roadblocks to Scalable Qubits"
 titleShortened: true
 seoTitled: true
 youtubeId: "VyX8E4KUkWw"

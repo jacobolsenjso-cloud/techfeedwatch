@@ -1,5 +1,5 @@
 ---
-title: "Smart Contracts Guide: Blockchain Benefits & Challenges"
+title: "Smart Contracts on Blockchain Offer Benefits and Vulnerabilities"
 seoTitled: true
 youtubeId: "srjUFqnfKIs"
 channelTitle: "CoinGecko"

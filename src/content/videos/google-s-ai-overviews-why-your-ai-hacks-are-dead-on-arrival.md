@@ -1,5 +1,5 @@
 ---
-title: "Google AI Overviews SEO: Ignore 'AI Hacks', Use Standard SEO"
+title: "How Google AI Overviews Ignores SEO AI Hacks for Standard Content"
 seoTitled: true
 youtubeId: "1GiYkMYJLPs"
 channelTitle: "Drupal & SEO"

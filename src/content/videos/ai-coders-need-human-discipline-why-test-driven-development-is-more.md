@@ -1,5 +1,5 @@
 ---
-title: "Test-Driven Development for AI Code Quality & Oversight"
+title: "Test-Driven Development Guards AI Code Quality and Oversight"
 seoTitled: true
 youtubeId: "bDLdZIAjH5Y"
 channelTitle: "Modern Software Engineering"

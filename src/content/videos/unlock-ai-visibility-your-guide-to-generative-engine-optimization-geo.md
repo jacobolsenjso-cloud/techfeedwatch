@@ -1,5 +1,5 @@
 ---
-title: "Generative Engine Optimization (GEO) Business AI Visibility"
+title: "Generative Engine Optimization (GEO): Ensure Brand Visibility in LLMs"
 titleShortened: true
 seoTitled: true
 youtubeId: "20pTTT8jcEw"

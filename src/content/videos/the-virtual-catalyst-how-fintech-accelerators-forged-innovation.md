@@ -1,5 +1,5 @@
 ---
-title: "Saudi Arabia Fintech Accelerators for Vision 2030 Innovation"
+title: "How Saudi Arabia Fintech Accelerators Build Vision 2030 Finance"
 titleShortened: true
 seoTitled: true
 youtubeId: "nVvr06Ll_2U"

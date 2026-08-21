@@ -1,5 +1,5 @@
 ---
-title: "Fintech Subdomains: The Six Pillars of Digital Finance"
+title: "How Six Fintech Subdomains Use AI to Power Digital Finance"
 seoTitled: true
 youtubeId: "zvw_DMamBhM"
 channelTitle: "Jeremy Quainoo"

@@ -1,5 +1,5 @@
 ---
-title: "Local Business AI SEO: Build & Rank Fast, Beat Traditional"
+title: "Local Business AI SEO Disrupts Traditional Agencies"
 titleShortened: true
 seoTitled: true
 youtubeId: "gWNFna6fgS8"

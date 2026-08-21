@@ -1,5 +1,5 @@
 ---
-title: "Open-Source AI Agents: Practical Use & Development"
+title: "How to Develop Specific AI Apps with Open-Source Agents?"
 youtubeId: "zjFE-dBzP_E"
 channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"

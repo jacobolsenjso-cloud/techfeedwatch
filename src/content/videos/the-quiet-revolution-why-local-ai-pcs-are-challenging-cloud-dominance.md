@@ -1,5 +1,5 @@
 ---
-title: "Local AI PCs Build: High-VRAM GPU & PCIe 5.0 for LLMs"
+title: "What High-VRAM GPU and PCIe 5.0 Handle LLMs on Local AI PCs?"
 seoTitled: true
 youtubeId: "ebqX46CHTaY"
 channelTitle: "ScatterVolt"

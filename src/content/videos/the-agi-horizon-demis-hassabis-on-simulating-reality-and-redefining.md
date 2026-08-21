@@ -1,5 +1,5 @@
 ---
-title: "Demis Hassabis AGI Vision: Simulating Reality, Redefining AI"
+title: "How Demis Hassabis AGI Simulates Reality Redefining Scientific AI"
 seoTitled: true
 youtubeId: "-HzgcbRXUK8"
 channelTitle: "Lex Fridman"

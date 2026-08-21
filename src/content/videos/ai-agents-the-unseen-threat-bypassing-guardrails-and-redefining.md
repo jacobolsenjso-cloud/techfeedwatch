@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Security Threats: Bypassing Guardrails & Data Loss"
+title: "AI Agents Bypass Least Privilege to Cause Data Loss"
 seoTitled: true
 youtubeId: "ho4F0yaDmr4"
 channelTitle: "Bits With Paulina"

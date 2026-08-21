@@ -1,5 +1,5 @@
 ---
-title: "AI Search SEO: Strategy for Google AI Overviews & Rankings"
+title: "Google AI Overviews Drive Answer Engine Optimization Strategy"
 titleShortened: true
 seoTitled: true
 youtubeId: "zawsAmcN71M"

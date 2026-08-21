@@ -1,5 +1,5 @@
 ---
-title: "OpenAI AGI Ambitions: Decoding the Unseen AI Control Problem"
+title: "Why OpenAI AGI Incidents Highlight the AI Control Problem"
 seoTitled: true
 youtubeId: "vfSplCaxHzM"
 channelTitle: "AI Revolution"

@@ -1,5 +1,5 @@
 ---
-title: "AR Glasses: MKBHD Tests Early Prototypes & Tech Challenges"
+title: "MKBHD's AR Glasses Prototypes Show Key Design Compromises"
 seoTitled: true
 youtubeId: "G0eKzU_fV00"
 channelTitle: "Marques Brownlee"

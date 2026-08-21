@@ -1,5 +1,5 @@
 ---
-title: "AI-Native Startups Use AI as Core OS for Business Operations"
+title: "How AI-Native Startups Use AI Core OS to Reshape Business"
 seoTitled: true
 youtubeId: "EN7frwQIbKc"
 channelTitle: "Y Combinator"

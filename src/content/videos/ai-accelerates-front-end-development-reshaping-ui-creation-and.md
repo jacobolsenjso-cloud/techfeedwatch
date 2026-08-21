@@ -1,5 +1,5 @@
 ---
-title: "AI Front-End Development: Generative UI Tools & Dev Roles"
+title: "How AI Generative UI Tools Alter Front-End Dev Workflows"
 seoTitled: true
 youtubeId: "TBIjgBVFjVI"
 channelTitle: "Fireship"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing for Developers: What Actually Changes"
+title: "Quantum Computing for Developers Demands New Programming Logic"
 seoTitled: true
 youtubeId: "sHDWnW1fXJw"
 channelTitle: "Modern Software Engineering"

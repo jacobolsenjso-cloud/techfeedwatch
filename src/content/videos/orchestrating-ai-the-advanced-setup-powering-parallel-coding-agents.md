@@ -1,5 +1,5 @@
 ---
-title: "Parallel AI Coding Agents: Isolated Development Setup"
+title: "Parallel AI Coding Agents: Git Worktrees and Docker Prevent Conflicts"
 titleShortened: true
 seoTitled: true
 youtubeId: "qxjII6x2yPY"

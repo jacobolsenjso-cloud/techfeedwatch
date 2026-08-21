@@ -1,5 +1,5 @@
 ---
-title: "Earn Passive Crypto Income: Node Staking & Testnets"
+title: "Earn Passive Crypto Income From Proof-of-Stake Nodes and Testnets"
 titleShortened: true
 seoTitled: true
 youtubeId: "l0dzOwyPqFI"

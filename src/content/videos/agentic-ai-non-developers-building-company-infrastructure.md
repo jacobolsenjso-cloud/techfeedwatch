@@ -1,5 +1,5 @@
 ---
-title: "Agentic AI: Non-Developers Building Company Infrastructure"
+title: "Agentic AI: Non-Developers Create Foundational Business Systems"
 youtubeId: "aE_xX4MUgTY"
 channelTitle: "linuxfestnorthwest"
 channelId: "UCqeKeRXssKqbK4XHqLYrctQ"

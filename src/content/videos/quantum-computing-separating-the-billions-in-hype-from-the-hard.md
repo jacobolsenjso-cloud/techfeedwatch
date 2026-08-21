@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Investment: Billions Spent, Few Uses Yet"
+title: "How Billions in Quantum Computing Get Stuck in R&D"
 seoTitled: true
 youtubeId: "SnIEu8OSXDs"
 channelTitle: "The Verge"

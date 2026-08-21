@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing: Powers AI, Drug Discovery & Clean Energy"
+title: "Quantum Computing Fuels AI, Drug Discovery, and Fusion Energy"
 titleShortened: true
 seoTitled: true
 youtubeId: "79kNOf749MA"

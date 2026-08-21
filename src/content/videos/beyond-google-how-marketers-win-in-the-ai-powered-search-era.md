@@ -1,5 +1,5 @@
 ---
-title: "AI Search Strategies for Marketers: Win in AI-Powered Era"
+title: "AI Search: Marketers Win with AEO, GEO, PEO Content"
 seoTitled: true
 youtubeId: "-8nM4ypUdUM"
 channelTitle: "AI4NTP (AI 4 Non Techy People)"

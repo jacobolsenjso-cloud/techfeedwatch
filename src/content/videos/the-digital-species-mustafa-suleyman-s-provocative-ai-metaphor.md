@@ -1,5 +1,5 @@
 ---
-title: "Mustafa Suleyman: AI New Digital Species Not Merely a Tool"
+title: "Does Suleyman Define AI as a New Digital Species, Not Merely a Tool?"
 titleShortened: true
 seoTitled: true
 youtubeId: "KKNCiRWd_j0"

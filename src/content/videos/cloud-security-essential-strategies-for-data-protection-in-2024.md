@@ -1,5 +1,5 @@
 ---
-title: "Cloud Security: Essential Strategies for Data Protection in 2024"
+title: "Cloud Security 2024: Shared Responsibility for Data Protection"
 youtubeId: "khvT_CjrURs"
 channelTitle: "Mad Hat"
 channelId: "UC7e_BXvNfjKFCgqR4LkUe9A"

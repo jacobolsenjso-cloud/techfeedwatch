@@ -1,5 +1,5 @@
 ---
-title: "SaaS Business Model: AI Agents Disrupt Subscriptions"
+title: "How AI Agents Change SaaS Per-User Subscriptions"
 titleShortened: true
 seoTitled: true
 youtubeId: "cxcb55zr2Q8"

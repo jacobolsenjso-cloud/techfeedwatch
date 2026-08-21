@@ -1,5 +1,5 @@
 ---
-title: "AI Cognitive Decline: Passive Use Harms Thinking, Memory"
+title: "Does Passive AI Use Replace Critical Thinking and Memory?"
 titleShortened: true
 seoTitled: true
 youtubeId: "52FiVExXfnU"

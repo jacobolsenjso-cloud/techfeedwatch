@@ -1,5 +1,5 @@
 ---
-title: "Free Private AI Video Generation for Your Desktop"
+title: "Desktop AI: Free Private Video Generation, No Subscriptions"
 seoTitled: true
 youtubeId: "G2Ec3h5CfA8"
 channelTitle: "Kevin Stratvert"

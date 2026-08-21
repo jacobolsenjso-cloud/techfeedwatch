@@ -1,5 +1,5 @@
 ---
-title: "Stream Processing Optimizes Trading Systems, Risk Management"
+title: "Flink Stream Processing Reduces Financial Risk in Trading Systems"
 titleShortened: true
 seoTitled: true
 youtubeId: "ICnFZ8L_Gbc"

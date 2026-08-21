@@ -46,11 +46,23 @@ const CHANNELS = [
 // kanaler og klynger.
 const MAX_NORMAL_PER_RUN = 1;
 
-// Dagligt udgivelsesloft. Robotten kører fortsat hver 2. time (12 gange i døgnet),
-// men bruger de fleste kørsler på at opdage kandidater frem for at udgive. Det
-// holder det brede net over kanaler og emner, mens output-kurven ligner
-// redaktionel kuratering i stedet for en feed-maskine.
-const MAX_PER_DAY = 4;
+// Dagligt udgivelsesLOFT — ikke et mål. Loftet varierer deterministisk med
+// datoen (samme dag = samme loft på tværs af døgnets 12 kørsler, uden delt
+// hukommelse): hverdage 2-6 artikler (snit 4), weekend 1-3 (snit 2). Præcis
+// fire artikler hver eneste dag var et maskinaftryk; rigtige redaktioner
+// svinger og udgiver mindre i weekenden. Kvaliteten bestemmer stadig: godkender
+// kontrollerne kun én video en dag med loft 5, udgives én. En dag med 0 er OK.
+function dagensLoft() {
+  const nu = new Date();
+  const dato = nu.toISOString().split('T')[0];
+  let h = 0;
+  for (let i = 0; i < dato.length; i++) h = (Math.imul(31, h) + dato.charCodeAt(i)) | 0;
+  h = Math.abs(h);
+  const ugedag = nu.getUTCDay(); // 0 = søndag, 6 = lørdag
+  const muligheder = (ugedag === 0 || ugedag === 6) ? [1, 2, 3] : [2, 3, 4, 5, 6];
+  return muligheder[h % muligheder.length];
+}
+const MAX_PER_DAY = dagensLoft();
 
 // Friskheds-vindue: kun videoer nyere end dette, så feedet føles aktuelt. Nem at justere.
 const FRESHNESS_DAYS = 180;

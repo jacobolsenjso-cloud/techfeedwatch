@@ -1,5 +1,5 @@
 ---
-title: "NVIDIA Rubin: The AI Factory Reshaping AI Hardware Future"
+title: "NVIDIA Rubin: The AI Factory Integrates CPUs, GPUs, Networking"
 youtubeId: "6TUKgqSFCcU"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

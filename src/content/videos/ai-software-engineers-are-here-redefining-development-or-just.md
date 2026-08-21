@@ -1,5 +1,5 @@
 ---
-title: "Autonomous AI Software Engineers: Devin Changes Dev Teams"
+title: "How Autonomous AI Devin Automates the Entire Dev Lifecycle"
 seoTitled: true
 youtubeId: "SdZiYRfGdKU"
 channelTitle: "Two Minute Papers"

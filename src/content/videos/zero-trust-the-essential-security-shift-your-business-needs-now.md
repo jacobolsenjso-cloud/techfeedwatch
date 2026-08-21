@@ -1,5 +1,5 @@
 ---
-title: "Zero Trust Security Model: Secure Business from Cyberthreats"
+title: "How Zero Trust Security Verifies All Access to Prevent Cyberattacks"
 titleShortened: true
 seoTitled: true
 youtubeId: "gb2CJP8oUuw"

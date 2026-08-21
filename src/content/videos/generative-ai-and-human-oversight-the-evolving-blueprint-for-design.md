@@ -1,5 +1,5 @@
 ---
-title: "Generative AI Design: Human Oversight in CAD Automation"
+title: "How Generative AI Design Changes Human Oversight in FreeCAD Automation"
 seoTitled: true
 youtubeId: "IBrU7fRg3pk"
 channelTitle: "Creditizens - AI Systems for Builders"

@@ -1,5 +1,5 @@
 ---
-title: "Architecture-First Cloud Security Consulting for Businesses"
+title: "Architecture-First: Cloud Security Consulting for Business Compliance"
 seoTitled: true
 youtubeId: "LCa-ioVi8Fs"
 channelTitle: "Atlant Security"

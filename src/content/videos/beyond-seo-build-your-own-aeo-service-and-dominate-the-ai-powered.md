@@ -1,5 +1,5 @@
 ---
-title: "Answer Engine Optimization (AEO) Dominate AI Search Answers"
+title: "AEO: Dominating AI Search Answers with Curated Content"
 titleShortened: true
 seoTitled: true
 youtubeId: "LxGyfu8A10M"

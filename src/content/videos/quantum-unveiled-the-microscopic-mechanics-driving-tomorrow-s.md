@@ -1,5 +1,5 @@
 ---
-title: "Quantum Mechanics Powers Sensors and Quantum Computers"
+title: "Quantum Mechanics Underpins Precise Sensors and Quantum Computers"
 titleShortened: true
 seoTitled: true
 youtubeId: "t06aTX9jM34"

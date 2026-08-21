@@ -1,5 +1,5 @@
 ---
-title: "AI Hardware & Chips: Nvidia's Dominance Powers Generative AI"
+title: "What Nvidia's AI Chip Dominance Means for Generative AI Scaling"
 seoTitled: true
 youtubeId: "-s_Ui5j0Guw"
 channelTitle: "a16z"

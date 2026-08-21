@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Decentralizes Commerce, Reduces Bank Reliance"
+title: "Will Blockchain Decentralize Commerce From Central Banks?"
 seoTitled: true
 youtubeId: "RplnSVTzvnU"
 channelTitle: "TED"

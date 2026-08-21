@@ -1,5 +1,5 @@
 ---
-title: "Ethereum: Programmable Blockchain, Decentralized Web Base"
+title: "Ethereum: Programmable Blockchain for Trustless Digital Interactions"
 titleShortened: true
 seoTitled: true
 youtubeId: "NzNNu49eZvc"

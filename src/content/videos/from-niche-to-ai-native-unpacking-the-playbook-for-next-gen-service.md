@@ -1,5 +1,5 @@
 ---
-title: "AI-Native Service Companies: Playbook for Next-Gen Business"
+title: "How AI-Native Services Build Next-Gen Business via Operations-First"
 titleShortened: true
 seoTitled: true
 youtubeId: "gSNFJbgoaHI"

@@ -1,5 +1,5 @@
 ---
-title: "Google NotebookLM Free AI Automates Your YouTube Channel"
+title: "Can Free Google NotebookLM AI Automate Your YouTube Workflow?"
 seoTitled: true
 youtubeId: "LpkOt5nClFA"
 channelTitle: "iampauljames"

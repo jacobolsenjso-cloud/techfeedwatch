@@ -1,5 +1,5 @@
 ---
-title: "DeFi: Decentralized Finance Bypassing Traditional Banks"
+title: "DeFi Leveraging Blockchain Bypasses Traditional Banks"
 seoTitled: true
 youtubeId: "Vq1bxcoW1jQ"
 channelTitle: "Coin Bureau"
