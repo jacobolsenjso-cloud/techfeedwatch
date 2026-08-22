@@ -12,8 +12,8 @@ tags:
 summary: "The re-implementation of SQLite in Rust, manifested as Turso, marks a significant moment for foundational software. This move addresses long-standing challenges in C-based systems, particularly memory safety and modern concurrency. It offers developers a new option for high-performance, secure, and globally distributed data storage. The underlying shift represents a broader industry trend towards safer, more efficient languages for critical infrastructure components."
 metaDescription: "SQLite, the world's most trusted code, gets a Rust rewrite with Turso. Explore what this means for performance, security, and developers."
 duration: "5:20"
-viewCount: 588264
-viewsUpdated: "2026-08-19"
+viewCount: 590339
+viewsUpdated: "2026-08-22"
 thumbMax: true
 isShort: false
 faqs:

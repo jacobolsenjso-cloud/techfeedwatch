@@ -11,8 +11,8 @@ tags:
 summary: "Anthropic's decision to restrict public access to its 'Mythos' AI model due to perceived danger ignites a critical discussion on advanced AI governance. This move highlights the inherent tension between fostering innovation and ensuring societal safety as AI capabilities rapidly evolve. The debate centers on who determines acceptable risk and how to balance broad utility with potential misuse scenarios for powerful models."
 metaDescription: "Anthropic's 'Mythos' AI model is restricted from public use, sparking debate on AI safety, access, and governance in rapidly evolving tech."
 duration: "5:37"
-viewCount: 1095550
-viewsUpdated: "2026-08-19"
+viewCount: 1095870
+viewsUpdated: "2026-08-22"
 thumbMax: true
 isShort: false
 faqs:

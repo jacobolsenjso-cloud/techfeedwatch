@@ -12,8 +12,8 @@ tags:
 summary: "The integration of AI code agents like Anthropic's Claude on platforms such as Google Cloud's Gemini Agent Platform marks a significant evolution in software development. These systems move beyond mere code completion, acting as sophisticated collaborators that manage complex workflows from initial concept to automated testing. This shift demands new skills in prompt engineering and verification, fundamentally altering developer roles and potentially enhancing productivity."
 metaDescription: "Discover how AI code agents like Claude on Google Cloud's Gemini Agent Platform are reshaping software development. Learn about new dev workflows and…"
 duration: "10:08"
-viewCount: 5320
-viewsUpdated: "2026-08-19"
+viewCount: 5387
+viewsUpdated: "2026-08-22"
 thumbMax: true
 isShort: false
 faqs:

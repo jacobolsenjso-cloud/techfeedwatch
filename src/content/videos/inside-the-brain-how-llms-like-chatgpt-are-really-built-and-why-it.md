@@ -10,8 +10,8 @@ tags:
   - "AI & Tech"
 summary: "The foundational processes behind large language models (LLMs) like ChatGPT involve meticulous data preparation and tokenization. Before any neural network training begins, vast quantities of raw internet data undergo extensive filtering for quality, diversity, and safety. This curated data then transforms into numerical tokens through algorithms like Byte Pair Encoding, becoming the discrete units LLMs learn to predict, thus shaping their linguistic abilities and potential biases."
 duration: "3:31:24"
-viewCount: 8591908
-viewsUpdated: "2026-08-19"
+viewCount: 8685995
+viewsUpdated: "2026-08-22"
 thumbMax: true
 isShort: false
 revised: true
