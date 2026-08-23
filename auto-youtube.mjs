@@ -285,7 +285,10 @@ function dedupeById(items, seen) {
 }
 
 // Behandler op til maxCount videoer fra én gruppe (normale ELLER shorts). Robottens links er altid /watch?v=.
-async function processGroup(items, label, maxCount, existingIds, tag) {
+// spoergsmaal sendes med som parameter — den var tidligere refereret fra ydre
+// scope og fandtes ikke her: ReferenceError på hver eneste kandidat, 20 grønne
+// kørsler uden én artikel. Fundet ved lokal kørsel 23/8.
+async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal) {
   let processed = 0;
 
   for (const item of items) {
@@ -311,8 +314,15 @@ async function processGroup(items, label, maxCount, existingIds, tag) {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
       const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
       execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg}`, { stdio: 'inherit' });
-      processed++;
-      existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
+      // add-video kan afvise (sprogtjek, tyndt transskript) og alligevel slutte
+      // pænt. Kun en faktisk skrevet artikel tæller mod dagens loft — ellers
+      // æder afvisninger budgettet, og næste kandidat får aldrig chancen.
+      if (loadExistingVideoIds().has(videoId)) {
+        processed++;
+        existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
+      } else {
+        console.log(`ℹ️ Kandidat afvist af kvalitetsværn — prøver næste.`);
+      }
     } catch (subError) {
       console.error(`❌ Fejl ved oprettelse af video ${videoId}:`, subError.message);
     }
@@ -409,7 +419,7 @@ async function findNewestVideos() {
     console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
     const existingIds = loadExistingVideoIds();
-    const processed = await processGroup(normalItems, 'video', runBudget, existingIds, tag);
+    const processed = await processGroup(normalItems, 'video', runBudget, existingIds, tag, spoergsmaal);
 
     console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
   } catch (error) {

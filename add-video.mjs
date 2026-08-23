@@ -377,10 +377,12 @@ async function run() {
       }
     }
 
-    // Sprogtjek: kasser videoen FØR den dyre artikel-prompt, hvis den ikke er på engelsk
+    // Sprogtjek: kasser videoen FØR den dyre artikel-prompt, hvis den ikke er på engelsk.
+    // Kun det TALTE indhold vurderes — titlen genereres forfra alligevel, og
+    // kravet om engelsk titel kasserede engelske videoer fra internationale
+    // kanaler med lokalsprogede titler (målt 23/8: 4 gode kandidater i træk).
     const langCheckPrompt = [
-      "Answer with only one word: YES or NO. Is BOTH the spoken content and the title of this video primarily in English?",
-      ...(youtubeTitle ? [`Title: ${youtubeTitle}`] : []),
+      "Answer with only one word: YES or NO. Is the spoken content of this video primarily in English?",
       `Content: ${text.substring(0, 1500)}`
     ].join('\n');
 

@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (1358) ---
+# --- Statiske (1360) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/ucUdfiq2KiY/ /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech 301
@@ -1361,6 +1361,8 @@
 /video/securing-ai-agents-on-aws-new-attack-surface-demands-proactive-defense/ /video/zero-trust-for-ai-agents-securing-autonomous-systems/ 301
 /video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
 /video/the-ai-skill-imperative-navigating-the-learning-curve-for-a-new/ /video/ai-engineer-demystified-charting-your-path-in-the-hottest-tech-field/ 301
+/video/beyond-the-piggy-bank-why-your-savings-need-to-work-harder-for-wealth /tag/business-money 301
+/video/beyond-the-piggy-bank-why-your-savings-need-to-work-harder-for-wealth/ /tag/business-money 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
