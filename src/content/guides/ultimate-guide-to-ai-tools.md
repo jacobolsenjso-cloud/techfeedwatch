@@ -229,3 +229,5 @@ credited. The [AI & Tech tag](/tag/ai-tech) has all 262, and the
 not from an industry report. Where sources disagree, this guide says so rather
 than picking a side. Written and maintained by Jacob S. Olsen. If something here
 is wrong, the [corrections policy](/corrections) explains how to tell me.*
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

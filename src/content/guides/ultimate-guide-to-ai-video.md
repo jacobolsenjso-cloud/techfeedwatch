@@ -45,3 +45,5 @@ Two trends are worth tracking. Consistency is improving - tools are getting bett
 The first is expecting a finished video from one prompt - the tools produce material, not masterpieces. The second is skipping the edit, which is where rough output becomes something worth watching. The third is ignoring rights and disclosure: know the terms of the tool you use, and be honest with your audience about AI-generated content.
 
 The videos below show these tools in real use, from quick tests to full workflows. Watch how creators combine them, then borrow the parts that fit what you want to make.
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

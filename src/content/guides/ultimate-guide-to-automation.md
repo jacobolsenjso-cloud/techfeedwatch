@@ -207,3 +207,5 @@ agents, 31 on failure and limits, 6 on workflow tools — come from the archive
 itself, not from an industry report. Written and maintained by Jacob S. Olsen.
 If something here is wrong, the [corrections policy](/corrections) explains how
 to tell me.*
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

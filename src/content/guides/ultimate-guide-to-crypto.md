@@ -228,3 +228,5 @@ itself, not from an industry report. Nothing here is investment advice; it is a
 summary of what other people said. Written and maintained by Jacob S. Olsen. If
 something here is wrong, the [corrections policy](/corrections) explains how to
 tell me.*
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

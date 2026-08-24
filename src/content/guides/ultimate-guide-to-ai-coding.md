@@ -171,3 +171,5 @@ including Fireship, Modern Software Engineering, Y Combinator and NetworkChuck.
 The counts quoted come from the archive itself, not from an industry survey.
 Written and maintained by Jacob S. Olsen. If something here is wrong, the
 [corrections policy](/corrections) explains how to tell me.*
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

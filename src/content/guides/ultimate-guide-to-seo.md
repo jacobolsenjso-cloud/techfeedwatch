@@ -194,3 +194,5 @@ If you are planning for the next six months: pick a narrower subject than feels 
 ---
 
 *This guide draws on 34 videos about search covered on Tech Feed Watch, from 25 channels including Google Search Central, Fireship, and a range of independent agencies and consultants. Every article links to its original video — the [SEO tag](/tag/seo) has the full set. Written and maintained by Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections) explains how to tell me.*
+
+*The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*
