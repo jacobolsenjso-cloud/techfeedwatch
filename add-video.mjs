@@ -377,6 +377,19 @@ async function run() {
       }
     }
 
+    // Deterministisk skrift-tjek FØR modellen spørges: er transskriptet
+    // overvejende ikke-latinsk (devanagari, kinesisk, arabisk, kyrillisk...),
+    // er videoen ikke engelsk — uanset hvad metadata påstår. Målt 24/8: en
+    // hindi-video mærket "en-IN" af uploaderen passerede alle tekstkontroller,
+    // fordi Gemini gladeligt skrev en engelsk artikel ud fra hindi-input.
+    // Alfabeter kan ikke narres; modeller kan.
+    const bogstaver = text.match(/\p{L}/gu) || [];
+    const latinske = text.match(/[A-Za-z\u00C0-\u024F]/g) || [];
+    if (bogstaver.length > 100 && latinske.length / bogstaver.length < 0.7) {
+      console.log(`Sprunget over: transskriptet er overvejende ikke-latinsk skrift (${Math.round(latinske.length / bogstaver.length * 100)}% latinsk) (${videoId})`);
+      return;
+    }
+
     // Sprogtjek: kasser videoen FØR den dyre artikel-prompt, hvis den ikke er på engelsk.
     // Kun det TALTE indhold vurderes — titlen genereres forfra alligevel, og
     // kravet om engelsk titel kasserede engelske videoer fra internationale
@@ -485,7 +498,14 @@ async function run() {
     const summaryMatch = rawText.match(/SUMMARY:\s*([\s\S]*?)(?=META:|FAQ:|CONTENT:|$)/i);
     const metaMatch = rawText.match(/META:\s*(.*)/i);
 
-    let safeTitle = (titleMatch ? titleMatch[1] : "New Video").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    // Ingen TITLE i svaret = artiklen afvises. Fallback'en "New Video" udgav
+    // 24/8 en artikel med maskinnavn som både titel og URL — præcis det
+    // aftryk hele titel-arbejdet fjerner. Hellere ingen artikel end den.
+    if (!titleMatch || !titleMatch[1].trim()) {
+      console.log(`❌ Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (${videoId})`);
+      return;
+    }
+    let safeTitle = titleMatch[1].replace(/"/g, "'").replace(/\n/g, " ").trim();
     // Efterbehandling af titlen: publikations-casing (småord i småt) og
     // og-tegn ud — de to ting Gemini oftest overhører i instruksen.
     safeTitle = pubCase(safeTitle.replace(/\s*&\s*/g, ' and '));

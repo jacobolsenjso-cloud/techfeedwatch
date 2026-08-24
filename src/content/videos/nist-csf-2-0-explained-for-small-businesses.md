@@ -1,5 +1,5 @@
 ---
-title: "New Video"
+title: "NIST CSF 2.0 Explained for Small Businesses"
 youtubeId: "DpeL-PbQG8s"
 channelTitle: "HailBytes"
 channelId: "UC6sMOutx1EAgL6olFZIzhHg"
