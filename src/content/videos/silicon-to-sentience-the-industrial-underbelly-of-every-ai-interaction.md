@@ -12,8 +12,8 @@ tags:
   - "Automation"
 summary: "The seemingly intangible nature of artificial intelligence belies a vast, complex physical infrastructure. From silicon wafers to hyperscale data centers, the production of AI servers represents a pinnacle of modern manufacturing and engineering. Understanding this physical foundation reveals the significant capital investment, geopolitical considerations, and environmental impact powering today's AI capabilities. This intricate hardware ecosystem is as critical to AI's advancement as the algorithms themselves."
 duration: "3:40"
-viewCount: 59
-viewsUpdated: "2026-08-22"
+viewCount: 60
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 revised: true

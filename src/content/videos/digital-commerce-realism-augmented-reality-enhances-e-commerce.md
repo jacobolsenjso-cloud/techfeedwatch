@@ -12,8 +12,8 @@ summary: "Augmented Reality (AR) transforms online shopping by overlaying virtua
 metaDescription: "Discover how augmented reality enhances e-commerce experience, reducing returns and boosting buyer confidence with interactive 3D product visualization."
 targetQuestion: "how does augmented reality enhance e-commerce experience"
 duration: "9:08"
-viewCount: 10
-viewsUpdated: "2026-08-23"
+viewCount: 11
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 faqs:

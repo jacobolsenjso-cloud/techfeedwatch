@@ -12,8 +12,8 @@ tags:
   - "Business & Money"
 summary: "Andrew Ng's enduring influence stems from democratizing AI education through Coursera and DeepLearning.AI, making complex concepts globally accessible. His vision projects AI and data science as a new foundational literacy, essential for a vast majority of future developers and professionals. This educational push signals a societal shift, transforming AI from a specialized discipline into a ubiquitous and indispensable skill across industries."
 duration: "1:29:10"
-viewCount: 733022
-viewsUpdated: "2026-08-22"
+viewCount: 733102
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 revised: true

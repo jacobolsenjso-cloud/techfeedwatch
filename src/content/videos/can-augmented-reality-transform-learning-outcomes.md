@@ -12,8 +12,8 @@ summary: "Augmented reality (AR) overlays digital information onto the real worl
 metaDescription: "Explore how augmented reality helps in education, boosting engagement, comprehension, and practical skills through immersive, interactive learning."
 targetQuestion: "how does augmented reality help in education"
 duration: "51:59"
-viewCount: 36
-viewsUpdated: "2026-08-23"
+viewCount: 37
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 faqs:

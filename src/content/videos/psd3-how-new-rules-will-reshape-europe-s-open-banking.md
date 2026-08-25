@@ -11,8 +11,8 @@ tags:
 summary: "Europe is preparing for PSD3, the next iteration of its Payment Services Directive, which is set to significantly evolve the open banking framework. This regulatory update aims to enhance security, foster greater innovation in payment services, and empower consumers with more control over their financial data. Financial technology firms like Qwist are positioning themselves to leverage these changes, utilizing smart technology and advanced data analytics to drive more effective business decisions in a rapidly changing financial landscape. The directive builds upon PSD2's foundations, pushing for more seamless and secure data exchange between banks and third-party providers."
 metaDescription: "Europe's PSD3 directive is poised to transform open banking, enhancing security and innovation in payments. Discover what the new rules mean for fintech and…"
 duration: "6:55"
-viewCount: 30
-viewsUpdated: "2026-08-16"
+viewCount: 31
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 faqs:

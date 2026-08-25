@@ -11,8 +11,8 @@ tags:
 summary: "The United States faces increasing national security risks due to its heavy reliance on Chinese manufacturing for Printed Circuit Boards (PCBs) fundamental to AI chips. With virtually all advanced AI circuit boards produced in China, this dependency creates significant supply chain vulnerabilities. Legislation aims to incentivize domestic PCB production, countering potential malicious component integration and strengthening critical technology infrastructure. This strategic shift underscores a broader effort to secure the foundation of future AI development."
 metaDescription: "US confronts AI chip supply chain security risks from China's PCB dominance. Learn why domestic production is vital for national security."
 duration: "15:57"
-viewCount: 140121
-viewsUpdated: "2026-08-22"
+viewCount: 140341
+viewsUpdated: "2026-08-25"
 thumbMax: true
 isShort: false
 faqs:
