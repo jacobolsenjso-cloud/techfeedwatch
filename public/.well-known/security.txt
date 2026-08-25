@@ -1,0 +1,4 @@
+Contact: mailto:info@techfeedwatch.com
+Expires: 2027-08-24T00:00:00.000Z
+Preferred-Languages: en, da
+Canonical: https://techfeedwatch.com/.well-known/security.txt
