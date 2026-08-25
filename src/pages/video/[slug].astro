@@ -983,6 +983,11 @@ const metaDesc = rawMeta.length > 157
             {' '}Spend {timeCompare.readMinutes} min here to decide whether the other {timeCompare.saved} are worth it.
           </p>
         )}
+        {!timeCompare && video.frontmatter.duration && (
+          <p class="time-compare">
+            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
+          </p>
+        )}
         {viewGrowth && (
           <p class="view-growth">
             <strong>Still gaining.</strong> This video has gone from {viewGrowth.from} to
