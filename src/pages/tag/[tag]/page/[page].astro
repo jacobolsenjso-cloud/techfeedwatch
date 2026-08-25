@@ -141,12 +141,11 @@ const formatDate = (d: string) => {
         <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
           <div class="watch-card-thumb">
             <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt={video.frontmatter.title} loading="lazy" />
-            <div class="duration-badge">{video.frontmatter.duration || (video.frontmatter.isShort ? 'Short' : '0:00')}</div>
             <span class="watch-card-play" aria-hidden="true">▶</span>
           </div>
           <div>
             <h2 class="tma-grid-title">{video.frontmatter.title}</h2>
-            <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
+            <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
           </div>
         </a>
       ))}

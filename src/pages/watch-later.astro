@@ -152,7 +152,7 @@ import MainLayout from '../layouts/MainLayout.astro';
             esc(meta.channelTitle) + '</span><span aria-hidden="true"> · </span>'
           : '';
         const date = meta.date ? fmtDate(meta.date) : '';
-        const dur = meta.duration ? '<div class="duration-badge">' + esc(meta.duration) + '</div>' : '';
+        const dur = ''; // varigheds-badgen er fjernet fra alle kort (24/8) — se artikelsidens tidsboks
         const img = (video.img || '').replace('mqdefault', 'hqdefault');
 
         return '' +

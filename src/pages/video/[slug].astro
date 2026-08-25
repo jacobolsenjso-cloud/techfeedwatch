@@ -1179,7 +1179,6 @@ const metaDesc = rawMeta.length > 157
                 <a href={`/video/${rel.file.split('/').pop().replace('.md', '')}`} class="watch-card">
                   <div class="watch-card-thumb">
                     <img src={`https://img.youtube.com/vi/${rel.frontmatter.youtubeId}/mqdefault.jpg`} alt={rel.frontmatter.title} loading="lazy" />
-                    <div class="duration-badge">{rel.frontmatter.duration || (rel.frontmatter.isShort ? 'Short' : '0:00')}</div>
                     <span class="watch-card-play" aria-hidden="true">▶</span>
                   </div>
                   <h4 class="tma-grid-title">{rel.frontmatter.title}</h4>

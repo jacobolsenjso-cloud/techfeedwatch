@@ -167,7 +167,6 @@ const schema = {
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="guide-card">
               <div class="guide-card-thumb">
                 <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt={video.frontmatter.title} loading="lazy" />
-                <div class="guide-card-badge">{video.frontmatter.duration || '0:00'}</div>
               </div>
               <h3 class="guide-card-title">{video.frontmatter.title}</h3>
             </a>

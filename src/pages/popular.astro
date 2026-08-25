@@ -140,13 +140,12 @@ const description = "Ranked by how far each source video beat its own channel's 
               <div class="watch-card-thumb">
                 <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
                 <div class="ratio-badge">{item.ratio! >= 10 ? Math.round(item.ratio!) : item.ratio!.toFixed(1)}x</div>
-                <div class="duration-badge">{item.fm.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h2 class="tma-grid-title">{item.fm.title}</h2>
                 <p class="pop-meta">
-                  {formatViews(item.views)} views · {item.fm.channelTitle}
+                  {formatViews(item.views)} views · {item.fm.channelTitle}{item.fm.minutesRead ? ` · ${item.fm.minutesRead} min read` : ''}
                 </p>
               </div>
             </a>

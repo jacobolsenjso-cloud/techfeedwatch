@@ -381,14 +381,13 @@ const vRest = pageOneVideos.slice(13);
                 data-fallback={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/hqdefault.jpg`}
                 onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
               />
-              <div class="duration-badge">{leadMain.frontmatter.duration || '0:00'}</div>
             </div>
             {firstTag(leadMain) && (
               <span class="lead-eyebrow" style={`--tag-accent: ${TAG_COLORS[firstTag(leadMain) as string] || '#0891b2'}`}>{firstTag(leadMain)}</span>
             )}
             <h2 class="lead-title">{leadMain.frontmatter.title}</h2>
             <p class="lead-excerpt">{excerpt(leadMain.frontmatter.summary, 230)}</p>
-            <SourceLine channel={leadMain.frontmatter.channelTitle} date={leadMain.frontmatter.date} className="lead-meta" />
+            <SourceLine channel={leadMain.frontmatter.channelTitle} date={leadMain.frontmatter.date} minutesRead={leadMain.frontmatter.minutesRead} className="lead-meta" />
           </a>
 
           <div class="lead-secondary">
@@ -418,13 +417,12 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
-                <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
                 <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
-                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
               </div>
             </a>
           ))}
@@ -458,13 +456,12 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
-                <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
                 <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
-                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
               </div>
             </a>
           ))}
@@ -477,13 +474,12 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
-                <div class="duration-badge">{video.frontmatter.duration || '0:00'}</div>
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
                 <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
-                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} />
+                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
               </div>
             </a>
           ))}
@@ -619,10 +615,6 @@ const vRest = pageOneVideos.slice(13);
         thumb.appendChild(img);
         markLoaded(img);
 
-        const duration = document.createElement('div');
-        duration.className = 'duration-badge';
-        duration.textContent = video.duration || (video.isShort ? 'Short' : '0:00');
-        thumb.appendChild(duration);
 
         const play = document.createElement('span');
         play.className = 'watch-card-play';

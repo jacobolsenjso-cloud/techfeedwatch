@@ -6,8 +6,10 @@ interface Props {
   channel?: string | null;
   date: string;
   className?: string;
+  /** Artiklens læsetid i minutter — vises som "· N min read" efter datoen */
+  minutesRead?: number | null;
 }
-const { channel, date, className = 'tma-grid-meta' } = Astro.props;
+const { channel, date, className = 'tma-grid-meta', minutesRead } = Astro.props;
 
 const formatted = (() => {
   const parsed = new Date(date);
@@ -27,4 +29,6 @@ const formatted = (() => {
     </>
   ) : null}
   <span>{formatted}</span>
+  {minutesRead ? <span aria-hidden="true"> · </span> : null}
+  {minutesRead ? <span>{minutesRead} min read</span> : null}
 </p>
