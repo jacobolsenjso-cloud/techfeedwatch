@@ -131,6 +131,9 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
         margin-right: -15px;
         width: calc(100% + 30px);
         padding: 10px 15px;
+        /* Centreret på mobil ligesom forsiden (26/8) — venstreklumpede rækker
+           efterlod skæv luft til højre og matchede ikke den centrerede knap. */
+        justify-content: center;
       }
 
       .pagination { gap: 6px; }

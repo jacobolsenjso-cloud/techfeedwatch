@@ -310,12 +310,16 @@ const vRest = pageOneVideos.slice(13);
       .shorts-shelf { grid-template-columns: repeat(2, 1fr); gap: 10px; }
       .watch-card-thumb { border-radius: 8px; }
 
-      /* Edge-to-edge tags på mobil, ligesom på videosiden */
+      /* Edge-to-edge tags på mobil, ligesom på videosiden. Centreret: med
+         venstrestilling klumpede rækkerne sig mod venstre kant og efterlod
+         skæv luft til højre (målt 26/8 på mobil-skærmbillede) — centreret
+         matcher de også "Show fewer"-knappen, der altid har stået i midten. */
       .tag-bar-container {
         margin-left: -15px;
         margin-right: -15px;
         width: calc(100% + 30px);
         padding: 10px 15px;
+        justify-content: center;
       }
 
       .pagination { gap: 6px; }
