@@ -322,6 +322,14 @@ const vRest = pageOneVideos.slice(13);
         justify-content: center;
       }
 
+      /* Sticky-baren dækkede footerens tre første links ved bundscroll på
+         mobil (målt 26/8): når siden ikke kan scrolle længere, ligger alt i
+         barens højde permanent skjult bag den. På en telefon æder den
+         sammenklappede bar desuden ~en tredjedel af skærmen. Statisk på
+         mobil: baren scroller med, og hele footeren kan nås. Desktop
+         beholder sticky — dér er der plads nok. */
+      .tag-bar-outer { position: static; }
+
       .pagination { gap: 6px; }
       .pagination-btn, .pagination-num { min-width: 44px; height: 44px; padding: 0 8px; font-size: 0.85rem; }
     }
