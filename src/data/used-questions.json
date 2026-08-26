@@ -253,5 +253,10 @@
   "q": "what is cybersecurity analyst",
   "tag": "Cybersecurity",
   "dato": "2026-08-26"
+ },
+ {
+  "q": "how does quantum computing differ from classical computing",
+  "tag": "Quantum Computing",
+  "dato": "2026-08-26"
  }
 ]
