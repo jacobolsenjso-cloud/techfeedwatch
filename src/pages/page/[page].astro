@@ -196,7 +196,7 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       // Live Search & Tag Filtering (Koblet sammen med MainLayout's søgefelt)
-      // Filtrerer på tværs af ALLE videoer (ikke kun den aktuelle side) via /videos.json
+      // Filtrerer på tværs af ALLE videoer (ikke kun den aktuelle side) via det delte lite-katalog (window.tfwVideos)
       const searchInput = document.getElementById('topSearchInput');
       const filterTags = document.querySelectorAll('.filter-tag');
       const defaultView = document.getElementById('defaultView');

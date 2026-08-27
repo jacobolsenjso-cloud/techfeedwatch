@@ -532,6 +532,10 @@ const vRest = pageOneVideos.slice(13);
         tagBar.classList.remove('expanded');
         tagBar.style.setProperty('--tag-rows', 'none');
 
+        // Måles i næste frame: de to skrivninger ovenfor ugyldiggjorde layoutet,
+        // og offsetTop-læsningerne tvang det omregnet midt i scriptet (69 ms
+        // reflow, PageSpeed 27/8). I rAF-callbacket er layoutet friskt gratis.
+        requestAnimationFrame(() => {
         const chips = Array.from(tagBar.querySelectorAll('.filter-tag'));
         if (!chips.length) return;
         const firstTop = chips[0].offsetTop;
@@ -559,6 +563,7 @@ const vRest = pageOneVideos.slice(13);
         // Er det aktive emne gemt, foldes rækken ud af sig selv — ellers ser
         // det ud som om filteret er slået fra.
         if (hidden.some((c) => c.classList.contains('active'))) toggleTagRows(true);
+        });
       }
 
       function toggleTagRows(open) {
@@ -581,7 +586,7 @@ const vRest = pageOneVideos.slice(13);
       });
 
       // Live Search & Tag Filtering (Koblet sammen med MainLayout's søgefelt)
-      // Filtrerer på tværs af ALLE videoer (ikke kun den aktuelle side) via /videos.json
+      // Filtrerer på tværs af ALLE videoer (ikke kun den aktuelle side) via det delte lite-katalog (window.tfwVideos)
       const searchInput = document.getElementById('topSearchInput');
       const filterTags = document.querySelectorAll('.filter-tag');
       const defaultView = document.getElementById('defaultView');

@@ -151,12 +151,12 @@ const siteSchema = [
     </style>
 
     <script is:inline>
-      /* Én delt, cachet hentning af videokataloget (/videos.json, ~100 KiB).
+      /* Én delt, cachet hentning af det slanke videokatalog (videos-lite.json, ~52 KiB gzip; summary afkortet til kortenes 145 tegn).
          PageSpeed 27/8: forsiden hentede den TO gange i den kritiske kæde —
          klokke-badgen og emne-filtret hver sin kopi. Alle forbrugere deler
          nu ét promise; første kald henter, resten genbruger. */
       window.tfwVideos = function () {
-        if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos.json').then(function (r) { return r.json(); });
+        if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos-lite.json').then(function (r) { return r.json(); });
         return window.__tfwVideosP;
       };
     </script>
