@@ -125,6 +125,15 @@ function remarkReadingTime() {
 
 export default defineConfig({
   site: 'https://techfeedwatch.com',
+  build: {
+    // Alle sidens stilarter inlines i HTML'en i stedet for separate CSS-filer.
+    // PageSpeed 27/8 (mobil, langsom 4G): de to eksterne CSS-filer (4-6 KiB)
+    // blokerede første maling i ~940 ms — to netværksrundture for mindre data
+    // end ét thumbnail. Prisen er ~8-10 KiB større HTML pr. side og ingen
+    // CSS-cache på tværs af sider; gevinsten er hurtigere FØRSTE visning,
+    // som er den eneste visning en reviewer og de fleste søge-besøg får.
+    inlineStylesheets: 'always',
+  },
   markdown: {
     // Astro 6.4+: rehype/remark-plugins sættes via unified()-processoren
     processor: unified({
