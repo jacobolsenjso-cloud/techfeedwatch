@@ -92,8 +92,7 @@ const description = "Search across every article and analysis on Tech Feed Watch
         if (!matches.length) grid.innerHTML = '<p class="search-empty">No articles found. Try a different word.</p>';
       };
 
-      fetch('/videos.json')
-        .then((r) => r.json())
+      window.tfwVideos()
         .then((all) => {
           // Kun rigtige artikler (ikke Shorts), nyeste først
           data = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date));

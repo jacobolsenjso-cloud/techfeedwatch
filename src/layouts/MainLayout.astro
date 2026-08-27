@@ -150,6 +150,16 @@ const siteSchema = [
       html.dark-mode-preload body { background: #141317; color: #f4f2f0; }
     </style>
 
+    <script is:inline>
+      /* Én delt, cachet hentning af videokataloget (/videos.json, ~100 KiB).
+         PageSpeed 27/8: forsiden hentede den TO gange i den kritiske kæde —
+         klokke-badgen og emne-filtret hver sin kopi. Alle forbrugere deler
+         nu ét promise; første kald henter, resten genbruger. */
+      window.tfwVideos = function () {
+        if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos.json').then(function (r) { return r.json(); });
+        return window.__tfwVideosP;
+      };
+    </script>
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)" />
     <link rel="preload" href={interLatinWoff2} as="font" type="font/woff2" crossorigin />
@@ -824,7 +834,7 @@ const siteSchema = [
           const loadData = () => {
             if (sData || sLoading) return;
             sLoading = true;
-            fetch('/videos.json').then((r) => r.json()).then((d) => { sData = d; sLoading = false; if (document.activeElement === topSearchInput) renderSuggest(); }).catch(() => { sLoading = false; });
+            window.tfwVideos().then((d) => { sData = d; sLoading = false; if (document.activeElement === topSearchInput) renderSuggest(); }).catch(() => { sLoading = false; });
           };
 
           const renderSuggest = () => {
@@ -890,7 +900,8 @@ const siteSchema = [
             }).join('');
           };
 
-          fetch('/videos.json').then((r) => r.json()).then((all) => {
+          // Badgen behøver ikke kataloget i den kritiske sti — hent i tomgang.
+          const startNotifData = () => window.tfwVideos().then((all) => {
             nArticles = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 40);
             const seen = getSeen();
             if (seen === null) { persistSeen(); nNew = []; } // Første besøg: marker alt som set, ingen badge
@@ -898,6 +909,8 @@ const siteSchema = [
             updateBadge();
             renderNotif();
           }).catch(() => {});
+          if ('requestIdleCallback' in window) requestIdleCallback(() => startNotifData(), { timeout: 4000 });
+          else setTimeout(startNotifData, 2500);
 
           notifBtn.addEventListener('click', (e) => {
             e.stopPropagation();

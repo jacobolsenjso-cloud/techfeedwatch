@@ -590,10 +590,11 @@ const vRest = pageOneVideos.slice(13);
       let allVideosData = [];
       let videosReady = false;
 
-      fetch('/videos.json')
-        .then(res => res.json())
-        .then(data => { allVideosData = data; videosReady = true; filterVideos(); })
-        .catch(() => { allVideosData = []; videosReady = true; });
+      const hentKatalog = () => window.tfwVideos()
+      .then(data => { allVideosData = data; videosReady = true; filterVideos(); })
+      .catch(() => { allVideosData = []; videosReady = true; });
+    if ('requestIdleCallback' in window) requestIdleCallback(() => hentKatalog(), { timeout: 4000 });
+    else setTimeout(hentKatalog, 2000);
 
       function formatDateJS(d) {
         const parsed = new Date(d);

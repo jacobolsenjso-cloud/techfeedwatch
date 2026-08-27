@@ -232,8 +232,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         });
       });
 
-      fetch('/videos.json')
-        .then((res) => res.json())
+      window.tfwVideos()
         .then((all) => {
           all.forEach((v) => {
             if (v.youtubeId) idToSlug[v.youtubeId] = v.slug;

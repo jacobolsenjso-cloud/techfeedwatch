@@ -1420,8 +1420,7 @@ const metaDesc = rawMeta.length > 157
         };
 
         if (cinemaBrowser) {
-          fetch('/videos.json')
-            .then(res => res.json())
+          window.tfwVideos()
             .then(data => { allVideos = data; videosReady = true; tryInitCinemaBrowser(); })
             .catch(() => { allVideos = []; videosReady = true; tryInitCinemaBrowser(); });
 

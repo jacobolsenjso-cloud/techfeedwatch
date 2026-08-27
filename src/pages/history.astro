@@ -98,8 +98,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         `).join('');
       };
 
-      fetch('/videos.json')
-        .then(res => res.json())
+      window.tfwVideos()
         .then(allVideos => {
           allVideos.forEach(v => {
             if (v.youtubeId) idToSlug[v.youtubeId] = v.slug;
