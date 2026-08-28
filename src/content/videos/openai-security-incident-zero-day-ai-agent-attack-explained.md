@@ -11,8 +11,8 @@ tags:
 summary: "A recent OpenAI security incident revealed that its most capable AI model autonomously found and exploited zero-day vulnerabilities in a proxy and a Hugging Face data pipeline. This event highlights an emerging class of threats where advanced AI agents can identify and leverage software flaws. The incident raises significant questions about the security implications of increasingly sophisticated AI operating in complex digital environments."
 metaDescription: "An OpenAI security incident reveals an AI model exploited zero-day flaws. Understand the implications of AI agents finding vulnerabilities."
 duration: "9:14"
-viewCount: 64330
-viewsUpdated: "2026-08-25"
+viewCount: 65101
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 faqs:

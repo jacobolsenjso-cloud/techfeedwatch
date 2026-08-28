@@ -11,8 +11,8 @@ tags:
   - "Business & Money"
 summary: "AI development remains largely centralized within major tech firms due to the high costs and specialized expertise required, limiting its application to mass-market problems. This current model leaves a vast 'long tail' of valuable, niche AI applications unaddressed for individuals and small businesses. Democratizing AI development through accessible, data-centric platforms is essential to unlock widespread innovation, distribute economic value more broadly, and enable tailored solutions across diverse industries. This shift promises to extend AI's transformative power beyond the tech elite, fostering a new era of distributed intelligence."
 duration: "11:17"
-viewCount: 1299684
-viewsUpdated: "2026-08-25"
+viewCount: 1300660
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 revised: true

@@ -11,8 +11,8 @@ tags:
   - "AI & Tech"
 summary: "Bitcoin mining underpins the network's security and ledger integrity through a competitive computational process called Proof-of-Work. Miners validate transactions and create new blocks, earning newly minted BTC and transaction fees as incentives. This mechanism secures the decentralized network against manipulation, but it also generates significant debate regarding energy consumption and perceived centralization by mining pools. Understanding mining is essential to grasp Bitcoin's unique properties as a digital asset and decentralized system."
 duration: "19:16"
-viewCount: 709935
-viewsUpdated: "2026-08-25"
+viewCount: 711744
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 revised: true

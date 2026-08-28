@@ -12,8 +12,8 @@ tags:
   - "Productivity"
 summary: "Anthropic's new Claude Science platform, powered by the agentic Sonnet 5 model, introduces an integrated AI environment designed to automate and accelerate complex scientific research workflows. This system plans, executes, and self-corrects tasks from literature review to data visualization, significantly reducing the manual effort traditionally required. Its capacity for internal error detection and the deployment of specialized sub-agents mark a notable progression in AI's role as a co-pilot for scientific discovery."
 duration: "12:33"
-viewCount: 13586
-viewsUpdated: "2026-08-25"
+viewCount: 13669
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 revised: true

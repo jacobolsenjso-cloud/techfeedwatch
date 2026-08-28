@@ -12,8 +12,8 @@ summary: "Augmented reality (AR) applications overlay digital information onto t
 metaDescription: "Discover what augmented reality applications are and how AR technology overlays digital content onto the real world, transforming industries and daily life."
 targetQuestion: "what are augmented reality applications"
 duration: "14:51"
-viewCount: 8786
-viewsUpdated: "2026-08-25"
+viewCount: 9000
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 faqs:

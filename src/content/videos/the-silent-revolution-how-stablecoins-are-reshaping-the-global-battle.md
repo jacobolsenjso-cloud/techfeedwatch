@@ -12,8 +12,8 @@ tags:
   - "Crypto"
 summary: "The financial sector is undergoing a fundamental reorientation, shifting from traditional banking models to a technology-driven ecosystem. This transformation redefines the role of assets like stablecoins, elevates the importance of open data principles, and repositions Big Tech as a central, albeit non-banking, financial force. The core contention now lies in who controls customer relationships and financial data, rather than merely who holds deposits. Regulatory evolution, consumer trust, and technological integration will ultimately determine the future winners in this rapidly evolving financial arena."
 duration: "8:46"
-viewCount: 39
-viewsUpdated: "2026-08-06"
+viewCount: 40
+viewsUpdated: "2026-08-28"
 thumbMax: true
 isShort: false
 revised: true
