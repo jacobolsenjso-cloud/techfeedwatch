@@ -11,8 +11,8 @@ tags:
 summary: "Demis Hassabis, CEO of Google DeepMind, articulates a vision for Artificial General Intelligence (AGI) moving beyond current AI capabilities. He discusses the potential for AI to simulate complex biological and physical realities, building on DeepMind's foundational research in protein folding and game theory. This perspective outlines a future where AI not only understands patterns but also contributes to fundamental scientific discovery and redefines computational paradigms. The discussion touches on the extensive compute requirements and the evolving relationship between humans and advanced AI systems."
 metaDescription: "Demis Hassabis discusses the path to Artificial General Intelligence (AGI), DeepMind's research in simulating reality, and the future of computation."
 duration: "2:28:15"
-viewCount: 1432186
-viewsUpdated: "2026-08-28"
+viewCount: 1433989
+viewsUpdated: "2026-08-31"
 thumbMax: true
 isShort: false
 faqs:

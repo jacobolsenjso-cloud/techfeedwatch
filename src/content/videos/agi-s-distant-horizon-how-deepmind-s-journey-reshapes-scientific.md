@@ -12,8 +12,8 @@ tags:
 summary: "The pursuit of Artificial General Intelligence (AGI) by pioneers like Demis Hassabis continues to drive significant breakthroughs, even as true AGI remains a distant goal. DeepMind's advancements, particularly with AlphaFold, demonstrate AI's immediate, profound impact on scientific research, revolutionizing fields from biology to materials science. The evolution of more capable, multimodal AI models and agentic systems points to a future where AI becomes an indispensable tool for human ingenuity. Understanding the distinction between aspirational AGI and present-day advanced AI is key to grasping technology's true trajectory."
 metaDescription: "Explore Demis Hassabis's vision for AGI and DeepMind's impact on scientific discovery, revealing current AI advancements."
 duration: "40:57"
-viewCount: 301462
-viewsUpdated: "2026-08-28"
+viewCount: 303384
+viewsUpdated: "2026-08-31"
 thumbMax: true
 isShort: false
 faqs:

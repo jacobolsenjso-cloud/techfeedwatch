@@ -11,8 +11,8 @@ tags:
   - "AI & Tech"
 summary: "The promise of objective search results is fundamentally challenged by the inherent biases embedded in algorithmic design. Search engines, while powerful tools for accessing isolated facts, struggle with the complexities of knowledge acquisition, which requires nuanced interpretation and contextual understanding. Human decisions, whether explicit or implicit, consistently shape what information rises to the top, making true impartiality an elusive ideal. This calls for increased digital literacy and a critical perspective on how information is curated and presented online."
 duration: "9:19"
-viewCount: 156916
-viewsUpdated: "2026-08-28"
+viewCount: 156937
+viewsUpdated: "2026-08-31"
 thumbMax: true
 isShort: false
 revised: true

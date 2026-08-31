@@ -13,8 +13,8 @@ tags:
 summary: "Morgan Stanley's expanding digital asset strategy signals a significant shift on Wall Street, moving beyond initial Bitcoin investments towards a comprehensive integration of crypto. This involves spot trading, tokenization of real-world assets, and developing robust digital wallet infrastructure. The firm's long-term vision positions digital assets as a core component of future wealth management, with artificial intelligence set to enhance investment strategies. This proactive stance reflects a broader institutional recognition of blockchain's transformative potential across financial services."
 metaDescription: "Morgan Stanley expands its crypto strategy beyond Bitcoin, embracing tokenization and AI for wealth management. Discover Wall Street's digital asset future."
 duration: "14:54"
-viewCount: 14589
-viewsUpdated: "2026-08-28"
+viewCount: 14593
+viewsUpdated: "2026-08-31"
 thumbMax: true
 isShort: false
 faqs:
