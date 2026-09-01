@@ -12,8 +12,8 @@ tags:
 summary: "An open-source toolkit named GStack, developed by Y Combinator President Garry Tan, is redefining AI's role in software development. This system orchestrates large language models like Claude Code into a multi-faceted engineering team, handling everything from initial idea validation to automated QA. GStack aims to accelerate the product development lifecycle significantly, shifting AI from mere code generation to comprehensive project execution. This development points to a future where AI actively manages and refines the entire software creation process."
 metaDescription: "GStack, an open-source toolkit, transforms AI models into an engineering team for rapid software development, accelerating prototyping and QA."
 duration: "21:50"
-viewCount: 251699
-viewsUpdated: "2026-08-31"
+viewCount: 252364
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 faqs:

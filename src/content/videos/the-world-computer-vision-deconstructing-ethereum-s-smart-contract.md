@@ -12,8 +12,8 @@ tags:
   - "AI & Tech"
 summary: "Ethereum smart contracts represent a foundational shift from traditional agreements, embedding logic directly onto an immutable public ledger. Far from simple programs, they are stateful objects within the [Ethereum World State](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping), executing bytecode via the Ethereum Virtual Machine (EVM) in a highly deterministic manner. Understanding their underlying mechanics—from address derivation and storage allocation to function visibility and interaction protocols like the ABI—reveals the intricate architecture that underpins decentralized applications and the broader web3 ecosystem. This architecture prioritizes transparency and immutability, enabling self-executing agreements without central intermediaries."
 duration: "43:53"
-viewCount: 9193
-viewsUpdated: "2026-08-31"
+viewCount: 9206
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 revised: true

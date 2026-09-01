@@ -12,8 +12,8 @@ tags:
   - "Crypto"
 summary: "The long-term security of Bitcoin faces a theoretical challenge from quantum computing, which could potentially undermine its foundational cryptography. While 'Q-Day'—a sudden, catastrophic breach—is deemed unlikely by recent analyses, the gradual advancement of quantum technology necessitates proactive defense strategies. Ongoing research and development in post-quantum cryptography (PQC) aim to secure not just Bitcoin, but all digital encryption, well before quantum computers reach critical capabilities. The core issue lies in Bitcoin's elliptic curve cryptography being vulnerable, contrasting with its more quantum-resistant hashing functions."
 duration: "25:42"
-viewCount: 17331
-viewsUpdated: "2026-08-31"
+viewCount: 17332
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 revised: true

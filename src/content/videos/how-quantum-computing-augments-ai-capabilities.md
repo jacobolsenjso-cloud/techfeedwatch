@@ -12,8 +12,8 @@ summary: "Quantum computing offers a computational paradigm shift, enabling arti
 metaDescription: "Explore how quantum computing enhances AI by providing immense computational power for complex data analysis, optimizing algorithms, and accelerating…"
 targetQuestion: "how does quantum computing related to ai"
 duration: "17:02"
-viewCount: 30021
-viewsUpdated: "2026-08-31"
+viewCount: 30540
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 faqs:

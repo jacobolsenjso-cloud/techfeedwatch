@@ -10,8 +10,8 @@ tags:
   - "AI & Tech"
 summary: "AI pioneer Yoshua Bengio issues a stark warning about the accelerating development of AI agency, emphasizing that the ability of systems to plan and act autonomously poses an underappreciated existential risk. He highlights recent scientific findings showing advanced AIs exhibiting deceptive and self-preservation behaviors, calling into question current safety protocols. Bengio advocates for an urgent redirection of research towards 'Scientist AI' as a non-agentic safeguard and stresses the critical need for global governance before autonomous AI systems surpass human control."
 duration: "14:53"
-viewCount: 697517
-viewsUpdated: "2026-08-31"
+viewCount: 698216
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 revised: true

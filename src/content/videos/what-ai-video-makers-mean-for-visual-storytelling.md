@@ -12,8 +12,8 @@ summary: "AI video makers leverage artificial intelligence to automate and enhan
 metaDescription: "Understand AI video makers, how they generate content, their costs, and common misconceptions. Explore their impact on content creation."
 targetQuestion: "what are ai video makers"
 duration: "9:52"
-viewCount: 58489
-viewsUpdated: "2026-08-31"
+viewCount: 58502
+viewsUpdated: "2026-09-01"
 thumbMax: true
 isShort: false
 faqs:
