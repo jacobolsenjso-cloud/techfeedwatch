@@ -11,8 +11,8 @@ summary: "Effectively showcasing cybersecurity projects on a resume moves beyond
 metaDescription: "Learn how to effectively put cybersecurity projects on a resume. Discover what details to include to showcase your skills and impress hiring managers."
 targetQuestion: "how to put cybersecurity projects on resume"
 duration: "6:35"
-viewCount: 256755
-viewsUpdated: "2026-09-02"
+viewCount: 263226
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:

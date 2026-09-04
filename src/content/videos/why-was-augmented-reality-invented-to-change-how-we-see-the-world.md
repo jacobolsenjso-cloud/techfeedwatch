@@ -12,8 +12,8 @@ summary: "Augmented reality blends digital information with the physical world, 
 metaDescription: "Discover why augmented reality was invented and how it works. Learn what AR is, its practical applications, and common misconceptions about this…"
 targetQuestion: "why was augmented reality invented"
 duration: "9:27"
-viewCount: 20792
-viewsUpdated: "2026-09-01"
+viewCount: 22984
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:

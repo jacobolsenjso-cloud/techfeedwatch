@@ -12,8 +12,8 @@ summary: "As technology pushes the boundaries of digital interaction, augmented 
 metaDescription: "Learn how augmented reality transforms static illustrations into interactive, dynamic experiences. Explore AR's technology, benefits, costs, and common…"
 targetQuestion: "how does augmented reality transform static illustrations"
 duration: "8:22"
-viewCount: 74
-viewsUpdated: "2026-09-02"
+viewCount: 75
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ tags:
 summary: "Traditional SEO principles are converging with new AI realities, demanding a shift from speculative 'AI Engine Optimization' to data-driven strategies. Businesses must now analyze how large language models cite sources, using scraping and automation to uncover visibility gaps and inform targeted outreach. This approach moves beyond theoretical AI influence to practical methods for getting discovered by foundational AI models."
 metaDescription: "Discover the new AI SEO strategy that leverages data scraping to uncover AI citations, identify visibility gaps, and drive targeted outreach for SaaS."
 duration: "15:59"
-viewCount: 121
-viewsUpdated: "2026-08-31"
+viewCount: 122
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:

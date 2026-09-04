@@ -12,8 +12,8 @@ summary: "Recent advancements in quantum computing research have intensified con
 metaDescription: "Explore the looming quantum computing threats to current encryption standards and data security. Understand why these advanced machines challenge existing…"
 targetQuestion: "what are quantum computing threats"
 duration: "6:34"
-viewCount: 568236
-viewsUpdated: "2026-09-03"
+viewCount: 568270
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "AI chips accelerate complex computations for artificial intelligence, 
 metaDescription: "Understand how AI chips are used in AI computing and the crucial manufacturing steps that make their advanced capabilities possible."
 targetQuestion: "how are ai chips used"
 duration: "12:39"
-viewCount: 121
-viewsUpdated: "2026-09-02"
+viewCount: 122
+viewsUpdated: "2026-09-04"
 thumbMax: true
 isShort: false
 faqs:
