@@ -12,8 +12,8 @@ tags:
 summary: "Artificial intelligence is rapidly transforming front-end web development, moving beyond simple automation to generative UI tools. This shift empowers developers and designers to rapidly prototype and iterate interfaces, fundamentally altering traditional workflows. The integration of AI-powered design systems and component libraries is driving a new era of accelerated web creation. This evolution demands new skill sets and strategic adaptation from professionals in the field."
 metaDescription: "Discover how AI is reshaping front-end development and UI creation, from generative tools to component libraries, impacting developer roles."
 duration: "3:43"
-viewCount: 1694052
-viewsUpdated: "2026-09-04"
+viewCount: 1694689
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 faqs:

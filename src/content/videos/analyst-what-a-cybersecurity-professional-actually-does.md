@@ -11,8 +11,8 @@ summary: "A cybersecurity analyst is a vital defender of digital assets, respons
 metaDescription: "Discover what a cybersecurity analyst does, the tools they use, and the real-world challenges of protecting digital infrastructure from constant threats.…"
 targetQuestion: "what is cybersecurity analyst"
 duration: "10:23"
-viewCount: 649
-viewsUpdated: "2026-09-04"
+viewCount: 675
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 faqs:

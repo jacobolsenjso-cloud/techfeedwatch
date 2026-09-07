@@ -12,8 +12,8 @@ summary: "Quantum computing is a specialized technology designed to solve proble
 metaDescription: "Discover what quantum computing is good for, how it works, its current costs, and common misconceptions about this powerful technology."
 targetQuestion: "what is quantum computing good for"
 duration: "2:53:43"
-viewCount: 778475
-viewsUpdated: "2026-09-04"
+viewCount: 783977
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 faqs:

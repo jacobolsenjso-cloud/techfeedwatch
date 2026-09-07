@@ -12,8 +12,8 @@ summary: "Cybersecurity GRC, an acronym for Governance, Risk, and Compliance, pr
 metaDescription: "Learn what cybersecurity GRC is and how Governance, Risk, and Compliance frameworks protect modern enterprises from cyber threats, ensuring regulatory…"
 targetQuestion: "what is cybersecurity grc"
 duration: "11:46"
-viewCount: 3656
-viewsUpdated: "2026-09-04"
+viewCount: 4084
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 faqs:

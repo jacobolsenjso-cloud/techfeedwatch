@@ -12,8 +12,8 @@ tags:
   - "Coding"
 summary: "The global AI landscape is experiencing intense competition, fueled by the rise of high-performing open-weight models from China, exemplified by the 'DeepSeek moment.' This shift challenges the dominance of US-based closed-source incumbents, pushing the industry towards a fragmented future where infrastructure, model specialization, and user experience dictate success. The focus is now on balancing innovation with efficiency and catering to diverse user needs across various applications."
 duration: "4:25:13"
-viewCount: 916085
-viewsUpdated: "2026-09-04"
+viewCount: 917792
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 revised: true

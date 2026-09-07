@@ -11,8 +11,8 @@ tags:
   - "Hardware & Chips"
 summary: "NVIDIA's strategic shift from a singular GPU manufacturer to an integrated AI system provider reflects a fundamental change in computing challenges. This transition centers on 'extreme co-design,' optimizing entire data center racks and software stacks to overcome bottlenecks in large-scale AI deployments. This holistic approach, pioneered by Jensen Huang, positions NVIDIA not merely as a component supplier but as a foundational architect of the global AI infrastructure. The company's long-term vision, rooted in cultivating a broad install base, now aims to build 'AI factories' that will drive the next era of technological advancement."
 duration: "2:25:59"
-viewCount: 1336016
-viewsUpdated: "2026-09-04"
+viewCount: 1341137
+viewsUpdated: "2026-09-07"
 thumbMax: true
 isShort: false
 revised: true
