@@ -1,6 +1,6 @@
 # techfeedwatch.com — teknisk status
 
-Sidst opdateret: 4. august 2026 · Commit `20547cf`
+Sidst opdateret: 4. august 2026 (aften) · Commit `9695908`
 
 Dette dokument er en overdragelse. Det beskriver hvad siden er, hvordan den er
 bygget, hvad der er rettet, og hvad der stadig mangler. Læs det først i en ny
