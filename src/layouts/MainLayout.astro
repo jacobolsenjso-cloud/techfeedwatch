@@ -178,7 +178,9 @@ const siteSchema = [
       Alt afvises som udgangspunkt, så AdSense-scriptet nedenfor ikke skriver
       annonce-cookies før brugeren har taget stilling. Et tidligere valg
       genindlæses her, så der ikke går et øjeblik med forkert tilstand.
-      Selve banneret ligger i components/ConsentBanner.astro.
+      Sitet har IKKE sit eget banner. Dialogen kommer fra Googles certificerede
+      CMP (Funding Choices). Byg ikke et banner mere — det gav to dialoger oven
+      på hinanden sidst. Tilbagetrækning sker via "Cookie settings" i footeren.
     */}
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
