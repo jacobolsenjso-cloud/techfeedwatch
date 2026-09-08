@@ -46,7 +46,7 @@ Kodekommentarer skrives på dansk.
 | Artikler | 367 |
 | Guides | 9 |
 | Glossar-opslag | 28 |
-| Værktøjer | 27 |
+| Værktøjer | 35 |
 | Sider i alt (byggede) | 513 |
 | Redirects | 676 |
 
@@ -263,6 +263,33 @@ links, 0 konsolfejl, alle 5 kategorisider i sitemap, ItemList-schema validt,
 tag-filteret på forsiden skjuler og viser striben korrekt, mobil og desktop
 tjekket med skærmbilleder.
 
+Siden er der kommet 8 værktøjer til (nu **35**), tilføjet af en anden session.
+`src/lib/tools.ts` er stadig eneste sandhed.
+
+### Samtykke og GDPR (4. august, commits `3a38131` og `9695908`)
+
+Der var **to** problemer, og de blev fundet af to forskellige sessioner:
+
+1. **"Optimer meddelelse om samtykke" stod på Til** i AdSense → Privatliv og
+   meddelelser. Google viste så nogle brugere en lille grå boks der *ikke*
+   spurgte om samtykke — og uden samtykke vises næsten ingen annoncer i EU.
+   Slået fra og udgivet. Det er Jacobs indstilling i AdSense, ikke kode.
+2. **Googles privatliv-boble hang.** Efter samtykke lægger Google et skjold
+   nederst til venstre (påkrævet: brugeren skal kunne fortryde). Skjoldet kommer
+   med en talebobble, som Google folder ud på hver side og aldrig husker er
+   lukket; i Brave folder den aldrig sammen. Et script i `MainLayout.astro`
+   skjuler nu kun boblen inde i Googles shadow DOM — **skjoldet bliver**, så
+   Googles egen fortryd-vej er intakt. Topics-knappen på mobil lå i samme
+   hjørne og er flyttet til højre, over pil-op.
+
+**Målt og bekræftet:** Consent Mode v2 afviser alt før samtykke; kun `FCCDCF`
+(Googles egen) sættes før valg; GA4 loader først ved TCF-formål 1; samtykke
+huskes efter genindlæsning på mobil og pc; `www.` → hoveddomæne med samtykke
+intakt; én AdSense-tag pr. side. **Byg ikke et eget banner.**
+
+Bemærk til fejlsøgning: Jacobs pc-Chrome har en udvidelse der blokerer AdSense
+helt (0 bytes). Dér vises dialogen aldrig. Test samtykke i en ren browser.
+
 ---
 
 ## 6. Hvad der stadig mangler
@@ -276,6 +303,7 @@ tjekket med skærmbilleder.
 | **Skarpere baseline på `/popular`** | Rangeringen bruger kanalens livstidsgennemsnit (samlede visninger / antal videoer). Kanaler med mange korte klip får et lavt gennemsnit, så deres lange videoer scorer højere end fortjent — derfor ligger NOVA nummer et. Den skarpe version sammenligner med kanalens seneste videoer: ét API-kald pr. kanal i stedet for ét pr. 50. Isoleret til `update-view-counts.mjs`. |
 | **Fordelingen på emnemærker** | Robotten fylder nu den tynde hylde (afsnit 3), men startpunktet er meget skævt: AI & Tech 280 mod 13 for Cybersecurity. Det jævner sig ud over måneder. Alternativet — at ommærke dele af AI & Tech-bunken — er ikke besluttet. |
 | **Offline-oplevelsen (PWA)** | Aldrig bevist ende-til-ende. Kræver en rigtig telefon i flytilstand — mine værktøjer kan ikke teste det. |
+| **`stamp-sw.mjs` giver altid samme version** | Service workeren stemples med `tfw-da39a3ee5e` ved *hvert* build. Det er sha1 af en **tom streng**: scriptet hasher navnene på `.css`-filer i `dist/_astro`, men Astro 6 lægger ingen dér (0 filer). Versionen skifter derfor aldrig, og cachen ryddes aldrig ved deploy — det stik modsatte af hensigten. Brug et andet grundlag, fx hashen af `dist/index.html` eller `Date.now()`. |
 
 ### Jacobs ansvar (uden for koden)
 
@@ -340,6 +368,13 @@ Punkt 4 er ikke besluttet. Tag det ikke som givet — spørg.
 - **Vis skærmbilleder ved designændringer**, mobil såvel som desktop.
 - **Vær ærlig når noget ikke virker.** Han har flere gange fået mest ud af at få
   at vide, at mit eget måleværktøj tog fejl. Skjul det ikke.
+- **Én samtale ad gangen på repoet.** To sessioner arbejdede parallelt den
+  4. august, uden at kunne se hinanden. Det gav afviste pushes, et forkert tal i
+  dette dokument og beskeder der skulle gå gennem Jacob. Arbejd i Cowork (det er
+  dér Desktop Commander og Chrome er koblet på), og luk den gamle samtale før
+  den nye rører koden.
+- **Når Jacob siger du tager fejl, så mål igen før du forsvarer dig.** Han
+  havde ret om samtykke-ikonet og om kanaltallet.
 
 ---
 
