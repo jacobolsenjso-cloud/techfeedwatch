@@ -146,6 +146,54 @@ function pubCase(t) {
   }).join(' ');
 }
 
+// ---- Søgeords-værn på overskriften ----
+// Målt 8/9-2026 med audit-demand.mjs: robotten fandt et rigtigt søgespørgsmål
+// ("what are augmented reality games"), men titelform-rotationen ovenfor fik
+// Gemini til at skrive overskriften om til "Augmented Reality Games Blend
+// Digital Fun Into the Real World". 26 af 49 artikler mistede søgeordet i
+// overskriften — og Google matcher først og fremmest på overskrift og titel.
+// Reglen: variationen må blive, men overskriften SKAL indeholde spørgsmålets
+// kerneord. Deterministisk tjek (som alfabet-værnet), ikke et løfte i prompten.
+const SPOERGEORD = new Set(['what','how','why','when','where','which','who','is','are','does','do','can','should','will','did','to','use','get','a','an','the','of','in','on','for','and','or','with','your','you','it','its','this','that','from','by','as','at','into','vs','mean','means','meaning','work','works','explained','definition']);
+const AKRONYMER = { ai: 'AI', seo: 'SEO', ar: 'AR', vr: 'VR', xr: 'XR', llm: 'LLM', llms: 'LLMs', gpu: 'GPU', gpus: 'GPUs', cpu: 'CPU', npu: 'NPU', api: 'API', apis: 'APIs', nft: 'NFT', nfts: 'NFTs', defi: 'DeFi', etf: 'ETF', crm: 'CRM', saas: 'SaaS', ui: 'UI', ux: 'UX', iot: 'IoT', grc: 'GRC', mcp: 'MCP', rag: 'RAG', agi: 'AGI' };
+
+// Stamme: "chips"/"chip", "computing"/"computers" skal tælle som samme ord.
+function stamme(w) {
+  w = w.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (w.length > 5) w = w.replace(/(ing|ies|es|ed)$/, '').replace(/([^s])s$/, '$1'); // "access" beholder sit s
+  return w.slice(0, 6);
+}
+function kerneord(spoergsmaal) {
+  return spoergsmaal.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length >= 2 && !SPOERGEORD.has(w));
+}
+// Hvilke af spørgsmålets kerneord mangler i overskriften? To krav:
+//  1) hvert kerneord findes (stamme-match), og
+//  2) de står i samme rækkefølge som i spørgsmålet — der må gerne være ord
+//     imellem. "What a Cybersecurity Analyst Does" dækker "cybersecurity
+//     analyst"; "Analyst: What a Cybersecurity Professional Does" gør ikke.
+// Første udgave krævede at naboord stod klos op ad hinanden; det gav
+// "Precision Manufacturing Dictates How AI Chips Used" (testet 8/9) — et
+// krav om ordstilling, ikke om grammatik. Rækkefølge med huller er nok.
+// Returnerer de ord der mangler eller står forkert, til reparations-prompten.
+function manglendeKerneord(titel, spoergsmaal) {
+  const titelOrd = titel.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map(stamme);
+  const kerne = kerneord(spoergsmaal);
+  const mangler = kerne.filter((w) => !titelOrd.includes(stamme(w)));
+  if (mangler.length) return mangler;
+  // Alle ord findes — står de i rækkefølge? Gå gennem titlen og afkryds.
+  let k = 0;
+  for (const w of titelOrd) if (k < kerne.length && w === stamme(kerne[k])) k++;
+  return k === kerne.length ? [] : kerne.slice(k);
+}
+// Sidste udvej: selve spørgsmålet som overskrift. Det matcher altid søgningen,
+// og "What Are AI Chips in Laptops?" er en fuldt brugbar overskrift.
+function overskriftAfSpoergsmaal(spoergsmaal) {
+  const ord = spoergsmaal.trim().replace(/[?.!]+$/, '').split(/\s+/)
+    .map((w) => AKRONYMER[w.toLowerCase()] || w);
+  const t = pubCase(ord.map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '));
+  return /^(what|how|why|when|where|which|who|is|are|does|do|can|should|will)\b/i.test(t) ? t + '?' : t;
+}
+
 // Åbningsords-værn: de seneste ~15 artiklers første titelord er forbudte som
 // åbning, så forsiden ikke får tre "How ..."-titler i træk. Én models sprogtone
 // konvergerer — formen kan roteres, men gentagne åbninger er det synlige symptom.
@@ -509,6 +557,30 @@ async function run() {
     // Efterbehandling af titlen: publikations-casing (småord i småt) og
     // og-tegn ud — de to ting Gemini oftest overhører i instruksen.
     safeTitle = pubCase(safeTitle.replace(/\s*&\s*/g, ' and '));
+    // Søgeords-værnet (se manglendeKerneord ovenfor): mangler kerneord fra
+    // spørgsmålet i overskriften, bedes Gemini rette KUN det — to forsøg —
+    // ellers bliver spørgsmålet selv til overskrift. Artiklen afvises ikke:
+    // teksten er i orden, det er kun skiltet udenpå der skal passe.
+    if (targetQuestion) {
+      let mangler = manglendeKerneord(safeTitle, targetQuestion);
+      for (let forsoeg = 0; mangler.length && forsoeg < 2; forsoeg++) {
+        console.log(`🔎 Overskriften mangler søgeordene [${mangler.join(', ')}] — beder om rettelse (${forsoeg + 1}/2)`);
+        try {
+          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 1024, temperature: 0.3 } })
+            .generateContent(`Rewrite this headline so that it reads the way people search for it. It must contain the words "${mangler.join('", "')}" in the same order as in the Google search "${targetQuestion}" (other words may sit between them), keep the same meaning, be natural English, and stay 40-62 characters. Title Case. No ampersand. No quotes. Output the headline only.\n\nHeadline: ${safeTitle}`);
+          const ny = (rep.response.text() || '').split('\n')[0].replace(/^["“']|["”']$/g, '').replace(/"/g, "'").trim();
+          if (ny.length >= 20 && ny.length <= 80) safeTitle = pubCase(ny.replace(/\s*&\s*/g, ' and '));
+        } catch (e) { console.log(`   rettelse fejlede: ${e.message}`); }
+        mangler = manglendeKerneord(safeTitle, targetQuestion);
+      }
+      if (mangler.length) {
+        safeTitle = overskriftAfSpoergsmaal(targetQuestion);
+        console.log(`🔎 Bruger spørgsmålet som overskrift: "${safeTitle}"`);
+      } else {
+        console.log(`🔎 Overskriften indeholder søgeordene: "${safeTitle}"`);
+      }
+    }
+
     const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
     const slug = resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
@@ -524,7 +596,20 @@ async function run() {
     // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
     let safeMeta = (metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
     if (!safeMeta) safeMeta = safeSummary;
-    if (safeMeta.length > 157) safeMeta = safeMeta.slice(0, 157).replace(/\s+\S*$/, '').trim() + '…';
+    // For lang META blev før klippet midt i sætningen med "…" — 45 artikler
+    // stod sådan i Google. Nu beholdes kun hele sætninger; er første sætning
+    // alene for lang, klippes ved sidste komma/bindeord og der sættes punktum.
+    if (safeMeta.length > 155) {
+      const dele = safeMeta.split(/(?<=[.!?])\s+(?=[A-Z0-9])/);
+      let kort = '';
+      for (const d of dele) { if ((kort + ' ' + d).trim().length > 155) break; kort = (kort + ' ' + d).trim(); }
+      if (kort.length < 60) {
+        const s154 = safeMeta.slice(0, 154);
+        const i = Math.max(s154.lastIndexOf(', '), s154.lastIndexOf(' and '), s154.lastIndexOf(' while '), s154.lastIndexOf(' with '));
+        kort = (i > 60 ? s154.slice(0, i) : s154.replace(/\s+\S*$/, '')).replace(/[,;:\s]+$/, '') + '.';
+      }
+      safeMeta = kort;
+    }
 
     // Saniter FAQ-tekst: fjern anførselstegn, klip markdown-links til bare teksten, trim
     function sanitizeFaqText(str) {
