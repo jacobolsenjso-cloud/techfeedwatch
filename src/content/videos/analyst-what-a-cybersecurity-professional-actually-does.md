@@ -8,7 +8,7 @@ date: "2026-08-26"
 tags:
   - "Cybersecurity"
 summary: "A cybersecurity analyst is a vital defender of digital assets, responsible for identifying, analyzing, and responding to cyber threats. This role involves constant vigilance, utilizing specialized tools to monitor networks and systems for anomalies. While often portrayed with high starting salaries, the reality involves a demanding workflow of alert triage, incident response, and continuous learning to combat evolving threats. Specialization becomes key for career progression, moving beyond day-to-day operations into deeper areas of expertise."
-metaDescription: "Discover what a cybersecurity analyst does, the tools they use, and the real-world challenges of protecting digital infrastructure from constant threats.…"
+metaDescription: "A cybersecurity analyst is a vital defender of digital assets, responsible for identifying, analyzing, and responding to cyber threats."
 targetQuestion: "what is cybersecurity analyst"
 duration: "10:23"
 viewCount: 675

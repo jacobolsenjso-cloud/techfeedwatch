@@ -11,6 +11,7 @@ tags:
   - "Crypto"
   - "AI & Tech"
 summary: "Opnet introduces a novel 'consensus protocol' designed to enable sophisticated smart contracts directly on Bitcoin's Layer 1, without reliance on sidechains, wrapped assets, or a separate gas token. This approach directly challenges previous 'meta-protocols' like Ordinals and BRC-20 by ensuring deterministic on-chain state, a critical advancement for complex DeFi applications. The initiative aims to enhance Bitcoin's utility beyond a store of value, attracting institutional liquidity and fostering a new era of native Bitcoin functionality."
+metaDescription: "Opnet's consensus protocol enables sophisticated smart contracts directly on Bitcoin L1, ensuring deterministic state for complex DeFi."
 duration: "1:46:40"
 viewCount: 345
 viewsUpdated: "2026-09-07"

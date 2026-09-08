@@ -11,6 +11,7 @@ tags:
   - "AI & Tech"
   - "Coding"
 summary: "Artificial Intelligence seeks to impart intelligent capabilities to machines, moving beyond rigid programming. Machine Learning is a core method for achieving AI by training models on data, while Deep Learning, a specialized subset, leverages multi-layered neural networks for complex pattern recognition. The advent of transformer architectures, particularly with their self-attention mechanisms, has significantly advanced AI, powering the large language models prevalent today. A grasp of these foundational elements is essential for comprehending contemporary AI developments and their practical implications."
+metaDescription: "Artificial Intelligence seeks to impart intelligent capabilities to machines, moving beyond rigid programming."
 duration: "10:08"
 viewCount: 45685
 viewsUpdated: "2026-09-07"

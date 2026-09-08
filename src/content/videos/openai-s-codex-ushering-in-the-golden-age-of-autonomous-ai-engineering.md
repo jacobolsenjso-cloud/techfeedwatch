@@ -11,6 +11,7 @@ tags:
   - "AI & Tech"
   - "Automation"
 summary: "The definition of 'AI engineering' is rapidly shifting from code generation to complex problem-solving and system design, driven by increasingly autonomous AI agents. Developers are now orchestrating sophisticated AI tools that can test their own work and pursue long-term goals, moving beyond simple code completion. This evolution demands new skill sets centered on judgment, design, and strategic oversight, rather than just syntax mastery, fostering an open ecosystem for innovation."
+metaDescription: "The definition of AI engineering is rapidly shifting to autonomous problem-solving and system design, requiring new judgment and oversight skills."
 duration: "25:13"
 viewCount: 75135
 viewsUpdated: "2026-09-07"

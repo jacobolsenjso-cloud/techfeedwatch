@@ -9,7 +9,7 @@ tags:
   - "AR & VR"
   - "AI & Tech"
 summary: "Augmented reality blends digital information with the physical world, creating an interactive environment where virtual objects appear to coexist with real surroundings. It was conceived to extend human capabilities, providing immediate, contextual data without fully isolating users from their environment. This technology enhances various applications from professional training to everyday information access, redefining how we perceive and interact with our world. It offers a new dimension of interaction that enriches our real-world experiences with contextual information."
-metaDescription: "Discover why augmented reality was invented and how it works. Learn what AR is, its practical applications, and common misconceptions about this…"
+metaDescription: "Augmented reality blends digital info with the physical world, extending human capabilities with immediate, contextual data to redefine interaction."
 targetQuestion: "why was augmented reality invented"
 duration: "9:27"
 viewCount: 25022

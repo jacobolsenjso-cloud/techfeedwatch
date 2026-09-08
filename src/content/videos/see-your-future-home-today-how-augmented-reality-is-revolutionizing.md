@@ -9,6 +9,7 @@ date: "2026-07-11"
 tags:
   - "AR & VR"
 summary: "Augmented reality (AR) is moving beyond gaming and niche applications, becoming a practical tool for everyday visualization and decision-making. Its integration into user-friendly development platforms allows individuals to overlay digital models onto their physical environment, offering a direct, interactive preview for tasks like interior design. This shift underscores a broader trend towards blending digital information with physical reality, reshaping how we plan and experience spaces."
+metaDescription: "Augmented reality (AR) is moving beyond gaming and niche applications, becoming a practical tool for everyday visualization and decision-making."
 duration: "10:35"
 viewCount: 59993
 viewsUpdated: "2026-09-07"

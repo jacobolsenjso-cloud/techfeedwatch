@@ -10,6 +10,7 @@ tags:
   - "Hardware & Chips"
   - "Productivity"
 summary: "Running large language models (LLMs) locally on consumer hardware presents significant performance challenges, primarily due to variations in memory architecture and allocation strategies. Achieving optimal speed and the ability to run larger, more capable models hinges on understanding how system memory is shared and utilized by the integrated CPU and GPU. While cutting-edge APUs offer substantial unified memory pools, their underlying implementation differs from truly integrated designs, leading to nuanced performance outcomes that demand informed user configuration."
+metaDescription: "Optimizing local LLM performance on consumer hardware depends on understanding shared CPU/GPU memory and user configuration."
 duration: "20:12"
 viewCount: 536811
 viewsUpdated: "2026-09-07"

@@ -9,7 +9,7 @@ tags:
   - "AI Video"
   - "AI & Tech"
 summary: "AI-generated videos, also known as synthetic media or AI-powered video content, represent a significant evolution in digital creation, moving beyond traditional methods to leverage advanced algorithms for dynamic visual output. These tools are transforming industries by enabling rapid content generation, reducing production costs, and offering new avenues for personalized and interactive experiences. As AI transitions into a profit and GDP generator, the capability to create complex visual narratives via AI becomes a foundational element of this new industrial era."
-metaDescription: "Explore the burgeoning field of AI-generated videos: what they are called, how they're created, their costs, and why they're redefining digital content…"
+metaDescription: "AI-generated synthetic media uses algorithms for dynamic visuals, transforming industries with rapid creation, reduced costs, and profit generation."
 targetQuestion: "what are ai videos called"
 duration: "1:58:01"
 viewCount: 138874

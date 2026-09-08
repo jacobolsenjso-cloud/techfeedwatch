@@ -9,7 +9,7 @@ tags:
   - "AR & VR"
   - "AI & Tech"
 summary: "Augmented reality (AR) applications overlay digital information onto the real world through devices like smartphones or smart glasses. They enhance user perception by integrating interactive 3D models, data visualizations, and contextual information directly into the physical environment. This technology transforms industries from gaming and retail to manufacturing and healthcare, offering new ways to interact with surroundings and access information. Understanding AR involves recognizing its distinct approach from virtual reality, focusing on enhancing existing reality rather than replacing it entirely."
-metaDescription: "Discover what augmented reality applications are and how AR technology overlays digital content onto the real world, transforming industries and daily life."
+metaDescription: "Augmented reality (AR) applications overlay digital information onto the real world through devices like smartphones or smart glasses."
 targetQuestion: "what are augmented reality applications"
 duration: "14:51"
 viewCount: 9635

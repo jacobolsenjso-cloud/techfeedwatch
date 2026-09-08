@@ -9,7 +9,7 @@ tags:
   - "Quantum Computing"
   - "AI & Tech"
 summary: "Quantum computing companies are pioneering a new era of computation, moving from theoretical research into active commercialization. While still a nascent industry, recent public market listings highlight a growing institutional confidence in their long-term potential. These firms are building the foundational hardware and software infrastructure that could solve problems currently intractable for classical computers."
-metaDescription: "Explore what quantum computing companies are, from pioneering hardware firms to software innovators. Discover how they're commercializing this complex…"
+metaDescription: "Quantum computing companies are pioneering a new era of computation, moving from theoretical research into active commercialization."
 targetQuestion: "what are quantum computing companies"
 duration: "30:35"
 viewCount: 12

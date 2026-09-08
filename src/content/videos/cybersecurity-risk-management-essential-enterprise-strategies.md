@@ -9,7 +9,7 @@ tags:
   - "Cybersecurity"
   - "Business & Money"
 summary: "Modern organizations face an escalating threat landscape, demanding proactive cybersecurity risk management. Effective strategies move beyond reactive measures, integrating threat intelligence, robust compliance frameworks, and governance. This comprehensive approach safeguards critical data and ensures business resilience against sophisticated cyber threats."
-metaDescription: "Learn about cybersecurity risk management, threat intelligence, and compliance frameworks. Protect your enterprise data and systems from evolving cyber…"
+metaDescription: "Modern organizations face an escalating threat landscape, demanding proactive cybersecurity risk management."
 duration: "27:01"
 viewCount: 70
 viewsUpdated: "2026-09-04"

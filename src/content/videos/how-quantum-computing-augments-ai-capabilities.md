@@ -9,7 +9,7 @@ tags:
   - "Quantum Computing"
   - "AI & Tech"
 summary: "Quantum computing offers a computational paradigm shift, enabling artificial intelligence to tackle problems currently intractable for classical systems. This synergy allows AI to process vastly more complex datasets, optimize algorithms with unprecedented efficiency, and accelerate discoveries across scientific and industrial domains. The integration promises to redefine AI's problem-solving boundaries, especially in areas requiring extensive simulation and optimization."
-metaDescription: "Explore how quantum computing enhances AI by providing immense computational power for complex data analysis, optimizing algorithms, and accelerating…"
+metaDescription: "Quantum computing offers a computational paradigm shift, enabling artificial intelligence to tackle problems currently intractable for classical systems."
 targetQuestion: "how does quantum computing related to ai"
 duration: "17:02"
 viewCount: 33618
