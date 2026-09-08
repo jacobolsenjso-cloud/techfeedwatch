@@ -770,6 +770,58 @@ const siteSchema = [
       })();
     </script>
 
+    {/* Googles privatliv-ikon (skjoldet nederst til venstre) kommer med en
+        talebobble, "Indstillinger for privatliv og cookies", som Google folder
+        ud på hver side efter samtykke. Google husker ikke at man har lukket den,
+        og i Brave folder den aldrig sammen. Vi skjuler kun boblen — skjoldet
+        bliver, så brugeren stadig kan fortryde sit samtykke via Googles egen vej.
+        Ikonet ligger i en åben shadow DOM på en anonym <div> sidst i <body>, så
+        almindelig CSS når det ikke; stilen skal ind i selve shadow-roden. */}
+    <script is:inline>
+      (function () {
+        var CSS = '#ft-reg-bubble{display:none!important}';
+        var done = false;
+
+        function tryHost(el) {
+          if (done || !el || el.nodeType !== 1 || !el.shadowRoot) return false;
+          if (!el.shadowRoot.querySelector('#ft-floating-toolbar')) return false;
+          var s = document.createElement('style');
+          s.textContent = CSS;
+          el.shadowRoot.appendChild(s);
+          done = true;
+          return true;
+        }
+
+        function scan() {
+          var kids = document.body ? document.body.children : [];
+          for (var i = kids.length - 1; i >= 0; i--) if (tryHost(kids[i])) return true;
+          return false;
+        }
+
+        // Google hænger shadow-roden på lidt efter at div'en er sat ind, så en
+        // enkelt observation er ikke nok — vi kigger igen et par gange.
+        function watch(el) {
+          var n = 0;
+          var t = setInterval(function () {
+            if (tryHost(el) || ++n > 20) clearInterval(t);
+          }, 250);
+        }
+
+        if (!scan() && 'MutationObserver' in window) {
+          var mo = new MutationObserver(function (muts) {
+            if (done) { mo.disconnect(); return; }
+            muts.forEach(function (m) {
+              Array.prototype.forEach.call(m.addedNodes, function (node) {
+                if (node.nodeType === 1 && node.tagName === 'DIV' && node.parentNode === document.body) watch(node);
+              });
+            });
+          });
+          mo.observe(document.body, { childList: true });
+          setTimeout(function () { mo.disconnect(); }, 30000);
+        }
+      })();
+    </script>
+
     {/* Service worker: giver den installerede app en offline-side i stedet for
         browserens fejlside. Registreres efter load, så den ikke konkurrerer med
         sidens egne ressourcer om båndbredden. */}

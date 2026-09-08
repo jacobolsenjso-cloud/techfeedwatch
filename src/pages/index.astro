@@ -754,8 +754,11 @@ const vRest = pageOneVideos.slice(13);
   <style>
     .topic-fab, .topic-sheet { display: none; }
     @media (max-width: 768px) {
+      /* Højre side, over pil-op-knappen (bottom 20px, 44px høj). Venstre hjørne
+         er Googles: der ligger privatliv-skjoldet efter samtykke, og de to lå
+         oven i hinanden. */
       .topic-fab {
-        position: fixed; bottom: 20px; left: 20px; z-index: 60;
+        position: fixed; bottom: 76px; right: 20px; z-index: 60;
         display: flex; align-items: center; gap: 7px;
         height: 44px; padding: 0 16px; border-radius: 22px;
         background: var(--card-bg); color: var(--text-color);
@@ -765,7 +768,7 @@ const vRest = pageOneVideos.slice(13);
       }
       .topic-fab[hidden] { display: none; }
       .topic-sheet {
-        position: fixed; left: 12px; right: 12px; bottom: 76px; z-index: 59;
+        position: fixed; left: 12px; right: 12px; bottom: 132px; z-index: 59;
         display: block; background: var(--card-bg);
         border: 1px solid var(--border-color); border-radius: 14px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.25);
