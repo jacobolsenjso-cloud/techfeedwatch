@@ -1,5 +1,6 @@
 ---
-title: "How AI Powers FinTech Apps for Real-Time Compliance and Growth"
+title: "How AI Is Changing Fintech and Redefining Success"
+targetQuestion: "how is ai changing fintech"
 titleShortened: true
 seoTitled: true
 youtubeId: "PvjFuxCjygc"

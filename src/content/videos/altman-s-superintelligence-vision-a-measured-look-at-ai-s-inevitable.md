@@ -1,5 +1,6 @@
 ---
-title: "Sam Altman's Superintelligence Spurs New Governance Safety Questions"
+title: "Sam Altman's Vision for AI's Future"
+targetQuestion: "what is sam altman's vision for ai"
 titleShortened: true
 seoTitled: true
 youtubeId: "5MWT_doo68k"

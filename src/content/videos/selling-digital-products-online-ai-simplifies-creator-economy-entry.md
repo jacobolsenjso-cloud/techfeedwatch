@@ -1,5 +1,6 @@
 ---
-title: "AI Democratizes Creator Economy for Digital Product Sales"
+title: "What Is Selling Digital Products Online Today"
+targetQuestion: "what is selling digital products online"
 youtubeId: "QGTLLNpKpeY"
 channelTitle: "Nas com"
 channelId: "UCUBiTeiHbOxSkyN-jy-b2pA"

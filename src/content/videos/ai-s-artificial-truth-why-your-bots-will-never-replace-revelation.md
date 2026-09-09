@@ -1,5 +1,6 @@
 ---
-title: "AI's Limits: Bots Lack Subjective Human Revelation"
+title: "What Are AI Limitations Compared to Human Understanding?"
+targetQuestion: "what are ai limitations"
 seoTitled: true
 youtubeId: "sNF_1PIEda0"
 channelTitle: "Larry Ollison Ministries"

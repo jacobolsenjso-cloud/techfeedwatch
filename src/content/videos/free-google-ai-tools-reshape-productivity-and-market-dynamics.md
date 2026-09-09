@@ -1,5 +1,6 @@
 ---
-title: "How Free Google AI Tools Improve Productivity and Challenge Paid AI"
+title: "What Are Google's Free AI Tools, and Do They Beat Paid AI?"
+targetQuestion: "what are google ai tools"
 titleShortened: true
 youtubeId: "RIPxwxqZhVI"
 channelTitle: "Vaibhav Sisinty"

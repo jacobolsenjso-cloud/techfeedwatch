@@ -1,5 +1,6 @@
 ---
-title: "AI Consciousness: Why Current AI Lacks Subjective Experience"
+title: "What Makes AI Not Conscious Is Its Lack of Subjective Experience"
+targetQuestion: "what makes ai not conscious"
 seoTitled: true
 youtubeId: "tJV-vdbZ388"
 channelTitle: "TED"

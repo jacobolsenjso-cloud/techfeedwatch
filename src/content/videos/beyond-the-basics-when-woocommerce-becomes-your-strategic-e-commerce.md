@@ -1,5 +1,6 @@
 ---
-title: "WooCommerce Deep Customization for B2B and Subscriptions"
+title: "What Is Custom WordPress Development with WooCommerce?"
+targetQuestion: "what is custom wordpress development"
 titleShortened: true
 seoTitled: true
 youtubeId: "VngFqKHftbY"

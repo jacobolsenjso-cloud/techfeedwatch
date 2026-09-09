@@ -1,5 +1,6 @@
 ---
-title: "Are Traditional Investment Strategies Ready for AI Quant Shift?"
+title: "How to Use AI for Value Investing Like Buffett and Simons"
+targetQuestion: "how to use ai for value investing"
 titleShortened: true
 seoTitled: true
 youtubeId: "q1tLnU_UzUg"

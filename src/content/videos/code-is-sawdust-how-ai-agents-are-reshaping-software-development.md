@@ -1,5 +1,6 @@
 ---
-title: "AI Agents Turn Software Developers Into Architects"
+title: "What Is the Primary Goal of AI Agents in Software Development"
+targetQuestion: "what is the primary goal of ai agents in software development"
 titleShortened: true
 seoTitled: true
 youtubeId: "fQmlML9Lay4"

@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Accounts: EOAs Use Private Keys, Contracts Use Code"
+title: "Types of Ethereum Accounts Explained"
+targetQuestion: "types of ethereum accounts"
 seoTitled: true
 youtubeId: "1Bp2KritrvQ"
 channelTitle: "CodeLucky"

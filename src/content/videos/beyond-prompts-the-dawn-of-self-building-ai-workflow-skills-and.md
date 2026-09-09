@@ -1,5 +1,6 @@
 ---
-title: "How Autonomous AI Agents Master AI Workflow Skills"
+title: "What AI Agent Skills Are and How They Work"
+targetQuestion: "what ai agent skills are and how they work"
 seoTitled: true
 youtubeId: "mOGLdUOLAu0"
 channelTitle: "QurioSkill"

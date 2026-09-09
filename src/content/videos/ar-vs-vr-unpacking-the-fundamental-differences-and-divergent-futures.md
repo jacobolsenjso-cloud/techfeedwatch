@@ -1,5 +1,6 @@
 ---
-title: "What AR VR's Interaction with Reality Means for Immersive Tech Future"
+title: "What Is the Fundamental Difference Between AR and VR Technology?"
+targetQuestion: "what is the difference between ar and vr technology"
 seoTitled: true
 youtubeId: "Hrz4aPh4wlQ"
 channelTitle: "TECH NIGHTS"

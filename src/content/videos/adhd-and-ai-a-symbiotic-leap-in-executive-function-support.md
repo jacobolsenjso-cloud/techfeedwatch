@@ -1,5 +1,6 @@
 ---
-title: "ADHD AI Offers Executive Function Support Fostering Independence"
+title: "How Does AI Help Individuals with ADHD?"
+targetQuestion: "how does ai help adhd"
 seoTitled: true
 youtubeId: "ZssxnYgc2wI"
 channelTitle: "Aaron Newcomer"

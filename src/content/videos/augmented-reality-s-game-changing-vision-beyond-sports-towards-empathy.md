@@ -1,5 +1,6 @@
 ---
-title: "AR Evolution: Building Empathy Beyond Sports and Entertainment"
+title: "What Is AR VR Technology Beyond Sports and Entertainment?"
+targetQuestion: "what is ar vr technology"
 seoTitled: true
 youtubeId: "AgMOJC5R4F8"
 channelTitle: "TED"

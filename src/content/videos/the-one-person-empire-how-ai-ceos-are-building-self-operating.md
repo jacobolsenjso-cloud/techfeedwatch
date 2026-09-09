@@ -1,5 +1,6 @@
 ---
-title: "Self-Operating Businesses: How AI Agents Automate Operations"
+title: "What Is AI Agent Orchestration for Autonomous Teams"
+targetQuestion: "what is ai agent orchestration"
 seoTitled: true
 youtubeId: "njyxMosfSmE"
 channelTitle: "Next Level AI"

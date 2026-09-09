@@ -1,5 +1,6 @@
 ---
-title: "Oracle Networks Automate Real-World Data for Smart Contracts DeFi"
+title: "Oracle Network in Blockchain Bridges Data for Smart Contracts"
+targetQuestion: "what is oracle network in blockchain"
 seoTitled: true
 youtubeId: "TPXTmVdlyoc"
 channelTitle: "Lex Fridman"

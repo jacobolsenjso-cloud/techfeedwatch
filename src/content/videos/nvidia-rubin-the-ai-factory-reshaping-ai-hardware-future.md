@@ -1,5 +1,6 @@
 ---
-title: "NVIDIA Rubin: The AI Factory Integrates CPUs, GPUs, Networking"
+title: "What Is the NVIDIA Rubin Platform? Inside the AI Factory"
+targetQuestion: "what is nvidia rubin platform"
 youtubeId: "6TUKgqSFCcU"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

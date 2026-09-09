@@ -1,5 +1,6 @@
 ---
-title: "How Do Amazon Network Effects Create Entry Barriers and Control?"
+title: "Amazon's Operating Model: A Self-Reinforcing Ecosystem"
+targetQuestion: "what is amazon's operating model"
 youtubeId: "vKnQfkHhhnc"
 channelTitle: "Rise and Fall"
 channelId: "UC_F7peDUCIRnHnhYu1FwRJQ"

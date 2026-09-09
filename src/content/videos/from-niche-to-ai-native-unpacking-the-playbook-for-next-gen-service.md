@@ -1,5 +1,6 @@
 ---
-title: "How AI-Native Services Build Next-Gen Business via Operations-First"
+title: "What Are AI Native Service Companies and How They Work"
+targetQuestion: "what are ai native service companies"
 titleShortened: true
 seoTitled: true
 youtubeId: "gSNFJbgoaHI"

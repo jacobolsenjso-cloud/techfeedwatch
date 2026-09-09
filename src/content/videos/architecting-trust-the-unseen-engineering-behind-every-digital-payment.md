@@ -1,5 +1,6 @@
 ---
-title: "Engineering Digital Payment Security Against Data Inconsistencies"
+title: "How Digital Payment Systems Work From Start to Finish"
+targetQuestion: "how do digital payment systems work"
 titleShortened: true
 seoTitled: true
 youtubeId: "olfaBgJrUBI"

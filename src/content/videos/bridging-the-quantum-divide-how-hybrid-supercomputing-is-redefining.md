@@ -1,5 +1,6 @@
 ---
-title: "How Hybrid Quantum-Classical Supercomputing Changes Problem Scope"
+title: "What Are Current Limitations of Quantum Computing?"
+targetQuestion: "what are the current limitations of quantum computing"
 titleShortened: true
 seoTitled: true
 youtubeId: "HgXqbnSxtZQ"

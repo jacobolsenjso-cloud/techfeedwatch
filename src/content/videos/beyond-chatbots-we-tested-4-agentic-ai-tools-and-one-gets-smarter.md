@@ -1,5 +1,6 @@
 ---
-title: "What Are the Capabilities of 4 Agentic AI Agents for Automation?"
+title: "What Agentic AI Tools Are and How They Work"
+targetQuestion: "what are agentic ai tools"
 titleShortened: true
 seoTitled: true
 youtubeId: "QcnrWiZokh4"

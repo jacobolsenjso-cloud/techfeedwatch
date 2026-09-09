@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality 2030: How AR Transforms Daily Life"
+title: "What Are Some Examples of AR in Daily Life?"
+targetQuestion: "what are some examples of ar in daily life"
 seoTitled: true
 youtubeId: "D8V2nxeWHmI"
 channelTitle: "Future Business Tech"

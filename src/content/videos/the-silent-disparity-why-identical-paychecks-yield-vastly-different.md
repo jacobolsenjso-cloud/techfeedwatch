@@ -1,5 +1,6 @@
 ---
-title: "Build Wealth: Capital Deployment Shapes Fortunes From Similar Incomes"
+title: "What Wealth Accumulation Truly Means"
+targetQuestion: "what is wealth accumulation"
 titleShortened: true
 seoTitled: true
 youtubeId: "uFLz0MexCSY"

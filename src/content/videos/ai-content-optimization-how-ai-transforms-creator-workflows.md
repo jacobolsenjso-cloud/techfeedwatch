@@ -1,5 +1,6 @@
 ---
-title: "How AI Automation Optimizes Content in Creator Workflows"
+title: "What Is an AI-Powered Content Engine"
+targetQuestion: "what is ai content engine"
 youtubeId: "I1-M4XIgTIw"
 channelTitle: "Grandpa"
 channelId: "UCoPfP5Yw9g7liWhrtzHRM4w"

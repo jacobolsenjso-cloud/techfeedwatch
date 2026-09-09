@@ -1,5 +1,6 @@
 ---
-title: "Are Core Web Vitals and Site Speed Direct SEO Ranking Factors?"
+title: "What Is User Experience in SEO and Its Impact?"
+targetQuestion: "what is user experience in seo"
 titleShortened: true
 seoTitled: true
 youtubeId: "_w4uzUH1YeM"

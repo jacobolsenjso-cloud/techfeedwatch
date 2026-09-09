@@ -1,5 +1,6 @@
 ---
-title: "Does Apple's On-Device AI Focus and Privacy Secure Its Long-Term Edge?"
+title: "Apple's AI Strategy Is Deliberate on Device Integration"
+targetQuestion: "what is apple's ai strategy"
 titleShortened: true
 seoTitled: true
 youtubeId: "eWKY0OnPByg"

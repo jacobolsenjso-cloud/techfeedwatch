@@ -1,5 +1,6 @@
 ---
-title: "Atoms AI Builds Businesses From Prompt to SEO and Ad Campaigns"
+title: "How to Use AI to Start Online Business"
+targetQuestion: "how to use ai to start online business"
 titleShortened: true
 seoTitled: true
 youtubeId: "CILRCeupuFQ"

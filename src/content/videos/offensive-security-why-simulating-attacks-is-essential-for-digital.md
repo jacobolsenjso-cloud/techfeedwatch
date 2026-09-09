@@ -1,5 +1,6 @@
 ---
-title: "How Offensive Security Uses Ethical Hacking to Boost Digital Defense"
+title: "What Is Offensive Security Testing Today?"
+targetQuestion: "what is offensive security testing"
 titleShortened: true
 seoTitled: true
 youtubeId: "fQJ8OUs1Sog"

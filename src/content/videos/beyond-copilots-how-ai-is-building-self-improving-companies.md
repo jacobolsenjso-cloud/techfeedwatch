@@ -1,5 +1,6 @@
 ---
-title: "Autonomous AI: Recursive Loops for Continuous Self-Improvement"
+title: "How Autonomous AI Agents Work Through Recursive Loops"
+targetQuestion: "how do autonomous ai agents work"
 titleShortened: true
 seoTitled: true
 youtubeId: "X_JsIHUfUjc"

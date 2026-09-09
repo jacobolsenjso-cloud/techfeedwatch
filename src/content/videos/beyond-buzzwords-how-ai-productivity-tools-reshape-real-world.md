@@ -1,5 +1,6 @@
 ---
-title: "How AI Productivity Tools Master Complex Workflows"
+title: "How AI Automates Routine Tasks in Modern Workflows"
+targetQuestion: "how does ai automate routine tasks"
 seoTitled: true
 youtubeId: "RcXG_b1_GB0"
 channelTitle: "Digital Brain"

@@ -1,5 +1,6 @@
 ---
-title: "Generative AI: Transformer Networks, Scaling, and GPT-4 Impact"
+title: "How Does Generative AI Work? Transformers, Scaling, GPT-4"
+targetQuestion: "how does generative ai work"
 seoTitled: true
 youtubeId: "_6R7Ym6Vy_I"
 channelTitle: "The Royal Institution"

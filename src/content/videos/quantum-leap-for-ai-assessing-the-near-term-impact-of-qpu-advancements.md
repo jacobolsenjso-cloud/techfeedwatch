@@ -1,5 +1,6 @@
 ---
-title: "How Qubit Bit Differences Change Quantum AI for LLMs"
+title: "What Quantum AI Is Used for in LLM Training"
+targetQuestion: "what is quantum ai used for"
 seoTitled: true
 youtubeId: "sQSQBYHR0ms"
 channelTitle: "Caleb Writes Code"

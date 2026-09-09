@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin's Digital Gold: Fixed Supply Drives Institutional Adoption"
+title: "Why Does Bitcoin Have a Fixed Supply? Why Institutions Care"
+targetQuestion: "why does bitcoin have a fixed supply"
 youtubeId: "I2y6CcOiBKk"
 channelTitle: "Altcoin Daily"
 channelId: "UCbLhGKVY-bJPcawebgtNfbw"

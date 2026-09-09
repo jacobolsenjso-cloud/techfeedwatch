@@ -1,5 +1,6 @@
 ---
-title: "SaaS AI SEO: Data Scraping LLM Citations for AI Model Visibility"
+title: "AI SEO Optimization: A New Data-Driven Reality"
+targetQuestion: "what is ai seo optimization"
 seoTitled: true
 youtubeId: "RIKeDA9t2uA"
 channelTitle: "Yaron Been"

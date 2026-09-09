@@ -1,5 +1,6 @@
 ---
-title: "Google Search Console Analytics Tag Manager for SEO Insights"
+title: "What Are Google Search Console and Google Analytics for SEO?"
+targetQuestion: "what is google search console and google analytics"
 seoTitled: true
 youtubeId: "LRlW1lgWQfE"
 channelTitle: "The Tech Academy - Online Coding Bootcamps and Trade School"

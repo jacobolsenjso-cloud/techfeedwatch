@@ -1,5 +1,6 @@
 ---
-title: "AI Servers and Data Centers Are Complex Physical Manufacturing"
+title: "Physical AI Infrastructure From Silicon to Servers"
+targetQuestion: "what is physical ai infrastructure"
 titleShortened: true
 seoTitled: true
 youtubeId: "WsWLSkt7d2w"

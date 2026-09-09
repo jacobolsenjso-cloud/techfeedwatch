@@ -1,5 +1,6 @@
 ---
-title: "AI No-Code Lowers Barriers for Niche Online Businesses"
+title: "What Is a No Code AI Platform and Its Impact?"
+targetQuestion: "what is no code ai platform"
 seoTitled: true
 youtubeId: "Y-zKVrSRsiM"
 channelTitle: "AI Forge"

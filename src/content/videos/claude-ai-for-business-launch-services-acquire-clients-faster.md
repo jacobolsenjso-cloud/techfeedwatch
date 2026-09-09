@@ -1,5 +1,6 @@
 ---
-title: "Claude AI Compresses Business Launch for Faster Client Acquisition"
+title: "What Is Claude AI Good for Business Growth"
+targetQuestion: "what is claude ai good for"
 youtubeId: "AP-fOOmm02g"
 channelTitle: "Sabrina Ramonov 🍄"
 channelId: "UCiGWNa6QK6CiKPvv5-YPv8g"

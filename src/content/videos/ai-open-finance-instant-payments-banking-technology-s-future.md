@@ -1,5 +1,6 @@
 ---
-title: "Core Banking: AI, Open Finance, Instant Payments Overhaul Systems"
+title: "How Will AI Change Banking Alongside Instant Payments?"
+targetQuestion: "how will ai change banking"
 youtubeId: "AaesQasdHD8"
 channelTitle: "ERI"
 channelId: "UCJdCu3ZJ1a3qc0FrOi2N_mQ"

@@ -1,5 +1,6 @@
 ---
-title: "How Fintech Tools Augment Personal Finance for Financial Independence"
+title: "What Are Debt Management Strategies in Personal Finance?"
+targetQuestion: "what is debt management strategies"
 titleShortened: true
 youtubeId: "z-mSoosGQdc"
 channelTitle: "Al Zhang"

@@ -1,5 +1,6 @@
 ---
-title: "Can Quantum Computing Deliver on Its Massive Promises?"
+title: "How Does Superposition Work in Quantum Computing"
+targetQuestion: "how does superposition work in quantum computing"
 titleShortened: true
 seoTitled: true
 youtubeId: "B3U1NDUiwSA"

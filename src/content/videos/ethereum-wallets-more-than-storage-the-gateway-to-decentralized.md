@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Wallets: Accounts, Gas, Smart Contracts, DeFi"
+title: "How Does Ethereum Gas Work in Accounts and Wallets?"
+targetQuestion: "how does ethereum gas work"
 titleShortened: true
 seoTitled: true
 youtubeId: "qLZ1IoezucE"

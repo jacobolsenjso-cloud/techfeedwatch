@@ -1,5 +1,6 @@
 ---
-title: "What AI Safety Protocol Bypass Means for Rethinking LLM Alignment"
+title: "What Causes AI Misalignment"
+targetQuestion: "what causes misalignment"
 titleShortened: true
 seoTitled: true
 youtubeId: "wzY2fV4Mp3U"

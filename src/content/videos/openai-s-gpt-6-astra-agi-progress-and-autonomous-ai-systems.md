@@ -1,5 +1,6 @@
 ---
-title: "How OpenAI's GPT-6 Astra Shows AGI Planning and Execution"
+title: "What Is OpenAI Astra and Its Path Toward AGI?"
+targetQuestion: "what is openai astra"
 youtubeId: "KbYio-N8_LU"
 channelTitle: "WorldofAI"
 channelId: "UC2WmuBuFq6gL08QYG-JjXKw"

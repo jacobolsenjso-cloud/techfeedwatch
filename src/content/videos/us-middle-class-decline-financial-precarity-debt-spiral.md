@@ -1,5 +1,6 @@
 ---
-title: "Why Falling Savings Drive US Middle Class Debt Spirals"
+title: "Why Is the US Middle Class Shrinking Today"
+targetQuestion: "why is the us middle class shrinking"
 youtubeId: "pDxCC5-C9Tg"
 channelTitle: "Graham Stephan"
 channelId: "UCV6KDgJskWaEckne5aPA0aQ"

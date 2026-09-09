@@ -1,5 +1,6 @@
 ---
-title: "Architecture-First: Cloud Security Consulting for Business Compliance"
+title: "Why Cloud Security Is So Important for Businesses"
+targetQuestion: "why is cloud security important"
 seoTitled: true
 youtubeId: "LCa-ioVi8Fs"
 channelTitle: "Atlant Security"

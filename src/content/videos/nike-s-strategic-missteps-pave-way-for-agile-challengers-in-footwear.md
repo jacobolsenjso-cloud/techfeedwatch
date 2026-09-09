@@ -1,5 +1,6 @@
 ---
-title: "Nike Footwear Strategic Errors Fuel Agile on Running Market Gains"
+title: "Why Is Nike Having Problems with Innovation and Strategy?"
+targetQuestion: "why is nike having problems"
 titleShortened: true
 seoTitled: true
 youtubeId: "8s7t64aXaEA"

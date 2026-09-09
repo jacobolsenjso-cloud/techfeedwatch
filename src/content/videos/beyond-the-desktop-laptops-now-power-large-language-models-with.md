@@ -1,5 +1,6 @@
 ---
-title: "Optimize Local LLM Performance on Laptops with Shared CPU GPU Memory"
+title: "How Much Memory Does a Local LLM Truly Need"
+targetQuestion: "how much memory does a local llm need"
 seoTitled: true
 youtubeId: "AcTmeGpzhBk"
 channelTitle: "Alex Ziskind"

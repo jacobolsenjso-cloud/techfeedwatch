@@ -1,5 +1,6 @@
 ---
-title: "How Claude Code Builds WhatsApp AI Bots Using Plain Language Prompts"
+title: "What Is a WhatsApp AI Bot for Businesses"
+targetQuestion: "what is whatsapp ai bot"
 titleShortened: true
 seoTitled: true
 youtubeId: "_VX7jc_BhB8"

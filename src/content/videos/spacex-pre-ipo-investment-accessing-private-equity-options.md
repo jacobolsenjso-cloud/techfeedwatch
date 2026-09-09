@@ -1,5 +1,6 @@
 ---
-title: "How to Access SpaceX Pre-IPO Shares via Secondary Markets"
+title: "How to Invest in SpaceX Pre IPO Opportunities"
+targetQuestion: "how to invest in spacex pre ipo"
 youtubeId: "EGF6sNfOTwk"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

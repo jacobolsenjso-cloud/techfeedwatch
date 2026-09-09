@@ -1,5 +1,6 @@
 ---
-title: "AI Data: Centers Push Grids' Limits, Energy, Space Bottlenecks"
+title: "What Is an AI Data Centre and Its Growing Footprint"
+targetQuestion: "what is ai data centre"
 seoTitled: true
 youtubeId: "5QT3y9Gp3Rg"
 channelTitle: "Bloomberg Television"

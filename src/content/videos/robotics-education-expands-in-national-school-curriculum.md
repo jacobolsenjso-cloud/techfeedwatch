@@ -1,5 +1,6 @@
 ---
-title: "South Africa Education: National Curriculum Expands Robotics, Coding"
+title: "South Africa Redefines Computer and Robotics Education"
+targetQuestion: "what is computer and robotics education"
 youtubeId: "yiuiTjPaF-s"
 channelTitle: "PyCon South Africa"
 channelId: "UCu-El65PtQm46aSbXkzykYQ"

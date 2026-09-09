@@ -1,5 +1,6 @@
 ---
-title: "How Andrew Ng Democratizes AI for Small Business Niche Solutions"
+title: "What Is AI Automation for Small Businesses"
+targetQuestion: "what is ai automation for small businesses"
 seoTitled: true
 youtubeId: "reUZRyXxUs4"
 channelTitle: "TED"

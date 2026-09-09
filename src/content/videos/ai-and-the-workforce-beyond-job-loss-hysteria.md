@@ -1,5 +1,6 @@
 ---
-title: "How AI Changes Jobs New Skills and Professions"
+title: "Impact of AI on Employees"
+targetQuestion: "impact of ai on employees"
 seoTitled: true
 youtubeId: "cJfKqKEyw1o"
 channelTitle: "TED"

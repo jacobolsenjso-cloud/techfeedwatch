@@ -1,5 +1,6 @@
 ---
-title: "How Can AI SEO Automation Help Agencies Outrank with Content?"
+title: "How to Automate Content Creation and SEO for Agencies"
+targetQuestion: "how to automate content creation"
 titleShortened: true
 seoTitled: true
 youtubeId: "OQndX5-eauE"

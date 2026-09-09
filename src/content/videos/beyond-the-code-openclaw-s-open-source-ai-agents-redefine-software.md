@@ -1,5 +1,6 @@
 ---
-title: "Can OpenClaw Open-Source AI Agents Write and Self-Modify Code?"
+title: "What Is OpenClaw and Why You Should Care About It"
+targetQuestion: "what is openclaw and why should i care"
 seoTitled: true
 youtubeId: "YFjfBk8HI5o"
 channelTitle: "Lex Fridman"

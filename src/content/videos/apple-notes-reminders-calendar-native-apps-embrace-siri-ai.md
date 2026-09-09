@@ -1,5 +1,6 @@
 ---
-title: "Native Apps: Siri AI Boosts Apple Notes, Reminders, Calendar"
+title: "What Apple Native Apps Do for Your Workflow"
+targetQuestion: "what are apple native apps"
 youtubeId: "Y6EGHmJDVm4"
 channelTitle: "Christopher Lawley"
 channelId: "UC8raOG7HXJoCUygx219fU4A"

@@ -1,5 +1,6 @@
 ---
-title: "Omnichannel Retail: Print Catalogs Drive Digital Sales"
+title: "How Print and Digital Advertising Drives Online Sales"
+targetQuestion: "what is print and digital advertising"
 titleShortened: true
 youtubeId: "yUHQR9lUtaE"
 channelTitle: "priint"

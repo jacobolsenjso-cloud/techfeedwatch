@@ -1,5 +1,6 @@
 ---
-title: "Agentic AI Helps Decentralized AI Banking Disrupt Finance"
+title: "Why Agentic AI Is Important for Financial Transformation"
+targetQuestion: "why agentic ai is important"
 youtubeId: "c-MSAP_HBcE"
 channelTitle: "technophile"
 channelId: "UCmlnPidspm1VB1uRJXfmViA"

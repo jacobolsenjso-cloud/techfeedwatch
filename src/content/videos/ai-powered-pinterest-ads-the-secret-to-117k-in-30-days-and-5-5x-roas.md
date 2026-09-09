@@ -1,5 +1,6 @@
 ---
-title: "How AI Creatives Changes Pinterest Ad ROAS"
+title: "How Do Pinterest Ads Work with AI Creatives? a 5.5x ROAS Case"
+targetQuestion: "how do pinterest ads work"
 seoTitled: true
 youtubeId: "Zpz8nFRw-Lg"
 channelTitle: "Luc Bermond - EN"

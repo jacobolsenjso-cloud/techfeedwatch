@@ -1,5 +1,6 @@
 ---
-title: "Are Maturing Markets Signalling Bitcoin and Ethereum Surge?"
+title: "What Is the Bitcoin Bull Market Support Band?"
+targetQuestion: "what is bitcoin bull market support band"
 titleShortened: true
 seoTitled: true
 youtubeId: "iuZTZHipaG0"

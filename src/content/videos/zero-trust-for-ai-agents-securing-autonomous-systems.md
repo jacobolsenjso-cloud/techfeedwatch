@@ -1,5 +1,6 @@
 ---
-title: "Zero Trust Secures AI Agents From Prompt Injection"
+title: "How to Secure AI Agents Using Zero Trust"
+targetQuestion: "how to secure ai agents"
 youtubeId: "d8d9EZHU7fw"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

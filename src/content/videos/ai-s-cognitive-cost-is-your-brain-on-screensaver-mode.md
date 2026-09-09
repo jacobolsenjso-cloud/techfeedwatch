@@ -1,5 +1,6 @@
 ---
-title: "Does Passive AI Use Replace Critical Thinking and Memory?"
+title: "How Does AI Reduce Critical Thinking?"
+targetQuestion: "how does ai reduce critical thinking"
 titleShortened: true
 seoTitled: true
 youtubeId: "52FiVExXfnU"

@@ -1,5 +1,6 @@
 ---
-title: "OPNET Protocol Brings Ethereum Smart Contracts to Bitcoin L1 Natively"
+title: "Why Doesn't Bitcoin Have Smart Contracts?"
+targetQuestion: "why doesn't bitcoin have smart contracts"
 titleShortened: true
 seoTitled: true
 youtubeId: "WLm9wPw8b5U"

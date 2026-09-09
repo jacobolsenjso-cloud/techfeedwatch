@@ -1,5 +1,6 @@
 ---
-title: "Free AI Video Generators Create High-Quality Polished Content"
+title: "What Are Free AI Content Creation Tools for Video?"
+targetQuestion: "what are ai content creation tools"
 titleShortened: true
 youtubeId: "3cXXYG-0Ipk"
 channelTitle: "Malva AI"

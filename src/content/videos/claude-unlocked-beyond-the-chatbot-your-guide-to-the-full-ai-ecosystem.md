@@ -1,5 +1,6 @@
 ---
-title: "Claude AI Builds Applications and Automates Workflows Naturally"
+title: "What Are the Primary Features of Claude AI"
+targetQuestion: "what is the primary features of claude ai"
 titleShortened: true
 seoTitled: true
 youtubeId: "MS7E5TXNviM"

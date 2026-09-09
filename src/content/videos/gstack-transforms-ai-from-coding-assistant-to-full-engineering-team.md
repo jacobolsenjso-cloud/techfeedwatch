@@ -1,5 +1,6 @@
 ---
-title: "GStack AI Orchestrates LLMs for Complete Software Dev QA"
+title: "GStack: Garry Tan's Toolkit Redefines AI Software Development"
+targetQuestion: "what is gstack garry tan"
 seoTitled: true
 youtubeId: "wkv2ifxPpF8"
 channelTitle: "Y Combinator"

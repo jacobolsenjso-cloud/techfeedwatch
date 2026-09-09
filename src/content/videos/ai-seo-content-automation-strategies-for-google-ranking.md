@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Content Automation for Quality Google Ranking"
+title: "How Is AI Changing Content Creation for SEO?"
+targetQuestion: "how is ai changing content creation"
 youtubeId: "wH2-WehAOK8"
 channelTitle: "GoldieAgencySEO"
 channelId: "UCWyDll8EeWuHfTCfm7VnR_A"

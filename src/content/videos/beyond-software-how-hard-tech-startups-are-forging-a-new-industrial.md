@@ -1,5 +1,6 @@
 ---
-title: "Hard Tech Startups Accelerate Deep Tech via Achievable Milestones"
+title: "What Are Hard Tech Companies and Their Funding Needs"
+targetQuestion: "what are hard tech companies"
 seoTitled: true
 youtubeId: "erDE2e69dlc"
 channelTitle: "Y Combinator"

@@ -1,5 +1,6 @@
 ---
-title: "AI Agents: Chatbots Evolved for Autonomous Productivity"
+title: "What Are AI Agents and How Do They Work?"
+targetQuestion: "what are ai agents and how do they work"
 seoTitled: true
 youtubeId: "6GtF_uHbGhw"
 channelTitle: "Jack Roberts"

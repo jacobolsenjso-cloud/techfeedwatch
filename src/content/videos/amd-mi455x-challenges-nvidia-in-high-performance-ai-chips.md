@@ -1,5 +1,6 @@
 ---
-title: "AMD MI455X Challenges Nvidia for Large-Scale AI"
+title: "How AMD's New AI Chip Compares to Nvidia"
+targetQuestion: "how does amd compare to nvidia"
 youtubeId: "HYExTIvfCx8"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

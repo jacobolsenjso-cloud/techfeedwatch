@@ -1,5 +1,6 @@
 ---
-title: "AI Fraud and Deepfakes Power Personalized Scam Attacks by 2026"
+title: "What Are Social Engineering Attacks Examples"
+targetQuestion: "what are social engineering attacks examples"
 seoTitled: true
 youtubeId: "Aje4_XaSR24"
 channelTitle: "ThioJoe"

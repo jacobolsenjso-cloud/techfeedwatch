@@ -1,5 +1,6 @@
 ---
-title: "How Does Generative Engine Optimization Boost LLM AI Discoverability?"
+title: "What Is the Difference Between GEO and SEO?"
+targetQuestion: "what is difference between geo and seo"
 titleShortened: true
 seoTitled: true
 youtubeId: "Pi9GjgNFwqo"

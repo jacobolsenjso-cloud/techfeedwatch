@@ -1,5 +1,6 @@
 ---
-title: "Fintech AI Pressures Traditional Wealth Management"
+title: "How AI Is Used in Finance for Transformation"
+targetQuestion: "how is ai used in finance"
 titleShortened: true
 seoTitled: true
 youtubeId: "qkhWvBZ4ycQ"

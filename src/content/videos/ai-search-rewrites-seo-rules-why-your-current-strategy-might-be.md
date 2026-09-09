@@ -1,5 +1,6 @@
 ---
-title: "Google AI Overviews Drive Answer Engine Optimization Strategy"
+title: "What Is Answer Engine Optimization AEO Defined"
+targetQuestion: "what is answer engine optimization (aeo)"
 titleShortened: true
 seoTitled: true
 youtubeId: "zawsAmcN71M"

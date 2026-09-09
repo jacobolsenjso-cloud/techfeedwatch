@@ -1,5 +1,6 @@
 ---
-title: "US AI Strategy: Open-Source Vulnerability in Global Race"
+title: "Open Source AI Versus Closed Models Explained"
+targetQuestion: "what is open source ai vs closed"
 youtubeId: "lWMebfCc5f4"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

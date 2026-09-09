@@ -1,5 +1,6 @@
 ---
-title: "How Activist Shareholders Drive Corporate Strategic Shifts"
+title: "How Does Activist Investing Work to Influence Companies?"
+targetQuestion: "how does activist investing work"
 youtubeId: "X_t6-mze0J4"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

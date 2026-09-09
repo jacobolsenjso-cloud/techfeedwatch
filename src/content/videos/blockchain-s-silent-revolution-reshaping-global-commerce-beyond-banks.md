@@ -1,5 +1,6 @@
 ---
-title: "Will Blockchain Decentralize Commerce From Central Banks?"
+title: "How Does Blockchain Technology Address Trust Issues with Current Technology?"
+targetQuestion: "how does blockchain technology address trust issues with current technology"
 seoTitled: true
 youtubeId: "RplnSVTzvnU"
 channelTitle: "TED"

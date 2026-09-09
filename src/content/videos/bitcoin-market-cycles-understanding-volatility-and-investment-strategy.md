@@ -1,5 +1,6 @@
 ---
-title: "Bitcoin Cycles and Volatility Management in AI Era"
+title: "How Long Do Bitcoin Cycles Last with a Four Year Pattern"
+targetQuestion: "how long do bitcoin cycles last"
 youtubeId: "TzuvZLuXzAE"
 channelTitle: "Graham Stephan"
 channelId: "UCV6KDgJskWaEckne5aPA0aQ"

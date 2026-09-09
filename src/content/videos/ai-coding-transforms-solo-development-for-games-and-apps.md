@@ -1,5 +1,6 @@
 ---
-title: "AI Coding Speeds Complex Game and App Development for Solo Devs"
+title: "How Can AI Help Game Development for Solo Developers?"
+targetQuestion: "how can ai help game development"
 youtubeId: "-QjR7xdDlT0"
 channelTitle: "Jose “The RC Flyer”"
 channelId: "UCbf3QWj4RT_nmOhdvtJqfCw"

@@ -1,5 +1,6 @@
 ---
-title: "Google Gemini 7 AI Hacks to Automate Workflows Across Workspace"
+title: "What Are Gemini Agent Skills? 7 Hacks for Google Workspace"
+targetQuestion: "what is gemini agent skills"
 titleShortened: true
 seoTitled: true
 youtubeId: "sZwN_u9DMnU"

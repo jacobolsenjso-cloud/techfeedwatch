@@ -1,5 +1,6 @@
 ---
-title: "Claude Code Builds Agency Websites with Human Design Input"
+title: "How to Make Claude Code Websites Look Better"
+targetQuestion: "how to make claude code websites look better"
 seoTitled: true
 youtubeId: "hrPKtWVE_bo"
 channelTitle: "Nic Conley"

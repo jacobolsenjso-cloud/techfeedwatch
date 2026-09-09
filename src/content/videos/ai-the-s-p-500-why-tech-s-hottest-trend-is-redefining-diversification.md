@@ -1,5 +1,6 @@
 ---
-title: "Does AI Mega-Cap Tech Undermine S P 500 Diversification?"
+title: "S and P 500 Diversification Risk Under Scrutiny"
+targetQuestion: "s&p 500 diversification risk"
 titleShortened: true
 seoTitled: true
 youtubeId: "HNVg81nA2J8"

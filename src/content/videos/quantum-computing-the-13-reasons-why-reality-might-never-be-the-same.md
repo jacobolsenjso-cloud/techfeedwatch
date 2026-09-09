@@ -1,5 +1,6 @@
 ---
-title: "Can Quantum Computing Solve Intractable Challenges?"
+title: "How Quantum Computing Uses Superposition Principles"
+targetQuestion: "how does quantum computing use superposition"
 seoTitled: true
 youtubeId: "OZeHj48g9Rc"
 channelTitle: "Top Niche Market"

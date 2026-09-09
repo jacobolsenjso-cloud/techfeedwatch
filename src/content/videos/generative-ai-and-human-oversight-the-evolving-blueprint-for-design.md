@@ -1,5 +1,6 @@
 ---
-title: "How Generative AI Design Changes Human Oversight in FreeCAD Automation"
+title: "How Does Generative AI Impact Product Design in FreeCAD?"
+targetQuestion: "how does generative ai impact product design"
 seoTitled: true
 youtubeId: "IBrU7fRg3pk"
 channelTitle: "Creditizens - AI Systems for Builders"

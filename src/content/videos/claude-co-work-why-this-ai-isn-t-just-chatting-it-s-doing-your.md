@@ -1,5 +1,6 @@
 ---
-title: "Claude Co-work: AI Integrated Agents for Task Automation"
+title: "What Is Claude Co-work Used for Automating Business Tasks"
+targetQuestion: "what is claude co-work used for"
 seoTitled: true
 youtubeId: "oUIxPCagoQU"
 channelTitle: "Coffee & Contracts | Real Estate Marketing"

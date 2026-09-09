@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing Career: Algorithmic Lag Makes Early Exit Smart"
+title: "What Is Quantum Computing Used for Today? Less Than You Think"
+targetQuestion: "what is quantum computing used for today"
 titleShortened: true
 seoTitled: true
 youtubeId: "pDj1QhPOVBo"

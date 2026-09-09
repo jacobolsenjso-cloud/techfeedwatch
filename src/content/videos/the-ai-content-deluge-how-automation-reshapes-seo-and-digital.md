@@ -1,5 +1,6 @@
 ---
-title: "AI Content SEO: Claude Automates Large-Scale Visibility"
+title: "How Does AI Change SEO Strategies"
+targetQuestion: "how does ai change seo"
 titleShortened: true
 seoTitled: true
 youtubeId: "ZBSJ_8nFJpw"

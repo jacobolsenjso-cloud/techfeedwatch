@@ -1,5 +1,6 @@
 ---
-title: "How to Develop Specific AI Apps with Open-Source Agents?"
+title: "What Open Source AI Agents Offer Businesses"
+targetQuestion: "what are open source ai agents"
 youtubeId: "zjFE-dBzP_E"
 channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"

@@ -1,5 +1,6 @@
 ---
-title: "How Does HTML SEO On-Page Optimization Boost Organic Visibility?"
+title: "How Do Html Tags Affect SEO?"
+targetQuestion: "how do html tags affect seo"
 seoTitled: true
 youtubeId: "R4EYtFoiSrg"
 channelTitle: "CodeLucky"

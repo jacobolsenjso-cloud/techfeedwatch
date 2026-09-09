@@ -1,5 +1,6 @@
 ---
-title: "Python Pandas Drives Quant Investment Decisions"
+title: "How to Use yfinance in Python for Quant Investing"
+targetQuestion: "how to use yfinance python"
 seoTitled: true
 youtubeId: "b9RgHa1CnH4"
 channelTitle: "Daniel Boctor"

@@ -1,5 +1,6 @@
 ---
-title: "Why Web3 Decentralization's Promise Faces Real-World Hurdles"
+title: "What Is Web2 and What Is Web3's Internet Evolution?"
+targetQuestion: "what is web2 and what is web3"
 seoTitled: true
 youtubeId: "wHTcrmhskto"
 channelTitle: "Fireship"

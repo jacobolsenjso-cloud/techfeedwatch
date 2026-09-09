@@ -1,5 +1,6 @@
 ---
-title: "Converging AI Quantum AR Reshapes 2026 Information Tasks"
+title: "What Is Quantum AI, and How It Converges with AR in 2026"
+targetQuestion: "what is quantum ai"
 seoTitled: true
 youtubeId: "6OlUMND1htQ"
 channelTitle: "AI Creator Mastery"

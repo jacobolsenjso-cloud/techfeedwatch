@@ -1,5 +1,6 @@
 ---
-title: "Did Google Willow Quantum Chip Solve a Problem Aiding Many-Worlds?"
+title: "What Problem Did Google's Willow Chip Solve? Why It Matters"
+targetQuestion: "what problem did google's willow chip solve"
 titleShortened: true
 seoTitled: true
 youtubeId: "lwiRg_TNrek"

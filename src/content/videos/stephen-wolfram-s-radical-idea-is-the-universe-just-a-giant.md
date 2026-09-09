@@ -1,5 +1,6 @@
 ---
-title: "Does Stephen Wolfram's Hypergraph Theory Explain All Physics?"
+title: "What Is a Computational Universe According to Wolfram"
+targetQuestion: "what is a computational universe"
 seoTitled: true
 youtubeId: "4-SGpEInX_c"
 channelTitle: "Lex Fridman"

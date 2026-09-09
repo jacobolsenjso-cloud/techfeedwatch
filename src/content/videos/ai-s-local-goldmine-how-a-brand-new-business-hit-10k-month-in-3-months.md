@@ -1,5 +1,6 @@
 ---
-title: "How AI-Driven Digital Machines Change Local Business Revenue"
+title: "Small Businesses Using AI for Content Generation"
+targetQuestion: "what are small businesses using ai for"
 seoTitled: true
 youtubeId: "V1vFf-9Gzlo"
 channelTitle: "Income stream surfers"

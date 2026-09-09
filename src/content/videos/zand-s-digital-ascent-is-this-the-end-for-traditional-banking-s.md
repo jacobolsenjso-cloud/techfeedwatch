@@ -1,5 +1,6 @@
 ---
-title: "Digital Banks UAE: Zand's Agile Platforms Challenge Legacy Banks"
+title: "Zand Bank UAE Redefines Digital Finance"
+targetQuestion: "what is zand bank in uae"
 seoTitled: true
 youtubeId: "N0CRAhi4qo0"
 channelTitle: "Couchonomics with Arjun"

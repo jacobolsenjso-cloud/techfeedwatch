@@ -1,5 +1,6 @@
 ---
-title: "How Demis Hassabis AGI Simulates Reality Redefining Scientific AI"
+title: "How Does Demis Hassabis Define AGI?"
+targetQuestion: "how does demis hassabis define agi"
 seoTitled: true
 youtubeId: "-HzgcbRXUK8"
 channelTitle: "Lex Fridman"

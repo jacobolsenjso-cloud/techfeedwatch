@@ -1,5 +1,6 @@
 ---
-title: "Do ML Engineers Develop Models or AI Engineers Apply Them?"
+title: "What Is the Difference Between Machine Learning Engineer and AI Engineer"
+targetQuestion: "difference between machine learning engineer and ai engineer"
 titleShortened: true
 seoTitled: true
 youtubeId: "cqDQV5g7zHo"

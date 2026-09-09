@@ -1,5 +1,6 @@
 ---
-title: "Modern Web3 Solidity DApps with AI Oracles and Blockchain"
+title: "What Is Smart Contract Development in Web3 with AI Tools?"
+targetQuestion: "what is smart contract development"
 seoTitled: true
 youtubeId: "umepbfKp5rI"
 channelTitle: "Patrick Collins"

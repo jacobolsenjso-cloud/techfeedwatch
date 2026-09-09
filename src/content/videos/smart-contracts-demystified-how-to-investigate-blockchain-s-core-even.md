@@ -1,5 +1,6 @@
 ---
-title: "What Inspecting Smart Contracts Without Code Means for NFTs"
+title: "How to Use Etherscan to Inspect Smart Contracts and NFTs"
+targetQuestion: "how to use etherscan"
 titleShortened: true
 seoTitled: true
 youtubeId: "HHLhmaJta58"

@@ -1,5 +1,6 @@
 ---
-title: "What Revised Quantum Roadmaps Mean for Investment"
+title: "What Is Hybrid Quantum Classical Computing, and Why Now?"
+targetQuestion: "what is hybrid quantum classical computing"
 titleShortened: true
 seoTitled: true
 youtubeId: "spRN7DfzhrU"

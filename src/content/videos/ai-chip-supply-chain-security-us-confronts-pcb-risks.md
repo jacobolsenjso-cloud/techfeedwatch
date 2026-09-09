@@ -1,5 +1,6 @@
 ---
-title: "AI Chips: US Confronts China PCB Malicious Component Risk"
+title: "AI Chips Supply Chain Vulnerabilities and US Reliance"
+targetQuestion: "ai chips supply chain"
 youtubeId: "XQWI7HdGbZ4"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

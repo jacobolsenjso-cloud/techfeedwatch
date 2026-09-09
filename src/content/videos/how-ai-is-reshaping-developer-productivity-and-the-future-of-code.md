@@ -1,5 +1,6 @@
 ---
-title: "AI Coding Assistants Boost Productivity Generating Code Faster"
+title: "What Are AI Coding Skills Developers Need Now?"
+targetQuestion: "what are ai coding skills"
 titleShortened: true
 seoTitled: true
 youtubeId: "wwfJlSF34n8"

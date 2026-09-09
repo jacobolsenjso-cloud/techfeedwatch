@@ -1,5 +1,6 @@
 ---
-title: "AEO: Dominating AI Search Answers with Curated Content"
+title: "What Is the Difference Between AEO and SEO?"
+targetQuestion: "what is difference between aeo and seo"
 titleShortened: true
 seoTitled: true
 youtubeId: "LxGyfu8A10M"

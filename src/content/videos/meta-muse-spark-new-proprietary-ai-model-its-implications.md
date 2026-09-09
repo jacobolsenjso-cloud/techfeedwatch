@@ -1,5 +1,6 @@
 ---
-title: "Meta Shifts to Proprietary AI Monetization with Muse Spark"
+title: "Why Did Meta AI Strategy Change with Muse Spark?"
+targetQuestion: "why did meta ai change"
 youtubeId: "rXSPopXet1o"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

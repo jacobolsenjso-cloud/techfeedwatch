@@ -1,5 +1,6 @@
 ---
-title: "Integrating AI SEO Requires Human Oversight for Quality Rankings"
+title: "How AI Affects SEO Strategy and Efficiency"
+targetQuestion: "how does ai affect seo"
 titleShortened: true
 seoTitled: true
 youtubeId: "yCxlgCkw7as"

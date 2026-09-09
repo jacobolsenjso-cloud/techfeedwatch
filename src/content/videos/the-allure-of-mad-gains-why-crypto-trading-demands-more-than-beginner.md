@@ -1,5 +1,6 @@
 ---
-title: "Beginner Crypto Trading Guides Overlook Volatility and Discipline"
+title: "What Is Crypto Market Volatility and Its Impact"
+targetQuestion: "what is crypto market volatility"
 titleShortened: true
 seoTitled: true
 youtubeId: "14HIIUjOLGY"

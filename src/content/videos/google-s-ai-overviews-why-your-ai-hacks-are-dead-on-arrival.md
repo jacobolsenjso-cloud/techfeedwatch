@@ -1,5 +1,6 @@
 ---
-title: "How Google AI Overviews Ignores SEO AI Hacks for Standard Content"
+title: "How to Optimize Content for Google AI Overview"
+targetQuestion: "how to optimize content for google ai overview"
 seoTitled: true
 youtubeId: "1GiYkMYJLPs"
 channelTitle: "Drupal & SEO"

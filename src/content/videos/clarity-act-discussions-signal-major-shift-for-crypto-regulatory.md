@@ -1,5 +1,6 @@
 ---
-title: "Clarity Act Seeks to Define Crypto Securities or Commodities"
+title: "What Is Crypto Clarity and Why It Matters"
+targetQuestion: "what is crypto clarity"
 seoTitled: true
 youtubeId: "Up9AcAKAVSY"
 channelTitle: "Altcoin Daily"

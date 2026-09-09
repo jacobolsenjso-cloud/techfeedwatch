@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing How Superposition and Qubits Work"
+title: "What Are Qubits and How Do They Work in Quantum Computing"
+targetQuestion: "what are qubits and how do they work"
 seoTitled: true
 youtubeId: "-1PsQIciMEc"
 channelTitle: "World Science Festival"

@@ -1,5 +1,6 @@
 ---
-title: "Solana Escrow Smart Contracts Remove Trust From Web3 Transactions"
+title: "What Is Smart Contract Escrow on Solana, and How It Works"
+targetQuestion: "what is smart contract escrow"
 titleShortened: true
 seoTitled: true
 youtubeId: "8FUlQda-8fU"

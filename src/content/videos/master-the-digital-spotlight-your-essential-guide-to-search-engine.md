@@ -1,5 +1,6 @@
 ---
-title: "Modern SEO: Master Search Engine Algorithms Combating Manipulation"
+title: "What Is SEO and How Search Engines Work"
+targetQuestion: "what is seo and how search engines work"
 seoTitled: true
 youtubeId: "COL_qPL5xsg"
 channelTitle: "Techquickie"

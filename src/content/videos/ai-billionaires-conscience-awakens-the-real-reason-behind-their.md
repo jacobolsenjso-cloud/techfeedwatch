@@ -1,5 +1,6 @@
 ---
-title: "AI Billionaires' Philanthropy Addresses Public Job Fears"
+title: "How Can AI Increase Wealth Inequality? Why Billionaires Worry"
+targetQuestion: "how can ai increase wealth inequality"
 seoTitled: true
 youtubeId: "GRc4hWdocEw"
 channelTitle: "House of El: AI"

@@ -1,5 +1,6 @@
 ---
-title: "Ethereum 2026 Powers Programmable Money and Global Settlement"
+title: "How Does Ethereum Work as Programmable Money in 2026?"
+targetQuestion: "how does ethereum work"
 seoTitled: true
 youtubeId: "JsSQ0F6V9nQ"
 channelTitle: "Teacher Everything"

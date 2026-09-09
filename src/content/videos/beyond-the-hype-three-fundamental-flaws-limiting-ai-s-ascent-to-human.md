@@ -1,5 +1,6 @@
 ---
-title: "What AI's AGI Architectural Constraints Mean for Human Reasoning"
+title: "Generalization in LLM Models Poses a Major Hurdle"
+targetQuestion: "what is generalization in llm"
 seoTitled: true
 youtubeId: "984qBh164fo"
 channelTitle: "Sabine Hossenfelder"

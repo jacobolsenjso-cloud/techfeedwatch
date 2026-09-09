@@ -1,5 +1,6 @@
 ---
-title: "What Advanced AI Prompt Engineering Means for LLM Value"
+title: "What Does Prompt Engineering Primarily Involve for AI"
+targetQuestion: "what does prompt engineering primarily involve"
 seoTitled: true
 youtubeId: "VnEoS2eQXsw"
 channelTitle: "Varun Mayya"

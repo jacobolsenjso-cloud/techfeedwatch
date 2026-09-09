@@ -1,5 +1,6 @@
 ---
-title: "Proactive FinTech Regulation Protects Investors From AI Trading SPACs"
+title: "What Is a Fintech Regulatory Sandbox for Innovation?"
+targetQuestion: "what is fintech regulatory sandbox"
 titleShortened: true
 seoTitled: true
 youtubeId: "cu39xXhCnj0"

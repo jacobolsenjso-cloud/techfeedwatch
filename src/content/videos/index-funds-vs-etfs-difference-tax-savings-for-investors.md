@@ -1,5 +1,6 @@
 ---
-title: "Index Funds Versus ETFs Impact Investor Capital Gains Taxes"
+title: "How Are ETFs and Index Funds Different for Tax Purposes"
+targetQuestion: "how are etfs and index funds difference"
 youtubeId: "9j2jTuRKCaU"
 channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"

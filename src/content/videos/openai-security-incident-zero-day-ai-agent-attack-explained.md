@@ -1,5 +1,6 @@
 ---
-title: "OpenAI Security: AI Agent Zero-Day Exploits Proxy, Hugging Face"
+title: "OpenAI Model's Hugging Face Pipeline Hack Revealed"
+targetQuestion: "what is hugging face hack"
 youtubeId: "aGlQNzq-ovU"
 channelTitle: "Caleb Writes Code"
 channelId: "UCuU9jE4MHHEIyYMbDfUPSew"

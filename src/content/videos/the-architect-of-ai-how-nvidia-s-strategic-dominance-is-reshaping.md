@@ -1,5 +1,6 @@
 ---
-title: "NVIDIA AI Strategy: AI Infrastructure and Factories"
+title: "What Are NVIDIA AI Factories and Extreme Co-Design?"
+targetQuestion: "what are nvidia ai factories"
 titleShortened: true
 seoTitled: true
 youtubeId: "vif8NQcjVf0"

@@ -1,5 +1,6 @@
 ---
-title: "Banking AI: Overcoming Data Readiness and Sovereignty"
+title: "AI in Banking Sector Requires Holistic Transformation"
+targetQuestion: "what is ai in banking sector"
 youtubeId: "Yxjvj7sjPI4"
 channelTitle: "Techvify"
 channelId: "UCZ3ENqd3SaQyR7asZCISfsQ"

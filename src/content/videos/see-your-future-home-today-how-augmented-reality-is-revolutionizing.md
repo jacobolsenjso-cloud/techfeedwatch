@@ -1,5 +1,6 @@
 ---
-title: "How Augmented Reality Overlays Your Home Interior Design"
+title: "AR in Interior Design Transforms Home Visualization"
+targetQuestion: "what is ar in interior design"
 seoTitled: true
 youtubeId: "YSUpB3z8NHc"
 channelTitle: "Ambiens"

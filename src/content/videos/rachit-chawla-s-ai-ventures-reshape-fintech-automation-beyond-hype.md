@@ -1,5 +1,6 @@
 ---
-title: "Algorithmic AI: Fintech Reshapes Capital Markets via Automation"
+title: "What Is AI Algorithmic Trading"
+targetQuestion: "what is ai algorithmic trading"
 seoTitled: true
 youtubeId: "XzYP5_K90q8"
 channelTitle: "Shouryaa Sharma"

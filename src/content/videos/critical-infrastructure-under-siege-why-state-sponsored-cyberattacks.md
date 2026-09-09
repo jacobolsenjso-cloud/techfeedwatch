@@ -1,5 +1,6 @@
 ---
-title: "State-Sponsored APTs Evade Defenses Targeting Critical Infrastructure"
+title: "State Sponsored APT Groups Threaten Critical Infrastructure"
+targetQuestion: "what is state sponsored apt"
 titleShortened: true
 seoTitled: true
 youtubeId: "52HdL_uRal8"

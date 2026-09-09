@@ -1,5 +1,6 @@
 ---
-title: "How Zero Trust Security Verifies All Access to Prevent Cyberattacks"
+title: "What Is the Zero Trust Security Model"
+targetQuestion: "what is zero trust security model"
 titleShortened: true
 seoTitled: true
 youtubeId: "gb2CJP8oUuw"

@@ -1,5 +1,6 @@
 ---
-title: "Blockchain Oracles Bring Real-World Data to Smart Contracts"
+title: "What Is the Blockchain Oracle Problem"
+targetQuestion: "what is the blockchain oracle problem"
 seoTitled: true
 youtubeId: "m64dLRjJ9Bs"
 channelTitle: "Hashoshi"

@@ -1,5 +1,6 @@
 ---
-title: "How DeepSeek V4 Open-Source AI Outperforms Billion-Dollar LLMs"
+title: "DeepSeek V4 Flash Is a Lighter, Faster AI Model"
+targetQuestion: "what is deepseek v4 flash"
 youtubeId: "p7K3xfViWCE"
 channelTitle: "Two Minute Papers"
 channelId: "UCbfYPyITQ-7l4upoX8nvctg"

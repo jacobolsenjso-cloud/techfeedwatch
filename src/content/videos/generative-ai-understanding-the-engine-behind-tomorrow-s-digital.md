@@ -1,5 +1,6 @@
 ---
-title: "Generative AI's Core: Deep Learning, Abundant Data, GPU Compute"
+title: "Generative AI Versus AI: Creating New Content"
+targetQuestion: "what is generative ai vs ai"
 titleShortened: true
 seoTitled: true
 youtubeId: "b76gsOSkHB4"

@@ -1,5 +1,6 @@
 ---
-title: "US Banking Opposition Slows Crypto Clarity Act"
+title: "Is Cryptocurrency Clearly Regulated in the US?"
+targetQuestion: "is cryptocurrency regulated in the us"
 youtubeId: "Kz2siKZjNQA"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

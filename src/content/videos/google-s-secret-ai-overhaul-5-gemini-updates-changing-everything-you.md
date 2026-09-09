@@ -1,5 +1,6 @@
 ---
-title: "Google Gemini: AI as a Core Component of Digital Workflows"
+title: "What Are Google Gemini's New Features? 5 Updates Explained"
+targetQuestion: "what are google gemini features"
 seoTitled: true
 youtubeId: "ldVPIMmTkpo"
 channelTitle: "Next Level AI"

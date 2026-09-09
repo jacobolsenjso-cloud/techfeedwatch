@@ -1,5 +1,6 @@
 ---
-title: "AR vs VR: Differences, Applications & Future Impact"
+title: "What Are the Fundamental Differences Between AR and VR?"
+targetQuestion: "what are the differences between ar and vr"
 seoTitled: true
 youtubeId: "f9MwaH6oGEY"
 channelTitle: "ColdFusion"

@@ -1,5 +1,6 @@
 ---
-title: "Open APIs and Metaverse Transform Payments for Finance Firms"
+title: "How Do Open Banking APIs Work for Payments and Finance Firms?"
+targetQuestion: "how do open banking apis work"
 seoTitled: true
 youtubeId: "m10_bmtJmvE"
 channelTitle: "Couchonomics with Arjun"

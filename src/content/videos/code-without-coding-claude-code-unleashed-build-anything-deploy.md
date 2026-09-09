@@ -1,5 +1,6 @@
 ---
-title: "No-Code AI: Claude Code Empowers Citizen Developers to Build Apps"
+title: "What Is a No Code AI Agent and How It Works"
+targetQuestion: "what is no code ai agent"
 seoTitled: true
 youtubeId: "5tgHMa2Z3jc"
 channelTitle: "Futurepedia"

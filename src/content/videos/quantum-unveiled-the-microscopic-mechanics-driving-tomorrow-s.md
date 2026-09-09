@@ -1,5 +1,6 @@
 ---
-title: "Quantum Mechanics Underpins Precise Sensors and Quantum Computers"
+title: "What Is Quantum Mechanics Used for? Sensors and Computers"
+targetQuestion: "what is quantum mechanics used for"
 titleShortened: true
 seoTitled: true
 youtubeId: "t06aTX9jM34"

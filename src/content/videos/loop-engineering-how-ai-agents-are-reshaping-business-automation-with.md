@@ -1,5 +1,6 @@
 ---
-title: "AI Agent Loops Automate Business with Self Optimizing LLM Cycles"
+title: "What Is an AI Agent Loop in Business Automation"
+targetQuestion: "what is ai agent loop"
 seoTitled: true
 youtubeId: "5p_BBdfvzgQ"
 channelTitle: "Greg Isenberg"

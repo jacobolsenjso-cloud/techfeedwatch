@@ -1,5 +1,6 @@
 ---
-title: "How Does Algorithmic Bias Skew Search From Human Decisions?"
+title: "How Does Algorithmic Bias Occur From Human Decisions?"
+targetQuestion: "how does algorithmic bias occur"
 titleShortened: true
 seoTitled: true
 youtubeId: "_vBggxCNNno"

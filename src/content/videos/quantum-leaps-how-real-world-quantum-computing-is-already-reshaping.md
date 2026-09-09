@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing Solves Urban Logistics Mobility Problems Now"
+title: "Hybrid Quantum Systems Integrate Classical and Quantum Processors"
+targetQuestion: "what are hybrid quantum systems"
 seoTitled: true
 youtubeId: "GQlC3NYRjK8"
 channelTitle: "D-Wave"

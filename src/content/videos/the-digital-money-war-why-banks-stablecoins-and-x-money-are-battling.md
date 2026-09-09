@@ -1,5 +1,6 @@
 ---
-title: "Digital Money: Banks, Stablecoins, CBDCs Engage in Arms Race"
+title: "What Is the Purpose of Stablecoins in the Digital Money War?"
+targetQuestion: "what is the purpose of stablecoin"
 titleShortened: true
 seoTitled: true
 youtubeId: "2QfSQybsJsE"

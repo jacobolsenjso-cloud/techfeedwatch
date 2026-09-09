@@ -1,5 +1,6 @@
 ---
-title: "How Edge AI On-Device Inference Changes AI Hardware Deployment"
+title: "What Is Edge AI Computing and How It Works"
+targetQuestion: "what is edge ai computing"
 youtubeId: "9frb_VfaUHw"
 channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"

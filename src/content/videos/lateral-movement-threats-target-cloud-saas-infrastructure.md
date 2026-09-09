@@ -1,5 +1,6 @@
 ---
-title: "Lateral Movement: Threats Exploit Cloud, SaaS, Infrastructure"
+title: "What Is Lateral Movement Risk in Modern IT?"
+targetQuestion: "what is lateral movement risk"
 youtubeId: "k6Vd_wnYbhA"
 channelTitle: "Security BSides Bangalore"
 channelId: "UC0SqOU2NDDIP0bbt5OwW8Hw"

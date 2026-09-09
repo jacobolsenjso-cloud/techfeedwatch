@@ -1,5 +1,6 @@
 ---
-title: "How Practical AI Hacking Changes LLM Vulnerability Defense"
+title: "What Is Prompt Injection Testing for AI Security"
+targetQuestion: "what is prompt injection testing"
 seoTitled: true
 youtubeId: "_yfiUQSbdPY"
 channelTitle: "NetworkChuck"

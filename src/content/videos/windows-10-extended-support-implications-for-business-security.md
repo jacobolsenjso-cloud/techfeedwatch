@@ -1,5 +1,6 @@
 ---
-title: "Windows 10 Support: New Security Vulnerabilities for Business"
+title: "What Is Windows 10 Extended Support?"
+targetQuestion: "what is windows 10 extended support"
 youtubeId: "5rGdKKjjizw"
 channelTitle: "TechLinked"
 channelId: "UCeeFfhMcJa1kjtfZAGskOCA"

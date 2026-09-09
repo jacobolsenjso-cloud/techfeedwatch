@@ -1,5 +1,6 @@
 ---
-title: "What Nvidia's AI Chip Dominance Means for Generative AI Scaling"
+title: "How Do AI Chips Work Through Parallel Processing"
+targetQuestion: "how does ai chips work"
 seoTitled: true
 youtubeId: "-s_Ui5j0Guw"
 channelTitle: "a16z"

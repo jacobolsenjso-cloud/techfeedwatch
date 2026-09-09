@@ -1,5 +1,6 @@
 ---
-title: "Ethereum: Programmable Blockchain for Trustless Digital Interactions"
+title: "What Is Ethereum and What Is It Used for Today"
+targetQuestion: "what is ethereum and what is it used for"
 titleShortened: true
 seoTitled: true
 youtubeId: "NzNNu49eZvc"

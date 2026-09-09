@@ -1,5 +1,6 @@
 ---
-title: "Meta AI: Free Muse Image, Muse Video, Pose and Depth Control"
+title: "What Is Meta AI Used for in Visual Content Creation"
+targetQuestion: "what is meta ai used for"
 titleShortened: true
 seoTitled: true
 youtubeId: "epJiVrv4KVQ"

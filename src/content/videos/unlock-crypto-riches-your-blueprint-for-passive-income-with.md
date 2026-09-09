@@ -1,5 +1,6 @@
 ---
-title: "Earn Passive Crypto Income From Proof-of-Stake Nodes and Testnets"
+title: "How to Earn Passive Income with Crypto Node Operation"
+targetQuestion: "how to earn passive income with crypto"
 titleShortened: true
 seoTitled: true
 youtubeId: "l0dzOwyPqFI"

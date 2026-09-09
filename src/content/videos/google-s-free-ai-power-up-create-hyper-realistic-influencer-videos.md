@@ -1,5 +1,6 @@
 ---
-title: "Google AI: Influencers Create Photorealistic Video, Monetize Assets"
+title: "How Are AI Influencers Created From Prompt to Persona"
+targetQuestion: "how are ai influencers created"
 titleShortened: true
 seoTitled: true
 youtubeId: "K6DTEvL1KWc"

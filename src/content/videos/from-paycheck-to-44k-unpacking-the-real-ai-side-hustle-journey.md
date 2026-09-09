@@ -1,5 +1,6 @@
 ---
-title: "Accessible AI Earns $44K for Side Hustle Career Paths"
+title: "What Is an AI Automation Side Hustle"
+targetQuestion: "what is ai automation side hustle"
 seoTitled: true
 youtubeId: "aTFABFO8wNM"
 channelTitle: "Sandy Lee AI"

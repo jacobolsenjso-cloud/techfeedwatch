@@ -1,5 +1,6 @@
 ---
-title: "Notebook LM: 10 AI Tips for Advanced Knowledge Systems"
+title: "Advanced Tips on How to Use NotebookLM"
+targetQuestion: "tips on how to use notebooklm"
 seoTitled: true
 youtubeId: "gTGAkxx4ItU"
 channelTitle: "Ai Podcast "

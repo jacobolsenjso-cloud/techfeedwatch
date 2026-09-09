@@ -1,5 +1,6 @@
 ---
-title: "Quantum Computing: Investment Boosts Qubit Progress and Viability"
+title: "Is Quantum Computing a Good Investment as Hype Persists?"
+targetQuestion: "is quantum computing a good investment"
 titleShortened: true
 seoTitled: true
 youtubeId: "gBTS7JZTyZY"

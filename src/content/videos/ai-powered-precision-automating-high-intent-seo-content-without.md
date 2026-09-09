@@ -1,5 +1,6 @@
 ---
-title: "Automate BoF High-Intent SEO Content with AI to Avoid Slop"
+title: "How to Use AI for SEO Content Generation"
+targetQuestion: "how to use ai for seo content"
 seoTitled: true
 youtubeId: "F2AD1C5KtzY"
 channelTitle: "Shanif Dhanani"

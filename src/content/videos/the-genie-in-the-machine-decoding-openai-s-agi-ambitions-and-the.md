@@ -1,5 +1,6 @@
 ---
-title: "Why OpenAI AGI Incidents Highlight the AI Control Problem"
+title: "What Is an Autonomous Agent in Artificial Intelligence"
+targetQuestion: "what is an autonomous agent in artificial intelligence"
 seoTitled: true
 youtubeId: "vfSplCaxHzM"
 channelTitle: "AI Revolution"

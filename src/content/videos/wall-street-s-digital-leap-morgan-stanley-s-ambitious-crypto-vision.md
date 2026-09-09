@@ -1,5 +1,6 @@
 ---
-title: "How Morgan Stanley Digital Asset Strategy Changes Wall Street"
+title: "What Is Crypto Tokenization and Its Financial Impact?"
+targetQuestion: "what is crypto tokenization"
 titleShortened: true
 seoTitled: true
 youtubeId: "g9WFO0M9KT4"

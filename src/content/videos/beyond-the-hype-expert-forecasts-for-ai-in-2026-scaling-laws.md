@@ -1,5 +1,6 @@
 ---
-title: "Open Models Challenge US Incumbents Creating AI's Fragmented Future"
+title: "What Do Open Weight Models Mean for AI in 2026?"
+targetQuestion: "what does open weight models mean"
 titleShortened: true
 seoTitled: true
 youtubeId: "EV7WhVT270Q"

@@ -1,5 +1,6 @@
 ---
-title: "How Does AI Fully Automate SEO and Social Media Marketing?"
+title: "How AI Is Used in Social Media Marketing Today"
+targetQuestion: "how ai is used in social media"
 seoTitled: true
 youtubeId: "DYkZ5CXmkxo"
 channelTitle: "Tim The SEO Guru"

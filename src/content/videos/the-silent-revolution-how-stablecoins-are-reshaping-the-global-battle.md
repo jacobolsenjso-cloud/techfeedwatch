@@ -1,5 +1,6 @@
 ---
-title: "Big Tech's Battle for Customer Control of Stablecoin Data"
+title: "Stablecoin Infrastructure Becomes Essential for Modern Finance"
+targetQuestion: "what is stablecoin infrastructure"
 titleShortened: true
 seoTitled: true
 youtubeId: "u0SfAX3eIqk"

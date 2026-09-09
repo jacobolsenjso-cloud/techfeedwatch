@@ -1,5 +1,6 @@
 ---
-title: "Google Quantum AI Pushes Simulated Reality Into Science"
+title: "What Is Google's Quantum Computer Used for Beyond Speed?"
+targetQuestion: "what is google's quantum computer used for"
 seoTitled: true
 youtubeId: "pIj-oBWJzS0"
 channelTitle: "OrbitraX History"

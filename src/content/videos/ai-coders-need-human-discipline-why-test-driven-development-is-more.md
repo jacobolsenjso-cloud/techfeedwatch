@@ -1,5 +1,6 @@
 ---
-title: "Test-Driven Development Guards AI Code Quality and Oversight"
+title: "What Is TDD in the Age of AI Coding Agents?"
+targetQuestion: "what is tdd ai"
 seoTitled: true
 youtubeId: "bDLdZIAjH5Y"
 channelTitle: "Modern Software Engineering"

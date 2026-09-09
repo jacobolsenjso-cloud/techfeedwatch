@@ -1,5 +1,6 @@
 ---
-title: "Local Business AI SEO Disrupts Traditional Agencies"
+title: "How to Use AI for Small Business Marketing Success"
+targetQuestion: "how to use ai for small business marketing"
 titleShortened: true
 seoTitled: true
 youtubeId: "gWNFna6fgS8"

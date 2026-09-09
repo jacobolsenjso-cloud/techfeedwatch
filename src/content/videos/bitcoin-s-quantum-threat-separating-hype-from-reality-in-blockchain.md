@@ -1,5 +1,6 @@
 ---
-title: "Quantum Threat to Bitcoin's ECC Needs Post-Quantum Defense"
+title: "How Does Quantum Computing Threaten Bitcoin's Security"
+targetQuestion: "how does quantum computing threaten bitcoin's security"
 titleShortened: true
 seoTitled: true
 youtubeId: "kLV2Cqsahbw"

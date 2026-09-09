@@ -1,5 +1,6 @@
 ---
-title: "Ethereum Rollups and PoS Scale Web3 Settlement Layer"
+title: "How Does Ethereum Proof of Stake Work"
+targetQuestion: "how does ethereum proof of stake work"
 seoTitled: true
 youtubeId: "On-B0WGqOZ0"
 channelTitle: "Coin Bureau"

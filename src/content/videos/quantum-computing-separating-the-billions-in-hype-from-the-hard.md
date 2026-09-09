@@ -1,5 +1,6 @@
 ---
-title: "How Billions in Quantum Computing Get Stuck in R&D"
+title: "What Is Quantum Computing Explained Simply"
+targetQuestion: "what is quantum computing explained simply"
 seoTitled: true
 youtubeId: "SnIEu8OSXDs"
 channelTitle: "The Verge"

@@ -1,5 +1,6 @@
 ---
-title: "How Prompt Engineering Delivers Precise AI Output From Human Intent"
+title: "What Is Prompt Engineering in Generative AI"
+targetQuestion: "what is prompt engineering in generative ai"
 titleShortened: true
 seoTitled: true
 youtubeId: "PFsbWAC4_rk"

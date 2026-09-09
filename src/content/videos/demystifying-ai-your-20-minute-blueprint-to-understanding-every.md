@@ -1,5 +1,6 @@
 ---
-title: "What Types of Specialized AI Models Generate Text or Video?"
+title: "What Is a Frontier Model?"
+targetQuestion: "what is frontier model"
 seoTitled: true
 youtubeId: "I0me2uEbfuE"
 channelTitle: "Matthew Berman"

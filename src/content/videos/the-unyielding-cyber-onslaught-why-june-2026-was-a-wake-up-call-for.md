@@ -1,5 +1,6 @@
 ---
-title: "Cybersecurity Incidents June 2026: Systemic Vulnerabilities Exposed"
+title: "Major Data Breaches June 2026 Revealed Critical Flaws"
+targetQuestion: "data breaches june 2026"
 titleShortened: true
 seoTitled: true
 youtubeId: "dUdl7XtRh4k"

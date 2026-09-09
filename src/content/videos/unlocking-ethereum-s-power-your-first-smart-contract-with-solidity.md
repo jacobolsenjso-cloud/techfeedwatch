@@ -1,5 +1,6 @@
 ---
-title: "How to Code First Ethereum Smart Contract with Solidity Remix?"
+title: "How Do Smart Contracts Work on Ethereum? Code Your First One"
+targetQuestion: "how do smart contracts work on ethereum"
 seoTitled: true
 youtubeId: "bNXJNeaYl8Q"
 channelTitle: "Block Explorer"

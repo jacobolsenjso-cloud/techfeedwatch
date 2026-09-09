@@ -1,5 +1,6 @@
 ---
-title: "Autonomous Payments: Stripe, Coinbase Challenge Banking Dominance"
+title: "How Do AI Agents Pay Each Other? Stripe and Coinbase Lead"
+targetQuestion: "how do ai agents pay each other"
 seoTitled: true
 youtubeId: "I-BRrCkz-F4"
 channelTitle: "Coin Bureau"

@@ -1,5 +1,6 @@
 ---
-title: "Desktop AI: Free Private Video Generation, No Subscriptions"
+title: "How to Make Private AI Videos on Desktop"
+targetQuestion: "how to make private ai videos"
 seoTitled: true
 youtubeId: "G2Ec3h5CfA8"
 channelTitle: "Kevin Stratvert"

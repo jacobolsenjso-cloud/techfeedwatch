@@ -1,5 +1,6 @@
 ---
-title: "Smart Contracts on Blockchain Offer Benefits and Vulnerabilities"
+title: "What Are Smart Contracts and How Do They Work"
+targetQuestion: "what are smart contracts and how do they work"
 seoTitled: true
 youtubeId: "srjUFqnfKIs"
 channelTitle: "CoinGecko"

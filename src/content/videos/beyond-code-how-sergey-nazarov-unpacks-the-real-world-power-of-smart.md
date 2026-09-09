@@ -1,5 +1,6 @@
 ---
-title: "How Smart Contracts Reshape Industry's Real-World Agreements"
+title: "How Do Smart Contracts Work in Blockchain Technology"
+targetQuestion: "how do smart contracts work in blockchain"
 titleShortened: true
 seoTitled: true
 youtubeId: "l-sTw136zAs"

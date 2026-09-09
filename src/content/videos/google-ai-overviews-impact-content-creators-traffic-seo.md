@@ -1,5 +1,6 @@
 ---
-title: "Google AI Overviews Undermine Content Creators' Clicks and SEO"
+title: "How Do AI Overviews Impact Organic Search Traffic"
+targetQuestion: "how do ai overviews impact organic search traffic"
 youtubeId: "J0lLvVYahNY"
 channelTitle: "Ahrefs"
 channelId: "UCWquNQV8Y0_defMKnGKrFOQ"

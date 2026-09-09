@@ -1,5 +1,6 @@
 ---
-title: "How Bitcoin Reshapes Modern Money, Sovereignty, Digital Property"
+title: "What Is Individual Sovereignty, and What Does Bitcoin Add?"
+targetQuestion: "what is individual sovereignty"
 titleShortened: true
 seoTitled: true
 youtubeId: "HrehEWYj16s"

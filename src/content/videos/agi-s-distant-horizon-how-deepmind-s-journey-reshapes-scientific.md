@@ -1,5 +1,6 @@
 ---
-title: "How DeepMind AlphaFold Changes Scientific Discovery"
+title: "Why Is AlphaFold So Important for Science?"
+targetQuestion: "why is alphafold important"
 seoTitled: true
 youtubeId: "JNyuX1zoOgU"
 channelTitle: "Y Combinator"

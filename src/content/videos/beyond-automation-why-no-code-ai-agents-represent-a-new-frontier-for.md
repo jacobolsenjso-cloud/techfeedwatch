@@ -1,5 +1,6 @@
 ---
-title: "No-Code AI Agents: Design Adaptive AI Workflows Without Code"
+title: "AI Agent Versus Automation: A Clear Distinction"
+targetQuestion: "what is an ai agent vs automation"
 seoTitled: true
 youtubeId: "EH5jx5qPabU"
 channelTitle: "Futurepedia"

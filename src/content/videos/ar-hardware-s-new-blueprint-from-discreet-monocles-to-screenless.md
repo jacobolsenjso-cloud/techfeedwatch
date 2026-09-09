@@ -1,5 +1,6 @@
 ---
-title: "AR Hardware Trends to Smart Glasses and Screenless Computing"
+title: "What Smart Glasses Technology Is: Hardware and Software"
+targetQuestion: "what is smart glasses technology"
 seoTitled: true
 youtubeId: "4N6yyXdYUU4"
 channelTitle: "Adam Savage’s Tested"

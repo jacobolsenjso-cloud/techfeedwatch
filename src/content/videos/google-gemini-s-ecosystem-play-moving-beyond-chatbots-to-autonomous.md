@@ -1,5 +1,6 @@
 ---
-title: "Google Gemini AI Uses Autonomous Agents for Workspace Tasks"
+title: "Autonomous Agents in AI Reshape Google Gemini's Future"
+targetQuestion: "what are autonomous agents in ai"
 seoTitled: true
 youtubeId: "xz-pG1gUS4c"
 channelTitle: "Ai Podcast "

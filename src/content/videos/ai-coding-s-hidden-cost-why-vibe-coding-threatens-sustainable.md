@@ -1,5 +1,6 @@
 ---
-title: "Vibe Coding Practices Create Architectural AI Technical Debt"
+title: "How Good Are AI Coding Tools at Architecture? the Hidden Cost"
+targetQuestion: "how good are ai coding tools"
 seoTitled: true
 youtubeId: "T539pbwTIZY"
 channelTitle: "Modern Software Engineering"

@@ -1,5 +1,6 @@
 ---
-title: "Fintech Founder Agility and Profit Exploit Incumbent Weakness"
+title: "Fintech Transformation Emphasizes Sustainable Business"
+targetQuestion: "what is fintech transformation"
 titleShortened: true
 seoTitled: true
 youtubeId: "b-z-1eK-x7c"

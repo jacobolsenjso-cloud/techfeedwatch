@@ -1,5 +1,6 @@
 ---
-title: "What Python Means for Data-Driven Algorithmic Trading Risk"
+title: "What Is Python Used in Modern Finance"
+targetQuestion: "what is python used in finance"
 seoTitled: true
 youtubeId: "i4atHI7k0Us"
 channelTitle: "NeedCode"

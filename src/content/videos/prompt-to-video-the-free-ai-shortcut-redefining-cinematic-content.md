@@ -1,5 +1,6 @@
 ---
-title: "Video AI: Free Prompt-to-Video Tools Bring Quality to Desktop"
+title: "How to Use AI Tools to Make Compelling Video Content"
+targetQuestion: "how to use ai tools to make video"
 titleShortened: true
 seoTitled: true
 youtubeId: "2cT1cb9BY_M"

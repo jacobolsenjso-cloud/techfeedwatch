@@ -1,5 +1,6 @@
 ---
-title: "Grok 4.5 Grok Build Creates No Code AI Agencies for Entrepreneurs"
+title: "How Accessible Are No Code AI Tools for Non-Technical Users"
+targetQuestion: "how accessible are no code ai tools for non technical users"
 titleShortened: true
 seoTitled: true
 youtubeId: "o3t-XtLnXi8"

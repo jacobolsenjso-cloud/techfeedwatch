@@ -1,5 +1,6 @@
 ---
-title: "Google Core Web Vitals Boost SEO Visibility and User Experience"
+title: "What Core Web Vitals Measure for User Experience"
+targetQuestion: "what does core web vitals measure"
 titleShortened: true
 seoTitled: true
 youtubeId: "-prOfvIV4Ns"

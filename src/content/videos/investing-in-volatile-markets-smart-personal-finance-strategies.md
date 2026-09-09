@@ -1,5 +1,6 @@
 ---
-title: "Investing in Volatility: Personal Finance for Long-Term Wealth"
+title: "What Is Long Term Wealth Creation Through Volatility"
+targetQuestion: "what is long term wealth creation"
 youtubeId: "yKmZnveZ-pE"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

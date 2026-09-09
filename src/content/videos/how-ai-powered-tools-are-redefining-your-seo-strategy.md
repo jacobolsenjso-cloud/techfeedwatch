@@ -1,5 +1,6 @@
 ---
-title: "AI SEO Tools Transform Your SEO Strategy"
+title: "How to Use AI for SEO and Content Optimization"
+targetQuestion: "how to use ai for seo and content optimization"
 titleShortened: true
 seoTitled: true
 youtubeId: "COMnNlUakQk"

@@ -1,5 +1,6 @@
 ---
-title: "AI Agents Bypass Least Privilege to Cause Data Loss"
+title: "What Is AI Agent Security and Its New Vulnerabilities"
+targetQuestion: "what is ai agent security"
 seoTitled: true
 youtubeId: "ho4F0yaDmr4"
 channelTitle: "Bits With Paulina"

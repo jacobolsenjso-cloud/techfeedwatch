@@ -1,5 +1,6 @@
 ---
-title: "How AI Helps Indie Hackers Build Solo Million-Dollar SaaS Faster"
+title: "What Are AI Assisted Development Tools Doing for Indie Devs?"
+targetQuestion: "what are ai assisted development tools"
 seoTitled: true
 youtubeId: "ggU7YANSojI"
 channelTitle: "Tech Builder Akash"

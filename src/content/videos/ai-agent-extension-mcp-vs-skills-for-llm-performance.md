@@ -1,5 +1,6 @@
 ---
-title: "How MCP Versus Skills Extends AI Agent LLM Adaptability"
+title: "What Is MCP vs Skills for Extending AI Agents?"
+targetQuestion: "what is mcp vs skills"
 youtubeId: "goU9VIXA8II"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

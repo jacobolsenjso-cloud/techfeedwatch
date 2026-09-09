@@ -1,5 +1,6 @@
 ---
-title: "AI Engineering 2025 Roadmap LLM Prompt Design and Orchestration"
+title: "How to Become an AI Engineer in 2025 by Mastering New Skills"
+targetQuestion: "how to become ai engineer 2025"
 seoTitled: true
 youtubeId: "PSWUr5E_OKY"
 channelTitle: "Greg Kamradt"

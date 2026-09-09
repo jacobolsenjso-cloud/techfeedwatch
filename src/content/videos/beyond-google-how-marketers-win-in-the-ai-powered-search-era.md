@@ -1,5 +1,6 @@
 ---
-title: "AI Search: Marketers Win with AEO, GEO, PEO Content"
+title: "What Is AI Search Engine Optimization Now Called"
+targetQuestion: "what is ai search engine optimization called"
 seoTitled: true
 youtubeId: "-8nM4ypUdUM"
 channelTitle: "AI4NTP (AI 4 Non Techy People)"

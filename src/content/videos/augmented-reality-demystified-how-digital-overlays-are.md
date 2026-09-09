@@ -1,5 +1,6 @@
 ---
-title: "Augmented Reality Layers Digital Info in Real Time for Business"
+title: "What Is AR and How Augmented Reality Works"
+targetQuestion: "what is ar how it works"
 titleShortened: true
 seoTitled: true
 youtubeId: "Gy05tGLW3PE"

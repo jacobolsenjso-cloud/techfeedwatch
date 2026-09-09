@@ -1,5 +1,6 @@
 ---
-title: "How Proactive Security Changes Enterprise Risk Management"
+title: "What Is a Proactive Approach in Cyber Security for Business?"
+targetQuestion: "what is proactive approach in cyber security"
 youtubeId: "ErqOznWDado"
 channelTitle: "WJOB 1230"
 channelId: "UCr5CdykXHMvsAVRQXT6p16g"

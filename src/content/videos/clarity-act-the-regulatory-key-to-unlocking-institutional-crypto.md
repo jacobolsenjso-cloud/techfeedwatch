@@ -1,5 +1,6 @@
 ---
-title: "Why Regulatory Clarity Shifts Trillions From Legacy to Blockchain"
+title: "What Is Tokenization of Financial Assets in Modern Finance"
+targetQuestion: "what is tokenization of financial assets"
 seoTitled: true
 youtubeId: "zR3XAvr6uLw"
 channelTitle: "Yahoo Finance"

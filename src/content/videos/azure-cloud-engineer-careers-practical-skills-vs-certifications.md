@@ -1,5 +1,6 @@
 ---
-title: "How Project Skills Change Azure Engineer Certifications' Role"
+title: "Microsoft Azure Certification Value Shifts to Practical Skills"
+targetQuestion: "microsoft azure certification value"
 titleShortened: true
 youtubeId: "Py9uturi9ho"
 channelTitle: "Cloudtechexec"

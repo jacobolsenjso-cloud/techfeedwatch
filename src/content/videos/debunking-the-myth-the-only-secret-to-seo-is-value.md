@@ -1,5 +1,6 @@
 ---
-title: "SEO Best Practices: User Value Trumps Keyword Density, Link Schemes"
+title: "Current SEO Best Practices Deliver User Value"
+targetQuestion: "what are current seo best practices"
 seoTitled: true
 youtubeId: "bHvPyTWDrFU"
 channelTitle: "Code of Entry"

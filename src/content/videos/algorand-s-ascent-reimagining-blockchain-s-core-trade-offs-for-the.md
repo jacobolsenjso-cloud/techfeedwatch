@@ -1,5 +1,6 @@
 ---
-title: "Algorand Balances Scalability, Security, Decentralization"
+title: "What Is Blockchain and Why Is It Important? Algorand's Answer"
+targetQuestion: "what is blockchain and why is it important"
 titleShortened: true
 seoTitled: true
 youtubeId: "zNdhgOk4-fE"

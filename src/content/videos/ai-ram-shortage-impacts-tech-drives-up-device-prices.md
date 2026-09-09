@@ -1,5 +1,6 @@
 ---
-title: "How AI HBM Shortage Drives Up Consumer Electronics Prices"
+title: "How Does AI Cause Ram Shortage?"
+targetQuestion: "how does ai cause ram shortage"
 youtubeId: "-YNk9_e4pg4"
 channelTitle: "ColdFusion"
 channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"

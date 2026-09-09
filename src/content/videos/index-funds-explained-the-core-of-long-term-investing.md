@@ -1,5 +1,6 @@
 ---
-title: "Index Funds Explained: The Low-Cost Core of Long-Term Investing"
+title: "What Are Index Funds and How Do They Work"
+targetQuestion: "what are index funds and how do they work"
 youtubeId: "oKmz6p_i7yI"
 channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"

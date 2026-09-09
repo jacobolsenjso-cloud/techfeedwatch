@@ -1,5 +1,6 @@
 ---
-title: "AI Student Laptops: GPUs and NPUs Run Complex ML Models Locally"
+title: "Why Does AI Need a GPU? What Student Laptops Must Have"
+targetQuestion: "why does ai need gpu"
 seoTitled: true
 youtubeId: "ELFigJ3gzXg"
 channelTitle: "GadgetGeeks"

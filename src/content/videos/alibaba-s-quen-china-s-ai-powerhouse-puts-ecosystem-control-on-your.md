@@ -1,5 +1,6 @@
 ---
-title: "Is China's Alibaba Free Quen AI Facing the West?"
+title: "How Is Alibaba's AI Reshaping Competition Between Firms?"
+targetQuestion: "how is ai reshaping competition between firms"
 titleShortened: true
 seoTitled: true
 youtubeId: "AJsAV4ZqwTc"
