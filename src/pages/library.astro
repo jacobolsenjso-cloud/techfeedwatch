@@ -59,7 +59,7 @@ const formatDate = (d: string) => {
 };
 ---
 
-<MainLayout title="Library" description="Browse the full Tech Feed Watch library by topic or by month. Curated tech, AI, fintech and crypto videos turned into readable articles.">
+<MainLayout title="Library" description="Browse the full Tech Feed Watch library by topic or by month. Plain-language answers on tech, AI, fintech and crypto, each drawn from a credited creator video.">
   
   <style is:global>
     .library-wrapper { 
@@ -131,8 +131,8 @@ const formatDate = (d: string) => {
   </style>
 
   <div class="library-wrapper">
-    <h1 class="header-title">📚 Video Library</h1>
-    <p class="library-intro">Browse everything by topic below — each section shows the newest videos, and you can open the full archive for any topic. Prefer to browse by date? Jump to the month archive at the bottom.</p>
+    <h1 class="header-title">📚 Library</h1>
+    <p class="library-intro">Browse everything by topic below — each section shows the newest articles, and you can open the full archive for any topic. Prefer to browse by date? Jump to the month archive at the bottom.</p>
     
     {tagSections.map(({ tag, videos, count }) => {
       const accent = TAG_COLORS[tag] || "#6b7280";

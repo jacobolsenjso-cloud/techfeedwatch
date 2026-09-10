@@ -161,7 +161,7 @@ const schema = {
 
     {matchedVideos.length > 0 && (
       <section class="guide-videos">
-        <h2>Videos in this guide</h2>
+        <h2>Articles in this guide</h2>
         <div class="guide-video-grid">
           {matchedVideos.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="guide-card">

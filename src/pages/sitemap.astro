@@ -82,7 +82,7 @@ const TOOLS = [
 ];
 
 const title = "Site Map";
-const description = "Browse every page, tool, and video on Tech Feed Watch, organized by topic for easy navigation.";
+const description = "Browse every page, tool, and article on Tech Feed Watch, organized by topic for easy navigation.";
 ---
 
 <MainLayout title={title} description={description}>
@@ -134,7 +134,7 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
   <div class="sitemap-wrapper">
     <div class="sitemap-header">
       <h1>🗺️ Site Map</h1>
-      <p>Browse every page, tool, and video on Tech Feed Watch — organized by topic for easy navigation.</p>
+      <p>Browse every page, tool, and article on Tech Feed Watch — organized by topic for easy navigation.</p>
     </div>
 
     <section class="sitemap-section">
@@ -181,7 +181,7 @@ const description = "Browse every page, tool, and video on Tech Feed Watch, orga
     </section>
 
     <section class="sitemap-section">
-      <h2>Videos by Topic</h2>
+      <h2>Articles by Topic</h2>
       {videosByTag.map(({ tag, videos }) => (
         <details class="sitemap-tag" style={`--tag-accent: ${TAG_COLORS[tag] || 'var(--border-color)'}`}>
           <summary>{tag}<span class="sitemap-count">({videos.length})</span></summary>
