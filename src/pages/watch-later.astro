@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 ---
 
 <MainLayout
-  title="Watch Later"
+  title="Read later"
   description="Your saved Tech Feed Watch articles, kept in this browser so you can come back to them whenever you have time."
   noindex={true}
 >
@@ -92,7 +92,7 @@ import MainLayout from '../layouts/MainLayout.astro';
   <div class="watch-later-wrapper">
     <div class="wl-head">
       <svg class="wl-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-      <h1>Watch Later</h1>
+      <h1>Read later</h1>
     </div>
     <p id="savedCount" class="wl-count"></p>
 
@@ -157,7 +157,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 
         return '' +
           '<div class="wl-card" data-slug="' + esc(video.slug) + '">' +
-            '<button type="button" class="wl-remove" aria-label="Remove ' + esc(video.title) + ' from Watch Later" title="Remove">' +
+            '<button type="button" class="wl-remove" aria-label="Remove ' + esc(video.title) + ' from Read later" title="Remove">' +
               '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>' +
             '</button>' +
             '<a href="/video/' + esc(video.slug) + '" class="wl-link">' +
@@ -224,7 +224,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         write(list);
         render();
 
-        toast('Removed from Watch Later', () => {
+        toast('Removed from Read later', () => {
           const cur = read();
           cur.splice(Math.min(lastRemoved.index, cur.length), 0, lastRemoved.item);
           write(cur);

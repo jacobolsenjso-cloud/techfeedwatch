@@ -81,7 +81,7 @@ if (currentPath.startsWith('/video/')) {
   if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
 } else if (currentPath !== '/') {
   // Gør f.eks. '/watch-later' til 'Watch later'
-  let sectionName = currentPath.replace('/', '').replace(/-/g, ' ');
+  let sectionName = currentPath === '/watch-later' ? 'read later' : currentPath.replace('/', '').replace(/-/g, ' ');
   sectionName = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
   breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": sectionName, "item": `https://techfeedwatch.com${currentPath}` });
 }
@@ -681,7 +681,7 @@ const siteSchema = [
         </a>
         <a href="/watch-later" class={`nav-item ${currentPath.startsWith('/watch-later') ? 'active' : ''}`}>
           <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-          Watch Later
+          Read later
         </a>
         <a href="/history" class={`nav-item ${currentPath.startsWith('/history') ? 'active' : ''}`}>
           <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4v4h4"/><path d="M12 7.5V12l3 1.8"/></svg>

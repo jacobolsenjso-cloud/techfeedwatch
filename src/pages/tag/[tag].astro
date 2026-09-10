@@ -1,4 +1,5 @@
 ---
+import { TAG_COLORS } from '../../lib/tags';
 import SourceLine from '../../components/SourceLine.astro';
 import MainLayout from '../../layouts/MainLayout.astro'; 
 import FAQ from '../../components/FAQ.astro';
@@ -72,13 +73,6 @@ const faqDictionary: Record<string, {question: string, answer: string}[]> = {
 
 const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
 
-// Emne-farvesystem, defineret lokalt (samme palette som forsiden og sitemap)
-const TAG_COLORS: Record<string, string> = {
-  "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
-  "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
-  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b",
-  "Cybersecurity": "#dc2626", "Quantum Computing": "#7c3aed", "Hardware & Chips": "#ea580c", "AR & VR": "#db2777"
-};
 const tagAccent = TAG_COLORS[tagName] || "#6b7280";
 
 const formatDate = (d: string) => {

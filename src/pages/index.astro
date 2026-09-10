@@ -1,4 +1,5 @@
 ---
+import { TAG_COLORS } from '../lib/tags';
 import MainLayout from '../layouts/MainLayout.astro';
 import SourceLine from '../components/SourceLine.astro';
 import { TOOLS, featuredTools } from '../lib/tools';
@@ -30,13 +31,6 @@ const topTags = Object.keys(tagCounts)
   .sort((a, b) => tagCounts[b] - tagCounts[a])
   .slice(0, 20);
 
-// Emne-farvesystem, defineret lokalt (samme farver som sitemap.astro)
-const TAG_COLORS: Record<string, string> = {
-  "AI & Tech": "#06b6d4", "SEO": "#6366f1", "Automation": "#14b8a6",
-  "Coding": "#2563eb", "Business & Money": "#059669", "AI Video": "#d926c8",
-  "Productivity": "#8b5cf6", "Fintech": "#1e3a8a", "Crypto": "#f59e0b",
-  "Cybersecurity": "#dc2626", "Quantum Computing": "#7c3aed", "Hardware & Chips": "#ea580c", "AR & VR": "#db2777"
-};
 
 // Pæn dato-formatering: "2026-07-23" -> "Jul 23, 2026"
 const formatDate = (d: string) => {
@@ -123,6 +117,21 @@ const vRest = pageOneVideos.slice(13);
       transition: max-height 0.25s ease;
     }
     .tag-bar-container.expanded { max-height: 600px; }
+
+    /* Når bjælken sidder fast i toppen (scrollet forbi sin plads), klapper den
+       til ÉN vandret række, der kan rulles sidelæns. To rækker åd ~150 px af
+       skærmen hele vejen ned. Klassen sættes af JS via en usynlig vagtpost. */
+    .tag-bar-outer { transition: box-shadow 0.2s ease; }
+    .tag-bar-outer.is-stuck { box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    body.dark-mode .tag-bar-outer.is-stuck { box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+    .tag-bar-outer.is-stuck .tag-bar-container {
+      flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; max-height: none !important;
+      min-height: 0; padding: 8px 20px; gap: 8px; scrollbar-width: none; scroll-behavior: smooth;
+    }
+    .tag-bar-outer.is-stuck .tag-bar-container::-webkit-scrollbar { display: none; }
+    .tag-bar-outer.is-stuck .filter-tag { flex: none; min-height: 36px; padding: 4px 13px; font-size: 0.8rem; }
+    .tag-bar-outer.is-stuck .tag-more { display: none; }
+    .tag-bar-sentinel { height: 1px; margin-top: -1px; }
 
     /* Knappen står på sin EGEN linje under rækken. Første forsøg placerede den
        absolut i højre hjørne og reserverede plads med padding — den plads holdt
@@ -628,6 +637,27 @@ const vRest = pageOneVideos.slice(13);
 
       if (tagMore) tagMore.addEventListener('click', () => toggleTagRows());
       setupTagRows();
+
+      // Vagtpost lige over bjælken: er den ude af syne, sidder bjælken fast,
+      // og så klapper vi til én række og ruller det aktive emne ind i billedet.
+      // Kun hvor bjælken faktisk er sticky (på mobil er den statisk).
+      const tagOuter = document.querySelector('.tag-bar-outer');
+      if (tagOuter && tagBar && 'IntersectionObserver' in window) {
+        const sentinel = document.createElement('div');
+        sentinel.className = 'tag-bar-sentinel';
+        tagOuter.parentNode.insertBefore(sentinel, tagOuter);
+        new IntersectionObserver(([e]) => {
+          const sticky = getComputedStyle(tagOuter).position === 'sticky';
+          const stuck = sticky && !e.isIntersecting;
+          tagOuter.classList.toggle('is-stuck', stuck);
+          if (stuck) {
+            const act = tagBar.querySelector('.filter-tag.active');
+            if (act) tagBar.scrollTo({ left: act.offsetLeft - tagBar.clientWidth / 2 + act.offsetWidth / 2 });
+          } else {
+            tagBar.scrollTo({ left: 0 });
+          }
+        }, { threshold: 0 }).observe(sentinel);
+      }
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
