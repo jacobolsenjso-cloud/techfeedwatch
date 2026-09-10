@@ -13,8 +13,8 @@ tags:
 summary: "Traditional perceptions of hardtech ventures as inherently slow, prohibitively expensive, and fraught with market risk are undergoing a significant re-evaluation. A new generation of accelerators and investors is demonstrating that capital-efficient, rapid iteration, coupled with early commercial and technical validation, can accelerate deep tech companies. This approach challenges the notion that massive upfront capital is always a prerequisite for ambitious physical products, fostering innovation in areas from aerospace to space resources. Hardtech venture capital is adapting to foster groundbreaking companies by focusing on achievable milestones and strategic early commitments."
 metaDescription: "New accelerators and investors prove hardtech can be capital-efficient, rapidly iterated, and validated early to accelerate deep tech."
 duration: "48:37"
-viewCount: 89855
-viewsUpdated: "2026-09-07"
+viewCount: 89992
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

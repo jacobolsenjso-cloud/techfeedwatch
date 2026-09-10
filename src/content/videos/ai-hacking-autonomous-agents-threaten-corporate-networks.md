@@ -12,8 +12,8 @@ tags:
 summary: "Advanced AI models now demonstrate significant capability in performing autonomous, multi-step cyberattacks against corporate networks. This evolution, driven by increasing computational power, lowers the barrier to entry for sophisticated breaches without requiring extensive human technical expertise. Businesses face an escalating threat profile, necessitating a re-evaluation of current cybersecurity defenses to counter these emerging AI-powered agents. The shift marks a critical development in the ongoing digital security arms race."
 metaDescription: "Advanced AI models now demonstrate significant capability in performing autonomous, multi-step cyberattacks against corporate networks."
 duration: "7:02"
-viewCount: 36
-viewsUpdated: "2026-08-06"
+viewCount: 37
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

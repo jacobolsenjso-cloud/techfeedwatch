@@ -13,8 +13,8 @@ tags:
 summary: "An AI-powered advertising system recently reported generating $117,000 in revenue within 30 days on Pinterest, achieving a 5.5x return on ad spend (ROAS). This success highlights the increasing efficiency of generative AI in producing diverse creative assets for targeted campaigns. It also underscores Pinterest's emerging role as a less competitive platform for e-commerce, offering lower CPMs and high purchase intent for specific visual niches. The strategy emphasizes rapid iteration of AI creatives, strategic budget allocation, and a deep understanding of Pinterest's unique visual search algorithm and user behavior."
 metaDescription: "An AI-powered advertising system recently reported generating $117,000 in revenue within 30 days on Pinterest, achieving a 5.5x return on ad spend (ROAS)."
 duration: "9:57"
-viewCount: 33618
-viewsUpdated: "2026-09-07"
+viewCount: 33760
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

@@ -13,8 +13,8 @@ tags:
 summary: "The rise of large language models fundamentally reshapes the AI engineering profession, demanding a new array of specialized skills beyond conventional software development. Engineers now require proficiency in prompt design, context management, and system orchestration to build reliable and scalable AI applications. This shift prioritizes understanding LLM behavior, integrating external data, and ensuring application performance through robust evaluation and observability frameworks. The industry is rapidly formalizing these emerging methodologies, creating significant opportunities for skilled practitioners."
 metaDescription: "AI engineering now demands new skills like prompt design and orchestration to build reliable LLM applications, creating significant opportunities."
 duration: "16:01"
-viewCount: 209625
-viewsUpdated: "2026-09-07"
+viewCount: 209878
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

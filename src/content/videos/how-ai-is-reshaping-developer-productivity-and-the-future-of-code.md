@@ -14,8 +14,8 @@ tags:
 summary: "AI coding assistants are transforming software development by automating routine tasks and accelerating code generation. These tools leverage large language models to understand context and intent, fundamentally altering how developers interact with their projects. While offering significant efficiency gains, their effective integration requires a shift in core developer skills and a critical approach to code review."
 metaDescription: "Discover how AI coding assistants enhance developer productivity, automate code generation, and redefine the software development workflow."
 duration: "26:50"
-viewCount: 96600
-viewsUpdated: "2026-09-07"
+viewCount: 97213
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

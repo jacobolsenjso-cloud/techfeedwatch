@@ -13,8 +13,8 @@ tags:
 summary: "Early skepticism about quantum computing's near-term viability has given way to sustained momentum and increased investment, prompting a re-evaluation of its progress timeline. Advances in qubit stability and error correction, coupled with strategic national funding, drive this persistence. The shift from purely theoretical research to complex engineering challenges underscores a slow but tangible march toward practical applications."
 metaDescription: "Sustained momentum and increased investment drive quantum computing's progress from theory to practical applications, re-evaluating its viability timeline."
 duration: "7:27"
-viewCount: 694218
-viewsUpdated: "2026-09-07"
+viewCount: 694296
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

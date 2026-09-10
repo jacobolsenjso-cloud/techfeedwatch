@@ -13,8 +13,8 @@ tags:
 summary: "The rise of native digital banks like Zand in the UAE signifies a shift from traditional banking structures to agile, platform-centric financial services. These new entrants leverage technology and ecosystem partnerships to address underserved market segments, offering tailored products and bridging the gap between centralized and decentralized finance. This approach challenges incumbent models by prioritizing customer-centricity, data analytics, and future-ready financial infrastructure, moving beyond mere digital overlays on legacy systems."
 metaDescription: "The rise of native digital banks like Zand in the UAE signifies a shift from traditional banking structures to agile, platform-centric financial services."
 duration: "37:23"
-viewCount: 3462
-viewsUpdated: "2026-08-13"
+viewCount: 3463
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

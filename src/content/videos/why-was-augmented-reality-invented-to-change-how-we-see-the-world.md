@@ -12,8 +12,8 @@ summary: "Augmented reality blends digital information with the physical world, 
 metaDescription: "Augmented reality blends digital info with the physical world, extending human capabilities with immediate, contextual data to redefine interaction."
 targetQuestion: "why was augmented reality invented"
 duration: "9:27"
-viewCount: 25022
-viewsUpdated: "2026-09-07"
+viewCount: 26872
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

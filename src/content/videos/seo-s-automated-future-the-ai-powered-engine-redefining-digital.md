@@ -12,8 +12,8 @@ tags:
 summary: "Search Engine Optimization (SEO) is experiencing a profound transformation, not an extinction, driven by the rise of Generative AI Overviews (AIO) in search results. While foundational SEO principles remain vital for visibility, content strategy must now proactively adapt to secure AI citations, often at the expense of direct organic traffic. The challenge for marketers involves optimizing for both traditional algorithmic ranking and AI's content consumption patterns, particularly by delivering concise, answer-focused information prominently. This dual optimization becomes essential for brands seeking relevance and authority in a rapidly evolving search ecosystem."
 metaDescription: "SEO transforms with AI Overviews, requiring content to adapt for AI citations and dual optimization for traditional ranking and AI consumption."
 duration: "48:27"
-viewCount: 375
-viewsUpdated: "2026-09-07"
+viewCount: 378
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

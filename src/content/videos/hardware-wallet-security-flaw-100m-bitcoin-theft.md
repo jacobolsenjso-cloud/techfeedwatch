@@ -11,8 +11,8 @@ tags:
 summary: "A significant exploit in Coldcard hardware wallet firmware led to a reported $100 million in Bitcoin theft, compromising supposedly secure offline funds. This incident highlights the persistent risks even in self-custody solutions often considered the gold standard for crypto asset protection. The vulnerability, reportedly five years old, underscores the complex challenges of securing digital assets against sophisticated supply chain and software integrity attacks."
 metaDescription: "A five-year-old firmware vulnerability in a prominent hardware wallet led to $100M Bitcoin theft. Understand hardware wallet security risks."
 duration: "16:53"
-viewCount: 27666
-viewsUpdated: "2026-09-07"
+viewCount: 27737
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

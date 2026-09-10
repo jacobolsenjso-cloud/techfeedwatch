@@ -12,8 +12,8 @@ summary: "Recent advancements in quantum computing research have intensified con
 metaDescription: "Recent advancements in quantum computing research have intensified concerns about the stability of current cryptographic protocols."
 targetQuestion: "what are quantum computing threats"
 duration: "6:34"
-viewCount: 568395
-viewsUpdated: "2026-09-07"
+viewCount: 568480
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

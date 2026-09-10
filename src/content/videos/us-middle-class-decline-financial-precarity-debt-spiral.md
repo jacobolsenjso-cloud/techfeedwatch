@@ -12,8 +12,8 @@ tags:
 summary: "The US middle class faces significant erosion, driven by structural economic shifts rather than individual shortcomings. Falling savings rates, escalating debt, and severe housing unaffordability contribute to widespread financial precarity. This economic pressure fosters a concerning trend of financial nihilism, as traditional wealth-building paths become increasingly inaccessible for many."
 metaDescription: "The US middle class is shrinking. Learn why financial stability erodes amid rising debt, housing costs, and how tech intersects with this economic shift."
 duration: "14:54"
-viewCount: 270907
-viewsUpdated: "2026-09-07"
+viewCount: 270926
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

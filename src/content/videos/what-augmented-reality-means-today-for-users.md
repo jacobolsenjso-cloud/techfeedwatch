@@ -12,8 +12,8 @@ summary: "Augmented reality superimposes digital information and virtual objects
 metaDescription: "Understand what augmented reality means and how this technology overlays digital information onto your real-world view for practical use."
 targetQuestion: "what is augmented reality mean"
 duration: "18:17"
-viewCount: 2688
-viewsUpdated: "2026-09-07"
+viewCount: 2691
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

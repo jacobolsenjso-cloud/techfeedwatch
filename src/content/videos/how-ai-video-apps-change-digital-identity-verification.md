@@ -12,8 +12,8 @@ summary: "AI video apps leverage artificial intelligence to generate, modify, an
 metaDescription: "Explore what AI video apps are, how they generate and manipulate media, and their profound impact on digital identity verification and online authenticity."
 targetQuestion: "what are ai video apps"
 duration: "42:12"
-viewCount: 72866
-viewsUpdated: "2026-09-08"
+viewCount: 73130
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

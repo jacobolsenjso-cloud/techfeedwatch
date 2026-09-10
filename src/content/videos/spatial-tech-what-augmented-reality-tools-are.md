@@ -12,8 +12,8 @@ summary: "Augmented reality tools comprise the hardware, software, and platforms
 metaDescription: "Discover what augmented reality tools are, how they work, what they cost, and their diverse applications, from immersive art to enterprise solutions."
 targetQuestion: "what are augmented reality tools"
 duration: "16:34"
-viewCount: 35
-viewsUpdated: "2026-09-04"
+viewCount: 55
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

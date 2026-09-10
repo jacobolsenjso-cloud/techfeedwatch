@@ -14,8 +14,8 @@ tags:
 summary: "The threat of scams is escalating, moving beyond basic digital tricks to exploit advanced AI and emerging payment technologies. Scammers now leverage sophisticated social engineering and deepfakes to execute highly personalized and financially devastating attacks. Countering this requires enhanced digital literacy, proactive cybersecurity measures, and a collective vigilance against evolving fraudulent tactics across both digital and physical arenas."
 metaDescription: "The threat of scams is escalating, moving beyond basic digital tricks to exploit advanced AI and emerging payment technologies."
 duration: "23:49"
-viewCount: 207327
-viewsUpdated: "2026-09-07"
+viewCount: 208608
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

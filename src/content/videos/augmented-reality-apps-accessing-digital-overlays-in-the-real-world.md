@@ -12,8 +12,8 @@ summary: "Augmented reality applications overlay digital information onto the re
 metaDescription: "Understand augmented reality apps: what they are, how WebAR changes access, and the hidden costs and common misconceptions of this evolving technology."
 targetQuestion: "what are augmented reality apps"
 duration: "5:29"
-viewCount: 200
-viewsUpdated: "2026-09-07"
+viewCount: 207
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

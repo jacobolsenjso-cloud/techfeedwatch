@@ -11,8 +11,8 @@ summary: "Cybersecurity engineering involves the systematic design, implementati
 metaDescription: "Understand cybersecurity engineering: what it is, why it matters, the costs involved, and common pitfalls in securing digital systems."
 targetQuestion: "what is cybersecurity engineering"
 duration: "12:13"
-viewCount: 118929
-viewsUpdated: "2026-09-09"
+viewCount: 121288
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Cybersecurity is no longer an optional add-on but a fundamental requir
 metaDescription: "Cybersecurity is no longer an optional add-on but a fundamental requirement for operating in the digital world."
 targetQuestion: "why cybersecurity matters"
 duration: "8:59"
-viewCount: 39578
-viewsUpdated: "2026-09-07"
+viewCount: 40170
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

@@ -13,8 +13,8 @@ tags:
 summary: "A notable shift in rhetoric among prominent AI industry leaders, from advocating rapid deployment to expressing concern about societal inequality, signals a growing political awareness of the public backlash against AI's unchecked expansion. This pivot reflects increasing local resistance, particularly against data center construction and fears of widespread job displacement, rather than a fundamental change in the technology's trajectory. The emerging debate centers on whether to address AI's socio-economic impacts through post-deployment redistribution or through more structural, participatory ownership models."
 metaDescription: "AI leaders shift rhetoric from rapid deployment to addressing inequality due to public backlash over job fears and local resistance."
 duration: "20:02"
-viewCount: 276579
-viewsUpdated: "2026-09-07"
+viewCount: 277185
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 revised: true

@@ -12,8 +12,8 @@ summary: "AI videos are made by advanced generative artificial intelligence mode
 metaDescription: "Understand how AI videos are made, from generative models to prompt engineering. Learn the costs, mechanisms, and common pitfalls of AI video creation."
 targetQuestion: "how are ai videos made"
 duration: "5:29"
-viewCount: 172711
-viewsUpdated: "2026-09-07"
+viewCount: 174017
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:

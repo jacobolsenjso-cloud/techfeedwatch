@@ -11,8 +11,8 @@ tags:
 summary: "Extending AI agents requires a strategic choice between Model Context Protocol (MCP) and dedicated skills. This decision impacts an agent's performance, adaptability, and resource utilization when interacting with Large Language Models (LLMs). Understanding context engineering is key to optimizing AI agent functionality for specific workloads."
 metaDescription: "Choosing between Model Context Protocol (MCP) and Skills for AI agent extension is critical for LLM performance. Learn how context engineering helps."
 duration: "8:03"
-viewCount: 109470
-viewsUpdated: "2026-09-07"
+viewCount: 111408
+viewsUpdated: "2026-09-10"
 thumbMax: true
 isShort: false
 faqs:
