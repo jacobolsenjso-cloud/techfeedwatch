@@ -70,6 +70,18 @@ const firstTag = (v: any): string | null => {
   return arr.filter(Boolean)[0] || null;
 };
 
+// "Questions people are asking": de nyeste artiklers søgespørgsmål som genveje.
+// Spørgsmålet er sitets løfte på forsiden, så det vises med sine egne ord.
+const AKRO: Record<string, string> = { ai: 'AI', seo: 'SEO', ar: 'AR', vr: 'VR', llm: 'LLM', llms: 'LLMs', gpu: 'GPU', cpu: 'CPU', api: 'API', apis: 'APIs', nft: 'NFT', nfts: 'NFTs', defi: 'DeFi', etf: 'ETF', etfs: 'ETFs', saas: 'SaaS', ui: 'UI', ux: 'UX', mcp: 'MCP', agi: 'AGI', tdd: 'TDD', geo: 'GEO', aeo: 'AEO', xrp: 'XRP', us: 'US', meta: 'Meta', quest: 'Quest', google: 'Google', youtube: 'YouTube', chatgpt: 'ChatGPT', openai: 'OpenAI', nvidia: 'NVIDIA', bitcoin: 'Bitcoin', ethereum: 'Ethereum', solana: 'Solana', apple: 'Apple', microsoft: 'Microsoft', amazon: 'Amazon', claude: 'Claude', gemini: 'Gemini', iphone: 'iPhone', android: 'Android', windows: 'Windows', linux: 'Linux', python: 'Python', javascript: 'JavaScript', wordpress: 'WordPress', tiktok: 'TikTok', linkedin: 'LinkedIn', etherscan: 'Etherscan', notebooklm: 'NotebookLM' };
+const asQuestion = (q: string) => {
+  const s = q.trim().replace(/[?.!]+$/, '').split(/\s+/).map((w) => AKRO[w.toLowerCase()] || w).join(' ');
+  return s.charAt(0).toUpperCase() + s.slice(1) + '?';
+};
+const questions = regularVideos
+  .filter((v: any) => v.frontmatter.targetQuestion)
+  .slice(0, 8)
+  .map((v: any) => ({ slug: v.file.split('/').pop().replace('.md', ''), text: asQuestion(v.frontmatter.targetQuestion), color: TAG_COLORS[firstTag(v) as string] || '#0891b2' }));
+
 // Opdeler resten i blokke (rækker)
 const vRow1 = pageOneVideos.slice(5, 9);
 const vRow2 = pageOneVideos.slice(9, 13);
@@ -141,6 +153,23 @@ const vRest = pageOneVideos.slice(13);
     .filter-tag-accent { border-color: var(--tag-accent); }
     .filter-tag-accent::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--tag-accent); margin-right: 7px; vertical-align: middle; }
     .filter-tag-accent.active { background: var(--tag-accent); color: #fff; border-color: var(--tag-accent); }
+    /* Hover i emnets egen farve i stedet for gråt: man ser, hvad man er ved at vælge. */
+    .filter-tag { transition: background 0.2s, transform 0.15s, box-shadow 0.2s; }
+    .filter-tag-accent:not(.active):hover { background: color-mix(in srgb, var(--tag-accent) 14%, var(--hover-bg)); transform: translateY(-1px); box-shadow: 0 3px 10px color-mix(in srgb, var(--tag-accent) 28%, transparent); }
+    body.dark-mode .filter-tag-accent:not(.active):hover { background: color-mix(in srgb, var(--tag-accent) 26%, var(--hover-bg)); }
+    @media (prefers-reduced-motion: reduce) { .filter-tag-accent:not(.active):hover { transform: none; } }
+
+    /* Spørgsmålsliste: to kolonner, hver linje en genvej. Prikken bærer emnets farve. */
+    .home-questions { margin: 6px 0 36px; }
+    .home-questions-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; }
+    .home-question { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: var(--text-color); border: 1px solid transparent; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+    .home-question:hover { background: var(--hover-bg); border-color: var(--border-color); transform: translateX(3px); }
+    .home-question-mark { flex: none; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; color: #fff; background: var(--tag-accent); }
+    .home-question-text { font-weight: 600; font-size: 0.95rem; line-height: 1.35; }
+    .home-question-arrow { margin-left: auto; color: #9ca3af; transition: transform 0.15s, color 0.2s; }
+    .home-question:hover .home-question-arrow { transform: translateX(3px); color: var(--teal-text); }
+    @media (max-width: 768px) { .home-questions-list { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .home-question:hover, .home-question:hover .home-question-arrow { transform: none; } }
 
     .home-hero { max-width: 1600px; margin: 22px auto 6px auto; padding: 0 20px; box-sizing: border-box; width: 100%; }
     .home-hero-card { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(8, 145, 178,0.10), rgba(8, 145, 178,0.02) 62%); padding: 38px 34px; }
@@ -415,6 +444,26 @@ const vRest = pageOneVideos.slice(13);
               </a>
             ))}
           </div>
+        </section>
+      )}
+
+      {questions.length > 0 && (
+        <section class="home-questions" aria-labelledby="home-questions-heading">
+          <div class="section-heading">
+            <h2 id="home-questions-heading">Questions people are asking</h2>
+            <span class="section-note">Real Google searches, answered this week.</span>
+          </div>
+          <ul class="home-questions-list">
+            {questions.map((q: any) => (
+              <li>
+                <a href={`/video/${q.slug}`} class="home-question">
+                  <span class="home-question-mark" style={`--tag-accent: ${q.color}`} aria-hidden="true">?</span>
+                  <span class="home-question-text">{q.text}</span>
+                  <span class="home-question-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
