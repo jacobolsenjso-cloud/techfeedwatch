@@ -122,12 +122,17 @@ const vRest = pageOneVideos.slice(13);
        til ÉN vandret række, der kan rulles sidelæns. To rækker åd ~150 px af
        skærmen hele vejen ned. Klassen sættes af JS via en usynlig vagtpost. */
     .tag-bar-outer { transition: box-shadow 0.2s ease; }
-    .tag-bar-outer.is-stuck { box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-    body.dark-mode .tag-bar-outer.is-stuck { box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+    /* Den ydre beholder beholder sin fulde højde (sat af JS som min-height), så
+       indholdet under den ikke hopper, når rækken bliver lavere. Den bliver
+       gennemsigtig og lader klik gå igennem; kun den lille række har baggrund. */
+    .tag-bar-outer.is-stuck { background: transparent; border-bottom-color: transparent; pointer-events: none; }
     .tag-bar-outer.is-stuck .tag-bar-container {
+      pointer-events: auto; background: var(--bg-color); border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; max-height: none !important;
       min-height: 0; padding: 8px 20px; gap: 8px; scrollbar-width: none; scroll-behavior: smooth;
     }
+    body.dark-mode .tag-bar-outer.is-stuck .tag-bar-container { box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
     .tag-bar-outer.is-stuck .tag-bar-container::-webkit-scrollbar { display: none; }
     .tag-bar-outer.is-stuck .filter-tag { flex: none; min-height: 36px; padding: 4px 13px; font-size: 0.8rem; }
     .tag-bar-outer.is-stuck .tag-more { display: none; }
@@ -649,6 +654,9 @@ const vRest = pageOneVideos.slice(13);
         new IntersectionObserver(([e]) => {
           const sticky = getComputedStyle(tagOuter).position === 'sticky';
           const stuck = sticky && !e.isIntersecting;
+          // Højden måles i udfoldet tilstand og fastholdes, så siden ikke hopper.
+          if (stuck && !tagOuter.classList.contains('is-stuck')) tagOuter.style.minHeight = tagOuter.offsetHeight + 'px';
+          if (!stuck) tagOuter.style.minHeight = '';
           tagOuter.classList.toggle('is-stuck', stuck);
           if (stuck) {
             const act = tagBar.querySelector('.filter-tag.active');
