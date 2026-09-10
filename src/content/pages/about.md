@@ -23,13 +23,11 @@ Learn it for your own sake. It will pay you back.
 
 Here is what I noticed, and it is the reason Tech Feed Watch is built the way it is.
 
-Most people do not want a whole video about a subject. They want a straight answer to the question they actually typed into Google, and then to decide for themselves whether to go deeper.
+When people want to understand something about AI, technology, fintech or crypto, they type a question into Google. What they get back is often a wall of long videos, thin listicles, or pages written to rank rather than to answer. The straight answer is in there somewhere — usually inside a video from someone who actually knows the subject — but it takes twenty minutes to find out whether it was worth it.
 
-And that decision matters, because — believe me — a great many videos out there are padding, or simply poor. I have watched enough of them to be confident about that.
+So every article here starts from two things: a real question people search for, and a video from an independent creator who covers it. The article answers the question in plain language, using that video as its research material. The creator is always credited, and the video is there if you want the full version.
 
-So every article here starts from two things: a question people search for, and a video from an independent creator on that subject. The article is written to answer the question in plain language, using that video as its research material. The creator is always credited, and the video is there if you want the full version.
-
-That is it. I am trying to make it easier for people who are interested in tech to find their way through the tech world.
+That is it. I am trying to make it easier for people who are interested in tech to get a straight answer — and to know where it came from.
 
 ## Who runs this site
 
