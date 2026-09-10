@@ -23,11 +23,11 @@ Learn it for your own sake. It will pay you back.
 
 Here is what I noticed, and it is the reason Tech Feed Watch is built the way it is.
 
-Most people will not sit through a whole video about a subject. They would rather read something short first, and then decide whether the video is worth their time.
+Most people do not want a whole video about a subject. They want a straight answer to the question they actually typed into Google, and then to decide for themselves whether to go deeper.
 
 And that decision matters, because — believe me — a great many videos out there are padding, or simply poor. I have watched enough of them to be confident about that.
 
-So this site does the first step for you. Every article here is a written analysis of a real video from an independent creator: what the core idea is, some context, and why it might matter. If it sounds worth your twenty minutes, the original is one click away and always credited. If it does not, you have lost three minutes instead.
+So every article here starts from two things: a question people search for, and a video from an independent creator on that subject. The article is written to answer the question in plain language, using that video as its research material. The creator is always credited, and the video is there if you want the full version.
 
 That is it. I am trying to make it easier for people who are interested in tech to find their way through the tech world.
 
@@ -41,11 +41,11 @@ You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbe
 
 I would rather tell you this than have you work it out.
 
-A system I built searches YouTube for videos in the subjects I have chosen. A language model drafts the article from the video. Those drafts publish automatically — I do not read every one before it goes live. When the system is running, four are published a day.
+A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live. When the system is running, four are published a day.
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times.
 
-That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
+That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos or read all of these articles. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
 
 Where you *are* reading me is here, in the [guides](/guides), and in the [glossary](/glossary). Those I write and stand behind.
 

@@ -13,9 +13,9 @@ The best thinking about AI, technology, fintech and crypto is buried inside long
 
 The trouble is that you cannot tell which is which until you have already spent twenty minutes. And a great many videos are padding. I have watched enough of them to be confident about that.
 
-Almost nobody wants to sit through a whole video just to discover it was not worth it. What most people want is to read something short first, and then decide.
+Almost nobody wants to sit through a whole video to get one answer. What most people want is the answer to the question they searched for, in plain language, and then to decide whether to go deeper.
 
-So that is what this site does. Every article here is the short version of a real video: the core idea, some context, and why it might matter. If it looks worth your time, the original is one click away and the creator is credited. If it does not, you have spent three minutes instead of twenty.
+So that is what this site does. Every article starts from two things: a question people search for on Google, and a video from an independent creator on that subject. The article answers the question, using that video as its research material. The creator is credited, and the video is there if you want the full version.
 
 ## What is here
 
@@ -47,17 +47,17 @@ Learn it for your own sake. It will pay you back.
 
 I would rather tell you than have you work it out.
 
-A system I built searches YouTube for videos in the subjects I have chosen. A language model drafts the article from the video. Those drafts publish automatically — I do not read every one before it goes live.
+A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live.
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
-That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here, on the [about page](/about), in the guides and in the glossary.
+That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here, on the [about page](/about), in the guides and in the glossary.
 
 The [about page](/about) has the longer version, and the [corrections policy](/corrections) explains what happens when something here is wrong.
 
 ## Five minutes, well spent
 
-If you have never used the site before, try this: open [Best of each topic](/popular), pick the subject you care about, and read the top article in it. Then decide whether the video underneath is worth your twenty minutes.
+If you have never used the site before, try this: open [Best of each topic](/popular), pick the subject you care about, and read the top article in it. Then decide whether the video underneath it is worth your time.
 
 That is the whole idea, and it either works for you or it does not.
 

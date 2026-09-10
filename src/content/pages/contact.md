@@ -25,4 +25,4 @@ We read every message and aim to reply within a few business days.
 
 ## About Tech Feed Watch
 
-Tech Feed Watch is an independent tech media project that turns the best AI, technology, fintech, and crypto videos into fast, readable analysis. You can read more about who we are and how the site works on our [About page](/about).
+Tech Feed Watch is an independent tech media project that answers the questions people search for about AI, technology, fintech, and crypto, in plain language, with independent creators' videos as research material. You can read more about who we are and how the site works on our [About page](/about).

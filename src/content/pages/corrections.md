@@ -5,7 +5,7 @@ description: "What Tech Feed Watch does when an article gets something wrong, ho
 
 # Corrections Policy
 
-Tech Feed Watch publishes written analysis of other people's videos, and most of that drafting is automated. Automation makes mistakes at a steady rate, so a policy for handling them is not a formality here — it is part of how the site works.
+Tech Feed Watch publishes articles that answer questions people search for, drafted by a language model with other people's videos as research material, and most of that drafting is automated. Automation makes mistakes at a steady rate, so a policy for handling them is not a formality here — it is part of how the site works.
 
 ## How to report something
 
@@ -35,7 +35,7 @@ Two real examples: articles once displayed invented engagement figures, and the 
 
 ## What this site does not claim
 
-It does not claim original reporting. It does not claim to have interviewed anyone. It does not claim that its summaries replace the original video — every article links to the source, and watching it is the better option if you have twenty minutes.
+It does not claim original reporting. It does not claim to have interviewed anyone. It does not claim that its articles replace the source video — every article links to it, and watching it is the better option if you want the full picture.
 
 Where the site publishes numbers derived from its own archive, the method and its limits are stated on the same page as the number.
 
