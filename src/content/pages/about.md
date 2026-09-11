@@ -39,7 +39,7 @@ You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbe
 
 I would rather tell you this than have you work it out.
 
-A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live. The system publishes up to four a day — usually two or three, because a run that finds nothing good enough publishes nothing.
+A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live. The system publishes a few a day — usually two or three, fewer at weekends, and none on a day when no video passes the checks. A run that finds nothing good enough publishes nothing.
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times.
 

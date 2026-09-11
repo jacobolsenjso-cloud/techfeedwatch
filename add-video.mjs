@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
+import { manglerKonkret, kildeNavn, taelTal } from './src/lib/konkret.mjs';
 import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
@@ -432,7 +433,7 @@ async function run() {
 
     Return EXACTLY in this format:
     TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
-    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
     FAQ:
@@ -449,12 +450,13 @@ async function run() {
     5. BANNED WORDS - never use: delve, tapestry, realm, navigate, landscape, testament, crucial, robust, demystify, unlock, unleash, elevate, seamless, paradigm shift, "in today's digital age", firstly, moreover, furthermore, "in conclusion".
     6. Write with high burstiness: mix short punchy sentences with longer analytical ones. Active voice only.
     7. Aim for approximately ${targetWords} words.
-    8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece.
+    8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece. The one exception is rule 14: attribute the source ONCE, by the creator's name.
     9. Ensure internal links are written strictly like this: [Link text](/video/slug).
     10. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write a reference piece about the topic itself, the way an experienced writer would if they had watched this video as part of their research. The video is one input, not the subject. A reader who never watches it must get a complete, self-contained answer.
-    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. Use only well-established, generally-known facts for that context. NEVER fabricate statistics, quotes, dates, company figures or events.
+    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts; for specifics use the source material (rule 14). NEVER fabricate statistics, quotes, dates, company figures or events - every number and name must come from the source material or be common knowledge.
     12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - but in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
     13. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
+    14. CONCRETE DETAIL IS MANDATORY. A reader must be able to tell this article was researched, not generated. Include at least THREE specific details taken from the source material: exact numbers (prices, percentages, dates, counts, durations), named products, companies, tools or people, and at least one concrete example, step or case the source actually gives. Attribute the source exactly once, by name, where its most specific point appears - for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ..." or "${kildeNavn(channelTitle) || 'The creator'} puts the figure at ...". If the source material contains fewer than three specific details, use the ones it has and say plainly that the subject lacks hard numbers - never pad with invented ones. An article with no numbers and no named things is a failed article.
 
     This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
 
@@ -592,6 +594,32 @@ async function run() {
       content = contentMatch ? contentMatch[1].trim() : "";
       content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
       content = sanitizeLinks(content);
+
+      // Konkrethedsværn (src/lib/konkret.mjs): deterministisk tjek, ikke et løfte i
+      // prompten. Mangler der tal eller kildehenvisning, får modellen ÉT forsøg på
+      // at rette netop det med transskriptet ved hånden. Artiklen afvises ikke
+      // bagefter — men manglen logges, så audit-specificity.mjs kan følge den.
+      let mangler = manglerKonkret(content, channelTitle);
+      if (mangler.length) {
+        console.log(`🔎 Brødteksten mangler: ${mangler.join(' + ')} (tal: ${taelTal(content)}) — beder om konkrete detaljer fra kilden`);
+        try {
+          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
+            .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these two requirements:
+1. Add at least three specific details taken from the SOURCE MATERIAL: exact numbers (prices, percentages, dates, counts, durations), named products, companies, tools or people, and one concrete example, step or case the source gives. Put them where they support the argument, not in a list at the end.
+2. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
+Never invent numbers or names - if the source has fewer than three specifics, use the ones it has. Output the full revised article in markdown and nothing else.
+
+ARTICLE:
+${content}
+
+SOURCE MATERIAL:
+${text.substring(0, 20000)}`);
+          const ny = sanitizeLinks((rep.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
+          if (ny.split(/\s+/).length >= 200) content = ny;
+        } catch (e) { console.log(`   rettelse fejlede: ${e.message}`); }
+        mangler = manglerKonkret(content, channelTitle);
+        console.log(mangler.length ? `🔎 Stadig mangler: ${mangler.join(' + ')} — udgives alligevel, tælles i audit` : `🔎 Konkret nu: ${taelTal(content)} tal, kilden nævnt`);
+      }
 
       // Skriv ALDRIG en artikel uden brødtekst.
       //
