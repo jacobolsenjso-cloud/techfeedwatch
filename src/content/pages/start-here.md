@@ -9,9 +9,9 @@ If you have just landed on this site and are not sure what it is, this page is f
 
 ## The problem I was trying to solve
 
-The best thinking about AI, technology, fintech and crypto is buried inside long videos. Genuinely good ones exist — people testing things properly, explaining what they found, sharing what went wrong.
+When people want to understand something about AI, technology, fintech or crypto, they type a question into Google. What they get back is often a wall of long videos, thin listicles, or pages written to rank rather than to answer.
 
-The trouble is that you cannot tell which is which until you have already spent twenty minutes. And a great many videos are padding. I have watched enough of them to be confident about that.
+The straight answer is usually in there somewhere — often inside a video from someone who actually knows the subject — but it takes twenty minutes to find out whether it was worth it. And a great many videos are padding. I have watched enough of them to be confident about that.
 
 Almost nobody wants to sit through a whole video to get one answer. What most people want is the answer to the question they searched for, in plain language, and then to decide whether to go deeper.
 

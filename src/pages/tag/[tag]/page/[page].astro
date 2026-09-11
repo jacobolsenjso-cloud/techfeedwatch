@@ -57,9 +57,9 @@ const prevUrl = currentPage <= 2 ? `/tag/${tagSlug}` : `/tag/${tagSlug}/page/${c
 const nextUrl = currentPage < lastPage ? `/tag/${tagSlug}/page/${currentPage + 1}` : null;
 
 const currentFAQs = [
-  { question: "How often are new videos added to the archive?", answer: "Our library is updated continuously. We curate the best tech and AI videos daily to keep our archive fresh and highly relevant." },
-  { question: "Are these videos free to watch?", answer: "Yes, all videos embedded on Tech Feed Watch are completely free to watch." },
-  { question: "Can I save videos to watch later?", answer: "Yes! Click the 'Save' button under any video, and it will be added to your personal 'Watch Later' list in the sidebar." }
+  { question: "How often are new articles added?", answer: "Every day. The system publishes up to four new articles a day, usually two or three, each answering a question people actually search for." },
+  { question: "Are the source videos free to watch?", answer: "Yes. Every article links to the creator's original video on YouTube, and it is free to watch." },
+  { question: "Can I save articles to read later?", answer: "Yes. Click 'Save' under any article and it is added to your Read later list in the sidebar. The list lives in your browser only; nothing is sent anywhere." }
 ];
 
 const formatDate = (d: string) => {

@@ -17,7 +17,7 @@ I read everything sent to that address. If you are the creator of a video covere
 
 **Factual errors.** If an article states something that is not true, I correct it. Where the error changed the meaning of the piece, the article carries a note saying what was wrong and when it was fixed. Silent edits to substantive claims are not acceptable, because a reader who saw the original deserves to know it changed.
 
-**Misrepresenting a video.** Every article here is a summary of someone else's work, so getting their argument wrong is the failure that matters most. If a creator says an article misrepresents their video, I take that at face value rather than arguing about it. The article is corrected or removed, at their preference.
+**Misrepresenting a video.** Every article here draws on someone else's work, so getting their argument wrong is the failure that matters most. If a creator says an article misrepresents their video, I take that at face value rather than arguing about it. The article is corrected or removed, at their preference.
 
 **Removal requests from creators.** If you made a video and you do not want an article about it on this site, email me and it comes down. No explanation needed. Articles are also removed automatically when the source video is deleted or made private.
 

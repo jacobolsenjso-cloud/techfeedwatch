@@ -6,7 +6,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }))
   .filter((v: any) => !v.frontmatter.isShort);
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity"];
+// Alle emner fra det fælles farvekort — før var listen håndskrevet og manglede tre emner (94 artikler).
+const ALLOWED_TAGS = Object.keys(TAG_COLORS);
 
 
 function getTags(v: any): string[] {
@@ -27,7 +28,7 @@ const MAIN_PAGES = [
   { href: '/', label: 'Home' },
   { href: '/shorts', label: 'Shorts' },
   { href: '/library', label: 'Library' },
-  { href: '/watch-later', label: 'Watch Later' },
+  { href: '/watch-later', label: 'Read later' },
   { href: '/history', label: 'History' },
   { href: '/tools', label: 'Tools' },
   { href: '/glossary', label: 'Glossary' },
