@@ -406,6 +406,24 @@ async function run() {
 
     // Kvalitets-bund: normale artikler kræver en vis mængde kilde-tekst, så tynde videoer ikke
     // bliver til tynde artikler. Beskytter mod "low value content" hos Google/AdSense.
+    // Relevans-tjek FØR den dyre artikel-prompt. Målt 11/9-2026: robotten søgte
+    // "augmented reality darts", fik en 1t23m video om noget helt andet, og
+    // modellen skrev så en generel artikel om emnet med én irrelevant
+    // kildehenvisning klistret på ("As kwolinsky details, modded versions of
+    // Jurassic World Alive..."). Konkrethedsværnet kan ikke redde en artikel,
+    // hvis kilden ikke handler om emnet — så kilden skal passe, ellers ingen
+    // artikel. Robotten prøver næste kandidat.
+    if (!isShort && targetQuestion) {
+      const relPrompt = `Answer with only one word: YES or NO. Does this transcript substantively cover the subject of the search "${targetQuestion}" — enough that an article answering that search could draw specific facts, examples or numbers from it? A passing mention is NO.\n\nTranscript (excerpt): ${text.substring(0, 6000)}`;
+      const rel = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 8, temperature: 0 } }).generateContent(relPrompt);
+      const relSvar = (rel.response.text() || '').replace(/[*.\s]/g, '').toUpperCase();
+      console.log('Relevans-svar:', relSvar);
+      if (relSvar !== 'YES') {
+        console.log(`Sprunget over: kilden handler ikke om "${targetQuestion}" (${videoId})`);
+        return;
+      }
+    }
+
     const MIN_SOURCE_CHARS = 400;
     if (!isShort && text.trim().length < MIN_SOURCE_CHARS) {
       console.log(`Sprunget over: kilde for tynd (${text.trim().length} tegn) for ${videoId}`);
@@ -432,7 +450,7 @@ async function run() {
     ${targetQuestion ? `THE READER'S QUESTION: someone searching Google typed "${targetQuestion}". That question is this article's job. Answer it plainly in the opening, then spend the article explaining the subject well enough that the answer holds up: what it is, why it works that way, what it costs, and where people get it wrong. The headline and at least one H2 must reflect the question. If the source material does not address it, still write about the subject — just do not invent an answer to the question.` : `Write about the subject itself, not about the video. A reader who never watches it must come away with a complete answer.`}
 
     Return EXACTLY in this format:
-    TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", or "The New Frontier".
+    TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Understanding", "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", "Decoding", "Navigating", "Demystifying", "Unlocking", "Exploring", or "The New Frontier" - start with the subject or the question word.
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
@@ -607,15 +625,24 @@ async function run() {
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these two requirements:
 1. Add at least three specific details taken from the SOURCE MATERIAL: exact numbers (prices, percentages, dates, counts, durations), named products, companies, tools or people, and one concrete example, step or case the source gives. Put them where they support the argument, not in a list at the end.
 2. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-Never invent numbers or names - if the source has fewer than three specifics, use the ones it has. Output the full revised article in markdown and nothing else.
+Never invent numbers or names - if the source has fewer than three specifics, use the ones it has. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no transcript, no commentary, no preamble.
 
-ARTICLE:
-${content}
+SOURCE MATERIAL (for facts only - never copy it):
+${text.substring(0, 20000)}
 
-SOURCE MATERIAL:
-${text.substring(0, 20000)}`);
+ARTICLE TO REVISE:
+${content}`);
           const ny = sanitizeLinks((rep.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
-          if (ny.split(/\s+/).length >= 200) content = ny;
+          // Målt 11/9: modellen svarede én gang med transskriptet i stedet for
+          // artiklen ("Welcome to ... >> Thanks, Megan"), og længden alene lod det
+          // slippe igennem. Nu skal rettelsen bevise, at den stadig er artiklen.
+          const h2Foer = (content.match(/^##\s.+$/gm) || []).map((h) => h.trim());
+          const h2Efter = new Set((ny.match(/^##\s.+$/gm) || []).map((h) => h.trim()));
+          const h2Bevaret = h2Foer.filter((h) => h2Efter.has(h)).length;
+          const laengde = ny.split(/\s+/).length / Math.max(1, content.split(/\s+/).length);
+          const ligner = h2Foer.length === 0 ? laengde >= 0.7 && laengde <= 1.4 : h2Bevaret >= Math.max(1, Math.ceil(h2Foer.length * 0.6)) && laengde >= 0.7 && laengde <= 1.4;
+          if (ligner) content = ny;
+          else console.log(`   rettelse kasseret: ligner ikke artiklen (H2 bevaret ${h2Bevaret}/${h2Foer.length}, længde ${Math.round(laengde * 100)} %)`);
         } catch (e) { console.log(`   rettelse fejlede: ${e.message}`); }
         mangler = manglerKonkret(content, channelTitle);
         console.log(mangler.length ? `🔎 Stadig mangler: ${mangler.join(' + ')} — udgives alligevel, tælles i audit` : `🔎 Konkret nu: ${taelTal(content)} tal, kilden nævnt`);
