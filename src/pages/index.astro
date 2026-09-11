@@ -3,6 +3,7 @@ import { TAG_COLORS } from '../lib/tags';
 import MainLayout from '../layouts/MainLayout.astro';
 import SourceLine from '../components/SourceLine.astro';
 import { TOOLS, featuredTools } from '../lib/tools';
+import { asQuestion } from '../lib/question.mjs';
 
 const PAGE_SIZE = 24;
 
@@ -66,11 +67,6 @@ const firstTag = (v: any): string | null => {
 
 // "Questions people are asking": de nyeste artiklers søgespørgsmål som genveje.
 // Spørgsmålet er sitets løfte på forsiden, så det vises med sine egne ord.
-const AKRO: Record<string, string> = { ai: 'AI', seo: 'SEO', ar: 'AR', vr: 'VR', llm: 'LLM', llms: 'LLMs', gpu: 'GPU', cpu: 'CPU', api: 'API', apis: 'APIs', nft: 'NFT', nfts: 'NFTs', defi: 'DeFi', etf: 'ETF', etfs: 'ETFs', saas: 'SaaS', ui: 'UI', ux: 'UX', mcp: 'MCP', agi: 'AGI', tdd: 'TDD', geo: 'GEO', aeo: 'AEO', xrp: 'XRP', us: 'US', meta: 'Meta', quest: 'Quest', google: 'Google', youtube: 'YouTube', chatgpt: 'ChatGPT', openai: 'OpenAI', nvidia: 'NVIDIA', bitcoin: 'Bitcoin', ethereum: 'Ethereum', solana: 'Solana', apple: 'Apple', microsoft: 'Microsoft', amazon: 'Amazon', claude: 'Claude', gemini: 'Gemini', iphone: 'iPhone', android: 'Android', windows: 'Windows', linux: 'Linux', python: 'Python', javascript: 'JavaScript', wordpress: 'WordPress', tiktok: 'TikTok', linkedin: 'LinkedIn', etherscan: 'Etherscan', notebooklm: 'NotebookLM' };
-const asQuestion = (q: string) => {
-  const s = q.trim().replace(/[?.!]+$/, '').split(/\s+/).map((w) => AKRO[w.toLowerCase()] || w).join(' ');
-  return s.charAt(0).toUpperCase() + s.slice(1) + '?';
-};
 const questions = regularVideos
   .filter((v: any) => v.frontmatter.targetQuestion)
   .slice(0, 8)

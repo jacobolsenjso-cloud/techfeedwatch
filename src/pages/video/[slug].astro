@@ -4,6 +4,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
 import { compareTimes } from '../../lib/time-saved.mjs';
+import { asQuestion, faellesOrd } from '../../lib/question.mjs';
 import viewHistory from '../../data/view-history.json';
 
 export async function getStaticPaths() {
@@ -171,6 +172,19 @@ const recommendPool = allVideos
   .sort((a: any, b: any) => (b.match - a.match) || (b.d - a.d))
   .slice(0, 24)
   .map((s: any) => ({ slug: s.v.file.split('/').pop().replace('.md', ''), title: s.v.frontmatter.title, youtubeId: s.v.frontmatter.youtubeId }));
+
+// "People also ask": tre andre artikler om samme emne, valgt efter flest fælles
+// kerneord med denne artikels eget søgespørgsmål (eller titel). Læseren får
+// spørgsmål, ikke titler — det er spørgsmålet, man genkender sig selv i.
+// Ingen fælles ord → de nyeste i emnet. Kun artikler med et rigtigt søgespørgsmål.
+const egetSpoergsmaal = video.frontmatter.targetQuestion || title;
+const peopleAlsoAsk = allVideos
+  .filter((v: any) => !v.frontmatter.isShort && v.frontmatter.targetQuestion && v.frontmatter.youtubeId !== youtubeId)
+  .filter((v: any) => { const t = v.frontmatter.tags || v.frontmatter.tag || []; return (Array.isArray(t) ? t : [t]).some((x: string) => tagsArray.includes(x)); })
+  .map((v: any) => ({ v, score: faellesOrd(egetSpoergsmaal, v.frontmatter.targetQuestion), d: new Date(v.frontmatter.date).valueOf() }))
+  .sort((a: any, b: any) => (b.score - a.score) || (b.d - a.d))
+  .slice(0, 3)
+  .map((s: any) => { const t = s.v.frontmatter.tags || s.v.frontmatter.tag || []; const first = (Array.isArray(t) ? t : [t])[0]; return { slug: s.v.file.split('/').pop().replace('.md', ''), text: asQuestion(s.v.frontmatter.targetQuestion), color: TAG_COLORS[first] || '#0891b2' }; });
 
 const baseUrl = "https://techfeedwatch.com";
 const currentUrl = `${baseUrl}/video/${slug}`;
@@ -531,6 +545,19 @@ const metaDesc = rawMeta.length > 157
     .nav-card.disabled { opacity: 0.4; pointer-events: none; border-color: var(--border-color); }
 
     .related-title { font-size: 1.2rem; margin-top: 0; margin-bottom: 15px; }
+    /* People also ask — spørgsmål, ikke titler; ét klik videre til svaret */
+    .paa { margin: 10px 0 34px; padding: 22px 24px; background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 14px; }
+    .paa-title { margin: 0 0 4px; font-size: 1.1rem; font-weight: 800; letter-spacing: -0.01em; }
+    .paa-sub { margin: 0 0 14px; font-size: 0.85rem; color: #6b7280; }
+    body.dark-mode .paa-sub { color: #9ca3af; }
+    .paa-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+    .paa-link { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 10px; text-decoration: none; color: var(--text-color); border: 1px solid transparent; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+    .paa-link:hover { background: var(--card-bg); border-color: var(--border-color); transform: translateX(3px); }
+    .paa-mark { flex: none; width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #fff; background: var(--tag-accent); }
+    .paa-text { font-weight: 600; font-size: 0.95rem; line-height: 1.35; }
+    .paa-arrow { margin-left: auto; color: #9ca3af; transition: transform 0.15s, color 0.2s; }
+    .paa-link:hover .paa-arrow { transform: translateX(3px); color: var(--teal-text); }
+    @media (prefers-reduced-motion: reduce) { .paa-link:hover, .paa-link:hover .paa-arrow { transform: none; } }
     .related-grid { display: flex; flex-direction: column; gap: 12px; }
 
     .video-secondary .watch-card { text-decoration: none; color: inherit; display: flex; gap: 12px; transition: transform 0.2s; align-items: flex-start; }
@@ -1076,7 +1103,26 @@ const metaDesc = rawMeta.length > 157
           })();
         </script>
 
+        {peopleAlsoAsk.length > 0 && (
+          <aside class="paa" aria-labelledby="paa-heading">
+            <h3 class="paa-title" id="paa-heading">People also ask</h3>
+            <p class="paa-sub">Related questions answered on this site.</p>
+            <ul class="paa-list">
+              {peopleAlsoAsk.map((q: any) => (
+                <li>
+                  <a href={`/video/${q.slug}`} class="paa-link">
+                    <span class="paa-mark" style={`--tag-accent: ${q.color}`} aria-hidden="true">?</span>
+                    <span class="paa-text">{q.text}</span>
+                    <span class="paa-arrow" aria-hidden="true">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
+
         {faqs.length > 0 && <FAQ faqs={faqs} />}
+
 
         <div class="share-cta">
           <div>
