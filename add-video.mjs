@@ -5,7 +5,9 @@ import { MIN_FAKTA, MIN_BRUGT, faktaarkPrompt, parseFaktaark, faktaarkScore, fak
 import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
-import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal } from './src/lib/headline.mjs';
+import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme } from './src/lib/headline.mjs';
+import { faellesOrd } from './src/lib/question.mjs';
+import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -224,7 +226,7 @@ function formatDuration(totalSeconds) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-const url = process.argv[2];
+let url = process.argv[2];
 
 // --tag "Cybersecurity": det emne robotten LEDTE efter. Uden det bestemmer
 // Gemini selv mærket, og den svarer næsten altid "AI & Tech", fordi næsten alt
@@ -232,13 +234,13 @@ const url = process.argv[2];
 // Med flaget bliver søgeemnet artiklens primære mærke, og Gemini må højst
 // tilføje ét mere.
 const tagFlagIndex = process.argv.indexOf('--tag');
-const forcedTagRaw = tagFlagIndex > -1 ? process.argv[tagFlagIndex + 1] : null;
+let forcedTagRaw = tagFlagIndex > -1 ? process.argv[tagFlagIndex + 1] : null;
 
 // Spørgsmålet fra autocomplete: den søgning artiklen skal svare på. Uden det
 // blev artiklen skrevet ud fra videoen alene, og ingen i kæden havde spurgt om
 // nogen søger på emnet.
 const qFlagIndex = process.argv.indexOf('--question');
-const targetQuestion = qFlagIndex > -1 ? (process.argv[qFlagIndex + 1] || '').trim() : '';
+let targetQuestion = qFlagIndex > -1 ? (process.argv[qFlagIndex + 1] || '').trim() : '';
 // --faktaark-only: kør alle kontroller og lav faktaarket, men skriv IKKE
 // artiklen. Robotten (auto-youtube.mjs) bruger det til at vurdere flere
 // kandidatvideoer og vælge den rigeste, før den betaler for én artikel.
@@ -246,6 +248,31 @@ const targetQuestion = qFlagIndex > -1 ? (process.argv[qFlagIndex + 1] || '').tr
 // kørsel bagefter ikke skal lave det igen.
 const faktaarkOnly = process.argv.includes('--faktaark-only');
 const faktaarkFil = (id) => `./_faktaark-${id}.json`;
+
+// --erstat <slug>: skriv en EKSISTERENDE artikel om med den nye kæde. Adressen
+// (slug), udgivelsesdatoen og søgespørgsmålet beholdes, så Google ser samme
+// side med bedre indhold — ikke en ny side og en død. Artiklen mærkes
+// rewrittenAt. Bruges til at afprøve kæden på de svageste gamle artikler, før
+// vi beslutter om alle 426 skal igennem.
+const erstatIndex = process.argv.indexOf('--erstat');
+const erstatSlug = erstatIndex > -1 ? (process.argv[erstatIndex + 1] || '').trim() : '';
+let erstatGammel = null; // frontmatter fra den gamle fil
+if (erstatSlug) {
+  const sti = `./src/content/videos/${erstatSlug}.md`;
+  if (!fs.existsSync(sti)) { console.log(`❌ Fejl: --erstat: ${sti} findes ikke.`); process.exit(1); }
+  const raw = fs.readFileSync(sti, 'utf-8');
+  erstatGammel = {
+    youtubeId: raw.match(/^youtubeId:\s*"(.*?)"/m)?.[1] || '',
+    date: raw.match(/^date:\s*"(.*?)"/m)?.[1] || '',
+    targetQuestion: raw.match(/^targetQuestion:\s*"(.*?)"/m)?.[1] || '',
+    tag: raw.match(/^tags:\r?\n\s*-\s*"(.*?)"/m)?.[1] || '',
+  };
+  // Uden URL, spørgsmål og mærke på kommandolinjen tages de fra den gamle fil.
+  if (!url || url.startsWith('--')) url = `https://www.youtube.com/watch?v=${erstatGammel.youtubeId}`;
+  if (!targetQuestion) targetQuestion = erstatGammel.targetQuestion;
+  if (!forcedTagRaw) forcedTagRaw = erstatGammel.tag;
+  console.log(`Erstatter ${erstatSlug} (dato ${erstatGammel.date}, mærke "${forcedTagRaw}"${targetQuestion ? `, spørgsmål "${targetQuestion}"` : ''})`);
+}
 const forcedTag = ALLOWED_TAGS.includes(forcedTagRaw) ? forcedTagRaw : null;
 if (forcedTagRaw && !forcedTag) {
   console.log(`⚠️ Ukendt mærke "${forcedTagRaw}" — ignoreret. Gemini vælger selv.`);
@@ -259,18 +286,58 @@ if (!videoId) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+// Interne links: beslægtede artikler, ikke de 10 nyeste.
+//
+// Før fik modellen de 10 senest skrevne filer (alfabetisk, ikke engang efter
+// dato) og ordren "weave 4 to 5 of these" — så en SEO-artikel linkede til
+// zero-trust med ankerteksten "SEO as if it were 2015" (målt 12/9). Nu vælges
+// kandidaterne efter fælles kerneord med søgespørgsmålet og samme emne, og
+// modellen må kun linke, hvor sætningen faktisk handler om målet. Bagefter
+// kontrolleres hvert link deterministisk (se ankerTjek nedenfor).
+const ARTIKEL_TITLER = new Map(); // slug -> titel, bruges også af ankerTjek
 let internalLinksContext = "";
 if (fs.existsSync('./src/content/videos')) {
-  const files = fs.readdirSync('./src/content/videos').filter(file => file.endsWith('.md'));
-  if (files.length > 0) {
-    const links = files.slice(-10).map(file => {
-      const content = fs.readFileSync(`./src/content/videos/${file}`, 'utf-8');
-      const titleMatch = content.match(/title:\s*"(.*?)"/);
-      const title = titleMatch ? titleMatch[1] : file.replace('.md', '');
-      return `[${title}](/video/${file.replace('.md', '')})`;
-    }).join('\n');
-    internalLinksContext = `\nAVAILABLE INTERNAL LINKS:\n${links}\nCRITICAL INSTRUCTION: Naturally weave 4 to 5 of these internal links into your CONTENT section using standard Markdown format.`;
+  const alle = [];
+  for (const file of fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md'))) {
+    const raw = fs.readFileSync(`./src/content/videos/${file}`, 'utf-8');
+    if (/^isShort:\s*true/m.test(raw)) continue;
+    const slug = file.replace(/\.md$/, '');
+    if (slug === erstatSlug) continue; // en omskrevet artikel må ikke linke til sig selv
+    const title = raw.match(/^title:\s*"(.*?)"/m)?.[1] || slug;
+    ARTIKEL_TITLER.set(slug, title);
+    const tags = (raw.match(/^tags:\r?\n((?:\s*-\s*.*\r?\n?)*)/m)?.[1] || '');
+    const sammeEmne = forcedTag ? tags.includes(`"${forcedTag}"`) : false;
+    const q = raw.match(/^targetQuestion:\s*"(.*?)"/m)?.[1] || '';
+    const soegetekst = targetQuestion || forcedTag || '';
+    const score = faellesOrd(soegetekst, title) * 2 + faellesOrd(soegetekst, q) + (sammeEmne ? 1 : 0);
+    const dato = raw.match(/^date:\s*"(.*?)"/m)?.[1] || '';
+    alle.push({ slug, title, score, dato });
   }
+  alle.sort((a, b) => b.score - a.score || b.dato.localeCompare(a.dato));
+  const valgte = alle.filter((a) => a.score > 0).slice(0, 8);
+  const kandidater = valgte.length >= 3 ? valgte : alle.slice(0, 8);
+  if (kandidater.length) {
+    const links = kandidater.map((a) => `[${a.title}](/video/${a.slug})`).join('\n');
+    internalLinksContext = `\nRELATED ARTICLES ON THIS SITE (the only internal links you may use):\n${links}\nLINK RULES: Link 2 to 4 of them, only where a sentence is genuinely about that article's subject. The link text must be the article's title or a close paraphrase of it - never a phrase about something else. A link whose text does not match its target will be removed. Fewer links is fine; irrelevant links are not.`;
+  }
+}
+
+// Ankertjek: et link beholdes kun, hvis ankerteksten deler mindst ét kerneord
+// med målets titel. Ellers bliver linket til almindelig tekst.
+function ankerTjek(md) {
+  let fjernet = 0;
+  const ud = md.replace(/\[([^\]]+)\]\(\/video\/([^)\s#?]+)\/?\)/g, (whole, text, slug) => {
+    const title = ARTIKEL_TITLER.get(slug);
+    if (!title) return text; // ukendt mål — linket ville alligevel give 404
+    // "AI" står i næsten alle titler og tæller derfor ikke som fælles ord.
+    const A = new Set(kerneord(title).map(stamme));
+    const faelles = kerneord(text).map(stamme).filter((w) => A.has(w) && w !== 'ai');
+    if (faelles.length > 0) return whole;
+    fjernet++;
+    return text;
+  });
+  if (fjernet) console.log(`🔗 ${fjernet} interne links fjernet: ankertekst passede ikke til målet`);
+  return ud;
 }
 
 async function run() {
@@ -520,8 +587,9 @@ async function run() {
     5. BANNED WORDS - never use: delve, tapestry, realm, navigate, landscape, testament, crucial, robust, demystify, unlock, unleash, elevate, seamless, paradigm shift, "in today's digital age", firstly, moreover, furthermore, "in conclusion".
     6. Write with high burstiness: mix short punchy sentences with longer analytical ones. Active voice only.
     7. Aim for approximately ${targetWords} words.
-    8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece. The one exception is rule 14: attribute the source ONCE, by the creator's name.
-    9. Ensure internal links are written strictly like this: [Link text](/video/slug).
+    8. Never use filler like "in this video" or "the video discusses", and never write "the source material", "the transcript" or "the source" - the reader does not know there is one. Write as an independent editorial piece. The one exception is rule 14: attribute the source ONCE, by the creator's name.
+    8b. The transcript is machine-generated speech-to-text: a name may be misheard. A fact-sheet item marked "(spelling uncertain)" must NOT be used as a name - describe the thing generically instead ("a Nigerian savings app").
+    9. Ensure internal links are written strictly like this: [Link text](/video/slug). Never use code formatting (backticks) anywhere - this is an article, not documentation.
     10. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write a reference piece about the topic itself, the way an experienced writer would if they had watched this video as part of their research. The video is one input, not the subject. A reader who never watches it must get a complete, self-contained answer.
     11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts; for specifics use the FACT SHEET (rule 14). NEVER fabricate statistics, quotes, dates, company figures or events - every number must come from the FACT SHEET or the source material, written exactly as the source gives it (no rounding, no converting); names may also be common knowledge.
     12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
@@ -602,7 +670,7 @@ async function run() {
     }
 
     const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
-    const slug = resolveUniqueSlug(baseSlug, videoId);
+    const slug = erstatSlug || resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];
     const safeTags = rawTagsList.filter(t => ALLOWED_TAGS.includes(t));
 
@@ -612,9 +680,9 @@ async function run() {
     const finalTags = forcedTag
       ? [forcedTag, ...safeTags.filter(t => t !== forcedTag)].slice(0, 2)
       : (safeTags.length > 0 ? safeTags : ["AI & Tech"]);
-    const safeSummary = (summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    const safeSummary = fjernForbudteOrd((summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
     // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
-    let safeMeta = (metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim();
+    let safeMeta = fjernForbudteOrd((metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
     if (!safeMeta) safeMeta = safeSummary;
     // For lang META blev før klippet midt i sætningen med "…" — 45 artikler
     // stod sådan i Google. Nu beholdes kun hele sætninger; er første sætning
@@ -681,7 +749,29 @@ async function run() {
       //
       // Bedre at dagens artikel mangler end at den er tom: robotten kører hver
       // anden time og prøver igen med en anden video.
-      const ordITekst = content ? content.split(/\s+/).length : 0;
+      let ordITekst = content ? content.split(/\s+/).length : 0;
+      if (ordITekst < 200) {
+        // Svaret gemmes til fejlsøgning (git ignorerer _*.txt) — ellers ved vi
+        // kun AT markøren manglede, ikke hvordan svaret så ud.
+        try { fs.writeFileSync(`./_raw-${videoId}.txt`, rawText, 'utf8'); } catch { /* ligegyldigt */ }
+        // Målt 12/9: samme prompt gav CONTENT i 2. forsøg, efter at 1. svar
+        // (14.500 tegn) manglede markøren. Fejlen er tilfældig, så ét forsøg
+        // mere er billigere end at kassere en god kandidat.
+        console.log(`⚠️ Brødteksten mangler (${ordITekst} ord) — prøver én gang til`);
+        const igen = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384 } }).generateContent(prompt);
+        const rawIgen = igen.response.text() || '';
+        const cmIgen = rawIgen.match(/^[ \t]*\**CONTENT\**:?\**[ \t]*\r?\n([\s\S]*)/im) || rawIgen.match(/CONTENT:\s*([\s\S]*)/i);
+        const nyContent = sanitizeLinks((cmIgen ? cmIgen[1] : '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
+        if (nyContent.split(/\s+/).length >= 200) {
+          content = nyContent;
+          ordITekst = content.split(/\s+/).length;
+          if (!faqs.length) {
+            const fm2 = rawIgen.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i)?.[1] || '';
+            let p; const re2 = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
+            while ((p = re2.exec(fm2)) !== null) { const q = sanitizeFaqText(p[1]), a = sanitizeFaqText(p[2]); if (q && a) faqs.push({ question: q, answer: a }); }
+          }
+        }
+      }
       if (ordITekst < 200) {
         throw new Error(
           `Brødteksten er ${ordITekst} ord — under grænsen på 200. Artiklen skrives ikke. ` +
@@ -745,9 +835,25 @@ ${content}`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${taelTal(content)} tal, kilden nævnt`);
+
+      // Interne links: ankertekst skal passe til målet (se ankerTjek).
+      content = ankerTjek(content);
+
+      // Kodeformatering hører ikke hjemme i en artikel. Målt 12/9: modellen
+      // satte faktaarkets nøgler i backticks (`2d`, `Justin_tech`).
+      content = content.replace(/`([^`\n]*)`/g, '$1');
+
+      // Forbudte ord håndhæves her, ikke kun i prompten (src/lib/forbudt.mjs).
+      const forbudte = findForbudte(content);
+      if (forbudte.length) {
+        content = fjernForbudteOrd(content);
+        console.log(`🧹 Forbudte ord erstattet: ${forbudte.join(', ')}`);
+      }
     }
 
-    const date = new Date().toISOString().split('T')[0];
+    // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.
+    const date = erstatGammel?.date || new Date().toISOString().split('T')[0];
+    const rewrittenYaml = erstatGammel ? `rewrittenAt: "${new Date().toISOString().split('T')[0]}"\n` : "";
 
     const faqsYaml = faqs.length > 0
       ? "faqs:\n" + faqs.map(f => `  - question: ${toYamlDoubleQuoted(f.question)}\n    answer: ${toYamlDoubleQuoted(f.answer)}`).join('\n') + "\n"
@@ -772,7 +878,7 @@ ${content}`);
       ? ""
       : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\nthumbMax: ${thumbMax}\n`;
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${faqsYaml}---\n\n${content}\n`;
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${rewrittenYaml}${faqsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

@@ -31,7 +31,7 @@ Return ONLY a JSON array, no prose, no code fence. Each item:
 - "eksempel": a concrete example, step, case or demonstration the speaker gives. "key" is a 3-6 word label. "text" is the passage, verbatim.
 - "citat": a sentence worth quoting — an opinion, a warning, a claim. "key" is the first 4 words. "text" is the sentence, verbatim.
 
-Rules: copy the transcript's own words; never add facts that are not in it; never round or convert numbers; skip filler ("like and subscribe"), sponsor reads and the speaker's own channel name. Aim for completeness — 10 to 30 items for a typical video. If the transcript contains almost nothing concrete, return the few items it has.
+Rules: copy the transcript's own words; never add facts that are not in it; never round or convert numbers; the transcript is machine-generated speech-to-text, so a product or company name may be misheard ("Curry Rice" for Cowrywise) - when you are certain of the real name, write the real name as "key" and keep the transcript's spelling in "text"; when you are not certain, keep the name as spoken but add "(spelling uncertain)" to the key; skip filler ("like and subscribe"), sponsor reads and the speaker's own channel name. Aim for completeness — 10 to 30 items for a typical video. If the transcript contains almost nothing concrete, return the few items it has.
 
 TRANSCRIPT:
 ${text.substring(0, 30000)}`;

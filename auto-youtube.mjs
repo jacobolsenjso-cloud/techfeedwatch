@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { execSync } from 'child_process';
 import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -148,8 +149,30 @@ async function vaelgSpoergsmaal(tag, topic) {
     return null;
   }
 
-  const ubrugte = forslag.filter((s) => !set.has(s));
+  let ubrugte = forslag.filter((s) => !set.has(s));
   if (!ubrugte.length) return null;
+
+  // Gemini som redaktør: hvilke af forslagene er rigtige, klare spørgsmål,
+  // man kan skrive en artikel om? Autocomplete gav 12/9 "how are ai chips
+  // cooked" (slang for "færdige"), og overskrifts-værnet tvang ordet ind i
+  // overskriften. Ét billigt kald pr. kørsel; fejler det, bruges listen som den er.
+  if (process.env.GEMINI_API_KEY && ubrugte.length > 1) {
+    try {
+      const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+      const prompt = `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a reference article could answer well? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${ubrugte.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+      const r = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(prompt);
+      const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
+      if (m) {
+        const behold = new Set(JSON.parse(m[0]).map((n) => n - 1));
+        const godkendte = ubrugte.filter((_, i) => behold.has(i));
+        const afviste = ubrugte.filter((_, i) => !behold.has(i));
+        if (afviste.length) console.log(`Info: Spørgsmål afvist som uklare/slang: ${afviste.map((s) => `"${s}"`).join(', ')}`);
+        if (godkendte.length) ubrugte = godkendte;
+      }
+    } catch (e) {
+      console.log(`Info: spørgsmåls-tjek fejlede (${e.message}) — bruger listen som den er.`);
+    }
+  }
 
   // Klokkeslættet vælger, så to kørsler i træk ikke tager det samme spørgsmål
   // hvis den første ikke nåede at gemme.

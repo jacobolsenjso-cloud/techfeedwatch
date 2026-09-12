@@ -24,6 +24,12 @@ const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use'];
 // og lande-varianter der peger på lokal lovgivning vi ikke dækker.
 const AFVIS = /\b(stock|stocks|etf|price|prices|buy|cheap|free|download|coupon|salary|course|courses|jobs|near me|reddit|login|sign in|app|india|uk|usa|australia|canada|denmark|nigeria|philippines|nz|singapore|ireland|pdf|ppt|book|act)\b/i;
 
+// Slang og meme-sprog: "how are ai chips cooked" (12/9) er et rigtigt
+// autocomplete-forslag, men "cooked" betyder "færdig/ødelagt" på nettet, og
+// overskrifts-værnet tvang ordet ind i overskriften. Listen er kort med vilje;
+// det egentlige filter er Gemini-tjekket i auto-youtube.mjs (vaelgSpoergsmaal).
+const SLANG = /\b(cooked|goated|sus|cringe|rizz|lowkey|highkey|meme|memes|tier list|dank|based|mid|bussin|no cap|fr|lol|lmao|wtf|tbh)\b/i;
+
 export async function hentForslag(emne, { timeoutMs = 8000 } = {}) {
   const ud = new Set();
   for (const p of PRAEFIKSER) {
@@ -40,7 +46,7 @@ export async function hentForslag(emne, { timeoutMs = 8000 } = {}) {
         const lav = s.toLowerCase().trim();
         if (lav === q.toLowerCase()) continue;          // selve præfikset
         if (lav.length < 12 || lav.length > 80) continue;
-        if (AFVIS.test(lav)) continue;
+        if (AFVIS.test(lav) || SLANG.test(lav)) continue;
         // Google gætter videre — forslaget skal stadig handle om emnet.
         const kerne = emne.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
         if (kerne.length && !kerne.some((w) => lav.includes(w))) continue;
