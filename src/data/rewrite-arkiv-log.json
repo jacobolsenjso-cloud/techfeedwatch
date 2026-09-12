@@ -6,9 +6,129 @@
   "dato": "2026-09-12T12:25:40.663Z"
  },
  "accessing-quantum-computers-today-for-your-projects": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to access quantum computing",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (vSFv_i_FAXg)",
-  "dato": "2026-09-12T12:26:38.839Z"
+  "linje": "Kontrol ok: 6 af 7 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T12:48:01.910Z"
+ },
+ "adhd-and-ai-a-symbiotic-leap-in-executive-function-support": {
+  "status": "fejl",
+  "q": "how does ai help adhd",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6488 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-12T13:03:48.166Z"
+ },
+ "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping": {
+  "status": "fejl",
+  "q": "what is agentic ai in financial services",
+  "linje": "Sprunget over: kilden handler ikke om \"what is agentic ai in financial services\" (U17g-GpdiLI)",
+  "dato": "2026-09-12T13:16:10.947Z"
+ },
+ "agi-s-distant-horizon-how-deepmind-s-journey-reshapes-scientific": {
+  "status": "ok",
+  "q": "why is alphafold important",
+  "linje": "Kontrol ok: 13 af 14 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T13:17:42.675Z"
+ },
+ "ai-accelerates-front-end-development-reshaping-ui-creation-and": {
+  "status": "ok",
+  "q": "ai front end development tools",
+  "linje": "Kontrol ok: 16 af 22 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T13:18:42.584Z"
+ },
+ "ai-agent-extension-mcp-vs-skills-for-llm-performance": {
+  "status": "fejl",
+  "q": "what is mcp vs skills",
+  "linje": "Sprunget over: kilden handler ikke om \"what is mcp vs skills\" (goU9VIXA8II)",
+  "dato": "2026-09-12T13:31:05.123Z"
+ },
+ "ai-agents-redefine-payments-how-stripe-and-coinbase-are-reshaping": {
+  "status": "ok",
+  "q": "how do ai agents pay each other",
+  "linje": "Kontrol ok: 12 af 14 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T13:35:11.179Z"
+ },
+ "ai-agents-the-unseen-threat-bypassing-guardrails-and-redefining": {
+  "status": "ok",
+  "q": "what is ai agent security",
+  "linje": "Kontrol ok: 13 af 16 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T13:39:14.108Z"
+ },
+ "ai-and-the-workforce-beyond-job-loss-hysteria": {
+  "status": "fejl",
+  "q": "impact of ai on employees",
+  "linje": "Sprunget over: kilden handler ikke om \"impact of ai on employees\" (cJfKqKEyw1o)",
+  "dato": "2026-09-12T13:51:36.782Z"
+ },
+ "ai-billionaires-conscience-awakens-the-real-reason-behind-their": {
+  "status": "fejl",
+  "q": "how can ai increase wealth inequality",
+  "linje": "Sprunget over: kilden er for tynd — 1 konkrete punkter, mindst 5 kræves (GRc4hWdocEw)",
+  "dato": "2026-09-12T14:04:12.462Z"
+ },
+ "ai-business-revolution-one-prompt-full-launch-revenue-ready-platforms": {
+  "status": "ok",
+  "q": "how to use ai to start online business",
+  "linje": "Kontrol ok: 10 af 14 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T14:07:53.698Z"
+ },
+ "ai-chip-supply-chain-security-us-confronts-pcb-risks": {
+  "status": "ok",
+  "q": "ai chips supply chain",
+  "linje": "Kontrol ok: 13 af 14 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T14:09:26.043Z"
+ },
+ "ai-chips-in-laptops-redefining-personal-computing-power": {
+  "status": "ok",
+  "q": "what are ai chips in laptops",
+  "linje": "Kontrol ok: 27 af 42 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T14:10:43.885Z"
+ },
+ "ai-coders-need-human-discipline-why-test-driven-development-is-more": {
+  "status": "ok",
+  "q": "what is tdd ai",
+  "linje": "Kontrol ok: 26 af 50 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T14:12:18.024Z"
+ },
+ "ai-coding-harnesses-impact-on-enterprise-ai-adoption": {
+  "status": "ok",
+  "q": "what are coding harnesses",
+  "linje": "Kontrol ok: 11 af 12 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T14:13:48.400Z"
+ },
+ "ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable": {
+  "status": "ok",
+  "q": "how good are ai coding tools",
+  "linje": "Kontrol ok: 21 af 40 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T14:15:03.335Z"
+ },
+ "ai-hacking-autonomous-agents-threaten-corporate-networks": {
+  "status": "ok",
+  "q": "what is ai powered cyberattacks",
+  "linje": "Kontrol ok: 10 af 10 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-12T14:16:25.608Z"
+ },
+ "ai-hacking-why-practical-llm-security-testing-is-no-longer-optional": {
+  "status": "ok",
+  "q": "what is prompt injection testing",
+  "linje": "Kontrol ok: 5 af 5 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T14:17:51.078Z"
+ },
+ "ai-pentesting-tools-open-source-platforms-automate-bug-bounties": {
+  "status": "ok",
+  "q": "open source ai pentesting tools",
+  "linje": "Kontrol ok: 44 af 53 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T14:19:22.426Z"
+ },
+ "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas": {
+  "status": "fejl",
+  "q": "how do pinterest ads work",
+  "linje": "Sprunget over: kilden handler ikke om \"how do pinterest ads work\" (Zpz8nFRw-Lg)",
+  "dato": "2026-09-12T14:31:46.844Z"
+ },
+ "ai-powered-precision-automating-high-intent-seo-content-without": {
+  "status": "ok",
+  "q": "how to use ai for seo content",
+  "linje": "Kontrol ok: 20 af 27 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T14:33:03.828Z"
  }
 }
