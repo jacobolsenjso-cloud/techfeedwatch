@@ -38,7 +38,13 @@ const todo = Object.values(rel)
   .filter((a) => {
     const raw = fs.existsSync(`src/content/videos/${a.slug}.md`) ? fs.readFileSync(`src/content/videos/${a.slug}.md`, 'utf8') : '';
     const rw = raw.match(/^rewrittenAt:\s*"(.*?)"/m)?.[1] || '';
-    return raw && rw < KAEDE_FRA && !(log[a.slug] && log[a.slug].status === 'ok');
+    // "afvist" springes også over: et værn sagde nej (relevans, for tynd, sprog),
+    // og det siger det samme næste gang. De hører til i nej-bunken. "fejl"
+    // (tilfældige modelfejl) prøves igen.
+    let st = log[a.slug]?.status;
+    // Første kørsel (12/9) loggede værn-afvisninger som "fejl", når droslingen kom først.
+    if (st === 'fejl' && /Sprunget over/.test(log[a.slug]?.linje || '')) st = 'afvist';
+    return raw && rw < KAEDE_FRA && st !== 'ok' && st !== 'afvist';
   })
   .sort((a, b) => a.slug.localeCompare(b.slug))
   .slice(0, kun || undefined);
@@ -88,6 +94,9 @@ for (const a of todo) {
     status = /Sprunget over/.test(ud) ? 'afvist' : 'fejl';
     break;
   }
+  // Blev den afvist af et værn (relevans, for tynd, sprog) efter drosle-ventetiden,
+  // skal det også hedde "afvist" — ikke "fejl" — så den ikke prøves igen og igen.
+  if (status === 'fejl' && /Sprunget over/.test(ud)) status = 'afvist';
   const linje = (ud.match(/(Kontrol ok|Stadig|Sprunget over|Fejl|tal uden dækning)[^\n]*/) || [''])[0].trim();
   log[a.slug] = { status, q: a.q, linje, dato: new Date().toISOString() };
   gem();
