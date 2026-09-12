@@ -8,6 +8,7 @@ import { generateOgCard } from './og-card.mjs';
 import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme } from './src/lib/headline.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
+import { erRelevant } from './src/lib/relevans.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -494,18 +495,10 @@ async function run() {
     // kun kørte med et spørgsmål.
     const relevansEmne = targetQuestion || (forcedTag ? `the topic "${forcedTag}"` : '');
     if (!isShort && relevansEmne) {
-      const relPrompt = `Answer with only one word: YES or NO. Does this transcript substantively cover the subject of ${targetQuestion ? `the search "${targetQuestion}"` : relevansEmne} — enough that an article on that subject could draw specific facts, examples or numbers from it? A passing mention is NO.\n\nTranscript (excerpt): ${text.substring(0, 6000)}`;
-      // Målt 12/9: med maxOutputTokens 8 kom svaret tit TOMT (gemini-2.5 bruger
-      // af budgettet på at tænke), og tomt blev regnet som NO — tre gode
-      // kandidater afvist i én kørsel. Nu er der plads til at tænke, og et tomt
-      // svar får ét forsøg mere før det tæller som NO.
-      let relSvar = '';
-      for (let forsoeg = 0; forsoeg < 2 && !/^(YES|NO)/.test(relSvar); forsoeg++) {
-        const rel = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(relPrompt);
-        relSvar = (rel.response.text() || '').replace(/[*.\s]/g, '').toUpperCase();
-      }
-      console.log('Relevans-svar:', relSvar || '(tomt)');
-      if (!relSvar.startsWith('YES')) {
+      // Selve tjekket ligger i src/lib/relevans.mjs (delt med audit-relevans.mjs).
+      const rel = await erRelevant(genAI, text, targetQuestion || relevansEmne, { erSpoergsmaal: Boolean(targetQuestion) });
+      console.log('Relevans-svar:', rel.svar);
+      if (!rel.ja) {
         console.log(`Sprunget over: kilden handler ikke om ${targetQuestion ? `"${targetQuestion}"` : relevansEmne} (${videoId})`);
         return;
       }
