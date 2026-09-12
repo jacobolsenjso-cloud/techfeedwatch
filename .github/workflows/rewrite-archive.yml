@@ -1,0 +1,68 @@
+name: Archive rewrite
+
+# Skridt 2 af 2 (12/9-2026): skriver arkivets artikler om gennem den nye kæde
+# (faktaark → artikel → kontrol) med `node add-video.mjs --erstat <slug>`.
+# Kun artikler, som audit-relevans.mjs har dømt "ja" (src/data/relevans.json).
+#
+# Kører her og ikke på Jacobs pc, fordi YouTube drosler transskript-hentning
+# fra én adresse efter ~280 hentninger. Kørslen er genoptagelig: loggen
+# (src/data/rewrite-arkiv-log.json) committes med hver batch på 15 artikler.
+# Start manuelt: Actions → "Archive rewrite" → Run workflow. `antal` er hvor
+# mange artikler denne kørsel højst tager (≈2 min pr. artikel; jobbet må vare
+# højst 6 timer, så 120 er et sikkert loft). Kør igen, indtil "Skal omskrives: 0".
+#
+# Kører den samtidig med robotten (daily-update.yml)? Begge laver git pull
+# --rebase før push, så de kan ikke overskrive hinanden — men undgå at starte
+# to Archive rewrite-kørsler på én gang.
+
+on:
+  workflow_dispatch:
+    inputs:
+      antal:
+        description: 'Højst så mange artikler i denne kørsel'
+        required: false
+        default: '120'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-rewrite
+  cancel-in-progress: false
+
+jobs:
+  rewrite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Git-identitet
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Omskriv arkivet (committer og pusher for hver 15)
+        run: node rewrite-arkiv.mjs --kun ${{ github.event.inputs.antal || '120' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # Sidste rest (under 15) committes af scriptet selv til sidst; skulle det
+      # fejle, samler dette trin op, så intet arbejde går tabt.
+      - name: Gem eventuelle rester
+        if: always()
+        run: |
+          git add src/content/videos public/og src/data/rewrite-arkiv-log.json
+          git commit -m "Archive rewrite: remaining articles from this run" || echo "Intet at gemme."
+          git pull --rebase || true
+          git push || echo "Intet nyt at uploade."

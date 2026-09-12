@@ -608,19 +608,27 @@ async function run() {
     // slipper op, er brødteksten præcis dét der mangler, mens alt andet står
     // der. 25 artikler blev udgivet som tomme skaller på den måde, og andelen
     // voksede til tre ud af fire.
-    const result = await genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
-      generationConfig: { maxOutputTokens: 16384 },
-    }).generateContent(prompt);
+    // Svaret skal have en TITLE-linje og slutte af sig selv (STOP). Mangler
+    // det, er det tilfældigt (målt 12/9: samme prompt gav svar i 2. forsøg),
+    // så vi prøver én gang til, før kandidaten kasseres.
+    let rawText = '';
+    for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
+      const result = await genAI.getGenerativeModel({
+        model: 'gemini-2.5-flash',
+        generationConfig: { maxOutputTokens: 16384 },
+      }).generateContent(prompt);
 
-    // Blev svaret klippet af? Modellen siger det selv. Uden dette tjek ser et
-    // afklippet svar ud som et gyldigt svar med et manglende afsnit.
-    const finish = result.response?.candidates?.[0]?.finishReason;
-    if (finish && finish !== 'STOP') {
-      throw new Error(`Gemini stoppede med "${finish}" — svaret er ufuldstændigt, artiklen skrives ikke.`);
+      // Blev svaret klippet af? Modellen siger det selv. Uden dette tjek ser et
+      // afklippet svar ud som et gyldigt svar med et manglende afsnit.
+      const finish = result.response?.candidates?.[0]?.finishReason;
+      if (finish && finish !== 'STOP') {
+        if (forsoeg === 0) { console.log(`⚠️ Gemini stoppede med "${finish}" — prøver én gang til`); continue; }
+        throw new Error(`Gemini stoppede med "${finish}" — svaret er ufuldstændigt, artiklen skrives ikke.`);
+      }
+      rawText = result.response.text() || '';
+      if (/TITLE:\s*\S/i.test(rawText)) break;
+      if (forsoeg === 0) console.log('⚠️ Svaret mangler TITLE-linjen — prøver én gang til');
     }
-
-    const rawText = result.response.text();
 
     const titleMatch = rawText.match(/TITLE:\s*(.*)/i);
     const tagsMatch = rawText.match(/TAGS:\s*(.*)/i);
