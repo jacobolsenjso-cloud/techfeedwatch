@@ -288,31 +288,69 @@ function dedupeById(items, seen) {
 // spoergsmaal sendes med som parameter — den var tidligere refereret fra ydre
 // scope og fandtes ikke her: ReferenceError på hver eneste kandidat, 20 grønne
 // kørsler uden én artikel. Fundet ved lokal kørsel 23/8.
+//
+// Bedste kandidat, ikke første (12/9): før blev den første video, der slap
+// gennem kontrollerne, til dagens artikel — uanset om nummer to var langt
+// rigere på fakta. Nu laves faktaark for op til KANDIDATER videoer (billige
+// kald: transskript + sprogtjek + relevans + faktaark), og artiklen skrives
+// kun for den med flest konkrete punkter. Falder den igennem (fx tal uden
+// dækning), prøves den næstbedste.
+const KANDIDATER = 4;
+
+function faktaarkScoreFor(videoUrl, tag, qArg) {
+  try {
+    const ud = execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg} --faktaark-only`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+    process.stdout.write(ud.split('\n').map((l) => '   │ ' + l).join('\n') + '\n');
+    const m = ud.match(/FAKTAARK-SCORE:\s*(\d+)/);
+    const score = m ? Number(m[1]) : 0;
+    // Afvist af et værn (sprog, relevans, for tynd) = ubrugelig, uanset score.
+    return /Sprunget over/.test(ud) ? 0 : score;
+  } catch (e) {
+    console.log(`   │ faktaark fejlede: ${e.message.split('\n')[0]}`);
+    return 0;
+  }
+}
+
 async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal) {
   let processed = 0;
+  const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
 
+  // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
+  const kandidater = [];
   for (const item of items) {
-    if (processed >= maxCount) break;
-
+    if (kandidater.length >= KANDIDATER) break;
     const videoId = item.id?.videoId;
     if (!videoId) continue;
-
     // Filnavnet er en titel-slug, ikke videoId - tjekker derfor mod det forudindlæste sæt af
     // youtubeIds i stedet for fs.existsSync(`${videoId}.md`)
     if (existingIds.has(videoId)) {
       console.log(`ℹ️ Springer over: Video ${videoId} er allerede udgivet.`);
       continue;
     }
+    if (!(await isEnglishAudio(videoId))) continue;
+    kandidater.push(videoId);
+  }
 
-    const englishOk = await isEnglishAudio(videoId);
-    if (!englishOk) continue;
+  // Andet sigte: faktaark for hver, rangeret efter score.
+  const rangeret = [];
+  for (const videoId of kandidater) {
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    console.log(`🔎 Vurderer kandidat: ${videoUrl}`);
+    const score = faktaarkScoreFor(videoUrl, tag, qArg);
+    console.log(`   score ${score}`);
+    if (score > 0) rangeret.push({ videoId, score });
+  }
+  rangeret.sort((a, b) => b.score - a.score);
+  if (rangeret.length) console.log(`Info: Rangering: ${rangeret.map((r) => `${r.videoId} (${r.score})`).join(' · ')}`);
+  else console.log('Info: Ingen af kandidaterne bestod kontrollerne.');
 
+  for (const { videoId } of rangeret) {
+    if (processed >= maxCount) break;
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     console.log(`▶️ Behandler NY ${label}: ${videoUrl}`);
 
     try {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
-      const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
       execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg}`, { stdio: 'inherit' });
       // add-video kan afvise (sprogtjek, tyndt transskript) og alligevel slutte
       // pænt. Kun en faktisk skrevet artikel tæller mod dagens loft — ellers
@@ -366,14 +404,17 @@ async function findNewestVideos() {
   }
 
   // Dagsloftet tjekkes FØRST, så en kørsel over kvoten ikke bruger API-kald.
+  // --ignorer-loft: kun til lokale testkørsler af selve kæden (kandidater →
+  // faktaark → artikel), når dagens kvote allerede er brugt. Robotten på
+  // GitHub kører aldrig med flaget.
   const publishedToday = countPublishedToday();
-  if (publishedToday >= MAX_PER_DAY) {
+  if (publishedToday >= MAX_PER_DAY && !process.argv.includes('--ignorer-loft')) {
     console.log(`⏸️ Dagsloftet er nået: ${publishedToday}/${MAX_PER_DAY} artikler udgivet i dag. Springer denne kørsel over.`);
     return;
   }
   const remainingToday = MAX_PER_DAY - publishedToday;
   // Aldrig flere end der er tilbage af dagens kvote.
-  const runBudget = Math.min(MAX_NORMAL_PER_RUN, remainingToday);
+  const runBudget = process.argv.includes('--ignorer-loft') ? MAX_NORMAL_PER_RUN : Math.min(MAX_NORMAL_PER_RUN, remainingToday);
 
   const counts = countArticlesByTag();
   const tag = pickThinnestTag(counts);
@@ -422,6 +463,8 @@ async function findNewestVideos() {
     const processed = await processGroup(normalItems, 'video', runBudget, existingIds, tag, spoergsmaal);
 
     console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
+    // Faktaark-filerne fra kandidatvurderingen er kun mellemregninger (git ignorerer dem).
+    for (const f of fs.readdirSync('.').filter((x) => /^_faktaark-.*\.json$/.test(x))) fs.rmSync(f, { force: true });
   } catch (error) {
     console.error("❌ Kritisk fejl under kontakt til YouTube:", error.message);
   }

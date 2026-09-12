@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { manglerKonkret, kildeNavn, taelTal } from './src/lib/konkret.mjs';
+import { MIN_FAKTA, MIN_BRUGT, faktaarkPrompt, parseFaktaark, faktaarkScore, faktaarkTekst, ukendteTal, brugteFakta } from './src/lib/faktaark.mjs';
 import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
@@ -238,6 +239,13 @@ const forcedTagRaw = tagFlagIndex > -1 ? process.argv[tagFlagIndex + 1] : null;
 // nogen søger på emnet.
 const qFlagIndex = process.argv.indexOf('--question');
 const targetQuestion = qFlagIndex > -1 ? (process.argv[qFlagIndex + 1] || '').trim() : '';
+// --faktaark-only: kør alle kontroller og lav faktaarket, men skriv IKKE
+// artiklen. Robotten (auto-youtube.mjs) bruger det til at vurdere flere
+// kandidatvideoer og vælge den rigeste, før den betaler for én artikel.
+// Arket gemmes i _faktaark-<videoId>.json (ignoreret af git), så den rigtige
+// kørsel bagefter ikke skal lave det igen.
+const faktaarkOnly = process.argv.includes('--faktaark-only');
+const faktaarkFil = (id) => `./_faktaark-${id}.json`;
 const forcedTag = ALLOWED_TAGS.includes(forcedTagRaw) ? forcedTagRaw : null;
 if (forcedTagRaw && !forcedTag) {
   console.log(`⚠️ Ukendt mærke "${forcedTagRaw}" — ignoreret. Gemini vælger selv.`);
@@ -413,13 +421,57 @@ async function run() {
     // Jurassic World Alive..."). Konkrethedsværnet kan ikke redde en artikel,
     // hvis kilden ikke handler om emnet — så kilden skal passe, ellers ingen
     // artikel. Robotten prøver næste kandidat.
-    if (!isShort && targetQuestion) {
-      const relPrompt = `Answer with only one word: YES or NO. Does this transcript substantively cover the subject of the search "${targetQuestion}" — enough that an article answering that search could draw specific facts, examples or numbers from it? A passing mention is NO.\n\nTranscript (excerpt): ${text.substring(0, 6000)}`;
-      const rel = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 8, temperature: 0 } }).generateContent(relPrompt);
-      const relSvar = (rel.response.text() || '').replace(/[*.\s]/g, '').toUpperCase();
-      console.log('Relevans-svar:', relSvar);
-      if (relSvar !== 'YES') {
-        console.log(`Sprunget over: kilden handler ikke om "${targetQuestion}" (${videoId})`);
+    //
+    // Uden søgespørgsmål (autocomplete gav intet ubrugt) tjekkes mod emnet i
+    // stedet — målt 12/9: AI Glasses-artiklen slap uden om tjekket, fordi den
+    // kun kørte med et spørgsmål.
+    const relevansEmne = targetQuestion || (forcedTag ? `the topic "${forcedTag}"` : '');
+    if (!isShort && relevansEmne) {
+      const relPrompt = `Answer with only one word: YES or NO. Does this transcript substantively cover the subject of ${targetQuestion ? `the search "${targetQuestion}"` : relevansEmne} — enough that an article on that subject could draw specific facts, examples or numbers from it? A passing mention is NO.\n\nTranscript (excerpt): ${text.substring(0, 6000)}`;
+      // Målt 12/9: med maxOutputTokens 8 kom svaret tit TOMT (gemini-2.5 bruger
+      // af budgettet på at tænke), og tomt blev regnet som NO — tre gode
+      // kandidater afvist i én kørsel. Nu er der plads til at tænke, og et tomt
+      // svar får ét forsøg mere før det tæller som NO.
+      let relSvar = '';
+      for (let forsoeg = 0; forsoeg < 2 && !/^(YES|NO)/.test(relSvar); forsoeg++) {
+        const rel = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(relPrompt);
+        relSvar = (rel.response.text() || '').replace(/[*.\s]/g, '').toUpperCase();
+      }
+      console.log('Relevans-svar:', relSvar || '(tomt)');
+      if (!relSvar.startsWith('YES')) {
+        console.log(`Sprunget over: kilden handler ikke om ${targetQuestion ? `"${targetQuestion}"` : relevansEmne} (${videoId})`);
+        return;
+      }
+    }
+
+    // TRIN 1 — faktaark (src/lib/faktaark.mjs). Et billigt kald, der KUN
+    // skriver kildens tal, navne, eksempler og citater ned, ordret. Er arket
+    // for tyndt, er kilden det også — og vi stopper her, før artikel-prompten.
+    // Det erstatter modellens egen undskyldning "kilden har ingen tal" med et
+    // faktisk tjek. Arket genbruges fra fil, hvis --faktaark-only allerede
+    // har lavet det i samme kørsel (auto-youtube.mjs sammenligner kandidater).
+    let fakta = [];
+    if (!isShort) {
+      if (fs.existsSync(faktaarkFil(videoId))) {
+        try { fakta = JSON.parse(fs.readFileSync(faktaarkFil(videoId), 'utf8')); console.log(`Faktaark: læst fra fil (${fakta.length} punkter)`); } catch { fakta = []; }
+      }
+      if (!fakta.length) {
+        const fk = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
+          .generateContent(faktaarkPrompt(text, targetQuestion || forcedTag || ''));
+        fakta = parseFaktaark(fk.response.text());
+        fs.writeFileSync(faktaarkFil(videoId), JSON.stringify(fakta, null, 1), 'utf8');
+      }
+      const score = faktaarkScore(fakta);
+      const fordeling = ['tal', 'navn', 'eksempel', 'citat'].map((t) => `${t} ${fakta.filter((f) => f.type === t).length}`).join(', ');
+      console.log(`Faktaark: ${fakta.length} punkter (${fordeling}) — score ${score}`);
+      // Linjen læses maskinelt af auto-youtube.mjs. Ændr ikke formatet.
+      console.log(`FAKTAARK-SCORE: ${score}`);
+      if (score < MIN_FAKTA) {
+        console.log(`Sprunget over: kilden er for tynd — ${score} konkrete punkter, mindst ${MIN_FAKTA} kræves (${videoId})`);
+        return;
+      }
+      if (faktaarkOnly) {
+        console.log('Faktaark gemt — artiklen skrives ikke (--faktaark-only).');
         return;
       }
     }
@@ -445,7 +497,7 @@ async function run() {
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this video only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the video revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the video told them.
+      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. You have researched the subject by watching one video; its FACT SHEET is below. The facts from the source are the skeleton of the article; your explanation is the flesh around them. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the subject revolves around. Then write a reference piece about that TOPIC: explain what the reader needs to understand, and anchor every section in the specific numbers, names and examples the source gives. Do not retell the video in its own order - but do use what it says.
 
     ${targetQuestion ? `THE READER'S QUESTION: someone searching Google typed "${targetQuestion}". That question is this article's job. Answer it plainly in the opening, then spend the article explaining the subject well enough that the answer holds up: what it is, why it works that way, what it costs, and where people get it wrong. The headline and at least one H2 must reflect the question. If the source material does not address it, still write about the subject — just do not invent an answer to the question.` : `Write about the subject itself, not about the video. A reader who never watches it must come away with a complete answer.`}
 
@@ -471,18 +523,21 @@ async function run() {
     8. Never use filler like "in this video" or "the video discusses" - write as an independent editorial piece. The one exception is rule 14: attribute the source ONCE, by the creator's name.
     9. Ensure internal links are written strictly like this: [Link text](/video/slug).
     10. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write a reference piece about the topic itself, the way an experienced writer would if they had watched this video as part of their research. The video is one input, not the subject. A reader who never watches it must get a complete, self-contained answer.
-    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts; for specifics use the source material (rule 14). NEVER fabricate statistics, quotes, dates, company figures or events - every number and name must come from the source material or be common knowledge.
-    12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - but in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
+    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts; for specifics use the FACT SHEET (rule 14). NEVER fabricate statistics, quotes, dates, company figures or events - every number must come from the FACT SHEET or the source material, written exactly as the source gives it (no rounding, no converting); names may also be common knowledge.
+    12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
     13. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
-    14. CONCRETE DETAIL IS MANDATORY. A reader must be able to tell this article was researched, not generated. Include at least THREE specific details taken from the source material: exact numbers (prices, percentages, dates, counts, durations), named products, companies, tools or people, and at least one concrete example, step or case the source actually gives. Attribute the source exactly once, by name, where its most specific point appears - for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ..." or "${kildeNavn(channelTitle) || 'The creator'} puts the figure at ...". If the source material contains fewer than three specific details, use the ones it has and say plainly that the subject lacks hard numbers - never pad with invented ones. An article with no numbers and no named things is a failed article.
+    14. CONCRETE DETAIL IS MANDATORY. A reader must be able to tell this article was researched, not generated. Use at least FIVE items from the FACT SHEET below - every NUMBER item you can place naturally, plus named products, companies, tools or people, and at least one EXAMPLE item told as a concrete case. Write numbers exactly as the fact sheet gives them. Put them where they support the argument, not in a list at the end. Attribute the source exactly once, by name, where its most specific point appears - for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ..." or "${kildeNavn(channelTitle) || 'The creator'} puts the figure at ...". An article that ignores the fact sheet is a failed article.
 
     This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
 
     ${articleProfile.structure}
     ${internalLinksContext}
 
+    FACT SHEET (every concrete detail the source gives, in the source's own words - your ingredient list for rule 14):
+    ${faktaarkTekst(fakta)}
+
     SOURCE MATERIAL (research input — the transcript of one video on this subject).
-    Use it for the specific claims, examples and angles it contributes. Do not treat
+    Use it for context, framing and the angles it contributes. Do not treat
     it as an outline to follow, and do not write about the video itself:
     ${text.substring(0, 20000)}`;
 
@@ -596,7 +651,9 @@ async function run() {
 
     if (!isShort) {
       const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
-      const contentMatch = rawText.match(/CONTENT:\s*([\s\S]*)/i);
+      // Markøren accepteres også som egen linje med fed/uden kolon ("**CONTENT**"),
+      // målt 12/9: et svar på 11.000 tegn havde ingen "CONTENT:" og blev kasseret.
+      const contentMatch = rawText.match(/^[ \t]*\**CONTENT\**:?\**[ \t]*\r?\n([\s\S]*)/im) || rawText.match(/CONTENT:\s*([\s\S]*)/i);
 
       const faqBlock = faqMatch ? faqMatch[1] : "";
       const faqPairRegex = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
@@ -613,42 +670,8 @@ async function run() {
       content = content.replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim();
       content = sanitizeLinks(content);
 
-      // Konkrethedsværn (src/lib/konkret.mjs): deterministisk tjek, ikke et løfte i
-      // prompten. Mangler der tal eller kildehenvisning, får modellen ÉT forsøg på
-      // at rette netop det med transskriptet ved hånden. Artiklen afvises ikke
-      // bagefter — men manglen logges, så audit-specificity.mjs kan følge den.
-      let mangler = manglerKonkret(content, channelTitle);
-      if (mangler.length) {
-        console.log(`🔎 Brødteksten mangler: ${mangler.join(' + ')} (tal: ${taelTal(content)}) — beder om konkrete detaljer fra kilden`);
-        try {
-          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
-            .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these two requirements:
-1. Add at least three specific details taken from the SOURCE MATERIAL: exact numbers (prices, percentages, dates, counts, durations), named products, companies, tools or people, and one concrete example, step or case the source gives. Put them where they support the argument, not in a list at the end.
-2. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-Never invent numbers or names - if the source has fewer than three specifics, use the ones it has. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no transcript, no commentary, no preamble.
-
-SOURCE MATERIAL (for facts only - never copy it):
-${text.substring(0, 20000)}
-
-ARTICLE TO REVISE:
-${content}`);
-          const ny = sanitizeLinks((rep.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
-          // Målt 11/9: modellen svarede én gang med transskriptet i stedet for
-          // artiklen ("Welcome to ... >> Thanks, Megan"), og længden alene lod det
-          // slippe igennem. Nu skal rettelsen bevise, at den stadig er artiklen.
-          const h2Foer = (content.match(/^##\s.+$/gm) || []).map((h) => h.trim());
-          const h2Efter = new Set((ny.match(/^##\s.+$/gm) || []).map((h) => h.trim()));
-          const h2Bevaret = h2Foer.filter((h) => h2Efter.has(h)).length;
-          const laengde = ny.split(/\s+/).length / Math.max(1, content.split(/\s+/).length);
-          const ligner = h2Foer.length === 0 ? laengde >= 0.7 && laengde <= 1.4 : h2Bevaret >= Math.max(1, Math.ceil(h2Foer.length * 0.6)) && laengde >= 0.7 && laengde <= 1.4;
-          if (ligner) content = ny;
-          else console.log(`   rettelse kasseret: ligner ikke artiklen (H2 bevaret ${h2Bevaret}/${h2Foer.length}, længde ${Math.round(laengde * 100)} %)`);
-        } catch (e) { console.log(`   rettelse fejlede: ${e.message}`); }
-        mangler = manglerKonkret(content, channelTitle);
-        console.log(mangler.length ? `🔎 Stadig mangler: ${mangler.join(' + ')} — udgives alligevel, tælles i audit` : `🔎 Konkret nu: ${taelTal(content)} tal, kilden nævnt`);
-      }
-
-      // Skriv ALDRIG en artikel uden brødtekst.
+      // Skriv ALDRIG en artikel uden brødtekst — og tjek det FØR kontrollen
+      // mod faktaarket, så en tom tekst ikke sendes til rettelse (målt 12/9).
       //
       // Det her var hele fejlen: manglede CONTENT: i svaret, blev content til
       // en tom streng, og filen blev skrevet alligevel — med titel, resumé,
@@ -665,6 +688,63 @@ ${content}`);
           `(Svaret var ${rawText.length} tegn; CONTENT: ${contentMatch ? 'fundet' : 'MANGLER'}.)`
         );
       }
+
+      // TRIN 3 — kontrol mod faktaarket (12/9): tre ting måles deterministisk.
+      //  a) brugte: hvor mange punkter fra arket kan genfindes i artiklen (mindst MIN_BRUGT)
+      //  b) ukendte: tal i artiklen, som hverken står i arket eller transskriptet (skal være 0)
+      //  c) kilden nævnt ved navn (som før)
+      // Mangler noget, får modellen ÉT forsøg med arket ved hånden — ikke hele
+      // transskriptet, for det var dét, der i første omgang druknede detaljerne.
+      const status = () => {
+        const brugte = brugteFakta(content, fakta);
+        const ukendte = ukendteTal(content, fakta, text);
+        const m = [];
+        if (brugte.length < MIN_BRUGT) m.push(`kun ${brugte.length} af ${fakta.length} punkter fra arket brugt (mindst ${MIN_BRUGT})`);
+        if (ukendte.length) m.push(`tal uden dækning i kilden: ${ukendte.join(', ')}`);
+        if (manglerKonkret(content, channelTitle).includes('kilde')) m.push('kilden ikke nævnt ved navn');
+        return { brugte, ukendte, m };
+      };
+      let k = status();
+      if (k.m.length) {
+        console.log(`🔎 Kontrol mod faktaarket: ${k.m.join(' · ')} — beder om rettelse`);
+        const ubrugte = fakta.filter((f) => !k.brugte.includes(f)).slice(0, 12);
+        try {
+          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
+            .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
+1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
+${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
+Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+
+FACT SHEET (items not yet used are listed first):
+${faktaarkTekst([...ubrugte, ...k.brugte])}
+
+ARTICLE TO REVISE:
+${content}`);
+          const ny = sanitizeLinks((rep.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
+          // Målt 11/9: modellen svarede én gang med transskriptet i stedet for
+          // artiklen ("Welcome to ... >> Thanks, Megan"), og længden alene lod det
+          // slippe igennem. Nu skal rettelsen bevise, at den stadig er artiklen.
+          const h2Foer = (content.match(/^##\s.+$/gm) || []).map((h) => h.trim());
+          const h2Efter = new Set((ny.match(/^##\s.+$/gm) || []).map((h) => h.trim()));
+          const h2Bevaret = h2Foer.filter((h) => h2Efter.has(h)).length;
+          const laengde = ny.split(/\s+/).length / Math.max(1, content.split(/\s+/).length);
+          const ligner = h2Foer.length === 0 ? laengde >= 0.7 && laengde <= 1.4 : h2Bevaret >= Math.max(1, Math.ceil(h2Foer.length * 0.6)) && laengde >= 0.7 && laengde <= 1.4;
+          if (ligner) content = ny;
+          else console.log(`   rettelse kasseret: ligner ikke artiklen (H2 bevaret ${h2Bevaret}/${h2Foer.length}, længde ${Math.round(laengde * 100)} %)`);
+        } catch (e) { console.log(`   rettelse fejlede: ${e.message}`); }
+        k = status();
+      }
+      // Opfundne tal er det ene, der ALDRIG må ud: ét forkert tal, og læseren
+      // (og AdSense) kan med rette kalde hele sitet utroværdigt. Så står der
+      // stadig tal uden dækning efter rettelsen, skrives artiklen ikke —
+      // robotten prøver næste kandidat. For få brugte punkter eller manglende
+      // kildenavn logges kun, så audit-specificity.mjs kan følge det.
+      if (k.ukendte.length) {
+        throw new Error(`Artiklen har tal uden dækning i kilden efter rettelse: ${k.ukendte.join(', ')}. Artiklen skrives ikke.`);
+      }
+      console.log(k.m.length
+        ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
+        : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${taelTal(content)} tal, kilden nævnt`);
     }
 
     const date = new Date().toISOString().split('T')[0];
