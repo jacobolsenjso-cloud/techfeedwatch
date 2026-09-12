@@ -268,5 +268,65 @@
   "q": "how do digital payment systems work",
   "linje": "Kontrol ok: 6 af 15 punkter fra arket brugt, 0 tal, kilden nævnt",
   "dato": "2026-09-12T16:44:29.718Z"
+ },
+ "augmented-reality-demystified-how-digital-overlays-are": {
+  "status": "ok",
+  "q": "what is ar how it works",
+  "linje": "Kontrol ok: 20 af 22 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-12T16:49:04.099Z"
+ },
+ "augmented-reality-examples-and-what-they-cost": {
+  "status": "fejl",
+  "q": "what is augmented reality examples",
+  "linje": "Sprunget over: kilden handler ikke om \"what is augmented reality examples\" (cwWdLjCSC90)",
+  "dato": "2026-09-12T17:01:26.525Z"
+ },
+ "augmented-reality-uses-computer-vision-to-layer-digital-objects": {
+  "status": "fejl",
+  "q": "how does augmented reality work",
+  "linje": "Sprunget over: kilden handler ikke om \"how does augmented reality work\" (tVvA4zYc9EE)",
+  "dato": "2026-09-12T17:13:49.043Z"
+ },
+ "azure-cloud-engineer-careers-practical-skills-vs-certifications": {
+  "status": "fejl",
+  "q": "microsoft azure certification value",
+  "linje": "Sprunget over: kilden handler ikke om \"microsoft azure certification value\" (Py9uturi9ho)",
+  "dato": "2026-09-12T17:26:11.273Z"
+ },
+ "beyond-automation-why-no-code-ai-agents-represent-a-new-frontier-for": {
+  "status": "fejl",
+  "q": "what is an ai agent vs automation",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (EH5jx5qPabU)",
+  "dato": "2026-09-12T17:41:20.473Z"
+ },
+ "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
+  "status": "fejl",
+  "q": "how does ai automate routine tasks",
+  "linje": "Sprunget over: kilden handler ikke om \"how does ai automate routine tasks\" (RcXG_b1_GB0)",
+  "dato": "2026-09-12T17:53:42.808Z"
+ },
+ "beyond-chatbots-we-tested-4-agentic-ai-tools-and-one-gets-smarter": {
+  "status": "fejl",
+  "q": "what are agentic ai tools",
+  "linje": "Sprunget over: kilden handler ikke om \"what are agentic ai tools\" (QcnrWiZokh4)",
+  "dato": "2026-09-12T18:06:07.331Z"
+ },
+ "beyond-copilots-how-ai-is-building-self-improving-companies": {
+  "status": "fejl",
+  "q": "how do autonomous ai agents work",
+  "linje": "Sprunget over: kilden handler ikke om \"how do autonomous ai agents work\" (X_JsIHUfUjc)",
+  "dato": "2026-09-12T18:18:29.867Z"
+ },
+ "beyond-google-how-marketers-win-in-the-ai-powered-search-era": {
+  "status": "ok",
+  "q": "what is ai search engine optimization called",
+  "linje": "Kontrol ok: 5 af 5 punkter fra arket brugt, 5 tal, kilden nævnt",
+  "dato": "2026-09-12T18:19:51.055Z"
+ },
+ "beyond-paper-decoding-smart-contracts-and-their-blockchain-revolution": {
+  "status": "fejl",
+  "q": "what are smart contracts and how do they work",
+  "linje": "Sprunget over: kilden er for tynd — 0 konkrete punkter, mindst 5 kræves (srjUFqnfKIs)",
+  "dato": "2026-09-12T18:32:20.104Z"
  }
 }
