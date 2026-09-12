@@ -14,8 +14,8 @@
  "adhd-and-ai-a-symbiotic-leap-in-executive-function-support": {
   "status": "fejl",
   "q": "how does ai help adhd",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6488 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-12T13:03:48.166Z"
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (ZssxnYgc2wI)",
+  "dato": "2026-09-12T19:00:53.159Z"
  },
  "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping": {
   "status": "fejl",
@@ -297,7 +297,7 @@
   "status": "fejl",
   "q": "what is an ai agent vs automation",
   "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (EH5jx5qPabU)",
-  "dato": "2026-09-12T17:41:20.473Z"
+  "dato": "2026-09-12T19:15:47.285Z"
  },
  "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
   "status": "fejl",
@@ -328,5 +328,185 @@
   "q": "what are smart contracts and how do they work",
   "linje": "Sprunget over: kilden er for tynd — 0 konkrete punkter, mindst 5 kræves (srjUFqnfKIs)",
   "dato": "2026-09-12T18:32:20.104Z"
+ },
+ "beyond-seo-why-generative-engine-optimization-geo-is-your-2026-must": {
+  "status": "afvist",
+  "q": "what is difference between geo and seo",
+  "linje": "Sprunget over: kilden handler ikke om \"what is difference between geo and seo\" (Pi9GjgNFwqo)",
+  "dato": "2026-09-12T19:28:07.974Z"
+ },
+ "beyond-software-how-hard-tech-startups-are-forging-a-new-industrial": {
+  "status": "ok",
+  "q": "what are hard tech companies",
+  "linje": "Kontrol ok: 6 af 14 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T19:29:00.883Z"
+ },
+ "beyond-sora-free-private-ai-video-generation-hits-your-desktop": {
+  "status": "ok",
+  "q": "how to make private ai videos",
+  "linje": "Kontrol ok: 16 af 41 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T19:29:42.818Z"
+ },
+ "beyond-the-blockchain-understanding-bitcoin-s-philosophical-challenge": {
+  "status": "fejl",
+  "q": "what is individual sovereignty",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (HrehEWYj16s)",
+  "dato": "2026-09-12T19:44:47.647Z"
+ },
+ "beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software": {
+  "status": "ok",
+  "q": "what is openclaw and why should i care",
+  "linje": "Kontrol ok: 6 af 6 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T19:53:45.650Z"
+ },
+ "beyond-the-desktop-laptops-now-power-large-language-models-with": {
+  "status": "ok",
+  "q": "how much memory does a local llm need",
+  "linje": "Kontrol ok: 17 af 50 punkter fra arket brugt, 15 tal, kilden nævnt",
+  "dato": "2026-09-12T19:55:11.697Z"
+ },
+ "beyond-the-hello-world-the-realities-of-coding-ethereum-smart": {
+  "status": "afvist",
+  "q": "what is remix ethereum ide",
+  "linje": "Sprunget over: kilden handler ikke om \"what is remix ethereum ide\" (ooN6kZ9vqNQ)",
+  "dato": "2026-09-12T20:07:29.255Z"
+ },
+ "beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025": {
+  "status": "afvist",
+  "q": "how to become ai engineer 2025",
+  "linje": "Sprunget over: kilden handler ikke om \"how to become ai engineer 2025\" (PSWUr5E_OKY)",
+  "dato": "2026-09-12T20:19:51.853Z"
+ },
+ "beyond-the-hype-three-fundamental-flaws-limiting-ai-s-ascent-to-human": {
+  "status": "afvist",
+  "q": "what is generalization in llm",
+  "linje": "Sprunget over: kilden handler ikke om \"what is generalization in llm\" (984qBh164fo)",
+  "dato": "2026-09-12T20:32:13.753Z"
+ },
+ "beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030": {
+  "status": "afvist",
+  "q": "what are some examples of ar in daily life",
+  "linje": "Sprunget over: kilden handler ikke om \"what are some examples of ar in daily life\" (D8V2nxeWHmI)",
+  "dato": "2026-09-12T20:44:34.413Z"
+ },
+ "bitcoin-s-quantum-threat-separating-hype-from-reality-in-blockchain": {
+  "status": "fejl",
+  "q": "how does quantum computing threaten bitcoin's security",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10562 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-12T20:59:43.239Z"
+ },
+ "blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks": {
+  "status": "ok",
+  "q": "how does blockchain technology address trust issues with current technology",
+  "linje": "tal uden dækning i kilden: 50 — beder om rettelse",
+  "dato": "2026-09-12T21:01:05.256Z"
+ },
+ "building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital": {
+  "status": "afvist",
+  "q": "what are ai productivity tools",
+  "linje": "Sprunget over: kilden handler ikke om \"what are ai productivity tools\" (CvLkhGWZlvE)",
+  "dato": "2026-09-12T21:13:26.503Z"
+ },
+ "clarity-act-the-regulatory-key-to-unlocking-institutional-crypto": {
+  "status": "ok",
+  "q": "what is tokenization of financial assets",
+  "linje": "Kontrol ok: 13 af 23 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T21:21:17.900Z"
+ },
+ "claude-co-work-why-this-ai-isn-t-just-chatting-it-s-doing-your": {
+  "status": "afvist",
+  "q": "what is claude co-work used for",
+  "linje": "Sprunget over: kilden handler ikke om \"what is claude co-work used for\" (oUIxPCagoQU)",
+  "dato": "2026-09-12T21:33:35.719Z"
+ },
+ "claude-unlocked-beyond-the-chatbot-your-guide-to-the-full-ai-ecosystem": {
+  "status": "ok",
+  "q": "what is the primary features of claude ai",
+  "linje": "Kontrol ok: 11 af 19 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T21:36:46.332Z"
+ },
+ "cloud-security-s-rapid-evolution-why-architecture-first-consulting": {
+  "status": "afvist",
+  "q": "why is cloud security important",
+  "linje": "Sprunget over: kilden handler ikke om \"why is cloud security important\" (LCa-ioVi8Fs)",
+  "dato": "2026-09-12T21:49:08.583Z"
+ },
+ "code-free-revolution-how-claude-code-builds-production-ready-whatsapp": {
+  "status": "afvist",
+  "q": "what is whatsapp ai bot",
+  "linje": "Sprunget over: kilden handler ikke om \"what is whatsapp ai bot\" (_VX7jc_BhB8)",
+  "dato": "2026-09-12T22:01:29.383Z"
+ },
+ "code-is-sawdust-how-ai-agents-are-reshaping-software-development": {
+  "status": "afvist",
+  "q": "what is the primary goal of ai agents in software development",
+  "linje": "Sprunget over: kilden handler ikke om \"what is the primary goal of ai agents in software development\" (fQmlML9Lay4)",
+  "dato": "2026-09-12T22:13:50.623Z"
+ },
+ "code-without-coding-claude-code-unleashed-build-anything-deploy": {
+  "status": "ok",
+  "q": "what is no code ai agent",
+  "linje": "Kontrol ok: 21 af 45 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T22:17:13.253Z"
+ },
+ "crypto-regulation-s-clarity-act-us-legislative-hurdles": {
+  "status": "ok",
+  "q": "is cryptocurrency regulated in the us",
+  "linje": "Kontrol ok: 6 af 6 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-12T22:19:03.862Z"
+ },
+ "cybersecurity-risk-management-essential-enterprise-strategies": {
+  "status": "afvist",
+  "q": "what is proactive approach in cyber security",
+  "linje": "Sprunget over: kilden handler ikke om \"what is proactive approach in cyber security\" (ErqOznWDado)",
+  "dato": "2026-09-12T22:31:24.451Z"
+ },
+ "decentralized-ai-banking-how-agentic-ai-reshapes-finance": {
+  "status": "afvist",
+  "q": "why agentic ai is important",
+  "linje": "Sprunget over: kilden handler ikke om \"why agentic ai is important\" (c-MSAP_HBcE)",
+  "dato": "2026-09-12T22:43:45.456Z"
+ },
+ "deepseek-v4-open-source-ai-challenges-billion-dollar-llms": {
+  "status": "afvist",
+  "q": "what is deepseek v4 flash",
+  "linje": "Sprunget over: kilden handler ikke om \"what is deepseek v4 flash\" (p7K3xfViWCE)",
+  "dato": "2026-09-12T22:56:07.842Z"
+ },
+ "digital-commerce-realism-augmented-reality-enhances-e-commerce": {
+  "status": "ok",
+  "q": "how does augmented reality enhance e-commerce experience",
+  "linje": "Kontrol ok: 11 af 17 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T22:56:52.254Z"
+ },
+ "digital-shielding-cybersecurity-best-practices-for-modern-users": {
+  "status": "ok",
+  "q": "what are cybersecurity best practices",
+  "linje": "Kontrol ok: 12 af 34 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T22:57:39.779Z"
+ },
+ "ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude": {
+  "status": "ok",
+  "q": "how to make claude code websites look better",
+  "linje": "Kontrol ok: 15 af 29 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T22:58:28.185Z"
+ },
+ "edge-ai-how-on-device-inference-changes-computing": {
+  "status": "ok",
+  "q": "what is edge ai computing",
+  "linje": "Kontrol ok: 19 af 23 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T22:59:08.093Z"
+ },
+ "ethereum-accounts-demystified-the-eoa-vs-contract-showdown-every-web3": {
+  "status": "ok",
+  "q": "types of ethereum accounts",
+  "linje": "Kontrol ok: 16 af 29 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T22:59:54.876Z"
+ },
+ "ethereum-s-2026-blueprint-programmable-money-s-promise-or-persistent": {
+  "status": "ok",
+  "q": "how does ethereum work",
+  "linje": "Kontrol ok: 41 af 42 punkter fra arket brugt, 6 tal, kilden nævnt",
+  "dato": "2026-09-12T23:00:50.582Z"
  }
 }
