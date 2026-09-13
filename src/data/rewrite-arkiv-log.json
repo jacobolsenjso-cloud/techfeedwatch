@@ -508,5 +508,77 @@
   "q": "how does ethereum work",
   "linje": "Kontrol ok: 41 af 42 punkter fra arket brugt, 6 tal, kilden nævnt",
   "dato": "2026-09-12T23:00:50.582Z"
+ },
+ "ethereum-s-enduring-vision-more-than-just-digital-money": {
+  "status": "ok",
+  "q": "what is ethereum and what is it used for",
+  "linje": "Kontrol ok: 25 af 27 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-12T23:08:10.346Z"
+ },
+ "fintech-s-fragmented-future-deconstructing-the-six-pillars-of-digital": {
+  "status": "afvist",
+  "q": "what is fintech evolution",
+  "linje": "Sprunget over: kilden handler ikke om \"what is fintech evolution\" (zvw_DMamBhM)",
+  "dato": "2026-09-12T23:20:32.779Z"
+ },
+ "free-google-ai-tools-reshape-productivity-and-market-dynamics": {
+  "status": "ok",
+  "q": "what are google ai tools",
+  "linje": "Kontrol ok: 41 af 60 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T23:21:31.363Z"
+ },
+ "from-niche-to-ai-native-unpacking-the-playbook-for-next-gen-service": {
+  "status": "fejl",
+  "q": "what are ai native service companies",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (gSNFJbgoaHI)",
+  "dato": "2026-09-12T23:36:02.992Z"
+ },
+ "frontend-seo-s-technical-core-why-user-experience-now-dominates": {
+  "status": "ok",
+  "q": "what is user experience in seo",
+  "linje": "Kontrol ok: 14 af 30 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T23:36:59.994Z"
+ },
+ "gemini-s-hidden-arsenal-7-next-level-hacks-to-supercharge-your-ai": {
+  "status": "afvist",
+  "q": "what is gemini agent skills",
+  "linje": "Sprunget over: kilden handler ikke om \"what is gemini agent skills\" (sZwN_u9DMnU)",
+  "dato": "2026-09-12T23:49:20.192Z"
+ },
+ "generative-ai-and-human-oversight-the-evolving-blueprint-for-design": {
+  "status": "ok",
+  "q": "how does generative ai impact product design",
+  "linje": "Kontrol ok: 34 af 53 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-12T23:50:39.489Z"
+ },
+ "google-ai-overviews-impact-content-creators-traffic-seo": {
+  "status": "ok",
+  "q": "how do ai overviews impact organic search traffic",
+  "linje": "Kontrol ok: 15 af 22 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-12T23:51:42.554Z"
+ },
+ "google-gemini-s-ecosystem-play-moving-beyond-chatbots-to-autonomous": {
+  "status": "afvist",
+  "q": "what are autonomous agents in ai",
+  "linje": "Sprunget over: kilden handler ikke om \"what are autonomous agents in ai\" (xz-pG1gUS4c)",
+  "dato": "2026-09-13T00:04:04.263Z"
+ },
+ "google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival": {
+  "status": "fejl",
+  "q": "how to optimize content for google ai overview",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (1GiYkMYJLPs)",
+  "dato": "2026-09-13T00:19:33.351Z"
+ },
+ "google-s-core-web-vitals-the-unseen-force-reshaping-your-site-s": {
+  "status": "ok",
+  "q": "what does core web vitals measure",
+  "linje": "tal uden dækning i kilden: 100 — beder om rettelse",
+  "dato": "2026-09-13T00:21:01.226Z"
+ },
+ "google-s-free-ai-power-up-create-hyper-realistic-influencer-videos": {
+  "status": "afvist",
+  "q": "how are ai influencers created",
+  "linje": "Sprunget over: video er ikke på engelsk (K6DTEvL1KWc)",
+  "dato": "2026-09-13T00:33:19.039Z"
  }
 }
