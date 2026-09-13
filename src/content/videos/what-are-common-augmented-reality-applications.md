@@ -12,8 +12,8 @@ summary: "Augmented reality (AR) applications overlay digital information onto t
 metaDescription: "Augmented reality (AR) applications overlay digital information onto the real world through devices like smartphones or smart glasses."
 targetQuestion: "what are augmented reality applications"
 duration: "14:51"
-viewCount: 9960
-viewsUpdated: "2026-09-10"
+viewCount: 10194
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

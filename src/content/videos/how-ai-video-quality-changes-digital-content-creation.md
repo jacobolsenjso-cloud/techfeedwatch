@@ -12,8 +12,8 @@ summary: "AI-generated video content frequently exhibits a distinct 'weirdness' 
 metaDescription: "Uncover why AI videos often look weird, from uncanny valley effects to technical limitations, and what this means for digital media."
 targetQuestion: "why ai videos are weird"
 duration: "16:51"
-viewCount: 777530
-viewsUpdated: "2026-09-10"
+viewCount: 799237
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Quantum computing represents a radical departure from classical comput
 metaDescription: "Understand quantum computing in simple terms. Learn how qubits, superposition, and entanglement enable unprecedented computational power."
 targetQuestion: "what is quantum computing in simple terms"
 duration: "12:52"
-viewCount: 92253
-viewsUpdated: "2026-09-10"
+viewCount: 92819
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

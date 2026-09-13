@@ -12,8 +12,8 @@ summary: "NVIDIA AI chips are specialized graphics processing units (GPUs) optim
 metaDescription: "Understand what NVIDIA AI chips are, how these specialized GPUs power AI, their market impact, and the future of AI hardware."
 targetQuestion: "what are ai chips nvidia"
 duration: "9:35"
-viewCount: 43
-viewsUpdated: "2026-09-04"
+viewCount: 44
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

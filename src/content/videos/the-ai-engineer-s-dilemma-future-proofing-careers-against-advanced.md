@@ -14,8 +14,8 @@ tags:
 summary: "The rise of AI coding agents prompts a critical re-evaluation of essential skills for programmers and machine learning engineers. While AI automates routine code generation, it simultaneously intensifies the demand for deep fundamental understanding, architectural thinking, and human problem-solving. Future relevance in tech hinges on adaptability, interdisciplinary expertise, and strong social skills, rather than mere syntax knowledge. This shift underscores a move from code production to intelligent system design and oversight."
 metaDescription: "The rise of AI coding agents prompts a critical re-evaluation of essential skills for programmers and machine learning engineers."
 duration: "14:41"
-viewCount: 8281
-viewsUpdated: "2026-09-10"
+viewCount: 8301
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 revised: true

@@ -12,8 +12,8 @@ summary: "An AI video generator is a sophisticated artificial intelligence syste
 metaDescription: "Explore what an AI video generator is, how these advanced systems create compelling visuals, and their impact on content creation and media."
 targetQuestion: "what is ai video generator"
 duration: "12:25"
-viewCount: 421420
-viewsUpdated: "2026-09-10"
+viewCount: 428058
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

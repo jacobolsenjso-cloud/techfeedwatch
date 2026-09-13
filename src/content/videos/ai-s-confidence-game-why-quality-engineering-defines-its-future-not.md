@@ -13,8 +13,8 @@ tags:
 summary: "The rise of AI in software development demands a critical re-evaluation of quality engineering, focusing on validating AI's outputs and underlying models. While AI can enhance testing efficiency, it introduces new complexities like bias and explainability, making human judgment more essential, not less. Quality professionals must acquire new skills to scrutinize AI-generated content, ensuring accuracy, fairness, and safety in an increasingly automated world. The future of quality engineering hinges on a hybrid approach, blending AI assistance with expert human oversight."
 metaDescription: "The rise of AI in software development demands a critical re-evaluation of quality engineering, focusing on validating AI's outputs and underlying models."
 duration: "1:39:38"
-viewCount: 4841
-viewsUpdated: "2026-09-10"
+viewCount: 4908
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 revised: true

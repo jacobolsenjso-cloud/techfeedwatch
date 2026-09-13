@@ -12,8 +12,8 @@ summary: "Quantum computing offers a computational paradigm shift, enabling arti
 metaDescription: "Quantum computing offers a computational paradigm shift, enabling artificial intelligence to tackle problems currently intractable for classical systems."
 targetQuestion: "how does quantum computing related to ai"
 duration: "17:02"
-viewCount: 35081
-viewsUpdated: "2026-09-10"
+viewCount: 36584
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Search Engine Optimization (SEO) is the practice of improving a websit
 metaDescription: "Understand Search Engine Optimization (SEO): what it is, how it works, its costs, and common pitfalls for driving organic web traffic."
 targetQuestion: "what is seo and how it works"
 duration: "6:38"
-viewCount: 1
-viewsUpdated: "2026-09-12"
+viewCount: 2
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

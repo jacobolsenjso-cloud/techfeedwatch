@@ -11,8 +11,8 @@ summary: "Augmented reality (AR) overlays digital information onto the real worl
 metaDescription: "Explore augmented reality examples, how AR works, its practical applications, associated costs, and common misconceptions for a clearer understanding."
 targetQuestion: "what is augmented reality examples"
 duration: "44:39"
-viewCount: 5
-viewsUpdated: "2026-09-11"
+viewCount: 6
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

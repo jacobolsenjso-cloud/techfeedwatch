@@ -12,8 +12,8 @@ summary: "Artificial intelligence fundamentally relies on specialized silicon ch
 metaDescription: "Understand how AI uses chips for massive computation, accelerating breakthroughs in machine learning and shaping the future of technology."
 targetQuestion: "how does ai use chips"
 duration: "30:19"
-viewCount: 56670
-viewsUpdated: "2026-09-10"
+viewCount: 57945
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

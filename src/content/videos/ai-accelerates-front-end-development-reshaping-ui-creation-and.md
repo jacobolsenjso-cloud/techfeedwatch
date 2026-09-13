@@ -12,8 +12,8 @@ summary: "AI front-end development tools are rapidly redefining how web user int
 metaDescription: "Explore how AI front end development tools like Vercel V0 and shadcn/ui rapidly accelerate web UI creation, redefining developer workflows."
 targetQuestion: "ai front end development tools"
 duration: "3:43"
-viewCount: 1695594
-viewsUpdated: "2026-09-12"
+viewCount: 1695717
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

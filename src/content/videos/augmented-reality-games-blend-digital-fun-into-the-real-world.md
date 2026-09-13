@@ -12,8 +12,8 @@ summary: "Augmented reality games overlay digital elements onto a player's real-
 metaDescription: "Discover what augmented reality games are, how they work, the technology involved, and what they cost to start playing today."
 targetQuestion: "what are augmented reality games"
 duration: "12:35"
-viewCount: 275524
-viewsUpdated: "2026-09-10"
+viewCount: 284495
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ tags:
 summary: "Stephen Wolfram posits a controversial vision of reality, proposing the universe itself operates as a fundamental computational system governed by simple rules. His Wolfram Physics Project aims to derive all known physics from abstract rewrite systems, specifically hypergraphs. This framework challenges traditional scientific paradigms, suggesting complexity emerges from basic computational processes, with profound implications for AI, our understanding of space-time, and the nature of intelligence."
 metaDescription: "Explore Stephen Wolfram's computational universe theory, where simple rules generate all physical reality, impacting AI and science."
 duration: "3:38:43"
-viewCount: 4761145
-viewsUpdated: "2026-09-10"
+viewCount: 4762684
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ tags:
 summary: "Palmer Luckey, founder of Anduril Industries, champions the controversial idea that advanced AI-powered autonomous weapons, rather than escalating global conflict, could function as the most effective deterrent against major wars. His argument proposes that sophisticated military AI systems can fundamentally alter strategic stability, creating an environment where the costs of aggression become prohibitive. This perspective challenges conventional fears about 'killer robots,' asserting AI's potential to establish lasting peace through overwhelming defensive capabilities."
 metaDescription: "Palmer Luckey suggests advanced AI autonomous weapons can deter major wars by making aggression prohibitively costly, fostering lasting peace."
 duration: "15:17"
-viewCount: 1595693
-viewsUpdated: "2026-09-10"
+viewCount: 1602262
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 revised: true

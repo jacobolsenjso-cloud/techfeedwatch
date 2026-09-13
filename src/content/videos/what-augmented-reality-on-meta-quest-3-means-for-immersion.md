@@ -12,8 +12,8 @@ summary: "The Meta Quest 3 redefines mixed reality by integrating full-color pas
 metaDescription: "Learn how to use augmented reality on Meta Quest 3. Discover its capabilities, limitations, and what its mixed reality means for future interaction."
 targetQuestion: "how to use augmented reality on meta quest 3"
 duration: "9:29"
-viewCount: 35594
-viewsUpdated: "2026-09-10"
+viewCount: 35879
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

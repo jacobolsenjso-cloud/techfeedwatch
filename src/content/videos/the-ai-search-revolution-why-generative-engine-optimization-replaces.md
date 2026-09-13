@@ -14,8 +14,8 @@ tags:
 summary: "The rise of generative AI search engines fundamentally alters how digital content gains visibility. Generative Engine Optimization (GEO) emerges as the new standard, focusing on making content intelligible and citable for AI models, rather than just traditional web crawlers. This shift demands a rethinking of content strategy, technical foundations, and audience engagement, moving beyond keyword density to AI-centric discoverability."
 metaDescription: "Discover Generative Engine Optimization (GEO), the new standard for AI search visibility. Optimize for ChatGPT, Gemini, and Perplexity."
 duration: "17:38"
-viewCount: 36833
-viewsUpdated: "2026-09-10"
+viewCount: 36984
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

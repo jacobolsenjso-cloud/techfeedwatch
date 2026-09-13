@@ -12,8 +12,8 @@ summary: "Organizations use the NIST Cybersecurity Framework (CSF) as a voluntar
 metaDescription: "Learn how to use the NIST Cybersecurity Framework (CSF) 2.0 to build effective cybersecurity programs and manage organizational risk."
 targetQuestion: "how to use nist cybersecurity framework"
 duration: "7:58"
-viewCount: 161
-viewsUpdated: "2026-09-10"
+viewCount: 167
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

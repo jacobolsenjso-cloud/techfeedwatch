@@ -13,8 +13,8 @@ tags:
 summary: "Quantum computing generates significant investment and ambitious promises from both governments and tech giants, fueled by national competition and the allure of revolutionary applications. Despite ongoing scientific progress, the technology remains in an experimental, pre-commercial stage, facing profound hardware and engineering obstacles that prevent current devices from delivering practical utility. The disparity between marketing claims and the fundamental R&D reality highlights a persistent 'hype cycle' that obscures the incremental, complex work required for future breakthroughs. Addressing these foundational challenges, rather than chasing ambitious timelines, will determine quantum computing's long-term impact on specialized fields like molecular simulation and advanced cryptography."
 metaDescription: "Despite significant investment and ambitious promises, quantum computing remains experimental, facing hardware obstacles that prevent practical utility."
 duration: "25:56"
-viewCount: 10893
-viewsUpdated: "2026-09-10"
+viewCount: 10904
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 revised: true

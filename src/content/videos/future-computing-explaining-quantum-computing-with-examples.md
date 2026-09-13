@@ -12,8 +12,8 @@ summary: "Quantum computing represents a fundamental shift in processing informa
 metaDescription: "Understand quantum computing: what it is, how it works with qubits, and real-world examples. Learn why this advanced technology is revolutionary."
 targetQuestion: "what is quantum computing with example"
 duration: "1:33:59"
-viewCount: 12516
-viewsUpdated: "2026-09-10"
+viewCount: 12668
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Search engine optimization has profoundly evolved, shifting from simpl
 metaDescription: "Discover how SEO optimization works in the AI era. Learn about search intent, EEAT, and AI visibility to rank on Google."
 targetQuestion: "how does seo optimization work"
 duration: "1:15:01"
-viewCount: 4
-viewsUpdated: "2026-09-12"
+viewCount: 5
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:

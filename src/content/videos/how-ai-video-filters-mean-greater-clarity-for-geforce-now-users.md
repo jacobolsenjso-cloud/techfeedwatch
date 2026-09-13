@@ -12,8 +12,8 @@ summary: "AI video filters leverage artificial intelligence to enhance video qua
 metaDescription: "Understand what AI video filters are, how they work with GeForce NOW, and why client-side application is complex in cloud gaming."
 targetQuestion: "what is ai video filter on geforce now"
 duration: "6:22"
-viewCount: 30577
-viewsUpdated: "2026-09-10"
+viewCount: 31612
+viewsUpdated: "2026-09-13"
 thumbMax: true
 isShort: false
 faqs:
