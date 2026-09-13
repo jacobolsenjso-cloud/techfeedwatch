@@ -1,0 +1,70 @@
+name: Re-judge relevance
+
+# Gendømmer de artikler, den gamle ja/nej-dommer sagde NEJ til — nu med en
+# karakter 0-10 (median af tre kald) og en begrundelse, så listen kan læses
+# af et menneske i stedet for at blive fulgt blindt. Se audit-relevans2.mjs.
+#
+# Skriver INTET i artiklerne: kun src/data/relevans2.json og
+# _relevans2-gennemsyn.md. Kan køre samtidig med "Archive rewrite" — de
+# rører hver sin fil, og begge laver git pull --rebase før push.
+#
+# Start manuelt: Actions -> "Re-judge relevance" -> Run workflow.
+# Kør igen, indtil den melder 0 tilbage.
+
+on:
+  workflow_dispatch:
+    inputs:
+      antal:
+        description: 'Højst så mange artikler i denne kørsel'
+        required: false
+        default: '200'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rejudge-relevance
+  cancel-in-progress: false
+
+jobs:
+  rejudge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      # Deles med "Archive rewrite": en video der allerede er hentet dér,
+      # hentes ikke igen her.
+      - name: Transskript-cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/transskripter
+          key: transskripter-${{ github.run_id }}
+          restore-keys: transskripter-
+
+      - name: Git-identitet
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Gendøm relevansen
+        run: node audit-relevans2.mjs --kun ${{ github.event.inputs.antal || '200' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Gem gennemsynsfilen og resten
+        if: always()
+        run: |
+          git add src/data/relevans2.json _relevans2-gennemsyn.md || true
+          git commit -m "Re-judge relevance: verdicts and review list from this run" || echo "Intet at gemme."
+          git pull --rebase || true
+          git push || echo "Intet nyt at uploade."

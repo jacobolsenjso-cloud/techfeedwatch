@@ -46,6 +46,17 @@ jobs:
       - name: Installer dependencies
         run: npm install
 
+      # Hentede transskripter bæres med fra kørsel til kørsel. YouTube drosler
+      # os (2-6 min ventetid pr. hentning), så en video vi allerede har hentet
+      # skal aldrig hentes igen — hverken i næste kørsel eller i gendømningen.
+      # Nøglen er unik pr. kørsel, restore-keys henter den nyeste tidligere.
+      - name: Transskript-cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/transskripter
+          key: transskripter-${{ github.run_id }}
+          restore-keys: transskripter-
+
       - name: Git-identitet
         run: |
           git config --global user.name 'github-actions[bot]'

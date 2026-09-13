@@ -1,5 +1,9 @@
 # build output
 dist/
+
+# hentede transskripter (src/lib/transskript.mjs). Må ikke i git — de er
+# andres indhold og fylder. I GitHub Actions bæres de af actions/cache.
+.cache/
 # generated types
 .astro/
 

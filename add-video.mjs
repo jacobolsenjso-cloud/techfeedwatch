@@ -9,6 +9,7 @@ import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme }
 import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
 import { erRelevant } from './src/lib/relevans.mjs';
+import { hentSegmenter } from './src/lib/transskript.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -400,8 +401,12 @@ async function run() {
     }
 
     try {
-      // PLAN A: Prøv at hente undertekster
-      const transcript = await YoutubeTranscript.fetchTranscript(videoId);
+      // PLAN A: Prøv at hente undertekster (fra cache hvis vi har hentet dem før —
+      // se src/lib/transskript.mjs; YouTube drosler os, så hver video hentes én gang)
+      const { segmenter: transcript, fraCache } = await hentSegmenter(videoId, {
+        onVent: (s) => console.log(`   YouTube drosler — venter ${s / 60} min`),
+      });
+      if (fraCache) console.log('Transskript: læst fra cache');
       text = transcript.map(t => t.text).join(' ');
 
       const lastT = transcript[transcript.length - 1];
