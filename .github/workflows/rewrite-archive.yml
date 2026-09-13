@@ -15,7 +15,15 @@ name: Archive rewrite
 # --rebase før push, så de kan ikke overskrive hinanden — men undgå at starte
 # to Archive rewrite-kørsler på én gang.
 
+# Tidsplanen starter kørslen forfra hver 6. time, så arbejdet fortsætter af sig
+# selv natten over uden at nogen skal trykke på noget. En kørsel varer højst
+# 5t50m, så den næste starter kort efter den forrige er stoppet. Er der intet
+# tilbage, melder scriptet "Skal omskrives: 0" og er færdig på under et minut.
+# STOP DEN: sæt # foran de to schedule-linjer nedenfor (som i daily-update.yml).
+# Minuttet er 20 for ikke at ramme robottens egne kørsler på hele timer.
 on:
+  schedule:
+    - cron: "20 */6 * * *"
   workflow_dispatch:
     inputs:
       antal:

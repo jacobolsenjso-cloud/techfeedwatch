@@ -11,7 +11,13 @@ name: Re-judge relevance
 # Start manuelt: Actions -> "Re-judge relevance" -> Run workflow.
 # Kør igen, indtil den melder 0 tilbage.
 
+# Tidsplan hver 6. time, så gendømningen kører færdig af sig selv. Er alle
+# dømt, er kørslen færdig på under et minut ("Skal gendømmes: 0").
+# STOP DEN: sæt # foran de to schedule-linjer. Minuttet er 40, så den ikke
+# rammer samtidig med Archive rewrite (minut 20) eller robotten (hele timer).
 on:
+  schedule:
+    - cron: "40 */6 * * *"
   workflow_dispatch:
     inputs:
       antal:
