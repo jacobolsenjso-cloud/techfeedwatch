@@ -643,5 +643,215 @@
   "spredning": 0,
   "grund": "The transcript critically analyzes the current value of Microsoft Azure certifications, arguing they are a necessary entry point but not a differentiator for getting hired, and emphasizes the importance of practical projects and deep understanding of core services.",
   "dømt": "2026-09-14T19:01:20.183Z"
+ },
+ "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
+  "slug": "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world",
+  "title": "How AI Automates Routine Tasks in Modern Workflows",
+  "youtubeId": "RcXG_b1_GB0",
+  "q": "how does ai automate routine tasks",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Digital Brain",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 9173,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript provides specific examples of AI tools and how they automate various routine tasks across different professions.",
+  "dømt": "2026-09-14T19:01:29.526Z"
+ },
+ "beyond-buzzwords-why-ai-quantum-and-ar-s-convergence-defines-2026-s": {
+  "slug": "beyond-buzzwords-why-ai-quantum-and-ar-s-convergence-defines-2026-s",
+  "title": "What Is Quantum AI, and How It Converges with AR in 2026",
+  "youtubeId": "6OlUMND1htQ",
+  "q": "what is quantum ai",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-17",
+  "channel": "AI Creator Mastery",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 13576,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses various current and near-future technology trends, focusing on different aspects of artificial intelligence and computing/connectivity, but does not mention quantum AI.",
+  "dømt": "2026-09-14T19:01:41.376Z"
+ },
+ "beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai": {
+  "slug": "beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai",
+  "title": "What Are AI Agents and How Do They Work?",
+  "youtubeId": "6GtF_uHbGhw",
+  "q": "what are ai agents and how do they work",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Jack Roberts",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 31662,
+  "score": 4,
+  "scorer": [
+   4,
+   5,
+   4
+  ],
+  "spredning": 1,
+  "grund": "The transcript is a guide on how to use and progress through different levels of a specific AI agent product called Hermes.",
+  "dømt": "2026-09-14T19:02:05.137Z"
+ },
+ "beyond-chatbots-we-tested-4-agentic-ai-tools-and-one-gets-smarter": {
+  "slug": "beyond-chatbots-we-tested-4-agentic-ai-tools-and-one-gets-smarter",
+  "title": "What Agentic AI Tools Are and How They Work",
+  "youtubeId": "QcnrWiZokh4",
+  "q": "what are agentic ai tools",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Parker Prompts",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 12200,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript reviews and demonstrates specific agentic AI tools, explaining their functions and practical applications with examples.",
+  "dømt": "2026-09-14T19:02:20.496Z"
+ },
+ "beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart": {
+  "slug": "beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart",
+  "title": "How Do Smart Contracts Work in Blockchain Technology",
+  "youtubeId": "l-sTw136zAs",
+  "q": "how do smart contracts work in blockchain",
+  "tag": "Crypto",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Lex Clips",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 10750,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the challenges and methods of converting traditional legal agreements into deterministic smart contracts, emphasizing the role of data oracles for real-world integration.",
+  "dømt": "2026-09-14T19:02:43.222Z"
+ },
+ "beyond-copilots-how-ai-is-building-self-improving-companies": {
+  "slug": "beyond-copilots-how-ai-is-building-self-improving-companies",
+  "title": "How Autonomous AI Agents Work Through Recursive Loops",
+  "youtubeId": "X_JsIHUfUjc",
+  "q": "how do autonomous ai agents work",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Y Combinator",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 15050,
+  "score": 10,
+  "scorer": [
+   10,
+   10,
+   10
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains how autonomous AI agents work by detailing a self-improving AI loop with sensor, policy, tool, quality, and learning layers, exemplified by an agent that autonomously identifies and fixes its own failures by writing and deploying code.",
+  "dømt": "2026-09-14T19:02:59.666Z"
+ },
+ "beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and": {
+  "slug": "beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and",
+  "title": "What AI Agent Skills Are and How They Work",
+  "youtubeId": "mOGLdUOLAu0",
+  "q": "what ai agent skills are and how they work",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "QurioSkill",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 77029,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about defining AI workflow skills, how they function, and how to implement them with large language models.",
+  "dømt": "2026-09-14T19:03:15.096Z"
+ },
+ "beyond-seo-build-your-own-aeo-service-and-dominate-the-ai-powered": {
+  "slug": "beyond-seo-build-your-own-aeo-service-and-dominate-the-ai-powered",
+  "title": "What Is the Difference Between AEO and SEO?",
+  "youtubeId": "LxGyfu8A10M",
+  "q": "what is difference between aeo and seo",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Dedi Styawan",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 4086,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines Answer Engine Optimization (AEO) and explains how it differs from traditional Search Engine Optimization (SEO) by focusing on AI recommendations rather than search engine rankings.",
+  "dømt": "2026-09-14T19:03:30.789Z"
+ },
+ "beyond-seo-why-generative-engine-optimization-geo-is-your-2026-must": {
+  "slug": "beyond-seo-why-generative-engine-optimization-geo-is-your-2026-must",
+  "title": "What Is the Difference Between GEO and SEO?",
+  "youtubeId": "Pi9GjgNFwqo",
+  "q": "what is difference between geo and seo",
+  "tag": "SEO",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Blazly AI",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 23715,
+  "score": 9,
+  "scorer": [
+   6,
+   9,
+   9
+  ],
+  "spredning": 3,
+  "grund": "The transcript primarily explains Generative Engine Optimization (GO) and its differences from traditional SEO, but also touches on the importance of geographic optimization within GO.",
+  "dømt": "2026-09-14T19:03:49.244Z"
+ },
+ "beyond-the-basics-when-woocommerce-becomes-your-strategic-e-commerce": {
+  "slug": "beyond-the-basics-when-woocommerce-becomes-your-strategic-e-commerce",
+  "title": "What Is Custom WordPress Development with WooCommerce?",
+  "youtubeId": "VngFqKHftbY",
+  "q": "what is custom wordpress development",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-17",
+  "channel": "BallinDigital",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 3611,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   7
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines WooCommerce and details its flexibility and customization capabilities for various e-commerce and business needs on the WordPress platform.",
+  "dømt": "2026-09-14T19:04:15.091Z"
  }
 }
