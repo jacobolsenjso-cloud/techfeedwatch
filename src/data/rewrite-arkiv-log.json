@@ -15,7 +15,7 @@
   "status": "fejl",
   "q": "how does ai help adhd",
   "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (ZssxnYgc2wI)",
-  "dato": "2026-09-12T19:00:53.159Z"
+  "dato": "2026-09-13T19:55:58.357Z"
  },
  "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping": {
   "status": "fejl",
@@ -296,8 +296,8 @@
  "beyond-automation-why-no-code-ai-agents-represent-a-new-frontier-for": {
   "status": "fejl",
   "q": "what is an ai agent vs automation",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (EH5jx5qPabU)",
-  "dato": "2026-09-12T19:15:47.285Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 15462 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-13T20:11:06.392Z"
  },
  "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
   "status": "fejl",
@@ -350,8 +350,8 @@
  "beyond-the-blockchain-understanding-bitcoin-s-philosophical-challenge": {
   "status": "fejl",
   "q": "what is individual sovereignty",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (HrehEWYj16s)",
-  "dato": "2026-09-12T19:44:47.647Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 9947 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-13T20:26:58.944Z"
  },
  "beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software": {
   "status": "ok",
@@ -390,10 +390,10 @@
   "dato": "2026-09-12T20:44:34.413Z"
  },
  "bitcoin-s-quantum-threat-separating-hype-from-reality-in-blockchain": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how does quantum computing threaten bitcoin's security",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10562 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-12T20:59:43.239Z"
+  "linje": "tal uden dækning i kilden: 256, 51 — beder om rettelse",
+  "dato": "2026-09-13T20:28:50.229Z"
  },
  "blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks": {
   "status": "ok",
@@ -531,7 +531,7 @@
   "status": "fejl",
   "q": "what are ai native service companies",
   "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (gSNFJbgoaHI)",
-  "dato": "2026-09-12T23:36:02.992Z"
+  "dato": "2026-09-13T20:43:41.930Z"
  },
  "frontend-seo-s-technical-core-why-user-experience-now-dominates": {
   "status": "ok",
@@ -564,10 +564,10 @@
   "dato": "2026-09-13T00:04:04.263Z"
  },
  "google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to optimize content for google ai overview",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (1GiYkMYJLPs)",
-  "dato": "2026-09-13T00:19:33.351Z"
+  "linje": "Kontrol ok: 28 af 37 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-13T20:48:57.539Z"
  },
  "google-s-core-web-vitals-the-unseen-force-reshaping-your-site-s": {
   "status": "ok",
@@ -580,5 +580,173 @@
   "q": "how are ai influencers created",
   "linje": "Sprunget over: video er ikke på engelsk (K6DTEvL1KWc)",
   "dato": "2026-09-13T00:33:19.039Z"
+ },
+ "google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality": {
+  "status": "afvist",
+  "q": "what is google's quantum computer used for",
+  "linje": "Sprunget over: kilden handler ikke om \"what is google's quantum computer used for\" (pIj-oBWJzS0)",
+  "dato": "2026-09-13T21:01:18.188Z"
+ },
+ "google-s-quantum-ai-the-willow-chip-and-its-multiverse-mystery": {
+  "status": "afvist",
+  "q": "what problem did google's willow chip solve",
+  "linje": "Sprunget over: kilden handler ikke om \"what problem did google's willow chip solve\" (lwiRg_TNrek)",
+  "dato": "2026-09-13T21:13:38.726Z"
+ },
+ "google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you": {
+  "status": "ok",
+  "q": "what are google gemini features",
+  "linje": "Kontrol ok: 34 af 38 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-13T21:14:30.631Z"
+ },
+ "google-tpus-new-inference-chips-and-cloud-ai-advantage": {
+  "status": "afvist",
+  "q": "what is google tpu used for",
+  "linje": "Sprunget over: kilden handler ikke om \"what is google tpu used for\" (NP2Hv7v0KHQ)",
+  "dato": "2026-09-13T21:26:53.536Z"
+ },
+ "gstack-transforms-ai-from-coding-assistant-to-full-engineering-team": {
+  "status": "fejl",
+  "q": "what is gstack garry tan",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 5167 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-13T21:41:43.898Z"
+ },
+ "how-ai-is-reshaping-developer-productivity-and-the-future-of-code": {
+  "status": "ok",
+  "q": "what are ai coding skills",
+  "linje": "Kontrol ok: 6 af 25 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-13T21:45:58.238Z"
+ },
+ "how-ai-powered-tools-are-redefining-your-seo-strategy": {
+  "status": "fejl",
+  "q": "how to use ai for seo and content optimization",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (COMnNlUakQk)",
+  "dato": "2026-09-13T22:00:44.112Z"
+ },
+ "how-is-quantum-computing-different-from-classical-computing": {
+  "status": "afvist",
+  "q": "how does quantum computing differ from classical computing",
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (n7M8H8xV-NI)",
+  "dato": "2026-09-13T22:13:20.338Z"
+ },
+ "how-much-does-cybersecurity-pay-and-career-outlook": {
+  "status": "afvist",
+  "q": "how does cybersecurity pay",
+  "linje": "Sprunget over: kilden handler ikke om \"how does cybersecurity pay\" (HkRdMuppwOo)",
+  "dato": "2026-09-13T22:25:39.760Z"
+ },
+ "how-python-powers-wall-street-beyond-basic-financial-data-analysis": {
+  "status": "ok",
+  "q": "what is python used in finance",
+  "linje": "Kontrol ok: 32 af 46 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-13T22:27:37.865Z"
+ },
+ "how-quantum-computing-companies-are-commercializing-advanced-tech": {
+  "status": "afvist",
+  "q": "what are quantum computing companies",
+  "linje": "Sprunget over: kilden handler ikke om \"what are quantum computing companies\" (b6sx04c5JYg)",
+  "dato": "2026-09-13T22:39:59.424Z"
+ },
+ "how-to-apply-cybersecurity-measures-for-protection": {
+  "status": "afvist",
+  "q": "how to apply cybersecurity",
+  "linje": "Sprunget over: kilden handler ikke om \"how to apply cybersecurity\" (-0MzJgb-17s)",
+  "dato": "2026-09-13T22:52:19.496Z"
+ },
+ "index-funds-explained-the-core-of-long-term-investing": {
+  "status": "afvist",
+  "q": "what are index funds and how do they work",
+  "linje": "Sprunget over: kilden handler ikke om \"what are index funds and how do they work\" (oKmz6p_i7yI)",
+  "dato": "2026-09-13T23:04:53.032Z"
+ },
+ "index-funds-vs-etfs-difference-tax-savings-for-investors": {
+  "status": "afvist",
+  "q": "how are etfs and index funds difference",
+  "linje": "Sprunget over: kilden handler ikke om \"how are etfs and index funds difference\" (9j2jTuRKCaU)",
+  "dato": "2026-09-13T23:17:13.960Z"
+ },
+ "investing-in-volatile-markets-smart-personal-finance-strategies": {
+  "status": "afvist",
+  "q": "what is long term wealth creation",
+  "linje": "Sprunget over: kilden handler ikke om \"what is long term wealth creation\" (yKmZnveZ-pE)",
+  "dato": "2026-09-13T23:29:36.657Z"
+ },
+ "lateral-movement-threats-target-cloud-saas-infrastructure": {
+  "status": "afvist",
+  "q": "what is lateral movement risk",
+  "linje": "Sprunget over: kilden handler ikke om \"what is lateral movement risk\" (k6Vd_wnYbhA)",
+  "dato": "2026-09-13T23:42:01.000Z"
+ },
+ "master-html-seo-unlock-organic-traffic-with-these-essential-on-page": {
+  "status": "ok",
+  "q": "how do html tags affect seo",
+  "linje": "Kontrol ok: 5 af 13 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-13T23:50:51.813Z"
+ },
+ "master-the-digital-spotlight-your-essential-guide-to-search-engine": {
+  "status": "afvist",
+  "q": "what is seo and how search engines work",
+  "linje": "Sprunget over: kilden handler ikke om \"what is seo and how search engines work\" (COL_qPL5xsg)",
+  "dato": "2026-09-14T00:03:11.272Z"
+ },
+ "meta-muse-spark-new-proprietary-ai-model-its-implications": {
+  "status": "ok",
+  "q": "why did meta ai change",
+  "linje": "Kontrol ok: 16 af 24 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-14T00:04:28.138Z"
+ },
+ "meta-s-free-ai-revolution-unleashing-muse-image-muse-video-your": {
+  "status": "ok",
+  "q": "what is meta ai used for",
+  "linje": "Kontrol ok: 19 af 41 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T00:05:27.989Z"
+ },
+ "ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path": {
+  "status": "ok",
+  "q": "difference between machine learning engineer and ai engineer",
+  "linje": "Kontrol ok: 14 af 22 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T00:06:55.330Z"
+ },
+ "modern-ai-chips-differ-from-gpus-for-specific-tasks": {
+  "status": "ok",
+  "q": "how are ai chips different from gpus",
+  "linje": "Kontrol ok: 23 af 30 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T00:11:08.275Z"
+ },
+ "nike-s-strategic-missteps-pave-way-for-agile-challengers-in-footwear": {
+  "status": "ok",
+  "q": "why is nike having problems",
+  "linje": "Kontrol ok: 23 af 27 punkter fra arket brugt, 17 tal, kilden nævnt",
+  "dato": "2026-09-14T00:13:02.180Z"
+ },
+ "nist-csf-2-0-explained-for-small-businesses": {
+  "status": "ok",
+  "q": "how to use nist cybersecurity framework",
+  "linje": "Kontrol ok: 14 af 20 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T00:13:43.055Z"
+ },
+ "nvidia-rubin-the-ai-factory-reshaping-ai-hardware-future": {
+  "status": "ok",
+  "q": "what is nvidia rubin platform",
+  "linje": "Kontrol ok: 33 af 37 punkter fra arket brugt, 9 tal, kilden nævnt",
+  "dato": "2026-09-14T00:14:37.889Z"
+ },
+ "open-source-ai-agents-practical-use-development": {
+  "status": "ok",
+  "q": "what are open source ai agents",
+  "linje": "Kontrol ok: 8 af 10 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T00:23:16.641Z"
+ },
+ "openai-s-gpt-6-astra-agi-progress-and-autonomous-ai-systems": {
+  "status": "fejl",
+  "q": "what is openai astra",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 9508 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T00:38:14.077Z"
+ },
+ "opnet-unlocks-ethereum-smart-contracts-on-bitcoin-layer-1-a-game": {
+  "status": "ok",
+  "q": "why doesn't bitcoin have smart contracts",
+  "linje": "Kontrol ok: 22 af 28 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T00:42:30.869Z"
  }
 }
