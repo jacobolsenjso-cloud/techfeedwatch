@@ -1273,5 +1273,215 @@
   "spredning": 0,
   "grund": "The transcript describes a developer's workflow using AI agents to automate and manage software development tasks, allowing him to orchestrate the process rather than write code.",
   "dømt": "2026-09-14T19:10:31.855Z"
+ },
+ "critical-infrastructure-under-siege-why-state-sponsored-cyberattacks": {
+  "slug": "critical-infrastructure-under-siege-why-state-sponsored-cyberattacks",
+  "title": "State Sponsored APT Groups Threaten Critical Infrastructure",
+  "youtubeId": "52HdL_uRal8",
+  "q": "what is state sponsored apt",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "RSTCON",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 53063,
+  "score": 1,
+  "scorer": [
+   1,
+   2,
+   1
+  ],
+  "spredning": 1,
+  "grund": "The transcript is about the speaker's personal journey in cybersecurity and a general discussion on simplifying the understanding of common attack vectors and chains, especially in critical infrastructure.",
+  "dømt": "2026-09-14T19:10:52.400Z"
+ },
+ "crypto-s-next-ascent-decoding-the-bull-market-signals-and-their": {
+  "slug": "crypto-s-next-ascent-decoding-the-bull-market-signals-and-their",
+  "title": "What Is the Bitcoin Bull Market Support Band?",
+  "youtubeId": "iuZTZHipaG0",
+  "q": "what is bitcoin bull market support band",
+  "tag": "Crypto",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Crypto Capital Venture",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 10774,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript provides a technical analysis of Bitcoin and Ethereum, discussing chart patterns like inverse head and shoulders, moving average support/resistance, and price targets.",
+  "dømt": "2026-09-14T19:11:10.110Z"
+ },
+ "cyber-risks-what-are-cybersecurity-risks": {
+  "slug": "cyber-risks-what-are-cybersecurity-risks",
+  "title": "Cyber Risks: What Are Cybersecurity Risks?",
+  "youtubeId": "95VBd9jHRig",
+  "q": "what are cybersecurity risks",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "the Security Notebook",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 5115,
+  "score": 9,
+  "scorer": [
+   9,
+   7,
+   9
+  ],
+  "spredning": 2,
+  "grund": "The transcript defines cyber risk as future-based uncertain events exposing objects to harm, and explains how various controls and cybersecurity roles are used to manage and reduce these risks.",
+  "dømt": "2026-09-14T19:11:33.552Z"
+ },
+ "cybersecurity-grc-defines-enterprise-digital-defense": {
+  "slug": "cybersecurity-grc-defines-enterprise-digital-defense",
+  "title": "Cybersecurity GRC Defines Enterprise Digital Defense",
+  "youtubeId": "PfCxZrmyUzs",
+  "q": "what is cybersecurity grc",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "Nicole Enesse - GRC For Mere Mortals",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 11520,
+  "score": 6,
+  "scorer": [
+   5,
+   6,
+   6
+  ],
+  "spredning": 1,
+  "grund": "The transcript discusses career paths, job opportunities, and certifications within the cybersecurity GRC field, rather than defining what cybersecurity GRC is.",
+  "dømt": "2026-09-14T19:11:52.361Z"
+ },
+ "cybersecurity-risk-management-essential-enterprise-strategies": {
+  "slug": "cybersecurity-risk-management-essential-enterprise-strategies",
+  "title": "What Is a Proactive Approach in Cyber Security for Business?",
+  "youtubeId": "ErqOznWDado",
+  "q": "what is proactive approach in cyber security",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "2026-08-17",
+  "channel": "WJOB 1230",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 22497,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   7
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses general cybersecurity, the services of Guard Street including ethical hacking, and then focuses on the threat of AI fishing and social engineering.",
+  "dømt": "2026-09-14T19:12:18.503Z"
+ },
+ "debunking-the-myth-the-only-secret-to-seo-is-value": {
+  "slug": "debunking-the-myth-the-only-secret-to-seo-is-value",
+  "title": "Current SEO Best Practices Deliver User Value",
+  "youtubeId": "bHvPyTWDrFU",
+  "q": "what are current seo best practices",
+  "tag": "SEO",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Code of Entry",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 20083,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript is primarily an introduction to the 'Code of Entry' podcast, its mission, and its format, with a brief, high-level mention of search engine optimization.",
+  "dømt": "2026-09-14T19:12:34.321Z"
+ },
+ "decentralized-ai-banking-how-agentic-ai-reshapes-finance": {
+  "slug": "decentralized-ai-banking-how-agentic-ai-reshapes-finance",
+  "title": "Why Agentic AI Is Important for Financial Transformation",
+  "youtubeId": "c-MSAP_HBcE",
+  "q": "why agentic ai is important",
+  "tag": "Fintech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "technophile",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 8712,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains how agentic AI, alongside other technologies, is fundamentally transforming retail banking by enabling autonomous and optimized financial management.",
+  "dømt": "2026-09-14T19:12:49.765Z"
+ },
+ "deepseek-v4-open-source-ai-challenges-billion-dollar-llms": {
+  "slug": "deepseek-v4-open-source-ai-challenges-billion-dollar-llms",
+  "title": "DeepSeek V4 Flash Is a Lighter, Faster AI Model",
+  "youtubeId": "p7K3xfViWCE",
+  "q": "what is deepseek v4 flash",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Two Minute Papers",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 7819,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   8
+  ],
+  "spredning": 0,
+  "grund": "The transcript describes the new DeepSeek 4 model, its impressive context window, and efficiency improvements, specifically mentioning the Flash model as much smaller, somewhat competitive with the Pro, and requiring 10 times less computing power.",
+  "dømt": "2026-09-14T19:13:09.971Z"
+ },
+ "demystifying-ai-your-20-minute-blueprint-to-understanding-every": {
+  "slug": "demystifying-ai-your-20-minute-blueprint-to-understanding-every",
+  "title": "What Is a Frontier Model?",
+  "youtubeId": "I0me2uEbfuE",
+  "q": "what is frontier model",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Matthew Berman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 19807,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   4
+  ],
+  "spredning": 1,
+  "grund": "The transcript describes the features and pricing plans of ChatGPT and Claude, two popular AI models, and promotes an AI healthcare product, briefly mentioning 'the frontier of their models' in the context of product tiers.",
+  "dømt": "2026-09-14T19:13:28.514Z"
+ },
+ "ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026": {
+  "slug": "ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026",
+  "title": "How Does Ethereum Proof of Stake Work",
+  "youtubeId": "On-B0WGqOZ0",
+  "q": "how does ethereum proof of stake work",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Coin Bureau",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 20655,
+  "score": 9,
+  "scorer": [
+   8,
+   9,
+   9
+  ],
+  "spredning": 1,
+  "grund": "The transcript explains Ethereum's transition to proof of stake, how validators secure the network by staking ETH, and the rewards they receive.",
+  "dømt": "2026-09-14T19:13:49.536Z"
  }
 }
