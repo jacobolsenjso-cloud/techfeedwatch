@@ -1693,5 +1693,215 @@
   "spredning": 0,
   "grund": "The transcript explains the history of artificial intelligence and details machine learning, specifically supervised learning and classification tasks, but only mentions generative AI as a topic for later discussion.",
   "dømt": "2026-09-14T19:16:38.730Z"
+ },
+ "google-gemini-s-ecosystem-play-moving-beyond-chatbots-to-autonomous": {
+  "slug": "google-gemini-s-ecosystem-play-moving-beyond-chatbots-to-autonomous",
+  "title": "Autonomous Agents in AI Reshape Google Gemini's Future",
+  "youtubeId": "xz-pG1gUS4c",
+  "q": "what are autonomous agents in ai",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Ai Podcast ",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 7993,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript describes Google's Gemini as an autonomous AI agent, detailing its capabilities to perform complex tasks independently and proactively across various applications.",
+  "dømt": "2026-09-14T19:16:59.384Z"
+ },
+ "google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality": {
+  "slug": "google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality",
+  "title": "What Is Google's Quantum Computer Used for Beyond Speed?",
+  "youtubeId": "pIj-oBWJzS0",
+  "q": "what is google's quantum computer used for",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "OrbitraX History",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 10593,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   6
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains Google's quantum computing technology, its capabilities, and philosophical implications, with a brief mention of potential future uses.",
+  "dømt": "2026-09-14T19:17:23.442Z"
+ },
+ "google-s-quantum-ai-the-willow-chip-and-its-multiverse-mystery": {
+  "slug": "google-s-quantum-ai-the-willow-chip-and-its-multiverse-mystery",
+  "title": "What Problem Did Google's Willow Chip Solve? Why It Matters",
+  "youtubeId": "lwiRg_TNrek",
+  "q": "what problem did google's willow chip solve",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Beyond The Stars",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 12027,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the unprecedented speed and scale of Google's Willow quantum chip, focusing on the philosophical implications of its computational power and how it might relate to the many-worlds interpretation of quantum mechanics, but it does not specify the actual problem the chip solved.",
+  "dømt": "2026-09-14T19:17:46.619Z"
+ },
+ "google-tpus-new-inference-chips-and-cloud-ai-advantage": {
+  "slug": "google-tpus-new-inference-chips-and-cloud-ai-advantage",
+  "title": "What Google TPU Is Used for in AI Workloads",
+  "youtubeId": "NP2Hv7v0KHQ",
+  "q": "what is google tpu used for",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Bloomberg Tech",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 4599,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript details the current and future uses of Google TPUs for AI model training and inference, citing specific examples like Gemini, Meta, and Anthropic.",
+  "dømt": "2026-09-14T19:18:04.553Z"
+ },
+ "how-ai-uses-specialized-chips-for-fast-computation": {
+  "slug": "how-ai-uses-specialized-chips-for-fast-computation",
+  "title": "How AI Uses Specialized Chips for Fast Computation",
+  "youtubeId": "IB7IW6zX-H0",
+  "q": "how does ai use chips",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "",
+  "channel": "Matthew Berman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 27685,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a discussion about the future of the internet and the role of AI agents, focusing on user interaction and trust.",
+  "dømt": "2026-09-14T19:18:13.694Z"
+ },
+ "how-ai-video-apps-change-digital-identity-verification": {
+  "slug": "how-ai-video-apps-change-digital-identity-verification",
+  "title": "How AI Video Apps Change Digital Identity Verification",
+  "youtubeId": "0_NGsljlo3o",
+  "q": "what are ai video apps",
+  "tag": "AI Video",
+  "rewrittenAt": "",
+  "channel": "a16z",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 43223,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about the concept of \"proof of human\" and the challenges of distinguishing humans from AI agents or bots online.",
+  "dømt": "2026-09-14T19:18:21.148Z"
+ },
+ "how-ai-video-filters-mean-greater-clarity-for-geforce-now-users": {
+  "slug": "how-ai-video-filters-mean-greater-clarity-for-geforce-now-users",
+  "title": "How AI Video Filters Mean Greater Clarity for GeForce NOW Users",
+  "youtubeId": "rK4gX14MhcU",
+  "q": "what is ai video filter on geforce now",
+  "tag": "AI Video",
+  "rewrittenAt": "",
+  "channel": "Zortos",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 567,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript consists primarily of the word 'Heat' repeated alongside music, with no discernible connection to AI video filters or GeForce Now.",
+  "dømt": "2026-09-14T19:18:28.826Z"
+ },
+ "how-ai-video-quality-changes-digital-content-creation": {
+  "slug": "how-ai-video-quality-changes-digital-content-creation",
+  "title": "How AI Video Quality Changes Digital Content Creation",
+  "youtubeId": "YCPAIg7RUq8",
+  "q": "why ai videos are weird",
+  "tag": "AI Video",
+  "rewrittenAt": "",
+  "channel": "Siliconversations",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 15860,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript primarily discusses the morality of cannibalism and then transitions to argue that AI-generated content is morally wrong because it harms human interaction.",
+  "dømt": "2026-09-14T19:18:49.579Z"
+ },
+ "how-do-cybersecurity-projects-best-appear-on-a-resume": {
+  "slug": "how-do-cybersecurity-projects-best-appear-on-a-resume",
+  "title": "How do cybersecurity projects best appear on a resume?",
+  "youtubeId": "w7_yWjYyxjE",
+  "q": "how to put cybersecurity projects on resume",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "Kevin Stratvert",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 7051,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains how to use Claude Projects to organize AI chats, files, and instructions for various work types, using a cookie business launch as an example.",
+  "dømt": "2026-09-14T19:18:59.040Z"
+ },
+ "how-much-does-cybersecurity-pay-and-career-outlook": {
+  "slug": "how-much-does-cybersecurity-pay-and-career-outlook",
+  "title": "How Much Does Cybersecurity Pay and Career Outlook",
+  "youtubeId": "HkRdMuppwOo",
+  "q": "how does cybersecurity pay",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "NGT Academy",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 10390,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript compares software engineering and cybersecurity careers, detailing differences in salary progression, job security, and skill longevity over time.",
+  "dømt": "2026-09-14T19:19:09.082Z"
  }
 }
