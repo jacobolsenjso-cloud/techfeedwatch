@@ -882,33 +882,195 @@
   "dato": "2026-09-14T20:19:06.257Z"
  },
  "the-ai-search-revolution-why-generative-engine-optimization-replaces": {
-  "status": "fejl",
+  "status": "afvist",
   "q": "what is generative engine optimization geo and how does it work",
-  "linje": "",
-  "dato": "2026-09-14T10:08:13.355Z"
+  "linje": "Sprunget over: kilden er for tynd — 3 konkrete punkter, mindst 5 kræves (46vC7-BwJ_o)",
+  "dato": "2026-09-14T20:20:15.014Z"
  },
  "the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is prompt engineering in generative ai",
-  "linje": "",
-  "dato": "2026-09-14T10:18:16.419Z"
+  "linje": "Kontrol ok: 14 af 18 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T20:21:57.742Z"
  },
  "the-allure-of-mad-gains-why-crypto-trading-demands-more-than-beginner": {
-  "status": "fejl",
+  "status": "afvist",
   "q": "what is crypto market volatility",
-  "linje": "",
-  "dato": "2026-09-14T10:28:19.428Z"
+  "linje": "Sprunget over: video er ikke på engelsk (14HIIUjOLGY)",
+  "dato": "2026-09-14T20:22:06.107Z"
  },
  "the-architect-of-ai-how-nvidia-s-strategic-dominance-is-reshaping": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what are nvidia ai factories",
-  "linje": "",
-  "dato": "2026-09-14T10:38:22.491Z"
+  "linje": "Kontrol ok: 26 af 36 punkter fra arket brugt, 6 tal, kilden nævnt",
+  "dato": "2026-09-14T20:23:43.561Z"
  },
  "the-data-bridge-why-blockchain-oracles-are-essential-for-real-world": {
   "status": "fejl",
   "q": "what is the blockchain oracle problem",
-  "linje": "",
-  "dato": "2026-09-14T10:48:25.523Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10091 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:25:27.296Z"
+ },
+ "the-decentralization-dilemma-separating-web3-s-promise-from-its": {
+  "status": "ok",
+  "q": "what is web2 and what is web3",
+  "linje": "Kontrol ok: 31 af 47 punkter fra arket brugt, 7 tal, kilden nævnt",
+  "dato": "2026-09-14T20:26:47.896Z"
+ },
+ "the-digital-money-war-why-banks-stablecoins-and-x-money-are-battling": {
+  "status": "fejl",
+  "q": "what is the purpose of stablecoin",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 7922 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:28:29.641Z"
+ },
+ "the-genie-in-the-machine-decoding-openai-s-agi-ambitions-and-the": {
+  "status": "afvist",
+  "q": "what is an autonomous agent in artificial intelligence",
+  "linje": "Sprunget over: kilden er for tynd — 3 konkrete punkter, mindst 5 kræves (vfSplCaxHzM)",
+  "dato": "2026-09-14T20:29:29.460Z"
+ },
+ "the-illusion-of-sentience-why-ai-consciousness-is-a-misdirection": {
+  "status": "afvist",
+  "q": "what makes ai not conscious",
+  "linje": "Sprunget over: transskriptet er overvejende ikke-latinsk skrift (1% latinsk) (tJV-vdbZ388)",
+  "dato": "2026-09-14T20:29:33.681Z"
+ },
+ "the-new-ai-seo-how-data-scraping-rewrites-visibility-strategy-for-saas": {
+  "status": "afvist",
+  "q": "what is ai seo optimization",
+  "linje": "Sprunget over: kilden er for tynd — 3 konkrete punkter, mindst 5 kræves (RIKeDA9t2uA)",
+  "dato": "2026-09-14T20:30:28.051Z"
+ },
+ "the-no-code-conundrum-is-grok-4-5-and-grok-build-a-developer-s-demise": {
+  "status": "ok",
+  "q": "how accessible are no code ai tools for non technical users",
+  "linje": "Kontrol ok: 21 af 46 punkter fra arket brugt, 4 tal, kilden nævnt",
+  "dato": "2026-09-14T20:32:07.518Z"
+ },
+ "the-one-person-empire-how-ai-ceos-are-building-self-operating": {
+  "status": "ok",
+  "q": "what is ai agent orchestration",
+  "linje": "Kontrol ok: 14 af 51 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T20:33:25.466Z"
+ },
+ "the-quantum-paradox-why-its-hype-isn-t-crashing-and-what-s-driving": {
+  "status": "ok",
+  "q": "is quantum computing a good investment",
+  "linje": "Kontrol ok: 31 af 44 punkter fra arket brugt, 1 tal, kilden nævnt",
+  "dato": "2026-09-14T20:34:35.045Z"
+ },
+ "the-quiet-tech-recalibration-why-ai-isn-t-replacing-software": {
+  "status": "fejl",
+  "q": "how much does ai increase developer productivity",
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (VGE84CeeaMo)",
+  "dato": "2026-09-14T20:36:12.028Z"
+ },
+ "the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment": {
+  "status": "ok",
+  "q": "what causes misalignment",
+  "linje": "Kontrol ok: 39 af 54 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T20:38:02.254Z"
+ },
+ "the-silent-disparity-why-identical-paychecks-yield-vastly-different": {
+  "status": "ok",
+  "q": "what is wealth accumulation",
+  "linje": "Kontrol ok: 31 af 45 punkter fra arket brugt, 20 tal, kilden nævnt",
+  "dato": "2026-09-14T20:39:36.876Z"
+ },
+ "the-unseen-hand-how-algorithmic-bias-shapes-your-digital-reality": {
+  "status": "afvist",
+  "q": "how does algorithmic bias occur",
+  "linje": "Sprunget over: transskriptet er overvejende ikke-latinsk skrift (1% latinsk) (_vBggxCNNno)",
+  "dato": "2026-09-14T20:39:41.071Z"
+ },
+ "the-unseen-wall-why-most-ai-users-fail-to-elicit-advanced-responses": {
+  "status": "afvist",
+  "q": "what does prompt engineering primarily involve",
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (VnEoS2eQXsw)",
+  "dato": "2026-09-14T20:40:35.134Z"
+ },
+ "the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for": {
+  "status": "ok",
+  "q": "data breaches june 2026",
+  "linje": "Kontrol ok: 33 af 60 punkter fra arket brugt, 10 tal, kilden nævnt",
+  "dato": "2026-09-14T20:42:00.211Z"
+ },
+ "unleash-90-more-ai-power-10-notebook-lm-hacks-you-need-to-know-for": {
+  "status": "fejl",
+  "q": "tips on how to use notebooklm",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 14624 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:44:17.014Z"
+ },
+ "unlock-crypto-riches-your-blueprint-for-passive-income-with": {
+  "status": "ok",
+  "q": "how to earn passive income with crypto",
+  "linje": "Kontrol ok: 27 af 42 punkter fra arket brugt, 4 tal, kilden nævnt",
+  "dato": "2026-09-14T20:45:37.535Z"
+ },
+ "unlock-fintech-s-future-your-step-by-step-guide-to-building-ai": {
+  "status": "ok",
+  "q": "how is ai changing fintech",
+  "linje": "Kontrol ok: 24 af 45 punkter fra arket brugt, 13 tal, kilden nævnt",
+  "dato": "2026-09-14T20:46:30.612Z"
+ },
+ "unlocking-organic-growth-your-essential-guide-to-google-s-seo-power": {
+  "status": "ok",
+  "q": "what is google search console and google analytics",
+  "linje": "Kontrol ok: 5 af 6 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T20:48:06.076Z"
+ },
+ "unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on": {
+  "status": "fejl",
+  "q": "how does ai chips work",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11202 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:49:50.639Z"
+ },
+ "us-middle-class-decline-financial-precarity-debt-spiral": {
+  "status": "fejl",
+  "q": "why is the us middle class shrinking",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 9328 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:51:42.579Z"
+ },
+ "us-open-source-ai-strategy-addressing-the-global-race": {
+  "status": "afvist",
+  "q": "what is open source ai vs closed",
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (lWMebfCc5f4)",
+  "dato": "2026-09-14T20:52:37.792Z"
+ },
+ "wall-street-s-quiet-ascent-why-institutional-crypto-is-reshaping-the": {
+  "status": "ok",
+  "q": "what is institutional adoption of crypto",
+  "linje": "Kontrol ok: 4 af 5 punkter fra arket brugt, 5 tal, kilden nævnt",
+  "dato": "2026-09-14T20:54:00.580Z"
+ },
+ "what-ai-chipsets-are-and-their-manufacturing-bottlenecks": {
+  "status": "afvist",
+  "q": "what are ai chipsets",
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (a0uQ1ZxfxfQ)",
+  "dato": "2026-09-14T20:54:59.909Z"
+ },
+ "windows-10-extended-support-implications-for-business-security": {
+  "status": "ok",
+  "q": "what is windows 10 extended support",
+  "linje": "Kontrol ok: 17 af 56 punkter fra arket brugt, 8 tal, kilden nævnt",
+  "dato": "2026-09-14T20:56:20.096Z"
+ },
+ "xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping": {
+  "status": "afvist",
+  "q": "how is ai used in finance",
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (qkhWvBZ4ycQ)",
+  "dato": "2026-09-14T20:57:22.111Z"
+ },
+ "zand-s-digital-ascent-is-this-the-end-for-traditional-banking-s": {
+  "status": "fejl",
+  "q": "what is zand bank in uae",
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11109 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:59:00.341Z"
+ },
+ "zero-trust-for-ai-agents-securing-autonomous-systems": {
+  "status": "ok",
+  "q": "how to secure ai agents",
+  "linje": "Kontrol ok: 25 af 30 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T21:00:34.508Z"
  }
 }
