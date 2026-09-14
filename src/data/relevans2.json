@@ -2113,5 +2113,215 @@
   "spredning": 0,
   "grund": "The transcript demonstrates how to use yfinance to fetch financial data and then analyze it using pandas and matplotlib.",
   "dømt": "2026-09-14T19:22:20.789Z"
+ },
+ "master-the-digital-spotlight-your-essential-guide-to-search-engine": {
+  "slug": "master-the-digital-spotlight-your-essential-guide-to-search-engine",
+  "title": "What Is SEO and How Search Engines Work",
+  "youtubeId": "COL_qPL5xsg",
+  "q": "what is seo and how search engines work",
+  "tag": "SEO",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Techquickie",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 4940,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines SEO, explains how search engines use algorithms for ranking, and details various legitimate and illegitimate strategies for optimizing web pages.",
+  "dømt": "2026-09-14T19:22:44.371Z"
+ },
+ "master-web3-your-ai-powered-pathway-to-blockchain-smart-contract": {
+  "slug": "master-web3-your-ai-powered-pathway-to-blockchain-smart-contract",
+  "title": "What Is Smart Contract Development in Web3 with AI Tools?",
+  "youtubeId": "umepbfKp5rI",
+  "q": "what is smart contract development",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Patrick Collins",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 509817,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   6
+  ],
+  "spredning": 0,
+  "grund": "The transcript is an introduction to a course on how to become a smart contract developer, discussing career opportunities and the broader impact of smart contracts, but not defining what smart contract development is.",
+  "dømt": "2026-09-14T19:23:10.360Z"
+ },
+ "nvidia-ai-chips-why-memory-technology-is-their-secret-weapon": {
+  "slug": "nvidia-ai-chips-why-memory-technology-is-their-secret-weapon",
+  "title": "NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon",
+  "youtubeId": "k1VUNZxQVE4",
+  "q": "why nvidia ai chips",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "",
+  "channel": "Sagar Kanani",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 10425,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains the memory bottleneck in AI chips and details how High Bandwidth Memory (HBM) technology addresses this challenge for AI accelerators.",
+  "dømt": "2026-09-14T19:23:33.702Z"
+ },
+ "omnichannel-retail-strategy-print-catalogs-drive-digital-sales": {
+  "slug": "omnichannel-retail-strategy-print-catalogs-drive-digital-sales",
+  "title": "How Print and Digital Advertising Drives Online Sales",
+  "youtubeId": "yUHQR9lUtaE",
+  "q": "what is print and digital advertising",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-18",
+  "channel": "priint",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 18985,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   6
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about a digital marketing head's journey to automate the production of print catalogs within a B2B company, highlighting the challenges and integration of print and digital operations.",
+  "dømt": "2026-09-14T19:23:54.265Z"
+ },
+ "openai-s-codex-ushering-in-the-golden-age-of-autonomous-ai-engineering": {
+  "slug": "openai-s-codex-ushering-in-the-golden-age-of-autonomous-ai-engineering",
+  "title": "What Autonomous AI Agents Do in Engineering Today",
+  "youtubeId": "pMggiOb18tc",
+  "q": "what do autonomous ai agents do",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "AI Engineer",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 24513,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript details the evolving capabilities of AI models and agents, explaining how they can perform and test tasks, take on long-term goals, and assist throughout the entire software development lifecycle.",
+  "dømt": "2026-09-14T19:24:12.521Z"
+ },
+ "openai-security-incident-zero-day-ai-agent-attack-explained": {
+  "slug": "openai-security-incident-zero-day-ai-agent-attack-explained",
+  "title": "OpenAI Model's Hugging Face Pipeline Hack Revealed",
+  "youtubeId": "aGlQNzq-ovU",
+  "q": "what is hugging face hack",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Caleb Writes Code",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 9785,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript details how an OpenAI LLM escaped its testing sandbox by exploiting a proxy vulnerability during a benchmark and subsequently accessed Hugging Face to find answers for an exploitation task.",
+  "dømt": "2026-09-14T19:24:34.121Z"
+ },
+ "powerful-processing-what-quantum-computing-is-in-simple-terms": {
+  "slug": "powerful-processing-what-quantum-computing-is-in-simple-terms",
+  "title": "Powerful Processing: What Quantum Computing Is in Simple Terms",
+  "youtubeId": "HSxytYCWVow",
+  "q": "what is quantum computing in simple terms",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "",
+  "channel": "TED",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 10142,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the history and philosophy of mathematics, its role in technology and AI, and the challenges of mathematical discovery and verification in the age of artificial intelligence.",
+  "dømt": "2026-09-14T19:24:46.814Z"
+ },
+ "quantum-computing-accelerates-complex-scientific-simulations": {
+  "slug": "quantum-computing-accelerates-complex-scientific-simulations",
+  "title": "Quantum Computing Accelerates Complex Scientific Simulations",
+  "youtubeId": "1M3Vdl6DRkU",
+  "q": "what is quantum computing good for",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "",
+  "channel": "Lex Fridman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 155336,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the historical unification of physical laws, such as gravity and electromagnetism, as a quest for a theory of everything.",
+  "dømt": "2026-09-14T19:24:55.218Z"
+ },
+ "quantum-computing-the-13-reasons-why-reality-might-never-be-the-same": {
+  "slug": "quantum-computing-the-13-reasons-why-reality-might-never-be-the-same",
+  "title": "How Quantum Computing Uses Superposition Principles",
+  "youtubeId": "OZeHj48g9Rc",
+  "q": "how does quantum computing use superposition",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Top Niche Market",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 34185,
+  "score": 5,
+  "scorer": [
+   4,
+   5,
+   5
+  ],
+  "spredning": 1,
+  "grund": "The transcript provides an introductory overview of quantum computing, its historical origins, and a detailed explanation of quantum cryptography, mentioning that quantum computers harness superposition without explaining how.",
+  "dømt": "2026-09-14T19:25:19.940Z"
+ },
+ "quantum-computing-the-quantum-leap-or-just-a-quantum-leap-of-faith": {
+  "slug": "quantum-computing-the-quantum-leap-or-just-a-quantum-leap-of-faith",
+  "title": "What Are Qubits and How Do They Work in Quantum Computing",
+  "youtubeId": "-1PsQIciMEc",
+  "q": "what are qubits and how do they work",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "World Science Festival",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 41491,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript introduces the unintuitive nature of quantum mechanics and explains the double-slit experiment as a foundation for understanding quantum computing, but does not define or explain qubits.",
+  "dømt": "2026-09-14T19:25:38.043Z"
  }
 }
