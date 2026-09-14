@@ -14,8 +14,8 @@
  "adhd-and-ai-a-symbiotic-leap-in-executive-function-support": {
   "status": "fejl",
   "q": "how does ai help adhd",
-  "linje": "",
-  "dato": "2026-09-14T05:16:44.058Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 8723 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:35:38.341Z"
  },
  "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping": {
   "status": "fejl",
@@ -296,8 +296,8 @@
  "beyond-automation-why-no-code-ai-agents-represent-a-new-frontier-for": {
   "status": "fejl",
   "q": "what is an ai agent vs automation",
-  "linje": "",
-  "dato": "2026-09-14T05:26:47.130Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 30436 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:37:35.067Z"
  },
  "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
   "status": "fejl",
@@ -350,8 +350,8 @@
  "beyond-the-blockchain-understanding-bitcoin-s-philosophical-challenge": {
   "status": "fejl",
   "q": "what is individual sovereignty",
-  "linje": "",
-  "dato": "2026-09-14T05:36:50.234Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11685 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:39:34.947Z"
  },
  "beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software": {
   "status": "ok",
@@ -528,10 +528,10 @@
   "dato": "2026-09-12T23:21:31.363Z"
  },
  "from-niche-to-ai-native-unpacking-the-playbook-for-next-gen-service": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what are ai native service companies",
-  "linje": "",
-  "dato": "2026-09-14T05:46:53.267Z"
+  "linje": "Kontrol ok: 17 af 35 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T19:40:49.964Z"
  },
  "frontend-seo-s-technical-core-why-user-experience-now-dominates": {
   "status": "ok",
@@ -608,8 +608,8 @@
  "gstack-transforms-ai-from-coding-assistant-to-full-engineering-team": {
   "status": "fejl",
   "q": "what is gstack garry tan",
-  "linje": "",
-  "dato": "2026-09-14T05:56:56.283Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6804 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:42:23.229Z"
  },
  "how-ai-is-reshaping-developer-productivity-and-the-future-of-code": {
   "status": "ok",
@@ -620,8 +620,8 @@
  "how-ai-powered-tools-are-redefining-your-seo-strategy": {
   "status": "fejl",
   "q": "how to use ai for seo and content optimization",
-  "linje": "",
-  "dato": "2026-09-14T06:06:59.382Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10154 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:44:35.518Z"
  },
  "how-is-quantum-computing-different-from-classical-computing": {
   "status": "afvist",
@@ -738,10 +738,10 @@
   "dato": "2026-09-14T00:23:16.641Z"
  },
  "openai-s-gpt-6-astra-agi-progress-and-autonomous-ai-systems": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is openai astra",
-  "linje": "",
-  "dato": "2026-09-14T06:17:02.472Z"
+  "linje": "Kontrol ok: 16 af 20 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T19:46:15.786Z"
  },
  "opnet-unlocks-ethereum-smart-contracts-on-bitcoin-layer-1-a-game": {
   "status": "ok",
@@ -750,136 +750,136 @@
   "dato": "2026-09-14T00:42:30.869Z"
  },
  "personal-finance-strategies-modern-tools-for-financial-growth": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is debt management strategies",
-  "linje": "",
-  "dato": "2026-09-14T06:27:05.569Z"
+  "linje": "Kontrol ok: 15 af 18 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T19:47:50.082Z"
  },
  "prompt-to-video-the-free-ai-shortcut-redefining-cinematic-content": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to use ai tools to make video",
-  "linje": "",
-  "dato": "2026-09-14T06:37:08.671Z"
+  "linje": "Kontrol ok: 19 af 42 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T19:49:00.009Z"
  },
  "protection-imperative-why-cybersecurity-matters-to-you": {
-  "status": "fejl",
+  "status": "ok",
   "q": "why cybersecurity matters",
-  "linje": "",
-  "dato": "2026-09-14T06:47:11.775Z"
+  "linje": "Kontrol ok: 13 af 50 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T19:51:29.091Z"
  },
  "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is hybrid quantum classical computing",
-  "linje": "",
-  "dato": "2026-09-14T06:57:14.875Z"
+  "linje": "Kontrol ok: 24 af 48 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T19:53:18.281Z"
  },
  "quantum-computing-separating-the-billions-in-hype-from-the-hard": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is quantum computing explained simply",
-  "linje": "",
-  "dato": "2026-09-14T07:07:17.944Z"
+  "linje": "Kontrol ok: 3 af 6 punkter fra arket brugt, 7 tal, kilden nævnt",
+  "dato": "2026-09-14T19:54:57.362Z"
  },
  "quantum-computing-threats-to-current-encryption-explained": {
   "status": "fejl",
   "q": "what are quantum computing threats",
-  "linje": "",
-  "dato": "2026-09-14T07:17:21.030Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6018 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T19:56:15.630Z"
  },
  "quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer": {
-  "status": "fejl",
+  "status": "ok",
   "q": "why quantum computing is faster",
-  "linje": "",
-  "dato": "2026-09-14T07:27:24.131Z"
+  "linje": "Kontrol ok: 4 af 5 punkter fra arket brugt, 28 tal, kilden nævnt",
+  "dato": "2026-09-14T19:57:40.107Z"
  },
  "quantum-unveiled-the-microscopic-mechanics-driving-tomorrow-s": {
-  "status": "fejl",
+  "status": "afvist",
   "q": "what is quantum mechanics used for",
-  "linje": "",
-  "dato": "2026-09-14T07:37:27.235Z"
+  "linje": "Sprunget over: kilden er for tynd — 2 konkrete punkter, mindst 5 kræves (t06aTX9jM34)",
+  "dato": "2026-09-14T19:58:35.299Z"
  },
  "revolutionizing-seo-how-arvo-s-ai-platform-automates-agency-success": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to automate content creation",
-  "linje": "",
-  "dato": "2026-09-14T07:47:30.338Z"
+  "linje": "Kontrol ok: 11 af 20 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T20:00:29.371Z"
  },
  "robotics-education-expands-in-national-school-curriculum": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is computer and robotics education",
-  "linje": "",
-  "dato": "2026-09-14T07:57:33.430Z"
+  "linje": "Kontrol ok: 6 af 6 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T20:02:36.855Z"
  },
  "search-engine-optimization-what-seo-is-and-how-it-works": {
   "status": "fejl",
   "q": "what is seo and how it works",
-  "linje": "",
-  "dato": "2026-09-14T08:07:36.465Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6264 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:04:04.331Z"
  },
  "selling-digital-products-online-ai-simplifies-creator-economy-entry": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is selling digital products online",
-  "linje": "",
-  "dato": "2026-09-14T08:17:39.555Z"
+  "linje": "Kontrol ok: 21 af 39 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-14T20:05:21.781Z"
  },
  "seo-optimization-explained-how-modern-search-ranking-functions": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how does seo optimization work",
-  "linje": "",
-  "dato": "2026-09-14T08:27:42.595Z"
+  "linje": "Kontrol ok: 20 af 54 punkter fra arket brugt, 4 tal, kilden nævnt",
+  "dato": "2026-09-14T20:06:38.692Z"
  },
  "silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is physical ai infrastructure",
-  "linje": "",
-  "dato": "2026-09-14T08:37:45.656Z"
+  "linje": "Kontrol ok: 42 af 58 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-14T20:08:16.127Z"
  },
  "smart-contracts-demystified-how-to-investigate-blockchain-s-core-even": {
-  "status": "fejl",
+  "status": "afvist",
   "q": "how to use etherscan",
-  "linje": "",
-  "dato": "2026-09-14T08:47:48.759Z"
+  "linje": "Sprunget over: kilden er for tynd — 3 konkrete punkter, mindst 5 kræves (HHLhmaJta58)",
+  "dato": "2026-09-14T20:09:07.809Z"
  },
  "solana-escrow-the-smart-contract-mechanism-rewriting-digital": {
-  "status": "fejl",
+  "status": "afvist",
   "q": "what is smart contract escrow",
-  "linje": "",
-  "dato": "2026-09-14T08:57:51.856Z"
+  "linje": "Sprunget over: kilden er for tynd — 4 konkrete punkter, mindst 5 kræves (8FUlQda-8fU)",
+  "dato": "2026-09-14T20:10:02.207Z"
  },
  "spacex-pre-ipo-investment-accessing-private-equity-options": {
   "status": "fejl",
   "q": "how to invest in spacex pre ipo",
-  "linje": "",
-  "dato": "2026-09-14T09:07:54.954Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 7769 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:11:17.785Z"
  },
  "stephen-wolfram-s-radical-idea-is-the-universe-just-a-giant": {
   "status": "fejl",
   "q": "what is a computational universe",
-  "linje": "",
-  "dato": "2026-09-14T09:17:58.040Z"
+  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (4-SGpEInX_c)",
+  "dato": "2026-09-14T20:12:31.494Z"
  },
  "the-2026-ai-student-s-dilemma-can-a-budget-laptop-really-keep-pace": {
-  "status": "fejl",
+  "status": "ok",
   "q": "why does ai need gpu",
-  "linje": "",
-  "dato": "2026-09-14T09:28:01.079Z"
+  "linje": "Kontrol ok: 24 af 52 punkter fra arket brugt, 6 tal, kilden nævnt",
+  "dato": "2026-09-14T20:14:01.571Z"
  },
  "the-2026-cyber-underground-how-ai-and-analog-tricks-reshape-global": {
   "status": "fejl",
   "q": "what are social engineering attacks examples",
-  "linje": "",
-  "dato": "2026-09-14T09:38:04.183Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 12690 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:15:45.577Z"
  },
  "the-ai-content-deluge-how-automation-reshapes-seo-and-digital": {
   "status": "fejl",
   "q": "how does ai change seo",
-  "linje": "",
-  "dato": "2026-09-14T09:48:07.243Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6708 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-14T20:17:03.156Z"
  },
  "the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is future of ai agents",
-  "linje": "",
-  "dato": "2026-09-14T09:58:10.267Z"
+  "linje": "Kontrol ok: 30 af 60 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-14T20:19:06.257Z"
  },
  "the-ai-search-revolution-why-generative-engine-optimization-replaces": {
   "status": "fejl",
