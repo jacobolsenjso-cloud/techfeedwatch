@@ -11,13 +11,13 @@ name: Re-judge relevance
 # Start manuelt: Actions -> "Re-judge relevance" -> Run workflow.
 # Kør igen, indtil den melder 0 tilbage.
 
-# Tidsplan hver 6. time, så gendømningen kører færdig af sig selv. Er alle
-# dømt, er kørslen færdig på under et minut ("Skal gendømmes: 0").
-# STOP DEN: sæt # foran de to schedule-linjer. Minuttet er 40, så den ikke
-# rammer samtidig med Archive rewrite (minut 20) eller robotten (hele timer).
+# 14/9-2026: TIDSPLANEN ER SLÅET FRA — YouTube blokerer transskript-hentning
+# fra GitHubs servere (se rewrite-archive.yml). Gendømningen køres fra Jacobs
+# pc: node audit-relevans2.mjs. Fjern # foran de to schedule-linjer for at
+# slå den til igen.
 on:
-  schedule:
-    - cron: "40 */6 * * *"
+  # schedule:
+  #   - cron: "40 */6 * * *"
   workflow_dispatch:
     inputs:
       antal:
@@ -70,7 +70,10 @@ jobs:
       - name: Gem gennemsynsfilen og resten
         if: always()
         run: |
-          git add src/data/relevans2.json _relevans2-gennemsyn.md || true
+          # Én fil ad gangen: mangler én af dem, må den anden stadig gemmes
+          # (git add med to stier gemmer ingen af dem, hvis den ene mangler).
+          git add src/data/relevans2.json || true
+          git add _relevans2-gennemsyn.md || true
           git commit -m "Re-judge relevance: verdicts and review list from this run" || echo "Intet at gemme."
           git pull --rebase || true
           git push || echo "Intet nyt at uploade."

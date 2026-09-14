@@ -15,15 +15,15 @@ name: Archive rewrite
 # --rebase før push, så de kan ikke overskrive hinanden — men undgå at starte
 # to Archive rewrite-kørsler på én gang.
 
-# Tidsplanen starter kørslen forfra hver 6. time, så arbejdet fortsætter af sig
-# selv natten over uden at nogen skal trykke på noget. En kørsel varer højst
-# 5t50m, så den næste starter kort efter den forrige er stoppet. Er der intet
-# tilbage, melder scriptet "Skal omskrives: 0" og er færdig på under et minut.
-# STOP DEN: sæt # foran de to schedule-linjer nedenfor (som i daily-update.yml).
-# Minuttet er 20 for ikke at ramme robottens egne kørsler på hele timer.
+# 14/9-2026: TIDSPLANEN ER SLÅET FRA. YouTube blokerer transskript-hentning
+# fra GitHubs servere fuldstændigt (loggen viser "transcript disabled" på hver
+# eneste video, 29 af 29), så kørslerne her ventede 6 timer på ingenting.
+# Omskrivningen køres nu fra Jacobs pc (node rewrite-arkiv.mjs), hvor YouTube
+# svarer. Skal den tilbage hertil, fjern # foran de to schedule-linjer — men
+# kun hvis transskripterne kan komme fra et sted, YouTube ikke blokerer.
 on:
-  schedule:
-    - cron: "20 */6 * * *"
+  # schedule:
+  #   - cron: "20 */6 * * *"
   workflow_dispatch:
     inputs:
       antal:

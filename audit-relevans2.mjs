@@ -41,7 +41,9 @@ for (const [slug, a] of Object.entries(dom)) {
   const afvistIOmskrivning = /handler ikke om/.test(log[slug]?.linje || '');
   if (a.dom !== 'nej' && !afvistIOmskrivning) continue;
   if (!fs.existsSync(`src/content/videos/${slug}.md`)) continue; // slettet siden
-  if (ud[slug]) continue;                                        // allerede dømt
+  // Allerede dømt — men "intet transskript" (score null) tæller ikke som dømt,
+  // så den prøves igen næste kørsel (YouTube svarer ikke altid første gang).
+  if (ud[slug] && ud[slug].score !== null) continue;
   kandidater.push(a);
 }
 kandidater.sort((a, b) => a.slug.localeCompare(b.slug));
