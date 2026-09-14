@@ -2323,5 +2323,215 @@
   "spredning": 0,
   "grund": "The transcript introduces the unintuitive nature of quantum mechanics and explains the double-slit experiment as a foundation for understanding quantum computing, but does not define or explain qubits.",
   "dømt": "2026-09-14T19:25:38.043Z"
+ },
+ "quantum-leap-for-ai-assessing-the-near-term-impact-of-qpu-advancements": {
+  "slug": "quantum-leap-for-ai-assessing-the-near-term-impact-of-qpu-advancements",
+  "title": "What Quantum AI Is Used for in LLM Training",
+  "youtubeId": "sQSQBYHR0ms",
+  "q": "what is quantum ai used for",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Caleb Writes Code",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 11184,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the potential for quantum computers to train AI models faster, comparing them to classical methods and highlighting the challenges of integrating quantum computing into AI.",
+  "dømt": "2026-09-14T19:26:08.827Z"
+ },
+ "quantum-leap-separating-hype-from-reality-in-the-next-computing": {
+  "slug": "quantum-leap-separating-hype-from-reality-in-the-next-computing",
+  "title": "How Does Superposition Work in Quantum Computing",
+  "youtubeId": "B3U1NDUiwSA",
+  "q": "how does superposition work in quantum computing",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Science ABC",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 5433,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains how superposition allows qubits to exist in multiple states simultaneously, enabling quantum computers to process information and solve problems much faster than classical computers.",
+  "dømt": "2026-09-14T19:26:28.250Z"
+ },
+ "quantum-leaps-how-real-world-quantum-computing-is-already-reshaping": {
+  "slug": "quantum-leaps-how-real-world-quantum-computing-is-already-reshaping",
+  "title": "Hybrid Quantum Systems Integrate Classical and Quantum Processors",
+  "youtubeId": "GQlC3NYRjK8",
+  "q": "what are hybrid quantum systems",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-19",
+  "channel": "D-Wave",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 34664,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   5
+  ],
+  "spredning": 1,
+  "grund": "The transcript discusses the practical applications of quantum computing and the interplay between classical and quantum approaches to solve complex real-world problems.",
+  "dømt": "2026-09-14T19:26:44.655Z"
+ },
+ "rachit-chawla-s-ai-ventures-reshape-fintech-automation-beyond-hype": {
+  "slug": "rachit-chawla-s-ai-ventures-reshape-fintech-automation-beyond-hype",
+  "title": "What Is AI Algorithmic Trading",
+  "youtubeId": "XzYP5_K90q8",
+  "q": "what is ai algorithmic trading",
+  "tag": "Fintech",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Shouryaa Sharma",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 42341,
+  "score": 6,
+  "scorer": [
+   5,
+   6,
+   6
+  ],
+  "spredning": 1,
+  "grund": "The transcript introduces a guest whose company uses AI for automated trading and lists AI algorithmic trading as a discussion topic, but the excerpt focuses on the guest's entrepreneurial journey and the definition of fintech.",
+  "dømt": "2026-09-14T19:27:01.677Z"
+ },
+ "see-your-future-home-today-how-augmented-reality-is-revolutionizing": {
+  "slug": "see-your-future-home-today-how-augmented-reality-is-revolutionizing",
+  "title": "AR in Interior Design Transforms Home Visualization",
+  "youtubeId": "YSUpB3z8NHc",
+  "q": "what is ar in interior design",
+  "tag": "AR & VR",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Ambiens",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 4027,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   7
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a technical tutorial demonstrating how to build an augmented reality application in Unity to visualize interior design ideas in a real-world setting.",
+  "dømt": "2026-09-14T19:27:21.441Z"
+ },
+ "spatial-tech-what-augmented-reality-tools-are": {
+  "slug": "spatial-tech-what-augmented-reality-tools-are",
+  "title": "Spatial Tech: What Augmented Reality Tools Are",
+  "youtubeId": "RA2XQSP5EaE",
+  "q": "what are augmented reality tools",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Awesome Future",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 15580,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about an experiential artist discussing her augmented reality creations and the philosophical impact of AR, rather than specific AR tools.",
+  "dømt": "2026-09-14T19:27:38.726Z"
+ },
+ "static-images-augmented-reality-brings-illustrations-to-life": {
+  "slug": "static-images-augmented-reality-brings-illustrations-to-life",
+  "title": "Static Images: Augmented Reality Brings Illustrations to Life",
+  "youtubeId": "KVzY14uYRqw",
+  "q": "how does augmented reality transform static illustrations",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "MizuFlow",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 8468,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains the architecture and components of modern enterprise AI systems, focusing on LLMs, tool calling, and Retrieval Augmented Generation (RAG).",
+  "dømt": "2026-09-14T19:27:48.081Z"
+ },
+ "the-agi-horizon-demis-hassabis-on-simulating-reality-and-redefining": {
+  "slug": "the-agi-horizon-demis-hassabis-on-simulating-reality-and-redefining",
+  "title": "How Does Demis Hassabis Define AGI?",
+  "youtubeId": "-HzgcbRXUK8",
+  "q": "how does demis hassabis define agi",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Lex Fridman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 149782,
+  "score": 1,
+  "scorer": [
+   1,
+   0,
+   1
+  ],
+  "spredning": 1,
+  "grund": "The transcript discusses Demis Hassabis's conjecture that patterns found in nature, shaped by evolutionary processes, can be efficiently modeled by classical learning algorithms, using examples like protein folding and fluid dynamics.",
+  "dømt": "2026-09-14T19:27:58.819Z"
+ },
+ "the-new-frontiers-of-finance-how-open-apis-and-the-metaverse-reshape": {
+  "slug": "the-new-frontiers-of-finance-how-open-apis-and-the-metaverse-reshape",
+  "title": "How Do Open Banking APIs Work for Payments and Finance Firms?",
+  "youtubeId": "m10_bmtJmvE",
+  "q": "how do open banking apis work",
+  "tag": "Fintech",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Couchonomics with Arjun",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 25733,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about the origin, growth, and business strategy of Magnati, a fintech company in the payments sector.",
+  "dømt": "2026-09-14T19:28:10.740Z"
+ },
+ "the-silent-revolution-how-stablecoins-are-reshaping-the-global-battle": {
+  "slug": "the-silent-revolution-how-stablecoins-are-reshaping-the-global-battle",
+  "title": "Stablecoin Infrastructure Becomes Essential for Modern Finance",
+  "youtubeId": "u0SfAX3eIqk",
+  "q": "what is stablecoin infrastructure",
+  "tag": "Fintech",
+  "rewrittenAt": "2026-08-19",
+  "channel": "MENA Fintech Association",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 8556,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses stablecoins as a financial infrastructure for payments and settlement, and later covers open finance and big tech's influence on financial data.",
+  "dømt": "2026-09-14T19:28:32.864Z"
  }
 }
