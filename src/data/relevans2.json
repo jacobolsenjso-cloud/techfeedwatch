@@ -1903,5 +1903,215 @@
   "spredning": 0,
   "grund": "The transcript compares software engineering and cybersecurity careers, detailing differences in salary progression, job security, and skill longevity over time.",
   "dømt": "2026-09-14T19:19:09.082Z"
+ },
+ "how-quantum-computing-augments-ai-capabilities": {
+  "slug": "how-quantum-computing-augments-ai-capabilities",
+  "title": "How Quantum Computing Augments AI Capabilities",
+  "youtubeId": "WoMitMc895A",
+  "q": "how does quantum computing related to ai",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "",
+  "channel": "AI Uncovered",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 16041,
+  "score": 4,
+  "scorer": [
+   4,
+   2,
+   4
+  ],
+  "spredning": 2,
+  "grund": "The transcript discusses recent breakthroughs and advancements in artificial intelligence and quantum computing as separate, rapidly evolving fields, without explaining how they relate to each other.",
+  "dømt": "2026-09-14T19:19:35.761Z"
+ },
+ "how-quantum-computing-companies-are-commercializing-advanced-tech": {
+  "slug": "how-quantum-computing-companies-are-commercializing-advanced-tech",
+  "title": "How Quantum Computing Companies Are Commercializing Advanced Tech",
+  "youtubeId": "b6sx04c5JYg",
+  "q": "what are quantum computing companies",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "",
+  "channel": "Untold Historian",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 34026,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   8
+  ],
+  "spredning": 0,
+  "grund": "The transcript details the IPO of Quantinuum and its significance in validating the quantum computing industry, mentioning other companies and their technological approaches.",
+  "dømt": "2026-09-14T19:19:51.957Z"
+ },
+ "how-to-apply-cybersecurity-measures-for-protection": {
+  "slug": "how-to-apply-cybersecurity-measures-for-protection",
+  "title": "How to Apply Cybersecurity Measures for Protection",
+  "youtubeId": "-0MzJgb-17s",
+  "q": "how to apply cybersecurity",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "The Social Dork | Cyber Security",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 9793,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript provides a detailed, step-by-step guide on how to use AI tools to optimize job applications for cybersecurity roles.",
+  "dømt": "2026-09-14T19:20:06.789Z"
+ },
+ "index-funds-explained-the-core-of-long-term-investing": {
+  "slug": "index-funds-explained-the-core-of-long-term-investing",
+  "title": "What Are Index Funds and How Do They Work",
+  "youtubeId": "oKmz6p_i7yI",
+  "q": "what are index funds and how do they work",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-19",
+  "channel": "WealthBlueprint",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 4190,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains what index funds are using an analogy, details how they work as a passive investment strategy, and highlights their benefits over active stock picking, including practical setup advice.",
+  "dømt": "2026-09-14T19:20:22.271Z"
+ },
+ "index-funds-vs-etfs-difference-tax-savings-for-investors": {
+  "slug": "index-funds-vs-etfs-difference-tax-savings-for-investors",
+  "title": "How Are ETFs and Index Funds Different for Tax Purposes",
+  "youtubeId": "9j2jTuRKCaU",
+  "q": "how are etfs and index funds difference",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-18",
+  "channel": "WealthBlueprint",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 5153,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains the structural and tax efficiency differences between mutual index funds and ETFs, focusing on how capital gains taxes are handled in taxable brokerage accounts.",
+  "dømt": "2026-09-14T19:20:36.093Z"
+ },
+ "investing-in-volatile-markets-smart-personal-finance-strategies": {
+  "slug": "investing-in-volatile-markets-smart-personal-finance-strategies",
+  "title": "What Is Long Term Wealth Creation Through Volatility",
+  "youtubeId": "yKmZnveZ-pE",
+  "q": "what is long term wealth creation",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Yahoo Finance",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 23706,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   8
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses investment strategies for new and experienced investors during market volatility and the responsible use of credit cards.",
+  "dømt": "2026-09-14T19:20:55.219Z"
+ },
+ "investing-legends-meet-ai-are-their-strategies-still-relevant-in-a": {
+  "slug": "investing-legends-meet-ai-are-their-strategies-still-relevant-in-a",
+  "title": "How to Use AI for Value Investing Like Buffett and Simons",
+  "youtubeId": "q1tLnU_UzUg",
+  "q": "how to use ai for value investing",
+  "tag": "Business & Money",
+  "rewrittenAt": "2026-08-19",
+  "channel": "Coin Bureau",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 18965,
+  "score": 1,
+  "scorer": [
+   1,
+   1,
+   1
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the strategies and successes of top traditional investors like Bill Ackman and Warren Buffett.",
+  "dømt": "2026-09-14T19:21:11.162Z"
+ },
+ "lateral-movement-threats-target-cloud-saas-infrastructure": {
+  "slug": "lateral-movement-threats-target-cloud-saas-infrastructure",
+  "title": "What Is Lateral Movement Risk in Modern IT?",
+  "youtubeId": "k6Vd_wnYbhA",
+  "q": "what is lateral movement risk",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Security BSides Bangalore",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 28787,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   5
+  ],
+  "spredning": 2,
+  "grund": "The transcript is an introduction to a presentation discussing common IAM misconfigurations, privilege escalation, and credential compromise in cloud environments, and how these issues enable attackers to bypass security tools.",
+  "dømt": "2026-09-14T19:21:32.384Z"
+ },
+ "loop-engineering-how-ai-agents-are-reshaping-business-automation-with": {
+  "slug": "loop-engineering-how-ai-agents-are-reshaping-business-automation-with",
+  "title": "What Is an AI Agent Loop in Business Automation",
+  "youtubeId": "5p_BBdfvzgQ",
+  "q": "what is ai agent loop",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Greg Isenberg",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 39757,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   9
+  ],
+  "spredning": 2,
+  "grund": "The transcript discusses the concept of 'loop engineering' and how AI-powered continuous loops can be used to automate and improve various aspects of a business, providing practical examples like SEO optimization.",
+  "dømt": "2026-09-14T19:21:56.297Z"
+ },
+ "master-quant-finance-in-9-minutes-your-python-pandas-roadmap-to-smart": {
+  "slug": "master-quant-finance-in-9-minutes-your-python-pandas-roadmap-to-smart",
+  "title": "How to Use yfinance in Python for Quant Investing",
+  "youtubeId": "b9RgHa1CnH4",
+  "q": "how to use yfinance python",
+  "tag": "Coding",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Daniel Boctor",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 9603,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   8
+  ],
+  "spredning": 0,
+  "grund": "The transcript demonstrates how to use yfinance to fetch financial data and then analyze it using pandas and matplotlib.",
+  "dømt": "2026-09-14T19:22:20.789Z"
  }
 }
