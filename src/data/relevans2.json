@@ -1063,5 +1063,215 @@
   "spredning": 0,
   "grund": "The transcript discusses US crypto regulation, institutional adoption, Michael Saylor's Bitcoin strategy, and security issues with a specific Bitcoin wallet.",
   "dømt": "2026-09-14T19:07:23.989Z"
+ },
+ "bridging-blockchains-how-oracle-networks-connect-smart-contracts-to": {
+  "slug": "bridging-blockchains-how-oracle-networks-connect-smart-contracts-to",
+  "title": "Oracle Network in Blockchain Bridges Data for Smart Contracts",
+  "youtubeId": "TPXTmVdlyoc",
+  "q": "what is oracle network in blockchain",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Lex Fridman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 169592,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript introduces Chainlink as a decentralized oracle network that provides data to smart contracts, explaining its purpose, before shifting to a philosophical discussion about digital versus physical reality.",
+  "dømt": "2026-09-14T19:07:48.101Z"
+ },
+ "bridging-the-quantum-divide-how-hybrid-supercomputing-is-redefining": {
+  "slug": "bridging-the-quantum-divide-how-hybrid-supercomputing-is-redefining",
+  "title": "What Are Current Limitations of Quantum Computing?",
+  "youtubeId": "HgXqbnSxtZQ",
+  "q": "what are the current limitations of quantum computing",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-17",
+  "channel": "HPC Knowledge Portal",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 36805,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript introduces PY's Quantum Supercomputing Innovation Hub and its projects focused on enabling hybrid quantum-classical computing through simulation, virtualization, and integration.",
+  "dømt": "2026-09-14T19:08:03.851Z"
+ },
+ "building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital": {
+  "slug": "building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital",
+  "title": "What Are Personalized AI Productivity Tools Today?",
+  "youtubeId": "CvLkhGWZlvE",
+  "q": "what are ai productivity tools",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "AI Edge",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 23541,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   9
+  ],
+  "spredning": 1,
+  "grund": "The transcript details how the speaker built a custom AI-powered personal operating system to manage tasks, finances, and prioritize their day for increased productivity.",
+  "dømt": "2026-09-14T19:08:26.311Z"
+ },
+ "can-augmented-reality-transform-learning-outcomes": {
+  "slug": "can-augmented-reality-transform-learning-outcomes",
+  "title": "Can Augmented Reality Transform Learning Outcomes?",
+  "youtubeId": "PFg_63uK7go",
+  "q": "how does augmented reality help in education",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Sky of Reality",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 2811,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a dialogue between a teacher and a student discussing human anatomy, specifically the ear and skeletal/muscular systems, using charts.",
+  "dømt": "2026-09-14T19:08:33.713Z"
+ },
+ "clarity-act-discussions-signal-major-shift-for-crypto-regulatory": {
+  "slug": "clarity-act-discussions-signal-major-shift-for-crypto-regulatory",
+  "title": "What Is Crypto Clarity and Why It Matters",
+  "youtubeId": "Up9AcAKAVSY",
+  "q": "what is crypto clarity",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Altcoin Daily",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 14237,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   7
+  ],
+  "spredning": 1,
+  "grund": "The transcript discusses the urgent legislative efforts to pass the Clarity Act in the US Senate, its supporters, and the political obstacles it faces.",
+  "dømt": "2026-09-14T19:08:55.477Z"
+ },
+ "claude-ai-for-business-launch-services-acquire-clients-faster": {
+  "slug": "claude-ai-for-business-launch-services-acquire-clients-faster",
+  "title": "What Is Claude AI Good for Business Growth",
+  "youtubeId": "AP-fOOmm02g",
+  "q": "what is claude ai good for",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Sabrina Ramonov 🍄",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 13820,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript demonstrates how to use Claude AI with specific prompts to generate personalized business ideas and actionable plans for making money quickly.",
+  "dømt": "2026-09-14T19:09:07.806Z"
+ },
+ "claude-co-work-why-this-ai-isn-t-just-chatting-it-s-doing-your": {
+  "slug": "claude-co-work-why-this-ai-isn-t-just-chatting-it-s-doing-your",
+  "title": "What Is Claude Co-work Used for Automating Business Tasks",
+  "youtubeId": "oUIxPCagoQU",
+  "q": "what is claude co-work used for",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Coffee & Contracts | Real Estate Marketing",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 19984,
+  "score": 10,
+  "scorer": [
+   10,
+   9,
+   10
+  ],
+  "spredning": 1,
+  "grund": "The transcript explains what Claude Co-work is, how it differs from other Claude features, and provides specific examples of how it can be used to automate tasks by connecting various business tools.",
+  "dømt": "2026-09-14T19:09:23.052Z"
+ },
+ "cloud-security-s-rapid-evolution-why-architecture-first-consulting": {
+  "slug": "cloud-security-s-rapid-evolution-why-architecture-first-consulting",
+  "title": "Why Cloud Security Is So Important for Businesses",
+  "youtubeId": "LCa-ioVi8Fs",
+  "q": "why is cloud security important",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Atlant Security",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 7736,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains the critical importance of cloud security for businesses, citing financial losses, regulatory compliance, and operational resilience as key reasons.",
+  "dømt": "2026-09-14T19:09:43.303Z"
+ },
+ "code-free-revolution-how-claude-code-builds-production-ready-whatsapp": {
+  "slug": "code-free-revolution-how-claude-code-builds-production-ready-whatsapp",
+  "title": "What Is a WhatsApp AI Bot for Businesses",
+  "youtubeId": "_VX7jc_BhB8",
+  "q": "what is whatsapp ai bot",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Yashica Jain",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 33956,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   8
+  ],
+  "spredning": 0,
+  "grund": "The transcript demonstrates what a WhatsApp AI bot is by showcasing its capabilities through a pet salon example and then details how to build one using an AI coding assistant.",
+  "dømt": "2026-09-14T19:10:08.482Z"
+ },
+ "code-is-sawdust-how-ai-agents-are-reshaping-software-development": {
+  "slug": "code-is-sawdust-how-ai-agents-are-reshaping-software-development",
+  "title": "What Is the Primary Goal of AI Agents in Software Development",
+  "youtubeId": "fQmlML9Lay4",
+  "q": "what is the primary goal of ai agents in software development",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Y Combinator",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 17757,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript describes a developer's workflow using AI agents to automate and manage software development tasks, allowing him to orchestrate the process rather than write code.",
+  "dømt": "2026-09-14T19:10:31.855Z"
  }
 }
