@@ -1,0 +1,212 @@
+{
+ "activist-investing-how-shareholders-drive-corporate-change": {
+  "slug": "activist-investing-how-shareholders-drive-corporate-change",
+  "title": "How Does Activist Investing Work to Influence Companies?",
+  "youtubeId": "X_t6-mze0J4",
+  "q": "how does activist investing work",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Bloomberg Television",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 37132,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses various corporate deals, mergers, acquisitions, and fundraising activities, with only a brief mention of an upcoming segment on activist campaigns.",
+  "dømt": "2026-09-14T18:39:52.151Z"
+ },
+ "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping": {
+  "slug": "agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping",
+  "title": "What Is Agentic AI in Financial Services",
+  "youtubeId": "U17g-GpdiLI",
+  "q": "what is agentic ai in financial services",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "AgentArum ",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 4206,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines agentic AI and details its architectural components, applications, and strategic deployment in financial services, including examples like KYC and loan affordability.",
+  "dømt": "2026-09-14T18:40:09.514Z"
+ },
+ "ai-agent-extension-mcp-vs-skills-for-llm-performance": {
+  "slug": "ai-agent-extension-mcp-vs-skills-for-llm-performance",
+  "title": "What Is MCP vs Skills for Extending AI Agents?",
+  "youtubeId": "goU9VIXA8II",
+  "q": "what is mcp vs skills",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "IBM Technology",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 7269,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   10
+  ],
+  "spredning": 1,
+  "grund": "The transcript defines MCP (Model Context Protocol) and skills, explaining their individual purposes in enhancing LLMs with external data and domain knowledge, and provides guidance on when to use each.",
+  "dømt": "2026-09-14T18:40:22.007Z"
+ },
+ "ai-and-the-workforce-beyond-job-loss-hysteria": {
+  "slug": "ai-and-the-workforce-beyond-job-loss-hysteria",
+  "title": "Impact of AI on Employees",
+  "youtubeId": "cJfKqKEyw1o",
+  "q": "impact of ai on employees",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "TED",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 10369,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the potential for AI to eliminate a vast number of current jobs, contrasting this with historical job disruption and highlighting the unique speed and nature of AI's impact.",
+  "dømt": "2026-09-14T18:40:42.456Z"
+ },
+ "ai-chips-are-essential-for-artificial-intelligence-computing": {
+  "slug": "ai-chips-are-essential-for-artificial-intelligence-computing",
+  "title": "AI chips are essential for artificial intelligence computing",
+  "youtubeId": "iTd3vUxu0X8",
+  "q": "how are ai chips used",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "",
+  "channel": "VLSI Tech Explained",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 11055,
+  "score": 2,
+  "scorer": [
+   2,
+   2,
+   4
+  ],
+  "spredning": 2,
+  "grund": "The transcript details the critical role of two Japanese companies, Disco and Tokyo Seimitsu, in the dicing and grinding processes essential for manufacturing advanced chips, including those used in AI.",
+  "dømt": "2026-09-14T18:41:02.738Z"
+ },
+ "ai-coding-transforms-solo-development-for-games-and-apps": {
+  "slug": "ai-coding-transforms-solo-development-for-games-and-apps",
+  "title": "How Can AI Help Game Development for Solo Developers?",
+  "youtubeId": "-QjR7xdDlT0",
+  "q": "how can ai help game development",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Jose “The RC Flyer”",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 43854,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about a developer setting up a live stream, managing GitHub, and debugging an app they are building, with a brief mention of a game.",
+  "dømt": "2026-09-14T18:41:13.555Z"
+ },
+ "ai-content-optimization-how-ai-transforms-creator-workflows": {
+  "slug": "ai-content-optimization-how-ai-transforms-creator-workflows",
+  "title": "What Is an AI-Powered Content Engine",
+  "youtubeId": "I1-M4XIgTIw",
+  "q": "what is ai content engine",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Grandpa",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 42141,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   2
+  ],
+  "spredning": 3,
+  "grund": "The transcript is about a streamer building a personal automation system using ChatGPT, Make, and Notion to track YouTube video uploads and data, which they refer to as 'the engine'.",
+  "dømt": "2026-09-14T18:41:36.882Z"
+ },
+ "ai-driven-web-creation-dissecting-the-10-000-website-promise-with": {
+  "slug": "ai-driven-web-creation-dissecting-the-10-000-website-promise-with",
+  "title": "What Is the Best AI Website Builder Ecosystem",
+  "youtubeId": "TZUTe7s11-I",
+  "q": "what is best ai website builder",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Jack Roberts",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 31878,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a tutorial demonstrating a specific AI-powered workflow using Cloud Code, Nanobanner 2, and Claude Code skills to build a website.",
+  "dømt": "2026-09-14T18:41:55.154Z"
+ },
+ "ai-in-banking-overcoming-digital-transformation-hurdles": {
+  "slug": "ai-in-banking-overcoming-digital-transformation-hurdles",
+  "title": "AI in Banking Sector Requires Holistic Transformation",
+  "youtubeId": "Yxjvj7sjPI4",
+  "q": "what is ai in banking sector",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Techvify",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 61302,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   4
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the general challenges and processes of technology transformation and delivery in the banking sector, with AI adoption mentioned as a key focus for the overall show.",
+  "dømt": "2026-09-14T18:42:18.179Z"
+ },
+ "ai-investment-boom-economic-paradox-fed-policy-market-risks": {
+  "slug": "ai-investment-boom-economic-paradox-fed-policy-market-risks",
+  "title": "What Is Fed Policy Doing Amid the AI Investment Boom?",
+  "youtubeId": "Ci0Xh0ZsN1I",
+  "q": "what is fed policy",
+  "tag": "AI Video",
+  "rewrittenAt": "2026-08-16",
+  "channel": "Bloomberg Television",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 80991,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   6
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses how recent economic data and market sentiment are influencing expectations for the Federal Reserve's interest rate decisions and their impact on equity markets.",
+  "dømt": "2026-09-14T18:42:37.568Z"
+ }
+}
