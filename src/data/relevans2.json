@@ -418,5 +418,230 @@
   "spredning": 0,
   "grund": "The transcript discusses recent tech news, including new hardware releases like Nvidia's RTX Spark superchip and other chips with AI capabilities, and updates to AI-powered software features.",
   "dømt": "2026-09-14T18:46:11.079Z"
+ },
+ "andrew-ng-s-enduring-vision-deep-learning-s-democratization-and": {
+  "slug": "andrew-ng-s-enduring-vision-deep-learning-s-democratization-and",
+  "title": "Online Learning AI: Andrew Ng's Vision for Global Access",
+  "youtubeId": "0jspaMLxBig",
+  "q": "what is online learning ai",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Lex Fridman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 86573,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   6
+  ],
+  "spredning": 0,
+  "grund": "The transcript is an interview with Andrew Ng, focusing on his journey in AI and his pioneering work in creating massive open online courses (MOOCs) to teach machine learning.",
+  "dømt": "2026-09-14T18:46:43.104Z"
+ },
+ "android-augmented-reality-how-people-use-arcore-on-mobile-devices": {
+  "slug": "android-augmented-reality-how-people-use-arcore-on-mobile-devices",
+  "title": "Android Augmented Reality: How People Use ARCore on Mobile Devices",
+  "youtubeId": "BHEExvv4fHo",
+  "q": "how to use augmented reality on android",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": " Talking Tech",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 10090,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript provides detailed instructions on how to install, set up, and use a specific open-source augmented reality application called Indoor Nav on an Android device.",
+  "dømt": "2026-09-14T18:47:03.560Z"
+ },
+ "anthropic-locks-down-mythos-ai-safety-vs-open-access-debate": {
+  "slug": "anthropic-locks-down-mythos-ai-safety-vs-open-access-debate",
+  "title": "What Is the Mythos AI Risk Behind Anthropic's Lockdown?",
+  "youtubeId": "d3Qq-rkp_to",
+  "q": "what is mythos ai risk",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Fireship",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 6315,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses the claimed security risks of Anthropic's Mythos AI model, providing specific examples of vulnerabilities it found and debating the true extent of its danger.",
+  "dømt": "2026-09-14T18:47:19.580Z"
+ },
+ "apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win": {
+  "slug": "apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win",
+  "title": "Apple's AI Strategy Is Deliberate on Device Integration",
+  "youtubeId": "eWKY0OnPByg",
+  "q": "what is apple's ai strategy",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Marques Brownlee",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 7058,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a debate about Apple's AI strategy, discussing its perceived lag, focus on hardware, and long-term vision for on-device AI.",
+  "dømt": "2026-09-14T18:47:32.699Z"
+ },
+ "ar-hardware-s-new-blueprint-from-discreet-monocles-to-screenless": {
+  "slug": "ar-hardware-s-new-blueprint-from-discreet-monocles-to-screenless",
+  "title": "What Smart Glasses Technology Is: Hardware and Software",
+  "youtubeId": "4N6yyXdYUU4",
+  "q": "what is smart glasses technology",
+  "tag": "AR & VR",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Adam Savage’s Tested",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 15449,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript describes specific augmented reality smart glasses and accessories, detailing their features, technology, and potential applications.",
+  "dømt": "2026-09-14T18:47:47.749Z"
+ },
+ "augmented-reality-apps-accessing-digital-overlays-in-the-real-world": {
+  "slug": "augmented-reality-apps-accessing-digital-overlays-in-the-real-world",
+  "title": "Augmented Reality Apps: Accessing Digital Overlays in the Real World",
+  "youtubeId": "9DsUS9fNKG0",
+  "q": "what are augmented reality apps",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Spark Lab",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 5332,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   5
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains what Web AR is, how it works, and why it is presented as a more accessible alternative to traditional app-based augmented reality experiences.",
+  "dømt": "2026-09-14T18:48:10.271Z"
+ },
+ "augmented-reality-examples-and-what-they-cost": {
+  "slug": "augmented-reality-examples-and-what-they-cost",
+  "title": "Augmented Reality Examples and What They Cost",
+  "youtubeId": "cwWdLjCSC90",
+  "q": "what is augmented reality examples",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Beyond What We Know",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 3192,
+  "score": null,
+  "grund": "",
+  "note": "intet transskript: [YoutubeTranscript] 🚨 Transcript is disabled on this video "
+ },
+ "augmented-reality-games-blend-digital-fun-into-the-real-world": {
+  "slug": "augmented-reality-games-blend-digital-fun-into-the-real-world",
+  "title": "Augmented Reality Games Blend Digital Fun Into the Real World",
+  "youtubeId": "ZLhrplMv82U",
+  "q": "what are augmented reality games",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Steven Sullivan",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 14460,
+  "score": 1,
+  "scorer": [
+   1,
+   1,
+   1
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a detailed review and comparison of two models of AR glasses, focusing on their hardware specifications and general media consumption capabilities.",
+  "dømt": "2026-09-14T19:00:25.274Z"
+ },
+ "augmented-reality-s-game-changing-vision-beyond-sports-towards-empathy": {
+  "slug": "augmented-reality-s-game-changing-vision-beyond-sports-towards-empathy",
+  "title": "What Is AR VR Technology Beyond Sports and Entertainment?",
+  "youtubeId": "AgMOJC5R4F8",
+  "q": "what is ar vr technology",
+  "tag": "AR & VR",
+  "rewrittenAt": "2026-08-17",
+  "channel": "TED",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 6968,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains what augmented and virtual reality technologies are, distinguishing between them and illustrating their applications in professional sports.",
+  "dømt": "2026-09-14T19:00:42.216Z"
+ },
+ "augmented-reality-uses-computer-vision-to-layer-digital-objects": {
+  "slug": "augmented-reality-uses-computer-vision-to-layer-digital-objects",
+  "title": "Augmented Reality Uses Computer Vision to Layer Digital Objects",
+  "youtubeId": "tVvA4zYc9EE",
+  "q": "how does augmented reality work",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Inyima Nicholas Sunday",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 10603,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript explains what augmented reality is, details the core principles and technologies that make it work, and provides numerous examples of its applications across various industries.",
+  "dømt": "2026-09-14T19:00:59.486Z"
+ },
+ "azure-cloud-engineer-careers-practical-skills-vs-certifications": {
+  "slug": "azure-cloud-engineer-careers-practical-skills-vs-certifications",
+  "title": "Microsoft Azure Certification Value Shifts to Practical Skills",
+  "youtubeId": "Py9uturi9ho",
+  "q": "microsoft azure certification value",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Cloudtechexec",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 15028,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript critically analyzes the current value of Microsoft Azure certifications, arguing they are a necessary entry point but not a differentiator for getting hired, and emphasizes the importance of practical projects and deep understanding of core services.",
+  "dømt": "2026-09-14T19:01:20.183Z"
  }
 }
