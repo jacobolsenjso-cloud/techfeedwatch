@@ -853,5 +853,215 @@
   "spredning": 0,
   "grund": "The transcript defines WooCommerce and details its flexibility and customization capabilities for various e-commerce and business needs on the WordPress platform.",
   "dømt": "2026-09-14T19:04:15.091Z"
+ },
+ "beyond-the-chatbot-deconstructing-generative-ai-s-mechanics-and": {
+  "slug": "beyond-the-chatbot-deconstructing-generative-ai-s-mechanics-and",
+  "title": "How Does Generative AI Work? Transformers, Scaling, GPT-4",
+  "youtubeId": "_6R7Ym6Vy_I",
+  "q": "how does generative ai work",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "The Royal Institution",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 33621,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   7
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines generative AI, explains its core concept of synthesizing new content, and provides historical and current examples of its applications, particularly focusing on text generation and language modeling.",
+  "dømt": "2026-09-14T19:04:48.101Z"
+ },
+ "beyond-the-hello-world-the-realities-of-coding-ethereum-smart": {
+  "slug": "beyond-the-hello-world-the-realities-of-coding-ethereum-smart",
+  "title": "Remix Ethereum IDE Simplifies Smart Contract Coding",
+  "youtubeId": "ooN6kZ9vqNQ",
+  "q": "what is remix ethereum ide",
+  "tag": "Coding",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Dapp University",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 17734,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript defines Remix as a browser-based Ethereum IDE and then provides a step-by-step tutorial on how to write a simple Solidity smart contract using it.",
+  "dømt": "2026-09-14T19:05:01.148Z"
+ },
+ "beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025": {
+  "slug": "beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025",
+  "title": "How to Become an AI Engineer in 2025 by Mastering New Skills",
+  "youtubeId": "PSWUr5E_OKY",
+  "q": "how to become ai engineer 2025",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Greg Kamradt",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 18917,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript outlines a roadmap of essential skills, tools, and resources needed to become a successful AI engineer, including working with models and effective prompting techniques.",
+  "dømt": "2026-09-14T19:05:22.633Z"
+ },
+ "beyond-the-hype-expert-forecasts-for-ai-in-2026-scaling-laws": {
+  "slug": "beyond-the-hype-expert-forecasts-for-ai-in-2026-scaling-laws",
+  "title": "What Do Open Weight Models Mean for AI in 2026?",
+  "youtubeId": "EV7WhVT270Q",
+  "q": "what does open weight models mean",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Lex Fridman",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 260965,
+  "score": 8,
+  "scorer": [
+   8,
+   8,
+   7
+  ],
+  "spredning": 1,
+  "grund": "The transcript discusses the current state of AI competition, highlighting the role of open-weight models, particularly from Chinese companies, and provides a functional definition of what open-weight models mean in practice.",
+  "dømt": "2026-09-14T19:05:41.388Z"
+ },
+ "beyond-the-hype-three-fundamental-flaws-limiting-ai-s-ascent-to-human": {
+  "slug": "beyond-the-hype-three-fundamental-flaws-limiting-ai-s-ascent-to-human",
+  "title": "Generalization in LLM Models Poses a Major Hurdle",
+  "youtubeId": "984qBh164fo",
+  "q": "what is generalization in llm",
+  "tag": "AI & Tech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Sabine Hossenfelder",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 6942,
+  "score": 9,
+  "scorer": [
+   9,
+   9,
+   9
+  ],
+  "spredning": 0,
+  "grund": "The transcript argues that current AI models, including LLMs, cannot generalize beyond their training data, interpolate rather than extrapolate, and thus will not achieve artificial general intelligence.",
+  "dømt": "2026-09-14T19:06:04.284Z"
+ },
+ "beyond-the-password-how-ai-authentication-is-forging-the-future-of": {
+  "slug": "beyond-the-password-how-ai-authentication-is-forging-the-future-of",
+  "title": "What Is Digital Identity Verification and Its Evolution",
+  "youtubeId": "O1FOLLPEdfY",
+  "q": "what is digital identity verification",
+  "tag": "Fintech",
+  "rewrittenAt": "2026-08-18",
+  "channel": "Couchonomics with Arjun",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 34937,
+  "score": 1,
+  "scorer": [
+   1,
+   1,
+   1
+  ],
+  "spredning": 0,
+  "grund": "The transcript introduces a fintech podcast and its guest, then discusses the business model and success of OakNorth Bank.",
+  "dømt": "2026-09-14T19:06:16.318Z"
+ },
+ "beyond-the-qubit-why-leaving-a-booming-quantum-computing-career-can": {
+  "slug": "beyond-the-qubit-why-leaving-a-booming-quantum-computing-career-can",
+  "title": "What Is Quantum Computing Used for Today? Less Than You Think",
+  "youtubeId": "pDj1QhPOVBo",
+  "q": "what is quantum computing used for today",
+  "tag": "Quantum Computing",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Looking Glass Universe",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 15277,
+  "score": 6,
+  "scorer": [
+   6,
+   6,
+   9
+  ],
+  "spredning": 3,
+  "grund": "The transcript discusses the current limited real-world applications of quantum computing, explains why finding uses is challenging, and provides Shor's algorithm as a theoretical example of a specialized task it could perform in the",
+  "dømt": "2026-09-14T19:06:43.129Z"
+ },
+ "beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030": {
+  "slug": "beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030",
+  "title": "What Are Some Examples of AR in Daily Life?",
+  "youtubeId": "D8V2nxeWHmI",
+  "q": "what are some examples of ar in daily life",
+  "tag": "AR & VR",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Future Business Tech",
+  "dom": "ja",
+  "svar": "YES",
+  "tegn": 4031,
+  "score": 10,
+  "scorer": [
+   9,
+   10,
+   10
+  ],
+  "spredning": 1,
+  "grund": "The transcript describes numerous future applications of augmented reality in daily life, covering communication, shopping, education, and navigation.",
+  "dømt": "2026-09-14T19:06:55.590Z"
+ },
+ "bitcoin-market-cycles-understanding-volatility-and-investment-strategy": {
+  "slug": "bitcoin-market-cycles-understanding-volatility-and-investment-strategy",
+  "title": "How Long Do Bitcoin Cycles Last with a Four Year Pattern",
+  "youtubeId": "TzuvZLuXzAE",
+  "q": "how long do bitcoin cycles last",
+  "tag": "AI Video",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Graham Stephan",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 18029,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   2
+  ],
+  "spredning": 2,
+  "grund": "The transcript discusses the current Bitcoin market downturn, its causes, and the financial situation of MicroStrategy, with a brief mention of what history might suggest for future movements.",
+  "dømt": "2026-09-14T19:07:13.155Z"
+ },
+ "bitcoin-s-digital-gold-narrative-what-drives-institutional-adoption": {
+  "slug": "bitcoin-s-digital-gold-narrative-what-drives-institutional-adoption",
+  "title": "Why Does Bitcoin Have a Fixed Supply? Why Institutions Care",
+  "youtubeId": "I2y6CcOiBKk",
+  "q": "why does bitcoin have a fixed supply",
+  "tag": "Crypto",
+  "rewrittenAt": "2026-08-17",
+  "channel": "Altcoin Daily",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 9434,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript discusses US crypto regulation, institutional adoption, Michael Saylor's Bitcoin strategy, and security issues with a specific Bitcoin wallet.",
+  "dømt": "2026-09-14T19:07:23.989Z"
  }
 }
