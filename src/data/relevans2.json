@@ -2743,5 +2743,193 @@
   "spredning": 0,
   "grund": "The transcript explains how AI can generate consistent, explorable 3D worlds from single images, focusing on the technical challenges of maintaining long-term coherence.",
   "dømt": "2026-09-14T19:31:39.990Z"
+ },
+ "what-an-ai-video-generator-is-and-how-it-works": {
+  "slug": "what-an-ai-video-generator-is-and-how-it-works",
+  "title": "What an AI Video Generator Is and How It Works",
+  "youtubeId": "Lg-meK5IU8Q",
+  "q": "what is ai video generator",
+  "tag": "AI Video",
+  "rewrittenAt": "",
+  "channel": "IBM Technology",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 8740,
+  "score": 0,
+  "scorer": [
+   1,
+   0,
+   0
+  ],
+  "spredning": 1,
+  "grund": "The transcript explains what AI agent skills are, how they are structured, and how they provide procedural knowledge to AI agents.",
+  "dømt": "2026-09-14T19:31:53.349Z"
+ },
+ "what-are-ai-chips-used-for-in-modern-computing": {
+  "slug": "what-are-ai-chips-used-for-in-modern-computing",
+  "title": "What Are AI Chips Used for in Modern Computing?",
+  "youtubeId": "YP73B9D20V4",
+  "q": "what is ai chips used for",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "",
+  "channel": "Fireship",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 5970,
+  "score": 4,
+  "scorer": [
+   4,
+   4,
+   7
+  ],
+  "spredning": 3,
+  "grund": "The transcript is about the release and capabilities of the Kimi K3 open-source AI model and the geopolitical implications of its development.",
+  "dømt": "2026-09-14T19:32:13.898Z"
+ },
+ "what-are-ai-videos-called-and-how-do-they-work": {
+  "slug": "what-are-ai-videos-called-and-how-do-they-work",
+  "title": "What Are AI Videos Called, and How Do They Work?",
+  "youtubeId": "q_umfWm8J28",
+  "q": "what are ai videos called",
+  "tag": "AI Video",
+  "rewrittenAt": "",
+  "channel": "Yahoo Finance",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 82797,
+  "score": 0,
+  "scorer": [
+   0,
+   0,
+   0
+  ],
+  "spredning": 0,
+  "grund": "The transcript is about the impact of AI, specifically 'tokens' and 'agentic AI,' on productivity, the economy, and NVIDIA's ecosystem, as presented by Jensen Huang at GTC Taiwan.",
+  "dømt": "2026-09-14T19:32:22.953Z"
+ },
+ "what-are-common-augmented-reality-applications": {
+  "slug": "what-are-common-augmented-reality-applications",
+  "title": "What are common augmented reality applications?",
+  "youtubeId": "lqzQdGdpPHA",
+  "q": "what are augmented reality applications",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "immersive insiders",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 17423,
+  "score": 2,
+  "scorer": [
+   2,
+   2,
+   2
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a step-by-step tutorial on how to build a specific augmented reality application using Unity, not a general overview of what augmented reality applications are.",
+  "dømt": "2026-09-14T19:32:40.845Z"
+ },
+ "what-are-nvidia-ai-chips-and-their-role-in-ai": {
+  "slug": "what-are-nvidia-ai-chips-and-their-role-in-ai",
+  "title": "What are NVIDIA AI Chips and Their Role in AI?",
+  "youtubeId": "tbxhPktnBtc",
+  "q": "what are ai chips nvidia",
+  "tag": "Hardware & Chips",
+  "rewrittenAt": "",
+  "channel": "AI Chips Insider",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 9992,
+  "score": 6,
+  "scorer": [
+   6,
+   5
+  ],
+  "spredning": 1,
+  "grund": "The transcript primarily describes Cerebras's unique wafer-scale AI processor, comparing its design, manufacturing, and performance to traditional GPUs, including those from Nvidia.",
+  "dømt": "2026-09-14T19:32:55.134Z"
+ },
+ "what-augmented-reality-means-today-for-users": {
+  "slug": "what-augmented-reality-means-today-for-users",
+  "title": "What Augmented Reality Means Today for Users",
+  "youtubeId": "O9hWWWSbVyE",
+  "q": "what is augmented reality mean",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "mafftopia",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 18943,
+  "score": 5,
+  "scorer": [
+   5,
+   5,
+   4
+  ],
+  "spredning": 1,
+  "grund": "The transcript is about the unboxing and initial impressions of a pair of AR glasses received through a Kickstarter campaign.",
+  "dømt": "2026-09-14T19:33:06.794Z"
+ },
+ "what-augmented-reality-on-meta-quest-3-means-for-immersion": {
+  "slug": "what-augmented-reality-on-meta-quest-3-means-for-immersion",
+  "title": "What Augmented Reality on Meta Quest 3 Means for Immersion",
+  "youtubeId": "tM0N8JKMqYs",
+  "q": "how to use augmented reality on meta quest 3",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "BMFVR",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 11203,
+  "score": 7,
+  "scorer": [
+   7,
+   7,
+   7
+  ],
+  "spredning": 0,
+  "grund": "The transcript describes several mixed reality games for the Meta Quest 3, showcasing how they utilize the device's AR capabilities like room scanning and dynamic occlusion to create immersive experiences.",
+  "dømt": "2026-09-14T19:33:32.864Z"
+ },
+ "what-cybersecurity-engineering-does-for-digital-systems": {
+  "slug": "what-cybersecurity-engineering-does-for-digital-systems",
+  "title": "What Cybersecurity Engineering Does for Digital Systems",
+  "youtubeId": "Z1uZED00cFg",
+  "q": "what is cybersecurity engineering",
+  "tag": "Cybersecurity",
+  "rewrittenAt": "",
+  "channel": "The Social Dork | Cyber Security",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 12975,
+  "score": 4,
+  "scorer": [
+   5,
+   4,
+   4
+  ],
+  "spredning": 1,
+  "grund": "The transcript provides a three-month roadmap for getting started in the general cybersecurity domain, including foundational knowledge and certifications.",
+  "dømt": "2026-09-14T19:33:50.672Z"
+ },
+ "why-was-augmented-reality-invented-to-change-how-we-see-the-world": {
+  "slug": "why-was-augmented-reality-invented-to-change-how-we-see-the-world",
+  "title": "Why Was Augmented Reality Invented to Change How We See the World?",
+  "youtubeId": "L94ZE2-QgvA",
+  "q": "why was augmented reality invented",
+  "tag": "AR & VR",
+  "rewrittenAt": "",
+  "channel": "Tech Rank",
+  "dom": "nej",
+  "svar": "NO",
+  "tegn": 9995,
+  "score": 1,
+  "scorer": [
+   1,
+   1,
+   1
+  ],
+  "spredning": 0,
+  "grund": "The transcript is a review and comparison of various consumer-grade augmented reality glasses, focusing on their features, pricing, and use cases for entertainment and productivity.",
+  "dømt": "2026-09-14T19:34:04.335Z"
  }
 }
