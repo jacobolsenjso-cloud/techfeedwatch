@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { execSync } from 'child_process';
 import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
+import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
@@ -365,6 +366,19 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
       console.log(`ℹ️ Springer over: Video ${videoId} er allerede udgivet.`);
       continue;
     }
+    // Gratis for-tjek (ingen ventetid, ingen modelkald): deler videoens titel
+    // eller beskrivelse ikke ét eneste kerneord med spørgsmålet, er den nok ikke
+    // svaret. Målt 15/9 (#523): to DeepSeek-videoer fik 12 min hver for
+    // spørgsmålet "what is ai video specialist" og karakter 0 og 1.
+    // "ai" og "tech" tæller ikke — dem deler alt (samme regel som ankerTjek).
+    const spmUdenAi = (spoergsmaal || '').replace(/\b(ai|tech)\b/gi, ' ').trim();
+    if (spmUdenAi && /[a-z]{3,}/i.test(spmUdenAi)) {
+      const tekst = `${item.snippet?.title || ''} ${item.snippet?.description || ''}`;
+      if (faellesOrd(spmUdenAi, tekst) === 0) {
+        console.log(`ℹ️ Springer over: "${item.snippet?.title}" deler intet kerneord med spørgsmålet (${videoId}).`);
+        continue;
+      }
+    }
     if (!(await isEnglishAudio(videoId))) continue;
     kandidater.push(videoId);
   }
@@ -488,17 +502,20 @@ async function findNewestVideos() {
 
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
-    // Medium (relevance) + long (date) + én roterende kvalitetskanal.
+    // Medium + long (begge efter relevans) + én roterende kvalitetskanal.
     // Korte videoer søges ikke længere — de gav sider uden brødtekst.
     const [mediumVideos, longVideos, channelVideos] = await Promise.all([
       searchVideos(soegetekst, { videoDuration: 'medium', order: 'relevance', maxResults: 5 }),
-      searchVideos(soegetekst, { videoDuration: 'long', order: 'date', maxResults: 5 }),
+      searchVideos(soegetekst, { videoDuration: 'long', order: 'relevance', maxResults: 5 }),
       searchChannel(channelId, soegetekst, 3),
     ]);
 
     const seen = new Set();
-    // Kanal-videoer sættes forrest, så de får en reel chance inden for loftet pr. kørsel.
-    const normalItems = dedupeById([...channelVideos, ...mediumVideos, ...longVideos], seen);
+    // Spørgsmålets egne søgeresultater først, kanalens videoer SIDST. Før stod
+    // kanalen forrest og fik de første (dyre) pladser, selv når dens videoer
+    // ikke handlede om spørgsmålet (målt 15/9, #522/#523: Y Combinator og
+    // Two Minute Papers gav kandidater uden om spørgsmålet).
+    const normalItems = dedupeById([...mediumVideos, ...longVideos, ...channelVideos], seen);
 
     if (normalItems.length === 0) {
       console.log("ℹ️ Info: Fandt ingen videoer (eller API'en afviste søgningen).");
