@@ -1062,10 +1062,10 @@
   "dato": "2026-09-14T20:57:22.111Z"
  },
  "zand-s-digital-ascent-is-this-the-end-for-traditional-banking-s": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is zand bank in uae",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11109 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:59:00.341Z"
+  "linje": "tal uden dækning i kilden: 200000 — beder om rettelse",
+  "dato": "2026-09-15T03:15:37.786Z"
  },
  "zero-trust-for-ai-agents-securing-autonomous-systems": {
   "status": "ok",
