@@ -48,8 +48,8 @@ const CHANNELS = [
 const MAX_NORMAL_PER_RUN = 1;
 
 // Dagligt udgivelsesLOFT — ikke et mål. Loftet varierer deterministisk med
-// datoen (samme dag = samme loft på tværs af døgnets 12 kørsler, uden delt
-// hukommelse): hverdage 2-6 artikler (snit 4), weekend 1-3 (snit 2). Præcis
+// datoen (samme dag = samme loft på tværs af døgnets kørsler, uden delt
+// hukommelse): hverdage 2-5 artikler, weekend 1-3. Præcis
 // fire artikler hver eneste dag var et maskinaftryk; rigtige redaktioner
 // svinger og udgiver mindre i weekenden. Kvaliteten bestemmer stadig: godkender
 // kontrollerne kun én video en dag med loft 5, udgives én. En dag med 0 er OK.
@@ -60,7 +60,8 @@ function dagensLoft() {
   for (let i = 0; i < dato.length; i++) h = (Math.imul(31, h) + dato.charCodeAt(i)) | 0;
   h = Math.abs(h);
   const ugedag = nu.getUTCDay(); // 0 = søndag, 6 = lørdag
-  const muligheder = (ugedag === 0 || ugedag === 6) ? [1, 2, 3] : [2, 3, 4, 5, 6];
+  // Max 5 om dagen (Jacob, 15/9) — før kunne hverdage give 6.
+  const muligheder = (ugedag === 0 || ugedag === 6) ? [1, 2, 3] : [2, 3, 4, 5];
   return muligheder[h % muligheder.length];
 }
 const MAX_PER_DAY = dagensLoft();

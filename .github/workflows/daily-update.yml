@@ -12,7 +12,11 @@ name: YouTube Auto Update
 
 on:
   schedule:
-    - cron: "0 */2 * * *" # Kører præcis hver anden time
+    # Hver time på minut 17. Hvorfor: GitHub nedprioriterer cron-jobs på hele
+    # timer (målt 15/9: "hver 2. time" gav 3 kørsler på en dag). Et skævt minut
+    # fyrer oftere. Dagsloftet (dagensLoft i auto-youtube.mjs, max 5) er
+    # uændret — flere kørsler giver ikke flere artikler, kun flere forsøg.
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
