@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (1484) ---
+# --- Statiske (1566) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/ucUdfiq2KiY/ /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech 301
@@ -1487,6 +1487,88 @@
 /video/why-was-augmented-reality-invented-to-change-how-we-see-the-world/ /video/augmented-reality-examples-and-what-they-cost/ 301
 /video/L94ZE2-QgvA /video/augmented-reality-examples-and-what-they-cost/ 301
 /video/L94ZE2-QgvA/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/ai-in-banking-overcoming-digital-transformation-hurdles /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/ai-in-banking-overcoming-digital-transformation-hurdles/ /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/Yxjvj7sjPI4 /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/Yxjvj7sjPI4/ /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/bitcoin-market-cycles-understanding-volatility-and-investment-strategy /tag/ai-video/ 301
+/video/bitcoin-market-cycles-understanding-volatility-and-investment-strategy/ /tag/ai-video/ 301
+/video/TzuvZLuXzAE /tag/ai-video/ 301
+/video/TzuvZLuXzAE/ /tag/ai-video/ 301
+/video/from-paycheck-to-44k-unpacking-the-real-ai-side-hustle-journey /video/beyond-buzzwords-how-ai-productivity-tools-reshape-real-world/ 301
+/video/from-paycheck-to-44k-unpacking-the-real-ai-side-hustle-journey/ /video/beyond-buzzwords-how-ai-productivity-tools-reshape-real-world/ 301
+/video/generative-ai-understanding-the-engine-behind-tomorrow-s-digital /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/generative-ai-understanding-the-engine-behind-tomorrow-s-digital/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/how-ai-video-quality-changes-digital-content-creation /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/how-ai-video-quality-changes-digital-content-creation/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/YCPAIg7RUq8 /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/YCPAIg7RUq8/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/how-quantum-computing-augments-ai-capabilities /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/how-quantum-computing-augments-ai-capabilities/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/WoMitMc895A /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/WoMitMc895A/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/quantum-computing-the-quantum-leap-or-just-a-quantum-leap-of-faith /tag/quantum-computing/ 301
+/video/quantum-computing-the-quantum-leap-or-just-a-quantum-leap-of-faith/ /tag/quantum-computing/ 301
+/video/spatial-tech-what-augmented-reality-tools-are /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/spatial-tech-what-augmented-reality-tools-are/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/RA2XQSP5EaE /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/RA2XQSP5EaE/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/what-cybersecurity-engineering-does-for-digital-systems /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/what-cybersecurity-engineering-does-for-digital-systems/ /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/Z1uZED00cFg /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/Z1uZED00cFg/ /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/ai-driven-web-creation-dissecting-the-10-000-website-promise-with /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/ai-driven-web-creation-dissecting-the-10-000-website-promise-with/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/demystifying-ai-your-20-minute-blueprint-to-understanding-every /video/amazon-s-ecosystem-dominance-network-effects-and-control/ 301
+/video/demystifying-ai-your-20-minute-blueprint-to-understanding-every/ /video/amazon-s-ecosystem-dominance-network-effects-and-control/ 301
+/video/quantum-computing-the-13-reasons-why-reality-might-never-be-the-same /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/quantum-computing-the-13-reasons-why-reality-might-never-be-the-same/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/the-solo-app-millionaire-how-ai-is-reshaping-indie-hacking-s-bold /video/ai-accelerates-front-end-development-reshaping-ui-creation-and/ 301
+/video/the-solo-app-millionaire-how-ai-is-reshaping-indie-hacking-s-bold/ /video/ai-accelerates-front-end-development-reshaping-ui-creation-and/ 301
+/video/ggU7YANSojI /video/ai-accelerates-front-end-development-reshaping-ui-creation-and/ 301
+/video/ggU7YANSojI/ /video/ai-accelerates-front-end-development-reshaping-ui-creation-and/ 301
+/video/what-augmented-reality-means-today-for-users /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/what-augmented-reality-means-today-for-users/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/O9hWWWSbVyE /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/O9hWWWSbVyE/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/ai-safety-when-ai-seeks-digital-autonomy-beyond-control /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/ai-safety-when-ai-seeks-digital-autonomy-beyond-control/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/r4H7rx5nn1A /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/r4H7rx5nn1A/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/andrew-ng-s-enduring-vision-deep-learning-s-democratization-and /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/andrew-ng-s-enduring-vision-deep-learning-s-democratization-and/ /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/cybersecurity-grc-defines-enterprise-digital-defense /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/cybersecurity-grc-defines-enterprise-digital-defense/ /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/PfCxZrmyUzs /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/PfCxZrmyUzs/ /video/how-much-does-cybersecurity-pay-and-career-outlook/ 301
+/video/master-web3-your-ai-powered-pathway-to-blockchain-smart-contract /video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/ 301
+/video/master-web3-your-ai-powered-pathway-to-blockchain-smart-contract/ /video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/ 301
+/video/omnichannel-retail-strategy-print-catalogs-drive-digital-sales /video/selling-digital-products-online-ai-simplifies-creator-economy-entry/ 301
+/video/omnichannel-retail-strategy-print-catalogs-drive-digital-sales/ /video/selling-digital-products-online-ai-simplifies-creator-economy-entry/ 301
+/video/yUHQR9lUtaE /video/selling-digital-products-online-ai-simplifies-creator-economy-entry/ 301
+/video/yUHQR9lUtaE/ /video/selling-digital-products-online-ai-simplifies-creator-economy-entry/ 301
+/video/rachit-chawla-s-ai-ventures-reshape-fintech-automation-beyond-hype /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/rachit-chawla-s-ai-ventures-reshape-fintech-automation-beyond-hype/ /video/ai-open-finance-instant-payments-banking-technology-s-future/ 301
+/video/unleash-ai-autopilot-automate-your-seo-social-media-for-explosive /video/google-ai-overviews-impact-content-creators-traffic-seo/ 301
+/video/unleash-ai-autopilot-automate-your-seo-social-media-for-explosive/ /video/google-ai-overviews-impact-content-creators-traffic-seo/ 301
+/video/vibe-coding-vs-agentic-strategy-the-real-debate-for-ai-powered /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/vibe-coding-vs-agentic-strategy-the-real-debate-for-ai-powered/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/kvyNjg49Ad8 /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/kvyNjg49Ad8/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/what-are-nvidia-ai-chips-and-their-role-in-ai /video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon/ 301
+/video/what-are-nvidia-ai-chips-and-their-role-in-ai/ /video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon/ 301
+/video/tbxhPktnBtc /video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon/ 301
+/video/tbxhPktnBtc/ /video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon/ 301
+/video/beyond-the-basics-when-woocommerce-becomes-your-strategic-e-commerce /tag/business-money/ 301
+/video/beyond-the-basics-when-woocommerce-becomes-your-strategic-e-commerce/ /tag/business-money/ 301
+/video/VngFqKHftbY /tag/business-money/ 301
+/video/VngFqKHftbY/ /tag/business-money/ 301
+/video/beyond-the-chatbot-deconstructing-generative-ai-s-mechanics-and /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/beyond-the-chatbot-deconstructing-generative-ai-s-mechanics-and/ /video/ai-video-generators-free-tools-for-dynamic-content/ 301
+/video/what-augmented-reality-on-meta-quest-3-means-for-immersion /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/what-augmented-reality-on-meta-quest-3-means-for-immersion/ /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/tM0N8JKMqYs /video/augmented-reality-examples-and-what-they-cost/ 301
+/video/tM0N8JKMqYs/ /video/augmented-reality-examples-and-what-they-cost/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
