@@ -294,10 +294,10 @@
   "dato": "2026-09-12T17:26:11.273Z"
  },
  "beyond-automation-why-no-code-ai-agents-represent-a-new-frontier-for": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is an ai agent vs automation",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 30436 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T19:37:35.067Z"
+  "linje": "Kontrol ok: 24 af 42 punkter fra arket brugt, 2 tal, kilden nævnt",
+  "dato": "2026-09-15T02:57:23.134Z"
  },
  "beyond-buzzwords-how-ai-productivity-tools-reshape-real-world": {
   "status": "fejl",
@@ -348,10 +348,10 @@
   "dato": "2026-09-12T19:29:42.818Z"
  },
  "beyond-the-blockchain-understanding-bitcoin-s-philosophical-challenge": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is individual sovereignty",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11685 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T19:39:34.947Z"
+  "linje": "Kontrol ok: 30 af 52 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-15T02:58:41.235Z"
  },
  "beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software": {
   "status": "ok",
@@ -606,10 +606,10 @@
   "dato": "2026-09-13T21:26:53.536Z"
  },
  "gstack-transforms-ai-from-coding-assistant-to-full-engineering-team": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is gstack garry tan",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6804 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T19:42:23.229Z"
+  "linje": "Kontrol ok: 5 af 6 punkter fra arket brugt, 10 tal, kilden nævnt",
+  "dato": "2026-09-15T02:59:32.327Z"
  },
  "how-ai-is-reshaping-developer-productivity-and-the-future-of-code": {
   "status": "ok",
@@ -618,10 +618,10 @@
   "dato": "2026-09-13T21:45:58.238Z"
  },
  "how-ai-powered-tools-are-redefining-your-seo-strategy": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to use ai for seo and content optimization",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10154 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T19:44:35.518Z"
+  "linje": "tal uden dækning i kilden: 134, 167, 27, 100, 85, 57 — beder om rettelse",
+  "dato": "2026-09-15T03:01:14.072Z"
  },
  "how-is-quantum-computing-different-from-classical-computing": {
   "status": "afvist",
@@ -780,10 +780,10 @@
   "dato": "2026-09-14T19:54:57.362Z"
  },
  "quantum-computing-threats-to-current-encryption-explained": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what are quantum computing threats",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6018 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T19:56:15.630Z"
+  "linje": "Kontrol ok: 25 af 36 punkter fra arket brugt, 5 tal, kilden nævnt",
+  "dato": "2026-09-15T03:02:25.473Z"
  },
  "quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer": {
   "status": "ok",
@@ -810,10 +810,10 @@
   "dato": "2026-09-14T20:02:36.855Z"
  },
  "search-engine-optimization-what-seo-is-and-how-it-works": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is seo and how it works",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6264 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:04:04.331Z"
+  "linje": "Kontrol ok: 28 af 34 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-15T03:03:31.586Z"
  },
  "selling-digital-products-online-ai-simplifies-creator-economy-entry": {
   "status": "ok",
@@ -846,16 +846,16 @@
   "dato": "2026-09-14T20:10:02.207Z"
  },
  "spacex-pre-ipo-investment-accessing-private-equity-options": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how to invest in spacex pre ipo",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 7769 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:11:17.785Z"
+  "linje": "Kontrol ok: 24 af 34 punkter fra arket brugt, 4 tal, kilden nævnt",
+  "dato": "2026-09-15T03:04:12.166Z"
  },
  "stephen-wolfram-s-radical-idea-is-the-universe-just-a-giant": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is a computational universe",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (4-SGpEInX_c)",
-  "dato": "2026-09-14T20:12:31.494Z"
+  "linje": "Kontrol ok: 34 af 60 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-15T03:05:25.748Z"
  },
  "the-2026-ai-student-s-dilemma-can-a-budget-laptop-really-keep-pace": {
   "status": "ok",
@@ -864,16 +864,16 @@
   "dato": "2026-09-14T20:14:01.571Z"
  },
  "the-2026-cyber-underground-how-ai-and-analog-tricks-reshape-global": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what are social engineering attacks examples",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 12690 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:15:45.577Z"
+  "linje": "Stadig: kilden ikke nævnt ved navn — udgives alligevel, tælles i audit",
+  "dato": "2026-09-15T03:06:24.566Z"
  },
  "the-ai-content-deluge-how-automation-reshapes-seo-and-digital": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how does ai change seo",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 6708 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:17:03.156Z"
+  "linje": "Kontrol ok: 27 af 56 punkter fra arket brugt, 3 tal, kilden nævnt",
+  "dato": "2026-09-15T03:07:27.112Z"
  },
  "the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution": {
   "status": "ok",
@@ -906,10 +906,10 @@
   "dato": "2026-09-14T20:23:43.561Z"
  },
  "the-data-bridge-why-blockchain-oracles-are-essential-for-real-world": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is the blockchain oracle problem",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 10091 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:25:27.296Z"
+  "linje": "Kontrol ok: 23 af 35 punkter fra arket brugt, 0 tal, kilden nævnt",
+  "dato": "2026-09-15T03:08:49.540Z"
  },
  "the-decentralization-dilemma-separating-web3-s-promise-from-its": {
   "status": "ok",
@@ -918,10 +918,10 @@
   "dato": "2026-09-14T20:26:47.896Z"
  },
  "the-digital-money-war-why-banks-stablecoins-and-x-money-are-battling": {
-  "status": "fejl",
+  "status": "ok",
   "q": "what is the purpose of stablecoin",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 7922 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:28:29.641Z"
+  "linje": "Kontrol ok: 3 af 6 punkter fra arket brugt, 8 tal, kilden nævnt",
+  "dato": "2026-09-15T03:09:59.682Z"
  },
  "the-genie-in-the-machine-decoding-openai-s-agi-ambitions-and-the": {
   "status": "afvist",
@@ -960,10 +960,10 @@
   "dato": "2026-09-14T20:34:35.045Z"
  },
  "the-quiet-tech-recalibration-why-ai-isn-t-replacing-software": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how much does ai increase developer productivity",
-  "linje": "Fejl: Svaret mangler TITLE-linjen — artiklen skrives ikke. (VGE84CeeaMo)",
-  "dato": "2026-09-14T20:36:12.028Z"
+  "linje": "Kontrol ok: 18 af 20 punkter fra arket brugt, 17 tal, kilden nævnt",
+  "dato": "2026-09-15T03:11:12.364Z"
  },
  "the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment": {
   "status": "ok",
@@ -998,8 +998,8 @@
  "unleash-90-more-ai-power-10-notebook-lm-hacks-you-need-to-know-for": {
   "status": "fejl",
   "q": "tips on how to use notebooklm",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 14624 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:44:17.014Z"
+  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 15736 tegn; CONTENT: MANGLER.)",
+  "dato": "2026-09-15T03:12:35.848Z"
  },
  "unlock-crypto-riches-your-blueprint-for-passive-income-with": {
   "status": "ok",
@@ -1020,16 +1020,16 @@
   "dato": "2026-09-14T20:48:06.076Z"
  },
  "unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on": {
-  "status": "fejl",
+  "status": "ok",
   "q": "how does ai chips work",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 11202 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:49:50.639Z"
+  "linje": "Kontrol ok: 39 af 60 punkter fra arket brugt, 6 tal, kilden nævnt",
+  "dato": "2026-09-15T03:13:28.212Z"
  },
  "us-middle-class-decline-financial-precarity-debt-spiral": {
-  "status": "fejl",
+  "status": "ok",
   "q": "why is the us middle class shrinking",
-  "linje": "Fejl: Brødteksten er 0 ord — under grænsen på 200. Artiklen skrives ikke. (Svaret var 9328 tegn; CONTENT: MANGLER.)",
-  "dato": "2026-09-14T20:51:42.579Z"
+  "linje": "Kontrol ok: 44 af 60 punkter fra arket brugt, 63 tal, kilden nævnt",
+  "dato": "2026-09-15T03:14:28.864Z"
  },
  "us-open-source-ai-strategy-addressing-the-global-race": {
   "status": "afvist",
