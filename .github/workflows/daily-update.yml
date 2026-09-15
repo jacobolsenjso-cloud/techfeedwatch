@@ -54,5 +54,14 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Automatisk tilføjet ny video" || echo "Ingen nye videoer fundet."
-          git push || echo "Intet nyt at uploade."
+          if git commit -m "Automatisk tilføjet ny video"; then
+            # Andre kan have pushet, mens robotten kørte (op til en time).
+            # Målt 15/9: kørsel #522 skrev en artikel, men push blev afvist og
+            # fejlen skjult af "|| echo" — artiklen gik tabt med et grønt flueben.
+            # Nu: hent og læg vores commit ovenpå; fejler push alligevel, skal
+            # kørslen blive RØD, så det bliver set.
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen nye videoer fundet."
+          fi

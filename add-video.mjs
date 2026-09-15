@@ -418,38 +418,13 @@ async function run() {
       }
       duration = formatDuration(totalSeconds);
     } catch (transcriptError) {
-      console.log(`⚠️ Undertekster mangler for ${videoId}. Starter Plan B (Titel + Beskrivelse)...`);
-
-      // PLAN B: Hent titel og beskrivelse via YouTube API
-      const ytApiKey = process.env.YOUTUBE_API_KEY;
-      if (!ytApiKey) throw new Error("Mangler YOUTUBE_API_KEY til Plan B.");
-
-      const ytUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails&id=${videoId}&key=${ytApiKey}`;
-      const response = await fetch(ytUrl);
-      const data = await response.json();
-
-      if (data.items && data.items.length > 0) {
-        const snippet = data.items[0].snippet;
-        const contentDetails = data.items[0].contentDetails;
-        text = `Videotitel: ${snippet.title}\n\nVideobeskrivelse:\n${snippet.description}`;
-        youtubeTitle = snippet.title;
-
-        // Udregn varighed og afgør ud fra den om videoen er en Short
-        if (contentDetails && contentDetails.duration) {
-          const match = contentDetails.duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-          const h = match[1] ? parseInt(match[1]) : 0;
-          const m = match[2] ? parseInt(match[2]) : 0;
-          const s = match[3] ? parseInt(match[3]) : 0;
-          const totalSeconds = h * 3600 + m * 60 + s;
-          if (totalSeconds > 0 && totalSeconds < MIN_DURATION_SECONDS) {
-            console.log(`⏭️ Sprunget over: videoen er ${totalSeconds}s (under ${MIN_DURATION_SECONDS}s).`);
-            return;
-          }
-          duration = formatDuration(totalSeconds);
-        }
-      } else {
-        throw new Error("Kunne hverken hente undertekster eller videodata fra YouTube.");
-      }
+      // Ingen undertekster = ingen kilde. Før 15/9 fandtes en "Plan B", der
+      // skrev artiklen ud fra videoens titel + beskrivelse via YouTube API.
+      // Slået fra (Jacobs beslutning 15/9): sitet lover, at artiklerne bygger
+      // på videoens indhold, og en beskrivelse er ikke indhold. Målt 15/9:
+      // kørsel #522 udgav en artikel fra en beskrivelse alene.
+      console.log(`⏭️ Sprunget over: ingen undertekster for ${videoId} (${transcriptError.message}). Ingen Plan B.`);
+      return;
     }
 
     // Deterministisk skrift-tjek FØR modellen spørges: er transskriptet
