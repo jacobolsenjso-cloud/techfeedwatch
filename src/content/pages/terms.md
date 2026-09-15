@@ -23,7 +23,7 @@ Each article names the creator whose video it draws on and links to that video o
 
 ## Your use of the site
 
-You may read, link to and quote short passages from the articles with a link back to the source page. Copying whole articles, republishing them elsewhere or scraping the site systematically is not permitted without written permission. The site has no user accounts and no comment section; nothing you can post here.
+You may read, link to and quote short passages from the articles with a link back to the source page. Copying whole articles, republishing them elsewhere or scraping the site systematically is not permitted without written permission. The site has no user accounts and no comment section, so there is nothing you can post here.
 
 ## Free tools
 
