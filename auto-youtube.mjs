@@ -174,14 +174,24 @@ async function vaelgSpoergsmaal(tag, topic) {
     }
   }
 
-  // Klokkeslættet vælger, så to kørsler i træk ikke tager det samme spørgsmål
-  // hvis den første ikke nåede at gemme.
-  const valgt = ubrugte[Math.floor(Date.now() / (1000 * 60 * 60 * 2)) % ubrugte.length];
+  // Klokkeslættet (timen) vælger, så to kørsler i træk ikke nødvendigvis
+  // tager det samme spørgsmål, hvis den første ikke fik udgivet noget.
+  const valgt = ubrugte[Math.floor(Date.now() / (1000 * 60 * 60)) % ubrugte.length];
+  // Spørgsmålet gemmes IKKE her — først når en artikel faktisk er udgivet
+  // (se markerSpoergsmaalBrugt). Målt 15/9: kørsel #523 brugte "what is ai
+  // video specialist" op uden artikel, fordi YouTube blokerede alle videoer.
+  return valgt;
+}
 
-  brugte.push({ q: valgt, tag, dato: new Date().toISOString().slice(0, 10) });
+// Gemmer spørgsmålet som brugt. Kaldes kun, når en artikel er skrevet.
+function markerSpoergsmaalBrugt(q, tag) {
+  const BRUGTE = 'src/data/used-questions.json';
+  let brugte = [];
+  try { brugte = JSON.parse(fs.readFileSync(BRUGTE, 'utf8')); } catch { brugte = []; }
+  if (brugte.some((x) => x.q === q)) return;
+  brugte.push({ q, tag, dato: new Date().toISOString().slice(0, 10) });
   fs.mkdirSync('src/data', { recursive: true });
   fs.writeFileSync(BRUGTE, JSON.stringify(brugte, null, 1) + '\n', 'utf8');
-  return valgt;
 }
 
 // Vælger kanal ud fra tidspunktet, så hver kørsel også tager næste kanal i rækken (roterer uafhængigt af klynger).
@@ -326,11 +336,15 @@ function faktaarkScoreFor(videoUrl, tag, qArg) {
     process.stdout.write(ud.split('\n').map((l) => '   │ ' + l).join('\n') + '\n');
     const m = ud.match(/FAKTAARK-SCORE:\s*(\d+)/);
     const score = m ? Number(m[1]) : 0;
+    // Blokeret = YouTube droslede OG gav til sidst ingen undertekster. Det er
+    // ikke videoens skyld men serverens adresse, så de næste kandidater er
+    // blokeret med. Kalderen stopper kørslen efter to i træk.
+    const blokeret = /drosler/.test(ud) && /ingen undertekster/.test(ud);
     // Afvist af et værn (sprog, relevans, for tynd) = ubrugelig, uanset score.
-    return /Sprunget over/.test(ud) ? 0 : score;
+    return { score: /Sprunget over/.test(ud) ? 0 : score, blokeret };
   } catch (e) {
     console.log(`   │ faktaark fejlede: ${e.message.split('\n')[0]}`);
-    return 0;
+    return { score: 0, blokeret: false };
   }
 }
 
@@ -355,13 +369,22 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
   }
 
   // Andet sigte: faktaark for hver, rangeret efter score.
+  // Blokerer YouTube to kandidater i træk (12 min ventetid hver), er resten
+  // også blokeret — så stopper vi i stedet for at spilde 48 min. Målt 15/9:
+  // kørsel #523 og #525 ventede 4 x 12 min på ingenting.
   const rangeret = [];
+  let blokeretITraek = 0;
   for (const videoId of kandidater) {
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     console.log(`🔎 Vurderer kandidat: ${videoUrl}`);
-    const score = faktaarkScoreFor(videoUrl, tag, qArg);
+    const { score, blokeret } = faktaarkScoreFor(videoUrl, tag, qArg);
     console.log(`   score ${score}`);
     if (score > 0) rangeret.push({ videoId, score });
+    blokeretITraek = blokeret ? blokeretITraek + 1 : 0;
+    if (blokeretITraek >= 2 && !rangeret.length) {
+      console.log('⛔ YouTube blokerer undertekster fra denne server — stopper kørslen her (2 kandidater i træk uden undertekster).');
+      break;
+    }
   }
   rangeret.sort((a, b) => b.score - a.score);
   if (rangeret.length) console.log(`Info: Rangering: ${rangeret.map((r) => `${r.videoId} (${r.score})`).join(' · ')}`);
@@ -381,6 +404,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
       if (loadExistingVideoIds().has(videoId)) {
         processed++;
         existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
+        if (spoergsmaal) markerSpoergsmaalBrugt(spoergsmaal, tag); // først NU er spørgsmålet brugt
       } else {
         console.log(`ℹ️ Kandidat afvist af kvalitetsværn — prøver næste.`);
       }
