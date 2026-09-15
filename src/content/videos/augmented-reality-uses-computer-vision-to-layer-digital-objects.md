@@ -31,7 +31,7 @@ Augmented reality works by overlaying computer-generated digital content, such a
 
 ## What is Augmented Reality and How Does it Function?
 
-Augmented reality (AR) enhances the physical world by adding digital layers to it. Unlike virtual reality (VR), which immerses users in a completely simulated environment, AR maintains the user’s connection to their immediate surroundings while enriching it with virtual elements. This distinction is fundamental: AR adds to reality, while VR replaces it. The concept of enhancing human perception with digital overlays has a history stretching back decades, aiming to change how we interact with information and our environment, as explored in discussions around [Why Was Augmented Reality Invented to Change How We See the World?](/video/why-was-augmented-reality-invented-to-change-how-we-see-the-world).
+Augmented reality (AR) enhances the physical world by adding digital layers to it. Unlike virtual reality (VR), which immerses users in a completely simulated environment, AR maintains the user’s connection to their immediate surroundings while enriching it with virtual elements. This distinction is fundamental: AR adds to reality, while VR replaces it. The concept of enhancing human perception with digital overlays has a history stretching back decades, aiming to change how we interact with information and our environment, as explored in discussions around Why Was Augmented Reality Invented to Change How We See the World?.
 
 The core function of AR hinges on a sophisticated interplay of hardware and software components. At its heart, an AR system needs three primary capabilities: perception, processing, and display.
 

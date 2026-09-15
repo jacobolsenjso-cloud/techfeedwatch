@@ -743,6 +743,35 @@ async function run() {
           }
         }
       }
+      // Variant 2 (målt 15/9): FAQ'en står SIDST i svaret, og brødteksten ligger
+      // før den — lige efter META-linjen. Så tages det, der står mellem META og FAQ.
+      if (!contentMatch && faqStart > 0) {
+        const metaM = raw.match(/^[ \t]*\**META\**:?\**[^\n]*\n/im);
+        const fra = metaM ? metaM.index + metaM[0].length : -1;
+        if (fra > 0 && fra < faqStart) {
+          const foer = raw.slice(fra, faqStart).replace(/\**\s*$/, '').trim().replace(/^(\*{3,}|-{3,})\s*/, '');
+          if (foer.split(/\s+/).length >= 200) {
+            contentMatch = [null, foer];
+            console.log('ℹ️ CONTENT-markøren mangler — brødteksten taget mellem META og FAQ');
+          }
+        }
+      }
+      // Variant 3 (målt 15/9): hele artiklen står FØRST, og felterne (TITLE, TAGS,
+      // SUMMARY, META, FAQ) kommer til sidst. Så tages alt før det første felt.
+      // Første linje er tit overskriften som ren tekst — den droppes, hvis den er
+      // kort og uden punktum, så den ikke bliver et afsnit under den rigtige titel.
+      if (!contentMatch) {
+        const foerste = raw.search(/^[ \t]*\**(TITLE|TAGS|SUMMARY|META|FAQ)\**:/im);
+        if (foerste > 0) {
+          let foer = raw.slice(0, foerste).trim();
+          const linjer = foer.split(/\r?\n/);
+          if (linjer.length > 2 && linjer[0].length < 110 && !/[.!?]$/.test(linjer[0].trim()) && !/^#/.test(linjer[0])) foer = linjer.slice(1).join('\n').trim();
+          if (foer.split(/\s+/).length >= 200) {
+            contentMatch = [null, foer];
+            console.log('ℹ️ CONTENT-markøren mangler — brødteksten taget før første felt');
+          }
+        }
+      }
       return { faqBlock, contentMatch };
     }
 
