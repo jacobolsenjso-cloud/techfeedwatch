@@ -47,7 +47,7 @@ Beyond generating new content from scratch, these tools also offer ways to anima
 
 For more precise control, some platforms allow users to define a "start frame." Here, an initial image is uploaded, and a text prompt is added to guide the animation. This approach can be used to create specific video formats, such as horizontal videos from an uploaded image.
 
-Videos generated from text prompts can also be extended. If a video is too short or needs more content, users can use an "auto extend" or "manual extend" feature. This process adds new segments to the video, seamlessly continuing the narrative or visual theme. If an error occurs during extension, refreshing the page and retrying often resolves the issue, allowing the video to be lengthened without glitches.
+Videos generated from text prompts can also be extended. If a video is too short or needs more content, users can use an "auto extend" or "manual extend" feature. This process adds new segments to the video, smoothly continuing the narrative or visual theme. If an error occurs during extension, refreshing the page and retrying often resolves the issue, allowing the video to be lengthened without glitches.
 
 ## Overcoming Limitations: Watermarks and Bulk Generation
 

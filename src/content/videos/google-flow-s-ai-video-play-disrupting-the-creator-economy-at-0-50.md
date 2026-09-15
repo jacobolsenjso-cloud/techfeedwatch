@@ -41,7 +41,7 @@ Google Flow AI Video provides several powerful features that give creators subst
 
 Another central feature is the **agent mode**. This AI assistant guides users through the narrative development process. Creators can input a high-level story concept, specifying themes, environments, lighting, textures, and desired styles. The agent then engages in a dialogue, asking questions and proposing scenarios, which can include generating a storyboard. This interactive approach allows for refinement of the narrative, ensuring the AI's output aligns closely with the user's vision.
 
-Crucially, Google Flow incorporates the **Omniflash model**, which enables **multi-shot** capabilities. This means that within a single 10-second scene, the AI can generate multiple distinct camera angles or "plans," adding dynamic visual variety. While the platform also offers a VO Lite model for extending scenes beyond 10 seconds, Omniflash is particularly valued for its ability to create diverse sequences within a short duration, making the final video more engaging.
+Critically, Google Flow incorporates the **Omniflash model**, which enables **multi-shot** capabilities. This means that within a single 10-second scene, the AI can generate multiple distinct camera angles or "plans," adding dynamic visual variety. While the platform also offers a VO Lite model for extending scenes beyond 10 seconds, Omniflash is particularly valued for its ability to create diverse sequences within a short duration, making the final video more engaging.
 
 ## The Creative Workflow and Its Nuances
 
@@ -65,7 +65,7 @@ While Google Flow AI Video offers impressive capabilities, creators should be aw
 
 Consistency across scenes can also be a hurdle. Despite efforts to define characters, minor variations in outfits or features may occur, sometimes requiring re-generation of specific segments. Users might also encounter technical issues such as generation failures or being placed in a queue, which can interrupt the creative flow.
 
-Another significant point of consideration is the **watermarking policy**. For creators aiming for fully polished, professional content, the inability to remove watermarks with the Pro subscription means an additional, substantial cost for the Ultra tier. This trade-off between affordability and brand-free output is a key decision point for many users. Furthermore, the reported difficulties with 1080p downloads, even with a Pro subscription, can limit the final output quality for some projects, forcing a compromise on resolution.
+Another significant point of consideration is the **watermarking policy**. For creators aiming for fully polished, professional content, the inability to remove watermarks with the Pro subscription means an additional, substantial cost for the Ultra tier. This trade-off between affordability and brand-free output is a key decision point for many users. The reported difficulties with 1080p downloads, even with a Pro subscription, can limit the final output quality for some projects, forcing a compromise on resolution.
 
 ## Impact on Video Production
 

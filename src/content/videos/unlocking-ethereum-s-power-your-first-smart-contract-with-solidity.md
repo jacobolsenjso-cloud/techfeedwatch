@@ -51,13 +51,13 @@ A Solidity smart contract is defined using the `contract` keyword, followed by i
 Functions are the executable parts of a smart contract. A `constructor` function is special; it runs only once when the contract is first deployed, typically to set initial state variables. Other functions can be defined to modify or retrieve data. For instance, a `setName` function might update the stored `name`, while a `getGreeting` function might combine the `greetingPrefix` and `name` to return a complete message. Functions also have access modifiers like `public`, meaning they can be called by any other function within the smart contract or externally. An `external` function can be called from other smart contracts.
 
 Solidity also defines different data locations for variables:
-*   `storage`: This is the default for state variables. Data is stored permanently on the blockchain and persists between transactions.
-*   `memory`: Used for temporary variables within functions, such as function arguments or local variables. Data stored in memory is erased once the function finishes execution.
-*   `calldata`: A special location for function arguments of `external` functions.
+* `storage`: This is the default for state variables. Data is stored permanently on the blockchain and persists between transactions.
+* `memory`: Used for temporary variables within functions, such as function arguments or local variables. Data stored in memory is erased once the function finishes execution.
+* `calldata`: A special location for function arguments of `external` functions.
 
 Functions can also be declared with mutability specifiers:
-*   `view`: This indicates that the function does not modify any state variables on the blockchain. It only reads existing data.
-*   `pure`: This is a stricter version of `view`. A `pure` function not only does not modify state variables but also does not even read any data from the blockchain.
+* `view`: This indicates that the function does not modify any state variables on the blockchain. It only reads existing data.
+* `pure`: This is a stricter version of `view`. A `pure` function not only does not modify state variables but also does not even read any data from the blockchain.
 
 While smart contracts primarily focus on managing transactions and defining logic for asset distribution, they can also handle basic data manipulation. For example, string concatenation in Solidity is not as straightforward as in some other languages and often requires helper functions like `abi.encodePacked` followed by a type cast to `string`. However, such operations are less common in typical smart contract use cases.
 

@@ -19,7 +19,7 @@ The words of which the initial letter is capitalized have meanings defined under
 ### Definitions
 * **Account** means a unique account created for you to access our Service or parts of our Service.
 * **Affiliate** means an entity that controls, is controlled by, or is under common control with a party.
-* **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Tech Media Archive.
+* **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Tech Feed Watch, a website run by Jacob S. Olsen, Denmark.
 * **Cookies** are small files that are placed on your computer, mobile device, or any other device by a website.
 * **Country** refers to: Denmark.
 * **Device** means any device that can access the Service, such as a computer, a cellphone, or a digital tablet.

@@ -50,13 +50,13 @@ For example, an AI can provide detailed information about the geography of the v
 ### The Boundaries of "Knowledge" vs. "Revelation"
 
 The distinction between "information" or "knowledge" and "revelation" or "deep understanding" is central to understanding AI's limitations. Generative AI excels at providing knowledge:
-*   It can summarize biblical passages or complex texts.
-*   It can compare different translations or interpretations.
-*   It can explain the etymology and meaning of words in their original languages.
-*   It can show historical and cultural backgrounds.
-*   It can cross-reference related concepts or passages.
-*   It can organize information for study or presentation.
-*   It can point out literary themes or structures that might not be immediately obvious to a human reader, such as the acrostic structure of Psalm 119, where each of its 22 sections begins with a successive letter of the Hebrew alphabet.
+* It can summarize biblical passages or complex texts.
+* It can compare different translations or interpretations.
+* It can explain the etymology and meaning of words in their original languages.
+* It can show historical and cultural backgrounds.
+* It can cross-reference related concepts or passages.
+* It can organize information for study or presentation.
+* It can point out literary themes or structures that might not be immediately obvious to a human reader, such as the acrostic structure of Psalm 119, where each of its 22 sections begins with a successive letter of the Hebrew alphabet.
 
 These capabilities make AI an incredibly powerful tool for accelerating information acquisition. What once took hours of research can now be accomplished in minutes. However, AI cannot provide revelation. It cannot tell you what a particular passage means for your personal transformation, how it reveals deeper truths, or how you should obey its principles. It cannot guide you on spiritual principles you might be missing or offer wisdom that applies truth to your life in a meaningful, personal way. It provides facts and summaries about concepts, but it does not foster faith or genuine understanding that transcends mere data.
 

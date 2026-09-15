@@ -61,7 +61,7 @@ While the commercial value of AR in sports is undeniable, generating billions of
 
 Imagine a teacher using AR to demonstrate to a disruptive student the impact of their actions from the victim's perspective. Or consider the profound effect AR could have in allowing a person facing oppression, such as a gay individual in Uganda or Russia, to convey the realities of their daily struggles to a global audience. This technology could allow users to experience life under such conditions, fostering a deeper, more visceral understanding of their plight.
 
-Furthermore, AR holds the promise of inspiring future generations. Imagine children experiencing the wonders of space through the eyes of an astronaut like Chris Hadfield or Neil DeGrasse Tyson, seeing scientific concepts come to life around them. This immersive learning could shift focus from mundane quarterly reports or celebrity culture towards a greater interest in space and science. The fundamental question is whether humanity will limit AR to mere enjoyment and consumption, or if it will be leveraged for more profound societal benefit.
+AR holds the promise of inspiring future generations. Imagine children experiencing the wonders of space through the eyes of an astronaut like Chris Hadfield or Neil DeGrasse Tyson, seeing scientific concepts come to life around them. This immersive learning could shift focus from mundane quarterly reports or celebrity culture towards a greater interest in space and science. The fundamental question is whether humanity will limit AR to mere enjoyment and consumption, or if it will be leveraged for more profound societal benefit.
 
 ## The Path Forward: Ethical Considerations
 

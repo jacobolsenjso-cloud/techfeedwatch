@@ -61,9 +61,9 @@ The second major milestone, achieved in 2023, was the demonstration that quantum
 
 Once large-scale, error-corrected quantum computers become available, they are expected to revolutionize various fields. A significant category of applications, sometimes referred to as "Feynman's killer apps," involves simulating systems where quantum effects are important. This has profound implications for:
 
-*   **Drug Discovery:** Designing more effective and targeted drugs. For instance, algorithms are being developed to describe Cytochrome P450, a group of enzymes that metabolize approximately 75 percent of the medicines we take.
-*   **Materials Science:** Creating lighter, faster-charging batteries with greater capacity for electric vehicles and even electric aircraft.
-*   **Energy:** Accelerating the design of fusion reactors, which could play a vital role in addressing climate change.
+* **Drug Discovery:** Designing more effective and targeted drugs. For instance, algorithms are being developed to describe Cytochrome P450, a group of enzymes that metabolize approximately 75 percent of the medicines we take.
+* **Materials Science:** Creating lighter, faster-charging batteries with greater capacity for electric vehicles and even electric aircraft.
+* **Energy:** Accelerating the design of fusion reactors, which could play a vital role in addressing climate change.
 
 Beyond simulations, new quantum algorithms are showing promise for significant speedups in optimization problems, which are ubiquitous in engineering, finance, and machine learning. The implication is that quantum computers will become an indispensable capability for foundational computational tasks.
 

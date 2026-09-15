@@ -38,7 +38,7 @@ These agents represent a significant advancement beyond traditional code complet
 
 The workflow with AI code agents spans the entire development lifecycle, from initial concept to deployment and testing. When a developer outlines a project, the agent can initiate the project structure by creating a new folder, initializing it as a Git repository, and even establishing a public repository on platforms like GitHub. This automation extends to generating the core application logic. For example, in building a 3D slingshot game, the agent can generate the HTML, JavaScript, and CSS required for a fixed camera, a draggable ball controlled in X and Y directions by dragging, and in the Z direction by hold duration. It can also implement the release mechanism, where the ball's speed depends on how far back it was held.
 
-Beyond initial setup and core features, these agents can iteratively add complexity. A developer can request features like displaying the ball's trajectory before release or adding interactive targets that shatter upon impact. The agent can also perform research, helping developers make informed architectural decisions by providing information on the latest community feedback or alternative libraries. Furthermore, AI code agents can integrate testing, automatically setting up tools like Playwright to verify the functionality of the generated code, ensuring that new features behave as intended. This comprehensive approach significantly reduces the manual effort involved in scaffolding projects and implementing features.
+Beyond initial setup and core features, these agents can iteratively add complexity. A developer can request features like displaying the ball's trajectory before release or adding interactive targets that shatter upon impact. The agent can also perform research, helping developers make informed architectural decisions by providing information on the latest community feedback or alternative libraries. AI code agents can integrate testing, automatically setting up tools like Playwright to verify the functionality of the generated code, ensuring that new features behave as intended. This comprehensive approach significantly reduces the manual effort involved in scaffolding projects and implementing features.
 
 ## Interacting with AI Code Agents Effectively
 
@@ -52,9 +52,9 @@ The introduction of AI code agents reshapes the developer's role, shifting focus
 
 A critical skill in this new environment is **verification**. Developers must learn to scrutinize the agent's output, not just for correctness but also for efficiency and adherence to best practices. Verification can take several forms:
 
-*   **Behavioral Testing:** Directly running and interacting with the application to confirm it behaves as expected. For instance, testing if the 3D slingshot game's ball control and release mechanics work correctly.
-*   **Code Review:** Examining the generated code itself to understand its structure, logic, and potential areas for improvement.
-*   **Automated Testing:** Leveraging tools like Playwright for end-to-end tests or integrating GitHub Actions to automate continuous verification processes.
+* **Behavioral Testing:** Directly running and interacting with the application to confirm it behaves as expected. For instance, testing if the 3D slingshot game's ball control and release mechanics work correctly.
+* **Code Review:** Examining the generated code itself to understand its structure, logic, and potential areas for improvement.
+* **Automated Testing:** Leveraging tools like Playwright for end-to-end tests or integrating GitHub Actions to automate continuous verification processes.
 
 Beyond verification, developers need strong proficiency in command-line interface (CLI) tools, including Git and GitHub CLI. These tools are essential for managing the repositories created by agents, handling version control, and integrating the AI-generated code into existing workflows. Organizing projects in a structured manner, such as keeping most projects in a single folder, also becomes beneficial, as it allows the agent to easily reference and combine elements from different projects. The developer acts as an architect and quality assurance specialist, guiding the AI, refining its outputs, and ensuring the final product meets the desired standards.
 

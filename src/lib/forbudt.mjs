@@ -55,13 +55,18 @@ function medKasse(original, ny) {
   return /^[A-Z]/.test(original) ? ny.charAt(0).toUpperCase() + ny.slice(1) : ny;
 }
 
+// Link-adresser og kodestumper må ALDRIG renses (målt 15/9: "unleashing" i
+// et slug blev til "releasing", og 16 interne links pegede på sider, der ikke
+// findes). De gemmes væk før rensningen og sættes tilbage bagefter.
 export function fjernForbudteOrd(text) {
-  let t = String(text);
+  const gemt = [];
+  let t = String(text).replace(/\]\([^)]*\)|`[^`]*`|https?:\/\/\S+/g, (m) => { gemt.push(m); return `@@L${gemt.length - 1}@@`; });
   for (const [re, erstat] of REGLER) {
     t = t.replace(re, (...args) => {
       const ny = typeof erstat === 'function' ? erstat(...args) : erstat;
       return medKasse(args[0], ny ?? args[0]);
     });
   }
+  t = t.replace(/@@L(\d+)@@/g, (_, i) => gemt[+i]);
   return t.replace(/[ \t]{2,}/g, ' ');
 }

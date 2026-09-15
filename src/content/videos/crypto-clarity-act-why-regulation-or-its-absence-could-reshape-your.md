@@ -61,6 +61,6 @@ Solana (SOL) is also gaining mainstream access. Morgan Stanley has opened Solana
 
 ## Investor Strategy in a Changing Environment
 
-The ongoing legislative efforts in the US underscore the importance of understanding the fundamentals of digital assets. While regulatory clarity would broadly benefit the entire crypto market, some assets are better equipped to navigate periods of uncertainty. Investors should consider factors like an altcoin's established network effect, its global adoption outside the US, its specific utility, and the level of institutional backing it receives.
+The ongoing legislative efforts in the US underscore the importance of understanding the fundamentals of digital assets. While regulatory clarity would broadly benefit the entire crypto market, some assets are better equipped to handle periods of uncertainty. Investors should consider factors like an altcoin's established network effect, its global adoption outside the US, its specific utility, and the level of institutional backing it receives.
 
 The ability of a project to attract major financial players or integrate with traditional finance systems can provide a buffer against regulatory headwinds. Similarly, projects with strong, real-world use cases, like decentralized AI or established payment solutions, may prove more resilient. As US lawmakers continue to debate the future of crypto regulation, a diversified strategy focused on assets with clear value propositions and broad market acceptance remains a prudent approach.

@@ -57,7 +57,7 @@ Building effective AI workflow skills requires careful consideration of several 
 
 A key feature for a well-designed skill is interactivity. When an agent is executing a multi-task skill, it's not ideal for it to run through the entire process, potentially consuming many computational resources (tokens), only to present a final output that might be incorrect or misaligned with user intent. Instead, an interactive skill can provide intermediate updates, ask clarifying questions, or allow for human intervention at critical junctures. This feedback loop helps guide the AI, correct course if necessary, and ensures the final output meets expectations. It also allows for more efficient use of resources by preventing the AI from pursuing an unproductive path for too long.
 
-Furthermore, skills should be designed with clarity and precision in their step-by-step instructions. Each step must be unambiguous, guiding the LLM or agent toward the desired action. Expert knowledge is often embedded in these steps, ensuring that the AI replicates human-level quality and decision-making throughout the workflow.
+Skills should be designed with clarity and precision in their step-by-step instructions. Each step must be unambiguous, guiding the LLM or agent toward the desired action. Expert knowledge is often embedded in these steps, ensuring that the AI replicates human-level quality and decision-making throughout the workflow.
 
 ## Practical Applications and Future Directions
 

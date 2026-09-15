@@ -49,10 +49,10 @@ One prevalent example involves storage buckets, such as Amazon S3 buckets, being
 
 Beyond misconfigurations, other common vulnerabilities include:
 
-*   **APIs (Application Programming Interfaces):** The cloud ecosystem is heavily reliant on APIs, which connect various services and applications. If an API is left exposed, lacks proper authentication, or has secret keys stored in public repositories, it can become a direct entry point for attackers.
-*   **Account Hijacking:** Attackers can gain unauthorized access to cloud admin accounts through phishing attacks or brute-force methods, effectively taking control of an organization's cloud environment.
-*   **Insider Threats:** Disgruntled employees or individuals with malicious intent can exploit their legitimate access to cause harm or steal data.
-*   **Over-provisioned IAM:** Granting users more permissions than they need for their roles is a common issue. Providing full administrative access when only specific, limited permissions are required often occurs due to a desire for speed or convenience, rather than taking the time to understand and implement the principle of least privilege.
+* **APIs (Application Programming Interfaces):** The cloud ecosystem is heavily reliant on APIs, which connect various services and applications. If an API is left exposed, lacks proper authentication, or has secret keys stored in public repositories, it can become a direct entry point for attackers.
+* **Account Hijacking:** Attackers can gain unauthorized access to cloud admin accounts through phishing attacks or brute-force methods, effectively taking control of an organization's cloud environment.
+* **Insider Threats:** Disgruntled employees or individuals with malicious intent can exploit their legitimate access to cause harm or steal data.
+* **Over-provisioned IAM:** Granting users more permissions than they need for their roles is a common issue. Providing full administrative access when only specific, limited permissions are required often occurs due to a desire for speed or convenience, rather than taking the time to understand and implement the principle of least privilege.
 
 ## Artificial Intelligence: A New Frontier for Cloud Security
 
@@ -62,11 +62,11 @@ As companies worldwide rush to integrate AI into their operations, they are incr
 
 New AI-specific threats include:
 
-*   **Prompt Injection:** Manipulating an AI model through carefully crafted inputs to make it perform unintended actions or reveal sensitive information.
-*   **Model Poisoning:** Introducing malicious data into an AI model's training set to compromise its integrity or behavior.
-*   **Data Leakage from Over-scoped AI Agents:** AI agents given overly broad permissions can inadvertently access and expose sensitive data.
-*   **Hijacked Vector Databases:** Compromising the databases that store vector embeddings used by AI models.
-*   **Stolen API Keys with No Rate Limiting:** Unauthorized use of API keys for AI services can lead to massive, six-figure bills overnight, in addition to potential data breaches.
+* **Prompt Injection:** Manipulating an AI model through carefully crafted inputs to make it perform unintended actions or reveal sensitive information.
+* **Model Poisoning:** Introducing malicious data into an AI model's training set to compromise its integrity or behavior.
+* **Data Leakage from Over-scoped AI Agents:** AI agents given overly broad permissions can inadvertently access and expose sensitive data.
+* **Hijacked Vector Databases:** Compromising the databases that store vector embeddings used by AI models.
+* **Stolen API Keys with No Rate Limiting:** Unauthorized use of API keys for AI services can lead to massive, six-figure bills overnight, in addition to potential data breaches.
 
 These emerging threats require specialized knowledge and continuous vigilance from cloud security teams, who are tasked with defending against an evolving environment of vulnerabilities.
 

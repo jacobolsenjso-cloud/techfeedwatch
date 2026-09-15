@@ -20,7 +20,7 @@ isShort: false
 revised: true
 faqs:
   - question: "What is semantic HTML and why is it important for SEO?"
-    answer: "Semantic HTML uses tags that convey meaning about the content, such as `<article>` for main content or `<h1>` for headings. Search engine bots use these tags to understand the structure and topic of a page, which helps them index it more accurately and rank it for relevant queries."
+    answer: "Semantic HTML uses tags that convey meaning about the content, such as the article tag for main content or the h1 tag for headings. Search engine bots use these tags to understand the structure and topic of a page, which helps them index it more accurately and rank it for relevant queries."
   - question: "How do user engagement metrics affect search rankings?"
     answer: "Search engines track how users interact with a site after clicking a search result. Metrics like a high Click-Through Rate, low Bounce Rate, and long Dwell Time signal that the content is valuable and relevant. Sites with strong user engagement are generally favored in search rankings."
   - question: "What are the main differences between client-side and server-side rendering for SEO?"

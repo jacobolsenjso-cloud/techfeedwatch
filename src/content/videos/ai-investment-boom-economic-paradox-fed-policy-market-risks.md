@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-Financial markets are currently exhibiting a peculiar behavior where seemingly negative economic indicators can trigger positive stock market reactions. This counterintuitive dynamic is largely fueled by the pervasive optimism surrounding Artificial Intelligence investments and the anticipation of Federal Reserve policy shifts. Investors are navigating a complex environment where traditional economic signals are reinterpreted through the lens of technological transformation and monetary policy expectations.
+Financial markets are currently exhibiting a peculiar behavior where seemingly negative economic indicators can trigger positive stock market reactions. This counterintuitive dynamic is largely fueled by the pervasive optimism surrounding Artificial Intelligence investments and the anticipation of Federal Reserve policy shifts. Investors are handling a complex environment where traditional economic signals are reinterpreted through the lens of technological transformation and monetary policy expectations.
 
 ## The Economic Paradox: Bad News as Good News
 
@@ -38,7 +38,7 @@ This creates a "perverse incentive" where bad macroeconomic news, particularly c
 
 ## The AI Investment Wave
 
-A significant driver of current market optimism is the substantial capital expenditure (CAPEX) flowing into Artificial Intelligence. This build-out is drawing comparisons to historical investment booms, though with distinct characteristics. The current AI/CAPEX boom is estimated to be twice the size of the telecom and fiber build-out of the late 1990s and early 2000s in dollar notional terms, and about half the size of the housing expansion that preceded the Global Financial Crisis. Crucially, the speed at which AI is impacting GDP has doubled both these historical examples by a longshot.
+A significant driver of current market optimism is the substantial capital expenditure (CAPEX) flowing into Artificial Intelligence. This build-out is drawing comparisons to historical investment booms, though with distinct characteristics. The current AI/CAPEX boom is estimated to be twice the size of the telecom and fiber build-out of the late 1990s and early 2000s in dollar notional terms, and about half the size of the housing expansion that preceded the Global Financial Crisis. Critically, the speed at which AI is impacting GDP has doubled both these historical examples by a longshot.
 
 This rapid expansion is driven by a collective fear among institutional investors of being under-exposed to the AI category, fostering a herd mentality rather than a focus on potential downsides. Companies are making substantial commitments; for instance, one technology company has committed $600 million to a U.S.-based technology firm and is guiding over 40% of its revenue into building out its infrastructure. Another has secured $2.8 billion in multi-year commitments for its cloud business, with cloud infrastructure services growing 39% and projected to reach 50% for the year. Investor bullishness, as measured by some gauges, has climbed to its highest level since 2021.
 
@@ -48,7 +48,7 @@ The AI build-out involves different layers of infrastructure. While hyperscalers
 
 Companies are focusing on building out infrastructure to support these "modest size build-outs for the enterprise use of AI" and for executing inference (running trained models), which complements the hyperscalers' focus on training. These investments are often backed by committed contracts, providing a degree of stability. Even older assets, like GPUs from six years ago, are still being sold at capacity and at higher prices, indicating sustained demand and the enduring value of specialized hardware in this sector.
 
-## Navigating AI's Emerging Risks
+## Handling AI's Emerging Risks
 
 Despite the optimism, the AI boom carries inherent risks. A primary concern is the potential for a rapid reversal if the substantial CAPEX slows down, or if the market sees a consolidation with clear winners and losers. Such a scenario could quickly pull the economy in a negative direction, a phenomenon some refer to as a "Golden Swan" risk – a positive development that could turn negative swiftly. The market's narrow breadth, with large-cap tech companies driving a significant portion of market gains (e.g., 60% to 65% of gains on one record high day came from a few major tech players), also highlights a concentration risk.
 

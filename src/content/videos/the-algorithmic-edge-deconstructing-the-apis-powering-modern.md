@@ -64,6 +64,6 @@ The **NASDAQ API** offers a broad catalog of official data products. Users must 
 
 ## Challenges and Trade-offs in Data Acquisition
 
-Navigating the alternative data market involves several trade-offs. Balancing cost with the required data depth and real-time access is a constant challenge. Free or low-cost options often come with compromises in data quality, accuracy, or completeness, which can undermine a trading strategy. Conversely, high-quality, complete alternative data can be expensive, with monthly costs quickly reaching thousands of dollars for multiple datasets.
+Handling the alternative data market involves several trade-offs. Balancing cost with the required data depth and real-time access is a constant challenge. Free or low-cost options often come with compromises in data quality, accuracy, or completeness, which can undermine a trading strategy. Conversely, high-quality, complete alternative data can be expensive, with monthly costs quickly reaching thousands of dollars for multiple datasets.
 
 Integration complexity also varies greatly. Some APIs offer straightforward access, while others demand more advanced coding skills and effort to integrate effectively. The risk of receiving blank or null data from less reliable APIs can lead to major bugs in trading bots, necessitating additional development work to ensure data integrity. These factors require careful consideration to ensure that the chosen API aligns with both technical abilities and strategic objectives.

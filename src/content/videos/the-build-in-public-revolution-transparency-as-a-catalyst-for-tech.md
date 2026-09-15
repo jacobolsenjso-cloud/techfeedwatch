@@ -77,7 +77,7 @@ AI tools like ChatGPT are often used for initial planning, including high-level 
 
 ## Common Challenges and Considerations
 
-While building in public offers many advantages, it also comes with its own set of challenges that teams must navigate.
+While building in public offers many advantages, it also comes with its own set of challenges that teams must handle.
 
 **Maintaining Audience Engagement**
 A major challenge is keeping the audience engaged, especially during periods of extensive backend or database work that might not offer immediate visual progress. To mitigate this, planning around "one meaningful PR per stream" that yields a visible outcome is essential. This ensures that every update provides a tangible improvement for viewers to see.

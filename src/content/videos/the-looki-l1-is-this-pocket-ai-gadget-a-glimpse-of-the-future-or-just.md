@@ -60,7 +60,7 @@ At the heart of the Looki L1's advanced abilities is its Proactive Intelligence 
 
 The AI also helps advanced memory recall. Through the companion app, users can ask specific questions about their past activities. For example, one could ask, "When did I take my last nap?" The AI then processes the stored data to locate and present the relevant moments, complete with associated clips or summaries. This ability to query one's own life log transforms the device into a searchable database of personal experiences.
 
-To fully leverage these intelligent features, users can upgrade from a basic "story mode" to the full "AI mode" within the app. This enhanced mode unlocks the proactive messages and a more deeply personalized experience. It allows the AI to learn and adapt to individual patterns and preferences over time. The system is designed to be highly advanced. It functions much like a mini-computer to manage and interpret the continuous stream of life data.
+To fully leverage these intelligent features, users can upgrade from a basic "story mode" to the full "AI mode" within the app. This enhanced mode opens up the proactive messages and a more deeply personalized experience. It allows the AI to learn and adapt to individual patterns and preferences over time. The system is designed to be highly advanced. It functions much like a mini-computer to manage and interpret the continuous stream of life data.
 
 ## Considerations and the Future of Personal AI
 

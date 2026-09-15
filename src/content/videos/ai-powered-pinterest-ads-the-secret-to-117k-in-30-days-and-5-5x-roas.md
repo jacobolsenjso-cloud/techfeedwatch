@@ -46,7 +46,7 @@ By continuously pushing new AI-generated creatives, advertisers can quickly iden
 
 ## Strategic Account Setup and Budget Allocation
 
-Effective advertising on Pinterest extends beyond just compelling creatives; it requires a thoughtful account setup. A well-structured profile with strong branding is essential, as users often click on a creative to visit the profile before navigating to the website. This means creating 8 to 10 distinct boards, each containing 15 to 20 original pins, to showcase product categories and provide inspiration.
+Effective advertising on Pinterest extends beyond just compelling creatives; it requires a thoughtful account setup. A well-structured profile with strong branding is essential, as users often click on a creative to visit the profile before handling to the website. This means creating 8 to 10 distinct boards, each containing 15 to 20 original pins, to showcase product categories and provide inspiration.
 
 Integrating a shopping catalog is another vital step. This feature allows Pinterest to notify users about "shop the look" options, enabling them to directly purchase items seen in pins. This functionality caters to the high purchase intent of Pinterest users, who are often in a discovery mindset and ready to convert.
 

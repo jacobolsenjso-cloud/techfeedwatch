@@ -32,7 +32,7 @@ AI personal knowledge management (PKM) integrates large language models (LLMs) i
 
 ## What is AI Personal Knowledge Management?
 
-At its heart, AI personal knowledge management is about externalizing your knowledge and the intricate web of connections between ideas, making it accessible and actionable through artificial intelligence. While traditional PKM often involves simply dumping notes into folders or adding tags, an AI-powered second brain goes further by actively mapping how different pieces of information relate to one another. This relational understanding is the key differentiator; without it, a large collection of notes remains just a pile, difficult to navigate or extract deeper meaning from.
+At its heart, AI personal knowledge management is about externalizing your knowledge and the intricate web of connections between ideas, making it accessible and actionable through artificial intelligence. While traditional PKM often involves simply dumping notes into folders or adding tags, an AI-powered second brain goes further by actively mapping how different pieces of information relate to one another. This relational understanding is the key differentiator; without it, a large collection of notes remains just a pile, difficult to handle or extract deeper meaning from.
 
 The human brain constantly works to connect disparate pieces of information. When managing multiple projects or complex ideas, however, it's easy to lose track of these connections, leading to repeated efforts in rebuilding context. An AI second brain aims to offload this cognitive burden. By storing both the information and its relationships in a structured, machine-readable format, users can maintain a comprehensive overview of their knowledge, even when juggling many different tasks. This systematic approach helps prevent the loss of context and allows for more efficient recall and application of knowledge.
 
@@ -43,9 +43,9 @@ Setting up an AI-driven second brain involves a structured approach to note-taki
 A common organizational framework is the PARA system, which categorizes information into four main areas: Projects (tasks with a deadline), Areas (ongoing responsibilities), Resources (information of interest), and Archive (completed or inactive items). This structure makes later retrieval more efficient.
 
 For the actual note storage, applications like Obsidian are frequently used. Obsidian works directly with plain text files stored on your computer, offering flexibility and ownership of your data. It also includes a visual graph view that naturally displays the connections between your notes. To enhance its capabilities for an AI second brain, several plugins are often integrated:
-*   **Obsidian Git:** This plugin automates the backup of your entire knowledge vault, committing and pushing changes to a version control system like GitHub in the background. This ensures your knowledge is safe from device failures and accessible from multiple devices.
-*   **Dataview:** This allows you to query your notes as if they were a database. You can pull together all notes with a specific tag or property, providing dynamic views of your information.
-*   **Metadata Menu:** This helps maintain consistency in the information fields (metadata) associated with each note, which is especially important when an AI is responsible for filling in or interpreting these details.
+* **Obsidian Git:** This plugin automates the backup of your entire knowledge vault, committing and pushing changes to a version control system like GitHub in the background. This ensures your knowledge is safe from device failures and accessible from multiple devices.
+* **Dataview:** This allows you to query your notes as if they were a database. You can pull together all notes with a specific tag or property, providing dynamic views of your information.
+* **Metadata Menu:** This helps maintain consistency in the information fields (metadata) associated with each note, which is especially important when an AI is responsible for filling in or interpreting these details.
 
 ## The Role of Large Language Models
 
@@ -60,9 +60,9 @@ A critical component of this AI integration is the automated cleanup process. At
 Once established, an AI second brain becomes a dynamic partner in managing information and generating new understanding. Users feed it a variety of inputs—notes from meetings, decisions made, articles read, or even raw thoughts and ideas. The AI processes this input, breaking it down into individual notes and automatically drawing connections to existing knowledge.
 
 The system offers three primary ways to interact with your accumulated knowledge:
-1.  **Analyze:** You can ask the AI to read what is already in the vault on a particular subject. It will follow the connections, pulling in all related information to provide a comprehensive overview of your existing knowledge on that topic.
-2.  **Synthesize:** This function allows the AI to walk through clusters of related notes and answer a specific question: "What insight does this cluster provide?" The AI then generates a new insight, which is added back into the knowledge graph with its own connections. This means that insights generated today can become building blocks for more complex insights in the future, allowing your understanding to compound over time.
-3.  **Query:** This is the most direct way to leverage the entire vault as a knowledge base. You can ask the AI to perform specific tasks or answer questions using all the information it has access to.
+1. **Analyze:** You can ask the AI to read what is already in the vault on a particular subject. It will follow the connections, pulling in all related information to provide a comprehensive overview of your existing knowledge on that topic.
+2. **Synthesize:** This function allows the AI to walk through clusters of related notes and answer a specific question: "What insight does this cluster provide?" The AI then generates a new insight, which is added back into the knowledge graph with its own connections. This means that insights generated today can become building blocks for more complex insights in the future, allowing your understanding to compound over time.
+3. **Query:** This is the most direct way to leverage the entire vault as a knowledge base. You can ask the AI to perform specific tasks or answer questions using all the information it has access to.
 
 For individuals managing complex projects, this capability can be transformative. For example, a project that was stalled for months due to the challenge of juggling many tasks and losing context was finally shipped once an AI second brain provided a centralized, interconnected repository of all relevant information. The system, even in its evolving state, can grow to encompass hundreds of notes, connections, and insights, with numbers increasing with every use.
 

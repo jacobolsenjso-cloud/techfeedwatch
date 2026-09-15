@@ -58,7 +58,7 @@ Despite their advantages, smart contracts come with important trade-offs. These 
 
 Security is another major concern. The transparent nature of smart contract code means that potential vulnerabilities are visible to anyone. Malicious actors can scrutinize the code for weaknesses. Exploiting these flaws can lead to significant financial losses. This risk is compounded by the immutability. Once an exploit occurs, it is often irreversible. Developers must therefore prioritize rigorous testing and auditing before deployment.
 
-Furthermore, the decentralized nature of blockchains can lead to lower transaction throughput. Centralized systems can often process transactions much faster. This can impact the scalability and efficiency of applications built on smart contracts. Solutions to mitigate these issues, including improvements in security practices and blockchain scalability, are still actively being developed. The industry is continuously working to address these challenges.
+The decentralized nature of blockchains can lead to lower transaction throughput. Centralized systems can often process transactions much faster. This can impact the scalability and efficiency of applications built on smart contracts. Solutions to mitigate these issues, including improvements in security practices and blockchain scalability, are still actively being developed. The industry is continuously working to address these challenges.
 
 ## The Future of Digital Agreements
 

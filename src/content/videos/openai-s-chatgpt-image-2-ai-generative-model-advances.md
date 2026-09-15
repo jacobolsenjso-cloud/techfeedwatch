@@ -41,7 +41,7 @@ One of the most striking features of ChatGPT Image 2 is its ability to produce v
 
 Beyond photorealism, the model demonstrates stylistic sophistication, capable of capturing the defining characteristics of various visual languages, including cinematic stills, pixel art, and manga. It maintains greater consistency in texture, lighting, composition, and fine detail across these styles. A significant improvement is its ability to maintain visual coherence across multiple images in a sequence, such as a chameleon changing its pose or background, or a character evolving through different stages of life.
 
-Furthermore, ChatGPT Image 2 shows impressive accuracy in generating readable text within images. It can produce entire infographics with accurate text, render equations clearly on a blackboard, and even replicate various handwriting styles convincingly. This capability addresses a common challenge in previous generative models, where text often appeared as gibberish or distorted.
+ChatGPT Image 2 shows impressive accuracy in generating readable text within images. It can produce entire infographics with accurate text, render equations clearly on a blackboard, and even replicate various handwriting styles convincingly. This capability addresses a common challenge in previous generative models, where text often appeared as gibberish or distorted.
 
 ## Beyond Pixels: Integrating World Knowledge and Logic
 
@@ -53,9 +53,9 @@ The model also demonstrates an understanding of basic physics and object permane
 
 The advanced capabilities of ChatGPT Image 2 open up a wide array of practical applications across various industries. For content creators, it offers a powerful tool for generating high-quality visuals, such as YouTube thumbnails that can be customized to specific styles, like a "Mr. Beast style" with a user's face integrated. Its ability to accurately integrate faces, even copying and pasting a user's face into different scenarios, provides significant potential for personalized content creation. It can also accurately depict well-known public figures, such as Elon Musk and Sam Altman, in various settings.
 
-In game development, the model can generate comprehensive sprite sheets for character movements, including damage reactions, stealth actions, death animations, and power-up auras, which can significantly streamline the asset creation process. For artists, it serves as an advanced creative assistant, enabling the rapid generation of diverse visual concepts, styles, and detailed compositions. Its capacity for photorealism and stylistic versatility can accelerate creative workflows and inspire new artistic directions. Furthermore, its ability to generate accurate infographics and detailed product shots makes it valuable for marketing and design professionals.
+In game development, the model can generate comprehensive sprite sheets for character movements, including damage reactions, stealth actions, death animations, and power-up auras, which can significantly streamline the asset creation process. For artists, it serves as an advanced creative assistant, enabling the rapid generation of diverse visual concepts, styles, and detailed compositions. Its capacity for photorealism and stylistic versatility can accelerate creative workflows and inspire new artistic directions. Its ability to generate accurate infographics and detailed product shots makes it valuable for marketing and design professionals.
 
-## Navigating the Nuances: Current Limitations
+## Handling the Nuances: Current Limitations
 
 Despite its impressive advancements, ChatGPT Image 2 is not without its limitations. The model can sometimes struggle with precise counting or specific object placement in highly complex scenes. For example, in a detailed prompt requesting seven cups, it might generate eight, or miscount pencils and keys within an image. Similarly, while it excels at drastic image changes, achieving very subtle alterations, such as making text "a little messier," might result in only minor, less impactful adjustments.
 

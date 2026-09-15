@@ -48,10 +48,10 @@ Once cleaned, the data is loaded into Power BI for modeling. In the model view, 
 The heart of any financial dashboard lies in its KPIs. These are calculated using Data Analysis Expressions (DAX) formulas within Power BI. Clarity about which financial measures are important is essential before writing DAX.
 
 Typical KPIs for a financial performance dashboard include:
-*   **Total Sales Actual:** The sum of all actual sales recorded.
-*   **Total Sales Target:** The sum of all set sales targets.
-*   **Variance:** The difference between total sales actual and total sales target.
-*   **Variance Percentage:** The variance divided by the total sales target.
+* **Total Sales Actual:** The sum of all actual sales recorded.
+* **Total Sales Target:** The sum of all set sales targets.
+* **Variance:** The difference between total sales actual and total sales target.
+* **Variance Percentage:** The variance divided by the total sales target.
 
 Beyond these core metrics, time-intelligence calculations are essential. These include Year-to-Date (YTD) values for sales actuals, targets, variance, and variance percentage. Other common time-based calculations might track year-on-year growth or month-to-date figures.
 
@@ -62,12 +62,12 @@ More specific measures can also add depth. For example, a "Target Reached Month 
 Dashboard design focuses on presenting information clearly and interactively. A common approach divides the dashboard into sections: a summary of main KPIs, a detailed view, and filters or slicers for drilling down.
 
 Visual elements are key:
-*   **Card visuals** display single, prominent KPI values like total sales actual, target, variance, and the count of months where targets were met. These cards can also include reference labels, such as showing the YTD sales actual beneath the total sales actual.
-*   **Column charts** are effective for showing trends or status. A "win/loss" column chart can use the "Target Status" measure to display green columns for months where targets were met and red columns for months they were missed. Another column chart can show actuals versus targets month-on-month. By overlapping columns and adjusting transparency (e.g., 50% for target), users can easily compare actual performance against targets. Data labels on these charts can dynamically display variance percentages with emojis.
-*   **Dynamic Titles** enhance interactivity. A chart title might dynamically update to "Targets met 2 out of 14 months." If a user filters by a specific team, the title could change to "Targets met 4 out of 14 months" for that team.
-*   **Table visuals** are excellent for displaying detailed performance by individuals or teams. They can include employee pictures (using the "Image URL" data category), actual sales, targets, and variance percentages. Conditional formatting, such as data bars for actuals and variances, visually highlights performance. Sparklines within table rows can show individual sales trends over time. Image height might be set to 24 pixels, with row padding at 2 pixels.
-*   **Slicers** allow users to filter data by dimensions like team, salesperson, or month. This enables deep dives into specific segments of the financial data.
-*   **Smart Narrative visuals** automatically generate text summaries of the data currently displayed. This provides context and highlights key findings, and it updates dynamically with filters.
+* **Card visuals** display single, prominent KPI values like total sales actual, target, variance, and the count of months where targets were met. These cards can also include reference labels, such as showing the YTD sales actual beneath the total sales actual.
+* **Column charts** are effective for showing trends or status. A "win/loss" column chart can use the "Target Status" measure to display green columns for months where targets were met and red columns for months they were missed. Another column chart can show actuals versus targets month-on-month. By overlapping columns and adjusting transparency (e.g., 50% for target), users can easily compare actual performance against targets. Data labels on these charts can dynamically display variance percentages with emojis.
+* **Dynamic Titles** enhance interactivity. A chart title might dynamically update to "Targets met 2 out of 14 months." If a user filters by a specific team, the title could change to "Targets met 4 out of 14 months" for that team.
+* **Table visuals** are excellent for displaying detailed performance by individuals or teams. They can include employee pictures (using the "Image URL" data category), actual sales, targets, and variance percentages. Conditional formatting, such as data bars for actuals and variances, visually highlights performance. Sparklines within table rows can show individual sales trends over time. Image height might be set to 24 pixels, with row padding at 2 pixels.
+* **Slicers** allow users to filter data by dimensions like team, salesperson, or month. This enables deep dives into specific segments of the financial data.
+* **Smart Narrative visuals** automatically generate text summaries of the data currently displayed. This provides context and highlights key findings, and it updates dynamically with filters.
 
 Aesthetic choices, like custom themes, background boxes, and corporate logos, contribute to a professional and user-friendly experience. For instance, a theme can be customized with specific colors, and a red accent bar might be added above visuals.
 

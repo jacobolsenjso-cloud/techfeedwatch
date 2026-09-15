@@ -32,7 +32,7 @@ Quantum computing offers a basically different way to process information, movin
 
 ## The Basic Difference: Bits vs. Qubits
 
-Traditional computers rely on bits, which are physical switches that can exist in one of two states: either "on" (represented as 1) or "off" (represented as 0). All classical computation, from simple calculations to complex simulations, is built upon manipulating these binary states. However, quantum computers operate with qubits, which possess a unique capability derived from quantum mechanics. A qubit can be in a state of 0, 1, or, crucially, a mixed state where it is both 0 and 1 simultaneously. This phenomenon, known as superposition, is what gives quantum computers their extraordinary potential.
+Traditional computers rely on bits, which are physical switches that can exist in one of two states: either "on" (represented as 1) or "off" (represented as 0). All classical computation, from simple calculations to complex simulations, is built upon manipulating these binary states. However, quantum computers operate with qubits, which possess a unique capability derived from quantum mechanics. A qubit can be in a state of 0, 1, or, critically, a mixed state where it is both 0 and 1 simultaneously. This phenomenon, known as superposition, is what gives quantum computers their extraordinary potential.
 
 ## How Quantum Computers Gain Their Edge
 

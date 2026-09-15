@@ -41,7 +41,7 @@ Anti-money laundering (AML) regulations are strict. Banks must comply to prevent
 
 These algorithms, while efficient, often lack a "common sense factor." They are programmed to flag transactions based on predefined rules. This can lead to legitimate activities being incorrectly identified as suspicious. For instance, a transfer to a new international recipient might be flagged, even if it is a small amount. When an algorithm flags an account, the bank is often compelled to freeze it for an indefinite period. This allows time for investigation. The financial penalties for AML non-compliance are severe. N26, for example, was fined 4.6 million by BaFin in Germany. Such a fine can be devastating for a smaller, digital-first company. To avoid these penalties, virtual banks may adopt an overly cautious approach. They flag more transactions than a traditional bank might, simply to ensure compliance.
 
-## The User's Ordeal: Navigating Account Restrictions
+## The User's Ordeal: Handling Account Restrictions
 
 When an account is frozen, the user experience can be highly frustrating. Customers often receive no clear explanation for the freeze. They are left without access to their money. The resolution process can be lengthy and opaque. Communication typically occurs through in-app chats or email. Support teams at virtual banks are often underpaid and experience high turnover. This means that agents may not have the deep understanding needed to resolve complex issues. Users often report receiving generic responses, with support staff simply reading from an FAQ script.
 

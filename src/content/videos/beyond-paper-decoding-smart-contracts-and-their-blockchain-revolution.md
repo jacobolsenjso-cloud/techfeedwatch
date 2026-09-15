@@ -52,13 +52,13 @@ Finally, **Application Logic Contracts (ALCs)** contain application-based codes 
 
 Smart contracts offer several compelling advantages over their traditional counterparts, primarily in terms of efficiency, cost, and security:
 
-*   **Time:** Preparing, formulating, and drafting a traditional contract can take anywhere from one to several days, or even weeks. In contrast, the process for a smart contract can be instantaneous, provided there is a ready-made smart contract platform or template.
-*   **Execution and Remittance:** Traditional contracts often require manual effort for payment and fulfillment, with parties needing to make payments by due dates. Smart contracts, however, execute automatically as soon as the preset conditions are met, ensuring timely and accurate completion without human intervention.
-*   **Cost:** Conventional contracts typically involve fees payable to third parties who oversee the agreement, significantly increasing the overall cost. The cost of executing a smart contract is generally lower, as users only pay the transaction price on the blockchain, eliminating the need for intermediaries.
-*   **Data Security and Protection:** Traditional contracts, often on paper, are susceptible to damage, misplacement, or loss. Smart contract codes, on the other hand, are performed between anonymous parties on a distributed ledger, offering enhanced security and confidentiality through cryptographic principles.
-*   **Archiving:** Archiving traditional contracts demands significant time, physical space, and administrative oversight. Smart contracts are automatically and securely archived on the blockchain, providing an immutable and easily accessible record.
+* **Time:** Preparing, formulating, and drafting a traditional contract can take anywhere from one to several days, or even weeks. In contrast, the process for a smart contract can be instantaneous, provided there is a ready-made smart contract platform or template.
+* **Execution and Remittance:** Traditional contracts often require manual effort for payment and fulfillment, with parties needing to make payments by due dates. Smart contracts, however, execute automatically as soon as the preset conditions are met, ensuring timely and accurate completion without human intervention.
+* **Cost:** Conventional contracts typically involve fees payable to third parties who oversee the agreement, significantly increasing the overall cost. The cost of executing a smart contract is generally lower, as users only pay the transaction price on the blockchain, eliminating the need for intermediaries.
+* **Data Security and Protection:** Traditional contracts, often on paper, are susceptible to damage, misplacement, or loss. Smart contract codes, on the other hand, are performed between anonymous parties on a distributed ledger, offering enhanced security and confidentiality through cryptographic principles.
+* **Archiving:** Archiving traditional contracts demands significant time, physical space, and administrative oversight. Smart contracts are automatically and securely archived on the blockchain, providing an immutable and easily accessible record.
 
-## Navigating the Challenges and Limitations
+## Handling the Challenges and Limitations
 
 Despite their advantages, smart contracts are not without their challenges, requiring careful consideration for widespread adoption.
 
@@ -68,7 +68,7 @@ Another hurdle is the **difficulty in reading and understanding** smart contract
 
 **Security issues and bug exploits** also represent a concern. Like any new technology, smart contracts can contain vulnerabilities in their code that, in rare occasions, have led to the loss of assets. Users are therefore advised to scrutinize smart contracts to ensure the code is written correctly and securely.
 
-Furthermore, the **legal integration** of smart contracts into existing frameworks remains a work in progress. While Ethereum advocates envision a future where smart contracts operate so effectively that the need for courts to settle conflicts is eliminated, the reality is more complex. A 2018 research by Stuart D. Levi and Alex B. Lipton determined that U.S. law should recognize smart contracts, but full integration is still evolving. Different countries have varying legal approaches to blockchain and cryptocurrencies, with some being more accepting of emerging technologies like smart contracts than others.
+The **legal integration** of smart contracts into existing frameworks remains a work in progress. While Ethereum advocates envision a future where smart contracts operate so effectively that the need for courts to settle conflicts is eliminated, the reality is more complex. A 2018 research by Stuart D. Levi and Alex B. Lipton determined that U.S. law should recognize smart contracts, but full integration is still evolving. Different countries have varying legal approaches to blockchain and cryptocurrencies, with some being more accepting of emerging technologies like smart contracts than others.
 
 ## Interacting with Smart Contracts: Transparency and Due Diligence
 
@@ -76,4 +76,4 @@ For anyone operating within the crypto space, understanding how to interact with
 
 By using Etherscan, users can gain insights into how they interact with the blockchain, smart contracts, and dApps. This knowledge is important for staying informed and spotting potentially suspicious behavior. The information available typically includes associated transactions, addresses, timestamps, and amounts.
 
-As an example, examining Yearn Finance's (YFI) smart contract on Etherscan reveals specific details. By navigating to the contract tab for the YFI token, users can find basic information such as the fact that YFI is a token with 18 decimals, it has a separate governance contract, and its maximum total supply is 36,666 tokens. This level of transparency empowers users to perform their own research and verify the details of the digital agreements they engage with. Given the early stage of smart contract development and the potential for security issues, user diligence in scrutinizing code is paramount.
+As an example, examining Yearn Finance's (YFI) smart contract on Etherscan reveals specific details. By handling to the contract tab for the YFI token, users can find basic information such as the fact that YFI is a token with 18 decimals, it has a separate governance contract, and its maximum total supply is 36,666 tokens. This level of transparency empowers users to perform their own research and verify the details of the digital agreements they engage with. Given the early stage of smart contract development and the potential for security issues, user diligence in scrutinizing code is paramount.

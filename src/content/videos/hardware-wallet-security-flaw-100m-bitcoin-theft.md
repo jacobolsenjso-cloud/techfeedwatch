@@ -33,7 +33,7 @@ A significant exploit in Coldcard hardware wallet firmware led to a reported $10
 
 On July 30, 2026, a major security incident began to unfold, affecting thousands of Coldcard hardware wallet users. Attackers initiated automated scripts that drained substantial amounts of Bitcoin from these devices. In an initial 25-minute window, approximately 500 single-signature wallets lost 594 Bitcoin, valued at about $38 million. The sweep expanded quickly. Within 41 minutes, 1,196 addresses were hit, resulting in the theft of $70 million worth of Bitcoin. By August 2, the reported losses reached $89 million across 4,585 addresses. The total confirmed losses by August 3 involved 1,816 Bitcoin from somewhere between 5,200 and 7,300 addresses.
 
-What made this incident particularly alarming was its nature. Victims had followed recommended security practices. Their devices were often stored offline in safes or hidden locations. No one was phished, nor did users plug their wallets into compromised computers. Crucially, no user manually approved a malicious transaction. For example, Canadian entrepreneur Jonathan Goodman lost 18.25 Bitcoin, roughly 1.6 million Canadian dollars, from wallets in a safety deposit box. His device remained untouched in a vault during the 7-minute drain. The attack did not physically touch the hardware. Instead, it targeted the software responsible for generating the seed phrase itself. Many of the stolen coins had sat untouched for over 3 years, belonging to users who believed their funds were fully secure.
+What made this incident particularly alarming was its nature. Victims had followed recommended security practices. Their devices were often stored offline in safes or hidden locations. No one was phished, nor did users plug their wallets into compromised computers. Critically, no user manually approved a malicious transaction. For example, Canadian entrepreneur Jonathan Goodman lost 18.25 Bitcoin, roughly 1.6 million Canadian dollars, from wallets in a safety deposit box. His device remained untouched in a vault during the 7-minute drain. The attack did not physically touch the hardware. Instead, it targeted the software responsible for generating the seed phrase itself. Many of the stolen coins had sat untouched for over 3 years, belonging to users who believed their funds were fully secure.
 
 ## The Root Cause: Flawed Randomness
 
@@ -66,13 +66,13 @@ Coin Kite's response to the incident was swift and direct. CEO Ralpho Novak (NVK
 However, updating firmware alone does not fix an already generated compromised seed. The patch prevents the device from creating new bad keys, but it cannot "un-weaken" an old one. The vulnerability follows the recovery phrase itself, not the physical device. Moving a compromised seed to a different wallet also offers no protection.
 
 For Coldcard users, the practical steps to secure funds are:
-1.  Check if your seed was created on firmware version 4.0.0 through 5.0.3. The creation date is what matters.
-2.  Unless you used 50 or more dice rolls, a strong unique passphrase, or a multisig setup, assume that seed is compromised.
-3.  Understand that updating firmware is necessary but not sufficient.
-4.  Generate a completely new wallet on patched firmware.
-5.  Move your funds to the new seed now.
-6.  Treat the old seed as permanently public. Never reuse or fund it again.
-7.  Verify the new receiving address on the device screen before sending any meaningful amount.
+1. Check if your seed was created on firmware version 4.0.0 through 5.0.3. The creation date is what matters.
+2. Unless you used 50 or more dice rolls, a strong unique passphrase, or a multisig setup, assume that seed is compromised.
+3. Understand that updating firmware is necessary but not sufficient.
+4. Generate a completely new wallet on patched firmware.
+5. Move your funds to the new seed now.
+6. Treat the old seed as permanently public. Never reuse or fund it again.
+7. Verify the new receiving address on the device screen before sending any meaningful amount.
 A critical warning: do not type your recovery phrase into any "vulnerability checker" website. Phishing tools imitating legitimate checkers are already active.
 
 This incident is not an isolated problem. Randomness is a recurring failure point across the crypto industry. A bad random number often produces no visible symptoms, allowing flaws to persist for years. Previous incidents include the 2023 Milk Sad bug, where Libbitcoin explorer created wallet seeds with only 32 bits of randomness, leading to millions in losses. The 2022 Profanity vanity address tool made a similar mistake, contributing to the $160 million Wintermute hack. In 2022 and 2023, Trust Wallet's browser extension created keys derivable from public addresses. Just weeks before the Coldcard exploit, the Ill Bloom bug affected several mobile and browser wallets, leading to over $5 million in confirmed losses.
