@@ -714,6 +714,38 @@ async function run() {
         .trim();
     }
 
+    // Deler modellens svar i FAQ-blok og brødtekst.
+    //
+    // Markøren "CONTENT:" accepteres også som egen linje med fed/uden kolon
+    // ("**CONTENT**"). Men målt 14/9 på 16 af 62 arkiv-artikler: modellen
+    // skriver hele artiklen (overskrifter, afsnit, det hele) og udelader BARE
+    // ordet CONTENT — brødteksten begynder direkte efter det sidste FAQ-svar.
+    // Uden en reserve blev 16 færdige artikler kasseret som "0 ord".
+    // Reserven: mangler markøren, er brødteksten alt efter den sidste "A:"-linje
+    // i FAQ-blokken, og FAQ-blokken slutter samme sted (ellers ville det sidste
+    // svar sluge hele artiklen). Kræver mindst ét Q/A-par for at slå til.
+    function delSvar(raw) {
+      let contentMatch = raw.match(/^[ \t]*\**CONTENT\**:?\**[ \t]*\r?\n([\s\S]*)/im) || raw.match(/CONTENT:\s*([\s\S]*)/i);
+      // FAQ-blokken løber fra "FAQ:" til markøren (hvis den findes) — ellers til slut.
+      const faqStart = raw.search(/FAQ:/i);
+      let faqBlock = faqStart < 0 ? '' : raw.slice(faqStart + 4, contentMatch ? contentMatch.index : raw.length);
+      if (!contentMatch) {
+        const linjer = faqBlock.split(/\r?\n/);
+        let sidsteA = -1;
+        for (let i = 0; i < linjer.length; i++) if (/^\s*\**A\**:/.test(linjer[i])) sidsteA = i;
+        if (sidsteA >= 0) {
+          // Modellen sætter af og til en vandret streg (*** eller ---) som skille — væk med den.
+          const rest = linjer.slice(sidsteA + 1).join('\n').trim().replace(/^(\*{3,}|-{3,})\s*/, '');
+          if (rest.split(/\s+/).length >= 200) {
+            contentMatch = [null, rest];
+            faqBlock = linjer.slice(0, sidsteA + 1).join('\n');
+            console.log('ℹ️ CONTENT-markøren mangler — brødteksten taget efter sidste FAQ-svar');
+          }
+        }
+      }
+      return { faqBlock, contentMatch };
+    }
+
     // YAML-escape til dobbelt-anførte strenge (håndterer backslash og resterende anførselstegn)
     function toYamlDoubleQuoted(str) {
       return `"${str.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
@@ -724,12 +756,7 @@ async function run() {
     let content = "";
 
     if (!isShort) {
-      const faqMatch = rawText.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i);
-      // Markøren accepteres også som egen linje med fed/uden kolon ("**CONTENT**"),
-      // målt 12/9: et svar på 11.000 tegn havde ingen "CONTENT:" og blev kasseret.
-      const contentMatch = rawText.match(/^[ \t]*\**CONTENT\**:?\**[ \t]*\r?\n([\s\S]*)/im) || rawText.match(/CONTENT:\s*([\s\S]*)/i);
-
-      const faqBlock = faqMatch ? faqMatch[1] : "";
+      const { faqBlock, contentMatch } = delSvar(rawText);
       const faqPairRegex = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
       let faqPairMatch;
       while ((faqPairMatch = faqPairRegex.exec(faqBlock)) !== null) {
@@ -766,13 +793,12 @@ async function run() {
         console.log(`⚠️ Brødteksten mangler (${ordITekst} ord) — prøver én gang til`);
         const igen = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384 } }).generateContent(prompt);
         const rawIgen = igen.response.text() || '';
-        const cmIgen = rawIgen.match(/^[ \t]*\**CONTENT\**:?\**[ \t]*\r?\n([\s\S]*)/im) || rawIgen.match(/CONTENT:\s*([\s\S]*)/i);
+        const { faqBlock: fm2, contentMatch: cmIgen } = delSvar(rawIgen);
         const nyContent = sanitizeLinks((cmIgen ? cmIgen[1] : '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
         if (nyContent.split(/\s+/).length >= 200) {
           content = nyContent;
           ordITekst = content.split(/\s+/).length;
           if (!faqs.length) {
-            const fm2 = rawIgen.match(/FAQ:\s*([\s\S]*?)(?=CONTENT:|$)/i)?.[1] || '';
             let p; const re2 = /Q:\s*([\s\S]*?)\s*A:\s*([\s\S]*?)(?=Q:|$)/gi;
             while ((p = re2.exec(fm2)) !== null) { const q = sanitizeFaqText(p[1]), a = sanitizeFaqText(p[2]); if (q && a) faqs.push({ question: q, answer: a }); }
           }
