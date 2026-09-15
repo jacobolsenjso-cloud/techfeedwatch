@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
-import { manglerKonkret, kildeNavn, taelTal } from './src/lib/konkret.mjs';
+import { manglerKonkret, kildeNavn, taelTal, konkretScore, MIN_SCORE, laesbarhed, MAX_ORD_PR_SAETNING } from './src/lib/konkret.mjs';
 import { MIN_FAKTA, MIN_BRUGT, faktaarkPrompt, parseFaktaark, faktaarkScore, faktaarkTekst, ukendteTal, brugteFakta } from './src/lib/faktaark.mjs';
 import fs from 'fs';
 import 'dotenv/config';
@@ -821,14 +821,38 @@ async function run() {
       //  c) kilden nævnt ved navn (som før)
       // Mangler noget, får modellen ÉT forsøg med arket ved hånden — ikke hele
       // transskriptet, for det var dét, der i første omgang druknede detaljerne.
+      // Udvidet 15/9 (Jacobs forslag 5, 8, 9, 10):
+      //  d) tal: har kilden mindst 2 tal på arket, skal artiklen have mindst 2 (håndhæves)
+      //  e) score: konkrethedsscore (samme formel som audit-specificity) >= MIN_SCORE (håndhæves)
+      //  f) svaret først: første afsnit deler et kerneord med spørgsmålet og er
+      //     et rigtigt afsnit (mindst 40 ord), ikke en optakt (rettes, logges).
+      //     Målt 15/9: krav om et tal i 1. afsnit bestod kun 10 af 227 — for strengt.
+      //  g) læsbarhed: højst MAX_ORD_PR_SAETNING ord pr. sætning i snit (rettes, logges)
+      const kildensTal = fakta.filter((f) => f.type === 'tal').length;
+      const MIN_TAL = kildensTal >= 2 ? 2 : 0;
+      const foersteAfsnit = (md) => (md.split(/\n\s*\n/).map((x) => x.trim()).find((x) => x && !/^#/.test(x) && !/^[-*>]/.test(x)) || '');
+      const spmUdenAi = (targetQuestion || '').replace(/\b(ai|tech)\b/gi, ' ').trim();
+      const svarFoerstOk = (md) => {
+        if (!spmUdenAi || !/[a-z]{3,}/i.test(spmUdenAi)) return true;
+        const fa = foersteAfsnit(md);
+        return faellesOrd(spmUdenAi, fa) > 0 && fa.split(/\s+/).length >= 40;
+      };
       const status = () => {
         const brugte = brugteFakta(content, fakta);
         const ukendte = ukendteTal(content, fakta, text);
+        const tal = taelTal(content);
+        const sc = konkretScore(content, channelTitle);
+        const laes = laesbarhed(content);
+        const svarFoerst = svarFoerstOk(content);
         const m = [];
         if (brugte.length < MIN_BRUGT) m.push(`kun ${brugte.length} af ${fakta.length} punkter fra arket brugt (mindst ${MIN_BRUGT})`);
         if (ukendte.length) m.push(`tal uden dækning i kilden: ${ukendte.join(', ')}`);
         if (manglerKonkret(content, channelTitle).includes('kilde')) m.push('kilden ikke nævnt ved navn');
-        return { brugte, ukendte, m };
+        if (tal < MIN_TAL) m.push(`kun ${tal} tal i artiklen, kilden har ${kildensTal} (mindst ${MIN_TAL})`);
+        if (sc.score < MIN_SCORE) m.push(`konkrethedsscore ${sc.score} (mindst ${MIN_SCORE}: tal ${sc.tal}, navne ${sc.navne}, citater ${sc.citater})`);
+        if (!svarFoerst) m.push('første afsnit besvarer ikke spørgsmålet konkret');
+        if (laes.ordPrSaetning > MAX_ORD_PR_SAETNING) m.push(`${laes.ordPrSaetning} ord pr. sætning (højst ${MAX_ORD_PR_SAETNING})`);
+        return { brugte, ukendte, tal, sc, laes, svarFoerst, m };
       };
       let k = status();
       if (k.m.length) {
@@ -839,7 +863,7 @@ async function run() {
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
 1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
 ${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
 
 FACT SHEET (items not yet used are listed first):
 ${faktaarkTekst([...ubrugte, ...k.brugte])}
@@ -868,9 +892,18 @@ ${content}`);
       if (k.ukendte.length) {
         throw new Error(`Artiklen har tal uden dækning i kilden efter rettelse: ${k.ukendte.join(', ')}. Artiklen skrives ikke.`);
       }
+      // Håndhævet 15/9: for få tal (når kilden har dem) og for lav
+      // konkrethedsscore stopper også udgivelsen — robotten prøver næste kandidat.
+      if (k.tal < MIN_TAL) {
+        throw new Error(`Artiklen har ${k.tal} tal efter rettelse; kilden har ${kildensTal} (mindst ${MIN_TAL}). Artiklen skrives ikke.`);
+      }
+      if (k.sc.score < MIN_SCORE) {
+        throw new Error(`Konkrethedsscore ${k.sc.score} efter rettelse (mindst ${MIN_SCORE}). Artiklen skrives ikke.`);
+      }
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
-        : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${taelTal(content)} tal, kilden nævnt`);
+        : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);
+      console.log(`📏 Score ${k.sc.score} (tal ${k.sc.tal}, navne ${k.sc.navne}, citater ${k.sc.citater}) · ${k.laes.ordPrSaetning} ord/sætning · svaret først: ${k.svarFoerst ? 'ja' : 'nej'}`);
 
       // Interne links: ankertekst skal passe til målet (se ankerTjek).
       content = ankerTjek(content);

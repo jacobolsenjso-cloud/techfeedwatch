@@ -11,28 +11,20 @@ import fs from 'fs';
 const DIR = 'src/content/videos';
 const vis = process.argv.includes('--vis') ? +(process.argv[process.argv.indexOf('--vis') + 1] || 15) : 0;
 
-// Ord der starter med stort midt i en sætning = sandsynligt navn (produkt, firma, person).
-// Sætningsstart, overskrifter og almindelige ord frasorteres.
-const ALMINDELIGE = new Set(['The','A','An','This','That','These','Those','It','In','On','At','For','With','By','From','To','As','And','But','Or','If','When','While','Where','Why','How','What','Which','Who','Yes','No','However','Instead','Although','Because','Beyond','Understanding','Key','Bottom','Line','Practical','Common','Core','Modern','Real','New','Future','Digital','Human','Global','Major','First','Second','Third','Finally','Ultimately','Overall','Both','Many','Most','Some','Each','Every','Another','Other','Such','Their','Its','Our','Your','His','Her','They','We','You','I','AI','Artificial','Intelligence','Machine','Learning','Large','Language','Models','Model','Data','Cloud','Internet','Web','Software','Hardware','Technology','Tech','Business','Businesses','Companies','Company','Organizations','Organisations','Users','Developers','Engineers','Security','Cybersecurity','Financial','Finance','Fintech','Crypto','Blockchain','Bitcoin','Ethereum','Quantum','Computing','Video','Videos','Content','Search','Google']);
+import { konkretScore, renTekst } from './src/lib/konkret.mjs';
+// Formlen ligger i src/lib/konkret.mjs (konkretScore), så robotten kræver det
+// samme, som denne fil måler.
 const rows = [];
 for (const f of fs.readdirSync(DIR).filter((x) => x.endsWith('.md'))) {
   const raw = fs.readFileSync(`${DIR}/${f}`, 'utf8');
   if (/^isShort:\s*true/m.test(raw)) continue;
   const parts = raw.split(/^---\s*$/m);
-  const fm = parts[1] || '', body = (parts[2] || '').replace(/^#+.*$/gm, '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1');
+  const fm = parts[1] || '', body = parts[2] || '';
   const title = (fm.match(/^title:\s*"?(.*?)"?\s*$/m) || [])[1] || f;
   const channel = (fm.match(/^channelTitle:\s*"?(.*?)"?\s*$/m) || [])[1] || '';
-  const words = body.split(/\s+/).filter(Boolean).length;
-  // Tal med betydning: procent, valuta, årstal, tusinder, enheder — ikke "3 to 6"-fyld alene
-  const tal = (body.match(/(\$|€|£)\s?\d[\d.,]*|\d[\d.,]*\s?(%|percent|million|billion|trillion|k\b|GB|TB|MB|ms|seconds|minutes|hours|days|weeks|months|years|x\b)|\b(19|20)\d\d\b/g) || []).length;
-  // Navne: stort begyndelsesbogstav midt i sætning, ikke i frasorteringslisten, mindst 3 tegn
-  const navne = new Set();
-  for (const m of body.matchAll(/(?<=[a-z,;:]\s)([A-Z][A-Za-z0-9.+-]{2,}(?:\s[A-Z][A-Za-z0-9.+-]{2,})*)/g)) {
-    const n = m[1].trim(); if (!ALMINDELIGE.has(n.split(' ')[0])) navne.add(n);
-  }
-  const citater = (body.match(/"[^"]{20,}"|“[^”]{20,}”/g) || []).length;
-  const naevnerKilde = channel && body.includes(channel.split('|')[0].trim().split(' ')[0]) ? 1 : 0;
-  const score = tal * 2 + navne.size + citater * 3 + naevnerKilde * 3;
+  const words = renTekst(body).split(/\s+/).filter(Boolean).length;
+  const { tal, navne: navneAntal, citater, naevnerKilde, score } = konkretScore(body, channel);
+  const navne = { size: navneAntal };
   rows.push({ f, title, words, tal, navne: navne.size, citater, naevnerKilde, score, rewritten: /^rewrittenAt:/m.test(fm), tq: /^targetQuestion:/m.test(fm) });
 }
 rows.sort((a, b) => a.score - b.score);
