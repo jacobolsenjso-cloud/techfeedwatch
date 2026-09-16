@@ -12,8 +12,8 @@ summary: "Creating engaging videos with AI involves a structured, multi-step wor
 metaDescription: "Learn how to use AI tools to make video, transforming text prompts into high-quality visual content for social media platforms with a structured workflow."
 targetQuestion: "how to use ai tools to make video"
 duration: "1:02:06"
-viewCount: 16056
-viewsUpdated: "2026-09-14"
+viewCount: 16103
+viewsUpdated: "2026-09-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

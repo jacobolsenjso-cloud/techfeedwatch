@@ -12,8 +12,8 @@ tags:
 summary: "The global AI landscape faces a fundamental tension between open-source innovation and national security concerns, intensified by geopolitical competition. This divide fuels a debate over responsible AI development, control, and the potential for dual-use technology. As advanced models emerge globally, governments and corporations confront the complex challenge of balancing collaborative progress with the imperative of safeguarding critical infrastructure and intellectual property."
 metaDescription: "The AI paradox: Can open-source innovation coexist with national security in a world of advanced frontier models? Explore the geopolitics of AI."
 duration: "21:40"
-viewCount: 40
-viewsUpdated: "2026-08-07"
+viewCount: 41
+viewsUpdated: "2026-09-16"
 thumbMax: true
 isShort: false
 faqs:

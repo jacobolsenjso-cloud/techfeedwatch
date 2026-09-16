@@ -12,8 +12,8 @@ summary: "The US cryptocurrency regulatory field is fragmented, lacking a unifie
 metaDescription: "Understand if cryptocurrency is regulated in the US, exploring legislative hurdles like the Clarity Act and its impact on decentralized finance."
 targetQuestion: "is cryptocurrency regulated in the us"
 duration: "42:43"
-viewCount: 10936
-viewsUpdated: "2026-09-13"
+viewCount: 10943
+viewsUpdated: "2026-09-16"
 thumbMax: false
 isShort: false
 rewrittenAt: "2026-09-12"

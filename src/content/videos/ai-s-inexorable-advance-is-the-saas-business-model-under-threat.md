@@ -13,8 +13,8 @@ tags:
 summary: "The long-held Software-as-a-Service (SaaS) business model, built on per-user subscriptions and high-profit margins, faces significant disruption from the rapid advancement of AI agentic models. These intelligent agents can autonomously perform complex software development and operational tasks, dramatically reducing the need for multiple human 'seats' and the associated software licenses. This shift is challenging the core economics of established tech giants and prompting a re-evaluation of how software is built, consumed, and monetized."
 metaDescription: "AI agents disrupt SaaS per-user subscriptions by autonomously performing tasks, reducing the need for human seats and challenging tech giants."
 duration: "5:02"
-viewCount: 773151
-viewsUpdated: "2026-09-13"
+viewCount: 774110
+viewsUpdated: "2026-09-16"
 thumbMax: true
 isShort: false
 revised: true

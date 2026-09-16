@@ -12,8 +12,8 @@ summary: "The internet has evolved through distinct phases: Web 1.0 as a static 
 metaDescription: "Understand the fundamental differences between Web 2.0 and Web 3.0, exploring how they impact data ownership, centralization."
 targetQuestion: "what is web2 and what is web3"
 duration: "1:16:46"
-viewCount: 1096778
-viewsUpdated: "2026-09-14"
+viewCount: 1096954
+viewsUpdated: "2026-09-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

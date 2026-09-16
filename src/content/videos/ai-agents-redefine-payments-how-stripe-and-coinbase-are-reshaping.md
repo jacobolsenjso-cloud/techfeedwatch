@@ -12,8 +12,8 @@ summary: "AI agents are increasingly performing automated transactions by levera
 metaDescription: "AI agents now make payments using crypto networks and specialized protocols from firms like Stripe and Coinbase, sidestepping traditional finance."
 targetQuestion: "how do ai agents pay each other"
 duration: "18:40"
-viewCount: 69427
-viewsUpdated: "2026-09-13"
+viewCount: 69439
+viewsUpdated: "2026-09-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"
