@@ -17,6 +17,64 @@
 import fs from 'fs';
 import path from 'path';
 import { YoutubeTranscript } from 'youtube-transcript';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+// --- Kilde 2: Gemini ser videoen selv (16/9) ---------------------------------
+// Hvorfor: YouTube nægter at give undertekster til servere (GitHub Actions,
+// Cloudflare — målt 14–16/9: "Transcript is disabled" / "Sign in to confirm
+// you're not a bot"). Gemini kan tage en YouTube-adresse direkte, og så er
+// det Google, der henter videoen — ingen blokering. Målt 16/9 på 3 videoer:
+// 99 % af ordene og alle tal identiske med YouTubes egne undertekster.
+// Pris: ~10 øre pr. 10-minutters video ved 0,1 billede/sekund (vi skal kun
+// bruge lyden); fuld opløsning kostede 4 gange så meget for samme tekst.
+//
+// Rækkefølge (TRANSSKRIPT_KILDE styrer, standard 'auto'):
+//   auto    : på GitHub Actions → Gemini direkte (YouTube er alligevel blokeret,
+//             og hvert forsøg koster 12 min); på pc'en → YouTube først (gratis),
+//             Gemini hvis YouTube fejler.
+//   youtube : kun YouTube (som før 16/9).
+//   gemini  : kun Gemini.
+const GEMINI_FPS = 0.1;
+const GEMINI_MODEL = 'gemini-2.5-flash';
+
+function kildeValg() {
+  const v = (process.env.TRANSSKRIPT_KILDE || 'auto').toLowerCase();
+  if (v === 'youtube' || v === 'gemini') return v;
+  return process.env.GITHUB_ACTIONS ? 'gemini' : 'auto';
+}
+
+// Videoens længde i sekunder fra YouTube Data API (virker fra GitHub — det er
+// undertekst-hentningen, YouTube blokerer, ikke API'et). 0 hvis ukendt.
+async function videoLaengdeSek(videoId) {
+  const key = process.env.YOUTUBE_API_KEY;
+  if (!key) return 0;
+  try {
+    const r = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoId}&key=${key}`);
+    const d = await r.json();
+    const m = String(d.items?.[0]?.contentDetails?.duration || '').match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+    return m ? (+m[1] || 0) * 3600 + (+m[2] || 0) * 60 + (+m[3] || 0) : 0;
+  } catch { return 0; }
+}
+
+// Beder Gemini skrive ned, hvad der bliver sagt. Returnerer ét segment med
+// hele teksten og videoens længde, så add-video.mjs kan regne længden ud
+// præcis som fra YouTubes segmenter (offset i ms + duration i sekunder).
+async function hentViaGemini(videoId, onLog) {
+  if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY mangler til Gemini-transskript');
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768, temperature: 0 } });
+  const t0 = Date.now();
+  const res = await model.generateContent([
+    { fileData: { fileUri: `https://www.youtube.com/watch?v=${videoId}` }, videoMetadata: { fps: GEMINI_FPS } },
+    { text: 'Transcribe everything that is spoken in this video, verbatim, in the original language. Output plain text only, no timestamps, no speaker labels, no commentary.' },
+  ]);
+  const tekst = (res.response.text() || '').trim();
+  const u = res.response.usageMetadata || {};
+  if (onLog) onLog(`Gemini-transskript: ${tekst.length} tegn, ${Math.round((Date.now() - t0) / 1000)} s, ${u.promptTokenCount || '?'} tokens ind`);
+  if (tekst.length < 200) throw new Error(`Gemini gav for lidt tekst (${tekst.length} tegn)`);
+  const sek = await videoLaengdeSek(videoId);
+  return [{ text: tekst, offset: 0, duration: sek, kilde: 'gemini' }];
+}
 
 const DIR = '.cache/transskripter';
 
@@ -35,7 +93,7 @@ function erDrosling(besked) {
  * Kaster videre hvis videoen ikke kan hentes efter alle forsøg.
  * onVent(sekunder) kaldes før hver ventetid, så kalderen kan logge.
  */
-export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null } = {}) {
+export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null, onLog = null } = {}) {
   const sti = cacheSti(videoId);
   if (fs.existsSync(sti)) {
     try {
@@ -44,6 +102,18 @@ export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null } = {}
     } catch { /* ødelagt cache-fil — hent forfra */ }
   }
 
+  const kilde = kildeValg();
+  const gem = (segs) => { fs.mkdirSync(DIR, { recursive: true }); fs.writeFileSync(sti, JSON.stringify(segs), 'utf8'); };
+  if (kilde === 'gemini') {
+    const segs = await hentViaGemini(videoId, onLog);
+    gem(segs);
+    return { segmenter: segs, fraCache: false, kilde: 'gemini' };
+  }
+
+  // Med Gemini som reserve venter vi ikke 2+4+6 min på YouTube: ét forsøg,
+  // og virker det ikke med det samme, tager Gemini over (målt 16/9: ventetiden
+  // var det, der gjorde en kørsel til 25-50 min).
+  if (kilde === 'auto' && process.env.GEMINI_API_KEY) forsoeg = 1;
   let sidsteFejl;
   for (let f = 0; f < forsoeg; f++) {
     try {
@@ -59,6 +129,12 @@ export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null } = {}
       if (onVent) onVent(sek);
       await new Promise((r) => setTimeout(r, sek * 1000));
     }
+  }
+  if (kilde === 'auto') {
+    if (onLog) onLog(`YouTube gav ingen undertekster (${String(sidsteFejl?.message || '').slice(0, 60)}) — prøver Gemini`);
+    const segs = await hentViaGemini(videoId, onLog);
+    gem(segs);
+    return { segmenter: segs, fraCache: false, kilde: 'gemini' };
   }
   throw sidsteFejl;
 }

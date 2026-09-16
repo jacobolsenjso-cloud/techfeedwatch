@@ -403,10 +403,12 @@ async function run() {
     try {
       // PLAN A: Prøv at hente undertekster (fra cache hvis vi har hentet dem før —
       // se src/lib/transskript.mjs; YouTube drosler os, så hver video hentes én gang)
-      const { segmenter: transcript, fraCache } = await hentSegmenter(videoId, {
+      const { segmenter: transcript, fraCache, kilde: tKilde } = await hentSegmenter(videoId, {
         onVent: (s) => console.log(`   YouTube drosler — venter ${s / 60} min`),
+        onLog: (m) => console.log(`   ${m}`),
       });
-      if (fraCache) console.log('Transskript: læst fra cache');
+      if (fraCache) console.log(`Transskript: læst fra cache${transcript[0]?.kilde === 'gemini' ? ' (Gemini)' : ''}`);
+      else if (tKilde === 'gemini') console.log('Transskript: Gemini så videoen');
       text = transcript.map(t => t.text).join(' ');
 
       const lastT = transcript[transcript.length - 1];
@@ -828,7 +830,10 @@ async function run() {
       //     et rigtigt afsnit (mindst 40 ord), ikke en optakt (rettes, logges).
       //     Målt 15/9: krav om et tal i 1. afsnit bestod kun 10 af 227 — for strengt.
       //  g) læsbarhed: højst MAX_ORD_PR_SAETNING ord pr. sætning i snit (rettes, logges)
-      const kildensTal = fakta.filter((f) => f.type === 'tal').length;
+      // Kun tal med betydning tæller (samme målestok som taelTal på artiklen).
+      // Målt 16/9: arket kaldte "two seconds" og "three different videos" for tal,
+      // artiklen fik 0 efter den strenge regel — og blev afvist på et falsk krav.
+      const kildensTal = fakta.filter((f) => f.type === 'tal' && taelTal(`${f.key} ${f.text}`) > 0).length;
       const MIN_TAL = kildensTal >= 2 ? 2 : 0;
       const foersteAfsnit = (md) => (md.split(/\n\s*\n/).map((x) => x.trim()).find((x) => x && !/^#/.test(x) && !/^[-*>]/.test(x)) || '');
       const spmUdenAi = (targetQuestion || '').replace(/\b(ai|tech)\b/gi, ' ').trim();
