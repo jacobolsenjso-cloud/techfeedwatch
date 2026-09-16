@@ -2,6 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const VIDEOS_DIR = './src/content/videos';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
@@ -54,7 +55,7 @@ Each answer max 2 sentences. Do not use markdown links in the answers. Return on
 
 Video Content Data: ${text.substring(0, 20000)}`;
 
-  const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
+  const result = await genAI.getGenerativeModel({ model: GEMINI_MODEL }).generateContent(prompt);
   const rawText = result.response.text();
 
   const faqs = [];

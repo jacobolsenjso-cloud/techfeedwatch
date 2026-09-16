@@ -18,6 +18,7 @@ import fs from 'fs';
 import path from 'path';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GEMINI_MODEL, hentModel } from './model.mjs';
 
 // --- Kilde 2: Gemini ser videoen selv (16/9) ---------------------------------
 // Hvorfor: YouTube nægter at give undertekster til servere (GitHub Actions,
@@ -35,7 +36,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 //   youtube : kun YouTube (som før 16/9).
 //   gemini  : kun Gemini.
 const GEMINI_FPS = 0.1;
-const GEMINI_MODEL = 'gemini-2.5-flash';
+
 
 function kildeValg() {
   const v = (process.env.TRANSSKRIPT_KILDE || 'auto').toLowerCase();
@@ -62,7 +63,7 @@ async function videoLaengdeSek(videoId) {
 async function hentViaGemini(videoId, onLog) {
   if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY mangler til Gemini-transskript');
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768, temperature: 0 } });
+  const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768, temperature: 0 } });
   const t0 = Date.now();
   const res = await model.generateContent([
     { fileData: { fileUri: `https://www.youtube.com/watch?v=${videoId}` }, videoMetadata: { fps: GEMINI_FPS } },

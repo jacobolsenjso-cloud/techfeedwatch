@@ -1,3 +1,4 @@
+import { GEMINI_MODEL, hentModel } from './model.mjs';
 // Relevans: dækker kilden (transskriptet) det, artiklen skal svare på?
 //
 // Delt mellem robotten (add-video.mjs, før artiklen skrives) og auditterne,
@@ -65,8 +66,8 @@ function laesSvar(raw) {
  */
 export async function relevansScore(genAI, text, emne, { erSpoergsmaal = true, kald = 3 } = {}) {
   const prompt = relevansPrompt(text, emne, erSpoergsmaal);
-  const model = genAI.getGenerativeModel({
-    model: 'gemini-2.5-flash',
+  const model = hentModel(genAI, {
+    model: GEMINI_MODEL,
     // 512 var for lidt: gemini-2.5 bruger af budgettet på at tænke, og
     // begrundelsen blev klippet af i to ud af tre svar (målt 13/9).
     generationConfig: { maxOutputTokens: 1500, temperature: 0 },

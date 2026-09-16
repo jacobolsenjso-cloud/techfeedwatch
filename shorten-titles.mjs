@@ -16,6 +16,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import 'dotenv/config';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const DIR = './src/content/videos';
 const MAX_LEN = 60;
@@ -24,7 +25,7 @@ const LIMIT = Number(process.argv.find((a) => /^\d+$/.test(a))) || 40;
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // Samme model som add-video.mjs bruger. gemini-2.0-flash er udgået.
-const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
 
 const yaml = (s) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`;
 

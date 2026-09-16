@@ -31,6 +31,7 @@ import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord } from './src/lib/headline.mjs';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const DIR = 'src/content/videos';
 const apply = process.argv.includes('--apply');
@@ -43,7 +44,7 @@ if (apply) { anvend(); } else { await planlaeg(); }
 async function planlaeg() {
   if (!process.env.GEMINI_API_KEY) { console.error('GEMINI_API_KEY mangler'); process.exit(1); }
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 2048, temperature: 0.3 } });
+  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 2048, temperature: 0.3 } });
   const spoerg = async (prompt) => (await model.generateContent(prompt)).response.text().trim();
 
   // Genoptag: allerede planlagte artikler springes over, så en afbrudt kørsel

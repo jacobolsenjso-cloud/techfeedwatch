@@ -10,6 +10,7 @@ import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
 import { erRelevant } from './src/lib/relevans.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
+import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -451,7 +452,7 @@ async function run() {
       `Content: ${text.substring(0, 1500)}`
     ].join('\n');
 
-    const langResult = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(langCheckPrompt);
+    const langResult = await hentModel(genAI, { model: GEMINI_MODEL }).generateContent(langCheckPrompt);
     const langAnswer = langResult.response.text().trim();
     console.log("Sprogtjek-svar:", langAnswer);
 
@@ -498,7 +499,7 @@ async function run() {
         try { fakta = JSON.parse(fs.readFileSync(faktaarkFil(videoId), 'utf8')); console.log(`Faktaark: læst fra fil (${fakta.length} punkter)`); } catch { fakta = []; }
       }
       if (!fakta.length) {
-        const fk = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
+        const fk = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
           .generateContent(faktaarkPrompt(text, targetQuestion || forcedTag || ''));
         fakta = parseFaktaark(fk.response.text());
         fs.writeFileSync(faktaarkFil(videoId), JSON.stringify(fakta, null, 1), 'utf8');
@@ -595,8 +596,8 @@ async function run() {
     // så vi prøver én gang til, før kandidaten kasseres.
     let rawText = '';
     for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
-      const result = await genAI.getGenerativeModel({
-        model: 'gemini-2.5-flash',
+      const result = await hentModel(genAI, {
+        model: GEMINI_MODEL,
         generationConfig: { maxOutputTokens: 16384 },
       }).generateContent(prompt);
 
@@ -637,7 +638,7 @@ async function run() {
       for (let forsoeg = 0; mangler.length && forsoeg < 2; forsoeg++) {
         console.log(`🔎 Overskriften mangler søgeordene [${mangler.join(', ')}] — beder om rettelse (${forsoeg + 1}/2)`);
         try {
-          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 1024, temperature: 0.3 } })
+          const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 1024, temperature: 0.3 } })
             .generateContent(`Rewrite this headline so that it reads the way people search for it. It must contain the words "${mangler.join('", "')}" in the same order as in the Google search "${targetQuestion}" (other words may sit between them), keep the same meaning, be natural English, and stay 40-62 characters. Title Case. No ampersand. No quotes. Output the headline only.\n\nHeadline: ${safeTitle}`);
           const ny = (rep.response.text() || '').split('\n')[0].replace(/^["“']|["”']$/g, '').replace(/"/g, "'").trim();
           if (ny.length >= 20 && ny.length <= 80) safeTitle = pubCase(ny.replace(/\s*&\s*/g, ' and '));
@@ -797,7 +798,7 @@ async function run() {
         // (14.500 tegn) manglede markøren. Fejlen er tilfældig, så ét forsøg
         // mere er billigere end at kassere en god kandidat.
         console.log(`⚠️ Brødteksten mangler (${ordITekst} ord) — prøver én gang til`);
-        const igen = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384 } }).generateContent(prompt);
+        const igen = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384 } }).generateContent(prompt);
         const rawIgen = igen.response.text() || '';
         const { faqBlock: fm2, contentMatch: cmIgen } = delSvar(rawIgen);
         const nyContent = sanitizeLinks((cmIgen ? cmIgen[1] : '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
@@ -864,7 +865,7 @@ async function run() {
         console.log(`🔎 Kontrol mod faktaarket: ${k.m.join(' · ')} — beder om rettelse`);
         const ubrugte = fakta.filter((f) => !k.brugte.includes(f)).slice(0, 12);
         try {
-          const rep = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
+          const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
 1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
 ${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").

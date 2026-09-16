@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import 'dotenv/config';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -66,7 +67,7 @@ async function generateGuide(guide) {
   console.log(`\n→ Genererer: ${guide.title} [${guide.slug}]`);
 
   const prompt = buildPrompt(guide);
-  const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
+  const result = await genAI.getGenerativeModel({ model: GEMINI_MODEL }).generateContent(prompt);
   const rawText = result.response.text();
 
   const descriptionMatch = rawText.match(/DESCRIPTION:\s*(.*)/i);

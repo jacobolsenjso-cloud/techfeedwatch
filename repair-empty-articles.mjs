@@ -19,6 +19,7 @@ import path from 'node:path';
 import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const DIR = 'src/content/videos';
 const MIN_ORD = 200;
@@ -88,7 +89,7 @@ for (const t of tomme.slice(0, limit)) {
     if (ordtal(tekst) < 100) throw new Error('transskript for kort');
 
     const res = await genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
+      model: GEMINI_MODEL,
       generationConfig: { maxOutputTokens: 16384 },
     }).generateContent(byg(t.titel, felt(t.raw, 'summary'), tekst));
 

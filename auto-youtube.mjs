@@ -4,6 +4,7 @@ import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -162,7 +163,7 @@ async function vaelgSpoergsmaal(tag, topic) {
     try {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       const prompt = `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a reference article could answer well? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${ubrugte.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
-      const r = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(prompt);
+      const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(prompt);
       const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
       if (m) {
         const behold = new Set(JSON.parse(m[0]).map((n) => n - 1));

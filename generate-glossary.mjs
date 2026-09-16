@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs';
 import 'dotenv/config';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -83,7 +84,7 @@ async function generateTerm(term, category) {
   console.log(`\n→ Genererer: ${term} (${category}) [${slug}]`);
 
   const prompt = buildPrompt(term, category);
-  const result = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt);
+  const result = await genAI.getGenerativeModel({ model: GEMINI_MODEL }).generateContent(prompt);
   const rawText = result.response.text();
 
   const definitionMatch = rawText.match(/DEFINITION:\s*(.*)/i);

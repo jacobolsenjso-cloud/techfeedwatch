@@ -22,6 +22,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { flesch, TUNGE_ORD } from './src/lib/readability.mjs';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const DIR = 'src/content/videos';
 const MIN_ORD = 700;
@@ -218,7 +219,7 @@ for (const k of valgte.slice(0, limit)) {
     }
 
     const model = genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
+      model: GEMINI_MODEL,
       // Lavere temperatur. Standarden er sat til at være opfindsom, og
       // opfindsomhed er præcis det der producerer tal der lyder rigtige.
       // Her skal den forklare et emne, ikke digte.

@@ -11,6 +11,7 @@
 import fs from 'node:fs';
 import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const DIR = 'src/content/videos';
 const limit = Number((process.argv.find((a) => a.startsWith('--limit=')) || '').split('=')[1]) || Infinity;
@@ -94,7 +95,7 @@ Hard rules:
 
   try {
     const res = await medTidsgraense(
-      genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent(prompt), 120, f);
+      genAI.getGenerativeModel({ model: GEMINI_MODEL }).generateContent(prompt), 120, f);
     let ny = res.response.text().trim().replace(/^["'\s]+|["'\s]+$/g, '').replace(/\n[\s\S]*$/, '');
     ny = pubCase(ny);
 

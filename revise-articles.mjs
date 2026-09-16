@@ -13,6 +13,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
 import 'dotenv/config';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
 const DIR = './src/content/videos';
@@ -186,7 +187,7 @@ async function main() {
   }
 
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
 
   // Interne links: de 10 nyeste artikler (samme mønster som add-video.mjs)
   const linkFiles = files.slice(-10);

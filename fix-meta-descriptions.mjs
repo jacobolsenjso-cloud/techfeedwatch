@@ -20,6 +20,7 @@ import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GEMINI_MODEL } from './src/lib/model.mjs';
 
 const MAX = 155, MIN = 60;
 const dry = process.argv.includes('--dry-run');
@@ -66,7 +67,7 @@ async function viaGemini(title, summary) {
   const prompt = `Write ONE sentence of 100-150 characters that summarises this article for a search-result snippet. Plain English, present tense, no hype words, no colon, no quotes. Use only facts and numbers that appear in the summary below. Do not mention "video", "speaker" or "article". End with a full stop. Output the sentence only.\n\nTitle: ${title}\n\nSummary: ${summary}`;
   for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
     try {
-      const r = await genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }).generateContent({
+      const r = await genAI.getGenerativeModel({ model: GEMINI_MODEL }).generateContent({
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
         generationConfig: { maxOutputTokens: 2048, temperature: 0.3 },
       });
