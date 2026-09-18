@@ -135,22 +135,46 @@ function pickThinnestTag(counts) {
 //
 // Brugte spørgsmål gemmes, så robotten ikke skriver om det samme igen. Filen
 // er lille: ét spørgsmål pr. artikel.
-async function vaelgSpoergsmaal(tag, topic) {
+// "Prøvet uden held" (18/9): et spørgsmål, hvor ingen kandidat bestod
+// relevans-tjekket, lægges på is i PROEVET_DAGE dage — det er ikke brugt (ingen
+// artikel), men det nytter ikke at prøve igen i morgen med samme videoer.
+// Målt 18/9 (#543): "why ai videos look like dreams" gav 4 kandidater på 0–1/10.
+const PROEVET = 'src/data/tried-questions.json';
+const PROEVET_DAGE = 30;
+function laesProevet() {
+  try { return JSON.parse(fs.readFileSync(PROEVET, 'utf8')); } catch { return []; }
+}
+function markerSpoergsmaalProevet(q, tag) {
+  const liste = laesProevet().filter((x) => x.q !== q);
+  liste.push({ q, tag, dato: new Date().toISOString().slice(0, 10) });
+  fs.mkdirSync('src/data', { recursive: true });
+  fs.writeFileSync(PROEVET, JSON.stringify(liste, null, 1) + '\n', 'utf8');
+}
+function proevetForNylig() {
+  const graense = Date.now() - PROEVET_DAGE * 864e5;
+  return new Set(laesProevet().filter((x) => new Date(x.dato).getTime() > graense).map((x) => x.q));
+}
+
+// udelad: spørgsmål der ikke må vælges (fx allerede prøvet i denne kørsel).
+async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
   const BRUGTE = 'src/data/used-questions.json';
   let brugte = [];
   if (fs.existsSync(BRUGTE)) {
     try { brugte = JSON.parse(fs.readFileSync(BRUGTE, 'utf8')); } catch { brugte = []; }
   }
-  const set = new Set(brugte.map((x) => x.q));
+  const set = new Set([...brugte.map((x) => x.q), ...proevetForNylig(), ...udelad]);
 
-  const frø = String(topic).split('|')[0].trim();
+  // Flere frø pr. emne (18/9): før kun første led af TOPIC_BY_TAG ("augmented
+  // reality"); nu de tre første ("augmented reality", "virtual reality",
+  // "mixed reality"), så et emne ikke løber tør, når ét frø er brugt op.
+  const froe = String(topic).split('|').map((x) => x.trim()).filter(Boolean).slice(0, 3);
   let forslag = [];
-  try {
-    forslag = await hentForslag(frø);
-  } catch (e) {
-    console.log(`Info: autocomplete svarede ikke (${e.message}) — fortsætter uden.`);
-    return null;
+  for (const f of froe) {
+    try { forslag.push(...await hentForslag(f)); }
+    catch (e) { console.log(`Info: autocomplete svarede ikke for "${f}" (${e.message}).`); }
   }
+  forslag = [...new Set(forslag)];
+  if (!forslag.length) return null;
 
   let ubrugte = forslag.filter((s) => !set.has(s));
   if (!ubrugte.length) return null;
@@ -162,7 +186,9 @@ async function vaelgSpoergsmaal(tag, topic) {
   if (process.env.GEMINI_API_KEY && ubrugte.length > 1) {
     try {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-      const prompt = `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a reference article could answer well? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${ubrugte.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+      // Strammet 18/9: "why ai videos look like dreams" slap igennem — poetisk,
+      // uden fakta at svare med. Nu skal spørgsmålet kunne besvares konkret.
+      const prompt = `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a factual reference article could answer with concrete facts (definitions, how something works, comparisons, numbers)? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that are poetic, speculative, metaphorical or opinion-only (e.g. "why ai videos look like dreams", "is ai alive"), that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${ubrugte.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
       const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(prompt);
       const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
       if (m) {
@@ -488,11 +514,6 @@ async function findNewestVideos() {
   // video, og skrev en artikel uden at nogen i kæden spurgte om der var
   // efterspørgsel. Fejler opslaget, kører vi videre på emnet alene — det er en
   // forbedring, ikke en forudsætning.
-  const spoergsmaal = await vaelgSpoergsmaal(tag, topic);
-  const soegetekst = spoergsmaal || topic;
-  if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete: "${spoergsmaal}"`);
-  else console.log('Info: Intet ubrugt spørgsmål fundet — søger på emnet alene.');
-
   const channel = pickChannel();
   // Kanaler kan være defineret med fast id ELLER @handle (opløses her ved kørsel via forHandle).
   const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
@@ -501,6 +522,18 @@ async function findNewestVideos() {
   console.log(`Info: Vælger emnet der halter mest: "${tag}" (${counts[tag]} artikler)`);
   console.log(`Info: Vælger kanal: "${channel.name}"${channel.handle ? ` (${channel.handle} -> ${channelId || 'intet id'})` : ''}`);
 
+  // Op til to spørgsmål pr. kørsel (18/9): falder alle kandidater til det
+  // første igennem, lægges det på is (tried-questions.json), og et nyt vælges
+  // med det samme — i stedet for at vente en time på næste kørsel.
+  const MAX_SPOERGSMAAL = 2;
+  const proevetNu = new Set();
+  let processed = 0;
+  for (let runde = 1; runde <= MAX_SPOERGSMAAL && processed < runBudget; runde++) {
+  const spoergsmaal = await vaelgSpoergsmaal(tag, topic, proevetNu);
+  const soegetekst = spoergsmaal || topic;
+  if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete (${runde}/${MAX_SPOERGSMAAL}): "${spoergsmaal}"`);
+  else console.log('Info: Intet ubrugt spørgsmål fundet — søger på emnet alene.');
+  if (!spoergsmaal && runde > 1) break;
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
     // Medium + long (begge efter relevans) + én roterende kvalitetskanal.
@@ -520,20 +553,28 @@ async function findNewestVideos() {
 
     if (normalItems.length === 0) {
       console.log("ℹ️ Info: Fandt ingen videoer (eller API'en afviste søgningen).");
-      return;
+      if (spoergsmaal) { markerSpoergsmaalProevet(spoergsmaal, tag); proevetNu.add(spoergsmaal); }
+      continue;
     }
 
     console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
     const existingIds = loadExistingVideoIds();
-    const processed = await processGroup(normalItems, 'video', runBudget, existingIds, tag, spoergsmaal);
-
-    console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
-    // Faktaark-filerne fra kandidatvurderingen er kun mellemregninger (git ignorerer dem).
-    for (const f of fs.readdirSync('.').filter((x) => /^_faktaark-.*\.json$/.test(x))) fs.rmSync(f, { force: true });
+    const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal);
+    processed += nu;
+    if (nu === 0 && spoergsmaal) {
+      markerSpoergsmaalProevet(spoergsmaal, tag);
+      proevetNu.add(spoergsmaal);
+      console.log(`Info: "${spoergsmaal}" lagt på is i ${PROEVET_DAGE} dage — ingen kandidat bestod.`);
+    }
   } catch (error) {
     console.error("❌ Kritisk fejl under kontakt til YouTube:", error.message);
+    break;
   }
+  }
+  console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
+  // Faktaark-filerne fra kandidatvurderingen er kun mellemregninger (git ignorerer dem).
+  for (const f of fs.readdirSync('.').filter((x) => /^_faktaark-.*\.json$/.test(x))) fs.rmSync(f, { force: true });
 }
 
 findNewestVideos();

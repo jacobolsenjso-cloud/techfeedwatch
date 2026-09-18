@@ -18,7 +18,9 @@
 //    account online" — et helt andet behov. Derfor SKAL forslaget stadig
 //    indeholde emnet, ellers kasseres det.
 
-const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use'];
+// Udvidet 18/9: AR & VR løb tør for ubrugte spørgsmål med de fem første
+// præfikser alene. De nye giver spørgsmål, der stadig kan besvares med fakta.
+const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use', 'is', 'can', 'what does', 'how much does', 'difference between', 'should i'];
 
 // Ord der afslører en søgning sitet ikke skal skrive til: køb, kurser, priser,
 // og lande-varianter der peger på lokal lovgivning vi ikke dækker.
