@@ -15,6 +15,9 @@ const VENT_SEK = [15, 30, 60];
 
 function erForbigaaende(e) {
   const m = String(e?.message || e);
+  // Et DAGS- eller MÅNEDS-loft går ikke over ved at vente et minut. Målt 17/9
+  // (#534): 12 gentagelser på "PerDay"-kvoten spildte 14 min. Giv op straks.
+  if (/PerDay|per day|spending cap|monthly/i.test(m)) return false;
   return /\[503|\[429|high demand|overloaded|UNAVAILABLE|RESOURCE_EXHAUSTED|Too Many Requests/i.test(m);
 }
 
