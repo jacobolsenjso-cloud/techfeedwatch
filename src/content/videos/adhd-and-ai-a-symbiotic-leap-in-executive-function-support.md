@@ -12,8 +12,8 @@ summary: "AI is emerging as a significant support tool for individuals with Atte
 metaDescription: "Discover how AI helps ADHD brains manage executive function challenges."
 targetQuestion: "how does ai help adhd"
 duration: "1:15:46"
-viewCount: 38455
-viewsUpdated: "2026-09-16"
+viewCount: 38691
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

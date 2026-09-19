@@ -13,8 +13,8 @@ tags:
 summary: "Google's latest NotebookLM update transforms it into a highly autonomous AI agent, fundamentally reshaping knowledge work. This evolution moves beyond reactive chatbots, integrating deep web research, computational verification, and multi-format content generation into a single platform. The shift implies a future where users manage sophisticated AI workflows, demanding new skills while potentially consolidating numerous standalone tools."
 metaDescription: "Google's latest NotebookLM update transforms it into a highly autonomous AI agent, fundamentally reshaping knowledge work."
 duration: "7:30"
-viewCount: 10661
-viewsUpdated: "2026-09-16"
+viewCount: 10663
+viewsUpdated: "2026-09-19"
 thumbMax: false
 isShort: false
 revised: true

@@ -12,8 +12,8 @@ summary: "Quantum computing companies are pioneering a new era of computation, m
 metaDescription: "Quantum computing companies are pioneering a new era of computation, moving from theoretical research into active commercialization."
 targetQuestion: "what are quantum computing companies"
 duration: "30:35"
-viewCount: 110
-viewsUpdated: "2026-09-16"
+viewCount: 113
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 faqs:

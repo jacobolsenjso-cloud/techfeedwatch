@@ -12,8 +12,8 @@ summary: "Augmented Reality (AR) is reshaping e-commerce by providing immersive,
 metaDescription: "Discover how Augmented Reality enhances e-commerce by offering interactive product visualization and virtual try-ons, boosting buyer confidence."
 targetQuestion: "how does augmented reality enhance e-commerce experience"
 duration: "9:08"
-viewCount: 12
-viewsUpdated: "2026-09-12"
+viewCount: 13
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

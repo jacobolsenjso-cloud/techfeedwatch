@@ -12,8 +12,8 @@ summary: "Artificial intelligence profoundly reshapes SEO by automating traditio
 metaDescription: "Discover how AI affects SEO strategies, from automated content creation and keyword research to optimizing for new AI search engines."
 targetQuestion: "how does ai affect seo"
 duration: "7:21"
-viewCount: 135
-viewsUpdated: "2026-09-12"
+viewCount: 137
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

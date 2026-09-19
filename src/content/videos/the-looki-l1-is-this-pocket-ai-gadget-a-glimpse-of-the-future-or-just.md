@@ -13,8 +13,8 @@ tags:
 summary: "The Looky L1 emerges as a distinctive AI wearable, designed not for conventional photo or video capture but for continuous 'life logging.' This device uses artificial intelligence to passively record daily moments, then curates and transforms them into personalized summaries, auto-vlogs, and unique comic strip narratives. It represents a significant shift from intentional content creation to AI-driven memory assistance, pushing boundaries in personal data collection and automated digital storytelling."
 metaDescription: "The Looky L1 AI wearable continuously logs daily moments, using AI to transform them into personalized summaries and unique comic strip narratives."
 duration: "14:45"
-viewCount: 42510
-viewsUpdated: "2026-09-16"
+viewCount: 42529
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 revised: true

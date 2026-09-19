@@ -12,8 +12,8 @@ tags:
 summary: "The US financial sector is on the cusp of a significant transformation as Section 1033 of the Dodd-Frank Act gains prominence, compelling financial institutions to provide consumers with access to their own financial data. This regulatory shift signals a new era for Open Banking, driving competition and innovation among banks and fintechs. It promises to reshape how individuals manage their finances and interact with financial services providers, moving beyond traditional data-sharing methods."
 metaDescription: "Section 1033 of Dodd-Frank compels US banks to share consumer data, driving Open Banking, competition, innovation."
 duration: "16:58"
-viewCount: 29
-viewsUpdated: "2026-09-16"
+viewCount: 32
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ tags:
 summary: "The financial services sector stands at an inflection point, driven by accelerating technological disruption and an unwavering demand for customer-centric solutions. Emerging trends like the rebundling of services into super apps, the rise of FinTech-as-a-Service, and the foundational shifts promised by Web3, including decentralized autonomous organizations, are fundamentally redefining how value is created and exchanged. This evolution demands a forward-looking, adaptable approach, where technology serves as an enabler for comprehensive, user-focused experiences rather than an end in itself."
 metaDescription: "Super apps, FinTech-as-a-Service, and Web3 are redefining financial services due to technological disruption and customer demand."
 duration: "44:57"
-viewCount: 25326
-viewsUpdated: "2026-09-16"
+viewCount: 25333
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 revised: true

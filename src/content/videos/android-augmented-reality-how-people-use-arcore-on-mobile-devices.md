@@ -12,8 +12,8 @@ summary: "Augmented Reality on Android empowers users to overlay digital informa
 metaDescription: "Discover how to use augmented reality on Android phones with Google ARCore, transforming everyday experiences with digital overlays."
 targetQuestion: "how to use augmented reality on android"
 duration: "11:18"
-viewCount: 354
-viewsUpdated: "2026-09-16"
+viewCount: 385
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 faqs:

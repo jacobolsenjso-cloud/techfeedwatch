@@ -12,8 +12,8 @@ summary: "The advent of AI agents marks a critical inflection point, poised to t
 metaDescription: "Explore the future of AI agents: how autonomous systems are reshaping internet infrastructure, business models."
 targetQuestion: "what is future of ai agents"
 duration: "2:32:58"
-viewCount: 5146
-viewsUpdated: "2026-09-16"
+viewCount: 5147
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

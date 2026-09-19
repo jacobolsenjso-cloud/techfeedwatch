@@ -12,8 +12,8 @@ summary: "OpenClaw is an open-source AI agent framework, created by Peter Steinb
 metaDescription: "Understand OpenClaw, the viral open-source AI agent framework by Peter Steinberger, and why its self-modifying capabilities matter for tech."
 targetQuestion: "what is openclaw and why should i care"
 duration: "3:15:52"
-viewCount: 1335093
-viewsUpdated: "2026-09-16"
+viewCount: 1336442
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

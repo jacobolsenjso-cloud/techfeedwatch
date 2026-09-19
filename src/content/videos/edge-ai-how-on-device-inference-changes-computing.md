@@ -12,8 +12,8 @@ summary: "Edge AI computing shifts artificial intelligence processing from centr
 metaDescription: "Understand what edge AI computing is, why it's gaining traction, and its impact on devices like phones and cars for on-device intelligence."
 targetQuestion: "what is edge ai computing"
 duration: "11:47"
-viewCount: 10655
-viewsUpdated: "2026-09-16"
+viewCount: 10694
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

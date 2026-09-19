@@ -12,8 +12,8 @@ summary: "Claims of AI significantly boosting developer productivity often rely 
 metaDescription: "Uncover the real impact of AI on developer productivity, separating hype from evidence. Learn why AI coding tools don't always speed up development."
 targetQuestion: "how much does ai increase developer productivity"
 duration: "49:08"
-viewCount: 88257
-viewsUpdated: "2026-09-16"
+viewCount: 88854
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

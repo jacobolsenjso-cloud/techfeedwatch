@@ -12,8 +12,8 @@ summary: "A cybersecurity job involves protecting digital systems, networks, and
 metaDescription: "Understand what a cybersecurity job entails and how to break into the field, focusing on essential skills, certifications."
 targetQuestion: "what is cybersecurity job"
 duration: "49:19"
-viewCount: 15857
-viewsUpdated: "2026-09-16"
+viewCount: 16270
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

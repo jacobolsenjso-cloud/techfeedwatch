@@ -12,8 +12,8 @@ summary: "Effective debt management strategies provide a structured approach to 
 metaDescription: "Understand proven debt management strategies, from prioritizing high-interest obligations to building an emergency fund for lasting financial health."
 targetQuestion: "what is debt management strategies"
 duration: "1:41:57"
-viewCount: 752
-viewsUpdated: "2026-09-16"
+viewCount: 763
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

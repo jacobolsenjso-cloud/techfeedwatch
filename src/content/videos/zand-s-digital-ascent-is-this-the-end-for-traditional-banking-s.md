@@ -12,8 +12,8 @@ summary: "Zand Bank is a new native digital bank poised to launch in the UAE, ai
 metaDescription: "Explore Zand Bank, the UAE's new native digital bank, which leverages an extensive ecosystem and advanced technology to offer distinct retail."
 targetQuestion: "what is zand bank in uae"
 duration: "3:04:43"
-viewCount: 3463
-viewsUpdated: "2026-09-15"
+viewCount: 3465
+viewsUpdated: "2026-09-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"
