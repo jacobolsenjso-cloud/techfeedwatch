@@ -1,0 +1,58 @@
+name: IndexNow
+
+# Skubber nye adresser ud til Bing, Yandex, Naver og Seznam (Google deltager
+# ikke — se forklaringen øverst i indexnow.mjs).
+#
+# Hvorfor et SELVSTÆNDIGT job og ikke et trin i robotten: adressen skal være
+# live, før den indsendes, og Cloudflare bygger først et par minutter EFTER
+# robottens push. Et trin i samme job ville enten indsende for tidligt eller
+# tvinge robotten til at vente. Her kører vi bagefter, i vores eget tempo, og
+# kan ikke standse robottens udgivelse, hvis noget går galt.
+#
+# Stoppes: sæt # foran de to schedule-linjer.
+
+on:
+  schedule:
+    # Hver sjette time, på et skævt minut af samme grund som robotten
+    # (GitHub nedprioriterer cron på hele timer). Ligger 24 minutter efter
+    # robottens minut 17, så de to job ikke skubber til hinanden om push.
+    - cron: "41 2,8,14,20 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      # Adresselisten tages fra sitemappet, så der aldrig indsendes en side,
+      # vi selv har markeret noindex.
+      - name: Byg sitet
+        run: npm run build
+
+      - name: Send nye adresser
+        run: node indexnow.mjs
+
+      - name: Gem hukommelsen
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add indexnow-sendt.json
+          if git commit -m "IndexNow: record submitted URLs"; then
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen nye adresser sendt."
+          fi
