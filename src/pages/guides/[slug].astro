@@ -69,7 +69,8 @@ const schema = {
   // gjort det rigtigt, guiderne gjorde ikke.
   "datePublished": new Date(date).toISOString(),
   "dateModified": new Date(showUpdated ? updated! : date).toISOString(),
-  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://techfeedwatch.com/guides/${guide.frontmatter.slug}` }
+  // Matcher canonical, som har afsluttende skråstreg.
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://techfeedwatch.com/guides/${guide.frontmatter.slug}/` }
 };
 ---
 

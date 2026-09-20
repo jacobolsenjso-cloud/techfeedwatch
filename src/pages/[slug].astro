@@ -42,9 +42,35 @@ if (showTally) {
   }
   tally = { video: formatSpan(videoMin)!, read: formatSpan(readMin)!, articles: counted };
 }
+
+// Sidetype-schema (20/9-2026). About- og kontaktsiden havde kun en breadcrumb,
+// så en maskine kunne ikke se, HVAD siden var. AboutPage peger på personen bag
+// sitet via @id — noden selv står på /author/jacob-olsen, så den kun findes ét sted.
+const slug = page.file.split('/').pop().replace('.md', '');
+const sideSchema =
+  slug === 'about'
+    ? {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": title,
+        "url": "https://techfeedwatch.com/about",
+        "description": description,
+        "mainEntity": { "@id": "https://techfeedwatch.com/author/jacob-olsen#person" },
+        "publisher": { "@id": "https://techfeedwatch.com/#organization" }
+      }
+    : slug === 'contact'
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": title,
+          "url": "https://techfeedwatch.com/contact",
+          "description": description,
+          "publisher": { "@id": "https://techfeedwatch.com/#organization" }
+        }
+      : null;
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={title} description={description} schema={sideSchema}>
   
   <style is:global>
     .text-container { 

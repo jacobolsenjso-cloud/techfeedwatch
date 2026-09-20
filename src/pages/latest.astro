@@ -38,9 +38,37 @@ const sections = [
 // "Recently added"-sektion når de to dage er tynde. Den lovede altså noget
 // den ikke altid holdt.
 const description = "The newest AI, tech, fintech, and crypto articles on Tech Feed Watch — today, yesterday, and what came in just before.";
+// Listen skal beskrive DET DER STÅR PÅ SIDEN. Første forsøg listede alle 389
+// artikler på en side, der viser en håndfuld — schema må ikke love mere end
+// siden holder. `viste` er præcis de artikler, sektionerne rendrer.
+const viste = sections.flatMap((sek: any) => sek.items);
+// CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
+// så en maskine kunne ikke se, at siden ER en liste, eller hvad der står på den.
+// ItemList giver rækkefølgen og adresserne; publisher peger på organisationen
+// via @id, så noden kun findes ét sted (forsiden).
+const listeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Latest",
+  "url": "https://techfeedwatch.com/latest/",
+  "description": description,
+  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "publisher": { "@id": "https://techfeedwatch.com/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": viste.length,
+    "itemListElement": viste.map((a: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://techfeedwatch.com/video/${a.slug}/`,
+      "name": a.fm.title
+    }))
+  }
+};
+
 ---
 
-<MainLayout title="Latest" description={description}>
+<MainLayout title="Latest" description={description} schema={listeSchema}>
   <style is:global>
     .latest-wrapper { padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
     .latest-header { font-size: 2.2rem; margin: 0 0 8px 0; display: flex; align-items: center; gap: 12px; }

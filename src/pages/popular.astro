@@ -52,10 +52,36 @@ const sections = [...tagTotals.entries()]
   .filter((s) => s.items.length > 0);
 
 const title = "Best of Each Topic — Videos That Outperformed Their Own Channel";
-const description = "Ranked by how far each source video beat its own channel's average, so a small channel with a strong video can outrank a large one. Five per topic.";
+const description = "Ranked by how far each source video beat its own channel's average, so a small channel with a strong video can outrank a large one. Five per topic.";// CollectionPage + ItemList (20/9-2026). Kun det siden faktisk viser — ellers
+// lover schemaet mere end siden holder. publisher via @id, så organisationen
+// kun står ét sted (forsiden).
+const visteRaa = sections.flatMap((sek: any) => sek.items);
+// En artikel med to emner står i to sektioner. ItemList må ikke have samme
+// adresse to gange, så der afdubles på slug.
+const viste = [...new Map(visteRaa.map((v: any) => [v.slug, v])).values()];
+const listeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "url": "https://techfeedwatch.com/popular/",
+  "description": description,
+  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "publisher": { "@id": "https://techfeedwatch.com/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": viste.length,
+    "itemListElement": viste.map((v: any, n: number) => ({
+      "@type": "ListItem",
+      "position": n + 1,
+      "url": `https://techfeedwatch.com/video/${v.slug ?? v.fm?.slug}/`,
+      "name": v.fm?.title ?? v.title
+    }))
+  }
+};
+
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={title} description={description} schema={listeSchema}>
   <style is:global>
     .popular-wrapper { padding: 30px 20px; max-width: 1400px; margin: 0 auto; flex: 1; width: 100%; box-sizing: border-box; }
     .popular-header { font-size: 2.2rem; margin: 0 0 8px 0; }

@@ -27,10 +27,34 @@ const guides = allGuidesRaw
   .sort((a, b) => a.title.localeCompare(b.title));
 
 const title = "Guides";
-const description = "In-depth guides that pull together the most important videos on a topic with original editorial analysis - your starting point for AI, tech, fintech, and crypto.";
+const description = "In-depth guides that pull together the most important videos on a topic with original editorial analysis - your starting point for AI, tech, fintech, and crypto.";// CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
+// så en maskine kunne ikke se, at siden ER en liste, eller hvad der står på den.
+// Listen må kun rumme det, siden faktisk viser — ellers lover schemaet mere end
+// siden holder. publisher peger på organisationen via @id, så noden kun findes
+// ét sted (forsiden).
+const listeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": title,
+  "url": "https://techfeedwatch.com/guides/",
+  "description": description,
+  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "publisher": { "@id": "https://techfeedwatch.com/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": guides.length,
+    "itemListElement": guides.map((g: any, n: number) => ({
+      "@type": "ListItem",
+      "position": n + 1,
+      "url": `https://techfeedwatch.com/guides/${g.frontmatter?.slug ?? g.slug}/`,
+      "name": g.frontmatter?.title ?? g.title
+    }))
+  }
+};
+
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={title} description={description} schema={listeSchema}>
   <style is:global>
     .guides-wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
     .guides-header h1 { margin: 0 0 8px 0; font-size: 2rem; }

@@ -50,10 +50,39 @@ const months = [...monthMap.entries()]
 const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};// CollectionPage + ItemList (20/9-2026). Kun det siden faktisk viser — ellers
+// lover schemaet mere end siden holder. publisher via @id, så organisationen
+// kun står ét sted (forsiden).
+// Library viser kun de første PREVIEW_COUNT pr. emne — resten er bag "se alle".
+const visteRaa = tagSections.flatMap((sek: any) => sek.videos.slice(0, PREVIEW_COUNT));
+// En artikel med to emner står i to sektioner. ItemList må ikke have samme
+// adresse to gange, så der afdubles på filstien.
+const viste = [...new Map(visteRaa.map((v: any) => [v.file, v])).values()];
+const listeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Library",
+  "url": "https://techfeedwatch.com/library/",
+  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "publisher": { "@id": "https://techfeedwatch.com/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": viste.length,
+    "itemListElement": viste.map((v: any, n: number) => ({
+      "@type": "ListItem",
+      "position": n + 1,
+      // Slug kommer fra filstien, ikke fra frontmatter — samme måde som kortene
+      // nedenfor gør det. Første forsøg brugte v.frontmatter.slug og gav 104
+      // gange "undefined"; målingen fangede det før commit.
+      "url": `https://techfeedwatch.com/video/${v.file.split('/').pop().replace('.md', '')}/`,
+      "name": v.frontmatter.title
+    }))
+  }
 };
+
 ---
 
-<MainLayout title="Library" description="Browse the full Tech Feed Watch library by topic or by month. Plain-language answers on tech, AI, fintech and crypto, each drawn from a credited creator video.">
+<MainLayout schema={listeSchema} title="Library" description="Browse the full Tech Feed Watch library by topic or by month. Plain-language answers on tech, AI, fintech and crypto, each drawn from a credited creator video.">
   
   <style is:global>
     .library-wrapper { 

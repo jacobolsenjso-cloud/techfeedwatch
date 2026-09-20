@@ -78,10 +78,37 @@ const tagAccent = TAG_COLORS[tagName] || "#6b7280";
 const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};// CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
+// så en maskine kunne ikke se, at siden ER en liste, eller hvad der står på den.
+// Listen må kun rumme det, siden faktisk viser — ellers lover schemaet mere end
+// siden holder. publisher peger på organisationen via @id, så noden kun findes
+// ét sted (forsiden).
+const listeSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": `${tagName} Archive`,
+  "url": `https://techfeedwatch.com/tag/${currentSlug}/`,
+  "description": currentDescription,
+  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "publisher": { "@id": "https://techfeedwatch.com/#organization" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": pageVideos.length,
+    "itemListElement": pageVideos.map((v: any, n: number) => ({
+      "@type": "ListItem",
+      "position": n + 1,
+      // Slug kommer fra filstien, ikke fra frontmatter — samme måde som kortene
+      // nedenfor gør det. Første forsøg gættede på et frontmatter-felt og gav
+      // "undefined" på alle 13 emnesider; målingen fangede det før commit.
+      "url": `https://techfeedwatch.com/video/${v.file.split('/').pop().replace('.md', '')}/`,
+      "name": v.frontmatter?.title ?? v.title
+    }))
+  }
 };
+
 ---
 
-<MainLayout title={`${tagName} Archive`} description={currentDescription}>
+<MainLayout title={`${tagName} Archive`} description={currentDescription} schema={listeSchema}>
   
   <style is:global>
     .tag-page-wrapper { padding: 30px 20px; max-width: 1600px; margin: 0 auto; width: 100%; box-sizing: border-box; }

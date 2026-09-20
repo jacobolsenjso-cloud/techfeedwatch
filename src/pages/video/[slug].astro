@@ -238,7 +238,10 @@ const articleSchema = {
     "url": "https://techfeedwatch.com/",
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl },
+  // Skal matche <link rel="canonical">, som har afsluttende skråstreg. Uden den
+  // pegede schemaet på en anden adresse end canonical (målt 20/9-2026) — to
+  // adresser for samme side er netop dét, canonical findes for at undgå.
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `${currentUrl}/` },
   // Artiklen er en analyse af en video fra en tredjepart — det siger vi eksplicit.
   //
   // Som REN URL, ikke som en VideoObject. Da den var typet, talte Google den som

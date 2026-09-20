@@ -4,11 +4,16 @@ import MainLayout from '../../layouts/MainLayout.astro';
 const title = "Jacob Olsen";
 const description = "Jacob Olsen founded Tech Feed Watch, which answers the questions people search for about AI, tech, fintech and crypto, drawing on independent creators' videos.";
 
+// @id gør noden til ét sted, andre sider kan pege på i stedet for at gentage
+// den (about-siden gør det). sameAs knytter personen til profilen på X — samme
+// felt som Organization bruger, så Google kan se, at det er samme menneske.
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://techfeedwatch.com/author/jacob-olsen#person",
   "name": "Jacob Olsen",
   "url": "https://techfeedwatch.com/author/jacob-olsen",
+  "sameAs": ["https://x.com/JacobStubbeJS"],
   "image": "https://techfeedwatch.com/jacob-olsen.png",
   "jobTitle": "Founder",
   "worksFor": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },

@@ -101,7 +101,13 @@ const siteSchema = [
   },
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    // NewsMediaOrganization frem for Organization (20/9-2026). Hvorfor: de fire
+    // politik-felter nedenfor findes kun på denne type, og det er dem, Google
+    // bruger til at vurdere, om en udgiver er til at stole på. Sitet udgiver
+    // dateret redaktionelt indhold dagligt, krediterer sine kilder og har en
+    // offentlig rettelsespolitik — felterne peger på sider, der findes og er sande.
+    "@type": "NewsMediaOrganization",
+    "@id": "https://techfeedwatch.com/#organization",
     "name": "Tech Feed Watch",
     "url": "https://techfeedwatch.com/",
     "logo": "https://techfeedwatch.com/icon-512.png",
@@ -110,6 +116,13 @@ const siteSchema = [
     // sameAs er dét felt Google bruger til at knytte sitet til en profil andre
     // steder. Uden det står sitet som en anonym adresse.
     "sameAs": ["https://x.com/JacobStubbeJS"],
+    // Metoden står i prosa på about-siden ("A system I built picks a question…
+    // Those articles publish automatically — I do not read every one before it
+    // goes live"). Disse fire felter gør den prosa maskinlæsbar.
+    "publishingPrinciples": "https://techfeedwatch.com/about",
+    "ownershipFundingInfo": "https://techfeedwatch.com/about",
+    "correctionsPolicy": "https://techfeedwatch.com/corrections",
+    "actionableFeedbackPolicy": "https://techfeedwatch.com/contact",
     "founder": {
       "@type": "Person",
       "name": "Jacob S. Olsen",
