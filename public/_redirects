@@ -1574,3 +1574,7 @@
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
 /tag/business-&-money/page/* /tag/business-money/page/:splat 301
 /shorts/* /library 301
+/video/augmented-reality-uses-computer-vision-to-layer-digital-objects /video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital/ 301
+/video/augmented-reality-uses-computer-vision-to-layer-digital-objects/ /video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital/ 301
+/video/tVvA4zYc9EE /video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital/ 301
+/video/tVvA4zYc9EE/ /video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital/ 301

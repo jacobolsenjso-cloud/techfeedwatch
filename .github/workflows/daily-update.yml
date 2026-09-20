@@ -53,6 +53,14 @@ jobs:
       - name: Tjek indholdet
         run: node audit-content.mjs
 
+      # Interne links: peger de på noget, der findes? audit-links.mjs tjekker kun
+      # EKSTERNE links, så intet fangede det, når en artikel blev fjernet, mens
+      # andre sider stadig linkede til den. Målt 20/9-2026: to artikler linkede
+      # til en side, prune havde slettet — begge gav 404 for læseren. Stopper
+      # jobbet ved fund, ligesom tjekket ovenfor.
+      - name: Tjek interne links
+        run: node audit-interne-links.mjs
+
       - name: Gem ændringer (Commit & Push)
         run: |
           git config --global user.name 'github-actions[bot]'

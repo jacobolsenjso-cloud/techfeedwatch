@@ -37,7 +37,7 @@ Most consumer interfaces treat digital media as flat pixels rendered onto rigid 
 
 ## Technical Breakdown
 
-Extended Reality, or XR, functions as the parent term for immersive compute environments. Within this framework, virtual reality replaces most of what you see with a fully simulated environment. Augmented reality adds visual overlays on top of a physical view. [Augmented Reality Uses Computer Vision to Layer Digital Objects](/video/augmented-reality-uses-computer-vision-to-layer-digital-objects) to project basic overlays, but mixed reality advances this process by making digital models understand and interact directly with physical surroundings.
+Extended Reality, or XR, functions as the parent term for immersive compute environments. Within this framework, virtual reality replaces most of what you see with a fully simulated environment. Augmented reality adds visual overlays on top of a physical view. Augmented Reality Uses Computer Vision to Layer Digital Objects to project basic overlays, but mixed reality advances this process by making digital models understand and interact directly with physical surroundings.
 
 To make a virtual object behave as if it exists in a room, hardware must solve spatial tracking. Systems achieve this by calculating 6 degrees of freedom: tracking physical movement along three axes alongside rotational orientation around those same three axes. Cameras observe local environmental features such as table edges, wall textures, and carpet corners. Simultaneously, an inertial measurement unit (IMU) tracks high-speed physical acceleration and rotation.
 
