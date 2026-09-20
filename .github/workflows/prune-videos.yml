@@ -1,8 +1,15 @@
 name: Prune Deleted Videos
 
 on:
-  schedule:
-    - cron: "0 4 */3 * *" # Ca. hver 3. dag kl. 04:00 UTC
+  # SLÅET FRA 20/9-2026 af Jacob. Hvorfor: prune SLETTER artikler, men skriver
+  # ingen 301'er — i modsætning til slet-artikler.mjs, der gør det (linje 67-68).
+  # Målt 20/9: 38 gamle adresser sendte allerede Google videre til en 404, fordi
+  # prune havde fjernet to artikler, som tidligere 301'er pegede på. Hver kørsel
+  # kan lave nye huller, og næste var 22/9 kl. 04:00 UTC.
+  # Slås til igen, når prune selv laver 301'er (eller når beslutning A er bygget).
+  # Genstart: fjern # foran de to linjer nedenfor.
+  # schedule:
+  #   - cron: "0 4 */3 * *" # Ca. hver 3. dag kl. 04:00 UTC
   workflow_dispatch:
 
 permissions:
