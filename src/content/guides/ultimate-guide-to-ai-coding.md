@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to Coding with AI"
 slug: "ultimate-guide-to-ai-coding"
-description: "What 36 videos from Fireship, Modern Software Engineering and Y Combinator actually say about AI writing code — where it helps, where it costs, and what it does to learning the job."
+description: "What 36 videos from Fireship, Modern Software Engineering and Y Combinator say about AI writing code — where it helps, costs, and changes the job."
 tags: ["Coding"]
 category: "Coding"
 date: "2026-07-23"

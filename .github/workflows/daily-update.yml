@@ -61,6 +61,17 @@ jobs:
       - name: Tjek interne links
         run: node audit-interne-links.mjs
 
+      # Sidste tjek sker på det FÆRDIGE site, ikke på kilden. De to tjek
+      # ovenfor læser markdown og kan derfor ikke se, om schema kan parses,
+      # om canonical passer, eller om en 301 peger videre til endnu en 301.
+      # Dobbelttjekket 20/9-2026 fandt 40 sådanne kæder, som ingen af de
+      # eksisterende tjek kunne opdage. Buildet tager ~17 sekunder.
+      - name: Byg sitet
+        run: npm run build
+
+      - name: Tjek det færdige site
+        run: node audit-site.mjs
+
       - name: Gem ændringer (Commit & Push)
         run: |
           git config --global user.name 'github-actions[bot]'

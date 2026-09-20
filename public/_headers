@@ -11,10 +11,18 @@
 # Bevidst udeladt: Content-Security-Policy. En CSP der er stram nok til at gøre
 # gavn skal whiteliste AdSense, GA4 og YouTube præcist, og en fejl slukker for
 # annoncerne uden varsel. Tages separat med ordentlig test.
+#
+# X-Robots-Tag må IKKE indeholde "index, follow". Headeren gælder hver eneste
+# adresse, også de 61 sider (søgning, side 2+ af tags, 404) der selv siger
+# <meta name="robots" content="noindex">. Google lægger header og meta oven i
+# hinanden og tager det mest restriktive, men to modsatrettede signaler er
+# stadig en fejl at rette, ikke at leve med. "index, follow" er standard i
+# forvejen, så vi mister intet ved at lade den stå tom. Visnings-direktiverne
+# (snippet/preview) gælder derimod fint for alle sider og bliver stående.
 
 /*
   X-Agent-Ready: true
-  X-Robots-Tag: index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1
+  X-Robots-Tag: max-snippet:-1, max-image-preview:large, max-video-preview:-1
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=()

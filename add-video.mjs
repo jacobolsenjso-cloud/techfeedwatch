@@ -662,6 +662,28 @@ async function run() {
       }
     }
 
+    // Længdeværn. Prompten beder om 40-62 tegn, men en instruks er ikke en
+    // spærring: målt 20/9 stod 3 titler på 71-76 tegn, og alle tre kom fra
+    // spørgsmåls-fallbacken ovenfor, som kopierer søgespørgsmålet råt.
+    // Google klipper titlen omkring 60 tegn, så resten er spildt plads.
+    // Vi beder om én forkortelse og accepterer kun et svar, der stadig
+    // indeholder søgeordene — kortere er godt, men ikke på bekostning af dem.
+    if (safeTitle.length > 65) {
+      console.log(`✂️  Overskriften er ${safeTitle.length} tegn — beder om en kortere`);
+      try {
+        const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 256, temperature: 0.3 } })
+          .generateContent(`Shorten this headline to at most 62 characters. Keep the same meaning and keep the words a searcher would type. Natural English, Title Case, no ampersand, no quotes. If it is a question, it stays a question. Output the headline only.\n\nHeadline: ${safeTitle}`);
+        const ny = pubCase((rep.response.text() || '').split('\n')[0].replace(/^["“']|["”']$/g, '').replace(/"/g, "'").replace(/\s*&\s*/g, ' and ').trim());
+        const beholderOrd = !targetQuestion || manglendeKerneord(ny, targetQuestion).length === 0;
+        if (ny.length >= 25 && ny.length <= 65 && beholderOrd) {
+          console.log(`✂️  ${safeTitle.length} → ${ny.length} tegn: "${ny}"`);
+          safeTitle = ny;
+        } else {
+          console.log(`✂️  Forkortelsen blev ikke brugt (${ny.length} tegn, søgeord bevaret: ${beholderOrd}) — beholder den lange.`);
+        }
+      } catch (e) { console.log(`   forkortelse fejlede: ${e.message}`); }
+    }
+
     const baseSlug = slugify(safeTitle) || videoId.toLowerCase();
     const slug = erstatSlug || resolveUniqueSlug(baseSlug, videoId);
     const rawTagsList = tagsMatch ? tagsMatch[1].split(',').map(t => t.trim()) : [];

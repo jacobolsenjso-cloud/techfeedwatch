@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to AI and Money"
 slug: "ultimate-guide-to-making-money-with-ai"
-description: "What 111 videos from Bloomberg, CNBC, Y Combinator and TED actually say about AI and money — where the revenue really is, and why most of the promises are about someone else's business."
+description: "What 111 videos from Bloomberg, CNBC, Y Combinator and TED actually say about AI and money — where the revenue is, and whose business the promises serve."
 tags: ["Business & Money"]
 category: "Business & Money"
 date: "2026-07-23"

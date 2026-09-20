@@ -8,7 +8,10 @@ import interLatinWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-n
 import RelatedTools from '../components/RelatedTools.astro';
 import { findTool } from '../lib/tools';
 
-const { title, description, image, imageWidth, imageHeight, schema, noindex } = Astro.props;
+// nocanonical: kun til 404-siden. Den bliver serveret på hver eneste adresse,
+// der ikke findes, så en canonical ville pege alle døde adresser hen på
+// /404/ — en side der ikke selv findes. Ingen canonical er det ærlige svar.
+const { title, description, image, imageWidth, imageHeight, schema, noindex, nocanonical } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 // Værktøjssider får automatisk relaterede værktøjer nederst. Kun rigtige
@@ -397,7 +400,7 @@ const siteSchema = [
 
 
     <meta name="description" content={description || defaultDesc} />
-    <link rel="canonical" href={canonicalURL} />
+    {!nocanonical && <link rel="canonical" href={canonicalURL} />}
     <link rel="alternate" type="application/rss+xml" title="Tech Feed Watch RSS" href="https://techfeedwatch.com/rss.xml" />
     {noindex && <meta name="robots" content="noindex, follow" />}
 

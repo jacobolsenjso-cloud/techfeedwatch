@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to Automation"
 slug: "ultimate-guide-to-automation"
-description: "What 50 videos on automation actually show — that it stopped being about connecting apps and became about agents that decide, and that most of the coverage is about where that breaks."
+description: "What 50 videos on automation actually show — that it stopped being about connecting apps and became about agents that decide, and where that breaks."
 tags: ["Automation"]
 category: "Automation"
 date: "2026-07-23"

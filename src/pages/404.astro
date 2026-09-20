@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Page Not Found" description="The page you were looking for could not be found on Tech Feed Watch." noindex={true}>
+<MainLayout title="Page Not Found" description="The page you were looking for could not be found on Tech Feed Watch." noindex={true} nocanonical={true}>
   <style is:global>
     .notfound-wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; width: 100%; box-sizing: border-box; }
     .notfound-code { font-size: clamp(5rem, 18vw, 9rem); font-weight: 800; line-height: 1; letter-spacing: -0.04em; margin: 0; background: linear-gradient(135deg, #0891b2, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
