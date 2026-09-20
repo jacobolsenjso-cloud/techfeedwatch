@@ -131,16 +131,25 @@ function hashString(str) {
 // 386 blev omskrevet med spredte former; rotationen her sørger for at nye
 // artikler fødes varierede i stedet for at skulle repareres bagefter.
 // Formen vælges deterministisk af videoId (afkoblet fra artikel-profilen via
-// eget salt), så fordelingen bliver ~25% kolon, ~12% spørgsmål, resten udsagn.
+// eget salt), så fordelingen bliver 25% kolon, 37,5% spørgsmål, resten udsagn.
+//
+// Rettet 20/9: spørgsmålsformen gik fra 1 af 8 former (målt 10,2% på arkivet)
+// til 3 af 8. Hvorfor: Googles egne tal (Caleb Ulku 4/8-2026) viser at
+// søgninger på 1-3 ord udløser et AI-svar 23% af tiden, mens søgninger på 6+
+// ord gør det 77% — og at AI-systemer matcher spørgsmålet i brugerens EGNE
+// ord mod overskriften. Målt på sitet 20/9: kun 15 af de 42 seneste titler
+// (36%) var spørgsmål mod 51% i arkivet, så rotationen trak den forkerte vej.
+// De tre spørgsmålsformer er bevidst forskellige i karakter, så forsiden ikke
+// får tre ens "What Is ...?"-titler i træk — det var netop problemet 20/8.
 const TITLE_FORMS = [
-  'A plain declarative headline. No colon, no question mark.',
-  'A how/what/why headline WITHOUT a question mark. No colon.',
   'A plain declarative headline. No colon, no question mark. Vary the opening word.',
+  'A how/what/why headline WITHOUT a question mark. No colon.',
+  'A genuine question ending in a question mark. No colon. Use the wording of the search question as closely as it reads naturally.',
   'A two-part headline with ONE colon; the part before the colon is 1-3 words.',
-  'A genuine question ending in a question mark. No colon. The question a searcher would type.',
+  'A question ending in a question mark that names the specific thing or situation it answers, not just the broad topic.',
   'A plain declarative headline. No colon, no question mark. May start with a number if the article genuinely lists things.',
   'A "What ... Means for ..." or "How ... Changes ..." headline. No colon, no question mark.',
-  'A two-part headline with ONE colon; the substance goes after the colon.',
+  'A "How Do You ..." or "What Happens When ..." question ending in a question mark. No colon.',
 ];
 
 // Overskrifts-regler (pubCase, søgeords-værn) ligger i src/lib/headline.mjs,

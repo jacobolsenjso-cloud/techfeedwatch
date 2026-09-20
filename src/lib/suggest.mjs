@@ -20,7 +20,23 @@
 
 // Udvidet 18/9: AR & VR løb tør for ubrugte spørgsmål med de fem første
 // præfikser alene. De nye giver spørgsmål, der stadig kan besvares med fakta.
-const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use', 'is', 'can', 'what does', 'how much does', 'difference between', 'should i'];
+//
+// Udvidet 20/9 EFTER måling, ikke før. Anledningen: Googles tal (Caleb Ulku
+// 4/8-2026) siger at søgninger på 6+ ord udløser et AI-svar 77% af tiden mod
+// 23% for 1-3 ord, så antagelsen var, at længere præfikser gav længere
+// spørgsmål. Målt 20/9 mod den rigtige autocomplete på fire af sitets emner:
+// de 11 gamle præfikser gav 335 forslag, hvoraf 190 (57%) havde 6+ ord — de
+// var altså ALLEREDE gode. Seks nye præfikser blev prøvet; tre forkastet:
+//   'how do i'      33 forslag, median 5 ord — og Google gætter videre
+//                   ("how do i quantum computing" -> "how can i do ...")
+//   'why does my'   14 forslag, median 5 ord
+//   'do i need'     37 forslag, median 5 ord
+// Tre beholdt, fordi de næsten kun giver lange spørgsmål:
+//   'how long does it take to'  22 forslag, 21 med 6+ ord, median 9
+//   'what is the best way to'   17 forslag, 17 med 6+ ord, median 7
+//   'what happens when'         16 forslag, 12 med 6+ ord, median 8
+// Lære: antagelsen holdt for 3 af 6. Præfikser tilføjes kun efter måling.
+const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use', 'is', 'can', 'what does', 'how much does', 'difference between', 'should i', 'how long does it take to', 'what is the best way to', 'what happens when'];
 
 // Ord der afslører en søgning sitet ikke skal skrive til: køb, kurser, priser,
 // og lande-varianter der peger på lokal lovgivning vi ikke dækker.
