@@ -73,10 +73,13 @@ function adresserFraSitemap() {
 // En adresse indsendes først, når den faktisk svarer. Bliver den indsendt,
 // før Cloudflare har lagt den ud, henter søgemaskinen en 404 og lærer det
 // modsatte af, hvad vi ville sige.
+//
 // Svarer med ÅRSAGEN, ikke bare ja/nej. Et bart "false" kostede os første
 // kørsel: alle 100 adresser blev sprunget over, jobbet blev grønt, og loggen
 // kunne ikke fortælle om det var en 403, en timeout eller en DNS-fejl.
-async function tjekAdresse(url) {
+const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function tjekAdresse(url, forsoeg = 0) {
   try {
     const r = await fetch(`${url}?indexnow=${Date.now()}`, {
       method: 'HEAD',
@@ -86,8 +89,20 @@ async function tjekAdresse(url) {
       headers: { 'user-agent': `${VAERT}-indexnow/1.0 (+${BASIS})` },
       signal: AbortSignal.timeout(15000),
     });
+    // Cloudflare afviser det allerførste hold fra en ukendt maskine og
+    // lukker op bagefter. Målt 20/9: præcis de 8 første adresser fik 403,
+    // de øvrige 92 fik 200. Ét forsøg mere efter en pause koster os intet,
+    // når alt går godt, og redder de 8, når det ikke gør.
+    if ([403, 429, 503].includes(r.status) && forsoeg === 0) {
+      await pause(3000);
+      return tjekAdresse(url, 1);
+    }
     return { ok: r.status === 200, grund: `HTTP ${r.status}` };
   } catch (e) {
+    if (forsoeg === 0) {
+      await pause(3000);
+      return tjekAdresse(url, 1);
+    }
     return { ok: false, grund: `netværk: ${e.cause?.code || e.name || e.message}` };
   }
 }
