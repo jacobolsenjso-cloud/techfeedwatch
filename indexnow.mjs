@@ -73,12 +73,22 @@ function adresserFraSitemap() {
 // En adresse indsendes først, når den faktisk svarer. Bliver den indsendt,
 // før Cloudflare har lagt den ud, henter søgemaskinen en 404 og lærer det
 // modsatte af, hvad vi ville sige.
-async function erLive(url) {
+// Svarer med ÅRSAGEN, ikke bare ja/nej. Et bart "false" kostede os første
+// kørsel: alle 100 adresser blev sprunget over, jobbet blev grønt, og loggen
+// kunne ikke fortælle om det var en 403, en timeout eller en DNS-fejl.
+async function tjekAdresse(url) {
   try {
-    const r = await fetch(`${url}?indexnow=${Date.now()}`, { method: 'HEAD', redirect: 'follow' });
-    return r.status === 200;
-  } catch {
-    return false;
+    const r = await fetch(`${url}?indexnow=${Date.now()}`, {
+      method: 'HEAD',
+      redirect: 'follow',
+      // Uden et navn sender Node ingen User-Agent, og en bot uden navn er
+      // det første en firewall afviser. Nu kan vi også kendes i logfilerne.
+      headers: { 'user-agent': `${VAERT}-indexnow/1.0 (+${BASIS})` },
+      signal: AbortSignal.timeout(15000),
+    });
+    return { ok: r.status === 200, grund: `HTTP ${r.status}` };
+  } catch (e) {
+    return { ok: false, grund: `netværk: ${e.cause?.code || e.name || e.message}` };
   }
 }
 
@@ -96,13 +106,33 @@ async function main() {
 
   // Tjek at de er live, højst 8 ad gangen så vi ikke hamrer på vores eget site
   const live = [];
+  const afvist = new Map(); // årsag -> adresser
   for (let i = 0; i < udvalgte.length; i += 8) {
     const hold = udvalgte.slice(i, i + 8);
-    const svar = await Promise.all(hold.map(erLive));
-    hold.forEach((u, j) => (svar[j] ? live.push(u) : console.log(`  springer over (ikke live endnu): ${u}`)));
+    const svar = await Promise.all(hold.map(tjekAdresse));
+    hold.forEach((u, j) => {
+      if (svar[j].ok) live.push(u);
+      else afvist.set(svar[j].grund, [...(afvist.get(svar[j].grund) || []), u]);
+    });
+  }
+
+  // Årsagerne samlet i grupper. 100 ens linjer skjuler mønsteret; tre
+  // grupper med tal viser med det samme, om det er sitet eller netværket.
+  for (const [grund, urls] of [...afvist].sort((a, b) => b[1].length - a[1].length)) {
+    console.log(`  ${urls.length} sprunget over — ${grund}`);
+    for (const u of urls.slice(0, 3)) console.log(`      ${u}`);
+    if (urls.length > 3) console.log(`      … og ${urls.length - 3} mere`);
   }
   console.log(`${live.length} af ${udvalgte.length} svarer 200 og sendes.`);
-  if (!live.length) return;
+
+  // Ingen adresser sendt er IKKE en succes. Gik jobbet grønt her, ville vi
+  // tro, IndexNow kørte, mens der i virkeligheden ikke blev sendt noget —
+  // samme slags tavse fejl som de 25 tomme artikler, der lå ude i tre uger.
+  if (!live.length) {
+    console.error('❌ Ingen adresser bestod live-tjekket. Se årsagerne ovenfor.');
+    process.exitCode = 1;
+    return;
+  }
 
   if (toer) {
     console.log('--dry-run: sender ikke. Ville sende:');
