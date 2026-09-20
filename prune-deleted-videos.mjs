@@ -1,6 +1,16 @@
+// Fjerner artikler, hvis YouTube-video er væk (slettet, privat eller kanal lukket).
+//
+// Rettet 20/9-2026: scriptet slettede før KUN filen. Målt samme dag: 38 gamle
+// adresser sendte Google videre til en 404, fordi to artikler var fjernet her
+// uden 301'er, og 36 eksisterende regler pegede på den ene. Nu gør scriptet det
+// samme som slet-artikler.mjs — og ét skridt mere, som den mangler: eksisterende
+// regler, der pegede på den fjernede artikel, flyttes med. Reglerne ligger i
+// src/lib/fjern-artikel.mjs, så begge scripts kan dele dem.
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
+import { alleArtikler, laesArtikel, bedsteErstatning, fjernIndgaaendeLinks, opdaterRedirects } from './src/lib/fjern-artikel.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 const VIDEOS_DIR = './src/content/videos';
@@ -89,10 +99,33 @@ async function run() {
     process.exit(1);
   }
 
+  // Erstatninger findes FØR sletningen, så "de overlevende" er korrekt opgjort.
+  const doedeSlugs = new Set(dead.map((e) => e.file.replace(/\.md$/, '')));
+  const overlever = alleArtikler().filter((a) => !doedeSlugs.has(a.slug));
+  const fjernede = dead.map((e) => {
+    const slug = e.file.replace(/\.md$/, '');
+    const a = laesArtikel(slug);
+    const til = bedsteErstatning(a, overlever);
+    console.log(`   ${slug}\n      → ${til.url}  (${til.tekst})`);
+    return { slug, youtubeId: a.youtubeId || e.id, nyUrl: til.url };
+  });
+
   if (!APPLY) {
-    console.log(`\nTØR-TEST: ingen filer slettet. Kør 'node prune-deleted-videos.mjs --apply' for at slette dem.`);
+    const plan = opdaterRedirects(fjernede, { dry: true });
+    const links = fjernede.reduce((n, f) => n + fjernIndgaaendeLinks(f.slug, { dry: true }), 0);
+    console.log(`\nTØR-TEST: ingen filer slettet, intet skrevet.`);
+    console.log(`   Ville skrive ${plan.nyeRegler} nye 301-regler og flytte ${plan.flyttede} eksisterende regler med.`);
+    console.log(`   Ville fjerne ${links} indgående link(s) inde på sitet.`);
+    console.log(`   Kør 'node prune-deleted-videos.mjs --apply' for at gøre det rigtigt.`);
     return;
   }
+
+  // Rækkefølge med vilje: links og redirects FØRST, filerne til sidst. Går noget
+  // galt undervejs, står artiklen der stadig — bedre end en 404 uden redirect.
+  let linksFjernet = 0;
+  for (const f of fjernede) linksFjernet += fjernIndgaaendeLinks(f.slug);
+  const { nyeRegler, flyttede } = opdaterRedirects(fjernede);
+  console.log(`\n${nyeRegler} nye 301-regler skrevet, ${flyttede} eksisterende regler flyttet med, ${linksFjernet} indgående link(s) fjernet.`);
 
   let deleted = 0;
   for (const e of dead) {
@@ -106,7 +139,8 @@ async function run() {
       console.log(`❌ Kunne ikke slette ${e.file}: ${err.message}`);
     }
   }
-  console.log(`\n✅ Færdig. ${deleted} døde video-filer fjernet.`);
+  execSync('node sort-redirects.mjs', { stdio: 'inherit' });
+  console.log(`\n✅ Færdig. ${deleted} døde video-filer fjernet, alle med 301 til en levende side.`);
 }
 
 run();
