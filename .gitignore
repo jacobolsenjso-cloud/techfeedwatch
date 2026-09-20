@@ -43,4 +43,10 @@ _*.out
 _*.err
 _*.json
 _*.ps1
+# Tilføjet 20/9-2026: engangs-scripts fra arbejdssessioner (test-, tjek- og
+# rettescripts). De hører ikke i repoet, men lå og rodede i `git status`.
+# Rammer kun filer der BEGYNDER med _ — sitets egne scripts (sort-redirects.mjs,
+# og-card.mjs osv.) og de sporede public/_headers og public/_redirects er uberørt.
+_*.mjs
+_*.py
 
