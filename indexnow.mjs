@@ -131,6 +131,27 @@ async function main() {
     });
   }
 
+  // Sidste forsøg på de afviste — til SIDST, når forbindelsen er varm.
+  //
+  // Hvorfor det her og ikke bare et længere genforsøg: målt over tre
+  // kørsler 20.-21/9 rammer afvisningen altid de FØRSTE adresser i
+  // rækken, og de står forrest igen næste gang, fordi hukommelsen kun
+  // husker det, der blev sendt. Seks adresser var derfor hængt fast og
+  // ville aldrig komme ud. Genforsøget på tre sekunder var for kort;
+  // efter en hel kørsels trafik lukker Cloudflare op. Koster kun noget,
+  // når der faktisk er blevet afvist noget.
+  if (afvist.size) {
+    const tilbage = [...afvist.values()].flat();
+    console.log(`Sidste forsøg på ${tilbage.length} afviste, nu hvor forbindelsen er varm…`);
+    afvist.clear();
+    for (const u of tilbage) {
+      const svar = await tjekAdresse(u);
+      if (svar.ok) live.push(u);
+      else afvist.set(svar.grund, [...(afvist.get(svar.grund) || []), u]);
+      await pause(400);
+    }
+  }
+
   // Årsagerne samlet i grupper. 100 ens linjer skjuler mønsteret; tre
   // grupper med tal viser med det samme, om det er sitet eller netværket.
   for (const [grund, urls] of [...afvist].sort((a, b) => b[1].length - a[1].length)) {
