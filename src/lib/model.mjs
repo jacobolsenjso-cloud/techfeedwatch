@@ -3,7 +3,16 @@
 // Modelnavn: 16/9 svarede Google "gemini-2.5-flash is no longer available to
 // new users" på den nye gratis-nøgle — kun gemini-3.6-flash tilbydes nye
 // projekter. Før stod navnet 22 steder; nu ét. Kan overstyres med GEMINI_MODEL.
-export const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+//
+// 21/9: hævet til gemini-3.8-flash. Målt før skiftet: nøglen kan se 3.5, 3.6,
+// 3.7 og 3.8, og et rigtigt kald til 3.8 svarede HTTP 200. Prisen er den
+// SAMME som 3.6 ($0,75 ind / $3,75 ud pr. mio. tokens), så skiftet koster
+// ikke mere. Bemærk: Google fordobler begge priser 1. januar 2027.
+//
+// Vi opdagede det, fordi en artikel på sitet kaldte 3.6 "Google's fastest AI
+// model to date", mens 3.8 var udkommet. Robotten selv var altså også
+// bagud — samme mønster, et sted ingen kiggede.
+export const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
 // Prøv igen: gratis-niveauet står bagerst i køen, og Google svarer af og til
 // 503 "high demand" eller 429 (for mange kald). Målt 16/9: faktaark-kaldet
