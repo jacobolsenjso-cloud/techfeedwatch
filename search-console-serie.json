@@ -1,0 +1,29 @@
+{
+  "_om": "Måleserie fra Google Search Console. Ét punkt pr. aflæsning. Tallene tastes IKKE fra hukommelsen — de aflæses i Search Console og skrives her samme dag. Se serie.mjs for kontrollerne.",
+  "_felter": {
+    "dato": "aflæsningsdagen, ikke datoen for Googles data (den halter 2-3 dage)",
+    "indekseret": "Søgekonsollens tal for indekserede sider",
+    "ikkeIndekseret": "Søgekonsollens tal for ikke-indekserede sider",
+    "aarsager": "opdelingen under 'Derfor indekseres siderne ikke'. Summen SKAL give ikkeIndekseret — serie.mjs siger fra, hvis den ikke gør",
+    "effektivitet": "de seneste 28 dage: klik, eksponeringer, klikrate i procent, gennemsnitlig position"
+  },
+  "punkter": [
+    {
+      "dato": "2026-09-21",
+      "indekseret": 82,
+      "ikkeIndekseret": 763,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 483,
+        "Side med omdirigering": 130,
+        "Dublet uden kanonisk side valgt af brugeren": 67,
+        "Ikke fundet (404)": 62,
+        "Crawlet - endnu ikke indekseret": 17,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": { "klik": 19, "eksponeringer": 110, "klikrate": 17.3, "position": 12.3 },
+      "note": "Nulpunkt. Af de 82 indekserede er kun 23 nuværende artikeladresser; 15 er ikke-artikler (forside, /about/, /library/, /start-here/, /privacy-policy/, /terms/ og ni emnesider) og 44 er gamle /video/<video-id>-adresser, hvoraf fire er talt to gange med og uden skraastreg. Sitet havde 390 artikler den dag. Aflaest FOER dagens aendringer naaede at virke: IndexNow (20/9), de 829 redirect-maal og de seks datofaestede paastande (21/9)."
+    }
+  ]
+}
