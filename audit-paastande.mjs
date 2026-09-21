@@ -27,9 +27,9 @@
 //                        udgivelse, og det sker hver 3.-4. uge.
 //   4. RELATIV TID       "early last year", "recently". Ordene rådner uden
 //                        at teksten ændrer sig.
-//   5. UINDFRIET SIKKERHED
-//                        "currently" uden noget tal bagved. Der er ingen
-//                        påstand at tjekke — ordet kan bare slettes.
+//   5. RÅDNENDE HENVISNING
+//                        "the latest release of X" — peger på noget bestemt,
+//                        der bliver afløst, uden at teksten ændrer sig.
 //
 // Brug:
 //   node audit-paastande.mjs              skriver rapport + register
@@ -92,7 +92,18 @@ const FREMAD = /\b(?:will|would|expected|projected|predict\w*|forecast\w*|sugges
 const ALMEN_NYESTE = /\bthe latest (?:news|information|updates?|trends?|data|research|developments?)\b/i;
 
 const RELATIV = /\b(?:early last year|late last year|last year|this year|next year|last month|recently|these days|as of (?:today|now)|right now)\b/i;
-const BLOED = /\b(?:currently|at present|the latest|newest|expected to|projected to|is set to)\b/i;
+// En HENVISNING til "den nyeste udgave" af noget bestemt rådner: udgaven
+// bliver afløst, men sætningen står stille.
+//
+// Første udgave af regel 5 flagede i stedet ethvert forbehold ("currently",
+// "expected to") i en artikel uden konkrete tal. Det gav 72 fund — og da de
+// blev læst igennem, var 69 af dem KORREKT sprogbrug: "AI currently struggles
+// with nuanced communication", "what VMs are currently running". At slette
+// ordet dér ville gøre teksten mere absolut, end den har dækning for, altså
+// gøre artiklen dårligere. Jeg havde selv sagt, at ordet "bare kunne
+// slettes"; målingen sagde nej. 69 støjlinjer ville desuden have lært os at
+// se bort fra rapporten — og et tjek, man ignorerer, er intet tjek.
+const RAADNENDE = /\b(?:the latest|the newest|the most recent)\s+(?:\w+\s+){0,2}(?:release|version|model|update|iteration|generation)\b/i;
 const HAARD = /(?:\$\s?\d|\b\d[\d.,]*\s?(?:billion|million|trillion|percent|%|GB|TB|GHz|ms|tokens?|qubits?|ETH|BTC)\b|\b(?:GPT|Gemini|Claude|Llama|Grok|Mistral|DeepSeek|Qwen)[-\s]?\d)/i;
 
 function find(alle) {
@@ -127,11 +138,10 @@ function find(alle) {
       if (RELATIV.test(s) && HAARD.test(s)) {
         tilfoej(4, 'relativ tid', a, s, `"${s.match(RELATIV)[0]}" betyder noget andet nu end da det blev skrevet`);
       }
-    }
-    // 5. Uindfriet sikkerhed — hele artiklen, ikke sætningen: siger den
-    //    "currently" uden nogen steder at have et tal, er der intet at tjekke.
-    if (BLOED.test(a.tekst) && !HAARD.test(a.tekst)) {
-      tilfoej(5, 'uindfriet sikkerhed', a, (a.tekst.match(new RegExp(`[^.!?]*${BLOED.source}[^.!?]*[.!?]`, 'i')) || [''])[0].replace(/\s+/g, ' ').trim(), 'sikker formulering uden et eneste konkret tal');
+      // 5. Rådnende henvisning — sætning for sætning, ikke hele artiklen.
+      if (RAADNENDE.test(s)) {
+        tilfoej(5, 'rådnende henvisning', a, s, `"${s.match(RAADNENDE)[0]}" peger på noget, der bliver afløst`);
+      }
     }
   }
   return fund;
