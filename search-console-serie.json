@@ -2,6 +2,7 @@
   "_om": "Måleserie fra Google Search Console. Ét punkt pr. aflæsning. Tallene tastes IKKE fra hukommelsen — de aflæses i Search Console og skrives her samme dag. Se serie.mjs for kontrollerne.",
   "_felter": {
     "dato": "aflæsningsdagen, ikke datoen for Googles data (den halter 2-3 dage)",
+    "adresser": "antal <loc> i sitemap-0.xml den dag (tælles på det levende site: curl sitemap-0.xml | grep -c '<loc>'). Bruges til at trække vækst fra: en ny adresse er ikke-indekseret fra start, så 'ikkeIndekseret' vokser af sig selv. ADVARSEL: Søgekonsollen kender FLERE adresser end sitemappet (845 mod 529 den 21/9 — resten er gamle /video/<id>-adresser), så divider aldrig 'indekseret' med 'adresser'",
     "indekseret": "Søgekonsollens tal for indekserede sider",
     "ikkeIndekseret": "Søgekonsollens tal for ikke-indekserede sider",
     "aarsager": "opdelingen under 'Derfor indekseres siderne ikke'. Summen SKAL give ikkeIndekseret — serie.mjs siger fra, hvis den ikke gør",
@@ -10,6 +11,7 @@
   "punkter": [
     {
       "dato": "2026-09-21",
+      "adresser": 529,
       "indekseret": 82,
       "ikkeIndekseret": 763,
       "aarsager": {
