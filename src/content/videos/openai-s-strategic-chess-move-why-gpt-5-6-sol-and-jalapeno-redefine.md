@@ -18,7 +18,7 @@ thumbMax: true
 isShort: false
 faqs:
   - question: "What is GPT-5.6 Sol?"
-    answer: "GPT-5.6 Sol is the most powerful model in OpenAI's new family of frontier AI systems. It is designed for complex tasks, showing major gains in agentic coding, biology workflows, and cybersecurity."
+    answer: "GPT-5.6 Sol is the most powerful model in the GPT-5.6 family of frontier AI systems. It is designed for complex tasks, showing major gains in agentic coding, biology workflows, and cybersecurity."
   - question: "Why is access to GPT-5.6 Sol currently limited?"
     answer: "Access to GPT-5.6 Sol is limited to a small group of trusted partners because the US government requested restrictions due to concerns over the safety risks of advanced AI models. OpenAI is working with the administration to establish a framework for future releases."
   - question: "What is the Jalapeño chip and what is its purpose?"
@@ -32,7 +32,7 @@ OpenAI's GPT-5.6 Sol is the flagship model in the company's newest family of fro
 
 ### The GPT-5.6 Model Family and Its Capabilities
 
-The GPT-5.6 family includes three distinct models, each tailored for specific applications. GPT-5.6 Sol is the most powerful, designed for demanding workflows. It features a "max reasoning effort" mode for deeper problem-solving and an "ultra mode" that uses coordinated sub-agents to tackle tasks beyond a single AI agent. This multi-agent approach is particularly useful for technical work and coding, allowing the system to divide and conquer complex problems.
+The GPT-5.6 family includes three distinct models, each tailored for specific applications. GPT-5.6 Sol is the most powerful of the three, designed for demanding workflows. It features a "max reasoning effort" mode for deeper problem-solving and an "ultra mode" that uses coordinated sub-agents to tackle tasks beyond a single AI agent. This multi-agent approach is particularly useful for technical work and coding, allowing the system to divide and conquer complex problems.
 
 The family also includes Terra, a balanced model for everyday use, and Luna, a faster, more cost-effective option for lighter workloads. OpenAI reports that Sol sets a new standard on Terminal Bench 2.1 for terminal-based coding and agentic workflows. It also delivers stronger results on Gene Bench V1 compared to GPT-5.5, while using fewer processing tokens. This efficiency means agents can run more cheaply and easily at scale. For instance, Sol is competitive with Anthropic's Claude Mythos 5 preview in coding tasks, using about a third of the output tokens.
 

@@ -18,7 +18,7 @@ thumbMax: true
 isShort: false
 faqs:
   - question: "Can I use Google Gemini on my iPhone?"
-    answer: "Yes, you can download the Google Gemini app directly from the App Store on your iPhone. The latest version, powered by Gemini 3.5 Flash, is available now."
+    answer: "Yes, you can download the Google Gemini app directly from the App Store on your iPhone. As of July 2026, the app shipped with Gemini 3.5 Flash; Google has released newer Flash models since."
   - question: "What is Gemini Spark?"
     answer: "Gemini Spark is a personal AI agent that runs 24/7 in the background from Google's cloud. It can perform multi-step tasks like research or workflow management, taking instructions via email, text, or the Gemini app."
   - question: "Do Google's new Android XR audio glasses work with iPhones?"
@@ -32,7 +32,7 @@ Google Gemini on Android refers to Google's advanced artificial intelligence mod
 
 ### Gemini 3.5 Flash: Powering Smarter Experiences
 
-Google recently introduced Gemini 3.5 Flash, a significantly faster version of its AI model. This update powers many Google products, including the Gemini app itself and Google Search. The model is designed for speed and efficiency, allowing for quicker responses and more dynamic interactions. Users with an iPhone can download the Gemini app from the App Store today to experience this updated version. This cross-platform availability shows Google's strategy to make its AI services accessible regardless of the user's primary device. There is also speculation that a version of Google's Gemini will power the next iteration of Siri on Apple devices, highlighting its growing influence beyond Google's own hardware.
+In July 2026, Google introduced Gemini 3.5 Flash, a significantly faster version of its AI model. This update powers many Google products, including the Gemini app itself and Google Search. The model is designed for speed and efficiency, allowing for quicker responses and more dynamic interactions. Users with an iPhone can download the Gemini app from the App Store today to experience this updated version. This cross-platform availability shows Google's strategy to make its AI services accessible regardless of the user's primary device. There is also speculation that a version of Google's Gemini will power the next iteration of Siri on Apple devices, highlighting its growing influence beyond Google's own hardware.
 
 ### Gemini Spark: The Always-On AI Agent
 

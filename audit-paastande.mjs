@@ -91,6 +91,16 @@ const FREMAD = /\b(?:will|would|expected|projected|predict\w*|forecast\w*|sugges
 // vendinger stod for det eneste falske fund i regel 3.
 const ALMEN_NYESTE = /\bthe latest (?:news|information|updates?|trends?|data|research|developments?)\b/i;
 
+// En påstand holder op med at rådne, når den bliver bundet til et tidspunkt
+// eller til et afgrænset felt. "Gemini 3.6 var den hurtigste Flash-model i juli
+// 2026" er sand for altid; "Gemini 3.6 er den hurtigste" er det ikke. Uden de
+// to undtagelser ville vagten melde vores EGNE rettelser som fejl, og en
+// rapport, der nager om det, der lige er bragt i orden, bliver ikke læst.
+const DATOFÆSTET = /\b(?:was|were)\b[^.]*\b(?:19|20)\d\d\b|\b(?:as of|at the time of|when it (?:launched|shipped)|at launch|in (?:January|February|March|April|May|June|July|August|September|October|November|December) (?:19|20)\d\d)\b/i;
+// Bemærk `[\w\s.-]` og ikke `[^.,]`: første udgave afviste prikken i
+// "GPT-5.6 family" og meldte derfor en afgrænset påstand som ubegrænset.
+const AFGRÆNSET = /\b(?:in|of|within|among|across) the [\w\s.-]{0,40}\b(?:family|line|series|range|lineup|generation)\b|\bof the (?:three|two|four|five)\b/i;
+
 const RELATIV = /\b(?:early last year|late last year|last year|this year|next year|last month|recently|these days|as of (?:today|now)|right now)\b/i;
 // En HENVISNING til "den nyeste udgave" af noget bestemt rådner: udgaven
 // bliver afløst, men sætningen står stille.
@@ -126,12 +136,13 @@ function find(alle) {
         const p = m[1][0].toUpperCase() + m[1].slice(1).toLowerCase();
         const v = parseFloat(m[2]);
         const top = nyeste.get(p);
-        if (top && v < top && SUPERLATIV.test(s)) {
+        if (top && v < top && SUPERLATIV.test(s) && !DATOFÆSTET.test(s) && !AFGRÆNSET.test(s)) {
           tilfoej(2, 'sitet modsiger sig selv', a, s, `kalder ${p} ${v} nyest/bedst, men sitet nævner selv ${p} ${top}`);
         }
       }
       // 3. Superlativ om et navngivet produkt — udløber ved næste udgivelse.
-      if (SUPERLATIV.test(s) && new RegExp(`\\b(?:${PRODUKTER.join('|')})\\b`, 'i').test(s) && !ALMEN_NYESTE.test(s)) {
+      if (SUPERLATIV.test(s) && new RegExp(`\\b(?:${PRODUKTER.join('|')})\\b`, 'i').test(s)
+          && !ALMEN_NYESTE.test(s) && !DATOFÆSTET.test(s) && !AFGRÆNSET.test(s)) {
         tilfoej(3, 'superlativ med udløbsdato', a, s, 'superlativ om et navngivet produkt');
       }
       // 4. Relativ tid — ordene rådner, teksten står stille.
