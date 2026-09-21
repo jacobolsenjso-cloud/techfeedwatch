@@ -1,0 +1,57 @@
+name: Vagt over påstande
+
+# Kigger arkivet efter påstande, der kan være holdt op med at passe, og
+# skriver en rapport. Baggrund og de fem regler står øverst i
+# audit-paastande.mjs.
+#
+# Hvorfor et SELVSTÆNDIGT job og ikke et trin i robotten: et forældet tal i
+# en to måneder gammel artikel er ingen grund til at holde dagens artikel
+# tilbage. Lå tjekket i robottens workflow, ville et fund enten standse
+# udgivelsen eller skulle ignoreres — og et tjek, man har lært at ignorere,
+# er intet tjek. Her kan det fejle uden at koste noget andet.
+#
+# Hvorfor ugentligt og ikke dagligt: påstande udløber ikke i døgndrift. En
+# rapport, der kommer hver dag og ser ens ud, bliver ikke læst.
+#
+# Stoppes: sæt # foran de to schedule-linjer.
+
+on:
+  schedule:
+    # Mandag morgen på et skævt minut — GitHub nedprioriterer cron på hele
+    # timer, og tidsplanen er "best effort": målt 20.-21/9 kom to kørsler på
+    # tretten timer, hvor fire var planlagt. Til en ugentlig rapport er det
+    # rigeligt.
+    - cron: "23 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  paastande:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Vagten læser kun markdown — ingen afhængigheder, intet byg, ingen
+      # nøgler. Derfor heller ingen `npm install`.
+      - name: Kig arkivet igennem
+        run: node audit-paastande.mjs
+
+      - name: Gem rapport og register
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add paastande.json paastande-rapport.md
+          if git commit -m "Vagt: update claim register and report"; then
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen ændringer siden sidste kørsel."
+          fi
