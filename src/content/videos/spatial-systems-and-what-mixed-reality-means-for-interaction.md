@@ -5,6 +5,7 @@ channelTitle: "In Simple Terms with Satish"
 channelId: "UC05TUGGyvXyXmYKuqOgwyPg"
 publishedAt: "2026-08-05T16:10:05Z"
 date: "2026-09-18"
+updated: "2026-09-20"
 tags:
   - "AR & VR"
   - "Hardware & Chips"

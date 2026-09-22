@@ -6,6 +6,7 @@ channelTitle: "MacRumors"
 channelId: "UCaFGDBmGK_jw66u3av2Ysjw"
 publishedAt: "2026-05-27T13:21:24Z"
 date: "2026-07-27"
+updated: "2026-09-21"
 tags:
   - "AR & VR"
   - "Productivity"

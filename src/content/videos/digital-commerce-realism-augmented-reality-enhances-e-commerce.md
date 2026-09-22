@@ -5,6 +5,7 @@ channelTitle: "Vizbl | AR & AI Shopping Experiences"
 channelId: "UCXP8O9Gaif841UMROBrR_HA"
 publishedAt: "2026-08-01T10:46:48Z"
 date: "2026-08-23"
+updated: "2026-09-20"
 tags:
   - "AR & VR"
   - "Business & Money"

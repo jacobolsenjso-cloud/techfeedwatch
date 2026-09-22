@@ -6,6 +6,7 @@ channelTitle: "AI Revolution"
 channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
 publishedAt: "2026-06-27T22:20:24Z"
 date: "2026-07-26"
+updated: "2026-09-21"
 tags:
   - "Hardware & Chips"
   - "Business & Money"

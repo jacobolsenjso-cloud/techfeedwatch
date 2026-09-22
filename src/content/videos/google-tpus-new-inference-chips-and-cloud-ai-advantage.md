@@ -6,6 +6,7 @@ channelTitle: "Bloomberg Tech"
 channelId: "UCrM7B7SL_g1edFOnmj-SDKg"
 publishedAt: "2026-04-20T18:10:43Z"
 date: "2026-08-10"
+updated: "2026-09-21"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"
