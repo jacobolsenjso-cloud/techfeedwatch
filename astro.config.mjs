@@ -18,6 +18,29 @@ const shortSlugs = new Set(
     .map((file) => file.replace(/\.md$/, ''))
 );
 
+// Datoer til <lastmod> i sitemappet: slug -> artiklens EGEN dato.
+//
+// Hvorfor ikke byggetidspunktet: så ville alle 529 adresser få samme dato hver
+// gang sitet bygges (flere gange dagligt), og datoen ville være løgn for 388 af
+// dem. Google bruger kun lastmod, når den er konsekvent rigtig, og ignorerer
+// hele filen, hvis den ikke er — så en forkert dato er værre end ingen.
+//
+// Vi bruger `updated` når den findes (sat af stamp-updated.mjs, KUN når teksten
+// faktisk er ændret), ellers `date`. Sider uden en ægte dato — forside, emnesider,
+// glossar, værktøjer — får bevidst INGEN lastmod. Delvis lastmod er tilladt;
+// opdigtet lastmod er ikke.
+const articleDates = new Map(
+  fs.readdirSync(videosDir)
+    .filter((file) => file.endsWith('.md'))
+    .map((file) => {
+      const indhold = fs.readFileSync(path.join(videosDir, file), 'utf-8');
+      const updated = (indhold.match(/^updated:\s*"([^"]+)"/m) || [])[1];
+      const date = (indhold.match(/^date:\s*"([^"]+)"/m) || [])[1];
+      return [file.replace(/\.md$/, ''), updated || date || null];
+    })
+    .filter(([, dato]) => dato)
+);
+
 // --- Auto-glossar-links: byg term -> slug-kort fra glossar-filerne (læses ved build-tid) ---
 //
 // Hvert opslag kan have et aliases-felt med de skrivemåder artiklerne faktisk
@@ -158,6 +181,15 @@ export default defineConfig({
         if (/\/page\/\d+\/?$/.test(pathname)) return false;
         const match = pathname.match(/^\/video\/([^/]+)\/?$/);
         return match ? !shortSlugs.has(match[1]) : true;
+      },
+      // <lastmod> pr. artikel. Se articleDates ovenfor for hvorfor kun artikler
+      // får en dato. Rører vi ikke item'et, kommer der slet ingen lastmod —
+      // hvilket er det rigtige for sider uden en ægte ændringsdato.
+      serialize: (item) => {
+        const match = new URL(item.url).pathname.match(/^\/video\/([^/]+)\/?$/);
+        const dato = match && articleDates.get(match[1]);
+        if (dato) item.lastmod = new Date(dato);
+        return item;
       },
     }),
   ],
