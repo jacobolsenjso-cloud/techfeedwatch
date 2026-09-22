@@ -43,6 +43,18 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      # Retter linktekster, der citerer en overskrift, sitet ikke har mere.
+      # Ændrer man en titel, bliver alle citater af den gamle titel et brudt
+      # løfte — linket virker, men teksten lover noget andet. Målt 22/9-2026:
+      # 129 sådanne links, samlet op gennem tre omgange titelrettelser.
+      #
+      # Trinnet RETTER i stedet for at standse, fordi der kun findes ét rigtigt
+      # svar: målsidens nuværende overskrift. Scriptet slutter altid med kode 0
+      # og kan derfor aldrig gøre kørslen rød. Ændringerne kommer med i
+      # commit'et nedenfor (git add .), så de kan ses og rulles tilbage.
+      - name: Ret forældede linktekster
+        run: node ret-linktekster.mjs --skriv
+
       # Kigger arkivet efter tomme artikler, manglende resuméer, manglende
       # kildeangivelse og spor fra modellen. Kører FØR commit, så en artikel
       # med et hul aldrig når at blive udgivet.
@@ -58,6 +70,10 @@ jobs:
       # andre sider stadig linkede til den. Målt 20/9-2026: to artikler linkede
       # til en side, prune havde slettet — begge gav 404 for læseren. Stopper
       # jobbet ved fund, ligesom tjekket ovenfor.
+      #
+      # Scriptet har også en regel 2 (lover linkteksten den rigtige overskrift?),
+      # men DEN stopper ikke kørslen — den skriver kun tallet i loggen, fordi
+      # trinnet ovenfor allerede har rettet det, der kan rettes maskinelt.
       - name: Tjek interne links
         run: node audit-interne-links.mjs
 

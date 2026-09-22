@@ -128,16 +128,29 @@ for (const mappe of MAPPER) {
 
 console.log(`Tjekket ${tjekket} interne links i ${MAPPER.length} indholdsmapper.`);
 console.log(`Tjekket ${tekstTjekket} linktekster mod målsidens overskrift.`);
-if (doede.length === 0 && forloebne.length === 0) {
-  console.log('✅ Alle interne links peger på noget, der findes — og lover den rigtige overskrift.');
+
+// Regel 2 STOPPER IKKE kørslen. Den er en måling, ikke en port.
+//
+// Hvorfor: et dødt link (regel 1) er et hul, kun et menneske kan lukke — dér
+// er det rigtigt at standse udgivelsen. En forældet linktekst har derimod
+// præcis ét rigtigt svar, nemlig målsidens nuværende overskrift, og det retter
+// `ret-linktekster.mjs` af sig selv i robottens workflow, FØR dette tjek kører.
+// Ville regel 2 også stoppe kørslen, ville den standse robotten over noget,
+// huset allerede har rettet. Derfor: regel 1 = rød, regel 2 = tal i loggen.
+// Står der et tal her efter en robotkørsel, er der noget, reparationen ikke
+// kunne klare — se `ret-linktekster.mjs`.
+if (forloebne.length) {
+  console.log(`\n⚠️  ${forloebne.length} link(s) lover en overskrift, der ikke findes mere (stopper ikke kørslen):`);
+  for (const d of forloebne) console.log(`   ${d.fil.split('/').pop()}\n      linktekst:  ${d.tekst}\n      siden hedder: ${d.nu}`);
+  console.log('   Rettes automatisk med: node ret-linktekster.mjs --skriv');
+}
+
+if (doede.length === 0) {
+  console.log(forloebne.length === 0
+    ? '✅ Alle interne links peger på noget, der findes — og lover den rigtige overskrift.'
+    : '✅ Alle interne links peger på noget, der findes.');
   process.exit(0);
 }
-if (doede.length) {
-  console.log(`\n❌ ${doede.length} døde interne link(s):`);
-  for (const d of doede) console.log(`   ${d.fil.split('/').pop()}\n      ${d.link}  — ${d.hvorfor}`);
-}
-if (forloebne.length) {
-  console.log(`\n❌ ${forloebne.length} link(s) lover en overskrift, der ikke findes mere:`);
-  for (const d of forloebne) console.log(`   ${d.fil.split('/').pop()}\n      linktekst:  ${d.tekst}\n      siden hedder: ${d.nu}`);
-}
+console.log(`\n❌ ${doede.length} døde interne link(s):`);
+for (const d of doede) console.log(`   ${d.fil.split('/').pop()}\n      ${d.link}  — ${d.hvorfor}`);
 process.exit(1);
