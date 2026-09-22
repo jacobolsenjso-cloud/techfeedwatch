@@ -1,5 +1,5 @@
 ---
-title: "How Google Flow AI Video Pricing Opens Up Creation"
+title: "How Does Google Flow AI Video Pricing Open Up Creation?"
 seoTitled: true
 youtubeId: "lkv0Te1tZkI"
 channelTitle: "CréateurVidéoPC "

@@ -1,5 +1,5 @@
 ---
-title: "How to Optimize Content for AI Citations"
+title: "How Do You Optimize Content for AI Citations?"
 seoTitled: true
 youtubeId: "RZGDkMlmQ18"
 channelTitle: "CXL"

@@ -1,5 +1,5 @@
 ---
-title: "The 10 Stages From Basic AI to Superintelligence"
+title: "What Are the 10 Stages From Basic AI to Superintelligence?"
 titleShortened: true
 seoTitled: true
 youtubeId: "tFx_UNW9I1U"

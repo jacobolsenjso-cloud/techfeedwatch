@@ -1,5 +1,5 @@
 ---
-title: "How PSD3 Reshapes Europe's Open Banking"
+title: "How Will PSD3 Reshape Europe's Open Banking?"
 youtubeId: "yPp_bO1neH0"
 channelTitle: "Enfuce"
 channelId: "UCO9JSchkha6cKKpHDSRuWWA"

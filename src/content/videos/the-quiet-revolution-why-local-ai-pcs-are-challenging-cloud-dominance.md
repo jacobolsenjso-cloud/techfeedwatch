@@ -1,5 +1,5 @@
 ---
-title: "What GPU and PCIe You Need to Run LLMs Locally"
+title: "What GPU and PCIe Do You Need to Run LLMs Locally?"
 seoTitled: true
 youtubeId: "ebqX46CHTaY"
 channelTitle: "ScatterVolt"

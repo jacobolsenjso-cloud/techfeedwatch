@@ -1,5 +1,5 @@
 ---
-title: "Why Suleyman Calls AI a New Digital Species"
+title: "Why Does Suleyman Call AI a New Digital Species?"
 titleShortened: true
 seoTitled: true
 youtubeId: "KKNCiRWd_j0"

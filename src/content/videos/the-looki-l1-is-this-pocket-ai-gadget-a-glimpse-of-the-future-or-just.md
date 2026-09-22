@@ -1,5 +1,5 @@
 ---
-title: "How the Looki L1 Turns Memories Into Comic Strips"
+title: "Does the Looki L1 Turn Memories Into Comic Strips?"
 titleShortened: true
 seoTitled: true
 youtubeId: "3RT_TDgEkb0"

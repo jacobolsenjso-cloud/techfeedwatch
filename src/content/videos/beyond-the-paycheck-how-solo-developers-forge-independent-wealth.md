@@ -1,5 +1,5 @@
 ---
-title: "How Solo Developers Build Wealth Selling Software"
+title: "How Do Solo Developers Build Wealth Selling Software?"
 seoTitled: true
 youtubeId: "A4_TFHzqAAg"
 channelTitle: "Fireship"

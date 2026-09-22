@@ -1,5 +1,5 @@
 ---
-title: "What the Primary Features of Claude AI Are"
+title: "What Are the Primary Features of Claude AI?"
 youtubeId: "MS7E5TXNviM"
 channelTitle: "Futurepedia"
 channelId: "UC_RovKmk0OCbuZjA8f08opw"

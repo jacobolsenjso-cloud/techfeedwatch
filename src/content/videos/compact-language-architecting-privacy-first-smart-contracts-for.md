@@ -1,5 +1,5 @@
 ---
-title: "How Midnight's Compact Builds Private Smart Contracts"
+title: "Can Midnight's Compact Build Private Smart Contracts?"
 titleShortened: true
 seoTitled: true
 youtubeId: "QWEtUJ2ymB0"
