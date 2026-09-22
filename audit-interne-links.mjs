@@ -76,11 +76,18 @@ for (const mappe of MAPPER) {
 //
 // Reglen er bevidst smal, så prosa ikke meldes som fejl:
 //   - kun links til /video/<slug>
+//   - kun i BRØDTEKSTEN, aldrig i frontmatter. `summary` kan indeholde et
+//     markdown-link, og dér er teksten en del af en sætning, ikke et løfte.
 //   - kun TITEL-FORMET linktekst (mindst halvdelen af ordene med stort
-//     forbogstav, mindst 20 tegn, mindst 3 ord)
+//     forbogstav, mindst 20 tegn, MINDST 6 ORD)
 //   - og kun hvis teksten ikke svarer til NOGEN nuværende overskrift på sitet
 // Dermed rammer den præcis det tilfælde, hvor en titel er blevet ændret uden at
 // citaterne fulgte med.
+//
+// Hvorfor 6 ord og ikke 3: målt 22/9 var de tre korteste fund "Ethereum World
+// State", "Zero Trust Security Model" og "Bull Mania by iVantage" — begreber
+// og produktnavne midt i en sætning, ikke overskrifter. Fra 6 ord og op var
+// alle 126 øvrige fund ægte, forældede titler.
 const titler = new Map();
 for (const f of fs.readdirSync('src/content/videos').filter((x) => x.endsWith('.md'))) {
   const m = fs.readFileSync(path.join('src/content/videos', f), 'utf8').match(/^title:\s*"(.*)"\s*$/m);
@@ -90,8 +97,14 @@ const ensret = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const alleTitler = new Set([...titler.values()].map(ensret));
 const erTitelFormet = (t) => {
   const ord = t.trim().split(/\s+/);
-  if (t.trim().length < 20 || ord.length < 3) return false;
+  if (t.trim().length < 20 || ord.length < 6) return false;
   return ord.filter((o) => /^[A-Z0-9]/.test(o)).length / ord.length >= 0.5;
+};
+// Alt før den afsluttende '---' er frontmatter og tjekkes ikke.
+const kunBrødtekst = (t) => {
+  if (!t.startsWith('---')) return t;
+  const slut = t.indexOf('\n---', 3);
+  return slut === -1 ? t : t.slice(slut + 4);
 };
 
 const forloebne = [];
@@ -99,7 +112,7 @@ let tekstTjekket = 0;
 for (const mappe of MAPPER) {
   if (!fs.existsSync(mappe)) continue;
   for (const f of fs.readdirSync(mappe).filter((x) => x.endsWith('.md'))) {
-    const tekst = fs.readFileSync(path.join(mappe, f), 'utf8');
+    const tekst = kunBrødtekst(fs.readFileSync(path.join(mappe, f), 'utf8'));
     for (const m of tekst.matchAll(/\[([^\]\n]+)\]\((\/video\/[^)\s#?]+)\/?\)/g)) {
       const slug = m[2].replace(/^\/video\//, '').replace(/\/$/, '');
       const nu = titler.get(slug);
