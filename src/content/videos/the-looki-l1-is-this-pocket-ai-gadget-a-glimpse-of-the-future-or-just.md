@@ -1,5 +1,5 @@
 ---
-title: "Does Looki L1 AI Life-Logger Turn Memories Into Comic Strip Stories?"
+title: "How the Looki L1 Turns Memories Into Comic Strips"
 titleShortened: true
 seoTitled: true
 youtubeId: "3RT_TDgEkb0"

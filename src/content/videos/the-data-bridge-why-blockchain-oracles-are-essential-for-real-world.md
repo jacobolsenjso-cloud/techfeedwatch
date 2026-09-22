@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Oracle Problem How Decentralized Apps Get External Data"
+title: "What the Blockchain Oracle Problem Is"
 youtubeId: "m64dLRjJ9Bs"
 channelTitle: "Hashoshi"
 channelId: "UCQNHKsYDGlWefzv9MAaOJGA"

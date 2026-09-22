@@ -1,5 +1,5 @@
 ---
-title: "What Quantum Computing's Potential and Hurdles Mean for Business"
+title: "What Quantum Computing Means for Business"
 seoTitled: true
 youtubeId: "UtDllX_MTbw"
 channelTitle: "TED"

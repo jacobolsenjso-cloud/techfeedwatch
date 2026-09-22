@@ -1,5 +1,5 @@
 ---
-title: "Rust SQLite Turso Improves Database Memory Safety and Concurrency"
+title: "How Rust SQLite Turso Improves Memory Safety"
 seoTitled: true
 youtubeId: "Sntj4HmuykI"
 channelTitle: "Fireship"

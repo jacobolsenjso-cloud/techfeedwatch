@@ -1,5 +1,5 @@
 ---
-title: "Will OpenClaw Autonomous AI Agents Independently Reshape Work?"
+title: "Will OpenClaw's Autonomous AI Agents Reshape Work?"
 seoTitled: true
 youtubeId: "7rzYDM6vMtI"
 channelTitle: "TED"

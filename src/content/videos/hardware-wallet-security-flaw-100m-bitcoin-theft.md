@@ -1,5 +1,5 @@
 ---
-title: "Coldcard Flaw: $100M Bitcoin Theft From Hardware Wallet Firmware"
+title: "How a Coldcard Firmware Flaw Cost $100M in Bitcoin"
 youtubeId: "xSonLY4u0u4"
 channelTitle: "Coin Bureau"
 channelId: "UCqK_GSMbpiV8spgD3ZGloSw"

@@ -1,5 +1,5 @@
 ---
-title: "NVIDIA AI Factories: The Integrated Systems Driving Modern AI Development"
+title: "What NVIDIA AI Factories Are and How They Work"
 youtubeId: "vif8NQcjVf0"
 channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"

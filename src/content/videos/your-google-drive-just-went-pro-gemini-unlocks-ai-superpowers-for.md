@@ -1,5 +1,5 @@
 ---
-title: "How Gemini AI Changes Google Drive for Intelligent File Management"
+title: "How Gemini AI Changes File Management in Google Drive"
 seoTitled: true
 youtubeId: "kSLHCrxedkw"
 channelTitle: "Tasia Custode"

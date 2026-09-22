@@ -1,5 +1,5 @@
 ---
-title: "Quantum Hardware: The Engineering Roadblocks to Scalable Qubits"
+title: "The Engineering Roadblocks to Scalable Qubits"
 titleShortened: true
 seoTitled: true
 youtubeId: "VyX8E4KUkWw"

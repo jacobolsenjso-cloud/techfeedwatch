@@ -1,5 +1,5 @@
 ---
-title: "Debt Management Strategies: A Step-by-Step Guide to Financial Stability"
+title: "What Debt Management Strategies Are and How to Use Them"
 youtubeId: "z-mSoosGQdc"
 channelTitle: "Al Zhang"
 channelId: "UClysnUQyzjD5bXZ1LHJ735g"

@@ -1,5 +1,5 @@
 ---
-title: "How Does Blockchain Technology Address Trust Issues with Current Technology?"
+title: "How Blockchain Addresses Trust Issues in Current Technology"
 youtubeId: "RplnSVTzvnU"
 channelTitle: "TED"
 channelId: "UCAuUUnT6oDeKwE6v1NGQxug"

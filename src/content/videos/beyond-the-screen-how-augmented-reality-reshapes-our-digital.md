@@ -1,5 +1,5 @@
 ---
-title: "How Augmented Reality Redefines Human-Computer Spatial Interaction"
+title: "How Augmented Reality Changes Spatial Interaction"
 seoTitled: true
 youtubeId: "H9ZOpQzjukY"
 channelTitle: "TED"

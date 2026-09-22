@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Explained: How the Blockchain Processes Smart Contracts"
+title: "How Ethereum Works and Processes Smart Contracts"
 youtubeId: "JsSQ0F6V9nQ"
 channelTitle: "Teacher Everything"
 channelId: "UCZTACV0TYvHDtcpZPykA2XA"

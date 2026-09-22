@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Builds Trust in Finance and Supply Chains Beyond Crypto"
+title: "How Blockchain Builds Trust Beyond Crypto"
 titleShortened: true
 seoTitled: true
 youtubeId: "Pl8OlkkwRpc"

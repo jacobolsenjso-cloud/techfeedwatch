@@ -1,5 +1,5 @@
 ---
-title: "Does Suleyman Define AI as a New Digital Species, Not Merely a Tool?"
+title: "Why Suleyman Calls AI a New Digital Species"
 titleShortened: true
 seoTitled: true
 youtubeId: "KKNCiRWd_j0"

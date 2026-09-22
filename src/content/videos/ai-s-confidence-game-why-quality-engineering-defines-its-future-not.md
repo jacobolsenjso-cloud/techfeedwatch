@@ -1,5 +1,5 @@
 ---
-title: "AI Quality Engineering Validates AI Outputs for Accuracy and Fairness"
+title: "How AI Quality Engineering Checks AI Outputs"
 titleShortened: true
 seoTitled: true
 youtubeId: "XLMPIRtsrDs"

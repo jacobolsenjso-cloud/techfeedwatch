@@ -1,5 +1,5 @@
 ---
-title: "Stablecoins, AI: Powering Autonomous Finance, Decentralizing Banking"
+title: "How Stablecoins and AI Power Autonomous Finance"
 seoTitled: true
 youtubeId: "0biSwEL5eMQ"
 channelTitle: "a16z"

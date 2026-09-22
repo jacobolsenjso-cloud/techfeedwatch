@@ -1,5 +1,5 @@
 ---
-title: "What On-Page SEO Means for Google Rankings and Relevant Traffic"
+title: "What On-Page SEO Means for Google Rankings"
 seoTitled: true
 youtubeId: "w4jXFLzFU8U"
 channelTitle: "HGS Infotech"

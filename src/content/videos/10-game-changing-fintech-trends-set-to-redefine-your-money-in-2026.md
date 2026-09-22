@@ -1,5 +1,5 @@
 ---
-title: "Fintech Innovations 2026 Transform Digital Finance with AI Blockchain"
+title: "How Fintech Innovations Reshape Digital Finance"
 titleShortened: true
 seoTitled: true
 youtubeId: "ucUdfiq2KiY"

@@ -1,5 +1,5 @@
 ---
-title: "Everyday Users Prevent Cyber Attacks with MFA and Password Management"
+title: "How Everyday Users Prevent Cyber Attacks with MFA"
 youtubeId: "XOy-en6yjhE"
 channelTitle: "Solavise Technologies Institute"
 channelId: "UCir8XZhXPO4mg4wfysDoNwg"

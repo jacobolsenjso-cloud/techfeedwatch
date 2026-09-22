@@ -1,5 +1,5 @@
 ---
-title: "Does AI Redefine Truth and Our Notions of Reality and Computation?"
+title: "Does AI Redefine Truth and Reality?"
 seoTitled: true
 youtubeId: "PdE-waSx-d8"
 channelTitle: "Lex Fridman"

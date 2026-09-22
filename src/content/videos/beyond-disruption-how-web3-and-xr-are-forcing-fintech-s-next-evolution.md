@@ -1,5 +1,5 @@
 ---
-title: "How Fintech Web3 XR Reshape Financial Services with Super Apps"
+title: "How Fintech, Web3 and XR Reshape Financial Services"
 seoTitled: true
 youtubeId: "XJZovt0w3cU"
 channelTitle: "Jeremy Quainoo"

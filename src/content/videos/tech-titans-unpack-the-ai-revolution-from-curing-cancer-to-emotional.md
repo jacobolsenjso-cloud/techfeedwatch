@@ -1,5 +1,5 @@
 ---
-title: "What AIs Cancer Cures and Emotional Robots Means for Its Hurdles"
+title: "What AI Cancer Cures and Emotional Robots Face"
 titleShortened: true
 seoTitled: true
 youtubeId: "Oa0ZHfcalCM"

@@ -1,5 +1,5 @@
 ---
-title: "AI Smart Glasses Foster Constantly Sensing Augmented Intelligence"
+title: "How AI Smart Glasses Sense the World Around You"
 titleShortened: true
 seoTitled: true
 youtubeId: "gElClXpg4J0"

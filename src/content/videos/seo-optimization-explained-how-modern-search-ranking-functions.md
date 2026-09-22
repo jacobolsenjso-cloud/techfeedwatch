@@ -1,5 +1,5 @@
 ---
-title: "SEO Optimization Today: How Modern Search Visibility Really Works"
+title: "How SEO Optimization Works Today"
 youtubeId: "CwQNWOuzbxM"
 channelTitle: "OptiSEOn"
 channelId: "UCf2mcg1SuSrNCqZ6wpC1u_g"

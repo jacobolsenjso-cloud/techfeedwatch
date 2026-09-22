@@ -1,5 +1,5 @@
 ---
-title: "Local AI Video Generation: How to Make Private AI Videos on Your PC"
+title: "How to Make Private AI Videos on Your Own PC"
 youtubeId: "G2Ec3h5CfA8"
 channelTitle: "Kevin Stratvert"
 channelId: "UCfJT_eYDTmDE-ovKaxVE1ig"

@@ -1,5 +1,5 @@
 ---
-title: "What Are the Primary Features and Products of Claude AI Ecosystem?"
+title: "What the Primary Features of Claude AI Are"
 youtubeId: "MS7E5TXNviM"
 channelTitle: "Futurepedia"
 channelId: "UC_RovKmk0OCbuZjA8f08opw"

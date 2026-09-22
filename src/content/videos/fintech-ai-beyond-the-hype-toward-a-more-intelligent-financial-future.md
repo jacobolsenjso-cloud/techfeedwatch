@@ -1,5 +1,5 @@
 ---
-title: "FinTech AI: Redefining Finance Through Fraud Detection and Data Ethics"
+title: "How FinTech AI Changes Fraud Detection and Ethics"
 seoTitled: true
 youtubeId: "b1gszMjehF0"
 channelTitle: "Tech Pulse Labs"

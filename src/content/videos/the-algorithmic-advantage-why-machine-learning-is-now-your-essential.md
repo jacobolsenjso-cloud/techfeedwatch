@@ -1,5 +1,5 @@
 ---
-title: "Project-Based Skills Build Machine Learning Careers Without Degrees"
+title: "How to Build a Machine Learning Career Without a Degree"
 seoTitled: true
 youtubeId: "JJCq21Dc-Us"
 channelTitle: "NetworkChuck"

@@ -1,5 +1,5 @@
 ---
-title: "Institutional Adoption of Crypto: Big Money Reimagines Digital Assets"
+title: "What Institutional Adoption of Crypto Means"
 youtubeId: "G87Vy-dZbdw"
 channelTitle: "Yahoo Finance"
 channelId: "UCEAZeUIeJs0IjQiqTCdVSIg"

@@ -1,5 +1,5 @@
 ---
-title: "Generative Engine Optimization (GEO): Ensure Brand Visibility in LLMs"
+title: "What Generative Engine Optimization (GEO) Means"
 titleShortened: true
 seoTitled: true
 youtubeId: "20pTTT8jcEw"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Status Current Limitations and Future Potential"
+title: "Quantum Computing Today: Limits and Potential"
 seoTitled: true
 youtubeId: "QuR969uMICM"
 channelTitle: "TED"

@@ -1,5 +1,5 @@
 ---
-title: "Future Cities: Pervasive AI Creates Hyper-Personalized Smart Spaces"
+title: "How Pervasive AI Builds Hyper-Personalized Cities"
 titleShortened: true
 seoTitled: true
 youtubeId: "Fm4kPJpKcrM"

@@ -1,5 +1,5 @@
 ---
-title: "LLMs Transform Personal Knowledge Management to AI Second Brains"
+title: "How LLMs Turn Notes Into an AI Second Brain"
 titleShortened: true
 youtubeId: "kGwYmO1GYqE"
 channelTitle: "Aditya Dutta"

@@ -1,5 +1,5 @@
 ---
-title: "How Google Antigravity Autonomous AI Orchestrates Full App Workflows"
+title: "How Google Antigravity AI Runs Full App Workflows"
 seoTitled: true
 youtubeId: "ff9BXfTlAqo"
 channelTitle: "Mikey Website"

@@ -1,5 +1,5 @@
 ---
-title: "Anduril's Luckey Proposes AI Weapons for Peace Through Deterrence"
+title: "Why Anduril's Luckey Backs AI Weapons for Deterrence"
 seoTitled: true
 youtubeId: "ooMXEwl7N8Y"
 channelTitle: "TED"

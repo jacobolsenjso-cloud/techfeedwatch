@@ -1,5 +1,5 @@
 ---
-title: "Explaining Quantum Computing Simply Its Fundamental Differences"
+title: "What Quantum Computing Is, Explained Simply"
 youtubeId: "SnIEu8OSXDs"
 channelTitle: "The Verge"
 channelId: "UCddiUEpeqJcYeBxX1IVBKvQ"

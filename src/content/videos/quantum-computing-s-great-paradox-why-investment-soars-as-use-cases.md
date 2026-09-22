@@ -1,5 +1,5 @@
 ---
-title: "Hybrid Quantum-Classical Computing: What It Is and Why It Matters"
+title: "What Hybrid Quantum-Classical Computing Is"
 youtubeId: "spRN7DfzhrU"
 channelTitle: "Sabine Hossenfelder"
 channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"

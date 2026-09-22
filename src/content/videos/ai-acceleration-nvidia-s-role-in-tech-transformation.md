@@ -1,5 +1,5 @@
 ---
-title: "Nvidia's GPU Dominance Fuels AI Acceleration and Tech Transformation"
+title: "How Nvidia's GPU Dominance Fuels AI Acceleration"
 youtubeId: "EPJl3bTxT3s"
 channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"

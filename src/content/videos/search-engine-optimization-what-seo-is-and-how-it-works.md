@@ -1,5 +1,5 @@
 ---
-title: "SEO Essentials: Understanding How Search Engine Optimization Works"
+title: "What SEO Is and How It Works"
 youtubeId: "iUlIuNZNHQ8"
 channelTitle: "Peppermint iT Sip ‘n Solve"
 channelId: "UCjdWmfOFQHMS0qltbfUOcMQ"

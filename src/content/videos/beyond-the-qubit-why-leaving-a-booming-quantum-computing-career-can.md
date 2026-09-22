@@ -1,5 +1,5 @@
 ---
-title: "What Is Quantum Computing Used for Today? Less Than You Think"
+title: "What Is Quantum Computing Used for Today?"
 targetQuestion: "what is quantum computing used for today"
 titleShortened: true
 seoTitled: true

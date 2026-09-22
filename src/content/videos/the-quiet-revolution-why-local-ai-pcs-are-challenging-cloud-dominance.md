@@ -1,5 +1,5 @@
 ---
-title: "What High-VRAM GPU and PCIe 5.0 Handle LLMs on Local AI PCs?"
+title: "What GPU and PCIe You Need to Run LLMs Locally"
 seoTitled: true
 youtubeId: "ebqX46CHTaY"
 channelTitle: "ScatterVolt"

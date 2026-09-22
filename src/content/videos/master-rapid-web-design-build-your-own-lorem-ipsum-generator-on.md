@@ -1,5 +1,5 @@
 ---
-title: "How AI Changes Lorem Ipsum Generator for WordPress Fast Design"
+title: "How AI Changes Lorem Ipsum for WordPress Design"
 seoTitled: true
 youtubeId: "4IkD872jBi0"
 channelTitle: "Key2Blogging"

@@ -1,5 +1,5 @@
 ---
-title: "What Bitcoin Mining Means for Chain Security BTC Value Energy Debate"
+title: "What Bitcoin Mining Means for Security and Energy"
 seoTitled: true
 youtubeId: "lHipE05v4jg"
 channelTitle: "Coin Bureau"

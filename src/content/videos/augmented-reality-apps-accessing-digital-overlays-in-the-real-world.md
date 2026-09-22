@@ -1,5 +1,5 @@
 ---
-title: "Augmented Reality Apps: Accessing Digital Overlays in the Real World"
+title: "What Augmented Reality Apps Do in the Real World"
 youtubeId: "9DsUS9fNKG0"
 channelTitle: "Spark Lab"
 channelId: "UCJBjQcPfxxSoX-fjLMtaIsg"

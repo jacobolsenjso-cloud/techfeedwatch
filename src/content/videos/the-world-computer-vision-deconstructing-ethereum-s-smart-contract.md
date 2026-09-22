@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Smart Contracts Architecture Mechanics for EVM Execution"
+title: "How Ethereum Smart Contracts Run on the EVM"
 titleShortened: true
 seoTitled: true
 youtubeId: "PLgawr4pbqE"

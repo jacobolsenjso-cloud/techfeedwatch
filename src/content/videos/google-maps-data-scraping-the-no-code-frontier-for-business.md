@@ -1,5 +1,5 @@
 ---
-title: "How No-Code Tools Change Google Maps Web Scraping for Market Research"
+title: "How No-Code Tools Change Google Maps Web Scraping"
 titleShortened: true
 seoTitled: true
 youtubeId: "NNYUGS_PbTo"

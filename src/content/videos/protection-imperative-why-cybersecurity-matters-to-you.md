@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Security: Why Cybersecurity Matters for Autonomous Systems"
+title: "Why Cybersecurity Matters for AI Agents"
 youtubeId: "soFWS8NBcSU"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"

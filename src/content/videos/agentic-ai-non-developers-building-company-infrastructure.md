@@ -1,5 +1,5 @@
 ---
-title: "Agentic AI: Non-Developers Create Foundational Business Systems"
+title: "How Agentic AI Lets Non-Developers Build Systems"
 youtubeId: "aE_xX4MUgTY"
 channelTitle: "linuxfestnorthwest"
 channelId: "UCqeKeRXssKqbK4XHqLYrctQ"

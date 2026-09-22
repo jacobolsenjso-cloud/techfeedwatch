@@ -1,5 +1,5 @@
 ---
-title: "VR Hand Tracking Reduces Friction to Accelerate Mainstream VR Adoption"
+title: "How VR Hand Tracking Drives Mainstream VR Adoption"
 seoTitled: true
 youtubeId: "vfJz7WlRNk4"
 channelTitle: "Two Minute Papers"

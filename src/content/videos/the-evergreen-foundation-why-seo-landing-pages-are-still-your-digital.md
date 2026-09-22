@@ -1,5 +1,5 @@
 ---
-title: "AI Age Conversion: Landing Page SEO for Human Visitor Experience"
+title: "How Landing Page SEO Works in the AI Age"
 seoTitled: true
 youtubeId: "eQ3J8dpNRoM"
 channelTitle: "Situated Research"

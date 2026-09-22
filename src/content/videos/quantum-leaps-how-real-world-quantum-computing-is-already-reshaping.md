@@ -1,5 +1,5 @@
 ---
-title: "Hybrid Quantum Systems Integrate Classical and Quantum Processors"
+title: "What Hybrid Quantum Systems Are and How They Work"
 targetQuestion: "what are hybrid quantum systems"
 seoTitled: true
 youtubeId: "GQlC3NYRjK8"

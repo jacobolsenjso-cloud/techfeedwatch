@@ -1,5 +1,5 @@
 ---
-title: "How Google NotebookLM Automates Research Tasks for Knowledge Work"
+title: "How Google NotebookLM Automates Research Tasks"
 titleShortened: true
 seoTitled: true
 youtubeId: "UHAuc6Lh234"

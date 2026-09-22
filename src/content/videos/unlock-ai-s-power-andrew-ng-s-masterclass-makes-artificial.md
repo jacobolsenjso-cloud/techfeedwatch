@@ -1,5 +1,5 @@
 ---
-title: "What Organizational AI Strategy Means for Reshaping Business Models"
+title: "What an Organizational AI Strategy Changes"
 titleShortened: true
 seoTitled: true
 youtubeId: "zOI6Oll1Zrg"

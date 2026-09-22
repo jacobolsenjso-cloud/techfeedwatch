@@ -1,5 +1,5 @@
 ---
-title: "Technical SEO: Developers Ensure Rankings and Fast UX via Rendering"
+title: "How Technical SEO Ties Rendering to Rankings"
 titleShortened: true
 seoTitled: true
 youtubeId: "-B58GgsehKQ"

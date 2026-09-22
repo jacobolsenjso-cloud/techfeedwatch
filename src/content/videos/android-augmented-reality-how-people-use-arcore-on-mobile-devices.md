@@ -1,5 +1,5 @@
 ---
-title: "Android Augmented Reality: How People Use ARCore on Mobile Devices"
+title: "How to Use Augmented Reality on Android with ARCore"
 youtubeId: "BHEExvv4fHo"
 channelTitle: " Talking Tech"
 channelId: "UCZFWP6Wf2iKPt1R6xCMTfZA"

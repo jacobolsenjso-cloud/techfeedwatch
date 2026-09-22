@@ -1,5 +1,5 @@
 ---
-title: "AI Agent Security Requires New Defenses Against Evolving Threats"
+title: "What AI Agent Security Means for New Threats"
 youtubeId: "ho4F0yaDmr4"
 channelTitle: "Bits With Paulina"
 channelId: "UCDf3SiM0T1AWLgodsY3EXJA"

@@ -1,5 +1,5 @@
 ---
-title: "Quantum Computing Commercialization Uses Cloud Simulators for Access"
+title: "How Cloud Simulators Open Up Quantum Computing"
 titleShortened: true
 seoTitled: true
 youtubeId: "bVP3q8-e4sE"

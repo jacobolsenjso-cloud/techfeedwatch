@@ -1,5 +1,5 @@
 ---
-title: "AI Agents Automate Small Healthcare Business Administrative Tasks"
+title: "How AI Agents Automate Small Healthcare Admin"
 youtubeId: "Fpg_8aiBxx4"
 channelTitle: "a16z"
 channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"

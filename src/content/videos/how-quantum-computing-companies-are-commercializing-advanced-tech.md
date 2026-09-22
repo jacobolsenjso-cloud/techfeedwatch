@@ -1,5 +1,5 @@
 ---
-title: "How Quantum Computing Companies Are Commercializing Advanced Tech"
+title: "What Quantum Computing Companies Are Building Now"
 youtubeId: "b6sx04c5JYg"
 channelTitle: "Untold Historian"
 channelId: "UCap-xStTt82RhsMViXjVP5w"

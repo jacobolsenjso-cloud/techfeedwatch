@@ -1,5 +1,5 @@
 ---
-title: "Parallel AI Coding Agents: Git Worktrees and Docker Prevent Conflicts"
+title: "How Git Worktrees Keep Parallel AI Agents Apart"
 titleShortened: true
 seoTitled: true
 youtubeId: "qxjII6x2yPY"

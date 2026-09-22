@@ -1,5 +1,5 @@
 ---
-title: "How Does Google Flow AI Video Platform Pricing Democratize Creation?"
+title: "How Google Flow AI Video Pricing Opens Up Creation"
 seoTitled: true
 youtubeId: "lkv0Te1tZkI"
 channelTitle: "CréateurVidéoPC "
