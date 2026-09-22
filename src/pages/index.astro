@@ -424,13 +424,33 @@ const vRest = pageOneVideos.slice(13);
         <section class="lead-section" aria-label="Latest analysis">
           <a href={`/video/${leadMain.file.split('/').pop().replace('.md', '')}`} class="lead-card">
             <div class="lead-card-thumb watch-card-thumb">
-              {/* Ikke alle videoer har en maxres-udgave. Uden fallback viser
-                  YouTube en grå pladsholder på sidens mest synlige billede. */}
+              {/* Ikke alle videoer har en maxres-udgave. Fallbacken herunder stod
+                  der allerede, men den hang på `onerror` — og DEN fyrer aldrig:
+                  målt 22/9-2026 svarer img.youtube.com HTTP 200 med et 120×90
+                  gråt pladsholder-billede, ikke 404. Anmodningen lykkes, så
+                  browseren mener alt er i orden og strækker 120 px ud over
+                  sidens største billede. (PowerShell fik 404 på samme adresse —
+                  det er browserens svar der tæller, for det er den der tegner.)
+
+                  Vi gætter ikke længere: `thumbMax` står i frontmatter på alle
+                  391 artikler, sat af add-video.mjs ud fra YouTubes eget API
+                  (`snippet.thumbnails.maxres`) og opfrisket hver tredje dag af
+                  update-view-counts.mjs. Article-schemaet i video/[slug].astro
+                  bruger allerede det flag — forsiden gjorde ikke. 16 artikler
+                  har thumbMax: false, heriblandt den der afslørede fejlen.
+
+                  hqdefault er 480×360 med sorte bjælker, men beholderen er 16:9
+                  med object-fit: cover, som skærer præcis bjælkerne væk.
+
+                  onload-tjekket er sele og seler, hvis flaget er forældet: det
+                  måler bredden i stedet for at stole på statuskoden — samme
+                  regel som og-card.mjs har brugt hele tiden (linje 16). */}
               <img
-                src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/maxresdefault.jpg`}
+                src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/${leadMain.frontmatter.thumbMax ? 'maxresdefault' : 'hqdefault'}.jpg`}
                 alt="" loading="eager" fetchpriority="high"
-                data-fallback={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/hqdefault.jpg`}
+                data-fallback={leadMain.frontmatter.thumbMax ? `https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/hqdefault.jpg` : undefined}
                 onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
+                onload="if(this.naturalWidth<320&&this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
               />
             </div>
             {firstTag(leadMain) && (
