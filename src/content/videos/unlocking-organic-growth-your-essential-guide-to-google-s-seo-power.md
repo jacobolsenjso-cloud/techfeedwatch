@@ -12,8 +12,8 @@ summary: "Google Search Console and Google Analytics are fundamental tools for w
 metaDescription: "Understand Google Search Console and Google Analytics: essential tools for monitoring website performance, optimizing for search."
 targetQuestion: "what is google search console and google analytics"
 duration: "1:34:32"
-viewCount: 104
-viewsUpdated: "2026-09-14"
+viewCount: 105
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

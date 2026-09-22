@@ -12,8 +12,8 @@ summary: "The Zero Trust security model redefines how organizations protect digi
 metaDescription: "Understand the Zero Trust security model: what it is, why it's critical for modern enterprises, and how it protects data in a distributed world."
 targetQuestion: "what is zero trust security model"
 duration: "1:16:35"
-viewCount: 18
-viewsUpdated: "2026-09-19"
+viewCount: 19
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

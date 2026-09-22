@@ -13,8 +13,8 @@ tags:
 summary: "Compact is a domain-specific programming language for the Midnight Network, designed to facilitate the creation of privacy-preserving smart contracts. Built on a restricted subset of Typescript, it allows developers to build decentralized applications leveraging zero-knowledge proofs (ZKPs) without direct interaction with complex ZKP circuits. This approach aims to enhance developer experience while enabling verifiable computation over private data, a critical feature for various Web3 applications demanding confidentiality."
 metaDescription: "Compact is a domain-specific programming language for the Midnight Network, designed to facilitate the creation of privacy-preserving smart contracts."
 duration: "23:01"
-viewCount: 1183
-viewsUpdated: "2026-09-16"
+viewCount: 1186
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 revised: true

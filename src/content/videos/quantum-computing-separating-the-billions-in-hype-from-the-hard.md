@@ -12,8 +12,8 @@ summary: "Quantum computing presents a radically new approach to computation, mo
 metaDescription: "Understand quantum computing simply: learn what it is, how qubits work, its specialized applications, and the reality behind the hype."
 targetQuestion: "what is quantum computing explained simply"
 duration: "1:06:32"
-viewCount: 10931
-viewsUpdated: "2026-09-19"
+viewCount: 10946
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

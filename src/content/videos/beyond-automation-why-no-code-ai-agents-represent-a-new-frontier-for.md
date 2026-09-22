@@ -12,8 +12,8 @@ summary: "AI agents represent a significant evolution from traditional automatio
 metaDescription: "Understand the critical differences between AI agents and traditional automation. Learn how AI agents reason, plan, and adapt dynamically."
 targetQuestion: "what is an ai agent vs automation"
 duration: "1:07:10"
-viewCount: 4211216
-viewsUpdated: "2026-09-19"
+viewCount: 4229337
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

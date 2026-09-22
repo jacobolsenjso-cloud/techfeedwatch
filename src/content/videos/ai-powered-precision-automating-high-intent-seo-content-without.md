@@ -12,8 +12,8 @@ summary: "Leveraging AI for SEO content involves building sophisticated automate
 metaDescription: "Learn how to use AI for SEO content effectively by building automated systems for high-quality, bottom-of-funnel articles and improving search performance."
 targetQuestion: "how to use ai for seo content"
 duration: "24:29"
-viewCount: 31
-viewsUpdated: "2026-09-12"
+viewCount: 33
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

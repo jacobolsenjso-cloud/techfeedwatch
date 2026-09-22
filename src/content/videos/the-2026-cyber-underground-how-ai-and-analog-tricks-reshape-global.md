@@ -12,8 +12,8 @@ summary: "Social engineering attacks exploit human psychology, tricking individu
 metaDescription: "Explore concrete social engineering attacks examples, from phishing texts to AI deepfakes."
 targetQuestion: "what are social engineering attacks examples"
 duration: "1:07:45"
-viewCount: 212004
-viewsUpdated: "2026-09-19"
+viewCount: 213031
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

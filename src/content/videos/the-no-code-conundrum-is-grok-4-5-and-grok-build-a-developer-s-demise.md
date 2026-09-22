@@ -12,8 +12,8 @@ summary: "No-code AI tools significantly lower the barrier to entry for non-tech
 metaDescription: "Discover how no-code AI tools empower non-technical users to build complex business solutions, replacing thousands in dev costs and streamlining workflows."
 targetQuestion: "how accessible are no code ai tools for non technical users"
 duration: "1:14:16"
-viewCount: 93
-viewsUpdated: "2026-09-14"
+viewCount: 94
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

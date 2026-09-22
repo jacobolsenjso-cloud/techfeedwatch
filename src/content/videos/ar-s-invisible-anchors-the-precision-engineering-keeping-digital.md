@@ -13,8 +13,8 @@ tags:
 summary: "The remarkable stability of augmented reality objects, appearing fixed in physical space, stems from advanced spatial computing technologies. This capability relies on real-time Simultaneous Localization and Mapping (SLAM), integrating data from multiple sensors like cameras, inertial measurement units (IMUs), and often depth sensors. This intricate sensor fusion and geometric processing create persistent spatial anchors, enabling digital elements to genuinely interact with the real world rather than merely float on a screen."
 metaDescription: "The remarkable stability of augmented reality objects, appearing fixed in physical space, stems from advanced spatial computing technologies."
 duration: "3:56"
-viewCount: 10
-viewsUpdated: "2026-09-16"
+viewCount: 9
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 revised: true

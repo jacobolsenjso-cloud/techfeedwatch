@@ -12,8 +12,8 @@ summary: "Generative AI is reshaping product design by automating the creation o
 metaDescription: "Explore how generative AI transforms product design, accelerating concept generation, optimizing workflows, and enhancing creativity."
 targetQuestion: "how does generative ai impact product design"
 duration: "3:36"
-viewCount: 232
-viewsUpdated: "2026-09-16"
+viewCount: 247
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

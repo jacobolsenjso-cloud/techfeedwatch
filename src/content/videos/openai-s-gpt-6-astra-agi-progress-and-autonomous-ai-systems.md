@@ -11,8 +11,8 @@ summary: "OpenAI's Astra is a forthcoming model family that represents a signifi
 metaDescription: "Discover OpenAI Astra, its breakthroughs in mathematics, and what this next-generation AI model means for autonomous scientific discovery."
 targetQuestion: "what is openai astra"
 duration: "1:10:03"
-viewCount: 70533
-viewsUpdated: "2026-09-19"
+viewCount: 70563
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

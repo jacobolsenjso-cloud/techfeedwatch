@@ -12,8 +12,8 @@ summary: "Cybersecurity offers a compelling career path with significant long-te
 metaDescription: "Understand how cybersecurity pay works, from starting salaries to long-term growth and job security, in a field resilient to AI automation."
 targetQuestion: "how does cybersecurity pay"
 duration: "52:29"
-viewCount: 5654
-viewsUpdated: "2026-09-19"
+viewCount: 5713
+viewsUpdated: "2026-09-22"
 thumbMax: true
 isShort: false
 faqs:
