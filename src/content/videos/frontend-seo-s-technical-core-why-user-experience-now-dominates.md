@@ -36,7 +36,7 @@ Central to measuring a website’s user experience are Core Web Vitals: LCP, FID
 * **FID (First Input Delay)** or its successor **INP (Interaction to Next Paint)** quantifies interactivity, measuring the time from when a user first interacts with a page (e.g., clicking a button) to when the browser is actually able to respond. Low FID/INP ensures responsiveness.
 * **CLS (Cumulative Layout Shift)** assesses visual stability, capturing the sum total of all unexpected layout shifts that occur during the entire lifespan of the page. A low CLS means elements on the page do not unexpectedly jump around, preventing frustrating user experiences.
 
-These [What Core Web Vitals Measure for User Experience](/video/google-s-core-web-vitals-the-unseen-force-reshaping-your-site-s) are critical because they directly reflect how users perceive a site’s speed and stability. Optimizing them involves technical strategies such as exploring lazy loading for off-screen images, implementing code splitting to reduce initial payload sizes, and leveraging caching techniques to speed up return visits. Additionally, comprehensive image optimization, font optimization, and efficient third-party script management contribute significantly to faster load times and an overall smoother experience. Responsive design is another pillar, ensuring that a site functions and looks great across all devices, from desktops to smartphones, meeting users wherever they are.
+These [What Core Web Vitals Measures for Google Ranking](/video/google-s-core-web-vitals-the-unseen-force-reshaping-your-site-s) are critical because they directly reflect how users perceive a site’s speed and stability. Optimizing them involves technical strategies such as exploring lazy loading for off-screen images, implementing code splitting to reduce initial payload sizes, and leveraging caching techniques to speed up return visits. Additionally, comprehensive image optimization, font optimization, and efficient third-party script management contribute significantly to faster load times and an overall smoother experience. Responsive design is another pillar, ensuring that a site functions and looks great across all devices, from desktops to smartphones, meeting users wherever they are.
 
 ## How Does Technical Setup Impact User Experience and Search Rankings?
 
@@ -50,7 +50,7 @@ The choice between static rendering and server-side rendering also impacts initi
 
 ## What To Actually Do
 
-Improving user experience for SEO is an ongoing process that blends technical prowess with a user-centric mindset. It demands a holistic approach, moving beyond keyword stuffing to genuinely enhance how visitors interact with your digital presence. This is central to [Search Engine Optimization: What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
+Improving user experience for SEO is an ongoing process that blends technical prowess with a user-centric mindset. It demands a holistic approach, moving beyond keyword stuffing to genuinely enhance how visitors interact with your digital presence. This is central to [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
 
 **To start, focus on concrete steps:**
 
@@ -68,4 +68,4 @@ Improving user experience for SEO is an ongoing process that blends technical pr
 * **Failing to Address Technical Debt:** Accumulating unaddressed technical issues like broken links, complex redirect chains, or poorly optimized code will inevitably degrade performance and user satisfaction.
 * **Treating SEO as a One-Time Task:** User experience and search algorithms evolve. Continuous monitoring, testing, and optimization are essential for sustained success.
 
-Improving UX for SEO is an investment in development resources, design refinement, and ongoing analysis. It demands a collaborative effort between developers, designers, and marketers, ensuring that every technical decision and content strategy ultimately serves the end-user. This commitment helps secure better rankings and builds lasting audience loyalty, influencing [AI Age Conversion: Landing Page SEO for Human Visitor Experience](/video/the-evergreen-foundation-why-seo-landing-pages-are-still-your-digital).
+Improving UX for SEO is an investment in development resources, design refinement, and ongoing analysis. It demands a collaborative effort between developers, designers, and marketers, ensuring that every technical decision and content strategy ultimately serves the end-user. This commitment helps secure better rankings and builds lasting audience loyalty, influencing [How Landing Page SEO Works in the AI Age](/video/the-evergreen-foundation-why-seo-landing-pages-are-still-your-digital).

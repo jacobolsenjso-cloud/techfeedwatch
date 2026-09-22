@@ -65,11 +65,66 @@ for (const mappe of MAPPER) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Regel 2: LØFTET skal også holde, ikke kun målet.
+//
+// Målt 22/9-2026: 129 links pegede på en levende side, men linkteksten citerede
+// en overskrift, som ikke fandtes mere — opsamlet gennem tre omgange
+// titelrettelser (21/8, 9/9, 22/9). Reglen ovenfor kunne ikke se det, fordi den
+// kun spørger "findes målet?". Linkteksten er både et løfte til læseren og et
+// relevans-signal til Google, så en forældet titel er et ægte hul.
+//
+// Reglen er bevidst smal, så prosa ikke meldes som fejl:
+//   - kun links til /video/<slug>
+//   - kun TITEL-FORMET linktekst (mindst halvdelen af ordene med stort
+//     forbogstav, mindst 20 tegn, mindst 3 ord)
+//   - og kun hvis teksten ikke svarer til NOGEN nuværende overskrift på sitet
+// Dermed rammer den præcis det tilfælde, hvor en titel er blevet ændret uden at
+// citaterne fulgte med.
+const titler = new Map();
+for (const f of fs.readdirSync('src/content/videos').filter((x) => x.endsWith('.md'))) {
+  const m = fs.readFileSync(path.join('src/content/videos', f), 'utf8').match(/^title:\s*"(.*)"\s*$/m);
+  if (m) titler.set(f.slice(0, -3), m[1]);
+}
+const ensret = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const alleTitler = new Set([...titler.values()].map(ensret));
+const erTitelFormet = (t) => {
+  const ord = t.trim().split(/\s+/);
+  if (t.trim().length < 20 || ord.length < 3) return false;
+  return ord.filter((o) => /^[A-Z0-9]/.test(o)).length / ord.length >= 0.5;
+};
+
+const forloebne = [];
+let tekstTjekket = 0;
+for (const mappe of MAPPER) {
+  if (!fs.existsSync(mappe)) continue;
+  for (const f of fs.readdirSync(mappe).filter((x) => x.endsWith('.md'))) {
+    const tekst = fs.readFileSync(path.join(mappe, f), 'utf8');
+    for (const m of tekst.matchAll(/\[([^\]\n]+)\]\((\/video\/[^)\s#?]+)\/?\)/g)) {
+      const slug = m[2].replace(/^\/video\//, '').replace(/\/$/, '');
+      const nu = titler.get(slug);
+      if (!nu) continue;
+      tekstTjekket++;
+      if (ensret(m[1]) === ensret(nu)) continue;
+      if (!erTitelFormet(m[1])) continue;
+      if (alleTitler.has(ensret(m[1]))) continue;
+      forloebne.push({ fil: `${mappe}/${f}`, tekst: m[1], nu });
+    }
+  }
+}
+
 console.log(`Tjekket ${tjekket} interne links i ${MAPPER.length} indholdsmapper.`);
-if (doede.length === 0) {
-  console.log('✅ Alle interne links peger på noget, der findes.');
+console.log(`Tjekket ${tekstTjekket} linktekster mod målsidens overskrift.`);
+if (doede.length === 0 && forloebne.length === 0) {
+  console.log('✅ Alle interne links peger på noget, der findes — og lover den rigtige overskrift.');
   process.exit(0);
 }
-console.log(`\n❌ ${doede.length} døde interne link(s):`);
-for (const d of doede) console.log(`   ${d.fil.split('/').pop()}\n      ${d.link}  — ${d.hvorfor}`);
+if (doede.length) {
+  console.log(`\n❌ ${doede.length} døde interne link(s):`);
+  for (const d of doede) console.log(`   ${d.fil.split('/').pop()}\n      ${d.link}  — ${d.hvorfor}`);
+}
+if (forloebne.length) {
+  console.log(`\n❌ ${forloebne.length} link(s) lover en overskrift, der ikke findes mere:`);
+  for (const d of forloebne) console.log(`   ${d.fil.split('/').pop()}\n      linktekst:  ${d.tekst}\n      siden hedder: ${d.nu}`);
+}
 process.exit(1);

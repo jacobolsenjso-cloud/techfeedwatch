@@ -52,7 +52,7 @@ The combined impact of Proof-of-Stake and Layer 2 scaling has profoundly shaped 
 
 **Real-World Assets (RWA)**: Ethereum's programmable nature extends to the tokenization of Real-World Assets (RWA), bringing traditional assets like real estate, commodities, or even intellectual property onto the blockchain. Smart contracts facilitate the fractional ownership, transfer, and management of these assets digitally, opening new avenues for investment and liquidity. The ongoing improvements in scalability and security are critical for the mainstream adoption of RWA tokenization.
 
-These ripple effects consolidate Ethereum's position as the foundational layer for a truly decentralized digital economy. The innovations in scaling and consensus have not only improved existing applications but also created new possibilities for how individuals and organizations interact with digital assets and services. For a broader overview of the platform, read [What Is Ethereum and What Is It Used for Today](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
+These ripple effects consolidate Ethereum's position as the foundational layer for a truly decentralized digital economy. The innovations in scaling and consensus have not only improved existing applications but also created new possibilities for how individuals and organizations interact with digital assets and services. For a broader overview of the platform, read [Ethereum Blockchain: What Is It and What Is It Used For?](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
 
 ## What To Watch Next
 

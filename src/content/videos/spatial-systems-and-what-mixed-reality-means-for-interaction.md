@@ -81,7 +81,7 @@ Because the system tracks 6 degrees of freedom, the user can walk to the opposit
 
 This spatial precision alters real-world decisions. As user testing demonstrates, someone can walk completely around the digital sofa, evaluate its scale against their real coffee table, and discover that the selected length would block an adjacent doorway. They swap the model for a smaller variant before making an online purchase, avoiding costly shipping returns and logistical friction.
 
-These practical outcomes rely heavily on underlying algorithms like SLAM (Simultaneous Localization and Mapping). [What SLAM Means for Anchoring Augmented Reality Objects](/video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital) explains how hardware constructs real-time coordinates, showing [How Augmented Reality Redefines Human-Computer Spatial Interaction](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital) across enterprise and consumer workflows.
+These practical outcomes rely heavily on underlying algorithms like SLAM (Simultaneous Localization and Mapping). [What SLAM Means for Anchoring Augmented Reality Objects](/video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital) explains how hardware constructs real-time coordinates, showing [How Augmented Reality Changes Spatial Interaction](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital) across enterprise and consumer workflows.
 
 ## What Others Missed
 
