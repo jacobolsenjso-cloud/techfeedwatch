@@ -9,7 +9,8 @@
 // fra glossar-pluginnet OG fra artiklernes egen tekst, som robotten skriver.
 // Her rettes de ét sted, også dem robotten skriver i morgen.
 //
-// Reglen er snæver: kun <a href="/sti"> uden skråstreg, og KUN hvis
+// Reglen er snæver: kun <a href="/sti"> (og sitets egne adresser i JSON-LD)
+// uden skråstreg, og KUN hvis
 // dist/sti/index.html findes. Filer (/rss.xml), omdirigeringer og ukendte
 // adresser røres ikke. Fejler noget, afsluttes med 0 — et link med en
 // omvej er bedre end et site, der ikke bliver lagt ud.
@@ -46,12 +47,20 @@ try {
   for (const fil of htmlFiler(DIST)) {
     const før = fs.readFileSync(fil, 'utf8');
     let n = 0;
-    const efter = før.replace(RE, (hel, start, sti, rest = '') => {
+    let efter = før.replace(RE, (hel, start, sti, rest = '') => {
       const sidste = sti.split('/').pop();
       if (sidste.includes('.') || !erSide(sti)) return hel;
       n++;
       return `${start}${sti}/${rest}"`;
     });
+    // Samme regel for sitets egne adresser i JSON-LD (schema): Google følger
+    // også dem. Kun inde i ld+json-blokke, og kun når siden findes.
+    efter = efter.replace(/(<script type="application\/ld\+json"[^>]*>)([\s\S]*?)(<\/script>)/g, (hel, a, json, b) =>
+      a + json.replace(/"https:\/\/techfeedwatch\.com(\/[^"?#]*[^"?#/])"/g, (h, sti) => {
+        if (sti.split('/').pop().includes('.') || !erSide(sti)) return h;
+        n++;
+        return `"https://techfeedwatch.com${sti}/"`;
+      }) + b);
     if (n) {
       fs.writeFileSync(fil, efter, 'utf8');
       filerRettet++;

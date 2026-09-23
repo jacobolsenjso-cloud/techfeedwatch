@@ -222,7 +222,7 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
           : `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
 
         const card = document.createElement('a');
-        card.href = `/video/${video.slug}`;
+        card.href = `/video/${video.slug}/`;
         card.className = 'watch-card';
 
         const thumb = document.createElement('div');

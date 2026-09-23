@@ -86,7 +86,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         clearBtn.style.display = 'inline-block';
 
         historyGrid.innerHTML = healed.map(video => `
-          <a href="/video/${video.slug}" class="watch-card">
+          <a href="/video/${video.slug}/" class="watch-card">
             <div class="watch-card-thumb">
               <img src="${video.img.replace('mqdefault', 'hqdefault')}" alt="${(video.title || '').replace(/"/g, '&quot;')}" loading="lazy" />
               <span class="watch-card-play" aria-hidden="true">▶</span>

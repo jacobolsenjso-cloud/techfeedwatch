@@ -72,7 +72,7 @@ const breadcrumbSchema = {
 
 // Bygger dynamisk stien til Google ud fra hvor vi er
 if (currentPath.startsWith('/video/')) {
-  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Video Archive", "item": "https://techfeedwatch.com/library" });
+  breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Video Archive", "item": "https://techfeedwatch.com/library/" });
   if (title) breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 3, "name": title, "item": `https://techfeedwatch.com${currentPath}` });
 } else if (currentPath.startsWith('/tag/')) {
   breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": "Tags", "item": "https://techfeedwatch.com/" });
@@ -917,7 +917,7 @@ const siteSchema = [
             const matches = sData.filter((v) => (v.title || '').toLowerCase().includes(q) || (v.summary || '').toLowerCase().includes(q) || (v.tags || []).some((t) => (t || '').toLowerCase().includes(q))).slice(0, 7);
             if (!matches.length) { searchSuggest.innerHTML = '<div class="search-suggest-empty">No matches. Press Enter to search anyway.</div>'; searchSuggest.classList.add('active'); return; }
             let html = matches.map((v) => (
-              '<a class="search-suggest-item" href="/video/' + v.slug + '">' +
+              '<a class="search-suggest-item" href="/video/' + v.slug + '/">' +
                 '<img class="search-suggest-thumb" src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
                 '<span class="search-suggest-body">' +
                   '<span class="search-suggest-title">' + escHtml(v.title) + '</span>' +
@@ -964,7 +964,7 @@ const siteSchema = [
             if (!nArticles.length) { notifList.innerHTML = '<div class="notif-empty">No new articles yet — check back soon!</div>'; return; }
             notifList.innerHTML = nArticles.slice(0, 12).map((a) => {
               const isNew = nNew.indexOf(a.slug) !== -1;
-              return '<a class="notif-item' + (isNew ? ' is-new' : '') + '" href="/video/' + a.slug + '">' +
+              return '<a class="notif-item' + (isNew ? ' is-new' : '') + '" href="/video/' + a.slug + '/">' +
                 '<img class="notif-thumb" src="https://img.youtube.com/vi/' + a.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
                 '<span class="notif-body"><span class="notif-title">' + nEsc(a.title) + '</span><span class="notif-date">' + nDate(a.date) + '</span></span>' +
                 (isNew ? '<span class="notif-newdot"></span>' : '') +

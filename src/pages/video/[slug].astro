@@ -872,12 +872,12 @@ const metaDesc = rawMeta.length > 157
 
         <div class="shorts-actions-col">
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="prevShortBtn" aria-label="Previous Video" title="Previous Video" data-url={prevShortSlug ? `/video/${prevShortSlug}` : ''} style={!prevShortSlug ? 'opacity:0.3; pointer-events:none;' : ''}>
+            <button class="shorts-circle-btn" id="prevShortBtn" aria-label="Previous Video" title="Previous Video" data-url={prevShortSlug ? `/video/${prevShortSlug}/` : ''} style={!prevShortSlug ? 'opacity:0.3; pointer-events:none;' : ''}>
               <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"></path></svg>
             </button>
           </div>
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="nextShortBtn" aria-label="Next Video" title="Next Video" data-url={nextShortSlug ? `/video/${nextShortSlug}` : ''} style={!nextShortSlug ? 'opacity:0.3; pointer-events:none;' : ''}>
+            <button class="shorts-circle-btn" id="nextShortBtn" aria-label="Next Video" title="Next Video" data-url={nextShortSlug ? `/video/${nextShortSlug}/` : ''} style={!nextShortSlug ? 'opacity:0.3; pointer-events:none;' : ''}>
               <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
           </div>
@@ -1094,7 +1094,7 @@ const metaDesc = rawMeta.length > 157
               var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
               var cards = recs.slice(0, 4).map(function (v, i) {
                 var extra = i === 3 ? ' inline-recs-card-extra' : '';
-                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
+                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '/"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
               }).join('');
               var block = document.createElement('aside');
               block.className = 'inline-recs';
@@ -1400,7 +1400,7 @@ const metaDesc = rawMeta.length > 157
           cinemaList.innerHTML = '';
           list.forEach((v, i) => {
             const card = document.createElement('a');
-            card.href = `/video/${v.slug}`;
+            card.href = `/video/${v.slug}/`;
             card.className = 'cinema-card';
 
             const thumb = document.createElement('div');
@@ -1844,8 +1844,8 @@ const metaDesc = rawMeta.length > 157
       const shortsWrapper = document.getElementById('shortsWrapper');
       if (shortsWrapper) {
         let isNavigating = false;
-        const nextUrl = shortsWrapper.dataset.next ? `/video/${shortsWrapper.dataset.next}` : null;
-        const prevUrl = shortsWrapper.dataset.prev ? `/video/${shortsWrapper.dataset.prev}` : null;
+        const nextUrl = shortsWrapper.dataset.next ? `/video/${shortsWrapper.dataset.next}/` : null;
+        const prevUrl = shortsWrapper.dataset.prev ? `/video/${shortsWrapper.dataset.prev}/` : null;
 
         shortsWrapper.addEventListener('wheel', (e) => {
           if (isNavigating) return;
@@ -1957,7 +1957,7 @@ const metaDesc = rawMeta.length > 157
               let html = '';
               for (let i = 0; i < Math.min(PER, pool.length); i++) {
                 const v = pool[(idx + i) % pool.length];
-                html += `<a href="/video/${v.slug}" class="shorts-rec-card"><div class="shorts-rec-thumb"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></div><span class="shorts-rec-title">${esc(v.title)}</span></a>`;
+                html += `<a href="/video/${v.slug}/" class="shorts-rec-card"><div class="shorts-rec-thumb"><img src="https://img.youtube.com/vi/${v.youtubeId}/mqdefault.jpg" alt="" loading="lazy"></div><span class="shorts-rec-title">${esc(v.title)}</span></a>`;
               }
               list.innerHTML = html;
             };
