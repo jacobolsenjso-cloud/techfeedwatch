@@ -36,14 +36,45 @@ function alarm(tekst) {
   process.exit(1);
 }
 
+// Første kørsel i GitHub 23/9 fik HTTP 403 fra sitet — fra pc'en og skyen
+// svarede det 200. Cloudflare afviser en navnløs bot fra en ukendt maskine.
+// Løsningen fandtes allerede i indexnow.mjs (målt 20/9): giv den et navn og
+// prøv igen efter en pause, for Cloudflare lukker op efter første afvisning.
+const UA = 'techfeedwatch-tomgang/1.0 (+https://techfeedwatch.com)';
+const BLOKERET = [403, 429, 503];
+const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+
 let status;
-try {
-  // Cache-bust, så en gammel kopi i et mellemled aldrig kan skjule tomgang.
-  const svar = await fetch(`${URL}?t=${nu}`, { signal: AbortSignal.timeout(30000) });
-  if (!svar.ok) alarm(`robot-status.json kunne ikke hentes: HTTP ${svar.status} fra ${URL}`);
-  status = await svar.json();
-} catch (e) {
-  alarm(`robot-status.json kunne ikke hentes eller læses: ${e.message}`);
+let sidste = '';
+for (let forsoeg = 0; forsoeg < 3 && !status; forsoeg++) {
+  if (forsoeg) await pause(5000);
+  try {
+    // Cache-bust, så en gammel kopi i et mellemled aldrig kan skjule tomgang.
+    const svar = await fetch(`${URL}?t=${Date.now()}`, {
+      headers: { 'user-agent': UA },
+      signal: AbortSignal.timeout(30000),
+    });
+    if (svar.ok) { status = await svar.json(); break; }
+    sidste = `HTTP ${svar.status}`;
+    if (!BLOKERET.includes(svar.status)) break;     // 404 o.l. er ægte fejl — prøv ikke igen
+  } catch (e) {
+    sidste = e.message;
+  }
+}
+
+if (!status) {
+  // Blev vi AFVIST (firewall), er sitet ikke nede — vi må bare ikke komme ind.
+  // Så falder vi tilbage på repoets egen kopi af filen, så alarmen stadig kan
+  // se tomgang, og melder en advarsel (gul, ingen mail) om at deploy-delen af
+  // tjekket ikke blev lavet. Alt andet — 404, timeout, nede — er rødt.
+  const afvist = BLOKERET.some((k) => sidste === `HTTP ${k}`);
+  if (afvist && fs.existsSync('public/robot-status.json')) {
+    console.log(`::warning title=Tomgangsalarm::Sitet afviste GitHub (${sidste}) — tjekker repoets egen kopi i stedet. Tomgang ses stadig; deploy-kæden gør ikke.`);
+    skriv(`⚠️ Live-siden svarede ${sidste} til GitHub; bruger repoets kopi af robot-status.json.`);
+    status = JSON.parse(fs.readFileSync('public/robot-status.json', 'utf8'));
+  } else {
+    alarm(`robot-status.json kunne ikke hentes fra ${URL}: ${sidste}`);
+  }
 }
 
 const at = status?.lastArticle?.at;
