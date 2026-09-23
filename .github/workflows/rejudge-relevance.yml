@@ -34,14 +34,14 @@ concurrency:
 
 jobs:
   rejudge:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 350
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
 
@@ -51,7 +51,7 @@ jobs:
       # Deles med "Archive rewrite": en video der allerede er hentet dér,
       # hentes ikke igen her.
       - name: Transskript-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .cache/transskripter
           key: transskripter-${{ github.run_id }}
