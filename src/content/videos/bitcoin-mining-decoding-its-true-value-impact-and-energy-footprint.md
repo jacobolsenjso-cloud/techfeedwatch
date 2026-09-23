@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Bitcoin mining is the process by which new Bitcoin (BTC) is created and new transactions are added to Bitcoin's public ledger, known as the blockchain. It involves powerful computers competing to solve a complex mathematical puzzle, and the first one to find the solution earns the right to add a new "block" of verified transactions to the chain, receiving newly minted BTC and transaction fees as a reward. This system is fundamental to Bitcoin's security, ensuring that all transactions are legitimate and the network remains decentralized.
+Bitcoin mining is the process by which new Bitcoin (BTC) is created and new transactions are added to Bitcoin's public ledger, known as the blockchain. It involves powerful computers competing to solve a complex mathematical puzzle, and the first one to find the solution earns the right to add a new "block" of verified transactions to the chain, receiving newly minted BTC and transaction fees as a reward. This system is fundamental to [Bitcoin's security](/video/bitcoin-s-quantum-threat-separating-hype-from-reality-in-blockchain/), ensuring that all transactions are legitimate and the network remains decentralized.
 
 ## Understanding the Bitcoin Blockchain
 

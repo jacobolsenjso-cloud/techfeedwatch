@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-The financial services sector is undergoing a profound transformation, driven by rapid technological advancements and an increasing focus on customer needs. This evolution is seeing the re-emergence of bundled services, the rise of FinTech-as-a-Service, and the foundational shifts promised by Web3, all converging to redefine how financial value is created and exchanged.
+The [financial services](/video/agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping/) sector is undergoing a profound transformation, driven by rapid technological advancements and an increasing focus on customer needs. This evolution is seeing the re-emergence of bundled services, the rise of FinTech-as-a-Service, and the foundational shifts promised by Web3, all converging to redefine how financial value is created and exchanged.
 
 ## The Accelerating Pace of Financial Innovation
 
@@ -55,7 +55,7 @@ Web3.0 represents the anticipated next generation of the internet, characterized
 
 Web 1.0, spanning roughly from 1990 to 2005, was primarily a "read-only" web. It consisted of basic websites built on HTML, often accessed via dial-up modems, and served mainly as static content delivery networks. This era, despite its limitations, spurred the dot-com bubble and laid the groundwork for internet giants. Web 2.0, the current iteration, evolved into the "read-write" web, fostering user-generated content and experiences. This period saw the rise of blogging, social media, podcasting, and platforms like YouTube and Facebook, establishing the internet as a platform for building software applications.
 
-Web3.0 builds upon this, integrating a bundle of technologies aimed at creating a more intelligent, decentralized, and user-controlled internet. Key components include blockchain technology, which underpins decentralized autonomous organizations (DAOs), non-fungible tokens (NFTs), and smart contracts. The metaverse, tokenization, and extended reality (XR) are also integral parts of this evolving ecosystem, alongside advancements like edge computing, which processes data closer to its source for higher speeds and more insightful leads. The Web3 ecosystem already boasts thousands of companies, with substantial investments flowing into startups within this space. Major corporations like Nike, Google, and JP Morgan are actively experimenting with these technologies to explore their potential benefits and applications.
+Web3.0 builds upon this, integrating a bundle of technologies aimed at creating a more intelligent, decentralized, and user-controlled internet. Key components include blockchain technology, which underpins decentralized autonomous organizations (DAOs), non-fungible tokens (NFTs), and [smart contracts](/video/beyond-digital-cash-the-evolving-utility-of-crypto-networks/). The metaverse, tokenization, and extended reality (XR) are also integral parts of this evolving ecosystem, alongside advancements like edge computing, which processes data closer to its source for higher speeds and more insightful leads. The Web3 ecosystem already boasts thousands of companies, with substantial investments flowing into startups within this space. Major corporations like Nike, Google, and JP Morgan are actively experimenting with these technologies to explore their potential benefits and applications.
 
 ## Preparing for a Future of Digital Twins and Extended Reality
 

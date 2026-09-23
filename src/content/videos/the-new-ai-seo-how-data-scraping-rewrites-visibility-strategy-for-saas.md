@@ -45,7 +45,7 @@ However, LLMs and the platforms hosting them are often designed to block automat
 
 ## How Web Scraping Uncovers AI Citations
 
-The process of using web scraping to understand AI citations begins with defining specific queries relevant to a business or product. These queries might include "top SaaS solutions for meta media buying" or "best AI creative tools for meta."
+The process of using web scraping to understand [AI citations](/video/seo-s-automated-future-the-ai-powered-engine-redefining-digital/) begins with defining specific queries relevant to a business or product. These queries might include "top SaaS solutions for meta media buying" or "best AI creative tools for meta."
 
 Once queries are established, a specialized scraping tool is used to submit these prompts to various LLMs. The tool then captures the LLM's responses, which often include direct citations or references to specific web pages and articles. This raw data, often in HTML format, is then analyzed to identify the exact URLs and content pieces that the AI model referenced.
 

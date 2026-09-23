@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Claude Science is an integrated AI environment developed by Anthropic, designed to automate and accelerate complex scientific research workflows. It serves as a sophisticated co-pilot for scientists, handling tasks from comprehensive literature reviews and data analysis to molecular visualization and experimental planning. The platform aims to significantly reduce the manual effort traditionally required in scientific discovery by planning, executing, and self-correcting research tasks autonomously.
+Claude Science is an integrated AI environment developed by Anthropic, designed to automate and accelerate complex scientific research workflows. It serves as a sophisticated co-pilot for scientists, handling tasks from comprehensive literature reviews and data analysis to molecular visualization and experimental planning. The platform aims to significantly reduce the manual effort traditionally required in scientific discovery by planning, executing, and self-correcting [research tasks](/video/google-unleashes-notebooklm-the-autonomous-ai-that-just-made-your/) autonomously.
 
 ## The Agentic Core: Self-Correction and Planning
 

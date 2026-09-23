@@ -43,13 +43,13 @@ Companies like Qwist, a German open banking platform, are already active in this
 
 While open banking promises a wealth of data, accessing it is only the first step. Many companies struggle to turn raw data into actionable insights. They often sit on large amounts of information without knowing how to use it effectively. This problem is common even within well-established organizations.
 
-Internal data silos are a major barrier. Different departments may hold separate data sets. This means the left hand often does not know what the right hand is doing. Simply receiving raw open banking data is not enough for these companies. They need the ability to absorb and process it meaningfully. Without this, the customer experience can remain poor. Businesses might miss opportunities for growth or efficiency.
+Internal data silos are a major barrier. Different departments may hold separate data sets. This means the left hand often does not know what the right hand is doing. Simply receiving raw open [banking data](/video/open-banking-data-and-trust-redefine-finance/) is not enough for these companies. They need the ability to absorb and process it meaningfully. Without this, the customer experience can remain poor. Businesses might miss opportunities for growth or efficiency.
 
 The true value comes from enhancing this raw data. It needs to be categorized and improved in quality. This transformation makes the data specific to a business's prime needs. For example, raw transaction data can be categorized into spending habits or income patterns. This allows businesses to create more revenue or offer better customer experiences. Enhanced data can reveal trends, identify risks, or personalize financial products. Providers like Qwist help businesses with this important step. They go beyond just connecting APIs. They also enhance the data to make it more valuable and specific for business goals.
 
 ## Accelerating Business Decisions in a Fast-Paced Market
 
-The financial services industry is experiencing rapid acceleration. Business operations and strategies must adapt to this speed. Smart technology drives this fast pace. The software technology world is on an acceleration curve. This directly impacts how executives and companies make decisions.
+The [financial services](/video/beyond-disruption-how-web3-and-xr-are-forcing-fintech-s-next-evolution/) industry is experiencing rapid acceleration. Business operations and strategies must adapt to this speed. Smart technology drives this fast pace. The software technology world is on an acceleration curve. This directly impacts how executives and companies make decisions.
 
 Discussions that once lasted for years now need to conclude in months. Setup timelines have shrunk dramatically. This shift demands quicker access to relevant, high-quality data. Open banking, especially with the expanded data sets under PSD3, supports this need. It provides the information required for agile decision-making. For instance, a lending company can assess creditworthiness much faster. This speed allows for quicker loan approvals and better customer service.
 

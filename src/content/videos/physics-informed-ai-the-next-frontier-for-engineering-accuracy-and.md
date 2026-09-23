@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Physics-Informed Machine Learning (PIML) merges centuries of scientific understanding with modern artificial intelligence techniques. This approach allows AI models to not only learn from data but also adhere to basic physical laws, leading to more accurate and reliable predictions. It also opens avenues for AI to uncover new scientific principles that humans have not yet formally described.
+Physics-Informed [Machine Learning](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/) (PIML) merges centuries of scientific understanding with modern artificial intelligence techniques. This approach allows AI models to not only learn from data but also adhere to basic physical laws, leading to more accurate and reliable predictions. It also opens avenues for AI to uncover new scientific principles that humans have not yet formally described.
 
 ## What is Physics-Informed Machine Learning?
 

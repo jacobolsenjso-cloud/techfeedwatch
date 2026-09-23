@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-A fintech business model outlines the strategic approach a company takes to generate revenue and profit by leveraging technology to deliver financial services. These models define how value is created, offered, and captured, encompassing everything from the products and services provided to pricing strategies, customer engagement, and cost management. Essentially, a fintech business model is the blueprint for how a financial technology company operates and sustains itself in the market.
+A fintech business model outlines the strategic approach a company takes to generate revenue and profit by leveraging technology to deliver [financial services](/video/fintech-s-fragmented-future-deconstructing-the-six-pillars-of-digital/). These models define how value is created, offered, and captured, encompassing everything from the products and services provided to pricing strategies, customer engagement, and cost management. Essentially, a fintech business model is the blueprint for how a financial technology company operates and sustains itself in the market.
 
 ## What is a Fintech Business Model?
 
@@ -38,7 +38,7 @@ At its core, a business model describes how an organization creates, delivers, a
 
 ## Marketplace Platforms: Connecting Buyers and Sellers
 
-One prevalent fintech business model is the marketplace platform, which acts as an intermediary connecting buyers and sellers and facilitating transactions between them. In this model, the fintech company earns revenue primarily through commissions charged on each transaction that occurs on its platform. While general e-commerce examples like eBay and Etsy illustrate this concept by connecting consumers for various goods, fintech applications extend this to financial services or products. For instance, platforms like Jumia, Konga, Kilimall, or Souk in Africa connect buyers and sellers, earning a commission on sales.
+One prevalent fintech business model is the marketplace platform, which acts as an intermediary connecting buyers and sellers and facilitating transactions between them. In this model, the fintech company earns revenue primarily through commissions charged on each transaction that occurs on its platform. While general e-commerce examples like eBay and Etsy illustrate this concept by connecting consumers for various goods, [fintech applications](/video/passive-income-power-up-8-fintech-apps-revolutionizing-your-financial/) extend this to financial services or products. For instance, platforms like Jumia, Konga, Kilimall, or Souk in Africa connect buyers and sellers, earning a commission on sales.
 
 The advantages of the marketplace model include its inherent scalability; adding more buyers and sellers to the platform typically does not incur significant overhead costs. This also allows for a diverse range of products and services, as the platform can attract sellers from various locations and industries. However, a notable disadvantage is the limited control the platform operator has over the quality of products, services, or the overall customer experience provided by individual sellers. This can lead to issues that result in negative user reviews. To mitigate this, some marketplaces implement more stringent seller vetting processes and offer tools and resources to help sellers improve their service standards.
 

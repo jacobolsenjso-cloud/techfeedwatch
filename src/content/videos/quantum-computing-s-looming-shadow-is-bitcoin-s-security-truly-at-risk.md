@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Quantum computing presents a theoretical future threat to the security of Bitcoin and other blockchain networks. This risk primarily targets the cryptographic digital signatures that prove ownership and authorize transactions, rather than the underlying encryption of data or the mining process itself. While a powerful quantum computer capable of breaking current cryptography is not an immediate concern, understanding this distinction is key to assessing the challenge.
+[Quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) presents a theoretical future threat to the security of Bitcoin and other blockchain networks. This risk primarily targets the cryptographic digital signatures that prove ownership and authorize transactions, rather than the underlying encryption of data or the mining process itself. While a powerful quantum computer capable of breaking current cryptography is not an immediate concern, understanding this distinction is key to assessing the challenge.
 
 ## The Quantum Threat and Its Timeline
 
@@ -59,7 +59,7 @@ Certain types of Bitcoin outputs are more exposed because their public key is vi
 
 Another concern is the "race scenario" during transactions. When a Bitcoin transaction is broadcast, it often reveals the public key and then waits in the mempool before a miner confirms it. In a world with a powerful quantum computer, an attacker could potentially derive the private key very quickly and broadcast a conflicting transaction, aiming to steal funds. Such attacks might initially target large holders.
 
-The issue of abandoned coins also poses a problem. Many Bitcoin holdings have not moved in years due to lost keys or forgotten wallets. If Bitcoin transitions to a new quantum-safe format, decisions would need to be made about these dormant coins. Options like freezing them, allowing them to be swept by quantum-capable entities, or destroying them all carry major trade-offs.
+The issue of abandoned coins also poses a problem. Many [Bitcoin holdings](/video/bitcoin-sell-off-imminent-dcg-gemini-clash-raises-systemic-concerns/) have not moved in years due to lost keys or forgotten wallets. If Bitcoin transitions to a new quantum-safe format, decisions would need to be made about these dormant coins. Options like freezing them, allowing them to be swept by quantum-capable entities, or destroying them all carry major trade-offs.
 
 It is important to note that the primary quantum threat to Bitcoin targets its digital signatures, not its proof-of-work mining system. Mining relies on hashing, where quantum computers offer only a limited theoretical advantage. Even if large miners gained a quantum edge, it would likely shift who wins blocks rather than collapse Bitcoin's security model.
 

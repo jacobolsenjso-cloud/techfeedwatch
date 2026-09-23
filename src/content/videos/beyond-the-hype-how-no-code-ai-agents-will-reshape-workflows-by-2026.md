@@ -34,7 +34,7 @@ The field of workflow automation is undergoing a profound transformation with th
 
 ## Understanding the Mechanics of AI Agents
 
-At its core, an AI agent functions as a digital employee capable of thinking, remembering, and taking action to achieve a specific goal. Unlike a chatbot that primarily answers questions, or a traditional automation that follows a fixed sequence of steps, an agent interprets a goal and then dynamically chooses the necessary actions based on the context it encounters. This adaptability is what sets them apart and makes them so powerful.
+At its core, an [AI agent](/video/anthropic-claude-computer-use-ai-agent-competition-heats-up/) functions as a digital employee capable of thinking, remembering, and taking action to achieve a specific goal. Unlike a chatbot that primarily answers questions, or a traditional automation that follows a fixed sequence of steps, an agent interprets a goal and then dynamically chooses the necessary actions based on the context it encounters. This adaptability is what sets them apart and makes them so powerful.
 
 To accomplish this, an AI agent relies on three essential components:
 * **The Brain:** This is typically a large language model (LLM) that provides the agent with its multi-step reasoning and planning capabilities. It allows the agent to understand objectives, break them down into sub-tasks, and determine the most effective path forward.

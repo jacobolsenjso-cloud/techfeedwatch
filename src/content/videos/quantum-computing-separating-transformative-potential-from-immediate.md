@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Quantum computing offers a basically different way to process information, moving beyond the limitations of classical computers by harnessing the unique properties of quantum mechanics. This approach promises to tackle problems that are currently impossible, but building these advanced machines presents immense engineering and scientific challenges. The core of this difficulty lies in creating and controlling qubits, the basic building blocks of a quantum computer.
+[Quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale/) offers a basically different way to process information, moving beyond the limitations of classical computers by harnessing the unique properties of quantum mechanics. This approach promises to tackle problems that are currently impossible, but building these advanced machines presents immense engineering and scientific challenges. The core of this difficulty lies in creating and controlling qubits, the basic building blocks of a quantum computer.
 
 ## The Basic Difference: Bits vs. Qubits
 

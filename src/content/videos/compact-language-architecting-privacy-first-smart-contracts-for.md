@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Compact is a specialized programming language designed for the Midnight Network, specifically tailored for creating smart contracts that prioritize data privacy. Built upon a carefully chosen subset of TypeScript, it aims to make the development of decentralized applications (dApps) more accessible, particularly for those leveraging zero-knowledge proofs (ZKPs) without needing to engage directly with their intricate underlying circuits. This approach allows developers to build verifiable computations over private data, a fundamental requirement for many Web3 applications demanding confidentiality.
+Compact is a specialized programming language designed for the Midnight Network, specifically tailored for creating [smart contracts](/video/kaspa-s-smart-contracts-a-proof-of-work-network-s-bid-for-defi/) that prioritize data privacy. Built upon a carefully chosen subset of TypeScript, it aims to make the development of decentralized applications (dApps) more accessible, particularly for those leveraging zero-knowledge proofs (ZKPs) without needing to engage directly with their intricate underlying circuits. This approach allows developers to build verifiable computations over private data, a fundamental requirement for many Web3 applications demanding confidentiality.
 
 ## The Need for a Domain-Specific Language
 

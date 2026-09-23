@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-US crypto legislation, such as the proposed CLARITY Act, aims to establish clear rules for digital assets. These bills seek to define whether cryptocurrencies are securities, commodities, or a new class of asset. Such definitions are critical for determining which regulatory bodies, like the Securities and Exchange Commission (SEC) or the Commodity Futures Trading Commission (CFTC), oversee them.
+[US crypto](/video/us-crypto-regulation-fit21-bill-vote-implications/) legislation, such as the proposed CLARITY Act, aims to establish clear rules for digital assets. These bills seek to define whether cryptocurrencies are securities, commodities, or a new class of asset. Such definitions are critical for determining which regulatory bodies, like the Securities and Exchange Commission (SEC) or the Commodity Futures Trading Commission (CFTC), oversee them.
 
 ## The Quest for Regulatory Clarity
 

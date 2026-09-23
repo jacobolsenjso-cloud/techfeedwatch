@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Robinhood has recently launched its own blockchain, marking a major move into decentralized finance (DeFi) and tokenized assets. This initiative aims to transform how investors engage with financial markets by offering enhanced efficiency, accessibility, and continuous trading opportunities. It represents a strategic effort to blend the innovative aspects of blockchain with a regulated financial framework.
+Robinhood has recently launched its own blockchain, marking a major move into decentralized finance (DeFi) and [tokenized assets](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift/). This initiative aims to transform how investors engage with financial markets by offering enhanced efficiency, accessibility, and continuous trading opportunities. It represents a strategic effort to blend the innovative aspects of blockchain with a regulated financial framework.
 
 ## The Robinhood Chain: An Overview and Early Impact
 
@@ -41,7 +41,7 @@ A key product on the Robinhood Chain is Robinhood Earn, which offers customers a
 
 To enhance safety, Robinhood Earn includes an insurance component designed to provide a safety net for customers. This addresses common concerns about smart contract hacks and vault issues in DeFi. The product is integrated directly into the main Robinhood app, making it accessible to its 26 or 27 million funded accounts. This ease of use allows customers to convert dollars to stablecoins, lend them, and see their capital compounding in real-time with just a few taps. The ability to quickly withdraw assets from the lending pool further simplifies the user experience.
 
-The offering of stablecoin yield has sparked debate, particularly in the context of the US Clarity Act. Critics argue against stablecoins generating yield, while proponents, including Robinhood, contend that it penalizes users who want to use blockchain technology for efficient, 24/7 transfers. Many customers, who might otherwise get minimal returns from traditional savings accounts, are simply looking for better options than zero yield on cash.
+The offering of stablecoin yield has sparked debate, particularly in the context of the US Clarity Act. Critics argue against stablecoins generating yield, while proponents, including Robinhood, contend that it penalizes users who want to use [blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/) for efficient, 24/7 transfers. Many customers, who might otherwise get minimal returns from traditional savings accounts, are simply looking for better options than zero yield on cash.
 
 ## Tokenized Assets and 24/7 Global Markets
 

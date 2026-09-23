@@ -29,13 +29,13 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Nvidia's Vera Rubin system represents a major advancement in AI infrastructure, designed to tackle the growing energy demands of large-scale artificial intelligence. This next-generation rack-scale system promises a tenfold improvement in performance per watt compared to its predecessor, Blackwell. The goal is to optimize AI compute power while managing the escalating operational costs associated with powerful AI models.
+Nvidia's Vera Rubin system represents a major advancement in AI infrastructure, designed to tackle the growing energy demands of large-scale artificial intelligence. This next-generation rack-scale system promises a tenfold improvement in performance per watt compared to its predecessor, Blackwell. The goal is to optimize [AI compute](/video/nvidia-gtc-jensen-huang-keynote-ai-chip-deals-cloud-strategy/) power while managing the escalating operational costs associated with powerful AI models.
 
 ## The Drive for Efficiency and Scale
 
 The rapid expansion of AI abilities has created a major bottleneck: energy consumption. AI buildouts require immense processing power, which translates directly into higher electricity usage and heat generation. Nvidia's Vera Rubin system directly addresses this challenge. It aims to deliver greatly more compute for the energy it consumes.
 
-While a Vera Rubin rack uses about double the energy of a Blackwell rack, consuming roughly 220kW, it delivers exponentially more compute. This efficiency gain is critical for what Nvidia calls "AI factories," which consist of thousands of racks working in concert. The system is engineered so that all its components behave as a single, cohesive GPU. This design approach helps reduce the cost per token by ten times compared to Blackwell.
+While a Vera Rubin rack uses about double the energy of a Blackwell rack, consuming roughly 220kW, it delivers exponentially more compute. This efficiency gain is critical for what Nvidia calls "[AI factories](/video/the-architect-of-ai-how-nvidia-s-strategic-dominance-is-reshaping/)," which consist of thousands of racks working in concert. The system is engineered so that all its components behave as a single, cohesive GPU. This design approach helps reduce the cost per token by ten times compared to Blackwell.
 
 ## Inside the Vera Rubin Architecture
 
@@ -63,7 +63,7 @@ This complex supply chain faces challenges. Memory, particularly HBM4, is in sho
 
 ## Competition and Future Outlook
 
-Vera Rubin is expected to ship in the second half of 2026. It will enter a competitive market. AMD plans to ship Helios, its first rack-scale system, later this year. Major customers like Microsoft, Google, Amazon, and Meta are also developing their own AI chips. Despite this, these companies continue to work with Nvidia for their AI infrastructure needs.
+Vera Rubin is expected to ship in the second half of 2026. It will enter a competitive market. AMD plans to ship Helios, its first rack-scale system, later this year. Major customers like Microsoft, Google, Amazon, and Meta are also developing their own [AI chips](/video/ai-chips-in-laptops-redefining-personal-computing-power/). Despite this, these companies continue to work with Nvidia for their AI infrastructure needs.
 
 Nvidia encourages customers to adopt its annual architecture cadence, recognizing that each generation offers major leaps in performance. Vera Rubin systems can operate alongside existing Blackwell systems to power different workloads. While Vera Rubin will cost more upfront, with analysts estimating a 25% price increase from Blackwell (from around $3-3.2 million to $3.5-4 million per rack), the reduced cost per token makes it a more efficient investment over time.
 

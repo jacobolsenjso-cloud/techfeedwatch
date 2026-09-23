@@ -43,7 +43,7 @@ For example, articles in the number one organic position have seen their CTR dec
 
 Despite the traffic loss, gaining AI citations is a new measure of success. Being cited by an AIO means your content is recognized as authoritative by the AI model. This recognition builds brand authority. It ensures relevance in the evolving search ecosystem. The challenge is to optimize for both. You want to rank well enough for the AI to find your content. You also want to structure it so the AI chooses to cite you.
 
-Research on Google AI overview citations reveals interesting patterns. A major share, 37.9%, of these citations come from articles ranked in Google's top 10. Another 31.2% are from pages ranked between positions 11 and 100. About 31% of citations come from pages outside the top 100. Many of these non-top 100 citations are from YouTube videos. This highlights that strong SEO still correlates with AI citation potential. Even if a page ranks lower, basic SEO practices help it appear in the top 100, increasing its chance of citation. The goal is to be the source the AI trusts and references.
+Research on [Google AI overview](/video/google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival/) citations reveals interesting patterns. A major share, 37.9%, of these citations come from articles ranked in Google's top 10. Another 31.2% are from pages ranked between positions 11 and 100. About 31% of citations come from pages outside the top 100. Many of these non-top 100 citations are from YouTube videos. This highlights that strong SEO still correlates with AI citation potential. Even if a page ranks lower, basic SEO practices help it appear in the top 100, increasing its chance of citation. The goal is to be the source the AI trusts and references.
 
 ## Optimizing Content for Generative AI
 
@@ -57,7 +57,7 @@ Marketers need to track their brand's visibility within AI Overviews. This invol
 
 This data can then be processed to identify if a brand is cited. It can also show which competitors are receiving citations. An automated workflow can take a list of keywords and query them one by one. It can then extract citation URLs and store them. This allows for analysis of citation frequency for specific brands. It also helps in understanding competitor strategies. Some teams use internal web apps to visualize this data. This makes it accessible to non-technical team members. This tracking is essential for understanding performance in the new search environment.
 
-Another analytical step involves comparing the AI overview answer to the cited article. This helps determine *where* on the page the AI extracted its information. By analyzing many citations, patterns emerge regarding best answer placement. This feedback loop informs content optimization efforts. It helps refine where to place answers for maximum AI visibility.
+Another analytical step involves comparing the AI overview answer to the cited article. This helps determine *where* on the page the AI extracted its information. By analyzing many citations, patterns emerge regarding best answer placement. This feedback loop informs [content optimization](/video/how-ai-powered-tools-are-redefining-your-seo-strategy/) efforts. It helps refine where to place answers for maximum AI visibility.
 
 ## Practical Content Strategy Adjustments
 

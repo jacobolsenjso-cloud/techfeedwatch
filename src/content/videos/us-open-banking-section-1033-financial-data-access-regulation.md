@@ -54,7 +54,7 @@ Section 1033 aims to standardize data access and usage. It seeks to ensure that 
 
 ## Open Banking's Future: AI and Global Context
 
-The future of Open Banking is closely tied to advancements in artificial intelligence. Consumers are increasingly turning to large language models (LLMs) like ChatGPT, Claude, or Gemini for financial advice. These AI tools can answer questions about loans or savings goals. To provide personalized and accurate guidance, these LLMs will need to use open banking data. This means integrating with data aggregators to access a consumer's financial accounts.
+The future of Open Banking is closely tied to advancements in artificial intelligence. Consumers are increasingly turning to large language models (LLMs) like ChatGPT, Claude, or Gemini for financial advice. These AI tools can answer questions about loans or savings goals. To provide personalized and accurate guidance, these LLMs will need to use open [banking data](/video/open-banking-data-and-trust-redefine-finance/). This means integrating with data aggregators to access a consumer's financial accounts.
 
 From a regulatory perspective, the financial industry is generally prepared for AI's role. Humans have long relied on agents like stockbrokers and tax preparers for financial expertise. AI tools will likely carry similar fiduciary responsibilities. Currently, the focus is on "read access," where AI provides suggestions based on financial data. The ability for AI to have "write access"—making transactions or changing account numbers—is not yet a reality in the US. However, other countries, such as Canada, are exploring this direction.
 

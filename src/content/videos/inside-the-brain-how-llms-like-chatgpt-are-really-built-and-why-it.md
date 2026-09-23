@@ -44,7 +44,7 @@ After all this rigorous processing, a vast but curated dataset remains. For exam
 
 ## From Raw Text to Discrete Tokens
 
-Neural networks, which power LLMs, cannot directly process raw text. They require input in the form of a one-dimensional sequence of symbols from a finite set. The process of converting text into these numerical symbols is called tokenization.
+[Neural networks](/video/from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai/), which power LLMs, cannot directly process raw text. They require input in the form of a one-dimensional sequence of symbols from a finite set. The process of converting text into these numerical symbols is called tokenization.
 
 Initially, computers represent text as sequences of bits, zeros and ones. This results in extremely long sequences with only two possible symbols. To make this more manageable, bits are grouped into bytes. Each byte consists of eight bits, allowing for 256 possible combinations or symbols. This reduces the sequence length by eight times while increasing the number of distinct symbols. Think of these bytes not as numbers but as unique IDs representing specific characters or character combinations.
 

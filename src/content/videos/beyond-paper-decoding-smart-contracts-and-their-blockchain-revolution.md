@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Smart contracts represent a fundamental shift in how agreements are formed and executed, leveraging blockchain technology to automate transactions and enforce terms without human intervention. These digital protocols embed contractual clauses directly into code, ensuring that once conditions are met, the agreement self-executes with transparency and immutability. This innovation promises to streamline processes across various industries, from finance to supply chain, by eliminating traditional intermediaries and their associated costs and delays.
+[Smart contracts](/video/compact-language-architecting-privacy-first-smart-contracts-for/) represent a fundamental shift in how agreements are formed and executed, leveraging blockchain technology to automate transactions and enforce terms without human intervention. These digital protocols embed contractual clauses directly into code, ensuring that once conditions are met, the agreement self-executes with transparency and immutability. This innovation promises to streamline processes across various industries, from finance to supply chain, by eliminating traditional intermediaries and their associated costs and delays.
 
 ## The Core Mechanism of Smart Contracts
 

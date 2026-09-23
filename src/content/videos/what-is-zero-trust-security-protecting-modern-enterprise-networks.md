@@ -26,7 +26,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Zero Trust security is a modern approach to network defense that operates on a fundamental principle: "never trust, always verify." It assumes that no user, device, or application, whether inside or outside the traditional network perimeter, should be automatically trusted. Instead, every access request is rigorously authenticated and authorized before access is granted, and continuously verified throughout the session.
+[Zero Trust security](/video/zero-trust-the-essential-security-shift-your-business-needs-now/) is a modern approach to network defense that operates on a fundamental principle: "never trust, always verify." It assumes that no user, device, or application, whether inside or outside the traditional network perimeter, should be automatically trusted. Instead, every access request is rigorously authenticated and authorized before access is granted, and continuously verified throughout the session.
 
 ## The Foundation of Zero Trust: Never Trust, Always Verify
 

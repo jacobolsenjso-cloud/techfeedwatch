@@ -30,11 +30,11 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Smart contracts, sometimes called distributed applications, are self-executing digital agreements. They are essentially small computer programs stored and run on a blockchain. These contracts aim to automate transactions and enforce terms without the need for intermediaries.
+[Smart contracts](/video/kaspa-s-smart-contracts-a-proof-of-work-network-s-bid-for-defi/), sometimes called distributed applications, are self-executing digital agreements. They are essentially small computer programs stored and run on a blockchain. These contracts aim to automate transactions and enforce terms without the need for intermediaries.
 
 ## What Are Smart Contracts?
 
-The core concept of a smart contract emerged long before modern blockchain technology. Computer scientist, legal scholar, and cryptographer Nick Szabo first introduced the term "smart contract" in 1997. His vision involved using a distributed ledger to store and manage contracts. This was a groundbreaking idea for its time, predating the creation of Bitcoin.
+The core concept of a smart contract emerged long before modern [blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/). Computer scientist, legal scholar, and cryptographer Nick Szabo first introduced the term "smart contract" in 1997. His vision involved using a distributed ledger to store and manage contracts. This was a groundbreaking idea for its time, predating the creation of Bitcoin.
 
 In essence, a smart contract functions much like a traditional contract. The fundamental difference lies in its digital nature. It exists entirely as code. This code is embedded within a blockchain. It acts as a self-executing agreement. The contract automatically carries out its predefined actions. It does this when specific, pre-agreed conditions are met. This digital architecture removes the necessity for any central authority. No third party is needed to oversee or enforce the agreement.
 

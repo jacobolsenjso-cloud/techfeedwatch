@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Blockchain escrow programs fundamentally change how assets are held and exchanged in decentralized environments. Instead of human intermediaries, they use self-executing smart contracts. These code-based agreements automatically enforce predefined rules, releasing assets only when specific conditions are met. This mechanism removes the need for trust between parties, making transactions secure and automated across various Web3 applications.
+Blockchain escrow programs fundamentally change how assets are held and exchanged in decentralized environments. Instead of human intermediaries, they use self-executing [smart contracts](/video/kaspa-s-smart-contracts-a-proof-of-work-network-s-bid-for-defi/). These code-based agreements automatically enforce predefined rules, releasing assets only when specific conditions are met. This mechanism removes the need for trust between parties, making transactions secure and automated across various Web3 applications.
 
 ## How Blockchain Escrow Works
 

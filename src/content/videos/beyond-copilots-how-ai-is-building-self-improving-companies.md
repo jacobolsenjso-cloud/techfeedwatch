@@ -34,7 +34,7 @@ An autonomous AI agent is a sophisticated software system engineered to operate 
 
 ## The Core Mechanism: Recursive AI Loops
 
-The power of autonomous AI agents stems from their ability to engage in recursive, self-improving loops. This operational model allows an agent to continuously enhance its performance and adapt to new information or challenges. The typical structure of such a loop involves several key layers:
+The power of [autonomous AI agents](/video/openai-s-codex-ushering-in-the-golden-age-of-autonomous-ai-engineering/) stems from their ability to engage in recursive, self-improving loops. This operational model allows an agent to continuously enhance its performance and adapt to new information or challenges. The typical structure of such a loop involves several key layers:
 
 * **Sensor Layer:** This is where the agent gathers information from the real world. This data can be diverse, ranging from customer emails and support tickets to internal code changes, product telemetry, or even records of subscription cancellations. The sensor layer acts as the agent's eyes and ears, providing the raw input necessary for decision-making.
 * **Policy Layer:** Once data is collected, the policy layer dictates the rules and guidelines for the agent's actions. It defines what the agent is permitted to do autonomously, what actions require human permission, and what information must be logged for auditing or future learning. This layer ensures the agent operates within defined boundaries and ethical considerations.
@@ -46,7 +46,7 @@ This continuous cycle allows the system to get "better and better and better" ev
 
 ## From Assistant to Architect: Real-World Applications
 
-The shift from AI as a mere assistant to an autonomous agent capable of self-improvement is best illustrated through practical examples. Previously, AI might have made an engineer 20% or 30% more productive, acting as a "sidekick." Today, autonomous agents are taking on more comprehensive roles:
+The shift from AI as a mere assistant to an [autonomous agent](/video/the-genie-in-the-machine-decoding-openai-s-agi-ambitions-and-the/) capable of self-improvement is best illustrated through practical examples. Previously, AI might have made an engineer 20% or 30% more productive, acting as a "sidekick." Today, autonomous agents are taking on more comprehensive roles:
 
 * **Self-Improving Query Agents:** Imagine an internal AI agent initially designed to answer simple database queries, such as "When did I last have office hours with this company?" This agent might evolve to perform more complex tasks, like identifying five relevant founders for an introduction based on a company's needs in specific sectors. The truly autonomous leap occurs when a monitoring agent is layered on top. This monitoring agent observes every query made by employees, identifying failures. When a query fails, it analyzes the reason—perhaps a missing deterministic tool, an outdated skills file, or a need for a new database index. Overnight, this autonomous agent can write the necessary code, submit a merge request to the codebase, have another agent review it, and then merge and deploy the fix. The next day, when a human asks the same query, it succeeds, demonstrating a system that self-improves while humans are not actively involved.
 * **Product Optimization Loops:** Autonomous agents can revolutionize product development by creating self-optimizing product loops. An agent can continuously analyze product analytics to pinpoint areas of highest friction in a sales funnel. It can then research best practices, automatically set up and run A/B tests for a week, select the best-performing version, and deploy it. This entire process can repeat, leading to continuous, data-driven product enhancements.
@@ -63,7 +63,7 @@ The adoption of autonomous AI agents fundamentally challenges traditional organi
 
 ## Building the Self-Improving Company: Practical Considerations
 
-Implementing autonomous AI agents requires a deliberate approach to data management and a willingness to embrace new paradigms for software development.
+Implementing autonomous AI agents requires a deliberate approach to data management and a willingness to embrace new paradigms for [software development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/).
 
 * **Making Everything Legible to AI:** For AI to learn and improve, all relevant information must be recorded and made "legible." This means capturing every email, Slack message, direct message, and even conversations like office hours or internal meetings. "If it did not get recorded, it did not happen to your intelligence." This comprehensive data collection forms the basis of the company's collective knowledge that AI can access and process.
 * **Data Processing and Synthesis:** Raw data, such as thousands of hours of recordings, cannot be directly fed into AI models due to context window limitations. Therefore, this data must be diarized, aggregated, and synthesized into concise "breadcrumbs" or key insights. This process distills vast amounts of information into a usable format for AI agents.

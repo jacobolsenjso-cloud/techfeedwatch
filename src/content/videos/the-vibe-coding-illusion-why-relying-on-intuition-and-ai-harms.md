@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-"Vibe coding" describes an intuitive, often unstructured approach to programming. It prioritizes quick results and immediate gratification over a deep understanding of underlying principles. While appealing, especially with AI assistance, this method can create major long-term challenges for developers.
+"[Vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured/)" describes an intuitive, often unstructured approach to programming. It prioritizes quick results and immediate gratification over a deep understanding of underlying principles. While appealing, especially with AI assistance, this method can create major long-term challenges for developers.
 
 ## The Allure of "Vibe Coding"
 
@@ -46,7 +46,7 @@ This problem extends to many areas of development. Developers might ship React c
 
 ## The Debugging Trap and Skill Atrophy
 
-The real measure of productivity in software development is not how quickly code is written. It is the time taken from an initial idea to stable, maintainable, and debuggable production code. Vibe coding often creates a false sense of efficiency. An AI might generate code in 10 minutes, which feels incredibly fast. Yet, this initial speed is often offset by major delays later.
+The real measure of productivity in [software development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/) is not how quickly code is written. It is the time taken from an initial idea to stable, maintainable, and debuggable production code. Vibe coding often creates a false sense of efficiency. An AI might generate code in 10 minutes, which feels incredibly fast. Yet, this initial speed is often offset by major delays later.
 
 Developers might spend 90 minutes debugging edge cases that the AI did not consider. Another hour could go into refactoring the code to fit existing architectural patterns. Then, 3 hours might be spent in production fixing issues that were unforeseen. The total time spent can easily exceed what it would have taken. Writing the code with full understanding from the start would have been faster.
 

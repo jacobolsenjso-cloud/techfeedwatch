@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Cloud security in cybersecurity refers to the practices, technologies, and policies designed to protect data, applications, and infrastructure within cloud computing environments. It involves securing everything a company places into the massive data centers operated by cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). This specialized field ensures that as organizations move away from owning physical servers to renting compute, storage, and services from third parties, their digital assets remain protected against unauthorized access, data breaches, and other cyber threats.
+[Cloud security](/video/cloud-security-s-rapid-evolution-why-architecture-first-consulting/) in cybersecurity refers to the practices, technologies, and policies designed to protect data, applications, and infrastructure within cloud computing environments. It involves securing everything a company places into the massive data centers operated by cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). This specialized field ensures that as organizations move away from owning physical servers to renting compute, storage, and services from third parties, their digital assets remain protected against unauthorized access, data breaches, and other cyber threats.
 
 ## The Shift to Cloud and Its Security Implications
 
@@ -58,13 +58,13 @@ Beyond misconfigurations, other common vulnerabilities include:
 
 The rapid proliferation of artificial intelligence (AI) technologies has introduced a significant new dimension to cloud security challenges. Every AI tool, from large language models like ChatGPT and Claude to image generators and AI-powered startup agents, runs not on individual devices but on massive clusters of GPUs located in hyper-scaled data centers—which are, by definition, cloud environments. This means AI is fundamentally a cloud problem.
 
-As companies worldwide rush to integrate AI into their operations, they are increasingly pushing sensitive data—including customer information, financial records, medical records, and proprietary source code—through AI systems running in the cloud. This data is processed, stored, and often logged with high retention rates, creating new attack surfaces that were largely non-existent before the 2020s.
+As companies worldwide rush to integrate AI into their operations, they are increasingly pushing sensitive data—including customer information, financial records, medical records, and proprietary source code—through AI systems running in the cloud. This data is processed, stored, and often logged with high retention rates, creating new [attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks/) that were largely non-existent before the 2020s.
 
 New AI-specific threats include:
 
 * **Prompt Injection:** Manipulating an AI model through carefully crafted inputs to make it perform unintended actions or reveal sensitive information.
 * **Model Poisoning:** Introducing malicious data into an AI model's training set to compromise its integrity or behavior.
-* **Data Leakage from Over-scoped AI Agents:** AI agents given overly broad permissions can inadvertently access and expose sensitive data.
+* **Data Leakage from Over-scoped [AI Agents](/video/ai-security-vulnerabilities-protecting-agents-and-investments/):** AI agents given overly broad permissions can inadvertently access and expose sensitive data.
 * **Hijacked Vector Databases:** Compromising the databases that store vector embeddings used by AI models.
 * **Stolen API Keys with No Rate Limiting:** Unauthorized use of API keys for AI services can lead to massive, six-figure bills overnight, in addition to potential data breaches.
 

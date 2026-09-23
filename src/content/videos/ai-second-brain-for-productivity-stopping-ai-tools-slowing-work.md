@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-An AI second brain is a personalized, intelligently managed repository designed to centralize and organize critical information and context, transforming how individuals and teams interact with artificial intelligence tools. Its core purpose is to counteract the common problem of AI tools paradoxically reducing productivity by demanding excessive setup, maintenance, and constant context rebuilding. Instead of a collection of isolated functionalities, an AI second brain integrates these tools into a context-aware accelerator for workflows, ensuring that relevant information is readily available when needed.
+An [AI second brain](/video/ai-personal-knowledge-management-optimizing-second-brains-with-llms/) is a personalized, intelligently managed repository designed to centralize and organize critical information and context, transforming how individuals and teams interact with artificial intelligence tools. Its core purpose is to counteract the common problem of AI tools paradoxically reducing productivity by demanding excessive setup, maintenance, and constant context rebuilding. Instead of a collection of isolated functionalities, an AI second brain integrates these tools into a context-aware accelerator for workflows, ensuring that relevant information is readily available when needed.
 
 ## What is an AI Second Brain?
 

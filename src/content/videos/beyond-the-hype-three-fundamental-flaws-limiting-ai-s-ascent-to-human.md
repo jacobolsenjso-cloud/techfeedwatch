@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Current mainstream AI models, including large language models (LLMs) and diffusion models, are built on deep neural networks. While powerful for many specific applications, their fundamental design presents significant barriers to achieving Artificial General Intelligence (AGI). These models are inherently purpose-bound, struggle with true generalization and abstract reasoning, and remain vulnerable to manipulation methods like prompt injection.
+Current mainstream AI models, including [large language models](/video/ai-hacking-why-practical-llm-security-testing-is-no-longer-optional/) (LLMs) and diffusion models, are built on deep neural networks. While powerful for many specific applications, their fundamental design presents significant barriers to achieving Artificial General Intelligence (AGI). These models are inherently purpose-bound, struggle with true generalization and abstract reasoning, and remain vulnerable to manipulation methods like prompt injection.
 
 ## The Foundational Limits of Deep Neural Networks
 
@@ -41,7 +41,7 @@ However, this specialized training also creates a core limitation: these models 
 
 A significant hurdle for current AI models is their inability to truly generalize or perform abstract reasoning beyond their training data. As some experts describe it, these models "interpolate" rather than "extrapolate." They are adept at producing outputs that are variations or combinations of what they have already encountered. They struggle significantly when asked to generate something genuinely new or outside the distribution of their training examples.
 
-This limitation is particularly evident in generative AI for images and video. These models can create impressive content as long as the request falls well within the types of examples they were trained on. However, if a user asks for something truly novel or fantastical, the output often becomes nonsensical. Similarly, large language models are skilled at tasks like summarizing information or drafting emails based on existing patterns. Yet, they face considerable difficulty with tasks that demand original thought or scientific discovery. This inability to move beyond learned patterns is a major obstacle for their application in fields requiring innovation.
+This limitation is particularly evident in [generative AI](/video/generative-ai-and-human-oversight-the-evolving-blueprint-for-design/) for images and video. These models can create impressive content as long as the request falls well within the types of examples they were trained on. However, if a user asks for something truly novel or fantastical, the output often becomes nonsensical. Similarly, large language models are skilled at tasks like summarizing information or drafting emails based on existing patterns. Yet, they face considerable difficulty with tasks that demand original thought or scientific discovery. This inability to move beyond learned patterns is a major obstacle for their application in fields requiring innovation.
 
 ## The Persistent Problem of Prompt Injection
 

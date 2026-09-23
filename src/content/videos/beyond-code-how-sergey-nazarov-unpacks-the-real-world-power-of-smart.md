@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Smart contracts are transforming industrial agreements by embedding executable logic directly into transactions, moving beyond theoretical applications to address long-standing issues of trust and operational inefficiency. This shift reduces reliance on intermediaries and fosters a new era of data-driven, self-executing agreements. The core innovation lies in their ability to translate complex legal terms into verifiable code, enhancing transparency and efficiency across various sectors.
+[Smart contracts](/video/compact-language-architecting-privacy-first-smart-contracts-for/) are transforming industrial agreements by embedding executable logic directly into transactions, moving beyond theoretical applications to address long-standing issues of trust and operational inefficiency. This shift reduces reliance on intermediaries and fosters a new era of data-driven, self-executing agreements. The core innovation lies in their ability to translate complex legal terms into verifiable code, enhancing transparency and efficiency across various sectors.
 
 ## From Legal Text to Executable Code
 

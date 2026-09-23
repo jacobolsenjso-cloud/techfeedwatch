@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-AI agents and Large Language Models (LLMs) offer broad abilities, but their true power emerges when they can access specific external data or perform tasks in a highly consistent manner. Achieving this requires careful context engineering, which involves providing the model with the precise information it needs to generate accurate and relevant outputs. Two primary methods for extending LLM what it does in this way are the Model Context Protocol (MCP) and the use of dedicated skills.
+[AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) and Large Language Models (LLMs) offer broad abilities, but their true power emerges when they can access specific external data or perform tasks in a highly consistent manner. Achieving this requires careful context engineering, which involves providing the model with the precise information it needs to generate accurate and relevant outputs. Two primary methods for extending LLM what it does in this way are the Model Context Protocol (MCP) and the use of dedicated skills.
 
 ## The Foundation: Context Engineering for LLMs
 

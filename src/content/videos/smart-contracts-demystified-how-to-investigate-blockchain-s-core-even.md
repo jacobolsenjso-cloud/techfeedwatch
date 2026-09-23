@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Smart contracts are self-executing agreements stored on a blockchain. They automate transactions and enforce terms without intermediaries. Understanding their underlying logic is important for anyone interacting with decentralized applications, especially with digital assets like NFTs.
+[Smart contracts](/video/compact-language-architecting-privacy-first-smart-contracts-for/) are self-executing agreements stored on a blockchain. They automate transactions and enforce terms without intermediaries. Understanding their underlying logic is important for anyone interacting with decentralized applications, especially with digital assets like NFTs.
 
 Tools like Etherscan provide a public interface to inspect these contracts. This allows users to examine deployed code, verify its intended features, and assess potential risks. Such transparency empowers investors, developers, and researchers to scrutinize the operations of decentralized applications.
 

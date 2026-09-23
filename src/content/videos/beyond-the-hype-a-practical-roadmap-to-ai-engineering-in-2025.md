@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-The AI engineering roadmap for 2025 centers on a fundamental shift in required skills, moving beyond traditional software development to embrace the unique characteristics of large language models (LLMs). Engineers must now master prompt design, context management, system orchestration, and thorough evaluation to build reliable and scalable AI applications. This evolution prioritizes understanding LLM behavior, integrating external data, and ensuring application performance.
+The [AI engineering](/video/from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai/) roadmap for 2025 centers on a fundamental shift in required skills, moving beyond traditional software development to embrace the unique characteristics of large language models (LLMs). Engineers must now master prompt design, context management, system orchestration, and thorough evaluation to build reliable and scalable AI applications. This evolution prioritizes understanding LLM behavior, integrating external data, and ensuring application performance.
 
 ## Mastering LLM Interaction and Selection
 
@@ -42,7 +42,7 @@ While many applications leverage commercial APIs, engineers also have the option
 
 ## The Art and Science of Prompt Engineering
 
-Prompt engineering is the practice of crafting inputs to elicit desired behaviors from an LLM. While some might view it as a transient skill, its essence—effectively communicating with and guiding a model—is fundamental. This discipline goes beyond simple queries, involving sophisticated techniques to improve model performance and reliability.
+[Prompt engineering](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/) is the practice of crafting inputs to elicit desired behaviors from an LLM. While some might view it as a transient skill, its essence—effectively communicating with and guiding a model—is fundamental. This discipline goes beyond simple queries, involving sophisticated techniques to improve model performance and reliability.
 
 Key prompting strategies include "Chain of Thought" or "think out loud," where the model is instructed to explain its reasoning process before providing a final answer. This often leads to more accurate and coherent outputs. Incorporating examples directly into prompts is another effective method, as models learn from demonstrations. Other advanced tricks involve using structured tags, such as XML, to delineate different parts of a prompt or employing pre-filled prompt messages to guide the model's initial response.
 

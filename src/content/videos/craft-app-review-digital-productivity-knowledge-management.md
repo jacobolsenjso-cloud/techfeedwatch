@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Digital productivity tools often promise a unified workspace but can fall short, leading to more time spent managing the system than getting work done. Craft offers an alternative, designed to simplify personal knowledge management and integrate diverse tasks into a single, efficient environment. It aims to address common frustrations with existing apps by focusing on speed, offline capability, and intuitive design, allowing users to consolidate their digital life without extensive setup.
+Digital productivity tools often promise a unified workspace but can fall short, leading to more time spent managing the system than getting work done. Craft offers an alternative, designed to simplify [personal knowledge](/video/ai-second-brain-building-a-personal-knowledge-management-system/) management and integrate diverse tasks into a single, efficient environment. It aims to address common frustrations with existing apps by focusing on speed, offline capability, and intuitive design, allowing users to consolidate their digital life without extensive setup.
 
 ## Overcoming Digital Overload
 

@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Decentralized Finance, or DeFi, refers to financial services built on public blockchains. It aims to replicate traditional financial systems like lending and borrowing without needing banks or other intermediaries. Instead, DeFi uses automated agreements called smart contracts to manage transactions transparently. This approach creates a non-custodial financial system where users keep direct control of their digital assets.
+Decentralized Finance, or DeFi, refers to financial services built on public blockchains. It aims to replicate traditional financial systems like lending and borrowing without needing banks or other intermediaries. Instead, DeFi uses automated agreements called [smart contracts](/video/kaspa-s-smart-contracts-a-proof-of-work-network-s-bid-for-defi/) to manage transactions transparently. This approach creates a non-custodial financial system where users keep direct control of their digital assets.
 
 ## The Foundation of DeFi: Smart Contracts
 

@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Quantum computing operates on the principles of quantum mechanics, enabling calculations at speeds far beyond even the most powerful conventional supercomputers. It represents a fundamental departure from classical binary processing, using unique quantum phenomena to tackle problems intractable for traditional machines.
+[Quantum computing](/video/beyond-the-quantum-hype-real-world-implications-and-industry-roadmap/) operates on the principles of quantum mechanics, enabling calculations at speeds far beyond even the most powerful conventional supercomputers. It represents a fundamental departure from classical binary processing, using unique quantum phenomena to tackle problems intractable for traditional machines.
 
 ## The Quantum Leap: Bits vs. Qubits
 

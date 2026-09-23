@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Augmented Reality (AR) overlays digital information onto the real world, enhancing what we see and experience without fully immersing us. Virtual Reality (VR), by contrast, creates an entirely simulated environment, completely replacing the user's view of the physical world. While VR transports users to new digital spaces, AR integrates digital elements into our existing physical surroundings, allowing for interaction with digital content as if it were part of the physical environment.
+[Augmented Reality](/video/digital-commerce-realism-augmented-reality-enhances-e-commerce/) (AR) overlays digital information onto the real world, enhancing what we see and experience without fully immersing us. Virtual Reality (VR), by contrast, creates an entirely simulated environment, completely replacing the user's view of the physical world. While VR transports users to new digital spaces, AR integrates digital elements into our existing physical surroundings, allowing for interaction with digital content as if it were part of the physical environment.
 
 ## The Limitations of Traditional Computing
 

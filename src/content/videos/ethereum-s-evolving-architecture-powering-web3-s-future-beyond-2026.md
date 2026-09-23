@@ -46,7 +46,7 @@ Gas fees reflect the computational work a transaction requires. While fees have 
 
 To interact with Ethereum, users need a digital wallet. Wallets hold the private keys that prove control over a specific address. Hot wallets are typically apps or browser extensions. They are often free but remain connected to the internet, increasing their exposure to hacks. Cold wallets are hardware devices that keep private keys offline, offering greater security. While cold wallets require a purchase, many consider them a worthwhile investment for protecting funds.
 
-The core innovation of Ethereum is smart contracts. These are self-executing pieces of code that run automatically on the Ethereum network without human intervention. Smart contracts enable decentralized finance (DeFi), allowing users to perform financial operations without intermediaries. For example, a smart contract can handle token swaps in a single transaction. If conditions are not met, funds are returned, much reducing counterparty risk. Ethereum is widely considered the most secure smart contract blockchain, having never suffered a major outage since its 2015 launch.
+The core innovation of Ethereum is [smart contracts](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity/). These are self-executing pieces of code that run automatically on the Ethereum network without human intervention. Smart contracts enable decentralized finance (DeFi), allowing users to perform financial operations without intermediaries. For example, a smart contract can handle token swaps in a single transaction. If conditions are not met, funds are returned, much reducing counterparty risk. Ethereum is widely considered the most secure smart contract blockchain, having never suffered a major outage since its 2015 launch.
 
 ## Scaling Ethereum: The Blockchain Trilemma and Layer 2 Solutions
 
@@ -82,6 +82,6 @@ Despite its advancements, Ethereum faces ongoing challenges. While Layer 2s enha
 
 ## Ethereum's Market Position and Value Proposition
 
-Ethereum continues to hold a dominant position in the crypto market. It controls around 52% of all total value locked (TVL) across the entire DeFi ecosystem, excluding its Layer 2s. Over 50% of stablecoins in circulation reside on the Ethereum mainnet. And, Ethereum accounts for 53% of the market share for tokenized real-world assets (RWAs).
+Ethereum continues to hold a dominant position in the crypto market. It controls around 52% of all total value locked (TVL) across the entire DeFi ecosystem, excluding its Layer 2s. Over 50% of stablecoins in circulation reside on the Ethereum mainnet. And, [Ethereum accounts](/video/ethereum-accounts-demystified-the-eoa-vs-contract-showdown-every-web3/) for 53% of the market share for tokenized real-world assets (RWAs).
 
 This dominance stems from Ethereum's core value proposition. While it may not be the fastest or cheapest smart contract blockchain, it is widely regarded as the most secure. This security is highly valued by institutional investors, who are willing to pay higher fees or wait longer for transactions if it means better protection for their funds. Ethereum's strong track record and continuous evolution solidify its role as foundational infrastructure for decentralized finance and the broader web3 ecosystem.

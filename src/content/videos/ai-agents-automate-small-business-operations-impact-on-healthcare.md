@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-AI agents are fundamentally redefining how small businesses operate, shifting from passive data management to actively performing complex administrative tasks. This transformation is particularly impactful in the healthcare sector, where practitioners often face overwhelming non-clinical responsibilities that divert their focus from patient care. By automating these functions, AI promises to significantly enhance efficiency, reduce operational overhead, and allow businesses to concentrate on their core services.
+[AI agents](/video/ai-agent-extension-mcp-vs-skills-for-llm-performance/) are fundamentally redefining how small businesses operate, shifting from passive data management to actively performing complex administrative tasks. This transformation is particularly impactful in the healthcare sector, where practitioners often face overwhelming non-clinical responsibilities that divert their focus from patient care. By automating these functions, AI promises to significantly enhance efficiency, reduce operational overhead, and allow businesses to concentrate on their core services.
 
 ## The Evolution from Data Storage to Active Work
 
@@ -45,7 +45,7 @@ This administrative load is a significant source of frustration for healthcare p
 
 The advent of more sophisticated AI models, particularly those with enhanced reasoning capabilities, has made it possible to automate these complex administrative functions. While the initial steps in building automation involved creating context layers (access to historical data, patient records) and digital tools, the "intelligence layer" was initially less developed. As AI models have improved, this intelligence layer has become increasingly capable, allowing agents to understand nuanced situations and perform tasks requiring judgment.
 
-For example, an AI agent can now process overdue invoices not just by identifying them in a system, but by actively taking steps like initiating contact with patients for payment. This capability extends to other areas such as explaining benefits, performing background checks, or managing patient onboarding. By taking on these functions, AI agents can provide tens of hours of labor, directly addressing the pain points that keep small business owners up at night and allowing them to redirect their energy towards their clinical expertise.
+For example, an AI agent can now process overdue invoices not just by identifying them in a system, but by actively taking steps like initiating contact with patients for payment. This capability extends to other areas such as explaining benefits, performing background checks, or managing patient onboarding. By taking on these functions, AI agents can provide tens of hours of labor, directly addressing the pain points that keep [small business](/video/ai-s-local-search-dominance-the-4-hour-website-that-challenged/) owners up at night and allowing them to redirect their energy towards their clinical expertise.
 
 ## Beyond Efficiency: Addressing Labor Shortages and Market Expansion
 

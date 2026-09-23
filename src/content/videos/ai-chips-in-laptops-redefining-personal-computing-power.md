@@ -28,7 +28,7 @@ faqs:
     answer: "Local AI agents run AI tasks directly on the laptop, utilizing the dedicated AI chip, rather than relying on remote servers. This offers benefits in speed, privacy, and the ability to process large AI models without constant internet connectivity."
 ---
 
-AI chips in laptops are integrated circuits specifically engineered to accelerate artificial intelligence tasks directly on a personal computer, rather than relying on distant cloud servers. This represents a pivotal shift towards localized AI capabilities, moving the processing power closer to the user. The recent announcement of the NVIDIA RTX Spark, an ARM-based Windows chip, signals a substantial advancement in this area, potentially ushering in an era of unprecedented performance and efficiency for Windows laptops.
+[AI chips](/video/amd-mi455x-challenges-nvidia-in-high-performance-ai-chips/) in laptops are integrated circuits specifically engineered to accelerate artificial intelligence tasks directly on a personal computer, rather than relying on distant cloud servers. This represents a pivotal shift towards localized AI capabilities, moving the processing power closer to the user. The recent announcement of the NVIDIA RTX Spark, an ARM-based Windows chip, signals a substantial advancement in this area, potentially ushering in an era of unprecedented performance and efficiency for Windows laptops.
 
 ## The Core of On-Device AI: What AI Chips Do in Laptops
 

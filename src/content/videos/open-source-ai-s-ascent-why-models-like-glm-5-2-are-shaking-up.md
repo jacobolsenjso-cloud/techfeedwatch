@@ -67,6 +67,6 @@ In agentic workflows, GLM-5.2 shines. When given a task like creating a clone of
 
 ## The Broader Impact of Open-Source AI
 
-The rise of powerful open-source AI models like GLM-5.2 signals a broader trend in the AI industry. Models from outside traditional Western tech hubs, including those from China, are rapidly catching up in abilities. This increased competition benefits the entire technology ecosystem by providing more diverse and often more affordable options.
+The rise of powerful [open-source AI](/video/the-ai-paradox-open-source-national-security-and-the-geopolitical/) models like GLM-5.2 signals a broader trend in the AI industry. Models from outside traditional Western tech hubs, including those from China, are rapidly catching up in abilities. This increased competition benefits the entire technology ecosystem by providing more diverse and often more affordable options.
 
 For enterprises, this means greater choice and use. They can select models that best fit their specific application needs and budget constraints, rather than being limited to a few dominant, closed-source providers. The ability to self-host and customize these models also fosters innovation within companies, allowing them to integrate AI more deeply and securely into their operations. This shift empowers businesses to deploy sophisticated AI solutions more economically, fostering innovation and reducing reliance on a few dominant providers. The trade-off often involves a nuanced understanding of their abilities versus leading closed-source alternatives.

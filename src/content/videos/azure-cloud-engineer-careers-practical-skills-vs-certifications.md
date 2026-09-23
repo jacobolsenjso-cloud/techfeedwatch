@@ -84,7 +84,7 @@ To synthesize these strategies into a practical roadmap, consider a phased appro
 * **Phase Two: Build Three Portfolio Projects.**
  * **Project One (Foundational):** Implement a hub and spoke virtual network architecture with public and private subnets, network security groups, and a bastion host. This demonstrates core networking understanding.
  * **Project Two (Application):** Develop a real application with CI/CD using Azure DevOps or GitHub Actions, infrastructure as code (Bicep or Terraform), and Azure Monitor for observability. This proves end-to-end building and shipping capabilities.
- * **Project Three (Showcase):** Create a project that solves a problem and incorporates an AI component, such as Azure OpenAI or AI agents for automated infrastructure review. AI integration is rapidly becoming a standard expectation in cloud engineering roles. Document every project thoroughly as you build it.
+ * **Project Three (Showcase):** Create a project that solves a problem and incorporates an AI component, such as Azure OpenAI or [AI agents](/video/beyond-cloud-lock-in-how-local-ai-agents-and-obsidian-are-rewriting/) for automated infrastructure review. AI integration is rapidly becoming a standard expectation in cloud engineering roles. Document every project thoroughly as you build it.
 * **Phase Three: Visibility.** Post technical content on LinkedIn weekly. Share insights about your projects, lessons learned from setting up virtual networks, debugging misconfigurations, or comparing infrastructure as code tools.
 * **Phase Four: Apply.** Focus on "50 targeted roles" where your projects are directly relevant, applying early, personally, and persistently.
 

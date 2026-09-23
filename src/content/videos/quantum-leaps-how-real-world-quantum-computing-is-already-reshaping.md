@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Quantum computing is no longer a futuristic concept confined to laboratories; it is actively transforming real-world operations, particularly in urban logistics and mobility. This shift is driven by hybrid systems that combine the strengths of classical and quantum processors. These systems are proving effective at solving complex optimization problems that traditional computers struggle to manage alone.
+[Quantum computing](/video/beyond-the-qubit-why-leaving-a-booming-quantum-computing-career-can/) is no longer a futuristic concept confined to laboratories; it is actively transforming real-world operations, particularly in urban logistics and mobility. This shift is driven by hybrid systems that combine the strengths of classical and quantum processors. These systems are proving effective at solving complex optimization problems that traditional computers struggle to manage alone.
 
 ## The Evolution to Practical Quantum Applications
 

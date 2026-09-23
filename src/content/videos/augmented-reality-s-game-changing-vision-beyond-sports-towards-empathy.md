@@ -39,7 +39,7 @@ Augmented reality works by adding digital layers to our existing reality, allowi
 
 To fully appreciate augmented reality, it helps to understand its distinction from virtual reality. Virtual reality systems, exemplified by devices like the Oculus Rift, completely immerse a user in a computer-generated world. When experiencing VR, a user might feel the intense fear of a roller coaster ride, believing they are truly in that simulated environment. The physical world around them is entirely blocked out, replaced by digital sights and sounds.
 
-In contrast, augmented reality maintains the user's connection to their physical surroundings while adding digital layers. Imagine seeing a digital map overlaid onto a street view through a pair of smart glasses, or receiving real-time instructions projected onto a piece of machinery you are working on. AR supplements reality; VR substitutes it. This distinction is vital for understanding the different applications and potentials of each technology.
+In contrast, augmented reality maintains the user's connection to their physical surroundings while adding digital layers. Imagine seeing a digital map overlaid onto a street view through a pair of [smart glasses](/video/smart-glasses-next-gen-ar-displays-revealed/), or receiving real-time instructions projected onto a piece of machinery you are working on. AR supplements reality; VR substitutes it. This distinction is vital for understanding the different applications and potentials of each technology.
 
 ## AR in High-Stakes Environments: Professional Sports
 

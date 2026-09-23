@@ -49,7 +49,7 @@ This principle applies not just to programs but also to the universe itself. At 
 
 ## Finding Predictability: Pockets of Reducibility
 
-Despite the pervasive nature of computational irreducibility, human experience and scientific progress are possible. This is because we find pockets of reducibility. These are areas where we can locally jump ahead and make predictions or simplify complex processes. Science, inventions, and much of human understanding involve identifying and leveraging these predictable patches. They exist within an otherwise irreducible computational universe.
+Despite the pervasive nature of computational irreducibility, human experience and scientific progress are possible. This is because we find pockets of reducibility. These are areas where we can locally jump ahead and make predictions or simplify complex processes. Science, inventions, and much of human understanding involve identifying and leveraging these predictable patches. They exist within an otherwise irreducible [computational universe](/video/stephen-wolfram-s-radical-idea-is-the-universe-just-a-giant/).
 
 Life as we experience it, with its consistent patterns and predictable phenomena, relies on our ability to perceive and interact with these reducible slices. We do not need to track every molecule in the air to know that the air will still be there in a few seconds. This simplified understanding is a reducible fact. It exists about an underlying, complex, and irreducible process.
 

@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Google Gemini on Android refers to Google's advanced artificial intelligence model, accessible primarily through the dedicated Gemini app and integrated into various Google services on Android devices. It acts as a conversational AI assistant, capable of understanding and generating human-like text, code, and more. While deeply embedded in the Android ecosystem, Google is also making Gemini available on other platforms, including iOS, through its standalone app and other integrations.
+[Google Gemini](/video/google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you/) on Android refers to Google's advanced artificial intelligence model, accessible primarily through the dedicated Gemini app and integrated into various Google services on Android devices. It acts as a conversational AI assistant, capable of understanding and generating human-like text, code, and more. While deeply embedded in the Android ecosystem, Google is also making Gemini available on other platforms, including iOS, through its standalone app and other integrations.
 
 ### Gemini 3.5 Flash: Powering Smarter Experiences
 
@@ -47,9 +47,9 @@ This summer, Generative UI will come to search, allowing it to build interactive
 
 ### Android XR Audio Glasses: Cross-Platform Spatial Computing
 
-On the hardware front, Google introduced Android XR audio glasses, developed in partnership with Gentle Monster and Warby Parker. These glasses are designed to look like regular eyewear and do not feature a screen. Instead, Gemini communicates by whispering responses privately into the user's ear through speakers embedded in the frames. Users can use them to take photos, make calls, listen to music, and ask Gemini questions hands-free, without needing to pull out their phone.
+On the hardware front, Google introduced [Android XR](/video/android-xr-hybrid-glasses-means-for-spatial-computing/) audio glasses, developed in partnership with Gentle Monster and Warby Parker. These glasses are designed to look like regular eyewear and do not feature a screen. Instead, Gemini communicates by whispering responses privately into the user's ear through speakers embedded in the frames. Users can use them to take photos, make calls, listen to music, and ask Gemini questions hands-free, without needing to pull out their phone.
 
-Critically for iPhone users, these audio glasses are designed to work with both Android and iOS devices. This means that if Google begins selling them in the fall, iPhone owners could theoretically pair them with their phones. This move positions Google in direct competition with existing smart glasses, like the Ray-Ban Meta glasses, and potentially with any similar devices Apple might be developing. It represents a push for spatial computing hardware that is not restricted to a single operating system.
+Critically for iPhone users, these audio glasses are designed to work with both Android and iOS devices. This means that if Google begins selling them in the fall, iPhone owners could theoretically pair them with their phones. This move positions Google in direct competition with existing [smart glasses](/video/beyond-the-screen-samsung-s-gemini-ai-smart-glasses-reshape-wearable/), like the Ray-Ban Meta glasses, and potentially with any similar devices Apple might be developing. It represents a push for spatial computing hardware that is not restricted to a single operating system.
 
 ### Broader AI Integrations and the Competitive Environment
 

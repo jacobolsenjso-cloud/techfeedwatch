@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-AI agents represent a significant evolution in artificial intelligence, moving beyond simple conversational interfaces to become autonomous systems capable of executing complex tasks. These systems integrate large language models (LLMs) with the ability to use external tools, transforming AI from a source of information into an active participant in workflows. This shift addresses the fundamental gap between an AI knowing how to perform a task and actually doing it.
+[AI agents](/video/ai-agent-extension-mcp-vs-skills-for-llm-performance/) represent a significant evolution in artificial intelligence, moving beyond simple conversational interfaces to become autonomous systems capable of executing complex tasks. These systems integrate large language models (LLMs) with the ability to use external tools, transforming AI from a source of information into an active participant in workflows. This shift addresses the fundamental gap between an AI knowing how to perform a task and actually doing it.
 
 ## The Agentic Loop: Orchestrating Autonomous Action
 

@@ -28,13 +28,13 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Generative AI is transforming how people find information online, shifting the focus of content optimization from traditional keyword matching to a deeper understanding of meaning and context. This evolution requires businesses to adapt their digital strategies, ensuring their content is not only discoverable but also accurately interpreted and summarized by advanced AI models. The goal is to optimize content for AI search engines, which prioritize semantic understanding and structured data.
+[Generative AI](/video/generative-ai-and-human-oversight-the-evolving-blueprint-for-design/) is transforming how people find information online, shifting the focus of content optimization from traditional keyword matching to a deeper understanding of meaning and context. This evolution requires businesses to adapt their digital strategies, ensuring their content is not only discoverable but also accurately interpreted and summarized by advanced AI models. The goal is to optimize content for AI search engines, which prioritize semantic understanding and structured data.
 
 ## The Rise of AI Search and a New Optimization Imperative
 
 For two decades, online visibility primarily meant ranking high on Google's traditional search results. However, a major change is underway as a large share of people now bypass traditional search engines entirely, opting to ask AI directly. AI overviews, which generate concise answers and recommendations, already reach 2 billion people each month, and AI mode passed 1 billion monthly users in its first year. Platforms like ChatGPT are fielding 900 million questions a week.
 
-This shift has created a new "front page" for online discovery: the short, named lists of sites recommended by AI. This represents a fresh opportunity for businesses, similar to the early days of search engine optimization (SEO). Many larger brands are still slow to adapt, often having websites that are not yet built for how an AI reads and interprets content. This new field of optimization is known as Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO).
+This shift has created a new "front page" for online discovery: the short, named lists of sites recommended by AI. This represents a fresh opportunity for businesses, similar to the early days of search engine optimization (SEO). Many larger brands are still slow to adapt, often having websites that are not yet built for how an AI reads and interprets content. This new field of optimization is known as Answer Engine Optimization (AEO) and [Generative Engine Optimization](/video/unlock-ai-visibility-your-guide-to-generative-engine-optimization-geo/) (GEO).
 
 ## Understanding Generative Engine Optimization (GEO)
 
@@ -58,7 +58,7 @@ Finally, **information architecture** is important. The way a website's content 
 
 Businesses can use AI assistants to streamline and enhance their content optimization efforts for AI search. These tools, often equipped with specialized plugins, can act as a dedicated optimization team.
 
-The process typically begins with **integrating the AI assistant with Google Search Console**. This connection provides the AI with programmatic access to valuable site performance data, including what people search for to find the site, and which queries are not leading to discovery. Setting this up usually involves creating a Google Cloud project, enabling the necessary APIs, and establishing OAuth client access. This one-time setup allows the AI to pull data, run audits, monitor changes, and generate reports on an ongoing basis.
+The process typically begins with **integrating the AI assistant with [Google Search Console](/video/unlocking-organic-growth-your-essential-guide-to-google-s-seo-power/)**. This connection provides the AI with programmatic access to valuable site performance data, including what people search for to find the site, and which queries are not leading to discovery. Setting this up usually involves creating a Google Cloud project, enabling the necessary APIs, and establishing OAuth client access. This one-time setup allows the AI to pull data, run audits, monitor changes, and generate reports on an ongoing basis.
 
 Once connected, the AI can perform a **full SEO and AEO audit** of a website. It crawls the site, identifies potential issues such as missing sitemaps, lack of dedicated "about me" pages, or slow loading times. The AI then generates a prioritized action plan, categorizing tasks by impact (e.g., critical, high-impact). For example, an audit might return a score like 66 out of 100, highlighting specific areas for improvement. This report provides a clear, actionable roadmap for improving AI discoverability.
 

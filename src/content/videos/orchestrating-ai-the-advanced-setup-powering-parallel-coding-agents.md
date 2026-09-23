@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-The deployment of multiple AI coding agents for software development offers major productivity gains, but it introduces complex challenges. When these agents operate in parallel, they often interfere with each other, leading to errors and inefficiencies. Effective isolation strategies are essential to prevent issues like file overwrites, dependency conflicts, and loss of context.
+The deployment of multiple [AI coding agents](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured/) for software development offers major productivity gains, but it introduces complex challenges. When these agents operate in parallel, they often interfere with each other, leading to errors and inefficiencies. Effective isolation strategies are essential to prevent issues like file overwrites, dependency conflicts, and loss of context.
 
 ### Managing Multiple AI Agent Sessions
 
@@ -37,7 +37,7 @@ Running several AI coding agents simultaneously can quickly become chaotic witho
 
 Basic tools help manage these parallel sessions. For instance, if a session closes unexpectedly, it can often be resumed. A `continue` command typically reopens the last active session. To access a specific session, a `resume` command allows selection from a list or direct access by name. Once a session is active, a `recap` command provides a summary of its recent work, helping developers quickly understand its context. To transfer work or context between sessions, an `export` command can convert a chat history into a file. This file can then be loaded into a new session. A more advanced `handoff` skill compresses context into a clean document. This document references existing files and even lists necessary skills for the new agent, ensuring a fresh and focused start.
 
-A common workflow involves using an AI agent in a "plan mode" to break down a large task into smaller, independent subtasks. Each subtask can then be assigned to a separate agent session. An interactive interface, often called an agent dashboard, allows developers to monitor all running sessions. This dashboard can show their progress and even launch new background sessions. This structured approach helps maintain oversight and ensures agents work towards a unified goal without stepping on each other's toes.
+A common workflow involves using an [AI agent](/video/beyond-automation-why-no-code-ai-agents-represent-a-new-frontier-for/) in a "plan mode" to break down a large task into smaller, independent subtasks. Each subtask can then be assigned to a separate agent session. An interactive interface, often called an agent dashboard, allows developers to monitor all running sessions. This dashboard can show their progress and even launch new background sessions. This structured approach helps maintain oversight and ensures agents work towards a unified goal without stepping on each other's toes.
 
 ### Preventing File and Context Collisions
 

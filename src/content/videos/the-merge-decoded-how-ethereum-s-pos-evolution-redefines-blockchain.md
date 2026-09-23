@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Ethereum underwent a foundational change in September 2022, transitioning its consensus mechanism from Proof of Work (PoW) to Proof of Stake (PoS) in an event known as The Merge. This shift aimed to significantly reduce the network's energy consumption and enhance its security model by replacing energy-intensive mining with a system of staked collateral. The transition altered how new blocks are added to the blockchain and how the network maintains agreement on its state.
+Ethereum underwent a foundational change in September 2022, transitioning its consensus mechanism from Proof of Work (PoW) to [Proof of Stake](/video/ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026/) (PoS) in an event known as The Merge. This shift aimed to significantly reduce the network's energy consumption and enhance its security model by replacing energy-intensive mining with a system of staked collateral. The transition altered how new blocks are added to the blockchain and how the network maintains agreement on its state.
 
 ## The Shift from Proof of Work to Proof of Stake
 
@@ -38,7 +38,7 @@ When Ethereum launched in 2015, it used a Proof of Work system, similar to Bitco
 
 Changing the core consensus mechanism of a live network, one that already held valuable assets and applications, presented a significant technical challenge. Ethereum prepared for this by launching the Beacon Chain in December 2020. This chain ran the Proof of Stake mechanism in parallel with the existing Proof of Work network. It allowed developers to test validators and staking without affecting the main network, where ordinary transactions continued.
 
-The actual Merge occurred in September 2022. At this point, Ethereum's execution layer, which manages accounts, smart contracts, and transactions, connected with the Beacon Chain's Proof of Stake consensus mechanism. Mining operations ceased entirely. The network's transaction history and existing applications continued without interruption. Users did not need to swap their ETH for a new currency. The fundamental change was in how new blocks were created and verified.
+The actual Merge occurred in September 2022. At this point, Ethereum's execution layer, which manages accounts, [smart contracts](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity/), and transactions, connected with the Beacon Chain's Proof of Stake consensus mechanism. Mining operations ceased entirely. The network's transaction history and existing applications continued without interruption. Users did not need to swap their ETH for a new currency. The fundamental change was in how new blocks were created and verified.
 
 ## How Proof of Stake Secures the Network
 

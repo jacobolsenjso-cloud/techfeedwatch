@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Systematic problem-solving is a structured, goal-oriented approach to identifying, analyzing, and resolving challenges. It involves breaking down complex problems into manageable parts, pursuing long-term objectives, and iteratively building, testing, and refining solutions. In the rapidly evolving field of AI engineering, this process is increasingly driven by autonomous AI agents that can handle intricate tasks and even test their own work.
+Systematic problem-solving is a structured, goal-oriented approach to identifying, analyzing, and resolving challenges. It involves breaking down complex problems into manageable parts, pursuing long-term objectives, and iteratively building, testing, and refining solutions. In the rapidly evolving field of AI engineering, this process is increasingly driven by [autonomous AI agents](/video/beyond-copilots-how-ai-is-building-self-improving-companies/) that can handle intricate tasks and even test their own work.
 
 ## The Evolution of AI in Engineering
 

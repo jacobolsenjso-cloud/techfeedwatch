@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Smart contracts are self-executing programs stored directly on a blockchain. They operate on the principle of "code as law," meaning the code itself dictates and enforces the terms of an agreement without the need for intermediaries. This decentralized execution and immutability offer high transparency and resistance to censorship, fundamentally changing how agreements can be conceived and enforced in the digital world.
+[Smart contracts](/video/opnet-unlocks-ethereum-smart-contracts-on-bitcoin-layer-1-a-game/) are self-executing programs stored directly on a blockchain. They operate on the principle of "code as law," meaning the code itself dictates and enforces the terms of an agreement without the need for intermediaries. This decentralized execution and immutability offer high transparency and resistance to censorship, fundamentally changing how agreements can be conceived and enforced in the digital world.
 
 ## The Immutable Nature of Smart Contracts
 

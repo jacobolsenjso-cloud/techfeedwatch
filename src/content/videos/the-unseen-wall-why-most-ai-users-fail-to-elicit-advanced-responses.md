@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Effective interaction with large language models goes far beyond simple questions. It requires a sophisticated approach known as prompt engineering. This involves building a detailed "world" of context and examples for the AI. This method is essential for moving past generic outputs and extracting truly valuable, specific responses. In the end, it enhances productivity and mitigates common issues like AI hallucination.
+Effective interaction with large language models goes far beyond simple questions. It requires a sophisticated approach known as [prompt engineering](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/). This involves building a detailed "world" of context and examples for the AI. This method is essential for moving past generic outputs and extracting truly valuable, specific responses. In the end, it enhances productivity and mitigates common issues like AI hallucination.
 
 ## The Art of AI World-Building
 

@@ -27,11 +27,11 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-AI automation in Notion involves using artificial intelligence agents to perform tasks directly within your Notion workspace. These agents can create, edit, read, and organize content, manage databases, and streamline workflows. This capability comes in two main forms: Notion's own integrated AI features and external AI tools that connect to Notion. Both approaches aim to enhance productivity by automating routine or complex digital tasks. They transform Notion from a static note-taking and database tool into a dynamic, interactive environment.
+[AI automation](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just/) in Notion involves using artificial intelligence agents to perform tasks directly within your Notion workspace. These agents can create, edit, read, and organize content, manage databases, and streamline workflows. This capability comes in two main forms: Notion's own integrated AI features and external AI tools that connect to Notion. Both approaches aim to enhance productivity by automating routine or complex digital tasks. They transform Notion from a static note-taking and database tool into a dynamic, interactive environment.
 
 ## Native AI: Your Notion Workspace Assistant
 
-Notion offers its own AI agents that live directly within your workspace. These assistants have full access to your files, pages, and databases. This allows them to make edits, generate new content, or simply read existing information. When you create a new page, a chat interface appears. This enables you to prompt the AI to craft content, build databases, and structure your page.
+Notion offers its own [AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) that live directly within your workspace. These assistants have full access to your files, pages, and databases. This allows them to make edits, generate new content, or simply read existing information. When you create a new page, a chat interface appears. This enables you to prompt the AI to craft content, build databases, and structure your page.
 
 For example, you can ask Notion's AI to fulfill an entire page about a specific topic. You can request it to find information, identify main features, and suggest use cases. It can also mix the page structure with headings, tables, and databases. This process can rapidly generate a complete page. This often happens in about 90 seconds, and the page comes complete with pre-filled information.
 
@@ -74,4 +74,4 @@ Common use cases include:
 * **Project and Task Management:** Building complete project plans, including timelines, deliverables databases, assigned owners, deadlines, and kickoff documents, often with nested pages for detailed organization.
 * **Recurring Tasks and Routines:** Setting up automated routines for tasks that need to be performed regularly, ensuring consistency and saving manual effort.
 
-By using AI automation, people and teams can transform how they interact with information, manage projects, and execute daily operations within Notion. This fosters greater efficiency. It allows users to focus on higher-value tasks. The AI handles the heavy lifting of content creation, organization, and data processing.
+By using AI automation, people and teams can transform how they interact with information, manage projects, and execute daily operations within Notion. This fosters greater efficiency. It allows users to focus on higher-value tasks. The AI handles the heavy lifting of [content creation](/video/revolutionizing-seo-how-arvo-s-ai-platform-automates-agency-success/), organization, and data processing.

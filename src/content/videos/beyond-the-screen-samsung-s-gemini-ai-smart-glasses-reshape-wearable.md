@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Samsung has introduced a new line of AI-powered smart glasses, marking its entry into the rapidly evolving wearable technology sector. These devices are deeply integrated with Google's Gemini AI, offering users a hands-free, intelligent assistant experience designed to streamline daily tasks and interactions. This move positions Samsung as a direct competitor to existing smart eyewear, particularly Meta's offerings, by emphasizing advanced "agentic" capabilities.
+Samsung has introduced a new line of AI-powered smart glasses, marking its entry into the rapidly evolving wearable technology sector. These devices are deeply integrated with Google's [Gemini AI](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for/), offering users a hands-free, intelligent assistant experience designed to streamline daily tasks and interactions. This move positions Samsung as a direct competitor to existing smart eyewear, particularly Meta's offerings, by emphasizing advanced "agentic" capabilities.
 
 ## The Power of Agentic AI in Wearables
 
@@ -41,7 +41,7 @@ This hands-free functionality extends to various aspects of daily life. The glas
 
 Recognizing that smart glasses must be both functional and fashionable, Samsung collaborated with prominent eyewear brands Gentle Monster and Warby Parker. The design philosophy centers on creating intelligent eyewear that feels like a natural extension of the user's identity, rather than just a piece of technology. The glasses are crafted to resemble normal, stylish eyewear, a significant improvement over bulkier early smart glass designs.
 
-A key focus was on comfort for all-day wear. The engineering prioritizes a lightweight construction, with the glasses being lighter than most comparable AI glasses currently available. This includes an integrated hinge design that blends into the frame, contributing to a clean silhouette and structural integrity without adding unnecessary bulk. While specific weight figures have not been released, the emphasis is on ensuring the glasses are comfortable enough to be worn continuously, addressing a common concern with wearable tech.
+A key focus was on comfort for all-day wear. The engineering prioritizes a lightweight construction, with the glasses being lighter than most comparable [AI glasses](/video/ai-glasses-market-evolution-of-hands-free-computing/) currently available. This includes an integrated hinge design that blends into the frame, contributing to a clean silhouette and structural integrity without adding unnecessary bulk. While specific weight figures have not been released, the emphasis is on ensuring the glasses are comfortable enough to be worn continuously, addressing a common concern with wearable tech.
 
 ## Powering Your Day: Battery Life and Ecosystem Synergy
 
@@ -57,7 +57,7 @@ The integration with the Samsung ecosystem further enhances productivity. The ab
 
 ## Competing in the Smart Glasses Arena
 
-Samsung's entry into the AI smart glasses market sets the stage for intensified competition, particularly with Meta's established offerings. Both companies provide stylish, camera-equipped glasses capable of taking calls and playing audio. However, Samsung aims to differentiate itself through its advanced agentic AI capabilities powered by Google Gemini, which is generally considered more capable and accurate than Meta's current Muse Spark AI. The superior battery life and deep integration with the Samsung Galaxy ecosystem also present strong competitive advantages for Samsung users.
+Samsung's entry into the [AI smart glasses](/video/beyond-screens-how-ai-powered-smart-glasses-are-reshaping-ubiquitous/) market sets the stage for intensified competition, particularly with Meta's established offerings. Both companies provide stylish, camera-equipped glasses capable of taking calls and playing audio. However, Samsung aims to differentiate itself through its advanced agentic AI capabilities powered by Google Gemini, which is generally considered more capable and accurate than Meta's current Muse Spark AI. The superior battery life and deep integration with the Samsung Galaxy ecosystem also present strong competitive advantages for Samsung users.
 
 Despite these strengths, there are areas where Meta currently holds an advantage. Meta has made significant strides in developing accessibility features for the visually impaired, including apps like "Be My Eyes" and detailed environmental descriptions, even committing to donate 120,000 pairs of smart glasses to blind veterans. Samsung has yet to detail its plans for similar accessibility features.
 

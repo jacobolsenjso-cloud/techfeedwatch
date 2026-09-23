@@ -28,7 +28,7 @@ faqs:
     answer: "Future AI should be purpose-built educational tools, like Socratic method AI, designed to challenge users to think harder and refuse to simply provide answers."
 ---
 
-Artificial intelligence, particularly readily available generative tools, can indeed reduce critical thinking skills by shifting the cognitive load away from the user. This reduction occurs when individuals passively accept AI-generated outputs without deeper engagement, minimizing the brain's natural effort to process information, evaluate arguments, or construct original ideas. The implications extend beyond academic settings, touching professional development and daily problem-solving abilities.
+Artificial intelligence, particularly readily available generative tools, can indeed reduce critical [thinking skills](/video/the-ai-engineer-s-dilemma-future-proofing-careers-against-advanced/) by shifting the cognitive load away from the user. This reduction occurs when individuals passively accept AI-generated outputs without deeper engagement, minimizing the brain's natural effort to process information, evaluate arguments, or construct original ideas. The implications extend beyond academic settings, touching professional development and daily problem-solving abilities.
 
 ## Why does AI hinder our critical thinking?
 

@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Quantum computing operates on the basic principles of quantum mechanics, allowing it to tackle problems beyond the reach of classical computers. It uses unique properties of matter at the quantum level to process information in ways that defy our everyday intuition. This approach holds immense promise for scientific discovery and technological advancement, particularly for complex simulations and optimization tasks.
+[Quantum computing](/video/beyond-the-quantum-hype-real-world-implications-and-industry-roadmap/) operates on the basic principles of quantum mechanics, allowing it to tackle problems beyond the reach of classical computers. It uses unique properties of matter at the quantum level to process information in ways that defy our everyday intuition. This approach holds immense promise for scientific discovery and technological advancement, particularly for complex simulations and optimization tasks.
 
 ## The Quantum Bit: Superposition and Entanglement
 
@@ -39,7 +39,7 @@ Another key quantum phenomenon is entanglement. This occurs when two or more qub
 
 ## The Power of Quantum Calculation
 
-Quantum computers excel at specific types of problems that can be expressed as matrix calculations. What makes them uniquely powerful is how they handle these calculations. Regardless of the size of the matrix, a quantum computer with enough qubits can solve the problem in a remarkably consistent timeframe, typically between 50 and 250 microseconds. This speed is not achieved by processing each possibility sequentially, as a classical computer would. Instead, the quantum computer explores all possible states simultaneously due to superposition and entanglement, effectively having "all the universes working for you."
+Quantum computers excel at specific types of problems that can be expressed as matrix calculations. What makes them uniquely powerful is how they handle these calculations. Regardless of the size of the matrix, a [quantum computer](/video/google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality/) with enough qubits can solve the problem in a remarkably consistent timeframe, typically between 50 and 250 microseconds. This speed is not achieved by processing each possibility sequentially, as a classical computer would. Instead, the quantum computer explores all possible states simultaneously due to superposition and entanglement, effectively having "all the universes working for you."
 
 Consider the challenge of prime factorization, a problem central to many modern encryption methods. To crack an encrypted code based on large prime numbers, a classical computer would need to perform a number of calculations far exceeding the number of atoms in the universe. A quantum computer, however, could theoretically solve this problem within those 50 to 250 microseconds. The number of qubits is important, but the true power comes from the exponentially greater number of connections and possible configurations between those qubits, allowing for vast calculations with a relatively modest number of physical qubits.
 
@@ -47,7 +47,7 @@ Consider the challenge of prime factorization, a problem central to many modern 
 
 Building and maintaining quantum computers presents significant engineering hurdles. These machines often require extreme conditions, such as ultra-low temperatures achieved with superconductors and frothing gases, to sustain the delicate quantum states. The biggest challenge is "decoherence," which is the breaking of the superposition and entanglement bonds. Any disturbance—a slight vibration, a temperature fluctuation, or even a stray particle—can cause the qubits to lose their quantum properties, leading to errors.
 
-Error correction is therefore a monumental task in quantum computing, reminiscent of the early days of classical computing. While the theoretical understanding of quantum physics is well-established, and functioning quantum computers exist, the practical engineering of stable, large-scale systems remains difficult. The race is on to build quantum computers with a large number of stable qubits that can maintain their coherence long enough to perform complex calculations. For example, some systems today offer 108 qubits, which is considered a major achievement, but still a small number compared to the computational needs for many real-world problems.
+Error correction is therefore a monumental task in quantum computing, reminiscent of the early days of [classical computing](/video/quantum-computing-s-great-paradox-why-investment-soars-as-use-cases/). While the theoretical understanding of quantum physics is well-established, and functioning quantum computers exist, the practical engineering of stable, large-scale systems remains difficult. The race is on to build quantum computers with a large number of stable qubits that can maintain their coherence long enough to perform complex calculations. For example, some systems today offer 108 qubits, which is considered a major achievement, but still a small number compared to the computational needs for many real-world problems.
 
 ## Practical Applications and Future Potential
 

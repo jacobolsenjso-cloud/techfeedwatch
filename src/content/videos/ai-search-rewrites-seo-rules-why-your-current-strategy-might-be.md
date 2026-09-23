@@ -35,13 +35,13 @@ AI Search SEO is commonly known as Answer Engine Optimization, or AEO. This term
 
 ## The Rise of AI Overviews
 
-Google has begun rolling out AI Overviews, which are AI-generated summaries presented at the top of search results. This represents a significant departure from the previous search engine results page (SERP) layout. These AI Overviews are now appearing for a large share of global queries, estimated to be between 50% and 60%. This widespread implementation means that a substantial portion of search traffic is now encountering these AI-generated summaries first.
+Google has begun rolling out AI Overviews, which are AI-generated summaries presented at the top of search results. This represents a significant departure from the previous [search engine](/video/beyond-google-how-marketers-win-in-the-ai-powered-search-era/) results page (SERP) layout. These AI Overviews are now appearing for a large share of global queries, estimated to be between 50% and 60%. This widespread implementation means that a substantial portion of search traffic is now encountering these AI-generated summaries first.
 
 The impact of AI Overviews is not limited to general web searches. Google is also testing similar features for local search, specifically within Google Maps. This "ask maps feature" indicates that businesses relying on local visibility will also need to adapt their strategies. The goal remains the same: to appear prominently in these AI-driven summaries, regardless of the search context.
 
 ## Beyond Retrieval: The Goal of Citation
 
-The technology behind AI Overviews is called Retrieval Augmented Generation, or RAG. This process involves the AI retrieving information from various web pages and then using that data to generate a concise summary. For content creators and businesses, simply having your page "retrieved" by the AI is only the first step. The true objective is to be "cited" within the AI Overview itself.
+The technology behind [AI Overview](/video/google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival/)s is called Retrieval Augmented Generation, or RAG. This process involves the AI retrieving information from various web pages and then using that data to generate a concise summary. For content creators and businesses, simply having your page "retrieved" by the AI is only the first step. The true objective is to be "cited" within the AI Overview itself.
 
 Being cited means your website is explicitly referenced as a source within the AI-generated text. Ideally, you want to be the number one citation, appearing in the top paragraph of the overview. In some cases, particularly for certain "middle of the sales funnel" queries like plastic surgery or kitchen rental services, businesses can even secure underlined "blue links" with their name directly within the AI Overview. These prominent citations are far more valuable than mere retrieval, as they directly lead users to your site.
 

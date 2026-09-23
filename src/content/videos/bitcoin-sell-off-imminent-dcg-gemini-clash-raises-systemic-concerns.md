@@ -58,7 +58,7 @@ In response to its mounting financial pressures, DCG has been actively pursuing 
 
 * **Asset Sales:** DCG has been selling shares in some of Grayscale's trusts. For instance, it offloaded a quarter of its Ethereum trust holdings, raising capital. It has also considered selling other altcoins and shares in various crypto companies, which were valued at a substantial amount in January. Additionally, DCG has reportedly considered selling its crypto news subsidiary, CoinDesk.
 * **Cost-Cutting Measures:** DCG has implemented significant cost reductions, including halting dividend payments to shareholders and laying off over 500 employees. It also shut down its institutional trading subsidiary and has sought to consolidate its various lawsuits to reduce legal fees.
-* **New Revenue Streams:** Foundry, another DCG subsidiary and currently the largest Bitcoin mining pool by hash rate, began charging fees for the first time in April. Since then, Foundry has reportedly received approximately 4,500 BTC from its share of mined Bitcoin.
+* **New Revenue Streams:** Foundry, another DCG subsidiary and currently the largest [Bitcoin mining](/video/bitcoin-mining-decoding-its-true-value-impact-and-energy-footprint/) pool by hash rate, began charging fees for the first time in April. Since then, Foundry has reportedly received approximately 4,500 BTC from its share of mined Bitcoin.
 
 While these measures, combined with Grayscale's ongoing management fees, contribute to DCG's capital, their sufficiency to cover billions in debt remains uncertain. The allegations surrounding the $1.1 billion promissory note to Genesis further complicate DCG's financial picture, as Gemini claims it was not real capital but a deceptive accounting entry.
 

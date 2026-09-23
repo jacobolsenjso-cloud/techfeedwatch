@@ -28,7 +28,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-A second brain is a personalized digital system designed to store, organize, and retrieve all your knowledge and information outside of your biological memory. It acts as an external repository for everything you learn, read, or think, freeing your mind to focus on creative tasks and deeper understanding rather than rote recall. This system ensures that valuable insights and data are always accessible when you need them, even if that need arises much later.
+A [second brain](/video/ai-personal-knowledge-management-optimizing-second-brains-with-llms/) is a personalized digital system designed to store, organize, and retrieve all your knowledge and information outside of your biological memory. It acts as an external repository for everything you learn, read, or think, freeing your mind to focus on creative tasks and deeper understanding rather than rote recall. This system ensures that valuable insights and data are always accessible when you need them, even if that need arises much later.
 
 ## Why Build a Second Brain?
 

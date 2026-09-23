@@ -56,7 +56,7 @@ Structured data, often set up using Schema.org, provides additional metadata abo
 
 ## The Need for Speed: Optimizing Page Load Performance
 
-The fourth rule of SEO focuses on speed: fully rendered HTML must load quickly. Websites burdened with megabytes of blocking images, styles, and JavaScript will deter both users and search engine bots. Slow loading times lead to higher bounce rates and reduced user engagement, directly impacting search rankings. Ensuring a fast, responsive user experience is paramount for modern SEO.
+The fourth rule of SEO focuses on speed: fully rendered HTML must load quickly. Websites burdened with megabytes of blocking images, styles, and JavaScript will deter both users and search engine bots. Slow loading times lead to higher bounce rates and reduced user engagement, directly impacting search rankings. Ensuring a fast, responsive [user experience](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates/) is paramount for modern SEO.
 
 ## HTML Rendering Strategies for SEO
 

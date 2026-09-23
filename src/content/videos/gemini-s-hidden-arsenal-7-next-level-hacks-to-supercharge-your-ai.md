@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Google Gemini is transforming how users interact with their digital workspace, moving beyond simple conversations to offer powerful tools for efficiency and creativity. It provides advanced design abilities, allows for custom automation of routine tasks, and integrates deeply across Google's suite of productivity applications. These features help users manage complex projects, generate content, and analyze data more effectively.
+[Google Gemini](/video/google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you/) is transforming how users interact with their digital workspace, moving beyond simple conversations to offer powerful tools for efficiency and creativity. It provides advanced design abilities, allows for custom automation of routine tasks, and integrates deeply across Google's suite of productivity applications. These features help users manage complex projects, generate content, and analyze data more effectively.
 
 ## Streamlining Design with AI Studio
 

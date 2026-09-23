@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-AI agent loops represent a powerful new approach to business automation, enabling systems to continuously improve and adapt. These self-optimizing mechanisms move beyond simple, predefined scripts, allowing AI agents to engage in dynamic cycles of action, measurement, and learning. This ability promises ongoing efficiency gains and a sustained competitive edge across diverse business functions.
+AI agent loops represent a powerful new approach to business automation, enabling systems to continuously improve and adapt. These self-optimizing mechanisms move beyond simple, predefined scripts, allowing [AI agents](/video/ai-agents-redefine-payments-how-stripe-and-coinbase-are-reshaping/) to engage in dynamic cycles of action, measurement, and learning. This ability promises ongoing efficiency gains and a sustained competitive edge across diverse business functions.
 
 ## The Foundation of Self-Optimizing Systems
 

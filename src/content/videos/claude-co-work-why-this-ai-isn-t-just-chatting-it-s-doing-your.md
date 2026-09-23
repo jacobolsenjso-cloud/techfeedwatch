@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Claude Co-work is an advanced AI agent designed to automate complex business tasks by directly integrating with a user's existing suite of digital tools. Unlike traditional chatbots that primarily provide information or generate text, Co-work proactively executes actions within applications such as calendars, project management platforms, and email clients, fundamentally changing how professionals manage their daily responsibilities. It is used to streamline workflows, personalize automation, and act as an active digital co-worker, handling everything from scheduling and drafting to data organization and content creation.
+Claude Co-work is an advanced [AI agent](/video/anthropic-claude-computer-use-ai-agent-competition-heats-up/) designed to automate complex business tasks by directly integrating with a user's existing suite of digital tools. Unlike traditional chatbots that primarily provide information or generate text, Co-work proactively executes actions within applications such as calendars, project management platforms, and email clients, fundamentally changing how professionals manage their daily responsibilities. It is used to streamline workflows, personalize automation, and act as an active digital co-worker, handling everything from scheduling and drafting to data organization and content creation.
 
 ## Beyond Chat: The Agentic Difference
 

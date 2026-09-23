@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Augmented reality (AR) objects often appear remarkably stable, fixed in physical space as if they were truly there. This stability comes from advanced spatial computing technologies. At its core, this capability relies on real-time Simultaneous Localization and Mapping (SLAM), which integrates data from multiple sensors. This intricate sensor fusion and geometric processing create persistent spatial anchors. These anchors enable digital elements to genuinely interact with the real world rather than merely float on a screen.
+[Augmented reality](/video/digital-commerce-realism-augmented-reality-enhances-e-commerce/) (AR) objects often appear remarkably stable, fixed in physical space as if they were truly there. This stability comes from advanced spatial computing technologies. At its core, this capability relies on real-time Simultaneous Localization and Mapping (SLAM), which integrates data from multiple sensors. This intricate sensor fusion and geometric processing create persistent spatial anchors. These anchors enable digital elements to genuinely interact with the real world rather than merely float on a screen.
 
 ## The Foundation of Digital Presence: Feature Tracking and SLAM
 

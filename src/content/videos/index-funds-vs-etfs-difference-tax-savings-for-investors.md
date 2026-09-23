@@ -32,7 +32,7 @@ Investors often face unexpected tax bills from their index fund holdings, even w
 
 ## Understanding Index Funds and ETFs
 
-On the surface, index funds and ETFs appear quite similar. Both investment vehicles aim to track a specific market index, such as the S&P 500. They offer investors broad diversification and passive exposure to a basket of stocks or bonds. They are designed for long-term wealth building, often with lower expense ratios compared to actively managed funds.
+On the surface, [index funds](/video/index-funds-explained-the-core-of-long-term-investing/) and ETFs appear quite similar. Both investment vehicles aim to track a specific market index, such as the S&P 500. They offer investors broad diversification and passive exposure to a basket of stocks or bonds. They are designed for long-term wealth building, often with lower expense ratios compared to actively managed funds.
 
 However, beneath this apparent similarity lies a critical difference. This difference is in how they are structured and managed, particularly concerning investor redemptions. This difference directly impacts how capital gains are generated and distributed. This leads to varying tax outcomes for shareholders. Both types of funds hold the same underlying companies. They also provide similar market exposure. However, their operational "plumbing" is distinct.
 

@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Learning practical AI skills means focusing on how to apply existing tools to daily tasks and workflows, rather than on technical coding. This approach helps people understand different AI categories, master effective prompting, and integrate AI into their work for increased productivity and creativity. The goal is to use AI as a powerful assistant, not to become an AI developer.
+Learning practical AI skills means focusing on how to apply existing tools to daily tasks and workflows, rather than on technical coding. This approach helps people understand different AI categories, master effective prompting, and integrate AI into their work for increased productivity and creativity. The goal is to use AI as a powerful assistant, not to [become an AI](/video/beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025/) developer.
 
 ## Handling the AI Learning Path
 
@@ -45,7 +45,7 @@ People typically fall into one of three paths when learning AI:
 
 ## Core AI Concepts and Essential Tools
 
-At its broadest, Artificial Intelligence refers to software designed to simulate human intelligence, including learning, reasoning, and problem-solving. Machine learning is how AI systems learn by finding patterns in data and improving over time. Deep learning is a subset of machine learning that uses neural networks. Today, when most people talk about AI, they are usually referring to generative AI tools. These tools can create new content like text, images, videos, or music.
+At its broadest, Artificial Intelligence refers to software designed to simulate human intelligence, including learning, reasoning, and problem-solving. Machine learning is how AI systems learn by finding patterns in data and improving over time. Deep learning is a subset of machine learning that uses [neural networks](/video/from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai/). Today, when most people talk about AI, they are usually referring to generative AI tools. These tools can create new content like text, images, videos, or music.
 
 Large Language Models (LLMs) are the most important tools in many people's AI toolkit. These are neural networks trained on vast amounts of text data to understand, generate, and manipulate human language. They are incredibly versatile and powerful, used for content creation, research, coding, translation, and customer support. Popular LLMs include ChatGPT, Gemini, and Claude. Many of these models are also multimodal, meaning they can work with more than just text; they can analyze images and sometimes process video or audio.
 
@@ -77,7 +77,7 @@ AI audio tools cover several areas. Text-to-speech technology, exemplified by 11
 
 ## Understanding Specialized AI Wrappers and Workflows
 
-Many AI tools found online are specialized wrappers. These are custom interfaces built on top of foundational models like ChatGPT, Claude, or Gemini. They are designed for very specific uses, such as writing emails, fixing resumes, reviewing PDFs, or generating marketing copy. These wrappers often provide a clean user interface, add guardrails, and include pre-loaded prompt engineering to make the underlying models easier to use for a particular task.
+Many AI tools found online are specialized wrappers. These are custom interfaces built on top of foundational models like ChatGPT, Claude, or Gemini. They are designed for very specific uses, such as writing emails, fixing resumes, reviewing PDFs, or generating marketing copy. These wrappers often provide a clean user interface, add guardrails, and include pre-loaded [prompt engineering](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/) to make the underlying models easier to use for a particular task.
 
 While these tools can be genuinely useful for convenience and a streamlined user experience, it's important to understand their nature. Often, you can recreate the features of a basic wrapper yourself within a general LLM like ChatGPT using a well-crafted prompt and a few examples. The choice then becomes whether to pay for the convenience and user experience or to invest time in building it yourself, which might be more cost-effective and customizable.
 

@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Ethereum smart contracts are self-executing programs stored on the Ethereum blockchain. They operate as stateful objects within the Ethereum World State, managing their own code and data. These contracts execute bytecode via the Ethereum Virtual Machine (EVM), providing a deterministic environment for decentralized applications.
+Ethereum smart contracts are self-executing programs stored on the [Ethereum blockchain](/video/ethereum-s-enduring-vision-more-than-just-digital-money/). They operate as stateful objects within the Ethereum World State, managing their own code and data. These contracts execute bytecode via the Ethereum Virtual Machine (EVM), providing a deterministic environment for decentralized applications.
 
 ## The Ethereum World State and Contract Identity
 
@@ -44,7 +44,7 @@ Balances for both account types are stored as 256-bit numbers, representing the 
 
 ## Contract Code and Execution
 
-The core logic of a smart contract resides in its bytecode, which is stored on the Ethereum World State. This bytecode is a sequence of hexadecimal characters, where each two characters represent an opcode. Opcodes are fundamental instructions that the Ethereum Virtual Machine (EVM) can interpret and execute. When developers write contracts in high-level languages like Solidity, these programs are compiled down into this low-level bytecode.
+The core logic of a [smart contract](/video/solana-escrow-the-smart-contract-mechanism-rewriting-digital/) resides in its bytecode, which is stored on the Ethereum World State. This bytecode is a sequence of hexadecimal characters, where each two characters represent an opcode. Opcodes are fundamental instructions that the Ethereum Virtual Machine (EVM) can interpret and execute. When developers write contracts in high-level languages like Solidity, these programs are compiled down into this low-level bytecode.
 
 The EVM acts as a "dumb machine," meticulously following each opcode instruction. It does not inherently understand high-level programming concepts like function names or variable types. Instead, it executes the series of operations dictated by the bytecode. This execution model, combined with the EVM's design, makes Ethereum smart contracts Turing complete. This means they can execute any computable program, offering immense flexibility for complex decentralized applications.
 
