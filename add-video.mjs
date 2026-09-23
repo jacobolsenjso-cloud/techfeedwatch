@@ -310,8 +310,13 @@ const ARTIKEL_TITLER = new Map(); // slug -> titel, bruges også af ankerTjek
 let internalLinksContext = "";
 if (fs.existsSync('./src/content/videos')) {
   const alle = [];
+  // Hvor mange brødtekst-links peger allerede på hver artikel? Målt 23/9: 214
+  // artikler har ingen indgående. Ved lige relevans vælges dem først, så hver ny
+  // artikel også hjælper en gammel, som ellers ingen finder vej til.
+  const indgaaende = new Map();
   for (const file of fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md'))) {
     const raw = fs.readFileSync(`./src/content/videos/${file}`, 'utf-8');
+    for (const m of raw.matchAll(/\]\(\/video\/([^)\/\s#?]+)/g)) indgaaende.set(m[1], (indgaaende.get(m[1]) || 0) + 1);
     if (/^isShort:\s*true/m.test(raw)) continue;
     const slug = file.replace(/\.md$/, '');
     if (slug === erstatSlug) continue; // en omskrevet artikel må ikke linke til sig selv
@@ -325,12 +330,14 @@ if (fs.existsSync('./src/content/videos')) {
     const dato = raw.match(/^date:\s*"(.*?)"/m)?.[1] || '';
     alle.push({ slug, title, score, dato });
   }
-  alle.sort((a, b) => b.score - a.score || b.dato.localeCompare(a.dato));
+  // Relevans først. Ved lige relevans: artikler uden indgående links før dem med.
+  const harInd = (s) => (indgaaende.get(s) ? 1 : 0);
+  alle.sort((a, b) => b.score - a.score || harInd(a.slug) - harInd(b.slug) || b.dato.localeCompare(a.dato));
   const valgte = alle.filter((a) => a.score > 0).slice(0, 8);
   const kandidater = valgte.length >= 3 ? valgte : alle.slice(0, 8);
   if (kandidater.length) {
     const links = kandidater.map((a) => `[${a.title}](/video/${a.slug})`).join('\n');
-    internalLinksContext = `\nRELATED ARTICLES ON THIS SITE (the only internal links you may use):\n${links}\nLINK RULES: Link 2 to 4 of them, only where a sentence is genuinely about that article's subject. The link text must be the article's title or a close paraphrase of it - never a phrase about something else. A link whose text does not match its target will be removed. Fewer links is fine; irrelevant links are not.`;
+    internalLinksContext = `\nRELATED ARTICLES ON THIS SITE (the only internal links you may use):\n${links}\nLINK RULES: Link 3 to 5 of them, only where a sentence is genuinely about that article's subject. The link text must be the article's title or a close paraphrase of it - never a phrase about something else. A link whose text does not match its target will be removed. Fewer links is fine; irrelevant links are not.`;
   }
 }
 
