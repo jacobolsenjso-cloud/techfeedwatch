@@ -11,6 +11,7 @@ import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
 import { erRelevant } from './src/lib/relevans.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
+import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -371,6 +372,7 @@ async function run() {
     // Kildeangivelse hentes ALTID (uafhængigt af Plan A/B), så hver artikel kan
     // kreditere den oprindelige kanal. Fejler dette, fortsætter vi uden kilde.
     let channelTitle = null;
+    let videoBeskrivelse = ''; // til eksterne links (src/lib/eksterne-links.mjs)
     let channelId = null;
     let publishedAt = null;
     let viewCount = null;
@@ -392,6 +394,7 @@ async function run() {
         if (sn) thumbMax = Boolean(sn.thumbnails?.maxres);
         if (sn) {
           channelTitle = sn.channelTitle || null;
+          videoBeskrivelse = sn.description || '';
           channelId = sn.channelId || null;
           publishedAt = sn.publishedAt || null;
           console.log(`Info: Kilde fundet — ${channelTitle}`);
@@ -962,6 +965,16 @@ ${content}`);
         content = fjernForbudteOrd(content);
         console.log(`🧹 Forbudte ord erstattet: ${forbudte.join(', ')}`);
       }
+
+      // Eksterne links, aftalt med Jacob 23/9: højst 3 fra videoens egen
+      // beskrivelse + højst 2 officielle sider for navne i teksten, alle hentet
+      // live og kun sat på et navn, der allerede står i teksten. Ingen ord
+      // ændres. Fejler noget, udgives artiklen uden — robotten stopper aldrig her.
+      const ekst = await tilfoejEksterneLinks(content, {
+        beskrivelse: videoBeskrivelse,
+        spoerg: async (p) => (await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 1024, temperature: 0 } }).generateContent(p)).response.text(),
+      });
+      content = ekst.content;
     }
 
     // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.
