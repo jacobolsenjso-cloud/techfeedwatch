@@ -23,9 +23,15 @@ if (!fs.existsSync(OUT)) {
 // Id'et bygges på indholdet af de byggede stylesheets. Ændrer de sig ikke,
 // ændrer versionen sig heller ikke, og brugernes cache overlever unødige
 // deploys. Ændrer de sig, ryddes alt fra før automatisk.
-const assets = fs.existsSync('dist/_astro')
-  ? fs.readdirSync('dist/_astro').filter((f) => f.endsWith('.css')).sort().join('|')
-  : String(Date.now());
+//
+// Rettet 23/9: siden 27/8 inlines al CSS (astro.config.mjs), så der ER ingen
+// .css-filer i dist/_astro. Id'et blev derfor hash af en tom streng —
+// 'da39a3ee5e' ved hvert eneste build — og service workeren skiftede aldrig.
+// Nu tæller alle filer i _astro (scripts og skrifttyper har også hash i
+// navnet). Er mappen tom eller væk, bruges tidspunktet, så id'et ALDRIG
+// kan fryse igen.
+const filer = fs.existsSync('dist/_astro') ? fs.readdirSync('dist/_astro').sort() : [];
+const assets = filer.length ? filer.join('|') : String(Date.now());
 const buildId = crypto.createHash('sha1').update(assets).digest('hex').slice(0, 10);
 
 const src = fs.readFileSync(SRC, 'utf8');
@@ -35,4 +41,4 @@ if (!src.includes('__BUILD_ID__')) {
 }
 
 fs.writeFileSync(OUT, src.replaceAll('__BUILD_ID__', buildId), 'utf8');
-console.log(`sw.js stemplet med tfw-${buildId} (fra ${assets.split('|').length} stylesheets)`);
+console.log(`sw.js stemplet med tfw-${buildId} (fra ${filer.length} filer i _astro)`);
