@@ -53,7 +53,14 @@ jobs:
       # og kan derfor aldrig gøre kørslen rød. Ændringerne kommer med i
       # commit'et nedenfor (git add .), så de kan ses og rulles tilbage.
       - name: Ret forældede linktekster
-        run: node ret-linktekster.mjs --skriv
+        run: node ret-linktekster.mjs --skriv --resultat="$RUNNER_TEMP/ret-linktekster.json"
+
+      # Robottens eget bevis: public/robot-status.json. Skrives kun, når der er
+      # sket noget (ny artikel, rettede linktekster, en advarsel), og ligger
+      # bagefter både i git og på techfeedwatch.com/robot-status.json — så det
+      # kan læses uden pc, browser eller GitHub-nøgle. Slutter altid med kode 0.
+      - name: Skriv robot-status
+        run: node robot-status.mjs --resultat="$RUNNER_TEMP/ret-linktekster.json"
 
       # Kigger arkivet efter tomme artikler, manglende resuméer, manglende
       # kildeangivelse og spor fra modellen. Kører FØR commit, så en artikel

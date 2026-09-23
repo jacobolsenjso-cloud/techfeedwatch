@@ -79,21 +79,37 @@ function hovedarbejde() {
   return planlagt;
 }
 
-// Hele kørslen ligger i try/catch, og der er kun ÉN exit til sidst: kode 0.
-// Går noget galt, bliver det skrevet i loggen og kørslen fortsætter — en
-// reparation, der ikke lykkes, må ikke koste en artikel sin udgivelse.
+// Hele kørslen ligger i try/catch, og ALLE veje ud går gennem slut(), der
+// altid giver kode 0. Går noget galt, bliver det skrevet i loggen og kørslen
+// fortsætter — en reparation, der ikke lykkes, må ikke koste en artikel sin
+// udgivelse.
+// --resultat=<fil>: skriv udfaldet som JSON, så robot-status.mjs kan læse det
+// bagefter. Grunden: dette trin sluger fejl med vilje og bliver altid grønt,
+// så "grøn" siger intet om, hvad der skete. Resultatfilen gør udfaldet synligt
+// uden at nogen skal finde loggen i en browser. Skriver kun, når argumentet
+// er givet — lokalt uden argument sker der intet.
+const resultatArg = process.argv.find((a) => a.startsWith('--resultat='));
+const resultatFil = resultatArg ? resultatArg.slice('--resultat='.length) : null;
+function slut(resultat) {
+  if (resultatFil) {
+    try { fs.writeFileSync(resultatFil, JSON.stringify(resultat)); }
+    catch (e) { console.log(`(kunne ikke skrive resultatfil: ${e.message})`); }
+  }
+  process.exit(0);
+}
+
 let planlagt = [];
 try {
   planlagt = hovedarbejde();
 } catch (e) {
   console.log(`⚠️  ret-linktekster kunne ikke gennemføres: ${e.message}`);
   console.log('   Kørslen fortsætter — dette trin stopper aldrig robotten.');
-  process.exit(0);
+  slut({ fejl: e.message });
 }
 
 if (planlagt.length === 0) {
   console.log('Ingen forældede linktekster. Alle citater passer med målsidens overskrift.');
-  process.exit(0);
+  slut({ rettet: 0, planlagt: 0 });
 }
 
 for (const r of planlagt) {
@@ -106,12 +122,12 @@ if (planlagt.length > LOFT) {
   console.log(`\n⚠️  ${planlagt.length} rettelser er over loftet på ${LOFT} — SKRIVER IKKE.`);
   console.log('   Så mange på én gang betyder en masse-omdøbning, ikke en enkelt titelrettelse.');
   console.log('   Kør `node ret-linktekster.mjs --skriv` i hånden, når du har set listen igennem.');
-  process.exit(0);
+  slut({ rettet: 0, planlagt: planlagt.length, overLoft: true, loft: LOFT });
 }
 
 if (!skriv) {
   console.log(`\n${planlagt.length} linktekster ville blive rettet (tør kørsel — brug --skriv).`);
-  process.exit(0);
+  slut({ rettet: 0, planlagt: planlagt.length, toer: true });
 }
 
 let rettet = 0;
@@ -132,6 +148,8 @@ try {
   }
 } catch (e) {
   console.log(`\n⚠️  skrivningen blev afbrudt: ${e.message}`);
+  console.log(`\n${rettet} af ${planlagt.length} linktekster rettet.`);
+  slut({ rettet, planlagt: planlagt.length, fejl: e.message });
 }
 console.log(`\n${rettet} af ${planlagt.length} linktekster rettet.`);
-process.exit(0);
+slut({ rettet, planlagt: planlagt.length });

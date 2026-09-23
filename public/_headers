@@ -33,3 +33,11 @@
 /sw.js
   Cache-Control: no-cache
   Service-Worker-Allowed: /
+
+# Robottens statusfil: ikke en side, der skal i Google, og den skal altid
+# læses frisk — ellers kan en gammel kopi i cachen skjule, at robotten står
+# stille.
+
+/robot-status.json
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache
