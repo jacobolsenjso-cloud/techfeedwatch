@@ -1,0 +1,40 @@
+name: Tomgangsalarm
+
+# Bliver RØD — og sender dermed Jacobs sædvanlige fejlmail — hvis robotten er
+# holdt op med at udgive. Læser den levende techfeedwatch.com/robot-status.json,
+# så hele kæden tjekkes: robot → commit → Cloudflare-byg → live site.
+#
+# Hvorfor: en grøn kørsel, der intet laver, sender ingen mail. Uden denne ville
+# ingen opdage, hvis robotten stod stille i dagevis. Se tjek-tomgang.mjs.
+#
+# Grænsen er 36 timer: dagsloftet kan stoppe udgivelsen tidligt på en dag, og
+# næste artikel kommer så først efter midnat — op til ca. et døgn. 36 timer
+# giver luft til det uden at vente for længe.
+
+on:
+  schedule:
+    # Hver morgen kl. 07:43 UTC (09:43 dansk sommertid). Skævt minut, fordi
+    # GitHub nedprioriterer cron på hele timer.
+    - cron: "43 7 * * *"
+  workflow_dispatch:
+    inputs:
+      timer:
+        description: "Grænse i timer. Sæt 1 for at bevise, at alarmen og mailen virker."
+        required: false
+        default: "36"
+
+permissions:
+  contents: read
+
+jobs:
+  tjek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Er robotten i live?
+        run: node tjek-tomgang.mjs
+        env:
+          TOMGANG_TIMER: ${{ github.event.inputs.timer || '36' }}
