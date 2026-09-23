@@ -41,3 +41,10 @@
 /robot-status.json
   X-Robots-Tag: noindex
   Cache-Control: no-cache
+
+# Byggestemplet: hvilken commit kører live. Samme regler som statusfilen —
+# ikke til Google, og altid frisk, ellers viser den et gammelt deploy.
+
+/build.json
+  X-Robots-Tag: noindex
+  Cache-Control: no-cache
