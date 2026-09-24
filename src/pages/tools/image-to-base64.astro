@@ -125,7 +125,9 @@ const description = "Convert any image to a Base64 data URI for inline use in HT
         render();
       }));
       document.getElementById('b6Copy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(out.value); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+        // Knappen gemmes før await — bagefter er e.currentTarget null, og "Copied!" vises aldrig.
+        const b = e.currentTarget as HTMLElement;
+        try { await navigator.clipboard.writeText(out.value); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
     });
   </script>

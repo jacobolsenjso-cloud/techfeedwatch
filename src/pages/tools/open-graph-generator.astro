@@ -132,7 +132,9 @@ const description = "Generate Open Graph and Twitter Card meta tags for clean li
       document.querySelector('.og-wrapper')!.addEventListener('input', render);
       document.getElementById('ogType')!.addEventListener('change', render);
       document.getElementById('ogCopy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+        // Knappen gemmes før await — bagefter er e.currentTarget null, og "Copied!" vises aldrig.
+        const b = e.currentTarget as HTMLElement;
+        try { await navigator.clipboard.writeText(out.textContent || ''); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
       render();
     });

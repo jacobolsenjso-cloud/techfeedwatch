@@ -170,7 +170,9 @@ const description = "Generate valid Article, FAQPage and BreadcrumbList JSON-LD 
       });
 
       document.getElementById('scCopy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+        // Knappen gemmes før await — bagefter er e.currentTarget null, og "Copied!" vises aldrig.
+        const b = e.currentTarget as HTMLElement;
+        try { await navigator.clipboard.writeText(out.textContent || ''); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
 
       gen();

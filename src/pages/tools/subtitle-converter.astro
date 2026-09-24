@@ -122,7 +122,9 @@ The best tech, explained.</textarea>
         r.readAsText(f);
       });
       document.getElementById('stCopy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(output.value); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+        // Knappen gemmes før await — bagefter er e.currentTarget null, og "Copied!" vises aldrig.
+        const b = e.currentTarget as HTMLElement;
+        try { await navigator.clipboard.writeText(output.value); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
       document.getElementById('stDownload')!.addEventListener('click', () => {
         const ext = dir.value === 'srt2vtt' ? 'vtt' : 'srt';

@@ -1,18 +1,44 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import ToolUpdated from '../../components/ToolUpdated.astro';
+import { findTool } from '../../lib/tools';
 
-// Vejledende priser pr. 1M input-tokens (USD). Opdatér her når priserne ændrer sig.
+// Priser pr. 1M tokens i USD: udbydernes standardpris (ikke batch, cache eller
+// "fast mode"). Læst ordret fra de tre officielle prissider 24/9-2026 — ikke via
+// et opsummeringsværktøj, der to gange gav forkerte tal (se dagbogen).
+// Når tallene ændres: ret dem her OG sæt `updated` på værktøjet i
+// src/lib/tools.ts, så datoen på siden og i schemaet passer.
+//
+// `skift`: en pris, udbyderen selv har meldt ændres på en bestemt dato. Browseren
+// vælger den rigtige ud fra dags dato, så siden ikke bliver forkert af sig selv.
 const MODEL_PRICING = [
-  { name: 'GPT-4o', pricePerMillion: 2.50 },
-  { name: 'GPT-4o mini', pricePerMillion: 0.15 },
-  { name: 'Claude (Sonnet)', pricePerMillion: 3.00 },
-  { name: 'Claude (Haiku)', pricePerMillion: 0.80 },
-  { name: 'Gemini 1.5 Pro', pricePerMillion: 1.25 },
-  { name: 'Gemini 1.5 Flash', pricePerMillion: 0.075 },
+  { provider: 'OpenAI', name: 'GPT-6 Astra', input: 10, output: 50, note: 'Short-context rate' },
+  { provider: 'OpenAI', name: 'GPT-6 Sol', input: 2, output: 10, note: 'Short-context rate' },
+  { provider: 'OpenAI', name: 'GPT-6 Luna', input: 0.10, output: 0.50, note: 'Short-context rate' },
+  { provider: 'Anthropic', name: 'Claude Fable 5.1', input: 10, output: 50 },
+  { provider: 'Anthropic', name: 'Claude Opus 5.5', input: 4, output: 20 },
+  { provider: 'Anthropic', name: 'Claude Sonnet 5', input: 2, output: 10 },
+  { provider: 'Anthropic', name: 'Claude Haiku 4.5', input: 1, output: 5 },
+  { provider: 'Google', name: 'Gemini 3.1 Pro (preview)', input: 2, output: 12, note: 'Prompts up to 200k tokens' },
+  { provider: 'Google', name: 'Gemini 3.8 Flash', input: 0.75, output: 3.75, note: 'Rises to $1.50 / $7.50 on Jan 1, 2027',
+    skift: { dato: '2027-01-01', input: 1.50, output: 7.50, note: 'Rate from Jan 1, 2027' } },
+  { provider: 'Google', name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50 },
 ];
 
+// Kilderne vises på siden, så enhver kan tjekke tallene selv.
+const PRIS_KILDER = [
+  { name: 'OpenAI', url: 'https://developers.openai.com/api/docs/pricing' },
+  { name: 'Anthropic', url: 'https://platform.claude.com/docs/en/about-claude/pricing' },
+  { name: 'Google', url: 'https://ai.google.dev/gemini-api/docs/pricing' },
+];
+
+const tool = findTool('ai-token-calculator');
+const tjekket = tool?.updated
+  ? new Date(tool.updated + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+  : '';
+
 const title = "AI Token & Cost Calculator";
-const description = "Estimate token count and input cost for GPT-4o, Claude, and Gemini models - free, instant, and runs entirely in your browser.";
+const description = "Estimate tokens and API cost, input and output, for GPT-6, Claude, and Gemini, with prices checked against each provider's own pricing page.";
 ---
 
 <MainLayout title={title} description={description}>
@@ -39,7 +65,14 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
     .calc-table th, .calc-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-color); }
     .calc-table th { background: var(--hover-bg); font-weight: 700; }
     .calc-table tr:last-child td { border-bottom: none; }
-    .calc-table td.calc-cost { font-weight: 600; }
+    .calc-table td.calc-cost { font-weight: 600; white-space: nowrap; }
+    .calc-model-note { display: block; font-size: 0.78rem; color: #6b7280; margin-top: 2px; }
+    body.dark-mode .calc-model-note { color: #9ca3af; }
+    .calc-output-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 18px 0; }
+    .calc-output-row label { font-weight: 600; font-size: 0.95rem; }
+    .calc-output-row input { width: 140px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; }
+    .calc-output-row input:focus { outline: none; border-color: var(--teal-text); }
+    .calc-sources a { color: var(--teal-text); }
 
     .calc-guide { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
     .calc-guide h2 { font-size: 1.3rem; margin: 26px 0 10px 0; }
@@ -49,13 +82,17 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
     @media (max-width: 768px) {
       .calc-wrapper { padding: 20px 15px; }
       .calc-stats { grid-template-columns: 1fr; }
+      /* Fire kolonner på 390 px: mindre luft, så modelnavnene ikke knækker ord for ord. */
+      .calc-table { font-size: 0.88rem; }
+      .calc-table th, .calc-table td { padding: 10px 8px; }
     }
   </style>
 
   <div class="calc-wrapper">
     <div class="calc-header">
       <h1>🧮 AI Token & Cost Calculator</h1>
-      <p>Paste your text below to estimate the token count and the input cost across popular AI models. Everything runs locally in your browser - nothing is sent anywhere.</p>
+      <ToolUpdated slug="ai-token-calculator" />
+      <p>Paste your text below to estimate the token count and what a request costs across current AI models - your text as input plus the answer length you expect. Everything runs locally in your browser - nothing is sent anywhere.</p>
     </div>
 
     <textarea id="calcInput" class="calc-textarea" placeholder="Paste or type your text here..."></textarea>
@@ -76,35 +113,42 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
     </div>
     <p class="calc-note">⚠️ Token count is an ESTIMATE (average of characters÷4 and words×1.33). Actual tokenization varies by model.</p>
 
+    <div class="calc-output-row">
+      <label for="calcOutput">Expected answer length (output tokens)</label>
+      <input type="number" id="calcOutput" min="0" step="100" value="500" inputmode="numeric" />
+    </div>
+
     <div class="calc-table-wrapper">
       <table class="calc-table">
         <thead>
           <tr>
             <th>Model</th>
-            <th>Price / 1M input tokens</th>
+            <th>Input / 1M</th>
+            <th>Output / 1M</th>
             <th>Estimated cost</th>
           </tr>
         </thead>
         <tbody id="calcTableBody"></tbody>
       </table>
     </div>
-    <p class="calc-note">Prices are indicative (USD, per 1M input tokens) and may change. Always check the provider's official pricing page before relying on these figures.</p>
+    <p class="calc-note calc-sources">Standard list prices in USD per 1M tokens, checked on {tjekket} against each provider's own pricing page: {PRIS_KILDER.map((k, i) => (<>{i > 0 && ' · '}<a href={k.url} target="_blank" rel="noopener">{k.name}</a></>))}. Estimated cost = your text as input + the answer length above as output. Batch, cached and discounted rates are lower.</p>
 
     <div class="calc-guide">
       <h2>What this tool does</h2>
-      <p>It estimates how many tokens a piece of text becomes when sent to a language model, and what that costs as model input. The estimate is the average of two rules of thumb - characters divided by four, and words times 1.33 - because real tokenizers land between them for ordinary English. The text never leaves your browser.</p>
+      <p>It estimates how many tokens a piece of text becomes when sent to a language model, and what one request costs: your text as input plus the answer length you expect as output. The estimate is the average of two rules of thumb - characters divided by four, and words times 1.33 - because real tokenizers land between them for ordinary English. The text never leaves your browser.</p>
       <h2>When to use it</h2>
       <p>Before pasting a long document into an API call, to see whether it fits a context window. When budgeting a batch job - a thousand articles at 1,200 tokens each is a number you want before running it, not after. When trimming a prompt, to see how much a cut actually saves.</p>
       <h2>How to read the result</h2>
-      <p>Treat the token count as an order of magnitude, not an invoice. Real tokenizers differ per model, and code, URLs and non-English text tokenize heavier than prose - a text full of JSON can come out 30-50% above this estimate. The cost column covers input only; output tokens are billed separately and usually at a higher rate, so a long answer can cost more than the question.</p>
+      <p>Treat the token count as an order of magnitude, not an invoice. Real tokenizers differ per model, and code, URLs and non-English text tokenize heavier than prose - a text full of JSON can come out 30-50% above this estimate. Output tokens are usually billed at four to six times the input rate, so the answer length you set often matters more than the length of your text - try 500 against 5,000 and watch the total move.</p>
       <h2>Limits</h2>
-      <p>The prices in the table are typed in by hand and age from the day they were written - model names and rates change often, so check the provider's own pricing page before relying on a figure. The tool has no per-model tokenizer and no way to know your output length. It answers one question well: roughly what does it cost to send this text in.</p>
+      <p>The prices are copied by hand from the providers' pricing pages and dated above; model names and rates change often, so follow the links and check before relying on a figure for a budget. The tool has no per-model tokenizer, and the answer length is your guess, not a measurement. It answers one question well: roughly what does it cost to send this text in.</p>
     </div>
   </div>
 
   <script define:vars={{ MODEL_PRICING }}>
     document.addEventListener('DOMContentLoaded', () => {
       const input = document.getElementById('calcInput');
+      const outputInput = document.getElementById('calcOutput');
       const statChars = document.getElementById('statChars');
       const statWords = document.getElementById('statWords');
       const statTokens = document.getElementById('statTokens');
@@ -112,10 +156,25 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
 
       const formatNumber = (n) => n.toLocaleString('en-US');
 
-      const formatCost = (cost) => {
-        if (cost > 0 && cost < 0.01) return `$${cost.toFixed(4)}`;
-        return `$${cost.toFixed(2)}`;
+      // Prisen vises med alle sine decimaler: $0.075 må ikke blive til "$0.07".
+      const formatPrice = (p) => {
+        const decimaler = (String(p).split('.')[1] || '').length;
+        return `$${p.toFixed(Math.max(2, decimaler))}`;
       };
+
+      // Små beløb må ikke blive til "$0.0000" — så ser det gratis ud.
+      const formatCost = (cost) => {
+        if (cost === 0) return '$0.00';
+        if (cost < 0.0001) return '< $0.0001';
+        if (cost < 0.01) return `$${cost.toFixed(4)}`;
+        return `$${cost.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      };
+
+      // Vælg den pris, der gælder i dag (se `skift` i sidens frontmatter).
+      const idag = new Date().toISOString().slice(0, 10);
+      const gaeldende = (m) => (m.skift && idag >= m.skift.dato)
+        ? { ...m, input: m.skift.input, output: m.skift.output, note: m.skift.note }
+        : m;
 
       const update = () => {
         const text = input.value;
@@ -125,34 +184,42 @@ const description = "Estimate token count and input cost for GPT-4o, Claude, and
         const tokensByChars = chars / 4;
         const tokensByWords = words * 1.33;
         const estimatedTokens = Math.round((tokensByChars + tokensByWords) / 2);
+        const outputTokens = Math.max(0, Number(outputInput.value) || 0);
 
         statChars.textContent = formatNumber(chars);
         statWords.textContent = formatNumber(words);
         statTokens.textContent = formatNumber(estimatedTokens);
 
         tableBody.innerHTML = '';
-        MODEL_PRICING.forEach((model) => {
-          const cost = (estimatedTokens / 1000000) * model.pricePerMillion;
+        MODEL_PRICING.map(gaeldende).forEach((model) => {
+          const cost = (estimatedTokens / 1000000) * model.input + (outputTokens / 1000000) * model.output;
           const row = document.createElement('tr');
 
           const nameCell = document.createElement('td');
           nameCell.textContent = model.name;
+          if (model.note) {
+            const note = document.createElement('span');
+            note.className = 'calc-model-note';
+            note.textContent = model.note;
+            nameCell.appendChild(note);
+          }
 
-          const priceCell = document.createElement('td');
-          priceCell.textContent = `$${model.pricePerMillion.toFixed(2)}`;
+          const inCell = document.createElement('td');
+          inCell.textContent = formatPrice(model.input);
+          const outCell = document.createElement('td');
+          outCell.textContent = formatPrice(model.output);
 
           const costCell = document.createElement('td');
           costCell.className = 'calc-cost';
           costCell.textContent = formatCost(cost);
 
-          row.appendChild(nameCell);
-          row.appendChild(priceCell);
-          row.appendChild(costCell);
+          row.append(nameCell, inCell, outCell, costCell);
           tableBody.appendChild(row);
         });
       };
 
       input.addEventListener('input', update);
+      outputInput.addEventListener('input', update);
       update();
     });
   </script>

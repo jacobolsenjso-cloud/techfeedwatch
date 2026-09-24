@@ -135,7 +135,9 @@ const description = "Create a valid robots.txt file in seconds. Choose a preset 
       preset.addEventListener('change', () => { custom(); gen(); });
 
       document.getElementById('rbCopy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+        // Knappen gemmes før await — bagefter er e.currentTarget null, og "Copied!" vises aldrig.
+        const b = e.currentTarget as HTMLElement;
+        try { await navigator.clipboard.writeText(out.textContent || ''); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
 
       custom(); gen();

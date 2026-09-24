@@ -1,0 +1,25 @@
+---
+// Synlig "Last updated"-linje på et værktøj.
+//
+// Datoen står ét sted: `updated` på værktøjet i src/lib/tools.ts. Samme felt
+// giver `dateModified` i SoftwareApplication-schemaet (MainLayout), så siden og
+// schemaet kan aldrig vise to forskellige datoer.
+//
+// Hvorfor (link-planen 24/9): et værktøj, der synligt bliver vedligeholdt, er et
+// værktøj andre tør linke til. En dato uden reel ændring bag er det modsatte —
+// ret kun `updated`, når værktøjet eller dets tal faktisk er ændret.
+import { findTool } from '../lib/tools';
+
+interface Props { slug: string }
+const tool = findTool(Astro.props.slug);
+const iso = tool?.updated ?? null;
+const tekst = iso
+  ? new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+  : null;
+---
+{tekst && <p class="tool-updated">Last updated: <time datetime={iso}>{tekst}</time></p>}
+
+<style>
+  .tool-updated { font-size: 0.85rem; color: #6b7280; margin: 0 0 10px 0; }
+  :global(body.dark-mode) .tool-updated { color: #9ca3af; }
+</style>

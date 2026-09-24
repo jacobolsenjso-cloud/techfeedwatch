@@ -1,8 +1,15 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import ToolUpdated from '../../components/ToolUpdated.astro';
+
+// Gyldige koder, som Google kræver dem: sprog efter ISO 639-1 (184 koder) og
+// region efter ISO 3166-1 alpha-2 (249 koder). Genereret 24/9-2026 med
+// Python-pakken pycountry, ikke tastet af hukommelsen.
+const SPROG = 'aa ab ae af ak am an ar as av ay az ba be bg bi bm bn bo br bs ca ce ch co cr cs cu cv cy da de dv dz ee el en eo es et eu fa ff fi fj fo fr fy ga gd gl gn gu gv ha he hi ho hr ht hu hy hz ia id ie ig ii ik io is it iu ja jv ka kg ki kj kk kl km kn ko kr ks ku kv kw ky la lb lg li ln lo lt lu lv mg mh mi mk ml mn mr ms mt my na nb nd ne ng nl nn no nr nv ny oc oj om or os pa pi pl ps pt qu rm rn ro ru rw sa sc sd se sg sh si sk sl sm sn so sq sr ss st su sv sw ta te tg th ti tk tl tn to tr ts tt tw ty ug uk ur uz ve vi vo wa wo xh yi yo za zh zu'.split(' ');
+const LANDE = 'ad ae af ag ai al am ao aq ar as at au aw ax az ba bb bd be bf bg bh bi bj bl bm bn bo bq br bs bt bv bw by bz ca cc cd cf cg ch ci ck cl cm cn co cr cu cv cw cx cy cz de dj dk dm do dz ec ee eg eh er es et fi fj fk fm fo fr ga gb gd ge gf gg gh gi gl gm gn gp gq gr gs gt gu gw gy hk hm hn hr ht hu id ie il im in io iq ir is it je jm jo jp ke kg kh ki km kn kp kr kw ky kz la lb lc li lk lr ls lt lu lv ly ma mc md me mf mg mh mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nc ne nf ng ni nl no np nr nu nz om pa pe pf pg ph pk pl pm pn pr ps pt pw py qa re ro rs ru rw sa sb sc sd se sg sh si sj sk sl sm sn so sr ss st sv sx sy sz tc td tf tg th tj tk tl tm tn to tr tt tv tw tz ua ug um us uy uz va vc ve vg vi vn vu wf ws ye yt za zm zw'.split(' ');
 
 const title = "Hreflang Tags Generator";
-const description = "Generate valid hreflang link tags for multilingual and multi-regional sites, with x-default support. Free, browser-based tool — add your language/URL pairs and copy.";
+const description = "Generate hreflang link tags with x-default, and catch the mistakes Google ignores: invalid language or region codes, relative URLs and duplicates.";
 ---
 
 <MainLayout title={title} description={description}>
@@ -29,6 +36,13 @@ const description = "Generate valid hreflang link tags for multilingual and mult
     .hf-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
     .hf-info-section p { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
     body.dark-mode .hf-info-section p { color: #9ca3af; }
+    .hf-warn { margin: 12px 0 0 0; padding: 12px 16px 12px 34px; border-radius: 8px; background: #fffbeb; border: 1px solid #fde68a; color: #92400e; font-size: 0.9rem; line-height: 1.5; }
+    .hf-warn:empty { display: none; }
+    .hf-warn li { margin: 2px 0; }
+    body.dark-mode .hf-warn { background: #3a2f12; border-color: #78591b; color: #fcd34d; }
+    .hf-ok { margin: 12px 0 0 0; font-size: 0.9rem; color: #047857; }
+    .hf-ok:empty { display: none; }
+    body.dark-mode .hf-ok { color: #6ee7b7; }
     .hf-labels { display: grid; grid-template-columns: 200px 1fr auto; gap: 10px; font-size: 0.78rem; font-weight: 600; color: #6b7280; margin-bottom: 6px; }
 
     @media (max-width: 640px) { .hf-wrapper { padding: 20px 15px; } .hf-row, .hf-labels { grid-template-columns: 1fr; } .hf-labels { display: none; } }
@@ -37,6 +51,7 @@ const description = "Generate valid hreflang link tags for multilingual and mult
   <div class="hf-wrapper">
     <div class="hf-header">
       <h1>🌍 Hreflang Tags Generator</h1>
+      <ToolUpdated slug="hreflang-generator" />
       <p>Tell search engines which language and region each version of a page targets. Add a row per version, then copy the tags into every page's &lt;head&gt;.</p>
     </div>
 
@@ -51,6 +66,8 @@ const description = "Generate valid hreflang link tags for multilingual and mult
       <button type="button" class="hf-copy" id="hfCopy">Copy</button>
     </div>
     <pre class="hf-output" id="hfOut"></pre>
+    <ul class="hf-warn" id="hfWarn" aria-live="polite"></ul>
+    <p class="hf-ok" id="hfOk" aria-live="polite"></p>
 
     <div class="hf-info-section">
       <h2>How hreflang works</h2>
@@ -59,44 +76,90 @@ const description = "Generate valid hreflang link tags for multilingual and mult
       <h2>When you actually need hreflang - and when you do not</h2>
       <p>Hreflang is for the same content in several languages or regional variants: a product page in English, Danish, and German, or a US and a UK edition with different pricing. A site in one language does not need it at all, and adding it anyway is maintenance without benefit. The codes are two-letter language plus optional two-letter country - "da" reaches Danish speakers everywhere, "da-dk" only targets Denmark, and the narrower code is only better when the versions genuinely differ.</p>
       <h2>Limits</h2>
-      <p>The generator writes tags for one page and its translations; keeping the full set present and reciprocal on every one of those pages is on you, and a missing return tag silently disables the pair. It also does not validate the codes themselves - type "dk" (a country, not a language) and the tag is generated but ignored by Google. The two-minute check after deploying: search from the wrong country and confirm the right version surfaces.</p>
+      <p>The generator writes tags for one page and its translations; keeping the full set present and reciprocal on every one of those pages is on you, and a missing return tag silently disables the pair. The checker catches codes Google does not recognise - "dk" is a country, not a language (Danish is "da"), and "en-uk" should be "en-gb" - but it cannot tell whether a URL really is the translated version of the page. The two-minute check after deploying: search from the wrong country and confirm the right version surfaces.</p>
     </div>
   </div>
 
-  <script>
+  <script define:vars={{ SPROG, LANDE }}>
     document.addEventListener('DOMContentLoaded', () => {
-      const rows = document.getElementById('hfRows') as HTMLElement;
-      const out = document.getElementById('hfOut') as HTMLElement;
-      const xd = document.getElementById('hfXdefault') as HTMLInputElement;
+      const sprog = new Set(SPROG);
+      const lande = new Set(LANDE);
+      // De hyppigste fejl: et landenavn brugt som sprog, og "uk" som region.
+      const SPROG_HINT = { dk: 'da', jp: 'ja', cz: 'cs', gr: 'el', cn: 'zh', ua: 'uk', gb: 'en', us: 'en' };
+      const LAND_HINT = { uk: 'gb' };
+
+      const rows = document.getElementById('hfRows');
+      const out = document.getElementById('hfOut');
+      const xd = document.getElementById('hfXdefault');
 
       const row = (lang = '', url = '') =>
         '<div class="hf-row"><input class="hf-input hf-lang" placeholder="en-us" value="' + lang + '">' +
         '<input class="hf-input hf-url" placeholder="https://example.com/en/page" value="' + url + '">' +
         '<button type="button" class="hf-del">✕</button></div>';
 
-      rows.innerHTML = row('en', 'https://techfeedwatch.com/page') + row('da', 'https://techfeedwatch.com/da/page') + row('de', 'https://techfeedwatch.com/de/page');
+      rows.innerHTML = row('en', 'https://example.com/page') + row('da', 'https://example.com/da/page') + row('de', 'https://example.com/de/page');
 
-      const esc = (s: string) => s.replace(/"/g, '&quot;');
+      const esc = (s) => s.replace(/"/g, '&quot;');
+
+      // Tjekker én kode. Returnerer null, hvis den er gyldig, ellers en forklaring.
+      const tjekKode = (kode) => {
+        if (kode === 'x-default') return null;
+        const m = kode.match(/^([a-z]{2,3})(?:-([a-z]{4}))?(?:-([a-z0-9]{2,3}))?$/);
+        if (!m) return `"${kode}" is not a valid code. Use a language like "en", optionally with a region: "en-gb".`;
+        const [, s, , r] = m;
+        if (!sprog.has(s)) {
+          const h = SPROG_HINT[s];
+          return h ? `"${s}" is not a language code${lande.has(s) ? ' (it is a country)' : ''} - did you mean "${h}"?`
+                   : `"${s}" is not an ISO 639-1 language code, so Google ignores the tag.`;
+        }
+        if (r) {
+          if (/^[0-9]+$/.test(r)) return `"${kode}": Google does not support numeric regions like ${r}. Use a country code, or the language alone.`;
+          if (!lande.has(r)) {
+            const h = LAND_HINT[r];
+            return h ? `"${kode}": the region code for the United Kingdom is "${h}", so use "${s}-${h}".`
+                     : `"${kode}": "${r}" is not an ISO 3166-1 country code, so Google ignores the tag.`;
+          }
+        }
+        return null;
+      };
 
       const gen = () => {
-        const pairs: { lang: string; url: string }[] = [];
+        const pairs = [];
         rows.querySelectorAll('.hf-row').forEach((r) => {
-          const lang = (r.querySelector('.hf-lang') as HTMLInputElement).value.trim().toLowerCase();
-          const url = (r.querySelector('.hf-url') as HTMLInputElement).value.trim();
+          const lang = r.querySelector('.hf-lang').value.trim().toLowerCase();
+          const url = r.querySelector('.hf-url').value.trim();
           if (lang && url) pairs.push({ lang, url });
         });
         const L = pairs.map((p) => `<link rel="alternate" hreflang="${esc(p.lang)}" href="${esc(p.url)}" />`);
         if (xd.checked && pairs.length) L.push(`<link rel="alternate" hreflang="x-default" href="${esc(pairs[0].url)}" />`);
         out.textContent = L.join('\n') || 'Add at least one language and URL.';
+
+        // Fejl, Google ellers ignorerer i stilhed: vis dem, i stedet for kun at skrive tagget.
+        const fejl = [];
+        const set = new Map();
+        pairs.forEach((p) => {
+          const f = tjekKode(p.lang);
+          if (f) fejl.push(f);
+          if (!/^https?:\/\//i.test(p.url)) fejl.push(`"${p.url}" is not an absolute URL. Google requires the full address, starting with https://.`);
+          set.set(p.lang, (set.get(p.lang) || 0) + 1);
+        });
+        set.forEach((n, k) => { if (n > 1) fejl.push(`"${k}" is used ${n} times. Each language or region needs exactly one URL.`); });
+        if (xd.checked && set.has('x-default')) fejl.push('x-default is typed in a row and also added by the checkbox. Keep only one.');
+        const warn = document.getElementById('hfWarn');
+        warn.innerHTML = '';
+        fejl.forEach((f) => { const li = document.createElement('li'); li.textContent = f; warn.appendChild(li); });
+        document.getElementById('hfOk').textContent = (pairs.length && !fejl.length) ? '✓ All codes and URLs look valid.' : '';
       };
 
-      document.getElementById('hfAdd')!.addEventListener('click', () => { rows.insertAdjacentHTML('beforeend', row()); gen(); });
-      document.querySelector('.hf-wrapper')!.addEventListener('input', gen);
-      document.querySelector('.hf-wrapper')!.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).classList.contains('hf-del')) { (e.target as HTMLElement).closest('.hf-row')?.remove(); gen(); }
+      document.getElementById('hfAdd').addEventListener('click', () => { rows.insertAdjacentHTML('beforeend', row()); gen(); });
+      document.querySelector('.hf-wrapper').addEventListener('input', gen);
+      document.querySelector('.hf-wrapper').addEventListener('click', (e) => {
+        if (e.target.classList.contains('hf-del')) { e.target.closest('.hf-row')?.remove(); gen(); }
       });
-      document.getElementById('hfCopy')!.addEventListener('click', async (e) => {
-        try { await navigator.clipboard.writeText(out.textContent || ''); const b = e.currentTarget as HTMLElement; const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
+      document.getElementById('hfCopy').addEventListener('click', async (e) => {
+        // currentTarget er null efter en await — derfor gemmes knappen først.
+        const b = e.currentTarget;
+        try { await navigator.clipboard.writeText(out.textContent || ''); const o = b.textContent; b.textContent = 'Copied!'; setTimeout(() => { b.textContent = o; }, 1500); } catch (err) {}
       });
       gen();
     });

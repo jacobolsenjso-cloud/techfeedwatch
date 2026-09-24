@@ -35,6 +35,8 @@ const toolSchema = toolData ? {
   "operatingSystem": "Any browser",
   "browserRequirements": "Requires JavaScript",
   "isAccessibleForFree": true,
+  // Kun når værktøjet har en rigtig ændringsdato (`updated` i tools.ts).
+  ...(toolData.updated ? { "dateModified": toolData.updated } : {}),
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "publisher": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" }
 } : null;

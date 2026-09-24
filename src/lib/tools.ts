@@ -36,6 +36,13 @@ export interface Tool {
   category: ToolCategoryId;
   /** Vises i værktøjssektionen på forsiden */
   featured?: boolean;
+  /**
+   * Sidst værktøjet eller dets tal reelt blev ændret (ÅÅÅÅ-MM-DD). Vises som
+   * "Last updated" på siden (ToolUpdated) og som dateModified i schemaet.
+   * Sæt det kun, når noget faktisk er ændret — en tom dato er ærligere end en
+   * falsk. Indført 24/9-2026 med link-planen.
+   */
+  updated?: string;
 }
 
 export const TOOL_CATEGORIES: ToolCategory[] = [
@@ -114,7 +121,7 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'Finance & Crypto',
     heading: 'Free Finance & Crypto Calculators',
     description:
-      'Free calculators for compound growth and staking returns, crypto profit and ROI including fees, and AI token cost across GPT-4o, Claude, and Gemini.',
+      'Free calculators for compound growth and staking returns, crypto profit and ROI including fees, and AI token cost across GPT-6, Claude, and Gemini.',
     intro:
       'Three calculators for the numbers that are easy to get wrong in your head: what compounding actually does over ten years, what a trade returned once fees are counted, and what a given prompt costs across the major AI models. Estimates for planning — not financial advice.',
     relatedTags: ['Fintech', 'Crypto', 'Business & Money'],
@@ -173,6 +180,7 @@ export const TOOLS: Tool[] = [
     description:
       'Generate valid VideoObject JSON-LD schema markup for any YouTube video to improve SEO.',
     category: 'seo',
+    updated: '2026-09-24',
   },
   {
     slug: 'hreflang-generator',
@@ -180,8 +188,9 @@ export const TOOLS: Tool[] = [
     title: 'Hreflang Tags Generator',
     short: 'Hreflang Tags',
     description:
-      'Generate valid hreflang link tags with x-default for multilingual and multi-regional sites.',
+      'Generate hreflang link tags with x-default for multilingual sites, and catch invalid language and region codes.',
     category: 'seo',
+    updated: '2026-09-24',
   },
   {
     slug: 'robots-txt-generator',
@@ -456,8 +465,9 @@ export const TOOLS: Tool[] = [
     title: 'AI Token & Cost Calculator',
     short: 'AI Token Cost',
     description:
-      'Estimate token count and input cost for your text across GPT-4o, Claude, and Gemini models.',
+      'Estimate tokens and API cost, input and output, across GPT-6, Claude, and Gemini, with dated official prices.',
     category: 'finance',
+    updated: '2026-09-24',
   },
 ];
 

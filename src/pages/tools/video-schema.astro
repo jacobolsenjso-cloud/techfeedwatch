@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import ToolUpdated from '../../components/ToolUpdated.astro';
 
 const title = "Video Schema Generator";
 const description = "Generate valid VideoObject JSON-LD schema markup for any YouTube video to improve SEO and search appearance.";
@@ -61,6 +62,7 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
   <div class="vsg-wrapper">
     <div class="vsg-header">
       <h1>🎬 Video Schema Generator</h1>
+      <ToolUpdated slug="video-schema" />
       <p>Paste a YouTube link and instantly generate valid VideoObject JSON-LD schema markup to help search engines understand and showcase your video.</p>
     </div>
 
@@ -108,7 +110,7 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
       <p>Unlike most tools on this site, this one cannot work purely in your browser: the title, duration, and publish date live on YouTube's servers, so the URL you paste is sent to this site's small lookup function, which asks YouTube's public API and passes the answer straight back. Nothing is stored, and nothing else about you travels with the request.</p>
 
       <h2>Limits</h2>
-      <p>The schema describes the video as YouTube reports it today - if the title or thumbnail changes later, the markup on your page does not follow along, so regenerate it after major edits. And the markup belongs on a page where the video is actually embedded and visible; adding VideoObject data to a page without the video is the kind of claim that costs trust with search engines rather than earning it.</p>
+      <p>The schema describes the video as YouTube reports it today - if the title or thumbnail changes later, the markup on your page does not follow along, so regenerate it after major edits. The markup uses <code>embedUrl</code> (the YouTube player) and deliberately leaves out <code>contentUrl</code>: Google wants that field to point to the video file itself, not to the page the video lives on, and YouTube does not hand out the file. And the markup belongs on a page where the video is actually embedded and visible; adding VideoObject data to a page without the video is the kind of claim that costs trust with search engines rather than earning it.</p>
     </div>
 
     <div class="vsg-pro-tip">
@@ -165,7 +167,6 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
             return;
           }
 
-          const pageUrl = `https://www.youtube.com/watch?v=${data.videoId}`;
           const embedUrl = `https://www.youtube.com/embed/${data.videoId}`;
 
           const schema = {
@@ -176,7 +177,10 @@ const description = "Generate valid VideoObject JSON-LD schema markup for any Yo
             "thumbnailUrl": data.thumbnailUrl,
             "uploadDate": data.publishedAt,
             "duration": data.duration,
-            "contentUrl": pageUrl,
+            // Ingen contentUrl: Google kræver, at den peger på selve videofilen
+            // ("Don't link to the page where the video lives"), og YouTube udleverer
+            // ikke filen. embedUrl — afspilleren — er Googles anviste alternativ.
+            // Før 24/9 satte værktøjet watch-siden som contentUrl, hvilket var forkert.
             "embedUrl": embedUrl,
           };
 
