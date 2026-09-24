@@ -567,7 +567,7 @@ async function run() {
     TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Understanding", "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", "Decoding", "Navigating", "Demystifying", "Unlocking", "Exploring", or "The New Frontier" - start with the subject or the question word.
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
-    META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. Plain text, no quotes.
+    META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. It must be correct, natural English: Google searches are often fragments (e.g. "can i ai videos"), so never paste the search words verbatim unless they already form a correct sentence - rephrase them instead (e.g. "Can you make AI videos?"). Plain text, no quotes.
     FAQ:
     Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
     Q: [question]
@@ -707,6 +707,8 @@ async function run() {
       : (safeTags.length > 0 ? safeTags : ["AI & Tech"]);
     const safeSummary = fjernForbudteOrd((summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
     // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
+    // Prompten kræver korrekt engelsk: 24/9 satte robotten autocomplete-brokken "can i ai videos"
+    // ind ordret ("Wondering can I AI videos?"). Googles forslag er ofte brokker, ikke sætninger.
     let safeMeta = fjernForbudteOrd((metaMatch ? metaMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
     if (!safeMeta) safeMeta = safeSummary;
     // For lang META blev før klippet midt i sætningen med "…" — 45 artikler

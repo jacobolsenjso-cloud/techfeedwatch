@@ -13,9 +13,12 @@ name: Tomgangsalarm
 
 on:
   schedule:
-    # Hver morgen kl. 07:43 UTC (09:43 dansk sommertid). Skævt minut, fordi
-    # GitHub nedprioriterer cron på hele timer.
-    - cron: "43 7 * * *"
+    # Tre gange i døgnet: 03:43, 11:43 og 19:43 UTC (05:43, 13:43 og 21:43
+    # dansk sommertid). Skævt minut, fordi GitHub nedprioriterer cron på hele
+    # timer. Hvorfor tre: 24/9 kom den første planlagte kørsel (07:43) ikke
+    # inden for 5 timer, og GitHub kan springe planlagte kørsler over, når der
+    # er travlt. Med én kørsel om dagen gjorde én tabt kørsel alarmen blind.
+    - cron: "43 3,11,19 * * *"
   workflow_dispatch:
     inputs:
       timer:

@@ -9,7 +9,7 @@ tags:
   - "AI Video"
   - "AI & Tech"
 summary: "Generative artificial intelligence allows anyone to write, generate, and edit narrative films entirely within a web browser. By combining automated script breakdowns, character reference sheets, and image-to-video motion models, creators bypass expensive production gear. This editorial breaks down the precise multi-stage pipeline required to maintain character consistency and produce high-definition cinema without a budget."
-metaDescription: "Wondering can I AI videos? Discover how creators build cinematic narrative films for zero dollars using free generative tools and consistent workflows."
+metaDescription: "Can you make AI videos for free? See how creators build cinematic films for zero dollars using free generative tools and a consistent workflow."
 targetQuestion: "can i ai videos"
 duration: "5:08"
 viewCount: 26265
