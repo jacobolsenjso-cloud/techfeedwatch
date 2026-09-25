@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-09-25T07:48:39.773Z",
-  "articleCount": 404,
+  "updated": "2026-09-25T13:50:02.223Z",
+  "articleCount": 405,
   "lastArticle": {
-    "at": "2026-09-25T07:48:39.773Z",
+    "at": "2026-09-25T13:50:02.223Z",
     "slugs": [
-      "what-is-the-concept-of-quantum-supremacy"
+      "reasons-why-you-should-pursue-software-engineering"
     ]
   },
   "lastLinkRepair": null,
