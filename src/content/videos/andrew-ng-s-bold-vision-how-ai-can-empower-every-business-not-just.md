@@ -12,8 +12,8 @@ summary: "AI automation for small businesses involves leveraging artificial inte
 metaDescription: "Discover what AI automation means for small businesses, how it helps increase profit and productivity, and why it's now more accessible than ever."
 targetQuestion: "what is ai automation for small businesses"
 duration: "11:17"
-viewCount: 1310950
-viewsUpdated: "2026-09-22"
+viewCount: 1312418
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

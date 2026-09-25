@@ -12,8 +12,8 @@ summary: "Claude AI extends far beyond simple chat interactions, offering a comp
 metaDescription: "Discover the primary features of Claude AI, including its advanced Cowork and Code products, automations."
 targetQuestion: "what is the primary features of claude ai"
 duration: "12:47"
-viewCount: 160220
-viewsUpdated: "2026-09-22"
+viewCount: 162860
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

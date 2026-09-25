@@ -13,8 +13,8 @@ tags:
 summary: "Apple's approach to the burgeoning AI sector has prompted debate, with some observers criticizing its perceived slow entry compared to rivals. While companies like Google and OpenAI rapidly deployed advanced generative AI software, Apple maintained a more deliberate strategy, focusing on its integrated hardware ecosystem. This calculated positioning suggests Apple prioritizes on-device AI and user privacy over bleeding-edge feature releases, aiming for long-term platform dominance rather than winning a software-centric 'AI race.'"
 metaDescription: "Apple's approach to the burgeoning AI sector has prompted debate, with some observers criticizing its perceived slow entry compared to rivals."
 duration: "7:04"
-viewCount: 2271642
-viewsUpdated: "2026-09-22"
+viewCount: 2286659
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 revised: true

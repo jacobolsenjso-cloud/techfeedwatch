@@ -12,8 +12,8 @@ summary: "NVIDIA AI factories represent a fundamental shift in AI infrastructure
 metaDescription: "Understand NVIDIA AI factories: what they are, why extreme co-design is critical, and how integrated systems power the future of AI."
 targetQuestion: "what are nvidia ai factories"
 duration: "3:23:11"
-viewCount: 1367007
-viewsUpdated: "2026-09-22"
+viewCount: 1370939
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

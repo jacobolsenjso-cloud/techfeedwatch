@@ -12,8 +12,8 @@ summary: "SEO optimization has evolved beyond traditional keyword ranking to enc
 metaDescription: "Discover how modern SEO optimization works in 2026, focusing on search intent, EEAT, AI visibility, and topical authority for lasting digital success."
 targetQuestion: "how does seo optimization work"
 duration: "1:15:01"
-viewCount: 5
-viewsUpdated: "2026-09-14"
+viewCount: 6
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

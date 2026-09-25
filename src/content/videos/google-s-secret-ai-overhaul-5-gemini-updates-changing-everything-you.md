@@ -12,8 +12,8 @@ summary: "Google Gemini is rapidly expanding its capabilities beyond a tradition
 metaDescription: "Explore Google Gemini features, including Live Translate, Notebook LM, and Project Genie, that are transforming productivity and interaction with AI."
 targetQuestion: "what are google gemini features"
 duration: "8:53"
-viewCount: 3889
-viewsUpdated: "2026-09-22"
+viewCount: 3892
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"

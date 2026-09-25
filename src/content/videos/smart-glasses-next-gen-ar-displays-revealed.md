@@ -11,8 +11,8 @@ tags:
 summary: "Hardware manufacturers showcased groundbreaking head-worn spatial computing devices at the Augmented World Expo, signaling a major shift toward lightweight, high-resolution displays. New devices from emerging startups and tech giants are bridging the gap between heavy virtual reality headsets and daily wearability. By introducing higher fields of view, Linux-based open ecosystems, and integrated AI assistant frameworks, these platforms target both enterprise workflows and personal productivity."
 metaDescription: "Smart glasses are advancing rapidly with wider fields of view, tethered computing options, and standalone Linux OS builds from top hardware vendors."
 duration: "21:48"
-viewCount: 56079
-viewsUpdated: "2026-09-22"
+viewCount: 57350
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "NotebookLM has evolved beyond a basic document summarizer into a sophi
 metaDescription: "Open up NotebookLM's full potential with advanced usage tips."
 targetQuestion: "tips on how to use notebooklm"
 duration: "1:12:40"
-viewCount: 11180
-viewsUpdated: "2026-09-22"
+viewCount: 11189
+viewsUpdated: "2026-09-25"
 thumbMax: false
 isShort: false
 rewrittenAt: "2026-09-15"

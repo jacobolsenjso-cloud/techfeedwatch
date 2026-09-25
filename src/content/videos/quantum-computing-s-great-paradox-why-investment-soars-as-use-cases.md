@@ -12,8 +12,8 @@ summary: "Hybrid quantum-classical computing integrates traditional supercomputi
 metaDescription: "Explore hybrid quantum-classical computing, how it integrates traditional systems with quantum processors, its current uses."
 targetQuestion: "what is hybrid quantum classical computing"
 duration: "1:09:01"
-viewCount: 200890
-viewsUpdated: "2026-09-22"
+viewCount: 201036
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

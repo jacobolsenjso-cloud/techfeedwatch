@@ -13,8 +13,8 @@ tags:
 summary: "Samsung has entered the AI smart glasses market, unveiling a new device deeply integrated with Google's Gemini AI. This move positions Samsung directly against Meta's existing offerings, emphasizing hands-free 'agentic' capabilities for daily tasks. The announcement signals a significant escalation in the race to define the next era of personal computing beyond traditional screens."
 metaDescription: "Samsung's new Gemini AI Smart Glasses challenge Meta, pushing 'agentic' wearable AI. Explore the future of hands-free computing."
 duration: "18:26"
-viewCount: 116354
-viewsUpdated: "2026-09-22"
+viewCount: 117124
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:

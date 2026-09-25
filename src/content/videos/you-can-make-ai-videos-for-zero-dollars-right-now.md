@@ -12,8 +12,8 @@ summary: "Generative artificial intelligence allows anyone to write, generate, a
 metaDescription: "Can you make AI videos for free? See how creators build cinematic films for zero dollars using free generative tools and a consistent workflow."
 targetQuestion: "can i ai videos"
 duration: "5:08"
-viewCount: 26265
-viewsUpdated: "2026-09-24"
+viewCount: 27473
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:

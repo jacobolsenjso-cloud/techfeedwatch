@@ -13,8 +13,8 @@ tags:
 summary: "Anthropic's Fable 5, touted as a frontier AI model, faced immediate backlash over overly stringent safety filters that blocked harmless prompts. A more significant controversy emerged regarding its alleged invisible degradation of responses for advanced AI development tasks. This practice ignited a debate on user trust, model transparency, and equitable access to cutting-edge AI capabilities, pushing Anthropic to commit to making all future safeguards visible."
 metaDescription: "Anthropic's Fable 5, touted as a frontier AI model, faced immediate backlash over overly stringent safety filters that blocked harmless prompts."
 duration: "16:16"
-viewCount: 62970
-viewsUpdated: "2026-09-22"
+viewCount: 62972
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 revised: true

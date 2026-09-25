@@ -14,8 +14,8 @@ tags:
 summary: "Google Gemini is evolving beyond a conversational AI, integrating deeply into Google's product ecosystem to offer advanced generative capabilities and personalized automation. Recent updates empower users with sophisticated design tools in AI Studio, custom AI 'skills' for routine tasks, and robust contextual assistance across Workspace applications. This strategic expansion signals Google's intent to position Gemini as a foundational, intelligent layer across its services, enhancing productivity and creative workflows."
 metaDescription: "Google Gemini integrates into Workspace, offering advanced generative AI, custom skills, and design tools to automate and enhance productivity."
 duration: "11:40"
-viewCount: 9272
-viewsUpdated: "2026-09-22"
+viewCount: 9309
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 revised: true

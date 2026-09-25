@@ -12,8 +12,8 @@ summary: "The rise of agentic AI introduces new security challenges, as systems 
 metaDescription: "Learn how to secure AI agents using Zero Trust principles, protecting against prompt injection, credential attacks, and evolving cyber threats."
 targetQuestion: "how to secure ai agents"
 duration: "1:37:16"
-viewCount: 200093
-viewsUpdated: "2026-09-22"
+viewCount: 201132
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -12,8 +12,8 @@ summary: "Bitcoin's core design prioritizes security and decentralization, delib
 metaDescription: "Understand why Bitcoin lacks native smart contract functionality, its core design limitations."
 targetQuestion: "why doesn't bitcoin have smart contracts"
 duration: "1:46:40"
-viewCount: 345
-viewsUpdated: "2026-09-14"
+viewCount: 351
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -12,8 +12,8 @@ summary: "Ethereum blockchain interactions depend on two distinct account types:
 metaDescription: "Understand the two types of Ethereum accounts—EOAs and Contract Accounts—how they differ, and their roles in powering Web3 and decentralized applications."
 targetQuestion: "types of ethereum accounts"
 duration: "4:49"
-viewCount: 356
-viewsUpdated: "2026-09-19"
+viewCount: 364
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

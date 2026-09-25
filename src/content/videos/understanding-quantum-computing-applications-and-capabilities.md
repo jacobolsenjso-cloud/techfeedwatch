@@ -12,8 +12,8 @@ summary: "Quantum computing harnesses the principles of quantum mechanics—supe
 metaDescription: "Explore quantum computing applications in drug discovery, materials science, and cryptography. Learn what quantum computers are and how they operate."
 targetQuestion: "what are quantum computing applications"
 duration: "9:53"
-viewCount: 41
-viewsUpdated: "2026-09-22"
+viewCount: 42
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ tags:
 summary: "'Vibe coding' represents an intuitive, often unstructured approach to programming, popular among new developers seeking quick results, sometimes with AI assistance. While seemingly efficient, this method often bypasses fundamental computer science principles and robust problem-solving skills. Senior developers identify it as a significant barrier to long-term skill development and career progression. True mastery demands disciplined learning, critical thinking, and a deep understanding of core programming concepts, even with advanced AI tools."
 metaDescription: "Vibe coding, popular with new developers, bypasses fundamental skills and blocks long-term career progression, demanding disciplined learning."
 duration: "6:02"
-viewCount: 406845
-viewsUpdated: "2026-09-22"
+viewCount: 410965
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:

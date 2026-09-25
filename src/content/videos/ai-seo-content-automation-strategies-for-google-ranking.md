@@ -12,8 +12,8 @@ summary: "AI tools are fundamentally altering how content is created and distrib
 metaDescription: "Discover how AI, specifically Claude Code AI SEO, changes content creation by automating processes for top Google rankings in minutes."
 targetQuestion: "how is ai changing content creation"
 duration: "7:20"
-viewCount: 618
-viewsUpdated: "2026-09-12"
+viewCount: 620
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

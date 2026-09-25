@@ -12,8 +12,8 @@ summary: "Augmented reality overlays synthetic graphics onto physical environmen
 metaDescription: "Learn the actual difference between augmented reality and virtual reality technology, hardware mechanics, tracking loops, and enterprise applications."
 targetQuestion: "difference between augmented reality and virtual reality"
 duration: "6:36"
-viewCount: 30
-viewsUpdated: "2026-09-22"
+viewCount: 31
+viewsUpdated: "2026-09-25"
 thumbMax: true
 isShort: false
 faqs:
