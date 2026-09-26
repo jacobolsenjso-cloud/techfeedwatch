@@ -26,6 +26,24 @@
       },
       "effektivitet": { "klik": 19, "eksponeringer": 110, "klikrate": 17.3, "position": 12.3 },
       "note": "Nulpunkt. Af de 82 indekserede er kun 23 nuværende artikeladresser; 15 er ikke-artikler (forside, /about/, /library/, /start-here/, /privacy-policy/, /terms/ og ni emnesider) og 44 er gamle /video/<video-id>-adresser, hvoraf fire er talt to gange med og uden skraastreg. Sitet havde 390 artikler den dag. Aflaest FOER dagens aendringer naaede at virke: IndexNow (20/9), de 829 redirect-maal og de seks datofaestede paastande (21/9)."
+    },
+    {
+      "dato": "2026-09-26",
+      "adresser": 544,
+      "indekseret": 82,
+      "ikkeIndekseret": 769,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 488,
+        "Side med omdirigering": 131,
+        "Dublet uden kanonisk side valgt af brugeren": 66,
+        "Ikke fundet (404)": 62,
+        "Crawlet - endnu ikke indekseret": 18,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": { "klik": 19, "eksponeringer": 99, "klikrate": 19.2, "position": 7.6 },
+      "note": "Anden aflaesning, fem dage efter nulpunktet. Sitemappet er vokset fra 529 til 544 adresser. Bemaerk at effektivitetstallene er et rullende 28-dages vindue: vinduet har flyttet sig fem dage, saa faldet i eksponeringer fra 110 til 99 er dels tabte dage i starten af vinduet, ikke noedvendigvis faerre eksponeringer nu."
     }
   ]
 }
