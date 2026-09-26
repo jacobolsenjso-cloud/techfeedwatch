@@ -25,13 +25,23 @@ on:
         description: "Grænse i timer. Sæt 1 for at bevise, at alarmen og mailen virker."
         required: false
         default: "36"
+      runner:
+        description: "Hvilken Ubuntu kørslen bruger. Kun til bevidste prøver — planlagte kørsler bruger altid ubuntu-24.04."
+        type: choice
+        options:
+          - ubuntu-24.04
+          - ubuntu-26.04
+        default: ubuntu-24.04
 
 permissions:
   contents: read
 
 jobs:
   tjek:
-    runs-on: ubuntu-24.04
+    # Prøve af Ubuntu 26.04 (26/9-2026): en manuel kørsel kan vælge 26.04 på
+    # knappen. Planlagte kørsler har intet valg og falder tilbage til 24.04,
+    # så en fejl i prøven aldrig giver falske alarmmails.
+    runs-on: ${{ inputs.runner || 'ubuntu-24.04' }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
