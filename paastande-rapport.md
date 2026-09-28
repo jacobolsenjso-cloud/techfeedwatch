@@ -1,6 +1,6 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-09-28 på 411 artikler. **19 fund**, heraf 3 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
+Målt 2026-09-28 på 411 artikler. **19 fund**, heraf 0 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
