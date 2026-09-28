@@ -1,30 +1,34 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-09-21 på 391 artikler. **16 fund**, heraf 16 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
+Målt 2026-09-28 på 411 artikler. **19 fund**, heraf 3 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
-## Regel 1 — udløbet dato (3)
+## Regel 1 — udløbet dato (4)
 
 - **What Are the Fundamental Differences Between AR and VR?**  
   `ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
-  > Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into daily life in ways that were once considered science fiction.
+  > Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into [daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030/) in ways that were once considered science fiction.
 
 - **Fintech Evolution Reshaping Financial Services**  
   `fintech-s-fragmented-future-deconstructing-the-six-pillars-of-digital.md` · forudsigelse om "2023" — året er passeret · først set 2026-09-21  
   > Regulations like PSD2 and Open Banking are expected to fuel this growth further, with some predictions suggesting 1.3 billion mobile payment transactions by 2023.
 
-- **Hybrid Quantum-Classical Computing: What It Is and Why It Matters**  
+- **Key Advantages of Augmented Reality in Workforce Training**  
+  `key-advantages-of-augmented-reality-in-workforce-training.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-28  
+  > Recognizing this performance advantage, 26% of organizations have already integrated AR and VR tools into their operational programs, fueling an immersive tech market projected to exceed $157 billion by 2025.
+
+- **What Hybrid Quantum-Classical Computing Is**  
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
   > IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.
 
-## Regel 4 — relativ tid (10)
+## Regel 4 — relativ tid (12)
 
 - **How Does AI Cause Ram Shortage?**  
   `ai-ram-shortage-impacts-tech-drives-up-device-prices.md` · "early last year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > RAM prices have seen a "parabolic" increase since early last year, with a single 256 GB RAM kit sometimes costing more than a flagship GPU like an RTX 5090.
 
-- **What Quantum Computing's Potential and Hurdles Mean for Business**  
+- **What Quantum Computing Means for Business**  
   `beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > More recently, the same experiment was repeated, and the best supercomputer today, Frontier, would require 1 billion years for the identical calculation.
 
@@ -40,21 +44,29 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `meta-muse-spark-new-proprietary-ai-model-its-implications.md` · "this year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > The release of Muse Spark coincides with a dramatic increase in capital expenditures, which Meta expects to reach as much as $135 billion this year.
 
-- **Quantum Computing Commercialization Uses Cloud Simulators for Access**  
+- **How Cloud Simulators Open Up Quantum Computing**  
   `quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality.md` · "next year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > However, the very next year, a quantum computer with 128 qubits could suddenly and handily beat any classical computer ever built for that specific problem.
 
-- **Hybrid Quantum-Classical Computing: What It Is and Why It Matters**  
+- **What Hybrid Quantum-Classical Computing Is**  
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > Predictably, the US government has also significantly ramped up investments, pouring a total of $2 billion into quantum computing recently.
 
-- **Hybrid Quantum-Classical Computing: What It Is and Why It Matters**  
+- **What Hybrid Quantum-Classical Computing Is**  
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > For example, the US government recently committed $2 billion, while major companies like IBM, Google, and Amazon continue to develop quantum hardware.
 
-- **AI Open Source: Geopolitical Security Challenges From Dual-Use Models**  
+- **Open-Source AI and the Risk of Dual-Use Models**  
   `the-ai-paradox-open-source-national-security-and-the-geopolitical.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > Alibaba's Qwen 1.5 and the recently announced Qwen 3.8, a 2.4 trillion parameter open-weight model, claim to be second only to Fable 5, further supporting this view.
+
+- **The Best Way to Invest in Quantum Computing Today**  
+  `the-best-way-to-invest-in-quantum-computing-today.md` · "last year" betyder noget andet nu end da det blev skrevet · først set 2026-09-28  
+  > Xanadu generated roughly $4.6 million in revenue last year while carrying an accumulating deficit of over $183 million.
+
+- **The Best Way to Invest in Quantum Computing Today**  
+  `the-best-way-to-invest-in-quantum-computing-today.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-28  
+  > The balance sheet reflects the wider industry: Xanadu recently logged a $70.7 million net loss.
 
 - **What Causes AI Misalignment From Agent Task Focus?**  
   `the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  

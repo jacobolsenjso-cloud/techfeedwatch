@@ -31,7 +31,7 @@
   "navn": "udløbet dato",
   "fil": "ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact.md",
   "titel": "What Are the Fundamental Differences Between AR and VR?",
-  "saetning": "Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into daily life in ways that were once considered science fiction.",
+  "saetning": "Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into [daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030/) in ways that were once considered science fiction.",
   "hvorfor": "forudsigelse om \"2025\" — året er passeret",
   "foersteGang": "2026-09-21"
  },
@@ -39,7 +39,7 @@
   "regel": 4,
   "navn": "relativ tid",
   "fil": "beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md",
-  "titel": "What Quantum Computing's Potential and Hurdles Mean for Business",
+  "titel": "What Quantum Computing Means for Business",
   "saetning": "More recently, the same experiment was repeated, and the best supercomputer today, Frontier, would require 1 billion years for the identical calculation.",
   "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
@@ -71,6 +71,15 @@
   "hvorfor": "\"next year\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
  },
+ "key-advantages-of-augmented-reality-in-workforce-training.md#1#Recognizing this performance advantage, 26% of organizations": {
+  "regel": 1,
+  "navn": "udløbet dato",
+  "fil": "key-advantages-of-augmented-reality-in-workforce-training.md",
+  "titel": "Key Advantages of Augmented Reality in Workforce Training",
+  "saetning": "Recognizing this performance advantage, 26% of organizations have already integrated AR and VR tools into their operational programs, fueling an immersive tech market projected to exceed $157 billion by 2025.",
+  "hvorfor": "forudsigelse om \"2025\" — året er passeret",
+  "foersteGang": "2026-09-28"
+ },
  "meta-muse-spark-new-proprietary-ai-model-its-implications.md#4#The release of Muse Spark coincides with a dramatic increase": {
   "regel": 4,
   "navn": "relativ tid",
@@ -93,7 +102,7 @@
   "regel": 4,
   "navn": "relativ tid",
   "fil": "quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality.md",
-  "titel": "Quantum Computing Commercialization Uses Cloud Simulators for Access",
+  "titel": "How Cloud Simulators Open Up Quantum Computing",
   "saetning": "However, the very next year, a quantum computer with 128 qubits could suddenly and handily beat any classical computer ever built for that specific problem.",
   "hvorfor": "\"next year\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
@@ -102,7 +111,7 @@
   "regel": 1,
   "navn": "udløbet dato",
   "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "Hybrid Quantum-Classical Computing: What It Is and Why It Matters",
+  "titel": "What Hybrid Quantum-Classical Computing Is",
   "saetning": "IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.",
   "hvorfor": "forudsigelse om \"2025\" — året er passeret",
   "foersteGang": "2026-09-21"
@@ -111,7 +120,7 @@
   "regel": 4,
   "navn": "relativ tid",
   "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "Hybrid Quantum-Classical Computing: What It Is and Why It Matters",
+  "titel": "What Hybrid Quantum-Classical Computing Is",
   "saetning": "Predictably, the US government has also significantly ramped up investments, pouring a total of $2 billion into quantum computing recently.",
   "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
@@ -120,7 +129,7 @@
   "regel": 4,
   "navn": "relativ tid",
   "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "Hybrid Quantum-Classical Computing: What It Is and Why It Matters",
+  "titel": "What Hybrid Quantum-Classical Computing Is",
   "saetning": "For example, the US government recently committed $2 billion, while major companies like IBM, Google, and Amazon continue to develop quantum hardware.",
   "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
@@ -129,10 +138,28 @@
   "regel": 4,
   "navn": "relativ tid",
   "fil": "the-ai-paradox-open-source-national-security-and-the-geopolitical.md",
-  "titel": "AI Open Source: Geopolitical Security Challenges From Dual-Use Models",
+  "titel": "Open-Source AI and the Risk of Dual-Use Models",
   "saetning": "Alibaba's Qwen 1.5 and the recently announced Qwen 3.8, a 2.4 trillion parameter open-weight model, claim to be second only to Fable 5, further supporting this view.",
   "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
+ },
+ "the-best-way-to-invest-in-quantum-computing-today.md#4#Xanadu generated roughly $4.6 million in revenue last year w": {
+  "regel": 4,
+  "navn": "relativ tid",
+  "fil": "the-best-way-to-invest-in-quantum-computing-today.md",
+  "titel": "The Best Way to Invest in Quantum Computing Today",
+  "saetning": "Xanadu generated roughly $4.6 million in revenue last year while carrying an accumulating deficit of over $183 million.",
+  "hvorfor": "\"last year\" betyder noget andet nu end da det blev skrevet",
+  "foersteGang": "2026-09-28"
+ },
+ "the-best-way-to-invest-in-quantum-computing-today.md#4#The balance sheet reflects the wider industry: Xanadu recent": {
+  "regel": 4,
+  "navn": "relativ tid",
+  "fil": "the-best-way-to-invest-in-quantum-computing-today.md",
+  "titel": "The Best Way to Invest in Quantum Computing Today",
+  "saetning": "The balance sheet reflects the wider industry: Xanadu recently logged a $70.7 million net loss.",
+  "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
+  "foersteGang": "2026-09-28"
  },
  "the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment.md#4### The Anatomy of an AI Sandbox Escape The tech world recent": {
   "regel": 4,
