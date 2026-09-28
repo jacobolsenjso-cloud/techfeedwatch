@@ -18,24 +18,13 @@ on:
     # uændret — flere kørsler giver ikke flere artikler, kun flere forsøg.
     - cron: "17 * * * *"
   workflow_dispatch:
-    inputs:
-      runner:
-        description: "Hvilken Ubuntu kørslen bruger. Kun til bevidste prøver — planlagte kørsler bruger altid ubuntu-24.04."
-        type: choice
-        options:
-          - ubuntu-24.04
-          - ubuntu-26.04
-        default: ubuntu-24.04
 
 permissions:
   contents: write
 
 jobs:
   build:
-    # Prøve af Ubuntu 26.04 (28/9-2026): en manuel kørsel kan vælge 26.04 på
-    # knappen. Planlagte kørsler har intet valg og falder tilbage til 24.04,
-    # så robotten kører videre som før, selv hvis prøven fejler.
-    runs-on: ${{ inputs.runner || 'ubuntu-24.04' }}
+    runs-on: ubuntu-26.04
 
     steps:
       - uses: actions/checkout@v5
