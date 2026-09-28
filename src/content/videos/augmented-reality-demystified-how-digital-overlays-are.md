@@ -12,8 +12,8 @@ summary: "Augmented reality (AR) integrates digital information directly into a 
 metaDescription: "Understand augmented reality (AR) technology, how it overlays digital content onto the real world, and its diverse applications across industries."
 targetQuestion: "what is ar how it works"
 duration: "4:14"
-viewCount: 2780
-viewsUpdated: "2026-09-25"
+viewCount: 2807
+viewsUpdated: "2026-09-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

@@ -12,8 +12,8 @@ summary: "Augmented Reality (AR) and Virtual Reality (VR) represent distinct app
 metaDescription: "Explore the fundamental differences between Augmented Reality (AR) and Virtual Reality (VR) technology."
 targetQuestion: "what is the difference between ar and vr technology"
 duration: "11:11"
-viewCount: 595
-viewsUpdated: "2026-09-25"
+viewCount: 611
+viewsUpdated: "2026-09-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

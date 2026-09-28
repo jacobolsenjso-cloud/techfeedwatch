@@ -12,8 +12,8 @@ summary: "Apple native apps, pre-installed and deeply integrated across Apple's 
 metaDescription: "Discover what Apple native apps are, how they integrate across devices, and why their advanced features."
 targetQuestion: "what are apple native apps"
 duration: "27:27"
-viewCount: 82348
-viewsUpdated: "2026-09-25"
+viewCount: 83573
+viewsUpdated: "2026-09-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

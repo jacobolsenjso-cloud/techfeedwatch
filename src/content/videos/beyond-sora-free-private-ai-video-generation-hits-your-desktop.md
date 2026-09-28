@@ -12,8 +12,8 @@ summary: "Generating AI videos privately is achievable by running open-source mo
 metaDescription: "Learn how to make private AI videos on your PC using local, open-source generators, ensuring full privacy and avoiding subscription fees."
 targetQuestion: "how to make private ai videos"
 duration: "11:51"
-viewCount: 895656
-viewsUpdated: "2026-09-25"
+viewCount: 904423
+viewsUpdated: "2026-09-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"
