@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-09-28T22:05:15.591Z",
-  "articleCount": 412,
+  "updated": "2026-09-29T01:58:48.333Z",
+  "articleCount": 413,
   "lastArticle": {
-    "at": "2026-09-28T22:05:15.591Z",
+    "at": "2026-09-29T01:58:48.333Z",
     "slugs": [
-      "sora-ai-defined-generative-video-before-its-sudden-collapse"
+      "how-coding-agents-work-and-why-developers-use-them"
     ]
   },
   "lastLinkRepair": null,
