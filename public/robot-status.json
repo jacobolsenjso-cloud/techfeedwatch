@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-09-30T06:45:16.381Z",
-  "articleCount": 415,
+  "updated": "2026-09-30T13:45:15.253Z",
+  "articleCount": 416,
   "lastArticle": {
-    "at": "2026-09-30T06:45:16.381Z",
+    "at": "2026-09-30T13:45:15.253Z",
     "slugs": [
-      "how-does-a-data-leak-happen-and-how-to-prevent-it"
+      "do-we-know-what-quantum-computers-are-used-for"
     ]
   },
   "lastLinkRepair": null,
