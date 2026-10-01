@@ -24,9 +24,12 @@ const DIR = './src/content/videos';
 // og "how to use X" = "what is X" (målt i testen 1/10) — det er forskellige
 // ønsker, og dem skal lag 2 dømme.
 const ENS = { is: 'are', does: 'do', a: '', an: '', the: '' };
+// Flertals-s fjernes også på korte ord: stamme() gør det kun over 5 bogstaver,
+// så "tool"/"tools" var forskellige (målt 1/10 på robottens artikel fra samme dag).
+const ental = (w) => (w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w);
 export function noegle(q) {
   const ord = String(q || '').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean)
-    .map((w) => (Object.hasOwn(ENS, w) ? ENS[w] : stamme(w))).filter(Boolean);
+    .map((w) => (Object.hasOwn(ENS, w) ? ENS[w] : stamme(ental(w)))).filter(Boolean);
   return [...new Set(ord)].sort().join(' ');
 }
 function ordSaet(t) { return new Set(kerneord(String(t || '')).map(stamme)); }

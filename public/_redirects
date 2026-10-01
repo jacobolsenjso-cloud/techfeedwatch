@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (1598) ---
+# --- Statiske (1602) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/ucUdfiq2KiY/ /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech/ 301
@@ -1601,6 +1601,10 @@
 /video/creating-youtube-clips-shows-how-ai-videos-function/ /video/ai-video-creation-explained-process-and-pitfalls/ 301
 /video/ZtStjSBvm-k /video/ai-video-creation-explained-process-and-pitfalls/ 301
 /video/ZtStjSBvm-k/ /video/ai-video-creation-explained-process-and-pitfalls/ 301
+/video/video-ai-finding-the-best-text-to-video-ai-tool /video/best-text-to-video-ai-tools-for-free-clips/ 301
+/video/video-ai-finding-the-best-text-to-video-ai-tool/ /video/best-text-to-video-ai-tools-for-free-clips/ 301
+/video/YC2ouzkknBg /video/best-text-to-video-ai-tools-for-free-clips/ 301
+/video/YC2ouzkknBg/ /video/best-text-to-video-ai-tools-for-free-clips/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
