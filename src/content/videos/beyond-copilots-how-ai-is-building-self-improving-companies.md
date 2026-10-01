@@ -34,7 +34,7 @@ An autonomous AI agent is a sophisticated software system engineered to operate 
 
 ## The Core Mechanism: Recursive AI Loops
 
-The power of [autonomous AI agents](/video/openai-s-codex-ushering-in-the-golden-age-of-autonomous-ai-engineering/) stems from their ability to engage in recursive, self-improving loops. This operational model allows an agent to continuously enhance its performance and adapt to new information or challenges. The typical structure of such a loop involves several key layers:
+The power of autonomous AI agents stems from their ability to engage in recursive, self-improving loops. This operational model allows an agent to continuously enhance its performance and adapt to new information or challenges. The typical structure of such a loop involves several key layers:
 
 * **Sensor Layer:** This is where the agent gathers information from the real world. This data can be diverse, ranging from customer emails and support tickets to internal code changes, product telemetry, or even records of subscription cancellations. The sensor layer acts as the agent's eyes and ears, providing the raw input necessary for decision-making.
 * **Policy Layer:** Once data is collected, the policy layer dictates the rules and guidelines for the agent's actions. It defines what the agent is permitted to do autonomously, what actions require human permission, and what information must be logged for auditing or future learning. This layer ensures the agent operates within defined boundaries and ethical considerations.

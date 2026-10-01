@@ -5,6 +5,7 @@ import { hentForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
+import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -155,8 +156,14 @@ function proevetForNylig() {
   return new Set(laesProevet().filter((x) => new Date(x.dato).getTime() > graense).map((x) => x.q));
 }
 
+// Sættes af vaelgSpoergsmaal, når der VAR ubrugte spørgsmål, men alle var
+// dubletter af eksisterende artikler. Så skal kørslen ikke falde tilbage til
+// "emnet alene", for det er netop sådan en dublet slipper uden om værnet.
+let alleVarDubletter = false;
+
 // udelad: spørgsmål der ikke må vælges (fx allerede prøvet i denne kørsel).
 async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
+  alleVarDubletter = false;
   const BRUGTE = 'src/data/used-questions.json';
   let brugte = [];
   if (fs.existsSync(BRUGTE)) {
@@ -203,9 +210,27 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
     }
   }
 
-  // Klokkeslættet (timen) vælger, så to kørsler i træk ikke nødvendigvis
-  // tager det samme spørgsmål, hvis den første ikke fik udgivet noget.
-  const valgt = ubrugte[Math.floor(Date.now() / (1000 * 60 * 60)) % ubrugte.length];
+  // Dublet-værn (1/10): ingen ny artikel om et spørgsmål, sitet allerede
+  // besvarer. Er ALLE kandidater dubletter, springes kørslen over (se
+  // alleVarDubletter) — hellere ingen artikel end en, der konkurrerer med vores egen.
+  // Kandidaterne prøves ÉN AD GANGEN i den rækkefølge, klokkeslættet giver,
+  // og den første, der ikke er en dublet, vælges. Målt 1/10: alle 17 på én
+  // gang fik modellens svar klippet, og det koster 3 kald pr. kandidat — én ad
+  // gangen er typisk 3 små kald i alt. Højst MAX_DUBLET_TJEK prøves pr. kørsel.
+  // Klokkeslættet (timen) vælger startpunktet, så to kørsler i træk ikke
+  // nødvendigvis tager det samme spørgsmål, hvis den første ikke fik udgivet noget.
+  const MAX_DUBLET_TJEK = 6;
+  const start = Math.floor(Date.now() / (1000 * 60 * 60)) % ubrugte.length;
+  const raekke = [...ubrugte.slice(start), ...ubrugte.slice(0, start)].slice(0, MAX_DUBLET_TJEK);
+  const genAI = process.env.GEMINI_API_KEY ? new GoogleGenerativeAI(process.env.GEMINI_API_KEY) : null;
+  const artikler = eksisterendeArtikler();
+  let valgt = null;
+  for (const q of raekke) {
+    const { behold, afvist } = await fjernDubletter([q], { genAI, hentModel, model: GEMINI_MODEL, artikler });
+    if (afvist.length) { console.log(`Info: Dublet afvist: "${q}" ~ ${afvist[0].slug} [${afvist[0].lag}]`); continue; }
+    if (behold.length) { valgt = q; console.log(`Info: Dublet-tjek bestået: "${q}" dækkes ikke af en eksisterende artikel.`); break; }
+  }
+  if (!valgt) { alleVarDubletter = true; return null; }
   // Spørgsmålet gemmes IKKE her — først når en artikel faktisk er udgivet
   // (se markerSpoergsmaalBrugt). Målt 15/9: kørsel #523 brugte "what is ai
   // video specialist" op uden artikel, fordi YouTube blokerede alle videoer.
@@ -531,6 +556,10 @@ async function findNewestVideos() {
   for (let runde = 1; runde <= MAX_SPOERGSMAAL && processed < runBudget; runde++) {
   const spoergsmaal = await vaelgSpoergsmaal(tag, topic, proevetNu);
   const soegetekst = spoergsmaal || topic;
+  if (!spoergsmaal && alleVarDubletter) {
+    console.log('Info: De prøvede spørgsmål er alle dækket af artikler, sitet allerede har — ingen ny artikel i denne kørsel.');
+    break;
+  }
   if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete (${runde}/${MAX_SPOERGSMAAL}): "${spoergsmaal}"`);
   else console.log('Info: Intet ubrugt spørgsmål fundet — søger på emnet alene.');
   if (!spoergsmaal && runde > 1) break;

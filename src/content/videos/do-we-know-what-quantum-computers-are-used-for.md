@@ -27,7 +27,7 @@ faqs:
 
 Quantum computers are designed to solve computational problems that scale exponentially beyond the reach of classical supercomputers. Instead of executing everyday office software or streaming media, these machines simulate subatomic physics, model complex molecular bonds for clean energy and pharmaceuticals, and calculate mathematical factorizations that underpin global cybersecurity. They perform these specialized workloads by using quantum mechanical states to evaluate vast mathematical solution spaces simultaneously.
 
-The tech industry spent years treating quantum utility as a distant theoretical checkpoint. That complacency is disappearing. Hardware engineers and algorithmic researchers have slashed the resource requirements for practical quantum advantage at an unexpected rate. Understanding [what is quantum computing used for today](/video/beyond-the-qubit-why-leaving-a-booming-quantum-computing-career-can) requires looking past generic promises of speed and examining the exact workloads where classical physics fails.
+The tech industry spent years treating quantum utility as a distant theoretical checkpoint. That complacency is disappearing. Hardware engineers and algorithmic researchers have slashed the resource requirements for practical quantum advantage at an unexpected rate. Understanding what is quantum computing used for today requires looking past generic promises of speed and examining the exact workloads where classical physics fails.
 
 ## Key Takeaways
 * Quantum processors excel at native physical simulations, letting researchers calculate atomic behavior in batteries, catalysts, and pharmaceuticals without compromising approximations.

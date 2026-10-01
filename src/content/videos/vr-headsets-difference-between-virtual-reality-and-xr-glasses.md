@@ -27,7 +27,7 @@ faqs:
 
 The fundamental difference between virtual reality and XR glasses lies in the divide between total environment substitution and personal display expansion. Virtual reality isolates your visual field completely, employing positional tracking and specialized hand controllers to construct an interactive spatial world. XR glasses ditch the internal compute, cameras, and bulky straps to function purely as a wearable external monitor tethered to the devices already in your pocket. 
 
-Understanding the [difference between augmented reality and virtual reality](/video/difference-between-augmented-reality-and-virtual-reality) clarifies why these form factors diverge so sharply in use. A virtual reality system demands your complete physical and sensory commitment. XR glasses merely request an open USB-C port, floating a flat screen in your line of sight without detaching you from physical reality.
+Understanding the [difference between augmented reality and virtual reality](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) clarifies why these form factors diverge so sharply in use. A virtual reality system demands your complete physical and sensory commitment. XR glasses merely request an open USB-C port, floating a flat screen in your line of sight without detaching you from physical reality.
 
 ## The Architectural Divide: Immersion Engines Versus Wearable Screens
 

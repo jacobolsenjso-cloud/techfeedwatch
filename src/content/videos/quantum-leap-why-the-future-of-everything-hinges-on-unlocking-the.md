@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-[Quantum computing](/video/beyond-the-qubit-why-leaving-a-booming-quantum-computing-career-can/) represents a fundamental shift in how complex problems can be solved. Unlike classical computers that process information in bits as 0s or 1s, quantum computers use qubits. These qubits can exist in multiple states simultaneously, allowing for many calculations at once. This ability enables them to tackle problems currently beyond the reach of traditional computing methods.
+[Quantum computing](/video/do-we-know-what-quantum-computers-are-used-for/) represents a fundamental shift in how complex problems can be solved. Unlike classical computers that process information in bits as 0s or 1s, quantum computers use qubits. These qubits can exist in multiple states simultaneously, allowing for many calculations at once. This ability enables them to tackle problems currently beyond the reach of traditional computing methods.
 
 ## Quantum Computing and Artificial Intelligence
 

@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Virtual Reality (VR) and [Augmented Reality](/video/difference-between-augmented-reality-and-virtual-reality/) (AR) are two distinct technologies that alter a user's perception of reality. Virtual Reality immerses users entirely in a simulated digital environment, replacing their real-world view to create the sensation of being in a completely different place. Augmented Reality, on the other hand, overlays digital information and virtual objects onto a user's live view of the real world, enhancing their existing environment rather than replacing it.
+Virtual Reality (VR) and Augmented Reality (AR) are two distinct technologies that alter a user's perception of reality. Virtual Reality immerses users entirely in a simulated digital environment, replacing their real-world view to create the sensation of being in a completely different place. Augmented Reality, on the other hand, overlays digital information and virtual objects onto a user's live view of the real world, enhancing their existing environment rather than replacing it.
 
 ## Understanding Virtual Reality (VR)
 
