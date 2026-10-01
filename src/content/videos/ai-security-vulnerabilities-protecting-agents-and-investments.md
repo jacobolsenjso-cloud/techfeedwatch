@@ -12,8 +12,8 @@ summary: "AI poses significant security risks primarily through autonomous agent
 metaDescription: "Understand how AI agents and unmanaged machine identities pose critical security risks, leading to breaches and shifting investor scrutiny."
 targetQuestion: "how does ai pose security risks"
 duration: "9:33"
-viewCount: 10526
-viewsUpdated: "2026-09-16"
+viewCount: 10528
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

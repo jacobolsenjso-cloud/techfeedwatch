@@ -12,8 +12,8 @@ summary: "Meta AI is primarily used for generating visual content, offering free
 metaDescription: "Discover what Meta AI is used for, including image and video generation with Muse models, its features, and competitive field."
 targetQuestion: "what is meta ai used for"
 duration: "20:45"
-viewCount: 35774
-viewsUpdated: "2026-09-28"
+viewCount: 35831
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -11,8 +11,8 @@ summary: "A computational universe posits that the fundamental nature of reality
 metaDescription: "Explore the computational universe theory: how simple programs can generate reality's complexity, challenging our understanding of physics and existence."
 targetQuestion: "what is a computational universe"
 duration: "4:50:33"
-viewCount: 4766594
-viewsUpdated: "2026-09-28"
+viewCount: 4767658
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

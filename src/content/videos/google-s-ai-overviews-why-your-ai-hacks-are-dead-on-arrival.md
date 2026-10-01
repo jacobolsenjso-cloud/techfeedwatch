@@ -12,8 +12,8 @@ summary: "Google's AI Overviews and Answer Engine Optimization are reshaping sea
 metaDescription: "Uncover effective content optimization for Google AI Overviews."
 targetQuestion: "how to optimize content for google ai overview"
 duration: "20:13"
-viewCount: 12
-viewsUpdated: "2026-09-13"
+viewCount: 13
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"

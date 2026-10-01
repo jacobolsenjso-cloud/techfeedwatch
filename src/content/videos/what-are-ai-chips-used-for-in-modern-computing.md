@@ -12,8 +12,8 @@ summary: "AI chips, or accelerators, are specialized hardware components vital f
 metaDescription: "Discover what AI chips are used for, how these specialized processors power advanced AI models, and why they are essential for future tech."
 targetQuestion: "what is ai chips used for"
 duration: "5:09"
-viewCount: 1032168
-viewsUpdated: "2026-09-28"
+viewCount: 1032964
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 faqs:

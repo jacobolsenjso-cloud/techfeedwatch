@@ -12,8 +12,8 @@ summary: "The advent of large language models (LLMs) and generative AI has intro
 metaDescription: "Understand the new terms for AI Search Engine Optimization, including PEO, AEO, and GEO, and how they impact content visibility in LLMs."
 targetQuestion: "what is ai search engine optimization called"
 duration: "1:05:57"
-viewCount: 95
-viewsUpdated: "2026-09-12"
+viewCount: 96
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

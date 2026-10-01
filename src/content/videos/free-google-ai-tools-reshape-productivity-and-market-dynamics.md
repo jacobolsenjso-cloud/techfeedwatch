@@ -12,8 +12,8 @@ summary: "Google provides a suite of AI tools, many with free access or free tie
 metaDescription: "Explore the eight powerful Google AI tools offering free access or tiers for everything from content creation to business automation."
 targetQuestion: "what are google ai tools"
 duration: "1:42:29"
-viewCount: 233753
-viewsUpdated: "2026-09-28"
+viewCount: 234992
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

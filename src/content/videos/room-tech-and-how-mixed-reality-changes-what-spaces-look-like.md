@@ -12,8 +12,8 @@ summary: "Mixed reality blends high-resolution video passthrough of your physica
 metaDescription: "Wondering what mixed reality looks like? See how passthrough cameras, room scanning, and dynamic occlusion blend digital assets into physical rooms."
 targetQuestion: "what does mixed reality look like"
 duration: "9:29"
-viewCount: 38190
-viewsUpdated: "2026-09-30"
+viewCount: 38237
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 faqs:

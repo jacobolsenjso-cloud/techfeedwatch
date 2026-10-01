@@ -12,8 +12,8 @@ summary: "Artificial intelligence appears weightless and entirely digital, yet g
 metaDescription: "Wondering how AI videos use water? Explore how high-density GPU cooling, evaporative heat rejection."
 targetQuestion: "how does ai videos use water"
 duration: "4:36"
-viewCount: 1909
-viewsUpdated: "2026-09-28"
+viewCount: 1949
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Modern generative workflows produce synthetic media by combining disti
 metaDescription: "Discover how AI videos are made using modular generative tools text scripts local voice cloning and automated animation workflows."
 targetQuestion: "how are ai videos"
 duration: "11:14"
-viewCount: 40734
-viewsUpdated: "2026-09-28"
+viewCount: 44239
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 faqs:

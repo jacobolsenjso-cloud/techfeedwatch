@@ -12,8 +12,8 @@ tags:
 summary: "Modern organizations face an escalating threat landscape, demanding proactive cybersecurity risk management. Effective strategies move beyond reactive measures, integrating threat intelligence, robust compliance frameworks, and governance. This comprehensive approach safeguards critical data and ensures business resilience against sophisticated cyber threats."
 metaDescription: "Modern organizations face an escalating threat landscape, demanding proactive cybersecurity risk management."
 duration: "27:01"
-viewCount: 70
-viewsUpdated: "2026-09-04"
+viewCount: 75
+viewsUpdated: "2026-10-01"
 thumbMax: true
 isShort: false
 faqs:
