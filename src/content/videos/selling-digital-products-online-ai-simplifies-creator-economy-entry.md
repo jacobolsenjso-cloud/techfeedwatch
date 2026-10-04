@@ -12,8 +12,8 @@ summary: "Selling digital products online allows individuals to monetize special
 metaDescription: "Selling digital products online lets creators monetize skills."
 targetQuestion: "what is selling digital products online"
 duration: "1:04:38"
-viewCount: 1595
-viewsUpdated: "2026-09-14"
+viewCount: 1596
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

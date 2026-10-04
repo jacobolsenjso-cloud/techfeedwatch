@@ -11,8 +11,8 @@ summary: "A cybersecurity engineer defends production environments by engineerin
 metaDescription: "Wondering what a cybersecurity engineer does? Explore daily duties, essential cloud skills, salary tiers, and the optimal technical career path."
 targetQuestion: "what does cybersecurity engineer do"
 duration: "15:09"
-viewCount: 3936
-viewsUpdated: "2026-10-03"
+viewCount: 3961
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

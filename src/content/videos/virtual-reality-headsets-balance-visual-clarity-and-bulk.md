@@ -12,8 +12,8 @@ summary: "Virtual reality headsets are head-mounted visual and tracking systems 
 metaDescription: "What are virtual reality headsets? Explore how modern VR hardware works, comparing standalone units, tethered rigs, display specs, and real costs."
 targetQuestion: "what are virtual reality headsets"
 duration: "9:18"
-viewCount: 767
-viewsUpdated: "2026-10-01"
+viewCount: 1743
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

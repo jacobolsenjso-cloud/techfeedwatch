@@ -12,8 +12,8 @@ summary: "Finding the easiest way to make AI videos no longer requires an expens
 metaDescription: "Wondering what is the easiest way to make AI videos? Discover how free tools, exact parameter settings, and browser workflows deliver pro results."
 targetQuestion: "what is the easiest way to make ai videos"
 duration: "9:51"
-viewCount: 55573
-viewsUpdated: "2026-10-03"
+viewCount: 59693
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

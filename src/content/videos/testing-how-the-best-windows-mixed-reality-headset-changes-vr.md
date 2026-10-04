@@ -12,8 +12,8 @@ summary: "The HP Reverb G2 remains the undisputed visual benchmark among Windows
 metaDescription: "Searching for the best Windows Mixed Reality headset? Learn how the HP Reverb G2 balances ultra-high resolution against real-world tracking limits."
 targetQuestion: "what is the best windows mixed reality headset"
 duration: "9:40"
-viewCount: 57
-viewsUpdated: "2026-10-03"
+viewCount: 62
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

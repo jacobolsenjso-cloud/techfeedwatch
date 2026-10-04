@@ -12,8 +12,8 @@ summary: "Quantum computing will not accelerate mainstream artificial intelligen
 metaDescription: "Will quantum computing help AI? Discover why real-world machine learning gains remain theoretical and where the actual hardware risks lie."
 targetQuestion: "will quantum computing help ai"
 duration: "8:35"
-viewCount: 5
-viewsUpdated: "2026-10-02"
+viewCount: 45
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "AI tools are revolutionizing Search Engine Optimization by automating 
 metaDescription: "Discover how AI automation tools like Claude code are transforming SEO, driving massive traffic growth, accelerating content indexing."
 targetQuestion: "how does ai change seo"
 duration: "1:01:58"
-viewCount: 294
-viewsUpdated: "2026-09-28"
+viewCount: 295
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

@@ -12,8 +12,8 @@ summary: "The NVIDIA RTX Spark represents a significant advancement in laptop AI
 metaDescription: "Discover how NVIDIA's RTX Spark redefines AI chips in laptops."
 targetQuestion: "what are ai chips in laptops"
 duration: "4:08"
-viewCount: 25263
-viewsUpdated: "2026-10-01"
+viewCount: 25452
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

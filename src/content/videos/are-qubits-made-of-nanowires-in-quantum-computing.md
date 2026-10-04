@@ -12,8 +12,8 @@ summary: "Physical qubits rely on specialized material architectures ranging fro
 metaDescription: "Discover what qubits are made of in quantum computing hardware, from superconducting nanowires and lead layers to topological Majorana zero modes."
 targetQuestion: "what are qubits made of in quantum computing"
 duration: "18:17"
-viewCount: 378652
-viewsUpdated: "2026-10-01"
+viewCount: 381262
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

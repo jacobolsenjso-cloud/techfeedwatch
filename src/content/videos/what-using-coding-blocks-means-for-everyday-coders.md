@@ -12,8 +12,8 @@ summary: "Learning how to use coding blocks in ChatGPT requires understanding Op
 metaDescription: "Learn how to use coding blocks in ChatGPT, execute scripts in the console, and understand the workflow limitations replacing the legacy Canvas interface."
 targetQuestion: "how to use coding blocks"
 duration: "11:36"
-viewCount: 407
-viewsUpdated: "2026-10-01"
+viewCount: 408
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

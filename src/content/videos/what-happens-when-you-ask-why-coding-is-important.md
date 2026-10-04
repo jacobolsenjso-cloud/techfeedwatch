@@ -12,8 +12,8 @@ summary: "Coding remains vital because it cultivates systematic reasoning, archi
 metaDescription: "Wondering why coding is important in the age of AI? Discover how foundational programming skills give developers the edge in debugging and architecture."
 targetQuestion: "why coding is important"
 duration: "7:57"
-viewCount: 9509
-viewsUpdated: "2026-10-01"
+viewCount: 10102
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 faqs:

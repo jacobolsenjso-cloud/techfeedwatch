@@ -12,8 +12,8 @@ summary: "AI chips, also known as AI accelerators, are specialized processors de
 metaDescription: "Understand how AI chips work by exploring their parallel processing architecture, tensor operations, and the specialized hardware."
 targetQuestion: "how does ai chips work"
 duration: "1:07:41"
-viewCount: 65142
-viewsUpdated: "2026-10-01"
+viewCount: 65307
+viewsUpdated: "2026-10-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"
