@@ -1,6 +1,6 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-09-28 på 411 artikler. **19 fund**, heraf 0 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
+Målt 2026-10-05 på 418 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
@@ -22,7 +22,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
   > IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.
 
-## Regel 4 — relativ tid (12)
+## Regel 4 — relativ tid (13)
 
 - **How Does AI Cause Ram Shortage?**  
   `ai-ram-shortage-impacts-tech-drives-up-device-prices.md` · "early last year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -35,6 +35,10 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
 - **Why Cloud Security Is So Important for Businesses**  
   `cloud-security-s-rapid-evolution-why-architecture-first-consulting.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > The financial repercussions of inadequate security are substantial; for instance, cyber-related business losses recently reported in Washington state alone exceeded 370 million dollars.
+
+- **Cybersecurity Engineers: What They Actually Do**  
+  `cybersecurity-engineers-what-they-actually-do.md` · "Last year" betyder noget andet nu end da det blev skrevet · først set 2026-10-05  
+  > Last year, 61% of companies were breached, while the average cost of a single breach is nearly $5 million.
 
 - **How Much Does Cybersecurity Pay and Career Outlook**  
   `how-much-does-cybersecurity-pay-and-career-outlook.md` · "next year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  

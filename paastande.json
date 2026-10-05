@@ -53,6 +53,15 @@
   "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
  },
+ "cybersecurity-engineers-what-they-actually-do.md#4#Last year, 61% of companies were breached, while the average": {
+  "regel": 4,
+  "navn": "relativ tid",
+  "fil": "cybersecurity-engineers-what-they-actually-do.md",
+  "titel": "Cybersecurity Engineers: What They Actually Do",
+  "saetning": "Last year, 61% of companies were breached, while the average cost of a single breach is nearly $5 million.",
+  "hvorfor": "\"Last year\" betyder noget andet nu end da det blev skrevet",
+  "foersteGang": "2026-10-05"
+ },
  "fintech-s-fragmented-future-deconstructing-the-six-pillars-of-digital.md#1#Regulations like PSD2 and Open Banking are expected to fuel ": {
   "regel": 1,
   "navn": "udløbet dato",
