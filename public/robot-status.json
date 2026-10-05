@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-05T02:02:18.477Z",
-  "articleCount": 417,
+  "updated": "2026-10-05T09:04:38.163Z",
+  "articleCount": 418,
   "lastArticle": {
-    "at": "2026-10-05T02:02:18.477Z",
+    "at": "2026-10-05T09:04:38.163Z",
     "slugs": [
-      "is-this-how-remote-software-engineers-work-in-practice"
+      "which-hardware-defines-quantum-computing-chips-today"
     ]
   },
   "lastLinkRepair": null,
