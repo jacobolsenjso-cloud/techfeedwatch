@@ -77,6 +77,29 @@
         "position": 7.6
       },
       "note": "Tredje aflaesning, to dage efter den anden. Indekseringstallene staar helt stille: 82/769 og alle otte aarsager er identiske med 26/9. Sitemappet er vokset 544 -> 548. Effektiviteten er det rullende 28-dages vindue (29/8-25/9), opdateret for 3,5 timer siden."
+    },
+    {
+      "dato": "2026-10-05",
+      "adresser": 557,
+      "indekseret": 82,
+      "ikkeIndekseret": 769,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 488,
+        "Side med omdirigering": 131,
+        "Dublet uden kanonisk side valgt af brugeren": 66,
+        "Ikke fundet (404)": 62,
+        "Crawlet - endnu ikke indekseret": 18,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 17,
+        "eksponeringer": 50,
+        "klikrate": 34,
+        "position": 8.8
+      },
+      "note": "Fjerde aflaesning, en uge efter den tredje. Indekseringen staar fuldstaendig stille for fjerde gang: 82/769 og alle otte aarsager er bit for bit identiske med 26/9 og 28/9. Sitemappet er vokset 548 -> 557. Effektiviteten er faldet markant: 98 -> 50 eksponeringer og 18 -> 17 klik i det rullende 28-dages vindue (5/9-2/10). Faldet er IKKE et filter-kunstgreb - tallene var de samme efter 'Nulstil filtre'. En del af faldet er vinduet, der har flyttet sig en uge, men ikke det hele."
     }
   ]
 }
