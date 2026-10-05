@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 5. oktober (**version 69** — brug kun v69). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 5. oktober (**version 71** — brug kun v71). **ADVARSEL om versionsnumrene:** arbejdsfilen stod stadig som "version 68", men `Claude outputs\` indeholder en v69 og en v70 fra 1/10, som arbejdsfilen IKKE indeholder (én dagbogsindgang fra 1/10). Omvendt indeholder arbejdsfilen en statusblok fra 5/10 kl. 10:45, som v70 ikke har. **Ingen af filerne er altså komplette** — v71 er arbejdsfilen plus dagens Search Console-aflæsning. De to grene skal flettes, og det afgør Jacob. Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -294,6 +294,7 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - **Adresser: 557** talt på det levende sitemap (548 den 28/9, +9). Med væksten trukket fra er den reelle bevægelse i "ikke indekseret" **−9** i stedet for 0 — altså marginalt, men den eneste positive bevægelse i punktet.
 - **Gjort:** punktet skrevet i `search-console-serie.json`, `node serie.mjs` grøn (alle fire kontroller passerer, 4 punkter), commit pushet fra Windows.
 - **Kort sagt: tre uger efter de 40 commits fra 20.-23/9 har Search Console ikke flyttet en eneste side.** Serien har nu fire punkter, og retningen er flad på indeksering og nedad på eksponeringer. Det er ikke et måleproblem — det er resultatet.
+- **Fundet undervejs (Jacob bør vide det):** arbejdsfilen `STATUS-ALLE-SITES.md` sagde "version 68", men `Claude outputs\` har en v69 og en v70 fra 1/10 med en dagbogsindgang fra 1/10, som arbejdsfilen ikke har. Arbejdsfilen har til gengæld en statusblok fra 5/10 kl. 10:45, som v70 ikke har. To grene af samme fil er altså løbet fra hinanden. Jeg har IKKE flettet dem — det ville kræve et valg, der er Jacobs. v71 = arbejdsfilen + dagens aflæsning. Desuden: `STATUS-ALLE-SITES.md` var slet ikke sporet af git før i dag (commit `97105de9` opretter den), så de tidligere versioner findes kun som filer.
 - **Lære:** den ugentlige opgave bad kun om fem felter (dato, indekseret, ikkeIndekseret, aarsager, effektivitet), men `serie.mjs` kræver også `adresser`, ellers fejler den med kode 1. Opgavens fremgangsmåde er derfor ufuldstændig — næste aflæsning bør have "tæl `<loc>` i det levende sitemap" skrevet ind som eget trin.
 
 **29/9-2026 — techmediaarch: fejlrettelser, FAQ-boks under artiklerne, navnet, robotten skriver journalistisk, tomgangsalarm i eget workflow.** Kun techmediaarch er rørt (Jacobs regel 28/9: de to sites blandes ikke). Alle commits pushet og set live (`check-runs` grøn + `tjek-live` 0 fejl).
