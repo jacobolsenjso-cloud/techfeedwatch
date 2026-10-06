@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-05T09:04:38.163Z",
-  "articleCount": 418,
+  "updated": "2026-10-06T00:54:41.518Z",
+  "articleCount": 419,
   "lastArticle": {
-    "at": "2026-10-05T09:04:38.163Z",
+    "at": "2026-10-06T00:54:41.518Z",
     "slugs": [
-      "which-hardware-defines-quantum-computing-chips-today"
+      "can-we-convert-video-to-text-using-whisper"
     ]
   },
   "lastLinkRepair": null,
