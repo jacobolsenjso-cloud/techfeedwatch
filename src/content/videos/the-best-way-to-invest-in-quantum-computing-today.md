@@ -37,23 +37,12 @@ Public market investors rarely analyze these operational costs. When early pione
 
 Hardware developers must reach fault tolerance before they can generate sustainable enterprise software revenues. Fault tolerance describes a state where a processor detects and corrects its own quantum errors faster than noise corrupts the computation. Reaching that engineering benchmark will take time; best estimates put that target 5 to 10 years away. Because of this gap, early investors are not buying established businesses. They are funding deep research and development projects that happen to trade on public stock exchanges.
 
-`
-+-------------------------------------------------------------------------+
-| QUANTUM SECTOR INVESTMENT PROFILES |
-+-------------------+--------------------+--------------------------------+
-| Category | Primary Modalities | Financial Characteristics |
-+-------------------+--------------------+--------------------------------+
-| Hardware Builders | Superconducting, | • Massive capital expenditure |
-| (IonQ, Rigetti, | Trapped Ions, | • Low single-digit revenue |
-| Xanadu, D-Wave) | Photonics | • 5 to 10 years to tolerance |
-| | | • Severe dilution risk |
-+-------------------+--------------------+--------------------------------+
-| Software & PQC | Post-Quantum | • Lower capital intensity |
-| (Arqit, BTQ, | Cryptography, | • Government/defense focus |
-| SEALSQ) | Quantum Security | • Vulnerable to missed bids |
-| | Algorithms | • Premium speculative pricing |
-+-------------------+--------------------+--------------------------------+
-`
+Quantum sector investment profiles:
+
+| Category | Primary modalities | Financial characteristics |
+|---|---|---|
+| Hardware builders (IonQ, Rigetti, Xanadu, D-Wave) | Superconducting, trapped ions, photonics | Massive capital expenditure; low single-digit revenue; 5 to 10 years to fault tolerance; severe dilution risk |
+| Software and PQC (Arqit, BTQ, SEALSQ) | Post-quantum cryptography, quantum security algorithms | Lower capital intensity; government/defense focus; vulnerable to missed bids; premium speculative pricing |
 
 ## What Changed: The Best Way to Invest in Quantum Computing
 
@@ -61,17 +50,12 @@ The quantum market has split into two distinct financial categories: hardware ma
 
 The hardware camp includes superconducting and trapped-ion developers like Rigetti and [IonQ](https://ionq.com/), alongside photonic innovators. In Toronto, Xanadu pursues an alternative route by using photonics—transmitting information via light particles at room temperature. This approach avoids heavy cryogenic costs, yet the core science remains deeply pre-commercial. Xanadu generated roughly $4.6 million in revenue last year while carrying an accumulating deficit of over $183 million. The balance sheet reflects the wider industry: Xanadu recently logged a $70.7 million net loss. Competitor D-Wave reported bleeding 45 million in operating cash in a single quarter.
 
-`
- [Hardware Pure-Plays] [Software & Encryption]
- │ │
- Cryogenics & Photonics Post-Quantum Algorithms
- │ │
- R&D Expense: $50M - $180M/yr R&D Expense: Minimal Capex
- Revenue: $1M - $5M/yr Revenue: <$1M - $10M/yr
- │ │
- ▼ ▼
- Dilution & Cash Exhaustion Binary Defense Contract Bids
-`
+| | Hardware pure-plays | Software and encryption |
+|---|---|---|
+| Focus | Cryogenics and photonics | Post-quantum algorithms |
+| R&D expense | $50M - $180M/yr | Minimal capex |
+| Revenue | $1M - $5M/yr | <$1M - $10M/yr |
+| Key risk | Dilution and cash exhaustion | Binary defense contract bids |
 
 To avoid hardware cash burn, capital frequently rotates into software and post-quantum encryption firms such as Arqit, BTQ, and SEALSQ. Their business model avoids cryogenic labs and focuses on protecting critical infrastructure as [quantum computing threats accelerate encryption breakdown](/video/quantum-computing-threats-to-current-encryption-explained). Yet software valuations often lose touch with commercial realities. A quantum-focused SPAC reached a $575 million valuation purely on the premise of rolling up future software acquisitions. Despite raised expectations, revenue remains miniscule; Arqit reported just $623,000 in revenue in the first half of 2026. 
 

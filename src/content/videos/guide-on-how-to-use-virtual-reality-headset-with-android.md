@@ -43,20 +43,13 @@ Instead of blocking installation procedures, modern system updates allow users t
 
 Running standard mobile software on modern VR hardware follows three main operational pathways depending on system complexity and required tools. The choice depends on whether a user prefers quick single-app installations, flexible store environments, or deep hardware performance tuning.
 
-`
-+-----------------------------------------------------------------------------------+
-| METHODS TO RUN ANDROID APPS ON STANDALONE VR HEADSETS |
-+-----------------------------------------------------------------------------------+
-| 1. DIRECT APK INSTALLATION | Opens official sites via VR browser; downloads |
-| | APK and unpacks via native package installer. |
-+-----------------------------------------------+-----------------------------------+
-| 2. REPOSITORY STORE FRONTS | Installs F-Droid/Aurora Store once; enables |
-| | direct downloads without searching individual APKs|
-+-----------------------------------------------+-----------------------------------+
-| 3. SIDEQUEST VIA DESKTOP USB | Requires Developer Mode; unlocks texture scaling, |
-| | custom frame rates, and hidden system settings. |
-+-----------------------------------------------------------------------------------+
-`
+Methods to run Android apps on standalone VR headsets:
+
+| Method | How it works |
+|---|---|
+| 1. Direct APK installation | Opens official sites via the VR browser; downloads the APK and unpacks it via the native package installer. |
+| 2. Repository store fronts | Installs F-Droid/Aurora Store once; enables direct downloads without searching for individual APKs. |
+| 3. SideQuest via desktop USB | Requires Developer Mode; enables texture scaling, custom frame rates, and hidden system settings. |
 
 ### Method 1: Direct APK Unpacking Native to the Headset
 
@@ -76,15 +69,12 @@ For advanced application management and performance control, desktop sideloading
 
 Connecting the headset to a computer using a high-speed USB-C cable triggers an interactive prompt inside virtual reality asking to authorize USB debugging mode. Accepting this prompt links the headset to desktop tools like SideQuest. Users drag and drop executable Android files directly into the desktop client interface to complete batch installations.
 
-`
- [Meta Developer Portal] ---> [Enable Dev Mode in Phone App]
- |
- v
- [SideQuest Desktop Software] <--- USB-C ---> [VR Headset Debugging]
- | |
- v v
- [Batch APK Sideloading] [Texture Resolution Tweaks]
-`
+The SideQuest workflow:
+
+1. Meta Developer Portal
+2. Enable Developer Mode in the phone app
+3. Connect the SideQuest desktop software to the headset over USB-C (VR headset debugging)
+4. Batch APK sideloading and texture resolution tweaks
 
 Desktop sideloading provides operational benefits beyond application management. The tool grants direct access to system rendering parameters. Users can raise default texture resolutions from standard baselines up to maximum visual sharpness, alongside custom screen refresh rates. As VRelity points out, boosting default texture settings to maximum crispness drains battery faster and resets upon a full power reboot. Users can maintain these high-performance parameters between daily uses by putting the headset into sleep mode rather than executing a full system shutdown.
 

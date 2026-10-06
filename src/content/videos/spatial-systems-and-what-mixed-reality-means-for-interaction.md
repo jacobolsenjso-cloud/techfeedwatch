@@ -46,30 +46,12 @@ Neither sensor modality functions reliably on its own. Cameras provide fine spat
 
 Once tracked, the system constructs a spatial map of the room using surface planes or three-dimensional polygon meshes. Within this map, software establishes an anchor—a remembered pose defined inside a global coordinate system. Every single frame, the renderer updates the mathematical relationship between three spaces: the device itself, the physical room, and the anchored digital object.
 
-`
-       +-------------------------------------------------------+
-       |                  SENSOR FUSION LOOP                   |
-       |  (Cameras: visual features + IMU: rapid rotation)     |
-       +---------------------------+---------------------------+
-                                   |
-                                   v
-       +-------------------------------------------------------+
-       |                   SPATIAL MAPPING                     |
-       |     (Detects floor planes, walls, and 3D mesh)        |
-       +---------------------------+---------------------------+
-                                   |
-                                   v
-       +-------------------------------------------------------+
-       |                  COORDINATE ANCHOR                    |
-       |  (Updates 3 spaces: Device <-> Room <-> Digital Item)  |
-       +---------------------------+---------------------------+
-                                   |
-                                   v
-       +-------------------------------------------------------+
-       |               OCCLUSION & RENDERING                   |
-       |    (Hides virtual geometry behind real obstacles)     |
-       +-------------------------------------------------------+
-`
+The tracking pipeline:
+
+1. Sensor fusion loop: cameras capture visual features, the IMU tracks rapid rotation
+2. Spatial mapping: detects floor planes, walls, and 3D mesh
+3. Coordinate anchor: updates three spaces, the device, the room, and the digital item
+4. Occlusion and rendering: hides virtual geometry behind real obstacles
 
 To maintain photorealism and depth perception, the spatial map enables occlusion. If a real object sits closer to the user than a virtual object, the graphics pipeline must hide the obscured geometry of the digital item behind the real surface. Without accurate occlusion, digital items appear unnaturally pasted onto the foreground rather than sitting inside the physical environment.
 
@@ -89,13 +71,8 @@ While promotional material presents spatial computing as effortless, real-world 
 
 Stabilization occurs when distinctive physical landmarks return to view. When a patterned rug or a window frame re-enters the camera's field of view, the tracking engine compares those incoming features against its existing spatial map and relocalizes itself. This correction brings the digital anchor back to its exact physical position.
 
-`
-Visual Tracking: High-contrast textures (rugs, windows, furniture edges)
-  ---> Stable Anchor Coordinates ---> Solid Object Rendering
-
-Featureless Tracking: Featureless surfaces (plain white walls, uniform lighting)
-  ---> Visual Drift / Slide ---> Unstable Spatial Agreement
-`
+- Visual tracking on high-contrast textures (rugs, windows, furniture edges) leads to stable anchor coordinates and solid object rendering.
+- Tracking on featureless surfaces (plain white walls, uniform lighting) leads to visual drift or slide and an unstable spatial agreement.
 
 Latency creates another engineering hurdle. Motion-to-photon latency measures the exact delay between a user's physical movement and the updated pixels hitting their eyes. If this rendering pipeline stutters or delays, virtual objects lag behind physical head movements, creating visual swim that causes user discomfort and breaks immersion. Maintaining low and consistent motion-to-photon latency requires tight optimization between tracking sensors, spatial coordinate math, and GPU frame preparation.
 

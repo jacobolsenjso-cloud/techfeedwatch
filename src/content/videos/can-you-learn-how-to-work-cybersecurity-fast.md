@@ -39,24 +39,11 @@ The modern tech industry presents a glaring contradiction. Job boards display en
 
 Securing enterprise infrastructure demands fluency across three foundational layers: networking, host operating systems, and threat logic. Without proficiency in the underlying plumbing of the internet, defensive configurations fail.
 
-`
- [ Threat Vectors ]
- (Social Engineering, Malware, Exploits)
- |
- v
- +---------------------------------------------------+
- | Host Environments (VirtualBox) |
- | - Windows Server (Active Directory, Kerberos) |
- | - Linux Distributions (Ubuntu, Kali Linux) |
- +---------------------------------------------------+
- |
- v
- +---------------------------------------------------+
- | Network Fundamentals |
- | - OSI Model & TCP/IP Stack |
- | - TCP / UDP / DNS / Subnetting |
- +---------------------------------------------------+
-`
+The three foundational layers:
+
+- Threat vectors: social engineering, malware, exploits
+- Host environments (VirtualBox): Windows Server (Active Directory, Kerberos) and Linux distributions (Ubuntu, Kali Linux)
+- Network fundamentals: the OSI model and TCP/IP stack, plus TCP, UDP, DNS and subnetting
 
 ### 1. Networking Infrastructure and Protocol Inspection
 
@@ -96,28 +83,13 @@ Understanding how technical systems operate does not automatically lead to emplo
 
 Human resources departments spend about 6 seconds scanning an initial resume. During this window, recruiters evaluate candidates against two explicit criteria: baseline industry certifications and verifiable technical experience. If an application lacks immediate evidence for both, automated tracking systems or recruiters discard it. As NGT Academy points out, "If your resume cannot check these questions, it goes into the junk pile, and you'll never even get a call back from HR."
 
-`
- Candidate Application Pool
- |
- v
- +---------------------------------+
- | Initial 6-Second HR Screen |
- +---------------------------------+
- / \
- [ Fails Criteria ] [ Passes Criteria ]
- / \
- v v
- +-------------------+ +-----------------------+
- | The Junk Pile | | Two-Box Validation |
- | (Rejected Apps) | | 1. Targeted Certs |
- +-------------------+ | 2. Verifiable Proof |
- +-----------------------+
- |
- v
- +-----------------------+
- | Technical Interview |
- +-----------------------+
-`
+How an application moves through the screen:
+
+1. Candidate application pool
+2. Initial 6-second HR screen
+3. Applications that fail the criteria go to the junk pile
+4. Applications that pass face a two-box validation: targeted certifications and verifiable proof
+5. Technical interview
 
 Candidates often attempt to satisfy requirements by acquiring redundant, expensive certifications. Yet HR filters prioritize functional baselines. For entry-level positions, two industry-standard credentials validate the baseline knowledge: CompTIA Network+ and CompTIA Security+. These credentials satisfy security clearance baselines, fulfill compliance requirements, and demonstrate core protocol comprehension.
 

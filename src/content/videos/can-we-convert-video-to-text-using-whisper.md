@@ -42,18 +42,12 @@ Automating speech recognition on a local workstation requires bridging the gap b
 
 A video file is not an audio file. Before Whisper processes any dialogue, your system must strip the video track and decode the audio layer. The open-source multimedia framework FFmpeg handles this task under the hood. When a user feeds an MP4, MOV, or MKV file into a transcription tool, FFmpeg demuxes the file, extracts the sound channel, and normalizes it to a single 16-kilohertz mono pulse-code modulation (PCM) stream. If FFmpeg is missing from the system path, the transcription pipeline halts immediately.
 
-`
-+------------------+ +------------------+ +--------------------+
-| Video File | ---> | FFmpeg Demuxer | ---> | OpenAI Whisper |
-| (MP4, MKV, MOV) | | Audio Extraction | | Encoder-Decoder |
-+------------------+ +------------------+ +--------------------+
- |
- v
- +--------------------+
- | Formatted Output |
- | TXT, SRT, VTT, JSON|
- +--------------------+
-`
+The transcription pipeline, step by step:
+
+1. Video file (MP4, MKV, MOV)
+2. FFmpeg demuxer: audio extraction
+3. OpenAI Whisper: encoder-decoder
+4. Formatted output: TXT, SRT, VTT, JSON
 
 Users deploying these tools on Windows can manage the application through terminal commands or packaged executables. Building the environment involves installing [Python](https://www.python.org/) from python.org or executing winget install python directly inside the Windows Command Prompt. Confirming the environment with python --version ensures that the interpreter is active. The machine also requires FFmpeg, installed via winget install ffmpeg. 
 

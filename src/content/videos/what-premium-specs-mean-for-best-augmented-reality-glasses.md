@@ -45,18 +45,14 @@ Display panel specifications back up these optical gains. High-end AR wearables 
 
 Onboard silicon handles real-time color processing. The Vision 4000 display chip, co-developed with Pixelworks, uses real-time AI processing to execute SDR to HDR conversion. The display architecture yields a 200,000 to 1 contrast ratio, 145% sRGB coverage, and 98% DCI-P3 color gamut coverage, keeping color accuracy under a delta E of less than 2. Users can adjust display settings for extended wear, including switching to Eye Care mode to significantly reduce eye fatigue during long sessions.
 
-`
-+-------------------------------------------------------------------+
-| AR GLASSES OPTICAL COMPARISON |
-+---------------------+-------------------+-------------------------+
-| Device Model | Field of View | Market Price |
-+---------------------+-------------------+-------------------------+
-| RayNeo GT Max | 59 Degrees | $399 |
-| Viture Beast | -- | $549 |
-| XREAL One Pro | 57 Degrees | $599 |
-| Legacy AR Glasses | 46 Degrees | -- |
-+---------------------+-------------------+-------------------------+
-`
+AR glasses optical comparison:
+
+| Device model | Field of view | Market price |
+|---|---|---|
+| RayNeo GT Max | 59 degrees | $399 |
+| Viture Beast | Not listed | $549 |
+| XREAL One Pro | 57 degrees | $599 |
+| Legacy AR glasses | 46 degrees | Not listed |
 
 ## Why This Matters
 
@@ -83,18 +79,10 @@ As Steven Sullivan points out, acquiring rectangular prism optics previously dem
 
 To declare what is the best augmented reality glasses option, buyers must balance display size, spatial motion control, audio performance, and purchase price. No single device excels in every edge case, but high optical performance at a competitive cost defines the current top tier.
 
-`
- [AR Glasses Selection Matrix]
- |
- +--------------+--------------+
- | |
-[High-Spec Value Focus] [Ecosystem Focus]
- | |
-- 59 Degree FOV - Native Multi-Screen Mac Apps
-- $399 Retail Price - Electrochromic Lens Dimming
-- Rectangular Prism Optics - $549 - $599 Price Point
-- Bang & Olufsen Audio - Higher Accessories Cost
-`
+Two ways to choose:
+
+- High-spec value focus: 59 degree field of view, $399 retail price, rectangular prism optics, Bang & Olufsen audio.
+- Ecosystem focus: native multi-screen Mac apps, electrochromic lens dimming, a $549 - $599 price point, higher accessories cost.
 
 Devices like the RayNeo GT Max represent the strongest overall balance for consumer display glasses. Offering a maximum 59 degree field of view, 120Hz refresh rate, AI-driven color enhancement, 3DoF tracking modes, and Bang & Olufsen audio for $399, it provides specs that exceed devices costing $150 to $200 more. Competitors such as the XREAL One Pro ($599) or Viture Beast ($549) offer strong software app integration and alternative optical builds, but they require a significantly larger financial investment for narrower field-of-view metrics.
 

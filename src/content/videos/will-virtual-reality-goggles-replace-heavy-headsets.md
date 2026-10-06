@@ -45,25 +45,11 @@ The internal operation of VR goggles relies on precise micro-displays, exterior 
 
 The display system ditches bulky LCD assemblies for dual Micro-OLED panels running at 2012 by 2288 pixels per eye with refresh rates scaling up to 120 Hz. [Meta](https://www.meta.com/) designates this optical package as its 5K Infinite Display, hitting approximately 37 pixels per degree. High pixel density eliminates the screen-door effect, rendering microscopic UI fonts, system menus, and desktop windows razor-sharp. 
 
-`
-+------------------------------------------------------------+
-| THE HUMAN HEAD |
-| Lightweight Goggles (~100g) |
-| - Dual Micro-OLED Displays (2012 x 2288 per eye, 120 Hz) |
-| - Spatial Tracking Cameras & Eye Trackers |
-| - Open Peripheral Frame (Optional Light Blocker) |
-+-----------------------------+------------------------------+
- |
- Thin Optical Cable
- |
-+-----------------------------v------------------------------+
-| POCKET / WAISTBAND |
-| Compute Puck (~300g) |
-| - Qualcomm Snapdragon Reality Elite Platform |
-| - Internal Battery (~3 Hours High-Res Media Playback) |
-| - Storage, Cooling Fans, & DisplayPort / USB-C Input |
-+------------------------------------------------------------+
-`
+How the weight is split:
+
+- On the head: lightweight goggles (~100g) with dual Micro-OLED displays (2012 x 2288 per eye, 120 Hz), spatial tracking cameras and eye trackers, and an open peripheral frame (optional light blocker).
+- A thin optical cable connects the goggles to the pocket.
+- In the pocket or on the waistband: a compute puck (~300g) with the Qualcomm Snapdragon Reality Elite platform, an internal battery (~3 hours of high-res media playback), storage, cooling fans, and DisplayPort / USB-C input.
 
 Achieving this diminutive form factor requires optical concessions, particularly regarding field of view. Traditional headsets push viewing angles beyond 100 degrees, wrapping visuals around peripheral vision. These lightweight goggles narrow that envelope to around 70° horizontally and 66° vertically. Rather than suffocating the user in closed plastic, manufacturers intentionally leave peripheral vision open around the lens borders. Users glance downward or sideways to maintain natural orientation with physical rooms, while snapping on an optional magnetic light blocker when full visual isolation becomes necessary.
 

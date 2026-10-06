@@ -33,11 +33,11 @@ Unlike classical computer transistors etched from bulk silicon, physical qubits 
 
 In the pursuit of topological protection, the physical recipe becomes far more exotic. Microsoft builds its topological qubits around a superconducting semiconductor nanowire measuring just 35 nm wide. On top of this narrow semiconductor base, fabrication tools lay down an ultra-thin layer of superconducting material, roughly 30 atoms thick. When engineers cool this hybrid structure down to 50 millikelvin—just 0.05° above absolute zero—the materials interact through a specialized boundary state. Because the two materials are perfectly joined together, the paired, frictionless behavior of the superconductor on top leaks across the boundary into the semiconductor below, a phenomenon called the proximity effect.
 
-`
-       [ Superconducting Layer (Lead: ~30 atoms thick) ]
-=================================================================  <-- Proximity Effect Interface
-       [ Semiconductor Nanowire Base (35 nm wide)       ]
-`
+The layer stack, from top to bottom:
+
+- Superconducting layer: lead, about 30 atoms thick
+- Proximity effect interface between the two materials
+- Semiconductor nanowire base: 35 nm wide
 
 At this cryogenic threshold, applying an external magnetic field parallel to the wire forces the material stack into a topological phase. In this phase, something unusual happens. Each individual electron is essentially split in half, and each half exists at either end of the wire. This phase is called a Majorana zero mode. By linking two of these wires together into an H-shape called a tetron, the qubit is encoded into whether the system overall holds an even or odd number of electrons in total, a property called parity. This distributes the stored information across all four endpoints. Corrupting the data requires an environmental disruption to strike both ends of the wire at the exact same moment.
 
@@ -61,14 +61,12 @@ On the 2nd of June, Microsoft announced that they had increased the qubit lifeti
 
 Achieving that transition required extraordinary chemical control. Lead is notorious for contaminating semiconductor fabrication chambers and clumping unpredictably. Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. With each operation taking 1 microsecond, the Majorana 2 can perform 20 million operations before any error has a realistic chance of occurring. To quote Microsoft, "the probability of any unintended parity flip during a typical qubit operation becomes effectively negligible." What this actually means is that for the first time qubit lifetime isn't the problem standing between us and a useful quantum computer.
 
-`
-Superconductor Material Comparison:
--------------------------------------------------------------------------
-Material     Superconducting Gap             Coherence Limit    Operations
-Aluminum     around 300 microelectronvolts   12 milliseconds    10,000
-Lead         around 1,300 microelectronvolts over 20 seconds    20 million operations
--------------------------------------------------------------------------
-`
+Superconductor material comparison:
+
+| Material | Superconducting gap | Coherence limit | Operations |
+|---|---|---|---|
+| Aluminum | Around 300 microelectronvolts | 12 milliseconds | 10,000 |
+| Lead | Around 1,300 microelectronvolts | Over 20 seconds | 20 million |
 
 ## Will Material Upgrades Push Quantum Scale Toward 2029?
 

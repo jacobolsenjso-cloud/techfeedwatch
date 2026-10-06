@@ -446,6 +446,11 @@ const metaDesc = rawMeta.length > 157
     .video-content a { color: var(--teal-text); text-decoration: none; font-weight: 600; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     .video-content a:hover { border-bottom-color: var(--teal-text); }
     body.dark-mode .video-content a { color: #22d3ee; }
+    /* Tabeller i artikler (6/10-2026): uden regler blev højre kolonne klippet på mobil, og cellerne havde ingen linjer.
+       display:block + overflow-x lader tabellen rulle inden i sig selv, så siden aldrig bliver bredere end skærmen. */
+    .video-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.2em 0; font-size: 0.95rem; line-height: 1.5; }
+    .video-content th, .video-content td { border: 1px solid var(--border-color); padding: 8px 12px; text-align: left; vertical-align: top; }
+    .video-content th { background: var(--hover-bg); font-weight: 700; }
     body.dark-mode .video-content a:hover { border-bottom-color: #22d3ee; }
 
     .toc-container { background: var(--hover-bg); border-radius: 8px; padding: 20px; margin-bottom: 30px; border: 1px solid var(--border-color); }
