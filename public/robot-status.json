@@ -1,14 +1,17 @@
 {
   "schema": 1,
-  "updated": "2026-10-06T00:54:41.518Z",
-  "articleCount": 419,
+  "updated": "2026-10-06T15:21:34.066Z",
+  "articleCount": 420,
   "lastArticle": {
-    "at": "2026-10-06T00:54:41.518Z",
+    "at": "2026-10-06T15:21:34.066Z",
     "slugs": [
-      "can-we-convert-video-to-text-using-whisper"
+      "best-virtual-reality-goggles-and-why-weight-matters-most"
     ]
   },
-  "lastLinkRepair": null,
+  "lastLinkRepair": {
+    "at": "2026-10-06T15:21:34.066Z",
+    "count": 2
+  },
   "lastLinkWarning": null,
   "note": "Written by the robot only when something happens. If lastArticle stops moving for days, the robot has gone idle."
 }
