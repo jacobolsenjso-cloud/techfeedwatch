@@ -10,7 +10,7 @@ tags:
   - "AI & Tech"
 summary: "Augmented reality (AR) integrates digital information directly into a user's real-world view, typically via a smartphone camera. This technology overlays elements like 3D models and videos onto live physical environments in real-time. AR enhances perception by adding layers of digital content, creating interactive experiences without fully immersing users in a virtual space. Its practical applications span consumer retail, industrial training, and beyond, reshaping how we interact with products and information."
 metaDescription: "Understand augmented reality (AR) technology, how it overlays digital content onto the real world, and its diverse applications across industries."
-targetQuestion: "what is ar how it works"
+targetQuestion: "what is ar and how does it work"
 duration: "4:14"
 viewCount: 2848
 viewsUpdated: "2026-10-04"

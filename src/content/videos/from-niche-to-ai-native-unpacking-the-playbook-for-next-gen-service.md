@@ -1,5 +1,5 @@
 ---
-title: "Are AI native service companies transforming the service sector?"
+title: "Are AI-Native Service Companies Transforming the Service Sector?"
 youtubeId: "gSNFJbgoaHI"
 channelTitle: "Y Combinator"
 channelId: "UCcefcZRL2oaA_uBNeo5UOWg"

@@ -1,6 +1,6 @@
 ---
 title: "Generative Engine Optimization GEO and How It Works"
-targetQuestion: "what is generative engine optimization geo and how does it work"
+targetQuestion: "what is generative engine optimization and how does it work"
 titleShortened: true
 seoTitled: true
 youtubeId: "46vC7-BwJ_o"

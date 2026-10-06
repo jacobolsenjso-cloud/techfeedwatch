@@ -1,6 +1,6 @@
 ---
 title: "How Does AI Cause Ram Shortage?"
-targetQuestion: "how does ai cause ram shortage"
+targetQuestion: "how does ai cause a ram shortage"
 youtubeId: "-YNk9_e4pg4"
 channelTitle: "ColdFusion"
 channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"

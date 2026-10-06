@@ -1,5 +1,5 @@
 ---
-title: "How does AI video face swap technology actually work?"
+title: "How Does AI Video Face Swap Technology Actually Work?"
 youtubeId: "rSSZhmPUwXY"
 channelTitle: "Artificicy AI"
 channelId: "UCq-hSrYSLizdXlr4QNEbqng"

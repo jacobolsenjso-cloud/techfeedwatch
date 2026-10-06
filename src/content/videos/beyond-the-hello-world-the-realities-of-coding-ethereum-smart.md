@@ -1,6 +1,6 @@
 ---
 title: "Remix Ethereum IDE Simplifies Smart Contract Coding"
-targetQuestion: "what is remix ethereum ide"
+targetQuestion: "what is the remix ethereum ide"
 titleShortened: true
 seoTitled: true
 youtubeId: "ooN6kZ9vqNQ"

@@ -1,5 +1,5 @@
 ---
-title: "Are AI coding skills transforming software development?"
+title: "Are AI Coding Skills Transforming Software Development?"
 youtubeId: "wwfJlSF34n8"
 channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"

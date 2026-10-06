@@ -10,7 +10,7 @@ tags:
   - "Cybersecurity"
 summary: "Social engineering attacks exploit human psychology, tricking individuals into revealing sensitive information or performing actions that compromise security. These tactics range from deceptive phone company reward points scams to sophisticated deepfake videos, evolving to become increasingly targeted and difficult to detect. Understanding these diverse attack vectors is critical for individuals and organizations alike to bolster their defenses against persistent cyber threats."
 metaDescription: "Explore concrete social engineering attacks examples, from phishing texts to AI deepfakes."
-targetQuestion: "what are social engineering attacks examples"
+targetQuestion: "what are examples of social engineering attacks"
 duration: "1:07:45"
 viewCount: 217148
 viewsUpdated: "2026-10-04"

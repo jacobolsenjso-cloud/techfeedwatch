@@ -10,7 +10,7 @@ tags:
   - "AI & Tech"
 summary: "Core Web Vitals are a set of three specific metrics—Largest Contentful Paint, First Input Delay, and Cumulative Layout Shift—developed by Google to quantify user experience on websites. These vitals measure loading speed, interactivity, and visual stability, directly influencing a site's search engine ranking. Optimizing these metrics ensures a smoother, more responsive, and visually stable browsing experience for users, which is critical for online success."
 metaDescription: "Understand what Core Web Vitals measure—loading speed, interactivity, and visual stability—and how they impact your website's Google ranking."
-targetQuestion: "what does core web vitals measure"
+targetQuestion: "what do core web vitals measure"
 duration: "7:00"
 viewCount: 16
 viewsUpdated: "2026-10-01"

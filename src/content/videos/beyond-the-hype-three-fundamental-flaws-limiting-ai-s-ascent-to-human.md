@@ -1,6 +1,6 @@
 ---
 title: "Generalization in LLM Models Poses a Major Hurdle"
-targetQuestion: "what is generalization in llm"
+targetQuestion: "what is generalization in llms"
 seoTitled: true
 youtubeId: "984qBh164fo"
 channelTitle: "Sabine Hossenfelder"

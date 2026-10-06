@@ -1,5 +1,5 @@
 ---
-title: "Website visibility: how HTML tags affect SEO rankings?"
+title: "Website Visibility: How Do HTML Tags Affect SEO Rankings?"
 youtubeId: "R4EYtFoiSrg"
 channelTitle: "CodeLucky"
 channelId: "UCFMdEr1H3hhCIdoKwsK80Tw"

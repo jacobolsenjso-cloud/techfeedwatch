@@ -1,6 +1,6 @@
 ---
 title: "How Are ETFs and Index Funds Different for Tax Purposes"
-targetQuestion: "how are etfs and index funds difference"
+targetQuestion: "how are etfs and index funds different"
 youtubeId: "9j2jTuRKCaU"
 channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"

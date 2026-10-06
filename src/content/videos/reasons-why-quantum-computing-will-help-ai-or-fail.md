@@ -1,5 +1,5 @@
 ---
-title: "Reasons why quantum computing will help ai or fail"
+title: "Reasons Why Quantum Computing Will Help AI or Fail"
 youtubeId: "IjpROmo9k8s"
 channelTitle: "Half-True Universe"
 channelId: "UCB-KqR-lZRNTkraA3VjCSvQ"

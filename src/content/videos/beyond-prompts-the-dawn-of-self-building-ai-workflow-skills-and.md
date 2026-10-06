@@ -1,6 +1,6 @@
 ---
 title: "What AI Agent Skills Are and How They Work"
-targetQuestion: "what ai agent skills are and how they work"
+targetQuestion: "what are ai agent skills and how do they work"
 seoTitled: true
 youtubeId: "mOGLdUOLAu0"
 channelTitle: "QurioSkill"

@@ -10,7 +10,7 @@ tags:
   - "Hardware & Chips"
 summary: "Artificial intelligence appears weightless and entirely digital, yet generating modern synthetic media relies on immense thermodynamic management. High-density server clusters dissipate massive amounts of electrical heat through evaporative cooling towers that evaporate potable water directly into the atmosphere. Understanding this physical footprint reveals why synthetic video rendering carries a surprisingly heavy ecological cost."
 metaDescription: "Wondering how AI videos use water? Explore how high-density GPU cooling, evaporative heat rejection."
-targetQuestion: "how does ai videos use water"
+targetQuestion: "how do ai videos use water"
 duration: "4:36"
 viewCount: 1991
 viewsUpdated: "2026-10-04"

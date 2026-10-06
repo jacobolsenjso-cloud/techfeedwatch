@@ -1,6 +1,6 @@
 ---
 title: "What Is a WhatsApp AI Bot for Businesses"
-targetQuestion: "what is whatsapp ai bot"
+targetQuestion: "what is a whatsapp ai bot"
 titleShortened: true
 seoTitled: true
 youtubeId: "_VX7jc_BhB8"

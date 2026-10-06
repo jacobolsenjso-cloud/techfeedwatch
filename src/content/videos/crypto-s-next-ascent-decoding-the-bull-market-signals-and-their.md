@@ -1,6 +1,6 @@
 ---
 title: "What Is the Bitcoin Bull Market Support Band?"
-targetQuestion: "what is bitcoin bull market support band"
+targetQuestion: "what is the bitcoin bull market support band"
 titleShortened: true
 seoTitled: true
 youtubeId: "iuZTZHipaG0"

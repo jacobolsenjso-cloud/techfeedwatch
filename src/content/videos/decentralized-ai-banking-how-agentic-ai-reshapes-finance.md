@@ -1,6 +1,6 @@
 ---
 title: "Why Agentic AI Is Important for Financial Transformation"
-targetQuestion: "why agentic ai is important"
+targetQuestion: "why is agentic ai important"
 youtubeId: "c-MSAP_HBcE"
 channelTitle: "technophile"
 channelId: "UCmlnPidspm1VB1uRJXfmViA"

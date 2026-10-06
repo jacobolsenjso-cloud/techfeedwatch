@@ -1,6 +1,6 @@
 ---
 title: "What Is a No Code AI Platform and Its Impact?"
-targetQuestion: "what is no code ai platform"
+targetQuestion: "what is a no code ai platform"
 seoTitled: true
 youtubeId: "Y-zKVrSRsiM"
 channelTitle: "AI Forge"

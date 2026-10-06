@@ -1,5 +1,5 @@
 ---
-title: "Why the best virtual reality game is shifting in 2026"
+title: "Why the Best Virtual Reality Game Is Shifting in 2026"
 youtubeId: "VgiHGZMZmIw"
 channelTitle: "Naysy"
 channelId: "UCzvrQN7BWv0xHIJOQG6lAxw"

@@ -1,6 +1,6 @@
 ---
 title: "What Google TPU Is Used for in AI Workloads"
-targetQuestion: "what is google tpu used for"
+targetQuestion: "what is a google tpu used for"
 youtubeId: "NP2Hv7v0KHQ"
 channelTitle: "Bloomberg Tech"
 channelId: "UCrM7B7SL_g1edFOnmj-SDKg"

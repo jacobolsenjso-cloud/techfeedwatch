@@ -1,6 +1,6 @@
 ---
 title: "How to Use yfinance in Python for Quant Investing"
-targetQuestion: "how to use yfinance python"
+targetQuestion: "how to use yfinance in python"
 seoTitled: true
 youtubeId: "b9RgHa1CnH4"
 channelTitle: "Daniel Boctor"

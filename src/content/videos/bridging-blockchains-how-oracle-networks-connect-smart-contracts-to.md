@@ -1,6 +1,6 @@
 ---
 title: "Oracle Network in Blockchain Bridges Data for Smart Contracts"
-targetQuestion: "what is oracle network in blockchain"
+targetQuestion: "what is an oracle network in blockchain"
 seoTitled: true
 youtubeId: "TPXTmVdlyoc"
 channelTitle: "Lex Fridman"

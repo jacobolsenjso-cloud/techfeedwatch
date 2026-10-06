@@ -10,7 +10,7 @@ tags:
   - "AI & Tech"
 summary: "The NVIDIA Rubin platform represents a fully co-designed AI system, moving beyond individual GPUs to offer an integrated 'AI factory' for advanced artificial intelligence workloads. It combines next-generation GPUs, CPUs, and high-speed networking components into a unified infrastructure. This comprehensive approach delivers unprecedented compute power and significantly reduces AI inference costs, attracting major AI developers."
 metaDescription: "Understand the NVIDIA Rubin platform, a co-designed AI factory integrating Rubin GPU and Vera CPU to power future AI and reduce inference costs."
-targetQuestion: "what is nvidia rubin platform"
+targetQuestion: "what is the nvidia rubin platform"
 duration: "11:15"
 viewCount: 15189
 viewsUpdated: "2026-10-04"

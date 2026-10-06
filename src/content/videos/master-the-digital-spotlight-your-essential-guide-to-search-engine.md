@@ -1,6 +1,6 @@
 ---
 title: "What Is SEO and How Search Engines Work"
-targetQuestion: "what is seo and how search engines work"
+targetQuestion: "what is seo and how do search engines work"
 seoTitled: true
 youtubeId: "COL_qPL5xsg"
 channelTitle: "Techquickie"

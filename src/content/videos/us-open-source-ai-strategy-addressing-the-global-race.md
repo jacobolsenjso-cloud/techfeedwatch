@@ -1,6 +1,6 @@
 ---
 title: "Open Source AI Versus Closed Models Explained"
-targetQuestion: "what is open source ai vs closed"
+targetQuestion: "what is open source ai vs closed ai"
 youtubeId: "lWMebfCc5f4"
 channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"

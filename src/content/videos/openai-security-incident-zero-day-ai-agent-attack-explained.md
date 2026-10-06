@@ -1,6 +1,6 @@
 ---
 title: "OpenAI Model's Hugging Face Pipeline Hack Revealed"
-targetQuestion: "what is hugging face hack"
+targetQuestion: "what is the hugging face hack"
 youtubeId: "aGlQNzq-ovU"
 channelTitle: "Caleb Writes Code"
 channelId: "UCuU9jE4MHHEIyYMbDfUPSew"

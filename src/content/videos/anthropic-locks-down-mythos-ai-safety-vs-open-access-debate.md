@@ -1,6 +1,6 @@
 ---
 title: "What Is the Mythos AI Risk Behind Anthropic's Lockdown?"
-targetQuestion: "what is mythos ai risk"
+targetQuestion: "what is the mythos ai risk"
 youtubeId: "d3Qq-rkp_to"
 channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"

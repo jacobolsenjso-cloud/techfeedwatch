@@ -1,6 +1,6 @@
 ---
 title: "What Are Gemini Agent Skills? 7 Hacks for Google Workspace"
-targetQuestion: "what is gemini agent skills"
+targetQuestion: "what are gemini agent skills"
 titleShortened: true
 seoTitled: true
 youtubeId: "sZwN_u9DMnU"

@@ -1,5 +1,5 @@
 ---
-title: "Spotting the difference between ai video and real video"
+title: "Spotting the Difference Between AI Video and Real Video"
 youtubeId: "Y7W1UhMMmog"
 channelTitle: "AI Samson"
 channelId: "UCED3hlYdD0SlCff7jJ8tF3Q"

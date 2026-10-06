@@ -10,7 +10,7 @@ tags:
   - "AI & Tech"
 summary: "The global AI chips supply chain faces significant risks from its concentrated reliance on Chinese-made printed circuit boards (PCBs). These essential components, underpinning nearly all AI chips from major manufacturers, present potential vulnerabilities for national security and the broader technology market. Geopolitical tensions exacerbate existing supply issues, prompting renewed focus on diversifying manufacturing capabilities outside of current hubs."
 metaDescription: "AI chips supply chain faces critical vulnerabilities due to reliance on Chinese-made printed circuit boards. Learn about the hidden risks."
-targetQuestion: "ai chips supply chain"
+targetQuestion: "ai chip supply chain"
 duration: "15:57"
 viewCount: 143981
 viewsUpdated: "2026-10-04"

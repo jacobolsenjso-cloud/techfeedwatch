@@ -10,7 +10,7 @@ tags:
   - "Cybersecurity"
 summary: "AI-powered cyberattacks leverage advanced models to automate complex malicious activities, fundamentally changing the threat field. Frontier AI models, evaluated between August 2024 and February 2026, demonstrate significant autonomous hacking capabilities, capable of completing multi-step breaches without requiring deep technical expertise from the attacker. This shift lowers the barrier to entry for cybercriminals and necessitates a re-evaluation of current defense strategies."
 metaDescription: "Explore AI powered cyberattacks: how frontier AI models are autonomously hacking corporate networks."
-targetQuestion: "what is ai powered cyberattacks"
+targetQuestion: "what are ai powered cyberattacks"
 duration: "7:02"
 viewCount: 39
 viewsUpdated: "2026-09-22"

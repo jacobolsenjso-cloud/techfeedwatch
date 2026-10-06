@@ -1,6 +1,6 @@
 ---
 title: "What Is an AI Agent Loop in Business Automation"
-targetQuestion: "what is ai agent loop"
+targetQuestion: "what is an ai agent loop"
 seoTitled: true
 youtubeId: "5p_BBdfvzgQ"
 channelTitle: "Greg Isenberg"

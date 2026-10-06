@@ -9,7 +9,7 @@ tags:
   - "SEO"
 summary: "Search Engine Optimization (SEO) is the practice of increasing website visibility in search engine results to attract more traffic. It hinges on understanding search engine algorithms, particularly Google's, which prioritize content relevance and user experience. Effective SEO involves strategic keyword integration and proactive website design, moving beyond mere aesthetics to ensure discoverability and authority."
 metaDescription: "Learn what SEO is and how it works, from Google's core mission to essential strategies like keyword research and website optimization."
-targetQuestion: "what is seo and how it works"
+targetQuestion: "what is seo and how does it work"
 duration: "46:36"
 viewCount: 2
 viewsUpdated: "2026-09-15"

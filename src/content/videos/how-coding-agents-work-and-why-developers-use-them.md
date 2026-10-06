@@ -1,5 +1,5 @@
 ---
-title: "How coding agents work and why developers use them"
+title: "How Coding Agents Work and Why Developers Use Them"
 youtubeId: "0m1zw-g1-v8"
 channelTitle: "NeuralNine"
 channelId: "UC8wZnXYK_CGKlBcZp-GxYPA"
