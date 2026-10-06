@@ -6,6 +6,7 @@ import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
+import { retSpoergsmaal } from './src/lib/spoergsmaalsfilter.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -402,9 +403,11 @@ function faktaarkScoreFor(videoUrl, tag, qArg) {
   }
 }
 
-async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal) {
+// spoergsmaal: den rå søgning (gemmes som brugt). visSpoergsmaal: den rettede
+// udgave fra spørgsmålsfilteret — det er den, artiklen får som targetQuestion.
+async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal, visSpoergsmaal = spoergsmaal) {
   let processed = 0;
-  const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
+  const qArg = visSpoergsmaal ? ` --question "${visSpoergsmaal.replace(/"/g, '')}"` : '';
 
   // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
   const kandidater = [];
@@ -589,7 +592,10 @@ async function findNewestVideos() {
     console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
     const existingIds = loadExistingVideoIds();
-    const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal);
+    // Spørgsmålsfilteret køres først her, når der er kandidater — så det ikke
+    // koster tre modelkald på en runde, der alligevel ikke fandt videoer.
+    const visSpoergsmaal = spoergsmaal ? await retSpoergsmaal(spoergsmaal) : spoergsmaal;
+    const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal, visSpoergsmaal);
     processed += nu;
     if (nu === 0 && spoergsmaal) {
       markerSpoergsmaalProevet(spoergsmaal, tag);

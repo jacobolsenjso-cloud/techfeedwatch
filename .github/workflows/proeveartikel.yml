@@ -33,6 +33,11 @@ jobs:
       - name: Installer dependencies
         run: npm install
 
+      # Selvtest af skrivereglerne (src/lib/skriveregler.mjs). Fejler en regel,
+      # stopper kørslen her — før der bruges kvote hos YouTube og Gemini.
+      - name: Selvtest af skrivereglerne
+        run: node test-skriveregler.mjs
+
       - name: Kør robotten (uden dagsloft)
         run: node auto-youtube.mjs --ignorer-loft
         env:
@@ -77,9 +82,12 @@ jobs:
                 echo "- **$(grep -m1 '^title:' "$f" | sed 's/^title: *//')**"
                 echo "  - søgespørgsmål: $(grep -m1 '^targetQuestion:' "$f" | sed 's/^targetQuestion: *//')"
                 echo "  - fil: \`$f\`"
+                echo ""
+                node test-skriveregler.mjs --artikel "$f"
+                echo ""
               done
               echo ""
-              echo "Forhåndsvisning: se tjekket \"Cloudflare Pages\" på commit'en."
+              echo "Læs artiklen på GitHub under grenen. Forhåndsvisningen på pages.dev sender p.t. videre til techfeedwatch.com (6/10, årsag ikke fundet i koden)."
             } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "## Ingen artikel skrevet — se loggen for 'Kør robotten'" >> "$GITHUB_STEP_SUMMARY"

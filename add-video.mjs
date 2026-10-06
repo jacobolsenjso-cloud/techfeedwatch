@@ -12,6 +12,7 @@ import { erRelevant } from './src/lib/relevans.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
+import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger } from './src/lib/skriveregler.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -590,6 +591,13 @@ async function run() {
     12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
     13. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
     14. CONCRETE DETAIL IS MANDATORY. A reader must be able to tell this article was researched, not generated. Use at least FIVE items from the FACT SHEET below - every NUMBER item you can place naturally, plus named products, companies, tools or people, and at least one EXAMPLE item told as a concrete case. Write numbers exactly as the fact sheet gives them. Put them where they support the argument, not in a list at the end. Attribute the source exactly once, by name, where its most specific point appears - for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ..." or "${kildeNavn(channelTitle) || 'The creator'} puts the figure at ...". An article that ignores the fact sheet is a failed article.
+    15. LISTS: include at least TWO markdown lists (lines starting with "- " or "1. "), each with 3-5 items, where the content is naturally a list: steps, options, components, criteria, pros and cons. Keep the argument itself in paragraphs.
+    16. SHORT PARAGRAPHS: at most 3 sentences per paragraph. Readers are on phones.
+    17. STAY ON THE QUESTION: every section must help answer the reader's question. Do not spend paragraphs on other products, features or tools the source happens to mention unless you compare them directly with the subject. Never describe how a product works internally (models, physics, pipelines) unless the FACT SHEET says so.
+    18. WRITE AS AN EDITOR, NOT A SPEAKER: no first person (I, me, my, we), no spoken phrases from the transcript ("let's take a look", "gonna", "as you can see"). If the creator's own words matter, quote them in quotation marks.
+    19. NAMED SOURCES ONLY: never write "experts say", "studies show", "research indicates", "critics argue" or "according to reports" without naming who. If the source does not name them, state the point plainly or leave it out.
+    20. Never draw diagrams with characters (arrows, boxes, ASCII art). Use a markdown table or a numbered list instead.
+    21. Never paste the reader's search words into a sentence where they are not grammatical (for example "Understanding what is X ..."). Rephrase.
 
     This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
 
@@ -901,7 +909,18 @@ async function run() {
         if (sc.score < MIN_SCORE) m.push(`konkrethedsscore ${sc.score} (mindst ${MIN_SCORE}: tal ${sc.tal}, navne ${sc.navne}, citater ${sc.citater})`);
         if (!svarFoerst) m.push('første afsnit besvarer ikke spørgsmålet konkret');
         if (laes.ordPrSaetning > MAX_ORD_PR_SAETNING) m.push(`${laes.ordPrSaetning} ord pr. sætning (højst ${MAX_ORD_PR_SAETNING})`);
-        return { brugte, ukendte, tal, sc, laes, svarFoerst, m };
+        // Skriveregler (fase 2, 6/10): src/lib/skriveregler.mjs, målt på alle 420 artikler.
+        const tale = talesprog(content);
+        const diagram = tekstDiagram(content);
+        const uklar = uklareKilder(content);
+        const klistret = klistretSoegeord(content, targetQuestion);
+        const nLister = lister(content).length;
+        if (tale.length) m.push(`talesprog: ${tale.map((x) => `"${x.ord}"`).join(', ')}`);
+        if (diagram.length) m.push(`tekst-diagram (${diagram.map((x) => x.type).join(', ')})`);
+        if (uklar.length) m.push(`uklare kilder: ${uklar.map((x) => `"${x.ord}"`).join(', ')}`);
+        if (klistret.length) m.push(`søgeordet klistret ind i ${klistret.length} sætning(er)`);
+        if (nLister < MIN_LISTER) m.push(`${nLister} lister (mindst ${MIN_LISTER})`);
+        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, m };
       };
       let k = status();
       if (k.m.length) {
@@ -912,7 +931,7 @@ async function run() {
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
 1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
 ${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the FACT SHEET gives it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
 
 FACT SHEET (items not yet used are listed first):
 ${faktaarkTekst([...ubrugte, ...k.brugte])}
@@ -949,10 +968,46 @@ ${content}`);
       if (k.sc.score < MIN_SCORE) {
         throw new Error(`Konkrethedsscore ${k.sc.score} efter rettelse (mindst ${MIN_SCORE}). Artiklen skrives ikke.`);
       }
+      // Fase 2 (6/10): fejl, læseren SER, må ikke udgives — videoens talesprog,
+      // en tegnet tekst-figur og et søgeord klistret ind i en sætning. Målt på alle
+      // 420 artikler: reglerne gav 0 falske fund efter justering (8 talesprog, 3
+      // klistrede, alle ægte). Uklare kilder og for få lister logges kun.
+      if (k.tale.length) throw new Error(`Talesprog efter rettelse: ${k.tale.map((x) => `"${x.ord}"`).join(', ')}. Artiklen skrives ikke.`);
+      if (k.diagram.length) throw new Error(`Tekst-diagram efter rettelse (${k.diagram.map((x) => x.type).join(', ')}). Artiklen skrives ikke.`);
+      if (k.klistret.length) throw new Error(`Søgeordet "${targetQuestion}" står stadig klistret ind i ${k.klistret.length} sætning(er). Artiklen skrives ikke.`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);
       console.log(`📏 Score ${k.sc.score} (tal ${k.sc.tal}, navne ${k.sc.navne}, citater ${k.sc.citater}) · ${k.laes.ordPrSaetning} ord/sætning · svaret først: ${k.svarFoerst ? 'ja' : 'nej'}`);
+
+      // Fyld (fase 2, 6/10): Gemini udpeger sætninger, man intet lærer af;
+      // fjernSaetninger tager kun dem, reglerne tillader (aldrig første afsnit,
+      // lister, sætninger med tal eller links, aldrig et afsnits sidste sætning),
+      // højst hver 5. Ingen ord omskrives. Fejler kaldet, springes trinnet over.
+      try {
+        const kand = fyldKandidater(content);
+        if (kand.length >= 5) {
+          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 4096, temperature: 0 } })
+            .generateContent(`An article answers the reader's question "${targetQuestion || safeTitle}". Below are numbered sentences from it. Which of them are FILLER - sentences a reader learns nothing from: generic statements, repeats of an earlier point, empty transitions, or vague praise (e.g. "This makes it a powerful tool for creators.")? Do NOT mark a sentence that carries a fact, an example, a reason, a limitation, a comparison or a step. Return ONLY a JSON array of the numbers, e.g. [2,7]. If none, return [].\n\n${kand.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
+          const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
+          const valgt = m ? JSON.parse(m[0]).map((n) => kand[n - 1]).filter(Boolean) : [];
+          const fj = fjernSaetninger(content, valgt, Math.floor(kand.length / 5));
+          content = fj.md.trim();
+          console.log(`🧽 Fyld: Gemini udpegede ${valgt.length} af ${kand.length} kandidater; fjernet ${fj.fjernet}${fj.fjernede.length ? `: ${fj.fjernede.map((s) => `"${s.slice(0, 60)}"`).join(' · ')}` : ''}`);
+        }
+      } catch (e) { console.log(`🧽 Fyld-tjek sprunget over: ${e.message.split('\n')[0]}`); }
+
+      // Korte afsnit (fase 2, 6/10): delt MELLEM sætninger, ingen ord ændres.
+      // Første afsnit: deles efter 2. sætning, hvis det er over 60 ord eller over 3 sætninger.
+      // Øvrige: regel B (højst 3 sætninger, 3 sætninger <= 60 ord, 2 <= 75) — valgt
+      // efter måling på alle 420 artikler (én-sætningsafsnit 20,8 % mod 26,7 % med
+      // den strengeste regel).
+      const fa = delFoersteAfsnit(content);
+      content = fa.md;
+      const la = delLangeAfsnit(content);
+      content = la.md;
+      const at = afsnitsTal(content);
+      console.log(`📐 Afsnit: første afsnit ${fa.delt ? 'delt' : 'uændret'} (${foersteAfsnit(content).ord} ord), ${la.delt} lange afsnit delt; nu ${at.afsnit} afsnit, ${at.enSaetning} på én sætning, længste ${at.maksOrd} ord · lister ${lister(content).length}${k.uklar.length ? ` · uklare kilder tilbage: ${k.uklar.length}` : ''}`);
 
       // Interne links: ankertekst skal passe til målet (se ankerTjek).
       content = ankerTjek(content);
