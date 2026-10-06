@@ -1,0 +1,79 @@
+name: Prøveartikel (udgives ikke)
+
+# Fase 2 (6/10-2026): robotten skriver én artikel på præcis samme måde som
+# "YouTube Auto Update" — samme script, samme rettelser, samme tre tjek — men
+# gemmer den på en egen gren (udkast-<nummer>) i stedet for main. Så kan en ny
+# robotregel prøves og læses, FØR den udgiver noget.
+#
+# - Kun manuel knap (Actions → "Prøveartikel" → Run workflow). Ingen tidsplan.
+# - --ignorer-loft: dagsloftet må ikke forhindre en prøve.
+# - robot-status.json skrives IKKE: den beskriver den udgivne robot, ikke prøver.
+# - Grenen flettes aldrig automatisk ind. Grene slettes kun med Jacobs ok.
+# - Cloudflare Pages laver en forhåndsvisning af grenen; adressen står i
+#   commit'ens tjek ("Cloudflare Pages") på GitHub.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  proeve:
+    runs-on: ubuntu-26.04
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Kør robotten (uden dagsloft)
+        run: node auto-youtube.mjs --ignorer-loft
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Ret forældede linktekster
+        run: node ret-linktekster.mjs --skriv
+
+      - name: Tjek indholdet
+        run: node audit-content.mjs
+
+      - name: Tjek interne links
+        run: node audit-interne-links.mjs
+
+      - name: Byg sitet
+        run: npm run build
+
+      - name: Tjek det færdige site
+        run: node audit-site.mjs
+
+      # Gemmer på en NY gren og pusher kun den. main røres ikke.
+      - name: Gem på egen gren (udgives ikke)
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          GREN="udkast-${{ github.run_number }}"
+          git checkout -b "$GREN"
+          git add .
+          if git commit -m "Prøveartikel ${{ github.run_number }} (udgives ikke)"; then
+            git push origin "$GREN"
+            {
+              echo "## Prøveartikel på grenen \`$GREN\` — IKKE udgivet"
+              for f in $(git diff --name-only --diff-filter=A HEAD~1 -- src/content/videos); do
+                echo "- **$(grep -m1 '^title:' "$f" | sed 's/^title: *//')**"
+                echo "  - søgespørgsmål: $(grep -m1 '^targetQuestion:' "$f" | sed 's/^targetQuestion: *//')"
+                echo "  - fil: \`$f\`"
+              done
+              echo ""
+              echo "Forhåndsvisning: se tjekket \"Cloudflare Pages\" på commit'en."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## Ingen artikel skrevet — se loggen for 'Kør robotten'" >> "$GITHUB_STEP_SUMMARY"
+          fi
