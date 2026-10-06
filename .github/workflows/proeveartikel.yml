@@ -62,6 +62,13 @@ jobs:
           GREN="udkast-${{ github.run_number }}"
           git checkout -b "$GREN"
           git add .
+          # Kørsel #1 (6/10) blev grøn uden artikel: robotten afviste alle videoer som irrelevante og
+          # ændrede kun tried-questions.json. Uden ny artikel oprettes ingen gren — oversigten siger det i stedet.
+          if [ -z "$(git diff --cached --name-only --diff-filter=A -- src/content/videos)" ]; then
+            echo "## Ingen artikel skrevet — der er ikke oprettet nogen gren" >> "$GITHUB_STEP_SUMMARY"
+            echo "Årsagen står i loggen for trinnet 'Kør robotten (uden dagsloft)' (typisk: ingen relevant video til søgespørgsmålet)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           if git commit -m "Prøveartikel ${{ github.run_number }} (udgives ikke)"; then
             git push origin "$GREN"
             {
