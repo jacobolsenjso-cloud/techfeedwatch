@@ -62,6 +62,19 @@ for (const mappe of MAPPER) {
       if (!(sektion in findes)) { doede.push({ fil: `${mappe}/${f}`, link: raa, hvorfor: `ukendt sektion "${sektion}"` }); continue; }
       if (!findes[sektion].has(rest)) doede.push({ fil: `${mappe}/${f}`, link: raa, hvorfor: `findes ikke i ${sektion}` });
     }
+    // Ødelagt link-syntaks, som mønsteret ovenfor ikke ser (fundet 6/10-2026: 7 links stod som rå tekst live).
+    // a) mellemrum i adressen: markdown laver det ikke til et link, læseren ser "[tekst](/video/...)".
+    for (const m of tekst.matchAll(/\]\((\/[^)\n]*\s[^)\n]*)\)/g)) {
+      tjekket++;
+      doede.push({ fil: `${mappe}/${f}`, link: m[1], hvorfor: 'mellemrum i adressen - vises som rå tekst' });
+    }
+    // b) link uden "[" foran linkteksten: kun "...](/adresse)" står tilbage som rå tekst.
+    for (const linje of tekst.split('\n')) {
+      for (const m of linje.matchAll(/\]\((\/[^)\s]*)\)/g)) {
+        const foer = linje.slice(0, m.index);
+        if (foer.lastIndexOf('[') <= foer.lastIndexOf(']')) doede.push({ fil: `${mappe}/${f}`, link: m[1], hvorfor: 'mangler "[" foran linkteksten - vises som rå tekst' });
+      }
+    }
   }
 }
 

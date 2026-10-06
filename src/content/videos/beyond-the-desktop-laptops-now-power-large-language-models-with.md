@@ -25,7 +25,7 @@ faqs:
   - question: "Is there a tool to calculate LLM memory needs?"
     answer: "Yes, an online LLM Memory calculator exists to help estimate the required memory based on the model's parameters, data type, and quantization levels. This tool provides a practical guide before hardware investment."
   - question: "What is the significance of unified memory for local LLMs?"
-    answer: "Unified memory, as seen in Apple Silicon, allows the CPU and GPU to share the same pool of RAM. This architecture is highly efficient for LLMs, eliminating data transfer bottlenecks and making more memory available to the GPU for model inference.  ***  A local Large Language Model (LLM) needs a significant amount of memory, typically far more than what a casual user expects."
+    answer: "Unified memory, as seen in Apple Silicon, allows the CPU and GPU to share the same pool of RAM. This architecture is highly efficient for LLMs, eliminating data transfer bottlenecks and making more memory available to the GPU for model inference. A local Large Language Model (LLM) needs a significant amount of memory, typically far more than what a casual user expects."
 ---
 
 Running Large Language Models on local hardware is increasingly feasible for enthusiasts and professionals alike, yet the question of how much memory is truly needed remains central. The answer is nuanced, depending on the specific LLM, its size, and the desired performance, but fundamentally, it boils down to having ample, fast memory directly accessible by the AI processing units.

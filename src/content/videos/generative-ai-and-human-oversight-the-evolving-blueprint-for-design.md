@@ -23,7 +23,7 @@ faqs:
   - question: "What does 'Human-in-the-Loop' mean in product design with AI?"
     answer: "Human-in-the-Loop design integrates human expertise directly into the AI-driven workflow. While AI generates initial concepts and options, human designers actively evaluate, score, and refine these outputs, guiding the AI towards desired outcomes and ensuring creative control."
   - question: "Can generative AI design complex architectural details?"
-    answer: "Yes, generative AI can design complex elements. For example, it can create intricate `Sakura Details` for a building facade, working step-by-step to integrate specific aesthetic and structural components into a design."
+    answer: "Yes, generative AI can design complex elements. For example, it can create intricate Sakura Details for a building facade, working step-by-step to integrate specific aesthetic and structural components into a design."
   - question: "Why is human input still essential when using generative AI for design?"
     answer: "Human input remains essential because AI alone often cannot fully account for nuanced aesthetic preferences, contextual understanding, emotional impact, or real-world practical constraints. Humans provide critical evaluation, ethical considerations, and strategic direction that AI models currently lack."
 ---

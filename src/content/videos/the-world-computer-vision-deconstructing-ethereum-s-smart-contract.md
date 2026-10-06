@@ -22,7 +22,7 @@ faqs:
   - question: "What is the Ethereum World State?"
     answer: "The Ethereum World State is the global data layer of the Ethereum blockchain. It contains all account balances, contract code, and contract storage, representing the current state of the entire network. All complex mechanisms in Ethereum exist to support and maintain this state."
   - question: "How do smart contract addresses differ from regular account addresses?"
-    answer: "Regular account addresses are derived from a private key, which allows a user to sign transactions. Smart contract addresses are not linked to a private key; they are derived from the deployer's address and nonce, or through methods like `CREATE2`. This makes contract addresses identifiers rather than keys for signing."
+    answer: "Regular account addresses are derived from a private key, which allows a user to sign transactions. Smart contract addresses are not linked to a private key; they are derived from the deployer's address and nonce, or through methods like CREATE2. This makes contract addresses identifiers rather than keys for signing."
   - question: "What is a function selector and how does it work?"
     answer: "A function selector is the first 4 bytes of the hash of a smart contract function's signature (its name and argument types). When a transaction calls a contract, its bytecode includes logic to compare the incoming call data's selector against known function selectors. This allows the contract to route execution to the correct function, as the EVM itself does not natively understand function names."
   - question: "What is the Application Binary Interface (ABI)?"

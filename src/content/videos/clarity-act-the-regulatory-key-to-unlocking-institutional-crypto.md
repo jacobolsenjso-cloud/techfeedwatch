@@ -25,7 +25,7 @@ faqs:
   - question: "What benefits does tokenization offer investors?"
     answer: "Tokenization can provide benefits such as fractional ownership, increased liquidity for illiquid assets, and potentially lower transaction costs and faster settlement times due to blockchain's inherent efficiencies."
   - question: "How is AI connected to financial asset tokenization?"
-    answer: "AI and blockchain are converging to enable new financial applications, including machine-to-machine payments and advanced automated trading systems that can leverage tokenized assets for greater efficiency and smart contract execution.  ***  Tokenization of financial assets involves converting the value or ownership rights of a physical or traditional asset into a digital token on a blockchain."
+    answer: "AI and blockchain are converging to enable new financial applications, including machine-to-machine payments and advanced automated trading systems that can leverage tokenized assets for greater efficiency and smart contract execution. Tokenization of financial assets involves converting the value or ownership rights of a physical or traditional asset into a digital token on a blockchain."
 ---
 
 Tokenization of financial assets involves converting the rights or ownership of real-world assets into digital tokens on a blockchain. This process transforms traditional assets like real estate, equities, or bonds into programmable digital units, enabling new forms of ownership, transfer, and management within the financial system.

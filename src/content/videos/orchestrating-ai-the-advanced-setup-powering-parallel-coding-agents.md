@@ -19,11 +19,11 @@ thumbMax: true
 isShort: false
 faqs:
   - question: "What are the main challenges of running multiple AI coding agents in parallel?"
-    answer: "The main challenges include agents overwriting each other's files, conflicting over Git branches or remote pushes, clashing for local development server ports (like `localhost 3000`), and breaking other sessions by changing shared project dependencies or build configurations. It can also be difficult to track what each agent is doing."
+    answer: "The main challenges include agents overwriting each other's files, conflicting over Git branches or remote pushes, clashing for local development server ports (like localhost 3000), and breaking other sessions by changing shared project dependencies or build configurations. It can also be difficult to track what each agent is doing."
   - question: "How do Git worktrees help in isolating AI coding agents?"
     answer: "Git worktrees allow each AI agent to work on a separate branch within its own dedicated folder, all from the same project. This means agents have isolated copies of the codebase, preventing them from overwriting each other's files or causing conflicts when switching or pushing to Git branches."
   - question: "What is the role of sandboxing in parallel AI agent development?"
-    answer: "Sandboxing runs each AI agent in a fully isolated, disposable development environment, typically a micro-virtual machine. This prevents agents from affecting the host system or other agents by containing all package installations, builds, and dependency changes within their specific sandbox, solving issues like `localhost` port clashes and dependency conflicts."
+    answer: "Sandboxing runs each AI agent in a fully isolated, disposable development environment, typically a micro-virtual machine. This prevents agents from affecting the host system or other agents by containing all package installations, builds, and dependency changes within their specific sandbox, solving issues like localhost port clashes and dependency conflicts."
   - question: "Can AI agents manage other AI agents in a parallel development setup?"
     answer: "Yes, modern AI models are capable of orchestrating parallel development. A planning agent can break a large feature into subtasks, then spin up and manage separate sandboxes for each subtask. This central agent oversees the work, pulls in changes from completed sandboxes, and ensures overall coordination."
 rewrittenAt: "2026-08-18"

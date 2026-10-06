@@ -22,7 +22,7 @@ faqs:
   - question: "What is quant finance with Python?"
     answer: "Quant finance with Python uses programming and computational tools, primarily Python and its libraries, to analyze financial data, manage risk, and make investment decisions. It allows for the translation of complex financial concepts into reproducible code for data-driven insights."
   - question: "Which Python libraries are commonly used in quantitative finance?"
-    answer: "Key libraries include NumPy for numerical operations, Pandas for data structuring and manipulation, and Matplotlib for data visualization. Libraries like `yFinance` are also used for fetching financial market data."
+    answer: "Key libraries include NumPy for numerical operations, Pandas for data structuring and manipulation, and Matplotlib for data visualization. Libraries like yFinance are also used for fetching financial market data."
   - question: "How are returns calculated in Python for quantitative finance?"
     answer: "Single-period returns are found by comparing current and previous prices, often using a '1+R' format. For multi-period returns, geometric linking is used, which involves multiplying '1+R' values for each period, rather than simply adding returns, to accurately account for compounding and variance drag."
   - question: "What is a wealth index and why is it used?"
