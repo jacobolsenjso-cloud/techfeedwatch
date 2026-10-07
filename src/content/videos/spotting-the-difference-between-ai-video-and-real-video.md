@@ -12,8 +12,8 @@ summary: "Real video captures optical light bouncing off physical matter, while 
 metaDescription: "Spot the difference between ai video and real video by examining physical coherence, skin micro-textures, and unnatural camera drift across dynamic shots."
 targetQuestion: "difference between ai video and real video"
 duration: "17:49"
-viewCount: 35935
-viewsUpdated: "2026-10-04"
+viewCount: 35968
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 faqs:

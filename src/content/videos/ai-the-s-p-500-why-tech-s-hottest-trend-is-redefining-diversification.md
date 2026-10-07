@@ -12,8 +12,8 @@ summary: "The S&P 500, often considered the benchmark for diversified market exp
 metaDescription: "Understand S&P 500 diversification risk. Explore how market concentration, driven by the Magnificent 7 and AI, impacts investment portfolios."
 targetQuestion: "s&p 500 diversification risk"
 duration: "12:02"
-viewCount: 769459
-viewsUpdated: "2026-10-04"
+viewCount: 776697
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

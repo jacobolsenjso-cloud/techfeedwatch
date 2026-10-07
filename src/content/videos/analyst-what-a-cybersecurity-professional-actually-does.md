@@ -11,8 +11,8 @@ summary: "A Cybersecurity Analyst plays a critical role in protecting an organiz
 metaDescription: "Understand what a Cybersecurity Analyst does daily, including real salary expectations, key tools, and career paths. Get the facts on this critical role."
 targetQuestion: "what is a cybersecurity analyst"
 duration: "10:23"
-viewCount: 907
-viewsUpdated: "2026-10-04"
+viewCount: 948
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

@@ -12,8 +12,8 @@ summary: "Yes, you can add text to video in iMovie using built-in title template
 metaDescription: "Can you add text to video in iMovie? Discover how iMovie handles titles, bullet points, font customization, and static text workarounds on macOS."
 targetQuestion: "can you add text to video in imovie"
 duration: "19:32"
-viewCount: 2856
-viewsUpdated: "2026-10-04"
+viewCount: 2898
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 faqs:

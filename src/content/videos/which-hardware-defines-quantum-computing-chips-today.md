@@ -12,8 +12,8 @@ summary: "Quantum computing chips replace binary silicon transistors with physic
 metaDescription: "Wondering what are quantum computing chips? Explore how quantum processors operate, compare physical qubit architectures, and evaluate industry progress."
 targetQuestion: "what are quantum computing chips"
 duration: "6:31"
-viewCount: 279681
-viewsUpdated: "2026-10-05"
+viewCount: 279734
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 faqs:

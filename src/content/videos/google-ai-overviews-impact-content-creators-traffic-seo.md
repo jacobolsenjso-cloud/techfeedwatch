@@ -12,8 +12,8 @@ summary: "Google AI Overviews significantly impact organic search traffic for co
 metaDescription: "Understand how Google AI Overviews dramatically reduce organic search traffic, misrepresent content, and impact creator revenue. Learn what creators face."
 targetQuestion: "how do ai overviews impact organic search traffic"
 duration: "17:12"
-viewCount: 16734
-viewsUpdated: "2026-10-04"
+viewCount: 16779
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

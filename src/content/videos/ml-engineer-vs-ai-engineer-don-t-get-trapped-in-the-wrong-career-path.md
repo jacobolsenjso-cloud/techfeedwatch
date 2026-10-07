@@ -11,8 +11,8 @@ summary: "The roles of Machine Learning Engineer and AI Engineer, though related
 metaDescription: "Understand the critical difference between Machine Learning Engineer and AI Engineer roles, their responsibilities, and career paths in 2026."
 targetQuestion: "difference between machine learning engineer and ai engineer"
 duration: "5:37"
-viewCount: 417389
-viewsUpdated: "2026-10-04"
+viewCount: 420205
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

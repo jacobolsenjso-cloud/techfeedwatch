@@ -12,8 +12,8 @@ summary: "Augmented reality provides direct operational benefits by compressing 
 metaDescription: "Discover the primary advantages of augmented reality in workforce training, boosting retention to 90% and cutting learning times across technical roles."
 targetQuestion: "advantages of augmented reality"
 duration: "8:43"
-viewCount: 72
-viewsUpdated: "2026-10-04"
+viewCount: 73
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 faqs:

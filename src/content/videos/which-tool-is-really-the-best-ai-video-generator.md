@@ -12,8 +12,8 @@ summary: "Identifying the best AI video generator requires separating isolated r
 metaDescription: "Wondering what is the best AI video generator? Compare free high-resolution tools against reasoning-driven director workflows for video creation."
 targetQuestion: "what is the best ai video generator"
 duration: "10:18"
-viewCount: 94841
-viewsUpdated: "2026-10-04"
+viewCount: 97906
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 faqs:

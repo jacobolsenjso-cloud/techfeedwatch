@@ -12,8 +12,8 @@ summary: "Computer and robotics education is an interdisciplinary field equippin
 metaDescription: "Explore what computer and robotics education entails, from fundamental coding to advanced robotics."
 targetQuestion: "what is computer and robotics education"
 duration: "2:03:20"
-viewCount: 10
-viewsUpdated: "2026-10-04"
+viewCount: 11
+viewsUpdated: "2026-10-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"
