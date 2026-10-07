@@ -25,7 +25,7 @@ faqs:
     answer: "CapCut deploys Dreamina Seedance 2.0 alongside Seedance 2.0 Mini for motion generation. Users can alternate between them depending on generation speed, credit cost, and visual fidelity requirements."
 ---
 
-To use text to video in CapCut, launch the AI Video Studio tool and type your descriptive concept prompt into the project creation window. Next, select either the Standard or Director option to generate a structured storyboard, lock your character references, and render individual video shots.
+To use [text to video](/video/imovie-text-guide-can-you-add-text-to-video-in-imovie/) in CapCut, launch the AI Video Studio tool and type your descriptive concept prompt into the project creation window. Next, select either the Standard or Director option to generate a structured storyboard, lock your character references, and render individual video shots.
 
 Moving past standard timeline templates into this dedicated workspace structures text-to-video production as a modular directing pipeline rather than relying on a one-click automated export that sacrifices consistency.
 
@@ -61,7 +61,7 @@ Creators feed in concise shot parameters: camera moves, specific actions, and en
 
 Expectation management matters here. You are directing a series of short, beautiful shots, not a full 10-minute movie in one click. Most individual generations land at around 8 seconds each.
 
-Managing resource consumption is part of the process. Creators can switch to Seedance 2.0 Mini, which delivers faster generation, lower cost, and impressive visual quality. Until July 22nd, Seedance 2.0 Mini costs up to 55% less than Seedance 2.0, while platform credits sit at 33% off.
+Managing resource consumption is part of the process. Creators can switch to Seedance 2.0 Mini, which delivers faster generation, lower cost, and impressive visual quality.
 
 Iterating on imperfect outputs does not require starting over. If a rendered segment deviates from your goal, you press Tab on the same canvas and describe exactly what you want, like making the character walk toward the buildings.
 

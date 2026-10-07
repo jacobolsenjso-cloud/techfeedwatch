@@ -58,7 +58,7 @@ These agents are not just theoretical constructs; they are actively being develo
 
 This initiative exemplifies the accessibility of advanced AI agent technology, encouraging broader experimentation and innovation. As Matthew Berman points out regarding the enthusiasm for these tools, developers are eager to "try these open-source AI projects RIGHT NOW."
 
-The community aspect also means that resources and knowledge are often shared freely. For example, the code "FORWARDFUTUREAI" provides a 33% discount for certain services, demonstrating how even commercial aspects can integrate with and support the open source ecosystem, fostering wider adoption and developer engagement.
+The community aspect also means that resources and knowledge are often shared freely, fostering wider adoption and developer engagement.
 
 ## What To Actually Do
 

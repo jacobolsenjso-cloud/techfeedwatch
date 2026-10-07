@@ -25,7 +25,7 @@ faqs:
   - question: "Is the NIST Cybersecurity Framework primarily for large corporations?"
     answer: "While comprehensive, the NIST CSF 2.0 is designed to be adaptable for organizations of all sizes, including small businesses (SMBs). It provides a scalable approach that does not require an extensive security background to begin implementing."
   - question: "Are there free resources available to help implement NIST CSF 2.0?"
-    answer: "Yes, organizations like HailBytes offer free, NIST CSF-aligned security policy templates on platforms like GitHub. These resources can help businesses establish foundational cybersecurity policies and practices."
+    answer: "Yes, free NIST CSF-aligned security policy templates are available on platforms like GitHub. These resources can help businesses establish foundational cybersecurity policies and practices."
 ---
 
 Applying the NIST Cybersecurity Framework (CSF) involves systematically integrating its principles and practices into an organization's operations to manage and reduce digital risk. This framework offers a flexible, structured method for companies, especially [Small Business] and [SMBs] without extensive security teams, to improve their cyber defenses through a proactive approach that covers strategy, incident response, and recovery.
@@ -42,7 +42,7 @@ The framework's power lies in its comprehensive yet adaptable structure. After g
 
 Finally, "Recover" focuses on planning for resilience and restoring normal operations after a cybersecurity incident. This ensures business continuity and minimizes long-term damage, completing the proactive cycle. As [HailBytes] points out, getting started does not require large investments.
 
-For instance, they publish free, [NIST CSF-aligned security policy templates] for [SMBs] on [GitHub], which helps organizations establish clear guidelines without significant cost. For the training piece, [HailBytes SAT] runs awareness training self-hosted in an organization's own cloud, providing a practical example of how to build internal capabilities.
+For instance, free NIST CSF-aligned security policy templates for small and midsize businesses are available on GitHub, which helps organizations establish clear guidelines without significant cost. Security awareness training can also run self-hosted in an organization's own cloud, a practical way to build internal capabilities.
 
 ## Applying the NIST CSF Functions
 
@@ -50,7 +50,7 @@ To use the framework effectively, organizations first establish a governance str
 
 Monitoring systems help detect breaches early, triggering a pre-defined response plan that contains the incident and restores functionality. The framework is not a one-time setup; it encourages continuous improvement and adaptation to evolving threats, making it a dynamic tool for digital defense.
 
-While the framework itself costs nothing, successful implementation involves investments in tools, personnel, and ongoing training, much like any strategic business initiative. However, resources like those from HailBytes demonstrate avenues for cost-effective adoption, lowering barriers for smaller entities.
+While the framework itself costs nothing, successful implementation involves investments in tools, personnel, and ongoing training, much like any strategic business initiative. However, free templates and self-hosted training demonstrate avenues for cost-effective adoption, lowering barriers for smaller entities.
 
 ## The Bottom Line
 
