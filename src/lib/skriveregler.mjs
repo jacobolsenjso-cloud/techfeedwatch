@@ -88,6 +88,10 @@ export function saetninger(tekst) {
     // Inde i et link: [tekst. Mere](url) — knæk aldrig der.
     const foerTekst = t.slice(start, k);
     if ((foerTekst.match(/\[/g) || []).length > (foerTekst.match(/\]/g) || []).length) continue;
+    // Inde i et citat — knæk aldrig der. Prøve #6 (7/10) fik replikken
+    // "…is being generated. It should be ready in one or two minutes." delt i to afsnit.
+    const indtil = t.slice(0, k);
+    if ((indtil.match(/"/g) || []).length % 2 === 1 || (indtil.match(/“/g) || []).length > (indtil.match(/”/g) || []).length) continue;
     if (FORK.test(t.slice(Math.max(start, i - 12), i + 1))) continue;
     ud.push(t.slice(start, k)); start = k + 1; i = k;
   }

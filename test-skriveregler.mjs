@@ -9,6 +9,7 @@
 //        node test-skriveregler.mjs --artikel <fil>  -> reglernes tal for én artikel
 import fs from 'fs';
 import * as R from './src/lib/skriveregler.mjs';
+import { fjernForbudteOrd } from './src/lib/forbudt.mjs';
 
 const ai = process.argv.indexOf('--artikel');
 if (ai > -1) {
@@ -41,6 +42,10 @@ function t(navn, betingelse) {
 // --- Sætninger og blokke ---
 t('sætninger: knækker ikke efter U.S. og e.g.', R.saetninger('Data from the U.S. Bureau shows growth. Tools, e.g. ChatGPT, help.').length === 2);
 t('sætninger: knækker ikke inde i et link', R.saetninger('Read [the guide. It helps](/video/x) today. Then act.').length === 2);
+t('sætninger: knækker ikke inde i et citat', R.saetninger('It shows "Your video is being generated. It should be ready soon." Then it plays.').length === 2);
+t('forbudt: "Navigate to Settings" bliver "Move to Settings"', fjernForbudteOrd('Navigate to Settings and open it.') === 'Move to Settings and open it.');
+t('forbudt: "navigating through pages" bliver "moving through pages"', fjernForbudteOrd('Tools handle navigating through pages.') === 'Tools handle moving through pages.');
+t('forbudt: "navigate risks" bliver stadig "handle risks"', fjernForbudteOrd('Teams navigate risks daily.') === 'Teams handle risks daily.');
 t('sætninger: teksten er uændret', R.saetninger('One. Two! Three?').join(' ') === 'One. Two! Three?');
 t('blokke: liste lige under afsnit uden tom linje', R.blokke('Intro text here:\n- one\n- two').map((b) => b.type).join(',') === 'p,liste');
 t('blokke: tom linje mellem listepunkter er samme liste', R.lister('- a\n\n- b\n\n- c').length === 1);
@@ -110,7 +115,7 @@ t('fyld: udpeget sætning fjernes', fj.fjernet === 1 && !fj.md.includes('This ma
 t('fyld: et afsnits eneste sætning fjernes aldrig', R.fjernSaetninger('Intro.\n\nOnly one generic sentence stands here alone.', ['Only one generic sentence stands here alone.'], 5).fjernet === 0);
 
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 43;
+const FORVENTET = 47;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);
