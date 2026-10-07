@@ -9,11 +9,19 @@ name: Prøveartikel (udgives ikke)
 # - --ignorer-loft: dagsloftet må ikke forhindre en prøve.
 # - robot-status.json skrives IKKE: den beskriver den udgivne robot, ikke prøver.
 # - Grenen flettes aldrig automatisk ind. Grene slettes kun med Jacobs ok.
-# - Cloudflare Pages laver en forhåndsvisning af grenen; adressen står i
-#   commit'ens tjek ("Cloudflare Pages") på GitHub.
+# - Cloudflare Pages laver en forhåndsvisning af grenen, men en bevidst Bulk
+#   Redirect sender *.pages.dev til techfeedwatch.com (målt 6/10) — læs udkastet
+#   på GitHub under grenen.
+# - Feltet "emne" (valgfrit) vælger emnet. En prøve uden artikel gemmer ikke
+#   prøvede spørgsmål, så uden feltet kan næste prøve tage det samme igen.
 
 on:
   workflow_dispatch:
+    inputs:
+      emne:
+        description: "Emne (valgfrit, fx 'AI Video'). Tomt = robotten vælger som normalt."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -43,6 +51,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PROEVE_EMNE: ${{ inputs.emne }}
 
       - name: Ret forældede linktekster
         run: node ret-linktekster.mjs --skriv
@@ -87,7 +96,7 @@ jobs:
                 echo ""
               done
               echo ""
-              echo "Læs artiklen på GitHub under grenen. Forhåndsvisningen på pages.dev sender p.t. videre til techfeedwatch.com (6/10, årsag ikke fundet i koden)."
+              echo "Læs artiklen på GitHub under grenen. Forhåndsvisningen på pages.dev virker ikke: en bevidst Bulk Redirect i Cloudflare sender *.pages.dev til techfeedwatch.com."
             } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "## Ingen artikel skrevet — se loggen for 'Kør robotten'" >> "$GITHUB_STEP_SUMMARY"

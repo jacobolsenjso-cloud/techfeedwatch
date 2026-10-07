@@ -534,7 +534,14 @@ async function findNewestVideos() {
   const runBudget = process.argv.includes('--ignorer-loft') ? MAX_NORMAL_PER_RUN : Math.min(MAX_NORMAL_PER_RUN, remainingToday);
 
   const counts = countArticlesByTag();
-  const tag = pickThinnestTag(counts);
+  // PROEVE_EMNE sættes KUN af "Prøveartikel"-workflowet (valgfrit felt). En prøve
+  // uden artikel gemmer ikke, hvilke spørgsmål den prøvede, så uden feltet valgte
+  // prøve #4 og #5 (7/10) det samme SEO-spørgsmål igen. Den daglige robot sætter
+  // det aldrig, og et ukendt emne ignoreres.
+  const tvunget = process.env.PROEVE_EMNE && TOPIC_BY_TAG[process.env.PROEVE_EMNE] ? process.env.PROEVE_EMNE : null;
+  if (process.env.PROEVE_EMNE && !tvunget) console.log(`Info: PROEVE_EMNE "${process.env.PROEVE_EMNE}" findes ikke — vælger som normalt.`);
+  const tag = tvunget || pickThinnestTag(counts);
+  if (tvunget) console.log(`Info: Prøve: emnet er valgt i workflowet: "${tvunget}"`);
   const topic = TOPIC_BY_TAG[tag];
 
   // Emnet siger HVAD vi skriver om. Spørgsmålet siger hvad nogen faktisk
