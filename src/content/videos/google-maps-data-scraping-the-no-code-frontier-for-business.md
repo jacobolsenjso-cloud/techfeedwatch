@@ -46,7 +46,7 @@ The rise of no-code tools has made Google Maps data scraping accessible to a wid
 
 They define their search parameters, such as keywords like "pizza restaurants" or "coffee shops," and specify a location like "New York." They can also set limits, for example, to extract a certain number of results per search query. Two such queries could yield many businesses.
 
-These no-code solutions handle the technical complexities behind the scenes. They manage tasks like handling through multiple pages of search results, automatically retrying requests that fail, and rotating proxy servers to avoid detection. This ensures a smoother and more reliable data extraction process.
+These no-code solutions handle the technical complexities behind the scenes. They manage tasks like moving through multiple pages of search results, automatically retrying requests that fail, and rotating proxy servers to avoid detection. This ensures a smoother and more reliable data extraction process.
 
 Runs can complete quickly, often within a few seconds to a few minutes, depending on the amount of data requested. Many platforms offer initial free credit, such as five dollars, which can be enough to process five thousand businesses, often without requiring a credit card to start.
 

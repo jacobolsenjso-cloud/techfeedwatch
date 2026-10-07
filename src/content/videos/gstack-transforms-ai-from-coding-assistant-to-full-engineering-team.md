@@ -52,7 +52,7 @@ It also incorporates multi-step adversarial review, which automatically identifi
 
 G-Stack's capabilities extend to tackling the often-tedious aspects of software quality assurance. Garry Tan notes that the QA process became a bottleneck as AI agents accelerated other stages. To address this, he built slash QA and slash browse tools by wrapping Playwright at the CLI level, providing a full headed and headless Chromium browser.
 
-These tools enable AI agents to perform browser automation tasks like logging in, handling to tax documents, downloading PDFs, taking screenshots, executing complex interactions, and running full regression tests. This significantly reduces manual QA effort, moving towards what Tan calls a "level seven" software factory, though not yet the ideal "level eight."
+These tools enable AI agents to perform browser automation tasks like logging in, going to tax documents, downloading PDFs, taking screenshots, executing complex interactions, and running full regression tests. This significantly reduces manual QA effort, moving towards what Tan calls a "level seven" software factory, though not yet the ideal "level eight."
 
 Garry Tan personally utilizes G-Stack to run 10 to 15 parallel Claude code sessions simultaneously, allowing him to manage tens of thousands of stars across multiple open-source projects and review hundreds of pull requests daily. This workflow enables him to ship 10, 15, 20, sometimes 50 PRs in any given day.
 

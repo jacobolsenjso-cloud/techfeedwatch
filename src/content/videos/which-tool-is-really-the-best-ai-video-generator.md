@@ -45,7 +45,7 @@ The older P-Video model features its own independent allocation counter, allowin
 
 However, operating inside a server session without an account introduces a critical operational hazard. Pruna does not store generation histories in a cloud locker.
 
-If a creator refreshes the browser tab, switches models, or handles away, the rendered file disappears permanently from the cache. Successful use demands immediate local downloads the moment rendering completes.
+If a creator refreshes the browser tab, switches models, or moves away, the rendered file disappears permanently from the cache. Successful use demands immediate local downloads the moment rendering completes.
 
 Raw text-to-video output also struggles with complexity. Single-shot prompts delivered straight to video engines often look unfinished, exhibiting distorted motion or drifting aesthetics. For creators wanting to move past simple visual experiments, mastering [AI Video Generator Usage: Mastering Free Text-to-Video Tools](/video/ai-video-generator-how-to-create-dynamic-visual-content) requires structural direction rather than endless prompt tweaking.
 
@@ -61,7 +61,7 @@ Instead of manually wrestling with video prompts across multiple tabs, creators 
 
 Higgsfield functions as an aggregation platform housing premier media models, eliminating the friction of managing separate software subscriptions. By leveraging the open Model Context Protocol (MCP), creators bridge Claude directly to Higgsfield's backend. Setting up the pipeline takes seconds inside the Claude desktop client:
 
-1. Handle to Settings and locate Connectors.
+1. Go to Settings and locate Connectors.
 2. Select Add custom connector.
 3. Label the connector Higgsfield.
 4. Paste the dedicated MCP server URL retrieved from the Higgsfield platform settings.

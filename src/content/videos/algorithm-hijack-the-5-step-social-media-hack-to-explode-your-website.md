@@ -39,7 +39,7 @@ This method begins by pinpointing where your target audience congregates online.
 
 The objective is to find content currently experiencing a rapid surge in popularity, typically within the last 24 hours to 72 hours, and directly relevant to your niche.
 
-On Reddit, for example, users can handle to 1 or 2 relevant subreddits and sort posts by "rising" rather than "hot" or "top." The "rising" filter highlights threads actively gaining momentum just before they peak.
+On Reddit, for example, users can go to 1 or 2 relevant subreddits and sort posts by "rising" rather than "hot" or "top." The "rising" filter highlights threads actively gaining momentum just before they peak.
 
 This allows content creators to engage with a trend while it is still building, capitalizing on Reddit's time-decay algorithm, which gradually reduces the visibility of older posts to keep the feed fresh. This creates a window of opportunity for new, relevant content.
 

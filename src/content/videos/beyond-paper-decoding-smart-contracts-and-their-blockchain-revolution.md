@@ -86,6 +86,6 @@ For anyone operating within the crypto space, understanding how to interact with
 
 By using Etherscan, users can gain insights into how they interact with the blockchain, smart contracts, and dApps. This knowledge is important for staying informed and spotting potentially suspicious behavior. The information available typically includes associated transactions, addresses, timestamps, and amounts.
 
-As an example, examining Yearn Finance's (YFI) smart contract on Etherscan reveals specific details. By handling to the contract tab for the YFI token, users can find basic information such as the fact that YFI is a token with 18 decimals, it has a separate governance contract, and its maximum total supply is 36,666 tokens.
+As an example, examining Yearn Finance's (YFI) smart contract on Etherscan reveals specific details. By going to the contract tab for the YFI token, users can find basic information such as the fact that YFI is a token with 18 decimals, it has a separate governance contract, and its maximum total supply is 36,666 tokens.
 
 This level of transparency empowers users to perform their own research and verify the details of the digital agreements they engage with. Given the early stage of smart contract development and the potential for security issues, user diligence in scrutinizing code is paramount.

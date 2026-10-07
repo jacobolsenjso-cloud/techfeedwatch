@@ -83,7 +83,7 @@ Excessive imagery can distract from the core message and slow down page load tim
 
 Critically, landing pages should avoid any form of distraction. This means no links to other services, no banner ads, and no complex navigation menus. The only link present should typically be the call to action.
 
-The page's design should funnel the user directly towards the conversion goal, without offering alternative paths that could lead them away. Users should not have to handle through multiple pages to complete a single action, such as signing up for a newsletter. All necessary information and the sign-up form should ideally reside on one page.
+The page's design should funnel the user directly towards the conversion goal, without offering alternative paths that could lead them away. Users should not have to click through multiple pages to complete a single action, such as signing up for a newsletter. All necessary information and the sign-up form should ideally reside on one page.
 
 Accuracy and professionalism also build trust. Grammatical errors and spelling mistakes can create a negative impression of a company. Content should be thoroughly proofread, perhaps by multiple people or a professional copywriter, to ensure it is flawless.
 

@@ -56,7 +56,7 @@ For instance, a campaign might start with a modest daily spend, then scale to $1
 
 ## Strategic Account Setup and Budget Allocation
 
-Effective advertising on Pinterest extends beyond just compelling creatives; it requires a thoughtful account setup. A well-structured profile with strong branding is essential, as users often click on a creative to visit the profile before handling to the website.
+Effective advertising on Pinterest extends beyond just compelling creatives; it requires a thoughtful account setup. A well-structured profile with strong branding is essential, as users often click on a creative to visit the profile before moving to the website.
 
 This means creating 8 to 10 distinct boards, each containing 15 to 20 original pins, to showcase product categories and provide inspiration.
 

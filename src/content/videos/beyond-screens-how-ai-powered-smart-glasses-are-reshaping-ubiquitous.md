@@ -76,7 +76,7 @@ These devices, often larger than glasses, provide an expansive, infinite display
 
 In a headset environment, AI acts as a conversational companion that can assist with complex digital tasks. For example, it can organize multiple digital windows on a virtual desktop, manage travel itineraries, or bring up specific applications on command.
 
-The AI interprets user requests and intelligently executes actions, such as opening a maps application and handling to a desired location like Cape Town, all through natural conversation.
+The AI interprets user requests and intelligently executes actions, such as opening a maps application and heading to a desired location like Cape Town, all through natural conversation.
 
 These headsets also enable rich **exploration and learning**. Users can view detailed 3D models of locations worldwide, zooming in to city levels and receiving real-time information about landmarks, such as the cultural significance of Table Mountain.
 

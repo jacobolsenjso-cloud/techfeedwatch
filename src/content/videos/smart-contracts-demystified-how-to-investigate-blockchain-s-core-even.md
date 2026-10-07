@@ -79,7 +79,7 @@ It is important to reject such transactions, as accepting them could lead to maj
 
 While the "read contract" and "write contract" interfaces provide a high-level overview, inspecting the actual source code offers the deepest understanding. After familiarizing yourself with the contract's functions, you can examine the code line by line. This is particularly useful for understanding the exact logic behind a function, such as `upgradeCastleLevel()`, or how funds are handled.
 
-Smart contract code, often written in Solidity, can be complex. Contracts are frequently split into multiple files, requiring you to handle through different sections to find specific functions.
+Smart contract code, often written in Solidity, can be complex. Contracts are frequently split into multiple files, requiring you to move through different sections to find specific functions.
 
 For example, a `withdraw()` function might calculate half of a contract's balance to send to two specific addresses (W0 and W1). Solidity, which primarily uses integer arithmetic, often employs constructs like `balance * 5 / 10` to approximate half of a value, as it lacks native decimal support.
 
