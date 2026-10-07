@@ -6,6 +6,7 @@ import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
+import { retSpoergsmaal } from './src/lib/spoergsmaalsfilter.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -402,9 +403,11 @@ function faktaarkScoreFor(videoUrl, tag, qArg) {
   }
 }
 
-async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal) {
+// spoergsmaal: den rå søgning (gemmes som brugt). visSpoergsmaal: den rettede
+// udgave fra spørgsmålsfilteret — det er den, artiklen får som targetQuestion.
+async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal, visSpoergsmaal = spoergsmaal) {
   let processed = 0;
-  const qArg = spoergsmaal ? ` --question "${spoergsmaal.replace(/"/g, '')}"` : '';
+  const qArg = visSpoergsmaal ? ` --question "${visSpoergsmaal.replace(/"/g, '')}"` : '';
 
   // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
   const kandidater = [];
@@ -531,7 +534,14 @@ async function findNewestVideos() {
   const runBudget = process.argv.includes('--ignorer-loft') ? MAX_NORMAL_PER_RUN : Math.min(MAX_NORMAL_PER_RUN, remainingToday);
 
   const counts = countArticlesByTag();
-  const tag = pickThinnestTag(counts);
+  // PROEVE_EMNE sættes KUN af "Prøveartikel"-workflowet (valgfrit felt). En prøve
+  // uden artikel gemmer ikke, hvilke spørgsmål den prøvede, så uden feltet valgte
+  // prøve #4 og #5 (7/10) det samme SEO-spørgsmål igen. Den daglige robot sætter
+  // det aldrig, og et ukendt emne ignoreres.
+  const tvunget = process.env.PROEVE_EMNE && TOPIC_BY_TAG[process.env.PROEVE_EMNE] ? process.env.PROEVE_EMNE : null;
+  if (process.env.PROEVE_EMNE && !tvunget) console.log(`Info: PROEVE_EMNE "${process.env.PROEVE_EMNE}" findes ikke — vælger som normalt.`);
+  const tag = tvunget || pickThinnestTag(counts);
+  if (tvunget) console.log(`Info: Prøve: emnet er valgt i workflowet: "${tvunget}"`);
   const topic = TOPIC_BY_TAG[tag];
 
   // Emnet siger HVAD vi skriver om. Spørgsmålet siger hvad nogen faktisk
@@ -589,7 +599,10 @@ async function findNewestVideos() {
     console.log(`Info: Fandt ${normalItems.length} kandidater. Behandler maks ${runBudget}...`);
 
     const existingIds = loadExistingVideoIds();
-    const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal);
+    // Spørgsmålsfilteret køres først her, når der er kandidater — så det ikke
+    // koster tre modelkald på en runde, der alligevel ikke fandt videoer.
+    const visSpoergsmaal = spoergsmaal ? await retSpoergsmaal(spoergsmaal) : spoergsmaal;
+    const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal, visSpoergsmaal);
     processed += nu;
     if (nu === 0 && spoergsmaal) {
       markerSpoergsmaalProevet(spoergsmaal, tag);

@@ -15,6 +15,10 @@ const REGLER = [
   [/\bdelv(e|es|ed|ing)\b/gi, (m, e) => ({ e: 'dig', es: 'digs', ed: 'dug', ing: 'digging' })[e.toLowerCase()]],
   [/\btapestr(y|ies)\b/gi, (m, e) => (e.toLowerCase() === 'y' ? 'mix' : 'mixes')],
   [/\brealms?\b/gi, (m) => (m.endsWith('s') ? 'areas' : 'area')],
+  // "navigate" i betydningen at gå et sted hen ("navigate to Settings") må ikke blive
+  // "handle to Settings" (målt 7/10: 5 udgivne artikler og prøve #6 fik den slags vrøvl).
+  // Med en bevægelses-præposition efter bliver det "move"; ellers "handle" som før.
+  [/\b(N|n)avigat(e|es|ed|ing)(\s+(?:to|through|into|back|around|between|across|over|away|down|up|from)\b)/g, (m, n, e, p) => (n === 'N' ? 'M' : 'm') + ({ e: 'ove', es: 'oves', ed: 'oved', ing: 'oving' })[e.toLowerCase()] + p],
   [/\bnavigat(e|es|ed|ing)\b/gi, (m, e) => ({ e: 'handle', es: 'handles', ed: 'handled', ing: 'handling' })[e.toLowerCase()]],
   [/\blandscapes?\b/gi, (m) => (m.endsWith('s') ? 'fields' : 'field')],
   [/\b(is|are|was|were|remains|stands as|serves as)\s+a\s+testament\s+to\b/gi, (m, v) => `${v} proof of`],

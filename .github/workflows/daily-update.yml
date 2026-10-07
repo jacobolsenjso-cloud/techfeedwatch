@@ -37,6 +37,11 @@ jobs:
       - name: Installer dependencies
         run: npm install
 
+      # Selvtest af skrivereglerne (fase 2, 6/10-2026). Den kan fejle — og gør
+      # den det, er en regel gået i stykker, og så skal robotten ikke skrive.
+      - name: Selvtest af skrivereglerne
+        run: node test-skriveregler.mjs
+
       - name: Kør YouTube Robot
         run: node auto-youtube.mjs
         env:
