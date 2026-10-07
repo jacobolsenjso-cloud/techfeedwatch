@@ -49,6 +49,7 @@ t('frontmatter: fjernes også med BOM foran', R.brodtekst('\uFEFF---\ntitle: "x"
 
 // --- 2a Spørgsmålsfilter ---
 t('spørgsmål: lille grammatisk rettelse godkendes', R.godkendSpoergsmaal('what is ai content engine', 'what is an ai content engine').ok);
+t('spørgsmål: bøjning godkendes ("hopes" -> "does ... hope")', R.godkendSpoergsmaal('what search engine optimization hopes to increase', 'what does search engine optimization hope to increase').ok);
 t('spørgsmål: nyt emne afvises', !R.godkendSpoergsmaal('ai chips supply chain', 'how do semiconductors work').ok);
 t('spørgsmål: uændret afvises (intet at rette)', !R.godkendSpoergsmaal('what is mcp', 'What is MCP?').ok);
 t('spørgsmål: lang omskrivning afvises', !R.godkendSpoergsmaal('what is rag', 'what is retrieval augmented generation rag and how does it work').ok);
@@ -109,7 +110,7 @@ t('fyld: udpeget sætning fjernes', fj.fjernet === 1 && !fj.md.includes('This ma
 t('fyld: et afsnits eneste sætning fjernes aldrig', R.fjernSaetninger('Intro.\n\nOnly one generic sentence stands here alone.', ['Only one generic sentence stands here alone.'], 5).fjernet === 0);
 
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 42;
+const FORVENTET = 43;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);

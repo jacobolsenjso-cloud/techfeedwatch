@@ -116,8 +116,12 @@ export function godkendSpoergsmaal(raa, rettet) {
   const ordR = r.split(' '), ordRaa = String(raa).trim().split(/\s+/);
   if (ordR.length > ordRaa.length + 3) return { ok: false, hvorfor: 'for mange nye ord' };
   if (ordR.length < Math.max(2, ordRaa.length - 3)) return { ok: false, hvorfor: 'for mange ord fjernet' };
-  const stammerR = new Set(kerneord(r).map(stamme));
-  const mangler = kerneord(raa).filter((w) => !stammerR.has(stamme(w)));
+  // Bøjninger tæller som samme ord: "hopes" -> "hope" (prøve #4, 7/10: rettelsen
+  // "what does search engine optimization hope to increase" blev afvist for "mangler hopes").
+  // Samme behandling på begge sider: -ing/-ed væk (lange ord), så endelig s og e.
+  const rod = (w) => { let x = w.toLowerCase(); if (x.length > 5) x = x.replace(/(?:ing|ed)$/, ''); return stamme(x.replace(/([^s])s$/, '$1').replace(/e$/, '')); };
+  const stammerR = new Set(kerneord(r).map(rod));
+  const mangler = kerneord(raa).filter((w) => !stammerR.has(rod(w)));
   if (mangler.length) return { ok: false, hvorfor: `mangler ${mangler.join(', ')}` };
   return { ok: true, spoergsmaal: r };
 }
