@@ -30,7 +30,9 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-An autonomous AI agent is a sophisticated software system engineered to operate independently, making decisions, taking actions, and learning from its environment to achieve predefined goals without continuous human intervention. Unlike earlier AI applications that primarily served as productivity tools or "co-pilots," these agents are designed to be active participants in organizational processes, capable of identifying problems, proposing solutions, and implementing improvements through continuous, self-optimizing loops. This represents a fundamental shift from merely augmenting human capabilities to creating systems that can drive their own improvement and growth.
+An autonomous AI agent is a sophisticated software system engineered to operate independently, making decisions, taking actions, and learning from its environment to achieve predefined goals without continuous human intervention.
+
+Unlike earlier AI applications that primarily served as productivity tools or "co-pilots," these agents are designed to be active participants in organizational processes, capable of identifying problems, proposing solutions, and implementing improvements through continuous, self-optimizing loops. This represents a fundamental shift from merely augmenting human capabilities to creating systems that can drive their own improvement and growth.
 
 ## The Core Mechanism: Recursive AI Loops
 

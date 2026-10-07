@@ -29,31 +29,53 @@ Quantum computing chips are physical microprocessors that manipulate quantum bit
 
 ## What Are Quantum Computing Chips in Physical Reality?
 
-Strip away the marketing gloss, and a quantum computing chip is an engineered environment designed to protect quantum coherence while allowing precise mathematical gate operations. Classical computer chips compute using bits that exist strictly as electrical voltage values representing a zero or a one. Quantum processors exploit quantum mechanics. Their physical units operate in linear combinations of states called superposition, while interacting through entanglement to evaluate complex problem spaces simultaneously. To understand the foundational mechanics behind these architectures, consider [how is quantum computing different from classical computing?](/video/how-is-quantum-computing-different-from-classical-computing) at the gate level.
+Strip away the marketing gloss, and a quantum computing chip is an engineered environment designed to protect quantum coherence while allowing precise mathematical gate operations. Classical computer chips compute using bits that exist strictly as electrical voltage values representing a zero or a one.
+
+Quantum processors exploit quantum mechanics. Their physical units operate in linear combinations of states called superposition, while interacting through entanglement to evaluate complex problem spaces simultaneously. To understand the foundational mechanics behind these architectures, consider [how is quantum computing different from classical computing?](/video/how-is-quantum-computing-different-from-classical-computing) at the gate level.
 
 The physical construction of these processors depends entirely on the underlying qubit architecture. Building a machine that maintains coherence against ambient thermal vibrations, stray magnetic fields, and microscopic chip defects presents enormous engineering hurdles. Currently, the dominant tech players take wildly divergent paths to solve this hardware bottleneck. 
 
-[Google](https://www.google.com/), Amazon, and IBM construct their processors using superconducting circuits. These chips pattern tiny loops of superconducting metals, such as aluminum or niobium, onto silicon wafers. When cooled inside multi-stage dilution refrigerators to fractions of a degree above absolute zero, electrical resistance drops to zero. Paired electrons, known as Cooper pairs, tunnel across thin insulating barriers called Josephson junctions. This junction acts as a non-linear inductor, creating discrete, controllable quantum energy levels. 
+[Google](https://www.google.com/), Amazon, and IBM construct their processors using superconducting circuits. These chips pattern tiny loops of superconducting metals, such as aluminum or niobium, onto silicon wafers. When cooled inside multi-stage dilution refrigerators to fractions of a degree above absolute zero, electrical resistance drops to zero.
 
-Superconducting chips let engineers manipulate states using calibrated microwave pulses routed through coaxial cables. They operate fast. They scale with existing lithography processes. Yet they suffer from a crippling flaw: environmental noise quickly destroys the quantum state. A passing thermal fluctuation, material defect, or stray photon can flip a bit or randomize its quantum phase. To build a machine that executes error-corrected algorithms, engineers must link hundreds or thousands of physical qubits together simply to create one error-corrected logical qubit. This overhead forms the core debate around [Reasons Why Quantum Computing Will Help AI or Fail](/video/reasons-why-quantum-computing-will-help-ai-or-fail) when scaling enterprise workloads.
+Paired electrons, known as Cooper pairs, tunnel across thin insulating barriers called Josephson junctions. This junction acts as a non-linear inductor, creating discrete, controllable quantum energy levels.
+
+Superconducting chips let engineers manipulate states using calibrated microwave pulses routed through coaxial cables. They operate fast. They scale with existing lithography processes.
+
+Yet they suffer from a crippling flaw: environmental noise quickly destroys the quantum state. A passing thermal fluctuation, material defect, or stray photon can flip a bit or randomize its quantum phase.
+
+To build a machine that executes error-corrected algorithms, engineers must link hundreds or thousands of physical qubits together simply to create one error-corrected logical qubit. This overhead forms the core debate around [Reasons Why Quantum Computing Will Help AI or Fail](/video/reasons-why-quantum-computing-will-help-ai-or-fail) when scaling enterprise workloads.
 
 ## Why Is the Race for Topological Quantum Chips So Fierce?
 
 Because physical noise plagues superconducting architectures, alternative designs seek hardware-level noise suppression. [Microsoft](https://www.microsoft.com/en-us) took a radically different gamble: topological quantum computing. While competitors fabricate superconducting loops, Microsoft has been working on this for more than a decade to build a topological processor from the ground up.
 
-The premise behind a topological chip is structural defense. For topological quantum computing, one tries to create qubits whose states are protected by conservation laws. The conserved quantities are certain topological invariants, knots, and boundary conditions. Instead of storing quantum information in an isolated physical spot vulnerable to local thermal noise, a topological qubit braids quasi-particles across space. Local noise cannot easily unwind a global topological braid. 
+The premise behind a topological chip is structural defense. For topological quantum computing, one tries to create qubits whose states are protected by conservation laws. The conserved quantities are certain topological invariants, knots, and boundary conditions.
+
+Instead of storing quantum information in an isolated physical spot vulnerable to local thermal noise, a topological qubit braids quasi-particles across space. Local noise cannot easily unwind a global topological braid.
 
 Achieving this hardware requires creating Majorana zero modes—non-Abelian anyons that appear as zero-energy excitations at the ends of specialized hybrid semiconductor-superconductor wires. In theory, manipulating these localized states allows hardware-level fault tolerance without massive active error-correction overhead. 
 
-The execution, however, remains contentious. Microsoft initially announced Majorana 1, framing it as a hardware foundation designed to deploy commercial machines in years rather than decades. When researchers examined the published data, the paper lacked proof of a working qubit. A subsequent preprint claimed the team created a qubit with four Majorana modes, but independent experimentalists remained skeptical of the data interpretation.
+The execution, however, remains contentious. Microsoft initially announced Majorana 1, framing it as a hardware foundation designed to deploy commercial machines in years rather than decades.
 
-Recently, the company announced Majorana 2, heralding it as another major leap toward useful commercial quantum hardware. In the announcement, corporate spokespeople stated the chip features a mean qubit lifetime of 20 seconds and a 1,000-fold improvement in reliability. They also declared they expect to build a scalable quantum computer by 2029, whereas just last year they put that milestone at 2033. Cutting years off a deep-physics timeline indicates massive internal confidence.
+When researchers examined the published data, the paper lacked proof of a working qubit. A subsequent preprint claimed the team created a qubit with four Majorana modes, but independent experimentalists remained skeptical of the data interpretation.
 
-The experimental progress, however, tells a more nuanced story. The technical upgrade involved switching material from aluminum to lead. Lead features a larger superconducting gap than aluminum, which provides stronger energetic protection to the superconducting state and substantially extends quantum coherence times. But demonstrating a wider superconducting gap on a semiconductor wire does not yield a functional qubit. 
+Recently, the company announced Majorana 2, heralding it as another major leap toward useful commercial quantum hardware. In the announcement, corporate spokespeople stated the chip features a mean qubit lifetime of 20 seconds and a 1,000-fold improvement in reliability.
 
-Independent researchers immediately questioned the gap between the corporate announcement and the underlying data. As [Sabine Hossenfelder](https://sabinehossenfelder.com/newsletter/) points out, the paper rates a two out of 10 on the bullshit meter, but the press release is an eight out of 10. Condensed matter physicist Henry Legg told Science News: "Nothing in this preprint resolves the fundamental issues." Quantum researcher Marin Ibričić wrote in a LinkedIn post that smells like it was written by ChatGPT that it's "strong marketing, contested evidence." Physicist Sergey Frolov observed in Scientific American: "This new preprint is not based on a research track record that can be considered a solid foundation." Frolov added that within the specialized physics community, the claims cause researchers to chuckle or raise their eyebrows.
+They also declared they expect to build a scalable quantum computer by 2029, whereas just last year they put that milestone at 2033. Cutting years off a deep-physics timeline indicates massive internal confidence.
 
-The core tension is unambiguous: "The problem is that Microsoft needs both: qubits from topological states, and this very thing, which they need, is the thing that they have not demonstrated." Demonstrating parity states or topological phase transitions in lead-based nanowires proves difficult material physics, but it does not produce a gate-addressable qubit. Moving the internal progress bar to 99% does not prevent it from staying there for the next 20 years.
+The experimental progress, however, tells a more nuanced story. The technical upgrade involved switching material from aluminum to lead.
+
+Lead features a larger superconducting gap than aluminum, which provides stronger energetic protection to the superconducting state and substantially extends quantum coherence times. But demonstrating a wider superconducting gap on a semiconductor wire does not yield a functional qubit.
+
+Independent researchers immediately questioned the gap between the corporate announcement and the underlying data. As [Sabine Hossenfelder](https://sabinehossenfelder.com/newsletter/) points out, the paper rates a two out of 10 on the bullshit meter, but the press release is an eight out of 10.
+
+Condensed matter physicist Henry Legg told Science News: "Nothing in this preprint resolves the fundamental issues." Quantum researcher Marin Ibričić wrote in a LinkedIn post that smells like it was written by ChatGPT that it's "strong marketing, contested evidence."
+
+Physicist Sergey Frolov observed in Scientific American: "This new preprint is not based on a research track record that can be considered a solid foundation." Frolov added that within the specialized physics community, the claims cause researchers to chuckle or raise their eyebrows.
+
+The core tension is unambiguous: "The problem is that Microsoft needs both: qubits from topological states, and this very thing, which they need, is the thing that they have not demonstrated."
+
+Demonstrating parity states or topological phase transitions in lead-based nanowires proves difficult material physics, but it does not produce a gate-addressable qubit. Moving the internal progress bar to 99% does not prevent it from staying there for the next 20 years.
 
 ## Which Metrics Actually Separate Working Chips From Hype?
 

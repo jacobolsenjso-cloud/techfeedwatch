@@ -33,28 +33,52 @@ Building a personal computer for local AI and Large Language Model (LLM) process
 
 ## The Appeal of Local AI Processing
 
-The shift towards running AI models locally stems from a desire for complete control over data and computations. When AI tasks are handled on a personal machine, sensitive information never leaves the user's hardware, addressing major privacy and security concerns. This contrasts with cloud services, where data is processed on remote servers, often subject to third-party policies. Beyond privacy, local AI eliminates ongoing subscription costs that can accumulate over time. Users gain full control over their AI environment, allowing for custom configurations and experimentation without external limitations. This move empowers people and small teams to integrate AI into their workflows on their own terms.
+The shift towards running AI models locally stems from a desire for complete control over data and computations. When AI tasks are handled on a personal machine, sensitive information never leaves the user's hardware, addressing major privacy and security concerns. This contrasts with cloud services, where data is processed on remote servers, often subject to third-party policies.
+
+Beyond privacy, local AI eliminates ongoing subscription costs that can accumulate over time. Users gain full control over their AI environment, allowing for custom configurations and experimentation without external limitations. This move empowers people and small teams to integrate AI into their workflows on their own terms.
 
 ## Graphics Cards: VRAM is Paramount
 
-For local AI and LLM processing, the graphics processing unit (GPU) is arguably the most important component, with its video random access memory (VRAM) being the single most important factor. AI models, especially large language models, require large amounts of memory to store their parameters and intermediate computations. A GPU with ample VRAM, such as 24 gigabytes, 32 gigabytes, or more, can load and process larger models entirely on the GPU itself. This direct access to VRAM allows for greatly faster inference and training times.
+For local AI and LLM processing, the graphics processing unit (GPU) is arguably the most important component, with its video random access memory (VRAM) being the single most important factor. AI models, especially large language models, require large amounts of memory to store their parameters and intermediate computations.
 
-When an AI model's size exceeds the available VRAM, parts of the model must be offloaded to other, slower memory locations, such as system RAM or even the solid-state drive. This offloading process introduces latency and reduces overall performance. While different GPU brands and specific models may offer varying performance for certain AI frameworks, the sheer quantity of VRAM remains the primary determinant of a system's capacity to handle complex and extensive AI models efficiently. Prioritizing VRAM ensures the system can tackle the most demanding AI tasks without being bottlenecked by memory limitations.
+A GPU with ample VRAM, such as 24 gigabytes, 32 gigabytes, or more, can load and process larger models entirely on the GPU itself. This direct access to VRAM allows for greatly faster inference and training times.
+
+When an AI model's size exceeds the available VRAM, parts of the model must be offloaded to other, slower memory locations, such as system RAM or even the solid-state drive. This offloading process introduces latency and reduces overall performance.
+
+While different GPU brands and specific models may offer varying performance for certain AI frameworks, the sheer quantity of VRAM remains the primary determinant of a system's capacity to handle complex and extensive AI models efficiently. Prioritizing VRAM ensures the system can tackle the most demanding AI tasks without being bottlenecked by memory limitations.
 
 ## The Important Role of High-Speed Storage
 
-While VRAM is king for active model processing, high-speed storage plays an equally vital supporting role in a local AI PC. Large AI models can be tens of gigabytes in size, and loading them into memory requires an extremely fast solid-state drive (SSD). Beyond initial loading, an ultra-fast SSD becomes indispensable when a model's size surpasses the GPU's VRAM capacity. In such scenarios, the excess model weight is dynamically offloaded from the GPU to the SSD. This means the SSD is constantly accessed during AI operations, acting as a high-speed extension of the GPU's memory.
+While VRAM is king for active model processing, high-speed storage plays an equally vital supporting role in a local AI PC. Large AI models can be tens of gigabytes in size, and loading them into memory requires an extremely fast solid-state drive (SSD).
 
-To handle these demanding workloads, a PCIe Gen 5.0 SSD is essential. These drives offer exceptional sequential read speeds, reaching up to 14,700 megabytes per second, and sequential write speeds of up to 13,400 megabytes per second. And, their high-speed random data retrieval, with up to 1,850K read IOPS and 2,600K write IOPS, ensures quick access to scattered data. Such performance metrics are important for minimizing loading times for massive models. For instance, a 40 gigabyte AI model, even one too large for a GPU with 32 gigabytes of VRAM, can load in about 20 seconds with a high-performance SSD. This speed ensures the GPU remains "well fed" with data, maximizing the rate at which it can process tokens per second and preventing performance bottlenecks.
+Beyond initial loading, an ultra-fast SSD becomes indispensable when a model's size surpasses the GPU's VRAM capacity. In such scenarios, the excess model weight is dynamically offloaded from the GPU to the SSD. This means the SSD is constantly accessed during AI operations, acting as a high-speed extension of the GPU's memory.
+
+To handle these demanding workloads, a PCIe Gen 5.0 SSD is essential. These drives offer exceptional sequential read speeds, reaching up to 14,700 megabytes per second, and sequential write speeds of up to 13,400 megabytes per second.
+
+And, their high-speed random data retrieval, with up to 1,850K read IOPS and 2,600K write IOPS, ensures quick access to scattered data. Such performance metrics are important for minimizing loading times for massive models.
+
+For instance, a 40 gigabyte AI model, even one too large for a GPU with 32 gigabytes of VRAM, can load in about 20 seconds with a high-performance SSD. This speed ensures the GPU remains "well fed" with data, maximizing the rate at which it can process tokens per second and preventing performance bottlenecks.
 
 ## Processor and Motherboard Considerations
 
-The central processing unit (CPU) in a local AI build primarily serves as the system's orchestrator, ensuring all components communicate effectively. Its most important requirement is supporting the latest PCIe 5.0 standard. This support is necessary for both the high-VRAM GPU and the ultra-fast PCIe Gen 5.0 SSD to operate at their maximum potential. While the GPU handles the bulk of AI computations, some users may choose to run smaller AI models directly on the CPU. For this purpose, a CPU with at least 8 cores and 16 threads is recommended. Generally, more cores and threads are beneficial for CPU-based AI tasks, but it is not always necessary to invest in an excessively powerful CPU unless specific AI workloads are known to heavily rely on it.
+The central processing unit (CPU) in a local AI build primarily serves as the system's orchestrator, ensuring all components communicate effectively. Its most important requirement is supporting the latest PCIe 5.0 standard.
 
-The motherboard ties all these components together. Like the CPU, it must offer full support for PCIe 5.0 for both the GPU and the SSD. A key consideration for the motherboard is to avoid PCIe 5.0 lane splitting. Lane splitting occurs when the motherboard divides the available PCIe 5.0 lanes between multiple components, effectively reducing the bandwidth each component receives. If the GPU and SSD share lanes, they can "rob" each other of important bandwidth, hindering the performance of both. A motherboard that provides dedicated PCIe 5.0 lanes for both the GPU and the primary SSD ensures that each component can operate at its peak speed without compromise.
+This support is necessary for both the high-VRAM GPU and the ultra-fast PCIe Gen 5.0 SSD to operate at their maximum potential. While the GPU handles the bulk of AI computations, some users may choose to run smaller AI models directly on the CPU.
+
+For this purpose, a CPU with at least 8 cores and 16 threads is recommended. Generally, more cores and threads are beneficial for CPU-based AI tasks, but it is not always necessary to invest in an excessively powerful CPU unless specific AI workloads are known to heavily rely on it.
+
+The motherboard ties all these components together. Like the CPU, it must offer full support for PCIe 5.0 for both the GPU and the SSD.
+
+A key consideration for the motherboard is to avoid PCIe 5.0 lane splitting. Lane splitting occurs when the motherboard divides the available PCIe 5.0 lanes between multiple components, effectively reducing the bandwidth each component receives.
+
+If the GPU and SSD share lanes, they can "rob" each other of important bandwidth, hindering the performance of both. A motherboard that provides dedicated PCIe 5.0 lanes for both the GPU and the primary SSD ensures that each component can operate at its peak speed without compromise.
 
 ## Building for Performance and Flexibility
 
-Constructing a PC for local AI and LLM processing involves balancing the abilities of several key components. The synergy between a high-VRAM GPU and a lightning-fast PCIe Gen 5.0 SSD is fundamental. While a GPU with abundant VRAM is ideal for keeping entire models in memory, the SSD acts as a high-speed buffer, allowing the system to handle models that exceed the GPU's capacity without crippling performance. This flexibility means users are not strictly limited by the VRAM of their GPU alone.
+Constructing a PC for local AI and LLM processing involves balancing the abilities of several key components. The synergy between a high-VRAM GPU and a lightning-fast PCIe Gen 5.0 SSD is fundamental.
 
-The choice of CPU and motherboard, ensuring PCIe 5.0 compatibility and avoiding lane splitting, completes this high-performance ecosystem. This hardware foundation empowers users to run complex AI models with greater privacy, security, and computational control. It represents a major step towards personal computational autonomy, enabling people to harness the power of AI directly on their own machines, free from external dependencies and recurring costs.
+While a GPU with abundant VRAM is ideal for keeping entire models in memory, the SSD acts as a high-speed buffer, allowing the system to handle models that exceed the GPU's capacity without crippling performance. This flexibility means users are not strictly limited by the VRAM of their GPU alone.
+
+The choice of CPU and motherboard, ensuring PCIe 5.0 compatibility and avoiding lane splitting, completes this high-performance ecosystem. This hardware foundation empowers users to run complex AI models with greater privacy, security, and computational control.
+
+It represents a major step towards personal computational autonomy, enabling people to harness the power of AI directly on their own machines, free from external dependencies and recurring costs.

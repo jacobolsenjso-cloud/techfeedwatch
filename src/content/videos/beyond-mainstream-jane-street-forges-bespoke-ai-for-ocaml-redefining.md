@@ -29,42 +29,68 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Jane Street, a leading quantitative trading firm, has developed custom AI-powered coding assistants to enhance productivity for its OCaml developers. This initiative addresses the challenges of using a powerful but specialized functional programming language for which mainstream AI tools offer limited support. The firm's approach involved creating bespoke models, collecting unique training data, and deeply integrating these tools into developer workflows.
+Jane Street, a leading quantitative trading firm, has developed custom AI-powered coding assistants to enhance productivity for its OCaml developers. This initiative addresses the challenges of using a powerful but specialized functional programming language for which mainstream AI tools offer limited support.
+
+The firm's approach involved creating bespoke models, collecting unique training data, and deeply integrating these tools into developer workflows.
 
 ## The OCaml Challenge: Why Off-the-Shelf AI Falls Short
 
-OCaml is a highly capable functional programming language, but it is also quite obscure. While popular in academic fields like theorem proving and formal verification, its adoption in general industry is limited. Jane Street, however, uses OCaml extensively for nearly all its software development. This includes writing web applications by transpiling OCaml to JavaScript using a library called JS_of_OCaml, creating Vim plugins with Vaml, and even developing FPGA code through Hardcaml.
+OCaml is a highly capable functional programming language, but it is also quite obscure. While popular in academic fields like theorem proving and formal verification, its adoption in general industry is limited.
 
-This deep reliance on OCaml presents a large hurdle for using off-the-shelf [AI coding](/video/what-ai-coding-tools-mean-for-healthcare-documentation/) assistants. The primary reason is a lack of training data. Mainstream large language models are not proficient in OCaml because there is simply not enough public OCaml code available for their training. Jane Street's internal OCaml codebase is likely larger than the combined total of OCaml code existing outside its walls.
+Jane Street, however, uses OCaml extensively for nearly all its software development. This includes writing web applications by transpiling OCaml to JavaScript using a library called JS_of_OCaml, creating Vim plugins with Vaml, and even developing FPGA code through Hardcaml.
 
-Beyond the language itself, Jane Street's development environment is highly customized. The firm has built its own build systems, distributed build environment, and a proprietary code review system named Iron. All software development occurs within a large monorepo, which is stored in Mercurial rather than Git. And, a large share of developers, 67%, use Emacs, a less common editor compared to mainstream options like VS Code. These unique choices make integrating generic AI tools difficult. The firm also aims to apply large language models to various parts of its development flow, such as resolving merge conflicts or suggesting code reviewers, without being limited by system boundaries.
+This deep reliance on OCaml presents a large hurdle for using off-the-shelf [AI coding](/video/what-ai-coding-tools-mean-for-healthcare-documentation/) assistants. The primary reason is a lack of training data.
+
+Mainstream large language models are not proficient in OCaml because there is simply not enough public OCaml code available for their training. Jane Street's internal OCaml codebase is likely larger than the combined total of OCaml code existing outside its walls.
+
+Beyond the language itself, Jane Street's development environment is highly customized. The firm has built its own build systems, distributed build environment, and a proprietary code review system named Iron. All software development occurs within a large monorepo, which is stored in Mercurial rather than Git.
+
+And, a large share of developers, 67%, use Emacs, a less common editor compared to mainstream options like VS Code. These unique choices make integrating generic AI tools difficult. The firm also aims to apply large language models to various parts of its development flow, such as resolving merge conflicts or suggesting code reviewers, without being limited by system boundaries.
 
 ## Building a Bespoke AI: Data Collection and Model Training
 
-Recognizing the limitations of existing solutions, Jane Street embarked on building its own OCaml-specific AI. Early attempts to simply fine-tune an off-the-shelf model with internal code proved ineffective. The firm learned that successful model training requires data that closely matches the shape of the desired output. Inspired by Meta's Code Compose project, which fine-tuned a model for the Hack language (another language primarily used by one company), Jane Street set a clear goal: to generate multi-file diffs from a natural language prompt. These diffs needed to be up to 100 lines long, apply cleanly, and pass OCaml's static type checker.
+Recognizing the limitations of existing solutions, Jane Street embarked on building its own OCaml-specific AI. Early attempts to simply fine-tune an off-the-shelf model with internal code proved ineffective. The firm learned that successful model training requires data that closely matches the shape of the desired output.
+
+Inspired by Meta's Code Compose project, which fine-tuned a model for the Hack language (another language primarily used by one company), Jane Street set a clear goal: to generate multi-file diffs from a natural language prompt. These diffs needed to be up to 100 lines long, apply cleanly, and pass OCaml's static type checker.
 
 Collecting suitable training data for this task was a major challenge. Standard code review descriptions, while human-written, are often too long and formal, unlike the concise prompts a developer would type in an editor. Similarly, commits in Jane Street's system are primarily used as checkpoints and lack detailed descriptions, making them unsuitable for direct use.
 
-The solution involved an innovative approach called workspace snapshotting. Developer workstations are snapshotted every 20 seconds, capturing not only code changes but also the build status. By analyzing sequences like a "green to red to green" build status, the system can identify instances where a developer made an isolated change. A "red to green" sequence often indicates a developer fixing a compilation or type error. These identified diffs then become potential training examples. To generate the necessary human-like prompts, a large language model was initially used to create detailed descriptions of these changes. These descriptions were then filtered and refined to match the brevity and style of a human developer's input. This process created the "context, prompt, diff" training data needed for the models.
+The solution involved an innovative approach called workspace snapshotting. Developer workstations are snapshotted every 20 seconds, capturing not only code changes but also the build status. By analyzing sequences like a "green to red to green" build status, the system can identify instances where a developer made an isolated change.
+
+A "red to green" sequence often indicates a developer fixing a compilation or type error. These identified diffs then become potential training examples. To generate the necessary human-like prompts, a large language model was initially used to create detailed descriptions of these changes.
+
+These descriptions were then filtered and refined to match the brevity and style of a human developer's input. This process created the "context, prompt, diff" training data needed for the models.
 
 ## Ensuring Quality: Reinforcement Learning and Evaluation
 
-Supervised training, where models learn from labeled examples, is only one part of building an effective AI assistant. To ensure the models produce high-quality, usable code, Jane Street incorporated reinforcement learning. This phase aligns the model's output with what humans consider "good code." In OCaml, good code means it parses correctly, passes the static type checker, compiles without errors, and in the end passes all associated tests.
+Supervised training, where models learn from labeled examples, is only one part of building an effective AI assistant. To ensure the models produce high-quality, usable code, Jane Street incorporated reinforcement learning.
 
-To help this, Jane Street developed a Code Evaluation Service (CES). This service functions like a specialized build system. It maintains pre-warmed builds at a stable, "green" state. When the model generates a diff, workers in the CES apply it to a pre-warmed build. The service then quickly determines if the build status remains green or turns red, indicating an error. This feedback loop, running over months, helps the model learn to write code that consistently compiles and passes tests.
+This phase aligns the model's output with what humans consider "good code." In OCaml, good code means it parses correctly, passes the static type checker, compiles without errors, and in the end passes all associated tests.
 
-The same CES setup is also used for evaluating model performance. By holding out a portion of the reinforcement learning data, the firm can present the model with new problems and assess whether the generated code works as intended. This rigorous evaluation is very important for preventing models from going "off the rails." For instance, an early code review model, trained on human examples, once responded to a review request with "I'll do it tomorrow." Such incidents highlight the importance of meaningful evaluation metrics to ensure models provide genuinely useful assistance.
+To help this, Jane Street developed a Code Evaluation Service (CES). This service functions like a specialized build system. It maintains pre-warmed builds at a stable, "green" state.
+
+When the model generates a diff, workers in the CES apply it to a pre-warmed build. The service then quickly determines if the build status remains green or turns red, indicating an error. This feedback loop, running over months, helps the model learn to write code that consistently compiles and passes tests.
+
+The same CES setup is also used for evaluating model performance. By holding out a portion of the reinforcement learning data, the firm can present the model with new problems and assess whether the generated code works as intended.
+
+This rigorous evaluation is very important for preventing models from going "off the rails." For instance, an early code review model, trained on human examples, once responded to a review request with "I'll do it tomorrow." Such incidents highlight the importance of meaningful evaluation metrics to ensure models provide genuinely useful assistance.
 
 ## Integrating AI into the Developer Workflow
 
 Bringing these custom AI abilities directly to developers required thoughtful editor integrations. Jane Street had three main goals for this integration: avoiding redundant development across its three supported editors (Neovim, VS Code, and Emacs), maintaining flexibility to swap models or prompting strategies, and collecting real-world metrics like latency and diff acceptance rates.
 
-The firm achieved this through an architecture centered around a service called the AI Development Environment (AIDE). AIDE runs as a sidecar application on each developer's machine. It handles the complex tasks of constructing prompts, gathering relevant code context, and checking build statuses. This design allows for thin, editor-specific layers to be built on top of AIDE.
+The firm achieved this through an architecture centered around a service called the AI Development Environment (AIDE). AIDE runs as a sidecar application on each developer's machine.
 
-This architecture offers several advantages. When changes are made to AIDE, they can be deployed by simply restarting the AIDE service on developer machines, without requiring developers to restart their editors. This ensures everyone quickly receives the latest updates. In VS Code, the AIDE experience is presented through a visual sidebar, similar to other coding assistants, allowing users to request and receive multi-file diffs. For Emacs users, who prefer working directly with text buffers, the AIDE experience is integrated into a markdown buffer, where users can type questions and use keybinds to append AI-generated content.
+It handles the complex tasks of constructing prompts, gathering relevant code context, and checking build statuses. This design allows for thin, editor-specific layers to be built on top of AIDE.
+
+This architecture offers several advantages. When changes are made to AIDE, they can be deployed by simply restarting the AIDE service on developer machines, without requiring developers to restart their editors. This ensures everyone quickly receives the latest updates.
+
+In VS Code, the AIDE experience is presented through a visual sidebar, similar to other coding assistants, allowing users to request and receive multi-file diffs. For Emacs users, who prefer working directly with text buffers, the AIDE experience is integrated into a markdown buffer, where users can type questions and use keybinds to append AI-generated content.
 
 ## The Architecture of Adaptability
 
 The AIDE architecture provides large adaptability. It allows Jane Street to easily swap in new models, modify context-building strategies, and even add support for new editors as needed. And, different departments within the company can supply domain-specific tools that become available across all integrated editors without requiring individual integrations for each.
 
-AIDE also helps A/B testing of different AI approaches. For example, 50% of the firm's developers can be directed to one model, and the other 50% to another, allowing for direct comparison of their acceptance rates. This investment in a flexible, pluggable foundation pays off as the field of large language models evolves rapidly. By centralizing core AI logic in AIDE, Jane Street can quickly adapt to new advancements and integrate them across its diverse development environment. The firm continues to explore new applications, including retrieval-augmented generation (RAG), multi-agent workflows, and advanced reasoning models, all built upon this adaptable foundation.
+AIDE also helps A/B testing of different AI approaches. For example, 50% of the firm's developers can be directed to one model, and the other 50% to another, allowing for direct comparison of their acceptance rates. This investment in a flexible, pluggable foundation pays off as the field of large language models evolves rapidly.
+
+By centralizing core AI logic in AIDE, Jane Street can quickly adapt to new advancements and integrate them across its diverse development environment. The firm continues to explore new applications, including retrieval-augmented generation (RAG), multi-agent workflows, and advanced reasoning models, all built upon this adaptable foundation.

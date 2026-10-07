@@ -27,27 +27,51 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-[AI automation](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just/) in Notion involves using artificial intelligence agents to perform tasks directly within your Notion workspace. These agents can create, edit, read, and organize content, manage databases, and streamline workflows. This capability comes in two main forms: Notion's own integrated AI features and external AI tools that connect to Notion. Both approaches aim to enhance productivity by automating routine or complex digital tasks. They transform Notion from a static note-taking and database tool into a dynamic, interactive environment.
+[AI automation](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just/) in Notion involves using artificial intelligence agents to perform tasks directly within your Notion workspace. These agents can create, edit, read, and organize content, manage databases, and streamline workflows.
+
+This capability comes in two main forms: Notion's own integrated AI features and external AI tools that connect to Notion. Both approaches aim to enhance productivity by automating routine or complex digital tasks. They transform Notion from a static note-taking and database tool into a dynamic, interactive environment.
 
 ## Native AI: Your Notion Workspace Assistant
 
-Notion offers its own [AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) that live directly within your workspace. These assistants have full access to your files, pages, and databases. This allows them to make edits, generate new content, or simply read existing information. When you create a new page, a chat interface appears. This enables you to prompt the AI to craft content, build databases, and structure your page.
+Notion offers its own [AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) that live directly within your workspace. These assistants have full access to your files, pages, and databases. This allows them to make edits, generate new content, or simply read existing information.
 
-For example, you can ask Notion's AI to fulfill an entire page about a specific topic. You can request it to find information, identify main features, and suggest use cases. It can also mix the page structure with headings, tables, and databases. This process can rapidly generate a complete page. This often happens in about 90 seconds, and the page comes complete with pre-filled information.
+When you create a new page, a chat interface appears. This enables you to prompt the AI to craft content, build databases, and structure your page.
 
-Notion's native AI is also highly customizable. You can give it a name, a visual identity, and specific instructions on how it should behave. This is similar to setting up custom AI assistants on other platforms. This personalization helps the agent align with your specific needs and preferences. Also, Notion's AI allows users to select from various underlying AI models, including GPT, Gemini, M Kimmy, and DeepS. This offers flexibility in its operational style.
+For example, you can ask Notion's AI to fulfill an entire page about a specific topic. You can request it to find information, identify main features, and suggest use cases.
 
-A key strength of Notion's personal agent is its purpose-built nature. It is designed to operate specifically within Notion. This makes it generally more reliable for native Notion tasks such as writing entire databases, building pages, and handling the workspace structure. It also offers unique features like database autofills that external tools might not replicate. However, what it can do is primarily limited to prompt-and-response interactions within Notion. It cannot access local computer files, perform cross-tool work, or run file system-based projects. For advanced features and "pretty unlimited use at the moment," Notion's AI typically requires a business subscription. This costs $24 per month.
+It can also mix the page structure with headings, tables, and databases. This process can rapidly generate a complete page. This often happens in about 90 seconds, and the page comes complete with pre-filled information.
+
+Notion's native AI is also highly customizable. You can give it a name, a visual identity, and specific instructions on how it should behave. This is similar to setting up custom AI assistants on other platforms.
+
+This personalization helps the agent align with your specific needs and preferences. Also, Notion's AI allows users to select from various underlying AI models, including GPT, Gemini, M Kimmy, and DeepS. This offers flexibility in its operational style.
+
+A key strength of Notion's personal agent is its purpose-built nature. It is designed to operate specifically within Notion. This makes it generally more reliable for native Notion tasks such as writing entire databases, building pages, and handling the workspace structure.
+
+It also offers unique features like database autofills that external tools might not replicate. However, what it can do is primarily limited to prompt-and-response interactions within Notion.
+
+It cannot access local computer files, perform cross-tool work, or run file system-based projects. For advanced features and "pretty unlimited use at the moment," Notion's AI typically requires a business subscription. This costs $24 per month.
 
 ## Expanding Horizons with External AI Tools
 
-Beyond Notion's native AI, external AI applications, such as Claude, can connect to Notion to extend automation capabilities. These tools use connectors to interact with your Notion workspace. This enables them to search, fetch, create, update, move, and duplicate pages, as well as create databases. This allows for a broader range of automated tasks, especially those requiring interaction with data outside of Notion.
+Beyond Notion's native AI, external AI applications, such as Claude, can connect to Notion to extend automation capabilities. These tools use connectors to interact with your Notion workspace.
 
-A large advantage of external AI tools is their ability to perform cross-tool work. For instance, an external AI can access files on your computer and process them. It can then output the results into Notion. Imagine having a folder of psychological books in PDF format. An external AI can read these hundreds of pages and extract main insights. It can then create a summary page within a specified Notion database. This process, including searching the web for information, connecting to Notion, and creating the page, can take around 1 minute.
+This enables them to search, fetch, create, update, move, and duplicate pages, as well as create databases. This allows for a broader range of automated tasks, especially those requiring interaction with data outside of Notion.
 
-Other practical applications include structuring and adjusting existing Notion pages, analyzing data from external files like CSV survey results, and summarizing personal reflections or thoughts from your Notion diary. An external AI can synthesize feedback from a CSV file into a structured Notion page. This page will outline conclusions and key takeaways. It can also search through your Notion notes to find patterns, areas for improvement, and help in decision-making. Complex tasks like building a project plan for an email course can also be automated. This plan can be complete with a deliverables database, assigned owners, deadlines, and a kickoff document. The AI can nest multiple pages within the main project page.
+A large advantage of external AI tools is their ability to perform cross-tool work. For instance, an external AI can access files on your computer and process them.
 
-These external AI tools often provide different modes of interaction, such as chat, co-work (for local file access), and code (for running scripts). The Notion connector can be used across all these modes, allowing for versatile automation. The cost model for this approach typically involves a subscription to the external AI tool itself. Notion usage through the connector is free.
+It can then output the results into Notion. Imagine having a folder of psychological books in PDF format. An external AI can read these hundreds of pages and extract main insights.
+
+It can then create a summary page within a specified Notion database. This process, including searching the web for information, connecting to Notion, and creating the page, can take around 1 minute.
+
+Other practical applications include structuring and adjusting existing Notion pages, analyzing data from external files like CSV survey results, and summarizing personal reflections or thoughts from your Notion diary. An external AI can synthesize feedback from a CSV file into a structured Notion page.
+
+This page will outline conclusions and key takeaways. It can also search through your Notion notes to find patterns, areas for improvement, and help in decision-making. Complex tasks like building a project plan for an email course can also be automated.
+
+This plan can be complete with a deliverables database, assigned owners, deadlines, and a kickoff document. The AI can nest multiple pages within the main project page.
+
+These external AI tools often provide different modes of interaction, such as chat, co-work (for local file access), and code (for running scripts). The Notion connector can be used across all these modes, allowing for versatile automation.
+
+The cost model for this approach typically involves a subscription to the external AI tool itself. Notion usage through the connector is free.
 
 ## Choosing the Right AI Approach for Notion
 
@@ -59,7 +83,9 @@ Deciding between Notion's native AI and an external AI tool for automation depen
 * **Usage Limits and Model Flexibility:** Notion's native AI, with a business plan, offers "pretty unlimited use at the moment." It also allows you to choose from various AI models (GPT, Gemini, M Kimmy, DeepS). External AI tools, like Claude, typically limit you to their own models. They may also have their own usage limits based on your subscription plan.
 * **Unique Features:** Notion's native AI has specific features that are deeply integrated, such as database autofills. Conversely, external AI tools excel in cross-tool work, local file access, and coding capabilities. These are features which Notion's native AI does not offer.
 
-In the end, if your primary need is deep, native integration and automation within Notion's existing structure, Notion's built-in AI might be more suitable. If you require broader automation that involves processing local files, integrating with other applications, or running code, an external AI tool offers greater flexibility and power. Many users might even choose to use both, using each for its distinct strengths.
+In the end, if your primary need is deep, native integration and automation within Notion's existing structure, Notion's built-in AI might be more suitable.
+
+If you require broader automation that involves processing local files, integrating with other applications, or running code, an external AI tool offers greater flexibility and power. Many users might even choose to use both, using each for its distinct strengths.
 
 ## Practical Applications of AI Automation in Notion
 
@@ -74,4 +100,6 @@ Common use cases include:
 * **Project and Task Management:** Building complete project plans, including timelines, deliverables databases, assigned owners, deadlines, and kickoff documents, often with nested pages for detailed organization.
 * **Recurring Tasks and Routines:** Setting up automated routines for tasks that need to be performed regularly, ensuring consistency and saving manual effort.
 
-By using AI automation, people and teams can transform how they interact with information, manage projects, and execute daily operations within Notion. This fosters greater efficiency. It allows users to focus on higher-value tasks. The AI handles the heavy lifting of [content creation](/video/revolutionizing-seo-how-arvo-s-ai-platform-automates-agency-success/), organization, and data processing.
+By using AI automation, people and teams can transform how they interact with information, manage projects, and execute daily operations within Notion. This fosters greater efficiency.
+
+It allows users to focus on higher-value tasks. The AI handles the heavy lifting of [content creation](/video/revolutionizing-seo-how-arvo-s-ai-platform-automates-agency-success/), organization, and data processing.

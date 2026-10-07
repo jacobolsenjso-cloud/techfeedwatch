@@ -29,23 +29,39 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-Generative Artificial Intelligence (AI) excels at processing and synthesizing vast amounts of information, but its capabilities are inherently limited by its artificial nature. At its core, generative AI operates by recognizing patterns and statistical correlations within the data it has been trained on. It can produce text, images, or other media that appear novel, yet this output is always a sophisticated recombination and extrapolation of existing information, rather than a product of genuine understanding, intuition, or personal revelation.
+Generative Artificial Intelligence (AI) excels at processing and synthesizing vast amounts of information, but its capabilities are inherently limited by its artificial nature. At its core, generative AI operates by recognizing patterns and statistical correlations within the data it has been trained on.
+
+It can produce text, images, or other media that appear novel, yet this output is always a sophisticated recombination and extrapolation of existing information, rather than a product of genuine understanding, intuition, or personal revelation.
 
 ### The Fundamental Nature of Artificiality
 
-The most significant limitation of generative AI stems from the "artificial" in its name. It is designed to mimic human-like intelligence, but it does not possess consciousness, emotion, or subjective experience. Just as artificial sweetener looks and tastes like sugar but is not sugar, artificial intelligence processes information in a way that resembles human thought without actually being human thought. It lacks any form of "gut instinct" or "spirit," and it is not a sentient being. This distinction is critical because it means AI cannot truly "know" or "feel" the concepts it discusses. For example, it can provide extensive information about the concept of love, its definitions, cultural interpretations, and psychological aspects, but it cannot experience love itself.
+The most significant limitation of generative AI stems from the "artificial" in its name. It is designed to mimic human-like intelligence, but it does not possess consciousness, emotion, or subjective experience. Just as artificial sweetener looks and tastes like sugar but is not sugar, artificial intelligence processes information in a way that resembles human thought without actually being human thought.
+
+It lacks any form of "gut instinct" or "spirit," and it is not a sentient being. This distinction is critical because it means AI cannot truly "know" or "feel" the concepts it discusses. For example, it can provide extensive information about the concept of love, its definitions, cultural interpretations, and psychological aspects, but it cannot experience love itself.
 
 ### Confined to Existing Data and Patterns
 
-Generative AI's output is entirely dependent on its training data. It can only work with information that already exists, having been fed into its models during development. This reliance means that AI cannot generate truly new insights or "things to come" that transcend the patterns it has learned. While it can predict trends based on historical data, this is a statistical projection, not genuine foresight or revelation.
+Generative AI's output is entirely dependent on its training data. It can only work with information that already exists, having been fed into its models during development.
 
-A practical consequence of this data dependency is the potential for inaccuracies or biases. If the training data contains errors, outdated information, or human biases, the AI will likely reproduce or even amplify these issues. For instance, if asked about a specific individual's beliefs, an AI might synthesize information from various online sources and present a coherent, yet entirely incorrect, summary. Even when corrected with new information, the AI is merely updating its internal model based on new input, not arriving at a truth through independent discernment. It processes "man's perceived heads up" based on past patterns and programmed data, rather than offering a truly novel perspective.
+This reliance means that AI cannot generate truly new insights or "things to come" that transcend the patterns it has learned. While it can predict trends based on historical data, this is a statistical projection, not genuine foresight or revelation.
+
+A practical consequence of this data dependency is the potential for inaccuracies or biases. If the training data contains errors, outdated information, or human biases, the AI will likely reproduce or even amplify these issues.
+
+For instance, if asked about a specific individual's beliefs, an AI might synthesize information from various online sources and present a coherent, yet entirely incorrect, summary.
+
+Even when corrected with new information, the AI is merely updating its internal model based on new input, not arriving at a truth through independent discernment. It processes "man's perceived heads up" based on past patterns and programmed data, rather than offering a truly novel perspective.
 
 ### Lacking Subjectivity, Emotion, and Personal Insight
 
-One of the most profound limitations of generative AI is its inability to grasp subjective meaning, emotional nuance, or provide personalized insight. While AI can analyze and summarize various theological views or historical contexts, it cannot offer a personal understanding of what a text means to an individual. It cannot answer questions like: "What is this truth saying to *me*?" or "How should *I* apply this principle to *my* life?"
+One of the most profound limitations of generative AI is its inability to grasp subjective meaning, emotional nuance, or provide personalized insight.
 
-For example, an AI can provide detailed information about the geography of the valley where David fought Goliath, the weight of Goliath's armor, historical context, military tactics, and connections to other Old Scripture passages. This information can be highly beneficial and save hours of research time. However, it cannot reveal how the story of David and Goliath applies to a personal struggle, such as a "giant" of sickness, financial difficulty, or emotional challenge in a user's own life. AI speaks to everyone generally; it cannot individualize its responses based on a user's unique circumstances, calling, or specific needs. It lacks the capacity for spiritual discernment or the ability to convict someone of a moral failing.
+While AI can analyze and summarize various theological views or historical contexts, it cannot offer a personal understanding of what a text means to an individual. It cannot answer questions like: "What is this truth saying to *me*?" or "How should *I* apply this principle to *my* life?"
+
+For example, an AI can provide detailed information about the geography of the valley where David fought Goliath, the weight of Goliath's armor, historical context, military tactics, and connections to other Old Scripture passages.
+
+This information can be highly beneficial and save hours of research time. However, it cannot reveal how the story of David and Goliath applies to a personal struggle, such as a "giant" of sickness, financial difficulty, or emotional challenge in a user's own life.
+
+AI speaks to everyone generally; it cannot individualize its responses based on a user's unique circumstances, calling, or specific needs. It lacks the capacity for spiritual discernment or the ability to convict someone of a moral failing.
 
 ### The Boundaries of "Knowledge" vs. "Revelation"
 
@@ -58,10 +74,18 @@ The distinction between "information" or "knowledge" and "revelation" or "deep u
 * It can organize information for study or presentation.
 * It can point out literary themes or structures that might not be immediately obvious to a human reader, such as the acrostic structure of Psalm 119, where each of its 22 sections begins with a successive letter of the Hebrew alphabet.
 
-These capabilities make AI an incredibly powerful tool for accelerating information acquisition. What once took hours of research can now be accomplished in minutes. However, AI cannot provide revelation. It cannot tell you what a particular passage means for your personal transformation, how it reveals deeper truths, or how you should obey its principles. It cannot guide you on spiritual principles you might be missing or offer wisdom that applies truth to your life in a meaningful, personal way. It provides facts and summaries about concepts, but it does not foster faith or genuine understanding that transcends mere data.
+These capabilities make AI an incredibly powerful tool for accelerating information acquisition. What once took hours of research can now be accomplished in minutes.
+
+However, AI cannot provide revelation. It cannot tell you what a particular passage means for your personal transformation, how it reveals deeper truths, or how you should obey its principles.
+
+It cannot guide you on spiritual principles you might be missing or offer wisdom that applies truth to your life in a meaningful, personal way. It provides facts and summaries about concepts, but it does not foster faith or genuine understanding that transcends mere data.
 
 ### Practical Implications and Trade-offs
 
 The speed and efficiency of generative AI in processing information are undeniable advantages. It can significantly reduce the time spent on research, allowing individuals to access vast amounts of data almost instantly, whether for academic study, theological inquiry, or general knowledge. This makes it a valuable aid for tasks that involve data compilation, summarization, and factual explanation.
 
-However, the trade-off is the absence of deeper cognitive functions that are uniquely human. While AI can present information, it cannot interpret it with subjective understanding, emotional intelligence, or moral judgment. It cannot discern the "spirit" of a text or provide the kind of personal guidance that comes from intuition or lived experience. Therefore, while generative AI is a powerful tool for knowledge acquisition, users must remain aware of its inherent limitations. Its outputs should always be viewed as information to be critically evaluated, personally interpreted, and, where deeper meaning is sought, complemented by human reflection, intuition, and other forms of insight that transcend algorithmic processing. AI serves as an assistant for data, not a source of ultimate truth or personal revelation.
+However, the trade-off is the absence of deeper cognitive functions that are uniquely human. While AI can present information, it cannot interpret it with subjective understanding, emotional intelligence, or moral judgment.
+
+It cannot discern the "spirit" of a text or provide the kind of personal guidance that comes from intuition or lived experience. Therefore, while generative AI is a powerful tool for knowledge acquisition, users must remain aware of its inherent limitations.
+
+Its outputs should always be viewed as information to be critically evaluated, personally interpreted, and, where deeper meaning is sought, complemented by human reflection, intuition, and other forms of insight that transcend algorithmic processing. AI serves as an assistant for data, not a source of ultimate truth or personal revelation.

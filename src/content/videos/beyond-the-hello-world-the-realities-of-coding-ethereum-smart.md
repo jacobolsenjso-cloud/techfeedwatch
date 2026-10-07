@@ -31,41 +31,61 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Coding [Ethereum smart contracts](/video/the-world-computer-vision-deconstructing-ethereum-s-smart-contract/) involves writing self-executing digital agreements using the Solidity programming language, which then operate on the Ethereum blockchain. These contracts form the backbone of decentralized applications (dApps) and the broader Web3 ecosystem, enabling trustless interactions without intermediaries. Developers often begin this journey with browser-based Integrated Development Environments (IDEs) like Remix, which provide an accessible platform for writing, compiling, and deploying contracts without complex setup.
+Coding [Ethereum smart contracts](/video/the-world-computer-vision-deconstructing-ethereum-s-smart-contract/) involves writing self-executing digital agreements using the Solidity programming language, which then operate on the Ethereum blockchain. These contracts form the backbone of decentralized applications (dApps) and the broader Web3 ecosystem, enabling trustless interactions without intermediaries.
+
+Developers often begin this journey with browser-based Integrated Development Environments (IDEs) like Remix, which provide an accessible platform for writing, compiling, and deploying contracts without complex setup.
 
 ## Understanding Ethereum Smart Contracts
 
-An Ethereum smart contract is essentially a program stored on the Ethereum blockchain that runs when predetermined conditions are met. Unlike traditional contracts, smart contracts are self-executing and tamper-proof once deployed, as their code resides on an immutable public ledger. This characteristic ensures transparency and eliminates the need for a central authority to enforce terms. The code for these contracts is executed by the Ethereum Virtual Machine (EVM), a distributed runtime environment that processes transactions and updates the blockchain's state.
+An Ethereum smart contract is essentially a program stored on the Ethereum blockchain that runs when predetermined conditions are met. Unlike traditional contracts, smart contracts are self-executing and tamper-proof once deployed, as their code resides on an immutable public ledger.
 
-Solidity is the most widely used programming language for writing smart contracts on Ethereum. It is a statically typed language, meaning that developers must explicitly declare the data type for each variable, and that type cannot change during the program's execution. This differs from dynamically typed languages like JavaScript or Ruby, where variable types can be more flexible. Solidity's strict typing helps prevent certain classes of errors and ensures predictable behavior on the blockchain.
+This characteristic ensures transparency and eliminates the need for a central authority to enforce terms. The code for these contracts is executed by the Ethereum Virtual Machine (EVM), a distributed runtime environment that processes transactions and updates the blockchain's state.
+
+Solidity is the most widely used programming language for writing smart contracts on Ethereum. It is a statically typed language, meaning that developers must explicitly declare the data type for each variable, and that type cannot change during the program's execution.
+
+This differs from dynamically typed languages like JavaScript or Ruby, where variable types can be more flexible. Solidity's strict typing helps prevent certain classes of errors and ensures predictable behavior on the blockchain.
 
 ## Getting Started with Remix IDE
 
-For those new to blockchain development, setting up a local development environment can be a barrier. This is where browser-based IDEs like Remix become invaluable. Remix provides a complete development environment directly in your web browser, eliminating the need to install any software or configure a local blockchain. It comes pre-equipped with a Solidity compiler and even a simulated blockchain, allowing developers to immediately start writing, testing, and deploying smart contracts.
+For those new to blockchain development, setting up a local development environment can be a barrier. This is where browser-based IDEs like Remix become invaluable.
 
-When beginning a new contract in Remix, the first step is typically to declare the Solidity version the contract is intended for. Specifying an exact version, rather than using a caret (`^`) to allow for newer versions, is often considered a security best practice. This "version locking" prevents the contract from being compiled with potentially newer Solidity versions that might introduce breaking changes or even new security vulnerabilities that the original code was not designed to handle.
+Remix provides a complete development environment directly in your web browser, eliminating the need to install any software or configure a local blockchain. It comes pre-equipped with a Solidity compiler and even a simulated blockchain, allowing developers to immediately start writing, testing, and deploying smart contracts.
+
+When beginning a new contract in Remix, the first step is typically to declare the Solidity version the contract is intended for. Specifying an exact version, rather than using a caret (`^`) to allow for newer versions, is often considered a security best practice.
+
+This "version locking" prevents the contract from being compiled with potentially newer Solidity versions that might introduce breaking changes or even new security vulnerabilities that the original code was not designed to handle.
 
 ## Core Components of a Solidity Contract
 
 A Solidity smart contract is defined using the `contract` keyword, followed by a name and a set of curly braces that enclose its code. Inside these braces, developers define state variables, functions, and events that dictate the contract's behavior.
 
-**State Variables** are values stored permanently on the blockchain, much like records in a database. For instance, a simple counter contract might declare a state variable like `uint count;`. Here, `uint` stands for "unsigned integer," meaning it can only hold positive whole numbers. Solidity offers various `uint` types, such as `uint8`, `uint48`, `uint88`, `uint184`, and `uint248`, which specify the number of bits used to store the integer. By default, `uint` is an alias for `uint256`, capable of storing very large numbers. When a state variable is declared, its value is written to and updated on the blockchain.
+**State Variables** are values stored permanently on the blockchain, much like records in a database. For instance, a simple counter contract might declare a state variable like `uint count;`. Here, `uint` stands for "unsigned integer," meaning it can only hold positive whole numbers.
 
-**Functions** contain the executable logic of the smart contract. They are declared using the `function` keyword, followed by a name, parameters (if any), and curly braces for the function body. For example, an `increment` function might look like `function increment() public { count += 1; }`. The `public` keyword here is a visibility specifier, indicating that this function can be called from outside the smart contract. Without it, the function would only be callable internally. Similarly, a `decrement` function could be `function decrement() public { count -= 1; }`.
+Solidity offers various `uint` types, such as `uint8`, `uint48`, `uint88`, `uint184`, and `uint248`, which specify the number of bits used to store the integer. By default, `uint` is an alias for `uint256`, capable of storing very large numbers. When a state variable is declared, its value is written to and updated on the blockchain.
 
-**Constructors** are special functions that run only once when the smart contract is first deployed to the blockchain. They are used to initialize the contract's state variables. A constructor is declared using the `constructor` keyword, for example, `constructor() public { count = 0; }`, which sets the initial value of `count` to zero. Alternatively, a state variable can be initialized directly during its declaration, such as `uint public count = 0;`. This inline initialization is a more concise way to set a default value and, if declared `public`, automatically creates a public getter function to read its value.
+**Functions** contain the executable logic of the smart contract. They are declared using the `function` keyword, followed by a name, parameters (if any), and curly braces for the function body. For example, an `increment` function might look like `function increment() public { count += 1; }`.
+
+The `public` keyword here is a visibility specifier, indicating that this function can be called from outside the smart contract. Without it, the function would only be callable internally. Similarly, a `decrement` function could be `function decrement() public { count -= 1; }`.
+
+**Constructors** are special functions that run only once when the smart contract is first deployed to the blockchain. They are used to initialize the contract's state variables. A constructor is declared using the `constructor` keyword, for example, `constructor() public { count = 0; }`, which sets the initial value of `count` to zero.
+
+Alternatively, a state variable can be initialized directly during its declaration, such as `uint public count = 0;`. This inline initialization is a more concise way to set a default value and, if declared `public`, automatically creates a public getter function to read its value.
 
 To read the value of a state variable from outside the contract, a getter function is often created. For example, `function getCount() public view returns (uint) { return count; }`. The `view` keyword signifies that this function only reads the contract's state and does not modify it, which means calling it does not incur transaction fees (gas costs).
 
 ## Events for Off-Chain Interaction
 
-While smart contracts operate on the blockchain, external applications (like web interfaces or mobile apps) often need to be aware of changes or actions happening within a contract. This is where **events** play a vital role. An event is declared using the `event` keyword, such as `event Increment(uint value);`. When a specific action occurs within a function, the contract can `emit` this event, for example, `emit Increment(count);`.
+While smart contracts operate on the blockchain, external applications (like web interfaces or mobile apps) often need to be aware of changes or actions happening within a contract. This is where **events** play a vital role.
+
+An event is declared using the `event` keyword, such as `event Increment(uint value);`. When a specific action occurs within a function, the contract can `emit` this event, for example, `emit Increment(count);`.
 
 Emitting an event logs data to the blockchain in a way that is easily accessible and searchable by external services. Any application or service can "listen" or "subscribe" to these events, receiving notifications whenever they are emitted. This mechanism is important for building responsive decentralized applications, allowing them to react to on-chain activities, display historical data, or trigger off-chain processes.
 
 ## Compiling and Deploying Your Contract
 
-Before a smart contract can be deployed, it must be compiled. In Remix, this involves selecting the appropriate Solidity compiler version (ensuring it matches the `pragma` declaration) and then initiating the compilation process. The compiler checks for syntax errors and converts the Solidity code into bytecode, which is what the EVM understands. Any errors or warnings will be displayed, guiding the developer to fix issues in the code.
+Before a smart contract can be deployed, it must be compiled. In Remix, this involves selecting the appropriate Solidity compiler version (ensuring it matches the `pragma` declaration) and then initiating the compilation process.
+
+The compiler checks for syntax errors and converts the Solidity code into bytecode, which is what the EVM understands. Any errors or warnings will be displayed, guiding the developer to fix issues in the code.
 
 Once compiled, the contract can be deployed to various blockchain environments for testing and production:
 
@@ -77,4 +97,8 @@ After deployment, the contract's functions and state variables become accessible
 
 ## Best Practices and Considerations
 
-When coding Ethereum smart contracts, several best practices and considerations are paramount. As mentioned, locking the Solidity version is a fundamental security measure. Smart contracts, once deployed, are generally immutable; their code cannot be changed. This immutability is a core feature of [blockchain technology](/video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/), ensuring reliability, but it also means that any bugs or vulnerabilities present in the code will be permanently embedded. Thorough testing in various environments, from the JS VM to testnets, is therefore essential before deploying to the mainnet. Understanding the implications of gas costs for transactions is also important, as every state-changing operation on the blockchain consumes computational resources, which must be paid for in Ether.
+When coding Ethereum smart contracts, several best practices and considerations are paramount. As mentioned, locking the Solidity version is a fundamental security measure.
+
+Smart contracts, once deployed, are generally immutable; their code cannot be changed. This immutability is a core feature of [blockchain technology](/video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/), ensuring reliability, but it also means that any bugs or vulnerabilities present in the code will be permanently embedded.
+
+Thorough testing in various environments, from the JS VM to testnets, is therefore essential before deploying to the mainnet. Understanding the implications of gas costs for transactions is also important, as every state-changing operation on the blockchain consumes computational resources, which must be paid for in Ether.

@@ -30,9 +30,13 @@ rewrittenAt: "2026-08-19"
 
 ## The Foundation of Zero Trust: Never Trust, Always Verify
 
-Traditional network security often relies on a perimeter-based model, where everything inside the network is considered trusted once a user or device has gained initial access. This approach creates a hard outer shell but a soft interior. Once an attacker breaches the perimeter, they can often move freely within the network, accessing valuable resources without further checks. This is a major vulnerability, as an attacker who gets onto the corporate network with no segmented zones can reach everything and anything.
+Traditional network security often relies on a perimeter-based model, where everything inside the network is considered trusted once a user or device has gained initial access. This approach creates a hard outer shell but a soft interior.
 
-Zero Trust flips this model. It treats every access attempt as if it originates from an untrusted network, regardless of its actual location. This means that even if an employee is working from a secure office network, their access to an internal application still requires the same level of verification as someone connecting from a public Wi-Fi network. This continuous verification process helps to prevent unauthorized access and limit the impact of potential breaches.
+Once an attacker breaches the perimeter, they can often move freely within the network, accessing valuable resources without further checks. This is a major vulnerability, as an attacker who gets onto the corporate network with no segmented zones can reach everything and anything.
+
+Zero Trust flips this model. It treats every access attempt as if it originates from an untrusted network, regardless of its actual location.
+
+This means that even if an employee is working from a secure office network, their access to an internal application still requires the same level of verification as someone connecting from a public Wi-Fi network. This continuous verification process helps to prevent unauthorized access and limit the impact of potential breaches.
 
 ## Shrinking the Attack Surface
 
@@ -51,9 +55,13 @@ Every new device, service, or user added to a network expands the attack surface
 
 Enterprise networks are typically structured in layers, each representing a trust boundary. These layers often include the internet (an untrusted zone), a perimeter with firewalls and intrusion detection/prevention systems (IDS/IPS), a corporate local area network (LAN), segmented zones (like HR, finance, engineering), and a data tier containing databases and backups.
 
-In a traditional setup, traversing inward through these layers should ideally require explicit authentication and authorization. However, in many real organizations, this is not consistently enforced. The internet is hostile by default, and anything exposed there is visible to scanners worldwide. The perimeter is the classic security layer, blocking unauthorized traffic and watching for attack signatures. DMZs host public-facing services in semi-isolated zones.
+In a traditional setup, traversing inward through these layers should ideally require explicit authentication and authorization. However, in many real organizations, this is not consistently enforced.
 
-The corporate LAN is where most employees operate, accessing file servers and internal applications. Without proper segmentation, an attacker who gains access to the corporate LAN can move freely. Zero Trust enforces segmentation, ensuring that HR should not be on the same subnet as engineering, and finance should be isolated. This means that even if an attacker compromises one part of the internal network, their ability to move laterally to other sensitive areas is severely restricted. Each transition between network segments requires re-authentication and re-authorization, effectively creating micro-perimeters around individual resources.
+The internet is hostile by default, and anything exposed there is visible to scanners worldwide. The perimeter is the classic security layer, blocking unauthorized traffic and watching for attack signatures. DMZs host public-facing services in semi-isolated zones.
+
+The corporate LAN is where most employees operate, accessing file servers and internal applications. Without proper segmentation, an attacker who gains access to the corporate LAN can move freely. Zero Trust enforces segmentation, ensuring that HR should not be on the same subnet as engineering, and finance should be isolated.
+
+This means that even if an attacker compromises one part of the internal network, their ability to move laterally to other sensitive areas is severely restricted. Each transition between network segments requires re-authentication and re-authorization, effectively creating micro-perimeters around individual resources.
 
 ## Mitigating Common Cyber Threats with Zero Trust
 
@@ -83,4 +91,6 @@ Key practical steps often involve:
 * **Continuous Monitoring and Analytics:** All network traffic and access requests are continuously monitored for suspicious activity, with advanced analytics used to detect anomalies.
 * **Automation:** Automating security policies and responses helps to enforce Zero Trust principles consistently and at scale.
 
-While the benefits of Zero Trust are clear in enhancing security posture against evolving threats, its setup can be complex. It requires a deep understanding of an organization's assets, data flows, and user behaviors. Security must be integrated into the organization's growth and operations from the outset, rather than being an afterthought. Employee education and training are also important to ensure users understand and comply with new security protocols, helping to mitigate accidental insider threats. The most effective security strategy depends on an organization's specific threat model, but Zero Trust offers a strong framework for modern defense.
+While the benefits of Zero Trust are clear in enhancing security posture against evolving threats, its setup can be complex. It requires a deep understanding of an organization's assets, data flows, and user behaviors. Security must be integrated into the organization's growth and operations from the outset, rather than being an afterthought.
+
+Employee education and training are also important to ensure users understand and comply with new security protocols, helping to mitigate accidental insider threats. The most effective security strategy depends on an organization's specific threat model, but Zero Trust offers a strong framework for modern defense.

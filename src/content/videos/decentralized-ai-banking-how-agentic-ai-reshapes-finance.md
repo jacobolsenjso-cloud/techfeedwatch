@@ -32,32 +32,54 @@ For centuries, [financial services](/video/fintech-s-fragmented-future-deconstru
 
 ## The Digital Evolution of Core Banking Functions
 
-Historically, banks emerged to solve six fundamental human needs related to money. These included establishing trust, maintaining accurate records of ownership, facilitating payments, enabling lending, verifying identity, and managing financial risks. For hundreds of years, a centralized corporation was essential to perform these functions. However, technology has now digitized each of these core services. Cryptography provides trust and recordkeeping in decentralized systems. Payments and lending are handled through decentralized networks. Biometrics offer reliable identity verification. Smart contracts automate risk management. By 2026, the original purpose of a physical bank building has been been entirely digitized, marking a significant departure from the 600-year-old model of banking.
+Historically, banks emerged to solve six fundamental human needs related to money. These included establishing trust, maintaining accurate records of ownership, facilitating payments, enabling lending, verifying identity, and managing financial risks. For hundreds of years, a centralized corporation was essential to perform these functions.
+
+However, technology has now digitized each of these core services. Cryptography provides trust and recordkeeping in decentralized systems. Payments and lending are handled through decentralized networks.
+
+Biometrics offer reliable identity verification. Smart contracts automate risk management. By 2026, the original purpose of a physical bank building has been been entirely digitized, marking a significant departure from the 600-year-old model of banking.
 
 ## Converging Forces Reshaping Finance
 
-This structural transformation is not due to a single innovation but rather the convergence of four powerful forces. The first is [agentic AI](/video/agentic-ai-non-developers-building-company-infrastructure/), where artificial intelligence agents autonomously manage and move money based on user-defined constraints. The International Monetary Fund, for instance, now uses the term "agentic payments" in its official notes, indicating this is a real and regulated development. Your money, once passive, gains an independent engine.
+This structural transformation is not due to a single innovation but rather the convergence of four powerful forces. The first is [agentic AI](/video/agentic-ai-non-developers-building-company-infrastructure/), where artificial intelligence agents autonomously manage and move money based on user-defined constraints.
 
-The second force is regulatory clarity. Significant progress has been made in establishing legal frameworks for digital assets. On June 22nd, 2026, the Bank of England finalized its rules for stablecoins. Simultaneously, the European Union's comprehensive crypto asset regulation, known as MiCA, became fully active. This means stablecoins are no longer unregulated but are now part of a heavily regulated financial infrastructure.
+The International Monetary Fund, for instance, now uses the term "agentic payments" in its official notes, indicating this is a real and regulated development. Your money, once passive, gains an independent engine.
 
-Third, tokenization is rapidly expanding. McKenzie projects the tokenized asset market to reach $30 trillion. This involves creating an entirely new on-chain architecture where assets like property deeds, corporate stocks, and government treasury bills are digitized. These tokenized assets can then move across networks instantly, much like sending an email.
+The second force is regulatory clarity. Significant progress has been made in establishing legal frameworks for digital assets. On June 22nd, 2026, the Bank of England finalized its rules for stablecoins.
+
+Simultaneously, the European Union's comprehensive crypto asset regulation, known as MiCA, became fully active. This means stablecoins are no longer unregulated but are now part of a heavily regulated financial infrastructure.
+
+Third, tokenization is rapidly expanding. McKenzie projects the tokenized asset market to reach $30 trillion.
+
+This involves creating an entirely new on-chain architecture where assets like property deeds, corporate stocks, and government treasury bills are digitized. These tokenized assets can then move across networks instantly, much like sending an email.
 
 Finally, open finance Application Programming Interfaces (APIs) are connecting disparate financial services. These invisible messengers allow different software systems to communicate. They are effectively replacing physical bank branches by integrating accounts such as mobile money, traditional savings, and crypto wallets into a single, machine-readable financial layer that AI can handle in milliseconds.
 
 ## The Shifting Economics of Banking
 
-An important impact of these converging forces is a fundamental change in how traditional banks generate profits. For decades, banks have relied on what some refer to as "human laziness." People often leave their money in low-interest checking and savings accounts, earning almost nothing. Banks then lend out these idle deposits at much higher rates, with the interest rate spread forming the core engine of their profits.
+An important impact of these converging forces is a fundamental change in how traditional banks generate profits. For decades, banks have relied on what some refer to as "human laziness."
 
-However, this advantage is being eroded by agentic AI. Unlike a human, an AI agent does not leave money idle. Imagine a personal AI financial manager on your phone, constantly scanning global networks for secure, regulated protocols offering higher yields. This AI can instantly move your idle money to optimize your capital in real time. As millions of personal AI agents begin to drain these idle deposits to chase real-time yields, the historical profit advantage for legacy banking sectors is permanently challenged.
+People often leave their money in low-interest checking and savings accounts, earning almost nothing. Banks then lend out these idle deposits at much higher rates, with the interest rate spread forming the core engine of their profits.
+
+However, this advantage is being eroded by agentic AI. Unlike a human, an AI agent does not leave money idle. Imagine a personal AI financial manager on your phone, constantly scanning global networks for secure, regulated protocols offering higher yields.
+
+This AI can instantly move your idle money to optimize your capital in real time. As millions of personal AI agents begin to drain these idle deposits to chase real-time yields, the historical profit advantage for legacy banking sectors is permanently challenged.
 
 ## Traditional Institutions Adapt and Innovate
 
-Traditional financial institutions are acutely aware of this existential threat and are responding aggressively. They are not simply disappearing but are actively transforming into technology companies. Boston Consulting Group projects that by 2030, banks that successfully adopt an AI-first model could see a 40% reduction in costs and a 30% gain in profitability. This highlights the significant incentives for transformation.
+Traditional financial institutions are acutely aware of this existential threat and are responding aggressively. They are not simply disappearing but are actively transforming into technology companies.
 
-Evidence of this shift is visible in hiring trends. In June 2026 alone, Lloyds Banking Group hired 300 AI technology experts. Many traditional banks are working to replace their outdated legacy systems, essentially rebuilding their operations while continuing to function. The central question is whether these established institutions can transform quickly enough to compete with agile, decentralized networks that were designed to be digital from the outset.
+Boston Consulting Group projects that by 2030, banks that successfully adopt an AI-first model could see a 40% reduction in costs and a 30% gain in profitability. This highlights the significant incentives for transformation.
+
+Evidence of this shift is visible in hiring trends. In June 2026 alone, Lloyds Banking Group hired 300 AI technology experts.
+
+Many traditional banks are working to replace their outdated legacy systems, essentially rebuilding their operations while continuing to function. The central question is whether these established institutions can transform quickly enough to compete with agile, decentralized networks that were designed to be digital from the outset.
 
 ## A Glimpse into the Future of Money
 
-To understand the future of finance, it is useful to look at regions that have already embraced mobile and decentralized solutions. East Africa, particularly Kenya, offers a blueprint. In 2007, Kenya launched M-Pesa, a mobile money service that allowed millions to transfer value via phones, enabling an entire generation to bypass traditional branch banking. Throughout the 2020s, African fintech companies attracted billions in capital, proving that mobile, decentralized networks can operate effectively at a massive scale. By 2026, the Central Bank of Kenya is actively exploring a digital shilling, further cementing its role as a pioneer in [digital finance](/video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/).
+To understand the future of finance, it is useful to look at regions that have already embraced mobile and decentralized solutions. East Africa, particularly Kenya, offers a blueprint. In 2007, Kenya launched M-Pesa, a mobile money service that allowed millions to transfer value via phones, enabling an entire generation to bypass traditional branch banking.
 
-In this evolving financial world, the traditional bank's role is expected to change drastically. It may cease to be the primary interface for an individual's financial life, instead becoming invisible back-end infrastructure, much like the engine of a car. Your personal AI agent would then serve as the steering wheel and dashboard, the only interface you need. Money is beginning to behave like information, with personal AI agents smoothly routing value across networks at high speed, drawing from traditional bank accounts, stablecoin wallets, tokenized investments, and government pensions. This represents the development of a foundational communication language for finance, akin to TCP/IP for the internet.
+Throughout the 2020s, African fintech companies attracted billions in capital, proving that mobile, decentralized networks can operate effectively at a massive scale. By 2026, the Central Bank of Kenya is actively exploring a digital shilling, further cementing its role as a pioneer in [digital finance](/video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/).
+
+In this evolving financial world, the traditional bank's role is expected to change drastically. It may cease to be the primary interface for an individual's financial life, instead becoming invisible back-end infrastructure, much like the engine of a car. Your personal AI agent would then serve as the steering wheel and dashboard, the only interface you need.
+
+Money is beginning to behave like information, with personal AI agents smoothly routing value across networks at high speed, drawing from traditional bank accounts, stablecoin wallets, tokenized investments, and government pensions. This represents the development of a foundational communication language for finance, akin to TCP/IP for the internet.

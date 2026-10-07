@@ -27,13 +27,19 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-[Quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) is a fundamentally new way of processing information, moving beyond the binary logic of zeros and ones used by classical computers. Instead, it harnesses the principles of quantum mechanics, allowing it to perform certain calculations in significantly fewer steps. This power comes from its ability to explore multiple computational paths simultaneously, a concept often likened to calculations unfolding across parallel universes.
+[Quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) is a fundamentally new way of processing information, moving beyond the binary logic of zeros and ones used by classical computers. Instead, it harnesses the principles of quantum mechanics, allowing it to perform certain calculations in significantly fewer steps.
+
+This power comes from its ability to explore multiple computational paths simultaneously, a concept often likened to calculations unfolding across parallel universes.
 
 ## The Quantum Leap Beyond Classical Computing
 
-Traditional computers, from your laptop to large data center servers, operate on bits that are either 0 or 1. Quantum computers, however, utilize qubits, which can exist in a superposition of both 0 and 1 at the same time. This unique property means that a quantum system isn't limited to a single state but can branch into many configurations concurrently. To make accurate predictions about future states, a [quantum computer](/video/google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality/) must track and interfere with all these potential paths.
+Traditional computers, from your laptop to large data center servers, operate on bits that are either 0 or 1. Quantum computers, however, utilize qubits, which can exist in a superposition of both 0 and 1 at the same time.
 
-Consider a simple analogy: imagine a very long cabinet with 1 million drawers, and you've hidden an item in one of them. A classical approach would require you to open, on average, half a million drawers to find the item. A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how quantum computing gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
+This unique property means that a quantum system isn't limited to a single state but can branch into many configurations concurrently. To make accurate predictions about future states, a [quantum computer](/video/google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality/) must track and interfere with all these potential paths.
+
+Consider a simple analogy: imagine a very long cabinet with 1 million drawers, and you've hidden an item in one of them. A classical approach would require you to open, on average, half a million drawers to find the item.
+
+A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how quantum computing gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
 
 ## How Quantum Computers Process Information
 
@@ -45,17 +51,25 @@ For instance, a simple two-qubit circuit can perform a quantum search. In a data
 
 While the visionary potential of quantum computing is vast, its practical applications are still in early development. Today, quantum computers are primarily used for scientific research, allowing scientists to prepare and study interesting quantum states. This work has led to numerous publications in high-impact journals, exploring phenomena previously beyond human observation.
 
-For example, researchers have used quantum systems to simulate the behavior of a small, traversable wormhole, offering insights into the physics of these theoretical objects. They have also created "time crystals," which are systems that change periodically over time without exchanging energy with their environment, representing the closest physical realization of a perpetual mobile. Another area of exploration involves "anyons," systems that exhibit changes in their general properties when two identical parts are exchanged – a behavior not observed in everyday classical physics.
+For example, researchers have used quantum systems to simulate the behavior of a small, traversable wormhole, offering insights into the physics of these theoretical objects. They have also created "time crystals," which are systems that change periodically over time without exchanging energy with their environment, representing the closest physical realization of a perpetual mobile.
 
-Despite these fascinating achievements, no practical application exists yet that can *only* be performed on a quantum computer and offers a clear commercial advantage over classical machines. However, progress is being made. One promising development is the design of a quantum algorithm for signal processing, which could enable new methods for detecting and analyzing molecules using nuclear electronic spectroscopy. This could eventually lead to consumer applications, such as an "electronic nose" in a smartphone or smartwatch that could detect dangerous viruses in a room, identify free radicals in the bloodstream, or warn about food allergens.
+Another area of exploration involves "anyons," systems that exhibit changes in their general properties when two identical parts are exchanged – a behavior not observed in everyday classical physics.
+
+Despite these fascinating achievements, no practical application exists yet that can *only* be performed on a quantum computer and offers a clear commercial advantage over classical machines. However, progress is being made.
+
+One promising development is the design of a quantum algorithm for signal processing, which could enable new methods for detecting and analyzing molecules using nuclear electronic spectroscopy. This could eventually lead to consumer applications, such as an "electronic nose" in a smartphone or smartwatch that could detect dangerous viruses in a room, identify free radicals in the bloodstream, or warn about food allergens.
 
 ## The Roadmap to Practical Quantum Advantage
 
 To enable a broader range of applications, the field needs to build large-scale, error-corrected quantum computers, potentially involving a million physical qubits. The roadmap to achieve this is typically broken down into several stages, with the first two already accomplished.
 
-Before 2019, no quantum computer had demonstrated a capability that surpassed [classical computing](/video/quantum-computing-s-great-paradox-why-investment-soars-as-use-cases/). That year, a quantum chip performed a calculation that the fastest supercomputer at the time would have needed 10,000 years to complete. More recently, the same experiment was repeated, and the best supercomputer today, Frontier, would require 1 billion years for the identical calculation. This exponential growth in computational power supports Neven's Law, which posits that the power of quantum computers will grow at a double exponential rate.
+Before 2019, no quantum computer had demonstrated a capability that surpassed [classical computing](/video/quantum-computing-s-great-paradox-why-investment-soars-as-use-cases/). That year, a quantum chip performed a calculation that the fastest supercomputer at the time would have needed 10,000 years to complete.
 
-The second major milestone, achieved in 2023, was the demonstration that quantum error correction is a scalable technology. Current quantum operations have an error rate of about 1 out of every 1,000 two-qubit operations, meaning a quantum computer would frequently crash. Quantum error correction addresses this by combining many physical qubits into a single, more stable logical qubit, aiming to reduce the error rate to 1 in a billion or even lower. Researchers are optimistic that the full roadmap to a large, error-corrected quantum computer could be completed before the end of this decade.
+More recently, the same experiment was repeated, and the best supercomputer today, Frontier, would require 1 billion years for the identical calculation. This exponential growth in computational power supports Neven's Law, which posits that the power of quantum computers will grow at a double exponential rate.
+
+The second major milestone, achieved in 2023, was the demonstration that quantum error correction is a scalable technology. Current quantum operations have an error rate of about 1 out of every 1,000 two-qubit operations, meaning a quantum computer would frequently crash.
+
+Quantum error correction addresses this by combining many physical qubits into a single, more stable logical qubit, aiming to reduce the error rate to 1 in a billion or even lower. Researchers are optimistic that the full roadmap to a large, error-corrected quantum computer could be completed before the end of this decade.
 
 ## Transformative Applications of Future Quantum Systems
 
@@ -67,4 +81,6 @@ Once large-scale, error-corrected quantum computers become available, they are e
 
 Beyond simulations, new quantum algorithms are showing promise for significant speedups in optimization problems, which are ubiquitous in engineering, finance, and machine learning. The implication is that quantum computers will become an indispensable capability for foundational computational tasks.
 
-There is also a fascinating, more speculative intersection between physics and neuroscience. Quantum information science may offer tools to explore one of humanity's deepest questions: what creates conscious experience? One attractive conjecture proposes that consciousness is how we experience the emergence of a single classical world from the many parallel universes that make up the multiverse. Researchers have begun programs to test this conjecture experimentally using quantum neurobiology methods, with the potential to expand human consciousness in space, time, and complexity if the hypothesis proves correct.
+There is also a fascinating, more speculative intersection between physics and neuroscience. Quantum information science may offer tools to explore one of humanity's deepest questions: what creates conscious experience?
+
+One attractive conjecture proposes that consciousness is how we experience the emergence of a single classical world from the many parallel universes that make up the multiverse. Researchers have begun programs to test this conjecture experimentally using quantum neurobiology methods, with the potential to expand human consciousness in space, time, and complexity if the hypothesis proves correct.

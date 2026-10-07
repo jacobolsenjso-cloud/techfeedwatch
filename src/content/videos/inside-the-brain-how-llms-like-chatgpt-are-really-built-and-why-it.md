@@ -32,13 +32,21 @@ ChatGPT is a type of large language model, or LLM. These are sophisticated compu
 
 ## The Foundation: Gathering and Cleaning Internet Data
 
-Building an LLM like ChatGPT begins with collecting a massive amount of text. The primary source for this raw material is the internet. Organizations like Common Crawl have been systematically indexing web pages since 2007. By 2024, Common Crawl had indexed 2.7 billion web pages, providing a vast starting point.
+Building an LLM like ChatGPT begins with collecting a massive amount of text. The primary source for this raw material is the internet.
 
-The goal is to gather a huge quantity of high-quality and diverse documents. This diversity ensures the model learns a broad range of knowledge. However, raw internet data is messy and requires extensive filtering. Several stages are involved in this cleaning process.
+Organizations like Common Crawl have been systematically indexing web pages since 2007. By 2024, Common Crawl had indexed 2.7 billion web pages, providing a vast starting point.
 
-First, URL filtering removes undesirable sources. This includes blocklists for malware, spam, marketing, racist, and adult websites. Next, text extraction isolates the actual content from the raw HTML of web pages. This step removes computer code, navigation menus, and other non-text elements.
+The goal is to gather a huge quantity of high-quality and diverse documents. This diversity ensures the model learns a broad range of knowledge.
 
-Language filtering is another important step. For instance, some datasets, like FineWeb, keep only web pages where over 65% of the content is in English. Such decisions affect the model's ability to perform in different languages. A model trained primarily on English data will naturally be better at English than other languages. Finally, personally identifiable information (PII) is removed. This involves detecting and filtering out details like addresses or Social Security numbers from the dataset.
+However, raw internet data is messy and requires extensive filtering. Several stages are involved in this cleaning process.
+
+First, URL filtering removes undesirable sources. This includes blocklists for malware, spam, marketing, racist, and adult websites.
+
+Next, text extraction isolates the actual content from the raw HTML of web pages. This step removes computer code, navigation menus, and other non-text elements.
+
+Language filtering is another important step. For instance, some datasets, like FineWeb, keep only web pages where over 65% of the content is in English. Such decisions affect the model's ability to perform in different languages.
+
+A model trained primarily on English data will naturally be better at English than other languages. Finally, personally identifiable information (PII) is removed. This involves detecting and filtering out details like addresses or Social Security numbers from the dataset.
 
 After all this rigorous processing, a vast but curated dataset remains. For example, the FineWeb dataset, which is representative of production-grade applications, occupies about 44 terabytes of disk space. This filtered text forms a continuous, one-dimensional sequence of raw internet text, ready for the next stage of preparation.
 
@@ -46,13 +54,19 @@ After all this rigorous processing, a vast but curated dataset remains. For exam
 
 [Neural networks](/video/from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai/), which power LLMs, cannot directly process raw text. They require input in the form of a one-dimensional sequence of symbols from a finite set. The process of converting text into these numerical symbols is called tokenization.
 
-Initially, computers represent text as sequences of bits, zeros and ones. This results in extremely long sequences with only two possible symbols. To make this more manageable, bits are grouped into bytes. Each byte consists of eight bits, allowing for 256 possible combinations or symbols. This reduces the sequence length by eight times while increasing the number of distinct symbols. Think of these bytes not as numbers but as unique IDs representing specific characters or character combinations.
+Initially, computers represent text as sequences of bits, zeros and ones. This results in extremely long sequences with only two possible symbols. To make this more manageable, bits are grouped into bytes.
+
+Each byte consists of eight bits, allowing for 256 possible combinations or symbols. This reduces the sequence length by eight times while increasing the number of distinct symbols. Think of these bytes not as numbers but as unique IDs representing specific characters or character combinations.
 
 ## How Byte Pair Encoding Creates a Vocabulary
 
-State-of-the-art language models go beyond simple byte representation to further optimize the sequence length and vocabulary size. They use an algorithm called Byte Pair Encoding (BPE). BPE works by identifying frequently occurring consecutive bytes or symbols. For example, if the sequence "116" followed by "32" appears often, BPE will group this pair into a new, single symbol. This new symbol is assigned a unique ID, perhaps starting from 256.
+State-of-the-art language models go beyond simple byte representation to further optimize the sequence length and vocabulary size. They use an algorithm called Byte Pair Encoding (BPE). BPE works by identifying frequently occurring consecutive bytes or symbols.
 
-This process is iterated many times. Each time a new symbol is "minted" from a common pair, the overall sequence length decreases, and the vocabulary size increases. This trade-off is essential because sequence length is a precious computational resource during training. For instance, GPT-4 uses a vocabulary of 100,277 possible symbols. These symbols, or tokens, represent chunks of text, which can be individual characters, common words, or parts of words. The way text like "Hello world" is broken down into specific tokens shows that even spaces and capitalization affect the tokenization.
+For example, if the sequence "116" followed by "32" appears often, BPE will group this pair into a new, single symbol. This new symbol is assigned a unique ID, perhaps starting from 256.
+
+This process is iterated many times. Each time a new symbol is "minted" from a common pair, the overall sequence length decreases, and the vocabulary size increases. This trade-off is essential because sequence length is a precious computational resource during training.
+
+For instance, GPT-4 uses a vocabulary of 100,277 possible symbols. These symbols, or tokens, represent chunks of text, which can be individual characters, common words, or parts of words. The way text like "Hello world" is broken down into specific tokens shows that even spaces and capitalization affect the tokenization.
 
 The final result of this tokenization process is an enormous sequence of these unique token IDs. The FineWeb dataset, for example, translates into a sequence of about 15 trillion tokens. Each token is just a numerical identifier for a specific text chunk, without inherent meaning beyond its ID.
 
@@ -60,14 +74,24 @@ The final result of this tokenization process is an enormous sequence of these u
 
 With the vast dataset transformed into a sequence of tokens, the neural network training can begin. This is where the model learns to understand and generate language. The core task during training is to predict the next token in a sequence.
 
-The process involves feeding the neural network "windows" of tokens from the dataset. These windows act as context for the prediction. The length of these context windows can vary, often up to a maximum size like 8,000 tokens. Processing longer sequences becomes very computationally expensive.
+The process involves feeding the neural network "windows" of tokens from the dataset. These windows act as context for the prediction.
+
+The length of these context windows can vary, often up to a maximum size like 8,000 tokens. Processing longer sequences becomes very computationally expensive.
 
 For each window of tokens, the neural network's job is to output a prediction for what token should come next. Since the vocabulary for models like GPT-4 contains 100,277 possible tokens, the network outputs 100,277 numbers. Each number represents the probability that a specific token will be the next one in the sequence.
 
-Initially, the neural network's predictions are random. However, because these windows are sampled from the actual dataset, the correct next token is known. This known answer serves as a "label." The model then uses a mathematical process to adjust its internal parameters. It aims to increase the probability of the correct next token and decrease the probabilities of all other incorrect tokens. Through trillions of these predictions and adjustments, the neural network gradually learns the intricate statistical relationships and patterns within human language.
+Initially, the neural network's predictions are random. However, because these windows are sampled from the actual dataset, the correct next token is known. This known answer serves as a "label."
+
+The model then uses a mathematical process to adjust its internal parameters. It aims to increase the probability of the correct next token and decrease the probabilities of all other incorrect tokens. Through trillions of these predictions and adjustments, the neural network gradually learns the intricate statistical relationships and patterns within human language.
 
 ## Trade-offs and Challenges in LLM Development
 
-The extensive process of data preparation and tokenization involves many design decisions, each with practical trade-offs. The aggressive filtering of internet data, while necessary for quality and safety, inherently shapes the model's worldview. For example, filtering out certain types of websites or focusing heavily on English content means the model will be less knowledgeable or proficient in those excluded areas. This can lead to models that perform poorly in other languages or reflect a limited cultural perspective. The biases present in the original internet data, even after filtering, can also be absorbed and amplified by the model. This is a significant challenge, as models trained on biased data may perpetuate harmful stereotypes or generate unfair responses.
+The extensive process of data preparation and tokenization involves many design decisions, each with practical trade-offs. The aggressive filtering of internet data, while necessary for quality and safety, inherently shapes the model's worldview. For example, filtering out certain types of websites or focusing heavily on English content means the model will be less knowledgeable or proficient in those excluded areas.
 
-Tokenization also presents trade-offs. The choice of vocabulary size, for instance, affects how efficiently the model processes text. A larger vocabulary, like GPT-4's 100,277 symbols, allows for shorter token sequences, which is computationally beneficial. However, it also means the model has more distinct units to learn. The way text is segmented into tokens can also influence how the model "understands" words. For example, if a common phrase is always tokenized as a single unit, the model might treat it differently than if it were broken into individual words. Balancing these factors is a continuous effort in the development of advanced large language models.
+This can lead to models that perform poorly in other languages or reflect a limited cultural perspective. The biases present in the original internet data, even after filtering, can also be absorbed and amplified by the model. This is a significant challenge, as models trained on biased data may perpetuate harmful stereotypes or generate unfair responses.
+
+Tokenization also presents trade-offs. The choice of vocabulary size, for instance, affects how efficiently the model processes text. A larger vocabulary, like GPT-4's 100,277 symbols, allows for shorter token sequences, which is computationally beneficial.
+
+However, it also means the model has more distinct units to learn. The way text is segmented into tokens can also influence how the model "understands" words.
+
+For example, if a common phrase is always tokenized as a single unit, the model might treat it differently than if it were broken into individual words. Balancing these factors is a continuous effort in the development of advanced large language models.

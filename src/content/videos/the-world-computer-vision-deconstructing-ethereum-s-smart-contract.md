@@ -34,40 +34,68 @@ Ethereum smart contracts are self-executing programs stored on the [Ethereum blo
 
 ## The Ethereum World State and Contract Identity
 
-The Ethereum World State serves as the foundational data layer for the entire network. It is a collection of data that changes over time according to defined rules. This state holds two primary types of objects: regular accounts and contract accounts. Regular accounts are user-controlled, typically holding a balance of Ether (ETH) and a transaction nonce. Contract accounts are similar but also contain immutable code and mutable storage.
+The Ethereum World State serves as the foundational data layer for the entire network. It is a collection of data that changes over time according to defined rules.
 
-Each account, whether regular or a contract, is identified by a unique address. The method for deriving these addresses differs significantly. For a regular account, the address is generated from a private key. A large random number serves as the private key, from which a public key is derived. Hashing this public key and taking its last 20 bytes produces the account's address. This linkage to a private key is essential for verifying transaction signatures.
+This state holds two primary types of objects: regular accounts and contract accounts. Regular accounts are user-controlled, typically holding a balance of Ether (ETH) and a transaction nonce. Contract accounts are similar but also contain immutable code and mutable storage.
 
-Contract addresses, however, are not tied to a private key. They are identifiers pointing to the contract's location in the world state. A contract's address is typically derived by hashing the deployer's address and their transaction nonce at the time of deployment. An alternative method, `CREATE2`, uses the sender's address, a unique "salt" value, and a hash of the contract's bytecode. This allows for pre-calculating a contract's address before it is deployed.
+Each account, whether regular or a contract, is identified by a unique address. The method for deriving these addresses differs significantly. For a regular account, the address is generated from a private key.
+
+A large random number serves as the private key, from which a public key is derived. Hashing this public key and taking its last 20 bytes produces the account's address. This linkage to a private key is essential for verifying transaction signatures.
+
+Contract addresses, however, are not tied to a private key. They are identifiers pointing to the contract's location in the world state. A contract's address is typically derived by hashing the deployer's address and their transaction nonce at the time of deployment.
+
+An alternative method, `CREATE2`, uses the sender's address, a unique "salt" value, and a hash of the contract's bytecode. This allows for pre-calculating a contract's address before it is deployed.
 
 Balances for both account types are stored as 256-bit numbers, representing the amount of Ether held. The system internally handles all Ether in its smallest unit, Wei, avoiding decimal complexities. User interfaces then convert Wei into more readable denominations like ETH.
 
 ## Contract Code and Execution
 
-The core logic of a [smart contract](/video/solana-escrow-the-smart-contract-mechanism-rewriting-digital/) resides in its bytecode, which is stored on the Ethereum World State. This bytecode is a sequence of hexadecimal characters, where each two characters represent an opcode. Opcodes are fundamental instructions that the Ethereum Virtual Machine (EVM) can interpret and execute. When developers write contracts in high-level languages like Solidity, these programs are compiled down into this low-level bytecode.
+The core logic of a [smart contract](/video/solana-escrow-the-smart-contract-mechanism-rewriting-digital/) resides in its bytecode, which is stored on the Ethereum World State. This bytecode is a sequence of hexadecimal characters, where each two characters represent an opcode.
 
-The EVM acts as a "dumb machine," meticulously following each opcode instruction. It does not inherently understand high-level programming concepts like function names or variable types. Instead, it executes the series of operations dictated by the bytecode. This execution model, combined with the EVM's design, makes Ethereum smart contracts Turing complete. This means they can execute any computable program, offering immense flexibility for complex decentralized applications.
+Opcodes are fundamental instructions that the Ethereum Virtual Machine (EVM) can interpret and execute. When developers write contracts in high-level languages like Solidity, these programs are compiled down into this low-level bytecode.
+
+The EVM acts as a "dumb machine," meticulously following each opcode instruction. It does not inherently understand high-level programming concepts like function names or variable types. Instead, it executes the series of operations dictated by the bytecode.
+
+This execution model, combined with the EVM's design, makes Ethereum smart contracts Turing complete. This means they can execute any computable program, offering immense flexibility for complex decentralized applications.
 
 ## Interacting with Smart Contracts: Call Data and the ABI
 
-Users and other contracts interact with a smart contract's logic by sending transactions to its address. These transactions often include "call data," which specifies the action to be performed and any necessary arguments. The first 4 bytes of this call data typically contain a "function selector." This selector is derived by hashing the function's signature—its name combined with the types of its arguments, but without argument names—and then taking the first 4 bytes of that hash.
+Users and other contracts interact with a smart contract's logic by sending transactions to its address. These transactions often include "call data," which specifies the action to be performed and any necessary arguments.
 
-Critically, the EVM itself does not natively understand or process these function selectors. Instead, the contract's own bytecode contains the logic to handle them. When a transaction with call data arrives, the EVM begins executing the contract's bytecode from the start. This initial bytecode is programmed to extract the first 4 bytes of the call data. It then compares this selector against a list of known selectors for the contract's public functions. Once a match is found, the bytecode instructs the EVM to jump to the specific section of code corresponding to that function. The bytecode then further decodes the remaining call data, extracting the function's arguments, typically in 256-bit chunks, before proceeding with the function's main logic.
+The first 4 bytes of this call data typically contain a "function selector." This selector is derived by hashing the function's signature—its name combined with the types of its arguments, but without argument names—and then taking the first 4 bytes of that hash.
 
-The efficiency of this selector matching process can vary. For contracts with only a few public functions, a simple linear search through the selectors might be sufficient. However, for contracts with a large number of functions, perhaps 100, a linear search would be inefficient and costly in terms of gas fees for users. In such cases, compilers can implement more sophisticated logic, such as a binary search, to find the correct function more quickly. This optimization results in a slightly larger contract bytecode but significantly reduces gas costs for interactions.
+Critically, the EVM itself does not natively understand or process these function selectors. Instead, the contract's own bytecode contains the logic to handle them. When a transaction with call data arrives, the EVM begins executing the contract's bytecode from the start.
 
-To simplify interaction for external applications and users, an Application Binary Interface (ABI) is generated by the compiler. The ABI is a JSON-based description of a contract's public functions, including their names, argument types, and return types. It acts as a standardized interface, allowing external systems to construct correct call data without needing to parse the contract's source code or bytecode directly.
+This initial bytecode is programmed to extract the first 4 bytes of the call data. It then compares this selector against a list of known selectors for the contract's public functions.
+
+Once a match is found, the bytecode instructs the EVM to jump to the specific section of code corresponding to that function. The bytecode then further decodes the remaining call data, extracting the function's arguments, typically in 256-bit chunks, before proceeding with the function's main logic.
+
+The efficiency of this selector matching process can vary. For contracts with only a few public functions, a simple linear search through the selectors might be sufficient. However, for contracts with a large number of functions, perhaps 100, a linear search would be inefficient and costly in terms of gas fees for users.
+
+In such cases, compilers can implement more sophisticated logic, such as a binary search, to find the correct function more quickly. This optimization results in a slightly larger contract bytecode but significantly reduces gas costs for interactions.
+
+To simplify interaction for external applications and users, an Application Binary Interface (ABI) is generated by the compiler. The ABI is a JSON-based description of a contract's public functions, including their names, argument types, and return types.
+
+It acts as a standardized interface, allowing external systems to construct correct call data without needing to parse the contract's source code or bytecode directly.
 
 ## Storage and Function Visibility
 
-Smart contracts maintain their state through storage, which is allocated at the time of deployment. When a contract is deployed, the amount of storage required for its declared variables is fixed. While the *values* stored in these variables can change over the contract's lifetime, the *set* of variables themselves cannot be altered or expanded after deployment. The exception to this rule is dynamic data structures like mappings and arrays, whose internal size can grow or shrink, even though the mapping or array itself is a fixed part of the contract's storage. Contract storage is managed in 256-bit chunks.
+Smart contracts maintain their state through storage, which is allocated at the time of deployment. When a contract is deployed, the amount of storage required for its declared variables is fixed. While the *values* stored in these variables can change over the contract's lifetime, the *set* of variables themselves cannot be altered or expanded after deployment.
 
-Function visibility is another important aspect of smart contract design, controlled by keywords like `public`, `private`, `external`, and `internal` in high-level languages like Solidity. These keywords dictate which entities can call a particular function. `Public` functions are accessible by anyone, including external accounts and other contracts. `Private` functions can only be called from within the contract itself. `Internal` functions are similar to private but can also be called by contracts that inherit from the current contract. `External` functions can only be called from outside the contract, not from other functions within the same contract.
+The exception to this rule is dynamic data structures like mappings and arrays, whose internal size can grow or shrink, even though the mapping or array itself is a fixed part of the contract's storage. Contract storage is managed in 256-bit chunks.
 
-Similar to function selectors, the EVM does not inherently understand these visibility modifiers. Instead, the compiler translates these visibility rules into the contract's bytecode. The resulting bytecode is structured in a way that enforces these access restrictions. For example, the bytecode for a private function will simply not include an entry point that external callers could use, or it will include checks that revert if called incorrectly. The EVM simply executes the instructions it is given, and those instructions reflect the visibility choices made during development.
+Function visibility is another important aspect of smart contract design, controlled by keywords like `public`, `private`, `external`, and `internal` in high-level languages like Solidity.
+
+These keywords dictate which entities can call a particular function. `Public` functions are accessible by anyone, including external accounts and other contracts. `Private` functions can only be called from within the contract itself. `Internal` functions are similar to private but can also be called by contracts that inherit from the current contract. `External` functions can only be called from outside the contract, not from other functions within the same contract.
+
+Similar to function selectors, the EVM does not inherently understand these visibility modifiers. Instead, the compiler translates these visibility rules into the contract's bytecode. The resulting bytecode is structured in a way that enforces these access restrictions.
+
+For example, the bytecode for a private function will simply not include an entry point that external callers could use, or it will include checks that revert if called incorrectly. The EVM simply executes the instructions it is given, and those instructions reflect the visibility choices made during development.
 
 ## Deployment and Initialization
 
 The deployment of a smart contract involves uploading "contract creation code" to the Ethereum network. This creation code is distinct from the "runtime code" that users interact with after deployment. The creation code includes the runtime code, but it also contains additional instructions necessary for setting up the contract.
 
-A key part of the deployment process is the execution of the contract's constructor. The constructor is a special function within the creation code that runs only once, at the moment of deployment. Its purpose is to initialize any state variables to their desired starting values. If no specific values are set, storage variables are typically initialized to all zeros. This entire process, including constructor execution and initial storage allocation, ensures the contract is properly configured and ready to operate on the blockchain.
+A key part of the deployment process is the execution of the contract's constructor. The constructor is a special function within the creation code that runs only once, at the moment of deployment. Its purpose is to initialize any state variables to their desired starting values.
+
+If no specific values are set, storage variables are typically initialized to all zeros. This entire process, including constructor execution and initial storage allocation, ensures the contract is properly configured and ready to operate on the blockchain.

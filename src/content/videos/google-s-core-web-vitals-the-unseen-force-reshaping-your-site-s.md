@@ -32,7 +32,9 @@ Core Web Vitals represent a fundamental shift in how search engines, particularl
 
 ## What Core Web Vitals Measure for Modern Websites
 
-Core Web Vitals are a set of three specific, measurable metrics that quantify key aspects of the user experience on a web page. As discussed at 00:28, these vitals, defined by Google, provide developers and website owners with actionable insights into how their pages perform from a user's perspective. Focusing on these metrics helps ensure that a website not only loads quickly but also feels responsive and stable during interaction.
+Core Web Vitals are a set of three specific, measurable metrics that quantify key aspects of the user experience on a web page.
+
+As discussed at 00:28, these vitals, defined by Google, provide developers and website owners with actionable insights into how their pages perform from a user's perspective. Focusing on these metrics helps ensure that a website not only loads quickly but also feels responsive and stable during interaction.
 
 The three primary metrics that constitute Core Web Vitals are:
 * **Largest Contentful Paint (LCP)**: This metric measures loading performance. As explored at 01:06, LCP reports the render time of the largest image or text block visible within the viewport. For a good user experience, websites should aim for an LCP of 2.5 seconds or less. A slow LCP can frustrate users, leading them to abandon a page before they even start interacting with it.
@@ -43,7 +45,9 @@ These metrics offer a standardized way to understand and [measure and improve] a
 
 ## How It Works to Enhance User Experience
 
-The operational mechanics of Core Web Vitals revolve around user-centric metrics, meaning they evaluate the actual experience of a visitor rather than just server-side processing or network speeds. Google integrates these measurements into its ranking algorithms, establishing them as a factor for [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works). A website performing well across LCP, FID, and CLS is likely to be favored in search results, increasing its visibility and organic traffic. This is further elaborated at 04:47, highlighting the SEO Impact.
+The operational mechanics of Core Web Vitals revolve around user-centric metrics, meaning they evaluate the actual experience of a visitor rather than just server-side processing or network speeds. Google integrates these measurements into its ranking algorithms, establishing them as a factor for [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
+
+A website performing well across LCP, FID, and CLS is likely to be favored in search results, increasing its visibility and organic traffic. This is further elaborated at 04:47, highlighting the SEO Impact.
 
 To illustrate how these metrics work in practice, consider the following:
 
@@ -51,7 +55,9 @@ To illustrate how these metrics work in practice, consider the following:
 * **Making a website responsive (FID):** A common scenario for a poor First Input Delay occurs when a page loads a lot of JavaScript that blocks the main thread. When a user tries to click a "buy now" button immediately after the page appears visually complete, but the script is still running, the click might not register instantly. This delay directly contributes to FID. Optimizing for FID involves minimizing the amount of JavaScript that executes during initial page load, breaking up long tasks, and deferring non-critical scripts.
 * **Preventing page shifts (CLS):** This issue often manifests on pages with dynamic content, such as advertisements or pop-ups. If an ad banner loads after the main content and pushes existing elements down, it results in a Cumulative Layout Shift. To [prevent page shifts], web developers can reserve adequate space for ad slots or dynamically loaded elements, ensuring that content does not jump around unexpectedly. For example, iframes for ads should have defined dimensions.
 
-As CodeLucky points out, understanding these metrics means leveraging "best tools and easy-to-implement techniques to measure and improve your Core Web Vitals scores." This includes utilizing tools like Google's PageSpeed Insights, Lighthouse, or Search Console, which provide detailed reports and suggestions for improvement. These tools offer specific data points for LCP, FID, and CLS, allowing developers to diagnose issues and implement targeted solutions. For example, [AI Front End Development Tools Transform Web UI Creation](/video/ai-accelerates-front-end-development-reshaping-ui-creation-and) can also play a role in optimizing front-end performance, which directly impacts these metrics.
+As CodeLucky points out, understanding these metrics means leveraging "best tools and easy-to-implement techniques to measure and improve your Core Web Vitals scores." This includes utilizing tools like Google's PageSpeed Insights, Lighthouse, or Search Console, which provide detailed reports and suggestions for improvement.
+
+These tools offer specific data points for LCP, FID, and CLS, allowing developers to diagnose issues and implement targeted solutions. For example, [AI Front End Development Tools Transform Web UI Creation](/video/ai-accelerates-front-end-development-reshaping-ui-creation-and) can also play a role in optimizing front-end performance, which directly impacts these metrics.
 
 ## Who It's For and Who Does Not Benefit
 
@@ -72,4 +78,6 @@ Essentially, if a website intends to attract and retain users from Google Search
 
 ## The Bottom Line
 
-Core Web Vitals are more than just technical metrics; they are a fundamental component of effective web presence and digital strategy. By focusing on Largest Contentful Paint, First Input Delay, and Cumulative Layout Shift, website owners directly impact user satisfaction and search engine visibility. Prioritizing these vitals is not merely about appeasing an algorithm; it's about delivering a superior, reliable experience that keeps visitors engaged, drives conversions, and fosters a positive perception of your online brand. Investing in Core Web Vitals optimization is investing in your audience and your long-term digital success. For best practices and a summary, refer to 05:57.
+Core Web Vitals are more than just technical metrics; they are a fundamental component of effective web presence and digital strategy. By focusing on Largest Contentful Paint, First Input Delay, and Cumulative Layout Shift, website owners directly impact user satisfaction and search engine visibility.
+
+Prioritizing these vitals is not merely about appeasing an algorithm; it's about delivering a superior, reliable experience that keeps visitors engaged, drives conversions, and fosters a positive perception of your online brand. Investing in Core Web Vitals optimization is investing in your audience and your long-term digital success. For best practices and a summary, refer to 05:57.

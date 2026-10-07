@@ -31,21 +31,33 @@ Cybercrime prevention involves a set of practices and technologies designed to p
 
 ## The Human Element in Cyber Attacks
 
-Many people mistakenly believe that cybercriminals primarily target large corporations, banks, or government systems. The reality is that a large number of successful cyber attacks begin by targeting ordinary people. Attackers have learned that it is often easier to exploit human behavior than to break through complex technical security measures. They understand that people experience emotions like stress, urgency, or excitement, which can be manipulated to bypass security controls.
+Many people mistakenly believe that cybercriminals primarily target large corporations, banks, or government systems. The reality is that a large number of successful cyber attacks begin by targeting ordinary people.
 
-Consider a scenario where a malicious person wants to enter your house. Instead of breaking a window or forcing a locked door, they might simply knock and pretend to be a delivery person with a package you are expecting. You might then open the door, granting them legitimate access. This analogy reflects how many cyber attacks work. Attackers aim to convince you to trust them with your credentials or information, rather than spending time trying to crack sophisticated security systems.
+Attackers have learned that it is often easier to exploit human behavior than to break through complex technical security measures. They understand that people experience emotions like stress, urgency, or excitement, which can be manipulated to bypass security controls.
+
+Consider a scenario where a malicious person wants to enter your house. Instead of breaking a window or forcing a locked door, they might simply knock and pretend to be a delivery person with a package you are expecting.
+
+You might then open the door, granting them legitimate access. This analogy reflects how many cyber attacks work. Attackers aim to convince you to trust them with your credentials or information, rather than spending time trying to crack sophisticated security systems.
 
 ## Common Attack Strategies
 
-Cybercriminals employ various strategies to exploit human psychology. One common method involves creating a sense of urgency or fear. For example, you might receive an email or message claiming that your account has been compromised or needs an immediate update due to a security breach. Such messages often include a link that, if clicked, leads to a fake website designed to steal your login details. The attacker's goal is to put you in a state of stress, making you more likely to act quickly without thoroughly checking the legitimacy of the request.
+Cybercriminals employ various strategies to exploit human psychology. One common method involves creating a sense of urgency or fear. For example, you might receive an email or message claiming that your account has been compromised or needs an immediate update due to a security breach.
 
-This approach targets users because they are often the weakest link in a security chain. While strong passwords and antivirus software are important tools, they do not offer complete protection if a user is tricked into giving away their information. Attackers prioritize targeting users because it allows them to gain access to platforms in minutes, bypassing the very systems designed to protect against direct technical breaches. They choose to attack users who experience different emotions daily, rather than complex systems under constant monitoring.
+Such messages often include a link that, if clicked, leads to a fake website designed to steal your login details. The attacker's goal is to put you in a state of stress, making you more likely to act quickly without thoroughly checking the legitimacy of the request.
+
+This approach targets users because they are often the weakest link in a security chain. While strong passwords and antivirus software are important tools, they do not offer complete protection if a user is tricked into giving away their information.
+
+Attackers prioritize targeting users because it allows them to gain access to platforms in minutes, bypassing the very systems designed to protect against direct technical breaches. They choose to attack users who experience different emotions daily, rather than complex systems under constant monitoring.
 
 ## The Hidden Dangers of Public Wi-Fi
 
-One of the most common "convenience traps" that cybercriminals exploit is free public Wi-Fi. Whether you are in a cafe, airport, hotel, or restaurant, the offer of free internet access is often too tempting to resist. People prefer free Wi-Fi over paid data because it offers instant connection, uninterrupted browsing, and no immediate cost. Many users also feel secure seeing a "green tag" or lock icon, believing it means the connection is safe. However, this green tag only indicates that the connection is encrypted, not that the network itself is secure or trustworthy.
+One of the most common "convenience traps" that cybercriminals exploit is free public Wi-Fi. Whether you are in a cafe, airport, hotel, or restaurant, the offer of free internet access is often too tempting to resist. People prefer free Wi-Fi over paid data because it offers instant connection, uninterrupted browsing, and no immediate cost.
 
-The hidden cost of free Wi-Fi can be far greater than the money saved on data. When you connect to an unsecured public network, your data is essentially in the open. Cybercriminals can use specialized tools to view everything you are doing online. This includes sensitive information flowing from your device, which can appear in plain text. Imagine discussing private bank account details with your bank manager in a crowded market, speaking loud enough for everyone to hear. This is similar to what happens when you transmit sensitive information over an unsecured public Wi-Fi network.
+Many users also feel secure seeing a "green tag" or lock icon, believing it means the connection is safe. However, this green tag only indicates that the connection is encrypted, not that the network itself is secure or trustworthy.
+
+The hidden cost of free Wi-Fi can be far greater than the money saved on data. When you connect to an unsecured public network, your data is essentially in the open. Cybercriminals can use specialized tools to view everything you are doing online.
+
+This includes sensitive information flowing from your device, which can appear in plain text. Imagine discussing private bank account details with your bank manager in a crowded market, speaking loud enough for everyone to hear. This is similar to what happens when you transmit sensitive information over an unsecured public Wi-Fi network.
 
 And, connecting to public Wi-Fi exposes details about your computer, including your IP address. An attacker can use your IP address to launch malicious attacks elsewhere, potentially tracing the activity back to your device. This means your computer could be unknowingly used to attack another organization, leading to serious consequences for you, even if you were unaware of the activity.
 
@@ -53,6 +65,10 @@ And, connecting to public Wi-Fi exposes details about your computer, including y
 
 Protecting yourself from cyber attacks starts with understanding that you are a primary target. The most effective defense is a combination of awareness and proactive measures. Do not rely solely on technical tools like antivirus software or strong passwords, as these can be circumvented if you are tricked into granting access.
 
-Always be wary of communications that create stress or urgency, especially those asking you to click links or provide personal information. Take a moment to verify the sender and the legitimacy of the request. If a message claims to be from your bank or a service provider, consider contacting them directly through official channels rather than clicking links in the suspicious message.
+Always be wary of communications that create stress or urgency, especially those asking you to click links or provide personal information. Take a moment to verify the sender and the legitimacy of the request.
 
-Avoid conducting sensitive activities, such as online banking, shopping, or accessing personal accounts, when connected to public Wi-Fi networks. The convenience of free access does not outweigh the risk of exposing your private data. Recognize that convenience often comes with hidden risks, and what appears to be free can end up being very costly. By understanding how attackers exploit human nature and common digital conveniences, you can much strengthen your personal cyber defenses.
+If a message claims to be from your bank or a service provider, consider contacting them directly through official channels rather than clicking links in the suspicious message.
+
+Avoid conducting sensitive activities, such as online banking, shopping, or accessing personal accounts, when connected to public Wi-Fi networks. The convenience of free access does not outweigh the risk of exposing your private data.
+
+Recognize that convenience often comes with hidden risks, and what appears to be free can end up being very costly. By understanding how attackers exploit human nature and common digital conveniences, you can much strengthen your personal cyber defenses.

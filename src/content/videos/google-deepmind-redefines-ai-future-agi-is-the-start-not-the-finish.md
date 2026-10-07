@@ -28,35 +28,77 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Google DeepMind's paper, "From AGI to ASI," proposes a future where Artificial General Intelligence is not the final achievement. Instead, it is merely the starting line for an even greater leap. This research suggests that once human-level AI is realized, the progression to Artificial Superintelligence could be remarkably swift and transformative. The paper outlines how intelligence itself might become an industrialized process, fundamentally reshaping technology and society.
+Google DeepMind's paper, "From AGI to ASI," proposes a future where Artificial General Intelligence is not the final achievement. Instead, it is merely the starting line for an even greater leap.
 
-Understanding this trajectory requires clear definitions of intelligence tiers. Artificial General Intelligence (AGI), as described in the paper, refers to a system capable of performing at roughly the median human level across most cognitive tasks. This means an AI could reason, learn, plan, communicate, use tools, and adapt to new situations with the competence of an average person. It is not about outperforming the smartest human, but matching general human capability.
+This research suggests that once human-level AI is realized, the progression to Artificial Superintelligence could be remarkably swift and transformative. The paper outlines how intelligence itself might become an industrialized process, fundamentally reshaping technology and society.
 
-Artificial Superintelligence (ASI) sets a far higher bar. It describes a system that can outperform tens of thousands of top experts working together, in a coordinated manner, for an entire decade on a single problem. This level of intelligence would need to be demonstrated across virtually every domain, not just in specialized tasks. It represents a collective output matching that of a massive corporation or an entire professional research field dedicating a decade to a challenge. Beyond ASI, the paper also mentions Universal AI, or AXI, a theoretical absolute ceiling of intelligence that is mathematically proven but uncomputable. This is akin to the speed of light in physics – an in the end limit that can only be approached.
+Understanding this trajectory requires clear definitions of intelligence tiers. Artificial General Intelligence (AGI), as described in the paper, refers to a system capable of performing at roughly the median human level across most cognitive tasks.
+
+This means an AI could reason, learn, plan, communicate, use tools, and adapt to new situations with the competence of an average person. It is not about outperforming the smartest human, but matching general human capability.
+
+Artificial Superintelligence (ASI) sets a far higher bar. It describes a system that can outperform tens of thousands of top experts working together, in a coordinated manner, for an entire decade on a single problem.
+
+This level of intelligence would need to be demonstrated across virtually every domain, not just in specialized tasks. It represents a collective output matching that of a massive corporation or an entire professional research field dedicating a decade to a challenge.
+
+Beyond ASI, the paper also mentions Universal AI, or AXI, a theoretical absolute ceiling of intelligence that is mathematically proven but uncomputable. This is akin to the speed of light in physics – an in the end limit that can only be approached.
 
 ### Pathways to Superintelligence
 
 The DeepMind paper identifies four primary pathways that could lead from AGI to ASI, each with distinct characteristics and implications.
 
-The first pathway is **pure scaling**. This involves simply providing more compute, larger models, and more data. Over the last decade, the computational power used for the largest machine learning training runs has grown exponentially. Algorithmic efficiency has also improved. This means progress comes not just from more hardware, but from better use of existing hardware. The paper illustrates this with a thought experiment. If AGI initially allows only 1000 instances globally, a 10 times annual growth rate would yield 10,000 instances after 1 year. This would grow to 100 million instances after 5 years. A collective of 100 million human-level AGIs would not simply be 100 million separate workers. These systems could share knowledge instantly, communicate at incredibly high bandwidth, copy themselves perfectly, and coordinate in ways humans cannot. One instance figuring something out could mean all 100 million know it immediately. Such collective intelligence could easily qualify as ASI, even if individual units remain at human level. This would form a digital civilization that thinks hundreds of times faster than humans.
+The first pathway is **pure scaling**. This involves simply providing more compute, larger models, and more data. Over the last decade, the computational power used for the largest machine learning training runs has grown exponentially.
 
-However, this scaling approach faces a **data wall problem**. Current AI systems learn from human-generated content like text, code, images, videos, and scientific papers. Humans are not producing high-quality data at the same exponential rate that AI models are growing. Eventually, the supply of good training data could run out. While this might not halt progress entirely, it needs workarounds. These include generating synthetic data, using simulations, self-play, reinforcement learning, and having AI systems improve their own outputs through search before training on those results. The challenge lies in ensuring this generated data is of sufficient quality, as naively training on AI-generated content can quickly degrade performance.
+Algorithmic efficiency has also improved. This means progress comes not just from more hardware, but from better use of existing hardware. The paper illustrates this with a thought experiment.
 
-The second pathway involves **algorithmic fundamental changes**. This is where AI does not just get bigger, but becomes fundamentally different in its approach. Current AI is largely dominated by transformer-based models. These are trained on vast datasets, then refined with instruction tuning and reinforcement learning. While effective, many researchers believe these methods still lack key ingredients for true AGI, such as strong long-term planning, continual learning, persistent memory, better world models, and the ability to operate reliably in completely open-ended environments. A genuine fundamental change could involve entirely new architectures, training methods, memory systems, or forms of reasoning. It might even include new hardware like neuromorphic chips or analog computing. Such shifts are inherently difficult to predict. If they occur, current forecasts based purely on scaling existing systems could become inaccurate almost overnight.
+If AGI initially allows only 1000 instances globally, a 10 times annual growth rate would yield 10,000 instances after 1 year. This would grow to 100 million instances after 5 years. A collective of 100 million human-level AGIs would not simply be 100 million separate workers.
 
-The third pathway is **recursive self-improvement**, which aligns with the classic idea of an intelligence explosion. The concept is straightforward: AI helps improve AI research, which in turn produces better AI, which then further assists AI research. This process does not necessarily require a dramatic moment where an AI rewrites its own code. It can be a more gradual and distributed cycle. AI systems could contribute to writing better algorithms. They could discover more efficient architectures and design improved chips. They might also enhance manufacturing processes, curate superior datasets, generate better synthetic examples, and create more effective simulations. Essentially, AI could improve all the infrastructure surrounding its own development. This is compared to human evolution, where progress came not just from individual intelligence but from building language, writing, institutions, science, markets, education systems, and entire civilizations. AI systems could build their own versions of these, but at a vastly accelerated pace, as code can be edited faster than DNA changes, and data copied faster than books printed. However, recursive self-improvement is one of the least understood pathways. It might lead to exponential growth or it might fizzle out. Progress could still be constrained by expensive experiments, the time needed to manufacture hardware, energy limitations, or the inherent difficulty of discovering truly novel ideas. Even digital researchers cannot bypass every physical bottleneck.
+These systems could share knowledge instantly, communicate at incredibly high bandwidth, copy themselves perfectly, and coordinate in ways humans cannot. One instance figuring something out could mean all 100 million know it immediately. Such collective intelligence could easily qualify as ASI, even if individual units remain at human level.
 
-The fourth pathway, potentially the most underrated, is **ASI through multi-agent collectives**. Instead of one AI model becoming superintelligent, this pathway considers a massive group of AI agents achieving superintelligence together. Humans already demonstrate this through corporations solving problems no individual could, or scientific fields generating knowledge beyond any single researcher. However, human group intelligence is often slow and inefficient due to communication limits, coordination difficulties, bureaucracy, and knowledge silos. AI collectives could operate differently. They could share information at speeds beyond human comprehension, duplicate specialists instantly, coordinate through software, run thousands of parallel experiments, and form temporary teams for specific problems before reconfiguring. They might use market-like systems or centralized planning in ways humans cannot manage due to our limited communication bandwidth. Thus, ASI might not manifest as a single giant mind. Instead, it could appear as a vast digital organization, a swarm, a self-organizing research ecosystem, or a supercompany composed of agents.
+This would form a digital civilization that thinks hundreds of times faster than humans.
+
+However, this scaling approach faces a **data wall problem**. Current AI systems learn from human-generated content like text, code, images, videos, and scientific papers.
+
+Humans are not producing high-quality data at the same exponential rate that AI models are growing. Eventually, the supply of good training data could run out. While this might not halt progress entirely, it needs workarounds.
+
+These include generating synthetic data, using simulations, self-play, reinforcement learning, and having AI systems improve their own outputs through search before training on those results. The challenge lies in ensuring this generated data is of sufficient quality, as naively training on AI-generated content can quickly degrade performance.
+
+The second pathway involves **algorithmic fundamental changes**. This is where AI does not just get bigger, but becomes fundamentally different in its approach. Current AI is largely dominated by transformer-based models.
+
+These are trained on vast datasets, then refined with instruction tuning and reinforcement learning. While effective, many researchers believe these methods still lack key ingredients for true AGI, such as strong long-term planning, continual learning, persistent memory, better world models, and the ability to operate reliably in completely open-ended environments.
+
+A genuine fundamental change could involve entirely new architectures, training methods, memory systems, or forms of reasoning. It might even include new hardware like neuromorphic chips or analog computing.
+
+Such shifts are inherently difficult to predict. If they occur, current forecasts based purely on scaling existing systems could become inaccurate almost overnight.
+
+The third pathway is **recursive self-improvement**, which aligns with the classic idea of an intelligence explosion. The concept is straightforward: AI helps improve AI research, which in turn produces better AI, which then further assists AI research. This process does not necessarily require a dramatic moment where an AI rewrites its own code.
+
+It can be a more gradual and distributed cycle. AI systems could contribute to writing better algorithms. They could discover more efficient architectures and design improved chips.
+
+They might also enhance manufacturing processes, curate superior datasets, generate better synthetic examples, and create more effective simulations. Essentially, AI could improve all the infrastructure surrounding its own development. This is compared to human evolution, where progress came not just from individual intelligence but from building language, writing, institutions, science, markets, education systems, and entire civilizations.
+
+AI systems could build their own versions of these, but at a vastly accelerated pace, as code can be edited faster than DNA changes, and data copied faster than books printed. However, recursive self-improvement is one of the least understood pathways. It might lead to exponential growth or it might fizzle out.
+
+Progress could still be constrained by expensive experiments, the time needed to manufacture hardware, energy limitations, or the inherent difficulty of discovering truly novel ideas. Even digital researchers cannot bypass every physical bottleneck.
+
+The fourth pathway, potentially the most underrated, is **ASI through multi-agent collectives**. Instead of one AI model becoming superintelligent, this pathway considers a massive group of AI agents achieving superintelligence together. Humans already demonstrate this through corporations solving problems no individual could, or scientific fields generating knowledge beyond any single researcher.
+
+However, human group intelligence is often slow and inefficient due to communication limits, coordination difficulties, bureaucracy, and knowledge silos. AI collectives could operate differently. They could share information at speeds beyond human comprehension, duplicate specialists instantly, coordinate through software, run thousands of parallel experiments, and form temporary teams for specific problems before reconfiguring.
+
+They might use market-like systems or centralized planning in ways humans cannot manage due to our limited communication bandwidth. Thus, ASI might not manifest as a single giant mind. Instead, it could appear as a vast digital organization, a swarm, a self-organizing research ecosystem, or a supercompany composed of agents.
 
 ### Potential Roadblocks and Limits
 
 While these pathways suggest rapid progress, the paper also identifies several "frictions" that could slow or halt the journey to ASI.
 
-The **data wall** is a major concern, as discussed earlier. The lack of sufficient high-quality training data could eventually limit scaling. **Resource constraints** pose another physical barrier. The development of advanced AI requires immense physical infrastructure: energy, specialized chips, rare materials, data centers, cooling systems, and manufacturing capacity. If AI abilities demand exponentially larger infrastructure, the world might struggle to build it quickly enough.
+The **data wall** is a major concern, as discussed earlier. The lack of sufficient high-quality training data could eventually limit scaling. **Resource constraints** pose another physical barrier.
+
+The development of advanced AI requires immense physical infrastructure: energy, specialized chips, rare materials, data centers, cooling systems, and manufacturing capacity. If AI abilities demand exponentially larger infrastructure, the world might struggle to build it quickly enough.
 
 A third friction is the possibility that the **current neural network paradigm** might simply be insufficient for achieving AGI or ASI, regardless of how much it scales. Fourth, **research itself tends to get harder** as fields mature. The "low-hanging fruit" disappears, and further progress requires greater effort and more complex, novel ideas.
 
-The **abstraction barrier** is another subtle but important point. Current AI systems primarily learn from human abstractions – the concepts, categories, language, and structures we already use. Major scientific breakthroughs, however, often involve inventing entirely new abstractions, new ways of understanding reality. There is a concern that AI trained mainly on human representations might become excellent at manipulating existing concepts but less adept at discovering fundamentally new ones from scratch.
+The **abstraction barrier** is another subtle but important point. Current AI systems primarily learn from human abstractions – the concepts, categories, language, and structures we already use.
+
+Major scientific breakthroughs, however, often involve inventing entirely new abstractions, new ways of understanding reality. There is a concern that AI trained mainly on human representations might become excellent at manipulating existing concepts but less adept at discovering fundamentally new ones from scratch.
 
 Finally, **deliberate slowdowns** could arise from political and social factors. If AI development leads to accidents, enables misuse, destabilizes labor markets, or triggers public backlash, governments might intervene. This could take the form of regulation, licensing requirements, capability caps, or other restrictions designed to slow progress.
 
@@ -64,10 +106,20 @@ The paper emphasizes that it is genuinely uncertain whether any of these bottlen
 
 ### The Limits of Superintelligence
 
-It is also important to recognize that even Artificial Superintelligence is not omnipotent. The paper includes a reality check, asserting that ASI would still face fundamental limits. The laws of physics would continue to apply; information cannot travel faster than light, computation still costs energy, and physical systems require time to manipulate. Some problems are inherently chaotic, unpredictable, or fundamentally hard, regardless of intelligence level. Complexity theory and logic still impose boundaries. Therefore, it is important to avoid "magical thinking" that equates ASI with instant cures for everything or perfect control over reality. An ASI, while far beyond human intelligence, would remain constrained by computation, energy, uncertainty, time, and the physical world.
+It is also important to recognize that even Artificial Superintelligence is not omnipotent. The paper includes a reality check, asserting that ASI would still face fundamental limits.
+
+The laws of physics would continue to apply; information cannot travel faster than light, computation still costs energy, and physical systems require time to manipulate. Some problems are inherently chaotic, unpredictable, or fundamentally hard, regardless of intelligence level. Complexity theory and logic still impose boundaries.
+
+Therefore, it is important to avoid "magical thinking" that equates ASI with instant cures for everything or perfect control over reality. An ASI, while far beyond human intelligence, would remain constrained by computation, energy, uncertainty, time, and the physical world.
 
 ### A Shifting Perspective
 
-In the end, the DeepMind paper's deeper message is one of uncertainty, not ignorance. It highlights genuine questions about which pathway might dominate, or where progress might plateau. Perhaps scaling will continue to drive advancement, or perhaps it will hit limits, prompting fundamental changes to open the way for the next leap. Recursive improvement might become the primary engine, or multi-agent collectives could transform human-level systems into superhuman organizations. It is also possible that all four pathways could advance simultaneously, compounding each other's effects, or that several major bottlenecks could converge, making progress slower and more uneven than current trends suggest.
+In the end, the DeepMind paper's deeper message is one of uncertainty, not ignorance. It highlights genuine questions about which pathway might dominate, or where progress might plateau. Perhaps scaling will continue to drive advancement, or perhaps it will hit limits, prompting fundamental changes to open the way for the next leap.
 
-The paper's significance lies in forcing a shift in conversation. AGI should not be viewed as a single finish line. If AGI arrives, the question will not be "are we done?" but rather "what does this system make possible next?" A human-level AI is not just another human; it is a digital intelligence that can be copied, accelerated, coordinated, specialized, connected to tools, integrated into organizations, and potentially used to build better versions of itself. We may be entering a period where intelligence itself becomes an industrialized process. Once this occurs, the pace of change may no longer be limited by how fast humans can learn, organize, or invent. AGI, in this view, might simply be the moment the real race begins.
+Recursive improvement might become the primary engine, or multi-agent collectives could transform human-level systems into superhuman organizations. It is also possible that all four pathways could advance simultaneously, compounding each other's effects, or that several major bottlenecks could converge, making progress slower and more uneven than current trends suggest.
+
+The paper's significance lies in forcing a shift in conversation. AGI should not be viewed as a single finish line. If AGI arrives, the question will not be "are we done?" but rather "what does this system make possible next?"
+
+A human-level AI is not just another human; it is a digital intelligence that can be copied, accelerated, coordinated, specialized, connected to tools, integrated into organizations, and potentially used to build better versions of itself. We may be entering a period where intelligence itself becomes an industrialized process.
+
+Once this occurs, the pace of change may no longer be limited by how fast humans can learn, organize, or invent. AGI, in this view, might simply be the moment the real race begins.
