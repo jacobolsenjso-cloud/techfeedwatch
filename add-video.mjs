@@ -9,6 +9,7 @@ import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme }
 import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
 import { erRelevant } from './src/lib/relevans.mjs';
+import { erReklame } from './src/lib/reklame.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
@@ -376,6 +377,7 @@ async function run() {
     // kreditere den oprindelige kanal. Fejler dette, fortsætter vi uden kilde.
     let channelTitle = null;
     let videoBeskrivelse = ''; // til eksterne links (src/lib/eksterne-links.mjs)
+    let videoTitel = ''; // til reklameværnet (src/lib/reklame.mjs)
     let channelId = null;
     let publishedAt = null;
     let viewCount = null;
@@ -398,6 +400,7 @@ async function run() {
         if (sn) {
           channelTitle = sn.channelTitle || null;
           videoBeskrivelse = sn.description || '';
+          videoTitel = sn.title || '';
           channelId = sn.channelId || null;
           publishedAt = sn.publishedAt || null;
           console.log(`Info: Kilde fundet — ${channelTitle}`);
@@ -505,6 +508,19 @@ async function run() {
       console.log('Relevans-svar:', rel.svar);
       if (!rel.ja) {
         console.log(`Sprunget over: kilden handler ikke om ${targetQuestion ? `"${targetQuestion}"` : relevansEmne} (${videoId})`);
+        return;
+      }
+    }
+
+    // Reklameværn (7/10, src/lib/reklame.mjs): en salgsvideo for afsenderens egen
+    // vare giver en artikel, der ligner betalt omtale (prøve #7: et vikarbureaus
+    // priser og "brug et bureau"). Kører også ved --faktaark-only, så en salgsvideo
+    // får karakter 0 i rangeringen og aldrig bliver valgt.
+    if (!isShort) {
+      const rek = await erReklame(genAI, text, { titel: videoTitel, kanal: channelTitle || '', beskrivelse: videoBeskrivelse });
+      console.log('Reklame-svar:', rek.svar);
+      if (rek.reklame) {
+        console.log(`Sprunget over: kilden er en salgsvideo for afsenderens egen vare/tjeneste (${videoId})`);
         return;
       }
     }
