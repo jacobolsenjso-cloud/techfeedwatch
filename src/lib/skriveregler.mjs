@@ -365,10 +365,15 @@ export function fjernSaetninger(md, liste, maks) {
     const dele = saetninger(b.tekst);
     if (dele.length < 2) continue;
     const behold = [];
-    for (const s of dele) {
-      if (fjernet < maks && liste.includes(s) && tilladt.has(s) && behold.length + (dele.length - dele.indexOf(s) - 1) >= 1) { fjernet++; fjernede.push(s); }
+    dele.forEach((s, j) => {
+      // Peger næste sætning tilbage på denne ("However, that only happens …"), må den
+      // ikke fjernes. Første live-artikel med reglerne (7/10) mistede "Programming can
+      // certainly make you rich." og stod tilbage med et hængende "However, that …".
+      const naeste = dele[j + 1] || '';
+      const peger = /^["“(]*(?:However|But|That|This|These|Those|It|Its|They|Their|So|Yet|Still|Instead|Even so|Therefore|Thus|As a result|Such|In turn|Otherwise|Then|Also|And)\b/.test(naeste);
+      if (!peger && fjernet < maks && liste.includes(s) && tilladt.has(s) && behold.length + (dele.length - j - 1) >= 1) { fjernet++; fjernede.push(s); }
       else behold.push(s);
-    }
+    });
     if (behold.length === dele.length) continue;
     const i = ud.indexOf(b.tekst);
     if (i >= 0) ud = ud.slice(0, i) + behold.join(' ') + ud.slice(i + b.tekst.length);

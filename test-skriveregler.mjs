@@ -114,8 +114,10 @@ const fj = R.fjernSaetninger(art, ['This matters a lot for everyone today.'], 5)
 t('fyld: udpeget sætning fjernes', fj.fjernet === 1 && !fj.md.includes('This matters'));
 t('fyld: et afsnits eneste sætning fjernes aldrig', R.fjernSaetninger('Intro.\n\nOnly one generic sentence stands here alone.', ['Only one generic sentence stands here alone.'], 5).fjernet === 0);
 
+t('fyld: sætning fjernes ikke, når næste peger tilbage ("However, that …")', R.fjernSaetninger('Intro.\n\nProgramming can certainly make you rich. However, that only happens with distribution.', ['Programming can certainly make you rich.'], 5).fjernet === 0);
+
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 47;
+const FORVENTET = 48;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);

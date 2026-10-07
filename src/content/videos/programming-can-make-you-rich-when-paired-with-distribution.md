@@ -65,6 +65,6 @@ Reinvesting organic cash flow into targeted social distribution enables solo dev
 
 ## The Bottom Line
 
-However, that only happens if you view software as an operational wedge for customer acquisition rather than an end in itself. Code acts as leverage.
+Programming can certainly make you rich. However, that only happens if you view software as an operational wedge for customer acquisition rather than an end in itself. Code acts as leverage.
 
 Automation multiplies that leverage, and marketing converts it into equity. Developers who master rapid deployment frameworks while treating distribution as an engineering discipline hold the ultimate financial advantage.
