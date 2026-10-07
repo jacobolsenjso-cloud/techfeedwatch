@@ -45,6 +45,8 @@ t('sætninger: teksten er uændret', R.saetninger('One. Two! Three?').join(' ') 
 t('blokke: liste lige under afsnit uden tom linje', R.blokke('Intro text here:\n- one\n- two').map((b) => b.type).join(',') === 'p,liste');
 t('blokke: tom linje mellem listepunkter er samme liste', R.lister('- a\n\n- b\n\n- c').length === 1);
 
+t('frontmatter: fjernes også med BOM foran', R.brodtekst('\uFEFF---\ntitle: "x"\n---\n\nBody text.').trim() === 'Body text.');
+
 // --- 2a Spørgsmålsfilter ---
 t('spørgsmål: lille grammatisk rettelse godkendes', R.godkendSpoergsmaal('what is ai content engine', 'what is an ai content engine').ok);
 t('spørgsmål: nyt emne afvises', !R.godkendSpoergsmaal('ai chips supply chain', 'how do semiconductors work').ok);
@@ -73,6 +75,7 @@ t('uklar: "reportedly" er fint', R.uklarKilde('SpaceX is reportedly seeking new 
 t('uklar: FAQ-svar tjekkes også', R.uklareKilder('Fine text.', ['Experts say it is safe.']).length === 1);
 t('klistret: spørgsmål midt i sætning fanges', R.klistretSoegeord('Intro.\n\nUnderstanding what is canva text to video starts here.', 'what is canva text to video').length === 1);
 t('klistret: som spørgsmål med "?" er fint', R.klistretSoegeord('So what is canva text to video?', 'what is canva text to video').length === 0);
+t('klistret: "Wondering what is X?" fanges trods "?"', R.klistretSoegeord('Wondering what is virtual reality therapy? Read on.', 'what is virtual reality therapy').length === 1);
 
 // --- 2e Første afsnit ---
 const langt = 'One two three four five six seven eight nine ten eleven twelve. ' .repeat(6).trim();
@@ -93,6 +96,8 @@ t('afsnit: 2 korte sætninger er fint', !R.forLangtAfsnit([1, 2].map(s).join(' '
 const dl = R.delLangeAfsnit(`Intro sentence here.\n\n${fire}`);
 t('afsnit: deles uden at ændre ord', dl.delt === 1 && R.synlig(dl.md).split(/\s+/).join(' ') === R.synlig(`Intro sentence here.\n\n${fire}`).split(/\s+/).join(' '));
 t('afsnit: første afsnit røres ikke af delLangeAfsnit', R.delLangeAfsnit(fire).delt === 0);
+const efterDeling = R.afsnitsTal(dl.md);
+t('afsnit: 4 sætninger deles 2+2, ikke 3+1 (ingen enkeltsætning)', efterDeling.afsnit === 3 && efterDeling.enSaetning === 1);
 
 // --- 2h Fyld ---
 const art = 'Answer first. Short.\n\nThis matters a lot for everyone today. The chip costs $40 per unit. It changes everything about the industry.';
@@ -104,7 +109,7 @@ t('fyld: udpeget sætning fjernes', fj.fjernet === 1 && !fj.md.includes('This ma
 t('fyld: et afsnits eneste sætning fjernes aldrig', R.fjernSaetninger('Intro.\n\nOnly one generic sentence stands here alone.', ['Only one generic sentence stands here alone.'], 5).fjernet === 0);
 
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 39;
+const FORVENTET = 42;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);

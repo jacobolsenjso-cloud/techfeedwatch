@@ -12,8 +12,10 @@ import { kerneord, stamme } from './headline.mjs';
 // ---------------------------------------------------------------------------
 
 // Fjerner frontmatter, hvis den er med.
+// En BOM (usynligt tegn først i filen, som PowerShell sætter ind) fjernes også —
+// ellers ses frontmatter ikke som frontmatter og tælles som tekst (målt 7/10).
 export function brodtekst(md) {
-  const s = String(md).replace(/\r\n/g, '\n');
+  const s = String(md).replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
   const m = s.match(/^---\n[\s\S]*?\n---\n?/);
   return m ? s.slice(m[0].length) : s;
 }
@@ -213,9 +215,12 @@ export function klistretSoegeord(md, spoergsmaal) {
   const ud = [];
   for (const s of alleSaetninger(md)) {
     const t = synlig(s).replace(/\s+/g, ' ').trim();
-    if (t.includes('?')) continue;
     const i = t.toLowerCase().indexOf(q);
-    if (i > 0 && !/["“'‘]/.test(t[i - 1])) ud.push({ saetning: s.trim(), ord: q });
+    if (i <= 0 || /["“'‘]/.test(t[i - 1])) continue;
+    // Et spørgsmål er kun i orden, når søgeordet selv er spørgsmålet ("So what is X?").
+    // "Wondering what is X?" er stadig klistret (målt 7/10 i prøveartikel #3's META).
+    if (t.includes('?') && /^(?:so|but|and|then|now|well|okay|ok)[,\s]*$/i.test(t.slice(0, i))) continue;
+    ud.push({ saetning: s.trim(), ord: q });
   }
   return ud;
 }
@@ -266,17 +271,37 @@ export function forLangtAfsnit(tekst, r = AFSNIT) {
   const n = saetninger(tekst).length, w = antalOrd(tekst);
   return n > r.maksSaetninger || (n === r.maksSaetninger && w > r.maksOrdTre) || (n === 2 && w > r.maksOrdTo);
 }
-// Grupperer sætninger i bidder, der holder reglen.
+// Grupperer sætninger i så FÅ bidder som muligt, der hver holder reglen, og
+// blandt dem den deling med færrest afsnit på én sætning og jævnest længde.
+// Første udgave delte grådigt fra starten: 4 sætninger blev til 3+1, og
+// prøveartikel #3 (7/10) fik 8 af 29 afsnit på én sætning. Nu bliver det 2+2.
+const holder = (g, r) => { const n = g.length, w = antalOrd(g.join(' ')); return n === 1 || (n <= r.maksSaetninger && !(n === r.maksSaetninger && w > r.maksOrdTre) && !(n === 2 && w > r.maksOrdTo)); };
+function delinger(n, g) {
+  // alle måder at dele n sætninger i g sammenhængende bidder (n er lille: et afsnit)
+  if (g === 1) return [[n]];
+  const ud = [];
+  for (let k = 1; k <= n - g + 1; k++) for (const rest of delinger(n - k, g - 1)) ud.push([k, ...rest]);
+  return ud;
+}
 function grupper(s, r) {
-  const grp = []; let cur = [];
-  for (const x of s) {
-    const n = cur.length ? antalOrd(cur.join(' ')) : 0;
-    const loft = cur.length === 1 ? r.maksOrdTo : r.maksOrdTre;
-    if (cur.length && (cur.length >= r.maksSaetninger || n + antalOrd(x) > loft)) { grp.push(cur); cur = []; }
-    cur.push(x);
+  if (s.length > 12) { // usædvanligt langt afsnit: grådig deling er godt nok og hurtig
+    const grp = []; let cur = [];
+    for (const x of s) { if (cur.length && !holder([...cur, x], r)) { grp.push(cur); cur = []; } cur.push(x); }
+    if (cur.length) grp.push(cur);
+    return grp;
   }
-  if (cur.length) grp.push(cur);
-  return grp;
+  for (let g = 2; g <= s.length; g++) {
+    let bedst = null, bedstScore = null;
+    for (const d of delinger(s.length, g)) {
+      let i = 0; const grp = d.map((k) => s.slice(i, (i += k)));
+      if (!grp.every((x) => holder(x, r))) continue;
+      const ord = grp.map((x) => antalOrd(x.join(' ')));
+      const score = [grp.filter((x) => x.length === 1).length, Math.max(...ord) - Math.min(...ord)];
+      if (!bedstScore || score[0] < bedstScore[0] || (score[0] === bedstScore[0] && score[1] < bedstScore[1])) { bedst = grp; bedstScore = score; }
+    }
+    if (bedst) return bedst;
+  }
+  return s.map((x) => [x]);
 }
 // Deler for lange afsnit MELLEM sætninger. Ingen ord ændres. Første afsnit
 // håndteres af delFoersteAfsnit. Returnerer også, hvor mange afsnit der nu er

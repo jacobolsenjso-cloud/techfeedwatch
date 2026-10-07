@@ -12,7 +12,9 @@ import { erRelevant } from './src/lib/relevans.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
-import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger } from './src/lib/skriveregler.mjs';
+// foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
+// (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
+import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger } from './src/lib/skriveregler.mjs';
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -713,7 +715,7 @@ async function run() {
     const finalTags = forcedTag
       ? [forcedTag, ...safeTags.filter(t => t !== forcedTag)].slice(0, 2)
       : (safeTags.length > 0 ? safeTags : ["AI & Tech"]);
-    const safeSummary = fjernForbudteOrd((summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
+    let safeSummary = fjernForbudteOrd((summaryMatch ? summaryMatch[1] : "").replace(/"/g, "'").replace(/\n/g, " ").trim());
     // Kort meta-beskrivelse til Google (~155 tegn). Falder tilbage til trunkeret summary hvis META mangler.
     // Prompten kræver korrekt engelsk: 24/9 satte robotten autocomplete-brokken "can i ai videos"
     // ind ordret ("Wondering can I AI videos?"). Googles forslag er ofte brokker, ikke sætninger.
@@ -732,6 +734,36 @@ async function run() {
         kort = (i > 60 ? s154.slice(0, i) : s154.replace(/\s+\S*$/, '')).replace(/[,;:\s]+$/, '') + '.';
       }
       safeMeta = kort;
+    }
+
+    // Klistret søgeord i META og SUMMARY (fase 2, 7/10): prøve #3 fik META'en
+    // "Wondering what is virtual reality therapy? ..." — samme fejl, som tjekket
+    // fanger i brødteksten, men her uden for den. Gemini får ét forsøg på at
+    // omformulere feltet; holder det ikke, bruges en reserve uden søgeordet.
+    async function udenKlistret(felt, tekst, maks) {
+      if (!targetQuestion || !tekst || !klistretSoegeord(tekst, targetQuestion).length) return tekst;
+      try {
+        const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 2048, temperature: 0.2 } })
+          .generateContent(`Rewrite this ${felt} in correct, natural English. The search words "${targetQuestion}" are pasted in ungrammatically - rephrase them (for example "What is X?" as its own question, or "X is ..."). Keep the meaning${maks ? ` and stay under ${maks} characters` : ''}. Plain text only, no quotes.\n\n${tekst}`);
+        const ny = fjernForbudteOrd((r.response.text() || '').replace(/"/g, "'").replace(/\n/g, ' ').trim());
+        if (ny && (!maks || ny.length <= maks) && ny.length >= 40 && !klistretSoegeord(ny, targetQuestion).length) {
+          console.log(`🔧 ${felt}: søgeord ikke længere klistret ind`);
+          return ny;
+        }
+      } catch (e) { console.log(`🔧 ${felt}: omformulering fejlede (${e.message.split('\n')[0]})`); }
+      console.log(`🔧 ${felt}: omformulering holdt ikke — reserve bruges`);
+      return null;
+    }
+    if (!isShort) {
+      const nyMeta = await udenKlistret('meta description', safeMeta, 155);
+      // Reserve for META: resuméets første hele sætning(er) under 155 tegn.
+      if (nyMeta === null) {
+        const dele = safeSummary.split(/(?<=[.!?])\s+(?=[A-Z0-9])/); let kort = '';
+        for (const d of dele) { if ((kort + ' ' + d).trim().length > 155) break; kort = (kort + ' ' + d).trim(); }
+        safeMeta = kort || safeMeta;
+      } else safeMeta = nyMeta;
+      const nySummary = await udenKlistret('summary', safeSummary, 0);
+      if (nySummary !== null) safeSummary = nySummary;
     }
 
     // Saniter FAQ-tekst: fjern anførselstegn, klip markdown-links til bare teksten, trim
@@ -1007,7 +1039,7 @@ ${content}`);
       const la = delLangeAfsnit(content);
       content = la.md;
       const at = afsnitsTal(content);
-      console.log(`📐 Afsnit: første afsnit ${fa.delt ? 'delt' : 'uændret'} (${foersteAfsnit(content).ord} ord), ${la.delt} lange afsnit delt; nu ${at.afsnit} afsnit, ${at.enSaetning} på én sætning, længste ${at.maksOrd} ord · lister ${lister(content).length}${k.uklar.length ? ` · uklare kilder tilbage: ${k.uklar.length}` : ''}`);
+      console.log(`📐 Afsnit: første afsnit ${fa.delt ? 'delt' : 'uændret'} (${foersteAfsnitTal(content).ord} ord), ${la.delt} lange afsnit delt; nu ${at.afsnit} afsnit, ${at.enSaetning} på én sætning, længste ${at.maksOrd} ord · lister ${lister(content).length}${k.uklar.length ? ` · uklare kilder tilbage: ${k.uklar.length}` : ''}`);
 
       // Interne links: ankertekst skal passe til målet (se ankerTjek).
       content = ankerTjek(content);
