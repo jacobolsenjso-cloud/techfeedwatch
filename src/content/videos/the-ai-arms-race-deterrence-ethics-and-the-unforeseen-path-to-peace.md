@@ -23,7 +23,7 @@ faqs:
   - question: "How do AI-powered autonomous weapons differ from traditional military systems?"
     answer: "They differ by enabling mass production and rapid deployment of intelligent platforms, reducing reliance on human-crewed systems in dangerous environments. This allows for a military force based on adaptability and manufacturing speed, rather than being limited by the number of personnel or the cost of bespoke weapons."
   - question: "What are the ethical considerations surrounding autonomous AI weapons?"
-    answer: "Ethical concerns include the idea of AI making lethal decisions. Proponents argue that AI can increase precision and reduce collateral damage, and that refusing to develop these systems responsibly would allow authoritarian regimes to do so without ethical oversight."
+    answer: "Ethical concerns include the idea of AI making lethal decisions. The case for these systems is that AI can increase precision and reduce collateral damage, and that refusing to develop these systems responsibly would allow authoritarian regimes to do so without ethical oversight."
   - question: "How does the concept of mass production apply to AI defense systems?"
     answer: "The strategy calls for a shift from producing small numbers of expensive, handcrafted weapons to designing and manufacturing autonomous systems at scale, similar to industrial mobilization during historical conflicts. This rapid, scalable production is crucial for countering numerical advantages held by potential adversaries and making aggression too costly."
 rewrittenAt: "2026-08-19"
@@ -63,7 +63,7 @@ Applying this lesson to modern defense means building and deploying products in 
 
 ## Handling the Ethics of Autonomous Weapons
 
-The deployment of AI in warfare raises profound ethical questions, particularly concerning the concept of "killer robots" and autonomous decision-making in lethal force. Critics often argue against allowing AI to determine who lives or dies, advocating for a complete ban on such systems.
+The deployment of AI in warfare raises profound ethical questions, particularly concerning the concept of "killer robots" and autonomous decision-making in lethal force. Campaigns such as Stop Killer Robots argue against allowing AI to determine who lives or dies, advocating for a complete ban on such systems.
 
 However, proponents counter that the notion of autonomous weapons is not entirely new. Historically, humans have created tools that separate the design of a weapon from the immediate decision to use violence, ranging from ancient traps to modern anti-ship mines and anti-radiation missiles.
 

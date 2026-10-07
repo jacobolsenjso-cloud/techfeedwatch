@@ -47,7 +47,7 @@ To enhance safety, Robinhood Earn includes an insurance component designed to pr
 
 This ease of use allows customers to convert dollars to stablecoins, lend them, and see their capital compounding in real-time with just a few taps. The ability to quickly withdraw assets from the lending pool further simplifies the user experience.
 
-The offering of stablecoin yield has sparked debate, particularly in the context of the US Clarity Act. Critics argue against stablecoins generating yield, while proponents, including Robinhood, contend that it penalizes users who want to use [blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/) for efficient, 24/7 transfers.
+The offering of stablecoin yield has sparked debate, particularly in the context of the US Clarity Act. Banks argue against stablecoins generating yield, while proponents, including Robinhood, contend that it penalizes users who want to use [blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/) for efficient, 24/7 transfers.
 
 Many customers, who might otherwise get minimal returns from traditional savings accounts, are simply looking for better options than zero yield on cash.
 

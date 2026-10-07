@@ -73,7 +73,7 @@ The programming of smart contracts using languages like Solidity allows for auto
 
 Despite the ambitious vision of Web 3.0, the road ahead is fraught with challenges and critical perspectives often overlooked in the prevailing hype. Many question whether Web 3.0 is merely "BS," a sentiment even "Papa Elon said" just a few days prior to the source's observation.
 
-Critics argue that while the "vision of putting the web back in the hands of the people" is appealing, the current reality often sees "many of these companies and the cryptocurrencies that they issue are controlled by vulture capitalist and Silicon Valley insiders." This undermines the very decentralization ethos Web 3.0 purports to champion.
+Fireship argues that while the "vision of putting the web back in the hands of the people" is appealing, the current reality often sees "many of these companies and the cryptocurrencies that they issue are controlled by vulture capitalist and Silicon Valley insiders." This undermines the very decentralization ethos Web 3.0 purports to champion.
 
 Scalability remains a pressing technical hurdle. Smart people are making "a very good argument about how web 3 doesn't have the computing power bandwidth or storage to scale on any practical level."
 

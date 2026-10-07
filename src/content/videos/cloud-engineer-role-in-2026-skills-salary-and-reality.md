@@ -83,7 +83,7 @@ Cloud engineering skills directly qualify individuals for a wide array of in-dem
 
 Cloud engineers are among the best-compensated professionals in tech. The average salary in the US is competitive, with senior cloud engineers and architects often earning above $200,000. Some roles at major tech companies have been observed to exceed $380,000.
 
-This high compensation is a direct result of demand significantly outstripping supply. Reports indicate a global shortage of 6 million cloud professionals. With big tech companies projected to spend over $700 billion in 2026 on AI and cloud infrastructure, the demand for talented cloud engineers who can solve real-world problems is expected to intensify.
+This high compensation is a direct result of demand significantly outstripping supply. Tech With Soleyman cites a global shortage of 6 million cloud professionals. With big tech companies projected to spend over $700 billion in 2026 on AI and cloud infrastructure, the demand for talented cloud engineers who can solve real-world problems is expected to intensify.
 
 Despite the attractive compensation and career prospects, the role comes with its challenges. Engineers must be comfortable with constant change and continuous learning.
 

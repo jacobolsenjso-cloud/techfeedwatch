@@ -78,7 +78,7 @@ The prospect of critical national systems depending on a few American labs raise
 
 ## The Security Debate and its Nuances
 
-The security implications of open-source AI models are a subject of ongoing debate. Critics argue that allowing anyone to download and modify models could enable bad actors to use them for malicious purposes. These include cyber or biological attacks.
+The security implications of open-source AI models are a subject of ongoing debate. The main counterargument is that allowing anyone to download and modify models could enable bad actors to use them for malicious purposes. These include cyber or biological attacks.
 
 They contend that applying guardrails and monitoring usage becomes very difficult once model weights are released. This is because they cannot be withdrawn. There are also concerns that authoritarian governments might use these models for repression or to enhance military capabilities.
 

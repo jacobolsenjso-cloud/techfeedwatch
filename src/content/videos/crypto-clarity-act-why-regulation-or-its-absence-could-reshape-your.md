@@ -53,7 +53,7 @@ This regulatory uncertainty can suppress altcoin valuations and hinder innovatio
 
 While many altcoins face significant risks from regulatory ambiguity, some major cryptocurrencies are seen as more resilient. Bitcoin, for example, has shown consistent growth over the years, even without specific global regulation. It achieved a significant milestone in early 2024 with the approval of Bitcoin Exchange Traded Funds (ETFs), marking its first time being regulated on a global scale.
 
-Bitcoin is considered a global brand with a clear product market fit. Its market capitalization stands at 1.2 trillion dollars, comparable to companies like Micron Technology. Some experts believe its market capitalization could easily reach 10 trillion dollars without significantly impacting the broader capital market.
+Bitcoin is considered a global brand with a clear product market fit. Its market capitalization stands at 1.2 trillion dollars, comparable to companies like Micron Technology. Altcoin Daily argues its market capitalization could easily reach 10 trillion dollars without significantly impacting the broader capital market.
 
 Major financial institutions, including BlackRock, Anchorage, Fidelity, Galaxy, Michael Saylor's company, and Coinbase, are actively supporting Bitcoin's long-term security through initiatives like the Bitcoin Security Consortium. Data also shows that Bitcoin supply held by long-term holders recently reached a new all-time high. This often indicates a market bottom, as most short-term sellers have already exited.
 

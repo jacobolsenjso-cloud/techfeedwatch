@@ -56,7 +56,7 @@ While it offers a quadratic speedup, meaning it would take roughly the square ro
 
 In such a scenario, the attacker could effectively control the network, censor transactions, and double-spend their own coins, fundamentally compromising Bitcoin's decentralized security model. [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained) details how such attacks could affect various cryptographic systems.
 
-The timeline for "Q Day," the hypothetical moment when a quantum machine can successfully crack Bitcoin's cryptography, is a subject of ongoing debate. Some say “Q Day,” where a quantum machine cracks Bitcoin’s cryptography, is closer than we think. Others insist it’s still decades away.
+The timeline for "Q Day," the hypothetical moment when a quantum machine can successfully crack Bitcoin's cryptography, is a subject of ongoing debate. One popular fear is that “Q Day,” where a quantum machine cracks Bitcoin’s cryptography, is closer than we think. Others insist it’s still decades away.
 
 According to a report from asset manager Ark Invest and crypto news outlet Unchained, the full extent of quantum capability is a journey, as discussed in "4:36 Quantum Computing Capability Is A Journey." The specific report, titled ARKInvest-Unchained_White Paper_BitcoinAndQuantumComputing_Final (1).pdf, explores these timelines and potential impacts.
 

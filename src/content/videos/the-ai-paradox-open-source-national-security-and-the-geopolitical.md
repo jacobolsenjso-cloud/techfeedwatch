@@ -56,7 +56,7 @@ In the world of training [large language models](/video/ai-hacking-why-practical
 
 Distillation is not an exclusive or illicit practice. Elon Musk testified that his team at SpaceX AI actively distilled OpenAI models to develop Grok AI. It is a standard industry practice.
 
-Experts also note that distillation becomes less effective as models grow more advanced. Modern training relies more on reinforcement learning, which teaches an AI intuition and understanding, rather than just copying outputs. You cannot distill intuition.
+Virtual Protocol also notes that distillation becomes less effective as models grow more advanced. Modern training relies more on reinforcement learning, which teaches an AI intuition and understanding, rather than just copying outputs. You cannot distill intuition.
 
 If distillation were a magic bullet, every tech startup would have a GPT 5.6 equivalent. The reality is that global competition has genuinely caught up. Alibaba's Qwen 1.5 and the recently announced Qwen 3.8, a 2.4 trillion parameter open-weight model, claim to be second only to Fable 5, further supporting this view.
 

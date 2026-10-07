@@ -58,7 +58,7 @@ One notable example of this shift is IBM's recent announcement that it used quan
 
 Critically, the researchers themselves indicated in their paper that the results of the purely conventional and partly quantum computation were comparable. This highlights a key characteristic of current hybrid systems: the quantum contribution, while present and interesting for research, often doesn't yet provide a demonstrable acceleration or unique insight that can't be matched by classical methods.
 
-The advantage of these hybrid approaches, critics note, is often that it becomes difficult to definitively ascertain what specific part the quantum processor was uniquely good for. This integration allows companies to continue exploring quantum algorithms and hardware development without waiting for the elusive hundreds of thousands of stable qubits.
+The advantage of these hybrid approaches, Sabine Hossenfelder notes, is often that it becomes difficult to definitively ascertain what specific part the quantum processor was uniquely good for. This integration allows companies to continue exploring quantum algorithms and hardware development without waiting for the elusive hundreds of thousands of stable qubits.
 
 ## Investment, Reality, and Eroding Promises
 

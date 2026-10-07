@@ -46,7 +46,7 @@ Each block contains a batch of validated transactions, and once added to the cha
 
 This innovation, often credited to the pseudonymous Satoshi Nakamoto with the creation of Bitcoin, established a system where trust is distributed across the network, rather than concentrated in a single entity. The network collectively verifies and approves transactions, adding new blocks only when a consensus is reached.
 
-This process grants unprecedented levels of security and censorship resistance. Critics often highlight the "blockchain trilemma" which suggests a fundamental trade-off between scalability, security, and decentralization. Many projects aim to optimize these three pillars.
+This process grants unprecedented levels of security and censorship resistance. A common objection rests on the "blockchain trilemma," which suggests a fundamental trade-off between scalability, security, and decentralization. Many projects aim to optimize these three pillars.
 
 For instance, computer scientist Silvio Micali, a Turing award winner from MIT, founded Algorand to address these very challenges by designing a pure proof-of-stake consensus mechanism intended to offer high transaction speeds and security while maintaining decentralization. As Silvio Micali discussed on the Lex Fridman Podcast #168, the architecture of Algorand focuses on achieving a balance between these critical aspects, aiming to expand blockchain's practical applications.
 
@@ -62,7 +62,7 @@ Beyond digital assets, blockchain offers a framework for supply chain management
 
 The technology also powers smart contracts, self-executing agreements where the terms are directly written into code and automatically enforced by the blockchain. These programmable contracts reduce the need for intermediaries in legal and business agreements, fostering efficiency and trust. [Understanding how smart contracts work in blockchain technology](/video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart) reveals the potential for automating complex processes across industries.
 
-However, the technology faces challenges, particularly regarding scalability for widespread adoption and the energy consumption associated with certain consensus mechanisms, like Bitcoin's proof-of-work. Critics also point to regulatory uncertainties and the complexity involved in developing and deploying blockchain-based solutions. Despite these hurdles, the drive towards decentralized power structures and enhanced data integrity continues to fuel innovation.
+However, the technology faces challenges, particularly regarding scalability for widespread adoption and the energy consumption associated with certain consensus mechanisms, like Bitcoin's proof-of-work. Other obstacles include regulatory uncertainties and the complexity involved in developing and deploying blockchain-based solutions. Despite these hurdles, the drive towards decentralized power structures and enhanced data integrity continues to fuel innovation.
 
 ## What To Watch Next
 

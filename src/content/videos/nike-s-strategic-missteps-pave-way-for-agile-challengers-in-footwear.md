@@ -18,7 +18,7 @@ isShort: false
 rewrittenAt: "2026-09-14"
 faqs:
   - question: "Why is Nike having problems with its market performance?"
-    answer: "Nike's performance issues stem from strategic errors, including a direct-to-consumer focus that analysts say led to a lack of innovation and significant market share loss. This has resulted in excess inventory and declining revenue."
+    answer: "Nike's performance issues stem from strategic errors, including a direct-to-consumer focus that, according to CNBC, led to a lack of innovation and significant market share loss. This has resulted in excess inventory and declining revenue."
   - question: "Which competitors are challenging Nike's market dominance?"
     answer: "Newer rivals such as Hoka and On Running are rapidly gaining ground by offering innovative designs and specialized athletic wear. On Running, for example, has seen its market share increase eightfold since 2019."
   - question: "What impact has Nike's direct-to-consumer strategy had?"
@@ -33,7 +33,7 @@ Nike, the dominant force in sportswear for decades, is currently facing signific
 
 A series of poor earnings reports has severely impacted the company's valuation, eventually wiping out a staggering $28 billion from its market cap. This culminated in June 2024, when Nike experienced its worst trading day ever as a publicly traded company.
 
-**Nike has blamed its performance on everything from macro challenges to remote employees, but analysts say it was part of a years-long series of strategic errors.** This critical moment for Nike highlights the intense competitive pressures and evolving consumer demands reshaping the athletic footwear and apparel industry.
+**Nike has blamed its performance on everything from macro challenges to remote employees, but CNBC's reporting ties it to a years-long series of strategic errors.** This critical moment for Nike highlights the intense competitive pressures and evolving consumer demands reshaping the athletic footwear and apparel industry.
 
 ## Key Takeaways
 
@@ -44,7 +44,7 @@ A series of poor earnings reports has severely impacted the company's valuation,
 
 ## Technical Breakdown
 
-Nike’s core problem stems from a strategic miscalculation. **During an effort to focus on direct-to-consumer sales through digital channels, analysts say the company has started to lack innovation and ceded market share to newer rivals like Hoka and On Running.**
+Nike’s core problem stems from a strategic miscalculation. **During an effort to focus on direct-to-consumer sales through digital channels, CNBC reports that the company has started to lack innovation and ceded market share to newer rivals like Hoka and On Running.**
 
 While many companies successfully leverage DTC strategies to enhance customer relationships and control branding, this shift inadvertently led to a lack of innovation.
 
@@ -60,7 +60,7 @@ As **CNBC** points out, **CNBC visited On’s headquarters in Zurich, Switzerlan
 
 The result of this strategic drift was significant: Nike started to cede market share to these emerging competitors. While Nike still commands around 40% of the global market share in athletic footwear, On Running, though holding a smaller share of just under 3%, has seen its market presence increase eightfold since 2019.
 
-This demonstrates how quickly smaller, agile players can grow when a market leader momentarily falters. The competition is no longer just between Nike and Adidas, its long-standing rival; the playing field has expanded to include a new generation of brands directly challenging the established hierarchy. **Experts say On is now one of the biggest challengers in sportswear.**
+This demonstrates how quickly smaller, agile players can grow when a market leader momentarily falters. The competition is no longer just between Nike and Adidas, its long-standing rival; the playing field has expanded to include a new generation of brands directly challenging the established hierarchy. **On is now one of the biggest challengers in sportswear.**
 
 ## Why This Matters
 
@@ -80,7 +80,7 @@ It suggests that even non-traditional footwear can thrive with the right approac
 
 ## What Others Missed
 
-While Nike pointed to macro challenges and even remote employees as factors, analysts highlight that these are symptoms rather than the root cause. The true oversight by Nike, as many analysts suggest, was failing to maintain the aggressive pace of innovation required in a trend-driven market while simultaneously executing its direct-to-consumer strategy.
+While Nike pointed to macro challenges and even remote employees as factors, CNBC's analysis treats these as symptoms rather than the root cause. The true oversight by Nike, as CNBC's analysis suggests, was failing to maintain the aggressive pace of innovation required in a trend-driven market while simultaneously executing its direct-to-consumer strategy.
 
 The direct-to-consumer model, while offering greater control and potentially higher margins, requires an even stronger pipeline of desirable products to pull consumers directly to the brand's channels. If innovation wanes, the direct relationship can expose weaknesses more acutely than a diversified wholesale model might.
 

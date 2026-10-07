@@ -23,7 +23,7 @@ faqs:
   - question: "What is the main misconception about AI's role in software development?"
     answer: "The main misconception is equating 'coding' (the act of typing code) with 'software engineering' (specification, design, testing, and understanding). AI excels at coding but not the complex engineering judgment."
   - question: "How does AI impact code quality and security?"
-    answer: "AI can lead to increased code duplication and introduces security weaknesses. Studies found 27% of AI-generated snippets contained vulnerabilities, and critical vulnerabilities increased by nearly 40% after five AI refinement iterations."
+    answer: "AI can lead to increased code duplication and introduces security weaknesses. Modern Software Engineering cites research in which 27% of AI-generated snippets contained vulnerabilities, and a 2025 study presented at IEEE-ISTAS found that critical vulnerabilities increased by nearly 40% after five AI refinement iterations."
   - question: "Is AI replacing software developers?"
     answer: "AI is re-pricing the market, not eliminating the work. The narrow category of 'programmer' has seen a decline, but the broader role of 'software developer' is projected to grow, emphasizing engineering judgment over rote coding."
 ---

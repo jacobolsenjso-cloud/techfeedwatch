@@ -34,7 +34,7 @@ The implications extend beyond academic settings, touching professional developm
 
 ## Why does AI hinder our critical thinking?
 
-The mechanism by which AI can diminish critical thinking hinges on its efficiency in delivering information and solutions, often at the cost of cognitive effort. Research shows AI is measurably reducing how hard our brains work.
+The mechanism by which AI can diminish critical thinking hinges on its efficiency in delivering information and solutions, often at the cost of cognitive effort. The MIT study described below suggests AI is measurably reducing how hard our brains work.
 
 When tools provide instant answers or complete drafts, users bypass the mental processes required for ideation, research, synthesis, and evaluation. This shortcut, while seemingly productive in the short term, can lead to a measurable decline in cognitive engagement and retention.
 
@@ -48,7 +48,7 @@ The real problem isn't the technology itself but that we're using one general-pu
 
 ## How can we prevent AI from diminishing critical thought?
 
-The solution to mitigating AI's potential negative impact on critical thinking lies not in avoiding the technology, but in changing how we interact with it. While passive consumption of AI output can be detrimental, studies also show that critically engaging with AI actually improves learning.
+The solution to mitigating AI's potential negative impact on critical thinking lies not in avoiding the technology, but in changing how we interact with it. While passive consumption of AI output can be detrimental, House of El: AI also notes that critically engaging with AI actually improves learning.
 
 This active engagement involves questioning AI's suggestions, editing its output, and using it as a starting point for deeper analysis rather than a final solution. When users challenge AI, they exercise the very critical thinking muscles that passive use neglects. This interactive approach transforms AI from a mere answer-generator into a sophisticated thought partner.
 

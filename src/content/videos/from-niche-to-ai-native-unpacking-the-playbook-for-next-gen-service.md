@@ -34,7 +34,7 @@ This model allows for unprecedented efficiency and scalability in sectors tradit
 
 An AI native service company re-engineers established service industries by making AI the primary engine behind service delivery. These are not merely tech-enhanced versions of old businesses; they are new entities, like insurance carriers and law firms, rebuilt from scratch with AI performing the bulk of the work.
 
-This emergent business model addresses a market opportunity that, according to industry observers, did not truly exist even a couple years ago, yet now encompasses markets worth trillions of dollars.
+This emergent business model addresses a market opportunity that, according to Y Combinator, did not truly exist even a couple years ago, yet now encompasses markets worth trillions of dollars.
 
 The distinguishing factor lies in delivering an "outcome" to the customer, rather than just providing a tool for the customer to use internally. This means the AI platform, often paired with strategic human oversight, handles the entire service process end-to-end.
 

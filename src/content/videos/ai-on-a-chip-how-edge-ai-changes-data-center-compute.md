@@ -51,7 +51,7 @@ This local processing significantly reduces the need for constant data transfer 
 
 The rise of [edge AI](/video/edge-ai-how-on-device-inference-changes-computing/) has prompted a re-evaluation of the traditional data center model. There are clear signs of a shifting situation: more than half of all AI data center construction projects worldwide are reportedly being cancelled or delayed. Specifically, half of US data centers planned for 2026 are expected to face similar fates.
 
-High-profile examples, such as Oracle and OpenAI reportedly ending plans to expand a Texas data center site, underscore this trend. Some industry observers suggest that the current boom in data center construction might be a short-term economic fix, with concerns that many could become derelict within a few years as AI processing moves to the edge.
+High-profile examples, such as Oracle and OpenAI reportedly ending plans to expand a Texas data center site, underscore this trend. Science filmmaker Prof Simon raises the possibility that the current boom in data center construction might be a short-term economic fix, with concerns that many could become derelict within a few years as AI processing moves to the edge.
 
 However, it is important to note that data centers are not becoming entirely obsolete. While edge devices excel at inference and specific tasks, the initial training of [large language models](/video/ai-hacking-why-practical-llm-security-testing-is-no-longer-optional/) and foundational AI systems still demands immense computational power and vast datasets.
 

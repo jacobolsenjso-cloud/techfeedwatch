@@ -89,7 +89,7 @@ This continuous competition, driven by the block reward and transaction fees, en
 
 Bitcoin mining is a multi-billion dollar industry, but it also faces significant debate, particularly concerning its energy consumption and perceived centralization.
 
-Estimates for Bitcoin's energy use vary widely, from as low as 0.1% to as much as 1% of the world's electricity. Critics often highlight this as a major environmental concern. However, proponents argue that miners are inherently incentivized to find the cheapest forms of energy to maximize their profits.
+Estimates for Bitcoin's energy use vary widely, from as low as 0.1% to as much as 1% of the world's electricity. This is often raised as a major environmental concern. However, Coin Bureau notes that miners are inherently incentivized to find the cheapest forms of energy to maximize their profits.
 
 This often leads them to utilize energy that would otherwise be wasted, such as flared natural gas, or to seek out abundant and low-cost renewable sources like hydro, solar, and wind. Some publicly traded Bitcoin mining companies, like Marathon Digital, have even begun acquiring their own renewable energy sources, such as wind farms.
 

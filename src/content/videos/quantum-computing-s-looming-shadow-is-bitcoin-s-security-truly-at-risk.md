@@ -19,7 +19,7 @@ isShort: false
 revised: true
 faqs:
   - question: "Is Bitcoin immediately vulnerable to quantum computer attacks?"
-    answer: "No, Bitcoin is not immediately vulnerable. Experts suggest that a cryptographically relevant quantum computer, capable of breaking current cryptography, is a decade or more away. Current quantum machines lack the necessary reliability and scale to pose an immediate threat."
+    answer: "No, Bitcoin is not immediately vulnerable. Coin Bureau estimates that a cryptographically relevant quantum computer, capable of breaking current cryptography, is a decade or more away. Current quantum machines lack the necessary reliability and scale to pose an immediate threat."
   - question: "What is the main risk quantum computing poses to Bitcoin?"
     answer: "The main risk to Bitcoin comes from the potential for quantum computers to forge digital signatures. This could allow attackers to spend coins from addresses where the public key is already visible or to intercept transactions in the mempool to steal funds before they are confirmed."
   - question: "Will quantum computers be able to decrypt past Bitcoin transactions?"
@@ -41,7 +41,7 @@ Many headlines about quantum computing advancements refer to physical qubits, wh
 
 Current public roadmaps for quantum computing focus on making system performance reliable, not on cracking cryptographic keys. For example, IBM's roadmap discusses hundreds of reliable qubits, which is impressive engineering. However, it is still far from the thousands of accurate, stable qubits needed for practical cryptanalysis.
 
-Experts suggest that fears of Bitcoin's core cryptography being practically breakable in the next five years are not supported by current public knowledge. Even a 10-year window is considered an aggressive estimate. A more realistic timeline for a major threat is a decade or more.
+Coin Bureau concludes that fears of Bitcoin's core cryptography being practically breakable in the next five years are not supported by current public knowledge. Even a 10-year window is considered an aggressive estimate. A more realistic timeline for a major threat is a decade or more.
 
 ## Encryption Versus Digital Signatures
 

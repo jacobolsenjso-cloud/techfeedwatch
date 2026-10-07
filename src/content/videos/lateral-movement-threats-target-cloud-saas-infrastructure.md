@@ -72,7 +72,7 @@ The root cause of many data breaches, including the 2016 Uber incident, often tr
 
 ## The Real-World Impact and What to Do
 
-The consequences of lateral movement and privilege escalation are severe. Statistics show that 60% of companies go bankrupt within the first six months after a data breach due to fines and recovery costs. The average cost of a data breach is $4.45 million, with some incidents affecting as many as 250 million users.
+The consequences of lateral movement and privilege escalation are severe. A widely repeated claim holds that 60% of companies go bankrupt within six months of a data breach, but the figure has no traceable source; the fines and recovery costs are nonetheless severe. The average cost of a data breach is $4.45 million, with some incidents affecting as many as 250 million users.
 
 Most major data breaches today occur in cloud environments like AWS and GCP, rather than on-premise databases, precisely because of the interconnectedness of IAM and service accounts. Once one component is compromised, attackers can jump across the entire infrastructure.
 

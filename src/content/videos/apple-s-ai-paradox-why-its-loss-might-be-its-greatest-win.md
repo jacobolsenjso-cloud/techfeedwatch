@@ -26,7 +26,7 @@ faqs:
   - question: "What are some features of Apple Intelligence?"
     answer: "Apple Intelligence includes improvements to Siri, making it more contextual by drawing information from apps like iMessage and Calendar. It also offers writing tools, photo editing capabilities, and the creation of 'Genmoji.' These features are designed to integrate deeply into the Apple ecosystem."
   - question: "Is Apple considered behind in the 'AI race'?"
-    answer: "Opinions vary. Some observers believe Apple lagged in the initial 'AI race' focused on rapidly deploying advanced generative AI software. Others argue Apple is strategically positioned for a long-term 'race' centered on hardware and on-device AI, where its dominance in device manufacturing gives it an advantage."
+    answer: "Opinions vary. One view is that Apple lagged in the initial 'AI race' focused on rapidly deploying advanced generative AI software. Others argue Apple is strategically positioned for a long-term 'race' centered on hardware and on-device AI, where its dominance in device manufacturing gives it an advantage."
 rewrittenAt: "2026-08-17"
 ---
 
@@ -70,7 +70,7 @@ Apple Intelligence offers a range of features. These include improvements to Sir
 
 This provides more personalized and contextual responses. This deep integration allows Siri to understand personal context. Third-party apps might not achieve this.
 
-However, some critics argue that the current iteration of Apple Intelligence does not much surpass abilities already available. These are found through third-party AI apps like ChatGPT or Gemini. Specific criticisms include that Siri does not yet excel in complex tasks like coding.
+However, Marques Brownlee argues that the current iteration of Apple Intelligence does not much surpass abilities already available. These are found through third-party AI apps like ChatGPT or Gemini. Specific criticisms include that Siri does not yet excel in complex tasks like coding.
 
 It lacks background processing for large requests. It struggles with remembering personal context without explicit notes within the iPhone's Notes app. This means users cannot leave Siri to process a long request.
 

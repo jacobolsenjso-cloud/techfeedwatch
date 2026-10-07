@@ -48,7 +48,7 @@ The financial implications of AI usage are proving far greater than many compani
 
 Some companies have already seen their AI budgets maxed out surprisingly early in the year. For instance, one major technology company's chief technology officer noted that their full-year AI coding tool budget was exhausted by April.
 
-Research indicates that companies are overrunning their initial budgets for AI inference, the process of running an AI model, by orders of magnitude. This suggests a widespread underestimation of operational AI costs.
+As CNBC reports, companies are overrunning their initial budgets for AI inference, the process of running an AI model, by orders of magnitude. This suggests a widespread underestimation of operational AI costs.
 
 Projections even suggest that AI expenses could rival the cost of engineering headcount within companies this year. This rapid acceleration in spending highlights a disconnect between initial budget allocations and the actual rate of AI resource consumption.
 

@@ -77,7 +77,7 @@ This creates a power dynamic where Amazon dictates terms, affecting pricing stra
 
 The "Amazon paradox," as articulated by Rise and Fall, perfectly encapsulates this dynamic: "the machine became powerful because it worked." Its efficacy in delivering solutions—faster, cheaper, easier, more reliable online shopping for millions—inadvertently locked various stakeholders into its ecosystem.
 
-The trade-off for convenience is often a loss of control, a subtle but significant impact on market competition and business autonomy. Critics often point to this centralized control as a potential risk, as it centralizes power and sets terms that others must follow to access the market.
+The trade-off for convenience is often a loss of control, a subtle but significant impact on market competition and business autonomy. This centralized control carries a potential risk, as it centralizes power and sets terms that others must follow to access the market.
 
 ## The Verdict
 

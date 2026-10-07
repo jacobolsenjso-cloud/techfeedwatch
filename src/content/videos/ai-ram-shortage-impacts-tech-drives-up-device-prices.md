@@ -22,7 +22,7 @@ faqs:
   - question: "Which companies control most of the world's RAM production?"
     answer: "The global supply of RAM chips is highly concentrated, with approximately 93% coming from just three companies: Samsung, SK Hynix, and Micron. This limited number of major producers makes the market susceptible to supply disruptions and shifts in manufacturing priorities."
   - question: "How long will the AI-driven RAM shortage last?"
-    answer: "Industry experts predict that the RAM shortage, particularly for consumer electronics, could last until at least 2027. This is due to the long lead times required to build new fabrication plants (at least two years) and manufacturers' cautious approach to expansion given past market volatility and the uncertain long-term demand for AI."
+    answer: "ColdFusion expects the RAM shortage, particularly for consumer electronics, to last until at least 2027. This is due to the long lead times required to build new fabrication plants (at least two years) and manufacturers' cautious approach to expansion given past market volatility and the uncertain long-term demand for AI."
   - question: "What are the practical impacts of the RAM shortage on consumers?"
     answer: "Consumers are experiencing higher prices for electronic devices, including laptops, smartphones, and gaming consoles, due to increased memory costs. There are also reports of product delays, reduced availability of certain models, and even predictions that some consumer devices may be limited to lower amounts of RAM, such as 8 GB, in the coming years."
 rewrittenAt: "2026-08-16"
@@ -54,7 +54,7 @@ The obvious question arising from this demand surge is why memory manufacturers 
 
 Current fabrication plants (fabs) that produce cutting-edge chips already operate around the clock at finite capacity. These are delicate, highly tuned operations where even minor disruptions can set back production by weeks or months. It's not as simple as adding a shift or increasing machine output.
 
-Building new fabs to significantly boost production is a monumental undertaking. Industry insiders estimate it takes at least two years for new capacity to become operational after a company decides to expand, and that's an optimistic timeline. Such an expansion requires committing billions of dollars today based on predictions of AI demand several years into the future.
+Building new fabs to significantly boost production is a monumental undertaking. By ColdFusion's account, it takes at least two years for new capacity to become operational after a company decides to expand, and that's an optimistic timeline. Such an expansion requires committing billions of dollars today based on predictions of AI demand several years into the future.
 
 This presents a significant risk, especially given the uncertainty surrounding the long-term trajectory of the AI market. Even Sam Altman, CEO of OpenAI, has openly acknowledged that the current AI frenzy might be a bubble, stating that investors could be "overexcited" and some might "lose a lot of money."
 
@@ -86,7 +86,7 @@ For example, lead times for essential components like generators can be as long 
 
 Amidst this pressure on traditional chip production centers, China emerges as a potential "dark horse." China's leading DRAM challenger, CXMT, has announced its ability to manufacture DDR5 memory.
 
-While this is a significant development, most analysts believe CXMT is still two or three years away from achieving the scale, yields, and consistency needed to meaningfully shift global supply. By the time China's capacity could make a substantial difference, many of today's long-term contracts for memory supply will already be locked in, further complicating the market.
+While this is a significant development, CXMT is probably still two or three years away from achieving the scale, yields, and consistency needed to meaningfully shift global supply. By the time China's capacity could make a substantial difference, many of today's long-term contracts for memory supply will already be locked in, further complicating the market.
 
 The current situation leaves the tech market in an unusual and challenging position. Companies that built the modern tech stack are quietly reshuffling their priorities, often at the expense of consumer products.
 

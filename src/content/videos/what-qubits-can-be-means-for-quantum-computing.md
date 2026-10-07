@@ -43,7 +43,7 @@ Formally, quantum superposition is a quantum system's ability to exist in a weig
 
 Superposition does not mandate a blind 50/50 split between options. A qubit can lean heavily toward zero, or tilt sharply toward one, establishing a physical reality where potential configurations overlay one another.
 
-To grasp this distinction, consider flipping a standard coin and catching it against your wrist. Classically, observers say there is a 50% chance of heads and a 50% chance of tails.
+To grasp this distinction, consider flipping a standard coin and catching it against your wrist. Classically, there is a 50% chance of heads and a 50% chance of tails.
 
 Yet underneath your hand, the physical coin already rests at 100% heads or 100% tails. The probability reflects human ignorance rather than physical ambiguity. A qubit in superposition differs fundamentally: it has not settled on an outcome yet.
 

@@ -69,7 +69,7 @@ The underlying mechanism is that these models do not "search" a database of fact
 
 The issue of hallucinations is a subject of ongoing debate. Some researchers propose that models could be trained to acknowledge uncertainty, prompting them to say "I don't know" when the probability of a correct answer is low.
 
-Critics argue that users expect a definitive answer, not an admission of ignorance, making such a solution less appealing for practical use. However, a model that rarely hallucinates and instead acknowledges its limitations could prevent users from inadvertently believing false information. While hallucinations may never be completely eliminated, strategies to manage them appear more feasible than solving prompt injection.
+Sabine Hossenfelder points out that users expect a definitive answer, not an admission of ignorance, making such a solution less appealing for practical use. However, a model that rarely hallucinates and instead acknowledges its limitations could prevent users from inadvertently believing false information. While hallucinations may never be completely eliminated, strategies to manage them appear more feasible than solving prompt injection.
 
 ## The Path Forward for Artificial General Intelligence
 

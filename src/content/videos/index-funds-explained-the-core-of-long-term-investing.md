@@ -48,7 +48,7 @@ Many investors believe that to achieve significant returns, they must dedicate e
 
 However, this intense effort frequently leads to disappointment. It can feel like gambling, with portfolios seeing significant drops due to unpredictable events, like a single social media post.
 
-The reality is that beating the market consistently is exceptionally difficult, even for professionals. Studies show that over a 10-year period, roughly 90% of professional fund managers—people with advanced degrees, access to sophisticated tools, and salaries in the millions—fail to beat the S&P 500.
+The reality is that beating the market consistently is exceptionally difficult, even for professionals. S&P Dow Jones Indices' SPIVA scorecards show that over a 10-year period, roughly 85–90% of professional fund managers—people with advanced degrees, access to sophisticated tools, and salaries in the millions—fail to beat the S&P 500.
 
 If these experts, with all their resources and dedication, struggle to outperform a simple index, it highlights the challenge for individual investors trying to do the same. Trying to find the "next Nvidia" or an undervalued gem often results in a cycle of anxiety, fear of missing out (FOMO), and expensive mistakes.
 

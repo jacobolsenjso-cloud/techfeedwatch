@@ -24,7 +24,7 @@ faqs:
   - question: "What is Project Glasswing?"
     answer: "Project Glasswing is Anthropic's initiative to manage the risks of Mythos. It involves granting access to the model to a select group of companies and a bank, allowing them to use Mythos to identify and patch vulnerabilities in critical software systems."
   - question: "What are the main criticisms of Anthropic's handling of Mythos?"
-    answer: "Critics argue that Anthropic may be exaggerating Mythos's dangers for publicity or following a common AI release playbook. They also point to the high computational cost of finding some bugs and the specific, less-than-real-world conditions under which some exploits were tested."
+    answer: "Fireship raises the possibility that Anthropic may be exaggerating Mythos's dangers for publicity or following a common AI release playbook. The video also points to the high computational cost of finding some bugs and the specific, less-than-real-world conditions under which some exploits were tested."
 rewrittenAt: "2026-08-17"
 ---
 
@@ -56,7 +56,7 @@ This strategy reflects a belief that controlled access is the best way to manage
 
 ## Skepticism and Counterarguments
 
-Not everyone is convinced by Anthropic's claims or its chosen mitigation strategy. Some critics suggest that the company is following a familiar playbook for AI model releases.
+Not everyone is convinced by Anthropic's claims or its chosen mitigation strategy. Fireship suggests that the company is following a familiar playbook for AI model releases.
 
 This playbook involves generating fear about a model's abilities, only to later release a less impactful version. They point to past instances where AI models were initially hyped as revolutionary, only to have their impact diminish over time.
 
@@ -66,7 +66,7 @@ They also faced challenges keeping their APIs online. These internal struggles r
 
 The methods used to discover some vulnerabilities also draw scrutiny. For example, the OpenBSD vulnerability was found using 1000 parallel agent runs across the codebase. This process cost nearly $20,000 in compute resources.
 
-Critics argue that similar processes, if applied to other advanced models like Opus 4.6 or GPT 5.4 Pro, might yield comparable results. And, a claim that Mythos had an 84% success rate at writing working exploits in Firefox, a large jump over Opus 4.6's 15%, comes with an important caveat.
+Fireship argues that similar processes, if applied to other advanced models like Opus 4.6 or GPT 5.4 Pro, might yield comparable results. And, a claim that Mythos had an 84% success rate at writing working exploits in Firefox, a large jump over Opus 4.6's 15%, comes with an important caveat.
 
 This success rate was achieved against a SpiderMonkey shell with process sandboxing and other mitigations turned off. Testing under such conditions does not reflect real-world browser environments. These details suggest that while Mythos may represent a step up in abilities from previous models, its perceived danger might be exaggerated or context-dependent.
 

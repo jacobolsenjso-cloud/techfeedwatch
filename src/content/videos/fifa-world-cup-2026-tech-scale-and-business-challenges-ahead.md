@@ -38,7 +38,7 @@ The sheer scale of the FIFA World Cup 2026 presents unique logistical challenges
 
 This reliance on flights is compounded by the fact that the tournament takes place during the summer, a peak season for domestic American vacations. Consequently, flights between host cities are expected to be in high demand and costly, with prices increasing significantly for those who delay booking.
 
-Experts note that average international airfare has climbed to a significant sum, marking a 42% increase since February, and these costs are likely to rise further for last-minute purchases. The extended travel times and expenses associated with handling such a vast geographical area could deter some fans from following their teams across different venues.
+DW News reports that average international airfare has climbed to a significant sum, marking a 42% increase since February, and these costs are likely to rise further for last-minute purchases. The extended travel times and expenses associated with handling such a vast geographical area could deter some fans from following their teams across different venues.
 
 ## Visa, Immigration, and the Welcome Message
 

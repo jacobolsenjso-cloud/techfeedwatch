@@ -23,7 +23,7 @@ faqs:
   - question: "How do AI Overviews affect website traffic?"
     answer: "AI Overviews can significantly reduce organic website traffic. When an AIO provides a direct answer, users often do not click through to the original articles. Top-ranking pages have seen substantial decreases in click-through rates."
   - question: "Where do AI models typically find answers on a webpage?"
-    answer: "AI models tend to extract answers from the upper sections of a webpage. Studies show that a large percentage of citations come from the top 20% or upper half of an article. This suggests placing key information prominently is effective."
+    answer: "AI models tend to extract answers from the upper sections of a webpage. CXL highlights that a large percentage of citations come from the top 20% or upper half of an article. This suggests placing key information prominently is effective."
   - question: "What is the main goal of AI SEO strategy?"
     answer: "The main goal of AI SEO strategy is to secure citations from Generative AI Overviews. This means optimizing content so AI models easily find and reference it. This helps maintain brand relevance and authority in search results."
 rewrittenAt: "2026-08-19"
@@ -45,7 +45,7 @@ However, the way content is presented needs to change for AI consumption. This e
 
 AI Overviews greatly alter user behavior. When an AIO provides a direct answer, many users do not scroll further. This leads to a large loss of organic traffic for traditional search results.
 
-Studies show a clear decline in click-through rates (CTR) for top-ranking articles. This phenomenon is a direct trade-off for content creators. They might gain an AI citation but lose direct website visits.
+Studies by Ahrefs and Seer Interactive show a clear decline in click-through rates (CTR) for top-ranking articles. This phenomenon is a direct trade-off for content creators. They might gain an AI citation but lose direct website visits.
 
 For example, articles in the number one organic position have seen their CTR decrease by 58%. Those in the second position experienced a 50% drop. Positions three and four saw decreases of 46% and 38% respectively.
 

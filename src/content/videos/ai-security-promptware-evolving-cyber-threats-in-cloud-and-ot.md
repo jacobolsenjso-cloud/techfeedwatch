@@ -47,7 +47,7 @@ These agents are designed to trust input, take action, and continue processing, 
 
 ## Defending Against AI-Driven Attacks
 
-Given the evolving nature of promptware, a fundamental shift in defensive strategy is necessary. Experts suggest adopting an "assume breach" mentality, treating the AI model or agent itself as a potential insider threat.
+Given the evolving nature of promptware, a fundamental shift in defensive strategy is necessary. IBM Technology recommends adopting an "assume breach" mentality, treating the AI model or agent itself as a potential insider threat.
 
 This approach means securing the environment as if the AI is already malicious, focusing on limiting its capabilities and blast radius. Organizations must restrict an AI's ability to propagate, move laterally, and leverage permissions it gains from users or the environment.
 

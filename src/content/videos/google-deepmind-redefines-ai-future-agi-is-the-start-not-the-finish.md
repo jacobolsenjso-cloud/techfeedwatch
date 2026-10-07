@@ -64,7 +64,7 @@ These include generating synthetic data, using simulations, self-play, reinforce
 
 The second pathway involves **algorithmic fundamental changes**. This is where AI does not just get bigger, but becomes fundamentally different in its approach. Current AI is largely dominated by transformer-based models.
 
-These are trained on vast datasets, then refined with instruction tuning and reinforcement learning. While effective, many researchers believe these methods still lack key ingredients for true AGI, such as strong long-term planning, continual learning, persistent memory, better world models, and the ability to operate reliably in completely open-ended environments.
+These are trained on vast datasets, then refined with instruction tuning and reinforcement learning. While effective, these methods arguably still lack key ingredients for true AGI, such as strong long-term planning, continual learning, persistent memory, better world models, and the ability to operate reliably in completely open-ended environments.
 
 A genuine fundamental change could involve entirely new architectures, training methods, memory systems, or forms of reasoning. It might even include new hardware like neuromorphic chips or analog computing.
 
