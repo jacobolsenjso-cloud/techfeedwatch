@@ -26,7 +26,7 @@ faqs:
     answer: "No, you do not need special hardware. Cloud-based platforms allow users to access quantum computers remotely over the internet, handling all the complex infrastructure on the provider's end."
 ---
 
-Accessing quantum computing today largely happens through cloud services, which bridge the gap between complex quantum hardware and users worldwide. These platforms enable individuals and businesses to program quantum circuits and execute them on actual quantum processors, fostering experimentation and development in this nascent field.
+Accessing [quantum computing](/video/can-quantum-computing-replace-data-centers/) today largely happens through cloud services, which bridge the gap between complex quantum hardware and users worldwide. These platforms enable individuals and businesses to program quantum circuits and execute them on actual quantum processors, fostering experimentation and development in this nascent field.
 
 ## What It Is
 

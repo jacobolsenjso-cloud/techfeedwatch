@@ -41,7 +41,7 @@ This is a radical departure from [classical computing](/video/quantum-computing-
 
 ## Beyond Binary: How Quantum Mechanics Changes Computation
 
-Quantum computing is not simply a more powerful version of current computers. It is a basically different kind of machine, much like a lightbulb is a different technology from a candle.
+[Quantum computing](/video/what-qubits-can-be-means-for-quantum-computing/) is not simply a more powerful version of current computers. It is a basically different kind of machine, much like a lightbulb is a different technology from a candle.
 
 While a candle provides light, a lightbulb uses a deeper scientific understanding to create illumination in a new way. Similarly, quantum computers rely on the science of quantum physics.
 

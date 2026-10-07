@@ -37,7 +37,7 @@ For decades, software primarily served as a digital filing cabinet. Early system
 
 However, the core work—processing an HR request, managing an accounting ledger, or booking a flight—still required human intervention. These systems provided the data, but people had to perform the actions.
 
-The current generation of AI agents represents a significant evolution. Instead of merely storing or presenting information, these agents are designed to *do* the work.
+The current generation of [AI agents](/video/ai-s-inexorable-advance-is-the-saas-business-model-under-threat/) represents a significant evolution. Instead of merely storing or presenting information, these agents are designed to *do* the work.
 
 They are trained on vast datasets and equipped with reasoning capabilities that allow them to understand context, utilize various digital tools, and execute multi-step processes. This means software can now move beyond being a "dumb storage" mechanism to becoming an active participant in business operations, capable of implementing changes and performing tasks that previously demanded human labor.
 

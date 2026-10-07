@@ -39,7 +39,7 @@ This unique property means that a quantum system isn't limited to a single state
 
 Consider a simple analogy: imagine a very long cabinet with 1 million drawers, and you've hidden an item in one of them. A classical approach would require you to open, on average, half a million drawers to find the item.
 
-A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how quantum computing gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
+A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how [quantum computing](/video/quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality/) gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
 
 ## How Quantum Computers Process Information
 

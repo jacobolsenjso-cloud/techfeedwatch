@@ -39,7 +39,7 @@ However, for an AI agent to perform specialized tasks, such as inspecting a spec
 
 Prompt engineering involves giving the LLM a task with a specific role. Context engineering goes further by adding all necessary additional information. This might include details about how data should be formatted, how a particular database is configured, or even the results from a tool that has already fetched data.
 
-Providing the right context helps the LLM make the correct decision and generate the desired answer. The challenge lies in efficiently and reliably supplying this context to build effective AI agents.
+Providing the right context helps the LLM make the correct decision and generate the desired answer. The challenge lies in efficiently and reliably supplying this context to build effective [AI agents](/video/ai-s-inexorable-advance-is-the-saas-business-model-under-threat/).
 
 ## Model Context Protocol (MCP): Connecting to External Data
 

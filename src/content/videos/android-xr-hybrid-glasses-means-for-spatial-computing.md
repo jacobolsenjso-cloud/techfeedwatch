@@ -26,7 +26,7 @@ faqs:
     answer: "Flat Apps typically display traditional 2D interfaces, similar to smartphone applications, but projected into the virtual space. Spatial Apps are designed to interact directly with the 3D environment, offering more immersive and context-aware experiences."
 ---
 
-Extended reality (XR) is rapidly evolving beyond distinct augmented reality (AR) and virtual reality (VR) categories, converging into hybrid devices that blend immersive and overlay experiences. This shift heralds a future where digital interactions are more fluid and integrated into our physical world, with Android XR emerging as a foundational platform for this transformation.
+Extended reality (XR) is rapidly evolving beyond distinct augmented reality (AR) and [virtual reality](/video/how-do-virtual-reality-glasses-work-to-trick-your-brain/) (VR) categories, converging into hybrid devices that blend immersive and overlay experiences. This shift heralds a future where digital interactions are more fluid and integrated into our physical world, with Android XR emerging as a foundational platform for this transformation.
 
 ## What Are Android XR Hybrid Glasses and How Do They Work?
 

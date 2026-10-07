@@ -50,7 +50,7 @@ A common organizational framework is the PARA system, which categorizes informat
 
 For the actual note storage, applications like Obsidian are frequently used. Obsidian works directly with plain text files stored on your computer, offering flexibility and ownership of your data.
 
-It also includes a visual graph view that naturally displays the connections between your notes. To enhance its capabilities for an AI second brain, several plugins are often integrated:
+It also includes a visual graph view that naturally displays the connections between your notes. To enhance its capabilities for an [AI second brain](/video/ai-second-brain-for-productivity-stopping-ai-tools-slowing-work/), several plugins are often integrated:
 * **Obsidian Git:** This plugin automates the backup of your entire knowledge vault, committing and pushing changes to a version control system like GitHub in the background. This ensures your knowledge is safe from device failures and accessible from multiple devices.
 * **Dataview:** This allows you to query your notes as if they were a database. You can pull together all notes with a specific tag or property, providing dynamic views of your information.
 * **Metadata Menu:** This helps maintain consistency in the information fields (metadata) associated with each note, which is especially important when an AI is responsible for filling in or interpreting these details.

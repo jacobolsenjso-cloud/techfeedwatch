@@ -92,7 +92,7 @@ Superconductor material comparison:
 
 Hardware coherence gains historically adhere to Schoelkopf's law, which says that qubit coherence time doubles about once every year. A massive leap within twelve months bypassed years of projected incremental gains on paper. This progress led Microsoft's quantum leadership, including Chetan Nayak, to target 2029 for commercial-scale systems.
 
-Simultaneously, algorithm optimizations are lowering physical hardware requirements. For instance, if you want to break RSA 2048 using Shor's algorithm, people previously estimated you probably need around 10 million qubits to manage error correction overhead.
+Simultaneously, algorithm optimizations are lowering physical hardware requirements. For instance, if you want to break RSA 2048 using [Shor's algorithm](/video/quantum-computing-s-looming-shadow-is-bitcoin-s-security-truly-at-risk/), people previously estimated you probably need around 10 million qubits to manage error correction overhead.
 
 Compiler routines and algorithmic efficiencies continue to reduce that requirement. The acceleration of these mathematical optimizations is detailed further in [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained).
 

@@ -98,7 +98,7 @@ Hardware vendors must balance security controls against power users who expect o
 
 ## What To Watch Next
 
-The boundary between traditional mobile operating systems and spatial computing environments continues to dissolve. As tech giants build unified operating systems tailored for mixed reality devices, native support for 2D mobile code will likely become standard across all consumer headsets. Manufacturers will refine spatial multi-window displays, allowing mobile applications to sit alongside high-end 3D environments naturally.
+The boundary between traditional mobile operating systems and spatial computing environments continues to dissolve. As tech giants build unified operating systems tailored for [mixed reality](/video/testing-how-the-best-windows-mixed-reality-headset-changes-vr/) devices, native support for 2D mobile code will likely become standard across all consumer headsets. Manufacturers will refine spatial multi-window displays, allowing mobile applications to sit alongside high-end 3D environments naturally.
 
 Key technical signals to track include how system manufacturers address sandboxing for unverified binaries, automated window scaling for mobile interfaces, and real-time power conservation under increased processing loads.
 

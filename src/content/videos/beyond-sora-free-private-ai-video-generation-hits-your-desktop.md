@@ -26,7 +26,7 @@ faqs:
     answer: "The primary benefits are full privacy, no subscriptions, no usage limits, and the ability to achieve 'cloud-quality' AI video generation without the recurring costs associated with cloud-based platforms."
 ---
 
-Generating private AI videos on a personal computer is now a practical reality, offering users control over their data and creative processes without relying on external cloud services. This approach leverages powerful open-source AI video models, allowing for content creation directly on local hardware.
+Generating private [AI video](/video/how-does-ai-video-face-swap-technology-actually-work/)s on a personal computer is now a practical reality, offering users control over their data and creative processes without relying on external cloud services. This approach leverages powerful open-source AI video models, allowing for content creation directly on local hardware.
 
 The core of this capability lies in tools that simplify the deployment of complex AI software. One such solution is Pinokio, a one-click installer designed to make running AI tools straightforward. Once installed, platforms like Wan2GP enable users to generate videos using sophisticated models, including LTX-2 and Wan.
 

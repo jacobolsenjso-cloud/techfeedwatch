@@ -70,7 +70,7 @@ PACE serves as a translation layer. It turns subjective regulations into objecti
 
 ## Agentic AI in Open Banking and Beyond
 
-Once the internal architecture is governed and secure, the focus can shift to external growth. Agentic AI, combined with open banking, allows for embedded finance.
+Once the internal architecture is governed and secure, the focus can shift to external growth. [Agentic AI](/video/agentic-ai-transforms-developer-velocity-in-enterprise-tech/), combined with open banking, allows for embedded finance.
 
 This means projecting banking services directly into non-financial platforms. An example is a loan module appearing inside a ride-share application. This brings financial services to consumers where they are already active.
 

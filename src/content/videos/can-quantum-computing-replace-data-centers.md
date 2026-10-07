@@ -25,7 +25,7 @@ faqs:
     answer: "Facilities will adopt hybrid architectures that link classical GPU supercomputers directly to quantum processors using low-latency interconnects. Classical machines will process primary data and manage real-time error correction while offloading specific computational bottlenecks to quantum chips."
 ---
 
-Quantum computing will not replace classical data centers. Instead, quantum processing units will sit directly inside existing and next-generation data facilities as specialized accelerators connected to classical server clusters. Classical processors will continue to manage databases, serve internet traffic, and handle standard enterprise computing, while quantum machines take on narrow computational workloads that classical silicon cannot solve.
+[Quantum computing](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) will not replace classical data centers. Instead, quantum processing units will sit directly inside existing and next-generation data facilities as specialized accelerators connected to classical server clusters. Classical processors will continue to manage databases, serve internet traffic, and handle standard enterprise computing, while quantum machines take on narrow computational workloads that classical silicon cannot solve.
 
 ## What It Is: Can Quantum Computing Replace Data Centers
 

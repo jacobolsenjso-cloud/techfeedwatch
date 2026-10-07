@@ -33,7 +33,7 @@ Telling synthetic footage apart from physical footage comes down to the friction
 
 Real video is an indexical capture of physical matter. When an operator records footage on an ARRI Alexa with 35mm anamorphic lens, photons hit physical sensors through calibrated glass. Light scatters naturally across biological tissue, cloth fibers bend under gravity, and movement exhibits genuine inertia.
 
-AI video, by contrast, operates entirely on statistical interpolation. Neural networks calculate probabilities across multidimensional latent space, predicting visual transitions frame by frame without any concept of mass, volume, or momentum.
+[AI video](/video/how-does-ai-video-face-swap-technology-actually-work/), by contrast, operates entirely on statistical interpolation. Neural networks calculate probabilities across multidimensional latent space, predicting visual transitions frame by frame without any concept of mass, volume, or momentum.
 
 This lack of grounding creates distinct perceptual tells. As AI Samson points out, "Most AI videos look fake." For example, if you follow this rope, first of all, you see this man is not even holding it.
 

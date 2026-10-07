@@ -81,7 +81,7 @@ Instead, it injects only brief metadata about available skills, allowing the LLM
 
 ## Empowering Workflows with Agentic Capabilities
 
-The practical implications of AI agents like OpenClaw are far-reaching. They move beyond simply providing information to actively automating tasks that previously required human intervention, such as copying and pasting data between applications or manually scheduling meetings.
+The practical implications of [AI agents](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) like OpenClaw are far-reaching. They move beyond simply providing information to actively automating tasks that previously required human intervention, such as copying and pasting data between applications or manually scheduling meetings.
 
 By connecting LLMs with a diverse set of tools, agents can perform actions like reading files, searching the web, calling APIs, and interacting with various software systems autonomously.
 

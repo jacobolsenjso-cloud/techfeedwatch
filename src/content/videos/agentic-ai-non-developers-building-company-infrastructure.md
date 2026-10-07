@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-[Agentic AI](/video/agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping/) represents a significant evolution in how artificial intelligence is integrated into business operations, moving beyond simple task assistance to autonomous goal achievement. At its core, agentic AI involves systems where AI models are given a desired outcome and a set of operational rules, then left to determine the necessary steps and execute them independently.
+[Agentic AI](/video/agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping/) represents a significant evolution in how artificial intelligence is integrated into business operations, moving beyond simple task assistance to autonomous goal achievement. At its core, [agentic AI](/video/agentic-ai-transforms-developer-velocity-in-enterprise-tech/) involves systems where AI models are given a desired outcome and a set of operational rules, then left to determine the necessary steps and execute them independently.
 
 This contrasts with traditional AI use, where a human provides detailed, step-by-step instructions and constantly guides the interaction. Instead of merely driving the car, agentic AI focuses on building the engine, enabling the AI to operate with minimal human intervention once the objective is set.
 

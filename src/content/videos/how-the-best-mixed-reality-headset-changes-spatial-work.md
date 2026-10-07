@@ -27,7 +27,7 @@ faqs:
     answer: "Console devices like the PlayStation VR2 prioritize uncompressed graphics processing directly from external hardware, trading wireless mobility for raw graphical output and 120 Hz refresh rates."
 ---
 
-The best mixed reality headset for general consumers is the Meta Quest 3, which pairs high-resolution pancake optics with accessible standalone spatial computing. For power users seeking desktop-grade immersion, the Samsung Galaxy XR establishes a new high-end benchmark through ultra-dense Micro-OLED panels and productivity-focused software.
+The best mixed reality headset for general consumers is the Meta Quest 3, which pairs high-resolution pancake optics with accessible standalone [spatial computing](/video/spatial-computing-unleashed-the-future-beyond-ar-and-vr-is-already/). For power users seeking desktop-grade immersion, the Samsung Galaxy XR establishes a new high-end benchmark through ultra-dense Micro-OLED panels and productivity-focused software.
 
 ## What It Is: Finding the Best Mixed Reality Headset
 

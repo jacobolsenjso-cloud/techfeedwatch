@@ -69,7 +69,7 @@ Running the same computation on the most powerful classical supercomputer on Ear
 
 In October 2025, Google pushed the boundaries further. Using a new algorithm called quantum echoes, they achieved the first verifiable quantum advantage in history. This was not an artificial benchmark designed to flatter the machine.
 
-It was a real computation, independently checked and published in the scientific journal Nature. This computation ran 13,000 times faster than the best classical algorithm on the planet's most powerful supercomputer. This documented and repeatable achievement confirmed quantum computing's ability to solve problems far beyond classical capabilities.
+It was a real computation, independently checked and published in the scientific journal Nature. This computation ran 13,000 times faster than the best classical algorithm on the planet's most powerful supercomputer. This documented and repeatable achievement confirmed [quantum computing](/video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/)'s ability to solve problems far beyond classical capabilities.
 
 ## Exploring the Fabric of Reality
 

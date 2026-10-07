@@ -27,7 +27,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-Artificial intelligence is undergoing a significant transformation, with advanced processing capabilities moving from vast, centralized data centers directly onto devices. This shift, driven by AI-on-a-chip technologies, promises to redefine how AI is developed and deployed, enabling more efficient, private, and real-time intelligence at the edge.
+Artificial intelligence is undergoing a significant transformation, with advanced processing capabilities moving from vast, centralized [data centers](/video/can-quantum-computing-replace-data-centers/) directly onto devices. This shift, driven by AI-on-a-chip technologies, promises to redefine how AI is developed and deployed, enabling more efficient, private, and real-time intelligence at the edge.
 
 While hyperscale cloud environments continue to be essential for large-scale model training, a hybrid computing model is emerging as the practical path forward for AI deployment.
 

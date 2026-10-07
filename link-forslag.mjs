@@ -22,8 +22,9 @@ import fs from 'node:fs';
 import { kerneord, stamme } from './src/lib/headline.mjs';
 
 const D = 'src/content/videos/';
-const MAX_PR_ARTIKEL = 3;
-const MAX_IND_PR_MAAL = 5;
+const FORAELDRELOSE = process.argv.includes('--foraeldrelose');
+const MAX_PR_ARTIKEL = FORAELDRELOSE ? 1 : 3;
+const MAX_IND_PR_MAAL = FORAELDRELOSE ? 2 : 5;
 const STOP = new Set(['the','a','an','of','for','to','in','on','and','or','with','is','are','what','how','why','when','which','who','does','do','can','should','will','your','you','my','it','its','this','that','from','by','as','at','into','vs','best','top','new','use','using','used','about','explained','guide','mean','means','2024','2025','2026','way','ways']);
 // Udsagnsord og småord, der gør en frase til en handling i stedet for et emne
 // ("open up", "manages and executes", "builds trust" — fundet i stikprøven 23/9).
@@ -81,7 +82,9 @@ function tilladtLinje(l) {
 function findForslag(alle) {
   const ind = new Map();
   for (const a of alle) for (const m of a.raw.matchAll(/\]\(\/video\/([^)\/\s#?]+)/g)) ind.set(m[1], (ind.get(m[1]) || 0) + 1);
-  const kilder = alle.filter((a) => !/\]\(\/video\//.test(a.body));
+  // --foraeldrelose: alle artikler må være kilde, men kun artikler, som ingen linker til, er mål,
+  // og hver kilde får højst 1 nyt link (hvert mål højst 2), så eksisterende artikler ikke fyldes op.
+  const kilder = FORAELDRELOSE ? alle : alle.filter((a) => !/\]\(\/video\//.test(a.body));
   const nyeInd = new Map();
   const plan = [];
   // Mål-fraser beregnes én gang
@@ -96,6 +99,7 @@ function findForslag(alle) {
     const sEmne = emneStammer(s);
     for (const t of maal) {
       if (t.slug === s.slug) continue;
+      if (FORAELDRELOSE && ind.get(t.slug)) continue;
       if (!t.tags.some((x) => s.tags.includes(x))) continue;
       // Samme emne: kilde og mål skal dele et kerneord i titel/spørgsmål (ikke "AI" eller generiske ord).
       if (![...t.emne].some((w) => sEmne.has(w))) continue;

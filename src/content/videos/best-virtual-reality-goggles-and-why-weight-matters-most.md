@@ -39,7 +39,7 @@ This mechanical transition completely alters how [Virtual Reality Headsets Balan
 
 The computing muscle sits inside an external enclosure tethered by a cable that measures roughly 4 in longer than the cord found on the [Apple Vision Pro](https://www.apple.com/apple-vision-pro/). Inside that puck lies Qualcomm's Snapdragon XR2 Gen 3 chip, also marketed as the Reality Elite processor, paired with a 35 Wh battery.
 
-That battery capacity provides roughly 3 hours of media viewing on a single charge. When active rendering kicks in for mixed reality software, power draw increases, but the user never bears that physical load on their cheeks.
+That battery capacity provides roughly 3 hours of media viewing on a single charge. When active rendering kicks in for [mixed reality](/video/room-tech-and-how-mixed-reality-changes-what-spaces-look-like/) software, power draw increases, but the user never bears that physical load on their cheeks.
 
 Stripping the battery and cooling hardware off the skull allows the headset to rest securely on the face without requiring a cumbersome top strap. You can shake your head during active tasks, and the glasses stay firmly anchored because 100 g creates very little centrifugal momentum.
 

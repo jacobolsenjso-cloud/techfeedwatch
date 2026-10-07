@@ -32,7 +32,7 @@ Hybrid quantum-classical computing represents an integrated approach where the s
 
 ## The Foundations of Quantum Computing
 
-Quantum computing operates on principles fundamentally different from classical computing, primarily through the use of quantum bits, or qubits. Unlike a classical bit that holds a definite state of either 0 or 1, a qubit can exist in a superposition of both states simultaneously.
+Quantum computing operates on principles fundamentally different from classical computing, primarily through the use of quantum bits, or qubits. Unlike a [classical bit](/video/difference-between-qubit-and-classical-bit-explained/) that holds a definite state of either 0 or 1, a qubit can exist in a superposition of both states simultaneously.
 
 This inherent quantum property means that if you have a qubit with two states, 0 and 1, combining it with a second qubit results in a product state encompassing 00, 01, 10, and 11. That makes four distinct states.
 

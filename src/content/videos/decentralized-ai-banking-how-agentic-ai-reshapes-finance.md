@@ -60,7 +60,7 @@ An important impact of these converging forces is a fundamental change in how tr
 
 People often leave their money in low-interest checking and savings accounts, earning almost nothing. Banks then lend out these idle deposits at much higher rates, with the interest rate spread forming the core engine of their profits.
 
-However, this advantage is being eroded by agentic AI. Unlike a human, an AI agent does not leave money idle. Imagine a personal AI financial manager on your phone, constantly scanning global networks for secure, regulated protocols offering higher yields.
+However, this advantage is being eroded by [agentic AI](/video/beyond-chatbots-we-tested-4-agentic-ai-tools-and-one-gets-smarter/). Unlike a human, an AI agent does not leave money idle. Imagine a personal AI financial manager on your phone, constantly scanning global networks for secure, regulated protocols offering higher yields.
 
 This AI can instantly move your idle money to optimize your capital in real time. As millions of personal AI agents begin to drain these idle deposits to chase real-time yields, the historical profit advantage for legacy banking sectors is permanently challenged.
 

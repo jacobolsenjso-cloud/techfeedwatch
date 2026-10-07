@@ -34,7 +34,7 @@ rewrittenAt: "2026-08-18"
 
 ## The Basic Shift to Quantum Computation
 
-Quantum computing represents a profound departure from traditional computational methods. Unlike classical computers, which operate on deterministic Boolean logic, quantum machines harness the probabilistic nature of [quantum mechanics](/video/quantum-unveiled-the-microscopic-mechanics-driving-tomorrow-s/).
+[Quantum computing](/video/the-best-way-to-invest-in-quantum-computing-today/) represents a profound departure from traditional computational methods. Unlike classical computers, which operate on deterministic Boolean logic, quantum machines harness the probabilistic nature of [quantum mechanics](/video/quantum-unveiled-the-microscopic-mechanics-driving-tomorrow-s/).
 
 This means that while classical computers follow a predictable cause-and-effect sequence, quantum processors can yield different answers each time they run. So, quantum algorithms must be constructed to produce probabilistic outcomes, often requiring many runs and statistical analysis to determine the desired result.
 

@@ -37,7 +37,7 @@ While a powerful quantum computer capable of breaking current cryptography is no
 
 The concept of a cryptographically relevant quantum computer, or CRQC, describes a machine powerful enough to threaten existing cryptographic keys. Such a computer would need to be fault-tolerant and error-corrected, running complex algorithms at a scale far beyond what is currently available.
 
-Many headlines about quantum computing advancements refer to physical qubits, which are raw and prone to errors. Breaking crypto requires logical qubits, which are reliable and built from many physical qubits with error correction.
+Many headlines about [quantum computing](/video/the-best-way-to-invest-in-quantum-computing-today/) advancements refer to physical qubits, which are raw and prone to errors. Breaking crypto requires logical qubits, which are reliable and built from many physical qubits with error correction.
 
 Current public roadmaps for quantum computing focus on making system performance reliable, not on cracking cryptographic keys. For example, IBM's roadmap discusses hundreds of reliable qubits, which is impressive engineering. However, it is still far from the thousands of accurate, stable qubits needed for practical cryptanalysis.
 

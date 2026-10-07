@@ -44,7 +44,7 @@ To mitigate these demands for local deployment, a technique called quantization 
 
 While quantization can introduce a slight degradation in output quality, the memory savings often make it a worthwhile trade-off for local inference. To estimate specific memory needs based on model size and quantization, tools like an "LLM Memory calculator" are available online, providing practical guidance for hardware selection.
 
-The type of memory is also paramount. Traditional system RAM, usually associated with the CPU, is generally insufficient for LLM inference due to its lower bandwidth compared to GPU VRAM or unified memory. GPUs are designed for parallel processing, making them ideal for LLM computations, and their dedicated high-speed VRAM is where the model's weights must reside for optimal performance.
+The type of memory is also paramount. Traditional system RAM, usually associated with the CPU, is generally insufficient for [LLM inference](/video/makora-s-ai-compiler-breakthrough-hand-tuned-code-faces-automated-gpu/) due to its lower bandwidth compared to GPU VRAM or unified memory. GPUs are designed for parallel processing, making them ideal for LLM computations, and their dedicated high-speed VRAM is where the model's weights must reside for optimal performance.
 
 Devices like the "Asus Flow Z13 (2025 version)" with its substantial "128GB" of unified system RAM highlight the shift towards integrating high-capacity, high-bandwidth memory directly into portable form factors, enabling a new class of local AI processing. For more on the specifics of GPU memory, consider [NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon).
 

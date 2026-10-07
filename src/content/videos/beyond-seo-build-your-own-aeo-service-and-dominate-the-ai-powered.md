@@ -37,7 +37,7 @@ This approach offers a new way for businesses to gain visibility as AI-powered s
 
 ## What is Answer Engine Optimization (AEO)?
 
-AEO is a specialized form of digital optimization. Its goal is to position content for direct recommendations within AI-powered answer engines. Unlike traditional Search Engine Optimization (SEO), which aims for a high ranking in a list of results, AEO seeks to have a business or its content mentioned directly in an AI's curated answer.
+AEO is a specialized form of digital optimization. Its goal is to position content for direct recommendations within AI-powered answer engines. Unlike traditional [Search Engine Optimization](/video/difference-between-search-engine-optimization-and-pay-per-click/) (SEO), which aims for a high ranking in a list of results, AEO seeks to have a business or its content mentioned directly in an AI's curated answer.
 
 For example, if someone asks an AI for the "best dentist near me," an AEO-optimized business aims to be one of the one or two recommendations provided. If a business is not included in these direct answers, it becomes invisible in this new search environment.
 

@@ -26,7 +26,7 @@ faqs:
     answer: "6 degrees of freedom refers to tracking spatial movement along three axes (forward/backward, up/down, left/right) and rotation around those same three axes. This enables hardware to precise position virtual content relative to the user's location and orientation in a room."
 ---
 
-Mixed reality defines a tier of spatial computing where digital objects perceive, anchor to, and dynamically interact with the physical environment. Instead of floating passively across a display glass, virtual content in a mixed reality ecosystem recognizes physical surfaces, respects solid obstacles, and maintains precise physical coordinates as the user moves through a space.
+Mixed reality defines a tier of [spatial computing](/video/spatial-computing-unleashed-the-future-beyond-ar-and-vr-is-already/) where digital objects perceive, anchor to, and dynamically interact with the physical environment. Instead of floating passively across a display glass, virtual content in a mixed reality ecosystem recognizes physical surfaces, respects solid obstacles, and maintains precise physical coordinates as the user moves through a space.
 
 Most consumer interfaces treat digital media as flat pixels rendered onto rigid display panes. Mixed reality breaks that constraint by turning physical rooms into interactive execution environments. Understanding this technology requires looking beyond marketing graphics and examining the precise mechanical loops that tie synthetic graphics to physical coordinates.
 

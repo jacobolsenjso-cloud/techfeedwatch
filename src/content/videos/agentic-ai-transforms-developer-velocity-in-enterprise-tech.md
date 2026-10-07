@@ -33,7 +33,7 @@ This approach allows developers to shift their focus from boilerplate coding and
 
 ### The Core of Agentic AI: Shifting Down for Velocity
 
-At its heart, agentic AI in development represents a strategic move often termed "shifting down." While "shifting left" focuses on integrating quality and security earlier in the development lifecycle, "shifting down" pushes much of the governance, security, and operational complexity directly into the development platform itself.
+At its heart, [agentic AI](/video/beyond-chatbots-we-tested-4-agentic-ai-tools-and-one-gets-smarter/) in development represents a strategic move often termed "shifting down." While "shifting left" focuses on integrating quality and security earlier in the development lifecycle, "shifting down" pushes much of the governance, security, and operational complexity directly into the development platform itself.
 
 This creates a self-service environment where intelligent agents handle routine infrastructure setup, configuration, and troubleshooting, freeing human developers from these manual burdens.
 

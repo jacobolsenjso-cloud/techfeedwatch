@@ -31,7 +31,7 @@ They perform these specialized workloads by using quantum mechanical states to e
 
 The tech industry spent years treating quantum utility as a distant theoretical checkpoint. That complacency is disappearing.
 
-Hardware engineers and algorithmic researchers have slashed the resource requirements for practical quantum advantage at an unexpected rate. Understanding what quantum computing is used for today requires looking past generic promises of speed and examining the exact workloads where classical physics fails.
+Hardware engineers and algorithmic researchers have slashed the resource requirements for practical quantum advantage at an unexpected rate. Understanding what [quantum computing](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) is used for today requires looking past generic promises of speed and examining the exact workloads where classical physics fails.
 
 ## Key Takeaways
 * Quantum processors excel at native physical simulations, letting researchers calculate atomic behavior in batteries, catalysts, and pharmaceuticals without compromising approximations.

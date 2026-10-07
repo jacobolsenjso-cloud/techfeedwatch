@@ -83,4 +83,4 @@ Augmented reality is a foundational component in the vision of the metaverse, wh
 
 It can be thought of as a "4D version" of the current internet, where users are inside the digital environment rather than merely observing it on a screen.
 
-This immersive internet will be made possible by combining AR with virtual reality (VR), artificial intelligence (AI), 5G networks, and other advanced technologies. The metaverse is expected to impact every existing industry, fundamentally altering how people work, socialize, learn, and entertain themselves by creating persistent, interconnected digital worlds that blend with our physical reality.
+This immersive internet will be made possible by combining AR with [virtual reality](/video/why-the-best-virtual-reality-game-is-shifting-in-2026/) (VR), artificial intelligence (AI), 5G networks, and other advanced technologies. The metaverse is expected to impact every existing industry, fundamentally altering how people work, socialize, learn, and entertain themselves by creating persistent, interconnected digital worlds that blend with our physical reality.

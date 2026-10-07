@@ -34,7 +34,7 @@ This system ensures that valuable insights and data are always accessible when y
 
 ## Why Build a Second Brain?
 
-In an era of constant information flow, our minds can quickly become overwhelmed trying to remember details from articles, videos, books, and personal experiences. The goal of a second brain is to offload this cognitive burden.
+In an era of constant information flow, our minds can quickly become overwhelmed trying to remember details from articles, videos, books, and personal experiences. The goal of a [second brain](/video/ai-second-brain-for-productivity-stopping-ai-tools-slowing-work/) is to offload this cognitive burden.
 
 Instead of struggling to recall a specific fact from a 500-page novel, or sifting through a non-fiction book filled with lengthy anecdotes to find the core lesson, a second brain distills the essence into easily digestible formats. This could be point forms, a to-do list, or a structured learning journey.
 

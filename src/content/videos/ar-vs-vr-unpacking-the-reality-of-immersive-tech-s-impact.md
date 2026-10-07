@@ -56,7 +56,7 @@ Today, however, VR is rapidly gaining relevance, finding practical applications 
 
 ## Exploring Augmented Reality (AR)
 
-Augmented Reality, sometimes referred to as mixed reality, operates on a fundamentally different principle than VR. Its core purpose is not to transport users to another world, but rather to enhance their existing real world by overlaying it with virtual objects and information.
+Augmented Reality, sometimes referred to as [mixed reality](/video/testing-how-the-best-windows-mixed-reality-headset-changes-vr/), operates on a fundamentally different principle than VR. Its core purpose is not to transport users to another world, but rather to enhance their existing real world by overlaying it with virtual objects and information.
 
 When a person's real environment is supplemented or augmented with computer-generated images, which are typically motion-tracked to align with the physical space, that is augmented reality.
 

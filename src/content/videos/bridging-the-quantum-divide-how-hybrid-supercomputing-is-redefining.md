@@ -78,7 +78,7 @@ Further advancements in quantum virtualization, such as frameworks like DIQ, foc
 
 The ultimate goal of hybrid quantum-classical supercomputing is to integrate quantum accelerators into real-world scientific and industrial workflows. Fields like bioinformatics and artificial intelligence often rely on complex computational pipelines that utilize multiple tools, each with different computational resource requirements, all orchestrated on HPC systems.
 
-An integration layer, exemplified by frameworks like QBitBridge, is essential for smoothly incorporating quantum computing into these existing workflows.
+An integration layer, exemplified by frameworks like QBitBridge, is essential for smoothly incorporating [quantum computing](/video/quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality/) into these existing workflows.
 
 Consider a bioinformatics pipeline, which might involve numerous steps with intricate interdependencies, from processing raw gene sequences to generating reports. A quantum accelerator could be introduced to speed up a specific, computationally intensive step within this workflow.
 

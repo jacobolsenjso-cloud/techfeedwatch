@@ -65,7 +65,7 @@ This complex physical design is necessary to maintain the delicate quantum state
 
 Quantum computers have existed in various forms for several years. Some technology companies already operate quantum computers. These machines serve as valuable resources for developing new software and programming languages.
 
-A major advancement in quantum computing occurred in October 2019. Google then stated that it had achieved quantum supremacy with its specialized Sycamore processor.
+A major advancement in quantum computing occurred in October 2019. Google then stated that it had achieved [quantum supremacy](/video/what-is-the-concept-of-quantum-supremacy/) with its specialized Sycamore processor.
 
 Quantum supremacy means performing a specific type of computation much faster and more efficiently than the most powerful classical supercomputer. Google's demonstration validated the idea that quantum computers can indeed surpass classical computers in certain tasks. They can execute operations that classical computers cannot.
 

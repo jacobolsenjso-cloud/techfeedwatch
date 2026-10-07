@@ -27,7 +27,7 @@ faqs:
     answer: "Algorithms use constructive and destructive interference to amplify the probability of the correct answer while canceling out incorrect paths before measurement. When read, the qubit snaps to the pole representing the choreographed solution."
 ---
 
-In physical terms, qubits can be any quantum two-level system prepared in a continuous, weighted blend of states rather than a fixed binary position. Unlike a classical bit restricted to an absolute zero or one, an unmeasured qubit occupies a defined mathematical superposition where both outcomes remain active possibilities with specific probability weights.
+In physical terms, qubits can be any quantum two-level system prepared in a continuous, weighted blend of states rather than a fixed binary position. Unlike a [classical bit](/video/difference-between-qubit-and-classical-bit-explained/) restricted to an absolute zero or one, an unmeasured qubit occupies a defined mathematical superposition where both outcomes remain active possibilities with specific probability weights.
 
 ## What It Is and What Qubits Can Be
 

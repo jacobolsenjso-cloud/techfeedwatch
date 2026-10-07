@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-Samsung has introduced a new line of AI-powered smart glasses, marking its entry into the rapidly evolving wearable technology sector. These devices are deeply integrated with Google's [Gemini AI](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for/), offering users a hands-free, intelligent assistant experience designed to streamline daily tasks and interactions.
+Samsung has introduced a new line of AI-powered [smart glasses](/video/ar-hardware-s-new-blueprint-from-discreet-monocles-to-screenless/), marking its entry into the rapidly evolving wearable technology sector. These devices are deeply integrated with Google's [Gemini AI](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for/), offering users a hands-free, intelligent assistant experience designed to streamline daily tasks and interactions.
 
 This move positions Samsung as a direct competitor to existing smart eyewear, particularly Meta's offerings, by emphasizing advanced "agentic" capabilities.
 

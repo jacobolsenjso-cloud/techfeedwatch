@@ -38,7 +38,7 @@ This technology facilitates an automated AI SEO strategy, echoing the principles
 
 The core of this automation begins with sophisticated keyword research. Instead of manually sifting through data, AI can conduct "Automated Keyword Research in Terminal," eliminating the need for manual sifting through data. This efficiency extends to "Content Generation via AI Sub-Agents," where specialized AI sub-agents create content at scale.
 
-A powerful feature is the "sub-agent workflow," a method detailed in "Discover the sub-agent workflow used to rank on Google, Reddit, and AI search engines like Perplexity." This involves breaking down complex content initiatives into smaller, specialized tasks handled by individual AI agents, streamlining the entire production cycle from initial keyword identification to final article draft.
+A powerful feature is the "sub-agent workflow," a method detailed in "Discover the sub-agent workflow used to rank on Google, Reddit, and [AI search](/video/google-s-2010-seo-playbook-a-relic-or-a-foundation-for-ai-driven/) engines like Perplexity." This involves breaking down complex content initiatives into smaller, specialized tasks handled by individual AI agents, streamlining the entire production cycle from initial keyword identification to final article draft.
 
 For organizations looking to scale, the capability for "Scaling with Multi-Terminal Workflows" is significant. This approach allows for simultaneous execution of multiple AI-driven SEO campaigns, pushing out a higher volume of targeted content across various platforms.
 

@@ -28,7 +28,7 @@ faqs:
     answer: "The x402 Protocol is a significant development designed to enable AI agent payments. It offers a framework for programmatic transactions, which is critical for autonomous agents to interact and exchange value without human intervention.  AI agents are beginning to execute automated payments by utilizing specialized cryptocurrency networks and financial services designed for this purpose."
 ---
 
-AI agents facilitate payments through cryptocurrency transactions on decentralized blockchain networks, circumventing the need for traditional banking intermediaries. This infrastructure allows autonomous software entities to execute swift, cost-effective payments for resources and services without human intervention. This fundamental shift reshapes how digital value is exchanged in the burgeoning machine economy.
+AI agents facilitate payments through cryptocurrency transactions on decentralized blockchain networks, circumventing the need for traditional banking intermediaries. This infrastructure allows autonomous software entities to execute swift, cost-effective payments for resources and services without human intervention. This fundamental shift reshapes how [digital value](/video/beyond-bitcoin-decoding-crypto-s-enduring-foundations-and-evolving/) is exchanged in the burgeoning machine economy.
 
 ## The Background
 

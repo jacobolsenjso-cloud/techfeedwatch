@@ -81,7 +81,7 @@ Security is another pressing concern. One peer-reviewed study examined over 700 
 
 The clear conclusion: human expertise in the loop is essential, as the machine, left to its own devices, can degrade code quality and security. [Open-Source AI Tools Empower Developers for Faster AI Apps](/video/open-source-ai-how-developer-tools-are-fueling-the-next-wave-of) can be powerful, but require careful human oversight.
 
-These findings reshape the understanding of developer roles. While the "programmer" role (focused on rote coding) has seen a sharp decline, falling by something like a quarter in US data over the last two years, the broader category of "software developer" has grown and is projected to continue expanding.
+These findings reshape the understanding of [developer roles](/video/ai-code-agents-on-google-cloud-reshaping-software-development/). While the "programmer" role (focused on rote coding) has seen a sharp decline, falling by something like a quarter in US data over the last two years, the broader category of "software developer" has grown and is projected to continue expanding.
 
 The market is not eliminating development work; it is re-pricing it, valuing human engineering, design, and judgment more, and pure code production less.
 

@@ -34,7 +34,7 @@ Understanding its core mechanisms reveals both its revolutionary promise and the
 
 ## What Quantum Computing Means for the Future
 
-At its heart, quantum computing introduces a fundamentally new type of computer, moving beyond the binary language of ones and zeros that defines classical systems. Your laptop, smartphone, or even the powerful GPUs training AI models all rely on classical computing, translating commands into an "on" or "off" state represented by transistors.
+At its heart, [quantum computing](/video/what-qubits-can-be-means-for-quantum-computing/) introduces a fundamentally new type of computer, moving beyond the binary language of ones and zeros that defines classical systems. Your laptop, smartphone, or even the powerful GPUs training AI models all rely on classical computing, translating commands into an "on" or "off" state represented by transistors.
 
 A [quantum computer](/video/google-s-quantum-ai-decoding-a-cryptic-hint-at-simulated-reality/), by contrast, operates with quantum bits, or qubits. These qubits represent not just a definitive one or zero, but a probability of both simultaneously. Imagine flipping a coin: before it lands, it's neither heads nor tails, but exists in an in-between state of possibility.
 

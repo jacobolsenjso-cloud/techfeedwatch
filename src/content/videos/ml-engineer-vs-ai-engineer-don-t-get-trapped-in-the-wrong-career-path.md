@@ -53,7 +53,7 @@ This involves leveraging APIs, cloud-based AI services, and established framewor
 
 For instance, an AI Engineer might be responsible for "building a local AI transcription app that cleans up messy recordings," as an example given. This project utilizes existing speech-to-text models and signal processing techniques, integrating them into a user-friendly application, rather than developing the transcription model itself.
 
-The source highlights this by noting "Why AI engineers are essentially software engineers with a new superpower," emphasizing their role in bringing AI into practical use. This operational focus demands strong software development skills, proficiency in various programming languages, and an understanding of system architecture and cloud platforms.
+The source highlights this by noting "Why AI engineers are essentially [software engineers](/video/is-this-how-remote-software-engineers-work-in-practice/) with a new superpower," emphasizing their role in bringing AI into practical use. This operational focus demands strong software development skills, proficiency in various programming languages, and an understanding of system architecture and cloud platforms.
 
 ## The Ripple Effects
 
