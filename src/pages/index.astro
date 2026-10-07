@@ -356,9 +356,12 @@ const vRest = pageOneVideos.slice(13);
          skæv luft til højre (målt 26/8 på mobil-skærmbillede) — centreret
          matcher de også "Show fewer"-knappen, der altid har stået i midten. */
       .tag-bar-container {
-        margin-left: -15px;
-        margin-right: -15px;
-        width: calc(100% + 30px);
+        /* Før: margin -15px og bredde 100% + 30px, beregnet til en forælder med 15px luft.
+           Forælderen (.tag-bar-outer) har 0 luft, så bjælken stak 15px ud på hver side
+           (målt 7/10: 420px bred på en 390px skærm). Indholdet står samme sted som før. */
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
         padding: 10px 15px;
         justify-content: center;
       }
