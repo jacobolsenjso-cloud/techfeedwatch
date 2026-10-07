@@ -341,6 +341,12 @@ function loadExistingVideoIds() {
     const match = content.match(/youtubeId:\s*"(.*?)"/);
     if (match) ids.add(match[1]);
   }
+  // Slettede/sammenlagte artikler: deres gamle /video/<youtubeId> står i _redirects.
+  // Uden dette kunne robotten vælge en slettet video igen (fx reklamen for Nas.io, slettet 7/10).
+  const red = './public/_redirects';
+  if (fs.existsSync(red)) {
+    for (const m of fs.readFileSync(red, 'utf-8').matchAll(/^\/video\/([A-Za-z0-9_-]{11})\/?\s/gm)) ids.add(m[1]);
+  }
   return ids;
 }
 
