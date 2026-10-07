@@ -256,6 +256,8 @@ const vRest = pageOneVideos.slice(13);
     .lead-card:hover .lead-card-thumb img { transform: scale(1.04); }
     .lead-eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 9px; color: var(--tag-accent, #0891b2); }
     .lead-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+    .lead-mini-eyebrow { font-size: 0.66rem; margin-bottom: 4px; gap: 6px; }
+    .lead-mini-eyebrow::before { width: 6px; height: 6px; }
     .lead-title { margin: 0 0 9px 0; font-size: 1.75rem; line-height: 1.22; font-weight: 800; letter-spacing: -0.02em; }
     .lead-card:hover .lead-title { color: var(--teal-text); }
     .lead-excerpt { margin: 0 0 11px 0; font-size: 1rem; line-height: 1.6; color: #4b5563; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
@@ -468,6 +470,8 @@ const vRest = pageOneVideos.slice(13);
                   <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
                 </div>
                 <div>
+                  {/* Emnemærke som på hovedhistorien (fase 4, 7/10): læseren ser emnet før titlen */}
+                  {firstTag(video) && <span class="lead-eyebrow lead-mini-eyebrow" style={`--tag-accent: ${TAG_COLORS[firstTag(video) as string] || '#0891b2'}`}>{firstTag(video)}</span>}
                   <h3 class="lead-mini-title">{video.frontmatter.title}</h3>
                   <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} className="lead-mini-meta" />
                 </div>
