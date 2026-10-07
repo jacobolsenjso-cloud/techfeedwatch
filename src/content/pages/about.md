@@ -41,7 +41,7 @@ I would rather tell you this than have you work it out.
 
 A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live. The system publishes a few a day — usually two or three, fewer at weekends, and none on a day when no video passes the checks. A run that finds nothing good enough publishes nothing.
 
-What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times.
+What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times. The rules every article has to pass are listed in the [editorial guidelines](/editorial-guidelines).
 
 That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos or read all of these articles. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
 

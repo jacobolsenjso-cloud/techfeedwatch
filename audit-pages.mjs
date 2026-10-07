@@ -32,6 +32,7 @@ const PAGES = [
   ['trends', '/trends/'],
   ['about', '/about/'],
   ['corrections', '/corrections/'],
+  ['retningslinjer', '/editorial-guidelines/'],
   ['contact', '/contact/'],
   ['terms', '/terms/'],
   ['privacy', '/privacy-policy/'],
