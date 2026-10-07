@@ -86,6 +86,6 @@ To build lasting software careers, engineers should focus on measurable indicato
 - Practice reading, reviewing, and auditing generated code to spot security flaws and performance regressions quickly.
 - Strengthen domain-specific modeling skills to translate business logic into unambiguous system constraints.
 
-The good news is that I truly think that the death of coding has been severely overstated. Generative engines change how developers express instructions, but they do not eliminate the need for systematic thought, skepticism, and structural design.
+The good news is that the death of coding has been severely overstated. Generative engines change how developers express instructions, but they do not eliminate the need for systematic thought, skepticism, and structural design.
 
 Those who master traditional programming foundations will direct the next generation of automated tools, diagnose their inevitable breakdowns, and build resilient infrastructure. In software engineering, technical competence still separates sustainable systems from brittle illusions.

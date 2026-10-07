@@ -58,7 +58,7 @@ The very capabilities that make agents powerful—their autonomy, ability to con
 
 Understanding these vulnerabilities is critical. OWASP, the Open Worldwide Application Security Project is an industry consortium known for its top 10 vulnerabilities list. For more than a decade, they've been producing a top 10 for web applications, and in the past few years, they've taken on large language models as well.
 
-This new OWASP Top 10 for AI agents highlights the specific attack vectors unique to these autonomous systems. So let's take a look at the top 10 list of vulnerabilities for AI agents according to OWASP.
+This new OWASP Top 10 for AI agents highlights the specific attack vectors unique to these autonomous systems.
 
 One critical vulnerability, ranked number one by OWASP, is Agent goal hijack. This occurs when an attacker manipulates the agent's actual objective, not merely its visible instructions. Agents often struggle to distinguish direct commands from embedded content within documents, emails, or web pages.
 

@@ -55,9 +55,9 @@ The practical applications of spatial computing span various sectors, from engag
 
 In the area of gaming, spatial computing offers dynamic and interactive experiences. Consider Boosters, a rocket flying game from WeDo workshop.
 
-This game exemplifies how digital elements can meaningfully interact with the physical environment. The rocket interacts with your physical environment, so as you steer it close to walls and furniture, the heat reverberates off of them, and when I steer the rocket too close to objects in the room, the rocket explodes.
+This game exemplifies how digital elements can meaningfully interact with the physical environment. The rocket interacts with your physical environment, so as you steer it close to walls and furniture, the heat reverberates off of them, and steering the rocket too close to objects in the room makes it explode.
 
-When placing the launch pad down, the headset displays a mesh as it scans the room, but the game also meshes in real-time, so as I walk through the lofty apartment, the rocket continues to fly through previously unmatched areas. Theoretically, you can move from one side of a space like a showroom or a factory floor to the other end, and the rocket will continue to interact with your new surroundings.
+When placing the launch pad down, the headset displays a mesh as it scans the room, but the game also meshes in real-time, so as the player walks through a lofty apartment, the rocket continues to fly through previously unmapped areas. Theoretically, you can move from one side of a space like a showroom or a factory floor to the other end, and the rocket will continue to interact with your new surroundings.
 
 Beyond entertainment, spatial computing finds powerful applications in productivity and enterprise settings. Manifest, an application by Tactile, showcases this utility. Manifest is being used as a way for employees to create and interact with digital content that's overlaid onto physical objects.
 
@@ -65,11 +65,11 @@ Employees can use spatial computing content and devices to more safely operate e
 
 As Justin_tech points out, "in my opinion this is the tech that will have the largest impact on society in the general public." The potential for spatial computing in training is further explored in articles like [AR Training: Boosting Engineering Efficiency with Immersive 3D](/video/forget-flat-screens-ar-engineering-s-immersive-tech-is-reshaping).
 
-Another creative spatial computing app is Create, which allows users to build worlds using characters, portals, and building blocks. All the characters interact with your space and each other; they'll even interact with you like this cute little bot that needs my help getting off the couch.
+Another creative spatial computing app is Create, which allows users to build worlds using characters, portals, and building blocks. All the characters interact with your space and each other; they'll even interact with you like a cute little bot that needs help getting off the couch.
 
 This hints at a future where digital constructs could evolve from simple bots to complex buildings or even fully interactive simulations like Rollercoaster Tycoon, integrated into our homes and environments.
 
-The ability to place and interact with digital constructs within physical space, making them aware of their environment, opens new avenues for design, education, and social interaction. I could easily see this being used one day at home when I'm building IKEA furniture, with digital instructions overlaid directly onto the components and virtual assistance available in real-time.
+The ability to place and interact with digital constructs within physical space, making them aware of their environment, opens new avenues for design, education, and social interaction. It is easy to imagine this being used one day at home when building IKEA furniture, with digital instructions overlaid directly onto the components and virtual assistance available in real-time.
 
 ## What To Actually Do
 

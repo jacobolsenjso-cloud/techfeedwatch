@@ -62,7 +62,7 @@ Regular "AI model vulnerability scanning" tools, like those that scan networks a
 
 This involves a "human in the loop" with a "kill switch" to immediately halt an agent running out of control if someone sees this thing is running out of control, what it's doing is not right.
 
-Additional measures include "throttling agent activity" so that if it's a buying application, it doesn't just suddenly decide, hey, I like this, I'm going to buy a thousand of these in a minute. We also use "canary deployments" where we sort of drop the canary in the coal mine to see what happens, testing new agent systems in isolated environments before full rollout.
+Additional measures include "throttling agent activity," so that a buying agent cannot suddenly decide to purchase a thousand items in a minute. "Canary deployments" work like the canary in the coal mine: new agent systems are tested in isolated environments before full rollout.
 
 ## The Bottom Line
 

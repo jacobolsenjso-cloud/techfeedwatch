@@ -43,7 +43,7 @@ Effective digital cinema requires modular construction. You must break the proje
 
 The process starts with narrative planning. Direct text generators to behave as cinematic architects.
 
-Rather than asking for a generic story, I let ChatGPT do the heavy lifting with this prompt: "Act as a film director. Break this into shots. For each, give me a cinematic image prompt and a video prompt." This step establishes your visual pacing before you burn a single generation credit.
+Rather than asking for a generic story, let ChatGPT do the heavy lifting with this prompt: "Act as a film director. Break this into shots. For each, give me a cinematic image prompt and a video prompt." This step establishes your visual pacing before you burn a single generation credit.
 
 By taking this approach, your production ceiling expands dramatically. With this workflow, you can generate 5 minute, 10 minute, or even longer narrative arcs without losing control of the plot. The text engine plans camera angles, lighting direction, focal lengths, and scene tension.
 
