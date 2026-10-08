@@ -59,7 +59,7 @@ The ability to see more patients while maintaining documentation quality is anot
 
 This operational leverage increases patient access to care and improves the overall capacity of health centers like Ampla Health. These systems essentially act as intelligent assistants, transforming how coding is done by automating significant portions of the documentation workflow, demonstrating that [Coding is Not Dead, but Rapidly Transforming by 2026](/video/coding-is-not-dead-but-rapidly-transforming-by-2026).
 
-## What To Actually Do
+## How healthcare providers can adopt AI coding tools
 
 For healthcare providers considering the adoption of AI coding tools, a strategic approach is essential. Begin by evaluating current administrative bottlenecks, particularly those impacting physician time and billing cycles.
 

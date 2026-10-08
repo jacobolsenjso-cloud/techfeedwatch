@@ -83,7 +83,7 @@ This part takes 2 minutes, seriously. A sequence of silent generative clips feel
 
 Browse the built-in free audio library, search for horror music or subtle atmospheric drones, and drop the tracks beneath your video cuts. Smooth the cuts with basic transitions to eliminate hard visual breaks, and export the finalized short film at 1080p.
 
-## Where This Lands
+## Why AI Filmmaking Requires Discipline Instead of Money
 
 The notion that cinematic storytelling requires tens of thousands of dollars in optical equipment and compute power is officially obsolete. This is cinema, built entirely with free AI. Three free tools assemble a complete story: a conversational model for the shot list, an image and motion suite for visual synthesis, and a desktop editor for rhythmic timing and audio design. 
 

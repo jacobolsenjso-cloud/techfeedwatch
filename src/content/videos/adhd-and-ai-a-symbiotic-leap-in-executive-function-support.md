@@ -62,7 +62,7 @@ An individual can ask Claude to draft an email, then refine it, asking the AI if
 
 For years, valuable insights gained during these hours might evaporate by morning. Now, an AI setup can be instructed to simply receive, organize, and hold these thoughts without judgment, providing a reliable repository for later processing. This capability is akin to using [AI Automation in Notion: Agentic AI Manages and Executes Tasks](/video/ai-automation-in-notion-agentic-ai-transforms-workspaces) for a personalized thought organizer.
 
-## Where This Lands: The Nuance of AI's Role in ADHD Support
+## How AI reduces friction without curing ADHD
 
 It is important to acknowledge that AI does not fix ADHD. It does not rewire the brain or eliminate its inherent tendencies.
 

@@ -64,7 +64,7 @@ Academic physicist Henry Legg published a peer-reviewed critique in June regardi
 
 Many physicists consulted admit that existing quantum computers are "not good for anything yet." The US government's goal, outlined in an executive order by then-President Trump, is to develop a computer "powerful enough for scientific discovery by 2028," reflecting a "Cold War-esque framing" of a race between nations like China and the US, where researchers like Pan Jianwei are making strides using photon-based quantum computers and quantum satellites.
 
-## Where This Lands
+## The gap between quantum promise and current reality
 
 The notion that quantum computers are simply "faster" machines for everyday tasks like email or word processing is a fundamental misunderstanding; they are a different class of computer entirely, optimized for specific, complex problems. The industry finds itself in a challenging dichotomy: on one hand, the theoretical underpinnings and long-term potential of quantum computing are undeniably revolutionary, offering solutions to some of humanity's most pressing scientific and technological challenges.
 

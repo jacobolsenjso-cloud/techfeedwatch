@@ -62,7 +62,7 @@ This distinction is critical for understanding why different hardware performs s
 
 This unified approach can sometimes allow less raw computational power to achieve better LLM performance due to superior memory bandwidth and integration. The importance of dedicated computational units for AI is explored further in [Why Does AI Development Need GPU Power?](/video/the-2026-ai-student-s-dilemma-can-a-budget-laptop-really-keep-pace).
 
-## What To Actually Do
+## Matching hardware memory to your local model needs
 
 When considering how much memory your local LLM needs, start by identifying the specific models you intend to run and their typical memory footprints at different quantization levels. A simple rule of thumb for unquantized FP16 models is two bytes per parameter, so a 7-billion parameter model needs roughly 14GB. Quantized versions will be significantly less.
 

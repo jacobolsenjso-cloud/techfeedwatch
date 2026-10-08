@@ -52,7 +52,7 @@ While UI and UX are vital for engaging visitors, they are distinct from the spec
 
 This delay means "you're doubling up on the work" later, incurring additional costs and effort to restructure or rewrite content to achieve proper ranking. [What User Experience Means for Modern SEO Rankings](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates) highlights the importance of user experience, but it must work in tandem with search engine relevance.
 
-## The Bottom Line
+## Why SEO Should Start Before You Build a Website
 Ultimately, SEO is not merely a technical exercise but a strategic imperative. It requires understanding Google's core mission to deliver the most relevant information quickly, and then building a website that genuinely meets that criterion.
 
 Proactive integration of keyword research and content relevance from the outset, rather than after design is complete, ensures a website is not only visually appealing but also discoverable and effective in reaching its target audience.

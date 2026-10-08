@@ -77,7 +77,7 @@ There are four Bell states. If we measure the first qubit alone, we get zero wit
 
 Yet measuring the second qubit always yields an identical result: zero matches zero, and one matches one. The joint state cannot factor into two independent single-qubit descriptions.
 
-## Where This Lands
+## Why Qubits Are Not Just Faster Classical Bits
 
 A qubit is not a faster classical bit, nor is it an ordinary bit hiding two numbers at the same time. It is a distinct physical construct that replaces binary certainty with complex probability amplitudes, relative phase shifts, and non-local correlations. Classical architectures remain unmatched for deterministic, linear logic.
 

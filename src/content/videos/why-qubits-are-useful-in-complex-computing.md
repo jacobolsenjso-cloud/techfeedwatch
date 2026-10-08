@@ -79,7 +79,7 @@ The study tracked erratic fluctuations in this metric throughout the 65-hour obs
 
 Because these material defects fluctuate unpredictably, systems require near-continuous recalibration just to execute basic gate sequences. You can't just brute-force a quantum computer by cramming more qubits onto a chip without conquering this defect density. Understanding the mechanical friction documented in [The Engineering Roadblocks to Scalable Qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) explains why raw qubit counts tell only a fraction of the commercial story.
 
-## Where This Lands
+## Why Quantum Computing Needs Material Science Breakthroughs
 
 Qubits are useful not as replacements for silicon microchips, but as specialized computational engines designed for problems that choke standard binary math.
 

@@ -87,7 +87,7 @@ OPEX includes standard components such as research and development costs (for bu
 
 While traditional services firms typically top out around 30% margins, the promise of AI operating leverage is to achieve gross margins of 50% plus in markets that are two to three times larger than the software market. This represents a significant opportunity for profitability and scale.
 
-## What To Actually Do
+## Building AI-native service companies from the ground up
 
 Founders looking to build AI native service companies must recognize that these are fundamentally different ventures. Resist the temptation to acquire an existing service business and simply add AI on top.
 

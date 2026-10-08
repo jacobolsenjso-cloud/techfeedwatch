@@ -81,7 +81,7 @@ Platforms featured in evaluations of the [Best Text to Video AI Tools for Free C
 
 The future of AI may feel clean and digital on the surface, but behind the scenes, giant machines, pumps, and cooling towers are working constantly just to stop the hardware from melting.
 
-## What To Actually Do
+## Ways to reduce AI video water consumption
 
 Mitigating the water footprint of computational video requires engineering discipline across infrastructure design, software development, and procurement.
 

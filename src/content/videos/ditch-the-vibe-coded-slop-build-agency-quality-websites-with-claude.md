@@ -66,7 +66,7 @@ Once these design refinements are made, version control becomes important. The p
 
 This structured approach, integrating human oversight and specific front-end skills, ensures the Claude Code output transcends mere functionality to deliver a truly beautiful and distinctive website. As Nic Conley emphasizes, these "two tricks" are essential for building sites that genuinely impress.
 
-## Where This Lands
+## Why Claude Code Websites Need Human Design Expertise
 
 The notion that AI-generated websites must inherently look uninspired is a misconception that stems from an incomplete understanding of how to effectively integrate AI into the design workflow. Claude Code, like other advanced AI tools, offers an unparalleled ability to rapidly prototype and generate the underlying structure of a website.
 

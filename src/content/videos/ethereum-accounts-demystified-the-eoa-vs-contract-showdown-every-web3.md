@@ -81,7 +81,7 @@ This cooperative model is what enables the rich functionality of decentralized a
 
 The security and immutability of these interactions are guaranteed by the underlying blockchain principles. For a more comprehensive overview of Ethereum's foundational purpose, see [Ethereum Blockchain: What Is It and What Is It Used For?](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
 
-## What To Actually Do
+## Practical Tips for Handling EOAs and Smart Contracts
 
 Understanding the distinction between Externally Owned Accounts and Contract Accounts has practical implications for anyone using or building on Ethereum. The first and most paramount takeaway relates to managing your private keys. If you are using a software wallet or a hardware wallet, you are fundamentally interacting with an EOA.
 

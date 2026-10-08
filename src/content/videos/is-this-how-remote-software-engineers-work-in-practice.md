@@ -79,7 +79,7 @@ An engineer might end a sprint, head out for a structured workout tracked on an 
 
 Many creators adopt this dual track, noting that "I work at night almost every day when it comes to content." The discipline developed through personal side projects feeds directly back into day-job engineering rigor.
 
-## What To Actually Do
+## Daily habits for modern remote software engineers
 
 To work effectively as a software engineer in today's environment, adjust your daily operating habits to match these industry realities:
 

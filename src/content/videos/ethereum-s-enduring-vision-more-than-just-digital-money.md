@@ -34,14 +34,14 @@ Despite its complexity, Ethereum’s fundamental purpose is straightforward: to 
 
 Millions of people currently engage with Ethereum for various applications, from managing digital assets to participating in entirely new financial systems. This widespread adoption underscores its transformative potential, extending beyond simple monetary transactions to reshape how digital services are created and consumed.
 
-## Key Takeaways
+## Core features of the Ethereum blockchain
 
 * Ethereum is a programmable blockchain, distinct from Bitcoin, allowing for the creation of complex applications beyond peer-to-peer cash.
 * Smart contracts are self-executing code stored on Ethereum, enabling automated, trustless agreements without intermediaries.
 * Decentralized applications (dApps) leverage Ethereum’s blockchain for diverse uses like DeFi, NFTs, and gaming, collectively forming the backbone of Web3.
 * The native cryptocurrency, ETH, acts as the computational fuel, or "gas," required to perform any operation on the Ethereum network.
 
-## Technical Breakdown
+## How the Ethereum blockchain and smart contracts operate
 
 At its heart, Ethereum is a blockchain—a distributed public ledger that immutably records all transactions. Unlike traditional databases, this ledger is maintained by a global network of computers, ensuring decentralization and resistance to censorship.
 
@@ -67,7 +67,7 @@ Ethereum plays a critical role in the broader vision of Web3. As Next Frontier p
 
 This shift from centralized platforms towards decentralized protocols is supported by Ethereum’s solid infrastructure for programmable money and data.
 
-## What Others Missed
+## Limitations and development challenges facing Ethereum
 
 While Ethereum offers significant advantages, its complexities and limitations are often overlooked. One primary challenge has historically been scalability.
 
@@ -81,7 +81,7 @@ The decentralized nature, while an advantage, also introduces user responsibilit
 
 This places a higher burden on individuals to understand blockchain technology and best practices for digital asset management.
 
-## The Verdict
+## Ethereum's lasting impact on Web3 and digital infrastructure
 
 Ethereum represents a fundamental shift in how digital infrastructure can be built, moving beyond simple currency to a programmable platform for a decentralized future.
 

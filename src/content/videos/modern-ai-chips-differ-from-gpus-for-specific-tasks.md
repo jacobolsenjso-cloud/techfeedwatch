@@ -76,7 +76,7 @@ The hardware for AI is constantly evolving for the next generation of machine le
 
 While GPUs remain foundational, the increasing specialization ensures that every AI task, from the most demanding training in a data center to a quick AI query on a mobile device, has a silicon solution optimized for its unique demands.
 
-## What To Actually Do
+## Choosing the right chip for your AI workload
 
 When considering AI hardware, start by clearly defining the specific AI workload. If the primary task involves training large, complex models with massive datasets, then high-performance GPUs are generally the go-to solution.
 

@@ -36,14 +36,14 @@ It is a common assertion that artificial intelligence dramatically accelerates s
 
 Many popular narratives conflate the benefits of AI in other domains with its specific application to software development, leading to inflated expectations and a significant gap between perception and actual measured outcomes.
 
-## Key Takeaways
+## Key findings on AI developer productivity and hidden risks
 
 * **Developers can be slower with AI:** A controlled experiment showed experienced developers were 19% slower using AI tools, despite expecting a 20% speedup and still believing they were faster after the fact.
 * **AI amplifies existing practices:** AI coding assistants improve productivity and quality only when integrated into teams with strong existing engineering practices; they worsen outcomes for teams with weak practices.
 * **Coding is not engineering:** AI excels at the rote "typing" of code, but the true challenges of software development lie in conceptual design, specification, understanding, and testing – areas where human judgment remains critical.
 * **Quality and security risks increase:** AI-generated code often leads to higher duplication, and a significant percentage of it contains security vulnerabilities, with iterative AI refinement potentially worsening security over time.
 
-## Technical Breakdown
+## Why writing code is different from software engineering
 
 The core functionality of AI coding assistants centers on their ability to generate plausible code snippets, suggest completions, and automate repetitive coding tasks based on prompts and existing codebases.
 
@@ -57,7 +57,7 @@ Consider the distinctions: AI can quickly produce a function to sort a list. Wha
 
 These considerations demand human expertise in [What Is the Primary Goal of AI Agents in Software Development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development), design, and strategic thinking.
 
-## Why This Matters
+## Controlled trials show AI tools actually slow developers down
 
 The true impact of AI on developer productivity and software quality is often hidden behind initial impressions and anecdotal evidence. While some companies point to AI reducing headcount or speeding up certain operations, these examples often originate outside the core domain of software development, or misrepresent the full picture.
 
@@ -85,7 +85,7 @@ These findings reshape the understanding of [developer roles](/video/ai-code-age
 
 The market is not eliminating development work; it is re-pricing it, valuing human engineering, design, and judgment more, and pure code production less.
 
-## What Others Missed
+## Why AI amplifies existing engineering strengths and weaknesses
 
 Many narratives about AI's impact overlook the fundamental concept of the "engineering bill" – the inevitable cost of complexity, technical debt, and maintenance. AI can produce plausible code rapidly, but it often shifts this bill rather than eliminating it.
 
@@ -99,7 +99,7 @@ What AI is not inherently good at is judgment: deciding if code should exist, if
 
 The machine can polish its own work, but without human expertise, it may do so in a way that ultimately degrades the system. This highlights a critical oversight in the initial hype: the assumption that a developer is merely a person who converts tickets into code, when in reality, typing was always only the tip of the iceberg of their responsibilities.
 
-## The Verdict
+## How AI redefines the true value of software engineers
 
 AI coding assistants represent a permanent technological shift, not a passing trend, but their role is fundamentally different from the popular perception. They are powerful tools for accelerating the *creation* of code, a task that, while necessary, was never the primary bottleneck in software development.
 

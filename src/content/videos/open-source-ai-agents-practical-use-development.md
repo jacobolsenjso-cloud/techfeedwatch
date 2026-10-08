@@ -60,7 +60,7 @@ This initiative exemplifies the accessibility of advanced AI agent technology, e
 
 The community aspect also means that resources and knowledge are often shared freely, fostering wider adoption and developer engagement.
 
-## What To Actually Do
+## How to Start Using Open Source AI Agents
 
 Engaging with open source AI agents requires a clear understanding of their capabilities and limitations. First, identify a specific problem or task you wish to automate.
 

@@ -87,7 +87,7 @@ Storage choices reflect practical cost balancing. The hardware comes equipped wi
 
 That expandable storage prevents the artificial price gouging seen in high-end competitors like the Samsung Galaxy XR, which launched at an eye-watering $1,800 price point by hardcoding expensive memory configurations.
 
-## Where This Lands
+## Why Wearability Is the Ultimate Spec for VR
 
 The race to build the best virtual reality goggles is no longer an arms race for wider fields of view or heavier all-in-one enclosures. Bulky, self-contained visors will continue serving dedicated room-scale sim enthusiasts, but they cannot win mainstream daily adoption. The future belongs to lightweight spatial goggles that decouple processing weight from the eyes.
 

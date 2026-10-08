@@ -75,7 +75,7 @@ Creating a perfectly static, artifact-free text graphic requires an ingenious wo
 
 This method completely removes the forced fade-in. By re-applying the .3 slide transition directly to the newly created still graphic, the entire graphic block slides onto the screen with crisp, static letters intact.
 
-## Where This Lands
+## When to Move Beyond iMovie Text Tools
 
 iMovie remains an exceptional piece of free software, but its title tools reflect Apple’s consumer-first philosophy. The program simplifies video creation by trading away fine-grained graphic design controls. You cannot build paragraph styles, you cannot create automatic bulleted lists, and you cannot turn off text animation presets with a simple toggle switch.
 

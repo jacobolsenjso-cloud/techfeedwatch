@@ -30,7 +30,7 @@ faqs:
 
 AI agents facilitate payments through cryptocurrency transactions on decentralized blockchain networks, circumventing the need for traditional banking intermediaries. This infrastructure allows autonomous software entities to execute swift, cost-effective payments for resources and services without human intervention. This fundamental shift reshapes how [digital value](/video/beyond-bitcoin-decoding-crypto-s-enduring-foundations-and-evolving/) is exchanged in the burgeoning machine economy.
 
-## The Background
+## Why traditional finance fails for AI agent payments
 
 Traditional financial systems were not designed for the instantaneous, high-frequency micro-transactions inherent to an economy powered by AI agents. Banks and legacy payment processors, such as Visa, operate on infrastructures built for human-initiated, often batch-processed, transactions.
 
@@ -52,7 +52,7 @@ The infrastructure permits AI agents to purchase access to APIs, pay for cloud c
 
 For instance, an autonomous agent tasked with market research could automatically pay for data access from multiple sources, processing each payment on a blockchain as needed. For businesses considering the deployment of such systems, understanding [What Open Source AI Agents Mean for Developers](/video/open-source-ai-agents-practical-use-development) can be an important step.
 
-## The Ripple Effects
+## Centralization risks and economic shifts in AI agent payments
 
 The emergence of AI agent payments carries profound implications across the financial sector and the broader economy. The potential scale of this shift is immense, with estimates suggesting trillions of dollars could eventually be transacted through these new channels.
 
@@ -68,7 +68,7 @@ Certain blockchain networks are particularly well-suited to benefit from this tr
 
 Conversely, less efficient or more expensive networks may struggle to compete for this machine-to-machine payment volume. The ability of AI agents to engage in recursive loops and self-improving behaviors, often requiring continuous transactions, is a key driver for this demand, a concept further explored in [How Autonomous AI Agents Work Through Recursive Loops](/video/beyond-copilots-how-ai-is-building-self-improving-companies).
 
-## What To Watch Next
+## Regulatory hurdles and blockchain competition shaping AI payments
 
 The evolution of AI agent payments necessitates close observation across several fronts. The competition among blockchain networks to offer the most scalable, secure, and cost-effective solutions for machine transactions will intensify. We can expect to see continuous innovation in payment protocols and smart contract functionalities designed specifically for autonomous entities.
 

@@ -87,7 +87,7 @@ Search engines continue evolving toward generative experiences, making tradition
 
 Marketers who evaluate organic search strictly through immediate, last-touch attribution models risk gutting the very educational assets that feed their brand affinity.
 
-## Where This Lands
+## Balancing SEO for the future with PPC for today
 
 Choosing between search engine optimization and pay per click is a false strategic dilemma. The question for executive teams is not which channel wins an arbitrary budget contest, but what operational job each channel must accomplish right now. 
 

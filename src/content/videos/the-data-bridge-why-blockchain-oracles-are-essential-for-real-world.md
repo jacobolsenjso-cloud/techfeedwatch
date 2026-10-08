@@ -32,7 +32,7 @@ As Hashoshi points out, "today we're talking about one of the most critical comp
 
 This limitation creates the "blockchain oracle problem," a fundamental challenge in bridging the gap between an immutable blockchain and dynamic off-chain data without compromising security or decentralization.
 
-## The Background
+## Why smart contracts struggle to get real-world data
 
 Blockchain technology, by design, ensures that "anything that happens on that blockchain is immutable and unchangeable regardless of what happens." This immutability, while a cornerstone of trust and security, means that once a transaction or a smart contract's logic executes, it cannot be undone.
 
@@ -44,7 +44,7 @@ For example, "so if you are building a decentralized application using a smart c
 
 "Without good data to make decisions about what should happen which transactions should occur on certain conditions the smart contract can't do what it's meant to do." This highlights the immense pressure on ensuring data correctness from the outset, as there is only "one chance of doing right on the smart contract is correct."
 
-## What Changed
+## How oracles connect blockchains to the outside world
 
 The introduction of oracles addresses this fundamental limitation. "Oracle's are really just a fancy name for external services that feed information into a smart contract."
 
@@ -68,7 +68,7 @@ Beyond software, "you can also have Hardware Oracle's you can have physical Orac
 
 An IoT sensor in a cheese drawer could monitor temperature, and if it rises too high, a smart contract could automatically order more cheese. However, "IOT devices in their current state are a hacker's delight" due to security and privacy vulnerabilities, making their integration with immutable blockchains a complex challenge.
 
-## The Ripple Effects
+## How oracles create new centralization and security risks
 
 While oracles solve the immediate problem of connecting smart contracts to the outside world, they introduce new challenges, particularly regarding centralization. "Work has to be done to prevent these Oracle's from becoming the very rent-seeking middlemen the controlling centralized party for decentralized applications because they very well could be."
 
@@ -80,7 +80,7 @@ The security of data inputs is another significant ripple effect. The "hacker's 
 
 Such vulnerabilities emphasize the need for solid security measures, including multi-sensor consensus and cryptographic proofing, to ensure data integrity from physical sources. Addressing these issues is paramount for the broader adoption of applications that rely on [Oracle Network in Blockchain Bridges Data for Smart Contracts](/video/bridging-blockchains-how-oracle-networks-connect-smart-contracts-to).
 
-## What To Watch Next
+## Future developments in decentralized and secure oracle networks
 
 The evolution of blockchain oracles will largely focus on enhancing decentralization, security, and the variety of data sources. Future developments are likely to see more sophisticated decentralized oracle networks that distribute the responsibility of data fetching and validation across many independent nodes, minimizing the risk of a single point of failure or manipulation.
 

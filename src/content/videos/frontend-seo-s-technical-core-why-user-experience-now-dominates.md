@@ -54,7 +54,7 @@ Sitemaps offer a comprehensive list of a site’s pages, helping search engines 
 
 The choice between static rendering and server-side rendering also impacts initial page load times and, consequently, user experience. Static rendering can offer lightning-fast initial loads as pages are pre-built, while server-side rendering delivers content quickly for dynamic sites. Each method has implications for how fast content becomes interactive and visible to the user.
 
-## What To Actually Do
+## Practical steps to improve user experience for SEO
 
 Improving user experience for SEO is an ongoing process that blends technical prowess with a user-centric mindset. It demands a holistic approach, moving beyond keyword stuffing to genuinely enhance how visitors interact with your digital presence. This is central to [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
 

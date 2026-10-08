@@ -79,7 +79,7 @@ Two players stand across from each other in the same physical room, casting spel
 
 Seeing your opponent's actual facial expressions and physical body language while virtual spells detonate around their feet creates a gaming experience impossible on flat screens. Exploring [How the Best Mixed Reality Headset Changes Spatial Work](/video/how-the-best-mixed-reality-headset-changes-spatial-work) shows that these exact same shared anchoring mechanisms apply equally well to multi-user collaborative design.
 
-## What To Actually Do
+## How to prepare your room for mixed reality
 
 If you want to experience mixed reality without visual distortion or immersion-breaking artifacts, you must prepare your physical environment properly:
 

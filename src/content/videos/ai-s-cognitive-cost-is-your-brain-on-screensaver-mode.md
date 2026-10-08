@@ -64,7 +64,7 @@ Imagine a Socratic method tool that refuses to just hand you the answer, instead
 
 This approach moves beyond the capabilities of current general-purpose generative models like those discussed in Generative AI Versus AI: Creating New Content. By designing AI that encourages active participation and critical scrutiny, we can harness its power to cultivate, rather than diminish, human cognitive abilities.
 
-## What To Actually Do
+## How users and developers can preserve critical thinking
 
 To ensure AI enhances rather than erodes critical thinking, both individuals and developers must adopt intentional strategies. For users, the primary actionable step is to cultivate a habit of skepticism and proactive engagement with AI outputs. Never treat AI-generated content as final or infallible.
 

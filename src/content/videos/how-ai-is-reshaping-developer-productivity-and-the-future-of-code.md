@@ -66,7 +66,7 @@ Developers can choose between cloud-based and local AI coding solutions. Cloud e
 
 Local setups provide greater control over data privacy and customizability, often preferred by individual developers or for sensitive projects. The choice depends on project requirements, security considerations, and resource availability, each impacting how AI coding skills are deployed and utilized.
 
-## Who It's For
+## Teams and developers that benefit from AI coding skills
 
 AI coding skills are primarily for software developers, engineering teams, and organizations seeking to enhance productivity, improve code quality, and scale their development efforts. Developers who find themselves entangled in the complexities of "vibe coding" on larger projects can particularly benefit.
 
@@ -82,7 +82,7 @@ Developers must also learn to interact with AI agents effectively, moving from d
 
 While AI coding tools can significantly boost efficiency, they are not a silver bullet for projects with undefined requirements or poorly structured initial designs. Understanding the hidden costs and architectural implications of integrating these tools is important, as explored in [How Good Are AI Coding Tools for Software Architecture?](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable).
 
-## The Bottom Line
+## The shift from vibe coding to agent-driven development
 
 The evolution of AI coding skills signifies a fundamental shift in software development, moving away from informal "vibe coding" towards more structured, agent-driven methodologies. These skills empower AI to take on complex coding tasks, leveraging automations and iterative loops to achieve refined and consistent code outputs.
 

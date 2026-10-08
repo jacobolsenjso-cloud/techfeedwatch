@@ -52,7 +52,7 @@ The speed of these developments has prompted serious ethical discussions among r
 
 The Google group opted not to fully publish their revised algorithm. Instead, they used a zero-knowledge proof — a meta-program that validates the algorithm's functionality without revealing its specific methods.
 
-## The Bottom Line
+## Why post-quantum security is an urgent necessity
 
 The rapid progress in quantum algorithms is undeniably amazing from a technological standpoint, yet it starkly contrasts with the slower advancements in other promised quantum computing applications. Recall earlier claims that quantum computers could enhance stock investments and financial analysis, unravel complicated logistics problems, or advance material science and quantum chemistry.
 

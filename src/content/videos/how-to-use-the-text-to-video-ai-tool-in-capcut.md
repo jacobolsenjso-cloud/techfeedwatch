@@ -75,7 +75,7 @@ On the unified canvas, you merge all generated clips with a single action. In a 
 
 The system handles the tedious cut adjustments that often bog down creators testing the [Best Text to Video AI Tools for Free Clips](/video/best-text-to-video-ai-tools-for-free-clips). Once the sequence matches the storyboard plan, you export the completed piece directly for publishing.
 
-## What To Actually Do
+## Step-by-step CapCut text to video production workflow
 
 To use text to video effectively in CapCut without wasting generation credits, follow this production order:
 

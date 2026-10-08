@@ -51,7 +51,7 @@ Preventing unauthorized exposure demands active friction at every network tier. 
 
 Organizations operating across integrated financial networks, such as those governed by [Open Banking: Data and Trust Drive Personalized Finance](/video/open-banking-data-and-trust-redefine-finance), rely heavily on programmatic verification routines. Continuous software patching eliminates exploitable system flaws before attackers discover them, while real-time security log monitoring flags anomalous traffic patterns, halts brute-force attempts mid-execution, and alerts defense squads before exfiltration begins.
 
-## The Bottom Line
+## Why Security Discipline Must Be an Operational Imperative
 
 Data leaks stem from structural friction between operational convenience and defensive discipline. Modern breaches rarely involve cinematic, zero-day code cracking; they exploit routine oversights like weak passwords, unpatched corporate servers, and phishing emails disguised as invoices.
 

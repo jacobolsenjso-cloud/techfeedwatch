@@ -87,7 +87,7 @@ From visualizing complex architectural designs on-site to overlaying instruction
 
 The integration of AR into sectors like retail and finance parallels the broader impact of advanced technologies on established industries, akin to how [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). Understanding AR's diverse applications is essential to appreciating its long-term societal and economic impact.
 
-## Where This Lands
+## The future balance between WebAR and native apps
 
 Augmented reality apps represent a powerful technological shift, transforming how we interact with digital information in our physical world. The evolution from native, app-dependent AR to accessible WebAR marks a critical inflection point, fundamentally altering distribution and user engagement models.
 

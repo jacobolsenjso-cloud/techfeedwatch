@@ -109,7 +109,7 @@ Despite these operational gains, the wider physics community maintains healthy s
 
 Microsoft has not yet demonstrated public gate operations, active superposition control, or complex multi-qubit algorithm execution on the Majorana 2. Scaling from an isolated tetron to thousands of interconnected topological nodes introduces immense thermal and micro-wiring hurdles.
 
-## What To Actually Do
+## How to Evaluate Quantum Hardware Claims and Roadmaps
 
 Evaluating the materials and architectures powering modern quantum devices allows tech executives and engineers to cut through public relations noise:
 

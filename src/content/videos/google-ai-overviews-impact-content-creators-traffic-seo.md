@@ -30,7 +30,7 @@ faqs:
 
 Google AI Overviews directly impact organic search traffic by synthesizing information and presenting answers on the Search Engine Results Page (SERP), which often reduces clicks to original content sources. This shift challenges the traditional web model where content creators relied on search traffic for audience engagement and monetization.
 
-## The Background
+## How Creators Historically Built Audiences Through Organic Search
 
 The internet's expansion was built on the premise that focusing on the user and providing quality content would naturally lead to success. For years, content creators and independent website owners thrived by producing valuable information, from recipes to travel guides and DIY tutorials, which search engines then directed users to.
 
@@ -38,7 +38,7 @@ A prime example is Inspired Taste, a business founded by Adam and Joanne, which 
 
 This model fostered a diverse web ecosystem where publishers could invest in creating authoritative resources, knowing that discoverability through organic search traffic would follow.
 
-## What Changed
+## How Google AI Overviews Intercept Clicks with Blended Content
 
 The introduction of Google AI Overviews marks a significant change in how search results are presented and consumed. These generative AI summaries appear prominently at the top of the SERP, offering direct answers to user queries.
 
@@ -46,7 +46,7 @@ While intended to provide quick information, this mechanism often bypasses the n
 
 This results in "branded Frankenstein results," where the AI generates a new answer that appears above the original content, even for branded searches. The core issue, as creators observe, is that "It looks like their recipe, it is not." This blending and re-presentation of content undercuts the authenticity and unique value content creators strive to establish.
 
-## The Ripple Effects
+## Declining Search Traffic and the Risk of Brand Misrepresentation
 
 The consequences of AI Overviews extend beyond mere visibility, impacting core aspects of content creation and digital publishing. An immediate and tangible effect is the decline in organic search traffic to publisher sites.
 
@@ -62,7 +62,7 @@ The AI version, with small ingredient alterations, led to a "big disappointment,
 
 The fundamental issue lies in Google AI search's inherent incentive to keep users on the SERP, a goal that inherently conflicts with publishers' need to drive users to their websites. [How Generative AI Changes SEO and Search](/video/optimizing-for-generative-ai-search-the-new-frontier-beyond) examines this tension in more detail.
 
-## What To Watch Next
+## How Creators Are Tracking Misuse and Adapting Their Strategies
 
 The evolving field necessitates that content creators adapt and demand changes to ensure their work is properly valued and attributed. One immediate focus is on developing methods to identify and document instances of content misuse.
 

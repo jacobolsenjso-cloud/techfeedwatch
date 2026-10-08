@@ -61,6 +61,6 @@ Understanding [how AI coding agents change vibe coding to spec-driven dev](/vide
 
 The model handles syntactic execution, but the human remains responsible for architectural validation. A modest subscription to an agentic coding service removes the syntax barrier, letting developers modify software without mastering every specialized dialect.
 
-## The Bottom Line
+## How coding agents transform everyday developer workflows
 
 Coding agents fundamentally change the developer equation by removing syntax and packaging hurdles, turning open-source codebases into fully personalizable foundations for everyday software workflows.

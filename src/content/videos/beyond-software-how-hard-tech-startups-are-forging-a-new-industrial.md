@@ -28,7 +28,7 @@ faqs:
 
 Hard tech companies engineer and commercialize complex physical products that integrate cutting-edge scientific and engineering principles. These ventures distinguish themselves by transforming fundamental research into tangible solutions, often in sectors previously dominated by large corporations or government initiatives.
 
-## The Background
+## Why hard tech requires more than writing software
 
 For decades, the term "tech company" primarily conjured images of software developers, internet services, and digital platforms. The venture capital world largely gravitated towards these models due to their lower capital requirements, faster scaling potential, and quicker paths to market.
 
@@ -36,7 +36,7 @@ Innovation became synonymous with code, algorithms, and user interfaces, fosteri
 
 This field, now broadly known as "hard tech" or "deep tech," has roots in traditional engineering, manufacturing, and scientific research. It addresses challenges that cannot be solved through software alone, requiring breakthroughs in materials science, robotics, energy, and aerospace.
 
-## What Changed
+## Why hard tech startups must prove physical prototypes early
 
 The resurgence and redefinition of hard tech mark a pivotal shift in the innovation field. Hard tech companies are fundamentally different from their software-centric counterparts because their output is a physical product, not just code. These businesses operate at the intersection of advanced research and practical application, developing everything from novel energy solutions to complex machinery and next-generation transportation.
 
@@ -54,7 +54,7 @@ While software startups might seek seed funding to build a team and an initial p
 
 This requires investors to possess a deeper understanding of scientific principles and engineering timelines. Companies in fields such as robotics exemplify these challenges, requiring both advanced software intelligence and solid physical systems, often demanding substantial capital for development and scaling.
 
-## The Ripple Effects
+## How hard tech reshapes venture capital and global industries
 
 The rise of hard tech companies generates significant ripple effects across the global economy and various industries. Their innovations are not confined to niche markets; they frequently address fundamental, societal challenges like climate change, resource scarcity, and global connectivity.
 
@@ -68,7 +68,7 @@ Hard tech also has profound strategic implications for national competitiveness 
 
 However, the complexities inherent in global supply chains and access to critical raw materials also present unique vulnerabilities and geopolitical considerations. The intersection of software and hardware, particularly with the advent of AI, means even deeply physical products now benefit from advanced intelligence, as explored by [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation).
 
-## What To Watch Next
+## Key growth areas and challenges ahead for hard tech
 
 The hard tech sector is poised for continued expansion, driven by persistent global challenges and accelerating scientific breakthroughs. Key areas to observe include advanced robotics, sustainable energy solutions, and the ever-evolving space economy, which continues to push boundaries with new designs for satellites and rockets.
 

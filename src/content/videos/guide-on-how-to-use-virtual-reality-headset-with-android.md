@@ -29,7 +29,7 @@ To use a virtual reality headset with Android software, users can download raw A
 
 Modern standalone headsets run on operating systems derived from mobile platforms, allowing flat 2D Android applications like messaging platforms and alternative storefronts to run alongside virtual environment windows.
 
-## The Background
+## Why early standalone VR headsets restricted Android apps
 
 Standalone VR headsets have relied on mobile chipsets and underlying Android operating system architectures since the early days of mobile virtual reality. Despite operating on an Android foundation, early commercial VR systems maintained strictly gated ecosystems.
 
@@ -39,7 +39,7 @@ For years, accessing standard mobile tools required workaround applications. Ear
 
 Gamers seeking broader utility were left with clunky terminal commands or required constant tethering to external hardware. Understanding these platform constraints is essential when reviewing how [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) applies across consumer hardware categories.
 
-## What Changed
+## How modern updates enable direct APK installs
 
 The operating field shifted dramatically when standalone firmware updates began integrating basic desktop capabilities directly into virtual environments. On platforms like the Quest 3, native system utilities now recognize standard mobile installation archives. Users no longer need complex file extraction software just to view, unpack, or execute standard application binaries.
 
@@ -88,7 +88,7 @@ Desktop sideloading provides operational benefits beyond application management.
 
 As VRelity points out, boosting default texture settings to maximum crispness drains battery faster and resets upon a full power reboot. Users can maintain these high-performance parameters between daily uses by putting the headset into sleep mode rather than executing a full system shutdown.
 
-## The Ripple Effects
+## How standard mobile apps transform VR usage and stores
 
 The ability to easily execute flat Android applications inside virtual reality fundamentally alters consumer usage patterns. Broadening access to general mobile applications bridges the gap between dedicated gaming hardware and multi-purpose spatial computers. Users no longer need to remove their headsets to check chat channels, monitor media feeds, or manage external secondary accounts while immersed in software.
 
@@ -96,7 +96,7 @@ This software flexibility creates commercial tension for hardware manufacturers.
 
 Hardware vendors must balance security controls against power users who expect open platform access. Understanding these platform shifts aligns with broader industry developments detailed in [Android XR Hybrid Glasses Means for Spatial Computing](/video/android-xr-hybrid-glasses-means-for-spatial-computing).
 
-## What To Watch Next
+## Future challenges for integrating 2D mobile apps into VR
 
 The boundary between traditional mobile operating systems and spatial computing environments continues to dissolve. As tech giants build unified operating systems tailored for [mixed reality](/video/testing-how-the-best-windows-mixed-reality-headset-changes-vr/) devices, native support for 2D mobile code will likely become standard across all consumer headsets. Manufacturers will refine spatial multi-window displays, allowing mobile applications to sit alongside high-end 3D environments naturally.
 

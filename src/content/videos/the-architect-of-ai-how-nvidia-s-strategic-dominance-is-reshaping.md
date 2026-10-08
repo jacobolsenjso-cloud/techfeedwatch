@@ -28,7 +28,7 @@ faqs:
 
 NVIDIA AI Factories are highly integrated, rack-scale computing systems specifically engineered for the efficient development and deployment of artificial intelligence. This model signifies a strategic evolution from focusing on individual chip performance to optimizing the entire data center infrastructure as a unified engine for AI production.
 
-## The Background
+## Why traditional hardware limits AI scaling
 
 The rapid advancements in artificial intelligence, particularly deep learning, have introduced unprecedented demands on computing infrastructure. Traditional methods of scaling processing power often hit fundamental limits.
 
@@ -40,7 +40,7 @@ For instance, if computation represents 50% of a problem and could theoretically
 
 This highlights that optimizing only one component, such as the GPU, is insufficient when other elements like data movement, networking, or storage become bottlenecks. To achieve the desired exponential speedup, say going a million times faster when adding 10,000 computers, every component of the system must be tightly integrated and optimized.
 
-## What Changed: The Era of Extreme Co-design
+## How rack scale co-design powers NVIDIA AI factories
 
 NVIDIA’s response to these architectural limitations is the concept of the AI factory, driven by what it calls "extreme co-design." Historically, NVIDIA focused on chip-scale design, striving to build the best GPU.
 
@@ -54,7 +54,7 @@ As Jensen Huang, CEO of NVIDIA, points out on the Lex Fridman Podcast, this deep
 
 These teams work in constant, cross-functional collaboration, attacking problems from multiple perspectives to ensure every component works in concert within the unified AI factory architecture. This internal operational model directly mirrors the complex, multi-disciplinary nature of extreme co-design.
 
-## The Ripple Effects
+## The risky CUDA bets that built NVIDIA's foundation
 
 The shift towards AI factories and extreme co-design is built upon a foundation of strategic decisions that span decades. One of NVIDIA's earliest steps towards becoming a full-fledged computing company involved the invention of a programmable pixel shader, followed by the integration of IEEE-compatible FP32 into their shaders.
 
@@ -70,7 +70,7 @@ By selling millions and millions of GeForce GPUs each year with CUDA embedded, N
 
 This strategic foresight enabled NVIDIA to become, as the source states, "the engine powering the AI revolution," ultimately leading to the demand for the integrated AI factory approach we see today. The video "What are NVIDIA AI Chips and Their Role in AI?" illustrates how NVIDIA's chip design has been central to this journey.
 
-## What To Watch Next
+## The future of industrial scale AI infrastructure
 
 The concept of NVIDIA AI factories signifies a long-term commitment to delivering vertically integrated, purpose-built infrastructure for AI. This approach ensures that as AI models grow in size and complexity, the underlying hardware and software can scale efficiently without encountering the bottlenecks that plague less integrated systems.
 

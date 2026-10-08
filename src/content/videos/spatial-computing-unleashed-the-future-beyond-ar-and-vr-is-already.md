@@ -71,7 +71,7 @@ This hints at a future where digital constructs could evolve from simple bots to
 
 The ability to place and interact with digital constructs within physical space, making them aware of their environment, opens new avenues for design, education, and social interaction. It is easy to imagine this being used one day at home when building IKEA furniture, with digital instructions overlaid directly onto the components and virtual assistance available in real-time.
 
-## What To Actually Do
+## Preparing for the Shift to Spatial Computing
 
 To fully grasp and engage with spatial computing, individuals and businesses should recognize its fundamental departure from mere digital display. This technology requires a shift in mindset, understanding that digital content is no longer confined to a screen but is an active participant in our physical world.
 

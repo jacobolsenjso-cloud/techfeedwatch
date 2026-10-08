@@ -81,7 +81,7 @@ The M5 configuration pairs Apple's M5 desktop silicon with an R1 sensor co-proce
 
 Examining [how the best mixed reality headset changes spatial work](/video/how-the-best-mixed-reality-headset-changes-spatial-work) shows that Apple is not building an arcade accessory; it is auditioning a face-worn personal computer. The sheer cost, intense weight, and total lack of gaming controller support guarantee it stays walled off in luxury productivity and enterprise media development.
 
-## Where This Lands
+## Why Every Virtual Reality Headset Involves Conscious Compromises
 
 Virtual reality headsets are no longer an experimental curiosity, nor are they converging into a single magic appliance. The market has definitively broken into specialized lanes.
 

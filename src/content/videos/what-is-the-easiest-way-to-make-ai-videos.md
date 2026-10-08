@@ -89,7 +89,7 @@ Another common mistake involves parameter creep. Increasing clip duration beyond
 
 Treat short clips as modular building blocks. Instead of demanding a 30-second scene from a single prompt, produce three clean 5-second shots and splice them in an external timeline.
 
-## What To Actually Do
+## Step-by-step free AI video production pipeline
 
 To build an efficient, cost-free video production pipeline today, follow this exact step-by-step framework:
 

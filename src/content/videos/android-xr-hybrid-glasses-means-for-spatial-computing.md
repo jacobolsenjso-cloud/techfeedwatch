@@ -66,7 +66,7 @@ This integration into the broader Android XR Ecosystem suggests a future where d
 
 The performance of these hybrid devices is a critical factor influencing the user experience. Smooth rendering of virtual content, low latency for interactions, and efficient power management are all essential for sustained usability. As the Android XR ecosystem matures, continuous improvements in hardware and software optimization will be key to opening up the full potential of these devices.
 
-## What To Actually Do
+## How to test Android XR hybrid glasses firsthand
 
 To fully grasp the potential of Android XR hybrid glasses, consider practical engagement rather than abstract speculation. The most direct approach involves experiencing the technology firsthand.
 

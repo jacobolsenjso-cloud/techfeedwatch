@@ -73,7 +73,7 @@ The pace of discovery could accelerate to unprecedented levels. Astra's potentia
 
 The move from AI as a sophisticated assistant to an active co-discoverer reshapes the very nature of scientific progress. Although betting platforms such as Polymarket currently give Astra around a 56% probability of debuting prior to the close of next month, strong eagerness for its rollout indicates OpenAI's next frontier model may arrive very soon.
 
-## Where This Lands
+## How Astra Transforms AI into a Discovery Partner
 
 OpenAI Astra represents more than just another incremental improvement in artificial intelligence; it signifies a fundamental redefinition of AI's role in the world. By demonstrating the capacity for autonomous scientific discovery and sustained, complex problem-solving, Astra pushes the boundaries of what AI can achieve.
 

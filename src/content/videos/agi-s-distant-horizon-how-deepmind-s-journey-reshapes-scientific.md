@@ -63,7 +63,7 @@ The principles and methodologies refined in projects like AlphaFold and AlphaGo 
 
 The eventual aim involves creating "virtual cells" — comprehensive AI models that simulate biological processes at a molecular level, offering unprecedented insights into life itself. Such developments could also influence how AI harnesses are used to enhance enterprise AI adoption, as seen in topics like [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption).
 
-## Where This Lands
+## How AlphaFold is transforming biological research
 
 AlphaFold is not merely an impressive piece of software; it represents a fundamental shift in how biological research is conducted.
 

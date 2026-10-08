@@ -87,7 +87,7 @@ Understanding what quantum computing chips can deliver means ignoring press rele
 
 3. **Logical Error Rates and Thresholds:** No quantum processor can execute deep commercial algorithms without quantum error correction. Raw physical qubit counts mean little without examining the two-qubit randomized benchmarking error rate. Processors need error rates well below fault-tolerant thresholds to execute surface codes efficiently.
 
-## What To Actually Do
+## How to Evaluate Quantum Chip Claims
 
 If you are an engineer, technical executive, or researcher evaluating quantum chip claims, adopt a rigorous technical filter:
 

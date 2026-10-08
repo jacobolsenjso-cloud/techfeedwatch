@@ -30,7 +30,7 @@ faqs:
 
 AI chips represent a fundamental shift in computing, moving beyond general-purpose processors to specialized hardware designed for the unique demands of artificial intelligence. These accelerators excel at performing massive parallel calculations, particularly matrix multiplication, which is the backbone of modern neural networks and the generative AI applications transforming industries today.
 
-## The Background
+## The shift from faster cores to parallel processing
 
 The foundational concept that "software is eating the world," articulated by Mark Andreessen in 2011, has profoundly shaped the past decade, embedding software into nearly every facet of modern life.
 
@@ -42,7 +42,7 @@ For instance, an Apple M1 chip from 2022 contains an astonishing 116 billion tra
 
 Consequently, while chips now feature more transistors, individual cores do not necessarily run faster. Instead, the focus has shifted to parallel processing, where numerous cores work in concert. This evolution sets the stage for the rise of specialized AI chips designed to harness this parallel architecture.
 
-## What Changed
+## Why GPUs and tensor cores excel at matrix multiplication
 
 The fundamental change in AI chip design revolves around their ability to perform highly parallel mathematical operations at an unparalleled scale. Traditionally, a classic CPU would execute one instruction per cycle, evolving to modern CPUs that handle a couple of 10 instructions across multiple cores.
 
@@ -70,7 +70,7 @@ However, developers have found ways to reduce this precision, sometimes to 16 bi
 
 These "tricks" allow AI developers to squeeze more performance out of existing chips, illustrating the deep integration between hardware capabilities and software ingenuity. To learn more about specialized AI chips, consider reading How AI Uses Specialized Chips for Fast Computation.
 
-## The Ripple Effects
+## Surging hardware demand and rising data center cooling challenges
 
 The advent and rapid adoption of specialized AI chips have created profound ripple effects across the technology industry. One of the most immediate consequences is the intense demand for this specialized hardware, which currently "outstrip Supply by a factor of 10."
 
@@ -82,7 +82,7 @@ Data centers housing these accelerators are increasingly experimenting with and 
 
 The industry is effectively adapting to a new era where raw computational capability must be balanced with practical operational concerns. Discover more about the challenges of AI chip supply in [AI Chips Supply Chain: Hidden Circuit Board Risks](/video/ai-chip-supply-chain-security-us-confronts-pcb-risks).
 
-## What To Watch Next
+## Growing competition to rival Nvidia and expand chip supply
 
 Looking ahead, the evolution of AI chips will continue along several key trajectories. While Moore's Law for transistor density remains active, the focus for performance gains is increasingly on architectural innovations and software-hardware co-design, rather than solely on individual core speed. The need for greater parallelization will intensify, pushing the boundaries of tensor operations and specialized core designs.
 

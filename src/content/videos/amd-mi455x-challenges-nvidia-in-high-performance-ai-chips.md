@@ -66,7 +66,7 @@ Developers often prefer to stick with a familiar, well-supported platform. Howev
 
 This search for diversity in their supply chains and a desire to avoid vendor lock-in creates an opportunity for AMD's ROCm and its open approach. Building a solid and easy-to-use software stack is paramount for AMD to convert its powerful hardware into market share.
 
-## What To Actually Do
+## Choosing between AMD and NVIDIA for AI infrastructure
 
 For organizations considering AI infrastructure, the comparison between AMD and NVIDIA is no longer a clear-cut choice favoring a single vendor. Both companies offer compelling technologies, each with distinct advantages.
 

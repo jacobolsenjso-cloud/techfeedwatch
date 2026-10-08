@@ -79,7 +79,7 @@ This high barrier to entry explains why public funding and institutional investm
 
 It marks a shift from purely venture-backed private endeavors to a more transparent public market assessment of progress and potential. The security implications of future quantum systems, for example, will require approaches as rigorous as [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems), necessitating massive foresight and investment.
 
-## Where This Lands
+## Why practical quantum computing is still years away
 
 Quantum computing companies represent a vital frontier in technological innovation, pushing the boundaries of what computation can achieve. Their emergence on public markets, exemplified by IQM's Nasdaq listing, underscores a growing institutional belief in their long-term transformative potential.
 

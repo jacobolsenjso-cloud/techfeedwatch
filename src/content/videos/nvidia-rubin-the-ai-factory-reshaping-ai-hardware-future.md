@@ -36,14 +36,14 @@ The escalating demands of large language models and complex AI applications have
 
 Instead, the industry requires deeply integrated solutions that optimize data flow, processing, and communication at scale. The Rubin platform addresses this challenge head-on, presenting a modular yet unified system designed to deliver superior performance and cost efficiency for the most demanding AI tasks.
 
-## Key Takeaways
+## What the complete Rubin AI factory delivers
 
 * The NVIDIA Rubin platform is a "complete AI factory" that goes beyond individual GPUs, integrating a comprehensive suite of co-designed hardware.
 * It combines the Rubin GPU, Vera CPU, NVLink 6, BlueField-4 DPU, ConnectX-9 SuperNIC, and Spectrum networking to form a unified AI infrastructure.
 * Performance metrics include up to 50 petaflops of AI inference, 288GB of HBM4 memory per GPU, and an impressive 3.6 exaflops of compute per NVL72 rack.
 * This integrated design promises up to 10x lower AI inference costs compared to the previous Blackwell generation, marking a significant economic advantage for AI developers.
 
-## Technical Breakdown
+## The co-designed chips and networking inside Rubin
 
 The NVIDIA Rubin platform is proof of co-design principles, where every component is developed in conjunction with others to ensure maximum synergy and performance. At its core, the platform features the Rubin GPU, designed specifically for intensive AI workloads, alongside the Vera CPU, which handles general-purpose computing and orchestrates the entire system.
 
@@ -61,7 +61,7 @@ For instance, the Rubin GPU is engineered to deliver up to 50 petaflops of AI in
 
 When scaled up, an NVL72 rack, a critical building block of the Rubin infrastructure, can achieve 3.6 exaflops of compute. This illustrates the platform's capability to deliver unprecedented levels of computational power, critical for the increasingly complex demands of modern AI models.
 
-## Why This Matters
+## How Rubin cuts inference costs and scales deployment
 
 The NVIDIA Rubin platform signifies a profound shift in how AI infrastructure is conceived and deployed. Traditionally, organizations might purchase GPUs, CPUs, and networking equipment separately, then integrate them.
 
@@ -79,7 +79,7 @@ Leading AI companies are already recognizing these advantages. Companies like Mi
 
 Their investment signals a collective belief that this integrated factory approach is the path forward for manufacturing intelligence. [What NVIDIA AI Factories Are and How They Work](/video/the-architect-of-ai-how-nvidia-s-strategic-dominance-is-reshaping) explains this architectural philosophy in detail.
 
-## What Others Missed
+## Vendor lock-in and high upfront infrastructure costs
 
 While the Rubin platform presents significant advancements, its integrated "AI factory" design also implies a strategic commitment that might not be immediately apparent. The move towards a fully co-designed system, while optimizing performance, could also deepen vendor lock-in for organizations.
 
@@ -91,7 +91,7 @@ The focus on scale suggests that its immediate impact will primarily be felt by 
 
 Another aspect often overlooked is the continued pressure on supply chains. Producing complex, integrated systems with cutting-edge components like HBM4 memory requires a sophisticated and resilient manufacturing process. Any disruptions could significantly impact availability and adoption timelines, affecting the very companies eager to deploy these AI factories.
 
-## The Verdict
+## Why Rubin sets a new benchmark for AI infrastructure
 
 The NVIDIA Rubin platform represents more than just an incremental upgrade in AI hardware; it embodies a fundamental architectural shift. By conceptualizing AI infrastructure as an "entire factory built to manufacture intelligence," NVIDIA moves beyond the traditional component-centric view.
 

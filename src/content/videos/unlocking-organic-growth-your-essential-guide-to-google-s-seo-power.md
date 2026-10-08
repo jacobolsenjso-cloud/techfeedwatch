@@ -64,7 +64,7 @@ Instead of directly embedding multiple scripts for Google Analytics, Google Ads 
 
 GTM utilizes "triggers" to define when a specific tag should fire (e.g., a "page view" trigger for Google Analytics or a "button click" trigger for a conversion event), ensuring that data is sent to the correct platform at the right time. The Tech Academy - Online Coding Bootcamps and Trade School, for example, offers courses that dig into these tools, including an emphasis on Google Analytics accreditation.
 
-## What To Actually Do
+## Setting up and using Search Console and Google Analytics
 
 To effectively leverage Google Search Console and Google Analytics for your website, a systematic approach is necessary. Start by ensuring your site is properly set up in both platforms.
 

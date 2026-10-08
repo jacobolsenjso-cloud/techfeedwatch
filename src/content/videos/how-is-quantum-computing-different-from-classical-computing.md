@@ -66,7 +66,7 @@ However, the limited availability of high-fidelity qubits means that true "quant
 
 Organizations considering security implications, for instance, must also think about how new computational power interacts with concepts like [Does Zero Trust Security Model Protect Modern Digital Assets?](/video/zero-trust-the-essential-security-shift-your-business-needs-now) in a future where quantum machines might challenge current encryption standards.
 
-## What To Actually Do
+## How to prepare your organization for quantum computing
 
 For businesses and researchers looking to engage with quantum computing, the path forward involves strategic planning and education rather than immediate wholesale adoption. Begin by understanding the core principles and identifying problems within your domain that classical computers struggle with due to their inherent complexity. These are the areas where quantum approaches might eventually offer a competitive edge.
 

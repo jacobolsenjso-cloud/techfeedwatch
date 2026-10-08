@@ -30,7 +30,7 @@ faqs:
 
 Ethereum operates as a decentralized, global computing platform that executes self-enforcing agreements called smart contracts, processed by a network of computers. Its shift to Proof-of-Stake and the introduction of Layer 2 scaling solutions fundamentally changed its operational efficiency and transaction costs, making it a foundation for a wide range of decentralized applications.
 
-## The Background
+## How Ethereum works as a programmable blockchain
 
 At its core, Ethereum is a public, open-source blockchain, distinct from Bitcoin in its fundamental purpose. While Bitcoin functions primarily as a digital currency and a store of value, Ethereum was conceptualized as a programmable blockchain, enabling developers to build and deploy decentralized applications (dApps) through smart contracts.
 
@@ -42,7 +42,7 @@ Similarly, a smart contract on Ethereum holds funds or assets and releases them 
 
 This innovation allowed for the creation of an ecosystem supporting everything from digital collectibles like NFTs to complex financial instruments in decentralized finance (DeFi). To understand more about [How Do Smart Contracts Work on Ethereum? Code Your First One](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
 
-## What Changed
+## Major upgrades that cut energy use and fees
 
 Ethereum has undergone significant transformations to address its initial limitations, primarily its energy consumption and high transaction costs. The most impactful of these was The Merge, a monumental upgrade that transitioned the network from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) system.
 
@@ -54,7 +54,7 @@ Projects like Arbitrum, Optimism, and Base exemplify this approach, allowing for
 
 This makes everyday interactions with decentralized applications far more accessible and economical for users. To learn more about transaction fees, consult How Does Ethereum Gas Work in Accounts and Wallets?.
 
-## The Ripple Effects
+## How Ethereum powers DeFi NFTs and real world assets
 
 The combined impact of Proof-of-Stake and Layer 2 scaling has profoundly shaped the decentralized world that Ethereum leads. These advancements have fostered the growth of a solid ecosystem across various sectors:
 
@@ -74,7 +74,7 @@ These ripple effects consolidate Ethereum's position as the foundational layer f
 
 For a broader overview of the platform, read [Ethereum Blockchain: What Is It and What Is It Used For?](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
 
-## What To Watch Next
+## Future network upgrades designed to scale Ethereum
 
 Ethereum's development path continues with a series of ambitious upgrades aimed at further enhancing its scalability, security, and decentralization.
 

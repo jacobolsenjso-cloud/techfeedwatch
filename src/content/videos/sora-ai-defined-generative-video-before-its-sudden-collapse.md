@@ -73,7 +73,7 @@ Simultaneously, competitors adapted. Rivals like Meta and [Google](https://www.g
 
 Key talent departed in protest; seven-year veterans like researcher Jerry Tworek resigned as internal priorities shifted from foundational research to corporate damage control. As FutureFuel points out, "You can't automate a soul, and you can't build a business on cool videos if each clip costs more than a Starbucks latte."
 
-## Where This Lands
+## How Unsustainable Economics Led to Sora's Shutdown
 
 On March 24th, 2026, OpenAI confirmed the inevitable: the Sora app would be sunset, with final shutdown scheduled for April 26th, 2026. The fall of Sora is a cautionary milestone for the generative software industry. Impressive research demonstrations do not equal sustainable consumer products.
 

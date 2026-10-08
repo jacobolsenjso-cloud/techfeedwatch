@@ -66,7 +66,7 @@ The common error lies in a fragmented approach—investing heavily in technology
 
 It is an ongoing commitment to resilience, not a one-time deployment of tools. Prioritization is key: focus mitigation efforts on risks with the highest potential impact and likelihood, ensuring that security spending delivers the greatest return on protection.
 
-## Where This Lands
+## Why Managing Cyber Risk Is an Executive Responsibility
 
 Cybersecurity risks are an intrinsic part of operating in a connected world, and managing them is an executive-level responsibility, not just a technical chore.
 

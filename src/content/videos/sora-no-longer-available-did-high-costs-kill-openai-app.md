@@ -92,7 +92,7 @@ The shutdown occurred across distinct phases:
 
 The corporate alliance dissolved quietly. Disney's planned $1 billion equity investment never closed, preventing direct capital loss but stranding planned character rollouts.
 
-## Who It's For
+## Why Sora failed creators but helps enterprise research
 
 High compute costs limit who benefits from raw generation models.
 
@@ -102,6 +102,6 @@ Conversely, the closure benefited enterprise engineering teams. By reclaiming ma
 
 Production houses require deterministic control, frame-level consistency, and clear copyright ownership. Sora provided fleeting spectacle, whereas dedicated creative suites offer granular editing controls that fit existing commercial pipelines.
 
-## The Bottom Line
+## Why OpenAI ended its costly consumer experiment
 
 OpenAI chose to shut down a money-losing consumer experiment rather than burn scarce chips on disposable entertainment.

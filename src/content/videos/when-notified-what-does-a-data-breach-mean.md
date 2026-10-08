@@ -85,6 +85,6 @@ An IT administrator named Ray keeps the one page in the same folder as the resto
 
 Analyzing historic industry waves, such as how [data breaches June 2026 show evolving cyber threats](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for), proves that unprepared leadership teams suffer the highest customer churn.
 
-## The Bottom Line
+## Preparing to manage the critical first 72 hours
 
 A data breach is not an abstract technology failure; it is an administrative and operational trial. You cannot prepare for a breach by preventing it, because determined attackers eventually find unpatched cracks. Preparation means managing the subsequent 72 hours with definitive logs, pre-drafted disclosures, and clear personal ownership.

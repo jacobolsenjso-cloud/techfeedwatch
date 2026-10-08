@@ -76,7 +76,7 @@ AI-first agency operations exemplify the practical application of these strategi
 
 Alec Saluga (Aero AI) demonstrated this impact when he transitioned from a B2B sales job and, using AI, tripled his income in under 30 days. This personal story highlights the immediate, tangible benefits for individuals who become proficient in AI-driven workflows, transforming how businesses approach digital marketing and content strategy.
 
-## What To Actually Do
+## How to adapt your content strategy for AI search
 
 To succeed in the evolving AI search environment, marketers and content creators must adopt a proactive, AI-first mindset. The shift requires not just understanding the new terminology but implementing practical changes to content strategy and workflow.
 
