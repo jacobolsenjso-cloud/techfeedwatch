@@ -79,7 +79,7 @@ Conversely, policy analysts at institutions like [Brookings](https://www.brookin
 
 Critically, every aspect of this heated debate focuses on software running on standard silicon clusters. As technical audits confirm, "It requires absolutely zero quantum computing involvement to be a risk."
 
-"In physical reality, there is absolutely no credible mechanism right now that connects quantum machine learning to human extinction." Conflating quantum physics with artificial general intelligence distorts the real-world priorities of cybersecurity teams and AI safety regulators.
+In physical reality, there is absolutely no credible mechanism right now that connects quantum machine learning to human extinction. Conflating quantum physics with artificial general intelligence distorts the real-world priorities of cybersecurity teams and AI safety regulators.
 
 ## What To Watch Next
 

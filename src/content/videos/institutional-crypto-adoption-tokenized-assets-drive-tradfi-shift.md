@@ -62,7 +62,7 @@ Blockchains designed for financial services play a key role. These platforms oft
 
 One such Layer 1 blockchain focuses on financial empowerment, boasting several technical advantages. It is described as highly decentralized and permissionless, allowing participation in network security even with a consumer-grade laptop, which differs from systems requiring enterprise-grade hardware.
 
-Its protocol also prevents "slashing" for mistakes, and users can withdraw tokens whenever they want, with participation possible with as little as one Algo. Combined with high transaction throughput, these characteristics make certain blockchains well-suited for tokenization and broader financial applications, including payments.
+The Algorand blockchain's protocol also prevents "slashing" for mistakes, and users can withdraw tokens whenever they want, with participation possible with as little as one Algo. Combined with high transaction throughput, these characteristics make certain blockchains well-suited for tokenization and broader financial applications, including payments.
 
 ## Handling the Regulatory Environment
 

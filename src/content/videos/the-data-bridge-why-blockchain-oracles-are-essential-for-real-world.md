@@ -58,7 +58,7 @@ Consider the "Software Oracle," which gathers data from various sources. For a h
 
 To ensure accuracy, these "Software Oracle's" don't simply take the first piece of information they find. Instead, they employ a reconciliation process.
 
-Forrest, a smart contract and decentralized application developer, explains this with an example: if there are "five of these public APIs for horse races," "four of them say that horse A won the race" and "then one says that horse B won the race," this reconciliation could be as simple as "best three out of five". "so in this case for the results say one horse a is the winner" and "then only one says horse B is the winner".
+Forrest, a smart contract and decentralized application developer, explains this with an example: if there are "five of these public APIs for horse races," "four of them say that horse A won the race" and "then one says that horse B won the race," this reconciliation could be as simple as "best three out of five". In this scenario, four of the API results report that Horse A is the winner, while only one says Horse B won.
 
 Therefore, what gets supplied to the contract by the software Oracle is horse A is the winner, allowing payouts to proceed confidently.
 

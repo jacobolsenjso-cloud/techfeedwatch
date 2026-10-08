@@ -46,7 +46,7 @@ When content precisely matches user intent, search engines tend to favor it, imp
 
 ## How Do Automated AI Content Systems Actually Work?
 
-A successful AI content system functions as a comprehensive "full pipeline: keyword → research → writing → publishing." This is not a single tool but an integrated workflow designed to automate "bottom-of-funnel SEO content - without producing low-quality AI slop." Indeed, "this video walks through the exact AI system I built to automate bottom-of-funnel SEO content - without producing low-quality AI slop."
+A successful AI content system functions as a comprehensive "full pipeline: keyword → research → writing → publishing." This is not a single tool but an integrated workflow designed to automate "bottom-of-funnel SEO content - without producing low-quality AI slop." Indeed, Shanif Dhanani walks through the exact AI system he built to automate bottom-of-funnel SEO content without producing low-quality AI slop.
 
 The process begins with "Keyword sourcing," where AI tools identify those high-intent keywords that are often overlooked or too numerous for manual content creation. This involves deep analysis of search data to find specific user needs.
 

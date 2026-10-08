@@ -36,7 +36,7 @@ Threats are diverse, ranging from state-sponsored hackers and organized criminal
 
 The consequences of these risks materializing are often severe. They can include direct financial losses from fraud or ransomware payments, the costs of incident response and system recovery, and substantial regulatory fines following data breaches.
 
-Beyond financial penalties, organizations face significant reputational damage, erosion of customer trust, and long-term operational disruption. For instance, the transition away from supported operating systems like Windows 10 creates new exposures, where organizations continuing to use unsupported versions without extended security updates face significantly increased [What Windows 10 Extended Support Means for Users](/video/windows-10-extended-support-implications-for-business-security).
+Beyond financial penalties, organizations face significant reputational damage, erosion of customer trust, and long-term operational disruption. For instance, the transition away from supported operating systems like Windows 10 creates new exposures, where organizations continuing to use unsupported versions without extended security updates face significantly increased risks, as detailed in [What Windows 10 Extended Support Means for Users](/video/windows-10-extended-support-implications-for-business-security).
 
 Such situations highlight how a failure in basic asset management and lifecycle planning can directly escalate an organization's cyber risk profile. Understanding these interwoven elements allows organizations to move past reactive defense to a more strategic stance, focusing on managing the likelihood and impact of potential incidents.
 

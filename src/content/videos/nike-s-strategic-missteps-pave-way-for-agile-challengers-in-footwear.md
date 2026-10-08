@@ -52,7 +52,7 @@ By reducing reliance on wholesale partners, the company may have diminished the 
 
 The sportswear market thrives on continuous innovation and the ability to set trends. When Nike's pace of innovation slowed, it created a vacuum that newer rivals were quick to fill.
 
-Brands like Hoka, known for its maximalist cushioning and distinctive running shoe designs, and **the brand On sells premium priced athletic wear and is most known for its trademark running sneakers with hollow pads in the sole.**
+Brands like Hoka are known for their maximalist cushioning and distinctive running shoe designs, while the brand On sells premium priced athletic wear and is most known for its trademark running sneakers with hollow pads in the sole.
 
 These companies did not just offer alternatives; they presented distinct design philosophies and performance attributes that appealed to specific segments of runners and casual wearers alike. On Running, for instance, has rapidly become recognized for its premium-priced athletic wear and unique "CloudTec" cushioning system.
 

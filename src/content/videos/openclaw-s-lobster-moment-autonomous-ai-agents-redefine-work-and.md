@@ -44,7 +44,7 @@ This level of operational independence allows the AI to act as a digital assista
 
 ## How OpenClaw Agents Operate
 
-OpenClaw agents function by understanding context and making decisions based on their environment. For example, an agent deployed as a WhatsApp bot could handle tasks like finding restaurants, handling, and performing translations. Its intelligence allows it to understand how people typically communicate, making its interactions feel more natural.
+OpenClaw agents function by understanding context and making decisions based on their environment. For example, an agent deployed as a WhatsApp bot could handle tasks like finding restaurants and performing translations. Its intelligence allows it to understand how people typically communicate, making its interactions feel more natural.
 
 A key aspect of OpenClaw's autonomy is its ability to self-correct and adapt in real-time. In one instance, an agent received a voice message, despite not being explicitly programmed for voice input. It identified the audio file, recognized its unusual format, and converted it.
 

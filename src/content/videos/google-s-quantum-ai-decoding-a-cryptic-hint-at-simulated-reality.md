@@ -95,7 +95,7 @@ Physicist John Wheeler's "participatory universe" and his delayed choice experim
 
 These lines of inquiry naturally lead to the simulation hypothesis. This idea suggests that the universe itself might be a computation.
 
-It could be running on a substrate we cannot access. Max Tegmark has even argued that the universe is not merely described by mathematics, but that it *is* mathematics.
+It could be running on a substrate we cannot access. Physicist Max Tegmark has even argued that the universe is not merely described by mathematics, but that it *is* mathematics.
 
 If this is true, asking who built the universe becomes similar to asking who wrote the code. If quantum mechanics represents the deepest layer of that code, then the architecture of a quantum computer and the architecture of reality begin to look uncomfortably alike.
 

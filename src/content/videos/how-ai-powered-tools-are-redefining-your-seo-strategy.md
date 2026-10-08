@@ -52,15 +52,15 @@ Finally, the system generates an SEO health score and a detailed report. This en
 
 For content optimization specifically, AI helps prepare material for citation by large language models (LLMs) such as ChatGPT, Gemini, Claude, or Perplexity. As Daniel Agrici points out, for content to be cited by AI like ChatGPT, Gemini, Claude or Perplexity, it needs to be optimized in a specific structure.
 
-This involves optimizing content to a specific structure, ensuring passages are the right length to be easily processed by AI agents. Content outside this range might be skipped by AI agents, which are "quite, quite lazy." AI tools can analyze existing content against these parameters and generate optimized versions.
+This involves optimizing content to a specific structure, ensuring passages are the right length to be easily processed by AI agents. Content outside the optimal passage length might be skipped by AI agents, which are "quite, quite lazy." AI tools can analyze existing content against these parameters and generate optimized versions.
 
 For instance, an AI might take an existing page with an "AI search readiness" score of fifty seven out of one hundred and propose modifications to boost it. [How AI Changes SEO Content Creation for Bottom-Funnel Needs](/video/ai-powered-precision-automating-high-intent-seo-content-without) and [How Generative AI Changes SEO and Search](/video/optimizing-for-generative-ai-search-the-new-frontier-beyond) explore this further.
 
 The output from these AI systems is not just data; it includes actionable recommendations and even ready-to-use code. For example, after a schema analysis for a page like rankenstein.pro's "about" section reveals a "current health" of four out of ten with three identical JSON-LD blocks, the AI can generate optimized schema JSON.
 
-This can then be copied and directly applied via an "Frankenstein SEO assistant" or similar agent, streamlining the implementation of structural data improvements.
+This can then be copied and directly applied via an AI tool such as the "Frankenstein SEO assistant" or a similar agent, streamlining the implementation of structural data improvements.
 
-The comprehensive reports often include an action plan, which can be fed to other AI agents, such as a "Frankenstein agent," to automate fixes. Users can even request a well-arranged PDF document of the audit for reference or client sharing.
+The comprehensive reports often include an action plan, which can be fed to other AI agents, such as an automated implementation tool like a "Frankenstein agent," to automate fixes. Users can even request a well-arranged PDF document of the audit for reference or client sharing.
 
 ## Who It's For
 

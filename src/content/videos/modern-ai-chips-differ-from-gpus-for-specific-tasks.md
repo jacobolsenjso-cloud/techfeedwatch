@@ -60,7 +60,7 @@ As list7tech points out, modern AI requires massive parallel computation, which 
 
 The need for chips beyond standard GPUs arises from the distinct phases and deployment environments of AI: training and inference. AI training involves feeding vast amounts of data to a model, allowing it to learn patterns and make predictions.
 
-This process is computationally intensive and benefits immensely from the high-throughput parallel processing that GPUs provide. They are ideal for building complex systems like ChatGPT or Google AI within massive data centers. AI chips are essential for artificial intelligence computing underscores this necessity.
+This process is computationally intensive and benefits immensely from the high-throughput parallel processing that GPUs provide. They are ideal for building complex systems like ChatGPT or Google AI within massive data centers. The fact that AI chips are essential for artificial intelligence computing underscores the need for high-throughput parallel processing.
 
 However, once an AI model is trained, it needs to be deployed to make predictions or generate outputs based on new data. This process is called inference. Inference often has different requirements: it needs to be fast, low-latency, and sometimes operate within constrained power budgets or physical spaces, such as embedded systems or mobile devices.
 

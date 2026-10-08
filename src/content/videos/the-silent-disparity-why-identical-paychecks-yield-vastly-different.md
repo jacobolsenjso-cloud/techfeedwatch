@@ -77,7 +77,7 @@ Wealth accumulation impacts social mobility. By providing a pathway to financial
 
 ## What Others Missed
 
-A significant challenge often overlooked in discussions of wealth accumulation is human psychology. "Because the system doesn't feel rewarding in the short term," and "And humans are wired for immediate feedback." Working a job provides immediate payment; saving money provides a sense of immediate safety.
+A significant challenge often overlooked in discussions of wealth accumulation is human psychology. The wealth accumulation system does not feel rewarding in the short term, and humans are wired for immediate feedback. Working a job provides immediate payment; saving money provides a sense of immediate safety.
 
 Investing, however, offers tiny gains and occasional losses for the first few years, creating an experience that often feels disappointing. This lack of instant gratification causes many to stop altogether or, worse, engage in counterproductive behaviors.
 

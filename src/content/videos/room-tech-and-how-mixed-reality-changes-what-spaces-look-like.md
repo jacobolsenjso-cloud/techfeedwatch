@@ -65,7 +65,7 @@ Once standing inside the virtual world, you can turn around, look back through t
 
 As BMFVR points out, the best use case for mixed reality is not just placing isolated digital objects on a rug, but allowing digital worlds to break through into physical space and influence it.
 
-These systems show that spatial interaction works best when digital assets manipulate physical walls. Designers are studying how [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) across enterprise and gaming applications alike.
+These systems show that spatial interaction works best when digital assets manipulate physical walls. Designers are studying [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) across enterprise and gaming applications alike.
 
 ## Can Multiple People Share What Mixed Reality Looks Like?
 

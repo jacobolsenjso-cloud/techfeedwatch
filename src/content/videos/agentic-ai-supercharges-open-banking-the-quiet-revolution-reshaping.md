@@ -78,7 +78,7 @@ Scaling these offers requires access to broader open finance data sets. These in
 
 By embedding services, banks can remain central to transactions. This helps prevent them from being displaced by new fintech competitors.
 
-Different regions have adopted open banking with varying approaches. In the UK, the CMA mandate created a standardized environment. This environment now supports over 12 million active open banking users.
+Different regions have adopted open banking with varying approaches. In the UK, the Competition and Markets Authority (CMA) mandate created a standardized environment. This environment now supports over 12 million active open banking users.
 
 Brazil followed a similar mandatory path. It integrated open banking with its Pix payment system. This drove massive transaction volumes and expanded financial access.
 

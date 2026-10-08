@@ -35,13 +35,13 @@ This fundamental goal means Google actually "don't want people to spend too much
 
 An SEO consultant emphasizes a "red flag" if "anyone says that they know the Google algorithm, the SEO algorithm," noting that professionals "through experimentation, through testing, and through tidbits, will know part of it or a lot of it, but never all of it." The underlying principle, akin to the secret recipe of Coke, is that "the aim of the game is to be relevant."
 
-Effective SEO centers on two key practices. The first, as Peppermint iT Sip ‘n Solve explains, is keyword research. As Louise pointed out, "You just explained the very first step of SEO, Louise, which is what we call keyword research."
+Effective SEO centers on two key practices. The first, as the tech channel Peppermint iT Sip ‘n Solve explains, is keyword research. As host Louise pointed out, "You just explained the very first step of SEO, Louise, which is what we call keyword research."
 
 This initial step involves identifying the exact words and phrases potential customers use when searching for products or services. These "keyword examples" can range from "computer problem" and "computer help" to "managed services," "new computers," or "security."
 
 Keyword research is "the first critical part of the project where you discover find out where all the popularity in terms of the terms are." The second critical practice is, as the source states, "to make sure that your website has those keywords on it."
 
-Consider Google's perspective: if a user searches for "managed IT services," Google would prioritize a website with "10 mentions of managed IT services" over one with "zero mentions." If a website has zero mentions, "Because they're not relevant. Because if the user hits that website, they don't see anything that's related to them. What are they going to do? They're gonna bounce."
+Consider Google's perspective: if a user searches for "managed IT services," Google would prioritize a website with "10 mentions of managed IT services" over one with "zero mentions." If a website has zero mentions, Google does not prioritize it, "Because they're not relevant. Because if the user hits that website, they don't see anything that's related to them. What are they going to do? They're gonna bounce."
 
 This outcome is "not good for Google because users would think that Google has sent them to a poor quality website." This active incorporation of keywords and ensuring content relevance directly impacts visibility and [How SEO Optimization Works Today](/video/seo-optimization-explained-how-modern-search-ranking-functions).
 

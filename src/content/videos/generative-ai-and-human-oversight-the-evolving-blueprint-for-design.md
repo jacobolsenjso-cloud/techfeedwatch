@@ -42,17 +42,17 @@ For a broader understanding of how this differs from other AI applications, cons
 
 The process of applying generative AI to product design typically begins with designers inputting high-level requirements or, as seen at 00:25, Defining the Architectural Style they wish to explore.
 
-Instead of drawing a single design, the AI system is prompted to begin Generating Multiple Design Candidates (as demonstrated at 00:12). This rapid ideation phase, which traditionally consumed significant human effort and time, is compressed as the AI explores a vast solution space.
+Instead of drawing a single design, the AI system is prompted to begin generating multiple design candidates. This rapid ideation phase, which traditionally consumed significant human effort and time, is compressed as the AI explores a vast solution space.
 
-For instance, a FreeCAD AI Generation Process (starting around 00:46) might involve the AI systematically building components. This can include Building the Facade step by step (from 01:23), or even creating highly specific aesthetic elements.
+For instance, a FreeCAD AI generation process might involve the AI systematically building components. This can include Building the Facade step by step (from 01:23), or even creating highly specific aesthetic elements.
 
-As Creditizens - AI Systems for Builders points out, generative AI can precisely elaborate intricate features, such as when AI Creates Sakura Details (at 01:43) for a building facade. This level of detail, generated automatically, demonstrates the AI's capacity to translate abstract style definitions into concrete, complex forms.
+As Creditizens - AI Systems for Builders points out, generative AI can precisely elaborate intricate features, such as creating sakura details for a building facade. This level of detail, generated automatically, demonstrates the AI's capacity to translate abstract style definitions into concrete, complex forms.
 
-The key to effective implementation lies in the Human-in-the-Loop Design Workflow (highlighted at 01:56). Here, AI does not operate in isolation. After generating an initial batch of design candidates, human designers actively engage with the outputs.
+The key to effective implementation lies in a human-in-the-loop design workflow. Here, AI does not operate in isolation. After generating an initial batch of design candidates, human designers actively engage with the outputs.
 
-This engagement involves a Multi-Agent Chorus Evaluation (seen at 02:19), where AI agents might present their designs for assessment or humans directly Scoring Design Candidates (from 03:02) based on predefined criteria, aesthetic appeal, or functional suitability. This feedback loop is essential; human input guides the AI, refining its understanding and steering subsequent generations towards more desirable outcomes.
+This engagement involves a multi-agent chorus evaluation, where AI agents might present their designs for assessment or humans directly score design candidates based on predefined criteria, aesthetic appeal, or functional suitability. This feedback loop is essential; human input guides the AI, refining its understanding and steering subsequent generations towards more desirable outcomes.
 
-Improvements, like those seen in FreeCAD MCP (demonstrated at 01:02), continue to enhance the efficiency and versatility of these AI-powered design systems, leading to better results and a smoother workflow. The aim is Building Controlled AI Engineering Systems (as discussed at 03:21) where the AI acts as an intelligent assistant, expanding the designer's capabilities rather than replacing them.
+Improvements, like those seen in FreeCAD MCP, continue to enhance the efficiency and versatility of these AI-powered design systems, leading to better results and a smoother workflow. The aim is Building Controlled AI Engineering Systems (as discussed at 03:21) where the AI acts as an intelligent assistant, expanding the designer's capabilities rather than replacing them.
 
 ## Who It's For
 
@@ -60,7 +60,7 @@ Generative AI in product design is for anyone involved in creation, from archite
 
 Teams grappling with tight deadlines, high iteration demands, or the need to consider numerous design constraints will find significant value. By offloading the initial concept generation and detail work, designers can focus on higher-level strategic decisions, creative direction, and client interaction.
 
-Individuals or small teams interested in experimenting with these advanced capabilities can find resources to begin. For example, a Free Guide For Local AI Setup (Beginner Friendly) is available through Chikara Houses for those looking to implement AI on their own systems.
+Individuals or small teams interested in experimenting with these advanced capabilities can find resources to begin. For example, a Free Guide For Local AI Setup (Beginner Friendly) is available through the resource platform Chikara Houses for those looking to implement AI on their own systems.
 
 The broader ecosystem includes various agentic nodes that can be plugged into workflows. The Node Code Website offers tools like an Inbox-to-Action Extractor and a Meeting Notes SOP Generator, hinting at a future where AI automates more administrative and preparatory tasks around the core design process.
 

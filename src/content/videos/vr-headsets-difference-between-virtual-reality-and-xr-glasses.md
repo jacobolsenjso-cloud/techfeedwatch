@@ -89,6 +89,6 @@ Buyers must confront what they are actually purchasing. The hardware expense of 
 
 Virtual reality headsets remain entirely unmatched if your goal is genuine spatial presence, motion-tracked room-scale gaming, or shared virtual cinema software. But if your goal is kicking back on a couch, surviving an eight-hour flight, or gaming on a Steam Deck without hunching over a tiny seven-inch LCD, XR glasses are the mathematically and ergonomically superior tool. 
 
-The market has spent years convincing consumers that every wearable face display must become a comprehensive spatial computer. It does not.
+The market has spent years convincing consumers that every wearable face display must become a comprehensive spatial computer. A wearable face display does not need to be a comprehensive spatial computer.
 
 By dropping the pretense of full spatial computing, XR glasses solve the real problem: giving you a high-definition 174-inch screen you can fold up and slip into a coat pocket. Choose the tool that matches your friction tolerance, not the industry hype cycle.

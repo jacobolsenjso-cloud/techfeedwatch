@@ -35,7 +35,7 @@ The answer, at least for the short term, involves a nuanced approach to extended
 ## Key Takeaways
 
 * **Extended Lifeline:** Microsoft has extended free security updates for Windows 10 for an additional 1 year, pushing the official end date to October 2027, primarily due to the significant number of users still on the older OS.
-* **Quiet Announcement:** The extension was not made via a major announcement but was quietly added as a one-line editor's note in an old blog post, a detail first caught by Windows Latest.
+* **Quiet Announcement:** The extension was not made via a major announcement but was quietly added as a one-line editor's note in an old blog post, a detail first caught by the tech news site Windows Latest.
 * **Conditional "Free" Patches:** Access to these extended security patches is contingent on one of three methods: backing up data to a Microsoft account, a $30 payment, or redeeming 1,000 Microsoft Rewards points.
 * **Strategic Deferment:** This extension buys both Microsoft and its users more time, allowing for a more gradual transition to Windows 11 while maintaining essential security protocols for a widely used operating system.
 

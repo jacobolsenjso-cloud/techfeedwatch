@@ -59,7 +59,7 @@ They are currently available in over 120 countries, though not in the US. This g
 
 Robinhood's stock tokens are backed one-to-one, meaning that in a worst-case scenario, customers retain ownership of the underlying assets. While they do not confer voting rights, holders receive dividends and benefit from corporate actions. This structure addresses early concerns about asset safety.
 
-The 24/7 availability provides investors with the flexibility to react to global events outside of standard market hours, offering new ways to manage or hedge portfolios. These stock tokens can also be used as collateral on decentralized exchanges (DEXs) and with partners like Lyra for perpetual contracts, enabling more complex trading strategies.
+The 24/7 availability provides investors with the flexibility to react to global events outside of standard market hours, offering new ways to manage or hedge portfolios. Robinhood's stock tokens can also be used as collateral on decentralized exchanges (DEXs) and with partners like derivatives platform Lyra for perpetual contracts, enabling more complex trading strategies.
 
 ## The Future Vision: Tokenization and AI Integration
 
@@ -73,6 +73,6 @@ This initiative caters to customers interested in building automated trading str
 
 Regulatory clarity, particularly in the US, is a major factor for Robinhood's blockchain ambitions. The company believes that a level playing field is essential to ensure that customers across all states can access the same features. The ongoing debate surrounding stablecoin yield, for instance, is seen as hindering the adoption of blockchain technology for its inherent benefits like 24/7 transfers.
 
-Robinhood is also actively pursuing international expansion for its centralized services. It recently launched in Canada, offering fee-free trading for up to 50 assets, following its acquisition of WonderFi. The company has also secured a license in Singapore.
+Robinhood is also actively pursuing international expansion for its centralized services. Robinhood recently launched in Canada, offering fee-free trading for up to 50 assets, following its acquisition of crypto platform WonderFi. The company has also secured a license in Singapore.
 
 Expanding globally requires large effort, including obtaining many licenses and adapting products to meet the unique needs, tax regulations, and payment systems of different countries. This international push aligns with Robinhood's broader goal of making financial markets more accessible worldwide.

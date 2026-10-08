@@ -59,7 +59,7 @@ However, that mathematical capability introduces severe security consequences fo
 
 This exposure has created an immediate security challenge known as the "harvest now, decrypt later" strategy. Adversaries can record and store massive volumes of encrypted traffic today, waiting for the day functional quantum hardware becomes available to open up the data.
 
-As research from SaM Solutions notes, the window to deploy quantum-resistant cryptographic standards is shrinking, driving international defense organizations to establish mandatory migration timelines. To understand the broader systemic risks to secure networks, explore [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained).
+As research from IT consulting and software development company SaM Solutions notes, the window to deploy quantum-resistant cryptographic standards is shrinking, driving international defense organizations to establish mandatory migration timelines. To understand the broader systemic risks to secure networks, explore [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained).
 
 ## The Reality of Scale: Noise, Decoherence, and the NISQ Era
 

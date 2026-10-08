@@ -47,7 +47,7 @@ Classical server rooms balance airflow and liquid loops for heat dissipation, wh
 
 Cryogenic scaling faces hard physical limits. A 2026 paper from Oak Ridge National Laboratory pointed out that scaling superconducting systems faces supply bottlenecks around helium-3, an isotope required to hit millikelvin temperatures, long before hitting architectural limits.
 
-As Quantum City points out, what the industry is witnessing is every data center built on classical computing assumptions being handed an expiration date, forcing operators to reconsider facility design.
+As the YouTube channel Quantum City points out, what the industry is witnessing is every data center built on classical computing assumptions being handed an expiration date, forcing operators to reconsider facility design.
 
 Hardware vendors are pursuing distinct engineering approaches to overcome these physical barriers:
 

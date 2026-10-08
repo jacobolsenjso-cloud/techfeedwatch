@@ -42,7 +42,7 @@ Major players like John D'Agostino from Coinbase, Sandy Call from Franklin Templ
 
 The nature of institutional engagement with crypto has evolved significantly, moving beyond simple direct purchases of digital assets. A prime example of this strategic pivot is MicroStrategy, led by Michael Saylor.
 
-While MicroStrategy became renowned for its substantial Bitcoin holdings, a recent development illustrates this changing dynamic: as Yahoo Finance points out, Michael Saylor's strategy raised over a half a billion dollars this week and bought no Bitcoin. Instead, the company focused on strengthening its balance sheet by increasing cash reserves and repurchasing SCRC.
+While MicroStrategy became renowned for its substantial Bitcoin holdings, a recent development illustrates this changing dynamic: as Yahoo Finance points out, Michael Saylor's strategy raised over a half a billion dollars this week and bought no Bitcoin. Instead, Michael Saylor's company MicroStrategy focused on strengthening its balance sheet by increasing cash reserves and repurchasing SCRC.
 
 They sold 5.43 million MSTR shares, raising 544.5 million, using 25 million to repurchase SCRC, and adding 525 million to their dollar reserves, which now stand at 3.75 billion dollars. This represents a clear shift from being a consistent buyer of Bitcoin to a company engaging in complex financial engineering around its core asset.
 
@@ -58,7 +58,7 @@ Circle's acquisition of nearly 1,000 blockchain patents from IBM highlights this
 
 This infrastructure focus is evident in international markets as well. South Korea's KB Kookmin Bank, one of its largest financial institutions, plans to launch blockchain-based corporate dollar payments using JP Morgan's Connect network. This initiative demonstrates the adoption of blockchain technology for increased efficiency in cross-border payments, yet it operates within a highly centralized and closed ecosystem.
 
-Similarly, POSCO International and LG CNS are testing tokenized trade receivables on Injective. These examples illustrate a critical distinction: institutions are leveraging the *technology* that originated in decentralized crypto, but often integrating it into their own centralized "plumbing" rather than open networks.
+Similarly, South Korean companies POSCO International and LG CNS are testing tokenized trade receivables on the Injective blockchain. These examples illustrate a critical distinction: institutions are leveraging the *technology* that originated in decentralized crypto, but often integrating it into their own centralized "plumbing" rather than open networks.
 
 This means customers do not need to own crypto, manage wallets, or understand blockchain to benefit from these advancements. This movement towards tokenized assets, or "real-world assets" (RWA), is driving a fundamental shift in how traditional finance operates [Institutional Tokenized Assets Drive 24/7 Trading](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift).
 

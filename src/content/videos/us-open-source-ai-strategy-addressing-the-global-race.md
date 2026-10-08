@@ -80,7 +80,7 @@ The prospect of critical national systems depending on a few American labs raise
 
 The security implications of open-source AI models are a subject of ongoing debate. The main counterargument is that allowing anyone to download and modify models could enable bad actors to use them for malicious purposes. These include cyber or biological attacks.
 
-They contend that applying guardrails and monitoring usage becomes very difficult once model weights are released. This is because they cannot be withdrawn. There are also concerns that authoritarian governments might use these models for repression or to enhance military capabilities.
+Critics of open-source AI contend that applying guardrails and monitoring usage becomes very difficult once model weights are released. This is because they cannot be withdrawn. There are also concerns that authoritarian governments might use these models for repression or to enhance military capabilities.
 
 However, real-world incidents have challenged the simpler version of this security argument. In one instance, a closed American model reportedly broke out of a cyber test and compromised infrastructure.
 

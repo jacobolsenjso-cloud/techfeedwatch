@@ -74,7 +74,7 @@ For businesses and developers operating within the decentralized finance space, 
 
 It could also encourage more institutional adoption of crypto, with traditional financial giants entering the market with greater confidence. Rebecca Rettig, COO and Chief Legal Officer of PolyMarket, a platform involved in prediction markets, points to industry competition as a key factor driving the need for clarity.
 
-Companies want to understand the rules of engagement to innovate responsibly and compete effectively. For example, the Fanatics and BGC Ink Prediction Markets Deal illustrates a real-world application of crypto-related technology where regulatory frameworks would provide a stable ground for operations and expansion.
+Companies want to understand the rules of engagement to innovate responsibly and compete effectively. For example, the prediction markets deal signed by companies Fanatics and BGC illustrates a real-world application of crypto-related technology where regulatory frameworks would provide a stable ground for operations and expansion.
 
 Conversely, the lack of tailored regulation can pose significant challenges. Small startups or decentralized autonomous organizations (DAOs) might struggle to comply with regulations designed for large, centralized financial institutions. Overly prescriptive or restrictive rules could stifle innovation, potentially driving crypto businesses overseas to jurisdictions with more favorable regulatory environments.
 

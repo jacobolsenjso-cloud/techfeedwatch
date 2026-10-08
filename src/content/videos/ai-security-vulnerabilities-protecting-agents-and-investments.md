@@ -44,8 +44,8 @@ The specific risks for enterprise SaaS AI companies and their vulnerabilities ar
 
 ## The Bottom Line
 
-The increasing frequency and sophistication of AI-driven incidents are reshaping investor expectations and necessitating more stringent security protocols. Security questions are becoming standard inquiries during due diligence for AI investments. As Indy Pixels Ventures points out, investors should ask critical questions about data rights, box confinement, dependencies, access keys, and incident management.
+The increasing frequency and sophistication of AI-driven incidents are reshaping investor expectations and necessitating more stringent security protocols. Security questions are becoming standard inquiries during due diligence for AI investments. As venture capital firm Indy Pixels Ventures points out, investors should ask critical questions about data rights, box confinement, dependencies, access keys, and incident management.
 
 This reflects a broader understanding that trust in AI providers is shifting due to security incidents, influencing sales and regulations. Transparency in incident management is vital, as demonstrated by Hugging Face's clear communication following their security incident.
 
-Implementing a solid security framework, such as The Containment Gap's 5-check framework, becomes essential. Ultimately, security-conscious companies will earn trust and achieve greater success in the burgeoning AI market. [AI Powered Cyberattacks Are Transforming Digital Security](/video/ai-hacking-autonomous-agents-threaten-corporate-networks), making proactive measures indispensable.
+Implementing a solid security framework, such as cybersecurity guide The Containment Gap's 5-check framework, becomes essential. Ultimately, security-conscious companies will earn trust and achieve greater success in the burgeoning AI market. [AI Powered Cyberattacks Are Transforming Digital Security](/video/ai-hacking-autonomous-agents-threaten-corporate-networks), making proactive measures indispensable.

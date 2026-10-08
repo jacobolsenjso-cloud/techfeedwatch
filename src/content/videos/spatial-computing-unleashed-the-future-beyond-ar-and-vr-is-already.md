@@ -35,7 +35,7 @@ This advanced technology enables digital content to not only appear in our physi
 
 For years, technology has pushed us beyond flat screens, introducing new terms and experiences that sometimes blur. Understanding spatial computing begins with differentiating it from its predecessors: Virtual Reality (VR) and Augmented Reality (AR).
 
-Virtual Reality, or VR, is designed for complete immersion. When a user like Max Kahn puts on a VR headset, they are transported into an entirely different, virtual universe.
+Virtual Reality, or VR, is designed for complete immersion. When a user like tech enthusiast Max Kahn puts on a VR headset, they are transported into an entirely different, virtual universe.
 
 Devices such as the Oculus Quest or experiences like The Void exemplify VR’s strength in providing an escape into a digital world, making it ideal for simulations or pure entertainment where real-world distractions are undesirable. [How VR Hand Tracking Drives Mainstream VR Adoption](/video/the-unseen-revolution-why-natural-hand-tracking-is-vr-s-missing-link) is an area that aims to improve this immersion further.
 

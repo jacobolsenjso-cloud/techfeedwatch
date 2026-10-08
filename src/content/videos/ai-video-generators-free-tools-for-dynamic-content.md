@@ -37,7 +37,7 @@ These tools operate by interpreting prompts—whether text or images—to constr
 
 For example, some generators can create product ads from a single photo, injecting motion and dynamic elements. Others specialize in producing talking AI avatars with diverse voices and languages, which can be invaluable for explainer videos or virtual presentations.
 
-More advanced setups allow users to build simple node-based AI video workflows, providing greater control over the video generation process. Higgsfield, for instance, integrates the Gemini Omni Flash model, which can generate and edit videos with sound and respond to prompts to change backgrounds, text, objects, colors, and multiple elements in complex scenes while preserving the rest of the original video.
+More advanced setups allow users to build simple node-based AI video workflows, providing greater control over the video generation process. The AI video generator Higgsfield, for instance, integrates the Gemini Omni Flash model, which can generate and edit videos with sound and respond to prompts to change backgrounds, text, objects, colors, and multiple elements in complex scenes while preserving the rest of the original video.
 
 ## What AI Video Generators Deliver
 

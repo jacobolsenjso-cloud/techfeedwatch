@@ -42,7 +42,7 @@ High-speed machines then integrate essential components into each server, includ
 
 Every cable is meticulously routed to maximize airflow and ensure reliability. Before any AI server enters a data center, it faces intense testing, running processors at full capacity, stressing memory, verifying storage, and using thermal cameras and AI-powered inspection systems to find imperfections.
 
-Only after passing hundreds of quality checks does a server earn approval. This rigorous process highlights why 'What looks like an ordinary metal box is actually one of the world's most powerful computing machines.' [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) by handling such processing loads.
+Only after passing hundreds of quality checks does a server earn approval. This rigorous process highlights why 'What looks like an ordinary metal box is actually one of the world's most powerful computing machines.' The video [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) explains how specialized AI chips operate by handling such processing loads.
 
 ## What Changed
 

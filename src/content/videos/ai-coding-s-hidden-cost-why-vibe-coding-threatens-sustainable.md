@@ -58,7 +58,7 @@ AI coding tools primarily serve two main groups: experienced developers seeking 
 
 They can accelerate coding speed, automate mundane tasks, and even suggest improvements or identify potential bugs, allowing developers to allocate more time to complex architectural challenges and creative problem-solving.
 
-This aligns with the idea of AI as a magnifier, making experts more efficient and effective. Experienced developers often find that AI assists them in adopting [Are AI Coding Skills Transforming Software Development?](/video/how-ai-is-reshaping-developer-productivity-and-the-future-of-code) that reshape their workflows.
+This aligns with the idea of AI as a magnifier, making experts more efficient and effective. Experienced developers often find that AI assists them in adopting coding skills that reshape their workflows, as discussed in [Are AI Coding Skills Transforming Software Development?](/video/how-ai-is-reshaping-developer-productivity-and-the-future-of-code).
 
 Conversely, the use of AI coding tools by non-experts presents a more complex picture. While such tools lower the barrier to entry for programming and enable individuals to "sketch up an idea" quickly, this often comes at a cost.
 

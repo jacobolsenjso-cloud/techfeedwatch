@@ -42,7 +42,7 @@ Accessing the interface begins at chatgpt.com. Users who previously relied on th
 
 The process breaks down when users treat coding blocks like standard text blocks. In writing modes, asking for a blank block produces an immediate typing canvas. In contrast, if you ask for a blank coding block, it gives you something you can't do anything with.
 
-As interface testing shows, so if you want to do coding, you have to ask for a coding block, and you have to specify which language you want, or you won't even get a working block. Prompting the system with a phrase such as "Create a coding block where I can write Python code" triggers the proper interactive component.
+As interface testing shows, if you want to write code, you must ask for a coding block and specify which language you want, or you will not receive a functional block. Prompting the system with a phrase such as "Create a coding block where I can write Python code" triggers the proper interactive component.
 
 Even after generating a functional block, the interface enforces a distinct transition before accepting edits. Users cannot type directly into the block on the main chat page. Once you get a working block, you have to click on "Run" before you can actually do anything.
 
@@ -62,10 +62,10 @@ But as scripts grow to 50 lines or 400 lines, manual line counting becomes unman
 
 Attempting to resolve this limitation through prompting creates worse technical complications. When users ask ChatGPT, "Can you provide a Python coding block with numbered lines?", the response explains that markdown code blocks themselves don't support automatic line numbering.
 
-When the model attempts a workaround by inserting numbers into the buffer, you can't run any code with those numbers there, because every number there's a syntax error, failing immediately with invalid syntax, line 1. Even when provided with a blank template with numbers, the result is identical, breaking execution and preventing clean copy-pasting.
+When the model attempts a workaround by inserting numbers into the buffer, the code cannot be executed because each number triggers a syntax error, failing immediately with "invalid syntax, line 1". Even when provided with a blank template with numbers, the result is identical, breaking execution and preventing clean copy-pasting.
 
 ## Why This Matters
-OpenAI phased out Canvas across its newer 5-5 models, fundamentally altering how casual users and developers interact with generated code.
+OpenAI phased out Canvas, its interactive writing and coding workspace, across its newer 5-5 models, fundamentally altering how casual users and developers interact with generated code.
 
 Canvas allowed bi-directional co-editing: the user could highlight code snippets, ask the model to refactor targeted functions, and edit variables directly in place. Replacing that workflow with isolated coding blocks reflects a push toward chat-centric simplicity, but it sacrifices developer control.
 

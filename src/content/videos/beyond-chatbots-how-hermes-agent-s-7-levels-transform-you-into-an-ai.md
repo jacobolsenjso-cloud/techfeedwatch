@@ -32,7 +32,7 @@ rewrittenAt: "2026-08-17"
 
 The distinction between [AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) and chatbots lies in their basic purpose and what they can do. Chatbots like ChatGPT or Claude are designed for conversational interaction.
 
-They respond to queries and generate text. AI agents are built to go further. An AI agent, such as Hermes, autonomously executes complex tasks.
+They respond to queries and generate text. AI agents are built to go further. An AI agent, such as the AI assistant Hermes, autonomously executes complex tasks.
 
 It leverages external tools and performs actions on behalf of the user. This moves beyond mere dialogue to tangible outcomes.
 

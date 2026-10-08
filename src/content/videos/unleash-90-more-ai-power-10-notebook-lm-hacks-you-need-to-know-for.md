@@ -51,7 +51,7 @@ Second, prompt the AI to create a comprehensive master briefing document, specif
 
 **Engaging with Interactive Audio Podcasts** While NotebookLM can generate audio podcasts from documents, passive listening limits retention. To truly enhance active learning, customize the AI hosts and activate interactive mode. Before generating audio, users can input prompts such as "Act like a strict professor teaching a struggling student" or even instruct them to debate like rival CEOs.
 
-Interactive mode then allows users to literally interrupt the AI hosts live while they are speaking, asking questions, demanding new examples, or challenging explanations on the fly. This turns the audio experience into, as Ai Podcast puts it, "literally a podcast that you can talk back to," fostering a more dynamic and personalized learning environment.
+Interactive mode then allows users to literally interrupt the AI hosts live while they are speaking, asking questions, demanding new examples, or challenging explanations on the fly. This turns the audio experience into, as the YouTube channel Ai Podcast puts it, "literally a podcast that you can talk back to," fostering a more dynamic and personalized learning environment.
 
 **Establishing Cross-Notebook AI Analysis with Gemini** The "silo effect," where different notebooks for market research or customer feedback remain isolated, forces manual data correlation. To overcome this, link NotebookLM with Gemini.
 

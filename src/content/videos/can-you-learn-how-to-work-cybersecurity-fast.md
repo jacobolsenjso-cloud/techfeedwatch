@@ -57,7 +57,7 @@ Every defensive tool, firewall rule, and intrusion detection system analyzes net
 * **Addressing and Subnetting:** Calculating IPv4 and IPv6 address spaces, identifying network boundaries, and troubleshooting routing loops across subnets.
 * **Core Services:** Diagnosing Domain Name System (DNS) query poisoning, Dynamic Host Configuration Protocol (DHCP) starvation, and Address Resolution Protocol (ARP) spoofing.
 
-These fundamentals support the infrastructure powering enterprise environments. Mastering these protocol mechanics enabled practitioners to land high-compensation infrastructure engineering roles, including a 350k tech job at Arista Networks. Understanding what a [Cybersecurity Analyst: What the Role Really Entails](/video/analyst-what-a-cybersecurity-professional-actually-does) begins with auditing these raw network streams.
+These fundamentals support the infrastructure powering enterprise environments. Mastering these protocol mechanics enabled practitioners to land high-compensation infrastructure engineering roles, including a 350k tech job at Arista Networks. Understanding [Cybersecurity Analyst: What the Role Really Entails](/video/analyst-what-a-cybersecurity-professional-actually-does) begins with auditing these raw network streams.
 
 ### 2. Multi-Platform Operating System Environments
 

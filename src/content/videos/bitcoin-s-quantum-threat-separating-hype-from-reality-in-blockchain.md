@@ -58,7 +58,7 @@ In such a scenario, the attacker could effectively control the network, censor t
 
 The timeline for "Q Day," the hypothetical moment when a quantum machine can successfully crack Bitcoin's cryptography, is a subject of ongoing debate. One popular fear is that “Q Day,” where a quantum machine cracks Bitcoin’s cryptography, is closer than we think. Others insist it’s still decades away.
 
-According to a report from asset manager Ark Invest and crypto news outlet Unchained, the full extent of quantum capability is a journey, as discussed in "4:36 Quantum Computing Capability Is A Journey." The specific report, titled ARKInvest-Unchained_White Paper_BitcoinAndQuantumComputing_Final (1).pdf, explores these timelines and potential impacts.
+According to a report from asset manager Ark Invest and crypto news outlet Unchained, the full extent of quantum computing capability is an ongoing journey. The specific report, titled ARKInvest-Unchained_White Paper_BitcoinAndQuantumComputing_Final (1).pdf, explores these timelines and potential impacts.
 
 As Coin Bureau points out, "The biggest existential threat to Bitcoin isn’t regulation or volatility - it’s quantum computing," highlighting the severity of this future challenge. However, the current state of quantum technology means that the immediate risk remains low, as existing quantum computers lack the necessary qubit count and error correction capabilities for such large-scale attacks.
 
@@ -76,7 +76,7 @@ Users who generate new addresses for each transaction and move funds quickly mig
 
 The objective is to upgrade Bitcoin's protocols to become "quantum-resistant" before the threat becomes practical. This includes research into various post-quantum signature schemes and hashing algorithms.
 
-**Financial Institutions and Regulators:** As Bitcoin and other cryptocurrencies become increasingly integrated into the global financial system, the stability and security of these assets are paramount. Financial institutions and regulators are closely monitoring the development of quantum computing and its potential impact on digital asset security to inform future policies and investment strategies, addressing "9:34 Important Questions For Investors."
+**Financial Institutions and Regulators:** As Bitcoin and other cryptocurrencies become increasingly integrated into the global financial system, the stability and security of these assets are paramount. Financial institutions and regulators are closely monitoring the development of quantum computing and its potential impact on digital asset security to inform future policies and investment strategies, addressing important questions for investors.
 
 Ark Invest and Unchained, through their collaborative research, contribute to this understanding by providing valuable analysis for investors. For those interested in the broader commercialization and application of quantum technology, [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) provides additional context.
 

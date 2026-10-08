@@ -78,7 +78,7 @@ By proactively simulating attacks, businesses gain an unparalleled understanding
 
 The global demand for offensive security skills is booming. Professionals in this field, whether working as dedicated red team operators simulating advanced attacks or as cybersecurity engineers building stronger architectures, become the proactive shields the market desperately needs.
 
-Oon and Vemula emphasize that ethical hackers serve as defenders who help organizations strengthen security rather than compromise it. By understanding how adversaries think, operate, and exploit systems, these professionals fundamentally reduce business risk and build resilience. They are, in essence, the ultimate modern defenders.
+Cybersecurity experts Oon and Anand Vemula emphasize that ethical hackers serve as defenders who help organizations strengthen security rather than compromise it. By understanding how adversaries think, operate, and exploit systems, these professionals fundamentally reduce business risk and build resilience. They are, in essence, the ultimate modern defenders.
 
 ## The Bottom Line
 

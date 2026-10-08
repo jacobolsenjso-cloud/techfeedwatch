@@ -75,7 +75,7 @@ While both are immersive technologies, AR layers digital information onto the re
 
 Another significant area where people err is underestimating the friction associated with traditional app downloads. The video highlights this problem: many compelling AR experiences fail to reach a broad audience because users are reluctant to download a new app for a single interaction.
 
-This "app fatigue" is precisely what WebAR addresses by removing the download barrier, making AR instantly accessible. This changes the dynamics for marketing campaigns, educational modules, and quick interactive product views, as discussed in What Augmented Reality Means Today for Users.
+This "app fatigue" is precisely what WebAR addresses by removing the download barrier, making AR instantly accessible. This changes the dynamics for marketing campaigns, educational modules, and quick interactive product views, as discussed in the video What Augmented Reality Means Today for Users.
 
 Users often have unrealistic expectations about the fidelity and persistence of AR experiences on current consumer hardware. While technology progresses rapidly, truly photorealistic, perfectly occluded, and persistently anchored digital objects are still challenging to achieve outside of controlled environments or with specialized, high-end devices.
 

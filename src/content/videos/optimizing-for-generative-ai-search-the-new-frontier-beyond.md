@@ -36,7 +36,7 @@ The goal is to optimize content for AI search engines, which prioritize semantic
 
 For two decades, online visibility primarily meant ranking high on Google's traditional search results. However, a major change is underway as a large share of people now bypass traditional search engines entirely, opting to ask AI directly.
 
-AI overviews, which generate concise answers and recommendations, already reach 2 billion people each month, and AI mode passed 1 billion monthly users in its first year. Platforms like ChatGPT are fielding 900 million questions a week.
+Search engine AI overviews, which generate concise answers and recommendations, already reach 2 billion people each month, and AI mode passed 1 billion monthly users in its first year. Platforms like ChatGPT are fielding 900 million questions a week.
 
 This shift has created a new "front page" for online discovery: the short, named lists of sites recommended by AI. This represents a fresh opportunity for businesses, similar to the early days of search engine optimization (SEO).
 

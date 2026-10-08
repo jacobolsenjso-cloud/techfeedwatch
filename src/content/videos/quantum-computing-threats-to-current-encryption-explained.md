@@ -46,7 +46,7 @@ This is a substantial reduction from previous estimates. This particular algorit
 
 Adding to the complexity, a startup named Oratomic is exploring alternative qubit technologies, specifically arrays of atoms. They say they could do it with merely 26,000 qubits in about 10 days, presenting another avenue for accelerated progress.
 
-A separate quantum cryptography paper revealed an algorithmic improvement that shows that they can break RSA with 10 times fewer qubits than we originally thought.
+A separate quantum cryptography paper revealed an algorithmic improvement showing that quantum computers can break the widely used RSA encryption standard with 10 times fewer qubits than originally thought.
 
 The speed of these developments has prompted serious ethical discussions among researchers. As computer scientist Scott Aaronson highlighted, "Things in the quantum cryptography area happening so fast now that researchers in the field are discussing whether it's still okay to even publish such papers because of the huge geopolitical risk."
 

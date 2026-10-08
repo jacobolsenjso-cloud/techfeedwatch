@@ -38,7 +38,7 @@ Tan's motivation stems from his own experience coding more in the past 2 months 
 
 The core principle behind G-Stack is to replicate human team dynamics—roles, process, and review—to effectively manage AI agents. It functions as a "thin harness fat skills" approach, providing just enough structure to allow the LLM's capabilities to shine without unnecessary scaffolding.
 
-G-Stack integrates with tools like Conductor to make this accessible. For example, a user can initiate a project, such as building a tax app to fetch 1099s from Gmail, through G-Stack's skills.
+G-Stack, an open-source framework developed by Y Combinator CEO Garry Tan, integrates with tools like Conductor to make this approach accessible. For example, a user can initiate a project, such as building a tax app to fetch 1099s from Gmail, through G-Stack's skills.
 
 One of G-Stack's most distinctive features is "Office Hours," a skill directly modeled after the intensive product thinking sessions conducted at Y Combinator. This AI-driven mentorship incorporates the distilled wisdom from thousands of hours spent by 16 YC partners, presenting a 10% strength version of their process.
 

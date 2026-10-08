@@ -47,7 +47,7 @@ The fundamental distinction between an AI agent and automation hinges on the pre
 
 So, put simply, it's like a digital employee that can think, remember, and get things done. This definition highlights its capacity for independent thought and flexible operation.
 
-Consider a simple automation example: A scheduled process checks the weather on Open Weather Map every morning and then sends an email with a summary. It just follows the rule and does it every time. Definitely not an agent.
+Consider a simple automation example: A scheduled process checks the weather on Open Weather Map every morning and then sends an email with a summary. It just follows the rule and does it every time. This type of simple rule-following automation is definitely not an AI agent.
 
 This process is entirely rule-based; it executes steps A, B, and C in a fixed order without any decision-making or adaptation to new information. Even when automations get more complex, like one that pulls the top posts from six different AI subreddits, merges them, uses ChatGPT to pick the best ones, and then sends an email with the top 10 summarized, it remains a static rule-based process.
 

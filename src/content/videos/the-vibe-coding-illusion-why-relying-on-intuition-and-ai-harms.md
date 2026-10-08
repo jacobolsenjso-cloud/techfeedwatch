@@ -72,7 +72,7 @@ Vibe coding often creates a false sense of efficiency. An AI might generate code
 
 Developers might spend 90 minutes debugging edge cases that the AI did not consider. Another hour could go into refactoring the code to fit existing architectural patterns.
 
-Then, 3 hours might be spent in production fixing issues that were unforeseen. The total time spent can easily exceed what it would have taken. Writing the code with full understanding from the start would have been faster.
+Then, 3 hours might be spent in production fixing issues that were unforeseen. The total time spent can easily exceed what it would have taken to write the code with full understanding from the start. Writing the code with full understanding from the start would have been faster.
 
 A senior developer, by contrast, might take an hour to write the same feature. But when a bug appears, they can often fix it in 5 minutes. This is because they build a complete mental model of the system while coding.
 

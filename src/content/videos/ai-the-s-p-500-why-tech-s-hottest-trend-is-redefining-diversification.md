@@ -78,7 +78,7 @@ Sector-specific ETFs or actively managed funds that target undervalued sectors o
 
 Adopting a proactive approach to investment risk management is more critical than ever. This includes regularly reviewing asset allocation, understanding the underlying components of any index funds held, and being prepared to adjust strategies in response to changing market conditions.
 
-As Nischa cautions, "Why panic selling destroys long term returns," emphasizing the need for a well-thought-out strategy that can weather market fluctuations without impulsive reactions. However, it's important to remember that Nischa does not provide tax or investment advice, underscoring the necessity for individual investors to conduct their own due diligence or consult with qualified financial professionals.
+As Nischa cautions, panic selling destroys long-term returns, emphasizing the need for a well-thought-out strategy that can weather market fluctuations without impulsive reactions. However, it's important to remember that Nischa does not provide tax or investment advice, underscoring the necessity for individual investors to conduct their own due diligence or consult with qualified financial professionals.
 
 Developing a strategic framework for managing financial exposure parallels the proactive methodologies employed in other complex domains, such as the comprehensive risk management strategies outlined in [What Is a Proactive Approach in Cyber Security for Business?](/video/cybersecurity-risk-management-essential-enterprise-strategies).
 

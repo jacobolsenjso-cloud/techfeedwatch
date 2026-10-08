@@ -77,7 +77,7 @@ On the 2nd of June, Microsoft announced that they had increased the qubit lifeti
 
 Achieving that transition required extraordinary chemical control. Lead is notorious for contaminating semiconductor fabrication chambers and clumping unpredictably.
 
-Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. With each operation taking 1 microsecond, the Majorana 2 can perform 20 million operations before any error has a realistic chance of occurring.
+Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. With each operation taking 1 microsecond, Microsoft's Majorana 2 topological test device can perform 20 million operations before any error has a realistic chance of occurring.
 
 To quote Microsoft, "the probability of any unintended parity flip during a typical qubit operation becomes effectively negligible." What this actually means is that for the first time qubit lifetime isn't the problem standing between us and a useful quantum computer.
 

@@ -69,7 +69,7 @@ As NGT Academy points out, the educational field reflects these differences. Sof
 
 This lower supply against massive demand contributes directly to the higher long-term earning potential and job security. Cybersecurity portfolios also often feature concrete achievements like bug bounties, capture the flag competition wins, and real security research, providing tangible proof of skill.
 
-This stands in contrast to many software engineering graduates, who often build the same project portfolio of to-do apps, weather apps, and e-commerce clones, which often look identical. For modern enterprises, [Zero Trust Security Shrinks Enterprise Network Attack Surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks), demonstrating how strategic security initiatives create ongoing demand for specialized skills.
+This stands in contrast to many software engineering graduates, who often build the same project portfolio of to-do apps, weather apps, and e-commerce clones, which often look identical. For modern enterprises, [zero trust security shrinks enterprise network attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks), demonstrating how strategic security initiatives create ongoing demand for specialized skills.
 
 ## Who It's For
 

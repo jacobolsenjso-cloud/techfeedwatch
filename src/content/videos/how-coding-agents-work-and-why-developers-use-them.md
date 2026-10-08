@@ -51,7 +51,7 @@ Configuring this was impossible through simple application settings menus becaus
 
 Beyond writing code, coding agents handle the friction of environment configuration and deployment pipelines. After completing the feature modifications, the agent generated a functional package build file, producing a compressed zst archive ready for system installation.
 
-It laid out the instructions for publishing the custom package to the AUR so that local package managers like yay could install updates smoothly. Whenever upstream [Shotcut](https://www.shotcut.org/) developers release an official update, maintaining the customized build requires only running git rebase, resolving any version conflicts with the agent, and recompiling the package.
+The coding agent laid out the instructions for publishing the custom package to the Arch User Repository (AUR) so that local package managers like yay could install updates smoothly. Whenever upstream [Shotcut](https://www.shotcut.org/) developers release an official update, maintaining the customized build requires only running git rebase, resolving any version conflicts with the agent, and recompiling the package.
 
 This dynamic drastically alters the economics of maintaining forks. Historically, maintaining a custom version of an open-source application meant taking on an unsustainable maintenance burden. Upstream projects frequently reject niche pull requests to protect their core scope.
 

@@ -107,7 +107,7 @@ This indicates a potential long-term uptrend. Conversely, a "death cross" occurs
 
 Finally, **Bollinger Bands** consist of a middle moving average band and two outer bands that expand and contract with volatility. The outer bands show potential price extremes.
 
-When BTC trades above the middle band, it suggests a short-term bullish trend. Below it, a short-term bearish trend. A "squeeze," where the outer bands narrow, often foreshadows a major price movement.
+When BTC trades above the middle band, it suggests a short-term bullish trend. When BTC trades below the middle band, it suggests a short-term bearish trend. A "squeeze," where the outer bands narrow, often foreshadows a major price movement.
 
 ## Beyond Bitcoin: Altcoins and Advanced Risks
 

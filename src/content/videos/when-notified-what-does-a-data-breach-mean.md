@@ -34,7 +34,7 @@ Receiving notice of an intrusion signals that personal identities, financial rec
 
 At its core, a data breach represents a breakdown in boundary control. Attackers exploit software vulnerabilities, phished credentials, or misconfigured storage buckets to bypass digital perimeters and touch confidential records. Understanding [how does a data leak happen and how to prevent it](/video/how-does-a-data-leak-happen-and-how-to-prevent-it) helps identify why perimeter controls fail.
 
-When companies suffer an intrusion, they send out notification letters packed with defensive corporate wording. Northgate got a letter in June. It ran to about 400 words, and it took Denise three readings to work out whether anything had actually happened.
+When companies suffer an intrusion, they send out notification letters packed with defensive corporate wording. The company Northgate got a notification letter in June. It ran to about 400 words, and it took employee Denise three readings to work out whether anything had actually happened.
 
 Translating these statements reveals what security teams actually uncovered:
 
@@ -42,7 +42,7 @@ Translating these statements reveals what security teams actually uncovered:
 - "We have no evidence of misuse" means nobody has yet found the data being used. It does not mean it has not been. Absence of evidence is doing a lot of quiet lifting in that sentence.
 - "Out of an abundance of caution" usually means they are legally required to tell you, and would prefer it read as courtesy.
 
-Statements regarding encryption also create severe misunderstandings. "The data was encrypted".
+Statements regarding encryption also create severe misunderstandings. Notifications often state, "The data was encrypted."
 
 That can mean the stolen files are unreadable, which is genuinely reassuring. Or it can mean the disks were encrypted while switched off, and the attacker was inside a running system where everything is decrypted by definition.
 
@@ -52,11 +52,11 @@ Incident disclosure operates under strict regulatory clocks rather than forensic
 
 That statutory timer starts ticking the moment an engineer spots the anomaly, not when forensic analysts conclude their review.
 
-What you are not allowed to do is wait until the picture is clear, because the picture is frequently not clear for another fortnight. As Human Error points out, companies must report in phases, detailing confirmed facts while running simultaneous investigations to uncover missing evidence.
+What you are not allowed to do is wait until the picture is clear, because the picture is frequently not clear for another fortnight. As the channel Human Error points out, companies must report in phases, detailing confirmed facts while running simultaneous investigations to uncover missing evidence.
 
 Answering regulatory inquiries requires solving Three questions, and they are always the same three: What data, about whom, and since when?
 
-Answering it requires comprehensive log files that detail every network handshake and administrative file access. Most small companies keep 30 days. If it is 30 days, look at what it costs to make it a year.
+Answering these regulatory questions requires comprehensive log files that detail every network handshake and administrative file access. Most small companies keep 30 days. If it is 30 days, look at what it costs to make it a year.
 
 The average intruder was inside for longer than that before anybody noticed, creating a dangerous information vacuum. When security teams lack logs covering the intrusion, the resulting forensic audit yields a standard corporate admission: "We are unable to determine the full extent."
 
@@ -81,7 +81,7 @@ Organizations preparing for exposure must establish a lean, one-page response fr
 - Draft standard client notification templates while staff remain calm and objective.
 - Extend system logs from 30 days to a year, turning a cheap configuration change into forensic visibility.
 
-Ray keeps the one page in the same folder as the restore test, and updates it whenever somebody's phone number changes. Knowing who executes these actions keeps small operational hiccups from ballooning into catastrophic compliance audits.
+An IT administrator named Ray keeps the one page in the same folder as the restore test, and updates it whenever somebody's phone number changes. Knowing who executes these actions keeps small operational hiccups from ballooning into catastrophic compliance audits.
 
 Analyzing historic industry waves, such as how [data breaches June 2026 show evolving cyber threats](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for), proves that unprepared leadership teams suffer the highest customer churn.
 

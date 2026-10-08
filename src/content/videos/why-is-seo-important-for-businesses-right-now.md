@@ -54,7 +54,7 @@ So, you still have to optimize so you show up there in order for the chat respon
 
 This dynamic also changes how systems filter intent. Historically, algorithmic ranking relied on direct keyword matches and basic geographic parameters.
 
-As [Easty Marketing Group](https://eastymarketinggroup.com/) points out, search architectures in 2026 operate under aggressive real-time curation. The second reason it sucks is because answer engines are curating the response around what it believes the user is actually looking for.
+As [Easty Marketing Group](https://eastymarketinggroup.com/) points out, search architectures in 2026 operate under aggressive real-time curation. The second reason modern search ranking is difficult for businesses is that answer engines are curating responses around what they believe the user is actually looking for.
 
 Consider a residential roofing contractor. Previously, if you are a roofing company and you just simply rank for roofing company nearby, Google might have served you up to individuals looking for service.
 

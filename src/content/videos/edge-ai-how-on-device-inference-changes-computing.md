@@ -38,7 +38,7 @@ In this distributed model, cloud AI continues to handle massive training workloa
 
 As Evolving AI points out, Qualcomm’s Edge AI-chip is a powerful example of the kind of dedicated hardware driving this change. Apple also contributes with its Neural Engine strategy, while Microsoft is promoting its AI PC push to bring more processing power to consumer devices.
 
-Even NVIDIA, a dominant force in data center AI, has responded with specialized platforms like Jetson, DRIVE, and Thor to address the edge market. Neuromorphic chip startups such as BrainChip and SynSense are exploring entirely new architectures for efficient on-device processing. These innovations are reshaping the AI chips are essential for artificial intelligence computing field.
+Even NVIDIA, a dominant force in data center AI, has responded with specialized platforms like Jetson, DRIVE, and Thor to address the edge market. Neuromorphic chip startups such as BrainChip and SynSense are exploring entirely new architectures for efficient on-device processing. These innovations are reshaping the artificial intelligence computing field, where AI chips are essential.
 
 ## What is Edge AI Computing?
 

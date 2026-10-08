@@ -95,7 +95,7 @@ This enables continuous exploration and deeper analysis of the search results. I
 
 ## Access and Adoption
 
-The advanced [Gemini features](/video/google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you/) within Google Drive are being rolled out to specific user segments. These abilities are available to Google AI Pro and Ultra subscribers. For business customers in the US, access is provided through Gemini Alpha.
+The advanced [Gemini features](/video/google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you/) within Google Drive are being rolled out to specific user segments. These abilities are available to Google AI Pro and Ultra subscribers. For business customers in the US, access is provided through Gemini Alpha, an early-access program.
 
 This phased availability reflects the ongoing development and strategic deployment of sophisticated AI tools into mainstream productivity platforms. It ensures a controlled introduction of these powerful new functions.
 

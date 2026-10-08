@@ -68,7 +68,7 @@ Trapped ion qubits, held by electromagnetic fields, are another mature modality,
 
 This rapid development underscores the commitment to realizing practical quantum computing. In the past 12 months alone, for example, IBM and the US Department of Commerce announced a quantum wafer foundry, signaling a concerted effort to scale manufacturing capabilities.
 
-As ExplainingComputers highlights, this marks a continuation of an intense period of development, with this being the 10th annual update on quantum computing progress, illustrating a decade of sustained research and investment. Even D-Wave Systems, known for its quantum annealing approach, is now charting a new course to fault-tolerant quantum computing with a gate model roadmap, reflecting the industry's consensus on the direction of scalable quantum computation.
+As the technology channel ExplainingComputers highlights, recent progress marks a continuation of an intense period of development, with the channel's 10th annual update on quantum computing progress illustrating a decade of sustained research and investment. Even D-Wave Systems, known for its quantum annealing approach, is now charting a new course to fault-tolerant quantum computing with a gate model roadmap, reflecting the industry's consensus on the direction of scalable quantum computation.
 
 ## Impact and Accessibility: Where Quantum Speed Matters Most
 

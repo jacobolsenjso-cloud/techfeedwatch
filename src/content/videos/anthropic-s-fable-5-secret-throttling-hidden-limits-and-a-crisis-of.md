@@ -42,7 +42,7 @@ The term "mythos-level AI" refers to a top tier of artificial intelligence model
 
 Immediately after its launch, Fable 5 faced criticism not for being weak, but for being overly restrictive. Anthropic had warned that Fable 5's guardrails were conservatively tuned and might sometimes catch harmless requests.
 
-The company claimed the trigger rate for these false positives should be less than 5% of sessions on average. However, with an estimated 18 to 30 million Claude users worldwide, even a small percentage of blocked interactions can create considerable user frustration.
+The company claimed the trigger rate for these false positives should be less than 5% of sessions on average. However, with an estimated 18 to 30 million users worldwide of Anthropic's Claude AI assistant, even a small percentage of blocked interactions can create considerable user frustration.
 
 This is precisely what happened. Users reported many instances of Fable 5 refusing or downgrading completely harmless prompts.
 
@@ -64,7 +64,7 @@ This was achieved through methods like prompt modification, steering vectors, or
 
 This invisible degradation sparked outrage. Critics argued that if a model secretly weakens its response, a user might simply think the model gave a bad answer. They would have no clear way to know if Fable 5 failed naturally or if Anthropic deliberately throttled it.
 
-Developer Clay Merritt described it as Fable 5 silently sabotaging its answers when it detected AI or machine learning work. Thomas Claburn compared prompt modification without notice to a man-in-the-middle attack, highlighting the lack of transparency.
+Developer Clay Merritt described it as Fable 5 silently sabotaging its answers when it detected AI or machine learning work. Technology journalist Thomas Claburn compared prompt modification without notice to a man-in-the-middle attack, highlighting the lack of transparency.
 
 ## Anthropic's Rationale and the Community's Response
 

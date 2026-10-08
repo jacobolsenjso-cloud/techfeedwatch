@@ -34,7 +34,7 @@ This methodology, rooted in Zero Trust principles, is vital for protecting intel
 
 "We've entered the age of agentic AI, systems that don't just think, but they also act." These agents possess remarkable capabilities: "Agents can talk to APIs. They can call tools. They can buy things. They can move data, even create sub-agents."
 
-However, as a cybersecurity architect emphasizes, "But every new capability adds a new attack surface, yet another way the bad guys can get into our systems." This "Agentic AI multiplies power and risk," necessitating solid and pervasive security controls.
+However, as a cybersecurity architect emphasizes, "But every new capability adds a new attack surface, yet another way the bad guys can get into our systems." Agentic AI multiplies power and risk, necessitating solid and pervasive security controls.
 
 The Zero Trust model, while sometimes mired in marketing jargon, provides solid principles applicable to this new field. Key tenets include "trust follows verification," meaning "you only trust something that has in fact been verified."
 

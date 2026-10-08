@@ -72,7 +72,7 @@ Identifying the content and websites that LLMs already cite is only the first st
 
 The process typically involves:
 1. **Identifying Outreach Targets:** Based on the scraped data, a list of high-priority websites and specific articles that LLMs frequently cite is compiled. This list might include, for example, the 16 highest priority websites that rank for target queries.
-2. **Finding Key Contacts:** Automated tools can then be used to find relevant individuals at these target companies. This often involves scraping professional networking sites like LinkedIn to identify content marketers, SEO writers, founders, or editors. For example, a search might yield the content marketing lead at Hunch Ads or the founder of PPC IO.
+2. **Finding Key Contacts:** Automated tools can then be used to find relevant individuals at these target companies. This often involves scraping professional networking sites like LinkedIn to identify content marketers, SEO writers, founders, or editors. For example, a search might yield the content marketing lead at the advertising platform Hunch Ads or the founder of the marketing platform PPC IO.
 3. **Personalized Outreach:** With contact information in hand, businesses can craft personalized outreach messages. The goal is to request inclusion in the existing, AI-cited articles. This might involve offering to provide valuable information, suggesting an update to their list, or even proposing a financial incentive for adding the brand to their content.
 4. **Automation:** Many parts of this outreach process, from compiling contact lists to sending initial emails, can be automated to improve efficiency and scale.
 

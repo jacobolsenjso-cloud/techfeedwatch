@@ -43,7 +43,7 @@ The S&P 500 represents 500 of America's largest companies. It has historically d
 
 For those who have been investing for 20 or 30 years, avoid deviating from an established financial plan. Experienced investors have likely witnessed multiple market cycles. These include periods like the dot-com bust in 2000 or the 2008 crisis.
 
-Panic selling during a downturn can lock in losses and prevent participation in the eventual recovery. Instead, assess your current portfolio. Consider rebalancing them to align with your investment horizon and risk appetite.
+Panic selling during a downturn can lock in losses and prevent participation in the eventual recovery. Instead, assess your current portfolio. Consider rebalancing your investments to align with your investment horizon and risk appetite.
 
 ## Building Wealth Through Diversification
 
@@ -97,7 +97,7 @@ This dramatically reduces the repayment timeline and the total interest paid. Th
 
 For married couples, combining financial efforts can be a powerful strategy for building wealth. The "cheat code" to financial success often involves merging incomes and sharing expenses, which creates greater financial use.
 
-The most important aspect is not striving for perfect investments. Rather, maintain consistency and alignment on financial goals.
+The most important aspect is not striving for perfect investments. Rather, couples should maintain consistency and alignment on financial goals.
 
 Couples should first establish shared objectives, whether it is saving for a home, planning for early retirement, funding children's education through 529 or custodial accounts, or building a business. Once goals are clear, automation becomes a key tool. Ensure foundational elements are in place, such as a fully funded emergency savings account and a well-managed budget.
 

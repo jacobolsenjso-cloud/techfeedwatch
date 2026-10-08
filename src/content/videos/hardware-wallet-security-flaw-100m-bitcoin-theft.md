@@ -113,12 +113,12 @@ A critical warning: do not type your recovery phrase into any "vulnerability che
 
 This incident is not an isolated problem. Randomness is a recurring failure point across the crypto industry. A bad random number often produces no visible symptoms, allowing flaws to persist for years.
 
-Previous incidents include the 2023 Milk Sad bug, where Libbitcoin explorer created wallet seeds with only 32 bits of randomness, leading to millions in losses. The 2022 Profanity vanity address tool made a similar mistake, contributing to the $160 million Wintermute hack.
+Previous incidents include the 2023 Milk Sad bug, where Libbitcoin explorer created wallet seeds with only 32 bits of randomness, leading to millions in losses. The 2022 Profanity vanity address tool made a similar mistake, contributing to the $160 million hack of crypto market maker Wintermute.
 
 In 2022 and 2023, Trust Wallet's browser extension created keys derivable from public addresses. Just weeks before the Coldcard exploit, the Ill Bloom bug affected several mobile and browser wallets, leading to over $5 million in confirmed losses.
 
 This event has prompted some users to move funds back to exchanges, with daily exchange deposits under 10 BTC spiking to 7,300 BTC on July 31. However, the real lesson is not to abandon self-custody. Instead, it emphasizes verifiable self-custody over trusted self-custody.
 
-Optional safeguards like dice rolls, passphrases, and multisig are no longer paranoid overkill. They have become the baseline for security. This open-source ecosystem quickly identified a 5-year-old flaw, published it, patched affected models, and saw other hardware wallet providers publish proofs of their randomness pipelines.
+Optional safeguards like dice rolls, passphrases, and multisig are no longer paranoid overkill. They have become the baseline for security. The open-source cryptocurrency ecosystem quickly identified the 5-year-old Coldcard firmware flaw, published details of the vulnerability, patched affected models, and saw other hardware wallet providers publish proofs of their randomness pipelines.
 
 This level of transparency and rapid response is rare in traditional custody. The people who upgrade their security setup this week will likely hold Bitcoin in a way that is harder to break than anything that existed before this bug was found.

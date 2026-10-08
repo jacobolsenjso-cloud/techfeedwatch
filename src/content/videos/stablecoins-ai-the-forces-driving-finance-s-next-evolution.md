@@ -68,7 +68,7 @@ For people in regions experiencing hyperinflation, stablecoins offer exposure to
 ## The Stablecoin Ecosystem and Regulatory Impact
 The stablecoin ecosystem involves several key players. At the core are the stablecoin issuers, such as USDC, created by a consortium between Coinbase and Circle, and Tether. These entities are responsible for issuing and backing the stablecoins.
 
-The stablecoins themselves operate on various blockchain infrastructures, including prominent Layer 1 blockchains like Solana, Ethereum, and Zooie. These blockchains are critical, as all stablecoin transactions incur gas fees, making them important value capture points in the ecosystem.
+The stablecoins themselves operate on various blockchain infrastructures, including prominent Layer 1 blockchains—base-layer blockchain networks—like Solana, Ethereum, and Zooie. These blockchains are critical, as all stablecoin transactions incur gas fees, making them important value capture points in the ecosystem.
 
 Connecting the crypto world to external users are companies developing wallets, such as Phantom, which serve as gateways for people to interact with stablecoins and gain exposure to US dollars regardless of their location. Other fintech companies are also building user-friendly front-ends that use blockchain technology for their back-end operations, often without exposing the underlying crypto aspects to the end-user.
 

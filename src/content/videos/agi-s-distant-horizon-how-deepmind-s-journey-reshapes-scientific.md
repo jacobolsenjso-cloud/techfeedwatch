@@ -53,7 +53,7 @@ This accessibility has directly fueled advancements across numerous biological a
 
 Similarly, vaccine development can benefit from a clearer picture of viral proteins, aiding in the design of more effective immunogens. The ability to model protein interactions also sheds light on the mechanisms of genetic diseases, offering new avenues for research into their causes and potential treatments.
 
-The significance of this work was recognized at the highest levels of scientific achievement. That work won him the 2024 Nobel Prize in Chemistry.
+The significance of this work was recognized at the highest levels of scientific achievement. The work on AlphaFold won Demis Hassabis the 2024 Nobel Prize in Chemistry.
 
 This prestigious award underscores the monumental impact AlphaFold has had on basic science and its potential to drive future breakthroughs in human health. It validates the approach of applying advanced artificial intelligence to grand scientific challenges, demonstrating that AI can be a powerful partner in fundamental research, not just a tool for optimization.
 

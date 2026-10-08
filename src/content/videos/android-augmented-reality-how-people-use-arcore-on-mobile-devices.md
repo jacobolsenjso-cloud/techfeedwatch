@@ -45,7 +45,7 @@ This sophisticated data processing requires significant computational power, whi
 
 Developers then use ARCore's APIs (Application Programming Interfaces) to define how digital content interacts with this mapped environment. For instance, in an indoor navigation app, developers might define "indoor markers" or "waypoints" that ARCore can recognize as anchor points in the physical space.
 
-These markers, potentially combined with [Google Cloud AnchorsFJERN, allow multiple users or devices to share the same AR experience in a precise location, facilitating collaborative or persistent AR applications. The video’s example of creating a navigation graph illustrates this point: it is not enough to simply place an arrow; the system must understand the sequence of spaces and how to guide a user through them. The initial push for AR came from a desire to augment human perception and interaction with information, a drive explored in more detail in Why Was Augmented Reality Invented to Change How We See the World?.
+These markers, potentially combined with [Google Cloud AnchorsFJERN, allow multiple users or devices to share the same AR experience in a precise location, facilitating collaborative or persistent AR applications. An example of creating a navigation graph illustrates the complexity of persistent indoor navigation: it is not enough to simply place an arrow; the system must understand the sequence of spaces and how to guide a user through them. The initial push for AR came from a desire to augment human perception and interaction with information, a drive explored in more detail in Why Was Augmented Reality Invented to Change How We See the World?.
 
 ## The Costs and Misconceptions of Mobile AR
 

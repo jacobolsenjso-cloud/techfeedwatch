@@ -71,7 +71,7 @@ Once you generate your keyframes, you face the task of motion synthesis. Convert
 
 As Ai Lockup demonstrates, feeding shot-by-shot visual anchors into a fast video generation model prevents the motion artifacts that typically ruin pure text-to-video attempts.
 
-Select video section, aspect ratio 16 to 9, keep the model Omni Flash, set the duration as 6 seconds. Upload the established scene image from shot one, paste the corresponding video prompt dictating camera movement and actor behavior, and initiate the render.
+Select the video section, set the aspect ratio to 16 to 9, keep the Omni Flash AI video generation model, and set the duration to 6 seconds. Upload the established scene image from shot one, paste the corresponding video prompt dictating camera movement and actor behavior, and initiate the render.
 
 The resulting clip preserves the lighting, texture, and facial structure of the still image while introducing fluid physical movement. A sudden glance between passengers, an eerie posture shift, or a slow camera push builds pure cinematic tension without distortion.
 

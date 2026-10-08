@@ -47,7 +47,7 @@ Many businesses make the mistake of directing traffic from ads or search results
 
 A homepage typically serves as a general overview, offering various navigation options and information about a company's full range of services. When a user clicks an ad for a specific offer, they expect to land directly on information related to that offer.
 
-If visitors are dropped onto a homepage, they must spend valuable time searching for the information they initially sought. Situated Research notes that users often take only a couple seconds to find relevant content before deciding to leave a page. This short attention span means any delay or confusion can result in a lost opportunity.
+If visitors are dropped onto a homepage, they must spend valuable time searching for the information they initially sought. Usability research firm Situated Research notes that users often take only a couple seconds to find relevant content before deciding to leave a page. This short attention span means any delay or confusion can result in a lost opportunity.
 
 A dedicated landing page, by contrast, is designed to eliminate distractions and guide the visitor towards a single, clear objective. It acts as a customized sales pitch, tailored to the specific audience and the initial link they clicked.
 

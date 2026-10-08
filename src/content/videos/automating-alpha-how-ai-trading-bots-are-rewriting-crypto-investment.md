@@ -51,7 +51,7 @@ AI trading assistants integrate into trading platforms, acting as interactive co
 
 If approved, the AI can then arrange the necessary tasks or trades for final confirmation. This interaction can streamline both routine operations and more complex strategic endeavors.
 
-For instance, a user asking an AI agent to "buy $1000 worth of BGB" will receive a pre-filled order card for review and approval, maintaining human oversight before confirmation.
+For instance, a user asking an AI agent to "buy $1000 worth of BGB," a cryptocurrency token, will receive a pre-filled order card for review and approval, maintaining human oversight before confirmation.
 
 The capabilities extend to more specialized tasks; if a user wants to purchase a token not listed on the platform's spot order books, the AI can create an on-chain path to target the best available price, execute the swap, and direct the user to the transaction receipts.
 

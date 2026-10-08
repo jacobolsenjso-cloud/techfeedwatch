@@ -60,7 +60,7 @@ Another significant development in high-velocity companies is the emergence of A
 
 AI agents then generate the implementation code and iterate on it until all tests pass. The human role shifts from writing code to defining the "what" and judging the "output," while the actual code generation and refinement become the agent's responsibility.
 
-Some companies have advanced this concept to the point where their code repositories contain no hand-written code, only specifications and test harnesses. For instance, Strong DM's EI team developed its own software factory with the goal of eliminating the need for human code writing or review.
+Some companies have advanced this concept to the point where their code repositories contain no hand-written code, only specifications and test harnesses. For instance, software company Strong DM's EI team developed its own software factory with the goal of eliminating the need for human code writing or review.
 
 Their system uses specs and scenario-based validations to drive agents to write, test, and iterate on code until it meets a probabilistic satisfaction threshold. This approach demonstrates how a single engineer, surrounded by a system of agents, can achieve the output of a 1000 X or even 10,000 X engineer, building things that would have been previously impossible.
 

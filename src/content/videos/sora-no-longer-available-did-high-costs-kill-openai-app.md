@@ -46,7 +46,7 @@ Corporate interest escalated rapidly. On December 11th, 2025, OpenAI and The Wal
 - A planned $1 billion equity investment from Disney alongside additional warrants.
 - Deep internal deployment of OpenAI API tools across Disney operations.
 
-Despite these grand announcements, [Sora AI Defined Generative Video Before Its Sudden Collapse](/video/sora-ai-defined-generative-video-before-its-sudden-collapse) before the planned entertainment integrations could reshape the market.
+Despite these grand announcements, Sora collapsed before the planned entertainment integrations could reshape the market, as detailed in [Sora AI Defined Generative Video Before Its Sudden Collapse](/video/sora-ai-defined-generative-video-before-its-sudden-collapse).
 
 ## How It Works
 

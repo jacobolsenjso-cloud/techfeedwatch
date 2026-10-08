@@ -70,7 +70,7 @@ When considering how to invest in SpaceX pre-IPO, a balanced and cautious approa
 
 Given the high demand and the associated premiums, fees, and lock-up periods, it's vital to evaluate if "getting in right now" truly aligns with your investment strategy and risk tolerance.
 
-For most individual investors, the simplest and often safest approach might be to "why not wait till the stocks are actually trading."
+For most individual investors, the simplest and often safest approach might be to wait until the stocks are actually trading.
 
 While patience can be challenging when a company like SpaceX is generating immense buzz, waiting a few months until the stock publicly lists allows for greater transparency, liquidity, and potentially more rational pricing. Publicly traded shares are typically more accessible, liquid, and come without the opaque fees and lock-up periods associated with private market transactions.
 

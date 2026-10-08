@@ -48,7 +48,7 @@ The second force is regulatory clarity. Significant progress has been made in es
 
 Simultaneously, the European Union's comprehensive crypto asset regulation, known as MiCA, became fully active. This means stablecoins are no longer unregulated but are now part of a heavily regulated financial infrastructure.
 
-Third, tokenization is rapidly expanding. McKenzie projects the tokenized asset market to reach $30 trillion.
+Third, tokenization is rapidly expanding. Management consulting firm McKenzie projects the tokenized asset market to reach $30 trillion.
 
 This involves creating an entirely new on-chain architecture where assets like property deeds, corporate stocks, and government treasury bills are digitized. These tokenized assets can then move across networks instantly, much like sending an email.
 

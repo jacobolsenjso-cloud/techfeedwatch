@@ -105,4 +105,4 @@ Meanwhile, Xreal indicated Aura will arrive in fall 2026 priced no higher than $
 
 Virtual reality goggles solve the critical weight and comfort dilemmas that have plagued immersive technology for a decade. By moving heavy computing hardware, cooling fans, and bulky batteries into an external pocket puck, manufacturers retain high visual fidelity while reducing facial mass to around 100 grams.
 
-"Because maybe the future of spatial computing isn't putting an entire computer on your face." While tether cables, battery constraints, and a narrower field of view remain practical trade-offs, this split architecture sets the definitive blueprint for comfortable, long-duration spatial computing.
+This is because the future of spatial computing may not involve putting an entire computer on a user's face. While tether cables, battery constraints, and a narrower field of view remain practical trade-offs, this split architecture sets the definitive blueprint for comfortable, long-duration spatial computing.

@@ -38,7 +38,7 @@ As children progress, they engage with actual programming and robotics, fosterin
 
 At its core, computer and robotics education aims to develop computational thinking, logical and critical design thinking, and practical problem-solving. This includes understanding how systems work, breaking down complex tasks, and creating solutions.
 
-As PyCon South Africa points out, David, who is the beautiful assistant to Lily Campy and also a key figure from AfroLabs, one of the longtime sponsors of PyCon ZA, recounts how his journey into kids' coding clubs began **12 years ago at PyCon ZA 2012**.
+As PyCon South Africa points out, speaker David, who is the beautiful assistant to Lily Campy and also a key figure from AfroLabs, one of the longtime sponsors of PyCon ZA, recounts how his journey into kids' coding clubs began **12 years ago at PyCon ZA 2012**.
 
 He met an 11-year-old boy eager to learn Python, highlighting a gap in formal education that clubs could fill. Today, these clubs, supported by organizations like the Raspberry Pi Foundation and the Ezra Charitable Trust, form a global community of **15,000 clubs**, including thousands of young participants weekly in South Africa.
 

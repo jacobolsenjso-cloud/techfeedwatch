@@ -69,7 +69,7 @@ One prominent example is the proof of the existence of non-sophic groups, a famo
 
 The potential for Astra, once released to a broader audience of developers, researchers, scientists, and engineers, is immense. Imagine thousands, or even millions, of individuals directing this caliber of AI to problems that have eluded solutions for years across diverse fields like material science, physics, and computer science.
 
-The pace of discovery could accelerate to unprecedented levels. This potential is a stark contrast to previous OpenAI models, such as when [How OpenAI's ChatGPT Image 2 Merges Text and Visuals](/video/openai-s-chatgpt-image-2-ai-generative-model-advances), which, while impressive, served as an advanced tool rather than an autonomous discoverer.
+The pace of discovery could accelerate to unprecedented levels. Astra's potential is a stark contrast to previous OpenAI models, such as the model discussed in [How OpenAI's ChatGPT Image 2 Merges Text and Visuals](/video/openai-s-chatgpt-image-2-ai-generative-model-advances), which, while impressive, served as an advanced tool rather than an autonomous discoverer.
 
 The move from AI as a sophisticated assistant to an active co-discoverer reshapes the very nature of scientific progress. While prediction markets like Polymarket currently assign Astra roughly a 56% chance of launching before the end of the next month, the anticipation for its public release is high, suggesting a rapid approach to OpenAI's next frontier model.
 

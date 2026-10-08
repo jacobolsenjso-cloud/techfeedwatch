@@ -42,15 +42,15 @@ The resurgence and redefinition of hard tech mark a pivotal shift in the innovat
 
 As Y Combinator points out, YC has become a surprising force in the hard tech world, funding startups building physical products from satellites to rockets to electric planes, demonstrating the breadth of this sector. These are not mere incremental improvements but often require groundbreaking technical feats.
 
-A key differentiator for hard tech startups is the imperative of proving technical feasibility early. Unlike a software application where a minimum viable product (MVP) can be a basic set of features, a hard tech MVP often requires a functional physical prototype. This necessitates a significant mindset shift for founders and investors alike, a topic explored at 04:19.
+A key differentiator for hard tech startups is the imperative of proving technical feasibility early. Unlike a software application where a minimum viable product (MVP) can be a basic set of features, a hard tech MVP often requires a functional physical prototype. Requiring a functional physical prototype necessitates a significant mindset shift for founders and investors alike.
 
-As Y Combinator (YC) has emerged as a surprising force in this domain, their model for hard tech, discussed around 02:42, emphasizes getting "from little time or money" to demonstrating a core technological breakthrough. This involves a rigorous process of prototyping and iteration to validate the underlying science and engineering before scaling manufacturing or widespread deployment.
+As startup accelerator Y Combinator (YC) has emerged as a surprising force in this domain, its model for hard tech emphasizes getting "from little time or money" to demonstrating a core technological breakthrough. This involves a rigorous process of prototyping and iteration to validate the underlying science and engineering before scaling manufacturing or widespread deployment.
 
 The cost structure of hard tech is inherently different. Developing and manufacturing physical products demands substantial capital for research and development, specialized equipment, and skilled engineering teams.
 
 This leads to longer development cycles and higher upfront investment compared to software. Therefore, the approach to fundraising must adapt.
 
-While software startups might seek seed funding to build a team and an initial product, hard tech companies often need significant, patient capital to fund years of R&D and large-scale infrastructure. Evaluating risk in hard tech, as highlighted around 21:09, extends beyond market fit to encompass significant technical hurdles and supply chain complexities.
+While software startups might seek seed funding to build a team and an initial product, hard tech companies often need significant, patient capital to fund years of R&D and large-scale infrastructure. Evaluating risk in hard tech extends beyond market fit to encompass significant technical hurdles and supply chain complexities.
 
 This requires investors to possess a deeper understanding of scientific principles and engineering timelines. Companies in fields such as robotics exemplify these challenges, requiring both advanced software intelligence and solid physical systems, often demanding substantial capital for development and scaling, a point further elaborated at 46:25 regarding robotics and fundraising.
 

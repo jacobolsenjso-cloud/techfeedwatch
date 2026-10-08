@@ -78,4 +78,4 @@ The widespread adoption of Open Banking APIs is a key trend, allowing different 
 
 Artificial intelligence is poised to further optimize fraud detection, personalize financial services, and automate complex payment workflows, as explored in articles like [How Will AI Change Banking Alongside Instant Payments?](/video/ai-open-finance-instant-payments-banking-technology-s-future). The continuous refinement of system design for scalability and resilience remains a priority for engineers.
 
-Resources like the **System Design Roadmap PDF with 145 pages** offer comprehensive guidance for building solid, high-performance systems. The field will continue to balance rapid innovation with stringent regulatory compliance and the unwavering need for bulletproof security, shaping the future of global commerce.
+Resources like the **System Design Roadmap PDF with 145 pages**, a technical guide for software architecture, offer comprehensive guidance for building solid, high-performance systems. The field will continue to balance rapid innovation with stringent regulatory compliance and the unwavering need for bulletproof security, shaping the future of global commerce.

@@ -37,7 +37,7 @@ Manufacturers hid traditional mobile file structures behind custom user interfac
 
 For years, accessing standard mobile tools required workaround applications. Early adopters relied on third-party utilities like Mobile VR Station or external file managers to manually move application binaries into hardware directories. Meta later actively targeted and took down popular third-party tools such as VR Android File Manager from its platform, leaving users without direct control over their local file systems.
 
-Gamers seeking broader utility were left with clunky terminal commands or required constant tethering to external hardware. Understanding these platform constraints is essential when reviewing how [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) across consumer hardware categories.
+Gamers seeking broader utility were left with clunky terminal commands or required constant tethering to external hardware. Understanding these platform constraints is essential when reviewing how [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) applies across consumer hardware categories.
 
 ## What Changed
 

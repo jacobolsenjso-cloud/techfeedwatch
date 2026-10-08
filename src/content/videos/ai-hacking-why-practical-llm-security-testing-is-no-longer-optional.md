@@ -39,7 +39,7 @@ At its core, prompt injection testing is about adversarial interaction with an A
 
 For instance, an AI designed to answer questions about public information might be given a prompt that simultaneously asks for public data and then attempts to override its internal instructions, directing it to reveal private developer commands or confidential system configurations. This works because LLMs process user inputs sequentially, often treating the injected malicious prompt as a higher priority or a directive to override previous system instructions.
 
-Initial steps in this field can be deceptively simple. Early learning challenges, like hacking "baby Gandalf" in part 1 of a cybersecurity series, introduce the basic concept of tricking an AI.
+Initial steps in this field can be deceptively simple. Early learning challenges, like hacking "baby Gandalf"—an introductory AI prompt injection game—in part 1 of a cybersecurity series, introduce the basic concept of tricking an AI.
 
 These challenges often involve manipulating the AI into revealing a secret code or ignoring its programmed persona. However, true AI pentesting extends far beyond these introductory exercises. More complex scenarios, such as the Agent Breaker Capture The Flag (CTF) challenge, push testers to exploit advanced vulnerabilities.
 

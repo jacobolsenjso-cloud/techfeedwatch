@@ -71,7 +71,7 @@ Yet software valuations often lose touch with commercial realities. A quantum-fo
 
 Advanced Lux emphasizes that investors must track the runway to bankruptcy: cash divided by annualized burn rate. D-Wave's 338 million reserve drains rapidly against a 180 million burn.
 
-When their Quantum Circuits acquisition spiked quarterly expenses past 56 million, their cash runway contracted immediately. Without immediate, unprecedented commercial breakthroughs, survival for these companies mathematically guarantees heavy dilution.
+When quantum hardware builder D-Wave's Quantum Circuits acquisition spiked quarterly expenses past 56 million, its cash runway contracted immediately. Without immediate, unprecedented commercial breakthroughs, survival for these companies mathematically guarantees heavy dilution.
 
 Investors face two functional strategies:
 * **The Lottery Ticket Strategy:** Purchase a broad basket of pure-play hardware and software developers to capture an eventual winner. This requires holding through 50 to 80% drawdowns, enduring share dilution, and maintaining positions across a 5 years horizon.

@@ -53,7 +53,7 @@ Neglecting regular security audits, failing to patch vulnerabilities promptly, o
 
 The human factor is another frequent point of failure: inadequate employee training, weak password practices, or succumbing to phishing attacks remain leading causes of breaches. Finally, failing to implement principles like [Does Zero Trust Security Model Protect Modern Digital Assets?](/video/zero-trust-the-essential-security-shift-your-business-needs-now) can leave organizations vulnerable to internal threats or compromised credentials.
 
-As AI agents become more prevalent, securing them from vulnerabilities like prompt injection also requires adopting sophisticated defenses, highlighting a new frontier for [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems). The rise of AI also presents new challenges for traditional sectors like finance, where [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) to adapt its security strategies.
+As AI agents become more prevalent, securing them from vulnerabilities like prompt injection also requires adopting sophisticated defenses, highlighting a new frontier for [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems). The rise of AI also presents new challenges for traditional sectors like finance, where the sector must adapt its security strategies, as discussed in [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping).
 
 ## The Bottom Line
 

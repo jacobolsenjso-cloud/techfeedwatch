@@ -66,7 +66,7 @@ The agent must then figure out how to exploit a target system running the softwa
 
 The benchmark includes a total of 896 different scenarios. These are categorized into three areas: Linux, with 193 scenarios; the V8 browser engine, with 185 scenarios; and user space, which accounts for the majority at 520 scenarios.
 
-Different AI models and agents show varying levels of success. For example, GPT-5.5 with CodeXLI solved around 120 scenarios, while Claude Mythos preview using Claude code solved 157.
+Different AI models and agents show varying levels of success. For example, the AI model GPT-5.5 with CodeXLI solved around 120 scenarios, while the AI model Claude Mythos preview using Claude code solved 157.
 
 ## The Asymmetry Problem in AI Security
 

@@ -69,7 +69,7 @@ Higgsfield functions as an aggregation platform housing premier media models, el
 
 Once active, Claude Opus 5.5 commands external generation tools directly inside its chat interface. The system removes human error from prompt crafting. Opus 5.5 uses adaptive thinking to break an abstract concept into a production brief, complete with shot lists, camera directions, and sonic requirements.
 
-Rather than jumping straight into video, it calls GPT Image to generate a static anchor frame that locks in character design, lighting, and composition. Once the visual foundation sets, Seedance 2.5 animates the frame into fluid motion.
+Rather than jumping straight into video, it calls GPT Image to generate a static anchor frame that locks in character design, lighting, and composition. Once the visual foundation sets, the video generation model Seedance 2.5 animates the frame into fluid motion.
 
 This methodology relies on an automated review loop. Instead of accepting initial visual artifacts, the orchestrator reviews the resulting render against the creative brief.
 

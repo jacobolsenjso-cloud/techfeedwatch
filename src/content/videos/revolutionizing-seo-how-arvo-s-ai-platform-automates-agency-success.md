@@ -47,7 +47,7 @@ However, modern AI tools now offer sophisticated workflows designed to produce r
 
 Automated content creation systems are built upon several integrated components designed to cover the breadth of digital content needs. These systems typically commence with advanced research capabilities, leading into sophisticated content generation, and concluding with streamlined publishing and optimization.
 
-At the heart of this automation are "feeds," which function as living entities. As Arvow points out, "it's where the AI goes up and picks up information, that's step zero, so that it knows exactly what type of content to generate."
+At the heart of this automation are "feeds," which function as living entities. As content creator Arvow points out, "it's where the AI goes up and picks up information, that's step zero, so that it knows exactly what type of content to generate."
 
 By providing the AI with a client's URL, main seed keywords, a list of competitors, target country, and target language, a keyword feed can be set up. This mechanism generates a dynamic list of keywords, which updates "every week" with new keyword opportunities.
 
@@ -71,7 +71,7 @@ These platforms can "track their mentions across LLMs" like ChatGPT and Bard, pr
 
 Finally, technical SEO optimization is integrated, allowing users to "optimize their technical SEO in just a few clicks." The AI analyzes site pages and suggests changes, such as modifying meta titles or improving internal linking structures. These suggestions can be applied with a single click, automating often tedious technical adjustments.
 
-The platform, as Arvo explains, can recommend internal links between specific pages using precise anchor text, which, if approved, the AI automatically implements. This comprehensive approach ensures that every aspect of a site's SEO is considered and optimized.
+The platform, as content creator Arvo explains, can recommend internal links between specific pages using precise anchor text, which, if approved, the AI automatically implements. This comprehensive approach ensures that every aspect of a site's SEO is considered and optimized.
 
 ## Why This Matters
 

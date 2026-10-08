@@ -42,7 +42,7 @@ In a campaign lasting around 7 hours, players guide warehouse worker Max Ventura
 
 This visual extravagance contrasts with standalone releases that prioritize stylized simplicity. For instance, a minimalist relaxation title built for Meta Quest relies on seven distinct scenes to showcase dynamic water lighting and ambient observation without relying on high-draw combat engines.
 
-Platform accessibility determines whether a title achieves widespread adoption. Standalone horror thrives in ports like Little Nightmares, where playing as Dark 6 exploits physical scale to induce psychological dread, though restricted character viewports can hinder the experience on mobile hardware.
+Platform accessibility determines whether a title achieves widespread adoption. Standalone horror thrives in ports like Little Nightmares, where playing as the character Dark 6 exploits physical scale to induce psychological dread, though restricted character viewports can hinder the experience on mobile hardware.
 
 Fast-paced action finds a home in Wrath: Aeon of Ruin, an old-school shooter scored by Andrew Hulshult that tests physical reflexes via manual projectile deployment.
 

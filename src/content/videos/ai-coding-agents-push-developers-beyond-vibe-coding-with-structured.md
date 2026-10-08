@@ -70,7 +70,7 @@ Developers can specify these requirements within their initial prompts, allowing
 
 The effectiveness of Superpowers is evident in its practical applications. For example, a developer successfully created a command-line Space Invaders game using Claude Code powered by Superpowers.
 
-This game, written in Thrust, achieved a high frame rate of over 20k FPS and included complex features like audio, machine gun, and flamethrower power-ups. These features were autonomously developed, showcasing the system's ability to handle intricate coding tasks.
+This command-line Space Invaders game, written in Thrust, achieved a high frame rate of over 20k FPS and included complex features like audio, machine gun, and flamethrower power-ups. These features were autonomously developed, showcasing the system's ability to handle intricate coding tasks.
 
 In contrast, when the same prompt and specifications were given directly to a standard AI chatbot interface without the Superpowers workflow, the resulting game, while functional, exhibited noticeable quality differences. It was described as "laggy" and "bugged out," failing to achieve the same level of polish and performance.
 

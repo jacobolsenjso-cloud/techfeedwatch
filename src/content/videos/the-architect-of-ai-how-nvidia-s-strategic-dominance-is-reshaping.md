@@ -58,7 +58,7 @@ These teams work in constant, cross-functional collaboration, attacking problems
 
 The shift towards AI factories and extreme co-design is built upon a foundation of strategic decisions that span decades. One of NVIDIA's earliest steps towards becoming a full-fledged computing company involved the invention of a programmable pixel shader, followed by the integration of IEEE-compatible FP32 into their shaders.
 
-This enabled a broader range of scientific and engineering applications, moving beyond mere graphics acceleration. The development of Cg, and subsequently CUDA, further solidified NVIDIA's trajectory towards general-purpose parallel computing.
+This enabled a broader range of scientific and engineering applications, moving beyond mere graphics acceleration. The development of Cg, NVIDIA's programming language for graphics, and subsequently CUDA, further solidified NVIDIA's trajectory towards general-purpose parallel computing.
 
 A pivotal, albeit financially risky, decision was putting CUDA on GeForce GPUs. At the time, GeForce was a consumer product, and adding CUDA significantly increased the cost of these GPUs by 50%.
 
@@ -68,7 +68,7 @@ Despite this "existential threat," the company pressed forward, recognizing the 
 
 By selling millions and millions of GeForce GPUs each year with CUDA embedded, NVIDIA placed a supercomputer in the hands of countless researchers, scientists, and students. This cultivated a vast developer ecosystem for CUDA over a decade, laying the essential groundwork for the subsequent deep learning revolution.
 
-This strategic foresight enabled NVIDIA to become, as the source states, "the engine powering the AI revolution," ultimately leading to the demand for the integrated AI factory approach we see today. What are NVIDIA AI Chips and Their Role in AI? illustrates how NVIDIA's chip design has been central to this journey.
+This strategic foresight enabled NVIDIA to become, as the source states, "the engine powering the AI revolution," ultimately leading to the demand for the integrated AI factory approach we see today. The video "What are NVIDIA AI Chips and Their Role in AI?" illustrates how NVIDIA's chip design has been central to this journey.
 
 ## What To Watch Next
 

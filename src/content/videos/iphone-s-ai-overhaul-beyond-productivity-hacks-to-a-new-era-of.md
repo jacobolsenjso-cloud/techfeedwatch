@@ -79,4 +79,4 @@ When active, this intelligence allows only priority notifications to break throu
 
 It ensures that the phone only demands attention for truly important matters. This allows users to maintain focus on their tasks. Physical accessories, such as a MagSafe tripod wallet, can further support these workflows.
 
-They enable hands-free use for video calls or easy content capture. This reduces friction in daily interactions. This particular accessory has been a favorite for 2 years and offers about 6 months of battery life.
+They enable hands-free use for video calls or easy content capture. This reduces friction in daily interactions. The MagSafe tripod wallet has been a favorite accessory for 2 years and offers about 6 months of battery life.

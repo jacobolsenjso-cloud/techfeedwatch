@@ -35,9 +35,9 @@ Real video is an indexical capture of physical matter. When an operator records 
 
 [AI video](/video/how-does-ai-video-face-swap-technology-actually-work/), by contrast, operates entirely on statistical interpolation. Neural networks calculate probabilities across multidimensional latent space, predicting visual transitions frame by frame without any concept of mass, volume, or momentum.
 
-This lack of grounding creates distinct perceptual tells. As AI Samson points out, "Most AI videos look fake." For example, if you follow this rope, first of all, you see this man is not even holding it.
+This lack of grounding creates distinct perceptual tells. As AI Samson points out, "Most AI videos look fake." For example, when looking at a rope in an AI-generated clip, a viewer might notice that the depicted man is not even holding it.
 
-And second of all, you'll see that it's absolutely nonsensical the way that the rope trails around and then congregates in this large pile. So there are simple physics here that make it obvious that this is not a real video. Real ropes react to friction and tension; algorithmic ropes hallucinate patterns across adjacent pixels.
+Additionally, the way the synthetic rope trails around and then congregates in a large pile is completely nonsensical. So there are simple physics here that make it obvious that this is not a real video. Real ropes react to friction and tension; algorithmic ropes hallucinate patterns across adjacent pixels.
 
 Lighting calculations also diverge sharply between formats. Real-world optics produce consistent shadows that conform strictly to the geometry of human bone structure and environmental light sources. AI models often lose track of lighting sources across sequential frames.
 

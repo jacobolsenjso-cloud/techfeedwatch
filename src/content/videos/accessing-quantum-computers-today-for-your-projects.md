@@ -42,7 +42,7 @@ Direct access to a quantum computer does not require owning specialized hardware
 
 Companies like IBM provide comprehensive platforms that abstract away the hardware complexities, offering programming environments and tools accessible through a web browser or API. This cloud-centric model is critical for democratizing quantum technology, making it available to a broader audience beyond specialized research institutions.
 
-For those interested in learning to program quantum computers, structured educational paths exist. An example of this approach is a 4-part course, which Qiskit presents as "From Zero to Quantum | Use A Quantum Computer Today | Ep.1," designed to guide true beginners.
+For those interested in learning to program quantum computers, structured educational paths exist. An example of this approach is a 4-part course, which the open-source quantum computing framework Qiskit presents as "From Zero to Quantum | Use A Quantum Computer Today | Ep.1," designed to guide true beginners.
 
 The explicit goal of this course is "to get someone who is a true beginner to quantum computing programming to use a real quantum computer in the shortest amount of time possible and assuming little to no prior background knowledge." This demonstrates a clear effort to lower the entry barrier for aspiring quantum programmers.
 

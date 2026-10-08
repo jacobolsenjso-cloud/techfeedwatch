@@ -53,7 +53,7 @@ RTX fused programmable shading with hardware ray tracing and a new idea: using A
 
 ## Neuro Rendering: Fusing Graphics and Generative AI
 
-The latest evolution in graphics technology, neuro rendering, exemplifies the fusion of 3D graphics and artificial intelligence. Technologies like DLSS 5 combine controllable 3D graphics, which represent the structured data of virtual worlds, with generative AI's probabilistic computing. This blend allows for the creation of highly realistic and controllable content.
+The latest evolution in graphics technology, neuro rendering, exemplifies the fusion of 3D graphics and artificial intelligence. Technologies like DLSS 5, NVIDIA's neural rendering technology, combine controllable 3D graphics, which represent the structured data of virtual worlds, with generative AI's probabilistic computing. This blend allows for the creation of highly realistic and controllable content.
 
 This concept of fusing structured information with generative AI is expected to extend far beyond graphics, influencing various industries. Structured data provides the "ground truth" necessary for trustworthy AI applications. By combining the precise control offered by structured data with the creative abilities of generative models, NVIDIA aims to enable new forms of content creation and problem-solving across diverse fields.
 
@@ -81,6 +81,6 @@ This ongoing optimization, combined with the widespread adoption of its architec
 
 NVIDIA's strategy includes deep integration with the world's cloud services and original equipment manufacturers (OEMs). The company builds its accelerated computing platform with a suite of libraries, such as RTX, QDF, and QVS, that sit on top of its core architecture. These libraries are then integrated into cloud platforms like Google Cloud and AWS.
 
-This approach allows NVIDIA to accelerate diverse workloads, from Vertex AI and BigQuery on Google Cloud to PyTorch and Jackson XLA. By providing these accelerated solutions, NVIDIA effectively brings customers and their demanding AI workloads to cloud service providers.
+This approach allows NVIDIA to accelerate diverse workloads, from Vertex AI and BigQuery on Google Cloud to machine learning frameworks like PyTorch and Jackson XLA. By providing these accelerated solutions, NVIDIA effectively brings customers and their demanding AI workloads to cloud service providers.
 
 This collaborative model ensures that a wide array of developers and enterprises, including companies like Base 10s, CrowdStrike, Puma, and Salesforce, can use NVIDIA's technologies within their preferred cloud environments. The company aims to accelerate computing for everyone, continuously expanding its reach and impact.

@@ -73,7 +73,7 @@ Quen AI extends its capabilities into multimodal content creation, enabling user
 
 However, when it comes to text embedded within generated images, particularly in languages other than Chinese or English, the AI may exhibit minor inaccuracies or typos. Despite this, its image editing features are particularly strong, allowing users to transform existing images with new elements or styles, such as placing a person in a selfie with a real lion, complete with realistic lighting and perspective adjustments.
 
-The platform also facilitates video creation from still images. Users can provide an image and specify actions or expressions, and Quen AI can generate a short video, typically within 3 to 5 minutes of processing. For more specialized creative endeavors, Alibaba offers dedicated platforms, such as one incorporating the One 2.7 model.
+The platform also facilitates video creation from still images. Users can provide an image and specify actions or expressions, and Quen AI can generate a short video, typically within 3 to 5 minutes of processing. For more specialized creative endeavors, technology company Alibaba offers dedicated platforms, such as one incorporating its One 2.7 AI model.
 
 While initially presented as entirely free, these creative tools illustrate a nuanced approach to monetization. Some advanced features or higher-priority processing might be offered through a closed-source version or a subscription model, with paid plans being relatively inexpensive, such as a Pro subscription costing €5 a month.
 

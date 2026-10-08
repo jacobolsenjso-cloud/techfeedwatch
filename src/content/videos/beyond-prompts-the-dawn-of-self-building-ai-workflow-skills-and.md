@@ -55,7 +55,7 @@ An AI agent, on the other hand, extends the capabilities of an LLM by giving it 
 
 For instance, an external tool might enable an agent to perform an internet search, retrieve information from a database, or send a message. When an LLM is combined with these external capabilities, it transforms into an agent capable of performing actions beyond mere text generation.
 
-The Gemini Notebook, for example, functions as an agent because it integrates a language model with access to external tools and data, enabling it to interact with the world in a more dynamic way.
+Google's AI tool Gemini Notebook, for example, functions as an agent because it integrates a language model with access to external tools and data, enabling it to interact with the world in a more dynamic way.
 
 ## Skills as Reusable Procedural Blueprints
 

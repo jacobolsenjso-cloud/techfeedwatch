@@ -78,7 +78,7 @@ Further into the future, brain-computer interfaces could allow humans to merge w
 
 Following the emergence of AGI, the next conceptual stage is **Superintelligent AI**. These AIs could improve, evolve, and adapt without any human input, leading to an exponential growth in intelligence over an incredibly short time. Such entities could possess intelligence that eclipses the combined cognitive abilities of every human that has ever existed, tackling problems currently deemed unsolvable.
 
-Ray Kurzweil has suggested that by the end of this century, these AI entities could be trillions of times more intelligent than all humans. This scale of intellect could compress the technological advancements of 20,000 years into a single century.
+Computer scientist and futurist Ray Kurzweil has suggested that by the end of this century, these AI entities could be trillions of times more intelligent than all humans. This scale of intellect could compress the technological advancements of 20,000 years into a single century.
 
 The technology introduced by superintelligent AIs might defy current human understanding, potentially transforming concepts currently found in science fiction, such as warp drives, time manipulation, and harnessing the energy of black holes, into tangible realities. This could also lead to new forms of government, architecture, and automation beyond human conception.
 

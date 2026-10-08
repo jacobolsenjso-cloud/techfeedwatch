@@ -55,7 +55,7 @@ High-profile examples, such as Oracle and OpenAI reportedly ending plans to expa
 
 However, it is important to note that data centers are not becoming entirely obsolete. While edge devices excel at inference and specific tasks, the initial training of [large language models](/video/ai-hacking-why-practical-llm-security-testing-is-no-longer-optional/) and foundational AI systems still demands immense computational power and vast datasets.
 
-This scale of processing currently remains the domain of hyperscale data centers. For instance, Jensen Huang stated that Nvidia was distributing around 10 gigawatts worth of GPUs in 2025 alone, indicating the continued, massive demand for high-performance compute, much of which supports cloud-based AI training.
+This scale of processing currently remains the domain of hyperscale data centers. For instance, Nvidia CEO Jensen Huang stated that Nvidia was distributing around 10 gigawatts worth of GPUs in 2025 alone, indicating the continued, massive demand for high-performance compute, much of which supports cloud-based AI training.
 
 ## A Hybrid Future for AI Infrastructure
 
