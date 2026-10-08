@@ -100,7 +100,7 @@ const exploreUrl = (q: string) => `https://trends.google.com/trends/explore?date
       .tr-wrapper { padding: 20px 15px; }
       .tr-header h1 { font-size: 1.55rem; }
       /* Navn over baren på mobil, så lange navne ikke klemmes sammen */
-      .tr-row { grid-template-columns: 1fr 84px; grid-template-areas: "name num" "bar bar"; gap: 5px 10px; padding: 9px 0; }
+      .tr-row { /* auto (7/10): tal + ændring ("+11") var bredere end 84px og blev klippet af skærmkanten */ grid-template-columns: 1fr auto; grid-template-areas: "name num" "bar bar"; gap: 5px 10px; padding: 9px 0; }
       .tr-name { grid-area: name; }
       .tr-num { grid-area: num; }
       .tr-bar { grid-area: bar; }
