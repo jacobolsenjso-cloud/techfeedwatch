@@ -1041,6 +1041,7 @@ ${content}`);
 
       // Læsertjek (8/10): en model læser artiklen som en læser, der ikke har set videoen.
       let lf = await laeserTjek(genAI, content);
+      if (lf === null) { console.log('👓 Læsertjek kunne ikke køre - artiklen udgives uden (ses i loggen)'); lf = []; }
       const lfFoer = lf.length;
       if (lf.length) {
         const foerLaeser = content, lfListe = lf;
@@ -1052,7 +1053,7 @@ ${content}`);
           content = foerLaeser;
           console.log('   læser-rettelse kasseret: den bragte nye fejl ind');
         }
-        lf = content === foerLaeser ? lfListe : await laeserTjek(genAI, content);
+        lf = content === foerLaeser ? lfListe : ((await laeserTjek(genAI, content)) ?? lfListe);
         console.log(`👓 Læsertjek: ${lfFoer} fund (${lfListe.map((x) => x.problem).join(', ')}), ${content === foerLaeser ? 0 : r.rettet} rettet, ${lf.length} tilbage`);
         for (const x of lf) console.log(`   - [${x.problem}] ${x.sentence.slice(0, 120)} (${x.why})`);
       } else console.log('👓 Læsertjek: 0 fund');

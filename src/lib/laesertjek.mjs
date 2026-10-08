@@ -59,13 +59,18 @@ function jsonListe(raw) {
 export async function laeserTjek(genAI, md) {
   try {
     const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 3000, temperature: 0 } });
-    const liste = jsonListe((await model.generateContent(tjekPrompt(md))).response.text()) || [];
+    const liste = jsonListe((await model.generateContent(tjekPrompt(md))).response.text());
+    if (!liste) { console.log('   læsertjek: svaret var ikke en liste'); return null; }
     return liste
       .filter((x) => x && typeof x.sentence === 'string' && PROBLEMER.includes(String(x.problem).toUpperCase()))
       .map((x) => ({ sentence: x.sentence.trim(), problem: String(x.problem).toUpperCase(), why: String(x.why || '').trim() }))
       .filter((x) => x.sentence.length > 3 && md.includes(x.sentence))
       .slice(0, 10);
-  } catch { return []; }
+  } catch (e) {
+    // null = tjekket kunne ikke køre (fx Gemini 402, 8/10). Må ikke forveksles med "0 fund".
+    console.log(`   læsertjek kunne ikke køre: ${String(e.message).slice(0, 160)}`);
+    return null;
+  }
 }
 
 /**
