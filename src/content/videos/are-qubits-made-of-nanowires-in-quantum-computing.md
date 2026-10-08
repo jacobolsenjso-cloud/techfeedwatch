@@ -33,7 +33,7 @@ Unlike classical computer transistors etched from bulk silicon, physical qubits 
 
 The exact physical composition dictates how long a qubit survives before environmental heat, vibration, or radiation destroys its superposition state. To understand the fundamental mechanics behind these units, see how a [Qubit in Quantum Computing Explained for Modern Scale](/video/qubit-in-quantum-computing-explained-for-modern-scale) operates across different hardware modalities.
 
-In the pursuit of topological protection, the physical recipe becomes far more exotic. Microsoft builds its topological qubits around a superconducting semiconductor nanowire measuring just 35 nm wide. On top of this narrow semiconductor base, fabrication tools lay down an ultra-thin layer of superconducting material, roughly 30 atoms thick.
+In the pursuit of topological protection, the physical recipe becomes far more exotic. Microsoft builds its topological qubits around a superconducting semiconductor nanowire measuring just 35 nm wide. Manufacturing equipment deposits an extremely thin superconducting coating—approximately 30 atoms in thickness—directly over this slender semiconductor foundation.
 
 When engineers cool this hybrid structure down to 50 millikelvin—just 0.05° above absolute zero—the materials interact through a specialized boundary state. Because the two materials are perfectly joined together, the paired, frictionless behavior of the superconductor on top leaks across the boundary into the semiconductor below, a phenomenon called the proximity effect.
 
@@ -43,9 +43,9 @@ The layer stack, from top to bottom:
 - Proximity effect interface between the two materials
 - Semiconductor nanowire base: 35 nm wide
 
-At this cryogenic threshold, applying an external magnetic field parallel to the wire forces the material stack into a topological phase. In this phase, something unusual happens. Each individual electron is essentially split in half, and each half exists at either end of the wire.
+At this cryogenic threshold, applying an external magnetic field parallel to the wire forces the material stack into a topological phase. In this phase, something unusual happens. Every single electron effectively divides into two halves, with each portion residing at an opposite tip of the wire.
 
-This phase is called a Majorana zero mode. By linking two of these wires together into an H-shape called a tetron, the qubit is encoded into whether the system overall holds an even or odd number of electrons in total, a property called parity.
+This specific state is known as a Majorana zero mode. When two such wires are joined to form an H-pattern known as a tetron, quantum information is stored based on whether the total electron count across the assembly is even or odd—a characteristic referred to as parity.
 
 This distributes the stored information across all four endpoints. Corrupting the data requires an environmental disruption to strike both ends of the wire at the exact same moment.
 
@@ -55,31 +55,31 @@ You cannot remove the twist with a localized poke; you must physically cut the s
 
 ## Can Topological Nanowires Eliminate Environmental Decoherence?
 
-The central enemy of quantum processing is decoherence, the rapid degradation of quantum states caused by thermal fluctuations and electromagnetic interference. To combat this, dilution refrigerators house the processor inside a vacuum chamber that removes around 99.99999% of the air molecules that might otherwise bump into and interrupt a quantum computation.
+The central enemy of quantum processing is decoherence, the rapid degradation of quantum states caused by thermal fluctuations and electromagnetic interference. To counter this, dilution refrigerators enclose the processor within a vacuum chamber that strips away roughly 99.99999% of atmospheric molecules, preventing them from striking and disrupting quantum calculations.
 
 Yet even deep inside these suspended metallic chambers, conventional qubits struggle to preserve coherence for more than 12 milliseconds. Examining [How Is Quantum Computing Different From Classical Computing?](/video/how-is-quantum-computing-different-from-classical-computing) highlights why protecting these fragile states remains the core bottleneck in computing today.
 
-The concept of using non-local topological matter to defeat decoherence dates back to research papers published in 1997. In 2004, mathematician Michael Freedman sent a letter directly to Bill Gates making the case that this may be the best way to build a quantum computer.
+The concept of using non-local topological matter to defeat decoherence dates back to research papers published in 1997. Mathematician Michael Freedman reached out directly to Bill Gates in a 2004 letter, arguing that this approach could represent the optimal path for constructing a quantum computer.
 
 It took 21 years of experimental physics to translate that mathematical concept into the Majorana 1, Microsoft's initial topological test device developed inside Microsoft's lab in Copenhagen.
 
 The Majorana 1 proved that engineered topological phases could produce localized zero modes, but the hardware faced immediate operational constraints.
 
-With 1 to 10 milliseconds between errors and each qubit operation taking around 1 microsecond, you're looking at roughly 10,000 operations before the qubit loses its state. Practical quantum algorithms require millions of sequential operations per logical qubit, rendering a 10,000-operation window insufficient for fault-tolerant execution.
+Given error intervals of 1 to 10 milliseconds and qubit operations requiring about 1 microsecond each, the system manages approximately 10,000 steps before the qubit loses its state. Practical quantum algorithms require millions of sequential operations per logical qubit, rendering a 10,000-operation window insufficient for fault-tolerant execution.
 
 Two distinct hardware mechanisms drove these early failures:
-*   **Quasiparticle Poisoning:** In a superconductor, electrons bind into Cooper pairs, but if something in the environment, for example, a stray photon, carries enough energy to rip one of those pairs apart, you get a free electron wandering through your system. If it either joins the wire or leaves the wire, it can flip the parity of the qubit from zero to one or vice versa.
-*   **Majorana Hybridization:** The two Majorana zero modes at opposite ends of the wire aren't perfectly isolated. There is a tiny quantum mechanical coupling between the two of them. And this small energy splitting causes the qubit to wobble slightly away from zero energy.
+*   **Quasiparticle Poisoning:** In a superconductor, electrons bind into Cooper pairs, but if something in the environment, for example, a stray photon, carries enough energy to rip one of those pairs apart, you get a free electron wandering through your system. Should this electron enter or exit the wire, it threatens to invert the qubit's parity between zero and one.
+*   **Majorana Hybridization:** The two Majorana zero modes at opposite ends of the wire aren't perfectly isolated. A minuscule quantum mechanical interaction still connects the two of them. This slight energy divergence consequently shifts the qubit marginally away from a true zero-energy level.
 
 The root cause came down to the physical properties of the superconducting skin. The Majorana 1 used aluminum, where the superconducting gap is around 300 microelectronvolts. Stray infrared photons radiated by the refrigerator walls carry enough energy to exceed that, routinely shattering Cooper pairs.
 
-On the 2nd of June, Microsoft announced that they had increased the qubit lifetime from 12 milliseconds to over 20 seconds by swapping out the aluminum layer for lead, which has a superconducting gap of around 1,300 microelectronvolts. As Dr Ben Miles points out, this material change dramatically improved stability. 
+Microsoft revealed on the 2nd of June that replacing the aluminum coating with lead—a material exhibiting a superconducting gap near 1,300 microelectronvolts—extended qubit coherence from 12 milliseconds to more than 20 seconds. As Dr Ben Miles points out, this material change dramatically improved stability. 
 
 Achieving that transition required extraordinary chemical control. Lead is notorious for contaminating semiconductor fabrication chambers and clumping unpredictably.
 
-Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. With each operation taking 1 microsecond, Microsoft's Majorana 2 topological test device can perform 20 million operations before any error has a realistic chance of occurring.
+Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. Operating at a speed of 1 microsecond per gate, Microsoft's Majorana 2 experimental topological hardware can execute 20 million actions before an error is likely to emerge.
 
-To quote Microsoft, "the probability of any unintended parity flip during a typical qubit operation becomes effectively negligible." What this actually means is that for the first time qubit lifetime isn't the problem standing between us and a useful quantum computer.
+To quote Microsoft, "the probability of any unintended parity flip during a typical qubit operation becomes effectively negligible." The practical implication is that qubit lifespan no longer serves as the primary barrier preventing the realization of a practical quantum computer.
 
 Superconductor material comparison:
 
@@ -90,9 +90,9 @@ Superconductor material comparison:
 
 ## Will Material Upgrades Push Quantum Scale Toward 2029?
 
-Hardware coherence gains historically adhere to Schoelkopf's law, which says that qubit coherence time doubles about once every year. A massive leap within twelve months bypassed years of projected incremental gains on paper. This progress led Microsoft's quantum leadership, including Chetan Nayak, to target 2029 for commercial-scale systems.
+Past improvements in hardware coherence have tracked Schoelkopf's law, a principle stating that qubit coherence durations double roughly once each year. A massive leap within twelve months bypassed years of projected incremental gains on paper. This progress led Microsoft's quantum leadership, including Chetan Nayak, to target 2029 for commercial-scale systems.
 
-Simultaneously, algorithm optimizations are lowering physical hardware requirements. For instance, if you want to break RSA 2048 using [Shor's algorithm](/video/quantum-computing-s-looming-shadow-is-bitcoin-s-security-truly-at-risk/), people previously estimated you probably need around 10 million qubits to manage error correction overhead.
+Simultaneously, algorithm optimizations are lowering physical hardware requirements. To illustrate, past projections suggested that cracking RSA 2048 via [Shor's algorithm](/video/quantum-computing-s-looming-shadow-is-bitcoin-s-security-truly-at-risk/) would demand roughly 10 million qubits primarily to absorb error-correction overhead.
 
 Compiler routines and algorithmic efficiencies continue to reduce that requirement. The acceleration of these mathematical optimizations is detailed further in [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained).
 

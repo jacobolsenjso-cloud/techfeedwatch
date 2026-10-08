@@ -24,8 +24,6 @@ faqs:
     answer: "AI agents gain skills through modular, reusable components or pre-trained models that enable them to perform specific tasks like code generation, debugging, or API calls. Developers assemble these skills into complex workflows and automations."
   - question: "What is the role of 'loops' in AI coding?"
     answer: "Loops in AI coding define iterative processes that allow an AI agent to refine its output, test solutions, and learn from feedback. This mechanism is crucial for continuous improvement and achieving desired coding outcomes through repeated cycles."
-  - question: "What is Greptile?"
-    answer: "Greptile is an AI coding tool mentioned in the context of structured development, offering a 14-day free trial. It provides functionalities designed to support systematic coding practices."
 ---
 
 AI coding skills encompass the sophisticated capabilities that artificial intelligence systems possess to assist, generate, and manage software code. These skills extend beyond simple auto-completion to include advanced functionalities like understanding complex project requirements, generating multi-module solutions, and orchestrating iterative development cycles through AI agents.
@@ -60,7 +58,7 @@ One model might excel at generating logical structures, while another might be b
 
 Infrastructure support for these agents is also evolving; for example, here.now provides free, instant web hosting for agents, demonstrating the accessibility of environments for deploying and running these AI-driven coding processes. As Matthew Berman points out, this systematic approach helps mitigate the unpredictability of "vibe coding" by enforcing best practices within the AI's operational framework.
 
-Tools such as Greptile offer platforms that support these structured AI coding workflows, allowing users to try them free for 14 days and experience the benefits of a more organized development process. For a deeper dive into how these capabilities function, explore [What AI Agent Skills Are and How They Work](/video/beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and).
+For a deeper dive into how these capabilities function, explore [What AI Agent Skills Are and How They Work](/video/beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and).
 
 Developers can choose between cloud-based and local AI coding solutions. Cloud environments offer scalability and access to powerful hardware, suitable for demanding tasks and collaborative projects.
 

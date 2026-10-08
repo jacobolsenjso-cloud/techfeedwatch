@@ -37,28 +37,28 @@ Sora emerged as an advanced text-to-video generation system designed to turn wri
 
 The public saw a visual breakthrough, while OpenAI treated the system as a physics engine capable of simulating three-dimensional reality.
 
-On December 9th, 2024, OpenAI transitioned Sora from a controlled demonstration to an open public release. On September 30th, 2025, the company launched Sora 2, transforming the engine into a consumer social platform centered on algorithmic feeds, video remixing, and creator sharing.
+OpenAI shifted Sora from a restricted preview into a broadly accessible public product on December 9th, 2024. On September 30th, 2025, the company launched Sora 2, transforming the engine into a consumer social platform centered on algorithmic feeds, video remixing, and creator sharing.
 
-Corporate interest escalated rapidly. On December 11th, 2025, OpenAI and The Walt Disney Company announced a major partnership to merge corporate intellectual property with generative video. The alliance featured clear commercial pillars:
+Corporate interest escalated rapidly. OpenAI and The Walt Disney Company publicized an expansive alliance on December 11th, 2025, intended to combine studio intellectual property with generative video capabilities. The alliance featured clear commercial pillars:
 
 - A three-year licensing agreement granting OpenAI access to more than 200 characters across Disney, Marvel, Pixar, and Star Wars catalogs.
 - A direct content distribution pipeline intended to stream selected Sora creations on Disney+.
-- A planned $1 billion equity investment from Disney alongside additional warrants.
+- An anticipated $1 billion equity contribution provided by Disney, coupled with supplementary warrants.
 - Deep internal deployment of OpenAI API tools across Disney operations.
 
 Despite these grand announcements, Sora collapsed before the planned entertainment integrations could reshape the market, as detailed in [Sora AI Defined Generative Video Before Its Sudden Collapse](/video/sora-ai-defined-generative-video-before-its-sudden-collapse).
 
 ## How It Works
 
-Video generation demands an immense volume of mathematical operations known as inference. While generating short blocks of text costs fractions of a cent, rendering high-definition motion forces data centers to calculate complex light diffusion, perspective, and physics frame by frame. Third-party analysts estimated that generating a single 10-second Sora clip cost roughly $1.30.
+Video generation demands an immense volume of mathematical operations known as inference. While generating short blocks of text costs fractions of a cent, rendering high-definition motion forces data centers to calculate complex light diffusion, perspective, and physics frame by frame. Independent industry estimates suggested that rendering just one 10-second video on Sora consumed about $1.30 in processing expenses.
 
-At scale, these unit economics destroyed the product balance sheet. External reports placed the platform's daily compute burn between $1 million to as high as $15 million during peak activity.
+At scale, these unit economics destroyed the product balance sheet. Outside findings pegged the service's daily hardware processing costs at anywhere from $1 million up to $15 million during times of peak usage.
 
-In-app monetization never offset those outlays. App analytics calculated the platform's lifetime in-app revenue at just over $2 million, with monthly revenue peaking at an estimated $540,000 before sliding toward $367,000.
+In-app monetization never offset those outlays. App performance figures tracked the tool's total lifetime in-app earnings at slightly above $2 million, reaching a monthly high of roughly $540,000 before dwindling to around $367,000.
 
-The technical architecture also suffered under licensing rules. Under the announced licensing agreement, the permitted assets excluded actor likenesses and voice profiles.
+The technical architecture also suffered under licensing rules. The publicized licensing terms specifically prohibited access to performers' visual likenesses and voice recordings.
 
-While a user might have hoped to generate a custom Star Wars scene with a photorealistic character speaking in their original voice, the system separated character access from that unrestricted creative fantasy. Every generation required strict automated compliance checks, increasing processing latency and stripping away creative freedom.
+Even if creators envisioned making original Star Wars material with photorealistic figures talking in their authentic voices, the framework's boundaries prevented that level of creative freedom. Every generation required strict automated compliance checks, increasing processing latency and stripping away creative freedom.
 
 Competitors adopted fundamentally different product models:
 
@@ -80,14 +80,14 @@ OpenAI faced a sharp choice between supporting disposable social video clips or 
 
 Every chip rendering an unmonetized social clip was a chip denied to revenue drivers like Codex, ChatGPT Enterprise, autonomous agents, and robotics research. As systems like [How No-Code AI Agents Automate Non-Technical Work](/video/beyond-the-hype-how-no-code-ai-agents-will-reshape-workflows-by-2026) demonstrated clear enterprise demand, OpenAI reallocated its hardware.
 
-On March 24th, 2026, OpenAI publicly announced the discontinuation of the Sora consumer platform. In its official communication, OpenAI attributed the closure to rising compute demands and a strategic requirement to refocus on core products.
+OpenAI shared a public notice on March 24th, 2026, stating that it was shutting down the consumer version of Sora. OpenAI's formal statement explained that the retirement stemmed from mounting hardware needs and a strategic push to dedicate resources to its primary offerings.
 
 As Signal & Scale points out, "Ultimately, Sora vanished because of an unresolved mismatch between the staggering cost of generative computing and the actual value consumers were willing to return."
 
 The shutdown occurred across distinct phases:
 
 1. On March 24th, 2026, OpenAI announced the operational wind-down on X, giving Disney executives less than an hour of advance notice.
-2. On April 26th, 2026, OpenAI took the web portal and mobile application completely offline, wiping unexported user libraries.
+2. OpenAI permanently deactivated both the website and mobile app on April 26th, 2026, erasing any stored user content that had not been downloaded.
 3. On September 24th, 2026, the company scheduled the final sunset for the public developer API.
 
 The corporate alliance dissolved quietly. Disney's planned $1 billion equity investment never closed, preventing direct capital loss but stranding planned character rollouts.
