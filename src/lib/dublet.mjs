@@ -51,10 +51,25 @@ export function eksisterendeArtikler(dir = DIR) {
 }
 
 // De n mest lignende artikler (målt mod både spørgsmål og titel).
+// Ord, der står i mere end 5 % af artiklerne (fx "ai"), siger intet om, hvilken
+// artikel der ligner. Målt 8/10: "why sora ai closed" fandt ikke morgenens
+// "why is sora no longer available", fordi fem artikler, der kun delte "ai",
+// fyldte de 5 pladser - og der kom en tredje Sora-artikel i prøvekørslen.
+const almindelige = new WeakMap();
+function almindeligeOrd(artikler) {
+  if (almindelige.has(artikler)) return almindelige.get(artikler);
+  const df = new Map();
+  for (const a of artikler) for (const w of new Set([...ordSaet(a.q), ...ordSaet(a.title)])) df.set(w, (df.get(w) || 0) + 1);
+  const ud = new Set([...df].filter(([, c]) => c > artikler.length * 0.05).map(([w]) => w));
+  almindelige.set(artikler, ud);
+  return ud;
+}
 export function naermeste(kandidat, artikler, n = 5) {
-  const k = ordSaet(kandidat);
+  const fjern = almindeligeOrd(artikler);
+  const saet = (t) => new Set([...ordSaet(t)].filter((w) => !fjern.has(w)));
+  const k = saet(kandidat);
   return artikler
-    .map((a) => ({ a, s: Math.max(jaccard(k, ordSaet(a.q)), jaccard(k, ordSaet(a.title))) }))
+    .map((a) => ({ a, s: Math.max(jaccard(k, saet(a.q)), jaccard(k, saet(a.title))) }))
     .filter((x) => x.s > 0)
     .sort((x, y) => y.s - x.s)
     .slice(0, n);
@@ -62,7 +77,9 @@ export function naermeste(kandidat, artikler, n = 5) {
 
 // Under denne lighed sendes en kandidat ikke til Gemini — den har intet at
 // ligne. Lavt sat med vilje: lag 2 skal se grænsetilfældene, ikke kun de tydelige.
-const MIN_LIGHED = 0.25;
+// 0.2 (8/10): "why sora ai closed" mod "why is sora no longer available" giver 0.20
+// (fælles: kun "sora"), og netop dén skal Gemini se.
+const MIN_LIGHED = 0.2;
 
 // Returnerer { behold: [...], afvist: [{ q, slug, lag }] }.
 // genAI + hentModel + model gives udefra, så modulet ikke kender nøglen.
