@@ -233,6 +233,34 @@ export function klistretSoegeord(md, spoergsmaal) {
   return ud;
 }
 
+// Ordret fra videoen (merværdi, 8/10): en sætning, der deler ORDRET_N ord i træk med
+// transskriptet, er afskrift, ikke en artikel. Tekst i anførselstegn er et citat og
+// tæller ikke - et citat med navn er tilladt. Ord sammenlignes uden tegnsætning og
+// store bogstaver, så "It's" og "it s" er ens på begge sider.
+export const ORDRET_N = 8;
+const normOrd = (s) => String(s).toLowerCase().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, ' ').split(' ').filter(Boolean);
+// udenCitater er defineret længere oppe (bruges også af talesprog).
+export function ordretFraKilde(md, transskript, n = ORDRET_N) {
+  const t = normOrd(transskript);
+  const kilde = new Set();
+  for (let i = 0; i + n <= t.length; i++) kilde.add(t.slice(i, i + n).join(' '));
+  const ud = [];
+  if (!kilde.size) return ud;
+  for (const s of alleSaetninger(md)) {
+    const w = normOrd(udenCitater(synlig(s)));
+    for (let i = 0; i + n <= w.length; i++) {
+      const g = w.slice(i, i + n).join(' ');
+      if (kilde.has(g)) { ud.push({ saetning: s.trim(), ord: g }); break; }
+    }
+  }
+  return ud;
+}
+// Andel af brødtekstens sætninger, der er afskrift (0-1).
+export function ordretAndel(md, transskript, n = ORDRET_N) {
+  const alle = alleSaetninger(md).length;
+  return alle ? ordretFraKilde(md, transskript, n).length / alle : 0;
+}
+
 // ---------------------------------------------------------------------------
 // 2e. Første afsnit: et kort, direkte svar
 // ---------------------------------------------------------------------------

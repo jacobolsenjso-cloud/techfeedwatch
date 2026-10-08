@@ -15,7 +15,12 @@ import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
-import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger } from './src/lib/skriveregler.mjs';
+import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel } from './src/lib/skriveregler.mjs';
+import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
+// Merværdi (8/10): højst denne andel af brødtekstens sætninger må dele 8 ord i træk med videoen.
+const ORDRET_MAKS = 0.15;
+// Læsertjek (8/10): så mange fund efter rettelsen stopper artiklen.
+const LAESER_MAKS = 3;
 
 const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
 
@@ -69,11 +74,12 @@ const ARTICLE_PROFILES = [
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: 2-3 sentence executive summary (no heading, no label).
     - A short intro paragraph with a data-driven hook or a bold contrarian statement.
-    - "## Key Takeaways" - 3-4 bullets with the most critical, non-obvious insights.
-    - "## Technical Breakdown" - explain the core concepts objectively and clearly.
-    - "## Why This Matters" - the concrete real-world impact on workflows, security, or industry.
-    - "## What Others Missed" - unbiased breakdown of risks, limitations, costs, or unexpected angles.
-    - "## The Verdict" - final objective assessment: passing trend or permanent shift?`
+    - A "## " section with 3-4 bullets: the most critical, non-obvious insights.
+    - A "## " section explaining the core concepts objectively and clearly.
+    - A "## " section on the concrete real-world impact on workflows, security, or industry.
+    - A "## " section on risks, limitations, costs, or unexpected angles.
+    - A closing "## " section with a final objective assessment: passing trend or permanent shift?
+    Every heading is specific to THIS subject and says what the section answers (for example "Why NVIDIA's lead is hard to copy", not "Technical Breakdown" or "The Verdict").`
   },
   {
     name: "News Brief",
@@ -81,17 +87,18 @@ const ARTICLE_PROFILES = [
     structure: `STRUCTURE (keep it tight and punchy - this is a short news brief):
     - Opening: 1-2 sentence summary of what happened (no heading, no label).
     - Two or three short paragraphs covering the essentials and why they matter. Use at most one "## " subheading, or none.
-    - "## The Bottom Line" - one tight closing paragraph with your read on it.`
+    - A closing "## " section: one tight paragraph with your read on it, under a heading specific to this story (not "The Bottom Line").`
   },
   {
     name: "Explainer",
     min: 900, max: 1250,
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: a 2 sentence plain-language summary (no heading, no label).
-    - "## What It Is" - define the subject clearly for a smart non-expert.
-    - "## How It Works" - the mechanics, explained simply and accurately.
-    - "## Who It's For" - who benefits, and who does not.
-    - "## The Bottom Line" - a short, practical takeaway.`
+    - A "## " section defining the subject clearly for a smart non-expert.
+    - A "## " section on the mechanics, explained simply and accurately.
+    - A "## " section on who benefits, and who does not.
+    - A closing "## " section with a short, practical takeaway.
+    Every heading is specific to THIS subject (for example "How a breach notice is triggered", not "How It Works", "What It Is", "Who It's For" or "The Bottom Line").`
   },
   {
     name: "Editorial",
@@ -99,7 +106,7 @@ const ARTICLE_PROFILES = [
     structure: `STRUCTURE (an opinionated editorial - take a clear, reasoned stance while staying factually honest):
     - Opening: state your thesis or argument in 2-3 sentences (no heading, no label).
     - Two or three "## " sections that build the argument, with your own topic-specific headings.
-    - "## Where This Lands" - a decisive editorial conclusion that commits to a view.`
+    - A closing "## " section with a decisive editorial conclusion that commits to a view, under a heading that states the view (not "Where This Lands").`
   },
   {
     name: "Practical Q&A",
@@ -107,17 +114,18 @@ const ARTICLE_PROFILES = [
     structure: `STRUCTURE (a practical, reader-first piece):
     - Opening: a 2 sentence summary of the practical question at stake (no heading, no label).
     - Two or three "## " headings phrased as the real questions readers are asking.
-    - "## What To Actually Do" - concrete, honest guidance.`
+    - A closing "## " section with concrete, honest guidance, under a heading specific to the subject (not "What To Actually Do").`
   },
   {
     name: "Context & Implications",
     min: 900, max: 1250,
     structure: `STRUCTURE (use ## for each H2 heading):
     - Opening: a 2 sentence summary (no heading, no label).
-    - "## The Background" - the context and history the source skipped over.
-    - "## What Changed" - what is actually new or different here.
-    - "## The Ripple Effects" - the second-order consequences across the industry.
-    - "## What To Watch Next" - where this is heading and the signals to track.`
+    - A "## " section on the context and history the source skipped over.
+    - A "## " section on what is actually new or different here.
+    - A "## " section on the second-order consequences across the industry.
+    - A closing "## " section on where this is heading and the signals to track.
+    Every heading is specific to THIS subject (not "The Background", "What Changed", "The Ripple Effects" or "What To Watch Next").`
   },
 ];
 
@@ -968,7 +976,10 @@ async function run() {
         if (uklar.length) m.push(`uklare kilder: ${uklar.map((x) => `"${x.ord}"`).join(', ')}`);
         if (klistret.length) m.push(`søgeordet klistret ind i ${klistret.length} sætning(er)`);
         if (nLister < MIN_LISTER) m.push(`${nLister} lister (mindst ${MIN_LISTER})`);
-        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, m };
+        const ordret = ordretFraKilde(content, text);
+        const ordretPct = Math.round(ordretAndel(content, text) * 100);
+        if (ordret.length) m.push(`${ordret.length} sætning(er) afskrevet fra videoen (${ordretPct} %)`);
+        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, ordret, ordretPct, m };
       };
       let k = status();
       if (k.m.length) {
@@ -979,7 +990,7 @@ async function run() {
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
 1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
 ${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the FACT SHEET gives it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the FACT SHEET gives it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}${k.ordret.length ? `12. These sentences copy the video's own wording (eight or more words in a row from the transcript). An article must explain in its own words. Rewrite each one in different words with the same meaning, or, if the exact wording matters, put it in quotation marks and name the creator:\n${k.ordret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
 
 FACT SHEET (items not yet used are listed first):
 ${faktaarkTekst([...ubrugte, ...k.brugte])}
@@ -1023,6 +1034,29 @@ ${content}`);
       if (k.tale.length) throw new Error(`Talesprog efter rettelse: ${k.tale.map((x) => `"${x.ord}"`).join(', ')}. Artiklen skrives ikke.`);
       if (k.diagram.length) throw new Error(`Tekst-diagram efter rettelse (${k.diagram.map((x) => x.type).join(', ')}). Artiklen skrives ikke.`);
       if (k.klistret.length) throw new Error(`Søgeordet "${targetQuestion}" står stadig klistret ind i ${k.klistret.length} sætning(er). Artiklen skrives ikke.`);
+      // Merværdi (8/10): en artikel, der for en stor del er videoens egne ord, giver
+      // læseren intet, videoen ikke allerede gav - og Google kan læse undertekster.
+      if (k.ordretPct > ORDRET_MAKS * 100) throw new Error(`${k.ordretPct} % af sætningerne er afskrevet fra videoen efter rettelse (højst ${ORDRET_MAKS * 100} %). Artiklen skrives ikke.`);
+      console.log(`📝 Afskrift fra videoen: ${k.ordret.length} sætning(er), ${k.ordretPct} %`);
+
+      // Læsertjek (8/10): en model læser artiklen som en læser, der ikke har set videoen.
+      let lf = await laeserTjek(genAI, content);
+      const lfFoer = lf.length;
+      if (lf.length) {
+        const foerLaeser = content, lfListe = lf;
+        const r = await retLaeserFund(genAI, content, lf);
+        content = r.md;
+        // Rettelsen må ikke bringe nye fejl ind (opfundne tal, talesprog, klistret søgeord, afskrift).
+        const k2 = status();
+        if (k2.ukendte.length || k2.tale.length || k2.klistret.length || k2.ordretPct > ORDRET_MAKS * 100) {
+          content = foerLaeser;
+          console.log('   læser-rettelse kasseret: den bragte nye fejl ind');
+        }
+        lf = content === foerLaeser ? lfListe : await laeserTjek(genAI, content);
+        console.log(`👓 Læsertjek: ${lfFoer} fund (${lfListe.map((x) => x.problem).join(', ')}), ${content === foerLaeser ? 0 : r.rettet} rettet, ${lf.length} tilbage`);
+        for (const x of lf) console.log(`   - [${x.problem}] ${x.sentence.slice(0, 120)} (${x.why})`);
+      } else console.log('👓 Læsertjek: 0 fund');
+      if (lf.length >= LAESER_MAKS) throw new Error(`Læsertjek: ${lf.length} sætninger, en læser snubler over, efter rettelse (højst ${LAESER_MAKS - 1}). Artiklen skrives ikke.`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);

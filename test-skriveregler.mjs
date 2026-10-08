@@ -116,8 +116,16 @@ t('fyld: et afsnits eneste sætning fjernes aldrig', R.fjernSaetninger('Intro.\n
 
 t('fyld: sætning fjernes ikke, når næste peger tilbage ("However, that …")', R.fjernSaetninger('Intro.\n\nProgramming can certainly make you rich. However, that only happens with distribution.', ['Programming can certainly make you rich.'], 5).fjernet === 0);
 
+// Ordret fra videoen (8/10): 8 ord i træk fra transskriptet = afskrift; citater er tilladt.
+const TR = "so what you're not allowed to do is wait until the picture is clear because the picture is frequently not clear for another fortnight";
+t('ordret: afskrevet sætning fanges', R.ordretFraKilde('Intro.\n\nWhat you are not allowed to do is wait until the picture is clear.', TR).length === 1);
+t('ordret: samme pointe med egne ord fanges ikke', R.ordretFraKilde('Intro.\n\nCompanies must report early, even before the investigation is finished.', TR).length === 0);
+t('ordret: et citat i anførselstegn er tilladt', R.ordretFraKilde('Intro.\n\nAs Human Error puts it, "you\'re not allowed to do is wait until the picture is clear."', TR).length === 0);
+t('ordret: 7 ord i træk er ikke nok', R.ordretFraKilde('Intro.\n\nThe picture is frequently not clear for weeks.', TR).length === 0);
+t('ordret: tom kilde giver intet fund', R.ordretFraKilde('Intro.\n\nAny sentence at all with many words in it here.', '').length === 0);
+
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 48;
+const FORVENTET = 53;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);
