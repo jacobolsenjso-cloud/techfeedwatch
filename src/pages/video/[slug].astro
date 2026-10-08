@@ -152,14 +152,26 @@ const shortIndex = onlyShorts.findIndex((v: any) => v.file.split('/').pop().repl
 const nextShortSlug = shortIndex < onlyShorts.length - 1 ? onlyShorts[shortIndex + 1].file.split('/').pop().replace('.md', '') : null;
 const prevShortSlug = shortIndex > 0 ? onlyShorts[shortIndex - 1].file.split('/').pop().replace('.md', '') : null;
 
-const relatedVideos = allVideos
-  .filter((v: any) => {
-    if (v.frontmatter.youtubeId === youtubeId) return false;
+// Relaterede artikler: 6 med flest fælles emner + 2 andre med fælles emne.
+// Hvorfor: før tog vi bare de første 8 i filnavnsorden, så de samme få artikler
+// stod i boksen overalt (op til 307 sider), og 336 af 425 artikler stod aldrig
+// i nogen boks (målt 8/10 med _sim-relaterede.mjs). En fast hash af (denne side,
+// kandidat) spreder valget, men giver samme resultat ved hver bygning.
+const relHash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+const relKandidater = allVideos
+  .filter((v: any) => v.frontmatter.youtubeId !== youtubeId)
+  .map((v: any) => {
     const vTags = v.frontmatter.tags || v.frontmatter.tag || [];
     const vTagsArray = Array.isArray(vTags) ? vTags : [vTags];
-    return vTagsArray.some(t => tagsArray.includes(t));
+    const faelles = vTagsArray.filter((t: string) => tagsArray.includes(t)).length;
+    return { v, faelles, h: relHash(slug + '|' + v.file.split('/').pop().replace('.md', '')) };
   })
-  .slice(0, 8);
+  .filter((k: any) => k.faelles > 0);
+const relatedVideos = [...relKandidater].sort((a: any, b: any) => (b.faelles - a.faelles) || (b.h - a.h)).slice(0, 6).map((k: any) => k.v);
+for (const k of [...relKandidater].sort((a: any, b: any) => b.h - a.h)) {
+  if (relatedVideos.length >= 8) break;
+  if (!relatedVideos.includes(k.v)) relatedVideos.push(k.v);
+}
 
 // Anbefalede artikler (kun normale videoer) til cross-promotion i desktop-Shorts - tag-match først, ellers nyeste
 const recommendPool = allVideos

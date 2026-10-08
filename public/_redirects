@@ -1614,3 +1614,5 @@
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301
 /tag/business-&-money/page/* /tag/business-money/page/:splat 301
 /shorts/* /library/ 301
+/tag/ai-workflow /tag/automation/ 301
+/tag/ai-workflow/ /tag/automation/ 301
