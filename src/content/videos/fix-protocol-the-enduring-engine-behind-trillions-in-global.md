@@ -82,7 +82,7 @@ The **Application Layer** handles the actual business logic of trading. These me
 
 Common application layer messages include "New Order" (tag 35=D), "Cancel Order," "Modify or Replace Order," "Mass Quote," and "Mass Quote Cancel." These messages carry the detailed instructions for trading activities.
 
-When an exchange receives an application layer message, it processes the request and sends a response. This response can either be an acceptance or a rejection. For example, a Security Definition Request (tag 35=C) might be followed by a Security Definition Request message (tag 35=D) from the exchange.
+When an exchange receives an application layer message, it processes the request and sends a response. This response can either be an acceptance or a rejection. For example, a Security Definition Request (tag 35=c) might be answered by a Security Definition message (tag 35=d) from the exchange.
 
 This 35=D message can signify either acceptance or rejection. If the message is accepted, it will typically include the ID and name of the newly created instrument.
 

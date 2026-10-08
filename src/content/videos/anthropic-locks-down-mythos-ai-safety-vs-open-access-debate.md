@@ -34,19 +34,19 @@ Anthropic has chosen to restrict public access to its advanced AI model, 'Mythos
 
 Anthropic's internal testing of Mythos reportedly uncovered a startling ability to identify critical software vulnerabilities. The company described Mythos as a "zero-day vending machine," capable of discovering previously unknown flaws that could be exploited by malicious actors. These findings are central to Anthropic's claims of danger.
 
-For instance, Mythos reportedly found a 16-year-old vulnerability in FFmpeg, a widely used multimedia framework. This flaw could allow an attacker to create a malicious video file. Such a file could trick a decoder into writing a few bytes of data outside its designated memory.
+As an example, Mythos is said to have uncovered a security flaw dating back 16 years within FFmpeg, a popular multimedia framework. This flaw could allow an attacker to create a malicious video file. A file of that type could cause a decoder to erroneously write several bytes of data beyond its allocated memory boundary.
 
-This action could crash a program or corrupt nearby data. The model also uncovered a 27-year-old bug in OpenBSD, a security-focused operating system. This particular vulnerability could allow a remote attacker to trigger a null pointer write, causing any OpenBSD machine reachable over TCP to crash instantly.
+This action could crash a program or corrupt nearby data. The model also uncovered a 27-year-old bug in OpenBSD, a security-focused operating system. An attacker operating remotely could exploit this specific flaw to initiate a null pointer write, immediately crashing any OpenBSD system accessible via TCP.
 
 Beyond these specific examples, Mythos reportedly exploited several JavaScript engine bugs across major web browsers. These exploits could allow a malicious webpage to escape the browser's sandbox environment. In one instance, this led to data theft across websites.
 
-In another, it enabled direct writing to the operating system's kernel, giving an attacker full control over a device once a victim opened the webpage. Perhaps most concerning, Mythos found a bug in the Linux kernel. This flaw allowed it to flip a single bit in a neighboring memory page.
+In another scenario, it allowed data to be written straight into the operating system's kernel, granting an attacker complete control over a device as soon as a victim visited the webpage. Perhaps most concerning, Mythos found a bug in the Linux kernel. Through this bug, it was able to alter a single bit inside an adjacent page of memory.
 
-This action turned the password executable into a writable file, which Mythos then overwrote to gain full root access to the system. The reported discovery rate of these bugs was large, with one internal tester noting they found more bugs in a few weeks than in their entire life combined.
+Doing so converted the password binary into a writable file, which Mythos subsequently replaced to secure total root access to the machine. The reported discovery rate of these bugs was large, with one internal tester noting they found more bugs in a few weeks than in their entire life combined.
 
 ## Anthropic's Approach to Risk Mitigation
 
-In response to these findings, Anthropic announced 'Project Glasswing.' This initiative aims to secure critical global software by granting select entities access to Mythos. The idea is that Mythos is too dangerous for general public release.
+In response to these findings, Anthropic announced 'Project Glasswing.' This initiative aims to secure critical global software by granting select entities access to Mythos. The rationale is that making Mythos available to the general public presents too serious a hazard.
 
 Instead, a collection of companies, described as those that "happen to pay Anthropic a lot of money," along with a major bank, will gain access. The US Treasury Secretary and the Federal Reserve Chair reportedly held an urgent meeting with bank CEOs to discuss the security dangers posed by Mythos, underscoring the perceived threat level.
 
@@ -60,7 +60,7 @@ Not everyone is convinced by Anthropic's claims or its chosen mitigation strateg
 
 This playbook involves generating fear about a model's abilities, only to later release a less impactful version. They point to past instances where AI models were initially hyped as revolutionary, only to have their impact diminish over time.
 
-Skeptics also highlight several points that question the true extent of Mythos's unique power. Anthropic has been using Mythos internally since February 24th. During this period, the company reportedly experienced its own security issues, including leaked Claude source code and documents revealing Mythos's existence.
+Skeptics also highlight several points that question the true extent of Mythos's unique power. Mythos has been deployed internally at Anthropic since February 24th. During this period, the company reportedly experienced its own security issues, including leaked Claude source code and documents revealing Mythos's existence.
 
 They also faced challenges keeping their APIs online. These internal struggles raise questions about the company's ability to manage a model deemed so dangerous.
 
@@ -82,4 +82,4 @@ It also enables a broader understanding of AI's limitations and risks, rather th
 
 In the end, whether Mythos will truly revolutionize cybersecurity or simply represent an incremental advance remains to be seen.
 
-The expert opinion suggests it "almost certainly will not" destroy the world, but it is "probably yes" a real step up from Anthropic's current flagship model, Opus 4.6. For now, the public must largely take Anthropic's word for its abilities, as access remains highly restricted.
+Specialist assessments conclude that while the model "almost certainly will not" cause global ruin, it is "probably yes" a genuine leap forward from Anthropic's reigning flagship model, Opus 4.6. For now, the public must largely take Anthropic's word for its abilities, as access remains highly restricted.

@@ -82,7 +82,7 @@ The distinction between the tax efficiency of mutual funds and ETFs is not unive
 
 These tax-advantaged accounts are already sheltered from annual capital gains taxes. Within a 401k or traditional IRA, taxes are deferred until withdrawal in retirement. In a Roth IRA, qualified withdrawals are entirely tax-free.
 
-Therefore, whether a mutual fund or an ETF is held within these specific account types, the investor will not face annual capital gains tax bills. This is due to fund-level distributions.
+Therefore, whether a mutual fund or an ETF is held within these specific account types, the investor will not face annual capital gains tax bills. This holds even when the fund pays out capital gains distributions.
 
 However, for investments held in a standard brokerage account, gains are subject to annual taxation. Here, the ETF's structure offers a major advantage.
 

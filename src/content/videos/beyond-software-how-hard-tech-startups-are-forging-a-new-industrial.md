@@ -52,7 +52,7 @@ This leads to longer development cycles and higher upfront investment compared t
 
 While software startups might seek seed funding to build a team and an initial product, hard tech companies often need significant, patient capital to fund years of R&D and large-scale infrastructure. Evaluating risk in hard tech extends beyond market fit to encompass significant technical hurdles and supply chain complexities.
 
-This requires investors to possess a deeper understanding of scientific principles and engineering timelines. Companies in fields such as robotics exemplify these challenges, requiring both advanced software intelligence and solid physical systems, often demanding substantial capital for development and scaling, a point further elaborated at 46:25 regarding robotics and fundraising.
+This requires investors to possess a deeper understanding of scientific principles and engineering timelines. Companies in fields such as robotics exemplify these challenges, requiring both advanced software intelligence and solid physical systems, often demanding substantial capital for development and scaling.
 
 ## The Ripple Effects
 

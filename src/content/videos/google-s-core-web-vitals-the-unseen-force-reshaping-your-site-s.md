@@ -28,7 +28,7 @@ faqs:
     answer: "LCP measures the time it takes for the largest visible content element on a page to load, indicating the perceived loading speed and providing a first impression of the page's performance."
 ---
 
-Core Web Vitals represent a fundamental shift in how search engines, particularly Google, assess the quality of a web page. As introduced at 00:00, they quantify the real-world experience of users, moving beyond simple page speed to encompass how quickly a page becomes useful and stable.
+Core Web Vitals represent a fundamental shift in how search engines, particularly Google, assess the quality of a web page. They quantify the real-world experience of users, moving beyond simple page speed to encompass how quickly a page becomes useful and stable.
 
 ## What Core Web Vitals Measure for Modern Websites
 
@@ -47,7 +47,7 @@ These metrics offer a standardized way to understand and [measure and improve] a
 
 The operational mechanics of Core Web Vitals revolve around user-centric metrics, meaning they evaluate the actual experience of a visitor rather than just server-side processing or network speeds. Google integrates these measurements into its ranking algorithms, establishing them as a factor for [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
 
-A website performing well across LCP, FID, and CLS is likely to be favored in search results, increasing its visibility and organic traffic. This is further elaborated at 04:47, highlighting the SEO Impact.
+A website performing well across LCP, FID, and CLS is likely to be favored in search results, increasing its visibility and organic traffic. That experience also affects how pages rank in search.
 
 To illustrate how these metrics work in practice, consider the following:
 

@@ -77,7 +77,7 @@ External links, which point to other websites, also saw a decline. Desktop pages
 
 Mobile pages had a median of 6 external links, down from 8. This reduction might indicate increased caution from websites about passing on link popularity or recommending external resources.
 
-A notable disparity exists between mobile and desktop linking, with mobile pages having a median of 62 links compared to 68 on desktop. Given search engines' shift towards mobile-first indexing, these differences can negatively impact a site's performance. The adoption of `rel="nofollow"` attributes was seen on 28.6% of desktop pages and 30.7% of mobile pages.
+A notable disparity exists between mobile and desktop linking, with mobile pages carrying fewer links than desktop pages. Given search engines' shift towards mobile-first indexing, these differences can negatively impact a site's performance. The adoption of `rel="nofollow"` attributes was seen on 28.6% of desktop pages and 30.7% of mobile pages.
 
 However, newer attributes like `rel="ugc"` (user-generated content) and `rel="sponsored"` were used on less than 0.3% of pages. While these newer attributes add semantic information that AI algorithms can use, their slow adoption suggests publishers may not yet see major additional value over `nofollow`.
 

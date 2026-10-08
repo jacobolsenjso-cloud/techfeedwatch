@@ -31,7 +31,7 @@ Anyone trying to produce video with generative software faces a wall of steep su
 
 The simplest workflow relies on browser platforms that provide direct access to state-of-the-art foundation weights without requiring coding skills or local graphics hardware. Many creators assume that high visual fidelity requires paying monthly fees to venture-backed studios. In reality, multiple web platforms host top-tier generative engines for public use.
 
-As [Malva AI](https://malvaai.com/pdf) points out, an intensive 30 days experiment comparing paid suites directly against free web tools showed that viewers could not tell which clips came from commercial software. Both test clips presented to evaluators came entirely from free generative systems.
+As [Malva AI](https://malvaai.com/pdf) points out, an intensive 30 days experiment comparing paid suites directly against free web tools showed that viewers could not tell which clips came from commercial software. Evaluators were shown clips from both the paid and the free tools.
 
 The core secret lies in matching your prompt to the specific operational constraints of each tool. When starting from scratch, [You Can Make AI Videos for Zero Dollars Right Now](/video/you-can-make-ai-videos-for-zero-dollars-right-now) if you understand parameter thresholds. Platforms impose paywalls only when users push past default boundaries. 
 
@@ -98,5 +98,5 @@ To build an efficient, cost-free video production pipeline today, follow this ex
 3. **Pace batch rendering across services:** Submit your primary background scenes to Zsky AI first. Because generation can take up to 10 minutes, let it process in an idle tab.
 4. **Deploy fast-turnaround prompts:** Switch to your no-login tool to generate up to five videos per 15 minutes block at 1080p for up to 10 seconds. Save every rendered file to local disk immediately upon generation to prevent data loss.
 5. **Leverage specialized models for character motion:** Use Viggle with MiniMax H3 for complex character movement and multi-frame reference sequences, ensuring your settings remain on options flagged Free.
-6. **Use secondary engines for specific aesthetics:** Spend your four or five daily allocations on GizAI using MiniMax H3 Turbo or LTX-2.5, keeping prompt expansion enabled to maximize generation accuracy.
+6. **Use secondary engines for specific aesthetics:** Spend your four or five free generations on GizAI using MiniMax H3 Turbo or LTX-2.5, keeping prompt expansion enabled to maximize generation accuracy.
 7. **Assemble modular clips in an external editor:** Import your short assets into a standard non-linear editor, assemble your sequence, and overlay synchronized sound effects to finish the production.

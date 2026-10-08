@@ -37,13 +37,13 @@ rewrittenAt: "2026-08-18"
 
 Classical computers process information using bits, which exist in one of two states: 0 or 1. These states represent the on or off flow of an electrical current.
 
-Quantum computers, however, use qubits. A qubit can exist in both the 0 and 1 states simultaneously. This property is known as superposition.
+Quantum computers, however, use qubits. A qubit is capable of being in the 0 and 1 states at the exact same time. This property is known as superposition.
 
 To understand superposition, consider a spinning coin. While it is in the air, it can be seen as both heads and tails at the same time.
 
-Similarly, a qubit holds both states until it is measured. This unique ability allows quantum computers to process information in a fundamentally different way. A system with multiple qubits in superposition can simultaneously possess many states.
+Similarly, a qubit holds both states until it is measured. Because of this distinct capability, quantum computers handle data in a fundamentally different manner. A system with multiple qubits in superposition can simultaneously possess many states.
 
-This means a quantum computer can process many solutions at once, a task classical computers cannot perform. This ability allows quantum computers to solve problems much faster than classical machines.
+This means a quantum computer can process many solutions at once, a task classical computers cannot perform. Through this capability, quantum systems can work through problems significantly faster than traditional machines.
 
 ## Entanglement: The Power of Connection
 
@@ -57,7 +57,7 @@ This phenomenon greatly increases the computational power available. Classical c
 
 A quantum computer looks very different from a standard laptop or desktop computer. Walking into a room housing a quantum computer, one might first notice large, intricate machinery.
 
-This equipment often resembles a chandelier, with parts in golden, silver, and blue tones. Surrounding it is a maze of wires, tubes, and other complex components. The entire setup often appears to be something from a science fiction movie.
+This equipment often resembles a chandelier, with parts in golden, silver, and blue tones. It is encircled by an intricate network of wiring, tubing, and additional elaborate hardware. The entire setup often appears to be something from a science fiction movie.
 
 This complex physical design is necessary to maintain the delicate quantum states of the qubits. These systems often require extremely cold temperatures and shielded environments to prevent interference. Such conditions are essential for the quantum phenomena of superposition and entanglement to function correctly.
 
@@ -65,9 +65,9 @@ This complex physical design is necessary to maintain the delicate quantum state
 
 Quantum computers have existed in various forms for several years. Some technology companies already operate quantum computers. These machines serve as valuable resources for developing new software and programming languages.
 
-A major advancement in quantum computing occurred in October 2019. Google then stated that it had achieved [quantum supremacy](/video/what-is-the-concept-of-quantum-supremacy/) with its specialized Sycamore processor.
+A major advancement in quantum computing occurred in October 2019. Google announced at that point that its custom Sycamore processor had reached [quantum supremacy](/video/what-is-the-concept-of-quantum-supremacy/).
 
-Quantum supremacy means performing a specific type of computation much faster and more efficiently than the most powerful classical supercomputer. Google's demonstration validated the idea that quantum computers can indeed surpass classical computers in certain tasks. They can execute operations that classical computers cannot.
+Quantum supremacy refers to executing a particular calculation with far greater speed and efficiency than the strongest conventional supercomputer can manage. Google's test confirmed that quantum devices can truly outperform standard computers when handling particular operations. They can execute operations that classical computers cannot.
 
 This progress prompted other major companies, including Microsoft and IBM, along with several startups, to intensify their research in quantum computing. The goal is to achieve even greater results and expand the abilities of these advanced machines.
 
@@ -75,10 +75,10 @@ This progress prompted other major companies, including Microsoft and IBM, along
 
 The full potential of quantum computers promises a world of vast possibilities. Their immense computational abilities could greatly enhance artificial intelligence. Quantum cloud computing services could revolutionize machine learning.
 
-They would process extensive amounts of data and complex calculations at unprecedented speeds. In cybersecurity, quantum computers could maintain data encryption during active use, offering strong protection.
+Such systems would handle massive quantities of data alongside intricate computations at speeds never seen before. In cybersecurity, quantum computers could maintain data encryption during active use, offering strong protection.
 
 Beyond these areas, quantum computing is poised to transform medical and drug research. It could also improve weather forecasting and advance automobile battery technology. While the promise is major, quantum computing remains in its foundational stages.
 
-It will likely take many years before these computers become mainstream and see large-scale commercial use. Overcoming major engineering hurdles in stability and error correction is necessary for widespread practical application.
+Widespread adoption and broad commercial deployment of these machines are expected to remain years away. Overcoming major engineering hurdles in stability and error correction is necessary for widespread practical application.
 
 Despite these challenges, quantum computers are expected to eventually solve complex problems. They may even help with everyday tasks, like finding missing socks or predicting social outcomes.

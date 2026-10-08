@@ -30,19 +30,19 @@ faqs:
 
 The future of AI agents points to a transformative shift where autonomous software increasingly becomes the primary user of the internet.
 
-As Aaron's essentially arguing, we're at an inflection point: agents are becoming the primary users of software, but the whole internet infrastructure—pricing models, web standards, protocols, enterprise systems—all of this stuff was built for humans, not for agents. This demands a complete overhaul of existing infrastructure, impacting everything from web standards and pricing models to how businesses build and deploy software, fundamentally redefining digital interaction.
+Aaron argues that we have reached a critical turning point where agents are replacing humans as the main users of software, even though the entirety of internet infrastructure—including protocols, web standards, pricing models, and enterprise software—was originally engineered specifically for people. This demands a complete overhaul of existing infrastructure, impacting everything from web standards and pricing models to how businesses build and deploy software, fundamentally redefining digital interaction.
 
-This profound change is largely driven by a projected explosion in agent numbers. Soon, there could be 100x, 1,000x more agents than people interacting with digital systems, according to a recent post by Aaron on X, and this is going to require a complete rethinking, a fundamental shift in how software is built and then deployed.
+This profound change is largely driven by a projected explosion in agent numbers. According to a recent post by Aaron on X, the number of agents operating across digital systems could soon outnumber human users by 100x to 1,000x, demanding a comprehensive reassessment and fundamental transformation of software development and deployment.
 
-This necessitates a move towards "make something agents want," a riff on Paul Graham's advice, because agents need API first systems, they need structured data, they need clean codebases, up-to-date documentation, all of this stuff for agents to work properly. Agents do not attend webinars or respond to outbound emails; they identify effective tools and integrate them directly.
+Adapting Paul Graham's maxim, developers must now pivot to "make something agents want," ensuring systems offer API-first design, structured data, tidy codebases, and current documentation so agents can operate effectively. Agents do not attend webinars or respond to outbound emails; they identify effective tools and integrate them directly.
 
 The internet’s adaptation is unfolding unevenly across sectors. Business-to-business (B2B) companies, like Box, are ahead, having already released command-line interfaces (CLIs) that work well for agents and developed APIs for integration. This contrasts sharply with the consumer side, which faces significant challenges.
 
-Consumer companies, publishers, e-com websites, everything in that kind of bucket for consumers have a rich 20-year history of trying to block bots. Their revenue, particularly for publishers and e-commerce giants that rely on advertising, is tied to human eyeballs, creating a disincentive to quickly enable agents to browse or purchase autonomously.
+Consumer-focused businesses, digital publishers, and e-commerce platforms share a well-established, 20-year record of actively keeping bots out. Their revenue, particularly for publishers and e-commerce giants that rely on advertising, is tied to human eyeballs, creating a disincentive to quickly enable agents to browse or purchase autonomously.
 
 For example, the inability to send an agent to buy items on Amazon or read a subscribed article from The Information or Wall Street Journal highlights the current friction. As Matthew Berman points out, this advertising revenue model means these companies are disincentivized from rapidly transitioning to an agent-first world.
 
-Emerging agent technologies are pushing this boundary. Perplexity launched "Computer," a cloud-based agent orchestrating 20 different AI models to execute complex multi-step workflows autonomously, sometimes running for hours.
+Emerging agent technologies are pushing this boundary. Perplexity introduced "Computer," a cloud-hosted agent that coordinates 20 distinct AI models to independently carry out complex, multi-stage workflows that can run for hours.
 
 They followed this with "Personal Computer," software designed to run persistently on a Mac mini. The viral success of Open Interpreter, an open-source agent built by Peter Steinberger, which acquired 200,000 GitHub stars and was subsequently acquired by OpenAI, further underscores this trend, sparking a wave of similar personal AI assistants from companies like Tencent and Cohere.
 

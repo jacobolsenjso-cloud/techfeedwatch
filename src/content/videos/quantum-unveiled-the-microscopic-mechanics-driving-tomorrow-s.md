@@ -62,7 +62,7 @@ Quantum mechanics also introduces entanglement. This phenomenon links the fates 
 
 Critically, quantum probabilities are intrinsic to the theory. They are not a measure of our lack of knowledge. Instead, they are fundamental to how the quantum world works.
 
-This means even with the most complete description, we can often only predict the likelihood of different outcomes. Albert Einstein famously expressed discomfort with this idea. He believed "God plays dice with the universe."
+This means even with the most complete description, we can often only predict the likelihood of different outcomes. Albert Einstein famously expressed discomfort with this idea. He believed "God does not play dice with the universe."
 
 ## Precision Timekeeping and Quantum Sensors
 

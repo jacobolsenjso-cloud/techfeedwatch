@@ -83,7 +83,7 @@ To maintain this 10-minute target, Bitcoin uses a "difficulty adjustment." This 
 
 Conversely, if miners leave and the puzzle takes longer, the difficulty decreases. This dynamic adjustment ensures that, regardless of how much computing power is dedicated to mining, a new block is consistently found every 10 minutes on average.
 
-This continuous competition, driven by the block reward and transaction fees, ensures that Bitcoin remains the most secure distributed database on the planet. It has survived 50 years of constant attacks and manipulation attempts, a proof to its strong design. The value of this security is difficult to quantify, but it underpins Bitcoin's unique properties.
+This continuous competition, driven by the block reward and transaction fees, ensures that Bitcoin remains the most secure distributed database on the planet. It has survived more than 15 years of constant attacks and manipulation attempts, a proof to its strong design. The value of this security is difficult to quantify, but it underpins Bitcoin's unique properties.
 
 ## Debates and Realities of Bitcoin Mining
 

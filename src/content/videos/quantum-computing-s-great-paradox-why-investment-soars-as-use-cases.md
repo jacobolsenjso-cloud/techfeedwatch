@@ -34,15 +34,15 @@ Hybrid quantum-classical computing represents an integrated approach where the s
 
 Quantum computing operates on principles fundamentally different from classical computing, primarily through the use of quantum bits, or qubits. Unlike a [classical bit](/video/difference-between-qubit-and-classical-bit-explained/) that holds a definite state of either 0 or 1, a qubit can exist in a superposition of both states simultaneously.
 
-This inherent quantum property means that if you have a qubit with two states, 0 and 1, combining it with a second qubit results in a product state encompassing 00, 01, 10, and 11. That makes four distinct states.
+Due to this basic quantum feature, pairing a qubit possessing two states, 0 and 1, with an additional qubit yields a product state spanning 00, 01, 10, and 11. That makes four distinct states.
 
 Introduce a third qubit, and you have eight possible combinations. Generally, for *n* qubits, the number of possible states is 2 to the *n*.
 
-While this exponential growth in possible states might seem unique, classical computers also manage exponentially growing bit combinations. The true quantum advantage does not just come from combining qubits, but from the possibility to entangle them.
+While this exponential growth in possible states might seem unique, classical computers also manage exponentially growing bit combinations. The genuine quantum edge arises not simply from grouping qubits together, but from the capacity to entangle them.
 
 Entanglement means that qubits become interlinked, where the state of one instantly influences the state of another, regardless of distance. This allows for complex combinations that cannot exist in a standard computer, such as sums of states like 01 + 10 with arbitrary prefactors.
 
-These entangled states dramatically expand the computational space, enabling quantum computers to perform certain calculations much faster than their classical counterparts. However, this profound advantage only becomes relevant for a sufficiently large number of stable qubits, somewhere in the range of some hundred thousand to a million.
+These entangled states dramatically expand the computational space, enabling quantum computers to perform certain calculations much faster than their classical counterparts. Even so, this major benefit only matters once a system reaches an adequately high count of stable qubits, roughly several hundred thousand to a million.
 
 ## Hybrid Quantum-Classical Computing: An Evolving Strategy
 
@@ -50,11 +50,11 @@ The journey toward achieving a "quantum advantage" has faced significant hurdles
 
 IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026. These ambitious qubit targets have since disappeared from their public roadmaps, signaling that building fault-tolerant, large-scale quantum computers is proving more challenging than anticipated.
 
-This re-evaluation prompted a pivot from purely quantum solutions to hybrid approaches that combine both conventional and quantum computers. These hybrid quantum approaches leverage existing classical supercomputing infrastructure to manage parts of a problem, while offloading specific, computationally intensive sub-routines to quantum processors.
+This reassessment triggered a transition away from exclusively quantum methods toward hybrid models that unite conventional and quantum computers. These hybrid quantum approaches leverage existing classical supercomputing infrastructure to manage parts of a problem, while offloading specific, computationally intensive sub-routines to quantum processors.
 
 This integrated model is often referred to by terms like "quantum-centric supercomputing," which is essentially newspeak for these hybrid strategies.
 
-One notable example of this shift is IBM's recent announcement that it used quantum-centric supercomputing to simulate a big protein complex. This showcases the current operational reality: most of the calculation for such complex problems is still handled by a classical supercomputer.
+A clear illustration of this transition is IBM's recent disclosure that it simulated a big protein complex using quantum-centric supercomputing. This showcases the current operational reality: most of the calculation for such complex problems is still handled by a classical supercomputer.
 
 Critically, the researchers themselves indicated in their paper that the results of the purely conventional and partly quantum computation were comparable. This highlights a key characteristic of current hybrid systems: the quantum contribution, while present and interesting for research, often doesn't yet provide a demonstrable acceleration or unique insight that can't be matched by classical methods.
 
@@ -64,9 +64,9 @@ The advantage of these hybrid approaches, Sabine Hossenfelder notes, is often th
 
 Despite the current experimental nature and the absence of broad, practical applications, investment in quantum computing remains substantial, driven by national interest and technological competition. China has made quantum computing a part of its new five-year plan, signaling a strategic national commitment.
 
-Predictably, the US government has also significantly ramped up investments, pouring a total of $2 billion into quantum computing recently. This surge in funding comes for a technology that, as of now, has zero broadly practical uses.
+Unsurprisingly, the US government has likewise sharply boosted its spending, committing a total of $2 billion to quantum computing recently. This surge in funding comes for a technology that, as of now, has zero broadly practical uses.
 
-This influx of capital spurs new business ventures and manufacturing initiatives. GlobalFoundries, for example, promptly launched quantum technology solutions, establishing a new quantum business to cater to the nascent quantum industry. Similarly, IBM is building a quantum foundry for quantum wafers to support what it describes as America’s quantum leadership and innovation.
+This influx of capital spurs new business ventures and manufacturing initiatives. GlobalFoundries, for example, promptly launched quantum technology solutions, establishing a new quantum business to cater to the nascent quantum industry. In a similar move, IBM is constructing a quantum foundry dedicated to quantum wafers to foster what it characterizes as America’s quantum leadership and innovation.
 
 Major players like IBM, Google, and Amazon utilize superconducting circuits as qubits. These circuits benefit from the fact that they can be printed using established chip production methods on standard silicon wafers.
 
@@ -80,7 +80,7 @@ Quantum chemistry, material science, logistics, and finance applications have er
 
 ## The Path Forward for Quantum Computing
 
-The one application for large enough quantum computers that no one seriously doubts is their potential to break some old encryption protocols.
+The single use case for sufficiently large quantum computers that virtually no one disputes is their capacity to crack certain older encryption protocols.
 
 This capability, however, is a niche use case and not a general-purpose solution for the average person or most businesses. Once older protocols are compromised, newer, quantum-resistant encryption methods will likely be implemented, limiting its long-term impact to legacy systems.
 

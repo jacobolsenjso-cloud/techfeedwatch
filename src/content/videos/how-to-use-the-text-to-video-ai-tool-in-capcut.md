@@ -57,7 +57,7 @@ CapCut addresses this failure through Omni-reference. Omni-reference locks your 
 
 Once reference anchors lock in place, you move to actual motion rendering. The storyboard brings the concept to life using Dreamina Seedance 2.0.
 
-Creators feed in concise shot parameters: camera moves, specific actions, and environmental moods. The engine then renders a 15-second clip complete with camera motion, adjusted lighting, and synced audio.
+Creators feed in concise shot parameters: camera moves, specific actions, and environmental moods. The engine then renders a clip of up to 15 seconds complete with camera motion, adjusted lighting, and synced audio.
 
 Expectation management matters here. You are directing a series of short, beautiful shots, not a full 10-minute movie in one click. Most individual generations land at around 8 seconds each.
 

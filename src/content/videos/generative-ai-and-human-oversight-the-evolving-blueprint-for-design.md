@@ -40,11 +40,11 @@ For a broader understanding of how this differs from other AI applications, cons
 
 ## How It Works
 
-The process of applying generative AI to product design typically begins with designers inputting high-level requirements or, as seen at 00:25, Defining the Architectural Style they wish to explore.
+The process of applying generative AI to product design typically begins with designers inputting high-level requirements or defining the architectural style they wish to explore.
 
 Instead of drawing a single design, the AI system is prompted to begin generating multiple design candidates. This rapid ideation phase, which traditionally consumed significant human effort and time, is compressed as the AI explores a vast solution space.
 
-For instance, a FreeCAD AI generation process might involve the AI systematically building components. This can include Building the Facade step by step (from 01:23), or even creating highly specific aesthetic elements.
+For instance, a FreeCAD AI generation process might involve the AI systematically building components. This can include building the facade step by step, or even creating highly specific aesthetic elements.
 
 As Creditizens - AI Systems for Builders points out, generative AI can precisely elaborate intricate features, such as creating sakura details for a building facade. This level of detail, generated automatically, demonstrates the AI's capacity to translate abstract style definitions into concrete, complex forms.
 
@@ -52,7 +52,7 @@ The key to effective implementation lies in a human-in-the-loop design workflow.
 
 This engagement involves a multi-agent chorus evaluation, where AI agents might present their designs for assessment or humans directly score design candidates based on predefined criteria, aesthetic appeal, or functional suitability. This feedback loop is essential; human input guides the AI, refining its understanding and steering subsequent generations towards more desirable outcomes.
 
-Improvements, like those seen in FreeCAD MCP, continue to enhance the efficiency and versatility of these AI-powered design systems, leading to better results and a smoother workflow. The aim is Building Controlled AI Engineering Systems (as discussed at 03:21) where the AI acts as an intelligent assistant, expanding the designer's capabilities rather than replacing them.
+Improvements, like those seen in FreeCAD MCP, continue to enhance the efficiency and versatility of these AI-powered design systems, leading to better results and a smoother workflow. The aim is to build controlled AI engineering systems where the AI acts as an intelligent assistant, expanding the designer's capabilities rather than replacing them.
 
 ## Who It's For
 
@@ -68,7 +68,7 @@ These tools, sometimes available on platforms like Gumroad, suggest a growing ar
 
 However, it is not for those who prefer an entirely manual, intuition-driven approach without digital augmentation, or for projects where the design scope is extremely narrow and repetitive, not warranting the setup and learning curve of AI tools.
 
-While AI offers immense potential, the caution Why AI Alone Is Not Enough (explored at 02:42) serves as a critical reminder: human discernment and ethical judgment are irreplaceable in shaping products that truly serve human needs and values.
+While AI offers immense potential, the caution that AI alone is not enough serves as a critical reminder: human discernment and ethical judgment are irreplaceable in shaping products that truly serve human needs and values.
 
 ## The Bottom Line
 

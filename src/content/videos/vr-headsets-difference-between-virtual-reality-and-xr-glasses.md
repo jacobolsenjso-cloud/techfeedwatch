@@ -77,7 +77,7 @@ Meta Quest headsets allow users to wear standard glasses directly inside the fac
 
 Pricing between dedicated VR headsets and high-end video glasses reveals a paradoxical economic field. The Viture Pro retails at 549, while the XREAL Air 2 Pro commands 599.
 
-Those figures place them on exact pricing par with the Meta Quest 3 at 599, and well above entry-tier spatial hardware like the Meta Quest 3S at 349. Meanwhile, Valve's upcoming Steam Frame is widely expected to approach the $1,000 mark, leaving enterprise options like the Apple Vision Pro—which retails for over six grand in international markets like Australia—in a distant corporate tier.
+Those figures place them close to the Meta Quest 3 at 599, and well above entry-tier spatial hardware like the Meta Quest 3S at 349. Meanwhile, Valve's upcoming Steam Frame is widely expected to approach the $1,000 mark, leaving enterprise options like the Apple Vision Pro—which retails for over six grand in international markets like Australia—in a distant corporate tier.
 
 Evaluating these price points requires examining actual utility:
 * **XR Glasses ($549–$599):** High-grade micro-OLED displays delivering pristine black levels, zero screen-door effect, and unmatched transit ergonomics, yet limited entirely to acting as an external visual terminal.

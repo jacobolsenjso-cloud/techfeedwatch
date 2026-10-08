@@ -38,7 +38,7 @@ This approach allows developers to build verifiable computations over private da
 
 While many established programming languages exist, Midnight's unique requirements for privacy-preserving smart contracts necessitated the creation of Compact, a domain-specific language (DSL). Unlike general-purpose languages, Compact is narrowly focused on the specific task of writing contracts that can both execute on-chain and generate zero-knowledge proofs off-chain. This dual requirement imposes significant constraints on what language features can be supported.
 
-The design philosophy behind Compact was not to strip features from TypeScript, but rather to selectively add capabilities that align with the needs of ZKP-compatible smart contracts.
+The design philosophy behind Compact was to start from a carefully chosen subset of TypeScript and add only the capabilities that ZKP-compatible smart contracts need.
 
 The goal was to ensure that the language remains familiar and readable to developers accustomed to TypeScript, minimizing the learning curve and making the transition between writing standard TypeScript code and Compact contracts less jarring. This focus on developer experience is paramount, acknowledging that language adoption is often driven by usability as much as by technical merit.
 

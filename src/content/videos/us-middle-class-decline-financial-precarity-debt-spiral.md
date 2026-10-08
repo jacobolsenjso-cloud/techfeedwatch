@@ -38,13 +38,13 @@ Understanding the US middle class requires a clear definition. On a broad scale,
 
 For instance, if the typical American family earns $85,000, the middle class encompasses those earning between $56,000 and $170,000 annually. This income bracket has seen its share of the population decline significantly over the past decades.
 
-Back in 1971, over 60% of Americans were considered middle class, but today that number stands at only about 50%. This shift indicates fewer people are positioned in the economic middle, contributing to a scenario where "the top is doing better than ever, and everyone else is fighting for a smaller piece of the pie."
+In 1971, more than 60% of Americans belonged to the middle class, whereas that proportion has now fallen to roughly 50%. This shift indicates fewer people are positioned in the economic middle, contributing to a scenario where "the top is doing better than ever, and everyone else is fighting for a smaller piece of the pie."
 
 This decline is compounded by a lack of real income growth. A recent analysis indicates that the median income in 2024 is essentially the same as it was in 2019. This means that for years, many Americans have not advanced financially, effectively "treading water" as the purchasing power of their earnings remains stagnant.
 
 The financial fragility stemming from this economic reality is starkly evident in personal savings rates, which have fallen to a low of 4%, the smallest amount recorded since before the 2008 financial crisis. Alarmingly, 27% of Americans now report having zero emergency savings, marking the highest amount ever recorded.
 
-More than half the country is living paycheck to paycheck, a reality that extends even to individuals earning over $100,000 a year. This widespread vulnerability means that 59% of people cannot cover a $1,000 emergency without incurring debt, and 42% of middle-class households state they could not cover a $5,000 emergency and fully recover.
+Over half of the population survives paycheck to paycheck, a circumstance that includes people bringing in more than $100,000 annually. This widespread vulnerability means that 59% of people cannot cover a $1,000 emergency without incurring debt, and 42% of middle-class households state they could not cover a $5,000 emergency and fully recover.
 
 The historical trajectory of American savings underscores this collapse. In 1960, Americans saved a solid 10% of their income, which rose to 12.8% by 1970. This trend then steadily declined, hitting 11% in 1980, 8% in 1990, 4.7% in 2000, and a mere 2.9% by 2005.
 
@@ -54,19 +54,19 @@ Tools designed to track expenses and identify financial leaks, such as those tha
 
 ## Economic Pressures and the Stalled Path to Wealth
 
-Several significant economic pressures are converging, particularly impacting middle-class stability, with three primary factors hitting at the same time by 2026. The first is an **energy shock**. International conflict has driven oil prices to exceed $100 a barrel for much of the year.
+Several significant economic pressures are converging, particularly impacting middle-class stability, with three primary factors hitting at the same time by 2026. The first is an **energy shock**. Global conflicts have pushed crude oil above $100 per barrel for a substantial part of the year.
 
-Consequently, energy prices across the board jumped over 10%, with gasoline alone rising over 20% in a single month. This surge in energy costs notably pushed overall inflation back up to 3.3%.
+As a result, overall energy costs rose by more than 10%, led by a monthly increase of over 20% for gasoline. This surge in energy costs notably pushed overall inflation back up to 3.3%.
 
-The second critical factor is **housing inflation**, a persistent problem that constitutes 35% of the inflation report. Even as other inflationary pressures have begun to subside, housing costs continue their upward trajectory. Goldman Sachs estimates this category alone could still push inflation up by 1% through mid-2026.
+The second critical factor is **housing inflation**, a persistent problem that constitutes 35% of the inflation report. Even as other inflationary pressures have begun to subside, housing costs continue their upward trajectory. According to Goldman Sachs projections, this single sector could add another 1% to inflation through the middle of 2026.
 
-The housing market presents a significant barrier to wealth accumulation for the middle class. Since 2020, the median home price in the United States has increased from $317,000 to $405,000, representing a 28% increase in just six years. Simultaneously, mortgage rates have doubled from 3% to 6%.
+The housing market presents a significant barrier to wealth accumulation for the middle class. Between 2020 and now, the median home price across the United States rose from $317,000 to $405,000, marking a 28% climb in a span of only six years. Simultaneously, mortgage rates have doubled from 3% to 6%.
 
-This dual impact means that to safely qualify for the median home today, a household would need to earn approximately $120,000 a year, significantly higher than the typical American family's median income of $85,000. As a result, homeownership is increasingly out of reach for many; the median age of a first-time home buyer has climbed to 40 years old, a stark contrast to 29 to 31 years old a decade ago.
+Because of these combined pressures, comfortably qualifying to buy a median-priced home now requires an annual household income near $120,000, well above the $85,000 median income earned by a typical American family. Consequently, owning a home is becoming unattainable for a growing number of people, driving the median age of first-time buyers up to 40 years old compared to 29 to 31 years old ten years ago.
 
-Homeownership has historically been a primary wealth builder for the middle class, with homeowners in 2022 possessing a median wealth 44 times greater than that of renters, a figure that remains 17 times greater even when home equity is excluded. When individuals cannot afford to purchase a home, they not only delay homeownership but also delay the critical process of building long-term wealth.
+Property ownership has traditionally served as the main engine of wealth generation for the middle class; in 2022, homeowners held 44 times the median wealth of renters, and their wealth remained 17 times higher even after subtracting home equity. When individuals cannot afford to purchase a home, they not only delay homeownership but also delay the critical process of building long-term wealth.
 
-The third factor, a **frozen labor market**, further exacerbates economic challenges. While the 2026 jobs market may appear stable on paper with relatively low layoffs and unemployment at 4.4%, deeper cracks are emerging. In February alone, the economy actually lost about 92,000 jobs, one of the weakest performances in years.
+The third factor, a **frozen labor market**, further exacerbates economic challenges. While the 2026 jobs market may appear stable on paper with relatively low layoffs and unemployment at 4.4%, deeper cracks are emerging. During February by itself, roughly 92,000 jobs were eliminated from the economy, representing one of its poorest showings in years.
 
 Fewer people are quitting their jobs, not due to satisfaction, but often from fear of not finding alternative employment. This creates a stagnant environment where companies are neither extensively firing nor actively hiring, hindering career progression and the ability to negotiate higher salaries—a common path for individuals to improve their financial standing.
 
@@ -74,11 +74,11 @@ This stagnation, combined with rising costs and higher interest rates, contribut
 
 ## The Investment Gap and Financial Nihilism
 
-A fundamental driver behind the shrinking middle class and increasing wealth disparity is the investment gap. Wealthier individuals possess the disposable income necessary to invest, and as asset prices climb, they capture the majority of these gains. This dynamic is evident in statistics showing that the richest 1% make twice as much as the rest of the world.
+A fundamental driver behind the shrinking middle class and increasing wealth disparity is the investment gap. Wealthier individuals possess the disposable income necessary to invest, and as asset prices climb, they capture the majority of these gains. This trend is reflected in data demonstrating that the top 1% of earners take in double the income of the rest of the world combined.
 
 This widening gap causes a peculiar financial shift: financial nihilism. This is the belief that playing by traditional financial rules—living below one's means, saving consistently, investing in index funds—no longer guarantees a path to prosperity or even basic milestones like homeownership until much later in life, perhaps age 45.
 
-A 2026 Planning in Progress study highlights this sentiment, finding that 73% of people who risk their money do so because they feel they have no other viable option to get ahead. This often manifests as taking "moonshots" on speculative investments, a strategy born of desperation rather than sound financial planning.
+Research conducted in 2026 by Planning in Progress underscores this attitude, reporting that 73% of individuals who take financial chances do so because they believe no other realistic route exists to improve their situation. This often manifests as taking "moonshots" on speculative investments, a strategy born of desperation rather than sound financial planning.
 
 This mindset is reinforced by a stark decline in upward mobility: today, a person has roughly a 50/50 chance of doing better than their parents, a dramatic decrease from the 1940s when upward mobility was practically guaranteed. This level of declining opportunity creates an environment where people feel compelled to take larger risks, even if it means a higher likelihood of financial setback.
 

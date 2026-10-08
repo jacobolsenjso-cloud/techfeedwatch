@@ -34,7 +34,7 @@ As Drupal & SEO points out, Google recently published its official AI Optimizati
 
 The integration of generative AI into Google Search has fueled a misconception that radical new approaches are required to optimize content for these systems. Instead, the emphasis remains on the one foundational rule Google has been preaching for years: create valuable content for users, ensure it is technically accessible, and structure it logically.
 
-This truth runs contrary to the rising anxiety among content creators, as 10:04 People are terrified of rewriting content just for AI systems. This fear is unfounded; AI's goal is to synthesize existing, well-organized information, not demand a new format exclusively for machines.
+This truth runs contrary to the rising anxiety among content creators, many of whom are afraid they must rewrite their content just for AI systems. This fear is unfounded; AI's goal is to synthesize existing, well-organized information, not demand a new format exclusively for machines.
 
 ## Key Takeaways
 
@@ -59,7 +59,7 @@ Instead of strictly matching a user's initial query to content containing those 
 
 For example, if a user searches for "best noise-cancelling headphones," Query Fan-Out might internally explore related queries about battery life, comfort, sound quality, and specific brands, pulling in data from various sources to form a holistic overview. This strategy underscores the importance of developing deeply comprehensive content that addresses multiple facets of a topic, rather than narrowly targeting a single keyword.
 
-Critically, the SEO DeepDive podcast highlights that Google Search completely ignores specific "AI hacks." This includes llms.txt files and special AI markdown, as 05:27 Google Search completely ignores LLMs Txt files and special AI markdown. These files, much like older attempts to game search algorithms, have no impact on how Google's AI systems process or prioritize content.
+Critically, the SEO DeepDive podcast highlights that Google Search completely ignores specific "AI hacks." This includes llms.txt files and special AI markdown, which Google Search completely ignores. These files, much like older attempts to game search algorithms, have no impact on how Google's AI systems process or prioritize content.
 
 Similarly, why structured data is still critical for rich results (but not a citation cheat code) is a key point to remember; its primary role remains to help search engines understand content context, not to guarantee a specific AI citation. For a deeper understanding of how AI tools are reshaping content workflows, consider reading [What Is an AI-Powered Content Engine](/video/ai-content-optimization-how-ai-transforms-creator-workflows).
 
@@ -87,7 +87,7 @@ Google has explicitly debunked these myths in its official AI Optimization Guide
 
 The reality is that AI Overviews leverage the same indexing and ranking signals as traditional Google Search, just with an additional layer of generative synthesis. The focus should therefore be on optimizing for Google Search as a whole, rather than trying to game a specific AI component.
 
-Another common oversight is underestimating the capacity of AI systems to process and understand long-form content. As 07:00 People assume AI gets confused by long form content that covers multiple themes, this often leads to an overemphasis on breaking down articles into extremely short, isolated paragraphs or "chunks."
+Another common oversight is underestimating the capacity of AI systems to process and understand long-form content. Because people assume AI gets confused by long form content that covers multiple themes, this often leads to an overemphasis on breaking down articles into extremely short, isolated paragraphs or "chunks."
 
 However, well-structured, in-depth content that genuinely addresses a topic comprehensively is precisely what AI systems need to provide nuanced and complete answers. The issue isn't length or thematic breadth, but rather clarity, organization, and coherence. Content that serves users well, with clear headings, logical flow, and answers to implied questions, will also serve AI well.
 
