@@ -49,18 +49,20 @@ function jsonListe(raw) {
   const s = String(raw || '');
   const m = s.match(/\[[\s\S]*\]/);
   if (!m) return null;
-  try { const v = JSON.parse(m[0]); return Array.isArray(v) ? v : null; } catch { return null; }
+  // Gemini sætter af og til et komma før } eller ] (set 8/10), som JSON.parse afviser.
+  try { const v = JSON.parse(m[0].replace(/,\s*([}\]])/g, '$1')); return Array.isArray(v) ? v : null; } catch { return null; }
 }
 
 /**
  * Finder sætninger, en læser snubler over. Returnerer [{sentence, problem, why}],
- * kun dem der står ordret i artiklen. Fejler kaldet: tom liste (stopper aldrig robotten).
+ * kun dem der står ordret i artiklen. Fejler kaldet: null (= "kunne ikke køre", ikke "0 fund").
  */
 export async function laeserTjek(genAI, md) {
   try {
-    const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 3000, temperature: 0 } });
-    const liste = jsonListe((await model.generateContent(tjekPrompt(md))).response.text());
-    if (!liste) { console.log('   læsertjek: svaret var ikke en liste'); return null; }
+    const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } });
+    const raw = (await model.generateContent(tjekPrompt(md))).response.text();
+    const liste = jsonListe(raw);
+    if (!liste) { console.log(`   læsertjek: svaret var ikke en liste (${raw.length} tegn, slutter: ${JSON.stringify(raw.slice(-80))})`); return null; }
     return liste
       .filter((x) => x && typeof x.sentence === 'string' && PROBLEMER.includes(String(x.problem).toUpperCase()))
       .map((x) => ({ sentence: x.sentence.trim(), problem: String(x.problem).toUpperCase(), why: String(x.why || '').trim() }))
@@ -81,16 +83,20 @@ export async function laeserTjek(genAI, md) {
 export async function retLaeserFund(genAI, md, fund) {
   if (!fund.length) return { md, rettet: 0 };
   try {
-    const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 4000, temperature: 0.3 } });
-    const liste = jsonListe((await model.generateContent(retPrompt(md, fund))).response.text()) || [];
-    let ny = md, rettet = 0;
+    // 8192: modellen "tænker" også inden for grænsen; med 4000 blev svaret skåret over (målt 8/10).
+    const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.3 } });
+    const raw = (await model.generateContent(retPrompt(md, fund))).response.text();
+    const liste = jsonListe(raw);
+    if (!liste) { console.log(`   læser-rettelse: svaret var ikke en liste (${raw.length} tegn)`); return { md, rettet: 0 }; }
+    let ny = md, rettet = 0; const afvist = [];
     for (const r of liste) {
       const gammel = String(r?.old || '').trim(), nySaetning = String(r?.new || '').trim();
-      if (!gammel || !nySaetning || gammel === nySaetning) continue;
-      if (ny.split(gammel).length - 1 !== 1) continue;
-      if (nySaetning.length > gammel.length * 2 + 40) continue;
+      if (!gammel || !nySaetning || gammel === nySaetning) { afvist.push('tom/uændret'); continue; }
+      if (ny.split(gammel).length - 1 !== 1) { afvist.push('gammel sætning ikke fundet præcis én gang'); continue; }
+      if (nySaetning.length > gammel.length * 2 + 60) { afvist.push('for lang'); continue; }
       ny = ny.replace(gammel, nySaetning); rettet++;
     }
+    if (afvist.length) console.log(`   læser-rettelse: ${afvist.length} afvist (${[...new Set(afvist)].join(', ')})`);
     return { md: ny, rettet };
-  } catch { return { md, rettet: 0 }; }
+  } catch (e) { console.log(`   læser-rettelse kunne ikke køre: ${String(e.message).slice(0, 160)}`); return { md, rettet: 0 }; }
 }
