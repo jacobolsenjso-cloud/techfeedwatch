@@ -4,7 +4,7 @@ import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
+import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 import { retSpoergsmaal } from './src/lib/spoergsmaalsfilter.mjs';
 
@@ -623,6 +623,15 @@ async function findNewestVideos() {
   console.log(`✅ Succes: Robot-kørsel er færdig. ${processed} artikler behandlet (${publishedToday + processed}/${MAX_PER_DAY} i dag).`);
   // Faktaark-filerne fra kandidatvurderingen er kun mellemregninger (git ignorerer dem).
   for (const f of fs.readdirSync('.').filter((x) => /^_faktaark-.*\.json$/.test(x))) fs.rmSync(f, { force: true });
+  // Gemini-stop (8/10): kreditter brugt op, ugyldig nøgle eller dagsloft stopper alt, til et
+  // menneske retter det. Kørslen må ikke være grøn: rød = GitHub sender mail til Jacob.
+  // Filen læses af sidste trin i daily-update.yml, så en artikel, der nåede at blive skrevet
+  // før fejlen, stadig bliver gemt (git ignorerer _*.txt).
+  if (geminiStop.fejl) {
+    const tekst = `GEMINI STOPPET — robotten kan ikke skrive artikler, før det er rettet: ${geminiStop.fejl}\nTypisk: fyld kreditter på i Google AI Studio (ai.studio/projects -> Billing).`;
+    console.error(`❌ ${tekst}`);
+    fs.writeFileSync('_gemini-stop.txt', tekst + '\n');
+  }
 }
 
 findNewestVideos();

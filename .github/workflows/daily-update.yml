@@ -116,3 +116,11 @@ jobs:
           else
             echo "Ingen nye videoer fundet."
           fi
+
+      # Gemini-stop (8/10): kreditter brugt op / ugyldig nøgle / dagsloft. Robotten skriver
+      # _gemini-stop.txt; her bliver kørslen RØD (= mail), efter at alt andet er gemt.
+      - name: Meld hvis Gemini er stoppet
+        if: always()
+        run: |
+          if [ -f _gemini-stop.txt ]; then cat _gemini-stop.txt; exit 1; fi
+          echo "Gemini svarede normalt."

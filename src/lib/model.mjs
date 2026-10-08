@@ -30,12 +30,21 @@ function erForbigaaende(e) {
   return /\[503|\[429|high demand|overloaded|UNAVAILABLE|RESOURCE_EXHAUSTED|Too Many Requests/i.test(m);
 }
 
+// Fejl, der stopper ALT, til de er rettet af et menneske (8/10: "402 prepayment credits
+// are depleted" stoppede robotten en time, og kørslerne var grønne). Robotten melder dem
+// ved at fejle kørslen (rød i GitHub = mail til Jacob), se slutningen af auto-youtube.mjs.
+export const geminiStop = { fejl: null };
+export function erBlokerende(e) {
+  return /\[40[123]\b|prepayment|credits are depleted|billing|API key not valid|API_KEY_INVALID|PERMISSION_DENIED|PerDay|per day|spending cap/i.test(String(e?.message || e));
+}
+
 export async function medGentag(fn, { onVent = null } = {}) {
   let sidste;
   for (let i = 0; i <= VENT_SEK.length; i++) {
     try { return await fn(); }
     catch (e) {
       sidste = e;
+      if (erBlokerende(e) && !geminiStop.fejl) geminiStop.fejl = String(e.message || e).slice(0, 300);
       if (!erForbigaaende(e) || i === VENT_SEK.length) throw e;
       const sek = VENT_SEK[i];
       if (onVent) onVent(sek, e); else console.log(`   Gemini svarer "prøv igen" — venter ${sek} s (${String(e.message).match(/\[(\d{3})/)?.[1] || '?'})`);
