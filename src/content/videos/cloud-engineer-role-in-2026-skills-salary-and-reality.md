@@ -77,7 +77,17 @@ Familiarity with major cloud platforms (AWS, Azure, [Google Cloud](/video/google
 
 Continuous learning is non-negotiable, as cloud providers regularly release new services and the AI field changes weekly. For those who enjoy constant evolution and problem-solving, cloud engineering offers a consistently engaging career.
 
-Cloud engineering skills directly qualify individuals for a wide array of in-demand roles across the tech industry. These include DevOps engineer, platform engineer, site reliability engineer (SRE), solutions architect, [cloud security](/video/cloud-security-essential-strategies-for-data-protection-in-2024/) engineer, systems engineer, and infrastructure engineer. While companies may use these titles interchangeably, they all draw from the same core knowledge base of building reliable, scalable, and secure systems.
+Cloud engineering skills directly qualify individuals for a wide array of in-demand roles across the tech industry. These include:
+
+- DevOps engineer
+- Platform engineer
+- Site reliability engineer (SRE)
+- Solutions architect
+- [cloud security](/video/cloud-security-essential-strategies-for-data-protection-in-2024/) engineer
+- Systems engineer
+- Infrastructure engineer
+
+While companies may use these titles interchangeably, they all draw from the same core knowledge base of building reliable, scalable, and secure systems.
 
 ## Compensation and Future Outlook
 

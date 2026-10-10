@@ -89,6 +89,10 @@ The emergence of highly capable AI image generators like ChatGPT Image 2 undersc
 
 While the model can produce visuals of unprecedented quality and complexity, the role of human taste, judgment, and curation remains vital. Even with advanced AI, the internet still faces a potential "flood of AI slop" if content is not thoughtfully guided and selected.
 
-Artists and creators will continue to be essential in defining the creative vision, crafting effective prompts, and discerning the best outputs from the AI's generations.
+Artists and creators will continue to be essential in:
+
+- Defining the creative vision
+- Crafting effective prompts
+- Discerning the best outputs from the AI's generations
 
 The technology serves as a powerful tool, augmenting human capabilities and accelerating the creative process, but human oversight is necessary to ensure the quality, relevance, and artistic integrity of the final visual content. Ultimately, the model enhances the creative toolkit, but human expertise remains the driving force behind meaningful and impactful visual communication.

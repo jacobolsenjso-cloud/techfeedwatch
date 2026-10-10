@@ -52,7 +52,14 @@ Residents cited concerns about air quality, drinking water resources, public hea
 
 This local action is not isolated. Across the United States, 69 jurisdictions have already blocked new data center constructions. A Gallup poll in March 2026 found that 70% of Americans oppose data centers near their homes, making them less popular than nuclear power plants.
 
-Communities frequently cite excessive water usage, negative effects on quality of life, increased cost of living, and a general distrust of AI, especially its impact on the job market. In Shelbyville, Indiana, a community gathered over 2,000 signatures on a petition to halt a project that would convert 429 acres of farmland into an 11-building data center complex, though the city council advanced the plan despite public anger.
+Communities frequently cite:
+
+- Excessive water usage
+- Negative effects on quality of life
+- Increased cost of living
+- A general distrust of AI, especially its impact on the job market
+
+In Shelbyville, Indiana, a community gathered over 2,000 signatures on a petition to halt a project that would convert 429 acres of farmland into an 11-building data center complex, though the city council advanced the plan despite public anger.
 
 ## The Economic and Social Costs of AI Expansion
 

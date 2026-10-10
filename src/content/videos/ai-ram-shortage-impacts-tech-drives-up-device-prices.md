@@ -42,7 +42,13 @@ The specific type of memory most coveted by AI applications is High Bandwidth Me
 
 Despite these differences, all forms of memory share the same wafer fabrication process. This shared manufacturing foundation means that increased production of HBM directly reduces the capacity available for other memory types. The profitability of supplying AI data centers has led memory manufacturers to prioritize enterprise clients.
 
-For instance, Samsung now reportedly earns more from selling RAM to data centers than from selling phones. This shift in priorities is significant, as around 93% of the world's RAM chips are produced by just three companies: Samsung, SK Hynix, and Micron. This market concentration makes the supply chain particularly fragile.
+For instance, Samsung now reportedly earns more from selling RAM to data centers than from selling phones. This shift in priorities is significant, as around 93% of the world's RAM chips are produced by just three companies:
+
+- Samsung
+- SK Hynix
+- Micron
+
+This market concentration makes the supply chain particularly fragile.
 
 The scale of AI demand is staggering. As an illustration, OpenAI discreetly locked down roughly 40% of worldwide high-bandwidth RAM (DRAM production) in October 2025 to supply its future AI infrastructure.
 

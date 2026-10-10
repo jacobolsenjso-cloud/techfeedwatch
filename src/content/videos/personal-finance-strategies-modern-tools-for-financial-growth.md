@@ -42,7 +42,11 @@ While reducing all debt is beneficial, strategically deferring low-interest debt
 
 Zhang emphasizes, "This presentation is for educational purposes only and make sure you do your own research before you implement any of these strategies." He also clarifies his position, stating, "I have no certifications in the financial space," and assures his audience, "I am not selling any products I do not make any money from this presentation."
 
-He adds, "I have no affiliate links on any of the websites or on any of the stuff that you can click through." For complex situations, it is prudent to consult professionals with designations like **certified financial planner**, **charter financial analysts**, or **charter in investment manager**.
+He adds, "I have no affiliate links on any of the websites or on any of the stuff that you can click through." For complex situations, it is prudent to consult professionals with designations like:
+
+- **Certified financial planner**
+- **Charter financial analysts**
+- **Charter in investment manager**
 
 The broader financial field for **Canadians**, who are the primary demographic for this advice, includes leveraging platforms like Well Simple for comprehensive financial services, or exploring online banks such as Tangerine and EQ for nearly free products with competitive interest rates. Understanding these strategic steps is key to [Building Financial Freedom with Strategic Investment Allocation](/video/financial-freedom-investing-building-wealth-intentionally) and ensuring sustainable progress.
 

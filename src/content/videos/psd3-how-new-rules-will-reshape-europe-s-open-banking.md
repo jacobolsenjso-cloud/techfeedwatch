@@ -27,7 +27,11 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-Europe is preparing for PSD3, the next version of its Payment Services Directive. This update aims to greatly evolve the open banking framework. It will improve security, foster innovation in payment services, and give consumers more control over their financial data.
+Europe is preparing for PSD3, the next version of its Payment Services Directive. This update aims to greatly evolve the open banking framework. It will:
+
+- Improve security
+- Foster innovation in payment services
+- Give consumers more control over their financial data
 
 ## Expanding Europe's Open Banking Framework
 

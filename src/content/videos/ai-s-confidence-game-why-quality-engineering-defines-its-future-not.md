@@ -30,7 +30,11 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-AI Quality Engineering focuses on validating the outputs and underlying models of artificial intelligence systems to ensure their accuracy, fairness, and safety. It integrates traditional quality assurance principles with new methods designed to address the unique challenges AI introduces, such as bias, explainability, and the potential for generating incorrect or misleading information.
+AI Quality Engineering focuses on validating the outputs and underlying models of artificial intelligence systems to ensure their accuracy, fairness, and safety. It integrates traditional quality assurance principles with new methods designed to address the unique challenges AI introduces such as:
+
+- Bias
+- Explainability
+- The potential for generating incorrect or misleading information
 
 This field is essential for building trust in AI-powered applications across all industries.
 

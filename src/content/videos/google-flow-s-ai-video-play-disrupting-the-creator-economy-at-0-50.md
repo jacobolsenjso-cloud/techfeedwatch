@@ -45,7 +45,13 @@ Google Flow AI Video provides several powerful features that give creators subst
 
 Beyond just appearance, creators can assign a name, select a voice (though not always necessary for musical clips), and even describe the character's behavior. The platform also facilitates the creation of "boards" to showcase a character from different angles or in various outfits, ensuring visual consistency across scenes.
 
-Another central feature is the **agent mode**. This AI assistant guides users through the narrative development process. Creators can input a high-level story concept, specifying themes, environments, lighting, textures, and desired styles.
+Another central feature is the **agent mode**. This AI assistant guides users through the narrative development process. Creators can input a high-level story concept, specifying:
+
+- Themes
+- Environments
+- Lighting
+- Textures
+- Desired styles
 
 The agent then engages in a dialogue, asking questions and proposing scenarios, which can include generating a storyboard. This interactive approach allows for refinement of the narrative, ensuring the AI's output aligns closely with the user's vision.
 

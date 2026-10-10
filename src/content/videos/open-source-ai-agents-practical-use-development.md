@@ -46,7 +46,13 @@ This modularity is a significant advantage, allowing users to swap out component
 
 The practical applications of open source AI agents are rapidly expanding across various domains. They are particularly valuable for automating tasks that require complex decision-making and interaction with digital environments. For instance, developers can deploy these agents to streamline workflows, enhance productivity, or even conduct research by autonomously gathering and synthesizing information.
 
-One example is the "last30days-skill" project, available on GitHub, which likely helps users summarize recent activities or data within a specified timeframe. Another, "agent-skills," found at github.com/addyosmani/agent-skills, suggests a collection of capabilities that agents can acquire and execute, highlighting the modular nature of their design. These skills might include web browsing, code generation, or interacting with various APIs.
+One example is the "last30days-skill" project, available on GitHub, which likely helps users summarize recent activities or data within a specified timeframe. Another, "agent-skills," found at github.com/addyosmani/agent-skills, suggests a collection of capabilities that agents can acquire and execute, highlighting the modular nature of their design.
+
+These skills might include:
+
+- Web browsing
+- Code generation
+- Interacting with various APIs
 
 Another notable project is "open-notebook" from github.com/lfnovo/open-notebook, which could facilitate automated note-taking, content organization, or knowledge management by AI agents. Such tools can act as intelligent assistants, helping individuals and teams process vast amounts of information more efficiently.
 

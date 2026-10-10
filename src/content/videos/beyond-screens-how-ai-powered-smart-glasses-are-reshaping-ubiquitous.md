@@ -96,7 +96,14 @@ This multimodal capability allows the AI to comprehend complex queries in real-t
 
 The AI models, such as Gemini, are designed to be fast enough to engage in live conversations, understanding not just the words spoken but also the visual cues from the environment.
 
-This contextual awareness is what enables the AI to identify objects, interpret diagrams, translate signs, and even recognize specific actions within a video. The system processes these inputs, determines the best way to respond, and then takes action, often by interfacing with existing smartphone applications or displaying information directly on the internal lens screen.
+This contextual awareness is what enables the AI to:
+
+- Identify objects
+- Interpret diagrams
+- Translate signs
+- Even recognize specific actions within a video
+
+The system processes these inputs, determines the best way to respond, and then takes action, often by interfacing with existing smartphone applications or displaying information directly on the internal lens screen.
 
 The continuous development in large language models and multimodal reasoning has been instrumental in achieving this rich understanding of language and images.
 

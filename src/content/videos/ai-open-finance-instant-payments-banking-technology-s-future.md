@@ -54,7 +54,11 @@ Many customers, particularly for investments, are opting for neo-brokers over tr
 
 ## Artificial Intelligence: Beyond the Surface
 
-The advent of artificial intelligence, including generative and agentic AI, is widely discussed as a potential game-changer for banking. AI holds the promise of enhancing customer experience, automating processes, and providing deeper insights.
+The advent of artificial intelligence, including generative and agentic AI, is widely discussed as a potential game-changer for banking. AI holds the promise of
+
+- Enhancing customer experience
+- Automating processes
+- Providing deeper insights
 
 However, its true potential can only be realized if banks have the right data foundation. AI solutions require high-quality, real-time data that is readily available and integrated.
 

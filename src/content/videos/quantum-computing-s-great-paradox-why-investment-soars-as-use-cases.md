@@ -88,7 +88,11 @@ The current field sees billions of dollars being allocated to quantum computing,
 
 This perspective highlights the stark contrast when comparing quantum funding to other advanced scientific endeavors, such as nuclear fusion research, which receives a fraction of the investment despite a dramatically clearer pathway to practical returns. The quantum computing industry remains in a critical phase, balancing ambitious long-term potential with the immediate reality of limited practical applications.
 
-Future developments will likely focus on improving qubit stability, increasing qubit counts, and refining hybrid quantum-classical algorithms to identify specific problems where quantum processors can offer a genuine, provable advantage.
+Future developments will likely focus on:
+
+- Improving qubit stability
+- Increasing qubit counts
+- Refining hybrid quantum-classical algorithms to identify specific problems where quantum processors can offer a genuine, provable advantage
 
 Researchers continue to explore ways to leverage the unique properties of entanglement and superposition for optimization problems and complex simulations, but the road to widespread commercial utility for standalone quantum computers remains long and uncertain. Keeping an eye on verifiable breakthroughs in hybrid system performance and the emergence of genuinely indispensable quantum applications will be key indicators of progress.
 

@@ -62,7 +62,11 @@ This means creating 8 to 10 distinct boards, each containing 15 to 20 original p
 
 Integrating a shopping catalog is another vital step. This feature allows Pinterest to notify users about "shop the look" options, enabling them to directly purchase items seen in pins. This functionality caters to the high purchase intent of Pinterest users, who are often in a discovery mindset and ready to convert.
 
-Budget allocation on Pinterest also differs from other platforms. Instead of consolidating spend into a few large campaigns, a common strategy involves splitting the budget across numerous smaller campaigns. This allows for extensive testing of different creatives, targeting options, and marketing angles.
+Budget allocation on Pinterest also differs from other platforms. Instead of consolidating spend into a few large campaigns, a common strategy involves splitting the budget across numerous smaller campaigns. This allows for extensive testing of different:
+
+- Creatives
+- Targeting options
+- Marketing angles
 
 For example, a total spend of $21,000 might be distributed among campaigns with daily budgets ranging from $12 to $100, such as $50, $30, $20, or $25 per day. This granular approach helps identify what works best without risking large sums on unproven strategies.
 

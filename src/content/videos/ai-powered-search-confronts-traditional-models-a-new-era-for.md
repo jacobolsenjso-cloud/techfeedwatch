@@ -37,7 +37,11 @@ Its core distinction lies in prioritizing verified, footnoted responses over mer
 
 At its heart, Perplexity AI functions as an answer engine, a system designed to directly address user questions rather than simply pointing them to external websites. When a user submits a query, Perplexity's internal search component identifies and retrieves relevant information from across the web.
 
-These findings, often in the form of paragraphs from various sources, are then fed into an LLM. The LLM's task is to process this retrieved information, synthesize it into a coherent, well-formatted answer, and critically, to back every statement with appropriate citations.
+These findings, often in the form of paragraphs from various sources, are then fed into an LLM. The LLM's task is to:
+
+- Process this retrieved information
+- Synthesize it into a coherent, well-formatted answer
+- Critically, to back every statement with appropriate citations
 
 This design choice stems from a fundamental principle: to ensure accuracy and reduce the LLM's tendency to "hallucinate" or generate incorrect information. The instruction given to the LLM is precise: "given a bunch of links and paragraphs, write a concise answer for the user with the appropriate citation."
 

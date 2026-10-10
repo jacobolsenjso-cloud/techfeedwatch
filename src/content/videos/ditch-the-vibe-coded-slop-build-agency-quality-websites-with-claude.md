@@ -58,7 +58,13 @@ A key step here is to "Add Front End Skill" to the process. This signifies the m
 
 The refinement process formally begins with a "First Build Review," a critical examination of the AI's initial output against the design brief and inspirations. This review is not just about functionality, but primarily about aesthetics. Following this, a "Run a Design Audit" systematically evaluates various design elements.
 
-This audit identifies areas where the AI's generation falls short, such as inconsistent spacing, awkward element placement, or suboptimal font choices. One common area of improvement is typography; the process calls to "Fix Fonts with References" and "Choose Better Google Fonts."
+This audit identifies areas where the AI's generation falls short such as:
+
+- Inconsistent spacing
+- Awkward element placement
+- Suboptimal font choices
+
+One common area of improvement is typography; the process calls to "Fix Fonts with References" and "Choose Better Google Fonts."
 
 Generic font pairings often contribute significantly to the "AI slop" look. By selecting specific, aesthetically pleasing fonts from Google Fonts and ensuring their consistent application, the visual professionalism of the site dramatically improves. For more on how AI assists in web creation, see What Is the Best AI Website Builder Ecosystem.
 

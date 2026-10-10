@@ -54,7 +54,11 @@ If these experts, with all their resources and dedication, struggle to outperfor
 
 ## The Benefits Beyond Financial Returns
 
-Beyond the strong potential for competitive returns, index funds offer significant advantages in terms of time and mental well-being. By adopting a passive investment strategy, you eliminate the need for several costly and time-consuming activities. There is no longer a need for expensive stock scanners, paid alpha newsletters, or the constant mental burden of checking your portfolio every few minutes.
+Beyond the strong potential for competitive returns, index funds offer significant advantages in terms of time and mental well-being. By adopting a passive investment strategy, you eliminate the need for several costly and time-consuming activities. There is no longer a need for:
+
+- Expensive stock scanners
+- Paid alpha newsletters
+- The constant mental burden of checking your portfolio every few minutes
 
 This shift allows you to reclaim your most valuable asset: your time. Instead of sacrificing weekends and sleep trying to find a needle in a haystack, you can automate your investments and focus on other aspects of your life.
 

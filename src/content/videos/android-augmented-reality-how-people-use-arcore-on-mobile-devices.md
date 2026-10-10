@@ -37,7 +37,13 @@ This process involves the device constantly analyzing its surroundings, detectin
 
 At its core, augmented reality functions by integrating digital data into a live view of the real world, most commonly through a smartphone camera. For Android, Google ARCore is the enabling technology.
 
-ARCore leverages several key capabilities: motion tracking, environmental understanding, and light estimation. Motion tracking allows the phone to understand and track its own position and orientation in space, which is critical for making virtual objects appear stationary even as the user moves.
+ARCore leverages several key capabilities:
+
+- Motion tracking
+- Environmental understanding
+- Light estimation
+
+Motion tracking allows the phone to understand and track its own position and orientation in space, which is critical for making virtual objects appear stationary even as the user moves.
 
 Environmental understanding, or plane detection, lets the device recognize horizontal and vertical surfaces, such as floors, tables, and walls, enabling apps to place digital content realistically on or against these surfaces. Light estimation ensures that virtual objects are rendered with lighting that matches the real-world environment, enhancing realism.
 

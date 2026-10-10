@@ -45,7 +45,12 @@ This ability extends across an entire Drive or within specific folders. For inst
 
 Gemini would then pull relevant data from various files to generate a concise summary. This helps users gain new insights and perspectives on their work quickly. It moves beyond simple keyword searches to understanding context.
 
-The power of Gemini in Drive is not limited to just Drive files. It can also integrate information from other Google Workspace applications. These include Gmail, Chat, Google Calendar, and even [Google Search](/video/ai-powered-search-confronts-traditional-models-a-new-era-for/).
+The power of Gemini in Drive is not limited to just Drive files. It can also integrate information from other Google Workspace applications. These include:
+
+- Gmail
+- Chat
+- Google Calendar
+- Even [Google Search](/video/ai-powered-search-confronts-traditional-models-a-new-era-for/)
 
 This broad reach allows Gemini to provide complete answers. It connects disparate pieces of information from across a user's digital ecosystem. Users have control over the sources.
 

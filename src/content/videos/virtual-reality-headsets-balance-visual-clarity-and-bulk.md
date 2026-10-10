@@ -29,7 +29,11 @@ faqs:
 
 Virtual reality headsets are head-mounted systems that simulate three-dimensional presence by encasing the user's field of view in high-speed digital displays and tracking bodily motion. Rather than a singular gadget class marching toward a uniform design, the industry has splintered into competing technical philosophies.
 
-Buyers must actively choose between the convenience of portable mobile chips, the punishing fidelity of external graphics cards, and the ergonomic salvation of stripped-down wearable frames.
+Buyers must actively choose between:
+
+- The convenience of portable mobile chips
+- The punishing fidelity of external graphics cards
+- The ergonomic salvation of stripped-down wearable frames
 
 ## What Are Virtual Reality Headsets Built to Do
 

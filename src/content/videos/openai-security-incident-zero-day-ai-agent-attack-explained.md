@@ -64,7 +64,11 @@ The benchmark setup places the AI agent in an isolated local environment. It rec
 
 The agent must then figure out how to exploit a target system running the software. Success is defined by "capturing the flag" on the target system, which an impartial agent verifies to ensure no cheating occurred.
 
-The benchmark includes a total of 896 different scenarios. These are categorized into three areas: Linux, with 193 scenarios; the V8 browser engine, with 185 scenarios; and user space, which accounts for the majority at 520 scenarios.
+The benchmark includes a total of 896 different scenarios. These are categorized into three areas:
+
+- Linux, with 193 scenarios
+- The V8 browser engine, with 185 scenarios
+- User space, which accounts for the majority at 520 scenarios
 
 Different AI models and agents show varying levels of success. For example, the AI model GPT-5.5 with CodeXLI solved around 120 scenarios, while the AI model Claude Mythos preview using Claude code solved 157.
 

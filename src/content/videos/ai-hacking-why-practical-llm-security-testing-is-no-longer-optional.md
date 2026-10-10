@@ -31,7 +31,11 @@ faqs:
 
 Prompt injection testing is a specialized form of cybersecurity assessment that focuses on identifying and mitigating vulnerabilities in artificial intelligence systems, particularly large language models (LLMs). This practice is critical for securing AI applications, ensuring they operate as intended without being compromised by malicious or unintended user inputs.
 
-It systematically probes an AI's defenses, attempting to bypass safeguards, extract sensitive information, or force the model into unintended behaviors.
+It systematically probes an AI's defenses, attempting to:
+
+- Bypass safeguards
+- Extract sensitive information
+- Force the model into unintended behaviors
 
 ### What Is Prompt Injection Testing for AI Security
 

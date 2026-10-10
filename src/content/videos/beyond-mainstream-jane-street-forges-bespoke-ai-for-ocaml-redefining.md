@@ -77,7 +77,11 @@ This rigorous evaluation is very important for preventing models from going "off
 
 ## Integrating AI into the Developer Workflow
 
-Bringing these custom AI abilities directly to developers required thoughtful editor integrations. Jane Street had three main goals for this integration: avoiding redundant development across its three supported editors (Neovim, VS Code, and Emacs), maintaining flexibility to swap models or prompting strategies, and collecting real-world metrics like latency and diff acceptance rates.
+Bringing these custom AI abilities directly to developers required thoughtful editor integrations. Jane Street had three main goals for this integration:
+
+- Avoiding redundant development across its three supported editors (Neovim, VS Code, and Emacs)
+- Maintaining flexibility to swap models or prompting strategies
+- Collecting real-world metrics like latency and diff acceptance rates
 
 The firm achieved this through an architecture centered around a service called the AI Development Environment (AIDE). AIDE runs as a sidecar application on each developer's machine.
 

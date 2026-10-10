@@ -73,7 +73,13 @@ Most frontier quantum labs in 2024 have quantum computers with hundreds of qubit
 
 Beyond qubit count, current quantum systems face major challenges. Errors are extremely common in quantum computers, a feature tied to their probabilistic nature. Unlike classical computers, where errors are intolerable for deterministic operations, the sensitivity of qubits makes them prone to noise.
 
-Harnessing quantum mechanics also requires entirely different algorithms and specialized quantum gates to precisely manipulate qubits. Various companies, including IonQ, Quantum, Alice & Bob, IBM, Rigetti, D-Wave, Nvidia, and Microsoft, are exploring different hardware techniques such as trapping ions, superconducting, and annealing. These diverse approaches aim to overcome common roadblocks like maintaining coherence time, achieving scalability, and ensuring high gate fidelity.
+Harnessing quantum mechanics also requires entirely different algorithms and specialized quantum gates to precisely manipulate qubits. Various companies, including IonQ, Quantum, Alice & Bob, IBM, Rigetti, D-Wave, Nvidia, and Microsoft, are exploring different hardware techniques such as:
+
+- Trapping ions
+- Superconducting
+- Annealing
+
+These diverse approaches aim to overcome common roadblocks like maintaining coherence time, achieving scalability, and ensuring high gate fidelity.
 
 ## The Path Forward: Innovation and Market Incentives
 

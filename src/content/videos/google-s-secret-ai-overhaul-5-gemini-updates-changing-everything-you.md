@@ -42,7 +42,14 @@ Significantly, it is freely available on both Android and iPhone, with no waitli
 
 Beyond communication, Gemini is also transforming document creation and knowledge management with significant upgrades to **Notebook LM**. This AI assistant functions by processing a user's own uploaded sources—such as PDFs, documents, or research papers—to generate actionable deliverables.
 
-Instead of merely summarizing, Notebook LM can build full reports, create detailed slide decks, populate spreadsheets, and draft Word files. This capability means users can feed their raw data or extensive research into the system and receive structured, polished outputs almost instantly, making it a powerful ally for professionals and students alike.
+Instead of merely summarizing, Notebook LM can:
+
+- Build full reports
+- Create detailed slide decks
+- Populate spreadsheets
+- Draft Word files
+
+This capability means users can feed their raw data or extensive research into the system and receive structured, polished outputs almost instantly, making it a powerful ally for professionals and students alike.
 
 The integration of personal files as context ensures that the AI's output is directly relevant to the user's specific needs, enhancing the accuracy and utility of the generated content. This intelligent file management capability aligns with how [How Gemini AI Changes File Management in Google Drive](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
 

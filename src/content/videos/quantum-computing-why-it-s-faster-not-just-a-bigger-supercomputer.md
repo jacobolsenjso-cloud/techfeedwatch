@@ -86,7 +86,13 @@ Driven by this urgency, Google established a 2029 deadline to transition to post
 
 Despite the complexity and high cost of developing quantum hardware, accessibility is growing through Quantum as a Service (QaaS). IBM led the way in May 2016 when it provided public internet access to an experimental quantum processor.
 
-Since then, numerous providers have followed, including D-Wave Systems with its Leap service in 2018, Amazon with Amazon Braket on AWS in 2019, and Xanadu with its photonic cloud platform in 2020. Today, QaaS functions as both a research tool and the likely primary access point for early commercial fault-tolerant quantum computers.
+Since then, numerous providers have followed including:
+
+- D-Wave Systems with its Leap service in 2018
+- Amazon with Amazon Braket on AWS in 2019
+- Xanadu with its photonic cloud platform in 2020
+
+Today, QaaS functions as both a research tool and the likely primary access point for early commercial fault-tolerant quantum computers.
 
 Cloud providers like Amazon Braket facilitate access to hardware from companies such as AQT, IonQ, IQM, QuEra, and Rigetti. Similarly, Microsoft's Azure Quantum provides access to IonQ, Pasqal, Rigetti, and Quantinuum hardware.
 

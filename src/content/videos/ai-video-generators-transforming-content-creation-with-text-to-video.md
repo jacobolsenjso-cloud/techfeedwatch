@@ -55,7 +55,14 @@ This allows creators to match their videos to particular genres or brand identit
 
 A notable innovation in some tools is the integration of cinematic lighting systems, often referred to as a "Light Studio." This feature provides extensive control over the mood and atmosphere of a video. Users can apply cinematic lighting presets with a single tap, instantly transforming a scene from a bright daytime look to a dramatic, moody setting.
 
-For those seeking more precise control, manual adjustments are available for elements such as light direction, intensity, color temperature, and even the placement of multiple light sources. This level of lighting control can dramatically alter storytelling without requiring any camera changes or complex editing. For instance, the same scene can convey vastly different emotions simply by adjusting its lighting.
+For those seeking more precise control, manual adjustments are available for elements such as:
+
+- Light direction
+- Intensity
+- Color temperature
+- Even the placement of multiple light sources
+
+This level of lighting control can dramatically alter storytelling without requiring any camera changes or complex editing. For instance, the same scene can convey vastly different emotions simply by adjusting its lighting.
 
 ## Streamlining Production for Diverse Applications
 

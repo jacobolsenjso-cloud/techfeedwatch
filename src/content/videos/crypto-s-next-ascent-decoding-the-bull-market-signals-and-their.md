@@ -46,7 +46,11 @@ For Bitcoin, the 20-day moving average has been observed around 64,000, and the 
 
 ## The Inverse Head and Shoulders Pattern
 
-A significant bullish reversal pattern observed on price charts is the inverse head and shoulders. This pattern typically forms after a downtrend and suggests a potential shift to an uptrend. It consists of three distinct troughs: a "left shoulder," followed by a deeper "head," and then a shallower "right shoulder."
+A significant bullish reversal pattern observed on price charts is the inverse head and shoulders. This pattern typically forms after a downtrend and suggests a potential shift to an uptrend. It consists of three distinct troughs:
+
+- A "left shoulder"
+- A deeper "head"
+- A shallower "right shoulder."
 
 A "neckline" connects the peaks that form between these troughs. The pattern is considered speculative until the right shoulder fully forms and the price breaks convincingly above the neckline.
 

@@ -71,7 +71,14 @@ OpenClaw operates as a local Node.js service, meaning it can run on a user's lap
 
 Its architecture follows a hub-and-spoke model, centered around a key component called the **gateway**. This gateway acts as a control plane, functioning as an always-on WebSocket server.
 
-It manages critical operations such as message routing, session management, the creation of multiple agents, and, importantly, the orchestration of tool usage. Users can manage the gateway through a user interface (UI) or a command-line interface (CLI), and interact with their agents via various messaging integrations.
+It manages critical operations such as:
+
+- Message routing
+- Session management
+- The creation of multiple agents
+- Importantly, the orchestration of tool usage
+
+Users can manage the gateway through a user interface (UI) or a command-line interface (CLI), and interact with their agents via various messaging integrations.
 
 OpenClaw's extensibility is largely defined by its **skills**. These are essentially folders containing markdown files that provide instructions, teaching the agent how to perform specific tasks or workflows.
 

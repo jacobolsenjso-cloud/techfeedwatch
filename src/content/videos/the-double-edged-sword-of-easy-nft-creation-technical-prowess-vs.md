@@ -52,7 +52,13 @@ While custom scripting provides flexibility, many pre-built tools exist that can
 
 Importantly, alongside each image, a JSON file is created. This file serves as metadata, containing essential information about the NFT.
 
-It includes the file's name, a direct link to its image stored on the InterPlanetary File System (IPFS), and a detailed list of its unique attributes or traits. The rarity level of these traits, also noted in the metadata, plays a major role in defining the NFT's perceived value, creating a form of artificial scarcity.
+It includes:
+
+- The file's name
+- A direct link to its image stored on the InterPlanetary File System (IPFS)
+- A detailed list of its unique attributes or traits
+
+The rarity level of these traits, also noted in the metadata, plays a major role in defining the NFT's perceived value, creating a form of artificial scarcity.
 
 ## Decentralization and Off-Chain Storage
 

@@ -75,7 +75,15 @@ Traditional banks are increasingly venturing into the fintech space by establish
 
 Creating subsidiaries can also offer a way to innovate and compete more effectively, sometimes by operating with greater freedom from the strict regulatory restrictions that apply to the parent bank. And, there is growing customer demand for digital-first and mobile-first banking services that offer convenience, security, and ease of use.
 
-Several banks have found success with this model. Examples include Fincer by Equity Bank in Kenya, Alat by Wema Bank in Nigeria, Marcus by Goldman Sachs, Finn by JPMorgan Chase, and Mox by Standard Chartered Hong Kong. These subsidiaries aim to combine the stability and resources of a large bank with the agility and innovation of a startup.
+Several banks have found success with this model. Examples include:
+
+- Fincer by Equity Bank in Kenya
+- Alat by Wema Bank in Nigeria
+- Marcus by Goldman Sachs
+- Finn by JPMorgan Chase
+- Mox by Standard Chartered Hong Kong
+
+These subsidiaries aim to combine the stability and resources of a large bank with the agility and innovation of a startup.
 
 ## Why Bank-Led Fintechs Can Struggle
 

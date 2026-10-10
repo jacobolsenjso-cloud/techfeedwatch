@@ -106,4 +106,8 @@ Engineers are encouraged to quickly develop and ship even imperfect ideas, gathe
 
 Staying current with the rapidly evolving AI tool stack is also part of this mindset. New AI-powered development environments like Cursor and Windswept, or front-end inspiration tools like v0, are constantly emerging.
 
-Understanding how to scale LLM applications is vital, focusing on key areas identified by industry leaders: improving performance, reducing operational costs, and minimizing latency to deliver responsive and efficient user experiences.
+Understanding how to scale LLM applications is vital, focusing on key areas identified by industry leaders:
+
+- Improving performance
+- Reducing operational costs
+- Minimizing latency to deliver responsive and efficient user experiences

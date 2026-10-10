@@ -29,7 +29,13 @@ Applying cybersecurity effectively means strategically protecting digital assets
 
 Cybersecurity is not a singular product but a comprehensive framework. It encompasses practices like securing networks, endpoints, applications, and data itself. For instance, implementing firewalls, intrusion detection systems, and antivirus software are foundational steps.
 
-Beyond tools, it requires establishing secure configurations, managing access controls, and encrypting sensitive information. The objective is to build resilience, ensuring systems can withstand attacks and recover quickly from breaches.
+Beyond tools, it requires:
+
+- Establishing secure configurations
+- Managing access controls
+- Encrypting sensitive information
+
+The objective is to build resilience, ensuring systems can withstand attacks and recover quickly from breaches.
 
 This protective approach works by creating layers of defense, making it harder for unauthorized entities to penetrate an organization's digital perimeter or access critical data. Many organizations are moving towards a [Zero Trust Security Shrinks Enterprise Network Attack SurfacesFJERN model, verifying every user and device regardless of their location, rather than trusting by default once inside a perimeter.
 

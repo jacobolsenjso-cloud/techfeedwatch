@@ -25,7 +25,11 @@ faqs:
     answer: "By providing free access to its predictions, AlphaFold has rapidly accelerated research in areas like drug discovery, vaccine development, and understanding genetic diseases, making complex biological insights widely accessible."
 ---
 
-AlphaFold stands as a pivotal advancement in artificial intelligence, primarily important because it has cracked one of biology's most complex and foundational problems: accurately predicting protein structures. This capability rapidly accelerates scientific discovery, especially in areas like drug development, disease understanding, and biotechnology.
+AlphaFold stands as a pivotal advancement in artificial intelligence, primarily important because it has cracked one of biology's most complex and foundational problems: accurately predicting protein structures. This capability rapidly accelerates scientific discovery, especially in areas like:
+
+- Drug development
+- Disease understanding
+- Biotechnology
 
 By providing unprecedented insight into how proteins fold and function, AlphaFold empowers researchers to tackle challenges previously deemed intractable, transforming the pace and scope of biological research.
 

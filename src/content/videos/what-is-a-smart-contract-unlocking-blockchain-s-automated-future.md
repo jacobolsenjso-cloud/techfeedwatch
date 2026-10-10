@@ -38,7 +38,13 @@ A smart contract is computer code that automatically and autonomously executes t
 
 He envisioned protocols that could enforce agreements without intermediaries. Unlike traditional digital agreements, which are often controlled and enforced by the companies that create them, smart contracts operate on open, transparent platforms.
 
-Most applications today rely on digital agreements like Service Level Agreements (SLAs). These are typically run on centralized cloud services such as AWS, Google Cloud, or Microsoft Azure. Smart contracts offer a different model.
+Most applications today rely on digital agreements like Service Level Agreements (SLAs). These are typically run on centralized cloud services such as:
+
+- AWS
+- Google Cloud
+- Microsoft Azure
+
+Smart contracts offer a different model.
 
 They allow code to run on a public blockchain, not on servers owned by a single entity. This means the code can be shared by the public or, if privately controlled, it can be publicly auditable.
 

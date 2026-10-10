@@ -80,7 +80,15 @@ A "Heartbeat" message is sent periodically to confirm that both parties are stil
 
 The **Application Layer** handles the actual business logic of trading. These messages are sent when a trader takes an action, such as clicking a "buy" or "sell" button.
 
-Common application layer messages include "New Order" (tag 35=D), "Cancel Order," "Modify or Replace Order," "Mass Quote," and "Mass Quote Cancel." These messages carry the detailed instructions for trading activities.
+Common application layer messages include:
+
+- "New Order" (tag 35=D)
+- "Cancel Order"
+- "Modify or Replace Order"
+- "Mass Quote"
+- "Mass Quote Cancel."
+
+These messages carry the detailed instructions for trading activities.
 
 When an exchange receives an application layer message, it processes the request and sends a response. This response can either be an acceptance or a rejection. For example, a Security Definition Request (tag 35=c) might be answered by a Security Definition message (tag 35=d) from the exchange.
 

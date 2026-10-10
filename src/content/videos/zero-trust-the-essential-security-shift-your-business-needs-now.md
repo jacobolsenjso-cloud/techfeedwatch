@@ -50,7 +50,11 @@ Rather, all requests for access are handled as though they originate from an uns
 
 At the heart of Zero Trust is the relentless verification of identity. "Identity becomes the new perimeter," meaning that access decisions hinge on who a user is, what device they are using, and the context of their request, rather than their network location. Passwords alone aren't enough for this level of scrutiny, as they can be easily stolen or phished.
 
-Therefore, a core component of Zero Trust is multi-factor authentication (MFA) as a baseline requirement. Under MFA, users must provide an additional, separate proof of identity, like a mobile authenticator code, biometric data, or a hardware security key.
+Therefore, a core component of Zero Trust is multi-factor authentication (MFA) as a baseline requirement. Under MFA, users must provide an additional, separate proof of identity like:
+
+- A mobile authenticator code
+- Biometric data
+- A hardware security key
 
 This drastically reduces the risk of unauthorized access even if credentials are compromised. To illustrate, MFA blocks illicit entry right at the point of access, shielding systems from credential theft and phishing attacks.
 

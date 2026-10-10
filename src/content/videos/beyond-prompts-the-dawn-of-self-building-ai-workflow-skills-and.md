@@ -39,7 +39,11 @@ At its core, an AI workflow skill is a predefined, sequential series of tasks th
 
 Unlike a single prompt, which typically requests a one-off action like "write me an email" or "tell me about jobs in Canada," a skill encapsulates a more disciplined and procedural approach. The concept of a "skill" in this context was notably coined by Anthropic, though it has since become an open standard in the AI community.
 
-Consider the task of online research. A simple prompt might ask an LLM to "tell me about jobs in Canada," yielding a direct answer. However, a dedicated online research skill would involve a series of steps: first, "gather valid sources"; second, "summarize the data"; and third, "write a report in an A, B, C manner."
+Consider the task of online research. A simple prompt might ask an LLM to "tell me about jobs in Canada," yielding a direct answer. However, a dedicated online research skill would involve a series of steps:
+
+- "Gather valid sources"
+- "Summarize the data"
+- "Write a report in an A, B, C manner."
 
 This structured approach ensures that the LLM performs the task not just adequately, but with a level of rigor and quality that an expert in the field would typically apply. These steps are often informed by human expertise, guiding the AI to replicate best practices for a desired outcome.
 

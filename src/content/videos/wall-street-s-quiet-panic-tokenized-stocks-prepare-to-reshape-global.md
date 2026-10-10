@@ -44,7 +44,11 @@ The second model, which is far more contentious and central to the SEC's current
 
 The issuing company, for example, Apple, does not approve this process, may not even be aware of it, and has no direct relationship with the token holders. So, token holders in this model would typically lack voting rights or direct participation in corporate actions like splits or dividends.
 
-This approach is similar in concept to American Depositary Receipts (ADRs), Contracts for Difference (CFDs), and Exchange Traded Funds (ETFs), where the issuer of the underlying security does not need to approve its inclusion in the wrapper product.
+This approach is similar in concept to:
+
+- American Depositary Receipts (ADRs)
+- Contracts for Difference (CFDs)
+- Exchange Traded Funds (ETFs), where the issuer of the underlying security does not need to approve its inclusion in the wrapper product
 
 ## The SEC's Innovation Exemption
 

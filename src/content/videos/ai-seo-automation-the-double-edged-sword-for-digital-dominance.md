@@ -68,7 +68,14 @@ The introduction of scheduled tasks, which operate in the cloud on external infr
 
 Beyond core SEO, AI can extend into broader business processes, such as lead generation. By connecting to a business email account, AI can automate the initial replies and follow-up sequences for form submissions, creating a fully automated lead generation loop.
 
-For agencies or businesses pitching clients, AI can also be used to plan out comprehensive SEO strategies, including keyword targeting, content pillars, competitive analysis, and identifying market gaps. This allows for the rapid generation of detailed proposals that appear to have taken weeks for a team to assemble, significantly accelerating the sales and strategy development process.
+For agencies or businesses pitching clients, AI can also be used to plan out comprehensive SEO strategies including:
+
+- Keyword targeting
+- Content pillars
+- Competitive analysis
+- Identifying market gaps
+
+This allows for the rapid generation of detailed proposals that appear to have taken weeks for a team to assemble, significantly accelerating the sales and strategy development process.
 
 ## Adapting to the Evolving Search Ecosystem
 

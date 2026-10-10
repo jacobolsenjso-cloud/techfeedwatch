@@ -32,7 +32,12 @@ Securing AI agents requires a fundamental shift in cybersecurity strategy, movin
 
 This methodology, rooted in Zero Trust principles, is vital for protecting intelligent systems that not only process information but also take autonomous actions in complex environments.
 
-"We've entered the age of agentic AI, systems that don't just think, but they also act." These agents possess remarkable capabilities: "Agents can talk to APIs. They can call tools. They can buy things. They can move data, even create sub-agents."
+"We've entered the age of agentic AI, systems that don't just think, but they also act." These agents possess remarkable capabilities:
+
+- "Agents can talk to APIs.
+- They can call tools.
+- They can buy things.
+- They can move data, even create sub-agents."
 
 However, as a cybersecurity architect emphasizes, "But every new capability adds a new attack surface, yet another way the bad guys can get into our systems." Agentic AI multiplies power and risk, necessitating solid and pervasive security controls.
 

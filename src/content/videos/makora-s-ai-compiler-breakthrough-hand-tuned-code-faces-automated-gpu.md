@@ -88,6 +88,10 @@ Makora's overarching strategy is to deliver end-to-end performance and accuracy 
 
 As foundation models and AI agents become more capable at generating code, Makora adapts by integrating these advancements into their product. They are "ego-less" in this regard, constantly evaluating and incorporating new models, including open-source options like Gemma 4, to ensure they always deliver the best possible kernel.
 
-Their focus remains on providing a complete platform that manages and optimizes AI deployment. This includes not only kernel generation and advanced inference algorithms like SMC speculative decoding but also research into areas like numerics and low-precision formats.
+Their focus remains on providing a complete platform that manages and optimizes AI deployment. This includes:
+
+- Kernel generation
+- Advanced inference algorithms like SMC speculative decoding
+- Research into areas like numerics and low-precision formats
 
 By offering a full suite of optimizations, Makora aims to provide a flexible and powerful solution for AI developers seeking to maximize the efficiency and speed of their large language models and other AI workloads. This approach allows them to use cutting-edge research and adapt to hardware specifics, ensuring best performance across diverse computing environments.

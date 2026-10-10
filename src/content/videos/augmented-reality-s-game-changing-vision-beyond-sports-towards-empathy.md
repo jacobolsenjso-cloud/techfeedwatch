@@ -95,4 +95,10 @@ Augmented reality is rapidly approaching, and its transformative power is clear.
 
 While its capacity to generate excitement and revenue in fields like professional sports is immense, the technology's true long-term value lies in its potential to enhance sensory communication and foster empathy. The critical challenge remains in ethically scaling its capabilities for broader societal benefit.
 
-This involves careful consideration of how to manage information, prevent overload, and ensure equitable access, ensuring that AR serves to connect and enlighten rather than merely entertain or distract. The questions we ask, the choices we make, and the challenges we confront will, as always, define our future with this powerful technology.
+This involves careful consideration of how to:
+
+- Manage information
+- Prevent overload
+- Ensure equitable access, ensuring that AR serves to connect and enlighten rather than merely entertain or distract
+
+The questions we ask, the choices we make, and the challenges we confront will, as always, define our future with this powerful technology.

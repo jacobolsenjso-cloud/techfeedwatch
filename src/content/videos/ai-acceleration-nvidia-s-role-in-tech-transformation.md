@@ -67,7 +67,13 @@ The acceleration of AI is not merely a technical achievement; it is a profound f
 
 It enables businesses to process vast datasets, derive insights, and make data-driven decisions at speeds previously unimaginable. This transformative period presents immense opportunities for new products, services, and entirely new business models.
 
-However, this rapid advancement also brings significant challenges. Ethical considerations surrounding AI are paramount, including issues of bias in algorithms, privacy concerns, and the responsible use of autonomous systems. The societal impact on employment and the need for workforce adaptation are also pressing.
+However, this rapid advancement also brings significant challenges. Ethical considerations surrounding AI are paramount including:
+
+- Issues of bias in algorithms
+- Privacy concerns
+- The responsible use of autonomous systems
+
+The societal impact on employment and the need for workforce adaptation are also pressing.
 
 As AI automates more tasks, there is a growing imperative to reskill and upskill workforces to thrive in an AI-augmented economy. The concentration of AI power and capabilities raises questions about regulation, governance, and ensuring that the benefits of AI are broadly distributed rather than confined to a select few.
 

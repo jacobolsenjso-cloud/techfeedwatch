@@ -31,7 +31,11 @@ rewrittenAt: "2026-08-17"
 
 Cryptocurrency is a form of digital asset designed to work as a medium of exchange using cryptography to secure transactions, control the creation of additional units, and verify the transfer of assets. At its core, it represents a new way to manage digital value and achieve consensus across a network without relying on a central authority.
 
-The "crypto" in cryptocurrency refers not to secrecy, but to the advanced mathematical and computer science techniques that ensure three fundamental properties: a currency cannot be faked, transaction records are real and immutable, and the owner or signer of an asset is uniquely identified, preventing impersonation.
+The "crypto" in cryptocurrency refers not to secrecy, but to the advanced mathematical and computer science techniques that ensure three fundamental properties:
+
+- A currency cannot be faked
+- Transaction records are real and immutable
+- The owner or signer of an asset is uniquely identified, preventing impersonation
 
 ## The Blockchain: A Decentralized Ledger
 

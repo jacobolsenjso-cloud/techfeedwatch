@@ -85,6 +85,12 @@ Strong interconnects ensure that multiple GPUs can act as a single, powerful com
 
 Beyond hardware, software optimization will continue to play a pivotal role. Improvements in AI frameworks, compilers, and libraries—especially those that can intelligently manage data flow and memory utilization—can extract more performance from existing hardware.
 
-Companies are also exploring new chiplet architectures, where different functional blocks (CPU, GPU, memory controller, I/O) are fabricated as separate "chiplets" and then integrated onto a single package. This modular approach offers greater flexibility, potentially lower manufacturing costs, and better yield. This distributed approach is akin to the strategies behind modern [intelligent file management](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
+Companies are also exploring new chiplet architectures, where different functional blocks (CPU, GPU, memory controller, I/O) are fabricated as separate "chiplets" and then integrated onto a single package. This modular approach offers:
+
+- Greater flexibility
+- Potentially lower manufacturing costs
+- Better yield
+
+This distributed approach is akin to the strategies behind modern [intelligent file management](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
 
 Finally, the long-term impact of [Zero Trust securityFJERN principles on AI infrastructure, especially as AI agents become more autonomous, bears watching. Securing the underlying hardware and the data it processes against evolving threats will be paramount. The future of NVIDIA AI chips will be defined not just by raw speed, but by their ability to integrate into an increasingly complex, distributed, and secure AI ecosystem.

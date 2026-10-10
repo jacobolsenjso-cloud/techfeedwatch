@@ -57,7 +57,13 @@ This phenomenon greatly increases the computational power available. Classical c
 
 A quantum computer looks very different from a standard laptop or desktop computer. Walking into a room housing a quantum computer, one might first notice large, intricate machinery.
 
-This equipment often resembles a chandelier, with parts in golden, silver, and blue tones. It is encircled by an intricate network of wiring, tubing, and additional elaborate hardware. The entire setup often appears to be something from a science fiction movie.
+This equipment often resembles a chandelier, with parts in golden, silver, and blue tones. It is encircled by an intricate network of:
+
+- Wiring
+- Tubing
+- Additional elaborate hardware
+
+The entire setup often appears to be something from a science fiction movie.
 
 This complex physical design is necessary to maintain the delicate quantum states of the qubits. These systems often require extremely cold temperatures and shielded environments to prevent interference. Such conditions are essential for the quantum phenomena of superposition and entanglement to function correctly.
 

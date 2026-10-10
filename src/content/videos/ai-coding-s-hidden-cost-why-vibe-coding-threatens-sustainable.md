@@ -46,7 +46,15 @@ At their core, AI coding tools operate by learning from vast datasets of existin
 
 For instance, when a developer requests a function to parse specific data, the AI draws on its training to produce relevant code. This process simplifies many routine programming challenges and allows for rapid iteration on smaller components.
 
-However, the "reality of modern software engineering is that AI cannot architect complex systems," as highlighted by Dave Farley and Sam Newman from The Engineering Room podcast. Designing a complex system involves understanding intricate dependencies, anticipating future requirements, managing data flows across multiple services, ensuring solid security, and optimizing for performance and reliability—tasks that require human insight and strategic foresight.
+However, the "reality of modern software engineering is that AI cannot architect complex systems," as highlighted by Dave Farley and Sam Newman from The Engineering Room podcast. Designing a complex system involves:
+
+- Understanding intricate dependencies
+- Anticipating future requirements
+- Managing data flows across multiple services
+- Ensuring solid security
+- Optimizing for performance and reliability
+
+—tasks that require human insight and strategic foresight.
 
 Artificial intelligence is actually a magnifier, meaning it enhances the capabilities of skilled professionals by handling the more mechanical aspects of coding, freeing them to focus on higher-order design and problem-solving. It's designed to make experts better, rather than replacing them entirely.
 

@@ -36,7 +36,14 @@ Unlike earlier AI coding assistants that primarily generate code snippets or ass
 ## What Defines an Autonomous AI Software Engineer?
 The core distinction of an autonomous AI software engineer like Devin lies in its ability to manage an entire development task from start to finish. It doesn't just suggest code; it acts as a full agent within a development environment.
 
-This includes creating a plan, interacting with a command line, using a code editor, and referencing information through a browser. The system can "pop the hood" to diagnose unexpected behavior, much like a human engineer would, and then proceed to fix issues.
+This includes:
+
+- Creating a plan
+- Interacting with a command line
+- Using a code editor
+- Referencing information through a browser
+
+The system can "pop the hood" to diagnose unexpected behavior, much like a human engineer would, and then proceed to fix issues.
 
 Its operations are transparent, allowing human developers to supervise its progress and evaluate its work at each step, deciding whether to accept its contributions. This level of autonomy means the AI can handle the complexities of a project, understanding context, making decisions, and adapting its approach as it encounters new information or challenges, much like an experienced developer would.
 

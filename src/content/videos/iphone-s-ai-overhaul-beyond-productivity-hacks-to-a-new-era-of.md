@@ -63,7 +63,13 @@ The AI can plan the app's structure, including different screens and data flow. 
 
 This process transforms app development into a briefing exercise. The user's role shifts from coding to clearly articulating their needs, preferences, and desired outcomes. The AI handles the technical setup, often in about an hour and a half for a simple app.
 
-These custom applications can pull data from various sources. These include calendars, project management tools, and communication platforms like Slack. This helps generate personalized daily or weekly briefs.
+These custom applications can pull data from various sources. These include:
+
+- Calendars
+- Project management tools
+- Communication platforms like Slack
+
+This helps generate personalized daily or weekly briefs.
 
 They can also store historical data, such as the last 7 days of reports. This capability empowers people to build tools that perfectly fit their unique workflows, rather than relying on generic apps designed for a broad audience.
 

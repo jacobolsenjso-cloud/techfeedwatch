@@ -63,7 +63,15 @@ This includes implementing strong telemetry to monitor AI activities, understand
 
 Beyond AI systems, the cybersecurity environment is also witnessing a significant shift in cloud attack trends, moving away from targeting hardened cloud infrastructure to exploiting the broader cloud *ecosystem*.
 
-Threat actors now focus on identities, integrations, APIs, workflows, and administrative tools that connect disparate services. This shift makes the "edges" of the cloud a more efficient and scalable target than attempting to breach core cloud services.
+Threat actors now focus on:
+
+- Identities
+- Integrations
+- APIs
+- Workflows
+- Administrative tools that connect disparate services
+
+This shift makes the "edges" of the cloud a more efficient and scalable target than attempting to breach core cloud services.
 
 The attractiveness of cloud edges stems from the wide-open opportunities for lateral movement once an attacker gains initial access. Cloud environments, by design, often rely on implicit trust and convenience to facilitate the federation of services and reuse of components.
 

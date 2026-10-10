@@ -32,7 +32,16 @@ For centuries, [financial services](/video/fintech-s-fragmented-future-deconstru
 
 ## The Digital Evolution of Core Banking Functions
 
-Historically, banks emerged to solve six fundamental human needs related to money. These included establishing trust, maintaining accurate records of ownership, facilitating payments, enabling lending, verifying identity, and managing financial risks. For hundreds of years, a centralized corporation was essential to perform these functions.
+Historically, banks emerged to solve six fundamental human needs related to money. These included:
+
+- Establishing trust
+- Maintaining accurate records of ownership
+- Facilitating payments
+- Enabling lending
+- Verifying identity
+- Managing financial risks
+
+For hundreds of years, a centralized corporation was essential to perform these functions.
 
 However, technology has now digitized each of these core services. Cryptography provides trust and recordkeeping in decentralized systems. Payments and lending are handled through decentralized networks.
 

@@ -43,7 +43,13 @@ One of the main advantages of free AI video generators is their ability to democ
 
 For instance, a platform might offer 1,000 free credits weekly. This can be more than enough for regular content creation, with some users reporting they never run out even after testing for more than 2 months.
 
-This makes rapid prototyping and high-volume content for platforms like social media much easier. Creators can quickly test different ideas, generate multiple versions of a video, or adapt content for various formats. This includes vertical videos for shorts or horizontal videos for longer platforms.
+This makes rapid prototyping and high-volume content for platforms like social media much easier. Creators can quickly:
+
+- Test different ideas
+- Generate multiple versions of a video
+- Adapt content for various formats
+
+This includes vertical videos for shorts or horizontal videos for longer platforms.
 
 ## Understanding the Limitations and Trade-offs
 

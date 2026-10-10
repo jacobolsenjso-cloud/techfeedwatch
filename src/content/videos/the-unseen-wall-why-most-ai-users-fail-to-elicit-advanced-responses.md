@@ -84,7 +84,13 @@ The use of "personas" is another powerful technique. By asking the AI to adopt a
 
 Since AIs are trained on vast amounts of text and sometimes video, they can extrapolate thinking processes and writing styles.
 
-This allows for customized explanations, such as asking the AI to explain Faraday's law in three different modes: for a 5-year-old, a 10-year-old with simple formulas, and a 25-year-old physics student using integral and differential forms. This adaptability helps users grasp complex topics at varying depths, making learning more intuitive and personalized.
+This allows for customized explanations, such as asking the AI to explain Faraday's law in three different modes:
+
+- For a 5-year-old
+- A 10-year-old with simple formulas
+- A 25-year-old physics student using integral and differential forms
+
+This adaptability helps users grasp complex topics at varying depths, making learning more intuitive and personalized.
 
 ## Identifying Knowledge Gaps and Challenging Assumptions
 

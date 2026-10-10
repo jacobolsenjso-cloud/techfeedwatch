@@ -47,7 +47,13 @@ This level of sophistication goes far beyond what we expect from a mere instrume
 
 The journey of AI has been remarkably swift. Just 15 years ago, working on AI was considered a niche field. Concepts like Artificial General Intelligence (AGI) were dismissed as science fiction, believed to be 50 or even 100 years away.
 
-Yet, AI quickly began to surpass human performance in various complex tasks. These included understanding images, translating languages, transcribing speech, playing games like Go and chess, and even diagnosing diseases.
+Yet, AI quickly began to surpass human performance in various complex tasks. These included:
+
+- Understanding images
+- Translating languages
+- Transcribing speech
+- Playing games like Go and chess
+- Even diagnosing diseases
 
 This rapid progress has led to an explosion in AI's capabilities and reach. In just 18 months, over a billion people have used large language models. AI now generates poetry, images, music, and video, expanding human imagination.
 

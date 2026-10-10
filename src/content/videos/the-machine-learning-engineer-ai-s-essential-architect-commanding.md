@@ -100,6 +100,12 @@ Career advancement offers large potential. Paths include becoming a principal en
 
 Others ascend to executive leadership roles, such as a Chief AI Officer. They shape an organization's overall AI strategy and vision.
 
-Measuring impact involves tracking metrics such as deployment frequency, model accuracy, and revenue contribution. These provide evidence of value to stakeholders. They demonstrate an engineer's effectiveness in delivering business outcomes.
+Measuring impact involves tracking metrics such as:
+
+- Deployment frequency
+- Model accuracy
+- Revenue contribution
+
+These provide evidence of value to stakeholders. They demonstrate an engineer's effectiveness in delivering business outcomes.
 
 Staying current with evolving technology, frameworks, and cloud platforms is essential for long-term success. This continuous learning ensures engineers remain relevant in a rapidly changing field. It helps them adapt their toolkit to new demands.

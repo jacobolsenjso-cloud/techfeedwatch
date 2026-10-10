@@ -75,7 +75,13 @@ This proprietary stance also provides Meta with greater control over its intelle
 
 As Meta moves deeper into proprietary AI with Muse Spark, several critical developments bear close observation. The initial rollout and uptake of Muse Spark will be a key indicator of market acceptance and its competitive edge against other leading AI models.
 
-Analysts will be closely monitoring how Meta structures its eventual paid API access, including pricing models, developer tools, and support. The success in attracting a substantial developer and enterprise user base will be paramount to validating this new revenue strategy.
+Analysts will be closely monitoring how Meta structures its eventual paid API access including:
+
+- Pricing models
+- Developer tools
+- Support
+
+The success in attracting a substantial developer and enterprise user base will be paramount to validating this new revenue strategy.
 
 The public will be watching for concrete steps toward the "personal superintelligence" vision. This includes the announcement and release of larger, more capable models that build upon Muse Spark's foundation.
 

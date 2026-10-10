@@ -34,7 +34,11 @@ Quantitative finance with Python involves using programming and computational to
 
 ## The Foundation of Quant Finance with Python
 
-Building a quantitative finance system in Python starts with essential libraries. NumPy provides numerical computing capabilities, while Pandas, built on NumPy, offers data structures like Series and DataFrames for organizing and manipulating financial data. Matplotlib is used for creating visualizations.
+Building a quantitative finance system in Python starts with essential libraries.
+
+- NumPy provides numerical computing capabilities
+- Pandas, built on NumPy, offers data structures like Series and DataFrames for organizing and manipulating financial data.
+- Matplotlib is used for creating visualizations.
 
 Data acquisition is a key first step. Financial data can be imported from local files or remote sources using functions like `read_csv`. For live or historical market data, libraries such as `yFinance` can fetch information directly into a Pandas DataFrame.
 

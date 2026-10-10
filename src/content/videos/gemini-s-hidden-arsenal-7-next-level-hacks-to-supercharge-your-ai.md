@@ -45,7 +45,13 @@ This ability much speeds up the design process, allowing for rapid iteration and
 
 Gemini offers the ability to create "skills," which are essentially standardized operating procedures or checklists that the AI follows for specific tasks. Unlike general prompts where Gemini might approach a task differently each time, a skill ensures consistent execution. This is particularly useful for repetitive actions.
 
-There are three main ways to create these skills: you can upload an existing skill, create one manually by defining its name, description, and instructions, or use Gemini itself to create the skill. For example, you could instruct Gemini to "summarize my unread emails as to-dos," and it will build the necessary skill to perform this action consistently.
+There are three main ways to create these skills:
+
+- You can upload an existing skill
+- Create one manually by defining its name, description, and instructions
+- Use Gemini itself to create the skill
+
+For example, you could instruct Gemini to "summarize my unread emails as to-dos," and it will build the necessary skill to perform this action consistently.
 
 When considering uploading skills from external sources, it is important to exercise caution. Always ensure the source is trusted, as unverified skills could potentially expose sensitive information. Once created, skills can be activated by typing a slash (/) command or by explicitly asking Gemini to use a specific skill.
 

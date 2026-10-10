@@ -50,7 +50,11 @@ The advantage of quantum computing becomes even more pronounced with increasing 
 
 ## The Extreme Sensitivity of Quantum Systems
 
-Despite their theoretical power, quantum computers are incredibly difficult to build because the quantum phenomena they exploit are extraordinarily fragile. Quantum mechanics governs the behavior of the smallest things in our universe, like atoms, electrons, and subatomic particles.
+Despite their theoretical power, quantum computers are incredibly difficult to build because the quantum phenomena they exploit are extraordinarily fragile. Quantum mechanics governs the behavior of the smallest things in our universe, like:
+
+- Atoms
+- Electrons
+- Subatomic particles
 
 To maintain the delicate quantum states of qubits, they must be isolated from any external disturbances that could cause them to lose their quantum properties, a process known as decoherence. Even the slightest external "noise" can disrupt these states, leading to errors in computation. This extreme sensitivity needs highly specialized and precisely controlled environments.
 

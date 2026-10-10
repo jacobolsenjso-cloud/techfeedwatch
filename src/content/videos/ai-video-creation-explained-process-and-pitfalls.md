@@ -47,7 +47,12 @@ Developing this skill can significantly enhance productivity, much like [Master 
 
 ## Practicalities: Cost, Quality, and Real-World Limitations
 
-While the appeal of "free and unlimited" AI video generation tools is strong, the reality is more nuanced. Many platforms offer free tiers or trials to attract users, but these often come with strict limitations on generation time, resolution, the number of outputs, or access to advanced features.
+While the appeal of "free and unlimited" AI video generation tools is strong, the reality is more nuanced. Many platforms offer free tiers or trials to attract users, but these often come with strict limitations on:
+
+- Generation time
+- Resolution
+- The number of outputs
+- Access to advanced features
 
 True high-quality, long-form video generation typically requires a paid subscription or a credit-based system, reflecting the significant computational resources involved. These platforms often queue free users, leading to longer wait times, whereas paying users receive priority access and faster rendering.
 

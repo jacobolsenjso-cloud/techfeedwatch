@@ -65,7 +65,12 @@ A common pitfall for new e-commerce businesses is building an entire store aroun
 
 A more sustainable strategy involves grouping related products into a broader theme or niche that can be "owned." This approach transforms a single product idea into an entire storefront with enduring appeal.
 
-Consider the "milky toner" example: rather than just selling one product, the underlying niche is "skin barrier repair." This broader theme encompasses multiple related products such as PDR and cream, peptide toner, multi balm, and overnight masks.
+Consider the "milky toner" example: rather than just selling one product, the underlying niche is "skin barrier repair." This broader theme encompasses multiple related products such as:
+
+- PDR and cream
+- Peptide toner
+- Multi balm
+- Overnight masks
 
 By identifying such clusters, a business can offer 5 to 10 related products, creating a more diversified and resilient store. Expanding this way involves searching trend databases for non-brand specific product trends within the chosen theme, often filtering by timeframe to see what's projected to grow.
 

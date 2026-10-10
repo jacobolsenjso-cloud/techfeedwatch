@@ -34,7 +34,11 @@ SpaceX, a company reportedly seeking valuations near $2 trillion, presents a sig
 
 The immense interest in SpaceX has led many to question how they can gain exposure to the company's growth before its anticipated public debut, potentially in June. For retail investors, a 30% allocation is often discussed, yet accessing shares pre-IPO is not straightforward.
 
-There are three primary avenues through which investors might gain exposure to private companies like SpaceX. As Yahoo Finance's Pras Subramanian explains, these methods differ significantly in terms of direct access, fees, and liquidity.
+There are three primary avenues through which investors might gain exposure to private companies like SpaceX. As Yahoo Finance's Pras Subramanian explains, these methods differ significantly in terms of:
+
+- Direct access
+- Fees
+- Liquidity
 
 **Secondary Markets** The first approach involves secondary markets. These are platforms where transactions are facilitated by a third party, allowing early investors or employees with vested shares to sell them to interested buyers. Accredited investors, for instance, can utilize these platforms to acquire shares.
 

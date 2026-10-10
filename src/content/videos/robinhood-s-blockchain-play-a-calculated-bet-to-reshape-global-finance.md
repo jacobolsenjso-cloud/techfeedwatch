@@ -45,7 +45,13 @@ It partners with Morpho, a protocol known for balancing yield potential with ris
 
 To enhance safety, Robinhood Earn includes an insurance component designed to provide a safety net for customers. This addresses common concerns about smart contract hacks and vault issues in DeFi. The product is integrated directly into the main Robinhood app, making it accessible to its 26 or 27 million funded accounts.
 
-This ease of use allows customers to convert dollars to stablecoins, lend them, and see their capital compounding in real-time with just a few taps. The ability to quickly withdraw assets from the lending pool further simplifies the user experience.
+This ease of use allows customers to:
+
+- Convert dollars to stablecoins
+- Lend them
+- See their capital compounding in real-time with just a few taps
+
+The ability to quickly withdraw assets from the lending pool further simplifies the user experience.
 
 The offering of stablecoin yield has sparked debate, particularly in the context of the US Clarity Act. Banks argue against stablecoins generating yield, while proponents, including Robinhood, contend that it penalizes users who want to use [blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/) for efficient, 24/7 transfers.
 

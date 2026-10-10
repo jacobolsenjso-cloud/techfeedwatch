@@ -66,7 +66,13 @@ Bitcoin maximalists also voice critiques, expressing concerns about the potentia
 
 Bitcoin’s deliberate design choices mean it will never have native smart contract capabilities akin to those of Ethereum. Its architecture is proof of its primary function: a secure, decentralized store of value and peer-to-peer cash.
 
-The limitations are not flaws but features that reinforce its core principles of security, immutability, and resistance to censorship. While this prevents complex programmatic logic from running directly on its base layer, it also maintains the network's unparalleled stability and simplicity.
+The limitations are not flaws but features that reinforce its core principles of:
+
+- Security
+- Immutability
+- Resistance to censorship
+
+While this prevents complex programmatic logic from running directly on its base layer, it also maintains the network's unparalleled stability and simplicity.
 
 However, the ecosystem around Bitcoin is not static. Innovations like OPNET represent a significant push to expand Bitcoin's utility by layering new functionalities on top, or even directly within, its existing structure without altering its core protocol. These efforts strive to open up new use cases for Bitcoin, from DeFi to institutional financial products, by carefully handling its inherent constraints.
 

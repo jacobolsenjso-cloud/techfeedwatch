@@ -47,7 +47,12 @@ This aggressive strategy, centered on providing advanced AI functionalities with
 
 ## Desktop Integration and System Control with Model Context Protocol
 
-One of Quen AI's most powerful features is its desktop application, available for various operating systems including Mac, Windows, iPhone, and Android devices.
+One of Quen AI's most powerful features is its desktop application, available for various operating systems including:
+
+- Mac
+- Windows
+- iPhone
+- Android devices
 
 This application introduces the Model Context Protocol (MCP), a mechanism that allows Quen AI models to connect with and control any tool, including the user's own computer system. This capability extends the AI's utility beyond conversational responses to direct interaction with the local environment.
 

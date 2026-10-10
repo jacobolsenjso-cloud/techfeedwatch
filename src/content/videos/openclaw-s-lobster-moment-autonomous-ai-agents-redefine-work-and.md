@@ -28,7 +28,11 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-[OpenClaw AI](/video/beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software/) is an open-source project focused on developing truly autonomous artificial intelligence agents. These agents move beyond the abilities of conversational chatbots by independently pursuing goals, interacting with the digital world, and adapting to unforeseen circumstances without constant human input.
+[OpenClaw AI](/video/beyond-the-code-openclaw-s-open-source-ai-agents-redefine-software/) is an open-source project focused on developing truly autonomous artificial intelligence agents. These agents move beyond the abilities of conversational chatbots by:
+
+- Independently pursuing goals
+- Interacting with the digital world
+- Adapting to unforeseen circumstances without constant human input
 
 The technology aims to provide a personal operating system for AI, enabling it to perform a wide range of tasks on a computer with a high degree of independence.
 

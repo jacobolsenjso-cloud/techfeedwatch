@@ -57,7 +57,11 @@ The advent of more sophisticated AI models, particularly those with enhanced rea
 
 While the initial steps in building automation involved creating context layers (access to historical data, patient records) and digital tools, the "intelligence layer" was initially less developed. As AI models have improved, this intelligence layer has become increasingly capable, allowing agents to understand nuanced situations and perform tasks requiring judgment.
 
-For example, an AI agent can now process overdue invoices not just by identifying them in a system, but by actively taking steps like initiating contact with patients for payment. This capability extends to other areas such as explaining benefits, performing background checks, or managing patient onboarding.
+For example, an AI agent can now process overdue invoices not just by identifying them in a system, but by actively taking steps like initiating contact with patients for payment. This capability extends to other areas such as:
+
+- Explaining benefits
+- Performing background checks
+- Managing patient onboarding
 
 By taking on these functions, AI agents can provide tens of hours of labor, directly addressing the pain points that keep [small business](/video/ai-s-local-search-dominance-the-4-hour-website-that-challenged/) owners up at night and allowing them to redirect their energy towards their clinical expertise.
 

@@ -32,7 +32,11 @@ rewrittenAt: "2026-08-17"
 
 ## What is Artificial Intelligence?
 
-Artificial intelligence, or AI, is when a computer or machine shows abilities we usually associate with human intelligence. These include learning new things, making decisions, and solving problems.
+Artificial intelligence, or AI, is when a computer or machine shows abilities we usually associate with human intelligence. These include:
+
+- Learning new things
+- Making decisions
+- Solving problems
 
 Unlike a regular computer that just follows exact instructions, an AI can learn from information. It can also spot patterns on its own. This allows it to do new things it wasn't specifically told to do.
 

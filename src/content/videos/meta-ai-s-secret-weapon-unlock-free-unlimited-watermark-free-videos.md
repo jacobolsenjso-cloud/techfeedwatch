@@ -71,7 +71,11 @@ For users needing to generate a large volume of content, automation tools are av
 
 To use such an extension, users must enable "developer mode" in their browser's extension settings. They then load the unpacked extension, which typically involves dragging and dropping a specific folder.
 
-Once installed, these extensions integrate with the generative platform, allowing for bulk operations. Users can select whether to generate images or videos and specify the resolution, such as 720p. The extension's dashboard provides features like a "waiting time zone" to add random delays between generations, an "antibot" setting, and an "auto download" option.
+Once installed, these extensions integrate with the generative platform, allowing for bulk operations. Users can select whether to generate images or videos and specify the resolution, such as 720p. The extension's dashboard provides features like:
+
+- A "waiting time zone" to add random delays between generations
+- An "antibot" setting
+- An "auto download" option
 
 For bulk video generation, users input multiple prompts, with each new prompt on a separate line. The extension then processes these prompts sequentially, generating batches of videos, downloading them automatically, and ensuring they are watermark-free. This automation works across different operating systems, including MacBook and Windows.
 

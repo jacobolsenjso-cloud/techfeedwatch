@@ -30,7 +30,13 @@ Augmented reality (AR) stands as a technology designed to enhance a user's perce
 
 This blending of physical and virtual elements typically occurs through devices like smartphones, presenting data such as 3D models and videos directly within a real-time camera view. The fundamental principle involves adding to, rather than replacing, the user's view of reality.
 
-The core mechanism of how augmented reality works centers on projecting digital content onto a live feed of the physical environment. A device’s camera captures the real world, and specialized software then identifies surfaces, tracks motion, and calculates perspective to accurately position virtual objects. These digital overlays appear anchored within the real space, creating the illusion of coexistence.
+The core mechanism of how augmented reality works centers on projecting digital content onto a live feed of the physical environment. A device’s camera captures the real world, and specialized software then
+
+- Identifies surfaces
+- Tracks motion
+- Calculates perspective to accurately position virtual objects
+
+These digital overlays appear anchored within the real space, creating the illusion of coexistence.
 
 For example, an AR product demo for jewelry retailers allows customers to virtually "try on" rings or necklaces on their hands or necks, offering an interactive and immediate visualization without needing physical inventory. This capability transforms the shopping experience, moving beyond static images to dynamic, interactive previews.
 

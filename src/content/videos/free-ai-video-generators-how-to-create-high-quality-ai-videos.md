@@ -55,7 +55,12 @@ It can generate content in diverse styles, from animation to more realistic visu
 
 For creators aiming for even higher quality content or looking to transform existing footage, platforms like Higgsfield offer advanced abilities. Higgsfield provides access to tools for creating images, footage, and audio. One notable feature is its Shorts Studio, designed to enhance existing content.
 
-The Shorts Studio allows users to upload footage up to 2 minutes long and apply various AI-powered editing presets. These presets can dramatically change the visual style, add effects, include subtitles, and incorporate transitions.
+The Shorts Studio allows users to upload footage up to 2 minutes long and apply various AI-powered editing presets. These presets can dramatically:
+
+- Change the visual style
+- Add effects
+- Include subtitles
+- Incorporate transitions
 
 This tool works with both vertical and horizontal footage, making it versatile for different content needs. Creators can choose from a range of pre-designed styles or even build their own custom presets by uploading reference footage or images.
 

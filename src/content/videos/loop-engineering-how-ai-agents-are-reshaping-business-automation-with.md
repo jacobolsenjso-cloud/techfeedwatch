@@ -58,7 +58,13 @@ This type of loop can run for months or even years, as SEO results often compoun
 
 For **marketing campaigns**, such as Facebook ads, AI agent loops can drive profitability. The objective might be to achieve a positive return on ad spend, whether the budget is $100 a day or $100 a month.
 
-The agent can adjust ad copy, targeting parameters, and bid strategies. It then measures campaign performance against profitability metrics, continuously iterating to optimize the campaign for better results.
+The agent can adjust:
+
+- Ad copy
+- Targeting parameters
+- Bid strategies
+
+It then measures campaign performance against profitability metrics, continuously iterating to optimize the campaign for better results.
 
 In **product development and engineering**, these loops are invaluable for ensuring quality and performance. For software features, a loop might aim to ensure a "sign-up" function works perfectly in a browser.
 

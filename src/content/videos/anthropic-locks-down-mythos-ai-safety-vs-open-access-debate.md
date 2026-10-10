@@ -76,7 +76,11 @@ The controversy surrounding Mythos brings the AI safety versus open access debat
 
 They believe that the risks to public safety, national security, and economic stability outweigh the benefits of broad availability. The fear is that such models could be weaponized or misused by malicious actors, leading to catastrophic outcomes.
 
-Conversely, advocates for open access argue that restricting powerful AI models to a select few creates an elite "club." They contend that this approach centralizes power and knowledge, potentially hindering innovation and equitable development. Open access allows a wider community of researchers, developers, and ethicists to scrutinize, improve, and find beneficial applications for AI.
+Conversely, advocates for open access argue that restricting powerful AI models to a select few creates an elite "club." They contend that this approach centralizes power and knowledge, potentially hindering innovation and equitable development. Open access allows a wider community of researchers, developers, and ethicists to:
+
+- Scrutinize
+- Improve
+- Find beneficial applications for AI
 
 It also enables a broader understanding of AI's limitations and risks, rather than relying solely on the assessments of its creators. The debate also touches on who should determine acceptable risk levels and how to balance the broad utility of powerful models with potential misuse scenarios.
 

@@ -59,7 +59,15 @@ In tests involving browser exploits, Sol identified bugs and exploitation primit
 
 The company's main argument is that GPT-5.6 Sol is better at helping people find and fix vulnerabilities than at reliably carrying out end-to-end attacks. OpenAI expects major benefits for legitimate defensive work while limiting prohibited offensive use.
 
-To ensure this, GPT-5.6 incorporates several safety features. These include model-level refusal behavior, real-time misuse classifiers for cyber and biology, account-level review, differentiated access, monitoring, enforcement, and ongoing testing.
+To ensure this, GPT-5.6 incorporates several safety features. These include:
+
+- Model-level refusal behavior
+- Real-time misuse classifiers for cyber and biology
+- Account-level review
+- Differentiated access
+- Monitoring
+- Enforcement
+- Ongoing testing
 
 The safety behavior is built directly into the core model, rather than added as a separate filter. This design choice aims to avoid issues seen with other models, where high-risk requests were routed to older, less capable systems, leading to inconsistent user experiences.
 

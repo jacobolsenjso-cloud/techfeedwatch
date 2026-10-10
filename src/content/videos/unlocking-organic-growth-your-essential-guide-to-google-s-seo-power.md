@@ -34,7 +34,13 @@ Understanding how a website performs online requires two distinct lenses: one fo
 
 Google Search Console (GSC) is a free platform provided by Google that helps website owners monitor, maintain, and troubleshoot their site's presence in Google Search results. It acts as a direct communication channel with Google, offering insights into how the search engine views and indexes a website.
 
-Key functions include submitting sitemaps, checking for indexing issues, and reviewing data on search performance. For instance, GSC reveals the specific search queries that led users to a site, the number of times a site appeared in search results (impressions), and its click-through rate (CTR), which is the percentage of impressions that resulted in a click.
+Key functions include:
+
+- Submitting sitemaps
+- Checking for indexing issues
+- Reviewing data on search performance
+
+For instance, GSC reveals the specific search queries that led users to a site, the number of times a site appeared in search results (impressions), and its click-through rate (CTR), which is the percentage of impressions that resulted in a click.
 
 It also flags technical problems like crawl errors or slow-rendering pages, providing recommendations for improvement. GSC's core role is to ensure Google can effectively discover and rank a website.
 

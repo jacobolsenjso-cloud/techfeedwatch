@@ -50,7 +50,15 @@ Instead, it provides a complete software development lifecycle for [AI agents](/
 
 Superpowers operates by building upon a set of composable skills and initial instructions that guide an AI agent through an entire project. It works with a variety of AI coding agents and command-line interface (CLI) tools, including Claude Code and Codex.
 
-Unlike frameworks that primarily focus on translating ideas into structured task lists, Superpowers automatically orchestrates the entire process: brainstorming, design, generating a detailed specification, creating a comprehensive implementation plan, and then executing that plan. This holistic approach aims to provide a more integrated and efficient development experience, moving towards a truly agentic workflow.
+Unlike frameworks that primarily focus on translating ideas into structured task lists, Superpowers automatically orchestrates the entire process:
+
+- Brainstorming
+- Design
+- Generating a detailed specification
+- Creating a comprehensive implementation plan
+- Then executing that plan
+
+This holistic approach aims to provide a more integrated and efficient development experience, moving towards a truly agentic workflow.
 
 ## How Superpowers Enhances Agent Capabilities
 

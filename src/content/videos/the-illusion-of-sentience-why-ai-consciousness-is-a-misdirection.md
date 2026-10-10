@@ -38,7 +38,13 @@ However, intelligence and consciousness are distinct concepts. Intelligence rela
 
 Consciousness, on the other hand, is about subjective experience, feeling, and simply *being*. It is the difference between being naturally awake and the oblivion of general anesthesia. It is the bitter taste of coffee, the warmth of a fire, or the joy of seeing a loved one.
 
-AI systems, such as large language models like Claude or GPT, are trained on vast amounts of text. They can generate human-like responses, discuss complex topics, and even appear to ponder questions of consciousness. Yet, these systems are merely reflecting patterns from their training data.
+AI systems, such as large language models like Claude or GPT, are trained on vast amounts of text. They can:
+
+- Generate human-like responses
+- Discuss complex topics
+- Even appear to ponder questions of consciousness
+
+Yet, these systems are merely reflecting patterns from their training data.
 
 They simulate consciousness rather than experiencing it. Humans often project consciousness onto these algorithms, much like seeing faces in clouds or other patterns in random objects. This projection reveals more about our own psychology than it does about the AI itself.
 

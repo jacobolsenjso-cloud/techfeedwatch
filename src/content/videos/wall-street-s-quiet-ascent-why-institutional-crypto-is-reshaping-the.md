@@ -44,7 +44,13 @@ The nature of institutional engagement with crypto has evolved significantly, mo
 
 While MicroStrategy became renowned for its substantial Bitcoin holdings, a recent development illustrates this changing dynamic: as Yahoo Finance points out, Michael Saylor's strategy raised over a half a billion dollars this week and bought no Bitcoin. Instead, Michael Saylor's company MicroStrategy focused on strengthening its balance sheet by increasing cash reserves and repurchasing SCRC.
 
-They sold 5.43 million MSTR shares, raising 544.5 million, using 25 million to repurchase SCRC, and adding 525 million to their dollar reserves, which now stand at 3.75 billion dollars. This represents a clear shift from being a consistent buyer of Bitcoin to a company engaging in complex financial engineering around its core asset.
+They sold 5.43 million MSTR shares:
+
+- Raising 544.5 million
+- Using 25 million to repurchase SCRC
+- Adding 525 million to their dollar reserves, which now stand at 3.75 billion dollars
+
+This represents a clear shift from being a consistent buyer of Bitcoin to a company engaging in complex financial engineering around its core asset.
 
 This strategic reorientation reflects a broader market consolidation within the crypto space. The industry is witnessing the disappearance of "weak businesses," while companies possessing significant capital, established customer bases, and solid infrastructure are taking control.
 

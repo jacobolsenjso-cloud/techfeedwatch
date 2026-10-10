@@ -76,7 +76,11 @@ Secondly, AI can analyze vast datasets from tokenized markets to identify trends
 
 Concrete examples of this convergence are already emerging. Asset management firm Franklin Templeton, for instance, has demonstrated forward-thinking by launching its tokenized fund, which leverages blockchain technology to offer new investment avenues.
 
-Such initiatives showcase how traditional finance is beginning to embrace these innovations, albeit cautiously. The interplay of AI and blockchain is also anticipated to reshape the next five years of finance by facilitating more sophisticated financial instruments, enabling real-time risk assessment, and opening doors to entirely new asset classes.
+Such initiatives showcase how traditional finance is beginning to embrace these innovations, albeit cautiously. The interplay of AI and blockchain is also anticipated to reshape the next five years of finance by:
+
+- Facilitating more sophisticated financial instruments
+- Enabling real-time risk assessment
+- Opening doors to entirely new asset classes
 
 For a deeper understanding of AI's role in the sector, consider [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). This transformative period suggests a future where financial services are more responsive, efficient, and interconnected, driven by the combined power of digital assets and intelligent automation.
 

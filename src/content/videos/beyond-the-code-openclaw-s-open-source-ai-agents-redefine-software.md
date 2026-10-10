@@ -30,7 +30,11 @@ faqs:
 
 OpenClaw is an open-source AI agent framework that allows artificial intelligence systems to operate with unprecedented autonomy, fundamentally reshaping how software can be developed and interact. This innovative project has quickly captured attention, signaling a potential shift in the tech ecosystem.
 
-Created by Peter Steinberger, OpenClaw has distinguished itself as the fastest-growing project in GitHub history. It functions as a framework for AI agents, which are intelligent systems capable of understanding complex goals, planning steps to achieve them, and executing actions in a dynamic environment without constant human oversight.
+Created by Peter Steinberger, OpenClaw has distinguished itself as the fastest-growing project in GitHub history. It functions as a framework for AI agents, which are intelligent systems capable of:
+
+- Understanding complex goals
+- Planning steps to achieve them
+- Executing actions in a dynamic environment without constant human oversight
 
 This capacity for independent operation is what makes OpenClaw, famously dubbed "OpenClaw: The Viral AI Agent that Broke the Internet," particularly compelling.
 

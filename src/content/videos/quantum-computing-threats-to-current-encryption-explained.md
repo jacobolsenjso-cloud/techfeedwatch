@@ -54,7 +54,11 @@ The Google group opted not to fully publish their revised algorithm. Instead, th
 
 ## Why post-quantum security is an urgent necessity
 
-The rapid progress in quantum algorithms is undeniably amazing from a technological standpoint, yet it starkly contrasts with the slower advancements in other promised quantum computing applications. Recall earlier claims that quantum computers could enhance stock investments and financial analysis, unravel complicated logistics problems, or advance material science and quantum chemistry.
+The rapid progress in quantum algorithms is undeniably amazing from a technological standpoint, yet it starkly contrasts with the slower advancements in other promised quantum computing applications. Recall earlier claims that quantum computers could:
+
+- Enhance stock investments and financial analysis
+- Unravel complicated logistics problems
+- Advance material science and quantum chemistry
 
 While these fields struggle to translate theoretical advantages into practical gains, code-breaking remains the most tangible and immediately threatening application of quantum technology. This clear demonstration of capability underscores that the era of quantum-resistant cryptography is not a distant future, but an urgent necessity.
 

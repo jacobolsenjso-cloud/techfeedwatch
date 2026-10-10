@@ -46,7 +46,13 @@ This makes blockchain a "distributed, transparent, autonomous system for exchang
 
 ## How It Works
 
-The operational mechanics of blockchain are designed to imbue the system with its trust-enhancing properties: distribution, transparency, and immutability. When a transaction occurs, it is first grouped with other transactions into a "block." This block is then cryptographically hashed, meaning a unique digital fingerprint is created for it.
+The operational mechanics of blockchain are designed to imbue the system with its trust-enhancing properties:
+
+- Distribution
+- Transparency
+- Immutability
+
+When a transaction occurs, it is first grouped with other transactions into a "block." This block is then cryptographically hashed, meaning a unique digital fingerprint is created for it.
 
 This hash is then included in the next block, linking the two together in a chain – hence, "blockchain." If anyone attempts to alter a past transaction in a block, its hash will change, immediately invalidating the link to the subsequent block and alerting the network to the attempted modification.
 

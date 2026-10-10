@@ -45,7 +45,11 @@ The system is engineered so that all its components behave as a single, cohesive
 
 Vera Rubin features a highly integrated and modular design. Each rack contains 18 compute trays.
 
-Each tray houses two Vera Rubin superchips, which are the core computing units. A single superchip is a complex assembly, comprising one Vera CPU, two Rubin GPUs, and 17,000 other components.
+Each tray houses two Vera Rubin superchips, which are the core computing units. A single superchip is a complex assembly, comprising
+
+- One Vera CPU
+- Two Rubin GPUs
+- 17,000 other components
 
 The Vera CPU offers twice the performance per watt compared to the previous generation Grace CPU. The Rubin GPU itself delivers 50 petaflops of AI performance, representing a 2.5 times increase in performance.
 

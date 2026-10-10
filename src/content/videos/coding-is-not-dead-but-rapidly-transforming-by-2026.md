@@ -41,7 +41,14 @@ For a student or aspiring programmer, the path to becoming a software engineer i
 
 The advent of advanced AI tools has undeniably introduced a new dynamic to software creation, leading many to ask, "Is Coding Dead in 2026?" and "Will AI replace software engineers?" As ISITCODING - Training & Development points out, it is critical to separate hype from reality.
 
-What AI can already do includes generating boilerplate code, suggesting solutions, identifying errors, and even automating repetitive coding tasks. This significantly accelerates development cycles and frees developers from mundane, time-consuming activities. For instance, an AI can quickly scaffold an application with Next.js or generate database schema definitions, tasks that previously required manual effort.
+What AI can already do includes:
+
+- Generating boilerplate code
+- Suggesting solutions
+- Identifying errors
+- Even automating repetitive coding tasks
+
+This significantly accelerates development cycles and frees developers from mundane, time-consuming activities. For instance, an AI can quickly scaffold an application with Next.js or generate database schema definitions, tasks that previously required manual effort.
 
 However, AI still falls short in areas requiring nuanced understanding of business logic, complex architectural design, innovative problem-solving, and critical evaluation of overall system integrity. It lacks true creativity, intuitive decision-making, and the capacity for abstract reasoning inherent in human developers.
 

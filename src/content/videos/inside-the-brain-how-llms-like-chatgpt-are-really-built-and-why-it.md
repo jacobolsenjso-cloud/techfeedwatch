@@ -42,7 +42,11 @@ However, raw internet data is messy and requires extensive filtering. Several st
 
 First, URL filtering removes undesirable sources. This includes blocklists for malware, spam, marketing, racist, and adult websites.
 
-Next, text extraction isolates the actual content from the raw HTML of web pages. This step removes computer code, navigation menus, and other non-text elements.
+Next, text extraction isolates the actual content from the raw HTML of web pages. This step removes:
+
+- Computer code
+- Navigation menus
+- Other non-text elements
 
 Language filtering is another important step. For instance, some datasets, like FineWeb, keep only web pages where over 65% of the content is in English. Such decisions affect the model's ability to perform in different languages.
 

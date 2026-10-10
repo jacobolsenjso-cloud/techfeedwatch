@@ -32,7 +32,16 @@ Edge AI computing involves processing artificial intelligence tasks directly on 
 
 This shift stems from several factors making on-device AI, edge inference, and low-power AI chips one of the most important technology trends of this decade. Traditional cloud-based AI, while powerful for large-scale training, faces limitations.
 
-Concerns range from power grid limits and exploding [data center](/video/ai-on-a-chip-how-edge-ai-changes-data-center-compute/) energy demand to the hidden cost of moving vast amounts of data between memory and compute. By decentralizing AI, intelligence can begin living everywhere at once: in cars, phones, factories, sensors, wearables, and smart machines. This allows for immediate action and processing sensitive data locally.
+Concerns range from power grid limits and exploding [data center](/video/ai-on-a-chip-how-edge-ai-changes-data-center-compute/) energy demand to the hidden cost of moving vast amounts of data between memory and compute. By decentralizing AI, intelligence can begin living everywhere at once:
+
+- In cars
+- Phones
+- Factories
+- Sensors
+- Wearables
+- Smart machines
+
+This allows for immediate action and processing sensitive data locally.
 
 In this distributed model, cloud AI continues to handle massive training workloads, while edge AI takes over real-time inference, private processing, and low-latency decision-making. For years, AI has mostly resided inside giant server farms, but edge AI transforms everyday devices into autonomous thinking systems. Companies like Qualcomm are making significant pushes into this area.
 

@@ -49,7 +49,16 @@ These rails include critical functions like compliance, identity verification, c
 
 The concept of "open finance" highlights a fundamental struggle over who owns the story of a person's financial life. Most people's financial lives are highly fragmented.
 
-They often manage multiple bank accounts, credit cards, investment portfolios, retirement savings, insurance policies, and various payment applications. All this information resides in different places, making a holistic view difficult.
+They often manage:
+
+- Multiple bank accounts
+- Credit cards
+- Investment portfolios
+- Retirement savings
+- Insurance policies
+- Various payment applications
+
+All this information resides in different places, making a holistic view difficult.
 
 Open finance aims to give customers greater control over this scattered data. Traditionally, banks have been the custodians of both funds and financial data.
 

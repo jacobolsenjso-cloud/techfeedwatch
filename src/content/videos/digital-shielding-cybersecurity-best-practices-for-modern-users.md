@@ -44,7 +44,14 @@ This accessibility means whether one is new to cybersecurity or seeking to enhan
 
 A comprehensive approach to digital defense centers around a series of practical, "7 simple steps you can take TODAY to secure your accounts, passwords, and personal data." These steps form the bedrock of personal information security, addressing common vulnerabilities and establishing habits that significantly reduce exposure to risk.
 
-They include specific actions around password security, the implementation of two-factor authentication (2FA), data protection strategies, and awareness campaigns to avoid scams and phishing attacks. [Why Cybersecurity Matters for AI Agents](/video/protection-imperative-why-cybersecurity-matters-to-you) elaborates on the critical necessity of these protective layers for everyone.
+They include specific actions around:
+
+- Password security
+- The implementation of two-factor authentication (2FA)
+- Data protection strategies
+- Awareness campaigns to avoid scams and phishing attacks
+
+[Why Cybersecurity Matters for AI Agents](/video/protection-imperative-why-cybersecurity-matters-to-you) elaborates on the critical necessity of these protective layers for everyone.
 
 Individuals and entities of all sizes require these safeguards. From the everyday internet user worried about getting hacked to small business owners safeguarding customer data, the principles remain constant: understand the threats, then implement systematic defenses. This foundational understanding is the first step towards a more secure digital life.
 

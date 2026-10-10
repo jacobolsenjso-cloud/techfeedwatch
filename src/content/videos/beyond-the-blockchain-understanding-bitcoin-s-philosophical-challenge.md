@@ -64,7 +64,13 @@ The division of labor, a common economics term, arises when individuals speciali
 
 The challenge to individual sovereignty often arises when these protective institutions overstep their original mandate. Governments, often holding a monopolistic position as security guards for the economy, may begin to abuse their power. A significant avenue for this abuse is the monopolization of money.
 
-When a central body controls the money supply, it can effectively control people's energy, perceptions, and ultimately, their freedom of action. For example, some billionaires can "negotiate your own tax treaty" to secure favorable tax treatment, highlighting how substantial financial power can reshape the rules, even allowing individuals to "Lobby Congress" and influence laws.
+When a central body controls the money supply, it can effectively control:
+
+- People's energy
+- Perceptions
+- Ultimately, their freedom of action
+
+For example, some billionaires can "negotiate your own tax treaty" to secure favorable tax treatment, highlighting how substantial financial power can reshape the rules, even allowing individuals to "Lobby Congress" and influence laws.
 
 Inflation serves as a stark example of how centralized control over money erodes individual sovereignty. While often presented as a normal part of a healthy economy, inflation, as Robert Breedlove argues, is "theft integrated into the money." It functions as a "tech backdoor," allowing a select few to siphon value from others, gradually diminishing purchasing power.
 

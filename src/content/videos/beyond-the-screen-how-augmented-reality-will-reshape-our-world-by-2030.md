@@ -63,7 +63,12 @@ For outdoor enthusiasts like hikers and campers, AR glasses can display destinat
 
 ## Immersive Learning and Simulation
 
-The education system stands to be profoundly transformed by AR, particularly for students in middle and high schools. AR enables the use of 3D animated holograms to teach complex subjects such as biology, anatomy, cosmology, and geometry.
+The education system stands to be profoundly transformed by AR, particularly for students in middle and high schools. AR enables the use of 3D animated holograms to teach complex subjects such as:
+
+- Biology
+- Anatomy
+- Cosmology
+- Geometry
 
 Students can interact with these holograms, rotating them in any direction and changing their sizes, which provides previously unattainable perspectives on intricate concepts. Beyond static models, AR facilitates scientific and mathematical simulations in 3D space. Students can run experiments and view the results from every conceivable angle.
 

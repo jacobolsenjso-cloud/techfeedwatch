@@ -42,7 +42,13 @@ The operational mechanics of AI agent payments fundamentally changed with develo
 
 This innovation provides a pathway for autonomous financial transactions that do not rely on traditional banks or payment rails.
 
-These new payment frameworks leverage the inherent capabilities of cryptocurrency: decentralization, speed, and lower transaction costs. Instead of bank transfers, AI agents use digital wallets on blockchain networks to send and receive payments in cryptocurrencies.
+These new payment frameworks leverage the inherent capabilities of cryptocurrency:
+
+- Decentralization
+- Speed
+- Lower transaction costs
+
+Instead of bank transfers, AI agents use digital wallets on blockchain networks to send and receive payments in cryptocurrencies.
 
 This enables machine-to-machine payments without human oversight or approval, a critical factor for truly autonomous AI systems. The x402 Protocol is highlighted as a "game-changer" in this domain, suggesting specific technological advancements facilitate these direct, programmable transactions.
 

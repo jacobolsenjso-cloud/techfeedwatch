@@ -44,7 +44,13 @@ The practical benefits are substantial: merchants can experience cheaper transac
 
 Further enhancing consumer control and convenience are digital identity wallets. These systems, exemplified by initiatives like the European digital identity wallet, allow individuals to store and manage their verified identity information on their mobile devices.
 
-This digital proof of identity can be used to sign documents, access [financial services](/video/agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping/) instantly, and streamline processes like "Know Your Customer" (KYC) checks and account onboarding with fintech companies. Instead of repeatedly uploading driver's licenses or other documents, a user's phone can confirm their identity, making financial interactions faster and more secure.
+This digital proof of identity can be used to:
+
+- Sign documents
+- Access [financial services](/video/agentic-ai-supercharges-open-banking-the-quiet-revolution-reshaping/) instantly
+- Streamline processes like "Know Your Customer" (KYC) checks and account onboarding with fintech companies
+
+Instead of repeatedly uploading driver's licenses or other documents, a user's phone can confirm their identity, making financial interactions faster and more secure.
 
 ## The Acceleration of Transactions and Global Standards
 

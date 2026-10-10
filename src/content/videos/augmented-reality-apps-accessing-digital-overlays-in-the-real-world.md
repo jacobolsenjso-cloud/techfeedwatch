@@ -49,7 +49,11 @@ This shift prioritizes instant access and broad reach over the deep hardware int
 
 ## The Operational Mechanics and Cost Realities
 
-The operational mechanism of AR apps, whether native or web-based, hinges on a sophisticated interplay of hardware and software. Devices equipped with cameras capture the real-world view. Computer vision algorithms then analyze this visual data to understand the geometry of the environment, detect feature points, and track the device's movement in real-time.
+The operational mechanism of AR apps, whether native or web-based, hinges on a sophisticated interplay of hardware and software. Devices equipped with cameras capture the real-world view. Computer vision algorithms then analyze this visual data to:
+
+- Understand the geometry of the environment
+- Detect feature points
+- Track the device's movement in real-time
 
 This foundational layer allows digital content to be precisely anchored and oriented within the physical space. Modern AR capabilities also incorporate environmental understanding, estimating lighting conditions to ensure virtual objects appear naturally integrated.
 

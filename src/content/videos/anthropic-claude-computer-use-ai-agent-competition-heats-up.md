@@ -37,7 +37,11 @@ Anthropic Claude Computer Use transforms the AI model from a conversational assi
 
 This includes fundamental operations like launching specific applications, handling file systems, and managing calendar entries. For instance, it can automatically open a calendar, click on a Zoom meeting link, and even use a [local AI](/video/beyond-cloud-lock-in-how-local-ai-agents-and-obsidian-are-rewriting/) voice model to participate in the conversation.
 
-The system is designed to handle complex, multi-step tasks. It can write and email cover letters to potential employers, assist during job interviews by instantly implementing coding challenges, or manage a work schedule by syncing with a calendar.
+The system is designed to handle complex, multi-step tasks. It can
+
+- Write and email cover letters to potential employers
+- Assist during job interviews by instantly implementing coding challenges
+- Manage a work schedule by syncing with a calendar
 
 Beyond professional tasks, it can also perform personal finance actions, such as logging into a bank account to verify paycheck deposits and initiating transfers.
 

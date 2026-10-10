@@ -28,7 +28,11 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-Activist investing is a strategy where shareholders acquire a meaningful ownership stake in a company with the explicit goal of influencing its management or strategic direction. These investors typically identify companies they believe are undervalued or underperforming due to suboptimal strategies, operational inefficiencies, or poor corporate governance.
+Activist investing is a strategy where shareholders acquire a meaningful ownership stake in a company with the explicit goal of influencing its management or strategic direction. These investors typically identify companies they believe are undervalued or underperforming due to:
+
+- Suboptimal strategies
+- Operational inefficiencies
+- Poor corporate governance
 
 Their interventions aim to drive specific changes that they believe will enhance shareholder value and improve the company's long-term prospects.
 

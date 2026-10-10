@@ -49,7 +49,11 @@ Creating a Lorem Ipsum generator on a WordPress site involves using the platform
 
 The process generally begins by setting up a suitable theme and a block editor plugin, which provide the foundational structure for the page.
 
-Next, a new page is created specifically for the generator. To ensure the tool functions optimally and presents cleanly, specific page layout adjustments are often made. These might include hiding the page title, setting the page to full width, and disabling vertical spacing to maximize the space for the generator interface.
+Next, a new page is created specifically for the generator. To ensure the tool functions optimally and presents cleanly, specific page layout adjustments are often made. These might include:
+
+- Hiding the page title
+- Setting the page to full width
+- Disabling vertical spacing to maximize the space for the generator interface
 
 Within this configured page, a custom HTML block is used to embed the generator's code. This code typically includes the logic for generating the text and the user interface elements like input fields and buttons. Once the HTML is in place and the page is published, the generator becomes live and ready for use.
 

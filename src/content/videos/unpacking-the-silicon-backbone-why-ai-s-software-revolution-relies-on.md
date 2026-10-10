@@ -64,7 +64,11 @@ A key differentiator among these hardware providers is the maturity of their sof
 
 Their CUDA platform makes it considerably easier for AI engineers to optimize models. For instance, an engineer can take an open-source model, and with Nvidia's CUDA system, it often runs efficiently out of the box with all necessary optimizations. For other chips, developers might need to undertake substantial optimization work themselves, which can be a barrier to adoption.
 
-Optimizations extend to how numbers are represented and processed. Typically, a floating-point number is represented in 32 bits, consisting of a first bit for the sign, the next eight for the exponent, and the subsequent 23 for the fraction.
+Optimizations extend to how numbers are represented and processed. Typically, a floating-point number is represented in 32 bits, consisting of:
+
+- A first bit for the sign
+- The next eight for the exponent
+- The subsequent 23 for the fraction
 
 However, developers have found ways to reduce this precision, sometimes to 16 bits or even eight bits, by carefully normalizing calculations to avoid overrunning or underrunning values.
 

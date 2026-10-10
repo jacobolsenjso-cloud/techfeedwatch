@@ -59,7 +59,12 @@ It maps ket 0 to ket 1, and ket 1 to ket 0. The Z gate is a phase flip. It leave
 
 If we apply H to ket 0, we obtain ket 0 plus ket 1, divided by square root of two. If we apply H to ket 1, we obtain ket 0 minus ket 1, divided by square root of two.
 
-When architectures scale, the distinction between classical and quantum units widens dramatically. Two classical bits produce four possible static states: 00, 01, 10, or 11.
+When architectures scale, the distinction between classical and quantum units widens dramatically. Two classical bits produce four possible static states:
+
+- 00
+- 01
+- 10
+- 11
 
 Two qubits possess four computational basis states—ket 00, ket 01, ket 10, and ket 11—held simultaneously within a continuous state vector. For n qubits, the system contains 2 to the power n computational basis states.
 

@@ -72,6 +72,12 @@ However, if your goal is to experiment with larger models or achieve higher infe
 
 Consider also that while raw memory capacity is key, memory bandwidth is equally important for performance. High-bandwidth memory ensures that the processing cores can access model parameters quickly.
 
-If budget is a constraint, look into smaller models, aggressive quantization, or consider offloading some parts of the model to system RAM if your GPU VRAM is insufficient, though this will come at a performance cost. For practical daily use, integrating AI tools like the "PLAUD NotePin" for voice capture might complement an AI workflow, though it does not directly relate to LLM execution.
+If budget is a constraint, look into:
+
+- Smaller models
+- Aggressive quantization
+- Consider offloading some parts of the model to system RAM if your GPU VRAM is insufficient, though this will come at a performance cost
+
+For practical daily use, integrating AI tools like the "PLAUD NotePin" for voice capture might complement an AI workflow, though it does not directly relate to LLM execution.
 
 Ultimately, matching your hardware to the LLM's memory demands is critical for a smooth and productive local AI experience. For general productivity enhancements with AI, you may find [How Much Does AI Really Increase Developer Productivity?](/video/the-quiet-tech-recalibration-why-ai-isn-t-replacing-software) insightful.

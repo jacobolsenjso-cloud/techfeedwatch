@@ -41,7 +41,12 @@ Further specialization can involve frameworks like React, backend technologies s
 
 ## How Modern Coding Bootcamps Work
 
-The operational model of a modern coding bootcamp prioritizes rapid skill acquisition and direct application. Students typically engage in a rigorous daily schedule filled with lectures, coding challenges, pair programming, and project work.
+The operational model of a modern coding bootcamp prioritizes rapid skill acquisition and direct application. Students typically engage in a rigorous daily schedule filled with:
+
+- Lectures
+- Coding challenges
+- Pair programming
+- Project work
 
 The emphasis on "building real-world projects" is central, allowing learners to apply concepts immediately and develop a tangible portfolio. This hands-on method prepares individuals not just to understand code, but to actively write and deploy functional software.
 

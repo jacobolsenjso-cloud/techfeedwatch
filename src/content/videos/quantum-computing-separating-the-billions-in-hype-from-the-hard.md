@@ -52,7 +52,13 @@ This spurred the development of "post-quantum cryptography" algorithms designed 
 
 Despite the ambitious goals and significant investment—with big tech companies like Google, IBM, Amazon, and Microsoft pouring billions into the space—the path to practical quantum computing is fraught with obstacles. One common misconception concerns the operating environment: while some designs, notably IBM and Google's superconducting qubits, indeed require extreme cryogenic temperatures (often pictured as intricate "chandeliers"), other emerging platforms using atoms may not.
 
-However, all designs face immense engineering challenges. Researchers must build these machines from the ground up, solving basic material science problems like determining the right combination of metals and semiconductors for chips, developing customized lasers, and even figuring out how to arrange wires to prevent interference. There is very little off-the-shelf equipment available for quantum computer construction.
+However, all designs face immense engineering challenges. Researchers must build these machines from the ground up, solving basic material science problems like:
+
+- Determining the right combination of metals and semiconductors for chips
+- Developing customized lasers
+- Even figuring out how to arrange wires to prevent interference
+
+There is very little off-the-shelf equipment available for quantum computer construction.
 
 Scalability presents another major hurdle. Current prototypes typically contain hundreds of physical qubits. However, a single unit of quantum information often requires multiple physical qubits to mitigate errors, making the effective qubit count for useful computation much lower.
 

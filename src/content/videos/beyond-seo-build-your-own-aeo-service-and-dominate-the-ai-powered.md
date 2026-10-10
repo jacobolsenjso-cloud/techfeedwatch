@@ -61,7 +61,11 @@ This early stage means those who enter the field now can establish themselves be
 
 Implementing AEO traditionally involved complex technical work. This included understanding structured data, schema markup, content formatting, and entity building.
 
-Such technical requirements often deterred many people. However, specialized tools are now simplifying this process into a more accessible three-step framework: audit, optimize, and deploy.
+Such technical requirements often deterred many people. However, specialized tools are now simplifying this process into a more accessible three-step framework:
+
+- Audit
+- Optimize
+- Deploy
 
 The first step is the **audit**. An AEO service provider uses a tool to scan a client's website. This scan identifies how visible the site is to AI systems.
 

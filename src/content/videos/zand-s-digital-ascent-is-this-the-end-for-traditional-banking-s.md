@@ -42,7 +42,15 @@ He notes that traditional banks converting to digital often contend with not onl
 
 The bank’s fundamental differentiation lies in its ecosystem-driven platform approach. As Couchonomics with Arjun highlights, Zand Bank defines itself as a "platform with a banking license," rather than simply a bank. This distinction is supported by a powerful and publicly known shareholder base that offers more than just capital.
 
-Zand Bank's shareholder base includes BLI Group in India, Franklin Templeton in the U.S., Mr. Alaba (founder of Mr. Group), Yusuf Ali of Lulu Financial Group, a global financial services provider headquartered in Abu Dhabi and operating in 11 countries, and Halle Holding, which encompasses Transguard. This formidable network provides Zand Bank with immediate access to numerous businesses and potential partnerships, allowing for the co-creation of products and a deeper understanding of various business ecosystems.
+Zand Bank's shareholder base includes:
+
+- BLI Group in India
+- Franklin Templeton in the U.S.
+- Mr. Alaba (founder of Mr. Group)
+- Yusuf Ali of Lulu Financial Group, a global financial services provider headquartered in Abu Dhabi and operating in 11 countries
+- Halle Holding, which encompasses Transguard.
+
+This formidable network provides Zand Bank with immediate access to numerous businesses and potential partnerships, allowing for the co-creation of products and a deeper understanding of various business ecosystems.
 
 This shareholder base means that Zand has an ecosystem from day one, not merely as captive clients, but as a solid foundation for collaborative growth. For banks struggling with their own holistic AI transformation, Zand’s approach offers a stark contrast.
 

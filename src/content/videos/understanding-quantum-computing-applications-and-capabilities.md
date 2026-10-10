@@ -27,7 +27,12 @@ faqs:
     answer: "Quantum computing can revolutionize drug discovery by simulating molecular interactions, optimize complex logistical problems, develop new materials with tailored properties, and enhance cryptography for ultra-secure communications."
 ---
 
-Quantum computing applications span a range of highly complex problems that classical computers cannot efficiently address. These include the simulation of molecular structures for drug discovery, the design of new materials, the optimization of logistics and financial models, and the development of next-generation cryptographic security.
+Quantum computing applications span a range of highly complex problems that classical computers cannot efficiently address. These include:
+
+- The simulation of molecular structures for drug discovery
+- The design of new materials
+- The optimization of logistics and financial models
+- The development of next-generation cryptographic security
 
 These machines operate on principles entirely different from the binary logic governing current computing, promising solutions to some of humanity's most persistent scientific and engineering challenges.
 

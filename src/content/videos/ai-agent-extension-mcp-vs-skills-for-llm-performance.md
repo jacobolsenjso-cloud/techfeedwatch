@@ -51,7 +51,11 @@ Behind the scenes, an MCP server integrates with the AI application or developme
 
 MCP acts as a standardized layer between the LLM and the necessary data sources. It is widely supported by almost all AI tools and is open source.
 
-This approach is particularly useful for situations where an AI application needs real-time data access in a controlled and tightly permissioned way. Examples include querying the status of virtual machines, checking the state of a cluster, or retrieving specific customer records from a CRM.
+This approach is particularly useful for situations where an AI application needs real-time data access in a controlled and tightly permissioned way. Examples include:
+
+- Querying the status of virtual machines
+- Checking the state of a cluster
+- Retrieving specific customer records from a CRM
 
 ## Skills: Embedding Domain Knowledge and Repeatable Actions
 

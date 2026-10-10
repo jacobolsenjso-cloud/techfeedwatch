@@ -51,7 +51,11 @@ The platform operates a blind evaluation arena where users enter a text prompt a
 
 For creators seeking exact model selection alongside professional output specs, enterprise backends yield the most impressive technical terms. As Planet Ai points out, ByteDance provides free infrastructure access through its BytePlus developer platform.
 
-While newer frontier builds like Seedance 2.0 display paid purchase prompts on the main landing site, accessing the BytePlus Playground opens up older enterprise builds, including Seedance 1.5 Pro, Seedance 1 Pro, and Seedance 1.
+While newer frontier builds like Seedance 2.0 display paid purchase prompts on the main landing site, accessing the BytePlus Playground opens up older enterprise builds like:
+
+- Seedance 1.5 Pro
+- Seedance 1 Pro
+- Seedance 1
 
 The allocation limits on the BytePlus playground far surpass standard consumer apps. A single account receives 2 million free credits upon registration.
 

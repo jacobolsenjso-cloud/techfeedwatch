@@ -34,7 +34,11 @@ Scale and mechanical depth define the front-runners. Forefront fills a void that
 
 Standalone headsets previously struggled to maintain frame rates under such complex physics simulations, but Forefront avoids the clunky latency that plagued early multi-user titles. In single-player exploration, Among Giants reveals how far independent production has matured.
 
-One person built this open-world title, dropping players into a hostile forest beside a ruined vessel with zero guidance. The design channels classic boss-climbing titles as players hunt colossal wandering entities, summon a mount by blowing on horn tools, and swing across cliffs using grappling cords.
+One person built this open-world title, dropping players into a hostile forest beside a ruined vessel with zero guidance. The design channels classic boss-climbing titles as players:
+
+- Hunt colossal wandering entities
+- Summon a mount by blowing on horn tools
+- Swing across cliffs using grappling cords
 
 Visual performance splits the ecosystem into distinct tiers. Extra-Dimensional, known to enthusiasts as EXD, bypasses mobile chip constraints entirely as an uncompromising PCVR exclusive. As analyst [Naysy](https://naysy.com/) points out, the release marks a genuine resurgence for high-fidelity PCVR, giving enthusiasts a reason to dust off dedicated desktop rigs.
 

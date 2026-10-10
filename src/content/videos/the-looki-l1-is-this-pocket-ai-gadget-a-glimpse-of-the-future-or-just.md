@@ -64,7 +64,12 @@ The device can track specific activities like construction projects, home gym se
 
 ## Hardware and Interaction: A Wearable Companion
 
-The Looki L1 is designed as a compact, wearable device. It is typically worn around the neck using a supplied strap and holder. Its physical design incorporates a high-quality camera, charging contacts, a small speaker, and a noise-canceling microphone array.
+The Looki L1 is designed as a compact, wearable device. It is typically worn around the neck using a supplied strap and holder. Its physical design incorporates:
+
+- A high-quality camera
+- Charging contacts
+- A small speaker
+- A noise-canceling microphone array
 
 For charging, it uses a USB-C port. It features a strong magnetic attachment for its cable. An optional safety strap hooks into four protrusions for added security against accidental dislodgement.
 

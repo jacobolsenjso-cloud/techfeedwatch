@@ -75,7 +75,11 @@ At the same time, catastrophic warnings about AI frequently cross wires with qua
 
 Back in 2023, a large group of prominent researchers, including Geoffrey Hinton, a Nobel laureate who's often called a godfather of AI, signed a massive public statement warning that mitigating the risk of human extinction from AI should stand as a global priority alongside pandemics and nuclear warfare. In top surveys of AI researchers publishing at major conferences, roughly 40% assign a greater than 10% chance to catastrophic AI outcomes.
 
-Conversely, policy analysts at institutions like [Brookings](https://www.brookings.edu/) push back firmly against existential panic. They argue the technology community must redirect attention away from speculative doomsday scenarios and focus directly on immediate, measurable harms that are happening right this second, including algorithmic bias, rapid labor displacement, and surveillance misuse.
+Conversely, policy analysts at institutions like [Brookings](https://www.brookings.edu/) push back firmly against existential panic. They argue the technology community must redirect attention away from speculative doomsday scenarios and focus directly on immediate, measurable harms that are happening right this second including:
+
+- Algorithmic bias
+- Rapid labor displacement
+- Surveillance misuse
 
 Critically, every aspect of this heated debate focuses on software running on standard silicon clusters. As technical audits confirm, "It requires absolutely zero quantum computing involvement to be a risk."
 

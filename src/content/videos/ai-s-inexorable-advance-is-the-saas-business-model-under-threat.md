@@ -54,7 +54,12 @@ These models can also integrate diverse skills such as image generation, writing
 
 The development of orchestration platforms further amplifies the power of these agents. Tools like OpenAI's Codeex app, which saw over 1 million downloads in its first week, provide command centers for managing agentic workflows in parallel.
 
-Similarly, Microsoft's GitHub Agent HQ transforms a code hosting platform into a comprehensive [AI agent orchestration](/video/the-one-person-empire-how-ai-ceos-are-building-self-operating/) system, where agents can autonomously open issues, generate branches, merge code upon successful tests, and automate project management, quality assurance, and DevOps tasks.
+Similarly, Microsoft's GitHub Agent HQ transforms a code hosting platform into a comprehensive [AI agent orchestration](/video/the-one-person-empire-how-ai-ceos-are-building-self-operating/) system, where agents can autonomously:
+
+- Open issues
+- Generate branches
+- Merge code upon successful tests
+- Automate project management, quality assurance, and DevOps tasks
 
 Even Google's Whimo world model, initially for self-driving cars, demonstrates how AI systems can model complex environments, make decisions, and act autonomously—a capability that translates directly to business software for forecasting, logistics, and risk modeling. These developments point to a future where software tasks are increasingly performed by intelligent, self-directing agents.
 

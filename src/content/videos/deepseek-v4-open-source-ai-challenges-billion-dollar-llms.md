@@ -82,7 +82,11 @@ Second, some aspects of the system are not fully understood, even by its creator
 
 However, they are not quite sure why these methods work. This transparency is valued within the research community. It highlights the ongoing nature of AI development.
 
-Third, like many other [large language models](/video/ai-hacking-why-practical-llm-security-testing-is-no-longer-optional/), DeepSeek V4's performance can degrade when pushed to the limits of its context window. As you approach the maximum input length, models can start to forget details, drift from the topic, or even "hallucinate" incorrect information.
+Third, like many other [large language models](/video/ai-hacking-why-practical-llm-security-testing-is-no-longer-optional/), DeepSeek V4's performance can degrade when pushed to the limits of its context window. As you approach the maximum input length, models can start to:
+
+- Forget details
+- Drift from the topic
+- Even "hallucinate" incorrect information
 
 More text does not always mean more truth. Users should be careful when working with extremely long contexts. These limitations are not small, but they are important to understand for effective use.
 

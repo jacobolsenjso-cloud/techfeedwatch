@@ -78,7 +78,13 @@ This triggers a tax. An ETF's in-kind redemption is like trading one house for a
 
 ## When Tax Efficiency Matters Most
 
-The distinction between the tax efficiency of mutual funds and ETFs is not universally applicable. It primarily impacts investments held in standard taxable brokerage accounts. For investors using tax-advantaged accounts, such as a 401k, a Roth IRA, or other retirement plans, the difference in capital gains distribution mechanisms is largely irrelevant.
+The distinction between the tax efficiency of mutual funds and ETFs is not universally applicable. It primarily impacts investments held in standard taxable brokerage accounts. For investors using tax-advantaged accounts such as:
+
+- A 401k
+- A Roth IRA
+- Other retirement plans
+
+The difference in capital gains distribution mechanisms is largely irrelevant.
 
 These tax-advantaged accounts are already sheltered from annual capital gains taxes. Within a 401k or traditional IRA, taxes are deferred until withdrawal in retirement. In a Roth IRA, qualified withdrawals are entirely tax-free.
 

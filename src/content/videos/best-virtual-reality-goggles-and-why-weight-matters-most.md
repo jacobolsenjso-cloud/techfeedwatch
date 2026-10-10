@@ -71,7 +71,11 @@ Hardware specifications mean nothing if the software layer cannot handle real wo
 
 The operating system bridges that gap. As Adam Savage’s [Tested](https://www.tested.com/about) points out, “The the real advantage to Meta VR Glasses over the competitors is going to be its use of Horizon OS and that deep library of Quest content.”
 
-Running a high-fidelity implementation of Horizon OS, Meta VR Glasses integrate hands-free gaze selection with pinch tracking. During early hands-on evaluations, the eye tracking calibration onboarding closely mirrors Apple’s approach: the display flashes a sequence of target dots, the user taps their index finger and thumb while looking at each point, and the system locks in ocular calibration within seconds.
+Running a high-fidelity implementation of Horizon OS, Meta VR Glasses integrate hands-free gaze selection with pinch tracking. During early hands-on evaluations, the eye tracking calibration onboarding closely mirrors Apple’s approach:
+
+- The display flashes a sequence of target dots
+- The user taps their index finger and thumb while looking at each point
+- The system locks in ocular calibration within seconds
 
 Downward-facing rim cameras track hands resting naturally on a lap, while also capturing lower-facial movement. Combined with internal gaze tracking, this sensor array powers Meta's photorealistic "Hologram" avatars—formerly developed under the Codec Avatars moniker.
 

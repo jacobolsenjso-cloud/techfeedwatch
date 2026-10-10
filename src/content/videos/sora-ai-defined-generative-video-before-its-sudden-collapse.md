@@ -37,7 +37,11 @@ To understand the scale of Sora, one must look at the climate that birthed it. W
 
 That leverage stemmed directly from ChatGPT, which had crossed over 100 million users within two months of launch in late 2022. Because ChatGPT changed natural language processing overnight, the tech sector assumed Sora would do the same for visual media.
 
-Sam Altman, the CEO of OpenAI, promised a tool that would allow creators to bypass production budgets that routinely run from thousands to millions of dollars. The technology was not merely an incremental update to video editing suites; it was an architecture capable of simulating lighting, camera physics, and three-dimensional spatial consistency.
+Sam Altman, the CEO of OpenAI, promised a tool that would allow creators to bypass production budgets that routinely run from thousands to millions of dollars. The technology was not merely an incremental update to video editing suites; it was an architecture capable of simulating:
+
+- Lighting
+- Camera physics
+- Three-dimensional spatial consistency
 
 Early demonstrations appeared magical. Creators who had spent years mastering [AI Video Creation: How to Use AI Tools to Make Dynamic Videos](/video/prompt-to-video-the-free-ai-shortcut-redefining-cinematic-content) suddenly faced a system that rendered intricate camera pans, photorealistic textures, and temporal stability from a single text block. The software removed the friction of traditional rendering pipelines.
 

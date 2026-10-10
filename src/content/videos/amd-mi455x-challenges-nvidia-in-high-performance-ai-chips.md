@@ -54,7 +54,13 @@ AMD aims to compete not just on individual chip specifications but on the overal
 
 While hardware specifications are a critical battleground, the software ecosystem often dictates the practical usability and adoption of AI accelerators. NVIDIA has maintained its dominant position largely due to CUDA, its proprietary parallel computing platform and application programming interface (API).
 
-CUDA has become the de facto standard for AI development, with a mature toolset, extensive libraries, and widespread developer support. This deep integration is a major reason for [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) in the AI sector.
+CUDA has become the de facto standard for AI development, with:
+
+- A mature toolset
+- Extensive libraries
+- Widespread developer support
+
+This deep integration is a major reason for [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) in the AI sector.
 
 AMD’s counter to CUDA is ROCm software. ROCm is an open-source platform designed to enable high-performance computing and GPU-accelerated applications across various AMD hardware. Unlike CUDA, ROCm embraces open standards and aims to provide greater flexibility and transparency for developers.
 

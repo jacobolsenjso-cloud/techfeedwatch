@@ -66,7 +66,14 @@ It can be a primary provider of devices capable of running these advanced local 
 
 ## Current What it can do and Criticisms
 
-Apple Intelligence offers a range of features. These include improvements to Siri, writing tools, photo editing, and the creation of "Genmoji." Siri, for example, can now draw information from a user's iMessage, Apple Calendar, and Photos.
+Apple Intelligence offers a range of features. These include:
+
+- Improvements to Siri
+- Writing tools
+- Photo editing
+- The creation of "Genmoji."
+
+Siri, for example, can now draw information from a user's iMessage, Apple Calendar, and Photos.
 
 This provides more personalized and contextual responses. This deep integration allows Siri to understand personal context. Third-party apps might not achieve this.
 

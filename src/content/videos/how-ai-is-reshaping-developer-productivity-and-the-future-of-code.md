@@ -26,7 +26,11 @@ faqs:
     answer: "Loops in AI coding define iterative processes that allow an AI agent to refine its output, test solutions, and learn from feedback. This mechanism is crucial for continuous improvement and achieving desired coding outcomes through repeated cycles."
 ---
 
-AI coding skills encompass the sophisticated capabilities that artificial intelligence systems possess to assist, generate, and manage software code. These skills extend beyond simple auto-completion to include advanced functionalities like understanding complex project requirements, generating multi-module solutions, and orchestrating iterative development cycles through AI agents.
+AI coding skills encompass the sophisticated capabilities that artificial intelligence systems possess to assist, generate, and manage software code. These skills extend beyond simple auto-completion to include advanced functionalities like:
+
+- Understanding complex project requirements
+- Generating multi-module solutions
+- Orchestrating iterative development cycles through AI agents
 
 The impact on traditional coding practices is significant, shifting developer focus towards higher-level orchestration and validation.
 

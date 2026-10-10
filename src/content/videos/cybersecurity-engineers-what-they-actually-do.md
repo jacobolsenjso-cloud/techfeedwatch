@@ -42,7 +42,13 @@ When containment fails and active compromise occurs, engineers lead the incident
 
 These duties require structured technical literacy. Practitioners rely on Security+ as a baseline certification, but practical operational work depends heavily on enterprise security information and event management (SIEM) platforms. Engineers query platforms like [Splunk](https://www.splunk.com/) and Microsoft Sentinel to isolate attack footprints across billions of system events.
 
-They enforce compliance architectures mapped directly against established standards such as NIST, SOC 2, and CIS Benchmarks. Because organizations operate under strict compliance mandates, [NIST CSF: How to Apply the Cybersecurity Framework](/video/nist-csf-2-0-explained-for-small-businesses) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
+They enforce compliance architectures mapped directly against established standards such as:
+
+- NIST
+- SOC 2
+- CIS Benchmarks
+
+Because organizations operate under strict compliance mandates, [NIST CSF: How to Apply the Cybersecurity Framework](/video/nist-csf-2-0-explained-for-small-businesses) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
 
 ## How cloud migration transformed modern security engineering
 

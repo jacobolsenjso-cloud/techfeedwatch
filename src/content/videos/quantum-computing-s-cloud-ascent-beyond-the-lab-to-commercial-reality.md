@@ -46,7 +46,11 @@ Likewise, early applications on GPUs demanded a basic re-imagining of algorithms
 
 Current quantum computers are still in their early engineering phases and are not yet stable enough for continuous operation. They typically run in short bursts, for example, for 100 microseconds. Within these brief periods, they can perform incredibly complex calculations that are theoretically impossible for classical computers.
 
-However, classical machines remain essential for managing the overall computational workflow. They are needed to store the results produced by quantum processors, interrogate the data, and perform various forms of post-processing.
+However, classical machines remain essential for managing the overall computational workflow. They are needed to:
+
+- Store the results produced by quantum processors
+- Interrogate the data
+- Perform various forms of post-processing
 
 This necessity has led to the development of a hybrid classical-quantum computing model. In this paradigm, quantum processing units (QPUs) act as specialized hardware accelerators, similar to how graphical processing units (GPUs) or tensor processing units (TPUs) augment central processing units (CPUs).
 

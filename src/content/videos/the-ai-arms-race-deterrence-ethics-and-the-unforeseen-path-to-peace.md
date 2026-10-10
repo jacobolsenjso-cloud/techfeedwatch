@@ -49,7 +49,14 @@ The answer lies in autonomous systems, intelligent platforms capable of operatin
 
 The core of this strategy is an AI software platform that can manage and coordinate vast numbers of autonomous weapons. This allows for the deployment of millions of systems without risking millions of human lives.
 
-Critically, these AI-powered weapons can receive rapid software updates, ensuring they remain effective against evolving threats. This approach fosters a military force not limited by the traditional constraints of cost, complexity, population size, or available workforce. Instead, its strength derives from adaptability and speed of manufacturing.
+Critically, these AI-powered weapons can receive rapid software updates, ensuring they remain effective against evolving threats. This approach fosters a military force not limited by the traditional constraints of:
+
+- Cost
+- Complexity
+- Population size
+- Available workforce
+
+Instead, its strength derives from adaptability and speed of manufacturing.
 
 ## Mass Production and Adaptability: The Industrial Foundation
 

@@ -38,7 +38,11 @@ The core subject of cryptocurrency regulation revolves around defining and super
 
 Decentralized finance, often referred to as DeFi, encompasses financial services and applications built on blockchain technology, operating without traditional intermediaries like banks or brokers. This architecture aims to offer transparency, accessibility, and efficiency, but it also presents unique challenges for existing regulatory structures designed for centralized systems.
 
-In the US, the push for regulatory clarity has intensified, notably through proposed legislative efforts such as the "Clarity Act." This act aims to establish a framework for classifying digital assets, determining which regulatory agencies have oversight, and setting standards for market participants.
+In the US, the push for regulatory clarity has intensified, notably through proposed legislative efforts such as the "Clarity Act." This act aims to establish a framework for:
+
+- Classifying digital assets
+- Determining which regulatory agencies have oversight
+- Setting standards for market participants
 
 The existing patchwork approach has left many in the industry, including major players like Coinbase, advocating for a more coherent system. Ryan VanGrack, Coinbase Vice Chair and Head of Corporate Affairs, has been a vocal proponent for clear legislative outlooks, arguing that a defined regulatory environment is essential for innovation and consumer protection within the US market.
 

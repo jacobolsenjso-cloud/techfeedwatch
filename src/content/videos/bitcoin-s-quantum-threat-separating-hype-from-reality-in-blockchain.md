@@ -54,7 +54,13 @@ A less immediate but still significant threat comes from Grover's algorithm. Thi
 
 While it offers a quadratic speedup, meaning it would take roughly the square root of the time a classical computer needs, this is still a substantial advantage. A mining pool or individual with access to a powerful quantum computer could potentially gain a disproportionate amount of hashing power, leading to a majority attack.
 
-In such a scenario, the attacker could effectively control the network, censor transactions, and double-spend their own coins, fundamentally compromising Bitcoin's decentralized security model. [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained) details how such attacks could affect various cryptographic systems.
+In such a scenario, the attacker could effectively:
+
+- Control the network
+- Censor transactions
+- Double-spend their own coins, fundamentally compromising Bitcoin's decentralized security model
+
+[Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained) details how such attacks could affect various cryptographic systems.
 
 The timeline for "Q Day," the hypothetical moment when a quantum machine can successfully crack Bitcoin's cryptography, is a subject of ongoing debate. One popular fear is that “Q Day,” where a quantum machine cracks Bitcoin’s cryptography, is closer than we think. Others insist it’s still decades away.
 

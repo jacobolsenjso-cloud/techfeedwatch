@@ -71,7 +71,13 @@ However, it introduces additional infrastructure costs and management complexity
 
 ## Abilities and Performance in Practice
 
-GLM-5.2 shows a wide range of abilities, particularly excelling in coding and complex data analysis. It can build websites, create mini-applications, analyze large documents, clean messy data, and fix bugs in codebases.
+GLM-5.2 shows a wide range of abilities, particularly excelling in coding and complex data analysis. It can:
+
+- Build websites
+- Create mini-applications
+- Analyze large documents
+- Clean messy data
+- Fix bugs in codebases
 
 For example, it can generate clean, simple HTML for web pages. It can also produce visual charts using code, offering results comparable to more expensive models at a fraction of the cost.
 

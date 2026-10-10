@@ -28,7 +28,11 @@ faqs:
     answer: "Running a full mainnet node requires significant responsibility, including ensuring high uptime, consistent monitoring, and considerable technical sophistication to set up and maintain the infrastructure effectively."
 ---
 
-Generating passive income with crypto is possible by actively participating in the core operations of blockchain networks, primarily through running nodes. This involvement helps secure and decentralize these systems, in exchange for various forms of compensation such as token rewards, airdrops, or protocol incentives.
+Generating passive income with crypto is possible by actively participating in the core operations of blockchain networks, primarily through running nodes. This involvement helps secure and decentralize these systems, in exchange for various forms of compensation such as:
+
+- Token rewards
+- Airdrops
+- Protocol incentives
 
 ## The Shift from Bitcoin Mining to Node Rewards
 

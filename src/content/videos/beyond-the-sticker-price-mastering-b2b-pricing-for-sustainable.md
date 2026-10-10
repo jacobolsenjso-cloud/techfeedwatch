@@ -33,7 +33,11 @@ For B2B SaaS startups, effective pricing is less about covering costs and more a
 
 ## The Value Equation: Quantifying Customer Benefit
 
-The most impactful approach to B2B SaaS pricing centers on the "value equation," a collaborative process with a prospective customer's internal champion. This involves meticulously documenting the tangible benefits your product will deliver to their organization. These benefits typically fall into three categories: direct cost savings, time efficiencies that translate to cost reductions, or increases in revenue.
+The most impactful approach to B2B SaaS pricing centers on the "value equation," a collaborative process with a prospective customer's internal champion. This involves meticulously documenting the tangible benefits your product will deliver to their organization. These benefits typically fall into three categories:
+
+- Direct cost savings
+- Time efficiencies that translate to cost reductions
+- Increases in revenue
 
 Consider a large company with 100 customer support agents, each with a fully loaded annual cost of $100,000 (including salary, overheads, and benefits). This represents a total annual customer service expenditure of $10 million.
 

@@ -72,7 +72,14 @@ In an environment of rapid change, the emphasis shifts from specific vocational 
 
 Employees will need to cultivate competencies that complement AI, rather than compete directly with it. This includes critical thinking, creativity, emotional intelligence, complex problem-solving, and the ability to collaborate effectively with AI systems.
 
-The focus should be on developing skills that AI currently struggles with or cannot replicate: nuanced communication, ethical reasoning, strategic decision-making, and fostering human connections. Rather than fearing job displacement, individuals should view AI as a powerful co-worker, freeing them from repetitive or data-intensive tasks and allowing them to focus on higher-value, more creative, and inherently human endeavors.
+The focus should be on developing skills that AI currently struggles with or cannot replicate:
+
+- Nuanced communication
+- Ethical reasoning
+- Strategic decision-making
+- Fostering human connections
+
+Rather than fearing job displacement, individuals should view AI as a powerful co-worker, freeing them from repetitive or data-intensive tasks and allowing them to focus on higher-value, more creative, and inherently human endeavors.
 
 ## Handling the Transition
 

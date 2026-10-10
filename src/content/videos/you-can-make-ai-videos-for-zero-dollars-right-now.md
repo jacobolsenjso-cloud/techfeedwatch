@@ -39,7 +39,13 @@ High visual fidelity does not stem from buying enterprise software licenses; it 
 
 Now here's the one mistake beginners make: expecting a single generative prompt to spit out a finished movie. That approach produces disorganized visual noise.
 
-Effective digital cinema requires modular construction. You must break the project into discrete stages: narrative architecture, character design, keyframe rendering, motion synthesis, and post-production assembly.
+Effective digital cinema requires modular construction. You must break the project into discrete stages:
+
+- Narrative architecture
+- Character design
+- Keyframe rendering
+- Motion synthesis
+- Post-production assembly
 
 The process starts with narrative planning. Direct text generators to behave as cinematic architects.
 

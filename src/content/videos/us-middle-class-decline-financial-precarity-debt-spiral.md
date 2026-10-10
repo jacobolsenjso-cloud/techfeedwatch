@@ -28,7 +28,13 @@ faqs:
     answer: "Median home prices rose 28% in six years, from $317,000 to $405,000, while mortgage rates doubled from 3% to 6%. This means an income of about $120,000 is needed to safely qualify for a median home, far exceeding the typical family's income of $85,000."
 ---
 
-The United States middle class is shrinking due to a confluence of stagnant real incomes, soaring essential costs like housing and energy, and a diminishing capacity for savings, pushing more households to the financial brink. This erosion of financial stability is driven by a widening investment gap and a labor market that offers fewer opportunities for upward mobility.
+The United States middle class is shrinking due to a confluence of:
+
+- Stagnant real incomes
+- Soaring essential costs like housing and energy
+- A diminishing capacity for savings, pushing more households to the financial brink
+
+This erosion of financial stability is driven by a widening investment gap and a labor market that offers fewer opportunities for upward mobility.
 
 These systemic shifts create a challenging environment where traditional pathways to wealth become increasingly inaccessible for a significant portion of the population.
 

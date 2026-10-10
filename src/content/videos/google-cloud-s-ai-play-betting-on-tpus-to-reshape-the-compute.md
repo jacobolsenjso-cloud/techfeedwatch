@@ -50,7 +50,11 @@ This approach contrasts with other AI labs that are often compute-constrained an
 
 ## Diversified Monetization and Market Reach
 
-Google monetizes its TPU infrastructure through several avenues. It sells TPUs directly to customers, allows other AI labs like Anthropic to serve their inference through its infrastructure, and uses TPUs for its own models, such as Gemini.
+Google monetizes its TPU infrastructure through several avenues.
+
+- It sells TPUs directly to customers
+- Allows other AI labs like Anthropic to serve their inference through its infrastructure
+- Uses TPUs for its own models, such as Gemini
 
 This diversified monetization strategy helps Google generate sufficient cash flow to fund ongoing AI development. The company balances its internal compute needs with the amount allocated to external customers and partners. This ensures continued investment in its AI ecosystem.
 

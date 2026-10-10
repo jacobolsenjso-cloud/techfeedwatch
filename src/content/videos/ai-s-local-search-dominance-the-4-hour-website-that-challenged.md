@@ -56,7 +56,14 @@ The real power of AI in local SEO manifests in its ability to perform comprehens
 
 For instance, James employed a powerful prompt with Claude: "Go through this website in extreme detail. Ultra think about this. Find all technical and on-page SEO issues so I can dominate the local market."
 
-Claude identified and automatically fixed critical elements such as missing technical files, slow loading speeds, schema markup issues, and internal linking opportunities. This level of technical optimization, often overlooked by small businesses due to lack of expertise or budget, becomes accessible.
+Claude identified and automatically fixed critical elements such as:
+
+- Missing technical files
+- Slow loading speeds
+- Schema markup issues
+- Internal linking opportunities
+
+This level of technical optimization, often overlooked by small businesses due to lack of expertise or budget, becomes accessible.
 
 AI agents can work in parallel; James launched **THREE separate agents** simultaneously to find missing alt text, analyze competitors, and identify content opportunities, multiplying the optimization effort. For businesses interested in understanding broader automation, exploring [AI Automation Brings Benefits to Small Businesses](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just) can provide further context.
 

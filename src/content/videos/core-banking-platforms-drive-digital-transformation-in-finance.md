@@ -74,4 +74,10 @@ The adoption of modern core banking platforms represents a fundamental shift in 
 
 The focus moves from internal operational efficiency to delivering tangible value for customers. This includes providing intuitive tools that help people better understand, manage, and move their money. When systems support employees to excel in their jobs, they, in turn, provide better service to customers.
 
-This creates a positive cycle, driving customer growth, lowering acquisition costs, and strengthening brand trust and market position. The strategic investment in these platforms is not just about technology; it is about building a more responsive, customer-centric financial future. It enables banks to truly differentiate their offerings and secure their relevance in a rapidly evolving digital economy.
+This creates a positive cycle:
+
+- Driving customer growth
+- Lowering acquisition costs
+- Strengthening brand trust and market position
+
+The strategic investment in these platforms is not just about technology; it is about building a more responsive, customer-centric financial future. It enables banks to truly differentiate their offerings and secure their relevance in a rapidly evolving digital economy.

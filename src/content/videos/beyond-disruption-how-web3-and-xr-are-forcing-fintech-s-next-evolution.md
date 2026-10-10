@@ -51,7 +51,11 @@ Over 400 technologies are currently predicted to impact various industries, incl
 
 The evolution of financial services has seen a cycle of bundling and unbundling. Traditionally, incumbent financial institutions offered a comprehensive suite of services as a single package.
 
-The advent of fintechs disrupted this model, unbundling services in the name of democratization and decentralization. This unbundling brought significant benefits, including mobile-first experiences, enhanced customer service standards, and increased competition, ultimately benefiting the end-user.
+The advent of fintechs disrupted this model, unbundling services in the name of democratization and decentralization. This unbundling brought significant benefits including:
+
+- Mobile-first experiences
+- Enhanced customer service standards
+- Increased competition, ultimately benefiting the end-user
 
 However, this fragmentation also led to a complex customer experience, requiring individuals to handle multiple applications and platforms to access various financial services. While these individual services might be superior, managing them across disparate channels becomes cumbersome. Consequently, the industry is now witnessing a "rebundling" trend.
 

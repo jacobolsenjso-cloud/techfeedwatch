@@ -60,7 +60,13 @@ AI is also extending into the development of emotionally intelligent robots. The
 
 Children on the autism spectrum may struggle with expressing themselves or reading emotions. For them, a robot companion can serve as "training wheels."
 
-These systems help children practice skills such as eye contact, turn-taking, and joint attention. This prepares them for more successful social integration.
+These systems help children practice skills such as:
+
+- Eye contact
+- Turn-taking
+- Joint attention
+
+This prepares them for more successful social integration.
 
 Humans are naturally inclined to form bonds, even with inanimate objects. A robot equipped with features like eyes, the ability to make eye contact, smile, speak, and express empathy can quickly foster a connection. Children often open up to these robotic companions in ways they might not with therapists or parents.
 

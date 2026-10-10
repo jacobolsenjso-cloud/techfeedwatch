@@ -38,7 +38,13 @@ Augmented Reality, on the other hand, overlays digital information and virtual o
 
 Virtual Reality is fundamentally a computer-generated simulation that replaces a user's actual surroundings. When a user dons a VR headset, their physical world is blocked out and substituted with a digital one, meticulously designed to trick their senses. The goal is to make the brain perceive itself as being somewhere else entirely, effectively offering a form of digital teleportation.
 
-The concept of VR has a history stretching back decades. One of the earliest precursors was the Sensorama, created by filmmaker Morton Heilig in 1962. This arcade-style cabinet offered a multi-sensory experience, featuring a 3D display, a vibrating seat, stereo sound, a fan to simulate wind, and even a scent producer.
+The concept of VR has a history stretching back decades. One of the earliest precursors was the Sensorama, created by filmmaker Morton Heilig in 1962. This arcade-style cabinet offered a multi-sensory experience, featuring:
+
+- A 3D display
+- A vibrating seat
+- Stereo sound
+- A fan to simulate wind
+- Even a scent producer
 
 One notable experience involved a motorcycle ride through Brooklyn streets, where viewers would see 3D visuals, feel wind, experience seat vibrations, and smell city odors. While revolutionary for its time, the Sensorama did not achieve widespread adoption.
 

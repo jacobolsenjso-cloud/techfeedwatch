@@ -33,7 +33,15 @@ This correlation suggests that altcoin performance is not solely driven by inter
 
 ## The Purchasing Managers' Index and Its Significance
 
-The Purchasing Managers' Index (PMI) is a key economic indicator that provides insight into the health of the manufacturing and services sectors. It is derived from surveys of purchasing managers regarding new orders, inventory levels, production, supplier deliveries, and employment. A PMI reading above 50 generally indicates economic expansion, while a reading below 50 suggests contraction.
+The Purchasing Managers' Index (PMI) is a key economic indicator that provides insight into the health of the manufacturing and services sectors. It is derived from surveys of purchasing managers regarding:
+
+- New orders
+- Inventory levels
+- Production
+- Supplier deliveries
+- Employment
+
+A PMI reading above 50 generally indicates economic expansion, while a reading below 50 suggests contraction.
 
 For altcoin markets, a more specific threshold of 55 has historically proven significant. A move above this 55-point line with sustained momentum signals a strong expansion phase in the broader economy.
 

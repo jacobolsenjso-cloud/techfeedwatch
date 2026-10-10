@@ -48,7 +48,11 @@ Traditional investment advice often centers on the stock market. However, intent
 
 Many successful people eventually ask if there is a smarter way to invest. This is especially true for retirement capital, outside of conventional options. This often leads to investigating self-directed investment vehicles.
 
-Self-directed IRAs (Individual Retirement Accounts) are one such tool. They allow investors to hold a wider range of assets than traditional IRAs. This can include real estate, private equity, or certain precious metals.
+Self-directed IRAs (Individual Retirement Accounts) are one such tool. They allow investors to hold a wider range of assets than traditional IRAs. This can include:
+
+- Real estate
+- Private equity
+- Certain precious metals
 
 Another option, Rollovers as Business Startups (ROBS), permits people to use their retirement funds to finance a new business. This avoids early withdrawal penalties or taxes.
 

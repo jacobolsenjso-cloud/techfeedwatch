@@ -74,7 +74,13 @@ Despite initial skepticism from the bus drivers, who relied on their experience 
 
 The success of these urban logistics projects hinges on the intelligent division of labor between classical and quantum computing. Classical high-performance computers handle the initial heavy lifting.
 
-They process vast amounts of real-world data, such as historical traffic patterns, real-time vehicle movements, and predictive analytics. This classical layer identifies potential problems, like where traffic is likely to accumulate, or where demand for services is highest.
+They process vast amounts of real-world data such as:
+
+- Historical traffic patterns
+- Real-time vehicle movements
+- Predictive analytics
+
+This classical layer identifies potential problems, like where traffic is likely to accumulate, or where demand for services is highest.
 
 Once these complex scenarios are identified, the specific optimization problem is then formulated and passed to the quantum computer. The quantum processor, with its ability to explore many solutions simultaneously, quickly calculates the most efficient paths or assignments.
 

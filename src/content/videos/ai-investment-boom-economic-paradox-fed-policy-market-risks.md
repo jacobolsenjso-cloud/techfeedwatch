@@ -34,7 +34,14 @@ Investors are handling a complex environment where traditional economic signals 
 
 ## The Economic Paradox: Bad News as Good News
 
-Recent economic data, such as a sharp decline in U.S. payrolls and downward revisions for May and June figures by 103,000 jobs, along with falling labor participation and reduced wage growth, typically signal economic weakness. However, in the current market environment, such data is often interpreted favorably by equity investors.
+Recent economic data typically signal economic weakness:
+
+- A sharp decline in U.S. payrolls
+- Downward revisions for May and June figures by 103,000 jobs
+- Falling labor participation
+- Reduced wage growth
+
+However, in the current market environment, such data is often interpreted favorably by equity investors.
 
 The reasoning is that softer economic conditions reduce the likelihood of the Federal Reserve raising interest rates and increase the probability of future rate cuts. This expectation of lower rates tends to be a boon for growth-oriented equities, as it makes borrowing cheaper and future earnings more valuable.
 

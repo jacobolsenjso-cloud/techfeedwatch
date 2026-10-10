@@ -92,7 +92,16 @@ While these pathways suggest rapid progress, the paper also identifies several "
 
 The **data wall** is a major concern, as discussed earlier. The lack of sufficient high-quality training data could eventually limit scaling. **Resource constraints** pose another physical barrier.
 
-The development of advanced AI requires immense physical infrastructure: energy, specialized chips, rare materials, data centers, cooling systems, and manufacturing capacity. If AI abilities demand exponentially larger infrastructure, the world might struggle to build it quickly enough.
+The development of advanced AI requires immense physical infrastructure:
+
+- Energy
+- Specialized chips
+- Rare materials
+- Data centers
+- Cooling systems
+- Manufacturing capacity
+
+If AI abilities demand exponentially larger infrastructure, the world might struggle to build it quickly enough.
 
 A third limiting factor is that existing neural network methodologies might prove fundamentally incapable of delivering AGI or ASI, no matter how significantly they are scaled up. Fourth, **research itself tends to get harder** as fields mature. The "low-hanging fruit" disappears, and further progress requires greater effort and more complex, novel ideas.
 

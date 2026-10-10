@@ -83,7 +83,11 @@ Smart contract code, often written in Solidity, can be complex. Contracts are fr
 
 For example, a `withdraw()` function might calculate half of a contract's balance to send to two specific addresses (W0 and W1). Solidity, which primarily uses integer arithmetic, often employs constructs like `balance * 5 / 10` to approximate half of a value, as it lacks native decimal support.
 
-Direct code inspection helps clarify parameter requirements and internal logic that might not be obvious from the user interface. It allows you to trace how variables are used, what conditions must be met for a function to execute, and how values are calculated.
+Direct code inspection helps clarify parameter requirements and internal logic that might not be obvious from the user interface. It allows you to trace:
+
+- How variables are used
+- What conditions must be met for a function to execute
+- How values are calculated
 
 This level of scrutiny is essential for developers, auditors, and advanced users seeking to fully comprehend a contract's behavior and security implications.
 

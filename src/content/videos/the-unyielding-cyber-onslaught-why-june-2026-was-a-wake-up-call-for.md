@@ -70,7 +70,13 @@ Breaches in this sector often occur due to a lack of adherence to zero trust sec
 
 The data breaches of June 2026 serve as a powerful reminder that cybersecurity is an ongoing battle, not a destination. From widespread phishing operations affecting millions to targeted ransomware attacks disrupting critical infrastructure and novel threats involving AI model intellectual property, the threat field is both broad and deep.
 
-The common thread through many of these incidents is a failure to implement or consistently enforce fundamental security hygiene: unique passwords, multi-factor authentication, regular system patching, data encryption, and solid monitoring.
+The common thread through many of these incidents is a failure to implement or consistently enforce fundamental security hygiene:
+
+- Unique passwords
+- Multi-factor authentication
+- Regular system patching
+- Data encryption
+- Solid monitoring
 
 Organizations and individuals alike must recognize that the cost of a data breach extends far beyond immediate financial loss, encompassing reputational damage, operational disruption, and a profound erosion of trust. As AI accelerates the capabilities of both attackers and defenders, the gap between those who proactively adapt and those who fall behind will widen.
 

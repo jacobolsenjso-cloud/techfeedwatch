@@ -24,7 +24,11 @@ faqs:
     answer: "Advanced tethered platforms like Project Auras support concurrent application windows, allowing users to mirror a laptop or console display via USB-C while running Android XR apps side by side."
 ---
 
-Hardware developers at the Augmented World Expo unveiled a new lineup of [smart glasses](/video/ar-hardware-s-new-blueprint-from-discreet-monocles-to-screenless/) that challenge traditional spatial computing designs through higher pixel densities, expanded fields of view, and hot-swappable power systems.
+Hardware developers at the Augmented World Expo unveiled a new lineup of [smart glasses](/video/ar-hardware-s-new-blueprint-from-discreet-monocles-to-screenless/) that challenge traditional spatial computing designs through:
+
+- Higher pixel densities
+- Expanded fields of view
+- Hot-swappable power systems
 
 To overcome weight and thermal thresholds, hardware designers are splitting processing responsibilities between lightweight frames and tethered compute units. Unseen Reality highlighted this architectural shift with its UR XR1 glasses, a device weighing just 93 grams that delivers a 5K dual eye display yielding 2.5K per eye.
 

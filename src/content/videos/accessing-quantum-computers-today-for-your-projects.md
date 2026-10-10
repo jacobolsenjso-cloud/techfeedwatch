@@ -46,7 +46,13 @@ For those interested in learning to program quantum computers, structured educat
 
 The explicit goal of this course is "to get someone who is a true beginner to quantum computing programming to use a real quantum computer in the shortest amount of time possible and assuming little to no prior background knowledge." This demonstrates a clear effort to lower the entry barrier for aspiring quantum programmers.
 
-Such courses typically lead users to platforms like the IBM Quantum Platform, available at quantum.cloud.ibm.com/. This platform offers an integrated environment where users can write quantum code, simulate its execution, and eventually run it on actual quantum hardware. As an example of direct engagement, one lesson provides a corresponding URL: https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today/build-and-run-your-first-quantum-program.
+Such courses typically lead users to platforms like the IBM Quantum Platform, available at quantum.cloud.ibm.com/. This platform offers an integrated environment where users can:
+
+- Write quantum code
+- Simulate its execution
+- Eventually run it on actual quantum hardware
+
+As an example of direct engagement, one lesson provides a corresponding URL: https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today/build-and-run-your-first-quantum-program.
 
 This link directs users to resources for building and running their first quantum program, showcasing a practical pathway to hands-on experience. This accessibility through managed cloud services marks a significant milestone in commercializing advanced technologies, as highlighted in [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech).
 

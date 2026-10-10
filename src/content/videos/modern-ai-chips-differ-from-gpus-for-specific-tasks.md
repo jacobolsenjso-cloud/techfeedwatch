@@ -30,7 +30,11 @@ faqs:
 
 AI chips, including Graphics Processing Units (GPUs), are specialized processors built to handle the unique computational demands of artificial intelligence. While GPUs paved the way by offering massive parallel processing power essential for AI training, the field of AI hardware has diversified significantly.
 
-This evolution has introduced various other chip architectures, each tailored for distinct roles within the AI ecosystem, such as accelerating deep learning, enabling on-device AI, or delivering extreme efficiency for specific functions.
+This evolution has introduced various other chip architectures, each tailored for distinct roles within the AI ecosystem such as:
+
+- Accelerating deep learning
+- Enabling on-device AI
+- Delivering extreme efficiency for specific functions
 
 ## How are AI chips different from GPUs in practice?
 

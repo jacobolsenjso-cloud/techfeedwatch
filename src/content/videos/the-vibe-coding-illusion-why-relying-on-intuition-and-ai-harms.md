@@ -114,7 +114,11 @@ They also use AI for exploration, asking it to present three different approache
 
 Importantly, experienced developers never use AI for the core logic they need to understand. They avoid using it for critical paths within an application or for any security-related code.
 
-Their pattern is clear: first, understand the problem completely. Second, design the solution themselves. Only then might they use AI to speed up the setup phase.
+Their pattern is clear:
+
+- Understand the problem completely.
+- Design the solution themselves.
+- Only then might they use AI to speed up the setup phase.
 
 They always review the AI-generated code critically and ensure they can explain every single line. For these developers, AI amplifies existing skills. It is not a replacement for their critical thinking or problem-solving abilities.
 

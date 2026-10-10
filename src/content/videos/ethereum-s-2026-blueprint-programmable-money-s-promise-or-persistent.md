@@ -80,6 +80,12 @@ Ethereum's development path continues with a series of ambitious upgrades aimed 
 
 Key upgrades like Dencun, which introduced "blobs" and proto-danksharding, aim to significantly increase the data capacity for Layer 2 transactions, further driving down costs and improving throughput. This particular upgrade focuses on making data availability for Layer 2s more efficient, a cornerstone for true mass adoption.
 
-Looking ahead to 2026, other planned upgrades include Pectra, Glamsterdam, and Hegotá. These future iterations are designed to fine-tune various aspects of the network, from execution layer enhancements to further advancements in sharding and overall network performance. These upgrades collectively represent Ethereum's commitment to evolving its architecture, ensuring it remains the leading platform for decentralized applications and programmable money.
+Looking ahead to 2026, other planned upgrades include:
+
+- Pectra
+- Glamsterdam
+- Hegotá
+
+These future iterations are designed to fine-tune various aspects of the network, from execution layer enhancements to further advancements in sharding and overall network performance. These upgrades collectively represent Ethereum's commitment to evolving its architecture, ensuring it remains the leading platform for decentralized applications and programmable money.
 
 The continuous improvement cycle aims to solidify Ethereum's role as the "world computer," capable of supporting an ever-growing array of innovative uses in the global decentralized field. The focus remains on making the network faster, cheaper, and more environmentally sustainable, addressing the core needs for widespread utility.

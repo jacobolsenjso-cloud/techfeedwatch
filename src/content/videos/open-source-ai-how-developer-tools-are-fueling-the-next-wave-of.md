@@ -32,7 +32,15 @@ Developers are increasingly moving away from traditional, hand-coded [software d
 
 ## The Evolving Role of Developers
 
-The traditional role of a full-stack developer demanded expertise across many domains, including front-end, back-end, DevOps, security, and UI/UX design. However, the rise of AI agents is redefining these requirements.
+The traditional role of a full-stack developer demanded expertise across many domains including:
+
+- Front-end
+- Back-end
+- DevOps
+- Security
+- UI/UX design
+
+However, the rise of AI agents is redefining these requirements.
 
 Developers now act more as architects and managers, assembling and directing specialized AI agents to handle these complex tasks. This new approach allows for a faster transition from an initial idea to a functional product.
 

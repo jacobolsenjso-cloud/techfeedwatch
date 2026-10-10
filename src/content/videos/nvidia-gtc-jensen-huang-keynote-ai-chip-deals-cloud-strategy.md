@@ -35,7 +35,14 @@ This involves not only advanced chip design but also extensive software librarie
 
 At the heart of NVIDIA's computing strategy lies CUDA, an architecture celebrating its 20th anniversary. CUDA introduced the Single Instruction, Multi-Threaded (SIMT) programming model, which made it greatly easier to program parallel accelerators compared to earlier methods. Over two decades, NVIDIA has continuously evolved CUDA, adding features like tiles to support the tensor cores essential for modern artificial intelligence mathematics.
 
-CUDA's strength is its extensive ecosystem, supported by thousands of tools, compilers, frameworks, and open-source libraries. This broad integration means CUDA runs on hundreds of millions of GPUs and computing systems globally, spanning every major cloud provider and computer company.
+CUDA's strength is its extensive ecosystem, supported by thousands of:
+
+- Tools
+- Compilers
+- Frameworks
+- Open-source libraries
+
+This broad integration means CUDA runs on hundreds of millions of GPUs and computing systems globally, spanning every major cloud provider and computer company.
 
 This vast installed base creates a "flywheel" effect: a large user base attracts developers, who then create new algorithms and breakthroughs, such as deep learning. These innovations, in turn, foster new markets and ecosystems, further expanding the installed base.
 

@@ -87,7 +87,13 @@ They allow students to study vehicle design and aerodynamics. The ability to pro
 
 The adoption of AR in technical training is progressing, though at different speeds across sectors. Businesses, particularly in the B2B sector, are quicker to embrace AR. They see a clear return on investment.
 
-This includes improved training efficiency, reduced errors, and faster skill acquisition. Training centers and large corporations, such as those in aerospace, are already using this technology to their advantage.
+This includes:
+
+- Improved training efficiency
+- Reduced errors
+- Faster skill acquisition
+
+Training centers and large corporations, such as those in aerospace, are already using this technology to their advantage.
 
 The education system, however, moves more slowly. Universities have expressed interest in integrating AR content into their curricula. Yet, established educational infrastructures, built on tested curriculums and ministry programs, require patience for new methods to be fully adopted.
 

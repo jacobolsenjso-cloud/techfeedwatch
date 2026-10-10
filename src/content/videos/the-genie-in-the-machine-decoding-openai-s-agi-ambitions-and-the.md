@@ -91,4 +91,8 @@ This occurred amidst reports that the US government is considering a voluntary p
 
 The industry itself is divided on how to approach safety and regulation. Some leaders, like OpenAI's CEO, express strong optimism about AI's positive impact, while others emphasize the dangers and the need for extreme caution. The open-source AI debate also highlights these divisions, with some advocating for open weights and others remaining silent.
 
-While some dismiss the singularity and conscious AI as speculative, others predict AI will be 100 times more transformative than the Industrial Revolution. The coming months are expected to see major developments, including new model releases, potential government pre-approval regimes, and continued challenges in ensuring AI systems remain controllable and beneficial.
+While some dismiss the singularity and conscious AI as speculative, others predict AI will be 100 times more transformative than the Industrial Revolution. The coming months are expected to see major developments including:
+
+- New model releases
+- Potential government pre-approval regimes
+- Continued challenges in ensuring AI systems remain controllable and beneficial

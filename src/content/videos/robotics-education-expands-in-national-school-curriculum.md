@@ -32,7 +32,11 @@ Computer and robotics education introduces young people to foundational skills i
 
 This educational approach moves beyond traditional classroom settings, often leveraging community-driven initiatives and hands-on, creative learning methods. It emphasizes making technology accessible, starting with "unplugged" activities for the youngest learners, such as designing robots from cardboard or acting out robotic movements to understand basic concepts.
 
-As children progress, they engage with actual programming and robotics, fostering critical thinking and problem-solving abilities. A core principle is providing a "low floor" for easy entry, a "high ceiling" for advanced exploration, and "tall ladders" to bridge the gap between simple concepts and complex applications.
+As children progress, they engage with actual programming and robotics, fostering critical thinking and problem-solving abilities. A core principle is providing:
+
+- A "low floor" for easy entry
+- A "high ceiling" for advanced exploration
+- "Tall ladders" to bridge the gap between simple concepts and complex applications
 
 ## What Computer and Robotics Education Entails
 

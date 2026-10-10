@@ -34,7 +34,13 @@ For instance, the American Bankers Association actively lobbies against yield-st
 
 The stablecoin ecosystem itself is diversifying. A new independent company, Open Standard, unveiled OpenUSD (OUSD), a US dollar stablecoin launching later in 2026.
 
-This consortium-governed stablecoin is backed by over 140 major names in finance and tech, including payment networks like Visa, Mastercard, and Stripe, tech giants such as Google, IBM, and Samsung, and crypto players like Coinbase, Ripple, and Bybit. Unlike single-issuer stablecoins such as USDC or USDT, OpenUSD distributes interest earned on its backing assets among its partners, rather than concentrating all income with one entity.
+This consortium-governed stablecoin is backed by over 140 major names in finance and tech including:
+
+- Payment networks like Visa, Mastercard, and Stripe
+- Tech giants such as Google, IBM, and Samsung
+- Crypto players like Coinbase, Ripple, and Bybit
+
+Unlike single-issuer stablecoins such as USDC or USDT, OpenUSD distributes interest earned on its backing assets among its partners, rather than concentrating all income with one entity.
 
 It also promises zero fees for minting or redeeming, with no volume caps, targeting businesses that move money at an industrial scale. This structure highlights a key purpose of stablecoins: to offer more efficient, transparent, and potentially collaborative infrastructure for large-scale digital value transfer.
 

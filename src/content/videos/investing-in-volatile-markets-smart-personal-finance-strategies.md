@@ -63,7 +63,13 @@ More experienced investors might then consider adding single names or dividend-p
 
 ## Using Credit Responsibly
 
-Credit cards, when used wisely, offer large financial benefits beyond simple purchasing power. A primary advantage is the accumulation of points and rewards. These can be redeemed for various perks, including airline miles, travel discounts, dining benefits, cash back, or gift cards.
+Credit cards, when used wisely, offer large financial benefits beyond simple purchasing power. A primary advantage is the accumulation of points and rewards. These can be redeemed for various perks including:
+
+- Airline miles
+- Travel discounts
+- Dining benefits
+- Cash back
+- Gift cards
 
 For instance, some people accumulate hundreds of thousands of points, such as 815,000 points with a Chase Sapphire card or 970,000 points with an American Express card. These points can fund major experiences, like a trip to Morocco that cost 100,000 points plus a couple hundred dollars for the flight.
 

@@ -64,7 +64,13 @@ From an investment perspective, the increased focus on hard tech is reshaping ve
 
 The need for significant fundraising also opens doors for strategic partnerships with established industrial players and government grants, which are often critical for de-risking early-stage development. Companies that pioneer advanced technologies like those discussed in [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) exemplify the complex funding fields inherent in hard tech.
 
-Hard tech also has profound strategic implications for national competitiveness and security. Countries that foster a vibrant hard tech ecosystem gain an advantage in key areas such as defense, energy independence, and technological leadership. This global competition further underscores the importance of public-private partnerships to accelerate R&D and deployment.
+Hard tech also has profound strategic implications for national competitiveness and security. Countries that foster a vibrant hard tech ecosystem gain an advantage in key areas such as:
+
+- Defense
+- Energy independence
+- Technological leadership
+
+This global competition further underscores the importance of public-private partnerships to accelerate R&D and deployment.
 
 However, the complexities inherent in global supply chains and access to critical raw materials also present unique vulnerabilities and geopolitical considerations. The intersection of software and hardware, particularly with the advent of AI, means even deeply physical products now benefit from advanced intelligence, as explored by [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation).
 

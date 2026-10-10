@@ -41,7 +41,13 @@ This shift means that simply knowing a language's syntax or a framework's intric
 
 Instead, the value now lies in the intelligence, architecture, and creative thinking behind a project. Programmers are moving from being primarily code producers to becoming system architects and intelligent workflow designers.
 
-They must understand how to guide [AI agents](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/), make informed design decisions for software and machine learning models, and critically evaluate the output of these agents to ensure quality and prevent "garbage code." This requires a deep understanding of underlying principles, not just surface-level application.
+They must understand how to:
+
+- Guide [AI agents](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development/)
+- Make informed design decisions for software and machine learning models
+- Critically evaluate the output of these agents to ensure quality and prevent "garbage code."
+
+This requires a deep understanding of underlying principles, not just surface-level application.
 
 ## Why Fundamentals Matter More Than Ever
 

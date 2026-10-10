@@ -92,7 +92,12 @@ The ongoing development of these cutting-edge models involves bizarre and challe
 
 Access to its API playground—featuring a 1 million token context window, capable of retaining roughly a dozen massive novels in active memory—is restricted by a paywall. Users must add money to their account, with a minimum of $1, to make advanced features visible, and some found they needed to add more.
 
-Once these hurdles are cleared, the output can be staggering. Using a simple terminal command, Kimi K3 flawlessly coded a fully playable clone of an obscure web game called Mega bunk from a single prompt. The model generated the game logic, designed an avatar shaped like a potato, coded the physics needed to evade squares, and added a mechanism for experience points and leveling up.
+Once these hurdles are cleared, the output can be staggering. Using a simple terminal command, Kimi K3 flawlessly coded a fully playable clone of an obscure web game called Mega bunk from a single prompt. The model:
+
+- Generated the game logic
+- Designed an avatar shaped like a potato
+- Coded the physics needed to evade squares
+- Added a mechanism for experience points and leveling up
 
 Operating on a zero-shot basis, it produced intricate, integrated code flawlessly on its initial attempt, equaling Anthropic's Fable 5. In image generation, Kimi K3 scored seventh overall on the Beauty Bench test, costing just 8 cents to run.
 

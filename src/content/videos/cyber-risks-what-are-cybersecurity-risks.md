@@ -34,7 +34,11 @@ At its core, a cybersecurity risk is the product of a threat exploiting a vulner
 
 Threats are diverse, ranging from state-sponsored hackers and organized criminal groups to insider threats, human error, or even natural disasters impacting data centers. Vulnerabilities are the weaknesses—unpatched software, misconfigured systems, weak authentication protocols, or untrained employees susceptible to phishing. The assets are what organizations seek to protect: customer data, intellectual property, financial records, operational technology, and brand reputation.
 
-The consequences of these risks materializing are often severe. They can include direct financial losses from fraud or ransomware payments, the costs of incident response and system recovery, and substantial regulatory fines following data breaches.
+The consequences of these risks materializing are often severe. They can include:
+
+- Direct financial losses from fraud or ransomware payments
+- The costs of incident response and system recovery
+- Substantial regulatory fines following data breaches
 
 Beyond financial penalties, organizations face significant reputational damage, erosion of customer trust, and long-term operational disruption. For instance, the transition away from supported operating systems like Windows 10 creates new exposures, where organizations continuing to use unsupported versions without extended security updates face significantly increased risks, as detailed in [What Windows 10 Extended Support Means for Users](/video/windows-10-extended-support-implications-for-business-security).
 

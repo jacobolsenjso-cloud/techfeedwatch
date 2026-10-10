@@ -76,7 +76,15 @@ Costs can quickly accumulate, potentially reaching $100 to $3,000 a month for mu
 
 **EOD Historical Data (EOD HD) API** is often considered a leading choice for its complete offerings. It provides an extensive range of data, covering over 70 stock exchanges globally, including those in India, France, China, Argentina, and South Africa. It boasts historical data going back over 30 years, with some records from the 1970s.
 
-The API also includes over 1,000 Forex pairs, cryptocurrency, commodities, news, and sentiment analysis. A major advantage is its high accuracy, with 95% of data having less than a half-second lag. Pricing is designed for retail traders, with basic packages available for daily calls.
+The API also includes:
+
+- Over 1,000 Forex pairs
+- Cryptocurrency
+- Commodities
+- News
+- Sentiment analysis
+
+A major advantage is its high accuracy, with 95% of data having less than a half-second lag. Pricing is designed for retail traders, with basic packages available for daily calls.
 
 More complete packages, including fundamental data and sentiment analysis, are also offered, as well as a full package. While slightly more sophisticated to program than some alternatives, it is still considered easy to use and benefits from a large community and many tutorials. It is also noted for having no missing data.
 

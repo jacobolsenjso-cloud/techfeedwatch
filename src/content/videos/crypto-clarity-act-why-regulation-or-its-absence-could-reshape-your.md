@@ -81,7 +81,12 @@ Other altcoins like BNB, which has a more global presence, and Dogecoin, often s
 
 The ongoing legislative efforts in the US underscore the importance of understanding the fundamentals of digital assets. While regulatory clarity would broadly benefit the entire crypto market, some assets are better equipped to handle periods of uncertainty.
 
-Investors should consider factors like an altcoin's established network effect, its global adoption outside the US, its specific utility, and the level of institutional backing it receives.
+Investors should consider factors like:
+
+- An altcoin's established network effect
+- Its global adoption outside the US
+- Its specific utility
+- The level of institutional backing it receives
 
 The ability of a project to attract major financial players or integrate with traditional finance systems can provide a buffer against regulatory headwinds. Similarly, projects with strong, real-world use cases, like decentralized AI or established payment solutions, may prove more resilient.
 

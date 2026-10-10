@@ -90,7 +90,13 @@ A major challenge is keeping the audience engaged, especially during periods of 
 
 **Balancing Transparency with Project Focus** While openness is a core tenet, it's important to ensure that every development step contributes meaningfully to the project's goals.
 
-A guiding principle can be that every release should either make the journey easier to follow, increase product value for real users, or reduce the effort required to maintain and extend the platform. If a proposed PR does not satisfy at least one of these criteria, it might be better deferred to a later milestone.
+A guiding principle can be that every release should either:
+
+- Make the journey easier to follow
+- Increase product value for real users
+- Reduce the effort required to maintain and extend the platform
+
+If a proposed PR does not satisfy at least one of these criteria, it might be better deferred to a later milestone.
 
 **Managing AI Tool Limitations**
 Relying on AI for planning and coding requires careful management of their specific limitations, such as token usage restrictions in some models. Strategic use, like employing one AI for initial planning and another for coding, can help optimize resources and prevent premature exhaustion of abilities.

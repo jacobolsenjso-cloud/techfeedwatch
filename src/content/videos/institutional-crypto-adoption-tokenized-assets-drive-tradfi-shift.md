@@ -50,7 +50,14 @@ This allows investors to react instantly to global events, pricing real-world de
 
 Demand for 24/7 trading comes from sophisticated traders and younger people, many of whom first encounter investment markets through crypto, leading them to expect constant access and trading opportunities. For this model to succeed, platforms need globally active order books to ensure liquidity during traditionally low-volume periods, like holidays or weekends.
 
-A unified global order book helps maintain sufficient liquidity, supported by traders in different time zones across Asia, Europe, Latin America, and the Middle East. This global reach ensures that platforms can help Bitcoin trading even on a Sunday, as active participants are awake and trading elsewhere in the world.
+A unified global order book helps maintain sufficient liquidity, supported by traders in different time zones across:
+
+- Asia
+- Europe
+- Latin America
+- The Middle East
+
+This global reach ensures that platforms can help Bitcoin trading even on a Sunday, as active participants are awake and trading elsewhere in the world.
 
 ## Tokenization: Opening up New Investment Avenues
 

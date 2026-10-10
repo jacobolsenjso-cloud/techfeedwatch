@@ -43,7 +43,14 @@ This observation underscores a critical challenge in professional development wi
 
 The core difference lies in the proximity to raw data and algorithm development versus application deployment. A Machine Learning Engineer operates closer to the theoretical and experimental side of AI.
 
-Their responsibilities include designing new model architectures, collecting and preprocessing vast datasets, training complex algorithms, and rigorously evaluating model performance. This often requires a deep understanding of statistics, linear algebra, and advanced programming languages.
+Their responsibilities include:
+
+- Designing new model architectures
+- Collecting and preprocessing vast datasets
+- Training complex algorithms
+- Rigorously evaluating model performance
+
+This often requires a deep understanding of statistics, linear algebra, and advanced programming languages.
 
 They might spend their days fine-tuning hyperparameters, experimenting with different neural network configurations, or developing custom machine learning pipelines, ensuring that the AI outputs meet stringent accuracy and fairness criteria, a domain increasingly covered by [How AI Quality Engineering Checks AI Outputs](/video/ai-s-confidence-game-why-quality-engineering-defines-its-future-not). The infrastructure underpinning their work often involves specialized hardware, as detailed in discussions like [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/).
 

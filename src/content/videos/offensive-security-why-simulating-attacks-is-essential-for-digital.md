@@ -48,7 +48,14 @@ Offensive security testing follows a logical, methodical progression often refer
 
 The first step in this playbook is **reconnaissance**. Much like a covert military operation, an ethical hacker requires solid intelligence before ever touching a target.
 
-This involves mapping out public-facing assets, gathering domain intelligence, identifying exposed tech stacks, and understanding network infrastructure. Ethical hackers essentially view the organization through the eyes of an outside attacker, charting the entire digital field completely undetected to identify potential entry points.
+This involves:
+
+- Mapping out public-facing assets
+- Gathering domain intelligence
+- Identifying exposed tech stacks
+- Understanding network infrastructure
+
+Ethical hackers essentially view the organization through the eyes of an outside attacker, charting the entire digital field completely undetected to identify potential entry points.
 
 Once this digital map is drawn, the process moves to **vulnerability assessment**. Here, security professionals actively scan all the gathered intelligence to identify specific weaknesses. They are "shaking the doorknobs," looking for low-hanging fruit such as misconfigurations or unpatched software.
 

@@ -59,7 +59,12 @@ This includes defining a clear site title, adding an SEO-friendly tagline, uploa
 
 With WordPress installed, the next step is to integrate a dedicated community platform plugin. BuddyBoss stands out as a powerful, open-source solution built specifically for WordPress, offering extensive customization options without a direct cost for its core platform.
 
-After downloading and installing it as a plugin, creators can activate a range of features to tailor their community experience. These include social groups for focused discussions, traditional forum capabilities, media uploading for sharing content, and private messaging for direct communication between members.
+After downloading and installing it as a plugin, creators can activate a range of features to tailor their community experience. These include:
+
+- Social groups for focused discussions
+- Traditional forum capabilities
+- Media uploading for sharing content
+- Private messaging for direct communication between members
 
 BuddyBoss is designed to mimic the interactive environments found on popular social platforms, allowing creators to build a dynamic space centered around groups and activity feeds. This structure provides a familiar and engaging experience for members, fostering interaction and content sharing.
 

@@ -45,7 +45,12 @@ You have likely encountered AR through popular apps like Pokemon Go, which overl
 
 Spatial computing raises this concept significantly. It augments reality but goes a substantial step further by understanding the physical space and allowing projected digital content to interact with its surroundings.
 
-This technology, facilitated by platforms like Magic Leap, essentially merges the digital world with the physical. So when opening up apps and placing them around a space, they will bang against furniture and naturally sit on top of surfaces; they'll also stay where they're placed in the room, and projections will also hide behind walls, fixtures, and furniture.
+This technology, facilitated by platforms like Magic Leap, essentially merges the digital world with the physical. So when opening up apps and placing them around a space:
+
+- They will bang against furniture
+- Naturally sit on top of surfaces
+- They'll stay where they're placed in the room
+- Projections will hide behind walls, fixtures, and furniture
 
 This deep understanding of the environment and interactive capability is what fundamentally distinguishes spatial computing from simpler AR overlays. [What Are Some Examples of AR in Daily Life?](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030) provides additional context on AR, but spatial computing marks a new frontier.
 

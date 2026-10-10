@@ -51,7 +51,13 @@ A successful career in machine learning hinges on a combination of practical ski
 
 **Python Proficiency:** Python is the dominant programming language in machine learning and data science. While deep software development expertise is not always required, an intermediate level of Python scripting is essential.
 
-This includes using Python to interact with APIs for data collection, manipulate data structures, and prepare data for algorithms. Many free and paid resources are available to build this skill.
+This includes using Python to:
+
+- Interact with APIs for data collection
+- Manipulate data structures
+- Prepare data for algorithms
+
+Many free and paid resources are available to build this skill.
 
 **Data Science Fundamentals:** A major portion of a [machine learning engineer](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/)'s role—often cited as 70 to 80 percent—involves acquiring, preparing, and cleaning data. This process, known as data extraction and engineering, ensures that the data is in a suitable format for algorithms to learn effectively.
 

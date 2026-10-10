@@ -81,7 +81,11 @@ An algorithm is a machine for arranging that cancellation so that the wrong answ
 
 ## Where quantum hardware will actually be put to work
 
-Because quantum execution relies entirely on mathematical interference, quantum processors will not replace classical central processing units for basic business logic, database queries, or spreadsheets. The industry remains laser-focused on specific, intractable domains where nature itself operates quantum mechanically: molecular synthesis, battery chemistry, and structural metallurgy.
+Because quantum execution relies entirely on mathematical interference, quantum processors will not replace classical central processing units for basic business logic, database queries, or spreadsheets. The industry remains laser-focused on specific, intractable domains where nature itself operates quantum mechanically:
+
+- Molecular synthesis
+- Battery chemistry
+- Structural metallurgy
 
 In the seventeenth century, Galileo ground a lens to get a better look at ships coming into the harbor, but pointing the instrument upward exposed the moons of Jupiter. Modern quantum engineering stands at an identical juncture. Physicist Richard Feynman famously observed that nature is not classical, concluding that simulating physical reality accurately requires hardware built on non-classical principles. 
 

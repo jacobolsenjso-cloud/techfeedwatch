@@ -76,7 +76,11 @@ Beyond geographical spread, true diversification can also mean looking beyond ma
 
 Sector-specific ETFs or actively managed funds that target undervalued sectors or companies outside the current "hot" areas can also enhance diversification. The goal is to avoid over-reliance on a few high-performing stocks and ensure that a portfolio can withstand concentrated shocks.
 
-Adopting a proactive approach to investment risk management is more critical than ever. This includes regularly reviewing asset allocation, understanding the underlying components of any index funds held, and being prepared to adjust strategies in response to changing market conditions.
+Adopting a proactive approach to investment risk management is more critical than ever. This includes
+
+- Regularly reviewing asset allocation
+- Understanding the underlying components of any index funds held
+- Being prepared to adjust strategies in response to changing market conditions
 
 As Nischa cautions, panic selling destroys long-term returns, emphasizing the need for a well-thought-out strategy that can weather market fluctuations without impulsive reactions. However, it's important to remember that Nischa does not provide tax or investment advice, underscoring the necessity for individual investors to conduct their own due diligence or consult with qualified financial professionals.
 

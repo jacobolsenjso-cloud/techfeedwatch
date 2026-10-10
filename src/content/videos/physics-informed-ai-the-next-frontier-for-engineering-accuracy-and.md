@@ -46,7 +46,11 @@ PIML extends this by ensuring that the models developed are not just statistical
 
 The power of PIML stems from its dual capability: enforcing known physics and discovering new physics. These two aspects often work together to create more powerful and insightful AI systems.
 
-First, PIML can **enforce physics** into machine learning models. This involves baking in established physical principles such as symmetries, conservation laws, or invariances.
+First, PIML can **enforce physics** into machine learning models. This involves baking in established physical principles such as:
+
+- Symmetries
+- Conservation laws
+- Invariances
 
 By doing so, models become more performant, generalize better to new situations, and require less training data. For example, a model predicting fluid flow can be designed to inherently conserve mass and energy, leading to more accurate and stable simulations.
 

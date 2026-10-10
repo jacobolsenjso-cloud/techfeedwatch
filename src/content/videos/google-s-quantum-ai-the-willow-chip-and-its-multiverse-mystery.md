@@ -98,6 +98,12 @@ Now, Willow may be showing us something even deeper: that reality might be a bra
 
 This chip is not merely a processor. It is a warning shot from the future. If Willow represents the first step toward truly scalable quantum computing, humanity has entered a new era.
 
-We are building machines that manipulate the deepest rules of reality itself. These machines exploit superposition, entanglement, and interference. These phenomena whisper that our universe may not be the only version of events.
+We are building machines that manipulate the deepest rules of reality itself. These machines exploit:
+
+- Superposition
+- Entanglement
+- Interference
+
+These phenomena whisper that our universe may not be the only version of events.
 
 Willow makes the question of the multiverse impossible to ignore. It suggests that computation may not belong only to the physical world we can touch. It may live within the invisible mathematical structure beneath reality, where possibilities overlap, interfere, and somehow return as an answer.

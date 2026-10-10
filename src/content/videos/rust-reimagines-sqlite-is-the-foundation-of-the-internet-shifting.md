@@ -40,7 +40,16 @@ His goal was to eliminate external dependencies like network ports, complex conf
 
 This innovative approach led to SQLite, a database stripped down to a single library that reads and writes to a single file. Its simplicity and small footprint allowed it to be deployed almost anywhere. Today, SQLite is ubiquitous.
 
-Billions, possibly trillions, of SQLite databases exist globally. They are found on virtually every modern device, including iPhones, Android phones, Macs, Windows computers, web browsers, and even Mars rovers. This widespread adoption underscores SQLite's reputation as exceptionally trusted and resilient software.
+Billions, possibly trillions, of SQLite databases exist globally. They are found on virtually every modern device including:
+
+- iPhones
+- Android phones
+- Macs
+- Windows computers
+- Web browsers
+- Even Mars rovers
+
+This widespread adoption underscores SQLite's reputation as exceptionally trusted and resilient software.
 
 Despite its success, SQLite's traditional model presents certain limitations. Its core C setup, while highly optimized, can introduce memory safety concerns common to that language.
 

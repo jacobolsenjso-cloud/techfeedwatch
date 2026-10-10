@@ -54,7 +54,13 @@ Data access agreements have been in place since the 2010s, following the enactme
 
 However, the rescission of the 2024 rule has caused these agreements to evolve. They now reflect a more uncertain regulatory environment.
 
-This uncertainty creates several points of friction among banks, fintechs, and aggregators. For consumers, it raises concerns about data security and who has access to their information. Fintech companies face potential risks to their relationships with financial institutions.
+This uncertainty creates several points of friction among:
+
+- Banks
+- Fintechs
+- Aggregators
+
+For consumers, it raises concerns about data security and who has access to their information. Fintech companies face potential risks to their relationships with financial institutions.
 
 Banks, in turn, might miss opportunities to reach new markets or customer segments. Despite these disagreements, there is a shared understanding across the industry. Most stakeholders agree that consumers own their data and should have the right to share it as they choose.
 

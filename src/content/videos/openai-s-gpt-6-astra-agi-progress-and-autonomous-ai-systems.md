@@ -37,7 +37,14 @@ During discussions in Washington with figures from the Trump administration and 
 
 These meetings, held last week, were initially anticipated to finalize security and safety concerns for the then-expected GPT-6. However, the subsequent public revelation of Astra shifted the conversation.
 
-On August 1st, OpenAI publicly confirmed that an internal version of Astra had successfully resolved 10 long-standing open problems across advanced mathematics and theoretical computer science. Such advances occurred across specialized disciplines, including operator algebras, quantum complexity, circuit complexity, sphere packing, coding theory, and group theory.
+On August 1st, OpenAI publicly confirmed that an internal version of Astra had successfully resolved 10 long-standing open problems across advanced mathematics and theoretical computer science. Such advances occurred across specialized disciplines including:
+
+- Operator algebras
+- Quantum complexity
+- Circuit complexity
+- Sphere packing
+- Coding theory
+- Group theory
 
 This is a monumental leap, considering that only four years prior, models like ChatGPT could make basic numerical mistakes, such as incorrectly comparing 1,000 and 1,062. This rapid progression from fundamental errors to solving decade-old research problems highlights the exponential growth in AI's reasoning abilities.
 

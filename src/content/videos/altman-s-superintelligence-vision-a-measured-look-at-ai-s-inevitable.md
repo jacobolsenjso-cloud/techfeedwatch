@@ -96,7 +96,13 @@ This capability represents a profound shift, as it liberates AI to initiate and 
 
 The rapid advancement towards superintelligence brings with it significant safety and governance challenges. While there have been "moments of awe" witnessing AI's capabilities, there is no secret existence of conscious or self-improving models currently. However, the potential for powerful AI models to be misused in substantial ways is a serious concern.
 
-Risks include the possibility of new forms of bioterrorism, significant challenges to cybersecurity, and the potential for self-improving AI to lead to a loss of human control. Less critical, but still important, concerns include the spread of misinformation or AI models generating content that is undesirable.
+Risks include:
+
+- The possibility of new forms of bioterrorism
+- Significant challenges to cybersecurity
+- The potential for self-improving AI to lead to a loss of human control
+
+Less critical, but still important, concerns include the spread of misinformation or AI models generating content that is undesirable.
 
 Addressing these risks requires a proactive and iterative approach to safety. Internal readiness frameworks are essential for conducting pre-release checks and ensuring that safety measures are integrated throughout the development process.
 

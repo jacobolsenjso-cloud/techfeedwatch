@@ -29,7 +29,13 @@ A data breach occurs whenever sensitive, protected, or confidential information 
 
 ## How Data Leak Incidents Happen Across Modern Networks
 
-Attackers break into private corporate databases through a combination of social engineering, automated credential cracking, and infrastructure misconfigurations. In a standard enterprise deployment, legitimate personnel query central databases using encrypted sessions, but external threat actors bypass these boundaries by manipulating employee trust.
+Attackers break into private corporate databases through a combination of:
+
+- Social engineering
+- Automated credential cracking
+- Infrastructure misconfigurations
+
+In a standard enterprise deployment, legitimate personnel query central databases using encrypted sessions, but external threat actors bypass these boundaries by manipulating employee trust.
 
 Method 1 involves phishing, where an attacker sends a deceptive email containing a link to a fake login portal. Once an employee inputs their credentials, the attacker collects the account access instantly. Method 2 bypasses authentication through brute force attacks, where automated tools cycle through millions of common passwords against exposed login portals until one matches.
 

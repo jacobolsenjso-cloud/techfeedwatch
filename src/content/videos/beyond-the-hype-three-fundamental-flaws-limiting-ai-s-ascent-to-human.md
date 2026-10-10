@@ -75,6 +75,10 @@ Sabine Hossenfelder points out that users expect a definitive answer, not an adm
 
 Despite their limitations for AGI, current generative AI models are undeniably useful for a range of specific tasks. They excel at translations, summarization, and generating content similar to what already exists. These applications will likely continue to improve and find broader adoption.
 
-However, the inherent architectural constraints of deep neural networks suggest that they will not independently evolve into human-level general intelligence. Achieving AGI will likely require fundamentally different research approaches. Future directions include developing abstract reasoning networks that can process any type of input, creating logic languages that operate without reliance on words, and building sophisticated world models.
+However, the inherent architectural constraints of deep neural networks suggest that they will not independently evolve into human-level general intelligence. Achieving AGI will likely require fundamentally different research approaches. Future directions include:
+
+- Developing abstract reasoning networks that can process any type of input
+- Creating logic languages that operate without reliance on words
+- Building sophisticated world models
 
 Neurosymbolic reasoning, which combines the strengths of neural networks with symbolic AI's ability to represent knowledge and reason, is also considered a step toward more reliable and general machine intelligence. These alternative paths focus on enabling machines to grasp and manipulate concepts in a more fundamental way, moving beyond mere pattern recognition.

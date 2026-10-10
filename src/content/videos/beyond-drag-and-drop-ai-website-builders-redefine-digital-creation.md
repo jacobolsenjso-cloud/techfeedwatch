@@ -61,7 +61,16 @@ For businesses looking to sell online, e-commerce functionality is a standard of
 
 These builders often incorporate broader business management tools. This can include built-in forms for customer inquiries, analytics to track performance, traffic, and visitor behavior, and even Customer Relationship Management (CRM) systems and invoicing capabilities.
 
-Durable AI, for example, offers automation tools, built-in forms, analytics, CRM, invoicing, and integrations to help manage a business from one central location. Mobile optimization is another critical feature, ensuring that [websites look](/video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude/) great and function smoothly across phones, tablets, and desktops without requiring extra adjustments from the user.
+Durable AI, for example, offers:
+
+- Automation tools
+- Built-in forms
+- Analytics
+- CRM
+- Invoicing
+- Integrations to help manage a business from one central location
+
+Mobile optimization is another critical feature, ensuring that [websites look](/video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude/) great and function smoothly across phones, tablets, and desktops without requiring extra adjustments from the user.
 
 Many also offer integrated hosting and domain services, providing an all-in-one solution that handles the technical infrastructure alongside the website creation. Some even offer advanced AI insights, such as Zyro's AI heatmap, which shows where users are likely to focus on a page, helping optimize layouts for higher conversion rates.
 

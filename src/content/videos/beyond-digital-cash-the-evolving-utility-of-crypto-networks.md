@@ -74,7 +74,11 @@ One compelling example is decentralized prediction markets, such as Augur and Gn
 
 Unlike previous centralized prediction markets that faced regulatory issues or operator corruption, DApps offer a censorship-resistant environment. A key innovation here is the decentralized oracle, which provides DApps with external, real-world information in a trust-minimized way.
 
-Augur, for instance, uses its own token (REP) to incentivize token holders to report accurately on market outcomes, punishing those who report incorrectly. This decentralized data feed has applications beyond betting, including insurance, financial hedging, and even "futarchy," where prediction markets could inform policy decisions by allowing people to "vote with their money" on the potential outcomes of proposed policies.
+Augur, for instance, uses its own token (REP) to incentivize token holders to report accurately on market outcomes, punishing those who report incorrectly. This decentralized data feed has applications beyond betting including:
+
+- Insurance
+- Financial hedging
+- Even "futarchy," where prediction markets could inform policy decisions by allowing people to "vote with their money" on the potential outcomes of proposed policies
 
 Beyond prediction markets, DApps are also exploring new ways for individuals to own and manage their identity and reputation data. In a system where people's data is often shared without their consent, DApps could allow users to build up a verifiable reputation and selectively share it, for instance, when applying for a loan or renting a home.
 

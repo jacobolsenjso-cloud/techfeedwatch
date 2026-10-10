@@ -46,7 +46,13 @@ Each block contains a batch of validated transactions, and once added to the cha
 
 This innovation, often credited to the pseudonymous Satoshi Nakamoto with the creation of Bitcoin, established a system where trust is distributed across the network, rather than concentrated in a single entity. The network collectively verifies and approves transactions, adding new blocks only when a consensus is reached.
 
-This process grants unprecedented levels of security and censorship resistance. A common objection rests on the "blockchain trilemma," which suggests a fundamental trade-off between scalability, security, and decentralization. Many projects aim to optimize these three pillars.
+This process grants unprecedented levels of security and censorship resistance. A common objection rests on the "blockchain trilemma," which suggests a fundamental trade-off between:
+
+- Scalability
+- Security
+- Decentralization
+
+Many projects aim to optimize these three pillars.
 
 For instance, computer scientist Silvio Micali, a Turing award winner from MIT, founded Algorand to address these very challenges by designing a pure proof-of-stake consensus mechanism intended to offer high transaction speeds and security while maintaining decentralization. As Silvio Micali discussed on the Lex Fridman Podcast #168, the architecture of Algorand focuses on achieving a balance between these critical aspects, aiming to expand blockchain's practical applications.
 

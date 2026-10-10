@@ -47,7 +47,11 @@ When engineers link multiple qubits together, the utility scales exponentially v
 
 While classical processors evaluate permutations one by one through brute-force clock cycles, an entangled quantum system addresses the problem holistically. This distinction defines [Quantum Computing: Why It's Faster for Complex Problems](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer), shifting the paradigm from raw processor clock speeds to exponential solution modeling.
 
-This capability targets specialized calculations that classical machines could never complete within a human lifetime. Qubits excel at tasks such as simulating real-time chemical reactions, designing next-generation synthetic materials at the atomic level, and advancing cryptography.
+This capability targets specialized calculations that classical machines could never complete within a human lifetime. Qubits excel at tasks such as:
+
+- Simulating real-time chemical reactions
+- Designing next-generation synthetic materials at the atomic level
+- Advancing cryptography
 
 Classical architectures simulate molecules by approximating electron orbitals through agonizingly slow numeric iteration. Qubits, operating under the exact laws of quantum mechanics that govern molecular bonding, simulate those physical interactions natively.
 

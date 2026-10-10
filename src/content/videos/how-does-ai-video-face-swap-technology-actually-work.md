@@ -37,7 +37,13 @@ This process moves beyond simple image overlays, leveraging deep learning models
 
 The technology has evolved to handle dynamic elements like video, where consistency across frames is critical. Tools designed for this purpose aim to simplify what was once a complex, labor-intensive visual effect.
 
-They address challenges such as matching skin tones, maintaining perspective, and ensuring that the new face reflects the emotional context of the scene. The output can range from subtle alterations to complete identity changes within a moving picture.
+They address challenges such as:
+
+- Matching skin tones
+- Maintaining perspective
+- Ensuring that the new face reflects the emotional context of the scene
+
+The output can range from subtle alterations to complete identity changes within a moving picture.
 
 ## How It Works
 

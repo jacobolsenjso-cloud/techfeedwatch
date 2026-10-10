@@ -51,7 +51,13 @@ The introduction of [smart contract](/video/solana-escrow-the-smart-contract-mec
 
 To gain a more accurate understanding of Kaspa's performance, it is more insightful to assess its value relative to the overall crypto market. Following the smart contract launch, Kaspa's price demonstrated stabilization when compared to other altcoins. This stabilization is clearly visible when examining Kaspa's market capitalization in relation to the entire crypto market, specifically excluding stablecoins.
 
-The trend remains consistent even when comparing Kaspa to smaller altcoins. These are defined as cryptocurrencies outside of Bitcoin, Ethereum, and stablecoins. While there has not been a large increase in buying pressure directly attributable to the smart contract launch, the rate of selling has noticeably slowed.
+The trend remains consistent even when comparing Kaspa to smaller altcoins. These are defined as cryptocurrencies outside of:
+
+- Bitcoin
+- Ethereum
+- Stablecoins
+
+While there has not been a large increase in buying pressure directly attributable to the smart contract launch, the rate of selling has noticeably slowed.
 
 This suggests a positive shift from previous periods of downward pressure. Kaspa's current market capitalization is 767 million. For Kaspa to enter the top 10 cryptocurrencies by market cap, its value would need to increase by 20 times from its present level.
 

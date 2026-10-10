@@ -73,7 +73,13 @@ A common example is changing wall colors. Instead of imagining different paint s
 
 This "switch material interaction" allows for immediate feedback. It shows how different colors or textures affect the overall ambiance of the room. This ability extends to other elements as well.
 
-For example, it can change fabric patterns on furniture, select different flooring materials, or even swap out entire pieces of furniture. This level of interaction empowers users to experiment with many design choices quickly and efficiently. It refines their vision without any physical effort or cost.
+For example, it can:
+
+- Change fabric patterns on furniture
+- Select different flooring materials
+- Even swap out entire pieces of furniture
+
+This level of interaction empowers users to experiment with many design choices quickly and efficiently. It refines their vision without any physical effort or cost.
 
 It turns the design process into an engaging and dynamic exploration.
 

@@ -58,7 +58,13 @@ One key area is **AI Site Ability**. This evaluates how well a website's content
 
 **Brand Authority** also plays a major role. AI models consider the trustworthiness and recognition of a brand when generating responses.
 
-Factors contributing to brand authority include a presence on platforms like Wikipedia, positive ratings on review sites (such as a 4.5-star rating from 600 reviews on G2), and a strong social media following (like 85+ LinkedIn followers). A strong brand signal helps AI models prioritize and recommend content from reputable sources.
+Factors contributing to brand authority include:
+
+- A presence on platforms like Wikipedia
+- Positive ratings on review sites (such as a 4.5-star rating from 600 reviews on G2)
+- A strong social media following (like 85+ LinkedIn followers)
+
+A strong brand signal helps AI models prioritize and recommend content from reputable sources.
 
 **Technical GEO Infrastructure** focuses on the underlying technical elements of a website. This includes proper setup of schema markup, which is structured data that helps AI understand specific types of content, such as products, services, or FAQs. It also involves ensuring that files like llm.txt are correctly configured to guide AI models on how to crawl and index content.
 

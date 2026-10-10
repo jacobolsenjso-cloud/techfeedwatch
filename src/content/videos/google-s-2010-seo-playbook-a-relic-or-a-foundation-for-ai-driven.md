@@ -29,7 +29,13 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-[Search engine optimization](/video/beyond-google-how-marketers-win-in-the-ai-powered-search-era/) (SEO) fundamentals are the core practices that make a website discoverable and trustworthy online. They focus on creating valuable content, ensuring technical soundness, and building a credible presence that search engines can easily understand and rank. These foundational elements remain vital for long-term online success, regardless of how search algorithms evolve.
+[Search engine optimization](/video/beyond-google-how-marketers-win-in-the-ai-powered-search-era/) (SEO) fundamentals are the core practices that make a website discoverable and trustworthy online. They focus on:
+
+- Creating valuable content
+- Ensuring technical soundness
+- Building a credible presence that search engines can easily understand and rank
+
+These foundational elements remain vital for long-term online success, regardless of how search algorithms evolve.
 
 ## Content Quality and Relevance
 

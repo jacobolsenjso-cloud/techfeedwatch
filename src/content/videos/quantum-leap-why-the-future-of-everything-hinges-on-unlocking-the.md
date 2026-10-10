@@ -69,7 +69,11 @@ Genomics, an essential field for investigating and targeting illnesses according
 
 Quantum processors can cope with these intricacies, assessing massive genetic datasets with both speed and accuracy. Consequently, this could pave the way for customized care regimens designed around a patient's unique genetic profile. This would improve the effectiveness of therapies and reduce side effects.
 
-Customized healthcare represents another discipline where quantum computers could create a major impact. Because every person possesses a distinct biological makeup, their reactions to therapies vary. Quantum computing can analyze many factors, including genetic information, lifestyle, and environment.
+Customized healthcare represents another discipline where quantum computers could create a major impact. Because every person possesses a distinct biological makeup, their reactions to therapies vary. Quantum computing can analyze many factors including:
+
+- Genetic information
+- Lifestyle
+- Environment
 
 The technology can anticipate a patient's reaction to a given therapy. This level of personalization could ensure patients receive the most effective therapies. This would maximize chances of a cure and improve overall health outcomes.
 

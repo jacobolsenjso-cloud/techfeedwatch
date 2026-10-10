@@ -84,7 +84,13 @@ Their ability to handle extensive inputs and maintain context across long texts 
 
 An AI engineer bridges the gap between theoretical AI research and practical application. Their work involves designing, building, and maintaining AI systems.
 
-This includes selecting appropriate machine learning algorithms, preparing and managing large datasets for training, and deploying models into production environments. They often work with deep learning frameworks and transformer architectures to develop solutions for various problems.
+This includes:
+
+- Selecting appropriate machine learning algorithms
+- Preparing and managing large datasets for training
+- Deploying models into production environments
+
+They often work with deep learning frameworks and transformer architectures to develop solutions for various problems.
 
 A core responsibility is understanding how these models function, including their strengths and limitations. This knowledge helps in debugging issues, optimizing performance, and ensuring the models behave as expected. For instance, an engineer might need to fine-tune a large language model to perform a specific task more accurately, which requires a deep understanding of concepts like weights and attention mechanisms.
 

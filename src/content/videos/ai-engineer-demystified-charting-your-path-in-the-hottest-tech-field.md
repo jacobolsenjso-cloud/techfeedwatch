@@ -67,7 +67,11 @@ This preparatory work is followed by setting up and training a machine learning 
 
 The training phase involves monitoring the model's performance, often by staring at loss curves, and tweaking hyperparameters to optimize results. This can be a time-consuming process, sometimes requiring hours for a model to converge. The reality is that initial model results might only be slightly better than random chance, demanding persistent iteration and refinement.
 
-Beyond model training, AI engineers are deeply involved in the operational aspects of AI. This includes writing Dockerfiles to package models for deployment, configuring and monitoring GPU instances on cloud platforms, and troubleshooting unexpected cost increases.
+Beyond model training, AI engineers are deeply involved in the operational aspects of AI. This includes:
+
+- Writing Dockerfiles to package models for deployment
+- Configuring and monitoring GPU instances on cloud platforms
+- Troubleshooting unexpected cost increases
 
 Debugging is a constant companion; engineers might spend weeks trying to understand why a GPU isn't being utilized, only to discover a missed function call. The work is characterized by ambiguity and the need to solve complex problems where clear answers are rare, and models that perform well in controlled training environments can behave unpredictably in the real world.
 

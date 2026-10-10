@@ -28,7 +28,11 @@ faqs:
 rewrittenAt: "2026-08-14"
 ---
 
-The FIFA World Cup 2026, set to be the largest iteration of the tournament in history, will feature a record number of games played across three North American nations: the United States, Canada, and Mexico.
+The FIFA World Cup 2026, set to be the largest iteration of the tournament in history, will feature a record number of games played across three North American nations:
+
+- The United States
+- Canada
+- Mexico
 
 While the full, detailed match schedule, including specific dates and venues for all games, is still being finalized and will be released closer to the event, host cities are already preparing. For example, Philadelphia is slated to host six matches, indicating the significant allocation of games to individual locations.
 

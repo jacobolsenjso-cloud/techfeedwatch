@@ -39,7 +39,12 @@ The core innovation behind Samsung's new intelligent eyewear lies in its integra
 
 Users can, for instance, ask their glasses to order a favorite coffee while on their commute or book a reservation at a restaurant they just passed, with the AI understanding the location and user preferences.
 
-This hands-free functionality extends to various aspects of daily life. The glasses can search for information based on what the user sees, summarize meeting notes from a whiteboard and save them directly into Samsung Notes, provide step-by-step instructions for a recipe, or facilitate video calls through Google Meet.
+This hands-free functionality extends to various aspects of daily life. The glasses can:
+
+- Search for information based on what the user sees
+- Summarize meeting notes from a whiteboard and save them directly into Samsung Notes
+- Provide step-by-step instructions for a recipe
+- Facilitate video calls through Google Meet
 
 The goal is to minimize the need to pull out a smartphone, offering a more fluid and integrated digital experience throughout the day. The concept of "always-on intelligence" is also suggested, implying the AI could continuously gather contextual information to provide more relevant and personalized assistance, a feature that other companies in the smart glasses space have also been exploring.
 

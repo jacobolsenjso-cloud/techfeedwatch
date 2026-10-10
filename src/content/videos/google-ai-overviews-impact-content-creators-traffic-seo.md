@@ -70,6 +70,10 @@ Tools like Brand Radar and a new AI-powered Frankenstein tracker are emerging to
 
 For creators, building direct community engagement becomes more important, shifting reliance away from transient search traffic. Leaning into video content, where AI has not yet fully replicated the human trust factor, also offers an avenue for audience connection and brand building.
 
-The creator community is also actively pressuring for specific user experience changes from search providers. These demands include more prominent links back to source content, a commitment to not rewrite directions or core information, and clear, unambiguous attribution for all referenced material.
+The creator community is also actively pressuring for specific user experience changes from search providers. These demands include:
+
+- More prominent links back to source content
+- A commitment to not rewrite directions or core information
+- Clear, unambiguous attribution for all referenced material
 
 Understanding [How to Optimize Content for Google AI Overview](/video/google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival) remains a key part of these discussions. The ongoing tension between AI search platforms aiming to keep users on their pages and content publishers needing to draw traffic to their sites will continue to shape the future of digital content and its discoverability.

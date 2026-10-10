@@ -64,6 +64,10 @@ The trajectory of AI-powered cyberattacks suggests several critical areas for fu
 
 We can anticipate AI systems moving beyond executing pre-defined steps to dynamically adapting to defensive measures, learning from failed attempts, and discovering novel vulnerabilities. This will push the frontier of what autonomous AI agents can achieve, mirroring trends seen in other sectors like [AI Trading Agents Power Autonomous Retail Finance Trading](/video/ai-trading-agents-how-agentic-ai-changes-retail-investing-finance).
 
-The cybersecurity industry will need to focus on developing equally advanced defensive AI. This includes AI-driven intrusion detection systems, automated patch management, and predictive threat intelligence that can anticipate AI-generated attack patterns.
+The cybersecurity industry will need to focus on developing equally advanced defensive AI. This includes:
+
+- AI-driven intrusion detection systems
+- Automated patch management
+- Predictive threat intelligence that can anticipate AI-generated attack patterns
 
 Regulatory bodies and governments will also face the complex task of establishing ethical guidelines and legal frameworks for AI use in both offensive and defensive cybersecurity contexts. The potential for fully autonomous AI agents operating in the cyber domain underscores the urgent need for international collaboration on responsible AI development and deployment, ensuring that the benefits of this technology outweigh the significant security risks it introduces.

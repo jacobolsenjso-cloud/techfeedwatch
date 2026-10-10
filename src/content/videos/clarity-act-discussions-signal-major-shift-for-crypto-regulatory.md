@@ -89,7 +89,15 @@ This long delay would prolong market uncertainty. It would also hinder the growt
 
 Even with legislative hurdles, the long-term outlook for digital assets remains optimistic for many. Institutional interest continues to grow. S&P Dow Jones Indices, for example, is launching a new crypto index.
 
-This index includes 18 digital assets, such as Ethereum, Binance Coin, Solana, Tron, and Hyper Liquid. It focuses on "revenue-generating protocols" and liquidity.
+This index includes 18 digital assets such as:
+
+- Ethereum
+- Binance Coin
+- Solana
+- Tron
+- Hyper Liquid
+
+It focuses on "revenue-generating protocols" and liquidity.
 
 Bitcoin is not included in this particular index for that reason. This move signals increasing mainstream acceptance and the need for investable benchmarks.
 

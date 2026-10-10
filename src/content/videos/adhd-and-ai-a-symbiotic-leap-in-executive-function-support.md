@@ -52,7 +52,12 @@ Beyond initial task generation, AI proves invaluable in mitigating other core AD
 
 This can manifest dramatically, from forgetting the purpose of a trip to the store to losing the entire mental state required for a complex work project.
 
-To counter this, many individuals with ADHD use AI platforms like Claude to maintain a running conversation for ongoing projects. Before stepping away, they might dump everything into the chat: current progress, thoughts, next steps, or what they were about to do.
+To counter this, many individuals with ADHD use AI platforms like Claude to maintain a running conversation for ongoing projects. Before stepping away, they might dump everything into the chat:
+
+- Current progress
+- Thoughts
+- Next steps
+- What they were about to do
 
 Upon returning, even days or weeks later, a simple prompt can bring the user back up to speed in seconds. For a brain that frequently loses context, having an AI that never does can feel profoundly impactful, providing a reliable anchor in fluctuating mental states.
 

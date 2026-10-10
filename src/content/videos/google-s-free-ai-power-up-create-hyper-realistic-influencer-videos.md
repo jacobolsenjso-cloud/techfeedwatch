@@ -45,7 +45,13 @@ Building an AI influencer begins with designing the character's visual identity.
 
 One such platform, Flora Pauna AI, offers a node-based workflow, which simplifies complex creative tasks by breaking them into manageable steps. New users often receive free credits to start their projects. Subscribers may also get discounts ranging from 10 to 15 percent on services.
 
-Creating a character involves writing a detailed prompt that guides the AI. A well-structured prompt is essential for achieving the desired outcome. It should specify elements like the subject's characteristics, their pose, the type of wardrobe they wear, the background or setting, and the overall mood of the image.
+Creating a character involves writing a detailed prompt that guides the AI. A well-structured prompt is essential for achieving the desired outcome. It should specify elements like:
+
+- The subject's characteristics
+- Their pose
+- The type of wardrobe they wear
+- The background or setting
+- The overall mood of the image
 
 For instance, a prompt might describe a "young woman, smiling, wearing a casual outfit, standing in a city park, with a cheerful mood." Tools within these platforms, such as Nano Banana Pro, then interpret these prompts to render the initial character image.
 

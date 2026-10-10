@@ -46,7 +46,13 @@ This offers a level of personalization that cloud-based systems often cannot mat
 
 The rise of local AI agents is driving a shift in personal knowledge management (PKM) tools. Many users are moving away from centralized, proprietary platforms.
 
-Examples include Notion, Confluence, or ClickUp. These platforms often push their own integrated AI assistants and closed ecosystems. Instead, there is a growing preference for open, extensible systems such as Obsidian.
+Examples include:
+
+- Notion
+- Confluence
+- ClickUp
+
+These platforms often push their own integrated AI assistants and closed ecosystems. Instead, there is a growing preference for open, extensible systems such as Obsidian.
 
 Obsidian, for example, stores all notes as simple markdown files on the user's computer. This format is highly advantageous for local AI agents. Markdown is easily readable and processable by both humans and machines.
 

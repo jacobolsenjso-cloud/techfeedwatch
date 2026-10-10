@@ -58,7 +58,17 @@ What are NVIDIA AI Chips and Their Role in AI? directly addresses the importance
 
 ## Energy demands and global impact of physical AI hardware
 
-The growth of physical AI infrastructure drives profound ripple effects across industries and presents new economic considerations. This foundational hardware runs a broad spectrum of global AI services, including chatbots, search engines, video streaming, scientific analysis, autonomous driving, medical research, and cloud computing. Every click, every search, and every AI conversation relies on these intricate machines.
+The growth of physical AI infrastructure drives profound ripple effects across industries and presents new economic considerations. This foundational hardware runs a broad spectrum of global AI services including:
+
+- Chatbots
+- Search engines
+- Video streaming
+- Scientific analysis
+- Autonomous driving
+- Medical research
+- Cloud computing
+
+Every click, every search, and every AI conversation relies on these intricate machines.
 
 The immense scale and precision required for manufacturing and deploying this infrastructure come with significant investment and operational costs. Research and development into new chip architectures, advanced cooling solutions, and energy-efficient data center designs are ongoing.
 

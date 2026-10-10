@@ -32,7 +32,15 @@ Social engineering attacks leverage human psychology, rather than technical vuln
 
 At its core, social engineering exploits the natural human tendency to trust, obey authority, and respond to emotional triggers like fear or urgency. Attackers don't hack systems; they hack people. The fundamental mechanisms rely on cognitive biases and psychological principles, making individuals the weakest link in any security chain.
 
-Common tactics include phishing, where attackers send deceptive communications; pretexting, which involves fabricating a believable scenario to gain information; baiting, using false promises; quid pro quo, offering something in exchange for information; and tailgating, gaining unauthorized access by following someone through a secured entry. These methods are not new, but their sophistication and delivery mechanisms continually adapt to new technologies and societal shifts, making constant vigilance a necessity.
+Common tactics include:
+
+- Phishing, where attackers send deceptive communications
+- Pretexting, which involves fabricating a believable scenario to gain information
+- Baiting, using false promises
+- Quid pro quo, offering something in exchange for information
+- Tailgating, gaining unauthorized access by following someone through a secured entry
+
+These methods are not new, but their sophistication and delivery mechanisms continually adapt to new technologies and societal shifts, making constant vigilance a necessity.
 
 ## How Social Engineering Attacks Became More Targeted
 

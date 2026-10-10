@@ -59,7 +59,13 @@ This scale of processing currently remains the domain of hyperscale data centers
 
 ## A Hybrid Future for AI Infrastructure
 
-The most practical and sustainable path forward for AI deployment appears to be a hybrid model, where edge AI and cloud-based data centers complement each other. In this scenario, AI-on-a-chip devices handle the immediate, localized, and real-time processing needs, such as generating images, answering questions, or executing code. This offloads a significant portion of the inference workload from centralized servers.
+The most practical and sustainable path forward for AI deployment appears to be a hybrid model, where edge AI and cloud-based data centers complement each other. In this scenario, AI-on-a-chip devices handle the immediate, localized, and real-time processing needs such as:
+
+- Generating images
+- Answering questions
+- Executing code
+
+This offloads a significant portion of the inference workload from centralized servers.
 
 Concurrently, large data centers continue to play an indispensable role in the initial training of complex AI models and for sharing and inputting large language models. Edge devices will still need to connect to the internet to access these foundational models, receive updates, and contribute to collective learning, but the heavy lifting of user-specific interactions occurs on the chip itself.
 

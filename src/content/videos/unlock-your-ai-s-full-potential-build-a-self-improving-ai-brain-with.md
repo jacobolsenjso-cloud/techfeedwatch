@@ -76,7 +76,12 @@ The final and arguably most critical piece of the AI brain stack is the private 
 
 The key benefit of local execution is absolute privacy: your proprietary data, legal documents, code, or personal information never leaves your machine. This eliminates concerns about data breaches or unauthorized access by third parties.
 
-This privacy enables professionals to build hyper-specialized expert personas tailored to their exact workflows and sensitive data. Lawyers can safely develop a legal assistant trained on confidential case files, doctors can create a secure medical assistant using patient data, developers can generate a coding expert trained on their private codebase, and creators can build a content strategist perfectly aligned with years of their unique writing style.
+This privacy enables professionals to build hyper-specialized expert personas tailored to their exact workflows and sensitive data.
+
+- Lawyers can safely develop a legal assistant trained on confidential case files
+- Doctors can create a secure medical assistant using patient data
+- Developers can generate a coding expert trained on their private codebase
+- Creators can build a content strategist perfectly aligned with years of their unique writing style
 
 The result is an AI that not only understands your domain's specific language but also knows your personal goals and operates within your secure environment.
 

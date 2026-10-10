@@ -74,7 +74,15 @@ It does this without interrupting its primary operation. This enables parallel p
 
 Another advanced feature is "model agnostic behavior." This means the agent can select the most appropriate underlying AI model for a given task. Instead of relying on a single large language model, agents can integrate with various models.
 
-These include ChatGPT 5.5, Anthropic's Opus 4.8, Sonnet 4.6, Grok, or models accessed via Open Router. This flexibility allows for optimization based on performance, cost, and privacy. For instance, Opus 4.8 might be the most intelligent model, but it is also expensive.
+These include:
+
+- ChatGPT 5.5
+- Anthropic's Opus 4.8
+- Sonnet 4.6
+- Grok
+- Models accessed via Open Router
+
+This flexibility allows for optimization based on performance, cost, and privacy. For instance, Opus 4.8 might be the most intelligent model, but it is also expensive.
 
 For simpler tasks, a less costly model like Sonnet 4.6 can be used. Even a free model accessed through Open Router can be used. This prevents unnecessary expenditure.
 

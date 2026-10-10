@@ -26,7 +26,11 @@ faqs:
 
 The convergence of artificial intelligence and wearable technology is driving a significant shift in personal computing, pushing interaction beyond screens and into the physical environment. AI smart glasses are emerging as a primary interface for this transition, promising a future where digital assistance and information are always present yet unobtrusive.
 
-This new category of devices extends beyond simple notifications or basic camera functions, integrating advanced AI models to provide sophisticated capabilities. Users can expect features such as hands-free video capture via integrated 12MP cameras, real-time audio translation for global communication, and direct access to conversational AI platforms like ChatGPT.
+This new category of devices extends beyond simple notifications or basic camera functions, integrating advanced AI models to provide sophisticated capabilities. Users can expect features such as:
+
+- Hands-free video capture via integrated 12MP cameras
+- Real-time audio translation for global communication
+- Direct access to conversational AI platforms like ChatGPT
 
 The form factors vary widely, from lightweight audio frames designed for discreet assistance, such as the Solos AirGo 3, to devices featuring vibrant micro-OLED screens that project 4K virtual displays directly into the user’s field of vision.
 

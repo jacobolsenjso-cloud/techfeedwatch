@@ -70,7 +70,11 @@ The performance of these hybrid devices is a critical factor influencing the use
 
 To fully grasp the potential of Android XR hybrid glasses, consider practical engagement rather than abstract speculation. The most direct approach involves experiencing the technology firsthand.
 
-Trying out devices like the XREAL AURA allows users to understand the nuances of a spatial computing puck's control, the efficacy of a multi-window setup for productivity, and the immersion offered by watching 3D movies or playing games in VR.
+Trying out devices like the XREAL AURA allows users to understand:
+
+- The nuances of a spatial computing puck's control
+- The efficacy of a multi-window setup for productivity
+- The immersion offered by watching 3D movies or playing games in VR
 
 Begin by assessing your primary use cases. If expanding your digital workspace is a priority, evaluate how effectively a multi-window setup integrates with your existing workflow.
 

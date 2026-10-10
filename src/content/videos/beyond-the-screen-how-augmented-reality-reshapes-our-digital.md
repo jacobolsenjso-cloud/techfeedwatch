@@ -70,7 +70,14 @@ This allows multiple users to gather around a holographic object, maintaining ey
 
 ## Real-World Applications and the Future
 
-The potential impact of augmented reality spans numerous fields. Novelists, artists, surgeons, and interior designers could all benefit from layering digital information onto their physical world. Imagine a surgeon practicing on a holographic organ, or an artist painting directly onto the environment.
+The potential impact of augmented reality spans numerous fields.
+
+- Novelists
+- Artists
+- Surgeons
+- Interior designers
+
+could all benefit from layering digital information onto their physical world. Imagine a surgeon practicing on a holographic organ, or an artist painting directly onto the environment.
 
 The vision for AR is that within a few years, devices will evolve into discreet "glass strips" worn over the eyes, smoothly projecting holograms. The focus will shift from the hardware itself to the "Mental OS" – the underlying system that dictates how we interact with this augmented reality.
 

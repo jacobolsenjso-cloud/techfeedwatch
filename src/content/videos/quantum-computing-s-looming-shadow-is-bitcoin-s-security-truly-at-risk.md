@@ -91,7 +91,14 @@ Digital signatures are basic to crypto, used in every transaction, validator mes
 
 One major trade-off is size. Most post-quantum signatures and keys are larger than current ones.
 
-Bigger signatures mean bigger transactions, which can lead to higher fees, increased bandwidth and storage requirements, slower syncing for nodes, and potentially more pressure on smaller network participants. This could push networks towards more centralized infrastructure.
+Bigger signatures mean bigger transactions, which can lead to:
+
+- Higher fees
+- Increased bandwidth and storage requirements
+- Slower syncing for nodes
+- Potentially more pressure on smaller network participants
+
+This could push networks towards more centralized infrastructure.
 
 Another challenge is risk. Post-quantum schemes are newer, and their real-world failure modes are still being discovered.
 

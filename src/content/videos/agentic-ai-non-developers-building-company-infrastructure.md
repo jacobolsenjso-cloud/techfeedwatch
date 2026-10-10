@@ -37,7 +37,12 @@ While a human might use AI for a few hours a day, an agentic system can operate 
 
 ## From Interactive AI to Autonomous Systems
 
-The distinction between simply using AI and employing agentic AI is fundamental. When someone uses AI, they are typically engaged in a continuous dialogue: asking questions, giving instructions, correcting outputs, and iterating until a satisfactory result is achieved.
+The distinction between simply using AI and employing agentic AI is fundamental. When someone uses AI, they are typically engaged in a continuous dialogue:
+
+- Asking questions
+- Giving instructions
+- Correcting outputs
+- Iterating until a satisfactory result is achieved
 
 This is akin to a human driving a car, constantly steering and adjusting. While effective for many tasks, this approach limits the AI's potential to the human's availability and capacity. An individual might spend only a few hours a day actively engaging with AI, even if their workday is much longer.
 

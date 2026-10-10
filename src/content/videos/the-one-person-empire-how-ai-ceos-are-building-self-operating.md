@@ -36,7 +36,12 @@ Below these heads, working agents—engineers, marketers, and researchers—exec
 
 ### Orchestrating AI Agents for Enhanced Productivity
 
-The primary advantage of agent orchestration systems, such as those built with an agent operating system (agent OS), is their ability to enable autonomous task execution. Once a goal is assigned to the team, agents autonomously wake up, check for open tasks, and commence work.
+The primary advantage of agent orchestration systems, such as those built with an agent operating system (agent OS), is their ability to enable autonomous task execution.
+
+Once a goal is assigned to the team, agents autonomously:
+- Wake up
+- Check for open tasks
+- Commence work
 
 For instance, a marketing agent within such a system has autonomously built a full two-week email sequence based solely on a given goal. This level of self-management contrasts sharply with traditional methods, where users must decide every single step.
 

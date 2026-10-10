@@ -47,7 +47,13 @@ A large challenge in managing digital life is keeping track of tasks spread acro
 
 Craft addresses this fragmentation with an "all tasks view." This feature brings every task from a user's entire setup into one complete list.
 
-This consolidated view integrates tasks related to various areas, such as professional projects, consulting work, and household management. It displays them alongside a user's calendar and documents, offering a complete picture.
+This consolidated view integrates tasks related to various areas such as:
+
+- Professional projects
+- Consulting work
+- Household management
+
+It displays them alongside a user's calendar and documents, offering a complete picture.
 
 Users can filter and sort this master list to understand what is urgent and what is coming up. This contextual view of tasks is a key benefit.
 

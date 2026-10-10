@@ -48,7 +48,14 @@ Next is the processing or thinking-reasoning component. At this stage, the agent
 
 A retrieval augmented generation (RAG) dataset can therefore feed data into this step to support the agent's decision-making. A critical policy component within this stage ensures the agent operates within defined rules, alongside a human in the loop for ultimate oversight.
 
-Finally, the outputs define the agent's actions, which might include calling various tools, invoking other APIs to trigger programs, writing to databases, or delegating responsibilities to yet another agent. This interconnectedness allows for complex workflows but also introduces significant points of failure if not properly secured.
+Finally, the outputs define the agent's actions, which might include:
+
+- Calling various tools
+- Invoking other APIs to trigger programs
+- Writing to databases
+- Delegating responsibilities to yet another agent
+
+This interconnectedness allows for complex workflows but also introduces significant points of failure if not properly secured.
 
 ## Autonomy: A Force Multiplier and a Risk Amplifier
 

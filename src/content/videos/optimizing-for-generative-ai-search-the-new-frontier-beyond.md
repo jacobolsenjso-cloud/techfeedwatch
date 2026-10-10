@@ -72,7 +72,13 @@ Businesses can use AI assistants to streamline and enhance their content optimiz
 
 The process typically begins with **integrating the AI assistant with [Google Search Console](/video/unlocking-organic-growth-your-essential-guide-to-google-s-seo-power/)**. This connection provides the AI with programmatic access to valuable site performance data, including what people search for to find the site, and which queries are not leading to discovery.
 
-Setting this up usually involves creating a Google Cloud project, enabling the necessary APIs, and establishing OAuth client access. This one-time setup allows the AI to pull data, run audits, monitor changes, and generate reports on an ongoing basis.
+Setting this up usually involves:
+
+- Creating a Google Cloud project
+- Enabling the necessary APIs
+- Establishing OAuth client access
+
+This one-time setup allows the AI to pull data, run audits, monitor changes, and generate reports on an ongoing basis.
 
 Once connected, the AI can perform a **full SEO and AEO audit** of a website. It crawls the site, identifies potential issues such as missing sitemaps, lack of dedicated "about me" pages, or slow loading times.
 

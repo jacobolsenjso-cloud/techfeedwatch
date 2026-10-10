@@ -45,7 +45,11 @@ The goal is to provide a solid starting point, enabling participants to grasp th
 
 ## Curriculum and Practical Application
 
-The typical curriculum of an AI postgraduate program begins with essential programming skills, such as using Python, installing necessary libraries, and working with Jupyter notebooks.
+The typical curriculum of an AI postgraduate program begins with essential programming skills such as:
+
+- Using Python
+- Installing necessary libraries
+- Working with Jupyter notebooks
 
 This foundational training ensures that all participants, regardless of their initial technical proficiency, can engage with the material. While these initial steps might not seem as exciting as advanced AI topics, they are essential for building a strong base.
 

@@ -42,7 +42,13 @@ This means packing powerful processors, advanced optics, and long-lasting batter
 
 ## Meta Orion: A Tethered Path to Refinement
 
-Meta's Orion project exemplifies a highly refined, if tethered, approach to AR. This system consists of three main components: the glasses themselves, a wireless compute puck that must remain within about 15 feet of the glasses, and an electromyography (EMG) wristband. The wristband is a standout innovation, measuring electrical impulses from the brain as they travel to the fingers.
+Meta's Orion project exemplifies a highly refined, if tethered, approach to AR. This system consists of three main components:
+
+- The glasses themselves
+- A wireless compute puck that must remain within about 15 feet of the glasses
+- An electromyography (EMG) wristband
+
+The wristband is a standout innovation, measuring electrical impulses from the brain as they travel to the fingers.
 
 This allows for subtle, intuitive gestures to control the AR interface, even if the hand is out of sight. The prototype achieved about 80% accuracy with haptic feedback, suggesting a high potential for future development, possibly even enabling mid-air handwriting for text input.
 

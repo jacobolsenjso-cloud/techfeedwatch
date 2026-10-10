@@ -84,4 +84,10 @@ The reality is that someone with fewer technical skills but a superior applicati
 
 As professionals advance, opportunities for further specialization and higher-level certifications emerge, including CySA+, CASP, OSCP, PenTest, and Linux+. The field demands continuous learning to stay ahead of evolving threats and technologies. Understanding [How Much Does Cybersecurity Pay and Career Outlook](/video/how-much-does-cybersecurity-pay-and-career-outlook) can provide context for future career planning.
 
-Ultimately, while the path to a cybersecurity job is not without its challenges, it is fundamentally "simple" in its requirements: follow a structured learning path, gain hands-on experience, and apply strategically. The only truly detrimental action is to not begin the journey at all.
+Ultimately, while the path to a cybersecurity job is not without its challenges, it is fundamentally "simple" in its requirements:
+
+- Follow a structured learning path
+- Gain hands-on experience
+- Apply strategically
+
+The only truly detrimental action is to not begin the journey at all.

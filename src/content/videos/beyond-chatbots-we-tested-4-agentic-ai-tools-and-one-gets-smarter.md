@@ -79,7 +79,13 @@ Some projects are simply too large or complex for a single agent to handle effec
 
 Instead of relying on one assistant, these tools allow users to set up an entire team of agents, each assigned a specific role, a clear goal, and even an individual spending limit. These agents then collaborate, passing work from one to the next in a structured chain.
 
-For example, to produce an article, a team might consist of a researcher agent to gather facts, a writer agent to draft the content, and a reviewer agent to tighten the prose and verify claims. The system orchestrates this workflow, with each agent picking up where the last left off, ultimately delivering a finished article that is coherent and fact-checked.
+For example, to produce an article, a team might consist of:
+
+- A researcher agent to gather facts
+- A writer agent to draft the content
+- A reviewer agent to tighten the prose and verify claims
+
+The system orchestrates this workflow, with each agent picking up where the last left off, ultimately delivering a finished article that is coherent and fact-checked.
 
 This approach is akin to managing a human team, making it suitable for multi-step jobs like compiling market reports, processing batches of customer requests, or executing outreach campaigns where one agent identifies leads and another crafts messages.
 

@@ -38,7 +38,13 @@ At its core, this capability relies on real-time Simultaneous Localization and M
 
 For a virtual object to appear fixed in your environment, an AR device must understand its own position and the layout of the physical space around it. The first step in this process is feature point tracking. An AR camera scans the environment and identifies hundreds of small, distinctive visual spots.
 
-These "feature points" act as landmarks. Examples include the corner of a book, a small scuff on the floor, or the edge of a mug. These points are unique enough for the device to recognize them again later.
+These "feature points" act as landmarks. Examples include:
+
+- The corner of a book
+- A small scuff on the floor
+- The edge of a mug
+
+These points are unique enough for the device to recognize them again later.
 
 The device remembers the exact position of each feature point relative to the others. As you move your head or phone, the camera observes how these landmarks shift within its view.
 

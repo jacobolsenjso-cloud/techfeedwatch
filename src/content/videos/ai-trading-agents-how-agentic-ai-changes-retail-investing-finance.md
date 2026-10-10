@@ -40,7 +40,12 @@ In such scenarios, the AI provides detailed recommendations, but the human inves
 
 However, the industry is now progressing beyond this research-centric model towards a more agentic future. The focus is shifting from AI that merely offers investment ideas to AI capable of taking direct action on an investor's behalf.
 
-This next generation of [AI agents](/video/ai-agent-extension-mcp-vs-skills-for-llm-performance/) is being integrated directly into financial applications and brokerage platforms, allowing users to define their financial circumstances, such as their age of 45, having three children, their specific risk tolerance, and desired investment goals.
+This next generation of [AI agents](/video/ai-agent-extension-mcp-vs-skills-for-llm-performance/) is being integrated directly into financial applications and brokerage platforms, allowing users to define their financial circumstances such as:
+
+- Their age of 45
+- Having three children
+- Their specific risk tolerance
+- Desired investment goals
 
 These agents are then tasked with employing a range of strategies, from real-time tax loss harvesting and portfolio rebalancing to utilizing options overlays for income generation or to capitalize on market volatility. This represents a significant leap towards automated, personalized financial management.
 

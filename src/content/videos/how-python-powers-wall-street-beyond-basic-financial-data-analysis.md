@@ -36,7 +36,11 @@ This low learning curve allows financial analysts and data scientists, even thos
 
 Its design facilitates "complex calculations and handle diverse activities," making it ideal for the predictive modeling and quantitative analysis critical in finance. The language is well-equipped with libraries for neural system experimentation, enabling sophisticated forecasting and pattern recognition vital for market analysis and risk management strategies. [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping)
 
-This adaptability means Python finds application in various critical financial functions. In investment banks, as the coding channel NeedCode points out, quantitative analysts and engineers use Python to build all kinds of models, predict returns, and evaluate risks associated with trading portfolios and investments.
+This adaptability means Python finds application in various critical financial functions. In investment banks, as the coding channel NeedCode points out, quantitative analysts and engineers use Python to:
+
+- Build all kinds of models
+- Predict returns
+- Evaluate risks associated with trading portfolios and investments
 
 Beyond traditional market data, engineers utilize Python to crawl financial news and to dig out user sentiments from social media platforms. This integration of new data sources, particularly from social media, significantly aids quantitative analysts in enhancing the performance of their predictive models by capturing real-time public opinion and market sentiment.
 

@@ -47,7 +47,11 @@ At first, machine learning models simply autocompleted basic functions, then pro
 
 This technological leap directly targets junior-level implementation work. When an automated agent generates boilerplate scaffolding in seconds, companies no longer need armies of entry-level coders to assemble standard interfaces. As Let's Get Rusty points out, for a large portion of people, it is too late to rely on the easy path that worked 5 years ago.
 
-The question of whether it is too late to enter software development now stems from three central anxieties: the fear that automated models will swallow all developer roles, the dread of an unforgiving and saturated job market, and the panic of studying technical frameworks that could become completely obsolete in a year.
+The question of whether it is too late to enter software development now stems from three central anxieties:
+
+- The fear that automated models will swallow all developer roles
+- The dread of an unforgiving and saturated job market
+- The panic of studying technical frameworks that could become completely obsolete in a year
 
 Yet this anxiety mistakes syntax production for actual engineering. Writing lines of code represents only a fraction of what professional software engineering entails.
 

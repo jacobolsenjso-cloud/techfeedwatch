@@ -69,7 +69,12 @@ Users "tip" miners a small amount of BTC to prioritize their transactions for in
 
 The block reward is a key component of Bitcoin's monetary policy. When the Bitcoin blockchain launched, the reward for each new block was 50 BTC. However, this reward is periodically cut in half through an event called "halving."
 
-This occurs every 210,000 blocks, which works out to approximately every 4 years. For example, the reward was halved to 25 BTC in 2012, then to 12.5 BTC in 2016, 6.25 BTC in 2020, and 3.125 BTC in 2024.
+This occurs every 210,000 blocks, which works out to approximately every 4 years. For example, the reward was halved to:
+
+- 25 BTC in 2012
+- 12.5 BTC in 2016
+- 6.25 BTC in 2020
+- 3.125 BTC in 2024
 
 The next halving is expected around 2028, reducing the reward further to just over 1.5 BTC. These halvings will continue until the last BTC is mined, estimated to be around 2140.
 

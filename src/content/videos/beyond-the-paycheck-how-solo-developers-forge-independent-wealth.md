@@ -79,7 +79,12 @@ This involves strategically reaching potential users where they are, offering va
 
 Monetization typically involves integrating payment APIs, with Stripe being a popular choice for its ease of use in handling transactions. Offering a free trial or a set number of free tokens, such as "100 free tokens" to get started, can encourage users to try the application before committing financially.
 
-When a user makes a payment, services like Firebase Cloud Functions can handle the backend logic, generating checkout sessions, processing webhooks from the payment provider, updating user accounts with purchased tokens, and sending transactional emails for order confirmation.
+When a user makes a payment, services like Firebase Cloud Functions can handle the backend logic:
+
+- Generating checkout sessions
+- Processing webhooks from the payment provider
+- Updating user accounts with purchased tokens
+- Sending transactional emails for order confirmation
 
 Determining the right price for a product is a strategic decision. One common approach, sometimes referred to as the "versel strategy" in business, involves calculating the cost of providing the service and then applying a markup.
 

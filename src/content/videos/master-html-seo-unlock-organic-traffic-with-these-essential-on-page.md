@@ -52,7 +52,13 @@ Understanding [How SEO Optimization Works Today](/video/seo-optimization-explain
 
 **Image optimization techniques** also play a significant role. Images are integral to most webpages, but they can slow down loading times if not handled correctly.
 
-Techniques include compressing image files to reduce their size without compromising quality, specifying image dimensions, and using descriptive alt attributes. The alt attribute provides text alternatives for images, which is vital for accessibility tools used by visually impaired users.
+Techniques include:
+
+- Compressing image files to reduce their size without compromising quality
+- Specifying image dimensions
+- Using descriptive alt attributes
+
+The alt attribute provides text alternatives for images, which is vital for accessibility tools used by visually impaired users.
 
 It also helps search engines understand the image's content, which can improve visibility in image search results and contribute to overall page relevance. Faster loading pages, driven by efficient image handling, also enhance user experience, a critical factor for [What User Experience Means for Modern SEO Rankings](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates) and search engine algorithms.
 

@@ -73,7 +73,13 @@ While they can be faster for certain problems, they are not general-purpose mach
 
 The reality is that building scalable, stable, and fault-tolerant quantum computers is an engineering marathon, not a sprint. The current NISQ devices are valuable for experimentation and developing algorithms, but they are not yet capable of solving real-world problems that classical computers cannot handle efficiently.
 
-The cost of developing quantum computing technology is staggering, encompassing cryogenic infrastructure, advanced chip fabrication, and specialized control electronics. For end-users, accessing quantum computing often means through cloud services, where costs are typically based on usage, similar to other high-performance computing resources. However, the direct operational costs for companies building and maintaining these systems are astronomical.
+The cost of developing quantum computing technology is staggering, encompassing:
+
+- Cryogenic infrastructure
+- Advanced chip fabrication
+- Specialized control electronics
+
+For end-users, accessing quantum computing often means through cloud services, where costs are typically based on usage, similar to other high-performance computing resources. However, the direct operational costs for companies building and maintaining these systems are astronomical.
 
 This high barrier to entry explains why public funding and institutional investment are so critical. The Nasdaq listing of a company like IQM signifies not a sudden arrival of commercial maturity, but rather an institutional acceptance that this technology warrants long-term, public capital investment.
 

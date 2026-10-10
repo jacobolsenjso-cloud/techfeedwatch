@@ -73,7 +73,13 @@ While they can offer opportunities for returns, they also carry large risk, maki
 
 Institutional players are not just observing the crypto space; they are actively building and acquiring the underlying infrastructure necessary for its long-term growth.
 
-This includes investing in exchanges, trading venues, and technology platforms that support digital asset transactions. For example, some firms have acquired established global crypto exchanges, such as Bitstamp, to expand their abilities in the digital asset trading space.
+This includes investing in:
+
+- Exchanges
+- Trading venues
+- Technology platforms that support digital asset transactions
+
+For example, some firms have acquired established global crypto exchanges, such as Bitstamp, to expand their abilities in the digital asset trading space.
 
 Also, joint ventures are forming to create new derivatives and prediction markets venues, like Rothera. These developments aim to create a more strong and competitive environment for digital asset trading. The strategy is often to route customer orders to whichever exchange offers the best pricing, whether it is an internally owned entity or an external competitor.
 

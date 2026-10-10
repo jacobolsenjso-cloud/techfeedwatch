@@ -40,7 +40,12 @@ Augmented reality technology is rapidly evolving, pushing the boundaries of how 
 
 From compact clip-on devices to full-fledged screenless computing concepts, the industry is exploring diverse form factors and interaction methods, aiming to make AR as ubiquitous as the smartphone.
 
-Key hardware elements in AR include micro-displays, optical systems, sensors for tracking and environmental understanding, and compact processing units.
+Key hardware elements in AR include:
+
+- Micro-displays
+- Optical systems
+- Sensors for tracking and environmental understanding
+- Compact processing units
 
 These physical components are brought to life by software that renders digital content, overlays it onto the real world, interprets user input, and manages connectivity. The interplay between these elements determines the user experience, dictating factors like visual clarity, field of view, and responsiveness.
 

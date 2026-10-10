@@ -54,7 +54,14 @@ This "shiny object syndrome" provides plenty to do but diverts focus from the es
 
 An AI second brain operates by creating a structured environment where approved information is not just stored, but intelligently managed for retrieval.
 
-When a user queries the system for a specific marketing direction for an e-commerce brand, for instance, it can return a comprehensive set of materials. This might include the approved agency strategy, a detailed brand profile, specific voice guidance, current offers, audience information, and relevant campaign materials.
+When a user queries the system for a specific marketing direction for an e-commerce brand, for instance, it can return a comprehensive set of materials. This might include:
+
+- The approved agency strategy
+- A detailed brand profile
+- Specific voice guidance
+- Current offers
+- Audience information
+- Relevant campaign materials
 
 The system's intelligence lies not just in retrieval, but also in its ability to differentiate between various types of information. It can surface material that is still considered reference-only or requires further review, rather than presenting it as an established, approved fact.
 

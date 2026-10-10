@@ -35,7 +35,13 @@ This approach can lead to major user experience issues, particularly account fre
 
 ## The Appeal and Pitfalls of Digital-First Banking
 
-Virtual banks have gained popularity for their ease of use, mobile-first interfaces, and often lower fees. They attract users with promises of modern banking without the overheads of traditional institutions.
+Virtual banks have gained popularity for their:
+
+- Ease of use
+- Mobile-first interfaces
+- Often lower fees
+
+They attract users with promises of modern banking without the overheads of traditional institutions.
 
 This model relies heavily on digital processes and automation. While efficient for routine transactions, it introduces vulnerabilities when complex issues arise. A common and distressing problem for users is the sudden freezing of their accounts.
 

@@ -35,7 +35,13 @@ Large Language Models (LLMs) like ChatGPT primarily generate human-like text. Th
 
 It does this based on statistical patterns. These patterns are learned from a vast dataset, such as a trillion words of text written by humans on the web. This process is akin to continuing a pattern, drawing from what has already been said.
 
-In contrast, deep computational systems, exemplified by Wolfram Alpha and Wolfram Language, aim for deep and broad computation. These systems are built on formal structures, mathematics, and systematic knowledge accumulated by civilization. Their goal is to compute new answers, not merely to echo existing text.
+In contrast, deep computational systems, exemplified by Wolfram Alpha and Wolfram Language, aim for deep and broad computation. These systems are built on:
+
+- Formal structures
+- Mathematics
+- Systematic knowledge accumulated by civilization
+
+Their goal is to compute new answers, not merely to echo existing text.
 
 They perform arbitrarily deep computations. This allows them to derive facts that may never have been explicitly stated or computed before. The distinction is fundamental: LLMs focus on the statistics of human-produced language.
 

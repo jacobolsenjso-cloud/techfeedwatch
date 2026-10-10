@@ -63,7 +63,13 @@ Personalized learning is another key area, as AI tutors evolve alongside student
 
 Intelligent systems are transforming how cities operate, ranging from managing resources to constructing new facilities. Autonomous everything refers to AI-managed systems taking over complex operations. Examples include drones performing inspections or entire urban infrastructures running on smart algorithms.
 
-This covers traffic management, waste collection, and public safety. Digital twins are virtual replicas of entire cities, allowing for simulation and perfection of urban planning and management. These digital models help city planners test changes and predict outcomes before implementing them in the physical world.
+This covers:
+
+- Traffic management
+- Waste collection
+- Public safety
+
+Digital twins are virtual replicas of entire cities, allowing for simulation and perfection of urban planning and management. These digital models help city planners test changes and predict outcomes before implementing them in the physical world.
 
 Material science contributes to this evolution, with innovations like graphene and self-healing matter revolutionizing construction and maintenance. They lead to more durable and sustainable buildings and infrastructure. Sustainable technology is also a major focus, as AI optimizes energy consumption and supports carbon capture initiatives.
 

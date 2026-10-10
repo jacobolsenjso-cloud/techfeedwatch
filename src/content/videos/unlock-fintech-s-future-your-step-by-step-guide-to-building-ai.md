@@ -54,7 +54,14 @@ An AI assistant embedded within the app can help users with transfers, account m
 
 These enhancements extend beyond customer-facing applications. The administrative back-end of an AI-powered FinTech platform gains substantial capabilities. An admin panel equipped with AI insights can deliver forecasts for the next 6 months, offering projections for revenue growth, payment volumes, and user churn trends.
 
-This AI also provides business recommendations and highlights key metrics like revenue performance and transaction health. An AI control center allows administrators to monitor active AI models, track their fraud detection accuracy, view daily prediction totals, and manage ongoing model training jobs. This granular control over AI system behavior ensures optimal efficiency and continuous improvement.
+This AI also provides business recommendations and highlights key metrics like revenue performance and transaction health. An AI control center allows administrators to:
+
+- Monitor active AI models
+- Track their fraud detection accuracy
+- View daily prediction totals
+- Manage ongoing model training jobs
+
+This granular control over AI system behavior ensures optimal efficiency and continuous improvement.
 
 ## How AI expands market reach and pressures traditional banks
 

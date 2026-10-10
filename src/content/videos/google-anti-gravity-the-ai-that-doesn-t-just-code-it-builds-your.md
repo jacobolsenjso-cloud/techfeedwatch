@@ -99,4 +99,10 @@ It is important to treat every agent response as a draft, not an expectation of 
 
 Effective workspace organization is also critical. If workspaces are unclear or improperly scoped, it becomes difficult to track agent responsibilities, potentially leading to conflicts when multiple agents operate in parallel. By carefully structuring workspaces and managing permissions, developers can maintain control and ensure smooth coordination.
 
-Ultimately, mastering Antigravity involves understanding its agent architecture, leveraging its parallel processing and integrated browser functionalities, and embracing a new role as a strategic director who guides and verifies AI-driven outcomes, rather than a direct coder. This shift allows developers to harness the full power of autonomous development, leading to significantly more efficient and scalable project delivery.
+Ultimately, mastering Antigravity involves:
+
+- Understanding its agent architecture
+- Leveraging its parallel processing and integrated browser functionalities
+- Embracing a new role as a strategic director who guides and verifies AI-driven outcomes, rather than a direct coder
+
+This shift allows developers to harness the full power of autonomous development, leading to significantly more efficient and scalable project delivery.

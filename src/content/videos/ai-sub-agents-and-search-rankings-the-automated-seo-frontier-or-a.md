@@ -54,7 +54,11 @@ The integration of human oversight and strategic editing ensures that AI-generat
 
 Beyond automating content production, AI's profound impact on SEO extends to how search engines themselves function and how users interact with search results.
 
-The rise of AI search engines like Perplexity, alongside Google’s evolving AI-driven features, means SEO is no longer solely about ranking web pages. It is increasingly about optimizing for direct answers, summarized content, and nuanced user queries that reflect natural language processing capabilities.
+The rise of AI search engines like Perplexity, alongside Google’s evolving AI-driven features, means SEO is no longer solely about ranking web pages. It is increasingly about optimizing for:
+
+- Direct answers
+- Summarized content
+- Nuanced user queries that reflect natural language processing capabilities
 
 Traditional SEO focused on keywords and backlinks for Google. While these remain relevant, the emphasis now expands to optimizing for different forms of content consumption, especially those favored by AI models.
 

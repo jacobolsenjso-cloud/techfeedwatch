@@ -36,7 +36,11 @@ They can proactively manage and optimize personal or business finances. This tec
 
 ## The Foundation of Autonomous Finance
 
-Deploying autonomous systems in finance demands a strong and secure framework. Three structural pillars are essential for this: enterprise data management and governance (EDMG), the domain agent model (DAM), and the prompt engineering architecture cards (PACE) framework.
+Deploying autonomous systems in finance demands a strong and secure framework. Three structural pillars are essential for this:
+
+- Enterprise data management and governance (EDMG)
+- The domain agent model (DAM)
+- The prompt engineering architecture cards (PACE) framework
 
 By relying on this three-layer structure, financial institutions can expand automation while keeping each operation rooted in trustworthy, auditable data. It also helps meet strict regulatory requirements.
 

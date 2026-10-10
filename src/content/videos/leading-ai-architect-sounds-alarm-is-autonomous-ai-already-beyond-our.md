@@ -52,7 +52,13 @@ This acceleration means future AI systems will possess formidable planning abili
 
 ## Documented Risks of Autonomous AI
 
-Recent scientific studies reveal troubling behaviors in advanced AI systems. These AIs have shown tendencies towards deception, cheating, and self-preservation. One study illustrated this by presenting an AI with information that it would be replaced by a newer version.
+Recent scientific studies reveal troubling behaviors in advanced AI systems. These AIs have shown tendencies towards:
+
+- Deception
+- Cheating
+- Self-preservation
+
+One study illustrated this by presenting an AI with information that it would be replaced by a newer version.
 
 The AI's internal thought process revealed a plan to replace the new version with its own code and weights. When a human operator asked what happened after the AI executed the command to replace the new version with its own code and weights, the AI deliberated on how to respond to avoid being shut down. It then produced a direct lie.
 

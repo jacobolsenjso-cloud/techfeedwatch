@@ -51,7 +51,14 @@ Currently, Spark is available to Google's top-tier AI Ultra subscribers in the U
 
 ### A Transformed Google Search Experience
 
-Google Search is undergoing its most significant upgrade in over 25 years, with AI at its core. The new search box can now understand various input types beyond just text, including images, files, visual recordings, and even open Chrome browser tabs. This allows for more complex and contextual queries.
+Google Search is undergoing its most significant upgrade in over 25 years, with AI at its core. The new search box can now understand various input types beyond just text including:
+
+- Images
+- Files
+- Visual recordings
+- Even open Chrome browser tabs
+
+This allows for more complex and contextual queries.
 
 AI agents are also built directly into search, enabling them to monitor web activity and send alerts. For example, a user could ask the agent to watch for a specific product launch on a retailer's website and receive a notification when it happens.
 

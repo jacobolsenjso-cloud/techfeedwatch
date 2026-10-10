@@ -31,7 +31,14 @@ Coding agents are autonomous software programs driven by large language models t
 
 At their core, coding agents combine natural language reasoning with direct environment execution. When a developer assigns a task, the agent does not merely output a block of disconnected text.
 
-It scans the directory tree, ingests relevant source files, builds a mental dependency graph, and creates an execution plan. Systems such as Claude Code and Codex interface directly with the operating system terminal, allowing them to draft changes across multiple files, run build scripts, and verify whether the code compiles properly.
+It:
+
+- Scans the directory tree
+- Ingests relevant source files
+- Builds a mental dependency graph
+- Creates an execution plan
+
+Systems such as Claude Code and Codex interface directly with the operating system terminal, allowing them to draft changes across multiple files, run build scripts, and verify whether the code compiles properly.
 
 This iterative feedback loop transforms basic language generation into reliable system modification. As [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) illustrates, providing language models with execution runtimes shifts artificial intelligence from a passive conversationalist into an active collaborator.
 

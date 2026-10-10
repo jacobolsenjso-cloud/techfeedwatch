@@ -34,7 +34,14 @@ Aaron argues that we have reached a critical turning point where agents are repl
 
 This profound change is largely driven by a projected explosion in agent numbers. According to a recent post by Aaron on X, the number of agents operating across digital systems could soon outnumber human users by 100x to 1,000x, demanding a comprehensive reassessment and fundamental transformation of software development and deployment.
 
-Adapting Paul Graham's maxim, developers must now pivot to "make something agents want," ensuring systems offer API-first design, structured data, tidy codebases, and current documentation so agents can operate effectively. Agents do not attend webinars or respond to outbound emails; they identify effective tools and integrate them directly.
+Adapting Paul Graham's maxim, developers must now pivot to "make something agents want," ensuring systems offer:
+
+- API-first design
+- Structured data
+- Tidy codebases
+- Current documentation so agents can operate effectively
+
+Agents do not attend webinars or respond to outbound emails; they identify effective tools and integrate them directly.
 
 The internet’s adaptation is unfolding unevenly across sectors. Business-to-business (B2B) companies, like Box, are ahead, having already released command-line interfaces (CLIs) that work well for agents and developed APIs for integration. This contrasts sharply with the consumer side, which faces significant challenges.
 

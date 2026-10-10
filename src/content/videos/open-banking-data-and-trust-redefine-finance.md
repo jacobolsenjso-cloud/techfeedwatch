@@ -77,7 +77,11 @@ It suggests a future where any personal data, from health records to digital ide
 
 ## The Path Forward: Advocacy and Standardization
 
-The widespread adoption and success of open banking depend on continued advocacy and the establishment of clear standards. Advocacy groups play a vital role in bringing together various parts of the ecosystem. These include financial institutions, FinTechs, and consumers.
+The widespread adoption and success of open banking depend on continued advocacy and the establishment of clear standards. Advocacy groups play a vital role in bringing together various parts of the ecosystem. These include:
+
+- Financial institutions
+- FinTechs
+- Consumers
 
 They champion the benefits of data rights. Their efforts help drive policies that ensure consumers and SMEs truly gain from the ability to share their financial information. These groups work to ensure that the regulatory framework supports secure, structured, and consent-driven data portability.
 

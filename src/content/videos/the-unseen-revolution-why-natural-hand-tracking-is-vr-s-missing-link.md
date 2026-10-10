@@ -58,7 +58,13 @@ The algorithm essentially builds a digital model of the user's hand within the v
 
 This allows it to reconstruct the hand's pose with high fidelity. The system translates these real-world physical gestures into corresponding actions in the virtual world.
 
-This process is complex. It involves understanding depth, recognizing shapes, and predicting movement. The goal is to create a virtual representation that precisely mimics the user's actual hand movements.
+This process is complex. It involves:
+
+- Understanding depth
+- Recognizing shapes
+- Predicting movement
+
+The goal is to create a virtual representation that precisely mimics the user's actual hand movements.
 
 ## Essential Qualities of Effective Hand Tracking
 

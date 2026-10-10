@@ -82,7 +82,13 @@ Such vulnerabilities emphasize the need for solid security measures, including m
 
 ## Future developments in decentralized and secure oracle networks
 
-The evolution of blockchain oracles will largely focus on enhancing decentralization, security, and the variety of data sources. Future developments are likely to see more sophisticated decentralized oracle networks that distribute the responsibility of data fetching and validation across many independent nodes, minimizing the risk of a single point of failure or manipulation.
+The evolution of blockchain oracles will largely focus on enhancing:
+
+- Decentralization
+- Security
+- The variety of data sources
+
+Future developments are likely to see more sophisticated decentralized oracle networks that distribute the responsibility of data fetching and validation across many independent nodes, minimizing the risk of a single point of failure or manipulation.
 
 Projects like Chainlink are actively working on these solutions, leveraging a network of decentralized oracles to provide reliable data feeds.
 

@@ -63,7 +63,14 @@ A common mistake observed in this new environment is a "mismatch in intent." Man
 
 For example, a service page for a doctor might begin with a 200-word introduction to the doctor's credentials before discussing the actual services offered. This type of content is often ignored by the AI Overview for service-related searches because it fails to provide a direct, service-oriented answer.
 
-Effective AEO for service pages requires a clear focus on the service itself. Content should plainly state what the service is, why it is beneficial, how a user can get started, and what the process might involve. This direct, service-centric approach helps the AI understand the page's purpose and increases its likelihood of being cited for relevant service queries.
+Effective AEO for service pages requires a clear focus on the service itself. Content should plainly state:
+
+- What the service is
+- Why it is beneficial
+- How a user can get started
+- What the process might involve
+
+This direct, service-centric approach helps the AI understand the page's purpose and increases its likelihood of being cited for relevant service queries.
 
 ## The Early Adopter Advantage
 

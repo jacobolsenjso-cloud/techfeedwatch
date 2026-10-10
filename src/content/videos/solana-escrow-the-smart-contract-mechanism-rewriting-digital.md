@@ -45,7 +45,13 @@ This pattern is foundational to many decentralized applications. Decentralized e
 
 NFT marketplaces rely on it to hold digital assets until payment clears. Freelance platforms can also implement escrow, which protects both clients and contractors by releasing payment only upon satisfactory work completion.
 
-The process typically involves three main instructions: a "make" instruction, a "take" instruction, and a "refund" instruction. A "make" instruction allows one party, the maker, to create an escrow by depositing tokens into a secure vault and specifying what they wish to receive.
+The process typically involves three main instructions:
+
+- A "make" instruction
+- A "take" instruction
+- A "refund" instruction
+
+A "make" instruction allows one party, the maker, to create an escrow by depositing tokens into a secure vault and specifying what they wish to receive.
 
 A "take" instruction enables another party to accept these terms and send the requested tokens. The smart contract automatically helps the exchange, releasing tokens from the vault. Should the maker change their mind before the "take" instruction executes, a "refund" instruction allows them to cancel the escrow and reclaim their deposited tokens.
 

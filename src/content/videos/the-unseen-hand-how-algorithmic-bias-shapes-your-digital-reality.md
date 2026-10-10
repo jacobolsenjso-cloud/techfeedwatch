@@ -102,6 +102,10 @@ Developers and platform operators must acknowledge their own biases and take res
 
 The challenge is to move beyond the illusion of pure objectivity. Instead, we must foster greater digital literacy among users.
 
-People need to approach online information with a critical perspective, understanding that search results are curated, not simply discovered. This critical approach involves questioning sources, recognizing potential biases, and seeking diverse viewpoints.
+People need to approach online information with a critical perspective, understanding that search results are curated, not simply discovered. This critical approach involves:
+
+- Questioning sources
+- Recognizing potential biases
+- Seeking diverse viewpoints
 
 In the end, bridging the gap between humanity and technology means ensuring that the tools we create serve broader societal good, rather than inadvertently amplifying existing biases or allowing subjective judgments to dictate what constitutes "truth" online. The goal is not to eliminate all human influence, which is impossible, but to manage it transparently and responsibly.

@@ -30,7 +30,11 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-The cryptocurrency and blockchain sector is moving beyond its initial speculative phase. It now focuses on building foundational technology and creating practical applications. This evolution is driven by large advancements in underlying infrastructure, large reductions in transaction costs, and increasing clarity in regulation.
+The cryptocurrency and blockchain sector is moving beyond its initial speculative phase. It now focuses on building foundational technology and creating practical applications. This evolution is driven by:
+
+- Large advancements in underlying infrastructure
+- Large reductions in transaction costs
+- Increasing clarity in regulation
 
 ## Maturing Infrastructure and Cost Reduction
 

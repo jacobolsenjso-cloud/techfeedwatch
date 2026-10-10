@@ -30,7 +30,14 @@ faqs:
 
 Applying the NIST Cybersecurity Framework (CSF) involves systematically integrating its principles and practices into an organization's operations to manage and reduce digital risk. This framework offers a flexible, structured method for companies, especially [Small Business] and [SMBs] without extensive security teams, to improve their cyber defenses through a proactive approach that covers strategy, incident response, and recovery.
 
-The NIST CSF 2.0 serves as a voluntary guideline, making it accessible even for those with [no security background needed] to begin. It breaks down cybersecurity management into [six functions]: Govern, Identify, Protect, Detect, Respond, and Recover.
+The NIST CSF 2.0 serves as a voluntary guideline, making it accessible even for those with [no security background needed] to begin. It breaks down cybersecurity management into [six functions]:
+
+- Govern
+- Identify
+- Protect
+- Detect
+- Respond
+- Recover
 
 These functions outline the complete lifecycle of cybersecurity risk management, providing a common language and a systematic approach to assess, address, and monitor an organization's security posture. For example, "Govern" establishes the overarching cybersecurity strategy and policy, ensuring alignment with business objectives and risk appetite.
 

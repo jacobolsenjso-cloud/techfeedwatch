@@ -88,7 +88,13 @@ Businesses can proactively generate these mentions by creating their own content
 
 ## Measuring Your Generative Engine Optimization Efforts
 
-To ensure your GEO strategies are effective, it's essential to track their impact. The primary metric for GEO is **referral traffic from LLMs** such as ChatGPT, Claude, or Gemini. This data can typically be found within web analytics platforms like Google Analytics.
+To ensure your GEO strategies are effective, it's essential to track their impact. The primary metric for GEO is **referral traffic from LLMs**:
+
+- ChatGPT
+- Claude
+- Gemini
+
+This data can typically be found within web analytics platforms like Google Analytics.
 
 However, handling complex analytics dashboards can be challenging for many. Modern AI tools offer a simplified approach to tracking these metrics. By connecting an LLM, such as Claude, to a tool like Zapier, and then integrating Zapier with Google Analytics, businesses can create a streamlined reporting system.
 

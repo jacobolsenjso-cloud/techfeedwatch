@@ -51,7 +51,11 @@ Attackers prioritize targeting users because it allows them to gain access to pl
 
 ## The Hidden Dangers of Public Wi-Fi
 
-One of the most common "convenience traps" that cybercriminals exploit is free public Wi-Fi. Whether you are in a cafe, airport, hotel, or restaurant, the offer of free internet access is often too tempting to resist. People prefer free Wi-Fi over paid data because it offers instant connection, uninterrupted browsing, and no immediate cost.
+One of the most common "convenience traps" that cybercriminals exploit is free public Wi-Fi. Whether you are in a cafe, airport, hotel, or restaurant, the offer of free internet access is often too tempting to resist. People prefer free Wi-Fi over paid data because it offers:
+
+- Instant connection
+- Uninterrupted browsing
+- No immediate cost
 
 Many users also feel secure seeing a "green tag" or lock icon, believing it means the connection is safe. However, this green tag only indicates that the connection is encrypted, not that the network itself is secure or trustworthy.
 

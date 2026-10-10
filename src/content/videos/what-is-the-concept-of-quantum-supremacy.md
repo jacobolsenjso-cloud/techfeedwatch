@@ -47,7 +47,11 @@ The industry expanded that benchmark in December 2024 with Google's Willow chip.
 
 Critically, Willow demonstrated hardware correcting errors faster than made, crossing an engineering threshold that previous demonstrations lacked. Even so, a fundamental fact remains throughout each of these achievements: no quantum system has yet surpassed a classical computer on a commercially viable, real-world task.
 
-These synthetic tasks confirm speed scaling, but engineers still need fault-tolerant commercial hardware before [what quantum computing companies are building now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) can solve everyday problems. True commercial utility will emerge only when systems target molecular modeling for solid-state batteries, drug discovery pipelines, and [quantum computing threats accelerate encryption breakdown](/video/quantum-computing-threats-to-current-encryption-explained) across global finance.
+These synthetic tasks confirm speed scaling, but engineers still need fault-tolerant commercial hardware before [what quantum computing companies are building now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) can solve everyday problems. True commercial utility will emerge only when systems target
+
+- Molecular modeling for solid-state batteries
+- Drug discovery pipelines
+- [quantum computing threats accelerate encryption breakdown](/video/quantum-computing-threats-to-current-encryption-explained) across global finance
 
 ## Why quantum supremacy is not yet a commercial reality
 

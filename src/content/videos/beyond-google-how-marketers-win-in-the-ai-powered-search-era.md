@@ -28,7 +28,11 @@ faqs:
     answer: "Absolutely. Tools and workflows that leverage AI can automate tasks like programmatic SEO, content generation with editorial guardrails, and hyper-personalization for marketing efforts."
 ---
 
-When someone asks what AI search engine optimization is called, the direct answer points to a new specialized vocabulary: Public Engine Optimization (PEO), Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO).
+When someone asks what AI search engine optimization is called, the direct answer points to a new specialized vocabulary:
+
+- Public Engine Optimization (PEO)
+- Answer Engine Optimization (AEO)
+- Generative Engine Optimization (GEO)
 
 As AI4NTP (AI 4 Non Techy People) points out, these terms emerged as the field of online information retrieval shifted from solely relying on traditional search engines to integrating large language models (LLMs) and AI-powered answers. This evolution requires marketers and content creators to understand distinct optimization strategies for various AI contexts, moving beyond conventional SEO frameworks.
 

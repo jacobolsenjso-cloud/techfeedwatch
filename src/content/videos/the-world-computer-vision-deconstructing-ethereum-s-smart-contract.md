@@ -86,7 +86,12 @@ The exception to this rule is dynamic data structures like mappings and arrays, 
 
 Function visibility is another important aspect of smart contract design, controlled by keywords like `public`, `private`, `external`, and `internal` in high-level languages like Solidity.
 
-These keywords dictate which entities can call a particular function. `Public` functions are accessible by anyone, including external accounts and other contracts. `Private` functions can only be called from within the contract itself. `Internal` functions are similar to private but can also be called by contracts that inherit from the current contract. `External` functions can only be called from outside the contract, not from other functions within the same contract.
+These keywords dictate which entities can call a particular function.
+
+- `Public` functions are accessible by anyone, including external accounts and other contracts.
+- `Private` functions can only be called from within the contract itself.
+- `Internal` functions are similar to private but can also be called by contracts that inherit from the current contract.
+- `External` functions can only be called from outside the contract, not from other functions within the same contract.
 
 Similar to function selectors, the EVM does not inherently understand these visibility modifiers. Instead, the compiler translates these visibility rules into the contract's bytecode. The resulting bytecode is structured in a way that enforces these access restrictions.
 

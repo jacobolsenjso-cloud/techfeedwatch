@@ -77,7 +77,11 @@ The insurance industry, a multi-trillion dollar sector, stands to gain significa
 
 Smart contracts can take this a step further by evaluating user data without directly sharing it with the insurance company. A smart contract can hold and assess the data according to policy terms, and the insurance company receives only the outcome of that evaluation, not the raw data itself.
 
-This solves a critical privacy trust issue, empowering individuals to provide data for better-tailored policies without compromising their personal information. This pattern of solving trust issues through autonomous, data-driven code is applicable across multi-trillion dollar industries such as global finance, global trade, and advertising networks.
+This solves a critical privacy trust issue, empowering individuals to provide data for better-tailored policies without compromising their personal information. This pattern of solving trust issues through autonomous, data-driven code is applicable across multi-trillion dollar industries such as:
+
+- Global finance
+- Global trade
+- Advertising networks
 
 ## Industry Transformation and Future Outlook
 

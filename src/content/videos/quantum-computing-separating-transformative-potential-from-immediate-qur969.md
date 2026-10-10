@@ -73,7 +73,13 @@ This connection is not a physical one; it's a basic property of their shared qua
 
 This concept, while sounding like science fiction, has been proven in research laboratories. It forms the basis of a future quantum internet. While such a network does not exist yet, research teams are actively working on developing new protocols for it.
 
-These include abilities like teleportation between users, efficient data transfer, and secure voting systems. The development of a quantum internet could basically change how information is shared and secured across vast distances.
+These include abilities like:
+
+- Teleportation between users
+- Efficient data transfer
+- Secure voting systems
+
+The development of a quantum internet could basically change how information is shared and secured across vast distances.
 
 ## Building the Quantum Future
 

@@ -47,7 +47,15 @@ Creators, defined as individuals whose personality is their brand and who use pl
 
 ## Blockchain's Promise: Eliminating Intermediaries
 
-A new internet, often referred to as Web3, is now on the horizon, built on radically different technologies, primarily the blockchain. This foundational technology underpins innovations like cryptocurrencies, social tokens, non-fungible tokens (NFTs), decentralized autonomous organizations (DAOs), and [smart contracts](/video/smart-contracts-demystified-how-to-investigate-blockchain-s-core-even/). The most significant aspect of blockchain is its ability to eliminate the need for intermediaries.
+A new internet, often referred to as Web3, is now on the horizon, built on radically different technologies, primarily the blockchain. This foundational technology underpins innovations like:
+
+- Cryptocurrencies
+- Social tokens
+- Non-fungible tokens (NFTs)
+- Decentralized autonomous organizations (DAOs)
+- [Smart contracts](/video/smart-contracts-demystified-how-to-investigate-blockchain-s-core-even/)
+
+The most significant aspect of blockchain is its ability to eliminate the need for intermediaries.
 
 Traditionally, when individuals place money in a bank, they trust that institution to hold and manage their funds. [Blockchain technology](/video/blockchain-s-silent-revolution-reshaping-global-commerce-beyond-banks/) allows for the direct holding of digital assets, such as cryptocurrency, without requiring a trusted third party like a bank.
 

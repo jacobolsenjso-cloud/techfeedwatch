@@ -56,7 +56,11 @@ Improvements, like those seen in FreeCAD MCP, continue to enhance the efficiency
 
 ## Designers and teams who benefit from generative AI
 
-Generative AI in product design is for anyone involved in creation, from architects and industrial designers to engineers and urban planners, who seek to accelerate their workflow, explore more innovative solutions, or optimize complex designs.
+Generative AI in product design is for anyone involved in creation, from architects and industrial designers to engineers and urban planners, who seek to:
+
+- Accelerate their workflow
+- Explore more innovative solutions
+- Optimize complex designs
 
 Teams grappling with tight deadlines, high iteration demands, or the need to consider numerous design constraints will find significant value. By offloading the initial concept generation and detail work, designers can focus on higher-level strategic decisions, creative direction, and client interaction.
 

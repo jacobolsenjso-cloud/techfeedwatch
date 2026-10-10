@@ -37,7 +37,13 @@ An SEO consultant emphasizes a "red flag" if "anyone says that they know the Goo
 
 Effective SEO centers on two key practices. The first, as the tech channel Peppermint iT Sip ‘n Solve explains, is keyword research. As host Louise pointed out, "You just explained the very first step of SEO, Louise, which is what we call keyword research."
 
-This initial step involves identifying the exact words and phrases potential customers use when searching for products or services. These "keyword examples" can range from "computer problem" and "computer help" to "managed services," "new computers," or "security."
+This initial step involves identifying the exact words and phrases potential customers use when searching for products or services. These "keyword examples" can range from:
+
+- "Computer problem"
+- "Computer help"
+- "Managed services"
+- "New computers"
+- "Security."
 
 Keyword research is "the first critical part of the project where you discover find out where all the popularity in terms of the terms are." The second critical practice is, as the source states, "to make sure that your website has those keywords on it."
 

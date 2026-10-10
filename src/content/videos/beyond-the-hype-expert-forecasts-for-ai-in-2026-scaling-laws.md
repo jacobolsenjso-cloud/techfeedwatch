@@ -61,7 +61,13 @@ However, this trend of increasing open model builders, particularly from China, 
 
 In the United States, the AI scene is dominated by major players like OpenAI, Google, and Anthropic, each with distinct strengths and strategies. OpenAI, with its ChatGPT, has established itself as a strong incumbent, benefiting from early market entry and user "muscle memory."
 
-Despite perceptions of operational chaos, OpenAI has consistently demonstrated an ability to land high-impact research ideas and products, such as Deep Research, Sora, and o1 thinking models. Its GPT-5 model, for instance, introduced a router feature that intelligently directs user queries to the most efficient model, potentially saving significant GPU costs for most users.
+Despite perceptions of operational chaos, OpenAI has consistently demonstrated an ability to land high-impact research ideas and products such as:
+
+- Deep Research
+- Sora
+- O1 thinking models
+
+Its GPT-5 model, for instance, introduced a router feature that intelligently directs user queries to the most efficient model, potentially saving significant GPU costs for most users.
 
 Google, with its Gemini models, is a formidable competitor. It leverages its immense scale and a more structured separation between research and product development.
 

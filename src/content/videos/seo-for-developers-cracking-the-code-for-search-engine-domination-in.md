@@ -62,7 +62,14 @@ Accessibility is also a vital component of good HTML structure. Images should in
 
 The `<head>` section of an HTML document contains metadata not directly visible to the end-user but essential for bots. The `<title>` tag is particularly important, as it appears in search engine results and directly influences the Click-Through Rate.
 
-Other `meta` tags define elements like the page description, featured image, author, and canonical URL. These meta tags are also vital for how content is displayed when shared on social media platforms, with tools like the Twitter Card Validator helping developers check their setup.
+Other `meta` tags define elements like:
+
+- The page description
+- Featured image
+- Author
+- Canonical URL
+
+These meta tags are also vital for how content is displayed when shared on social media platforms, with tools like the Twitter Card Validator helping developers check their setup.
 
 Structured data, often set up using Schema.org, provides additional metadata about the content on a page. While its direct impact on search ranking is sometimes debated, Schema.org makes it easier for search engines to interpret specific types of content, such as recipes or star reviews.
 

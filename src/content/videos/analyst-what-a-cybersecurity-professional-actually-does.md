@@ -71,7 +71,14 @@ Without specialization, analysts might find their career progression limited, pe
 
 The future of the Cybersecurity Analyst role will undoubtedly involve increasing automation and the integration of artificial intelligence (AI) to handle the sheer volume of alerts. Analysts will likely shift from purely reactive triage to more proactive threat hunting, forensic analysis, and security architecture review.
 
-Specialization will become even more critical, with paths leading to roles such as incident response specialist, security architect, penetration tester, or GRC (Governance, Risk, and Compliance) analyst. This journey often involves acquiring advanced certifications and honing specific technical or strategic skills.
+Specialization will become even more critical, with paths leading to roles such as:
+
+- Incident response specialist
+- Security architect
+- Penetration tester
+- GRC (Governance, Risk, and Compliance) analyst
+
+This journey often involves acquiring advanced certifications and honing specific technical or strategic skills.
 
 The career journey of an experienced professional, such as one with 27 years across 11 companies, demonstrates the varied opportunities and continuous adaptation required in this dynamic field, emphasizing the importance of long-term vision in cybersecurity careers. To truly excel, an analyst must embrace lifelong learning and proactive skill development.
 
