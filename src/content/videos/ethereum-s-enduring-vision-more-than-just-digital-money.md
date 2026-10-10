@@ -12,8 +12,8 @@ summary: "Ethereum is a decentralized, open-source blockchain network that suppo
 metaDescription: "Understand the Ethereum blockchain, its native ETH cryptocurrency, and how it powers decentralized applications, smart contracts, NFTs, and DeFi."
 targetQuestion: "what is ethereum and what is it used for"
 duration: "3:29"
-viewCount: 0
-viewsUpdated: "2026-09-12"
+viewCount: 1
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

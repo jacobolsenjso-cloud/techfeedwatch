@@ -12,8 +12,8 @@ summary: "Modern software development has shifted away from isolated, heads-down
 metaDescription: "Discover how software engineers work day to day, from triaging code reviews and remote pair programming to managing AI coding assistants."
 targetQuestion: "how do software engineers work"
 duration: "19:59"
-viewCount: 209068
-viewsUpdated: "2026-10-07"
+viewCount: 232994
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

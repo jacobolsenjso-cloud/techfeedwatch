@@ -12,8 +12,8 @@ summary: "Users can convert video to text locally without paying for cloud subsc
 metaDescription: "Can we convert video to text without fees? Learn how OpenAI Whisper transcribes video to text locally on Windows with zero cloud costs."
 targetQuestion: "can we convert video to text"
 duration: "9:38"
-viewCount: 151
-viewsUpdated: "2026-10-07"
+viewCount: 156
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

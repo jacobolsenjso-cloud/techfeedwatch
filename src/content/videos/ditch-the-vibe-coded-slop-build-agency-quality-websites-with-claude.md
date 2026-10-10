@@ -12,8 +12,8 @@ summary: "AI-generated websites often suffer from a generic 'slop' aesthetic, bu
 metaDescription: "Learn how to make Claude Code websites look better by applying strategic design principles."
 targetQuestion: "how to make claude code websites look better"
 duration: "16:05"
-viewCount: 51592
-viewsUpdated: "2026-10-07"
+viewCount: 52017
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

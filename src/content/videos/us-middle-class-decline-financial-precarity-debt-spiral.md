@@ -12,8 +12,8 @@ summary: "The US middle class is demonstrably shrinking, facing a convergence of
 metaDescription: "Discover why the US middle class is shrinking, with insights into stagnating incomes, rising costs, and declining savings."
 targetQuestion: "why is the us middle class shrinking"
 duration: "1:16:11"
-viewCount: 271057
-viewsUpdated: "2026-10-07"
+viewCount: 271076
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

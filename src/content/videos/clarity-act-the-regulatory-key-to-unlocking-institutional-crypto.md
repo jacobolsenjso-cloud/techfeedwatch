@@ -12,8 +12,8 @@ summary: "Tokenization represents the conversion of real-world assets into digit
 metaDescription: "Understand financial assets tokenization: how it works, why institutions are adopting it."
 targetQuestion: "what is tokenization of financial assets"
 duration: "14:52"
-viewCount: 15289
-viewsUpdated: "2026-10-07"
+viewCount: 15291
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

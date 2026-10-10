@@ -13,8 +13,8 @@ summary: "Mixed reality represents a fundamental shift in spatial computing wher
 metaDescription: "Learn what mixed reality means, how 6 degrees of freedom tracking works, and why spatial anchors allow digital objects to interact with real environments."
 targetQuestion: "what does mixed reality mean"
 duration: "4:33"
-viewCount: 72
-viewsUpdated: "2026-10-04"
+viewCount: 73
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "HTML tags are foundational elements that guide search engine algorithm
 metaDescription: "Understand how specific HTML tags, from titles to schema markup, directly impact your website's SEO rankings and search engine visibility."
 targetQuestion: "how do html tags affect seo"
 duration: "6:04"
-viewCount: 539
-viewsUpdated: "2026-10-07"
+viewCount: 545
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"

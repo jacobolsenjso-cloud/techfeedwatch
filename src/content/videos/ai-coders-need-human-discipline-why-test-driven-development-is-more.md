@@ -12,8 +12,8 @@ summary: "Test-Driven Development (TDD) AI integrates established TDD practices 
 metaDescription: "Explore Test Driven Development AI, understanding how TDD provides essential guardrails for autonomous AI coding agents to prevent bugs."
 targetQuestion: "what is tdd ai"
 duration: "14:17"
-viewCount: 12177
-viewsUpdated: "2026-10-07"
+viewCount: 12256
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

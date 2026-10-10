@@ -12,8 +12,8 @@ summary: "AI agents represent a powerful technological advancement, capable of a
 metaDescription: "Understand why cybersecurity matters for AI agents. Explore the unique vulnerabilities autonomous AI systems introduce and how to mitigate them."
 targetQuestion: "why cybersecurity matters"
 duration: "1:45:40"
-viewCount: 47235
-viewsUpdated: "2026-10-07"
+viewCount: 47854
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

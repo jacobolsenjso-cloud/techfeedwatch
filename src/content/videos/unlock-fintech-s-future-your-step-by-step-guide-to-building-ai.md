@@ -12,8 +12,8 @@ summary: "Artificial intelligence is reshaping the fintech industry by addressin
 metaDescription: "Discover how AI is changing fintech, enhancing fraud detection, compliance, and user personalization to open up new market opportunities."
 targetQuestion: "how is ai changing fintech"
 duration: "1:01:28"
-viewCount: 7853
-viewsUpdated: "2026-10-07"
+viewCount: 7956
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -12,8 +12,8 @@ summary: "Hard tech companies develop tangible, often complex physical products 
 metaDescription: "Understand hard tech companies: what they are, why they matter, and the unique challenges and opportunities in building physical products."
 targetQuestion: "what are hard tech companies"
 duration: "48:37"
-viewCount: 91681
-viewsUpdated: "2026-10-07"
+viewCount: 91859
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

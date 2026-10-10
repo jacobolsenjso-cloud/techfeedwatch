@@ -12,8 +12,8 @@ summary: "OpenAI removed Sora from consumer access following unsustainable infer
 metaDescription: "Wondering why Sora is no longer available? OpenAI shuttered the video generator due to runaway compute costs, poor user retention, and shifting priorities."
 targetQuestion: "why is sora no longer available"
 duration: "18:31"
-viewCount: 12
-viewsUpdated: "2026-10-08"
+viewCount: 14
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Coding agents are autonomous AI systems that parse entire software rep
 metaDescription: "Learn what coding agents are, how they handle source code to implement features, and why they change the economics of open-source software maintenance."
 targetQuestion: "what are coding agents"
 duration: "8:06"
-viewCount: 4745
-viewsUpdated: "2026-10-07"
+viewCount: 4753
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

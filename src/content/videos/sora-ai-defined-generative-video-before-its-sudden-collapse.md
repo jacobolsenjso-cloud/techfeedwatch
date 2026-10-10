@@ -12,8 +12,8 @@ summary: "Sora AI emerged as OpenAI's ambitious text-to-video diffusion model de
 metaDescription: "What is Sora AI? Explore OpenAI's text-to-video generator, its astronomical compute costs, legal challenges, and the factors behind its sudden shutdown."
 targetQuestion: "what is sora ai"
 duration: "5:29"
-viewCount: 7521
-viewsUpdated: "2026-10-07"
+viewCount: 7523
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

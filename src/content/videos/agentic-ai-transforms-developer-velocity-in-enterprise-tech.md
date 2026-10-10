@@ -11,8 +11,8 @@ tags:
 summary: "Agentic AI is fundamentally reshaping enterprise software development by embedding intelligent automation directly into platform workflows. This approach, often termed 'shifting down,' enhances developer velocity and operational efficiency, moving beyond traditional 'shifting left' practices. Businesses can significantly reduce onboarding times and accelerate DevOps troubleshooting through AI-driven capabilities, marking a significant evolution in how large organizations manage their tech stacks."
 metaDescription: "Agentic AI is fundamentally reshaping enterprise software development by embedding intelligent automation directly into platform workflows."
 duration: "5:49"
-viewCount: 1172
-viewsUpdated: "2026-10-07"
+viewCount: 1207
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 faqs:

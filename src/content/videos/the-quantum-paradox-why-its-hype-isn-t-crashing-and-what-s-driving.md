@@ -12,8 +12,8 @@ summary: "Investing in quantum computing today carries significant risk due to r
 metaDescription: "Understand the risks of quantum computing investment: why market hype outpaces practical breakthroughs and commercial viability today."
 targetQuestion: "is quantum computing a good investment"
 duration: "52:02"
-viewCount: 697219
-viewsUpdated: "2026-10-07"
+viewCount: 697339
+viewsUpdated: "2026-10-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"
