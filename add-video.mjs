@@ -17,6 +17,12 @@ import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel } from './src/lib/skriveregler.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
+// Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
+import { undersoegSoegning, soegningTekst } from './src/lib/soegning.mjs';
+import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
+import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
+// Videoen må højst levere så mange konkrete detaljer, at den forbliver et supplement (var 5).
+const MIN_VIDEO_DETALJER = 2;
 // Merværdi (8/10): højst denne andel af brødtekstens sætninger må dele 8 ord i træk med videoen.
 const ORDRET_MAKS = 0.15;
 // Læsertjek (8/10): så mange fund efter rettelsen stopper artiklen.
@@ -381,6 +387,24 @@ async function run() {
     let isShort = false;
     let youtubeTitle = null;
 
+    // TRIN 0 — søgningen (fase B, 12/10). Artiklen skal svare på det, folk søger
+    // på Google; videoen er et supplement. Gemini undersøger søgningen med Google
+    // (delspørgsmål + fakta med kilde) FØR videoen hentes: er søgningen for tynd,
+    // stopper vi her, før der er brugt penge på transskript og faktaark. Resultatet
+    // gemmes pr. spørgsmål (.cache/soegning), så robottens 4 kandidater deler det.
+    if (!targetQuestion) {
+      console.log(`Sprunget over: intet søgespørgsmål — opskriften "søgning først" kræver et (${videoId})`);
+      return;
+    }
+    const soeg = await undersoegSoegning(genAI, targetQuestion, { onLog: (m) => console.log(m), hentModel });
+    // Linjen læses af prøve-målingen (fase C) til prisen. Ændr ikke formatet.
+    // Kun når søgningen faktisk blev betalt nu (ikke læst fra cache), ellers tælles prisen dobbelt.
+    if (soeg.usage && !soeg.fraCache) console.log(`SOEG-FORBRUG: ${JSON.stringify({ soegninger: soeg.soegninger.length, tokens: soeg.usage.totalTokenCount, ind: soeg.usage.promptTokenCount, ud: soeg.usage.candidatesTokenCount, tanker: soeg.usage.thoughtsTokenCount || 0 })}`);
+    if (soeg.forTynd) {
+      console.log(`Sprunget over: søgningen gav for lidt med kilde (${soeg.delspoergsmaal.length} delspørgsmål, ${soeg.fakta.length} fakta, ${soeg.kilder.length} kilder) — "${targetQuestion}"`);
+      return;
+    }
+
     // Kildeangivelse hentes ALTID (uafhængigt af Plan A/B), så hver artikel kan
     // kreditere den oprindelige kanal. Fejler dette, fortsætter vi uden kilde.
     let channelTitle = null;
@@ -390,6 +414,10 @@ async function run() {
     let publishedAt = null;
     let viewCount = null;
     let thumbMax = false;
+    // Videoens længde fra YouTubes egne data. Bruges til "duration" frem for
+    // transskriptet: målt 12/10 gav et transskript hentet på pc'en længderne i
+    // millisekunder, og en 8:20-video blev skrevet som 26:07.
+    let metaSek = 0;
     try {
       const metaKey = process.env.YOUTUBE_API_KEY;
       if (metaKey) {
@@ -424,6 +452,7 @@ async function run() {
             (dm?.[1] ? parseInt(dm[1]) : 0) * 3600 +
             (dm?.[2] ? parseInt(dm[2]) : 0) * 60 +
             (dm?.[3] ? parseInt(dm[3]) : 0);
+          metaSek = secs;
           if (secs > 0 && secs < MIN_DURATION_SECONDS) {
             console.log(`⏭️ Sprunget over: videoen er ${secs}s (under ${MIN_DURATION_SECONDS}s). Korte videoer udgives ikke.`);
             return;
@@ -452,7 +481,7 @@ async function run() {
         console.log(`⏭️ Sprunget over: videoen er ${totalSeconds}s (under ${MIN_DURATION_SECONDS}s).`);
         return;
       }
-      duration = formatDuration(totalSeconds);
+      duration = formatDuration(metaSek > 0 ? metaSek : totalSeconds);
     } catch (transcriptError) {
       // Ingen undertekster = ingen kilde. Før 15/9 fandtes en "Plan B", der
       // skrev artiklen ud fra videoens titel + beskrivelse via YouTube API.
@@ -586,9 +615,9 @@ async function run() {
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. You have researched the subject by watching one video; its FACT SHEET is below. The facts from the source are the skeleton of the article; your explanation is the flesh around them. Before writing, silently identify the core topic and the 3-5 key concepts/keywords the subject revolves around. Then write a reference piece about that TOPIC: explain what the reader needs to understand, and anchor every section in the specific numbers, names and examples the source gives. Do not retell the video in its own order - but do use what it says.
+      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Someone searching Google typed "${targetQuestion}". This article's job is to answer that search better than the pages that rank for it today. The research is done: the RESEARCH below lists the questions searchers need answered and the facts the best web pages give, each with its source. You have also watched one video on the subject by ${kildeNavn(channelTitle) || 'a creator'}; it is a SUPPLEMENT - one practical illustration, not the backbone of the article.
 
-    ${targetQuestion ? `THE READER'S QUESTION: someone searching Google typed "${targetQuestion}". That question is this article's job. Answer it plainly in the opening, then spend the article explaining the subject well enough that the answer holds up: what it is, why it works that way, what it costs, and where people get it wrong. The headline and at least one H2 must reflect the question. If the source material does not address it, still write about the subject — just do not invent an answer to the question.` : `Write about the subject itself, not about the video. A reader who never watches it must come away with a complete answer.`}
+    THE READER'S QUESTION: "${targetQuestion}". Answer it plainly in the first two sentences. Then build the article from the RESEARCH QUESTIONS, in the order a reader needs them. The headline must reflect the question. A reader who never watches the video must come away with a complete answer.
 
     Return EXACTLY in this format:
     TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Understanding", "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", "Decoding", "Navigating", "Demystifying", "Unlocking", "Exploring", or "The New Frontier" - start with the subject or the question word.
@@ -596,7 +625,7 @@ async function run() {
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. It must be correct, natural English: Google searches are often fragments (e.g. "can i ai videos"), so never paste the search words verbatim unless they already form a correct sentence - rephrase them instead (e.g. "Can you make AI videos?"). Plain text, no quotes.
     FAQ:
-    Generate exactly 3-4 frequently asked questions with concise answers based on the video content. Format each strictly as:
+    Generate exactly 3-4 frequently asked questions a searcher has about "${targetQuestion}", with concise answers based on the RESEARCH (not on details only the video gives). A number in an answer must come from the RESEARCH FACTS and name its source. Format each strictly as:
     Q: [question]
     A: [answer]
     Each answer max 2 sentences. Do not use markdown links in the answers.
@@ -604,39 +633,45 @@ async function run() {
     Write the article following these STRICT RULES:
     1. Objectivity is mandatory - do not hype any product or technology.
     2. No author bio, greetings, sign-offs, or affiliate disclaimers.
-    3. Do NOT start with an H1 or the video title (the page already shows the title). Start directly with a 2-3 sentence executive summary paragraph, no label.
+    3. Do NOT start with an H1 or the video title (the page already shows the title). Start directly with 2-3 sentences that answer the reader's question, no label.
     4. Avoid commodity/listicle filler unless backed by real analysis.
     5. BANNED WORDS - never use: delve, tapestry, realm, navigate, landscape, testament, crucial, robust, demystify, unlock, unleash, elevate, seamless, paradigm shift, "in today's digital age", firstly, moreover, furthermore, "in conclusion".
     6. Write with high burstiness: mix short punchy sentences with longer analytical ones. Active voice only.
     7. Aim for approximately ${targetWords} words.
-    8. Never use filler like "in this video" or "the video discusses", and never write "the source material", "the transcript" or "the source" - the reader does not know there is one. Write as an independent editorial piece. The one exception is rule 14: attribute the source ONCE, by the creator's name.
+    8. Never use filler like "in this video" or "the video discusses", and never write "the source material", "the transcript" or "the source" - the reader does not know there is one. Write as an independent editorial piece. The exception is the video section (rule 14), where the creator is named.
     8b. The transcript is machine-generated speech-to-text: a name may be misheard. A fact-sheet item marked "(spelling uncertain)" must NOT be used as a name - describe the thing generically instead ("a Nigerian savings app").
     9. Ensure internal links are written strictly like this: [Link text](/video/slug). Never use code formatting (backticks) anywhere - this is an article, not documentation.
-    10. THE SUBJECT IS THE ARTICLE, NOT THE VIDEO. Write a reference piece about the topic itself, the way an experienced writer would if they had watched this video as part of their research. The video is one input, not the subject. A reader who never watches it must get a complete, self-contained answer.
-    11. Most of the article must be explanation the reader needs, not recap: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts; for specifics use the FACT SHEET (rule 14). NEVER fabricate statistics, quotes, dates, company figures or events - every number must come from the FACT SHEET or the source material, written exactly as the source gives it (no rounding, no converting); names may also be common knowledge.
-    12. Draw on the source for its specific claims, examples and framing, and reflect them accurately - in your own words and structure. Do not follow the video's running order, do not quote long passages, and do not reproduce it section by section.
+    10. THE SEARCH IS THE ARTICLE, NOT THE VIDEO. Build the article from the RESEARCH QUESTIONS and RESEARCH FACTS. The video is one input among several and gets one section of its own (rule 14). A reader who never watches it must get a complete, self-contained answer.
+    11. Most of the article must be explanation the reader needs: what the thing is, why it works that way, what it means in practice, what the trade-offs are, and what commonly goes wrong. For general context use only well-established facts. NEVER fabricate statistics, quotes, dates, company figures or events - every number must come from the RESEARCH FACTS or the VIDEO FACT SHEET, written exactly as given (no rounding, no converting); names may also be common knowledge. EVERY SENTENCE WITH A NUMBER NAMES WHERE THE NUMBER COMES FROM, in the sentence itself - the publisher from the research (for example "IBM's 2024 report puts the average cost at USD 4.88 million", "According to Verizon, ...") or, in the video section, the creator.
+    12. Use the research facts and the video in your own words and structure. Do not copy their wording, do not follow the video's running order, and do not quote long passages.
     13. Weave the core topic and its key concepts/keywords naturally into the headline, the H2 headings, and the body so the piece ranks for what readers actually search - but never keyword-stuff or repeat awkwardly.
-    14. CONCRETE DETAIL IS MANDATORY. A reader must be able to tell this article was researched, not generated. Use at least FIVE items from the FACT SHEET below - every NUMBER item you can place naturally, plus named products, companies, tools or people, and at least one EXAMPLE item told as a concrete case. Write numbers exactly as the fact sheet gives them. Put them where they support the argument, not in a list at the end. Attribute the source exactly once, by name, where its most specific point appears - for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ..." or "${kildeNavn(channelTitle) || 'The creator'} puts the figure at ...". An article that ignores the fact sheet is a failed article.
+    14. THE VIDEO IS A SUPPLEMENT. Give it exactly ONE "## " section of its own, placed after the sections that answer the main question - never first. Its heading names the creator "${kildeNavn(channelTitle) || 'the creator'}" and says specifically what the video shows or tests (not a generic "What X Shows"). In that section use at least ${MIN_VIDEO_DETALJER} concrete items from the VIDEO FACT SHEET (a number, a named product, an example). The section is at most ${Math.round(VIDEO_ANDEL_MAAL * 100)} % of the article. Outside it, do not use details that only the video gives. A scenario the creator uses to illustrate a point (invented people, companies or stories) may only appear in the video section and must be described as the creator's example, never as fact. If the video covers a niche (one profession, one product, one country), present it as an example of the general answer, not as the answer.
     15. LISTS: include at least TWO markdown lists (lines starting with "- " or "1. "), each with 3-5 items, where the content is naturally a list: steps, options, components, criteria, pros and cons. Keep the argument itself in paragraphs.
     16. SHORT PARAGRAPHS: at most 3 sentences per paragraph. Readers are on phones.
-    17. STAY ON THE QUESTION: every section must help answer the reader's question. Do not spend paragraphs on other products, features or tools the source happens to mention unless you compare them directly with the subject. Never describe how a product works internally (models, physics, pipelines) unless the FACT SHEET says so.
+    17. STAY ON THE QUESTION: every section must help answer the reader's question. Do not spend paragraphs on other products, features or tools the video happens to mention unless you compare them directly with the subject. Never describe how a product works internally (models, physics, pipelines) unless the RESEARCH FACTS or the VIDEO FACT SHEET say so. Never promote or praise a product, vendor, course, guide or download, and never refer to a resource the article does not contain (no "grab the checklist").
     18. WRITE AS AN EDITOR, NOT A SPEAKER: no first person (I, me, my, we), no spoken phrases from the transcript ("let's take a look", "gonna", "as you can see"). If the creator's own words matter, quote them in quotation marks.
     19. NAMED SOURCES ONLY: never write "experts say", "studies show", "research indicates", "critics argue" or "according to reports" without naming who. If the source does not name them, state the point plainly or leave it out.
     20. Never draw diagrams with characters (arrows, boxes, ASCII art). Use a markdown table or a numbered list instead.
     21. Never paste the reader's search words into a sentence where they are not grammatical (for example "Understanding what is X ..."). Rephrase.
+    22. Do not write a sources or references section - it is added automatically.
 
-    This article MUST follow the "${articleProfile.name}" format below - match its structure, length, and voice so it reads differently from a standard template.
-
-    ${articleProfile.structure}
+    STRUCTURE (built from the search, not from the video):
+    - Opening: 2-3 sentences that answer "${targetQuestion}" directly (no heading, no label).
+    - One "## " section for each RESEARCH QUESTION the opening does not already answer fully, in the order a reader needs them. Each heading is specific to this subject: phrase it as the question a reader would ask, or as its answer. Never a template heading like "How It Works", "What It Is", "Who It's For", "Key Takeaways" or "The Bottom Line".
+    - The video section (rule 14), after the sections that answer the main question.
+    - Optionally a short closing "## " section with practical guidance, under a heading specific to this subject.
+    Voice: write it as a ${articleProfile.name.toLowerCase()} piece.
     ${internalLinksContext}
 
-    FACT SHEET (every concrete detail the source gives, in the source's own words - your ingredient list for rule 14):
+    RESEARCH (from Google, done before writing - the backbone of the article):
+    ${soegningTekst(soeg)}
+
+    VIDEO FACT SHEET (every concrete detail the video by ${kildeNavn(channelTitle) || 'the creator'} gives - for the video section, rule 14):
     ${faktaarkTekst(fakta)}
 
-    SOURCE MATERIAL (research input — the transcript of one video on this subject).
-    Use it for context, framing and the angles it contributes. Do not treat
-    it as an outline to follow, and do not write about the video itself:
-    ${text.substring(0, 20000)}`;
+    VIDEO TRANSCRIPT (context for the video section only - do not follow its order or retell it):
+    ${text.substring(0, 12000)}`;
+    // Transskriptet er kortet fra 20.000 til 12.000 tegn (12/10): videoen er et supplement nu.
 
     // maxOutputTokens sat eksplicit. Uden den bruger modellen sin standard, og
     // gemini-2.5 bruger også af output-budgettet på at tænke. Prompten beder om
@@ -942,7 +977,10 @@ async function run() {
       // Målt 16/9: arket kaldte "two seconds" og "three different videos" for tal,
       // artiklen fik 0 efter den strenge regel — og blev afvist på et falsk krav.
       const kildensTal = fakta.filter((f) => f.type === 'tal' && taelTal(`${f.key} ${f.text}`) > 0).length;
-      const MIN_TAL = kildensTal >= 2 ? 2 : 0;
+      // Søgningens fakta tæller med (12/10): tallene skal nu helst komme derfra.
+      const soegFaktaTekst = soeg.fakta.map((f) => f.tekst).join('\n');
+      const soegTal = soeg.fakta.filter((f) => taelTal(f.tekst) > 0).length;
+      const MIN_TAL = kildensTal + soegTal >= 2 ? 2 : 0;
       const foersteAfsnit = (md) => (md.split(/\n\s*\n/).map((x) => x.trim()).find((x) => x && !/^#/.test(x) && !/^[-*>]/.test(x)) || '');
       const spmUdenAi = (targetQuestion || '').replace(/\b(ai|tech)\b/gi, ' ').trim();
       const svarFoerstOk = (md) => {
@@ -952,13 +990,23 @@ async function run() {
       };
       const status = () => {
         const brugte = brugteFakta(content, fakta);
-        const ukendte = ukendteTal(content, fakta, text);
+        // Et tal er dækket, når det står i videoen ELLER i søgningens fakta (12/10).
+        const ukendte = ukendteTal(content, fakta, text + '\n' + soegFaktaTekst);
+        // Søgning først (12/10): videoens andel, dens ene afsnit, tal uden navngiven kilde, brugte websider.
+        const va = videoAndel(content, channelTitle, fakta, soegFaktaTekst);
+        const vAfsnit = videoAfsnit(content, channelTitle);
+        const udenKilde = talUdenKilde(content, soeg.navne, channelTitle);
+        const kilderBrugt = brugteKilder(content, soeg);
         const tal = taelTal(content);
         const sc = konkretScore(content, channelTitle);
         const laes = laesbarhed(content);
         const svarFoerst = svarFoerstOk(content);
         const m = [];
-        if (brugte.length < MIN_BRUGT) m.push(`kun ${brugte.length} af ${fakta.length} punkter fra arket brugt (mindst ${MIN_BRUGT})`);
+        if (brugte.length < MIN_VIDEO_DETALJER) m.push(`kun ${brugte.length} af ${fakta.length} punkter fra videoens ark brugt (mindst ${MIN_VIDEO_DETALJER})`);
+        if (vAfsnit.length !== 1) m.push(`${vAfsnit.length} videoafsnit (præcis 1, med kanalens navn i overskriften)`);
+        if (va.andel > VIDEO_ANDEL_MAKS) m.push(`video-andel ${Math.round(va.andel * 100)} % (højst ${Math.round(VIDEO_ANDEL_MAKS * 100)} %)`);
+        if (udenKilde.length) m.push(`${udenKilde.length} sætning(er) med tal uden navngiven kilde`);
+        if (kilderBrugt.length < MIN_KILDER_BRUGT) m.push(`kun ${kilderBrugt.length} websider nævnt (mindst ${MIN_KILDER_BRUGT})`);
         if (ukendte.length) m.push(`tal uden dækning i kilden: ${ukendte.join(', ')}`);
         if (manglerKonkret(content, channelTitle).includes('kilde')) m.push('kilden ikke nævnt ved navn');
         if (tal < MIN_TAL) m.push(`kun ${tal} tal i artiklen, kilden har ${kildensTal} (mindst ${MIN_TAL})`);
@@ -979,8 +1027,12 @@ async function run() {
         const ordret = ordretFraKilde(content, text);
         const ordretPct = Math.round(ordretAndel(content, text) * 100);
         if (ordret.length) m.push(`${ordret.length} sætning(er) afskrevet fra videoen (${ordretPct} %)`);
-        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, ordret, ordretPct, m };
+        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, ordret, ordretPct, va, vAfsnit, udenKilde, kilderBrugt, m };
       };
+      // En senere rettelse (læsertjek, redaktørtjek) kasseres, hvis den bringer en af
+      // de fejl ind, der stopper udgivelsen. Samme regel begge steder.
+      const nyeFejl = (kk) => kk.ukendte.length || kk.tale.length || kk.klistret.length || kk.ordretPct > ORDRET_MAKS * 100
+        || kk.vAfsnit.length !== 1 || kk.va.andel > VIDEO_ANDEL_MAKS || kk.udenKilde.length > MAKS_TAL_UDEN_KILDE || kk.kilderBrugt.length < MIN_KILDER_BRUGT;
       let k = status();
       if (k.m.length) {
         console.log(`🔎 Kontrol mod faktaarket: ${k.m.join(' · ')} — beder om rettelse`);
@@ -988,11 +1040,13 @@ async function run() {
         try {
           const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
             .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
-1. Work at least ${Math.max(MIN_BRUGT, 5)} items from the FACT SHEET into the text, where they support the argument (not as a list). Write every number exactly as the fact sheet gives it.
-${k.ukendte.length ? `2. These numbers appear in the article but NOT in the source: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the FACT SHEET. Do not keep any figure the source does not give.\n` : ''}3. Attribute the source exactly once, by name: "${kildeNavn(channelTitle) || 'the creator'}" (for example "As ${kildeNavn(channelTitle) || 'the creator'} points out, ...").
-${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the FACT SHEET (a [NUMBER] item), written exactly as given.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the FACT SHEET gives it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}${k.ordret.length ? `12. These sentences copy the video's own wording (eight or more words in a row from the transcript). An article must explain in its own words. Rewrite each one in different words with the same meaning, or, if the exact wording matters, put it in quotation marks and name the creator:\n${k.ordret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+${k.brugte.length < MIN_VIDEO_DETALJER ? `1. In the video section, use at least ${MIN_VIDEO_DETALJER} items from the VIDEO FACT SHEET. Write every number exactly as the fact sheet gives it.\n` : ''}${k.ukendte.length ? `2. These numbers appear in the article but NOT in the research or the video: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the RESEARCH FACTS. Do not keep any figure the sources do not give.\n` : ''}${k.vAfsnit.length !== 1 ? `3. The article must have exactly ONE "## " section about the video, and its heading must contain the creator's name "${kildeNavn(channelTitle) || 'the creator'}". ${k.vAfsnit.length > 1 ? `Merge these into one: ${k.vAfsnit.map((h) => `"${h}"`).join(', ')}.` : 'Add it after the sections that answer the main question, or rename the section that is about the video.'}\n` : ''}${k.va.andel > VIDEO_ANDEL_MAKS ? `13. ${Math.round(k.va.andel * 100)} % of the article comes from the video; at most ${Math.round(VIDEO_ANDEL_MAAL * 100)} % may. Shorten the video section, and outside it replace details that only the video gives with facts from the RESEARCH FACTS.\n` : ''}${k.udenKilde.length ? `14. These sentences give a number without saying where it comes from. Name the source in the sentence itself (the publisher from the RESEARCH FACTS, or the creator for a video figure), or remove the number:\n${k.udenKilde.map((s) => `   - ${s}`).join('\n')}\n` : ''}${k.kilderBrugt.length < MIN_KILDER_BRUGT ? `15. Only ${k.kilderBrugt.length} of the research's web publishers are named in the article; at least ${MIN_KILDER_BRUGT} must be. Use more RESEARCH FACTS and name their publishers.\n` : ''}
+${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the RESEARCH FACTS, written exactly as given and with their publisher named.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the RESEARCH FACTS or the VIDEO FACT SHEET give it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}${k.ordret.length ? `12. These sentences copy the video's own wording (eight or more words in a row from the transcript). An article must explain in its own words. Rewrite each one in different words with the same meaning, or, if the exact wording matters, put it in quotation marks and name the creator:\n${k.ordret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is${k.vAfsnit.length !== 1 ? ' (except as item 3 says)' : ''}. Do not add a sources section. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
 
-FACT SHEET (items not yet used are listed first):
+RESEARCH (from Google):
+${soegningTekst(soeg)}
+
+VIDEO FACT SHEET (items not yet used are listed first):
 ${faktaarkTekst([...ubrugte, ...k.brugte])}
 
 ARTICLE TO REVISE:
@@ -1038,6 +1092,14 @@ ${content}`);
       // læseren intet, videoen ikke allerede gav - og Google kan læse undertekster.
       if (k.ordretPct > ORDRET_MAKS * 100) throw new Error(`${k.ordretPct} % af sætningerne er afskrevet fra videoen efter rettelse (højst ${ORDRET_MAKS * 100} %). Artiklen skrives ikke.`);
       console.log(`📝 Afskrift fra videoen: ${k.ordret.length} sætning(er), ${k.ordretPct} %`);
+      // Søgning først (12/10): stop-tjek. Fase A målte 69 % video og 77 % tal uden
+      // navngiven kilde. Videoen må ikke tage over igen, tal skal sige hvor de kommer
+      // fra, og artiklen skal bygge på mindst MIN_KILDER_BRUGT websider.
+      if (k.vAfsnit.length !== 1) throw new Error(`${k.vAfsnit.length} videoafsnit efter rettelse (præcis 1, med kanalens navn i overskriften). Artiklen skrives ikke.`);
+      if (k.va.andel > VIDEO_ANDEL_MAKS) throw new Error(`Video-andel ${Math.round(k.va.andel * 100)} % efter rettelse (højst ${Math.round(VIDEO_ANDEL_MAKS * 100)} %). Artiklen skrives ikke.`);
+      if (k.udenKilde.length > MAKS_TAL_UDEN_KILDE) throw new Error(`${k.udenKilde.length} sætninger med tal uden navngiven kilde efter rettelse (højst ${MAKS_TAL_UDEN_KILDE}): ${k.udenKilde.map((s) => `"${s.slice(0, 80)}"`).join(' · ')}. Artiklen skrives ikke.`);
+      if (k.kilderBrugt.length < MIN_KILDER_BRUGT) throw new Error(`Kun ${k.kilderBrugt.length} websider fra søgningen nævnt (mindst ${MIN_KILDER_BRUGT}). Artiklen skrives ikke.`);
+      console.log(`🌐 Søgning først: video-andel ${Math.round(k.va.andel * 100)} % · videoafsnit "${k.vAfsnit[0]}" · tal uden kilde ${k.udenKilde.length} · websider nævnt ${k.kilderBrugt.length} af ${soeg.kilder.length}`);
 
       // Læsertjek (8/10): en model læser artiklen som en læser, der ikke har set videoen.
       let lf = await laeserTjek(genAI, content);
@@ -1048,8 +1110,7 @@ ${content}`);
         const r = await retLaeserFund(genAI, content, lf);
         content = r.md;
         // Rettelsen må ikke bringe nye fejl ind (opfundne tal, talesprog, klistret søgeord, afskrift).
-        const k2 = status();
-        if (k2.ukendte.length || k2.tale.length || k2.klistret.length || k2.ordretPct > ORDRET_MAKS * 100) {
+        if (nyeFejl(status())) {
           content = foerLaeser;
           console.log('   læser-rettelse kasseret: den bragte nye fejl ind');
         }
@@ -1058,6 +1119,36 @@ ${content}`);
         for (const x of lf) console.log(`   - [${x.problem}] ${x.sentence.slice(0, 120)} (${x.why})`);
       } else console.log('👓 Læsertjek: 0 fund');
       if (lf.length >= LAESER_MAKS) throw new Error(`Læsertjek: ${lf.length} sætninger, en læser snubler over, efter rettelse (højst ${LAESER_MAKS - 1}). Artiklen skrives ikke.`);
+
+      // Redaktørtjek (fase B, 12/10, src/lib/redaktoertjek.mjs): besvarer artiklen
+      // søgningens delspørgsmål, og reklamerer den? Ét rettelsesforsøg; står fejlen
+      // der stadig bagefter, skrives artiklen ikke.
+      let rt = await redaktoerTjek(genAI, content, soeg.delspoergsmaal, targetQuestion);
+      if (rt === null) console.log('🧑‍⚖️ Redaktørtjek kunne ikke køre - artiklen udgives uden (ses i loggen)');
+      else if (rt.ubesvarede.length || rt.reklame.length) {
+        console.log(`🧑‍⚖️ Redaktørtjek: ${rt.ubesvarede.length} ubesvarede delspørgsmål, ${rt.reklame.length} reklamesætning(er) — beder om rettelse`);
+        const foerRed = content;
+        try {
+          const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
+            .generateContent(`Revise the article below. Change ONLY what is needed for these requirements and keep everything else - headings, links, length - as it is:
+${rt.ubesvarede.length ? `1. The article does not answer these questions that people searching "${targetQuestion}" have. Answer each one, using only the RESEARCH FACTS and naming the publisher of every number: add a short "## " section for it, or extend the section that comes closest.\n${rt.ubesvarede.map((u) => `   - ${u.spoergsmaal}`).join('\n')}\n` : ''}${rt.reklame.length ? `2. These sentences promote something instead of informing. Remove each one, or rewrite it as neutral information that recommends nothing:\n${rt.reklame.map((s) => `   - ${s}`).join('\n')}\n` : ''}Never invent numbers or names. Do not add a sources section. Output ONLY the revised article in markdown - no commentary, no preamble.
+
+RESEARCH (from Google):
+${soegningTekst(soeg)}
+
+ARTICLE TO REVISE:
+${content}`);
+          const ny = sanitizeLinks((rep.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
+          const laengde = ny.split(/\s+/).length / Math.max(1, content.split(/\s+/).length);
+          if (laengde >= 0.8 && laengde <= 1.5) content = ny;
+          else console.log(`   redaktør-rettelse kasseret: længde ${Math.round(laengde * 100)} %`);
+        } catch (e) { console.log(`   redaktør-rettelse fejlede: ${e.message.split('\n')[0]}`); }
+        if (content !== foerRed && nyeFejl(status())) { content = foerRed; console.log('   redaktør-rettelse kasseret: den bragte nye fejl ind'); }
+        rt = content === foerRed ? rt : ((await redaktoerTjek(genAI, content, soeg.delspoergsmaal, targetQuestion)) ?? rt);
+      }
+      if (rt && rt.ubesvarede.length) throw new Error(`Redaktørtjek: ${rt.ubesvarede.length} delspørgsmål ubesvaret efter rettelse (${rt.ubesvarede.map((u) => `"${u.spoergsmaal}"`).join(', ')}). Artiklen skrives ikke.`);
+      if (rt && rt.reklame.length) throw new Error(`Redaktørtjek: ${rt.reklame.length} reklamesætning(er) efter rettelse (${rt.reklame.map((s) => `"${s.slice(0, 80)}"`).join(' · ')}). Artiklen skrives ikke.`);
+      if (rt) console.log(`🧑‍⚖️ Redaktørtjek: alle ${soeg.delspoergsmaal.length} delspørgsmål besvaret, ingen reklame`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);
@@ -1115,6 +1206,14 @@ ${content}`);
         spoerg: async (p) => (await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 1024, temperature: 0 } }).generateContent(p)).response.text(),
       });
       content = ekst.content;
+
+      // Kildeliste (fase B, 12/10): "## Sources" nederst, bygget af koden ud fra de
+      // websider, artiklen faktisk nævner, plus videoen. Modellen skriver den aldrig selv.
+      const brugteSider = brugteKilder(content, soeg);
+      const slut = { va: videoAndel(content, channelTitle, fakta, soeg.fakta.map((f) => f.tekst).join('\n')), udenKilde: talUdenKilde(content, soeg.navne, channelTitle) };
+      content = `${content.trim()}\n\n${kildelisteMd(brugteSider, { videoId, videoTitel, kanal: kildeNavn(channelTitle) })}`;
+      // Måling af den endelige tekst til fase C (samme regler som stop-tjekkene). Ændr ikke formatet.
+      console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length })}`);
     }
 
     // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.

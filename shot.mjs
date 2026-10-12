@@ -78,6 +78,14 @@ if (!target) { chrome.kill(); throw new Error('Chrome svarede ikke på debug-por
 
 const cdp = await connect(target.webSocketDebuggerUrl);
 await cdp.send('Page.enable');
+// Cachen slås fra: profilen i _shots/.chrome genbruges mellem kørsler, og et billede
+// med samme adresse blev vist fra cachen i stedet for den nye fil (sket igen 12/10 med
+// kortbillederne — "Chrome cacher" stod allerede på faldgrubelisten, nu rettet i værktøjet).
+await cdp.send('Network.enable');
+await cdp.send('Network.setCacheDisabled', { cacheDisabled: true });
+// Sitets service worker (public/sw.js) gemmer billeder og svarer FØR netværket — den slår
+// setCacheDisabled ikke fra. Målt 12/10: nye kortbilleder blev vist som de gamle trods slået-fra cache.
+await cdp.send('Network.setBypassServiceWorker', { bypass: true });
 
 for (const p of paths) {
   for (const v of VIEWPORTS) {

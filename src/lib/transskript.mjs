@@ -83,6 +83,21 @@ export function cacheSti(videoId) {
   return path.join(DIR, `${videoId}.json`);
 }
 
+// Henter det ENGELSKE undertekstspor. Uden sprog tog biblioteket det første spor,
+// YouTube listede — for 88 af 426 videoer et oversat spor (arabisk m.fl., målt 12/10).
+// Findes "en" ikke, prøves en engelsk variant ("en-US", "en-GB"). Findes ingen
+// engelsk, kastes fejlen videre (så tager Gemini over, og sprogtjekket afgør).
+async function hentEngelsk(videoId) {
+  try {
+    return await YoutubeTranscript.fetchTranscript(videoId, { lang: 'en' });
+  } catch (e) {
+    const tilgaengelige = String(e.message).match(/Available languages: (.*)$/)?.[1]?.split(/,\s*/) || [];
+    const variant = tilgaengelige.find((l) => /^en[-_]/i.test(l));
+    if (variant) return await YoutubeTranscript.fetchTranscript(videoId, { lang: variant });
+    throw e;
+  }
+}
+
 // Er det en droslings-fejl (vent og prøv igen) eller en rigtig fejl
 // (videoen har slet ingen undertekster — vent aldrig på den)?
 function erDrosling(besked) {
@@ -99,7 +114,10 @@ export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null, onLog
   if (fs.existsSync(sti)) {
     try {
       const segs = JSON.parse(fs.readFileSync(sti, 'utf8'));
-      if (Array.isArray(segs) && segs.length) return { segmenter: segs, fraCache: true };
+      // Målt 12/10: 88 af 426 gemte transskripter var IKKE engelske (75 arabiske) —
+      // YouTube havde leveret et oversat spor. En kopi på et andet sprog bruges ikke.
+      const sprog = segs?.[0]?.lang;
+      if (Array.isArray(segs) && segs.length && (!sprog || /^en/i.test(sprog))) return { segmenter: segs, fraCache: true };
     } catch { /* ødelagt cache-fil — hent forfra */ }
   }
 
@@ -118,7 +136,7 @@ export async function hentSegmenter(videoId, { forsoeg = 4, onVent = null, onLog
   let sidsteFejl;
   for (let f = 0; f < forsoeg; f++) {
     try {
-      const segs = await YoutubeTranscript.fetchTranscript(videoId);
+      const segs = await hentEngelsk(videoId);
       if (!Array.isArray(segs) || !segs.length) throw new Error('tomt transskript');
       fs.mkdirSync(DIR, { recursive: true });
       fs.writeFileSync(sti, JSON.stringify(segs), 'utf8');

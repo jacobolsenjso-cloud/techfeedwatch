@@ -75,6 +75,11 @@ const sourceChannelId: string | null = video.frontmatter.channelId || null;
 const sourceChannelUrl: string | null = sourceChannelId
   ? `https://www.youtube.com/channel/${sourceChannelId}`
   : (sourceChannel ? `https://www.youtube.com/results?search_query=${encodeURIComponent(sourceChannel)}` : null);
+// Søgning først (fase B, 12/10): artikler skrevet med den nye opskrift har "## Sources"
+// nederst. Så siger boksen øverst, at artiklen bygger på N websider OG en video — ikke
+// "researched with a video", som er sandt for de gamle artikler, men ikke for de nye.
+const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent() : '').split(/^## Sources\s*$/m)[1] || '';
+const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -332,6 +337,13 @@ const metaDesc = rawMeta.length > 157
     .tag-badge:hover { background-color: #cbd5e1; color: #0f172a; transform: translateY(-1px); }
     .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.10); background-color: #000; }
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    /* Videoen som supplement (12/10): eget afsnit efter artiklen */
+    .video-supplement { margin: 36px 0 28px; padding-top: 24px; border-top: 1px solid var(--border-color); }
+    .video-supplement-titel { font-size: 1.3rem; font-weight: 800; margin: 0 0 10px; line-height: 1.3; }
+    body.cinema-mode .video-supplement-titel,
+    body.cinema-mode .video-supplement .time-compare,
+    body.cinema-mode .video-supplement .view-growth { display: none; }
+    body.cinema-mode .video-supplement { margin: 0; padding: 0; border: 0; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
 
@@ -924,7 +936,7 @@ const metaDesc = rawMeta.length > 157
             <span class="shorts-label share-text" id="shareText">Share</span>
           </div>
           <div class="shorts-btn-group">
-            <button class="shorts-circle-btn" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
+            <button class="shorts-circle-btn" id="saveBtn" data-slug={slug} data-title={title} data-img={`/kort/${slug}.webp`} aria-label="Save Video" title="Save">
               <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             </button>
             <span class="shorts-label" id="saveText">Save</span>
@@ -982,7 +994,9 @@ const metaDesc = rawMeta.length > 157
           <p class="source-credit">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
             <span>
-              Researched with a video published on YouTube by{' '}
+              {antalWebKilder > 0
+                ? <>Based on {antalWebKilder} web sources and a video by </>
+                : <>Researched with a video published on YouTube by{' '}</>}
               {sourceChannel && sourceChannelUrl ? (
                 <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
               ) : (
@@ -996,53 +1010,8 @@ const metaDesc = rawMeta.length > 157
           </div>
         </div>
 
-        <div class="iframe-wrapper" id="stickyVideo">
-          <iframe
-            id="ytIframe"
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
-            title={`${title} - Video Player`}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-          <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
-        </div>
-
-        <div id="cinemaBrowser" data-current-slug={slug} data-current-tags={tagsArray.join(',')}>
-          <div id="cinemaChips" class="cinema-chips">
-            <button type="button" class="cinema-chip active" data-filter="all">All</button>
-            <button type="button" class="cinema-chip" data-filter="related">Related</button>
-            <button type="button" class="cinema-share-btn share-trigger" aria-label="Share Video" title="Share">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-              <span class="share-text">Share</span>
-            </button>
-            <button type="button" class="cinema-chip" data-filter="foryou">For You</button>
-            <button type="button" class="cinema-chip" data-filter="article">Read Article</button>
-            {allUniqueTags.map((t: string) => (
-              <button type="button" class="cinema-chip" data-filter="tag" data-tag={t}>{t}</button>
-            ))}
-          </div>
-          <div id="cinemaList" class="cinema-list"></div>
-        </div>
 
         <div class="cinema-reading-block">
-        {timeCompare && (
-          <p class="time-compare">
-            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
-            {' '}Spend {timeCompare.readMinutes} min here to decide whether the other {timeCompare.saved} are worth it.
-          </p>
-        )}
-        {!timeCompare && video.frontmatter.duration && (
-          <p class="time-compare">
-            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
-          </p>
-        )}
-        {viewGrowth && (
-          <p class="view-growth">
-            <strong>Still gaining.</strong> This video has gone from {viewGrowth.from} to
-            {' '}{viewGrowth.to} views — up {viewGrowth.percent}% since we started tracking it
-            on {viewGrowth.since}.
-          </p>
-        )}
         <div class="action-bar">
           <button type="button" id="listenBtn" class="action-pill" hidden aria-pressed="false">
             <svg class="action-icon" id="listenIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -1064,7 +1033,7 @@ const metaDesc = rawMeta.length > 157
             <span id="shareText" class="share-text">Share</span>
           </button>
 
-          <button class="action-pill" id="saveBtn" data-slug={slug} data-title={title} data-img={`https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`} aria-label="Save Video" title="Save">
+          <button class="action-pill" id="saveBtn" data-slug={slug} data-title={title} data-img={`/kort/${slug}.webp`} aria-label="Save Video" title="Save">
             <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
             <span id="saveText">Save</span>
           </button>
@@ -1115,7 +1084,7 @@ const metaDesc = rawMeta.length > 157
               var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
               var cards = recs.slice(0, 4).map(function (v, i) {
                 var extra = i === 3 ? ' inline-recs-card-extra' : '';
-                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '/"><span class="inline-recs-thumb"><img src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
+                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '/"><span class="inline-recs-thumb"><img src="/kort/' + v.slug + '.webp" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
               }).join('');
               var block = document.createElement('aside');
               block.className = 'inline-recs';
@@ -1127,6 +1096,65 @@ const metaDesc = rawMeta.length > 157
           })();
         </script>
 
+        </div>
+
+        {/* Videoen som supplement (fase B, 12/10-2026). Før stod afspilleren lige under
+            resuméet, og artiklen lignede et referat af videoen. Nu kommer titel, kort svar
+            og hele artiklen først, og videoen har sit eget afsnit her. Biograf-tilstand
+            (mobil) og hjørnevinduet (computer) virker uændret: scriptet finder
+            #stickyVideo, hvor end den står. Afsnittet ligger UDEN FOR .cinema-reading-block,
+            så biograf-tilstanden, der skjuler artiklen, ikke skjuler videoen. */}
+        <section class="video-supplement" aria-labelledby="video-supplement-titel">
+          <h2 class="video-supplement-titel" id="video-supplement-titel">The video behind this article</h2>
+        {timeCompare && (
+          <p class="time-compare">
+            {/* "Spend X min here to decide whether the other Y are worth it" fjernet 12/10:
+                artiklen er hovedsagen nu, ikke en smagsprøve på videoen. */}
+            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
+          </p>
+        )}
+        {!timeCompare && video.frontmatter.duration && (
+          <p class="time-compare">
+            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
+          </p>
+        )}
+        {viewGrowth && (
+          <p class="view-growth">
+            <strong>Still gaining.</strong> This video has gone from {viewGrowth.from} to
+            {' '}{viewGrowth.to} views — up {viewGrowth.percent}% since we started tracking it
+            on {viewGrowth.since}.
+          </p>
+        )}
+        <div class="iframe-wrapper" id="stickyVideo">
+          <iframe
+            id="ytIframe"
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
+            title={`${title} - Video Player`}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
+        </div>
+
+        <div id="cinemaBrowser" data-current-slug={slug} data-current-tags={tagsArray.join(',')}>
+          <div id="cinemaChips" class="cinema-chips">
+            <button type="button" class="cinema-chip active" data-filter="all">All</button>
+            <button type="button" class="cinema-chip" data-filter="related">Related</button>
+            <button type="button" class="cinema-share-btn share-trigger" aria-label="Share Video" title="Share">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span class="share-text">Share</span>
+            </button>
+            <button type="button" class="cinema-chip" data-filter="foryou">For You</button>
+            <button type="button" class="cinema-chip" data-filter="article">Read Article</button>
+            {allUniqueTags.map((t: string) => (
+              <button type="button" class="cinema-chip" data-filter="tag" data-tag={t}>{t}</button>
+            ))}
+          </div>
+          <div id="cinemaList" class="cinema-list"></div>
+        </div>
+        </section>
+
+        <div class="cinema-reading-block">
         {peopleAlsoAsk.length > 0 && (
           <aside class="paa" aria-labelledby="paa-heading">
             <h3 class="paa-title" id="paa-heading">People also ask</h3>
@@ -1229,7 +1257,7 @@ const metaDesc = rawMeta.length > 157
               {recommendPool.slice(0, 8).map((r: any) => (
                 <a href={`/video/${r.slug}`} class="watch-card">
                   <div class="watch-card-thumb">
-                    <img src={`https://img.youtube.com/vi/${r.youtubeId}/mqdefault.jpg`} alt={r.title} loading="lazy" />
+                    <img src={`/kort/${r.slug}.webp`} alt={r.title} loading="lazy" />
                     <span class="watch-card-play" aria-hidden="true">▶</span>
                   </div>
                   <h3 class="tma-grid-title">{r.title}</h3>
@@ -1250,7 +1278,7 @@ const metaDesc = rawMeta.length > 157
               {relatedVideos.map((rel: any) => (
                 <a href={`/video/${rel.file.split('/').pop().replace('.md', '')}`} class="watch-card">
                   <div class="watch-card-thumb">
-                    <img src={`https://img.youtube.com/vi/${rel.frontmatter.youtubeId}/mqdefault.jpg`} alt={rel.frontmatter.title} loading="lazy" />
+                    <img src={`/kort/${rel.file.split('/').pop().replace('.md', '')}.webp`} alt={rel.frontmatter.title} loading="lazy" />
                     <span class="watch-card-play" aria-hidden="true">▶</span>
                   </div>
                   <h4 class="tma-grid-title">{rel.frontmatter.title}</h4>

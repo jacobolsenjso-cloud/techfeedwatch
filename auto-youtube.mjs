@@ -577,8 +577,10 @@ async function findNewestVideos() {
     break;
   }
   if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete (${runde}/${MAX_SPOERGSMAAL}): "${spoergsmaal}"`);
-  else console.log('Info: Intet ubrugt spørgsmål fundet — søger på emnet alene.');
-  if (!spoergsmaal && runde > 1) break;
+  // Opskriften "søgning først" (12/10): artiklen skal svare på en søgning, så uden
+  // et søgespørgsmål skrives ingen artikel — add-video.mjs ville alligevel afvise
+  // hver kandidat, og robotten ville betale for at vurdere dem.
+  if (!spoergsmaal) { console.log('Info: Intet ubrugt søgespørgsmål — ingen artikel i denne kørsel (opskriften kræver et).'); break; }
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
     // Medium + long (begge efter relevans) + én roterende kvalitetskanal.

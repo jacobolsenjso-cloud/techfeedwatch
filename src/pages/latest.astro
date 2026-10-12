@@ -124,7 +124,7 @@ const listeSchema = {
           {section.items.map((item: any) => (
             <a href={`/video/${item.slug}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
+                <img src={`/kort/${item.slug}.webp`} alt={item.fm.title} loading="lazy" />
                 {section.title === 'Today' && <div class="new-badge">NEW</div>}
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>

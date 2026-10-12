@@ -943,7 +943,7 @@ const siteSchema = [
               '</a>'
             )).join('') + matches.map((v) => (
               '<a class="search-suggest-item" href="/video/' + v.slug + '/">' +
-                '<img class="search-suggest-thumb" src="https://img.youtube.com/vi/' + v.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
+                '<img class="search-suggest-thumb" src="/kort/' + v.slug + '.webp" alt="" loading="lazy">' +
                 '<span class="search-suggest-body">' +
                   '<span class="search-suggest-title">' + escHtml(v.title) + '</span>' +
                   (v.isShort ? '<span class="search-suggest-badge">⚡ Short</span>' : '') +
@@ -990,7 +990,7 @@ const siteSchema = [
             notifList.innerHTML = nArticles.slice(0, 12).map((a) => {
               const isNew = nNew.indexOf(a.slug) !== -1;
               return '<a class="notif-item' + (isNew ? ' is-new' : '') + '" href="/video/' + a.slug + '/">' +
-                '<img class="notif-thumb" src="https://img.youtube.com/vi/' + a.youtubeId + '/mqdefault.jpg" alt="" loading="lazy">' +
+                '<img class="notif-thumb" src="/kort/' + a.slug + '.webp" alt="" loading="lazy">' +
                 '<span class="notif-body"><span class="notif-title">' + nEsc(a.title) + '</span><span class="notif-date">' + nDate(a.date) + '</span></span>' +
                 (isNew ? '<span class="notif-newdot"></span>' : '') +
               '</a>';

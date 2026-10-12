@@ -160,7 +160,7 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
         {page.data.map((video: any) => (
           <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
             <div class="watch-card-thumb">
-              <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" width="320" height="180" loading="lazy" />
+              <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" width="320" height="180" loading="lazy" />
               <span class="watch-card-play" aria-hidden="true">▶</span>
             </div>
             <div>
@@ -217,9 +217,8 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the Tech Feed 
       }
 
       function buildCard(video) {
-        const thumbUrl = video.isShort
-          ? `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
-          : `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
+        // Sitets eget kortbillede (12/10), ikke videoens miniature
+        const thumbUrl = `/kort/${video.slug}.webp`;
 
         const card = document.createElement('a');
         card.href = `/video/${video.slug}/`;

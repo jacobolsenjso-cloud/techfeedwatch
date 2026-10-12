@@ -450,12 +450,12 @@ const vRest = pageOneVideos.slice(13);
                   onload-tjekket er sele og seler, hvis flaget er forældet: det
                   måler bredden i stedet for at stole på statuskoden — samme
                   regel som og-card.mjs har brugt hele tiden (linje 16). */}
+              {/* 12/10-2026: sitets eget kortbillede (960x540, lav-kortbilleder.mjs) i stedet
+                  for videoens miniature — artiklen er hovedsagen, videoen et supplement.
+                  Kommentaren ovenfor om maxres-fallback gælder den gamle løsning. */}
               <img
-                src={`https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/${leadMain.frontmatter.thumbMax ? 'maxresdefault' : 'hqdefault'}.jpg`}
-                alt="" loading="eager" fetchpriority="high"
-                data-fallback={leadMain.frontmatter.thumbMax ? `https://img.youtube.com/vi/${leadMain.frontmatter.youtubeId}/hqdefault.jpg` : undefined}
-                onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
-                onload="if(this.naturalWidth<320&&this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback');}"
+                src={`/kort/${leadMain.file.split('/').pop().replace('.md', '')}.webp`}
+                alt="" width="960" height="540" loading="eager" fetchpriority="high"
               />
             </div>
             {firstTag(leadMain) && (
@@ -470,7 +470,7 @@ const vRest = pageOneVideos.slice(13);
             {leadSide.map((video: any) => (
               <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="lead-mini">
                 <div class="lead-mini-thumb watch-card-thumb">
-                  <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
+                  <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
                 </div>
                 <div>
                   {/* Emnemærke som på hovedhistorien (fase 4, 7/10): læseren ser emnet før titlen */}
@@ -514,7 +514,7 @@ const vRest = pageOneVideos.slice(13);
           {vRow1.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
+                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
@@ -553,7 +553,7 @@ const vRest = pageOneVideos.slice(13);
           {vRow2.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
+                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
@@ -571,7 +571,7 @@ const vRest = pageOneVideos.slice(13);
           {vRest.map((video: any) => (
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`https://img.youtube.com/vi/${video.frontmatter.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" />
+                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
                 <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
@@ -725,9 +725,8 @@ const vRest = pageOneVideos.slice(13);
       }
 
       function buildCard(video) {
-        const thumbUrl = video.isShort
-          ? `https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`
-          : `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
+        // Sitets eget kortbillede (12/10), ikke videoens miniature
+        const thumbUrl = `/kort/${video.slug}.webp`;
 
         const card = document.createElement('a');
         card.href = `/video/${video.slug}/`;
