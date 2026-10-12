@@ -1,5 +1,6 @@
 ---
 import { TAG_COLORS } from '../../lib/tags';
+import fs from 'node:fs';
 import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
@@ -80,6 +81,8 @@ const sourceChannelUrl: string | null = sourceChannelId
 // "researched with a video", som er sandt for de gamle artikler, men ikke for de nye.
 const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent() : '').split(/^## Sources\s*$/m)[1] || '';
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
+// Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
+const kortBillede = fs.existsSync(`public/kort/${slug}.webp`) ? `/kort/${slug}.webp` : null;
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -337,13 +340,9 @@ const metaDesc = rawMeta.length > 157
     .tag-badge:hover { background-color: #cbd5e1; color: #0f172a; transform: translateY(-1px); }
     .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.10); background-color: #000; }
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    /* Videoen som supplement (12/10): eget afsnit efter artiklen */
-    .video-supplement { margin: 36px 0 28px; padding-top: 24px; border-top: 1px solid var(--border-color); }
-    .video-supplement-titel { font-size: 1.3rem; font-weight: 800; margin: 0 0 10px; line-height: 1.3; }
-    body.cinema-mode .video-supplement-titel,
-    body.cinema-mode .video-supplement .time-compare,
-    body.cinema-mode .video-supplement .view-growth { display: none; }
-    body.cinema-mode .video-supplement { margin: 0; padding: 0; border: 0; }
+    /* 12/10: sitets eget billede under resuméet og overskriften over videoen */
+    .artikel-billede { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; margin: 0 0 28px; background: #141317; }
+    .video-overskrift { font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin: 0 0 12px; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
 
@@ -1008,10 +1007,63 @@ const metaDesc = rawMeta.length > 157
           <div class="summary-box">
             {summary}
           </div>
+
+          {/* 12/10-2026 (Jacob): sitets eget billede lige under den korte intro, og overskriften
+              over videoen. Står i første .cinema-reading-block, så biograf-tilstanden på mobil
+              skjuler dem som titlen — afspiller, videoliste og knapper er præcis som før. */}
+          {kortBillede && (
+            <img class="artikel-billede" src={kortBillede} alt="" width="960" height="540" loading="eager" decoding="async" />
+          )}
+          <h2 class="video-overskrift">The video behind this article</h2>
         </div>
 
+        <div class="iframe-wrapper" id="stickyVideo">
+          <iframe
+            id="ytIframe"
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
+            title={`${title} - Video Player`}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
+        </div>
+
+        <div id="cinemaBrowser" data-current-slug={slug} data-current-tags={tagsArray.join(',')}>
+          <div id="cinemaChips" class="cinema-chips">
+            <button type="button" class="cinema-chip active" data-filter="all">All</button>
+            <button type="button" class="cinema-chip" data-filter="related">Related</button>
+            <button type="button" class="cinema-share-btn share-trigger" aria-label="Share Video" title="Share">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span class="share-text">Share</span>
+            </button>
+            <button type="button" class="cinema-chip" data-filter="foryou">For You</button>
+            <button type="button" class="cinema-chip" data-filter="article">Read Article</button>
+            {allUniqueTags.map((t: string) => (
+              <button type="button" class="cinema-chip" data-filter="tag" data-tag={t}>{t}</button>
+            ))}
+          </div>
+          <div id="cinemaList" class="cinema-list"></div>
+        </div>
 
         <div class="cinema-reading-block">
+        {timeCompare && (
+          <p class="time-compare">
+            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
+            {' '}Spend {timeCompare.readMinutes} min here to decide whether the other {timeCompare.saved} are worth it.
+          </p>
+        )}
+        {!timeCompare && video.frontmatter.duration && (
+          <p class="time-compare">
+            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
+          </p>
+        )}
+        {viewGrowth && (
+          <p class="view-growth">
+            <strong>Still gaining.</strong> This video has gone from {viewGrowth.from} to
+            {' '}{viewGrowth.to} views — up {viewGrowth.percent}% since we started tracking it
+            on {viewGrowth.since}.
+          </p>
+        )}
         <div class="action-bar">
           <button type="button" id="listenBtn" class="action-pill" hidden aria-pressed="false">
             <svg class="action-icon" id="listenIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -1096,65 +1148,6 @@ const metaDesc = rawMeta.length > 157
           })();
         </script>
 
-        </div>
-
-        {/* Videoen som supplement (fase B, 12/10-2026). Før stod afspilleren lige under
-            resuméet, og artiklen lignede et referat af videoen. Nu kommer titel, kort svar
-            og hele artiklen først, og videoen har sit eget afsnit her. Biograf-tilstand
-            (mobil) og hjørnevinduet (computer) virker uændret: scriptet finder
-            #stickyVideo, hvor end den står. Afsnittet ligger UDEN FOR .cinema-reading-block,
-            så biograf-tilstanden, der skjuler artiklen, ikke skjuler videoen. */}
-        <section class="video-supplement" aria-labelledby="video-supplement-titel">
-          <h2 class="video-supplement-titel" id="video-supplement-titel">The video behind this article</h2>
-        {timeCompare && (
-          <p class="time-compare">
-            {/* "Spend X min here to decide whether the other Y are worth it" fjernet 12/10:
-                artiklen er hovedsagen nu, ikke en smagsprøve på videoen. */}
-            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
-          </p>
-        )}
-        {!timeCompare && video.frontmatter.duration && (
-          <p class="time-compare">
-            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
-          </p>
-        )}
-        {viewGrowth && (
-          <p class="view-growth">
-            <strong>Still gaining.</strong> This video has gone from {viewGrowth.from} to
-            {' '}{viewGrowth.to} views — up {viewGrowth.percent}% since we started tracking it
-            on {viewGrowth.since}.
-          </p>
-        )}
-        <div class="iframe-wrapper" id="stickyVideo">
-          <iframe
-            id="ytIframe"
-            src={`https://www.youtube-nocookie.com/embed/${youtubeId}?enablejsapi=1`}
-            title={`${title} - Video Player`}
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-          <button type="button" id="cinemaCloseBtn" class="cinema-close-btn" aria-label="Luk fastlåst video" title="Luk">✕</button>
-        </div>
-
-        <div id="cinemaBrowser" data-current-slug={slug} data-current-tags={tagsArray.join(',')}>
-          <div id="cinemaChips" class="cinema-chips">
-            <button type="button" class="cinema-chip active" data-filter="all">All</button>
-            <button type="button" class="cinema-chip" data-filter="related">Related</button>
-            <button type="button" class="cinema-share-btn share-trigger" aria-label="Share Video" title="Share">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-              <span class="share-text">Share</span>
-            </button>
-            <button type="button" class="cinema-chip" data-filter="foryou">For You</button>
-            <button type="button" class="cinema-chip" data-filter="article">Read Article</button>
-            {allUniqueTags.map((t: string) => (
-              <button type="button" class="cinema-chip" data-filter="tag" data-tag={t}>{t}</button>
-            ))}
-          </div>
-          <div id="cinemaList" class="cinema-list"></div>
-        </div>
-        </section>
-
-        <div class="cinema-reading-block">
         {peopleAlsoAsk.length > 0 && (
           <aside class="paa" aria-labelledby="paa-heading">
             <h3 class="paa-title" id="paa-heading">People also ask</h3>
