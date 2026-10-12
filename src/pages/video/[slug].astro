@@ -134,6 +134,25 @@ if (videoTags.includes("AI Video")) {
 const headings = video.getHeadings ? video.getHeadings() : [];
 const toc = headings.filter((h: any) => h.depth === 2 || h.depth === 3);
 
+// Linjen under videoen (12/10, Jacob valgte B med A som reserve). Før stod der "Spend X min
+// here to decide whether the other Y are worth it" — det beskrev artiklen som en smagsprøve
+// på videoen, men artiklen bygger nu på søgningen, og videoen er et supplement.
+// B: artikler med kildeliste har et videoafsnit, hvis overskrift nævner kanalen; linjen siger
+//    "In the video: <overskriften>" og linker til afsnittet.
+// A: ellers (de gamle artikler) kun fakta: "8 min video by Kanal · 6 min read."
+const kanalNavn = String(sourceChannel || '').split('|')[0].trim();
+const kanalFoerste = kanalNavn.split(/\s+/)[0] || '';
+const videoAfsnitH2: any = antalWebKilder > 0 && kanalNavn.length >= 2
+  ? headings.find((h: any) => h.depth === 2 && (h.text.toLowerCase().includes(kanalNavn.toLowerCase())
+      || (kanalFoerste.length >= 4 && h.text.toLowerCase().includes(kanalFoerste.toLowerCase()))))
+  : null;
+// Videoens længde i hele minutter ("8:20" -> 8, "1:02:10" -> 62); 0 = ukendt, så vises linjen ikke
+const varighedDele = String(video.frontmatter.duration || '').split(':').map(Number);
+const varighedSek = varighedDele.every((n) => Number.isFinite(n)) && varighedDele.length >= 2
+  ? varighedDele.reduce((sum, n) => sum * 60 + n, 0) : 0;
+const videoMinutter = varighedSek > 0 ? Math.max(1, Math.round(varighedSek / 60)) : 0;
+const laesMinutter = Number(video.frontmatter.minutesRead) || 1;
+
 const rawTags = video.frontmatter.tags || video.frontmatter.tag || [];
 const tagsArray = Array.isArray(rawTags) ? rawTags : [rawTags];
 const primaryTag = tagsArray[0] || 'relaterede videoer';
@@ -352,6 +371,9 @@ const metaDesc = rawMeta.length > 157
     .artikel-billede { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; margin: 0 0 28px; background: #141317; }
     .video-overskrift { font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin: 0 0 12px; }
     .video-content.artikel-start { margin-bottom: 24px; }
+    /* Linket "In the video: …" under videoen — tekstfarven skifter med lys/mørk (farvereglen) */
+    .time-compare a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
+    .time-compare a:hover { text-decoration: underline; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
 
@@ -1025,7 +1047,9 @@ const metaDesc = rawMeta.length > 157
           )}
           {/* Artiklens første afsnit (resten står efter videoen i <article class="video-content">) */}
           {artikelStart && <div class="video-content artikel-start" set:html={artikelStart}></div>}
-          <h2 class="video-overskrift">The video behind this article</h2>
+          {/* "Watch: the video" (12/10) — "The video behind this article" sagde, at artiklen
+              var lavet ud fra videoen; den bygger nu på søgningen, videoen er et supplement. */}
+          <h2 class="video-overskrift">Watch: the video</h2>
         </div>
 
         <div class="iframe-wrapper" id="stickyVideo">
@@ -1057,15 +1081,11 @@ const metaDesc = rawMeta.length > 157
         </div>
 
         <div class="cinema-reading-block">
-        {timeCompare && (
+        {videoMinutter > 0 && (
           <p class="time-compare">
-            <strong>{timeCompare.videoMinutes} min video · {timeCompare.readMinutes} min read.</strong>
-            {' '}Spend {timeCompare.readMinutes} min here to decide whether the other {timeCompare.saved} are worth it.
-          </p>
-        )}
-        {!timeCompare && video.frontmatter.duration && (
-          <p class="time-compare">
-            <strong>{video.frontmatter.duration} video · {video.frontmatter.minutesRead || 1} min read.</strong>
+            {videoAfsnitH2
+              ? <><strong>{videoMinutter} min video · {laesMinutter} min read.</strong> In the video: <a href={`#${videoAfsnitH2.slug}`}>{videoAfsnitH2.text}</a></>
+              : <strong>{videoMinutter} min video{kanalNavn ? ` by ${kanalNavn}` : ''} · {laesMinutter} min read.</strong>}
           </p>
         )}
         {viewGrowth && (
