@@ -83,6 +83,14 @@ const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent()
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
 // Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
 const kortBillede = fs.existsSync(`public/kort/${slug}.webp`) ? `/kort/${slug}.webp` : null;
+// 12/10-2026 (Jacob): videoen skal stå lige under artiklens FØRSTE afsnit. Afspilleren må
+// ikke ligge inde i en .cinema-reading-block (biograf-tilstanden skjuler dem, og så ville
+// videoen forsvinde), så artiklens HTML deles i to: første afsnit før videoen, resten efter.
+// Starter artiklen ikke med et afsnit (<p>), står hele artiklen efter videoen som før.
+const fuldHtml = String(await video.compiledContent());
+const foersteSlut = /^\s*<p[\s>]/.test(fuldHtml) ? fuldHtml.indexOf('</p>') + 4 : 0;
+const artikelStart = foersteSlut > 4 ? fuldHtml.slice(0, foersteSlut) : '';
+const artikelResten = foersteSlut > 4 ? fuldHtml.slice(foersteSlut) : fuldHtml;
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -343,6 +351,7 @@ const metaDesc = rawMeta.length > 157
     /* 12/10: sitets eget billede under resuméet og overskriften over videoen */
     .artikel-billede { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; margin: 0 0 28px; background: #141317; }
     .video-overskrift { font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin: 0 0 12px; }
+    .video-content.artikel-start { margin-bottom: 24px; }
     .cinema-close-btn { display: none; position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 1rem; line-height: 1; cursor: pointer; align-items: center; justify-content: center; z-index: 901; }
     #cinemaBrowser { display: none; }
 
@@ -1014,6 +1023,8 @@ const metaDesc = rawMeta.length > 157
           {kortBillede && (
             <img class="artikel-billede" src={kortBillede} alt="" width="960" height="540" loading="eager" decoding="async" />
           )}
+          {/* Artiklens første afsnit (resten står efter videoen i <article class="video-content">) */}
+          {artikelStart && <div class="video-content artikel-start" set:html={artikelStart}></div>}
           <h2 class="video-overskrift">The video behind this article</h2>
         </div>
 
@@ -1113,9 +1124,7 @@ const metaDesc = rawMeta.length > 157
           </div>
         )}
 
-        <article class="video-content">
-          <video.Content />
-        </article>
+        <article class="video-content" set:html={artikelResten}></article>
 
         <div id="tfw-inline-recs" data-recs={JSON.stringify(recommendPool.slice(0, 6))} hidden></div>
         <script is:inline>
@@ -1781,12 +1790,13 @@ const metaDesc = rawMeta.length > 157
           const box = document.querySelector('.summary-box');
           if (box) parts.push(box.textContent.trim());
 
-          const body = document.querySelector('.video-content');
-          if (body) {
+          // Artiklen står i to dele (første afsnit før videoen, resten efter, 12/10) —
+          // begge læses op, i rækkefølge.
+          document.querySelectorAll('.video-content').forEach((body) => {
             const clone = body.cloneNode(true);
             clone.querySelectorAll('pre, code, table, figure, .toc-box').forEach((n) => n.remove());
             parts.push(clone.textContent);
-          }
+          });
 
           const text = parts.join('. ')
             .replace(/https?:\/\/\S+/g, ' ')     // rå URL'er læses bogstav for bogstav
