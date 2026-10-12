@@ -16,7 +16,7 @@ ${delspoergsmaal.map((q, i) => `${i + 1}. ${q}`).join('\n')}
 
 TASKS
 1. For each numbered question: would a reader come away from the article with a clear answer to it? List the numbers of the questions that are NOT answered.
-2. List every sentence that is promotion rather than information: it praises or recommends a specific product, vendor, course, guide, newsletter, download or creator's offer; tells the reader to sign up, buy, download or subscribe; or refers to a resource the article does not contain (for example "grab the 10-point checklist"). Naming a product while explaining or comparing it is NOT promotion. Copy each sentence exactly.
+2. List every sentence that is promotion rather than information: it praises or recommends a specific product, vendor, course, guide, newsletter, download or creator's offer; tells the reader to sign up, buy, download or subscribe; or refers to a resource the article does not contain (for example "grab the 10-point checklist"). Naming a product while explaining or comparing it is NOT promotion. A sentence that links to another article on this site (a link starting with "/video/", "/guides/", "/glossary/", "/tools/" or "/tag/") is NOT promotion. Copy each sentence exactly.
 
 Return JSON only: {"unanswered":[2],"promo":["exact sentence"]}
 
@@ -33,7 +33,10 @@ export async function redaktoerTjek(genAI, md, delspoergsmaal, spoergsmaal) {
       .map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= delspoergsmaal.length)
       .map((n) => ({ nr: n, spoergsmaal: delspoergsmaal[n - 1] }));
     // Kun sætninger, der faktisk står i artiklen, tæller (modellen kan ikke finde på fund).
-    const reklame = (Array.isArray(j.promo) ? j.promo : []).map(String).filter((s) => s.length > 10 && md.includes(s.slice(0, 40)));
+    // En sætning med et link til sitets egne sider er en intern henvisning, ikke reklame
+    // (målt 12/10, prøve 4: 5 interne henvisninger blev kaldt reklame og stoppede artiklen).
+    const reklame = (Array.isArray(j.promo) ? j.promo : []).map(String)
+      .filter((s) => s.length > 10 && md.includes(s.slice(0, 40)) && !/\]\(\/(video|guides|glossary|tools|tag)\//.test(s));
     return { ubesvarede, reklame };
   } catch {
     return null;
