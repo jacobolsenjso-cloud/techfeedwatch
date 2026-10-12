@@ -1,6 +1,6 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-10-05 på 418 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
+Målt 2026-10-12 på 426 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 1 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
@@ -53,8 +53,8 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   > However, the very next year, a quantum computer with 128 qubits could suddenly and handily beat any classical computer ever built for that specific problem.
 
 - **What Hybrid Quantum-Classical Computing Is**  
-  `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
-  > Predictably, the US government has also significantly ramped up investments, pouring a total of $2 billion into quantum computing recently.
+  `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-10-12  
+  > Unsurprisingly, the US government has likewise sharply boosted its spending, committing a total of $2 billion to quantum computing recently.
 
 - **What Hybrid Quantum-Classical Computing Is**  
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
