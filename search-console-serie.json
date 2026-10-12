@@ -100,6 +100,29 @@
         "position": 8.8
       },
       "note": "Fjerde aflaesning, en uge efter den tredje. Indekseringen staar fuldstaendig stille for fjerde gang: 82/769 og alle otte aarsager er bit for bit identiske med 26/9 og 28/9. Sitemappet er vokset 548 -> 557. Effektiviteten er faldet markant: 98 -> 50 eksponeringer og 18 -> 17 klik i det rullende 28-dages vindue (5/9-2/10). Faldet er IKKE et filter-kunstgreb - tallene var de samme efter 'Nulstil filtre'. En del af faldet er vinduet, der har flyttet sig en uge, men ikke det hele."
+    },
+    {
+      "dato": "2026-10-12",
+      "adresser": 566,
+      "indekseret": 54,
+      "ikkeIndekseret": 832,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 523,
+        "Side med omdirigering": 135,
+        "Dublet uden kanonisk side valgt af brugeren": 65,
+        "Ikke fundet (404)": 63,
+        "Crawlet - endnu ikke indekseret": 42,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 16,
+        "eksponeringer": 43,
+        "klikrate": 37.2,
+        "position": 10.7
+      },
+      "note": "Femte aflaesning, en uge efter den fjerde. FOERSTE GANG tallene flytter sig, og de flytter sig den gale vej: indekseret 82 -> 54 (-28) og ikke indekseret 769 -> 832 (+63), mens sitemappet kun voksede 557 -> 566 (+9). Googles data var sidst opdateret 09.10.2026. Soegekonsollen viser nu 7 aarsager, ikke 8 - 'Serverfejl (5xx)' er helt forsvundet fra listen (stod paa 0), og den er skrevet som 0 her for at bevare samme form. Labels er ogsaa aendret i brugerfladen ('Crawlet endnu ikke indekseret' uden tankestreg, 'Ikke fundet (fejl 404)'); de gamle noegler er bevaret, saa serie.mjs kan sammenligne. Aarsagerne summer til 832. Effektiviteten faldt videre: 50 -> 43 eksponeringer og 17 -> 16 klik i det rullende 28-dages vindue, position 8,8 -> 10,7. Jeg har IKKE maalt hvorfor indekseringen faldt - det staar der kun, at den gjorde."
     }
   ]
 }
