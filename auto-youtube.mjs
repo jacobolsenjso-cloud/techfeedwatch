@@ -6,7 +6,7 @@ import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
-import { retSpoergsmaal } from './src/lib/spoergsmaalsfilter.mjs';
+import { retSpoergsmaal, passerEmnet } from './src/lib/spoergsmaalsfilter.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -581,6 +581,15 @@ async function findNewestVideos() {
   // et søgespørgsmål skrives ingen artikel — add-video.mjs ville alligevel afvise
   // hver kandidat, og robotten ville betale for at vurdere dem.
   if (!spoergsmaal) { console.log('Info: Intet ubrugt søgespørgsmål — ingen artikel i denne kørsel (opskriften kræver et).'); break; }
+  // Emnetjek (12/10): et spørgsmål uden for sitets emne (fx "what happens to sora in naruto"
+  // under AI Video) lægges på is, FØR der bruges YouTube-kvote og Gemini-kald på kandidater.
+  // null (tjekket kunne ikke køre) stopper ikke robotten.
+  if (await passerEmnet(spoergsmaal, tag) === false) {
+    markerSpoergsmaalProevet(spoergsmaal, tag);
+    proevetNu.add(spoergsmaal);
+    console.log(`Info: "${spoergsmaal}" lagt på is i ${PROEVET_DAGE} dage — handler ikke om "${tag}".`);
+    continue;
+  }
   try {
     // Henter videoer fra Kategori 28. safeSearch er fjernet for at undgå blokering af tech-nyheder.
     // Medium + long (begge efter relevans) + én roterende kvalitetskanal.

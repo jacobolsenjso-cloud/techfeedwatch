@@ -16,7 +16,7 @@ import { GEMINI_MODEL } from './model.mjs';
 export const MIN_FAKTA_SOEG = 4;   // så mange fakta med kilde, ellers ingen artikel
 export const MIN_KILDER_SOEG = 2;  // så mange forskellige sider bag dem
 const CACHE = './.cache/soegning';
-const CACHE_VERSION = 2; // hæves, når søgningens regler ændres
+const CACHE_VERSION = 3; // hæves, når søgningens regler ændres (3: kildetjek + modargumenter, 12/10)
 
 export function soegPrompt(spoergsmaal, dato) {
   return `You are a researcher preparing a reference article that answers the Google search "${spoergsmaal}". Today is ${dato}.
@@ -29,7 +29,8 @@ SUBQUESTIONS:
 (4 to 6 questions in total, in the order a reader needs them)
 FACTS:
 - <one fact per line: a full sentence that names its publisher (for example "According to IBM's Cost of a Data Breach Report 2024, ...") and gives numbers, dates and names exactly as the page states them>
-(8 to 15 facts that help answer the questions; prefer the most recent figures and primary sources: official sites, research, standards bodies, the company concerned. No forums, no social media, no YouTube.)`;
+(8 to 15 facts that help answer the questions; prefer the most recent figures and primary sources: official sites, research, standards bodies, the company concerned. No forums, no social media, no YouTube.)
+If the search assumes something (that X is better than Y, that Z is safe, that W is dead), the facts must TEST that assumption: include evidence that supports it AND evidence that limits or contradicts it.`;
 }
 
 // Deler modellens svar i delspørgsmål og fakta.
@@ -123,6 +124,31 @@ export function udgivernavne(fakta) {
   return [...ud].filter((n) => n.length >= 2 && !GENERISK.has(n));
 }
 
+// Dommer siderne STÆRK/SVAG for en artikel, der skal kunne stå på mål for sine tal.
+// Returnerer et Set af svage kildenumre. Fejler kaldet, fjernes intet (tom mængde) — det
+// står i loggen, så det kan ses, at tjekket ikke kørte.
+export function kildePrompt(kilder) {
+  return `These web pages were found as sources for an evidence-based reference article. Mark each one STRONG or WEAK.
+STRONG: governments, regulators, official bodies, standards organisations, universities, peer-reviewed research, established research and consulting firms publishing their own data (for example McKinsey, Gartner, IBM, Verizon reports), a company's own site about its own products or data, established news organisations, Wikipedia.
+WEAK: content-marketing blogs of unrelated companies, statistics roundups and listicles, market-research press-release sites, SEO or affiliate sites, personal blogs, and sites that mainly repeat other sources' numbers.
+
+${kilder.map((k) => `S${k.nr}. ${k.domaene} — ${k.titel || '(no title)'} — ${k.url}`).join('\n')}
+
+Return JSON only: {"weak":[2,5]}`;
+}
+async function svageKilder(genAI, hentModel, kilder) {
+  if (!kilder.length) return new Set();
+  try {
+    const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 4096, temperature: 0, responseMimeType: 'application/json' } }).generateContent(kildePrompt(kilder));
+    const j = JSON.parse((r.response.text() || '').replace(/^```(json)?\s*|\s*```$/g, ''));
+    const gyldige = new Set(kilder.map((k) => k.nr));
+    return new Set((Array.isArray(j.weak) ? j.weak : []).map(Number).filter((n) => gyldige.has(n)));
+  } catch (e) {
+    console.log(`Søgning: kildetjekket kunne ikke køre (${String(e.message).split('\n')[0]}) — ingen kilder fjernet`);
+    return new Set();
+  }
+}
+
 // Hovedfunktionen. Resultatet gemmes pr. spørgsmål i .cache/soegning (3 dage),
 // så robottens kandidat-runde og en genkørsel ikke betaler for samme søgning to gange.
 // Giver søgningen for få delspørgsmål, fakta med kilde eller kilder, får
@@ -164,6 +190,13 @@ export async function undersoegSoegning(genAI, spoergsmaal, { onLog = () => {}, 
     if (url && (!erKildeTilladt(new URL(url).hostname) || kilder.some((k) => k.url === url))) url = null;
     kilder.push({ nr, domaene, url, titel: url ? await sideTitel(url) : null });
   }
+  // Kildekvalitet (12/10): fase C viste svage andenhåndssider ved siden af de stærke
+  // (statisticsfundamentals.com, businessresearchinsights.com, en blog der citerede Indiens
+  // centralbank). Ét modelkald dømmer siderne; svage sider mister deres adresse og falder
+  // dermed ud nedenfor sammen med de fakta, der kun hviler på dem.
+  const svage = await svageKilder(genAI, hentModel, kilder.filter((k) => k.url));
+  for (const k of kilder) if (svage.has(k.nr)) k.url = null;
+  if (svage.size) onLog(`Søgning: ${svage.size} svage kilder fjernet (${kilder.filter((k) => svage.has(k.nr)).map((k) => k.domaene).join(', ')})`);
   // Kilder uden rigtig adresse kan ikke stå i kildelisten — deres fakta må heller ikke bruges.
   // Gyldige kilder nummereres om (1, 2, 3 …), og hvert faktum peger kun på gyldige.
   const nyNr = new Map(kilder.filter((k) => k.url).map((k, i) => [k.nr, i + 1]));

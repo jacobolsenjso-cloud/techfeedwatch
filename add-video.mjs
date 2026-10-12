@@ -23,6 +23,8 @@ import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, VIDE
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
 // Videoen må højst levere så mange konkrete detaljer, at den forbliver et supplement (var 5).
 const MIN_VIDEO_DETALJER = 2;
+// Så mange ensidige sætninger må stå tilbage efter redaktørens rettelse (12/10, se stoppet nedenfor).
+const MAKS_ENSIDIGE = 2;
 // Merværdi (8/10): højst denne andel af brødtekstens sætninger må dele 8 ord i træk med videoen.
 const ORDRET_MAKS = 0.15;
 // Læsertjek (8/10): så mange fund efter rettelsen stopper artiklen.
@@ -654,6 +656,7 @@ async function run() {
     20. Never draw diagrams with characters (arrows, boxes, ASCII art). Use a markdown table or a numbered list instead.
     21. Never paste the reader's search words into a sentence where they are not grammatical (for example "Understanding what is X ..."). Rephrase.
     22. Do not write a sources or references section - it is added automatically.
+    23. If the reader's question assumes something (that X is better than Y, that Z is safe, that W is dead), never state that assumption as settled fact. Show where it holds and where it does not, using the RESEARCH FACTS on both sides, and end with a fair, evidence-based verdict. No sweeping judgments ("clear superiority", "always", "the best") without evidence in the same sentence.
 
     STRUCTURE (built from the search, not from the video):
     - Opening: 2-3 sentences that answer "${targetQuestion}" directly (no heading, no label).
@@ -1125,13 +1128,13 @@ ${content}`);
       // der stadig bagefter, skrives artiklen ikke.
       let rt = await redaktoerTjek(genAI, content, soeg.delspoergsmaal, targetQuestion);
       if (rt === null) console.log('🧑‍⚖️ Redaktørtjek kunne ikke køre - artiklen udgives uden (ses i loggen)');
-      else if (rt.ubesvarede.length || rt.reklame.length) {
-        console.log(`🧑‍⚖️ Redaktørtjek: ${rt.ubesvarede.length} ubesvarede delspørgsmål, ${rt.reklame.length} reklamesætning(er) — beder om rettelse`);
+      else if (rt.ubesvarede.length || rt.reklame.length || rt.ensidige.length) {
+        console.log(`🧑‍⚖️ Redaktørtjek: ${rt.ubesvarede.length} ubesvarede delspørgsmål, ${rt.reklame.length} reklamesætning(er), ${rt.ensidige.length} ensidige sætning(er) — beder om rettelse`);
         const foerRed = content;
         try {
           const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
             .generateContent(`Revise the article below. Change ONLY what is needed for these requirements and keep everything else - headings, links, length - as it is:
-${rt.ubesvarede.length ? `1. The article does not answer these questions that people searching "${targetQuestion}" have. Answer each one, using only the RESEARCH FACTS and naming the publisher of every number: add a short "## " section for it, or extend the section that comes closest.\n${rt.ubesvarede.map((u) => `   - ${u.spoergsmaal}`).join('\n')}\n` : ''}${rt.reklame.length ? `2. These sentences promote something instead of informing. Remove each one, or rewrite it as neutral information that recommends nothing:\n${rt.reklame.map((s) => `   - ${s}`).join('\n')}\n` : ''}Never invent numbers or names. Do not add a sources section. Output ONLY the revised article in markdown - no commentary, no preamble.
+${rt.ubesvarede.length ? `1. The article does not answer these questions that people searching "${targetQuestion}" have. Answer each one, using only the RESEARCH FACTS and naming the publisher of every number: add a short "## " section for it, or extend the section that comes closest.\n${rt.ubesvarede.map((u) => `   - ${u.spoergsmaal}`).join('\n')}\n` : ''}${rt.reklame.length ? `2. These sentences promote something instead of informing. Remove each one, or rewrite it as neutral information that recommends nothing:\n${rt.reklame.map((s) => `   - ${s}`).join('\n')}\n` : ''}${rt.ensidige.length ? `3. These sentences state a one-sided judgment as settled fact. Rewrite each one so it is fair and backed by the RESEARCH FACTS (name the source), or show where the claim holds and where it does not:\n${rt.ensidige.map((s) => `   - ${s}`).join('\n')}\n` : ''}Never invent numbers or names. Do not add a sources section. Output ONLY the revised article in markdown - no commentary, no preamble.
 
 RESEARCH (from Google):
 ${soegningTekst(soeg)}
@@ -1148,7 +1151,12 @@ ${content}`);
       }
       if (rt && rt.ubesvarede.length) throw new Error(`Redaktørtjek: ${rt.ubesvarede.length} delspørgsmål ubesvaret efter rettelse (${rt.ubesvarede.map((u) => `"${u.spoergsmaal}"`).join(', ')}). Artiklen skrives ikke.`);
       if (rt && rt.reklame.length) throw new Error(`Redaktørtjek: ${rt.reklame.length} reklamesætning(er) efter rettelse (${rt.reklame.map((s) => `"${s.slice(0, 80)}"`).join(' · ')}). Artiklen skrives ikke.`);
-      if (rt) console.log(`🧑‍⚖️ Redaktørtjek: alle ${soeg.delspoergsmaal.length} delspørgsmål besvaret, ingen reklame`);
+      // Ensidighed: målt 12/10 på de 5 prøveartikler svingede dommen fra kørsel til kørsel
+      // (0/1, 3/4, 5/3, 0/0, 0/0). "Stop ved én" ville stoppe 2-3 af 5, delvis af tilfældighed.
+      // Derfor: 1-2 rettes og udgives (står i loggen), 3+ efter rettelse = ingen artikel.
+      if (rt && rt.ensidige.length > MAKS_ENSIDIGE) throw new Error(`Redaktørtjek: ${rt.ensidige.length} ensidige sætninger efter rettelse (højst ${MAKS_ENSIDIGE}): ${rt.ensidige.map((s) => `"${s.slice(0, 80)}"`).join(' · ')}. Artiklen skrives ikke.`);
+      if (rt && rt.ensidige.length) for (const s of rt.ensidige) console.log(`   ensidig sætning tilbage (tilladt, højst ${MAKS_ENSIDIGE}): ${s.slice(0, 120)}`);
+      if (rt) console.log(`🧑‍⚖️ Redaktørtjek: alle ${soeg.delspoergsmaal.length} delspørgsmål besvaret, ingen reklame, ${rt.ensidige.length} ensidig(e) sætning(er)`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);

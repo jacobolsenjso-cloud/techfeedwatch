@@ -37,3 +37,30 @@ export async function retSpoergsmaal(q, log = console.log) {
   log(`Info: Spørgsmålsfilter: "${q}" -> "${dom.spoergsmaal}" (${rettelser.length}/${svar.length} domme).`);
   return dom.spoergsmaal;
 }
+
+// Emnetjek (12/10-2026). Grammatikfilteret ovenfor godkendte "what happens to sora in naruto"
+// (en anime-figur) for emnet AI Video, fordi spørgsmålet er grammatisk fint. Her spørges,
+// om søgningen — som de fleste mener den — handler om sitets emne. Gemini dømmer 3 gange,
+// flertal afgør. Returnerer true/false, eller null hvis tjekket ikke kunne køre (så
+// stopper det aldrig robotten).
+export const emnePrompt = (q, emne) => `A technology website (AI, tech, software, hardware, fintech, crypto, cybersecurity) wants to write an article answering the Google search "${q}" under its topic "${emne}".
+Does this search, as most people typing it mean it, ask about technology, software, AI, hardware, digital business, finance or crypto?
+Answer NO if it is mainly about entertainment, fiction, anime, game lore, sports, celebrities, or another meaning of a word that also names a tech product (for example "what happens to sora in naruto" is about an anime character, not OpenAI's Sora).
+Answer exactly: yes or no`;
+
+export async function passerEmnet(q, emne, log = console.log) {
+  if (!q || !process.env.GEMINI_API_KEY) return null;
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const svar = [];
+  for (let k = 0; k < 3; k++) {
+    try {
+      const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 2048, temperature: 0 } }).generateContent(emnePrompt(q, emne));
+      const s = (r.response.text() || '').trim().toLowerCase();
+      if (/^yes/.test(s)) svar.push(true); else if (/^no/.test(s)) svar.push(false);
+    } catch (e) { log(`Info: emnetjek, dom ${k + 1} fejlede (${e.message.split('\n')[0]}).`); }
+  }
+  if (!svar.length) return null;
+  const ja = svar.filter(Boolean).length;
+  log(`Info: Emnetjek: "${q}" ${ja * 2 > svar.length ? 'handler om emnet' : 'handler IKKE om emnet'} (${ja}/${svar.length} ja).`);
+  return ja * 2 > svar.length;
+}
