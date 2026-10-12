@@ -151,7 +151,6 @@ const varighedDele = String(video.frontmatter.duration || '').split(':').map(Num
 const varighedSek = varighedDele.every((n) => Number.isFinite(n)) && varighedDele.length >= 2
   ? varighedDele.reduce((sum, n) => sum * 60 + n, 0) : 0;
 const videoMinutter = varighedSek > 0 ? Math.max(1, Math.round(varighedSek / 60)) : 0;
-const laesMinutter = Number(video.frontmatter.minutesRead) || 1;
 
 const rawTags = video.frontmatter.tags || video.frontmatter.tag || [];
 const tagsArray = Array.isArray(rawTags) ? rawTags : [rawTags];
@@ -1084,8 +1083,10 @@ const metaDesc = rawMeta.length > 157
         {videoMinutter > 0 && (
           <p class="time-compare">
             {videoAfsnitH2
-              ? <><strong>{videoMinutter} min video · {laesMinutter} min read.</strong> In the video: <a href={`#${videoAfsnitH2.slug}`}>{videoAfsnitH2.text}</a></>
-              : <strong>{videoMinutter} min video{kanalNavn ? ` by ${kanalNavn}` : ''} · {laesMinutter} min read.</strong>}
+              ? <><strong>{videoMinutter} min video.</strong> In the video: <a href={`#${videoAfsnitH2.slug}`}>{videoAfsnitH2.text}</a></>
+              : <strong>{videoMinutter} min video{kanalNavn ? ` by ${kanalNavn}` : ''}.</strong>}
+            {/* Ingen læsetid her (12/10, Jacob): "8 min video · 6 min read" side om side lagde op til
+                at artiklen er en kort udgave af videoen. Læsetiden står øverst ved byline. */}
           </p>
         )}
         {viewGrowth && (
