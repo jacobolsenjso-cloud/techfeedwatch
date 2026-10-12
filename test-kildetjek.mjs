@@ -2,6 +2,7 @@
 // Kør: node test-kildetjek.mjs — alle linjer skal være OK, ellers exitkode 1.
 import { videoAndel, talUdenKilde, harTalPaastand, videoAfsnit, brugteKilder, kildelisteMd, titelAfAdresse } from './src/lib/kildetjek.mjs';
 import { domaeneLed, erKildeTilladt, udgivernavne, parseSoegning, kilderTilLinje } from './src/lib/soegning.mjs';
+import { tjekOutline, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 
 let fejl = 0;
 const t = (navn, faktisk, forventet) => {
@@ -64,6 +65,25 @@ t('kildeliste', kildelisteMd(brugteKilder(md, soeg), { videoId: 'abc', videoTite
 // Titel af adressen, når siden ingen titel gav
 t('PDF-titel af adressen', titelAfAdresse('https://www.verizon.com/business/resources/infographics/2024-dbir-infographic.pdf'), '2024 dbir infographic (PDF)');
 t('talsti -> domæne + sti', titelAfAdresse('https://www.legislation.gov.uk/eur/2016/679/article/4'), 'legislation.gov.uk/eur/2016/679/article/4');
+
+// Kilden i sætningen lige før, men i et afsnit for sig (afsnittet blev delt) — under samme overskrift
+const delt = `## Paid ads\n\nAccording to Google Research, ads were paused in a study.\n\nThe authors found 89% of visits were not replaced.\n\n## Other\n\nThe share rose 12% that year.`;
+t('kilde i afsnittet før, samme overskrift', talUdenKilde(delt, ['Google Research'], 'Kanal'), ['The share rose 12% that year.']);
+
+// Tekniske enheder og tabeller
+t('temperatur er en påstand', harTalPaastand('The hotspot reached 107°C under load.'), true);
+t('GHz er en påstand', harTalPaastand('It boosts to 2.5 GHz.'), true);
+const tabel = `## Ranges\n\nAccording to Nvidia, these deltas are normal:\n\n| State | Delta |\n|---|---|\n| Normal | 11°C to 14°C |\n| Bad | 30°C |\n\n## Other\n\n| State | Delta |\n|---|---|\n| Bad | 30°C |`;
+t('tabel med kilde før / tabel uden kilde', talUdenKilde(tabel, ['Nvidia'], 'Kanal'), ['| Bad | 30°C |']);
+
+// Artikelplan (outline + FAQ fra rigtige søgninger)
+const dq = ['What is a breach?', 'Why does it matter?', 'What should you do?', 'Who must be told?'];
+const godPlan = { sections: [{ h2: 'Why Breaches Cost So Much', covers: [2] }, { h2: 'Steps to Take After a Breach', covers: [3] }, { h2: 'Who Must Be Notified and When', covers: [4] }], video: 'What Human Error Shows About Breach Letters', closing: '' };
+t('outline godkendt', tjekOutline(godPlan, dq, 'Human Error'), []);
+t('outline: delspørgsmål mangler + skabelon', tjekOutline({ ...godPlan, sections: [{ h2: 'How It Works', covers: [2] }, { h2: 'Steps to Take', covers: [3] }, { h2: 'Costs', covers: [3] }] }, dq, 'Human Error'), ['delspørgsmål 4 ikke dækket', 'skabelon: "How It Works"']);
+t('outline: video uden kanal', tjekOutline({ ...godPlan, video: 'What the Video Shows' }, dq, 'Human Error'), ['videooverskriften nævner ikke kanalen']);
+t('outline brugt', outlineBrugt('## Why Breaches Cost So Much\n\ntext\n\n## Steps to Take After a Breach!\n', { sections: ['Why Breaches Cost So Much', 'Steps to Take After a Breach', 'Other'], video: 'V', closing: '' }), { brugt: 2, ialt: 4 });
+t('FAQ fra rigtige søgninger', faqFraSoegninger([{ question: 'How long does a data breach investigation take?' }, { question: 'Is my bank safe?' }], ['how long does a data breach investigation take', 'what is a data breach']), 1);
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nAlle OK');
 process.exit(fejl ? 1 : 0);

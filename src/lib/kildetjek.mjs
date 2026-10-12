@@ -83,7 +83,9 @@ export function harKildenavn(s, navne) {
 // Et tal, der er en påstand: beløb, procent, mængde med enhed, store tal (10,626 / 30458).
 // Rene årstal tæller ikke (en dato er ikke en statistik) — taelTal i konkret.mjs tæller
 // dem med og overser store tal uden enhed, derfor en egen regel her.
-const PAASTAND = /(\$|€|£)\s?\d[\d.,]*|\d[\d.,]*\s?(%|percent|million|billion|trillion|k\b|GB|TB|MB|ms|seconds|minutes|hours|days|weeks|months|years|x\b)|\b\d{1,3}(,\d{3})+\b|\b(?!(?:19|20)\d\d\b)\d{4,}\b/;
+// Tekniske enheder tilføjet 12/10: GPU-prøven havde 15 temperaturer (95°C …) uden kilde,
+// som tjekket ikke så, fordi °C ikke stod på listen.
+const PAASTAND = /(\$|€|£)\s?\d[\d.,]*|\d[\d.,]*\s?(%|percent|million|billion|trillion|k\b|GB|TB|MB|ms|seconds|minutes|hours|days|weeks|months|years|x\b|°\s?[CF]?|degrees|GHz|MHz|W\b|watts?|nm\b|mm\b|fps|Mbps|Gbps|GB\/s|TB\/s|mAh|V\b|volts?|inch(es)?)|\b\d{1,3}(,\d{3})+\b|\b(?!(?:19|20)\d\d\b)\d{4,}\b/;
 export const harTalPaastand = (s) => PAASTAND.test(String(s));
 
 // Sætninger med tal, hvor hverken sætningen selv eller den lige før nævner en kilde.
@@ -91,12 +93,29 @@ export const harTalPaastand = (s) => PAASTAND.test(String(s));
 export function talUdenKilde(md, navne, channelTitle) {
   const alle = [...(navne || []), kildeNavn(channelTitle)].filter((n) => n && n.length >= 2);
   const ud = [];
+  // Sidste sætning i afsnittet lige før — tæller med, når det står under samme overskrift.
+  // Målt 12/10: robotten deler lange afsnit EFTER kildetjekket, så "The authors determined …
+  // 89 %" kom til at starte et nyt afsnit, mens kilden (Google Research) stod i sætningen før.
+  let forrige = null, forrigeH2 = null;
   for (const a of afsnitMedH2(md)) {
-    if (erVideoOverskrift(a.h2, channelTitle) || /^sources$/i.test(a.h2 || '')) continue;
     const ss = saetninger(a.tekst);
-    ss.forEach((s, i) => {
-      if (harTalPaastand(s) && !harKildenavn(s, alle) && !(i > 0 && harKildenavn(ss[i - 1], alle))) ud.push(s);
-    });
+    const erTabel = /^\s*\|/.test(a.tekst);
+    if (erVideoOverskrift(a.h2, channelTitle) || /^sources$/i.test(a.h2 || '')) {
+      // videoafsnit og kildeliste: kanalen er navngivet i overskriften
+    } else if (erTabel) {
+      // En tabel nævner sjældent kilden i hver række: kilden skal stå i tabellen eller i
+      // sætningen lige før den. Mangler den, tælles tabellen som ÉT fund (første række med tal).
+      const foerTabel = forrigeH2 === a.h2 ? forrige : null;
+      const medTal = ss.filter(harTalPaastand);
+      if (medTal.length && !harKildenavn(a.tekst, alle) && !(foerTabel && harKildenavn(foerTabel, alle))) ud.push(medTal[0]);
+    } else {
+      ss.forEach((s, i) => {
+        const foer = i > 0 ? ss[i - 1] : (forrigeH2 === a.h2 ? forrige : null);
+        if (harTalPaastand(s) && !harKildenavn(s, alle) && !(foer && harKildenavn(foer, alle))) ud.push(s);
+      });
+    }
+    forrige = ss[ss.length - 1] || null;
+    forrigeH2 = a.h2;
   }
   return ud;
 }

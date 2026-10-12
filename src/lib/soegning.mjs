@@ -16,13 +16,17 @@ import { GEMINI_MODEL } from './model.mjs';
 export const MIN_FAKTA_SOEG = 4;   // så mange fakta med kilde, ellers ingen artikel
 export const MIN_KILDER_SOEG = 2;  // så mange forskellige sider bag dem
 const CACHE = './.cache/soegning';
-const CACHE_VERSION = 3; // hæves, når søgningens regler ændres (3: kildetjek + modargumenter, 12/10)
+const CACHE_VERSION = 4; // hæves, når søgningens regler ændres (3: kildetjek + modargumenter; 4: kildetjek B + emne, 12/10)
 
-export function soegPrompt(spoergsmaal, dato) {
+// strengt = ekstra runde, når kildetjekket fjernede så meget, at søgningen blev for tynd
+// (12/10: i SEO var 11 af 12 kilder bureau-blogs). Så søges der efter primærkilder.
+export function soegPrompt(spoergsmaal, dato, strengt = false) {
   return `You are a researcher preparing a reference article that answers the Google search "${spoergsmaal}". Today is ${dato}.
-Search Google and study what the top-ranking pages cover for this search.
+Search Google and study what the top-ranking pages cover for this search.${strengt ? `
+Use ONLY primary sources: official documentation (for example Google Search Central or Google Ads Help for search topics), governments and regulators, standards bodies, universities and peer-reviewed research, established news organisations, and companies' own original studies with data they measured themselves. Do NOT use blogs, listicles, agency or marketing sites.` : ''}
 
 Return EXACTLY this format and nothing else:
+TOPIC: <the 1-3 word subject people search for, lowercase, for example "data breach">
 SUBQUESTIONS:
 1. <the search question itself, written as a correct English question>
 2. <another question a searcher needs answered to fully understand the answer>
@@ -44,7 +48,9 @@ export function parseSoegning(tekst) {
     .map((l) => l.replace(/^\s*\d+[.)]\s*/, '').replace(/\*\*/g, '').trim()).filter((l) => l.length > 8 && /\?$/.test(l)).slice(0, 6);
   const fakta = del('FACTS', 'SUBQUESTIONS').split('\n')
     .filter((l) => /^\s*[-*]\s+/.test(l)).map((l) => l.replace(/^\s*[-*]\s+/, '').replace(/\*\*/g, '').trim()).filter((l) => l.length > 25);
-  return { delspoergsmaal, fakta };
+  // Emnet i 1-3 ord (12/10): bruges til at hente rigtige Google-søgninger til FAQ'en
+  const emne = (s.match(/^\s*\**TOPIC:?\**\s*(.+)$/im)?.[1] || '').replace(/["*]/g, '').toLowerCase().trim().split(/\s+/).slice(0, 3).join(' ');
+  return { delspoergsmaal, fakta, emne };
 }
 
 // Hvilke sider (grounding-chunks) står bag en linje? Googles henvisninger
@@ -129,8 +135,8 @@ export function udgivernavne(fakta) {
 // står i loggen, så det kan ses, at tjekket ikke kørte.
 export function kildePrompt(kilder) {
   return `These web pages were found as sources for an evidence-based reference article. Mark each one STRONG or WEAK.
-STRONG: governments, regulators, official bodies, standards organisations, universities, peer-reviewed research, established research and consulting firms publishing their own data (for example McKinsey, Gartner, IBM, Verizon reports), a company's own site about its own products or data, established news organisations, Wikipedia.
-WEAK: content-marketing blogs of unrelated companies, statistics roundups and listicles, market-research press-release sites, SEO or affiliate sites, personal blogs, and sites that mainly repeat other sources' numbers.
+STRONG: governments, regulators, official bodies, standards organisations, universities, peer-reviewed research, established research and consulting firms publishing their own data (for example McKinsey, Gartner, IBM, Verizon reports), a company's own site about its own products or data, established news organisations, Wikipedia. ALSO STRONG: an industry company's own original research with its own data (for example a study by Ahrefs, Semrush or HubSpot of millions of pages it measured itself) and official product documentation (for example Google Search Central, Google Ads Help).
+WEAK: statistics roundups and listicles, pages that mainly repeat numbers other sources measured, generic how-to or opinion posts without own data, market-research press-release sites, SEO or affiliate sites, and personal blogs.
 
 ${kilder.map((k) => `S${k.nr}. ${k.domaene} — ${k.titel || '(no title)'} — ${k.url}`).join('\n')}
 
@@ -163,14 +169,37 @@ export async function undersoegSoegning(genAI, spoergsmaal, { onLog = () => {}, 
     if (Date.now() - new Date(c.hentet).getTime() < 3 * 864e5) { onLog(`Søgning: læst fra cache (${c.fakta.length} fakta, ${c.kilder.length} kilder)`); return { ...c, fraCache: true }; }
   } catch { /* ingen cache */ }
 
+  const erTynd = (x) => x.delspoergsmaal.length < 3 || x.fakta.length < MIN_FAKTA_SOEG || x.kilder.length < MIN_KILDER_SOEG;
+  let res = await enRunde(genAI, spoergsmaal, hentModel, onLog, false);
+  // For tynd FORDI kildetjekket fjernede svage sider? Så én runde mere, der beder om
+  // primærkilder. Koster kun i det tilfælde. Begge runders forbrug lægges sammen, så
+  // prisen i loggen (SOEG-FORBRUG) er den rigtige.
+  if (erTynd(res) && res.svageFjernet > 0) {
+    onLog('Søgning: for tynd efter kildetjekket — ny søgning efter primærkilder');
+    const res2 = await enRunde(genAI, spoergsmaal, hentModel, onLog, true);
+    const sum = (k) => (res.usage?.[k] || 0) + (res2.usage?.[k] || 0);
+    const usage = { totalTokenCount: sum('totalTokenCount'), promptTokenCount: sum('promptTokenCount'), candidatesTokenCount: sum('candidatesTokenCount'), thoughtsTokenCount: sum('thoughtsTokenCount') };
+    const soegninger = [...res.soegninger, ...res2.soegninger];
+    res = { ...(res2.fakta.length > res.fakta.length ? res2 : res), usage, soegninger, runder: 2 };
+  }
+  if (erTynd(res)) res.forTynd = true;
+  // Også en for tynd søgning gemmes: robotten prøver ellers næste kandidatvideo
+  // til samme spørgsmål og ville betale for den samme søgning igen.
+  fs.mkdirSync(CACHE, { recursive: true });
+  fs.writeFileSync(sti, JSON.stringify(res, null, 1), 'utf8');
+  return res;
+}
+
+// Én søgerunde: Google-søgning gennem Gemini -> fakta med sider bag -> kildetjek.
+async function enRunde(genAI, spoergsmaal, hentModel, onLog, strengt) {
   const dato = new Date().toISOString().slice(0, 10);
   const model = hentModel(genAI, { model: GEMINI_MODEL, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0.2, maxOutputTokens: 8192 } });
-  const r = await model.generateContent(soegPrompt(spoergsmaal, dato));
+  const r = await model.generateContent(soegPrompt(spoergsmaal, dato, strengt));
   const kand = r.response.candidates?.[0];
   const tekst = r.response.text() || '';
   const g = kand?.groundingMetadata || {};
   const chunks = g.groundingChunks || [];
-  const { delspoergsmaal, fakta: raa } = parseSoegning(tekst);
+  const { delspoergsmaal, fakta: raa, emne } = parseSoegning(tekst);
 
   // Kun fakta med mindst én side bag sig. Sidernes nr. tildeles i den rækkefølge, de bruges.
   const kildeNr = new Map(); // chunk-indeks -> kildenr (1..)
@@ -204,18 +233,14 @@ export async function undersoegSoegning(genAI, spoergsmaal, { onLog = () => {}, 
   const fakta2 = fakta.map((f) => ({ ...f, kilder: f.kilder.filter((n) => nyNr.has(n)).map((n) => nyNr.get(n)) }))
     .filter((f) => f.kilder.length).map((f, i) => ({ ...f, nr: i + 1 }));
   const res = {
-    spoergsmaal, hentet: new Date().toISOString(), delspoergsmaal, fakta: fakta2,
+    spoergsmaal, emne, hentet: new Date().toISOString(), delspoergsmaal, fakta: fakta2,
     kilder: kilder2,
     navne: [...new Set([...udgivernavne(fakta2), ...kilder2.map((k) => domaeneLed(k.domaene))])].filter(Boolean),
     soegninger: g.webSearchQueries || [], usage: r.response.usageMetadata || null,
     raa: { fakta: raa.length, uden_kilde: raa.length - fakta.length, uden_adresse: fakta.length - fakta2.length },
   };
-  onLog(`Søgning: ${res.soegninger.length} Google-søgninger, ${delspoergsmaal.length} delspørgsmål, ${fakta2.length} af ${raa.length} fakta med kilde, ${res.kilder.length} kilder (${res.kilder.map((k) => k.domaene).join(', ')})`);
-  // Også en for tynd søgning gemmes: robotten prøver ellers næste kandidatvideo
-  // til samme spørgsmål og ville betale for den samme søgning igen.
-  if (delspoergsmaal.length < 3 || fakta2.length < MIN_FAKTA_SOEG || res.kilder.length < MIN_KILDER_SOEG) res.forTynd = true;
-  fs.mkdirSync(CACHE, { recursive: true });
-  fs.writeFileSync(sti, JSON.stringify(res, null, 1), 'utf8');
+  onLog(`Søgning${strengt ? ' (primærkilder)' : ''}: ${res.soegninger.length} Google-søgninger, ${delspoergsmaal.length} delspørgsmål, ${fakta2.length} af ${raa.length} fakta med kilde, ${res.kilder.length} kilder (${res.kilder.map((k) => k.domaene).join(', ')})`);
+  res.svageFjernet = svage.size;
   return res;
 }
 

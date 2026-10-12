@@ -21,6 +21,9 @@ import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 import { undersoegSoegning, soegningTekst } from './src/lib/soegning.mjs';
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
+// Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
+import { lavOutline, strukturTekst, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
+import { hentForslag } from './src/lib/suggest.mjs';
 // Videoen må højst levere så mange konkrete detaljer, at den forbliver et supplement (var 5).
 const MIN_VIDEO_DETALJER = 2;
 // Så mange ensidige sætninger må stå tilbage efter redaktørens rettelse (12/10, se stoppet nedenfor).
@@ -608,6 +611,23 @@ async function run() {
     const targetWords = articleProfile.min + (Math.floor(profileHash / ARTICLE_PROFILES.length) % (articleProfile.max - articleProfile.min + 1));
     if (!isShort) console.log(`Artikel-profil: ${articleProfile.name} (~${targetWords} ord)`);
 
+    // Outline før tekst + rigtige søgninger til FAQ (12/10, src/lib/artikelplan.mjs). Kører først
+    // her, efter kandidatvurderingen, så det kun koster for den video, der faktisk skrives om.
+    // Fejler et trin, skrives artiklen som før (plan = null / ingen søgninger).
+    let plan = null;
+    let rigtigeSoegninger = [];
+    if (!isShort) {
+      plan = await lavOutline(genAI, {
+        spoergsmaal: targetQuestion, delspoergsmaal: soeg.delspoergsmaal,
+        faktaTekst: soeg.fakta.map((f) => `- ${f.tekst}`).join('\n').slice(0, 4000),
+        kanal: kildeNavn(channelTitle) || 'the creator', videoKort: faktaarkTekst(fakta).slice(0, 1500),
+      }, channelTitle);
+      if (soeg.emne) {
+        try { rigtigeSoegninger = (await hentForslag(soeg.emne)).filter((q) => q !== targetQuestion.toLowerCase()).slice(0, 10); } catch { /* FAQ som før */ }
+      }
+      console.log(`❓ FAQ: ${rigtigeSoegninger.length} rigtige Google-søgninger om "${soeg.emne || '?'}"`);
+    }
+
     // Shorts får kun en let metadata-prompt (title/tags/summary) - ingen dyr artikel- eller FAQ-generering
     const prompt = isShort
       ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
@@ -627,7 +647,7 @@ async function run() {
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. It must be correct, natural English: Google searches are often fragments (e.g. "can i ai videos"), so never paste the search words verbatim unless they already form a correct sentence - rephrase them instead (e.g. "Can you make AI videos?"). Plain text, no quotes.
     FAQ:
-    Generate exactly 3-4 frequently asked questions a searcher has about "${targetQuestion}", with concise answers based on the RESEARCH (not on details only the video gives). A number in an answer must come from the RESEARCH FACTS and name its source. Format each strictly as:
+    Generate exactly 3-4 frequently asked questions a searcher has about "${targetQuestion}", with concise answers based on the RESEARCH (not on details only the video gives). A number in an answer must come from the RESEARCH FACTS and name its source.${rigtigeSoegninger.length >= 3 ? ` Take the questions from these REAL GOOGLE SEARCHES that people type about this topic: pick the 3-4 that the RESEARCH can answer and that the article's headings do not already answer; fix their grammar but keep their meaning and words: ${rigtigeSoegninger.map((q) => `"${q}"`).join(', ')}.` : ''} Format each strictly as:
     Q: [question]
     A: [answer]
     Each answer max 2 sentences. Do not use markdown links in the answers.
@@ -660,9 +680,9 @@ async function run() {
 
     STRUCTURE (built from the search, not from the video):
     - Opening: 2-3 sentences that answer "${targetQuestion}" directly (no heading, no label).
-    - One "## " section for each RESEARCH QUESTION the opening does not already answer fully, in the order a reader needs them. Each heading is specific to this subject: phrase it as the question a reader would ask, or as its answer. Never a template heading like "How It Works", "What It Is", "Who It's For", "Key Takeaways" or "The Bottom Line".
+    ${plan ? strukturTekst(plan) : `- One "## " section for each RESEARCH QUESTION the opening does not already answer fully, in the order a reader needs them. Each heading is specific to this subject: phrase it as the question a reader would ask, or as its answer. Never a template heading like "How It Works", "What It Is", "Who It's For", "Key Takeaways" or "The Bottom Line".
     - The video section (rule 14), after the sections that answer the main question.
-    - Optionally a short closing "## " section with practical guidance, under a heading specific to this subject.
+    - Optionally a short closing "## " section with practical guidance, under a heading specific to this subject.`}
     Voice: write it as a ${articleProfile.name.toLowerCase()} piece.
     ${internalLinksContext}
 
@@ -1221,7 +1241,8 @@ ${content}`);
       const slut = { va: videoAndel(content, channelTitle, fakta, soeg.fakta.map((f) => f.tekst).join('\n')), udenKilde: talUdenKilde(content, soeg.navne, channelTitle) };
       content = `${content.trim()}\n\n${kildelisteMd(brugteSider, { videoId, videoTitel, kanal: kildeNavn(channelTitle) })}`;
       // Måling af den endelige tekst til fase C (samme regler som stop-tjekkene). Ændr ikke formatet.
-      console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length })}`);
+      const ob = plan ? outlineBrugt(content, plan) : null;
+      console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
     }
 
     // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.
