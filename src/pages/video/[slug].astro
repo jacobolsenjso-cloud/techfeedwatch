@@ -537,6 +537,7 @@ const metaDesc = rawMeta.length > 157
        resuméboksen), og prikket linje fra cirkel til cirkel — ikke ned til Sources. */
     .toc-container { --toc-pad: 7px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 0; overflow: hidden; margin-bottom: 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
     @media (min-width: 901px) { .toc-container { --toc-pad: 10px; } } /* mere luft på computer = længere linje */
+    .toc-container { max-width: 600px; } /* 13/10 (Jacob): samme bredde som artikelteksten, ikke som billedet */
     .toc-hoved { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0; padding: 12px 20px; background: #0e7490; }
     .toc-title { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; }
     .toc-antal { font-size: 0.85rem; color: #fff; opacity: 0.85; white-space: nowrap; }
