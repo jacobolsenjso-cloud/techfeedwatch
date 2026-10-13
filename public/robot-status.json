@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-13T10:28:59.942Z",
+  "updated": "2026-10-13T17:51:42.438Z",
   "articleCount": 428,
   "lastArticle": {
-    "at": "2026-10-13T10:28:59.942Z",
+    "at": "2026-10-13T17:51:42.438Z",
     "slugs": [
-      "what-does-quantum-computing-solve-for-molecules-and-crypto"
+      "infosec-requirements-defining-core-security-baselines"
     ]
   },
   "lastLinkRepair": {
