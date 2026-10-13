@@ -98,7 +98,13 @@ const fuldHtml = String(await video.compiledContent());
 const h2Pos = [...fuldHtml.matchAll(/<h2[\s>]/g)].map((m) => m.index ?? 0);
 const deling = h2Pos.length >= 2 ? h2Pos[1] : (/^\s*<p[\s>]/.test(fuldHtml) ? fuldHtml.indexOf('</p>') + 4 : 0);
 const artikelStart = deling > 4 ? fuldHtml.slice(0, deling) : '';
-const artikelResten = deling > 4 ? fuldHtml.slice(deling) : fuldHtml;
+const artikelRestenMedKilder = deling > 4 ? fuldHtml.slice(deling) : fuldHtml;
+// Kildelisten står SIDST på siden (13/10, Jacob): artikel -> People also ask -> FAQ -> Sources
+// -> del-knap. Den klippes ud af artikelteksten og sættes ind efter FAQ. Ankeret #sources
+// (indholdsfortegnelsen) følger med. Gamle artikler har ingen kildeliste.
+const kildePos = artikelRestenMedKilder.indexOf('<h2 id="sources"');
+const artikelResten = kildePos >= 0 ? artikelRestenMedKilder.slice(0, kildePos) : artikelRestenMedKilder;
+const kildeHtml = kildePos >= 0 ? artikelRestenMedKilder.slice(kildePos) : '';
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -1208,6 +1214,9 @@ const metaDesc = rawMeta.length > 157
 
         {faqs.length > 0 && <FAQ faqs={faqs} />}
 
+        {/* Kildelisten sidst (13/10) — samme udseende som artikelteksten */}
+        {kildeHtml && <section class="video-content kilde-sektion" set:html={kildeHtml}></section>}
+
 
         <div class="share-cta">
           <div>
@@ -1823,7 +1832,8 @@ const metaDesc = rawMeta.length > 157
 
           // Artiklen står i to dele (første afsnit før videoen, resten efter, 12/10) —
           // begge læses op, i rækkefølge.
-          document.querySelectorAll('.video-content').forEach((body) => {
+          // Kildelisten læses ikke op (13/10): den står nu for sig og er kun titler og adresser
+          document.querySelectorAll('.video-content:not(.kilde-sektion)').forEach((body) => {
             const clone = body.cloneNode(true);
             clone.querySelectorAll('pre, code, table, figure, .toc-box').forEach((n) => n.remove());
             parts.push(clone.textContent);
