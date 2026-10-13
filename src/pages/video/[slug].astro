@@ -527,13 +527,40 @@ const metaDesc = rawMeta.length > 157
     .video-content th { background: var(--hover-bg); font-weight: 700; }
     body.dark-mode .video-content a:hover { border-bottom-color: #22d3ee; }
 
-    .toc-container { background: var(--hover-bg); border-radius: 8px; padding: 20px; margin-bottom: 30px; border: 1px solid var(--border-color); }
-    .toc-title { font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; }
-    .toc-list { list-style: none; padding: 0; margin: 0; }
-    .toc-list li { margin-bottom: 8px; }
-    .toc-depth-3 { padding-left: 20px; font-size: 0.95rem; opacity: 0.9; }
-    .toc-list a { color: var(--text-color); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-    .toc-list a:hover { color: var(--teal-text); }
+    /* Indholdsfortegnelsen (ombygget 13/10): tydeligt adskilt fra artiklen. Farveregel: tekst i
+       var(--teal-text), hvid tekst kun på fast #0e7490. */
+    /* 13/10 (Jacob valgte C + tidslinje): teal top-bjælke i stedet for venstrekant (den lignede
+       resuméboksen), og prikket linje fra cirkel til cirkel — ikke ned til Sources. */
+    .toc-container { --toc-pad: 7px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 0; overflow: hidden; margin-bottom: 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    @media (min-width: 901px) { .toc-container { --toc-pad: 10px; } } /* mere luft på computer = længere linje */
+    .toc-hoved { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0; padding: 12px 20px; background: #0e7490; }
+    .toc-title { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; }
+    .toc-antal { font-size: 0.85rem; color: #fff; opacity: 0.85; white-space: nowrap; }
+    .toc-list { list-style: none; padding: 12px 12px 14px; margin: 0; counter-reset: toc; }
+    .toc-list li { margin: 0; }
+    .toc-list a { position: relative; display: flex; align-items: flex-start; gap: 12px; padding: var(--toc-pad) 8px; border-radius: 8px; color: var(--text-color); text-decoration: none; font-weight: 600; line-height: 1.35; transition: background 0.15s, color 0.15s; }
+    .toc-list a:hover { background: var(--hover-bg); color: var(--teal-text); }
+    .toc-depth-2:not(.toc-kilder) { counter-increment: toc; }
+    .toc-depth-2:not(.toc-kilder) > a::before { content: counter(toc); position: relative; z-index: 1; flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #0e7490; color: #fff; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-top: -1px; box-shadow: 0 0 0 3px var(--card-bg); }
+    /* Prikket linje: runde prikker (2 px, 3 px mellemrum) — ser rigtige ud selv på korte stykker.
+       Fra under denne cirkel til over den næste; kun når der kommer en nummereret efter. */
+    .toc-depth-2:not(.toc-kilder):has(~ .toc-depth-2:not(.toc-kilder)) > a::after,
+    .toc-depth-3:has(~ .toc-depth-2:not(.toc-kilder)) > a::after { content: ""; position: absolute; left: 19px; width: 2px; background-image: radial-gradient(circle, color-mix(in srgb, #0e7490 65%, transparent) 1px, transparent 1.3px); background-size: 2px 5px; background-repeat: repeat-y; background-position: center top; }
+    .toc-depth-2:not(.toc-kilder):has(~ .toc-depth-2:not(.toc-kilder)) > a::after { top: calc(var(--toc-pad) + 26px); bottom: calc(3px - var(--toc-pad)); }
+    .toc-depth-3:has(~ .toc-depth-2:not(.toc-kilder)) > a::after { top: 0; bottom: 0; }
+    .toc-depth-3 > a { padding-left: 44px; font-weight: 500; font-size: 0.95rem; opacity: 0.9; }
+    .toc-kilder > a { font-weight: 500; opacity: 0.75; }
+    .toc-kilder > a::before { content: ""; flex-shrink: 0; width: 24px; }
+    /* Overskrifter, man hopper til, må ikke gemme sig under topbaren */
+    .video-content h2[id], .video-content h3[id] { scroll-margin-top: 90px; }
+    /* Flydende "On this page" øverst i sidebjælken — kun computer (skjult under 900px) */
+    .toc-flydende { position: sticky; top: 0; z-index: 2; background: var(--bg-color); padding: 2px 0 14px; margin-bottom: 18px; border-bottom: 1px solid var(--border-color); }
+    .toc-flydende-titel { font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal-text); margin-bottom: 8px; }
+    .toc-flydende ol { list-style: none; margin: 0; padding: 0; }
+    .toc-flydende a { display: block; padding: 6px 10px; border-left: 3px solid var(--border-color); color: var(--text-color); text-decoration: none; font-size: 0.86rem; line-height: 1.35; opacity: 0.8; transition: all 0.15s; }
+    .toc-flydende a:hover { opacity: 1; color: var(--teal-text); }
+    .toc-flydende a.aktiv { border-left-color: #0e7490; color: var(--teal-text); font-weight: 700; opacity: 1; background: var(--hover-bg); }
+    @media (max-width: 900px) { .toc-flydende { display: none; } }
 
     .adsense-container { background: var(--card-bg); border-radius: 8px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border-color); text-align: center; padding: 10px; position: relative; z-index: 1; pointer-events: auto; }
     .ad-label { display: block; font-size: 0.7rem; text-transform: uppercase; color: #9ca3af; letter-spacing: 1px; margin-bottom: 5px; }
@@ -1069,17 +1096,22 @@ const metaDesc = rawMeta.length > 157
           )}
           {/* Indholdsfortegnelsen (13/10, Jacob valgte A): op under billedet, så læseren straks ser,
               hvad artiklen dækker — før den var under videoen, og artiklen "startede forfra". */}
+          {/* 13/10 (Jacob): ombygget, så den skiller sig tydeligt ud fra artiklen — nummererede
+              punkter, farvet venstrekant, antal afsnit. Sources står sidst uden nummer. */}
           {toc.length > 0 && (
-            <div class="toc-container">
-              <div class="toc-title">Table of Contents</div>
-              <ul class="toc-list">
+            <nav class="toc-container" aria-labelledby="toc-titel">
+              <div class="toc-hoved">
+                <span class="toc-title" id="toc-titel">In this article</span>
+                <span class="toc-antal">{toc.filter((h: any) => h.depth === 2 && h.slug !== 'sources').length} sections</span>
+              </div>
+              <ol class="toc-list">
                 {toc.map((heading: any) => (
-                  <li class={`toc-depth-${heading.depth}`}>
+                  <li class={`toc-depth-${heading.depth}${heading.slug === 'sources' ? ' toc-kilder' : ''}`}>
                     <a href={`#${heading.slug}`}>{heading.text}</a>
                   </li>
                 ))}
-              </ul>
-            </div>
+              </ol>
+            </nav>
           )}
           {/* Artiklens åbning + første sektion (resten står efter videoen i <article class="video-content">) */}
           {artikelStart && <div class="video-content artikel-start" set:html={artikelStart}></div>}
@@ -1321,6 +1353,40 @@ const metaDesc = rawMeta.length > 157
       </div>
 
       <div class="video-secondary">
+
+        {/* Flydende indholdsfortegnelse (13/10, Jacob): øverst i sidebjælken, som allerede står fast
+            mens artiklen ruller. Afsnittet, man læser, fremhæves. Kun computer (skjult under 900px),
+            så den aldrig kolliderer med biograf-tilstanden på mobil. */}
+        {toc.filter((h: any) => h.depth === 2).length > 2 && (
+          <nav class="toc-flydende" aria-label="On this page">
+            <div class="toc-flydende-titel">On this page</div>
+            <ol>
+              {toc.filter((h: any) => h.depth === 2).map((h: any) => (
+                <li><a href={`#${h.slug}`} data-toc-slug={h.slug}>{h.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
+        <script is:inline>
+          (function () {
+            // Fremhæver det afsnit, læseren er i. Overskrifterne står i artiklen før sidebjælken.
+            var nav = document.querySelector('.toc-flydende');
+            if (!nav || !('IntersectionObserver' in window)) return;
+            var links = {};
+            nav.querySelectorAll('a[data-toc-slug]').forEach(function (a) { links[a.getAttribute('data-toc-slug')] = a; });
+            var aktiv = null;
+            function saet(id) {
+              if (aktiv === id || !links[id]) return;
+              if (aktiv && links[aktiv]) links[aktiv].classList.remove('aktiv');
+              links[id].classList.add('aktiv');
+              aktiv = id;
+            }
+            var obs = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) { if (e.isIntersecting) saet(e.target.id); });
+            }, { rootMargin: '-90px 0px -65% 0px' });
+            Object.keys(links).forEach(function (id) { var h = document.getElementById(id); if (h) obs.observe(h); });
+          })();
+        </script>
 
         {relatedVideos.length > 0 && (
           <div class="related-section">
