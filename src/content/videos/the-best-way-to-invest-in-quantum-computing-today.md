@@ -52,7 +52,7 @@ Quantum sector investment profiles:
 
 ## The Split Between Cash-Burning Hardware and Quantum Software
 
-The quantum market has split into two distinct financial categories: hardware manufacturers burning enormous reserves to assemble physical systems, and software security firms focused on post-quantum encryption. Evaluating [what quantum computing companies are building now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) requires looking past technical roadmaps and focusing on capital survival. 
+The quantum market has split into two distinct financial categories: hardware manufacturers burning enormous reserves to assemble physical systems, and software security firms focused on post-quantum encryption. Evaluating what quantum computing companies are building now requires looking past technical roadmaps and focusing on capital survival. 
 
 The hardware camp includes superconducting and trapped-ion developers like Rigetti and [IonQ](https://ionq.com/), alongside photonic innovators. In Toronto, Xanadu pursues an alternative route by using photonics—transmitting information via light particles at room temperature. This approach avoids heavy cryogenic costs, yet the core science remains deeply pre-commercial.
 

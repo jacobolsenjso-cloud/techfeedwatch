@@ -12,8 +12,8 @@ summary: "Virtual reality hardware fools the human nervous system by combining s
 metaDescription: "Learn how virtual reality glasses trick human biology through convex lenses, inside-out tracking, spatial audio, and low-latency display systems."
 targetQuestion: "how does virtual reality glasses work"
 duration: "7:50"
-viewCount: 110
-viewsUpdated: "2026-10-10"
+viewCount: 114
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Quantum supremacy marks the computational threshold where a quantum pr
 metaDescription: "What is the concept of quantum supremacy? Discover how quantum processors outperform classical supercomputers and why the benchmark keeps moving."
 targetQuestion: "what is the concept of quantum supremacy"
 duration: "4:50"
-viewCount: 24
-viewsUpdated: "2026-10-01"
+viewCount: 25
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 faqs:
@@ -47,7 +47,7 @@ The industry expanded that benchmark in December 2024 with Google's Willow chip.
 
 Critically, Willow demonstrated hardware correcting errors faster than made, crossing an engineering threshold that previous demonstrations lacked. Even so, a fundamental fact remains throughout each of these achievements: no quantum system has yet surpassed a classical computer on a commercially viable, real-world task.
 
-These synthetic tasks confirm speed scaling, but engineers still need fault-tolerant commercial hardware before [what quantum computing companies are building now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) can solve everyday problems. True commercial utility will emerge only when systems target
+These synthetic tasks confirm speed scaling, but engineers still need fault-tolerant commercial hardware before what quantum computing companies are building now can solve everyday problems. True commercial utility will emerge only when systems target
 
 - Molecular modeling for solid-state batteries
 - Drug discovery pipelines

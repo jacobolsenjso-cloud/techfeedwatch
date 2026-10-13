@@ -89,7 +89,7 @@ In physical reality, there is absolutely no credible mechanism right now that co
 
 Industry observers tracking enterprise technology must separate computational substance from speculative projections. The immediate focus must center on post-quantum cryptography migration rather than waiting for quantum neural networks.
 
-Organizations managing sensitive long-term data must audit their infrastructure for legacy encryption standards before the NIST 2030 deprecation milestone arrives. Evaluating [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) shows that real commercial value concentrates in materials science, chemistry simulations, and secure key distribution rather than general-purpose business intelligence.
+Organizations managing sensitive long-term data must audit their infrastructure for legacy encryption standards before the NIST 2030 deprecation milestone arrives. Evaluating What Quantum Computing Companies Are Building Now shows that real commercial value concentrates in materials science, chemistry simulations, and secure key distribution rather than general-purpose business intelligence.
 
 Engineers must also track whether researchers can overcome the input-output bottlenecks that trap quantum machine learning in academic sandbox environments. Until quantum devices demonstrate measurable efficiency gains over classical GPUs on dirty, complex real-world data, quantum AI will remain an exploratory concept. Classical semiconductor innovation continues to move the performance goalposts forward, while dequantization constantly erases theoretical quantum advantages.
 

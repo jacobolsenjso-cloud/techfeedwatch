@@ -12,8 +12,8 @@ summary: "Hard tech companies develop tangible, often complex physical products 
 metaDescription: "Understand hard tech companies: what they are, why they matter, and the unique challenges and opportunities in building physical products."
 targetQuestion: "what are hard tech companies"
 duration: "48:37"
-viewCount: 91859
-viewsUpdated: "2026-10-10"
+viewCount: 92016
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"
@@ -62,7 +62,7 @@ For instance, advancements in electric planes could revolutionize sustainable tr
 
 From an investment perspective, the increased focus on hard tech is reshaping venture capital. Traditional VCs, accustomed to faster returns from software, are adapting to longer investment horizons and higher capital requirements. This shift encourages the formation of specialized funds and corporate venture arms with expertise in deep science and hardware.
 
-The need for significant fundraising also opens doors for strategic partnerships with established industrial players and government grants, which are often critical for de-risking early-stage development. Companies that pioneer advanced technologies like those discussed in [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) exemplify the complex funding fields inherent in hard tech.
+The need for significant fundraising also opens doors for strategic partnerships with established industrial players and government grants, which are often critical for de-risking early-stage development. Companies that pioneer advanced technologies like those discussed in What Quantum Computing Companies Are Building Now exemplify the complex funding fields inherent in hard tech.
 
 Hard tech also has profound strategic implications for national competitiveness and security. Countries that foster a vibrant hard tech ecosystem gain an advantage in key areas such as:
 

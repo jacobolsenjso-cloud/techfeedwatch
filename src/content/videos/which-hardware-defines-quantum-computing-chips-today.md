@@ -12,8 +12,8 @@ summary: "Quantum computing chips replace binary silicon transistors with physic
 metaDescription: "What are quantum computing chips? Explore how quantum processors operate, compare physical qubit architectures, and evaluate industry progress."
 targetQuestion: "what are quantum computing chips"
 duration: "6:31"
-viewCount: 279810
-viewsUpdated: "2026-10-10"
+viewCount: 279915
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 faqs:
@@ -83,7 +83,7 @@ Understanding what quantum computing chips can deliver means ignoring press rele
 
 1. **Physical Coherence Time vs. Gate Time:** A chip's utility depends on the ratio of how long a qubit remains coherent to how long a logical gate operation takes to execute. If a qubit dephases before microwave or laser pulses complete a two-qubit gate, computation fails. Coherence times measured in fractions of a second matter only if gate fidelity reaches the fault-tolerant threshold.
 
-2. **Crosstalk and Interconnect Density:** Placing physical qubits on a die is relatively straightforward; routing hundreds of independent high-frequency control lines without bleeding electromagnetic cross-talk into neighboring elements is an engineering nightmare. Examining packaging methods reveals [what quantum computing companies are building now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) to bridge dilution stages with high-density cryogenic wiring.
+2. **Crosstalk and Interconnect Density:** Placing physical qubits on a die is relatively straightforward; routing hundreds of independent high-frequency control lines without bleeding electromagnetic cross-talk into neighboring elements is an engineering nightmare. Examining packaging methods reveals what quantum computing companies are building now to bridge dilution stages with high-density cryogenic wiring.
 
 3. **Logical Error Rates and Thresholds:** No quantum processor can execute deep commercial algorithms without quantum error correction. Raw physical qubit counts mean little without examining the two-qubit randomized benchmarking error rate. Processors need error rates well below fault-tolerant thresholds to execute surface codes efficiently.
 

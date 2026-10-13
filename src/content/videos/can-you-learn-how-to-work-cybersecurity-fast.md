@@ -11,8 +11,8 @@ summary: "Entering cybersecurity requires practical technical execution rather t
 metaDescription: "Wondering how to work cybersecurity without a four-year degree? Learn the core networking skills, lab projects, and credentials needed to get hired fast."
 targetQuestion: "how to work in cybersecurity"
 duration: "7:59"
-viewCount: 1930
-viewsUpdated: "2026-10-10"
+viewCount: 1937
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 faqs:

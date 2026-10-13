@@ -12,8 +12,8 @@ summary: "Accessing quantum computing has moved from theoretical discussions to 
 metaDescription: "Learn how to access quantum computing today through cloud platforms like IBM Quantum Platform, making advanced hardware available for programming."
 targetQuestion: "how to access quantum computing"
 duration: "13:19"
-viewCount: 61643
-viewsUpdated: "2026-10-10"
+viewCount: 62001
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"
@@ -54,7 +54,7 @@ Such courses typically lead users to platforms like the IBM Quantum Platform, av
 
 As an example of direct engagement, one lesson provides a corresponding URL: https://quantum.cloud.ibm.com/learning/en/courses/use-a-qc-today/build-and-run-your-first-quantum-program.
 
-This link directs users to resources for building and running their first quantum program, showcasing a practical pathway to hands-on experience. This accessibility through managed cloud services marks a significant milestone in commercializing advanced technologies, as highlighted in [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech).
+This link directs users to resources for building and running their first quantum program, showcasing a practical pathway to hands-on experience. This accessibility through managed cloud services marks a significant milestone in commercializing advanced technologies, as highlighted in What Quantum Computing Companies Are Building Now.
 
 ## Who Uses Quantum Computers
 

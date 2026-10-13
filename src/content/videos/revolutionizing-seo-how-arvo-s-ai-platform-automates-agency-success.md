@@ -12,8 +12,8 @@ summary: "Advanced AI-powered platforms are transforming content creation by aut
 metaDescription: "Discover how to automate content creation with AI, streamline SEO workflows, and generate high-quality, ranking content for your business or clients."
 targetQuestion: "how to automate content creation"
 duration: "59:06"
-viewCount: 271
-viewsUpdated: "2026-10-07"
+viewCount: 272
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

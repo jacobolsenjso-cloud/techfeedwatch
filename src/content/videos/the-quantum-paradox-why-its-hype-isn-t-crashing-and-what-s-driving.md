@@ -12,8 +12,8 @@ summary: "Investing in quantum computing today carries significant risk due to r
 metaDescription: "Understand the risks of quantum computing investment: why market hype outpaces practical breakthroughs and commercial viability today."
 targetQuestion: "is quantum computing a good investment"
 duration: "52:02"
-viewCount: 697339
-viewsUpdated: "2026-10-10"
+viewCount: 697436
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"
@@ -50,7 +50,7 @@ However, many commercial claims, such as IBM's headline about quantum-enabled al
 
 Despite these optimistic headlines about quantum computers helping train scheduling or discovering proteins, the underlying reality is that none of these companies are even remotely profitable. This points to a significant disconnect between market enthusiasm and actual commercial returns.
 
-The surge in investment is potentially driven by confidential technological breakthroughs, or more likely, by intense government competition, particularly from the US military concerned about Chinese advancements, coupled with insufficient clarification from scientists regarding the technology's true capabilities and limitations. To understand the commercial field, read [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech).
+The surge in investment is potentially driven by confidential technological breakthroughs, or more likely, by intense government competition, particularly from the US military concerned about Chinese advancements, coupled with insufficient clarification from scientists regarding the technology's true capabilities and limitations. To understand the commercial field, read What Quantum Computing Companies Are Building Now.
 
 The Bottom Line
 

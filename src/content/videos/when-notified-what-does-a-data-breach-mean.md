@@ -11,8 +11,8 @@ summary: "A data breach occurs when unauthorized individuals view, copy, or exfi
 metaDescription: "What does a data breach mean? Discover definitions, primary causes, regulatory rules, financial fallout, and how to decode corporate breach notifications."
 targetQuestion: "what does a data breach mean"
 duration: "8:20"
-viewCount: 11
-viewsUpdated: "2026-10-12"
+viewCount: 12
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-12"

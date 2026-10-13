@@ -12,8 +12,8 @@ summary: "Quantum computing poses a significant, though not immediate, threat to
 metaDescription: "Understand how quantum computing could threaten Bitcoin's security and cryptographic foundation, and what solutions are being developed."
 targetQuestion: "how does quantum computing threaten bitcoin's security"
 duration: "25:42"
-viewCount: 17369
-viewsUpdated: "2026-10-10"
+viewCount: 17370
+viewsUpdated: "2026-10-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"
@@ -84,7 +84,7 @@ The objective is to upgrade Bitcoin's protocols to become "quantum-resistant" be
 
 **Financial Institutions and Regulators:** As Bitcoin and other cryptocurrencies become increasingly integrated into the global financial system, the stability and security of these assets are paramount. Financial institutions and regulators are closely monitoring the development of quantum computing and its potential impact on digital asset security to inform future policies and investment strategies, addressing important questions for investors.
 
-Ark Invest and Unchained, through their collaborative research, contribute to this understanding by providing valuable analysis for investors. For those interested in the broader commercialization and application of quantum technology, [What Quantum Computing Companies Are Building Now](/video/how-quantum-computing-companies-are-commercializing-advanced-tech) provides additional context.
+Ark Invest and Unchained, through their collaborative research, contribute to this understanding by providing valuable analysis for investors. For those interested in the broader commercialization and application of quantum technology, What Quantum Computing Companies Are Building Now provides additional context.
 
 ## Preparing Bitcoin for Long-Term Quantum Threats
 
