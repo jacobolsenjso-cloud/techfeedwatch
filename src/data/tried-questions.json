@@ -393,5 +393,10 @@
   "q": "should i study software engineering in 2026",
   "tag": "Coding",
   "dato": "2026-10-10"
+ },
+ {
+  "q": "can qubit quantify rna",
+  "tag": "Quantum Computing",
+  "dato": "2026-10-13"
  }
 ]
