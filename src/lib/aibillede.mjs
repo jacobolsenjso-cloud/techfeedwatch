@@ -28,8 +28,11 @@ export function billedPrompt({ titel, emne, resume }) {
 What the article explains: ${String(resume || '').slice(0, 600)}
 Show the core idea as a clear visual metaphor or a realistic object scene that a reader instantly connects with the title.
 Style: clean conceptual 3D illustration, soft studio lighting, dark charcoal background, ${TONE[emne] || 'cyan'} accent light, high detail, calm and professional, no clutter.
-Strict rules: absolutely NO text, letters, numbers, words or labels anywhere; NO logos, brand names or trademarked products; NO real or recognizable people or faces; no screenshots of real apps or websites.`;
+Strict rules: absolutely NO text, letters, numbers, words or labels anywhere; NO logos, brand names or trademarked products; NO real or recognizable people or faces; no screenshots of real apps or websites.
+Avoid objects that usually carry writing: screens, monitors, phones, dashboards, charts, signs, documents, books, labels, price tags, banknotes and keyboards. Show the idea with shapes, light, materials and physical objects instead.`;
 }
+// (13/10) Den sidste linje i prompten er tilføjet, fordi 6 af de første 8 artikler fik det første
+// billede afvist for tekst — modellen skriver typisk på skærme, skilte, dokumenter og grafer.
 
 // Tjekker billedet. Returnerer en liste med fund (tom = godkendt), eller null hvis tjekket ikke kørte.
 export async function tjekBillede(genAI, buf) {

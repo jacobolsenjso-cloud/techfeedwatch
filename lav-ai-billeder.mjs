@@ -16,11 +16,22 @@ const artikler = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith
   return { slug: f.replace(/\.md$/, ''), titel: felt('title'), resume: felt('summary'), dato: felt('date'), emne: raw.match(/^tags:\n\s*-\s*"(.*?)"/m)?.[1] || '' };
 }).filter((a) => !harAiBillede(a.slug)).sort((a, b) => b.dato.localeCompare(a.dato));
 
+// Fejlhukommelse (13/10): en artikel, hvis billede blev afvist i 2 kørsler, prøves ikke igen —
+// ellers ville den koste penge hver morgen uden at lykkes (set med "programming can make you
+// rich…" i første kørsel på GitHub). Filen committes, så hukommelsen holder mellem kørsler.
+const FEJL_FIL = './src/data/ai-billeder-fejl.json';
+const fejl = (() => { try { return JSON.parse(fs.readFileSync(FEJL_FIL, 'utf8')); } catch { return {}; } })();
+const opgivet = artikler.filter((a) => (fejl[a.slug] || 0) >= 2).length;
+const kandidater = artikler.filter((a) => (fejl[a.slug] || 0) < 2);
+if (opgivet) console.log(`${opgivet} artikler springes over (billedet afvist i 2 kørsler — de beholder emnekortet)`);
+
 console.log(`${artikler.length} artikler mangler AI-billede — laver højst ${antal} nu`);
 let lavet = 0, reserve = 0, forsoeg = 0, cache = 0, iTraek = 0;
-for (const a of artikler.slice(0, antal)) {
+for (const a of kandidater.slice(0, antal)) {
   const r = await lavAiBillede(genAI, a, sitetsStier(a.slug), { log: (m) => console.log(`  ${a.slug}: ${m}`) });
-  if (r) { lavet++; forsoeg += r.forsoeg; if (r.fraCache) cache++; iTraek = 0; } else { reserve++; iTraek++; }
+  if (r) { lavet++; forsoeg += r.forsoeg; if (r.fraCache) cache++; iTraek = 0; delete fejl[a.slug]; }
+  else { reserve++; iTraek++; fejl[a.slug] = (fejl[a.slug] || 0) + 1; }
+  fs.writeFileSync(FEJL_FIL, JSON.stringify(fejl, null, 1) + '\n');
   // 3 fejl i træk = noget er galt (typisk tom Gemini-kredit, set 9.-10/10): stop i stedet
   // for at hamre løs. De manglende artikler tages i næste kørsel.
   if (iTraek >= 3) { console.log('Stopper: 3 billeder i træk fejlede — tjek Gemini-kreditten (AI Studio -> Billing).'); break; }

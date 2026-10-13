@@ -45,7 +45,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add public/billeder public/kort public/og
+          git add public/billeder public/kort public/og src/data/ai-billeder-fejl.json
           if git commit -m "AI images for archive articles"; then
             git pull --rebase origin main
             git push
