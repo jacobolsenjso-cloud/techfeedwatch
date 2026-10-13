@@ -185,13 +185,17 @@ const relatedGuides = Object.values(import.meta.glob('../../content/guides/*.md'
   .slice(0, 3);
 
 
-// Sort by date (newest first) so Next/Previous follow chronological order
-const sortedVideos = [...allVideos].sort(
-  (a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
-);
+// Forrige/næste artikel INDEN FOR SAMME EMNE (13/10, Jacob): før valgtes de efter dato på tværs
+// af alle emner ("Open-source AI dual-use" ved siden af "Rust SQLite"). Nu: samme første emne,
+// sorteret efter dato (nyeste først). Har emnet kun denne ene artikel: på tværs af alle som før.
+const datoSort = (a: any, b: any) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf();
+const foersteEmne = (v: any) => { const t = v.frontmatter.tags || v.frontmatter.tag || []; return (Array.isArray(t) ? t : [t])[0]; };
+const iSammeEmne = allVideos.filter((v: any) => !v.frontmatter.isShort && foersteEmne(v) === tagsArray[0]);
+const navEmne = !video.frontmatter.isShort && iSammeEmne.length > 1 ? tagsArray[0] : null; // Shorts: som før
+const sortedVideos = [...(navEmne ? iSammeEmne : allVideos)].sort(datoSort);
 const currentIndex = sortedVideos.findIndex((v: any) => v.file.split('/').pop().replace('.md', '') === slug);
 const nextVideo: any = currentIndex > 0 ? sortedVideos[currentIndex - 1] : null;
-const prevVideo: any = currentIndex < sortedVideos.length - 1 ? sortedVideos[currentIndex + 1] : null;
+const prevVideo: any = currentIndex >= 0 && currentIndex < sortedVideos.length - 1 ? sortedVideos[currentIndex + 1] : null;
 
 const onlyShorts: any[] = allVideos
   .filter((v: any) => v.frontmatter.isShort)
@@ -1270,6 +1274,21 @@ const metaDesc = rawMeta.length > 157
           </button>
         </div>
 
+        {/* Forrige/næste artikel (13/10, Jacob): flyttet op lige efter del-boksen — det er her,
+            en læser, der er færdig, vil videre. Inden for samme emne (se navEmne øverst). */}
+        <div class="video-actions">
+          <div class="nav-row">
+            <a href={prevVideo ? `/video/${prevVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card ${!prevVideo ? 'disabled' : ''}`}>
+              <span class="nav-label">← {navEmne ? `Previous in ${navEmne}` : 'Previous article'}</span>
+              <span class="nav-title">{prevVideo ? prevVideo.frontmatter.title : 'No older articles'}</span>
+            </a>
+            <a href={nextVideo ? `/video/${nextVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card right ${!nextVideo ? 'disabled' : ''}`}>
+              <span class="nav-label">{navEmne ? `Next in ${navEmne}` : 'Next article'} →</span>
+              <span class="nav-title">{nextVideo ? nextVideo.frontmatter.title : 'No newer articles'}</span>
+            </a>
+          </div>
+        </div>
+
         {allUniqueTags.length > 0 && (
           <div class="explore-section">
             <h3 class="related-title">Explore Topics</h3>
@@ -1290,7 +1309,13 @@ const metaDesc = rawMeta.length > 157
           <div>
             <p class="author-box-name"><a href="/author/jacob-olsen" class="author-box-link">Jacob S. Olsen</a></p>
             <p class="author-box-title">Runs Tech Feed Watch, from Denmark</p>
-            <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. It publishes automatically — I do not read every article before it goes live. The creator is credited on this page.</p>
+            {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
+                Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
+            {antalWebKilder > 0 ? (
+              <p class="author-box-bio">How this article was made: it starts from a question people search for on Google. A language model researches that question with Google Search and keeps only facts backed by the pages Google cites — every number names its source, and the {antalWebKilder} sources are listed above. A video from an independent creator on the subject adds one section and is credited on this page. Automatic checks reject drafts with unsourced numbers, one-sided claims or promotion. It publishes automatically — I do not read every article before it goes live.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+            ) : (
+              <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. It publishes automatically — I do not read every article before it goes live. The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+            )}
             <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim. <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
           </div>
         </div>
@@ -1304,19 +1329,6 @@ const metaDesc = rawMeta.length > 157
             </a>
           </div>
         )}
-
-        <div class="video-actions">
-          <div class="nav-row">
-            <a href={prevVideo ? `/video/${prevVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card ${!prevVideo ? 'disabled' : ''}`}>
-              <span class="nav-label">← Previous article</span>
-              <span class="nav-title">{prevVideo ? prevVideo.frontmatter.title : 'No older videos'}</span>
-            </a>
-            <a href={nextVideo ? `/video/${nextVideo.file.split('/').pop().replace('.md', '')}` : '#'} class={`nav-card right ${!nextVideo ? 'disabled' : ''}`}>
-              <span class="nav-label">Next article →</span>
-              <span class="nav-title">{nextVideo ? nextVideo.frontmatter.title : 'No newer videos'}</span>
-            </a>
-          </div>
-        </div>
 
         {relatedGuides.length > 0 && (
           <div class="related-guides">
