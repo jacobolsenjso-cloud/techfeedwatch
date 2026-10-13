@@ -83,14 +83,18 @@ const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent()
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
 // Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
 const kortBillede = fs.existsSync(`public/kort/${slug}.webp`) ? `/kort/${slug}.webp` : null;
-// 12/10-2026 (Jacob): videoen skal stå lige under artiklens FØRSTE afsnit. Afspilleren må
-// ikke ligge inde i en .cinema-reading-block (biograf-tilstanden skjuler dem, og så ville
-// videoen forsvinde), så artiklens HTML deles i to: første afsnit før videoen, resten efter.
-// Starter artiklen ikke med et afsnit (<p>), står hele artiklen efter videoen som før.
+// Videoens plads i artiklen. Afspilleren må ikke ligge inde i en .cinema-reading-block
+// (biograf-tilstanden skjuler dem, og så ville videoen forsvinde), så artiklens HTML deles i to.
+// 13/10-2026 (Jacob valgte A): videoen står efter artiklens FØRSTE SEKTION — åbningen plus
+// første "##"-afsnit — altså lige før anden overskrift. (12/10 stod den efter første afsnit;
+// det "ser dumt ud": billede, ét afsnit og video klumpede sig sammen i toppen.)
+// Har artiklen under to overskrifter: efter første afsnit. Starter den ikke med tekst: hele
+// artiklen efter videoen.
 const fuldHtml = String(await video.compiledContent());
-const foersteSlut = /^\s*<p[\s>]/.test(fuldHtml) ? fuldHtml.indexOf('</p>') + 4 : 0;
-const artikelStart = foersteSlut > 4 ? fuldHtml.slice(0, foersteSlut) : '';
-const artikelResten = foersteSlut > 4 ? fuldHtml.slice(foersteSlut) : fuldHtml;
+const h2Pos = [...fuldHtml.matchAll(/<h2[\s>]/g)].map((m) => m.index ?? 0);
+const deling = h2Pos.length >= 2 ? h2Pos[1] : (/^\s*<p[\s>]/.test(fuldHtml) ? fuldHtml.indexOf('</p>') + 4 : 0);
+const artikelStart = deling > 4 ? fuldHtml.slice(0, deling) : '';
+const artikelResten = deling > 4 ? fuldHtml.slice(deling) : fuldHtml;
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -1044,7 +1048,21 @@ const metaDesc = rawMeta.length > 157
           {kortBillede && (
             <img class="artikel-billede" src={kortBillede} alt="" width="960" height="540" loading="eager" decoding="async" />
           )}
-          {/* Artiklens første afsnit (resten står efter videoen i <article class="video-content">) */}
+          {/* Indholdsfortegnelsen (13/10, Jacob valgte A): op under billedet, så læseren straks ser,
+              hvad artiklen dækker — før den var under videoen, og artiklen "startede forfra". */}
+          {toc.length > 0 && (
+            <div class="toc-container">
+              <div class="toc-title">Table of Contents</div>
+              <ul class="toc-list">
+                {toc.map((heading: any) => (
+                  <li class={`toc-depth-${heading.depth}`}>
+                    <a href={`#${heading.slug}`}>{heading.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {/* Artiklens åbning + første sektion (resten står efter videoen i <article class="video-content">) */}
           {artikelStart && <div class="video-content artikel-start" set:html={artikelStart}></div>}
           {/* "Watch: the video" (12/10) — "The video behind this article" sagde, at artiklen
               var lavet ud fra videoen; den bygger nu på søgningen, videoen er et supplement. */}
@@ -1132,19 +1150,7 @@ const metaDesc = rawMeta.length > 157
           </div>
         )}
 
-        {toc.length > 0 && (
-          <div class="toc-container">
-            <div class="toc-title">Table of Contents</div>
-            <ul class="toc-list">
-              {toc.map((heading: any) => (
-                <li class={`toc-depth-${heading.depth}`}>
-                  <a href={`#${heading.slug}`}>{heading.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
+        {/* Indholdsfortegnelsen er flyttet op under billedet (13/10) */}
         <article class="video-content" set:html={artikelResten}></article>
 
         <div id="tfw-inline-recs" data-recs={JSON.stringify(recommendPool.slice(0, 6))} hidden></div>
