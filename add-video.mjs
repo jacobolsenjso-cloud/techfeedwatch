@@ -5,6 +5,7 @@ import { MIN_FAKTA, MIN_BRUGT, faktaarkPrompt, parseFaktaark, faktaarkScore, fak
 import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
+import { lavAiBillede, sitetsStier } from './src/lib/aibillede.mjs';
 import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme } from './src/lib/headline.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
@@ -1277,8 +1278,15 @@ ${content}`);
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);
     console.log(`✅ Succes! Fil oprettet: ${slug}.md (varighed ${duration}).`);
-    // Lav delekort til sociale medier (fejler stille - videoen er allerede oprettet)
-    await generateOgCard(videoId, slug);
+    // Billede til artiklen (13/10): AI-genereret billede med "AI-generated" og "TechFeedWatch.com"
+    // (src/lib/aibillede.mjs) — øverst i artiklen, på kortene og som delebillede. Fejler det,
+    // laves det abstrakte emnekort som før. Fejler stille: artiklen er allerede gemt.
+    if (!isShort) {
+      const ai = await lavAiBillede(genAI, { slug, titel: safeTitle, emne: finalTags[0] || '', resume: safeSummary }, sitetsStier(slug));
+      if (!ai) await generateOgCard(videoId, slug);
+    } else {
+      await generateOgCard(videoId, slug);
+    }
   } catch (error) {
     console.log("❌ Fejl:", error.message);
   }

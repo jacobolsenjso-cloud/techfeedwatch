@@ -1,0 +1,54 @@
+name: AI-billeder (gamle artikler)
+
+# 13/10-2026 (Jacob valgte C: alle artikler får AI-billede). Laver AI-billeder til de
+# gamle artikler i portioner, nyeste først (lav-ai-billeder.mjs). Robotten laver selv
+# billedet til nye artikler (add-video.mjs) — denne kørsel er kun til arkivet.
+#
+# TEMPO: Gemini-loftet er 30 USD/md. og deles med robotten. Målt 13/10: ca. 0,06 USD pr.
+# artikel. Tidsplanen herunder er SLÅET FRA, indtil Jacob har valgt tempo — kørslen kan
+# startes manuelt (Run workflow) med et antal.
+
+on:
+  # schedule:
+  #   - cron: "43 3 * * *"
+  workflow_dispatch:
+    inputs:
+      antal:
+        description: "Antal artikler i denne kørsel"
+        default: "10"
+
+permissions:
+  contents: write
+
+jobs:
+  billeder:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Lav AI-billeder
+        run: node lav-ai-billeder.mjs --antal=${{ github.event.inputs.antal || '10' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # Kun billedfilerne gemmes. Robotten kan have pushet imens: hent og læg ovenpå;
+      # fejler push, bliver kørslen RØD (samme regel som robottens egen gem-trin).
+      - name: Gem billederne (Commit & Push)
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/billeder public/kort public/og
+          if git commit -m "AI images for archive articles"; then
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen nye billeder."
+          fi

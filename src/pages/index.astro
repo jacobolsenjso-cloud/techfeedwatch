@@ -1,4 +1,5 @@
 ---
+import fs from 'node:fs';
 import { TAG_COLORS } from '../lib/tags';
 import MainLayout from '../layouts/MainLayout.astro';
 import SourceLine from '../components/SourceLine.astro';
@@ -454,7 +455,7 @@ const vRest = pageOneVideos.slice(13);
                   for videoens miniature — artiklen er hovedsagen, videoen et supplement.
                   Kommentaren ovenfor om maxres-fallback gælder den gamle løsning. */}
               <img
-                src={`/kort/${leadMain.file.split('/').pop().replace('.md', '')}.webp`}
+                src={(() => { const s = leadMain.file.split('/').pop().replace('.md', ''); return fs.existsSync(`public/billeder/${s}.webp`) ? `/billeder/${s}.webp` : `/kort/${s}.webp`; })()}
                 alt="" width="960" height="540" loading="eager" fetchpriority="high"
               />
             </div>

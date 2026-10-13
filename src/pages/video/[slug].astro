@@ -82,7 +82,11 @@ const sourceChannelUrl: string | null = sourceChannelId
 const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent() : '').split(/^## Sources\s*$/m)[1] || '';
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
 // Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
-const kortBillede = fs.existsSync(`public/kort/${slug}.webp`) ? `/kort/${slug}.webp` : null;
+// 13/10: har artiklen et AI-billede (public/billeder, src/lib/aibillede.mjs), bruges den store
+// udgave (960x540) her, med en alt-tekst der siger, at det er AI-genereret. Ellers emnekortet.
+const aiBillede = fs.existsSync(`public/billeder/${slug}.webp`);
+const kortBillede = aiBillede ? `/billeder/${slug}.webp` : (fs.existsSync(`public/kort/${slug}.webp`) ? `/kort/${slug}.webp` : null);
+const billedAlt = aiBillede ? `AI-generated illustration: ${title}` : '';
 // Videoens plads i artiklen. Afspilleren må ikke ligge inde i en .cinema-reading-block
 // (biograf-tilstanden skjuler dem, og så ville videoen forsvinde), så artiklens HTML deles i to.
 // 13/10-2026 (Jacob valgte A): videoen står efter artiklens FØRSTE SEKTION — åbningen plus
@@ -1046,7 +1050,7 @@ const metaDesc = rawMeta.length > 157
               over videoen. Står i første .cinema-reading-block, så biograf-tilstanden på mobil
               skjuler dem som titlen — afspiller, videoliste og knapper er præcis som før. */}
           {kortBillede && (
-            <img class="artikel-billede" src={kortBillede} alt="" width="960" height="540" loading="eager" decoding="async" />
+            <img class="artikel-billede" src={kortBillede} alt={billedAlt} width="960" height="540" loading="eager" decoding="async" />
           )}
           {/* Indholdsfortegnelsen (13/10, Jacob valgte A): op under billedet, så læseren straks ser,
               hvad artiklen dækker — før den var under videoen, og artiklen "startede forfra". */}
