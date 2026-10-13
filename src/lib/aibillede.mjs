@@ -80,7 +80,8 @@ export async function lavAiBillede(genAI, { slug, titel, emne, resume }, ud, { l
   while (!raa && forsoeg < 2) {
     forsoeg++;
     try {
-      const m = genAI.getGenerativeModel({ model: BILLED_MODEL, generationConfig: { responseModalities: ['IMAGE'], imageConfig: { aspectRatio: '16:9' } } });
+      // Gennem hentModel (13/10): "prøv igen" ved forbigående fejl, og billedet tælles i FORBRUG
+      const m = hentModel(genAI, { model: BILLED_MODEL, generationConfig: { responseModalities: ['IMAGE'], imageConfig: { aspectRatio: '16:9' } } });
       const r = await m.generateContent(billedPrompt({ titel, emne, resume }));
       const del = (r.response.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData);
       if (!del) { log(`🖼️ AI-billede forsøg ${forsoeg}: intet billede i svaret`); continue; }

@@ -57,8 +57,39 @@ export async function medGentag(fn, { onVent = null } = {}) {
 // Samme som genAI.getGenerativeModel(opts), men generateContent prøver igen
 // ved forbigående fejl. Brug denne i stedet for getGenerativeModel.
 export function hentModel(genAI, opts) {
+  const navn = opts?.model || GEMINI_MODEL;
   const m = genAI.getGenerativeModel({ model: GEMINI_MODEL, ...opts });
   return {
-    generateContent: (input) => medGentag(() => m.generateContent(input)),
+    generateContent: async (input) => {
+      const r = await medGentag(() => m.generateContent(input));
+      taelForbrug(navn, r);
+      return r;
+    },
   };
 }
+
+// Forbrugstæller (13/10): lægger tokens, Google-søgninger og billeder sammen for alle kald
+// gennem hentModel, så prisen pr. artikel kan MÅLES i stedet for at blive skønnet.
+// Priser fra ai.google.dev 12/10-2026 (USD pr. mio. tokens; fordobles 1/1-2027 for 3.8 Flash).
+// Google-søgninger: 5.000 gratis pr. md. (delt), derefter 14 USD pr. 1.000 — tælles, ikke prissat.
+const PRIS = {
+  'gemini-3.8-flash': { ind: 0.75, ud: 3.75 },
+  'gemini-nano-banana-2.1': { ind: 1.5, ud: 7.5, billede: 30 },
+};
+export const forbrug = { kald: 0, ind: 0, ud: 0, billedTokens: 0, soegninger: 0, usd: 0 };
+export function taelForbrug(navn, r) {
+  const u = r?.response?.usageMetadata || {};
+  const p = PRIS[navn] || PRIS['gemini-3.8-flash'];
+  const billed = (u.candidatesTokensDetails || []).filter((d) => d.modality === 'IMAGE').reduce((s, d) => s + (d.tokenCount || 0), 0);
+  const ud = (u.candidatesTokenCount || 0) - billed + (u.thoughtsTokenCount || 0);
+  forbrug.kald++;
+  forbrug.ind += u.promptTokenCount || 0;
+  forbrug.ud += ud;
+  forbrug.billedTokens += billed;
+  forbrug.soegninger += r?.response?.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length || 0;
+  forbrug.usd += ((u.promptTokenCount || 0) * p.ind + ud * p.ud + billed * (p.billede || 0)) / 1e6;
+}
+// Skrives når processen slutter. Linjen læses af målingerne. Ændr ikke formatet.
+process.on('exit', () => {
+  if (forbrug.kald) console.log(`FORBRUG: ${JSON.stringify({ ...forbrug, usd: Math.round(forbrug.usd * 10000) / 10000 })}`);
+});
