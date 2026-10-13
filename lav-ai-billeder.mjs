@@ -17,10 +17,13 @@ const artikler = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith
 }).filter((a) => !harAiBillede(a.slug)).sort((a, b) => b.dato.localeCompare(a.dato));
 
 console.log(`${artikler.length} artikler mangler AI-billede — laver højst ${antal} nu`);
-let lavet = 0, reserve = 0, forsoeg = 0, cache = 0;
+let lavet = 0, reserve = 0, forsoeg = 0, cache = 0, iTraek = 0;
 for (const a of artikler.slice(0, antal)) {
   const r = await lavAiBillede(genAI, a, sitetsStier(a.slug), { log: (m) => console.log(`  ${a.slug}: ${m}`) });
-  if (r) { lavet++; forsoeg += r.forsoeg; if (r.fraCache) cache++; } else reserve++;
+  if (r) { lavet++; forsoeg += r.forsoeg; if (r.fraCache) cache++; iTraek = 0; } else { reserve++; iTraek++; }
+  // 3 fejl i træk = noget er galt (typisk tom Gemini-kredit, set 9.-10/10): stop i stedet
+  // for at hamre løs. De manglende artikler tages i næste kørsel.
+  if (iTraek >= 3) { console.log('Stopper: 3 billeder i træk fejlede — tjek Gemini-kreditten (AI Studio -> Billing).'); break; }
 }
 // Linjen læses af statusarbejdet (pris = forsøg x ca. 0,034 USD). Ændr ikke formatet.
 console.log(`AI-BILLEDER: ${JSON.stringify({ lavet, reserve, forsoeg, fraCache: cache, tilbage: artikler.length - lavet })}`);

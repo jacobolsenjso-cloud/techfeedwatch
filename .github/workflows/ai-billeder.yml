@@ -4,18 +4,18 @@ name: AI-billeder (gamle artikler)
 # gamle artikler i portioner, nyeste først (lav-ai-billeder.mjs). Robotten laver selv
 # billedet til nye artikler (add-video.mjs) — denne kørsel er kun til arkivet.
 #
-# TEMPO: Gemini-loftet er 30 USD/md. og deles med robotten. Målt 13/10: ca. 0,06 USD pr.
-# artikel. Tidsplanen herunder er SLÅET FRA, indtil Jacob har valgt tempo — kørslen kan
-# startes manuelt (Run workflow) med et antal.
+# TEMPO (Jacob 13/10): 20 artikler om dagen. Målt 13/10: ca. 0,06 USD pr. artikel, altså
+# ca. 1,2 USD (8 kr.) om dagen — kreditten deles med robotten. Stopper selv ved 3 fejl i træk.
+# Stoppes: sæt # foran de to schedule-linjer nedenfor.
 
 on:
-  # schedule:
-  #   - cron: "43 3 * * *"
+  schedule:
+    - cron: "43 3 * * *"
   workflow_dispatch:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        default: "10"
+        default: "20"
 
 permissions:
   contents: write
@@ -35,7 +35,7 @@ jobs:
         run: npm install
 
       - name: Lav AI-billeder
-        run: node lav-ai-billeder.mjs --antal=${{ github.event.inputs.antal || '10' }}
+        run: node lav-ai-billeder.mjs --antal=${{ github.event.inputs.antal || '20' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
