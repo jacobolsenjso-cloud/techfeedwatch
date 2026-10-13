@@ -4,8 +4,8 @@ name: AI-billeder (gamle artikler)
 # gamle artikler i portioner, nyeste først (lav-ai-billeder.mjs). Robotten laver selv
 # billedet til nye artikler (add-video.mjs) — denne kørsel er kun til arkivet.
 #
-# TEMPO (Jacob 13/10): 20 artikler om dagen. Målt 13/10: ca. 0,06 USD pr. artikel, altså
-# ca. 1,2 USD (8 kr.) om dagen — kreditten deles med robotten. Stopper selv ved 3 fejl i træk.
+# TEMPO (Jacob 13/10): 12 artikler om dagen (først 20, rettet samme dag). Målt 13/10: ca. 0,06 USD
+# pr. artikel, altså ca. 0,72 USD (ca. 5 kr.) om dagen — kreditten deles med robotten. Stopper selv ved 3 fejl i træk.
 # Stoppes: sæt # foran de to schedule-linjer nedenfor.
 
 on:
@@ -15,7 +15,7 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        default: "20"
+        default: "12"
 
 permissions:
   contents: write
@@ -35,7 +35,7 @@ jobs:
         run: npm install
 
       - name: Lav AI-billeder
-        run: node lav-ai-billeder.mjs --antal=${{ github.event.inputs.antal || '20' }}
+        run: node lav-ai-billeder.mjs --antal=${{ github.event.inputs.antal || '12' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
