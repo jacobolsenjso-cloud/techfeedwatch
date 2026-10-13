@@ -77,7 +77,7 @@ The adoption of such advanced platforms underpins the growth of the overall AI c
 
 Leading AI companies are already recognizing these advantages. Companies like Microsoft, OpenAI, Anthropic, Meta, xAI, Google, AWS, Oracle, and CoreWeave are actively adopting the Rubin platform. This widespread adoption by industry leaders underscores the platform's perceived value and its potential to become the standard for high-performance AI infrastructure.
 
-Their investment signals a collective belief that this integrated factory approach is the path forward for manufacturing intelligence. [What NVIDIA AI Factories Are and How They Work](/video/the-architect-of-ai-how-nvidia-s-strategic-dominance-is-reshaping) explains this architectural philosophy in detail.
+Their investment signals a collective belief that this integrated factory approach is the path forward for manufacturing intelligence. [How Do You Deploy NVIDIA AI Factories at Scale?](/video/the-architect-of-ai-how-nvidia-s-strategic-dominance-is-reshaping) explains this architectural philosophy in detail.
 
 ## Vendor lock-in and high upfront infrastructure costs
 
