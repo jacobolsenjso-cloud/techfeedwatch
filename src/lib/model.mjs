@@ -63,6 +63,13 @@ export function hentModel(genAI, opts) {
     generateContent: async (input) => {
       const r = await medGentag(() => m.generateContent(input));
       taelForbrug(navn, r);
+      // Klippet svar (14/10): to gange (1/10 og 14/10) gav et for lavt maxOutputTokens et tomt
+      // eller halvt svar, som koden tavst behandlede som "intet svar". Tænkningen tæller med i
+      // loftet. Nu står det i loggen, hver gang et svar rammer loftet — ét sted for alle kald.
+      if (r?.response?.candidates?.[0]?.finishReason === 'MAX_TOKENS') {
+        const u = r.response.usageMetadata || {};
+        console.log(`   ⚠️ Gemini-svar KLIPPET ved loftet (maxOutputTokens ${opts?.generationConfig?.maxOutputTokens ?? '?'}; tænkning ${u.thoughtsTokenCount || 0}, svar ${u.candidatesTokenCount || 0}) — hæv loftet for dette kald.`);
+      }
       return r;
     },
   };
