@@ -438,7 +438,7 @@ const siteSchema = [
       /* Fintech-blå (#1e3a8a) forsvinder på mørk baggrund; lysere variant kun i mørk tilstand. */
     body.dark-mode [style*="#1e3a8a"] { --tag-accent: #6d9eff; --accent: #6d9eff; }
     body.dark-mode { --bg-color: #141317; --text-color: #f4f2f0; --card-bg: #1f1d24; --border-color: #322e39; --sidebar-bg: #141317; --hover-bg: #262230; --teal: #0891b2; --teal-text: #38bdf8; }
-      body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+      body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
       * { -webkit-tap-highlight-color: transparent; }
       h1, h2, h3, h4 { letter-spacing: -0.02em; }
       a { transition: color 0.15s ease, opacity 0.15s ease; }
@@ -1115,6 +1115,18 @@ const siteSchema = [
           menuButton.setAttribute('aria-expanded', 'false');
         }
       });
+      // Selve siden må aldrig rulle — kun .content-area (14/10). På telefoner er 100vh højere end
+      // skærmen (adresselinjen), og et hop til en overskrift rullede så hele siden ~56 px op, så
+      // overskriften gemte sig under topbaren. body bruger nu 100dvh; dette er sikringen til ældre browsere.
+      // Nulstil først når AL rulning er stoppet (capture fanger også .content-area): midt i et blødt
+      // hop afbryder en nulstilling ellers hoppet (målt 14/10).
+      let rodTimer;
+      document.addEventListener('scroll', () => {
+        const s = document.scrollingElement;
+        if (!s || s.scrollTop === 0) return;
+        clearTimeout(rodTimer);
+        rodTimer = setTimeout(() => { s.scrollTop = 0; }, 250);
+      }, { passive: true, capture: true });
     </script>
   </body>
 </html>
