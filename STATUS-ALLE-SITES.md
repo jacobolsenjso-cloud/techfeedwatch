@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 117** — brug kun v117). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 118** — brug kun v118). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 14. oktober (**version 117** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 og Bilag A sidst i filen er baggrund og kan være forældede; dagbogen (afsnit 7) viser, hvad der er sket, nyeste øverst. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (14/10-2026 kl. 19:05, Astro 7.3.8, GitHub-sikkerhed slået til): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler). **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `5ca13525`; hop fra indholdsfortegnelsen lander 24 px under topbaren, også på telefon): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
+**Seneste for techfeedwatch (14/10-2026 kl. 19:55, Astro 7.3.8, GitHub-sikkerhed slået til): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler; fra 14/10 19:50: 2. forsøg tager næstmindste emne, spørgsmåls-redaktøren virker igen — ikke set på GitHub endnu). **GitHub starter kun ca. 4-5 af 24 planlagte robotkørsler om dagen** — en pålidelig starter (Cloudflare) er udskudt til rettelserne har vist effekt. **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `5ca13525`; hop fra indholdsfortegnelsen lander 24 px under topbaren, også på telefon): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
 
 ### techfeedwatch.com — målt 6/10
 - **Live:** `7ea3f821` (se `https://techfeedwatch.com/build.json`), forsiden svarer 200. **420 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 6/10 kl. 17:21 dansk. Build: 622 sider, husets tre tjek grønne.
@@ -231,6 +231,18 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 14/10-2026 kl. 19:55 - techfeedwatch: robotten - hvorfor så få artikler, og to rettelser (LIVE i robotten)
+- **Jacob (19:02):** "ja undersøg. Se efter fejl også"; valgte forslag 1 og 2 (19:18).
+- **Målt (GitHub API + logs i Jacobs Chrome):** "YouTube Auto Update" (cron hver time) blev kun startet 5 gange fra 13/10 12:31 til 14/10 19:00 (GitHub dropper planlagte kørsler; IndexNow fik 21/28 og Tomgangsalarm 13/21 den seneste uge). 0 fejlede siden 10/10 (de 4 røde 9-10/10 var tom Gemini-kredit). Pausen 10/10-13/10 var Jacobs beslutning.
+- **Hvorfor 1 artikel i dag (loft 4):** alle 4 kørsler valgte "Coding" (færrest artikler, 36). Kørsel 09:41: 2 spørgsmål, 6 videoer, relevans 0-4/10 → ingen artikel, ca. 0,38 USD spildt. 15:46: 1. spørgsmål "how is programming com company" (volapyk) fejlede, 2. ("what is coding for kids") gav dagens artikel. (Kørsel 00:48 og 03:55 ikke læst.)
+- **Årsag til volapyk (fundet ved test):** spørgsmåls-redaktøren (Gemini vælger blandt ~100 autocomplete-forslag) havde `maxOutputTokens: 512`. Modellen bruger ~3.400 tokens på at tænke → INTET svar (3 af 3 forsøg), og listen blev brugt ufiltreret uden et ord i loggen. Filteret har reelt været slået fra.
+- **Rettet** (commit `44b3bfd4` + `2c2eb686`): (1) kørslens 2. forsøg tager det næstmindste emne; også når et emne ikke har brugbare spørgsmål (før: kørslen stoppede). Antal forsøg pr. kørsel uændret = samme pris. (2) Redaktøren får 8192 tokens og logger, hvis den ikke svarer; prompten (nu i `spoergsmaalsfilter.mjs`) afviser også spørgsmål om ét firmas omdømme og domænenavne skrevet som ord. (3) Grammatikfilteret springer et spørgsmål over, når 2/3 kalder det brudt og rettelsen ikke kan godkendes (`afvisBrudte`). (4) `model.mjs` skriver "⚠️ Gemini-svar KLIPPET", hver gang et svar rammer loftet — for alle kald.
+- **Testet:** redaktøren svarede 2 af 2 gange (beholdt 43 og 48 af 103) og afviste "how is programming com company" begge gange; brudt-filteret: 4/5 som forventet (5. gang foreslog dommerne "how is programming com as a company", som slap — derfor også rettelse 2); KLIPPET-advarslen ses ved loft 64, ikke ved 8192; robottens 54 tests OK.
+- **Ikke set virke på GitHub endnu** — næste robotkørsel læses (planlagt tjek).
+- Lære: Samme fejl to gange (for lavt maxOutputTokens, 1/10 og 14/10) → opskriften rettet: central KLIPPET-advarsel i `model.mjs` + regel i HOVEDPROMPTs faldgrubeliste.
+- Lære: Test en rettelse mod det rigtige input (100 forslag), ikke kun mod det ene eksempel — testen afslørede, at det egentlige filter aldrig svarede.
+- Lære: Statusfilens .pdf/.docx blev ikke bygget om i v112-v117 (regel 6 i HOVEDPROMPT) — bygget nu fra v118.
 
 ### 14/10-2026 kl. 19:05 - techfeedwatch: Astro 6.4.6 → 7.3.8 (sikkerhed trin 2) (LIVE)
 - **Jacob (18:32):** "vi tager trin 2 nu"; så skærmbilleder og sagde ja (18:56).
