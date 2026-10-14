@@ -408,3 +408,84 @@ export function fjernSaetninger(md, liste, maks) {
   }
   return { md: fm + ud, fjernet, fjernede };
 }
+
+// ---------------------------------------------------------------------------
+// 2i. Tvungne interne links (14/10-2026)
+// ---------------------------------------------------------------------------
+// Robotten skulle sætte 3-5 interne links og pressede derfor artikeltitler ind i
+// sætninger, hvor de ikke hører hjemme (infosec-artiklen 13/10: "...and prevent
+// [What Is Lateral Movement Risk in Modern IT?] across cloud services"). Et link
+// er tvunget, når linkteksten ligner en titel: den ender på "?", har et kolon,
+// er hele målets titel, eller er over 7 ord. Et naturligt link er få ord fra
+// sætningen selv ("a data breach").
+const normT = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+export function tvungetAnker(tekst, titel = '') {
+  const t = String(tekst).trim();
+  if (/\?\s*$/.test(t)) return 'spørgsmål som linktekst';
+  if (/:/.test(t)) return 'kolon i linkteksten';
+  if (titel && normT(t) === normT(titel)) return 'hele titlen som linktekst';
+  if (antalOrd(t) > 7) return 'over 7 ord';
+  return null;
+}
+const INTERN = /\[([^\]]+)\]\(\/video\/([^)\s#?]+?)\/?\)/g;
+export function tvungneLinks(md, titler = new Map()) {
+  const ud = [];
+  for (const s of alleSaetninger(md)) for (const m of s.matchAll(INTERN)) {
+    const g = tvungetAnker(m[1], titler.get(m[2]) || '');
+    if (g) ud.push({ saetning: s.trim(), tekst: m[1], slug: m[2], grund: g });
+  }
+  return ud;
+}
+// Sidste værn efter rettelserne: et tvunget link må ikke udgives. Står det i et
+// afsnit med flere sætninger, fjernes hele sætningen (den er skrevet for linkets
+// skyld og læses forkert uden). Ellers (liste, eneste sætning) bliver linket til
+// almindelig tekst. Ingen andre ord ændres.
+export function fjernTvungneLinks(md, titler = new Map()) {
+  const krop = brodtekst(md), norm = String(md).replace(/\r\n/g, '\n');
+  const fm = norm.slice(0, norm.length - krop.length);
+  const tvungen = (s) => [...s.matchAll(INTERN)].some((m) => tvungetAnker(m[1], titler.get(m[2]) || ''));
+  let ud = krop, saetningerFjernet = 0, linksFjernet = 0; const fjernede = [];
+  for (const b of prosa(krop)) {
+    const dele = saetninger(b.tekst);
+    if (dele.length < 2) continue;
+    const behold = dele.filter((s) => !tvungen(s));
+    if (behold.length === dele.length || behold.length === 0) continue;
+    for (const s of dele) if (tvungen(s)) fjernede.push(s);
+    saetningerFjernet += dele.length - behold.length;
+    const i = ud.indexOf(b.tekst);
+    if (i >= 0) ud = ud.slice(0, i) + behold.join(' ') + ud.slice(i + b.tekst.length);
+  }
+  ud = ud.replace(INTERN, (hel, tekst, slug) => {
+    if (!tvungetAnker(tekst, titler.get(slug) || '')) return hel;
+    linksFjernet++; return tekst;
+  });
+  return { md: fm + ud, saetningerFjernet, linksFjernet, fjernede };
+}
+
+// ---------------------------------------------------------------------------
+// 2j. AI-kendetegn (14/10-2026)
+// ---------------------------------------------------------------------------
+// Googles råd 1/10 og Jacobs video: maskinskrevet tekst afsløres af forbehold i
+// bisætninger ("...do not invariably fail..."), "not just X, but Y" og tomme
+// vendinger. Bruges til at bede om en omskrivning — stopper ikke en artikel.
+// Citater i anførselstegn tæller ikke.
+const AI_FRASER = [
+  // Kun de forbehold, der er maskinens kendetegn. Målt 14/10 på 429 artikler: "does not
+  // automatically" og "is not always" stod i almindelige, rigtige sætninger, så de tæller ikke.
+  [/\bnot (?:invariably|universally)\b/i, 'forbehold'],
+  [/\b(?:though|although)\b[^.;]{0,80}\bnot (?:always|necessarily)\b/i, 'forbehold'],
+  [/\b(?:isn't|aren't|wasn't|is not|are not|was not) (?:just|only|merely|simply) [^,.;]{1,60}[,;—–]\s*(?:but|it's|it is|they're|they are)\b/i, 'not just X, but Y'],
+  [/\bnot (?:just|only|merely) [^,.;]{1,60},\s*but (?:also )?\b/i, 'not just X, but Y'],
+  [/\b(?:it is|it's) (?:important|worth|crucial|essential|vital) (?:to note|noting|to remember|mentioning|to mention)\b/i, 'it is worth noting'],
+  [/^(?:Ultimately|In essence|In summary|In short|At its core|At the end of the day|All in all|Simply put|In a nutshell),/i, 'tom indledning'],
+  [/\bplays? an? (?:pivotal|vital|key|crucial|critical|central|significant) role\b/i, 'plays a key role'],
+  [/\b(?:double-edged sword|game[- ]changer|ever-evolving|fast-paced world|rapidly evolving landscape)\b/i, 'kliché'],
+];
+export function aiFraser(md) {
+  const ud = [];
+  for (const s of alleSaetninger(md)) {
+    const t = synlig(udenCitater(s)).replace(/\s+/g, ' ').trim();
+    for (const [re, navn] of AI_FRASER) if (re.test(t)) { ud.push({ saetning: s.trim(), ord: navn }); break; }
+  }
+  return ud;
+}

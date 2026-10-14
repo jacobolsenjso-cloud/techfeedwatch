@@ -16,7 +16,7 @@ import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
-import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel } from './src/lib/skriveregler.mjs';
+import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
 import { undersoegSoegning, soegningTekst } from './src/lib/soegning.mjs';
@@ -362,7 +362,10 @@ if (fs.existsSync('./src/content/videos')) {
   const kandidater = valgte.length >= 3 ? valgte : alle.slice(0, 8);
   if (kandidater.length) {
     const links = kandidater.map((a) => `[${a.title}](/video/${a.slug})`).join('\n');
-    internalLinksContext = `\nRELATED ARTICLES ON THIS SITE (the only internal links you may use):\n${links}\nLINK RULES: Link 3 to 5 of them, only where a sentence is genuinely about that article's subject. The link text must be the article's title or a close paraphrase of it - never a phrase about something else. A link whose text does not match its target will be removed. Fewer links is fine; irrelevant links are not.`;
+    // 14/10: "Link 3 to 5" + "link text = titlen" pressede titler ind i sætninger, hvor de
+    // ikke hørte hjemme (målt: 42 tvungne links i de 15 nyeste artikler). Siden viser allerede
+    // relaterede artikler i egne bokse, så i teksten er 0-2 naturlige links nok.
+    internalLinksContext = `\nRELATED ARTICLES ON THIS SITE (the only internal links you may use):\n${links}\nLINK RULES: Link 0 to 2 of them, and only where your sentence is already about that article's subject. The link text is 2 to 6 words taken from your own sentence (for example "a data breach" or "zero trust for AI agents") - NEVER the article's full title, never a question, never text with a colon. Never write a sentence just to place a link ("Readers can explore ...", "For more, see ...", "Understanding X reveals ..."). Related articles are already shown elsewhere on the page, so no link is better than a forced one. Forced links are removed together with their sentence.`;
   }
 }
 
@@ -677,7 +680,8 @@ async function run() {
     20. Never draw diagrams with characters (arrows, boxes, ASCII art). Use a markdown table or a numbered list instead.
     21. Never paste the reader's search words into a sentence where they are not grammatical (for example "Understanding what is X ..."). Rephrase.
     22. Do not write a sources or references section - it is added automatically.
-    23. If the reader's question assumes something (that X is better than Y, that Z is safe, that W is dead), never state that assumption as settled fact. Show where it holds and where it does not, using the RESEARCH FACTS on both sides, and end with a fair, evidence-based verdict. No sweeping judgments ("clear superiority", "always", "the best") without evidence in the same sentence.
+    23. If the reader's question assumes something (that X is better than Y, that Z is safe, that W is dead), never state that assumption as settled fact. Show where it holds and where it does not, using the RESEARCH FACTS on both sides, and end with a fair, evidence-based verdict. No sweeping judgments ("clear superiority", "always", "the best") without evidence in the same sentence. Fair does NOT mean hedged: state a limitation as its own plain sentence with its source, never as a qualifying clause tacked onto another sentence.
+    24. WRITE LIKE A PERSON, NOT A MODEL: say each point once, plainly. Never use these machine patterns: "not just X, but Y" / "isn't just X; it's Y", "it is worth noting" / "it is important to note", "plays a key/pivotal/vital role", opening a sentence with "Ultimately," "At its core," "In essence," or "In short,", clichés like "game-changer", "double-edged sword", "ever-evolving", and hedges like "does not invariably" or "though ... not always". Take a clear position where the evidence supports one.
 
     STRUCTURE (built from the search, not from the video):
     - Opening: 2-3 sentences that answer "${targetQuestion}" directly (no heading, no label).
@@ -1051,21 +1055,27 @@ async function run() {
         const ordret = ordretFraKilde(content, text);
         const ordretPct = Math.round(ordretAndel(content, text) * 100);
         if (ordret.length) m.push(`${ordret.length} sætning(er) afskrevet fra videoen (${ordretPct} %)`);
-        return { brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, ordret, ordretPct, va, vAfsnit, udenKilde, kilderBrugt, m };
+        // 14/10: tvungne interne links og AI-kendetegn rettes i samme omgang (stopper ikke).
+        const tvungne = tvungneLinks(content, ARTIKEL_TITLER);
+        const aiFr = aiFraser(content);
+        if (tvungne.length) m.push(`${tvungne.length} tvunget/tvungne interne link(s)`);
+        if (aiFr.length) m.push(`${aiFr.length} AI-vending(er): ${[...new Set(aiFr.map((x) => x.ord))].join(', ')}`);
+        return { tvungne, aiFr, brugte, ukendte, tal, sc, laes, svarFoerst, tale, diagram, uklar, klistret, nLister, ordret, ordretPct, va, vAfsnit, udenKilde, kilderBrugt, m };
       };
       // En senere rettelse (læsertjek, redaktørtjek) kasseres, hvis den bringer en af
       // de fejl ind, der stopper udgivelsen. Samme regel begge steder.
       const nyeFejl = (kk) => kk.ukendte.length || kk.tale.length || kk.klistret.length || kk.ordretPct > ORDRET_MAKS * 100
         || kk.vAfsnit.length !== 1 || kk.va.andel > VIDEO_ANDEL_MAKS || kk.udenKilde.length > MAKS_TAL_UDEN_KILDE || kk.kilderBrugt.length < MIN_KILDER_BRUGT;
       let k = status();
+      const stilFoer = { tvungne: k.tvungne.length, ai: k.aiFr.length }; // til STIL-linjen (14/10)
       if (k.m.length) {
         console.log(`🔎 Kontrol mod faktaarket: ${k.m.join(' · ')} — beder om rettelse`);
         const ubrugte = fakta.filter((f) => !k.brugte.includes(f)).slice(0, 12);
         try {
           const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
-            .generateContent(`Revise the article below. Keep its structure, headings, length and links. Change ONLY what is needed to satisfy these requirements:
+            .generateContent(`Revise the article below. Keep its structure, headings, length and links${k.tvungne.length ? ' (except as item 16 says)' : ''}. Change ONLY what is needed to satisfy these requirements:
 ${k.brugte.length < MIN_VIDEO_DETALJER ? `1. In the video section, use at least ${MIN_VIDEO_DETALJER} items from the VIDEO FACT SHEET. Write every number exactly as the fact sheet gives it.\n` : ''}${k.ukendte.length ? `2. These numbers appear in the article but NOT in the research or the video: ${k.ukendte.join(', ')}. Remove each of them or replace it with a number from the RESEARCH FACTS. Do not keep any figure the sources do not give.\n` : ''}${k.vAfsnit.length !== 1 ? `3. The article must have exactly ONE "## " section about the video, and its heading must contain the creator's name "${kildeNavn(channelTitle) || 'the creator'}". ${k.vAfsnit.length > 1 ? `Merge these into one: ${k.vAfsnit.map((h) => `"${h}"`).join(', ')}.` : 'Add it after the sections that answer the main question, or rename the section that is about the video.'}\n` : ''}${k.va.andel > VIDEO_ANDEL_MAKS ? `13. ${Math.round(k.va.andel * 100)} % of the article comes from the video; at most ${Math.round(VIDEO_ANDEL_MAAL * 100)} % may. Shorten the video section, and outside it replace details that only the video gives with facts from the RESEARCH FACTS.\n` : ''}${k.udenKilde.length ? `14. These sentences give a number without saying where it comes from. Name the source in the sentence itself (the publisher from the RESEARCH FACTS, or the creator for a video figure), or remove the number:\n${k.udenKilde.map((s) => `   - ${s}`).join('\n')}\n` : ''}${k.kilderBrugt.length < MIN_KILDER_BRUGT ? `15. Only ${k.kilderBrugt.length} of the research's web publishers are named in the article; at least ${MIN_KILDER_BRUGT} must be. Use more RESEARCH FACTS and name their publishers.\n` : ''}
-${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the RESEARCH FACTS, written exactly as given and with their publisher named.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the RESEARCH FACTS or the VIDEO FACT SHEET give it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}${k.ordret.length ? `12. These sentences copy the video's own wording (eight or more words in a row from the transcript). An article must explain in its own words. Rewrite each one in different words with the same meaning, or, if the exact wording matters, put it in quotation marks and name the creator:\n${k.ordret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is${k.vAfsnit.length !== 1 ? ' (except as item 3 says)' : ''}. Do not add a sources section. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
+${k.tal < MIN_TAL ? `4. Include at least ${MIN_TAL} specific figures from the RESEARCH FACTS, written exactly as given and with their publisher named.\n` : ''}${!k.svarFoerst && targetQuestion ? `5. Rewrite the opening paragraph (at least 40 words, no heading) so its first two sentences directly answer the question "${targetQuestion}" in plain words, naming the subject of the question.\n` : ''}${k.laes.ordPrSaetning > MAX_ORD_PR_SAETNING ? `6. Sentences average ${k.laes.ordPrSaetning} words. Split long sentences so the average is under ${MAX_ORD_PR_SAETNING} words. Do not remove information.\n` : ''}${k.tale.length ? `7. These sentences are spoken language from the video, not editorial writing. Rewrite each in the third person, as an editor would (or quote the creator in quotation marks):\n${k.tale.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.diagram.length ? `8. The article draws a diagram with characters (arrows, boxes or a code block). Replace it with a markdown table or a numbered list that says the same thing. No code blocks, no arrows, no box characters.\n` : ''}${k.uklar.length ? `9. These sentences cite an unnamed source. Name the source if the RESEARCH FACTS or the VIDEO FACT SHEET give it; otherwise state the point plainly without "experts", "studies", "critics" or "reports":\n${k.uklar.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.klistret.length ? `10. The search words "${targetQuestion}" are pasted into these sentences where they are not grammatical. Rephrase each naturally:\n${k.klistret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.nLister < MIN_LISTER ? `11. The article has ${k.nLister} markdown list(s); it needs at least ${MIN_LISTER}. Turn ${MIN_LISTER - k.nLister} existing paragraph(s) whose content is naturally a list (steps, options, components, pros and cons) into a markdown list of 3-5 items ("- " or "1. "). Keep every fact and link from those paragraphs.\n` : ''}${k.ordret.length ? `12. These sentences copy the video's own wording (eight or more words in a row from the transcript). An article must explain in its own words. Rewrite each one in different words with the same meaning, or, if the exact wording matters, put it in quotation marks and name the creator:\n${k.ordret.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.tvungne.length ? `16. These sentences force a link to another article into a place where it does not belong (the link text is a whole headline or a question). For each: if the sentence is only there for the link, delete the sentence; otherwise keep the sentence's information, and either remove the link or make its text 2-6 natural words of the sentence:\n${k.tvungne.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}${k.aiFr.length ? `17. These sentences use phrasing typical of machine-written text. Rewrite each as one plain, direct statement with the same facts - no "not just X, but Y", no "it is worth noting", no "plays a key role", no opening "Ultimately,"/"At its core,", no clichés and no hedging clauses:\n${k.aiFr.map((x) => `   - ${x.saetning}`).join('\n')}\n` : ''}Never invent numbers or names. Keep every existing H2 heading exactly as it is${k.vAfsnit.length !== 1 ? ' (except as item 3 says)' : ''}. Do not add a sources section. Output ONLY the revised article in markdown - no fact sheet, no commentary, no preamble.
 
 RESEARCH (from Google):
 ${soegningTekst(soeg)}
@@ -1125,6 +1135,17 @@ ${content}`);
       if (k.kilderBrugt.length < MIN_KILDER_BRUGT) throw new Error(`Kun ${k.kilderBrugt.length} websider fra søgningen nævnt (mindst ${MIN_KILDER_BRUGT}). Artiklen skrives ikke.`);
       console.log(`🌐 Søgning først: video-andel ${Math.round(k.va.andel * 100)} % · videoafsnit "${k.vAfsnit[0]}" · tal uden kilde ${k.udenKilde.length} · websider nævnt ${k.kilderBrugt.length} af ${soeg.kilder.length}`);
 
+      // Tvungne interne links (14/10): det, rettelsen ikke fik ryddet, fjernes nu — FØR
+      // læsertjekket, så en sætning, der læses forkert uden sit link, bliver fanget dér.
+      const tv1 = fjernTvungneLinks(content, ARTIKEL_TITLER);
+      if (tv1.saetningerFjernet || tv1.linksFjernet) {
+        content = tv1.md;
+        console.log(`🔗 Tvungne links: ${tv1.saetningerFjernet} sætning(er) fjernet, ${tv1.linksFjernet} link(s) gjort til tekst${tv1.fjernede.length ? `: ${tv1.fjernede.map((s) => `"${s.slice(0, 70)}"`).join(' · ')}` : ''}`);
+      }
+      // Linjen læses af _maal-*-scripts. Ændr ikke formatet.
+      const aiNu = aiFraser(content);
+      console.log(`STIL: ${JSON.stringify({ tvungneLinksFoer: stilFoer.tvungne, tvungneEfterRettelse: k.tvungne.length, saetningerFjernet: tv1.saetningerFjernet, linksGjortTilTekst: tv1.linksFjernet, aiVendingerFoer: stilFoer.ai, aiVendingerNu: aiNu.length, aiTyper: [...new Set(aiNu.map((x) => x.ord))] })}`);
+
       // Læsertjek (8/10): en model læser artiklen som en læser, der ikke har set videoen.
       let lf = await laeserTjek(genAI, content);
       if (lf === null) { console.log('👓 Læsertjek kunne ikke køre - artiklen udgives uden (ses i loggen)'); lf = []; }
@@ -1155,7 +1176,7 @@ ${content}`);
         try {
           const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384, temperature: 0.3 } })
             .generateContent(`Revise the article below. Change ONLY what is needed for these requirements and keep everything else - headings, links, length - as it is:
-${rt.ubesvarede.length ? `1. The article does not answer these questions that people searching "${targetQuestion}" have. Answer each one, using only the RESEARCH FACTS and naming the publisher of every number: add a short "## " section for it, or extend the section that comes closest.\n${rt.ubesvarede.map((u) => `   - ${u.spoergsmaal}`).join('\n')}\n` : ''}${rt.reklame.length ? `2. These sentences promote something instead of informing. Remove each one, or rewrite it as neutral information that recommends nothing:\n${rt.reklame.map((s) => `   - ${s}`).join('\n')}\n` : ''}${rt.ensidige.length ? `3. These sentences state a one-sided judgment as settled fact. Rewrite each one so it is fair and backed by the RESEARCH FACTS (name the source), or show where the claim holds and where it does not:\n${rt.ensidige.map((s) => `   - ${s}`).join('\n')}\n` : ''}Never invent numbers or names. Do not add a sources section. Output ONLY the revised article in markdown - no commentary, no preamble.
+${rt.ubesvarede.length ? `1. The article does not answer these questions that people searching "${targetQuestion}" have. Answer each one, using only the RESEARCH FACTS and naming the publisher of every number: add a short "## " section for it, or extend the section that comes closest.\n${rt.ubesvarede.map((u) => `   - ${u.spoergsmaal}`).join('\n')}\n` : ''}${rt.reklame.length ? `2. These sentences promote something instead of informing. Remove each one, or rewrite it as neutral information that recommends nothing:\n${rt.reklame.map((s) => `   - ${s}`).join('\n')}\n` : ''}${rt.ensidige.length ? `3. These sentences state a one-sided judgment as settled fact. Rewrite each one as a plain statement that names who says it, backed by the RESEARCH FACTS (for example "NIST recommends layered controls"), or narrow it to what the evidence shows. If there is a real limitation, state it as its own short sentence with its source. Do NOT add hedging clauses or qualifiers ("though ...", "not invariably", "may not always", "in some cases"):\n${rt.ensidige.map((s) => `   - ${s}`).join('\n')}\n` : ''}Never invent numbers or names. Do not add a sources section. Output ONLY the revised article in markdown - no commentary, no preamble.
 
 RESEARCH (from Google):
 ${soegningTekst(soeg)}
@@ -1212,7 +1233,13 @@ ${content}`);
       const at = afsnitsTal(content);
       console.log(`📐 Afsnit: første afsnit ${fa.delt ? 'delt' : 'uændret'} (${foersteAfsnitTal(content).ord} ord), ${la.delt} lange afsnit delt; nu ${at.afsnit} afsnit, ${at.enSaetning} på én sætning, længste ${at.maksOrd} ord · lister ${lister(content).length}${k.uklar.length ? ` · uklare kilder tilbage: ${k.uklar.length}` : ''}`);
 
-      // Interne links: ankertekst skal passe til målet (se ankerTjek).
+      // Interne links: sidste værn mod tvungne links (redaktør- og læserrettelserne kan have
+      // sat nye ind), derefter skal ankerteksten passe til målet (se ankerTjek).
+      const tv2 = fjernTvungneLinks(content, ARTIKEL_TITLER);
+      if (tv2.saetningerFjernet || tv2.linksFjernet) {
+        content = tv2.md;
+        console.log(`🔗 Tvungne links (sidste værn): ${tv2.saetningerFjernet} sætning(er) fjernet, ${tv2.linksFjernet} link(s) gjort til tekst`);
+      }
       content = ankerTjek(content);
 
       // Kodeformatering hører ikke hjemme i en artikel. Målt 12/9: modellen

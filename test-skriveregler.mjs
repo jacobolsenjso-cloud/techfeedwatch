@@ -124,8 +124,27 @@ t('ordret: et citat i anførselstegn er tilladt', R.ordretFraKilde('Intro.\n\nAs
 t('ordret: 7 ord i træk er ikke nok', R.ordretFraKilde('Intro.\n\nThe picture is frequently not clear for weeks.', TR).length === 0);
 t('ordret: tom kilde giver intet fund', R.ordretFraKilde('Intro.\n\nAny sentence at all with many words in it here.', '').length === 0);
 
+// Tvungne interne links (14/10): linktekst, der ligner en titel, er presset ind.
+const TT = new Map([['lateral', 'What Is Lateral Movement Risk in Modern IT?'], ['phys', 'Physical AI Infrastructure Powers Global AI Services'], ['breach', 'What Does a Data Breach Mean for Your Security?']]);
+t('tvunget link: spørgsmål som linktekst', R.tvungetAnker('What Is Lateral Movement Risk in Modern IT?') === 'spørgsmål som linktekst');
+t('tvunget link: kolon i linkteksten', R.tvungetAnker('Cybersecurity Engineers: What They Actually Do') === 'kolon i linkteksten');
+t('tvunget link: hele titlen som linktekst', R.tvungetAnker('Physical AI Infrastructure Powers Global AI Services', TT.get('phys')) === 'hele titlen som linktekst');
+t('tvunget link: få naturlige ord er i orden', R.tvungetAnker('a data breach', TT.get('breach')) === null);
+const FT = R.fjernTvungneLinks('Intro.\n\nFirewalls stop scans. Teams must study [What Does a Data Breach Mean for Your Security?](/video/breach) before it happens. Logs help.', TT);
+t('tvunget link: sætningen fjernes i et afsnit med flere sætninger', FT.saetningerFjernet === 1 && FT.md.includes('Firewalls stop scans. Logs help.') && !FT.md.includes('study'));
+const FL = R.fjernTvungneLinks('Intro.\n\n- Network security isolates networks and prevents [What Is Lateral Movement Risk in Modern IT?](/video/lateral) across clouds.', TT);
+t('tvunget link: i en liste bliver linket til tekst', FL.linksFjernet === 1 && FL.saetningerFjernet === 0 && !FL.md.includes('](/video/'));
+t('tvunget link: naturligt link bevares', R.fjernTvungneLinks('Intro.\n\nAfter [a data breach](/video/breach), notify users. Then rotate keys.', TT).md.includes('[a data breach](/video/breach)'));
+
+// AI-kendetegn (14/10).
+t('AI-frase: forbehold "do not invariably fail" fanges', R.aiFraser('Intro.\n\nThough properly configured controls do not invariably fail against every attack.').length === 1);
+t('AI-frase: "isn\'t just X; it\'s Y" fanges', R.aiFraser("Intro.\n\nThis isn't just about faster performance; it's about new applications.").length === 1);
+t('AI-frase: "Ultimately," som indledning fanges', R.aiFraser('Intro.\n\nUltimately, the goal is a higher return.').length === 1);
+t('AI-frase: "does not automatically" er almindeligt sprog', R.aiFraser('Intro.\n\nThe tool does not automatically load every file.').length === 0);
+t('AI-frase: citat i anførselstegn tæller ikke', R.aiFraser('Intro.\n\nThe CEO said "it is not just a tool, but a platform" in May.').length === 0);
+
 // Testen må ikke kunne blive grøn uden at teste noget.
-const FORVENTET = 53;
+const FORVENTET = 65;
 t(`antal test kørt (${ok + fejl}) >= ${FORVENTET}`, ok + fejl >= FORVENTET);
 console.log(fejl ? `\n${fejl} FEJL (${ok} OK)` : `\nalt OK (${ok} test)`);
 process.exit(fejl ? 1 : 0);

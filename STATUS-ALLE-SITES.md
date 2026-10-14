@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 121** — brug kun v121). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 122** — brug kun v122). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 14. oktober (**version 121** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (14/10-2026 kl. 21:39, Astro 7.3.8, live `ad1ee0d7`, 429 artikler): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede, emneskift, spørgsmåls-redaktør med højst 40 forslag, forhåndstjek af videoer, KLIPPET-advarsel). **Første kørsel på 14/10-koden (#665, 20:40): grøn, alt virkede, men 0 artikler — ingen passende video til de to spørgsmål.** **Daglig rapport** hver morgen ca. 09:30 som kommentar på GitHub-issue #1 → mail til jacobolsenjso@gmail.com (første rigtige 15/10; om mailen kommer frem, er ikke bekræftet); robottens tal i `src/data/robot-log.jsonl`. **GitHub starter kun ca. 4-5 af 24 planlagte robotkørsler om dagen** — en pålidelig starter (Cloudflare) besluttes om 1-2 dage ud fra rapporterne. **Gamle artikler skrives om: 5 hver dag kl. 08:37.** **Åben beslutning (Jacob):** Googles nye krav fra 1/10 (menneskelig indsats og originalitet) — robotten udgiver uden at nogen læser artiklerne; se dagbogen 14/10 kl. 21:39. **Jacobs opgaver:** fyld Gemini-kreditten op ved behov, statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
+**Seneste for techfeedwatch (14/10-2026 kl. 21:57, Astro 7.3.8, live `67253e5d`, 429 artikler): LIVE. ROBOTTEN KØRER** på koden fra 14/10 (første kørsel #665: alt virkede, 0 artikler — ingen passende video). **NY ROBOTKODE LIGGER KUN LOKALT (committet, ikke pushet):** færre/naturlige interne links og færre AI-vendinger (punkt 1+2), prøvet lokalt på infosec-artiklen med godt resultat. **I morgen:** Jacob ser den nye infosec-artikel (kun på pc'en) → prøve på GitHub → push. Punkt 3 (artikler uden video) planlægges med måling; punkt 4 (egne værktøjer i artikler) og 5 (primære kilder) venter. **Daglig rapport** ca. 09:30 (issue #1 → jacobolsenjso@gmail.com, første rigtige 15/10). **GitHub starter kun ca. 4-5 af 24 robotkørsler om dagen** — pålidelig starter besluttes om 1-2 dage. **Gamle artikler skrives om: 5/dag kl. 08:37.** **Åben beslutning (Jacob):** Googles krav fra 1/10 (menneskelig indsats, originalitet). **Åbent:** 491 tvungne links i de gamle artikler (rettes når de skrives om), de 158 gamle uden søgespørgsmål, gamle grene på GitHub.
 
 ### techfeedwatch.com — målt 14/10
 - **Live:** `ad1ee0d7` (se `https://techfeedwatch.com/build.json`, bygget 14/10 20:54 dansk). **429 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 14/10 kl. 16:01 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 14/10-2026 kl. 21:57 - techfeedwatch: robotten skriver bedre (punkt 1+2) — KUN LOKALT, ikke pushet
+- **Jacob (21:48):** "vi tager 1,2 og 3 nu her så.. du koder". Punkt 3 (artikler uden video) er større end først sagt: robot OG artikelside er bygget om en video. Planlægges særskilt med måling først.
+- **Målt før (alle 429 artikler, `_maal-links-ai.mjs`):** 491 tvungne interne links i 181 artikler, heraf **42 i de 15 nyeste** (linktekst = hel titel 330, spørgsmål 91, kolon 60, over 7 ord 10). 201 AI-vendinger i 150 artikler ("not just X, but Y" 78, "Ultimately,/At its core," 71, "plays a key role" 25 ...). "does not automatically" o.l. gav falske fund og blev taget ud af reglen.
+- **Bygget** (`src/lib/skriveregler.mjs`: `tvungneLinks`, `fjernTvungneLinks`, `aiFraser`; `add-video.mjs`): (1) 0-2 interne links med 2-6 naturlige ord, aldrig hel titel/spørgsmål/kolon; tvungne links bedes rettet, ellers fjernes sætningen (liste: linket bliver tekst) — før læsertjekket og igen til sidst. (2) Ny regel 24 mod AI-vendinger + rettelsespunkt 17; ensidige sætninger skrives nu om med navngiven kilde, ikke med forbehold (regel 23 + redaktørtjekkets punkt 3). Ny logline `STIL:`. Selvtest 66 OK (12 nye).
+- **Prøvet lokalt** (`--erstat infosec-requirements-defining-core-security-baselines`, 0,13 USD): første udkast havde **0 tvungne links og 0 AI-vendinger** (før: 3 tvungne + 1 forbehold). Resultat: 2 naturlige links, video-andel 25 %, 0 tal uden kilde, alle tjek bestået. Den nye fil ligger KUN på pc'en (ikke committet, ikke udgivet).
+- **I MORGEN:** 1) Jacob ser den nye infosec-artikel, 2) prøve på GitHub ("Prøveartikel"), 3) push. Koden er committet lokalt, ikke pushet — robotten kører på den gamle kode i nat.
+- Lære: Skøn ikke størrelsen af en opgave, før koden er læst — punkt 3 blev præsenteret som lige så stort som 1 og 2.
+
 
 ### 14/10-2026 kl. 21:39 - techfeedwatch: første robotkørsel på 14/10-koden læst + Googles nye krav vurderet
 - **Jacob (21:31):** "du tjekker robottens kørsel nu". **Kørsel #665** (planlagt, 20:40-20:44 dansk, commit `a90fd1a`, log læst i Jacobs Chrome): grøn, **0 artikler**. Emneskift virkede (AR & VR -> AI Video). Spørgsmåls-redaktøren svarede (39 forslag afvist). Forhåndstjekket sprang 7 videoer over (alle tydeligt forkerte, fx "How to Disable GDID in Windows 11"); 1 vurderet fuldt (relevans 1/10). KLIPPET 0, fejl 0. Logbogen `robot-log.jsonl` fik sin første linje: 0,085 USD, 29 kald. Begge spørgsmål på is i 30 dage. **Flaskehalsen er nu: ingen passende video til smalle spørgsmål** — ikke fejl.
