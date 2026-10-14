@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 113** — brug kun v113). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 114** — brug kun v114). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -237,7 +237,7 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - **Årsag (fundet og genskabt):** `body` var `100vh` høj. På en rigtig telefon er 100vh højere end det synlige (adresselinjen, ca. 56 px), så selve siden kunne rulle. Et hop til en overskrift rullede derfor hele siden ~56 px op, og overskriften endte under topbaren (målt: 28 px fra toppen, topbaren slutter ved 60). Pc'ens mobilvisning har ingen adresselinje, derfor virkede den dér. Cloudflare-cachen var ikke årsagen.
 - **Rettet** (commit `6bab75e7`, live 12:04, `MainLayout.astro` = alle sider): `height: 100dvh` (den synlige højde) + en sikring, der ruller selve siden tilbage til 0, når al rulning er stoppet. Første udgave af sikringen nulstillede midt i hoppet og afbrød det (målt lokalt, rettet før udgivelse).
 - **Målt live** med rigtigt klik: telefon med adresselinje (efterlignet), mobil og pc lander alle 24 px under topbaren; siden selv rullet 0.
-- **Cloudflare-siden** kunne ikke tjekkes: dashboardet beder om login, og adgangskoder indtaster jeg ikke.
+- **Cloudflare tjekket 12:15** (Jacob loggede ind; kun læst, intet ændret): Caching Level Standard, Browser Cache TTL 4 timer, Development Mode fra, Crawler Hints til, Always Online til, CSAM-scanning til. Artikel-HTML sendes med `max-age=0, must-revalidate` og `cf-cache-status: DYNAMIC` = gemmes hverken hos Cloudflare eller i browseren, så Purge/Invalidate er ikke nødvendigt efter et deploy.
 - Lære: Pc'ens mobilvisning er ikke en telefon — den har ingen adresselinje. Mål med `_maal-tochop.mjs ... telefon`, som efterligner den.
 
 ### 14/10-2026 kl. 11:37 - techfeedwatch: hop til overskrift med 24 px luft (LIVE)
