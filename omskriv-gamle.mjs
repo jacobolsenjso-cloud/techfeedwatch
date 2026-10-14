@@ -49,7 +49,11 @@ for (const a of gamle.slice(0, antal)) {
   else {
     const grund = (ud.match(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/) || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
-    fejl[a.slug] = grund;
+    // Midlertidige fejl hos Google (500/503/429, overbelastet, timeout) er ikke artiklens skyld —
+    // den prøves igen næste dag. Kun egentlige stop (tjek, relevans, manglende kilde) huskes.
+    // (14/10: "programming can make you rich…" fik en 500-fejl og blev fejlagtigt opgivet.)
+    const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed/i.test(grund);
+    if (!midlertidig) fejl[a.slug] = grund;
     iTraek++;
     if (iTraek >= 3) { console.log('\nStopper: 3 i træk lykkedes ikke — tjek Gemini-kreditten (AI Studio -> Billing) og loggen.'); break; }
   }
