@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 116** — brug kun v116). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 117** — brug kun v117). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 14. oktober (**version 116** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 og Bilag A sidst i filen er baggrund og kan være forældede; dagbogen (afsnit 7) viser, hvad der er sket, nyeste øverst. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (14/10-2026 kl. 12:07): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler). **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `6bab75e7`; hop fra indholdsfortegnelsen lander 24 px under topbaren, også på telefon): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** Astro 6 → 7 (sikkerhed trin 2; 9 åbne Dependabot-advarsler), de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
+**Seneste for techfeedwatch (14/10-2026 kl. 19:05, Astro 7.3.8, GitHub-sikkerhed slået til): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler). **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `5ca13525`; hop fra indholdsfortegnelsen lander 24 px under topbaren, også på telefon): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
 
 ### techfeedwatch.com — målt 6/10
 - **Live:** `7ea3f821` (se `https://techfeedwatch.com/build.json`), forsiden svarer 200. **420 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 6/10 kl. 17:21 dansk. Build: 622 sider, husets tre tjek grønne.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 14/10-2026 kl. 19:05 - techfeedwatch: Astro 6.4.6 → 7.3.8 (sikkerhed trin 2) (LIVE)
+- **Jacob (18:32):** "vi tager trin 2 nu"; så skærmbilleder og sagde ja (18:56).
+- **Ændret** (sidegren `astro-7`, flettet ind i main, commit `5ca13525`, live 18:58): astro 7.3.8, @astrojs/sitemap 3.7.4, @astrojs/rss 4.0.19, **@astrojs/markdown-remark 7.3.2 tilføjet** (Astro 7 installerer den ikke længere selv, og sitets læsetid + ordbogslinks bruger den via `unified()`), `compressHTML: true` i astro.config (Astro 7's nye standard 'jsx' kan fjerne mellemrum mellem ord). npm audit: 0 sårbarheder.
+- **Målt før udgivelse** (gammel build gemt i `_dist-a6`): alle 633 sider byte-ændret (ny Rust-compiler), men **tekst, links, overskrifter, billeder, head og elementantal identiske på alle 633** (`_sammenlign-sider.mjs`). 22 skærmbilleder (11 sider × pc/mobil) pixel-identiske på nær billedindlæsnings-støj (`_pixel-sammenlign.mjs`, `_pixel-hvor.mjs`); biograf-tilstand 0 px forskel; 0 JS-fejl; hop fra indholdsfortegnelsen 24 px på telefon i begge. Husets tre tjek grønne. Kontaktark: `_shots/a6a7-pc.png`, `_shots/a6a7-mobil.png`.
+- **Målt live:** forside, latest, glossary, schema-generator, sitemap, rss, video-sitemap svarer 200; hop 24 px på telefon og pc.
+- Advarslen "Skipping src/pages/.well-known/security.txt.js" fandtes også i Astro 6 — ikke ny.
+- Lære: Ved en ny hovedversion: gem den gamle build og sammenlign indhold og pixels side for side — en byte-sammenligning siger kun "alt er ændret".
 
 ### 14/10-2026 kl. 12:36 - techfeedwatch: sikkerhedsopdatering trin 1 (LIVE)
 - **Jacob (12:24):** "vi tager trin 1 nu".
