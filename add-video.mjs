@@ -750,7 +750,7 @@ async function run() {
       for (let forsoeg = 0; mangler.length && forsoeg < 2; forsoeg++) {
         console.log(`🔎 Overskriften mangler søgeordene [${mangler.join(', ')}] — beder om rettelse (${forsoeg + 1}/2)`);
         try {
-          const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 1024, temperature: 0.3 } })
+          const rep = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.3 } })
             .generateContent(`Rewrite this headline so that it reads the way people search for it. It must contain the words "${mangler.join('", "')}" in the same order as in the Google search "${targetQuestion}" (other words may sit between them), keep the same meaning, be natural English, and stay 40-62 characters. Title Case. No ampersand. No quotes. Output the headline only.\n\nHeadline: ${safeTitle}`);
           const ny = (rep.response.text() || '').split('\n')[0].replace(/^["“']|["”']$/g, '').replace(/"/g, "'").trim();
           if (ny.length >= 20 && ny.length <= 80) safeTitle = pubCase(ny.replace(/\s*&\s*/g, ' and '));
@@ -1190,7 +1190,7 @@ ${content}`);
       try {
         const kand = fyldKandidater(content);
         if (kand.length >= 5) {
-          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 4096, temperature: 0 } })
+          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
             .generateContent(`An article answers the reader's question "${targetQuestion || safeTitle}". Below are numbered sentences from it. Which of them are FILLER - sentences a reader learns nothing from: generic statements, repeats of an earlier point, empty transitions, or vague praise (e.g. "This makes it a powerful tool for creators.")? Do NOT mark a sentence that carries a fact, an example, a reason, a limitation, a comparison or a step. Return ONLY a JSON array of the numbers, e.g. [2,7]. If none, return [].\n\n${kand.map((s, i) => `${i + 1}. ${s}`).join('\n')}`);
           const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
           const valgt = m ? JSON.parse(m[0]).map((n) => kand[n - 1]).filter(Boolean) : [];
@@ -1232,7 +1232,7 @@ ${content}`);
       // ændres. Fejler noget, udgives artiklen uden — robotten stopper aldrig her.
       const ekst = await tilfoejEksterneLinks(content, {
         beskrivelse: videoBeskrivelse,
-        spoerg: async (p) => (await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 1024, temperature: 0 } }).generateContent(p)).response.text(),
+        spoerg: async (p) => (await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } }).generateContent(p)).response.text(),
       });
       content = ekst.content;
 

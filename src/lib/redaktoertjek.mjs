@@ -28,7 +28,7 @@ ${md}`;
 
 export async function redaktoerTjek(genAI, md, delspoergsmaal, spoergsmaal) {
   try {
-    const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 4096, temperature: 0, responseMimeType: 'application/json' } })
+    const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0, responseMimeType: 'application/json' } })
       .generateContent(redaktoerPrompt(md, delspoergsmaal, spoergsmaal));
     const j = JSON.parse((r.response.text() || '').replace(/^```(json)?\s*|\s*```$/g, ''));
     const ubesvarede = (Array.isArray(j.unanswered) ? j.unanswered : [])
