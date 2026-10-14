@@ -7,6 +7,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 import { retSpoergsmaal, passerEmnet, redaktoerPrompt } from './src/lib/spoergsmaalsfilter.mjs';
+import { forhaandsScorer, SKAER } from './src/lib/forhaandstjek.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -422,9 +423,11 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
   const qArg = visSpoergsmaal ? ` --question "${visSpoergsmaal.replace(/"/g, '')}"` : '';
 
   // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
-  const kandidater = [];
+  // 14/10: første sigte samler op til 2 x KANDIDATER; forhåndstjekket nedenfor sorterer dem, og
+  // kun de KANDIDATER bedste får et dyrt faktaark. Det dyre antal er altså uændret.
+  let kandidater = [];
   for (const item of items) {
-    if (kandidater.length >= KANDIDATER) break;
+    if (kandidater.length >= KANDIDATER * 2) break;
     const videoId = item.id?.videoId;
     if (!videoId) continue;
     // Filnavnet er en titel-slug, ikke videoId - tjekker derfor mod det forudindlæste sæt af
@@ -448,6 +451,27 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
     }
     if (!(await isEnglishAudio(videoId))) continue;
     kandidater.push(videoId);
+  }
+
+  // Forhåndstjek (14/10): ét billigt kald på titler + beskrivelser, før de dyre faktaark.
+  // Målt på dagens 14 kandidater: 10 af 13 senere afviste var tydeligt urelevante, 0 gode tabt.
+  if (spoergsmaal && kandidater.length && process.env.GEMINI_API_KEY) {
+    const snippet = new Map(items.map((it) => [it.id?.videoId, it.snippet || {}]));
+    const scorer = await forhaandsScorer(new GoogleGenerativeAI(process.env.GEMINI_API_KEY), visSpoergsmaal || spoergsmaal,
+      kandidater.map((id) => ({ id, titel: snippet.get(id)?.title || '', beskrivelse: snippet.get(id)?.description || '' })));
+    for (const id of [...kandidater]) {
+      const s = scorer.get(id);
+      if (s !== undefined && s <= SKAER) {
+        console.log(`ℹ️ Springer over (forhåndstjek ${s}/10): "${snippet.get(id)?.title}" (${id}).`);
+        kandidater.splice(kandidater.indexOf(id), 1);
+      }
+    }
+    // De mest lovende først (stabil sortering: uden score beholdes søgningens rækkefølge).
+    if (scorer.size) kandidater.sort((a, b) => (scorer.get(b) ?? 5) - (scorer.get(a) ?? 5));
+  }
+  if (kandidater.length > KANDIDATER) {
+    console.log(`Info: ${kandidater.length} kandidater efter forhåndstjek — vurderer de ${KANDIDATER} mest lovende fuldt.`);
+    kandidater = kandidater.slice(0, KANDIDATER);
   }
 
   // Andet sigte: faktaark for hver, rangeret efter score.
