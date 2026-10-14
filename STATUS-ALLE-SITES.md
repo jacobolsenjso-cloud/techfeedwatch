@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 114** — brug kun v114). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 115** — brug kun v115). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -231,6 +231,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 14/10-2026 kl. 12:25 - techfeedwatch: GitHub-sikkerhed slået til (Jacobs ok)
+- Repoet er **offentligt** (målt via API), så funktionerne er gratis ("No additional licenses will be consumed").
+- **Slået til** i Jacobs Chrome: Dependabot alerts, Secret Protection (secret scanning), Push protection. Slået fra/urørt: Dependabot security updates (automatiske PR'er — kan rode i robottens arbejde), code scanning, private vulnerability reporting, security policy, Malware alerts (dukkede op efter Dependabot; ikke aftalt).
+- **Secret scanning:** 0 fundne hemmeligheder.
+- **Dependabot: 30 advarsler** (npm audit: 11 pakker — 1 kritisk, 9 høje, 1 lav). Alle i byggeværktøjer, ikke i det, besøgende får (sitet er statisk HTML). 8 pakker kan rettes med `npm audit fix` uden brydende ændringer; astro (kritisk), sharp og esbuild kræver Astro 6.4.6 → 7.3.8 (ny hovedversion). **Intet rettet endnu** — afventer Jacob.
 
 ### 14/10-2026 kl. 12:07 - techfeedwatch: hop til overskrift virker nu også på rigtige telefoner (LIVE)
 - **Jacob (11:52):** virker på pc og i pc'ens mobilvisning, men ikke på hans telefon. Har tømt Cloudflares cache.
