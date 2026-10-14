@@ -243,6 +243,26 @@ const recommendPool = allVideos
   .slice(0, 24)
   .map((s: any) => ({ slug: s.v.file.split('/').pop().replace('.md', ''), title: s.v.frontmatter.title, youtubeId: s.v.frontmatter.youtubeId }));
 
+// "Keep reading"-boksen midt i artiklen (14/10, Jacob): 2 forslag i stedet for 3-4, valgt
+// efter samme første emne, så fælles emne, og helst artikler med AI-billede og kildeliste (de
+// bedste). Ikke forrige/næste-artiklerne, som allerede står nederst. Emne og læsetid vises,
+// så kortene ligner sitets indhold og ikke en annonce.
+const iNav = new Set([prevVideo, nextVideo].filter(Boolean).map((v: any) => v.file));
+const inlineRecs = allVideos
+  .filter((v: any) => !v.frontmatter.isShort && v.frontmatter.youtubeId !== youtubeId && !iNav.has(v.file))
+  .map((v: any) => {
+    const s = v.file.split('/').pop().replace('.md', '');
+    const vt = v.frontmatter.tags || v.frontmatter.tag || [];
+    const vTags = Array.isArray(vt) ? vt : [vt];
+    const ny = typeof v.rawContent === 'function' && /^## Sources\s*$/m.test(v.rawContent());
+    const ai = fs.existsSync(`public/billeder/${s}.webp`);
+    const score = (vTags[0] === tagsArray[0] ? 2 : vTags.some((t: string) => tagsArray.includes(t)) ? 1 : 0) + (ai ? 0.5 : 0) + (ny ? 0.5 : 0);
+    return { s, v, vTags, score, d: new Date(v.frontmatter.date).valueOf() };
+  })
+  .sort((a: any, b: any) => (b.score - a.score) || (b.d - a.d))
+  .slice(0, 2)
+  .map((x: any) => ({ slug: x.s, title: x.v.frontmatter.title, emne: x.vTags[0] || '', min: x.v.frontmatter.minutesRead || 1 }));
+
 // "People also ask": tre andre artikler om samme emne, valgt efter flest fælles
 // kerneord med denne artikels eget søgespørgsmål (eller titel). Læseren får
 // spørgsmål, ikke titler — det er spørgsmålet, man genkender sig selv i.
@@ -509,18 +529,28 @@ const metaDesc = rawMeta.length > 157
     .source-credit svg { width: 17px; height: 17px; flex-shrink: 0; color: #ff0000; }
     .source-credit a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
     .source-credit a:hover { text-decoration: underline; }
-    .inline-recs { margin: 34px 0; padding: 20px 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--hover-bg); }
-    .inline-recs-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #6b7280; margin-bottom: 14px; }
-    body.dark-mode .inline-recs-label { color: #a1a1aa; }
-    .inline-recs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .inline-recs-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--text-color); border-radius: 10px; transition: transform 0.2s ease; }
+    /* "Keep reading on Tech Feed Watch" (14/10, Jacob): 2 kort, teal top-bjælke som indholdsfortegnelsen,
+       så boksen ses som sitets egen og ikke en annonce. Computer: 2 side om side. Mobil: liste. */
+    .inline-recs { margin: 34px 0; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 600px; }
+    .inline-recs-label { background: #0e7490; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 20px; }
+    .inline-recs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px; }
+    .inline-recs-card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text-color); border-radius: 10px; transition: transform 0.2s ease; }
     .inline-recs-card:hover { transform: translateY(-3px); }
     .inline-recs-thumb { display: block; position: relative; padding-bottom: 56.25%; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 14px rgba(0,0,0,0.10); }
     .inline-recs-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .inline-recs-title { font-size: 0.9rem; font-weight: 600; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .inline-recs-tekst { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .inline-recs-meta { font-size: 0.75rem; font-weight: 700; color: var(--teal-text); text-transform: uppercase; letter-spacing: 0.04em; }
+    .inline-recs-title { font-size: 0.98rem; font-weight: 700; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .inline-recs-card:hover .inline-recs-title { color: var(--teal-text); }
-    .inline-recs-card-extra { display: none; }
-    @media (max-width: 600px) { .inline-recs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } .inline-recs-card-extra { display: flex; } }
+    /* Artiklens linkfarve (også mørk tilstand) må ikke farve kortene; høj nok specificitet til at slå begge */
+    .video-content aside.inline-recs a.inline-recs-card { border-bottom: 0; color: var(--text-color); font-weight: inherit; }
+    @media (max-width: 600px) {
+      .inline-recs-grid { grid-template-columns: 1fr; gap: 14px; padding: 14px; }
+      .inline-recs-card { flex-direction: row; align-items: flex-start; gap: 12px; }
+      .inline-recs-card .inline-recs-thumb { width: 120px; flex-shrink: 0; padding-bottom: 67.5px; }
+      .inline-recs-title { font-size: 0.92rem; }
+      .inline-recs-meta { font-size: 0.66rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    }
 
     .video-content { line-height: 1.65; margin-bottom: 40px; font-size: 1.05rem; }
     /* Læsebredde (fase 4, 7/10): linjer på ca. 75 tegn læses lettere end 85-90.
@@ -1219,7 +1249,7 @@ const metaDesc = rawMeta.length > 157
         {/* Indholdsfortegnelsen er flyttet op under billedet (13/10) */}
         <article class="video-content" set:html={artikelResten}></article>
 
-        <div id="tfw-inline-recs" data-recs={JSON.stringify(recommendPool.slice(0, 6))} hidden></div>
+        <div id="tfw-inline-recs" data-recs={JSON.stringify(inlineRecs)} hidden></div>
         <script is:inline>
           (function () {
             function init() {
@@ -1227,7 +1257,7 @@ const metaDesc = rawMeta.length > 157
               if (!host) return;
               var recs = [];
               try { recs = JSON.parse(host.getAttribute('data-recs') || '[]'); } catch (e) {}
-              if (recs.length < 3) return;
+              if (recs.length < 2) return;
               var article = document.querySelector('article.video-content');
               if (!article) return;
               var h2s = article.querySelectorAll(':scope > h2');
@@ -1236,13 +1266,14 @@ const metaDesc = rawMeta.length > 157
               var targetIdx = Math.floor(h2s.length / 2);
               var target = h2s[targetIdx] || null;
               var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
-              var cards = recs.slice(0, 4).map(function (v, i) {
-                var extra = i === 3 ? ' inline-recs-card-extra' : '';
-                return '<a class="inline-recs-card' + extra + '" href="/video/' + v.slug + '/"><span class="inline-recs-thumb"><img src="/kort/' + v.slug + '.webp" alt="" loading="lazy"></span><span class="inline-recs-title">' + esc(v.title) + '</span></a>';
+              // 14/10 (Jacob): 2 kort, emne + læsetid, teal top-bjælke som indholdsfortegnelsen
+              var cards = recs.slice(0, 2).map(function (v) {
+                return '<a class="inline-recs-card" href="/video/' + v.slug + '/"><span class="inline-recs-thumb"><img src="/kort/' + v.slug + '.webp" alt="" loading="lazy"></span><span class="inline-recs-tekst"><span class="inline-recs-meta">' + esc(v.emne) + ' · ' + esc(v.min) + ' min read</span><span class="inline-recs-title">' + esc(v.title) + '</span></span></a>';
               }).join('');
               var block = document.createElement('aside');
               block.className = 'inline-recs';
-              block.innerHTML = '<div class="inline-recs-label">🔎 You might also like</div><div class="inline-recs-grid">' + cards + '</div>';
+              block.setAttribute('aria-label', 'Keep reading on Tech Feed Watch');
+              block.innerHTML = '<div class="inline-recs-label">Keep reading on Tech Feed Watch</div><div class="inline-recs-grid">' + cards + '</div>';
               if (target) { article.insertBefore(block, target); } else { article.appendChild(block); }
             }
             if (document.readyState !== 'loading') init();
