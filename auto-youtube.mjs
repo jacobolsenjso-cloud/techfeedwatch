@@ -187,6 +187,14 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
 
   let ubrugte = forslag.filter((s) => !set.has(s));
   if (!ubrugte.length) return null;
+  // Højst 40 forslag til redaktøren (14/10, målt i prøve #11): med 100+ forslag tænkte modellen
+  // 7.864 tokens og ramte loftet på 8192 — svaret blev klippet, og listen gik ufiltreret videre.
+  // Klokkeslættet vælger hvilke 40, så alle forslag kommer i spil over tid.
+  const MAX_TIL_REDAKTOER = 40;
+  if (ubrugte.length > MAX_TIL_REDAKTOER) {
+    const s0 = Math.floor(Date.now() / 3600e3) % ubrugte.length;
+    ubrugte = [...ubrugte.slice(s0), ...ubrugte.slice(0, s0)].slice(0, MAX_TIL_REDAKTOER);
+  }
 
   // Gemini som redaktør: hvilke af forslagene er rigtige, klare spørgsmål,
   // man kan skrive en artikel om? Autocomplete gav 12/9 "how are ai chips
