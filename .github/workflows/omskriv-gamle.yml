@@ -1,0 +1,61 @@
+name: Omskriv gamle artikler
+
+# 14/10-2026 (Jacob): de gamle artikler (skrevet med videoens transskript) skrives om med den nye
+# opskrift ("søgning først"), 5 om dagen, nyeste først (omskriv-gamle.mjs). Hver omskrivning laver
+# selv sit AI-billede eller genbruger et eksisterende. Målt 13/10 på pc: ca. 1,50 kr. pr. omskrevet
+# artikel. Resultat og målt pris pr. kørsel: src/data/omskriv-log.json.
+# Stoppes: sæt # foran de to schedule-linjer nedenfor.
+
+on:
+  schedule:
+    - cron: "37 6 * * *"   # 08:37 dansk sommertid (UTC+2)
+  workflow_dispatch:
+    inputs:
+      antal:
+        description: "Antal artikler i denne kørsel"
+        default: "5"
+
+permissions:
+  contents: write
+
+# Samme kø som robotten og AI-billedkørslen: aldrig to, der skriver til sitet samtidig.
+concurrency:
+  group: site-skriver
+  cancel-in-progress: false
+
+jobs:
+  omskriv:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Omskriv gamle artikler
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '5' }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # Samme kvalitetsvagt som robotten: fejl her standser jobbet, før noget gemmes.
+      - name: Tjek indholdet
+        run: node audit-content.mjs
+
+      - name: Gem omskrivningerne (Commit & Push)
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json
+          if git commit -m "Archive articles rewritten with the search-first recipe"; then
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen omskrivninger."
+          fi

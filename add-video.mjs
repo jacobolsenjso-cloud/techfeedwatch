@@ -5,7 +5,7 @@ import { MIN_FAKTA, MIN_BRUGT, faktaarkPrompt, parseFaktaark, faktaarkScore, fak
 import fs from 'fs';
 import 'dotenv/config';
 import { generateOgCard } from './og-card.mjs';
-import { lavAiBillede, sitetsStier } from './src/lib/aibillede.mjs';
+import { lavAiBillede, sitetsStier, harAiBillede } from './src/lib/aibillede.mjs';
 import { pubCase, manglendeKerneord, overskriftAfSpoergsmaal, kerneord, stamme } from './src/lib/headline.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { fjernForbudteOrd, findForbudte } from './src/lib/forbudt.mjs';
@@ -1282,8 +1282,13 @@ ${content}`);
     // (src/lib/aibillede.mjs) — øverst i artiklen, på kortene og som delebillede. Fejler det,
     // laves det abstrakte emnekort som før. Fejler stille: artiklen er allerede gemt.
     if (!isShort) {
-      const ai = await lavAiBillede(genAI, { slug, titel: safeTitle, emne: finalTags[0] || '', resume: safeSummary }, sitetsStier(slug));
-      if (!ai) await generateOgCard(videoId, slug);
+      // Har artiklen allerede et AI-billede (fx ved omskrivning af en gammel artikel), genbruges
+      // det — ellers betales billedet to gange (14/10, Jacob: billeder og omskrivning slås sammen).
+      if (harAiBillede(slug)) console.log('🖼️ AI-billede: findes allerede — genbruges');
+      else {
+        const ai = await lavAiBillede(genAI, { slug, titel: safeTitle, emne: finalTags[0] || '', resume: safeSummary }, sitetsStier(slug));
+        if (!ai) await generateOgCard(videoId, slug);
+      }
     } else {
       await generateOgCard(videoId, slug);
     }

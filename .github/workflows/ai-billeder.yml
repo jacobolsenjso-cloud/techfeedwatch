@@ -8,9 +8,11 @@ name: AI-billeder (gamle artikler)
 # pr. artikel, altså ca. 0,72 USD (ca. 5 kr.) om dagen — kreditten deles med robotten. Stopper selv ved 3 fejl i træk.
 # Stoppes: sæt # foran de to schedule-linjer nedenfor.
 
+# PAUSE (14/10, Jacob): de gamle artikler skrives om ("Omskriv gamle artikler"), og hver omskrivning
+# laver selv sit AI-billede. Denne kørsel bruges til sidst kun til artikler, der ikke bliver skrevet om.
 on:
-  schedule:
-    - cron: "43 3 * * *"
+  # schedule:
+  #   - cron: "43 3 * * *"
   workflow_dispatch:
     inputs:
       antal:
@@ -19,6 +21,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: site-skriver
+  cancel-in-progress: false
 
 jobs:
   billeder:

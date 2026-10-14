@@ -22,6 +22,12 @@ on:
 permissions:
   contents: write
 
+# Fælles kø (14/10): robotten, omskrivningen og AI-billedkørslen skriver alle til sitet. Kører de
+# samtidig, kan den ene ikke gemme (push afvises). Med samme gruppe venter de på hinanden.
+concurrency:
+  group: site-skriver
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-26.04
