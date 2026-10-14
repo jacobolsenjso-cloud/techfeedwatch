@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 14. oktober (**version 112** — brug kun v112). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 14. oktober (**version 113** — brug kun v113). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 14. oktober (**version 112** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 og Bilag A sidst i filen er baggrund og kan være forældede; dagbogen (afsnit 7) viser, hvad der er sket, nyeste øverst. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (14/10-2026 kl. 11:37): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler). **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `bfab5bea`; hop fra indholdsfortegnelsen lander 24 px under topbaren): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
+**Seneste for techfeedwatch (14/10-2026 kl. 12:07): LIVE. ROBOTTEN KØRER** ("søgning først" + AI-billede til nye artikler). **Gamle artikler skrives om: 5 hver dag kl. 08:37** (workflow "Omskriv gamle artikler", nyeste først, genbruger AI-billeder; første kørsel 14/10: 2 af 5 omskrevet, 0,40 USD pr. omskrevet artikel). AI-billedkørslen er på pause (bruges til sidst til artikler, der ikke skrives om). Artikelsiden (live `6bab75e7`; hop fra indholdsfortegnelsen lander 24 px under topbaren, også på telefon): titel, byline med Share, kildelinje, resumé, billede, indholdsfortegnelse (600 px, teal, prikket tidslinje, ▶ Watch: the video), åbning + første sektion, video (urørt), resten med "Keep reading"-boks (2 forslag), People also ask, FAQ, Sources, del-boks, forrige/næste i samme emne, Explore Topics, ærlig forfatterboks. **Jacobs opgaver:** fyld Gemini-kreditten op (182 kr. 14/10), statusfilen på Drive, genindlæs delekort hos Facebook/LinkedIn, hold øje med Search Console (82 -> 54 indekserede sider siden 5/10). **Åbent:** de 158 gamle uden søgespørgsmål, gamle grene på GitHub, forkert varighed på gamle artikler (ikke målt).
 
 ### techfeedwatch.com — målt 6/10
 - **Live:** `7ea3f821` (se `https://techfeedwatch.com/build.json`), forsiden svarer 200. **420 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 6/10 kl. 17:21 dansk. Build: 622 sider, husets tre tjek grønne.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 14/10-2026 kl. 12:07 - techfeedwatch: hop til overskrift virker nu også på rigtige telefoner (LIVE)
+- **Jacob (11:52):** virker på pc og i pc'ens mobilvisning, men ikke på hans telefon. Har tømt Cloudflares cache.
+- **Årsag (fundet og genskabt):** `body` var `100vh` høj. På en rigtig telefon er 100vh højere end det synlige (adresselinjen, ca. 56 px), så selve siden kunne rulle. Et hop til en overskrift rullede derfor hele siden ~56 px op, og overskriften endte under topbaren (målt: 28 px fra toppen, topbaren slutter ved 60). Pc'ens mobilvisning har ingen adresselinje, derfor virkede den dér. Cloudflare-cachen var ikke årsagen.
+- **Rettet** (commit `6bab75e7`, live 12:04, `MainLayout.astro` = alle sider): `height: 100dvh` (den synlige højde) + en sikring, der ruller selve siden tilbage til 0, når al rulning er stoppet. Første udgave af sikringen nulstillede midt i hoppet og afbrød det (målt lokalt, rettet før udgivelse).
+- **Målt live** med rigtigt klik: telefon med adresselinje (efterlignet), mobil og pc lander alle 24 px under topbaren; siden selv rullet 0.
+- **Cloudflare-siden** kunne ikke tjekkes: dashboardet beder om login, og adgangskoder indtaster jeg ikke.
+- Lære: Pc'ens mobilvisning er ikke en telefon — den har ingen adresselinje. Mål med `_maal-tochop.mjs ... telefon`, som efterligner den.
 
 ### 14/10-2026 kl. 11:37 - techfeedwatch: hop til overskrift med 24 px luft (LIVE)
 - **Jacob:** med 16 px mangler overskriftens øverste linje, og "Watch: the video" forsvinder — foreslog 24 px.
