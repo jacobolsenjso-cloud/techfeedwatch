@@ -148,6 +148,9 @@ function remarkReadingTime() {
 
 export default defineConfig({
   site: 'https://techfeedwatch.com',
+  // Astro 7 skiftede standarden til 'jsx', som kan fjerne mellemrum mellem inline-elementer
+  // ("hello world" -> "helloworld"). true = samme opførsel som i Astro 6 (14/10).
+  compressHTML: true,
   build: {
     // Alle sidens stilarter inlines i HTML'en i stedet for separate CSS-filer.
     // PageSpeed 27/8 (mobil, langsom 4G): de to eksterne CSS-filer (4-6 KiB)
