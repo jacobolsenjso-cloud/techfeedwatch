@@ -6,7 +6,7 @@ import { faellesOrd } from './src/lib/question.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
-import { retSpoergsmaal, passerEmnet } from './src/lib/spoergsmaalsfilter.mjs';
+import { retSpoergsmaal, passerEmnet, redaktoerPrompt } from './src/lib/spoergsmaalsfilter.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -196,9 +196,15 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
       const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
       // Strammet 18/9: "why ai videos look like dreams" slap igennem — poetisk,
       // uden fakta at svare med. Nu skal spørgsmålet kunne besvares konkret.
-      const prompt = `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a factual reference article could answer with concrete facts (definitions, how something works, comparisons, numbers)? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that are poetic, speculative, metaphorical or opinion-only (e.g. "why ai videos look like dreams", "is ai alive"), that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${ubrugte.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
-      const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 512, temperature: 0 } }).generateContent(prompt);
+      // Prompten bor i spoergsmaalsfilter.mjs (14/10), så den kan testes alene.
+      const prompt = redaktoerPrompt(ubrugte);
+      // 8192, ikke 512 (14/10, målt): tænkningen tæller med i loftet. Med ~100 forslag brugte
+      // modellen 3438 tokens på at tænke + 266 på svaret; 512 gav INTET svar (3 af 3 forsøg), og
+      // 4096 lå på kanten. Uden svar blev listen brugt ufiltreret uden et ord i loggen, og volapyk
+      // som "how is programming com company" slap igennem. (Samme fejl som Lære 1/10.)
+      const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } }).generateContent(prompt);
       const m = (r.response.text() || '').match(/\[[\d,\s]*\]/);
+      if (!m) console.log(`Info: Spørgsmåls-redaktøren gav intet svar — bruger listen ufiltreret (${ubrugte.length} forslag).`);
       if (m) {
         const behold = new Set(JSON.parse(m[0]).map((n) => n - 1));
         const godkendte = ubrugte.filter((_, i) => behold.has(i));
@@ -546,9 +552,14 @@ async function findNewestVideos() {
   // det aldrig, og et ukendt emne ignoreres.
   const tvunget = process.env.PROEVE_EMNE && TOPIC_BY_TAG[process.env.PROEVE_EMNE] ? process.env.PROEVE_EMNE : null;
   if (process.env.PROEVE_EMNE && !tvunget) console.log(`Info: PROEVE_EMNE "${process.env.PROEVE_EMNE}" findes ikke — vælger som normalt.`);
-  const tag = tvunget || pickThinnestTag(counts);
+  const forsteTag = tvunget || pickThinnestTag(counts);
   if (tvunget) console.log(`Info: Prøve: emnet er valgt i workflowet: "${tvunget}"`);
-  const topic = TOPIC_BY_TAG[tag];
+  // Emnerækken (14/10): kørslens 2. forsøg tager det NÆSTMINDSTE emne i stedet for et nyt
+  // spørgsmål i samme emne. Målt 14/10: alle 4 kørsler valgte "Coding" (36 artikler); 3 af 4
+  // endte uden artikel, fordi ingen video passede til Coding-spørgsmålene — og næste kørsel
+  // valgte Coding igen. Antal forsøg pr. kørsel er uændret (MAX_SPOERGSMAAL), så prisen er det også.
+  const emneRaekke = tvunget ? [tvunget]
+    : [forsteTag, ...Object.keys(counts).filter((t) => t !== forsteTag).sort((a, b) => counts[a] - counts[b])];
 
   // Emnet siger HVAD vi skriver om. Spørgsmålet siger hvad nogen faktisk
   // søger på inden for emnet. Uden det valgte robotten et emne, fandt en
@@ -560,7 +571,7 @@ async function findNewestVideos() {
   const channelId = channel.id || (channel.handle ? await resolveChannelId(channel.handle) : null);
   console.log(`Info: Udgivet i dag: ${publishedToday}/${MAX_PER_DAY} — plads til ${runBudget} i denne kørsel.`);
   console.log(`Info: Fordeling: ${Object.entries(counts).sort((a, b) => a[1] - b[1]).map(([t, n]) => `${t} ${n}`).join(' · ')}`);
-  console.log(`Info: Vælger emnet der halter mest: "${tag}" (${counts[tag]} artikler)`);
+  console.log(`Info: Vælger emnet der halter mest: "${forsteTag}" (${counts[forsteTag]} artikler)`);
   console.log(`Info: Vælger kanal: "${channel.name}"${channel.handle ? ` (${channel.handle} -> ${channelId || 'intet id'})` : ''}`);
 
   // Op til to spørgsmål pr. kørsel (18/9): falder alle kandidater til det
@@ -570,17 +581,21 @@ async function findNewestVideos() {
   const proevetNu = new Set();
   let processed = 0;
   for (let runde = 1; runde <= MAX_SPOERGSMAAL && processed < runBudget; runde++) {
+  const tag = emneRaekke[Math.min(runde - 1, emneRaekke.length - 1)];
+  const topic = TOPIC_BY_TAG[tag];
+  if (runde > 1 && tag !== emneRaekke[0]) console.log(`Info: Skifter emne til det næstmindste: "${tag}" (${counts[tag]} artikler).`);
   const spoergsmaal = await vaelgSpoergsmaal(tag, topic, proevetNu);
   const soegetekst = spoergsmaal || topic;
+  // Intet brugbart spørgsmål i dette emne: videre til næste emne i rækken (før 14/10: kørslen stoppede).
   if (!spoergsmaal && alleVarDubletter) {
-    console.log('Info: De prøvede spørgsmål er alle dækket af artikler, sitet allerede har — ingen ny artikel i denne kørsel.');
-    break;
+    console.log(`Info: De prøvede spørgsmål i "${tag}" er alle dækket af artikler, sitet allerede har.`);
+    continue;
   }
   if (spoergsmaal) console.log(`Info: Spørgsmål fra autocomplete (${runde}/${MAX_SPOERGSMAAL}): "${spoergsmaal}"`);
   // Opskriften "søgning først" (12/10): artiklen skal svare på en søgning, så uden
   // et søgespørgsmål skrives ingen artikel — add-video.mjs ville alligevel afvise
   // hver kandidat, og robotten ville betale for at vurdere dem.
-  if (!spoergsmaal) { console.log('Info: Intet ubrugt søgespørgsmål — ingen artikel i denne kørsel (opskriften kræver et).'); break; }
+  if (!spoergsmaal) { console.log(`Info: Intet ubrugt søgespørgsmål i "${tag}" (opskriften kræver et).`); continue; }
   // Emnetjek (12/10): et spørgsmål uden for sitets emne (fx "what happens to sora in naruto"
   // under AI Video) lægges på is, FØR der bruges YouTube-kvote og Gemini-kald på kandidater.
   // null (tjekket kunne ikke køre) stopper ikke robotten.
@@ -618,7 +633,14 @@ async function findNewestVideos() {
     const existingIds = loadExistingVideoIds();
     // Spørgsmålsfilteret køres først her, når der er kandidater — så det ikke
     // koster tre modelkald på en runde, der alligevel ikke fandt videoer.
-    const visSpoergsmaal = spoergsmaal ? await retSpoergsmaal(spoergsmaal) : spoergsmaal;
+    const visSpoergsmaal = spoergsmaal ? await retSpoergsmaal(spoergsmaal, console.log, { afvisBrudte: true }) : spoergsmaal;
+    // Brudt og ikke til at rette (14/10): på is, FØR der bruges penge på kandidater.
+    if (spoergsmaal && visSpoergsmaal === null) {
+      markerSpoergsmaalProevet(spoergsmaal, tag);
+      proevetNu.add(spoergsmaal);
+      console.log(`Info: "${spoergsmaal}" lagt på is i ${PROEVET_DAGE} dage — brudt søgning.`);
+      continue;
+    }
     const nu = await processGroup(normalItems, 'video', runBudget - processed, existingIds, tag, spoergsmaal, visSpoergsmaal);
     processed += nu;
     if (nu === 0 && spoergsmaal) {

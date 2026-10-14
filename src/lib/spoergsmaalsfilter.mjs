@@ -15,7 +15,17 @@ Is it a grammatical, complete English question (or a clear noun phrase like "dif
 If it is fine, answer exactly: ok
 If it is BROKEN, answer with only the shortest fix a searcher would type, lowercase, keeping the same meaning and as many original words as possible.`;
 
-export async function retSpoergsmaal(q, log = console.log) {
+// Redaktør-prompten, der vælger blandt autocomplete-forslagene (flyttet hertil fra
+// auto-youtube.mjs 14/10, så den kan testes). Strammet 14/10: "how is programming com company"
+// slap igennem — et spørgsmål om ét firmas omdømme med et domænenavn skrevet som ord. Ingen
+// video kunne svare på det, og 4 kandidater kostede ~0,29 USD.
+export const redaktoerPrompt = (liste) => `Below is a numbered list of Google autocomplete searches. Which of them are clear, plain-English informational questions that a factual reference article could answer with concrete facts (definitions, how something works, comparisons, numbers)? EXCLUDE any that use slang or meme language (e.g. "cooked", "goated"), that are jokes, that are ambiguous, that are poetic, speculative, metaphorical or opinion-only (e.g. "why ai videos look like dreams", "is ai alive"), that ask for a price, a purchase, a login or a job, or that only make sense for one person's situation. ALSO EXCLUDE any that ask how good, legit or well-reviewed one specific company, website or seller is (e.g. "how is programming com company", "is xyz legit"), and any that contain a website or brand name broken into words (e.g. "programming com"). Return ONLY a JSON array of the numbers to keep, e.g. [1,3,4].\n\n${liste.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+
+// afvisBrudte (14/10): kalder flertallet søgningen BRUDT, og kan rettelsen ikke godkendes,
+// returneres null i stedet for den brudte søgning. Målt 14/10 (#664): "how is programming com
+// company" blev dømt brudt, rettelsen afvist, og robotten brugte så ~0,29 USD på 4 videoer om
+// et volapyk-spørgsmål. Uden flaget er opførslen som før (filteret stopper aldrig noget).
+export async function retSpoergsmaal(q, log = console.log, { afvisBrudte = false } = {}) {
   if (!q || !process.env.GEMINI_API_KEY) return q;
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const svar = [];
@@ -33,6 +43,7 @@ export async function retSpoergsmaal(q, log = console.log) {
   }
   const hyppigst = [...rettelser].sort((a, b) => rettelser.filter((x) => x === b).length - rettelser.filter((x) => x === a).length)[0];
   const dom = godkendSpoergsmaal(q, hyppigst);
+  if (!dom.ok && afvisBrudte) { log(`Info: Spørgsmålsfilter: "${q}" er brudt (${rettelser.length}/${svar.length} domme), og rettelsen "${hyppigst}" kan ikke bruges (${dom.hvorfor}) — springes over.`); return null; }
   if (!dom.ok) { log(`Info: Spørgsmålsfilter: rettelsen "${hyppigst}" afvist (${dom.hvorfor}) — bruger "${q}".`); return q; }
   log(`Info: Spørgsmålsfilter: "${q}" -> "${dom.spoergsmaal}" (${rettelser.length}/${svar.length} domme).`);
   return dom.spoergsmaal;
