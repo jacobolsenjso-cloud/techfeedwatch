@@ -1,0 +1,42 @@
+name: Daglig robotrapport
+
+# Én kort rapport hver morgen til Jacob (14/10-2026): nye artikler, pris, tomme kørsler, fejl og
+# advarsler for de sidste 24 timer. Leveres som kommentar på issuet "Daglig robotrapport"; GitHub
+# mailer den til jacobolsenjso@gmail.com (Jacobs notifikationsmail).
+#
+# Fire forsøg hver morgen (09:23-10:53 dansk sommertid), fordi GitHub dropper mange planlagte
+# kørsler (målt 14/10: robotten fik ca. 5 af 24). Scriptet sender kun én rapport pr. dag.
+# Efter omskrivningen kl. 08:37, så den er med.
+
+on:
+  schedule:
+    - cron: "23 7 * * *"
+    - cron: "53 7 * * *"
+    - cron: "23 8 * * *"
+    - cron: "53 8 * * *"
+  workflow_dispatch:
+    inputs:
+      tving:
+        description: "Send igen, selv om dagens rapport er sendt (1 = ja)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  issues: write
+  actions: read
+
+jobs:
+  rapport:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      # Ingen npm install: scriptet bruger kun Node selv.
+      - name: Send rapporten
+        run: node daglig-rapport.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RAPPORT_TVING: ${{ github.event.inputs.tving }}
