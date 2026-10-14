@@ -597,8 +597,9 @@ const metaDesc = rawMeta.length > 157
     .toc-kilder > a::before { content: ""; flex-shrink: 0; width: 24px; }
     /* Overskrifter, man hopper til, må ikke gemme sig under topbaren */
     /* 16 px, ikke 90 (14/10, målt): sitet ruller i .content-area, som starter UNDER topbaren, så
-       90 px lagde ekstra luft oven i, og videoens bund blev skåret af ved klik på "Watch: the video". */
-    .video-content h2[id], .video-content h3[id], .video-overskrift { scroll-margin-top: 16px; }
+       90 px lagde ekstra luft oven i, og videoens bund blev skåret af ved klik på "Watch: the video".
+       24 px (14/10, Jacobs ønske): 16 px føltes for tæt på topbaren; 8 px mere luft, videoen kan stadig være der. */
+    .video-content h2[id], .video-content h3[id], .video-overskrift { scroll-margin-top: 24px; }
     .toc-flydende a.toc-flydende-video { color: var(--teal-text); font-weight: 700; opacity: 1; }
     /* Flydende "On this page" øverst i sidebjælken — kun computer (skjult under 900px) */
     .toc-flydende { position: sticky; top: 0; z-index: 2; background: var(--bg-color); padding: 2px 0 14px; margin-bottom: 18px; border-bottom: 1px solid var(--border-color); }
