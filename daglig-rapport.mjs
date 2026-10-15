@@ -53,9 +53,21 @@ for (const k of koersler) {
   n.i_alt++; if (k.event === 'schedule') n.planlagt++;
   if (k.conclusion && !['success', 'skipped'].includes(k.conclusion)) n.fejl.push(`${tidDK(k.created_at)} ${k.conclusion} ${k.html_url}`);
 }
-let live = null, status = null;
-try { live = await (await fetch('https://techfeedwatch.com/build.json', { headers: { 'user-agent': 'techfeedwatch-rapport' } })).json(); } catch {}
-try { status = await (await fetch('https://techfeedwatch.com/robot-status.json', { headers: { 'user-agent': 'techfeedwatch-rapport' } })).json(); } catch {}
+// Cloudflare svarer ofte 403 til GitHubs maskiner. Derfor: navn (user-agent) OG 3 forsøg
+// med 5 sekunders pause — samme opskrift som tjek-tomgang.mjs (15/10: første rapport
+// fik "build.json kunne ikke læses", fordi kun navnet var med).
+async function hentSitetsJson(sti) {
+  for (let forsoeg = 0; forsoeg < 3; forsoeg++) {
+    if (forsoeg) await new Promise((r) => setTimeout(r, 5000));
+    try {
+      const r = await fetch(`https://techfeedwatch.com/${sti}?t=${Date.now()}`, { headers: { 'user-agent': 'techfeedwatch-rapport' } });
+      if (r.ok) return await r.json();
+    } catch { /* prøv igen */ }
+  }
+  return null;
+}
+const live = await hentSitetsJson('build.json');
+const status = await hentSitetsJson('robot-status.json');
 
 // --- beregn ---
 const udgivet = robot24.flatMap((p) => p.udgivet || []);
