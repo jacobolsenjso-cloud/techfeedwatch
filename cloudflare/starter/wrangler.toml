@@ -1,0 +1,14 @@
+name = "tfw-starter"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+# Ingen offentlig adresse (*.workers.dev slået fra): Workeren skal kun køre på tidsplanen.
+workers_dev = false
+
+# Én tidsplan for alle opgaver (UTC). worker.mjs afgør, hvad der startes hvornår.
+[triggers]
+crons = ["17,37 * * * *"]
+
+[observability]
+enabled = true
+
+# Nøglen sættes med:  npx wrangler secret put GITHUB_TOKEN   (aldrig i denne fil)

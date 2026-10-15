@@ -8,15 +8,15 @@ name: YouTube Auto Update
 # - Kvalitetsværn: sprogtjek, min. varighed/kildetekst, tom-artikel-stop,
 #   audit-content kører FØR commit og standser jobbet ved fejl.
 #
-# Stoppes igen: sæt # foran de to schedule-linjer nedenfor.
+# Stoppes: Actions → "YouTube Auto Update" → "Disable workflow" (så afviser GitHub også starterens kald).
 
 on:
-  schedule:
-    # Hver time på minut 17. Hvorfor: GitHub nedprioriterer cron-jobs på hele
-    # timer (målt 15/9: "hver 2. time" gav 3 kørsler på en dag). Et skævt minut
-    # fyrer oftere. Dagsloftet (dagensLoft i auto-youtube.mjs, max 5) er
-    # uændret — flere kørsler giver ikke flere artikler, kun flere forsøg.
-    - cron: "17 * * * *"
+  # 15/10-2026: startes hver time på minut 17 af Cloudflare-Workeren "tfw-starter"
+  # (cloudflare/starter/), ikke af GitHubs tidsplan — den startede kun 4-5 af 24 kørsler.
+  # Målt: kørsel #669 startet af starteren kl. 11:17:03. Den gamle linje er slået fra,
+  # så robotten ikke kører to gange:
+  # schedule:
+  #   - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:

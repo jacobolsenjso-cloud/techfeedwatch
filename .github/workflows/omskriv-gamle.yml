@@ -4,11 +4,13 @@ name: Omskriv gamle artikler
 # opskrift ("søgning først"), 5 om dagen, nyeste først (omskriv-gamle.mjs). Hver omskrivning laver
 # selv sit AI-billede eller genbruger et eksisterende. Målt 13/10 på pc: ca. 1,50 kr. pr. omskrevet
 # artikel. Resultat og målt pris pr. kørsel: src/data/omskriv-log.json.
-# Stoppes: sæt # foran de to schedule-linjer nedenfor.
+# Stoppes: Actions → "Omskriv gamle artikler" → "Disable workflow" (så afviser GitHub også starterens kald).
 
 on:
-  schedule:
-    - cron: "37 6 * * *"   # 08:37 dansk sommertid (UTC+2)
+  # 15/10-2026: startes kl. 06:37 UTC af Cloudflare-Workeren "tfw-starter" (cloudflare/starter/).
+  # GitHubs tidsplan startede den ikke 15/10. Slået fra, så den ikke kører to gange:
+  # schedule:
+  #   - cron: "37 6 * * *"   # 08:37 dansk sommertid (UTC+2)
   workflow_dispatch:
     inputs:
       antal:

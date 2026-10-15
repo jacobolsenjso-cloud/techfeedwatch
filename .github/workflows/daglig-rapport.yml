@@ -9,11 +9,13 @@ name: Daglig robotrapport
 # Efter omskrivningen kl. 08:37, så den er med.
 
 on:
-  schedule:
-    - cron: "23 7 * * *"
-    - cron: "53 7 * * *"
-    - cron: "23 8 * * *"
-    - cron: "53 8 * * *"
+  # 15/10-2026: startes kl. 07:37 UTC af Cloudflare-Workeren "tfw-starter" (cloudflare/starter/).
+  # GitHubs fire forsøg kom ikke i gang 15/10 (0 af 3). Slået fra:
+  # schedule:
+  #   - cron: "23 7 * * *"
+  #   - cron: "53 7 * * *"
+  #   - cron: "23 8 * * *"
+  #   - cron: "53 8 * * *"
   workflow_dispatch:
     inputs:
       tving:
