@@ -30,7 +30,8 @@ ${videoKort}
 Return JSON only: {"sections":[{"h2":"...","covers":[2]}],"video":"...","closing":""}
 Rules:
 - 3 to 6 sections, in the order a reader needs them. Together they must cover EVERY research question from 2 to ${delspoergsmaal.length}; list the numbers each section answers in "covers".
-- Each h2 is specific to this subject: the question a reader asks, or its answer. At most 10 words. Never a template heading such as "How It Works", "What It Is", "Who It's For", "Key Takeaways", "The Bottom Line", "Conclusion", "Overview" or "FAQ". Do not start several headings with the same words.
+- About HALF of the h2s (at least 1, never all) are the question a reader would type, in plain natural English ending with "?" (for example "What are security requirements?"). The others are short, direct statements of the answer. Never an abstract noun phrase such as "The Core Principles Underlying ..." or "Key Considerations for ...". (15/10-2026, Jacob: spørgsmål i overskrifterne, svar i første sætning.)
+- Each h2 is specific to this subject. At most 10 words. Never a template heading such as "How It Works", "What It Is", "Who It's For", "Key Takeaways", "The Bottom Line", "Conclusion", "Overview" or "FAQ". Do not start several headings with the same words.
 - "video": the heading of the video section. It must contain the creator's name "${kanal}" and say specifically what the video shows.
 - "closing": the heading of a short practical closing section, or "" if the article does not need one.`;
 }
@@ -50,6 +51,10 @@ export function tjekOutline(o, delspoergsmaal, channelTitle) {
     else if (h.split(/\s+/).length > 14) fejl.push(`for lang: "${h}"`);
   }
   if (new Set(alle.map((h) => h.toLowerCase())).size !== alle.length) fejl.push('samme overskrift to gange');
+  // 15/10: cirka halvdelen som spørgsmål — mindst ét, aldrig alle (ens spørgsmåls-skabelon er også et mønster).
+  const spm = alle.filter((h) => /\?\s*$/.test(h)).length;
+  if (alle.length && spm === 0) fejl.push('ingen overskrift er et spørgsmål');
+  if (alle.length >= 3 && spm === alle.length) fejl.push('alle overskrifter er spørgsmål');
   if (!erVideoOverskrift(String(o?.video || ''), channelTitle)) fejl.push('videooverskriften nævner ikke kanalen');
   return fejl;
 }
