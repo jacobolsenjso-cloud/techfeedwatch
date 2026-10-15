@@ -1,5 +1,5 @@
 ---
-title: "Which Hardware Defines Quantum Computing Chips Today?"
+title: "Which Architecture Powers Quantum Computing Chips?"
 youtubeId: "XAYh7HRjzs0"
 channelTitle: "Sabine Hossenfelder"
 channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
@@ -8,93 +8,109 @@ date: "2026-10-05"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"
-summary: "Quantum computing chips replace binary silicon transistors with physical qubits capable of holding states in superposition and entanglement. While tech giants rely on superconducting circuits, alternative architectures pursue topological protection to cut down computational noise. Evaluating these processors requires separating peer-reviewed physics from optimistic corporate roadmaps."
-metaDescription: "What are quantum computing chips? Explore how quantum processors operate, compare physical qubit architectures, and evaluate industry progress."
+summary: "Quantum computing chips, or quantum processing units, execute complex algorithms using physical qubits governed by quantum superposition and entanglement. These specialized processors evaluate expansive computational spaces simultaneously, operating through distinct hardware modalities such as superconducting circuits and topological quasiparticles. Because ambient thermal noise disrupts quantum coherence, the hardware requires extreme sub-zero dilution refrigerators and companion cryogenic controllers to function."
+metaDescription: "Learn what quantum computing chips are, how physical qubits process complex states, and why these processors require specialized dilution refrigerators."
 targetQuestion: "what are quantum computing chips"
 duration: "6:31"
-viewCount: 279915
-viewsUpdated: "2026-10-13"
+viewCount: 279965
+viewsUpdated: "2026-10-15"
 thumbMax: true
 isShort: false
+rewrittenAt: "2026-10-15"
 faqs:
-  - question: "What are quantum computing chips and how do they function?"
-    answer: "Quantum computing chips are physical processors that process information using quantum bits (qubits) rather than classical semiconductor transistors. They leverage quantum mechanical principles like superposition and entanglement to execute complex calculations across vast mathematical spaces simultaneously."
-  - question: "How do topological quantum chips differ from superconducting processors?"
-    answer: "Superconducting processors rely on microscopic electrical circuits cooled near absolute zero, making them highly vulnerable to environmental noise. Topological chips attempt to protect qubits using conservation laws and braided topological invariants to resist interference natively."
-  - question: "Why do physicists contest Microsoft's recent quantum computing claims?"
-    answer: "Microsoft announced the Majorana 2 chip and claimed a 1,000-fold reliability improvement, but independent physicists noted the accompanying research showed material phase transitions rather than functioning topological qubits. Critics emphasize that demonstrating exotic physics in lead nanowires does not equal operational quantum hardware."
+  - question: "What are quantum computing chips made of?"
+    answer: "According to IBM, quantum chips consist of multilayer substrates etched with superconducting components that serve as physical qubits. These micro-architectures commonly rely on thin films of metals such as aluminum or niobium deposited on silicon or sapphire bases."
+  - question: "Do quantum computers use chips?"
+    answer: "Yes, quantum computers execute calculations on specialized physical hardware processors called Quantum Processing Units. According to IBM, these integrated chips house the physical qubits and control structures required to run non-binary quantum algorithms."
+  - question: "Who is making quantum computing chips?"
+    answer: "Major semiconductor and computing corporations manufacture quantum processors, including IBM, Google, and Intel. According to Google Quantum AI, the company fabricates its 105-qubit Willow chip, while IBM manufactures its 156-qubit Heron processor."
+  - question: "How do quantum computing chips work?"
+    answer: "According to McKinsey & Company, quantum chips leverage quantum superposition and entanglement to evaluate multiple solution states simultaneously. They process information across interconnected qubits rather than evaluating discrete sequential steps like classical binary logic."
 ---
 
-Quantum computing chips are physical microprocessors that manipulate quantum bits (qubits) to perform calculations impossible for classical binary microchips. Instead of etching billions of microscopic on-or-off silicon gates onto an integrated circuit, these processors create, stabilize, and control fragile quantum states directly on physical substrates.
+Quantum computing chips, also known as Quantum Processing Units (QPUs), are physical integrated circuits that process information using quantum bits instead of classical binary transistors. According to IBM, a QPU is a multilayer chip etched with superconducting components that function as physical qubits to process quantum algorithms rather than deterministic binary logic.
 
-## What Are Quantum Computing Chips in Physical Reality?
+These devices manipulate the laws of quantum physics to evaluate massive mathematical problem spaces that conventional processors cannot resolve in reasonable timeframes.
 
-Strip away the marketing gloss, and a quantum computing chip is an engineered environment designed to protect quantum coherence while allowing precise mathematical gate operations. Classical computer chips compute using bits that exist strictly as electrical voltage values representing a zero or a one.
+## How do quantum chips differ from classical computer chips?
 
-Quantum processors exploit quantum mechanics. Their physical units operate in linear combinations of states called superposition, while interacting through entanglement to evaluate complex problem spaces simultaneously. To understand the foundational mechanics behind these architectures, consider [how is quantum computing different from classical computing?](/video/how-is-quantum-computing-different-from-classical-computing) at the gate level.
+Quantum chips differ from classical computer chips by processing information with qubits that exist in multiple simultaneous states instead of fixed binary bits.
 
-The physical construction of these processors depends entirely on the underlying qubit architecture. Building a machine that maintains coherence against ambient thermal vibrations, stray magnetic fields, and microscopic chip defects presents enormous engineering hurdles. Currently, the dominant tech players take wildly divergent paths to solve this hardware bottleneck. 
+Classical central processing units process data through microscopic semiconductor transistors. These silicon switches register electricity in one of two binary modes: high voltage or low voltage, which software reads as a zero or a one. Every basic logic gate in a classical chip evaluates these states through sequential, step-by-step electronic operations.
 
-[Google](https://www.google.com/), Amazon, and IBM construct their processors using superconducting circuits. These chips pattern tiny loops of superconducting metals, such as aluminum or niobium, onto silicon wafers. When cooled inside multi-stage dilution refrigerators to fractions of a degree above absolute zero, electrical resistance drops to zero.
+According to McKinsey & Company, while classical chips evaluate variables sequentially along discrete computational paths, quantum chips leverage quantum superposition and entanglement to evaluate multiple solution states simultaneously. Superposition allows a single qubit to represent a linear combination of both basic states. Entanglement links individual qubits together, meaning the computational capacity scales exponentially with the count of active qubits.
 
-Paired electrons, known as Cooper pairs, tunnel across thin insulating barriers called Josephson junctions. This junction acts as a non-linear inductor, creating discrete, controllable quantum energy levels.
+According to Google Quantum AI's December 9, 2024 specification sheet, its 105-qubit superconducting quantum chip named Willow executes a surface code cycle in 1.1 microseconds. According to Google Quantum AI, simulating the entangled states of its 105-qubit processor on classical supercomputers requires an intractable volume of memory. 
 
-Superconducting chips let engineers manipulate states using calibrated microwave pulses routed through coaxial cables. They operate fast. They scale with existing lithography processes.
+- Data representation: Classical chips evaluate standard binary bits, whereas quantum chips manipulate qubits in superposition.
+- Computational workflow: Classical microprocessors run sequential logic, while quantum processors evaluate expansive mathematical states at once.
+- Fault profile: Classical silicon transistors function with negligible bit-flip rates, whereas quantum chips require active error correction cycles to mitigate noise.
 
-Yet they suffer from a crippling flaw: environmental noise quickly destroys the quantum state. A passing thermal fluctuation, material defect, or stray photon can flip a bit or randomize its quantum phase.
+## Hardware architectures range from superconducting loops to topological qubits
 
-To build a machine that executes error-corrected algorithms, engineers must link hundreds or thousands of physical qubits together simply to create one error-corrected logical qubit. This overhead forms the core debate around [Reasons Why Quantum Computing Will Help AI or Fail](/video/reasons-why-quantum-computing-will-help-ai-or-fail) when scaling enterprise workloads.
+Hardware architectures for quantum chips rely on distinct physical modalities, primarily superconducting circuits, silicon spin traps, neutral atoms, and experimental topological systems.
 
-## Why Is the Race for Topological Quantum Chips So Fierce?
+Superconducting designs currently dominate commercial installations. Engineers fabricate these chips by printing microscopic loops separated by thin insulating barriers known as Josephson junctions. These junctions function as non-linear inductors, isolating individual quantum energy levels that act as artificial atoms controlled by microwave pulses.
 
-Because physical noise plagues superconducting architectures, alternative designs seek hardware-level noise suppression. [Microsoft](https://www.microsoft.com/en-us) took a radically different gamble: topological quantum computing. While competitors fabricate superconducting loops, Microsoft has been working on this for more than a decade to build a topological processor from the ground up.
+According to IBM's May 15, 2025 deployment report with the University of Tokyo, the 156-qubit IBM Heron processor features a tunable-coupler architecture that delivers a 3- to 4-fold reduction in two-qubit error rates compared to the previous Eagle processor. Tunable couplers allow system operators to dynamically activate or suppress interactions between neighboring qubits, reducing background noise and computational crosstalk during multi-gate routines.
 
-The premise behind a topological chip is structural defense. For topological quantum computing, one tries to create qubits whose states are protected by conservation laws. The conserved quantities are certain topological invariants, knots, and boundary conditions.
+According to Google Quantum AI's December 9, 2024 specification sheet, its 105-qubit superconducting quantum chip named Willow achieves an average single-qubit gate error rate of 0.035%. Achieving low physical error rates remains necessary to assemble reliable logical qubits across any fabrication format.
 
-Instead of storing quantum information in an isolated physical spot vulnerable to local thermal noise, a topological qubit braids quasi-particles across space. Local noise cannot easily unwind a global topological braid.
+Other engineering teams pursue silicon spin architectures that capture isolated electrons inside modified semiconductor quantum dots. This strategy attempts to leverage mature commercial microchip fabrication facilities to manufacture billions of uniform quantum elements. Meanwhile, researchers are attempting to build topological quantum chips that braid theoretical quasiparticles to shield data from local environmental disturbances.
 
-Achieving this hardware requires creating Majorana zero modes—non-Abelian anyons that appear as zero-energy excitations at the ends of specialized hybrid semiconductor-superconductor wires. In theory, manipulating these localized states allows hardware-level fault tolerance without massive active error-correction overhead. 
+- Superconducting circuits: Planar microchips etched with Josephson junctions that manipulate electromagnetic energy states via microwave frequencies.
+- Silicon spin chips: Nanoscale semiconductor devices that trap single electrons and encode information using magnetic spin orientations.
+- Trapped ion devices: Vacuum chambers using optical laser grids to suspend and manipulate isolated atomic ions.
+- Topological systems: Experimental semiconductor-superconductor interfaces designed to encode data in protected non-local spatial properties.
 
-The execution, however, remains contentious. Microsoft initially announced Majorana 1, framing it as a hardware foundation designed to deploy commercial machines in years rather than decades.
+## Why do quantum computing chips need extreme cooling?
 
-When researchers examined the published data, the paper lacked proof of a working qubit. A subsequent preprint claimed the team created a qubit with four Majorana modes, but independent experimentalists remained skeptical of the data interpretation.
+Quantum computing chips require near-absolute-zero operating environments because ambient thermal energy destroys the fragile quantum states that allow qubits to calculate.
 
-Recently, the company announced Majorana 2, heralding it as another major leap toward useful commercial quantum hardware. In the announcement, corporate spokespeople stated the chip features a mean qubit lifetime of 20 seconds and a 1,000-fold improvement in reliability.
+Heat causes atomic vibrations within the chip substrate and generates stray electromagnetic radiation. When a qubit absorbs thermal energy from its surroundings, its phase collapses in a breakdown called decoherence. Once decoherence occurs, the chip loses its mathematical data and functions no better than a broken classical register.
 
-They also declared they expect to build a scalable quantum computer by 2029, whereas just last year they put that milestone at 2033. Cutting years off a deep-physics timeline indicates massive internal confidence.
+According to the National Institute of Standards and Technology (NIST), superconducting quantum processors require commercial dilution refrigerators operating at base temperatures below 20 to 100 millikelvin to suppress thermal excitations and prevent qubits from losing coherence. These multi-stage cryostats achieve temperatures colder than the vacuum of deep space by circulating a closed mixture of helium isotopes.
 
-The experimental progress, however, tells a more nuanced story. The technical upgrade involved switching material from aluminum to lead.
+Physical wiring and thermal loads between room-temperature electronics and dilution refrigerators represent a critical scaling bottleneck for multi-qubit processors. Every individual control line carries ambient heat downward, threatening to warm the mixing chamber.
 
-Lead features a larger superconducting gap than aluminum, which provides stronger energetic protection to the superconducting state and substantially extends quantum coherence times. But demonstrating a wider superconducting gap on a semiconductor wire does not yield a functional qubit.
+Engineers are developing cryogenic integrated circuits to manage signal routing inside the refrigerator itself. According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s June 2024 report at the IEEE Symposium on VLSI Technology & Circuits, the Pando Tree cryogenic control chip was engineered to operate directly at 10 to 20 millikelvin, demultiplexing control signals across up to 64 qubit terminals to reduce wiring congestion.
 
-Independent researchers immediately questioned the gap between the corporate announcement and the underlying data. As [Sabine Hossenfelder](https://sabinehossenfelder.com/newsletter/) points out, the paper rates a two out of 10 on the bullshit meter, but the press release is an eight out of 10.
+Moving the multiplexing circuitry directly adjacent to the quantum chip eliminates hundreds of analog cables.
 
-Condensed matter physicist Henry Legg told Science News: "Nothing in this preprint resolves the fundamental issues." Quantum researcher Marin Ibričić wrote in a LinkedIn post that smells like it was written by ChatGPT that it's "strong marketing, contested evidence."
+## Quantum processors complement classical CPUs rather than replacing them
 
-Physicist Sergey Frolov observed in Scientific American: "This new preprint is not based on a research track record that can be considered a solid foundation." Frolov added that within the specialized physics community, the claims cause researchers to chuckle or raise their eyebrows.
+Quantum processors function as specialized mathematical accelerators that work alongside traditional microprocessors rather than replacing everyday consumer CPUs.
 
-The core tension is unambiguous: "The problem is that Microsoft needs both: qubits from topological states, and this very thing, which they need, is the thing that they have not demonstrated."
+A quantum chip cannot run an operating system, drive an external display, or handle basic database lookups. According to NIST, superconducting quantum processors require commercial dilution refrigerators operating at base temperatures below 20 to 100 millikelvin. In real deployments, classical servers control the initialization, calibration, pulse timing, and final readout collection of the QPU.
 
-Demonstrating parity states or topological phase transitions in lead-based nanowires proves difficult material physics, but it does not produce a gate-addressable qubit. Moving the internal progress bar to 99% does not prevent it from staying there for the next 20 years.
+Hybrid workflows route subroutines based on algorithmic suitability. Analyzing [how quantum and classical computing differ](/video/how-is-quantum-computing-different-from-classical-computing) explains why classical chips retain everyday application workloads while offloading targeted linear algebra and quantum simulations. This architecture mirrors the division of labor between standard central processors and dedicated graphics processing units.
 
-## Which Metrics Actually Separate Working Chips From Hype?
+Physical infrastructure constraints restrict quantum chips to centralized enterprise data centers. Dilution refrigerators require three-phase industrial electrical power, extensive vacuum pump assemblies, and continuous access to specialized gas supplies. Enterprise developers access QPUs through cloud environments, submitting complex optimization or chemical modeling tasks while standard computer servers handle the surrounding software stack.
 
-Understanding what quantum computing chips can deliver means ignoring press releases and inspecting hardware metrics. Evaluating any processor requires tracking three distinct operational dimensions:
+## Sabine Hossenfelder breaks down Microsoft's Majorana 2 chip claims
 
-1. **Physical Coherence Time vs. Gate Time:** A chip's utility depends on the ratio of how long a qubit remains coherent to how long a logical gate operation takes to execute. If a qubit dephases before microwave or laser pulses complete a two-qubit gate, computation fails. Coherence times measured in fractions of a second matter only if gate fidelity reaches the fault-tolerant threshold.
+Physicist [Sabine Hossenfelder](https://sabinehossenfelder.com/newsletter/) analyzed Microsoft's Majorana 2 announcement, assessing the validity of the company's claims regarding topological qubits and operational readiness.
 
-2. **Crosstalk and Interconnect Density:** Placing physical qubits on a die is relatively straightforward; routing hundreds of independent high-frequency control lines without bleeding electromagnetic cross-talk into neighboring elements is an engineering nightmare. Examining packaging methods reveals what quantum computing companies are building now to bridge dilution stages with high-density cryogenic wiring.
+[Microsoft](https://www.microsoft.com/en-us) positioned Majorana 2 as a topological quantum chip engineered with help from its agentic AI tools. According to Sabine Hossenfelder, Microsoft stated that the device sustained an average qubit lifespan of 20 seconds alongside a 1,000-fold gain in stability. Microsoft also announced its goal to construct a scalable quantum machine by 2029, accelerating its prior target of 2033.
 
-3. **Logical Error Rates and Thresholds:** No quantum processor can execute deep commercial algorithms without quantum error correction. Raw physical qubit counts mean little without examining the two-qubit randomized benchmarking error rate. Processors need error rates well below fault-tolerant thresholds to execute surface codes efficiently.
+Hossenfelder observed that while Google, Amazon, and IBM build chips using superconducting circuits, Microsoft has focused on topological computing for more than a decade. Topological computing relies on conserved quantities like topological invariants or boundary conditions to protect hardware from environmental decoherence.
 
-## How to Evaluate Quantum Chip Claims
+However, Hossenfelder identified large discrepancies between Microsoft's marketing statements and its underlying experimental evidence. Microsoft's previous Majorana 1 announcement faced widespread criticism because the accompanying technical paper lacked verification data for even a single working qubit. According to Sabine Hossenfelder, Microsoft later claimed to create a qubit with four Majorana modes in an unverified preprint that drew sharp scientific skepticism.
 
-If you are an engineer, technical executive, or researcher evaluating quantum chip claims, adopt a rigorous technical filter:
+Microsoft's recent technical paper details a hardware material shift from aluminum to lead, which extends quantum effects by widening the superconducting gap. Yet Hossenfelder emphasized that observing topological states does not equal operating an actual topological qubit, as Microsoft has not demonstrated both properties simultaneously.
 
-- **Demand full qubit gate demonstrations:** Never accept material discoveries or topological phase measurements as evidence of computing capability. If a research team cannot demonstrate single-qubit rotations, two-qubit entangling gates, and state readout on the exact physical platform being marketed, they do not possess a functional quantum chip.
+Condensed matter physicist Henry Legg informed Science News that the preprint fails to resolve the primary scientific challenges. Physicist Sergey Frolov told Scientific American that "this new preprint is not based on a research track record that can be considered a solid foundation."
 
-- **Check preprint data against corporate press releases:** Compare the corporate summary against the technical preprint. Corporate marketing teams often assign numbers like a "1,000-fold improvement" to isolated physical parameters, such as a material's superconducting gap or isolated state lifetime, rather than algorithm performance.
+Frolov added that "when Microsoft is mentioned these days, physicists and quantum computing specialists just chuckle or raise their eyebrows."
 
-- **Benchmark quantum algorithms on active hardware:** Evaluate cloud-accessible processors from providers deploying working superconducting or trapped-ion hardware. Run standard algorithmic circuits directly to measure circuit depth, state preparation and measurement (SPAM) errors, and gate fidelity under real operational conditions.
+Sabine Hossenfelder rated the research paper a two out of 10 on her scale of exaggeration, while scoring Microsoft's press release an eight out of 10. According to Sabine Hossenfelder, Microsoft's claims resemble a progress bar stuck at 99% that could remain unresolved for the next 20 years.
 
-- **Discount aggressive multi-year roadmaps:** Physics-bound timelines routinely encounter unexpected material barriers. Treat long-range milestones, such as promises of commercially viable systems by 2029, as aspirational targets until peer-reviewed preprints confirm active fault-tolerant operations. Track real laboratory benchmarks, not corporate roadmaps.
+## Sources
+
+- [What is a QPU (Quantum Processing Unit)? | IBM](https://www.ibm.com/think/topics/qpu) — ibm.com
+- [Willow spec sheet (PDF)](https://quantumai.google/static/site-assets/downloads/willow-spec-sheet.pdf) — quantumai.google
+- [The University of Tokyo to Equip IBM Quantum System One with Most Performant IBM Heron Processor](https://newsroom.ibm.com/2025-05-15-the-university-of-tokyo-to-equip-ibm-quantum-system-one-with-most-performant-ibm-heron-processor) — ibm.com
+- [Image published patent application us 20230059433 a1](https://www.nist.gov/document/image-published-patent-application-us-20230059433-a1) — nist.gov
+- [community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558](https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558) — intel.com
+- [What is quantum computing](https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-quantum-computing) — mckinsey.com
+- [Microsoft Announces Breakthrough With Quantum Chip](https://www.youtube.com/watch?v=XAYh7HRjzs0) — Sabine Hossenfelder on YouTube

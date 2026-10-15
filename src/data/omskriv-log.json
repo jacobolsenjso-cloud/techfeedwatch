@@ -20,5 +20,27 @@
    }
   ],
   "usd": 0.795
+ },
+ {
+  "dato": "2026-10-15T10:43:36.440Z",
+  "omskrevet": [
+   "can-we-convert-video-to-text-using-whisper",
+   "which-hardware-defines-quantum-computing-chips-today"
+  ],
+  "stoppet": [
+   {
+    "slug": "programming-can-make-you-rich-when-paired-with-distribution",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What failure rates and financial risks do programmers face when trying to build wealth through startups?\"). Artiklen skrives ikke."
+   },
+   {
+    "slug": "can-quantum-computing-replace-data-centers",
+    "grund": "Fejl: 5 videoafsnit efter rettelse (præcis 1, med kanalens navn i overskriften). Artiklen skrives ikke."
+   },
+   {
+    "slug": "is-this-how-remote-software-engineers-work-in-practice",
+    "grund": "Fejl: 2 sætninger med tal uden navngiven kilde efter rettelse (højst 1): \"According to the Department of Labor's ONET database updated in October 2026, 90\" · \"According to the Bureau of Labor Statisti"
+   }
+  ],
+  "usd": 1.025
  }
 ]
