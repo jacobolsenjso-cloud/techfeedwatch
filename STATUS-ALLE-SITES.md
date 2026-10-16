@@ -1,14 +1,14 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 15. oktober (**version 123** — brug kun v123). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 124** — brug kun v124). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
-## 0. Hvor vi er lige nu (15/10-2026 kl. 12:18) — læs dette først i en ny tråd
+## 0. Hvor vi er lige nu (16/10-2026 kl. 10:37) — læs dette først i en ny tråd
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (15/10-2026 kl. 12:18, Astro 7.3.8, live `a01022e8`, 432 artikler): LIVE. ROBOTTEN KØRER — nu startet af Cloudflare-Workeren `tfw-starter`** (robot hver time på :17, omskrivning af 5 gamle kl. 08:37, morgenrapport kl. 09:37 dansk sommertid; set virke 11:17 og 12:17). GitHubs egne tidsplaner for de tre er slået fra. **Robottens regler fra 14.-15/10 er live:** 0-2 naturlige interne links (tvungne fjernes), AI-vendinger omskrives, ensidige påstande får en navngiven kilde i stedet for forbehold, ca. halvdelen af H2 som læserens spørgsmål med svaret i første sætning. **Hold øje med:** artikellængden (infosec-prøven blev 810 ord mod 1.127; Jacob vil have længere), og at morgenrapporten kommer kl. 09:37 den 16/10. **Næste:** punkt 3 (artikler uden video — plan med måling først), punkt 4 (egne værktøjer i artikler), punkt 5 (primære kilder). **Åben beslutning (Jacob):** Googles krav fra 1/10 (menneskelig indsats, originalitet). **Jacobs opgaver:** GitHub-nøglen `tfw-starter` udløber om et år (fornys), Gemini-kredit ved behov, Search Console. **Åbent:** 491 tvungne links i gamle artikler (rettes når de skrives om), de 158 gamle uden søgespørgsmål, gamle grene på GitHub (`stil-1-2`, `udkast-12` m.fl., slettes kun med Jacobs ok).
+**Seneste for techfeedwatch (16/10-2026 kl. 10:37, live `3d8379ee`, 436 artikler): LIVE. Starteren (`tfw-starter`) virker:** robot 23 af 24 timer, omskrivning 08:37 og morgenrapport 09:37 kom. **De nye regler virker** på 9 artikler: 0 tvungne links, 0 AI-vendinger, spørgsmål i 2 af 5 H2, snit 1.147 ord. **ÅBEN BESLUTNING (Jacob, haster): prisen** — ca. 6,73 USD (47 kr.) på ét døgn (robot 4,72 + omskrivning 2,01), fordi starteren giver langt flere forsøg, og mislykkede forsøg koster. Gemini-kreditten rækker kun få dage i det tempo. Muligheder: lavere dagsloft, færre omskrivninger, billigere stop før de dyre trin. **Næste:** punkt 4 (egne værktøjer/faktaboks fra ordbogen), punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning), gamle grene på GitHub (`stil-1-2`, `udkast-12` m.fl., slettes kun med Jacobs ok).
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,17 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 16/10-2026 kl. 10:37 - techfeedwatch: første døgn med starteren og de nye regler (målt)
+- **Starteren virker:** robotten startet 23 af 24 timer (#670-#692, alle "workflow_dispatch" kl. xx:17:02-04), omskrivningen kl. 08:37 (#3) og morgenrapporten kl. 09:37 (#2, kom frem). Før: 4-5 af 24.
+- **Udgivet:** 6 nye artikler på 24 timer (rapporten) + 5 gamle omskrevet (2 kørsler). Dagsloftet nås nu tidligt: fra 15/10 kl. 17:17 og 16/10 kl. 06:17 dansk tid stod robotten stille med "loft nået" (koster 0).
+- **Kvalitet målt (`_maal-nye.mjs`) på de 9 artikler skrevet med 15/10-reglerne:** 0 tvungne links, 0 AI-vendinger, 1-2 naturlige links, 2 af 5 H2 som spørgsmål i alle 9, længste første sætning 17-27 ord. **Længde: 946-1.373 ord, snit 1.147** — infosec-prøven (810) var en undtagelse. De 2 artikler fra før reglerne (#668, #669) havde 2-3 tvungne links. Bemærk: præcis "2 af 5" i alle 9 er selv et ensartet mønster.
+- **PRIS (vigtigt):** robot 4,72 USD + omskrivning 2,01 USD = ca. 6,73 USD (ca. 47 kr.) på ét døgn, 0,79 USD pr. ny artikel. Årsag: starteren giver 5 gange så mange kørsler, og mislykkede forsøg koster (fx CMMC-kørslen 0,98 USD uden artikel; omskrivning 5 af 10 stoppet). Med den fart rækker Gemini-kreditten (182 kr. fyldt på 14/10) kun få dage. Beslutning til Jacob.
+- Stop-årsager i døgnet: ubesvaret delspørgsmål (3), video-andel 31 % (1), 3-5 videoafsnit (2), tal uden kilde (2), for få tal (2).
+- Morgenrapporten skriver stadig "GitHub dropper mange" — forældet tekst efter starteren (rettes).
+- Jacob sendte TV 2-eksempel (faktaboks, citat-fremhævning, mellemrubrik) og spurgte, om det gør indholdet mere hans eget. Vurdering givet: form, ikke originalitet; faktaboks fra sitets egen ordbog foreslået.
+- Lære: Jeg forudså ikke, at en pålidelig starter også øger Gemini-forbruget (flere forsøg = flere betalte fejl). Regn prisen ud, før noget, der ændrer antallet af kørsler, går live.
+
 
 ### 15/10-2026 kl. 12:18 - techfeedwatch: pålidelig starter (Cloudflare) LIVE, robot 1+2 LIVE, spørgsmål i overskrifterne LIVE
 - **Morgen (målt):** robotten udgav 2 artikler i nat (#667, #668). Morgenrapporten og omskrivningen startede IKKE: GitHubs tidsplan droppede dem (rapport 0 af 3 tidspunkter, omskrivning 0 af 1, robot 4 af ~24). Tidsplanerne var rigtige og workflowene "active" — årsagen er GitHub, ikke koden.
