@@ -154,3 +154,45 @@ export function kildelisteMd(kilder, { videoId, videoTitel, kanal } = {}) {
   if (videoId) linjer.push(`- [${ren(videoTitel) || 'Video'}](https://www.youtube.com/watch?v=${videoId}) — ${ren(kanal) || 'YouTube'} on YouTube`);
   return `## Sources\n\n${linjer.join('\n')}`;
 }
+
+// Faktaboks "Key facts" (trin 4, 16/10-2026, Jacob valgte nøglefakta fra søgningen):
+// 3 fakta fra robottens egen Google-research, hver med den udgiver, sætningen nævner, som link.
+// Forskellig i hver artikel (ikke genbrugt ordbogstekst) og koster intet ekstra modelkald:
+// faktaene er allerede betalt og kildetjekket. Kun fakta fra sider, artiklen faktisk
+// bruger (står i "## Sources"), så boksen aldrig peger på en side, læseren ikke kan finde.
+// Regler: "According to X," flyttes ud som kilde (kortere tekst), linket skal være X' eget
+// domæne, fakta med tal først, højst én pr. domæne i første omgang, teksten højst 230 tegn.
+// Under 3 brugbare fakta = ingen boks (tom liste).
+export function delFaktum(tekst) {
+  // "According to IBM's Cost of a Data Breach Report 2024, the global average cost ..." ->
+  // { kilde: "IBM's Cost of a Data Breach Report 2024", tekst: "The global average cost ..." }
+  // Kommaet før et årstal hører til kilden ("Tom's Hardware on February 16, 2021, ..." — målt 16/10).
+  const m = String(tekst).match(/^(?:According to|Per)\s+(.{3,110}?),\s+(?!\d{4}\b)(.{30,})$/);
+  if (!m) return { kilde: '', tekst: String(tekst) };
+  const rest = m[2];
+  // Sætninger, der ikke kan stå alene uden "According to ..." foran, bruges ikke i boksen:
+  // "which analyzed ...", "The company released ..." (hvilket firma?).
+  if (/^(which|that|who|whose|where|the company|the firm|it|its|they|their|this|these|analy[sz]ed)\b/i.test(rest)) return { kilde: '', tekst: String(tekst) };
+  const kilde = m[1].replace(/^(the|an?)\s+/i, '').trim();
+  return { kilde: kilde.charAt(0).toUpperCase() + kilde.slice(1), tekst: rest.charAt(0).toUpperCase() + rest.slice(1) };
+}
+export function noegleFakta(soeg, brugte, maks = 3) {
+  const side = new Map((brugte || []).filter((k) => k.url).map((k) => [k.nr, k]));
+  const kand = (soeg?.fakta || [])
+    .map((f) => ({ f, d: delFaktum(f.tekst), k: f.kilder.map((n) => side.get(n)).find(Boolean) }))
+    // Linket skal være den udgiver, sætningen selv nævner ("According to IBM ..." -> ibm.com).
+    // Målt 16/10: ellers stod "According to IBM's report" med link til statisticsfundamentals.com.
+    .filter((x) => {
+      if (!x.k || !x.d.kilde || x.d.tekst.length > 230) return false;
+      const led = domaeneLed(x.k.domaene).replace(/[^a-z0-9]/gi, '');
+      return led.length >= 2 && new RegExp(`\\b${led}`, 'i').test(x.d.kilde.replace(/\s+/g, ' ') + ' ' + x.d.kilde.replace(/[\s.'’-]+/g, ''));
+    })
+    .sort((a, b) => (Number(/\d/.test(b.d.tekst)) - Number(/\d/.test(a.d.tekst))) || (a.f.nr - b.f.nr));
+  const valgt = [];
+  const sider = new Set();
+  for (const x of kand) if (valgt.length < maks && !sider.has(x.k.domaene)) { valgt.push(x); sider.add(x.k.domaene); }
+  for (const x of kand) if (valgt.length < maks && !valgt.includes(x)) valgt.push(x);
+  if (valgt.length < 3) return [];
+  // Vises i søgningens rækkefølge (den følger delspørgsmålene), ikke i udvælgelsens.
+  return valgt.sort((a, b) => a.f.nr - b.f.nr).map((x) => ({ text: x.d.tekst, source: x.d.kilde, url: x.k.url }));
+}

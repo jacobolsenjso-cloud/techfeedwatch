@@ -1,6 +1,6 @@
 // Selvtest af src/lib/kildetjek.mjs og de rene dele af src/lib/soegning.mjs (12/10-2026).
 // Kør: node test-kildetjek.mjs — alle linjer skal være OK, ellers exitkode 1.
-import { videoAndel, talUdenKilde, harTalPaastand, videoAfsnit, brugteKilder, kildelisteMd, titelAfAdresse } from './src/lib/kildetjek.mjs';
+import { videoAndel, talUdenKilde, harTalPaastand, videoAfsnit, brugteKilder, kildelisteMd, titelAfAdresse, noegleFakta, delFaktum } from './src/lib/kildetjek.mjs';
 import { domaeneLed, erKildeTilladt, udgivernavne, parseSoegning, kilderTilLinje, daekning } from './src/lib/soegning.mjs';
 import { tjekOutline, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 
@@ -93,6 +93,20 @@ const dk = daekning(
 t('dækning: behold', dk.behold, ['What does a data breach mean?', 'What are the most common causes of a data breach?', 'How much does a data breach cost?']);
 t('dækning: drop', dk.droppet.map((x) => x.q), ['What leadership changes did Nike make?']);
 t('dækning: kun emneord = behold', daekning(['What is a data breach?', 'What is a data breach, really?'], [], 'what is a data breach').behold.length, 2);
+
+// Faktaboks (trin 4, 16/10)
+t('delFaktum: kilde ud, tekst stort', delFaktum("According to IBM's Cost of a Data Breach Report 2024, the global average cost of a data breach reached USD 4.88 million."), { kilde: "IBM's Cost of a Data Breach Report 2024", tekst: 'The global average cost of a data breach reached USD 4.88 million.' });
+t('delFaktum: dato med komma bliver i kilden', delFaktum("According to Tom's Hardware on February 16, 2021, standard GPU temperature is an average across the die's sensors.").kilde, "Tom's Hardware on February 16, 2021");
+t('delFaktum: "which ..." kan ikke stå alene', delFaktum('According to Verizon, which analyzed over 22,000 incidents, stolen credentials led.').kilde, '');
+const nfSoeg = { fakta: [
+  { nr: 1, kilder: [1], tekst: "According to IBM's 2024 report, the average cost of a data breach reached USD 4.88 million worldwide." },
+  { nr: 2, kilder: [2], tekst: "According to IBM's 2025 report, the average breach lifecycle was 241 days from detection to containment." },
+  { nr: 3, kilder: [3], tekst: "According to Verizon's 2025 DBIR, ransomware was present in 44% of all confirmed breaches that year." },
+  { nr: 4, kilder: [4], tekst: 'According to NIST, a data breach is an incident where protected information is viewed or stolen by an unauthorized person.' },
+] };
+const nfSider = [{ nr: 1, domaene: 'ibm.com', url: 'https://ibm.com/r' }, { nr: 2, domaene: 'statisticsfundamentals.com', url: 'https://statisticsfundamentals.com/x' }, { nr: 3, domaene: 'verizon.com', url: 'https://verizon.com/d' }, { nr: 4, domaene: 'csrc.nist.gov', url: 'https://csrc.nist.gov/g' }];
+t('nøglefakta: link skal være udgiverens eget (IBM via statisticsfundamentals droppes)', noegleFakta(nfSoeg, nfSider).map((f) => f.url), ['https://ibm.com/r', 'https://verizon.com/d', 'https://csrc.nist.gov/g']);
+t('nøglefakta: under 3 = ingen boks', noegleFakta(nfSoeg, nfSider.slice(0, 2)), []);
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nAlle OK');
 process.exit(fejl ? 1 : 0);

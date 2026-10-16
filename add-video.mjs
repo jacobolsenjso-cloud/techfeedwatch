@@ -20,7 +20,7 @@ import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LI
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
-import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
+import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, noegleFakta, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
 import { lavOutline, strukturTekst, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
@@ -634,6 +634,7 @@ async function run() {
     // Fejler et trin, skrives artiklen som før (plan = null / ingen søgninger).
     let plan = null;
     let rigtigeSoegninger = [];
+    let noegle = []; // faktaboks (trin 4), udfyldes efter kildelisten
     if (!isShort) {
       plan = await lavOutline(genAI, {
         spoergsmaal: targetQuestion, delspoergsmaal: soeg.delspoergsmaal,
@@ -1285,6 +1286,9 @@ ${content}`);
       const brugteSider = brugteKilder(content, soeg);
       const slut = { va: videoAndel(content, channelTitle, fakta, soeg.fakta.map((f) => f.tekst).join('\n')), udenKilde: talUdenKilde(content, soeg.navne, channelTitle) };
       content = `${content.trim()}\n\n${kildelisteMd(brugteSider, { videoId, videoTitel, kanal: kildeNavn(channelTitle) })}`;
+      // Faktaboks (trin 4, 16/10): 3-4 nøglefakta fra søgningen, gemt i frontmatter som keyFacts.
+      noegle = noegleFakta(soeg, brugteSider);
+      console.log(`FAKTABOKS: ${noegle.length} fakta`);
       // Måling af den endelige tekst til fase C (samme regler som stop-tjekkene). Ændr ikke formatet.
       const ob = plan ? outlineBrugt(content, plan) : null;
       console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
@@ -1317,7 +1321,11 @@ ${content}`);
       ? ""
       : `viewCount: ${viewCount}\nviewsUpdated: "${new Date().toISOString().slice(0, 10)}"\nthumbMax: ${thumbMax}\n`;
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${rewrittenYaml}${faqsYaml}---\n\n${content}\n`;
+    const keyFactsYaml = noegle.length
+      ? "keyFacts:\n" + noegle.map((f) => `  - text: ${toYamlDoubleQuoted(f.text)}\n    source: ${toYamlDoubleQuoted(f.source)}\n    url: ${toYamlDoubleQuoted(f.url)}`).join('\n') + "\n"
+      : "";
+
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

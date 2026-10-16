@@ -68,6 +68,9 @@ const viewGrowth = (() => {
   };
 })();
 const faqs = video.frontmatter.faqs || [];
+// Faktaboks "Key facts" (trin 4, 16/10-2026): 3-4 fakta fra robottens Google-research med kilde.
+// Kun artikler skrevet/omskrevet efter 16/10 har den (frontmatter keyFacts fra add-video.mjs).
+const keyFacts = (video.frontmatter.keyFacts || []).filter((f: any) => f?.text && /^https?:\/\//.test(f?.url || ''));
 
 // Kilde: den oprindelige YouTube-kanal. Backfilles via backfill-channels.mjs og
 // sættes fremover af add-video.mjs. Kan mangle på ældre artikler.
@@ -502,6 +505,31 @@ const metaDesc = rawMeta.length > 157
     .btn-active { color: var(--teal-text) !important; }
     .btn-active svg { fill: #0891b2; stroke: #0891b2; }
     .summary-box { background-color: var(--hover-bg); border-left: 4px solid #0891b2; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
+    /* Faktaboks (trin 4, 16/10). Jacob 16/10: skal skille sig tydeligt ud og stå centreret.
+       Derfor: hel farvet ramme + skygge, farvet top-bånd med ikon, nummererede cirkler og en
+       centreret pille-knap. Boksen er smallere end teksten og står midt i spalten. */
+    .faktaboks { counter-reset: fakta; max-width: 620px; margin: 18px auto 34px; background: #f0fbfd; border: 2px solid #0891b2; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 28px rgba(8, 145, 178, 0.18); }
+    .faktaboks-titel { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 11px 18px; background: #0891b2; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    .faktaboks-titel svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .faktaboks ul { list-style: none; margin: 0; padding: 16px 20px 4px; }
+    .faktaboks-mere ul { padding-top: 0; }
+    .faktaboks li { counter-increment: fakta; position: relative; margin: 0 0 14px; padding-left: 40px; font-size: 1rem; line-height: 1.55; font-weight: 500; }
+    .faktaboks li::before { content: counter(fakta); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: #0891b2; color: #fff; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .faktaboks-kilde { font-size: 0.82rem; color: #0e7490; white-space: nowrap; text-decoration: underline; font-weight: 600; }
+    .faktaboks-mere { display: flex; flex-direction: column; }
+    .faktaboks-mere summary { list-style: none; cursor: pointer; align-self: center; display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 16px; padding: 9px 20px; border: 2px solid #0891b2; border-radius: 999px; background: #fff; color: #0e7490; font-size: 0.92rem; font-weight: 700; transition: background .15s, color .15s; }
+    .faktaboks-mere summary:hover, .faktaboks-mere summary:focus-visible { background: #0891b2; color: #fff; }
+    .faktaboks-mere summary::-webkit-details-marker { display: none; }
+    .faktaboks-mere summary::after { content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
+    .faktaboks-mere[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+    .faktaboks-mere[open] summary { order: 2; }
+    .faktaboks-mere .vis-mindre, .faktaboks-mere[open] .vis-mere { display: none; }
+    .faktaboks-mere[open] .vis-mindre { display: inline; }
+    body.dark-mode .faktaboks { background: #0c2a33; border-color: #22b8cf; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45); }
+    body.dark-mode .faktaboks-titel { background: #0e7490; }
+    body.dark-mode .faktaboks-kilde { color: #67e8f9; }
+    body.dark-mode .faktaboks-mere summary { background: transparent; color: #67e8f9; border-color: #22b8cf; }
+    body.dark-mode .faktaboks-mere summary:hover { background: #22b8cf; color: #0c2a33; }
     .article-meta { display: flex; align-items: center; gap: 8px; margin: -5px 0 18px 0; font-size: 0.9rem; color: #6b7280; font-weight: 500; }
     body.dark-mode .article-meta { color: #9ca3af; }
     .article-meta-sep { opacity: 0.5; }
@@ -1163,6 +1191,26 @@ const metaDesc = rawMeta.length > 157
           )}
           {/* Artiklens åbning + første sektion (resten står efter videoen i <article class="video-content">) */}
           {artikelStart && <div class="video-content artikel-start" set:html={artikelStart}></div>}
+          {/* Faktaboks (trin 4, 16/10): efter første sektion — læseren har fået svaret, boksen
+              samler de vigtigste tal med kilde, før videoen. */}
+          {keyFacts.length >= 3 && (
+            <aside class="faktaboks" aria-labelledby="faktaboks-titel">
+              <p class="faktaboks-titel" id="faktaboks-titel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="11" x2="12" y2="16"></line><circle cx="12" cy="7.5" r="0.6" fill="currentColor"></circle></svg>Key facts</p>
+              {/* 16/10 (Jacob): kun første faktum vises; resten foldes ud ved tryk. <details> er
+                  browserens egen fold-ud (ingen JavaScript), og teksten står i HTML'en, så Google læser alt. */}
+              <ul>
+                <li>{keyFacts[0].text} <a class="faktaboks-kilde" href={keyFacts[0].url} target="_blank" rel="noopener">{keyFacts[0].source}</a></li>
+              </ul>
+              <details class="faktaboks-mere">
+                <summary><span class="vis-mere">Show {keyFacts.length - 1} more facts</span><span class="vis-mindre">Show less</span></summary>
+                <ul>
+                  {keyFacts.slice(1).map((f: any) => (
+                    <li>{f.text} <a class="faktaboks-kilde" href={f.url} target="_blank" rel="noopener">{f.source}</a></li>
+                  ))}
+                </ul>
+              </details>
+            </aside>
+          )}
           {/* "Watch: the video" (12/10) — "The video behind this article" sagde, at artiklen
               var lavet ud fra videoen; den bygger nu på søgningen, videoen er et supplement. */}
           <h2 class="video-overskrift" id="watch-the-video">Watch: the video</h2>
