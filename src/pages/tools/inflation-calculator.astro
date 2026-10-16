@@ -1,0 +1,52 @@
+---
+// Inflation og købekraft (16/10-2026). Ingen indbygget inflationssats: den skifter og afhænger af
+// land - brugeren indtaster sin egen. Regnestykket: src/lib/beregn.mjs (inflation), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Inflation & Purchasing Power Calculator';
+const description = 'See what something will cost in the future at a given inflation rate, and what today’s money will really be worth. Free, runs in your browser.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>📉 Inflation & Purchasing Power Calculator</h1>
+      <p>Inflation means the same money buys less each year. Enter an amount, an inflation rate and a number of years to see both sides of it.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="inAmount">Amount today</label><input type="number" id="inAmount" class="bt-input" value="1000" min="0" step="any" /></div>
+      <div class="bt-field"><label for="inRate">Inflation per year (%)</label><input type="number" id="inRate" class="bt-input" value="3" step="any" /><span class="bt-hint">Use your country's official figure, or a rate you expect.</span></div>
+      <div class="bt-field"><label for="inYears">Years</label><input type="number" id="inYears" class="bt-input" value="10" min="0" step="1" /></div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card"><div class="bt-label">What the same things will cost</div><div class="bt-value" id="inFuture">-</div></div>
+      <div class="bt-card"><div class="bt-label">What your amount will be worth</div><div class="bt-value" id="inPower">-</div><div class="bt-hint">In today's money</div></div>
+      <div class="bt-card full"><div class="bt-label">Loss of purchasing power</div><div class="bt-value bt-neg" id="inLoss">-</div></div>
+    </div>
+
+    <div class="bt-info">
+      <h2>How it is calculated</h2>
+      <p>Inflation compounds: each year's price rise is added on top of last year's prices. At 3% a year, prices are about 34% higher after ten years, not 30%. The second figure turns this around: the same 1,000 kept under the mattress buys only what about 744 buys today.</p>
+      <h2>Using it for savings</h2>
+      <p>If your savings earn less interest than the inflation rate, they lose real value even while the balance grows. Compare the result with the <a href="/tools/compound-calculator">Compound Growth Calculator</a> to see whether a savings rate actually beats inflation.</p>
+      <h2>Limits</h2>
+      <p>One fixed rate for every year is a simplification; real inflation moves up and down, and your own costs may rise faster or slower than the official average.</p>
+    </div>
+  </div>
+
+  <script>
+    import { inflation } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const fmt = (n: number) => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const calc = () => {
+      const r = inflation({ beloeb: Number($('inAmount').value), inflationPct: Number($('inRate').value), aar: Number($('inYears').value) });
+      $('inFuture').textContent = fmt(r.fremtidigPris);
+      $('inPower').textContent = fmt(r.koebekraft);
+      $('inLoss').textContent = r.faldPct.toFixed(1) + '%';
+    };
+    ['inAmount', 'inRate', 'inYears'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

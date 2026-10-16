@@ -1,0 +1,60 @@
+---
+// "Kan min computer køre en AI-model lokalt?" (16/10-2026). Tommelfingerregel: vægte = milliarder
+// parametre x bits/8 GB, plus ca. 20 % til kontekst og drift. Regnestykket: src/lib/beregn.mjs (lokalAI).
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Can My Computer Run This AI Model?';
+const description = 'Check whether a local AI model fits in your graphics card or system memory, from its size in billions of parameters and its quantization. Free, runs in your browser.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🖥️ Can My Computer Run This AI Model?</h1>
+      <p>Open models are listed by size (for example "8B" = 8 billion parameters) and by quantization (how many bits each parameter is stored in). Enter both and your memory to see if the model fits.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="laParams">Model size (billions of parameters)</label><input type="number" id="laParams" class="bt-input" value="8" min="0" step="any" /><span class="bt-hint">The "8B", "14B" or "70B" in the model name.</span></div>
+      <div class="bt-field"><label for="laBits">Quantization</label>
+        <select id="laBits" class="bt-input"><option value="16">16-bit (full, FP16)</option><option value="8">8-bit (Q8)</option><option value="5">5-bit (Q5)</option><option value="4" selected>4-bit (Q4, most common)</option><option value="3">3-bit (Q3)</option></select></div>
+      <div class="bt-field"><label for="laVram">Graphics card memory, VRAM (GB)</label><input type="number" id="laVram" class="bt-input" value="8" min="0" step="any" /><span class="bt-hint">0 if you have no separate graphics card.</span></div>
+      <div class="bt-field"><label for="laRam">System memory, RAM (GB)</label><input type="number" id="laRam" class="bt-input" value="16" min="0" step="any" /></div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Verdict</div><div class="bt-verdict" id="laVerdict">-</div></div>
+      <div class="bt-card"><div class="bt-label">Model weights</div><div class="bt-value" id="laWeights">-</div></div>
+      <div class="bt-card"><div class="bt-label">Memory needed (estimate)</div><div class="bt-value" id="laNeed">-</div></div>
+    </div>
+
+    <div class="bt-info">
+      <h2>How the estimate works</h2>
+      <p>Each parameter takes its number of bits divided by eight in bytes, so a billion parameters at 8-bit is about 1 GB, and at 4-bit about 0.5 GB. On top of the weights, the model needs room for the conversation it is working on (the context) and for the software running it, so the tool adds about 20%. Long contexts need more than that.</p>
+      <h2>Full speed, slow, or not at all</h2>
+      <p>If the whole model fits in the graphics card's memory, it runs at full speed. If it only fits when part of it sits in system memory, it still runs, but much slower, because the graphics card has to wait for data from RAM. The tool counts only three quarters of your RAM, because the operating system and other programs need the rest. Apple Silicon Macs share one pool of memory: enter it as RAM and set VRAM to 0.</p>
+      <h2>Limits</h2>
+      <p>This is a rule of thumb, not a guarantee. The exact need depends on the model's architecture, the runtime (llama.cpp, Ollama, LM Studio and others differ) and the context length you choose. Speed is not estimated.</p>
+    </div>
+  </div>
+
+  <script>
+    import { lokalAI } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const gb = (n: number) => n.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' GB';
+    const TEKST: Record<string, [string, string]> = {
+      gpu: ['bt-verdict bt-pos', 'Fits in your graphics card. It should run at full speed.'],
+      delt: ['bt-verdict bt-warn', 'Fits only when shared between graphics card and system memory. It will run, but slowly.'],
+      nej: ['bt-verdict bt-neg', 'Does not fit. Try a smaller model or a lower quantization (fewer bits).'],
+    };
+    const calc = () => {
+      const r = lokalAI({ paramsMia: Number($('laParams').value), bits: Number($('laBits').value), vramGB: Number($('laVram').value), ramGB: Number($('laRam').value) });
+      $('laWeights').textContent = gb(r.vaegteGB);
+      $('laNeed').textContent = gb(r.brugGB);
+      const [cls, txt] = TEKST[r.dom];
+      $('laVerdict').className = cls; $('laVerdict').textContent = txt;
+    };
+    ['laParams', 'laBits', 'laVram', 'laRam'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

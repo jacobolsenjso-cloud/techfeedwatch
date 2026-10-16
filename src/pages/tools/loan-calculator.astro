@@ -1,0 +1,53 @@
+---
+// Lån med fast ydelse (annuitet), 16/10-2026. Regnestykket: src/lib/beregn.mjs (laan), selvtestet
+// mod en standard annuitetstabel (100.000 i 10 år til 5 % = 1.060,66 pr. måned).
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Loan Payment Calculator';
+const description = 'Work out the monthly payment, total interest and total cost of a loan with a fixed rate. Free, runs in your browser.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🏦 Loan Payment Calculator</h1>
+      <p>Enter the amount, the yearly interest rate and the term to see the fixed monthly payment and what the loan costs you in interest over its lifetime.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="lnAmount">Loan amount</label><input type="number" id="lnAmount" class="bt-input" value="20000" min="0" step="any" /><span class="bt-hint">Any currency; the results use the same one.</span></div>
+      <div class="bt-field"><label for="lnRate">Interest rate per year (%)</label><input type="number" id="lnRate" class="bt-input" value="6.5" min="0" step="any" /></div>
+      <div class="bt-field"><label for="lnYears">Term (years)</label><input type="number" id="lnYears" class="bt-input" value="5" min="0" step="any" /></div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Monthly payment</div><div class="bt-value" id="lnPay">-</div></div>
+      <div class="bt-card"><div class="bt-label">Total interest</div><div class="bt-value" id="lnInt">-</div></div>
+      <div class="bt-card"><div class="bt-label">Total paid</div><div class="bt-value" id="lnTotal">-</div></div>
+    </div>
+
+    <div class="bt-info">
+      <h2>How the payment is calculated</h2>
+      <p>This is an annuity loan: the payment is the same every month, but the split changes. Early payments are mostly interest; later ones are mostly repayment. The monthly rate is the yearly rate divided by twelve, and the payment is set so the loan reaches exactly zero at the end of the term.</p>
+      <h2>Why the term matters so much</h2>
+      <p>A longer term lowers the monthly payment but raises the total interest, often by more than people expect. Try the same loan over five and over ten years and compare the "Total interest" figure.</p>
+      <h2>Limits</h2>
+      <p>The tool assumes a fixed rate and no fees. Real loans often add an arrangement fee or a monthly charge, so compare the lender's official annual cost figure (APR) as well. Variable-rate loans will cost more or less as the rate moves.</p>
+    </div>
+  </div>
+
+  <script>
+    import { laan } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const fmt = (n: number) => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const calc = () => {
+      const r = laan({ hovedstol: Number($('lnAmount').value), rentePct: Number($('lnRate').value), aar: Number($('lnYears').value) });
+      if (!r) { ['lnPay', 'lnInt', 'lnTotal'].forEach((i) => ($(i).textContent = '-')); return; }
+      $('lnPay').textContent = fmt(r.ydelse);
+      $('lnInt').textContent = fmt(r.renter);
+      $('lnTotal').textContent = fmt(r.total) + ` over ${r.maaneder} months`;
+    };
+    ['lnAmount', 'lnRate', 'lnYears'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

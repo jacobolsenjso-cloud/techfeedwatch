@@ -1,0 +1,71 @@
+---
+// GPU-temperatur vs. hotspot (16/10-2026). Grænserne står i src/lib/beregn.mjs (gpuTjek) og
+// kommer fra kilderne nederst på siden (fundet i robottens søgning "difference between gpu temp
+// and hotspot", 15-16/10).
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'GPU Temperature & Hotspot Checker';
+const description = 'Is the gap between your GPU temperature and hotspot normal? Enter both readings under load and get a verdict based on published limits from Nvidia, AMD and hardware testers.';
+const KILDER = [
+  { navn: "Tom's Hardware: typical and problem deltas (via TechTimes, July 2026)", url: 'https://www.techtimes.com/articles/320810/20260717/nvidia-blocked-rtx-50-hotspot-sensor-18-months-first-warranty-calls-surface.htm' },
+  { navn: "Tom's Hardware: 15-20 °C on custom cards (December 2022)", url: 'https://www.tomshardware.com/news/amd-investigating-rx-7900-reference-hot-spot-temperatures' },
+  { navn: 'TechPowerUp: Nvidia 107 °C hotspot limit (July 2026)', url: 'https://www.techpowerup.com/350705/nvidia-geforce-rtx-50-series-hotspot-sensor-can-be-accessed-with-nvidias-internal-tool' },
+  { navn: 'Tom\'s Hardware: AMD "110 °C expected and within spec" (August 2019)', url: 'https://www.tomshardware.com/news/amd-rx-5700-graphics-card-thermal-management,40144.html' },
+];
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🌡️ GPU Temperature & Hotspot Checker</h1>
+      <p>Your GPU temperature is an average across the chip; the hotspot is its single warmest point. Read both under load (a game or benchmark for ten minutes) in a tool such as GPU-Z or HWiNFO and enter them here.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="gpMake">Graphics card maker</label>
+        <select id="gpMake" class="bt-input"><option value="nvidia">Nvidia (GeForce)</option><option value="amd">AMD (Radeon)</option><option value="other">Other / not sure</option></select></div>
+      <div class="bt-field"><label for="gpGpu">GPU temperature under load (°C)</label><input type="number" id="gpGpu" class="bt-input" value="68" step="any" /><span class="bt-hint">Called "edge" temperature on AMD.</span></div>
+      <div class="bt-field"><label for="gpHot">Hotspot temperature under load (°C)</label><input type="number" id="gpHot" class="bt-input" value="84" step="any" /><span class="bt-hint">Called "junction" temperature on AMD.</span></div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Verdict</div><div class="bt-verdict" id="gpVerdict">-</div></div>
+      <div class="bt-card"><div class="bt-label">Gap (hotspot minus GPU)</div><div class="bt-value" id="gpDelta">-</div></div>
+      <div class="bt-card"><div class="bt-label">Hotspot vs. maker's limit</div><div class="bt-value" id="gpLimit">-</div></div>
+    </div>
+
+    <div class="bt-info">
+      <h2>What the numbers mean</h2>
+      <p>A card with a well-seated cooler and properly applied thermal paste typically shows a gap of about 12 to 20 °C under load. A gap above 25 to 30 °C points to poor contact between the chip and the cooler, most often uneven mounting pressure or thermal paste that has dried out or "pumped out" over time.</p>
+      <p>The hotspot has its own ceiling. Nvidia's cards throttle at a hotspot of 107 °C according to its internal diagnostic tool, and AMD has called up to 110 °C "expected and within spec". Running close to that limit is not an instant fault, but the card will slow itself down to stay below it.</p>
+      <h2>What to do about a large gap</h2>
+      <p>First check the basics: dust in the cooler, fan curves and case airflow. If the gap stays high on a card that is still under warranty, contact the maker rather than opening it. Out of warranty, replacing the thermal paste or pads is the usual fix, but only if you are comfortable doing it.</p>
+      <h2>Sources</h2>
+      <ul>{KILDER.map((k) => (<li><a href={k.url} rel="noopener" target="_blank">{k.navn}</a></li>))}</ul>
+    </div>
+  </div>
+
+  <script>
+    import { gpuTjek } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const DELTA: Record<string, [string, string]> = {
+      normal: ['bt-pos', 'The gap is normal: up to about 20 °C under load is typical for a well-cooled card.'],
+      hoej: ['bt-warn', 'The gap is on the high side. Keep an eye on it; check dust, fans and airflow.'],
+      problem: ['bt-neg', 'The gap is too high: above 25 °C usually means poor contact between chip and cooler.'],
+      ulogisk: ['bt-warn', 'The hotspot should never be lower than the GPU temperature. Check that the two readings are not swapped.'],
+    };
+    const calc = () => {
+      const r = gpuTjek({ gpu: Number($('gpGpu').value), hotspot: Number($('gpHot').value), maerke: $('gpMake').value });
+      const [cls, txt] = DELTA[r.dDom];
+      let t = txt;
+      if (r.lDom === 'ved-loft') t += ` The hotspot is at the ${r.loft} °C limit, so the card is throttling.`;
+      else if (r.lDom === 'taet-paa') t += ` The hotspot is within a few degrees of the ${r.loft} °C limit.`;
+      $('gpVerdict').className = 'bt-verdict ' + (r.lDom === 'ved-loft' ? 'bt-neg' : cls);
+      $('gpVerdict').textContent = t;
+      $('gpDelta').textContent = r.delta.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' °C';
+      $('gpLimit').textContent = r.loft ? `${Number($('gpHot').value)} of ${r.loft} °C` : 'Unknown maker';
+    };
+    ['gpMake', 'gpGpu', 'gpHot'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

@@ -1,0 +1,44 @@
+/* Fælles udseende for regneværktøjerne fra 16/10-2026 (src/pages/tools/*-calculator m.fl.).
+   Samme stil som de eksisterende værktøjer (Crypto Profit), så sitet ser ens ud. */
+.bt-wrapper { max-width: 760px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+.bt-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+.bt-header p { color: #6b7280; margin: 0 0 30px 0; font-size: 1.05rem; }
+body.dark-mode .bt-header p { color: #9ca3af; }
+.bt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.bt-field { display: flex; flex-direction: column; min-width: 0; }
+.bt-field.full { grid-column: 1 / -1; }
+.bt-field label { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+.bt-input { padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 1rem; box-sizing: border-box; width: 100%; min-width: 0; }
+.bt-input:focus { outline: none; border-color: var(--teal-text); }
+.bt-hint { font-size: 0.8rem; color: #6b7280; margin-top: 4px; }
+body.dark-mode .bt-hint { color: #9ca3af; }
+.bt-results { margin-top: 26px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.bt-card { background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px 20px; min-width: 0; }
+.bt-card.full { grid-column: 1 / -1; }
+.bt-label { font-size: 0.8rem; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+body.dark-mode .bt-label { color: #9ca3af; }
+.bt-value { font-size: 1.6rem; font-weight: 800; overflow-wrap: anywhere; }
+.bt-pos { color: #16a34a; }
+.bt-neg { color: #dc2626; }
+.bt-warn { color: #d97706; }
+.bt-verdict { font-size: 1.05rem; line-height: 1.55; font-weight: 600; }
+.bt-btn { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--teal-text); background: transparent; color: var(--teal-text); font-weight: 700; cursor: pointer; font-size: 0.95rem; }
+.bt-btn:hover { background: var(--teal-text); color: #fff; }
+.bt-rows { display: flex; flex-direction: column; gap: 10px; }
+.bt-row { display: grid; grid-template-columns: 110px 1fr 1fr 1fr 40px; gap: 8px; align-items: center; }
+.bt-row .bt-input { padding: 10px; }
+.bt-del { border: 0; background: transparent; color: #9ca3af; font-size: 1.3rem; cursor: pointer; }
+.bt-rowhead { display: grid; grid-template-columns: 110px 1fr 1fr 1fr 40px; gap: 8px; font-size: 0.78rem; font-weight: 700; color: #6b7280; text-transform: uppercase; }
+.bt-info { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+.bt-info h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+.bt-info p, .bt-info li { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+body.dark-mode .bt-info p, body.dark-mode .bt-info li { color: #9ca3af; }
+.bt-info a, .bt-sources a { color: var(--teal-text); }
+.bt-sources { font-size: 0.85rem; color: #6b7280; margin-top: 14px; line-height: 1.6; }
+@media (max-width: 640px) {
+  .bt-wrapper { padding: 20px 15px; }
+  .bt-grid, .bt-results { grid-template-columns: 1fr; }
+  .bt-row, .bt-rowhead { grid-template-columns: 1fr 1fr; }
+  .bt-rowhead { display: none; }
+  .bt-row { border: 1px solid var(--border-color); border-radius: 10px; padding: 10px; }
+}

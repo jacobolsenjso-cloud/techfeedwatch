@@ -1,0 +1,75 @@
+---
+// AI-abonnement eller API? (16/10-2026). Priser fra src/lib/ai-priser.mjs (samme tal som token-
+// beregneren). Regnestykket: src/lib/beregn.mjs (aiPris), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+import { MODEL_PRICING, PRIS_KILDER, ABONNEMENTER, ABONNEMENT_TJEKKET } from '../../lib/ai-priser.mjs';
+import { findTool } from '../../lib/tools';
+const title = 'AI Subscription vs API Cost Calculator';
+const description = 'Is a $20 AI subscription cheaper than paying per use through the API? Enter how you use AI and compare, with prices from each provider’s own pricing page.';
+const datoTekst = (d?: string) => (d ? new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }) : '');
+const apiTjekket = datoTekst(findTool('ai-token-calculator')?.updated);
+const aboTjekket = datoTekst(ABONNEMENT_TJEKKET);
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>💳 AI Subscription vs API Cost Calculator</h1>
+      <p>Chat subscriptions cost a flat monthly fee. The API charges per token. Describe a normal day of use and see which is cheaper for you, and where the break-even point is.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="aiMsgs">Messages per day</label><input type="number" id="aiMsgs" class="bt-input" value="20" min="0" step="1" /></div>
+      <div class="bt-field"><label for="aiModel">API model</label>
+        <select id="aiModel" class="bt-input">{MODEL_PRICING.map((m, i) => (<option value={i} selected={m.name === 'Claude Sonnet 5'}>{m.provider} {m.name}</option>))}</select></div>
+      <div class="bt-field"><label for="aiIn">Words you send per message</label><input type="number" id="aiIn" class="bt-input" value="150" min="0" step="1" /><span class="bt-hint">Include any text you paste in.</span></div>
+      <div class="bt-field"><label for="aiOut">Words in each answer</label><input type="number" id="aiOut" class="bt-input" value="400" min="0" step="1" /></div>
+      <div class="bt-field full"><label for="aiSub">Subscription to compare with ($ per month)</label>
+        <select id="aiSubPick" class="bt-input">{ABONNEMENTER.map((a) => (<option value={a.pris}>{a.name}: ${a.pris}</option>))}<option value="custom">Other price (enter below)</option></select>
+        <input type="number" id="aiSub" class="bt-input" value={ABONNEMENTER[0].pris} min="0" step="any" style="margin-top:8px" /></div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Cheapest for you</div><div class="bt-value" id="aiWin">-</div><div class="bt-hint" id="aiBreak"></div></div>
+      <div class="bt-card"><div class="bt-label">API cost per month</div><div class="bt-value" id="aiApi">-</div></div>
+      <div class="bt-card"><div class="bt-label">Subscription per month</div><div class="bt-value" id="aiSubOut">-</div></div>
+      <div class="bt-card full"><div class="bt-label">Tokens per month (estimate)</div><div class="bt-value" id="aiTok">-</div></div>
+    </div>
+    <p class="bt-sources">API prices: standard list prices per 1M tokens, checked on {apiTjekket} on {PRIS_KILDER.map((k, i) => (<>{i > 0 && ', '}<a href={k.url} rel="noopener" target="_blank">{k.name}</a></>))}. Subscriptions: {ABONNEMENTER.map((a, i) => (<>{i > 0 && ', '}<a href={a.url} rel="noopener" target="_blank">{a.name}</a></>))}, checked on {aboTjekket}. ChatGPT Plus is not listed because its price was not shown as text on OpenAI's pricing page that day; choose "Other price" and enter it.</p>
+
+    <div class="bt-info">
+      <h2>How the estimate works</h2>
+      <p>Words are turned into tokens at about 1.33 tokens per English word, a common rule of thumb. The API cost is the input tokens times the model's input price plus the output tokens times its output price, over 30 days. The break-even figure is how many messages a day it would take before the API costs as much as the subscription.</p>
+      <h2>What the number leaves out</h2>
+      <p>A chat app quietly sends the whole conversation again with every new message, so long chats use far more input tokens than the words you type. Images, file uploads and "thinking" models also add tokens. The subscription, on the other hand, comes with an app, memory and features the bare API does not. Treat a close result as a tie.</p>
+      <p>Want the token count for a specific prompt? Use the <a href="/tools/ai-token-calculator">AI Token & Cost Calculator</a>.</p>
+    </div>
+  </div>
+
+  <script define:vars={{ MODEL_PRICING }}>
+    window.__AI_PRISER = MODEL_PRICING;
+  </script>
+  <script>
+    import { aiPris } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const money = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const idag = new Date().toISOString().slice(0, 10);
+    const pris = (m: any) => (m.skift && idag >= m.skift.dato ? m.skift : m);
+    const calc = () => {
+      const m = pris((window as any).__AI_PRISER[Number($('aiModel').value)]);
+      const r = aiPris({ beskederPrDag: Number($('aiMsgs').value), ordInd: Number($('aiIn').value), ordUd: Number($('aiOut').value), prisInd: m.input, prisUd: m.output, abonnement: Number($('aiSub').value) });
+      $('aiApi').textContent = money(r.api);
+      $('aiSubOut').textContent = money(r.abonnement);
+      const w = $('aiWin');
+      w.textContent = r.billigst === 'api' ? `API, by ${money(r.abonnement - r.api)} a month` : `Subscription, by ${money(r.api - r.abonnement)} a month`;
+      w.className = 'bt-value bt-pos';
+      $('aiBreak').textContent = r.breakEvenBeskederPrDag ? `Break-even: about ${Math.round(r.breakEvenBeskederPrDag)} messages a day at this length.` : '';
+      $('aiTok').textContent = `${Math.round(r.tokInd).toLocaleString('en-US')} in · ${Math.round(r.tokUd).toLocaleString('en-US')} out`;
+    };
+    $('aiSubPick').addEventListener('input', () => { if ($('aiSubPick').value !== 'custom') $('aiSub').value = $('aiSubPick').value; calc(); });
+    $('aiSub').addEventListener('input', () => { $('aiSubPick').value = 'custom'; calc(); });
+    ['aiMsgs', 'aiModel', 'aiIn', 'aiOut'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

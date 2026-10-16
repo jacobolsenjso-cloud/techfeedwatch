@@ -24,16 +24,34 @@ export const VAERKTOEJ = {
   'json-formatter': { titel: 'JSON Formatter & Validator', beskrivelse: 'Format, minify and validate JSON with clear error messages.', brug: ['Check your own JSON with our [JSON Formatter & Validator](/tools/json-formatter).'] },
   'text-diff': { titel: 'Text Diff Checker', beskrivelse: 'Compare two texts and see exactly what changed.', brug: ['Compare two versions yourself with our [Text Diff Checker](/tools/text-diff).'] },
   'image-compressor': { titel: 'Image Compressor, Resizer & Converter', beskrivelse: 'Shrink and convert images in the browser.', brug: ['Shrink your own images with our [Image Compressor, Resizer & Converter](/tools/image-compressor).'] },
+  // Nye 16/10-2026 (trin 4 del 2)
+  'crypto-dca-calculator': { titel: 'Crypto DCA Calculator', beskrivelse: 'See what buying the same amount every month would be worth today, from real monthly prices.', brug: ['See what a monthly habit would be worth today with our [Crypto DCA Calculator](/tools/crypto-dca-calculator).', 'To test monthly buying on real prices, try our [Crypto DCA Calculator](/tools/crypto-dca-calculator).'] },
+  'crypto-tax-calculator': { titel: 'Crypto Gains & Tax Estimator (FIFO)', beskrivelse: 'Realized gain or loss with the FIFO method, fees included, and tax at your own rate.', brug: ['Work out the gain on your own trades with our [Crypto Gains & Tax Estimator (FIFO)](/tools/crypto-tax-calculator).'] },
+  'trading-fee-calculator': { titel: 'Trading Fee & Spread Calculator', beskrivelse: 'Compare what fees and spreads really cost per trade and per year.', brug: ['Compare what your own platform really charges with our [Trading Fee & Spread Calculator](/tools/trading-fee-calculator).'] },
+  'ai-subscription-vs-api': { titel: 'AI Subscription vs API Cost Calculator', beskrivelse: 'Is a flat AI subscription or pay-per-use API cheaper for the way you use it?', brug: ['Check which is cheaper for your own use with our [AI Subscription vs API Cost Calculator](/tools/ai-subscription-vs-api).'] },
+  'local-ai-calculator': { titel: 'Can My Computer Run This AI Model?', beskrivelse: 'Check whether a local AI model fits in your graphics card or system memory.', brug: ['Check whether your own computer is up to it with our [local AI model checker](/tools/local-ai-calculator).'] },
+  'gpu-hotspot-checker': { titel: 'GPU Temperature & Hotspot Checker', beskrivelse: 'Is the gap between your GPU temperature and hotspot normal?', brug: ['Check your own readings with our [GPU Temperature & Hotspot Checker](/tools/gpu-hotspot-checker).'] },
+  'loan-calculator': { titel: 'Loan Payment Calculator', beskrivelse: 'Monthly payment, total interest and total cost of a fixed-rate loan.', brug: ['Work out the payment on a loan of your own with our [Loan Payment Calculator](/tools/loan-calculator).'] },
+  'inflation-calculator': { titel: 'Inflation & Purchasing Power Calculator', beskrivelse: 'What things will cost in the future, and what your money will really be worth.', brug: ['See what inflation does to your own money with our [Inflation & Purchasing Power Calculator](/tools/inflation-calculator).'] },
 };
 
 // Ordet skal stå i artiklens spørgsmål eller titel (ikke bare i brødteksten), så værktøjet
 // svarer på det, artiklen handler om.
 const REGLER = [
+  // Nye 16/10-2026: mest specifikke først
+  ['ai-subscription-vs-api', /\b(chatgpt plus|claude pro|gemini (advanced|pro)|ai subscriptions?)\b|\b(chatgpt|claude|gemini)\b.{0,30}\b(worth (it|paying)|subscription)\b/i],
+  ['local-ai-calculator', /\b(run(ning)?|host(ing)?|install(ing)?)\b.{0,30}\b(ai|llms?|models?|llama|deepseek|mistral|qwen)\b.{0,30}\b(locally|offline|on (my|your|a) (pc|computer|laptop|mac))\b|\blocal (llms?|ai models?)\b|\b(vram|quantiz)/i],
+  ['gpu-hotspot-checker', /\b(gpu|graphics card)s?\b.{0,30}\b(temps?|temperatures?|hot ?spot|overheat(ing)?|thermals?)\b|\bhot ?spot temp/i],
+  ['crypto-dca-calculator', /\b(dca|dollar.?cost averag\w*)\b|\b(invest|buy)(ing)?\b.{0,25}\b(every month|monthly|each month|regularly)\b/i],
+  ['crypto-tax-calculator', /\b(crypto(currency)?|bitcoin|ethereum)\b.{0,40}\b(tax(es|ed)?|capital gains?)\b|\b(tax(es|ed)?|capital gains?)\b.{0,40}\b(crypto|bitcoin|ethereum)\b/i],
+  ['trading-fee-calculator', /\b(trading|exchange|broker(age)?) fees?\b|\bspreads?\b.{0,20}\b(crypto|trading|exchange|broker)\b|\bcommission.?free\b/i],
   // "tokens" alene rammer også krypto ("SEC ... Wall Street Tokens", målt 16/10) - kræv AI-ord nær ved.
   ['ai-token-calculator', /\b(ai|llms?|chatgpt|gpt|claude|gemini|openai|model)\b.{0,40}\btokens?\b|\btokens?\b.{0,40}\b(ai|llms?|chatgpt|gpt|claude|gemini|openai|model)\b|\b(api (cost|price|pricing)|cost of (running|using) (an? )?(ai|llm|chatgpt|claude|gemini)|(chatgpt|claude|gemini|llm|openai) (api )?(cost|price|pricing)|context window)\b/i],
   ['password-generator', /\b(passwords?|passkeys?|brute.?force|credential stuffing)\b/i],
   ['crypto-profit-calculator', /\b(bitcoin|btc|ethereum|eth|crypto(currency)?|solana|altcoins?)\b.{0,40}\b(profit|roi|returns?|worth (it|buying)|price prediction|buy|sell)\b|\b(profit|roi|returns?)\b.{0,40}\b(bitcoin|crypto|ethereum)\b/i],
   ['compound-calculator', /\b(compound(ing)? (interest|growth)|savings? (account|rate)|staking (rewards?|yield|returns?)|yield farming|retirement|index funds?|dividends?|s&p 500)\b/i],
+  ['inflation-calculator', /\b(inflation|purchasing power|cost of living)\b/i],
+  ['loan-calculator', /\b(loans?|mortgages?|borrow(ing)?|interest rates?|apr)\b/i],
   ['serp-preview', /\b(meta descriptions?|title tags?|serp snippets?|click.?through rate|ctr)\b/i],
   ['schema-generator', /\b(schema markup|structured data|rich (results?|snippets?)|json-ld)\b/i],
   ['keyword-idea-generator', /\b(keyword research|keywords? ideas?|long.?tail keywords?|search volume)\b/i],

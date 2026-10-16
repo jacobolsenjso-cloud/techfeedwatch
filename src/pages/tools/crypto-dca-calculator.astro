@@ -1,0 +1,91 @@
+---
+// DCA-beregner (16/10-2026). Kurser: src/data/kurser.json (Binance månedlige slutkurser,
+// hentes med `node hent-kurser.mjs`). Regnestykket: src/lib/beregn.mjs (dca), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+import kurser from '../../data/kurser.json';
+
+const title = 'Crypto DCA Calculator';
+const description = 'See what investing the same amount in Bitcoin, Ethereum or Solana every month would be worth today, using real monthly closing prices. Free, runs in your browser.';
+const sidste = kurser.moenter.BTC.at(-1)[0];
+const foerste = { BTC: kurser.moenter.BTC[0][0], ETH: kurser.moenter.ETH[0][0], SOL: kurser.moenter.SOL[0][0] };
+const md = (m: string) => new Date(m + '-15T12:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>📆 Crypto DCA Calculator</h1>
+      <p>Dollar-cost averaging means buying for the same amount every month, whatever the price. Pick a coin, an amount and a start month to see what that habit would be worth now.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field">
+        <label for="dcCoin">Coin</label>
+        <select id="dcCoin" class="bt-input">
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+          <option value="SOL">Solana (SOL)</option>
+        </select>
+      </div>
+      <div class="bt-field">
+        <label for="dcAmount">Amount every month ($)</label>
+        <input type="number" id="dcAmount" class="bt-input" value="100" min="0" step="any" />
+      </div>
+      <div class="bt-field">
+        <label for="dcStart">Start month</label>
+        <input type="month" id="dcStart" class="bt-input" value="2022-01" />
+        <span class="bt-hint" id="dcRange"></span>
+      </div>
+      <div class="bt-field">
+        <label for="dcFee">Fee per purchase (%)</label>
+        <input type="number" id="dcFee" class="bt-input" value="0.5" min="0" step="any" />
+      </div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full">
+        <div class="bt-label">Value today</div>
+        <div class="bt-value" id="dcValue">-</div>
+        <div class="bt-hint" id="dcSummary"></div>
+      </div>
+      <div class="bt-card"><div class="bt-label">Total invested</div><div class="bt-value" id="dcInvested">-</div></div>
+      <div class="bt-card"><div class="bt-label">Profit / loss</div><div class="bt-value" id="dcProfit">-</div></div>
+      <div class="bt-card"><div class="bt-label">Average buy price</div><div class="bt-value" id="dcAvg">-</div></div>
+      <div class="bt-card"><div class="bt-label">If you had bought it all in month one</div><div class="bt-value" id="dcLump">-</div></div>
+    </div>
+    <p class="bt-sources">Prices: monthly closing prices from Binance spot market data (USDT pairs), {md(foerste.BTC)} to {md(sidste)}, downloaded {kurser.hentet}. Each purchase is made at that month's closing price. Past returns say nothing about future returns.</p>
+
+    <div class="bt-info">
+      <h2>What DCA does and does not do</h2>
+      <p>Buying the same dollar amount every month means you automatically buy more coins when the price is low and fewer when it is high. Your average price per coin ends up below the simple average of the prices you paid, which is why the "average buy price" figure is often lower than you would guess.</p>
+      <p>DCA does not make a falling asset profitable. If the price today is below your average buy price, you are at a loss, however disciplined the habit was. The comparison with buying everything in the first month shows the trade-off: in a market that mostly rose, the lump sum wins; in one that fell first, DCA wins.</p>
+      <h2>Limits</h2>
+      <p>One price per month (the close) is a simplification: real purchases happen on a specific day, and the spread on many apps adds a cost that is not listed as a fee. Taxes are not included. Data starts in {md(foerste.BTC)} for BTC and ETH and {md(foerste.SOL)} for SOL, when Binance's monthly series begins.</p>
+    </div>
+  </div>
+
+  <script>
+    import kurser from '../../data/kurser.json';
+    import { dca } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const money = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const coin = $('dcCoin'), amount = $('dcAmount'), start = $('dcStart'), fee = $('dcFee');
+    const calc = () => {
+      const rows = (kurser.moenter as Record<string, [string, number][]>)[coin.value];
+      start.min = rows[0][0]; start.max = rows.at(-1)![0];
+      $('dcRange').textContent = `Data: ${rows[0][0]} to ${rows.at(-1)![0]}`;
+      const fra = start.value && start.value >= rows[0][0] ? start.value : rows[0][0];
+      const r = dca(rows, Number(amount.value), fra, Number(fee.value));
+      if (!r) { ['dcValue', 'dcInvested', 'dcProfit', 'dcAvg', 'dcLump'].forEach((i) => ($(i).textContent = '-')); $('dcSummary').textContent = 'Enter an amount and a start month inside the data range.'; return; }
+      $('dcValue').textContent = money(r.vaerdi);
+      $('dcInvested').textContent = money(r.investeret);
+      const p = $('dcProfit'); p.textContent = (r.gevinst >= 0 ? '+' : '') + money(r.gevinst) + ` (${r.afkastPct >= 0 ? '+' : ''}${r.afkastPct.toFixed(1)}%)`; p.className = 'bt-value ' + (r.gevinst >= 0 ? 'bt-pos' : 'bt-neg');
+      $('dcAvg').textContent = money(r.snitKurs);
+      $('dcLump').textContent = money(r.engangVaerdi);
+      $('dcSummary').textContent = `${r.maaneder} monthly purchases from ${r.fra} to ${r.til}: ${r.coins.toLocaleString('en-US', { maximumFractionDigits: 6 })} ${coin.value}, valued at the ${r.til} close of ${money(r.sidsteKurs)}.`;
+    };
+    [coin, amount, start, fee].forEach((el) => el.addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

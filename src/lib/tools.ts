@@ -469,6 +469,88 @@ export const TOOLS: Tool[] = [
     category: 'finance',
     updated: '2026-09-24',
   },
+
+  // ---------- Nye 16/10-2026 (trin 4 del 2: egne værktøjer til sitets emner) ----------
+  {
+    slug: 'crypto-dca-calculator',
+    icon: '📆',
+    title: 'Crypto DCA Calculator',
+    short: 'Crypto DCA',
+    description:
+      'See what buying the same amount of Bitcoin, Ethereum or Solana every month would be worth today, from real monthly closing prices.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'crypto-tax-calculator',
+    icon: '🧾',
+    title: 'Crypto Gains & Tax Estimator (FIFO)',
+    short: 'Crypto Gains (FIFO)',
+    description:
+      'Realized gain or loss on crypto sales with the FIFO method, fees included, and an estimated tax at your own rate.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'trading-fee-calculator',
+    icon: '⚖️',
+    title: 'Trading Fee & Spread Calculator',
+    short: 'Fees & Spread',
+    description:
+      'Compare what fees and spreads really cost per trade and per year on up to three platforms.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'ai-subscription-vs-api',
+    icon: '💳',
+    title: 'AI Subscription vs API Cost Calculator',
+    short: 'Subscription vs API',
+    description:
+      'Is a flat AI subscription or pay-per-use API cheaper for the way you use it? With dated official prices.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'loan-calculator',
+    icon: '🏦',
+    title: 'Loan Payment Calculator',
+    short: 'Loan Payment',
+    description:
+      'Monthly payment, total interest and total cost of a fixed-rate loan.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'inflation-calculator',
+    icon: '📉',
+    title: 'Inflation & Purchasing Power Calculator',
+    short: 'Inflation',
+    description:
+      'What things will cost in the future, and what your money will really be worth, at a given inflation rate.',
+    category: 'finance',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'local-ai-calculator',
+    icon: '🖥️',
+    title: 'Can My Computer Run This AI Model?',
+    short: 'Local AI Check',
+    description:
+      'Check whether a local AI model fits in your graphics card or system memory, from its size and quantization.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'gpu-hotspot-checker',
+    icon: '🌡️',
+    title: 'GPU Temperature & Hotspot Checker',
+    short: 'GPU Hotspot',
+    description:
+      'Is the gap between your GPU temperature and hotspot normal? A verdict based on published Nvidia and AMD limits.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
 ];
 
 // ---------- Opslag ----------

@@ -1,0 +1,74 @@
+---
+// Gebyr- og spread-beregner (16/10-2026). Bevidst UDEN børsernes gebyrer indbygget: de skifter
+// ofte og afhænger af niveau og land, så et indbygget tal ville snart være forkert. Brugeren
+// indtaster tallene fra sin egen børs. Regnestykket: src/lib/beregn.mjs (gebyrer), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Trading Fee & Spread Calculator';
+const description = 'Compare what trading fees and spreads really cost you per trade and per year on up to three platforms. Free, runs in your browser.';
+const P = [
+  { n: 1, navn: 'Platform A', gebyr: 0.1, spread: 0 },
+  { n: 2, navn: 'Platform B', gebyr: 0.6, spread: 0.5 },
+  { n: 3, navn: 'Platform C', gebyr: 0, spread: 1.5 },
+];
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>⚖️ Trading Fee & Spread Calculator</h1>
+      <p>A "0% fee" app can still be the most expensive place to trade, because the cost hides in the spread. Enter the fee and spread for up to three platforms and see the real cost per trade and per year.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field"><label for="fcSize">Size of each trade ($)</label><input type="number" id="fcSize" class="bt-input" value="500" min="0" step="any" /></div>
+      <div class="bt-field"><label for="fcCount">Trades per month</label><input type="number" id="fcCount" class="bt-input" value="4" min="0" step="1" /></div>
+    </div>
+
+    {P.map((p) => (
+      <div class="bt-grid" style="margin-top:18px">
+        <div class="bt-field full"><label for={`fcName${p.n}`}>Platform {p.n} name</label><input type="text" id={`fcName${p.n}`} class="bt-input" value={p.navn} /></div>
+        <div class="bt-field"><label for={`fcFee${p.n}`}>Trading fee (%)</label><input type="number" id={`fcFee${p.n}`} class="bt-input" value={p.gebyr} min="0" step="any" /></div>
+        <div class="bt-field"><label for={`fcSpread${p.n}`}>Spread (%)</label><input type="number" id={`fcSpread${p.n}`} class="bt-input" value={p.spread} min="0" step="any" /><span class="bt-hint">Gap between buy and sell price. Half is counted per trade.</span></div>
+      </div>
+    ))}
+
+    <div class="bt-results" id="fcResults"></div>
+
+    <div class="bt-info">
+      <h2>Where to find the numbers</h2>
+      <p>The trading fee is on the platform's fee page, often split into "maker" and "taker" rates; use the taker rate if you buy at the market price. The spread is not on any fee page: compare the buy price and the sell price shown at the same moment. If you can buy at $101 and sell at $99, the spread is about 2%.</p>
+      <h2>Why half the spread</h2>
+      <p>The spread is the gap between buying and selling. On a single purchase you pay roughly half of it compared with the mid-market price, and the other half when you sell. That is why the tool counts half the spread per trade.</p>
+      <h2>Limits</h2>
+      <p>Fixed fees per order, deposit and withdrawal fees, and currency conversion are not included. Spreads also widen when markets move fast, so a quiet-day spread understates the cost on a busy day.</p>
+    </div>
+  </div>
+
+  <script>
+    import { gebyrer } from '../../lib/beregn.mjs';
+    const v = (id: string) => (document.getElementById(id) as HTMLInputElement).value;
+    const money = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const out = document.getElementById('fcResults')!;
+    const calc = () => {
+      const res = [1, 2, 3].map((n) => ({ navn: v(`fcName${n}`) || `Platform ${n}`, ...gebyrer({ beloeb: Number(v('fcSize')), handlerPrMd: Number(v('fcCount')), gebyrPct: Number(v(`fcFee${n}`)), spreadPct: Number(v(`fcSpread${n}`)) }) }));
+      const billigst = Math.min(...res.map((r) => r.prAar));
+      out.innerHTML = '';
+      for (const r of res) {
+        const c = document.createElement('div');
+        c.className = 'bt-card';
+        const lbl = document.createElement('div'); lbl.className = 'bt-label'; lbl.textContent = r.navn + (r.prAar === billigst ? ' - cheapest' : '');
+        const val = document.createElement('div'); val.className = 'bt-value' + (r.prAar === billigst ? ' bt-pos' : ''); val.textContent = money(r.prAar) + ' / year';
+        const h = document.createElement('div'); h.className = 'bt-hint'; h.textContent = money(r.prHandel) + ' per trade';
+        c.append(lbl, val, h); out.appendChild(c);
+      }
+      const dyrest = Math.max(...res.map((r) => r.prAar));
+      const d = document.createElement('div'); d.className = 'bt-card full';
+      d.innerHTML = '<div class="bt-label">Difference between most and least expensive</div>';
+      const dv = document.createElement('div'); dv.className = 'bt-value'; dv.textContent = money(dyrest - billigst) + ' / year';
+      d.appendChild(dv); out.appendChild(d);
+    };
+    document.querySelectorAll('.bt-wrapper input').forEach((el) => el.addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

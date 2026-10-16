@@ -114,6 +114,13 @@ t('værktøj: indeksfonde -> rente-beregner', vaerktoejTil('What Are Index Funds
 t('værktøj: AI-tokens -> token-beregner', vaerktoejTil('How Filtered Data Becomes Numerical Tokens for ChatGPT LLMs')?.slug, 'ai-token-calculator');
 t('værktøj: krypto-"tokens" er ikke AI-tokens', vaerktoejTil('SEC Eyes Crypto Exemption to Trade Wall Street Tokens'), null);
 t('værktøj: Nike får intet (før: Password Generator)', vaerktoejTil('Why Is Nike Having Problems'), null);
+t('værktøj: GPU-hotspot', vaerktoejTil('Difference Between GPU Temp and Hotspot')?.slug, 'gpu-hotspot-checker');
+t('værktøj: lokal LLM-hukommelse', vaerktoejTil('How Much Memory Does a Local LLM Need for AI?')?.slug, 'local-ai-calculator');
+t('værktøj: "local AI agents" i noter er ikke hardware', vaerktoejTil('Local AI Agents Shift PKM From Centralized Platforms to Obsidian'), null);
+t('værktøj: krypto-skat før krypto-profit', vaerktoejTil('Do you pay tax on bitcoin profits?')?.slug, 'crypto-tax-calculator');
+t('værktøj: DCA', vaerktoejTil('Is dollar-cost averaging into bitcoin a good idea?')?.slug, 'crypto-dca-calculator');
+t('værktøj: ChatGPT Plus worth it', vaerktoejTil('Is ChatGPT Plus worth it in 2026?')?.slug, 'ai-subscription-vs-api');
+t('værktøj: inflation', vaerktoejTil('How does inflation affect savings?')?.slug, 'inflation-calculator');
 const vtI = vaerktoejTil('What Are Index Funds');
 t('brugssætning: links til værktøjet', /\]\(\/tools\/compound-calculator\)/.test(brugsSaetning(vtI, 'text', 'abc')), true);
 t('brugssætning: intet, hvis linket allerede står der', brugsSaetning(vtI, 'see [x](/tools/compound-calculator)', 'abc'), '');

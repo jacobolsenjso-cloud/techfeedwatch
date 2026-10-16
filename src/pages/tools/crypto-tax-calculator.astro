@@ -1,0 +1,88 @@
+---
+// Krypto-gevinst efter FIFO (16/10-2026). Bevidst UDEN nationale skatteregler: sitet er på
+// engelsk og læses globalt, og satser/regler ændrer sig. Brugeren indtaster sin egen sats.
+// Regnestykket: src/lib/beregn.mjs (fifo), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Crypto Gains & Tax Estimator (FIFO)';
+const description = 'Work out the realized gain or loss on your crypto sales with the FIFO method, including fees, and estimate the tax at your own rate. Free, runs in your browser.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🧾 Crypto Gains & Tax Estimator (FIFO)</h1>
+      <p>List your buys and sells in the order they happened. The tool matches each sale against your oldest coins first (FIFO) and shows the realized gain and an estimated tax at the rate you enter.</p>
+    </div>
+
+    <div class="bt-rowhead"><span>Type</span><span>Amount (coins)</span><span>Price per coin ($)</span><span>Fee ($)</span><span></span></div>
+    <div class="bt-rows" id="txRows"></div>
+    <p><button type="button" class="bt-btn" id="txAdd">+ Add trade</button></p>
+
+    <div class="bt-grid">
+      <div class="bt-field">
+        <label for="txRate">Your tax rate on gains (%)</label>
+        <input type="number" id="txRate" class="bt-input" value="25" min="0" max="100" step="any" />
+        <span class="bt-hint">Use the rate that applies to you. Rules differ by country.</span>
+      </div>
+    </div>
+
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Realized gain / loss</div><div class="bt-value" id="txGain">-</div><div class="bt-hint" id="txMsg"></div></div>
+      <div class="bt-card"><div class="bt-label">Estimated tax</div><div class="bt-value" id="txTax">-</div></div>
+      <div class="bt-card"><div class="bt-label">Coins still held</div><div class="bt-value" id="txHeld">-</div></div>
+      <div class="bt-card full"><div class="bt-label">Cost basis of coins still held</div><div class="bt-value" id="txBasis">-</div></div>
+    </div>
+
+    <div class="bt-info">
+      <h2>How FIFO works</h2>
+      <p>FIFO means "first in, first out": when you sell, the coins you bought first count as the ones sold. The gain on a sale is what you received, minus the sale fee, minus what those oldest coins cost you including their purchase fee. Coins you still hold keep their own cost, shown as the cost basis.</p>
+      <h2>Why the method matters</h2>
+      <p>The same trades can give a different taxable gain under other methods, such as average cost or "highest in, first out". Many tax authorities prescribe one method, so check which applies where you live before you rely on the number.</p>
+      <h2>Limits</h2>
+      <p>This is an estimate, not tax advice. It handles one coin at a time and treats losses as zero tax rather than offsetting other income, because loss rules vary widely. Staking rewards, swaps between coins and airdrops can be taxable events of their own and are not modelled.</p>
+    </div>
+  </div>
+
+  <script>
+    import { fifo } from '../../lib/beregn.mjs';
+    const money = (n: number) => (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const rowsEl = document.getElementById('txRows')!;
+    const start = [
+      { type: 'buy', antal: 0.5, pris: 30000, gebyr: 15 },
+      { type: 'buy', antal: 0.5, pris: 60000, gebyr: 30 },
+      { type: 'sell', antal: 0.6, pris: 80000, gebyr: 48 },
+    ];
+    const addRow = (r = { type: 'buy', antal: 0, pris: 0, gebyr: 0 }) => {
+      const d = document.createElement('div');
+      d.className = 'bt-row';
+      d.innerHTML = `<select class="bt-input" aria-label="Type"><option value="buy">Buy</option><option value="sell">Sell</option></select>
+        <input type="number" class="bt-input" aria-label="Amount (coins)" min="0" step="any" value="${r.antal}">
+        <input type="number" class="bt-input" aria-label="Price per coin" min="0" step="any" value="${r.pris}">
+        <input type="number" class="bt-input" aria-label="Fee" min="0" step="any" value="${r.gebyr}">
+        <button type="button" class="bt-del" aria-label="Remove trade">×</button>`;
+      (d.querySelector('select') as HTMLSelectElement).value = r.type;
+      d.querySelector('.bt-del')!.addEventListener('click', () => { d.remove(); calc(); });
+      d.querySelectorAll('input,select').forEach((el) => el.addEventListener('input', calc));
+      rowsEl.appendChild(d);
+    };
+    const calc = () => {
+      const handler = [...rowsEl.querySelectorAll('.bt-row')].map((d) => {
+        const f = d.querySelectorAll('input');
+        return { type: (d.querySelector('select') as HTMLSelectElement).value, antal: Number(f[0].value), pris: Number(f[1].value), gebyr: Number(f[2].value) };
+      });
+      const r = fifo(handler, Number((document.getElementById('txRate') as HTMLInputElement).value));
+      const g = document.getElementById('txGain')!;
+      g.textContent = (r.realiseret > 0 ? '+' : '') + money(r.realiseret);
+      g.className = 'bt-value ' + (r.realiseret >= 0 ? 'bt-pos' : 'bt-neg');
+      document.getElementById('txMsg')!.textContent = r.fejl ? r.fejl + ' The calculation stops at that sale.' : `${r.solgtIalt.toLocaleString('en-US', { maximumFractionDigits: 8 })} coins sold in total.`;
+      document.getElementById('txTax')!.textContent = money(r.skat);
+      document.getElementById('txHeld')!.textContent = r.beholdning.toLocaleString('en-US', { maximumFractionDigits: 8 });
+      document.getElementById('txBasis')!.textContent = money(r.kostBeholdning);
+    };
+    start.forEach(addRow);
+    document.getElementById('txAdd')!.addEventListener('click', () => { addRow(); calc(); });
+    document.getElementById('txRate')!.addEventListener('input', calc);
+    calc();
+  </script>
+</MainLayout>
