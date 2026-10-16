@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { GEMINI_MODEL } from './model.mjs';
+import { kerneord } from './headline.mjs';
 
 export const MIN_FAKTA_SOEG = 4;   // så mange fakta med kilde, ellers ingen artikel
 export const MIN_KILDER_SOEG = 2;  // så mange forskellige sider bag dem
@@ -254,4 +255,35 @@ ${s.fakta.map((f) => `R${f.nr}. ${f.tekst} ${f.kilder.map((n) => `[S${n}]`).join
 
 WEB PAGES:
 ${s.kilder.map((k) => `S${k.nr}. ${k.domaene}${k.titel ? ` — ${k.titel}` : ''}`).join('\n')}`;
+}
+
+// Dækningstjek (A, 16/10-2026): kan Google-fakta overhovedet besvare hvert delspørgsmål?
+// Målt 15/10: 44 % af robottens pris gik til artikler, der blev kasseret bagefter —
+// oftest fordi redaktørtjekket fandt et delspørgsmål uden svar (#670 CMMC: "timeline
+// and phase-in process" — der var ingen fakta om det, så artiklen kunne ikke svare).
+// Tjekket er deterministisk (ingen modelkald): et delspørgsmål er udækket (droppes), når INGEN af dets egne ord findes i noget faktum. (Før: mindst
+// halvdelen af egne ord i ét faktum — for strengt.) Egne ord = dem, der ikke står i hovedspørgsmålet.
+// Delspørgsmål 1 er selve søgningen og beholdes altid.
+const ALMINDELIGE = new Set(['process', 'way', 'ways', 'key', 'main', 'important', 'common', 'different', 'specific', 'typical', 'really', 'actually', 'exactly', 'need', 'needs', 'someone', 'people', 'thing', 'things', 'some', 'most', 'much', 'many', 'there', 'they', 'them', 'their', 'be', 'been', 'has', 'have', 'not', 'any', 'all', 'other', 'these', 'those', 'about', 'between', 'than', 'more', 'less', 'like', 'also', 'make', 'help', 'over', 'out', 'up', 'new', 'one']);
+// Ordstamme her = de første 5 bogstaver ("causes"/"cause", "timeline"/"timelines").
+// headline.mjs' stamme() gav "cau" for "causes" men "cause" for "cause" (målt 16/10).
+const stamme = (w) => String(w).toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5);
+export function daekning(delspoergsmaal, fakta, hovedspoergsmaal = '') {
+  const hoved = new Set([...kerneord(hovedspoergsmaal), ...kerneord(delspoergsmaal[0] || '')].map(stamme));
+  const faktaOrd = fakta.map((f) => new Set(String(f.tekst || f).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map(stamme)));
+  const behold = [];
+  const droppet = [];
+  delspoergsmaal.forEach((q, i) => {
+    if (i === 0) { behold.push(q); return; }
+    const egne = [...new Set(kerneord(q).filter((w) => !ALMINDELIGE.has(w)).map(stamme))].filter((s) => !hoved.has(s));
+    // Ingen egne ord = delspørgsmålet gentager emnet; det dækkes af emnets fakta.
+    if (!egne.length) { behold.push(q); return; }
+    // Krav: mindst ét eget ord i ét faktum. Et strengere krav (halvdelen / 2 ord) droppede
+    // 85 hhv. 38 af 128 delspørgsmål i de 25 gemte søgninger (målt 16/10) — også dækkede,
+    // fordi fakta bruger andre ord end spørgsmålet. Kun "intet ord overhovedet" er sikkert.
+    const krav = 1;
+    const bedst = Math.max(0, ...faktaOrd.map((s) => egne.filter((w) => s.has(w)).length));
+    if (bedst >= krav) behold.push(q); else droppet.push({ q, egne, bedst, krav });
+  });
+  return { behold, droppet };
 }

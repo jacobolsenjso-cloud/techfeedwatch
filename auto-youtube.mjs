@@ -427,6 +427,9 @@ function faktaarkScoreFor(videoUrl, tag, qArg) {
 
 // spoergsmaal: den rå søgning (gemmes som brugt). visSpoergsmaal: den rettede
 // udgave fra spørgsmålsfilteret — det er den, artiklen får som targetQuestion.
+// B (16/10): højst ét skrevet forsøg pr. kørsel. add-video lægger mærket, når skrivningen begynder.
+const SKRIVE_MAERKE = '.cache/skrive-forsoeg';
+let skrevetForsoegFejlet = false;
 async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal, visSpoergsmaal = spoergsmaal) {
   let processed = 0;
   const qArg = visSpoergsmaal ? ` --question "${visSpoergsmaal.replace(/"/g, '')}"` : '';
@@ -510,6 +513,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     console.log(`▶️ Behandler NY ${label}: ${videoUrl}`);
 
+    fs.rmSync(SKRIVE_MAERKE, { force: true });
     try {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
       execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg}`, { stdio: 'inherit' });
@@ -525,6 +529,14 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
       }
     } catch (subError) {
       console.error(`❌ Fejl ved oprettelse af video ${videoId}:`, subError.message);
+    }
+    // B (16/10): en artikel blev SKREVET (dyre trin betalt) men ikke gemt -> stop kørslen.
+    // Målt 15/10: 44 % af robottens pris gik til kasserede artikler, ofte 2 i samme kørsel.
+    // Afvisninger FØR skrivningen (sprog, relevans, faktaark) må stadig prøve næste kandidat.
+    if (!loadExistingVideoIds().has(videoId) && fs.existsSync(SKRIVE_MAERKE)) {
+      skrevetForsoegFejlet = true;
+      console.log('Info: STOP — en skrevet artikel blev kasseret. Ingen flere forsøg i denne kørsel (sparer penge); næste kørsel prøver igen.');
+      break;
     }
   }
 
@@ -613,7 +625,7 @@ async function findNewestVideos() {
   const MAX_SPOERGSMAAL = 2;
   const proevetNu = new Set();
   let processed = 0;
-  for (let runde = 1; runde <= MAX_SPOERGSMAAL && processed < runBudget; runde++) {
+  for (let runde = 1; runde <= MAX_SPOERGSMAAL && processed < runBudget && !skrevetForsoegFejlet; runde++) {
   const tag = emneRaekke[Math.min(runde - 1, emneRaekke.length - 1)];
   const topic = TOPIC_BY_TAG[tag];
   if (runde > 1 && tag !== emneRaekke[0]) console.log(`Info: Skifter emne til det næstmindste: "${tag}" (${counts[tag]} artikler).`);

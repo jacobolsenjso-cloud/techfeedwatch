@@ -19,7 +19,7 @@ import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
-import { undersoegSoegning, soegningTekst } from './src/lib/soegning.mjs';
+import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
@@ -413,6 +413,20 @@ async function run() {
       console.log(`Sprunget over: søgningen gav for lidt med kilde (${soeg.delspoergsmaal.length} delspørgsmål, ${soeg.fakta.length} fakta, ${soeg.kilder.length} kilder) — "${targetQuestion}"`);
       return;
     }
+    // A (16/10): delspørgsmål, som ingen Google-fakta dækker, droppes NU — ellers skriver
+    // robotten en hel artikel, som redaktørtjekket kasserer for "ubesvaret" (dyreste fejl).
+    // Ingen modelkald. Bliver der under 3 tilbage, springes over, før videoen hentes.
+    {
+      const d = daekning(soeg.delspoergsmaal, soeg.fakta, targetQuestion);
+      if (d.droppet.length) {
+        console.log(`DAEKNING: ${JSON.stringify({ behold: d.behold.length, droppet: d.droppet.map((x) => x.q) })}`);
+        soeg.delspoergsmaal = d.behold;
+      }
+      if (soeg.delspoergsmaal.length < 3) {
+        console.log(`Sprunget over: kun ${soeg.delspoergsmaal.length} delspørgsmål har fakta bag sig — "${targetQuestion}"`);
+        return;
+      }
+    }
 
     // Kildeangivelse hentes ALTID (uafhængigt af Plan A/B), så hver artikel kan
     // kreditere den oprindelige kanal. Fejler dette, fortsætter vi uden kilde.
@@ -710,6 +724,9 @@ async function run() {
     // Svaret skal have en TITLE-linje og slutte af sig selv (STOP). Mangler
     // det, er det tilfældigt (målt 12/9: samme prompt gav svar i 2. forsøg),
     // så vi prøver én gang til, før kandidaten kasseres.
+    // B (16/10): mærke til auto-youtube — "nu begynder den dyre skrivning". Bliver artiklen
+    // alligevel kasseret, prøver robotten ikke flere kandidater i samme kørsel.
+    try { fs.mkdirSync('.cache', { recursive: true }); fs.writeFileSync('.cache/skrive-forsoeg', String(videoId || '')); } catch { /* kun et mærke */ }
     let rawText = '';
     for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
       const result = await hentModel(genAI, {

@@ -1,7 +1,7 @@
 // Selvtest af src/lib/kildetjek.mjs og de rene dele af src/lib/soegning.mjs (12/10-2026).
 // Kør: node test-kildetjek.mjs — alle linjer skal være OK, ellers exitkode 1.
 import { videoAndel, talUdenKilde, harTalPaastand, videoAfsnit, brugteKilder, kildelisteMd, titelAfAdresse } from './src/lib/kildetjek.mjs';
-import { domaeneLed, erKildeTilladt, udgivernavne, parseSoegning, kilderTilLinje } from './src/lib/soegning.mjs';
+import { domaeneLed, erKildeTilladt, udgivernavne, parseSoegning, kilderTilLinje, daekning } from './src/lib/soegning.mjs';
 import { tjekOutline, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 
 let fejl = 0;
@@ -78,12 +78,21 @@ t('tabel med kilde før / tabel uden kilde', talUdenKilde(tabel, ['Nvidia'], 'Ka
 
 // Artikelplan (outline + FAQ fra rigtige søgninger)
 const dq = ['What is a breach?', 'Why does it matter?', 'What should you do?', 'Who must be told?'];
-const godPlan = { sections: [{ h2: 'Why Breaches Cost So Much', covers: [2] }, { h2: 'Steps to Take After a Breach', covers: [3] }, { h2: 'Who Must Be Notified and When', covers: [4] }], video: 'What Human Error Shows About Breach Letters', closing: '' };
+const godPlan = { sections: [{ h2: 'Why Breaches Cost So Much', covers: [2] }, { h2: 'Steps to Take After a Breach', covers: [3] }, { h2: 'Who Must Be Notified, and When?', covers: [4] }], video: 'What Human Error Shows About Breach Letters', closing: '' };
 t('outline godkendt', tjekOutline(godPlan, dq, 'Human Error'), []);
-t('outline: delspørgsmål mangler + skabelon', tjekOutline({ ...godPlan, sections: [{ h2: 'How It Works', covers: [2] }, { h2: 'Steps to Take', covers: [3] }, { h2: 'Costs', covers: [3] }] }, dq, 'Human Error'), ['delspørgsmål 4 ikke dækket', 'skabelon: "How It Works"']);
+t('outline: delspørgsmål mangler + skabelon', tjekOutline({ ...godPlan, sections: [{ h2: 'How It Works', covers: [2] }, { h2: 'Steps to Take', covers: [3] }, { h2: 'Costs', covers: [3] }] }, dq, 'Human Error'), ['delspørgsmål 4 ikke dækket', 'skabelon: "How It Works"', 'ingen overskrift er et spørgsmål']);
 t('outline: video uden kanal', tjekOutline({ ...godPlan, video: 'What the Video Shows' }, dq, 'Human Error'), ['videooverskriften nævner ikke kanalen']);
 t('outline brugt', outlineBrugt('## Why Breaches Cost So Much\n\ntext\n\n## Steps to Take After a Breach!\n', { sections: ['Why Breaches Cost So Much', 'Steps to Take After a Breach', 'Other'], video: 'V', closing: '' }), { brugt: 2, ialt: 4 });
 t('FAQ fra rigtige søgninger', faqFraSoegninger([{ question: 'How long does a data breach investigation take?' }, { question: 'Is my bank safe?' }], ['how long does a data breach investigation take', 'what is a data breach']), 1);
+
+// Dækningstjek (A, 16/10): delspørgsmål uden et eneste ord i fakta droppes; nr. 1 bliver altid
+const dk = daekning(
+  ['What does a data breach mean?', 'What are the most common causes of a data breach?', 'How much does a data breach cost?', 'What leadership changes did Nike make?'],
+  [{ tekst: 'According to IBM, the average cost of a data breach reached $4.88 million in 2024.' }, { tekst: 'Verizon found that stolen credentials caused 31% of breaches.' }],
+  'what does a data breach mean');
+t('dækning: behold', dk.behold, ['What does a data breach mean?', 'What are the most common causes of a data breach?', 'How much does a data breach cost?']);
+t('dækning: drop', dk.droppet.map((x) => x.q), ['What leadership changes did Nike make?']);
+t('dækning: kun emneord = behold', daekning(['What is a data breach?', 'What is a data breach, really?'], [], 'what is a data breach').behold.length, 2);
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nAlle OK');
 process.exit(fejl ? 1 : 0);
