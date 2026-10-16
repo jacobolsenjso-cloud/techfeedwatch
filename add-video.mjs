@@ -418,10 +418,10 @@ async function run() {
     // Ingen modelkald. Bliver der under 3 tilbage, springes over, før videoen hentes.
     {
       const d = daekning(soeg.delspoergsmaal, soeg.fakta, targetQuestion);
-      if (d.droppet.length) {
-        console.log(`DAEKNING: ${JSON.stringify({ behold: d.behold.length, droppet: d.droppet.map((x) => x.q) })}`);
-        soeg.delspoergsmaal = d.behold;
-      }
+      // Linjen skrives ALTID (16/10): prøve #13 viste, at et tjek, der kun logger når det finder noget,
+      // ikke kan skelnes fra et tjek, der ikke kørte.
+      console.log(`DAEKNING: ${JSON.stringify({ behold: d.behold.length, droppet: d.droppet.map((x) => x.q) })}`);
+      if (d.droppet.length) soeg.delspoergsmaal = d.behold;
       if (soeg.delspoergsmaal.length < 3) {
         console.log(`Sprunget over: kun ${soeg.delspoergsmaal.length} delspørgsmål har fakta bag sig — "${targetQuestion}"`);
         return;
