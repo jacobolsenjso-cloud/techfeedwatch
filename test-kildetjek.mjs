@@ -3,6 +3,7 @@
 import { videoAndel, talUdenKilde, harTalPaastand, videoAfsnit, brugteKilder, kildelisteMd, titelAfAdresse, noegleFakta, delFaktum } from './src/lib/kildetjek.mjs';
 import { domaeneLed, erKildeTilladt, udgivernavne, parseSoegning, kilderTilLinje, daekning } from './src/lib/soegning.mjs';
 import { tjekOutline, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
+import { vaerktoejTil, brugsSaetning } from './src/lib/vaerktoej.mjs';
 
 let fejl = 0;
 const t = (navn, faktisk, forventet) => {
@@ -107,6 +108,15 @@ const nfSoeg = { fakta: [
 const nfSider = [{ nr: 1, domaene: 'ibm.com', url: 'https://ibm.com/r' }, { nr: 2, domaene: 'statisticsfundamentals.com', url: 'https://statisticsfundamentals.com/x' }, { nr: 3, domaene: 'verizon.com', url: 'https://verizon.com/d' }, { nr: 4, domaene: 'csrc.nist.gov', url: 'https://csrc.nist.gov/g' }];
 t('nøglefakta: link skal være udgiverens eget (IBM via statisticsfundamentals droppes)', noegleFakta(nfSoeg, nfSider).map((f) => f.url), ['https://ibm.com/r', 'https://verizon.com/d', 'https://csrc.nist.gov/g']);
 t('nøglefakta: under 3 = ingen boks', noegleFakta(nfSoeg, nfSider.slice(0, 2)), []);
+
+// Værktøj efter spørgsmål (trin 4 del 2, 16/10)
+t('værktøj: indeksfonde -> rente-beregner', vaerktoejTil('What Are Index Funds and How Do They Work')?.slug, 'compound-calculator');
+t('værktøj: AI-tokens -> token-beregner', vaerktoejTil('How Filtered Data Becomes Numerical Tokens for ChatGPT LLMs')?.slug, 'ai-token-calculator');
+t('værktøj: krypto-"tokens" er ikke AI-tokens', vaerktoejTil('SEC Eyes Crypto Exemption to Trade Wall Street Tokens'), null);
+t('værktøj: Nike får intet (før: Password Generator)', vaerktoejTil('Why Is Nike Having Problems'), null);
+const vtI = vaerktoejTil('What Are Index Funds');
+t('brugssætning: links til værktøjet', /\]\(\/tools\/compound-calculator\)/.test(brugsSaetning(vtI, 'text', 'abc')), true);
+t('brugssætning: intet, hvis linket allerede står der', brugsSaetning(vtI, 'see [x](/tools/compound-calculator)', 'abc'), '');
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nAlle OK');
 process.exit(fejl ? 1 : 0);

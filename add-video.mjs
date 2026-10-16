@@ -22,6 +22,7 @@ import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, noegleFakta, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
+import { vaerktoejTil, brugsSaetning } from './src/lib/vaerktoej.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
 import { lavOutline, strukturTekst, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 import { hentForslag } from './src/lib/suggest.mjs';
@@ -1289,6 +1290,13 @@ ${content}`);
       // Faktaboks (trin 4, 16/10): 3-4 nøglefakta fra søgningen, gemt i frontmatter som keyFacts.
       noegle = noegleFakta(soeg, brugteSider);
       console.log(`FAKTABOKS: ${noegle.length} fakta`);
+      // Værktøj (trin 4 del 2, 16/10): passer et af sitets værktøjer til selve spørgsmålet, får teksten
+      // én sætning om, hvordan læseren bruger det på sit eget problem - lige før kildelisten.
+      // Samme regel som siden (src/lib/vaerktoej.mjs), ingen modelkald.
+      const vt = vaerktoejTil(`${safeTitle} ${targetQuestion || ''}`);
+      const vtSaetning = brugsSaetning(vt, content, videoId);
+      if (vtSaetning) content = content.replace(/\n## Sources\s*\n/, `\n${vtSaetning}\n\n## Sources\n`);
+      console.log(`VAERKTOEJ: ${vt ? vt.slug : 'intet'}${vtSaetning ? ' (sætning sat ind)' : ''}`);
       // Måling af den endelige tekst til fase C (samme regler som stop-tjekkene). Ændr ikke formatet.
       const ob = plan ? outlineBrugt(content, plan) : null;
       console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
