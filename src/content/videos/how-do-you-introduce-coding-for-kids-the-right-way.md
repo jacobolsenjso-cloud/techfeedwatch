@@ -12,8 +12,8 @@ summary: "Coding for kids introduces young learners to computational thinking, p
 metaDescription: "What is coding for kids? Discover how visual blocks, computational logic, and interactive projects build critical problem-solving skills in young learners."
 targetQuestion: "what is coding for kids"
 duration: "18:32"
-viewCount: 2
-viewsUpdated: "2026-10-14"
+viewCount: 4
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 faqs:

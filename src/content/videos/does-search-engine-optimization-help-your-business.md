@@ -12,8 +12,8 @@ summary: "Modern search engine optimization helps businesses attract qualified b
 metaDescription: "Learn how search engine optimization helps your business capture high-intent buyers, secure AI citations, and convert organic search traffic."
 targetQuestion: "how can search engine optimization help your business"
 duration: "25:20"
-viewCount: 40
-viewsUpdated: "2026-10-09"
+viewCount: 41
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,7 +12,7 @@ summary: "The simplest path to producing AI video relies on all-in-one text-to-v
 metaDescription: "Discover the easiest way to make AI videos using automated text-to-video tools, avatar presenters, and free browser-based generators."
 targetQuestion: "what is the easiest way to make ai videos"
 duration: "9:51"
-viewCount: 67692
+viewCount: 67699
 viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false

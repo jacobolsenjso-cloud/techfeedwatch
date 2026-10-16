@@ -12,8 +12,8 @@ summary: "NVIDIA AI factories represent a fundamental transition from general-pu
 metaDescription: "Discover what NVIDIA AI factories are, how their hardware and networking architecture operates, and why they differ from traditional data centers."
 targetQuestion: "what are nvidia ai factories"
 duration: "2:25:59"
-viewCount: 1395613
-viewsUpdated: "2026-10-13"
+viewCount: 1402815
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

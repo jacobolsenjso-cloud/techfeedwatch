@@ -12,8 +12,8 @@ summary: "Quantum computers process complex information by modeling quantum mech
 metaDescription: "Wondering what quantum computing is used for? Explore real-world applications in molecular simulation, material science, and modern cryptography threats."
 targetQuestion: "what is quantum computing used for"
 duration: "26:25"
-viewCount: 103006
-viewsUpdated: "2026-10-13"
+viewCount: 103268
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 faqs:

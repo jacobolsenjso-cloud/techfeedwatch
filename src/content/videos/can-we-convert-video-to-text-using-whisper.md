@@ -12,8 +12,8 @@ summary: "Anyone can convert video to text today using automated speech recognit
 metaDescription: "Learn how to convert video to text with modern AI models and transcription tools. Compare speech-to-text accuracy rates, workflows, and file formats."
 targetQuestion: "can we convert video to text"
 duration: "9:38"
-viewCount: 163
-viewsUpdated: "2026-10-15"
+viewCount: 167
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-15"

@@ -12,8 +12,8 @@ summary: "Traditional automation follows rigid, predefined paths to deliver cons
 metaDescription: "Understand the real difference between an AI agent and traditional automation, comparing mechanics, enterprise costs, reliability, and hybrid systems."
 targetQuestion: "what is an ai agent vs automation"
 duration: "25:58"
-viewCount: 4376325
-viewsUpdated: "2026-10-13"
+viewCount: 4395090
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

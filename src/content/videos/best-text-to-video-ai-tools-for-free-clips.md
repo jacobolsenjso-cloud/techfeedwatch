@@ -12,8 +12,8 @@ summary: "Evaluating the best text to video ai tools requires cutting through ma
 metaDescription: "Discover the best text to video ai tools offering free generations, high-resolution rendering, and unhindered access without immediate paywalls."
 targetQuestion: "what are the best text to video ai tools"
 duration: "5:45"
-viewCount: 269633
-viewsUpdated: "2026-10-13"
+viewCount: 270158
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 faqs:

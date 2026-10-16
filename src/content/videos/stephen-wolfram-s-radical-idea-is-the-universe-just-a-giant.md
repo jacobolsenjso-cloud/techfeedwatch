@@ -12,8 +12,8 @@ summary: "The computational universe hypothesis proposes that physical reality e
 metaDescription: "What is a computational universe? Learn how digital physics, cellular automata, and quantum information process reality as fundamental computation."
 targetQuestion: "what is a computational universe"
 duration: "3:38:43"
-viewCount: 4774961
-viewsUpdated: "2026-10-13"
+viewCount: 4776436
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

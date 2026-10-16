@@ -12,8 +12,8 @@ summary: "AI video generation involves sophisticated machine learning models tha
 metaDescription: "Understand how AI videos are generated, the underlying technology, cost implications, and common pitfalls for creators and users."
 targetQuestion: "how are ai videos generated"
 duration: "8:36"
-viewCount: 63211
-viewsUpdated: "2026-10-13"
+viewCount: 63270
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 faqs:

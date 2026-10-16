@@ -12,8 +12,8 @@ summary: "Quantum computing chips, or quantum processing units, execute complex 
 metaDescription: "Learn what quantum computing chips are, how physical qubits process complex states, and why these processors require specialized dilution refrigerators."
 targetQuestion: "what are quantum computing chips"
 duration: "6:31"
-viewCount: 279965
-viewsUpdated: "2026-10-15"
+viewCount: 279983
+viewsUpdated: "2026-10-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-15"
