@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 124** — brug kun v124). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 125** — brug kun v125). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 124** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (16/10-2026 kl. 10:37, live `3d8379ee`, 436 artikler): LIVE. Starteren (`tfw-starter`) virker:** robot 23 af 24 timer, omskrivning 08:37 og morgenrapport 09:37 kom. **De nye regler virker** på 9 artikler: 0 tvungne links, 0 AI-vendinger, spørgsmål i 2 af 5 H2, snit 1.147 ord. **ÅBEN BESLUTNING (Jacob, haster): prisen** — ca. 6,73 USD (47 kr.) på ét døgn (robot 4,72 + omskrivning 2,01), fordi starteren giver langt flere forsøg, og mislykkede forsøg koster. Gemini-kreditten rækker kun få dage i det tempo. Muligheder: lavere dagsloft, færre omskrivninger, billigere stop før de dyre trin. **Næste:** punkt 4 (egne værktøjer/faktaboks fra ordbogen), punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning), gamle grene på GitHub (`stil-1-2`, `udkast-12` m.fl., slettes kun med Jacobs ok).
+**Seneste for techfeedwatch (16/10-2026 kl. 11:20, robot `2fedbc6f`): LIVE. Prisen er bremset:** højst 3 nye artikler og 3 omskrivninger om dagen (`f4397752`), og tidligt stop A+B (`2fedbc6f`): udækkede delspørgsmål droppes før skrivningen, og højst ét skrevet forsøg pr. kørsel. Starteren (`tfw-starter`) kører robotten hver time. Før: ca. 6,73 USD/døgn; forventet efter: ca. 3 USD/døgn - **måles i morgenrapporterne**. De nye skriveregler virker (0 tvungne links, 0 AI-vendinger, spørgsmål i 2 af 5 H2, snit 1.147 ord). **Næste:** mål pris og stop-årsager 17/10; punkt 4 (faktaboks fra ordbogen, venter på Jacob), punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning), gamle grene på GitHub (`stil-1-2`, `udkast-12` m.fl., slettes kun med Jacobs ok).
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 16/10-2026 kl. 11:20 - techfeedwatch: prisloft 3+3 og tidligt stop (A+B) LIVE
+- **Loft (Jacob 16/10, `f4397752`):** højst 3 nye artikler om dagen (hverdag 2-3, weekend 1-3) og 3 omskrivninger om dagen (var 6). Morgenrapporten skriver nu "startet X af 24 gange (Cloudflare-starteren)".
+- **A - dækningstjek (`2fedbc6f`):** efter Google-søgningen droppes delspørgsmål, hvor INGEN af spørgsmålets egne ord står i noget faktum - før outline og skrivning, uden modelkald (`daekning()` i `src/lib/soegning.mjs`, log-linje `DAEKNING:`). Er der under 3 tilbage, springes spørgsmålet over, før videoen hentes. **Målt på de 25 gemte søgninger:** første udgave (halvdelen af ordene) droppede 85 af 128 - for strengt, også dækkede spørgsmål. Endelig regel: 8 af 128 droppet (fx "leadership changes at Nike", "causes of a data breach" uden fakta om årsager), 0 ekstra overspringninger.
+- **B - ét skrevet forsøg pr. kørsel (`2fedbc6f`):** add-video lægger mærket `.cache/skrive-forsoeg`, når den dyre skrivning begynder. Bliver artiklen kasseret, stopper auto-youtube kørslen (ingen ny kandidat, intet nyt spørgsmål); næste time prøver igen. Afvisninger FØR skrivningen (sprog, relevans, faktaark) prøver stadig næste kandidat.
+- **Ærligt forbehold:** A fanger kun delspørgsmål helt uden ord i fakta. CMMC-fejlen (#670, "timeline and phase-in") var måske ikke fanget (fakta nævner sandsynligvis "phase"). B er det sikre loft: højst én betalt fejl pr. time.
+- Selvtest: `test-kildetjek.mjs` Alle OK (3 nye dækningstest), `test-skriveregler.mjs` 66 OK. Bekræftes på robottens næste kørsler og i morgenrapporten.
+- Lære: 3 outline-test i `test-kildetjek.mjs` havde fejlet siden spørgsmålsreglen 15/10 - jeg kørte kun `test-skriveregler.mjs`. Opskrift: kør ALLE `test-*.mjs` før push.
+- Lære: første dækningsregel var for streng; den blev fanget, fordi den blev målt på gemte søgninger FØR brug.
+
 
 ### 16/10-2026 kl. 10:37 - techfeedwatch: første døgn med starteren og de nye regler (målt)
 - **Starteren virker:** robotten startet 23 af 24 timer (#670-#692, alle "workflow_dispatch" kl. xx:17:02-04), omskrivningen kl. 08:37 (#3) og morgenrapporten kl. 09:37 (#2, kom frem). Før: 4-5 af 24.
