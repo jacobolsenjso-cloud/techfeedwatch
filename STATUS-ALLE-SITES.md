@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 127** — brug kun v127). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 128** — brug kun v128). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 127** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (16/10-2026 kl. 12:37, live `1ed19d65`): LIVE. Faktaboks "Key facts" virker i robotten** (prøve #13: 3 fakta med de rigtige udgivere som links). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A (kører, logger nu altid `DAEKNING`) og B (ikke udløst endnu - kun når en skrevet artikel kasseres). Kun grenen `main` findes nu på GitHub. **Næste:** morgentjek 17/10 kl. 09:50 (pris, `DAEKNING`/`STOP`, første faktabokse live); punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning).
+**Seneste for techfeedwatch (16/10-2026 kl. 13:25, live `603fecda`): LIVE. 8 nye egne værktøjer** (krypto-DCA med rigtige kurser, krypto-gevinst FIFO, gebyr/spread, AI-abonnement vs API, lokal AI, GPU-hotspot, lån, inflation) - nu 51 værktøjer. Værktøjsboksen i artikler vises kun, når værktøjet passer til spørgsmålet (9 af 436). Faktaboks "Key facts" på nye/omskrevne artikler. Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B. **Næste:** morgentjek 17/10 kl. 09:50 (pris, `DAEKNING`/`STOP`, faktabokse); kurserne til DCA skal opdateres hver måned (`node hent-kurser.mjs`, endnu manuelt); punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning).
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 16/10-2026 kl. 13:25 - techfeedwatch: præcis værktøjsboks + 8 nye værktøjer LIVE (trin 4 del 2)
+- **Værktøjsboksen efter spørgsmål (`43355c38`, Jacobs ok):** før valgt efter mærke - 149 af 436 artikler viste "Password Generator" uden grund, 82 intet. Nu `src/lib/vaerktoej.mjs`: kun når titel/spørgsmål handler om det, værktøjet løser; ellers ingen boks. Fejl fanget ved måling: "SEC ... Wall Street Tokens" (krypto) fik AI-token-beregneren - rettet + test. Nye/omskrevne artikler får én brugssætning med link før kildelisten (log `VAERKTOEJ:`). Set live: Nike-artiklen uden boks, indeksfonde-artiklen med.
+- **8 nye værktøjer (`603fecda`, Jacob: "alle skal bygges og lægges live"):** Crypto DCA Calculator, Crypto Gains & Tax Estimator (FIFO), Trading Fee & Spread Calculator, AI Subscription vs API Cost Calculator, Can My Computer Run This AI Model?, GPU Temperature & Hotspot Checker, Loan Payment Calculator, Inflation & Purchasing Power Calculator. Nu 51 værktøjer.
+- **Tal og kilder:** DCA bruger rigtige månedlige slutkurser fra Binance (BTC/ETH fra 2017-08, SOL fra 2020-08, til 2026-09) i `src/data/kurser.json` (`node hent-kurser.mjs`). AI-priserne flyttet til `src/lib/ai-priser.mjs`, så token-beregneren og abonnement-værktøjet viser samme tal; abonnementer læst på claude.com (Pro $20) og gemini.google (AI Pro ## 7. Dagbog (nyeste øverst)
+9.99) 16/10 - ChatGPT Plus udeladt, fordi siden ikke viste prisen som tekst (hellere intet tal end et gæt). GPU-grænser med kilder (Tom's Hardware, TechPowerUp, AMD). Skat, gebyrer og inflation uden indbyggede satser - de skifter og afhænger af land; brugeren indtaster sine egne.
+- **Tjek før live:** al regnelogik i `src/lib/beregn.mjs` med 33 håndregnede selvtests (`test-beregn.mjs`); DCA også tjekket uafhængigt (11.133,09 begge veje); FIFO, gebyr, AI-tokens, lån (391,32 = standardtabel) regnet efter i hånden; alle 8 testet i Chrome (lokalt og live), 0 konsolfejl, desktop + mobil 390 px uden vandret rulning; `audit-site` 0 fejl. Fundet og rettet undervejs: GPU-teksten sagde "Normal" og "throttling" i samme sætning; en kluntet overskrift på lokal-AI-siden.
+- **Kobling til artikler:** 9 af 436 artikler får nu et passende værktøj (før det tilfældige: 354 med boks). De fleste titler handler om nyheder, ikke om noget læseren kan regne ud - værktøjerne skal især vinde på egne søgninger.
+- Lære: `tools.ts` har Windows-linjeskift - mit indsæt-script fejlede første gang på `\n];`. Samme fejl som faktaboks-prøven tidligere i dag (2. gang) -> opskrift i HOVEDPROMPT: alle regex/indexOf på repo-filer skal tåle `\r?\n`.
+
 
 ### 16/10-2026 kl. 12:37 - techfeedwatch: prøve af dagens rettelser (#13) + gamle grene slettet
 - **Prøveartikel #13 (Jacob: "vi tester alle de nye rettelser"):** robotten på main uden dagsloft, gemt på grenen `udkast-13`. Artikel skrevet og godkendt: `FAKTABOKS: 3 fakta` (links til YouTube, Music Business Worldwide, PCMag = de udgivere, sætningerne nævner), 1 tvunget link fanget og rettet, 0 AI-vendinger, redaktørtjek "alle 6 delspørgsmål besvaret", indholdstjek 0 fejl. Faktaboksen set på den rigtige prøveartikel (lokal visning). Pris ca. 0,30 USD.
