@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-16T00:28:00.917Z",
-  "articleCount": 435,
+  "updated": "2026-10-16T03:27:40.283Z",
+  "articleCount": 436,
   "lastArticle": {
-    "at": "2026-10-16T00:28:00.917Z",
+    "at": "2026-10-16T03:27:40.283Z",
     "slugs": [
-      "what-happens-when-a-cybersecurity-incident-is-detected"
+      "is-quantum-computing-possible-in-practical-systems"
     ]
   },
   "lastLinkRepair": {

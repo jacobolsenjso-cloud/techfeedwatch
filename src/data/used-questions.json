@@ -1093,5 +1093,10 @@
   "q": "what happens when a cybersecurity incident is detected",
   "tag": "Cybersecurity",
   "dato": "2026-10-16"
+ },
+ {
+  "q": "is quantum computing possible",
+  "tag": "Quantum Computing",
+  "dato": "2026-10-16"
  }
 ]
