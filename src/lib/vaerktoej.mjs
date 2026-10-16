@@ -33,11 +33,27 @@ export const VAERKTOEJ = {
   'gpu-hotspot-checker': { titel: 'GPU Temperature & Hotspot Checker', beskrivelse: 'Is the gap between your GPU temperature and hotspot normal?', brug: ['Check your own readings with our [GPU Temperature & Hotspot Checker](/tools/gpu-hotspot-checker).'] },
   'loan-calculator': { titel: 'Loan Payment Calculator', beskrivelse: 'Monthly payment, total interest and total cost of a fixed-rate loan.', brug: ['Work out the payment on a loan of your own with our [Loan Payment Calculator](/tools/loan-calculator).'] },
   'inflation-calculator': { titel: 'Inflation & Purchasing Power Calculator', beskrivelse: 'What things will cost in the future, and what your money will really be worth.', brug: ['See what inflation does to your own money with our [Inflation & Purchasing Power Calculator](/tools/inflation-calculator).'] },
+  // Hold 2 og 3 (16/10 aften)
+  'merge-pdf': { titel: 'Merge PDF Files', beskrivelse: 'Combine several PDFs into one, right in your browser.', brug: ['Combine your own documents with our [Merge PDF Files](/tools/merge-pdf) tool; nothing is uploaded.'] },
+  'split-pdf': { titel: 'Split PDF', beskrivelse: 'Take pages out of a PDF without uploading it.', brug: ['Take pages out of your own PDF with our [Split PDF](/tools/split-pdf) tool; nothing is uploaded.'] },
+  'video-file-size-calculator': { titel: 'Video File Size Calculator', beskrivelse: 'How big a video file will be from its length and bitrate.', brug: ['Work out the size of your own video with our [Video File Size Calculator](/tools/video-file-size-calculator).'] },
+  'upload-time-calculator': { titel: 'Upload & Download Time Calculator', beskrivelse: 'How long a file takes to upload or download at your speed.', brug: ['See how long your own upload will take with our [Upload & Download Time Calculator](/tools/upload-time-calculator).'] },
+  'pc-power-cost-calculator': { titel: 'PC Power Cost Calculator', beskrivelse: 'What your computer costs to run per month and year.', brug: ['Work out what your own machine costs to run with our [PC Power Cost Calculator](/tools/pc-power-cost-calculator).'] },
+  'storage-calculator': { titel: 'Storage Space Calculator', beskrivelse: 'How many photos, videos or songs fit on a drive.', brug: ['See what fits on your own drive with our [Storage Space Calculator](/tools/storage-calculator).'] },
+  'quantum-speedup-calculator': { titel: 'Quantum Speed-up Calculator', beskrivelse: 'How qubits and Grover’s search compare with an ordinary computer.', brug: ['Try the numbers yourself in our [Quantum Speed-up Calculator](/tools/quantum-speedup-calculator).'] },
 };
 
 // Ordet skal stå i artiklens spørgsmål eller titel (ikke bare i brødteksten), så værktøjet
 // svarer på det, artiklen handler om.
 const REGLER = [
+  // Hold 2 og 3 (16/10 aften)
+  ['merge-pdf', /\b(merge|combine|join)\b.{0,20}\bpdfs?\b|\bpdfs?\b.{0,20}\b(merge|merging|combine)\b/i],
+  ['split-pdf', /\b(split|extract)\b.{0,20}\bpdfs?\b|\bpdfs?\b.{0,20}\b(split|splitting)\b/i],
+  ['video-file-size-calculator', /\b(video (file )?size|bitrate|how much (storage|space) .{0,20}video)\b/i],
+  ['upload-time-calculator', /\b(upload|download) (speed|time)s?\b|\bhow long .{0,20}\b(upload|download)\b/i],
+  ['pc-power-cost-calculator', /\b(power|electricity|energy) (consumption|cost|bill|usage|draw)\b.{0,30}\b(pc|computer|gpu|gaming|laptop)\b|\b(pc|computer|gpu|gaming|laptop)s?\b.{0,30}\b(power|electricity|energy) (consumption|cost|bill|usage|draw)\b|\bwatts?\b.{0,20}\b(pc|computer|gpu)\b/i],
+  ['storage-calculator', /\b(storage space|hard drives?|ssds?|terabytes?|how much storage)\b/i],
+  ['quantum-speedup-calculator', /\b(quantum (computers?|computing|speed.?up|advantage|supremacy)|qubits?|grover)\b/i],
   // Nye 16/10-2026: mest specifikke først
   ['ai-subscription-vs-api', /\b(chatgpt plus|claude pro|gemini (advanced|pro)|ai subscriptions?)\b|\b(chatgpt|claude|gemini)\b.{0,30}\b(worth (it|paying)|subscription)\b/i],
   ['local-ai-calculator', /\b(run(ning)?|host(ing)?|install(ing)?)\b.{0,30}\b(ai|llms?|models?|llama|deepseek|mistral|qwen)\b.{0,30}\b(locally|offline|on (my|your|a) (pc|computer|laptop|mac))\b|\blocal (llms?|ai models?)\b|\b(vram|quantiz)/i],

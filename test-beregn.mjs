@@ -1,6 +1,6 @@
 // Selvtest af src/lib/beregn.mjs (16/10-2026). Kør: node test-beregn.mjs - alle linjer OK, ellers exitkode 1.
 // Forventede tal er regnet i hånden (står i kommentaren), ikke kopieret fra koden.
-import { dca, fifo, gebyrer, aiPris, lokalAI, gpuTjek, laan, inflation } from './src/lib/beregn.mjs';
+import { dca, fifo, gebyrer, aiPris, lokalAI, gpuTjek, laan, inflation, videoStoerrelse, overfoerselsTid, tidTekst, stroem, lagerplads, kvante } from './src/lib/beregn.mjs';
 let fejl = 0;
 const t = (navn, faktisk, forventet, tol = 0.01) => {
   const ok = typeof forventet === 'number' ? Math.abs(faktisk - forventet) <= tol : JSON.stringify(faktisk) === JSON.stringify(forventet);
@@ -42,5 +42,23 @@ t('lån: 0 % rente', laan({ hovedstol: 1200, rentePct: 0, aar: 1 }).ydelse, 100)
 // Inflation: 1000 ved 3 % i 10 år -> 1343,92; købekraft 744,09
 const inf = inflation({ beloeb: 1000, inflationPct: 3, aar: 10 });
 t('inflation: fremtidig pris', inf.fremtidigPris, 1343.92); t('inflation: købekraft', inf.koebekraft, 744.09);
+// Video: 8 Mbit/s + 384 kbit/s i 10 min -> 8,384 x 600 / 8 = 628,8 MB
+const v = videoStoerrelse({ videoMbps: 8, lydKbps: 384, minutter: 10 });
+t('video: MB', v.mb, 628.8); t('video: MB pr. minut', v.mbPrMinut, 62.88);
+// Upload: 1000 MB ved 100 Mbit/s, 100 % -> 80 s; ved 80 % -> 100 s
+t('upload: 80 s', overfoerselsTid({ mb: 1000, mbps: 100 }).sekunder, 80);
+t('upload: 80 % effektivitet', overfoerselsTid({ mb: 1000, mbps: 100, effektivitetPct: 80 }).sekunder, 100);
+t('upload: ingen fart = null', overfoerselsTid({ mb: 1, mbps: 0 }), null);
+t('tid: 3725 s', tidTekst(3725), '1 h 2 min'); t('tid: 95 s', tidTekst(95), '1 min 35 s');
+// Strøm: 300 W x 4 t x 365 = 438 kWh; x 2,5 = 1095
+const st = stroem({ watt: 300, timerPrDag: 4, prisPrKwh: 2.5 });
+t('strøm: kWh', st.kwh, 438); t('strøm: pris', st.pris, 1095);
+// Lager: 1000 GB / 5 MB = 200.000 filer; 1 TB = 931,32 GiB
+const lg = lagerplads({ diskGB: 1000, filMB: 5 });
+t('lager: antal', lg.antal, 200000); t('lager: Windows-visning', lg.windowsGB, 931.32);
+t('lager: 10 % reserve', lagerplads({ diskGB: 1000, filMB: 5, reservePct: 10 }).antal, 180000);
+// Kvante: 10 qubits = 1024 tilstande; N = 1.000.000 -> klassisk 500.000, Grover ~785,4
+const kv = kvante({ qubits: 10, muligheder: 1e6 });
+t('kvante: tilstande', kv.tilstande, 1024); t('kvante: klassisk', kv.klassisk, 500000); t('kvante: Grover', kv.grover, 785.4, 0.05);
 console.log(fejl ? `\n${fejl} FEJL` : '\nAlle OK');
 process.exit(fejl ? 1 : 0);

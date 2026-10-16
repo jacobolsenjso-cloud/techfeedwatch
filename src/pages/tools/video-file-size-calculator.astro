@@ -1,0 +1,58 @@
+---
+// Videofilens størrelse (16/10-2026). Forvalg = YouTubes egne anbefalede upload-bitrates (SDR),
+// læst på support.google.com/youtube/answer/1722171 den 16/10-2026. Logik: src/lib/beregn.mjs.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Video File Size Calculator';
+const description = 'Estimate how big a video file will be from its length, resolution and bitrate, with YouTube’s recommended upload bitrates as presets.';
+const PRESETS = [
+  { navn: '2160p (4K), 24-30 fps', mbps: 40 }, { navn: '2160p (4K), 48-60 fps', mbps: 60 },
+  { navn: '1440p, 24-30 fps', mbps: 16 }, { navn: '1440p, 48-60 fps', mbps: 24 },
+  { navn: '1080p, 24-30 fps', mbps: 8 }, { navn: '1080p, 48-60 fps', mbps: 12 },
+  { navn: '720p, 24-30 fps', mbps: 5 }, { navn: '720p, 48-60 fps', mbps: 7.5 },
+  { navn: '480p, 24-30 fps', mbps: 2.5 }, { navn: '360p, 24-30 fps', mbps: 1 },
+];
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🎞️ Video File Size Calculator</h1>
+      <p>A video's size is its bitrate (how much data each second uses) times its length. Pick a quality or type your own bitrate to see how much space the file needs.</p>
+    </div>
+    <div class="bt-grid">
+      <div class="bt-field full"><label for="vfPreset">Quality preset</label>
+        <select id="vfPreset" class="bt-input">{PRESETS.map((p) => (<option value={p.mbps} selected={p.mbps === 8}>{p.navn}: {p.mbps} Mbps</option>))}<option value="custom">My own bitrate</option></select></div>
+      <div class="bt-field"><label for="vfMbps">Video bitrate (Mbps)</label><input type="number" id="vfMbps" class="bt-input" value="8" min="0" step="any" /></div>
+      <div class="bt-field"><label for="vfAudio">Audio bitrate (kbps)</label><input type="number" id="vfAudio" class="bt-input" value="384" min="0" step="any" /><span class="bt-hint">YouTube recommends 384 kbps for stereo.</span></div>
+      <div class="bt-field"><label for="vfMin">Length (minutes)</label><input type="number" id="vfMin" class="bt-input" value="10" min="0" step="any" /></div>
+    </div>
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">File size</div><div class="bt-value" id="vfSize">-</div></div>
+      <div class="bt-card"><div class="bt-label">Per minute</div><div class="bt-value" id="vfMinute">-</div></div>
+      <div class="bt-card"><div class="bt-label">Upload time</div><div class="bt-value" style="font-size:1.05rem"><a href="/tools/upload-time-calculator" style="color:var(--teal-text)">Work it out →</a></div></div>
+    </div>
+    <p class="bt-sources">Presets: YouTube's recommended upload bitrates for standard (SDR) video, from <a href="https://support.google.com/youtube/answer/1722171" rel="noopener" target="_blank">YouTube Help</a>, checked October 16, 2026. For 4K the tool uses the middle of YouTube's ranges (35-45 and 53-68 Mbps).</p>
+    <div class="bt-info">
+      <h2>Why bitrate decides the size</h2>
+      <p>Resolution alone does not set the file size; the bitrate does. The same 1080p clip can be 60 MB per minute or 600 MB per minute depending on how it was exported. That is why the tool asks for the bitrate and only uses the resolution to suggest one.</p>
+      <h2>Megabytes and megabits</h2>
+      <p>Bitrates are in megabits per second (Mb), file sizes in megabytes (MB). There are eight bits in a byte, so 8 Mbps fills one megabyte each second. The tool counts 1 GB as 1,000 MB, the way disk and camera makers do; Windows uses 1,024 and shows slightly smaller numbers.</p>
+      <h2>Limits</h2>
+      <p>Most cameras and editors use a variable bitrate, so real files land somewhat above or below the estimate. Containers add a little overhead, typically a few percent.</p>
+    </div>
+  </div>
+  <script>
+    import { videoStoerrelse } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const str = (mb: number) => (mb >= 1000 ? (mb / 1000).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' GB' : mb.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' MB');
+    const calc = () => {
+      const r = videoStoerrelse({ videoMbps: Number($('vfMbps').value), lydKbps: Number($('vfAudio').value), minutter: Number($('vfMin').value) });
+      $('vfSize').textContent = str(r.mb); $('vfMinute').textContent = str(r.mbPrMinut);
+    };
+    $('vfPreset').addEventListener('input', () => { if ($('vfPreset').value !== 'custom') $('vfMbps').value = $('vfPreset').value; calc(); });
+    $('vfMbps').addEventListener('input', () => { $('vfPreset').value = 'custom'; calc(); });
+    ['vfAudio', 'vfMin'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

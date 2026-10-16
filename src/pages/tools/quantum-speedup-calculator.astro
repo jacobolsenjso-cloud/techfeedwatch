@@ -1,0 +1,48 @@
+---
+// Kvante-regnestykke (16/10-2026): 2^n tilstande og Grovers kvadratrod-fordel ved søgning.
+// Kun ren matematik - ingen påstande om, hvornår kvantecomputere slår almindelige i praksis.
+// Logik: src/lib/beregn.mjs (kvante), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Quantum Speed-up Calculator';
+const description = 'See how fast a quantum computer’s state space grows with each qubit, and how many steps Grover’s search algorithm needs compared with an ordinary computer.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>⚛️ Quantum Speed-up Calculator</h1>
+      <p>Two numbers explain most headlines about quantum computing: how many states n qubits can describe, and how much faster a quantum search is. Change the inputs and watch them grow.</p>
+    </div>
+    <div class="bt-grid">
+      <div class="bt-field"><label for="qbN">Number of qubits</label><input type="number" id="qbN" class="bt-input" value="50" min="1" max="1000" step="1" /></div>
+      <div class="bt-field"><label for="qbSearch">Possibilities to search through</label><input type="number" id="qbSearch" class="bt-input" value="1000000000000" min="1" step="any" /><span class="bt-hint">For example, every key of a lock, or every entry in an unsorted list.</span></div>
+    </div>
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">States the qubits can describe (2^n)</div><div class="bt-value" id="qbStates">-</div></div>
+      <div class="bt-card"><div class="bt-label">Ordinary computer, average tries</div><div class="bt-value" id="qbClassic">-</div></div>
+      <div class="bt-card"><div class="bt-label">Grover's algorithm, about</div><div class="bt-value" id="qbGrover">-</div></div>
+      <div class="bt-card full"><div class="bt-label">Fewer steps</div><div class="bt-value" id="qbFactor">-</div></div>
+    </div>
+    <div class="bt-info">
+      <h2>What the numbers mean</h2>
+      <p>Each extra qubit doubles the number of states a quantum computer can work with at once: 10 qubits describe 1,024 states, 50 describe over a quadrillion. That doubling is why a few hundred good qubits are a big deal.</p>
+      <p>For searching an unsorted list, an ordinary computer has to check on average half of the entries. Grover's algorithm needs about (π/4) × √N steps, the square root of the size. For a trillion possibilities that is roughly 785,000 steps instead of 500 billion.</p>
+      <h2>What the numbers do not mean</h2>
+      <p>Describing many states is not the same as reading out many answers: a measurement gives one result, and algorithms have to be designed to make the right one likely. Each quantum step is also far slower than an ordinary computer's step, and today's qubits make errors that need many extra qubits to correct. So a smaller step count does not yet mean a faster answer in practice; it shows how the advantage grows as problems get bigger.</p>
+    </div>
+  </div>
+  <script>
+    import { kvante } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const stort = (x: number) => (x < 1e15 ? Math.round(x).toLocaleString('en-US') : x.toExponential(3).replace('e+', ' × 10^'));
+    const calc = () => {
+      const r = kvante({ qubits: Number($('qbN').value), muligheder: Number($('qbSearch').value) });
+      $('qbStates').textContent = Number.isFinite(r.tilstande) ? stort(r.tilstande) : 'more than this page can display';
+      $('qbClassic').textContent = stort(r.klassisk); $('qbGrover').textContent = stort(r.grover);
+      $('qbFactor').textContent = r.faktor >= 1 ? `about ${stort(r.faktor)} times` : 'none at this size';
+    };
+    ['qbN', 'qbSearch'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

@@ -1,0 +1,48 @@
+---
+// Upload/download-tid (16/10-2026). Logik: src/lib/beregn.mjs (overfoerselsTid), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Upload & Download Time Calculator';
+const description = 'How long will it take to upload or download a file? Enter the size and your connection speed to get a realistic estimate.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>⏱️ Upload & Download Time Calculator</h1>
+      <p>Enter the file size and your connection speed. Use your upload speed for uploads and download speed for downloads; on most home connections they are very different.</p>
+    </div>
+    <div class="bt-grid">
+      <div class="bt-field"><label for="utSize">File size</label><input type="number" id="utSize" class="bt-input" value="2" min="0" step="any" /></div>
+      <div class="bt-field"><label for="utUnit">Unit</label><select id="utUnit" class="bt-input"><option value="1">MB</option><option value="1000" selected>GB</option><option value="1000000">TB</option></select></div>
+      <div class="bt-field"><label for="utSpeed">Connection speed (Mbps)</label><input type="number" id="utSpeed" class="bt-input" value="50" min="0" step="any" /><span class="bt-hint">The number from a speed test or your internet plan.</span></div>
+      <div class="bt-field"><label for="utEff">Real-world efficiency (%)</label><input type="number" id="utEff" class="bt-input" value="85" min="1" max="100" step="any" /><span class="bt-hint">Connections rarely run at full speed. 85% is a fair everyday guess.</span></div>
+    </div>
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Estimated time</div><div class="bt-value" id="utTime">-</div></div>
+      <div class="bt-card"><div class="bt-label">At full advertised speed</div><div class="bt-value" id="utBest">-</div></div>
+      <div class="bt-card"><div class="bt-label">Data per hour at this speed</div><div class="bt-value" id="utHour">-</div></div>
+    </div>
+    <div class="bt-info">
+      <h2>How it is calculated</h2>
+      <p>File sizes are in bytes and connection speeds in bits; one byte is eight bits. A 1 GB file is 8,000 megabits, so at 50 Mbps it takes 160 seconds at full speed. The efficiency setting allows for protocol overhead, Wi-Fi and other traffic on the line.</p>
+      <h2>Why uploads feel slow</h2>
+      <p>Many home connections give far less upload than download speed, sometimes a tenth. A video that downloads in a minute can take ten to upload, which is why the speed you enter should match the direction.</p>
+      <p>Not sure how big your video will be? Start with the <a href="/tools/video-file-size-calculator">Video File Size Calculator</a>.</p>
+    </div>
+  </div>
+  <script>
+    import { overfoerselsTid, tidTekst } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const calc = () => {
+      const mb = Number($('utSize').value) * Number($('utUnit').value);
+      const r = overfoerselsTid({ mb, mbps: Number($('utSpeed').value), effektivitetPct: Number($('utEff').value) });
+      const b = overfoerselsTid({ mb, mbps: Number($('utSpeed').value) });
+      $('utTime').textContent = tidTekst(r?.sekunder ?? null); $('utBest').textContent = tidTekst(b?.sekunder ?? null);
+      const gbPrTime = (Number($('utSpeed').value) * (Number($('utEff').value) / 100) * 3600) / 8 / 1000;
+      $('utHour').textContent = gbPrTime.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' GB';
+    };
+    ['utSize', 'utUnit', 'utSpeed', 'utEff'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

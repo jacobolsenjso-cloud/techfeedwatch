@@ -1,0 +1,92 @@
+---
+// Sammenlæg PDF'er (16/10-2026). pdf-lib i browseren - filerne uploades ikke. Logik: src/lib/pdf-vaerktoej.mjs.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Merge PDF Files';
+const description = 'Combine several PDF files into one, in the order you choose. Runs entirely in your browser, so your documents are never uploaded.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>📑 Merge PDF Files</h1>
+      <p>Pick two or more PDF files, put them in the right order and download one combined PDF. Everything happens on your own device; nothing is uploaded.</p>
+    </div>
+
+    <div class="bt-field full">
+      <label for="mpFiles">PDF files</label>
+      <input type="file" id="mpFiles" class="bt-input" accept="application/pdf,.pdf" multiple />
+      <span class="bt-hint">You can add more files later; they are added to the end of the list.</span>
+    </div>
+
+    <div class="bt-rows" id="mpList" style="margin-top:16px"></div>
+    <p style="margin-top:16px"><button type="button" class="bt-btn" id="mpGo" disabled>Merge PDFs</button></p>
+    <div class="bt-card full" id="mpOut" hidden><div class="bt-label">Result</div><div class="bt-verdict" id="mpMsg"></div><p id="mpLinkWrap" style="margin:10px 0 0"></p></div>
+
+    <div class="bt-info">
+      <h2>Is it safe?</h2>
+      <p>Yes, in the sense that matters most: the files never leave your computer. The page loads a PDF library into your browser and does the merging there, so there is no server that could keep a copy. You can even disconnect from the internet after the page has loaded and it still works.</p>
+      <h2>What is kept</h2>
+      <p>Pages are copied exactly, including text, images and links on the page. Bookmarks (the outline in the sidebar of some PDF readers) and form fields that span documents may not carry over, because they belong to the original file rather than to a page.</p>
+      <h2>Limits</h2>
+      <p>Password-protected PDFs cannot be merged until the protection is removed in a program you trust. Very large files are limited by your device's memory, not by this site.</p>
+      <p>Need the opposite? Use <a href="/tools/split-pdf">Split PDF</a> to take pages out of a document.</p>
+    </div>
+  </div>
+
+  <script>
+    import { flet, sideAntal } from '../../lib/pdf-vaerktoej.mjs';
+    type Fil = { navn: string; data: ArrayBuffer; sider: number | null };
+    const filer: Fil[] = [];
+    const list = document.getElementById('mpList')!;
+    const go = document.getElementById('mpGo') as HTMLButtonElement;
+    const out = document.getElementById('mpOut')!;
+    const msg = document.getElementById('mpMsg')!;
+    const wrap = document.getElementById('mpLinkWrap')!;
+    let sidsteUrl = '';
+    const tegn = () => {
+      list.innerHTML = '';
+      filer.forEach((f, i) => {
+        const r = document.createElement('div');
+        r.className = 'bt-card';
+        r.style.cssText = 'display:flex;align-items:center;gap:10px;padding:10px 14px';
+        const n = document.createElement('div'); n.style.cssText = 'flex:1;min-width:0;overflow-wrap:anywhere'; n.textContent = `${i + 1}. ${f.navn}` + (f.sider == null ? ' (could not be read)' : ` - ${f.sider} page${f.sider === 1 ? '' : 's'}`);
+        const knap = (t: string, a: string, fn: () => void) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'bt-btn'; b.style.padding = '6px 10px'; b.textContent = t; b.setAttribute('aria-label', a); b.addEventListener('click', fn); return b; };
+        r.append(n,
+          knap('↑', 'Move up', () => { if (i > 0) { [filer[i - 1], filer[i]] = [filer[i], filer[i - 1]]; tegn(); } }),
+          knap('↓', 'Move down', () => { if (i < filer.length - 1) { [filer[i + 1], filer[i]] = [filer[i], filer[i + 1]]; tegn(); } }),
+          knap('×', 'Remove', () => { filer.splice(i, 1); tegn(); }));
+        list.appendChild(r);
+      });
+      go.disabled = filer.filter((f) => f.sider != null).length < 2;
+    };
+    (document.getElementById('mpFiles') as HTMLInputElement).addEventListener('change', async (e) => {
+      const input = e.target as HTMLInputElement;
+      for (const fil of Array.from(input.files || [])) {
+        const data = await fil.arrayBuffer();
+        let sider: number | null = null;
+        try { sider = await sideAntal(data.slice(0)); } catch { sider = null; }
+        filer.push({ navn: fil.name, data, sider });
+      }
+      input.value = '';
+      tegn();
+    });
+    go.addEventListener('click', async () => {
+      go.disabled = true; out.hidden = false; msg.className = 'bt-verdict'; msg.textContent = 'Merging…'; wrap.innerHTML = '';
+      try {
+        const brug = filer.filter((f) => f.sider != null);
+        const bytes = await flet(brug.map((f) => f.data.slice(0)));
+        if (sidsteUrl) URL.revokeObjectURL(sidsteUrl);
+        sidsteUrl = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+        const a = document.createElement('a'); a.href = sidsteUrl; a.download = 'merged.pdf'; a.className = 'bt-btn'; a.style.display = 'inline-block'; a.style.textDecoration = 'none'; a.textContent = 'Download merged.pdf';
+        wrap.appendChild(a);
+        msg.className = 'bt-verdict bt-pos';
+        msg.textContent = `Done: ${brug.reduce((s, f) => s + (f.sider || 0), 0)} pages from ${brug.length} files (${bytes.length < 1048576 ? Math.max(1, Math.round(bytes.length / 1024)) + ' KB' : (bytes.length / 1048576).toFixed(2) + ' MB'}).`;
+      } catch (err) {
+        msg.className = 'bt-verdict bt-neg';
+        msg.textContent = 'Could not merge. If one of the files is password-protected, remove the protection first. (' + String((err as Error).message || err).slice(0, 120) + ')';
+      }
+      go.disabled = false;
+    });
+  </script>
+</MainLayout>

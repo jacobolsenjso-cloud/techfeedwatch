@@ -1,0 +1,46 @@
+---
+// Strømforbrug for en computer (16/10-2026). Ingen indbygget strømpris (den skifter og afhænger af
+// land); eksemplerne på watt er groft angivet som eksempler, ikke målinger. Logik: src/lib/beregn.mjs.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'PC Power Cost Calculator';
+const description = 'What does your computer cost to run? Enter its power draw, hours of use and your electricity price to see the energy use and cost per month and year.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>🔌 PC Power Cost Calculator</h1>
+      <p>Enter how many watts your computer draws, how many hours a day it runs and what you pay per kilowatt-hour. The result is in the same currency as your price.</p>
+    </div>
+    <div class="bt-grid">
+      <div class="bt-field"><label for="pcWatt">Power draw (watts)</label><input type="number" id="pcWatt" class="bt-input" value="300" min="0" step="any" /><span class="bt-hint">Best measured with a plug-in power meter.</span></div>
+      <div class="bt-field"><label for="pcHours">Hours per day</label><input type="number" id="pcHours" class="bt-input" value="4" min="0" max="24" step="any" /></div>
+      <div class="bt-field"><label for="pcPrice">Electricity price per kWh</label><input type="number" id="pcPrice" class="bt-input" value="0.30" min="0" step="any" /><span class="bt-hint">From your electricity bill, all taxes included.</span></div>
+    </div>
+    <div class="bt-results">
+      <div class="bt-card"><div class="bt-label">Cost per year</div><div class="bt-value" id="pcYear">-</div></div>
+      <div class="bt-card"><div class="bt-label">Cost per month</div><div class="bt-value" id="pcMonth">-</div></div>
+      <div class="bt-card full"><div class="bt-label">Energy per year</div><div class="bt-value" id="pcKwh">-</div></div>
+    </div>
+    <div class="bt-info">
+      <h2>How it is calculated</h2>
+      <p>Watts times hours gives watt-hours; divide by 1,000 for kilowatt-hours, the unit on your bill. A machine drawing 300 W for four hours a day uses 1.2 kWh a day, or 438 kWh a year.</p>
+      <h2>Finding the right wattage</h2>
+      <p>The number on the power supply is its maximum, not what the computer uses. Real draw varies a lot: a laptop doing office work may use a few tens of watts, while a gaming PC under heavy load can draw several hundred. A plug-in power meter shows the real figure; measure both idle and under your normal load, and use an average.</p>
+      <h2>Limits</h2>
+      <p>The monitor, speakers and other devices are not included unless you add their watts. Sleep and standby still use a little power, which a full-day estimate would need to include.</p>
+    </div>
+  </div>
+  <script>
+    import { stroem } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const fmt = (n: number) => n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const calc = () => {
+      const r = stroem({ watt: Number($('pcWatt').value), timerPrDag: Number($('pcHours').value), prisPrKwh: Number($('pcPrice').value) });
+      $('pcYear').textContent = fmt(r.pris); $('pcMonth').textContent = fmt(r.prisPrMd); $('pcKwh').textContent = r.kwh.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' kWh';
+    };
+    ['pcWatt', 'pcHours', 'pcPrice'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>

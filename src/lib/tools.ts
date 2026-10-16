@@ -551,6 +551,78 @@ export const TOOLS: Tool[] = [
     category: 'developer',
     updated: '2026-10-16',
   },
+
+  // ---------- Nye 16/10-2026 aften (hold 2 og 3) ----------
+  {
+    slug: 'merge-pdf',
+    icon: '📑',
+    title: 'Merge PDF Files',
+    short: 'Merge PDF',
+    description:
+      'Combine several PDF files into one, in the order you choose. Runs in your browser; nothing is uploaded.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'split-pdf',
+    icon: '✂️',
+    title: 'Split PDF',
+    short: 'Split PDF',
+    description:
+      'Save a range of pages as a new PDF, or split every page into its own file. Nothing is uploaded.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'video-file-size-calculator',
+    icon: '🎞️',
+    title: 'Video File Size Calculator',
+    short: 'Video File Size',
+    description:
+      'How big a video file will be from its length and bitrate, with YouTube’s recommended upload bitrates as presets.',
+    category: 'media',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'upload-time-calculator',
+    icon: '⏱️',
+    title: 'Upload & Download Time Calculator',
+    short: 'Upload Time',
+    description:
+      'How long a file takes to upload or download at your connection speed, with a realistic efficiency setting.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'pc-power-cost-calculator',
+    icon: '🔌',
+    title: 'PC Power Cost Calculator',
+    short: 'PC Power Cost',
+    description:
+      'Energy use and running cost of a computer per month and year, from its wattage and your electricity price.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'storage-calculator',
+    icon: '💾',
+    title: 'Storage Space Calculator',
+    short: 'Storage Space',
+    description:
+      'How many photos, videos or songs fit on a drive or card, and why 1 TB shows as 931 GB in Windows.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
+  {
+    slug: 'quantum-speedup-calculator',
+    icon: '⚛️',
+    title: 'Quantum Speed-up Calculator',
+    short: 'Quantum Speed-up',
+    description:
+      'How the state space grows with each qubit, and how many steps Grover’s search needs versus an ordinary computer.',
+    category: 'developer',
+    updated: '2026-10-16',
+  },
 ];
 
 // ---------- Opslag ----------

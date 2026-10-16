@@ -1,0 +1,74 @@
+---
+// Opdel PDF (16/10-2026). pdf-lib i browseren - filen uploades ikke. Logik: src/lib/pdf-vaerktoej.mjs.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Split PDF';
+const description = 'Take pages out of a PDF: save a range as a new file, or split every page into its own PDF. Runs entirely in your browser, nothing is uploaded.';
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>✂️ Split PDF</h1>
+      <p>Choose a PDF, then say which pages you want. Each part you list becomes its own file. Everything happens on your own device.</p>
+    </div>
+
+    <div class="bt-grid">
+      <div class="bt-field full"><label for="spFile">PDF file</label><input type="file" id="spFile" class="bt-input" accept="application/pdf,.pdf" /><span class="bt-hint" id="spInfo">No file chosen.</span></div>
+      <div class="bt-field full"><label for="spRanges">Pages to extract</label><input type="text" id="spRanges" class="bt-input" value="1-3, 5" /><span class="bt-hint">Separate parts with commas. "1-3, 5" gives two files: pages 1 to 3, and page 5. "8-" means page 8 to the end.</span></div>
+      <div class="bt-field full"><label><input type="checkbox" id="spEach" /> Split every page into its own file instead</label></div>
+    </div>
+    <p style="margin-top:16px"><button type="button" class="bt-btn" id="spGo" disabled>Split PDF</button></p>
+    <div class="bt-card full" id="spOut" hidden><div class="bt-label">Result</div><div class="bt-verdict" id="spMsg"></div><div id="spLinks" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"></div></div>
+
+    <div class="bt-info">
+      <h2>Is it safe?</h2>
+      <p>The file never leaves your computer. The PDF library runs in your browser, so there is no server that receives or stores your document.</p>
+      <h2>Good to know</h2>
+      <p>Pages are copied exactly as they are, so text stays selectable and the quality does not change. Splitting does not make the total smaller: the same pages take up about the same space, and some shared data such as fonts is stored again in each new file.</p>
+      <h2>Limits</h2>
+      <p>Password-protected PDFs need the protection removed first. Splitting into hundreds of single pages gives one download link per page; for long documents, extract ranges instead.</p>
+      <p>Need to combine files? Use <a href="/tools/merge-pdf">Merge PDF Files</a>.</p>
+    </div>
+  </div>
+
+  <script>
+    import { opdel, parseSider, sideAntal } from '../../lib/pdf-vaerktoej.mjs';
+    let data: ArrayBuffer | null = null, antal = 0, navn = 'document';
+    const urls: string[] = [];
+    const go = document.getElementById('spGo') as HTMLButtonElement;
+    const info = document.getElementById('spInfo')!;
+    const out = document.getElementById('spOut')!, msg = document.getElementById('spMsg')!, links = document.getElementById('spLinks')!;
+    (document.getElementById('spFile') as HTMLInputElement).addEventListener('change', async (e) => {
+      const f = (e.target as HTMLInputElement).files?.[0];
+      data = null; antal = 0; go.disabled = true;
+      if (!f) { info.textContent = 'No file chosen.'; return; }
+      navn = f.name.replace(/\.pdf$/i, '');
+      try { data = await f.arrayBuffer(); antal = await sideAntal(data.slice(0)); info.textContent = `${f.name}: ${antal} page${antal === 1 ? '' : 's'}.`; go.disabled = false; }
+      catch { info.textContent = 'This file could not be read. It may be password-protected or damaged.'; }
+    });
+    go.addEventListener('click', async () => {
+      if (!data) return;
+      const hver = (document.getElementById('spEach') as HTMLInputElement).checked;
+      const p = hver ? { grupper: Array.from({ length: antal }, (_, i) => [i]), fejl: null } : parseSider((document.getElementById('spRanges') as HTMLInputElement).value, antal);
+      out.hidden = false; links.innerHTML = '';
+      if (p.fejl) { msg.className = 'bt-verdict bt-neg'; msg.textContent = p.fejl; return; }
+      msg.className = 'bt-verdict'; msg.textContent = 'Splitting…'; go.disabled = true;
+      try {
+        const dele = await opdel(data.slice(0), p.grupper);
+        urls.forEach((u) => URL.revokeObjectURL(u)); urls.length = 0;
+        dele.forEach((bytes, i) => {
+          const g = p.grupper[i];
+          const del = g.length === 1 ? `p${g[0] + 1}` : `p${g[0] + 1}-${g[g.length - 1] + 1}`;
+          const u = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })); urls.push(u);
+          const a = document.createElement('a'); a.href = u; a.download = `${navn}-${del}.pdf`; a.className = 'bt-btn'; a.style.textDecoration = 'none'; a.textContent = `${navn}-${del}.pdf`;
+          links.appendChild(a);
+        });
+        msg.className = 'bt-verdict bt-pos'; msg.textContent = `Done: ${dele.length} file${dele.length === 1 ? '' : 's'}. Click each one to save it.`;
+      } catch (err) {
+        msg.className = 'bt-verdict bt-neg'; msg.textContent = 'Could not split this file. (' + String((err as Error).message || err).slice(0, 120) + ')';
+      }
+      go.disabled = false;
+    });
+  </script>
+</MainLayout>

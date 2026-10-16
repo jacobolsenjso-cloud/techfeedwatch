@@ -95,3 +95,47 @@ export function inflation({ beloeb, inflationPct, aar }) {
   const f = Math.pow(1 + tal(inflationPct) / 100, tal(aar));
   return { fremtidigPris: tal(beloeb) * f, koebekraft: tal(beloeb) / f, faldPct: (1 - 1 / f) * 100 };
 }
+
+// ---- Hold 2 og 3 (16/10-2026 aften) ----
+
+// 9) Videofilens størrelse: (video Mbit/s + lyd kbit/s) x sekunder / 8 -> megabyte (1 MB = 1.000.000 byte,
+// som disk- og kameraproducenter regner).
+export function videoStoerrelse({ videoMbps, lydKbps = 0, minutter }) {
+  const mbitPrSek = tal(videoMbps) + tal(lydKbps) / 1000;
+  const mb = (mbitPrSek * tal(minutter) * 60) / 8;
+  return { mb, gb: mb / 1000, mbPrMinut: (mbitPrSek * 60) / 8 };
+}
+
+// 10) Upload/download-tid: størrelse i MB (decimal) / hastighed i Mbit/s, ganget med en
+// virkelighedsfaktor (en forbindelse når sjældent sin fulde hastighed).
+export function overfoerselsTid({ mb, mbps, effektivitetPct = 100 }) {
+  const fart = tal(mbps) * (tal(effektivitetPct) / 100);
+  if (fart <= 0) return null;
+  return { sekunder: (tal(mb) * 8) / fart };
+}
+export function tidTekst(sek) {
+  if (sek == null || !Number.isFinite(sek)) return '-';
+  if (sek < 60) return `${Math.max(1, Math.round(sek))} s`;
+  const t = Math.floor(sek / 3600), m = Math.floor((sek % 3600) / 60), s = Math.round(sek % 60);
+  return t ? `${t} h ${m} min` : `${m} min ${s} s`;
+}
+
+// 11) Strømforbrug: watt x timer pr. dag x dage / 1000 = kWh; x pris pr. kWh.
+export function stroem({ watt, timerPrDag, prisPrKwh, dage = 365 }) {
+  const kwh = (tal(watt) * tal(timerPrDag) * tal(dage)) / 1000;
+  return { kwh, pris: kwh * tal(prisPrKwh), prisPrMd: (kwh * tal(prisPrKwh)) / 12 };
+}
+
+// 12) Lagerplads: hvor mange filer af en given størrelse kan være på en disk?
+// Diskproducenter regner 1 GB = 1.000 MB; Windows viser binære enheder (1 TB vises som ca. 931 GB).
+export function lagerplads({ diskGB, filMB, reservePct = 0 }) {
+  const brugbar = tal(diskGB) * 1000 * (1 - tal(reservePct) / 100);
+  return { antal: tal(filMB) > 0 ? Math.floor(brugbar / tal(filMB)) : 0, windowsGB: (tal(diskGB) * 1e9) / 2 ** 30 };
+}
+
+// 13) Kvante: n qubits beskriver 2^n tilstande på én gang. Søgning i N muligheder: en almindelig
+// computer skal i snit prøve N/2, Grovers algoritme cirka (pi/4) x kvadratroden af N.
+export function kvante({ qubits, muligheder }) {
+  const n = Math.max(0, Math.floor(tal(qubits))), N = Math.max(1, tal(muligheder));
+  return { tilstande: Math.pow(2, n), klassisk: N / 2, grover: (Math.PI / 4) * Math.sqrt(N), faktor: (N / 2) / ((Math.PI / 4) * Math.sqrt(N)) };
+}

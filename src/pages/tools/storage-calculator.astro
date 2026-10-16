@@ -1,0 +1,57 @@
+---
+// Lagerplads (16/10-2026). Forvalgene for video og musik er REGNET ud fra bitrate (samme formel
+// som videoberegneren), ikke gættet; fotoets størrelse er et eksempel, brugeren kan rette.
+// Logik: src/lib/beregn.mjs (lagerplads), selvtestet.
+import MainLayout from '../../layouts/MainLayout.astro';
+import '../../styles/beregn.css';
+const title = 'Storage Space Calculator';
+const description = 'How many photos, videos or songs fit on a drive, phone or memory card? And why a 1 TB drive shows less in Windows.';
+const TYPER = [
+  { navn: 'Phone photo (example: 4 MB)', mb: 4 },
+  { navn: 'Minute of 1080p video at 8 Mbps (60 MB)', mb: 60 },
+  { navn: 'Minute of 4K video at 40 Mbps (300 MB)', mb: 300 },
+  { navn: '4-minute song, MP3 at 320 kbps (9.6 MB)', mb: 9.6 },
+  { navn: 'My own file size', mb: 0 },
+];
+---
+
+<MainLayout title={title} description={description}>
+  <div class="bt-wrapper">
+    <div class="bt-header">
+      <h1>💾 Storage Space Calculator</h1>
+      <p>Pick the size of the drive or card and the kind of file. The tool shows how many fit, and what the drive will show as its size in Windows.</p>
+    </div>
+    <div class="bt-grid">
+      <div class="bt-field"><label for="scDisk">Drive size</label><input type="number" id="scDisk" class="bt-input" value="1" min="0" step="any" /></div>
+      <div class="bt-field"><label for="scUnit">Unit</label><select id="scUnit" class="bt-input"><option value="1">GB</option><option value="1000" selected>TB</option></select></div>
+      <div class="bt-field full"><label for="scType">File type</label><select id="scType" class="bt-input">{TYPER.map((t, i) => (<option value={t.mb} selected={i === 0}>{t.navn}</option>))}</select></div>
+      <div class="bt-field"><label for="scFile">Size of one file (MB)</label><input type="number" id="scFile" class="bt-input" value="4" min="0" step="any" /></div>
+      <div class="bt-field"><label for="scSpare">Keep free (%)</label><input type="number" id="scSpare" class="bt-input" value="10" min="0" max="90" step="any" /><span class="bt-hint">Drives slow down when completely full.</span></div>
+    </div>
+    <div class="bt-results">
+      <div class="bt-card full"><div class="bt-label">Files that fit</div><div class="bt-value" id="scCount">-</div></div>
+      <div class="bt-card full"><div class="bt-label">What Windows will show as the size</div><div class="bt-value" id="scWin">-</div></div>
+    </div>
+    <div class="bt-info">
+      <h2>Why a 1 TB drive shows 931 GB</h2>
+      <p>Drive makers count in thousands: 1 TB is 1,000,000,000,000 bytes. Windows counts in powers of 1,024, so the same bytes are shown as about 931 "GB". No space is missing; it is two ways of counting. Some space also goes to the file system and, on a phone, to the operating system.</p>
+      <h2>Where the example sizes come from</h2>
+      <p>The video and music sizes are worked out from their bitrate (data per second): one minute at 8 Mbps is 60 MB. Photo sizes vary a lot with the camera and format, so check one of your own files and type its size in.</p>
+      <p>For your own video settings, use the <a href="/tools/video-file-size-calculator">Video File Size Calculator</a>.</p>
+    </div>
+  </div>
+  <script>
+    import { lagerplads } from '../../lib/beregn.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const calc = () => {
+      const gb = Number($('scDisk').value) * Number($('scUnit').value);
+      const r = lagerplads({ diskGB: gb, filMB: Number($('scFile').value), reservePct: Number($('scSpare').value) });
+      $('scCount').textContent = r.antal.toLocaleString('en-US');
+      $('scWin').textContent = r.windowsGB >= 1024 ? (r.windowsGB / 1024).toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' TB' : r.windowsGB.toLocaleString('en-US', { maximumFractionDigits: 1 }) + ' GB';
+    };
+    $('scType').addEventListener('input', () => { if (Number($('scType').value) > 0) $('scFile').value = $('scType').value; calc(); });
+    $('scFile').addEventListener('input', () => { $('scType').value = '0'; calc(); });
+    ['scDisk', 'scUnit', 'scSpare'].forEach((id) => $(id).addEventListener('input', calc));
+    calc();
+  </script>
+</MainLayout>
