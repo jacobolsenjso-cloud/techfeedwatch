@@ -14,7 +14,8 @@
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
 
-const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=5').split('=')[1]) || 5;
+// 3 om dagen fra 16/10 (Jacob: prisen). Før 5.
+const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3;
 const FEJL_FIL = './src/data/omskriv-fejl.json';
 const LOG_FIL = './src/data/omskriv-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };

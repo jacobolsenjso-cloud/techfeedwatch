@@ -15,7 +15,7 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        default: "5"
+        default: "3"
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '5' }}
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }}
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
