@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 126** — brug kun v126). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 127** — brug kun v127). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 126** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (16/10-2026 kl. 12:12, live `71d3a34d`): LIVE. Faktaboks "Key facts" (trin 4)** på nye og omskrevne artikler: 3 kildeforsynede fakta fra robottens egen søgning, første vises, resten foldes ud med en centreret knap. **Prisen er bremset:** højst 3 nye + 3 omskrivninger om dagen, og tidligt stop A+B (udækkede delspørgsmål droppes; højst ét skrevet forsøg pr. kørsel) - **endnu ikke prøvet** (dagsloftet nået i dag), måles 17/10 kl. 09:50. Starteren (`tfw-starter`) kører robotten hver time. **Næste:** mål pris, A+B og første faktabokse 17/10; punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning), gamle grene på GitHub (`stil-1-2`, `udkast-12` m.fl., slettes kun med Jacobs ok).
+**Seneste for techfeedwatch (16/10-2026 kl. 12:37, live `1ed19d65`): LIVE. Faktaboks "Key facts" virker i robotten** (prøve #13: 3 fakta med de rigtige udgivere som links). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A (kører, logger nu altid `DAEKNING`) og B (ikke udløst endnu - kun når en skrevet artikel kasseres). Kun grenen `main` findes nu på GitHub. **Næste:** morgentjek 17/10 kl. 09:50 (pris, `DAEKNING`/`STOP`, første faktabokse live); punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning).
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 16/10-2026 kl. 12:37 - techfeedwatch: prøve af dagens rettelser (#13) + gamle grene slettet
+- **Prøveartikel #13 (Jacob: "vi tester alle de nye rettelser"):** robotten på main uden dagsloft, gemt på grenen `udkast-13`. Artikel skrevet og godkendt: `FAKTABOKS: 3 fakta` (links til YouTube, Music Business Worldwide, PCMag = de udgivere, sætningerne nævner), 1 tvunget link fanget og rettet, 0 AI-vendinger, redaktørtjek "alle 6 delspørgsmål besvaret", indholdstjek 0 fejl. Faktaboksen set på den rigtige prøveartikel (lokal visning). Pris ca. 0,30 USD.
+- **A** kørte, men havde intet at droppe (alle 6 delspørgsmål havde fakta). Loggen skrev intet i det tilfælde - nu skrives `DAEKNING:` altid (`1ed19d65`, live). **B** blev ikke udløst (artiklen bestod); første bevis kommer, når en skrevet artikel kasseres i en rigtig kørsel.
+- Robotkørsel 12:17 (#694): dagsloft nået (2/2), 0 USD.
+- **Grene slettet (Jacobs ok 16/10):** `udkast-13` og derefter alle gamle: `fase2-regler`, `laesertjek`, `reklame-vaern`, `stil-1-2`, `udkast-1/2/3/6/8/10/12`. Tjekket før: de 4 arbejdsgrene havde intet, der mangler i main (`stil-1-2`'s 2 commits findes i main som andre commits - `tvungetAnker`, `aiFraser`, `hentSitetsJson` står i main). Nu er kun `main` tilbage.
+- Lære: et tjek, der kun logger, når det finder noget, kan ikke skelnes fra et tjek, der ikke kørte. Opskrift: nye værn skriver altid én linje.
+
 
 ### 16/10-2026 kl. 12:12 - techfeedwatch: robottjek (2 af mine fejl rettet) + faktaboks "Key facts" LIVE (trin 4)
 - **Robottjek (Jacob bad om det):** (1) 3 outline-test i `test-kildetjek.mjs` havde været røde siden 15/10 - rettet i `2fedbc6f`. (2) Loggen skrev "prøver næste kandidat", også når B stoppede kørslen - rettet (`88a03bbd`). (3) v125's tabel stod stadig med "5/dag" og 432 artikler - rettet her. A+B er IKKE prøvet endnu: dagsloftet var nået fra kl. 09:17 (robot-log #691-#693 "loftNaaet"), så første rigtige prøve er i nat; tjek 17/10 kl. 09:50 (planlagt opgave).
