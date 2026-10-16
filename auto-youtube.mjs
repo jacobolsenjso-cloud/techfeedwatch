@@ -524,7 +524,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
         processed++;
         existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
         if (spoergsmaal) markerSpoergsmaalBrugt(spoergsmaal, tag); // først NU er spørgsmålet brugt
-      } else {
+      } else if (!fs.existsSync(SKRIVE_MAERKE)) {
         console.log(`ℹ️ Kandidat afvist af kvalitetsværn — prøver næste.`);
       }
     } catch (subError) {
