@@ -9,7 +9,9 @@ const nu = new Date().toISOString().slice(0, 7);
 for (const [navn, par] of Object.entries(MOENTER)) {
   let r;
   for (let i = 0; i < 3; i++) {
-    r = await fetch(`https://api.binance.com/api/v3/klines?symbol=${par}&interval=1M&limit=1000`, { headers: { 'user-agent': 'TechFeedWatch/1.0 (+https://techfeedwatch.com)' } });
+    // data-api.binance.vision (17/10): Binances adresse kun til markedsdata. api.binance.com afviser
+    // amerikanske servere, og GitHubs maskiner står i USA. Målt 17/10: samme kurser i alle 294 måneder.
+    r = await fetch(`https://data-api.binance.vision/api/v3/klines?symbol=${par}&interval=1M&limit=1000`, { headers: { 'user-agent': 'TechFeedWatch/1.0 (+https://techfeedwatch.com)' } });
     if (r.ok) break;
     await new Promise((s) => setTimeout(s, 5000));
   }
@@ -17,6 +19,14 @@ for (const [navn, par] of Object.entries(MOENTER)) {
   const rows = await r.json();
   ud.moenter[navn] = rows.map((k) => [new Date(k[0]).toISOString().slice(0, 7), Number(Number(k[4]).toPrecision(6))]).filter(([m]) => m < nu);
   console.log(`${navn}: ${ud.moenter[navn].length} måneder (${ud.moenter[navn][0][0]} .. ${ud.moenter[navn].at(-1)[0]})`);
+}
+// Vagt (17/10): færre måneder end sidst betyder et halvt svar - så beholdes de gamle kurser,
+// og kørslen bliver rød (morgenrapporten viser røde kørsler).
+let gammel = null;
+try { gammel = JSON.parse(fs.readFileSync('src/data/kurser.json', 'utf8')); } catch { /* første gang */ }
+for (const navn of Object.keys(MOENTER)) {
+  const foer = gammel?.moenter?.[navn]?.length || 0, nu2 = ud.moenter[navn].length;
+  if (nu2 < foer) throw new Error(`${navn}: ${nu2} måneder, men sidst ${foer} - gamle kurser beholdes`);
 }
 fs.writeFileSync('src/data/kurser.json', JSON.stringify(ud));
 console.log('skrevet src/data/kurser.json');

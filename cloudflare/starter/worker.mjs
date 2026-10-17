@@ -22,6 +22,7 @@ export function opgaverTil(tid) {
   if (m === 17) ud.push('daily-update.yml');                 // robotten, hver time
   if (m === 37 && t === 6) ud.push('omskriv-gamle.yml');     // 5 gamle artikler, 08:37 dansk sommertid
   if (m === 37 && t === 7) ud.push('daglig-rapport.yml');    // morgenrapporten, 09:37 dansk sommertid
+  if (m === 37 && t === 3 && tid.getUTCDate() === 1) ud.push('hent-kurser.yml'); // kryptokurser til DCA, den 1. i måneden (17/10)
   return ud;
 }
 

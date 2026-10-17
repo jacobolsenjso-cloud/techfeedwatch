@@ -1,0 +1,45 @@
+name: Hent kryptokurser (DCA)
+
+# 17/10-2026 (Jacob: "kod"). Henter månedlige slutkurser for BTC, ETH og SOL til
+# DCA-beregneren (hent-kurser.mjs -> src/data/kurser.json). Gratis: Binances åbne
+# markedsdata, ingen nøgle, ingen AI. Startes den 1. i hver måned kl. 03:37 UTC af
+# Cloudflare-Workeren "tfw-starter" (GitHubs egen tidsplan dropper kørsler).
+# Fejler hentningen, gemmes intet - siden beholder de gamle kurser og viser deres dato,
+# og den røde kørsel står i morgenrapporten.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-skriver
+  cancel-in-progress: false
+
+jobs:
+  kurser:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      # Scriptet bruger kun Node selv (fetch og fs) - ingen npm install nødvendig.
+      - name: Hent kurser
+        run: node hent-kurser.mjs
+
+      # Kun kursfilen gemmes. Robotten kan have pushet imens: hent og læg ovenpå.
+      - name: Gem kurserne (Commit & Push)
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/kurser.json
+          if git commit -m "Monthly crypto closes for DCA calculator"; then
+            git pull --rebase origin main
+            git push
+          else
+            echo "Ingen nye kurser."
+          fi
