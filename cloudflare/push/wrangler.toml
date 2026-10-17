@@ -1,0 +1,25 @@
+name = "tfw-push"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+# Offentlig adresse (workers.dev): sitet sender tilmeldinger hertil. Udsendelsen er IKKE en adresse,
+# men metoden Sender.sendPortion, som kun tfw-starter kan kalde (service binding).
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "SUBS"
+id = "3545d63674414ecaaeb487e4c56baaed"
+
+# Højst 10 tilmeldinger i minuttet pr. afsender (review 17/10): ellers kunne et script fylde lageret.
+[[ratelimits]]
+name = "BEGRAENS"
+namespace_id = "1701"
+simple = { limit = 10, period = 60 }
+
+[vars]
+# Den OFFENTLIGE halvdel af VAPID-nøglen (står også i sitets kode). Den hemmelige halvdel er secret
+# VAPID_PRIVATE_JWK, lagt af opret.mjs uden at blive vist eller gemt.
+VAPID_PUBLIC = "BNhpaYf1xBOH0e0xaHoFpvv6XPePgbpRCIFZvbk5yo4pjQPkcFK4joNGzkHRfGlKpGWKkksUSpvsWxvq7pPdF_g"
+
+# Ingen logning (17/10): privatlivspolitikken lover, at vi ikke gemmer IP-adresser med tilmeldingen.
+[observability]
+enabled = false

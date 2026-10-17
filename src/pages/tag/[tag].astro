@@ -140,6 +140,7 @@ const listeSchema = {
     .emne-foelg:hover { background: rgba(15, 118, 110, 0.08); }
     .emne-foelg[aria-pressed="true"] { background: #0f766e; color: #fff; }
     .emne-foelg-note { font-size: 0.85rem; color: #6b7280; }
+    .emne-push { border-top: none; padding: 0; margin: -20px 0 30px; max-width: 1000px; font-size: 0.88rem; }
     body.dark-mode .emne-foelg { color: #5eead4; border-color: #2dd4bf; }
     body.dark-mode .emne-foelg[aria-pressed="true"] { background: #0f766e; color: #fff; border-color: #0f766e; }
     body.dark-mode .emne-foelg-note { color: #9ca3af; }
@@ -197,6 +198,7 @@ const listeSchema = {
       <button type="button" class="emne-foelg" data-emne={tagName} aria-pressed="false">🔔 <span class="emne-foelg-tekst">Follow this topic</span></button>
       <span class="emne-foelg-note">The bell at the top then counts only the topics you follow.</span>
     </div>
+    <div class="notif-push emne-push" data-push-felt hidden></div>
     {tyndt && (
       <div class="emne-bygges" role="note">
         <span class="emne-bygges-ikon" aria-hidden="true">🛠️</span>

@@ -26,6 +26,25 @@ export function opgaverTil(tid) {
   return ud;
 }
 
+// Push-beskeder (17/10): udsendelsen starter kl. 16:37 UTC (18:37 dansk sommertid, 17:37 vintertid).
+// Jacob valgte A: højst 1 besked om dagen pr. læser. 17:37-20:37 UTC fortsætter kun, hvis dagens
+// udsendelse ikke blev færdig (fx mange læsere); er den færdig, svarer tfw-push straks "allerede".
+export const erPushTid = (tid) => tid.getUTCMinutes() === 37 && tid.getUTCHours() >= 16 && tid.getUTCHours() <= 20;
+
+// tfw-push sender højst 40 beskeder pr. kald (gratis plans grænse). Flere portioner efter hinanden,
+// til alle har fået deres - tilstanden gemmes i tfw-push, så ingen får to samme dag.
+async function sendPush(env) {
+  if (!env.PUSH) { console.log('FEJL: PUSH-binding mangler'); return; }
+  // Tilstanden sendes med fra portion til portion (aldrig læst forældet fra lageret midt i en udsendelse).
+  let st = null;
+  for (let i = 0; i < 10; i++) {
+    st = await env.PUSH.sendPortion(st);
+    const { artikler, sendtIPortion, cursor, ...vis } = st;
+    console.log(`PUSH: ${JSON.stringify(vis)}`);
+    if (st.faerdig || st.afbrudt) return; // afbrudt = grænse for forespørgsler; næste time fortsætter
+  }
+}
+
 async function start(fil, env) {
   // GitHub svarer 204 (intet indhold), når kørslen er sat i gang.
   for (let forsoeg = 0; forsoeg < 3; forsoeg++) {
@@ -51,7 +70,9 @@ async function start(fil, env) {
 
 export default {
   async scheduled(controller, env, ctx) {
-    const opgaver = opgaverTil(new Date(controller.scheduledTime));
+    const tid = new Date(controller.scheduledTime);
+    if (erPushTid(tid)) ctx.waitUntil(sendPush(env).catch((e) => console.log(`PUSH FEJL: ${e.message}`)));
+    const opgaver = opgaverTil(tid);
     if (!opgaver.length) return;
     if (!env.GITHUB_TOKEN) { console.log('FEJL: GITHUB_TOKEN mangler'); return; }
     ctx.waitUntil(Promise.all(opgaver.map((f) => start(f, env))));

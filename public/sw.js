@@ -118,3 +118,50 @@ self.addEventListener('fetch', (event) => {
     })());
   }
 });
+
+// ---- Push-beskeder (17/10-2026, Jacob valgte højst 1 om dagen) ----
+// Beskeden kommer UDEN indhold ("bank på") fra tfw-push. Teksten hentes her: id'et er
+// SHA-256 af denne browsers push-adresse - samme id som tfw-push gemmer tilmeldingen under.
+// Svigter opslaget, vises en neutral besked - en push SKAL vise noget, ellers straffer browseren.
+const PUSH_API = 'https://tfw-push.jacobolsenjso.workers.dev';
+const PUSH_STANDARD = { title: 'TechFeedWatch', body: 'New articles are waiting for you.', url: '/latest/' };
+
+async function sha256hex(s) {
+  const d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+self.addEventListener('push', (event) => {
+  event.waitUntil((async () => {
+    let b = PUSH_STANDARD;
+    try {
+      const sub = await self.registration.pushManager.getSubscription();
+      if (sub) {
+        const stop = new AbortController();
+        const ur = setTimeout(() => stop.abort(), 4000); // Safari: vis straks, ellers mister sitet tilladelsen
+        const r = await fetch(`${PUSH_API}/besked?id=${await sha256hex(sub.endpoint)}`, { cache: 'no-store', signal: stop.signal });
+        clearTimeout(ur);
+        if (r.ok) { const j = await r.json(); if (j && j.title) b = j; }
+      }
+    } catch { /* neutral besked */ }
+    await self.registration.showNotification(b.title, {
+      body: b.body, icon: '/icon-192.png', badge: '/icon-192.png', tag: 'tfw-daily', data: { url: b.url },
+    });
+  })());
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  // Kun adresser på sitet selv - aldrig et andet domæne, selv hvis svaret skulle være forkert.
+  let url = new URL('/', self.location.origin).href;
+  try {
+    const u = new URL((event.notification.data && event.notification.data.url) || '/', self.location.origin);
+    if (u.origin === self.location.origin) url = u.href;
+  } catch { /* forsiden */ }
+  event.waitUntil((async () => {
+    const vinduer = await clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const v of vinduer) if (v.url === url && 'focus' in v) return v.focus();
+    return clients.openWindow(url);
+  })());
+});
+

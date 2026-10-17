@@ -8,6 +8,12 @@ workers_dev = false
 [triggers]
 crons = ["17,37 * * * *"]
 
+# Push-beskeder (17/10): kald til tfw-push's udsendelse. Kun via denne binding - ikke en offentlig adresse.
+[[services]]
+binding = "PUSH"
+service = "tfw-push"
+entrypoint = "Sender"
+
 [observability]
 enabled = true
 

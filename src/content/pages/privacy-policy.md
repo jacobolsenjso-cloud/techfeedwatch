@@ -5,7 +5,7 @@ description: "Privacy Policy for Tech Feed Watch and information on how we handl
 
 # Privacy Policy
 
-**Last updated:** July 27, 2026
+**Last updated:** October 17, 2026
 
 This Privacy Policy describes our policies and procedures on the collection, use, and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
 
@@ -69,9 +69,19 @@ Until you give consent:
 * **No analytics are loaded.** Google Analytics is not requested, executed, or given any data about your visit. It is loaded only after the consent platform confirms you have agreed to information being stored on your device.
 * **No advertising cookies are stored.** We use Google Consent Mode v2 with advertising and analytics storage set to `denied` by default, so Google's advertising script cannot write cookies to your device before you decide.
 
-Only strictly necessary storage — such as your dark-mode preference and your saved articles — is used before you decide. That information stays in your browser and is never sent to us.
+Only strictly necessary storage — such as your dark-mode preference and your saved articles — is used before you decide. That information stays in your browser and is never sent to us. The one exception is if you turn on push notifications: then the topics you follow are sent with your push address (see Push Notifications below).
 
 Declining does not restrict your access to any part of this Website. You can review or withdraw your consent at any time through the **Cookie settings** link in the footer, which reopens the same consent dialog.
+
+## Push Notifications
+
+You can choose to get a daily notification when a new article appears in the topics you follow. This is off until you turn it on, and your browser asks for your permission first.
+
+- **What we store:** the anonymous push address your browser creates for our site (a long random web address from Google, Mozilla, Apple or Microsoft) and the list of topics you follow. We do not store your name, email address or IP address with it.
+- **Where:** in a database at Cloudflare, which runs our notification service.
+- **How often:** at most one notification a day, and only when there is a new article in your topics.
+- **Turning it off:** click "Turn off" under the bell, and your push address is deleted at once. If you block notifications in your browser settings instead, the address stops working and we delete it the next time we try to send to it.
+- **How long:** a push address is deleted automatically after 6 months without a visit to the site.
 
 ## Use of Your Personal Data
 

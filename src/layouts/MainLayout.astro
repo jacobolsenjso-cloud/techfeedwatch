@@ -540,6 +540,21 @@ const siteSchema = [
     .notif-item.is-other { opacity: 0.7; }
     .notif-foot { display: block; text-align: center; padding: 11px 14px; border-top: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 700; color: var(--teal-text); text-decoration: none; }
     .notif-foot:hover { background: var(--hover-bg); }
+    /* Push (17/10) - bruges i klokken og på emnesider */
+    [data-push-felt][hidden] { display: none; }
+    .notif-push { padding: 10px 14px; border-top: 1px solid var(--border-color); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.8rem; }
+    .push-knap { background: #0f766e; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; min-height: 36px; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .push-knap:disabled { opacity: 0.6; cursor: wait; }
+    .push-link { background: none; border: none; color: var(--teal-text); font-weight: 700; cursor: pointer; padding: 4px 2px; font-size: inherit; font-family: inherit; }
+    .push-note { color: #6b7280; line-height: 1.4; }
+    .push-on { font-weight: 700; color: #0f766e; }
+    .push-fejl { color: #dc2626; width: 100%; }
+    .push-ios { width: 100%; }
+    .push-ios summary { cursor: pointer; font-weight: 700; color: var(--teal-text); min-height: 32px; display: flex; align-items: center; }
+    .push-ios p { margin: 6px 0; line-height: 1.45; }
+    .push-ios ol { margin: 4px 0 0; padding-left: 20px; line-height: 1.5; }
+    body.dark-mode .push-note { color: #9ca3af; }
+    body.dark-mode .push-on { color: #5eead4; }
     body.dark-mode .notif-topics-lead, body.dark-mode .notif-group, body.dark-mode .notif-hint-luk { color: #9ca3af; }
       /* Mobil: panelet ankres til viewporten med lige margener, så det er centreret og aldrig klippes */
       @media (max-width: 768px) {
@@ -684,6 +699,7 @@ const siteSchema = [
             <div class="notif-topics" id="notifTopics" hidden></div>
             <div class="notif-hint" id="notifHint" hidden><span>Want the count to show only topics you like?</span><button type="button" class="notif-hint-ja">Choose topics</button><button type="button" class="notif-hint-luk" aria-label="Dismiss">&times;</button></div>
             <div class="notif-list" id="notifList"></div>
+            <div class="notif-push" data-push-felt hidden></div>
             <a class="notif-foot" href="/latest/">See all latest articles &rarr;</a>
           </div>
         </div>
@@ -881,6 +897,105 @@ const siteSchema = [
             .catch(function () { /* uden service worker fungerer sitet fint */ });
         });
       }
+    </script>
+
+    {/* Push-beskeder (17/10-2026, Jacob: A = højst 1 om dagen). Tegner knappen i alle [data-push-felt]
+        (klokken + emnesider). iPhone/iPad kan kun få beskeder fra en installeret app (Apples regel),
+        så dér vises en trin-for-trin-guide til "Add to Home Screen" i stedet for knappen. */}
+    <script is:inline>
+      (function () {
+        var API = 'https://tfw-push.jacobolsenjso.workers.dev';
+        var VAPID = 'BNhpaYf1xBOH0e0xaHoFpvv6XPePgbpRCIFZvbk5yo4pjQPkcFK4joNGzkHRfGlKpGWKkksUSpvsWxvq7pPdF_g';
+        var laes = function (k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var installeret = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+        var kan = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+        var travl = false, fejltekst = '';
+
+        function tilstand() {
+          if (iOS && !installeret) return 'ios';
+          if (!kan) return 'ikke';
+          if (Notification.permission === 'denied') return 'blokeret';
+          return laes('tfw_push') ? 'til' : 'fra';
+        }
+        function noegle() {
+          var s = VAPID.replace(/-/g, '+').replace(/_/g, '/'); s += '='.repeat((4 - s.length % 4) % 4);
+          var r = atob(s), u = new Uint8Array(r.length); for (var i = 0; i < r.length; i++) u[i] = r.charCodeAt(i); return u;
+        }
+        function sw() {
+          // ready venter på service workeren - men aldrig for evigt, hvis den ikke kunne registreres.
+          return Promise.race([navigator.serviceWorker.ready, new Promise(function (_, nej) { setTimeout(function () { nej(new Error('sw')); }, 8000); })]);
+        }
+        function send(sti, data) {
+          return fetch(API + sti, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) })
+            .then(function (r) { if (!r.ok) throw new Error(sti + ' ' + r.status); });
+        }
+        function tilmeld() {
+          return Notification.requestPermission().then(function (svar) {
+            if (svar !== 'granted') return;
+            return sw().then(function (reg) {
+              return reg.pushManager.getSubscription().then(function (s) {
+                return s || reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: noegle() });
+              });
+            }).then(function (s) {
+              return send('/subscribe', { subscription: s.toJSON(), topics: laes('tfw_follow') || [] });
+            }).then(function () { localStorage.setItem('tfw_push', '1'); husk(); });
+          });
+        }
+        // Husk hvilken push-adresse tfw-push kender, og hvornår (review 17/10: browsere kan skifte adressen).
+        function husk() {
+          return sw().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (s) {
+            if (s) localStorage.setItem('tfw_push_synk', JSON.stringify({ ep: s.endpoint, t: Date.now() }));
+          }).catch(function () {});
+        }
+        function synk() {
+          if (!kan || !laes('tfw_push') || Notification.permission !== 'granted') return;
+          sw().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (s) {
+            if (!s) { localStorage.removeItem('tfw_push'); tegn(); return; }
+            var sidst = laes('tfw_push_synk') || {};
+            if (sidst.ep === s.endpoint && Date.now() - (sidst.t || 0) < 7 * 864e5) return;
+            return send('/subscribe', { subscription: s.toJSON(), topics: laes('tfw_follow') || [] }).then(husk);
+          }).catch(function () {});
+        }
+        function afmeld() {
+          return sw().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (s) {
+            if (!s) return;
+            return send('/unsubscribe', { endpoint: s.endpoint }).catch(function () {}).then(function () { return s.unsubscribe(); });
+          }).then(function () { localStorage.removeItem('tfw_push'); localStorage.removeItem('tfw_push_synk'); });
+        }
+        // Når læseren følger/afmelder emner, får tfw-push den nye liste (kun hvis beskeder er slået til).
+        function opdaterEmner() {
+          if (!laes('tfw_push') || !kan) return;
+          sw().then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (s) {
+            if (!s) { localStorage.removeItem('tfw_push'); tegn(); return; }
+            return send('/subscribe', { subscription: s.toJSON(), topics: laes('tfw_follow') || [] }).then(husk);
+          }).catch(function () {});
+        }
+        var TEKST = {
+          fra: '<button type="button" class="push-knap" data-push-handling="til">🔔 Get a daily notification</button><span class="push-note">At most one a day, from the topics you follow. Turn it off anytime.</span>',
+          til: '<span class="push-on">✓ Daily notification is on</span><button type="button" class="push-link" data-push-handling="fra">Turn off</button>',
+          blokeret: '<span class="push-note">Notifications are blocked for this site. Allow them in your browser\'s site settings to get a daily notification.</span>',
+          ikke: '<span class="push-note">This browser can\'t show notifications. They work in Chrome, Edge, Firefox and Safari (macOS 13 or newer).</span>',
+          ios: '<details class="push-ios"><summary>📲 Get notifications on iPhone or iPad</summary><p>Apple only allows notifications from installed apps. Install TechFeedWatch as an app in three steps - it\'s free and takes 10 seconds:</p><ol><li>Tap the <strong>Share</strong> button (the square with an arrow) at the bottom of Safari.</li><li>Choose <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.</li><li>Open <strong>TechFeedWatch</strong> from your home screen, tap 🔔 and choose <strong>Get a daily notification</strong>.</li></ol></details>',
+        };
+        function tegn() {
+          var t = tilstand(), html = TEKST[t] + (fejltekst ? '<span class="push-fejl">' + fejltekst + '</span>' : '');
+          document.querySelectorAll('[data-push-felt]').forEach(function (el) { el.innerHTML = html; el.setAttribute('data-push-tilstand', t); el.hidden = false; });
+        }
+        document.addEventListener('click', function (e) {
+          var k = e.target.closest && e.target.closest('[data-push-handling]'); if (!k || travl) return;
+          e.stopPropagation();
+          travl = true; fejltekst = ''; k.disabled = true;
+          (k.getAttribute('data-push-handling') === 'til' ? tilmeld() : afmeld())
+            .catch(function () { fejltekst = 'Something went wrong - please try again.'; })
+            .then(function () { travl = false; tegn(); });
+        });
+        document.addEventListener('tfw-follow-aendret', opdaterEmner);
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tegn); else tegn();
+        // Har læseren slået beskeder fra i browseren, rydder vi op, så knappen viser det rigtige.
+        if (kan && laes('tfw_push') && Notification.permission !== 'granted') { localStorage.removeItem('tfw_push'); }
+        setTimeout(synk, 5000); // efter siden er færdig - konkurrerer ikke med indholdet
+      })();
     </script>
 
     <script is:inline>
@@ -1100,6 +1215,7 @@ const siteSchema = [
             const emne = knap.getAttribute('data-emne'); let folg = nLaes('tfw_follow', []);
             folg = folg.indexOf(emne) === -1 ? folg.concat(emne) : folg.filter((x) => x !== emne);
             nGem('tfw_follow', folg); nBeregn(); nTegnEmner(); nTegn();
+            document.dispatchEvent(new CustomEvent('tfw-follow-aendret')); // push-tilmeldingen får de nye emner
           });
           if (notifHint) notifHint.addEventListener('click', (e) => {
             e.stopPropagation();
