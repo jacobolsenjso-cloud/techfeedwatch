@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 133** — brug kun v133). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 134** — brug kun v134). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 133** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 15:13, live `0e861f6f`): LIVE. 18 emner, 58 egne værktøjer.** Nye emner: AI Agents 43, Investing & Trading 15, Smartphones & Gadgets 5, Robotics 3, PC Building & Gaming 0 artikler. Under 8 artikler: noindex + "building"-tekst; robotten giver nye emner under 20 hver anden artikel. "Follow this topic" på emnesider og i klokken (rigtigt ulæst, følg emner). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** Jacob: klokken E (push-beskeder)?; følg de nye emners vækst; tjek 1/11 at kurserne kom.
+**Seneste for techfeedwatch (17/10-2026 kl. 15:51, live `5d7e521f`): LIVE. 18 emner, 58 egne værktøjer, push-beskeder.** Klokken: rigtigt ulæst, følg emner, og nu "Get a daily notification" (højst 1 om dagen, Worker tfw-push, udsendelse 16:37 UTC via tfw-starter). iPhone: guide til "Add to Home Screen". Nye emner vokser (robot 50/50). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** tjek første push-udsendelse 17/10 18:37; slå Jacobs localhost-testtilmelding fra bagefter; tjek 1/11 at kurserne kom.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,18 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 15:51 - techfeedwatch: push-beskeder (klokke E) LIVE
+- **Jacob valgte A:** højst 1 besked om dagen pr. læser - den nyeste artikel fra det sidste døgn i de fulgte emner (følger man intet: alle emner). Ingen ny artikel = ingen besked.
+- **iPhone (Jacobs ønske):** Apple tillader kun beskeder fra installerede apps. Uinstalleret iPhone/iPad får en 3-trins guide "Add to Home Screen" (sitet ER en installérbar app: manifest standalone + service worker). En rigtig App Store-app findes ikke (kræver Apple-udviklerkonto 99 USD/år) - sagt ærligt til Jacob. Mac: virker direkte i Safari (macOS 13+).
+- **Opbygning (0 kr., Cloudflare gratis):** ny Worker `tfw-push` (tfw-push.jacobolsenjso.workers.dev): POST /subscribe, /unsubscribe, GET /besked. KV `tfw-push-subs` (id 3545d636...), tilmelding = anonym push-adresse + emner, udløber efter 180 dage uden besøg. Begrænsning 10 tilmeldinger/min. pr. afsender. Logning slået fra (privatlivsløftet).
+- **Udsendelse:** metoden Sender.sendPortion (RPC) - kun tfw-starter kan kalde den (service binding PUSH). Kl. 16:37 UTC, fortsætter 17:37-20:37 kun hvis dagen ikke blev færdig. 40 pr. portion (gratis plans 50-grænse). Beskeder UDEN indhold; service workeren henter teksten fra /besked (4 s grænse, neutral reserve). VAPID-nøgle: offentlig i wrangler.toml/sitet, hemmelig kun som Cloudflare-secret (lavet af opret.mjs i hukommelsen, aldrig vist eller gemt).
+- **Test i Jacobs Chrome:** tilmelding via Google (fcm), /besked gav rigtig artikel, 2 rigtige push-beskeder sendt og SET af Jacob på skærmen; klik åbnede artiklen. Testadressen /test-send var kun midlertidig og er fjernet (404 bekræftet).
+- **Uafhængigt review (separat agent):** 7 + 5 fund, alle relevante rettet: samme artikel to dage i træk (gårsdagens artikler udelukkes nu), tilstand læst forældet mellem portioner (sendes nu med), fejl der flyttede markøren, Apple-token højst hver time (genbruges 11 t), tom POST (krop sat), for store metadata, ingen begrænsning, genopfriskning ved besøg, privatlivstekst præciseret (sletning, emner sendes når push er til). Fast rækkefølge ved samme dato (artikler har kun dato).
+- **Tjek:** cloudflare/push/test.mjs 25 OK, starter-test OK, alle test-*.mjs grønne, audit 0 fejl. LIVE `5d7e521f`, Cloudflare success, live-site: knap, sw og politik bekræftet, 0 konsolfejl.
+- **Lære:** browserens getNotifications() viser intet på Windows (Chrome bruger Windows' beskedcenter) - mit måleværktøj kunne ikke se beskederne; Jacobs øjne var målingen. Fremover: push-test = spørg Jacob, ikke getNotifications.
+- **Værd at vide:** den gratis plan rækker til ca. 2.000 tilmeldte (5 timer x 10 portioner x 40). Om hver RPC-portion får sin egen grænse på 50 forespørgsler er ikke bekræftet - koden stopper pænt og fortsætter næste time. Jacobs localhost-tilmelding får aftenens udsendelse som kontrol.
+
 
 ### 17/10-2026 kl. 15:13 - techfeedwatch: 5 nye emner LIVE (18 i alt)
 - **Jacob valgte** alle 5: AI Agents, Investing & Trading, Smartphones & Gadgets, Robotics, PC Building & Gaming. Hans idé: en venlig tekst på tynde emnesider; min justering: noindex under 8 artikler + "Follow this topic" i stedet for "gem siden" + robot 50/50.
