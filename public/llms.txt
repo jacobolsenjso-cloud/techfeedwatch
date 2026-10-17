@@ -1,8 +1,8 @@
-# Tech Feed Watch
+# TechFeedWatch
 
-> Written analyses of notable tech videos - AI, fintech, crypto, cybersecurity, hardware and more. Every article credits the original creator and links to the source video.
+> Straight answers to the questions people search for about AI, tech, fintech and crypto - in plain language, in a few minutes, updated daily. Every article credits the creator whose video it draws on and links to it.
 
-Tech Feed Watch turns YouTube videos worth watching into articles worth reading. Each piece is a standalone analysis of the subject, written with the video as research, not a summary of it. The method is documented openly on the About page. All articles carry structured data (JSON-LD), a table of contents, and a FAQ.
+TechFeedWatch answers one real search question per article. Each piece is a standalone answer, written with a creator's video as research, not a summary of it. The method is documented openly on the About page. All articles carry structured data (JSON-LD), a table of contents, and a FAQ.
 
 ## Start here
 

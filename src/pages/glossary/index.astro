@@ -32,7 +32,7 @@ const sections = allTerms.reduce((acc: { letter: string; terms: typeof allTerms 
 }, []);
 
 const title = "Glossary";
-const description = "Clear, concise explanations of key terms in AI, tech, fintech, and crypto - your quick reference for the jargon used across Tech Feed Watch.";
+const description = "Clear, concise explanations of key terms in AI, tech, fintech, and crypto - your quick reference for the jargon used across TechFeedWatch.";
 // DefinedTermSet (20/9-2026). De 57 opslagssider havde hver sin DefinedTerm,
 // men indekset havde kun en breadcrumb — så en maskine kunne se de enkelte ord
 // og ikke, at de hører til ét ordbogsværk. hasDefinedTerm binder dem sammen.
@@ -40,7 +40,7 @@ const glossarySchema = {
   "@context": "https://schema.org",
   "@type": "DefinedTermSet",
   "@id": "https://techfeedwatch.com/glossary/#termset",
-  "name": "Tech Feed Watch Glossary",
+  "name": "TechFeedWatch Glossary",
   "url": "https://techfeedwatch.com/glossary/",
   "description": description,
   "publisher": { "@id": "https://techfeedwatch.com/#organization" },

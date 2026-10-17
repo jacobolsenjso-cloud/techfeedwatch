@@ -19,7 +19,7 @@ faqs:
     answer: "Ask what changed and how it was measured. Benchmark scores rise steadily and say little. What would be genuinely new is reliability on tasks the system was not built for — and that is the thing least often demonstrated."
 ---
 
-Tech Feed Watch has covered 262 videos tagged AI & Tech — the largest subject on
+TechFeedWatch has covered 262 videos tagged AI & Tech — the largest subject on
 the site by a wide margin.
 
 Counting them turned up something that changed what this guide is. Only 27 of
@@ -224,7 +224,7 @@ credited. The [AI & Tech tag](/tag/ai-tech) has all 262, and the
 
 ---
 
-*This guide draws on 262 videos covered on Tech Feed Watch. The counts quoted —
+*This guide draws on 262 videos covered on TechFeedWatch. The counts quoted —
 55 on safety and ethics, 49 on agents, 11 on AGI — come from the archive itself,
 not from an industry report. Where sources disagree, this guide says so rather
 than picking a side. Written and maintained by Jacob S. Olsen. If something here

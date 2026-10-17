@@ -1,11 +1,11 @@
 ---
 title: "Editorial Guidelines"
-description: "The rules every Tech Feed Watch article has to pass before it is published: how questions and videos are chosen, how sources are credited, what gets rejected, and what the site does not do."
+description: "The rules every TechFeedWatch article has to pass before it is published: how questions and videos are chosen, how sources are credited, what gets rejected, and what the site does not do."
 ---
 
 # Editorial Guidelines
 
-Most articles on Tech Feed Watch are drafted by an automated system, as the [About page](/about) explains. That makes the rules more important, not less: a person can use judgement, a system only does what it is told. This page lists the rules it is told to follow. Each one is checked in code before an article goes live, not just written down here.
+Most articles on TechFeedWatch are drafted by an automated system, as the [About page](/about) explains. That makes the rules more important, not less: a person can use judgement, a system only does what it is told. This page lists the rules it is told to follow. Each one is checked in code before an article goes live, not just written down here.
 
 ## Two kinds of content
 

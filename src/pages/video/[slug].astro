@@ -294,10 +294,10 @@ const articleSchema = {
   // tillader en Organization som author, og det er det sande svar. Stod der en
   // Person, ville de strukturerede data påstå et forfatterskab som siden selv
   // modsiger nederst.
-  "author": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/", "founder": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] } },
+  "author": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/", "founder": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] } },
   "publisher": {
     "@type": "Organization",
-    "name": "Tech Feed Watch",
+    "name": "TechFeedWatch",
     "url": "https://techfeedwatch.com/",
     "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
   },
@@ -527,7 +527,7 @@ const metaDesc = rawMeta.length > 157
     .source-credit svg { width: 17px; height: 17px; flex-shrink: 0; color: #ff0000; }
     .source-credit a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
     .source-credit a:hover { text-decoration: underline; }
-    /* "Keep reading on Tech Feed Watch" (14/10, Jacob): 2 kort, teal top-bjælke som indholdsfortegnelsen,
+    /* "Keep reading on TechFeedWatch" (14/10, Jacob): 2 kort, teal top-bjælke som indholdsfortegnelsen,
        så boksen ses som sitets egen og ikke en annonce. Computer: 2 side om side. Mobil: liste. */
     .inline-recs { margin: 34px 0; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 600px; }
     .inline-recs-label { background: #1d4ed8; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 20px; }
@@ -1095,7 +1095,7 @@ const metaDesc = rawMeta.length > 157
                   slags overpåstand vi allerede har fjernet to andre steder.
                   Nu står der hvad der faktisk er sandt: sitet udgiver den,
                   Jacob står bag maskineriet og reglerne. */}
-              <span class="byline-name">Published by <a href="/author/jacob-olsen">Tech Feed Watch</a></span>
+              <span class="byline-name">Published by <a href="/author/jacob-olsen">TechFeedWatch</a></span>
               <span class="byline-meta">
                 <time datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                 {updatedLabel && (
@@ -1126,7 +1126,7 @@ const metaDesc = rawMeta.length > 157
                 <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
               ) : (
                 <a href={`https://www.youtube.com/watch?v=${youtubeId}`} target="_blank" rel="noopener nofollow">the original creator</a>
-              )}. Tech Feed Watch is not affiliated with the creator, and all rights to the video remain theirs.
+              )}. TechFeedWatch is not affiliated with the creator, and all rights to the video remain theirs.
             </span>
           </p>
 
@@ -1293,8 +1293,8 @@ const metaDesc = rawMeta.length > 157
               }).join('');
               var block = document.createElement('aside');
               block.className = 'inline-recs';
-              block.setAttribute('aria-label', 'Keep reading on Tech Feed Watch');
-              block.innerHTML = '<div class="inline-recs-label">Keep reading on Tech Feed Watch</div><div class="inline-recs-grid">' + cards + '</div>';
+              block.setAttribute('aria-label', 'Keep reading on TechFeedWatch');
+              block.innerHTML = '<div class="inline-recs-label">Keep reading on TechFeedWatch</div><div class="inline-recs-grid">' + cards + '</div>';
               if (target) { article.insertBefore(block, target); } else { article.appendChild(block); }
             }
             if (document.readyState !== 'loading') init();
@@ -1371,7 +1371,7 @@ const metaDesc = rawMeta.length > 157
           <img src="/jacob-olsen.png" alt="Jacob S. Olsen" class="author-box-photo" width="80" height="80" />
           <div>
             <p class="author-box-name"><a href="/author/jacob-olsen" class="author-box-link">Jacob S. Olsen</a></p>
-            <p class="author-box-title">Runs Tech Feed Watch, from Denmark</p>
+            <p class="author-box-title">Runs TechFeedWatch, from Denmark</p>
             {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
                 Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
             {antalWebKilder > 0 ? (

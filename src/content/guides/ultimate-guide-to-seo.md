@@ -21,7 +21,7 @@ faqs:
 
 Search changed shape in about eighteen months. AI-generated answers now sit above the results, assembled from sources the reader may never click. Every SEO channel has an opinion about what that means, and most of them are selling something.
 
-This guide is built differently. Tech Feed Watch has covered 34 videos about search from 25 different channels — agency owners, developers, Google's own Search Central, and independent consultants. What follows is what they converge on, where they genuinely disagree, and what is worth doing about it.
+This guide is built differently. TechFeedWatch has covered 34 videos about search from 25 different channels — agency owners, developers, Google's own Search Central, and independent consultants. What follows is what they converge on, where they genuinely disagree, and what is worth doing about it.
 
 The short version: the fundamentals did not change, the measurement did, and the largest risk right now is not being left behind by AI search. It is publishing so much unreviewed AI content that you get demoted for it.
 
@@ -193,6 +193,6 @@ If you are planning for the next six months: pick a narrower subject than feels 
 
 ---
 
-*This guide draws on 34 videos about search covered on Tech Feed Watch, from 25 channels including Google Search Central, Fireship, and a range of independent agencies and consultants. Every article links to its original video — the [SEO tag](/tag/seo) has the full set. Written and maintained by Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections) explains how to tell me.*
+*This guide draws on 34 videos about search covered on TechFeedWatch, from 25 channels including Google Search Central, Fireship, and a range of independent agencies and consultants. Every article links to its original video — the [SEO tag](/tag/seo) has the full set. Written and maintained by Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections) explains how to tell me.*
 
 *The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

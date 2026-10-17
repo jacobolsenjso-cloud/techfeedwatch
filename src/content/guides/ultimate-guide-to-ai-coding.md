@@ -20,7 +20,7 @@ faqs:
 ---
 
 Something unusual shows up when you count what developers are actually talking
-about. Tech Feed Watch has covered 36 videos on coding, from Fireship, Modern
+about. TechFeedWatch has covered 36 videos on coding, from Fireship, Modern
 Software Engineering, Y Combinator, NetworkChuck and others.
 
 **16 of them are about careers, skills and learning.** More than any specific
@@ -166,7 +166,7 @@ credited. The [Coding tag](/tag/coding) has all 36.
 
 ---
 
-*This guide draws on 36 videos covered on Tech Feed Watch, from channels
+*This guide draws on 36 videos covered on TechFeedWatch, from channels
 including Fireship, Modern Software Engineering, Y Combinator and NetworkChuck.
 The counts quoted come from the archive itself, not from an industry survey.
 Written and maintained by Jacob S. Olsen. If something here is wrong, the

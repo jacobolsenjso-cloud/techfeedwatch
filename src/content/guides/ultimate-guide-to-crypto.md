@@ -22,7 +22,7 @@ faqs:
 Most crypto coverage is about the price. This archive is not, and that is the
 most interesting thing about it.
 
-Tech Feed Watch has covered 50 videos on crypto, from Coin Bureau, a16z, Lex
+TechFeedWatch has covered 50 videos on crypto, from Coin Bureau, a16z, Lex
 Fridman, Yahoo Finance and a range of independent analysts. Counting what they
 actually discuss:
 
@@ -221,7 +221,7 @@ credited. The [Crypto tag](/tag/crypto) has all 50.
 
 ---
 
-*This guide draws on 50 videos covered on Tech Feed Watch, from channels
+*This guide draws on 50 videos covered on TechFeedWatch, from channels
 including Coin Bureau, a16z, Lex Fridman and Yahoo Finance. The counts quoted —
 38 on institutional money, 35 on regulation, 20 on price — come from the archive
 itself, not from an industry report. Nothing here is investment advice; it is a

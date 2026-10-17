@@ -29,7 +29,7 @@ function sleep(ms) {
 }
 
 function buildPrompt(guide) {
-  return `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism.
+  return `You are the Lead Tech Analyst and Senior Journalist for TechFeedWatch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism.
 
 Write an original, evergreen "Ultimate Guide" hub article about the topic: "${guide.title}" (category: ${guide.category}). This page sits above a list of related videos, so write a standalone editorial guide about the TOPIC itself - never a summary of any single video.
 

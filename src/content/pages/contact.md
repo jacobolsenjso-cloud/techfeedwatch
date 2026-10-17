@@ -1,11 +1,11 @@
 ---
-title: "Contact Tech Feed Watch"
-description: "Get in touch with Tech Feed Watch — send feedback, report a correction, or suggest a video worth covering."
+title: "Contact TechFeedWatch"
+description: "Get in touch with TechFeedWatch — send feedback, report a correction, or suggest a video worth covering."
 ---
 
 # Contact Us
 
-Thanks for your interest in Tech Feed Watch. We genuinely value hearing from our readers, and every message helps make the site better.
+Thanks for your interest in TechFeedWatch. We genuinely value hearing from our readers, and every message helps make the site better.
 
 ## Email
 
@@ -23,6 +23,6 @@ We read every message and aim to reply within a few business days.
 - **Business and advertising** — partnership, sponsorship, or advertising enquiries.
 - **Privacy and data requests** — anything related to our [Privacy Policy](/privacy-policy).
 
-## About Tech Feed Watch
+## About TechFeedWatch
 
-Tech Feed Watch is an independent tech media project that answers the questions people search for about AI, technology, fintech, and crypto, in plain language, with independent creators' videos as research material. You can read more about who we are and how the site works on our [About page](/about).
+TechFeedWatch is an independent tech media project that answers the questions people search for about AI, technology, fintech, and crypto, in plain language, with independent creators' videos as research material. You can read more about who we are and how the site works on our [About page](/about).

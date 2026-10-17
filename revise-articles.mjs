@@ -126,7 +126,7 @@ async function getSourceText(youtubeId, existingBody) {
 }
 
 function buildPrompt(sourceText, profile, targetWords, internalLinksContext) {
-  return `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this material only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords it revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the source told them.
+  return `You are the Lead Tech Analyst and Senior Journalist for TechFeedWatch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Use this material only as a starting point and news hook - do NOT summarize it. Before writing, silently identify the core topic and the 3-5 key concepts/keywords it revolves around. Then write an original, independently-reasoned analysis of that TOPIC, adding genuine value the source does not provide, so the reader learns more than the source told them.
 
     Return EXACTLY in this format:
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.

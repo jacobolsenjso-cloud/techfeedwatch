@@ -23,7 +23,7 @@ Search "make money with AI" and you get a wall of people selling you a course
 about making money with AI. That is a real business model. It is just not the
 one worth understanding.
 
-This guide is built from something else. Tech Feed Watch has covered 111 videos
+This guide is built from something else. TechFeedWatch has covered 111 videos
 about business and money, from Bloomberg, CNBC, Y Combinator, TED, Yahoo Finance
 and a range of independent analysts. Below is what they actually say.
 
@@ -179,7 +179,7 @@ credited. The [Business & Money tag](/tag/business-money) has all 111.
 
 ---
 
-*This guide draws on 111 videos covered on Tech Feed Watch, from channels
+*This guide draws on 111 videos covered on TechFeedWatch, from channels
 including Bloomberg, CNBC, Y Combinator, TED and Yahoo Finance. The counts
 quoted — 82 on investing, 69 on risk, 6 on side hustles — come from the archive
 itself, not from an industry report. Nothing here is investment advice; it is a

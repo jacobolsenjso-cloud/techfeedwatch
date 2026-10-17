@@ -39,11 +39,11 @@ const toolSchema = toolData ? {
   // Kun når værktøjet har en rigtig ændringsdato (`updated` i tools.ts).
   ...(toolData.updated ? { "dateModified": toolData.updated } : {}),
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" }
+  "publisher": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/" }
 } : null;
 
 // Standard SEO beskrivelse hvis ingen er angivet
-const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
+const defaultDesc = "Straight answers on AI, tech, fintech and crypto. Every article answers a question people actually search for, in plain language. Updated daily.";
 
 // Standard OG-delebillede hvis siden ikke selv angiver et (fx bruger videosider deres thumbnail)
 const ogImage = image || "https://techfeedwatch.com/og-default-v3.png";
@@ -97,7 +97,9 @@ const siteSchema = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Tech Feed Watch",
+    "name": "TechFeedWatch",
+    "alternateName": "Tech Feed Watch",
+    "description": "Straight answers on AI, tech, fintech and crypto. Every article answers a question people actually search for, in plain language. Updated daily.",
     "url": "https://techfeedwatch.com/",
     "potentialAction": {
       "@type": "SearchAction",
@@ -114,7 +116,8 @@ const siteSchema = [
     // offentlig rettelsespolitik — felterne peger på sider, der findes og er sande.
     "@type": "NewsMediaOrganization",
     "@id": "https://techfeedwatch.com/#organization",
-    "name": "Tech Feed Watch",
+    "name": "TechFeedWatch",
+    "alternateName": "Tech Feed Watch",
     "url": "https://techfeedwatch.com/",
     "logo": "https://techfeedwatch.com/icon-512.png",
     "email": "info@techfeedwatch.com",
@@ -404,11 +407,11 @@ const siteSchema = [
 
     <meta name="description" content={description || defaultDesc} />
     {!nocanonical && <link rel="canonical" href={canonicalURL} />}
-    <link rel="alternate" type="application/rss+xml" title="Tech Feed Watch RSS" href="https://techfeedwatch.com/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="TechFeedWatch RSS" href="https://techfeedwatch.com/rss.xml" />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content={ogType} />
-    <meta property="og:site_name" content="Tech Feed Watch" />
+    <meta property="og:site_name" content="TechFeedWatch" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description || defaultDesc} />
@@ -680,7 +683,7 @@ const siteSchema = [
       <div class="nav-left">
         {/* Tilføjet aria-expanded og aria-controls til AI Agenter */}
         <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="sidebar">☰</button>
-        <a href="/" class="logo" aria-label="Tech Feed Watch home">
+        <a href="/" class="logo" aria-label="TechFeedWatch home">
           <svg class="logo-mark" viewBox="0 0 90 90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" set:html={ikonIndhold({ id: 'navIkon' })}></svg>
           <span class="logo-text"><b>TechFeed</b>Watch</span>
         </a>
@@ -808,7 +811,7 @@ const siteSchema = [
 
         <footer class="site-footer">
           <div class="footer-inner">
-            <p class="footer-copy">&copy; {new Date().getFullYear()} Tech Feed Watch. All rights reserved.</p>
+            <p class="footer-copy">&copy; {new Date().getFullYear()} TechFeedWatch. All rights reserved.</p>
             <div class="footer-links">
               <a href="/start-here" class="footer-link">Start Here</a>
               <span class="footer-sep">|</span>

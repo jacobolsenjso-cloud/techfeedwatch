@@ -1,6 +1,6 @@
 ---
 title: "Start Here"
-description: "New to Tech Feed Watch? This is what the site is, why I built it this way, and how to get something useful out of it in five minutes."
+description: "New to TechFeedWatch? This is what the site is, why I built it this way, and how to get something useful out of it in five minutes."
 ---
 
 # Start Here

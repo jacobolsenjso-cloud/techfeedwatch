@@ -53,7 +53,7 @@ function slugify(term) {
 }
 
 function buildPrompt(term, category) {
-  return `You are writing a glossary entry for "Tech Feed Watch", a tech media outlet covering AI, Tech, SEO, Fintech, and Crypto.
+  return `You are writing a glossary entry for "TechFeedWatch", a tech media outlet covering AI, Tech, SEO, Fintech, and Crypto.
 
 Term: "${term}" (category: ${category})
 

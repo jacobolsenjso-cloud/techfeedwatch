@@ -652,14 +652,14 @@ async function run() {
 
     // Shorts får kun en let metadata-prompt (title/tags/summary) - ingen dyr artikel- eller FAQ-generering
     const prompt = isShort
-      ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
+      ? `Act as a metadata generator for "TechFeedWatch", a tech news site.
     Analyze this Short's content (transcript or title/description) and return EXACTLY in this format:
     TITLE: A concise, engaging headline
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `You are the Lead Tech Analyst and Senior Journalist for Tech Feed Watch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Someone searching Google typed "${targetQuestion}". This article's job is to answer that search better than the pages that rank for it today. The research is done: the RESEARCH below lists the questions searchers need answered and the facts the best web pages give, each with its source. You have also watched one video on the subject by ${kildeNavn(channelTitle) || 'a creator'}; it is a SUPPLEMENT - one practical illustration, not the backbone of the article.
+      : `You are the Lead Tech Analyst and Senior Journalist for TechFeedWatch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Someone searching Google typed "${targetQuestion}". This article's job is to answer that search better than the pages that rank for it today. The research is done: the RESEARCH below lists the questions searchers need answered and the facts the best web pages give, each with its source. You have also watched one video on the subject by ${kildeNavn(channelTitle) || 'a creator'}; it is a SUPPLEMENT - one practical illustration, not the backbone of the article.
 
     THE READER'S QUESTION: "${targetQuestion}". Answer it plainly in the first two sentences. Then build the article from the RESEARCH QUESTIONS, in the order a reader needs them. The headline must reflect the question. A reader who never watches the video must come away with a complete answer.
 

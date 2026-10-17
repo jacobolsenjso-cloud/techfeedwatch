@@ -23,7 +23,7 @@ faqs:
 digital dollar. Which is a polite way of saying the word tells you almost
 nothing.
 
-So this guide does something different. Tech Feed Watch has covered 67 videos
+So this guide does something different. TechFeedWatch has covered 67 videos
 about money and technology, from around thirty channels — Yahoo Finance, a16z,
 Coin Bureau, TED, and a pile of independent analysts who actually work in this
 stuff. Below is what they agree on, where they argue, and what the sales decks
@@ -235,7 +235,7 @@ credited. The [Fintech tag](/tag/fintech) has all 67 of them, and the
 
 ---
 
-*This guide draws on 67 videos covered on Tech Feed Watch, from around thirty
+*This guide draws on 67 videos covered on TechFeedWatch, from around thirty
 channels including Yahoo Finance, a16z, Coin Bureau and TED. The counts quoted —
 58 mentioning regulation, 29 on lending, 27 on fraud — come from the archive
 itself, not from an industry report. Written and maintained by Jacob S. Olsen.

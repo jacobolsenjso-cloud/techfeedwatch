@@ -55,7 +55,7 @@ if (dryRun) {
   process.exit(0);
 }
 
-const byg = (titel, resume, tekst) => `You are writing the body of an article for Tech Feed Watch, a site that turns
+const byg = (titel, resume, tekst) => `You are writing the body of an article for TechFeedWatch, a site that turns
 YouTube videos into short written analyses so readers can decide whether the
 video is worth their time.
 

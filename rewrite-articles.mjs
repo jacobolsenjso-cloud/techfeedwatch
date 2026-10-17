@@ -51,7 +51,7 @@ const medTidsgraense = (loefte, sekunder, hvad) => Promise.race([
 // er research. Den er skrevet ud her frem for at importeres, fordi robotten
 // også skal producere titel, mærker, resumé og FAQ — her skal vi kun bruge
 // brødteksten, og alt det øvrige skal blive præcis som det er.
-const byg = (titel, resume, spoergsmaal, tekst) => `You are writing a reference article for Tech Feed Watch about a technology
+const byg = (titel, resume, spoergsmaal, tekst) => `You are writing a reference article for TechFeedWatch about a technology
 subject. Research for it included the transcript of one video, which is
 supplied below.
 

@@ -22,7 +22,7 @@ faqs:
 Most productivity advice about AI is a list of tools. This archive is more
 interesting than that, and in one respect more honest.
 
-Tech Feed Watch has covered 36 videos on productivity. Seven are about building
+TechFeedWatch has covered 36 videos on productivity. Seven are about building
 a personal knowledge system — the "second brain" idea, in Notion, Obsidian, or
 something homemade. And **six of them argue that AI is making people worse at
 thinking**, not better at working.
@@ -167,7 +167,7 @@ credited. The [Productivity tag](/tag/productivity) has all 36.
 
 ---
 
-*This guide draws on 36 videos covered on Tech Feed Watch. The counts quoted come
+*This guide draws on 36 videos covered on TechFeedWatch. The counts quoted come
 from the archive itself, not from an industry survey. Written and maintained by
 Jacob S. Olsen. If something here is wrong, the [corrections policy](/corrections)
 explains how to tell me.*

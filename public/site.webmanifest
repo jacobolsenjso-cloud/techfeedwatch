@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "Tech Feed Watch",
+  "name": "TechFeedWatch",
   "short_name": "TechFeedWatch",
-  "description": "The best AI, tech, fintech, and crypto videos turned into fast, readable analysis.",
+  "description": "Straight answers on AI, tech, fintech and crypto, in plain language. Updated daily.",
   "lang": "en",
   "dir": "ltr",
   "start_url": "/",
@@ -39,7 +39,7 @@
       "sizes": "412x915",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "The front page: the day's lead analysis, with the source channel credited"
+      "label": "The front page: straight answers on AI, tech, fintech and crypto"
     },
     {
       "src": "/screenshots/mobile-article.png",
@@ -53,7 +53,7 @@
       "sizes": "1280x800",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Tech Feed Watch on a desktop browser"
+      "label": "TechFeedWatch on a desktop browser"
     }
   ],
   "shortcuts": [

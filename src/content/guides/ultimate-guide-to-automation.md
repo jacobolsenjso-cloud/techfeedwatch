@@ -25,7 +25,7 @@ including when they were wrong.
 
 That is no longer what most of the conversation is about.
 
-Tech Feed Watch has covered 50 videos on automation, from Futurepedia, Y
+TechFeedWatch has covered 50 videos on automation, from Futurepedia, Y
 Combinator, WorldofAI and a range of practitioners. **36 of the 50 are about AI
 agents.** Only six are about the workflow tools — Zapier, Make, n8n — that
 defined the field for a decade.
@@ -201,7 +201,7 @@ credited. The [Automation tag](/tag/automation) has all 50.
 
 ---
 
-*This guide draws on 50 videos covered on Tech Feed Watch, from channels
+*This guide draws on 50 videos covered on TechFeedWatch, from channels
 including Futurepedia, Y Combinator and WorldofAI. The counts quoted — 36 on
 agents, 31 on failure and limits, 6 on workflow tools — come from the archive
 itself, not from an industry report. Written and maintained by Jacob S. Olsen.

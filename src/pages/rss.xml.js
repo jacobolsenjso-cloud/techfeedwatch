@@ -16,8 +16,8 @@ export function GET(context) {
     }));
 
   return rss({
-    title: 'Tech Feed Watch',
-    description: 'Independent analysis of AI, tech, fintech, and crypto - a new article every few hours.',
+    title: 'TechFeedWatch',
+    description: 'Straight answers to the questions people search for about AI, tech, fintech and crypto, in plain language. Updated daily.',
     site: context.site,
     items,
     customData: `<language>en-us</language>`,

@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 
 const { monthKey, pageVideos, currentPage, lastPage } = Astro.props as any;
 const label = monthLabel(monthKey);
-const pageDescription = `Articles published on Tech Feed Watch in ${label}. Page ${currentPage} of ${lastPage}.`;
+const pageDescription = `Articles published on TechFeedWatch in ${label}. Page ${currentPage} of ${lastPage}.`;
 
 const prevUrl = currentPage <= 2 ? `/archive/${monthKey}` : `/archive/${monthKey}/page/${currentPage - 1}`;
 const nextUrl = currentPage < lastPage ? `/archive/${monthKey}/page/${currentPage + 1}` : null;

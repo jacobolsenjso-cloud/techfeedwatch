@@ -1,9 +1,9 @@
 ---
-title: "About Tech Feed Watch"
+title: "About TechFeedWatch"
 description: "Why this site exists, who runs it, and exactly how the articles are made. Written by Jacob S. Olsen, Denmark."
 ---
 
-# About Tech Feed Watch
+# About TechFeedWatch
 
 Writing about AI and what it can do is a long story. I could fill a hundred articles with it and still not be finished. But let me try to explain what this site is about, and why I think it matters — because I would like you to come away understanding it a little better than when you arrived.
 
@@ -21,7 +21,7 @@ Learn it for your own sake. It will pay you back.
 
 ## Why this site exists
 
-Here is what I noticed, and it is the reason Tech Feed Watch is built the way it is.
+Here is what I noticed, and it is the reason TechFeedWatch is built the way it is.
 
 When people want to understand something about AI, technology, fintech or crypto, they type a question into Google. What they get back is often a wall of long videos, thin listicles, or pages written to rank rather than to answer. The straight answer is in there somewhere — usually inside a video from someone who actually knows the subject — but it takes twenty minutes to find out whether it was worth it.
 
@@ -31,7 +31,7 @@ That is it. I am trying to make it easier for people who are interested in tech 
 
 ## Who runs this site
 
-My name is **Jacob S. Olsen**, and I run Tech Feed Watch on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
+My name is **Jacob S. Olsen**, and I run TechFeedWatch on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
 
 You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbeJS](https://x.com/JacobStubbeJS). If something on this site is wrong, that is the fastest way to tell me.
 

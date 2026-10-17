@@ -56,7 +56,7 @@ const descriptionDictionary: Record<string, string> = {
   "Smartphones & Gadgets": "Smartphones and gadgets — iPhone and Android phones, wearables, tablets and earbuds, with clear answers on what is new and what it means for you.",
   "Robotics": "Robotics news and explainers — humanoid robots, industrial robots and physical AI, and what robots can and cannot do today.",
   "PC Building & Gaming": "PC building and gaming — parts, graphics cards, gaming laptops and upgrades, explained so you can build or buy the right machine.",
-  "Default": `The latest ${tagName} news, tools, and analysis — curated tech videos turned into clear, readable articles you can absorb in minutes.`
+  "Default": `${tagName} explained in plain language: straight answers to the questions people search for, each crediting the creator whose video it draws on.`
 };
 
 const currentDescription = descriptionDictionary[tagName] || descriptionDictionary["Default"];
@@ -100,7 +100,7 @@ const listeSchema = {
   "name": `${tagName} Archive`,
   "url": `https://techfeedwatch.com/tag/${currentSlug}/`,
   "description": currentDescription,
-  "isPartOf": { "@type": "WebSite", "name": "Tech Feed Watch", "url": "https://techfeedwatch.com/" },
+  "isPartOf": { "@type": "WebSite", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/" },
   "publisher": { "@id": "https://techfeedwatch.com/#organization" },
   "mainEntity": {
     "@type": "ItemList",
