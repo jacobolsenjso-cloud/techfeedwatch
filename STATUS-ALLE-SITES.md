@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 135** — brug kun v135). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 136** — brug kun v136). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 135** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 17:42, live `c9397c0c`): LIVE. Nyt logo (app-ikon) og nye farver (blå links, violette knapper, blæk-mørk), 18 emner, push-beskeder.** Midlertidig "New look"-boble for kendte læsere til og med 24/10. Klokken: rigtigt ulæst, følg emner, daglig push (16:37 UTC). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** tjek første push-udsendelse 17/10 18:37; slå Jacobs localhost-testtilmelding fra bagefter; slet boblen efter 25/10; tjek 1/11 at kurserne kom; spørg Jacob om de gamle delingskort skal have nyt logo.
+**Seneste for techfeedwatch (17/10-2026 kl. 18:20, live `037e5d9b`): LIVE. Nyt logo (app-ikon) og nye farver overalt - også på alle 438 artikelbilleder, i AI-vandmærket (også robottens fremtidige) og i app-skærmbillederne.** Midlertidig "New look"-boble for kendte læsere til og med 24/10. 18 emner, daglig push (16:37 UTC), Faktaboks, DCA-kurser hentes selv den 1. **Næste:** tjek første push-udsendelse 17/10 18:37; slå Jacobs localhost-testtilmelding fra bagefter; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,21 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 18:20 - techfeedwatch: nyt logo på ALLE billeder + logo i AI-vandmærket + nye app-skærmbilleder
+- **Jacob: "ja, alt skal opdateres" + "ja til alle"** (logo i vandmærket, også fremover).
+- **Delingsbilleder + listekort:** `lav-kortbilleder.mjs` lavede 399 af hver (alle artikler uden AI-billede), 0 fejl. Før/efter-ark tjekket for 6 emner: nyt ikon + **TechFeed**Watch, blæk-baggrund, AI Video nu teal. Listekort er 960x540 med vilje (står i og-card.mjs).
+- **AI-vandmærket:** `aibillede.mjs` sætter nu logoikonet til venstre for "TechFeedWatch.com" i alle 3 størrelser. Tekstbredden MÅLES med den skrift maskinen har - tjekket at skyens skrift (Liberation Sans) har samme mål som Arial på et rigtigt skybillede. Robotten bruger samme funktion, så nye AI-billeder får ikonet automatisk.
+- **De 39 eksisterende AI-billeder:** kun 14 originaler var gemt lokalt (robottens egne gemmes ikke i skyen). Målt lighed original/publiceret: 13 tegnet forfra fra originalen (forskel 4,5-9,8), 26 fik ikonet lagt oven på de færdige filer, samme position (heraf 1 hvor originalen IKKE passede - forskel 22,9 - så motivet blev bevaret). XMP "AI-genereret" bevaret i 117/117 filer. Engangsscriptet husker færdige (`_vandmaerke-gjort.json`), så intet får to ikoner.
+- **App-skærmbilleder (Android installer-dialog):** de 3 fra 31/7 viste gammelt logo/forside. Nye: 412x915 forside + bibliotek, 1280x800 forside, taget lokalt med Chrome uden vindue og midlertidig profil (Jacobs profil urørt).
+- **Ikke rørt (med vilje):** 9 billeder fra slettede artikler (8 og + 1 kort) - ingen side bruger dem; `og-default-v2.png` (gammelt, ubrugt). Slettes kun med Jacobs ok.
+- **Tjek:** 5 testsæt grønne, syntaks ok for add-video/lav-ai-billeder. LIVE `037e5d9b` (919 filer).
+- **Lære:** mit størrelsestjek forventede 480x270 listekort - de er 960x540 med vilje. Slå målet op i koden før jeg kalder noget en fejl.
+- **Lære:** sharp holder læste filer åbne på Windows -> "unable to open for write". Scripts der læser OG overskriver samme fil: `sharp.cache(false)`.
+- **Lære:** Chrome uden vindue kan ikke lave vindue under ca. 500 px - mobilbilleder blev lagt ud for bredt. Løsning: siden i en 412 px ramme (iframe) + beskæring. puppeteer-core hang ved hvert kald til siden (også desktop) - opgivet efter 4 forsøg; en hængt kørsel efterlod 8 Chrome-processer, der låste profilen -> ny profil pr. kørsel.
+- **Lære:** tal i commit-beskeden skrevet før kørslen var talt op ("12 forfra / 27 ovenpå") - rigtigt er 13/26. Commit-tekster skrives FRA målt output, aldrig fra hukommelsen.
+- **Lære:** svar til Jacob midt i en opgave skal sendes som besked - tekst mellem værktøjskald når ham ikke (han måtte spørge "vil du svare på mit spørgsmål?").
+
 
 ### 17/10-2026 kl. 17:42 - techfeedwatch: nyt logo, nye farver og "New look"-boble LIVE
 - **Jacobs valg:** logo "app-ikon" (afrundet firkant, cyan-blå-violet forløb, tre hvide nyhedslinjer, cyan "live"-prik), 36 px desktop / 32 px mobil, ordmærke **TechFeed**Watch i neutral farve. Farver: links blå #1d4ed8 (lys) / cyan #67e8f9 (mørk), knapper violet #6d28d9 (lys) / #7c3aed (mørk) via `--btn`, mørk baggrund blæk #0b1020, ingen pink.
