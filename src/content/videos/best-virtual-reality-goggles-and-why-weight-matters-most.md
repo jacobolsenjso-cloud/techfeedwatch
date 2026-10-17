@@ -35,7 +35,7 @@ For years, manufacturers convinced consumers that standalone headsets had to res
 
 Critically, “Meta VR glasses are not a Quest successor.” The modern response is a deliberate architectural split. By moving the heavy components down to an external compute pack, the facial unit transforms into an actual pair of goggles.
 
-This mechanical transition completely alters how [Virtual Reality Headsets Balance Visual Clarity and Bulk](/video/virtual-reality-headsets-balance-visual-clarity-and-bulk). In Meta VR Glasses, the visor houses only the Micro-OLED displays, pancake lenses, and camera tracking arrays.
+This mechanical transition completely alters how [Virtual Reality Headsets Mechanics Hardware and Use Cases](/video/virtual-reality-headsets-balance-visual-clarity-and-bulk). In Meta VR Glasses, the visor houses only the Micro-OLED displays, pancake lenses, and camera tracking arrays.
 
 The computing muscle sits inside an external enclosure tethered by a cable that measures roughly 4 in longer than the cord found on the [Apple Vision Pro](https://www.apple.com/apple-vision-pro/). Inside that puck lies Qualcomm's Snapdragon XR2 Gen 3 chip, also marketed as the Reality Elite processor, paired with a 35 Wh battery.
 
