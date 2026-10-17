@@ -18,6 +18,9 @@
 const VERSION = 'tfw-__BUILD_ID__';
 const SHELL = `${VERSION}-shell`;
 const PAGES = `${VERSION}-pages`;
+// Billeder i deres egen cache med loft (17/10): før lå de i SHELL uden grænse og voksede for evigt.
+const IMAGES = `${VERSION}-img`;
+const MAX_IMAGES = 400;
 // Med afsluttende skråstreg: sitets sider ligger på /offline/, og henter man
 // /offline får man et omdirigeret svar. Se kommentaren ved storeClean nedenfor.
 const OFFLINE_URL = '/offline/';
@@ -100,21 +103,29 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Egne billeder og ikoner: cache først, ellers hent
+  // Egne billeder og ikoner (rettet 17/10-2026): den gemte kopi vises med det samme, men der
+  // hentes ALTID en frisk udgave i baggrunden, som erstatter kopien til næste visning.
+  // Før blev kopien aldrig fornyet: et billede der blev skiftet ud under samme adresse (fx
+  // nyt logo 17/10) blev ved med at være det gamle hos tilbagevendende læsere.
+  // cache: 'no-cache' = browseren spørger serveren om filen er ændret (lille 304-svar hvis ikke).
   if (request.destination === 'image') {
+    let gemt = Promise.resolve();
+    const hent = fetch(request, { cache: 'no-cache' }).then((res) => {
+      if (res.ok) {
+        const kopi = res.clone();
+        gemt = caches.open(IMAGES)
+          .then((c) => c.put(request, kopi))
+          .then(() => trim(IMAGES, MAX_IMAGES))
+          .catch(() => {});
+      }
+      return res;
+    });
+    // Hold service workeren i live til den friske udgave er gemt (også når kopien blev vist)
+    event.waitUntil(hent.then(() => gemt, () => {}));
     event.respondWith((async () => {
       const hit = await caches.match(request);
       if (hit) return hit;
-      try {
-        const fresh = await fetch(request);
-        if (fresh.ok) {
-          const copy = fresh.clone();
-          caches.open(SHELL).then((c) => c.put(request, copy));
-        }
-        return fresh;
-      } catch {
-        return Response.error();
-      }
+      try { return await hent; } catch { return Response.error(); }
     })());
   }
 });

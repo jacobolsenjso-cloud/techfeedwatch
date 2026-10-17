@@ -32,9 +32,11 @@ if (!fs.existsSync(OUT)) {
 // kan fryse igen.
 const filer = fs.existsSync('dist/_astro') ? fs.readdirSync('dist/_astro').sort() : [];
 const assets = filer.length ? filer.join('|') : String(Date.now());
-const buildId = crypto.createHash('sha1').update(assets).digest('hex').slice(0, 10);
-
 const src = fs.readFileSync(SRC, 'utf8');
+// 17/10-2026: service workerens EGEN kode tæller også med. Ellers kunne en rettelse i sw.js
+// beholde det gamle versionsnavn, og de gamle (forældede) billedkopier blev ikke ryddet.
+const buildId = crypto.createHash('sha1').update(assets + '|' + src).digest('hex').slice(0, 10);
+
 if (!src.includes('__BUILD_ID__')) {
   console.error('public/sw.js indeholder ikke __BUILD_ID__ — stemplet ville gøre ingenting.');
   process.exit(1);
