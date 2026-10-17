@@ -177,7 +177,9 @@ export async function tilfoejEksterneLinks(content, { beskrivelse = '', spoerg =
         try { host = new URL(u).hostname; } catch { continue; }
         const hn = hovedNavn(host);
         // Domænet skal bære navnet: "IBM Quantum" -> ibm.com, "Arvow" -> arvow.com.
-        if (!navneOrd.some((w) => (w.length >= 3 && hn.includes(w)) || (hn.length >= 3 && w.includes(hn)))) { afvist.push(`${u} (domænet passer ikke til "${navn}")`); continue; }
+        // Forkortelse (17/10): "National Institute of Standards and Technology" -> nist.gov. Uden den blev NIST afvist.
+        const initialer = navneOrd.map((w) => w[0]).join('');
+        if (!(initialer.length >= 3 && hn === initialer) && !navneOrd.some((w) => (w.length >= 3 && hn.includes(w)) || (hn.length >= 3 && w.includes(hn)))) { afvist.push(`${u} (domænet passer ikke til "${navn}")`); continue; }
         if (brugteDomaener.has(hn)) continue;
         const sted = findSted(linjer, navn, brugteLinjer);
         if (!sted) { afvist.push(`${u} ("${navn}" står ikke i artiklen)`); continue; }

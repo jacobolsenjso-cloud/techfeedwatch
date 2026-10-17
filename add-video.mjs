@@ -733,7 +733,8 @@ async function run() {
     for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
       const result = await hentModel(genAI, {
         model: GEMINI_MODEL,
-        generationConfig: { maxOutputTokens: 16384 },
+        // 32768 (17/10): tænkningen brugte 15.119 af 16.384, så svaret blev klippet og skulle laves om.
+        generationConfig: { maxOutputTokens: 32768 },
       }).generateContent(prompt);
 
       // Blev svaret klippet af? Modellen siger det selv. Uden dette tjek ser et
@@ -987,7 +988,7 @@ async function run() {
         // (14.500 tegn) manglede markøren. Fejlen er tilfældig, så ét forsøg
         // mere er billigere end at kassere en god kandidat.
         console.log(`⚠️ Brødteksten mangler (${ordITekst} ord) — prøver én gang til`);
-        const igen = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 16384 } }).generateContent(prompt);
+        const igen = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768 } }).generateContent(prompt);
         const rawIgen = igen.response.text() || '';
         const { faqBlock: fm2, contentMatch: cmIgen } = delSvar(rawIgen);
         const nyContent = sanitizeLinks((cmIgen ? cmIgen[1] : '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
