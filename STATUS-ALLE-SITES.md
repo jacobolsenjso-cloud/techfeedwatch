@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 138** — brug kun v138). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 139** — brug kun v139). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 138** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 20:58, live `eddc3c89`): LIVE. Nyt logo og farver overalt - kode, alle 438 artikelbilleder, AI-vandmærke, app-skærmbilleder, Googles logo-felt, manifest; gennemgang af alle steder: 0 rester. Service workeren fornyer billeder i baggrunden.** Første push 17/10: 1 sendt, 0 fejl. Midlertidig "New look"-boble til og med 24/10. **Næste:** Google/sociale medier opdateres ved næste crawl (kan fremskyndes af Jacob); slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 21:14, live `c8b2c1d2`): LIVE. Navnet hedder TechFeedWatch overalt (gammelt navn kun som alternateName), ny beskrivelse "Straight answers on AI, tech, fintech and crypto..." på forside, standard, emnesider, RSS, manifest og llms.txt. Nyt logo og farver overalt; service workeren fornyer billeder.** Google bedt om at hente forsiden igen (Search Console 17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 14 for lange beskrivelser (ordliste/regler) kan forkortes; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,19 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 21:14 - techfeedwatch: navnet hedder TechFeedWatch overalt + nye beskrivelser (LIVE `c8b2c1d2`) + Google bedt om at hente forsiden
+- **Jacob: opdatér beskrivelserne til den nye "hvad TechFeedWatch er"** + valgte navnet **TechFeedWatch** (ét ord, som logo, titler og domæne); "Tech Feed Watch" beholdes kun som `alternateName` i schema, så søgninger på det gamle navn stadig rammer.
+- **Målt først:** alle 595 sider i sitemap hentet live. Gammel beskrivelse fundet i: standardbeskrivelsen ("daily archive of the best AI, Tech, and SEO videos"), emneside-skabelonen ("curated tech videos turned into clear, readable articles" - AR & VR, Hardware & Chips, Quantum Computing), app-manifestet, RSS og llms.txt. Navnet med tre ord stod 100 steder i 48 filer (sider, layout, schema, copyright, byline, om/kontakt/vilkår/privatliv, guides, robottens prompts).
+- **Ny beskrivelse (= forsidens overskrift):** "Straight answers on AI, tech, fintech and crypto. Every article answers a question people actually search for, in plain language. Updated daily." (145 tegn) - forside, standard og WebSite-schema. Emnesider uden egen tekst: "<emne> explained in plain language: straight answers to the questions people search for, each crediting the creator whose video it draws on." RSS, manifest og llms.txt omskrevet til samme budskab.
+- **Rettescript med vagt:** stopper uden at skrive, hvis en tekst ikke findes præcis det forventede antal gange (stoppede én gang: tankestreg i kilden - rettet til mønster).
+- **Tjek live (602 sider inkl. noindex-sider):** 0 "Tech Feed Watch" tilbage, og:site_name = TechFeedWatch overalt, alle sider har beskrivelse, beskrivelse = og:description overalt; 20 beskrivelser ændret (vist før/efter for Jacob). Manifest, RSS og llms.txt bekræftet live.
+- **Search Console (Jacobs Chrome):** forsiden undersøgt (indekseret) -> "Anmod om indeksering" -> "Der er anmodet om indeksering" (prioriteret crawlkø). Googles gemte favicon i Search Console var stadig det gamle.
+- **Ikke ændret (med vilje):** artiklernes egne beskrivelser (sidespecifikke, intet sitenavn i dem); 14 ordliste-/regelsider har beskrivelser over 170 tegn (Google afkorter) - kan forkortes senere.
+- **Lære:** mit søgeværktøj udelukkede ".astro" som mønster og sprang dermed ALLE .astro-filer over - gennemgangen "0 rester" i v138 manglede skabelonerne. Gentaget med rettet værktøj: farverne var stadig rene. Fremover: test et søgeværktøj på et kendt fund, før "0 fundet" troes.
+- **Lære:** PowerShell `Select-String -Path` med [klammer] i filnavnet finder stille ingenting (klammer = jokertegn) - brug `-LiteralPath`.
+- **Lære:** min vente-løkke på buildet reagerede på ordet "error" i en artikels adresse og læste resultatet for tidligt - vent kun på buildets egen slutlinje.
+
 
 ### 17/10-2026 kl. 20:58 - techfeedwatch: gennemgang af ALLE steder det gamle logo kan sidde (Jacob: "du tjekker alle steder")
 - **Koden (alle filer undtagen artikler/node_modules):** søgt efter gammel teal, pink, gamle mørke farver, og-default/-v2, favicon v1/v2, gammel logotekst: 0 rester på sitet (3 fund: 2 er den nye AI Video-farve, 1 er en intern rapportskabelon i retitle-to-demand.mjs, ikke på sitet).
