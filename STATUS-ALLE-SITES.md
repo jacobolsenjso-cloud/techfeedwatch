@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 130** — brug kun v130). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 131** — brug kun v131). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 130** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 13:23, live `ba269e55`): LIVE. 58 egne værktøjer** - krypto, AI, hardware, video, PDF, kvante, lån og inflation. 40 af 438 artikler viser et værktøj, der passer til spørgsmålet (beregnes ved bygning, så gamle artikler har det også). Faktaboks "Key facts" på nye og omskrevne artikler; gamle får den gennem omskrivningen (3 om dagen, aftalt 17/10 - ingen ekstra pris). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker (logs #708/#709 tjekket). 17/10: skriveloftet hævet til 32.768 tokens, og forkortelses-domæner (nist.gov) godkendes. **Næste:** se om B nogensinde udløses; Britannica/IBM afviser robottens link-tjek; spørgsmål til Jacob: skal robotten hente DCA-kurser hver måned?
+**Seneste for techfeedwatch (17/10-2026 kl. 13:45, live `bf6b91b7`): LIVE. 58 egne værktøjer** - krypto, AI, hardware, video, PDF, kvante, lån og inflation. 40 af 438 artikler viser et værktøj, der passer til spørgsmålet (beregnes ved bygning, så gamle artikler har det også). Faktaboks "Key facts" på nye og omskrevne artikler; gamle får den gennem omskrivningen (3 om dagen). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker. 17/10: skriveloft 32.768 tokens, forkortelses-domæner (nist.gov) godkendes, DCA-kurser hentes selv den 1. i måneden (gratis, Workeren starter `hent-kurser.yml`). **Næste:** tjek 1/11 at kurserne kom; se om B nogensinde udløses; Britannica/IBM afviser robottens link-tjek.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 13:45 - techfeedwatch: DCA-kurser hentes nu selv hver måned (LIVE)
+- **Jacob: "kod".** Pris: 0 kr. - Binances åbne markedsdata (ingen nøgle, ingen AI), et par sekunder på GitHub (gratis for offentligt repo).
+- **Fundet før kodning:** hent-kurser.mjs brugte api.binance.com, som afviser amerikanske servere - GitHubs maskiner står i USA. Det virkede kun, fordi scriptet blev kørt fra Jacobs pc. Skiftet til data-api.binance.vision. Målt fra pc: samme slutkurser i alle 294 afsluttede måneder (BTC 110, ETH 110, SOL 74), 0 forskelle.
+- **Vagt:** færre måneder end sidst -> intet skrives, kørslen bliver rød (morgenrapporten viser røde kørsler). Testet med en falsk fil: exit 1, filen urørt, rigtig fil sat tilbage.
+- **Nyt job** `hent-kurser.yml` (kun workflow_dispatch, samme kø som robotten). Startes af Workeren tfw-starter den 1. i måneden kl. 03:37 UTC. Workerens selvtest udvidet (1 start i oktober, robotten stadig kl. :17) - alt OK. Worker deployet (version aa3ceca0, tidsplan uændret "17,37 * * * *").
+- **Set virke:** commit `5dc3af2f`; kørsel #1 startet med hånden i Jacobs Chrome -> grøn; robotten gemte `bf6b91b7` (hentet 2026-10-17, 110/110/74 måneder, BTC sep. 83.623,6); Cloudflare success; build.json = bf6b91b7; DCA-siden live viser "downloaded 2026-10-17".
+- **Næste automatiske kørsel:** 1/11-2026 kl. 04:37 dansk vintertid.
+
 
 ### 17/10-2026 kl. 13:23 - techfeedwatch: nattens kørselslogs tjekket, 2 fejl rettet LIVE
 - **Logs læst i Jacobs Chrome:** #708 (00:17 UTC) udgav "What Happens When Programming Runs in a Computer?" - DAEKNING 5/0 droppet, FAKTABOKS 3, VAERKTOEJ intet, 0,40 USD. #709 (01:17 UTC) udgav "Productivity Software and What It Means for Modern Work" - DAEKNING 3 beholdt/2 droppet, FAKTABOKS 0 (kun 4 fakta med kilde), VAERKTOEJ intet, 0,55 USD. Begge: audit 0 fejl, build grøn. Hver kørsel lagde først ét spørgsmål på is (ingen kandidat bestod). B (stop efter fejlet skrivning) blev ikke udløst - skrivningen lykkedes begge gange.
