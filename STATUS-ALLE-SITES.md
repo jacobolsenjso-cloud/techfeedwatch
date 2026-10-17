@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 141** — brug kun v141). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 142** — brug kun v142). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 141** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 21:50, live `871a584e`): LIVE. Navnet TechFeedWatch overalt, ny beskrivelse af sitet, alle sidebeskrivelser højst 160 tegn, "summaries" fjernet fra sitets egne sider, nyt logo og farver overalt, service workeren fornyer billeder.** Google bedt om at hente forsiden igen (17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** spørg Jacob om de nye funktioner skal nævnes på om-/start-siderne; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 22:27, live `dbb89eab`): LIVE. Om-, start-, vilkårs-, kontakt-, forfatter-, retningslinje- og privatlivssiderne beskriver nu den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History). /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn, nyt logo og farver. "New look"-boble til og med 24/10. **Næste:** Jacobs svar på, om "I write myself" om guides/ordliste/værktøjer skal stå; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 22:27 - techfeedwatch: om-/start-/politiksider og /sitemap/ beskriver sitet, som det er nu (LIVE `dbb89eab`)
+- **Jacob: "det skal også med eller rettes ... er der flere fejl, så ret dem også" + "husk /sitemap/".** Siderne målt mod koden (add-video.mjs, soegning.mjs, kildetjek.mjs, auto-youtube.mjs, MainLayout).
+- **Fundet forældet:** about, start-here, terms, contact, author og editorial-guidelines beskrev den gamle opskrift (videoens transskript som eneste research, "independent creator", "højst fem om dagen"). Målt: 32 artikler har nu "## Sources" med websider; 3 omskrivninger om dagen 15.-17/10; dagsloft max 3 (kode). 59+ af 438 artikler bygger på store medier/firmaer (TED, Bloomberg, CNBC, IBM ...), så "independent creator" passede ikke.
+- **Rettet:** ny opskrift beskrevet (Google-søgning, navngivne kilder, stærke/svage kilder, videoen som ét afsnit, regler for tal/afskrift/læsertjek, loft 3 om dagen). About + start-here har nu klokken, følg emner, 18 emner ({{TOPICS}} tælles fra src/lib/emner.mjs), daglig push-besked, Read later og History. "Guides ... one per subject" rettet (9 guides, 18 emner). Trends/popular: "draws on" i stedet for "comes from". Privatlivspolitik: skabelon-linjer om konti, køb, tilbud og affiliate-betaling fjernet. Kommentar i daily-update.yml (2-6 -> 2-3).
+- **/sitemap/:** viste 8 af 50 værktøjer og 46 af 56 ordlisteord (3 kategorier manglede); manglede Start here, Latest, Best of each topic, Trends, Search og alle politiksider; linkede ikke til emnesiderne. Nu læses værktøjer og kategorier fra data. Målt live: 55 værktøjslinks (50 + 5 kategorier), 56 ord, 17 emner (PC Building & Gaming har 0 artikler og vises først, når den får en), 9 guides, alle artikler.
+- **Målt live (dbb89eab, Cloudflare success):** 10 sider, 0 forældede formuleringer, alle beskrivelser højst 160 tegn. Skærmbilleder af /sitemap/ mobil + desktop.
+- **Ikke rørt (Jacobs afgørelse):** fire steder siger, at guides, ordliste og værktøjer er skrevet af Jacob selv ("I write myself", "written and maintained by hand"). Git-historikken viser, at de er lavet af AI (Gemini-scripts + Claude-sessioner) efter Jacobs anvisning. Spurgt.
+- **Lære:** Select-String fandt ikke en linje, som den fandt et kvarter før (author-siden) - et enkelt søg er ikke et bevis for "ingen fund"; slutmålingen skal køre på den byggede side (dist/live), ikke kun på kilden.
+
 
 ### 17/10-2026 kl. 21:50 - techfeedwatch: /about/ og /start-here/ tjekket - "summaries" fjernet (LIVE `871a584e`)
 - **Jacob: "er disse sider opdateret?"** Læst live: navn (TechFeedWatch), logo og budskab (rigtige søgespørgsmål, klare svar, krediteret skaber) passer allerede.
