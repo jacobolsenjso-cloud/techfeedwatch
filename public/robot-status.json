@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-16T03:27:40.283Z",
-  "articleCount": 436,
+  "updated": "2026-10-17T00:26:12.237Z",
+  "articleCount": 437,
   "lastArticle": {
-    "at": "2026-10-16T03:27:40.283Z",
+    "at": "2026-10-17T00:26:12.237Z",
     "slugs": [
-      "is-quantum-computing-possible-in-practical-systems"
+      "what-happens-when-programming-runs-in-a-computer"
     ]
   },
   "lastLinkRepair": {
