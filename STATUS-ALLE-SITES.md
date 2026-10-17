@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 132** — brug kun v132). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 133** — brug kun v133). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 132** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 14:29, live `0a8f5ede`): LIVE. 58 egne værktøjer, 13 emner.** Ny notifikations-klokke: rigtigt "ulæst" (læst = åbnet), følg emner (tallet tæller kun dem), liste Today/This week/Earlier med emne og læsetid, første besøg viser dagens artikler. Faktaboks på nye og omskrevne artikler (gamle via omskrivning, 3/dag). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker. DCA-kurser hentes selv den 1. i måneden. **Næste:** Jacob beslutter nye emner (AI Agents 33 artikler, Trading 8); klokke E (push-beskeder) venter; tjek 1/11 at kurserne kom.
+**Seneste for techfeedwatch (17/10-2026 kl. 15:13, live `0e861f6f`): LIVE. 18 emner, 58 egne værktøjer.** Nye emner: AI Agents 43, Investing & Trading 15, Smartphones & Gadgets 5, Robotics 3, PC Building & Gaming 0 artikler. Under 8 artikler: noindex + "building"-tekst; robotten giver nye emner under 20 hver anden artikel. "Follow this topic" på emnesider og i klokken (rigtigt ulæst, følg emner). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** Jacob: klokken E (push-beskeder)?; følg de nye emners vækst; tjek 1/11 at kurserne kom.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,19 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 15:13 - techfeedwatch: 5 nye emner LIVE (18 i alt)
+- **Jacob valgte** alle 5: AI Agents, Investing & Trading, Smartphones & Gadgets, Robotics, PC Building & Gaming. Hans idé: en venlig tekst på tynde emnesider; min justering: noindex under 8 artikler + "Follow this topic" i stedet for "gem siden" + robot 50/50.
+- **Én fælles emneliste:** `src/lib/emner.mjs` (18 emner, INDEX_GRAENSE 8, VOKSE_GRAENSE 20, emneSlug, emneRaekke). Bruges af robot (auto-youtube, add-video, også Shorts-prompten), emnesider, sitemap og de gamle scripts backfill-tags/revise-articles.
+- **Robot 50/50:** nye emner under 20 artikler får hver anden artikel (turen følger antal artikler: lige = nye, ulige = gamle 13); 2. forsøg i en kørsel tager den anden gruppe, så ingen sulter. `test-emner.mjs` 18 test. Første version gav AI Agents 7 af de gamles 20 - testen fangede det, rettet til præcis 20/20. Tørt løb: næste emne = PC Building & Gaming.
+- **Emnesider:** alle 18 bygges (også med 0 artikler). Under 8: noindex, ude af sitemappet, boks "We're building this topic right now". Alle: knap "Follow this topic" (samme liste som klokken, tallet opdateres med det samme). Maskinelt tjekket for alle 18.
+- **66 gamle artikler ommærket** med regler på titel + resumé (`retag-nye-emner.mjs`, ingen AI): 89 fund i tørt løb, 23 holdt ude efter gennemsyn ét for ét. Resultat: AI Agents 43, Investing & Trading 15, Smartphones & Gadgets 5, Robotics 3, PC Building & Gaming 0. AI & Tech 273 -> 222. Kun tags-linjer ændret (66 filer, 0 andet, 0 blandede linjeskift).
+- **Fundet ved skærmtjek:** listekortene har emnet skrevet i billedet - 64 reservekort lavet om (2 med AI-billede urørt).
+- **Uafhængigt review (separat agent):** ingen fejl der bryder bygget; 5 mindre fund rettet (nye filer skal i git, følg-tekst forklarer at klokken kun tæller fulgte emner, Shorts-prompt, 2 gamle scripts, llms.txt).
+- **Tjek:** alle test-*.mjs grønne, audit 0 fejl, interne links ok, build 663 sider, 0 konsolfejl, skærmbilleder desktop + mobil lyst/mørkt vist Jacob. LIVE `0e861f6f`.
+- **Lære:** brugte igen `node -e` med regex i PowerShell minutter efter at have skrevet reglen - ingen skade (PowerShell afviste). Og CRLF-faldgruben i min egen hjælpefunktion: søgetekster omsættes nu altid til filens linjeskift i _ret-scripts.
+- **Værd at vide:** robottens spørgsmålsfilter afviser mange iPhone-spørgsmål ("how much does iphone 17 cost") som uklare - ikke rørt.
+
 
 ### 17/10-2026 kl. 14:29 - techfeedwatch: ny notifikations-klokke (A-D) LIVE
 - **Jacob valgte A-D** (E = push-beskeder venter). Før: åbning af panelet markerede alt som læst; ingen emner; første besøg viste intet.
