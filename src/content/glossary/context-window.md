@@ -4,6 +4,7 @@ slug: "context-window"
 aliases: ["context length", "context limit"]
 category: "AI"
 definition: "The context window is how much text a model can hold in view at once — the conversation, the documents, the instructions and its own reply, all counted together."
+metaDescription: "The context window is how much text a model can hold in view at once: the conversation, documents, instructions and its own reply, counted together."
 ---
 
 A model has no memory between requests. Everything it appears to remember was sent to it again, as text, in the current request. The context window is the ceiling on how much can be sent.

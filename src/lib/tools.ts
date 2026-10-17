@@ -87,7 +87,7 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'Developer Tools',
     heading: 'Free Developer Tools',
     description:
-      'Free developer utilities: JSON formatter and validator, Base64 and URL encoder, text diff, case converter, colour contrast checker, and a secure password generator.',
+      'Free developer tools: JSON formatter and validator, Base64 and URL encoder, text diff, case converter, colour contrast checker and password generator.',
     intro:
       'The small utilities you reach for a dozen times a week. All of them run locally in the browser — your JSON, your tokens, and your passwords never leave the machine you are sitting at.',
     relatedTags: ['Coding', 'Automation'],

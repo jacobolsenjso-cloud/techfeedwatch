@@ -4,6 +4,7 @@ slug: "generative-ai"
 aliases: ["GenAI"]
 category: "AI"
 definition: "Generative AI refers to artificial intelligence models capable of producing new and original content, such as text, images, audio, or code, that did not exist before."
+metaDescription: "Generative AI is artificial intelligence that produces new content, such as text, images, audio or code, that did not exist before."
 ---
 
 Generative AI encompasses machine learning systems designed to create novel data rather than simply analyzing existing data. These models learn complex patterns and structures from massive datasets during training. Once trained, they can generate new outputs that share characteristics with the training data but are entirely original. This capability extends to various modalities, including text, images, video, audio, and computer code.

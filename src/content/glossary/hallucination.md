@@ -4,6 +4,7 @@ slug: "hallucination"
 aliases: ["hallucinations"]
 category: "AI"
 definition: "Hallucination occurs when an artificial intelligence model generates outputs that are factually incorrect, nonsensical, or fabricated, despite appearing confident and coherent."
+metaDescription: "A hallucination is when an AI model produces output that is false, nonsensical or made up, while still sounding confident and coherent."
 ---
 
 This phenomenon happens when AI models, especially large language models, produce information that seems plausible but deviates from verifiable facts, the provided source data, or logical consistency. It is not an intentional act of deception but rather a byproduct of how these models learn statistical relationships in their vast training datasets and predict the most probable sequence of words. They prioritize fluency and coherence over factual accuracy. An AI model might invent details, cite non-existent sources, or create fictional events, all while maintaining a convincing tone.

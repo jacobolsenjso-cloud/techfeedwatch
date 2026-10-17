@@ -4,6 +4,7 @@ slug: "data-breach"
 aliases: ["data breaches", "breach", "data leak", "leaked data", "exposed database"]
 category: "Cybersecurity"
 definition: "A data breach is any incident in which information that was supposed to stay private — customer records, passwords, medical files, source code — is accessed, copied or exposed by someone who was not meant to have it."
+metaDescription: "A data breach is any incident in which private information, such as customer records, passwords or source code, is accessed or exposed by the wrong people."
 ---
 
 The word suggests a dramatic break-in, and sometimes it is one. Just as often it is a database left open on the internet with no password, an employee emailing a spreadsheet to the wrong address, a laptop stolen from a car, or a supplier that was breached and took your data with it. The law usually does not care how it happened. If personal data got out, it is a breach, and the clock starts.

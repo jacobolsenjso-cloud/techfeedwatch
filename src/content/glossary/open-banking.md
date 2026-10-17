@@ -4,6 +4,7 @@ slug: "open-banking"
 aliases: ["PSD2"]
 category: "Fintech"
 definition: "Open Banking is a system that allows customers to securely share their financial data from banks with authorized third-party providers through application programming interfaces (APIs)."
+metaDescription: "Open banking lets customers securely share their financial data from banks with authorised third-party providers through APIs."
 ---
 
 Open Banking establishes a framework where traditional banks, with a customer's explicit consent, share specific financial information with licensed third-party service providers. This data includes transaction histories, account balances, and other financial details. The sharing occurs through standardized and secure APIs, which are sets of protocols and tools that allow different software applications to communicate with each other. This process gives consumers greater control over their financial information and how it is used.

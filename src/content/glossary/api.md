@@ -4,6 +4,7 @@ slug: "api"
 aliases: ["APIs"]
 category: "Tech"
 definition: "An Application Programming Interface (API) is a set of rules and protocols that allows different software applications to communicate and exchange data with each other."
+metaDescription: "An API (Application Programming Interface) is a set of rules that lets different software applications communicate and exchange data with each other."
 ---
 
 An Application Programming Interface acts as an intermediary, enabling different software programs to exchange information and functionality. It specifies how software components should interact, defining the methods and data formats applications use to make requests and receive responses. Developers use these defined interfaces to access the features or data of another service or application without needing to understand its internal workings. This approach promotes modularity in software design.

@@ -59,6 +59,7 @@ Term: "${term}" (category: ${category})
 
 Return EXACTLY in this format:
 DEFINITION: A single, clear sentence defining the term.
+META: The same definition rewritten in at most 155 characters, for search results.
 EXPLANATION:
 A 150-250 word explanation covering: what it is, why it matters, and one concrete real-world example.
 
@@ -98,7 +99,17 @@ async function generateTerm(term, category) {
     throw new Error(`Kunne ikke parse Gemini-svar for "${term}". Rå output: ${rawText.slice(0, 300)}`);
   }
 
-  const markdown = `---\nterm: ${toYamlDoubleQuoted(term)}\nslug: ${toYamlDoubleQuoted(slug)}\ncategory: ${toYamlDoubleQuoted(category)}\ndefinition: ${toYamlDoubleQuoted(definition)}\n---\n\n${explanation}\n`;
+  // 17/10-2026: Google viser ca. 155-160 tegn. Er definitionen længere, gemmes en kort udgave
+  // (META) som metaDescription - kun hvis den faktisk holder grænsen; ellers advares der.
+  const metaMatch = rawText.match(/META:\s*(.*)/i);
+  const meta = (metaMatch ? metaMatch[1] : '').replace(/"/g, "'").trim();
+  let metaLinje = '';
+  if (definition.length > 155) {
+    if (meta && meta.length <= 155) metaLinje = `metaDescription: ${toYamlDoubleQuoted(meta)}\n`;
+    else console.log(`⚠️ "${term}": definitionen er ${definition.length} tegn og META mangler/er for lang - skriv en metaDescription (højst 155 tegn) i hånden.`);
+  }
+
+  const markdown = `---\nterm: ${toYamlDoubleQuoted(term)}\nslug: ${toYamlDoubleQuoted(slug)}\ncategory: ${toYamlDoubleQuoted(category)}\ndefinition: ${toYamlDoubleQuoted(definition)}\n${metaLinje}---\n\n${explanation}\n`;
 
   if (!fs.existsSync('./src/content/glossary')) { fs.mkdirSync('./src/content/glossary', { recursive: true }); }
   fs.writeFileSync(`./src/content/glossary/${slug}.md`, markdown);

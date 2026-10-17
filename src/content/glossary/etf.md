@@ -4,6 +4,7 @@ slug: "etf"
 aliases: ["ETFs", "exchange-traded fund", "exchange traded fund", "index ETF", "bitcoin ETF", "spot ETF"]
 category: "Fintech"
 definition: "An ETF, or exchange-traded fund, is a basket of assets packaged as a single share that trades on a stock exchange, so you can buy a slice of an entire index, sector or commodity in one transaction."
+metaDescription: "An ETF (exchange-traded fund) is a basket of assets that trades as a single share, so one purchase buys a slice of a whole index, sector or commodity."
 ---
 
 Buying the 500 largest US companies one at a time would take 500 orders and a lot of money. An ETF does the buying for you: the fund holds the shares, and you hold shares of the fund, priced and traded all day like any other stock. The result is that a beginner with a few hundred dollars can own the same diversified portfolio as a pension fund, at a cost that is usually a fraction of a percent per year.

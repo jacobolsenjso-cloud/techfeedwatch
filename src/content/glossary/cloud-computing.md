@@ -3,6 +3,7 @@ term: "Cloud Computing"
 slug: "cloud-computing"
 category: "Tech"
 definition: "Cloud computing delivers on-demand computing services, including servers, storage, databases, networking, software, analytics, and intelligence, over the internet."
+metaDescription: "Cloud computing delivers computing services such as servers, storage, databases, software and analytics on demand over the internet."
 ---
 
 Cloud computing allows users to access computing resources, such as processing power and data storage, from a third-party provider rather than maintaining physical hardware and infrastructure locally. This model provides access to a pool of configurable computing resources that can be provisioned and released with minimal management effort. Users typically pay only for the resources they consume, shifting IT expenses from capital expenditure to operational expenditure. Providers manage the underlying infrastructure, including security, maintenance, and updates, ensuring high availability and performance.

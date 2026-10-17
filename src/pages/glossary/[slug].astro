@@ -10,7 +10,9 @@ export async function getStaticPaths() {
 }
 
 const { entry, allEntries } = Astro.props as { entry: any; allEntries: any[] };
-const { term, category, definition } = entry.frontmatter;
+// metaDescription (17/10-2026): kort tekst KUN til Google (højst 155 tegn). Den synlige
+// forklaring (definition) og schema beholder den fulde tekst.
+const { term, category, definition, metaDescription } = entry.frontmatter;
 
 const CATEGORY_COLORS: Record<string, string> = {
   AI: "#2563eb",
@@ -37,7 +39,7 @@ const schema = {
 const title = `${term} — Glossary`;
 ---
 
-<MainLayout title={title} description={definition} schema={schema}>
+<MainLayout title={title} description={metaDescription || definition} schema={schema}>
   <style is:global>
     .glossary-term-wrapper { max-width: 800px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
 

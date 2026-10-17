@@ -4,6 +4,7 @@ slug: "guardrails"
 aliases: ["guardrail", "safety filter"]
 category: "AI"
 definition: "Guardrails are the checks placed around an AI system to constrain what it can output or do — sitting outside the model, because the model cannot reliably police itself."
+metaDescription: "Guardrails are checks placed around an AI system to limit what it can output or do, sitting outside the model because it cannot reliably police itself."
 ---
 
 A language model has no separate faculty that reviews its own output before releasing it. It produces the next word, then the next. Whatever restraint it shows comes from training, and training shapes tendencies rather than guarantees. Guardrails are the layer added around that.

@@ -1,7 +1,7 @@
 ---
 title: "The Ultimate Guide to Understanding AI"
 slug: "ultimate-guide-to-ai-tools"
-description: "What 262 videos actually argue about AI itself — what it is, what it cannot do, whether it is dangerous, and where the disagreements are real rather than marketing."
+description: "What 262 videos actually argue about AI: what it is, what it cannot do, whether it is dangerous, and where the disagreements are real, not marketing."
 tags: ["AI & Tech"]
 category: "AI & Tech"
 date: "2026-07-23"

@@ -4,6 +4,7 @@ slug: "penetration-testing"
 aliases: ["pentesting", "pen testing", "pen test", "pentest", "penetration test", "ethical hacking", "red team"]
 category: "Cybersecurity"
 definition: "Penetration testing is a controlled, authorised attack on a system, carried out by security professionals to find the weaknesses a real attacker would exploit, before the real attacker does."
+metaDescription: "Penetration testing is a controlled, authorised attack on a system by security professionals, to find the weaknesses a real attacker would exploit first."
 ---
 
 A vulnerability scanner lists what might be wrong. A penetration tester proves what is wrong by actually getting in. That difference is the whole value: a scan might flag a hundred issues of unknown importance, while a test shows that issue number forty-three lets a stranger read the customer database in twenty minutes. Management understands the second kind of finding.

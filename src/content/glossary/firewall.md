@@ -4,6 +4,7 @@ slug: "firewall"
 aliases: ["firewalls", "network firewall", "web application firewall", "WAF"]
 category: "Cybersecurity"
 definition: "A firewall is a filter that sits between a network or device and the outside world and decides, packet by packet, which traffic is allowed through and which is dropped."
+metaDescription: "A firewall sits between a network or device and the outside world and decides, packet by packet, which traffic is allowed through and which is dropped."
 ---
 
 Every connection to a computer arrives as a stream of small packets, each carrying a source, a destination, a port number and a payload. A firewall reads those labels and applies rules: allow web traffic on port 443, block everything aimed at the database port from outside the office, drop anything from an address on a blocklist. What it lets through, the rest of the system has to deal with. What it drops never gets that far.

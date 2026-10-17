@@ -4,6 +4,7 @@ slug: "kyc"
 aliases: ["know your customer", "identity verification"]
 category: "Fintech"
 definition: "KYC is the regulated process of verifying who a customer is before letting them use a financial service, and monitoring afterwards for activity that does not fit."
+metaDescription: "KYC (know your customer) is the regulated check of who a customer is before they use a financial service, plus monitoring for activity that does not fit."
 ---
 
 Banks are required to know who holds their accounts. The obligation comes from anti-money-laundering law, and it is the reason opening an account involves documents at all.

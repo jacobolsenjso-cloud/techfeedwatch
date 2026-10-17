@@ -4,6 +4,7 @@ slug: "fine-tuning"
 aliases: ["fine-tune", "fine-tuned"]
 category: "AI"
 definition: "Fine-tuning is the process of taking a pre-trained machine learning model and further training it on a smaller, task-specific dataset to adapt its performance to a new domain or application."
+metaDescription: "Fine-tuning is further training a pre-trained machine learning model on a smaller, task-specific dataset to adapt it to a new domain or application."
 ---
 
 This technique starts with a general model, often a large language model, which has already learned extensive patterns and knowledge from a vast amount of data. Instead of building a model from scratch, developers apply fine-tuning by continuing the training process with a smaller, highly relevant dataset. This targeted training adjusts the model's internal parameters, allowing it to specialize and perform with higher accuracy on specific tasks without losing its broad foundational understanding.

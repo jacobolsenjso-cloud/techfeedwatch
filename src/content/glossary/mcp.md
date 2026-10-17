@@ -4,6 +4,7 @@ slug: "mcp"
 aliases: ["Model Context Protocol", "MCP server", "MCP servers", "MCP client"]
 category: "AI"
 definition: "MCP, the Model Context Protocol, is an open standard that lets an AI model connect to outside tools and data — files, databases, browsers, other apps — through one common plug instead of a custom integration for each."
+metaDescription: "MCP (Model Context Protocol) is an open standard that lets an AI model use outside tools and data through one common plug instead of custom integrations."
 ---
 
 Before MCP, giving an AI assistant access to your calendar, your codebase or your company's database meant someone writing bespoke glue code for that one combination of model and tool. Every new tool needed a new integration, and every new model needed them all again. MCP replaces that with a protocol: a tool publishes what it can do in a standard format, and any model that speaks the protocol can discover those abilities and call them.

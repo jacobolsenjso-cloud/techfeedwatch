@@ -4,6 +4,7 @@ slug: "layer-2"
 aliases: ["L2", "layer two", "rollup"]
 category: "Crypto"
 definition: "A layer 2 is a separate network that processes transactions off a main blockchain and periodically writes a compressed record back to it, to gain speed and lower fees."
+metaDescription: "A layer 2 is a separate network that processes transactions off a main blockchain and writes a compressed record back to it, for more speed and lower fees."
 ---
 
 A blockchain like Ethereum is deliberately slow. Every participant verifies every transaction, which is what makes it hard to corrupt and also what caps its throughput. You cannot raise the ceiling much without weakening the property that made it worth using.

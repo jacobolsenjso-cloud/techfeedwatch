@@ -4,6 +4,7 @@ slug: "schema-markup"
 aliases: ["structured data", "JSON-LD"]
 category: "SEO"
 definition: "Schema Markup is a standardized vocabulary of tags and attributes that website owners add to HTML to help search engines better understand the content on their web pages."
+metaDescription: "Schema markup is a standard vocabulary of tags that website owners add to their HTML to help search engines understand the content of a page."
 ---
 
 Schema Markup is a form of structured data added to a website's HTML code. It uses a specific vocabulary, largely derived from Schema.org, to classify and label elements on a page, such as a product's price, an event's date, or an author's name. This allows search engines to interpret the meaning and relationships of content more accurately, moving beyond simple keyword recognition.

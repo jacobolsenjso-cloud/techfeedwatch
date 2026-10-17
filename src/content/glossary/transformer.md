@@ -4,6 +4,7 @@ slug: "transformer"
 aliases: ["transformer architecture", "attention mechanism"]
 category: "AI"
 definition: "The transformer is the neural network design behind essentially every modern language model — its key idea being that each word is interpreted in the light of every other word at once."
+metaDescription: "The transformer is the neural network design behind nearly every modern language model: each word is interpreted in light of every other word at once."
 ---
 
 Earlier language models read a sentence in order, one word at a time, carrying a running summary forward. That summary was a bottleneck: by the end of a long paragraph, the beginning had faded, and nothing could be processed in parallel because each step waited for the last.

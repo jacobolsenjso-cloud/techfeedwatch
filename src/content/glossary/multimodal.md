@@ -4,6 +4,7 @@ slug: "multimodal"
 aliases: ["multi-modal", "multimodal model"]
 category: "AI"
 definition: "A multimodal model handles more than one kind of input or output — text, images, audio, video — inside a single system rather than by bolting separate tools together."
+metaDescription: "A multimodal model handles more than one kind of input or output, such as text, images, audio and video, inside a single system."
 ---
 
 Early language models read text and wrote text. If you wanted one to describe a photograph, you ran the photograph through a separate image-recognition model, turned its output into a sentence, and handed that sentence to the language model. Three systems, and everything the first one failed to notice was lost before the last one saw it.

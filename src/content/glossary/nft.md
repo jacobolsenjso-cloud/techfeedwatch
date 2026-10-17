@@ -4,6 +4,7 @@ slug: "nft"
 aliases: ["NFTs"]
 category: "Crypto"
 definition: "An NFT, or Non-Fungible Token, is a unique digital identifier recorded on a blockchain that verifies ownership of a specific item or piece of content, which can be digital or physical."
+metaDescription: "An NFT (non-fungible token) is a unique identifier recorded on a blockchain that proves ownership of a specific item, which can be digital or physical."
 ---
 
 An NFT represents a unique digital certificate of ownership for a particular asset, which could be an image, video, audio file, or even a physical object. Unlike cryptocurrencies such as Bitcoin, which are fungible and interchangeable, each NFT possesses distinct properties and cannot be directly swapped for another. Blockchain technology underpins NFTs, providing a public and immutable ledger that records transaction history and verifies the rightful owner of the token. This technology makes it possible to prove the scarcity and authenticity of digital items, a concept that was challenging to achieve before.

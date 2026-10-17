@@ -1,6 +1,6 @@
 ---
 title: "Editorial Guidelines"
-description: "The rules every TechFeedWatch article has to pass before it is published: how questions and videos are chosen, how sources are credited, what gets rejected, and what the site does not do."
+description: "The rules every TechFeedWatch article must pass before it is published: how questions and videos are chosen, how sources are credited, what gets rejected."
 ---
 
 # Editorial Guidelines

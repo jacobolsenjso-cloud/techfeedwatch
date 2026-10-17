@@ -4,6 +4,7 @@ slug: "saas"
 aliases: ["software as a service"]
 category: "Business"
 definition: "SaaS is software delivered as an ongoing service over the internet, paid for by subscription, with the vendor running the infrastructure rather than the customer."
+metaDescription: "SaaS (software as a service) is software delivered over the internet by subscription, with the vendor running the infrastructure instead of the customer."
 ---
 
 The model it replaced was a purchase: you bought a licence, installed the software on your own machines, and owned that version until you bought the next one. SaaS turns the same software into a rental that never finishes.

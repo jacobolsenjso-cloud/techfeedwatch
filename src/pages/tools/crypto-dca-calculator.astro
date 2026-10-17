@@ -6,7 +6,7 @@ import '../../styles/beregn.css';
 import kurser from '../../data/kurser.json';
 
 const title = 'Crypto DCA Calculator';
-const description = 'See what investing the same amount in Bitcoin, Ethereum or Solana every month would be worth today, using real monthly closing prices. Free, runs in your browser.';
+const description = 'See what investing the same amount in Bitcoin, Ethereum or Solana every month would be worth today, using real monthly prices. Free, runs in your browser.';
 const sidste = kurser.moenter.BTC.at(-1)[0];
 const foerste = { BTC: kurser.moenter.BTC[0][0], ETH: kurser.moenter.ETH[0][0], SOL: kurser.moenter.SOL[0][0] };
 const md = (m: string) => new Date(m + '-15T12:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
