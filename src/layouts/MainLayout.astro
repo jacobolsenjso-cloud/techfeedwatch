@@ -1015,6 +1015,8 @@ const siteSchema = [
           const nDageSiden = (dato) => Math.round((new Date(nIdag() + 'T00:00:00') - new Date(String(dato).slice(0, 10) + 'T00:00:00')) / 86400000);
           const nDato = (d) => { try { return new Date(String(d).slice(0, 10) + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); } catch (e) { return ''; } };
           const nEmne = (a) => (a.tags && a.tags[0]) || '';
+          // Følger læseren et af artiklens mærker? (alle mærker tæller - Automation står fx altid som 2. mærke)
+          const nFulgtMaerke = (a, folg) => (a.tags || []).filter((x) => folg.indexOf(x) !== -1)[0] || '';
           let nArtikler = [], nUlaest = [], nEmner = [];
 
           const nBeregn = () => {
@@ -1023,7 +1025,7 @@ const siteSchema = [
             const folg = nLaes('tfw_follow', []);
             // Kun de sidste 14 dage kan tælle som nye - ellers vokser tallet uendeligt hos en sjælden gæst.
             nUlaest = nArtikler.filter((a) => laest.indexOf(a.slug) === -1 && String(a.date).slice(0, 10) >= since && nDageSiden(a.date) <= 14)
-              .filter((a) => !folg.length || folg.indexOf(nEmne(a)) !== -1).map((a) => a.slug);
+              .filter((a) => !folg.length || nFulgtMaerke(a, folg)).map((a) => a.slug);
             if (nUlaest.length) { notifBadge.textContent = nUlaest.length > 9 ? '9+' : String(nUlaest.length); notifBadge.hidden = false; }
             else notifBadge.hidden = true;
             notifBtn.setAttribute('aria-label', nUlaest.length ? nUlaest.length + ' unread articles' : 'New articles');
@@ -1045,12 +1047,12 @@ const siteSchema = [
             const grupper = [['Today', []], ['This week', []], ['Earlier', []]];
             nArtikler.slice(0, 15).forEach((a) => { const d = nDageSiden(a.date); grupper[d <= 0 ? 0 : d <= 7 ? 1 : 2][1].push(a); });
             // B: inden for hver gruppe står de emner, man følger, øverst.
-            const fulgt = (a) => (folg.length && folg.indexOf(nEmne(a)) !== -1 ? 0 : 1);
+            const fulgt = (a) => (folg.length && nFulgtMaerke(a, folg) ? 0 : 1);
             notifList.innerHTML = grupper.filter((g) => g[1].length).map((g) =>
               '<div class="notif-group">' + g[0] + '</div>' + g[1].slice().sort((x, y) => fulgt(x) - fulgt(y)).map((a) => {
                 const ny = laest.indexOf(a.slug) === -1 && nUlaest.indexOf(a.slug) !== -1;
                 const uFulgt = folg.length && fulgt(a) === 1;
-                const meta = [nEmne(a), a.minutesRead ? a.minutesRead + ' min read' : '', nDato(a.date)].filter(Boolean).map(nEsc).join(' · ');
+                const meta = [nFulgtMaerke(a, folg) || nEmne(a), a.minutesRead ? a.minutesRead + ' min read' : '', nDato(a.date)].filter(Boolean).map(nEsc).join(' · ');
                 return '<a class="notif-item' + (ny ? ' is-new' : '') + (uFulgt ? ' is-other' : '') + '" href="/video/' + encodeURIComponent(a.slug) + '/">' +
                   '<img class="notif-thumb" src="/kort/' + encodeURIComponent(a.slug) + '.webp" alt="" loading="lazy" width="72" height="44">' +
                   '<span class="notif-body"><span class="notif-title">' + nEsc(a.title) + '</span><span class="notif-date">' + meta + '</span></span>' +
@@ -1061,7 +1063,7 @@ const siteSchema = [
           const startNotifData = () => window.tfwVideos().then((all) => {
             nArtikler = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 40);
             const taelle = {};
-            all.forEach((v) => { const e = nEmne(v); if (e) taelle[e] = (taelle[e] || 0) + 1; });
+            all.forEach((v) => (v.tags || []).forEach((e) => { if (e) taelle[e] = (taelle[e] || 0) + 1; }));
             nEmner = Object.keys(taelle).sort((x, y) => taelle[y] - taelle[x]);
             if (!nLaes('tfw_notif_since', '')) {
               const gammel = nLaes('tfw_notif_seen', null);
