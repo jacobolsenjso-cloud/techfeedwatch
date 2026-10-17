@@ -6,7 +6,7 @@ channelId: "UCDf3SiM0T1AWLgodsY3EXJA"
 publishedAt: "2026-07-26T13:00:06Z"
 date: "2026-07-26"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Cybersecurity"
 summary: "AI agent security presents unique challenges, as inherent vulnerabilities mean AI guardrails can always be circumvented. Traditional security models like least-privilege access fail when autonomous agents spawn sub-agents, necessitating a rethinking of access controls. Organizations face risks ranging from data exfiltration via novel methods to spiraling operational costs, demanding a focus on in-house context and Agent Experience (AX) metrics."
 metaDescription: "AI agent security is complex. Learn why traditional defenses fail against autonomous AI agents and how to mitigate emerging threats."

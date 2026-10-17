@@ -1035,7 +1035,7 @@ const siteSchema = [
             if (!notifTopics) return;
             const folg = nLaes('tfw_follow', []);
             notifTopics.innerHTML = '<p class="notif-topics-lead">Count only articles from topics you follow:</p><div class="notif-chips">' +
-              nEmner.map((e) => '<button type="button" class="notif-chip" data-emne="' + nEsc(e) + '" aria-pressed="' + (folg.indexOf(e) !== -1) + '">' + nEsc(e) + '</button>').join('') + '</div>';
+              nEmner.concat(folg.filter((e) => nEmner.indexOf(e) === -1)).map((e) => '<button type="button" class="notif-chip" data-emne="' + nEsc(e) + '" aria-pressed="' + (folg.indexOf(e) !== -1) + '">' + nEsc(e) + '</button>').join('') + '</div>';
             if (notifTopicsBtn) notifTopicsBtn.textContent = folg.length ? 'Topics (' + folg.length + ')' : 'Topics';
           };
 
@@ -1109,6 +1109,8 @@ const siteSchema = [
           document.addEventListener('click', (e) => {
             if (!notifPanel.contains(e.target) && !notifBtn.contains(e.target)) { notifPanel.classList.remove('active'); notifBtn.setAttribute('aria-expanded', 'false'); }
           });
+          // Følg-knappen på en emneside (17/10) siger til her, så tallet og knapperne passer med det samme.
+          document.addEventListener('tfw-follow-aendret', () => { if (nArtikler.length) { nBeregn(); nTegnEmner(); nTegn(); } });
           // Læser man en artikel i en anden fane, opdateres tallet, når man kommer tilbage.
           document.addEventListener('visibilitychange', () => { if (!document.hidden && nArtikler.length) { nBeregn(); nTegn(); } });
         }

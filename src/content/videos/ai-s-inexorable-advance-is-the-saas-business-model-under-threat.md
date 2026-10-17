@@ -8,7 +8,7 @@ channelId: "UCsBjURrPoezykLs9EqgamOA"
 publishedAt: "2026-02-17T18:17:11Z"
 date: "2026-07-24"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Business & Money"
 summary: "The long-held Software-as-a-Service (SaaS) business model, built on per-user subscriptions and high-profit margins, faces significant disruption from the rapid advancement of AI agentic models. These intelligent agents can autonomously perform complex software development and operational tasks, dramatically reducing the need for multiple human 'seats' and the associated software licenses. This shift is challenging the core economics of established tech giants and prompting a re-evaluation of how software is built, consumed, and monetized."
 metaDescription: "AI agents disrupt SaaS per-user subscriptions by autonomously performing tasks, reducing the need for human seats and challenging tech giants."

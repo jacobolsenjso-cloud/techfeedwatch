@@ -6,6 +6,7 @@ channelId: "UCEK5gqaShDKc-JT-NZgpzvA"
 publishedAt: "2026-06-30T17:15:29Z"
 date: "2026-09-27"
 tags:
+  - "Investing & Trading"
   - "Quantum Computing"
   - "Business & Money"
 summary: "Investing in quantum computing requires understanding the extreme capital burn and dilution risks separating hardware makers from software players. While hype promises outsized returns, pure-play equity investing currently operates like early-stage venture capital. Investors must balance binary lottery positions against lower-risk indirect plays through tech giants while monitoring operational cash runways."

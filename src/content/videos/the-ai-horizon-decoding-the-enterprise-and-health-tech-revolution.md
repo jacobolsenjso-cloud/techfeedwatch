@@ -6,7 +6,7 @@ channelId: "UCawZsQWqfGSbCI5yjkdVkTA"
 publishedAt: "2026-03-14T07:08:06Z"
 date: "2026-07-28"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Automation"
 summary: "The advent of AI agents marks a critical inflection point, poised to transform the internet's fundamental architecture. As autonomous agents become primary software users, existing human-centric systems and business models face obsolescence. This shift demands new infrastructure, API-first design, and updated documentation, presenting both immense challenges and opportunities across enterprise and consumer sectors."
 metaDescription: "Explore the future of AI agents: how autonomous systems are reshaping internet infrastructure, business models."

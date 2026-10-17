@@ -20,7 +20,9 @@ Tech Feed Watch turns YouTube videos worth watching into articles worth reading.
 - [Hardware & Chips](https://techfeedwatch.com/tag/hardware-chips/)
 - [SEO](https://techfeedwatch.com/tag/seo/)
 - [Coding](https://techfeedwatch.com/tag/coding/)
-- All 13 topics are listed on the [Library page](https://techfeedwatch.com/library/)
+- [AI Agents](https://techfeedwatch.com/tag/ai-agents/)
+- [Investing & Trading](https://techfeedwatch.com/tag/investing-trading/)
+- All topics are listed on the [Library page](https://techfeedwatch.com/library/)
 
 ## Reference
 

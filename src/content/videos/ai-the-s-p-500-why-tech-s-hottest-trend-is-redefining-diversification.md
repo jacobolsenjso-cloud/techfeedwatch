@@ -6,6 +6,7 @@ channelId: "UCQpPo9BNwezg54N9hMFQp6Q"
 publishedAt: "2026-06-14T11:00:08Z"
 date: "2026-06-18"
 tags:
+  - "Investing & Trading"
   - "Business & Money"
   - "Fintech"
 summary: "Investing in the S&P 500 exposes portfolios to unprecedented mega-cap concentration risk despite spreading capital across 500 individual companies. With top technology holdings capturing roughly 40% of the entire benchmark weight, broader index stability increasingly hinges on a handful of balance sheets. This analysis explains how capitalization-weighted indices amplify single-sector exposure and examines defensive mechanisms such as equal weighting and international allocation."

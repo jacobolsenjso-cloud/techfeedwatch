@@ -8,7 +8,7 @@ channelId: "UCtT2VnurQKOAA0I1EKKHSPA"
 publishedAt: "2026-07-11T16:55:39Z"
 date: "2026-07-13"
 tags:
-  - "AI & Tech"
+  - "Smartphones & Gadgets"
   - "Productivity"
 summary: "The Looky L1 emerges as a distinctive AI wearable, designed not for conventional photo or video capture but for continuous 'life logging.' This device uses artificial intelligence to passively record daily moments, then curates and transforms them into personalized summaries, auto-vlogs, and unique comic strip narratives. It represents a significant shift from intentional content creation to AI-driven memory assistance, pushing boundaries in personal data collection and automated digital storytelling."
 metaDescription: "The Looky L1 AI wearable continuously logs daily moments, using AI to transform them into personalized summaries and unique comic strip narratives."

@@ -8,6 +8,7 @@ publishedAt: "2026-05-27T13:21:24Z"
 date: "2026-07-27"
 updated: "2026-09-21"
 tags:
+  - "Smartphones & Gadgets"
   - "AR & VR"
   - "Productivity"
 summary: "Google's latest I/O event unveiled significant AI advancements, including Gemini 3.5 Flash and cross-platform Android XR audio glasses, challenging traditional tech ecosystem boundaries. These developments signal a shift towards AI services that operate independently of a single hardware platform, directly impacting iPhone users. The push for ubiquitous AI agents and spatial computing hardware raises questions about competitive strategies and future user experiences."

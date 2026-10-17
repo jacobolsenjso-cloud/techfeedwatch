@@ -22,6 +22,7 @@ const TONE = {
   'AI & Tech': 'cyan', 'SEO': 'indigo', 'Automation': 'teal', 'Coding': 'blue', 'Business & Money': 'emerald green',
   'AI Video': 'magenta', 'Productivity': 'violet', 'Fintech': 'deep blue', 'Crypto': 'amber', 'Cybersecurity': 'red',
   'Quantum Computing': 'purple', 'Hardware & Chips': 'orange', 'AR & VR': 'pink',
+  'AI Agents': 'sky blue', 'Investing & Trading': 'lime green', 'Smartphones & Gadgets': 'silver grey', 'Robotics': 'crimson', 'PC Building & Gaming': 'gold',
 };
 export function billedPrompt({ titel, emne, resume }) {
   return `Create a 16:9 editorial illustration for a technology article titled "${titel}".

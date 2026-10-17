@@ -35,4 +35,10 @@ export const TAG_COLORS: Record<string, string> = {
   "Quantum Computing": "#7c3aed",
   "Hardware & Chips": "#ea580c",
   "AR & VR": "#db2777",
+  // Nye emner 17/10
+  "AI Agents": "#0ea5e9",
+  "Investing & Trading": "#65a30d",
+  "Smartphones & Gadgets": "#64748b",
+  "Robotics": "#be123c",
+  "PC Building & Gaming": "#ca8a04",
 };

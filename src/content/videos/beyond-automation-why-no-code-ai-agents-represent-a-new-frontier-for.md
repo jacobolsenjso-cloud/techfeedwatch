@@ -6,7 +6,7 @@ channelId: "UC_RovKmk0OCbuZjA8f08opw"
 publishedAt: "2025-05-21T11:29:00Z"
 date: "2026-07-19"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Automation"
 summary: "Traditional automation follows rigid, predefined paths to deliver consistent, low-latency execution for predictable workflows. AI agents introduce large language models to reason, select tools autonomously, and adapt dynamically to unstructured problems. Choosing between them requires balancing deterministic reliability against the higher latency, computational costs, and governance challenges of agentic systems."
 metaDescription: "Understand the real difference between an AI agent and traditional automation, comparing mechanics, enterprise costs, reliability, and hybrid systems."

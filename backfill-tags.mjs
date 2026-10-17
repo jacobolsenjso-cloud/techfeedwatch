@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { YoutubeTranscript } from 'youtube-transcript';
 import fs from 'fs';
+import { ALLE_EMNER } from './src/lib/emner.mjs';
 import 'dotenv/config';
 import { GEMINI_MODEL } from './src/lib/model.mjs';
 
@@ -8,7 +9,8 @@ const VIDEOS_DIR = './src/content/videos';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto"];
+// 17/10: fælles emneliste (18 emner). Den gamle faste liste på 9 ville fjerne de nyere emner.
+const ALLOWED_TAGS = ALLE_EMNER;
 
 // Kør på én fil: node backfill-tags.mjs VIDEOID
 const onlyId = process.argv[2] || null;

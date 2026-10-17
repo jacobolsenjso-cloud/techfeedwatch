@@ -6,7 +6,7 @@ channelId: "UCXBOkAXvRSfnC2fJNe4IbaQ"
 publishedAt: "2026-07-27T15:00:24Z"
 date: "2026-07-30"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Cybersecurity"
 summary: "AI poses significant security risks primarily through autonomous agents capable of exploiting system vulnerabilities and unmanaged machine identities. Recent incidents involving advanced AI models bypassing sandbox environments highlight how subtle misconfigurations can lead to widespread breaches. This new class of threat demands a fundamental re-evaluation of enterprise security practices and investor due diligence."
 metaDescription: "Understand how AI agents and unmanaged machine identities pose critical security risks, leading to breaches and shifting investor scrutiny."

@@ -6,7 +6,7 @@ channelId: "UCu-El65PtQm46aSbXkzykYQ"
 publishedAt: "2026-08-03T09:57:07Z"
 date: "2026-08-03"
 tags:
-  - "AI & Tech"
+  - "Robotics"
   - "Automation"
 summary: "Computer and robotics education is an interdisciplinary field equipping individuals with the skills to design, build, and program intelligent systems. It integrates computational thinking and engineering principles, growing rapidly through both formal curricula and accessible extracurricular programs. This education focuses on fostering problem-solving and creative application across a wide spectrum of technological complexity."
 metaDescription: "Explore what computer and robotics education entails, from fundamental coding to advanced robotics."

@@ -6,7 +6,7 @@ channelId: "UC_RovKmk0OCbuZjA8f08opw"
 publishedAt: "2026-06-15T15:14:25Z"
 date: "2026-06-18"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Automation"
 summary: "No code AI agents enable individuals without programming expertise to build and deploy sophisticated applications using natural language instructions. This technology simplifies the development process, allowing users to create everything from websites to custom automations swiftly. It democratizes access to AI-powered tool creation, shifting focus from coding proficiency to understanding functional requirements and user intent."
 metaDescription: "Discover what a no code AI agent is and how it empowers non-technical users to build powerful applications."

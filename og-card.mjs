@@ -21,6 +21,7 @@ const EMNEFARVE = {
   'AI & Tech': '#06b6d4', 'SEO': '#6366f1', 'Automation': '#14b8a6', 'Coding': '#2563eb',
   'Business & Money': '#059669', 'AI Video': '#d926c8', 'Productivity': '#8b5cf6', 'Fintech': '#1e3a8a',
   'Crypto': '#f59e0b', 'Cybersecurity': '#dc2626', 'Quantum Computing': '#7c3aed', 'Hardware & Chips': '#ea580c', 'AR & VR': '#db2777',
+  'AI Agents': '#0ea5e9', 'Investing & Trading': '#65a30d', 'Smartphones & Gadgets': '#64748b', 'Robotics': '#be123c', 'PC Building & Gaming': '#ca8a04',
 };
 // En mørk emnefarve (Fintech) forsvinder på den mørke baggrund — den lysnes, som MainLayout gør i mørk tilstand.
 function synlig(hex) {

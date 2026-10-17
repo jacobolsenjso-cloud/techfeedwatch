@@ -6,6 +6,7 @@ channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
 publishedAt: "2025-11-05T16:01:09Z"
 date: "2026-07-11"
 tags:
+  - "Investing & Trading"
   - "Quantum Computing"
   - "Business & Money"
 summary: "Investing in quantum computing today carries significant risk due to rampant hype and fundamental unresolved technical challenges. Despite recent claims of scalable technology and increased market optimism, the core issues of qubit stability, error rates, and cooling at scale persist. Publicly traded companies remain largely unprofitable, suggesting that current investment is largely speculative rather than grounded in proven commercial viability."

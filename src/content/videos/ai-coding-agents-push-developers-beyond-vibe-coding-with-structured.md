@@ -7,7 +7,7 @@ channelId: "UC2WmuBuFq6gL08QYG-JjXKw"
 publishedAt: "2026-03-09T06:49:43Z"
 date: "2026-07-29"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Automation"
 summary: "The advent of AI coding agents is reshaping software development by introducing highly structured, spec-driven toolkits. These systems automate the entire development lifecycle, from planning to testing, aiming to replace less disciplined 'vibe coding' practices. This shift promises increased efficiency, consistency, and higher quality code, fundamentally altering how development teams operate."
 metaDescription: "Discover how AI coding agents and spec-driven toolkits like Superpowers are revolutionizing software development, moving beyond 'vibe coding.'"

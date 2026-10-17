@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { emneSlug, INDEX_GRAENSE } from './src/lib/emner.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const videosDir = path.join(__dirname, 'src/content/videos');
@@ -40,6 +41,18 @@ const articleDates = new Map(
     })
     .filter(([, dato]) => dato)
 );
+
+// Antal artikler pr. emne-slug (17/10). En emneside med færre end INDEX_GRAENSE artikler er
+// noindex (se src/pages/tag/[tag].astro) - Google advarer, hvis en noindex-side står i sitemappet.
+const emneAntal = new Map();
+for (const file of fs.readdirSync(videosDir).filter((f) => f.endsWith('.md'))) {
+  const blok = fs.readFileSync(path.join(videosDir, file), 'utf-8').match(/^tags:\r?\n((?:[ \t]*-[ \t]*.*\r?\n?)*)/m);
+  if (!blok) continue;
+  for (const linje of blok[1].split(/\r?\n/)) {
+    const emne = linje.replace(/^\s*-\s*/, '').replace(/^"|"$/g, '').trim();
+    if (emne) emneAntal.set(emneSlug(emne), (emneAntal.get(emneSlug(emne)) || 0) + 1);
+  }
+}
 
 // --- Auto-glossar-links: byg term -> slug-kort fra glossar-filerne (læses ved build-tid) ---
 //
@@ -182,6 +195,8 @@ export default defineConfig({
         // rene lister på 130-160 ord — 40 tynde sider i indekset uden grund.
         if (/^\/(offline|history|watch-later|search)\/?$/.test(pathname)) return false;
         if (/\/page\/\d+\/?$/.test(pathname)) return false;
+        const emne = pathname.match(/^\/tag\/([^/]+)\/?$/);
+        if (emne && (emneAntal.get(emne[1]) || 0) < INDEX_GRAENSE) return false;
         const match = pathname.match(/^\/video\/([^/]+)\/?$/);
         return match ? !shortSlugs.has(match[1]) : true;
       },

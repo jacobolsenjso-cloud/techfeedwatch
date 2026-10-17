@@ -3,6 +3,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
+import { emneRaekke as beregnEmneRaekke } from './src/lib/emner.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
@@ -81,8 +82,8 @@ const PUBLISHED_AFTER = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 10
 // og 10 mærker, og forbindelsen mellem dem blev smidt væk efter søgningen.
 // "|" betyder ELLER i YouTube-søgningen.
 const TOPIC_BY_TAG = {
-  "AI & Tech": "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|AI agents|robotics|smart glasses|AR|VR|cloud computing|AWS|Azure|Kubernetes|DevOps",
-  "Business & Money": "personal finance|investing|stock market|index funds|passive income|retirement planning|wealth building|ecommerce|Shopify|dropshipping|online business|digital products|startup",
+  "AI & Tech": "AI|artificial intelligence|machine learning|LLM|ChatGPT|Claude|Gemini|OpenAI|smart glasses|AR|VR|cloud computing|AWS|Azure|Kubernetes|DevOps",
+  "Business & Money": "personal finance|passive income|retirement planning|wealth building|ecommerce|Shopify|dropshipping|online business|digital products|startup",
   "Fintech": "fintech|financial technology|neobank|digital banking|payments|stablecoins|algorithmic trading|open banking|AI in finance|core banking",
   "Automation": "workflow automation|AI automation|no-code|n8n|Zapier|business process automation|agentic workflows|RPA|automated pipelines",
   "Crypto": "cryptocurrency|crypto|bitcoin|ethereum|solana|DeFi|blockchain|Web3|smart contracts|tokenization|altcoins",
@@ -99,6 +100,12 @@ const TOPIC_BY_TAG = {
   // AR/VR laa spredt under AI & Tech og Productivity, hvor ingen fandt dem.
   // 19 artikler — flere end Hardware & Chips havde da det blev skilt ud.
   "AR & VR": "augmented reality|virtual reality|mixed reality|smart glasses|spatial computing|AR glasses|VR headset|immersive technology",
+  // Fem nye emner (Jacob 17/10). De tre første led er frø til Googles autocomplete.
+  "AI Agents": "AI agents|agentic AI|autonomous agents|AI agent frameworks|multi-agent systems|computer use agents|MCP servers|AI agent tools",
+  "Investing & Trading": "investing|stock market|trading|index funds|ETF|day trading|options trading|dividend investing|investing apps|portfolio",
+  "Smartphones & Gadgets": "smartphones|iPhone|Android phones|gadgets|wearables|smartwatch|tablets|wireless earbuds|consumer tech",
+  "Robotics": "robotics|humanoid robots|robots|industrial robots|Boston Dynamics|Tesla Optimus|physical AI|robot vacuum",
+  "PC Building & Gaming": "PC building|gaming PC|PC build guide|graphics cards|gaming laptops|PC parts|PC upgrade|gaming performance",
 };
 
 // Tæller hvor mange artikler der bærer hvert mærke. Bruges til at vælge det
@@ -558,7 +565,8 @@ async function findNewestVideos() {
     for (const [t, n] of Object.entries(dryCounts).sort((a, b) => a[1] - b[1])) {
       console.log(`  ${String(n).padStart(4)}  ${t}`);
     }
-    const dryTag = pickThinnestTag(dryCounts);
+    const dryAntal = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).length;
+    const dryTag = beregnEmneRaekke(dryCounts, dryAntal, Math.floor(Date.now() / (1000 * 60 * 60 * 2)))[0];
     console.log(`\nVille vælge mærket: "${dryTag}"`);
 
     // Spørgsmålet hentes også i det tørre løb — ellers tester man kun halvdelen
@@ -597,14 +605,17 @@ async function findNewestVideos() {
   // det aldrig, og et ukendt emne ignoreres.
   const tvunget = process.env.PROEVE_EMNE && TOPIC_BY_TAG[process.env.PROEVE_EMNE] ? process.env.PROEVE_EMNE : null;
   if (process.env.PROEVE_EMNE && !tvunget) console.log(`Info: PROEVE_EMNE "${process.env.PROEVE_EMNE}" findes ikke — vælger som normalt.`);
-  const forsteTag = tvunget || pickThinnestTag(counts);
+  // 50/50 (17/10): nye emner under 20 artikler får hver anden artikel, de gamle 13 resten.
+  // Turen følger antallet af artikler (lige = nye, ulige = gamle), så den skifter ved hver udgivelse.
+  const antalArtikler = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).length;
+  const raekke = beregnEmneRaekke(counts, antalArtikler, Math.floor(Date.now() / (1000 * 60 * 60 * 2)));
+  const forsteTag = tvunget || raekke[0];
   if (tvunget) console.log(`Info: Prøve: emnet er valgt i workflowet: "${tvunget}"`);
   // Emnerækken (14/10): kørslens 2. forsøg tager det NÆSTMINDSTE emne i stedet for et nyt
   // spørgsmål i samme emne. Målt 14/10: alle 4 kørsler valgte "Coding" (36 artikler); 3 af 4
   // endte uden artikel, fordi ingen video passede til Coding-spørgsmålene — og næste kørsel
   // valgte Coding igen. Antal forsøg pr. kørsel er uændret (MAX_SPOERGSMAAL), så prisen er det også.
-  const emneRaekke = tvunget ? [tvunget]
-    : [forsteTag, ...Object.keys(counts).filter((t) => t !== forsteTag).sort((a, b) => counts[a] - counts[b])];
+  const emneRaekke = tvunget ? [tvunget] : raekke;
 
   // Emnet siger HVAD vi skriver om. Spørgsmålet siger hvad nogen faktisk
   // søger på inden for emnet. Uden det valgte robotten et emne, fandt en

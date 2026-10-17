@@ -6,7 +6,7 @@ channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
 publishedAt: "2026-04-30T14:00:32Z"
 date: "2026-07-25"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Fintech"
 summary: "AI agents are increasingly performing automated transactions by leveraging specialized blockchain networks and crypto payment services. This approach bypasses traditional banking systems, offering instant, programmatic payments essential for machine-to-machine commerce. Companies like Stripe and Coinbase lead this shift, enabling a new global crypto use case with potential economic impact in the trillions."
 metaDescription: "AI agents now make payments using crypto networks and specialized protocols from firms like Stripe and Coinbase, sidestepping traditional finance."

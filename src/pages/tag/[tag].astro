@@ -4,6 +4,7 @@ import SourceLine from '../../components/SourceLine.astro';
 import MainLayout from '../../layouts/MainLayout.astro'; 
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
+import { ALLE_EMNER, INDEX_GRAENSE } from '../../lib/emner.mjs';
 
 const PAGE_SIZE = 24;
 
@@ -14,6 +15,8 @@ export async function getStaticPaths() {
     const t = v.frontmatter.tags || v.frontmatter.tag || [];
     return Array.isArray(t) ? t : [t];
   }))].filter(Boolean);
+  // 17/10: alle sitets emner får en side - også nye emner, der endnu har 0 artikler.
+  for (const emne of ALLE_EMNER) if (!uniqueTags.includes(emne)) uniqueTags.push(emne);
   
   return uniqueTags.map((tag: any) => {
     const filteredVideos = videos
@@ -48,6 +51,11 @@ const descriptionDictionary: Record<string, string> = {
   "Fintech": "Fintech news and analysis — digital banking, payments, open banking, stablecoins, and how AI is reshaping money and finance.",
   "Crypto": "Crypto news and analysis — Bitcoin, Ethereum, Solana, DeFi, Web3, and blockchain trends, explained for investors and builders.",
   "Cybersecurity": "Cybersecurity news and analysis — ransomware, zero trust, data breaches, cloud security, and how AI is reshaping digital defense.",
+  "AI Agents": "AI agents explained — agentic AI, autonomous assistants, multi-agent systems and the tools that let AI take actions, not just answer questions.",
+  "Investing & Trading": "Investing and trading in plain language — stocks, ETFs, index funds, trading platforms and how technology is changing the way people invest.",
+  "Smartphones & Gadgets": "Smartphones and gadgets — iPhone and Android phones, wearables, tablets and earbuds, with clear answers on what is new and what it means for you.",
+  "Robotics": "Robotics news and explainers — humanoid robots, industrial robots and physical AI, and what robots can and cannot do today.",
+  "PC Building & Gaming": "PC building and gaming — parts, graphics cards, gaming laptops and upgrades, explained so you can build or buy the right machine.",
   "Default": `The latest ${tagName} news, tools, and analysis — curated tech videos turned into clear, readable articles you can absorb in minutes.`
 };
 
@@ -74,6 +82,9 @@ const faqDictionary: Record<string, {question: string, answer: string}[]> = {
 const currentFAQs = faqDictionary[tagName] || faqDictionary["Default"];
 
 const tagAccent = TAG_COLORS[tagName] || "#6b7280";
+// Tyndt emne (17/10): under INDEX_GRAENSE artikler er siden en kort liste. Den holdes ude af
+// Google (noindex + ude af sitemappet) og fortæller læseren, at emnet er under opbygning.
+const tyndt = totalCount < INDEX_GRAENSE;
 
 const formatDate = (d: string) => {
   const parsed = new Date(d);
@@ -108,7 +119,7 @@ const listeSchema = {
 
 ---
 
-<MainLayout title={`${tagName} Archive`} description={currentDescription} schema={listeSchema}>
+<MainLayout title={`${tagName} Archive`} description={currentDescription} schema={listeSchema} noindex={tyndt}>
   
   <style is:global>
     .tag-page-wrapper { padding: 30px 20px; max-width: 1600px; margin: 0 auto; width: 100%; box-sizing: border-box; }
@@ -123,6 +134,19 @@ const listeSchema = {
     /* Emnefarven som overskriftstekst gav 3,21:1 i moerk tilstand. Farven staar
        allerede i den 3px kant under overskriften. */
     .header-title span { color: var(--teal-text); }
+    /* Følg-knap og "under opbygning" (17/10) */
+    .emne-foelg-raekke { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: -24px 0 34px; }
+    .emne-foelg { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #0f766e; background: transparent; color: var(--teal-text); font-size: 0.92rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .emne-foelg:hover { background: rgba(15, 118, 110, 0.08); }
+    .emne-foelg[aria-pressed="true"] { background: #0f766e; color: #fff; }
+    .emne-foelg-note { font-size: 0.85rem; color: #6b7280; }
+    body.dark-mode .emne-foelg { color: #5eead4; border-color: #2dd4bf; }
+    body.dark-mode .emne-foelg[aria-pressed="true"] { background: #0f766e; color: #fff; border-color: #0f766e; }
+    body.dark-mode .emne-foelg-note { color: #9ca3af; }
+    .emne-bygges { display: flex; gap: 14px; align-items: flex-start; max-width: 1000px; margin: 0 0 34px; padding: 18px 20px; border-radius: 12px; border: 1px solid rgba(15, 118, 110, 0.35); background: rgba(15, 118, 110, 0.07); }
+    .emne-bygges-ikon { font-size: 1.6rem; line-height: 1; }
+    .emne-bygges h2 { margin: 0 0 6px; font-size: 1.1rem; }
+    .emne-bygges p { margin: 0; line-height: 1.55; }
     .tag-description { font-size: 1.1rem; line-height: 1.6; color: #4b5563; margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); max-width: 1000px; }
     body.dark-mode .tag-description { color: #9ca3af; }
 
@@ -169,6 +193,19 @@ const listeSchema = {
 
     <h1 class="header-title" style={`--tag-accent: ${tagAccent}`}>Articles in <span>#{tagName}</span></h1>
     <p class="tag-description">{currentDescription}</p>
+    <div class="emne-foelg-raekke">
+      <button type="button" class="emne-foelg" data-emne={tagName} aria-pressed="false">🔔 <span class="emne-foelg-tekst">Follow this topic</span></button>
+      <span class="emne-foelg-note">The bell at the top then counts only the topics you follow.</span>
+    </div>
+    {tyndt && (
+      <div class="emne-bygges" role="note">
+        <span class="emne-bygges-ikon" aria-hidden="true">🛠️</span>
+        <div>
+          <h2>We're building this topic right now</h2>
+          <p>{totalCount === 0 ? 'The first articles are on their way' : `There ${totalCount === 1 ? 'is 1 article' : `are ${totalCount} articles`} so far`} — new ones arrive every few days. Follow it with the 🔔 and we'll show you each new one. Thanks for your patience :-)</p>
+        </div>
+      </div>
+    )}
     
     <div class="video-grid">
       {pageVideos.map((video: any) => (
@@ -206,4 +243,19 @@ const listeSchema = {
     <FAQ faqs={currentFAQs} />
     
   </div>
+  <script is:inline>
+    // Følg-knap (17/10): samme liste som klokkens "Topics" (localStorage tfw_follow). Intet sendes til os.
+    (function () {
+      var knap = document.querySelector('.emne-foelg'); if (!knap) return;
+      var emne = knap.getAttribute('data-emne'), tekst = knap.querySelector('.emne-foelg-tekst');
+      var laes = function () { try { var v = JSON.parse(localStorage.getItem('tfw_follow')); return Array.isArray(v) ? v : []; } catch (e) { return []; } };
+      var vis = function () { var f = laes().indexOf(emne) !== -1; knap.setAttribute('aria-pressed', f ? 'true' : 'false'); tekst.textContent = f ? 'Following' : 'Follow this topic'; };
+      knap.addEventListener('click', function () {
+        var f = laes(); f = f.indexOf(emne) === -1 ? f.concat(emne) : f.filter(function (x) { return x !== emne; });
+        try { localStorage.setItem('tfw_follow', JSON.stringify(f)); } catch (e) {}
+        vis(); document.dispatchEvent(new CustomEvent('tfw-follow-aendret'));
+      });
+      vis();
+    })();
+  </script>
 </MainLayout>

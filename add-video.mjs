@@ -23,6 +23,7 @@ import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.m
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, noegleFakta, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
 import { vaerktoejTil, brugsSaetning } from './src/lib/vaerktoej.mjs';
+import { ALLE_EMNER } from './src/lib/emner.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
 import { lavOutline, strukturTekst, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 import { hentForslag } from './src/lib/suggest.mjs';
@@ -35,7 +36,8 @@ const ORDRET_MAKS = 0.15;
 // Læsertjek (8/10): så mange fund efter rettelsen stopper artiklen.
 const LAESER_MAKS = 3;
 
-const ALLOWED_TAGS = ["AI & Tech", "SEO", "Automation", "Coding", "Business & Money", "AI Video", "Productivity", "Fintech", "Crypto", "Cybersecurity", "Quantum Computing", "Hardware & Chips", "AR & VR"];
+// Alle 18 emner kommer fra src/lib/emner.mjs (17/10), så robot og site altid er enige.
+const ALLOWED_TAGS = ALLE_EMNER;
 
 // Renser links i den genererede brødtekst før den gemmes.
 //
@@ -653,7 +655,7 @@ async function run() {
       ? `Act as a metadata generator for "Tech Feed Watch", a tech news site.
     Analyze this Short's content (transcript or title/description) and return EXACTLY in this format:
     TITLE: A concise, engaging headline
-    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: AI & Tech, SEO, Automation, Coding, Business & Money, AI Video, Productivity, Fintech, Crypto, Cybersecurity. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
+    TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`

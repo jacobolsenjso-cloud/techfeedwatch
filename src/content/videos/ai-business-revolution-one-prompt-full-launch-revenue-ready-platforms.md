@@ -6,7 +6,7 @@ channelId: "UCCkgwbNGfabPtfGFlWOaJfQ"
 publishedAt: "2026-05-31T15:00:07Z"
 date: "2026-06-12"
 tags:
-  - "AI & Tech"
+  - "AI Agents"
   - "Business & Money"
 summary: "Modern AI platforms are streamlining the creation of online businesses, allowing users to launch complex ventures from a single text prompt. These systems leverage AI agents to automate tasks from product planning and development to marketing and payment integration. This approach empowers creators and entrepreneurs to establish digital presence and functionality without requiring traditional coding or a large startup team."
 metaDescription: "Use AI to start an online business effortlessly. Discover how platforms build websites, backends, and marketing from one prompt."
