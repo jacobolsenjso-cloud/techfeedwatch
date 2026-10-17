@@ -183,7 +183,7 @@ credited. The [Business & Money tag](/tag/business-money) has all 111.
 including Bloomberg, CNBC, Y Combinator, TED and Yahoo Finance. The counts
 quoted — 82 on investing, 69 on risk, 6 on side hustles — come from the archive
 itself, not from an industry report. Nothing here is investment advice; it is a
-summary of what other people said. Written and maintained by Jacob S. Olsen. If
+summary of what other people said. Planned, checked and maintained by Jacob S. Olsen, and written with AI. If
 something here is wrong, the [corrections policy](/corrections) explains how to
 tell me.*
 

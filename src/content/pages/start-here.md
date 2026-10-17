@@ -25,7 +25,7 @@ So that is what this site does. Every article starts from a question people sear
 
 **Topics** — {{TOPICS}} of them, from AI agents to quantum computing; the [site map](/sitemap) lists them all. Each topic page has a Follow button.
 
-**[Guides](/guides)** — longer pieces I write myself on the biggest subjects, drawing on everything the site has covered.
+**[Guides](/guides)** — longer pieces on the biggest subjects, drawing on everything the site has covered. Written with AI, and planned, checked and maintained by me.
 
 **[Glossary](/glossary)** — {{GLOSSARY}} terms explained for someone who wants the answer in thirty seconds and the reason underneath it. Terms in articles link here automatically.
 
@@ -57,7 +57,7 @@ A system I built picks a question people search for on Google, within the subjec
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
-That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here, on the [about page](/about), in the guides and in the glossary.
+That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here and on the [about page](/about).
 
 The [about page](/about) has the longer version, and the [corrections policy](/corrections) explains what happens when something here is wrong.
 

@@ -225,7 +225,7 @@ credited. The [Crypto tag](/tag/crypto) has all 50.
 including Coin Bureau, a16z, Lex Fridman and Yahoo Finance. The counts quoted —
 38 on institutional money, 35 on regulation, 20 on price — come from the archive
 itself, not from an industry report. Nothing here is investment advice; it is a
-summary of what other people said. Written and maintained by Jacob S. Olsen. If
+summary of what other people said. Planned, checked and maintained by Jacob S. Olsen, and written with AI. If
 something here is wrong, the [corrections policy](/corrections) explains how to
 tell me.*
 

@@ -47,13 +47,13 @@ What is mine is the machinery and the rules it follows: which subjects get cover
 
 That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos or read all of these articles. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
 
-Where you *are* reading me is here, in the [guides](/guides), and in the [glossary](/glossary). Those I write and stand behind.
+Where you *are* reading me is here. The [guides](/guides) and the [glossary](/glossary) are written with AI too, but they are planned, checked and maintained by me, and I stand behind them.
 
 If you think the automation makes the writing less trustworthy, that is a fair thing to weigh — which is why it is on this page and not buried in a footer.
 
 ## What else is here
 
-**Free tools.** {{TOOLS}} of them, and they are the part of this site that is entirely mine rather than derived from anyone's video. They all run inside your browser: nothing you paste is uploaded, and nothing is stored.
+**Free tools.** {{TOOLS}} of them, and none is derived from anyone's video: they are built with AI, and planned, checked and maintained by me. They all run inside your browser: nothing you paste is uploaded, and nothing is stored.
 
 **Two pages built from the site's own data.** [Trends](/trends) counts which companies, models and protocols come up most across every article. [Best of each topic](/popular) ranks source videos by how far they beat their own channel's average, so a small channel with a strong video can outrank a large one. Both state their method and their limits on the page, because a number without those is just a claim.
 

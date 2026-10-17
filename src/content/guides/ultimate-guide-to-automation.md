@@ -204,7 +204,7 @@ credited. The [Automation tag](/tag/automation) has all 50.
 *This guide draws on 50 videos covered on TechFeedWatch, from channels
 including Futurepedia, Y Combinator and WorldofAI. The counts quoted — 36 on
 agents, 31 on failure and limits, 6 on workflow tools — come from the archive
-itself, not from an industry report. Written and maintained by Jacob S. Olsen.
+itself, not from an industry report. Planned, checked and maintained by Jacob S. Olsen, and written with AI.
 If something here is wrong, the [corrections policy](/corrections) explains how
 to tell me.*
 

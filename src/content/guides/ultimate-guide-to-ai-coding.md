@@ -169,7 +169,7 @@ credited. The [Coding tag](/tag/coding) has all 36.
 *This guide draws on 36 videos covered on TechFeedWatch, from channels
 including Fireship, Modern Software Engineering, Y Combinator and NetworkChuck.
 The counts quoted come from the archive itself, not from an industry survey.
-Written and maintained by Jacob S. Olsen. If something here is wrong, the
+Planned, checked and maintained by Jacob S. Olsen, and written with AI. If something here is wrong, the
 [corrections policy](/corrections) explains how to tell me.*
 
 *The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

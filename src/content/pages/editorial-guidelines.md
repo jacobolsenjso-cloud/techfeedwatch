@@ -11,7 +11,7 @@ Most articles on TechFeedWatch are drafted by an automated system, as the [About
 
 **Articles** answer one question people search for. The question is researched with Google Search, the article is built on the web pages Google cites, and one video from a creator or outlet who covers the subject adds a section of its own. They are drafted by a language model and published automatically. Articles written before October 2026 were drafted from the video's transcript alone; they are being rewritten with the current method, a few a day. Images marked "AI-generated" are made by an AI model.
 
-**Guides, the glossary and the free tools** are written and maintained by me, Jacob S. Olsen. They are not generated from videos.
+**Guides, the glossary and the free tools** are written with AI, and planned, checked and maintained by me, Jacob S. Olsen. Unlike the articles, they are not published automatically.
 
 ## How a question is chosen
 

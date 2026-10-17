@@ -227,7 +227,7 @@ credited. The [AI & Tech tag](/tag/ai-tech) has all 262, and the
 *This guide draws on 262 videos covered on TechFeedWatch. The counts quoted —
 55 on safety and ethics, 49 on agents, 11 on AGI — come from the archive itself,
 not from an industry report. Where sources disagree, this guide says so rather
-than picking a side. Written and maintained by Jacob S. Olsen. If something here
+than picking a side. Planned, checked and maintained by Jacob S. Olsen, and written with AI. If something here
 is wrong, the [corrections policy](/corrections) explains how to tell me.*
 
 *The numbers in this guide are a snapshot of the archive as of July 2026; the archive itself keeps growing.*

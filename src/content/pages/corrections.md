@@ -1,11 +1,11 @@
 ---
 title: "Corrections Policy"
-description: "What TechFeedWatch does when an article gets something wrong, how to report it, and what to expect back. Written and maintained by Jacob S. Olsen."
+description: "What TechFeedWatch does when an article gets something wrong, how to report it, and what to expect back. Maintained by Jacob S. Olsen."
 ---
 
 # Corrections Policy
 
-TechFeedWatch publishes articles that answer questions people search for, drafted by a language model with other people's videos as research material, and most of that drafting is automated. Automation makes mistakes at a steady rate, so a policy for handling them is not a formality here — it is part of how the site works.
+TechFeedWatch publishes articles that answer questions people search for, drafted by a language model from sources found with Google Search, with other people's videos as a supplement, and most of that drafting is automated. Automation makes mistakes at a steady rate, so a policy for handling them is not a formality here — it is part of how the site works.
 
 ## How to report something
 
@@ -41,4 +41,4 @@ Where the site publishes numbers derived from its own archive, the method and it
 
 ---
 
-*This policy is maintained by Jacob S. Olsen, Denmark. Last reviewed August 2026.*
+*This policy is maintained by Jacob S. Olsen, Denmark. Last reviewed October 2026.*

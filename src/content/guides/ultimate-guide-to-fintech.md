@@ -238,7 +238,7 @@ credited. The [Fintech tag](/tag/fintech) has all 67 of them, and the
 *This guide draws on 67 videos covered on TechFeedWatch, from around thirty
 channels including Yahoo Finance, a16z, Coin Bureau and TED. The counts quoted —
 58 mentioning regulation, 29 on lending, 27 on fraud — come from the archive
-itself, not from an industry report. Written and maintained by Jacob S. Olsen.
+itself, not from an industry report. Planned, checked and maintained by Jacob S. Olsen, and written with AI.
 If something here is wrong, the [corrections policy](/corrections) explains how
 to tell me.*
 
