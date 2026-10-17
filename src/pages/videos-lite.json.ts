@@ -33,6 +33,8 @@ export const GET: APIRoute = () => {
         // Kildeangivelse, så klient-renderede kort kan kreditere den rigtige kanal
         channelTitle: video.frontmatter.channelTitle || '',
         tags,
+        // Læsetid til klokkens liste (17/10) - samme tal som artiklen selv viser ("N min read").
+        minutesRead: video.frontmatter.minutesRead || 0,
       };
     })
     .sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());

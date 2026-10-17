@@ -507,10 +507,10 @@ const siteSchema = [
       #notifBtn { position: relative; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
       .notif-badge { position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #d926c8; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; line-height: 1; }
       .notif-panel { position: absolute; top: calc(100% + 10px); right: 0; width: 340px; max-width: 92vw; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 14px 36px rgba(0,0,0,0.18); display: none; z-index: 70; overflow: hidden; }
-      .notif-panel.active { display: block; }
+      .notif-panel.active { display: flex; flex-direction: column; max-height: calc(100vh - 90px); max-height: calc(100dvh - 90px); }
       .notif-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--border-color); font-weight: 700; font-size: 0.95rem; }
       .notif-markread { background: none; border: none; color: var(--teal-text); font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 0; }
-      .notif-list { max-height: 62vh; overflow-y: auto; }
+      .notif-list { flex: 1 1 auto; min-height: 140px; overflow-y: auto; }
       .notif-item { display: flex; gap: 10px; align-items: center; padding: 10px 14px; text-decoration: none; color: var(--text-color); border-bottom: 1px solid var(--border-color); }
       .notif-item:last-child { border-bottom: none; }
       .notif-item:hover { background: var(--hover-bg); }
@@ -523,6 +523,24 @@ const siteSchema = [
       .notif-newdot { width: 8px; height: 8px; border-radius: 50%; background: #d926c8; flex-shrink: 0; }
       .notif-empty { padding: 24px 14px; text-align: center; color: #6b7280; font-size: 0.88rem; }
       body.dark-mode .notif-empty { color: #9ca3af; }
+    /* Klokke A-D (17/10): emner, tip, grupper, fod */
+    .notif-head-btns { display: flex; gap: 14px; align-items: center; }
+    .notif-topics { padding: 10px 14px 12px; border-bottom: 1px solid var(--border-color); }
+    .notif-topics[hidden], .notif-hint[hidden] { display: none; }
+    .notif-topics-lead { margin: 0 0 8px; font-size: 0.78rem; color: #6b7280; }
+    .notif-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .notif-chip { border: 1px solid var(--border-color); background: transparent; color: var(--text-color); border-radius: 999px; padding: 5px 11px; min-height: 32px; font-size: 0.78rem; cursor: pointer; }
+    .notif-chip:hover { border-color: #0f766e; }
+    .notif-chip[aria-pressed="true"] { background: #0f766e; border-color: #0f766e; color: #fff; }
+    .notif-hint { display: flex; gap: 8px; align-items: center; padding: 10px 14px; background: rgba(15, 118, 110, 0.08); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; }
+    .notif-hint span { flex: 1; }
+    .notif-hint-ja { background: #0f766e; color: #fff; border: none; border-radius: 999px; padding: 7px 12px; font-size: 0.78rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .notif-hint-luk { background: none; border: none; font-size: 1.15rem; line-height: 1; cursor: pointer; color: #6b7280; padding: 4px 6px; }
+    .notif-group { position: sticky; top: 0; z-index: 1; padding: 8px 14px 5px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; background: var(--card-bg); border-bottom: 1px solid var(--border-color); }
+    .notif-item.is-other { opacity: 0.7; }
+    .notif-foot { display: block; text-align: center; padding: 11px 14px; border-top: 1px solid var(--border-color); font-size: 0.82rem; font-weight: 700; color: var(--teal-text); text-decoration: none; }
+    .notif-foot:hover { background: var(--hover-bg); }
+    body.dark-mode .notif-topics-lead, body.dark-mode .notif-group, body.dark-mode .notif-hint-luk { color: #9ca3af; }
       /* Mobil: panelet ankres til viewporten med lige margener, så det er centreret og aldrig klippes */
       @media (max-width: 768px) {
         .notif-panel { position: fixed; top: 64px; left: 12px; right: 12px; width: auto; max-width: none; z-index: 1100; }
@@ -662,8 +680,11 @@ const siteSchema = [
         <div class="notif-wrap">
           <button id="notifBtn" class="icon-btn" aria-label="New articles" aria-expanded="false" aria-controls="notifPanel">🔔<span class="notif-badge" id="notifBadge" hidden></span></button>
           <div class="notif-panel" id="notifPanel">
-            <div class="notif-head"><span>🔔 New articles</span><button type="button" id="notifMarkRead" class="notif-markread">Mark all read</button></div>
+            <div class="notif-head"><span>🔔 New articles</span><span class="notif-head-btns"><button type="button" id="notifTopicsBtn" class="notif-markread" aria-expanded="false" aria-controls="notifTopics">Topics</button><button type="button" id="notifMarkRead" class="notif-markread">Mark all read</button></span></div>
+            <div class="notif-topics" id="notifTopics" hidden></div>
+            <div class="notif-hint" id="notifHint" hidden><span>Want the count to show only topics you like?</span><button type="button" class="notif-hint-ja">Choose topics</button><button type="button" class="notif-hint-luk" aria-label="Dismiss">&times;</button></div>
             <div class="notif-list" id="notifList"></div>
+            <a class="notif-foot" href="/latest/">See all latest articles &rarr;</a>
           </div>
         </div>
         {/* Tilføjet aria-expanded og aria-controls til AI Agenter */}
@@ -967,44 +988,93 @@ const siteSchema = [
           document.addEventListener('click', (e) => { if (!searchSuggest.contains(e.target) && e.target !== topSearchInput) hideSuggest(); });
         }
 
-        // Notifikations-klokke: viser nye artikler siden sidste besøg. Gemmes i browseren (localStorage), ingen login.
+        // Notifikations-klokke (ny 17/10-2026, A-D): rigtigt "ulæst", følg emner, grupperet liste, første besøg.
+        // Alt gemmes i læserens egen browser (localStorage) - ingen login, intet sendes til os.
+        //  tfw_read         = artikler læseren har ÅBNET (læst). Åbning af panelet markerer ikke længere alt som læst.
+        //  tfw_follow       = emner læseren følger. Tallet tæller kun dem (tom liste = alle emner).
+        //  tfw_notif_since  = dato fra hvornår artikler kan tælle som nye for denne læser.
+        //  tfw_follow_hint  = "1" når læseren har lukket "Follow topics?"-tippet.
         const notifBtn = document.getElementById('notifBtn');
         const notifPanel = document.getElementById('notifPanel');
         const notifList = document.getElementById('notifList');
         const notifBadge = document.getElementById('notifBadge');
         const notifMarkRead = document.getElementById('notifMarkRead');
+        const notifTopicsBtn = document.getElementById('notifTopicsBtn');
+        const notifTopics = document.getElementById('notifTopics');
+        const notifHint = document.getElementById('notifHint');
+        const nLaes = (k, std) => { try { const v = JSON.parse(localStorage.getItem(k)); return v === null ? std : v; } catch (e) { return std; } };
+        const nGem = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
+        const nMarkerLaest = (slug) => { const r = nLaes('tfw_read', []); if (r.indexOf(slug) === -1) { r.unshift(slug); nGem('tfw_read', r.slice(0, 300)); } };
+        // A: åbner man en artikel, er den læst - også uden at have åbnet klokken.
+        const nSti = location.pathname.match(/^\/video\/([^/]+)\/?$/);
+        if (nSti) nMarkerLaest(decodeURIComponent(nSti[1]));
+
         if (notifBtn && notifPanel && notifList && notifBadge) {
-          const NKEY = 'tfw_notif_seen';
           const nEsc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-          const nDate = (d) => { try { return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); } catch (e) { return ''; } };
-          let nArticles = [], nNew = [];
-          const getSeen = () => { try { return JSON.parse(localStorage.getItem(NKEY)); } catch (e) { return null; } };
-          const persistSeen = () => { try { localStorage.setItem(NKEY, JSON.stringify(nArticles.map((a) => a.slug).slice(0, 80))); } catch (e) {} notifBadge.hidden = true; };
+          const nIdag = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+          const nDageSiden = (dato) => Math.round((new Date(nIdag() + 'T00:00:00') - new Date(String(dato).slice(0, 10) + 'T00:00:00')) / 86400000);
+          const nDato = (d) => { try { return new Date(String(d).slice(0, 10) + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); } catch (e) { return ''; } };
+          const nEmne = (a) => (a.tags && a.tags[0]) || '';
+          let nArtikler = [], nUlaest = [], nEmner = [];
 
-          const updateBadge = () => {
-            if (nNew.length > 0) { notifBadge.textContent = nNew.length > 9 ? '9+' : String(nNew.length); notifBadge.hidden = false; }
-            else { notifBadge.hidden = true; }
-          };
-          const renderNotif = () => {
-            if (!nArticles.length) { notifList.innerHTML = '<div class="notif-empty">No new articles yet — check back soon!</div>'; return; }
-            notifList.innerHTML = nArticles.slice(0, 12).map((a) => {
-              const isNew = nNew.indexOf(a.slug) !== -1;
-              return '<a class="notif-item' + (isNew ? ' is-new' : '') + '" href="/video/' + a.slug + '/">' +
-                '<img class="notif-thumb" src="/kort/' + a.slug + '.webp" alt="" loading="lazy">' +
-                '<span class="notif-body"><span class="notif-title">' + nEsc(a.title) + '</span><span class="notif-date">' + nDate(a.date) + '</span></span>' +
-                (isNew ? '<span class="notif-newdot"></span>' : '') +
-              '</a>';
-            }).join('');
+          const nBeregn = () => {
+            const laest = nLaes('tfw_read', []);
+            const since = nLaes('tfw_notif_since', '');
+            const folg = nLaes('tfw_follow', []);
+            // Kun de sidste 14 dage kan tælle som nye - ellers vokser tallet uendeligt hos en sjælden gæst.
+            nUlaest = nArtikler.filter((a) => laest.indexOf(a.slug) === -1 && String(a.date).slice(0, 10) >= since && nDageSiden(a.date) <= 14)
+              .filter((a) => !folg.length || folg.indexOf(nEmne(a)) !== -1).map((a) => a.slug);
+            if (nUlaest.length) { notifBadge.textContent = nUlaest.length > 9 ? '9+' : String(nUlaest.length); notifBadge.hidden = false; }
+            else notifBadge.hidden = true;
+            notifBtn.setAttribute('aria-label', nUlaest.length ? nUlaest.length + ' unread articles' : 'New articles');
           };
 
-          // Badgen behøver ikke kataloget i den kritiske sti — hent i tomgang.
+          const nTegnEmner = () => {
+            if (!notifTopics) return;
+            const folg = nLaes('tfw_follow', []);
+            notifTopics.innerHTML = '<p class="notif-topics-lead">Count only articles from topics you follow:</p><div class="notif-chips">' +
+              nEmner.map((e) => '<button type="button" class="notif-chip" data-emne="' + nEsc(e) + '" aria-pressed="' + (folg.indexOf(e) !== -1) + '">' + nEsc(e) + '</button>').join('') + '</div>';
+            if (notifTopicsBtn) notifTopicsBtn.textContent = folg.length ? 'Topics (' + folg.length + ')' : 'Topics';
+          };
+
+          const nTegn = () => {
+            const laest = nLaes('tfw_read', []);
+            const folg = nLaes('tfw_follow', []);
+            if (notifHint) notifHint.hidden = !!folg.length || nLaes('tfw_follow_hint', '') === '1';
+            if (!nArtikler.length) { notifList.innerHTML = '<div class="notif-empty">No new articles yet - check back soon!</div>'; return; }
+            const grupper = [['Today', []], ['This week', []], ['Earlier', []]];
+            nArtikler.slice(0, 15).forEach((a) => { const d = nDageSiden(a.date); grupper[d <= 0 ? 0 : d <= 7 ? 1 : 2][1].push(a); });
+            // B: inden for hver gruppe står de emner, man følger, øverst.
+            const fulgt = (a) => (folg.length && folg.indexOf(nEmne(a)) !== -1 ? 0 : 1);
+            notifList.innerHTML = grupper.filter((g) => g[1].length).map((g) =>
+              '<div class="notif-group">' + g[0] + '</div>' + g[1].slice().sort((x, y) => fulgt(x) - fulgt(y)).map((a) => {
+                const ny = laest.indexOf(a.slug) === -1 && nUlaest.indexOf(a.slug) !== -1;
+                const uFulgt = folg.length && fulgt(a) === 1;
+                const meta = [nEmne(a), a.minutesRead ? a.minutesRead + ' min read' : '', nDato(a.date)].filter(Boolean).map(nEsc).join(' · ');
+                return '<a class="notif-item' + (ny ? ' is-new' : '') + (uFulgt ? ' is-other' : '') + '" href="/video/' + encodeURIComponent(a.slug) + '/">' +
+                  '<img class="notif-thumb" src="/kort/' + encodeURIComponent(a.slug) + '.webp" alt="" loading="lazy" width="72" height="44">' +
+                  '<span class="notif-body"><span class="notif-title">' + nEsc(a.title) + '</span><span class="notif-date">' + meta + '</span></span>' +
+                  (ny ? '<span class="notif-newdot" aria-label="Unread"></span>' : '') + '</a>';
+              }).join('')).join('');
+          };
+
           const startNotifData = () => window.tfwVideos().then((all) => {
-            nArticles = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 40);
-            const seen = getSeen();
-            if (seen === null) { persistSeen(); nNew = []; } // Første besøg: marker alt som set, ingen badge
-            else { nNew = nArticles.filter((a) => seen.indexOf(a.slug) === -1).map((a) => a.slug); }
-            updateBadge();
-            renderNotif();
+            nArtikler = all.filter((v) => !v.isShort).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 40);
+            const taelle = {};
+            all.forEach((v) => { const e = nEmne(v); if (e) taelle[e] = (taelle[e] || 0) + 1; });
+            nEmner = Object.keys(taelle).sort((x, y) => taelle[y] - taelle[x]);
+            if (!nLaes('tfw_notif_since', '')) {
+              const gammel = nLaes('tfw_notif_seen', null);
+              if (gammel) {
+                // Læser fra før 17/10: det, de allerede har set i den gamle klokke, tæller som læst.
+                nGem('tfw_read', gammel.concat(nLaes('tfw_read', [])).slice(0, 300));
+                nGem('tfw_notif_since', '2000-01-01');
+              } else {
+                // D: første besøg - den seneste udgivelsesdags artikler tæller som nye.
+                nGem('tfw_notif_since', nArtikler.length ? String(nArtikler[0].date).slice(0, 10) : nIdag());
+              }
+            }
+            nBeregn(); nTegnEmner(); nTegn();
           }).catch(() => {});
           if ('requestIdleCallback' in window) requestIdleCallback(() => startNotifData(), { timeout: 4000 });
           else setTimeout(startNotifData, 2500);
@@ -1013,12 +1083,32 @@ const siteSchema = [
             e.stopPropagation();
             const open = notifPanel.classList.toggle('active');
             notifBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (open) { renderNotif(); persistSeen(); } // åbning = markér som set (badge forsvinder)
+            if (open) nTegn(); // A: at åbne panelet markerer IKKE længere alt som læst
           });
-          if (notifMarkRead) notifMarkRead.addEventListener('click', (e) => { e.stopPropagation(); nNew = []; persistSeen(); renderNotif(); });
+          if (notifMarkRead) notifMarkRead.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nGem('tfw_read', nUlaest.concat(nLaes('tfw_read', [])).slice(0, 300));
+            nBeregn(); nTegn();
+          });
+          const aabnEmner = (vis) => { if (!notifTopics || !notifTopicsBtn) return; notifTopics.hidden = !vis; notifTopicsBtn.setAttribute('aria-expanded', vis ? 'true' : 'false'); if (vis && notifHint) { nGem('tfw_follow_hint', '1'); notifHint.hidden = true; } };
+          if (notifTopicsBtn) notifTopicsBtn.addEventListener('click', (e) => { e.stopPropagation(); aabnEmner(notifTopics.hidden); });
+          if (notifTopics) notifTopics.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const knap = e.target.closest('.notif-chip'); if (!knap) return;
+            const emne = knap.getAttribute('data-emne'); let folg = nLaes('tfw_follow', []);
+            folg = folg.indexOf(emne) === -1 ? folg.concat(emne) : folg.filter((x) => x !== emne);
+            nGem('tfw_follow', folg); nBeregn(); nTegnEmner(); nTegn();
+          });
+          if (notifHint) notifHint.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (e.target.closest('.notif-hint-ja')) aabnEmner(true);
+            if (e.target.closest('.notif-hint-ja') || e.target.closest('.notif-hint-luk')) { nGem('tfw_follow_hint', '1'); notifHint.hidden = true; }
+          });
           document.addEventListener('click', (e) => {
             if (!notifPanel.contains(e.target) && !notifBtn.contains(e.target)) { notifPanel.classList.remove('active'); notifBtn.setAttribute('aria-expanded', 'false'); }
           });
+          // Læser man en artikel i en anden fane, opdateres tallet, når man kommer tilbage.
+          document.addEventListener('visibilitychange', () => { if (!document.hidden && nArtikler.length) { nBeregn(); nTegn(); } });
         }
         
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
