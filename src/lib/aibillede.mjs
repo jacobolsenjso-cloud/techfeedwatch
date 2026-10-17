@@ -4,7 +4,8 @@
 //
 // Ærlighed over for læseren: mærket "AI-generated" står synligt på billedet, og filen får
 // IPTC-mærket "trainedAlgorithmicMedia" i sine metadata (den standard, Google læser for at
-// vise, at et billede er AI-lavet). Vandmærket "TechFeedWatch.com" står diskret i hjørnet.
+// vise, at et billede er AI-lavet). Vandmærket "TechFeedWatch.com" står diskret i hjørnet,
+// fra 17/10-2026 med det lille logoikon foran.
 //
 // Regler for billedet: ingen tekst, ingen logoer/varemærker, ingen genkendelige personer —
 // AI-tekst bliver volapyk, og falske logoer/personer ville være vildledende. Et tjek med
@@ -13,6 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 import { GEMINI_MODEL, hentModel } from './model.mjs';
+import { ikonIndhold } from './logo.mjs';
 
 export const BILLED_MODEL = 'gemini-nano-banana-2.1'; // ca. 0,034 USD pr. billede (prisliste 12/10)
 const RAA_MAPPE = './.cache/ai-billeder';             // originalerne: mærker kan laves om uden at betale igen
@@ -48,8 +50,29 @@ export async function tjekBillede(genAI, buf) {
 
 const xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+// Logoikonet i vandmærket (17/10-2026, Jacob): står lige til venstre for "TechFeedWatch.com".
+// Tekstbredden MÅLES med den skrift, maskinen faktisk har (Arial på Windows, Liberation Sans i
+// GitHub Actions - samme mål, tjekket 17/10 på et skybillede), så afstanden altid er den samme.
+const tekstBredder = new Map();
+async function tekstBredde(fs2) {
+  if (!tekstBredder.has(fs2)) {
+    const svg = Buffer.from(`<svg width="${fs2 * 20}" height="${fs2 * 3}" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#fff"/><text x="${fs2}" y="${fs2 * 2}" font-family="Arial, Helvetica, sans-serif" font-size="${fs2}" font-weight="bold" fill="#000">TechFeedWatch.com</text></svg>`);
+    const { info } = await sharp(svg).trim().toBuffer({ resolveWithObject: true });
+    tekstBredder.set(fs2, info.width);
+  }
+  return tekstBredder.get(fs2);
+}
+// Kun ikonet som SVG-element (bruges i maerkerSvg og til færdige billeder uden gemt original).
+export async function vandmaerkeIkon(w, h) {
+  const pad = Math.round(h * 0.035), fs2 = Math.round(h * 0.03);
+  const s = Math.round(fs2 * 1.3), gab = Math.round(fs2 * 0.4);
+  const x = w - pad - (await tekstBredde(fs2)) - gab - s;
+  const y = Math.round(h - pad - fs2 * 0.36 - s / 2); // midt på tekstens versaler
+  return `<svg x="${x}" y="${y}" width="${s}" height="${s}" viewBox="0 0 90 90">${ikonIndhold({ id: 'vmIkon', lille: s < 24 })}</svg>`;
+}
+
 // Mærkerne lægges på EFTER skalering, så de har samme størrelse i forhold til billedet overalt.
-function maerkerSvg(w, h) {
+async function maerkerSvg(w, h) {
   const fs1 = Math.round(h * 0.034), pad = Math.round(h * 0.035);
   const badgeB = Math.round(fs1 * 0.62 * 'AI-generated'.length + fs1 * 1.2), badgeH = Math.round(fs1 * 1.7);
   const fs2 = Math.round(h * 0.03);
@@ -58,11 +81,12 @@ function maerkerSvg(w, h) {
   <text x="${pad + badgeB / 2}" y="${pad + badgeH * 0.68}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="${fs1}" font-weight="bold" fill="#fff">AI-generated</text>
   <text x="${w - pad + 1}" y="${h - pad + 1}" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="${fs2}" font-weight="bold" fill="#000" fill-opacity="0.55">TechFeedWatch.com</text>
   <text x="${w - pad}" y="${h - pad}" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="${fs2}" font-weight="bold" fill="#fff" fill-opacity="0.8">TechFeedWatch.com</text>
+  ${await vandmaerkeIkon(w, h)}
 </svg>`);
 }
 
 // IPTC-mærket for AI-genererede billeder + kredit og beskrivelse (XMP-metadata i filen).
-function xmp(titel) {
+export function xmp(titel) {
   return `<x:xmpmeta xmlns:x="adobe:ns:meta/"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="" xmlns:Iptc4xmpExt="http://iptc.org/std/Iptc4xmpExt/2008-02-29/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" Iptc4xmpExt:DigitalSourceType="http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia" photoshop:Credit="TechFeedWatch.com (AI-generated)"><dc:description><rdf:Alt><rdf:li xml:lang="x-default">AI-generated illustration: ${xml(titel)}</rdf:li></rdf:Alt></dc:description></rdf:Description></rdf:RDF></x:xmpmeta>`;
 }
 
@@ -100,7 +124,7 @@ export async function lavAiBillede(genAI, { slug, titel, emne, resume }, ud, { l
     if (!sti) continue;
     fs.mkdirSync(path.dirname(sti), { recursive: true });
     const base = await sharp(raa).resize(w, h, { fit: 'cover', position: 'centre' }).toBuffer();
-    let s = sharp(base).composite([{ input: maerkerSvg(w, h) }]).withXmp(meta);
+    let s = sharp(base).composite([{ input: await maerkerSvg(w, h) }]).withXmp(meta);
     s = fmt === 'webp' ? s.webp({ quality: q }) : s.jpeg({ quality: q });
     await s.toFile(sti);
   }
