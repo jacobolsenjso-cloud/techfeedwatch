@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 143** — brug kun v143). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 144** — brug kun v144). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 143** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 22:37, live `880231b5`): LIVE. Alle sider beskriver den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History); guides, ordliste og værktøjer siger "written with AI, planned, checked and maintained by Jacob". /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn. "New look"-boble til og med 24/10. **Næste:** menuen siger "Best by Topic", siden "Best of each topic" (spørg Jacob); slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 22:50, live `ec8cdadd`): LIVE. Alle sider beskriver den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History); guides, ordliste og værktøjer siger "written with AI, planned, checked and maintained by Jacob". /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider. Menuen siger "Best of each topic" som siden.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,11 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 22:50 - techfeedwatch: menuen siger "Best of each topic" (LIVE `ec8cdadd`)
+- **Jacob: "du retter menuen også".** Menupunktet hed "Best by Topic", mens siden, sitemap og om-/start-siderne siger "Best of each topic". Kun ét sted i koden (MainLayout.astro).
+- **Målt:** skærmbilleder mobil (menu åben) + desktop - teksten står på én linje begge steder. Live (ec8cdadd, Cloudflare success): forside, /popular/, /about/ og en artikel har det nye navn, 0 steder med "Best by Topic".
+
 
 ### 17/10-2026 kl. 22:37 - techfeedwatch: guides, ordliste og værktøjer siger nu ærligt "written with AI" (LIVE `880231b5`)
 - **Jacob valgte** "planned, checked and maintained by me"; Claude tilføjede "written with AI", fordi sætningen alene stadig lader læseren tro, at Jacob har skrevet teksten.
