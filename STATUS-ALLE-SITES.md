@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 129** — brug kun v129). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 130** — brug kun v130). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 129** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (16/10-2026 kl. 22:57, live `4d0fe64f`): LIVE. 58 egne værktøjer** - i dag 15 nye: krypto (DCA, FIFO-gevinst, gebyr/spread), AI (abonnement vs API, lokal AI), hardware (GPU-hotspot, strømpris, lagerplads), video (filstørrelse, upload-tid), PDF (sammenlæg, opdel - intet uploades), kvante (qubits/Grover), lån og inflation. 40 af 436 artikler viser et værktøj, der passer til spørgsmålet. Faktaboks "Key facts" på nye/omskrevne artikler. Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B. **Næste:** morgentjek 17/10 kl. 09:50 (pris, `DAEKNING`/`STOP`, faktabokse); kurserne til DCA opdateres månedligt (`node hent-kurser.mjs`, endnu manuelt); punkt 3 (uden video), punkt 5 (primære kilder). **Åbent:** Googles krav om originalitet, 491 tvungne links i gamle artikler (rettes ved omskrivning).
+**Seneste for techfeedwatch (17/10-2026 kl. 13:23, live `ba269e55`): LIVE. 58 egne værktøjer** - krypto, AI, hardware, video, PDF, kvante, lån og inflation. 40 af 438 artikler viser et værktøj, der passer til spørgsmålet (beregnes ved bygning, så gamle artikler har det også). Faktaboks "Key facts" på nye og omskrevne artikler; gamle får den gennem omskrivningen (3 om dagen, aftalt 17/10 - ingen ekstra pris). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker (logs #708/#709 tjekket). 17/10: skriveloftet hævet til 32.768 tokens, og forkortelses-domæner (nist.gov) godkendes. **Næste:** se om B nogensinde udløses; Britannica/IBM afviser robottens link-tjek; spørgsmål til Jacob: skal robotten hente DCA-kurser hver måned?
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 13:23 - techfeedwatch: nattens kørselslogs tjekket, 2 fejl rettet LIVE
+- **Logs læst i Jacobs Chrome:** #708 (00:17 UTC) udgav "What Happens When Programming Runs in a Computer?" - DAEKNING 5/0 droppet, FAKTABOKS 3, VAERKTOEJ intet, 0,40 USD. #709 (01:17 UTC) udgav "Productivity Software and What It Means for Modern Work" - DAEKNING 3 beholdt/2 droppet, FAKTABOKS 0 (kun 4 fakta med kilde), VAERKTOEJ intet, 0,55 USD. Begge: audit 0 fejl, build grøn. Hver kørsel lagde først ét spørgsmål på is (ingen kandidat bestod). B (stop efter fejlet skrivning) blev ikke udløst - skrivningen lykkedes begge gange.
+- **Fejl 1 - svaret klippet (#709):** Gemini brugte 15.119 af 16.384 output-tokens på tænkning, svaret blev klippet (MAX_TOKENS) og skrevet forfra. Fejler det to gange, er artiklen tabt. Rettet: skrivekaldet og dets genforsøg har nu loft 32.768 (der betales kun for brugte tokens).
+- **Fejl 2 - nist.gov afvist:** domænetjekket krævede et ord fra navnet i domænet; "National Institute of Standards and Technology" -> nist.gov fejlede. Rettet: initialer, der passer præcist (mindst 3 bogstaver), godkendes. Testet: NIST, IBM, Otter godkendt; forkert domæne afvist.
+- **LIVE `ba269e55`:** alle test-*.mjs grønne, `node --check` ok, Cloudflare Pages success, build.json viser ba269e55.
+- **Ikke rettet, men værd at vide:** i #708 var 9 af 13 kilder britannica.com (tynd kildebredde); Britannica og IBM svarer ikke på robottens link-tjek (blokerer sandsynligvis GitHub-maskiner). #709 bygger på en video med relevans 5/10 - søgningen bærer artiklen (videoandel 14 %).
+- **Jacob valgte:** "alle sider til nyt setup" = faktaboks på gamle artikler via omskrivningen (3/dag). Bekræftet i koden: omskriv-gamle.mjs kører add-video.mjs --erstat, så faktaboksen kommer med automatisk. Ingen kodeændring nødvendig. Værktøjsboksen virker allerede på alle 438.
+- **Lære:** PowerShell spiste `$1` i min erstatning i en node -e kommando, så en linje i add-video gik i stykker. `node --check` fangede det før push. Opskriften fandtes (script-fil, aldrig `$` i kommandoen) - jeg fulgte den ikke. Samme fejl for 2. gang: opskriften strammes til "ALDRIG node -e med regex/replace i PowerShell - altid script-fil".
+
 
 ### 16/10-2026 kl. 22:57 - techfeedwatch: værktøjslisten hold 2+3 LIVE (7 nye, nu 58)
 - **Listen (aftalt med Jacob i telefonen i pausen):** hold 1 (token-tæller, AI-pris, lokal AI) fandtes allerede - token-beregneren tæller tokens i indsat tekst og viser prisen pr. model, og lokal-AI blev bygget i dag. Bygget nu: hold 2 og 3.
