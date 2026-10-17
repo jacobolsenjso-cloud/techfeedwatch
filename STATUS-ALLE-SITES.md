@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 142** — brug kun v142). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 143** — brug kun v143). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 142** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 22:27, live `dbb89eab`): LIVE. Om-, start-, vilkårs-, kontakt-, forfatter-, retningslinje- og privatlivssiderne beskriver nu den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History). /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn, nyt logo og farver. "New look"-boble til og med 24/10. **Næste:** Jacobs svar på, om "I write myself" om guides/ordliste/værktøjer skal stå; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 22:37, live `880231b5`): LIVE. Alle sider beskriver den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History); guides, ordliste og værktøjer siger "written with AI, planned, checked and maintained by Jacob". /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn. "New look"-boble til og med 24/10. **Næste:** menuen siger "Best by Topic", siden "Best of each topic" (spørg Jacob); slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 22:37 - techfeedwatch: guides, ordliste og værktøjer siger nu ærligt "written with AI" (LIVE `880231b5`)
+- **Jacob valgte** "planned, checked and maintained by me"; Claude tilføjede "written with AI", fordi sætningen alene stadig lader læseren tro, at Jacob har skrevet teksten.
+- **Rettet:** about (to steder), start-here (to steder), editorial guidelines, forfatternoten under alle guides og slutlinjen i 8 guides ("Written and maintained by Jacob S. Olsen." -> "Planned, checked and maintained by Jacob S. Olsen, and written with AI."). Rettelsespolitikken: beskrivelsen "Written and maintained" -> "Maintained", den gamle opskrift ("videos as research material") rettet, "Last reviewed October 2026".
+- **Målt live (880231b5, Cloudflare success):** alle 224 sider undtagen artikler og artikellister gennemsøgt for 20 forældede formuleringer: 0 fund. Ny tekst bekræftet på about, start-here, editorial-guidelines, corrections og to guides.
+- **Lære:** v142-tjekket dækkede kun de 10 sider, jeg selv havde rettet, så rettelsespolitikken med samme gamle opskrift slap igennem. Et tjek af en tekstrettelse skal søge alle byggede sider, ikke kun dem, jeg ved, jeg har rørt (_tjek-alle-sider.mjs gør det nu).
+
 
 ### 17/10-2026 kl. 22:27 - techfeedwatch: om-/start-/politiksider og /sitemap/ beskriver sitet, som det er nu (LIVE `dbb89eab`)
 - **Jacob: "det skal også med eller rettes ... er der flere fejl, så ret dem også" + "husk /sitemap/".** Siderne målt mod koden (add-video.mjs, soegning.mjs, kildetjek.mjs, auto-youtube.mjs, MainLayout).
