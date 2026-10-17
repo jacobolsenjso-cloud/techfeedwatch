@@ -1,5 +1,6 @@
 ---
-import { TAG_COLORS } from '../lib/tags';
+import { TAG_COLORS, tagSlug } from '../lib/tags';
+import { TOOLS as ALLE_VAERKTOEJER, TOOL_CATEGORIES } from '../lib/tools';
 import MainLayout from '../layouts/MainLayout.astro';
 
 // Shorts er noindex'ede (se video/[slug].astro), så de udelades her for ikke at lede Google til dem
@@ -24,23 +25,38 @@ const videosByTag = ALLOWED_TAGS.map((tag) => {
   return { tag, videos };
 }).filter((group) => group.videos.length > 0);
 
+// 17/10: listen manglede Start here, Latest, Best of each topic, Trends, Search og
+// redaktions-/kontaktsiderne. Alle sider i hovedmenuen og footeren skal stå her.
 const MAIN_PAGES = [
   { href: '/', label: 'Home' },
+  { href: '/start-here', label: 'Start here' },
+  { href: '/latest', label: 'Latest' },
+  { href: '/popular', label: 'Best of each topic' },
   { href: '/library', label: 'Library' },
+  { href: '/trends', label: 'Trends' },
+  { href: '/search', label: 'Search' },
   { href: '/watch-later', label: 'Read later' },
   { href: '/history', label: 'History' },
   { href: '/tools', label: 'Tools' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/guides', label: 'Guides' },
+];
+const ABOUT_PAGES = [
   { href: '/about', label: 'About' },
+  { href: '/author/jacob-olsen', label: 'Jacob S. Olsen' },
+  { href: '/editorial-guidelines', label: 'Editorial guidelines' },
+  { href: '/corrections', label: 'Corrections' },
+  { href: '/contact', label: 'Contact' },
   { href: '/terms', label: 'Terms' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
 ];
 
-// Emne-farvesystem for glossary-kategorier, defineret lokalt (samme farver som glossary-siderne)
-const GLOSSARY_CATEGORIES = ["AI", "Tech", "SEO", "Fintech", "Crypto"];
+// Ordliste-kategorierne læses nu fra selve ordene (17/10): den håndskrevne liste
+// havde kun 5 af 8 kategorier, så 10 af 56 ord manglede på siden.
+const GLOSSARY_ORDER = ["AI", "Tech", "SEO", "Fintech", "Crypto", "Cybersecurity", "Hardware", "Business"];
 const GLOSSARY_CATEGORY_COLORS: Record<string, string> = {
   AI: "#2563eb", Tech: "#8b5cf6", SEO: "#10b981", Fintech: "#2563eb", Crypto: "#d97706",
+  Cybersecurity: TAG_COLORS['Cybersecurity'], Hardware: TAG_COLORS['Hardware & Chips'], Business: TAG_COLORS['Business & Money'],
 };
 
 const glossaryTerms = Object.values(import.meta.glob('../content/glossary/*.md', { eager: true }))
@@ -52,6 +68,8 @@ const glossaryTerms = Object.values(import.meta.glob('../content/glossary/*.md',
   .filter((t: any) => t.term && t.slug);
 
 // Grupperer glossary-termer under hver kategori, alfabetisk. Kategorier uden termer springes over.
+// Kendte kategorier i fast rækkefølge, nye kategorier bagefter - så et nyt ord aldrig forsvinder.
+const GLOSSARY_CATEGORIES = [...new Set([...GLOSSARY_ORDER, ...glossaryTerms.map((t: any) => t.category).filter(Boolean).sort()])];
 const glossaryByCategory = GLOSSARY_CATEGORIES.map((category) => {
   const terms = glossaryTerms
     .filter((t: any) => t.category === category)
@@ -64,16 +82,14 @@ const guidePages = Object.values(import.meta.glob('../content/guides/*.md', { ea
   .filter((g: any) => g.title && g.slug)
   .sort((a: any, b: any) => a.title.localeCompare(b.title));
 
-const TOOLS = [
-  { href: '/tools/ai-token-calculator', label: 'AI Token & Cost Calculator' },
-  { href: '/tools/compound-calculator', label: 'Compound Growth & Crypto Staking Calculator' },
-  { href: '/tools/serp-preview', label: 'Meta Tag & SERP Snippet Preview' },
-  { href: '/tools/video-schema', label: 'Video Schema Generator' },
-  { href: '/tools/json-formatter', label: 'JSON Formatter & Validator' },
-  { href: '/tools/password-generator', label: 'Password Generator & Strength Checker' },
-  { href: '/tools/encoder-decoder', label: 'Base64 & URL Encoder/Decoder' },
-  { href: '/tools/thumbnail-downloader', label: 'YouTube Thumbnail Downloader' },
-];
+// Værktøjerne læses fra src/lib/tools.ts (17/10): før stod 8 af 50 håndskrevet her.
+const toolsByCategory = TOOL_CATEGORIES.map((c) => ({
+  category: c,
+  tools: ALLE_VAERKTOEJER.filter((t) => t.category === c.id),
+})).filter((g) => g.tools.length > 0);
+
+// Emnesiderne selv (/tag/...) - før linkede sitemap'et kun til artiklerne, ikke til emnerne.
+const topicPages = videosByTag.map(({ tag, videos }) => ({ tag, href: `/tag/${tagSlug(tag)}`, count: videos.length }));
 
 const title = "Site Map";
 const description = "Browse every page, tool, and article on TechFeedWatch, organized by topic for easy navigation.";
@@ -141,12 +157,36 @@ const description = "Browse every page, tool, and article on TechFeedWatch, orga
     </section>
 
     <section class="sitemap-section">
-      <h2>Tools</h2>
+      <h2>About this site</h2>
       <ul class="sitemap-link-list">
-        {TOOLS.map((t) => (
-          <li><a href={t.href}>{t.label}</a></li>
+        {ABOUT_PAGES.map((p) => (
+          <li><a href={p.href}>{p.label}</a></li>
         ))}
       </ul>
+    </section>
+
+    <section class="sitemap-section">
+      <h2>Topics</h2>
+      <ul class="sitemap-link-list">
+        {topicPages.map((t) => (
+          <li><a href={t.href}>{t.tag} ({t.count})</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="sitemap-section">
+      <h2>Tools ({ALLE_VAERKTOEJER.length})</h2>
+      {toolsByCategory.map(({ category, tools }) => (
+        <details class="sitemap-tag">
+          <summary>{category.icon} {category.name}<span class="sitemap-count">({tools.length})</span></summary>
+          <ul class="sitemap-video-list">
+            <li><a href={`/tools/${category.slug}`}>All {category.name} tools →</a></li>
+            {tools.map((t) => (
+              <li><a href={`/tools/${t.slug}`}>{t.title}</a></li>
+            ))}
+          </ul>
+        </details>
+      ))}
     </section>
 
     {guidePages.length > 0 && (

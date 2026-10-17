@@ -17,7 +17,6 @@ We use Your Personal data to provide and improve the Service. By using the Servi
 The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or plural.
 
 ### Definitions
-* **Account** means a unique account created for you to access our Service or parts of our Service.
 * **Affiliate** means an entity that controls, is controlled by, or is under common control with a party.
 * **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to TechFeedWatch, a website run by Jacob S. Olsen, Denmark.
 * **Cookies** are small files that are placed on your computer, mobile device, or any other device by a website.
@@ -35,10 +34,7 @@ The words of which the initial letter is capitalized have meanings defined under
 ### Types of Data Collected
 
 **Personal Data**
-While using Our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
-* Email address
-* First name and last name
-* Usage Data
+The site has no accounts, sign-up forms or comment section, so we do not ask you for personal information. If you email us, we receive your email address, your name if you include it, and what you write.
 
 **Usage Data**
 Usage Data is collected automatically when using the Service. It may include information such as Your Device's Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.
@@ -47,7 +43,7 @@ Usage Data is collected automatically when using the Service. It may include inf
 We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. 
 
 * **Cookies or Browser Cookies.** A cookie is a small file placed on Your Device. You can instruct your browser to refuse all Cookies or to indicate when a Cookie is being sent.
-* **Web Beacons.** Certain sections of our Service and our emails may contain small electronic files known as web beacons.
+* **Web Beacons.** Certain sections of our Service may contain small electronic files known as web beacons.
 
 We use both Session and Persistent Cookies for purposes such as Necessary/Essential Cookies, Cookies Policy Acceptance Cookies, and Functionality Cookies.
 
@@ -87,10 +83,8 @@ You can choose to get a daily notification when a new article appears in the top
 
 The Company may use Personal Data for the following purposes:
 * **To provide and maintain our Service**, including monitoring the usage of our Service.
-* **To manage Your Account:** to manage your registration as a user of the Service.
-* **For the performance of a contract:** the development, compliance, and undertaking of the purchase contract for the products, items, or services you have purchased.
-* **To contact You:** To contact You by email regarding updates or informative communications.
-* **To provide you with news, special offers, and general information** about other goods, services, and events which we offer.
+* **To reply to You:** when you email us, your address is used to answer you, and for nothing else.
+* **To send the daily notification**, if you turned it on (see Push Notifications above).
 * **To manage Your requests:** To attend to and manage Your requests to Us.
 * **For business transfers** and **other purposes** such as data analysis and identifying usage trends.
 
@@ -111,8 +105,6 @@ You have the right to delete or request that We assist in deleting the Personal 
 ## Security of Your Personal Data
 
 The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. 
-
-When placing an order with one of our affiliate partners, the confidential data of the payment are transmitted directly through our affiliate partners´ links and to the corresponding financial institution through their payment system, not through our servers.
 
 ## Children's Privacy
 

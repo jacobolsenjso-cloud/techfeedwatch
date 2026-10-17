@@ -25,4 +25,4 @@ We read every message and aim to reply within a few business days.
 
 ## About TechFeedWatch
 
-TechFeedWatch is an independent tech media project that answers the questions people search for about AI, technology, fintech, and crypto, in plain language, with independent creators' videos as research material. You can read more about who we are and how the site works on our [About page](/about).
+TechFeedWatch is an independent tech media project that answers the questions people search for about AI, technology, fintech, and crypto, in plain language, built on named sources and with creators' videos as a supplement. You can read more about who we are and how the site works on our [About page](/about).

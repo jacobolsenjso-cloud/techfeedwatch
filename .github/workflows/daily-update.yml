@@ -4,7 +4,7 @@ name: YouTube Auto Update
 # - Alle 386 artikler omskrevet: emnet er artiklen, videoen er krediteret kilde.
 # - Søgespørgsmål fra autocomplete er artiklens opgave (targetQuestion).
 # - Titler varieret (8 former, publikations-casing, åbningsords-værn).
-# - Dagsloft varierer med datoen: hverdage 2-6, weekend 1-3 — loft, ikke mål.
+# - Dagsloft varierer med datoen: hverdage 2-3, weekend 1-3 (max 3 om dagen, 16/10) — loft, ikke mål.
 # - Kvalitetsværn: sprogtjek, min. varighed/kildetekst, tom-artikel-stop,
 #   audit-content kører FØR commit og standser jobbet ved fejl.
 #

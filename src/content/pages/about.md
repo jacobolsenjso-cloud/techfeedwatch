@@ -25,7 +25,7 @@ Here is what I noticed, and it is the reason TechFeedWatch is built the way it i
 
 When people want to understand something about AI, technology, fintech or crypto, they type a question into Google. What they get back is often a wall of long videos, thin listicles, or pages written to rank rather than to answer. The straight answer is in there somewhere — usually inside a video from someone who actually knows the subject — but it takes twenty minutes to find out whether it was worth it.
 
-So every article here starts from two things: a real question people search for, and a video from an independent creator who covers it. The article answers the question in plain language, using that video as its research material. The creator is always credited, and the video is there if you want the full version.
+So every article here starts from a real question people search for. The answer is researched with Google Search and built on named sources, and a video from someone who knows the subject adds a section of its own. The article answers the question in plain language. The creator is always credited, and the video is there if you want the full version.
 
 That is it. I am trying to make it easier for people who are interested in tech to get a straight answer — and to know where it came from.
 
@@ -39,9 +39,11 @@ You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbe
 
 I would rather tell you this than have you work it out.
 
-A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live. The system publishes a few a day — usually two or three, fewer at weekends, and none on a day when no video passes the checks. A run that finds nothing good enough publishes nothing.
+A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search and keeps only facts backed by the pages Google cites, then finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question: it may not use a number that the research or the video does not back up, the sources are listed at the end, and the video adds one section. Articles written before October 2026 used the video's transcript as their research material instead; they are being rewritten with the new method, a few a day. Images labelled "AI-generated" are made by an AI model.
 
-What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times. The rules every article has to pass are listed in the [editorial guidelines](/editorial-guidelines).
+Those articles publish automatically — I do not read every one before it goes live. The system publishes a few a day — usually two or three, fewer at weekends, and none on a day when nothing passes the checks. A run that finds nothing good enough publishes nothing.
+
+What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times. The rules every article has to pass are listed in the [editorial guidelines](/editorial-guidelines).
 
 That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos or read all of these articles. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
 
@@ -56,6 +58,12 @@ If you think the automation makes the writing less trustworthy, that is a fair t
 **Two pages built from the site's own data.** [Trends](/trends) counts which companies, models and protocols come up most across every article. [Best of each topic](/popular) ranks source videos by how far they beat their own channel's average, so a small channel with a strong video can outrank a large one. Both state their method and their limits on the page, because a number without those is just a claim.
 
 **A glossary** of the terms that keep appearing, written for someone who wants the answer in thirty seconds and the reason underneath it.
+
+**{{TOPICS}} topics you can follow.** From AI agents to quantum computing. Follow the ones you care about with the bell at the top of the page, or the Follow button on a topic page, and the bell counts only new articles in those. Your choices stay in your own browser; there is no account to create.
+
+**A daily notification, if you want one.** Turn it on under the bell: at most one a day, about the topics you follow, and off again with one click. On an iPhone or iPad, Apple only allows it once the site has been added to your Home Screen, and the bell shows you how. The [privacy policy](/privacy-policy) says exactly what is stored.
+
+**Read later and History.** Save any article with its Save button and find it again under [Read later](/watch-later); [History](/history) lists what you have read. Both are kept in your browser only.
 
 ## Corrections
 

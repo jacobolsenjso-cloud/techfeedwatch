@@ -5,7 +5,7 @@ description: "The terms for using TechFeedWatch: what the articles are, how sour
 
 # Terms of Service
 
-**Last updated:** September 15, 2026
+**Last updated:** October 17, 2026
 
 Welcome to TechFeedWatch. By using this website you accept the terms below. If you do not agree with them, please do not use the site.
 
@@ -15,11 +15,11 @@ TechFeedWatch (techfeedwatch.com) is run by Jacob S. Olsen, a private individual
 
 ## What the articles are
 
-Every article starts from a question people search for and a video from an independent creator who covers it. A language model writes the article from the video's transcript, and it is published automatically; I do not read every article before it goes live. The [About page](/about/) and the [Corrections page](/corrections/) explain this in full. Articles are general information, not professional advice — see the disclaimer below.
+Every article starts from a question people search for. The question is researched with Google Search, and a language model writes the article from the sources found, with a video from a creator who covers the subject as one section (articles from before October 2026 were written from the video's transcript and are being rewritten). Articles are published automatically; I do not read every article before it goes live. The [About page](/about/) and the [Corrections page](/corrections/) explain this in full. Articles are general information, not professional advice — see the disclaimer below.
 
 ## Sources and credit
 
-Each article names the creator whose video it draws on and links to that video on YouTube. The videos belong to their creators; TechFeedWatch does not host or claim them. If you are a creator and want an article about your video changed or removed, write to info@techfeedwatch.com and I will do it.
+Each article names the creator whose video it draws on and links to that video on YouTube, and articles written with the current method list the web pages they draw on under "Sources". The videos belong to their creators; TechFeedWatch does not host or claim them. If you are a creator and want an article about your video changed or removed, write to info@techfeedwatch.com and I will do it.
 
 ## Your use of the site
 
@@ -35,7 +35,7 @@ Articles may contain affiliate links. If you buy something through such a link, 
 
 ## No professional advice
 
-Articles about money, crypto, security or health are general information written from a video. They are not financial, legal, security or medical advice. Do your own research and talk to a qualified professional before you act on anything you read here.
+Articles about money, crypto, security or health are general information. They are not financial, legal, security or medical advice. Do your own research and talk to a qualified professional before you act on anything you read here.
 
 ## Corrections and copyright complaints
 

@@ -15,7 +15,7 @@ The straight answer is usually in there somewhere — often inside a video from 
 
 Almost nobody wants to sit through a whole video to get one answer. What most people want is the answer to the question they searched for, in plain language, and then to decide whether to go deeper.
 
-So that is what this site does. Every article starts from two things: a question people search for on Google, and a video from an independent creator on that subject. The article answers the question, using that video as its research material. The creator is credited, and the video is there if you want the full version.
+So that is what this site does. Every article starts from a question people search for on Google. The answer is researched with Google Search and built on named sources, and a video from someone who knows the subject adds a section of its own. The creator is credited, and the video is there if you want the full version.
 
 ## What is here
 
@@ -23,13 +23,19 @@ So that is what this site does. Every article starts from two things: a question
 
 **[Best of each topic](/popular)** — the source videos that most outperformed their own channel's average, five per subject. This is the page to browse if you want the good stuff rather than the recent stuff, and it is built so a small channel with a strong video can beat a large one.
 
-**[Guides](/guides)** — longer pieces I write myself, one per subject, drawing on everything the site has covered.
+**Topics** — {{TOPICS}} of them, from AI agents to quantum computing; the [site map](/sitemap) lists them all. Each topic page has a Follow button.
+
+**[Guides](/guides)** — longer pieces I write myself on the biggest subjects, drawing on everything the site has covered.
 
 **[Glossary](/glossary)** — {{GLOSSARY}} terms explained for someone who wants the answer in thirty seconds and the reason underneath it. Terms in articles link here automatically.
 
 **[Tools](/tools)** — {{TOOLS}} free tools. They run entirely in your browser: nothing you paste is uploaded, and nothing is stored.
 
 **[Trends](/trends)** — which companies, models and protocols come up most across the whole archive, with the method and its limits stated on the page.
+
+**The bell** at the top of every page — shows what is new since your last visit. Follow topics there and it counts only those. You can also turn on a daily notification: at most one a day, about the topics you follow, and off again with one click. On an iPhone or iPad, the bell shows you how to add the site to your Home Screen first, because Apple requires it.
+
+**[Read later](/watch-later)** and **[History](/history)** — articles you saved, and articles you have read. Like the topics you follow, they are kept in your own browser; there is no account.
 
 ## What I think about AI, since you are here
 
@@ -47,9 +53,9 @@ Learn it for your own sake. It will pay you back.
 
 I would rather tell you than have you work it out.
 
-A system I built picks a question people search for on Google, within the subjects I have chosen, and finds a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. Those articles publish automatically — I do not read every one before it goes live.
+A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search, keeps only facts backed by the pages Google cites, and finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question, with the sources listed at the end and the video as one section. Older articles were written from the video's transcript alone; they are being rewritten with this method, a few a day. Those articles publish automatically — I do not read every one before it goes live.
 
-What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which channels are searched, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
+What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
 That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here, on the [about page](/about), in the guides and in the glossary.
 

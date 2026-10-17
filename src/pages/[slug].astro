@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import { durationToSeconds, formatSpan } from '../lib/time-saved.mjs';
 import { TOOLS } from '../lib/tools';
+import { ALLE_EMNER } from '../lib/emner.mjs';
 
 export async function getStaticPaths() {
   const pages = Object.values(import.meta.glob('../content/pages/*.md', { eager: true }));
@@ -21,7 +22,9 @@ const { title, description } = page.frontmatter;
 const glossaryCount = Object.keys(import.meta.glob('../content/glossary/*.md')).length;
 const html = (await page.compiledContent())
   .replaceAll('{{TOOLS}}', String(TOOLS.length))
-  .replaceAll('{{GLOSSARY}}', String(glossaryCount));
+  .replaceAll('{{GLOSSARY}}', String(glossaryCount))
+  // Antal emner (17/10) - samme liste som robotten bruger (src/lib/emner.mjs).
+  .replaceAll('{{TOPICS}}', String(ALLE_EMNER.length));
 
 // Samlet video-tid mod samlet læsetid. Regnes ved build, så tallet vokser af
 // sig selv når robotten udgiver — ingen har et tal at huske at rette.
@@ -129,7 +132,7 @@ const sideSchema =
         <p>
           That is the whole archive: the videos behind these articles run {tally.video},
           and reading every article takes {tally.read}. Nobody watched all of it — a machine
-          drafted the articles, with the videos as research. The point is that you can decide what deserves your time
+          drafted the articles, using published sources and the videos as research. The point is that you can decide what deserves your time
           before you spend it.
         </p>
       </div>
