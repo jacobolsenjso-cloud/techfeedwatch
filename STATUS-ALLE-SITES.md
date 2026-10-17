@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 134** — brug kun v134). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 135** — brug kun v135). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 134** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 15:51, live `5d7e521f`): LIVE. 18 emner, 58 egne værktøjer, push-beskeder.** Klokken: rigtigt ulæst, følg emner, og nu "Get a daily notification" (højst 1 om dagen, Worker tfw-push, udsendelse 16:37 UTC via tfw-starter). iPhone: guide til "Add to Home Screen". Nye emner vokser (robot 50/50). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** tjek første push-udsendelse 17/10 18:37; slå Jacobs localhost-testtilmelding fra bagefter; tjek 1/11 at kurserne kom.
+**Seneste for techfeedwatch (17/10-2026 kl. 17:42, live `c9397c0c`): LIVE. Nyt logo (app-ikon) og nye farver (blå links, violette knapper, blæk-mørk), 18 emner, push-beskeder.** Midlertidig "New look"-boble for kendte læsere til og med 24/10. Klokken: rigtigt ulæst, følg emner, daglig push (16:37 UTC). Faktaboks på nye/omskrevne artikler; DCA-kurser hentes selv den 1. **Næste:** tjek første push-udsendelse 17/10 18:37; slå Jacobs localhost-testtilmelding fra bagefter; slet boblen efter 25/10; tjek 1/11 at kurserne kom; spørg Jacob om de gamle delingskort skal have nyt logo.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,21 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 17:42 - techfeedwatch: nyt logo, nye farver og "New look"-boble LIVE
+- **Jacobs valg:** logo "app-ikon" (afrundet firkant, cyan-blå-violet forløb, tre hvide nyhedslinjer, cyan "live"-prik), 36 px desktop / 32 px mobil, ordmærke **TechFeed**Watch i neutral farve. Farver: links blå #1d4ed8 (lys) / cyan #67e8f9 (mørk), knapper violet #6d28d9 (lys) / #7c3aed (mørk) via `--btn`, mørk baggrund blæk #0b1020, ingen pink.
+- **Opbygning:** fælles SVG-kilde `src/lib/logo.mjs`; `lav-ikoner.mjs` laver favicon (svg/ico/48), PWA-ikoner (192/512/maskable), apple-touch-icon og `og-default-v3.png`. Farveskift i 49 filer (30 knapper, 23 hover, 49 blå), pink fjernet overalt, AI Video-emnet nu dyb teal. Delingskort-skabelonen (og-card.mjs) bruger det nye mærke.
+- **Gammel fejl fundet og rettet:** Fintech-prikken var usynlig i mørk tilstand (1,5:1). Reglen der skulle gøre den lysere har aldrig virket, fordi farven står inline på knappen og vinder. Nu `!important` -> #6d9eff (6,6:1).
+- **Jacob valgte A - "New look"-boble ved logoet:** "👋 New look — same TechFeedWatch." med ✕. Vises KUN for læsere med spor fra et tidligere besøg (tfw_notif_since/-seen, tfw_read, tfw_follow, videoHistory, watchLater), kun én gang (nøgle `tfw_nytlogo`: vis/set/ny), og ikke efter 24/10 (dansk tid). Kører som is:inline lige efter `</header>`, før klokken gemmer noget - så en ny læser aldrig får den på side 2. Markeres først som set når den faktisk vises (skjult top fx Shorts -> venter).
+- **Tjek lokalt:** ny læser = ingen boble (heller ikke side 2), kendt læser = boble én gang, ✕ lukker, mobil inden for skærmen (54-378 px af 390), lys+mørk, 0 konsolfejl. Jacobs localhost-lager kopieret før test og lagt tilbage (8 nøgler, bekræftet ens).
+- **LIVE `c9397c0c`**, Cloudflare success, build.json bekræftet. Live: 8 sider + 404-siden har nyt logo og boble, ingen pink/gammel teal, 10 ikon/billed-filer 200 med rigtige typer, manifest theme_color #2563eb. I Jacobs Chrome: boblen kom ÉN gang (han er kendt læser), ikke ved genindlæsning; links cyan i mørk, Format-knap violet, mobil 390 px uden sidelæns scroll, 0 konsolfejl.
+- **Lære:** _ret-scripts: søgetekst der allerede indeholder \r må ikke konverteres igen (fejlen i _ret-logo); tjek "LF-alene=0" efter hver rettelse.
+- **Lære:** `node -e` med regex i PowerShell igen (parserfejl, ingen skade). Opskriften gælder: altid scriptfil.
+- **Lære:** skærmbillede lige efter skift af lys/mørk fanger farveovergangen (0,15 s) - ordmærket så gråt ud uden at være det. Vent 1 s efter skift.
+- **Lære:** PowerShells Invoke-WebRequest kan ikke læse et 404-svar (gav "status 0") - mit måleværktøj, ikke sitet. Statuskoder måles med `curl.exe -w "%{http_code}"`.
+- **Lære:** broen til Jacobs pc afbryder kald efter 60 s - lange vente-løkker deles i kald under 55 s.
+- **Udestående:** slet boble-blokken i MainLayout efter 25/10 (med Jacobs ok). De ca. 398 gamle delingskort (og-jpg uden AI-billede) har stadig det gamle logo - ikke spurgt Jacob endnu.
+
 
 ### 17/10-2026 kl. 15:51 - techfeedwatch: push-beskeder (klokke E) LIVE
 - **Jacob valgte A:** højst 1 besked om dagen pr. læser - den nyeste artikel fra det sidste døgn i de fulgte emner (følger man intet: alle emner). Ingen ny artikel = ingen besked.
