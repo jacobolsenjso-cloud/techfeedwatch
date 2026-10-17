@@ -7,6 +7,7 @@ import '@fontsource-variable/inter';
 import interLatinWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import RelatedTools from '../components/RelatedTools.astro';
 import { findTool } from '../lib/tools';
+import { ikonIndhold } from '../lib/logo.mjs';
 
 // nocanonical: kun til 404-siden. Den bliver serveret på hver eneste adresse,
 // der ikke findes, så en canonical ville pege alle døde adresser hen på
@@ -45,7 +46,7 @@ const toolSchema = toolData ? {
 const defaultDesc = "Tech Feed Watch – Your daily archive of the best AI, Tech, and SEO videos.";
 
 // Standard OG-delebillede hvis siden ikke selv angiver et (fx bruger videosider deres thumbnail)
-const ogImage = image || "https://techfeedwatch.com/og-default-v2.png";
+const ogImage = image || "https://techfeedwatch.com/og-default-v3.png";
 const ogImageWidth = imageWidth || 1200;
 const ogImageHeight = imageHeight || 630;
 // Brandsuffikset tilføjes kun hvis der er plads. Google klipper omkring 60-65
@@ -164,8 +165,8 @@ const siteSchema = [
     <style is:inline>
       /* Farverne skal gælde allerede før body findes, så den første optegning
          er mørk. Derfor sættes de på html-elementet og arves nedad. */
-      html.dark-mode-preload { background: #141317; color-scheme: dark; }
-      html.dark-mode-preload body { background: #141317; color: #f4f2f0; }
+      html.dark-mode-preload { background: #0b1020; color-scheme: dark; }
+      html.dark-mode-preload body { background: #0b1020; color: #f4f2f0; }
     </style>
 
     <script is:inline>
@@ -179,11 +180,11 @@ const siteSchema = [
       };
     </script>
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
     <link rel="preload" href={interLatinWoff2} as="font" type="font/woff2" crossorigin />
-    <link rel="icon" href="/favicon.ico?v=2" sizes="32x32" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <link rel="icon" href="/favicon.ico?v=3" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://img.youtube.com" />
     <link rel="dns-prefetch" href="https://img.youtube.com" />
@@ -431,13 +432,15 @@ const siteSchema = [
 
     <style is:global>
       /* --teal er brandfarven og bruges til baggrunde, kanter og accenter.
-         --teal-text er ét trin mørkere og bruges hvor farven er TEKST: #0891b2
-         giver kun 3.4:1 på lys baggrund, hvilket er under WCAG AA's 4.5:1.
+         --teal-text er ét trin mørkere og bruges hvor farven er TEKST: #1d4ed8
+         giver 6,4:1 på lys baggrund (WCAG AA kræver 4,5:1).
          I mørk tilstand vendes forholdet, så der bruges en lysere tone. */
-      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; --teal: #0891b2; --teal-text: #0e7490; }
+      :root { --bg-color: #f8fafc; --text-color: #111; --card-bg: #fff; --border-color: #e5e7eb; --sidebar-bg: #fff; --hover-bg: #f1f5f9; --teal: #2563eb; --teal-text: #1d4ed8; --btn: #6d28d9; --btn-hover: #5b21b6; }
+      /* 17/10-2026 nyt farvesæt (Jacob): --teal/--teal-text hedder det samme som før, men er nu sitets BLÅ (links, valgt,
+         dekoration). --btn = violet til knapper der gør noget. Hvid tekst på --btn: 7,2:1 (lys) / 5,7:1 (mørk). */
       /* Fintech-blå (#1e3a8a) forsvinder på mørk baggrund; lysere variant kun i mørk tilstand. */
-    body.dark-mode [style*="#1e3a8a"] { --tag-accent: #6d9eff; --accent: #6d9eff; }
-    body.dark-mode { --bg-color: #141317; --text-color: #f4f2f0; --card-bg: #1f1d24; --border-color: #322e39; --sidebar-bg: #141317; --hover-bg: #262230; --teal: #0891b2; --teal-text: #38bdf8; }
+    body.dark-mode [style*="#1e3a8a"] { --tag-accent: #6d9eff !important; --accent: #6d9eff !important; } /* !important: farven står inline på knappen og vinder ellers */
+    body.dark-mode { --bg-color: #0b1020; --text-color: #f1f5f9; --card-bg: #121a30; --border-color: #1f2a44; --sidebar-bg: #0b1020; --hover-bg: #18223d; --teal: #2563eb; --teal-text: #67e8f9; --btn: #7c3aed; --btn-hover: #6d28d9; }
       body { background: var(--bg-color); color: var(--text-color); margin: 0; font-family: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; transition: background 0.3s, color 0.3s; display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
       * { -webkit-tap-highlight-color: transparent; }
       h1, h2, h3, h4 { letter-spacing: -0.02em; }
@@ -446,9 +449,9 @@ const siteSchema = [
       .glossary-link:hover { color: var(--teal-text); border-bottom-color: var(--teal-text); }
       body.dark-mode .glossary-link { border-bottom-color: #52525b; }
       body.dark-mode .glossary-link:hover { color: #22d3ee; border-bottom-color: #22d3ee; }
-      ::selection { background: rgba(8, 145, 178, 0.22); }
-      :focus-visible { outline: 2px solid #0891b2; outline-offset: 2px; border-radius: 4px; }
-      .tfw-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #0891b2, #22d3ee); z-index: 1100; transition: width 0.1s linear; pointer-events: none; box-shadow: 0 0 8px rgba(8, 145, 178, 0.5); }
+      ::selection { background: rgba(37, 99, 235, 0.22); }
+      :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 4px; }
+      .tfw-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, #2563eb, #22d3ee); z-index: 1100; transition: width 0.1s linear; pointer-events: none; box-shadow: 0 0 8px rgba(37, 99, 235, 0.5); }
       body.shorts-mode .tfw-progress { display: none; }
       @media (prefers-reduced-motion: reduce) { .tfw-progress { transition: none; } }
       .tfw-reveal { opacity: 0; }
@@ -458,7 +461,7 @@ const siteSchema = [
 
       /* --- Delt video-kort polish (zoom, play-ikon, blød skygge, skeleton) - gælder alle lister-sider --- */
       .watch-card-thumb:has(img), .short-card-thumb:has(img) { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
-      body.dark-mode .watch-card-thumb:has(img), body.dark-mode .short-card-thumb:has(img) { background-color: #26242c; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
+      body.dark-mode .watch-card-thumb:has(img), body.dark-mode .short-card-thumb:has(img) { background-color: #18223d; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
       .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { animation: none; background-image: none; background-color: #000; }
       .watch-card-thumb img, .short-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
       .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
@@ -505,7 +508,7 @@ const siteSchema = [
       /* Notifikations-klokke */
       .notif-wrap { position: relative; display: flex; align-items: center; }
       #notifBtn { position: relative; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-      .notif-badge { position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #d926c8; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; line-height: 1; }
+      .notif-badge { position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px; background: #22d3ee; color: #0b1020; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; line-height: 1; }
       .notif-panel { position: absolute; top: calc(100% + 10px); right: 0; width: 340px; max-width: 92vw; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 14px 36px rgba(0,0,0,0.18); display: none; z-index: 70; overflow: hidden; }
       .notif-panel.active { display: flex; flex-direction: column; max-height: calc(100vh - 90px); max-height: calc(100dvh - 90px); }
       .notif-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--border-color); font-weight: 700; font-size: 0.95rem; }
@@ -514,13 +517,13 @@ const siteSchema = [
       .notif-item { display: flex; gap: 10px; align-items: center; padding: 10px 14px; text-decoration: none; color: var(--text-color); border-bottom: 1px solid var(--border-color); }
       .notif-item:last-child { border-bottom: none; }
       .notif-item:hover { background: var(--hover-bg); }
-      .notif-item.is-new { background: rgba(217, 38, 200, 0.08); }
+      .notif-item.is-new { background: rgba(34, 211, 238, 0.12); }
       .notif-thumb { width: 72px; height: 44px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: #000; }
       .notif-body { min-width: 0; flex: 1; display: flex; flex-direction: column; }
       .notif-title { font-size: 0.85rem; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
       .notif-date { font-size: 0.72rem; color: #6b7280; margin-top: 2px; }
       body.dark-mode .notif-date { color: #9ca3af; }
-      .notif-newdot { width: 8px; height: 8px; border-radius: 50%; background: #d926c8; flex-shrink: 0; }
+      .notif-newdot { width: 8px; height: 8px; border-radius: 50%; background: #06b6d4; flex-shrink: 0; }
       .notif-empty { padding: 24px 14px; text-align: center; color: #6b7280; font-size: 0.88rem; }
       body.dark-mode .notif-empty { color: #9ca3af; }
     /* Klokke A-D (17/10): emner, tip, grupper, fod */
@@ -530,11 +533,11 @@ const siteSchema = [
     .notif-topics-lead { margin: 0 0 8px; font-size: 0.78rem; color: #6b7280; }
     .notif-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .notif-chip { border: 1px solid var(--border-color); background: transparent; color: var(--text-color); border-radius: 999px; padding: 5px 11px; min-height: 32px; font-size: 0.78rem; cursor: pointer; }
-    .notif-chip:hover { border-color: #0f766e; }
-    .notif-chip[aria-pressed="true"] { background: #0f766e; border-color: #0f766e; color: #fff; }
-    .notif-hint { display: flex; gap: 8px; align-items: center; padding: 10px 14px; background: rgba(15, 118, 110, 0.08); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; }
+    .notif-chip:hover { border-color: #1d4ed8; }
+    .notif-chip[aria-pressed="true"] { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+    .notif-hint { display: flex; gap: 8px; align-items: center; padding: 10px 14px; background: rgba(37, 99, 235, 0.08); border-bottom: 1px solid var(--border-color); font-size: 0.8rem; }
     .notif-hint span { flex: 1; }
-    .notif-hint-ja { background: #0f766e; color: #fff; border: none; border-radius: 999px; padding: 7px 12px; font-size: 0.78rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .notif-hint-ja { background: var(--btn); color: #fff; border: none; border-radius: 999px; padding: 7px 12px; font-size: 0.78rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
     .notif-hint-luk { background: none; border: none; font-size: 1.15rem; line-height: 1; cursor: pointer; color: #6b7280; padding: 4px 6px; }
     .notif-group { position: sticky; top: 0; z-index: 1; padding: 8px 14px 5px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; background: var(--card-bg); border-bottom: 1px solid var(--border-color); }
     .notif-item.is-other { opacity: 0.7; }
@@ -543,18 +546,18 @@ const siteSchema = [
     /* Push (17/10) - bruges i klokken og på emnesider */
     [data-push-felt][hidden] { display: none; }
     .notif-push { padding: 10px 14px; border-top: 1px solid var(--border-color); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.8rem; }
-    .push-knap { background: #0f766e; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; min-height: 36px; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; }
+    .push-knap { background: var(--btn); color: #fff; border: none; border-radius: 999px; padding: 8px 14px; min-height: 36px; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: inherit; }
     .push-knap:disabled { opacity: 0.6; cursor: wait; }
     .push-link { background: none; border: none; color: var(--teal-text); font-weight: 700; cursor: pointer; padding: 4px 2px; font-size: inherit; font-family: inherit; }
     .push-note { color: #6b7280; line-height: 1.4; }
-    .push-on { font-weight: 700; color: #0f766e; }
+    .push-on { font-weight: 700; color: #1d4ed8; }
     .push-fejl { color: #dc2626; width: 100%; }
     .push-ios { width: 100%; }
     .push-ios summary { cursor: pointer; font-weight: 700; color: var(--teal-text); min-height: 32px; display: flex; align-items: center; }
     .push-ios p { margin: 6px 0; line-height: 1.45; }
     .push-ios ol { margin: 4px 0 0; padding-left: 20px; line-height: 1.5; }
     body.dark-mode .push-note { color: #9ca3af; }
-    body.dark-mode .push-on { color: #5eead4; }
+    body.dark-mode .push-on { color: #67e8f9; }
     body.dark-mode .notif-topics-lead, body.dark-mode .notif-group, body.dark-mode .notif-hint-luk { color: #9ca3af; }
       /* Mobil: panelet ankres til viewporten med lige margener, så det er centreret og aldrig klippes */
       @media (max-width: 768px) {
@@ -572,8 +575,9 @@ const siteSchema = [
       .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-color); cursor: pointer; padding: 0; }
       .logo { font-size: 1.2rem; font-weight: bold; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; min-height: 44px; }
       .logo-icon { color: var(--teal-text); font-size: 1.5rem; }
-      .logo-mark { height: 40px; width: auto; display: block; flex-shrink: 0; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.28)); }
-      body.dark-mode .logo-mark { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.55)); }
+      .logo-mark { height: 36px; width: 36px; display: block; flex-shrink: 0; }
+      .logo-text { font-weight: 400; letter-spacing: -0.01em; } .logo-text b { font-weight: 700; }
+      
       .main-layout { display: flex; flex: 1; overflow: hidden; position: relative; }
       .sidebar { width: 220px; background: var(--sidebar-bg); border-right: 1px solid var(--border-color); padding: 15px 10px; display: flex; flex-direction: column; gap: 5px; overflow-y: auto; z-index: 20; transition: left 0.3s ease; }
       /* min-height 44px: WCAG 2.2 AA kræver kun 24, og punkterne var 40 — altså
@@ -631,7 +635,7 @@ const siteSchema = [
         .nav-left { gap: 8px; }
         .logo { font-size: 1rem; gap: 5px; }
         .logo-icon { font-size: 1.15rem; }
-        .logo-mark { height: 34px; }
+        .logo-mark { height: 32px; width: 32px; }
         .nav-right { gap: 0; }
         /* Skruede før ikonknapperne ned til 36px på mobil — altså mindst dér hvor
          de rammes med en finger og ikke med en musemarkør. Skriftstørrelsen
@@ -677,18 +681,8 @@ const siteSchema = [
         {/* Tilføjet aria-expanded og aria-controls til AI Agenter */}
         <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false" aria-controls="sidebar">☰</button>
         <a href="/" class="logo" aria-label="Tech Feed Watch home">
-          <svg class="logo-mark" viewBox="0 0 112 90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <defs><linearGradient id="navmark" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="112" y2="90"><stop offset="0" stop-color="#0e7490"/><stop offset="0.5" stop-color="#06b6d4"/><stop offset="1" stop-color="#38bdf8"/></linearGradient></defs>
-            <rect x="0" y="16" width="30" height="12" rx="4" fill="#d926c8"/>
-            <rect x="0" y="38" width="42" height="12" rx="4" fill="url(#navmark)"/>
-            <rect x="0" y="60" width="54" height="12" rx="4" fill="url(#navmark)"/>
-            <polygon points="60,4 110,46 60,88" fill="url(#navmark)"/>
-            <rect x="0" y="16" width="30" height="5" rx="3" fill="#ffffff" opacity="0.32"/>
-            <rect x="0" y="38" width="42" height="5" rx="3" fill="#ffffff" opacity="0.3"/>
-            <rect x="0" y="60" width="54" height="5" rx="3" fill="#ffffff" opacity="0.3"/>
-            <polygon points="60,4 92,30 60,30" fill="#ffffff" opacity="0.18"/>
-          </svg>
-          <span class="logo-text">TechFeedWatch</span>
+          <svg class="logo-mark" viewBox="0 0 90 90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" set:html={ikonIndhold({ id: 'navIkon' })}></svg>
+          <span class="logo-text"><b>TechFeed</b>Watch</span>
         </a>
       </div>
       <div class="nav-right">
@@ -715,6 +709,51 @@ const siteSchema = [
         <button id="closeSearchBtn" class="icon-btn" aria-label="Close search">❌</button>
       </div>
     </header>
+    {/* MIDLERTIDIG (17/10-2026, Jacob valgte A): "nyt logo"-boble ved logoet. Kun for læsere der kendte siden før
+        logoskiftet, kun én gang, og kun til og med 24/10. Hele denne script-blok kan slettes efter 25/10-2026. */}
+    <script is:inline>
+      (function () {
+        var SLUT = Date.parse('2026-10-24T22:00:00Z'); // = 25/10 kl. 00:00 dansk tid; derefter gør koden intet
+        if (!(Date.now() < SLUT)) return;
+        var N = 'tfw_nytlogo'; // 'vis' = kendt læser, ikke vist endnu · 'set' = har set den · 'ny' = ny læser
+        try {
+          var s = localStorage.getItem(N);
+          if (s === null) {
+            // Første gang koden kører hos læseren. Den kører før klokken gemmer noget, så sporene herunder
+            // stammer fra et TIDLIGERE besøg - altså én der har set det gamle logo.
+            var spor = ['tfw_notif_since', 'tfw_notif_seen', 'tfw_read', 'tfw_follow', 'videoHistory', 'watchLater'];
+            s = spor.some(function (k) { return localStorage.getItem(k) !== null; }) ? 'vis' : 'ny';
+            localStorage.setItem(N, s);
+          }
+          if (s !== 'vis') return;
+        } catch (e) { return; } // ingen adgang til lager (fx privat vindue) -> ingen boble
+        var logo = document.querySelector('#mainHeader .logo');
+        // offsetParent er null når toppen er skjult (fx Shorts-visning) - så venter boblen til næste side.
+        if (!logo || !logo.parentNode || !logo.offsetParent) return;
+        try { localStorage.setItem(N, 'set'); } catch (e) { return; } // markeres først nu: vises kun denne ene gang
+        var st = document.createElement('style');
+        st.textContent =
+          '.nav-left{position:relative}' +
+          '.nytlogo-boble{position:absolute;top:calc(100% + 12px);z-index:5;display:flex;align-items:center;gap:6px;width:max-content;max-width:380px;padding:9px 8px 9px 14px;border-radius:12px;background:var(--btn,#6d28d9);color:#fff;font-size:.9rem;font-weight:600;line-height:1.35;box-shadow:0 8px 24px rgba(11,16,32,.25);animation:nytlogoInd .3s ease-out both}' +
+          '.nytlogo-boble::before{content:"";position:absolute;top:-6px;left:12px;width:12px;height:12px;background:inherit;transform:rotate(45deg);border-radius:2px}' +
+          '.nytlogo-boble button{flex-shrink:0;width:28px;height:28px;border:0;border-radius:8px;background:rgba(255,255,255,.15);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer}' +
+          '.nytlogo-boble button:hover,.nytlogo-boble button:focus-visible{background:rgba(255,255,255,.3)}' +
+          '@keyframes nytlogoInd{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}' +
+          '@media (prefers-reduced-motion:reduce){.nytlogo-boble{animation:none}}';
+        document.head.appendChild(st);
+        var b = document.createElement('div');
+        b.className = 'nytlogo-boble';
+        b.setAttribute('role', 'status');
+        b.innerHTML = '<span>&#128075; New look &mdash; same TechFeedWatch.</span><button type="button" aria-label="Dismiss">&times;</button>';
+        b.style.left = logo.offsetLeft + 'px'; // pilen peger på ikonet, også på mobil hvor ☰ står før logoet
+        b.style.maxWidth = 'min(380px, calc(100vw - ' + Math.round(logo.getBoundingClientRect().left + 16) + 'px))'; // aldrig ud over skærmkanten
+        logo.parentNode.appendChild(b);
+        var luk = function () { b.remove(); document.removeEventListener('keydown', esc); };
+        var esc = function (e) { if (e.key === 'Escape') luk(); };
+        b.querySelector('button').addEventListener('click', luk);
+        document.addEventListener('keydown', esc);
+      })();
+    </script>
 
     <div class="main-layout">
         <aside class="sidebar" id="sidebar">

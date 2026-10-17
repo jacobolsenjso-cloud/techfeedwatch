@@ -40,7 +40,7 @@ const updatedLabel = showUpdated
   ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   : null;
 
-const accent = TAG_COLORS[category] || "#0891b2";
+const accent = TAG_COLORS[category] || "#2563eb";
 
 const schema = {
   "@context": "https://schema.org",
@@ -50,7 +50,7 @@ const schema = {
   // Google kræver et billede på Article. Guides har ikke deres eget og-billede
   // som artiklerne har, så indtil de får det, peger vi på sitets delebillede —
   // et rigtigt billede der findes, frem for et felt der mangler.
-  "image": "https://techfeedwatch.com/og-default-v2.png",
+  "image": "https://techfeedwatch.com/og-default-v3.png",
   "author": {
     "@type": "Person",
     "name": "Jacob S. Olsen",

@@ -1,6 +1,7 @@
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
+import { ikonIndhold, FARVER } from './src/lib/logo.mjs';
 
 // Sitets eget kortbillede (fase B, 12/10-2026). Før blev kortet bygget oven på
 // videoens miniature fra YouTube, så hver artikel lignede en video. Nu er
@@ -19,7 +20,7 @@ const W = 1200, H = 630;
 // bruges den kun som stribe og prik.
 const EMNEFARVE = {
   'AI & Tech': '#06b6d4', 'SEO': '#6366f1', 'Automation': '#14b8a6', 'Coding': '#2563eb',
-  'Business & Money': '#059669', 'AI Video': '#d926c8', 'Productivity': '#8b5cf6', 'Fintech': '#1e3a8a',
+  'Business & Money': '#059669', 'AI Video': '#0f766e', 'Productivity': '#8b5cf6', 'Fintech': '#1e3a8a',
   'Crypto': '#f59e0b', 'Cybersecurity': '#dc2626', 'Quantum Computing': '#7c3aed', 'Hardware & Chips': '#ea580c', 'AR & VR': '#db2777',
   'AI Agents': '#0ea5e9', 'Investing & Trading': '#65a30d', 'Smartphones & Gadgets': '#64748b', 'Robotics': '#be123c', 'PC Building & Gaming': '#ca8a04',
 };
@@ -62,7 +63,7 @@ export function kortSvg({ titel, emne }, h = H) {
   const top = 200 + d / 2 + Math.max(0, (4 - l.length) * lh * 0.35);
   return Buffer.from(`<svg width="${W}" height="${h}" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#141317"/><stop offset="1" stop-color="#0c2730"/>
+    <stop offset="0" stop-color="${FARVER.blaek}"/><stop offset="1" stop-color="#111a33"/>
   </linearGradient></defs>
   <rect width="${W}" height="${h}" fill="url(#bg)"/>
   <rect x="0" y="0" width="18" height="${h}" fill="${farve}"/>
@@ -72,11 +73,8 @@ export function kortSvg({ titel, emne }, h = H) {
   <circle cx="98" cy="${112 + d / 3}" r="11" fill="${farve}"/>
   <text x="122" y="${123 + d / 3}" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="bold" fill="#cbd5e1">${xml(emne || 'Tech')}</text>
   ${l.map((x, i) => `<text x="88" y="${Math.round(top + i * lh)}" font-family="Arial, Helvetica, sans-serif" font-size="${str}" font-weight="bold" fill="#ffffff">${xml(x)}</text>`).join('\n  ')}
-  <rect x="88" y="${546 + d}" width="26" height="10" rx="5" fill="#d926c8"/>
-  <rect x="88" y="${564 + d}" width="35" height="10" rx="5" fill="#0891b2"/>
-  <rect x="88" y="${582 + d}" width="44" height="10" rx="5" fill="#22d3ee"/>
-  <polygon points="146,${540 + d} 146,${598 + d} 190,${569 + d}" fill="#22b8e6"/>
-  <text x="212" y="${585 + d}" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff">Tech Feed Watch</text>
+  <svg x="88" y="${532 + d}" width="66" height="66" viewBox="0 0 90 90">${ikonIndhold({ id: 'kortIk' })}</svg>
+  <text x="170" y="${578 + d}" font-family="Arial, Helvetica, sans-serif" font-size="38" fill="#ffffff"><tspan font-weight="bold">TechFeed</tspan>Watch</text>
 </svg>`);
 }
 
@@ -93,7 +91,7 @@ export function listeKortSvg({ emne }, slug) {
   const cx = 820 + ((h >>> 20) % 220), cy = 160 + ((h >>> 12) % 200), r = 120 + ((h >>> 4) % 90);
   return Buffer.from(`<svg width="${W}" height="675" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#141317"/><stop offset="1" stop-color="#0c2730"/>
+    <stop offset="0" stop-color="${FARVER.blaek}"/><stop offset="1" stop-color="#111a33"/>
   </linearGradient></defs>
   <rect width="${W}" height="675" fill="url(#bg)"/>
   <rect x="0" y="0" width="22" height="675" fill="${farve}"/>

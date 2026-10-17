@@ -108,10 +108,10 @@ const description = "Check how easy your writing is to read with the Flesch Read
         const grade = 0.39 * wps + 11.8 * spw - 15.59;
 
         const clamped = Math.max(0, Math.min(100, ease));
-        let label = '', color = '#0891b2';
+        let label = '', color = '#2563eb';
         if (clamped >= 80) { label = 'Very easy to read'; color = '#059669'; }
         else if (clamped >= 70) { label = 'Fairly easy — great for the web'; color = '#059669'; }
-        else if (clamped >= 60) { label = 'Plain English — good'; color = '#0891b2'; }
+        else if (clamped >= 60) { label = 'Plain English — good'; color = '#2563eb'; }
         else if (clamped >= 50) { label = 'Fairly difficult'; color = '#d97706'; }
         else if (clamped >= 30) { label = 'Difficult / academic'; color = '#dc2626'; }
         else { label = 'Very difficult'; color = '#dc2626'; }

@@ -20,7 +20,7 @@ const RAA_MAPPE = './.cache/ai-billeder';             // originalerne: mærker k
 // Én fast stil, så sitet ser ensartet ud. Emnet giver en farvetone.
 const TONE = {
   'AI & Tech': 'cyan', 'SEO': 'indigo', 'Automation': 'teal', 'Coding': 'blue', 'Business & Money': 'emerald green',
-  'AI Video': 'magenta', 'Productivity': 'violet', 'Fintech': 'deep blue', 'Crypto': 'amber', 'Cybersecurity': 'red',
+  'AI Video': 'deep teal', 'Productivity': 'violet', 'Fintech': 'deep blue', 'Crypto': 'amber', 'Cybersecurity': 'red',
   'Quantum Computing': 'purple', 'Hardware & Chips': 'orange', 'AR & VR': 'pink',
   'AI Agents': 'sky blue', 'Investing & Trading': 'lime green', 'Smartphones & Gadgets': 'silver grey', 'Robotics': 'crimson', 'PC Building & Gaming': 'gold',
 };

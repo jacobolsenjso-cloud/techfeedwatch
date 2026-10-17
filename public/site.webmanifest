@@ -11,7 +11,7 @@
   "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation": "any",
   "background_color": "#f8fafc",
-  "theme_color": "#0891b2",
+  "theme_color": "#2563eb",
   "categories": ["news", "technology", "business"],
   "icons": [
     {

@@ -25,8 +25,8 @@ const description = "Generate a test file of an exact size, filled with random b
     .fr-radios { display: flex; gap: 16px; flex-wrap: wrap; }
     .fr-radio { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; cursor: pointer; }
 
-    .fr-btn { padding: 11px 20px; border-radius: 8px; border: 1px solid #0891b2; background: #0891b2; color: #fff; font-weight: 600; font-size: 0.93rem; cursor: pointer; }
-    .fr-btn:hover { background: #0e7490; }
+    .fr-btn { padding: 11px 20px; border-radius: 8px; border: 1px solid var(--btn); background: var(--btn); color: #fff; font-weight: 600; font-size: 0.93rem; cursor: pointer; }
+    .fr-btn:hover { background: var(--btn-hover); }
     .fr-btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .fr-status { font-size: 0.87rem; color: #6b7280; margin: 12px 0 0 0; line-height: 1.6; }
     body.dark-mode .fr-status { color: #9ca3af; }
@@ -38,7 +38,7 @@ const description = "Generate a test file of an exact size, filled with random b
     body.dark-mode .fr-info p { color: #9ca3af; }
     .fr-info code { background: var(--hover-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
     .fr-info a { color: var(--teal-text); font-weight: 600; }
-    body.dark-mode .fr-info a { color: #38bdf8; }
+    body.dark-mode .fr-info a { color: #67e8f9; }
 
     @media (max-width: 640px) {
       .fr-wrapper { padding: 20px 15px; }

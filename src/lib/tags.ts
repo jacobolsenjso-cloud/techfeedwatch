@@ -27,7 +27,7 @@ export const TAG_COLORS: Record<string, string> = {
   "Automation": "#14b8a6",
   "Coding": "#2563eb",
   "Business & Money": "#059669",
-  "AI Video": "#d926c8",
+  "AI Video": "#0f766e", // 17/10: var pink - pink er ude af sitets farver
   "Productivity": "#8b5cf6",
   "Fintech": "#1e3a8a",
   "Crypto": "#f59e0b",

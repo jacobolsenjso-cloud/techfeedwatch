@@ -13,10 +13,10 @@ const { entry, allEntries } = Astro.props as { entry: any; allEntries: any[] };
 const { term, category, definition } = entry.frontmatter;
 
 const CATEGORY_COLORS: Record<string, string> = {
-  AI: "#0891b2",
+  AI: "#2563eb",
   Tech: "#8b5cf6",
   SEO: "#10b981",
-  Fintech: "#0891b2",
+  Fintech: "#2563eb",
   Crypto: "#d97706",
 };
 const categoryColor = CATEGORY_COLORS[category] || "#6b7280";

@@ -111,11 +111,11 @@ const listeSchema = {
     .tag-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--tag-accent, #6b7280); flex-shrink: 0; }
     .tag-count { font-size: 0.95rem; font-weight: 500; color: #6b7280; }
     body.dark-mode .tag-count { color: #9ca3af; }
-    /* FAST #0e7490, ikke var(--teal-text). Variablen er lyseblå i mørk tilstand
+    /* FAST #1d4ed8, ikke var(--teal-text). Variablen er lyseblå i mørk tilstand
        — den duer som tekstfarve, men ikke som baggrund under hvid tekst.
        Første forsøg gav 2,14:1 i mørk tilstand. En baggrund der bærer hvid
        tekst skal være mørk i begge tilstande. */
-    .see-all-btn { min-height: 44px; box-sizing: border-box; text-decoration: none; font-size: 0.9rem; font-weight: 600; color: #fff; background: #0e7490; border-left: 4px solid var(--tag-accent, #6b7280); padding: 8px 16px; border-radius: 20px; white-space: nowrap; transition: opacity 0.2s, transform 0.2s; }
+    .see-all-btn { min-height: 44px; box-sizing: border-box; text-decoration: none; font-size: 0.9rem; font-weight: 600; color: #fff; background: var(--btn); border-left: 4px solid var(--tag-accent, #6b7280); padding: 8px 16px; border-radius: 20px; white-space: nowrap; transition: opacity 0.2s, transform 0.2s; }
     .see-all-btn:hover { opacity: 0.88; transform: translateX(2px); }
 
     /* Video Grid */
@@ -141,7 +141,7 @@ const listeSchema = {
     .month-card { display: flex; align-items: center; justify-content: space-between; gap: 10px; text-decoration: none; color: inherit; background: var(--hover-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; transition: border-color 0.2s, transform 0.2s; }
     .month-card:hover { border-color: var(--teal-text); transform: translateY(-2px); }
     .month-label { font-weight: 600; font-size: 1rem; }
-    .month-badge { font-size: 0.8rem; font-weight: 600; color: var(--teal-text); background: rgba(8,145,178,0.12); padding: 3px 10px; border-radius: 20px; }
+    .month-badge { font-size: 0.8rem; font-weight: 600; color: var(--teal-text); background: rgba(37, 99, 235,0.12); padding: 3px 10px; border-radius: 20px; }
     body.dark-mode .month-badge { color: #22d3ee; background: rgba(34,211,238,0.12); }
 
     @media (max-width: 768px) { 

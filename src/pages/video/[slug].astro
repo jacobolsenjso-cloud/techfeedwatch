@@ -247,7 +247,7 @@ const peopleAlsoAsk = allVideos
   .map((v: any) => ({ v, score: faellesOrd(egetSpoergsmaal, v.frontmatter.targetQuestion), d: new Date(v.frontmatter.date).valueOf() }))
   .sort((a: any, b: any) => (b.score - a.score) || (b.d - a.d))
   .slice(0, 3)
-  .map((s: any) => { const t = s.v.frontmatter.tags || s.v.frontmatter.tag || []; const first = (Array.isArray(t) ? t : [t])[0]; return { slug: s.v.file.split('/').pop().replace('.md', ''), text: asQuestion(s.v.frontmatter.targetQuestion), color: TAG_COLORS[first] || '#0891b2' }; });
+  .map((s: any) => { const t = s.v.frontmatter.tags || s.v.frontmatter.tag || []; const first = (Array.isArray(t) ? t : [t])[0]; return { slug: s.v.file.split('/').pop().replace('.md', ''), text: asQuestion(s.v.frontmatter.targetQuestion), color: TAG_COLORS[first] || '#2563eb' }; });
 
 const baseUrl = "https://techfeedwatch.com";
 const currentUrl = `${baseUrl}/video/${slug}`;
@@ -356,7 +356,7 @@ const metaDesc = rawMeta.length > 157
     .video-secondary::-webkit-scrollbar { width: 8px; }
     .video-secondary::-webkit-scrollbar-track { background: transparent; }
     .video-secondary::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
-    .video-secondary::-webkit-scrollbar-thumb:hover { background: #0891b2; }
+    .video-secondary::-webkit-scrollbar-thumb:hover { background: #2563eb; }
     .focus-tags-bar { display: none; }
     .focus-chip { background: var(--hover-bg); color: var(--text-color); padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-decoration: none; white-space: nowrap; border: 1px solid var(--border-color); transition: all 0.2s ease; }
     body.dark-mode .focus-chip { background: #27272a; color: #d4d4d8; border-color: transparent; }
@@ -384,7 +384,7 @@ const metaDesc = rawMeta.length > 157
     .iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 15px; border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.10); background-color: #000; }
     .iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     /* 12/10: sitets eget billede under resuméet og overskriften over videoen */
-    .artikel-billede { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; margin: 0 0 28px; background: #141317; }
+    .artikel-billede { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; margin: 0 0 28px; background: #0b1020; }
     .video-overskrift { font-size: 1.3rem; font-weight: 800; line-height: 1.3; margin: 0 0 12px; }
     .video-content.artikel-start { margin-bottom: 24px; }
     /* Del-knap øverst til højre i byline-linjen (13/10) */
@@ -432,7 +432,7 @@ const metaDesc = rawMeta.length > 157
 
     /* Videoens længde mod læsetiden. Står lige under afspilleren, fordi det er
        dér beslutningen tages — ikke i en boks nederst ingen når ned til. */
-    .time-compare { font-size: 0.92rem; line-height: 1.55; color: #4b5563; background: var(--hover-bg); border-left: 3px solid #0891b2; border-radius: 6px; padding: 10px 14px; margin: 0 0 16px 0; }
+    .time-compare { font-size: 0.92rem; line-height: 1.55; color: #4b5563; background: var(--hover-bg); border-left: 3px solid #2563eb; border-radius: 6px; padding: 10px 14px; margin: 0 0 16px 0; }
     body.dark-mode .time-compare { color: #cbd5e1; }
     .time-compare strong { color: var(--text-color); }
     .view-growth { font-size: 0.92rem; line-height: 1.55; color: #4b5563; background: rgba(5,150,105,0.07); border-left: 3px solid #059669; border-radius: 6px; padding: 10px 14px; margin: 0 0 16px 0; }
@@ -441,7 +441,7 @@ const metaDesc = rawMeta.length > 157
 
     /* Oplæsning. Knappen er skjult som udgangspunkt og vises kun af scriptet
        når browseren faktisk kan tale — ellers ville den sidde der og ikke virke. */
-    #listenBtn.is-speaking { background: #0891b2; color: #fff; border-color: var(--teal-text); }
+    #listenBtn.is-speaking { background: var(--btn); color: #fff; border-color: var(--btn); }
     .listen-note { font-size: 0.8rem; color: #6b7280; margin: -18px 0 24px 0; }
     body.dark-mode .listen-note { color: #9ca3af; }
     .action-bar::-webkit-scrollbar { display: none; }
@@ -473,22 +473,22 @@ const metaDesc = rawMeta.length > 157
       .pill-divider { height: 26px; background: var(--text-color); opacity: 0.28; }
     }
     .btn-active { color: var(--teal-text) !important; }
-    .btn-active svg { fill: #0891b2; stroke: #0891b2; }
-    .summary-box { background-color: var(--hover-bg); border-left: 4px solid #0891b2; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
+    .btn-active svg { fill: #2563eb; stroke: #2563eb; }
+    .summary-box { background-color: var(--hover-bg); border-left: 4px solid #2563eb; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px; font-size: 1.05rem; line-height: 1.6; font-weight: 500; }
     /* Faktaboks (trin 4, 16/10). Jacob 16/10: skal skille sig tydeligt ud og stå centreret.
        Derfor: hel farvet ramme + skygge, farvet top-bånd med ikon, nummererede cirkler og en
        centreret pille-knap. Boksen er smallere end teksten og står midt i spalten. */
-    .faktaboks { counter-reset: fakta; max-width: 620px; margin: 18px auto 34px; background: #f0fbfd; border: 2px solid #0891b2; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 28px rgba(8, 145, 178, 0.18); }
-    .faktaboks-titel { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 11px 18px; background: #0891b2; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+    .faktaboks { counter-reset: fakta; max-width: 620px; margin: 18px auto 34px; background: #f0fbfd; border: 2px solid #2563eb; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 28px rgba(37, 99, 235, 0.18); }
+    .faktaboks-titel { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; padding: 11px 18px; background: #2563eb; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
     .faktaboks-titel svg { width: 18px; height: 18px; flex-shrink: 0; }
     .faktaboks ul { list-style: none; margin: 0; padding: 16px 20px 4px; }
     .faktaboks-mere ul { padding-top: 0; }
     .faktaboks li { counter-increment: fakta; position: relative; margin: 0 0 14px; padding-left: 40px; font-size: 1rem; line-height: 1.55; font-weight: 500; }
-    .faktaboks li::before { content: counter(fakta); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: #0891b2; color: #fff; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
-    .faktaboks-kilde { font-size: 0.82rem; color: #0e7490; white-space: nowrap; text-decoration: underline; font-weight: 600; }
+    .faktaboks li::before { content: counter(fakta); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%; background: #2563eb; color: #fff; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .faktaboks-kilde { font-size: 0.82rem; color: #1d4ed8; white-space: nowrap; text-decoration: underline; font-weight: 600; }
     .faktaboks-mere { display: flex; flex-direction: column; }
-    .faktaboks-mere summary { list-style: none; cursor: pointer; align-self: center; display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 16px; padding: 9px 20px; border: 2px solid #0891b2; border-radius: 999px; background: #fff; color: #0e7490; font-size: 0.92rem; font-weight: 700; transition: background .15s, color .15s; }
-    .faktaboks-mere summary:hover, .faktaboks-mere summary:focus-visible { background: #0891b2; color: #fff; }
+    .faktaboks-mere summary { list-style: none; cursor: pointer; align-self: center; display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 16px; padding: 9px 20px; border: 2px solid #2563eb; border-radius: 999px; background: #fff; color: #1d4ed8; font-size: 0.92rem; font-weight: 700; transition: background .15s, color .15s; }
+    .faktaboks-mere summary:hover, .faktaboks-mere summary:focus-visible { background: #2563eb; color: #fff; }
     .faktaboks-mere summary::-webkit-details-marker { display: none; }
     .faktaboks-mere summary::after { content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform .2s; }
     .faktaboks-mere[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
@@ -496,7 +496,7 @@ const metaDesc = rawMeta.length > 157
     .faktaboks-mere .vis-mindre, .faktaboks-mere[open] .vis-mere { display: none; }
     .faktaboks-mere[open] .vis-mindre { display: inline; }
     body.dark-mode .faktaboks { background: #0c2a33; border-color: #22b8cf; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45); }
-    body.dark-mode .faktaboks-titel { background: #0e7490; }
+    body.dark-mode .faktaboks-titel { background: #1d4ed8; }
     body.dark-mode .faktaboks-kilde { color: #67e8f9; }
     body.dark-mode .faktaboks-mere summary { background: transparent; color: #67e8f9; border-color: #22b8cf; }
     body.dark-mode .faktaboks-mere summary:hover { background: #22b8cf; color: #0c2a33; }
@@ -530,7 +530,7 @@ const metaDesc = rawMeta.length > 157
     /* "Keep reading on Tech Feed Watch" (14/10, Jacob): 2 kort, teal top-bjælke som indholdsfortegnelsen,
        så boksen ses som sitets egen og ikke en annonce. Computer: 2 side om side. Mobil: liste. */
     .inline-recs { margin: 34px 0; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 600px; }
-    .inline-recs-label { background: #0e7490; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 20px; }
+    .inline-recs-label { background: #1d4ed8; color: #fff; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 20px; }
     .inline-recs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px; }
     .inline-recs-card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text-color); border-radius: 10px; transition: transform 0.2s ease; }
     .inline-recs-card:hover { transform: translateY(-3px); }
@@ -566,13 +566,13 @@ const metaDesc = rawMeta.length > 157
     body.dark-mode .video-content a:hover { border-bottom-color: #22d3ee; }
 
     /* Indholdsfortegnelsen (ombygget 13/10): tydeligt adskilt fra artiklen. Farveregel: tekst i
-       var(--teal-text), hvid tekst kun på fast #0e7490. */
+       var(--teal-text), hvid tekst kun på fast #1d4ed8. */
     /* 13/10 (Jacob valgte C + tidslinje): teal top-bjælke i stedet for venstrekant (den lignede
        resuméboksen), og prikket linje fra cirkel til cirkel — ikke ned til Sources. */
     .toc-container { --toc-pad: 7px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 0; overflow: hidden; margin-bottom: 30px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
     @media (min-width: 901px) { .toc-container { --toc-pad: 10px; } } /* mere luft på computer = længere linje */
     .toc-container { max-width: 600px; } /* 13/10 (Jacob): samme bredde som artikelteksten, ikke som billedet */
-    .toc-hoved { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0; padding: 12px 20px; background: #0e7490; }
+    .toc-hoved { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0; padding: 12px 20px; background: #1d4ed8; }
     .toc-title { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; }
     .toc-antal { font-size: 0.85rem; color: #fff; opacity: 0.85; white-space: nowrap; }
     .toc-list { list-style: none; padding: 12px 12px 14px; margin: 0; counter-reset: toc; }
@@ -583,11 +583,11 @@ const metaDesc = rawMeta.length > 157
     /* Videopunktet (14/10): samme cirkel, men afspil-ikon i stedet for nummer; tæller ikke med */
     .toc-video > a { color: var(--teal-text); }
     .toc-video > a::before { content: "\25B6" !important; font-size: 0.62rem !important; padding-left: 2px; box-sizing: border-box; }
-    .toc-depth-2:not(.toc-kilder) > a::before { content: counter(toc); position: relative; z-index: 1; flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #0e7490; color: #fff; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-top: -1px; box-shadow: 0 0 0 3px var(--card-bg); }
+    .toc-depth-2:not(.toc-kilder) > a::before { content: counter(toc); position: relative; z-index: 1; flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #1d4ed8; color: #fff; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-top: -1px; box-shadow: 0 0 0 3px var(--card-bg); }
     /* Prikket linje: runde prikker (2 px, 3 px mellemrum) — ser rigtige ud selv på korte stykker.
        Fra under denne cirkel til over den næste; kun når der kommer en nummereret efter. */
     .toc-depth-2:not(.toc-kilder):has(~ .toc-depth-2:not(.toc-kilder)) > a::after,
-    .toc-depth-3:has(~ .toc-depth-2:not(.toc-kilder)) > a::after { content: ""; position: absolute; left: 19px; width: 2px; background-image: radial-gradient(circle, color-mix(in srgb, #0e7490 65%, transparent) 1px, transparent 1.3px); background-size: 2px 5px; background-repeat: repeat-y; background-position: center top; }
+    .toc-depth-3:has(~ .toc-depth-2:not(.toc-kilder)) > a::after { content: ""; position: absolute; left: 19px; width: 2px; background-image: radial-gradient(circle, color-mix(in srgb, #1d4ed8 65%, transparent) 1px, transparent 1.3px); background-size: 2px 5px; background-repeat: repeat-y; background-position: center top; }
     .toc-depth-2:not(.toc-kilder):has(~ .toc-depth-2:not(.toc-kilder)) > a::after { top: calc(var(--toc-pad) + 26px); bottom: calc(3px - var(--toc-pad)); }
     .toc-depth-3:has(~ .toc-depth-2:not(.toc-kilder)) > a::after { top: 0; bottom: 0; }
     .toc-depth-3 > a { padding-left: 44px; font-weight: 500; font-size: 0.95rem; opacity: 0.9; }
@@ -605,7 +605,7 @@ const metaDesc = rawMeta.length > 157
     .toc-flydende ol { list-style: none; margin: 0; padding: 0; }
     .toc-flydende a { display: block; padding: 6px 10px; border-left: 3px solid var(--border-color); color: var(--text-color); text-decoration: none; font-size: 0.86rem; line-height: 1.35; opacity: 0.8; transition: all 0.15s; }
     .toc-flydende a:hover { opacity: 1; color: var(--teal-text); }
-    .toc-flydende a.aktiv { border-left-color: #0e7490; color: var(--teal-text); font-weight: 700; opacity: 1; background: var(--hover-bg); }
+    .toc-flydende a.aktiv { border-left-color: #1d4ed8; color: var(--teal-text); font-weight: 700; opacity: 1; background: var(--hover-bg); }
     @media (max-width: 900px) { .toc-flydende { display: none; } }
 
     .adsense-container { background: var(--card-bg); border-radius: 8px; overflow: hidden; margin-bottom: 30px; border: 1px solid var(--border-color); text-align: center; padding: 10px; position: relative; z-index: 1; pointer-events: auto; }
@@ -619,7 +619,7 @@ const metaDesc = rawMeta.length > 157
     .tool-suggestion p { margin: 0; font-size: 0.9rem; color: #6b7280; }
     body.dark-mode .tool-suggestion p { color: #9ca3af; }
 
-    .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #0891b2; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
+    .author-box { display: flex; gap: 20px; align-items: flex-start; width: 100%; box-sizing: border-box; background: var(--hover-bg); border: 1px solid var(--border-color); border-left: 4px solid #2563eb; border-radius: 10px; padding: 28px; margin-top: 45px; margin-bottom: 30px; }
     .author-box-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; flex-shrink: 0; }
     .author-box-name { font-weight: 700; font-size: 1.15rem; margin: 0; }
     .author-box-link { color: inherit; text-decoration: none; }
@@ -668,8 +668,8 @@ const metaDesc = rawMeta.length > 157
     .share-cta-title { font-weight: 700; font-size: 1.05rem; margin: 0 0 4px 0; }
     .share-cta-sub { font-size: 0.9rem; color: #6b7280; margin: 0; }
     body.dark-mode .share-cta-sub { color: #9ca3af; }
-    .share-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #0891b2; color: #fff; border: none; border-radius: 8px; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.2s; font-family: inherit; }
-    .share-cta-btn:hover { background: #0e7490; transform: translateY(-1px); }
+    .share-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--btn); color: #fff; border: none; border-radius: 8px; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; flex-shrink: 0; transition: background 0.2s, transform 0.2s; font-family: inherit; }
+    .share-cta-btn:hover { background: var(--btn-hover); transform: translateY(-1px); }
     .share-cta-btn svg { width: 16px; height: 16px; }
     @media (max-width: 600px) {
       .share-cta { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px; }
@@ -681,10 +681,10 @@ const metaDesc = rawMeta.length > 157
     .related-guides-grid { display: flex; flex-direction: column; gap: 12px; }
     .related-guide-card { display: flex; flex-direction: column; gap: 5px; text-decoration: none; color: var(--text-color); background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--accent); border-radius: 10px; padding: 16px 18px; transition: transform 0.2s, box-shadow 0.2s; }
     .related-guide-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04); }
-    /* FAST #0e7490, ikke var(--teal-text): variablen er lyseblå i mørk tilstand
+    /* FAST #1d4ed8, ikke var(--teal-text): variablen er lyseblå i mørk tilstand
        og kan ikke bære hvid tekst. En baggrund skal være mørk i begge
        tilstande — emnefarven bliver på kortets venstre kant. */
-    .related-guide-badge { align-self: flex-start; background: #0e7490; color: #fff; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 10px; }
+    .related-guide-badge { align-self: flex-start; background: #1d4ed8; color: #fff; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 10px; }
     .related-guide-name { font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
     /* Ikke var(--accent): den er emnets farve, og på de lyse emner — krypto er
        gul — gav den 2,15:1 mod baggrunden. Farven bliver på kanten, hvor den
@@ -792,7 +792,7 @@ const metaDesc = rawMeta.length > 157
     body.dark-mode .shorts-circle-btn:hover { background: #334155; }
     .shorts-circle-btn.btn-active { color: var(--teal-text) !important; background: var(--card-bg); border-color: var(--teal-text); }
     .shorts-circle-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; }
-    .shorts-circle-btn.btn-active svg { fill: #0891b2; stroke: #0891b2; }
+    .shorts-circle-btn.btn-active svg { fill: #2563eb; stroke: #2563eb; }
     .shorts-label { color: var(--text-color); font-size: 0.75rem; text-align: center; margin-top: 6px; font-weight: 600; }
 
     @media (max-width: 1024px) {
@@ -839,7 +839,7 @@ const metaDesc = rawMeta.length > 157
       .shorts-muted-cue { display: none; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: #fff; padding: 7px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; z-index: 45; pointer-events: none; white-space: nowrap; }
       body.shorts-muted.shorts-playing .shorts-muted-cue { display: block; }
       .shorts-progress { display: block; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.25); z-index: 46; }
-      .shorts-progress-fill { display: block; height: 100%; width: 0%; background: #0891b2; transition: width 0.25s linear; }
+      .shorts-progress-fill { display: block; height: 100%; width: 0%; background: #2563eb; transition: width 0.25s linear; }
 
       .shorts-mobile-info {
         display: flex !important;
@@ -1398,7 +1398,7 @@ const metaDesc = rawMeta.length > 157
             <h2 class="related-guides-title">Related Guides</h2>
             <div class="related-guides-grid">
               {relatedGuides.map((g: any) => (
-                <a href={`/guides/${g.slug}`} class="related-guide-card" style={`--accent: ${TAG_COLORS[g.category] || '#0891b2'}`}>
+                <a href={`/guides/${g.slug}`} class="related-guide-card" style={`--accent: ${TAG_COLORS[g.category] || '#2563eb'}`}>
                   <span class="related-guide-badge">{g.category}</span>
                   <span class="related-guide-name">{g.title}</span>
                   <span class="related-guide-cta">Read the guide →</span>
