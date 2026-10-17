@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 140** — brug kun v140). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 141** — brug kun v141). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 140** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 21:41, live `9369ea39`): LIVE. Navnet TechFeedWatch overalt, ny beskrivelse af sitet, alle sidebeskrivelser højst 160 tegn (33 forkortet; buildet advarer fremover), nyt logo og farver overalt, service workeren fornyer billeder.** Google bedt om at hente forsiden igen (17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 21:50, live `871a584e`): LIVE. Navnet TechFeedWatch overalt, ny beskrivelse af sitet, alle sidebeskrivelser højst 160 tegn, "summaries" fjernet fra sitets egne sider, nyt logo og farver overalt, service workeren fornyer billeder.** Google bedt om at hente forsiden igen (17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** spørg Jacob om de nye funktioner skal nævnes på om-/start-siderne; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 21:50 - techfeedwatch: /about/ og /start-here/ tjekket - "summaries" fjernet (LIVE `871a584e`)
+- **Jacob: "er disse sider opdateret?"** Læst live: navn (TechFeedWatch), logo og budskab (rigtige søgespørgsmål, klare svar, krediteret skaber) passer allerede.
+- **Fakta målt:** 50 værktøjer = korrekt (50 sider; tools.ts' 55 inkl. 5 kategorier); 56 ordlisteord = korrekt; "two or three a day, fewer at weekends" = korrekt (sidste 28 dage: 2,5 pr. hverdag, 1,1 pr. weekenddag).
+- **Rettet:** artiklerne blev stadig kaldt "summaries" tre steder, i strid med sitets egen beskrivelse: arkiv-boksen øverst på om-/start-siderne ("a machine drafted the summaries" -> "drafted the articles, with the videos as research"), Trends-forbeholdet og guide-forfatternoten. Bekræftet live på /about/, /start-here/, /trends/ og en guide.
+- **Ikke tilføjet (Jacobs stemme - spørges først):** de nye funktioner (daglig push-besked, følg emner, 18 emner) nævnes ikke i "What is here".
+- **Lære:** mit første tal for artikler pr. dag læste videoens dato (`publishedAt`) i stedet for artiklens (`date`) - tjek hvilket felt der faktisk betyder det, jeg måler.
+
 
 ### 17/10-2026 kl. 21:41 - techfeedwatch: 33 for lange sidebeskrivelser forkortet + vagt i buildet (LIVE `9369ea39`)
 - **Jacob: "ja du går igang"** (anbefaling: forkort + ret ved kilden). Målt live: 14 sider over 170 tegn, men 33 over 160 (Googles grænse): 23 ordliste, 7 værktøjer, 2 guides, regelsiden. Alle 33 rettet til højst 155 tegn (artiklerne var allerede højst 155 - robotten har grænse).
