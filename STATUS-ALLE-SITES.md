@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 131** — brug kun v131). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 132** — brug kun v132). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 131** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 13:45, live `bf6b91b7`): LIVE. 58 egne værktøjer** - krypto, AI, hardware, video, PDF, kvante, lån og inflation. 40 af 438 artikler viser et værktøj, der passer til spørgsmålet (beregnes ved bygning, så gamle artikler har det også). Faktaboks "Key facts" på nye og omskrevne artikler; gamle får den gennem omskrivningen (3 om dagen). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker. 17/10: skriveloft 32.768 tokens, forkortelses-domæner (nist.gov) godkendes, DCA-kurser hentes selv den 1. i måneden (gratis, Workeren starter `hent-kurser.yml`). **Næste:** tjek 1/11 at kurserne kom; se om B nogensinde udløses; Britannica/IBM afviser robottens link-tjek.
+**Seneste for techfeedwatch (17/10-2026 kl. 14:29, live `0a8f5ede`): LIVE. 58 egne værktøjer, 13 emner.** Ny notifikations-klokke: rigtigt "ulæst" (læst = åbnet), følg emner (tallet tæller kun dem), liste Today/This week/Earlier med emne og læsetid, første besøg viser dagens artikler. Faktaboks på nye og omskrevne artikler (gamle via omskrivning, 3/dag). Højst 3 nye + 3 omskrivninger om dagen; tidligt stop A+B virker. DCA-kurser hentes selv den 1. i måneden. **Næste:** Jacob beslutter nye emner (AI Agents 33 artikler, Trading 8); klokke E (push-beskeder) venter; tjek 1/11 at kurserne kom.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,20 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 14:29 - techfeedwatch: ny notifikations-klokke (A-D) LIVE
+- **Jacob valgte A-D** (E = push-beskeder venter). Før: åbning af panelet markerede alt som læst; ingen emner; første besøg viste intet.
+- **A - rigtigt ulæst:** en artikel er læst, når den åbnes (`tfw_read`). Åbning af panelet rører ikke tallet. "Mark all read" virker. Kun de sidste 14 dage tæller.
+- **B - følg emner:** knappen "Topics" viser alle 13 emner som knapper (`tfw_follow`). Tallet tæller kun fulgte emner; fulgte artikler øverst, andre nedtonet.
+- **C - liste:** grupperet Today / This week / Earlier, emne + læsetid + dato på hver linje, link "See all latest articles". videos-lite.json fik `minutesRead`.
+- **D - første besøg:** den seneste udgivelsesdags artikler tæller som nye + tip "Choose topics" (forsvinder når man har valgt/lukket). Gamle læsere: deres sete artikler fra den gamle klokke regnes som læst.
+- **Tjek:** lokalt i Jacobs Chrome - alle tilstande testet med tal (ny læser 2, følg Coding 1, læst -> 0, mark all -> 0, migrering), desktop + mobil 390 px, lyst + mørkt, 0 konsolfejl. Rettet undervejs: panelet gik ud over lave skærme; tip og Topics spurgte om det samme.
+- **Fejl i min egen første version (fanget efter live):** emner matchede kun artiklens FØRSTE mærke. Målt: Productivity 39 artikler, men kun 1 med det som første mærke; Automation 39 / 0. Rettet til alle mærker + alle 13 emner som knapper. LIVE `d3d7696e` (klokken) og `0a8f5ede` (rettelsen), Cloudflare success, build.json bekræftet, set live i Jacobs Chrome.
+- **Jeg tog fejl i en rapport:** skrev at forsidens emneknapper mangler Automation - forkert, forsiden bruger alle mærker (13 emner). Jeg så kun et beskåret skærmbillede.
+- **Worker efter deploy:** robot #720 startet 12:17 UTC af den nye Worker - grøn.
+- **Lære:** byg aldrig emne-logik på `tags[0]` - mål først fordelingen af ALLE mærker (51 artikler har 1 mærke, 385 har 2).
+- **Målt til Jacobs spørgsmål om flere emner:** kandidater i titel/spørgsmål: AI Agents 33 artikler (ligger under AI & Tech/Automation), Trading 8 (Fintech/Crypto), Smartphones & Gadgets 5, resten 1. "Trading" findes ikke som emne i dag.
+
 
 ### 17/10-2026 kl. 13:45 - techfeedwatch: DCA-kurser hentes nu selv hver måned (LIVE)
 - **Jacob: "kod".** Pris: 0 kr. - Binances åbne markedsdata (ingen nøgle, ingen AI), et par sekunder på GitHub (gratis for offentligt repo).
