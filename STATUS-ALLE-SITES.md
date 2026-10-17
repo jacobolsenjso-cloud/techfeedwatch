@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 139** — brug kun v139). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 140** — brug kun v140). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 139** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 21:14, live `c8b2c1d2`): LIVE. Navnet hedder TechFeedWatch overalt (gammelt navn kun som alternateName), ny beskrivelse "Straight answers on AI, tech, fintech and crypto..." på forside, standard, emnesider, RSS, manifest og llms.txt. Nyt logo og farver overalt; service workeren fornyer billeder.** Google bedt om at hente forsiden igen (Search Console 17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 14 for lange beskrivelser (ordliste/regler) kan forkortes; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 21:41, live `9369ea39`): LIVE. Navnet TechFeedWatch overalt, ny beskrivelse af sitet, alle sidebeskrivelser højst 160 tegn (33 forkortet; buildet advarer fremover), nyt logo og farver overalt, service workeren fornyer billeder.** Google bedt om at hente forsiden igen (17/10). Første push 17/10: 1 sendt, 0 fejl. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,17 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 21:41 - techfeedwatch: 33 for lange sidebeskrivelser forkortet + vagt i buildet (LIVE `9369ea39`)
+- **Jacob: "ja du går igang"** (anbefaling: forkort + ret ved kilden). Målt live: 14 sider over 170 tegn, men 33 over 160 (Googles grænse): 23 ordliste, 7 værktøjer, 2 guides, regelsiden. Alle 33 rettet til højst 155 tegn (artiklerne var allerede højst 155 - robotten har grænse).
+- **Ordlisten:** nyt felt `metaDescription` KUN til Google; den synlige forklaring (`definition`) og DefinedTerm-schema beholder den fulde tekst (bekræftet uændret på 56/56 sider live).
+- **Ved kilden:** `generate-glossary.mjs` beder nu også om en META-linje (højst 155) og gemmer den som metaDescription, når definitionen er længere (advarer ellers). Nyt `tjek-beskrivelser.mjs` kører sidst i hvert build og lister indekserbare sider over 160 tegn - advarer kun, stopper ALDRIG buildet (må ikke blokere robottens udgivelser). Første kørsel: "alle 662 sider er højst 160 tegn".
+- **Vagterne i rettescriptet greb to af mine egne fejl før noget blev skrevet:** (1) nye tekster starter med samme ord som de gamle, så søgningen fandt sin egen indsatte tekst igen; (2) mit søgeværktøj fandt tekster på deres første 45 tegn og ramte dermed tools.ts/vaerktoej.mjs' EGNE korte tekster for GPU- og AI-værktøjet - længdetjekket stoppede overskrivningen.
+- **Live (595 sider):** præcis de 33 planlagte ændret til præcis de planlagte tekster; længste nu 160; og:description = description overalt.
+- **Lære:** jeg sagde "før det går live, viser jeg dig alle med før og efter" - og lagde det live uden. Et løfte om at vise før live holdes, også når Jacob har sagt "gå i gang".
+- **Lære:** find tekster på HELE strengen, ikke kun begyndelsen, og behold længdevagten - den reddede to filer i dag.
+- **Lære:** ved erstatning hvor ny tekst kan ligne den gamle: søg videre efter den indsatte tekst, aldrig fra start.
+
 
 ### 17/10-2026 kl. 21:14 - techfeedwatch: navnet hedder TechFeedWatch overalt + nye beskrivelser (LIVE `c8b2c1d2`) + Google bedt om at hente forsiden
 - **Jacob: opdatér beskrivelserne til den nye "hvad TechFeedWatch er"** + valgte navnet **TechFeedWatch** (ét ord, som logo, titler og domæne); "Tech Feed Watch" beholdes kun som `alternateName` i schema, så søgninger på det gamle navn stadig rammer.
