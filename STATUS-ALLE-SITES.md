@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 137** — brug kun v137). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 138** — brug kun v138). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 137** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 20:48, live `eddc3c89`): LIVE. Nyt logo og farver overalt (alle 438 artikelbilleder, AI-vandmærke, app-skærmbilleder); service workeren fornyer nu billeder i baggrunden og rydder gamle kopier.** Safari på Mac'er med macOS 10.15 eller ældre kan ikke vise WebP (ikke en sitefejl). Midlertidig "New look"-boble til og med 24/10. 18 emner, daglig push (16:37 UTC). **Næste:** bekræft første push-udsendelse (KV `koersel:2026-10-17` + spørg Jacob); slå Jacobs localhost-testtilmelding fra bagefter; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (17/10-2026 kl. 20:58, live `eddc3c89`): LIVE. Nyt logo og farver overalt - kode, alle 438 artikelbilleder, AI-vandmærke, app-skærmbilleder, Googles logo-felt, manifest; gennemgang af alle steder: 0 rester. Service workeren fornyer billeder i baggrunden.** Første push 17/10: 1 sendt, 0 fejl. Midlertidig "New look"-boble til og med 24/10. **Næste:** Google/sociale medier opdateres ved næste crawl (kan fremskyndes af Jacob); slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 17/10-2026 kl. 20:58 - techfeedwatch: gennemgang af ALLE steder det gamle logo kan sidde (Jacob: "du tjekker alle steder")
+- **Koden (alle filer undtagen artikler/node_modules):** søgt efter gammel teal, pink, gamle mørke farver, og-default/-v2, favicon v1/v2, gammel logotekst: 0 rester på sitet (3 fund: 2 er den nye AI Video-farve, 1 er en intern rapportskabelon i retitle-to-demand.mjs, ikke på sitet).
+- **Live, filer andre tjenester læser:** Googles logo-felt (Organization + artiklernes Article-udgiver) = /icon-512.png (nyt); og:image = og-default-v3.png på forside/guides/guide-side/værktøj/emne/ordliste, /og/<slug>.jpg på artikler (nye); manifest = nye ikoner + #2563eb; offline-siden har nyt logo; RSS har intet logo; ingen browserconfig. Push-ikonet = /icon-192.png (nyt).
+- **Cache-lag:** server/CDN 182/182 ens (v136); service worker rettet (v137); browser-cache max 4 t (retter sig selv).
+- **techmediaarch.com + gentleaiguide.com:** ingen links/billeder til TechFeedWatch - intet at opdatere.
+- **Kun Jacob/tredjepart kan opdatere:** Googles søgeresultater (favicon/logo - ved næste crawl, kan fremskyndes i Search Console), allerede delte links på Facebook/LinkedIn/X (genhentes via deres delings-værktøjer), profilbilleder på sociale medier/YouTube med gammelt logo, installerede app-ikoner på telefoner (styresystemet opdaterer selv).
+- **Lære:** "tjek alle steder" = en fast liste: kode, server/CDN, service worker, browser-cache, filer andre tjenester læser (schema, og, manifest, RSS, push), egne andre sites, tredjeparter. Bruges ved hver udskiftning af filer under samme adresse.
+
 
 ### 17/10-2026 kl. 20:48 - techfeedwatch: Safari-billeder undersøgt + service worker fornyer nu billeder (LIVE `eddc3c89`)
 - **Jacob: "fejl på Safari - kan ikke se billederne"** (lånt Mac fra 2013, skærmbillede: alle AI-billeder viste "?").
