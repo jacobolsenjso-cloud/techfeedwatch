@@ -538,6 +538,9 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
     .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 10px; scrollbar-width: thin; }
     .carousel-track:focus-visible { outline: 2px solid var(--teal-text); outline-offset: 4px; border-radius: 8px; }
     .carousel-card { scroll-snap-align: start; }
+    /* Kort i karrusellerne skjules aldrig til "toning frem ved rul": i Jacobs Chrome blev 2 kort
+       stående usynlige efter et hurtigt sidelæns swipe (18/10). Synlige altid = ingen risiko. */
+    .carousel-track .watch-card.tfw-reveal { opacity: 1 !important; animation: none !important; }
 
     /* --- 6) Talstribe --- */
     .home-stats { margin: 0 0 46px; padding: 26px 26px 22px; border-radius: 18px; border: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(37, 99, 235, 0.09), rgba(109, 40, 217, 0.09)); }
