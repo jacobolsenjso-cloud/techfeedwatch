@@ -93,7 +93,10 @@ self.addEventListener('fetch', (event) => {
     if (event.preloadResponse) event.waitUntil(event.preloadResponse.catch(() => {}));
     event.respondWith((async () => {
       try {
-        const fresh = (event.preloadResponse && await event.preloadResponse) || await fetch(request);
+        // Fejler forhåndshentningen (fx et kort netudfald), prøves en almindelig hentning, før der falder
+        // tilbage til den gemte kopi/offline-siden (rettet 18/10 ved gennemgangen - før gik den direkte til nødplanen).
+        const forhaand = event.preloadResponse ? await event.preloadResponse.catch(() => null) : null;
+        const fresh = forhaand || await fetch(request);
         if (fresh.ok && cacheable(url)) {
           // Gem under den endelige adresse, så en senere opdatering rammer
           // samme nøgle uanset om brugeren kom via /side eller /side/
