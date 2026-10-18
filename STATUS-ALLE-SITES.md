@@ -1,14 +1,14 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 18. oktober (**version 159** — brug kun v159). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 18. oktober (**version 160** — brug kun v160). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
-## 0. Hvor vi er lige nu (18/10-2026 kl. 22:19) — læs dette først i en ny tråd
+## 0. Hvor vi er lige nu (18/10-2026 kl. 22:30) — læs dette først i en ny tråd
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 22:19): NY FORSIDE LIVE og tjekket igen, live `6f8b3b60` (bygget 22:17): blå-violet felt med titel på billedet, h1 "AI, Tech, Fintech & Crypto, Explained", emner på én swipe-række på mobil, faneboks Popular/Questions/Latest, "Trending this month", emne-karruseller kun med AI-billeder, talstribe. Tjekket i Jacobs Chrome (mobil + desktop): filter, faner, søgning, tilbage-knap virker, 0 konsolfejl. Rettet ved tjekket: tom turkis prik ved klokken (alle sider) og karrusel-kort der kunne blive usynlige.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** senere (punkt 7): emnesider og listesider i samme stil; lokal gren `udkast-forside` kan slettes med Jacobs ok. Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 22:30): NY FORSIDE LIVE og tjekket igen, live `6f8b3b60` (bygget 22:17): blå-violet felt med titel på billedet, h1 "AI, Tech, Fintech & Crypto, Explained", emner på én swipe-række på mobil, faneboks Popular/Questions/Latest, "Trending this month", emne-karruseller kun med AI-billeder, talstribe. Tjekket i Jacobs Chrome (mobil + desktop): filter, faner, søgning, tilbage-knap virker, 0 konsolfejl. Rettet ved tjekket: tom turkis prik ved klokken (alle sider) og karrusel-kort der kunne blive usynlige.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** senere (punkt 7): emnesider og listesider i samme stil. Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 18/10 kl. 22:20
 - **Live:** `6f8b3b60` (se `https://techfeedwatch.com/build.json`, bygget 18/10 kl. 22:17 dansk) - ny forside + 2 rettelser. **441 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 18/10 kl. 10:27 dansk.
@@ -231,6 +231,10 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 22:30 - techfeedwatch: lokal gren `udkast-forside` slettet
+- **Jacob kl. 22:30:** "ja du må slette den". Slettet med `git branch -d` (sletter kun, hvis alt er flettet ind i main - det var det, `159ac9f8`). Grenen lå aldrig på GitHub.
+
 
 ### 18/10-2026 kl. 22:19 - techfeedwatch: forsiden tjekket igen live + 2 fejl rettet (LIVE `6f8b3b60`)
 - **Jacob kl. 21:58:** "vil du tjekke siden igen, også for fejl".
