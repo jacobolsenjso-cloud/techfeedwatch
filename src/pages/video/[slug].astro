@@ -1791,7 +1791,8 @@ const metaDesc = rawMeta.length > 157
         // Knaprækken under sticky video (Jacob 18/10 kl. 13:25): nye læsere kan ikke se, at rækken kan swipes.
         // 1) opdaterKant(): toningen ved højre kant vises kun, når der ER flere knapper ude til højre.
         // 2) kigKnapper(): første gang en læser får sticky video, glider rækken roligt 60 px til højre og tilbage
-        //    (ca. 1 sek.). Kun én gang pr. læser (tfw_chips_kig i browseren), stopper straks hvis man rører
+        //    (ca. 1 sek.). Kun de første 2 gange pr. læser (Jacob 18/10 kl. 13:50: "1 gang er for lidt"; tælleren
+        //    tfw_chips_kig i browseren - en læser, der har "1" fra før, får altså én til), stopper straks hvis man rører
         //    rækken, og springes over ved "reducer bevægelse". Ingen konstant bevægelse: den ville trække øjet
         //    fra videoen og gøre knapperne svære at ramme.
         function opdaterKant() {
@@ -1806,7 +1807,11 @@ const metaDesc = rawMeta.length > 157
           opdaterKant();
           if (!cinemaChips || reduceMotion || !document.body.classList.contains('cinema-mode')) return;
           if (cinemaChips.scrollWidth <= cinemaChips.clientWidth + 4 || cinemaChips.scrollLeft > 0) return;
-          try { if (localStorage.getItem('tfw_chips_kig') === '1') return; localStorage.setItem('tfw_chips_kig', '1'); } catch { /* uden lager: vis hver gang */ }
+          try {
+            const set = parseInt(localStorage.getItem('tfw_chips_kig') || '0', 10) || 0;
+            if (set >= 2) return;
+            localStorage.setItem('tfw_chips_kig', String(set + 1));
+          } catch { /* uden lager: vis hver gang */ }
           let stop = false;
           const afbryd = () => { stop = true; };
           ['pointerdown', 'touchstart', 'wheel'].forEach((t) => cinemaChips.addEventListener(t, afbryd, { once: true, passive: true }));
