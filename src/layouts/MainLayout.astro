@@ -522,6 +522,13 @@ const siteSchema = [
       .tfw-vt-hero { view-transition-name: tfw-hero; }
       ::view-transition-group(tfw-hero) { animation-duration: 340ms; animation-timing-function: cubic-bezier(0.2, 0.8, 0.25, 1); }
       ::view-transition-old(tfw-hero), ::view-transition-new(tfw-hero) { height: 100%; object-fit: cover; overflow: clip; }
+      /* Sticky video på mobil (forslag 3, video/[slug].astro): videoen glider som ét objekt. Varigheden følger
+         den gamle FLIP-overgang (280 ms, ?slow=N gør den langsommere), som Jacob valgte 12/10. */
+      ::view-transition-group(tfw-video) { animation-duration: var(--fx-move, 280ms); animation-timing-function: cubic-bezier(0.2, 0.9, 0.25, 1); }
+      ::view-transition-old(tfw-video), ::view-transition-new(tfw-video) { height: 100%; animation: none; }
+      @media (prefers-reduced-motion: reduce) {
+        ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+      }
       
       .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
       .header-hidden { transform: none !important; margin-top: -60px !important; } 

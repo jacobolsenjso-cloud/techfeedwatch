@@ -1697,12 +1697,15 @@ const metaDesc = rawMeta.length > 157
               cinemaChips.querySelectorAll('.cinema-chip').forEach(b => b.classList.remove('active'));
               btn.classList.add('active');
 
+              // 18/10 (forslag 3): skiftet mellem listen og artiklen under videoen glider også (se glidende()).
               if (btn.dataset.filter === 'article') {
-                document.body.classList.add('cinema-reading');
+                glidende(() => document.body.classList.add('cinema-reading'));
                 return;
               }
-              document.body.classList.remove('cinema-reading');
-              renderList(btn.dataset.filter, btn.dataset.tag);
+              glidende(() => {
+                document.body.classList.remove('cinema-reading');
+                renderList(btn.dataset.filter, btn.dataset.tag);
+              });
             });
           }
         }
@@ -1726,9 +1729,26 @@ const metaDesc = rawMeta.length > 157
         const MOVE_MS = 280 * FX_SLOW;
         const EASE = 'cubic-bezier(.2,.9,.25,1)';
 
-        function flipCinema(enter) {
+        // Én samlet bevægelse (18/10, Jacob, forslag 3). Før gled kun videoen; artiklen forsvandt på ét billede,
+        // listen dukkede op på ét billede, og siden sprang til toppen. Nu tager browseren et billede af skærmen
+        // før og efter skiftet ("view transition") og glider imellem dem: videoen flytter sig som ét objekt
+        // (navnet tfw-video), resten toner over, og springet til toppen sker skjult under overtoningen.
+        // Topbjælken har sit eget navn (MainLayout) og står stille. Kan browseren det ikke, eller er
+        // "reducer bevægelse" slået til, kører det gamle (FLIP for videoen, resten direkte).
+        // YouTube-rammen flyttes ikke i DOM'en og spiller videre - i de ~0,3 sek. ses et stillbillede af den.
+        function glidende(opdater, video) {
+          if (!document.startViewTransition || reduceMotion) { opdater(); return false; }
+          if (video) video.style.viewTransitionName = 'tfw-video';
+          document.documentElement.style.setProperty('--fx-move', `${MOVE_MS}ms`);
+          const vt = document.startViewTransition(opdater);
+          vt.finished.finally(() => { if (video) video.style.viewTransitionName = ''; });
+          return true;
+        }
+
+        function flipCinema(enter, efter) {
           const el = document.getElementById('stickyVideo');
-          const toggle = () => document.body.classList.toggle('cinema-mode', enter);
+          // efter: kører lige efter skiftet (fx tegning af listen) - inde i overgangen, så den ses som én bevægelse.
+          const toggle = () => { document.body.classList.toggle('cinema-mode', enter); if (efter) efter(); };
 
           // Nulstil rullepositionen, ellers står man i "bunden" af en side der
           // lige er skrumpet.
@@ -1755,6 +1775,9 @@ const metaDesc = rawMeta.length > 157
           // Har brugeren bedt om mindre bevægelse, skiftes der direkte.
           // Bevægelse kan gøre folk fysisk utilpasse, og det er ikke til pynt.
           if (!el || reduceMotion) { toggle(); nulstilRul(); return; }
+
+          // Ny vej (18/10): hele skiftet som én overgang. Den gamle FLIP herunder er reserven.
+          if (document.startViewTransition) { glidende(() => { toggle(); nulstilRul(); }, el); return; }
 
           const first = el.getBoundingClientRect();
           toggle();
@@ -1888,9 +1911,9 @@ const metaDesc = rawMeta.length > 157
           // mobil — kun sticky-videoen er begrænset til mobil.
           if (typeof window.__stopListening === 'function') window.__stopListening();
 
-          if (isPhone() && !document.body.classList.contains('shorts-mode')) {
-            flipCinema(true);
-            tryInitCinemaBrowser();
+          if (isPhone() && !document.body.classList.contains('shorts-mode') && !document.body.classList.contains('cinema-mode')) {
+            // Listen tegnes inde i overgangen (efter-kaldet), ellers ville den dukke op bagefter med et hop.
+            flipCinema(true, tryInitCinemaBrowser);
           }
         };
 
@@ -1921,8 +1944,7 @@ const metaDesc = rawMeta.length > 157
             // vindue på desktop. Uden det første kald blev desktop-vinduet
             // hængende når man lukkede det.
             if (typeof window.__closePip === 'function') window.__closePip();
-            flipCinema(false);
-            document.body.classList.remove('cinema-reading');
+            flipCinema(false, () => document.body.classList.remove('cinema-reading'));
             if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
               ytPlayer.pauseVideo();
             }
