@@ -56,6 +56,12 @@ self.addEventListener('activate', (event) => {
       .then((keys) => Promise.all(
         keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k))
       ))
+      // Navigation preload (18/10, Jacob sagde ja): browseren begynder at hente siden fra nettet SAMTIDIG
+      // med at service workeren vågner, i stedet for først bagefter. Målt 18/10: med service worker tog et
+      // sideskift 229-374 ms (median) mod 176-194 ms uden - det ekstra led kostede 50-180 ms hver gang.
+      // Findes ikke i alle browsere; mangler den, hentes siden som før.
+      .then(() => self.registration.navigationPreload && self.registration.navigationPreload.enable())
+      .catch(() => {})
       .then(() => self.clients.claim())
   );
 });
@@ -82,9 +88,12 @@ self.addEventListener('fetch', (event) => {
 
   // Sidevisninger: netværket først, cache som nødplan
   if (request.mode === 'navigate') {
+    // Det forhåndshentede svar (navigation preload, se activate) bruges, hvis det findes; ellers hentes som før.
+    // waitUntil: uden den kan browseren afbryde forhåndshentningen, hvis den ikke nås at blive brugt.
+    if (event.preloadResponse) event.waitUntil(event.preloadResponse.catch(() => {}));
     event.respondWith((async () => {
       try {
-        const fresh = await fetch(request);
+        const fresh = (event.preloadResponse && await event.preloadResponse) || await fetch(request);
         if (fresh.ok && cacheable(url)) {
           // Gem under den endelige adresse, så en senere opdatering rammer
           // samme nøgle uanset om brugeren kom via /side eller /side/
