@@ -1,6 +1,7 @@
 ---
 import fs from 'node:fs';
-import { TAG_COLORS } from '../lib/tags';
+import { TAG_COLORS, tagSlug } from '../lib/tags';
+import channelData from '../data/channel-averages.json';
 import MainLayout from '../layouts/MainLayout.astro';
 import SourceLine from '../components/SourceLine.astro';
 import { TOOLS, featuredTools } from '../lib/tools';
@@ -73,10 +74,66 @@ const questions = regularVideos
   .slice(0, 8)
   .map((v: any) => ({ slug: v.file.split('/').pop().replace('.md', ''), text: asQuestion(v.frontmatter.targetQuestion), color: TAG_COLORS[firstTag(v) as string] || '#2563eb' }));
 
-// Opdeler resten i blokke (rækker)
-const vRow1 = pageOneVideos.slice(5, 9);
-const vRow2 = pageOneVideos.slice(9, 13);
-const vRest = pageOneVideos.slice(13);
+// --- Udkast 18/10: forsiden får rytme ---
+// Før var alt under topsektionen samme hvide kortliste hele vejen ned. Nu skifter
+// sektionerne form: farvet felt -> faneboks -> ét stort kort -> nummereret top 5 ->
+// karrusel pr. emne -> talstribe -> værktøjer -> gitter. Hver artikel vises højst ét
+// sted i de store sektioner (Set'et "brugt"), så siden ikke gentager sig selv.
+const slugOf = (v: any): string => v.file.split('/').pop().replace('.md', '');
+const kortBillede = (v: any) => `/kort/${slugOf(v)}.webp`;
+const brugt = new Set<string>([leadMain, ...leadSide].filter(Boolean).map(slugOf));
+
+// Popularitet som på /popular: kildevideoens visninger delt med kanalens gennemsnit.
+// En lille kanal med en stærk video kan derfor slå en stor kanal. Under 5.000
+// visninger afgør tilfældigheder, så de er udeladt (samme grænse som /popular).
+const averages: Record<string, number> = (channelData as any).averageViewsPerVideo;
+const medPopularitet = regularVideos
+  .map((v: any) => {
+    const views = Number(v.frontmatter.viewCount);
+    const avg = averages[v.frontmatter.channelId];
+    return { v, ratio: Number.isFinite(views) && avg > 0 && views >= 5000 ? views / avg : null };
+  })
+  .filter((x: any) => x.ratio !== null)
+  .sort((a: any, b: any) => b.ratio - a.ratio);
+
+// Top 5 "this month": de 5 mest populære fra de sidste 30 dage (målt ved build).
+// Er der færre end 5, udvides til 90 dage, så sektionen aldrig står halvtom.
+const nu = Date.now();
+const indenfor = (v: any, dage: number) => nu - new Date(v.frontmatter.date).valueOf() <= dage * 864e5;
+let top5Dage = 30;
+let top5 = medPopularitet.filter((x: any) => indenfor(x.v, 30) && !brugt.has(slugOf(x.v))).slice(0, 5);
+if (top5.length < 5) { top5Dage = 90; top5 = medPopularitet.filter((x: any) => indenfor(x.v, 90) && !brugt.has(slugOf(x.v))).slice(0, 5); }
+top5.forEach((x: any) => brugt.add(slugOf(x.v)));
+
+// Ét stort kort: den nyeste artikel, der ikke allerede står ovenfor.
+const stortKort = pageOneVideos.find((v: any) => !brugt.has(slugOf(v))) || null;
+if (stortKort) brugt.add(slugOf(stortKort));
+
+// Faneboksen: Popular (alle tider) / Questions / Latest. Kompakte tekstlister,
+// så de må gerne overlappe gitteret længere nede.
+const fanePopular = medPopularitet.filter((x: any) => !brugt.has(slugOf(x.v))).slice(0, 6);
+const faneLatest = pageOneVideos.filter((v: any) => !brugt.has(slugOf(v))).slice(0, 6);
+
+// Karruseller: de tre største emner, 8 artikler hver, nyeste først.
+const karruselEmner = topTags.slice(0, 3).map((tag: string) => {
+  const items = regularVideos.filter((v: any) => {
+    const t = v.frontmatter.tags || v.frontmatter.tag || [];
+    return (Array.isArray(t) ? t : [t]).includes(tag) && !brugt.has(slugOf(v));
+  }).slice(0, 8);
+  items.forEach((v: any) => brugt.add(slugOf(v)));
+  return { tag, total: tagCounts[tag], color: TAG_COLORS[tag] || '#2563eb', items };
+}).filter((k: any) => k.items.length >= 3);
+
+// Gitteret til sidst: resten af side 1, så alt fra side 1 stadig står på forsiden
+// (/page/2 starter ved artikel 25 og regner med det).
+const vRest = pageOneVideos.filter((v: any) => !brugt.has(slugOf(v)));
+
+// Talstriben: alt målt ved build, intet skrevet i hånden.
+const antalArtikler = allVideos.length;
+const antalSkabere = new Set(allVideos.map((v: any) => v.frontmatter.channelTitle).filter(Boolean)).size;
+const nyeUge = regularVideos.filter((v: any) => indenfor(v, 7)).length;
+const antalGuides = Object.keys(import.meta.glob('../content/guides/*.md')).length;
+const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).length;
 ---
 
 <MainLayout title="AI, Tech, Fintech & Crypto News, Explained" description="Straight answers on AI, tech, fintech and crypto. Every article answers a question people actually search for, in plain language. Updated daily.">
@@ -376,35 +433,179 @@ const vRest = pageOneVideos.slice(13);
       .pagination { gap: 6px; }
       .pagination-btn, .pagination-num { min-width: 44px; height: 44px; padding: 0 8px; font-size: 0.85rem; }
     }
+
+    /* ===================== Udkast 18/10: ny forside ===================== */
+    /* Sitets egne farver fra logoet: blå #2563eb og violet #6d28d9. Emnefarver bruges
+       kun som prik/streg - aldrig som tekst eller bag hvid tekst (farvereglen). */
+    .home-intro { max-width: 1600px; margin: 18px auto 2px auto; padding: 0 20px; box-sizing: border-box; width: 100%; }
+    .home-intro-title { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; }
+
+    /* Større, fede sektionsoverskrifter med en blå-violet streg foran */
+    .section-heading { border-bottom: 0; padding-bottom: 0; flex-wrap: wrap; row-gap: 4px; margin-bottom: 18px; }
+    .section-heading h2 { position: relative; padding-left: 15px; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+    .section-heading h2::before { content: ''; position: absolute; left: 0; top: 0.12em; bottom: 0.12em; width: 5px; border-radius: 3px; background: linear-gradient(#2563eb, #6d28d9); }
+    .carousel-head h2::before { background: var(--tag-accent, #2563eb); }
+
+    /* --- 1) Det farvede felt --- */
+    .home-band { --band-a: #2563eb; --band-b: #6d28d9; display: grid; grid-template-columns: 1.45fr 1fr; gap: 28px; padding: 26px; margin: 0 0 40px; border-radius: 20px; background: linear-gradient(135deg, var(--band-a), var(--band-b)); color: #fff; box-shadow: 0 18px 40px -20px rgba(76, 29, 149, 0.6); }
+    body.dark-mode .home-band { --band-a: #1d4ed8; --band-b: #5b21b6; box-shadow: none; }
+    .home-band .band-lead { color: #fff; }
+    .home-band .lead-card-thumb { margin-bottom: 14px; }
+    .band-lead-text { position: absolute; left: 0; right: 0; bottom: 0; padding: 70px 22px 18px; background: linear-gradient(to top, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.62) 55%, rgba(2, 6, 23, 0) 100%); }
+    .home-band .band-lead-title { color: #fff; margin: 9px 0 0; font-size: 1.9rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .home-band .band-lead:hover .band-lead-title { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+    .home-band .band-excerpt, body.dark-mode .home-band .band-excerpt { color: rgba(255, 255, 255, 0.92); }
+    .home-band .band-meta, body.dark-mode .home-band .band-meta, .home-band .band-item-meta { color: rgba(255, 255, 255, 0.86); }
+    .home-band .card-source svg { color: #fff; }
+    .band-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.95); color: #111827; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; line-height: 1.3; }
+    .band-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--tag-accent, #2563eb); flex: none; }
+    .band-pill-sm { font-size: 0.6rem; padding: 3px 8px; }
+    .band-side-heading { margin: 0 0 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; gap: 12px; }
+    .band-side-heading::after { content: ''; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.3); }
+    .band-list { list-style: none; margin: 0; padding: 0; }
+    .band-list li + li { border-top: 1px solid rgba(255, 255, 255, 0.2); }
+    .band-item { display: grid; grid-template-columns: 116px 1fr; gap: 14px; padding: 12px 0; color: #fff; text-decoration: none; align-items: start; }
+    .band-item-thumb { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; }
+    .band-item-title { margin: 6px 0 4px; font-size: 1rem; line-height: 1.35; font-weight: 700; color: #fff; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .band-item:hover .band-item-title { text-decoration: underline; text-underline-offset: 3px; }
+    .band-item-meta { font-size: 0.76rem; margin: 0; }
+    .home-band a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 12px; }
+
+    /* --- 2) Faneboksen --- */
+    .home-tabs { margin: 0 0 46px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--card-bg); overflow: hidden; }
+    .tabs-bar { display: flex; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--border-color); background: var(--hover-bg); }
+    .tabs-bar::-webkit-scrollbar { display: none; }
+    .tab-btn { flex: none; appearance: none; background: none; border: 0; padding: 14px 18px; min-height: 48px; font: inherit; font-weight: 700; font-size: 0.95rem; color: #4b5563; cursor: pointer; position: relative; white-space: nowrap; }
+    body.dark-mode .tab-btn { color: #a1a1aa; }
+    .tab-btn:hover { color: var(--text-color); }
+    .tab-btn[aria-selected="true"] { color: var(--text-color); background: var(--card-bg); }
+    .tab-btn[aria-selected="true"]::after { content: ''; position: absolute; left: 14px; right: 14px; bottom: -1px; height: 3px; border-radius: 3px 3px 0 0; background: linear-gradient(90deg, #2563eb, #6d28d9); }
+    .tab-btn:focus-visible, .tab-panel:focus-visible { outline: 2px solid var(--teal-text); outline-offset: -3px; }
+    .tab-panel { padding: 4px 20px 14px; }
+    .tab-panel[hidden] { display: none; }
+    .tab-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 30px; }
+    .tab-list li { border-bottom: 1px solid var(--border-color); }
+    .tab-row { display: flex; align-items: center; gap: 14px; padding: 12px 2px; min-height: 44px; color: var(--text-color); text-decoration: none; }
+    .tab-row:hover .tab-row-title { color: var(--teal-text); }
+    .tab-num { flex: none; width: 30px; font-size: 1.6rem; font-weight: 900; line-height: 1; text-align: center; background: linear-gradient(135deg, #2563eb, #6d28d9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    body.dark-mode .tab-num { background-image: linear-gradient(135deg, #60a5fa, #a78bfa); }
+    .tab-row-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+    .tab-row-title { font-weight: 650; font-size: 0.97rem; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .tab-row-meta { font-size: 0.78rem; color: #6b7280; }
+    body.dark-mode .tab-row-meta { color: #9ca3af; }
+    .tab-q { flex: none; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--tag-accent, #2563eb); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; color: var(--text-color); }
+    .tab-more { display: inline-block; margin-top: 12px; padding: 6px 2px; font-weight: 700; font-size: 0.9rem; color: var(--teal-text); text-decoration: none; }
+    .tab-more:hover { text-decoration: underline; }
+
+    /* --- 3) Ét stort kort --- */
+    .home-feature { margin-bottom: 46px; }
+    .topic-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-color); background: var(--hover-bg); border: 1px solid var(--border-color); padding: 3px 9px; border-radius: 999px; line-height: 1.3; }
+    .topic-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--tag-accent, #2563eb); flex: none; }
+    .feature-card { display: grid; grid-template-columns: 1.15fr 1fr; gap: 30px; align-items: center; text-decoration: none; color: inherit; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 18px; padding: 14px; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .feature-card:hover { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
+    .feature-thumb { aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; }
+    .feature-body { padding: 6px 16px 6px 0; }
+    .feature-title { margin: 12px 0 10px; font-size: 1.75rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; }
+    .feature-card:hover .feature-title { color: var(--teal-text); }
+    .feature-excerpt { margin: 0 0 12px; font-size: 1rem; line-height: 1.6; color: #4b5563; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    body.dark-mode .feature-excerpt { color: #a1a1aa; }
+
+    /* --- 4) Top 5 med store tal --- */
+    .home-top5 { margin-bottom: 46px; }
+    .top5-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+    .top5-row { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .top5-num { font-size: 4.4rem; font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 8px; background: linear-gradient(135deg, #2563eb, #6d28d9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    body.dark-mode .top5-num { background-image: linear-gradient(135deg, #60a5fa, #a78bfa); }
+    .top5-thumb { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+    .top5-title { margin: 7px 0 5px; font-size: 0.98rem; line-height: 1.35; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .top5-row:hover .top5-title { color: var(--teal-text); }
+    .top5-row .tma-grid-meta { font-size: 12.5px; }
+    @media (max-width: 1100px) { .top5-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* --- 5) Karruseller pr. emne --- */
+    .home-carousel { margin-bottom: 46px; }
+    .carousel-all { margin-left: auto; padding: 6px 2px; font-size: 0.9rem; font-weight: 700; color: var(--teal-text); text-decoration: none; white-space: nowrap; }
+    .carousel-all:hover { text-decoration: underline; }
+    .carousel-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 20px) / 4); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 10px; scrollbar-width: thin; }
+    .carousel-track:focus-visible { outline: 2px solid var(--teal-text); outline-offset: 4px; border-radius: 8px; }
+    .carousel-card { scroll-snap-align: start; }
+
+    /* --- 6) Talstribe --- */
+    .home-stats { margin: 0 0 46px; padding: 26px 26px 22px; border-radius: 18px; border: 1px solid var(--border-color); background: linear-gradient(135deg, rgba(37, 99, 235, 0.09), rgba(109, 40, 217, 0.09)); }
+    .stats-list { list-style: none; margin: 0 0 20px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .stats-list li { display: flex; flex-direction: column; gap: 4px; }
+    .stats-list strong { font-size: 2.4rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1; background: linear-gradient(135deg, #2563eb, #6d28d9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    body.dark-mode .stats-list strong { background-image: linear-gradient(135deg, #60a5fa, #a78bfa); }
+    .stats-list span { font-size: 0.9rem; font-weight: 600; color: #4b5563; }
+    body.dark-mode .stats-list span { color: #b8b3bd; }
+    .stats-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    @media (max-width: 900px) {
+      .home-band { grid-template-columns: 1fr; gap: 18px; }
+      .feature-card { grid-template-columns: 1fr; gap: 12px; }
+      .feature-body { padding: 0 6px 6px; }
+    }
+    @media (max-width: 768px) {
+      .home-intro { margin: 12px auto 0; padding: 0 15px; }
+      .home-intro-title { font-size: 1.05rem; }
+      .section-heading h2 { font-size: 1.32rem; }
+      .section-heading .section-note { flex-basis: 100%; }
+
+      /* Emneknapperne: ÉN række man swiper i (før to rækker + "+N more" = ca. 160 px).
+         Toningen i højre kant viser, at der er flere; den fjernes ved enden (JS). */
+      .tag-bar-outer { margin-bottom: 14px; }
+      .tag-bar-container {
+        flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; max-height: none !important;
+        justify-content: flex-start; padding: 8px 15px; gap: 8px; scrollbar-width: none;
+        -webkit-mask-image: linear-gradient(to right, #000 82%, transparent);
+        mask-image: linear-gradient(to right, #000 82%, transparent);
+      }
+      .tag-bar-container.ved-enden { -webkit-mask-image: none; mask-image: none; }
+      .tag-bar-container::-webkit-scrollbar { display: none; }
+      .tag-bar-container .filter-tag { flex: none; min-height: 40px; padding: 6px 14px; }
+      .tag-more { display: none !important; }
+
+      /* Feltet går helt ud til kanterne på telefonen, som hos store nyhedssites */
+      .home-band { margin: 0 -15px 32px; border-radius: 0; padding: 14px 15px 16px; }
+      .home-band .band-lead-title { font-size: 1.32rem; }
+      .band-lead-text { padding: 50px 14px 12px; }
+      .home-band .lead-card-thumb { border-radius: 12px; margin-bottom: 10px; }
+      .home-band .band-excerpt { -webkit-line-clamp: 2; font-size: 0.95rem; margin-bottom: 8px; }
+      .band-item { grid-template-columns: 100px 1fr; gap: 12px; padding: 10px 0; }
+      .band-item-title { font-size: 0.95rem; }
+
+      .home-tabs { margin-bottom: 36px; }
+      .tab-btn { flex: none; padding: 12px 14px; font-size: 0.88rem; }
+      .tab-panel { padding: 2px 14px 12px; }
+      .tab-list { grid-template-columns: 1fr; }
+
+      .home-feature, .home-top5, .home-carousel, .home-stats { margin-bottom: 36px; }
+      .feature-card { padding: 10px; }
+      .feature-title { font-size: 1.3rem; margin: 10px 0 8px; }
+      .feature-excerpt { -webkit-line-clamp: 3; font-size: 0.95rem; }
+
+      .top5-list { grid-template-columns: 1fr; gap: 0; }
+      .top5-list li + li { border-top: 1px solid var(--border-color); }
+      .top5-row { display: grid; grid-template-columns: 46px 1fr 100px; gap: 12px; align-items: center; padding: 12px 0; }
+      .top5-num { font-size: 2.9rem; margin: 0; text-align: center; grid-column: 1; grid-row: 1; }
+      .top5-text { grid-column: 2; grid-row: 1; min-width: 0; }
+      .top5-thumb { grid-column: 3; grid-row: 1; margin: 0; }
+      .top5-title { font-size: 0.95rem; margin: 5px 0 3px; }
+
+      .carousel-track { grid-auto-columns: 78%; gap: 14px; margin: 0 -15px; padding: 0 15px 8px; scroll-padding: 0 15px; scrollbar-width: none; }
+      .carousel-track::-webkit-scrollbar { display: none; }
+
+      .home-stats { padding: 20px 16px; }
+      .stats-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+      .stats-list strong { font-size: 2rem; }
+    }
   </style>
 
-  <section class="home-hero">
-    <div class="home-hero-card">
-      <h1 class="home-hero-title">Straight answers on AI, tech, fintech and crypto.</h1>
-      <p class="home-hero-sub">Every article answers a question people actually search for — in plain language, in a few minutes. Updated daily.</p>
-
-      {/* Kildeangivelsen er sitets stærkeste tillidssignal og det, næsten ingen
-          anden aggregator gør. Den står diskret, ikke som et salgsargument. */}
-      <p class="home-hero-note">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        Every article credits the creator whose video it draws on, and links to it.
-      </p>
-
-      <div class="home-hero-links">
-        <a href="/guides" class="home-hero-link">
-          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
-          Guides
-        </a>
-        <a href="/tools" class="home-hero-link">
-          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5.1 5.1l-8 8a2.8 2.8 0 0 1-4-4z"/><path d="m5 5 3 3"/></svg>
-          Tools
-        </a>
-        <a href="/glossary" class="home-hero-link">
-          <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
-          Glossary
-        </a>
-      </div>
-    </div>
+  {/* Udkast 18/10: den store tekstboks (ca. 360 px på mobil) er blevet til én linje.
+      h1 er bevaret ordret - den er sidens overskrift for Google og skærmlæsere.
+      Kildeangivelsen og Guides/Tools/Glossary står nu i talstriben længere nede. */}
+  <section class="home-intro">
+    <h1 class="home-intro-title">Straight answers on AI, tech, fintech and crypto.</h1>
   </section>
 
   <div class="tag-bar-outer">
@@ -424,96 +625,231 @@ const vRest = pageOneVideos.slice(13);
   <div class="frontpage-wrapper" id="videoContainer">
 
     <div id="defaultView">
+      {/* 1) Farvet felt i sitets egne farver (blå -> violet fra logoet) bag de øverste
+          historier. Hovedhistoriens titel ligger OVEN PÅ billedet med en mørk toning,
+          så den første skærm på mobil viser en nyhed, ikke en tekstboks. */}
       {leadMain && (
-        <section class="lead-section" aria-label="Latest analysis">
-          <a href={`/video/${leadMain.file.split('/').pop().replace('.md', '')}`} class="lead-card">
+        <section class="home-band" aria-label="Top stories">
+          <a href={`/video/${slugOf(leadMain)}`} class="lead-card band-lead">
             <div class="lead-card-thumb watch-card-thumb">
-              {/* Ikke alle videoer har en maxres-udgave. Fallbacken herunder stod
-                  der allerede, men den hang på `onerror` — og DEN fyrer aldrig:
-                  målt 22/9-2026 svarer img.youtube.com HTTP 200 med et 120×90
-                  gråt pladsholder-billede, ikke 404. Anmodningen lykkes, så
-                  browseren mener alt er i orden og strækker 120 px ud over
-                  sidens største billede. (PowerShell fik 404 på samme adresse —
-                  det er browserens svar der tæller, for det er den der tegner.)
-
-                  Vi gætter ikke længere: `thumbMax` står i frontmatter på alle
-                  391 artikler, sat af add-video.mjs ud fra YouTubes eget API
-                  (`snippet.thumbnails.maxres`) og opfrisket hver tredje dag af
-                  update-view-counts.mjs. Article-schemaet i video/[slug].astro
-                  bruger allerede det flag — forsiden gjorde ikke. 16 artikler
-                  har thumbMax: false, heriblandt den der afslørede fejlen.
-
-                  hqdefault er 480×360 med sorte bjælker, men beholderen er 16:9
-                  med object-fit: cover, som skærer præcis bjælkerne væk.
-
-                  onload-tjekket er sele og seler, hvis flaget er forældet: det
-                  måler bredden i stedet for at stole på statuskoden — samme
-                  regel som og-card.mjs har brugt hele tiden (linje 16). */}
-              {/* 12/10-2026: sitets eget kortbillede (960x540, lav-kortbilleder.mjs) i stedet
-                  for videoens miniature — artiklen er hovedsagen, videoen et supplement.
-                  Kommentaren ovenfor om maxres-fallback gælder den gamle løsning. */}
               <img
-                src={(() => { const s = leadMain.file.split('/').pop().replace('.md', ''); return fs.existsSync(`public/billeder/${s}.webp`) ? `/billeder/${s}.webp` : `/kort/${s}.webp`; })()}
+                src={(() => { const s = slugOf(leadMain); return fs.existsSync(`public/billeder/${s}.webp`) ? `/billeder/${s}.webp` : `/kort/${s}.webp`; })()}
                 alt="" width="960" height="540" loading="eager" fetchpriority="high"
               />
+              <div class="band-lead-text">
+                {firstTag(leadMain) && <span class="band-pill" style={`--tag-accent: ${TAG_COLORS[firstTag(leadMain) as string] || '#2563eb'}`}>{firstTag(leadMain)}</span>}
+                <h2 class="lead-title band-lead-title">{leadMain.frontmatter.title}</h2>
+              </div>
             </div>
-            {firstTag(leadMain) && (
-              <span class="lead-eyebrow" style={`--tag-accent: ${TAG_COLORS[firstTag(leadMain) as string] || '#2563eb'}`}>{firstTag(leadMain)}</span>
-            )}
-            <h2 class="lead-title">{leadMain.frontmatter.title}</h2>
-            <p class="lead-excerpt">{excerpt(leadMain.frontmatter.summary, 230)}</p>
-            <SourceLine channel={leadMain.frontmatter.channelTitle} date={leadMain.frontmatter.date} minutesRead={leadMain.frontmatter.minutesRead} className="lead-meta" />
+            <p class="lead-excerpt band-excerpt">{excerpt(leadMain.frontmatter.summary, 230)}</p>
+            <SourceLine channel={leadMain.frontmatter.channelTitle} date={leadMain.frontmatter.date} minutesRead={leadMain.frontmatter.minutesRead} className="lead-meta band-meta" />
           </a>
 
-          <div class="lead-secondary">
-            {leadSide.map((video: any) => (
-              <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="lead-mini">
-                <div class="lead-mini-thumb watch-card-thumb">
-                  <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-                </div>
-                <div>
-                  {/* Emnemærke som på hovedhistorien (fase 4, 7/10): læseren ser emnet før titlen */}
-                  {firstTag(video) && <span class="lead-eyebrow lead-mini-eyebrow" style={`--tag-accent: ${TAG_COLORS[firstTag(video) as string] || '#2563eb'}`}>{firstTag(video)}</span>}
-                  <h3 class="lead-mini-title">{video.frontmatter.title}</h3>
-                  <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} className="lead-mini-meta" />
-                </div>
-              </a>
-            ))}
+          <div class="band-side">
+            <h2 class="band-side-heading">Top stories</h2>
+            <ol class="band-list">
+              {leadSide.map((video: any) => (
+                <li>
+                  <a href={`/video/${slugOf(video)}`} class="band-item">
+                    <div class="band-item-thumb watch-card-thumb">
+                      <img src={kortBillede(video)} alt="" loading="lazy" />
+                    </div>
+                    <div>
+                      {firstTag(video) && <span class="band-pill band-pill-sm" style={`--tag-accent: ${TAG_COLORS[firstTag(video) as string] || '#2563eb'}`}>{firstTag(video)}</span>}
+                      <h3 class="band-item-title">{video.frontmatter.title}</h3>
+                      <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} className="band-item-meta" />
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
       )}
 
-      {questions.length > 0 && (
-        <section class="home-questions" aria-labelledby="home-questions-heading">
-          <div class="section-heading">
-            <h2 id="home-questions-heading">Questions people are asking</h2>
-            <span class="section-note">Real Google searches, answered this week.</span>
-          </div>
-          <ul class="home-questions-list">
+      {/* 2) Faneboks (idé fra TechXplore): tre korte lister i samme plads.
+          Popular = samme mål som /popular. Uden JS står "Popular" fremme. */}
+      <section class="home-tabs" aria-label="Browse articles">
+        <div class="tabs-bar" role="tablist" aria-label="Browse articles">
+          <button type="button" class="tab-btn" role="tab" id="tab-popular" aria-controls="panel-popular" aria-selected="true">Popular</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-questions" aria-controls="panel-questions" aria-selected="false" tabindex="-1">Questions people ask</button>
+          <button type="button" class="tab-btn" role="tab" id="tab-latest" aria-controls="panel-latest" aria-selected="false" tabindex="-1">Latest</button>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-popular" aria-labelledby="tab-popular" tabindex="0">
+          <ol class="tab-list">
+            {fanePopular.map((x: any, i: number) => (
+              <li>
+                <a href={`/video/${slugOf(x.v)}`} class="tab-row">
+                  <span class="tab-num" aria-hidden="true">{i + 1}</span>
+                  <span class="tab-row-text">
+                    <span class="tab-row-title">{x.v.frontmatter.title}</span>
+                    <span class="tab-row-meta">Source video: {x.ratio.toFixed(1)}× its channel's average</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <a href="/popular/" class="tab-more">Best of each topic →</a>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-questions" aria-labelledby="tab-questions" tabindex="0" hidden>
+          <ul class="tab-list">
             {questions.map((q: any) => (
               <li>
-                <a href={`/video/${q.slug}`} class="home-question">
-                  <span class="home-question-mark" style={`--tag-accent: ${q.color}`} aria-hidden="true">?</span>
-                  <span class="home-question-text">{q.text}</span>
-                  <span class="home-question-arrow" aria-hidden="true">→</span>
+                <a href={`/video/${q.slug}`} class="tab-row">
+                  <span class="tab-q" style={`--tag-accent: ${q.color}`} aria-hidden="true">?</span>
+                  <span class="tab-row-title">{q.text}</span>
                 </a>
               </li>
             ))}
           </ul>
+        </div>
+        <div class="tab-panel" role="tabpanel" id="panel-latest" aria-labelledby="tab-latest" tabindex="0" hidden>
+          <ul class="tab-list">
+            {faneLatest.map((v: any) => (
+              <li>
+                <a href={`/video/${slugOf(v)}`} class="tab-row">
+                  <span class="tab-row-text">
+                    <span class="tab-row-title">{v.frontmatter.title}</span>
+                    <span class="tab-row-meta">{formatDate(v.frontmatter.date)}{v.frontmatter.channelTitle ? ` · ${v.frontmatter.channelTitle}` : ''}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a href="/latest/" class="tab-more">All latest articles →</a>
+        </div>
+      </section>
+
+      {/* 3) Ét stort kort: bryder rækken af ens kort. */}
+      {stortKort && (
+        <section class="home-feature" aria-labelledby="h-feature">
+          <div class="section-heading">
+            <h2 id="h-feature">Latest analysis</h2>
+            <span class="section-note">Every article answers a searched-for question, drafted from a third-party video that is credited on the page.</span>
+          </div>
+          <a href={`/video/${slugOf(stortKort)}`} class="feature-card">
+            <div class="feature-thumb watch-card-thumb">
+              <img src={kortBillede(stortKort)} alt="" loading="lazy" />
+            </div>
+            <div class="feature-body">
+              {firstTag(stortKort) && <span class="topic-pill" style={`--tag-accent: ${TAG_COLORS[firstTag(stortKort) as string] || '#2563eb'}`}>{firstTag(stortKort)}</span>}
+              <h3 class="feature-title">{stortKort.frontmatter.title}</h3>
+              <p class="feature-excerpt">{excerpt(stortKort.frontmatter.summary, 260)}</p>
+              <SourceLine channel={stortKort.frontmatter.channelTitle} date={stortKort.frontmatter.date} minutesRead={stortKort.frontmatter.minutesRead} />
+            </div>
+          </a>
         </section>
       )}
 
-      {vRow1.length > 0 && (
+      {/* 4) Nummereret top 5 med store tal. */}
+      {top5.length > 0 && (
+        <section class="home-top5" aria-labelledby="h-top5">
+          <div class="section-heading">
+            <h2 id="h-top5">{top5Dage === 30 ? 'Top 5 this month' : 'Top 5 of the last 90 days'}</h2>
+            <span class="section-note">Ranked by how far each source video beat its own channel's average views.</span>
+          </div>
+          <ol class="top5-list">
+            {top5.map((x: any, i: number) => (
+              <li>
+                <a href={`/video/${slugOf(x.v)}`} class="top5-row">
+                  <span class="top5-num" aria-hidden="true">{i + 1}</span>
+                  <div class="top5-thumb watch-card-thumb">
+                    <img src={kortBillede(x.v)} alt="" loading="lazy" />
+                  </div>
+                  <div class="top5-text">
+                    {firstTag(x.v) && <span class="topic-pill" style={`--tag-accent: ${TAG_COLORS[firstTag(x.v) as string] || '#2563eb'}`}>{firstTag(x.v)}</span>}
+                    <h3 class="top5-title">{x.v.frontmatter.title}</h3>
+                    <SourceLine channel={x.v.frontmatter.channelTitle} date={x.v.frontmatter.date} />
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {/* 5) Karruseller pr. emne, adskilt af talstriben og værktøjerne. */}
+      {karruselEmner.map((k: any, ki: number) => (
+        <>
+          <section class="home-carousel" aria-labelledby={`h-emne-${ki}`} style={`--tag-accent: ${k.color}`}>
+            <div class="section-heading carousel-head">
+              <h2 id={`h-emne-${ki}`}>{k.tag}</h2>
+              <a href={`/tag/${tagSlug(k.tag)}/`} class="carousel-all">All {k.total} →</a>
+            </div>
+            <div class="carousel-track" role="region" tabindex="0" aria-label={`${k.tag}: scroll sideways for more`}>
+              {k.items.map((video: any) => (
+                <a href={`/video/${slugOf(video)}`} class="watch-card carousel-card">
+                  <div class="watch-card-thumb">
+                    <img src={kortBillede(video)} alt="" loading="lazy" />
+                  </div>
+                  <div>
+                    <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
+                    <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {ki === 0 && (
+            <section class="home-stats" aria-label="TechFeedWatch in numbers">
+              {/* 6) Talstribe. Alle tal tælles ved build - ingen håndskrevne tal, der forældes. */}
+              <ul class="stats-list">
+                <li><strong>{antalArtikler}</strong><span>articles</span></li>
+                <li><strong>{nyeUge}</strong><span>new in the last 7 days</span></li>
+                <li><strong>{toolCount}</strong><span>free tools</span></li>
+                <li><strong>{antalSkabere}</strong><span>creators credited and linked</span></li>
+              </ul>
+              <div class="stats-links">
+                <a href="/guides" class="home-hero-link">
+                  <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>
+                  Guides ({antalGuides})
+                </a>
+                <a href="/tools" class="home-hero-link">
+                  <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5.1 5.1l-8 8a2.8 2.8 0 0 1-4-4z"/><path d="m5 5 3 3"/></svg>
+                  Tools ({toolCount})
+                </a>
+                <a href="/glossary" class="home-hero-link">
+                  <svg class="hero-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2z"/><path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+                  Glossary ({antalOrd} terms)
+                </a>
+              </div>
+            </section>
+          )}
+
+          {ki === 1 && (
+            <section class="home-tools" aria-labelledby="home-tools-heading">
+              <div class="home-tools-head">
+                <div>
+                  <h2 id="home-tools-heading">Free tools we built</h2>
+                  <p>No sign-up, nothing uploaded — everything runs in your browser.</p>
+                </div>
+                <a href="/tools" class="home-tools-all">All {toolCount} tools →</a>
+              </div>
+              <div class="home-tools-grid">
+                {homeTools.map((tool) => (
+                  <a href={`/tools/${tool.slug}`} class="home-tool">
+                    <span class="home-tool-icon" aria-hidden="true">{tool.icon}</span>
+                    <span class="home-tool-name">{tool.short}</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+        </>
+      ))}
+
+      {/* 7) Gitteret til sidst: resten af side 1. */}
+      {vRest.length > 0 && (
         <>
         <div class="section-heading">
-          <h2>Latest analysis</h2>
-          <span class="section-note">Every article answers a searched-for question, drafted from a third-party video that is credited on the page.</span>
+          <h2>More articles</h2>
         </div>
         <div class="video-grid">
-          {vRow1.map((video: any) => (
-            <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
+          {vRest.map((video: any) => (
+            <a href={`/video/${slugOf(video)}`} class="watch-card">
               <div class="watch-card-thumb">
-                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
+                <img src={kortBillede(video)} alt="" loading="lazy" />
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
@@ -524,60 +860,6 @@ const vRest = pageOneVideos.slice(13);
           ))}
         </div>
         </>
-      )}
-
-      {/* Værktøjerne står under første række artikler: artiklerne skal stadig
-          føre an, men værktøjerne må ikke kræve at man leder efter dem. */}
-      <section class="home-tools" aria-labelledby="home-tools-heading">
-        <div class="home-tools-head">
-          <div>
-            <h2 id="home-tools-heading">Free tools we built</h2>
-            <p>No sign-up, nothing uploaded — everything runs in your browser.</p>
-          </div>
-          <a href="/tools" class="home-tools-all">All {toolCount} tools →</a>
-        </div>
-        <div class="home-tools-grid">
-          {homeTools.map((tool) => (
-            <a href={`/tools/${tool.slug}`} class="home-tool">
-              <span class="home-tool-icon" aria-hidden="true">{tool.icon}</span>
-              <span class="home-tool-name">{tool.short}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {vRow2.length > 0 && (
-        <div class="video-grid">
-          {vRow2.map((video: any) => (
-            <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-              <div class="watch-card-thumb">
-                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-              </div>
-              <div>
-                <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
-                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
-
-      {vRest.length > 0 && (
-        <div class="video-grid">
-          {vRest.map((video: any) => (
-            <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
-              <div class="watch-card-thumb">
-                <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-              </div>
-              <div>
-                <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
-                <p class="card-excerpt">{excerpt(video.frontmatter.summary)}</p>
-                <SourceLine channel={video.frontmatter.channelTitle} date={video.frontmatter.date} minutesRead={video.frontmatter.minutesRead} />
-              </div>
-            </a>
-          ))}
-        </div>
       )}
 
       {totalPages > 1 && (
@@ -823,6 +1105,10 @@ const vRest = pageOneVideos.slice(13);
           filterTags.forEach(btn => btn.classList.remove('active'));
           e.target.classList.add('active');
           filterVideos();
+          // Udkast 18/10: i den swipebare række på mobil rulles den valgte knap ind i midten
+          if (tagBar && getComputedStyle(tagBar).flexWrap === 'nowrap') {
+            tagBar.scrollTo({ left: e.target.offsetLeft - tagBar.offsetLeft - tagBar.clientWidth / 2 + e.target.offsetWidth / 2, behavior: 'smooth' });
+          }
         });
       });
 
@@ -834,6 +1120,47 @@ const vRest = pageOneVideos.slice(13);
       // i samme script, kastede siden "Identifier 'tagBar' has already been
       // declared" — så HELE scriptet stoppede, inklusive tag-filtreringen.
       // En dobbelt const er ikke en advarsel; den slår resten af filen ihjel.)
+    });
+  </script>
+
+  <script is:inline>
+    // Udkast 18/10: faneboksen (Popular / Questions people ask / Latest).
+    // Tastatur: piletaster flytter mellem fanerne, Home/End til første/sidste (WAI-ARIA tabs).
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.home-tabs').forEach((box) => {
+        const tabs = Array.from(box.querySelectorAll('[role="tab"]'));
+        const vaelg = (valgt, fokus) => {
+          tabs.forEach((t) => {
+            const on = t === valgt;
+            t.setAttribute('aria-selected', String(on));
+            t.tabIndex = on ? 0 : -1;
+            const panel = document.getElementById(t.getAttribute('aria-controls'));
+            if (panel) panel.hidden = !on;
+          });
+          if (fokus) valgt.focus();
+        };
+        tabs.forEach((t, i) => {
+          t.addEventListener('click', () => vaelg(t, false));
+          t.addEventListener('keydown', (e) => {
+            let n = null;
+            if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+            else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+            else if (e.key === 'Home') n = 0;
+            else if (e.key === 'End') n = tabs.length - 1;
+            if (n !== null) { e.preventDefault(); vaelg(tabs[n], true); }
+          });
+        });
+      });
+
+      // Emnerækken på mobil er én række man swiper i. Toningen i højre kant viser,
+      // at der er flere knapper; den fjernes, når man er swipet helt til enden.
+      const bar = document.getElementById('tagBar');
+      if (bar) {
+        const tjekEnde = () => bar.classList.toggle('ved-enden', bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 4);
+        bar.addEventListener('scroll', tjekEnde, { passive: true });
+        window.addEventListener('resize', tjekEnde);
+        tjekEnde();
+      }
     });
   </script>
 
