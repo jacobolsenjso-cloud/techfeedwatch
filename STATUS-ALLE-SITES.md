@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 154** — brug kun v154). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 155** — brug kun v155). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 154** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 14:25, live `f2d0708c`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + et roligt kig 60 px til højre og tilbage de første 2 gange pr. læser. Afstanden mellem knaprækken og listen er 12 px (før 31) og bygger på rækkens målte højde, så den holder ved alle skriftstørrelser. Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver afstanden, kig og toning på sin telefon (kigget kommer kun de første 2 gange pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 15:05, live `8567849e`): LIVE. Hele dagens arbejde gennemgået og testet 14:35-15:05 (kode + live, mobil og desktop): én lille fejl fundet og rettet (service workeren), resten fejlfrit. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + et roligt kig 60 px til højre og tilbage de første 2 gange pr. læser. Afstanden mellem knaprækken og listen er 12 px (før 31) og bygger på rækkens målte højde, så den holder ved alle skriftstørrelser. Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver afstanden, kig og toning på sin telefon (kigget kommer kun de første 2 gange pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 15:05 - techfeedwatch: gennemgang af alt fra i dag (LIVE `8567849e`)
+- **Jacob kl. 14:30:** "tjek om alle ændringerne er rigtigt sat op, tjek for fejl med alt det vi har lavet i dag".
+- **Kode læst igennem** (samlet ændring c4a55d53^..f2d0708c: sw.js, MainLayout, video/[slug], 10 listesider). **Fundet og rettet (8567849e, ikke videodelen):** i service workeren gik en fejlet forhåndshentning (navigation preload) direkte til gemt kopi/offline-siden uden at prøve en almindelig hentning først. Nu prøves nettet igen først.
+- **Byggede sider (alle 666):** højst ét artikel-topbillede pr. side (to ville stoppe det bløde sideskift); 0 rester af afspil-ikon, annonceplads, varighed eller dansk lukketekst; alle 10.378 kortbilleder findes; alle 441 artikler i datafilen har kortbillede.
+- **Live, 13 sider x mobil + desktop:** 0 scriptfejl, 0 sider/filer med 404/500, 0 usynlige kort på skærmen ved åbning, 0 afspil-ikoner, 0 ødelagte billeder.
+- **Live, funktioner:** bløde sideskift Latest/Tag/forside -> artikel og artikel -> artikel: alle "færdig" (ca. ½ sek.), ingen rester efter tilbage-knap; tryk-løft: løfter efter 60 ms, ikke ved rul, hurtigt tryk løfter, fjernes igen, mus ignoreret; sticky video: 440 kort med artiklens billede (lazy), 0 YouTube-miniaturer/varigheder/annoncer, lukkeknap "Close pinned video", Read Article, luk (læsetilstand væk, padding 0, intet overgangsnavn tilbage), ind igen (12 px), drejet på tværs (ingen knaprække/toning) og tilbage (12 px); bløde skift, kig 2 gange, afstand ved 125-200 % skrift - alt som målt tidligere i dag.
+- **Service worker live:** ny version tfw-01aa4efada, preload slået til, sider ca. 200-280 ms; ÆGTE netudfald: besøgt side vises fra gemt kopi, ubesøgt side giver "You're offline", forsiden virker.
+- **Lære (måleværktøj):** testbrowserens "offline" (Playwright set_offline/route) slår IKKE service workerens forhåndshentning fra - siderne blev hentet fra nettet alligevel, så et offline-tjek så grønt ud uden at teste noget. Offline testes nu med et relæ, der lukkes (scratchpad sw6.py: Chromium via 127.0.0.1:18080 -> proxyen). v149's "offline-reservesiden virker stadig" er derfor ikke bevist dengang; den er bevist nu.
 
 ### 18/10-2026 kl. 14:25 - techfeedwatch: afstanden under knaprækken bygger på rækkens målte højde (LIVE `f2d0708c`)
 - **Jacob kl. 14:13:** "så skal det da rettes også... alt skal være perfekt" (efter jeg viste, at stor skrift fik listen ind under rækken).
