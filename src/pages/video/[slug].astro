@@ -1697,14 +1697,16 @@ const metaDesc = rawMeta.length > 157
               cinemaChips.querySelectorAll('.cinema-chip').forEach(b => b.classList.remove('active'));
               btn.classList.add('active');
 
-              // Knapperne skifter med det samme (Jacob 18/10). En blød overgang her (forslag 3, ca. 12:05) fik hele
-              // skærmen til at tone ud og ind ved hvert tryk og føltes som et hurtigt blink - fjernet igen 12:28.
+              // Knappen markeres med det samme (ovenfor); kun indholdet under knapperne skifter blødt (Jacob 18/10 kl. 12:59).
+              // En overgang på HELE skærmen (12:05) føltes som et blink og blev fjernet 12:28 - se skiftBlodt().
               if (btn.dataset.filter === 'article') {
-                document.body.classList.add('cinema-reading');
+                skiftBlodt(() => document.body.classList.add('cinema-reading'));
                 return;
               }
-              document.body.classList.remove('cinema-reading');
-              renderList(btn.dataset.filter, btn.dataset.tag);
+              skiftBlodt(() => {
+                document.body.classList.remove('cinema-reading');
+                renderList(btn.dataset.filter, btn.dataset.tag);
+              });
             });
           }
         }
@@ -1742,6 +1744,31 @@ const metaDesc = rawMeta.length > 157
           const vt = document.startViewTransition(opdater);
           vt.finished.finally(() => { if (video) video.style.viewTransitionName = ''; });
           return true;
+        }
+
+        // Blødt skift af indholdet under knapperne i sticky-tilstand (Jacob 18/10 kl. 12:59): den synlige liste
+        // (eller artiklen) toner ud på 0,12 sek., skiftes, og det nye toner ind og glider 8 px op på 0,2 sek.
+        // Videoen og knapperne står helt stille. Trykker man igen midt i, vinder det sidste tryk. Med
+        // "reducer bevægelse" skiftes der med det samme, som før.
+        let skiftNr = 0;
+        function skiftBlodt(opdater) {
+          const nr = ++skiftNr;
+          if (reduceMotion || !Element.prototype.animate) { opdater(); return; }
+          const synlige = () => [document.getElementById('cinemaList'), ...document.querySelectorAll('.cinema-reading-block')]
+            .filter((el) => el && el.offsetParent !== null);
+          const ud = synlige();
+          const toningUd = ud.map((el) => el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: 'ease-out', fill: 'forwards' }));
+          Promise.all(toningUd.map((a) => a.finished.catch(() => {}))).then(() => {
+            // Et nyere tryk har overtaget: ryd kun vores egen udtoning (ellers ville dens "forbliv usynlig"
+            // ligge under den nye og gøre listen usynlig, når den nye toning er færdig).
+            if (nr !== skiftNr) { toningUd.forEach((a) => a.cancel()); return; }
+            opdater();
+            toningUd.forEach((a) => a.cancel()); // samme opgave som tegningen herunder - ingen mellemliggende billede
+            synlige().forEach((el) => el.animate(
+              [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }],
+              { duration: 200, easing: 'cubic-bezier(0.2, 0.8, 0.25, 1)' }
+            ));
+          });
         }
 
         function flipCinema(enter, efter) {
