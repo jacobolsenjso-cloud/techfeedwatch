@@ -71,5 +71,22 @@
   ],
   "stoppet": [],
   "usd": 0.8006
+ },
+ {
+  "dato": "2026-10-18T06:37:16.943Z",
+  "omskrevet": [
+   "room-tech-and-how-mixed-reality-changes-what-spaces-look-like"
+  ],
+  "stoppet": [
+   {
+    "slug": "do-we-know-what-quantum-computers-are-used-for",
+    "grund": "Sprunget over: ingen undertekster for DF4Jynv4Soc (Gemini gav for lidt tekst (0 tegn)). Ingen Plan B."
+   },
+   {
+    "slug": "how-does-a-data-leak-happen-and-how-to-prevent-it",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"Are data leaks caused more frequently by external attackers or by internal oversights?\"). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 0.4749
  }
 ]
