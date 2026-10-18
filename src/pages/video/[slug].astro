@@ -1758,7 +1758,12 @@ const metaDesc = rawMeta.length > 157
             .filter((el) => el && el.offsetParent !== null);
           const ud = synlige();
           const toningUd = ud.map((el) => el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: 'ease-out', fill: 'forwards' }));
-          Promise.all(toningUd.map((a) => a.finished.catch(() => {}))).then(() => {
+          // Sikring: tegner browseren ikke billeder lige nu (fx fanen i baggrunden), bliver en toning aldrig
+          // "færdig" - så skiftes der alligevel efter 250 ms, så et tryk aldrig går tabt (fundet i test 18/10).
+          Promise.race([
+            Promise.all(toningUd.map((a) => a.finished.catch(() => {}))),
+            new Promise((r) => setTimeout(r, 250)),
+          ]).then(() => {
             // Et nyere tryk har overtaget: ryd kun vores egen udtoning (ellers ville dens "forbliv usynlig"
             // ligge under den nye og gøre listen usynlig, når den nye toning er færdig).
             if (nr !== skiftNr) { toningUd.forEach((a) => a.cancel()); return; }
