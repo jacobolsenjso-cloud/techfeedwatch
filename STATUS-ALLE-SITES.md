@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 150** — brug kun v150). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 151** — brug kun v151). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 150** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 13:11, live `7bd5ed87`): LIVE. Knapperne under sticky video skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver knapperne på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 13:40, live `afb7ad6b`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + ét roligt kig 60 px til højre og tilbage første gang pr. læser. Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver kig og toning på sin telefon (kigget kommer kun første gang pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,11 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 13:40 - techfeedwatch: knaprækken under sticky video viser, at der er flere knapper (LIVE `afb7ad6b`)
+- **Jacob:** knapperne bør vise, at rækken fortsætter mod højre. Mit forslag (kig + kanttoning) godkendt kl. 13:25 ("du koder dit forslag").
+- **Lavet:** (1) svag toning (44 px) ved højre kant af rækken i sidens baggrundsfarve - lys og mørk tilstand - forsvinder, når man har swipet til enden, og kommer igen, når man swiper tilbage. (2) Første gang en læser får sticky video, glider rækken 60 px til højre og tilbage (ca. 1 sek., starter 0,7 sek. efter videoen sætter sig). Kun én gang pr. læser (husket i browseren), stopper straks ved berøring, springes over ved "reducer bevægelse". Selve videodelen og knapperne er ellers uændrede.
+- **Målt live på mobilskærm (390x844, touch, ren Chromium):** toning ligger præcis over rækken (top 279, højde 55 = rækkens); synlig ved start (1), væk ved enden (0), tilbage ved start (1). Kig: 0 -> 60 -> 0 px på ca. 1,05 sek.; andet forsøg kører ikke; berøring midt i kigget stopper det (blev stående ved 22 px, hvor fingeren tog over); reducer bevægelse = intet kig og intet husket; mørk tilstand toner i rgb(11,16,32) = rækkens baggrund; 0 fejl.
 
 ### 18/10-2026 kl. 13:11 - techfeedwatch: knapperne under sticky video skifter listen blødt (LIVE `d8378c3d` + `7bd5ed87`)
 - **Jacob: skiftet ved knaptryk er for hurtigt - "kan man lave en lille forsinkelse?"** Forslag sendt før kodning (videodelen er fredet); Jacob sagde ja kl. 12:59.
