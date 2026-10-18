@@ -1697,15 +1697,14 @@ const metaDesc = rawMeta.length > 157
               cinemaChips.querySelectorAll('.cinema-chip').forEach(b => b.classList.remove('active'));
               btn.classList.add('active');
 
-              // 18/10 (forslag 3): skiftet mellem listen og artiklen under videoen glider også (se glidende()).
+              // Knapperne skifter med det samme (Jacob 18/10). En blød overgang her (forslag 3, ca. 12:05) fik hele
+              // skærmen til at tone ud og ind ved hvert tryk og føltes som et hurtigt blink - fjernet igen 12:28.
               if (btn.dataset.filter === 'article') {
-                glidende(() => document.body.classList.add('cinema-reading'));
+                document.body.classList.add('cinema-reading');
                 return;
               }
-              glidende(() => {
-                document.body.classList.remove('cinema-reading');
-                renderList(btn.dataset.filter, btn.dataset.tag);
-              });
+              document.body.classList.remove('cinema-reading');
+              renderList(btn.dataset.filter, btn.dataset.tag);
             });
           }
         }
