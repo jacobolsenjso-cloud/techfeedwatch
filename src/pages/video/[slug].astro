@@ -890,10 +890,13 @@ const metaDesc = rawMeta.length > 157
         z-index: 900 !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
       }
-      /* Plads til videoen + knaprækken (55 px) + 12 px luft = samme luft som mellem kortene (Jacob 18/10 kl. 14:00).
-         Før: 56.25vw + 15px + 55px gav 31 px luft, fordi siden i forvejen har ca. 15 px luft over indholdet. */
+      /* Plads til videoen + knaprækken + 12 px luft = samme luft som mellem kortene (Jacob 18/10 kl. 14:00).
+         Rækkens højde er den MÅLTE (--chips-h, sat af scriptet), så luften holder, også når læseren har
+         stor skrift og rækken bliver højere (Jacob 14:13). 55 px er kun reserve, før målingen er sket.
+         -4px: siden har i forvejen ca. 16 px luft over indholdet, så 16 - 4 = 12 px.
+         Før 18/10: 56.25vw + 15px + 55px gav 31 px luft (de 15 px lagt oven i sidens egen luft). */
       body.cinema-mode .video-primary {
-        padding-top: calc(56.25vw + 51px) !important;
+        padding-top: calc(56.25vw + var(--chips-h, 55px) - 4px) !important;
       }
 
       /* Teksten under videoen sprang ned i samme øjeblik som videoen sprang op
@@ -1803,8 +1806,17 @@ const metaDesc = rawMeta.length > 157
           const enden = cinemaChips.scrollLeft + cinemaChips.clientWidth >= cinemaChips.scrollWidth - 4;
           cinemaBrowser.classList.toggle('chips-ingen-flere', ingen);
           cinemaBrowser.classList.toggle('chips-ved-enden', !ingen && enden);
-          if (cinemaChips.offsetHeight) cinemaBrowser.style.setProperty('--chips-h', `${cinemaChips.offsetHeight}px`);
+          maalRaekke();
         }
+        // Rækkens målte højde lægges på hele siden (html), så både toningen og pladsen over listen
+        // (.video-primary) bruger den. Måles igen, hver gang rækken skifter størrelse (fx større skrift,
+        // drejet telefon) - ResizeObserver = browseren giver besked, når et element ændrer størrelse.
+        function maalRaekke() {
+          if (cinemaChips && cinemaChips.offsetHeight) {
+            document.documentElement.style.setProperty('--chips-h', `${cinemaChips.offsetHeight}px`);
+          }
+        }
+        if (cinemaChips && 'ResizeObserver' in window) new ResizeObserver(maalRaekke).observe(cinemaChips);
         function kigKnapper() {
           opdaterKant();
           if (!cinemaChips || reduceMotion || !document.body.classList.contains('cinema-mode')) return;
