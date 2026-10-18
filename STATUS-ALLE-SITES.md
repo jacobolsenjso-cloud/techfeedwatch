@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 145** — brug kun v145). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 146** — brug kun v146). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 145** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 11:06, live `c4a55d53`): LIVE. Sticky-listen på mobil viser artiklens eget billede (ikke kildevideoens YouTube-miniature) og ingen videolængde; den døde annonceplads ("XXXXX") er fjernet. Alle sider beskriver den nye opskrift og de nye funktioner; guides/ordliste/værktøjer siger "written with AI, planned, checked and maintained by Jacob". Menuen siger "Best of each topic".** Google viser stadig det gamle logo i søgeresultatet - sitet er rigtigt, Google henter ikonet selv (dage-uger). "New look"-boble til og med 24/10. **Næste:** Jacobs svar om afspil-ikonet ▶ på artikelkort; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 11:27, live `4b3c68a4`): LIVE. Ingen afspil-ikoner ▶ på artikelkort længere; kortene løfter sig blødt ved tryk på telefon. Sticky-listen på mobil viser artiklens eget billede uden videolængde. Alle sider beskriver den nye opskrift og de nye funktioner; menuen siger "Best of each topic".** Google viser stadig det gamle logo i søgeresultatet - sitet er rigtigt, Google henter ikonet selv (dage-uger). "New look"-boble til og med 24/10. **Næste:** tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 11:27 - techfeedwatch: afspil-ikonet ▶ fjernet fra alle artikelkort + blødt løft ved tryk på telefon (LIVE `4b3c68a4`)
+- **Jacob: "de skal også væk"** (▶ antyder video, men kortene åbner en artikel) **+ "kan man ikke lave en lille effekt når man trykker ... hopper lidt op blødt".**
+- **Fjernet:** ▶ alle 15 steder (forside x3 + forsidens JS-kort, emnesider, emnesider side 2+, Latest, Library, arkiv, side 2+, søgning, History, Best of each topic, Related articles, Up Next) + CSS-reglerne - 29 linjer i 12 filer. TOC-mærket ▶ ved videoafsnittet i artiklen er bevaret (dér ER det en video).
+- **Ny tryk-effekt (MainLayout, gælder alle sider):** på telefon/pen løfter kortet sig 5 px og 2 % større med blød skygge, mens fingeren er på det. 60 ms forsinkelse, så kort man ruller forbi ikke hopper (pointercancel). Computeren har stadig sit eget løft ved hover. Slås fra ved "reducer bevægelse". Gælder artikelkort, sticky-listen og anbefalingerne i artiklen.
+- **Målt live i Jacobs Chrome (4b3c68a4, Cloudflare success):** 0 ▶ på forside, Latest, Library, Best of each topic, søgning, History, emneside og artikel. Simuleret fingertryk på /latest/: kortet får løft (matrix 1.02, -5 px) og skygge; tryk der bliver til rulning: intet løft; efter slip: 0 kort løftet.
+- **Lære:** første måling af løftet viste "intet" (taget mens overgangen stadig kørte); målt igen bagefter: løftet var der. Mål en animation efter den er færdig, ikke midt i.
+
 
 ### 18/10-2026 kl. 11:06 - techfeedwatch: sticky-listen på mobil viser artiklens billede, ikke YouTube-miniaturen (LIVE `c4a55d53`)
 - **Jacob så det selv på mobilen:** listen under den sticky video viste kildevideoernes YouTube-miniaturer + videolængde. Det lignede "næste video" på YouTube, men et tryk åbner en artikel om et andet spørgsmål end miniaturen viser. Beslutningen 13/10 (artiklens AI-billede overalt) havde overset netop denne liste.
