@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 149** — brug kun v149). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 150** — brug kun v150). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 149** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 12:48, live `f463d3c8`): LIVE. Service workeren bruger navigation preload: ekstratiden pr. sideskift faldt fra ~100 til ~40 ms, offline-reservesiden virker stadig. Glidende sideskift, kort blinker ikke, sticky video glider ind/ud; knapperne under sticky video skifter med det samme (som før). Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 13:11, live `7bd5ed87`): LIVE. Knapperne under sticky video skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver knapperne på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 13:11 - techfeedwatch: knapperne under sticky video skifter listen blødt (LIVE `d8378c3d` + `7bd5ed87`)
+- **Jacob: skiftet ved knaptryk er for hurtigt - "kan man lave en lille forsinkelse?"** Forslag sendt før kodning (videodelen er fredet); Jacob sagde ja kl. 12:59.
+- **Lavet:** knappen markeres straks; kun indholdet under knapperne (listen eller artiklen) toner ud på 0,12 sek., skiftes, og det nye toner ind og glider 8 px op på 0,2 sek. Videoen og knapperne rører sig ikke. Et nyere tryk vinder. "Reducer bevægelse" = med det samme som før. Ren pause uden bevægelse fravalgt (føles som en langsom side).
+- **Fundet ved test og rettet (7bd5ed87):** i en fane, der ikke tegner billeder (Jacobs Chrome-vindue tegnede 1 billede pr. ½ sek. under testen), blev udtoningen aldrig "færdig", og trykket gik tabt (listen skiftede ikke). Nu skiftes der under alle omstændigheder efter højst 250 ms. Bekræftet i samme fane: All 440, Related 235, Read Article viser artiklen.
+- **Målt live på mobilskærm (390x844, touch, ren Chromium):** knap markeret straks; listen halvvejs udtonet efter 60 ms (0,04-0,26); slut helt synlig (1,00) med rigtige tal (Related 235, For You 235 = samme emner uden læsehistorik, AI & Tech 221); Read Article viser artiklen; to hurtige tryk Related->All ender på All, 440 kort, synlig, 0 hængende animationer; 0 fejl.
+- **Lære:** test også i en fane, der ikke tegner (baggrund/skjult vindue) - animationer, der venter på "færdig", kan hænge dér; en tidsgrænse som sikring hører med.
+
 
 ### 18/10-2026 kl. 12:48 - techfeedwatch: service workeren henter sider samtidig med at den vågner (navigation preload) (LIVE `f463d3c8`)
 - **Jacob sagde ja** til forslaget efter undersøgelsen af forhåndshentning.
