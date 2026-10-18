@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 151** — brug kun v151). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 152** — brug kun v152). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 151** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 13:40, live `afb7ad6b`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + ét roligt kig 60 px til højre og tilbage første gang pr. læser. Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver kig og toning på sin telefon (kigget kommer kun første gang pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 14:10, live `c73cd811`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + et roligt kig 60 px til højre og tilbage de første 2 gange pr. læser. Afstanden mellem knaprækken og listen (31 px) er undersøgt; forslag 12 px venter på Jacobs ja (videodelen). Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs ja/nej til afstanden under knaprækken (31 -> 12 px); Jacob prøver kig og toning på sin telefon (kigget kommer kun de første 2 gange pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,11 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 14:10 - techfeedwatch: kigget kører 2 gange; afstanden under knaprækken undersøgt (LIVE `c73cd811`)
+- **Jacob kl. 13:50:** "det skal ske de første 2 gange, 1 gang er for lidt" + "vi kigger på afstand under rækken".
+- **Lavet:** tælleren `tfw_chips_kig` i browseren tæller nu op til 2 (før: ja/nej). Målt live: ny læser - kig 1. gang (tæller 1), 2. gang (2), ikke 3. gang; læser med det gamle "1" får præcis én til; 0 fejl.
+- **Afstanden (kun undersøgt, intet ændret - videodelen er fredet):** 31 px mellem knaprækkens bund og første kort, både ved 390 og 360 bredde, og 30 px til artiklen under Read Article. Årsag: `body.cinema-mode .video-primary { padding-top: calc(56.25vw + 15px + 55px) }` reserverer plads til rækken + 15 px, og siden har i forvejen 15 px luft over indholdet - de to lægges oven i hinanden. Forslag: `calc(56.25vw + 51px)` = 12 px, samme luft som mellem kortene. Prøvet kun i testbrowseren: liste 12 px, artikel 11 px, rækken dækker stadig indholdet ved scroll. Venter på Jacobs ja.
 
 ### 18/10-2026 kl. 13:40 - techfeedwatch: knaprækken under sticky video viser, at der er flere knapper (LIVE `afb7ad6b`)
 - **Jacob:** knapperne bør vise, at rækken fortsætter mod højre. Mit forslag (kig + kanttoning) godkendt kl. 13:25 ("du koder dit forslag").
