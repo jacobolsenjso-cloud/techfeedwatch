@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 152** — brug kun v152). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 153** — brug kun v153). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 152** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 14:10, live `c73cd811`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + et roligt kig 60 px til højre og tilbage de første 2 gange pr. læser. Afstanden mellem knaprækken og listen (31 px) er undersøgt; forslag 12 px venter på Jacobs ja (videodelen). Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs ja/nej til afstanden under knaprækken (31 -> 12 px); Jacob prøver kig og toning på sin telefon (kigget kommer kun de første 2 gange pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 14:15, live `bb8d540c`): LIVE. Knaprækken under sticky video viser nu, at der er flere knapper: svag toning ved højre kant (væk ved enden) + et roligt kig 60 px til højre og tilbage de første 2 gange pr. læser. Afstanden mellem knaprækken og listen er 12 px (før 31). Knapperne skifter listen blødt (0,12 s ud + 0,2 s ind; video og knapper står stille). Service workeren bruger navigation preload (~100 -> ~40 ms ekstra pr. sideskift). Glidende sideskift, kort blinker ikke, sticky video glider ind/ud. Forhåndshentning ligger der, men er ikke set virke.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacob prøver afstanden, kig og toning på sin telefon (kigget kommer kun de første 2 gange pr. browser); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 14:15 - techfeedwatch: 12 px mellem knaprækken og listen under sticky video (LIVE `bb8d540c`)
+- **Jacob sagde ja kl. 14:00** ("du sætter den ned til 12 px ... Tjek også om der er fejl").
+- **Ændret (én linje):** `body.cinema-mode .video-primary { padding-top: calc(56.25vw + 51px) }` (før `56.25vw + 15px + 55px`). Kun telefon i sticky-tilstand; desktop uændret (padding 0).
+- **Fejltjek live:** bredde 320/360/375/390/412/430: liste 12 px, artikel 11 px overalt; rækken dækker stadig indholdet ved scroll; ud af sticky igen = 0 px som før; mørk tilstand ens; større skrift 125 % = 7 px, 150 % = 4 px (ingen overlap); de bløde skift (Related 235, For You 235, AI & Tech 221, Read Article, to hurtige tryk) og kigget 2 gange virker stadig; desktop uden fejl; 0 fejl i alt.
+- **Kendt grænse (målt, skrift forstørret i testbrowseren):** knaprækkens højde (55 px) er fast i regnestykket, som før. Ved 175 % skrift går listens øverste kant 1 px ind under rækken, ved 200 % 5 px (før ændringen var der stadig ca. 14 px luft ved 200 %). Kan gøres robust ved at bruge rækkens målte højde (`--chips-h`) - det er en ændring i videodelen og kræver Jacobs ja.
 
 ### 18/10-2026 kl. 14:10 - techfeedwatch: kigget kører 2 gange; afstanden under knaprækken undersøgt (LIVE `c73cd811`)
 - **Jacob kl. 13:50:** "det skal ske de første 2 gange, 1 gang er for lidt" + "vi kigger på afstand under rækken".
