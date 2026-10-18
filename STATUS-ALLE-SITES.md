@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 147** — brug kun v147). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 148** — brug kun v148). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 147** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 12:10, live `90593cad`): LIVE. Glidende sideskift (topbjælke/menu står stille, kortbillede glider over i artiklens topbillede), kort på skærmen blinker ikke længere, sticky video på mobil er én samlet bevægelse. Forhåndshentning lagt ind men ikke set virke (service worker?). Ingen ▶ på kort; tryk-løft på telefon; sticky-listen viser artiklens billede.** Google viser stadig det gamle logo - sitet er rigtigt, Google henter ikonet selv. "New look"-boble til og med 24/10. **Næste:** Jacob prøver overgangene på sin telefon; evt. undersøg forhåndshentning + sidevægt (~198 KB pr. artikel); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 12:34, live `5cd53f77`): LIVE. Glidende sideskift, kort blinker ikke, sticky video glider ind/ud som én bevægelse; knapperne under sticky video skifter med det samme (som før). Forhåndshentning ligger der, men er ikke set virke. Service workeren koster ~50-180 ms pr. sideskift - forslag om "navigation preload" afventer Jacob.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs svar om navigation preload; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 12:34 - techfeedwatch: knapperne under sticky video skifter med det samme igen (LIVE `5cd53f77`) + undersøgelse af forhåndshentning
+- **Jacob (mobilvisning): knapperne under den sticky video "skifter meget hurtigt ... kører ikke som den skal".** Fast regel gentaget: videodelens opsætning må ikke ændres uden at spørge ham først.
+- **Årsag (min egen ændring 90593cad, forslag 3):** jeg havde også lagt den bløde overgang på knapperne All/Related/For You/Read Article/emner, så hele skærmen tonede ud og ind (~0,4 sek.) ved hvert tryk. Funktionen var korrekt (All 440, Related 235, For You 435, AI & Tech 221, Read Article viser artiklen, 0 fejl).
+- **Rettet med Jacobs ja:** knapperne skifter med det samme, præcis som før i dag (koden er identisk med før, kun en kommentar tilføjet). Overgangen ved ind/ud af sticky video er beholdt. Målt live: ind 1 overgang, 6 knaptryk 0 overgange, ud 1 overgang, 0 fejl.
+- **Forslag 2 undersøgt (forhåndshentning):** virker ikke i nogen browser, jeg kan teste - Jacobs Chrome 155 og en ren Chromium (Playwright), med OG uden service worker, også med en "hent straks"-regel. Testbrowsere styret af værktøjer kan selv slå forhåndshentning fra, så det er ikke bevist, at den virker eller ikke virker hos almindelige læsere. Reglen er ufarlig og bliver liggende.
+- **Fund ved målingen:** sitets service worker gør hvert sideskift langsommere: median 374 mod 194 ms og 229 mod 176 ms (8 sider, to runder) med/uden. Artiklens HTML er kun 52 KB komprimeret (199 KB ukomprimeret) og kommer på ~0,27 s direkte fra Cloudflare - det er altså ikke sidevægten, men service workerens ekstra led. Løsningsforslag ("navigation preload": netværket hentes samtidig med at service workeren starter) sendt til Jacob - ikke kodet.
+- **Lære:** en overgang, der passer til ét skift (ind/ud af sticky video), passer ikke til knapper man trykker på igen og igen; og jeg lagde den på videodelens knapper uden at nævne det specifikt - videodelen: hver enkelt del skal nævnes og godkendes for sig.
+
 
 ### 18/10-2026 kl. 12:10 - techfeedwatch: glidende sideskift, roligere kort, sticky video som én bevægelse (LIVE `2726131e` + `90593cad`)
 - **Jacob: "alle de skift ... skal køre meget mere glidende"**, valgte forslag 5 (mål) -> 1+2 -> 4 -> 3 til sidst; "du koder".
