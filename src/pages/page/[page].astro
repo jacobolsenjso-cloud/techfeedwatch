@@ -161,7 +161,6 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the TechFeedWa
           <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
             <div class="watch-card-thumb">
               <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" width="320" height="180" loading="lazy" />
-              <span class="watch-card-play" aria-hidden="true">▶</span>
             </div>
             <div>
               <h2 class="tma-grid-title">{video.frontmatter.title}</h2>
@@ -234,11 +233,6 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the TechFeedWa
         thumb.appendChild(img);
 
 
-        const play = document.createElement('span');
-        play.className = 'watch-card-play';
-        play.setAttribute('aria-hidden', 'true');
-        play.textContent = '▶';
-        thumb.appendChild(play);
 
         const info = document.createElement('div');
         const titleEl = document.createElement('h2');

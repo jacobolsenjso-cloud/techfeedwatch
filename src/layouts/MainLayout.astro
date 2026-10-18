@@ -462,17 +462,24 @@ const siteSchema = [
       @keyframes tfwReveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
       @media (prefers-reduced-motion: reduce) { .tfw-reveal { opacity: 1 !important; } .tfw-reveal.is-visible { animation: none !important; } }
 
-      /* --- Delt video-kort polish (zoom, play-ikon, blød skygge, skeleton) - gælder alle lister-sider --- */
+      /* --- Delt kort-polish (zoom, blød skygge, skeleton) - gælder alle lister-sider. Afspil-ikonet er fjernet 18/10:
+         kortene åbner en artikel, ikke en video. --- */
       .watch-card-thumb:has(img), .short-card-thumb:has(img) { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
       body.dark-mode .watch-card-thumb:has(img), body.dark-mode .short-card-thumb:has(img) { background-color: #18223d; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
       .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { animation: none; background-image: none; background-color: #000; }
       .watch-card-thumb img, .short-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
       .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
       .watch-card:hover .watch-card-thumb, .watch-card:hover .short-card-thumb { box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05); }
-      .watch-card-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; padding-left: 3px; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none; }
-      .watch-card:hover .watch-card-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
       @keyframes tfwShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
       @media (prefers-reduced-motion: reduce) { .watch-card-thumb, .short-card-thumb { animation: none; } .watch-card-thumb img, .short-card-thumb img { transition: none; } .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: none; } }
+      /* Tryk-effekt på telefon (18/10, Jacob): kortet løfter sig blødt, når fingeren rammer det. En telefon har
+         ingen "hover", så computerens løft (translateY -3px) viste sig aldrig der. Klassen .tryk sættes af
+         scriptet nederst i filen - ikke :active, som iPhone kun viser med et ekstra trick og som også
+         rammer kort, man bare ruller forbi. body-præfiks: sidernes egne .watch-card:hover-regler er lige så stærke. */
+      body .watch-card, body .cinema-card, body .inline-recs-card { -webkit-tap-highlight-color: transparent; }
+      body .watch-card.tryk, body .cinema-card.tryk, body .inline-recs-card.tryk { transform: translateY(-5px) scale(1.02); transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.25, 1.15); }
+      body .watch-card.tryk .watch-card-thumb, body .cinema-card.tryk .cinema-card-thumb, body .inline-recs-card.tryk .inline-recs-thumb { box-shadow: 0 12px 26px rgba(0,0,0,0.20), 0 3px 8px rgba(0,0,0,0.10); transition: box-shadow 0.22s ease; }
+      @media (prefers-reduced-motion: reduce) { body .watch-card.tryk, body .cinema-card.tryk, body .inline-recs-card.tryk { transform: none; } }
       
       .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
       .header-hidden { transform: none !important; margin-top: -60px !important; } 
@@ -1379,6 +1386,32 @@ const siteSchema = [
         clearTimeout(rodTimer);
         rodTimer = setTimeout(() => { s.scrollTop = 0; }, 250);
       }, { passive: true, capture: true });
+
+      // Tryk-effekt på kort (18/10, Jacob): på telefon løfter kortet sig blødt under fingeren (CSS: .tryk).
+      // 60 ms forsinkelse: begynder fingeren at rulle i stedet, melder browseren pointercancel først, og
+      // kortet bliver liggende - ellers ville hvert kort, man ruller forbi, hoppe. Et hurtigt tryk (pointerup
+      // før de 60 ms) løfter med det samme, så effekten også ses, mens den nye side indlæses.
+      // Kun berøring og pen: computeren har allerede sit eget løft ved hover.
+      (() => {
+        const KORT = '.watch-card, .cinema-card, .inline-recs-card';
+        let kort = null, timer = 0;
+        const slip = () => { clearTimeout(timer); timer = 0; if (kort) kort.classList.remove('tryk'); kort = null; };
+        document.addEventListener('pointerdown', (e) => {
+          if (e.pointerType === 'mouse') return;
+          slip();
+          kort = e.target.closest ? e.target.closest(KORT) : null;
+          if (kort) { const k = kort; timer = setTimeout(() => { timer = 0; k.classList.add('tryk'); }, 60); }
+        }, { passive: true });
+        document.addEventListener('pointerup', () => {
+          if (kort && timer) { clearTimeout(timer); timer = 0; kort.classList.add('tryk'); }
+          const k = kort; kort = null;
+          // Fjernes igen efter et øjeblik, hvis trykket ikke åbnede en ny side (fx et kort der kun skifter filter).
+          if (k) setTimeout(() => k.classList.remove('tryk'), 450);
+        }, { passive: true });
+        document.addEventListener('pointercancel', slip, { passive: true });
+        // Tilbage-knappen kan vise siden fra hukommelsen (bfcache) med kortet stadig løftet.
+        window.addEventListener('pageshow', () => document.querySelectorAll('.tryk').forEach((el) => el.classList.remove('tryk')));
+      })();
     </script>
   </body>
 </html>

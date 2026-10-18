@@ -166,7 +166,6 @@ const listeSchema = {
               <div class="watch-card-thumb">
                 <img src={`https://img.youtube.com/vi/${item.fm.youtubeId}/hqdefault.jpg`} alt={item.fm.title} loading="lazy" />
                 <div class="ratio-badge">{item.ratio! >= 10 ? Math.round(item.ratio!) : item.ratio!.toFixed(1)}x</div>
-                <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h2 class="tma-grid-title">{item.fm.title}</h2>

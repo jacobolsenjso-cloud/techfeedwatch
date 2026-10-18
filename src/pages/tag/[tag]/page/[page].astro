@@ -136,7 +136,6 @@ const formatDate = (d: string) => {
         <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
           <div class="watch-card-thumb">
             <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt={video.frontmatter.title} loading="lazy" />
-            <span class="watch-card-play" aria-hidden="true">▶</span>
           </div>
           <div>
             <h2 class="tma-grid-title">{video.frontmatter.title}</h2>

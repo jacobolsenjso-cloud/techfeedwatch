@@ -223,8 +223,6 @@ const vRest = pageOneVideos.slice(13);
     .watch-card-thumb img, .short-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
     .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
     .watch-card:hover .watch-card-thumb, .watch-card:hover .short-card-thumb { box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05); }
-    .watch-card-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.05rem; padding-left: 3px; opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease; pointer-events: none; }
-    .watch-card:hover .watch-card-play { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     @media (prefers-reduced-motion: reduce) { .watch-card-thumb img, .short-card-thumb img { transition: none; } .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: none; } }
     /* Loading-skeleton: shimmer bag thumbnailen indtil billedet er loadet, hvorefter JS tilføjer .is-loaded */
     .watch-card-thumb, .short-card-thumb { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
@@ -516,7 +514,6 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-                <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
@@ -555,7 +552,6 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-                <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
@@ -573,7 +569,6 @@ const vRest = pageOneVideos.slice(13);
             <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" loading="lazy" />
-                <span class="watch-card-play" aria-hidden="true">▶</span>
               </div>
               <div>
                 <h3 class="tma-grid-title">{video.frontmatter.title}</h3>
@@ -744,11 +739,6 @@ const vRest = pageOneVideos.slice(13);
         markLoaded(img);
 
 
-        const play = document.createElement('span');
-        play.className = 'watch-card-play';
-        play.setAttribute('aria-hidden', 'true');
-        play.textContent = '▶';
-        thumb.appendChild(play);
 
         const info = document.createElement('div');
         const titleEl = document.createElement('h3');
