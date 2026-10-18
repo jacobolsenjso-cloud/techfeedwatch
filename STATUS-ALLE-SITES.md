@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 144** — brug kun v144). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 145** — brug kun v145). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 144** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (17/10-2026 kl. 22:50, live `ec8cdadd`): LIVE. Alle sider beskriver den nye opskrift og de nye funktioner (klokke, følg emner, 18 emner, daglig push, Read later/History); guides, ordliste og værktøjer siger "written with AI, planned, checked and maintained by Jacob". /sitemap/ viser alle 50 værktøjer, 56 ord, emnesider og politiksider. Menuen siger "Best of each topic" som siden.** Navnet TechFeedWatch overalt, alle sidebeskrivelser højst 160 tegn. "New look"-boble til og med 24/10. **Næste:** slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 11:06, live `c4a55d53`): LIVE. Sticky-listen på mobil viser artiklens eget billede (ikke kildevideoens YouTube-miniature) og ingen videolængde; den døde annonceplads ("XXXXX") er fjernet. Alle sider beskriver den nye opskrift og de nye funktioner; guides/ordliste/værktøjer siger "written with AI, planned, checked and maintained by Jacob". Menuen siger "Best of each topic".** Google viser stadig det gamle logo i søgeresultatet - sitet er rigtigt, Google henter ikonet selv (dage-uger). "New look"-boble til og med 24/10. **Næste:** Jacobs svar om afspil-ikonet ▶ på artikelkort; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 11:06 - techfeedwatch: sticky-listen på mobil viser artiklens billede, ikke YouTube-miniaturen (LIVE `c4a55d53`)
+- **Jacob så det selv på mobilen:** listen under den sticky video viste kildevideoernes YouTube-miniaturer + videolængde. Det lignede "næste video" på YouTube, men et tryk åbner en artikel om et andet spørgsmål end miniaturen viser. Beslutningen 13/10 (artiklens AI-billede overalt) havde overset netop denne liste.
+- **Rettet (Jacobs ok, selvom videodelen ellers er fredet 12/10 - kun billede og tal ændret, ikke funktionen):** kortene bruger /kort/<slug>.webp med lazy-loading; videolængden fjernet.
+- **Fundet ved dobbelttjek og rettet:** hvert 4. kort var en annonceplads med annonce-id "XXXXX" (pladsholder) og dansk mærkat "Annonce" - kunne kun vise en tom boks; fjernet (AdSense' automatiske annoncer placerer selv). Luk-knappen havde dansk skærmlæser-tekst ("Luk fastlåst video") på et engelsk site -> "Close pinned video". Før blev alle ~440 YouTube-miniaturer hentet på én gang; nu kun dem på skærmen.
+- **Målt live i Jacobs Chrome (c4a55d53):** 440 kort, 440 med artiklens billede, 0 YouTube-miniaturer, 0 tidsangivelser, 0 annoncebokse; de 8 første billeder indlæst, 416 venter til man scroller. Skærmbillede på mobil (lokal forhåndsvisning af samme kode).
+- **Ikke rettet (Jacobs afgørelse):** afspil-ikonet ▶ på artikelkort findes 15 steder på sitet (forside, emner, Latest, Library, arkiv, søgning, History, Related articles m.fl.) og antyder video - spurgt.
+- **Lære:** Chrome uden vindue hang på artikelsiden, fordi YouTube-rammen aldrig blev færdig; peg YouTube- og annoncedomæner væk (--host-resolver-rules) og mål med en side, der venter aktivt i stedet for faste pauser.
+
 
 ### 17/10-2026 kl. 22:50 - techfeedwatch: menuen siger "Best of each topic" (LIVE `ec8cdadd`)
 - **Jacob: "du retter menuen også".** Menupunktet hed "Best by Topic", mens siden, sitemap og om-/start-siderne siger "Best of each topic". Kun ét sted i koden (MainLayout.astro).
