@@ -189,6 +189,24 @@ const siteSchema = [
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
     <link rel="manifest" href="/site.webmanifest" />
+    {/* Forhåndshentning (18/10, Jacob, forslag 2): når fingeren rammer et link, eller musen hviler på det,
+        begynder browseren at hente næste side, så den er der næsten med det samme. "prefetch" (kun hente),
+        IKKE "prerender" (bygge siden færdig i baggrunden): en forudbygget artikel ville køre sine scripts og
+        markere sig som læst/i historikken, selvom man aldrig åbnede den. Chrome/Edge; Safari og Firefox
+        ignorerer det. Filer, der ikke er sider (xml/json/feeds), og links i nye faner springes over. */}
+    <script type="speculationrules" is:inline set:html={JSON.stringify({
+      prefetch: [{
+        where: { and: [
+          { href_matches: '/*' },
+          { not: { href_matches: '/*.xml' } },
+          { not: { href_matches: '/*.json' } },
+          { not: { href_matches: '/*.txt' } },
+          { not: { href_matches: '/cdn-cgi/*' } },
+          { not: { selector_matches: '[target=_blank], [download], [rel~=nofollow]' } },
+        ] },
+        eagerness: 'moderate',
+      }],
+    })}></script>
     <link rel="preconnect" href="https://img.youtube.com" />
     <link rel="dns-prefetch" href="https://img.youtube.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
@@ -458,8 +476,10 @@ const siteSchema = [
       body.shorts-mode .tfw-progress { display: none; }
       @media (prefers-reduced-motion: reduce) { .tfw-progress { transition: none; } }
       .tfw-reveal { opacity: 0; }
-      .tfw-reveal.is-visible { animation: tfwReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-      @keyframes tfwReveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+      /* 18/10 (forslag 4): kortere og mindre bevægelse (før 0,65 s og 16 px) - ved hurtig rulning på telefon
+         nåede kortene ikke frem, før man var forbi, og man så tomme felter. */
+      .tfw-reveal.is-visible { animation: tfwReveal 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+      @keyframes tfwReveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
       @media (prefers-reduced-motion: reduce) { .tfw-reveal { opacity: 1 !important; } .tfw-reveal.is-visible { animation: none !important; } }
 
       /* --- Delt kort-polish (zoom, blød skygge, skeleton) - gælder alle lister-sider. Afspil-ikonet er fjernet 18/10:
@@ -480,6 +500,28 @@ const siteSchema = [
       body .watch-card.tryk, body .cinema-card.tryk, body .inline-recs-card.tryk { transform: translateY(-5px) scale(1.02); transition: transform 0.22s cubic-bezier(0.2, 0.9, 0.25, 1.15); }
       body .watch-card.tryk .watch-card-thumb, body .cinema-card.tryk .cinema-card-thumb, body .inline-recs-card.tryk .inline-recs-thumb { box-shadow: 0 12px 26px rgba(0,0,0,0.20), 0 3px 8px rgba(0,0,0,0.10); transition: box-shadow 0.22s ease; }
       @media (prefers-reduced-motion: reduce) { body .watch-card.tryk, body .cinema-card.tryk, body .inline-recs-card.tryk { transform: none; } }
+
+      /* Bløde sideskift (18/10, Jacob, forslag 1): browserens indbyggede "view transitions". Før blev hver ny
+         side tegnet forfra med et hårdt skift. Nu toner indholdet over (~¼ sek.), mens topbjælken og menuen
+         står helt stille, fordi de har deres eget navn og derfor ikke er en del af overtoningen.
+         Chrome/Edge 126+ og Safari 18.2+; Firefox skifter side som før. Ingen overgang ved "reducer bevægelse". */
+      @media (prefers-reduced-motion: no-preference) {
+        @view-transition { navigation: auto; }
+      }
+      #mainHeader { view-transition-name: tfw-topbar; }
+      @media (min-width: 769px) { #sidebar { view-transition-name: tfw-sidebar; } }
+      ::view-transition-old(root) { animation: 150ms ease-out both tfwSideUd; }
+      ::view-transition-new(root) { animation: 280ms cubic-bezier(0.2, 0.8, 0.25, 1) both tfwSideInd; }
+      @keyframes tfwSideUd { to { opacity: 0; } }
+      @keyframes tfwSideInd { from { opacity: 0; transform: translateY(10px); } }
+      /* Kortets billede glider op og bliver artiklens topbillede. Navnet tfw-hero sidder fast på artiklens
+         billede og sættes kun på det kort, man trykker på (scriptet nederst), så der aldrig er to med samme
+         navn - så ville browseren droppe overgangen helt. */
+      .artikel-billede { view-transition-name: tfw-hero; }
+      html.tfw-vt-kort .artikel-billede { view-transition-name: none; }
+      .tfw-vt-hero { view-transition-name: tfw-hero; }
+      ::view-transition-group(tfw-hero) { animation-duration: 340ms; animation-timing-function: cubic-bezier(0.2, 0.8, 0.25, 1); }
+      ::view-transition-old(tfw-hero), ::view-transition-new(tfw-hero) { height: 100%; object-fit: cover; overflow: clip; }
       
       .top-navbar { height: 60px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; background: var(--sidebar-bg); border-bottom: 1px solid var(--border-color); z-index: 1000; position: sticky; top: 0; transition: transform 0.3s ease, margin-top 0.3s ease !important; box-sizing: border-box; }
       .header-hidden { transform: none !important; margin-top: -60px !important; } 
@@ -1341,11 +1383,19 @@ const siteSchema = [
                   const el = entry.target;
                   el.classList.add('is-visible');
                   revObserver.unobserve(el);
-                  setTimeout(() => el.classList.remove('tfw-reveal', 'is-visible'), 750);
+                  setTimeout(() => el.classList.remove('tfw-reveal', 'is-visible'), 450);
                 }
               });
             }, { root: revealRoot, rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-            revealEls.forEach((el) => { el.classList.add('tfw-reveal'); revObserver.observe(el); });
+            // 18/10 (forslag 4): kort, der allerede er på skærmen, når siden åbner, vises med det samme. Før blev
+            // de gjort usynlige og tonet frem bagefter - et blink lige efter hvert sideskift, og under en blød
+            // overgang tonede siden over i tomme felter. Kun kort længere nede toner frem, når man ruller.
+            const skaermBund = window.innerHeight;
+            revealEls.forEach((el) => {
+              if (el.getBoundingClientRect().top < skaermBund) return;
+              el.classList.add('tfw-reveal');
+              revObserver.observe(el);
+            });
           }
         }
 
@@ -1411,6 +1461,28 @@ const siteSchema = [
         document.addEventListener('pointercancel', slip, { passive: true });
         // Tilbage-knappen kan vise siden fra hukommelsen (bfcache) med kortet stadig løftet.
         window.addEventListener('pageshow', () => document.querySelectorAll('.tryk').forEach((el) => el.classList.remove('tryk')));
+      })();
+
+      // Kortbillede -> artiklens topbillede (18/10, forslag 1). Ved klik på et artikelkort får kun DETTE korts
+      // billede navnet tfw-hero, og sidens eget topbillede (hvis man står i en artikel) mister sit, så navnet
+      // findes præcis én gang. Ruller man tilbage (bfcache), ryddes navnene, så næste klik starter forfra.
+      (() => {
+        if (!('onpagereveal' in window)) return; // browseren kan ikke glidende sideskift - intet at gøre
+        const ryd = () => {
+          document.querySelectorAll('.tfw-vt-hero').forEach((el) => el.classList.remove('tfw-vt-hero'));
+          document.documentElement.classList.remove('tfw-vt-kort');
+        };
+        document.addEventListener('click', (e) => {
+          if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          const a = e.target.closest && e.target.closest('a[href^="/video/"]');
+          if (!a) return;
+          const img = a.querySelector('.watch-card-thumb img, .cinema-card-thumb img, .inline-recs-thumb img');
+          if (!img || !img.complete || !img.naturalWidth) return;
+          ryd();
+          img.classList.add('tfw-vt-hero');
+          document.documentElement.classList.add('tfw-vt-kort');
+        });
+        window.addEventListener('pageshow', ryd);
       })();
     </script>
   </body>
