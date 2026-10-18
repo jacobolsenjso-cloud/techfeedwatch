@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 16. oktober (**version 146** — brug kun v146). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 16. oktober (**version 147** — brug kun v147). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 16. oktober (**version 146** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (18/10-2026 kl. 11:27, live `4b3c68a4`): LIVE. Ingen afspil-ikoner ▶ på artikelkort længere; kortene løfter sig blødt ved tryk på telefon. Sticky-listen på mobil viser artiklens eget billede uden videolængde. Alle sider beskriver den nye opskrift og de nye funktioner; menuen siger "Best of each topic".** Google viser stadig det gamle logo i søgeresultatet - sitet er rigtigt, Google henter ikonet selv (dage-uger). "New look"-boble til og med 24/10. **Næste:** tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (18/10-2026 kl. 12:10, live `90593cad`): LIVE. Glidende sideskift (topbjælke/menu står stille, kortbillede glider over i artiklens topbillede), kort på skærmen blinker ikke længere, sticky video på mobil er én samlet bevægelse. Forhåndshentning lagt ind men ikke set virke (service worker?). Ingen ▶ på kort; tryk-løft på telefon; sticky-listen viser artiklens billede.** Google viser stadig det gamle logo - sitet er rigtigt, Google henter ikonet selv. "New look"-boble til og med 24/10. **Næste:** Jacob prøver overgangene på sin telefon; evt. undersøg forhåndshentning + sidevægt (~198 KB pr. artikel); tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 15/10
 - **Live:** `a01022e8` (se `https://techfeedwatch.com/build.json`). **432 artikler** (`https://techfeedwatch.com/robot-status.json`), seneste robotartikel 15/10 kl. 11:29 dansk.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 18/10-2026 kl. 12:10 - techfeedwatch: glidende sideskift, roligere kort, sticky video som én bevægelse (LIVE `2726131e` + `90593cad`)
+- **Jacob: "alle de skift ... skal køre meget mere glidende"**, valgte forslag 5 (mål) -> 1+2 -> 4 -> 3 til sidst; "du koder".
+- **Målt før (Jacobs Chrome, desktop):** CLS (hvor meget siden hopper) var allerede ~0 (forside 0, artikel 0, emne 0,0093, Latest 0, værktøj 0) - hakket kom ikke fra hop, men fra hårde sideskift og fra at synlige kort blev gjort usynlige og tonet frem (artikel 2, emne 4, Latest 5 kort pr. sidevisning). PageSpeed-API'et var spærret (dagskvote 0 uden nøgle); lokal Lighthouse gav ingen rapport - droppet.
+- **1 Bløde sideskift (view transitions):** indholdet toner over med et lille løft (150/280 ms); topbjælke og computerens menu står stille; kortets billede glider over i artiklens topbillede. Målt live: overgangen kører (pageswap: overgang=true, ét navngivet kortbillede, artiklens eget navn slået fra -> ingen dobbelt-navne). Chrome/Edge/Safari 18.2+; Firefox som før; fra ved "reducer bevægelse".
+- **2 Forhåndshentning (speculation rules, prefetch ved hover/tryk):** lagt ind, men IKKE set virke i Jacobs Chrome 155 - heller ikke med en "hent straks"-regel; siden kom fra nettet (735-853 ms). Sandsynlig årsag: sitets service worker håndterer hver sidevisning. Ufarlig at have; ikke bevist. Fund: en artikel er ~198 KB over nettet (285 ms ventetid + 437 ms download) - det er den egentlige ventetid.
+- **4 Kort:** kort på skærmen ved start vises straks (målt: 0 skjulte på Latest/emne/artikel, før 5/4/2); resten toner frem på 0,35 s/8 px (før 0,65 s/16 px). CLS efter: 0 på emne/artikel/Latest.
+- **3 Sticky video (Jacobs ja; videodelen ellers fredet 12/10):** ind/ud af biograf-tilstand og skift liste/artikel under videoen kører som én overgang: videoen glider som ét objekt (samme 280 ms som Jacobs valg 12/10), resten toner over, springet til toppen skjules, listen tegnes inde i overgangen. Gentagne "afspil"-signaler starter den ikke igen. Gammel FLIP er reserve. Målt live (desktop, ?slow): ind og ud uden fejl, billede taget på ~21-25 ms, færdig på ~380-400 ms, navnet ryddet bagefter. Ikke set på en rigtig telefon endnu.
+- **Lære:** PageSpeed-API uden nøgle har kvote 0; mål i Jacobs Chrome med PerformanceObserver i stedet. Og "seen working" holdt ikke for forhåndshentningen - skrevet som ikke-bevist i stedet for at antage.
+
 
 ### 18/10-2026 kl. 11:27 - techfeedwatch: afspil-ikonet ▶ fjernet fra alle artikelkort + blødt løft ved tryk på telefon (LIVE `4b3c68a4`)
 - **Jacob: "de skal også væk"** (▶ antyder video, men kortene åbner en artikel) **+ "kan man ikke lave en lille effekt når man trykker ... hopper lidt op blødt".**
