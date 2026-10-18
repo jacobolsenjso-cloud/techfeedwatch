@@ -81,6 +81,10 @@ const questions = regularVideos
 // sted i de store sektioner (Set'et "brugt"), så siden ikke gentager sig selv.
 const slugOf = (v: any): string => v.file.split('/').pop().replace('.md', '');
 const kortBillede = (v: any) => `/kort/${slugOf(v)}.webp`;
+// AI-billede = samme regel som src/lib/aibillede.mjs (harAiBillede). Artikler, der endnu ikke er
+// omskrevet, har kun det gamle abstrakte emnekort - de holdes ude af de billedtunge sektioner
+// (trending, stort kort, karruseller), men står stadig i gitteret, så side 1 er komplet.
+const harAi = (v: any) => fs.existsSync(`public/billeder/${slugOf(v)}.webp`);
 const brugt = new Set<string>([leadMain, ...leadSide].filter(Boolean).map(slugOf));
 
 // Popularitet som på /popular: kildevideoens visninger delt med kanalens gennemsnit.
@@ -101,12 +105,12 @@ const medPopularitet = regularVideos
 const nu = Date.now();
 const indenfor = (v: any, dage: number) => nu - new Date(v.frontmatter.date).valueOf() <= dage * 864e5;
 let top5Dage = 30;
-let top5 = medPopularitet.filter((x: any) => indenfor(x.v, 30) && !brugt.has(slugOf(x.v))).slice(0, 5);
-if (top5.length < 5) { top5Dage = 90; top5 = medPopularitet.filter((x: any) => indenfor(x.v, 90) && !brugt.has(slugOf(x.v))).slice(0, 5); }
+let top5 = medPopularitet.filter((x: any) => indenfor(x.v, 30) && harAi(x.v) && !brugt.has(slugOf(x.v))).slice(0, 5);
+if (top5.length < 5) { top5Dage = 90; top5 = medPopularitet.filter((x: any) => indenfor(x.v, 90) && harAi(x.v) && !brugt.has(slugOf(x.v))).slice(0, 5); }
 top5.forEach((x: any) => brugt.add(slugOf(x.v)));
 
 // Ét stort kort: den nyeste artikel, der ikke allerede står ovenfor.
-const stortKort = pageOneVideos.find((v: any) => !brugt.has(slugOf(v))) || null;
+const stortKort = pageOneVideos.find((v: any) => !brugt.has(slugOf(v)) && harAi(v)) || pageOneVideos.find((v: any) => !brugt.has(slugOf(v))) || null;
 if (stortKort) brugt.add(slugOf(stortKort));
 
 // Faneboksen: Popular (alle tider) / Questions / Latest. Kompakte tekstlister,
@@ -114,15 +118,19 @@ if (stortKort) brugt.add(slugOf(stortKort));
 const fanePopular = medPopularitet.filter((x: any) => !brugt.has(slugOf(x.v))).slice(0, 6);
 const faneLatest = pageOneVideos.filter((v: any) => !brugt.has(slugOf(v))).slice(0, 6);
 
-// Karruseller: de tre største emner, 8 artikler hver, nyeste først.
-const karruselEmner = topTags.slice(0, 3).map((tag: string) => {
+// Karruseller: de største emner, der har mindst 4 artikler med AI-billede tilbage (højst 8 pr. emne,
+// nyeste først, højst 3 emner). Emner uden nok nye billeder springes over i stedet for at vise emnekort.
+const karruselEmner: any[] = [];
+for (const tag of topTags) {
+  if (karruselEmner.length >= 3) break;
   const items = regularVideos.filter((v: any) => {
     const t = v.frontmatter.tags || v.frontmatter.tag || [];
-    return (Array.isArray(t) ? t : [t]).includes(tag) && !brugt.has(slugOf(v));
+    return (Array.isArray(t) ? t : [t]).includes(tag) && harAi(v) && !brugt.has(slugOf(v));
   }).slice(0, 8);
+  if (items.length < 4) continue;
   items.forEach((v: any) => brugt.add(slugOf(v)));
-  return { tag, total: tagCounts[tag], color: TAG_COLORS[tag] || '#2563eb', items };
-}).filter((k: any) => k.items.length >= 3);
+  karruselEmner.push({ tag, total: tagCounts[tag], color: TAG_COLORS[tag] || '#2563eb', items });
+}
 
 // Gitteret til sidst: resten af side 1, så alt fra side 1 stadig står på forsiden
 // (/page/2 starter ved artikel 25 og regner med det).
@@ -451,7 +459,8 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
     body.dark-mode .home-band { --band-a: #1d4ed8; --band-b: #5b21b6; box-shadow: none; }
     .home-band .band-lead { color: #fff; }
     .home-band .lead-card-thumb { margin-bottom: 14px; }
-    .band-lead-text { position: absolute; left: 0; right: 0; bottom: 0; padding: 70px 22px 18px; background: linear-gradient(to top, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.62) 55%, rgba(2, 6, 23, 0) 100%); }
+    /* Bundluften (7 % af bredden) holder titlen over vandmærket "TechFeedWatch.com" nederst til højre i billedet */
+    .band-lead-text { position: absolute; left: 0; right: 0; bottom: 0; padding: 70px 22px max(22px, 7%); background: linear-gradient(to top, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.62) 55%, rgba(2, 6, 23, 0) 100%); }
     .home-band .band-lead-title { color: #fff; margin: 9px 0 0; font-size: 1.9rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .home-band .band-lead:hover .band-lead-title { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
     .home-band .band-excerpt, body.dark-mode .home-band .band-excerpt { color: rgba(255, 255, 255, 0.92); }
@@ -547,7 +556,8 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
     }
     @media (max-width: 768px) {
       .home-intro { margin: 12px auto 0; padding: 0 15px; }
-      .home-intro-title { font-size: 1.05rem; }
+      /* Skrifthøjden følger skærmbredden, så h1 holder sig på én linje fra 320 px og op */
+      .home-intro-title { font-size: clamp(0.9rem, 4.3vw, 1.05rem); }
       .section-heading h2 { font-size: 1.32rem; }
       .section-heading .section-note { flex-basis: 100%; }
 
@@ -568,7 +578,7 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
       /* Feltet går helt ud til kanterne på telefonen, som hos store nyhedssites */
       .home-band { margin: 0 -15px 32px; border-radius: 0; padding: 14px 15px 16px; }
       .home-band .band-lead-title { font-size: 1.32rem; }
-      .band-lead-text { padding: 50px 14px 12px; }
+      .band-lead-text { padding: 50px 14px max(18px, 7%); }
       .home-band .lead-card-thumb { border-radius: 12px; margin-bottom: 10px; }
       .home-band .band-excerpt { -webkit-line-clamp: 2; font-size: 0.95rem; margin-bottom: 8px; }
       .band-item { grid-template-columns: 100px 1fr; gap: 12px; padding: 10px 0; }
@@ -602,10 +612,11 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
   </style>
 
   {/* Udkast 18/10: den store tekstboks (ca. 360 px på mobil) er blevet til én linje.
-      h1 er bevaret ordret - den er sidens overskrift for Google og skærmlæsere.
+      h1 = sidens emne med de samme ord som <title> ("AI, Tech, Fintech & Crypto News, Explained"),
+      så Google og skærmlæsere får ét klart emne. Kort nok til én linje på en telefon.
       Kildeangivelsen og Guides/Tools/Glossary står nu i talstriben længere nede. */}
   <section class="home-intro">
-    <h1 class="home-intro-title">Straight answers on AI, tech, fintech and crypto.</h1>
+    <h1 class="home-intro-title">AI, Tech, Fintech &amp; Crypto, Explained</h1>
   </section>
 
   <div class="tag-bar-outer">
@@ -745,7 +756,8 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
       {top5.length > 0 && (
         <section class="home-top5" aria-labelledby="h-top5">
           <div class="section-heading">
-            <h2 id="h-top5">{top5Dage === 30 ? 'Top 5 this month' : 'Top 5 of the last 90 days'}</h2>
+            {/* "Trending", ikke "Top 5": kun artikler med nyt billede er med, så det er ikke en komplet top 5 */}
+            <h2 id="h-top5">{top5Dage === 30 ? 'Trending this month' : 'Trending in the last 90 days'}</h2>
             <span class="section-note">Ranked by how far each source video beat its own channel's average views.</span>
           </div>
           <ol class="top5-list">
@@ -919,7 +931,11 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
         const hidden = chips.filter((c) => c.offsetTop > secondRowTop);
 
         tagBar.style.maxHeight = '';
-        tagBar.style.setProperty('--tag-rows', `${secondRowTop - firstTop + rowHeight + padding * 2}px`);
+        // Klippes lige FØR 3. række begynder. Før blev der lagt fuld bundluft (12 px) til, men
+        // 3. række starter allerede efter mellemrummet (10 px), så dens øverste kant stak 2 px
+        // frem som en stribe på desktop (målt 18/10, også på det levende site).
+        const rowGap = parseFloat(getComputedStyle(tagBar).rowGap) || 10;
+        tagBar.style.setProperty('--tag-rows', `${secondRowTop - firstTop + rowHeight + padding + Math.min(padding, rowGap - 1)}px`);
         tagMore.hidden = false;
         tagMore.textContent = `+${hidden.length} more`;
         tagMore.setAttribute('aria-expanded', 'false');
