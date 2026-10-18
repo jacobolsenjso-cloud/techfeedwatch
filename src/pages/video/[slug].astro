@@ -931,6 +931,16 @@ const metaDesc = rawMeta.length > 157
       .cinema-chip { background: var(--hover-bg); color: var(--text-color); border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
       .cinema-chip.active { background: #111; color: #fff; border-color: #111; }
       body.dark-mode .cinema-chip.active { background: #f1f5f9; color: #111; }
+      /* Hint om flere knapper (Jacob 18/10 kl. 13:25): svag toning ud mod højre kant af knaprækken, så man kan
+         se, at rækken fortsætter. Ligger OVER rækken (ikke en maske - så ville listen bag den fastlåste række
+         skinne igennem). Forsvinder, når man har swipet til enden. Højden sættes af scriptet (--chips-h). */
+      body.cinema-mode #cinemaBrowser::after {
+        content: ''; position: fixed; top: calc(60px + 56.25vw); right: 0; width: 44px; height: var(--chips-h, 56px);
+        background: linear-gradient(to right, transparent, var(--bg-color) 85%);
+        z-index: 900; pointer-events: none; transition: opacity 0.2s ease;
+      }
+      body.cinema-mode #cinemaBrowser.chips-ved-enden::after,
+      body.cinema-mode #cinemaBrowser.chips-ingen-flere::after { opacity: 0; }
 
       .cinema-share-btn { display: inline-flex; align-items: center; gap: 5px; line-height: 1; background: var(--hover-bg); color: var(--text-color); border: 1px solid var(--border-color); padding: 7px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; -webkit-tap-highlight-color: transparent; }
       .cinema-share-btn svg { width: 14px !important; height: 14px !important; flex-shrink: 0; display: block; }
@@ -1708,6 +1718,8 @@ const metaDesc = rawMeta.length > 157
                 renderList(btn.dataset.filter, btn.dataset.tag);
               });
             });
+            // Toningen ved højre kant følger, hvor langt rækken er swipet (se opdaterKant()).
+            cinemaChips.addEventListener('scroll', () => opdaterKant(), { passive: true });
           }
         }
 
@@ -1774,6 +1786,45 @@ const metaDesc = rawMeta.length > 157
               { duration: 200, easing: 'cubic-bezier(0.2, 0.8, 0.25, 1)' }
             ));
           });
+        }
+
+        // Knaprækken under sticky video (Jacob 18/10 kl. 13:25): nye læsere kan ikke se, at rækken kan swipes.
+        // 1) opdaterKant(): toningen ved højre kant vises kun, når der ER flere knapper ude til højre.
+        // 2) kigKnapper(): første gang en læser får sticky video, glider rækken roligt 60 px til højre og tilbage
+        //    (ca. 1 sek.). Kun én gang pr. læser (tfw_chips_kig i browseren), stopper straks hvis man rører
+        //    rækken, og springes over ved "reducer bevægelse". Ingen konstant bevægelse: den ville trække øjet
+        //    fra videoen og gøre knapperne svære at ramme.
+        function opdaterKant() {
+          if (!cinemaChips || !cinemaBrowser) return;
+          const ingen = cinemaChips.scrollWidth <= cinemaChips.clientWidth + 4;
+          const enden = cinemaChips.scrollLeft + cinemaChips.clientWidth >= cinemaChips.scrollWidth - 4;
+          cinemaBrowser.classList.toggle('chips-ingen-flere', ingen);
+          cinemaBrowser.classList.toggle('chips-ved-enden', !ingen && enden);
+          if (cinemaChips.offsetHeight) cinemaBrowser.style.setProperty('--chips-h', `${cinemaChips.offsetHeight}px`);
+        }
+        function kigKnapper() {
+          opdaterKant();
+          if (!cinemaChips || reduceMotion || !document.body.classList.contains('cinema-mode')) return;
+          if (cinemaChips.scrollWidth <= cinemaChips.clientWidth + 4 || cinemaChips.scrollLeft > 0) return;
+          try { if (localStorage.getItem('tfw_chips_kig') === '1') return; localStorage.setItem('tfw_chips_kig', '1'); } catch { /* uden lager: vis hver gang */ }
+          let stop = false;
+          const afbryd = () => { stop = true; };
+          ['pointerdown', 'touchstart', 'wheel'].forEach((t) => cinemaChips.addEventListener(t, afbryd, { once: true, passive: true }));
+          const UD = 60, T_UD = 450, PAUSE = 150, T_IND = 450;
+          const glat = (x) => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; // blød start og slut
+          const t0 = performance.now();
+          const trin = (nu) => {
+            if (stop) return;
+            const t = nu - t0;
+            let x;
+            if (t < T_UD) x = UD * glat(t / T_UD);
+            else if (t < T_UD + PAUSE) x = UD;
+            else if (t < T_UD + PAUSE + T_IND) x = UD * (1 - glat((t - T_UD - PAUSE) / T_IND));
+            else { cinemaChips.scrollLeft = 0; opdaterKant(); return; }
+            cinemaChips.scrollLeft = x;
+            requestAnimationFrame(trin);
+          };
+          requestAnimationFrame(trin);
         }
 
         function flipCinema(enter, efter) {
@@ -1929,6 +1980,7 @@ const metaDesc = rawMeta.length > 157
           // Kun når man ser efter: gør overgangen kaldbar uden at en video spiller.
           window.__fxEnter = () => flipCinema(true);
           window.__fxExit = () => flipCinema(false);
+          window.__fxKig = kigKnapper; // kig-hintet på knaprækken kan afprøves uden afspilning
         }
 
         const onPlayerStateChange = (event) => {
@@ -1945,6 +1997,8 @@ const metaDesc = rawMeta.length > 157
           if (isPhone() && !document.body.classList.contains('shorts-mode') && !document.body.classList.contains('cinema-mode')) {
             // Listen tegnes inde i overgangen (efter-kaldet), ellers ville den dukke op bagefter med et hop.
             flipCinema(true, tryInitCinemaBrowser);
+            // Efter overgangen (~0,4 sek.): kig-hint på knaprækken første gang (se kigKnapper()).
+            setTimeout(kigKnapper, 700);
           }
         };
 
