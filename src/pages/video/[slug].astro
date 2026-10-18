@@ -890,8 +890,10 @@ const metaDesc = rawMeta.length > 157
         z-index: 900 !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
       }
+      /* Plads til videoen + knaprækken (55 px) + 12 px luft = samme luft som mellem kortene (Jacob 18/10 kl. 14:00).
+         Før: 56.25vw + 15px + 55px gav 31 px luft, fordi siden i forvejen har ca. 15 px luft over indholdet. */
       body.cinema-mode .video-primary {
-        padding-top: calc(56.25vw + 15px + 55px) !important;
+        padding-top: calc(56.25vw + 51px) !important;
       }
 
       /* Teksten under videoen sprang ned i samme øjeblik som videoen sprang op
