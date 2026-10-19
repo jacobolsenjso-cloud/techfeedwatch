@@ -20,8 +20,12 @@ const slug: string = video.file.split('/').pop().replace('.md', '');
 const fm = video.frontmatter;
 const emner = fm.tags || fm.tag || [];
 const visEmne: string | undefined = maerke ?? (Array.isArray(emner) ? emner[0] : emner);
-// Stort billede (960x540) hvis artiklen har et AI-billede, ellers kortbilledet
-const billede = fs.existsSync(`public/billeder/${slug}.webp`) ? `/billeder/${slug}.webp` : `/kort/${slug}.webp`;
+// Stort billede (960x540), hvis artiklen har et AI-billede (samme regel som src/lib/aibillede.mjs).
+// Ellers INTET billede: det gamle abstrakte emnekort forstørret gav emnenavnet to gange og streger
+// bag titlen (set på /tag/robotics/ 19/10). I stedet en mørk flade med svag emnetoning.
+const harAi = fs.existsSync(`public/billeder/${slug}.webp`);
+const billede = `/billeder/${slug}.webp`;
+const emneFarve = (visEmne && TAG_COLORS[visEmne]) || '#2563eb';
 const uddrag = (() => {
   const s = (fm.summary || '').trim();
   if (s.length <= 260) return s;
@@ -29,8 +33,8 @@ const uddrag = (() => {
 })();
 ---
 <a href={`/video/${slug}`} class="stort-kort">
-  <div class="stort-kort-billede watch-card-thumb">
-    <img src={billede} alt="" width="960" height="540" loading="eager" fetchpriority="high" />
+  <div class={harAi ? 'stort-kort-billede watch-card-thumb' : 'stort-kort-billede stort-kort-uden-billede'} style={harAi ? undefined : `--emne: ${emneFarve}`}>
+    {harAi && <img src={billede} alt="" width="960" height="540" loading="eager" fetchpriority="high" />}
     <div class="stort-kort-tekst">
       {(ny || visEmne) && (
         <div class="stort-kort-maerker">
@@ -55,6 +59,10 @@ const uddrag = (() => {
   /* .stort-kort foran: sidernes egne .watch-card-thumb-regler (margin, radius) må ikke vinde */
   .stort-kort .stort-kort-billede { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; margin: 0; }
   .stort-kort-billede img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* Uden AI-billede: mørk flade, kun 22 % emnefarve blandet i (titlen står hvidt på en MØRK flade,
+     ikke på emnefarven), plus en svag cirkel som pynt */
+  .stort-kort .stort-kort-uden-billede { background: #0b1020; background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--emne) 30%, #0b1020) 0%, #0b1020 60%), linear-gradient(135deg, color-mix(in srgb, var(--emne) 22%, #0b1020), #0b1020); background-color: color-mix(in srgb, var(--emne) 22%, #0b1020); }
+  .stort-kort-uden-billede .stort-kort-tekst { background: none; padding-bottom: 22px; }
   /* Toningen er svagere i den nederste stribe, og bundluften (7 % af bredden) holder
      titlen over vandmærket "TechFeedWatch.com" nederst til højre - som på forsiden */
   .stort-kort-tekst { position: absolute; left: 0; right: 0; bottom: 0; padding: 70px 22px max(22px, 7%); background: linear-gradient(to top, rgba(2, 6, 23, 0.3) 0%, rgba(2, 6, 23, 0.88) 22%, rgba(2, 6, 23, 0.6) 62%, rgba(2, 6, 23, 0) 100%); }
