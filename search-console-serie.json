@@ -123,6 +123,29 @@
         "position": 10.7
       },
       "note": "Femte aflaesning, en uge efter den fjerde. FOERSTE GANG tallene flytter sig, og de flytter sig den gale vej: indekseret 82 -> 54 (-28) og ikke indekseret 769 -> 832 (+63), mens sitemappet kun voksede 557 -> 566 (+9). Googles data var sidst opdateret 09.10.2026. Soegekonsollen viser nu 7 aarsager, ikke 8 - 'Serverfejl (5xx)' er helt forsvundet fra listen (stod paa 0), og den er skrevet som 0 her for at bevare samme form. Labels er ogsaa aendret i brugerfladen ('Crawlet endnu ikke indekseret' uden tankestreg, 'Ikke fundet (fejl 404)'); de gamle noegler er bevaret, saa serie.mjs kan sammenligne. Aarsagerne summer til 832. Effektiviteten faldt videre: 50 -> 43 eksponeringer og 17 -> 16 klik i det rullende 28-dages vindue, position 8,8 -> 10,7. Jeg har IKKE maalt hvorfor indekseringen faldt - det staar der kun, at den gjorde."
+    },
+    {
+      "dato": "2026-10-19",
+      "adresser": 601,
+      "indekseret": 50,
+      "ikkeIndekseret": 837,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 523,
+        "Side med omdirigering": 135,
+        "Dublet uden kanonisk side valgt af brugeren": 65,
+        "Ikke fundet (404)": 63,
+        "Crawlet - endnu ikke indekseret": 47,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 22,
+        "eksponeringer": 35,
+        "klikrate": 62.9,
+        "position": 3.7
+      },
+      "note": "Sjette aflaesning, en uge efter den femte. Indekseret 54 -> 50 (-4), ikke indekseret 832 -> 837 (+5), mens sitemappet voksede 566 -> 601 (+35). Googles indekseringsdata staar paa 'Seneste opdatering: 12.10.2026' - samme dato som sidste aflaesning, saa indekseringstallene kan vaere delvist det samme datasaet, blot genberegnet. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er stadig ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 837. Effektiviteten vendte: klik 16 -> 22, eksponeringer 43 -> 35, klikrate 37,2 -> 62,9 %, position 10,7 -> 3,7 i det rullende 28-dages vindue (20/9-17/10), opdateret for 4,5 timer siden. Jeg har IKKE maalt hvorfor - det staar der kun, at det skete."
     }
   ]
 }
