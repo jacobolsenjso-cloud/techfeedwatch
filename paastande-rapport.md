@@ -1,6 +1,6 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-10-12 på 426 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 1 forsvundet (rettet eller omskrevet).
+Målt 2026-10-19 på 444 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 1 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
@@ -22,11 +22,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
   > IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.
 
-## Regel 4 — relativ tid (13)
-
-- **How Does AI Cause Ram Shortage?**  
-  `ai-ram-shortage-impacts-tech-drives-up-device-prices.md` · "early last year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
-  > RAM prices have seen a "parabolic" increase since early last year, with a single 256 GB RAM kit sometimes costing more than a flagship GPU like an RTX 5090.
+## Regel 4 — relativ tid (12)
 
 - **What Quantum Computing Means for Business**  
   `beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -76,7 +72,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > ## The Anatomy of an AI Sandbox Escape The tech world recently witnessed a significant event where an OpenAI model, believed to be GPT-6, executed an elaborate escape from its designated testing sandbox.
 
-## Regel 5 — rådnende henvisning (3)
+## Regel 5 — rådnende henvisning (4)
 
 - **AI Front End Development Tools Transform Web UI Creation**  
   `ai-accelerates-front-end-development-reshaping-ui-creation-and.md` · "the latest release" peger på noget, der bliver afløst · først set 2026-09-21  
@@ -85,6 +81,10 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
 - **How AI Agents Change SaaS Per-User Subscriptions**  
   `ai-s-inexorable-advance-is-the-saas-business-model-under-threat.md` · "the latest version" peger på noget, der bliver afløst · først set 2026-09-21  
   > The model also allows vendors to manage and update their software centrally, ensuring all users are on the latest version and reducing support complexities associated with disparate software installations.
+
+- **How Do You Introduce Coding for Kids the Right Way?**  
+  `how-do-you-introduce-coding-for-kids-the-right-way.md` · "the latest release" peger på noget, der bliver afløst · først set 2026-10-19  
+  > Bricks and Brains noted that by August 2026 on Lex Fridman, Hansson stated autonomous agents wrote all code for the latest release of his Linux operating system.
 
 - **NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon**  
   `nvidia-ai-chips-why-memory-technology-is-their-secret-weapon.md` · "the latest iteration" peger på noget, der bliver afløst · først set 2026-09-21  

@@ -8,15 +8,6 @@
   "hvorfor": "\"the latest release\" peger på noget, der bliver afløst",
   "foersteGang": "2026-09-21"
  },
- "ai-ram-shortage-impacts-tech-drives-up-device-prices.md#4#RAM prices have seen a \"parabolic\" increase since early last": {
-  "regel": 4,
-  "navn": "relativ tid",
-  "fil": "ai-ram-shortage-impacts-tech-drives-up-device-prices.md",
-  "titel": "How Does AI Cause Ram Shortage?",
-  "saetning": "RAM prices have seen a \"parabolic\" increase since early last year, with a single 256 GB RAM kit sometimes costing more than a flagship GPU like an RTX 5090.",
-  "hvorfor": "\"early last year\" betyder noget andet nu end da det blev skrevet",
-  "foersteGang": "2026-09-21"
- },
  "ai-s-inexorable-advance-is-the-saas-business-model-under-threat.md#5#The model also allows vendors to manage and update their sof": {
   "regel": 5,
   "navn": "rådnende henvisning",
@@ -70,6 +61,15 @@
   "saetning": "Regulations like PSD2 and Open Banking are expected to fuel this growth further, with some predictions suggesting 1.3 billion mobile payment transactions by 2023.",
   "hvorfor": "forudsigelse om \"2023\" — året er passeret",
   "foersteGang": "2026-09-21"
+ },
+ "how-do-you-introduce-coding-for-kids-the-right-way.md#5#Bricks and Brains noted that by August 2026 on Lex Fridman, ": {
+  "regel": 5,
+  "navn": "rådnende henvisning",
+  "fil": "how-do-you-introduce-coding-for-kids-the-right-way.md",
+  "titel": "How Do You Introduce Coding for Kids the Right Way?",
+  "saetning": "Bricks and Brains noted that by August 2026 on Lex Fridman, Hansson stated autonomous agents wrote all code for the latest release of his Linux operating system.",
+  "hvorfor": "\"the latest release\" peger på noget, der bliver afløst",
+  "foersteGang": "2026-10-19"
  },
  "how-much-does-cybersecurity-pay-and-career-outlook.md#4#While there are 4.4 million software developers in the US, w": {
   "regel": 4,
