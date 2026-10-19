@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-10-19T02:27:22.446Z",
-  "articleCount": 442,
+  "updated": "2026-10-19T04:28:41.175Z",
+  "articleCount": 443,
   "lastArticle": {
-    "at": "2026-10-19T02:27:22.446Z",
+    "at": "2026-10-19T04:28:41.175Z",
     "slugs": [
-      "cybersecurity-frameworks-and-how-modern-teams-use-them"
+      "qubit-coherence-how-quantum-states-survive-noise"
     ]
   },
   "lastLinkRepair": {
