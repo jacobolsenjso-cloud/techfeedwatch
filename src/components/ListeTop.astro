@@ -1,0 +1,68 @@
+---
+// Toppen af emne- og listesider (19/10): et felt med en svag toning i emnets farve (eller sitets
+// blå-violette på sider uden emne), en kraftig farvestreg øverst og en dekorativ cirkel.
+// Farven er KUN baggrund/pynt - al tekst står i sitets almindelige tekstfarver (farvereglen:
+// emnefarver bærer aldrig hvid tekst og står aldrig som tekst).
+interface Props {
+  /** Emnets farve; uden den bruges sitets blå-violette */
+  accent?: string;
+  /** Lille linje over overskriften, fx "Topic" */
+  eyebrow?: string;
+  /** Brødkrummer: [{ tekst, href? }] - sidste uden href er den aktuelle side */
+  krummer?: { tekst: string; href?: string }[];
+  /** Kort beskrivelse under overskriften */
+  beskrivelse?: string;
+  /** Målte tal, fx "222 articles · newest Oct 18, 2026" */
+  tal?: string;
+}
+const { accent, eyebrow, krummer = [], beskrivelse, tal } = Astro.props;
+const stil = accent ? `--top-a: ${accent}; --top-b: ${accent};` : '--top-a: #2563eb; --top-b: #6d28d9;';
+---
+<header class="liste-top" style={stil}>
+  <span class="liste-top-cirkel" aria-hidden="true"></span>
+  {krummer.length > 0 && (
+    <nav class="breadcrumbs-bar liste-top-krummer" aria-label="Breadcrumb">
+      {krummer.map((k, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">/</span>}
+          {k.href ? <a href={k.href}>{k.tekst}</a> : <span aria-current="page">{k.tekst}</span>}
+        </>
+      ))}
+    </nav>
+  )}
+  {eyebrow && <p class="liste-top-eyebrow"><span class="liste-top-prik" aria-hidden="true"></span>{eyebrow}</p>}
+  <slot name="titel" />
+  {beskrivelse && <p class="liste-top-beskrivelse">{beskrivelse}</p>}
+  {tal && <p class="liste-top-tal">{tal}</p>}
+  <slot />
+</header>
+
+<style is:global>
+  /* background-color = forløbets mest farvede hjørne. Kontrastmålingen (audit-a11y) kan ikke læse
+     forløb og måler mod baggrundsfarven - så den måler mod det sværeste sted for teksten. */
+  .liste-top { position: relative; overflow: hidden; margin: 0 0 30px; padding: 22px 28px 26px; border-radius: 20px; border: 1px solid var(--border-color); border-top: 5px solid var(--top-a); background: var(--card-bg); background: linear-gradient(135deg, color-mix(in srgb, var(--top-a) 15%, var(--card-bg)) 0%, color-mix(in srgb, var(--top-b) 7%, var(--card-bg)) 55%, var(--card-bg) 100%); background-color: color-mix(in srgb, var(--top-a) 15%, var(--card-bg)); }
+  body.dark-mode .liste-top { background: linear-gradient(135deg, color-mix(in srgb, var(--top-a) 22%, var(--card-bg)) 0%, color-mix(in srgb, var(--top-b) 10%, var(--card-bg)) 55%, var(--card-bg) 100%); background-color: color-mix(in srgb, var(--top-a) 22%, var(--card-bg)); }
+  .liste-top-cirkel { position: absolute; right: -60px; top: -70px; width: 260px; height: 260px; border-radius: 50%; border: 34px solid var(--top-b); opacity: 0.13; pointer-events: none; }
+  .liste-top > :not(.liste-top-cirkel) { position: relative; }
+  /* .liste-top foran: emnesidens egen .breadcrumbs-bar (grå boks) må ikke vinde inde i feltet */
+  .liste-top .liste-top-krummer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: transparent; border: 0; padding: 0; margin: 0 0 6px; font-size: 0.9rem; color: #4b5563; }
+  body.dark-mode .liste-top .liste-top-krummer { color: #b6bcc7; }
+  .liste-top-eyebrow { display: flex; align-items: center; gap: 8px; margin: 4px 0 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #4b5563; }
+  body.dark-mode .liste-top-eyebrow { color: #b6bcc7; }
+  .liste-top-prik { width: 10px; height: 10px; border-radius: 50%; background: var(--top-a); box-shadow: 0 0 0 3px color-mix(in srgb, var(--top-a) 25%, transparent); }
+  .liste-top h1 { margin: 0 0 10px; font-size: 2.3rem; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; border: 0; padding: 0; }
+  .liste-top-beskrivelse { margin: 0 0 12px; max-width: 900px; font-size: 1.05rem; line-height: 1.6; color: #374151; }
+  body.dark-mode .liste-top-beskrivelse { color: #c4c9d2; }
+  .liste-top-tal { margin: 0; font-size: 0.9rem; font-weight: 700; color: #4b5563; }
+  /* Små grå noter (følg-knap, daglig besked) var #6b7280: kun 3,71:1 på rød toning (Robotics) og
+     4,30:1 på orange (Crypto) - kravet er 4,5:1. Mørkere inde i det farvede felt. */
+  .liste-top .emne-foelg-note, .liste-top .push-note { color: #374151; }
+  body.dark-mode .liste-top .emne-foelg-note, body.dark-mode .liste-top .push-note { color: #c4c9d2; }
+  body.dark-mode .liste-top-tal { color: #b6bcc7; }
+  @media (max-width: 768px) {
+    .liste-top { padding: 16px 16px 20px; border-radius: 16px; margin-bottom: 22px; }
+    .liste-top-cirkel { width: 170px; height: 170px; border-width: 24px; right: -50px; top: -60px; }
+    .liste-top h1 { font-size: 1.55rem; }
+    .liste-top-beskrivelse { font-size: 0.95rem; }
+  }
+</style>

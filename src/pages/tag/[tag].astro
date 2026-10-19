@@ -5,6 +5,8 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
 import { ALLE_EMNER, INDEX_GRAENSE } from '../../lib/emner.mjs';
+import ListeTop from '../../components/ListeTop.astro';
+import StortKort from '../../components/StortKort.astro';
 
 const PAGE_SIZE = 24;
 
@@ -89,7 +91,12 @@ const tyndt = totalCount < INDEX_GRAENSE;
 const formatDate = (d: string) => {
   const parsed = new Date(d);
   return isNaN(parsed.getTime()) ? d : parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-};// CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
+};
+// 19/10: målt ved build - antal og nyeste dato står i toppen; første artikel vises som stort kort
+const topTal = totalCount === 0 ? '' : `${totalCount} ${totalCount === 1 ? 'article' : 'articles'} · newest ${formatDate(videos[0].frontmatter.date)}`;
+const stortKort = pageVideos[0];
+const restVideos = pageVideos.slice(1);
+// CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
 // så en maskine kunne ikke se, at siden ER en liste, eller hvad der står på den.
 // Listen må kun rumme det, siden faktisk viser — ellers lover schemaet mere end
 // siden holder. publisher peger på organisationen via @id, så noden kun findes
@@ -150,6 +157,12 @@ const listeSchema = {
     .emne-bygges p { margin: 0; line-height: 1.55; }
     .tag-description { font-size: 1.1rem; line-height: 1.6; color: #4b5563; margin-top: 0; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); max-width: 1000px; }
     body.dark-mode .tag-description { color: #9ca3af; }
+    /* 19/10: inde i det farvede felt står emnefarven allerede i stregen øverst, så ingen kant under h1;
+       følg-knappen står under tallene i stedet for at trække op under beskrivelsen */
+    .liste-top .header-title { border-bottom: 0; padding-bottom: 0; margin-bottom: 10px; }
+    .liste-top .emne-foelg-raekke { margin: 16px 0 0; }
+    .liste-top .emne-push { margin: 12px 0 0; }
+    .liste-top .emne-foelg:not([aria-pressed="true"]) { background: var(--card-bg); }
 
     .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 30px; }
     .watch-card { text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
@@ -186,19 +199,16 @@ const listeSchema = {
 
   <div class="tag-page-wrapper">
     
-    <div class="breadcrumbs-bar">
-      <a href="/">Frontpage</a> <span>/</span> 
-      <a href="/library">Library</a> <span>/</span> 
-      <span>{tagName}</span>
-    </div>
-
-    <h1 class="header-title" style={`--tag-accent: ${tagAccent}`}>Articles in <span>#{tagName}</span></h1>
-    <p class="tag-description">{currentDescription}</p>
-    <div class="emne-foelg-raekke">
-      <button type="button" class="emne-foelg" data-emne={tagName} aria-pressed="false">🔔 <span class="emne-foelg-tekst">Follow this topic</span></button>
-      <span class="emne-foelg-note">The bell at the top then counts only the topics you follow.</span>
-    </div>
-    <div class="notif-push emne-push" data-push-felt hidden></div>
+    {/* 19/10: toppen er et felt i emnets farve (ListeTop). h1-teksten er uændret. */}
+    <ListeTop accent={tagAccent} eyebrow="Topic" beskrivelse={currentDescription} tal={topTal}
+      krummer={[{ tekst: 'Frontpage', href: '/' }, { tekst: 'Library', href: '/library' }, { tekst: tagName }]}>
+      <h1 slot="titel" class="header-title">Articles in <span>#{tagName}</span></h1>
+      <div class="emne-foelg-raekke">
+        <button type="button" class="emne-foelg" data-emne={tagName} aria-pressed="false">🔔 <span class="emne-foelg-tekst">Follow this topic</span></button>
+        <span class="emne-foelg-note">The bell at the top then counts only the topics you follow.</span>
+      </div>
+      <div class="notif-push emne-push" data-push-felt hidden></div>
+    </ListeTop>
     {tyndt && (
       <div class="emne-bygges" role="note">
         <span class="emne-bygges-ikon" aria-hidden="true">🛠️</span>
@@ -209,8 +219,10 @@ const listeSchema = {
       </div>
     )}
     
+    {stortKort && <StortKort video={stortKort} maerke={tagName} />}
+
     <div class="video-grid">
-      {pageVideos.map((video: any) => (
+      {restVideos.map((video: any) => (
         <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
           <div class="watch-card-thumb">
             <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt={video.frontmatter.title} loading="lazy" />

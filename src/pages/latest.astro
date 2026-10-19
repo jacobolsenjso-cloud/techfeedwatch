@@ -1,5 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import ListeTop from '../components/ListeTop.astro';
+import StortKort from '../components/StortKort.astro';
 
 const allVideos = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
 
@@ -33,6 +35,12 @@ const sections = [
   { title: 'Yesterday', items: yesterday },
   { title: 'Recently added', items: earlier },
 ].filter((s) => s.items.length > 0);
+
+// 19/10: den allernyeste artikel vises som stort kort øverst og springes over i sin sektions gitter.
+// StortKort skal have artiklen i samme form som import.meta.glob giver (.file + .frontmatter).
+const foerste: any = sections[0]?.items[0] ?? null;
+const foersteVideo = foerste ? allVideos.find((v: any) => v.file.split('/').pop().replace('.md', '') === foerste.slug) : null;
+const foersteErIDag = !!foerste && foerste.day === todayStr;
 
 // Beskrivelsen lovede "today and yesterday", men siden viser også en
 // "Recently added"-sektion når de to dage er tynde. Den lovede altså noget
@@ -76,7 +84,10 @@ const listeSchema = {
     body.dark-mode .latest-sub { color: #9ca3af; }
 
     .latest-section { margin-bottom: 44px; }
-    .latest-day-title { font-size: 1.4rem; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
+    /* 19/10: større, fede sektionsoverskrifter med blå-violet streg foran - som på forsiden */
+    .latest-day-title { position: relative; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 18px 0; padding-left: 15px; display: flex; align-items: center; gap: 10px; }
+    .latest-day-title::before { content: ''; position: absolute; left: 0; top: 0.18em; bottom: 0.18em; width: 5px; border-radius: 3px; background: linear-gradient(#2563eb, #6d28d9); }
+    .latest-header { margin: 0 0 10px; }
     .latest-count { font-size: 0.85rem; font-weight: 600; color: #6b7280; background: var(--hover-bg); border-radius: 20px; padding: 2px 10px; }
     body.dark-mode .latest-count { color: #9ca3af; }
 
@@ -110,18 +121,24 @@ const listeSchema = {
   </style>
 
   <div class="latest-wrapper">
-    <h1 class="latest-header">🆕 Latest</h1>
-    <p class="latest-sub">Fresh analysis from the last couple of days — AI, tech, fintech, and crypto.</p>
+    {/* 19/10: samme felt i sitets farver og samme store første kort som emne- og listesiderne */}
+    <ListeTop eyebrow="Updated every day" beskrivelse="Fresh analysis from the last couple of days — AI, tech, fintech, and crypto."
+      tal={`${today.length} today · ${yesterday.length} yesterday`}>
+      <h1 slot="titel" class="latest-header">🆕 Latest</h1>
+    </ListeTop>
 
     {sections.length === 0 && (
       <p class="latest-empty">No new articles right now. Check back shortly!</p>
     )}
 
-    {sections.map((section) => (
+    {foersteVideo && <StortKort video={foersteVideo} ny={foersteErIDag} />}
+
+    {/* En sektion, hvis eneste artikel allerede står i det store kort, vises ikke (ellers en tom overskrift) */}
+    {sections.filter((s) => s.items.some((item: any) => item !== foerste)).map((section) => (
       <div class="latest-section">
         <h2 class="latest-day-title">{section.title} <span class="latest-count">{section.items.length}</span></h2>
         <div class="latest-grid">
-          {section.items.map((item: any) => (
+          {section.items.filter((item: any) => item !== foerste).map((item: any) => (
             <a href={`/video/${item.slug}`} class="watch-card">
               <div class="watch-card-thumb">
                 <img src={`/kort/${item.slug}.webp`} alt={item.fm.title} loading="lazy" />

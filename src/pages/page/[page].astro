@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import SourceLine from '../../components/SourceLine.astro';
+import ListeTop from '../../components/ListeTop.astro';
+import StortKort from '../../components/StortKort.astro';
 
 export async function getStaticPaths({ paginate }: any) {
   const allVideos = Object.values(import.meta.glob('../../content/videos/*.md', { eager: true }));
@@ -131,10 +133,16 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the TechFeedWa
         margin-right: -15px;
         width: calc(100% + 30px);
         padding: 10px 15px;
-        /* Centreret på mobil ligesom forsiden (26/8) — venstreklumpede rækker
-           efterlod skæv luft til højre og matchede ikke den centrerede knap. */
-        justify-content: center;
+        /* 19/10: som forsiden - ÉN række man swiper i, startende i venstre side, med toning i
+           højre kant. Før stod den centreret, og i en række, der er bredere end skærmen, kunne
+           man så ikke nå knapperne længst til venstre. */
+        justify-content: flex-start;
+        gap: 8px;
+        -webkit-mask-image: linear-gradient(to right, #000 82%, transparent);
+        mask-image: linear-gradient(to right, #000 82%, transparent);
       }
+      .tag-bar-container.ved-enden { -webkit-mask-image: none; mask-image: none; }
+      .filter-tag { flex: none; min-height: 40px; }
 
       .pagination { gap: 6px; }
       .pagination-btn, .pagination-num { min-width: 44px; height: 44px; padding: 0 8px; font-size: 0.85rem; }
@@ -151,13 +159,15 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the TechFeedWa
   <div class="frontpage-wrapper" id="videoContainer">
 
     <div id="defaultView">
-      <div class="page-heading">
-        <h1>All articles</h1>
-        <p class="page-heading-note">Page {page.currentPage} of {page.lastPage} · newest first</p>
-      </div>
+      {/* 19/10: samme felt i sitets blå-violette farver og samme store første kort som emnesiderne */}
+      <ListeTop eyebrow={`Archive · page ${page.currentPage} of ${page.lastPage}`} tal={`${page.total} articles · newest first`}>
+        <h1 slot="titel">All articles</h1>
+      </ListeTop>
+
+      {page.data[0] && <StortKort video={page.data[0]} />}
 
       <div class="video-grid">
-        {page.data.map((video: any) => (
+        {page.data.slice(1).map((video: any) => (
           <a href={`/video/${video.file.split('/').pop().replace('.md', '')}`} class="watch-card">
             <div class="watch-card-thumb">
               <img src={`/kort/${video.file.split('/').pop().replace('.md', '')}.webp`} alt="" width="320" height="180" loading="lazy" />
@@ -308,6 +318,15 @@ const pageDesc = `Page ${page.currentPage} of ${page.lastPage} in the TechFeedWa
             filteredResults.innerHTML = '';
           }
         }
+      }
+
+      // 19/10: toningen i højre kant af emnerækken fjernes, når man har swipet helt til enden
+      const raekke = document.querySelector('.tag-bar-container');
+      if (raekke) {
+        const tjekEnde = () => raekke.classList.toggle('ved-enden', raekke.scrollLeft + raekke.clientWidth >= raekke.scrollWidth - 4);
+        raekke.addEventListener('scroll', tjekEnde, { passive: true });
+        window.addEventListener('resize', tjekEnde);
+        tjekEnde();
       }
 
       // Tekstsøgning håndteres nu globalt via dropdown i toppen (MainLayout). Tag-filtrering bevares.
