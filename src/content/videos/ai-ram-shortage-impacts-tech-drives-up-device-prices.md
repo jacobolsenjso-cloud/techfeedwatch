@@ -12,8 +12,8 @@ summary: "Artificial intelligence causes a global RAM shortage because cutting-e
 metaDescription: "Wondering how AI causes a RAM shortage? Discover why HBM manufacturing consumes silicon capacity, driving up global computer memory prices."
 targetQuestion: "how does ai cause a ram shortage"
 duration: "21:05"
-viewCount: 1377224
-viewsUpdated: "2026-10-16"
+viewCount: 1377666
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

@@ -11,8 +11,8 @@ summary: "Search Engine Optimization (SEO) is the practice of increasing website
 metaDescription: "Learn what SEO is and how it works, from Google's core mission to essential strategies like keyword research and website optimization."
 targetQuestion: "what is seo and how does it work"
 duration: "46:36"
-viewCount: 2
-viewsUpdated: "2026-09-15"
+viewCount: 3
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

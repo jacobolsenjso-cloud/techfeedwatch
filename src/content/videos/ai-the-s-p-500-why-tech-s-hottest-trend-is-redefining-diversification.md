@@ -13,8 +13,8 @@ summary: "Investing in the S&P 500 exposes portfolios to unprecedented mega-cap 
 metaDescription: "Understand S&P 500 diversification risk, record mega-cap concentration, and how equal-weight or global strategies protect modern portfolios."
 targetQuestion: "s&p 500 diversification risk"
 duration: "12:02"
-viewCount: 799079
-viewsUpdated: "2026-10-16"
+viewCount: 804835
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

@@ -12,8 +12,8 @@ summary: "Coding bootcamps are intensive, short-term educational programs design
 metaDescription: "Understand what coding bootcamps are, how they work, and their increasing relevance for aspiring software engineers in the AI era."
 targetQuestion: "what are coding bootcamps"
 duration: "11:06"
-viewCount: 35
-viewsUpdated: "2026-10-13"
+viewCount: 37
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 faqs:

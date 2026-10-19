@@ -12,8 +12,8 @@ summary: "Mixed reality visually integrates computer-generated 3D content direct
 metaDescription: "Wondering what mixed reality looks like? Discover how digital objects blend into physical spaces, how headsets render them, and visual trade-offs."
 targetQuestion: "what does mixed reality look like"
 duration: "9:29"
-viewCount: 41656
-viewsUpdated: "2026-10-18"
+viewCount: 41800
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-18"

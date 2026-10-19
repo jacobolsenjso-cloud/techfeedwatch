@@ -12,8 +12,8 @@ summary: "Open source AI agents represent a pivotal shift in artificial intellig
 metaDescription: "Understand what open source AI agents are, how they work, their benefits for developers, and where to find practical project examples."
 targetQuestion: "what are open source ai agents"
 duration: "15:54"
-viewCount: 152445
-viewsUpdated: "2026-10-16"
+viewCount: 152512
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -12,8 +12,8 @@ summary: "Quantum computing is physically real and functioning in research labor
 metaDescription: "Is quantum computing possible? Discover whether scalable quantum processors can overcome physical noise to outperform classical supercomputers."
 targetQuestion: "is quantum computing possible"
 duration: "11:28"
-viewCount: 7974
-viewsUpdated: "2026-10-16"
+viewCount: 8049
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 faqs:

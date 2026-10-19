@@ -12,8 +12,8 @@ summary: "Computer programming works by translating human-readable logic into bi
 metaDescription: "Discover how programming works in a computer, from source code translation to memory management and the CPU fetch-decode-execute cycle."
 targetQuestion: "how does programming work in a computer"
 duration: "8:09"
-viewCount: 0
-viewsUpdated: "2026-10-17"
+viewCount: 4
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 faqs:

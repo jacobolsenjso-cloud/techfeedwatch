@@ -12,8 +12,8 @@ summary: "Virtual reality glasses function by pairing stereoscopic micro-display
 metaDescription: "Learn how virtual reality glasses work through stereoscopic displays, optical lenses, motion tracking sensors, and low-latency rendering pipelines."
 targetQuestion: "how does virtual reality glasses work"
 duration: "7:50"
-viewCount: 119
-viewsUpdated: "2026-10-16"
+viewCount: 130
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-14"

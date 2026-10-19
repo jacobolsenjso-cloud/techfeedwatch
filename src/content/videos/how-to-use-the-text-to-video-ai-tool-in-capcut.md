@@ -12,8 +12,8 @@ summary: "CapCut has expanded beyond standard timeline editing into structured t
 metaDescription: "Learn how to use text to video in CapCut AI Video Studio with character consistency, model selection, prompt controls, and scene-stitching tools."
 targetQuestion: "how to use text to video in capcut"
 duration: "6:20"
-viewCount: 109734
-viewsUpdated: "2026-10-16"
+viewCount: 109736
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 faqs:

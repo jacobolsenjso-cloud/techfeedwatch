@@ -12,8 +12,8 @@ summary: "AI-native service companies represent a new breed of businesses rebuil
 metaDescription: "Discover what AI native service companies are, how they operate, their financial models, and why they're poised to capture trillions in new market value."
 targetQuestion: "what are ai native service companies"
 duration: "52:31"
-viewCount: 165745
-viewsUpdated: "2026-10-16"
+viewCount: 167266
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

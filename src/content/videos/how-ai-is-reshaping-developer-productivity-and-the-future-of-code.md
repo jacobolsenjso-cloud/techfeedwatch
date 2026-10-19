@@ -12,8 +12,8 @@ summary: "AI coding skills refer to the sophisticated capabilities that artifici
 metaDescription: "Explore what AI coding skills mean for modern development, how AI agents use structured approaches for code generation."
 targetQuestion: "what are ai coding skills"
 duration: "26:50"
-viewCount: 103320
-viewsUpdated: "2026-10-16"
+viewCount: 103680
+viewsUpdated: "2026-10-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"
