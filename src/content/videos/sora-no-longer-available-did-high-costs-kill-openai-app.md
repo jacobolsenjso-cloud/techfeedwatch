@@ -32,7 +32,7 @@ OpenAI retired Sora because the platform consumed massive computing power while 
 
 As a result, the standalone video generation tool and its associated creative interfaces are no longer accessible to the public.
 
-Earlier, [Sora AI Defined Generative Video Before Its Sudden Collapse](/video/sora-ai-defined-generative-video-before-its-sudden-collapse) by producing fluid, high-resolution clips from simple prompts. Yet technical novelty alone could not sustain an expensive consumer platform that struggled to retain daily users.
+Earlier, [What Is Sora AI and How Does the Video Generator Work](/video/sora-ai-defined-generative-video-before-its-sudden-collapse) by producing fluid, high-resolution clips from simple prompts. Yet technical novelty alone could not sustain an expensive consumer platform that struggled to retain daily users.
 
 ## OpenAI's Official Reasons and Timeline for Sunsetting Sora
 
