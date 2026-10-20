@@ -192,7 +192,9 @@ export function noegleFakta(soeg, brugte, maks = 3) {
   const sider = new Set();
   for (const x of kand) if (valgt.length < maks && !sider.has(x.k.domaene)) { valgt.push(x); sider.add(x.k.domaene); }
   for (const x of kand) if (valgt.length < maks && !valgt.includes(x)) valgt.push(x);
-  if (valgt.length < 3) return [];
+  // 2 i stedet for 3 (Jacobs valg 20/10): alt-eller-intet ved 3 gav ingen boks på 7 af 13
+  // nye artikler. To kildebelagte fakta er stadig en troværdig boks; alle andre krav er uændrede.
+  if (valgt.length < 2) return [];
   // Vises i søgningens rækkefølge (den følger delspørgsmålene), ikke i udvælgelsens.
   return valgt.sort((a, b) => a.f.nr - b.f.nr).map((x) => ({ text: x.d.tekst, source: x.d.kilde, url: x.k.url }));
 }
