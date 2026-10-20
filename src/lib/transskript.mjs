@@ -63,7 +63,9 @@ async function videoLaengdeSek(videoId) {
 async function hentViaGemini(videoId, onLog) {
   if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY mangler til Gemini-transskript');
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-  const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768, temperature: 0 } });
+  // 65536 (20/10): modellens maks. En lang video (kørsel 783: tænkning ~17.000 + transskript
+  // ~15.800) ramte loftet ved 32768, så transskriptet blev klippet.
+  const model = hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 65536, temperature: 0 } });
   const t0 = Date.now();
   const res = await model.generateContent([
     { fileData: { fileUri: `https://www.youtube.com/watch?v=${videoId}` }, videoMetadata: { fps: GEMINI_FPS } },
