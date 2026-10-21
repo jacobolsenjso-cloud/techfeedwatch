@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 171** — brug kun v171). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 172** — brug kun v172). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 171** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 12:27): HJERNEN ER KOMPLET (6 afsnit erfaringer inkl. AdSense-historien; 5 filer i `C:\Users\jacob\jacob-hjerne`), test 1 bestået, test 2 sendt (cybersikkerhed med Jacobs hacker-historie, venter på dom). Robot-koblingsplan fastlagt: privat repo `jacob-hjerne` + læsenøgle som secret i techfeedwatch + bremse (perspektiv kun ved holdningsramte emner, højst ét afsnit); bygges efter 27/10 på Jacobs ok. 20/10: Key facts med 2 fakta (`499dd9d8`), klippede svar rettet, fuld gennemgang fejlfri. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + forslag 2 (According to-form) + foretræk kvalitetskilder.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs dom over test 2; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (21/10-2026 kl. 17:25): FAKTABOKSEN ER FÆRDIGBYGGET OG BEVIST - forslag 2 live (`4737cad2`: fakta skal starte "According to <udgiver>", cache v5) og prøvekørsel #15 skrev en artikel med FAKTABOKS: 2 fakta -> boksen vises (2-fakta-reglen fra 20/10); 0 klippede svar i begge prøvekørsler, så lofterne fra 20/10 holder. ROBOT-KOBLINGEN: trin 1+2 gjort (privat repo `jacob-hjerne` med de 5 hjernefiler, commit `a78740b`); NÆSTE: trin 3 (læsenøgle som secret - kræver Jacob), trin 4+5 (workflow + prompt med bremsen).** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** trin 3-5 af robot-koblingen når Jacob er tilbage; OPFØLGNING ca. 27/10: faktaboks-dækning bredt + "KLIPPET" + foretræk kvalitetskilder; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 17:25 - techfeedwatch: faktaboks forslag 2 LIVE og BEVIST; robot-koblingens trin 1+2 gjort
+- **Jacob kl. 12:37:** "Du bygger faktaboks færdig. Bagefter starter vi med trin 1 med Robot-koblingen. Du koder."
+- **Forslag 2 live (`4737cad2`):** søge-prompten KRÆVER nu, at hvert faktum starter "According to <udgiver>, " og kan stå alene - formen, faktaboksen (`noegleFakta`) kræver. CACHE_VERSION 4 -> 5, så gamle søgninger ikke genbruges.
+- **Bevist med to prøvekørsler ("Prøveartikel (udgives ikke)", startet i Jacobs Chrome):** #14 skrev ingen artikel (afvist af redaktørtjek: 1 ubesvaret delspørgsmål - kendt fejltype fra 16/10, før ændringen) men 0 klip. **#15 (`39587752081`, 21 min., ~0,93 USD): artikel skrevet ("pc-building-basics-explained-for-desktop-hardware"), FAKTABOKS: 2 fakta -> boksen VISES takket være 2-fakta-reglen fra 20/10, og 0 klippede svar.** Begge faktaboks-rettelser virker altså sammen; lofterne fra 20/10 holder (0 klip i begge kørsler). Dækningen måles bredt ved opfølgningen ca. 27/10.
+- **Robot-koblingen, trin 1+2 gjort:** privat repo `jacob-hjerne` oprettet på GitHub (bekræftet "Private"; oprettet i Jacobs Chrome) og alle 5 hjernefiler pushet fra `C:\Users\jacob\jacob-hjerne` (commit `a78740b`, git fra Windows). **Mangler: trin 3** (læsenøgle til jacob-hjerne som secret i techfeedwatch - kræver Jacob), **trin 4** (workflow henter hjernen) og **trin 5** (hjernen ind i skriveprompten med bremsen).
+- Målingen af kørsel #15 skete fra skyen via GitHubs API (pc'en sov; repoet koblet til sessionen med læse-/skriveadgang - git køres fortsat KUN fra Windows).
+- **Lære:** prøvekørsler tager nu op til ~21 min. (cache v5 = alle søgninger friske) - regn med det ved fremtidige prøvekørsler.
+
 
 ### 21/10-2026 kl. 12:27 - AI Second Brain: AdSense-historien i hjernen, test 2 sendt, plan for robot-koblingen fastlagt
 - **Jacob dikterede AdSense-historien** (afvist 3 gange pga. tyndt indhold; læren: det menneskelige aspekt - holdninger og synspunkter - skal med; AdSense har strenge krav, især efter AI). Gemt i `erfaringer.md`. Idé noteret (ikke besluttet): historien kan senere blive en guide/about-afsnit - det ærligste svar på "menneskelig indsats"-kravet før AdSense nr. 4.
