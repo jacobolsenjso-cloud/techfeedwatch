@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 173** — brug kun v173). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 174** — brug kun v174). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 173** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 19:05): ROBOT-KOBLINGEN ER BYGGET (trin 3-5) på gren `udkast-hjerne` (`b16e453d`) - main urørt, VENTER på Jacobs flet-ja. Nøgle: deploy-nøgle (read-only) + secret HJERNE_NOEGLE, aldrig vist. Tre prøvekørsler: 2 afvist af værnene (korrekt - bl.a. BLS-tal uden for researchen), 1 SUCCES med hjernen aktiv (1.629 ord, faktaboks, 0 klip; bremsen holdt bevidst førstepersonen tilbage, da emnet ikke ramte en holdning). Tidligere i dag: faktaboks færdigbygget og bevist; hjernen komplet i privat repo jacob-hjerne.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs flet-ja til udkast-hjerne; OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + foretræk kvalitetskilder; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (21/10-2026 kl. 19:37): HJERNEN ER I DRIFT - `udkast-hjerne` flettet til main (`03e980af`, check-run grøn, live); robotten skriver med Jacobs stemme fra kørslen kl. 20:17 (bremse: holdninger kun ved emnematch, højst ét afsnit; første driftskørsel bekræftes ~20:51). Hjernen udvidet med "Uddannelse & karriere i tech" (`3ae810d`). Konto-gennemgang: jacob-hjerne PRIVATE, 0 åbne Dependabot-advarsler i techfeedwatch, alt grønt i techmediaarch/gentleaiguide.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste (kræver Jacob):** gentleaiguide PR #8 venter på Merge/Close (robotten står stille imens); slå Dependabot til på techmediaarch + gentleaiguide; ok til at slette grenene udkast-15/udkast-17/udkast-hjerne og testrepoet miniature-spork. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + stemmen i drift + foretræk kvalitetskilder. Ældre: Crypto ingen nye artikler siden 4/8; sticky video på telefon; Googles ikon ca. 25/10; localhost-testtilmelding; slet boblen efter 25/10; kurser 1/11; 9 forældreløse billeder + og-default-v2.png.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 19:37 - HJERNEN ER I DRIFT (flettet til main) + gennemgang af hele GitHub-kontoen
+- **Jacob kl. 19:32:** "Ja, du må gerne flette udkast-hjerne til main! Tjek lige for fejl, og gå lige min GitHub konto igennem."
+- **Ny holdning i hjernen først (Jacobs ord, kl. 19:27):** "Uddannelse & karriere i tech" - langt uden formel uddannelse hvis man er nysgerrig; i cybersikkerhed er certificeringer og grundighed vigtige, for fejl har store konsekvenser. Pushet til jacob-hjerne (`3ae810d`) med engelske matchord, så bremsen rammer artikler om studievalg.
+- **FLETTET:** `udkast-hjerne` -> main (`03e980af`, robotten pushede imens - lagt rent ovenpå). Check-run success; build.json = `03e980af`. **Robotten skriver med hjernen fra næste kørsel (20:17)** - første driftskørsel bekræftes ca. 20:51 (påmindelse sat).
+- **Konto-gennemgang (5 repoer):** `jacob-hjerne` bekræftet PRIVATE med read-only deploy-nøgle; techfeedwatch: 0 åbne Dependabot-advarsler (30 lukkede), 0 åbne PR'er, kun 1 fejlet kørsel på 10 dage (prøveartikel #11, kendt); techmediaarch: ALLE kørsler grønne (robot + tomgangsalarm); gentleaiguide: kørsler grønne.
+- **FUND, kræver Jacob:** (1) **gentleaiguide PR #8 "How Does Google AI Work" står åben og grøn - robotten venter på Merge/Close, præcis som #3 i september.** (2) Dependabot-advarsler er SLÅET FRA på techmediaarch og gentleaiguide (gratis advarsler om sårbare pakker - anbefales slået til i repo-Settings). (3) Oprydning med Jacobs ok: GitHub-grenene udkast-15 og udkast-17 (gamle prøveartikler) + udkast-hjerne (flettet), og det private testrepo "miniature-spork" ("Test").
+
 
 ### 21/10-2026 kl. 19:05 - Robot-koblingen: trin 3-5 bygget og prøvet - main urørt, venter på Jacobs flet-ja
 - **Trin 3 (nøglen):** deploy-nøgle "techfeedwatch-robot (read)" på jacob-hjerne (KUN læsning) + privat nøgle som secret `HJERNE_NOEGLE` i techfeedwatch. Nøglen blev ALDRIG vist - den gik kun via udklipsholderen (ryddet bagefter). Jacob bekræftede selv GitHubs sudo-kode fra sin mail.
