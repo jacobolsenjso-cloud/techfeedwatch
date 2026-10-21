@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 175** — brug kun v175). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 176** — brug kun v176). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 175** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 19:48): HJERNEN ER I DRIFT på main (`03e980af`; første driftskørsel 20:17 bekræftes ~20:51). Konto ryddet op (Jacobs ja): Dependabot tændt på techmediaarch (1 LAV undici-advarsel, ikke akut) + gentleaiguide (0); testrepoet miniature-spork (tomt) og alle flettede grene slettet - kun `soegning-foerst` beholdt (ikke fuldt flettet, venter på Jacobs dom).** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste (kræver Jacob):** gentleaiguide PR #8 venter på Merge/Close (robotten står stille imens); dom over lokal gren `soegning-foerst`. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + stemmen i drift + foretræk kvalitetskilder. Ældre: Crypto ingen nye artikler siden 4/8; sticky video på telefon; Googles ikon ca. 25/10; localhost-testtilmelding; slet boblen efter 25/10; kurser 1/11; 9 forældreløse billeder + og-default-v2.png.
+**Seneste for techfeedwatch (21/10-2026 kl. 20:44): SIKKERHED STRAMMET - GitHub-kontoen har nu totrinsbekræftelse (manglede; Jacob slog til 20:44, bekræftet), Cloudflare havde den allerede; PHP-sagen (CVE-2026-109618/9) rammer ikke de statiske Astro-sites. HJERNEN ER I DRIFT på main (`03e980af`; første driftskørsel bekræftes ~20:51). Konto ryddet op, Dependabot på alle tre repoer.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste (kræver Jacob):** gentleaiguide PR #8 venter på Merge/Close (robotten står stille imens); dom over lokal gren `soegning-foerst`. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + stemmen i drift + foretræk kvalitetskilder. Ældre: Crypto ingen nye artikler siden 4/8; sticky video på telefon; Googles ikon ca. 25/10; localhost-testtilmelding; slet boblen efter 25/10; kurser 1/11; 9 forældreløse billeder + og-default-v2.png.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 20:44 - sikkerhedstjek efter PHP-sagen: GitHub-kontoen har nu totrinsbekræftelse
+- **Jacob kl. 19:52:** linkede decrypt.co-artiklen om de kritiske PHP-huller (CVE-2026-109618/9) og spurgte til sikkerheden på sine sites.
+- **Vurdering:** truslen rammer IKKE Jacobs sites - alle tre er statiske Astro-sites (ingen PHP, ingen serverkode pr. besøg). Den reelle angrebsflade er konti, npm-pakker (Dependabot tændt tidligere i aften) og nøgler (i GitHub-secrets).
+- **2FA-tjek i Jacobs Chrome (kun status, aldrig koder):** Cloudflare HAVDE 2FA aktiv (mobilapp). **GitHub HAVDE IKKE** - kontoen bag alle repoer, robotter og secrets. Jacob slog den til selv kl. ~20:44; bekræftet bagefter: autentificerings-app konfigureret, GitHub Mobile som ekstra metode, backup-koder set og gemt.
+- Dermed er aftenens sikkerhedsbillede: 2FA på GitHub + Cloudflare, Dependabot på alle tre repoer, hjernen privat med read-only-nøgle, ingen PHP-eksponering.
+
 
 ### 21/10-2026 kl. 19:48 - konto-oprydning + Dependabot slået til (Jacobs ja kl. 19:43)
 - **Dependabot-advarsler tændt** (Dependency graph + alerts) på techmediaarch og gentleaiguide i Jacobs Chrome. techmediaarch fik straks 1 advarsel: undici (LAV alvorlighed, kun udviklingsafhængighed, transitiv) - ikke akut; gentleaiguide: 0.
