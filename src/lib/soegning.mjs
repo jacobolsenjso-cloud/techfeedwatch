@@ -17,7 +17,7 @@ import { kerneord } from './headline.mjs';
 export const MIN_FAKTA_SOEG = 4;   // så mange fakta med kilde, ellers ingen artikel
 export const MIN_KILDER_SOEG = 2;  // så mange forskellige sider bag dem
 const CACHE = './.cache/soegning';
-const CACHE_VERSION = 4; // hæves, når søgningens regler ændres (3: kildetjek + modargumenter; 4: kildetjek B + emne, 12/10)
+const CACHE_VERSION = 5; // hæves, når søgningens regler ændres (4: kildetjek B + emne, 12/10; 5: fakta SKAL starte "According to <udgiver>, " så faktaboksen kan bruge dem, 21/10)
 
 // strengt = ekstra runde, når kildetjekket fjernede så meget, at søgningen blev for tynd
 // (12/10: i SEO var 11 af 12 kilder bureau-blogs). Så søges der efter primærkilder.
@@ -33,7 +33,7 @@ SUBQUESTIONS:
 2. <another question a searcher needs answered to fully understand the answer>
 (4 to 6 questions in total, in the order a reader needs them)
 FACTS:
-- <one fact per line: a full sentence that names its publisher (for example "According to IBM's Cost of a Data Breach Report 2024, ...") and gives numbers, dates and names exactly as the page states them>
+- <one fact per line. Every line MUST start with "According to <publisher>, " and continue with a statement that stands on its own (never a fragment like "which ..." or "the company ..."), giving numbers, dates and names exactly as the page states them. Example: "According to IBM's Cost of a Data Breach Report 2024, organizations needed a global average of 258 days to identify and contain a breach.">
 (8 to 15 facts that help answer the questions; prefer the most recent figures and primary sources: official sites, research, standards bodies, the company concerned. No forums, no social media, no YouTube.)
 If the search assumes something (that X is better than Y, that Z is safe, that W is dead), the facts must TEST that assumption: include evidence that supports it AND evidence that limits or contradicts it.`;
 }
