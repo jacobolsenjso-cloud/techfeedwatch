@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 172** — brug kun v172). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 173** — brug kun v173). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 172** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 17:25): FAKTABOKSEN ER FÆRDIGBYGGET OG BEVIST - forslag 2 live (`4737cad2`: fakta skal starte "According to <udgiver>", cache v5) og prøvekørsel #15 skrev en artikel med FAKTABOKS: 2 fakta -> boksen vises (2-fakta-reglen fra 20/10); 0 klippede svar i begge prøvekørsler, så lofterne fra 20/10 holder. ROBOT-KOBLINGEN: trin 1+2 gjort (privat repo `jacob-hjerne` med de 5 hjernefiler, commit `a78740b`); NÆSTE: trin 3 (læsenøgle som secret - kræver Jacob), trin 4+5 (workflow + prompt med bremsen).** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** trin 3-5 af robot-koblingen når Jacob er tilbage; OPFØLGNING ca. 27/10: faktaboks-dækning bredt + "KLIPPET" + foretræk kvalitetskilder; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (21/10-2026 kl. 19:05): ROBOT-KOBLINGEN ER BYGGET (trin 3-5) på gren `udkast-hjerne` (`b16e453d`) - main urørt, VENTER på Jacobs flet-ja. Nøgle: deploy-nøgle (read-only) + secret HJERNE_NOEGLE, aldrig vist. Tre prøvekørsler: 2 afvist af værnene (korrekt - bl.a. BLS-tal uden for researchen), 1 SUCCES med hjernen aktiv (1.629 ord, faktaboks, 0 klip; bremsen holdt bevidst førstepersonen tilbage, da emnet ikke ramte en holdning). Tidligere i dag: faktaboks færdigbygget og bevist; hjernen komplet i privat repo jacob-hjerne.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs flet-ja til udkast-hjerne; OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + foretræk kvalitetskilder; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 19:05 - Robot-koblingen: trin 3-5 bygget og prøvet - main urørt, venter på Jacobs flet-ja
+- **Trin 3 (nøglen):** deploy-nøgle "techfeedwatch-robot (read)" på jacob-hjerne (KUN læsning) + privat nøgle som secret `HJERNE_NOEGLE` i techfeedwatch. Nøglen blev ALDRIG vist - den gik kun via udklipsholderen (ryddet bagefter). Jacob bekræftede selv GitHubs sudo-kode fra sin mail.
+- **Trin 4+5 (gren `udkast-hjerne`, commit `b16e453d` - IKKE på main):** begge workflows henter hjernen til `_hjerne/` (står i .gitignore - må aldrig i det offentlige repo; continue-on-error: uden nøgle kører robotten som før). Ny `src/lib/hjerne.mjs`: stemme-blok til skriveprompten med BREMSEN (holdninger kun ved emnematch i emner.md, højst ÉT perspektivafsnit, aldrig opfundne detaljer; undtagelse til regel 18). 8/8 lokale tjek bestået (_udkast/_test-hjerne.mjs).
+- **Tre prøvekørsler fra grenen (udgives ikke):** #16a afvist (redaktørtjek: ubesvaret delspørgsmål). #16b afvist - VÆRNET VIRKEDE: modellen citerede BLS-tal, som ikke var i researchen (fejlteksten "uden navngiven kilde" er lidt misvisende: navnet var der, men ikke blandt researchens udgivere - dvs. tal der ikke kan efterprøves). #17 SUCCES: artikel skrevet (cybersecurity major, 1.629 ord, FAKTABOKS 2 fakta, 0 klip), "🧠 Hjernen er med (stil + holdninger til emnet)" i loggen - men bremsen skrev INGEN førsteperson, fordi holdningerne (personlig sikkerhed) ikke reelt rammer studievalg-spørgsmålet. Korrekt tilbageholdenhed; artiklen sendt til Jacob i chatten.
+- **Venter på Jacob:** må grenen flettes til main? Derefter skriver robotten med hjernen i almindelig drift, og stemmen viser sig først i artikler, hvor emnet rigtigt rammer en holdning.
+
 
 ### 21/10-2026 kl. 17:25 - techfeedwatch: faktaboks forslag 2 LIVE og BEVIST; robot-koblingens trin 1+2 gjort
 - **Jacob kl. 12:37:** "Du bygger faktaboks færdig. Bagefter starter vi med trin 1 med Robot-koblingen. Du koder."
