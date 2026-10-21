@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 169** — brug kun v169). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 170** — brug kun v170). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 169** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 11:32): AI SECOND BRAIN oprettet i `C:\Users\jacob\jacob-hjerne` (core/voice/beliefs/erfaringer - Jacobs egne ord) og testet på to artikler; før/efter sendt til Jacob, VENTER på hans dom. 20/10: Key facts-boksen vises nu med 2 fakta (`499dd9d8`), klippede Gemini-svar rettet (`9902ed3f`), fuld gennemgang: sitet fejlfrit i alle målinger. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + forslag 2 (According to-form) + nyt forslag: foretræk kvalitetskilder (Ars Technica, MIT Tech Review, TechCrunch) i researchen.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs dom over hjerne-testen; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (21/10-2026 kl. 12:15): HJERNE-TESTEN BESTÅET (Jacob: "det lyder helt sikkert som mig") og hjernen udvidet til 5 filer i `C:\Users\jacob\jacob-hjerne` - nu med `emner.md` (ét holdningsafsnit pr. emne på sitet, klar til robot-koblingen). Robot-kobling med bremse (perspektiv kun når emnet rammer en holdning, højst ét afsnit pr. artikel) tages op efter 27/10. 20/10: Key facts-boksen vises med 2 fakta (`499dd9d8`), klippede Gemini-svar rettet, fuld gennemgang: sitet fejlfrit. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + forslag 2 (According to-form) + foretræk kvalitetskilder i researchen.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 12:15 - AI Second Brain: testen bestået, hjernen udvidet med emne-holdninger og personlige erfaringer
+- **Jacobs dom over hjerne-testen (kl. 11:42):** "det lyder helt sikkert som mig". Min egen vurdering delt med ham: Runway-holdningsafsnittet er beviset (artiklens egne tal som belæg for HANS holdning); forbehold om gentagelsesfare (bremse nødvendig ved robot-kobling: perspektiv kun når emnet rammer en holdning, højst ét afsnit pr. artikel) og om at hjernen var tynd.
+- **Jacob dikterede en stor udvidelse (opdateret PDF):** holdninger til stort set alle sitets emner + flere personlige erfaringer. Vigtig præcisering fra Jacob: "jeg er skeptisk over for AI - men ikke over for mennesker".
+- **Hjernen (C:\Users\jacob\jacob-hjerne) er nu 5 filer:** `beliefs.md` udvidet (AI i kundeservice, cybersikkerhed som must, robotter/regulering, smartphones, AI-kodning), `erfaringer.md` udvidet (selv hacket flere gange: Facebook lukket + Gmail-problemer; bygget hjemmesider med AI uden at være koder; fintech-hverdagserfaring; set en robot testet på gaden), og NY `emner.md` med ét holdningsafsnit pr. emne på sitet (passer 1:1 til emnesiderne - klar til robot-koblingen).
+- **Næste for hjernen:** kobling på robotten (med bremsen) - tages op efter opfølgningen ca. 27/10, når Jacob siger til.
+
 
 ### 21/10-2026 kl. 11:32 - AI Second Brain: hjernen oprettet og testet på to artikler (intet udgivet)
 - **Jacob dikterede sit råmateriale** (PDF med "hvem jeg er / min stemme / mine holdninger") + rettelser (Boeing/Volkswagen) og et erfarings-afsnit (ca. 2 års AI-erfaring, de tre sites, TED som kilde).
