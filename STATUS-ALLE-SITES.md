@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 176** — brug kun v176). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 177** — brug kun v177). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 176** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 20:44): SIKKERHED STRAMMET - GitHub-kontoen har nu totrinsbekræftelse (manglede; Jacob slog til 20:44, bekræftet), Cloudflare havde den allerede; PHP-sagen (CVE-2026-109618/9) rammer ikke de statiske Astro-sites. HJERNEN ER I DRIFT på main (`03e980af`; første driftskørsel bekræftes ~20:51). Konto ryddet op, Dependabot på alle tre repoer.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste (kræver Jacob):** gentleaiguide PR #8 venter på Merge/Close (robotten står stille imens); dom over lokal gren `soegning-foerst`. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + stemmen i drift + foretræk kvalitetskilder. Ældre: Crypto ingen nye artikler siden 4/8; sticky video på telefon; Googles ikon ca. 25/10; localhost-testtilmelding; slet boblen efter 25/10; kurser 1/11; 9 forældreløse billeder + og-default-v2.png.
+**Seneste for techfeedwatch (21/10-2026 kl. 21:12): CLOUDFLARE STRAMMET — TLS 1.2 som minimum og HSTS på alle tre domæner, DMARC rettet (dublet slettet på techmediaarch; quarantine + Cloudflare-rapportering på alle tre). Alt målt efter på levende headers og DNS. Næste: robottens første artikel med stemme ventes i morgenrapporten 22/10.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 21:12 - Cloudflare-gennemgang: TLS 1.2, HSTS og DMARC strammet på alle tre domæner
+- **Jacobs ja kl. 20:59 og 21:04** til at rette TLS/HSTS og DMARC. Alt udført i Jacobs egen Chrome.
+- **Minimum TLS hævet 1.0 → 1.2** på alle tre domæner (ældgamle, usikre krypteringsversioner afvises nu).
+- **HSTS slået til** på techmediaarch + gentleaiguide (6 mdr., uden subdomæner/preload — forsigtig opsætning, så intet kan låses fast ved en fejl); techfeedwatch havde det allerede (med preload, urørt). No-Sniff-header slået til på gentleaiguide, så alle tre er ens. Målt efter fra Jacobs maskine: alle tre sender HSTS max-age=15552000 + nosniff.
+- **DMARC-fejlen fundet:** techmediaarch havde TO _dmarc-poster på én gang — det er ugyldigt, så modtagere ignorerede DMARC helt (det var Cloudflares "DMARC Record Error"). Dubletten (p=none uden rapportering) slettet med Jacobs ok; den rigtige sat til p=quarantine.
+- **gentleaiguide:** DMARC Management slået til (Cloudflare-rapportering, første rapport ~24 t) og posten sat til p=quarantine. Målt efter mod 1.1.1.1: præcis én post pr. domæne, alle tre p=quarantine med rapportering — samme opsætning som techfeedwatch, der har kørt fejlfrit med den.
+- **Anbefalet, ikke udført:** AI Labyrinth forbliver FRA (ville skade AI-synligheds-strategien); security.txt kan vente; de to mystiske techmediaarch-subdomæner (4sauc2jws3rm, xympy4sol4sd — formentlig Blogger-rester) undersøges senere; autoconfig/autodiscover er mail-poster og SKAL blive.
+
 
 ### 21/10-2026 kl. 20:44 - sikkerhedstjek efter PHP-sagen: GitHub-kontoen har nu totrinsbekræftelse
 - **Jacob kl. 19:52:** linkede decrypt.co-artiklen om de kritiske PHP-huller (CVE-2026-109618/9) og spurgte til sikkerheden på sine sites.
