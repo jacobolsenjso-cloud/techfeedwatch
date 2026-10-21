@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 168** — brug kun v168). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 169** — brug kun v169). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 168** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (20/10-2026 kl. 12:43): Key facts-boksen vises nu med 2 fakta i stedet for at kræve 3 (`499dd9d8`, live) - boksen manglede på 7 af 13 nye artikler. Tidligere i dag: klippede Gemini-svar rettet (lofter hævet, `9902ed3f`) og fuld gennemgang af sitet: fejlfrit i alle målinger (63/63 sider + 18/18 nye artikler identiske med bygget main, 0 døde links). OPFØLGNING ca. 27/10: mål faktaboks-dækning + "KLIPPET" i morgenrapporterne, og tag stilling til forslag 2 (fakta på "According to X"-form i søge-prompten).** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). AI Second Brain: plan foreslået (dagbog 20/10), venter på Jacobs stemme-input. Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
+**Seneste for techfeedwatch (21/10-2026 kl. 11:32): AI SECOND BRAIN oprettet i `C:\Users\jacob\jacob-hjerne` (core/voice/beliefs/erfaringer - Jacobs egne ord) og testet på to artikler; før/efter sendt til Jacob, VENTER på hans dom. 20/10: Key facts-boksen vises nu med 2 fakta (`499dd9d8`), klippede Gemini-svar rettet (`9902ed3f`), fuld gennemgang: sitet fejlfrit i alle målinger. OPFØLGNING ca. 27/10: faktaboks-dækning + "KLIPPET" + forslag 2 (According to-form) + nyt forslag: foretræk kvalitetskilder (Ars Technica, MIT Tech Review, TechCrunch) i researchen.** FAST REGEL: videodelen ændres aldrig uden Jacobs ja til netop den del. "New look"-boble til og med 24/10. **Næste:** Jacobs dom over hjerne-testen; Crypto har ingen nye artikler siden 4/8 (ikke undersøgt). Ældre: Jacob prøver afstand/kig/toning under sticky video på sin telefon; tjek Googles ikon ca. 25/10; slå Jacobs localhost-testtilmelding fra med ok; slet boblen efter 25/10; tjek 1/11 at kurserne kom; 9 forældreløse billeder + og-default-v2.png kan slettes med Jacobs ok.
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 21/10-2026 kl. 11:32 - AI Second Brain: hjernen oprettet og testet på to artikler (intet udgivet)
+- **Jacob dikterede sit råmateriale** (PDF med "hvem jeg er / min stemme / mine holdninger") + rettelser (Boeing/Volkswagen) og et erfarings-afsnit (ca. 2 års AI-erfaring, de tre sites, TED som kilde).
+- **Hjernen bor i `C:\Users\jacob\jacob-hjerne`** - BEVIDST uden for de offentlige repoer: `core.md`, `voice.md`, `beliefs.md`, `erfaringer.md`. Bygget af Jacobs egne ord; han gennemgår dem selv. NotebookLM droppet som mellemled - Jacob dikterede direkte.
+- **Hjerne-test (plan B):** to artikler (Runway/AI-video, hvor holdningerne er relevante, og gaming-pc vs. konsol som neutral kontrol) omskrevet med hjernen som stemme. Før/efter-dokument med markeringer af alt nyt sendt til Jacob i chatten. Fakta og kilder uændrede. **Venter på Jacobs dom.** Intet udgivet, intet ændret i robotten.
+- **Jacobs beslutninger 21/10:** Ars Technica, MIT Technology Review og TechCrunch bruges som KILDER og pejling - aldrig som råstof til omskrivning (ophavsret + originalitet). **Nyt forslag på listen** (tages op efter uge-opfølgningen ca. 27/10): lær robotten at foretrække kvalitetskilder i researchen.
+
 
 ### 20/10-2026 kl. 12:43 - techfeedwatch: Key facts-boksen vises nu med 2 fakta (LIVE `499dd9d8`) + statusfilen committes igen
 - **Jacob kl. 12:40:** "du laver forslag 1 nu... så vender vi tilbage med dit forslag 2 om en uges tid".
