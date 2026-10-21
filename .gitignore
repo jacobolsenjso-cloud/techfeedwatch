@@ -1,6 +1,10 @@
 # build output
 dist/
 
+# Jacobs hjerne (21/10): hentes af workflowet fra det PRIVATE repo jacob-hjerne.
+# Må ALDRIG committes her - dette repo er offentligt.
+_hjerne/
+
 # hentede transskripter (src/lib/transskript.mjs). Må ikke i git — de er
 # andres indhold og fylder. I GitHub Actions bæres de af actions/cache.
 .cache/

@@ -17,6 +17,7 @@ import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
+import { laesHjerne, stemmeBlok } from './src/lib/hjerne.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
@@ -650,6 +651,12 @@ async function run() {
       console.log(`❓ FAQ: ${rigtigeSoegninger.length} rigtige Google-søgninger om "${soeg.emne || '?'}"`);
     }
 
+    // Jacobs hjerne (trin 5, 21/10): stemme + holdninger ind i skriveprompten, med
+    // bremsen i src/lib/hjerne.mjs (holdninger kun ved emnematch, højst ét afsnit).
+    const hjerne = laesHjerne();
+    const hjerneBlok = isShort ? '' : stemmeBlok(hjerne, `${soeg.emne || ''} ${targetQuestion || ''} ${videoTitel || ''}`);
+    if (hjerneBlok) console.log(`🧠 Hjernen er med (${hjerneBlok.includes('STATED POSITIONS') ? 'stil + holdninger til emnet' : 'kun stil'})`);
+
     // Shorts får kun en let metadata-prompt (title/tags/summary) - ingen dyr artikel- eller FAQ-generering
     const prompt = isShort
       ? `Act as a metadata generator for "TechFeedWatch", a tech news site.
@@ -700,6 +707,7 @@ async function run() {
     22. Do not write a sources or references section - it is added automatically.
     23. If the reader's question assumes something (that X is better than Y, that Z is safe, that W is dead), never state that assumption as settled fact. Show where it holds and where it does not, using the RESEARCH FACTS on both sides, and end with a fair, evidence-based verdict. No sweeping judgments ("clear superiority", "always", "the best") without evidence in the same sentence. Fair does NOT mean hedged: state a limitation as its own plain sentence with its source, never as a qualifying clause tacked onto another sentence.
     24. WRITE LIKE A PERSON, NOT A MODEL: say each point once, plainly. Never use these machine patterns: "not just X, but Y" / "isn't just X; it's Y", "it is worth noting" / "it is important to note", "plays a key/pivotal/vital role", opening a sentence with "Ultimately," "At its core," "In essence," or "In short,", clichés like "game-changer", "double-edged sword", "ever-evolving", and hedges like "does not invariably" or "though ... not always". Take a clear position where the evidence supports one.
+    ${hjerneBlok}
 
     STRUCTURE (built from the search, not from the video):
     - Opening: 2-3 sentences that answer "${targetQuestion}" directly (no heading, no label).

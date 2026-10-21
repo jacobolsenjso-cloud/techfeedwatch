@@ -33,6 +33,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Jacobs hjerne (21/10): samme hentning som i daily-update.yml, så
+      # prøveartikler skrives med stemmen og kan bedømmes før rigtig drift.
+      - name: Hent hjernen (jacob-hjerne, privat, kun læsning)
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          repository: jacobolsenjso-cloud/jacob-hjerne
+          ssh-key: ${{ secrets.HJERNE_NOEGLE }}
+          path: _hjerne
+
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:

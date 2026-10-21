@@ -35,6 +35,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # Jacobs hjerne (trin 4 af robot-koblingen, 21/10): stemme/holdninger fra det
+      # PRIVATE repo jacob-hjerne, hentet med læsenøglen HJERNE_NOEGLE til mappen
+      # _hjerne (står i .gitignore). continue-on-error: mangler nøglen eller
+      # repoet, skriver robotten som før - hjernen er valgfri.
+      - name: Hent hjernen (jacob-hjerne, privat, kun læsning)
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          repository: jacobolsenjso-cloud/jacob-hjerne
+          ssh-key: ${{ secrets.HJERNE_NOEGLE }}
+          path: _hjerne
+
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
