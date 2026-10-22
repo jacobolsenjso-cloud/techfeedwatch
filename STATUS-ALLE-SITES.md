@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 22. oktober (**version 179** — brug kun v179). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 180** — brug kun v180). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 22. oktober (**version 179** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (22/10-2026 kl. 12:15): UGENTLIG SEARCH CONSOLE-AFLÆSNING — indekserede sider falder tredje gang i træk: 50 → 38 (-12), ikke indekseret 837 → 852 (+15), sitemappet 601 → 608 (+7). De 12 sider gik til "Crawlet – endnu ikke indekseret" (47 → 59); de fem øvrige årsager står stille. Effektiviteten går modsat vej: klik 22 → 27, eksponeringer 35 → 41, klikrate 65,9 %, position 3,7 → 3,2 (28 dage, 22/9-19/10). Hvorfor er IKKE målt. Serien har nu 7 punkter, alle kontroller passerer.**
+**Seneste for techfeedwatch (22/10-2026 kl. 13:08): STOR DAG — About + Start Here opdateret med Jacobs diktat (opslagsværk, dobbelttjek, baggrund, stemme-forklaring, partner-gennemsigtighed; commit 1403cbb3, set live). Hjernen udvidet (a18a4de). Ny driftstavle hos Claude med daglig opdaterings-opgave kl. 9.45. GSC-undersøgelse: de 59 "crawlet, ikke indekseret" er gamle rester — de nye artikler venter blot i køen (526). Crypto-pausen er balancereglen, ikke en fejl (48 artikler, flere end de fleste); genoptages automatisk.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 22/10-2026 kl. 13:08 - sider + hjerne opdateret, driftstavle bygget, GSC- og Crypto-gåder løst
+- **About + Start Here (Jacobs PDF-diktat, commit 1403cbb3, set live):** nye afsnit om sitet som opslagsværk + opfordring til at dobbelttjekke; Jacobs baggrund (hundredvis/tusinder af videoer, måneders finpudsning af robotten); ærlig forklaring af hjernens jeg-passager ("Those passages are mine; the system is not allowed to invent any"); løfte om åben deklaration, hvis der en dag kommer partner-links. Kun tekst ændret, intet layout; bygget fejlfrit (676 sider), al ny tekst verificeret i dist og live.
+- **Hjernen (a18a4de):** kildekritik som kerneidentitet, opslagsværk-missionen, bosat i Danmark, "forklar som over en kop kaffe"-tonen, partner-gennemsigtighed + dateret baggrundsnote. Robotten bruger den fra næste kørsel.
+- **Ny driftstavle hos Claude** ("Robottens driftstavle"): nøgletal 7 dage, artikler/forbrug pr. dag, seneste artikler og vagt-afvisninger — alt fra robot-log.jsonl, klik viser kilden. Planlagt opgave "Opdater robottens driftstavle" kører dagligt kl. 9.45 (første gang 23/10) og henter frisk log fra GitHub; kører med automatisk godkendelse.
+- **GSC-undersøgelse af "crawlet, ikke indekseret" (59):** ~43 er gamle YouTube-ID-adresser, der nu omdirigerer korrekt (testet); 5 gamle før-vagt-artikler; 4 tag-sider; 7 servicesider. INGEN nye artikler afvises — de ligger i "Registreret" (526) og venter på crawl. Faldet 50→38 indekserede er gamle rester, der ryger ud. Obs: /about/ var crawlet-ikke-indekseret — derfor er dagens about-styrkelse dobbelt begrundet.
+- **Crypto-gåden løst (målt):** robotten vælger altid emnet med færrest artikler; Crypto har 48 (Coding 38, fem emner på 39-40) og får derfor ikke tur endnu. Ingen fejl — balancereglen fra 17/10 virker. Jacob 13:08: Crypto kommer, når robotten er klar (ingen indgriben). Web3 oprettes IKKE som emne (ville få hver anden artikel i ugevis via vækstreglerne; web3-stof hører under Crypto).
+- **Stemme-fejlen fra i morges** (kontrol slettede jeg-passagen) blev rettet i v178 (8b45e12d); første bevarede stemme-artikel ventes ved næste emnematch — følges op senest ca. 27/10.
+
 
 ### 22/10-2026 kl. 12:15 - techfeedwatch: ugentlig Search Console-aflæsning - indekseringen falder tredje gang i træk, mens klik og position bliver bedre
 - **Målt i Jacobs Chrome (Googles indekseringsdata halter 2-3 dage):** indekserede **38** (19/10: 50, **-12**), ikke indekseret **852** (837, **+15**), sitemappet **608** adresser (601, **+7**, målt på det levende site). Trukket væksten fra er den reelle bevægelse i "ikke indekseret" **+8** — en pejling, ikke et facit.
