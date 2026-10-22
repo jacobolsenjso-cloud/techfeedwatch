@@ -12,8 +12,8 @@ summary: "Gaming PCs are specialized desktop computers built with dedicated grap
 metaDescription: "Discover what gaming PCs are, how their dedicated hardware outperforms standard office computers, and whether you should build or buy your next rig."
 targetQuestion: "what are gaming pcs"
 duration: "26:18"
-viewCount: 191658
-viewsUpdated: "2026-10-20"
+viewCount: 197474
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Making private AI videos requires choosing between strict cloud privac
 metaDescription: "Learn how to make private AI videos using offline open-weight models or commercial stealth settings to prevent public indexing and data leaks."
 targetQuestion: "how to make private ai videos"
 duration: "11:51"
-viewCount: 966358
-viewsUpdated: "2026-10-19"
+viewCount: 976006
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

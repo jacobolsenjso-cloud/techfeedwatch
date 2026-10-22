@@ -12,8 +12,8 @@ summary: "OpenAI officially discontinued its standalone Sora video generator due
 metaDescription: "Why is Sora no longer available? OpenAI shut down the AI video generator due to high computing costs, retention drops, and robotics research."
 targetQuestion: "why is sora no longer available"
 duration: "18:31"
-viewCount: 16
-viewsUpdated: "2026-10-16"
+viewCount: 17
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-14"

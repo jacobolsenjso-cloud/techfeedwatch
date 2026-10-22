@@ -12,8 +12,8 @@ summary: "Coding harnesses represent the evolution of working with Large Languag
 metaDescription: "Discover what coding harnesses are: the structured environments transforming ordinary LLMs into powerful agentic systems."
 targetQuestion: "what are coding harnesses"
 duration: "8:01"
-viewCount: 66662
-viewsUpdated: "2026-10-19"
+viewCount: 67387
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

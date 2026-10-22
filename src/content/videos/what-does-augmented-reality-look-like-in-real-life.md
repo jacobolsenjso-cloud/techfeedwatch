@@ -12,8 +12,8 @@ summary: "Augmented reality superimposes responsive digital objects onto the act
 metaDescription: "Wondering what augmented reality looks like? Learn how optical overlays, video feeds, and 3D tracking blend digital objects into the physical world."
 targetQuestion: "what does augmented reality look like"
 duration: "25:05"
-viewCount: 88146
-viewsUpdated: "2026-10-19"
+viewCount: 88339
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 faqs:

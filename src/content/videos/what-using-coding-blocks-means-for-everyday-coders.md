@@ -12,8 +12,8 @@ summary: "Learning how to use coding blocks requires snapping graphical command 
 metaDescription: "Learn how to use coding blocks to build software visually. Explore drag-and-drop programming, interface components, and educational trade-offs."
 targetQuestion: "how to use coding blocks"
 duration: "11:36"
-viewCount: 424
-viewsUpdated: "2026-10-19"
+viewCount: 426
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-17"

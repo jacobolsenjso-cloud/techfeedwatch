@@ -12,8 +12,8 @@ summary: "Identifying the best mixed reality headset requires balancing visual f
 metaDescription: "Which mixed reality headset is best? Compare top picks like Meta Quest 3 and Samsung Galaxy XR across specs, displays, and actual performance."
 targetQuestion: "what is the best mixed reality headset"
 duration: "6:17"
-viewCount: 1658
-viewsUpdated: "2026-10-19"
+viewCount: 1669
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 faqs:

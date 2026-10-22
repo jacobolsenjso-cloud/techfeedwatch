@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (1612) ---
+# --- Statiske (1616) ---
 /video/ucUdfiq2KiY /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/ucUdfiq2KiY/ /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ 301
 /video/dgh04-71nHs /tag/ai-tech/ 301
@@ -1615,6 +1615,10 @@
 /video/how-quantum-computing-companies-are-commercializing-advanced-tech/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
 /video/b6sx04c5JYg /video/how-is-quantum-computing-different-from-classical-computing/ 301
 /video/b6sx04c5JYg/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/what-happens-when-programming-runs-in-a-computer /video/architectural-differences-between-programming-languages/ 301
+/video/what-happens-when-programming-runs-in-a-computer/ /video/architectural-differences-between-programming-languages/ 301
+/video/zxvwxqb_2Ws /video/architectural-differences-between-programming-languages/ 301
+/video/zxvwxqb_2Ws/ /video/architectural-differences-between-programming-languages/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301

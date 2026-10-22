@@ -12,7 +12,7 @@ summary: "Real video captures optical light through physical sensors, while AI v
 metaDescription: "Discover the core difference between AI video and real video, including visual artifacts, physics flaws, and new C2PA provenance standards."
 targetQuestion: "difference between ai video and real video"
 duration: "17:49"
-viewCount: 36167
+viewCount: 36168
 viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false

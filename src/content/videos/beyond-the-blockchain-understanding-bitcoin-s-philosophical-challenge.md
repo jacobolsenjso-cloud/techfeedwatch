@@ -12,8 +12,8 @@ summary: "Individual sovereignty, defined as the authority to act as one sees fi
 metaDescription: "Explore individual sovereignty: what it means, its historical evolution, and how money and property rights define personal freedom in contemporary society."
 targetQuestion: "what is individual sovereignty"
 duration: "5:10:18"
-viewCount: 497908
-viewsUpdated: "2026-10-19"
+viewCount: 497971
+viewsUpdated: "2026-10-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"
