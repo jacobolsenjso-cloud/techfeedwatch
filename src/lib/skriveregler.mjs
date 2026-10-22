@@ -140,8 +140,16 @@ export function godkendSpoergsmaal(raa, rettet) {
 // ord med stort er et navn ("Have I Been Pwned"), ikke en fortæller.
 const TALE = /\b(?:you guys|hey (?:guys|everyone|folks)|what's up|welcome back|let's (?:dive|jump|get started|take a look|go ahead)|let me (?:show|walk|explain)|i'm going to|i am going to|i'll show|i will show|we're going to|we are going to (?:show|look|walk|cover)|gonna|wanna|gotta|in (?:this|today's|the next|my) (?:video|tutorial|episode|clip)|as you can see|like i said|as i (?:said|mentioned)|(?:click|smash|hit) the (?:like|subscribe|bell|link)|subscribe to (?:my|our|the) channel|link in the description|in the description below|comment below|stay tuned|on my screen|right here on|thanks for watching)\b/i;
 const FOERSTE_PERSON = /(?:^|[\s(])(?:I(?! [A-Z])|I'm|I’m|I've|I’ve|I'd|I’d|I'll|I’ll|my|me|myself)(?=[\s,.;:!?)]|$)/;
-export function talesprog(md) {
+// tilladFoerstePerson (22/10, hjernen): når hjernen har en holdning til emnet, må
+// artiklen have ÉN kort passage i første person — skrivereglens undtagelse skal
+// også gælde kontrollen, ellers sletter rettelsen stemmen igen (målt 22/10 kl.
+// 06:17: kontrollen så "I", bad om rettelse, og passagen forsvandt). Op til
+// tilladFoerstePerson sætninger med jeg-form slipper igennem; er der FLERE, meldes
+// de ALLE (så håndhæves "højst én passage"-bremsen mekanisk). Videoens talesprog
+// (TALE — "subscribe", "in this video" osv.) er ALDRIG tilladt.
+export function talesprog(md, tilladFoerstePerson = 0) {
   const fund = [];
+  const jegForm = [];
   // Citater fjernes på hele blokken FØR den deles i sætninger: et citat på flere
   // sætninger ("... I still don't trust it. And if this keeps going, I ...")
   // ville ellers blive halvt og slippe fri (målt 6/10).
@@ -149,11 +157,13 @@ export function talesprog(md) {
     const linjer = b.type === 'liste' ? b.linjer.map((l) => l.replace(LISTEPUNKT, '')) : [b.tekst];
     for (const l of linjer) for (const s of saetninger(udenCitater(l.replace(/\s*\n\s*/g, ' ')))) {
       const t = synlig(s);
-      const m = t.match(TALE) || t.match(FOERSTE_PERSON);
-      if (m) fund.push({ saetning: s.trim(), ord: m[0].trim() });
+      const mTale = t.match(TALE);
+      if (mTale) { fund.push({ saetning: s.trim(), ord: mTale[0].trim() }); continue; }
+      const mJeg = t.match(FOERSTE_PERSON);
+      if (mJeg) jegForm.push({ saetning: s.trim(), ord: mJeg[0].trim() });
     }
   }
-  return fund;
+  return jegForm.length <= tilladFoerstePerson ? fund : fund.concat(jegForm);
 }
 
 // ---------------------------------------------------------------------------
