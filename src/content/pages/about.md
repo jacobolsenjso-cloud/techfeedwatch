@@ -29,9 +29,17 @@ So every article here starts from a real question people search for. The answer 
 
 That is it. I am trying to make it easier for people who are interested in tech to get a straight answer — and to know where it came from.
 
+## Use it like a reference book
+
+My ambition is for TechFeedWatch to work as a reference: when something is moving in AI and you want to know what it actually is, you come here, look it up, and get a straight answer built on named sources.
+
+I go a long way for facts and verified sources — it is the thing I care most about — but mistakes can still happen, here as anywhere. So treat this site as a strong supplement, not an oracle: when a decision rides on it, double-check the claim against other reputable sources. Any site that discourages you from doing that is asking for more trust than it has earned.
+
 ## Who runs this site
 
 My name is **Jacob S. Olsen**, and I run TechFeedWatch on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
+
+The short background: I have spent years of my spare time inside this subject — many hundreds of videos, if not thousands, and more articles than I can count, on AI, prompt engineering, how websites are built, and how search works. The publishing system behind this site took months of fine-tuning before I let it write in public, and tuning it is still most of the work.
 
 You can reach me at **info@techfeedwatch.com**, or find me on X as [@JacobStubbeJS](https://x.com/JacobStubbeJS). If something on this site is wrong, that is the fastest way to tell me.
 
@@ -45,7 +53,7 @@ Those articles publish automatically — I do not read every one before it goes 
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, how sources are credited, and what this site is allowed to claim. When something goes wrong, I fix the system rather than patch the single article, so the same mistake does not repeat three hundred times. The rules every article has to pass are listed in the [editorial guidelines](/editorial-guidelines).
 
-That is also why the articles are written in a plain, neutral voice rather than in mine. I have not watched all of these videos or read all of these articles. Writing as though I had would be a small lie told several hundred times, and I would rather have your trust than your impression of one.
+That is also why the articles are written in a plain, neutral voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. One exception, and you will know it when you see it: on the subjects I have real opinions and experience about, I have written those down for the system in my own words — my views, my phrasings, the nuances I actually hold — and where an article touches one of those subjects, it may carry one short passage in the first person. Those passages are mine; the system is not allowed to invent any. Everything else stays neutral, and I would rather have your trust than your impression of me.
 
 Where you *are* reading me is here. The [guides](/guides) and the [glossary](/glossary) are written with AI too, but they are planned, checked and maintained by me, and I stand behind them.
 
@@ -64,6 +72,10 @@ If you think the automation makes the writing less trustworthy, that is a fair t
 **A daily notification, if you want one.** Turn it on under the bell: at most one a day, about the topics you follow, and off again with one click. On an iPhone or iPad, Apple only allows it once the site has been added to your Home Screen, and the bell shows you how. The [privacy policy](/privacy-policy) says exactly what is stored.
 
 **Read later and History.** Save any article with its Save button and find it again under [Read later](/watch-later); [History](/history) lists what you have read. Both are kept in your browser only.
+
+## If this site ever takes a partner
+
+It does not today. If there are ever collaborations or partner links here, they will say so where they appear, plainly and in the same breath as the recommendation. I am not in the business of leading readers somewhere without telling them why — I would rather lose the deal than hide it.
 
 ## Corrections
 

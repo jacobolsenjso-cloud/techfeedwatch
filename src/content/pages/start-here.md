@@ -17,6 +17,8 @@ Almost nobody wants to sit through a whole video to get one answer. What most pe
 
 So that is what this site does. Every article starts from a question people search for on Google. The answer is researched with Google Search and built on named sources, and a video from someone who knows the subject adds a section of its own. The creator is credited, and the video is there if you want the full version.
 
+Use it like a reference book: look the thing up, get the straight answer, and go deeper if you want. I go a long way for facts and named sources, but mistakes can happen here as anywhere — when it matters, double-check against other reputable sources. This site is meant to be a strong supplement, not an oracle.
+
 ## What is here
 
 **[Latest](/latest)** — the newest articles. A few a day, usually two or three.
@@ -57,7 +59,7 @@ A system I built picks a question people search for on Google, within the subjec
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
-That is also why the articles are written plainly rather than in my voice. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. Where you are reading me is here and on the [about page](/about).
+That is also why the articles are written plainly. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. The one exception: on subjects I have real opinions about, I have given the system those opinions in my own words, and an article may carry one short passage in the first person. Those words are mine. Where you are otherwise reading me is here and on the [about page](/about).
 
 The [about page](/about) has the longer version, and the [corrections policy](/corrections) explains what happens when something here is wrong.
 
