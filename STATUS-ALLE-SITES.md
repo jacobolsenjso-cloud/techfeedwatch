@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 22. oktober (**version 180** — brug kun v180). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 181** — brug kun v181). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 22. oktober (**version 180** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (22/10-2026 kl. 13:08): STOR DAG — About + Start Here opdateret med Jacobs diktat (opslagsværk, dobbelttjek, baggrund, stemme-forklaring, partner-gennemsigtighed; commit 1403cbb3, set live). Hjernen udvidet (a18a4de). Ny driftstavle hos Claude med daglig opdaterings-opgave kl. 9.45. GSC-undersøgelse: de 59 "crawlet, ikke indekseret" er gamle rester — de nye artikler venter blot i køen (526). Crypto-pausen er balancereglen, ikke en fejl (48 artikler, flere end de fleste); genoptages automatisk.**
+**Seneste for techfeedwatch (22/10-2026 kl. 13:15): SPEEDTEST AFLÆST — Computer 96, Mobil 64 (LCP 6,9 s på simuleret billig telefon/langsomt 4G; tilgængelighed/praksis/SEO alle 100, CLS 0). NÆSTE FORBEDRING (Jacobs ja kl. 13:15): billed-optimering af forsiden (hurtigere LCP, ingen designændring — videodelen røres ikke). Ellers: se v180.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 22/10-2026 kl. 13:15 - PageSpeed aflæst; billed-optimering sat på listen (Jacobs ja kl. 13:15)
+- **PageSpeed Insights (forsiden, rapport kl. 12.01):** Computer 96 · Mobil 64 · Tilgængelighed/Bedste praksis/SEO alle 100 · CLS 0 (perfekt layoutstabilitet). Mobil-tallene: FCP 3,4 s, LCP 6,9 s, Speed Index 6,0 s, TBT 150 ms — målt på simuleret Moto G Power med langsomt 4G (bevidst hårde vilkår). "Dine brugere": ingen felt-data endnu (for få besøgende) — det er felt-tallene, der tæller i ranking.
+- **Det, der tynger mobilen:** 182 KiB ubrugt JavaScript · forsidens store billeder (LCP-elementet) · 2,8 s hovedtråds-arbejde · 34 animerede elementer · cachelevetider (44 KiB).
+- **NÆSTE FORBEDRING (planlagt, ikke startet):** billed-optimering af forsiden — hurtigere LCP uden designændring. Videodelen (sticky video, knaprække, listen) røres ikke; tilgængeligheds-tjek før push som altid. Mål før/efter: mobil-scoren og LCP i PageSpeed.
+
 
 ### 22/10-2026 kl. 13:08 - sider + hjerne opdateret, driftstavle bygget, GSC- og Crypto-gåder løst
 - **About + Start Here (Jacobs PDF-diktat, commit 1403cbb3, set live):** nye afsnit om sitet som opslagsværk + opfordring til at dobbelttjekke; Jacobs baggrund (hundredvis/tusinder af videoer, måneders finpudsning af robotten); ærlig forklaring af hjernens jeg-passager ("Those passages are mine; the system is not allowed to invent any"); løfte om åben deklaration, hvis der en dag kommer partner-links. Kun tekst ændret, intet layout; bygget fejlfrit (676 sider), al ny tekst verificeret i dist og live.
