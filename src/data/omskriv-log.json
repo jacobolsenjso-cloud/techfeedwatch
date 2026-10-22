@@ -133,5 +133,22 @@
    }
   ],
   "usd": 0.7764
+ },
+ {
+  "dato": "2026-10-22T06:37:22.531Z",
+  "omskrevet": [
+   "spotting-the-difference-between-ai-video-and-real-video"
+  ],
+  "stoppet": [
+   {
+    "slug": "reasons-why-you-should-pursue-software-engineering",
+    "grund": "Fejl: Redaktørtjek: 3 ensidige sætninger efter rettelse (højst 2): \"While tech firms restructured compensation packages after pandemic-era hiring sp\" · \"Long-term employment prospects for software eng"
+   },
+   {
+    "slug": "what-is-the-concept-of-quantum-supremacy",
+    "grund": "Fejl: 5 videoafsnit efter rettelse (præcis 1, med kanalens navn i overskriften). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 0.79
  }
 ]
