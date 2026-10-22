@@ -146,6 +146,29 @@
         "position": 3.7
       },
       "note": "Sjette aflaesning, en uge efter den femte. Indekseret 54 -> 50 (-4), ikke indekseret 832 -> 837 (+5), mens sitemappet voksede 566 -> 601 (+35). Googles indekseringsdata staar paa 'Seneste opdatering: 12.10.2026' - samme dato som sidste aflaesning, saa indekseringstallene kan vaere delvist det samme datasaet, blot genberegnet. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er stadig ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 837. Effektiviteten vendte: klik 16 -> 22, eksponeringer 43 -> 35, klikrate 37,2 -> 62,9 %, position 10,7 -> 3,7 i det rullende 28-dages vindue (20/9-17/10), opdateret for 4,5 timer siden. Jeg har IKKE maalt hvorfor - det staar der kun, at det skete."
+    },
+    {
+      "dato": "2026-10-22",
+      "adresser": 608,
+      "indekseret": 38,
+      "ikkeIndekseret": 852,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 526,
+        "Side med omdirigering": 135,
+        "Dublet uden kanonisk side valgt af brugeren": 65,
+        "Ikke fundet (404)": 63,
+        "Crawlet - endnu ikke indekseret": 59,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 27,
+        "eksponeringer": 41,
+        "klikrate": 65.9,
+        "position": 3.2
+      },
+      "note": "Syvende aflaesning, tre dage efter den sjette. Indekseret 50 -> 38 (-12), ikke indekseret 837 -> 852 (+15), mens sitemappet voksede 601 -> 608 (+7). Tredje fald i traek paa indekserede sider: 82 -> 54 -> 50 -> 38 siden 5/10. De aarsager, der flyttede sig, er 'Crawlet - endnu ikke indekseret' 47 -> 59 (+12) og 'Registreret - endnu ikke indekseret' 523 -> 526 (+3); de fem andre staar bit for bit stille. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 852. NYT i brugerfladen: kolonnen 'Validering' staar paa 'Startet' for 'Registreret - endnu ikke indekseret' og for Dublet-Google, og 'Godkendt' for robots.txt - en validering er altsaa i gang, uden at jeg har sat den i gang i denne aflaesning. Effektiviteten fortsatte op: klik 22 -> 27, eksponeringer 35 -> 41, klikrate 62,9 -> 65,9 %, position 3,7 -> 3,2 i det rullende 28-dages vindue (22/9-19/10). Jeg har IKKE maalt hvorfor indekseringen falder, mens klik og position bliver bedre - det staar der kun, at begge ting sker samtidig."
     }
   ]
 }
