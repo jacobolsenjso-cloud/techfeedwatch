@@ -239,6 +239,8 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - **Effektivitet, rullende 28 dage (22/9-19/10):** klik **27** (+5), eksponeringer **41** (+6), klikrate **65,9 %** (62,9), gennemsnitlig position **3,2** (3,7). Anden uge i træk, hvor effektiviteten går op, mens indekseringen går ned. De to tal peger modsat, og serien siger kun, at det sker samtidig.
 - **Nyt i brugerfladen:** kolonnen "Validering" står på **Startet** for "Registreret – endnu ikke indekseret" og for dublet-Google, og **Godkendt** for robots.txt. Ingen i denne aflæsning har startet en validering — den kørte altså i forvejen.
 - **Kontrolleret:** `node serie.mjs` → **7 punkter, alle kontroller passerer** (årsagerne summer til totalen, klikraten passer til 27/41, punkterne står i datorækkefølge). Udskrift gemt i serien som punkt 7.
+- **Min fejl (fundet og rettet samme kørsel):** jeg committede denne gang `STATUS-ALLE-SITES.pdf` og `.docx` med (commit `399a3be7`, 2,5 MB binært). Målt: de 63 tidligere status-commits indeholder KUN `.md` — pdf og docx har aldrig ligget i repoet. Trukket ud igen med `git rm --cached` (commit `c68ec468`); begge filer ligger stadig på disken i roden og i `Claude outputs`.
+- **Lære:** `git add` af en fil, der ikke står i `git status` som ændret, betyder at filen er NY i repoet — tjek `git log -- <fil>` før den tilføjes, i stedet for at antage at den altid har været der.
 - **Lære:** opskriften for denne aflæsning nævner fem felter, men `serie.mjs` kræver også `adresser` (antal `<loc>` i sitemap-0.xml, tælles samme dag) — uden det felt fejler kontrollen. Feltet er talt på det levende site denne gang; opskriften bør nævne det, så næste aflæsning ikke går i stå på det.
 
 
