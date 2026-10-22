@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 178** — brug kun v178). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 179** — brug kun v179). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,13 +8,13 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 178** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (22/10-2026 kl. 11:40): STEMME-FEJL FUNDET OG RETTET — hjernen skrev Jacobs jeg-passage ind i nattens cybersikkerheds-artikel, men talesprog-kontrollen slettede den igen (målt i loggen kl. 06:17). Kontrollen tillader nu op til 4 jeg-sætninger ved emnematch, og rettelses-kaldene beskytter passagen (commit 8b45e12d). Første artikel med bevaret stemme ventes ved næste emnematch.**
+**Seneste for techfeedwatch (22/10-2026 kl. 12:15): UGENTLIG SEARCH CONSOLE-AFLÆSNING — indekserede sider falder tredje gang i træk: 50 → 38 (-12), ikke indekseret 837 → 852 (+15), sitemappet 601 → 608 (+7). De 12 sider gik til "Crawlet – endnu ikke indekseret" (47 → 59); de fem øvrige årsager står stille. Effektiviteten går modsat vej: klik 22 → 27, eksponeringer 35 → 41, klikrate 65,9 %, position 3,7 → 3,2 (28 dage, 22/9-19/10). Hvorfor er IKKE målt. Serien har nu 7 punkter, alle kontroller passerer.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
 - **Plan:** den nye opskrift ("søgning først"), artikelsiden og AI-billederne er live siden 13/10; de gamle artikler skrives om (loft 16/10: højst 3 nye + 3 omskrivninger om dagen). Næste beslutning: hvordan sitet opfylder Googles krav om menneskelig indsats og originalitet (1/10), før AdSense nr. 4, som Jacob selv sender.
 - **Overvågning:** `robot-status.json` (står `lastArticle.at` mere end et døgn tilbage, er noget galt), `build.json` (hvilken commit der er live), workflowet "Tomgangsalarm" (3 gange i døgnet; rød kørsel og mail ved 36 timers tomgang).
-- **Ældre åbne punkter, ikke genmålt 6/10 (detaljer i Bilag A i `STATUS-ARKIV.md`):** Search Console-måleserien (ugentlig aflæsning, seneste i git 19/10, `920cd41a`), miniature-fejlen for Shorts, brandsuffikset i `<title>` måler tegn i stedet for bredde, VideoObject uden `duration`, beslutningen om hvad Jacob selv skriver ("menneske i loopet"), AlternativeTo-forslaget.
+- **Ældre åbne punkter, ikke genmålt 6/10 (detaljer i Bilag A i `STATUS-ARKIV.md`):** Search Console-måleserien (ugentlig aflæsning, seneste i git 22/10, `4caf87ec` — 7 punkter), miniature-fejlen for Shorts, brandsuffikset i `<title>` måler tegn i stedet for bredde, VideoObject uden `duration`, beslutningen om hvad Jacob selv skriver ("menneske i loopet"), AlternativeTo-forslaget.
 
 ### techmediaarch.com — målt 6/10 (kun læsning)
 - Kører på Astro (Cloudflare Workers) siden 25/9; forsiden svarer 200. GitHub `origin/main` = `13e2dc9` (6/10 kl. 11:29, "Robot: 1200-word minimum, more research, merge single sentences"). Repoet har 194 artikelfiler og 17 sider. AdSense-godkendt.
@@ -231,6 +231,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 22/10-2026 kl. 12:15 - techfeedwatch: ugentlig Search Console-aflæsning - indekseringen falder tredje gang i træk, mens klik og position bliver bedre
+- **Målt i Jacobs Chrome (Googles indekseringsdata halter 2-3 dage):** indekserede **38** (19/10: 50, **-12**), ikke indekseret **852** (837, **+15**), sitemappet **608** adresser (601, **+7**, målt på det levende site). Trukket væksten fra er den reelle bevægelse i "ikke indekseret" **+8** — en pejling, ikke et facit.
+- **Kun to årsager har flyttet sig:** "Crawlet – endnu ikke indekseret" 47 → **59** (+12) og "Registreret – endnu ikke indekseret" 523 → **526** (+3). De fem andre står bit for bit stille: omdirigering 135, dublet uden kanonisk 65, 404 63, robots.txt 3, dublet-Google 1. "Serverfejl (5xx)" er stadig ikke på listen (7 årsager, ikke 8) og står som 0 i serien for at bevare formen. Årsagerne summer til 852.
+- **Tredje fald i træk:** 82 (5/10) → 54 (12/10) → 50 (19/10) → **38** (22/10). Faldet er altså ikke en enkelt mærkelig aflæsning. **Jeg har ikke målt hvorfor** — de 12 sider, der flyttede sig, landede i "Crawlet – endnu ikke indekseret", hvilket betyder, at Google har hentet dem, men ikke sat dem i indekset. Mere end det bærer tallene ikke.
+- **Effektivitet, rullende 28 dage (22/9-19/10):** klik **27** (+5), eksponeringer **41** (+6), klikrate **65,9 %** (62,9), gennemsnitlig position **3,2** (3,7). Anden uge i træk, hvor effektiviteten går op, mens indekseringen går ned. De to tal peger modsat, og serien siger kun, at det sker samtidig.
+- **Nyt i brugerfladen:** kolonnen "Validering" står på **Startet** for "Registreret – endnu ikke indekseret" og for dublet-Google, og **Godkendt** for robots.txt. Ingen i denne aflæsning har startet en validering — den kørte altså i forvejen.
+- **Kontrolleret:** `node serie.mjs` → **7 punkter, alle kontroller passerer** (årsagerne summer til totalen, klikraten passer til 27/41, punkterne står i datorækkefølge). Udskrift gemt i serien som punkt 7.
+- **Lære:** opskriften for denne aflæsning nævner fem felter, men `serie.mjs` kræver også `adresser` (antal `<loc>` i sitemap-0.xml, tælles samme dag) — uden det felt fejler kontrollen. Feltet er talt på det levende site denne gang; opskriften bør nævne det, så næste aflæsning ikke går i stå på det.
+
 
 ### 22/10-2026 kl. 11:40 - stemme-fejlen fundet og rettet: kontrollen slettede hjernens jeg-passage
 - **Morgenrapport 22/10:** 3 nye artikler, 24/24 starter, 0,86 USD pr. artikel — og INGEN "KLIPPET" (første hele døgn efter loft-rettelsen 20/10).
