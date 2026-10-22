@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 19. oktober (**version 177** — brug kun v177). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 19. oktober (**version 178** — brug kun v178). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 19. oktober (**version 177** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (21/10-2026 kl. 21:12): CLOUDFLARE STRAMMET — TLS 1.2 som minimum og HSTS på alle tre domæner, DMARC rettet (dublet slettet på techmediaarch; quarantine + Cloudflare-rapportering på alle tre). Alt målt efter på levende headers og DNS. Næste: robottens første artikel med stemme ventes i morgenrapporten 22/10.**
+**Seneste for techfeedwatch (22/10-2026 kl. 11:40): STEMME-FEJL FUNDET OG RETTET — hjernen skrev Jacobs jeg-passage ind i nattens cybersikkerheds-artikel, men talesprog-kontrollen slettede den igen (målt i loggen kl. 06:17). Kontrollen tillader nu op til 4 jeg-sætninger ved emnematch, og rettelses-kaldene beskytter passagen (commit 8b45e12d). Første artikel med bevaret stemme ventes ved næste emnematch.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 22/10-2026 kl. 11:40 - stemme-fejlen fundet og rettet: kontrollen slettede hjernens jeg-passage
+- **Morgenrapport 22/10:** 3 nye artikler, 24/24 starter, 0,86 USD pr. artikel — og INGEN "KLIPPET" (første hele døgn efter loft-rettelsen 20/10).
+- **Fundet (målt i kørslen kl. 06:17):** hjernen matchede cybersikkerheds-emnet og skrev jeg-passagen — men talesprog-kontrollen (fra 6/10, lavet mod videoens tale) stemplede "I" som talesprog og bad om en omskrivning, der fjernede stemmen. Skrivereglen fik undtagelsen 21/10; kontrol-reglen fik den ikke.
+- **Rettet (Jacobs ja kl. 11:35, commit 8b45e12d):** `talesprog()` tager nu en tilladelse: ved holdnings-match må op til 4 jeg-sætninger stå (= bremsen "én passage på 2-4 sætninger", nu håndhævet mekanisk — FLERE end 4 meldes alle). Video-talesprog ("subscribe", "in this video" …) fanges stadig altid. Begge rettelses-prompter (faktaark + redaktørtjek) har fået en linje om at bevare passagen ordret.
+- **Testet:** 5/5 enhedstests grønne (lokalt på Windows OG i arbejdskopien); syntakstjek ok; push efter rebase (robotten pushede imens). Testen ligger i `_udkast/_test-talesprog.mjs` (gitignoreret, kun lokal).
+- **Holdes øje med:** redaktørtjekkets "ensidige sætninger" kan i teorien stadig ramme en holdnings-passage — måles når de første stemme-artikler kommer (opfølgning ca. 27/10).
+- **Lære:** en undtagelse til en skriveregel skal følges hele vejen gennem kæden — også kontrol- og rettelses-trinnene, ellers æder kæden undtagelsen igen.
+
 
 ### 21/10-2026 kl. 21:12 - Cloudflare-gennemgang: TLS 1.2, HSTS og DMARC strammet på alle tre domæner
 - **Jacobs ja kl. 20:59 og 21:04** til at rette TLS/HSTS og DMARC. Alt udført i Jacobs egen Chrome.
