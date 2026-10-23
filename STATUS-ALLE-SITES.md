@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 22. oktober (**version 182** — brug kun v182). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 183** — brug kun v183). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 22. oktober (**version 182** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (23/10-2026 kl. 13:03): FART-RETTELSER LIVE (f4c3e084) — scroll-statistik udskudt til tomgang, YouTube-preconnect kun på artikelsider, ny preconnect til samtykke-boksen. Målt live efter: LCP 6,8→6,4 s, blokeringstid 110→60 ms, score 64→66 (mobil, hårdt test). Loftet er fortsat Googles annonce-scripts — accepteret. Billederne blev frikendt af målingen, FØR der blev rettet noget.**
+**Seneste for techfeedwatch (23/10-2026 kl. 19:56): STEMMENS FANGSTNET REPARERET — to fejl målt og rettet: (1) emne-matchingen manglede engelske nøgleord (iphone- og programming-artiklerne 23/10 fik "kun stil") + parentes-fejl i matchkoden; alle 18 emner har nu nøgleord, og Crypto er tilføjet som emne (web3 hører under det). (2) Omskrivningen af gamle artikler hentede slet ikke hjernen — nu samme kobling som den daglige robot, bevist med prøve-omskrivning (219 gamle artikler tilbage i køen). Matchtest 8/8 grønne.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 23/10-2026 kl. 19:56 - stemmens fangstnet: nøgleord + parentes-fejl + omskrivningen koblet på hjernen
+- **Fundet (målt i nattens logs):** begge nye artikler (iphone-sikkerhed, programming libraries) fik "Hjernen er med (kun stil)" — selv iphone-artiklen, det perfekte emne for hacker-historien. Årsag 1: emne-matchingen sammenligner overskriftens ord med spørgsmålet, og kun Uddannelse havde engelske nøgleord. Årsag 2 (parentes-fejlen): "(" og ")" klæbede til første/sidste nøgleord, så fx "(education" og "certification)" ALDRIG matchede — Uddannelses nøgleord har reelt været halvt døde siden 21/10.
+- **Rettet (Jacobs ja 19:41):** split-regex i hjerne.mjs deler nu også på parenteser; engelske nøgleord på alle 18 emne-overskrifter i emner.md (holdningsteksterne urørt); nyt Crypto-emne med Jacobs egne ord fra beliefs (nøgleord inkl. web3, bitcoin, blockchain — web3-artikler rammer dermed Crypto-holdningen). Matchtest _udkast/_test-emnematch.mjs: 8/8, inkl. begge nattens fejlede spørgsmål og et web3-spørgsmål.
+- **Omskrivningen manglede hjernen helt (Jacobs spørgsmål ramte plet):** omskriv-gamle.yml hentede aldrig _hjerne, så alle omskrivninger kørte stemmeløst. Nu samme "Hent hjernen"-step som den daglige robot. Bevist med rigtig prøve-omskrivning (kørsel 39997738568): hjerne-steppet hentede præcis den nye hjerne-commit (4afd69e), artiklen "you can make ai videos for zero dollars" omskrevet fejlfrit (10 websider, 0 tal uden kilde, 0,28 USD). 219 gamle artikler tilbage i omskrivnings-køen — alle får nu stemmen med, når deres emne matcher.
+- **Lille synligheds-rettelse:** omskrivningsloggen viser nu hjerne-linjen pr. artikel, så match-status kan kontrolleres (før blev den filtreret væk).
+- **Forventning fremad:** med nøgleordene bør en stor del af artiklerne (nye + omskrevne) nu matche en holdning — første bevis ventes i morgenrapporten 24/10. Bremsen er uændret: højst ÉN kort jeg-passage, og kun når holdningen reelt angår spørgsmålet.
+- **Lære:** nøgleord-matching skal testes med ordene fra VIRKELIGE spørgsmål, ikke kun med emnenavnet — og en undtagelse/feature skal følges hele kæden rundt (ny-skrivning OG omskrivning), ikke kun der hvor den blev født.
+
 
 ### 23/10-2026 kl. 13:03 - fart-forside flettet: tre rettelser, målt før og efter
 - **Billederne frikendt FØR rettelse:** Lighthouse' LCP-tjekliste var grøn på alle punkter (hero 66 KiB webp, fetchpriority, eager, 81 ms hentning) — og i PageSpeeds egen rapport var LCP-elementet logo-TEKSTEN med 2.320 ms "forsinket gengivelse". Den planlagte billed-optimering blev derfor IKKE lavet; i stedet tre målrettede rettelser (Jacobs ja 12:43, gren; 13:00, fletning f4c3e084):
