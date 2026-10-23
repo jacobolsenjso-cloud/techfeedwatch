@@ -42,7 +42,8 @@ for (const a of gamle.slice(0, antal)) {
   const r = spawnSync('node', ['add-video.mjs', '--erstat', a.slug], { encoding: 'utf8', maxBuffer: 1 << 26, env: process.env });
   const ud = `${r.stdout || ''}\n${r.stderr || ''}`;
   // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
-  for (const l of ud.split('\n')) if (/^(KILDETJEK|FORBRUG):|Succes!|Sprunget over|Fejl:|AI-billede/.test(l.trim())) console.log('  ' + l.trim());
+  // 23/10: hjerne-linjen med i loggen, så man kan SE om stemmen var med i omskrivningen.
+  for (const l of ud.split('\n')) if (/^(KILDETJEK|FORBRUG):|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
   const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
   kørsel.usd += f.usd || 0;
   const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
