@@ -207,8 +207,17 @@ const siteSchema = [
         eagerness: 'moderate',
       }],
     })}></script>
-    <link rel="preconnect" href="https://img.youtube.com" />
+    {/* 23/10 (PageSpeed): preconnect kun hvor YouTube-billeder faktisk bruges
+        (artikelsiderne). På alle andre sider var forbindelsen ubrugt og optog
+        en af browserens tidlige forbindelser. dns-prefetch er billig og beholdes
+        overalt. Cloudflares Early Hints løfter link-tags til headere, så dette
+        rydder også de to ubrugte header-preconnects fra rapporten. */}
+    {Astro.url.pathname.startsWith('/video/') && <link rel="preconnect" href="https://img.youtube.com" />}
     <link rel="dns-prefetch" href="https://img.youtube.com" />
+    {/* 23/10 (PageSpeed): samtykke-boksen (Funding Choices) er med i første
+        optegning på mobil — en tidlig forbindelse sparer ~300 ms LCP
+        (PageSpeeds eget estimat i rapporten 23/10). */}
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <title>{ogTitle}</title>
@@ -310,7 +319,16 @@ const siteSchema = [
           return 'andet';
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        /* 23/10 (PageSpeed): målingen her er statistik, ikke brugerflade.
+           rulleBeholder() spørger om scrollHeight/clientHeight i samme øjeblik
+           siden tegnes og tvang en reflow på ~300 ms på mobil. Hele opsætningen
+           venter nu, til browseren har tomgang — intet mistes: mærkerne sendes
+           stadig, de måles bare fra et øjeblik senere. */
+        function naarKlar(fn) {
+          if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 4000 });
+          else setTimeout(fn, 1500);
+        }
+        document.addEventListener('DOMContentLoaded', function () { naarKlar(function () {
           var type = sidetype(location.pathname);
 
           // Sitet ruller i en INDRE beholder, ikke i dokumentet. En lytter på
@@ -414,7 +432,7 @@ const siteSchema = [
               link_url: href.slice(0, 100),
             });
           }, { passive: true, capture: true });
-        });
+        }); });
       })();
     </script>
 
