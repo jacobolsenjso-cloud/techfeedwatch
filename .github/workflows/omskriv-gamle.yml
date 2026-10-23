@@ -32,6 +32,17 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # 23/10: omskrivningen kører gennem add-video.mjs og skal have hjernen med,
+      # præcis som den daglige robot — ellers omskrives gamle artikler UDEN Jacobs
+      # stemme. continue-on-error: hjernen er valgfri og må aldrig vælte en kørsel.
+      - name: Hent hjernen (jacob-hjerne, privat, kun læsning)
+        continue-on-error: true
+        uses: actions/checkout@v5
+        with:
+          repository: jacobolsenjso-cloud/jacob-hjerne
+          ssh-key: ${{ secrets.HJERNE_NOEGLE }}
+          path: _hjerne
+
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:

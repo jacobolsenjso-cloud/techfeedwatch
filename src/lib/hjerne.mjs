@@ -21,8 +21,12 @@ export function laesHjerne() {
 }
 
 // Finder de afsnit i emner.md, hvis emneord optræder i artiklens emne/spørgsmål/titel.
-// Hvert afsnit står som "- **<Emne>:** ...". Emneordet deles i ord (mindst 4 tegn,
-// "tech" og "computing" er for generelle), og hele emnenavnet prøves også.
+// Hvert afsnit står som "- **<Emne> (nøgleord, nøgleord …):** ...". Emneordet deles i ord
+// (mindst 4 tegn; "tech" og "computing" er for generelle), og hele emnenavnet prøves også.
+// 23/10: parenteser deler nu også ord — før klæbede "(" til første og ")" til sidste
+// nøgleord ("(education", "certification)"), så netop de to aldrig matchede. Målt 23/10:
+// to artikler (iphone-sikkerhed, programming libraries) fik "kun stil", fordi
+// overskrifterne manglede engelske nøgleord — de er samtidig føjet til emner.md.
 export function emneAfsnit(hjerne, tekst) {
   if (!hjerne?.emner) return [];
   const t = String(tekst || '').toLowerCase();
@@ -32,7 +36,7 @@ export function emneAfsnit(hjerne, tekst) {
     const m = linje.match(/^- \*\*(.+?):?\*\*/);
     if (!m) continue;
     const navn = m[1].toLowerCase();
-    const ord = navn.split(/[\s/&,-]+/).filter((o) => o.length >= 4 && !FOR_GENERELLE.has(o));
+    const ord = navn.split(/[\s/&,()-]+/).filter((o) => o.length >= 4 && !FOR_GENERELLE.has(o));
     if (t.includes(navn) || ord.some((o) => t.includes(o))) ud.push(linje.trim());
   }
   return ud.slice(0, 2);
