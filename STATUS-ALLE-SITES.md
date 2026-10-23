@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 22. oktober (**version 181** — brug kun v181). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 182** — brug kun v182). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 22. oktober (**version 181** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (22/10-2026 kl. 13:15): SPEEDTEST AFLÆST — Computer 96, Mobil 64 (LCP 6,9 s på simuleret billig telefon/langsomt 4G; tilgængelighed/praksis/SEO alle 100, CLS 0). NÆSTE FORBEDRING (Jacobs ja kl. 13:15): billed-optimering af forsiden (hurtigere LCP, ingen designændring — videodelen røres ikke). Ellers: se v180.**
+**Seneste for techfeedwatch (23/10-2026 kl. 13:03): FART-RETTELSER LIVE (f4c3e084) — scroll-statistik udskudt til tomgang, YouTube-preconnect kun på artikelsider, ny preconnect til samtykke-boksen. Målt live efter: LCP 6,8→6,4 s, blokeringstid 110→60 ms, score 64→66 (mobil, hårdt test). Loftet er fortsat Googles annonce-scripts — accepteret. Billederne blev frikendt af målingen, FØR der blev rettet noget.**
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,17 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 23/10-2026 kl. 13:03 - fart-forside flettet: tre rettelser, målt før og efter
+- **Billederne frikendt FØR rettelse:** Lighthouse' LCP-tjekliste var grøn på alle punkter (hero 66 KiB webp, fetchpriority, eager, 81 ms hentning) — og i PageSpeeds egen rapport var LCP-elementet logo-TEKSTEN med 2.320 ms "forsinket gengivelse". Den planlagte billed-optimering blev derfor IKKE lavet; i stedet tre målrettede rettelser (Jacobs ja 12:43, gren; 13:00, fletning f4c3e084):
+- **1) Scroll-statistikken udskudt:** rulleBeholder() spurgte om scrollHeight/clientHeight i samme øjeblik siden tegnedes (tvungen reflow ~300 ms); hele opsætningen venter nu på browser-tomgang. Intet mistes — mærkerne sendes stadig.
+- **2) YouTube-preconnect kun på artikelsider** (eneste sted billederne bruges); dns-prefetch beholdt overalt. Rydder også de to ubrugte header-preconnects (Cloudflare Early Hints løfter link-tags til headere).
+- **3) Ny preconnect til fundingchoicesmessages.google.com** (samtykke-boksen) — PageSpeeds eget estimat ~300 ms LCP.
+- **Målt (gren mod main i arbejdskopi, 3 kørsler, median):** score 83→90, LCP −278 ms, TBT −176 ms. **Målt live efter fletning (PageSpeed 13.02 mod 12.29):** LCP 6,8→6,4 s · TBT 110→60 ms · score 64→66. CLS stadig 0; desktop var 96 i forvejen.
+- **Ærligt:** loftet er Googles annonce- og samtykke-scripts (220+69 KiB) — ca. 64-70 på det hårde mobiltest er vilkåret med annoncer. Felt-data (det, Google ranker på) findes endnu ikke. Punktet lukkes.
+- Grenen fart-forside står stadig på GitHub (slettes kun med Jacobs ok). Tilgængeligheds-tjek ikke kørt: intet design er ændret (kun timing/forbindelses-hints), og puppeteer mangler lokalt.
+- **Lære:** "estimeret besparelse" i PageSpeed er ikke en opskrift — LCP-fasernes fordeling (hvor tiden faktisk går tabt) er den rigtige vejviser til, hvad der skal rettes.
+
 
 ### 22/10-2026 kl. 13:15 - PageSpeed aflæst; billed-optimering sat på listen (Jacobs ja kl. 13:15)
 - **PageSpeed Insights (forsiden, rapport kl. 12.01):** Computer 96 · Mobil 64 · Tilgængelighed/Bedste praksis/SEO alle 100 · CLS 0 (perfekt layoutstabilitet). Mobil-tallene: FCP 3,4 s, LCP 6,9 s, Speed Index 6,0 s, TBT 150 ms — målt på simuleret Moto G Power med langsomt 4G (bevidst hårde vilkår). "Dine brugere": ingen felt-data endnu (for få besøgende) — det er felt-tallene, der tæller i ranking.
