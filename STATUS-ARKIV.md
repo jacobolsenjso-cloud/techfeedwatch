@@ -2,6 +2,140 @@
 
 Ældre dagbog (7/10-2026 og tilbage) og Bilag A, flyttet ordret fra `STATUS-ALLE-SITES.md` 14/10-2026. Kun historik — **koden og den aktuelle statusfil er facit**. Nyeste flytning øverst.
 
+## Flyttet 25/10-2026 (statusfil v199 → v200)
+
+### 18/10-2026 kl. 22:30 - techfeedwatch: lokal gren `udkast-forside` slettet
+- **Jacob kl. 22:30:** "ja du må slette den". Slettet med `git branch -d` (sletter kun, hvis alt er flettet ind i main - det var det, `159ac9f8`). Grenen lå aldrig på GitHub.
+
+
+### 18/10-2026 kl. 22:19 - techfeedwatch: forsiden tjekket igen live + 2 fejl rettet (LIVE `6f8b3b60`)
+- **Jacob kl. 21:58:** "vil du tjekke siden igen, også for fejl".
+- **Uden browser:** 128 adresser OK, én h1, title uændret, /page/2/ 200, 24/24 nyeste.
+- **I Jacobs Chrome (mobil 400 px, senere desktop 1536 px, mørk tilstand):** emneknap Crypto 48/48, "All" bringer forsiden tilbage, én swipe-række, faner virker, søgning "bitcoin" giver forslag -> Enter -> /search/?q=bitcoin (8 artikler) -> tilbage -> forsiden; 0 ødelagte billeder, intet stikker ud over kanten, 0 fejl i konsollen.
+- **Fejl 1 (fandtes før i dag, alle sider):** klokkens tæller viste en tom turkis prik ved 0 nye artikler - `display: flex` i CSS slog `hidden` ihjel. Rettet i `MainLayout.astro` (`.notif-badge[hidden] { display: none !important }`). Set live: skjult på forside, artikel og /latest/.
+- **Fejl 2 (ny forside):** i Jacobs Chrome blev 2 karrusel-kort stående usynlige efter et hurtigt sidelæns swipe ("toning frem ved rul" nåede ikke at se dem). Kunne ikke genskabes i testbrowseren, så sikker løsning: kort i karrusellerne skjules aldrig (`index.astro`). Set live: 0 af 20 usynlige.
+- **Test før push:** 35/35 i preview (ny test: hurtigt swipe frem + roligt tilbage). Live `6f8b3b60` (bygget 22:17); artikel, /latest/ og /tools/ uden konsolfejl.
+- **Lære:** mit eget skærmbillede af mobilforsiden kl. 22:00 viste den tomme prik ved klokken, men preview havde altid "3" nye, så fejlen var usynlig lokalt. Ved skærmbilleder af toppen: tjek både med og uden nye beskeder ved klokken.
+
+
+### 18/10-2026 kl. 21:41 - techfeedwatch: NY FORSIDE LIVE (`159ac9f8`)
+- **Jacob kl. 21:29:** "det ser rigtig godt ud... du må gerne ligge det live" + "husk at tjekke for fejl når det er lagt live".
+- **Før push:** robotten havde pushet `3666f808`; grenen lagt oven på den, bygget igen og testet i preview: 34/34. main flyttet frem (kun fast-forward), pushet `3666f808..159ac9f8`. Ændret i alt: kun `src/pages/index.astro` (489+/146-), så ingen andre sider er rørt.
+- **Live:** GitHub-tjek "Cloudflare Pages" kørte; `build.json` = `159ac9f8`, bygget 21:34 dansk.
+- **Fejltjek live (uden browser, `_udkast/_tjek-live.mjs`):** alle 128 interne adresser på forsiden (links, billeder, CSS, scripts) svarer OK; præcis én h1 "AI, Tech, Fintech & Crypto, Explained"; `<title>` uændret; /page/2/ svarer 200; de 24 nyeste står på forsiden (24/24); ingen danske ord eller pladsholdere i den synlige tekst.
+- **Samme kode som testet:** den levende forside er byte for byte den, der fik 34/34 i preview - eneste forskel er et script, Cloudflare selv sætter ind til sidst (deres robot-tjek).
+- **IKKE nået:** klik-testen (emneknapper, faner, søgning) på det levende site. Chrome uden vindue hænger mod det levende site (sandsynligvis Cloudflares robot-tjek), og Jacob stoppede tjekket i sin egen Chrome. Funktionerne er bevist på identisk HTML i preview.
+- **Lære:** test mod det levende site med Chrome uden vindue virker ikke (hænger, også med normalt browsernavn). Live-tjek uden browser = hent HTML og alle adresser med node; klik-tjek = Jacobs Chrome efter hans ok.
+- **Lære:** mit første live-tjek meldte 4 døde adresser, men det var tekststykker inde i JavaScript, ikke links - fanget og rettet i scriptet, før det blev meldt som fejl.
+
+
+### 18/10-2026 kl. 21:09 - techfeedwatch: udkastet rettet efter "Det bør du vide" (kun lokal gren `udkast-forside`, IKKE pushet, main urørt)
+- **Jacob kl. 20:53:** "de ting som du siger, Det bør du vide... kan du rette det... H1 til google skal bare i orden".
+- **h1:** "AI, Tech, Fintech & Crypto, Explained" (før "Straight answers on AI, tech, fintech and crypto."). Samme ord som sidens `<title>` ("AI, Tech, Fintech & Crypto News, Explained"), så Google og skærmlæsere får ét klart emne. Skriften følger skærmbredden (clamp 0,9-1,05 rem). Målt: præcis én h1, én linje ved 320/360/375/390/414/430 px og på desktop.
+- **Vandmærket:** titlen på hovedbilledet holdes over vandmærket (bundluft 7 % af bredden), og toningen er svagere i den nederste stribe, så "TechFeedWatch.com" ikke dæmpes. Set på udsnit, mobil + desktop.
+- **Desktop-striben (fejlen fandtes også live):** emnerækken blev klippet 2 px for langt nede, så 3. rækkes øverste kant stak frem. Klippes nu lige før 3. række (bjælke 119 px). Målt: 0 af 3 knapper i 3. række stikker frem.
+- **Gamle emnekort:** kun 43 af 441 artikler har AI-billede (regel `public/billeder/<slug>.webp`, som `src/lib/aibillede.mjs`). Trending, stort kort og karruseller bruger nu kun dem; emner med under 4 tilbage springes over. Gitteret viser stadig alle 24 fra side 1. "Top 5 this month" hedder nu "Trending this month", fordi listen ikke længere er en komplet top 5. Målt: 26 billedkort, 0 med gammelt emnekort.
+- **Grenen lagt oven på det levende** (`git rebase --autostash origin/main`, nu oven på `e831814c`). Commits: `280b59f1`, `baad6175`, `f49268ac`.
+- **Test: 34/34 bestået** (de 25 fra før + stribe, h1 x 7, kun AI-billeder). Mobil-siden er nu 6.804 px høj (før 10.248), desktop 4.393 px (før 4.903).
+- **Lære:** testen af stribe-fejlen manglede i første runde - jeg så den på billedet, men havde intet tjek, der målte den. Nu måler testen den.
+- **Lære:** jeg lavede en kopi af et lille hjælpescript med PowerShell (Replace + Set-Content) - mod reglen om kun node-script/edit_block til tekstfiler. Ingen skade (kun en hjælpefil, ingen danske tegn i det ændrede), men reglen gælder også hjælpefiler.
+
+
+### 18/10-2026 kl. 20:42 - techfeedwatch: UDKAST til ny forside (kun lokal gren `udkast-forside`, commit `d59e6a5b` - IKKE pushet, main urørt)
+- **Jacob kl. 20:00:** forsiden ser flad ud; byg forslag 1-6 som udkast på en lokal gren, se det med preview, send billeder (mobil 390x844 hele siden, desktop 1366x900, lys + mørk). Kun `src/pages/index.astro`. Mine farver (#2563eb, #6d28d9) - ikke TechCrunch/TechXplore/techfeed.dev's.
+- **Lavet (kun index.astro, 1 fil):** (1) tekstboksen -> h1 alene (ordret); (2) emneknapper på mobil = ÉN række man swiper i, toning i højre kant (væk ved enden), valgt knap rulles ind; desktop uændret; (3) blå-violet felt med hovedhistorien (titel oven på billedet med mørk toning) + "Top stories" (4); (4) faneboks Popular / Questions people ask / Latest (piletaster virker); ét stort kort; "Top 5 this month" med store tal (popularitet = kildevideoens visninger / kanalens gennemsnit, samme mål som /popular, sidste 30 dage); karrusel for de 3 største emner; talstribe (441 artikler, 16 nye på 7 dage, 50 værktøjer, 296 skabere - alt talt ved build) + Guides (9) / Tools (50) / Glossary (56); "More articles"-gitter; større, fede sektionsoverskrifter. Emnefarver kun som prik/streg - aldrig som tekst eller bag hvid tekst. Hver artikel højst ét sted i de store sektioner; alle 24 fra side 1 står stadig på forsiden (/page/2 starter ved 25).
+- **Målt før -> efter (mobil 390x844, px fra toppen af rulleområdet under topbjælken):** tekstboks 360 -> 42 px (h1 på 2 korte linjer ved 390 bredde); emneknapper 162 -> 57 px; hovedtitel 825 px (UNDER første skærm) -> 292 px (på billedet, synlig på første skærm); siden 10.248 -> 8.246 px høj. Desktop: 4.903 -> 5.066 px.
+- **Test (preview, ren Chrome uden vindue, mobil + desktop): 25/25 bestået** - emneknap Crypto 48/48 kort, "All" bringer forsiden tilbage, faner + piletaster, én række + toning, Topics-knappen nede på siden -> Fintech 59 kort, søgefelt 8 forslag -> Enter -> /search?q=bitcoin -> tilbage-knap -> forsiden, 0 scriptfejl, 96 interne links 0 døde, 0 dubletter, 24/24 fra side 1.
+- **Fundet, IKKE rettet (også på det levende site):** på desktop ses en stribe af emneknappernes 3. række under de to rækker (over "+3 more"). Forsidens "?"-mærker og emnemærker bruger i dag emnefarve som tekst/bag hvid tekst (farvereglen) - i udkastet er de erstattet.
+- **Lære:** Chrome uden vindue hang på forsiden (annonce-/YouTube-scripts) - samme fejl som 11:06 i dag. Rettet i mine nye scripts med --host-resolver-rules; `shot.mjs` mangler det stadig (foreslået, ikke ændret - kun forsiden måtte røres).
+- **Lære:** min oprydningskommando (`-match 'chrome-forside'`) ramte sin egen PowerShell, fordi ordet stod i kommandolinjen - filtrér altid også på procesnavn (node.exe/chrome.exe).
+- **Lære:** `scroll-behavior: smooth` i rulleområdet gjorde, at scrollTop stadig var 0, når den blev læst -> skærmbilledværktøjet tog kun 1 skærm. Slå smooth fra i måleværktøjer.
+- **Lære:** i Chrome uden vindue går bløde rul (smooth) i stå og overtager senere scrollLeft - én test fejlede af den grund, ikke pga. koden (vist med et særskilt fejlfindingsscript). Test fra en frisk side.
+- **Lære:** lange billeder syet af flere skærme gentager alt, der står fast (Topics-knap, pil op, sticky emnerække, desktop-menu) - skjules fra 2. skærm, og kun rulleområdet sys.
+- **Næste:** Jacob ser billederne og siger ja/nej/ændringer. Først derefter: rebase på origin/main (robotten har pushet siden), build, push, se det live.
+
+
+### 18/10-2026 kl. 15:05 - techfeedwatch: gennemgang af alt fra i dag (LIVE `8567849e`)
+- **Jacob kl. 14:30:** "tjek om alle ændringerne er rigtigt sat op, tjek for fejl med alt det vi har lavet i dag".
+- **Kode læst igennem** (samlet ændring c4a55d53^..f2d0708c: sw.js, MainLayout, video/[slug], 10 listesider). **Fundet og rettet (8567849e, ikke videodelen):** i service workeren gik en fejlet forhåndshentning (navigation preload) direkte til gemt kopi/offline-siden uden at prøve en almindelig hentning først. Nu prøves nettet igen først.
+- **Byggede sider (alle 666):** højst ét artikel-topbillede pr. side (to ville stoppe det bløde sideskift); 0 rester af afspil-ikon, annonceplads, varighed eller dansk lukketekst; alle 10.378 kortbilleder findes; alle 441 artikler i datafilen har kortbillede.
+- **Live, 13 sider x mobil + desktop:** 0 scriptfejl, 0 sider/filer med 404/500, 0 usynlige kort på skærmen ved åbning, 0 afspil-ikoner, 0 ødelagte billeder.
+- **Live, funktioner:** bløde sideskift Latest/Tag/forside -> artikel og artikel -> artikel: alle "færdig" (ca. ½ sek.), ingen rester efter tilbage-knap; tryk-løft: løfter efter 60 ms, ikke ved rul, hurtigt tryk løfter, fjernes igen, mus ignoreret; sticky video: 440 kort med artiklens billede (lazy), 0 YouTube-miniaturer/varigheder/annoncer, lukkeknap "Close pinned video", Read Article, luk (læsetilstand væk, padding 0, intet overgangsnavn tilbage), ind igen (12 px), drejet på tværs (ingen knaprække/toning) og tilbage (12 px); bløde skift, kig 2 gange, afstand ved 125-200 % skrift - alt som målt tidligere i dag.
+- **Service worker live:** ny version tfw-01aa4efada, preload slået til, sider ca. 200-280 ms; ÆGTE netudfald: besøgt side vises fra gemt kopi, ubesøgt side giver "You're offline", forsiden virker.
+- **Lære (måleværktøj):** testbrowserens "offline" (Playwright set_offline/route) slår IKKE service workerens forhåndshentning fra - siderne blev hentet fra nettet alligevel, så et offline-tjek så grønt ud uden at teste noget. Offline testes nu med et relæ, der lukkes (scratchpad sw6.py: Chromium via 127.0.0.1:18080 -> proxyen). v149's "offline-reservesiden virker stadig" er derfor ikke bevist dengang; den er bevist nu.
+
+### 18/10-2026 kl. 14:25 - techfeedwatch: afstanden under knaprækken bygger på rækkens målte højde (LIVE `f2d0708c`)
+- **Jacob kl. 14:13:** "så skal det da rettes også... alt skal være perfekt" (efter jeg viste, at stor skrift fik listen ind under rækken).
+- **Ændret:** `padding-top: calc(56.25vw + var(--chips-h, 55px) - 4px)`. Scriptet måler rækkens højde og lægger den på hele siden (`--chips-h` på html, før kun på knapområdet); en ResizeObserver måler igen, når rækken skifter størrelse. Toningen ved højre kant bruger samme måling.
+- **Målt live:** bredde 320-430: liste 12 / artikel 11 px; skrift 125/150/175/200 %: 12 px hver gang (række 60/63/68/72 px); skrift skiftet til 200 % MENS sticky er åben: 12 -> 12 px, toning 72 px = rækken; mørk tilstand ens; scroll dækket; ud af sticky = 0 px; bløde skift, kig 2 gange og desktop uændret; 0 fejl.
+- **Lære:** når en plads regnes ud fra et elements højde, så brug den målte højde - et fast tal (55 px) holder kun ved standardskrift. Test altid også med forstørret skrift.
+
+### 18/10-2026 kl. 14:15 - techfeedwatch: 12 px mellem knaprækken og listen under sticky video (LIVE `bb8d540c`)
+- **Jacob sagde ja kl. 14:00** ("du sætter den ned til 12 px ... Tjek også om der er fejl").
+- **Ændret (én linje):** `body.cinema-mode .video-primary { padding-top: calc(56.25vw + 51px) }` (før `56.25vw + 15px + 55px`). Kun telefon i sticky-tilstand; desktop uændret (padding 0).
+- **Fejltjek live:** bredde 320/360/375/390/412/430: liste 12 px, artikel 11 px overalt; rækken dækker stadig indholdet ved scroll; ud af sticky igen = 0 px som før; mørk tilstand ens; større skrift 125 % = 7 px, 150 % = 4 px (ingen overlap); de bløde skift (Related 235, For You 235, AI & Tech 221, Read Article, to hurtige tryk) og kigget 2 gange virker stadig; desktop uden fejl; 0 fejl i alt.
+- **Kendt grænse (målt, skrift forstørret i testbrowseren):** knaprækkens højde (55 px) er fast i regnestykket, som før. Ved 175 % skrift går listens øverste kant 1 px ind under rækken, ved 200 % 5 px (før ændringen var der stadig ca. 14 px luft ved 200 %). Kan gøres robust ved at bruge rækkens målte højde (`--chips-h`) - det er en ændring i videodelen og kræver Jacobs ja.
+
+### 18/10-2026 kl. 14:10 - techfeedwatch: kigget kører 2 gange; afstanden under knaprækken undersøgt (LIVE `c73cd811`)
+- **Jacob kl. 13:50:** "det skal ske de første 2 gange, 1 gang er for lidt" + "vi kigger på afstand under rækken".
+- **Lavet:** tælleren `tfw_chips_kig` i browseren tæller nu op til 2 (før: ja/nej). Målt live: ny læser - kig 1. gang (tæller 1), 2. gang (2), ikke 3. gang; læser med det gamle "1" får præcis én til; 0 fejl.
+- **Afstanden (kun undersøgt, intet ændret - videodelen er fredet):** 31 px mellem knaprækkens bund og første kort, både ved 390 og 360 bredde, og 30 px til artiklen under Read Article. Årsag: `body.cinema-mode .video-primary { padding-top: calc(56.25vw + 15px + 55px) }` reserverer plads til rækken + 15 px, og siden har i forvejen 15 px luft over indholdet - de to lægges oven i hinanden. Forslag: `calc(56.25vw + 51px)` = 12 px, samme luft som mellem kortene. Prøvet kun i testbrowseren: liste 12 px, artikel 11 px, rækken dækker stadig indholdet ved scroll. Venter på Jacobs ja.
+
+### 18/10-2026 kl. 13:40 - techfeedwatch: knaprækken under sticky video viser, at der er flere knapper (LIVE `afb7ad6b`)
+- **Jacob:** knapperne bør vise, at rækken fortsætter mod højre. Mit forslag (kig + kanttoning) godkendt kl. 13:25 ("du koder dit forslag").
+- **Lavet:** (1) svag toning (44 px) ved højre kant af rækken i sidens baggrundsfarve - lys og mørk tilstand - forsvinder, når man har swipet til enden, og kommer igen, når man swiper tilbage. (2) Første gang en læser får sticky video, glider rækken 60 px til højre og tilbage (ca. 1 sek., starter 0,7 sek. efter videoen sætter sig). Kun én gang pr. læser (husket i browseren), stopper straks ved berøring, springes over ved "reducer bevægelse". Selve videodelen og knapperne er ellers uændrede.
+- **Målt live på mobilskærm (390x844, touch, ren Chromium):** toning ligger præcis over rækken (top 279, højde 55 = rækkens); synlig ved start (1), væk ved enden (0), tilbage ved start (1). Kig: 0 -> 60 -> 0 px på ca. 1,05 sek.; andet forsøg kører ikke; berøring midt i kigget stopper det (blev stående ved 22 px, hvor fingeren tog over); reducer bevægelse = intet kig og intet husket; mørk tilstand toner i rgb(11,16,32) = rækkens baggrund; 0 fejl.
+
+### 18/10-2026 kl. 13:11 - techfeedwatch: knapperne under sticky video skifter listen blødt (LIVE `d8378c3d` + `7bd5ed87`)
+- **Jacob: skiftet ved knaptryk er for hurtigt - "kan man lave en lille forsinkelse?"** Forslag sendt før kodning (videodelen er fredet); Jacob sagde ja kl. 12:59.
+- **Lavet:** knappen markeres straks; kun indholdet under knapperne (listen eller artiklen) toner ud på 0,12 sek., skiftes, og det nye toner ind og glider 8 px op på 0,2 sek. Videoen og knapperne rører sig ikke. Et nyere tryk vinder. "Reducer bevægelse" = med det samme som før. Ren pause uden bevægelse fravalgt (føles som en langsom side).
+- **Fundet ved test og rettet (7bd5ed87):** i en fane, der ikke tegner billeder (Jacobs Chrome-vindue tegnede 1 billede pr. ½ sek. under testen), blev udtoningen aldrig "færdig", og trykket gik tabt (listen skiftede ikke). Nu skiftes der under alle omstændigheder efter højst 250 ms. Bekræftet i samme fane: All 440, Related 235, Read Article viser artiklen.
+- **Målt live på mobilskærm (390x844, touch, ren Chromium):** knap markeret straks; listen halvvejs udtonet efter 60 ms (0,04-0,26); slut helt synlig (1,00) med rigtige tal (Related 235, For You 235 = samme emner uden læsehistorik, AI & Tech 221); Read Article viser artiklen; to hurtige tryk Related->All ender på All, 440 kort, synlig, 0 hængende animationer; 0 fejl.
+- **Lære:** test også i en fane, der ikke tegner (baggrund/skjult vindue) - animationer, der venter på "færdig", kan hænge dér; en tidsgrænse som sikring hører med.
+
+
+### 18/10-2026 kl. 12:48 - techfeedwatch: service workeren henter sider samtidig med at den vågner (navigation preload) (LIVE `f463d3c8`)
+- **Jacob sagde ja** til forslaget efter undersøgelsen af forhåndshentning.
+- **Ændret (public/sw.js):** navigation preload slås til, når den nye service worker aktiveres, og sidevisninger bruger det forhåndshentede svar. "Netværket først" og reservesiden uden net er uændret. Ny version tfw-4e5e449926 (gamle cacher ryddes som altid ved ny version).
+- **Målt (ren Chromium, live site, median pr. sideskift):** før: 288 ms med service worker mod 186 ms uden (16 sideskift hver) = ~100 ms ekstra. Efter: 217 ms med mod 177 ms uden (24 sideskift hver) = ~40 ms ekstra. Navigation preload bekræftet slået til i browseren. Uden net: besøgt side vises fra cachen ("Latest"), ubesøgt side giver reservesiden ("You're offline") - som før.
+- Resten af ekstratiden (~40 ms) er service workerens eget led; den kan kun fjernes ved at lade være med at håndtere sidevisninger, og så forsvinder offline-reservesiden. Ikke foreslået ændret.
+
+
+### 18/10-2026 kl. 12:34 - techfeedwatch: knapperne under sticky video skifter med det samme igen (LIVE `5cd53f77`) + undersøgelse af forhåndshentning
+- **Jacob (mobilvisning): knapperne under den sticky video "skifter meget hurtigt ... kører ikke som den skal".** Fast regel gentaget: videodelens opsætning må ikke ændres uden at spørge ham først.
+- **Årsag (min egen ændring 90593cad, forslag 3):** jeg havde også lagt den bløde overgang på knapperne All/Related/For You/Read Article/emner, så hele skærmen tonede ud og ind (~0,4 sek.) ved hvert tryk. Funktionen var korrekt (All 440, Related 235, For You 435, AI & Tech 221, Read Article viser artiklen, 0 fejl).
+- **Rettet med Jacobs ja:** knapperne skifter med det samme, præcis som før i dag (koden er identisk med før, kun en kommentar tilføjet). Overgangen ved ind/ud af sticky video er beholdt. Målt live: ind 1 overgang, 6 knaptryk 0 overgange, ud 1 overgang, 0 fejl.
+- **Forslag 2 undersøgt (forhåndshentning):** virker ikke i nogen browser, jeg kan teste - Jacobs Chrome 155 og en ren Chromium (Playwright), med OG uden service worker, også med en "hent straks"-regel. Testbrowsere styret af værktøjer kan selv slå forhåndshentning fra, så det er ikke bevist, at den virker eller ikke virker hos almindelige læsere. Reglen er ufarlig og bliver liggende.
+- **Fund ved målingen:** sitets service worker gør hvert sideskift langsommere: median 374 mod 194 ms og 229 mod 176 ms (8 sider, to runder) med/uden. Artiklens HTML er kun 52 KB komprimeret (199 KB ukomprimeret) og kommer på ~0,27 s direkte fra Cloudflare - det er altså ikke sidevægten, men service workerens ekstra led. Løsningsforslag ("navigation preload": netværket hentes samtidig med at service workeren starter) sendt til Jacob - ikke kodet.
+- **Lære:** en overgang, der passer til ét skift (ind/ud af sticky video), passer ikke til knapper man trykker på igen og igen; og jeg lagde den på videodelens knapper uden at nævne det specifikt - videodelen: hver enkelt del skal nævnes og godkendes for sig.
+
+
+### 18/10-2026 kl. 12:10 - techfeedwatch: glidende sideskift, roligere kort, sticky video som én bevægelse (LIVE `2726131e` + `90593cad`)
+- **Jacob: "alle de skift ... skal køre meget mere glidende"**, valgte forslag 5 (mål) -> 1+2 -> 4 -> 3 til sidst; "du koder".
+- **Målt før (Jacobs Chrome, desktop):** CLS (hvor meget siden hopper) var allerede ~0 (forside 0, artikel 0, emne 0,0093, Latest 0, værktøj 0) - hakket kom ikke fra hop, men fra hårde sideskift og fra at synlige kort blev gjort usynlige og tonet frem (artikel 2, emne 4, Latest 5 kort pr. sidevisning). PageSpeed-API'et var spærret (dagskvote 0 uden nøgle); lokal Lighthouse gav ingen rapport - droppet.
+- **1 Bløde sideskift (view transitions):** indholdet toner over med et lille løft (150/280 ms); topbjælke og computerens menu står stille; kortets billede glider over i artiklens topbillede. Målt live: overgangen kører (pageswap: overgang=true, ét navngivet kortbillede, artiklens eget navn slået fra -> ingen dobbelt-navne). Chrome/Edge/Safari 18.2+; Firefox som før; fra ved "reducer bevægelse".
+- **2 Forhåndshentning (speculation rules, prefetch ved hover/tryk):** lagt ind, men IKKE set virke i Jacobs Chrome 155 - heller ikke med en "hent straks"-regel; siden kom fra nettet (735-853 ms). Sandsynlig årsag: sitets service worker håndterer hver sidevisning. Ufarlig at have; ikke bevist. Fund: en artikel er ~198 KB over nettet (285 ms ventetid + 437 ms download) - det er den egentlige ventetid.
+- **4 Kort:** kort på skærmen ved start vises straks (målt: 0 skjulte på Latest/emne/artikel, før 5/4/2); resten toner frem på 0,35 s/8 px (før 0,65 s/16 px). CLS efter: 0 på emne/artikel/Latest.
+- **3 Sticky video (Jacobs ja; videodelen ellers fredet 12/10):** ind/ud af biograf-tilstand og skift liste/artikel under videoen kører som én overgang: videoen glider som ét objekt (samme 280 ms som Jacobs valg 12/10), resten toner over, springet til toppen skjules, listen tegnes inde i overgangen. Gentagne "afspil"-signaler starter den ikke igen. Gammel FLIP er reserve. Målt live (desktop, ?slow): ind og ud uden fejl, billede taget på ~21-25 ms, færdig på ~380-400 ms, navnet ryddet bagefter. Ikke set på en rigtig telefon endnu.
+- **Lære:** PageSpeed-API uden nøgle har kvote 0; mål i Jacobs Chrome med PerformanceObserver i stedet. Og "seen working" holdt ikke for forhåndshentningen - skrevet som ikke-bevist i stedet for at antage.
+
+
+### 18/10-2026 kl. 11:27 - techfeedwatch: afspil-ikonet ▶ fjernet fra alle artikelkort + blødt løft ved tryk på telefon (LIVE `4b3c68a4`)
+- **Jacob: "de skal også væk"** (▶ antyder video, men kortene åbner en artikel) **+ "kan man ikke lave en lille effekt når man trykker ... hopper lidt op blødt".**
+- **Fjernet:** ▶ alle 15 steder (forside x3 + forsidens JS-kort, emnesider, emnesider side 2+, Latest, Library, arkiv, side 2+, søgning, History, Best of each topic, Related articles, Up Next) + CSS-reglerne - 29 linjer i 12 filer. TOC-mærket ▶ ved videoafsnittet i artiklen er bevaret (dér ER det en video).
+- **Ny tryk-effekt (MainLayout, gælder alle sider):** på telefon/pen løfter kortet sig 5 px og 2 % større med blød skygge, mens fingeren er på det. 60 ms forsinkelse, så kort man ruller forbi ikke hopper (pointercancel). Computeren har stadig sit eget løft ved hover. Slås fra ved "reducer bevægelse". Gælder artikelkort, sticky-listen og anbefalingerne i artiklen.
+- **Målt live i Jacobs Chrome (4b3c68a4, Cloudflare success):** 0 ▶ på forside, Latest, Library, Best of each topic, søgning, History, emneside og artikel. Simuleret fingertryk på /latest/: kortet får løft (matrix 1.02, -5 px) og skygge; tryk der bliver til rulning: intet løft; efter slip: 0 kort løftet.
+- **Lære:** første måling af løftet viste "intet" (taget mens overgangen stadig kørte); målt igen bagefter: løftet var der. Mål en animation efter den er færdig, ikke midt i.
+
+
+### 18/10-2026 kl. 11:06 - techfeedwatch: sticky-listen på mobil viser artiklens billede, ikke YouTube-miniaturen (LIVE `c4a55d53`)
+- **Jacob så det selv på mobilen:** listen under den sticky video viste kildevideoernes YouTube-miniaturer + videolængde. Det lignede "næste video" på YouTube, men et tryk åbner en artikel om et andet spørgsmål end miniaturen viser. Beslutningen 13/10 (artiklens AI-billede overalt) havde overset netop denne liste.
+- **Rettet (Jacobs ok, selvom videodelen ellers er fredet 12/10 - kun billede og tal ændret, ikke funktionen):** kortene bruger /kort/<slug>.webp med lazy-loading; videolængden fjernet.
+- **Fundet ved dobbelttjek og rettet:** hvert 4. kort var en annonceplads med annonce-id "XXXXX" (pladsholder) og dansk mærkat "Annonce" - kunne kun vise en tom boks; fjernet (AdSense' automatiske annoncer placerer selv). Luk-knappen havde dansk skærmlæser-tekst ("Luk fastlåst video") på et engelsk site -> "Close pinned video". Før blev alle ~440 YouTube-miniaturer hentet på én gang; nu kun dem på skærmen.
+- **Målt live i Jacobs Chrome (c4a55d53):** 440 kort, 440 med artiklens billede, 0 YouTube-miniaturer, 0 tidsangivelser, 0 annoncebokse; de 8 første billeder indlæst, 416 venter til man scroller. Skærmbillede på mobil (lokal forhåndsvisning af samme kode).
+- **Ikke rettet (Jacobs afgørelse):** afspil-ikonet ▶ på artikelkort findes 15 steder på sitet (forside, emner, Latest, Library, arkiv, søgning, History, Related articles m.fl.) og antyder video - spurgt.
+- **Lære:** Chrome uden vindue hang på artikelsiden, fordi YouTube-rammen aldrig blev færdig; peg YouTube- og annoncedomæner væk (--host-resolver-rules) og mål med en side, der venter aktivt i stedet for faste pauser.
+
 ## Flyttet 24/10-2026 (statusfil v184 → v185)
 
 ### 17/10-2026 kl. 22:50 - techfeedwatch: menuen siger "Best of each topic" (LIVE `ec8cdadd`)
