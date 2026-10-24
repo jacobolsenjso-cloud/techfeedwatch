@@ -21,7 +21,7 @@
         "interneLinks": 338
       },
       "bing": null,
-      "note": "Første aflæsning (Claude, Jacobs Chrome, 14:44). Eneste eksterne link er AlternativeTo. Bing Webmaster Tools ikke logget ind — kræver Jacob."
+      "note": "Første aflæsning (Claude, Jacobs Chrome, 14:44). Eneste eksterne link er AlternativeTo. Bing Webmaster Tools: sitet verificeret ca. 15:00 (BingSiteAuth.xml, 1b98f72e); Backlinks viste 'No data available' (nyt site) — derfor null. Sitemap sitemap-index.xml indsendt 15:11 (Jacobs ja), status 'Processing'."
     }
   ]
 }
