@@ -53,7 +53,7 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'SEO & Metadata',
     heading: 'Free SEO & Metadata Tools',
     description:
-      'Free browser-based SEO tools: SERP preview, meta tags, Open Graph, JSON-LD schema, hreflang, robots.txt, slugs, and UTM links. No sign-up, nothing uploaded.',
+      'Free browser-based SEO tools: SERP preview, meta tags, schema, robots.txt and AI crawler checks, sitemaps and Search Console analysis. No sign-up, nothing uploaded.',
     intro:
       'Everything here writes or checks the markup search engines actually read — the title Google shows, the card that appears when someone shares your link, the structured data that earns rich results. Each tool runs entirely in your browser, so nothing you paste is sent anywhere.',
     relatedTags: ['SEO', 'Business & Money'],
@@ -219,6 +219,86 @@ export const TOOLS: Tool[] = [
       'Build trackable campaign links with UTM parameters for Google Analytics.',
     category: 'seo',
   },
+  {
+    slug: 'robots-txt-tester',
+    icon: '🚦',
+    title: 'robots.txt Tester',
+    short: 'robots.txt Tester',
+    description:
+      'See if a crawler may fetch a URL under your robots.txt - and the exact rule that decides, using Google\'s matching.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'ai-crawler-checker',
+    icon: '🕷️',
+    title: 'AI Crawler Access Checker',
+    short: 'AI Crawlers',
+    description:
+      'Check which AI crawlers - GPTBot, ClaudeBot, PerplexityBot, Google-Extended and more - your robots.txt allows.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'schema-validator',
+    icon: '🧩',
+    title: 'Schema Markup Validator (JSON-LD)',
+    short: 'Schema Validator',
+    description:
+      'Check JSON-LD against Google\'s rich result requirements: missing properties, bad dates, wrong types.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'xml-sitemap-generator',
+    icon: '🗺️',
+    title: 'XML Sitemap Generator',
+    short: 'Sitemap Generator',
+    description:
+      'Turn a list of URLs into a clean sitemap.xml - de-duplicated, escaped and split at 50,000 URLs.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'search-console-quick-wins',
+    icon: '⚡',
+    title: 'Search Console Quick Wins Finder',
+    short: 'GSC Quick Wins',
+    description:
+      'Find searches ranking 4-20 in your Search Console export and the extra clicks each could bring.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'seo-traffic-forecast',
+    icon: '📈',
+    title: 'SEO Traffic Forecast',
+    short: 'Traffic Forecast',
+    description:
+      'Forecast your clicks from Google for the next 3, 6 or 12 months from a Search Console export.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'topic-cluster-map',
+    icon: '🧭',
+    title: 'Topic Cluster Map',
+    short: 'Topic Map',
+    description:
+      'Group the searches you appear for into topics and see which need a new article or an update.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
+  {
+    slug: 'organic-traffic-value',
+    icon: '💰',
+    title: 'Organic Traffic Value Calculator',
+    short: 'Traffic Value',
+    description:
+      'Put a price on your Google traffic: what the same clicks would cost as ads over 1, 3 and 5 years.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
 
   // ---------- Content & Writing ----------
   {
@@ -315,6 +395,16 @@ export const TOOLS: Tool[] = [
     category: 'content',
   },
   {
+    slug: 'ai-slop-checker',
+    icon: '🧽',
+    title: 'AI Slop Checker',
+    short: 'AI Slop Checker',
+    description:
+      'Highlight filler words, empty phrases and missing specifics that make writing sound generic.',
+    category: 'content',
+    updated: '2026-10-24',
+  },
+  {
     slug: 'word-counter',
     icon: '📝',
     title: 'Word & Character Counter',
@@ -334,6 +424,16 @@ export const TOOLS: Tool[] = [
       'Format, minify, and validate JSON online with instant error messages and quick stats.',
     category: 'developer',
     featured: true,
+  },
+  {
+    slug: 'rss-feed-parser',
+    icon: '📰',
+    title: 'RSS & Atom Feed Parser',
+    short: 'RSS Parser',
+    description:
+      'See every item in an RSS or Atom feed and catch missing images, bad dates and relative links.',
+    category: 'developer',
+    updated: '2026-10-24',
   },
   {
     slug: 'encoder-decoder',

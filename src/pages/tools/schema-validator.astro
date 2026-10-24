@@ -1,0 +1,77 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "Schema Markup Validator (JSON-LD)";
+const description = "Paste JSON-LD or a page's HTML and check it against Google's rich result requirements: missing required properties, bad dates and durations, wrong types. Free, in your browser.";
+const eksempel = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How GPUs speed up AI",
+  "description": "A short explainer on why AI runs on graphics cards.",
+  "thumbnailUrl": "https://example.com/thumb.jpg",
+  "uploadDate": "24/10/2026",
+  "duration": "4:35"
+}
+</script>`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🧩 Schema Markup Validator</h1>
+      <p>Paste JSON-LD, a single <span class="st-code">&lt;script&gt;</span> tag or a whole page's HTML. Every block is checked against Google's rich result requirements for the common types, and every problem is explained in plain English.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="svInput">JSON-LD or HTML</label>
+      <textarea id="svInput" class="st-area" spellcheck="false" style="min-height:220px">{eksempel}</textarea>
+      <p class="st-hint">To check a live page: open it, press Ctrl+U (View source), select all, copy, paste here. The example has two mistakes on purpose.</p>
+    </div>
+
+    <div id="svOut"></div>
+
+    <div class="st-info-section">
+      <h2>What the three levels mean</h2>
+      <ul>
+        <li><strong>Blocks rich results</strong> - invalid JSON, a missing required property, or a value Google cannot read (like a date written 24/10/2026). The page still works, but this markup will not earn an enhanced listing.</li>
+        <li><strong>Recommended</strong> - Google can use the markup without it, but documents it as recommended. Adding it gives Google more to work with.</li>
+        <li><strong>Note</strong> - something worth knowing, such as a type Google no longer rewards.</li>
+      </ul>
+      <h2>Which rules are checked</h2>
+      <p>Required and recommended properties follow Google's rich result documentation for Article, NewsArticle, BlogPosting, VideoObject, SoftwareApplication, Product, FAQPage, BreadcrumbList, Recipe, Event, LocalBusiness, JobPosting, Organization and WebSite, last checked in October 2026. On top of that, every node is checked for a @type, dates in ISO 8601 format, durations like <span class="st-code">PT4M35S</span>, and full URLs in url, logo, image and video fields.</p>
+      <h2>Valid is not the same as eligible</h2>
+      <p>A common surprise: SoftwareApplication markup for a free web tool is perfectly valid schema.org, yet Google requires a rating or a review before it shows the rich result. Never add ratings that did not come from real users - Google treats invented reviews as spam. Likewise, FAQ rich results are now shown only for well-known government and health sites, and HowTo rich results were retired in 2023.</p>
+      <h2>Limits</h2>
+      <p>This is a fast first check, not Google's verdict. Google's own Rich Results Test is the final word on eligibility, and it can also see markup that JavaScript adds after the page loads, which a pasted source file does not contain. Microdata and RDFa are not checked - only JSON-LD, the format Google recommends.</p>
+    </div>
+  </div>
+
+  <script>
+    import { valider, udtraekBlokke } from '../../lib/schema-check.mjs';
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const input = document.getElementById('svInput') as HTMLTextAreaElement;
+    const out = document.getElementById('svOut') as HTMLElement;
+    const NIVEAU: Record<string, [string, string]> = { fejl: ['Blocks rich results', 'st-pill-no'], advarsel: ['Recommended', 'st-pill-warn'], info: ['Note', 'st-pill-ok'] };
+
+    const run = () => {
+      const blokke = udtraekBlokke(input.value, true);
+      if (!input.value.trim()) { out.innerHTML = ''; return; }
+      if (!blokke.length) { out.innerHTML = '<div class="st-msg st-warn">No JSON-LD found. Paste raw JSON-LD, or HTML containing <span class="st-code">&lt;script type="application/ld+json"&gt;</span>.</div>'; return; }
+      const res = blokke.map(valider);
+      const n = (lvl: string) => res.reduce((s, r) => s + r.fund.filter((f: any) => f.niveau === lvl).length, 0);
+      let html = `<div class="st-stats"><div class="st-stat"><b>${blokke.length}</b><span>JSON-LD blocks</span></div><div class="st-stat"><b>${n('fejl')}</b><span>block rich results</span></div><div class="st-stat"><b>${n('advarsel')}</b><span>recommended fixes</span></div></div>`;
+      res.forEach((r, i) => {
+        const typer = [...new Set(r.typer.map((t: any) => t.navn))].join(' · ') || '-';
+        html += `<div class="st-card"><h3>Block ${i + 1} ${r.ok ? '<span class="st-pill st-pill-ok">no blocking problems</span>' : '<span class="st-pill st-pill-no">has problems</span>'}</h3><p class="st-muted" style="margin:0 0 10px">Types found: ${esc(typer)}</p>${
+          r.fund.length ? `<div class="st-table-wrap"><table class="st-table"><tbody>${r.fund.map((f: any) => `<tr><td style="width:150px"><span class="st-pill ${NIVEAU[f.niveau][1]}">${NIVEAU[f.niveau][0]}</span></td><td>${esc(f.tekst)}${f.sti && f.sti !== 'root' ? `<br><span class="st-muted st-code">${esc(f.sti)}</span>` : ''}</td></tr>`).join('')}</tbody></table></div>` : '<p style="margin:0">✅ Nothing to fix in this block.</p>'
+        }</div>`;
+      });
+      out.innerHTML = html;
+    };
+    input.addEventListener('input', run);
+    run();
+  </script>
+</MainLayout>

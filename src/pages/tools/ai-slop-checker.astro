@@ -1,0 +1,76 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "AI Slop Checker";
+const description = "Paste any text and see the filler words, empty phrases and missing specifics that make writing sound generic - highlighted in place, with plainer alternatives. Free, in your browser.";
+const eksempel = `In today's fast-paced world, artificial intelligence is a game-changer. It's important to note that businesses must leverage cutting-edge tools to unlock their full potential. Let's dive into the landscape.
+
+Nvidia sold $35.6 billion of data center chips in the quarter ending October 2024, up 112% from a year earlier. A single H100 draws up to 700 watts.`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🧽 AI Slop Checker</h1>
+      <p>Paste a draft and see the habits that make writing sound generic: overused words, phrases that say nothing, too few concrete facts and a flat rhythm. It does not guess who - or what - wrote the text. It shows what to fix.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="slText">Your text</label>
+      <textarea id="slText" class="st-area st-prose" style="min-height:200px">{eksempel}</textarea>
+    </div>
+
+    <div class="st-card" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <div id="slScore" style="font-size:3rem;font-weight:800;min-width:80px;text-align:center">–</div>
+      <div style="flex:1;min-width:220px"><p id="slLabel" style="margin:0 0 4px;font-weight:700;font-size:1.1rem">Waiting for text…</p><p id="slSub" class="st-muted" style="margin:0;font-size:0.9rem">0-100. Lower is better.</p></div>
+    </div>
+    <div class="st-stats" id="slStats"></div>
+    <div id="slNotes"></div>
+
+    <div class="st-card"><h3>Your text, with the flagged parts marked</h3><div id="slMarked" class="st-highlight"></div></div>
+    <div id="slTable"></div>
+
+    <div class="st-info-section">
+      <h2>What gets flagged</h2>
+      <p><strong>Overused words</strong> such as "delve", "leverage", "robust", "seamless" and "landscape". None is wrong on its own; they become a problem when they replace a precise word. The list starts from the same words our own publishing system removes from every article before it goes live. <strong>Empty phrases</strong> such as "in today's fast-paced world", "it's important to note that" or "let's dive in" take up a sentence and add nothing - cutting them almost always improves the text.</p>
+      <h2>How the score is built</h2>
+      <p>The score adds up three parts, and the cards above show each one so nothing is hidden. Filler density counts for up to 60 points: three flagged words or phrases per 100 words gives the full 60. Missing specifics counts for up to 25: in texts of 80 words or more, fewer than one meaningful number (an amount, a percentage, a year, a size) per 100 words adds points. Flat rhythm counts for up to 15: when five or more sentences are all about the same length, the text reads like a list. For comparison, the articles on this site score between 0 and 38, with a median of 17.</p>
+      <h2>What it cannot tell you</h2>
+      <p>This is not an AI detector, and no reliable one exists - people write "leverage synergies" too, and a good AI-assisted draft can score 0. A low score does not make a text good, either: it can be clean and still wrong, dull or unsourced. Use it the way an editor uses a red pen on a first pass, then read the text aloud. Everything runs in your browser; nothing you paste is stored or sent.</p>
+    </div>
+  </div>
+
+  <script>
+    import { analyser } from '../../lib/slop-check.mjs';
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const input = $('slText') as HTMLTextAreaElement;
+
+    const run = () => {
+      const t = input.value;
+      const r = analyser(t);
+      if (!r.antalOrd) { $('slScore').textContent = '–'; $('slLabel').textContent = 'Waiting for text…'; ['slStats', 'slNotes', 'slMarked', 'slTable'].forEach((i) => ($(i).innerHTML = '')); return; }
+      const [label, farve] = r.score <= 20 ? ['Specific and clean', '#059669'] : r.score <= 40 ? ['A few generic habits', '#2563eb'] : r.score <= 60 ? ['Reads generic', '#d97706'] : ['Heavy filler', '#dc2626'];
+      $('slScore').textContent = String(r.score); $('slScore').style.color = farve;
+      $('slLabel').textContent = label;
+      $('slSub').textContent = `Filler ${r.dele.fyld}/60 · Missing specifics ${r.dele.tal}/25 · Flat rhythm ${r.dele.rytme}/15`;
+      $('slStats').innerHTML = `<div class="st-stat"><b>${r.antalOrd}</b><span>words</span></div><div class="st-stat"><b>${r.fund.length}</b><span>flagged words & phrases</span></div><div class="st-stat"><b>${r.fyldTaethed.toFixed(1)}</b><span>flags per 100 words</span></div><div class="st-stat"><b>${r.talTaethed.toFixed(1)}</b><span>numbers per 100 words</span></div><div class="st-stat"><b>${r.snit ? r.snit.toFixed(0) : '–'}</b><span>words per sentence</span></div>`;
+      const noter: string[] = [];
+      if (r.gentagetStart) noter.push(`${r.gentagetStart.antal} sentences start with "${esc(r.gentagetStart.ord)}". Vary the openings.`);
+      if (r.dele.tal >= 15) noter.push('Few concrete facts. Add numbers, names, dates or examples a reader could check.');
+      if (r.dele.rytme >= 8) noter.push('Most sentences are about the same length. Mix short sentences with longer ones.');
+      $('slNotes').innerHTML = noter.length ? `<div class="st-msg st-warn">${noter.join('<br>')}</div>` : '';
+      let html = '', pos = 0;
+      for (const f of r.fund) { html += esc(t.slice(pos, f.start)) + `<mark class="st-mark" title="${esc(f.forslag)}">${esc(t.slice(f.start, f.slut))}</mark>`; pos = f.slut; }
+      $('slMarked').innerHTML = html + esc(t.slice(pos));
+      const grupper: Record<string, { antal: number; forslag: string; slags: string }> = {};
+      for (const f of r.fund) { const k = f.tekst.toLowerCase(); grupper[k] = grupper[k] || { antal: 0, forslag: f.forslag, slags: f.slags }; grupper[k].antal++; }
+      const rows = Object.entries(grupper).sort((a, b) => b[1].antal - a[1].antal);
+      $('slTable').innerHTML = rows.length ? `<div class="st-table-wrap"><table class="st-table"><thead><tr><th>Flagged</th><th>Type</th><th class="st-num">Times</th><th>Try instead</th></tr></thead><tbody>${rows.map(([k, v]) => `<tr><td>${esc(k)}</td><td>${v.slags === 'phrase' ? 'Empty phrase' : 'Overused word'}</td><td class="st-num">${v.antal}</td><td>${esc(v.forslag)}</td></tr>`).join('')}</tbody></table></div>` : '<div class="st-msg st-ok">No flagged words or phrases. 👍</div>';
+    };
+    input.addEventListener('input', run);
+    run();
+  </script>
+</MainLayout>
