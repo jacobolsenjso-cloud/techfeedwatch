@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 188** — brug kun v188). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 189** — brug kun v189). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 188** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 14:44, statusfil v188):** Analyse af StudioHawk-videoen (Google-retssagen, ABC = links/indhold/brugeradfærd) og Hawk Academy ligger i Claude-dokumentet "Google-retssagen og Hawk Academy — hvad kan techfeedwatch bruge?" (https://claude.ai/artifact/4W8Jxrzh3b4DPF1m4M8sXo). Konklusion: links udefra (søjle A) er sitets største hul. **Fase 1 målt:** Search Console viser 1 eksternt link (alternativeto.net). Ny måleserie `link-serie.json` (`d92d04a3`); mandagsopgaven aflæser den nu hver uge. Bing Webmaster Tools kræver Jacobs login. Fase 2 (gratis links/profiler, 2-3 om ugen, Jacob opretter kontiene) venter på Jacobs ja. Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 16:24, statusfil v189):** Link-plan fase 2 i gang (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe). Færdigt og set live: Bing Webmaster Tools verificeret + sitemap indsendt; GitHub (repo: website, beskrivelse, 8 emner; profil: navn "Jacob S. Olsen", bio); Gravatar gjort personlig (Jacob S. Olsen, alle tre sites, foto, 4 verificerede konti: X, LinkedIn, Bluesky, GitHub); LinkedIn (Jacob har selv skiftet sit LinkedIn-navn; overskrift, "Mine projekter" i Om, tre projekter, tre websteder). Næste i uge 1: X-bio. Pinterest venter på Jacobs konto (RSS mangler billeder). Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,17 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 16:24 — link-plan fase 2: profiler på GitHub, Gravatar og LinkedIn (alt med Jacobs ja, set live)
+- **Link-plan:** Claude-dokument https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe — profiltekster (engelsk, ens overalt), 13 udvalgte kilder fra Hawk Academys liste med 124 (uge 1: GitHub, X, LinkedIn, Gravatar; uge 2: Pinterest, About.me, Crunchbase; uge 3-4: Indie Hackers, Dev.to, HackerNoon, Product Hunt, Medium), 111 fravalgt med begrundelse, fremgangsmåde 2-3 om ugen.
+- **Bing Webmaster Tools:** BingSiteAuth.xml lagt i public/ (`1b98f72e`, set live 200 med rigtigt ID), Jacob verificerede; sitemap-index.xml indsendt (Jacobs ja 15:10, status "Processing"). Backlinks: "No data available" (nyt site) — noteret i link-serie.json (`40eb5d87`).
+- **GitHub:** repoet techfeedwatch fik website (techfeedwatch.com), beskrivelse og 8 emner (astro, cloudflare-pages, github-actions, gemini-api, ai-content, seo, static-site, youtube); profilen fik bio og navnet "Jacob S. Olsen" (var "Tech Feed Watch"). Brugernavnet jacobolsenjso-cloud er uændret.
+- **Gravatar (gravatar.com/jacobolsenjso):** var en Tech Media Archive-profil — Jacob valgte en personlig profil med alle tre sites (reglen om ikke at blande sitene holdes ved at hvert site har sin egen linje). Navn Jacob S. Olsen, titel Independent publisher, om-tekst, links til TechFeedWatch og The Gentle AI Guide (+ det eksisterende Tech Media Arch). Jacob skiftede selv til sit foto, rettede linknavnet til "Tech Media Arch" og koblede X, LinkedIn, Bluesky og GitHub på som verificerede konti.
+- **LinkedIn:** Jacob valgte fuld opdatering (mulighed 3) og godkendte teksterne. Jacob skiftede selv sit LinkedIn-navn undervejs. Sat ind: overskrift "Chauffør · Driver tre AI-sites i fritiden: …", afsnittet "Mine projekter" i Om (eksisterende tekst urørt), tre projekter med beskrivelse og link, tre websteder i kontaktoplysninger (Tech Media Arch fandtes i forvejen). Ingen deling til netværket. Alt kontrolleret ord for ord på den gemte profil.
+- **Fejl fundet og rettet:** LinkedIns felter tabte tegn, når der blev tastet hurtigt — TechFeedWatch-projektet blev gemt med "om A, tech", "ubliceringssystem" og det døde link "techeedwatch.com". Rettet ved at sætte hele teksten direkte i feltet (form_input) og kontrollere værdien før og efter gem.
+- Lære: tekst i LinkedIn (og andre tunge formularer) sættes med form_input, ikke tastes — og kontrolleres ord for ord på den GEMTE side, ikke kun i feltet. Et dødt link i en offentlig profil er værre end ingen link.
+- Lære: på en persons erhvervsprofil (LinkedIn) ændres overskrift og om-tekst kun efter at hele teksten er vist og godkendt — Jacob valgte selv mellem tre niveauer.
+
 
 ### 24/10-2026 kl. 14:44 — techfeedwatch: Hawk Academy-analysen + fase 1 af link-planen (1 eksternt link)
 - **Analyse (Jacobs ønske):** StudioHawks video om Google-retssagen + værktøjet "Is my page worth ranking" + hele Hawk Academy (37 værktøjer, ~56 Claude-skills, 14 prompts, 40 guides) gennemgået punkt for punkt med fordel/ulempe/brugbarhed, faktatjek og prioriterede forslag. Ligger i Claude-dokumentet https://claude.ai/artifact/4W8Jxrzh3b4DPF1m4M8sXo. Hovedfund: søjle A (links udefra) er det største hul; robotten dækker meget af B (indhold); C (adfærd) hjælper først med trafik. Faktatjek: videoens "vi faker det"-citat er fra 2016 (før BERT); sanktionsdommen 2/9-2025 (datadeling, ingen Chrome-salg) trådte i kraft 3/2-2026, Google ankede 16/1-2026 (status maj 2026).
