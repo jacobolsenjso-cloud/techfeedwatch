@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 192** — brug kun v192). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 193** — brug kun v193). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 192** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 18:36, statusfil v192):** Person-schema live (`dc9f5a41`): én fælles person (src/lib/person.mjs, "Jacob S. Olsen") med 4 profiler (X, GitHub, Bluesky, Gravatar) på forfatterside, forside, artikler og guider. LinkedIn bevidst ikke med (adressen indeholder det fulde navn - Jacobs regel: fuldt navn aldrig på sites/schema/offentligt repo). Link-plan uge 1 færdig (Bing, GitHub, X, LinkedIn, Gravatar). Næste: uge 2 (Pinterest venter på Jacobs konto - RSS mangler billeder; About.me; Crunchbase). Åbent spørgsmål: skal det fulde navn fjernes fra 2 gamle commits i repoets historik (kræver omskrivning + Jacobs ja)? 3 Dependabot-advarsler (undici) rettet i `f09c41fb` - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 18:52, statusfil v193):** Jacobs fulde navn fjernet fra repoets historik (10 commits fra i dag omskrevet, kun statusfilen; main nu `1600d263`, sitet uændret og live). Nye commit-numre står i dagbogen 24/10 - numre i v189-v192 er forældede. Gamle commits kan stadig hentes via præcis hash, til GitHub rydder op (eller Jacob beder GitHub Support om det). Person-schema live med 4 profiler (X, GitHub, Bluesky, Gravatar; LinkedIn bevidst ikke med). Navnevagt i _lav-version.mjs. Næste: Pinterest (venter på Jacobs Business-konto; RSS mangler billeder - gren + Jacobs ja). 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat; tjek også, at robottens kørsel efter omskrivningen gik godt.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -233,9 +233,21 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 
 ## 7. Dagbog (nyeste øverst)
 
+### 24/10-2026 kl. 18:52 - Jacobs fulde navn fjernet fra repoets historik (Jacobs ja)
+- **Hvorfor:** navnet og LinkedIn-adressen stod i STATUS-ALLE-SITES.md i 10 commits fra i dag (v189-v191), og repoet er offentligt.
+- **Gjort:** lokal sikkerhedskopi `backup-foer-navnefjern` (gammel main 68980957, kun på Jacobs computer). `git filter-branch` på kun de 10 commits, kun statusfilen ændret (engangsfilter _udkast/_navnefilter.mjs, kun lokalt). Skubbet med --force-with-lease (afviser hvis robotten havde skubbet imellem).
+- **Kontrolleret før skub:** sidste version bit-for-bit identisk med før (git diff tom); 10/10 commits med samme beskeder; kun statusfilen ændret; navnet i 0 commits i hele main; forfædre før i dag uændrede.
+- **Kontrolleret efter:** GitHub main = `1600d263`, statusfilen ren i de nye commits; Cloudflare Pages success, build.json = 1600d263.
+- **Nye commit-numre** (gamle numre i v189-v192 på Drev peger ikke længere på noget; i denne version er de udskiftet):
+  3ef15024 → `1f6eb847` (status v189) · e0d780a8 → `f73bed58` (undici) · f09c41fb → `973531ad` (undici-merge) · 84763076 → `6d2473b7` (v190) · 77ffc154 → `61fcd683` (v191) · f2cb291e → `2327f418` (person-schema) · dc9f5a41 → `75bda074` (person-merge) · 68980957 → `1600d263` (v192) · to robot-commits omnummereret.
+- **Tilbage:** de gamle commits kan stadig hentes på GitHub via den præcise hash (GitHub rydder først op senere). Helt væk kræver en henvendelse til GitHub Support fra Jacobs konto.
+- Lære: skriv aldrig personlige oplysninger i filer, der pushes - repoet er offentligt. Navnevagten i _lav-version.mjs fanger det nu for statusfilen.
+- Lære: --force-with-lease skal have den fulde hash fra en ref (git rev-parse), ikke en tastet - min første kørsel afviste pga. tastefejl (intet skete).
+
+
 ### 24/10-2026 kl. 18:36 - Person-schema samlet ét sted, 4 profiler (Jacobs ja)
 - **Før:** personen stod 4 steder i koden (forfattersiden, fælles-schemaet, artiklerne, guiderne) med hver sin kopi og kun X i sameAs; forfattersiden kaldte ham "Jacob Olsen", resten "Jacob S. Olsen".
-- **Nu:** ny fil src/lib/person.mjs er eneste kilde (navn "Jacob S. Olsen", @id på forfattersiden, sameAs: X, GitHub, Bluesky, Gravatar - alle tjekket live). Fælles-schema, artikler og guider peger på samme @id. Forfattersiden viser nu "Jacob S. Olsen" (titel, overskrift, første sætning, billedtekst). Gren person-schema → `dc9f5a41`.
+- **Nu:** ny fil src/lib/person.mjs er eneste kilde (navn "Jacob S. Olsen", @id på forfattersiden, sameAs: X, GitHub, Bluesky, Gravatar - alle tjekket live). Fælles-schema, artikler og guider peger på samme @id. Forfattersiden viser nu "Jacob S. Olsen" (titel, overskrift, første sætning, billedtekst). Gren person-schema → `75bda074`.
 - **Målt i build:** 682 sider, 467 Person-noder - alle ens (samme @id, navn, 4 profiler), 0 gamle kopier, sitemap 613.
 - **Jacobs regel (24/10):** hans fulde navn må ikke stå på hans sites, i schema eller i det offentlige repo. Derfor er LinkedIn IKKE med i sameAs (adressen indeholder det fulde navn); LinkedIn beholder han selv med fuldt navn. Gravatar linker nu til den rigtige LinkedIn-adresse (Jacob forbandt igen).
 - **X-profilen:** Jacob valgte at beholde ét link (techfeedwatch.com) og standard-bioen; de andre sites findes via Gravatar.
@@ -253,8 +265,8 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 
 ### 24/10-2026 kl. 16:41 - 3 Dependabot-advarsler (undici) rettet (Jacobs ja)
 - **Årsag:** undici 8.12.1 (indirekte pakke via astro → unifont, kun i package-lock.json) havde 3 kendte huller: #34 High (nedbrud ved for mange content-encodings), #33 og #32 Moderate (EventSource-hukommelse, SRI-omgåelse). Rettet i 8.12.2.
-- **Rettelse:** gren undici-8.12.2, `npm update undici` → 8.12.3; kun 3 linjer i package-lock.json ændret, package.json urørt. `npm audit`: 0 sårbarheder. `npm run build`: 682 sider, exit 0, sitemap 613 = live 613. Commit `e0d780a8`, flettet til main som `f09c41fb`.
-- **Set live:** Cloudflare Pages-tjek på f09c41fb = success; build.json på techfeedwatch.com viser f09c41fb. main's package-lock.json har undici 8.12.3.
+- **Rettelse:** gren undici-8.12.2, `npm update undici` → 8.12.3; kun 3 linjer i package-lock.json ændret, package.json urørt. `npm audit`: 0 sårbarheder. `npm run build`: 682 sider, exit 0, sitemap 613 = live 613. Commit `f73bed58`, flettet til main som `973531ad`.
+- **Set live:** Cloudflare Pages-tjek på 973531ad = success; build.json på techfeedwatch.com viser 973531ad. main's package-lock.json har undici 8.12.3.
 - **Dependabot:** advarslerne stod stadig åbne lige efter push, fordi GitHub scanner igen med forsinkelse - se næste linje i dagbogen/rapporten for lukning.
 
 
