@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 187** — brug kun v187). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 188** — brug kun v188). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 187** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 14:15, statusfil v187):** Klippede Gemini-svar rettet varigt (LIVE `6f4f7db7`, Jacobs valg): model.mjs prøver nu selv én gang igen med dobbelt loft, når et svar rammer loftet — for ALLE robottens kald. "KLIPPET" logges kun, hvis også andet forsøg klippes; reddede svar tælles som `loftReddet` i robot-log og morgenrapporten. Årsag målt i GitHub-loggen: 21/10 klippede spørgsmåls-redaktøren (8192, tænkning 7862 → listen brugt ufiltreret) og artikelplanen (4096, tænkning 3930). Driftstavlens røde "5" er de gamle klip (18-21/10) og falder ud af ugen 28/10. Kanal-værnet (v186) prøves første gang ca. 02:17 natten til 25/10. Pinterest venter på Jacobs konto (RSS-feedet mangler billeder).
+**Seneste for techfeedwatch (24/10-2026 kl. 14:44, statusfil v188):** Analyse af StudioHawk-videoen (Google-retssagen, ABC = links/indhold/brugeradfærd) og Hawk Academy ligger i Claude-dokumentet "Google-retssagen og Hawk Academy — hvad kan techfeedwatch bruge?" (https://claude.ai/artifact/4W8Jxrzh3b4DPF1m4M8sXo). Konklusion: links udefra (søjle A) er sitets største hul. **Fase 1 målt:** Search Console viser 1 eksternt link (alternativeto.net). Ny måleserie `link-serie.json` (`d92d04a3`); mandagsopgaven aflæser den nu hver uge. Bing Webmaster Tools kræver Jacobs login. Fase 2 (gratis links/profiler, 2-3 om ugen, Jacob opretter kontiene) venter på Jacobs ja. Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 14:44 — techfeedwatch: Hawk Academy-analysen + fase 1 af link-planen (1 eksternt link)
+- **Analyse (Jacobs ønske):** StudioHawks video om Google-retssagen + værktøjet "Is my page worth ranking" + hele Hawk Academy (37 værktøjer, ~56 Claude-skills, 14 prompts, 40 guides) gennemgået punkt for punkt med fordel/ulempe/brugbarhed, faktatjek og prioriterede forslag. Ligger i Claude-dokumentet https://claude.ai/artifact/4W8Jxrzh3b4DPF1m4M8sXo. Hovedfund: søjle A (links udefra) er det største hul; robotten dækker meget af B (indhold); C (adfærd) hjælper først med trafik. Faktatjek: videoens "vi faker det"-citat er fra 2016 (før BERT); sanktionsdommen 2/9-2025 (datadeling, ingen Chrome-salg) trådte i kraft 3/2-2026, Google ankede 16/1-2026 (status maj 2026).
+- **Jacobs valg 14:41:** start med at måle linkprofilen. Plan i tre faser: (1) mål, (2) gratis links/profiler 2-3 om ugen fra listen med 124 kilder — Jacob opretter kontiene, Claude skriver teksterne, (3) ugentlig opfølgning.
+- **Fase 1 målt (Jacobs Chrome, 14:44):** Search Console → Links: **1 eksternt link** i alt (alternativeto.net → forsiden, linktekst "techfeedwatch"); interne links 338 (Googles stikprøve). Bing Webmaster Tools: ikke logget ind — kræver Jacob (log aldrig ind for ham).
+- **Ny måleserie `link-serie.json`** (`d92d04a3`), samme princip som search-console-serie.json. Den planlagte opgave "Ugentlig aflæsning af Search Console" (mandag) aflæser nu også links (trin 2b) og committer begge serier; samtidig rettet to forældede trin i den: git-rækkefølgen (commit → pull → push) og den gamle pandoc-opskrift (nu _lav-version.mjs + _statusbyg/byg.mjs).
+- **Næste:** Jacob logger ind på Bing Webmaster Tools (kan importere sitet fra Search Console) → så aflæses Bings backlinks også. Fase 2 venter på Jacobs ja.
+
 
 ### 24/10-2026 kl. 14:15 — techfeedwatch: klippede Gemini-svar rettet varigt — nyt forsøg med dobbelt loft (LIVE `6f4f7db7`)
 - **Årsag målt FØR rettelse** (GitHub-loggen i Jacobs Chrome): driftstavlens "5 klippede svar" (18-24/10) talte bl.a. 2 klip 21/10 — EFTER loft-rettelsen 20/10. #807 (03:18 UTC): spørgsmåls-redaktøren, loft 8192, tænkning 7862, svar 326 → tomt svar, listen brugt ufiltreret (netop vejen for volapyk-spørgsmål). #809 (05:23 UTC): artikelplanen, loft 4096, tænkning 3930, svar 162 → planen slap heldigt igennem. Ingen af de to lofter var hævet siden 12/10 og 14/10. Samme fejltype 4. gang (1/10, 14/10, 20/10, 21/10), hver gang rettet ét kald ad gangen.
