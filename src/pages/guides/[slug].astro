@@ -2,6 +2,7 @@
 import { TAG_COLORS } from '../../lib/tags';
 import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
+import { personRef } from '../../lib/person.mjs';
 
 export async function getStaticPaths() {
   const allGuides = Object.values(import.meta.glob('../../content/guides/*.md', { eager: true }));
@@ -51,13 +52,9 @@ const schema = {
   // som artiklerne har, så indtil de får det, peger vi på sitets delebillede —
   // et rigtigt billede der findes, frem for et felt der mangler.
   "image": "https://techfeedwatch.com/og-default-v3.png",
-  "author": {
-    "@type": "Person",
-    "name": "Jacob S. Olsen",
-    "url": "https://techfeedwatch.com/author/jacob-olsen/",
-    "sameAs": ["https://x.com/JacobStubbeJS"],
-    "jobTitle": "Founder of TechFeedWatch"
-  },
+  // Guiderne er Jacobs egne - derfor en Person som author (artiklerne har
+  // sitet som author). Navn og profiler fra src/lib/person.mjs.
+  "author": personRef({ "jobTitle": "Founder of TechFeedWatch" }),
   "publisher": {
     "@type": "Organization",
     "name": "TechFeedWatch",
@@ -174,7 +171,7 @@ const schema = {
     {faqs && faqs.length > 0 && <FAQ faqs={faqs} />}
 
     <div class="guide-author">
-      <img src="/jacob-olsen.png" alt="Jacob Olsen" class="guide-author-photo" width="72" height="72" />
+      <img src="/jacob-olsen.png" alt="Jacob S. Olsen" class="guide-author-photo" width="72" height="72" />
       <div>
         <p class="guide-author-name">Jacob S. Olsen</p>
         <p class="guide-author-title">Runs TechFeedWatch, from Denmark</p>

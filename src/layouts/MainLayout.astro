@@ -8,6 +8,7 @@ import interLatinWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-n
 import RelatedTools from '../components/RelatedTools.astro';
 import { findTool } from '../lib/tools';
 import { ikonIndhold } from '../lib/logo.mjs';
+import { personRef } from '../lib/person.mjs';
 
 // nocanonical: kun til 404-siden. Den bliver serveret på hver eneste adresse,
 // der ikke findes, så en canonical ville pege alle døde adresser hen på
@@ -132,12 +133,9 @@ const siteSchema = [
     "ownershipFundingInfo": "https://techfeedwatch.com/about",
     "correctionsPolicy": "https://techfeedwatch.com/corrections",
     "actionableFeedbackPolicy": "https://techfeedwatch.com/contact",
-    "founder": {
-      "@type": "Person",
-      "name": "Jacob S. Olsen",
-      "url": "https://techfeedwatch.com/about",
-      "sameAs": ["https://x.com/JacobStubbeJS"]
-    }
+    // Personen bag: én henvisning (@id) til den fulde beskrivelse på
+    // forfattersiden. Navn og profiler kommer fra src/lib/person.mjs.
+    "founder": personRef()
   }
 ];
 ---

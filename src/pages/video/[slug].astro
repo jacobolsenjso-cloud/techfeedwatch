@@ -7,6 +7,7 @@ import { tagSlug } from '../../lib/tags';
 import { compareTimes } from '../../lib/time-saved.mjs';
 import { asQuestion, faellesOrd } from '../../lib/question.mjs';
 import { vaerktoejTil } from '../../lib/vaerktoej.mjs';
+import { personRef } from '../../lib/person.mjs';
 import viewHistory from '../../data/view-history.json';
 
 export async function getStaticPaths() {
@@ -294,7 +295,7 @@ const articleSchema = {
   // tillader en Organization som author, og det er det sande svar. Stod der en
   // Person, ville de strukturerede data påstå et forfatterskab som siden selv
   // modsiger nederst.
-  "author": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/", "founder": { "@type": "Person", "name": "Jacob S. Olsen", "url": "https://techfeedwatch.com/author/jacob-olsen", "sameAs": ["https://x.com/JacobStubbeJS"] } },
+  "author": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/", "founder": personRef() },
   "publisher": {
     "@type": "Organization",
     "name": "TechFeedWatch",
