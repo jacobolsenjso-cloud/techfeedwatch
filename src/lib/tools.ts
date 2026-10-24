@@ -299,6 +299,16 @@ export const TOOLS: Tool[] = [
     category: 'seo',
     updated: '2026-10-24',
   },
+  {
+    slug: 'pagespeed-checker',
+    icon: '🏎️',
+    title: 'PageSpeed & Core Web Vitals Checker',
+    short: 'PageSpeed',
+    description:
+      'Run Google PageSpeed Insights on any page: scores, real-user Core Web Vitals and the biggest time savers.',
+    category: 'seo',
+    updated: '2026-10-24',
+  },
 
   // ---------- Content & Writing ----------
   {

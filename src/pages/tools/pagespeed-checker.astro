@@ -1,0 +1,115 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+// Testen køres af Google via vores Cloudflare Worker (cloudflare/pagespeed), som har nøglen
+// som secret. Siden selv kender ingen nøgle.
+const title = "PageSpeed Checker: Core Web Vitals Test";
+const description = "Test any page's speed with Google PageSpeed Insights: performance score, Core Web Vitals from real users, and the fixes that save the most time. Free.";
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🏎️ PageSpeed Checker</h1>
+      <p>Enter a web address and Google tests it the same way as PageSpeed Insights: a score for performance, accessibility, best practices and SEO, the Core Web Vitals real visitors experience, and the fixes that would save the most loading time.</p>
+    </div>
+
+    <div class="st-grid">
+      <div class="st-field">
+        <label for="psUrl">Page to test</label>
+        <input id="psUrl" class="st-input" type="url" placeholder="https://example.com/" spellcheck="false" />
+      </div>
+      <div class="st-field">
+        <label for="psStrategy">Device</label>
+        <select id="psStrategy" class="st-select">
+          <option value="mobile">Mobile (what Google ranks on)</option>
+          <option value="desktop">Desktop</option>
+        </select>
+      </div>
+    </div>
+    <div class="st-actions"><button type="button" class="st-btn st-btn-primary" id="psRun">Run speed test</button></div>
+
+    <div id="psOut"></div>
+
+    <div class="st-info-section">
+      <h2>Lab data vs. real-user data</h2>
+      <p><strong>Lab data</strong> comes from one test run that Google does right now, on a simulated mid-range phone with a slow connection (or a desktop). It is the same every time you run it under the same conditions, so it is good for checking whether a fix helped.</p>
+      <p><strong>Real-user data</strong> (Core Web Vitals) comes from the Chrome User Experience Report: what actual Chrome visitors experienced over the last 28 days. This is what Google uses in ranking. Small or new pages often have none - then Google shows the numbers for the whole site, or nothing.</p>
+      <h2>The Core Web Vitals and their limits</h2>
+      <ul>
+        <li><strong>Largest Contentful Paint (LCP)</strong> - when the main content has loaded. Good: 2.5 seconds or less.</li>
+        <li><strong>Interaction to Next Paint (INP)</strong> - how fast the page reacts to taps and clicks. Good: 200 milliseconds or less.</li>
+        <li><strong>Cumulative Layout Shift (CLS)</strong> - how much things jump around while loading. Good: 0.1 or less.</li>
+      </ul>
+      <p>A page passes when at least 75% of visits are "good" on all three.</p>
+      <h2>Privacy</h2>
+      <p>The address you enter is sent to Google's PageSpeed Insights service through our small server, which holds the access key. Nothing is stored. Only public pages can be tested - Google has to be able to open them.</p>
+    </div>
+  </div>
+
+  <script>
+    // Workeren der kalder Google med nøglen (cloudflare/pagespeed/worker.mjs)
+    const API = 'https://tfw-pagespeed.jacobolsenjso.workers.dev/run';
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const esc = (s: unknown) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const knap = $('psRun') as HTMLButtonElement;
+
+    // Farve efter Googles grænser: 90+ godt, 50-89 middel, under 50 dårligt
+    const pill = (score: number | null) => score == null ? '<span class="st-muted">n/a</span>'
+      : `<span class="st-pill ${score >= 90 ? 'st-pill-ok' : score >= 50 ? 'st-pill-warn' : 'st-pill-no'}">${score}</span>`;
+    const kat = (c: string) => ({ FAST: ['Good', 'st-pill-ok'], AVERAGE: ['Needs improvement', 'st-pill-warn'], SLOW: ['Poor', 'st-pill-no'] } as Record<string, string[]>)[c] || [c || '–', ''];
+    // Feltdata: CLS kommer som heltal x100, resten i millisekunder
+    const p75 = (id: string, v: number) => id === 'CUMULATIVE_LAYOUT_SHIFT_SCORE' ? (v / 100).toFixed(2) : v >= 1000 ? `${(v / 1000).toFixed(1)} s` : `${v} ms`;
+
+    const feltTabel = (f: any, overskrift: string) => !f ? '' : `<h2 style="margin-top:1.4rem">${overskrift}</h2>
+      ${f.overall ? `<p>Overall: <span class="st-pill ${kat(f.overall)[1]}">${kat(f.overall)[0]}</span></p>` : ''}
+      <div class="st-table-wrap"><table class="st-table"><thead><tr><th>Metric</th><th>75% of visits</th><th>Verdict</th></tr></thead><tbody>
+      ${f.metrics.map((m: any) => `<tr><td>${esc(m.title)}</td><td class="st-num">${p75(m.id, m.p75)}</td><td><span class="st-pill ${kat(m.category)[1]}">${kat(m.category)[0]}</span></td></tr>`).join('')}
+      </tbody></table></div>`;
+
+    const vis = (d: any) => {
+      let html = `<div class="st-stats">
+        <div class="st-stat"><b>${pill(d.scores.performance)}</b><span>performance</span></div>
+        <div class="st-stat"><b>${pill(d.scores.accessibility)}</b><span>accessibility</span></div>
+        <div class="st-stat"><b>${pill(d.scores.bestPractices)}</b><span>best practices</span></div>
+        <div class="st-stat"><b>${pill(d.scores.seo)}</b><span>SEO</span></div></div>
+        <p class="st-hint">Tested ${esc(d.url)} on ${d.strategy === 'desktop' ? 'desktop' : 'mobile'}${d.fetched ? ' at ' + esc(new Date(d.fetched).toLocaleString()) : ''}. Scores move a few points between runs - that is normal.</p>`;
+      if (d.field) html += feltTabel(d.field, 'Real users - this page (last 28 days)');
+      else if (d.originField) html += feltTabel(d.originField, 'Real users - whole site (this page has too few visits of its own)');
+      else html += '<div class="st-msg st-warn">Google has no real-user data for this page or site yet - it needs enough Chrome visitors. The lab test below still shows what to fix.</div>';
+      if (d.lab?.length) html += `<h2 style="margin-top:1.4rem">Lab test</h2><div class="st-table-wrap"><table class="st-table"><thead><tr><th>Metric</th><th>Result</th><th>Verdict</th></tr></thead><tbody>
+        ${d.lab.map((m: any) => `<tr><td>${esc(m.title)}</td><td class="st-num">${esc(m.value)}</td><td>${m.score == null ? '–' : `<span class="st-pill ${m.score >= 0.9 ? 'st-pill-ok' : m.score >= 0.5 ? 'st-pill-warn' : 'st-pill-no'}">${m.score >= 0.9 ? 'Good' : m.score >= 0.5 ? 'Needs improvement' : 'Poor'}</span>`}</td></tr>`).join('')}
+        </tbody></table></div>`;
+      html += d.improvements?.length
+        ? `<h2 style="margin-top:1.4rem">Biggest time savers</h2><div class="st-table-wrap"><table class="st-table"><thead><tr><th>Fix</th><th>Details</th><th>Could save</th></tr></thead><tbody>
+          ${d.improvements.map((a: any) => `<tr><td>${esc(a.title)}</td><td class="st-muted">${esc(a.value)}</td><td class="st-num">${a.savingsMs >= 1000 ? (a.savingsMs / 1000).toFixed(1) + ' s' : a.savingsMs + ' ms'}</td></tr>`).join('')}
+          </tbody></table></div>`
+        : '<div class="st-msg st-ok">✅ Google found no fixes with a measurable time saving.</div>';
+      $('psOut').innerHTML = html;
+    };
+
+    const koer = async () => {
+      let url = ($('psUrl') as HTMLInputElement).value.trim();
+      if (url && !/^https?:\/\//i.test(url)) url = 'https://' + url;
+      if (!/^https?:\/\/[^\s/]+\.[^\s]+/i.test(url)) { $('psOut').innerHTML = '<div class="st-msg st-warn">Enter a full web address, like https://example.com/</div>'; return; }
+      knap.disabled = true; knap.textContent = 'Testing…';
+      $('psOut').innerHTML = '<div class="st-msg">Google is loading the page and measuring it. This usually takes 15-40 seconds.</div>';
+      try {
+        const r = await fetch(`${API}?url=${encodeURIComponent(url)}&strategy=${($('psStrategy') as HTMLSelectElement).value}`);
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || `The test failed (${r.status}).`);
+        vis(d);
+      } catch (e: any) {
+        $('psOut').innerHTML = `<div class="st-msg st-err">${esc(e.message || 'The test failed. Please try again.')}</div>`;
+      } finally { knap.disabled = false; knap.textContent = 'Run speed test'; }
+    };
+    knap.addEventListener('click', koer);
+    ($('psUrl') as HTMLInputElement).addEventListener('keydown', (e) => { if (e.key === 'Enter') koer(); });
+  </script>
+  <style is:global>
+    /* Scorerne skal kunne læses på afstand - større end de almindelige pills */
+    #psOut .st-stat .st-pill { font-size: 1.6rem; padding: 4px 14px; }
+  </style>
+</MainLayout>
