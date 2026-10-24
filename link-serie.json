@@ -1,0 +1,27 @@
+{
+  "_om": "Måleserie for links udefra (søjle A: hvad nettet siger om sitet). Ét punkt pr. aflæsning, aflæst samme dag i Search Console (Links) og — når Jacob har adgang — Bing Webmaster Tools (Backlinks). Tallene tastes ALDRIG fra hukommelsen. Startet 24/10-2026 efter Hawk Academy-analysen; aflæses hver mandag sammen med search-console-serie.json.",
+  "_felter": {
+    "dato": "aflæsningsdagen (Googles linkdata halter og er en stikprøve — en pejling, ikke et facit)",
+    "gsc.eksterneLinks": "\"Eksterne links — I alt\" i Search Console",
+    "gsc.linkendeSites": "\"Websites, der linker mest\" — alle sites på listen (klik MERE), med antal",
+    "gsc.linkedeSider": "\"Sider, der oftest linkes til\" (eksterne) — alle, med antal",
+    "gsc.linktekster": "\"Tekst, der linker mest\" — alle",
+    "gsc.interneLinks": "\"Interne links — I alt\" (Googles stikprøve, ikke det reelle antal)",
+    "bing": "Bing Webmaster Tools → Backlinks: samme felter; null indtil Jacob har logget ind",
+    "note": "hvad der er nyt siden sidst, og hvad der ikke kunne aflæses"
+  },
+  "punkter": [
+    {
+      "dato": "2026-10-24",
+      "gsc": {
+        "eksterneLinks": 1,
+        "linkendeSites": [{ "site": "alternativeto.net", "links": 1 }],
+        "linkedeSider": [{ "side": "https://techfeedwatch.com/", "links": 1 }],
+        "linktekster": ["techfeedwatch"],
+        "interneLinks": 338
+      },
+      "bing": null,
+      "note": "Første aflæsning (Claude, Jacobs Chrome, 14:44). Eneste eksterne link er AlternativeTo. Bing Webmaster Tools ikke logget ind — kræver Jacob."
+    }
+  ]
+}
