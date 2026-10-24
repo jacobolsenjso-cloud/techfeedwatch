@@ -33,6 +33,9 @@ try {
     forhaandSprunget: linjer.filter((l) => /forhåndstjek \d+\/10/.test(l)).length,
     loftNaaet: linjer.some((l) => /Dagsloftet er nået/.test(l)),
     klippet: linjer.filter((l) => /Gemini-svar KLIPPET/.test(l)).length,
+    // 24/10: svar, der ramte loftet, men blev reddet af model.mjs' nye forsøg med dobbelt loft.
+    loftReddet: linjer.filter((l) => /Gemini-svar ramte loftet/.test(l)).length
+      - linjer.filter((l) => /KLIPPET ved loftet .* også efter nyt forsøg/.test(l)).length,
     // Kanal-værn (24/10): kanaler slået op, videoer afvist, og opslag der fejlede (så værnet lukkede alt igennem).
     kanalVaern: {
       tjekket: alle(/Kanal-værn: (\d+) kanaler tjekket/).reduce((s, x) => s + Number(x), 0),

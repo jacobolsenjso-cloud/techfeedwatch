@@ -54,8 +54,18 @@ export async function medGentag(fn, { onVent = null } = {}) {
   throw sidste;
 }
 
+// Klippet-hjælpere (24/10). LOFT_MAKS = det højeste loft, et nyt forsøg må bruge (65536, som
+// transskript.mjs allerede bruger) — et kald, der står der i forvejen, prøves ikke igen.
+const LOFT_MAKS = 65536;
+const erKlippet = (r) => r?.response?.candidates?.[0]?.finishReason === 'MAX_TOKENS';
+const forbrugTekst = (loft, r) => {
+  const u = r?.response?.usageMetadata || {};
+  return `maxOutputTokens ${loft}; tænkning ${u.thoughtsTokenCount || 0}, svar ${u.candidatesTokenCount || 0}`;
+};
+
 // Samme som genAI.getGenerativeModel(opts), men generateContent prøver igen
-// ved forbigående fejl. Brug denne i stedet for getGenerativeModel.
+// ved forbigående fejl og (24/10) én gang med dobbelt loft, hvis svaret blev klippet.
+// Brug denne i stedet for getGenerativeModel.
 export function hentModel(genAI, opts) {
   const navn = opts?.model || GEMINI_MODEL;
   const m = genAI.getGenerativeModel({ model: GEMINI_MODEL, ...opts });
@@ -66,9 +76,24 @@ export function hentModel(genAI, opts) {
       // Klippet svar (14/10): to gange (1/10 og 14/10) gav et for lavt maxOutputTokens et tomt
       // eller halvt svar, som koden tavst behandlede som "intet svar". Tænkningen tæller med i
       // loftet. Nu står det i loggen, hver gang et svar rammer loftet — ét sted for alle kald.
-      if (r?.response?.candidates?.[0]?.finishReason === 'MAX_TOKENS') {
-        const u = r.response.usageMetadata || {};
-        console.log(`   ⚠️ Gemini-svar KLIPPET ved loftet (maxOutputTokens ${opts?.generationConfig?.maxOutputTokens ?? '?'}; tænkning ${u.thoughtsTokenCount || 0}, svar ${u.candidatesTokenCount || 0}) — hæv loftet for dette kald.`);
+      // 24/10 (Jacob valgte den varige løsning): samme fejl 4 gange (1/10, 14/10, 20/10, 21/10),
+      // hver gang rettet ét kald ad gangen. Nu prøver dette ene sted SELV igen én gang med dobbelt
+      // loft (højst LOFT_MAKS). Et højere loft koster intet i sig selv — man betaler kun for det,
+      // Gemini skriver. "KLIPPET" skrives kun, når heller ikke andet forsøg slap fri: det er det,
+      // robot-log.mjs tæller, så driftstavlen kun lyser rødt ved et reelt problem.
+      if (erKlippet(r)) {
+        const loft = Number(opts?.generationConfig?.maxOutputTokens) || 0;
+        if (loft > 0 && loft < LOFT_MAKS) {
+          const nytLoft = Math.min(loft * 2, LOFT_MAKS);
+          console.log(`   ↻ Gemini-svar ramte loftet (${forbrugTekst(loft, r)}) — prøver igen med ${nytLoft}.`);
+          const m2 = genAI.getGenerativeModel({ model: GEMINI_MODEL, ...opts, generationConfig: { ...opts.generationConfig, maxOutputTokens: nytLoft } });
+          const r2 = await medGentag(() => m2.generateContent(input));
+          taelForbrug(navn, r2);
+          if (!erKlippet(r2)) return r2;
+          console.log(`   ⚠️ Gemini-svar KLIPPET ved loftet (${forbrugTekst(nytLoft, r2)}) — også efter nyt forsøg med dobbelt loft.`);
+          return r2;
+        }
+        console.log(`   ⚠️ Gemini-svar KLIPPET ved loftet (${forbrugTekst(loft || '?', r)}) — hæv loftet for dette kald.`);
       }
       return r;
     },
