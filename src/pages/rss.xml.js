@@ -1,4 +1,19 @@
 import rss from '@astrojs/rss';
+import fs from 'node:fs';
+
+// Billede pr. artikel (24/10-2026): Pinterest laver kun pins af feed-punkter med et billede,
+// og feedet havde ingen (0/50). Vi bruger artiklens eget delebillede - det samme som
+// og:image på artikelsiden (public/og/<slug>.jpg, 1200x630). Mangler filen for en ny
+// artikel, springes billedet over i stedet for at stoppe hele byggeriet.
+// Absolut adresse: med en relativ adresse kan @astrojs/rss sætte "/" bag på .jpg.
+function billede(slug) {
+  try {
+    const length = fs.statSync(`public/og/${slug}.jpg`).size;
+    return { url: `https://techfeedwatch.com/og/${slug}.jpg`, length, type: 'image/jpeg' };
+  } catch {
+    return undefined;
+  }
+}
 
 const posts = Object.values(import.meta.glob('../content/videos/*.md', { eager: true }));
 
@@ -13,6 +28,7 @@ export function GET(context) {
       pubDate: new Date(p.frontmatter.date),
       description: p.frontmatter.metaDescription || p.frontmatter.summary || '',
       link: `/video/${p.slug}/`,
+      enclosure: billede(p.slug),
     }));
 
   return rss({
