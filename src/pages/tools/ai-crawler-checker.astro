@@ -1,0 +1,88 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "AI Crawler Access Checker";
+const description = "Paste your robots.txt and see which AI crawlers - GPTBot, ClaudeBot, PerplexityBot, Google-Extended and more - may read your site, and which rule decides. Free, in your browser.";
+const eksempel = `User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /private/`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🕷️ AI Crawler Access Checker</h1>
+      <p>Paste your robots.txt and see, crawler by crawler, whether ChatGPT, Claude, Perplexity, Gemini and the others may read your pages - and which line decides. Nothing is sent anywhere.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="acRobots">robots.txt content</label>
+      <textarea id="acRobots" class="st-area" spellcheck="false">{eksempel}</textarea>
+      <p class="st-hint">Open <span class="st-code">yourdomain.com/robots.txt</span>, copy everything and paste it here.</p>
+    </div>
+    <div class="st-field">
+      <label for="acPath">Page to check</label>
+      <input id="acPath" class="st-input" value="/" spellcheck="false" />
+      <p class="st-hint">A path like <span class="st-code">/blog/my-post</span> or a full URL. "/" checks the home page.</p>
+    </div>
+
+    <div class="st-stats" id="acStats"></div>
+    <div id="acSignal"></div>
+    <div class="st-table-wrap">
+      <table class="st-table">
+        <thead><tr><th>Crawler</th><th>Company</th><th>Purpose</th><th>Access</th><th>Why</th></tr></thead>
+        <tbody id="acRows"></tbody>
+      </table>
+    </div>
+    <p class="st-hint">⚠️ = the company says robots.txt may not apply, because a person asked for the page. 🔧 = a control token in robots.txt, not a separate crawler.</p>
+
+    <div class="st-info-section">
+      <h2>Three kinds of AI crawler</h2>
+      <p>AI companies now run separate crawlers for separate jobs, and robots.txt lets you treat them differently. <strong>Training crawlers</strong> (GPTBot, ClaudeBot, CCBot, meta-externalagent) collect pages that may be used to train future models. <strong>Search crawlers</strong> (OAI-SearchBot, Claude-SearchBot, PerplexityBot) build the index that AI answers cite and link to. <strong>User-triggered fetchers</strong> (ChatGPT-User, Claude-User, Perplexity-User) visit a page because someone asked about it in a chat.</p>
+      <p>Blocking a training crawler keeps your pages out of future training data but does not remove you from AI answers. Blocking a search crawler is different: if OAI-SearchBot or PerplexityBot cannot read a page, those products cannot cite it. Many publishers allow search and block training - the table shows at a glance which way your file leans.</p>
+      <h2>Control tokens</h2>
+      <p><span class="st-code">Google-Extended</span> and <span class="st-code">Applebot-Extended</span> are not crawlers you will see in your logs. They are switches: Googlebot and Applebot still crawl as usual, and these tokens tell Google and Apple whether that content may be used for their AI models. Blocking Google-Extended does not affect your ranking in Google Search.</p>
+      <h2>Content signals</h2>
+      <p>Some sites - including any site on Cloudflare that turned on its managed robots.txt - add a line like <span class="st-code">Content-Signal: ai-train=no, search=yes, ai-input=yes</span>. It states how the owner wants the content used: not for training, yes for search, yes as input to AI answers. It sits beside the crawl rules rather than replacing them, so a crawler can be allowed to fetch a page while the owner says it may not train on it. The checker shows the signal when it finds one.</p>
+      <h2>Limits</h2>
+      <p>robots.txt is a request, not a lock. Reputable companies follow it, but it cannot stop a crawler that ignores it - that takes a firewall or CDN rule. Crawler names change as companies launch new products, so the list here is dated: it was last checked in October 2026. The matching itself follows Google's published robots.txt rules, the same engine as our robots.txt Tester.</p>
+    </div>
+  </div>
+
+  <script>
+    import { parseRobots, tjek, AI_CRAWLERE } from '../../lib/robots-match.mjs';
+
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const robots = document.getElementById('acRobots') as HTMLTextAreaElement;
+    const sti = document.getElementById('acPath') as HTMLInputElement;
+    const crawlere = AI_CRAWLERE as any[];
+
+    const run = () => {
+      const parsed = parseRobots(robots.value);
+      let tilladt = 0, blokeret = 0;
+      const rows = crawlere.map((c) => {
+        const r = tjek(parsed, c.token, sti.value);
+        r.tilladt ? tilladt++ : blokeret++;
+        const hvorfor = r.regel ? `Line ${r.regel.nr}: <span class="st-code">${esc(r.regel.linje)}</span>` : (r.valgt ? 'No rule matches' : 'No group applies');
+        const gruppe = r.hvordan === 'exact' ? 'own group' : r.hvordan === 'prefix' ? `group "${esc(r.valgt)}"` : r.hvordan === 'wildcard' ? '* group' : '';
+        return `<tr><td class="st-code">${esc(c.token)}${c.respekterer ? '' : ' ⚠️'}${c.kontrol ? ' 🔧' : ''}</td><td>${esc(c.firma)}</td><td>${esc(c.formaal)}</td>
+          <td><span class="st-pill ${r.tilladt ? 'st-pill-ok' : 'st-pill-no'}">${r.tilladt ? 'Allowed' : 'Blocked'}</span></td>
+          <td>${hvorfor}${gruppe ? `<br><span class="st-muted">${gruppe}</span>` : ''}</td></tr>`;
+      });
+      (document.getElementById('acRows') as HTMLElement).innerHTML = rows.join('');
+      (document.getElementById('acSignal') as HTMLElement).innerHTML = parsed.signaler.length
+        ? `<div class="st-msg st-ok"><strong>Content signal found:</strong> ${parsed.signaler.map((x: any) => `<span class="st-code">${esc(x.vaerdi)}</span> (line ${x.nr})`).join(', ')}<br>This is a declaration of how your content may be used (for example <span class="st-code">ai-train=no</span>), not a crawl rule - it does not change the access shown below, and it is up to each company to honour it.</div>` : '';
+      (document.getElementById('acStats') as HTMLElement).innerHTML =
+        `<div class="st-stat"><b>${tilladt}</b><span>crawlers allowed</span></div><div class="st-stat"><b>${blokeret}</b><span>crawlers blocked</span></div><div class="st-stat"><b>${parsed.grupper.length}</b><span>groups in the file</span></div>`;
+    };
+    [robots, sti].forEach((el) => el.addEventListener('input', run));
+    run();
+  </script>
+</MainLayout>

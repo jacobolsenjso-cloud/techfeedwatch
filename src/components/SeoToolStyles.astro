@@ -1,0 +1,77 @@
+---
+// Fælles udseende for SEO-værktøjerne fra 24/10-2026 (st-*). Samme mål og farver
+// som de ældre værktøjer (rb-*, rd-*), så de nye ikke stikker ud - men ét sted,
+// så 10 sider ikke får hver sin kopi af de samme 40 linjer CSS.
+---
+<style is:global>
+  .st-wrapper { max-width: 860px; margin: 0 auto; padding: 40px 20px; flex: 1; width: 100%; box-sizing: border-box; }
+  .st-header h1 { margin: 0 0 8px 0; font-size: 2rem; }
+  .st-header p { color: #6b7280; margin: 0 0 24px 0; font-size: 1.05rem; }
+  body.dark-mode .st-header p { color: #9ca3af; }
+
+  .st-field { margin-bottom: 16px; }
+  .st-field > label, .st-label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+  .st-input, .st-area, .st-select { width: 100%; padding: 11px 13px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-size: 0.95rem; box-sizing: border-box; }
+  .st-area { min-height: 160px; resize: vertical; font-family: 'Courier New', Consolas, monospace; line-height: 1.5; font-size: 0.88rem; }
+  .st-area.st-prose { font-family: inherit; font-size: 1rem; line-height: 1.6; }
+  .st-input:focus, .st-area:focus, .st-select:focus { outline: none; border-color: var(--teal-text); }
+  .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .st-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .st-hint { font-size: 0.78rem; color: #6b7280; margin: 4px 0 0; }
+  body.dark-mode .st-hint { color: #9ca3af; }
+
+  .st-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 18px; }
+  .st-btn { padding: 9px 16px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color); font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+  .st-btn:hover { border-color: var(--teal-text); }
+  .st-btn-primary { border: none; background: var(--btn); color: #fff; }
+  .st-btn-primary:hover { background: var(--btn-hover); }
+  .st-file { font-size: 0.9rem; }
+
+  .st-card { border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 18px; background: var(--card-bg); margin: 0 0 14px; }
+  .st-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .st-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 0 0 16px; }
+  .st-stat { border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; }
+  .st-stat b { font-size: 1.35rem; display: block; }
+  .st-stat span { font-size: 0.78rem; color: #6b7280; }
+  body.dark-mode .st-stat span { color: #9ca3af; }
+
+  .st-msg { padding: 12px 14px; border-radius: 10px; margin: 0 0 14px; font-size: 0.92rem; line-height: 1.5; border: 1px solid var(--border-color); }
+  .st-ok { border-color: #10b981; background: rgba(16,185,129,0.08); }
+  .st-warn { border-color: #d97706; background: rgba(217,119,6,0.08); }
+  .st-err { border-color: #dc2626; background: rgba(220,38,38,0.08); }
+  .st-muted { color: #6b7280; }
+  body.dark-mode .st-muted { color: #9ca3af; }
+
+  .st-table-wrap { overflow-x: auto; margin: 0 0 16px; border: 1px solid var(--border-color); border-radius: 10px; }
+  .st-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .st-table th, .st-table td { padding: 9px 11px; text-align: left; border-bottom: 1px solid var(--border-color); vertical-align: top; }
+  .st-table th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.02em; color: #6b7280; background: var(--hover-bg); }
+  body.dark-mode .st-table th { color: #9ca3af; }
+  .st-table tr:last-child td { border-bottom: none; }
+  /* I tabeller må kode (fx robotnavne) kun deles ved bindestreg, ikke midt i ordet (set på mobil 24/10). */
+  .st-table .st-code { word-break: normal; overflow-wrap: break-word; }
+  .st-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .st-code { font-family: 'Courier New', Consolas, monospace; font-size: 0.85rem; word-break: break-all; }
+  .st-pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; }
+  .st-pill-ok { background: rgba(16,185,129,0.15); color: #047857; }
+  .st-pill-no { background: rgba(220,38,38,0.13); color: #b91c1c; }
+  .st-pill-warn { background: rgba(217,119,6,0.15); color: #b45309; }
+  body.dark-mode .st-pill-ok { color: #34d399; }
+  body.dark-mode .st-pill-no { color: #f87171; }
+  body.dark-mode .st-pill-warn { color: #fbbf24; }
+  .st-output { width: 100%; min-height: 180px; padding: 14px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-color); font-family: 'Courier New', Consolas, monospace; font-size: 0.85rem; line-height: 1.5; box-sizing: border-box; resize: vertical; }
+  .st-mark { background: rgba(217,119,6,0.25); border-radius: 3px; padding: 0 1px; }
+  .st-highlight { white-space: pre-wrap; line-height: 1.7; font-size: 0.98rem; }
+
+  .st-info-section { margin-top: 46px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+  .st-info-section h2 { font-size: 1.3rem; margin: 0 0 10px 0; }
+  .st-info-section p, .st-info-section li { font-size: 0.95rem; line-height: 1.6; color: #4b5563; margin: 0 0 15px 0; }
+  .st-info-section li { margin-bottom: 6px; }
+  body.dark-mode .st-info-section p, body.dark-mode .st-info-section li { color: #9ca3af; }
+
+  @media (max-width: 640px) {
+    .st-wrapper { padding: 20px 15px; }
+    .st-grid, .st-grid3 { grid-template-columns: 1fr; }
+    .st-header h1 { font-size: 1.6rem; }
+  }
+</style>

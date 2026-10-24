@@ -1,0 +1,129 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "RSS & Atom Feed Parser and Checker";
+const description = "Paste or upload an RSS or Atom feed and get every item as a table - title, link, date, image - plus the problems that stop Pinterest, readers and aggregators from using it. Export to CSV. Free.";
+const eksempel = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Blog</title>
+    <link>https://example.com/</link>
+    <item>
+      <title>How GPUs speed up AI</title>
+      <link>https://example.com/gpus-ai</link>
+      <pubDate>Fri, 23 Oct 2026 09:00:00 GMT</pubDate>
+      <enclosure url="https://example.com/img/gpus.jpg" length="84210" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>What is open banking?</title>
+      <link>/open-banking</link>
+      <pubDate>yesterday</pubDate>
+    </item>
+  </channel>
+</rss>`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>📰 RSS Feed Parser</h1>
+      <p>See exactly what is inside an RSS or Atom feed: every item with its title, link, date and image - and a check for the problems that make Pinterest, feed readers and news apps skip items. Export the result to CSV or a plain list of URLs.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="rfUrl">Load a feed URL (works when the site allows it)</label>
+      <div class="st-actions" style="margin:0"><input id="rfUrl" class="st-input" style="flex:1;min-width:220px" placeholder="https://example.com/rss.xml" spellcheck="false" /><button type="button" class="st-btn st-btn-primary" id="rfLoad">Load</button><input type="file" id="rfFile" accept=".xml,.rss,.atom,.txt" class="st-file" /></div>
+    </div>
+    <div class="st-field">
+      <label for="rfXml">…or paste the feed XML</label>
+      <textarea id="rfXml" class="st-area" spellcheck="false">{eksempel}</textarea>
+    </div>
+
+    <div id="rfOut"></div>
+
+    <div class="st-info-section">
+      <h2>What the checker looks for</h2>
+      <ul>
+        <li><strong>Images</strong> - Pinterest's auto-publish and many news apps need an image per item: an <span class="st-code">&lt;enclosure&gt;</span>, a <span class="st-code">&lt;media:content&gt;</span> / <span class="st-code">&lt;media:thumbnail&gt;</span>, or an image inside the description. Items without one are often skipped silently.</li>
+        <li><strong>Dates</strong> - every item should have a date a program can read (RFC 822 in RSS, ISO 8601 in Atom). "yesterday" or a missing date pushes the item to the wrong place - or out.</li>
+        <li><strong>Links</strong> - links must be full URLs. A relative link like <span class="st-code">/my-post</span> works on your site but breaks in every reader.</li>
+        <li><strong>Duplicates</strong> - the same link twice usually means a publishing bug and gets the item posted twice.</li>
+      </ul>
+      <h2>Why loading by URL sometimes fails</h2>
+      <p>Browsers only let a web page read another site's files if that site allows it. Many feeds do not, so loading by URL can be refused even though the feed is fine. When that happens, open the feed in a new tab, copy everything and paste it here - the result is the same, and nothing you paste leaves your browser.</p>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const esc = (s: string) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const xmlEl = $('rfXml') as HTMLTextAreaElement;
+    let rows: any[] = [];
+
+    const tekst = (el: Element | null | undefined, sel: string) => el?.getElementsByTagName(sel)[0]?.textContent?.trim() || '';
+    const erUrl = (u: string) => /^https?:\/\//i.test(u);
+
+    const parse = () => {
+      const src = xmlEl.value.trim();
+      if (!src) { $('rfOut').innerHTML = ''; return; }
+      const doc = new DOMParser().parseFromString(src, 'application/xml');
+      const fejl = doc.getElementsByTagName('parsererror')[0];
+      if (fejl) { $('rfOut').innerHTML = `<div class="st-msg st-err"><strong>Not valid XML.</strong> ${esc((fejl.textContent || '').split('\n').slice(0, 2).join(' '))}</div>`; return; }
+      const atom = doc.documentElement.localName === 'feed';
+      const items = Array.from(doc.getElementsByTagName(atom ? 'entry' : 'item'));
+      const kanal = atom ? doc.documentElement : doc.getElementsByTagName('channel')[0];
+      const feedTitel = tekst(kanal, 'title');
+      const set = new Set<string>();
+      rows = items.map((it) => {
+        let link = '';
+        if (atom) { const l = Array.from(it.getElementsByTagName('link')).find((x) => !x.getAttribute('rel') || x.getAttribute('rel') === 'alternate'); link = l?.getAttribute('href') || ''; }
+        else link = tekst(it, 'link') || tekst(it, 'guid');
+        const datoTxt = atom ? (tekst(it, 'updated') || tekst(it, 'published')) : (tekst(it, 'pubDate') || tekst(it, 'dc:date'));
+        const dato = datoTxt ? new Date(datoTxt) : null;
+        const enc = it.getElementsByTagName('enclosure')[0];
+        const media = it.getElementsByTagName('media:content')[0] || it.getElementsByTagName('media:thumbnail')[0];
+        const desc = tekst(it, 'description') || tekst(it, 'content:encoded') || tekst(it, 'content') || tekst(it, 'summary');
+        const img = (enc && /^image\//.test(enc.getAttribute('type') || 'image/') ? enc.getAttribute('url') : '') || media?.getAttribute('url') || (desc.match(/<img[^>]+src=["']([^"']+)/i) || [])[1] || '';
+        const problemer: string[] = [];
+        if (!link) problemer.push('no link'); else if (!erUrl(link)) problemer.push('relative link');
+        if (link && set.has(link)) problemer.push('duplicate link'); set.add(link);
+        if (!datoTxt) problemer.push('no date'); else if (!dato || isNaN(dato.getTime())) problemer.push('unreadable date');
+        if (!img) problemer.push('no image');
+        return { titel: tekst(it, 'title'), link, dato: dato && !isNaN(dato.getTime()) ? dato.toISOString().slice(0, 16).replace('T', ' ') : datoTxt, billede: img, problemer };
+      });
+      const n = (p: string) => rows.filter((r) => r.problemer.includes(p)).length;
+      const medBillede = rows.length - n('no image');
+      let html = `<div class="st-stats"><div class="st-stat"><b>${atom ? 'Atom' : 'RSS'}</b><span>${esc(feedTitel || 'untitled feed')}</span></div><div class="st-stat"><b>${rows.length}</b><span>items</span></div><div class="st-stat"><b>${medBillede}/${rows.length}</b><span>items with an image</span></div><div class="st-stat"><b>${rows.filter((r) => r.problemer.length).length}</b><span>items with problems</span></div></div>`;
+      const opsummering = [['no image', 'have no image - Pinterest and many apps will skip them'], ['relative link', 'use a relative link - readers cannot open them'], ['no date', 'have no date'], ['unreadable date', 'have a date programs cannot read'], ['duplicate link', 'repeat a link already in the feed'], ['no link', 'have no link at all']]
+        .filter(([k]) => n(k)).map(([k, t]) => `${n(k)} item(s) ${t}.`);
+      html += opsummering.length ? `<div class="st-msg st-warn">${opsummering.join('<br>')}</div>` : rows.length ? '<div class="st-msg st-ok">✅ Every item has a full link, a readable date and an image.</div>' : '<div class="st-msg st-warn">The feed has no items.</div>';
+      html += `<div class="st-actions"><button type="button" class="st-btn st-btn-primary" id="rfCsv">Download CSV</button><button type="button" class="st-btn" id="rfUrls">Copy all links</button></div>`;
+      html += `<div class="st-table-wrap"><table class="st-table"><thead><tr><th>#</th><th>Title / link</th><th>Date</th><th>Image</th><th>Problems</th></tr></thead><tbody>${rows.map((r, i) => `<tr><td class="st-num">${i + 1}</td><td>${esc(r.titel) || '<span class="st-muted">(no title)</span>'}<br><span class="st-code st-muted">${esc(r.link)}</span></td><td style="white-space:nowrap">${esc(r.dato) || '–'}</td><td>${r.billede ? `<a href="${esc(r.billede)}" target="_blank" rel="noopener">view</a>` : '–'}</td><td>${r.problemer.map((p: string) => `<span class="st-pill ${p === 'no image' ? 'st-pill-warn' : 'st-pill-no'}">${esc(p)}</span>`).join(' ') || '<span class="st-pill st-pill-ok">ok</span>'}</td></tr>`).join('')}</tbody></table></div>`;
+      $('rfOut').innerHTML = html;
+      ($('rfCsv') as HTMLButtonElement).onclick = () => {
+        const csv = [['title', 'link', 'date', 'image', 'problems'], ...rows.map((r) => [r.titel, r.link, r.dato, r.billede, r.problemer.join('; ')])].map((l) => l.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
+        const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = 'feed-items.csv'; a.click();
+      };
+      ($('rfUrls') as HTMLButtonElement).onclick = (e) => { navigator.clipboard.writeText(rows.map((r) => r.link).filter(Boolean).join('\n')); (e.target as HTMLElement).textContent = 'Copied ✓'; };
+    };
+
+    $('rfLoad').addEventListener('click', async () => {
+      const url = ($('rfUrl') as HTMLInputElement).value.trim();
+      if (!erUrl(url)) { $('rfOut').innerHTML = '<div class="st-msg st-warn">Enter a full feed URL starting with https://</div>'; return; }
+      try {
+        const r = await fetch(url); if (!r.ok) throw new Error(`the site answered ${r.status}`);
+        xmlEl.value = await r.text(); parse();
+      } catch (err: any) {
+        $('rfOut').innerHTML = `<div class="st-msg st-warn">This site does not let other web pages read its feed (${esc(err.message)}). <a href="${esc(url)}" target="_blank" rel="noopener">Open the feed in a new tab ↗</a>, copy everything and paste it in the box above.</div>`;
+      }
+    });
+    ($('rfFile') as HTMLInputElement).addEventListener('change', async (e) => {
+      const f = (e.target as HTMLInputElement).files?.[0]; if (!f) return;
+      xmlEl.value = await f.text(); parse();
+    });
+    xmlEl.addEventListener('input', parse);
+    parse();
+  </script>
+</MainLayout>

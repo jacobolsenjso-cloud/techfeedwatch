@@ -1,0 +1,100 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "robots.txt Tester";
+const description = "Paste a robots.txt, pick a crawler and a URL, and see whether it is allowed or blocked - and exactly which rule decides. Follows Google's matching rules. Free, in your browser.";
+const eksempel = `User-agent: *
+Disallow: /admin/
+Disallow: /*?sort=
+Allow: /admin/help
+
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://example.com/sitemap.xml`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🚦 robots.txt Tester</h1>
+      <p>Paste a robots.txt file, choose a crawler and a URL, and see whether that crawler may fetch it - plus the exact line that decides. The matching follows Google's documented rules, and everything runs in your browser.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="rtRobots">robots.txt content</label>
+      <textarea id="rtRobots" class="st-area" spellcheck="false">{eksempel}</textarea>
+      <p class="st-hint">Get yours by opening <span class="st-code">yourdomain.com/robots.txt</span> and copying everything. <a id="rtOpen" href="#" target="_blank" rel="noopener" hidden>Open robots.txt for that domain ↗</a></p>
+    </div>
+
+    <div class="st-grid">
+      <div class="st-field">
+        <label for="rtUrl">URL or path to test</label>
+        <input id="rtUrl" class="st-input" value="/admin/settings" spellcheck="false" />
+      </div>
+      <div class="st-field">
+        <label for="rtBot">Crawler (user-agent token)</label>
+        <input id="rtBot" class="st-input" value="Googlebot" list="rtBots" spellcheck="false" />
+        <datalist id="rtBots">
+          <option value="Googlebot" /><option value="Googlebot-Image" /><option value="Bingbot" /><option value="GPTBot" /><option value="ClaudeBot" /><option value="PerplexityBot" /><option value="Google-Extended" /><option value="CCBot" />
+        </datalist>
+      </div>
+    </div>
+
+    <div id="rtResult"></div>
+    <div id="rtGroup"></div>
+    <div id="rtWarnings"></div>
+
+    <div class="st-info-section">
+      <h2>How a crawler decides</h2>
+      <p>A robots.txt file is split into groups. Each group starts with one or more <span class="st-code">User-agent</span> lines and lists <span class="st-code">Allow</span> and <span class="st-code">Disallow</span> rules. A crawler first picks its group: the one naming it exactly, otherwise the longest name it starts with (so Googlebot-Image follows a <span class="st-code">googlebot</span> group), otherwise the <span class="st-code">*</span> group. If several groups name the same crawler, their rules are combined.</p>
+      <p>Inside the group, the longest rule that matches the URL path wins. If an Allow and a Disallow rule are equally long, Allow wins. A <span class="st-code">*</span> matches any characters and a <span class="st-code">$</span> marks the end of the URL. Paths are case-sensitive: <span class="st-code">Disallow: /fish</span> blocks <span class="st-code">/fish.html</span> but not <span class="st-code">/Fish.html</span>.</p>
+      <h2>What robots.txt does not do</h2>
+      <p>Blocking a URL in robots.txt stops crawling, not indexing. Google can still list a blocked URL - without a description - if other pages link to it. To keep a page out of search results, let it be crawled and add a <span class="st-code">noindex</span> meta tag instead. The <span class="st-code">noindex</span> line inside robots.txt itself has not worked in Google since 2019, and this tester flags it.</p>
+      <h2>Limits of this tester</h2>
+      <p>It applies the published rules to the text you paste; it does not fetch your live file, so test what is actually on your server. Percent-encoded characters (like <span class="st-code">%2F</span>) are compared as written, and crawl-delay is ignored, as Google ignores it. Some crawlers fetch a page when a person asks for it and say robots.txt may not apply to them - the AI Crawler Access Checker lists which.</p>
+    </div>
+  </div>
+
+  <script>
+    import { parseRobots, tjek, vaelgGrupper } from '../../lib/robots-match.mjs';
+
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const robots = $('rtRobots') as HTMLTextAreaElement;
+    const url = $('rtUrl') as HTMLInputElement;
+    const bot = $('rtBot') as HTMLInputElement;
+    const open = $('rtOpen') as HTMLAnchorElement;
+
+    const run = () => {
+      const parsed = parseRobots(robots.value);
+      const navn = bot.value.trim() || '*';
+      const r = tjek(parsed, navn, url.value);
+      $('rtResult').innerHTML = `<div class="st-msg ${r.tilladt ? 'st-ok' : 'st-err'}">
+        <strong>${r.tilladt ? '✅ Allowed' : '⛔ Blocked'}</strong> - ${esc(navn)} ${r.tilladt ? 'may' : 'may not'} crawl <span class="st-code">${esc(r.sti)}</span>.<br>${esc(r.grund)}</div>`;
+      const valg = vaelgGrupper(parsed, navn);
+      const hvordan: Record<string, string> = {
+        exact: `the group naming <b>${esc(valg.valgt || '')}</b> exactly`,
+        prefix: `the group <b>${esc(valg.valgt || '')}</b> (the crawler name starts with it)`,
+        wildcard: 'the <b>*</b> group (no group names this crawler)',
+        none: 'no group - the file has no group for this crawler and no * group',
+      };
+      const regler = valg.grupper.flatMap((g: any) => g.regler);
+      $('rtGroup').innerHTML = `<div class="st-card"><h3>Group used</h3><p class="st-muted" style="margin:0 0 8px">${esc(navn)} follows ${hvordan[valg.hvordan]}.</p>${
+        regler.length ? `<div class="st-table-wrap"><table class="st-table"><thead><tr><th>Line</th><th>Rule</th><th>Matches?</th></tr></thead><tbody>${
+          regler.map((rg: any) => `<tr><td class="st-num">${rg.nr}</td><td class="st-code">${esc(rg.linje)}</td><td>${r.regel && r.regel.nr === rg.nr ? '<span class="st-pill ' + (rg.type === 'allow' ? 'st-pill-ok' : 'st-pill-no') + '">decides</span>' : ''}</td></tr>`).join('')
+        }</tbody></table></div>` : '<p class="st-muted" style="margin:0">No Allow/Disallow rules in this group.</p>'
+      }${parsed.signaler.length ? `<p class="st-muted" style="margin:10px 0 0">Content signal (a usage declaration, not a crawl rule): ${parsed.signaler.map((x: any) => `<span class="st-code">${esc(x.vaerdi)}</span>`).join(', ')}</p>` : ''}${parsed.sitemaps.length ? `<p class="st-muted" style="margin:10px 0 0">Sitemaps listed: ${parsed.sitemaps.map((s: string) => `<span class="st-code">${esc(s)}</span>`).join(', ')}</p>` : ''}</div>`;
+      $('rtWarnings').innerHTML = parsed.advarsler.length
+        ? `<div class="st-msg st-warn"><strong>${parsed.advarsler.length} line(s) ignored:</strong><br>${parsed.advarsler.map((a: any) => esc(a.tekst)).join('<br>')}</div>` : '';
+      try {
+        const u = new URL(url.value.trim());
+        open.href = `${u.origin}/robots.txt`; open.hidden = false;
+      } catch { open.hidden = true; }
+    };
+    [robots, url, bot].forEach((el) => el.addEventListener('input', run));
+    run();
+  </script>
+</MainLayout>

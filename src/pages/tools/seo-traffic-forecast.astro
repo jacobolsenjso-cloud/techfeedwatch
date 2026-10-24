@@ -1,0 +1,98 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "SEO Traffic Forecast from Search Console";
+const description = "Upload your Search Console export and see where your organic clicks are heading over the next 3, 6 and 12 months - with an honest range and an optional value per click. Free, in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>📈 SEO Traffic Forecast</h1>
+      <p>Upload your Google Search Console export and see where your clicks from Google are heading if the current trend continues - with a range around the line, because no forecast is exact. Everything is calculated in your browser.</p>
+    </div>
+
+    <div class="st-card">
+      <h3>1. Export from Search Console</h3>
+      <p class="st-muted" style="margin:0 0 10px">Performance → Search results → date range "Last 6 months" or more → Export → Download CSV. Upload the ZIP as it is, or just Dates.csv (Danish: Datoer.csv).</p>
+      <div class="st-actions" style="margin:0"><input type="file" id="fcFile" accept=".zip,.csv" class="st-file" /><button type="button" class="st-btn" id="fcSample">Try with sample data</button></div>
+    </div>
+    <div class="st-grid">
+      <div class="st-field"><label for="fcWeeks">Forecast length</label><select id="fcWeeks" class="st-select"><option value="13">3 months</option><option value="26" selected>6 months</option><option value="52">12 months</option></select></div>
+      <div class="st-field"><label for="fcValue">Value per click ($, optional)</label><input id="fcValue" type="number" class="st-input" placeholder="e.g. 0.80" min="0" step="0.01" /></div>
+    </div>
+
+    <div id="fcOut"></div>
+
+    <div class="st-info-section">
+      <h2>How the forecast is made</h2>
+      <p>Daily clicks are added up per week (only complete Monday-to-Sunday weeks count, so a half week does not drag the line down). A straight trend line is fitted through those weeks and continued forward. The shaded band shows where 95% of past weeks fell around the line - if your traffic has been jumpy, the band is wide, and that is the honest answer.</p>
+      <h2>What it cannot see</h2>
+      <p>A trend line only knows the past. It cannot predict a Google core update, a competitor overtaking you, a new article that takes off or a season you have not had data for yet - with less than a year of data, Christmas or summer dips look like a trend. A straight line also grows forever, which no site does. Use the forecast to ask "is the direction right?", not to promise a number.</p>
+      <h2>Value per click</h2>
+      <p>If you know roughly what a visitor is worth to you - from ad revenue, sales or what the same click would cost in Google Ads - enter it, and the forecast is shown in money too. Leave it empty to see clicks only.</p>
+    </div>
+  </div>
+
+  <script>
+    import { laesFil } from '../../lib/gsc-csv.mjs';
+    import { forecast } from '../../lib/gsc-analyse.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const tal = (n: number) => Math.round(n).toLocaleString('en-US');
+    let data: any[] = [];
+
+    const graf = (r: any) => {
+      const W = 800, H = 280, P = 36;
+      const alle = [...r.hist.map((u: any) => u.klik), ...r.frem.map((f: any) => f.hoej)];
+      const maks = Math.max(1, ...alle) * 1.08, n = r.hist.length + r.frem.length;
+      const x = (i: number) => P + (i / Math.max(1, n - 1)) * (W - P * 2), y = (v: number) => H - P - (v / maks) * (H - P * 2);
+      const histL = r.hist.map((u: any, i: number) => `${x(i)},${y(u.klik)}`).join(' ');
+      const off = r.hist.length;
+      const frem = [`${x(off - 1)},${y(r.hist[off - 1].klik)}`, ...r.frem.map((f: any, i: number) => `${x(off + i)},${y(f.klik)}`)].join(' ');
+      const baand = [...r.frem.map((f: any, i: number) => `${x(off + i)},${y(f.hoej)}`), ...r.frem.map((f: any, i: number) => `${x(off + i)},${y(f.lav)}`).reverse()].join(' ');
+      const gitter = [0, 0.5, 1].map((p) => `<line x1="${P}" x2="${W - P}" y1="${y(maks * p / 1.08)}" y2="${y(maks * p / 1.08)}" stroke="currentColor" stroke-opacity="0.12"/><text x="${P - 6}" y="${y(maks * p / 1.08) + 4}" font-size="11" text-anchor="end" fill="currentColor" fill-opacity="0.6">${tal(maks * p / 1.08)}</text>`).join('');
+      return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Weekly clicks and forecast" style="width:100%;height:auto;color:var(--text-color)">${gitter}
+        <polygon points="${baand}" fill="#0d9488" fill-opacity="0.15"/>
+        <polyline points="${histL}" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+        <polyline points="${frem}" fill="none" stroke="#0d9488" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <text x="${P}" y="${H - 8}" font-size="11" fill="currentColor" fill-opacity="0.6">${r.hist[0].start}</text>
+        <text x="${W - P}" y="${H - 8}" font-size="11" text-anchor="end" fill="currentColor" fill-opacity="0.6">${r.frem[r.frem.length - 1].start}</text></svg>
+        <p class="st-hint">Blue: your weekly clicks. Dashed teal: the trend continued. Shaded: the range 95% of past weeks fell within.</p>`;
+    };
+
+    const run = () => {
+      if (!data.length) return;
+      const r: any = forecast(data, { uger: Number(($('fcWeeks') as HTMLSelectElement).value) });
+      if (r.fejl) { $('fcOut').innerHTML = `<div class="st-msg st-warn">${esc(r.fejl)}</div>`; return; }
+      const vaerdi = Number(($('fcValue') as HTMLInputElement).value) || 0;
+      const kr = (n: number) => (vaerdi ? `<br><span class="st-muted">≈ $${tal(n * vaerdi)}</span>` : '');
+      const retning = r.procentPrUge > 0.5 ? `growing by about ${r.procentPrUge.toFixed(1)}% of an average week, every week` : r.procentPrUge < -0.5 ? `shrinking by about ${Math.abs(r.procentPrUge).toFixed(1)}% of an average week, every week` : 'roughly flat';
+      $('fcOut').innerHTML = `<div class="st-msg ${r.procentPrUge < -0.5 ? 'st-warn' : 'st-ok'}">Based on ${r.ugerData} complete weeks, your clicks from Google are ${retning}.${r.ugerData < 52 ? ' With less than a year of data, seasonal swings can look like a trend.' : ''}</div>
+        <div class="st-stats"><div class="st-stat"><b>${tal(r.sidste4)}</b><span>clicks, last 4 weeks</span></div><div class="st-stat"><b>${tal(r.sum4)}${kr(r.sum4)}</b><span>forecast, next 4 weeks</span></div><div class="st-stat"><b>${tal(r.sum13)}${kr(r.sum13)}</b><span>next 3 months</span></div><div class="st-stat"><b>${tal(r.sum26)}${kr(r.sum26)}</b><span>next 6 months</span></div></div>
+        <div class="st-card">${graf(r)}</div>`;
+    };
+
+    ($('fcFile') as HTMLInputElement).addEventListener('change', async (e) => {
+      const fil = (e.target as HTMLInputElement).files?.[0]; if (!fil) return;
+      try {
+        const r = await laesFil(fil, 'dates');
+        if (r.fejl) { $('fcOut').innerHTML = `<div class="st-msg st-err">${esc(r.fejl)}</div>`; data = []; return; }
+        data = r.data; run();
+      } catch (err: any) { $('fcOut').innerHTML = `<div class="st-msg st-err">Could not read the file: ${esc(err.message)}</div>`; }
+    });
+    $('fcSample').addEventListener('click', () => {
+      // 26 uger syntetiske data: stigning, uge-rytme og støj - tydeligt mærket som eksempel.
+      data = []; const s = new Date('2026-04-06T00:00:00Z');
+      for (let i = 0; i < 182; i++) {
+        const d = new Date(s); d.setUTCDate(s.getUTCDate() + i);
+        const klik = Math.max(0, Math.round(20 + i * 0.35 + ((d.getUTCDay() + 6) % 7 >= 5 ? -6 : 0) + Math.sin(i * 1.7) * 5));
+        data.push({ noegle: d.toISOString().slice(0, 10), klik, visninger: klik * 30, ctr: 1 / 30, placering: 12 });
+      }
+      run();
+    });
+    ['fcWeeks', 'fcValue'].forEach((id) => $(id).addEventListener('input', run));
+  </script>
+</MainLayout>

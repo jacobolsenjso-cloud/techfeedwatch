@@ -1,0 +1,124 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "XML Sitemap Generator";
+const description = "Paste a list of URLs and get a valid XML sitemap - cleaned, de-duplicated, split at 50,000 URLs with a sitemap index when needed. Free, runs in your browser, nothing uploaded.";
+const eksempel = `https://example.com/
+https://example.com/about
+https://example.com/blog/first-post
+https://example.com/blog/first-post
+https://example.com/contact?ref=footer
+/relative-link-will-be-flagged`;
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🗺️ XML Sitemap Generator</h1>
+      <p>Paste your page URLs, one per line, and get a sitemap.xml that search engines accept. Duplicates and invalid lines are removed and reported, special characters are escaped, and large lists are split by the 50,000-URL limit automatically.</p>
+    </div>
+
+    <div class="st-field">
+      <label for="smUrls">URLs (one per line)</label>
+      <textarea id="smUrls" class="st-area" spellcheck="false">{eksempel}</textarea>
+    </div>
+    <div class="st-grid">
+      <div class="st-field">
+        <label for="smLastmod">Last modified date</label>
+        <select id="smLastmod" class="st-select">
+          <option value="none">Leave out (recommended unless you know the real dates)</option>
+          <option value="today">Today's date on every URL</option>
+          <option value="custom">A date I choose</option>
+        </select>
+      </div>
+      <div class="st-field">
+        <label for="smDate">Date</label>
+        <input id="smDate" type="date" class="st-input" disabled />
+      </div>
+    </div>
+    <div class="st-field">
+      <label><input type="checkbox" id="smStripQuery" /> Remove query strings (?ref=…) and keep one URL per page</label>
+    </div>
+
+    <div class="st-stats" id="smStats"></div>
+    <div id="smMsgs"></div>
+    <div class="st-actions" id="smActions"></div>
+    <textarea id="smOut" class="st-output" readonly spellcheck="false"></textarea>
+
+    <div class="st-info-section">
+      <h2>What goes in a good sitemap</h2>
+      <p>A sitemap is a list of the pages you want search engines to find. Only list the canonical version of each page - the URL that should appear in results - and only pages that return a normal 200 response. Redirects, pages blocked in robots.txt, pages with noindex and duplicate URLs with tracking parameters should stay out. A sitemap does not force indexing; it helps crawlers discover pages and notice changes.</p>
+      <h2>Why there is no priority or changefreq</h2>
+      <p>Google has said it ignores the <span class="st-code">&lt;priority&gt;</span> and <span class="st-code">&lt;changefreq&gt;</span> tags, so this generator leaves them out. <span class="st-code">&lt;lastmod&gt;</span> is used - but only when it is consistently accurate. Stamping today's date on every page every time you regenerate teaches search engines to ignore the field, which is why the default leaves it out.</p>
+      <h2>Limits and next steps</h2>
+      <p>One sitemap file may hold at most 50,000 URLs and 50 MB uncompressed. Longer lists are split into several files plus a sitemap index that points to them; upload them all to the site root and name the files as shown. Then add a <span class="st-code">Sitemap:</span> line to your robots.txt and submit the sitemap in Google Search Console and Bing Webmaster Tools. This tool does not crawl your site - it builds the file from the list you give it.</p>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const urls = $('smUrls') as HTMLTextAreaElement;
+    const lastmod = $('smLastmod') as HTMLSelectElement;
+    const dato = $('smDate') as HTMLInputElement;
+    const strip = $('smStripQuery') as HTMLInputElement;
+    const out = $('smOut') as HTMLTextAreaElement;
+    const xmlEsc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+    const htmlEsc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const MAX = 50000;
+    let filer: { navn: string; xml: string }[] = [];
+
+    const hent = (navn: string, xml: string) => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([xml], { type: 'application/xml' }));
+      a.download = navn; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    };
+
+    const run = () => {
+      dato.disabled = lastmod.value !== 'custom';
+      const lm = lastmod.value === 'today' ? new Date().toISOString().slice(0, 10) : lastmod.value === 'custom' ? dato.value : '';
+      const linjer = urls.value.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+      const set = new Set<string>(); const ugyldige: string[] = []; let dubletter = 0; const vaerter = new Set<string>();
+      for (const l of linjer) {
+        let u: URL;
+        try { u = new URL(l); } catch { ugyldige.push(l); continue; }
+        if (!/^https?:$/.test(u.protocol)) { ugyldige.push(l); continue; }
+        u.hash = '';
+        if (strip.checked) u.search = '';
+        const s = u.toString();
+        vaerter.add(u.host);
+        if (set.has(s)) { dubletter++; continue; }
+        set.add(s);
+      }
+      const liste = [...set];
+      const bidder: string[][] = [];
+      for (let i = 0; i < liste.length; i += MAX) bidder.push(liste.slice(i, i + MAX));
+      const urlset = (b: string[]) => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${b.map((u) => `  <url>\n    <loc>${xmlEsc(u)}</loc>${lm ? `\n    <lastmod>${lm}</lastmod>` : ''}\n  </url>`).join('\n')}\n</urlset>\n`;
+      filer = [];
+      if (bidder.length <= 1) filer.push({ navn: 'sitemap.xml', xml: urlset(bidder[0] || []) });
+      else {
+        const vaert = liste.length ? new URL(liste[0]).origin : 'https://example.com';
+        bidder.forEach((b, i) => filer.push({ navn: `sitemap-${i + 1}.xml`, xml: urlset(b) }));
+        filer.unshift({ navn: 'sitemap-index.xml', xml: `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${bidder.map((_, i) => `  <sitemap><loc>${xmlEsc(`${vaert}/sitemap-${i + 1}.xml`)}</loc>${lm ? `<lastmod>${lm}</lastmod>` : ''}</sitemap>`).join('\n')}\n</sitemapindex>\n` });
+      }
+      out.value = filer[0].xml.length > 200000 ? filer[0].xml.slice(0, 200000) + '\n<!-- preview cut at 200,000 characters - the download contains everything -->' : filer[0].xml;
+      $('smStats').innerHTML = `<div class="st-stat"><b>${liste.length}</b><span>URLs in sitemap</span></div><div class="st-stat"><b>${dubletter}</b><span>duplicates removed</span></div><div class="st-stat"><b>${ugyldige.length}</b><span>invalid lines skipped</span></div><div class="st-stat"><b>${filer.length}</b><span>file(s)</span></div>`;
+      const msgs: string[] = [];
+      if (ugyldige.length) msgs.push(`<div class="st-msg st-warn"><strong>Skipped - not full http(s) URLs:</strong><br>${ugyldige.slice(0, 10).map(htmlEsc).join('<br>')}${ugyldige.length > 10 ? `<br>…and ${ugyldige.length - 10} more` : ''}</div>`);
+      if (vaerter.size > 1) msgs.push(`<div class="st-msg st-warn">The list mixes ${vaerter.size} hosts (${[...vaerter].slice(0, 4).map(htmlEsc).join(', ')}). A sitemap should only list URLs from the site it is uploaded to - including the same www/non-www version.</div>`);
+      const stoerrelse = filer.reduce((s, f) => Math.max(s, new Blob([f.xml]).size), 0);
+      if (stoerrelse > 50 * 1024 * 1024) msgs.push('<div class="st-msg st-err">A file is over 50 MB uncompressed - split the list further.</div>');
+      $('smMsgs').innerHTML = msgs.join('');
+      $('smActions').innerHTML = filer.map((f, i) => `<button type="button" class="st-btn ${i === 0 ? 'st-btn-primary' : ''}" data-i="${i}">Download ${htmlEsc(f.navn)}</button>`).join('') + '<button type="button" class="st-btn" id="smCopy">Copy preview</button>';
+    };
+    $('smActions').addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest('button'); if (!b) return;
+      if (b.id === 'smCopy') { navigator.clipboard.writeText(out.value); b.textContent = 'Copied ✓'; setTimeout(() => (b.textContent = 'Copy preview'), 1500); return; }
+      const f = filer[Number(b.dataset.i)]; if (f) hent(f.navn, f.xml);
+    });
+    [urls, lastmod, dato, strip].forEach((el) => el.addEventListener('input', run));
+    lastmod.addEventListener('change', run);
+    run();
+  </script>
+</MainLayout>

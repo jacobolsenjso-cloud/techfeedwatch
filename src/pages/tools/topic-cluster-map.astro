@@ -1,0 +1,94 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "Topic Cluster Map from Search Console";
+const description = "Group the searches you already appear for into topics, see which topics bring impressions but rank poorly, and get a ranked list of articles to write or improve. Free, in your browser.";
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>🧭 Topic Cluster Map</h1>
+      <p>Turn the searches Google already shows you for into topics. Each topic shows how often you appear, how well you rank and what to do next - so you can see where one good article would cover twenty searches at once.</p>
+    </div>
+
+    <div class="st-card">
+      <h3>1. Add your searches</h3>
+      <p class="st-muted" style="margin:0 0 10px">Upload a Search Console export (Performance → Export → Download CSV - the ZIP or Queries.csv), or paste a plain list of keywords below, one per line.</p>
+      <div class="st-actions" style="margin:0 0 10px"><input type="file" id="tcFile" accept=".zip,.csv" class="st-file" /><button type="button" class="st-btn" id="tcSample">Try with sample data</button></div>
+      <textarea id="tcList" class="st-area" style="min-height:110px" placeholder="…or paste keywords, one per line" spellcheck="false"></textarea>
+    </div>
+
+    <div id="tcOut"></div>
+
+    <div class="st-info-section">
+      <h2>How the topics are found</h2>
+      <p>Every search is split into its meaningful words - question words like "what" and "how", and describing words like "explained", "guide" or "price", are set aside. Each word gets a weight: the total impressions of all searches that contain it. A search then joins the topic of its heaviest word, so "quantum computing explained" and "how does a quantum computer work" end up together under "quantum". When the same two words appear side by side in at least half of a topic's searches - like "open banking" - the topic is named after the pair.</p>
+      <h2>Reading the actions</h2>
+      <ul>
+        <li><strong>Write a dedicated article</strong> - the topic gets impressions, but your average position is worse than 10. Google is showing you, but no page is good enough to rank. One focused article that answers the main questions usually beats several thin ones.</li>
+        <li><strong>Improve and expand the page</strong> - average position 4-10. You are close; add the sub-questions listed under the topic to the page that ranks.</li>
+        <li><strong>Keep it updated</strong> - you already rank in the top 3. Refresh facts and dates so you stay there.</li>
+      </ul>
+      <h2>Limits</h2>
+      <p>This is word-based grouping, not a language model, so it is fast and predictable but literal: "car" and "automobile" land in different topics. Search Console exports do not say which page ranks for each search, so check that before you write - you may already have the page. A pasted keyword list without numbers is grouped by how often words occur instead of impressions.</p>
+    </div>
+  </div>
+
+  <script>
+    import { laesFil, parseCsv, tolkGsc } from '../../lib/gsc-csv.mjs';
+    import { klynger } from '../../lib/gsc-analyse.mjs';
+    const $ = (id: string) => document.getElementById(id) as HTMLElement;
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' } as Record<string, string>)[c]);
+    const tal = (n: number) => Math.round(n).toLocaleString('en-US');
+    let medTal = true;
+
+    const vis = (data: any[]) => {
+      if (!data.length) { $('tcOut').innerHTML = ''; return; }
+      const k = klynger(data);
+      const store = k.filter((g) => g.antal >= 2), enkelte = k.filter((g) => g.antal < 2);
+      const pill = (h: string) => `<span class="st-pill ${h.startsWith('Write') ? 'st-pill-no' : h.startsWith('Improve') ? 'st-pill-warn' : 'st-pill-ok'}">${h}</span>`;
+      let html = `<div class="st-stats"><div class="st-stat"><b>${tal(data.length)}</b><span>searches</span></div><div class="st-stat"><b>${store.length}</b><span>topics (2+ searches)</span></div><div class="st-stat"><b>${store.filter((g) => g.handling.startsWith('Write')).length}</b><span>topics needing an article</span></div></div>`;
+      html += store.slice(0, 40).map((g) => `<div class="st-card"><h3>${esc(g.emne)} <span class="st-muted" style="font-weight:400;font-size:0.9rem">· ${g.antal} searches${medTal ? ` · ${tal(g.visninger)} impressions · ${tal(g.klik)} clicks · avg. position ${g.placering.toFixed(1)}` : ''}</span></h3>
+        ${medTal ? `<p style="margin:0 0 8px">${pill(g.handling)}</p>` : ''}
+        ${g.underemner.length ? `<p class="st-muted" style="margin:0 0 8px">Sub-topics: ${g.underemner.map(esc).join(', ')}</p>` : ''}
+        <p style="margin:0;font-size:0.9rem">${g.top.map((d: any) => esc(d.noegle) + (medTal ? ` <span class="st-muted">(${tal(d.visninger)})</span>` : '')).join(' · ')}</p></div>`).join('');
+      if (enkelte.length) html += `<details class="st-card"><summary><strong>${enkelte.length} single searches</strong> that did not group with anything</summary><p style="margin:10px 0 0;font-size:0.9rem">${enkelte.slice(0, 200).map((g) => esc(g.top[0].noegle)).join(' · ')}</p></details>`;
+      $('tcOut').innerHTML = html;
+    };
+
+    ($('tcFile') as HTMLInputElement).addEventListener('change', async (e) => {
+      const fil = (e.target as HTMLInputElement).files?.[0]; if (!fil) return;
+      try {
+        const r = await laesFil(fil, 'queries');
+        if (r.fejl) { $('tcOut').innerHTML = `<div class="st-msg st-err">${esc(r.fejl)}</div>`; return; }
+        medTal = true; vis(r.data);
+      } catch (err: any) { $('tcOut').innerHTML = `<div class="st-msg st-err">Could not read the file: ${esc(err.message)}</div>`; }
+    });
+    ($('tcList') as HTMLTextAreaElement).addEventListener('input', (e) => {
+      const linjer = (e.target as HTMLTextAreaElement).value.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+      medTal = false;
+      vis(linjer.map((l) => ({ noegle: l, klik: 0, visninger: 1, ctr: 0, placering: 0 })));
+    });
+    $('tcSample').addEventListener('click', () => {
+      const csv = `Top queries,Clicks,Impressions,CTR,Position
+what is quantum computing,96,512,18.75%,2.1
+quantum computing explained,12,330,3.6%,6.2
+how does a quantum computer work,3,610,0.5%,12.8
+quantum computer price,0,140,0%,18.4
+post quantum cryptography,1,220,0.45%,14.1
+what is open banking,14,2210,0.63%,6.8
+open banking api,2,640,0.31%,11.9
+how does open banking work,5,410,1.2%,7.7
+open banking examples,0,190,0%,15.2
+what are stablecoins,71,388,18.3%,2.6
+stablecoins explained,9,240,3.75%,4.4
+are stablecoins safe,1,350,0.29%,13.6
+how does a vpn work,9,1480,0.61%,8.9
+is chatgpt free,3,1890,0.16%,11.4`;
+      medTal = true; vis(tolkGsc(parseCsv(csv)).data);
+    });
+  </script>
+</MainLayout>

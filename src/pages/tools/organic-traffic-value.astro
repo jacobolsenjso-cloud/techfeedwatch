@@ -1,0 +1,60 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SeoToolStyles from '../../components/SeoToolStyles.astro';
+
+const title = "Organic Traffic Value Calculator";
+const description = "What would your Google traffic cost if you had to buy it as ads? Enter monthly clicks and cost per click and compare one, three and five years of ads with organic growth. Free calculator.";
+---
+
+<MainLayout title={title} description={description}>
+  <SeoToolStyles />
+  <div class="st-wrapper">
+    <div class="st-header">
+      <h1>💰 Organic Traffic Value Calculator</h1>
+      <p>Put a price on your free traffic from Google: what would the same clicks cost as Google Ads, this year and over several years? Useful for deciding how much time and money SEO deserves.</p>
+    </div>
+
+    <div class="st-grid">
+      <div class="st-field"><label for="ovClicks">Organic clicks per month</label><input id="ovClicks" type="number" class="st-input" value="5000" min="0" step="1" /><p class="st-hint">From Search Console: Performance → total clicks for the last 28 days.</p></div>
+      <div class="st-field"><label for="ovCpc">Average cost per click ($)</label><input id="ovCpc" type="number" class="st-input" value="1.20" min="0" step="0.01" /><p class="st-hint">From Google Ads Keyword Planner for your main searches.</p></div>
+      <div class="st-field"><label for="ovGrowth">Expected organic growth per year (%)</label><input id="ovGrowth" type="number" class="st-input" value="20" step="1" /></div>
+      <div class="st-field"><label for="ovCpcRise">Yearly rise in ad prices (%)</label><input id="ovCpcRise" type="number" class="st-input" value="5" step="1" /><p class="st-hint">Ad prices tend to climb as more advertisers compete. Set 0 to ignore.</p></div>
+      <div class="st-field"><label for="ovSeo">Your SEO cost per month ($, optional)</label><input id="ovSeo" type="number" class="st-input" value="" placeholder="e.g. 500" min="0" step="1" /><p class="st-hint">Writing, tools, freelancers - to compare against.</p></div>
+    </div>
+
+    <div class="st-stats" id="ovStats"></div>
+    <div class="st-table-wrap"><table class="st-table"><thead><tr><th>Year</th><th class="st-num">Clicks / month</th><th class="st-num">Cost per click</th><th class="st-num">Same traffic as ads</th><th class="st-num">Cumulative</th><th class="st-num" id="ovSeoHead">Your SEO cost</th></tr></thead><tbody id="ovRows"></tbody></table></div>
+
+    <div class="st-info-section">
+      <h2>What the number means</h2>
+      <p>"Traffic value" answers one question: if Google stopped sending you visitors tomorrow and you bought the same clicks as search ads instead, what would it cost? It is the standard way to express SEO results in money, and the reason a page that ranks for years is worth more than its first month suggests: ads stop the moment you stop paying, organic rankings keep working.</p>
+      <h2>Why it is an estimate, not your revenue</h2>
+      <p>A click from an ad and a click from an organic result are not identical - organic visitors often trust the result more, ad visitors are often closer to buying. Cost per click also varies enormously by topic: a few cents for general information, tens of dollars for insurance or law. Use the cost per click of your own main searches, not an average for the internet. And the value is only real if those visitors matter to you; ten thousand clicks you would never pay for are worth less than the formula says.</p>
+      <h2>The growth assumptions</h2>
+      <p>Both yearly rates compound: 20% growth means each year has 20% more monthly clicks than the year before. The calculator does not know your site, so set realistic numbers - flat traffic is a perfectly honest assumption, and the table will show what that is worth too.</p>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+    const kr = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+    const run = () => {
+      const klik = Math.max(0, Number($('ovClicks').value) || 0), cpc = Math.max(0, Number($('ovCpc').value) || 0);
+      const vaekst = (Number($('ovGrowth').value) || 0) / 100, stigning = (Number($('ovCpcRise').value) || 0) / 100;
+      const seo = Number($('ovSeo').value) || 0;
+      let sum = 0; const rows: string[] = []; const pr: number[] = [];
+      for (let aar = 1; aar <= 5; aar++) {
+        const k = klik * Math.pow(1 + vaekst, aar - 1), c = cpc * Math.pow(1 + stigning, aar - 1), v = k * c * 12;
+        sum += v; pr.push(sum);
+        rows.push(`<tr><td>Year ${aar}</td><td class="st-num">${Math.round(k).toLocaleString('en-US')}</td><td class="st-num">$${c.toFixed(2)}</td><td class="st-num">${kr(v)}</td><td class="st-num"><b>${kr(sum)}</b></td><td class="st-num">${seo ? kr(seo * 12 * aar) : '–'}</td></tr>`);
+      }
+      (document.getElementById('ovRows') as HTMLElement).innerHTML = rows.join('');
+      (document.getElementById('ovSeoHead') as HTMLElement).style.display = '';
+      const maaned = klik * cpc;
+      const forhold = seo ? `<div class="st-stat"><b>${(maaned / seo).toFixed(1)}×</b><span>traffic value per $1 of SEO cost (this month)</span></div>` : '';
+      (document.getElementById('ovStats') as HTMLElement).innerHTML = `<div class="st-stat"><b>${kr(maaned)}</b><span>value this month</span></div><div class="st-stat"><b>${kr(pr[0])}</b><span>first year as ads</span></div><div class="st-stat"><b>${kr(pr[2])}</b><span>3 years as ads</span></div><div class="st-stat"><b>${kr(pr[4])}</b><span>5 years as ads</span></div>${forhold}`;
+    };
+    ['ovClicks', 'ovCpc', 'ovGrowth', 'ovCpcRise', 'ovSeo'].forEach((id) => $(id).addEventListener('input', run));
+    run();
+  </script>
+</MainLayout>
