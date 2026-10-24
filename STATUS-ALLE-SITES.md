@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 197** — brug kun v197). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 198** — brug kun v198). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 197** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 21:27, statusfil v197):** Robotten har nu Bing autocomplete som reserve, når Google har under 5 ubrugte spørgsmål til et emne (`b3836a32`; slår ikke til foreløbig - alle emner har 150+ ubrugte). Plan 2 (Bing-søgetal til at rangere spørgsmål) er en planlagt opgave lørdag 7/11 kl. 09:37. About.me og Person-schema med 5 profiler live; Pinterest kører (50 pins). Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`). Link-plan: næste Crunchbase (lav prioritet), derefter uge 3-4. 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. I morgen: tjek nattens kørsel (kanal-værn, dobbelt-loft, evt. Bing-reserve) og nye pins.
+**Seneste for techfeedwatch (24/10-2026 kl. 22:30, statusfil v198):** 10 gratis SEO-værktøjer i browseren er live (main `a970b73c`): robots.txt, AI-crawlere, schema, AI-slop, sitemap, Search Console quick wins, prognose, emneklynger, trafikværdi og RSS - sitet har nu 60 værktøjer. PageSpeed-værktøjet venter på en gratis Google API-nøgle, som Jacob selv laver. Robotten har Bing som reserve (plan 2 planlagt 7/11 kl. 09:37). Pinterest kører; Person-schema med 5 profiler live. 3 Dependabot-advarsler (undici) står stadig på GitHub - tjekkes i morgen. I morgen: nattens kørsel, nye pins, Dependabot.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 22:30 - 10 SEO-browserværktøjer live (Jacobs ja)
+- **Opgave:** Jacob bad mig undersøge Hawk Academys 37 SEO-værktøjer og bygge dem, der kan køre i browseren. 11 foreslået, 10 bygget.
+- **Bygget (gren seo-vaerktoejer → `d85fb424`, merget på main `a970b73c`):** robots.txt Tester, AI Crawler Checker (16 AI-robotter + Content-Signal), Schema Validator (Googles krav til rich results), AI Slop Checker, XML Sitemap Generator, Search Console Quick Wins, SEO Traffic Forecast, Topic Cluster Map, Organic Traffic Value, RSS Feed Parser. Alt kører i brugerens browser; intet sendes til en server. Fælles stil i src/components/SeoToolStyles.astro, logik i src/lib/ (robots-match, schema-check, slop-check, gsc-csv, gsc-analyse). Sitet har nu 60 værktøjer.
+- **Målt:** logiktests 69/69 (_udkast/_test-*.mjs); byg 692 sider uden fejl; alle 10 afprøvet i Jacobs Chrome lokalt og live; 3 tal efterregnet i hånden; dansk Search Console-ZIP virker; 390 px mobil uden overløb på alle 10. Live: build.json = `a970b73c`, alle 10 svarer 200 med SoftwareApplication-schema, alle 10 i sitemap-0.xml, /tools/ viser "60 Free Tools". RSS-værktøjet på det levende feed: 50/50 med billede, 0 problemer.
+- **Ikke bygget:** PageSpeed-værktøjet (nr. 11). Googles PageSpeed API svarer 429 "kvote opbrugt" uden nøgle. Kræver en gratis API-nøgle, som Jacob selv opretter.
+- **Fundet undervejs:** (1) De 60 værktøjssider har SoftwareApplication uden bedømmelser, så de kan ikke få rich results; bedømmelser må aldrig opdigtes. (2) Robotten lader fyldord slippe igennem i artikler: "leverage" (11), "cutting-edge", "fostering", "holistic".
+- Lære: Jeg kaldte PageSpeed nøglefri uden at have testet det. Test en ekstern tjeneste, før den lovs.
+- Lære: Crawler-navne knækkede midt i ordet på mobil (word-break i tabelceller). Skærmbilledet på 390 px fangede det; rettet med overflow-wrap.
+
 
 ### 24/10-2026 kl. 21:27 - Bing som reserve-kilde til spørgsmål (plan 1) + plan 2 planlagt (Jacobs ja)
 - **Spørgsmål:** Jacob spurgte, om robotten også kan finde det, folk søger på hos Bing, og om det skal vente på AdSense. Svar: AdSense vurderer indhold/regler, ikke kilderne - ingen grund til at vente.
