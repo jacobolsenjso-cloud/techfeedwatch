@@ -1,0 +1,9 @@
+name = "tfw-pagespeed"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+# Offentlig adresse (workers.dev): værktøjssiden /tools/pagespeed-checker/ kalder den.
+# Google-nøglen ligger som secret PSI_KEY, lagt af Jacob i Cloudflares dashboard - aldrig i koden.
+workers_dev = true
+
+[observability]
+enabled = true
