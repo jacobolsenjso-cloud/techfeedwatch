@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 196** — brug kun v196). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 197** — brug kun v197). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 196** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 20:37, statusfil v196):** About.me sat op (about.me/jacob-s-olsen: Jacob S. Olsen, Independent Publisher, bio med alle tre sites, knap til techfeedwatch.com, X/LinkedIn/GitHub/Bluesky) og tilføjet som 5. profil i Person-schemaet (`41b8643e`, set live). Pinterest kører: 50 pins på "AI & Tech Answers" fra RSS-feedet. Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`; numre i v189-v192 forældede, se dagbogen). Link-plan: uge 1 + Pinterest + About.me færdige; næste: Crunchbase (lav prioritet), derefter uge 3-4 (Indie Hackers, Dev.to ...). 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 21:27, statusfil v197):** Robotten har nu Bing autocomplete som reserve, når Google har under 5 ubrugte spørgsmål til et emne (`b3836a32`; slår ikke til foreløbig - alle emner har 150+ ubrugte). Plan 2 (Bing-søgetal til at rangere spørgsmål) er en planlagt opgave lørdag 7/11 kl. 09:37. About.me og Person-schema med 5 profiler live; Pinterest kører (50 pins). Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`). Link-plan: næste Crunchbase (lav prioritet), derefter uge 3-4. 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. I morgen: tjek nattens kørsel (kanal-værn, dobbelt-loft, evt. Bing-reserve) og nye pins.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 21:27 - Bing som reserve-kilde til spørgsmål (plan 1) + plan 2 planlagt (Jacobs ja)
+- **Spørgsmål:** Jacob spurgte, om robotten også kan finde det, folk søger på hos Bing, og om det skal vente på AdSense. Svar: AdSense vurderer indhold/regler, ikke kilderne - ingen grund til at vente.
+- **Målt før bygning (_udkast/_test-bing-suggest.mjs):** Bings autocomplete (api.bing.com/osjson.aspx, gratis, ingen nøgle) svarede 14/14 på fire emner med robottens præfikser og filtre. Bing 96-141 forslag mod Google 90-115; 70-127 kun hos Bing, men mest varianter af samme spørgsmål ("what is X simple / definition / examples / 2025") og flere korte værktøjssøgninger. Mere af det samme, ikke nye emner.
+- **Plan 1 (bygget):** src/lib/suggest.mjs har nu kilderne google (standard) og bing; auto-youtube.mjs (vaelgSpoergsmaal) spørger Bing, når Google har færre end 5 ubrugte spørgsmål til et emne eller ikke svarer. Bing-forslag får samme redaktør, dublet-værn og brugte-liste. Logger "Info: Bing-reserve for ...". Test 7/7, node --check ok. Gren bing-reserve → `b3836a32`.
+- **Ærligt målt:** alle 19 emner har 150-359 ubrugte Google-spørgsmål (241 brugt i alt) - reserven slår ikke til foreløbig. Det er en forsikring.
+- **Plan 2 (planlagt opgave `trig_015hzvhbC8j78u6yJ6vfnxZ8`, lørdag 7/11 kl. 09:37, kun læsning):** tjekker Bing Webmaster Tools (Search Performance + Keyword Research søgetal), Bings API og foreslår, hvordan søgetal kan rangere spørgsmål før redaktøren. API-nøglen laver Jacob selv og lægger som GitHub-secret.
+
 
 ### 24/10-2026 kl. 20:37 - About.me sat op + tilføjet i Person-schema (Jacobs ja)
 - **About.me (about.me/jacob-s-olsen):** Jacob oprettede selv kontoen. Rettet og set på den offentlige side: navn med det fulde mellemnavn (offentligt, også i sidetitlen) → **Jacob S. Olsen**; undertitel (skabelon "Writer, Editor, and Small Business Owner") → **Independent Publisher in Denmark**; skabelon-bio → samme tekst som Gravatar med links til alle tre sites (hvert site på sin egen linje); knap "Read my blog" → **Visit TechFeedWatch** (techfeedwatch.com); sociale links X, LinkedIn, GitHub, Bluesky. Jacob skiftede selv billedet til jakkesætsbilledet (samme som forfattersiden og Gravatar). Fulde navn står 0 steder på siden (LinkedIn-linket peger på hans LinkedIn, som han selv har valgt).
