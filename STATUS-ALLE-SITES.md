@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 193** — brug kun v193). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 194** — brug kun v194). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 193** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 18:52, statusfil v193):** Jacobs fulde navn fjernet fra repoets historik (10 commits fra i dag omskrevet, kun statusfilen; main nu `1600d263`, sitet uændret og live). Nye commit-numre står i dagbogen 24/10 - numre i v189-v192 er forældede. Gamle commits kan stadig hentes via præcis hash, til GitHub rydder op (eller Jacob beder GitHub Support om det). Person-schema live med 4 profiler (X, GitHub, Bluesky, Gravatar; LinkedIn bevidst ikke med). Navnevagt i _lav-version.mjs. Næste: Pinterest (venter på Jacobs Business-konto; RSS mangler billeder - gren + Jacobs ja). 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat; tjek også, at robottens kørsel efter omskrivningen gik godt.
+**Seneste for techfeedwatch (24/10-2026 kl. 19:19, statusfil v194):** Pinterest kører: profil pinterest.com/techfeedwatch (navn, bio, logo, websted), domænet claimet via TXT i Cloudflare DNS, RSS-feedet har nu billede på alle punkter (`c392fdf1`), og automatisk udgivelse sender nye artikler til tavlen "AI & Tech Answers" (første pins inden for et døgn - tjek 25/10). Person-schema live med 4 profiler (X, GitHub, Bluesky, Gravatar). Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`; numre i v189-v192 forældede, se dagbogen); robotten kører normalt ovenpå (19:17). Link-plan: uge 1 færdig + Pinterest; næste fra uge 2: About.me, Crunchbase. 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 19:19 - Pinterest sat op: profil, domæne claimet, RSS med billeder, automatisk udgivelse (Jacobs ja)
+- **Konto:** Jacob oprettede selv Pinterest Business-kontoen. Profil rettet og gemt: navn "Tech Feed Wach" (stavefejl) → **TechFeedWatch**, brugernavn jacobolsenjso → **techfeedwatch** (pinterest.com/techfeedwatch), bio = kort standardtekst, websted https://techfeedwatch.com, profilbillede = sitets logo (icon-512.png). E-mail/telefon/adresse bevidst tomme (offentlige felter). Set på den offentlige profil.
+- **Domæne claimet:** TXT-post `pinterest-site-verification=d4b87cdba85351b9bd51214af89ca0e5` på @ i Cloudflare DNS (13 → 14 poster, ingen andre rørt; set via 8.8.8.8). Pinterest: "Tilknyttet - techfeedwatch.com". "Installer tag" (Pinterests annoncesporing) bevidst sprunget over - ingen annoncer, og det ville kræve cookie-samtykke.
+- **RSS med billeder:** src/pages/rss.xml.js lægger nu artiklens delebillede (public/og/<slug>.jpg, 1200x630) på hvert punkt som `enclosure`; mangler filen, springes billedet over i stedet for at stoppe byggeriet. Gren rss-billeder → `c392fdf1`. Målt: build 682 sider uden fejl, gyldig XML, 50/50 punkter med billede, alle 50 billeder svarer 200 live.
+- **Automatisk udgivelse:** Pinterest → Masseopret pins → Offentliggør automatisk: https://techfeedwatch.com/rss.xml → offentlig tavle **"AI & Tech Answers"**. Gemt og læst igen efter genindlæsning. Pinterest henter feedet selv; de første pins kan tage op til et døgn.
+- **Robotten efter omskrivningen:** kørslen 19:17 lykkedes og skubbede `701d3630` oven på den nye historik (pull --rebase virkede). Målt bagefter: 0 gamle commits i main, navnet i 0 commits.
+
 
 ### 24/10-2026 kl. 18:52 - Jacobs fulde navn fjernet fra repoets historik (Jacobs ja)
 - **Hvorfor:** navnet og LinkedIn-adressen stod i STATUS-ALLE-SITES.md i 10 commits fra i dag (v189-v191), og repoet er offentligt.
