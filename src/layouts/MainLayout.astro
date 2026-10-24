@@ -179,6 +179,13 @@ const siteSchema = [
         if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos-lite.json').then(function (r) { return r.json(); });
         return window.__tfwVideosP;
       };
+      /* Kør fn først når siden er helt indlæst og browseren har tid. PageSpeed 24/10: katalogets
+         hentning lå i den kritiske kæde (færdig efter 2,5 s), selv om klokken og emnefiltret ikke
+         skal bruge det, før siden er vist. Søgning og filterklik henter det stadig med det samme. */
+      window.tfwEfterLoad = function (fn) {
+        var go = function () { if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 3000 }); else setTimeout(fn, 1500); };
+        if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
+      };
     </script>
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
@@ -683,10 +690,10 @@ const siteSchema = [
       .nav-icon { width: 19px; height: 19px; flex-shrink: 0; stroke: currentColor; fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: 0.75; }
       .nav-item.active .nav-icon, .nav-item:hover .nav-icon { opacity: 1; }
       .content-area { flex: 1; background: var(--bg-color); position: relative; display: flex; flex-direction: column; scroll-behavior: smooth; }
-      /* Blød sideovergang: indholdet fader ind ved hver sideindlæsning (kun opacity - transform ville bryde position:fixed cinema/scroll-knap). */
-      @keyframes tfwFadeIn { from { opacity: 0; } to { opacity: 1; } }
-      .content-area { animation: tfwFadeIn 0.4s ease backwards; }
-      @media (prefers-reduced-motion: reduce) { .content-area { animation: none; } .nav-item:hover { transform: none; } }
+      /* Fade-in af .content-area fjernet 24/10: indhold der starter usynligt (opacity 0) tæller
+         Google ikke med som største element, så PageSpeed målte logoteksten i stedet (LCP 6,8 s),
+         og besøgende ventede 0,4 s ekstra. Sideovergangene klares af view transitions. */
+      @media (prefers-reduced-motion: reduce) { .nav-item:hover { transform: none; } }
       .site-footer { padding: 20px; text-align: center; border-top: 1px solid var(--border-color); font-size: 14px; color: #6b7280; margin-top: auto; }
       body.dark-mode .site-footer { color: #9ca3af; }
       .footer-copy { margin: 0; }
@@ -1318,8 +1325,7 @@ const siteSchema = [
             }
             nBeregn(); nTegnEmner(); nTegn();
           }).catch(() => {});
-          if ('requestIdleCallback' in window) requestIdleCallback(() => startNotifData(), { timeout: 4000 });
-          else setTimeout(startNotifData, 2500);
+          window.tfwEfterLoad(startNotifData);
 
           notifBtn.addEventListener('click', (e) => {
             e.stopPropagation();
