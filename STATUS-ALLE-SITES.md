@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 198** — brug kun v198). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 199** — brug kun v199). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 198** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 22:30, statusfil v198):** 10 gratis SEO-værktøjer i browseren er live (main `a970b73c`): robots.txt, AI-crawlere, schema, AI-slop, sitemap, Search Console quick wins, prognose, emneklynger, trafikværdi og RSS - sitet har nu 60 værktøjer. PageSpeed-værktøjet venter på en gratis Google API-nøgle, som Jacob selv laver. Robotten har Bing som reserve (plan 2 planlagt 7/11 kl. 09:37). Pinterest kører; Person-schema med 5 profiler live. 3 Dependabot-advarsler (undici) står stadig på GitHub - tjekkes i morgen. I morgen: nattens kørsel, nye pins, Dependabot.
+**Seneste for techfeedwatch (24/10-2026 kl. 23:45, statusfil v199):** 11 gratis SEO-værktøjer er live (main `d89607cf`) - nu også PageSpeed Checker, der kalder Google via Workeren tfw-pagespeed (nøglen ligger som Secret). Sitet har 61 værktøjer; meta-beskrivelserne på de nye er kortet til under 160 tegn. Næste opgave: forsidens mobilhastighed (64/100, LCP 5,8 s, ca. 200 KB ubrugt JavaScript). I morgen: nattens kørsel, nye pins, Dependabot (3 undici-advarsler).
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 23:45 - PageSpeed Checker live via Cloudflare Worker + kortere meta-beskrivelser (Jacobs ja)
+- **Nøgle:** Jacob lavede selv en Google API-nøgle i projektet TechMediaArch Tools ("PageSpeed (Cloudflare Worker)", låst til kun PageSpeed Insights API) og lagde den som Secret PSI_KEY i den nye Worker tfw-pagespeed. Målt: binding PSI_KEY type=secret_text; /health keySet=true. Nøglen stod en kort tid som synlig tekst i Cloudflare (kun synlig inde på kontoen); Jacob slettede Workeren og valgte at beholde nøglen - "godt nok, som det er".
+- **Worker (cloudflare/pagespeed):** GET /run?url=&strategy= kalder Google med nøglen og sender kun et udsnit tilbage (scorer, lab-tal, feltdata, største besparelser). Kun techfeedwatch.com (og localhost til test) må kalde; private adresser afvises. Test 15/15 inkl. live (forside mobil 64; fremmed Origin 403).
+- **Værktøjsside /tools/pagespeed-checker/** (main `d89607cf`): fire scorer, Core Web Vitals fra rigtige brugere (eller hele sitet), lab-test og "Biggest time savers". Målt live: test af /tools/ gav svar på 19 s; 61 værktøjer; side i sitemap; 390 px uden overløb.
+- **Meta:** de 10 nye SEO-værktøjer havde beskrivelser på 175-193 tegn (Google klipper ved ca. 155-160). Forkortet til 150-157 med søgeord forrest; titler højst 60 tegn. Målt i dist og live.
+- **Fundet:** forsiden får 64/100 på mobil (LCP 5,8 s, FCP 4,5 s); største synder ubrugt JavaScript ca. 200 KB. Jacob: skal rettes - tages som næste opgave.
+- Lære: To samtidige handlinger på samme ressource (Jacob slettede Workeren, jeg udrullede den) gav forvirring. Når Jacob er i gang i et dashboard: vent på hans "klar", før jeg selv ændrer samme ting.
+
 
 ### 24/10-2026 kl. 22:30 - 10 SEO-browserværktøjer live (Jacobs ja)
 - **Opgave:** Jacob bad mig undersøge Hawk Academys 37 SEO-værktøjer og bygge dem, der kan køre i browseren. 11 foreslået, 10 bygget.
