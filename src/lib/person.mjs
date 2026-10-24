@@ -17,6 +17,8 @@ export const PERSON_SAMEAS = [
   'https://github.com/jacobolsenjso-cloud',
   'https://bsky.app/profile/jacob-dk.bsky.social',
   'https://gravatar.com/jacobolsenjso',
+  // About.me (24/10): samlet visitkort med alle tre sites og de sociale profiler.
+  'https://about.me/jacob-s-olsen',
 ];
 
 // Kort henvisning til personen inde i andre blokke (founder, author).
