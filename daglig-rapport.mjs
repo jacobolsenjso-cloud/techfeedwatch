@@ -77,6 +77,7 @@ const omskrivStop = omskriv24.flatMap((p) => p.stoppet || []);
 const omskrivUsd = omskriv24.reduce((s, p) => s + (p.usd || 0), 0);
 const tomme = robot24.filter((p) => !(p.udgivet || []).length && !p.loftNaaet).length;
 const klippet = robot24.reduce((s, p) => s + (p.klippet || 0), 0);
+const loftReddet = robot24.reduce((s, p) => s + (p.loftReddet || 0), 0); // 24/10: reddet af nyt forsøg
 const fejlLinjer = robot24.flatMap((p) => p.fejl || []);
 const sprunget = robot24.reduce((s, p) => s + (p.forhaandSprunget || 0), 0);
 const vurderet = robot24.reduce((s, p) => s + (p.fuldtVurderet || 0), 0);
@@ -102,7 +103,7 @@ const tekst = [
   '',
   `**Nye artikler: ${udgivet.length}**${udgivet.length ? '\n' + udgivet.map((s) => `- https://techfeedwatch.com/video/${s}/`).join('\n') : ''}`,
   '',
-  `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Kanal-værn: ${kv.tjekket} kanaler tjekket, ${kv.afvist} videoer afvist${kv.fejlet ? `, ${kv.fejlet} opslag fejlet` : ''}. Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
+  `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Kanal-værn: ${kv.tjekket} kanaler tjekket, ${kv.afvist} videoer afvist${kv.fejlet ? `, ${kv.fejlet} opslag fejlet` : ''}.${loftReddet ? ` Gemini-svar reddet med dobbelt loft: ${loftReddet}.` : ''} Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
   `**Omskrivning af gamle artikler:** ${omskrevet.length} omskrevet, ${omskrivStop.length} stoppet. Pris: ${kr(omskrivUsd)}.`,
   `**Brugt i ${maaned} (målt; logbøgerne startede 13.-14/10, så tidligere forbrug er ikke med):** ${kr(maanedUsd)}. Kreditten selv kan kun ses i Google AI Studio.`,
   '',
