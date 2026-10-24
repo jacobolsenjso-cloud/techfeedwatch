@@ -80,6 +80,9 @@ const klippet = robot24.reduce((s, p) => s + (p.klippet || 0), 0);
 const fejlLinjer = robot24.flatMap((p) => p.fejl || []);
 const sprunget = robot24.reduce((s, p) => s + (p.forhaandSprunget || 0), 0);
 const vurderet = robot24.reduce((s, p) => s + (p.fuldtVurderet || 0), 0);
+// Kanal-værn (24/10): summeret over døgnets kørsler. Ældre logposter har feltet ikke og tæller som 0.
+const kv = { tjekket: 0, afvist: 0, fejlet: 0 };
+for (const p of robot24) for (const k of Object.keys(kv)) kv[k] += p.kanalVaern?.[k] || 0;
 
 const advarsler = [];
 if (!robot.length) advarsler.push('Robottens logbog er ny (startet 14/10) — robot-tallene kommer med fra næste kørsel.');
@@ -88,6 +91,7 @@ if (robot24.length && !udgivet.length) advarsler.push('0 nye artikler de sidste 
 for (const [navn, n] of Object.entries(pr)) for (const f of n.fejl) advarsler.push(`Fejlet kørsel: ${navn} — ${f}`);
 if (klippet) advarsler.push(`${klippet} Gemini-svar blev KLIPPET ved loftet — søg "KLIPPET" i robottens log.`);
 for (const f of fejlLinjer.slice(0, 3)) advarsler.push(`Fejl i robotten: ${f}`);
+if (kv.fejlet) advarsler.push(`Kanal-værnet kunne ikke slå kanaler op ${kv.fejlet} gang(e) — de videoer blev lukket igennem uden tjek. Søg "Kanal-værn" i robottens log.`);
 if (status?.lastArticle?.at && nu - new Date(status.lastArticle.at) > 36 * 3600e3) advarsler.push(`Seneste artikel er fra ${tidDK(status.lastArticle.at)} (over 36 timer siden).`);
 
 const rob = pr['YouTube Auto Update'] || { i_alt: 0, planlagt: 0 };
@@ -98,7 +102,7 @@ const tekst = [
   '',
   `**Nye artikler: ${udgivet.length}**${udgivet.length ? '\n' + udgivet.map((s) => `- https://techfeedwatch.com/video/${s}/`).join('\n') : ''}`,
   '',
-  `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
+  `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Kanal-værn: ${kv.tjekket} kanaler tjekket, ${kv.afvist} videoer afvist${kv.fejlet ? `, ${kv.fejlet} opslag fejlet` : ''}. Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
   `**Omskrivning af gamle artikler:** ${omskrevet.length} omskrevet, ${omskrivStop.length} stoppet. Pris: ${kr(omskrivUsd)}.`,
   `**Brugt i ${maaned} (målt; logbøgerne startede 13.-14/10, så tidligere forbrug er ikke med):** ${kr(maanedUsd)}. Kreditten selv kan kun ses i Google AI Studio.`,
   '',

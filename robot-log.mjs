@@ -33,6 +33,12 @@ try {
     forhaandSprunget: linjer.filter((l) => /forhåndstjek \d+\/10/.test(l)).length,
     loftNaaet: linjer.some((l) => /Dagsloftet er nået/.test(l)),
     klippet: linjer.filter((l) => /Gemini-svar KLIPPET/.test(l)).length,
+    // Kanal-værn (24/10): kanaler slået op, videoer afvist, og opslag der fejlede (så værnet lukkede alt igennem).
+    kanalVaern: {
+      tjekket: alle(/Kanal-værn: (\d+) kanaler tjekket/).reduce((s, x) => s + Number(x), 0),
+      afvist: linjer.filter((l) => /Springer over: kanal-værn:/.test(l)).length,
+      fejlet: linjer.filter((l) => /Kanal-værn: YouTube-opslag fejlede/.test(l)).length,
+    },
     fejl: linjer.filter((l) => /❌|Kritisk fejl|GEMINI STOPPET/.test(l)).map((l) => l.trim().slice(0, 200)).slice(0, 5),
     usd: Math.round(usd * 10000) / 10000,
     kald,
