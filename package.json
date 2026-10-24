@@ -8,7 +8,7 @@
     "scripts": {
         "add-video": "node add-video.mjs",
         "dev": "astro dev",
-        "build": "astro build && node stamp-sw.mjs && node slash-links.mjs && node tjek-beskrivelser.mjs",
+        "build": "astro build && node lav-smaa-billeder.mjs && node stamp-sw.mjs && node slash-links.mjs && node tjek-beskrivelser.mjs",
         "preview": "astro preview",
         "astro": "astro"
     },

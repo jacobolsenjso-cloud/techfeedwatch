@@ -53,9 +53,9 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
     name: 'SEO & Metadata',
     heading: 'Free SEO & Metadata Tools',
     description:
-      'Free browser-based SEO tools: SERP preview, meta tags, schema, robots.txt and AI crawler checks, sitemaps and Search Console analysis. No sign-up, nothing uploaded.',
+      'Free SEO tools: SERP preview, meta tags, schema, robots.txt and AI crawler checks, sitemaps, PageSpeed and Search Console analysis. No sign-up needed.',
     intro:
-      'Everything here writes or checks the markup search engines actually read — the title Google shows, the card that appears when someone shares your link, the structured data that earns rich results. Each tool runs entirely in your browser, so nothing you paste is sent anywhere.',
+      'Everything here writes or checks the markup search engines actually read — the title Google shows, the card that appears when someone shares your link, the structured data that earns rich results. The tools run in your browser, so nothing you paste is sent anywhere - except the PageSpeed checker, which asks Google to test the address you enter.',
     relatedTags: ['SEO', 'Business & Money'],
     guide: [
       "The tools here share one idea: write the markup by hand, understand it, then paste it. Generators are quicker than remembering syntax, but the fields you fill in still decide everything - a generated title tag with a weak title is weak markup, delivered efficiently. Use the SERP preview to judge the words, then the tag generators to package them.",
