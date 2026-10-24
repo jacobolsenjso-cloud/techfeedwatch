@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 194** — brug kun v194). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 195** — brug kun v195). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 194** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 19:19, statusfil v194):** Pinterest kører: profil pinterest.com/techfeedwatch (navn, bio, logo, websted), domænet claimet via TXT i Cloudflare DNS, RSS-feedet har nu billede på alle punkter (`c392fdf1`), og automatisk udgivelse sender nye artikler til tavlen "AI & Tech Answers" (første pins inden for et døgn - tjek 25/10). Person-schema live med 4 profiler (X, GitHub, Bluesky, Gravatar). Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`; numre i v189-v192 forældede, se dagbogen); robotten kører normalt ovenpå (19:17). Link-plan: uge 1 færdig + Pinterest; næste fra uge 2: About.me, Crunchbase. 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 19:52, statusfil v195):** Pinterest kører og er justeret: 50 pins på tavlen "AI & Tech Answers" fra RSS-feedet (med utm-mærke, så trafikken kan ses i Analytics); konto sat til Forlag eller medie, Danmark, annonce- og AI-træningsdata slået fra. Person-schema live med 4 profiler (X, GitHub, Bluesky, Gravatar). Jacobs fulde navn fjernet fra repoets historik (main fra `1600d263`; numre i v189-v192 forældede, se dagbogen); robotten kører normalt ovenpå. Link-plan: uge 1 færdig + Pinterest; næste fra uge 2: About.me, Crunchbase. 3 Dependabot-advarsler (undici) rettet - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 19:52 - Pinterest gennemgået og justeret (Jacobs ja)
+- **Virker allerede:** Pinterest hentede feedet inden for 20 min - tavlen "AI & Tech Answers" har 50 pins. Stikprøve: pin "Coding Blocks and What Visual Logic Means for Learning" linker til artiklen med `?utm_source=Pinterest&utm_medium=organic` (svarer 200, canonical ren).
+- **Gennemgået og i orden:** profil (navn, @techfeedwatch, logo, bio, websted), offentlig profil, synlig for søgemaskiner, domæne claimet, RSS → tavle, mål "At hente trafik ind på dit site".
+- **Rettet (set efter genindlæsning):** virksomhedstype Indholdsskaber → Forlag eller medie; land/region tom → Danmark; køn → Mand (Jacobs valg); Persondata: alle 5 kontakter fra (annoncedata fra websites, partnerdata, annoncer om Pinterest, AI-træning (Canvas), afledte signaler) - påvirker ikke pins' rækkevidde.
+- Lære: Pinterests afkrydsningsfelter reagerer ikke på form_input (feltet ændres, men siden registrerer det ikke - Gem forbliver grå). Klik dem, og tjek at Gem bliver aktiv.
+
 
 ### 24/10-2026 kl. 19:19 - Pinterest sat op: profil, domæne claimet, RSS med billeder, automatisk udgivelse (Jacobs ja)
 - **Konto:** Jacob oprettede selv Pinterest Business-kontoen. Profil rettet og gemt: navn "Tech Feed Wach" (stavefejl) → **TechFeedWatch**, brugernavn jacobolsenjso → **techfeedwatch** (pinterest.com/techfeedwatch), bio = kort standardtekst, websted https://techfeedwatch.com, profilbillede = sitets logo (icon-512.png). E-mail/telefon/adresse bevidst tomme (offentlige felter). Set på den offentlige profil.
