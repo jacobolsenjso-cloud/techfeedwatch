@@ -331,12 +331,18 @@ const VAERN_MAKS_VIDEOER_PR_DAG = 1;
 const kanalVaernCache = new Map(); // channelId -> { ok, grund }
 async function kanalVaern(channelIds) {
   const ukendte = [...new Set(channelIds)].filter((id) => id && !kanalVaernCache.has(id));
+  let tjekket = 0, fabrikker = 0; // 24/10: tælles og skrives i loggen, så robot-log.mjs kan vise det
   for (let i = 0; i < ukendte.length; i += 50) {
     const gruppe = ukendte.slice(i, i + 50);
     try {
       const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${gruppe.join(',')}&key=${YOUTUBE_API_KEY}`;
       const res = await fetch(url);
       const data = await res.json();
+      // 24/10: et fejlsvar fra YouTube (fx opbrugt kvote) kaster IKKE — det kommer som { error } uden
+      // items og blev før tavst til "alle ok". Nu går det til catch og skrives i loggen.
+      // Fejlteksten bygges kun af status + årsagskode — URL'en (med nøglen) skrives aldrig.
+      if (!res.ok || data.error) throw new Error(`HTTP ${res.status}${data.error?.errors?.[0]?.reason ? ` ${data.error.errors[0].reason}` : ''}`);
+      tjekket += (data.items || []).length;
       for (const k of data.items || []) {
         const dage = Math.max(1, (Date.now() - new Date(k.snippet?.publishedAt || 0).getTime()) / 86400000);
         const videoer = Number(k.statistics?.videoCount || 0);
@@ -344,11 +350,18 @@ async function kanalVaern(channelIds) {
         if (dage < VAERN_MIN_KANAL_DAGE) grund = `kanalen er kun ${Math.round(dage)} dage gammel (kræver ${VAERN_MIN_KANAL_DAGE})`;
         else if (dage < VAERN_UNG_KANAL_DAGE && videoer / dage > VAERN_MAKS_VIDEOER_PR_DAG) grund = `${videoer} videoer på ${Math.round(dage)} dage (fabriks-kadence)`;
         else if (dage < VAERN_UNG_KANAL_DAGE && k.statistics?.hiddenSubscriberCount) grund = 'ung kanal, der skjuler abonnenttal';
+        if (grund) fabrikker++;
         kanalVaernCache.set(k.id, grund ? { ok: false, grund } : { ok: true });
       }
       for (const id of gruppe) if (!kanalVaernCache.has(id)) kanalVaernCache.set(id, { ok: true });
-    } catch { for (const id of gruppe) kanalVaernCache.set(id, { ok: true }); }
+    } catch (e) {
+      // Fail-open som før (må aldrig vælte en kørsel) — men nu synligt. Ordlyden læses af robot-log.mjs.
+      console.log(`⚠️ Kanal-værn: YouTube-opslag fejlede (${String(e?.message || e).slice(0, 120)}) — ${gruppe.length} kanaler lukket igennem uden tjek.`);
+      for (const id of gruppe) kanalVaernCache.set(id, { ok: true });
+    }
   }
+  // Ordlyden læses af robot-log.mjs ("Kanal-værn: N kanaler tjekket").
+  if (ukendte.length) console.log(`Info: Kanal-værn: ${tjekket} kanaler tjekket, ${fabrikker} ligner fabrikker.`);
   return kanalVaernCache;
 }
 
