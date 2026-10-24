@@ -81,6 +81,9 @@ const questions = regularVideos
 // sted i de store sektioner (Set'et "brugt"), så siden ikke gentager sig selv.
 const slugOf = (v: any): string => v.file.split('/').pop().replace('.md', '');
 const kortBillede = (v: any) => `/kort/${slugOf(v)}.webp`;
+// Små miniaturer (top 5, emnebånd) vises ca. 100-240 px brede: telefonen vælger selv 240-udgaven,
+// som lav-smaa-billeder.mjs laver efter bygningen. Skærme der kræver mere, får originalen.
+const kortSrcset = (v: any) => `/kort-240/${slugOf(v)}.webp 240w, /kort/${slugOf(v)}.webp 480w`;
 // AI-billede = samme regel som src/lib/aibillede.mjs (harAiBillede). Artikler, der endnu ikke er
 // omskrevet, har kun det gamle abstrakte emnekort - de holdes ude af de billedtunge sektioner
 // (trending, stort kort, karruseller), men står stadig i gitteret, så side 1 er komplet.
@@ -656,6 +659,8 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
             <div class="lead-card-thumb watch-card-thumb">
               <img
                 src={(() => { const s = slugOf(leadMain); return fs.existsSync(`public/billeder/${s}.webp`) ? `/billeder/${s}.webp` : `/kort/${s}.webp`; })()}
+                srcset={(() => { const s = slugOf(leadMain); return fs.existsSync(`public/billeder/${s}.webp`) ? `/billeder-720/${s}.webp 720w, /billeder/${s}.webp 960w` : undefined; })()}
+                sizes="(max-width: 768px) calc(100vw - 40px), 700px"
                 alt="" width="960" height="540" loading="eager" fetchpriority="high"
               />
               <div class="band-lead-text">
@@ -674,7 +679,7 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
                 <li>
                   <a href={`/video/${slugOf(video)}`} class="band-item">
                     <div class="band-item-thumb watch-card-thumb">
-                      <img src={kortBillede(video)} alt="" loading="lazy" />
+                      <img src={kortBillede(video)} srcset={kortSrcset(video)} sizes="120px" alt="" loading="lazy" />
                     </div>
                     <div>
                       {firstTag(video) && <span class="band-pill band-pill-sm" style={`--tag-accent: ${TAG_COLORS[firstTag(video) as string] || '#2563eb'}`}>{firstTag(video)}</span>}
@@ -777,7 +782,7 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
                 <a href={`/video/${slugOf(x.v)}`} class="top5-row">
                   <span class="top5-num" aria-hidden="true">{i + 1}</span>
                   <div class="top5-thumb watch-card-thumb">
-                    <img src={kortBillede(x.v)} alt="" loading="lazy" />
+                    <img src={kortBillede(x.v)} srcset={kortSrcset(x.v)} sizes="(max-width: 768px) 100px, 240px" alt="" loading="lazy" />
                   </div>
                   <div class="top5-text">
                     {firstTag(x.v) && <span class="topic-pill" style={`--tag-accent: ${TAG_COLORS[firstTag(x.v) as string] || '#2563eb'}`}>{firstTag(x.v)}</span>}
