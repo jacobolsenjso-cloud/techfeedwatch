@@ -1,5 +1,5 @@
 ---
-title: "Are Qubits Made of Nanowires in Quantum Computing?"
+title: "What Are Qubits Made of in Quantum Computing?"
 youtubeId: "oU_eQ4bEf1k"
 channelTitle: "Dr Ben Miles"
 channelId: "UCUeZBocfxALSUdOgNJB5ySA"
@@ -8,111 +8,103 @@ date: "2026-09-23"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"
-summary: "Physical qubits rely on specialized material architectures ranging from superconducting circuits to engineered semiconductor nanowires. Microsoft's recent breakthrough with topological qubits demonstrates how combining a 35 nm semiconductor nanowire with superconducting lead shields quantum states against destructive environmental noise. Understanding what qubits are made of clarifies the hardware barriers standing between experimental lab systems and practical commercial deployment."
-metaDescription: "Discover what qubits are made of in quantum computing hardware, from superconducting nanowires and lead layers to topological Majorana zero modes."
+summary: "Physical qubits in quantum computing are built from microscopic systems, including superconducting electronic circuits, trapped ions, neutral atoms, and individual photons. Each architecture uses different materials and isolation mechanisms, ranging from microfabricated silicon-based chips to laser-suspended atomic clouds. Controlling these systems requires specialized infrastructure, such as dilution refrigerators operating near absolute zero or ultra-high vacuum chambers."
+metaDescription: "Learn what qubits are made of in quantum computing, from superconducting transmon circuits and trapped ions to photons and silicon spin devices."
 targetQuestion: "what are qubits made of in quantum computing"
 duration: "18:17"
-viewCount: 391583
-viewsUpdated: "2026-10-22"
+viewCount: 391993
+viewsUpdated: "2026-10-24"
 thumbMax: true
 isShort: false
+rewrittenAt: "2026-10-24"
 faqs:
-  - question: "What physical materials make up a quantum computing qubit?"
-    answer: "Physical qubits are made from engineered microscopic systems such as superconducting circuits, trapped ions, or semiconductor nanowires coated in superconductors like lead or aluminum. These materials maintain quantum coherence by operating near absolute zero to isolate delicate quantum states from environmental disturbance."
-  - question: "How does a topological qubit protect quantum data from decoherence?"
-    answer: "A topological qubit splits quantum information across the ends of microscopic nanowires as Majorana zero modes rather than storing it at a single point. This spatial separation ensures that local thermal or electromagnetic noise cannot corrupt the state unless both ends are disturbed simultaneously."
-  - question: "Why did hardware engineers replace aluminum with lead in topological qubits?"
-    answer: "Lead has a superconducting energy gap of around 1,300 microelectronvolts, more than four times larger than aluminum's 300 microelectronvolts. This higher barrier prevents stray thermal infrared photons from breaking electron pairs apart and causing parity flips."
+  - question: "What are qubits physically made of?"
+    answer: "According to IBM, qubits are physically constructed from isolated microscopic systems, including superconducting electronic circuits, trapped ions, neutral atoms, photons, and electrons confined in semiconductors."
+  - question: "What is the difference between qubits and classical bits?"
+    answer: "Classical bits represent single binary values of zero or one using electrical charge in silicon transistors. According to IBM, qubits use quantum properties like superposition to hold combinations of both states simultaneously across physical quantum media."
+  - question: "How do qubits work in physical systems?"
+    answer: "According to the American Physical Society, physical qubits use discrete quantum energy levels or particle properties that engineers manipulate using microwave pulses, radio frequencies, or focused lasers. These external control signals drive quantum logic gates before the system collapses into a classical output during measurement."
+  - question: "How are qubits used to process data?"
+    answer: "Hardware platforms link multiple physical qubits through quantum entanglement to evaluate complex computational spaces at speeds unattainable by conventional computers. According to Nature, experimental systems maintain these delicate states across thousands of individual atoms using optical tweezers to execute programmable quantum algorithms."
 ---
 
-Engineers build physical qubits out of delicate subatomic and solid-state materials designed to isolate quantum states from environmental noise. Determining what qubits are made of reveals why quantum hardware requires extreme cryogenic refrigeration, atomic-scale material deposition, and specialized topologies to function.
+Qubits in quantum computing are made of engineered microscopic physical systems, including superconducting electronic circuits, trapped atomic ions, neutral atoms, individual photons, and semiconductor-confined electrons. Engineers build these components out of tangible materials such as aluminum, niobium, silicon, or isolated gases to harness quantum mechanical phenomena.
 
-## What Are Qubits Made of in Quantum Computing Hardware?
+Unlike classical transistors that switch between zero and one using bulk electrical charge, these physical platforms store information across discrete quantum states.
 
-Unlike classical computer transistors etched from bulk silicon, physical qubits take multiple physical forms across the industry. Some systems trap charged ions in vacuum chambers using electric fields. Others use superconducting circuits made of niobium or aluminum loops patterned onto silicon substrates, creating artificial atoms that behave according to quantum mechanics.
+According to IBM, physical qubits require extreme isolation to maintain their quantum properties. Any unwanted interaction with the surrounding environment causes decoherence, destroying the stored information. Because quantum mechanics operates across different microscopic scales, researchers build qubits using several competing physical designs.
 
-The exact physical composition dictates how long a qubit survives before environmental heat, vibration, or radiation destroys its superposition state. To understand the fundamental mechanics behind these units, see how a [Qubit in Quantum Computing Explained for Modern Scale](/video/qubit-in-quantum-computing-explained-for-modern-scale) operates across different hardware modalities.
+## How do superconducting circuits create artificial qubits?
 
-In the pursuit of topological protection, the physical recipe becomes far more exotic. Microsoft builds its topological qubits around a superconducting semiconductor nanowire measuring just 35 nm wide. Manufacturing equipment deposits an extremely thin superconducting coating—approximately 30 atoms in thickness—directly over this slender semiconductor foundation.
+Superconducting circuits create artificial qubits by routing electric currents with zero electrical resistance through microfabricated metal loops interrupted by nanoscale insulating barriers called Josephson junctions. This design forms an artificial atom with discrete, non-linear energy levels that engineers manipulate using microwave pulses.
 
-When engineers cool this hybrid structure down to 50 millikelvin—just 0.05° above absolute zero—the materials interact through a specialized boundary state. Because the two materials are perfectly joined together, the paired, frictionless behavior of the superconductor on top leaks across the boundary into the semiconductor below, a phenomenon called the proximity effect.
+According to the American Physical Society, these circuits are microfabricated on silicon or sapphire substrates using inductors, capacitors, and Josephson junctions. The junction itself consists of two superconducting electrodes separated by a thin insulating layer roughly one nanometer thick. Pairings of electrons, known as Cooper pairs, tunnel across this barrier without generating electrical resistance or heat.
 
-The layer stack, from top to bottom:
+Maintaining this superconducting behavior requires an extreme operating environment. According to IBM, superconducting transmon processors must operate inside multi-stage dilution refrigerators at temperatures between 10 and 15 millikelvin. That temperature is roughly one hundred times colder than deep space, which stops ambient thermal energy from disrupting the circuit's delicate quantum state.
 
-- Superconducting layer: lead, about 30 atoms thick
-- Proximity effect interface between the two materials
-- Semiconductor nanowire base: 35 nm wide
+Engineers fabricate these circuits using traditional semiconductor lithography tools. This manufacturing approach allows quantum teams to leverage established cleanroom infrastructure, even as they contend with the complex wiring demands of scaling [modern quantum computing chips](/video/which-hardware-defines-quantum-computing-chips-today) inside cryogenic chambers.
 
-At this cryogenic threshold, applying an external magnetic field parallel to the wire forces the material stack into a topological phase. In this phase, something unusual happens. Every single electron effectively divides into two halves, with each portion residing at an opposite tip of the wire.
+## Trapped ions and neutral atoms isolate qubits in vacuums
 
-This specific state is known as a Majorana zero mode. When two such wires are joined to form an H-pattern known as a tetron, quantum information is stored based on whether the total electron count across the assembly is even or odd—a characteristic referred to as parity.
+Trapped-ion and neutral-atom systems create qubits by suspending individual natural atoms inside ultra-high vacuum chambers using electromagnetic fields or focused laser beams. By relying on identical atoms provided by nature, these systems avoid the manufacturing imperfections found in fabricated solid-state circuits.
 
-This distributes the stored information across all four endpoints. Corrupting the data requires an environmental disruption to strike both ends of the wire at the exact same moment.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/), trapped-ion systems use charged atomic ions, such as beryllium or magnesium, held in place by radio-frequency Paul traps.
 
-This topological architecture acts much like a Möbius band. If you take a strip of tape, add a half-twist, and join the ends together, that structural twist persists no matter how you stretch or compress the loop.
+Laser or microwave pulses manipulate the internal electronic energy levels of each suspended ion to perform logic operations. Because the ions carry an electric charge, their mutual electrostatic repulsion enables multi-qubit entanglement across the chain.
 
-You cannot remove the twist with a localized poke; you must physically cut the strip open. Distributing quantum data across the entire physical structure provides inherent hardware protection against random noise.
+Neutral-atom computers instead use uncharged atoms held by tightly focused beams of light called optical tweezers. According to Nature, researchers at the California Institute of Technology assembled an array of 6,100 neutral-atom qubits made of single cesium atoms trapped in a vacuum grid. That Caltech experiment sustained quantum superposition states for roughly 12.6 seconds.
 
-## Can Topological Nanowires Eliminate Environmental Decoherence?
+Optical tweezers allow neutral-atom processors to organize hundreds or thousands of atoms into reconfigurable two-dimensional or three-dimensional arrays. While trapped ions rely on radio-frequency electrodes, neutral atoms transition into highly excited Rydberg states to interact with neighboring atoms across the array.
 
-The central enemy of quantum processing is decoherence, the rapid degradation of quantum states caused by thermal fluctuations and electromagnetic interference. To counter this, dilution refrigerators enclose the processor within a vacuum chamber that strips away roughly 99.99999% of atmospheric molecules, preventing them from striking and disrupting quantum calculations.
+## Photons and semiconductor spins encode quantum information using particles
 
-Yet even deep inside these suspended metallic chambers, conventional qubits struggle to preserve coherence for more than 12 milliseconds. Examining [How Is Quantum Computing Different From Classical Computing?](/video/how-is-quantum-computing-different-from-classical-computing) highlights why protecting these fragile states remains the core bottleneck in computing today.
+Photonic and semiconductor spin architectures encode qubits directly into the intrinsic quantum properties of elementary particles, specifically photon polarization states and electron spins. These systems use nanoscale components to route, manipulate, and measure quantum data.
 
-The concept of using non-local topological matter to defeat decoherence dates back to research papers published in 1997. Mathematician Michael Freedman reached out directly to Bill Gates in a 2004 letter, arguing that this approach could represent the optimal path for constructing a quantum computer.
+According to [Microsoft](https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor), photonic qubits are built from individual particles of light that encode information across physical properties such as polarization, phase, or spatial mode. Photons travel through optical waveguides, beam splitters, and phase shifters on silicon photonic chips. Because photons do not interact strongly with ambient thermal vibrations, photonic circuits can route quantum signals at room temperature.
 
-It took 21 years of experimental physics to translate that mathematical concept into the Majorana 1, Microsoft's initial topological test device developed inside Microsoft's lab in Copenhagen.
+Semiconductor spin qubits trap individual electrons or atomic nuclei inside tiny silicon structures known as quantum dots. By applying external magnetic fields and microwave pulses, engineers control the spin orientation of the trapped electron to represent zero, one, or a superposition of both. This approach closely mirrors standard silicon transistor manufacturing, allowing developers to adapt standard semiconductor production lines.
 
-The Majorana 1 proved that engineered topological phases could produce localized zero modes, but the hardware faced immediate operational constraints.
+Topological qubits represent a distinct, theoretical subclass of solid-state systems. According to Microsoft, topological qubits are experimental architectures constructed from quasiparticle excitations called Majorana zero modes in hybrid superconductor-semiconductor nanostructures. This approach distributes quantum information non-locally across physical wires to protect data against local environmental noise.
 
-Given error intervals of 1 to 10 milliseconds and qubit operations requiring about 1 microsecond each, the system manages approximately 10,000 steps before the qubit loses its state. Practical quantum algorithms require millions of sequential operations per logical qubit, rendering a 10,000-operation window insufficient for fault-tolerant execution.
+## Which qubit technology offers the best operational trade-offs?
 
-Two distinct hardware mechanisms drove these early failures:
-*   **Quasiparticle Poisoning:** In a superconductor, electrons bind into Cooper pairs, but if something in the environment, for example, a stray photon, carries enough energy to rip one of those pairs apart, you get a free electron wandering through your system. Should this electron enter or exit the wire, it threatens to invert the qubit's parity between zero and one.
-*   **Majorana Hybridization:** The two Majorana zero modes at opposite ends of the wire aren't perfectly isolated. A minuscule quantum mechanical interaction still connects the two of them. This slight energy divergence consequently shifts the qubit marginally away from a true zero-energy level.
+No single qubit technology offers an absolute operational advantage, because physical platforms that provide rapid processing speeds suffer from higher error rates, while environmentally isolated atomic qubits feature slower gate operations.
 
-The root cause came down to the physical properties of the superconducting skin. The Majorana 1 used aluminum, where the superconducting gap is around 300 microelectronvolts. Stray infrared photons radiated by the refrigerator walls carry enough energy to exceed that, routinely shattering Cooper pairs.
+- Superconducting circuits execute operations in nanoseconds, but require dilution refrigerators operating at 10 to 15 millikelvin according to IBM.
+- Trapped ions provide natural atomic uniformity, yet physical shuttling mechanisms slow operation speeds according to the National Institute of Standards and Technology.
+- Neutral atoms scale to dense grids like Caltech's 6,100-atom array according to Nature, but require arrays of optical lasers to hold individual atoms.
+- Photonic qubits operate across room-temperature waveguides according to Microsoft, but lack simple mechanisms to generate deterministic interactions between individual photons.
 
-Microsoft revealed on the 2nd of June that replacing the aluminum coating with lead—a material exhibiting a superconducting gap near 1,300 microelectronvolts—extended qubit coherence from 12 milliseconds to more than 20 seconds. As Dr Ben Miles points out, this material change dramatically improved stability. 
+While classical hardware evaluates calculations sequentially, understanding [how quantum computing differs from classical computing](/video/how-is-quantum-computing-different-from-classical-computing) means recognizing that quantum processors evaluate multiple possibilities simultaneously. Maintaining chips at cryogenic temperatures near absolute zero inside expensive refrigerators remains a major industrial barrier.
 
-Achieving that transition required extraordinary chemical control. Lead is notorious for contaminating semiconductor fabrication chambers and clumping unpredictably.
+Solid-state qubits suffer from structural defects in the surrounding silicon substrate, while atomic systems risk atom loss if vacuum pressure fluctuates.
 
-Engineers spent years calibrating molecular-beam systems to deposit lead crystals layer by atomic layer onto the 35 nm nanowire without disturbing the interface. Operating at a speed of 1 microsecond per gate, Microsoft's Majorana 2 experimental topological hardware can execute 20 million actions before an error is likely to emerge.
+## Dr Ben Miles explores Microsoft's topological qubit in Copenhagen
 
-To quote Microsoft, "the probability of any unintended parity flip during a typical qubit operation becomes effectively negligible." The practical implication is that qubit lifespan no longer serves as the primary barrier preventing the realization of a practical quantum computer.
+Dr Ben Miles visits Microsoft's quantum laboratory in Copenhagen to examine how engineers fabricate topological qubits from hybrid superconducting nanowires rather than standard transmon circuits.
 
-Superconductor material comparison:
+According to Dr Ben Miles, the team's dilution refrigerator removes around 99.999999% of air molecules and chills the processor to 50 millikelvin, which is just 0.05 degrees above absolute zero. Within this chamber, Microsoft mounts devices built from semiconductor nanowires measuring just 35 nanometers wide.
 
-| Material | Superconducting gap | Coherence limit | Operations |
-|---|---|---|---|
-| Aluminum | Around 300 microelectronvolts | 12 milliseconds | 10,000 |
-| Lead | Around 1,300 microelectronvolts | Over 20 seconds | 20 million |
+Engineers assemble these qubits using precise layers of physical materials:
 
-## Will Material Upgrades Push Quantum Scale Toward 2029?
+- Nanowire base: A 35-nanometer-wide semiconductor wire controlled by electric field gates.
+- Superconductor layer: A film laid down on top of the wire, engineered roughly 30 atoms thick.
+- Tetron assembly: An H-shaped layout of linked wires that encodes a qubit into electron parity across four Majorana zero modes.
 
-Past improvements in hardware coherence have tracked Schoelkopf's law, a principle stating that qubit coherence durations double roughly once each year. A massive leap within twelve months bypassed years of projected incremental gains on paper. This progress led Microsoft's quantum leadership, including Chetan Nayak, to target 2029 for commercial-scale systems.
+When cooled to 50 millikelvin, electrons in the superconductor bind into Cooper pairs and leak their frictionless behavior into the semiconductor wire through the proximity effect. Dr Ben Miles explains that Microsoft originally built its Majorana 1 qubit using aluminum, which provided a superconducting gap of around 300 microelectronvolts and yielded error-free coherence times of only 1 to 10 milliseconds.
 
-Simultaneously, algorithm optimizations are lowering physical hardware requirements. To illustrate, past projections suggested that cracking RSA 2048 via [Shor's algorithm](/video/quantum-computing-s-looming-shadow-is-bitcoin-s-security-truly-at-risk/) would demand roughly 10 million qubits primarily to absorb error-correction overhead.
+To fix this vulnerability, Microsoft replaced the aluminum layer with lead, raising the superconducting gap to around 1,300 microelectronvolts. According to Dr Ben Miles, this material swap increased the energy required to break Cooper pairs by four times, boosting qubit lifetimes from 1 to 10 milliseconds to over 20 seconds.
 
-Compiler routines and algorithmic efficiencies continue to reduce that requirement. The acceleration of these mathematical optimizations is detailed further in [Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained).
+Microsoft projects that this material change allows 20 million operations before an error occurs, leading the company to advance its roadmap target for a scalable quantum machine to 2029.
 
-| Metric / Dimension | Majorana 1 Architecture | Majorana 2 Architecture |
-| :--- | :--- | :--- |
-| **Superconductor Layer** | Aluminum (around 300 microelectronvolts gap) | Lead (around 1,300 microelectronvolts gap) |
-| **Nanowire Width** | 35 nm | 35 nm |
-| **Coherence Lifetime** | 1 to 10 milliseconds | over 20 seconds |
-| **Gate Execution Speed** | 1 microsecond | 1 microsecond |
-| **Pre-Error Operations** | 10,000 operations | 20 million operations |
-| **Operating Temperature** | 50 millikelvin (0.05° above absolute zero) | 50 millikelvin (0.05° above absolute zero) |
+Try the numbers yourself in our [Quantum Speed-up Calculator](/tools/quantum-speedup-calculator).
 
-Despite these operational gains, the wider physics community maintains healthy skepticism. Skeptics note that holding a passive quantum state for over 20 seconds does not equal active quantum computation.
-
-Microsoft has not yet demonstrated public gate operations, active superposition control, or complex multi-qubit algorithm execution on the Majorana 2. Scaling from an isolated tetron to thousands of interconnected topological nodes introduces immense thermal and micro-wiring hurdles.
-
-## How to Evaluate Quantum Hardware Claims and Roadmaps
-
-Evaluating the materials and architectures powering modern quantum devices allows tech executives and engineers to cut through public relations noise:
-
-1.  **Track physical qubit modalities by noise immunity, not raw count.** Do not compare systems by physical qubit volume alone. A machine running topologically protected qubits with lifetimes over 20 seconds provides vastly more computational utility than an array of noisy superconducting transmon qubits that collapse rapidly.
-2.  **Audit cryptographic vulnerability against post-quantum standards.** Because physical architectures are scaling alongside more efficient algorithmic code, legacy public-key systems will expire faster than older roadmap estimates suggested. Begin migrating critical infrastructure to lattice-based post-quantum cryptography algorithms today.
-3.  **Validate vendor hardware roadmaps against atomic fabrication realities.** Examine the physical materials vendors use. Silicon spin qubits, trapped ions, and topological nanowires face vastly different manufacturing limitations. When an enterprise promises a sudden leap in operational fidelity, look for published physical gap measurements, substrate compatibility data, and reproducible gate control demonstrations before reallocating technical resources.
+## Sources
+- [What is a qubit? | IBM](https://www.ibm.com/think/topics/qubit) — ibm.com
+- [Physics.4.103](https://link.aps.org/doi/10.1103/Physics.4.103) — aps.org
+- [What Is Quantum Computing? | IBM](https://www.ibm.com/think/topics/quantum-computing) — ibm.com
+- [Quantum Computing with Trapped Ions | NIST](https://www.nist.gov/programs-projects/quantum-computing-trapped-ions) — nist.gov
+- [Trapped-ion quantum computer - Wikipedia](https://en.wikipedia.org/wiki/Trapped-ion_quantum_computer) — wikipedia.org
+- [Caltech Team Sets Record with 6,100-Qubit Array - Challenge Institute for Quantum Computation](https://ciqc.berkeley.edu/caltech-team-sets-record-with-6100-qubit-array/) — berkeley.edu
+- [Microsoft Quantum | Types of qubits](https://quantum.microsoft.com/en-us/insights/education/concepts/types-of-qubits) — microsoft.com
+- [Microsoft Announces 1000x Better Quantum Chip](https://www.youtube.com/watch?v=oU_eQ4bEf1k) — Dr Ben Miles on YouTube

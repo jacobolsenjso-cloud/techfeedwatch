@@ -177,5 +177,22 @@
   ],
   "stoppet": [],
   "usd": 0.2837
+ },
+ {
+  "dato": "2026-10-24T06:37:22.313Z",
+  "omskrevet": [
+   "are-qubits-made-of-nanowires-in-quantum-computing"
+  ],
+  "stoppet": [
+   {
+    "slug": "how-does-generating-ai-videos-use-water",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What proportion of an AI video's water footprint comes from direct cooling versus power generation?\"). Artiklen skrives ikke."
+   },
+   {
+    "slug": "how-to-use-the-text-to-video-ai-tool-in-capcut",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What are the limitations and costs of CapCut's free versus Pro AI video tools?\"). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 0.7853
  }
 ]
