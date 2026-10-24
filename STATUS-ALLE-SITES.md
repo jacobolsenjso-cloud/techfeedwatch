@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 22. oktober (**version 184** — brug kun v184). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 22. oktober (**version 185** — brug kun v185). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 22. oktober (**version 184** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (23/10-2026 kl. 20:10): STATUSFILEN HOLDER SIG NU SELV SLANK — dagbog ældre end 7 dage flyttes automatisk til STATUS-ARKIV.md ved hver ny version (Jacobs regel 23/10, nu indbygget i _lav-version.mjs, så det aldrig glemmes). Første kørsel flyttede 16 dages ophobning. Arkivet er git-sporet (GitHub) og får dateret kopi i Downloads → Drev ved hver ændring. Ellers: se v183 (stemmens fangstnet).**
+**Seneste for techfeedwatch (24/10-2026 kl. 13:15, statusfil v185):** Kanal-værn i robotten: fabrikskanaler (under 90 dage; unge med fabriks-kadence eller skjulte abonnenttal) afvises nu FØR vurdering — musik-videoens kanal var 19 dage gammel. Den ramte artikel omskrevet med The Virtual Savvy-video (set live: 5/5 delspørgsmål, hjernen med, 0 tal uden kilde). Hakken på telefon/TV rettet: skimmer-animationen flyttet til grafikkortet (transform på ::after) — målt 34 → 0 ikke-sammensatte animationer, bekræftet 0 på levende site. Nyt værktøj: omskrivning kan målrettes én artikel med ny video (--kun/--nyvideo i workflowet).
 
 ### techfeedwatch.com — målt 19/10 kl. 16:30
 - **Live:** `226049e8` (se `https://techfeedwatch.com/build.json`, bygget 19/10 kl. 16:18 dansk) - ny forside (18/10) + emne- og listesider (19/10). **444 artikler.**
@@ -231,6 +231,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 13:15 — techfeedwatch: kanal-værn, musik-artiklen reddet, hakken rettet (34→0)
+- Jacob meldte to fejl: sitet hakkede på telefon/TV, og artiklen "What Happens When You Adopt Virtual Assistant Tools?" havde baggrundsmusik oven i stemmen. Årsager fundet FØR rettelse: (1) videoen kom fra "Remote AI Hub" — fabrikskanal oprettet 5/10-2026, altså 19 dage gammel; robotten vurderede kun emnet (relevans 10/10), aldrig afsenderen. (2) Skimmer-animationen bag thumbnails (background-position) males af CPU'en for hvert billede = PageSpeeds "34 ikke-sammensatte animationer" = hakken.
+- `16ec63ee` kanal-værn i auto-youtube.mjs: i første sigte afvises kanaler under 90 dage, og kanaler under 1 år med over 1 video/dag eller skjulte abonnenttal. Reglerne gælder KUN unge kanaler (etablerede nyhedskanaler poster lovligt 5+/dag). Ét batchet API-kald (1 enhed pr. 50 kanaler), fail-open ved API-fejl, bevidst intet abonnent-minimum (Best of-filosofien). Bevist mod den skyldige kanal med offentlige data.
+- `b180f778` omskriv-gamle fik `--kun=slug` + `--nyvideo=url` (målret én artikel med ny video — varigt værktøj til dårlige videoer opdaget efter udgivelse; succes kræver nu også ÆNDRET indhold, da en målrettet artikel allerede har ## Sources). Første erstatningsvideo afvist af robottens egne tjek (1/5 delspørgsmål — værnene virker), anden sad: The Virtual Savvy (kanal fra 2016, 120K abonnenter, 24:26). **Set live:** ny video på siden, hjernen med, 5/5 delspørgsmål, 0 tal uden kilde. Pris 2,60 kr. i alt (to kørsler).
+- `64b2cc68` på gren skimmer-gpu, merged til main `d9e6349d` efter Jacobs ja: skimmeren flyttet fra background-position til transform på en ::after BAG billedet (z-index -1, fjernes helt ved .is-loaded); index.astro fik samme :has(img)-værn som MainLayout, så en thumb uden billede aldrig skimrer for evigt. **Målt** A/B i containeren: 34 → 0 ikke-sammensatte animationer; **målt på levende site efter udrulning: 0.** Udseende uændret (skærmbilleder i chatten).
+- Harmløs rest: det fejlede 1. forsøg efterlod artiklen i omskriv-fejl.json — gør intet (artiklen har Sources, og --kun ignorerer listen).
+- Lære: flere-linjers commit-besked i PowerShell flades til én linje — brug flere -m (ét pr. afsnit).
+
 
 ### 23/10-2026 kl. 20:10 - statusfilen slanket + ugereglen automatiseret (Jacobs ja 20:09)
 - **Målt før:** 215 KB (~50.000 tokens pr. læsning), 99 dagbogsindlæg over 16 dage (8/10-23/10) — ugereglen fra 14/10 var aldrig blevet en rutine.
@@ -576,172 +585,6 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - **Målt live i Jacobs Chrome (c4a55d53):** 440 kort, 440 med artiklens billede, 0 YouTube-miniaturer, 0 tidsangivelser, 0 annoncebokse; de 8 første billeder indlæst, 416 venter til man scroller. Skærmbillede på mobil (lokal forhåndsvisning af samme kode).
 - **Ikke rettet (Jacobs afgørelse):** afspil-ikonet ▶ på artikelkort findes 15 steder på sitet (forside, emner, Latest, Library, arkiv, søgning, History, Related articles m.fl.) og antyder video - spurgt.
 - **Lære:** Chrome uden vindue hang på artikelsiden, fordi YouTube-rammen aldrig blev færdig; peg YouTube- og annoncedomæner væk (--host-resolver-rules) og mål med en side, der venter aktivt i stedet for faste pauser.
-
-
-### 17/10-2026 kl. 22:50 - techfeedwatch: menuen siger "Best of each topic" (LIVE `ec8cdadd`)
-- **Jacob: "du retter menuen også".** Menupunktet hed "Best by Topic", mens siden, sitemap og om-/start-siderne siger "Best of each topic". Kun ét sted i koden (MainLayout.astro).
-- **Målt:** skærmbilleder mobil (menu åben) + desktop - teksten står på én linje begge steder. Live (ec8cdadd, Cloudflare success): forside, /popular/, /about/ og en artikel har det nye navn, 0 steder med "Best by Topic".
-
-
-### 17/10-2026 kl. 22:37 - techfeedwatch: guides, ordliste og værktøjer siger nu ærligt "written with AI" (LIVE `880231b5`)
-- **Jacob valgte** "planned, checked and maintained by me"; Claude tilføjede "written with AI", fordi sætningen alene stadig lader læseren tro, at Jacob har skrevet teksten.
-- **Rettet:** about (to steder), start-here (to steder), editorial guidelines, forfatternoten under alle guides og slutlinjen i 8 guides ("Written and maintained by Jacob S. Olsen." -> "Planned, checked and maintained by Jacob S. Olsen, and written with AI."). Rettelsespolitikken: beskrivelsen "Written and maintained" -> "Maintained", den gamle opskrift ("videos as research material") rettet, "Last reviewed October 2026".
-- **Målt live (880231b5, Cloudflare success):** alle 224 sider undtagen artikler og artikellister gennemsøgt for 20 forældede formuleringer: 0 fund. Ny tekst bekræftet på about, start-here, editorial-guidelines, corrections og to guides.
-- **Lære:** v142-tjekket dækkede kun de 10 sider, jeg selv havde rettet, så rettelsespolitikken med samme gamle opskrift slap igennem. Et tjek af en tekstrettelse skal søge alle byggede sider, ikke kun dem, jeg ved, jeg har rørt (_tjek-alle-sider.mjs gør det nu).
-
-
-### 17/10-2026 kl. 22:27 - techfeedwatch: om-/start-/politiksider og /sitemap/ beskriver sitet, som det er nu (LIVE `dbb89eab`)
-- **Jacob: "det skal også med eller rettes ... er der flere fejl, så ret dem også" + "husk /sitemap/".** Siderne målt mod koden (add-video.mjs, soegning.mjs, kildetjek.mjs, auto-youtube.mjs, MainLayout).
-- **Fundet forældet:** about, start-here, terms, contact, author og editorial-guidelines beskrev den gamle opskrift (videoens transskript som eneste research, "independent creator", "højst fem om dagen"). Målt: 32 artikler har nu "## Sources" med websider; 3 omskrivninger om dagen 15.-17/10; dagsloft max 3 (kode). 59+ af 438 artikler bygger på store medier/firmaer (TED, Bloomberg, CNBC, IBM ...), så "independent creator" passede ikke.
-- **Rettet:** ny opskrift beskrevet (Google-søgning, navngivne kilder, stærke/svage kilder, videoen som ét afsnit, regler for tal/afskrift/læsertjek, loft 3 om dagen). About + start-here har nu klokken, følg emner, 18 emner ({{TOPICS}} tælles fra src/lib/emner.mjs), daglig push-besked, Read later og History. "Guides ... one per subject" rettet (9 guides, 18 emner). Trends/popular: "draws on" i stedet for "comes from". Privatlivspolitik: skabelon-linjer om konti, køb, tilbud og affiliate-betaling fjernet. Kommentar i daily-update.yml (2-6 -> 2-3).
-- **/sitemap/:** viste 8 af 50 værktøjer og 46 af 56 ordlisteord (3 kategorier manglede); manglede Start here, Latest, Best of each topic, Trends, Search og alle politiksider; linkede ikke til emnesiderne. Nu læses værktøjer og kategorier fra data. Målt live: 55 værktøjslinks (50 + 5 kategorier), 56 ord, 17 emner (PC Building & Gaming har 0 artikler og vises først, når den får en), 9 guides, alle artikler.
-- **Målt live (dbb89eab, Cloudflare success):** 10 sider, 0 forældede formuleringer, alle beskrivelser højst 160 tegn. Skærmbilleder af /sitemap/ mobil + desktop.
-- **Ikke rørt (Jacobs afgørelse):** fire steder siger, at guides, ordliste og værktøjer er skrevet af Jacob selv ("I write myself", "written and maintained by hand"). Git-historikken viser, at de er lavet af AI (Gemini-scripts + Claude-sessioner) efter Jacobs anvisning. Spurgt.
-- **Lære:** Select-String fandt ikke en linje, som den fandt et kvarter før (author-siden) - et enkelt søg er ikke et bevis for "ingen fund"; slutmålingen skal køre på den byggede side (dist/live), ikke kun på kilden.
-
-
-### 17/10-2026 kl. 21:50 - techfeedwatch: /about/ og /start-here/ tjekket - "summaries" fjernet (LIVE `871a584e`)
-- **Jacob: "er disse sider opdateret?"** Læst live: navn (TechFeedWatch), logo og budskab (rigtige søgespørgsmål, klare svar, krediteret skaber) passer allerede.
-- **Fakta målt:** 50 værktøjer = korrekt (50 sider; tools.ts' 55 inkl. 5 kategorier); 56 ordlisteord = korrekt; "two or three a day, fewer at weekends" = korrekt (sidste 28 dage: 2,5 pr. hverdag, 1,1 pr. weekenddag).
-- **Rettet:** artiklerne blev stadig kaldt "summaries" tre steder, i strid med sitets egen beskrivelse: arkiv-boksen øverst på om-/start-siderne ("a machine drafted the summaries" -> "drafted the articles, with the videos as research"), Trends-forbeholdet og guide-forfatternoten. Bekræftet live på /about/, /start-here/, /trends/ og en guide.
-- **Ikke tilføjet (Jacobs stemme - spørges først):** de nye funktioner (daglig push-besked, følg emner, 18 emner) nævnes ikke i "What is here".
-- **Lære:** mit første tal for artikler pr. dag læste videoens dato (`publishedAt`) i stedet for artiklens (`date`) - tjek hvilket felt der faktisk betyder det, jeg måler.
-
-
-### 17/10-2026 kl. 21:41 - techfeedwatch: 33 for lange sidebeskrivelser forkortet + vagt i buildet (LIVE `9369ea39`)
-- **Jacob: "ja du går igang"** (anbefaling: forkort + ret ved kilden). Målt live: 14 sider over 170 tegn, men 33 over 160 (Googles grænse): 23 ordliste, 7 værktøjer, 2 guides, regelsiden. Alle 33 rettet til højst 155 tegn (artiklerne var allerede højst 155 - robotten har grænse).
-- **Ordlisten:** nyt felt `metaDescription` KUN til Google; den synlige forklaring (`definition`) og DefinedTerm-schema beholder den fulde tekst (bekræftet uændret på 56/56 sider live).
-- **Ved kilden:** `generate-glossary.mjs` beder nu også om en META-linje (højst 155) og gemmer den som metaDescription, når definitionen er længere (advarer ellers). Nyt `tjek-beskrivelser.mjs` kører sidst i hvert build og lister indekserbare sider over 160 tegn - advarer kun, stopper ALDRIG buildet (må ikke blokere robottens udgivelser). Første kørsel: "alle 662 sider er højst 160 tegn".
-- **Vagterne i rettescriptet greb to af mine egne fejl før noget blev skrevet:** (1) nye tekster starter med samme ord som de gamle, så søgningen fandt sin egen indsatte tekst igen; (2) mit søgeværktøj fandt tekster på deres første 45 tegn og ramte dermed tools.ts/vaerktoej.mjs' EGNE korte tekster for GPU- og AI-værktøjet - længdetjekket stoppede overskrivningen.
-- **Live (595 sider):** præcis de 33 planlagte ændret til præcis de planlagte tekster; længste nu 160; og:description = description overalt.
-- **Lære:** jeg sagde "før det går live, viser jeg dig alle med før og efter" - og lagde det live uden. Et løfte om at vise før live holdes, også når Jacob har sagt "gå i gang".
-- **Lære:** find tekster på HELE strengen, ikke kun begyndelsen, og behold længdevagten - den reddede to filer i dag.
-- **Lære:** ved erstatning hvor ny tekst kan ligne den gamle: søg videre efter den indsatte tekst, aldrig fra start.
-
-
-### 17/10-2026 kl. 21:14 - techfeedwatch: navnet hedder TechFeedWatch overalt + nye beskrivelser (LIVE `c8b2c1d2`) + Google bedt om at hente forsiden
-- **Jacob: opdatér beskrivelserne til den nye "hvad TechFeedWatch er"** + valgte navnet **TechFeedWatch** (ét ord, som logo, titler og domæne); "Tech Feed Watch" beholdes kun som `alternateName` i schema, så søgninger på det gamle navn stadig rammer.
-- **Målt først:** alle 595 sider i sitemap hentet live. Gammel beskrivelse fundet i: standardbeskrivelsen ("daily archive of the best AI, Tech, and SEO videos"), emneside-skabelonen ("curated tech videos turned into clear, readable articles" - AR & VR, Hardware & Chips, Quantum Computing), app-manifestet, RSS og llms.txt. Navnet med tre ord stod 100 steder i 48 filer (sider, layout, schema, copyright, byline, om/kontakt/vilkår/privatliv, guides, robottens prompts).
-- **Ny beskrivelse (= forsidens overskrift):** "Straight answers on AI, tech, fintech and crypto. Every article answers a question people actually search for, in plain language. Updated daily." (145 tegn) - forside, standard og WebSite-schema. Emnesider uden egen tekst: "<emne> explained in plain language: straight answers to the questions people search for, each crediting the creator whose video it draws on." RSS, manifest og llms.txt omskrevet til samme budskab.
-- **Rettescript med vagt:** stopper uden at skrive, hvis en tekst ikke findes præcis det forventede antal gange (stoppede én gang: tankestreg i kilden - rettet til mønster).
-- **Tjek live (602 sider inkl. noindex-sider):** 0 "Tech Feed Watch" tilbage, og:site_name = TechFeedWatch overalt, alle sider har beskrivelse, beskrivelse = og:description overalt; 20 beskrivelser ændret (vist før/efter for Jacob). Manifest, RSS og llms.txt bekræftet live.
-- **Search Console (Jacobs Chrome):** forsiden undersøgt (indekseret) -> "Anmod om indeksering" -> "Der er anmodet om indeksering" (prioriteret crawlkø). Googles gemte favicon i Search Console var stadig det gamle.
-- **Ikke ændret (med vilje):** artiklernes egne beskrivelser (sidespecifikke, intet sitenavn i dem); 14 ordliste-/regelsider har beskrivelser over 170 tegn (Google afkorter) - kan forkortes senere.
-- **Lære:** mit søgeværktøj udelukkede ".astro" som mønster og sprang dermed ALLE .astro-filer over - gennemgangen "0 rester" i v138 manglede skabelonerne. Gentaget med rettet værktøj: farverne var stadig rene. Fremover: test et søgeværktøj på et kendt fund, før "0 fundet" troes.
-- **Lære:** PowerShell `Select-String -Path` med [klammer] i filnavnet finder stille ingenting (klammer = jokertegn) - brug `-LiteralPath`.
-- **Lære:** min vente-løkke på buildet reagerede på ordet "error" i en artikels adresse og læste resultatet for tidligt - vent kun på buildets egen slutlinje.
-
-
-### 17/10-2026 kl. 20:58 - techfeedwatch: gennemgang af ALLE steder det gamle logo kan sidde (Jacob: "du tjekker alle steder")
-- **Koden (alle filer undtagen artikler/node_modules):** søgt efter gammel teal, pink, gamle mørke farver, og-default/-v2, favicon v1/v2, gammel logotekst: 0 rester på sitet (3 fund: 2 er den nye AI Video-farve, 1 er en intern rapportskabelon i retitle-to-demand.mjs, ikke på sitet).
-- **Live, filer andre tjenester læser:** Googles logo-felt (Organization + artiklernes Article-udgiver) = /icon-512.png (nyt); og:image = og-default-v3.png på forside/guides/guide-side/værktøj/emne/ordliste, /og/<slug>.jpg på artikler (nye); manifest = nye ikoner + #2563eb; offline-siden har nyt logo; RSS har intet logo; ingen browserconfig. Push-ikonet = /icon-192.png (nyt).
-- **Cache-lag:** server/CDN 182/182 ens (v136); service worker rettet (v137); browser-cache max 4 t (retter sig selv).
-- **techmediaarch.com + gentleaiguide.com:** ingen links/billeder til TechFeedWatch - intet at opdatere.
-- **Kun Jacob/tredjepart kan opdatere:** Googles søgeresultater (favicon/logo - ved næste crawl, kan fremskyndes i Search Console), allerede delte links på Facebook/LinkedIn/X (genhentes via deres delings-værktøjer), profilbilleder på sociale medier/YouTube med gammelt logo, installerede app-ikoner på telefoner (styresystemet opdaterer selv).
-- **Lære:** "tjek alle steder" = en fast liste: kode, server/CDN, service worker, browser-cache, filer andre tjenester læser (schema, og, manifest, RSS, push), egne andre sites, tredjeparter. Bruges ved hver udskiftning af filer under samme adresse.
-
-
-### 17/10-2026 kl. 20:48 - techfeedwatch: Safari-billeder undersøgt + service worker fornyer nu billeder (LIVE `eddc3c89`)
-- **Jacob: "fejl på Safari - kan ikke se billederne"** (lånt Mac fra 2013, skærmbillede: alle AI-billeder viste "?").
-- **Undersøgt:** filerne er gyldige WebP/JPEG (chunks tjekket); WebKit 26 (Playwright, iPhone + Mac, også som tilbagevendende besøgende med service worker) viste ALLE billeder. AI-billedernes opbygning (VP8X + XMP) er uændret siden 13/10 - dagens logoarbejde var ikke årsagen. Testside "Safari billedtest" (artifact) med 6 varianter: heller ingen vist på den lånte Mac.
-- **Årsag (meget sandsynlig):** Safari på macOS 10.15 og ældre bruger systemets billedmotor, som ikke kender WebP. Mac fra 2013 = højst macOS 10.15/11. Ikke en fejl på sitet; gælder alle sites med WebP. Anbefalet: ingen JPEG-reserve (meget få besøgende).
-- **Ægte fejl fundet undervejs og rettet (Jacob: "alt hvad der kan opdateres, skal opdateres"):** service workeren viste billeder fra sin gemte kopi og fornyede den ALDRIG - tilbagevendende læsere så gamle billeder (uden nyt logo). Og versionsnavnet talte ikke sw.js selv med, så gamle kopier blev heller ikke ryddet.
-  - Nu: gemt kopi vises straks, frisk udgave hentes altid i baggrunden (`cache: 'no-cache'`, 304 hvis uændret) og gemmes til næste visning. Billeder i egen cache med loft på 400 (før uden grænse).
-  - `stamp-sw.mjs`: sw.js' egen kode indgår i versions-id'et -> ny version `tfw-dff3e2ddf6` (før `0cbec0d867`), gamle caches slettes ved aktivering.
-  - Testet på isoleret testsite i Chromium OG WebKit: udskiftet billede vises ved næste visning; besøgende med GAMMEL service worker får nyt billede ved 3. sidevisning og de gamle caches slettes. Den gamle fejl genskabt i samme test.
-  - Live: sw.js har ny version + ny kode; i Jacobs Chrome er ny service worker aktiv, gamle caches væk, ny billed-cache fyldes.
-- **Lære:** min WebKit-test (Linux, libwebp) kan ikke fange Safari på Mac, der bruger Apples egen billedmotor. Ved "virker ikke i Safari": spørg FØRST om enhed og macOS-version.
-- **Lære:** når filer erstattes under samme adresse, tjek ALLE lag der kan holde den gamle: service worker, browser-cache (4 t), CDN og sociale medier. Jeg tjekkede kun serveren og CDN i dag.
-- **Lære:** Chrome-værktøjets javascript returnerer `{}` for et løfte (async) - gem svaret i en global variabel og læs den bagefter.
-- **Udestående:** første push 18:37 kunne ikke tjekkes (Jacobs pc sov) - KV-tilstand og om beskeden kom, er ikke bekræftet.
-
-
-### 17/10-2026 kl. 18:20 - techfeedwatch: nyt logo på ALLE billeder + logo i AI-vandmærket + nye app-skærmbilleder
-- **Jacob: "ja, alt skal opdateres" + "ja til alle"** (logo i vandmærket, også fremover).
-- **Delingsbilleder + listekort:** `lav-kortbilleder.mjs` lavede 399 af hver (alle artikler uden AI-billede), 0 fejl. Før/efter-ark tjekket for 6 emner: nyt ikon + **TechFeed**Watch, blæk-baggrund, AI Video nu teal. Listekort er 960x540 med vilje (står i og-card.mjs).
-- **AI-vandmærket:** `aibillede.mjs` sætter nu logoikonet til venstre for "TechFeedWatch.com" i alle 3 størrelser. Tekstbredden MÅLES med den skrift maskinen har - tjekket at skyens skrift (Liberation Sans) har samme mål som Arial på et rigtigt skybillede. Robotten bruger samme funktion, så nye AI-billeder får ikonet automatisk.
-- **De 39 eksisterende AI-billeder:** kun 14 originaler var gemt lokalt (robottens egne gemmes ikke i skyen). Målt lighed original/publiceret: 13 tegnet forfra fra originalen (forskel 4,5-9,8), 26 fik ikonet lagt oven på de færdige filer, samme position (heraf 1 hvor originalen IKKE passede - forskel 22,9 - så motivet blev bevaret). XMP "AI-genereret" bevaret i 117/117 filer. Engangsscriptet husker færdige (`_vandmaerke-gjort.json`), så intet får to ikoner.
-- **App-skærmbilleder (Android installer-dialog):** de 3 fra 31/7 viste gammelt logo/forside. Nye: 412x915 forside + bibliotek, 1280x800 forside, taget lokalt med Chrome uden vindue og midlertidig profil (Jacobs profil urørt).
-- **Ikke rørt (med vilje):** 9 billeder fra slettede artikler (8 og + 1 kort) - ingen side bruger dem; `og-default-v2.png` (gammelt, ubrugt). Slettes kun med Jacobs ok.
-- **Tjek:** 5 testsæt grønne, syntaks ok for add-video/lav-ai-billeder. LIVE `037e5d9b` (919 filer).
-- **Lære:** mit størrelsestjek forventede 480x270 listekort - de er 960x540 med vilje. Slå målet op i koden før jeg kalder noget en fejl.
-- **Lære:** sharp holder læste filer åbne på Windows -> "unable to open for write". Scripts der læser OG overskriver samme fil: `sharp.cache(false)`.
-- **Lære:** Chrome uden vindue kan ikke lave vindue under ca. 500 px - mobilbilleder blev lagt ud for bredt. Løsning: siden i en 412 px ramme (iframe) + beskæring. puppeteer-core hang ved hvert kald til siden (også desktop) - opgivet efter 4 forsøg; en hængt kørsel efterlod 8 Chrome-processer, der låste profilen -> ny profil pr. kørsel.
-- **Lære:** tal i commit-beskeden skrevet før kørslen var talt op ("12 forfra / 27 ovenpå") - rigtigt er 13/26. Commit-tekster skrives FRA målt output, aldrig fra hukommelsen.
-- **Lære:** svar til Jacob midt i en opgave skal sendes som besked - tekst mellem værktøjskald når ham ikke (han måtte spørge "vil du svare på mit spørgsmål?").
-
-
-### 17/10-2026 kl. 17:42 - techfeedwatch: nyt logo, nye farver og "New look"-boble LIVE
-- **Jacobs valg:** logo "app-ikon" (afrundet firkant, cyan-blå-violet forløb, tre hvide nyhedslinjer, cyan "live"-prik), 36 px desktop / 32 px mobil, ordmærke **TechFeed**Watch i neutral farve. Farver: links blå #1d4ed8 (lys) / cyan #67e8f9 (mørk), knapper violet #6d28d9 (lys) / #7c3aed (mørk) via `--btn`, mørk baggrund blæk #0b1020, ingen pink.
-- **Opbygning:** fælles SVG-kilde `src/lib/logo.mjs`; `lav-ikoner.mjs` laver favicon (svg/ico/48), PWA-ikoner (192/512/maskable), apple-touch-icon og `og-default-v3.png`. Farveskift i 49 filer (30 knapper, 23 hover, 49 blå), pink fjernet overalt, AI Video-emnet nu dyb teal. Delingskort-skabelonen (og-card.mjs) bruger det nye mærke.
-- **Gammel fejl fundet og rettet:** Fintech-prikken var usynlig i mørk tilstand (1,5:1). Reglen der skulle gøre den lysere har aldrig virket, fordi farven står inline på knappen og vinder. Nu `!important` -> #6d9eff (6,6:1).
-- **Jacob valgte A - "New look"-boble ved logoet:** "👋 New look — same TechFeedWatch." med ✕. Vises KUN for læsere med spor fra et tidligere besøg (tfw_notif_since/-seen, tfw_read, tfw_follow, videoHistory, watchLater), kun én gang (nøgle `tfw_nytlogo`: vis/set/ny), og ikke efter 24/10 (dansk tid). Kører som is:inline lige efter `</header>`, før klokken gemmer noget - så en ny læser aldrig får den på side 2. Markeres først som set når den faktisk vises (skjult top fx Shorts -> venter).
-- **Tjek lokalt:** ny læser = ingen boble (heller ikke side 2), kendt læser = boble én gang, ✕ lukker, mobil inden for skærmen (54-378 px af 390), lys+mørk, 0 konsolfejl. Jacobs localhost-lager kopieret før test og lagt tilbage (8 nøgler, bekræftet ens).
-- **LIVE `c9397c0c`**, Cloudflare success, build.json bekræftet. Live: 8 sider + 404-siden har nyt logo og boble, ingen pink/gammel teal, 10 ikon/billed-filer 200 med rigtige typer, manifest theme_color #2563eb. I Jacobs Chrome: boblen kom ÉN gang (han er kendt læser), ikke ved genindlæsning; links cyan i mørk, Format-knap violet, mobil 390 px uden sidelæns scroll, 0 konsolfejl.
-- **Lære:** _ret-scripts: søgetekst der allerede indeholder \r må ikke konverteres igen (fejlen i _ret-logo); tjek "LF-alene=0" efter hver rettelse.
-- **Lære:** `node -e` med regex i PowerShell igen (parserfejl, ingen skade). Opskriften gælder: altid scriptfil.
-- **Lære:** skærmbillede lige efter skift af lys/mørk fanger farveovergangen (0,15 s) - ordmærket så gråt ud uden at være det. Vent 1 s efter skift.
-- **Lære:** PowerShells Invoke-WebRequest kan ikke læse et 404-svar (gav "status 0") - mit måleværktøj, ikke sitet. Statuskoder måles med `curl.exe -w "%{http_code}"`.
-- **Lære:** broen til Jacobs pc afbryder kald efter 60 s - lange vente-løkker deles i kald under 55 s.
-- **Udestående:** slet boble-blokken i MainLayout efter 25/10 (med Jacobs ok). De ca. 398 gamle delingskort (og-jpg uden AI-billede) har stadig det gamle logo - ikke spurgt Jacob endnu.
-
-
-### 17/10-2026 kl. 15:51 - techfeedwatch: push-beskeder (klokke E) LIVE
-- **Jacob valgte A:** højst 1 besked om dagen pr. læser - den nyeste artikel fra det sidste døgn i de fulgte emner (følger man intet: alle emner). Ingen ny artikel = ingen besked.
-- **iPhone (Jacobs ønske):** Apple tillader kun beskeder fra installerede apps. Uinstalleret iPhone/iPad får en 3-trins guide "Add to Home Screen" (sitet ER en installérbar app: manifest standalone + service worker). En rigtig App Store-app findes ikke (kræver Apple-udviklerkonto 99 USD/år) - sagt ærligt til Jacob. Mac: virker direkte i Safari (macOS 13+).
-- **Opbygning (0 kr., Cloudflare gratis):** ny Worker `tfw-push` (tfw-push.jacobolsenjso.workers.dev): POST /subscribe, /unsubscribe, GET /besked. KV `tfw-push-subs` (id 3545d636...), tilmelding = anonym push-adresse + emner, udløber efter 180 dage uden besøg. Begrænsning 10 tilmeldinger/min. pr. afsender. Logning slået fra (privatlivsløftet).
-- **Udsendelse:** metoden Sender.sendPortion (RPC) - kun tfw-starter kan kalde den (service binding PUSH). Kl. 16:37 UTC, fortsætter 17:37-20:37 kun hvis dagen ikke blev færdig. 40 pr. portion (gratis plans 50-grænse). Beskeder UDEN indhold; service workeren henter teksten fra /besked (4 s grænse, neutral reserve). VAPID-nøgle: offentlig i wrangler.toml/sitet, hemmelig kun som Cloudflare-secret (lavet af opret.mjs i hukommelsen, aldrig vist eller gemt).
-- **Test i Jacobs Chrome:** tilmelding via Google (fcm), /besked gav rigtig artikel, 2 rigtige push-beskeder sendt og SET af Jacob på skærmen; klik åbnede artiklen. Testadressen /test-send var kun midlertidig og er fjernet (404 bekræftet).
-- **Uafhængigt review (separat agent):** 7 + 5 fund, alle relevante rettet: samme artikel to dage i træk (gårsdagens artikler udelukkes nu), tilstand læst forældet mellem portioner (sendes nu med), fejl der flyttede markøren, Apple-token højst hver time (genbruges 11 t), tom POST (krop sat), for store metadata, ingen begrænsning, genopfriskning ved besøg, privatlivstekst præciseret (sletning, emner sendes når push er til). Fast rækkefølge ved samme dato (artikler har kun dato).
-- **Tjek:** cloudflare/push/test.mjs 25 OK, starter-test OK, alle test-*.mjs grønne, audit 0 fejl. LIVE `5d7e521f`, Cloudflare success, live-site: knap, sw og politik bekræftet, 0 konsolfejl.
-- **Lære:** browserens getNotifications() viser intet på Windows (Chrome bruger Windows' beskedcenter) - mit måleværktøj kunne ikke se beskederne; Jacobs øjne var målingen. Fremover: push-test = spørg Jacob, ikke getNotifications.
-- **Værd at vide:** den gratis plan rækker til ca. 2.000 tilmeldte (5 timer x 10 portioner x 40). Om hver RPC-portion får sin egen grænse på 50 forespørgsler er ikke bekræftet - koden stopper pænt og fortsætter næste time. Jacobs localhost-tilmelding får aftenens udsendelse som kontrol.
-
-
-### 17/10-2026 kl. 15:13 - techfeedwatch: 5 nye emner LIVE (18 i alt)
-- **Jacob valgte** alle 5: AI Agents, Investing & Trading, Smartphones & Gadgets, Robotics, PC Building & Gaming. Hans idé: en venlig tekst på tynde emnesider; min justering: noindex under 8 artikler + "Follow this topic" i stedet for "gem siden" + robot 50/50.
-- **Én fælles emneliste:** `src/lib/emner.mjs` (18 emner, INDEX_GRAENSE 8, VOKSE_GRAENSE 20, emneSlug, emneRaekke). Bruges af robot (auto-youtube, add-video, også Shorts-prompten), emnesider, sitemap og de gamle scripts backfill-tags/revise-articles.
-- **Robot 50/50:** nye emner under 20 artikler får hver anden artikel (turen følger antal artikler: lige = nye, ulige = gamle 13); 2. forsøg i en kørsel tager den anden gruppe, så ingen sulter. `test-emner.mjs` 18 test. Første version gav AI Agents 7 af de gamles 20 - testen fangede det, rettet til præcis 20/20. Tørt løb: næste emne = PC Building & Gaming.
-- **Emnesider:** alle 18 bygges (også med 0 artikler). Under 8: noindex, ude af sitemappet, boks "We're building this topic right now". Alle: knap "Follow this topic" (samme liste som klokken, tallet opdateres med det samme). Maskinelt tjekket for alle 18.
-- **66 gamle artikler ommærket** med regler på titel + resumé (`retag-nye-emner.mjs`, ingen AI): 89 fund i tørt løb, 23 holdt ude efter gennemsyn ét for ét. Resultat: AI Agents 43, Investing & Trading 15, Smartphones & Gadgets 5, Robotics 3, PC Building & Gaming 0. AI & Tech 273 -> 222. Kun tags-linjer ændret (66 filer, 0 andet, 0 blandede linjeskift).
-- **Fundet ved skærmtjek:** listekortene har emnet skrevet i billedet - 64 reservekort lavet om (2 med AI-billede urørt).
-- **Uafhængigt review (separat agent):** ingen fejl der bryder bygget; 5 mindre fund rettet (nye filer skal i git, følg-tekst forklarer at klokken kun tæller fulgte emner, Shorts-prompt, 2 gamle scripts, llms.txt).
-- **Tjek:** alle test-*.mjs grønne, audit 0 fejl, interne links ok, build 663 sider, 0 konsolfejl, skærmbilleder desktop + mobil lyst/mørkt vist Jacob. LIVE `0e861f6f`.
-- **Lære:** brugte igen `node -e` med regex i PowerShell minutter efter at have skrevet reglen - ingen skade (PowerShell afviste). Og CRLF-faldgruben i min egen hjælpefunktion: søgetekster omsættes nu altid til filens linjeskift i _ret-scripts.
-- **Værd at vide:** robottens spørgsmålsfilter afviser mange iPhone-spørgsmål ("how much does iphone 17 cost") som uklare - ikke rørt.
-
-
-### 17/10-2026 kl. 14:29 - techfeedwatch: ny notifikations-klokke (A-D) LIVE
-- **Jacob valgte A-D** (E = push-beskeder venter). Før: åbning af panelet markerede alt som læst; ingen emner; første besøg viste intet.
-- **A - rigtigt ulæst:** en artikel er læst, når den åbnes (`tfw_read`). Åbning af panelet rører ikke tallet. "Mark all read" virker. Kun de sidste 14 dage tæller.
-- **B - følg emner:** knappen "Topics" viser alle 13 emner som knapper (`tfw_follow`). Tallet tæller kun fulgte emner; fulgte artikler øverst, andre nedtonet.
-- **C - liste:** grupperet Today / This week / Earlier, emne + læsetid + dato på hver linje, link "See all latest articles". videos-lite.json fik `minutesRead`.
-- **D - første besøg:** den seneste udgivelsesdags artikler tæller som nye + tip "Choose topics" (forsvinder når man har valgt/lukket). Gamle læsere: deres sete artikler fra den gamle klokke regnes som læst.
-- **Tjek:** lokalt i Jacobs Chrome - alle tilstande testet med tal (ny læser 2, følg Coding 1, læst -> 0, mark all -> 0, migrering), desktop + mobil 390 px, lyst + mørkt, 0 konsolfejl. Rettet undervejs: panelet gik ud over lave skærme; tip og Topics spurgte om det samme.
-- **Fejl i min egen første version (fanget efter live):** emner matchede kun artiklens FØRSTE mærke. Målt: Productivity 39 artikler, men kun 1 med det som første mærke; Automation 39 / 0. Rettet til alle mærker + alle 13 emner som knapper. LIVE `d3d7696e` (klokken) og `0a8f5ede` (rettelsen), Cloudflare success, build.json bekræftet, set live i Jacobs Chrome.
-- **Jeg tog fejl i en rapport:** skrev at forsidens emneknapper mangler Automation - forkert, forsiden bruger alle mærker (13 emner). Jeg så kun et beskåret skærmbillede.
-- **Worker efter deploy:** robot #720 startet 12:17 UTC af den nye Worker - grøn.
-- **Lære:** byg aldrig emne-logik på `tags[0]` - mål først fordelingen af ALLE mærker (51 artikler har 1 mærke, 385 har 2).
-- **Målt til Jacobs spørgsmål om flere emner:** kandidater i titel/spørgsmål: AI Agents 33 artikler (ligger under AI & Tech/Automation), Trading 8 (Fintech/Crypto), Smartphones & Gadgets 5, resten 1. "Trading" findes ikke som emne i dag.
-
-
-### 17/10-2026 kl. 13:45 - techfeedwatch: DCA-kurser hentes nu selv hver måned (LIVE)
-- **Jacob: "kod".** Pris: 0 kr. - Binances åbne markedsdata (ingen nøgle, ingen AI), et par sekunder på GitHub (gratis for offentligt repo).
-- **Fundet før kodning:** hent-kurser.mjs brugte api.binance.com, som afviser amerikanske servere - GitHubs maskiner står i USA. Det virkede kun, fordi scriptet blev kørt fra Jacobs pc. Skiftet til data-api.binance.vision. Målt fra pc: samme slutkurser i alle 294 afsluttede måneder (BTC 110, ETH 110, SOL 74), 0 forskelle.
-- **Vagt:** færre måneder end sidst -> intet skrives, kørslen bliver rød (morgenrapporten viser røde kørsler). Testet med en falsk fil: exit 1, filen urørt, rigtig fil sat tilbage.
-- **Nyt job** `hent-kurser.yml` (kun workflow_dispatch, samme kø som robotten). Startes af Workeren tfw-starter den 1. i måneden kl. 03:37 UTC. Workerens selvtest udvidet (1 start i oktober, robotten stadig kl. :17) - alt OK. Worker deployet (version aa3ceca0, tidsplan uændret "17,37 * * * *").
-- **Set virke:** commit `5dc3af2f`; kørsel #1 startet med hånden i Jacobs Chrome -> grøn; robotten gemte `bf6b91b7` (hentet 2026-10-17, 110/110/74 måneder, BTC sep. 83.623,6); Cloudflare success; build.json = bf6b91b7; DCA-siden live viser "downloaded 2026-10-17".
-- **Næste automatiske kørsel:** 1/11-2026 kl. 04:37 dansk vintertid.
-
-
-### 17/10-2026 kl. 13:23 - techfeedwatch: nattens kørselslogs tjekket, 2 fejl rettet LIVE
-- **Logs læst i Jacobs Chrome:** #708 (00:17 UTC) udgav "What Happens When Programming Runs in a Computer?" - DAEKNING 5/0 droppet, FAKTABOKS 3, VAERKTOEJ intet, 0,40 USD. #709 (01:17 UTC) udgav "Productivity Software and What It Means for Modern Work" - DAEKNING 3 beholdt/2 droppet, FAKTABOKS 0 (kun 4 fakta med kilde), VAERKTOEJ intet, 0,55 USD. Begge: audit 0 fejl, build grøn. Hver kørsel lagde først ét spørgsmål på is (ingen kandidat bestod). B (stop efter fejlet skrivning) blev ikke udløst - skrivningen lykkedes begge gange.
-- **Fejl 1 - svaret klippet (#709):** Gemini brugte 15.119 af 16.384 output-tokens på tænkning, svaret blev klippet (MAX_TOKENS) og skrevet forfra. Fejler det to gange, er artiklen tabt. Rettet: skrivekaldet og dets genforsøg har nu loft 32.768 (der betales kun for brugte tokens).
-- **Fejl 2 - nist.gov afvist:** domænetjekket krævede et ord fra navnet i domænet; "National Institute of Standards and Technology" -> nist.gov fejlede. Rettet: initialer, der passer præcist (mindst 3 bogstaver), godkendes. Testet: NIST, IBM, Otter godkendt; forkert domæne afvist.
-- **LIVE `ba269e55`:** alle test-*.mjs grønne, `node --check` ok, Cloudflare Pages success, build.json viser ba269e55.
-- **Ikke rettet, men værd at vide:** i #708 var 9 af 13 kilder britannica.com (tynd kildebredde); Britannica og IBM svarer ikke på robottens link-tjek (blokerer sandsynligvis GitHub-maskiner). #709 bygger på en video med relevans 5/10 - søgningen bærer artiklen (videoandel 14 %).
-- **Jacob valgte:** "alle sider til nyt setup" = faktaboks på gamle artikler via omskrivningen (3/dag). Bekræftet i koden: omskriv-gamle.mjs kører add-video.mjs --erstat, så faktaboksen kommer med automatisk. Ingen kodeændring nødvendig. Værktøjsboksen virker allerede på alle 438.
-- **Lære:** PowerShell spiste `$1` i min erstatning i en node -e kommando, så en linje i add-video gik i stykker. `node --check` fangede det før push. Opskriften fandtes (script-fil, aldrig `$` i kommandoen) - jeg fulgte den ikke. Samme fejl for 2. gang: opskriften strammes til "ALDRIG node -e med regex/replace i PowerShell - altid script-fil".
 
 
 ### Ældre dagbog og Bilag A → `STATUS-ARKIV.md`
