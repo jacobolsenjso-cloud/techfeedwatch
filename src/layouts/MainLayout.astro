@@ -176,7 +176,8 @@ const siteSchema = [
          klokke-badgen og emne-filtret hver sin kopi. Alle forbrugere deler
          nu ét promise; første kald henter, resten genbruger. */
       window.tfwVideos = function () {
-        if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos-lite.json').then(function (r) { return r.json(); });
+        // priority 'low' (25/10): kataloget skal aldrig konkurrere med det, siden viser først
+        if (!window.__tfwVideosP) window.__tfwVideosP = fetch('/videos-lite.json', { priority: 'low' }).then(function (r) { return r.json(); });
         return window.__tfwVideosP;
       };
       /* Kør fn først når siden er helt indlæst og browseren har tid. PageSpeed 24/10: katalogets
@@ -223,6 +224,13 @@ const siteSchema = [
         optegning på mobil — en tidlig forbindelse sparer ~300 ms LCP
         (PageSpeeds eget estimat i rapporten 23/10). */}
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com" />
+    {/* 25/10 (PageSpeed): forbindelsen ovenfor stod som "ubrugt" - samtykke-boksens hentninger
+        (fetch uden cookies) bruger en separat forbindelse, som kræver crossorigin. Google pegede
+        også på reklame-serverne nedenfor (anslået 300 ms LCP hver). Højst 4 preconnects i alt. */}
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com" crossorigin />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+    {/* Artikelsiderne har allerede img.youtube.com - så holdes de på 4 */}
+    {!Astro.url.pathname.startsWith('/video/') && <link rel="preconnect" href="https://ep1.adtrafficquality.google" />}
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <title>{ogTitle}</title>
