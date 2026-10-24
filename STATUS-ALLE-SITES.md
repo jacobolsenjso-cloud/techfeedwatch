@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 191** — brug kun v191). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 192** — brug kun v192). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 191** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 16:57, statusfil v191):** Link-plan uge 1 færdig og set live (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe): Bing, GitHub, Gravatar, LinkedIn og nu X (navn "Jacob S. Olsen", bio = kort standardtekst). Næste: uge 2 (Pinterest venter på Jacobs konto - RSS mangler billeder; About.me; Crunchbase) og Person-schema/sameAs på About-siden (gren + Jacobs ja). 3 Dependabot-advarsler (undici) rettet i `f09c41fb` - venter på GitHubs genscanning for at lukke. Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 18:36, statusfil v192):** Person-schema live (`dc9f5a41`): én fælles person (src/lib/person.mjs, "Jacob S. Olsen") med 4 profiler (X, GitHub, Bluesky, Gravatar) på forfatterside, forside, artikler og guider. LinkedIn bevidst ikke med (adressen indeholder det fulde navn - Jacobs regel: fuldt navn aldrig på sites/schema/offentligt repo). Link-plan uge 1 færdig (Bing, GitHub, X, LinkedIn, Gravatar). Næste: uge 2 (Pinterest venter på Jacobs konto - RSS mangler billeder; About.me; Crunchbase). Åbent spørgsmål: skal det fulde navn fjernes fra 2 gamle commits i repoets historik (kræver omskrivning + Jacobs ja)? 3 Dependabot-advarsler (undici) rettet i `f09c41fb` - venter på GitHubs genscanning. Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,18 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 18:36 - Person-schema samlet ét sted, 4 profiler (Jacobs ja)
+- **Før:** personen stod 4 steder i koden (forfattersiden, fælles-schemaet, artiklerne, guiderne) med hver sin kopi og kun X i sameAs; forfattersiden kaldte ham "Jacob Olsen", resten "Jacob S. Olsen".
+- **Nu:** ny fil src/lib/person.mjs er eneste kilde (navn "Jacob S. Olsen", @id på forfattersiden, sameAs: X, GitHub, Bluesky, Gravatar - alle tjekket live). Fælles-schema, artikler og guider peger på samme @id. Forfattersiden viser nu "Jacob S. Olsen" (titel, overskrift, første sætning, billedtekst). Gren person-schema → `dc9f5a41`.
+- **Målt i build:** 682 sider, 467 Person-noder - alle ens (samme @id, navn, 4 profiler), 0 gamle kopier, sitemap 613.
+- **Jacobs regel (24/10):** hans fulde navn må ikke stå på hans sites, i schema eller i det offentlige repo. Derfor er LinkedIn IKKE med i sameAs (adressen indeholder det fulde navn); LinkedIn beholder han selv med fuldt navn. Gravatar linker nu til den rigtige LinkedIn-adresse (Jacob forbandt igen).
+- **X-profilen:** Jacob valgte at beholde ét link (techfeedwatch.com) og standard-bioen; de andre sites findes via Gravatar.
+- **Fejl (min):** statusfilen i det offentlige repo indeholdt Jacobs fulde navn og LinkedIn-adresse (dagbogen v189-v191). Fjernet fra denne version. Ligger stadig i 2 gamle commits - kun omskrivning af historikken fjerner det, og det kræver Jacobs ja.
+- Lære: alt, der skrives i statusfilen, er offentligt (repoet er public). _lav-version.mjs har nu en navnevagt, der stopper, hvis en forbudt tekst (liste i _navnevagt.txt, kun lokalt) står i den nye version.
+- Lære: jeg sagde "Gravatar linker til død adresse" ud fra en måling fra en time før - Jacob havde rettet det. Mål igen lige før du siger, at noget mangler.
+- Lære: på LinkedIn stoppede jeg ikke helt, da Jacob sagde stop - jeg klikkede luk på en dialog, der kunne være hans. Ved "stop": rør intet, heller ikke for at rydde op.
+
 
 ### 24/10-2026 kl. 16:57 - X-profil opdateret (link-plan uge 1, Jacobs ja)
 - **X (@JacobStubbeJS):** navn "Jacob Olsen" → "Jacob S. Olsen" (samme som GitHub, Gravatar og sitet); bio "Entrepreneur" → den korte standardtekst fra link-planen (147/160 tegn). Sted (Danmark), link (techfeedwatch.com) og billeder urørt.
