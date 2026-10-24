@@ -315,6 +315,43 @@ async function resolveChannelId(handle) {
 
 // Henter videoer fra én specifik kanal, kombineret med dagens emne-query så vi holder os på-emne.
 // Intet kategori-filter her (kanaler som TED spænder bredt) - engelsk-filter + Gemini-tjek fanger resten.
+// --- Kanal-værn (24/10, Jacob) -------------------------------------------------
+// Målt 24/10: "Remote AI Hub" (splinterny, autogeneret fabrikskanal med computer-
+// stemme + baggrundsmusik) fik relevans 10/10 og endte i en artikel — relevans-
+// dommen måler EMNET, ikke afsenderen. Værnet afviser kandidater fra kanaler, der
+// ligner fabrikker: (a) under 90 dage gamle, (b) under 1 år gamle OG over 1 video
+// om dagen, (c) under 1 år gamle OG skjuler abonnenttal. Reglerne gælder KUN unge
+// kanaler: store etablerede outlets (fx nyhedskanaler) poster lovligt 5+/dag.
+// Bevidst INTET abonnent-minimum — små kanaler med stærke videoer er sitets filosofi
+// (Best of each topic). Fejler API-kaldet, siger værnet ok: det må aldrig vælte en
+// kørsel. Pris: 1 quota-enhed pr. 50 kanaler pr. kørsel (cache på tværs af grupper).
+const VAERN_MIN_KANAL_DAGE = 90;
+const VAERN_UNG_KANAL_DAGE = 365;
+const VAERN_MAKS_VIDEOER_PR_DAG = 1;
+const kanalVaernCache = new Map(); // channelId -> { ok, grund }
+async function kanalVaern(channelIds) {
+  const ukendte = [...new Set(channelIds)].filter((id) => id && !kanalVaernCache.has(id));
+  for (let i = 0; i < ukendte.length; i += 50) {
+    const gruppe = ukendte.slice(i, i + 50);
+    try {
+      const url = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${gruppe.join(',')}&key=${YOUTUBE_API_KEY}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      for (const k of data.items || []) {
+        const dage = Math.max(1, (Date.now() - new Date(k.snippet?.publishedAt || 0).getTime()) / 86400000);
+        const videoer = Number(k.statistics?.videoCount || 0);
+        let grund = '';
+        if (dage < VAERN_MIN_KANAL_DAGE) grund = `kanalen er kun ${Math.round(dage)} dage gammel (kræver ${VAERN_MIN_KANAL_DAGE})`;
+        else if (dage < VAERN_UNG_KANAL_DAGE && videoer / dage > VAERN_MAKS_VIDEOER_PR_DAG) grund = `${videoer} videoer på ${Math.round(dage)} dage (fabriks-kadence)`;
+        else if (dage < VAERN_UNG_KANAL_DAGE && k.statistics?.hiddenSubscriberCount) grund = 'ung kanal, der skjuler abonnenttal';
+        kanalVaernCache.set(k.id, grund ? { ok: false, grund } : { ok: true });
+      }
+      for (const id of gruppe) if (!kanalVaernCache.has(id)) kanalVaernCache.set(id, { ok: true });
+    } catch { for (const id of gruppe) kanalVaernCache.set(id, { ok: true }); }
+  }
+  return kanalVaernCache;
+}
+
 async function searchChannel(channelId, query, maxResults) {
   const params = new URLSearchParams({
     part: 'snippet',
@@ -444,11 +481,18 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
   // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
   // 14/10: første sigte samler op til 2 x KANDIDATER; forhåndstjekket nedenfor sorterer dem, og
   // kun de KANDIDATER bedste får et dyrt faktaark. Det dyre antal er altså uændret.
+  await kanalVaern(items.map((it) => it.snippet?.channelId)); // 24/10: ét kald for alle kandidaters kanaler
   let kandidater = [];
   for (const item of items) {
     if (kandidater.length >= KANDIDATER * 2) break;
     const videoId = item.id?.videoId;
     if (!videoId) continue;
+    // Kanal-værn (24/10): fabrikskanaler sorteres fra, FØR der bruges tid og penge.
+    const kv = kanalVaernCache.get(item.snippet?.channelId);
+    if (kv && !kv.ok) {
+      console.log(`ℹ️ Springer over: kanal-værn: "${item.snippet?.channelTitle || item.snippet?.channelId}" — ${kv.grund} (${videoId}).`);
+      continue;
+    }
     // Filnavnet er en titel-slug, ikke videoId - tjekker derfor mod det forudindlæste sæt af
     // youtubeIds i stedet for fs.existsSync(`${videoId}.md`)
     if (existingIds.has(videoId)) {
