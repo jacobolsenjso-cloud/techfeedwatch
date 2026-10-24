@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 190** — brug kun v190). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 191** — brug kun v191). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 190** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 16:41, statusfil v190):** 3 Dependabot-advarsler (undici, indirekte via astro) rettet: undici 8.12.1 → 8.12.3 i package-lock.json (`f09c41fb`, set live, npm audit 0). Link-plan fase 2 i gang (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe): Bing, GitHub, Gravatar og LinkedIn færdige og set live. Næste i uge 1: X-bio. Pinterest venter på Jacobs konto (RSS mangler billeder). Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 16:57, statusfil v191):** Link-plan uge 1 færdig og set live (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe): Bing, GitHub, Gravatar, LinkedIn og nu X (navn "Jacob S. Olsen", bio = kort standardtekst). Næste: uge 2 (Pinterest venter på Jacobs konto - RSS mangler billeder; About.me; Crunchbase) og Person-schema/sameAs på About-siden (gren + Jacobs ja). 3 Dependabot-advarsler (undici) rettet i `f09c41fb` - venter på GitHubs genscanning for at lukke. Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 16:57 - X-profil opdateret (link-plan uge 1, Jacobs ja)
+- **X (@JacobStubbeJS):** navn "Jacob Olsen" → "Jacob S. Olsen" (samme som GitHub, Gravatar og sitet); bio "Entrepreneur" → den korte standardtekst fra link-planen (147/160 tegn). Sted (Danmark), link (techfeedwatch.com) og billeder urørt.
+- **Set live:** profilsiden læst efter gem - navn, bio (ord for ord) og link stemmer.
+- Uge 1 i link-planen er dermed færdig: GitHub, X, LinkedIn, Gravatar (+ Bing). Næste: uge 2 (Pinterest, når kontoen findes; About.me; Crunchbase) og Person-schema med sameAs på About-siden (gren + Jacobs ja).
+
 
 ### 24/10-2026 kl. 16:41 - 3 Dependabot-advarsler (undici) rettet (Jacobs ja)
 - **Årsag:** undici 8.12.1 (indirekte pakke via astro → unifont, kun i package-lock.json) havde 3 kendte huller: #34 High (nedbrud ved for mange content-encodings), #33 og #32 Moderate (EventSource-hukommelse, SRI-omgåelse). Rettet i 8.12.2.
