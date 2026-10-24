@@ -171,6 +171,10 @@ function proevetForNylig() {
 // "emnet alene", for det er netop sådan en dublet slipper uden om værnet.
 let alleVarDubletter = false;
 
+// Under denne grænse spørges Bing som reserve (24/10). 5, fordi redaktøren og dublet-værnet
+// typisk kasserer flere af forslagene - med færre risikerer emnet at stå uden spørgsmål.
+const BING_GRAENSE = 5;
+
 // udelad: spørgsmål der ikke må vælges (fx allerede prøvet i denne kørsel).
 async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
   alleVarDubletter = false;
@@ -191,9 +195,25 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
     catch (e) { console.log(`Info: autocomplete svarede ikke for "${f}" (${e.message}).`); }
   }
   forslag = [...new Set(forslag)];
-  if (!forslag.length) return null;
-
   let ubrugte = forslag.filter((s) => !set.has(s));
+
+  // Bing som reserve (24/10-2026, Jacobs plan 1): har Google færre end BING_GRAENSE ubrugte
+  // spørgsmål til emnet (eller svarede slet ikke), spørges Bings autocomplete med samme frø,
+  // præfikser og filtre. Bing-forslag får derefter præcis samme behandling som Googles
+  // (redaktør, dublet-værn, brugte-listen).
+  if (ubrugte.length < BING_GRAENSE) {
+    const foer = ubrugte.length;
+    const bing = [];
+    for (const f of froe) {
+      try { bing.push(...await hentForslag(f, { kilde: 'bing' })); }
+      catch (e) { console.log(`Info: Bing-autocomplete svarede ikke for "${f}" (${e.message}).`); }
+    }
+    const nye = [...new Set(bing)].filter((s) => !set.has(s) && !forslag.includes(s));
+    forslag.push(...nye);
+    ubrugte.push(...nye);
+    console.log(`Info: Bing-reserve for "${tag}": ${foer} ubrugte fra Google -> +${nye.length} fra Bing.`);
+  }
+  if (!forslag.length) return null;
   if (!ubrugte.length) return null;
   // Højst 40 forslag til redaktøren (14/10, målt i prøve #11): med 100+ forslag tænkte modellen
   // 7.864 tokens og ramte loftet på 8192 — svaret blev klippet, og listen gik ufiltreret videre.

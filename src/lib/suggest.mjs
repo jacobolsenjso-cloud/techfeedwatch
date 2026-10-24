@@ -48,11 +48,23 @@ const AFVIS = /\b(stock|stocks|etf|price|prices|buy|cheap|free|download|coupon|s
 // det egentlige filter er Gemini-tjekket i auto-youtube.mjs (vaelgSpoergsmaal).
 const SLANG = /\b(cooked|goated|sus|cringe|rizz|lowkey|highkey|meme|memes|tier list|dank|based|mid|bussin|no cap|fr|lol|lmao|wtf|tbh)\b/i;
 
-export async function hentForslag(emne, { timeoutMs = 8000 } = {}) {
+// Kilder (24/10-2026, Jacobs plan 1): Google er standard. Bing bruges kun som reserve,
+// når Google ikke har flere ubrugte spørgsmål til et emne (auto-youtube.mjs, vaelgSpoergsmaal).
+// Målt 24/10 på fire emner med samme præfikser og filtre: Bing gav 96-141 forslag (Google
+// 90-115), heraf 70-127 kun hos Bing - men mest varianter af samme spørgsmål ("what is X
+// simple / definition / examples"). Derfor reserve, ikke fast ekstra kilde.
+// Begge svarer i samme format: [søgning, [forslag ...]]. Gratis, ingen nøgle.
+const KILDER = {
+  google: (q) => `https://suggestqueries.google.com/complete/search?client=firefox&hl=en&q=${encodeURIComponent(q)}`,
+  bing: (q) => `https://api.bing.com/osjson.aspx?query=${encodeURIComponent(q)}&market=en-US`,
+};
+
+export async function hentForslag(emne, { timeoutMs = 8000, kilde = 'google' } = {}) {
+  if (!KILDER[kilde]) throw new Error(`ukendt autocomplete-kilde: ${kilde}`);
   const ud = new Set();
   for (const p of PRAEFIKSER) {
     const q = `${p} ${emne}`;
-    const url = `https://suggestqueries.google.com/complete/search?client=firefox&hl=en&q=${encodeURIComponent(q)}`;
+    const url = KILDER[kilde](q);
     try {
       const ctrl = new AbortController();
       const t = setTimeout(() => ctrl.abort(), timeoutMs);
