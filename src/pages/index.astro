@@ -289,12 +289,19 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
     .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: scale(1.06); }
     .watch-card:hover .watch-card-thumb, .watch-card:hover .short-card-thumb { box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05); }
     @media (prefers-reduced-motion: reduce) { .watch-card-thumb img, .short-card-thumb img { transition: none; } .watch-card:hover .watch-card-thumb img, .watch-card:hover .short-card-thumb img { transform: none; } }
-    /* Loading-skeleton: shimmer bag thumbnailen indtil billedet er loadet, hvorefter JS tilføjer .is-loaded */
-    .watch-card-thumb, .short-card-thumb { background-color: #e6e8eb; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); background-size: 200% 100%; background-repeat: no-repeat; animation: tfwShimmer 1.5s ease-in-out infinite; }
-    body.dark-mode .watch-card-thumb, body.dark-mode .short-card-thumb { background-color: #18223d; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
-    .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { animation: none; background-image: none; background-color: #000; }
-    @keyframes tfwShimmer { 0% { background-position: 150% 0; } 100% { background-position: -150% 0; } }
-    @media (prefers-reduced-motion: reduce) { .watch-card-thumb, .short-card-thumb { animation: none; } }
+    /* Loading-skeleton: shimmer bag thumbnailen indtil billedet er loadet, hvorefter JS tilføjer .is-loaded.
+       24/10: flyttet fra background-position til transform på en ::after — background-position males af
+       CPU'en (PageSpeed: "34 ikke-sammensatte animationer" = hakken på telefon/TV); transform kører på
+       grafikkortet. :has(img): kun thumbs med et billede skimrer, så en thumb uden aldrig skimrer for evigt.
+       ::after ligger BAG billedet (z-index -1) og fjernes helt ved .is-loaded. Samme udseende som før. */
+    .watch-card-thumb:has(img), .short-card-thumb:has(img) { background-color: #e6e8eb; }
+    .watch-card-thumb:has(img)::after, .short-card-thumb:has(img)::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 80%); transform: translateX(-100%); animation: tfwShimmer 1.5s ease-in-out infinite; }
+    body.dark-mode .watch-card-thumb:has(img), body.dark-mode .short-card-thumb:has(img) { background-color: #18223d; }
+    body.dark-mode .watch-card-thumb:has(img)::after, body.dark-mode .short-card-thumb:has(img)::after { background-image: linear-gradient(100deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0) 80%); }
+    .watch-card-thumb.is-loaded, .short-card-thumb.is-loaded { background-color: #000; }
+    .watch-card-thumb.is-loaded::after, .short-card-thumb.is-loaded::after { content: none; animation: none; }
+    @keyframes tfwShimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    @media (prefers-reduced-motion: reduce) { .watch-card-thumb::after, .short-card-thumb::after { content: none; animation: none; } }
     .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
     body.dark-mode .tma-grid-meta { color: #9ca3af; }
 
