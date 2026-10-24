@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 200** — brug kun v200). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 201** — brug kun v201). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 200** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 00:43, statusfil v200):** Forsiden er gjort hurtigere på mobil (main `48b0df15`): ingen fade-in (Google måler nu topbilledet), videokataloget hentes efter sidens indlæsning, og telefoner får billeder i 720/240 px (6,6 MB -> 2,3 MB). Målt: LCP 6,7 -> 6,2 s, score stadig ca. 63; to kørsler gav 98-99. Resten tolkes som AdSense - at udsætte reklamerne er Jacobs beslutning. 11 SEO-værktøjer live (61 i alt). I dag: nattens kørsel, nye pins, Dependabot (3 undici-advarsler).
+**Seneste for techfeedwatch (25/10-2026 kl. 01:19, statusfil v201):** Forsiden er nu hurtig på mobil (main `8c402169`): PageSpeed 93-100 (før ca. 63), LCP 1,5-2,1 s (før 6,2-6,8 s). Den store gevinst kom fra at starte AdSense, når siden er vist; reklamer og samtykke-boks hentes stadig. Hold øje med AdSense-indtjeningen de næste dage. I dag: nattens kørsel, nye pins, Dependabot (3 undici-advarsler).
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,15 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 01:19 - AdSense starter efter visning: forsiden mobil 63 -> 93-100 (Jacobs ja)
+- **Jacobs PageSpeed-rapport 00:49:** score 67, LCP 6,2 s. LCP-opdeling: topbilledet hentet efter 0,36 s, men "Element render delay" 2.030 ms.
+- **Rettelse nr. 1+2 (merget `e8de5ca6`):** preconnect til fundingchoices (også med crossorigin), googleads.g.doubleclick.net og ep1.adtrafficquality.google (ikke på artikelsider, så de holdes på 4); videos-lite.json hentes med priority 'low'. Målt 5 gange: 64-67, LCP 6,0-6,3 s - ingen forbedring.
+- **Rettelse nr. 3 (Jacobs forhåndsja, merget `8c402169`):** AdSense-scriptet (og dermed Googles samtykke-boks) startes først efter load + ledig tid (højst 2 s) eller ved første scroll/touch/tast/mus. Verificering via `<meta name="google-adsense-account">`. GA4 og "Cookie settings" venter nu op til 30 s på samtykke-boksen (før 10 s).
+- **Målt efter (5 kørsler via Workeren):** score 93-99, FCP 1,1-1,2 s, LCP 1,5-2,1 s. pagespeed.web.dev i Jacobs Chrome: 100 (FCP 1,1 s, LCP 1,5 s, TBT 0). Desktop: 100. Tolkningen fra i går er dermed bekræftet: AdSense før første tegning kostede ca. 4,5 s LCP.
+- **Reklamerne kører stadig:** Googles rapport viser show_ads_impl, /pagead/ads, Funding Choices (102 KB) og adtrafficquality hentet. I Jacobs egen Chrome henter AdSense ikke videre end adsbygoogle.js - det gjorde den heller ikke før ændringen (målt 24/10 kl. 23:50), så det skyldes hans browser.
+- **Hold øje med:** AdSense-indtjening/visninger de næste dage (reklamerne kommer ca. 1-2 s senere).
+
 
 ### 25/10-2026 kl. 00:43 - Forsidens mobilhastighed: tre rettelser live, målt før og efter (Jacobs ja)
 - **Målt før (PageSpeed mobil, 6 kørsler 24/10):** score 55-65, FCP 3,4-4,6 s, LCP 6,6-7,1 s, CLS 0. Google målte logoteksten som største element (LCP), fordi hele indholdet startede usynligt (fade-in 0,4 s). videos-lite.json (58 KB) lå i den kritiske kæde (færdig efter 2,5 s). "Ubrugt JavaScript" 227 KB er AdSense (ca. 220 KB) og Googles samtykke (69 KB) - ikke vores kode.
