@@ -1013,8 +1013,7 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
       const hentKatalog = () => window.tfwVideos()
       .then(data => { allVideosData = data; videosReady = true; filterVideos(); })
       .catch(() => { allVideosData = []; videosReady = true; });
-    if ('requestIdleCallback' in window) requestIdleCallback(() => hentKatalog(), { timeout: 4000 });
-    else setTimeout(hentKatalog, 2000);
+    window.tfwEfterLoad(hentKatalog); // først efter sidens indlæsning - se MainLayout
 
       function formatDateJS(d) {
         const parsed = new Date(d);
@@ -1121,7 +1120,9 @@ const antalOrd = Object.keys(import.meta.glob('../content/glossary/*.md')).lengt
           if (videosReady) {
             renderFilteredResults(query, activeTag);
           } else {
+            // Klikket før kataloget er hentet: hent det nu (samme delte hentning), så tegnes resultatet bagefter
             filteredResults.innerHTML = '';
+            hentKatalog();
           }
         }
       }
