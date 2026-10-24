@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 189** — brug kun v189). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 190** — brug kun v190). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 189** — brug kun v1
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (24/10-2026 kl. 16:24, statusfil v189):** Link-plan fase 2 i gang (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe). Færdigt og set live: Bing Webmaster Tools verificeret + sitemap indsendt; GitHub (repo: website, beskrivelse, 8 emner; profil: navn "Jacob S. Olsen", bio); Gravatar gjort personlig (Jacob S. Olsen, alle tre sites, foto, 4 verificerede konti: X, LinkedIn, Bluesky, GitHub); LinkedIn (Jacob har selv skiftet sit LinkedIn-navn; overskrift, "Mine projekter" i Om, tre projekter, tre websteder). Næste i uge 1: X-bio. Pinterest venter på Jacobs konto (RSS mangler billeder). Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
+**Seneste for techfeedwatch (24/10-2026 kl. 16:41, statusfil v190):** 3 Dependabot-advarsler (undici, indirekte via astro) rettet: undici 8.12.1 → 8.12.3 i package-lock.json (`f09c41fb`, set live, npm audit 0). Link-plan fase 2 i gang (Claude-dokument "Link-plan for techfeedwatch (fase 2)", https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe): Bing, GitHub, Gravatar og LinkedIn færdige og set live. Næste i uge 1: X-bio. Pinterest venter på Jacobs konto (RSS mangler billeder). Første måling af links udefra: 1 (Search Console, 24/10). Kanal-værn og dobbelt-loft prøves første gang i nat.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,13 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 24/10-2026 kl. 16:41 - 3 Dependabot-advarsler (undici) rettet (Jacobs ja)
+- **Årsag:** undici 8.12.1 (indirekte pakke via astro → unifont, kun i package-lock.json) havde 3 kendte huller: #34 High (nedbrud ved for mange content-encodings), #33 og #32 Moderate (EventSource-hukommelse, SRI-omgåelse). Rettet i 8.12.2.
+- **Rettelse:** gren undici-8.12.2, `npm update undici` → 8.12.3; kun 3 linjer i package-lock.json ændret, package.json urørt. `npm audit`: 0 sårbarheder. `npm run build`: 682 sider, exit 0, sitemap 613 = live 613. Commit `e0d780a8`, flettet til main som `f09c41fb`.
+- **Set live:** Cloudflare Pages-tjek på f09c41fb = success; build.json på techfeedwatch.com viser f09c41fb. main's package-lock.json har undici 8.12.3.
+- **Dependabot:** advarslerne stod stadig åbne lige efter push, fordi GitHub scanner igen med forsinkelse - se næste linje i dagbogen/rapporten for lukning.
+
 
 ### 24/10-2026 kl. 16:24 — link-plan fase 2: profiler på GitHub, Gravatar og LinkedIn (alt med Jacobs ja, set live)
 - **Link-plan:** Claude-dokument https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe — profiltekster (engelsk, ens overalt), 13 udvalgte kilder fra Hawk Academys liste med 124 (uge 1: GitHub, X, LinkedIn, Gravatar; uge 2: Pinterest, About.me, Crunchbase; uge 3-4: Indie Hackers, Dev.to, HackerNoon, Product Hunt, Medium), 111 fravalgt med begrundelse, fremgangsmåde 2-3 om ugen.
