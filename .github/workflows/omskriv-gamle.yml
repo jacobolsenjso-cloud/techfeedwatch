@@ -16,6 +16,14 @@ on:
       antal:
         description: "Antal artikler i denne kørsel"
         default: "3"
+      # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
+      # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
+      kun:
+        description: "Kun denne artikel (slug) - valgfri"
+        default: ""
+      nyvideo:
+        description: "Ny video-URL til artiklen - valgfri"
+        default: ""
 
 permissions:
   contents: write
@@ -52,7 +60,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }}
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

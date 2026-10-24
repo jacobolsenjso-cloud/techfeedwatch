@@ -16,12 +16,19 @@ import { spawnSync } from 'node:child_process';
 
 // 3 om dagen fra 16/10 (Jacob: prisen). Før 5.
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3;
+// 24/10 (Jacob): --kun=<slug> + --nyvideo=<url> målretter én bestemt artikel — fx når en
+// allerede udgivet artikel viser sig at bygge på en dårlig video (set 24/10: fabrikskanal
+// med baggrundsmusik oven i stemmen). --kun springer "gammel"-filteret over (artiklen må
+// gerne have ## Sources), og --nyvideo giver add-video en NY video — uden den genbruger
+// --erstat artiklens gamle youtubeId, og så ville musikken bare komme igen.
+const kun = (process.argv.find((a) => a.startsWith('--kun=')) || '').split('=')[1] || '';
+const nyVideo = ((process.argv.find((a) => a.startsWith('--nyvideo=')) || '').split('=').slice(1).join('=')) || '';
 const FEJL_FIL = './src/data/omskriv-fejl.json';
 const LOG_FIL = './src/data/omskriv-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const fejl = laes(FEJL_FIL, {});
 
-const gamle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).map((f) => {
+const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).map((f) => {
   const raw = fs.readFileSync(`./src/content/videos/${f}`, 'utf8').replace(/\r/g, '');
   return {
     slug: f.replace(/\.md$/, ''),
@@ -30,16 +37,27 @@ const gamle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.
     ny: /^## Sources\s*$/m.test(raw),
     short: /^isShort:\s*true/m.test(raw),
   };
-}).filter((a) => !a.ny && !a.short && a.spm && !fejl[a.slug]).sort((a, b) => b.dato.localeCompare(a.dato));
+});
 
-console.log(`${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (nyeste først)`);
+// --kun: tag præcis dén artikel (kræver stadig targetQuestion — uden spørgsmål kan
+// den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
+const gamle = kun
+  ? alle.filter((a) => a.slug === kun && a.spm)
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !fejl[a.slug]).sort((a, b) => b.dato.localeCompare(a.dato));
+if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
+
+console.log(kun
+  ? `Målrettet omskrivning af "${kun}"${nyVideo ? ' med ny video' : ''}`
+  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (nyeste først)`);
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives, intet koster
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0 };
 let iTraek = 0;
 for (const a of gamle.slice(0, antal)) {
   console.log(`\n=== ${a.slug} (${a.dato}) ===`);
-  const r = spawnSync('node', ['add-video.mjs', '--erstat', a.slug], { encoding: 'utf8', maxBuffer: 1 << 26, env: process.env });
+  const foer = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
+  // --nyvideo lægges FØR --erstat: add-video tager URL'en som første argument.
+  const r = spawnSync('node', ['add-video.mjs', ...(nyVideo ? [nyVideo] : []), '--erstat', a.slug], { encoding: 'utf8', maxBuffer: 1 << 26, env: process.env });
   const ud = `${r.stdout || ''}\n${r.stderr || ''}`;
   // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
   // 23/10: hjerne-linjen med i loggen, så man kan SE om stemmen var med i omskrivningen.
@@ -47,7 +65,9 @@ for (const a of gamle.slice(0, antal)) {
   const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
   kørsel.usd += f.usd || 0;
   const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
-  if (/^## Sources\s*$/m.test(raw.replace(/\r/g, ''))) { kørsel.omskrevet.push(a.slug); iTraek = 0; }
+  // 24/10: succes = ny opskrift OG ændret indhold. En --kun-artikel HAR allerede
+  // ## Sources, så uden ændrings-tjekket ville en fejlet kørsel melde succes.
+  if (/^## Sources\s*$/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; }
   else {
     const grund = (ud.match(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/) || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
