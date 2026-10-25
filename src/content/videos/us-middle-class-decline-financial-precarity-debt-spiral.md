@@ -93,7 +93,7 @@ While the Brookings Institute offers an alternative perspective, suggesting the 
 
 This reinforces the idea that it's not solely an income gap, but significantly an investment gap, where those who invest consistently are better positioned to accrue wealth than those who cannot afford to or feel too constrained to take on calculated risks.
 
-For instance, discussions around the complexities of [Is Crypto Regulated in the US for DeFi?](/video/crypto-regulation-s-clarity-act-us-legislative-hurdles) or how [How US CLARITY Act Dictates Altcoin Classification and Value](/video/crypto-clarity-act-why-regulation-or-its-absence-could-reshape-your) highlight the speculative frontier some feel forced to explore.
+For instance, discussions around the complexities of [Crypto Regulation and What It Means for US Investors](/video/crypto-regulation-s-clarity-act-us-legislative-hurdles) or how [How US CLARITY Act Dictates Altcoin Classification and Value](/video/crypto-clarity-act-why-regulation-or-its-absence-could-reshape-your) highlight the speculative frontier some feel forced to explore.
 
 ## Where This Lands
 
