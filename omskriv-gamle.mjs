@@ -14,6 +14,7 @@
 // Kør: node omskriv-gamle.mjs --antal=8 [--parallelt=4]
 import fs from 'node:fs';
 import { spawn } from 'node:child_process';
+import { laesHjerne } from './src/lib/hjerne.mjs';
 
 // 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=8').split('=')[1]) || 8;
@@ -53,7 +54,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // --kun: tag præcis dén artikel (kræver stadig targetQuestion — uden spørgsmål kan
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
-  ? alle.filter((a) => a.slug === kun && a.spm)
+  ? alle.filter((a) => kun.split(',').includes(a.slug) && a.spm) // 25/10: flere slugs med komma
   : alle.filter((a) => !a.ny && !a.short && a.spm && !opgivet(fejl[a.slug]))
     .sort((a, b) => (prio ? Number(!prio.has(a.slug)) - Number(!prio.has(b.slug)) : 0) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
@@ -63,6 +64,8 @@ console.log(kun
   : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-viste først, så nyeste)`);
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives, intet koster
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
+// 25/10: uden Jacobs hjerne startes ingen omskrivning (ellers betales research for intet - add-video stopper alligevel).
+if (!laesHjerne()) { console.log('Stop: hjernen mangler (_hjerne / HJERNE_DIR) - ingen omskrivning uden Jacobs stemme.'); process.exit(1); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0 };
 // 25/10 (Jacob: 8 om dagen): op til PARALLELT omskrivninger ad gangen. Én tager ca. 26 min (målt
 // 25/10), så 8 i træk ville spærre robottens kø i 3,5 time. Hver omskrivning skriver kun sine egne
@@ -85,7 +88,7 @@ for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
   for (const { a, foer, ud } of runde) {
     console.log(`\n=== ${a.slug} (${a.dato}) ===`);
     // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
-    for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
+    for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|MYTAKE|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
     const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
     kørsel.usd += f.usd || 0;
     const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
