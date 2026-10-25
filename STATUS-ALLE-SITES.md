@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 209** — brug kun v209). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 210** — brug kun v210). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 209** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 21:33, statusfil v209):** Live (main `0434fe36`): Jacobs stemme flettes nu ind som ét almindeligt afsnit (3-6 sætninger, første person) sidst i den sektion, hvor hans holdning passer bedst - "My take"-boksen er fjernet (Jacob: "ser latterligt ud"). Hele hjernen bruges; uden hjerne ingen artikel. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnittene og stikprøven.
+**Seneste for techfeedwatch (25/10-2026 kl. 23:04, statusfil v210):** Live (main `6652a392`): Jacobs stemme som 2-3 korte afsnit fordelt i artiklen (ingen boks); ny afslutning under alle 457 artikler (én sætning i hans stemme + "Write to me", "More on <emne>", "Explore our guides" til emnets guide); tabeller kun ved reelle sammenligninger. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnit, tabeller og stikprøve.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 23:04 - Korte stemme-afsnit, afslutning med knapper, tabeller (Jacobs ønsker)
+- **Stemmen:** Jacob syntes, afsnittene var for lange. Nu 2-3 korte afsnit (2-3 sætninger hver) i hver sin sektion, hvor hans mening passer. Kvante-artiklen fik hans egen forklaring ("punkt 1, så 2, så 3 - kvantecomputeren ser alle på én gang").
+- **Fund ved genkontrol:** et nyt faktatjek af de 2 artikler fandt 4 fejl, som slutkontrollen ved omskrivningen ikke fangede (3 forkerte kildeangivelser, 1 forkert procent) - rettet/fjernet. Faktatjekket finder ikke alt i første omgang; stikprøven skal vise hvor meget. Forslag (ikke besluttet): slutkontrol to gange pr. artikel, ca. 0,30 kr ekstra.
+- **Afslutning (Jacobs valg):** "I hope this gave you a clearer picture, but always check other sources too. Spotted an error or have a question? Write to me." + knapperne "More on <emne>" og "Explore our guides" (direkte til emnets guide, ellers /guides/). Tjekket på alle 457 sider: 0 døde links (387 til en guide, 70 til oversigten). Skærmbilleder mobil/computer, lys/mørk set.
+- **Tabeller i stedet for flere billeder:** ny regel 20b - én tabel kun ved en reel sammenligning, tal kun fra researchen, kilden nævnt lige før. Ikke prøvet på en rigtig artikel endnu.
+- Lære: "Husk at tjekke for fejl" - tjekket alle 457 sider for afslutning og døde links med et script, ikke kun den ene side på skærmbilledet. Fandt en forkert linkfarve (blå i stedet for sitets teal) og rettede den før live.
+
 
 ### 25/10-2026 kl. 21:33 - Stemmen flettet ind i stedet for "My take"-boksen
 - Jacob så "My take"-boksen live og syntes, den så latterlig ud i en artikel. Nu: robotten læser den færdige artikel, vælger den sektion, hvor hans holdning passer bedst, og sætter ét almindeligt afsnit (3-6 sætninger, første person) ind sidst i den - uden overskrift og boks. Samme kontrol som før (ingen nye tal, firmanavne eller privatliv; faktatjekkes med resten). Boks-koden og dens CSS er fjernet.
@@ -634,48 +642,6 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - Hasans "AI Second Brain" (learnwithhasan.com/guide/ai-second-brain) = markdown-filer i et privat GitHub-repo (identity: core/voice/beliefs + daterede vidensnoter); INGEN vektordatabase, og SimplerLLM bruges slet ikke i opskriften. Formål for Jacob: artikler der lyder som ham (Googles krav om menneskelig indsats/originalitet, åbent punkt 1/10).
 - Plan foreslået: B (lokal hjerne, testes på 2-3 artikler, Jacob dømmer) -> derefter A (hjernen kobles på robottens Gemini-prompt via privat repo - techfeedwatch-repoet er offentligt, så hjernen må IKKE ligge der). VPS-udgaven (BrainOutside, ~14 $/md.) fravalgt indtil videre.
 - NotebookLM (hedder nu "Gemini Notebook") undersøgt: god FØDEKANAL (taleoptagelser, noter, Goals-instruks op til 5.000 tegn), men ingen API til almindelige konti -> kan ikke være hjernen selv. Jacobs notebook er tom endnu; huskeliste med spørgsmål leveret i chatten. Venter på Jacobs input.
-
-
-### 19/10-2026 kl. 16:46 - techfeedwatch: oprydning efter emne- og listesiderne
-- **Jacob kl. 16:46:** "du må slette dem". Slettet: lokal gren `udkast-emnesider` (`git branch -d` - kun muligt fordi alt var flettet ind i main, `52efc4ff`) og mappen Downloads/emnesider-udkast-19-10 (24 forældede billeder). Mappen `emnesider-udkast-19-10-v2` er beholdt.
-
-
-### 19/10-2026 kl. 16:40 - techfeedwatch: EMNE- OG LISTESIDER LIVE (`52efc4ff`, nu `226049e8` med robottens nye artikler)
-- **Jacob kl. 12:48:** "ja, du ligger det live". Robotten havde pushet `8cc8b46f`; grenen lagt oven på, bygget og testet igen før push: 64/64 (emne/liste), 35/35 (forside), tilgængelighed 0 fejl på 5 sider x 4 visninger. main flyttet frem (kun fast-forward), pushet `8cc8b46f..52efc4ff`; Cloudflare "completed/success", live 12:56.
-- **Jacob kl. 12:58:** "hold pause" - stoppet midt i live-sammenligningen (kun læsning). **16:26:** "du fortsætter".
-- **Live-tjek 16:30 (live = `226049e8` = mine commits + 4 robot-commits + Vagt-opdatering):** den nuværende main bygget lokalt og sammenlignet: **alle 63 liste- og emnesider identiske med live** (bortset fra Cloudflares eget script), 523 links, 0 døde. Forsiden: 126 adresser OK, én h1, 24/24 nyeste. I Jacobs Chrome: /tag/crypto/ (farvet top i Crypto-orange, følg-knap til/fra, 0 konsolfejl), /page/2/ (Crypto 48/48, "All" tilbage), /latest/ (stort kort med "New"), 0 ødelagte billeder.
-- **Lære:** mit live-sammenligningsscript havde to fejl, der fik ALLE 63 sider til at se "forkerte" ud (det fjernede også </body></html> på den ene side; mellemrum før Cloudflares script). Fanget fordi alt fejlede ens - "når et målescript melder mange fejl på én gang, er scriptet mistænkt før koden". Rettet og kørt igen: 63/63 ens.
-- **Noget Jacob bør vide:** emnet Crypto har 48 artikler, men den nyeste er fra **4. august** - robotten har ikke skrevet om crypto i 2,5 måned. Ikke undersøgt hvorfor (emnevalget skulle vælge emnet med færrest artikler).
-- **Afventer Jacobs ok:** slette den lokale gren `udkast-emnesider` (alt er flettet ind i main) og mappen Downloads/emnesider-udkast-19-10 (uden -v2).
-
-
-### 19/10-2026 kl. 12:44 - techfeedwatch: UDKAST punkt 7 - emne- og listesider i forsidens stil (kun lokal gren `udkast-emnesider`, IKKE pushet, main urørt)
-- **Jacob kl. 10:32:** "det ser fint ud med forsiden... så vi tager det næste skridt". Valgt af mig: emnesider (`/tag/…` + `/tag/…/page/N`) får emnets farve i toppen; listesiderne `/latest/` og `/page/N` får samme store første kort. "Best of each topic" (/popular) har en anden opbygning og er ikke med.
-- **Lavet (2 nye fælles dele, 4 sider):** `ListeTop.astro` = felt med svag toning i emnets farve (sitets blå-violet på sider uden emne), farvestreg øverst, dekorativ cirkel, brødkrummer, eyebrow, målte tal ("222 articles · newest Oct 18, 2026"). `StortKort.astro` = stort første kort med titlen på billedet (som forsiden); har artiklen intet AI-billede, en mørk flade med 22 % emnefarve i stedet for det gamle emnekort. Emnefarven står aldrig som tekst eller bag hvid tekst. h1-teksterne er uændrede. `/page/N`: emnerækken på mobil er nu én swipe-række fra venstre - FØR stod den centreret, og "All" kunne ikke nås (set på før-billedet).
-- **Tilgængelighed (målt):** `audit-a11y.mjs` kan ikke køre (puppeteer ikke installeret) og ville hænge på annoncer - jeg kører dens egne målinger via `_udkast/_a11y-cdp.mjs` med annoncer blokeret. 22 sider (forsiden, /latest/, /page/2/, ALLE 18 emnesider + én emneside 2) x mobil/desktop x lys/mørk = 88 målinger: 0 fejl, 0 grænsetilfælde.
-- **Fundet og rettet undervejs:** (1) FORSIDEN (live siden i går): halvgennemsigtig hvid tekst i det blå-violette felt gav ca. 4,0-4,3:1 mod den blå ende (krav 4,5:1) -> helt hvid. "No sign-up…"-linjen 4,41:1 -> mørkere. (2) De små grå noter i den farvede top: 3,71:1 (Robotics) og 4,30:1 (Crypto) -> mørkere. (3) Det store kort viste det gamle emnekort forstørret (emnenavn to gange) -> mørk flade.
-- **Test:** emne/liste-siderne 64/64 (farvet top, én h1, stort kort, ingen dubletter, alle artikler fra sidens liste med, 0 ødelagte billeder, intet stikker ud, følg-knap, emnerækken på /page/2 + filter Crypto 48/48, 0 scriptfejl, 124 links 0 døde); forsiden 35/35.
-- **Billeder:** Drev -> Downloads -> `emnesider-udkast-19-10-v2` (24 stk.; mappen uden "-v2" er forældet og kan slettes med Jacobs ok).
-- **Lære:** forsiden gik live i går uden tilgængeligheds-auditten - den ville have fanget den svage hvide tekst. Opskriften: kør `_udkast/_a11y-cdp.mjs` (alle sider der er ændret) før hvert designpush.
-- **Lære:** auditten kan ikke se farveforløb (gradient) og ikke `color-mix`-farver - den målte mod forælderens baggrund og meldte "0 fejl" uden at have set toningen. Mit første forsøg på at oversætte farverne (via canvas) virkede heller ikke; fanget med en kontrolmåling (`_tjek-toning.mjs`) og rettet. Nu skriver kørslen for hver side, hvilken baggrund den ser.
-- **Lære:** jeg startede en bygning, mens skærmbilledkørslen stadig kørte - billederne blev blandede. Nu kører alt i én kæde (`_kaede-p7b.cmd`), én ting ad gangen.
-- **Fundet: en anden kørsel arbejdede i samme mappe samtidig.** Den ugentlige Search Console-aflæsning (11:27-11:30) skrev v161 i statusfilen i roden, pushede `920cd41a` til main og efterlod en kopi af samme commit (`e66a7b5e`) på min udkastsgren. main indeholder IKKE udkastet (tjekket). Denne opdatering er derfor v162 oven på deres v161.
-- **Forbindelsen til pc'en var væk ca. 11:50-12:05** (4 kald uden svar); intet af det nåede at køre - tjekket bagefter.
-- **Jacob kl. 12:05:** "du fortsætter og prøver igen at gøre arbejdet færdigt, tjek for fejl igen, og de fejl du finder, dem retter du. du koder". Grenen lagt oven på origin/main (`412f3aee`; den dobbelte Search Console-commit faldt væk), bygget, og testen udvidet til ALLE liste- og emnesider (63 sider: /latest, alle /page/N, alle 18 emner + deres side 2+).
-- **Lære:** preview-serveren døde, da forbindelsen til pc'en røg (11:50), og kæden kl. 12:06 målte mod Chromes "ingen forbindelse"-side: to test gik ned, og tilgængelighedstjekket meldte 2 fejl x 88 (Chromes egne dinosaur-billeder). Jeg diagnosticerede det først forkert som "for kort ventetid" - det rigtige svar stod i fejlen (`#offline-resources`). Opskriften: kæden tjekker nu før hver måling, at preview svarer med vores egen side (`_preview-svarer.mjs`), og stopper ellers. Testene venter desuden på at siden er klar (op til 20 s) og melder årsagen i stedet for at gå ned.
-- **Fejltjek kl. 12:26-12:44 (preview bekræftet kørende før hver måling):** ALLE 63 liste- og emnesider x mobil/desktop: **708/708** (farvet top, én h1, stort kort, ingen dubletter, schema-listen fuldt vist, 0 ødelagte billeder, intet stikker ud, følg-knap på alle 18 emner, emnerækken på /page/2, Crypto 48/48, 0 scriptfejl; 521 links, 0 døde). Forsiden **35/35**. Tilgængelighed **88/88**, 0 fejl, 0 grænsetilfælde (kørslen viser den baggrund, den måler mod, for hver side). Ingen nye fejl på siderne - de fejl, der dukkede op i dag efter kl. 12, var i mine egne testscripts/måleværktøj og er rettet.
-- **Næste:** Jacob ser billederne og siger ja/nej/ændringer; ved ja: byg, test, push, live-tjek.
-
-
-### 19/10-2026 kl. 11:30 - techfeedwatch: ugentlig Search Console-aflæsning - indekseringen står næsten stille, eksponeringerne falder videre
-- **Målt i Jacobs Chrome** (Googles indekseringsdata pr. 12.10.2026, effektivitet opdateret for 4,5 timer siden): indekseret **50**, ikke indekseret **837**, sitemap **601** adresser. Effektivitet 28 dage (20/9-17/10): **22 klik, 35 eksponeringer, 62,9 % klikrate, position 3,7**.
-- **Siden 12/10:** indekseret 54 -> 50 (**-4**), ikke indekseret 832 -> 837 (+5), adresser 566 -> 601 (**+35**). Trækker man væksten fra, er pejlingen i "ikke indekseret" **-30** i stedet for +5 - altså ikke en ny forværring, men heller ingen fremgang i indekserede sider.
-- **Kun én årsag har flyttet sig:** "Crawlet - endnu ikke indekseret" 42 -> 47 (**+5**). De seks andre står bit for bit stille: "Registreret - endnu ikke indekseret" 523, "Side med omdirigering" 135, "Dublet uden kanonisk side valgt af brugeren" 65, "Ikke fundet (404)" 63, "Blokeret af robots.txt" 3, "Dublet, Google valgte en anden kanonisk side" 1. "Serverfejl (5xx)" er stadig ikke på listen og er skrevet som 0 for at bevare formen.
-- **Effektiviteten vendte - men på et meget lille grundlag:** klik 16 -> 22, eksponeringer 43 -> 35, klikrate 37,2 -> 62,9 %, position 10,7 -> 3,7. 22 klik af 35 eksponeringer er et usædvanligt forhold; det ligner få, meget præcise søgninger (fx navnesøgninger) frem for bred synlighed. Jeg har **ikke** målt hvilke søgeord det er - serien siger kun hvad der skete.
-- **Kontroller:** `node serie.mjs` -> 6 punkter, alle tre kontroller passerer (årsagerne summer til 837, klikraten passer til 22/35, datoerne står i rækkefølge). Commit `920cd41a`, verificeret landet på `origin/main`.
-- **Noget Jacob bør vide, som han ikke spurgte om (1):** repoet stod på en lokal udkastsgren (`udkast-emnesider`, hans arbejde fra i formiddag, med urørte ændringer i `StortKort.astro`). Grenen har ingen upstream, så `git push` ville have oprettet en ny gren på GitHub - og `git pull --rebase` nægtede på grund af hans urørte ændringer. Målingen er derfor lagt på main gennem en **midlertidig worktree** uden for repoet (fjernet igen bagefter); hans arbejdstræ og gren er helt urørte. Bivirkning: den samme måling ligger også som commit `e66a7b5e` på udkastsgrenen - samme indhold som på main, så det fletter rent, men den kan fjernes, hvis han vil have grenen ren.
-- **Noget Jacob bør vide, som han ikke spurgte om (2):** eksponeringerne er faldet fire aflæsninger i træk - 110 -> 99 -> 98 -> 50 -> 43 -> **35**. Vinduet er rullende, men et fald til under en tredjedel på en måned er mere end vinduet. Sitet vises altså sjældnere og sjældnere, selv om der nu er 601 adresser i sitemappet (+35 på en uge, så robotten kører igen).
-- **Lære:** Googles "Seneste opdatering" på indekseringssiden stod på 12.10.2026, altså samme dato som ved sidste aflæsning - men tallene var alligevel ændret (54/832 -> 50/837). Datoen er derfor ikke et pålideligt tegn på, om der er nye data; aflæs tallene uanset hvad datoen siger.
 
 
 ### Ældre dagbog og Bilag A → `STATUS-ARKIV.md`
