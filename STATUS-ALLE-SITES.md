@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 207** — brug kun v207). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 208** — brug kun v208). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 207** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 19:20, statusfil v207):** Live (main `ad4894ac`): 8 omskrivninger om dagen (4 ad gangen), ærlige "Updated"-datoer. Pris ca. 38 kr/dag; 429 i kø, ca. 2 mdr. AdSense-afslaget var "Low value content". Råd: søg når de 37 viste er omskrevet, stikprøven har vist få fejl i ca. 10 dage, og 3 sider er bedømt (ca. 10.-14/11). Næste: første kørsel 26/10 kl. 07:37.
+**Seneste for techfeedwatch (25/10-2026 kl. 20:58, statusfil v208):** Live (main `4acb7a5c`): Jacobs hjerne bruges nu fuldt ud (core og beliefs var aldrig brugt, erfaringer klippet, korte ord som AI/SEO fandtes ikke) og er udvidet med skrivestil fra hans egne tekster, tilgang, erfaringer og CV-baggrund (med hans ja). Ny "My take"-boks sidst i artiklen (3-6 sætninger i hans stemme, kun hvor emnet passer - 421 af 457). Uden hjernen skrives ingen artikel. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - "My take" og stikprøve.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 20:58 - Jacobs hjerne fuldt i brug + "My take" (Jacobs ønske)
+- **Målt fejl i koblingen (rettet):** `core.md` og `beliefs.md` blev læst, men aldrig sendt til skrivningen; `erfaringer.md` blev klippet ved 2.500 af 4.053 tegn; korte emneord ("AI", "AR/VR", "SEO") blev aldrig fundet. Artikler med Jacobs holdninger: 353 -> 421 af 457.
+- **Hjernen er et krav:** uden hjernen skriver robotten ingen artikel (før skrev den videre uden). Tre testartikler var skrevet fra pc'en uden hjernen - to er skrevet om med den; fintech-artiklen stoppede to gange på samme ubesvarede delspørgsmål og prøves igen om 7 dage.
+- **Udvidet hjerne (privat repo jacob-hjerne):** skrivestil udledt af Jacobs egne ansøgninger/CV'er (kun stil, ingen personoplysninger); hans tilgang med egne ord (kildekritik, sikkerhed, "ens pligt at følge med"); tone: aldrig aggressiv; erfaringer (Facebook-hack, AI-værktøjer, affiliate, trading, krypto); CV-baggrund med sikkerhed om menneskeliv (kranfører offshore, helikopterdækleder, brand/evakuering) - med hans ja, uden firmanavne; privat baggrund markeret "skrives aldrig i artikler". Køletallet for kvantechips rettet til ca. -273 °C (med Jacobs ja).
+- **"My take":** et eget afsnit sidst i artiklen (3-6 sætninger, første person) i en boks med "Jacob S. Olsen, who runs TechFeedWatch". Skrives efter artiklen er færdig, kun når emnet passer; koden afviser nye tal, firmanavne og privatliv; faktatjekkes som resten. Brødteksten skrives uden "I". Skærmbilleder mobil + computer set.
+- Lære: Forenklingstrinnet havde "No first person", og fyld-tjekket kunne slette holdningssætninger - Jacobs afsnit blev fjernet igen efter at være skrevet (målt: 2 artikler med hjernen, 0 jeg-afsnit). Når en ny del skal overleve hele kæden, så giv den sit eget trin til sidst i stedet for at håbe, at alle trin lader den være.
+- Lære: Jeg testede omskrivninger fra pc'en, hvor hjernen ikke lå, og opdagede det først, da Jacob spurgte. Nu stopper koden selv uden hjerne - en regel, der kræver at nogen husker den, er ikke en regel.
+- Lære: Skærmbilleder af lange sider hang i Chrome på pc'en (12.000+ px høje). Løst ved at tage dem med Playwright i skyen på den byggede side.
+
 
 ### 25/10-2026 kl. 19:20 - Rettelse til v206 (AdSense-vurderingen)
 - **Rettelse:** v206 sagde, at sitet er "maskinskrevet ud fra andres videoer". Det er forkert. Opskriften er: Googles søgespørgsmål først → research på nettet (målt: 7-8 websider pr. artikel) → videoen kun som supplement (koden stopper artiklen over 30 % videoandel; målt 20-25 %).
