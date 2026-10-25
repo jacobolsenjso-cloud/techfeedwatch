@@ -27,5 +27,18 @@
     "roert": true
    }
   ]
+ },
+ {
+  "dato": "2026-10-25T09:17:30.210Z",
+  "artikler": [
+   {
+    "slug": "what-happens-when-you-adopt-virtual-assistant-tools",
+    "tjekket": 20,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
  }
 ]

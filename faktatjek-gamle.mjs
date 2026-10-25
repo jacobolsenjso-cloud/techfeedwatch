@@ -76,8 +76,26 @@ for (const a of koe.slice(0, antal)) {
     }
     for (const f of sk.fund) console.log(`   - [${f.dom}] ${f.saetning.slice(0, 120)} (${f.grund.slice(0, 100)})`);
   }
+  // FAQ-svar og resumé i frontmatter tjekkes også (25/10: en falsk NIST-henvisning stod i FAQ'en).
+  let nyFm = fm;
+  const felter = [...fm.matchAll(/^(\s*(?:answer|summary):\s*)"((?:[^"\\]|\\.)*)"\s*$/gm)].map((m) => ({ linje: m[0], foer: m[1], tekst: m[2].replace(/\\"/g, '"').replace(/\\\\/g, '\\') }));
+  let fmFund = 0;
+  if (felter.length) {
+    const skK = await skeptiker(genAI, hentModel, GEMINI_MODEL, felter.map((f) => f.tekst).join('\n\n'), '(no separate research - verify with Google Search)', noter);
+    for (const f of skK?.fund || []) {
+      for (const fl of felter) {
+        const r = anvendRettelser(fl.tekst, [f]);
+        if (r.ikkeFundet.length || r.md.trim() === fl.tekst) continue;
+        const nyTekst = r.md.trim();
+        nyFm = nyFm.replace(fl.linje, `${fl.foer}"${nyTekst.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`);
+        fl.tekst = nyTekst; fmFund++;
+        console.log(`   - [FAQ/resumé ${f.dom}] ${f.saetning.slice(0, 110)} (${f.grund.slice(0, 90)})`);
+      }
+    }
+  }
   // factChecked lægges sidst i frontmatter. Artiklens tekst ellers uændret.
-  fs.writeFileSync(`./src/content/videos/${a.slug}.md`, `---${fm.replace(/\s*$/, '')}\nfactChecked: "${idag}"\n---${ny}`);
+  fs.writeFileSync(`./src/content/videos/${a.slug}.md`, `---${nyFm.replace(/^factChecked:.*\n?/m, '').replace(/\s*$/, '')}\nfactChecked: "${idag}"\n---${ny}`);
+  if (fmFund) console.log(`${a.slug}: ${fmFund} FAQ-svar/resumé rettet`);
   console.log(`${a.slug}: ${sk.tjekket} sætninger tjekket, ${sk.fund.length} fanget, ${rettet} rettet, ${fjernet} fjernet`);
   koersel.artikler.push({ slug: a.slug, tjekket: sk.tjekket, fanget: sk.fund.length, rettet, fjernet, roert: true });
 }
