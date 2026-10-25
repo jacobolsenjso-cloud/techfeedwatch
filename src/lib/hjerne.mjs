@@ -89,18 +89,18 @@ export function minHoldningPrompt(hjerne, emneTekst, artikel, spoergsmaal) {
   return `You add the site owner's own voice to an article that answers "${spoergsmaal}". He runs TechFeedWatch. Below are his own notes in Danish (who he is, his style, his positions, his experience) and the finished article. Write in English.
 
 TASK
-Write ONE paragraph in the FIRST PERSON with his view, and choose the article section where it fits most naturally. It will be inserted as an ordinary paragraph at the end of that section - no heading, no box - so it must read as a natural part of the article's flow.
+Write his view in the FIRST PERSON as 2 or 3 SHORT paragraphs (2-3 sentences each), and for each choose the article section where it fits most naturally - different sections, so his voice appears where it matters, not in one block. Each is inserted as an ordinary paragraph at the end of its section - no heading, no box - so it must read as a natural part of the article's flow.
 
 RULES
-- 3-6 sentences. Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
-- It must connect to what that section just said, then add what HE thinks and why - and, only where it truly fits, a lesson from his own experience (safety, crypto, AI tools, being hacked ...). Never boast.
+- Each paragraph 2-3 short sentences (5-8 sentences in total at most). Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
+- Each paragraph must connect to what its section just said, then add what HE thinks and why - and, only where it truly fits, a lesson from his own experience (safety, crypto, AI tools, being hacked ...). Never boast.
 - Use ONLY what his notes state. Never invent experiences, details, numbers, dates or names. Do not mention employers, places, his age, family, partner or private life.
 - Do not repeat facts the article already gives. A number may only appear if the article already states it, with the same source.
 - If his notes say he has no experience with the topic, say that honestly in one short clause, then give his view.
 - No headings, no lists, no quotation marks around the whole text, no sign-off.
 - If nothing in his notes genuinely bears on this question, output exactly NONE.
 
-Output ONLY JSON: {"section": "<one heading copied exactly from the list>", "text": "<the paragraph>"} - or NONE.
+Output ONLY a JSON array: [{"section": "<one heading copied exactly from the list>", "text": "<the paragraph>"}, ...] with 2-3 items in different sections - or NONE.
 
 SECTION HEADINGS
 ${overskrifter.map((h) => `- ${h}`).join('\n')}
@@ -147,20 +147,29 @@ export function fletIndHoldning(md, sektion, tekst) {
 // Kontrollerer modellens afsnit. Returnerer { ok, tekst, grund }.
 const PRIVAT = /\b(54|fifty-four|girlfriend|partner|wife|children|kids|Scotland|Zealand|Sj[æa]lland|Brabrand)\b/i;
 const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*Olufsen|DS Dental|Beumer|Terma|Semco|Keolis|Region Midtjylland/i;
+// 25/10 kl. 21:33 (Jacob: "de afsnit er for lange ... der skal være flere afsnit"): 2-3 korte afsnit
+// (2-3 sætninger hver) i hver sin sektion i stedet for ét langt. Returnerer { ok, dele:[{sektion,tekst}] }.
 export function tjekMinHoldning(svar, artikel) {
   const raa = String(svar || '').trim();
   if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
-  let j = null; try { j = JSON.parse((raa.match(/\{[\s\S]*\}/) || ['null'])[0]); } catch { /* nedenfor */ }
-  if (!j || !j.text) return { ok: false, grund: 'svaret var ikke JSON med section/text' };
-  const t = String(j.text).trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').trim();
-  const sektion = String(j.section || '').trim();
-  const ss = t.split(/(?<=[.!?])\s+/).filter((x) => x.split(/\s+/).length >= 3);
-  if (ss.length < 3 || ss.length > 7) return { ok: false, grund: `${ss.length} sætninger (skal være 3-6)` };
-  if (!/\b(I|I'm|I've|my|me)\b/.test(t)) return { ok: false, grund: 'ikke i første person' };
-  if (PRIVAT.test(t)) return { ok: false, grund: 'privat oplysning' };
-  if (FIRMAER.test(t)) return { ok: false, grund: 'firmanavn' };
+  let j = null; try { j = JSON.parse((raa.match(/\[[\s\S]*\]/) || ['null'])[0]); } catch { /* nedenfor */ }
+  if (!Array.isArray(j) || !j.length) return { ok: false, grund: 'svaret var ikke en JSON-liste med section/text' };
   const brod = String(artikel);
-  const nyeTal = [...t.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/[.,]$/, '')).filter((n) => !brod.includes(n));
-  if (nyeTal.length) return { ok: false, grund: `tal, artiklen ikke har: ${nyeTal.join(', ')}` };
-  return { ok: true, tekst: t, sektion };
+  const dele = [];
+  for (const x of j.slice(0, 3)) {
+    const t = String(x?.text || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').replace(/\s*\n+\s*/g, ' ').trim();
+    const sektion = String(x?.section || '').trim();
+    if (!t) continue;
+    const ss = t.split(/(?<=[.!?])\s+/).filter((y) => y.split(/\s+/).length >= 3);
+    if (ss.length < 1 || ss.length > 3) return { ok: false, grund: `et afsnit har ${ss.length} sætninger (skal være 2-3)` };
+    if (PRIVAT.test(t)) return { ok: false, grund: 'privat oplysning' };
+    if (FIRMAER.test(t)) return { ok: false, grund: 'firmanavn' };
+    const nyeTal = [...t.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/[.,]$/, '')).filter((n) => !brod.includes(n));
+    if (nyeTal.length) return { ok: false, grund: `tal, artiklen ikke har: ${nyeTal.join(', ')}` };
+    if (dele.some((d) => d.sektion === sektion)) continue; // højst ét afsnit pr. sektion
+    dele.push({ sektion, tekst: t });
+  }
+  if (!dele.length) return { ok: false, grund: 'ingen brugbare afsnit' };
+  if (!dele.some((d) => /\b(I|I'm|I've|my|me)\b/.test(d.tekst))) return { ok: false, grund: 'ikke i første person' };
+  return { ok: true, dele };
 }
