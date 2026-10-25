@@ -33,6 +33,7 @@ keyFacts:
   - text: "Windows 11 allows wireless mirroring to Miracast-compatible smart TVs via the Windows key + K shortcut, though direct wired HDMI connections avoid the significant latency added by wireless transmission."
     source: "Microsoft Support"
     url: "https://www.microsoft.com/en-us/windows/learning-center/how-to-set-up-a-wireless-display"
+factChecked: "2026-10-25"
 ---
 
 A gaming PC connects directly to any television equipped with an HDMI port. You only need a standard video cable running from your graphics card to the TV input to output video and sound immediately. This hardware setup lets you play PC titles on a large living-room screen with full controller or keyboard support.
@@ -78,7 +79,7 @@ Pixel density measures how tightly packed individual picture elements are across
 
 Text rendering algorithms in computer operating systems expect specific subpixel geometry to smooth font edges cleanly. Many television panels use non-standard subpixel layouts that cause slight color shadows along high-contrast text borders.
 
-Color subsampling can also degrade desktop readability if display bandwidth drops below uncompressed limits. According to HDMI Licensing Administrator, the HDMI 2.2 Specification introduced Ultra96 cables delivering up to 96Gbps bandwidth, supporting resolutions and refresh rates up to 4K at 240Hz and 8K at 60Hz at full 4:4:4 chroma to keep text crisp.
+Color subsampling can also degrade desktop readability if display bandwidth drops below uncompressed limits. According to HDMI Licensing Administrator, the HDMI 2.2 Specification introduced Ultra96 cables delivering up to 96Gbps bandwidth, supporting 4K at 240Hz and 8K at 60Hz at full 4:4:4 chroma to keep text crisp.
 
 Sitting at a normal couch distance conceals these density limitations entirely during gaming sessions. For daily desktop computing, web browsing, or document editing, the lower density causes eye fatigue compared to a dedicated desktop monitor.
 
@@ -89,7 +90,7 @@ Dreamroom64 connects a PC to a Panasonic ST50 plasma television originally produ
 
 The setup runs Bazzite, an open-source Linux distribution configured for home theater PCs, which boots directly into a controller-friendly game interface. Dreamroom64 notes that a background utility called Gamescope manages scaling and prevents screen tearing without requiring traditional VSync. During testing, Dreamroom64 ran the PC port of Stellar Blade at maxed-out settings on the older hardware.
 
-Dreamroom64 also compared this setup to an LG OLED C1 display running from a separate PC powered by a GeForce RTX 4070 graphics card connected via a long HDMI cable. Addressing power consumption, Dreamroom64 estimates an extreme draw of 1,000 watts costs 15 cents per hour at local electricity rates of 15 cents per kilowatt-hour.
+Dreamroom64 also compared this setup to modern OLED displays, arguing that the plasma TV delivers more natural colors and smoother motion at 60 FPS. Addressing power consumption, Dreamroom64 estimates an extreme draw of 1,000 watts costs 15 cents per hour at local electricity rates of 15 cents per kilowatt-hour.
 
 ## Sources
 

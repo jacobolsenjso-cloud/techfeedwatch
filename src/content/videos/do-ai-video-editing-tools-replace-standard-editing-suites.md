@@ -33,6 +33,7 @@ keyFacts:
   - text: "Machine learning models like Aleph 2.0 allow users to make targeted generative edits to real filmed footage, including swapping objects, altering scene lighting, and removing backgrounds without manual rotoscoping."
     source: "Runway's official platform documentation"
     url: "https://runway.com/product/ai-video-editor"
+factChecked: "2026-10-25"
 ---
 
 AI video editing tools are software applications that apply machine learning algorithms and computer vision to automate, accelerate, and expand post-production workflows. These programs analyze video footage, audio tracks, and user prompts to perform tasks that traditionally require manual intervention, including frame interpolation, object removal, audio alignment, and visual synthesis.

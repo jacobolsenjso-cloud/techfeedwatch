@@ -32,6 +32,7 @@ keyFacts:
   - text: "Cybersecurity is defined as the prevention of damage to, unauthorized use of, exploitation of, and restoration of electronic information and communications systems to strengthen confidentiality, integrity, and availability."
     source: "National Institute of Standards and Technology (NIST) Interagency Report 8074 Volume 2"
     url: "https://csrc.nist.gov/glossary/term/cybersecurity"
+factChecked: "2026-10-25"
 ---
 
 Information technology focuses on building, maintaining, and operating the digital infrastructure that organizations rely on every day, whereas cybersecurity focuses specifically on protecting those systems, networks, and data from unauthorized access or malicious attack.
@@ -60,7 +61,7 @@ The core divergence in operational focus appears across several functional areas
 
 According to the Federal Bureau of Investigation's Internet Crime Complaint Center (IC3), the bureau logged 880,418 cybercrime complaints in 2023, with monetary losses exceeding $12.5 billion.
 
-IBM's 2024 Cost of a Data Breach Report revealed that 44 percent of documented breaches involved ransomware attacks, driving the global average incident cost above $4 million. General IT teams keep systems running, but dedicated cybersecurity staff are necessary to prevent catastrophic financial and operational losses.
+ General IT teams keep systems running, but dedicated cybersecurity staff are necessary to prevent catastrophic financial and operational losses.
 
 ## Cybersecurity roles command higher median salaries and faster growth
 
