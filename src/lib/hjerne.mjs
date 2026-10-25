@@ -77,24 +77,33 @@ export function stemmeBlok(hjerne, tekst) {
   return dele.join('\n    ');
 }
 
-// ===== "My take" (25/10-2026, Jacob: "giv din stemme sit eget faste afsnit, når emnet passer") =====
-// Et kort afsnit i første person sidst i artiklen, skrevet ud fra hjernen og den FÆRDIGE artikel,
-// så det kan rette sig efter netop dette emne og ikke gentager artiklens fakta.
-export const MY_TAKE = 'My take';
+// ===== Jacobs stemme flettet ind (25/10-2026) =====
+// Først en "My take"-boks sidst i artiklen - Jacob: "ser latterligt ud ... find en anden løsning".
+// Nu: ét almindeligt afsnit (3-6 sætninger, første person) UDEN overskrift og boks, sat ind sidst i
+// den sektion, hvor hans holdning passer bedst - som en klummeskribent, der giver sin mening undervejs.
 export function minHoldningPrompt(hjerne, emneTekst, artikel, spoergsmaal) {
   const holdninger = emneAfsnit(hjerne, emneTekst);
   if (!hjerne || !holdninger.length) return null;
-  return `You write a short section in the FIRST PERSON for the owner of TechFeedWatch, in his own voice, to end an article that answers "${spoergsmaal}".
-Below are his own notes in Danish (who he is, his style, his positions and his experience) and the finished article. Write in English.
+  const brod = String(artikel).split(/\n## Sources\s*\n/)[0];
+  const overskrifter = (brod.match(/^## .+$/gm) || []).map((h) => h.replace(/^## /, '').trim());
+  return `You add the site owner's own voice to an article that answers "${spoergsmaal}". He runs TechFeedWatch. Below are his own notes in Danish (who he is, his style, his positions, his experience) and the finished article. Write in English.
+
+TASK
+Write ONE paragraph in the FIRST PERSON with his view, and choose the article section where it fits most naturally. It will be inserted as an ordinary paragraph at the end of that section - no heading, no box - so it must read as a natural part of the article's flow.
 
 RULES
-- 3-6 sentences, one or two short paragraphs. Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
-- Say what HE thinks about THIS article's question, why, and - only where it truly fits - a lesson from his own experience (safety, crypto, AI tools, being hacked ...). Never boast.
+- 3-6 sentences. Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
+- It must connect to what that section just said, then add what HE thinks and why - and, only where it truly fits, a lesson from his own experience (safety, crypto, AI tools, being hacked ...). Never boast.
 - Use ONLY what his notes state. Never invent experiences, details, numbers, dates or names. Do not mention employers, places, his age, family, partner or private life.
-- Do not repeat facts the article already gives; add his view. A number may only appear if the article already states it, with the same source.
+- Do not repeat facts the article already gives. A number may only appear if the article already states it, with the same source.
 - If his notes say he has no experience with the topic, say that honestly in one short clause, then give his view.
 - No headings, no lists, no quotation marks around the whole text, no sign-off.
 - If nothing in his notes genuinely bears on this question, output exactly NONE.
+
+Output ONLY JSON: {"section": "<one heading copied exactly from the list>", "text": "<the paragraph>"} - or NONE.
+
+SECTION HEADINGS
+${overskrifter.map((h) => `- ${h}`).join('\n')}
 
 HIS NOTES
 Who he is:
@@ -113,17 +122,38 @@ His experience:
 ${(hjerne.erfaringer || '').slice(0, 8000)}
 
 THE ARTICLE
-${String(artikel).split(/\n## Sources\s*\n/)[0].slice(0, 14000)}
+${brod.slice(0, 14000)}`;
+}
 
-Output ONLY the section text (or NONE).`;
+// Sætter afsnittet ind sidst i den valgte sektion (før næste "## "). Findes sektionen ikke:
+// som sidste afsnit før "## Sources". Returnerer den nye markdown.
+export function fletIndHoldning(md, sektion, tekst) {
+  const linjer = String(md).replace(/\r\n/g, '\n').split('\n');
+  const start = linjer.findIndex((l) => l.replace(/^## /, '').trim() === String(sektion || '').trim() && /^## /.test(l));
+  let slut;
+  if (start >= 0) {
+    slut = linjer.findIndex((l, i) => i > start && /^## /.test(l));
+    if (slut < 0) slut = linjer.length;
+  } else {
+    slut = linjer.findIndex((l) => /^## Sources\s*$/.test(l));
+    if (slut < 0) slut = linjer.length;
+  }
+  // Bag eventuelle tomme linjer, så afsnittet står lige efter sektionens sidste tekst.
+  let i = slut; while (i > 0 && !linjer[i - 1].trim()) i--;
+  linjer.splice(i, 0, '', tekst.trim());
+  return linjer.join('\n').replace(/\n{3,}/g, '\n\n');
 }
 
 // Kontrollerer modellens afsnit. Returnerer { ok, tekst, grund }.
 const PRIVAT = /\b(54|fifty-four|girlfriend|partner|wife|children|kids|Scotland|Zealand|Sj[æa]lland|Brabrand)\b/i;
 const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*Olufsen|DS Dental|Beumer|Terma|Semco|Keolis|Region Midtjylland/i;
-export function tjekMinHoldning(tekst, artikel) {
-  const t = String(tekst || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').trim();
-  if (!t || /^NONE\b/i.test(t)) return { ok: false, grund: 'ingen holdning passer til emnet' };
+export function tjekMinHoldning(svar, artikel) {
+  const raa = String(svar || '').trim();
+  if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
+  let j = null; try { j = JSON.parse((raa.match(/\{[\s\S]*\}/) || ['null'])[0]); } catch { /* nedenfor */ }
+  if (!j || !j.text) return { ok: false, grund: 'svaret var ikke JSON med section/text' };
+  const t = String(j.text).trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').trim();
+  const sektion = String(j.section || '').trim();
   const ss = t.split(/(?<=[.!?])\s+/).filter((x) => x.split(/\s+/).length >= 3);
   if (ss.length < 3 || ss.length > 7) return { ok: false, grund: `${ss.length} sætninger (skal være 3-6)` };
   if (!/\b(I|I'm|I've|my|me)\b/.test(t)) return { ok: false, grund: 'ikke i første person' };
@@ -132,5 +162,5 @@ export function tjekMinHoldning(tekst, artikel) {
   const brod = String(artikel);
   const nyeTal = [...t.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/[.,]$/, '')).filter((n) => !brod.includes(n));
   if (nyeTal.length) return { ok: false, grund: `tal, artiklen ikke har: ${nyeTal.join(', ')}` };
-  return { ok: true, tekst: t };
+  return { ok: true, tekst: t, sektion };
 }

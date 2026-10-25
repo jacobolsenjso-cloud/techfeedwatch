@@ -92,6 +92,8 @@ According to the National Institute of Standards and Technology (NIST), the agen
 
 This security challenge matters right now because adversaries can intercept encrypted communications today and archive them. They can hold that protected data until capable hardware emerges years down the road. Upgrading web browsers, enterprise networks, and operating systems to post-quantum algorithms eliminates this long-term exposure.
 
+That need to prepare early makes complete sense to me, because I cannot emphasize the importance of cybersecurity enough. Having been hacked myself—losing my Facebook account and dealing with issues on my Gmail—I learned firsthand how critical it is to protect your systems. Today's attackers are already remarkably capable, and once companies like IBM and Microsoft roll these quantum machines out properly, they will be unbelievably powerful—stronger than many people realize. I believe keeping up with these shifts is simply our duty, because without real insight into the technology, you cannot know how to navigate it safely. At the end of the day, it is always better to be safe than sorry.
+
 ## Hardware noise and error correction hold quantum machines back
 Physical environmental disturbances introduce computational noise (disturbances that cause calculation errors). This noise prevents modern quantum processors from sustaining reliable calculations.
 
@@ -129,12 +131,6 @@ Worldwide capital directed toward the quantum field is expanding. New Scientist 
 Google has urged industry migration to post-quantum cryptography by 2029. Meanwhile, the United States federal government aims to complete its transition by 2035.
 
 Try the numbers yourself in our [Quantum Speed-up Calculator](/tools/quantum-speedup-calculator).
-
-## My take
-
-While I don't work with quantum hardware myself, I believe these systems will become far more powerful than many people realize once companies like IBM and Microsoft roll them out properly. To me, understanding what quantum computing can solve is about learning what the future brings so we know what we are dealing with.
-
-Having been hacked several times myself, I always look at security first, and cybersecurity is where this shift will really hit home. Attackers are already remarkably skilled today, so our digital safety simply has to be in order before these systems arrive. It comes down to common sense—it is always better to be safe than sorry.
 
 ## Sources
 - [Mckinsey quantum technology monitor 2026 a commercial tipping point](https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-quantum-technology-monitor-2026-a-commercial-tipping-point) — mckinsey.com
