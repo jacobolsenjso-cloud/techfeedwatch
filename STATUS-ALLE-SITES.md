@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 201** — brug kun v201). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 202** — brug kun v202). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 201** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 01:19, statusfil v201):** Forsiden er nu hurtig på mobil (main `8c402169`): PageSpeed 93-100 (før ca. 63), LCP 1,5-2,1 s (før 6,2-6,8 s). Den store gevinst kom fra at starte AdSense, når siden er vist; reklamer og samtykke-boks hentes stadig. Hold øje med AdSense-indtjeningen de næste dage. I dag: nattens kørsel, nye pins, Dependabot (3 undici-advarsler).
+**Seneste for techfeedwatch (25/10-2026 kl. 02:14, statusfil v202):** Faktatjek af 20 artikler fandt 15 talfejl (alle rettet, `f94bc9f8`). Robotten skriver nu med opskrift 3 (main `21e46e7f`): journalist-regler, korte sætninger med forklarede fagord, og et faktatjek før udgivelse, der retter eller fjerner forkerte tal og falske kildeangivelser. Alle 299 artikler med søgespørgsmål skrives om, 3 om dagen fra i morgen kl. 08:37 (ca. 2-2,4 kr pr. artikel) - Jacob ser de første og bestemmer tempoet. 158 artikler mangler søgespørgsmål. Forsiden mobil 93-100. I dag også: nattens kørsel, nye pins, Dependabot.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,20 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 02:14 - Faktatjek af 20 artikler, 15 fejl rettet, robot-opskrift 3 live (Jacobs ja)
+- **Kvalitetsbedømmelse (Googles retningslinjer for bedømmere) af PC-artiklen:** O THIN, U REWRITE, R Moderately Meets, kvalitetstjek CLEAR. Fundet: RAM-latens "single-nanosecond" (rigtigt: ca. 14 ns), for teknisk til en begynder, kluntet titel.
+- **Faktatjek af 20 tilfældige artikler** (seed 20261025; 10 ny metode, 10 gammel; 393 tal-sætninger; 4 parallelle tjekkere, alle fejl efterprøvet af Claude mod primærkilden): 15 bekræftede fejl i 10 artikler. Ny metode 11 fejl (4,7 % af 236 påstande, 7 af 10 artikler), gammel 4 (9,5 % af 42). 11 af 15 var robottens egne; 3 falske kildeangivelser (IGN, OpenAI-pris, "Vona et al."); 36 tal uden dækning. Rapport: _udkast/faktatjek/RAPPORT.md.
+- **De 15 fejl rettet** i 10 artikler (gren faktafejl-20 -> main `f94bc9f8`), målt i dist: ingen af de forkerte formuleringer tilbage.
+- **Læsbarhed målt på alle 456 artikler:** Flesch-Kincaid median klassetrin 15,2; 99 % over 9. klasse.
+- **Robot-opskrift 3** (gren journalist-regler -> main `21e46e7f`): journalist-regler i prompten (regel 25-28: almindeligt sprog for en 15-årig, hvem siger hvad, tal kun fra kilden de tilskrives, hvorfor det betyder noget, begrænsninger); ny src/lib/faktatjek.mjs: kildebinding, mål og datoer med måned skal være dækket, skeptisk faktatjekker med Google-søgning der retter eller fjerner forkerte sætninger; forenkling ved klassetrin > 10,5 eller > 16 ord/sætning; læsertjekket finder uforklarede fagord (JARGON, rettes i to runder, stopper ikke). Test 18/18. omskriv-gamle.mjs omskriver nu alle artikler uden "recipe: 3" (299 i køen; gamle fejl prøves igen).
+- **Prøver (3 artikler, lokalt):** PC-bygning (klassetrin 12,9 -> 12,0; 3 fejl fanget og rettet, bl.a. "ASRock B860M Cra A" -> "Pro-A"), kryptovolatilitet og Google TPU (1 fejl hver). Pris 0,28-0,34 USD pr. artikel (ca. 2-2,4 kr); afviste forsøg 0,10-0,27 USD. Alle tre live.
+- **Ærligt om læsbarheden:** klassetrin 9-10 kan ikke nås for tekniske emner med Flesch-Kincaid - sætningerne kom ned på 12,8-14,4 ord, men emnets egne ord ("cryptocurrency", "inference") holder tallet på 12-14. Kravet er derfor korte sætninger + forklarede fagord; klassetrin over 16 er kun nødbremse.
+- **Kø:** 299 artikler har et søgespørgsmål og skrives om, 3 om dagen (Cloudflare-starteren kl. 08:37). 158 artikler mangler søgespørgsmål og kan ikke skrives om med opskriften endnu.
+- **Facebook:** sitet linker ikke til Jacobs Facebook (målt på 5 sider); Google viser hans egne offentlige opslag. Jacob retter selv på Facebook (offentlig -> venner).
+- Lære: Jeg gjorde klassetrin 12 til stop-grænse uden først at måle, hvad tekniske tekster kan nå - to af tre prøver blev stoppet. Mål en ny grænse på rigtige tekster, før den stopper noget.
+- Lære: Reglen "sig hvad der ikke vides" fik robotten til at opfinde en usikkerhed og tilskrive den Google. En regel, der beder om indhold, skal kræve, at indholdet står i kilden.
+
 
 ### 25/10-2026 kl. 01:19 - AdSense starter efter visning: forsiden mobil 63 -> 93-100 (Jacobs ja)
 - **Jacobs PageSpeed-rapport 00:49:** score 67, LCP 6,2 s. LCP-opdeling: topbilledet hentet efter 0,36 s, men "Element render delay" 2.030 ms.
