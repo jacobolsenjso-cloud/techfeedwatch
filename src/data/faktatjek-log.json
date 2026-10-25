@@ -1,0 +1,31 @@
+[
+ {
+  "dato": "2026-10-25T09:00:37.484Z",
+  "artikler": [
+   {
+    "slug": "what-happens-when-you-adopt-virtual-assistant-tools",
+    "tjekket": 22,
+    "fanget": 3,
+    "rettet": 3,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "are-programming-libraries-just-collections-of-code",
+    "tjekket": 13,
+    "fanget": 2,
+    "rettet": 2,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "iphone-security-can-iphones-be-hacked-today",
+    "tjekket": 16,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
+ }
+]
