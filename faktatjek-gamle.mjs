@@ -66,19 +66,19 @@ for (const a of koe.slice(0, antal)) {
       rettet = rettede.length - (igen?.fund.length || 0);
     }
     fjernet = sk.fund.length - rettet - r.ikkeFundet.length;
-    // Værn: fjernes eller ændres mere end hver fjerde tjekkede sætning, røres artiklen ikke —
-    // så er noget galt (med artiklen eller med tjekket), og et menneske skal se på den.
+    // Mange fejl (mere end hver fjerde tjekkede sætning): rettelserne sættes ind som ellers, OG
+    // artiklen kommer forrest i omskrivningskøen (Jacob 25/10: "det skal bare spille") — en artikel
+    // med så mange fejl skal skrives om med opskrift 3, ikke bare lappes.
     if (sk.fund.length > Math.max(4, sk.tjekket / 4)) {
-      console.log(`${a.slug}: ${sk.fund.length} af ${sk.tjekket} sætninger fanget — for mange, artiklen røres ikke (se loggen)`);
-      for (const f of sk.fund) console.log(`   - [${f.dom}] ${f.saetning.slice(0, 120)} (${f.grund.slice(0, 100)})`);
-      koersel.artikler.push({ slug: a.slug, tjekket: sk.tjekket, fanget: sk.fund.length, roert: false });
-      continue;
+      const pf = laes('./src/data/omskriv-prioritet.json', { slugs: [] });
+      if (!pf.slugs.includes(a.slug)) { pf.slugs.unshift(a.slug); fs.writeFileSync('./src/data/omskriv-prioritet.json', JSON.stringify(pf, null, 1) + '\n'); }
+      console.log(`${a.slug}: ${sk.fund.length} af ${sk.tjekket} sætninger fanget — rettet nu og sat i omskrivningskøen`);
     }
     for (const f of sk.fund) console.log(`   - [${f.dom}] ${f.saetning.slice(0, 120)} (${f.grund.slice(0, 100)})`);
   }
   // FAQ-svar og resumé i frontmatter tjekkes også (25/10: en falsk NIST-henvisning stod i FAQ'en).
   let nyFm = fm;
-  const felter = [...fm.matchAll(/^(\s*(?:answer|summary):\s*)"((?:[^"\\]|\\.)*)"\s*$/gm)].map((m) => ({ linje: m[0], foer: m[1], tekst: m[2].replace(/\\"/g, '"').replace(/\\\\/g, '\\') }));
+  const felter = [...fm.matchAll(/^(\s*(?:answer|summary|metaDescription):\s*)"((?:[^"\\]|\\.)*)"\s*$/gm)].map((m) => ({ linje: m[0], foer: m[1], tekst: m[2].replace(/\\"/g, '"').replace(/\\\\/g, '\\') }));
   let fmFund = 0;
   if (felter.length) {
     const skK = await skeptiker(genAI, hentModel, GEMINI_MODEL, felter.map((f) => f.tekst).join('\n\n'), '(no separate research - verify with Google Search)', noter);

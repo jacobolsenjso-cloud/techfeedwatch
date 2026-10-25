@@ -1369,12 +1369,14 @@ ${faktaarkTekst(fakta)}`);
       }
       // FAQ-svar og resumé tjekkes også (25/10: en falsk NIST-henvisning stod i en FAQ, ikke i teksten,
       // og FAQ'en vises på siden og i Googles data). Ét tjek; en rettelse sættes ind, ellers fjernes svaret.
-      const korte = [...faqs.map((f) => f.answer), safeSummary].filter(Boolean);
+      // Alt læseren ser uden for brødteksten: FAQ-svar, resumé og meta-beskrivelsen (Google-snippet).
+      const korte = [...faqs.map((f) => f.answer), safeSummary, safeMeta].filter(Boolean);
       const skK = korte.length ? await skeptiker(genAI, hentModel, GEMINI_MODEL, korte.join('\n\n'), research, videoNoter) : { fund: [] };
       if (skK === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
       for (const f of skK.fund) {
         for (const q of faqs) { const r = anvendRettelser(q.answer, [f]); if (!r.ikkeFundet.length) q.answer = r.md.trim(); }
         const r = anvendRettelser(safeSummary, [f]); if (!r.ikkeFundet.length) safeSummary = r.md.trim();
+        const rm = anvendRettelser(safeMeta, [f]); if (!rm.ikkeFundet.length && rm.md.trim().length >= 60) safeMeta = rm.md.trim();
       }
       for (let i = faqs.length - 1; i >= 0; i--) if (faqs[i].answer.split(/\s+/).length < 5) faqs.splice(i, 1);
       if (skK.fund.length) console.log(`🕵️ FAQ og resumé: ${skK.fund.length} sætning(er) rettet eller fjernet`);
@@ -1510,12 +1512,7 @@ ${faktaarkTekst(fakta)}`);
       // Har artiklen allerede et AI-billede (fx ved omskrivning af en gammel artikel), genbruges
       // det — ellers betales billedet to gange (14/10, Jacob: billeder og omskrivning slås sammen).
       if (harAiBillede(slug)) console.log('🖼️ AI-billede: findes allerede — genbruges');
-      // 25/10 (Jacob): ved omskrivning laves ALDRIG et nyt billede — det, artiklen har (AI-billede
-      // eller emnekort), beholdes. Kun hvis der slet intet kort er, tegnes emnekortet (gratis, lokalt).
-      else if (erstatGammel) {
-        if (fs.existsSync(`./public/kort/${slug}.webp`)) console.log('🖼️ Omskrivning: eksisterende billede beholdes (intet nyt AI-billede)');
-        else await generateOgCard(videoId, slug);
-      }
+      // 25/10 (Jacob): et eksisterende AI-billede laves aldrig om; en artikel UDEN AI-billede får et.
       else {
         const ai = await lavAiBillede(genAI, { slug, titel: safeTitle, emne: finalTags[0] || '', resume: safeSummary }, sitetsStier(slug));
         if (!ai) await generateOgCard(videoId, slug);
