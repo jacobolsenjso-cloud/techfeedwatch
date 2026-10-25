@@ -10,7 +10,8 @@ import { GEMINI_MODEL, hentModel } from './model.mjs';
 // og peger på de sætninger, man snubler over. Kun sætninger, der står ordret i
 // artiklen, tæller (modellen må ikke opfinde fund). Bagefter omskrives KUN de
 // sætninger - resten af artiklen røres ikke.
-export const PROBLEMER = ['NAME', 'FRAGMENT', 'REFERENCE', 'CONTRADICTION'];
+// JARGON (25/10, Jacob: artiklerne skal kunne læses af en 9.-10.-klasse): et fagord uden forklaring.
+export const PROBLEMER = ['NAME', 'FRAGMENT', 'REFERENCE', 'CONTRADICTION', 'JARGON'];
 
 function tjekPrompt(md) {
   return `You are a copy editor. Read the article below as an ordinary reader who has NOT watched the video it is based on.
@@ -19,10 +20,11 @@ List the sentences a reader would stumble on, of these kinds only:
 - FRAGMENT: a broken or incomplete sentence, or a paragraph that is only a stray quote with no sentence around it.
 - REFERENCE: "this", "they", "it", "he" or "she" pointing to something the article has not stated.
 - CONTRADICTION: a sentence that contradicts another sentence in the article.
+- JARGON: a technical term or abbreviation that a curious 15-year-old would not know, used without a short plain explanation the first time it appears (for example "inference" or "L2 cache" with no explanation). Only the first use counts; a term explained earlier in the article is fine.
 
 Copy each sentence EXACTLY as it appears in the article. List at most 10. If there are none, return an empty list.
 Answer with ONLY a JSON array, no other text:
-[{"sentence": "<exact sentence>", "problem": "NAME|FRAGMENT|REFERENCE|CONTRADICTION", "why": "<a few words>"}]
+[{"sentence": "<exact sentence>", "problem": "NAME|FRAGMENT|REFERENCE|CONTRADICTION|JARGON", "why": "<a few words>"}]
 
 ARTICLE:
 ${md}`;
@@ -34,6 +36,7 @@ function retPrompt(md, fund) {
 - FRAGMENT: make it a complete sentence, or merge it into its neighbour.
 - REFERENCE: name what "this/they/it" refers to.
 - CONTRADICTION: make the sentence agree with the rest of the article.
+- JARGON: keep the term and explain it in a few plain words right after it, for example "inference (when a trained AI model answers a request)".
 Keep every number, name, link and fact that is correct. Do not add new facts. Write in plain editorial English.
 Answer with ONLY a JSON array, no other text:
 [{"old": "<the exact sentence>", "new": "<the rewritten sentence>"}]

@@ -1,5 +1,5 @@
 ---
-title: "Desktop PC Building Assembles Hardware Through Open Standards"
+title: "PC Building Lets Users Assemble Custom Computer Hardware"
 youtubeId: "zIgmgMLZrrc"
 channelTitle: "Linus Tech Tips"
 channelId: "UCXuqSBlHAE6Xw-yeJA0Tunw"
@@ -8,106 +8,125 @@ date: "2026-10-24"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"
-summary: "PC building is the process of selecting and assembling individual hardware components into a fully functional desktop computer. Open engineering standards govern component dimensions, socket alignments, and electrical tolerances to ensure cross-manufacturer compatibility. Builders gain control over thermal performance, cost, and component upgrades while managing assembly risks like electrostatic discharge."
-metaDescription: "Learn what PC building is, how core hardware components connect, and how industry engineering standards guarantee compatibility across desktop parts."
+summary: "PC building is the process of selecting individual hardware components and assembling them into a functional personal computer. Builders match parts like processors, motherboards, and storage drives to their specific workloads and spending limits. The process eliminates manufacturer labor markups, though retail component prices still determine the total project cost."
+metaDescription: "Learn what PC building is, how custom hardware works, what parts you need, and whether assembling your own system saves money over buying pre-built PCs."
 targetQuestion: "what is pc building"
 duration: "20:06"
-viewCount: 1045467
-viewsUpdated: "2026-10-24"
+viewCount: 1048575
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
+recipe: 3
+rewrittenAt: "2026-10-25"
 faqs:
   - question: "What does PC building mean?"
-    answer: "PC building means selecting individual modular computer parts and assembling them into a working personal computer. Builders match components to their specific budget, performance goals, and software requirements."
+    answer: "According to Wikipedia's entry on homebuilt computers, it means assembling a computer from commercial off-the-shelf parts instead of buying a pre-assembled system from a manufacturer."
   - question: "How does PC building work?"
-    answer: "A builder mounts the central processor, memory, and storage onto a motherboard, attaches a cooler, and secures the board into a chassis. Power supply cables and front panel headers then connect to complete the electrical circuit before software installation."
-  - question: "How is PC building a hobby?"
-    answer: "Enthusiasts treat PC building as a hands-on craft focused on performance tuning, custom aesthetics, and regular hardware upgrades. The hobby combines electrical assembly with component research to maximize computing efficiency."
+    answer: "A builder purchases separate components and connects them inside a chassis using standardized mounting slots and power cables. According to MSI, builders typically allocate 50% to 65% of the total budget to the processor and graphics card."
+  - question: "What is building a computer compared to buying pre-built systems?"
+    answer: "Building allows buyers to customize every part and avoid factory assembly fees. However, Wikipedia notes that buying individual high-grade parts at retail prices can cause the final cost to exceed mass-market pre-built systems."
 keyFacts:
-  - text: "Standardized desktop power supply specifications establish mandatory mechanical dimensions, rail cross-regulation tolerances, and transient power load responses to ensure uniform fit and safe power delivery across chassis designs."
-    source: "Intel's ATX Version 3.0 Multi Rail Desktop Platform Power Supply Design Guide"
-    url: "https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/atx-version-3-0-multi-rail-desktop-platform-power-supply-design-guide/2.0/"
-  - text: "The 12V-2x6 auxiliary power connector supplies up to 600 watts over a single 16-pin cable and employs shortened sideband sense pins designed to block power transmission if the connector plug is not fully seated."
-    source: "PCI-SIG PCI Express Card Electromechanical Specification Revision 5.1"
-    url: "https://pcisig.com/specifications"
+  - text: "A custom-built computer is a machine assembled by its user from commercial off-the-shelf (COTS) components rather than purchased as a complete, pre-assembled system from a manufacturer."
+    source: "Wikipedia's entry on homebuilt computers"
+    url: "https://en.wikipedia.org/wiki/Homebuilt_computer"
+  - text: "Building at home can save money by eliminating manufacturer assembly labor fees, yet the total price can exceed that of mass-market pre-built systems when purchasing individual high-grade parts at retail prices."
+    source: "Wikipedia's entry on homebuilt computers"
+    url: "https://en.wikipedia.org/wiki/Homebuilt_computer"
+  - text: "An aftermarket cooling solution's thermal design power (TDP) rating in watts must equal or exceed the processor's base power specification to prevent excessive heat and automatic CPU performance throttling."
+    source: "Intel's thermal design documentation"
+    url: "https://www.intel.com/content/www/us/en/support/articles/000005791.html"
 ---
 
-PC building is the hands-on process of selecting individual computing components and assembling them into a complete desktop computer. Instead of purchasing an off-the-shelf prebuilt system from an OEM manufacturer, a builder sources modular parts tailored to specific computing requirements. This approach gives users granular control over system thermals, acoustic output, aesthetics, and upgrade paths.
+PC building means assembling a personal computer from separate parts instead of buying a pre-made system. Builders choose each piece of hardware (physical computer equipment) to match their software needs, style, and budget.
 
-## Which components are needed to assemble a desktop PC?
-A functional desktop computer requires seven distinct components: a central processor, motherboard, memory, storage drive, cooling system, power supply unit, and chassis.
+The builder mounts these parts inside a standard case. Next, they plug in internal power cables. Finally, they install an operating system (the main software that runs a computer).
 
-The central processing unit (CPU) acts as the operational brain of the computer, executing calculations and logic instructions. It attaches directly to the motherboard, a complex printed circuit board that routes high-speed communication channels and low-voltage electrical traces between every connected peripheral.
+## Which components are required to assemble a PC?
 
-Dynamic system memory, or RAM, provides high-bandwidth workspace for running software, while non-volatile storage drives retain operating system files and personal data when power drops.
+A complete personal computer needs several core parts. These include a central processor (CPU, the computer's brain), a motherboard (the central circuit board), and memory.
 
-Desktop components split into distinct mechanical and electrical roles:
-- The central processing unit (CPU) executes operating system instructions and program computations.
-- The motherboard distributes power, synchronizes peripheral clocks, and hosts expansion cards.
-- Random access memory (RAM) holds active runtime data and answers requests in tens of nanoseconds, far faster than any storage drive.
-- Solid-state storage (SSD) preserves files across restarts using NAND flash blocks.
-- The power supply unit (PSU) rectifies alternating mains current into regulated direct-current rails.
+It also requires a storage drive, a power supply unit, cooling hardware, and a protective case. Systems built for gaming or video production usually need a dedicated graphics card (GPU, a visual processor).
 
-Modern systems also require an active thermal dissipation assembly. CPUs generate concentrated heat across silicon surface areas smaller than a postage stamp, requiring direct contact with an air heatsink or liquid-cooling cold plate.
+Every desktop relies on a foundation of standardized electronic parts:
 
-Dedicated graphics cards (GPUs) handle floating-point parallel math for modern games and artificial intelligence workloads. The chassis holds all hardware in aligned standoff positions and establishes directional airflow across heatsinks. Enthusiasts often weigh these modular trade-offs when evaluating the difference between a [gaming PC and a console](/video/difference-between-gaming-pc-and-console-explained).
+- Processor (CPU) and graphics card (GPU) handle calculations and visual processing.
+- Motherboard links all parts together through printed electrical pathways and expansion slots (plug-in sockets for components).
+- Memory (RAM, short-term data storage) and solid-state storage (SSD, fast permanent storage) hold active program data and permanent files.
+- Power supply unit (PSU) converts household wall electricity into regulated direct current (steady electrical flow).
+- Cooling fans and a case keep temperatures low and hold the hardware securely.
 
-## Standardized sockets and form factors ensure component compatibility
-Hardware standards eliminate guesswork by establishing identical mechanical physical footprints, electrical pin allocations, and signal parameters across rival component manufacturers.
+Choosing parts requires balancing hardware capability against total cost. According to MSI's PC Building Guide and Checklist, a balanced build typically allocates 50% to 65% of the total budget to the processor and graphics card. These two chips dictate how quickly programs execute and how smoothly games run.
 
-Standardized form factors allow motherboards from different vendors to match chassis mounting holes precisely. According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s ATX Version 3.0 Multi Rail Desktop Platform Power Supply Design Guide, standardized desktop power supply specifications establish mandatory mechanical dimensions, rail cross-regulation tolerances, and transient power load responses to ensure uniform fit and safe power delivery across chassis designs.
+The main circuit board forms the central communications hub. MSI's guide indicates that builders typically spend 10% to 15% of their funds on the motherboard.
 
-These specifications allow an ATX chassis made by one company to accept power supplies and motherboards manufactured by completely separate vendors.
+The motherboard provides the socket for the processor. It also offers slots for high-speed components.
 
-Processor sockets enforce rigid generation-specific physical pin layouts. According to AMD's Socket AM5 platform documentation, motherboards built on 600-series and 800-series chipsets offer socket interchangeability across Ryzen 7000, 8000, and 9000 series desktop processors, although specific configurations require a UEFI/BIOS update before recognizing newer generation CPUs. Physical pins or socket contacts must mate without obstruction or lateral force.
+MSI notes that 25% to 40% of the overall budget goes toward the RAM, SSD, power supply unit, case, and cooling fans. Cutting corners on power delivery or heat dissipation (getting rid of heat) risks system instability.
 
-Memory and power delivery connectors rely on identical industry consensus. According to JEDEC Solid State Technology Association standard JESD79-5, DDR5 memory modules specify standardized baseline transfer rates from 4,000 to 6,400 MT/s at an operating voltage of 1.1 V, incorporating internal on-die error-correcting code (ECC) architecture to ensure consistent interoperability across motherboards.
+Builders must also verify physical and electrical compatibility before purchasing parts. Processors fit only specific motherboard socket types.
 
-According to the PCI-SIG PCI Express Card Electromechanical Specification Revision 5.1, the 12V-2x6 auxiliary power connector supplies up to 600 watts over a single 16-pin cable and employs shortened sideband sense pins designed to block power transmission if the connector plug is not fully seated.
+Cases also limit the physical length of graphics cards. In addition, cases limit the height of CPU heatsinks (metal cooling blocks).
 
-Standardization failures still happen when builders ignore clear platform boundaries:
-- Inserting an incompatible CPU generation into an incorrect physical socket bends delicate contact pins.
-- Choosing memory kits beyond the rated frequency support of the memory controller creates system instability.
-- Installing graphics cards that exceed chassis clearance limits creates physical interference.
-- Matching high-wattage graphics cards with inadequate power supplies triggers over-current shutdowns.
+## Building eliminates assembly fees but retail components can cost more
 
-## How do you prevent electrostatic damage during assembly?
-Electrostatic damage prevention requires continuous electrical grounding, careful component handling by non-conductive edges, and assembling hardware on static-dissipative surfaces.
+Building a PC cuts out corporate assembly charges. However, retail pricing on individual components often offsets those savings.
 
-Human skin constantly accumulates electrical charges through normal movement across synthetic flooring or clothing friction. According to the EOS/ESD Association standard ANSI/ESD S20.20, electrostatic discharges imperceptible to human touch can cause immediate catastrophic failure or latent degradation in microelectronics, requiring ESD control measures including grounding and static-dissipative surfaces for parts vulnerable to charges as low as 100 volts under the Human Body Model.
+According to [Wikipedia](https://www.wikipedia.org/)'s entry on homebuilt computers, a custom-built computer is assembled by its user from commercial off-the-shelf components. It is not purchased as a complete, pre-assembled system from a manufacturer.
 
-A builder will not feel a static shock beneath 2,000 volts, yet sensitive gate oxides on modern processors degrade at microscopic thresholds.
+According to Wikipedia's entry on homebuilt computers, builders purchase individual high-grade parts at retail prices.
 
-Builders ground themselves by attaching an anti-static wrist strap to an unpainted metal surface on an earthed appliance or grounded power supply case. Touching bare metal equalizes the electrical potential between the human body and the workspace.
+Wikipedia notes that the total price can exceed that of mass-market pre-built systems when purchasing individual high-grade parts at retail prices. Large manufacturers buy millions of identical parts at bulk wholesale discounts. Individual shoppers cannot access those discounted prices.
 
-Assembling components directly on conductive anti-static shipping bags presents a distinct hazard, as their exterior conductive layers can discharge stray currents into sensitive motherboard solder joints. Many newcomers investigate whether beginners can [safely assemble a gaming PC](/video/can-beginners-put-a-gaming-pc-together-safely) before handling bare circuitry.
+Assembling a machine rarely yields massive financial discounts at entry-level price brackets. Instead, the real value lies in serviceability and future upgrade paths.
 
-Working on bare hard floors rather than carpets prevents static buildup. Builders should always grip circuit boards by their reinforced structural fiberglass edges, avoiding direct finger contact with exposed gold edge connectors or sensitive surface-mount capacitors.
+Pre-built systems often feature non-standard parts that prevent simple repairs. In contrast, custom machines rely on standard form factors (standard component shapes and sizes). If a power supply or graphics card fails, a builder can replace only that single part.
 
-## Linus Tech Tips demonstrates component selection and CPU installation
-Linus Tech Tips demonstrates how builders select individual components around a target budget and install a processor into a desktop motherboard.
+Standardization also means builders can extend hardware lifespans by swapping out individual bottlenecks (parts that limit speed) over time. A home builder can install a faster storage drive or add extra system memory without purchasing an entirely new computer.
 
-The demonstration assembles an Intel-based system centered on the Intel Core Ultra 250KF Plus processor, which features six performance cores that boost up to 5.3 GHz alongside twelve efficiency cores.
+What is not known from market data is whether future retail component pricing will stay stable. Memory chip output and graphics processor manufacturing fluctuate constantly based on global industrial demand.
 
-To complement this processor, the configuration includes an ASRock B860M PRO-A motherboard costing $110, an [Asus](https://www.asus.com/) Prime GeForce RTX 5070 Ti 16GB graphics card that sells for $900, and an 850-watt Seasonic Focus GX V4 ATX 3 2024 power supply running 109.99. The complete system build totaled $1,974.
+## What are the biggest challenges when building a PC?
 
-The physical assembly begins outside the case, utilizing the cardboard motherboard packaging as a clean, non-conductive platform. Linus Tech Tips emphasizes aligning the delicate CPU using orientation landmarks, specifically matching the corner triangle printed on the processor substrate with the alignment arrow on the socket cover.
+The primary difficulties involve handling fragile parts, managing heat output, and diagnosing hardware faults when a system fails to start. Builders must assemble fragile electronic parts with care to avoid bent socket pins or electrostatic shock (static electricity damage).
 
-The host places the chip into the socket without applying downward pressure, giving it a slight lateral wiggle to confirm proper pin seating before latching the retention lever down. The cooler installation uses a Thermalright Assassin X120 Refined SE unit priced at $17.90, mounted to the Intel LGA1851 socket.
+Physical mistakes during assembly can permanently ruin expensive electronics. Novice builders sometimes damage delicate contacts or drop heavy tools directly onto circuit boards. Proper workspace preparation reduces these physical risks.
 
-Before securing the motherboard inside the Gamdias ATHENA M4M case, the host verifies that the interior chassis standoffs correspond strictly to the board mounting holes. Linus Tech Tips cautions builders to count each standoff through the motherboard holes. An extra misplaced metal standoff can scratch conductive PCB traces on the underside of the board, permanently shorting the hardware.
+According to [Intel](https://www.intel.com/)'s thermal design documentation, an aftermarket cooling solution's thermal design power rating in watts must equal or exceed the processor's base power specification. If cooling falls short, excessive heat triggers automatic performance throttling (slowing down to cool off) to prevent chip destruction.
 
-I have no personal experience with building PCs or playing modern video games myself. However, custom fabrication techniques like 3D printing increasingly allow hobbyists to manufacture specialized chassis brackets and custom cooling mounts.
+Builders regularly encounter several specific mechanical hurdles:
+
+- Applying thermal paste (heat-transfer gel) incorrectly between the processor and the heatsink.
+- Forgetting to install the metal motherboard standoffs (spacers that hold the board off the case).
+- Forcing memory modules into motherboard slots in reverse orientation.
+- Overlooking supplemental power cables required by modern graphics cards.
+
+When a pre-built computer fails to boot (start up), the buyer contacts customer support under a single unified warranty. When a custom computer fails to power on, the builder must isolate which individual part caused the issue.
+
+Many beginners wonder if they can [assemble a gaming PC safely](/video/can-beginners-put-a-gaming-pc-together-safely) without technical certifications. The assembly requires only basic screwdrivers and clear instruction manuals.
+
+However, the builder assumes full responsibility for diagnosing defective parts. They must also manage warranty claims and configure motherboard software.
+
+## Linus Tech Tips assembles a complete gaming PC step-by-step
+
+Linus Tech Tips demonstrated the practical assembly process by building a desktop computer designed for gaming workloads. The complete system cost $1974 US according to Linus Tech Tips, pairing a high-end processor with modern system components.
+
+The build centered on an Intel Core Ultra 200 plus series processor. This chip features six performance cores boosting up to 5.3 gigahertz (billions of cycles per second).
+
+Linus Tech Tips mounted the processor onto an ASRock B860M Pro-A motherboard, which cost $110. A $17.90 Thermalright Assassin X 120 Refined SE air cooler provided the required heat dissipation.
+
+To store operating system files and games, Linus Tech Tips installed a Patriot P300 solid-state drive. Linus Tech Tips noted that builders should slide the drive into its slot at about a 25° angle before pressing down the retention clip.
+
+To handle visual processing, the machine utilized an ASUS Prime GeForce RTX 5070 Ti graphics card with 16 gigabytes of memory. Electrical power was delivered by an 850 W Seasonic unit from the Focus GX V4 ATX 3 2024 line. The components were housed inside a $60 compact chassis (protective case).
+
+Linus Tech Tips placed the motherboard into the chassis at a 30° angle. This angle helped align the rear ports with the metal backplate.
+
+Linus Tech Tips emphasized that builders must align brass standoffs carefully. Linus Tech Tips warned that extra standoffs under the board can scratch traces (printed electrical wires) and kill the hardware.
+
+Linus Tech Tips noted that connecting front panel leads is "one of the trickiest parts of building a PC for new builders." Small pins must match up exactly with motherboard headers (pin connectors) to make the external power button work.
 
 ## Sources
 
-- [amd.com/en/products/processors/chipsets/am5.html](https://www.amd.com/en/products/processors/chipsets/am5.html) — amd.com
-- [DDR5 SDRAM - Wikipedia](https://en.wikipedia.org/wiki/DDR5_SDRAM) — wikipedia.org
-- [Introduction - 2.0 - ID:336521 | ATX Version 3.0 Multi Rail Desktop Platform Power Supply](https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/atx-version-3-0-multi-rail-desktop-platform-power-supply-design-guide/2.0/) — intel.com
-- [ATX Version 3 Multi Rail Desktop Platform Power Supply Design Guide](https://www.intel.com/content/www/us/en/content-details/336521/atx-version-3-multi-rail-desktop-platform-power-supply-design-guide.html) — intel.com
-- [Specifications](https://pcisig.com/specifications) — pcisig.com
-- [PCIe* Add-in Card 12V-2x6 Auxiliary Power Connector Sideband Signals - 2.1 - ID:336521 | ATX Version 3.0 Multi Rail Desktop Platform Power Supply](https://edc.intel.com/content/www/us/en/design/ipla/software-development-platforms/client/platforms/alder-lake-desktop/atx-version-3-0-multi-rail-desktop-platform-power-supply-design-guide/2.1/pcie-add-in-card-12v-2x6-auxiliary-power-connector-sideband-signals/) — intel.com
-- [An Overview of ANSI/ESD S20.20 | EOS/ESD Association, Inc.](https://www.esda.org/news/an-overview-of-ansiesd-s20-20/) — esda.org
-- [Esd s20 20](https://www.tuvsud.com/en-id/services/auditing-and-system-certification/esd-s20-20) — tuvsud.com
-- [ASSIST-QuickSearch Document Details](https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=283860) — dla.mil
+- [Homebuilt computer - Wikipedia](https://en.wikipedia.org/wiki/Homebuilt_computer) — wikipedia.org
+- [2025 YesWeBuild Ebook (PDF)](https://download-2.msi.com/archive/mnu_exe/pdf/2025/2025_YesWeBuild_Ebook.pdf) — msi.com
+- [Overheating Symptoms and Troubleshooting for Intel® Boxed Processors](https://www.intel.com/content/www/us/en/support/articles/000005791.html) — intel.com
 - [True 4k Gaming PC (2026) - Classic LTT Build Guide](https://www.youtube.com/watch?v=zIgmgMLZrrc) — Linus Tech Tips on YouTube
