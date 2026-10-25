@@ -97,7 +97,7 @@ As these complex systems develop, understanding their security implications and 
 
 Regulatory developments will also play a significant role. As passive income generation methods become more widespread, governments and financial bodies may introduce new guidelines or classifications for these activities.
 
-Clarity on issues such as tax implications, investor protections, and licensing requirements for staking pools could heavily influence participation rates and the overall viability of certain models. The broader discussion around [Crypto Regulation and What It Means for US Investors](/video/crypto-regulation-s-clarity-act-us-legislative-hurdles) underscores the importance of this evolving regulatory environment.
+Clarity on issues such as tax implications, investor protections, and licensing requirements for staking pools could heavily influence participation rates and the overall viability of certain models. The broader discussion around [Cryptocurrency Regulation and What It Means for US Users](/video/crypto-regulation-s-clarity-act-us-legislative-hurdles) underscores the importance of this evolving regulatory environment.
 
 Finally, the technical demands for running nodes are likely to become both more sophisticated and more user-friendly. While operating a full mainnet node still requires a high degree of technical expertise and the responsibility to maintain solid uptime, the development of specialized tools and simpler interfaces could gradually lower the barrier to entry.
 
