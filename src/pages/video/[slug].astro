@@ -165,6 +165,17 @@ const relatedGuides = Object.values(import.meta.glob('../../content/guides/*.md'
   })
   .slice(0, 3);
 
+// 25/10 (Jacob): afslutning under artiklen - én sætning i hans stemme + "More on <emne>" og
+// "Explore our guides". Guide-knappen går direkte til guiden om artiklens emne (første emne først),
+// findes der ingen, til oversigten /guides/.
+const guideTilEmne = (() => {
+  const alle = Object.values(import.meta.glob('../../content/guides/*.md', { eager: true })).map((g: any) => g.frontmatter);
+  const harTag = (g: any, t: string) => (Array.isArray(g.tags) ? g.tags : [g.tags]).includes(t);
+  for (const t of tagsArray) { const g = alle.find((x: any) => harTag(x, t)); if (g?.slug) return `/guides/${g.slug}`; }
+  return '/guides/';
+})();
+const afslutningEmne = tagsArray[0] || null;
+
 
 // Forrige/næste artikel INDEN FOR SAMME EMNE (13/10, Jacob): før valgtes de efter dato på tværs
 // af alle emner ("Open-source AI dual-use" ved siden af "Rust SQLite"). Nu: samme første emne,
@@ -518,6 +529,20 @@ const metaDesc = rawMeta.length > 157
        over tre linjer ("Sep / 30, / 2026"). Nu holdes hver del samlet og ombrydes hele. */
     .byline-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 7px; font-size: 0.83rem; color: #6b7280; font-weight: 500; }
     .byline-meta > * { white-space: nowrap; }
+    /* 25/10: afslutning under artiklen (Jacobs stemme + to knapper). Rolig, ingen boks-skrig. */
+    .artikel-afslutning { margin: 28px 0 8px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+    .afslutning-tekst { margin: 0 0 14px; max-width: 600px; font-size: 1.02rem; line-height: 1.6; }
+    /* Samme linkfarve som artiklens øvrige links (FARVEREGEL: var(--teal-text) til tekst). */
+    .afslutning-tekst a { color: var(--teal-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .afslutning-knapper { display: flex; flex-wrap: wrap; gap: 10px; }
+    .afslutning-knap { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #2563eb; color: #fff; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+    .afslutning-knap:hover { background: #1d4ed8; }
+    .afslutning-knap-2 { background: transparent; color: #2563eb; border: 2px solid #2563eb; }
+    .afslutning-knap-2:hover { background: #eff6ff; }
+    body.dark-mode .afslutning-tekst a { color: #22d3ee; }
+    body.dark-mode .afslutning-knap-2 { color: #93c5fd; border-color: #93c5fd; }
+    body.dark-mode .afslutning-knap-2:hover { background: #172033; }
+    @media (max-width: 600px) { .afslutning-knap { flex: 1 1 100%; } }
     body.dark-mode .byline-meta { color: #9ca3af; }
 
     /* Kildeangivelse: gør det utvetydigt at videoen er en tredjeparts værk. */
@@ -1287,6 +1312,16 @@ const metaDesc = rawMeta.length > 157
 
         {/* Indholdsfortegnelsen er flyttet op under billedet (13/10) */}
         <article class="video-content" set:html={artikelResten}></article>
+
+        {!video.frontmatter.isShort && (
+          <aside class="artikel-afslutning" aria-label="More from TechFeedWatch">
+            <p class="afslutning-tekst">I hope this gave you a clearer picture, but always check other sources too. Spotted an error or have a question? <a href="/contact">Write to me</a>.</p>
+            <div class="afslutning-knapper">
+              {afslutningEmne && <a class="afslutning-knap" href={`/tag/${tagSlug(afslutningEmne)}`}>More on {afslutningEmne}</a>}
+              <a class="afslutning-knap afslutning-knap-2" href={guideTilEmne}>Explore our guides</a>
+            </div>
+          </aside>
+        )}
 
         <div id="tfw-inline-recs" data-recs={JSON.stringify(inlineRecs)} hidden></div>
         <script is:inline>
