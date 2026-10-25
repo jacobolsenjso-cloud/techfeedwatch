@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 206** — brug kun v206). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 207** — brug kun v207). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 206** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 19:15, statusfil v206):** Live (main `ad4894ac`): 8 omskrivninger om dagen, 4 ad gangen (ca. 40 min); "Updated <dato>" vises ved siden af den faste udgivelsesdato, kun når det læseren ser er ændret (382 artikler fik den bagud). Pris ca. 38 kr/dag; 429 i kø, ca. 2 mdr. AdSense: Jacob tænker at søge om ca. 14 dage - mit råd: søg når de 37 viste er omskrevet, stikprøven har vist få fejl i ca. 10 dage, og 3 sider er bedømt (ca. 10.-14/11). Næste: første kørsel 26/10 kl. 07:37.
+**Seneste for techfeedwatch (25/10-2026 kl. 19:20, statusfil v207):** Live (main `ad4894ac`): 8 omskrivninger om dagen (4 ad gangen), ærlige "Updated"-datoer. Pris ca. 38 kr/dag; 429 i kø, ca. 2 mdr. AdSense-afslaget var "Low value content". Råd: søg når de 37 viste er omskrevet, stikprøven har vist få fejl i ca. 10 dage, og 3 sider er bedømt (ca. 10.-14/11). Næste: første kørsel 26/10 kl. 07:37.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 19:20 - Rettelse til v206 (AdSense-vurderingen)
+- **Rettelse:** v206 sagde, at sitet er "maskinskrevet ud fra andres videoer". Det er forkert. Opskriften er: Googles søgespørgsmål først → research på nettet (målt: 7-8 websider pr. artikel) → videoen kun som supplement (koden stopper artiklen over 30 % videoandel; målt 20-25 %).
+- **AdSense:** afslaget var "Low value content" (Jacob). Det, der stadig kan se ud som lav værdi: 429 gamle artikler fra ældre, mere video-baserede opskrifter (dem retter de 8 om dagen); mange AI-skrevne artikler i samme form; ingen egen erfaring eller noget, man kun finder her - sitets 35 værktøjer, ordbog og guider er det originale og bør stå tydeligt, før der søges.
+- Lære: Jeg beskrev robotten med en gammel formulering i stedet for den opskrift, koden kører. Beskriv altid opskriften ud fra koden og de målte tal (websider, videoandel), ikke ud fra hukommelsen.
+
 
 ### 25/10-2026 kl. 19:15 - 8 om dagen og ærlige "Updated"-datoer (Jacobs ønske)
 - **8 omskrivninger om dagen** (Jacob, før 2): `omskriv-gamle.mjs` kører 4 ad gangen. Målt: 2 samtidig tog 19 min, begge bestod slutkontrollen (Clarity Act- og fintech-artiklen, begge Google-viste; begge fik AI-billede, de havde intet). Job-loft 150 min.
