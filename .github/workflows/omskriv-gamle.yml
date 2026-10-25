@@ -53,7 +53,7 @@ jobs:
 
       # 23/10: omskrivningen kører gennem add-video.mjs og skal have hjernen med,
       # præcis som den daglige robot — ellers omskrives gamle artikler UDEN Jacobs
-      # stemme. continue-on-error: hjernen er valgfri og må aldrig vælte en kørsel.
+      # stemme. Mangler hjernen, stopper omskrivningen (25/10) - intet skrives uden Jacobs stemme.
       - name: Hent hjernen (jacob-hjerne, privat, kun læsning)
         continue-on-error: true
         uses: actions/checkout@v5

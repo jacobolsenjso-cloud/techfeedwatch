@@ -4,9 +4,10 @@
 //
 // BREMSEN (Jacobs ja 21/10): holdninger kommer kun med, når artiklens emne
 // rammer et afsnit i emner.md - og prompten må højst skrive ÉT kort
-// perspektivafsnit pr. artikel. Rammer intet, får prompten kun stilen.
-// Findes _hjerne ikke (lokal kørsel, manglende nøgle), skriver robotten som
-// før - hjernen er altid valgfri og må aldrig kunne vælte en kørsel.
+// perspektivafsnit pr. artikel (25/10, Jacob: "mere plads, men kun der hvor det giver mening":
+// 3-6 sætninger, før 2-4). Rammer intet, får prompten kun stilen.
+// Findes _hjerne ikke (lokal kørsel, manglende nøgle), returnerer laesHjerne null - og
+// siden 25/10 skriver robotten så INGEN artikel (add-video.mjs/omskriv-gamle.mjs stopper).
 import fs from 'node:fs';
 
 const DIR = process.env.HJERNE_DIR || '_hjerne';
@@ -67,7 +68,7 @@ export function stemmeBlok(hjerne, tekst) {
     // 25/10: beliefs.md blev heller aldrig brugt; erfaringer blev klippet ved 2.500 af 4.053 tegn.
     if (hjerne.beliefs) dele.push(`OWNER'S GENERAL POSITIONS (use only where one genuinely bears on this topic):\n${hjerne.beliefs.slice(0, 4000)}`);
     if (hjerne.erfaringer) dele.push(`OWNER'S OWN EXPERIENCE (background - use only what is stated, never invent more):\n${hjerne.erfaringer.slice(0, 8000)}`);
-    dele.push(`EXCEPTION TO RULE 18: you MAY write at most ONE short passage (2-4 sentences) in the first person, presenting the owner's stated position or experience above, placed where the article's own facts support it (often the video section or a closing section). Use ONLY what is stated above - never invent personal details, and attribute any figure to its source as usual. If the position does not genuinely bear on the reader's question, write NO first-person content at all.`);
+    dele.push(`EXCEPTION TO RULE 18: when the owner's position or experience above genuinely bears on the reader's question, WRITE ONE passage (3-6 sentences) in the first person, presenting the owner's stated position or experience above, placed where the article's own facts support it (often the video section or a closing section). Use ONLY what is stated above - never invent personal details, and attribute any figure to its source as usual. If the position does not genuinely bear on the reader's question, write NO first-person content at all - only where it makes sense. The passage must add the owner's view, a safety point or a lesson from his experience; it must never repeat facts the article already gives.`);
   } else {
     dele.push(`No stated position matches this topic: write NO first-person content (rule 18 applies in full).`);
   }

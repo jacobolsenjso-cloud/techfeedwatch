@@ -388,7 +388,8 @@ export function fyldKandidater(md) {
   const ud = [];
   prosa(md).slice(1).forEach((b) => {
     for (const s of saetninger(b.tekst)) {
-      if (/\d|\]\(|:\s*$/.test(s) || antalOrd(s) < 5 || ud.includes(s)) continue;
+      // 25/10: jeg-sætninger (ejerens eget syn fra hjernen) er aldrig "fyld" - de må ikke fjernes her.
+      if (/\d|\]\(|:\s*$/.test(s) || /\b(I|I'm|I've|I'd|my|me)\b/.test(s) || antalOrd(s) < 5 || ud.includes(s)) continue;
       ud.push(s);
     }
   });

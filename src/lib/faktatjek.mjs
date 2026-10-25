@@ -207,7 +207,9 @@ export function klassetrin(md) {
   };
 }
 
-export function forenklPrompt(md, maal = KLASSETRIN_MAAL) {
+// 25/10: jegStemme = artiklen har ejerens jeg-afsnit (Jacobs hjerne). Før stod der altid "No first
+// person" her, og forenklingen fjernede Jacobs afsnit igen (målt: 2 artikler med hjernen, 0 jeg-afsnit).
+export function forenklPrompt(md, maal = KLASSETRIN_MAAL, jegStemme = false) {
   return `Rewrite the article below so a curious 15-year-old can read it easily (Flesch-Kincaid grade ${maal}). It is for a general audience, written like a good newspaper explainer.
 
 Rules:
@@ -216,7 +218,7 @@ Rules:
 - Keep EVERY number, date, name, quotation and source attribution exactly as written ("According to X" stays with the same figure).
 - Keep every "## " heading word for word, every markdown link, every list and table, and the order of the sections.
 - Do not add facts, opinions or examples. Do not remove facts.
-- No first person, no hype words.
+${jegStemme ? '- Keep the ONE first-person passage (the site owner\'s own view) - simplify its sentences, but keep it in the first person and keep its meaning. No other first person, no hype words.' : '- No first person, no hype words.'}
 Output ONLY the rewritten article in markdown.
 
 ARTICLE:
