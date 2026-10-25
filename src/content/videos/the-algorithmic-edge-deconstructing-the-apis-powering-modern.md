@@ -7,6 +7,7 @@ channelTitle: "Algo Trading X"
 channelId: "UCZorZ8KWmTON7aO84JJBwlQ"
 publishedAt: "2024-06-09T15:00:07Z"
 date: "2026-07-17"
+updated: "2026-08-19"
 tags:
   - "Investing & Trading"
   - "Fintech"

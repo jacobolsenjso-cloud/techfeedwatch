@@ -5,6 +5,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2021-03-15T04:56:17Z"
 date: "2026-07-25"
+updated: "2026-09-12"
 tags:
   - "Crypto"
   - "Fintech"

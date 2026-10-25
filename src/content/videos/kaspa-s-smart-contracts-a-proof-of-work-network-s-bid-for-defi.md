@@ -6,6 +6,7 @@ channelTitle: "Gerhard - Bitcoin Strategy"
 channelId: "UCfQaLLoJYaxg9ZNJVHCR9Lg"
 publishedAt: "2026-07-18T11:45:03Z"
 date: "2026-07-19"
+updated: "2026-08-18"
 tags:
   - "Crypto"
   - "Fintech"

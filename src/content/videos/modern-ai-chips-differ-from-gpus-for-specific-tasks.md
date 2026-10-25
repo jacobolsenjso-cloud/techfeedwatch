@@ -5,6 +5,7 @@ channelTitle: "list7tech"
 channelId: "UCWLqARKSC0oVrFsTV5LaYrQ"
 publishedAt: "2026-03-08T16:01:18Z"
 date: "2026-09-01"
+updated: "2026-09-14"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

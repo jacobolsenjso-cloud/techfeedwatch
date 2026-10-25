@@ -8,6 +8,7 @@ channelTitle: "Zubair Trabzada | AI Workshop"
 channelId: "UC2b2wgxm0vFjQfJJ0iRcFRw"
 publishedAt: "2026-03-23T14:00:10Z"
 date: "2026-07-26"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "SEO"

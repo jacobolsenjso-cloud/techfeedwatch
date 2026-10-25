@@ -6,6 +6,7 @@ channelTitle: "Coin Bureau"
 channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
 publishedAt: "2025-01-17T14:00:54Z"
 date: "2026-07-25"
+updated: "2026-08-17"
 tags:
   - "Crypto"
   - "AI & Tech"

@@ -5,6 +5,7 @@ channelTitle: "Mac Video Magic"
 channelId: "UCUyUBvmOh4JGVmVIigbYG7A"
 publishedAt: "2026-07-08T13:00:22Z"
 date: "2026-10-02"
+updated: "2026-10-16"
 tags:
   - "AI Video"
   - "Productivity"

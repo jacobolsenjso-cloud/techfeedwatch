@@ -5,6 +5,7 @@ channelTitle: "Ai Lockup"
 channelId: "UC2Jl-LpV_J8l-az2GNG3VUQ"
 publishedAt: "2026-09-19T12:20:11Z"
 date: "2026-09-24"
+updated: "2026-10-23"
 tags:
   - "AI Video"
   - "AI & Tech"

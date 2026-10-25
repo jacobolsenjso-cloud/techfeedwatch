@@ -7,6 +7,7 @@ channelTitle: "Luc Bermond - EN"
 channelId: "UCuZr-oSyZ3hndfWOvf3r_KQ"
 publishedAt: "2026-06-11T18:30:33Z"
 date: "2026-06-15"
+updated: "2026-08-15"
 tags:
   - "AI & Tech"
   - "Business & Money"

@@ -5,6 +5,7 @@ channelTitle: "BigWiz Media"
 channelId: "UCim8nS9qSKA1r7NMWrSL-JQ"
 publishedAt: "2026-07-12T15:15:31Z"
 date: "2026-07-14"
+updated: "2026-09-14"
 tags:
   - "AI Video"
   - "Productivity"

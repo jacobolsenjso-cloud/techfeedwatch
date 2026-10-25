@@ -5,6 +5,7 @@ channelTitle: "Advanced Lux"
 channelId: "UCEK5gqaShDKc-JT-NZgpzvA"
 publishedAt: "2026-06-30T17:15:29Z"
 date: "2026-09-27"
+updated: "2026-10-21"
 tags:
   - "Investing & Trading"
   - "Quantum Computing"

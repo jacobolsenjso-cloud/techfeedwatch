@@ -5,6 +5,7 @@ channelTitle: "theinformationsecurity"
 channelId: "UCFCotscGprUZN1DzaQ7xLLA"
 publishedAt: "2026-07-12T18:30:03Z"
 date: "2026-07-28"
+updated: "2026-09-14"
 tags:
   - "AI & Tech"
   - "Cybersecurity"

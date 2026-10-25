@@ -6,6 +6,7 @@ channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"
 publishedAt: "2026-07-07T11:00:35Z"
 date: "2026-08-01"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
 summary: "Extending AI agents requires a strategic choice between Model Context Protocol (MCP) and dedicated skills. This decision impacts an agent's performance, adaptability, and resource utilization when interacting with Large Language Models (LLMs). Understanding context engineering is key to optimizing AI agent functionality for specific workloads."

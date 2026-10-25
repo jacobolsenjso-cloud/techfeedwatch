@@ -5,6 +5,7 @@ channelTitle: "Mad Hat"
 channelId: "UC7e_BXvNfjKFCgqR4LkUe9A"
 publishedAt: "2026-05-17T01:42:49Z"
 date: "2026-08-01"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Cybersecurity"

@@ -5,6 +5,7 @@ channelTitle: "Human Error"
 channelId: "UCFsnpnwQf94VGfCp5wwIGOw"
 publishedAt: "2026-09-02T13:30:07Z"
 date: "2026-10-07"
+updated: "2026-10-12"
 tags:
   - "Cybersecurity"
 summary: "A data breach occurs when unauthorized individuals view, copy, or exfiltrate sensitive personal or corporate records. While broad security incidents disrupt general system operations, breaches specifically compromise the confidentiality or integrity of protected records. Organizations face heavy disclosure rules, severe operational disruptions, and multimillion-dollar recovery bills."

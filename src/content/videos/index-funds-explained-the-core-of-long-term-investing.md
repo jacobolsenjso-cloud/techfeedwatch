@@ -6,6 +6,7 @@ channelTitle: "WealthBlueprint"
 channelId: "UCeiG-2-Qed1YiDASqXowIcQ"
 publishedAt: "2026-05-22T03:15:09Z"
 date: "2026-07-30"
+updated: "2026-08-19"
 tags:
   - "Investing & Trading"
   - "Business & Money"

@@ -5,6 +5,7 @@ channelTitle: "SIBB e.V."
 channelId: "UCzmn1AbPjcTNkatYuf64zjQ"
 publishedAt: "2026-09-24T14:01:22Z"
 date: "2026-10-13"
+updated: "2026-10-15"
 tags:
   - "Cybersecurity"
 summary: "Information security requirements are mandatory specifications, controls, and baseline practices designed to safeguard business assets against data breaches, unauthorized modifications, and operational disruption. These criteria operate across four distinct control areas: organizational, technological, physical, and people. Driven by standard frameworks like ISO/IEC 27001 and NIST SP 800-53, successful compliance depends on tailoring baseline controls to an organization's specific risk profile and executive accountability."

@@ -8,6 +8,7 @@ channelTitle: "HPC Knowledge Portal"
 channelId: "UCy2wVPPOIttCsFCsGymAWoA"
 publishedAt: "2026-07-23T10:31:29Z"
 date: "2026-07-25"
+updated: "2026-08-17"
 tags:
   - "Quantum Computing"
   - "Business & Money"

@@ -6,6 +6,7 @@ channelTitle: "a16z"
 channelId: "UC9cn0TuPq4dnbTY-CBsm8XA"
 publishedAt: "2017-12-09T00:55:42Z"
 date: "2026-07-23"
+updated: "2026-08-17"
 tags:
   - "Crypto"
   - "Fintech"

@@ -5,6 +5,7 @@ channelTitle: "ColdFusion"
 channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"
 publishedAt: "2026-03-01T01:58:18Z"
 date: "2026-08-09"
+updated: "2026-10-13"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

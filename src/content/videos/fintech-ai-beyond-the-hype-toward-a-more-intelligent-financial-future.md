@@ -6,6 +6,7 @@ channelTitle: "Tech Pulse Labs"
 channelId: "UC0Yl4MdqY5y2jl2FT2ZpPtw"
 publishedAt: "2026-03-20T17:46:20Z"
 date: "2026-07-28"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "Fintech"

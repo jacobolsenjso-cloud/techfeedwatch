@@ -5,6 +5,7 @@ channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"
 publishedAt: "2026-03-14T07:08:06Z"
 date: "2026-07-28"
+updated: "2026-09-14"
 tags:
   - "AI Agents"
   - "Automation"

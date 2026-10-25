@@ -8,6 +8,7 @@ channelTitle: "Jeremy Quainoo"
 channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
 publishedAt: "2023-02-26T22:33:38Z"
 date: "2026-07-17"
+updated: "2026-08-18"
 tags:
   - "Fintech"
   - "Business & Money"

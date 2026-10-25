@@ -5,6 +5,7 @@ channelTitle: "Vaibhav Sisinty"
 channelId: "UClXAalunTPaX1YV185DWUeg"
 publishedAt: "2026-06-19T12:00:07Z"
 date: "2026-07-31"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Productivity"

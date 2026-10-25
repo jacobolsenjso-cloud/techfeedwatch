@@ -5,6 +5,7 @@ channelTitle: "Code Brew Labs"
 channelId: "UCh6EaKNcFhtxgF27KUQGw1w"
 publishedAt: "2025-12-10T14:15:07Z"
 date: "2026-07-12"
+updated: "2026-09-14"
 tags:
   - "Fintech"
   - "AI & Tech"

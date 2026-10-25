@@ -6,6 +6,7 @@ channelTitle: "ERI"
 channelId: "UCJdCu3ZJ1a3qc0FrOi2N_mQ"
 publishedAt: "2026-06-24T13:34:01Z"
 date: "2026-08-04"
+updated: "2026-08-16"
 tags:
   - "AI & Tech"
   - "Fintech"

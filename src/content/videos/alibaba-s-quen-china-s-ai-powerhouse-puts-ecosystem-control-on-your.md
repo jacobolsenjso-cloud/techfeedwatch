@@ -8,6 +8,7 @@ channelTitle: "Alejavi Rivera"
 channelId: "UCxcDzs-4quJV4QsairlFYNg"
 publishedAt: "2026-05-10T17:00:21Z"
 date: "2026-06-13"
+updated: "2026-08-14"
 tags:
   - "AI & Tech"
   - "AI Video"

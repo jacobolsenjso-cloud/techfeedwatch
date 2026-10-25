@@ -7,6 +7,7 @@ channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"
 publishedAt: "2021-02-08T16:55:52Z"
 date: "2026-07-11"
+updated: "2026-08-19"
 tags:
   - "SEO"
   - "Coding"

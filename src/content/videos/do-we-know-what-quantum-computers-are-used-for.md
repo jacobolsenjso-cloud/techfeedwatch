@@ -5,6 +5,7 @@ channelTitle: "New Scientist"
 channelId: "UCt5OA3LingpZBeEyPYmputQ"
 publishedAt: "2026-05-27T16:59:50Z"
 date: "2026-09-30"
+updated: "2026-10-25"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"

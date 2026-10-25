@@ -5,6 +5,7 @@ channelTitle: "AI4NTP (AI 4 Non Techy People)"
 channelId: "UC5edDDrIIqeayu8_CXBzKAg"
 publishedAt: "2026-05-22T00:55:23Z"
 date: "2026-07-29"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "SEO"

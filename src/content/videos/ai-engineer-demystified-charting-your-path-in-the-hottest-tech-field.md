@@ -6,6 +6,7 @@ channelTitle: "CodeHead"
 channelId: "UCFVteOob_YXJHPaGTqlDV2Q"
 publishedAt: "2025-07-07T15:00:56Z"
 date: "2026-07-12"
+updated: "2026-08-16"
 tags:
   - "AI & Tech"
   - "Coding"

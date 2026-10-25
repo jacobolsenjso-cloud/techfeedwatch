@@ -7,6 +7,7 @@ channelTitle: "D-Wave"
 channelId: "UC6_etbfDnWMxAuYj9qD1qmA"
 publishedAt: "2026-04-07T09:03:00Z"
 date: "2026-07-16"
+updated: "2026-08-19"
 tags:
   - "Quantum Computing"
   - "Business & Money"

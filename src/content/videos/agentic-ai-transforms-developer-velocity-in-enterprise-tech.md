@@ -5,6 +5,7 @@ channelTitle: "Google Cloud Tech"
 channelId: "UCJS9pqu9BzkAMNTmzNMNhvg"
 publishedAt: "2026-07-09T19:00:16Z"
 date: "2026-07-30"
+updated: "2026-08-16"
 tags:
   - "AI Agents"
   - "Automation"

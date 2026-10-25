@@ -7,6 +7,7 @@ channelTitle: "Future Business Tech"
 channelId: "UCGBO6EahCqQSyXIws1MQdDg"
 publishedAt: "2023-10-28T10:00:46Z"
 date: "2026-07-22"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Business & Money"

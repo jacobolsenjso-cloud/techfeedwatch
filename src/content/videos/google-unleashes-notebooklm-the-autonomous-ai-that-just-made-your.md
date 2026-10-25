@@ -7,6 +7,7 @@ channelTitle: "Ai Podcast "
 channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
 publishedAt: "2026-06-16T13:03:39Z"
 date: "2026-06-18"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "Automation"

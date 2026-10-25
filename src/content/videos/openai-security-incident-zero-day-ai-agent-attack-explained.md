@@ -6,6 +6,7 @@ channelTitle: "Caleb Writes Code"
 channelId: "UCuU9jE4MHHEIyYMbDfUPSew"
 publishedAt: "2026-07-24T06:53:36Z"
 date: "2026-08-08"
+updated: "2026-08-18"
 tags:
   - "Cybersecurity"
   - "AI & Tech"

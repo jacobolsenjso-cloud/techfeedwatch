@@ -7,6 +7,7 @@ channelTitle: "ColdFusion"
 channelId: "UC4QZ_LsYcvcq7qOsOhpAX4A"
 publishedAt: "2017-04-01T07:50:25Z"
 date: "2026-07-23"
+updated: "2026-08-17"
 tags:
   - "AR & VR"
   - "Productivity"

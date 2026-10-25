@@ -5,6 +5,7 @@ channelTitle: "Michael Kearse | Discussing Self Directed IRAs"
 channelId: "UCSjQQhJwfU9SfMJ2DWeenMg"
 publishedAt: "2026-06-11T13:48:22Z"
 date: "2026-07-30"
+updated: "2026-08-18"
 tags:
   - "Business & Money"
 summary: "Building wealth intentionally moves beyond traditional saving, emphasizing strategic capital allocation and diverse investment approaches. This paradigm shift includes understanding risk, liquidity, and embracing alternative assets to achieve long-term financial independence. It requires a personal re-evaluation of how capital serves both security and personal fulfillment. Modern wealth creation integrates entrepreneurial ventures and self-directed investment vehicles, offering pathways previously less accessible."

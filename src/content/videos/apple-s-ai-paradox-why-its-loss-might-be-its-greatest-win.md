@@ -8,6 +8,7 @@ channelTitle: "Marques Brownlee"
 channelId: "UCBJycsmduvYEL83R_U4JriQ"
 publishedAt: "2026-07-08T19:44:58Z"
 date: "2026-07-08"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
 summary: "Apple's approach to the burgeoning AI sector has prompted debate, with some observers criticizing its perceived slow entry compared to rivals. While companies like Google and OpenAI rapidly deployed advanced generative AI software, Apple maintained a more deliberate strategy, focusing on its integrated hardware ecosystem. This calculated positioning suggests Apple prioritizes on-device AI and user privacy over bleeding-edge feature releases, aiming for long-term platform dominance rather than winning a software-centric 'AI race.'"

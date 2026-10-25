@@ -6,6 +6,7 @@ channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
 publishedAt: "2026-08-07T21:55:56Z"
 date: "2026-08-10"
+updated: "2026-08-16"
 tags:
   - "AI Video"
   - "AI & Tech"

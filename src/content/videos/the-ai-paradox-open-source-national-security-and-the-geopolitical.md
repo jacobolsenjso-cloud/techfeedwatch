@@ -6,6 +6,7 @@ channelTitle: "Virtual Protocol"
 channelId: "UCj_hvdRNIeZ3NlJVPAfg4Tw"
 publishedAt: "2026-07-26T15:45:12Z"
 date: "2026-07-26"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "Business & Money"

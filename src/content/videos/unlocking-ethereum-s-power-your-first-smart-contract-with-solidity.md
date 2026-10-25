@@ -7,6 +7,7 @@ channelTitle: "Block Explorer"
 channelId: "UCTJxrTdQWFGtKxTeincy9uA"
 publishedAt: "2022-01-01T01:13:33Z"
 date: "2026-07-12"
+updated: "2026-08-19"
 tags:
   - "Coding"
   - "Crypto"

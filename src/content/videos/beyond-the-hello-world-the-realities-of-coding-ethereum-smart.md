@@ -8,6 +8,7 @@ channelTitle: "Dapp University"
 channelId: "UCY0xL8V6NzzFcwzHCgB8orQ"
 publishedAt: "2019-09-27T15:30:01Z"
 date: "2026-07-14"
+updated: "2026-08-17"
 tags:
   - "Coding"
   - "Crypto"

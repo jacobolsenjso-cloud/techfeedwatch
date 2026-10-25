@@ -6,6 +6,7 @@ channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
 publishedAt: "2026-08-05T20:58:30Z"
 date: "2026-08-06"
+updated: "2026-08-16"
 tags:
   - "Investing & Trading"
   - "Hardware & Chips"

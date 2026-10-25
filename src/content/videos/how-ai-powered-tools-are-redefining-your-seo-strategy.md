@@ -5,6 +5,7 @@ channelTitle: "Daniel Agrici"
 channelId: "UCuCpyjRfW157950O5VBaWlw"
 publishedAt: "2026-02-09T23:38:43Z"
 date: "2026-07-26"
+updated: "2026-09-15"
 tags:
   - "AI & Tech"
   - "SEO"

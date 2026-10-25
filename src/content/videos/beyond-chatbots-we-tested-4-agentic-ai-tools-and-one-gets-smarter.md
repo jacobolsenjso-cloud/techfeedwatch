@@ -8,6 +8,7 @@ channelTitle: "Parker Prompts"
 channelId: "UCaNk22cLid93kifuVbVapcQ"
 publishedAt: "2026-07-02T12:30:25Z"
 date: "2026-07-02"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Automation"

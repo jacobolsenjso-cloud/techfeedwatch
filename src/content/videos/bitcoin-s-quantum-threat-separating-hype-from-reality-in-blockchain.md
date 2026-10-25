@@ -5,6 +5,7 @@ channelTitle: "Coin Bureau"
 channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
 publishedAt: "2026-03-24T14:01:07Z"
 date: "2026-07-25"
+updated: "2026-09-13"
 tags:
   - "Quantum Computing"
   - "Crypto"

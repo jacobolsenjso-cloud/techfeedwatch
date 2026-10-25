@@ -7,6 +7,7 @@ channelTitle: "Sabine Hossenfelder"
 channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
 publishedAt: "2025-10-19T15:00:15Z"
 date: "2026-07-18"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
 summary: "Current mainstream AI models, predominantly deep neural networks like Large Language Models (LLMs), face inherent architectural constraints preventing them from achieving Artificial General Intelligence (AGI). These limitations stem from their purpose-bound design, susceptibility to prompt injection, and an inability to truly generalize or perform abstract reasoning beyond their training data. While useful for specific tasks, their foundational structure suggests they will not independently evolve into human-level intelligence, necessitating different research paths for AGI."

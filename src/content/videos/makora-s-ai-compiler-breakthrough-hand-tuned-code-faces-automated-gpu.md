@@ -6,6 +6,7 @@ channelTitle: "SemiAnalysis"
 channelId: "UCf_KhBXw5TIV0A7butjgFhg"
 publishedAt: "2026-05-27T22:15:06Z"
 date: "2026-07-29"
+updated: "2026-08-18"
 tags:
   - "Hardware & Chips"
   - "Automation"

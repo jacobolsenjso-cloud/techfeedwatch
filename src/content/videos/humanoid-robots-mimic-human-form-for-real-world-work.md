@@ -5,6 +5,7 @@ channelTitle: "Technology with Tyler"
 channelId: "UCVj2deXZ1Rk88d863VCTInw"
 publishedAt: "2026-07-25T17:00:35Z"
 date: "2026-10-24"
+updated: "2026-10-25"
 tags:
   - "Robotics"
   - "Automation"

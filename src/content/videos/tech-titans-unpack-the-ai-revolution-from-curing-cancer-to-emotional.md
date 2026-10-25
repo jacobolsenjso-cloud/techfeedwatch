@@ -7,6 +7,7 @@ channelTitle: "BBC World Service"
 channelId: "UCQXHTFnQYFTqN0MqmNh9EIA"
 publishedAt: "2024-08-10T11:00:31Z"
 date: "2026-07-11"
+updated: "2026-08-19"
 tags:
   - "Robotics"
   - "Automation"

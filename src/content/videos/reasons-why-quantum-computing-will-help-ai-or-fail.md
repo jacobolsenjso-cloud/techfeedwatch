@@ -5,6 +5,7 @@ channelTitle: "Half-True Universe"
 channelId: "UCB-KqR-lZRNTkraA3VjCSvQ"
 publishedAt: "2026-10-02T02:30:07Z"
 date: "2026-10-02"
+updated: "2026-10-17"
 tags:
   - "Quantum Computing"
   - "AI & Tech"

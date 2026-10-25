@@ -5,6 +5,7 @@ channelTitle: "Couchonomics with Arjun"
 channelId: "UCGvPk9BXIsM_BCRqnzkqy4Q"
 publishedAt: "2022-06-10T09:35:51Z"
 date: "2026-07-17"
+updated: "2026-09-15"
 tags:
   - "Fintech"
   - "Business & Money"

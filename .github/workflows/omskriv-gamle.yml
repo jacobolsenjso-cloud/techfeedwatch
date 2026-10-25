@@ -1,7 +1,7 @@
 name: Omskriv gamle artikler
 
 # 14/10-2026 (Jacob): de gamle artikler skrives om med robottens opskrift (omskriv-gamle.mjs).
-# 25/10 (Jacob: "én opskrift til alle artikler"): 2 om dagen, de Google har vist først, så nyeste.
+# 25/10 (Jacob: "én opskrift til alle artikler"): 8 om dagen (4 ad gangen), de Google har vist først, så nyeste.
 # Hver omskrivning genbruger artiklens AI-billede eller laver ét, hvis den ikke har et.
 # Målt 25/10 (opskrift 3, fejlforsøg medregnet): ca. 4,40 kr. pr. færdig artikel.
 # Samme kørsel: daglig stikprøve (stikproeve.mjs) og faktatjek af dem, der venter (faktatjek-gamle.mjs).
@@ -17,8 +17,8 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        # 25/10 (Jacob): 2 om dagen (før 3, kortvarigt 5) - prisen med slutkontrol
-        default: "2"
+        # 25/10 (Jacob): 8 om dagen (før 2) - 4 ad gangen, ca. 1 time
+        default: "8"
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
@@ -44,9 +44,10 @@ concurrency:
 jobs:
   omskriv:
     runs-on: ubuntu-26.04
-    # 25/10: 120 (før 90). En omskrivning med slutkontrol tager ca. 20 min; faktatjekket har sit
-    # eget budget på 30 min. Når loftet rammes, gemmes intet - derfor luft.
-    timeout-minutes: 120
+    # 25/10: 150 (før 90). 8 omskrivninger, 4 ad gangen à ca. 26 min = ca. 1 time; faktatjekket har
+    # sit eget budget på 30 min. Når loftet rammes, gemmes intet - derfor luft. (Repoet er offentligt:
+    # GitHub-minutterne er gratis.)
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v5
 
@@ -70,7 +71,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '2' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '8' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -88,6 +89,12 @@ jobs:
         run: node faktatjek-gamle.mjs --antal=${{ github.event.inputs.tjek || '10' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # 25/10 (Jacob): udgivelsesdatoen ændres aldrig; "Updated <dato>" sættes ved siden af, men KUN
+      # når det, læseren ser, er ændret (omskrivning eller rettelse). Et faktatjek uden rettelser
+      # rører ikke datoen (stamp-updated.mjs ser bort fra factChecked og targetQuestion).
+      - name: Sæt opdateringsdato på ændrede artikler
+        run: node stamp-updated.mjs
 
       # Samme kvalitetsvagt som robotten: fejl her standser jobbet, før noget gemmes.
       - name: Tjek indholdet

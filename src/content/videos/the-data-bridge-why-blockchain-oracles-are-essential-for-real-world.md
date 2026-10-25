@@ -5,6 +5,7 @@ channelTitle: "Hashoshi"
 channelId: "UCQNHKsYDGlWefzv9MAaOJGA"
 publishedAt: "2019-11-12T19:03:14Z"
 date: "2026-07-14"
+updated: "2026-09-15"
 tags:
   - "Crypto"
   - "Fintech"

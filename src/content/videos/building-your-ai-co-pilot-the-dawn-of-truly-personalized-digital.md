@@ -8,6 +8,7 @@ channelTitle: "AI Edge"
 channelId: "UC-PQKtrPhk3JXyjUleBLgQQ"
 publishedAt: "2026-05-14T19:57:57Z"
 date: "2026-07-27"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Productivity"

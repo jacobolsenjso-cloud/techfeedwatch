@@ -7,6 +7,7 @@ channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
 publishedAt: "2026-02-25T15:01:07Z"
 date: "2026-07-29"
+updated: "2026-08-18"
 tags:
   - "Hardware & Chips"
   - "Business & Money"

@@ -8,6 +8,7 @@ channelTitle: "Thinklair"
 channelId: "UCvVohTt-jDfjbeIeVKv7LbQ"
 publishedAt: "2022-04-29T12:33:58Z"
 date: "2026-07-12"
+updated: "2026-08-19"
 tags:
   - "Coding"
   - "Crypto"

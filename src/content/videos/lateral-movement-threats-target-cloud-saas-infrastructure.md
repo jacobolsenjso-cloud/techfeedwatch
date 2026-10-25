@@ -6,6 +6,7 @@ channelTitle: "Security BSides Bangalore"
 channelId: "UC0SqOU2NDDIP0bbt5OwW8Hw"
 publishedAt: "2026-07-29T08:00:20Z"
 date: "2026-07-30"
+updated: "2026-08-18"
 tags:
   - "Cybersecurity"
   - "AI & Tech"

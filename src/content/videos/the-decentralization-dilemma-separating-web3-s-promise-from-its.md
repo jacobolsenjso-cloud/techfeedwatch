@@ -5,6 +5,7 @@ channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"
 publishedAt: "2021-12-08T16:58:38Z"
 date: "2026-07-26"
+updated: "2026-09-14"
 tags:
   - "AI & Tech"
   - "Crypto"

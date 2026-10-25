@@ -5,6 +5,7 @@ channelTitle: "Drupal & SEO"
 channelId: "UC9Y8H79z97HxsS2XKjr5JSg"
 publishedAt: "2026-07-24T04:44:01Z"
 date: "2026-07-24"
+updated: "2026-09-13"
 tags:
   - "AI & Tech"
   - "SEO"

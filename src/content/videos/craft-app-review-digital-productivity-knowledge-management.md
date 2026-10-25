@@ -5,6 +5,7 @@ channelTitle: "That Mark Gilroy"
 channelId: "UCDYJ3BCFTGLylzCtKTrlkMw"
 publishedAt: "2026-07-06T13:45:26Z"
 date: "2026-08-02"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Productivity"

@@ -5,6 +5,7 @@ channelTitle: "Signal & Scale"
 channelId: "UCcj6h-CgZXHi3zqAReWgpKA"
 publishedAt: "2026-08-14T21:00:21Z"
 date: "2026-10-08"
+updated: "2026-10-14"
 tags:
   - "AI Video"
   - "AI & Tech"

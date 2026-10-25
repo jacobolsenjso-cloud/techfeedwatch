@@ -6,6 +6,7 @@ channelTitle: "technophile"
 channelId: "UCmlnPidspm1VB1uRJXfmViA"
 publishedAt: "2026-06-26T20:57:22Z"
 date: "2026-07-30"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Fintech"

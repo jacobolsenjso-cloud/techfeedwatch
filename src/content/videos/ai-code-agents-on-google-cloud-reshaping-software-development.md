@@ -6,6 +6,7 @@ channelTitle: "Google Cloud Tech"
 channelId: "UCJS9pqu9BzkAMNTmzNMNhvg"
 publishedAt: "2026-07-28T19:00:01Z"
 date: "2026-07-30"
+updated: "2026-08-16"
 tags:
   - "AI & Tech"
   - "Coding"

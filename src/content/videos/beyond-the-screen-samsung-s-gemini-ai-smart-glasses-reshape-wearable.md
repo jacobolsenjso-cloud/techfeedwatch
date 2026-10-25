@@ -7,6 +7,7 @@ channelTitle: "The Smart Glasses Guy"
 channelId: "UCG-ooPXjxaOdLwcGyWg0iog"
 publishedAt: "2026-07-22T19:33:40Z"
 date: "2026-07-27"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "AR & VR"

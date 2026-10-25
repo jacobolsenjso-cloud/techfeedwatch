@@ -5,6 +5,7 @@ channelTitle: "Rise and Fall"
 channelId: "UC_F7peDUCIRnHnhYu1FwRJQ"
 publishedAt: "2026-07-13T17:40:37Z"
 date: "2026-07-30"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Business & Money"

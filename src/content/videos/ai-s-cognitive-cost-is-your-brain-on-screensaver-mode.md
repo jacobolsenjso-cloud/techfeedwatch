@@ -5,6 +5,7 @@ channelTitle: "House of El: AI"
 channelId: "UCsoc5Ad-fC7wWie2PH4rPcw"
 publishedAt: "2026-06-20T14:30:06Z"
 date: "2026-06-22"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Productivity"

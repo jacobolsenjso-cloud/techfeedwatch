@@ -5,6 +5,7 @@ channelTitle: "Ahrefs"
 channelId: "UCWquNQV8Y0_defMKnGKrFOQ"
 publishedAt: "2026-07-15T12:00:02Z"
 date: "2026-08-03"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "SEO"

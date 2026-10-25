@@ -5,6 +5,7 @@ channelTitle: "BMFVR"
 channelId: "UCBJ1rwS7ARoCWLdab0wLD-Q"
 publishedAt: "2026-07-05T13:00:21Z"
 date: "2026-09-30"
+updated: "2026-10-18"
 tags:
   - "AR & VR"
   - "Hardware & Chips"

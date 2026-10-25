@@ -7,6 +7,7 @@ channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"
 publishedAt: "2026-02-17T18:17:11Z"
 date: "2026-07-24"
+updated: "2026-08-16"
 tags:
   - "AI Agents"
   - "Business & Money"

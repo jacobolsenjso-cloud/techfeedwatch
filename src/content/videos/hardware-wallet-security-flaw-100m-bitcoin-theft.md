@@ -5,6 +5,7 @@ channelTitle: "Coin Bureau"
 channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
 publishedAt: "2026-08-06T14:00:06Z"
 date: "2026-08-10"
+updated: "2026-08-18"
 tags:
   - "AI Video"
   - "AI & Tech"

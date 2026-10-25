@@ -7,6 +7,7 @@ channelTitle: "Malva AI"
 channelId: "UCv3ZocWMnZw3aljHs4irOzA"
 publishedAt: "2026-07-27T10:52:44Z"
 date: "2026-07-29"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "AI Video"

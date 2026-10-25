@@ -5,6 +5,7 @@ channelTitle: "Next Level AI"
 channelId: "UCh2NLN_87869ABj1LmzkAxA"
 publishedAt: "2026-06-22T07:00:31Z"
 date: "2026-06-22"
+updated: "2026-09-13"
 tags:
   - "AI & Tech"
   - "Productivity"

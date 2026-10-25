@@ -7,6 +7,7 @@ channelTitle: "Chainlink"
 channelId: "UCnjkrlqaWEBSnKZQ71gdyFA"
 publishedAt: "2022-01-20T12:00:10Z"
 date: "2026-07-11"
+updated: "2026-08-19"
 tags:
   - "Crypto"
   - "Fintech"

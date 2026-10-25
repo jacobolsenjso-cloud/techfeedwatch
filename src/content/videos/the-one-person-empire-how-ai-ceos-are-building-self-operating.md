@@ -5,6 +5,7 @@ channelTitle: "Next Level AI"
 channelId: "UCh2NLN_87869ABj1LmzkAxA"
 publishedAt: "2026-07-02T18:00:35Z"
 date: "2026-07-02"
+updated: "2026-09-14"
 tags:
   - "AI Agents"
   - "Automation"

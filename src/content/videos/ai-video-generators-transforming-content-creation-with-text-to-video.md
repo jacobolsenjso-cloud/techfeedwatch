@@ -5,6 +5,7 @@ channelTitle: "TheTech"
 channelId: "UCU7mV4u1ZErUyN9Urn--R5Q"
 publishedAt: "2026-05-06T05:22:11Z"
 date: "2026-08-11"
+updated: "2026-08-17"
 tags:
   - "AI Video"
   - "AI & Tech"

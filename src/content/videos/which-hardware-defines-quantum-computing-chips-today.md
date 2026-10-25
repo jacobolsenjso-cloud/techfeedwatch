@@ -5,6 +5,7 @@ channelTitle: "Sabine Hossenfelder"
 channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
 publishedAt: "2026-06-09T15:00:25Z"
 date: "2026-10-05"
+updated: "2026-10-15"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"

@@ -5,6 +5,7 @@ channelTitle: "linuxfestnorthwest"
 channelId: "UCqeKeRXssKqbK4XHqLYrctQ"
 publishedAt: "2026-08-03T05:24:12Z"
 date: "2026-08-03"
+updated: "2026-08-16"
 tags:
   - "AI Agents"
   - "Automation"

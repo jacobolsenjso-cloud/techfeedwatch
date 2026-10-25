@@ -8,6 +8,7 @@ channelTitle: "Dedi Styawan"
 channelId: "UCexGb-0JJMsKzqp7bSD-6UQ"
 publishedAt: "2026-04-08T10:54:46Z"
 date: "2026-07-11"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "SEO"

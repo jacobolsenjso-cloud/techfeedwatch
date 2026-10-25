@@ -11,12 +11,12 @@
 //   ville den koste penge hver dag uden at lykkes. Den beholder sin gamle tekst.
 // - 3 fejl i træk = stop (typisk tom Gemini-kredit, set 9.-10/10).
 // - Hver kørsels resultat og MÅLTE pris (FORBRUG-linjerne) gemmes i src/data/omskriv-log.json.
-// Kør: node omskriv-gamle.mjs --antal=2
+// Kør: node omskriv-gamle.mjs --antal=8 [--parallelt=4]
 import fs from 'node:fs';
-import { spawnSync } from 'node:child_process';
+import { spawn } from 'node:child_process';
 
 // 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
-const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=2').split('=')[1]) || 2;
+const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=8').split('=')[1]) || 8;
 // 24/10 (Jacob): --kun=<slug> + --nyvideo=<url> målretter én bestemt artikel — fx når en
 // allerede udgivet artikel viser sig at bygge på en dårlig video (set 24/10: fabrikskanal
 // med baggrundsmusik oven i stemmen). --kun springer "gammel"-filteret over (artiklen må
@@ -64,34 +64,43 @@ console.log(kun
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives, intet koster
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0 };
-let iTraek = 0;
-for (const a of gamle.slice(0, antal)) {
-  console.log(`\n=== ${a.slug} (${a.dato}) ===`);
+// 25/10 (Jacob: 8 om dagen): op til PARALLELT omskrivninger ad gangen. Én tager ca. 26 min (målt
+// 25/10), så 8 i træk ville spærre robottens kø i 3,5 time. Hver omskrivning skriver kun sine egne
+// filer (artikel, billede, cache pr. video), så de kan køre samtidig.
+const PARALLELT = Number((process.argv.find((x) => x.startsWith('--parallelt=')) || '--parallelt=4').split('=')[1]) || 4;
+const koersel1 = (a) => new Promise((resolve) => {
   const foer = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
   // --nyvideo lægges FØR --erstat: add-video tager URL'en som første argument.
-  const r = spawnSync('node', ['add-video.mjs', ...(nyVideo ? [nyVideo] : []), '--erstat', a.slug], { encoding: 'utf8', maxBuffer: 1 << 26, env: process.env });
-  const ud = `${r.stdout || ''}\n${r.stderr || ''}`;
-  // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
-  // 23/10: hjerne-linjen med i loggen, så man kan SE om stemmen var med i omskrivningen.
-  for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
-  const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
-  kørsel.usd += f.usd || 0;
-  const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
-  // 24/10: succes = ny opskrift OG ændret indhold. En --kun-artikel HAR allerede
-  // ## Sources, så uden ændrings-tjekket ville en fejlet kørsel melde succes.
-  if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; }
-  else {
+  const p = spawn('node', ['add-video.mjs', ...(nyVideo ? [nyVideo] : []), '--erstat', a.slug], { env: process.env });
+  let ud = '';
+  p.stdout.on('data', (d) => { ud += d; });
+  p.stderr.on('data', (d) => { ud += d; });
+  p.on('close', () => resolve({ a, foer, ud }));
+  p.on('error', (e) => resolve({ a, foer, ud: `Fejl: ${e.message}` }));
+});
+let iTraek = 0, stop = false;
+const valgte = gamle.slice(0, antal);
+for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
+  const runde = await Promise.all(valgte.slice(i, i + PARALLELT).map(koersel1));
+  for (const { a, foer, ud } of runde) {
+    console.log(`\n=== ${a.slug} (${a.dato}) ===`);
+    // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
+    for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
+    const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
+    kørsel.usd += f.usd || 0;
+    const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
+    // 24/10: succes = ny opskrift OG ændret indhold.
+    if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; continue; }
     const grund = (ud.match(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/) || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
     // Midlertidige fejl hos Google (500/503/429, overbelastet, timeout) er ikke artiklens skyld —
-    // den prøves igen næste dag. Kun egentlige stop (tjek, relevans, manglende kilde) huskes.
-    // (14/10: "programming can make you rich…" fik en 500-fejl og blev fejlagtigt opgivet.)
+    // den prøves igen næste dag. Kun egentlige stop huskes (og prøves igen efter 7 dage, højst 3 gange).
     const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed|midlertidig fejl/i.test(grund);
-    // Gemmes med opskriftens nummer: en artikel, der fejlede under en ældre opskrift, prøves igen.
     if (!midlertidig) fejl[a.slug] = { grund, recipe: 3, dato: new Date().toISOString().slice(0, 10), forsoeg: (fejl[a.slug]?.recipe === 3 ? (fejl[a.slug].forsoeg || 1) : 0) + 1 };
     iTraek++;
-    if (iTraek >= 3) { console.log('\nStopper: 3 i træk lykkedes ikke — tjek Gemini-kreditten (AI Studio -> Billing) og loggen.'); break; }
   }
+  // En hel runde uden en eneste succes = noget er galt (fx Gemini-kreditten): stop.
+  if (runde.length >= 2 && iTraek >= runde.length) { console.log('\nStopper: en hel runde lykkedes ikke — tjek Gemini-kreditten (AI Studio -> Billing) og loggen.'); stop = true; }
 }
 kørsel.usd = Math.round(kørsel.usd * 10000) / 10000;
 fs.writeFileSync(FEJL_FIL, JSON.stringify(fejl, null, 1) + '\n');

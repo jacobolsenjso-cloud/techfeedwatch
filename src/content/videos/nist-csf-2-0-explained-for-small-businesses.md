@@ -5,6 +5,7 @@ channelTitle: "HailBytes"
 channelId: "UC6sMOutx1EAgL6olFZIzhHg"
 publishedAt: "2026-06-29T13:45:17Z"
 date: "2026-08-24"
+updated: "2026-09-14"
 tags:
   - "Cybersecurity"
   - "Business & Money"

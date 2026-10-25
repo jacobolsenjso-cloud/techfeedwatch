@@ -5,6 +5,7 @@ channelTitle: "Jake's Tech"
 channelId: "UCuS7YbpU6K_ECGnWPn0L-rg"
 publishedAt: "2026-04-16T15:26:06Z"
 date: "2026-08-29"
+updated: "2026-09-12"
 tags:
   - "Cybersecurity"
   - "AI & Tech"

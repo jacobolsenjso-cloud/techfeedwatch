@@ -5,6 +5,7 @@ channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
 publishedAt: "2026-04-09T21:00:49Z"
 date: "2026-07-31"
+updated: "2026-09-14"
 tags:
   - "AI & Tech"
 summary: "Meta has significantly altered its AI strategy with the launch of Muse Spark, a new proprietary and powerful AI model developed by its Superintelligence Lab. This move represents a pivot from its earlier open-source Llama models, signaling a clear intent to commercialize its advanced AI capabilities through paid API access. The change is backed by a substantial increase in capital expenditures, underscoring Meta's commitment to developing what it terms 'personal superintelligence' and exploring new revenue streams in the competitive AI field."

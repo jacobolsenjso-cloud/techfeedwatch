@@ -6,6 +6,7 @@ channelTitle: "Futurepedia"
 channelId: "UC_RovKmk0OCbuZjA8f08opw"
 publishedAt: "2025-07-31T18:50:11Z"
 date: "2026-07-12"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "Productivity"

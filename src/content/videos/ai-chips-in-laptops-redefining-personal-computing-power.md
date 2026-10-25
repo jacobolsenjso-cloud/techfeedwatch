@@ -5,6 +5,7 @@ channelTitle: "PCMag"
 channelId: "UCRhADYLTpsb0JA-uaLWovGw"
 publishedAt: "2026-06-04T14:21:09Z"
 date: "2026-09-08"
+updated: "2026-09-12"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

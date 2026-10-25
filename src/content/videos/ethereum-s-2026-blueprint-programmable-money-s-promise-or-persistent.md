@@ -5,6 +5,7 @@ channelTitle: "Teacher Everything"
 channelId: "UCZTACV0TYvHDtcpZPykA2XA"
 publishedAt: "2026-03-23T16:33:07Z"
 date: "2026-07-18"
+updated: "2026-09-12"
 tags:
   - "Crypto"
   - "Fintech"

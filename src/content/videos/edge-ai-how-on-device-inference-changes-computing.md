@@ -5,6 +5,7 @@ channelTitle: "Evolving AI"
 channelId: "UCJMowYtxtfkk_T3aQ5TG8Sg"
 publishedAt: "2026-05-05T18:13:23Z"
 date: "2026-08-08"
+updated: "2026-09-12"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

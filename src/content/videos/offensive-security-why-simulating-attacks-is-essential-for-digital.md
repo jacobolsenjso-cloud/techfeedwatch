@@ -5,6 +5,7 @@ channelTitle: "Tech Horizon with Anand Vemula"
 channelId: "UCBZSjsf6K2X9AOl_4AcnHeg"
 publishedAt: "2026-07-21T04:00:06Z"
 date: "2026-07-28"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Cybersecurity"

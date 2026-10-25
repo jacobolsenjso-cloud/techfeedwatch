@@ -5,6 +5,7 @@ channelTitle: "How to fix"
 channelId: "UCLbsQJ3Ck7Pu10DIBiRVXRQ"
 publishedAt: "2026-08-11T07:13:09Z"
 date: "2026-10-06"
+updated: "2026-10-15"
 tags:
   - "AI Video"
   - "AI & Tech"

@@ -6,6 +6,7 @@ channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
 publishedAt: "2026-04-17T18:00:53Z"
 date: "2026-07-31"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Business & Money"

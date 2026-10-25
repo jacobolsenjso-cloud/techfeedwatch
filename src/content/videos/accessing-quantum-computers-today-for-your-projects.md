@@ -5,6 +5,7 @@ channelTitle: "Qiskit"
 channelId: "UClBNq7mCMf5xm8baE_VMl3A"
 publishedAt: "2026-04-08T13:00:00Z"
 date: "2026-09-07"
+updated: "2026-09-12"
 tags:
   - "Quantum Computing"
   - "AI & Tech"

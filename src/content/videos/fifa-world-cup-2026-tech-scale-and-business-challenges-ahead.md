@@ -6,6 +6,7 @@ channelTitle: "DW News"
 channelId: "UCknLrEdhRCp1aegoMqRaCZg"
 publishedAt: "2026-06-06T04:15:10Z"
 date: "2026-07-30"
+updated: "2026-08-14"
 tags:
   - "AI & Tech"
   - "Business & Money"

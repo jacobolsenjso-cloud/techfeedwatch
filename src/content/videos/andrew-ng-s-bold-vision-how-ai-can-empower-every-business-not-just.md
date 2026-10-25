@@ -5,6 +5,7 @@ channelTitle: "TED"
 channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
 publishedAt: "2022-10-13T11:00:35Z"
 date: "2026-07-12"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Automation"

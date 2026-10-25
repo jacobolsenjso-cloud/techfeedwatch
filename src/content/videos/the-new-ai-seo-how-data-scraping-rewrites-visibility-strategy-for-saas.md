@@ -7,6 +7,7 @@ channelTitle: "Yaron Been"
 channelId: "UCuCwMz8aMJBFfhDnYicfdjg"
 publishedAt: "2026-05-29T11:00:12Z"
 date: "2026-07-28"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "SEO"

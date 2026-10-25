@@ -5,6 +5,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2026-03-23T16:24:14Z"
 date: "2026-07-23"
+updated: "2026-10-13"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

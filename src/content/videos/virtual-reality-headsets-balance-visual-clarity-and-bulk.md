@@ -5,6 +5,7 @@ channelTitle: "Gadget Ten"
 channelId: "UC5vuzzokDBCHItEvonfY8pw"
 publishedAt: "2026-09-29T15:21:18Z"
 date: "2026-10-01"
+updated: "2026-10-17"
 tags:
   - "AR & VR"
   - "AI & Tech"

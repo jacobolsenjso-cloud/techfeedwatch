@@ -6,6 +6,7 @@ channelTitle: "iampauljames"
 channelId: "UCj2zirDn1hkPKSARbARfeQw"
 publishedAt: "2026-06-18T00:00:06Z"
 date: "2026-06-18"
+updated: "2026-08-19"
 tags:
   - "AI Video"
   - "Business & Money"

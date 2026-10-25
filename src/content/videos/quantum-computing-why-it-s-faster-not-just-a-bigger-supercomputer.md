@@ -5,6 +5,7 @@ channelTitle: "ExplainingComputers"
 channelId: "UCbiGcwDWZjz05njNPrJU7jA"
 publishedAt: "2026-08-02T13:00:33Z"
 date: "2026-08-31"
+updated: "2026-09-14"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"

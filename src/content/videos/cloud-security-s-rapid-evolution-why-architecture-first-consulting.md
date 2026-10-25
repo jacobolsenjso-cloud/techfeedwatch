@@ -7,6 +7,7 @@ channelTitle: "Atlant Security"
 channelId: "UCikvwIKCOQQ8iXt3v8uEyzQ"
 publishedAt: "2026-07-06T06:37:33Z"
 date: "2026-07-28"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Business & Money"

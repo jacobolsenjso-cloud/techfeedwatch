@@ -5,6 +5,7 @@ channelTitle: "  Prof Simon - Science Filmmaker"
 channelId: "UCd6qylQWz49LNjE4xrKf3RA"
 publishedAt: "2026-08-05T17:02:45Z"
 date: "2026-08-06"
+updated: "2026-08-16"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

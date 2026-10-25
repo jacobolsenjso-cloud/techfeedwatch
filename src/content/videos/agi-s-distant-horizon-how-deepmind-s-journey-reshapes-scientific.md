@@ -5,6 +5,7 @@ channelTitle: "Y Combinator"
 channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
 publishedAt: "2026-04-29T14:00:34Z"
 date: "2026-07-27"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
 summary: "AlphaFold fundamentally changed biological research by accurately predicting protein structures, a problem that puzzled scientists for decades. Developed by DeepMind, this AI system provides critical insights into molecular biology, accelerating drug discovery and disease understanding. Its release free to the global scientific community underscores its importance as a catalyst for future breakthroughs."

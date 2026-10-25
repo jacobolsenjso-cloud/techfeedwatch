@@ -8,6 +8,7 @@ channelTitle: "Lex Clips"
 channelId: "UCJIfeSCssxSC_Dhc5s7woww"
 publishedAt: "2021-05-04T11:00:34Z"
 date: "2026-07-11"
+updated: "2026-08-17"
 tags:
   - "Crypto"
   - "Automation"

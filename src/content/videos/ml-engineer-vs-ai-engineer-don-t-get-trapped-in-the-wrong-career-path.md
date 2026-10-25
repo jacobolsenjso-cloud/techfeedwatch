@@ -5,6 +5,7 @@ channelTitle: "Zen van Riel"
 channelId: "UC7TUInmEJ4NmYb-krFz-SuA"
 publishedAt: "2025-12-01T13:01:25Z"
 date: "2026-07-11"
+updated: "2026-09-14"
 tags:
   - "AI & Tech"
 summary: "The roles of Machine Learning Engineer and AI Engineer, though related, represent distinct career paths with different daily responsibilities, skill sets, and entry barriers. ML Engineers focus on researching, designing, and optimizing the core AI models, often requiring deep academic backgrounds. In contrast, AI Engineers specialize in integrating and deploying these pre-built or fine-tuned AI models into functional software applications and systems. Understanding this distinction is critical for anyone considering a career in artificial intelligence in the modern field."

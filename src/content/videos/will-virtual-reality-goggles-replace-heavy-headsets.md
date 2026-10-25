@@ -5,6 +5,7 @@ channelTitle: "Tech Court"
 channelId: "UCdYwtsdkLFUyKYb7hj-1Szg"
 publishedAt: "2026-09-26T11:09:54Z"
 date: "2026-09-29"
+updated: "2026-10-19"
 tags:
   - "AR & VR"
   - "Hardware & Chips"

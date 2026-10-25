@@ -7,6 +7,7 @@ channelTitle: "AI LABS"
 channelId: "UCelfWQr9sXVMTvBzviPGlFw"
 publishedAt: "2026-07-20T14:02:26Z"
 date: "2026-07-27"
+updated: "2026-08-18"
 tags:
   - "AI Agents"
   - "Coding"

@@ -5,6 +5,7 @@ channelTitle: "Greg Isenberg"
 channelId: "UCPjNBjflYl0-HQtUvOx0Ibw"
 publishedAt: "2025-08-04T18:00:40Z"
 date: "2026-07-13"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Business & Money"

@@ -5,6 +5,7 @@ channelTitle: "The Tech Academy - Online Coding Bootcamps and Trade School"
 channelId: "UCSgp87lgUhT4hSvR6i4izYA"
 publishedAt: "2021-11-20T01:24:01Z"
 date: "2026-07-11"
+updated: "2026-09-14"
 tags:
   - "SEO"
   - "Business & Money"

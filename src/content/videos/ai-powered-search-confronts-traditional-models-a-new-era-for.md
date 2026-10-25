@@ -6,6 +6,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2024-06-19T20:42:46Z"
 date: "2026-07-24"
+updated: "2026-08-16"
 tags:
   - "AI & Tech"
   - "SEO"

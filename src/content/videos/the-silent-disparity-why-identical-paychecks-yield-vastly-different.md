@@ -5,6 +5,7 @@ channelTitle: "PoliCore"
 channelId: "UCCXWLOnXR_v9D-IcM2uQ_yg"
 publishedAt: "2026-04-04T11:21:03Z"
 date: "2026-07-29"
+updated: "2026-09-14"
 tags:
   - "Business & Money"
   - "Fintech"

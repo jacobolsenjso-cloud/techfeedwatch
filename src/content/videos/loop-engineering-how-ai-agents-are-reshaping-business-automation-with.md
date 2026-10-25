@@ -7,6 +7,7 @@ channelTitle: "Greg Isenberg"
 channelId: "UCPjNBjflYl0-HQtUvOx0Ibw"
 publishedAt: "2026-07-13T18:15:22Z"
 date: "2026-07-14"
+updated: "2026-08-18"
 tags:
   - "AI Agents"
   - "Business & Money"

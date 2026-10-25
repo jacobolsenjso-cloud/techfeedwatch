@@ -5,6 +5,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2021-10-27T00:18:42Z"
 date: "2026-07-26"
+updated: "2026-10-13"
 tags:
   - "AI & Tech"
   - "Quantum Computing"

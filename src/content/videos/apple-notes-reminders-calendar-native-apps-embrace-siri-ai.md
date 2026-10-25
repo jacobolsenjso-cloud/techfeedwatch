@@ -5,6 +5,7 @@ channelTitle: "Christopher Lawley"
 channelId: "UC8raOG7HXJoCUygx219fU4A"
 publishedAt: "2026-07-31T20:20:07Z"
 date: "2026-08-02"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Productivity"

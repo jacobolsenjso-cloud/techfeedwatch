@@ -7,6 +7,7 @@ channelTitle: "CoinGecko"
 channelId: "UC-OTgwOAI7KmP0eDAtqN3Ow"
 publishedAt: "2022-04-22T13:59:06Z"
 date: "2026-07-11"
+updated: "2026-08-17"
 tags:
   - "Crypto"
   - "Automation"

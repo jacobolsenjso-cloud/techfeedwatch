@@ -5,6 +5,7 @@ channelTitle: "Fintech Chatter TV"
 channelId: "UC003teVeF5omUrCl78ii9xg"
 publishedAt: "2026-07-27T00:49:23Z"
 date: "2026-08-02"
+updated: "2026-08-17"
 tags:
   - "Fintech"
   - "AI & Tech"

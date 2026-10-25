@@ -5,6 +5,7 @@ channelTitle: "Nic Conley"
 channelId: "UCj88BHCCZgiBYNv4QryNEdQ"
 publishedAt: "2026-06-29T14:47:08Z"
 date: "2026-07-02"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Coding"

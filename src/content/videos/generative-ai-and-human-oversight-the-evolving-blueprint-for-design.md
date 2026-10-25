@@ -5,6 +5,7 @@ channelTitle: "Creditizens - AI Systems for Builders"
 channelId: "UCeZ9-tU-eJntUq2fpQscAWA"
 publishedAt: "2026-07-15T15:00:06Z"
 date: "2026-07-15"
+updated: "2026-09-12"
 tags:
   - "AI & Tech"
   - "Productivity"

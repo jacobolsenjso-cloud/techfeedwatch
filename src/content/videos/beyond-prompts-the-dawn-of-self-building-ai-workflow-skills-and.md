@@ -7,6 +7,7 @@ channelTitle: "QurioSkill"
 channelId: "UCTzGdR1fa3TrlqKWKPIAlZQ"
 publishedAt: "2026-07-26T15:03:32Z"
 date: "2026-07-26"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Automation"

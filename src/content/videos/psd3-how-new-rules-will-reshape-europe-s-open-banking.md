@@ -5,6 +5,7 @@ channelTitle: "Enfuce"
 channelId: "UCO9JSchkha6cKKpHDSRuWWA"
 publishedAt: "2026-07-13T09:10:47Z"
 date: "2026-07-31"
+updated: "2026-08-18"
 tags:
   - "Fintech"
   - "Business & Money"

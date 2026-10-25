@@ -5,6 +5,7 @@ channelTitle: "Verified Reviews"
 channelId: "UCn9-xiVi7SUFJofGcF-glmQ"
 publishedAt: "2026-07-28T22:23:01Z"
 date: "2026-10-03"
+updated: "2026-10-16"
 tags:
   - "AR & VR"
   - "Hardware & Chips"

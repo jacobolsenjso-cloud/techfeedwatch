@@ -7,6 +7,7 @@ channelTitle: "Y Combinator"
 channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
 publishedAt: "2025-09-23T14:45:03Z"
 date: "2026-07-24"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Crypto"

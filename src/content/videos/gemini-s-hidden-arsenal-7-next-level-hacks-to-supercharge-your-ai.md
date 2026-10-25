@@ -8,6 +8,7 @@ channelTitle: "Rob The AI Guy"
 channelId: "UC0FBv8ckxw1hrZxbUm3G7hA"
 publishedAt: "2026-06-29T15:47:11Z"
 date: "2026-06-29"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "Automation"

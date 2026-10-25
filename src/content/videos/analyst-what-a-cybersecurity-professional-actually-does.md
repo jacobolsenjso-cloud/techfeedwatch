@@ -5,6 +5,7 @@ channelTitle: "IT Career Guide"
 channelId: "UC60PYOf-bm8oO56osbbhifw"
 publishedAt: "2026-05-21T13:00:27Z"
 date: "2026-08-26"
+updated: "2026-09-12"
 tags:
   - "Cybersecurity"
 summary: "A Cybersecurity Analyst plays a critical role in protecting an organization's digital assets by identifying, assessing, and mitigating security threats. This position often involves a demanding daily routine of alert triage and incident response, requiring specialized tools and constant vigilance. While attractive starting salaries are often advertised, the reality involves a complex balance of technical skills, operational demands, and continuous professional development."

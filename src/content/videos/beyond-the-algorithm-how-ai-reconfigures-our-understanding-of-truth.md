@@ -6,6 +6,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2023-05-09T17:10:30Z"
 date: "2026-07-26"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
 summary: "The advent of advanced AI models like ChatGPT forces a re-evaluation of fundamental concepts such as truth, reality, and computation itself. While these systems offer unprecedented capabilities, their underlying mechanisms challenge traditional notions of knowledge and raise profound questions about how we define and interact with information. This shift necessitates a deeper understanding of AI's limitations and its unique approach to generating content, moving beyond mere data processing to explore its implications for human cognition and scientific inquiry."

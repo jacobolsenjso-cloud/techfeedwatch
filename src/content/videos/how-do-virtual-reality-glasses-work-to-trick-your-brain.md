@@ -5,6 +5,7 @@ channelTitle: "Flinch Lab"
 channelId: "UCiXhYljQ0Fpzr9l3_UML3Zw"
 publishedAt: "2026-09-05T23:00:33Z"
 date: "2026-10-07"
+updated: "2026-10-14"
 tags:
   - "AR & VR"
   - "Hardware & Chips"

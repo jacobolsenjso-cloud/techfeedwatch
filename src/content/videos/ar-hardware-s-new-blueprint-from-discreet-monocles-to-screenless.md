@@ -7,6 +7,7 @@ channelTitle: "Adam Savage’s Tested"
 channelId: "UCiDJtJKMICpb9B1qf7qjEOA"
 publishedAt: "2023-06-05T14:00:02Z"
 date: "2026-07-18"
+updated: "2026-08-17"
 tags:
   - "AR & VR"
   - "Productivity"

@@ -5,6 +5,7 @@ channelTitle: "EndsightIT"
 channelId: "UCAdf6SJlyGXJga6czrD0fYA"
 publishedAt: "2026-05-06T18:00:11Z"
 date: "2026-10-22"
+updated: "2026-10-25"
 tags:
   - "Cybersecurity"
   - "AI & Tech"

@@ -5,6 +5,7 @@ channelTitle: "Y Combinator"
 channelId: "UCcefcZRL2oaA_uBNeo5UOWg"
 publishedAt: "2026-04-23T14:30:49Z"
 date: "2026-07-27"
+updated: "2026-09-15"
 tags:
   - "AI & Tech"
   - "Business & Money"

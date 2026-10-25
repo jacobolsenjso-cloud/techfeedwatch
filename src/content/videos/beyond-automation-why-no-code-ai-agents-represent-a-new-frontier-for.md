@@ -5,6 +5,7 @@ channelTitle: "Futurepedia"
 channelId: "UC_RovKmk0OCbuZjA8f08opw"
 publishedAt: "2025-05-21T11:29:00Z"
 date: "2026-07-19"
+updated: "2026-10-13"
 tags:
   - "AI Agents"
   - "Automation"

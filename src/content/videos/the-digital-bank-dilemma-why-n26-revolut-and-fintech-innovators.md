@@ -6,6 +6,7 @@ channelTitle: "Sergey Ross"
 channelId: "UClmIgvFUmMI1FdscltQ1KVg"
 publishedAt: "2023-12-12T23:00:29Z"
 date: "2026-07-11"
+updated: "2026-08-19"
 tags:
   - "Fintech"
   - "Business & Money"

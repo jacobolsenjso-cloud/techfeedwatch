@@ -5,6 +5,7 @@ channelTitle: "Daniel Owen"
 channelId: "UC_ozUuauyPf1CgXztIWTOGA"
 publishedAt: "2026-07-14T19:44:00Z"
 date: "2026-10-12"
+updated: "2026-10-13"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"

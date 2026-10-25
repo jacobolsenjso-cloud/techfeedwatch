@@ -5,6 +5,7 @@ channelTitle: "Modern Software Engineering"
 channelId: "UCCfqyGl3nq_V0bo64CjZh8g"
 publishedAt: "2026-07-22T18:00:34Z"
 date: "2026-07-26"
+updated: "2026-09-15"
 tags:
   - "AI & Tech"
   - "Productivity"

@@ -7,6 +7,7 @@ channelTitle: "Coffee & Contracts | Real Estate Marketing"
 channelId: "UCxalaYuovAGjrcNSBwCMvag"
 publishedAt: "2026-06-24T12:32:57Z"
 date: "2026-06-29"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Automation"

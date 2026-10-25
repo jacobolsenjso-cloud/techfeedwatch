@@ -5,6 +5,7 @@ channelTitle: "Lex Fridman"
 channelId: "UCSHZKyawb77ixDdsGog4iWA"
 publishedAt: "2026-02-12T03:07:03Z"
 date: "2026-07-26"
+updated: "2026-09-12"
 tags:
   - "AI Agents"
   - "Automation"

@@ -8,6 +8,7 @@ channelTitle: "AgentArum "
 channelId: "UC6bSWtvNndtRYA95VBat_DA"
 publishedAt: "2026-04-09T20:04:25Z"
 date: "2026-07-28"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Fintech"

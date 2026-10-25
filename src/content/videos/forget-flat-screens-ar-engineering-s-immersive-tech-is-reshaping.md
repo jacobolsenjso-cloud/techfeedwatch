@@ -6,6 +6,7 @@ channelTitle: "Episode Up"
 channelId: "UCLZdKBaR3Bp3aqqDjFzFHBw"
 publishedAt: "2023-10-04T07:11:34Z"
 date: "2026-07-11"
+updated: "2026-08-18"
 tags:
   - "AR & VR"
   - "Automation"

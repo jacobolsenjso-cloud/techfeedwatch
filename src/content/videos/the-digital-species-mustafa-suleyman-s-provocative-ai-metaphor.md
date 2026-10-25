@@ -7,6 +7,7 @@ channelTitle: "TED"
 channelId: "UCAuUUnT6oDeKwE6v1NGQxug"
 publishedAt: "2024-04-22T17:24:11Z"
 date: "2026-07-15"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
 summary: "Microsoft AI CEO Mustafa Suleyman posits that humanity is creating a 'new digital species' with artificial intelligence, challenging conventional definitions of the technology. He argues that even those closest to AI's development struggle to articulate its future trajectory. This metaphor aims to focus attention on the profound, uncharted territory AI represents, moving beyond viewing it merely as a tool. Suleyman’s perspective calls for a fundamental reassessment of AI's nature and its role in society."

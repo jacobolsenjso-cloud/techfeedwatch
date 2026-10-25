@@ -5,6 +5,7 @@ channelTitle: "Dreamroom64"
 channelId: "UCajO4dVADQnf1JKLHr6dQGw"
 publishedAt: "2026-06-20T08:10:59Z"
 date: "2026-10-22"
+updated: "2026-10-25"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"

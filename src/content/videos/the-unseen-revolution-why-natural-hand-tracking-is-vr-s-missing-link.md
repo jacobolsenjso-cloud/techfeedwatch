@@ -6,6 +6,7 @@ channelTitle: "Two Minute Papers"
 channelId: "UCbfYPyITQ-7l4upoX8nvctg"
 publishedAt: "2020-11-21T15:48:34Z"
 date: "2026-07-25"
+updated: "2026-08-19"
 tags:
   - "AR & VR"
   - "AI Video"

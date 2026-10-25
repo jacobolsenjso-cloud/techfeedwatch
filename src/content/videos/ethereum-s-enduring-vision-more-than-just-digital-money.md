@@ -5,6 +5,7 @@ channelTitle: "Next Frontier"
 channelId: "UCB23HRxLVFuxnJRbYnkMzAw"
 publishedAt: "2026-07-12T19:23:52Z"
 date: "2026-07-13"
+updated: "2026-09-12"
 tags:
   - "Crypto"
   - "Fintech"

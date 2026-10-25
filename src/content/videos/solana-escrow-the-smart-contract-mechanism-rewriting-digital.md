@@ -8,6 +8,7 @@ channelTitle: "bri"
 channelId: "UCKKLMlFFiOVV49fS5F1S-Mg"
 publishedAt: "2026-04-14T20:21:27Z"
 date: "2026-07-19"
+updated: "2026-08-19"
 tags:
   - "Crypto"
   - "Coding"

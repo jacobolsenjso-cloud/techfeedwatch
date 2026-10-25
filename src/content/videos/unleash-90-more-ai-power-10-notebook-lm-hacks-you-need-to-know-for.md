@@ -5,6 +5,7 @@ channelTitle: "Ai Podcast "
 channelId: "UCNH2x236pEyNWZHPQ_PYJ9Q"
 publishedAt: "2026-06-20T13:06:11Z"
 date: "2026-06-22"
+updated: "2026-09-15"
 tags:
   - "AI & Tech"
   - "Productivity"

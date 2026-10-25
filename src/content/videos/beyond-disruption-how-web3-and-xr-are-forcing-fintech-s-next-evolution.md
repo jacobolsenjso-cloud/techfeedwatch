@@ -6,6 +6,7 @@ channelTitle: "Jeremy Quainoo"
 channelId: "UCNvXDyiZSkpkAuwGiAIdXtA"
 publishedAt: "2022-12-15T04:00:08Z"
 date: "2026-07-19"
+updated: "2026-08-17"
 tags:
   - "Fintech"
   - "AI & Tech"

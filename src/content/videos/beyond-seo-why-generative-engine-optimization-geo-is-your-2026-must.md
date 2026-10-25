@@ -8,6 +8,7 @@ channelTitle: "Blazly AI"
 channelId: "UCk5Rwr2Mix05WH9gkUyWMdw"
 publishedAt: "2026-03-02T11:02:02Z"
 date: "2026-07-11"
+updated: "2026-08-17"
 tags:
   - "SEO"
   - "AI & Tech"

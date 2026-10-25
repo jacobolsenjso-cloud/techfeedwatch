@@ -6,6 +6,7 @@ channelTitle: "Bloomberg Television"
 channelId: "UCIALMKvObZNtJ6AmdCLP7Lg"
 publishedAt: "2026-03-31T19:04:07Z"
 date: "2026-07-30"
+updated: "2026-08-19"
 tags:
   - "Fintech"
   - "Crypto"

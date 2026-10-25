@@ -5,6 +5,7 @@ channelTitle: "TechLinked"
 channelId: "UCeeFfhMcJa1kjtfZAGskOCA"
 publishedAt: "2026-06-27T00:34:13Z"
 date: "2026-08-05"
+updated: "2026-09-14"
 tags:
   - "AI Video"
   - "AI & Tech"

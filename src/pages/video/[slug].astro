@@ -30,7 +30,7 @@ const { title, youtubeId, date, summary, isShort } = video.frontmatter;
 const updated: string | null = video.frontmatter.updated || null;
 const showUpdated = updated && updated.slice(0, 10) !== String(date).slice(0, 10);
 const updatedLabel = showUpdated
-  ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
   : null;
 
 // Videoens længde mod artiklens læsetid — sitets løfte som et tal, dér hvor
@@ -513,7 +513,10 @@ const metaDesc = rawMeta.length > 157
     .byline-name { font-size: 0.92rem; font-weight: 600; color: var(--text-color); }
     .byline-name a { color: inherit; text-decoration: none; }
     .byline-name a:hover { text-decoration: underline; }
-    .byline-meta { display: flex; align-items: center; gap: 7px; font-size: 0.83rem; color: #6b7280; font-weight: 500; }
+    /* 25/10: "Updated" står nu på mange artikler. Uden wrap/nowrap blev datoerne på mobil delt
+       over tre linjer ("Sep / 30, / 2026"). Nu holdes hver del samlet og ombrydes hele. */
+    .byline-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 7px; font-size: 0.83rem; color: #6b7280; font-weight: 500; }
+    .byline-meta > * { white-space: nowrap; }
     body.dark-mode .byline-meta { color: #9ca3af; }
 
     /* Kildeangivelse: gør det utvetydigt at videoen er en tredjeparts værk. */

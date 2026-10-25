@@ -7,6 +7,7 @@ channelTitle: "AI Revolution"
 channelId: "UC5l7RouTQ60oUjLjt1Nh-UQ"
 publishedAt: "2026-07-28T00:10:27Z"
 date: "2026-07-29"
+updated: "2026-08-19"
 tags:
   - "AI Agents"
   - "Business & Money"

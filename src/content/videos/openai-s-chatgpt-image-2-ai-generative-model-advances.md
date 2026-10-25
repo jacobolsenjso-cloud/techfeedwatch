@@ -5,6 +5,7 @@ channelTitle: "Matthew Berman"
 channelId: "UCawZsQWqfGSbCI5yjkdVkTA"
 publishedAt: "2026-04-22T00:54:02Z"
 date: "2026-08-07"
+updated: "2026-08-14"
 tags:
   - "AI Video"
   - "AI & Tech"

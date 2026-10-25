@@ -6,6 +6,7 @@ channelTitle: "Two Minute Papers"
 channelId: "UCbfYPyITQ-7l4upoX8nvctg"
 publishedAt: "2024-03-13T17:43:18Z"
 date: "2026-07-23"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Automation"

@@ -6,6 +6,7 @@ channelTitle: "Google Search Central"
 channelId: "UCWf2ZlNsCGDS89VBF_awNvA"
 publishedAt: "2021-04-15T13:00:20Z"
 date: "2026-07-13"
+updated: "2026-08-19"
 tags:
   - "SEO"
   - "AI & Tech"

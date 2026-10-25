@@ -7,6 +7,7 @@ channelTitle: "House of El: AI"
 channelId: "UCsoc5Ad-fC7wWie2PH4rPcw"
 publishedAt: "2026-06-08T13:30:06Z"
 date: "2026-06-12"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "Business & Money"

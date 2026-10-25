@@ -5,6 +5,7 @@ channelTitle: "Kevin Stratvert"
 channelId: "UCfJT_eYDTmDE-ovKaxVE1ig"
 publishedAt: "2026-01-20T08:00:17Z"
 date: "2026-06-12"
+updated: "2026-10-13"
 tags:
   - "AI Video"
   - "AI & Tech"

@@ -8,6 +8,7 @@ channelTitle: "Dinis Guarda"
 channelId: "UCbP5LaaEIdbjpQ9gRHAcKLQ"
 publishedAt: "2020-11-13T10:14:02Z"
 date: "2026-07-11"
+updated: "2026-08-19"
 tags:
   - "Fintech"
   - "AI & Tech"

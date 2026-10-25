@@ -5,6 +5,7 @@ channelTitle: "Indy Pixels | Abdalla Emam"
 channelId: "UCXBOkAXvRSfnC2fJNe4IbaQ"
 publishedAt: "2026-07-27T15:00:24Z"
 date: "2026-07-30"
+updated: "2026-09-12"
 tags:
   - "AI Agents"
   - "Cybersecurity"

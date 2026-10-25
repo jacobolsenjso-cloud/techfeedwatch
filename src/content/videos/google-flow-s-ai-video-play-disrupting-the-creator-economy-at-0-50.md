@@ -6,6 +6,7 @@ channelTitle: "CréateurVidéoPC "
 channelId: "UCI-6E3-mWXwzn9pm3IScyiQ"
 publishedAt: "2026-06-11T16:03:43Z"
 date: "2026-06-12"
+updated: "2026-08-14"
 tags:
   - "AI Video"
   - "Business & Money"

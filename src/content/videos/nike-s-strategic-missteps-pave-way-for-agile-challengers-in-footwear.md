@@ -5,6 +5,7 @@ channelTitle: "CNBC"
 channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
 publishedAt: "2026-03-30T14:00:11Z"
 date: "2026-07-29"
+updated: "2026-09-14"
 tags:
   - "Business & Money"
 summary: "Nike, the world's largest sportswear brand, is facing significant market headwinds, evidenced by a $28 billion reduction in its market cap and its worst trading day in June 2024. This downturn stems from strategic errors, particularly a direct-to-consumer focus that analysts contend stifled innovation and ceded market share to agile rivals like Hoka and On Running. The company now contends with excess inventory and shifting consumer preferences, placing the onus on new leadership to reignite growth and reclaim its competitive edge."

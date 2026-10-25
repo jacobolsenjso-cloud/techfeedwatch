@@ -6,6 +6,7 @@ channelTitle: "Mastery Learning"
 channelId: "UCZoBjunTdzzT-HVI-Tb4xiw"
 publishedAt: "2024-01-17T21:37:27Z"
 date: "2026-07-18"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "Automation"

@@ -5,6 +5,7 @@ channelTitle: "Fireship"
 channelId: "UCsBjURrPoezykLs9EqgamOA"
 publishedAt: "2026-03-26T18:11:51Z"
 date: "2026-08-08"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "AI Video"

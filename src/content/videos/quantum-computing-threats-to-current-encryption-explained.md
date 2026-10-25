@@ -5,6 +5,7 @@ channelTitle: "Sabine Hossenfelder"
 channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
 publishedAt: "2026-04-08T15:01:34Z"
 date: "2026-09-03"
+updated: "2026-09-15"
 tags:
   - "Quantum Computing"
   - "Cybersecurity"

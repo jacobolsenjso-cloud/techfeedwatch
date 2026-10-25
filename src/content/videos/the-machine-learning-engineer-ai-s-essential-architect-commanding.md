@@ -7,6 +7,7 @@ channelTitle: "Series of Thoughts"
 channelId: "UC_-ZwGxVDnrYgRFFGKhsXfg"
 publishedAt: "2026-07-17T11:15:13Z"
 date: "2026-07-17"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "Business & Money"

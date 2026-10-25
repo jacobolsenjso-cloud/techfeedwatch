@@ -5,6 +5,7 @@ channelTitle: "Thoughts Brewing, LLC"
 channelId: "UCNNRFtcCuOjjJgV8PUGOr4A"
 publishedAt: "2026-06-23T15:39:26Z"
 date: "2026-10-01"
+updated: "2026-10-17"
 tags:
   - "Coding"
   - "AI & Tech"

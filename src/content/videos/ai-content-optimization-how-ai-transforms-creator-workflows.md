@@ -6,6 +6,7 @@ channelTitle: "Grandpa"
 channelId: "UCoPfP5Yw9g7liWhrtzHRM4w"
 publishedAt: "2026-05-07T19:04:44Z"
 date: "2026-07-31"
+updated: "2026-08-16"
 tags:
   - "AI & Tech"
   - "Automation"

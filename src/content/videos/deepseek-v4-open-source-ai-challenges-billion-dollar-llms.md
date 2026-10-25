@@ -6,6 +6,7 @@ channelTitle: "Two Minute Papers"
 channelId: "UCbfYPyITQ-7l4upoX8nvctg"
 publishedAt: "2026-05-06T16:07:54Z"
 date: "2026-07-29"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Business & Money"

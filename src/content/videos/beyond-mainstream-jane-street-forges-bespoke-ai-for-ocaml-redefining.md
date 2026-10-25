@@ -6,6 +6,7 @@ channelTitle: "AI Engineer"
 channelId: "UCLKPca3kwwd-B59HNr-_lvA"
 publishedAt: "2025-03-28T15:04:44Z"
 date: "2026-07-20"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Coding"

@@ -5,6 +5,7 @@ channelTitle: "Dapp University"
 channelId: "UCY0xL8V6NzzFcwzHCgB8orQ"
 publishedAt: "2024-05-20T19:00:21Z"
 date: "2026-07-11"
+updated: "2026-09-14"
 tags:
   - "Crypto"
   - "Business & Money"

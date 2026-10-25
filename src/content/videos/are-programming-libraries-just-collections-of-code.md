@@ -5,6 +5,7 @@ channelTitle: "Electronics with GC1CEO"
 channelId: "UCKNGeRxfFbkpe-hrsrVxFRQ"
 publishedAt: "2026-06-14T02:47:01Z"
 date: "2026-10-23"
+updated: "2026-10-25"
 tags:
   - "Coding"
 summary: "Programming libraries are packaged sets of pre-written functions, classes, and routines that developers link into their applications to avoid rewriting standard operations. They compile into binaries or load dynamically at runtime, drastically speeding up software engineering across industries. However, heavy reliance on third-party packages introduces substantial architectural trade-offs, maintenance overhead, and security vulnerabilities into modern codebases."

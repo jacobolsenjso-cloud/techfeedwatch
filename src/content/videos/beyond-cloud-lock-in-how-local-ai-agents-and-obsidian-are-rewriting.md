@@ -6,6 +6,7 @@ channelTitle: "Christian Lempa"
 channelId: "UCZNhwA1B5YqiY1nLzmM0ZRg"
 publishedAt: "2026-07-02T14:00:34Z"
 date: "2026-07-28"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Productivity"

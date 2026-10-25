@@ -6,6 +6,7 @@ channelTitle: "ScatterVolt"
 channelId: "UCl6ulw6cn3npwxkg_56Ee_w"
 publishedAt: "2026-07-17T17:06:12Z"
 date: "2026-07-18"
+updated: "2026-08-19"
 tags:
   - "Hardware & Chips"
   - "Productivity"

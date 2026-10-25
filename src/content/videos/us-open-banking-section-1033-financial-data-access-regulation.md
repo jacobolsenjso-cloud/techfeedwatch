@@ -6,6 +6,7 @@ channelTitle: "Finovate TV"
 channelId: "UCIi4K3Gk3hULdetAoPDd-WQ"
 publishedAt: "2026-05-27T11:20:46Z"
 date: "2026-07-31"
+updated: "2026-08-19"
 tags:
   - "Fintech"
   - "Business & Money"

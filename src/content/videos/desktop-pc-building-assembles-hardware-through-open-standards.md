@@ -5,6 +5,7 @@ channelTitle: "Linus Tech Tips"
 channelId: "UCXuqSBlHAE6Xw-yeJA0Tunw"
 publishedAt: "2026-07-19T17:00:34Z"
 date: "2026-10-24"
+updated: "2026-10-25"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"

@@ -6,6 +6,7 @@ channelTitle: "Tech Rush"
 channelId: "UCPBEzVBqBeBFe9xC_FNhUTQ"
 publishedAt: "2026-07-10T15:08:09Z"
 date: "2026-07-10"
+updated: "2026-08-19"
 tags:
   - "AI Video"
   - "AI & Tech"

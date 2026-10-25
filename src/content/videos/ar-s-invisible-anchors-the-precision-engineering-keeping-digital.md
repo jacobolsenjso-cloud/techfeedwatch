@@ -7,6 +7,7 @@ channelTitle: "LessFace Lab"
 channelId: "UCVo82IcSZsTCyY7MJxCTdTA"
 publishedAt: "2026-07-20T14:09:04Z"
 date: "2026-07-21"
+updated: "2026-08-17"
 tags:
   - "AR & VR"
   - "AI Video"

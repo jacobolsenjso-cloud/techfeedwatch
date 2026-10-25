@@ -20,7 +20,10 @@ const dryRun = process.argv.includes('--dry-run');
 const today = new Date().toISOString().slice(0, 10);
 
 // Felter der ændrer sig uden at indholdet gør. Fjernes før sammenligningen.
-const VOLATILE = /^(viewCount|viewsUpdated|updated):.*$/gm;
+// 25/10: også factChecked (et faktatjek uden rettelser er ingen opdatering) og targetQuestion
+// (søgespørgsmålet ses ikke af læseren). Jacob: "Updated" kun når det, læseren ser, er ændret.
+// Hele linjen inkl. linjeskift fjernes - ellers giver en NY updated-linje en tom linje, der tæller som ændring.
+const VOLATILE = /^(viewCount|viewsUpdated|updated|factChecked|targetQuestion):.*(\r?\n|$)/gm;
 const normalise = (text) => text.replace(VOLATILE, '').replace(/\r\n/g, '\n').trim();
 
 // Filer der er ændret siden sidste commit — både med og uden git add.

@@ -7,6 +7,7 @@ channelTitle: "Telusko"
 channelId: "UC59K-uG2A5ogwIrHw4bmlEg"
 publishedAt: "2025-08-19T03:48:47Z"
 date: "2026-07-12"
+updated: "2026-08-18"
 tags:
   - "AI & Tech"
   - "Coding"

@@ -5,6 +5,7 @@ channelTitle: "postindustria_"
 channelId: "UCJOEr3_V_F0V3MJPNyYR9jw"
 publishedAt: "2021-08-14T08:20:45Z"
 date: "2026-07-11"
+updated: "2026-09-12"
 tags:
   - "AR & VR"
   - "AI & Tech"

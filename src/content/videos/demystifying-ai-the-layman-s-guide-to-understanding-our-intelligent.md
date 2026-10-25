@@ -7,6 +7,7 @@ channelTitle: "Science Simplified 4 All"
 channelId: "UChbpF5QVaVr9KUJT40qhKAg"
 publishedAt: "2025-07-09T15:37:04Z"
 date: "2026-07-11"
+updated: "2026-08-17"
 tags:
   - "AI & Tech"
   - "Productivity"

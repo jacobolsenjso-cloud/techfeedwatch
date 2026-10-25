@@ -5,6 +5,7 @@ channelTitle: "Krystian Wojtarowicz AI"
 channelId: "UCKlytYAOLYsiz6sY0zzmY4A"
 publishedAt: "2026-06-29T14:00:17Z"
 date: "2026-08-02"
+updated: "2026-08-17"
 tags:
   - "AI Agents"
   - "Productivity"

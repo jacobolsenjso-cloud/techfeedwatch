@@ -5,6 +5,7 @@ channelTitle: "Theoretically Media"
 channelId: "UC9Ryt3XOGYBoAJVsBHNGDzA"
 publishedAt: "2026-07-08T19:28:07Z"
 date: "2026-07-08"
+updated: "2026-09-14"
 tags:
   - "AI & Tech"
   - "AI Video"

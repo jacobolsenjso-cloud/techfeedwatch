@@ -6,6 +6,7 @@ channelTitle: "NetworkChuck"
 channelId: "UC9x0AN7BWHpCDHSm9NiJFJQ"
 publishedAt: "2023-03-01T15:33:30Z"
 date: "2026-07-13"
+updated: "2026-08-19"
 tags:
   - "AI & Tech"
   - "Coding"

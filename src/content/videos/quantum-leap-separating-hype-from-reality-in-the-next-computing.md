@@ -8,6 +8,7 @@ channelTitle: "Science ABC"
 channelId: "UCcN3IuIAR6Fn74FWMQf6lFA"
 publishedAt: "2024-09-23T11:00:14Z"
 date: "2026-07-16"
+updated: "2026-08-18"
 tags:
   - "Quantum Computing"
   - "Cybersecurity"

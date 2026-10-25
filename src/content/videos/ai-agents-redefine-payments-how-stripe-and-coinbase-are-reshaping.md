@@ -5,6 +5,7 @@ channelTitle: "Coin Bureau"
 channelId: "UCqK_GSMbpiV8spgD3ZGloSw"
 publishedAt: "2026-04-30T14:00:32Z"
 date: "2026-07-25"
+updated: "2026-09-12"
 tags:
   - "AI Agents"
   - "Fintech"

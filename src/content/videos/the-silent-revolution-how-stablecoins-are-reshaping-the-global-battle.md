@@ -8,6 +8,7 @@ channelTitle: "MENA Fintech Association"
 channelId: "UCtKuxeUtmOgBDGNB3IHKTdQ"
 publishedAt: "2026-06-24T11:26:01Z"
 date: "2026-07-12"
+updated: "2026-08-19"
 tags:
   - "Fintech"
   - "Crypto"

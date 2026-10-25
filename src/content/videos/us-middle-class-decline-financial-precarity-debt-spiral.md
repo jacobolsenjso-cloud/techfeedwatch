@@ -5,6 +5,7 @@ channelTitle: "Graham Stephan"
 channelId: "UCV6KDgJskWaEckne5aPA0aQ"
 publishedAt: "2026-04-20T20:00:29Z"
 date: "2026-08-07"
+updated: "2026-09-15"
 tags:
   - "AI Video"
   - "Business & Money"

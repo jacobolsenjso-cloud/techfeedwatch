@@ -5,6 +5,7 @@ channelTitle: "PyCon South Africa"
 channelId: "UCu-El65PtQm46aSbXkzykYQ"
 publishedAt: "2026-08-03T09:57:07Z"
 date: "2026-08-03"
+updated: "2026-09-14"
 tags:
   - "Robotics"
   - "Automation"

@@ -8,6 +8,7 @@ channelTitle: "Crypto Capital Venture"
 channelId: "UCnMku7J_UtwlcSfZlIuQ3Kw"
 publishedAt: "2026-07-22T14:10:48Z"
 date: "2026-07-27"
+updated: "2026-08-17"
 tags:
   - "Crypto"
   - "Fintech"

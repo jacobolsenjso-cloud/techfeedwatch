@@ -5,6 +5,7 @@ channelTitle: "Forge & Harvest"
 channelId: "UCdKqDZF3cMIy8vWK4E7RvCg"
 publishedAt: "2026-07-15T14:31:16Z"
 date: "2026-07-15"
+updated: "2026-09-14"
 tags:
   - "Hardware & Chips"
   - "AI & Tech"
