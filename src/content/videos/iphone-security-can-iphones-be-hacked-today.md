@@ -33,6 +33,7 @@ keyFacts:
   - text: "Apple issued threat notifications alerting targeted individuals across 110 countries that their devices had been targeted by sophisticated mercenary spyware attacks."
     source: "Citizen Lab in August 2026"
     url: "https://citizenlab.ca/unprecedented-number-of-apple-users-received-recent-spyware-alert/"
+factChecked: "2026-10-25"
 ---
 
 Yes, iPhones can be hacked, although breaching them requires sophisticated techniques. While [Apple](https://www.apple.com/) builds extensive defenses into iOS to prevent common mass-market viruses, attackers find flaws. Determined adversaries and state-sponsored surveillance firms routinely exploit zero-day bugs to compromise devices without the owner's knowledge.

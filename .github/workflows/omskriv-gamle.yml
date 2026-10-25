@@ -24,6 +24,11 @@ on:
       nyvideo:
         description: "Ny video-URL til artiklen - valgfri"
         default: ""
+      # 25/10 (Jacob: "bland"): artikler, Google ikke har vist, skrives ikke om, men faktatjekkes
+      # (faktatjek-gamle.mjs, ca. 0,45 kr pr. artikel). 0 = spring faktatjekket over.
+      tjek:
+        description: "Antal gamle artikler der kun faktatjekkes"
+        default: "10"
 
 permissions:
   contents: write
@@ -65,6 +70,11 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      - name: Faktatjek gamle artikler (uden omskrivning)
+        run: node faktatjek-gamle.mjs --antal=${{ github.event.inputs.tjek || '10' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
       # Samme kvalitetsvagt som robotten: fejl her standser jobbet, før noget gemmes.
       - name: Tjek indholdet
         run: node audit-content.mjs
@@ -73,7 +83,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json
+          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json
           if git commit -m "Archive articles rewritten with the search-first recipe"; then
             git pull --rebase origin main
             git push

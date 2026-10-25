@@ -29,6 +29,7 @@ keyFacts:
   - text: "Vulnerabilities detected within third-party open-source libraries require an average remediation half-life of 358 days to resolve."
     source: "Red Hat's 2026 Open Source Security Signals report"
     url: "https://www.redhat.com/en/blog/open-source-security-signals-q3-2026"
+factChecked: "2026-10-25"
 ---
 
 A programming library is a reusable collection of pre-written code, routines, and data definitions that developers import into applications to handle standard operations. Instead of writing low-level network protocols, mathematical algorithms, or file parsers from scratch, programmers call functions already packaged inside the library.
@@ -74,7 +75,7 @@ Organizations accumulate substantial maintenance backlogs because external code 
 - Upstream maintainers abandon niche packages, leaving security holes permanently unpatched unless developers rewrite their internal implementations.
 - Breaking updates force development teams to pause feature work and overhaul application code to maintain package compatibility.
 
-According to Veracode's 2025 State of Software Security Report, 70% of persistent, critical application security debt originates in third-party open-source libraries rather than first-party proprietary code. According to [Red Hat](https://www.redhat.com/en)'s 2026 Open Source Security Signals report, vulnerabilities detected inside third-party open-source libraries require an average remediation half-life of 358 days to resolve.
+According to Veracode's 2025 State of Software Security Report, 70% of persistent, critical application security debt originates in third-party open-source libraries rather than first-party proprietary code. According to Veracode's 2026 State of Software Security report, vulnerabilities detected inside third-party open-source libraries require an average remediation half-life of 358 days to resolve.
 
 ## Electronics with GC1CEO explains official and third-party Arduino libraries
 
@@ -82,7 +83,7 @@ In a practical hardware demonstration, Electronics with GC1CEO explains how libr
 
 Embedded C++ development on the Arduino Uno Rev 3 relies on header files to configure peripherals, sensors, and communication buses. The creator emphasizes that developers should never import libraries casually into resource-constrained microcontrollers because imported routines consume limited system memory.
 
-The video highlights the vast disparity in package ecosystems for embedded development. Electronics with GC1CEO notes that Arduino supplies between 150 and 200 official libraries, while third-party developers have published 8 to 10,000 libraries for the Arduino Uno Rev 3 alone.
+The video highlights the vast disparity in package ecosystems for embedded development. Electronics with GC1CEO notes that Arduino supplies official libraries, while third-party developers have published 8,000 to 10,000 libraries for the broader Arduino platform.
 
 Third-party developers frequently write alternatives to official modules, such as community-built replacements for the standard SoftwareSerial library that offer better execution efficiency.
 

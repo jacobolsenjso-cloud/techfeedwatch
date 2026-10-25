@@ -28,6 +28,10 @@ const FEJL_FIL = './src/data/omskriv-fejl.json';
 const LOG_FIL = './src/data/omskriv-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const fejl = laes(FEJL_FIL, {});
+// 25/10 (Jacob: "bland"): kun artikler, Google har vist (Search Console, 3 mdr.), skrives helt om.
+// Resten faktatjekkes uden omskrivning (faktatjek-gamle.mjs). Uden filen: alle som før.
+const prioFil = laes('./src/data/omskriv-prioritet.json', null);
+const prio = prioFil ? new Set(prioFil.slugs) : null;
 
 const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).map((f) => {
   const raw = fs.readFileSync(`./src/content/videos/${f}`, 'utf8').replace(/\r/g, '');
@@ -44,7 +48,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
   ? alle.filter((a) => a.slug === kun && a.spm)
-  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3)).sort((a, b) => b.dato.localeCompare(a.dato));
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3) && (!prio || prio.has(a.slug))).sort((a, b) => b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
 console.log(kun
