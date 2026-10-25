@@ -84,7 +84,7 @@ Head-mounted displays produce physiological side effects when visual sensory inp
 
 According to the IEEE Technology Navigator, cybersickness symptoms—including nausea, dizziness, and disorientation—affect between 20% and 95% of VR users. The exact rate depends on the application, individual vestibular sensitivity, and exposure duration.
 
-A clinical education trial published in BMC Medical Education in June 2025 evaluated 91 healthcare practitioners in VR psychiatric simulations. Participants in high-movement scenarios experienced significantly higher nausea scores (mean 4.59 out of 48) than those in low-movement scenarios (mean 3.10 out of 48, p = 0.0275).
+A clinical education study published in Advances in Simulation in June 2025 followed 91 healthcare practitioners in VR psychiatric simulations. Participants in high-movement scenarios reported significantly more nausea than those in low-movement scenarios (p = 0.0275), and their overall cybersickness scores were higher too (a mean of 4.59 versus 3.10 out of 48).
 
 Headset use also creates post-session physical disruptions and visual fatigue:
 

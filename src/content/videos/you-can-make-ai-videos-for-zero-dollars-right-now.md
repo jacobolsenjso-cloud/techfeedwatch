@@ -50,8 +50,8 @@ Some focus on photorealistic cinematic action, while others specialize in virtua
 
 Finding the [easiest way to make AI videos](/video/what-is-the-easiest-way-to-make-ai-videos) often comes down to choosing between an all-in-one web editor and a dedicated prompt-to-video generation engine.
 
-## Most AI video models generate short clips under ten seconds
-Current AI video systems generate short visual bursts lasting under ten seconds rather than continuous full-length movies.
+## Most AI video models generate short clips, not full movies
+Current AI video systems generate short visual bursts, typically between about 5 and 20 seconds per generation, rather than continuous full-length movies.
 
 According to Google Cloud Documentation, the Veo 3.1 model creates clips in specific lengths of 4, 6, or 8 seconds at 24 frames per second, exporting outputs in 720p, 1080p, or 4K resolution. These short durations stem from the extreme computing power required to render consistent visual frames. Longer outputs frequently suffer from physical distortions, warping hands, and shifting backgrounds.
 

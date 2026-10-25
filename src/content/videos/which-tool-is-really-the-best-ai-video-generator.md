@@ -78,9 +78,9 @@ Current systems continue to suffer from fundamental reasoning flaws and massive 
 The primary barriers limiting current generation engines include:
 - Failures of intrinsic faithfulness, such as broken physical dynamics, distorted anatomy, and missing commonsense reasoning, which persist across high-ranking models according to the VBench-2.0 benchmark paper published on arXiv in August 2025.
 - Persistence of physical interaction errors, highlighted in OpenAI's technical reporting for the Sora Turbo model in December 2024, which noted ongoing failures in simulating cause-and-effect progression despite generating clips up to 20 seconds at 1080p.
-- Extreme economic dispersion across equivalent workloads, with API costs ranging from $2.55 per minute for FLUX 3 Max to $40.82 per minute for Dreamina Seedance 2.5 on video editing tasks, according to 2026 Artificial Analysis benchmark and pricing data.
+- Extreme economic dispersion across equivalent workloads: on Artificial Analysis's 2026 video-editing leaderboard, API prices range from $9.60 per minute for MiniMax H3 (768p) to $40.82 per minute for Dreamina Seedance 2.5.
 
-These steep generation fees force production teams to weigh fidelity against budgetary limits. A commercial team creating hundreds of iterative drafts may find the $40.82-per-minute cost of Seedance 2.5 reported by Artificial Analysis unsustainable compared to FLUX 3 Max.
+These steep generation fees force production teams to weigh fidelity against budgetary limits. A commercial team creating hundreds of iterative drafts may find the $40.82-per-minute cost of Seedance 2.5 reported by Artificial Analysis unsustainable compared to editing models priced around $10 to $11 per minute, such as Kling 3.0 Omni.
 
 When scenes require complex physical collisions, liquid dynamics, or intricate limb interactions, models regularly hallucinate impossible movements. Understanding prompt structure remains essential when testing [free text-to-video tools](/video/best-text-to-video-ai-tools-for-free-clips).
 

@@ -85,7 +85,7 @@ Physical occlusion provides the primary visual cue that convinces the human brai
 
 Inside a mixed reality headset, users see camera noise in dim light and geometric warping around moving hands. They also notice pixelation from display resolution limits and subtle depth perspective mismatches.
 
-No current hardware achieves a flawless visual match with unassisted human sight. According to a 2025 study by Vona et al. published by IEEE, video see-through technology still introduces measurable visual distortion.
+No current hardware achieves a flawless visual match with unassisted human sight. A January 2026 study by Jialin Wang and colleagues, posted on arXiv, found that video see-through technology still introduces measurable visual distortion.
 
 It also creates perceptual depth mismatch and higher cognitive task loads compared to direct human vision. Users reaching for physical cups or door handles often misjudge distance due to slight optical discrepancies. The visual feed can trigger subtle discomfort when eye movements outpace the rendering pipeline.
 
@@ -95,7 +95,7 @@ Sensors and optics create distinct visual artifacts that wearers notice immediat
 - Peripheral distortion curves straight lines along the edges of the display lenses.
 - Focus disparity occurs because the human eye focuses on a fixed focal display panel while looking at objects positioned at varying digital depths.
 
-(2026) titled "The perceptual gap between video see-through displays and natural human vision," video pass-through headsets alter human visual perception. This occurs due to fixed display focal distances, camera sensor grain in low light, and perspective parallax caused by external cameras being displaced from the user's actual eye positions.
+According to that study, video pass-through headsets alter human visual perception. This occurs due to fixed display focal distances, camera sensor grain in low light, and perspective parallax caused by external cameras being displaced from the user's actual eye positions.
 
 Because camera lenses sit a few inches ahead of or wider than the user's biological pupils, the brain receives a perspective slightly offset from natural sight.
 

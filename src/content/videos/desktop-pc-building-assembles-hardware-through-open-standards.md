@@ -44,7 +44,7 @@ Dynamic system memory, or RAM, provides high-bandwidth workspace for running sof
 Desktop components split into distinct mechanical and electrical roles:
 - The central processing unit (CPU) executes operating system instructions and program computations.
 - The motherboard distributes power, synchronizes peripheral clocks, and hosts expansion cards.
-- Random access memory (RAM) holds active runtime data with single-nanosecond latency.
+- Random access memory (RAM) holds active runtime data and answers requests in tens of nanoseconds, far faster than any storage drive.
 - Solid-state storage (SSD) preserves files across restarts using NAND flash blocks.
 - The power supply unit (PSU) rectifies alternating mains current into regulated direct-current rails.
 
