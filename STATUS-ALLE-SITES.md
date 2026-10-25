@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 208** — brug kun v208). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 209** — brug kun v209). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 208** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 20:58, statusfil v208):** Live (main `4acb7a5c`): Jacobs hjerne bruges nu fuldt ud (core og beliefs var aldrig brugt, erfaringer klippet, korte ord som AI/SEO fandtes ikke) og er udvidet med skrivestil fra hans egne tekster, tilgang, erfaringer og CV-baggrund (med hans ja). Ny "My take"-boks sidst i artiklen (3-6 sætninger i hans stemme, kun hvor emnet passer - 421 af 457). Uden hjernen skrives ingen artikel. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - "My take" og stikprøve.
+**Seneste for techfeedwatch (25/10-2026 kl. 21:33, statusfil v209):** Live (main `0434fe36`): Jacobs stemme flettes nu ind som ét almindeligt afsnit (3-6 sætninger, første person) sidst i den sektion, hvor hans holdning passer bedst - "My take"-boksen er fjernet (Jacob: "ser latterligt ud"). Hele hjernen bruges; uden hjerne ingen artikel. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnittene og stikprøven.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,12 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 21:33 - Stemmen flettet ind i stedet for "My take"-boksen
+- Jacob så "My take"-boksen live og syntes, den så latterlig ud i en artikel. Nu: robotten læser den færdige artikel, vælger den sektion, hvor hans holdning passer bedst, og sætter ét almindeligt afsnit (3-6 sætninger, første person) ind sidst i den - uden overskrift og boks. Samme kontrol som før (ingen nye tal, firmanavne eller privatliv; faktatjekkes med resten). Boks-koden og dens CSS er fjernet.
+- De 2 artikler fra i aften er flyttet over (kvante: under krypteringsafsnittet; Clarity Act: under skatteafsnittet). Skærmbilleder mobil + computer set; 0 fejl i indholdstjekket.
+- Lære: Jeg viste boksen som et isoleret udklip, ikke midt i en artikel - så jeg så ikke, hvor fremmed den virkede. Ved designændringer i artikler: vis skærmbilledet med teksten før og efter, så helheden kan vurderes.
+
 
 ### 25/10-2026 kl. 20:58 - Jacobs hjerne fuldt i brug + "My take" (Jacobs ønske)
 - **Målt fejl i koblingen (rettet):** `core.md` og `beliefs.md` blev læst, men aldrig sendt til skrivningen; `erfaringer.md` blev klippet ved 2.500 af 4.053 tegn; korte emneord ("AI", "AR/VR", "SEO") blev aldrig fundet. Artikler med Jacobs holdninger: 353 -> 421 af 457.
