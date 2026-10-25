@@ -12,8 +12,8 @@ summary: "The most effective method for producing coherent long-form AI video re
 metaDescription: "Discover the best way to create AI videos using prompt chaining, sequential extension in Grok, and automated voiceover editing pipelines."
 targetQuestion: "what is the best way to create ai videos"
 duration: "24:27"
-viewCount: 873
-viewsUpdated: "2026-10-19"
+viewCount: 875
+viewsUpdated: "2026-10-25"
 thumbMax: false
 isShort: false
 faqs:

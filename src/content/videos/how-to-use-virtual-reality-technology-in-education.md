@@ -12,8 +12,8 @@ summary: "Virtual reality enters classrooms as an experiential tool for simulate
 metaDescription: "Learn how to use virtual reality in education: evaluate academic benefits, manage hardware setups, and address student cybersickness risks."
 targetQuestion: "how to use virtual reality in education"
 duration: "5:14"
-viewCount: 99
-viewsUpdated: "2026-10-22"
+viewCount: 103
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 faqs:

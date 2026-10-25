@@ -12,8 +12,8 @@ summary: "Sora AI is a generative artificial intelligence model developed by Ope
 metaDescription: "What is Sora AI? Learn how OpenAI's video generator works, its core features, major limitations, and what its rocky rollout means for generative media."
 targetQuestion: "what is sora ai"
 duration: "5:29"
-viewCount: 7528
-viewsUpdated: "2026-10-20"
+viewCount: 7529
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-20"

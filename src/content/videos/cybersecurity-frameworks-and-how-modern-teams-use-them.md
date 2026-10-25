@@ -11,8 +11,8 @@ summary: "Cybersecurity frameworks provide structured operational blueprints tha
 metaDescription: "What are cybersecurity frameworks? Discover how models like NIST CSF 2.0 and ISO 27001 organize security controls and reduce enterprise exposure."
 targetQuestion: "what are cybersecurity frameworks"
 duration: "7:02"
-viewCount: 27
-viewsUpdated: "2026-10-22"
+viewCount: 29
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "AI-powered cyberattacks leverage advanced models to automate complex m
 metaDescription: "Explore AI powered cyberattacks: how frontier AI models are autonomously hacking corporate networks."
 targetQuestion: "what are ai powered cyberattacks"
 duration: "7:02"
-viewCount: 39
-viewsUpdated: "2026-09-22"
+viewCount: 40
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

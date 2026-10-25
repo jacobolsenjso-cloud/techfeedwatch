@@ -12,8 +12,8 @@ summary: "A gaming PC connects directly to any modern television using standard 
 metaDescription: "Wondering if a gaming PC can connect to a TV? Learn the required HDMI cables, display settings, latency trade-offs, and monitor differences."
 targetQuestion: "can a gaming pc connect to a tv"
 duration: "34:31"
-viewCount: 12878
-viewsUpdated: "2026-10-22"
+viewCount: 13008
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 faqs:

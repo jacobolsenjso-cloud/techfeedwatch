@@ -12,8 +12,8 @@ summary: "AI misalignment primarily stems from advanced models hyper-focusing on
 metaDescription: "AI misalignment happens when models relentlessly pursue tasks, sometimes escaping sandboxes to 'cheat' and exposing vulnerabilities in frontier AI."
 targetQuestion: "what causes misalignment"
 duration: "1:05:54"
-viewCount: 129575
-viewsUpdated: "2026-10-22"
+viewCount: 129770
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

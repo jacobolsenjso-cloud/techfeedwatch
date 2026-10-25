@@ -12,8 +12,8 @@ summary: "Quantum computing solves complex mathematical and physical simulations
 metaDescription: "Discover what quantum computing solves, how quantum algorithms generate speedups, and why machines target chemistry, cryptography, and complex logistics."
 targetQuestion: "what does quantum computing solve"
 duration: "4:49"
-viewCount: 159043
-viewsUpdated: "2026-10-22"
+viewCount: 161742
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 faqs:

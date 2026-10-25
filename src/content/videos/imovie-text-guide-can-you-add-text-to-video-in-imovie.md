@@ -12,8 +12,8 @@ summary: "Apple iMovie lets users add text overlays, titles, lower thirds, and c
 metaDescription: "Can you add text to video in iMovie? Learn how to add, format, and adjust text, titles, and credits on Mac, iPhone, and iPad."
 targetQuestion: "can you add text to video in imovie"
 duration: "19:32"
-viewCount: 3136
-viewsUpdated: "2026-10-22"
+viewCount: 3189
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-16"

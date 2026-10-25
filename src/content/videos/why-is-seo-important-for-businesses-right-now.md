@@ -12,8 +12,8 @@ summary: "Search engine optimization remains the primary data layer powering mod
 metaDescription: "Why is SEO important when AI answer engines dominate search? Discover how organic rankings feed generative models and sustain business visibility."
 targetQuestion: "why is seo important"
 duration: "7:50"
-viewCount: 9
-viewsUpdated: "2026-10-19"
+viewCount: 10
+viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
 faqs:
