@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 204** — brug kun v204). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 205** — brug kun v205). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 204** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 10:29, statusfil v204):** Blandet plan kører (main `d0b8f668`): 29 viste artikler skrives om (3/dag), de øvrige faktatjekkes (10/dag); artikler med mange fejl flyttes til omskrivning. FAQ, resumé og meta tjekkes. Eksisterende AI-billeder beholdes, manglende laves. Jacob har bedt om et forslag til, hvordan det hele bliver robust - afventer hans valg. I dag: nattens kørsel, nye pins, Dependabot.
+**Seneste for techfeedwatch (25/10-2026 kl. 18:17, statusfil v205):** Én opskrift til alle artikler er live (main `fab06424`): slutkontrol på alt, læseren ser; daglig uafhængig stikprøve (2 artikler); 138 gamle artikler fik søgespørgsmål (19 uden). Omskrivning 2/dag (Jacob): de Google har vist først, så alle andre - 431 i kø (ca. 7 mdr.). Faktatjek 10/dag (407 i kø). Målt pris ca. 12 kr/dag. Næste: se første daglige kørsel med stikprøve (26/10 kl. 07:37).
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,19 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 18:17 - Én opskrift, slutkontrol, daglig stikprøve, søgespørgsmål (Jacobs plan)
+- **Slutkontrol** (`src/lib/slutkontrol.mjs`) kører til sidst i robotten OG i faktatjekket af gamle artikler: titel, meta, resumé, FAQ, brødtekst og faktaboks. Tre lag: tal mod researchen, belæg (koden henter kildesiden og tjekker citat og tal) og en faktatjekker med Google-søgning. En sætning uden belæg forsøges rettet efter den rigtige kilde, før den fjernes. Målt: Figure-sætningen blev rettet til det præcise tal (109,504), den falske IBM-sætning blev fjernet.
+- **Daglig stikprøve** (`stikproeve.mjs`, i den daglige kørsel): 2 tilfældige, allerede kontrollerede artikler; alle tal-sætninger tjekkes mod kildesiden af koden. Fejl genkontrolleres samme dag. Log: `src/data/stikproeve-log.json`. Målt: 1 min og 0,03 kr pr. kørsel.
+- **Søgespørgsmål:** 138 gamle artikler fik et rigtigt Google-spørgsmål (`find-spoergsmaal.mjs`), 19 fandt intet passende og faktatjekkes kun.
+- **Kø:** omskrivning 2/dag (Jacob, før 5): de 37 Google-viste først (ca. 3 uger; 2 af de 40 fik intet spørgsmål og faktatjekkes), så alle andre nyeste først - 431 i alt, ca. 7 måneder. En artikel, der stopper, prøves igen efter 7 dage, højst 3 gange (før: opgivet for altid).
+- **Første fulde test:** kvantecomputer-artiklen (den mest viste) er omskrevet: 26 min, 0,41 $ + nyt AI-billede (den havde intet). Faktatjek af 4 gamle artikler: ca. 2,5 min og 0,04 $ pr. artikel.
+- **Pris (målt):** ca. 12 kr/dag (2 omskrivninger à ca. 4,40 kr + 10 faktatjek à ca. 0,30 kr). Mit tal på 35 kr/dag i formiddags var målt før belæg-kaldet blev gjort billigere.
+- Lære: Mit måleværktøj slettede rigtige sætninger - bindestreg-tegnet U+2011, "U.S." der delte sætningen og ødelagde et link, PDF-kilder, produktnavne ("TPU 8t") og dokumentnumre ("800-12 Rev. 1") talt som påstande. Alle fem har nu en test i `_udkast/_test-slutkontrol.mjs` (13 ok). Et faktatjek skal testes på RIGTIGE sætninger, før det må slette noget.
+- Lære: "fetch failed" var ikke Googles fejl: Gemini tænkte i over 300 sek., og Node afbryder efter 300 sek. Målt før rettelse: lav tænkning 13-84 sek. Find tiden, før jeg kalder en fejl midlertidig.
+- Lære: Jeg kørte `git status` fra Linux-maskinen, og den efterlod en låsefil i .git. Git kun fra Windows - også kun-læse-kommandoer.
+- Lære: Et stop i robotten betød, at artiklen aldrig blev prøvet igen. Et stop må aldrig være permanent uden at Jacob ser det - nu 3 forsøg, så står den i status.
+
 
 ### 25/10-2026 kl. 10:29 - Billeder, meta og artikler med mange fejl (Jacobs rettelse)
 - **Billeder:** min ændring fra v203 ("aldrig nyt billede ved omskrivning") var en misforståelse og er rullet tilbage (`d0b8f668`). Reglen er nu: et eksisterende AI-billede laves aldrig om; en artikel uden AI-billede får et, også ved omskrivning.
