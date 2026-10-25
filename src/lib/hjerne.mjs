@@ -15,8 +15,8 @@ const DIR = process.env.HJERNE_DIR || '_hjerne';
 export function laesHjerne() {
   try {
     const l = (f) => { try { return fs.readFileSync(`${DIR}/${f}`, 'utf8').replace(/\r\n/g, '\n').trim(); } catch { return ''; } };
-    const hjerne = { voice: l('voice.md'), beliefs: l('beliefs.md'), emner: l('emner.md'), erfaringer: l('erfaringer.md') };
-    return (hjerne.voice || hjerne.emner) ? hjerne : null;
+    const hjerne = { core: l('core.md'), voice: l('voice.md'), beliefs: l('beliefs.md'), emner: l('emner.md'), erfaringer: l('erfaringer.md') };
+    return (hjerne.voice || hjerne.emner || hjerne.core) ? hjerne : null;
   } catch { return null; }
 }
 
@@ -36,9 +36,19 @@ export function emneAfsnit(hjerne, tekst) {
     const m = linje.match(/^- \*\*(.+?):?\*\*/);
     if (!m) continue;
     const navn = m[1].toLowerCase();
-    const ord = navn.split(/[\s/&,()-]+/).filter((o) => o.length >= 4 && !FOR_GENERELLE.has(o));
-    if (t.includes(navn) || ord.some((o) => t.includes(o))) ud.push(linje.trim());
+    const alle = navn.split(/[\s/&,()-]+/).filter((o) => o && !FOR_GENERELLE.has(o));
+    // Ord på 4+ tegn matches som før (også "agents" i "agentic"). 25/10: korte forkortelser
+    // ("ai", "ar", "vr", "seo") matches nu som HELE ord - før blev de aldrig fundet, og 104 af
+    // 457 artikler (fx "how does ai affect seo") fik kun stilen, ingen holdninger.
+    const lange = alle.filter((o) => o.length >= 4);
+    // Korte ord KUN fra den engelske nøgleordsliste i parentesen - ikke fra de danske navne
+    // ("Kodning med AI" ville ellers ramme alle AI-artikler og skubbe det rigtige emne ud).
+    const noegle = (navn.match(/\(([^)]*)\)/)?.[1] || '').split(/[\s,]+/);
+    const korte = noegle.filter((o) => o.length >= 2 && o.length <= 3 && /^[a-z]+$/.test(o));
+    if (t.includes(navn) || lange.some((o) => t.includes(o)) || korte.some((o) => new RegExp(`\\b${o}\\b`).test(t))) ud.push(linje.trim());
   }
+  // Det brede "AI & Tech" sidst, så et mere præcist emne (SEO, kodning, agenter) får pladsen først.
+  ud.sort((a, b) => Number(/^- \*\*AI & Tech/.test(a)) - Number(/^- \*\*AI & Tech/.test(b)));
   return ud.slice(0, 2);
 }
 
@@ -49,10 +59,14 @@ export function stemmeBlok(hjerne, tekst) {
   if (!hjerne) return '';
   const holdninger = emneAfsnit(hjerne, tekst);
   const dele = [`SITE OWNER'S VOICE (the owner's own notes, written in Danish - the article stays in English):`];
-  if (hjerne.voice) dele.push(`Style ideals - follow the spirit, not the wording:\n${hjerne.voice.slice(0, 1800)}`);
+  // 25/10: core.md (hvem Jacob er, kildekritik, opslagsværk) blev læst, men aldrig brugt. Nu altid med.
+  if (hjerne.core) dele.push(`Who the owner is and why the site exists - let it shape the angle and tone:\n${hjerne.core.slice(0, 3000)}`);
+  if (hjerne.voice) dele.push(`Style ideals - follow the spirit, not the wording:\n${hjerne.voice.slice(0, 3000)}`);
   if (holdninger.length) {
     dele.push(`OWNER'S STATED POSITIONS that concern this article's topic:\n${holdninger.join('\n')}`);
-    if (hjerne.erfaringer) dele.push(`OWNER'S OWN EXPERIENCE (background - use only what is stated, never invent more):\n${hjerne.erfaringer.slice(0, 2500)}`);
+    // 25/10: beliefs.md blev heller aldrig brugt; erfaringer blev klippet ved 2.500 af 4.053 tegn.
+    if (hjerne.beliefs) dele.push(`OWNER'S GENERAL POSITIONS (use only where one genuinely bears on this topic):\n${hjerne.beliefs.slice(0, 4000)}`);
+    if (hjerne.erfaringer) dele.push(`OWNER'S OWN EXPERIENCE (background - use only what is stated, never invent more):\n${hjerne.erfaringer.slice(0, 8000)}`);
     dele.push(`EXCEPTION TO RULE 18: you MAY write at most ONE short passage (2-4 sentences) in the first person, presenting the owner's stated position or experience above, placed where the article's own facts support it (often the video section or a closing section). Use ONLY what is stated above - never invent personal details, and attribute any figure to its source as usual. If the position does not genuinely bear on the reader's question, write NO first-person content at all.`);
   } else {
     dele.push(`No stated position matches this topic: write NO first-person content (rule 18 applies in full).`);

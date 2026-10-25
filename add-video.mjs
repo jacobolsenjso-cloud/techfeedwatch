@@ -657,6 +657,9 @@ async function run() {
     // Jacobs hjerne (trin 5, 21/10): stemme + holdninger ind i skriveprompten, med
     // bremsen i src/lib/hjerne.mjs (holdninger kun ved emnematch, højst ét afsnit).
     const hjerne = laesHjerne();
+    // 25/10 (Jacob: "selvfølgelig skal du bruge min hjerne"): uden hjernen skrives INGEN artikel.
+    // Før skrev robotten videre uden - tre testartikler blev skrevet uden Jacobs stemme.
+    if (!hjerne && !isShort) throw new Error('Hjernen mangler (_hjerne / HJERNE_DIR) - artiklen skrives ikke uden Jacobs stemme. Midlertidig fejl.');
     const hjerneBlok = isShort ? '' : stemmeBlok(hjerne, `${soeg.emne || ''} ${targetQuestion || ''} ${videoTitel || ''}`);
     // hjerneStemme (22/10): hjernen har en holdning til NETOP dette emne, så artiklen må
     // have én kort jeg-passage — bruges af talesprog-kontrollen og rettelses-prompterne,
