@@ -89,13 +89,13 @@ When a phone feels uncomfortably hot to hold, follow these practical steps:
 
 According to Apple Support, removing cases that trap heat during charging helps lower internal temperatures. Moving the iPhone away from direct sunlight into a well-ventilated area also cools the device. Trapped heat cannot escape when heavy plastic or silicone covers the device shell.
 
-Apple Support emphasizes allowing the device to cool gradually at standard room temperatures. Forcing rapid cooling through refrigerators or ice packs risks internal condensation (moisture forming inside the phone).
+Let the phone cool down at normal room temperature. Putting it in a refrigerator or on an ice pack can make moisture form inside the phone (condensation).
 
 That moisture damages sensitive electronics. Giving internal components time to breathe restores normal speeds without extra risk.
 
 Treating mobile devices with sensible care means stepping away from demanding screens rather than letting hardware overheat.
 
-## ## Daniel Gaiya tests iPhone 15 Pro overheating
+## Daniel Gaiya tests iPhone 15 Pro overheating
 Reviewer Daniel Gaiya tested the iPhone 15 Pro across daily tasks. He evaluated whether complaints about thermal throttling (when a device slows down performance to prevent overheating) hold up in real life. His practical testing tracked real-world temperatures during demanding workflows like video calls, fast charging, and mobile gaming.
 
 Fast charging produced noticeable thermal increases during his tests. Daniel Gaiya observed his charger throttling down to between 10 to 20 watts as internal heat mounted.

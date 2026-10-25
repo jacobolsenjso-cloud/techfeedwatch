@@ -49,6 +49,9 @@ export function datoerI(s) { return [...String(s).matchAll(MAANED)].map((m) => (
 
 const udenLinks = (md) => String(md).replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 const brodtekst = (md) => String(md).split(/\n## Sources\s*\n/)[0];
+// Overskrifter er ikke påstande. 25/10: faktatjekkeren fik "## Daniel Gaiya tests iPhone 15 Pro" med
+// (tallet 15), svarede med en rettelse inkl. "## ", og overskriften blev til "## ## Daniel ...".
+const saetningerUdenOverskrifter = (md) => saetninger(String(md).split('\n').filter((l) => !/^\s*#/.test(l)).join('\n'));
 
 // ---------- 2. Mål og datoer uden dækning ----------
 // Mål med små tal og datoer med måned, som hverken står i researchen eller videoen.
@@ -56,7 +59,7 @@ export function maalUdenDaekning(md, kildeTekst) {
   const kendte = talMaengde(kildeTekst);
   const lav = String(kildeTekst).toLowerCase();
   const ud = [];
-  for (const s of saetninger(brodtekst(md))) {
+  for (const s of saetningerUdenOverskrifter(brodtekst(md))) {
     const mangler = [];
     for (const m of maalI(s)) if (!kendte.has(m.tal)) mangler.push(m.tekst);
     for (const d of datoerI(s)) if (!(lav.includes(d.maaned) && lav.includes(d.aar))) mangler.push(d.tekst);
@@ -79,7 +82,7 @@ export function kildeBinding(md, soeg, { kanal = '', videoTekst = '' } = {}) {
     return fakta.filter((f) => f.tekst.toLowerCase().includes(n) || f.kilder.some((nr) => sider.has(nr))).map((f) => f.tekst).join('\n');
   };
   const ud = [];
-  for (const s of saetninger(brodtekst(md))) {
+  for (const s of saetningerUdenOverskrifter(brodtekst(md))) {
     const nævnte = navne.filter((n) => harKildenavn(s, [n]));
     if (!nævnte.length) continue;
     const tekst = nævnte.map(tekstFor).join('\n');
@@ -98,7 +101,7 @@ export function kildeBinding(md, soeg, { kanal = '', videoTekst = '' } = {}) {
 // ---------- 3. Skeptisk faktatjekker (model med Google-søgning) ----------
 const KILDEORD = /\b(according to|said|says|reports?|study|survey|published|journal|et al\.|research(?:ers)?|data from|estimates?|forecasts?)\b/i;
 export function tjekSaetninger(md) {
-  return saetninger(brodtekst(md)).filter((s) => s.split(/\s+/).length >= 4 && (/\d/.test(s) || maalI(s).length || datoerI(s).length || KILDEORD.test(s)));
+  return saetningerUdenOverskrifter(brodtekst(md)).filter((s) => s.split(/\s+/).length >= 4 && (/\d/.test(s) || maalI(s).length || datoerI(s).length || KILDEORD.test(s)));
 }
 
 export function skeptikerPrompt(ss, researchTekst, videoNoter) {
@@ -169,7 +172,7 @@ export function anvendRettelser(md, fund) {
     const re = new RegExp(ord.map((w) => w.replace(/\$/g, '\\$')).join('(?:\\]\\([^)]*\\)|[^A-Za-z0-9$%\\n])+?') + '(?:\\]\\([^)]*\\))?[^\\sA-Za-z0-9]*');
     const m = ny.match(re);
     if (!m) { ikkeFundet.push(f); continue; }
-    ny = ny.slice(0, m.index) + (f.rettet || '') + ny.slice(m.index + m[0].length);
+    ny = ny.slice(0, m.index) + String(f.rettet || '').replace(/^#+\s*/, '') + ny.slice(m.index + m[0].length);
     ny = ny.replace(/[ \t]{2,}/g, ' ');
   }
   // Tomme punkter i lister efter en fjernet sætning
