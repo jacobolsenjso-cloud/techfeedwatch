@@ -23,6 +23,8 @@ import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, noegleFakta, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
+// Faktatjek og læsbarhed før udgivelse (25/10): kildebinding, mål/datoer, skeptisk faktatjekker, klassetrin.
+import { kildeBinding, maalUdenDaekning, skeptiker, anvendRettelser, klassetrin, forenklPrompt, KLASSETRIN_MAAL, KLASSETRIN_MAKS, KLASSETRIN_STOP, ORD_MAAL, ORD_STOP } from './src/lib/faktatjek.mjs';
 import { vaerktoejTil, brugsSaetning } from './src/lib/vaerktoej.mjs';
 import { ALLE_EMNER } from './src/lib/emner.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
@@ -670,12 +672,12 @@ async function run() {
     SUMMARY: A sharp 1-2 sentence summary of the Short.
 
     Video Content Data: ${text.substring(0, 5000)}`
-      : `You are the Lead Tech Analyst and Senior Journalist for TechFeedWatch, a premium tech media outlet covering AI, Tech, FinTech, and Crypto with unbiased, high-quality journalism. Someone searching Google typed "${targetQuestion}". This article's job is to answer that search better than the pages that rank for it today. The research is done: the RESEARCH below lists the questions searchers need answered and the facts the best web pages give, each with its source. You have also watched one video on the subject by ${kildeNavn(channelTitle) || 'a creator'}; it is a SUPPLEMENT - one practical illustration, not the backbone of the article.
+      : `You are a senior journalist at TechFeedWatch, a tech news site covering AI, Tech, FinTech, and Crypto for a general audience. Write like a good newspaper explainer: accurate, fair, and so clear that a curious 15-year-old understands every sentence. Someone searching Google typed "${targetQuestion}". This article's job is to answer that search better than the pages that rank for it today. The research is done: the RESEARCH below lists the questions searchers need answered and the facts the best web pages give, each with its source. You have also watched one video on the subject by ${kildeNavn(channelTitle) || 'a creator'}; it is a SUPPLEMENT - one practical illustration, not the backbone of the article.
 
     THE READER'S QUESTION: "${targetQuestion}". Answer it plainly in the first two sentences. Then build the article from the RESEARCH QUESTIONS, in the order a reader needs them. The headline must reflect the question. A reader who never watches the video must come away with a complete answer.
 
     Return EXACTLY in this format:
-    TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Understanding", "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", "Decoding", "Navigating", "Demystifying", "Unlocking", "Exploring", or "The New Frontier" - start with the subject or the question word.
+    TITLE: A headline of 40-62 characters that includes the primary keyword/topic the way people search for it. REQUIRED FORM: ${TITLE_FORMS[hashString(videoId + 'titelform') % TITLE_FORMS.length]} Never use an ampersand. Never open with any of these words (recent headlines already do): ${senesteAabningsord().join(', ') || '(none)'}. Be concrete and specific; search clarity comes first. NEVER use vague or poetic openers such as "Understanding", "Beyond", "The Quiet", "The Dawn of", "Rethinking", "Inside", "Unpacking", "Decoding", "Navigating", "Demystifying", "Unlocking", "Exploring", or "The New Frontier" - start with the subject or the question word. Whatever the form, write it like a newspaper headline that tells the searcher plainly what they will learn about their question - never an abstract claim about the subject such as "PC Building Assembles Hardware Through Open Standards".
     TAGS: Choose 1-2 tags that best fit the video, ONLY from this exact list: ${ALLOWED_TAGS.join(', ')}. Return them comma-separated, e.g. 'SEO, AI Video'. Do not invent new tags.
     SUMMARY: A sharp, analytical 3-4 sentence introduction or TL;DR.
     META: A single-line search meta description, MAX 155 characters, written to earn clicks in Google and naturally including the main keyword. It must be correct, natural English: Google searches are often fragments (e.g. "can i ai videos"), so never paste the search words verbatim unless they already form a correct sentence - rephrase them instead (e.g. "Can you make AI videos?"). Plain text, no quotes.
@@ -711,6 +713,10 @@ async function run() {
     22. Do not write a sources or references section - it is added automatically.
     23. If the reader's question assumes something (that X is better than Y, that Z is safe, that W is dead), never state that assumption as settled fact. Show where it holds and where it does not, using the RESEARCH FACTS on both sides, and end with a fair, evidence-based verdict. No sweeping judgments ("clear superiority", "always", "the best") without evidence in the same sentence. Fair does NOT mean hedged: state a limitation as its own plain sentence with its source, never as a qualifying clause tacked onto another sentence.
     24. WRITE LIKE A PERSON, NOT A MODEL: say each point once, plainly. Never use these machine patterns: "not just X, but Y" / "isn't just X; it's Y", "it is worth noting" / "it is important to note", "plays a key/pivotal/vital role", opening a sentence with "Ultimately," "At its core," "In essence," or "In short,", clichés like "game-changer", "double-edged sword", "ever-evolving", and hedges like "does not invariably" or "though ... not always". Take a clear position where the evidence supports one.
+    25. PLAIN LANGUAGE (reading level of a 15-year-old, US grade ${KLASSETRIN_MAAL}-10): sentences of 12-16 words on average, none over 25 words; everyday words; explain every technical term in a few plain words the first time it appears (for example "latency (the delay before data arrives)"). Keep the term itself - readers search for it.
+    26. A JOURNALIST CHECKS BEFORE WRITING: every fact says who says it. Attribute a figure to a publisher ONLY if that figure comes from that publisher's page in the RESEARCH (its [S#] tag); never move a figure from one source to another. A claim from the video is the creator's claim ("${kildeNavn(channelTitle) || 'The creator'} says ...") - never state it as fact unless the RESEARCH FACTS confirm it. Never write a date, month, duration, size, weight, price, count or speed that is not in the RESEARCH FACTS or the VIDEO FACT SHEET - this includes written-out numbers ("a minute", "ten seconds", "two hours", "single-nanosecond") and a month or year for an event the sources do not date. Never name a study's authors or journal unless the RESEARCH gives them.
+    27. WHY IT MATTERS: include one short passage that tells the reader what this means for them in practice.
+    28. LIMITS: where the RESEARCH FACTS state a limit, a risk or a disagreement, say so plainly in its own sentence and name its source. Never invent an uncertainty, and never claim that a source says something is unknown.
     ${hjerneBlok}
 
     STRUCTURE (built from the search, not from the video):
@@ -1202,7 +1208,18 @@ ${content}`);
         console.log(`👓 Læsertjek: ${lfFoer} fund (${lfListe.map((x) => x.problem).join(', ')}), ${content === foerLaeser ? 0 : r.rettet} rettet, ${lf.length} tilbage`);
         for (const x of lf) console.log(`   - [${x.problem}] ${x.sentence.slice(0, 120)} (${x.why})`);
       } else console.log('👓 Læsertjek: 0 fund');
-      if (lf.length >= LAESER_MAKS) throw new Error(`Læsertjek: ${lf.length} sætninger, en læser snubler over, efter rettelse (højst ${LAESER_MAKS - 1}). Artiklen skrives ikke.`);
+      // JARGON (25/10): uforklarede fagord rettes i en runde mere, men stopper ikke artiklen —
+      // prøverne viste, at hver gennemlæsning finder nye kandidater. De øvrige fund stopper som før.
+      const jargon = lf.filter((x) => x.problem === 'JARGON');
+      if (jargon.length) {
+        const foerJ = content;
+        const r2 = await retLaeserFund(genAI, content, jargon);
+        content = r2.md;
+        if (content !== foerJ && nyeFejl(status())) { content = foerJ; console.log('   fagords-rettelse kasseret: den bragte nye fejl ind'); }
+        else console.log(`👓 Fagord: ${r2.rettet} af ${jargon.length} forklaret i anden runde`);
+      }
+      const stopFund = lf.filter((x) => x.problem !== 'JARGON');
+      if (stopFund.length >= LAESER_MAKS) throw new Error(`Læsertjek: ${stopFund.length} sætninger, en læser snubler over, efter rettelse (højst ${LAESER_MAKS - 1}). Artiklen skrives ikke.`);
 
       // Redaktørtjek (fase B, 12/10, src/lib/redaktoertjek.mjs): besvarer artiklen
       // søgningens delspørgsmål, og reklamerer den? Ét rettelsesforsøg; står fejlen
@@ -1240,6 +1257,118 @@ ${content}`);
       if (rt && rt.ensidige.length > MAKS_ENSIDIGE) throw new Error(`Redaktørtjek: ${rt.ensidige.length} ensidige sætninger efter rettelse (højst ${MAKS_ENSIDIGE}): ${rt.ensidige.map((s) => `"${s.slice(0, 80)}"`).join(' · ')}. Artiklen skrives ikke.`);
       if (rt && rt.ensidige.length) for (const s of rt.ensidige) console.log(`   ensidig sætning tilbage (tilladt, højst ${MAKS_ENSIDIGE}): ${s.slice(0, 120)}`);
       if (rt) console.log(`🧑‍⚖️ Redaktørtjek: alle ${soeg.delspoergsmaal.length} delspørgsmål besvaret, ingen reklame, ${rt.ensidige.length} ensidig(e) sætning(er)`);
+
+      // ===== 25/10 (Jacob): læsbarhed og faktatjek før udgivelse — src/lib/faktatjek.mjs =====
+      // Faktatjekket af 20 artikler fandt 15 talfejl: forkerte størrelsesordner, opfundne datoer
+      // og tre "According to X", hvor X ikke sagde det. Rækkefølge: først forenkling (den skriver
+      // teksten om), så faktatjekket — så det er den endelige tekst, der er tjekket.
+      const videoTekst = `${text}\n${faktaarkTekst(fakta)}`;
+      const kildeTekst = `${videoTekst}\n${soegFaktaTekst}`;
+      const cifre = (md) => [...md.matchAll(/(?<![A-Za-z0-9])\d[\d,]*(?:\.\d+)?/g)].map((m) => m[0].replace(/,/g, '')).sort().join(' ');
+
+      // A. Læsbarhed: klassetrin 9-10 (Jacob). Én forenkling, der ikke må ændre tal, overskrifter eller links.
+      let kt = klassetrin(content);
+      const ktFoer = kt.klassetrin;
+      let forenklet = false;
+      if (kt.klassetrin > KLASSETRIN_MAKS || kt.ordPrSaetning > ORD_MAAL) {
+        const foerF = content;
+        try {
+          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 32768, temperature: 0.3 } }).generateContent(forenklPrompt(content));
+          const ny = sanitizeLinks((r.response.text() || '').replace(/^```(markdown)?\s*/i, '').replace(/\s*```$/i, '').trim());
+          const h2 = (md) => (md.match(/^##\s.+$/gm) || []).map((h) => h.trim()).join('\n');
+          const laengde = ny.split(/\s+/).length / Math.max(1, content.split(/\s+/).length);
+          const grund = [h2(ny) !== h2(content) && 'overskrifter ændret', cifre(ny) !== cifre(content) && 'tal ændret', (laengde < 0.8 || laengde > 1.4) && `længde ${Math.round(laengde * 100)} %`].filter(Boolean);
+          if (!grund.length) { content = ny; forenklet = true; } else console.log(`   forenkling kasseret: ${grund.join(', ')}`);
+        } catch (e) { console.log(`   forenkling fejlede: ${e.message.split('\n')[0]}`); }
+        if (content !== foerF && nyeFejl(status())) { content = foerF; forenklet = false; console.log('   forenkling kasseret: den bragte nye fejl ind'); }
+        kt = klassetrin(content);
+      }
+      // Linjen læses af målingerne. Ændr ikke formatet.
+      console.log(`LAESBARHED: ${JSON.stringify({ foer: ktFoer, efter: kt.klassetrin, ordPrSaetning: kt.ordPrSaetning, forenklet })}`);
+      if (kt.ordPrSaetning > ORD_STOP) throw new Error(`Læsbarhed: ${kt.ordPrSaetning} ord pr. sætning efter forenkling (højst ${ORD_STOP}). Artiklen skrives ikke.`);
+      if (kt.klassetrin > KLASSETRIN_STOP) throw new Error(`Læsbarhed: klassetrin ${kt.klassetrin} efter forenkling (højst ${KLASSETRIN_STOP}). Artiklen skrives ikke.`);
+
+      // B. Kildebinding og mål/datoer (deterministisk, ingen modelkald for at finde dem).
+      const detFund = () => {
+        const set = new Map();
+        for (const b of kildeBinding(content, soeg, { kanal: kildeNavn(channelTitle), videoTekst })) set.set(b.saetning, `${b.navne.join('/')} gives no ${b.mangler.join(', ')} in the research`);
+        for (const m of maalUdenDaekning(content, kildeTekst)) set.set(m.saetning, `${m.mangler.join(', ')} is in neither the research nor the video`);
+        return [...set].map(([saetning, grund]) => ({ saetning, grund }));
+      };
+      let df = detFund();
+      const dfFoer = df.length;
+      if (df.length) {
+        console.log(`🧾 Faktatjek (kilder og mål): ${df.length} sætning(er) — beder om rettelse`);
+        for (const f of df) console.log(`   - ${f.saetning.slice(0, 120)} (${f.grund})`);
+        try {
+          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
+            .generateContent(`Each numbered sentence below gives a figure, a date or a measurement that its named source (or our research) does not give. For each, write a corrected sentence: use only figures from the RESEARCH or the VIDEO FACT SHEET and attribute each to the publisher whose page gives it (or to the creator for a video figure), or make the same point without the figure. Plain English, same meaning otherwise. Never invent a figure. Return ONLY a JSON array: [{"n":1,"fix":"..."}]. Use "fix":"" to delete a sentence that cannot be saved.
+
+SENTENCES:
+${df.map((f, i) => `${i + 1}. ${f.saetning}  [problem: ${f.grund}]`).join('\n')}
+
+RESEARCH (from Google):
+${soegningTekst(soeg)}
+
+VIDEO FACT SHEET:
+${faktaarkTekst(fakta)}`);
+          const arr = JSON.parse(((r.response.text() || '').match(/\[[\s\S]*\]/) || ['[]'])[0]);
+          const fixes = arr.filter((x) => x && df[x.n - 1]).map((x) => ({ saetning: df[x.n - 1].saetning, rettet: String(x.fix || '').trim() }));
+          const foerD = content;
+          const a = anvendRettelser(content, fixes);
+          content = a.md;
+          if (nyeFejl(status())) { content = foerD; console.log('   kilde-rettelse kasseret: den bragte nye fejl ind'); }
+        } catch (e) { console.log(`   kilde-rettelse fejlede: ${e.message.split('\n')[0]}`); }
+        df = detFund();
+        // Hvad rettelsen ikke løste, fjernes: et tal uden dækning må aldrig udgives.
+        if (df.length) {
+          const a = anvendRettelser(content, df.map((f) => ({ saetning: f.saetning, rettet: '' })));
+          content = a.md;
+          if (a.ikkeFundet.length) throw new Error(`Faktatjek: ${a.ikkeFundet.length} sætning(er) med tal uden dækning kunne hverken rettes eller fjernes. Artiklen skrives ikke.`);
+          console.log(`   ${df.length} sætning(er) fjernet, fordi rettelsen ikke holdt`);
+          df = detFund();
+        }
+        if (df.length) throw new Error(`Faktatjek: ${df.length} sætning(er) med tal uden dækning efter rettelse. Artiklen skrives ikke.`);
+      }
+
+      // C. Skeptisk faktatjekker med Google-søgning: størrelsesordner, enheder, datoer, kildeangivelser
+      // og videoskaberens egne fejl. Uden et gennemført tjek udgives artiklen ikke.
+      const research = soegningTekst(soeg);
+      const videoNoter = faktaarkTekst(fakta).slice(0, 6000);
+      const sk = await skeptiker(genAI, hentModel, GEMINI_MODEL, content, research, videoNoter);
+      if (sk === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
+      let skRettet = 0, skFjernet = 0, skTilbage = 0;
+      if (sk.fund.length) {
+        console.log(`🕵️ Faktatjekker: ${sk.fund.length} af ${sk.tjekket} sætninger fanget`);
+        for (const f of sk.fund) console.log(`   - [${f.dom}] ${f.saetning.slice(0, 110)} (${f.grund.slice(0, 120)})`);
+        const foerS = content;
+        const a = anvendRettelser(content, sk.fund);
+        content = a.md;
+        if (a.ikkeFundet.length) throw new Error(`Faktatjek: ${a.ikkeFundet.length} fanget sætning(er) kunne ikke findes i teksten. Artiklen skrives ikke.`);
+        if (nyeFejl(status()) || detFund().length) {
+          // En rettelse bragte et nyt tal uden dækning ind: så fjernes de fangede sætninger i stedet.
+          content = anvendRettelser(foerS, sk.fund.map((f) => ({ ...f, rettet: '' }))).md;
+          skFjernet = sk.fund.length;
+          console.log('   rettelserne bragte nye fejl ind — de fangede sætninger er fjernet i stedet');
+        } else {
+          const rettede = sk.fund.filter((f) => f.rettet);
+          skFjernet = sk.fund.length - rettede.length;
+          // De rettede sætninger tjekkes én gang til. Holder en ikke, fjernes den.
+          if (rettede.length) {
+            const igen = await skeptiker(genAI, hentModel, GEMINI_MODEL, rettede.map((f) => f.rettet).join('\n\n'), research, videoNoter);
+            if (igen === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
+            if (igen.fund.length) {
+              content = anvendRettelser(content, igen.fund.map((f) => ({ ...f, rettet: '' }))).md;
+              skFjernet += igen.fund.length;
+            }
+            skRettet = rettede.length - igen.fund.length;
+          }
+        }
+        skTilbage = detFund().length;
+        if (skTilbage) throw new Error(`Faktatjek: ${skTilbage} sætning(er) med tal uden dækning efter faktatjekkerens rettelser. Artiklen skrives ikke.`);
+      }
+      // Linjen læses af målingerne. Ændr ikke formatet.
+      console.log(`FAKTATJEK: ${JSON.stringify({ kildeOgMaal: dfFoer, tjekket: sk.tjekket, fanget: sk.fund.length, wrong: sk.fund.filter((f) => f.dom === 'WRONG').length, rettet: skRettet, fjernet: skFjernet })}`);
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);
@@ -1327,6 +1456,9 @@ ${content}`);
     // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.
     const date = erstatGammel?.date || new Date().toISOString().split('T')[0];
     const rewrittenYaml = erstatGammel ? `rewrittenAt: "${new Date().toISOString().split('T')[0]}"\n` : "";
+    // recipe 3 (25/10): skrevet med journalist-reglerne, læsbarhed og faktatjekket. omskriv-gamle.mjs
+    // omskriver alle artikler uden dette mærke. Hæv tallet, når opskriften ændres markant igen.
+    const recipeYaml = isShort ? "" : "recipe: 3\n";
 
     const faqsYaml = faqs.length > 0
       ? "faqs:\n" + faqs.map(f => `  - question: ${toYamlDoubleQuoted(f.question)}\n    answer: ${toYamlDoubleQuoted(f.answer)}`).join('\n') + "\n"
@@ -1355,7 +1487,7 @@ ${content}`);
       ? "keyFacts:\n" + noegle.map((f) => `  - text: ${toYamlDoubleQuoted(f.text)}\n    source: ${toYamlDoubleQuoted(f.source)}\n    url: ${toYamlDoubleQuoted(f.url)}`).join('\n') + "\n"
       : "";
 
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

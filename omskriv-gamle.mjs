@@ -1,8 +1,9 @@
-// Omskriver gamle artikler med den nye opskrift ("søgning først"), N pr. kørsel (14/10-2026,
-// Jacob: 5 om dagen, nyeste først). Kører på GitHub (workflow "Omskriv gamle artikler").
+// Omskriver gamle artikler med den nye opskrift, N pr. kørsel (14/10-2026, Jacob: 5 om dagen,
+// nyeste først). Kører på GitHub (workflow "Omskriv gamle artikler").
 //
-// Gammel artikel = ingen "## Sources" (skrevet med den gamle opskrift) og har et søgespørgsmål
-// (targetQuestion — den nye opskrift kræver det). Hver omskrivning laver selv sit AI-billede,
+// 25/10 (Jacob): ALLE artikler skrives om med opskrift 3 (journalist-regler, klassetrin 9-10,
+// faktatjek - add-video.mjs). Gammel artikel = mangler "recipe: 3" i frontmatter og har et
+// søgespørgsmål (targetQuestion — opskriften kræver det). Før: mangler "## Sources". Hver omskrivning laver selv sit AI-billede,
 // eller genbruger et eksisterende (add-video.mjs).
 //
 // Sikringer:
@@ -34,7 +35,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
     slug: f.replace(/\.md$/, ''),
     dato: raw.match(/^date:\s*"(.*)"/m)?.[1] || '',
     spm: raw.match(/^targetQuestion:\s*"(.*)"/m)?.[1] || '',
-    ny: /^## Sources\s*$/m.test(raw),
+    ny: /^recipe:\s*3\b/m.test(raw),
     short: /^isShort:\s*true/m.test(raw),
   };
 });
@@ -43,7 +44,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
   ? alle.filter((a) => a.slug === kun && a.spm)
-  : alle.filter((a) => !a.ny && !a.short && a.spm && !fejl[a.slug]).sort((a, b) => b.dato.localeCompare(a.dato));
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3)).sort((a, b) => b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
 console.log(kun
@@ -67,15 +68,16 @@ for (const a of gamle.slice(0, antal)) {
   const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
   // 24/10: succes = ny opskrift OG ændret indhold. En --kun-artikel HAR allerede
   // ## Sources, så uden ændrings-tjekket ville en fejlet kørsel melde succes.
-  if (/^## Sources\s*$/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; }
+  if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; }
   else {
     const grund = (ud.match(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/) || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
     // Midlertidige fejl hos Google (500/503/429, overbelastet, timeout) er ikke artiklens skyld —
     // den prøves igen næste dag. Kun egentlige stop (tjek, relevans, manglende kilde) huskes.
     // (14/10: "programming can make you rich…" fik en 500-fejl og blev fejlagtigt opgivet.)
-    const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed/i.test(grund);
-    if (!midlertidig) fejl[a.slug] = grund;
+    const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed|midlertidig fejl/i.test(grund);
+    // Gemmes med opskriftens nummer: en artikel, der fejlede under en ældre opskrift, prøves igen.
+    if (!midlertidig) fejl[a.slug] = { grund, recipe: 3, dato: new Date().toISOString().slice(0, 10) };
     iTraek++;
     if (iTraek >= 3) { console.log('\nStopper: 3 i træk lykkedes ikke — tjek Gemini-kreditten (AI Studio -> Billing) og loggen.'); break; }
   }
