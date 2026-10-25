@@ -72,7 +72,7 @@ The call for solid oversight aims to ensure consumer protection and prevent illi
 
 The establishment of clear cryptocurrency regulation in the US impacts a wide array of stakeholders, with benefits and drawbacks distributed across various groups. For individual investors, clearer rules could mean enhanced protection against fraud and market manipulation.
 
-Defined guidelines for exchanges, wallets, and other service providers could foster greater trust and security, potentially drawing more mainstream participation into the crypto market. Without such clarity, investors face inherent risks, including exposure to significant volatility, which remains a concern in the broader crypto market, as explored in [What Is Crypto Market Volatility and Its Impact](/video/the-allure-of-mad-gains-why-crypto-trading-demands-more-than-beginner).
+Defined guidelines for exchanges, wallets, and other service providers could foster greater trust and security, potentially drawing more mainstream participation into the crypto market. Without such clarity, investors face inherent risks, including exposure to significant volatility, which remains a concern in the broader crypto market, as explored in [What Happens When Crypto Market Volatility Spikes?](/video/the-allure-of-mad-gains-why-crypto-trading-demands-more-than-beginner).
 
 For businesses and developers operating within the decentralized finance space, regulatory certainty offers a stable environment for innovation and growth. Companies like Coinbase, which facilitate crypto transactions and custody, stand to benefit from clear operational guidelines, allowing them to expand services without constant fear of regulatory enforcement actions or legal challenges.
 

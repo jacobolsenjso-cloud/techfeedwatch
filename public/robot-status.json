@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-10-25T00:27:36.517Z",
+  "updated": "2026-10-25T01:17:23.444Z",
   "articleCount": 457,
   "lastArticle": {
     "at": "2026-10-25T00:27:36.517Z",
@@ -9,8 +9,8 @@
     ]
   },
   "lastLinkRepair": {
-    "at": "2026-10-20T07:17:22.598Z",
-    "count": 1
+    "at": "2026-10-25T01:17:23.444Z",
+    "count": 2
   },
   "lastLinkWarning": null,
   "note": "Written by the robot only when something happens. If lastArticle stops moving for days, the robot has gone idle."
