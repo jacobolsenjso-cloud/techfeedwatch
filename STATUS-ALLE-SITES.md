@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 202** — brug kun v202). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 203** — brug kun v203). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 202** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 02:14, statusfil v202):** Faktatjek af 20 artikler fandt 15 talfejl (alle rettet, `f94bc9f8`). Robotten skriver nu med opskrift 3 (main `21e46e7f`): journalist-regler, korte sætninger med forklarede fagord, og et faktatjek før udgivelse, der retter eller fjerner forkerte tal og falske kildeangivelser. Alle 299 artikler med søgespørgsmål skrives om, 3 om dagen fra i morgen kl. 08:37 (ca. 2-2,4 kr pr. artikel) - Jacob ser de første og bestemmer tempoet. 158 artikler mangler søgespørgsmål. Forsiden mobil 93-100. I dag også: nattens kørsel, nye pins, Dependabot.
+**Seneste for techfeedwatch (25/10-2026 kl. 10:24, statusfil v203):** Blandet plan kører (main `57336c8f`): de 29 artikler, Google har vist, skrives om med opskrift 3 (3/dag, ca. 4,40 kr pr. færdig artikel); de øvrige ca. 420 faktatjekkes uden omskrivning (10/dag, ca. 0,45 kr). FAQ og resumé tjekkes nu også. Ved omskrivning laves aldrig nye billeder. Search Console: 63 klik på 3 mdr., kun 2 på artikler. I dag: nattens kørsel, nye pins, Dependabot.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,17 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 10:24 - Blandet plan: 40 viste artikler skrives om, resten faktatjekkes; FAQ tjekkes; ingen nye billeder ved omskrivning (Jacobs valg)
+- **Første kørsel med opskrift 3 (07:37):** 2 omskrevet (iPhone hot, humanoid robots), 1 stoppet (redaktørtjek). 1,26 USD = ca. 4,40 kr pr. færdig artikel inkl. det stoppede forsøg.
+- **iPhone-artiklen gennemgået:** tal korrekte mod Apples side (0-35 °C, -20-45 °C) og AP (iOS 17, okt. 2023); fagord forklaret. To fejl rettet live (`9347fa93`): overskriften "## ## Daniel Gaiya" (faktatjekket sendte overskrifter med tal til tjek - nu udelukket) og en falsk kildehenvisning til Apple (køleskab/kondens står ikke på Apples side).
+- **Search Console (3 mdr.):** 63 klik / 230 visninger, 58 klik på forsiden, 2 på artikler. Ingen artikler med rigtig trafik - prioritering efter "vist i Google" i stedet: 40 eksisterende artikler (src/data/omskriv-prioritet.json), 29 med søgespørgsmål.
+- **Blandet plan (`871e5ca0`):** omskriv-gamle.mjs skriver kun de 29 viste artikler om (3/dag). Ny faktatjek-gamle.mjs faktatjekker resten uden omskrivning (faktatjekker med Google-søgning, retter/fjerner, mærker factChecked), 10 pr. dag i samme kørsel. Målt: 0,064 USD = ca. 0,45 kr pr. artikel. Prøve på 3: 5 fejl rettet, heraf 3 falske "According to" (NIST, IEEE, Red Hat).
+- **FAQ og resumé tjekkes nu også** (`57336c8f`) - en falsk NIST-henvisning stod tilbage i en FAQ; rettet live.
+- **Billeder (Jacob):** ved omskrivning laves aldrig et nyt billede; artiklens eksisterende billede beholdes. Nye artikler fra den daglige robot får stadig AI-billede.
+- Lære: Faktatjekket må kun røre det, det er bygget til (sætninger). Overskrifter blev sendt med og kom tilbage med "## ". Afgræns input, før en model får lov at rette.
+- Lære: Jeg tjekkede kun brødteksten og glemte FAQ'en, som også vises på siden og i Googles data. Tjek alt, læseren ser.
+
 
 ### 25/10-2026 kl. 02:14 - Faktatjek af 20 artikler, 15 fejl rettet, robot-opskrift 3 live (Jacobs ja)
 - **Kvalitetsbedømmelse (Googles retningslinjer for bedømmere) af PC-artiklen:** O THIN, U REWRITE, R Moderately Meets, kvalitetstjek CLEAR. Fundet: RAM-latens "single-nanosecond" (rigtigt: ca. 14 ns), for teknisk til en begynder, kluntet titel.
