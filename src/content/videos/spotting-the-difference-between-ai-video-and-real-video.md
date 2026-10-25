@@ -19,15 +19,12 @@ isShort: false
 rewrittenAt: "2026-10-22"
 faqs:
   - question: "What is an AI video generator?"
-    answer: "An AI video generator is software that synthesizes video frames from text or image prompts without a physical camera. Forbes reports that platforms like Google's Veo and Kuaishou's Kling produce a minute or more of photorealistic synthetic video from a single prompt."
+    answer: "An AI video generator is software that synthesizes video frames from text or image prompts without a physical camera. Platforms like Google's Veo and Kuaishou's Kling produce short photorealistic clips from a single prompt, typically about 8 to 15 seconds per generation."
   - question: "How does AI video generation work?"
     answer: "AI models generate video by predicting pixel arrangements across successive frames using patterns learned from large training datasets. The software computes motion and lighting mathematically rather than recording photons reflecting off physical objects."
   - question: "What is AI video creation?"
     answer: "AI video creation is the computational production of dynamic visual scenes through algorithmic machine learning models. Content producers guide these systems using descriptive text prompts, reference images, or parameter adjustments instead of live-action film sets."
 keyFacts:
-  - text: "Modern generative models such as Google's Veo and Kuaishou's Kling can generate a minute or more of photorealistic synthetic video from a single text prompt, narrowing the visual gap with real footage."
-    source: "Forbes"
-    url: "https://www.forbes.com/sites/technology/article/how-to-tell-if-a-video-is-ai/"
   - text: "Camera manufacturer Leica launched the M11-P as the world's first commercial camera equipped with built-in C2PA hardware credentials to sign authentic visual captures cryptographically at the sensor level."
     source: "Content Authenticity Initiative"
     url: "https://contentauthenticity.org/how-it-works"
@@ -47,7 +44,7 @@ Every shadow, reflection, and motion blur stems directly from the mechanical mov
 
 AI video generation replaces physical production assets with compute clusters and algorithmic inference. A user provides text instructions or reference pictures to guide the diffusion process.
 
-Generative models break the synthesis down into noise prediction steps, assembling visual textures from abstract mathematical weights. Forbes reports that modern generative tools, including [Google](https://www.google.com/)'s Veo and Kuaishou's Kling, can produce a minute or more of photorealistic synthetic video from a single text prompt.
+Generative models break the synthesis down into noise prediction steps, assembling visual textures from abstract mathematical weights. Modern generative tools, including [Google](https://www.google.com/)'s Veo and Kuaishou's Kling, produce photorealistic clips of about 8 to 15 seconds from a single text prompt.
 
 The production workflows split along completely different operational requirements:
 
@@ -121,7 +118,7 @@ To demonstrate how creators bypass these baseline errors, AI Samson details an a
 4. He specifies a cinematic setup simulating an ARRI Alexa paired with a 35mm anamorphic lens.
 5. He enhances facial textures using Magnific.ai Skin Enhancer version 1 set to 0° sharpen and 2% grain to eliminate airbrushed smoothness.
 
-He compares Kling 3, which supports generations of a minute or more, against Seedance 2.0 on the [Higgsfield](https://higgsfield.ai/) platform. He observes that while Kling 3 manages intricate facial shadows well, synthetic models still struggle with camera motion, often creating floating aerial drifts that a human camera operator would never execute.
+He compares Kling 3, which supports generations of up to 15 seconds, against Seedance 2.0 on the [Higgsfield](https://higgsfield.ai/) platform. He observes that while Kling 3 manages intricate facial shadows well, synthetic models still struggle with camera motion, often creating floating aerial drifts that a human camera operator would never execute.
 
 These practical tests confirm that while individual frames mimic photographic quality, temporal consistency and physical interactions remain the primary dividing line between synthetic media and real video.
 

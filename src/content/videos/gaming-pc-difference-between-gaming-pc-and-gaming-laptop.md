@@ -65,7 +65,7 @@ Spacious computer cases pull cool ambient air across copper radiator fins and ex
 
 This dense packaging forces tiny blower fans to spin at extreme rotational speeds, creating high-pitched acoustic whine. Understanding the [difference between GPU temp and hotspot](/video/difference-between-gpu-temp-and-hotspot-explained) metrics reveals how quickly thermal thresholds compress mobile performance when internal heat pipes heat-soak.
 
-According to [IGN](https://www.ign.com/)'s platform analysis, high-end gaming laptops under full gaming load deplete their internal battery within two hours, requiring an active AC connection to operate hardware at maximum clock speeds.
+High-end gaming laptops drain their battery quickly under full gaming load and need to stay plugged in to run at full speed.
 
 Without wall power, mobile firmware severely cuts graphics processing clocks to protect lithium cells from catastrophic voltage sag. Desktops bypass battery limits entirely, pulling steady power from wall outlets through high-efficiency power supplies.
 
@@ -99,7 +99,7 @@ The notebook is equipped with an AMD Ryzen CPU and an RTX 5050 GPU utilizing 8 G
 
 Seven Tech highlighted that the desktop pushed framerates from barely hitting 70 FPS on mobile up to comfortably pushing 100+ FPS on the tower. The desktop avoided thermal throttling, whereas the laptop fans worked hard to keep chassis temperatures manageable.
 
-A buyer carrying the 4 to 5 pounds of the Acer Nitro V 16 gains total portability across campus or offices. That mobile purchase avoids separate peripheral shopping, whereas Seven Tech noted a standalone 144 Hz or higher monitor adds $200 to $500 to the desktop's total checkout ticket.
+A buyer can carry the Acer Nitro V 16, which weighs about 5.4 pounds (2.44 kg), across campus or between offices. That mobile purchase avoids separate peripheral shopping, whereas Seven Tech noted a standalone 144 Hz or higher monitor adds $200 to $500 to the desktop's total checkout ticket.
 
 Yet Seven Tech stressed that laptops offer zero GPU upgrade path when hardware falls behind in 2 or 3 years, while desktops remain modular for continuous component swaps.
 

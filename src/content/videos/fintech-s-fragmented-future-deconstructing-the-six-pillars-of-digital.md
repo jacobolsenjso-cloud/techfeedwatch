@@ -46,7 +46,7 @@ The subsequent 2020 pandemic further accelerated the shift to digital, transform
 
 Embedded finance integrates financial services directly into non-banking platforms, like making a purchase on an e-commerce website. This shift has dramatically changed how people transact, with a growing preference for mobile and digital payments. The payment industry is expanding rapidly; non-cash global transactions grew by 14% in 2019, even before the pandemic.
 
-E-commerce sales saw a 209% increase in 2020. Regulations like PSD2 and Open Banking are expected to fuel this growth further, with some predictions suggesting 1.3 billion mobile payment transactions by 2023. Key participants in the PayTech ecosystem include:
+According to ACI Worldwide, retail e-commerce transactions in April 2020 were 209% higher than in April 2019. Regulations like PSD2 and Open Banking were expected to fuel this growth further, and Juniper Research forecast more than 49 billion contactless mobile payment transactions in 2023. Key participants in the PayTech ecosystem include:
 
 - Electronic money issuers
 - Card network operators

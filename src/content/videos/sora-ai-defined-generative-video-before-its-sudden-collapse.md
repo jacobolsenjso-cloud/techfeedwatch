@@ -64,7 +64,7 @@ OpenAI integrated several direct editing features into the web interface to help
 - Blend fuses visual elements, lighting, and movement from two separate source videos into a composite video.
 - Storyboard provides frame-level sequencing to let creators plan visual continuity across individual shots.
 
-According to OpenAI's pricing announcement on December 9, 2024, Sora launched at sora.com for ChatGPT Plus subscribers at $20 per month. This baseline tier provides up to 50 videos per month at 480p resolution. Meanwhile, ChatGPT Pro subscribers paying $200 per month gained access to ten times higher generation limits.
+Sora launched at sora.com on December 9, 2024, included at no extra cost for ChatGPT Plus subscribers, who pay $20 per month. This baseline tier provides up to 50 videos per month at 480p resolution. Meanwhile, ChatGPT Pro subscribers paying $200 per month gained access to ten times higher generation limits.
 
 ## What are Sora's main flaws and limitations?
 Sora frequently produces visual hallucinations. It struggles with complex physical causality and generates inaccurate spatial interactions between objects.
@@ -101,7 +101,7 @@ This pivot triggered severe financial and legal strains:
 - Sora earned only $2.1 million in revenue by January 2026, as creators rejected the $200 monthly Pro tier.
 - Even though early app downloads reached 1 million, Sora saw its monthly user base drop by 45% from November 2025 to January 2026.
 
-Legal threats from the Motion Picture Association mounted, and Disney canceled a $1 billion licensing deal over unauthorized deepfakes. Competition from rival AI model Gemini 3.1 Flash and the resignation of veteran OpenAI researcher Jerry Tworek added pressure. OpenAI announced on March 24th, 2026, that the app would sunset, setting the final shutdown for April 26th, 2026.
+Legal threats from the Motion Picture Association mounted. Competition from rival AI model Gemini 3.1 Flash and the resignation of veteran OpenAI researcher Jerry Tworek added pressure. OpenAI announced on March 24th, 2026, that the app would sunset, setting the final shutdown for April 26th, 2026. Disney then walked away from its licensing deal and planned $1 billion investment in OpenAI.
 
 FutureFuel summarized: "You can't automate a soul, and you can't build a business on cool videos if each clip costs more than a Starbucks latte." Readers can evaluate [why is Sora no longer available](/video/sora-no-longer-available-did-high-costs-kill-openai-app) to understand these infrastructure pressures.
 

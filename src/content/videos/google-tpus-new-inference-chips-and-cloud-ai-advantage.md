@@ -53,7 +53,7 @@ For instance, Google uses data from its AI model teams to identify areas for imp
 
 One example involved discovering that TPU utilization was too low when used for reinforcement learning. This direct insight allows Google to fine-tune chip precision or identify areas where costs can be saved without sacrificing performance.
 
-This level of integration and data flow is not always available to other chip makers, even those with strong model teams. The strong reviews received by the Gemini models of August 2026, which were trained and run their inference on Google TPUs, further validate this integrated approach.
+This level of integration and data flow is not always available to other chip makers, even those with strong model teams. The strong reviews for the latest Gemini models, which were trained on Google TPUs and run their inference on them, further validate this integrated approach.
 
 ## High Demand and Supply Challenges
 
