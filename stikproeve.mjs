@@ -5,10 +5,11 @@
 // Hvorfor uafhængig: slutkontrollen tjekker kun sætninger, der nævner en kilde, og en AI afgør
 // resten. Stikprøven tager ALLE sætninger med tal eller mål i alt, læseren ser, og det er koden
 // (ikke en AI), der henter siden og kontrollerer, at citatet og tallene står der.
-// Ærlig begrænsning: "ikke fundet" er ikke det samme som "forkert" - et tal kan være rigtigt,
-// selvom siden ikke kunne hentes eller citeres. Loggen viser begge dele.
+// Loggen skelner: "fejl" = kildesiden blev fundet og hentet, men citatet/tallet står der ikke
+// (de artikler genkontrolleres); "ikke_fundet" = ingen side fundet (kan være rigtigt alligevel);
+// "usikker" = siden kunne ikke læses (PDF, video, blokeret).
 //
-// Artikler med fund sættes i src/data/stikproeve-fund.json; faktatjek-gamle.mjs kører samme dag
+// Artikler med fejl sættes i src/data/stikproeve-fund.json; faktatjek-gamle.mjs kører samme dag
 // den fulde slutkontrol på dem (og retter). Måletal: src/data/stikproeve-log.json.
 // Kør: node stikproeve.mjs [--antal=2] [--kun=<slug>]
 import fs from 'node:fs';
@@ -45,9 +46,10 @@ for (const a of kandidater.slice(0, antal)) {
   const medTal = belaegSaetninger(f, [], kanal, true).slice(0, MAKS_SAETNINGER);
   const r = await belaeg(genAI, hentModel, GEMINI_MODEL, medTal);
   if (!r) { console.log(`${a.slug}: midlertidig fejl (modellen svarede ikke) — springes over`); continue; }
-  const forkerte = r.ikkeBelagt.filter((x) => /does not give/.test(x.grund)); // siden fandtes, men tallet stod der ikke
-  const ikkeFundet = r.ikkeBelagt.length - forkerte.length;
-  const linje = { slug: a.slug, tjekket: r.tjekket, belagt: r.tjekket - r.ikkeBelagt.length - r.usikre, tallet_mangler_paa_siden: forkerte.length, ikke_fundet: ikkeFundet, usikker: r.usikre, fund: r.ikkeBelagt.slice(0, 8) };
+  // fejl = siden blev fundet og hentet, men citatet eller tallet står der ikke (det, der genkontrolleres)
+  // ikke_fundet = modellen fandt ingen side (kan være rigtigt alligevel); usikker = siden kunne ikke læses
+  const ikkeFundet = r.ikkeFundet.length;
+  const linje = { slug: a.slug, tjekket: r.tjekket, belagt: r.tjekket - r.ikkeBelagt.length - r.usikre, fejl: r.ikkeBelagt.length, ikke_fundet: ikkeFundet, usikker: r.usikre - ikkeFundet, fund: r.ikkeBelagt.slice(0, 8) };
   koersel.artikler.push(linje);
   console.log(`${a.slug}: ${JSON.stringify({ ...linje, fund: undefined })}`);
   for (const x of r.ikkeBelagt) console.log(`   - ${x.saetning.slice(0, 140)}  [${x.grund}]`);
@@ -59,4 +61,4 @@ log.push(koersel);
 fs.writeFileSync(LOG, JSON.stringify(log.slice(-120), null, 1) + '\n');
 const sum = (k) => koersel.artikler.reduce((n, x) => n + x[k], 0);
 // Linjen læses af statusarbejdet. Ændr ikke formatet.
-console.log(`STIKPROEVE: ${JSON.stringify({ artikler: koersel.artikler.length, tjekket: sum('tjekket'), belagt: sum('belagt'), tallet_mangler_paa_siden: sum('tallet_mangler_paa_siden'), ikke_fundet: sum('ikke_fundet'), usikker: sum('usikker'), til_genkontrol: fund.slugs.length })}`);
+console.log(`STIKPROEVE: ${JSON.stringify({ artikler: koersel.artikler.length, tjekket: sum('tjekket'), belagt: sum('belagt'), fejl: sum('fejl'), ikke_fundet: sum('ikke_fundet'), usikker: sum('usikker'), til_genkontrol: fund.slugs.length })}`);

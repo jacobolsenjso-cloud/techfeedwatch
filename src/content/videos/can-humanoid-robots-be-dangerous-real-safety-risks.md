@@ -23,6 +23,7 @@ faqs:
     answer: "Humanoid designs excel at navigating human-built infrastructure and using existing tools without specialized retrofits. Their primary disadvantages include severe kinetic strike hazards, high mechanical complexity, and exposure to remote software exploits."
   - question: "What are the primary disadvantages of humanoid robots?"
     answer: "Heavy multi-jointed frames can strike or crush nearby humans whenever control loops glitch or sensors misjudge balance. MDPI reports that over-the-air updates and remote channels also expose them to cyberattacks that can disable safety protocols."
+factChecked: "2026-10-25"
 ---
 
 According to the Association for Advancing Automation, moving a 150-pound bipedal machine autonomously through shared human spaces presents risks that traditional fixed-cage frameworks were never designed to address. Their heavy mechanical frames, autonomous decision engines, and high-torque actuators create severe kinetic impact and crushing hazards whenever balance fails or software misinterprets surroundings.
@@ -72,9 +73,9 @@ Combining physical cutoffs with low-inertia limbs prevents minor sensor glitches
 ## WhatTheStartup shows humanoid robot strikes and control glitches
 WhatTheStartup observes that during an exhibition in China, an automated biped miscalculated an action and hit an adjacent onlooker. As WhatTheStartup highlights, another incident saw a bipedal unit lurch toward a bystander following disrupted transmissions, cautioning that "A powerful machine only needs one bad movement: wrong timing, wrong balance, wrong signal, that is enough."
 
-With Helix 02, robotics company [Figure](https://www.figure.ai/) reported that an AI-trained model supplanted upward of 100,000 lines of manually written control instructions. Scale accelerates this trend.
+With Helix 02, according to Figure, an AI-trained model supplanted 109,504 lines of hand-engineered C++. Scale accelerates this trend.
 
-Within an 11-hour window, Nvidia synthesized roughly 780,000 simulated motion paths, equaling close to 6,500 hours of training data. WhatTheStartup warns that rapid model training introduces unintended behaviors, noting that Unitree models G1 and H1 contained flaws that could grant an attacker root-level control over the physical machines.
+Within an 11-hour window, Nvidia synthesized roughly 780,000 simulated motion paths, equaling close to 6,500 hours of training data. WhatTheStartup warns of humanoid robot vulnerabilities, noting that security researchers found flaws in Unitree models G1 and H1 that could grant an attacker root-level control over the physical machines.
 
 ## Sources
 

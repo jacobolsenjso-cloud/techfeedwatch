@@ -28,6 +28,11 @@ const FEJL_FIL = './src/data/omskriv-fejl.json';
 const LOG_FIL = './src/data/omskriv-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const fejl = laes(FEJL_FIL, {});
+// 25/10 (Jacob: artikler må ikke springes over): en artikel, der stoppede under opskrift 3, prøves
+// igen efter 7 dage - Gemini skriver forskelligt hver gang - højst 3 gange i alt. Derefter står den i
+// status til Jacob og faktatjekkes i stedet (faktatjek-gamle.mjs).
+const MAKS_FORSOEG = 3;
+const opgivet = (f) => f?.recipe === 3 && ((f.forsoeg || 1) >= MAKS_FORSOEG || (Date.now() - Date.parse(f.dato || 0)) < 7 * 864e5);
 // 25/10 (Jacob: "én opskrift til alle artikler, nye som gamle"): artikler, Google har vist
 // (Search Console, 3 mdr.), skrives om først; derefter alle andre, nyeste først. Indtil de når
 // frem, faktatjekkes de uden omskrivning (faktatjek-gamle.mjs).
@@ -49,7 +54,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
   ? alle.filter((a) => a.slug === kun && a.spm)
-  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3))
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !opgivet(fejl[a.slug]))
     .sort((a, b) => (prio ? Number(!prio.has(a.slug)) - Number(!prio.has(b.slug)) : 0) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
@@ -68,7 +73,7 @@ for (const a of gamle.slice(0, antal)) {
   const ud = `${r.stdout || ''}\n${r.stderr || ''}`;
   // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
   // 23/10: hjerne-linjen med i loggen, så man kan SE om stemmen var med i omskrivningen.
-  for (const l of ud.split('\n')) if (/^(KILDETJEK|FORBRUG):|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
+  for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
   const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
   kørsel.usd += f.usd || 0;
   const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
@@ -83,7 +88,7 @@ for (const a of gamle.slice(0, antal)) {
     // (14/10: "programming can make you rich…" fik en 500-fejl og blev fejlagtigt opgivet.)
     const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed|midlertidig fejl/i.test(grund);
     // Gemmes med opskriftens nummer: en artikel, der fejlede under en ældre opskrift, prøves igen.
-    if (!midlertidig) fejl[a.slug] = { grund, recipe: 3, dato: new Date().toISOString().slice(0, 10) };
+    if (!midlertidig) fejl[a.slug] = { grund, recipe: 3, dato: new Date().toISOString().slice(0, 10), forsoeg: (fejl[a.slug]?.recipe === 3 ? (fejl[a.slug].forsoeg || 1) : 0) + 1 };
     iTraek++;
     if (iTraek >= 3) { console.log('\nStopper: 3 i træk lykkedes ikke — tjek Gemini-kreditten (AI Studio -> Billing) og loggen.'); break; }
   }

@@ -11,6 +11,7 @@ tags:
   - "Productivity"
 summary: "The widespread accessibility of AI tools has shifted the focus from technical expertise to practical application and strategic literacy. Individuals now benefit from understanding various AI learning paths, mastering prompt engineering, and integrating AI into daily workflows to enhance productivity and creativity. This evolution makes AI competence an increasingly vital skill across industries, moving beyond specialist domains into general professional development."
 metaDescription: "The widespread accessibility of AI tools has shifted the focus from technical expertise to practical application and strategic literacy."
+targetQuestion: "what is prompt engineering and how to learn it"
 duration: "29:00"
 viewCount: 1099397
 viewsUpdated: "2026-10-25"

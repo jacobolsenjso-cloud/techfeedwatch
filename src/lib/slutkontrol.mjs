@@ -109,13 +109,18 @@ function paastandsTal(s) {
 // Henter siden og kontrollerer, at citatet og sætningens tal står der. null = siden kunne ikke hentes.
 export async function kontrollerBelaeg(s, url, quote) {
   const side = await hentSide(url);
-  if (side === null) return null;
+  // Tom eller næsten tom side (målt 25/10: IEEE svarer 202 uden indhold til robotter) kan ikke læses.
+  if (side === null || side.length < 1500) return null;
   const q = norm(quote);
   const tal = paastandsTal(s);
   const findes = (t) => side.includes(t) || side.includes(Number(t).toLocaleString('en-US'));
   const citatFindes = side.includes(q.slice(0, 120));
   const mangler = tal.filter((t) => !findes(t));
   if (!citatFindes) {
+    // Står citatets ord slet ikke på siden, er det ikke artiklens tekst, koden har fået - siden
+    // bygges med JavaScript eller er en cookie-mur (målt 25/10: Googles blog og IFR). Usikker.
+    const ord = [...new Set(q.split(/[^a-z0-9]+/).filter((w) => w.length >= 5))];
+    if (ord.length >= 3 && ord.filter((w) => side.includes(w)).length / ord.length < 0.5) return null;
     // Citatet står der ikke ordret, men ALLE sætningens tal og mål står på siden: usikker (null) -
     // skeptikeren afgør. Målt 25/10: rigtige tal fra Google og Figure blev ellers afvist, fordi
     // modellen gengav citatet en anelse forkert.
@@ -145,14 +150,15 @@ ${ss.map((x, i) => `${i + 1}. ${x}`).join('\n')}`;
   } catch { return ss.map(() => ''); }
 }
 
-// Højst BELAEG_PR_KALD sætninger pr. kald, med "medium" tænkning. Målt 25/10 på pc-artiklen:
-// 14 sætninger og 5 sætninger med fuld tænkning tog begge over 300 sek. - og Node afbryder et svar
-// efter 300 sek. ("fetch failed"). 5 sætninger med medium: 200 sek. Hvert kald prøves to gange.
+// Højst BELAEG_PR_KALD sætninger pr. kald, med LAV tænkning. Målt 25/10 på pc-artiklen: fuld og
+// medium tænkning tog 200 - over 300 sek. pr. kald, og Node afbryder et svar efter 300 sek.
+// ("fetch failed"). Lav: 13-84 sek. pr. artikel. Lav finder færre sider - derfor er "ingen side
+// fundet" kun usikker (skeptikeren afgør); kun "siden fundet, men citat/tal står der ikke" er fejl.
 const BELAEG_PR_KALD = 3;
 async function belaegKald(genAI, hentModel, model, ss) {
   for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
     try {
-      const r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384, thinkingConfig: { thinkingLevel: 'medium' } } }).generateContent(belaegPrompt(ss));
+      const r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384, thinkingConfig: { thinkingLevel: process.env.BELAEG_TAENK || 'low' } } }).generateContent(belaegPrompt(ss));
       const tekst = r.response.text() || '';
       const arr = JSON.parse((tekst.match(/\[[\s\S]*\]/) || ['[]'])[0]);
       if (Array.isArray(arr)) return arr;
@@ -169,19 +175,19 @@ export async function belaeg(genAI, hentModel, model, ss) {
     if (del === null) return null;
     svar.push(...del.map((x) => ({ ...x, n: x && Number(x.n) + i })));
   }
-  const ikkeBelagt = [];
+  const ikkeBelagt = [], ikkeFundet = [];
   let usikre = 0;
   for (let i = 0; i < ss.length; i++) {
     const s = ss[i];
     const b = svar.find((x) => x && x.n === i + 1) || {};
     const url = String(b.url || ''), quote = norm(b.quote || '');
     if (/youtube\.com|youtu\.be/i.test(url)) { usikre++; continue; } // en video kan koden ikke læse
-    if (!url || quote.split(' ').length < 5) { ikkeBelagt.push({ saetning: s, grund: 'no page states this figure' }); continue; }
+    if (!url || quote.split(' ').length < 5) { ikkeFundet.push(s); usikre++; continue; } // ingen side: usikker
     const k = await kontrollerBelaeg(s, url, quote);
     if (k === null) { usikre++; continue; } // siden kunne ikke hentes: skeptikeren (lag 3) afgør
     if (!k.ok) ikkeBelagt.push({ saetning: s, grund: k.grund });
   }
-  return { tjekket: ss.length, ikkeBelagt, usikre };
+  return { tjekket: ss.length, ikkeBelagt, ikkeFundet, usikre };
 }
 
 // ---------- Selve slutkontrollen ----------
@@ -239,8 +245,19 @@ export async function slutkontrol(genAI, hentModel, model, f, k, log = console.l
     if (fjern.length) { anvend(f, fjern.map((s) => ({ saetning: s, rettet: '' }))); log(`   ✗ ${fjern.length} rettelse(r) holdt ikke genkontrollen og er fjernet`); }
     rap.rettet = rettede.length - fjern.length; rap.fjernet += fjern.length;
   }
-  const tilbage = detFund();
-  if (tilbage.length) throw new Error(`Slutkontrol: ${tilbage.length} sætning(er) med tal uden dækning efter rettelse. Artiklen skrives ikke.`);
+  // Lag 1 igen. En rettelse, der har bestået genkontrollen (belæg + skeptiker), er godkendt, selvom
+  // dens tal kommer fra en webside uden for researchen (målt 25/10: kvantecomputer-artiklen blev ellers
+  // stoppet af sin egen rettelse). Andre sætninger uden dækning fjernes - artiklen skal ikke stoppes.
+  const godkendte = new Set([...fund.values()].map((x) => x.rettet).filter(Boolean).filter((r) => helTekst().includes(r)));
+  const erGodkendt = (s) => [...godkendte].some((g) => g.includes(s) || s.includes(g));
+  let tilbage = detFund().filter((x) => !erGodkendt(x.saetning));
+  if (tilbage.length) {
+    for (const x of tilbage) log(`   ✗ fjernet (tal uden dækning): ${x.saetning.slice(0, 140)}`);
+    anvend(f, tilbage.map((x) => ({ saetning: x.saetning, rettet: '' })));
+    rap.fjernet += tilbage.length;
+    tilbage = detFund().filter((x) => !erGodkendt(x.saetning));
+  }
+  if (tilbage.length) throw new Error(`Slutkontrol: ${tilbage.length} sætning(er) med tal uden dækning kunne ikke fjernes. Artiklen skrives ikke.`);
   if (!f.titel || !String(f.meta || 'x').trim()) throw new Error('Slutkontrol: titel eller meta blev tom. Artiklen skrives ikke.');
   return rap;
 }

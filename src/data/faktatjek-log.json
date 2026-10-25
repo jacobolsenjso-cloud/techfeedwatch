@@ -40,5 +40,51 @@
     "roert": true
    }
   ]
+ },
+ {
+  "dato": "2026-10-25T16:52:19.561Z",
+  "artikler": [
+   {
+    "slug": "difference-between-cybersecurity-and-information-technology",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 3,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 2,
+    "skeptikerTjekket": 15,
+    "fanget": 1,
+    "rettet": 0,
+    "fjernet": 1,
+    "roert": true
+   }
+  ]
+ },
+ {
+  "dato": "2026-10-25T16:55:44.436Z",
+  "artikler": [
+   {
+    "slug": "will-a-gaming-pc-connect-to-a-tv-without-issues",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 7,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 5,
+    "skeptikerTjekket": 21,
+    "fanget": 2,
+    "rettet": 2,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "do-ai-video-editing-tools-replace-standard-editing-suites",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 7,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 7,
+    "skeptikerTjekket": 20,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
  }
 ]

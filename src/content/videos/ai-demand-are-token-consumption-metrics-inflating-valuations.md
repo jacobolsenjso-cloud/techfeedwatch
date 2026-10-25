@@ -11,6 +11,7 @@ tags:
   - "Business & Money"
 summary: "The soaring demand signals for artificial intelligence, often measured by token consumption, may be significantly overstated. This potential overestimation risks creating an inflated valuation bubble within the AI sector. Companies must re-evaluate current metrics to ensure AI investment aligns with genuine productivity gains and long-term market sustainability."
 metaDescription: "The soaring demand signals for artificial intelligence, often measured by token consumption, may be significantly overstated."
+targetQuestion: "what is ai valuation concern"
 duration: "4:45"
 viewCount: 193386
 viewsUpdated: "2026-10-25"

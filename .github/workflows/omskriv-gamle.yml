@@ -44,7 +44,9 @@ concurrency:
 jobs:
   omskriv:
     runs-on: ubuntu-26.04
-    timeout-minutes: 90
+    # 25/10: 120 (før 90). En omskrivning med slutkontrol tager ca. 20 min; faktatjekket har sit
+    # eget budget på 30 min. Når loftet rammes, gemmes intet - derfor luft.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
 

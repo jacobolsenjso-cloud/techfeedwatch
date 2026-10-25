@@ -17,6 +17,10 @@ import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
 
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=10').split('=')[1]) || 10;
 const kun = (process.argv.find((a) => a.startsWith('--kun=')) || '').split('=')[1] || '';
+// Tidsbudget: GitHub stopper jobbet efter 90 min, og så gemmes INTET. Der startes ingen ny artikel
+// efter budgettet (standard 30 min); resten tages næste dag.
+const minutter = Number((process.argv.find((a) => a.startsWith('--minutter=')) || '--minutter=30').split('=')[1]) || 30;
+const start = Date.now();
 const LOG = './src/data/faktatjek-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const prio = new Set(laes('./src/data/omskriv-prioritet.json', { slugs: [] }).slugs);
@@ -24,6 +28,9 @@ const idag = new Date().toISOString().slice(0, 10);
 // Artikler, den daglige stikprøve (stikproeve.mjs) fandt fejl i: kontrolleres igen, FØR køen.
 const FUND = './src/data/stikproeve-fund.json';
 const fund = new Set(laes(FUND, { slugs: [] }).slugs);
+// Artikler, omskrivningen har opgivet (3 forsøg): de faktatjekkes her i stedet, også de prioriterede.
+const omFejl = laes('./src/data/omskriv-fejl.json', {});
+const opgivetOmskriv = (slug) => omFejl[slug]?.recipe === 3 && (omFejl[slug].forsoeg || 1) >= 3;
 
 const koe = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).map((f) => {
   const raw = fs.readFileSync(`./src/content/videos/${f}`, 'utf8').replace(/\r/g, '');
@@ -35,7 +42,7 @@ const koe = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md
     // Omskrevne (recipe 3) er allerede tjekket; de prioriterede venter på omskrivning;
     // de prioriterede UDEN søgespørgsmål kan ikke omskrives og faktatjekkes derfor her.
     tjekkes: !/^recipe:\s*3\b/m.test(fm) && !/^isShort:\s*true/m.test(fm) && !/^factChecked:/m.test(fm)
-      && (!prio.has(f.replace(/\.md$/, '')) || !/^targetQuestion:/m.test(fm)),
+      && (!prio.has(f.replace(/\.md$/, '')) || !/^targetQuestion:/m.test(fm) || opgivetOmskriv(f.replace(/\.md$/, ''))),
     fund: fund.has(f.replace(/\.md$/, '')),
   };
 }).filter((a) => (kun ? a.slug === kun : a.tjekkes || a.fund)).sort((a, b) => Number(b.fund) - Number(a.fund) || b.dato.localeCompare(a.dato));
@@ -46,6 +53,7 @@ if (process.argv.includes('--vis')) { for (const a of koe.slice(0, antal)) conso
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const koersel = { dato: new Date().toISOString(), artikler: [] };
 for (const a of koe.slice(0, antal)) {
+  if (Date.now() - start > minutter * 60000) { console.log(`Tidsbudget på ${minutter} min brugt - resten tages næste gang.`); break; }
   const [, fm, ...rest] = a.raw.split('---');
   const krop = rest.join('---');
   let noter = '(no transcript available - verify with Google Search)';
