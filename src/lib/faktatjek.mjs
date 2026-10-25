@@ -51,7 +51,7 @@ const udenLinks = (md) => String(md).replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 const brodtekst = (md) => String(md).split(/\n## Sources\s*\n/)[0];
 // Overskrifter er ikke påstande. 25/10: faktatjekkeren fik "## Daniel Gaiya tests iPhone 15 Pro" med
 // (tallet 15), svarede med en rettelse inkl. "## ", og overskriften blev til "## ## Daniel ...".
-const saetningerUdenOverskrifter = (md) => saetninger(String(md).split('\n').filter((l) => !/^\s*#/.test(l)).join('\n'));
+export const saetningerUdenOverskrifter = (md) => saetninger(String(md).split('\n').filter((l) => !/^\s*#/.test(l)).join('\n'));
 
 // ---------- 2. Mål og datoer uden dækning ----------
 // Mål med små tal og datoer med måned, som hverken står i researchen eller videoen.

@@ -24,7 +24,8 @@ import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.m
 import { videoAndel, videoAfsnit, talUdenKilde, brugteKilder, kildelisteMd, noegleFakta, VIDEO_ANDEL_MAAL, VIDEO_ANDEL_MAKS, MAKS_TAL_UDEN_KILDE, MIN_KILDER_BRUGT } from './src/lib/kildetjek.mjs';
 import { redaktoerTjek } from './src/lib/redaktoertjek.mjs';
 // Faktatjek og læsbarhed før udgivelse (25/10): kildebinding, mål/datoer, skeptisk faktatjekker, klassetrin.
-import { kildeBinding, maalUdenDaekning, skeptiker, anvendRettelser, klassetrin, forenklPrompt, KLASSETRIN_MAAL, KLASSETRIN_MAKS, KLASSETRIN_STOP, ORD_MAAL, ORD_STOP } from './src/lib/faktatjek.mjs';
+import { klassetrin, forenklPrompt, KLASSETRIN_MAAL, KLASSETRIN_MAKS, KLASSETRIN_STOP, ORD_MAAL, ORD_STOP } from './src/lib/faktatjek.mjs';
+import { slutkontrol } from './src/lib/slutkontrol.mjs';
 import { vaerktoejTil, brugsSaetning } from './src/lib/vaerktoej.mjs';
 import { ALLE_EMNER } from './src/lib/emner.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
@@ -1288,100 +1289,7 @@ ${content}`);
       if (kt.ordPrSaetning > ORD_STOP) throw new Error(`Læsbarhed: ${kt.ordPrSaetning} ord pr. sætning efter forenkling (højst ${ORD_STOP}). Artiklen skrives ikke.`);
       if (kt.klassetrin > KLASSETRIN_STOP) throw new Error(`Læsbarhed: klassetrin ${kt.klassetrin} efter forenkling (højst ${KLASSETRIN_STOP}). Artiklen skrives ikke.`);
 
-      // B. Kildebinding og mål/datoer (deterministisk, ingen modelkald for at finde dem).
-      const detFund = () => {
-        const set = new Map();
-        for (const b of kildeBinding(content, soeg, { kanal: kildeNavn(channelTitle), videoTekst })) set.set(b.saetning, `${b.navne.join('/')} gives no ${b.mangler.join(', ')} in the research`);
-        for (const m of maalUdenDaekning(content, kildeTekst)) set.set(m.saetning, `${m.mangler.join(', ')} is in neither the research nor the video`);
-        return [...set].map(([saetning, grund]) => ({ saetning, grund }));
-      };
-      let df = detFund();
-      const dfFoer = df.length;
-      if (df.length) {
-        console.log(`🧾 Faktatjek (kilder og mål): ${df.length} sætning(er) — beder om rettelse`);
-        for (const f of df) console.log(`   - ${f.saetning.slice(0, 120)} (${f.grund})`);
-        try {
-          const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } })
-            .generateContent(`Each numbered sentence below gives a figure, a date or a measurement that its named source (or our research) does not give. For each, write a corrected sentence: use only figures from the RESEARCH or the VIDEO FACT SHEET and attribute each to the publisher whose page gives it (or to the creator for a video figure), or make the same point without the figure. Plain English, same meaning otherwise. Never invent a figure. Return ONLY a JSON array: [{"n":1,"fix":"..."}]. Use "fix":"" to delete a sentence that cannot be saved.
-
-SENTENCES:
-${df.map((f, i) => `${i + 1}. ${f.saetning}  [problem: ${f.grund}]`).join('\n')}
-
-RESEARCH (from Google):
-${soegningTekst(soeg)}
-
-VIDEO FACT SHEET:
-${faktaarkTekst(fakta)}`);
-          const arr = JSON.parse(((r.response.text() || '').match(/\[[\s\S]*\]/) || ['[]'])[0]);
-          const fixes = arr.filter((x) => x && df[x.n - 1]).map((x) => ({ saetning: df[x.n - 1].saetning, rettet: String(x.fix || '').trim() }));
-          const foerD = content;
-          const a = anvendRettelser(content, fixes);
-          content = a.md;
-          if (nyeFejl(status())) { content = foerD; console.log('   kilde-rettelse kasseret: den bragte nye fejl ind'); }
-        } catch (e) { console.log(`   kilde-rettelse fejlede: ${e.message.split('\n')[0]}`); }
-        df = detFund();
-        // Hvad rettelsen ikke løste, fjernes: et tal uden dækning må aldrig udgives.
-        if (df.length) {
-          const a = anvendRettelser(content, df.map((f) => ({ saetning: f.saetning, rettet: '' })));
-          content = a.md;
-          if (a.ikkeFundet.length) throw new Error(`Faktatjek: ${a.ikkeFundet.length} sætning(er) med tal uden dækning kunne hverken rettes eller fjernes. Artiklen skrives ikke.`);
-          console.log(`   ${df.length} sætning(er) fjernet, fordi rettelsen ikke holdt`);
-          df = detFund();
-        }
-        if (df.length) throw new Error(`Faktatjek: ${df.length} sætning(er) med tal uden dækning efter rettelse. Artiklen skrives ikke.`);
-      }
-
-      // C. Skeptisk faktatjekker med Google-søgning: størrelsesordner, enheder, datoer, kildeangivelser
-      // og videoskaberens egne fejl. Uden et gennemført tjek udgives artiklen ikke.
-      const research = soegningTekst(soeg);
-      const videoNoter = faktaarkTekst(fakta).slice(0, 6000);
-      const sk = await skeptiker(genAI, hentModel, GEMINI_MODEL, content, research, videoNoter);
-      if (sk === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
-      let skRettet = 0, skFjernet = 0, skTilbage = 0;
-      if (sk.fund.length) {
-        console.log(`🕵️ Faktatjekker: ${sk.fund.length} af ${sk.tjekket} sætninger fanget`);
-        for (const f of sk.fund) console.log(`   - [${f.dom}] ${f.saetning.slice(0, 110)} (${f.grund.slice(0, 120)})`);
-        const foerS = content;
-        const a = anvendRettelser(content, sk.fund);
-        content = a.md;
-        if (a.ikkeFundet.length) throw new Error(`Faktatjek: ${a.ikkeFundet.length} fanget sætning(er) kunne ikke findes i teksten. Artiklen skrives ikke.`);
-        if (nyeFejl(status()) || detFund().length) {
-          // En rettelse bragte et nyt tal uden dækning ind: så fjernes de fangede sætninger i stedet.
-          content = anvendRettelser(foerS, sk.fund.map((f) => ({ ...f, rettet: '' }))).md;
-          skFjernet = sk.fund.length;
-          console.log('   rettelserne bragte nye fejl ind — de fangede sætninger er fjernet i stedet');
-        } else {
-          const rettede = sk.fund.filter((f) => f.rettet);
-          skFjernet = sk.fund.length - rettede.length;
-          // De rettede sætninger tjekkes én gang til. Holder en ikke, fjernes den.
-          if (rettede.length) {
-            const igen = await skeptiker(genAI, hentModel, GEMINI_MODEL, rettede.map((f) => f.rettet).join('\n\n'), research, videoNoter);
-            if (igen === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
-            if (igen.fund.length) {
-              content = anvendRettelser(content, igen.fund.map((f) => ({ ...f, rettet: '' }))).md;
-              skFjernet += igen.fund.length;
-            }
-            skRettet = rettede.length - igen.fund.length;
-          }
-        }
-        skTilbage = detFund().length;
-        if (skTilbage) throw new Error(`Faktatjek: ${skTilbage} sætning(er) med tal uden dækning efter faktatjekkerens rettelser. Artiklen skrives ikke.`);
-      }
-      // FAQ-svar og resumé tjekkes også (25/10: en falsk NIST-henvisning stod i en FAQ, ikke i teksten,
-      // og FAQ'en vises på siden og i Googles data). Ét tjek; en rettelse sættes ind, ellers fjernes svaret.
-      // Alt læseren ser uden for brødteksten: FAQ-svar, resumé og meta-beskrivelsen (Google-snippet).
-      const korte = [...faqs.map((f) => f.answer), safeSummary, safeMeta].filter(Boolean);
-      const skK = korte.length ? await skeptiker(genAI, hentModel, GEMINI_MODEL, korte.join('\n\n'), research, videoNoter) : { fund: [] };
-      if (skK === null) throw new Error('Faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke.');
-      for (const f of skK.fund) {
-        for (const q of faqs) { const r = anvendRettelser(q.answer, [f]); if (!r.ikkeFundet.length) q.answer = r.md.trim(); }
-        const r = anvendRettelser(safeSummary, [f]); if (!r.ikkeFundet.length) safeSummary = r.md.trim();
-        const rm = anvendRettelser(safeMeta, [f]); if (!rm.ikkeFundet.length && rm.md.trim().length >= 60) safeMeta = rm.md.trim();
-      }
-      for (let i = faqs.length - 1; i >= 0; i--) if (faqs[i].answer.split(/\s+/).length < 5) faqs.splice(i, 1);
-      if (skK.fund.length) console.log(`🕵️ FAQ og resumé: ${skK.fund.length} sætning(er) rettet eller fjernet`);
-      // Linjen læses af målingerne. Ændr ikke formatet.
-      console.log(`FAKTATJEK: ${JSON.stringify({ faqResume: skK.fund.length, kildeOgMaal: dfFoer, tjekket: sk.tjekket, fanget: sk.fund.length, wrong: sk.fund.filter((f) => f.dom === 'WRONG').length, rettet: skRettet, fjernet: skFjernet })}`);
+      // B+C (faktatjek af alt, læseren ser) ligger nu i SLUTKONTROLLEN til sidst — src/lib/slutkontrol.mjs.
       console.log(k.m.length
         ? `🔎 Stadig: ${k.m.join(' · ')} — udgives alligevel, tælles i audit`
         : `🔎 Kontrol ok: ${k.brugte.length} af ${fakta.length} punkter fra arket brugt, ${k.tal} tal, kilden nævnt`);
@@ -1464,6 +1372,18 @@ ${faktaarkTekst(fakta)}`);
       // Måling af den endelige tekst til fase C (samme regler som stop-tjekkene). Ændr ikke formatet.
       const ob = plan ? outlineBrugt(content, plan) : null;
       console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
+
+      // ===== SLUTKONTROL (25/10, Jacob: "én opskrift, én slutkontrol") — src/lib/slutkontrol.mjs =====
+      // Kører på den FÆRDIGE artikel og dækker alt, læseren ser (LAESER_FELTER): titel, meta, resumé,
+      // FAQ-svar, brødtekst og faktaboks. Fanget = rettet eller fjernet; uløst = ingen artikel.
+      const felter = { titel: safeTitle, meta: safeMeta, resume: safeSummary, faqs, brodtekst: content, faktaboks: noegle };
+      const rap = await slutkontrol(genAI, hentModel, GEMINI_MODEL, felter, {
+        soeg, kanal: kildeNavn(channelTitle), videoTekst, research: soegningTekst(soeg), videoNoter: faktaarkTekst(fakta).slice(0, 6000),
+      });
+      safeTitle = felter.titel; safeMeta = felter.meta; safeSummary = felter.resume; content = felter.brodtekst; noegle = felter.faktaboks;
+      faqs.splice(0, faqs.length, ...felter.faqs);
+      // Linjen læses af målingerne og den daglige stikprøve. Ændr ikke formatet.
+      console.log(`SLUTKONTROL: ${JSON.stringify(rap)}`);
     }
 
     // Ved omskrivning beholdes den oprindelige udgivelsesdato; rewrittenAt viser hvornår.

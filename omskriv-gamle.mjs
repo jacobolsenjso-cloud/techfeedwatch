@@ -11,12 +11,12 @@
 //   ville den koste penge hver dag uden at lykkes. Den beholder sin gamle tekst.
 // - 3 fejl i træk = stop (typisk tom Gemini-kredit, set 9.-10/10).
 // - Hver kørsels resultat og MÅLTE pris (FORBRUG-linjerne) gemmes i src/data/omskriv-log.json.
-// Kør: node omskriv-gamle.mjs --antal=5
+// Kør: node omskriv-gamle.mjs --antal=2
 import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
 
-// 3 om dagen fra 16/10 (Jacob: prisen). Før 5.
-const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3;
+// 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
+const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=2').split('=')[1]) || 2;
 // 24/10 (Jacob): --kun=<slug> + --nyvideo=<url> målretter én bestemt artikel — fx når en
 // allerede udgivet artikel viser sig at bygge på en dårlig video (set 24/10: fabrikskanal
 // med baggrundsmusik oven i stemmen). --kun springer "gammel"-filteret over (artiklen må
@@ -28,8 +28,9 @@ const FEJL_FIL = './src/data/omskriv-fejl.json';
 const LOG_FIL = './src/data/omskriv-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const fejl = laes(FEJL_FIL, {});
-// 25/10 (Jacob: "bland"): kun artikler, Google har vist (Search Console, 3 mdr.), skrives helt om.
-// Resten faktatjekkes uden omskrivning (faktatjek-gamle.mjs). Uden filen: alle som før.
+// 25/10 (Jacob: "én opskrift til alle artikler, nye som gamle"): artikler, Google har vist
+// (Search Console, 3 mdr.), skrives om først; derefter alle andre, nyeste først. Indtil de når
+// frem, faktatjekkes de uden omskrivning (faktatjek-gamle.mjs).
 const prioFil = laes('./src/data/omskriv-prioritet.json', null);
 const prio = prioFil ? new Set(prioFil.slugs) : null;
 
@@ -48,12 +49,13 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
   ? alle.filter((a) => a.slug === kun && a.spm)
-  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3) && (!prio || prio.has(a.slug))).sort((a, b) => b.dato.localeCompare(a.dato));
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !(fejl[a.slug]?.recipe === 3))
+    .sort((a, b) => (prio ? Number(!prio.has(a.slug)) - Number(!prio.has(b.slug)) : 0) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
 console.log(kun
   ? `Målrettet omskrivning af "${kun}"${nyVideo ? ' med ny video' : ''}`
-  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (nyeste først)`);
+  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-viste først, så nyeste)`);
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives, intet koster
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0 };

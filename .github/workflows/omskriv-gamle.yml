@@ -1,9 +1,11 @@
 name: Omskriv gamle artikler
 
-# 14/10-2026 (Jacob): de gamle artikler (skrevet med videoens transskript) skrives om med den nye
-# opskrift ("søgning først"), 5 om dagen, nyeste først (omskriv-gamle.mjs). Hver omskrivning laver
-# selv sit AI-billede eller genbruger et eksisterende. Målt 13/10 på pc: ca. 1,50 kr. pr. omskrevet
-# artikel. Resultat og målt pris pr. kørsel: src/data/omskriv-log.json.
+# 14/10-2026 (Jacob): de gamle artikler skrives om med robottens opskrift (omskriv-gamle.mjs).
+# 25/10 (Jacob: "én opskrift til alle artikler"): 2 om dagen, de Google har vist først, så nyeste.
+# Hver omskrivning genbruger artiklens AI-billede eller laver ét, hvis den ikke har et.
+# Målt 25/10 (opskrift 3, fejlforsøg medregnet): ca. 4,40 kr. pr. færdig artikel.
+# Samme kørsel: daglig stikprøve (stikproeve.mjs) og faktatjek af dem, der venter (faktatjek-gamle.mjs).
+# Resultat og målt pris pr. kørsel: src/data/omskriv-log.json, faktatjek-log.json, stikproeve-log.json.
 # Stoppes: Actions → "Omskriv gamle artikler" → "Disable workflow" (så afviser GitHub også starterens kald).
 
 on:
@@ -15,7 +17,8 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        default: "3"
+        # 25/10 (Jacob): 2 om dagen (før 3, kortvarigt 5) - prisen med slutkontrol
+        default: "2"
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
@@ -65,9 +68,18 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '2' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      # 25/10 (Jacob: "en uafhængig stikprøve hver dag"): 2 tilfældige, allerede kontrollerede
+      # artikler; koden henter kildesiderne og tjekker tallene. Fund kontrolleres i trinnet herunder.
+      # continue-on-error: en stikprøve må aldrig stoppe omskrivningerne.
+      - name: Daglig stikprøve
+        continue-on-error: true
+        run: node stikproeve.mjs --antal=2
+        env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Faktatjek gamle artikler (uden omskrivning)
@@ -83,7 +95,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json src/data/omskriv-prioritet.json
+          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json src/data/omskriv-prioritet.json src/data/stikproeve-log.json src/data/stikproeve-fund.json
           if git commit -m "Archive articles rewritten with the search-first recipe"; then
             git pull --rebase origin main
             git push

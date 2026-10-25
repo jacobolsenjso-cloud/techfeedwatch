@@ -47,12 +47,20 @@ export function videoAfsnit(md, channelTitle) {
 }
 
 // Sætninger i et tekststykke. Listepunkter er hver sin sætning.
+const FORKORTELSE = /(?:^|[\s(])(?:[A-Z]\.){2,}$|\b(?:Rev|No|Nos|Vol|Vols|Dr|Mr|Mrs|Ms|Prof|St|Inc|Ltd|Co|Corp|Jr|Sr|vs|Fig|Figs|approx|Dept|Gen|Sen|Rep|Gov|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|e\.g|i\.e|etc|a\.m|p\.m)\.$/;
 export function saetninger(tekst) {
   const ud = [];
   for (const linje of udenLinks(tekst).split('\n')) {
     const l = linje.replace(/^\s*([-*]|\d+\.)\s+/, '').replace(/[*_]/g, '').trim();
     if (!l || /^\|?\s*:?-{3,}/.test(l)) continue;
-    for (const s of l.split(/(?<=[.!?]["”']?)\s+(?=["“(]?[A-Z0-9$])/)) if (s.trim()) ud.push(s.trim());
+    // Forkortelser ("U.S.", "Rev.", "No.", "Inc.") afslutter ikke en sætning (målt 25/10: "According
+    // to the U.S." blev en "sætning" for sig, faktatjekket fjernede den, og et link gik i stykker).
+    const dele = [];
+    for (const s of l.split(/(?<=[.!?]["”']?)\s+(?=["“(]?[A-Z0-9$])/)) {
+      if (dele.length && FORKORTELSE.test(dele[dele.length - 1])) dele[dele.length - 1] += ` ${s}`;
+      else dele.push(s);
+    }
+    for (const s of dele) if (s.trim()) ud.push(s.trim());
   }
   return ud;
 }
