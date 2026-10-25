@@ -1392,8 +1392,8 @@ ${content}`);
             mt = tjekMinHoldning(r.response.text(), content);
             if (!mt.ok) console.log(`   stemme forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);
           }
-          if (mt.ok) content = fletIndHoldning(content, mt.sektion, mt.tekst);
-          console.log(`STEMME: ${JSON.stringify({ med: mt.ok, sektion: mt.ok ? mt.sektion : '', grund: mt.ok ? '' : mt.grund, saetninger: mt.ok ? mt.tekst.split(/(?<=[.!?])\s+/).length : 0 })}`);
+          if (mt.ok) for (const d of mt.dele) content = fletIndHoldning(content, d.sektion, d.tekst);
+          console.log(`STEMME: ${JSON.stringify({ med: mt.ok, afsnit: mt.ok ? mt.dele.length : 0, sektioner: mt.ok ? mt.dele.map((d) => d.sektion.slice(0, 50)) : [], grund: mt.ok ? '' : mt.grund })}`);
         } catch (e) { console.log(`STEMME: ${JSON.stringify({ med: false, grund: e.message.split('\n')[0].slice(0, 120) })}`); }
       }
 

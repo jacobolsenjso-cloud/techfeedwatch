@@ -86,5 +86,39 @@
     "roert": true
    }
   ]
+ },
+ {
+  "dato": "2026-10-25T20:36:03.897Z",
+  "artikler": [
+   {
+    "slug": "crypto-regulation-s-clarity-act-us-legislative-hurdles",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 7,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 4,
+    "skeptikerTjekket": 27,
+    "fanget": 1,
+    "rettet": 0,
+    "fjernet": 1,
+    "roert": true
+   }
+  ]
+ },
+ {
+  "dato": "2026-10-25T20:42:10.838Z",
+  "artikler": [
+   {
+    "slug": "do-we-know-what-quantum-computers-are-used-for",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 6,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 5,
+    "skeptikerTjekket": 34,
+    "fanget": 3,
+    "rettet": 3,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
  }
 ]

@@ -37,6 +37,7 @@ keyFacts:
   - text: "Enterprise investment in quantum computing reached an average of 11% of organizational R&D budgets in 2025 across 750 surveyed global companies, up from 7% in 2023."
     source: "IBM Institute for Business Value's Quantum Readiness Index"
     url: "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2025-quantum-computing-readiness"
+factChecked: "2026-10-25"
 ---
 
 Quantum computing helps simulate complex molecular interactions (how molecules interact and behave). It also discovers new materials that traditional supercomputers cannot model.
@@ -50,7 +51,7 @@ Classical computers process information sequentially using binary bits (basic un
 
 These qubits allow machines to evaluate many computational pathways at once. A standard computer relies on transistors (tiny electronic switches). These switches turn electrical currents on or off to represent numbers as zero or one.
 
-According to IBM, quantum computers suit two main computational domains beyond the reach of classical supercomputers. These machines simulate the quantum-mechanical behavior of physical materials. They also analyze complex mathematical structures in information. 
+According to IBM, quantum computers suit three main computational domains beyond the reach of classical supercomputers. These machines simulate the quantum-mechanical behavior of physical materials. They also analyze complex mathematical structures in information. 
 
 According to [Microsoft Azure](https://azure.microsoft.com/en-us), classical computing architecture remains essential and far more efficient for general everyday workloads. Quantum processors do not replace traditional databases or web servers. Instead, they function as specialized accelerators for narrow, mathematically intensive problems. 
 
@@ -63,6 +64,8 @@ The structural differences between the two architectures define how they handle 
 For everyday users, home computers and mobile phones are not going away. A phone handles messaging, browsing, and media streaming far better than a quantum machine ever could.
 
 Quantum systems exist to perform heavy background work. This work includes finding new battery materials and securing cloud networks.
+
+The way I explain it is quite simple: a classical computer checks point one, then point two, then point three. A quantum machine looks at all those points at once, which is why that speed jumps so drastically. Getting that basic insight matters, because you have to understand what you are dealing with to prepare for what the future brings.
 
 ## Chemicals, finance, and logistics lead commercial quantum adoption
 Major industries apply quantum algorithms (step-by-step problem-solving instructions) to practical tasks. They screen chemical compounds, balance investment portfolios, and route supply chain logistics. Companies turn to these machines when too many operational variables overwhelm standard data centers.
@@ -92,7 +95,7 @@ According to the National Institute of Standards and Technology (NIST), the agen
 
 This security challenge matters right now because adversaries can intercept encrypted communications today and archive them. They can hold that protected data until capable hardware emerges years down the road. Upgrading web browsers, enterprise networks, and operating systems to post-quantum algorithms eliminates this long-term exposure.
 
-That need to prepare early makes complete sense to me, because I cannot emphasize the importance of cybersecurity enough. Having been hacked myself—losing my Facebook account and dealing with issues on my Gmail—I learned firsthand how critical it is to protect your systems. Today's attackers are already remarkably capable, and once companies like IBM and Microsoft roll these quantum machines out properly, they will be unbelievably powerful—stronger than many people realize. I believe keeping up with these shifts is simply our duty, because without real insight into the technology, you cannot know how to navigate it safely. At the end of the day, it is always better to be safe than sorry.
+Having been hacked myself on Facebook and dealing with issues on my Gmail, I know firsthand how vital cybersecurity really is. Attackers are remarkably skilled today, and quantum machines will be stronger than many people think once companies like IBM and Microsoft roll them out properly. When it comes to protecting digital systems, it is always better to be safe than sorry.
 
 ## Hardware noise and error correction hold quantum machines back
 Physical environmental disturbances introduce computational noise (disturbances that cause calculation errors). This noise prevents modern quantum processors from sustaining reliable calculations.
@@ -118,7 +121,7 @@ At the Quantum Motion laboratory in London, New Scientist inspects the dilution 
 
 New Scientist highlights how rapidly algorithmic requirements have declined over recent years:
 - In 2019, the best estimate to crack RSA-2048 encryption required 20 million physical qubits.
-- According to Bitkub, by 2025, optimized models lowered that estimate to under 1 million qubits.
+- According to researcher Craig Gidney, by 2025, optimized models lowered that estimate to under 1 million qubits.
 - In March 2026, a research team claimed an architecture that could break state-of-the-art encryption with 10,000 qubits.
 - Google stated that an advanced machine with 500,000 qubits could compromise cryptocurrency transactions in as little as 9 minutes.
 
@@ -126,7 +129,7 @@ New Scientist notes that the largest physical array assembled contains 6,100 qub
 
 The outlet also highlights Google Quantum AI's Willow architecture. This architecture demonstrated that expanding qubit counts can reduce overall system error rates.
 
-Worldwide capital directed toward the quantum field is expanding. New Scientist reports global investment in the quantum computing industry is forecasted to rise from $1.07 billion in 2024 to roughly $2.2 billion by 2027.
+Worldwide capital directed toward the quantum field is expanding. According to the Quantum Economic Development Consortium, market revenue in the quantum computing industry is forecasted to rise from $1.07 billion in 2024 to roughly $2.2 billion by 2027.
 
 Google has urged industry migration to post-quantum cryptography by 2029. Meanwhile, the United States federal government aims to complete its transition by 2035.
 
