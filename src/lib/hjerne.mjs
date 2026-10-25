@@ -68,9 +68,69 @@ export function stemmeBlok(hjerne, tekst) {
     // 25/10: beliefs.md blev heller aldrig brugt; erfaringer blev klippet ved 2.500 af 4.053 tegn.
     if (hjerne.beliefs) dele.push(`OWNER'S GENERAL POSITIONS (use only where one genuinely bears on this topic):\n${hjerne.beliefs.slice(0, 4000)}`);
     if (hjerne.erfaringer) dele.push(`OWNER'S OWN EXPERIENCE (background - use only what is stated, never invent more):\n${hjerne.erfaringer.slice(0, 8000)}`);
-    dele.push(`EXCEPTION TO RULE 18: when the owner's position or experience above genuinely bears on the reader's question, WRITE ONE passage (3-6 sentences) in the first person, presenting the owner's stated position or experience above, placed where the article's own facts support it (often the video section or a closing section). Use ONLY what is stated above - never invent personal details, and attribute any figure to its source as usual. If the position does not genuinely bear on the reader's question, write NO first-person content at all - only where it makes sense. The passage must add the owner's view, a safety point or a lesson from his experience; it must never repeat facts the article already gives.`);
+    // 25/10 (Jacob): ejerens stemme får sit EGET faste afsnit sidst ("My take", minHoldningPrompt nedenfor).
+    // Brødteksten bruger holdningerne til vinkel og eksempler, men skriver ikke i første person.
+    dele.push(`Let the owner's positions and experience shape the article's angle, emphasis and examples where they genuinely fit. Do NOT write first-person content in the article body - the owner's own short section is added separately at the end.`);
   } else {
     dele.push(`No stated position matches this topic: write NO first-person content (rule 18 applies in full).`);
   }
   return dele.join('\n    ');
+}
+
+// ===== "My take" (25/10-2026, Jacob: "giv din stemme sit eget faste afsnit, når emnet passer") =====
+// Et kort afsnit i første person sidst i artiklen, skrevet ud fra hjernen og den FÆRDIGE artikel,
+// så det kan rette sig efter netop dette emne og ikke gentager artiklens fakta.
+export const MY_TAKE = 'My take';
+export function minHoldningPrompt(hjerne, emneTekst, artikel, spoergsmaal) {
+  const holdninger = emneAfsnit(hjerne, emneTekst);
+  if (!hjerne || !holdninger.length) return null;
+  return `You write a short section in the FIRST PERSON for the owner of TechFeedWatch, in his own voice, to end an article that answers "${spoergsmaal}".
+Below are his own notes in Danish (who he is, his style, his positions and his experience) and the finished article. Write in English.
+
+RULES
+- 3-6 sentences, one or two short paragraphs. Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
+- Say what HE thinks about THIS article's question, why, and - only where it truly fits - a lesson from his own experience (safety, crypto, AI tools, being hacked ...). Never boast.
+- Use ONLY what his notes state. Never invent experiences, details, numbers, dates or names. Do not mention employers, places, his age, family, partner or private life.
+- Do not repeat facts the article already gives; add his view. A number may only appear if the article already states it, with the same source.
+- If his notes say he has no experience with the topic, say that honestly in one short clause, then give his view.
+- No headings, no lists, no quotation marks around the whole text, no sign-off.
+- If nothing in his notes genuinely bears on this question, output exactly NONE.
+
+HIS NOTES
+Who he is:
+${(hjerne.core || '').slice(0, 6000)}
+
+His style:
+${(hjerne.voice || '').slice(0, 6000)}
+
+His positions on this topic:
+${holdninger.join('\n')}
+
+His general positions:
+${(hjerne.beliefs || '').slice(0, 4000)}
+
+His experience:
+${(hjerne.erfaringer || '').slice(0, 8000)}
+
+THE ARTICLE
+${String(artikel).split(/\n## Sources\s*\n/)[0].slice(0, 14000)}
+
+Output ONLY the section text (or NONE).`;
+}
+
+// Kontrollerer modellens afsnit. Returnerer { ok, tekst, grund }.
+const PRIVAT = /\b(54|fifty-four|girlfriend|partner|wife|children|kids|Scotland|Zealand|Sj[æa]lland|Brabrand)\b/i;
+const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*Olufsen|DS Dental|Beumer|Terma|Semco|Keolis|Region Midtjylland/i;
+export function tjekMinHoldning(tekst, artikel) {
+  const t = String(tekst || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').trim();
+  if (!t || /^NONE\b/i.test(t)) return { ok: false, grund: 'ingen holdning passer til emnet' };
+  const ss = t.split(/(?<=[.!?])\s+/).filter((x) => x.split(/\s+/).length >= 3);
+  if (ss.length < 3 || ss.length > 7) return { ok: false, grund: `${ss.length} sætninger (skal være 3-6)` };
+  if (!/\b(I|I'm|I've|my|me)\b/.test(t)) return { ok: false, grund: 'ikke i første person' };
+  if (PRIVAT.test(t)) return { ok: false, grund: 'privat oplysning' };
+  if (FIRMAER.test(t)) return { ok: false, grund: 'firmanavn' };
+  const brod = String(artikel);
+  const nyeTal = [...t.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/[.,]$/, '')).filter((n) => !brod.includes(n));
+  if (nyeTal.length) return { ok: false, grund: `tal, artiklen ikke har: ${nyeTal.join(', ')}` };
+  return { ok: true, tekst: t };
 }

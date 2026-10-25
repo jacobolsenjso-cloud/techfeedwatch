@@ -1,19 +1,18 @@
 ---
-title: "What Is Quantum Computing Used for Today?"
+title: "What is quantum computing used for today and in the future?"
 youtubeId: "DF4Jynv4Soc"
 channelTitle: "New Scientist"
 channelId: "UCt5OA3LingpZBeEyPYmputQ"
 publishedAt: "2026-05-27T16:59:50Z"
 date: "2026-09-30"
-updated: "2026-10-25"
 tags:
   - "Quantum Computing"
-  - "Hardware & Chips"
-summary: "Quantum computing is used to simulate complex molecular interactions and solve mathematical optimization problems beyond classical reach. While theoretical models indicate it could eventually break current public-key encryption, early hardware remains limited by physical error rates and environmental noise. Organizations currently deploy quantum processors alongside classical supercomputers for research rather than general-purpose workloads."
-metaDescription: "Wondering what quantum computing is used for? Discover how qubits model molecules, optimize systems, and impact data encryption today."
+  - "AI & Tech"
+summary: "Quantum computing solves specialized problems in molecular simulation, risk analysis, and optimization that exceed the limits of classical supercomputers. Industries such as chemistry, pharmaceuticals, and finance invest heavily to design clean materials and evaluate complex market dependencies. While physical noise and qubit stability limit commercial utility today, governments and tech giants are already deploying post-quantum encryption to protect digital infrastructure against future threats."
+metaDescription: "What is quantum computing used for? Explore real-world applications in chemistry, finance, logistics, and encryption, plus the hurdles ahead."
 targetQuestion: "what is quantum computing used for"
 duration: "26:25"
-viewCount: 104251
+viewCount: 104253
 viewsUpdated: "2026-10-25"
 thumbMax: true
 isShort: false
@@ -21,13 +20,13 @@ recipe: 3
 rewrittenAt: "2026-10-25"
 faqs:
   - question: "What is quantum computing in simple terms?"
-    answer: "It is a type of computation that uses quantum mechanics to process complex data differently than classical binary computers. IBM states that these systems specialize in modeling physical materials and analyzing complex mathematical structures."
-  - question: "What is quantum computing with example?"
-    answer: "It is computation that processes information using quantum bits to solve specialized problems faster than traditional machines. Microsoft Azure highlights practical examples like route optimization, molecular modeling, and financial risk analysis."
-  - question: "What is quantum computing and why is it important?"
-    answer: "It is a computational approach capable of simulating atomic interactions and complex mathematical structures that classical machines cannot handle. McKinsey & Company projects it will create between $1.3 trillion and $2.7 trillion in global economic value by 2035."
-  - question: "How does quantum computing work with AI?"
-    answer: "Quantum processors analyze complex mathematical patterns in data to assist machine learning workloads in specific technical domains. However, Microsoft Azure notes that classical architectures remain essential and far more efficient for general computing tasks."
+    answer: "Quantum computing is a technology that processes information using the laws of quantum physics instead of simple on-or-off electrical switches. According to IBM, this allows the machine to analyze complex patterns and physical molecules that standard computers cannot simulate."
+  - question: "How does quantum computing work?"
+    answer: "Quantum computers use quantum bits, or qubits, which represent combinations of zeros and ones at the same time through quantum states. According to Microsoft Azure, this capability lets processors evaluate vast numbers of operational possibilities simultaneously to solve specific optimization and simulation challenges."
+  - question: "What is quantum computing used for in chemistry and medicine?"
+    answer: "Quantum processors model how atoms and subatomic particles interact at a fundamental physical level. According to McKinsey & Company, this capability helps researchers screen and prioritize potential drug candidates and chemical compounds, making experimentation faster and less costly."
+  - question: "What is quantum computing vs AI?"
+    answer: "AI uses classical algorithms to recognize patterns and make predictions from existing datasets on traditional hardware. According to IBM, quantum computing is a distinct computational system suited for simulating nature and running complex mathematical structures that classical architectures cannot handle."
 keyFacts:
   - text: "Quantum computing is projected to create between $1.3 trillion and $2.7 trillion in global economic value by 2035, with major adoption led by the chemicals, life sciences, finance, and mobility industries."
     source: "McKinsey & Company's Quantum Technology Monitor report"
@@ -40,88 +39,102 @@ keyFacts:
     url: "https://www.ibm.com/thought-leadership/institute-business-value/en-us/report/2025-quantum-computing-readiness"
 ---
 
-Quantum computing simulates molecular chemistry. It also solves complex mathematical optimization problems (finding the best choice among many options).
+Quantum computing helps simulate complex molecular interactions (how molecules interact and behave). It also discovers new materials that traditional supercomputers cannot model.
 
-These problems exceed the limits of traditional supercomputers. Organizations apply these experimental systems to analyze physical materials. They also calculate financial risk and study logistical routing networks.
+Across industry and research, quantum computing optimizes logistical networks. It assesses financial risks and evaluates massive mathematical datasets.
 
-Quantum computers do not replace everyday laptops. Instead, they serve as specialized coprocessors (helper processors) for narrow scientific challenges.
+These specialized systems will not replace everyday personal computers. Instead, they focus on narrow, mathematically intensive problems. They target challenges across chemistry, pharmaceuticals, and cybersecurity.
 
 ## How does quantum computing differ from classical computing?
-Quantum computing differs from classical systems by processing information through quantum mechanics (the physics of atomic particles). Classical systems use binary electrical switches instead. Traditional computers store data as bits.
+Classical computers process information sequentially using binary bits (basic units of data that represent either a zero or one). In contrast, quantum computers use qubits (quantum bits that can hold combinations of states).
 
-Bits represent either a zero or a one using transistors (tiny electrical switches). Quantum processors rely instead on quantum bits, or qubits. Qubits can represent combinations of multiple states simultaneously through a property known as superposition (existing in multiple states at once).
+These qubits allow machines to evaluate many computational pathways at once. A standard computer relies on transistors (tiny electronic switches). These switches turn electrical currents on or off to represent numbers as zero or one.
 
-A classical computer checks solutions sequentially or across parallel conventional cores. This approach struggles against massive mathematical permutations (different possible orderings).
+According to IBM, quantum computers suit two main computational domains beyond the reach of classical supercomputers. These machines simulate the quantum-mechanical behavior of physical materials. They also analyze complex mathematical structures in information. 
 
-A quantum processor processes information across an expanding computational space. It evaluates complex mathematical structures simultaneously.
+According to [Microsoft Azure](https://azure.microsoft.com/en-us), classical computing architecture remains essential and far more efficient for general everyday workloads. Quantum processors do not replace traditional databases or web servers. Instead, they function as specialized accelerators for narrow, mathematically intensive problems. 
 
-According to [Microsoft Azure](https://azure.microsoft.com/en-us), classical computing architecture remains essential and far more efficient for general computing workloads. Everyday tasks like word processing, streaming video, and database queries do not benefit from quantum physics.
+The structural differences between the two architectures define how they handle real-world tasks:
+- Classical bits store a definite state of either zero or one at any given moment.
+- Qubits hold combinations of states, allowing the system to represent multidimensional data.
+- Standard processors solve complex tasks by evaluating paths step by step.
+- Quantum processors manipulate interference patterns across qubits to cancel wrong answers and highlight correct solutions.
 
-Instead, classical supercomputers work in hybrid arrangements with quantum processors. They offload specific mathematical bottlenecks while handling ordinary program logic themselves.
+For everyday users, home computers and mobile phones are not going away. A phone handles messaging, browsing, and media streaming far better than a quantum machine ever could.
 
-## Industries use quantum power for molecular modeling and optimization
-Industries use quantum computing primarily to simulate atomic interactions. They also use it to optimize resource allocation across vast commercial networks.
+Quantum systems exist to perform heavy background work. This work includes finding new battery materials and securing cloud networks.
 
-According to IBM, quantum computers are primarily suited for two computational domains beyond classical supercomputers. These are simulating the behavior of physical materials and analyzing complex mathematical structures.
+## Chemicals, finance, and logistics lead commercial quantum adoption
+Major industries apply quantum algorithms (step-by-step problem-solving instructions) to practical tasks. They screen chemical compounds, balance investment portfolios, and route supply chain logistics. Companies turn to these machines when too many operational variables overwhelm standard data centers.
 
-According to McKinsey & Company, quantum computing is projected to create between $1.3 trillion and $2.7 trillion in global economic value by 2035. 
-- Chemicals: accelerating catalyst design and screening novel synthetic compounds.
-- Life sciences: modeling molecular docking (simulating how drug molecules bind to target proteins). This work also includes predicting drug toxicity profiles (evaluating harmful side effects of potential medications).
-- Finance: computing high-speed portfolio risks and balancing capital reserves.
-- Mobility: optimizing complex fleet logistics and urban traffic routing.
+According to McKinsey & Company's Quantum Technology Monitor report, quantum computing's projected global economic value is between $1.3 trillion and $2.7 trillion by 2035. Adoption is led by the chemicals, life sciences, finance, and mobility industries. 
 
-According to the IBM Institute for Business Value, enterprise investment in quantum computing reached an average of 11% of organizational R&D budgets in 2025. This finding comes across 750 surveyed global companies.
+The IBM Institute for Business Value's research looked across 750 surveyed global companies. According to the IBM Institute for Business Value's Quantum Readiness Index, enterprise investment reached an average of 11% of organizational R&D budgets in 2025. That figure is up from 7% in 2023. 
 
-That figure is an increase from the 7% recorded in 2023. These organizations invest early to secure algorithmic advantages. They do this even while physical machines remain experimental.
+Commercial enterprises evaluate practical use cases across several primary sectors:
+- Chemical synthesis: Modeling molecular bonds to develop industrial catalysts and fertilizers without physical lab testing.
+- Pharmaceutical research: Simulating how drug molecules bind to target proteins to predict safety and efficacy early.
+- Financial risk modeling: Calculating market dependencies across thousands of fluctuating assets. This includes finding arbitrage opportunities (chances to profit from price differences for the same asset in different markets).
+- Logistics management: Optimizing fleet delivery routes and freight schedules across complex global transit hubs.
 
-The practical impact for everyday consumers will emerge through better physical products rather than faster personal electronics. Quantum molecular screening could deliver more efficient electric vehicle batteries.
+According to Microsoft Azure, qubits tackle specialized challenges like molecular modeling, financial risk analysis, and route optimization. Simulating a chemical compound with dozens of interacting electrons requires classical memory that exceeds physical reality.
 
-It could lower the cost of manufacturing agricultural fertilizer and accelerate pharmaceutical discoveries. Consumers will not buy a quantum computer, but they will use materials designed by one.
+## Will quantum computers break modern encryption standards?
+Future quantum systems will break standard public-key encryption (digital security systems that protect online communications). This will happen unless organizations migrate to quantum-resistant mathematical defenses. Modern digital communications rely on mathematical problems that take classical computers thousands of years to crack.
 
-## Can quantum computers break modern encryption standards?
-Quantum computers could break current public-key encryption standards once machines attain sufficient scale and precision. Modern digital security relies heavily on asymmetric mathematical problems.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST), cryptographically relevant quantum computers (machines powerful enough to crack modern cybersecurity) will eventually emerge. Running Shor's algorithm (a quantum method for quickly factoring large numbers), these machines will possess powerful computational capability.
 
-One major example is prime factorization in RSA cryptography. Classical machines take thousands of years to calculate the underlying prime factors of extremely large numbers. This makes the system secure in practice.
+They will break widely used public-key encryption schemes (digital security systems that protect online communications). These vulnerable protocols include RSA (an encryption standard based on factoring large numbers). They also include elliptic-curve cryptography (a mathematical security method used to protect digital transactions).
 
-Shor's algorithm is a specialized mathematical procedure designed to rapidly calculate the prime factors of large numbers. According to the National Institute of Standards and Technology (NIST), cryptographically relevant quantum computers will use Shor's algorithm. They will eventually possess the capability to break widely used public-key encryption schemes.
+Online banking, private messages, and digital signature verifications depend on these public-key standards. If an adversary uses an advanced quantum processor, the underlying mathematics can be solved quickly. This threat has prompted a coordinated overhaul of global cybersecurity standards.
 
-This vulnerability directly affects RSA encryption and elliptic-curve cryptography. These are two widely used digital security methods that protect data using complex mathematics. The flaw threatens everything from banking portals to secure messaging protocols.
+According to the National Institute of Standards and Technology (NIST), the agency officially released three standards on August 13, 2024. Designated FIPS 203, FIPS 204, and FIPS 205, they protect digital infrastructure against decryption by future quantum systems.
 
-Global standards agencies are already transitioning infrastructure to secure post-quantum cryptography algorithms (formulas designed to resist quantum attacks). According to NIST, the agency officially released its first three finalized post-quantum cryptography standards on August 13, 2024. These standards include:
-1. FIPS 203: designed for primary general encryption key establishment (securely creating and sharing digital secret keys). It is based on lattice mathematics (complex multidimensional geometric problems).
-2. FIPS 204: established for protecting digital signatures against quantum spoofing attacks.
-3. FIPS 205: created as an alternative stateless hash-based digital signature standard. This method verifies digital authenticity using one-way mathematical functions without tracking past signature history.
+This security challenge matters right now because adversaries can intercept encrypted communications today and archive them. They can hold that protected data until capable hardware emerges years down the road. Upgrading web browsers, enterprise networks, and operating systems to post-quantum algorithms eliminates this long-term exposure.
 
-These algorithms rely on mathematical problems that neither classical nor quantum processors can solve efficiently. By implementing these standards before large-scale machines arrive, organizations can secure their networks ahead of time.
+## Hardware noise and error correction hold quantum machines back
+Physical environmental disturbances introduce computational noise (disturbances that cause calculation errors). This noise prevents modern quantum processors from sustaining reliable calculations.
 
-## Hardware errors and qubit instability limit classical replacement today
-Hardware errors and physical qubit instability prevent modern quantum computers from replacing classical systems for regular enterprise tasks. Qubits require delicate environmental controls.
+Today's hardware is fragile. Qubits easily lose their quantum states when exposed to heat or electromagnetic interference.
 
-They typically operate at temperatures near absolute zero to prevent ambient heat from disrupting their computational states. Even microscopic vibrations or thermal fluctuations cause decoherence, where qubits lose their stored quantum data.
+According to National Institute of Standards and Technology (NIST) physicist Scott Glancy, early quantum computers have calculated the energy states of small molecules. They have also simulated interacting atoms. However, none of these demonstrations have yet proven commercially useful beyond classical capabilities. 
 
-Current hardware demonstrations remain confined to academic benchmarks. According to NIST physicist Scott Glancy, early quantum computers have calculated the energy states of small molecules and simulated interacting atoms.
+To achieve commercial utility, machines require fault tolerance through quantum error correction. Fault tolerance combines multiple physical qubits into a single stable logical qubit (a reliable, corrected qubit). This combined qubit detects and corrects errors during execution.
 
-However, none of these demonstrations have yet proven commercially useful beyond classical capabilities. The machines accumulate too many calculation errors to deliver reliable enterprise answers without extensive verification.
+According to IBM's Quantum Roadmap, the company is engineering IBM Quantum Starling for deployment in 2029 as a modular fault-tolerant computer. The system is intended to execute 100 million quantum gates (elementary operations that manipulate quantum information). It will run these across 200 logical qubits (stable, error-corrected quantum bits). 
 
-To overcome this, engineers are building fault-tolerant architectures. These systems group hundreds of physical qubits into single, stable "logical qubits" through active error correction. According to IBM's Quantum Roadmap, the company is engineering IBM Quantum Starling for deployment in 2029.
+Current systems must run inside specialized dilution refrigerators (cooling devices) cooled down close to absolute zero. This extreme operational requirement keeps equipment costs high. It also limits physical deployment to specialized research facilities and cloud server farms.
 
-IBM designs this machine as a modular fault-tolerant computer. It is intended to execute 100 million quantum gates (basic quantum processing operations) across 200 logical qubits.
+## New Scientist explores how quantum computers threaten modern encryption
+A documentary report by [New Scientist](https://shop.newscientist.com/) examines the accelerating timeline toward Q-Day. This is the theoretical date when quantum machines crack public-key encryption.
 
-## New Scientist explains how quantum algorithms threaten modern encryption
-[New Scientist](https://shop.newscientist.com/) details how theoretical advances in quantum algorithms are reducing the hardware requirements needed to crack modern digital ciphers. In their analysis, New Scientist explores how MIT mathematician Peter Shor proposed his algorithm in 1994. The algorithm calculates the prime factors of large composite numbers with ease. 
+The production visits commercial labs to investigate decryption requirements. These requirements have dropped faster than analysts originally predicted.
 
-Classical computers rely on the difficulty of this problem to secure web traffic. However, quantum state vectors can identify these mathematical factors much faster. Quantum state vectors are mathematical representations of qubits held across multiple states simultaneously.
+New Scientist explains that RSA encryption relies on the mathematical difficulty of factoring large numbers. MIT mathematician Peter Shor proposed an algorithm in 1994. This algorithm allows quantum processors to find these prime factors efficiently. 
 
-New Scientist reports that the estimated hardware required to crack RSA encryption has dropped dramatically over time:
-- In 2019, researchers estimated that breaking RSA-2048 encryption would require 20 million physical qubits.
-- In February of 2026, researchers demonstrated theoretical methods reducing that requirement to just 100,000 qubits.
-- In March 2026, another research group introduced a system design said to break advanced ciphers using merely 10,000 qubits.
+At the Quantum Motion laboratory in London, New Scientist inspects the dilution refrigerators required to operate quantum chips. The video notes that hardware components must run at low energy scales near absolute zero to suppress environmental noise. 
 
-New Scientist also reports that [Google](https://www.google.com/) calculated that a machine with 500,000 qubits could compromise cryptocurrency encryption in as little as 9 minutes. The video notes that the largest physical qubit array currently built contains 6,100 qubits.
+New Scientist highlights how rapidly algorithmic requirements have declined over recent years:
+- In 2019, the best estimate to crack RSA-2048 encryption required 20 million physical qubits.
+- According to Bitkub, by 2025, optimized models lowered that estimate to under 1 million qubits.
+- In March 2026, a research team claimed an architecture that could break state-of-the-art encryption with 10,000 qubits.
+- Google stated that an advanced machine with 500,000 qubits could compromise cryptocurrency transactions in as little as 9 minutes.
 
-However, researchers have not yet used it for active computation. While hardware scale remains limited today, algorithmic optimizations continue to bring the theoretical security risk closer to reality. Organizations must track these mathematical improvements to modernize their security defenses before large fault-tolerant machines arrive.
+New Scientist notes that the largest physical array assembled contains 6,100 qubits. However, it has not yet run full computations.
+
+The outlet also highlights Google Quantum AI's Willow architecture. This architecture demonstrated that expanding qubit counts can reduce overall system error rates.
+
+Worldwide capital directed toward the quantum field is expanding. New Scientist reports global investment in the quantum computing industry is forecasted to rise from $1.07 billion in 2024 to roughly $2.2 billion by 2027.
+
+Google has urged industry migration to post-quantum cryptography by 2029. Meanwhile, the United States federal government aims to complete its transition by 2035.
 
 Try the numbers yourself in our [Quantum Speed-up Calculator](/tools/quantum-speedup-calculator).
+
+## My take
+
+While I don't work with quantum hardware myself, I believe these systems will become far more powerful than many people realize once companies like IBM and Microsoft roll them out properly. To me, understanding what quantum computing can solve is about learning what the future brings so we know what we are dealing with.
+
+Having been hacked several times myself, I always look at security first, and cybersecurity is where this shift will really hit home. Attackers are already remarkably skilled today, so our digital safety simply has to be in order before these systems arrive. It comes down to common sense—it is always better to be safe than sorry.
 
 ## Sources
 - [Mckinsey quantum technology monitor 2026 a commercial tipping point](https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-quantum-technology-monitor-2026-a-commercial-tipping-point) — mckinsey.com
