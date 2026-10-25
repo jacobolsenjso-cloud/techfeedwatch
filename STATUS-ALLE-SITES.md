@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 203** — brug kun v203). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 204** — brug kun v204). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 203** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 10:24, statusfil v203):** Blandet plan kører (main `57336c8f`): de 29 artikler, Google har vist, skrives om med opskrift 3 (3/dag, ca. 4,40 kr pr. færdig artikel); de øvrige ca. 420 faktatjekkes uden omskrivning (10/dag, ca. 0,45 kr). FAQ og resumé tjekkes nu også. Ved omskrivning laves aldrig nye billeder. Search Console: 63 klik på 3 mdr., kun 2 på artikler. I dag: nattens kørsel, nye pins, Dependabot.
+**Seneste for techfeedwatch (25/10-2026 kl. 10:29, statusfil v204):** Blandet plan kører (main `d0b8f668`): 29 viste artikler skrives om (3/dag), de øvrige faktatjekkes (10/dag); artikler med mange fejl flyttes til omskrivning. FAQ, resumé og meta tjekkes. Eksisterende AI-billeder beholdes, manglende laves. Jacob har bedt om et forslag til, hvordan det hele bliver robust - afventer hans valg. I dag: nattens kørsel, nye pins, Dependabot.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 25/10-2026 kl. 10:29 - Billeder, meta og artikler med mange fejl (Jacobs rettelse)
+- **Billeder:** min ændring fra v203 ("aldrig nyt billede ved omskrivning") var en misforståelse og er rullet tilbage (`d0b8f668`). Reglen er nu: et eksisterende AI-billede laves aldrig om; en artikel uden AI-billede får et, også ved omskrivning.
+- **Meta-beskrivelsen** tjekkes nu også (ud over FAQ-svar og resumé), både i robotten og i faktatjek-gamle.mjs.
+- **Mange fejl i en gammel artikel** (mere end hver fjerde sætning): rettelserne sættes ind, og artiklen sættes i omskrivningskøen - før blev den bare sprunget over.
+- Lære: Når opskriften ændres, skal ALT, læseren ser, følge med: titel, meta, resumé, FAQ, brødtekst, faktaboks og billede. Jeg rettede brødteksten og glemte FAQ og meta. Reglen skal ligge i koden som én liste over felter, ikke i hukommelsen.
+- Lære: "Billederne skal ikke laves om" betød "de eksisterende AI-billeder", ikke "ingen nye billeder". Ved en kort besked med to mulige betydninger: spørg, før jeg ændrer noget, der koster eller sparer.
+
 
 ### 25/10-2026 kl. 10:24 - Blandet plan: 40 viste artikler skrives om, resten faktatjekkes; FAQ tjekkes; ingen nye billeder ved omskrivning (Jacobs valg)
 - **Første kørsel med opskrift 3 (07:37):** 2 omskrevet (iPhone hot, humanoid robots), 1 stoppet (redaktørtjek). 1,26 USD = ca. 4,40 kr pr. færdig artikel inkl. det stoppede forsøg.
