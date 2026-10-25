@@ -92,6 +92,8 @@ It details any receipt, sale, exchange, or disposition of digital assets. Failin
 
 Mining rewards and staking yields (earnings received from locking up tokens to support a blockchain network) also trigger immediate tax events. The IRS treats newly minted tokens as gross income based on their fair market value on receipt day. Investors must keep detailed transaction ledgers to calculate their yearly tax liabilities correctly.
 
+I have quite a bit of experience with crypto myself, holding wallets with Bitcoin, Ethereum, and Solana, and using a crypto card for daily purchases. Tax rules around digital assets are genuinely difficult, so you really have to keep your wits about you. When every small transaction can trigger reporting, knowing what you are dealing with and staying organized is essential. Taking a calm, common-sense approach to your records is always better than rushing in and having to sort through a mess later.
+
 ## How do individual states regulate crypto businesses?
 States regulate cryptocurrency companies through individual money transmitter licenses, consumer protection statutes, and specialized operational charters (state-issued business permits). This federalist system requires firms to secure permission in each state where they serve customers.
 
@@ -138,12 +140,6 @@ He also earned $636 million from token ventures, and almost $200 million from an
 Financial institutions also pushed for restrictions on digital assets during these legislative talks. Bloomberg Television cited the Independent Community Bankers of America. That group represents community lenders that make over 60% of small business loans and 80% of agricultural loans.
 
 Bloomberg Television reported the group's warning about interest-bearing stablecoins (cryptocurrencies pegged to the U.S. dollar that pay interest). According to The Guardian, the banking group warned that these tokens could drain $1.3tn (£980bn) of deposits and deprive small businesses and farmers of $850bn-worth of loans. The group also noted that 73% of surveyed Americans oppose making crypto mainstream.
-
-## My take
-
-When it comes to regulating crypto, you really have to keep your wits about you. There was plenty of hype around Bitcoin, but beneath the noise, digital assets have become a massive market that major companies rely on every day.
-
-I have quite a bit of experience with crypto myself, from managing wallets to using a crypto card for daily purchases. Navigating this space has taught me that you need a calm head and a clear grasp of the rules, because keeping things safe always starts with knowing what you are dealing with.
 
 ## Sources
 - [FIN 2013 G001 (PDF)](https://www.fincen.gov/system/files/shared/FIN-2013-G001.pdf) — fincen.gov

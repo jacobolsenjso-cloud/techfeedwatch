@@ -110,14 +110,7 @@ const artikelRestenMedKilder = deling > 4 ? fuldHtml.slice(deling) : fuldHtml;
 const kildePos = artikelRestenMedKilder.indexOf('<h2 id="sources"');
 const artikelResten = kildePos >= 0 ? artikelRestenMedKilder.slice(0, kildePos) : artikelRestenMedKilder;
 const kildeHtml = kildePos >= 0 ? artikelRestenMedKilder.slice(kildePos) : '';
-// 25/10 (Jacob): "My take" - ejerens eget afsnit (skrevet ud fra hans hjerne) står sidst i
-// artiklen i en tydelig boks med hans navn, så læseren kan se, hvor hans eget syn står.
-const mtPos = artikelResten.indexOf('<h2 id="my-take"');
-const artikelMedMinHoldning = mtPos < 0 ? artikelResten : (() => {
-  const efterH2 = artikelResten.indexOf('</h2>', mtPos) + 5;
-  const af = '<p class="my-take-by"><img src="/jacob-olsen.png" alt="" width="28" height="28" loading="lazy" decoding="async" /><span>Jacob S. Olsen, who runs TechFeedWatch</span></p>';
-  return `${artikelResten.slice(0, mtPos)}<aside class="my-take" aria-label="My take">${artikelResten.slice(mtPos, efterH2)}${af}${artikelResten.slice(efterH2)}</aside>`;
-})();
+
 // Videoens egen udgivelsesdato (ikke artiklens). Bruges i VideoObject-schema.
 const sourcePublishedAt: string | null = video.frontmatter.publishedAt || null;
 
@@ -525,13 +518,6 @@ const metaDesc = rawMeta.length > 157
        over tre linjer ("Sep / 30, / 2026"). Nu holdes hver del samlet og ombrydes hele. */
     .byline-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 7px; font-size: 0.83rem; color: #6b7280; font-weight: 500; }
     .byline-meta > * { white-space: nowrap; }
-    /* 25/10: "My take" - ejerens eget syn i en rolig boks (ikke en reklame, ikke et citat). */
-    .video-content .my-take { margin: 32px 0 8px; padding: 18px 20px 6px; border-left: 4px solid #2563eb; border-radius: 12px; background: #eff6ff; }
-    .video-content .my-take h2 { margin-top: 0; }
-    .video-content .my-take-by { display: flex; align-items: center; gap: 8px; margin: -4px 0 12px; font-size: 0.85rem; font-weight: 600; color: #475569; }
-    .video-content .my-take-by img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
-    body.dark-mode .video-content .my-take { background: #172033; border-left-color: #60a5fa; }
-    body.dark-mode .video-content .my-take-by { color: #cbd5e1; }
     body.dark-mode .byline-meta { color: #9ca3af; }
 
     /* Kildeangivelse: gør det utvetydigt at videoen er en tredjeparts værk. */
@@ -1300,7 +1286,7 @@ const metaDesc = rawMeta.length > 157
         )}
 
         {/* Indholdsfortegnelsen er flyttet op under billedet (13/10) */}
-        <article class="video-content" set:html={artikelMedMinHoldning}></article>
+        <article class="video-content" set:html={artikelResten}></article>
 
         <div id="tfw-inline-recs" data-recs={JSON.stringify(inlineRecs)} hidden></div>
         <script is:inline>

@@ -88,7 +88,7 @@ for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
   for (const { a, foer, ud } of runde) {
     console.log(`\n=== ${a.slug} (${a.dato}) ===`);
     // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
-    for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|MYTAKE|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
+    for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|STEMME|SLUTKONTROL|FORBRUG):|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
     const f = JSON.parse(ud.match(/^FORBRUG: (\{.*\})/m)?.[1] || '{"usd":0}');
     kørsel.usd += f.usd || 0;
     const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');

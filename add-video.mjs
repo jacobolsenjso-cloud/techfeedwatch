@@ -17,7 +17,7 @@ import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
-import { laesHjerne, stemmeBlok, minHoldningPrompt, tjekMinHoldning, MY_TAKE } from './src/lib/hjerne.mjs';
+import { laesHjerne, stemmeBlok, minHoldningPrompt, tjekMinHoldning, fletIndHoldning } from './src/lib/hjerne.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
@@ -1380,9 +1380,9 @@ ${content}`);
       const ob = plan ? outlineBrugt(content, plan) : null;
       console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
 
-      // ===== MY TAKE (25/10, Jacob: "giv din stemme sit eget faste afsnit, når emnet passer") =====
-      // Skrives ud fra hjernen og den færdige tekst og sættes ind lige før "## Sources" - FØR
-      // slutkontrollen, så et tal i afsnittet bliver faktatjekket som alt andet.
+      // ===== JACOBS STEMME (25/10, Jacob: hans mening flettet ind - ingen boks, ingen overskrift) =====
+      // Skrives ud fra hjernen og den færdige tekst og sættes ind sidst i den sektion, hvor den passer
+      // bedst - FØR slutkontrollen, så et tal i afsnittet bliver faktatjekket som alt andet.
       if (hjerneStemme && !isShort) {
         try {
           const p = minHoldningPrompt(hjerne, `${soeg.emne || ''} ${targetQuestion || ''} ${videoTitel || ''}`, content, targetQuestion || safeTitle);
@@ -1390,14 +1390,11 @@ ${content}`);
           for (let forsoeg = 0; p && forsoeg < 2 && !mt.ok; forsoeg++) {
             const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.4 } }).generateContent(p);
             mt = tjekMinHoldning(r.response.text(), content);
-            if (!mt.ok) console.log(`   my take forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);
+            if (!mt.ok) console.log(`   stemme forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);
           }
-          if (mt.ok) {
-            const afsnit = `## ${MY_TAKE}\n\n${mt.tekst}\n`;
-            content = /\n## Sources\s*\n/.test(content) ? content.replace(/\n## Sources\s*\n/, `\n${afsnit}\n## Sources\n`) : `${content.trim()}\n\n${afsnit}`;
-          }
-          console.log(`MYTAKE: ${JSON.stringify({ med: mt.ok, grund: mt.ok ? '' : mt.grund, saetninger: mt.ok ? mt.tekst.split(/(?<=[.!?])\s+/).length : 0 })}`);
-        } catch (e) { console.log(`MYTAKE: ${JSON.stringify({ med: false, grund: e.message.split('\n')[0].slice(0, 120) })}`); }
+          if (mt.ok) content = fletIndHoldning(content, mt.sektion, mt.tekst);
+          console.log(`STEMME: ${JSON.stringify({ med: mt.ok, sektion: mt.ok ? mt.sektion : '', grund: mt.ok ? '' : mt.grund, saetninger: mt.ok ? mt.tekst.split(/(?<=[.!?])\s+/).length : 0 })}`);
+        } catch (e) { console.log(`STEMME: ${JSON.stringify({ med: false, grund: e.message.split('\n')[0].slice(0, 120) })}`); }
       }
 
       // ===== SLUTKONTROL (25/10, Jacob: "én opskrift, én slutkontrol") — src/lib/slutkontrol.mjs =====
