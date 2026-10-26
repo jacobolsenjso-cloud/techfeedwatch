@@ -1,95 +1,151 @@
 ---
-title: "How Do Smart Contracts Work in Blockchain Technology"
-targetQuestion: "how do smart contracts work in blockchain"
-titleShortened: true
-seoTitled: true
+title: "Smart Contracts: How Code Runs on the Blockchain"
 youtubeId: "l-sTw136zAs"
 channelTitle: "Lex Clips"
 channelId: "UCJIfeSCssxSC_Dhc5s7woww"
 publishedAt: "2021-05-04T11:00:34Z"
 date: "2026-07-11"
-updated: "2026-08-17"
+updated: "2026-10-26"
 tags:
   - "Crypto"
-  - "Automation"
-summary: "Smart contracts are moving beyond theoretical application to reshape how industries manage agreements, by embedding executable logic directly into transactions. This transformation addresses long-standing issues of trust and operational inefficiency, reducing reliance on intermediaries. The key challenge involves bridging the gap between abstract legal language and verifiable, real-world data, enabling a new generation of data-driven, self-executing agreements. These advancements promise to enhance transparency and efficiency, especially in sectors like finance and insurance."
-metaDescription: "Smart contracts embed executable logic into transactions, reshaping agreements by enhancing transparency, efficiency, and reducing intermediaries."
+  - "Coding"
+summary: "Smart contracts execute self-running computer code directly on decentralized blockchain networks without central authorities. Every node verifies transactions independently using strict conditional rules to transfer assets and record data. While automation lowers transaction fees and removes escrow delays, software bugs and private key theft present serious security risks."
+metaDescription: "Learn how smart contracts work in blockchain networks, from automated code execution to external oracle feeds and key security risks."
+targetQuestion: "how do smart contracts work in blockchain"
 duration: "11:25"
-viewCount: 21554
-viewsUpdated: "2026-10-25"
+viewCount: 21555
+viewsUpdated: "2026-10-26"
 thumbMax: true
 isShort: false
-revised: true
+recipe: 3
+rewrittenAt: "2026-10-26"
 faqs:
-  - question: "What is a smart contract?"
-    answer: "A smart contract is a self-executing agreement where the terms are directly written into lines of code. This code runs on a blockchain, automatically executing the agreement when predefined conditions are met, without the need for intermediaries."
-  - question: "How do smart contracts handle real-world information?"
-    answer: "Smart contracts use 'oracle networks' to connect with real-world data. These decentralized services provide verified external information, such as market prices, weather conditions, or sensor data, which the smart contract then uses to determine if its conditions have been met."
-  - question: "What are the main benefits of using smart contracts in industry?"
-    answer: "Smart contracts enhance transparency, efficiency, and trust by automating agreement execution and reducing reliance on intermediaries. They can also improve data privacy by evaluating information without sharing it directly with all parties, and motivate the creation of more precise data feeds."
-  - question: "Can all traditional legal agreements be converted into smart contracts?"
-    answer: "Not all agreements can be converted easily. Smart contracts require clear, deterministic conditions and verifiable data sources. Highly ambiguous agreements or those relying on subjective interpretations without objective data feeds are challenging to convert, unless new data collection methods are established."
-rewrittenAt: "2026-08-17"
+  - question: "What are smart contracts in blockchain?"
+    answer: "According to the National Institute of Standards and Technology, a smart contract is a collection of code and data deployed via cryptographically signed transactions across blockchain nodes. Every node runs the program independently to derive matching ledger records without trusted intermediaries."
+  - question: "What are smart contracts in Ethereum?"
+    answer: "According to Ethereum.org, an Ethereum smart contract is an autonomous account with its own address and balance that runs code through the Ethereum Virtual Machine. It executes pre-programmed functions whenever a user or another account submits a transaction to it."
+  - question: "What is smart contract auditing?"
+    answer: "Smart contract auditing is a security review that analyzes code to detect programming flaws before deployment. Chainalysis reported that attackers stole $36.7 million across four exploits of unverified smart contracts during a six-month period ending in June 2026."
+keyFacts:
+  - text: "Computer scientist Nick Szabo defined a smart contract in 1994 as a computerized transaction protocol that executes the terms of a contract to satisfy contractual conditions and minimize the need for trusted intermediaries."
+    source: "National Institute of Standards and Technology (NISTIR 8202)"
+    url: "https://nvlpubs.nist.gov/nistpubs/ir/2018/nist.ir.8202.pdf"
+  - text: "Blockchain networks are deterministic and isolated systems that cannot natively access real-world data, requiring decentralized oracle networks (DONs) to securely bridge external data feeds into smart contracts."
+    source: "Chainlink"
+    url: "https://research.chain.link/Chainlink-Whitepaper-Next-Steps-in-the-Evolution-of-Decentralized-Oracle-Networks.pdf"
+  - text: "Attackers stole $36.7 million across four separate exploits of unverified smart contracts during a six-month period ending in June 2026 by decompiling raw on-chain bytecode to identify hidden vulnerabilities."
+    source: "Chainalysis"
+    url: "https://www.chainalysis.com/blog/attackers-exploiting-unverified-smart-contracts/"
 ---
 
-[Smart contracts](/video/compact-language-architecting-privacy-first-smart-contracts-for/) are transforming industrial agreements by embedding executable logic directly into transactions, moving beyond theoretical applications to address long-standing issues of trust and operational inefficiency. This shift reduces reliance on intermediaries and fosters a new era of data-driven, self-executing agreements.
+Smart contracts run computer code across a decentralized network (a system of connected computers with no central boss). Every node (an individual computer on the network) executes the exact same instructions.
 
-The core innovation lies in their ability to translate complex legal terms into verifiable code, enhancing transparency and efficiency across various sectors.
+This happens whenever an account triggers a transaction. Once preset conditions are met, the network updates ledger balances. It completes this process without any human middleman.
 
-## From Legal Text to Executable Code
+## How do smart contracts store data and execute code?
 
-At its core, a smart contract is an agreement where the terms are written directly into lines of code, which then runs on a blockchain. Unlike traditional contracts, which are typically expressed in natural language and rely on legal systems for enforcement, smart contracts are self-executing and self-enforcing.
+Smart contracts store persistent data inside blockchain accounts. They run code inside virtual machines (programs simulating computers) when triggered by incoming transactions.
 
-This fundamental difference means that once the conditions specified in the code are met, the contract automatically executes its predefined actions without the need for human intervention or interpretation.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NISTIR 8202), computer scientist Nick Szabo defined a smart contract in 1994. He defined it as a computerized transaction protocol that executes contractual terms. The same agency notes that modern smart contracts consist of code and data.
 
-This coded nature introduces a forced clarity that is often absent in traditional legal agreements. While mapping ambiguous natural language into precise code can be challenging, the resulting smart contract is inherently clear and deterministic. This clarity can make it significantly easier to explain the contract's functionality to all parties involved, as its logic is explicit and verifiable.
+This material is deployed across network nodes via signed transactions. Every participating node must derive identical results. Only then do they add the transaction to the distributed ledger (a shared record book).
 
-The transition for industries involves converting existing agreements into this new format. For many legal agreements that already reference external computing systems—such as those accepting e-signatures or standardized financial agreements like the ISDA Master Agreement for derivatives—the conversion process can be relatively straightforward.
+According to Ethereum.org, a smart contract acts as an autonomous account. It holds its own unique address and crypto balance. The program activates when an external wallet or another contract sends a transaction to that address.
 
-It often involves swapping out a centralized system of contract settlement for a blockchain-based one, where the smart contract dictates the state of the agreement. However, for highly ambiguous agreements that lack clear, measurable conditions, the process requires a more fundamental re-evaluation and formalization of terms.
+The host network processes the instructions through the [Ethereum Virtual Machine](/video/the-world-computer-vision-deconstructing-ethereum-s-smart-contract). This processing calculates updated account balances and state variables (stored contract values).
 
-## The Data Imperative: Connecting Contracts to Reality
+Execution follows a strict, step-by-step path:
 
-The effectiveness of smart contracts, particularly in real-world industrial applications, hinges on their ability to interact with external data. These are often referred to as "hybrid smart contracts" because they combine on-chain code with off-chain data.
+1. A developer writes business rules into code. They deploy the bytecode (machine-readable code translated from software instructions) to a ledger address.
+2. A user initiates a transaction to the contract address. This transaction contains gas fees (payments required to compensate the network for computing power) and target parameters.
+3. Every independent validator node reads the code instructions and updates its local state database.
+4. The consensus mechanism (rules network computers use to agree on records) validates that all nodes produced matching outputs before finalizing the block.
 
-The critical challenge is proving "what happened" in the real world in a way that the smart contract can understand and act upon. This is where oracle networks come into play. Oracle networks serve as decentralized bridges, securely feeding real-world data into smart contracts, allowing them to react to events outside the blockchain.
+According to IBM, these programs rely entirely on predetermined "if/when...then..." rules. Once verified conditions occur, the program completes operations. These include releasing funds, registering assets, or sending notifications.
 
-Without reliable data sources, a smart contract cannot function. For instance, a contract attempting to determine if a house was painted "the right color blue" would be impossible to execute without an objective, verifiable data feed for color analysis.
+## Oracles feed real-world data into isolated blockchains
 
-This highlights a key limitation: if there is no data source or set of data sources to create definitive truth, then a smart contract cannot eliminate ambiguity and settle the agreement.
+Blockchains cannot access outside information on their own. Instead, they use secure external data bridges called oracles to import real-world events.
 
-However, the demand for smart contracts can also motivate the creation of new data feeds. If sufficient value is generated by connecting specific real-world data to smart contracts, services may emerge to provide that data.
+Blockchains are deterministic (predictable) and isolated systems. According to blockchain oracle platform [Chainlink](https://chain.link/), blockchains cannot natively query external web services. Nodes must execute identical inputs to generate matching results.
 
-For example, insurance companies already use drones to monitor construction sites, verifying compliance with safety regulations like hard hat usage. If the percentage of workers wearing hard hats falls below a certain threshold, a policy might be affected.
+Nodes cannot fetch live data from traditional internet APIs (interfaces that allow different software programs to communicate). If so, different response times could break consensus (agreement among network computers on valid records) across the network.
 
-In such cases, the drone data provides a definitive source that can be integrated into a hybrid smart contract, proving what happened and triggering specific contractual outcomes. This illustrates how the need for data-driven agreements can spur innovation in data collection and verification.
+According to Chainlink, [decentralized oracle networks](/video/bridging-blockchains-how-oracle-networks-connect-smart-contracts-to) solve this limitation by collecting external data through multiple independent nodes. These nodes validate price feeds, weather measurements, and sports outcomes.
 
-## Rebuilding Trust and Efficiency
+Then, they package the information into on-chain transactions. Smart contracts read that verified on-chain data to trigger their built-in clauses.
 
-A recurring theme in the application of smart contracts is their capacity to solve trust issues between parties. By providing an autonomous, highly reliable piece of code that executes impartially, smart contracts remove the need for intermediaries or for parties to implicitly trust each other's actions.
+A financial contract might track the market price of an asset. In comparison, a flight insurance contract might check flight delays. Without oracle feeds, smart contracts could only interact with balances and tokens generated directly on their native ledger.
 
-This can redefine how entities collaborate, particularly in situations where information sharing or performance verification is a point of contention.
+## Why use smart contracts instead of traditional agreements?
 
-Consider an early application for search engine optimization (SEO) firms. Clients were often reluctant to pay upfront, fearing the firm might not deliver on promised search rank improvements. Conversely, SEO firms were hesitant to perform work without guaranteed payment.
+According to the American Arbitration Association, smart contracts replace institutional intermediaries like escrow agents with algorithmic code execution. According to the American Arbitration Association, they shift trust rather than eliminate dispute risks between parties.
 
-A smart contract could solve this by holding funds in escrow, releasing them automatically to the SEO firm only when a website's search rank for a specific keyword reached a predefined level on a search engine. This simple mechanism eliminated the trust problem, benefiting both parties.
+According to the American Arbitration Association, smart contracts replace institutional intermediaries like escrow agents with algorithmic code execution. Traditional business deals require banks, lawyers, or administrative clerks to confirm compliance before releasing payment.
 
-The insurance industry, a multi-trillion dollar sector, stands to gain significantly. Insurance companies are inherently data-driven, and many already invest in generating data. They might pay IoT companies to install sensors in customers' infrastructure to gather data relevant to policies.
+Software code removes that manual processing time. It also reduces third-party administrative costs.
 
-Smart contracts can take this a step further by evaluating user data without directly sharing it with the insurance company. A smart contract can hold and assess the data according to policy terms, and the insurance company receives only the outcome of that evaluation, not the raw data itself.
+The following table compares traditional agreements with smart contracts.
 
-This solves a critical privacy trust issue, empowering individuals to provide data for better-tailored policies without compromising their personal information. This pattern of solving trust issues through autonomous, data-driven code is applicable across multi-trillion dollar industries such as:
+| Feature | Traditional Contract | Blockchain Smart Contract |
+| :--- | :--- | :--- |
+| Execution Method | Manual human enforcement | Automatic code execution |
+| Intermediary Requirement | Escrow agents, banks, or courts | Distributed node consensus |
+| Operational Rule Base | Natural legal language | Deterministic conditional code |
+| Settlement Speed | Days or weeks of processing | Instant on-chain finality |
 
-- Global finance
-- Global trade
-- Advertising networks
+Users can trade digital assets, borrow funds, or enter insurance pools directly from a crypto wallet. Users do not need credit checks or personal approval from a bank manager.
 
-## Industry Transformation and Future Outlook
+Human contracts permit contextual interpretation. In contrast, blockchain software executes programmed instructions exactly as written. It does this even when the real-world outcome is unfair.
 
-The insurance industry, with its existing reliance on data, serves as a compelling precursor for the broader adoption of smart contracts. Insurers are already actively seeking and paying for data to price agreements more accurately.
+That rigid execution can sound unforgiving, but there is real practical value here once you look past the market hype. I hold wallets with Bitcoin, Ethereum, and Solana myself, and major companies like Boeing and Volkswagen already use blockchain for everyday inventory management. Cutting out slow administrative middlemen simply saves time, which is worth its weight in gold.
 
-As smart contracts become a more requested format for data-driven agreements, there will be a growing demand for precise and verifiable data to prove events. This will motivate the creation of entirely new data feeds, moving beyond crude demographic information to high-resolution, individual-specific data.
+## Code vulnerabilities and compromised keys create severe security risks
 
-This shift has the potential for transformative effects on society. For individuals, it could mean more personalized and equitable insurance policies, where premiums are based on actual behavior and risk, rather than broad generalizations. The ability of smart contracts to evaluate data privately also empowers individuals, giving them greater control over their personal information while still benefiting from data-driven services.
+Smart contracts carry severe security risks. Permanent code bugs cannot be easily patched. Stolen administrative keys grant attackers full control.
 
-In decentralized finance (DeFi) and decentralized insurance, agreements are actively being rebuilt in this clearer, more deterministic format. This rebuilding process enhances transparency and simplifies the explanation of complex financial products. Ultimately, smart contracts are redefining how everyone collaborates, enabling more efficient, transparent, and trustworthy interactions in any scenario where an outcome can be proven through verifiable data.
+Blockchain transactions are immutable (meaning data written to the ledger cannot be altered or undone). If a developer deploys a contract containing mathematical errors or logic flaws, attackers can exploit those errors repeatedly.
+
+A software bug in traditional finance can be patched on a central server. However, fixing live smart contracts requires complex migration strategies.
+
+According to blockchain analytics firm Chainalysis, attackers stole $36.7 million across four separate exploits of unverified smart contracts. This occurred during a six-month period ending in June 2026. Attackers decompiled raw on-chain bytecode to spot hidden software vulnerabilities that developers overlooked before deployment.
+
+Securing the written code does not eliminate danger. According to cybersecurity firm Trail of Bits, compromised private keys accounted for 43.8% of all hacked cryptocurrency funds in Chainalysis's 2024 analysis. This metric proves that administrative key theft breaches contract permissions even when the underlying software contains no flaws.
+
+Contract safety depends on several technical factors:
+
+- Thorough source code verification and third-party security audits prior to mainnet (the live, primary blockchain network) deployment.
+- Strict multi-signature control over administrative private keys to prevent unauthorized changes.
+- Fallback pause mechanisms designed to freeze contract actions during unexpected ledger anomalies.
+
+I cannot stress cybersecurity enough, especially when smart contract code cannot easily be reversed. Having been hacked several times myself, I know firsthand just how capable modern attackers are and how vital it is to protect your access. When dealing with private keys and digital systems, it is always better to be safe than sorry.
+
+## Lex Clips explains using Chainlink oracles for contract settlement
+
+Lex Clips outlines how hybrid smart contracts use Chainlink oracle networks. These networks turn ambiguous physical events into definitive settlement data.
+
+In the video, Lex Clips discusses replacing centralized settlement systems with blockchains. The host points to established financial frameworks like the ISDA Master Agreement (a standard contract used to govern financial derivatives).
+
+Lex Clips notes that legal structures already reference external computing systems. Lex Clips explains that swapping old clearing repositories for distributed ledgers creates unambiguous contract records.
+
+Lex Clips shares a real-world example involving search engine optimization. In this setup, a client deposited Bitcoin into an early smart contract.
+
+The contract released payment only if a website hit a target search rank on Google. The autonomous program held the funds until objective data verified that the search engine optimization firm completed the work.
+
+The creator highlights that contracts depend on reliable data feeds to avoid ambiguity. Lex Clips uses an example of house painting. Code cannot verify whether a contractor painted a house the correct shade of blue without specialized drone data.
+
+Lex Clips also notes that insurance companies currently use drones to monitor hard hats on construction sites. Insurers void policies if worker safety percentages fall short.
+
+Lex Clips explains that smart contracts can evaluate private vehicle data without exposing personal files to an insurance carrier. The autonomous program validates driving metrics internally. It issues policy discounts while keeping sensitive user records private.
+
+## Sources
+
+- [Nist.ir.8202 (PDF)](https://nvlpubs.nist.gov/nistpubs/ir/2018/nist.ir.8202.pdf) — nist.gov
+- [Introduction to smart contracts | ethereum.org](https://ethereum.org/developers/docs/smart-contracts/) — ethereum.org
+- [What Are Smart Contracts on Blockchain? | IBM](https://www.ibm.com/think/topics/smart-contracts) — ibm.com
+- [Chainlink Whitepaper Next Steps in the Evolution of Decentralized Oracle Networks (PDF)](https://research.chain.link/Chainlink-Whitepaper-Next-Steps-in-the-Evolution-of-Decentralized-Oracle-Networks.pdf) — chain.link
+- [Jennifer yen (PDF)](https://www.cis.upenn.edu/~fbrett/assets/theses/jennifer_yen.pdf) — upenn.edu
+- [What Are Smart Contracts and How Do They Work?](https://www.adr.org/news-and-insights/what-are-smart-contracts/) — adr.org
+- [Unverified Smart Contracts Are a Preferred Target for Attackers](https://www.chainalysis.com/blog/attackers-exploiting-unverified-smart-contracts/) — chainalysis.com
+- [Maturing your smart contracts beyond private key risk - The Trail of Bits Blog](https://blog.trailofbits.com/2025/06/25/maturing-your-smart-contracts-beyond-private-key-risk/) — trailofbits.com
+- [Applications of smart contracts | Sergey Nazarov and Lex Fridman](https://www.youtube.com/watch?v=l-sTw136zAs) — Lex Clips on YouTube

@@ -5,6 +5,7 @@ channelTitle: "JRobertson Security"
 channelId: "UCoZxQZZLo5rJ3Cbt5RYEppA"
 publishedAt: "2026-05-22T21:08:56Z"
 date: "2026-10-19"
+updated: "2026-10-26"
 tags:
   - "Cybersecurity"
 summary: "Cybersecurity frameworks provide structured operational blueprints that organize security risk management into measurable, repeatable functions. Standards such as the NIST Cybersecurity Framework, ISO/IEC 27001, and CIS Controls offer clear taxonomies to evaluate posture, allocate capital, and address systemic threats. Adopting these models mitigates common attack surfaces significantly, though compliance alone cannot eliminate zero-day vulnerabilities or human error."
@@ -22,6 +23,7 @@ faqs:
     answer: "The standard published by ISO and the IEC as ISO/IEC 27001:2022 specifies requirements across Clauses 4 through 10 to establish, implement, and maintain an Information Security Management System. It serves as an international benchmark for formal security certification."
   - question: "What are some common cybersecurity frameworks?"
     answer: "Organizations frequently deploy the NIST Cybersecurity Framework, ISO/IEC 27001, and the Center for Internet Security Critical Security Controls. Each system provides varying balances between high-level governance outcomes and granular technical controls."
+factChecked: "2026-10-26"
 ---
 
 Cybersecurity frameworks are structured systems of standards, guidelines, and practices designed to manage digital security risk across an organization. They establish a common operational vocabulary, define defensive baselines, and organize security tasks into repeatable categories. Instead of deploying security software reactively, technical teams use these blueprints to identify systemic vulnerabilities and prioritize risk-management resources.
@@ -93,7 +95,7 @@ The core model groups outcomes into six functions: Govern, Identify, Protect, De
 
 Within the operational functions, Identify provides asset visibility because organizations cannot defend hardware or services they do not track. Protect incorporates safeguards like access controls, while Detect focuses on logging to reduce dwell time, which represents the duration an attacker spends undetected inside enterprise boundaries.
 
-To guide implementation, Robertson details maturity tiers ranging from Tier 1, defined as ad hoc and reactive, to Tier 4, defined as adaptive. He demonstrates how teams use current and target profiles to map defensive gaps into actionable engineering projects.
+ He demonstrates how teams use current and target profiles to map defensive gaps into actionable engineering projects.
 
 Robertson also highlights supply-chain risks, citing high-profile breaches involving [SolarWinds](https://www.solarwinds.com/) and MOVEit to emphasize that enterprise boundaries depend entirely on trusted third-party software partners.
 

@@ -120,5 +120,70 @@
     "roert": true
    }
   ]
+ },
+ {
+  "dato": "2026-10-26T07:13:24.055Z",
+  "artikler": [
+   {
+    "slug": "can-beginners-put-a-gaming-pc-together-safely",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 4,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 3,
+    "skeptikerTjekket": 20,
+    "fanget": 2,
+    "rettet": 2,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "growers-use-robotics-in-agriculture-for-precision-farming",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 11,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 8,
+    "skeptikerTjekket": 37,
+    "fanget": 5,
+    "rettet": 5,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "how-do-you-define-what-gaming-pcs-actually-are",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 7,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 6,
+    "skeptikerTjekket": 33,
+    "fanget": 2,
+    "rettet": 2,
+    "fjernet": 0,
+    "roert": true
+   },
+   {
+    "slug": "search-engines-and-how-seo-works-to-rank-websites",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 5,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 4,
+    "skeptikerTjekket": 17,
+    "fanget": 4,
+    "rettet": 2,
+    "fjernet": 2,
+    "roert": true
+   },
+   {
+    "slug": "cybersecurity-frameworks-and-how-modern-teams-use-them",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 5,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 4,
+    "skeptikerTjekket": 17,
+    "fanget": 1,
+    "rettet": 0,
+    "fjernet": 1,
+    "roert": true
+   }
+  ]
  }
 ]

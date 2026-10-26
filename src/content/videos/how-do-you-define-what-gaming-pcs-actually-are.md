@@ -5,6 +5,7 @@ channelTitle: "PC Builder"
 channelId: "UC0uAeNHLLuAovOTHI-aOZiQ"
 publishedAt: "2026-08-22T13:00:33Z"
 date: "2026-10-20"
+updated: "2026-10-26"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"
@@ -18,7 +19,7 @@ thumbMax: true
 isShort: false
 faqs:
   - question: "What is a gaming PC used for?"
-    answer: "A gaming PC is built to run demanding interactive 3D video games at high frame rates and graphical detail. According to Lenovo's hardware overview, these systems are tuned to sustain heavy thermal and computational loads while maintaining low input lag."
+    answer: "A gaming PC is built to run demanding interactive 3D video games at high frame rates and graphical detail. These systems are tuned to sustain heavy thermal and computational loads while maintaining low input lag."
   - question: "What are standard gaming PC specs?"
     answer: "According to HP's technical guide, standard specifications include a dedicated graphics card with 6 to 24 GB of VRAM, a 6- to 16-core processor, and 16 to 32 GB of RAM. Valve's September 2026 Steam survey also reports that 42.22% of surveyed systems use 32 GB of system RAM."
   - question: "What is a gaming PC GPU?"
@@ -27,12 +28,13 @@ keyFacts:
   - text: "Gaming desktops typically require dedicated power supply units rated between 650 watts and 1,000 watts with 80 Plus efficiency certifications, compared to standard office PCs that require significantly less wattage."
     source: "HP's power specification benchmarks"
     url: "https://www.hp.com/us-en/tech-takes/gaming/explainer/what-is-gaming-computer.html"
-  - text: "Gaming PCs are high-end personal computers optimized for enthusiast performance, offering ready-built configurations as well as custom user-built setups supporting up to 512 GB of RAM and liquid cooling loops."
+  - text: "Gaming PCs are high-end personal computers optimized for enthusiast performance, offering ready-built configurations as well as custom user-built setups supporting high-capacity RAM and liquid cooling loops."
     source: "PCMag's Encyclopedia"
     url: "https://www.pcmag.com/encyclopedia/term/gaming-pc"
   - text: "Gaming computers are specifically tuned to deliver higher frame rates, lower input lag, and superior graphical fidelity under sustained thermal and computational loads relative to general productivity PCs."
     source: "Lenovo's hardware overview"
     url: "https://www.lenovo.com/us/en/glossary/what-is-a-gaming-computer/"
+factChecked: "2026-10-26"
 ---
 
 Gaming PCs are specialized personal computers engineered with dedicated high-performance hardware to render complex 3D graphics and compute game physics at high frame rates. Unlike standard office systems, they combine discrete graphics processors, multi-core CPUs, and specialized cooling solutions to sustain heavy computing workloads without throttling.

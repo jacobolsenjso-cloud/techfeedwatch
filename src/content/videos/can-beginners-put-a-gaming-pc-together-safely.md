@@ -5,6 +5,7 @@ channelTitle: "Toasty Bros"
 channelId: "UCwdEr_DVvYp6Maf-OTw7z_w"
 publishedAt: "2026-06-12T19:00:14Z"
 date: "2026-10-21"
+updated: "2026-10-26"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"
@@ -33,6 +34,7 @@ keyFacts:
   - text: "Applying either too much or too little thermal paste between the heat spreader and the heatsink impedes heat transfer and can cause thermal throttling."
     source: "Intel's documentation on thermal paste application and processor diagnostics"
     url: "https://www.intel.com/content/www/us/en/support/articles/000059749.html"
+factChecked: "2026-10-26"
 ---
 
 To put a gaming PC together, you install the processor, memory, and solid-state storage onto the motherboard outside the chassis, mount that assembly into the computer case, and connect the power supply cables to each component.
@@ -42,7 +44,7 @@ You then secure the graphics card into the primary expansion slot and route the 
 ## Prepare an uncarpeted workspace and Phillips screwdrivers
 You must assemble a gaming computer on a flat, uncarpeted surface using magnetic Phillips screwdrivers to protect sensitive electronic circuits and secure chassis hardware. Electrostatic discharge poses a silent hazard to sensitive computer chips.
 
-According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s "How to Build a Gaming PC" guide, assembling a system on an uncarpeted floor reduces the risk of electrostatic discharge that can permanently destroy integrated circuits.
+According to Intel's "How to Build a Gaming PC" guide, standing on an uncarpeted surface while assembling a system on a large surface like a table reduces the risk of electrostatic discharge that can damage sensitive components.
 
 The same Intel documentation specifies using a Phillips #2 screwdriver for chassis panels and motherboard mounting screws, alongside a smaller Phillips #0 screwdriver to fasten M.2 solid-state storage drives. Setting aside adequate space on a wooden or laminate table gives you room to lay out components safely.
 
@@ -76,7 +78,7 @@ You safely connect a modern graphics card by seating it firmly into the primary 
 
 According to PCI-SIG PCIe CEM 5.1 and ATX 3.1 power delivery specifications, the 12V-2x6 auxiliary connector replaces the earlier 12VHPWR plug, utilizing 1.5mm shorter sideband sense pins and 0.25mm longer power terminals to prevent current transmission up to 600 watts unless the connector latches completely. This mechanical change stops current flow when a cable sits loose.
 
-According to [Corsair](https://www.corsair.com/us/en)'s power supply technical analysis, first-generation 12VHPWR connectors suffered from high thermal resistance and terminal melting when cables were partially seated or bent too close to the connector housing. Builders must route cables with gentle bends and verify full engagement before powering the system.
+According to Corsair's power supply technical analysis, first-generation 12VHPWR connectors suffered from high contact resistance and terminal melting when cables were partially seated or bent too close to the connector housing. Builders must route cables with gentle bends and verify full engagement before powering the system.
 
 ## Is building a gaming PC better than buying pre-built?
 Building a gaming PC provides complete component choice and lower replacement costs, but pre-built systems offer single-point warranty coverage and immediate software configuration.

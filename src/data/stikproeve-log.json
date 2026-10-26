@@ -1,1 +1,25 @@
-[]
+[
+ {
+  "dato": "2026-10-26T07:10:50.972Z",
+  "artikler": [
+   {
+    "slug": "what-happens-when-you-adopt-virtual-assistant-tools",
+    "tjekket": 7,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 5,
+    "fund": []
+   },
+   {
+    "slug": "10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 6,
+    "fund": []
+   }
+  ]
+ }
+]
