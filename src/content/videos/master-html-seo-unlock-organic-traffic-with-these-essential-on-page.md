@@ -27,13 +27,13 @@ faqs:
   - question: "Does Google still use meta keywords to rank web content?"
     answer: "No, Google Search Central's SEO Starter Guide explicitly states that Google Search does not use the meta keywords tag for ranking web pages. The search engine completely ignores this element."
 keyFacts:
-  - text: "Google Search does not use the `<meta name=\"keywords\">` HTML tag for ranking web content."
+  - text: "Google Search does not use the <meta name=\"keywords\"> HTML tag for ranking web content."
     source: "Google Search Central's SEO Starter Guide"
     url: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-  - text: "The default indexing and crawling instructions for robots meta tags are `index, follow`, meaning site owners do not need to explicitly declare these values in their HTML."
+  - text: "The default indexing and crawling instructions for robots meta tags are index, follow, meaning site owners do not need to explicitly declare these values in their HTML."
     source: "Google Search Central documentation"
     url: "https://developers.google.com/search/docs/crawling-indexing/special-tags"
-  - text: "Search algorithms evaluate prominent on-page text placements—specifically the `<title>`, main headings such as `<h1>` tags, and `alt` attributes on images—to determine document relevance to search queries."
+  - text: "Search algorithms evaluate prominent on-page text placements—specifically the <title>, main headings such as <h1> tags, and alt attributes on images—to determine document relevance to search queries."
     source: "Google Search Central's Search Essentials"
     url: "https://developers.google.com/search/docs/essentials"
 ---
