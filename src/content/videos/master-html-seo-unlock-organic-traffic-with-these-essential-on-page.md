@@ -66,9 +66,9 @@ Link qualification attributes also modify crawling paths. According to Google Se
 
 | HTML Element or Attribute | Primary SEO Purpose | Direct Ranking Impact |
 | :--- | :--- | :--- |
-| <meta name="robots" content="noindex"> | Prevents page indexing in search engines | Removes URL from search index entirely |
-| <link rel="canonical"> | Identifies primary master version among duplicate URLs | Consolidates indexing signals to chosen master URL |
-| <link rel="alternate" hreflang="..."> | Routes users to language and regional page variants | Directs search engines to localized target pages |
+| &lt;meta name="robots" content="noindex"&gt; | Prevents page indexing in search engines | Removes URL from search index entirely |
+| &lt;link rel="canonical"&gt; | Identifies primary master version among duplicate URLs | Consolidates indexing signals to chosen master URL |
+| &lt;link rel="alternate" hreflang="..."&gt; | Routes users to language and regional page variants | Directs search engines to localized target pages |
 | rel="nofollow" | Qualifies outbound links without passing endorsement | Tells Google not to associate site with target URL |
 
 Google Search Central documentation provides the specifications detailed in the comparison table above.

@@ -1445,6 +1445,9 @@ ${content}`);
       ? "keyFacts:\n" + noegle.map((f) => `  - text: ${toYamlDoubleQuoted(f.text)}\n    source: ${toYamlDoubleQuoted(f.source)}\n    url: ${toYamlDoubleQuoted(f.url)}`).join('\n') + "\n"
       : "";
 
+    // 26/10: rå HTML-tags i teksten (fx en tabel om <meta name="robots" content="noindex">) blev til
+    // RIGTIGE tags på siden - én artikel fik noindex. Tags uden for `kode` skrives nu som tekst.
+    content = String(content).split('\n').map((l) => l.split(/(`[^`]*`)/).map((d) => (d.startsWith('`') ? d : d.replace(/<(\/?[a-zA-Z][^<>]*)>/g, '&lt;$1&gt;'))).join('')).join('\n');
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }

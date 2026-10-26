@@ -44,6 +44,15 @@ for (const f of filer) {
     else if (ord < MIN_ORD) tilfoej('fejl', 'for kort', f, `${ord} ord, grænsen er ${MIN_ORD}`);
   }
 
+  // --- Rå HTML i brødteksten (26/10) ---
+  // En tabel med <meta name="robots" content="noindex"> som TEKST blev til et rigtigt noindex-tag
+  // på siden (markdown sender rå HTML videre), og Google fik besked på ikke at vise artiklen.
+  // Tags i `kode` er ufarlige; alt andet skal skrives som &lt;meta&gt;.
+  {
+    const raaHtml = body.split('\n').flatMap((l) => l.split(/`[^`]*`/)).filter((l) => /<(meta|link|script|style|iframe|title|head|base|html|body|noscript|object|embed|form|input)\b/i.test(l));
+    if (raaHtml.length) tilfoej('fejl', 'rå HTML i teksten', f, raaHtml[0].trim().slice(0, 90));
+  }
+
   // --- Resumé ---
   // Resuméet står i boksen øverst OG i metabeskrivelsen. Mangler det, er både
   // siden og søgeresultatet tomme det sted hvor læseren beslutter sig.
