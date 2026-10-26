@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
+import { GEMINI_MODEL, hentModel, forbrug } from './src/lib/model.mjs';
 import { slutkontrol } from './src/lib/slutkontrol.mjs';
 import { cacheSti } from './src/lib/transskript.mjs';
 import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
@@ -106,6 +106,8 @@ for (const a of koe.slice(0, antal)) {
   if (fund.delete(a.slug)) fs.writeFileSync(FUND, JSON.stringify({ slugs: [...fund] }, null, 1) + '\n');
   koersel.artikler.push({ slug: a.slug, ...rap, roert: true });
 }
+// Pris (26/10, Jacob: den daglige rapport skal vise hele dagens pris): målt af forbrugstælleren i model.mjs
+koersel.usd = Math.round(forbrug.usd * 10000) / 10000;
 const log = laes(LOG, []);
 log.push(koersel);
 fs.writeFileSync(LOG, JSON.stringify(log.slice(-90), null, 1) + '\n');

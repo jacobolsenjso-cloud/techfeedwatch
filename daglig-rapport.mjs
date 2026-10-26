@@ -9,7 +9,8 @@
 // 14/10). Er dagens rapport allerede sendt, gør scriptet intet. RAPPORT_TVING=1 sender alligevel.
 //
 // Kilder (alle målte, intet skønnet): src/data/robot-log.jsonl (robot-log.mjs, én linje pr.
-// robotkørsel), src/data/omskriv-log.json (omskrivningen), GitHubs liste over kørsler, og
+// robotkørsel), src/data/omskriv-log.json (omskrivningen), faktatjek-log.json og stikproeve-log.json
+// (pris målt fra 26/10), GitHubs liste over kørsler, og
 // techfeedwatch.com/build.json + robot-status.json.
 import fs from 'node:fs';
 
@@ -40,9 +41,14 @@ const robot = (fs.existsSync('src/data/robot-log.jsonl') ? fs.readFileSync('src/
 const robot24 = robot.filter((p) => new Date(p.tid) >= siden);
 const omskriv = laesJson('src/data/omskriv-log.json', []);
 const omskriv24 = omskriv.filter((p) => new Date(p.dato) >= siden);
+// 26/10 (Jacob): hele dagens pris samlet - faktatjek og stikprøve gemmer deres målte pris fra 26/10.
+const fakta = laesJson('src/data/faktatjek-log.json', []);
+const stik = laesJson('src/data/stikproeve-log.json', []);
+const fakta24 = fakta.filter((p) => new Date(p.dato) >= siden);
+const stik24 = stik.filter((p) => new Date(p.dato) >= siden);
 const maaned = nu.toISOString().slice(0, 7);
 const maanedUsd = robot.filter((p) => p.tid.startsWith(maaned)).reduce((s, p) => s + (p.usd || 0), 0)
-  + omskriv.filter((p) => String(p.dato).startsWith(maaned)).reduce((s, p) => s + (p.usd || 0), 0);
+  + [...omskriv, ...fakta, ...stik].filter((p) => String(p.dato).startsWith(maaned)).reduce((s, p) => s + (p.usd || 0), 0);
 
 let koersler = [];
 try { koersler = (await gh(`/repos/${REPO}/actions/runs?per_page=100&created=%3E${siden.toISOString().slice(0, 19)}Z`)).workflow_runs; }
@@ -75,6 +81,13 @@ const robotUsd = robot24.reduce((s, p) => s + (p.usd || 0), 0);
 const omskrevet = omskriv24.flatMap((p) => p.omskrevet || []);
 const omskrivStop = omskriv24.flatMap((p) => p.stoppet || []);
 const omskrivUsd = omskriv24.reduce((s, p) => s + (p.usd || 0), 0);
+const faktaUsd = fakta24.reduce((s, p) => s + (p.usd || 0), 0);
+const stikUsd = stik24.reduce((s, p) => s + (p.usd || 0), 0);
+const faktaArtikler = fakta24.reduce((n, p) => n + (p.artikler || []).length, 0);
+const stikArtikler = stik24.reduce((n, p) => n + (p.artikler || []).length, 0);
+// Kørsler fra før 26/10 har ingen pris - så siges det, i stedet for at vise 0 som om det var gratis
+const umaalt = [...fakta24, ...stik24].some((p) => p.usd === undefined);
+const dagUsd = robotUsd + omskrivUsd + faktaUsd + stikUsd;
 const tomme = robot24.filter((p) => !(p.udgivet || []).length && !p.loftNaaet).length;
 const klippet = robot24.reduce((s, p) => s + (p.klippet || 0), 0);
 const loftReddet = robot24.reduce((s, p) => s + (p.loftReddet || 0), 0); // 24/10: reddet af nyt forsøg
@@ -105,6 +118,8 @@ const tekst = [
   '',
   `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Kanal-værn: ${kv.tjekket} kanaler tjekket, ${kv.afvist} videoer afvist${kv.fejlet ? `, ${kv.fejlet} opslag fejlet` : ''}.${loftReddet ? ` Gemini-svar reddet med dobbelt loft: ${loftReddet}.` : ''} Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
   `**Omskrivning af gamle artikler:** ${omskrevet.length} omskrevet, ${omskrivStop.length} stoppet. Pris: ${kr(omskrivUsd)}.`,
+  `**Faktatjek og stikprøve:** ${faktaArtikler} artikler faktatjekket, ${stikArtikler} i stikprøven. Pris: ${kr(faktaUsd + stikUsd)}${umaalt ? ' (en del af kørslerne er fra før prisen blev målt)' : ''}.`,
+  `**Hele døgnets pris: ${kr(dagUsd)}** — robotten ${kr(robotUsd)} · omskrivning ${kr(omskrivUsd)} · faktatjek ${kr(faktaUsd)} · stikprøve ${kr(stikUsd)}. (Enkeltstående prøver uden for robotterne er ikke med.)`,
   `**Brugt i ${maaned} (målt; logbøgerne startede 13.-14/10, så tidligere forbrug er ikke med):** ${kr(maanedUsd)}. Kreditten selv kan kun ses i Google AI Studio.`,
   '',
   `**Andre kørsler:** ${Object.entries(pr).filter(([n]) => n !== 'YouTube Auto Update').map(([n, v]) => `${n} ${v.i_alt}`).join(' · ') || 'ingen'}`,

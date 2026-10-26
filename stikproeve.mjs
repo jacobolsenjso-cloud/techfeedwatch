@@ -15,7 +15,7 @@
 import fs from 'node:fs';
 import 'dotenv/config';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
+import { GEMINI_MODEL, hentModel, forbrug } from './src/lib/model.mjs';
 import { belaeg, belaegSaetninger } from './src/lib/slutkontrol.mjs';
 import { laesFelter } from './src/lib/artikelfelter.mjs';
 import { kildeNavn } from './src/lib/konkret.mjs';
@@ -56,6 +56,8 @@ for (const a of kandidater.slice(0, antal)) {
   if (r.ikkeBelagt.length && !fund.slugs.includes(a.slug)) fund.slugs.push(a.slug);
 }
 fs.writeFileSync(FUND, JSON.stringify(fund, null, 1) + '\n');
+// Pris (26/10, Jacob: den daglige rapport skal vise hele dagens pris): målt af forbrugstælleren i model.mjs
+koersel.usd = Math.round(forbrug.usd * 10000) / 10000;
 const log = laes(LOG, []);
 log.push(koersel);
 fs.writeFileSync(LOG, JSON.stringify(log.slice(-120), null, 1) + '\n');
