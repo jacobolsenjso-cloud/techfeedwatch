@@ -17,10 +17,16 @@ import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
 
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=10').split('=')[1]) || 10;
 const kun = (process.argv.find((a) => a.startsWith('--kun=')) || '').split('=')[1] || '';
-// Tidsbudget: GitHub stopper jobbet efter 90 min, og så gemmes INTET. Der startes ingen ny artikel
-// efter budgettet (standard 30 min); resten tages næste dag.
-const minutter = Number((process.argv.find((a) => a.startsWith('--minutter=')) || '--minutter=30').split('=')[1]) || 30;
+// Tidsbudget: GitHub stopper jobbet ved loftet (150 min), og så gemmes INTET. Der startes ingen ny artikel
+// efter budgettet (standard 60 min - 26/10, Jacob: 30 min gav kun 5 af 10); resten tages næste dag.
+const minutter = Number((process.argv.find((a) => a.startsWith('--minutter=')) || '--minutter=60').split('=')[1]) || 60;
 const start = Date.now();
+// 26/10: i GitHub sætter workflowet JOB_START (sekunder). Faktatjekket må aldrig skubbe hele jobbet
+// over loftet (150 min -> alt tabes): budgettet afkortes til det, der er tilbage minus 20 min luft.
+const JOB_LOFT_MIN = 150;
+const jobBrugt = process.env.JOB_START ? (Date.now() / 1000 - Number(process.env.JOB_START)) / 60 : 0;
+const budget = Math.max(0, Math.min(minutter, JOB_LOFT_MIN - 20 - jobBrugt));
+if (process.env.JOB_START) console.log(`Tidsbudget: ${Math.round(budget)} min (jobbet har kørt ${Math.round(jobBrugt)} min)`);
 const LOG = './src/data/faktatjek-log.json';
 const laes = (f, std) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return std; } };
 const prio = new Set(laes('./src/data/omskriv-prioritet.json', { slugs: [] }).slugs);
@@ -53,7 +59,7 @@ if (process.argv.includes('--vis')) { for (const a of koe.slice(0, antal)) conso
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const koersel = { dato: new Date().toISOString(), artikler: [] };
 for (const a of koe.slice(0, antal)) {
-  if (Date.now() - start > minutter * 60000) { console.log(`Tidsbudget på ${minutter} min brugt - resten tages næste gang.`); break; }
+  if (Date.now() - start > budget * 60000) { console.log(`Tidsbudget på ${Math.round(budget)} min brugt - resten tages næste gang.`); break; }
   const [, fm, ...rest] = a.raw.split('---');
   const krop = rest.join('---');
   let noter = '(no transcript available - verify with Google Search)';

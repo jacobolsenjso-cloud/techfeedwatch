@@ -185,5 +185,73 @@
     "roert": true
    }
   ]
+ },
+ {
+  "dato": "2026-10-26T10:27:56.437Z",
+  "artikler": [
+   {
+    "slug": "beyond-seo-build-your-own-aeo-service-and-dominate-the-ai-powered",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 5,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 3,
+    "skeptikerTjekket": 22,
+    "fanget": 3,
+    "rettet": 3,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
+ },
+ {
+  "dato": "2026-10-26T10:32:57.297Z",
+  "artikler": [
+   {
+    "slug": "master-html-seo-unlock-organic-traffic-with-these-essential-on-page",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 0,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 0,
+    "skeptikerTjekket": 16,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
+ },
+ {
+  "dato": "2026-10-26T10:36:12.488Z",
+  "artikler": [
+   {
+    "slug": "unlocking-ethereum-s-power-your-first-smart-contract-with-solidity",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 4,
+    "ikkeBelagt": 1,
+    "belaegUsikre": 1,
+    "skeptikerTjekket": 20,
+    "fanget": 3,
+    "rettet": 3,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
+ },
+ {
+  "dato": "2026-10-26T10:40:54.758Z",
+  "artikler": [
+   {
+    "slug": "beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 3,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 3,
+    "skeptikerTjekket": 17,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "roert": true
+   }
+  ]
  }
 ]
