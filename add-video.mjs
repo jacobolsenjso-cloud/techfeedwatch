@@ -1452,7 +1452,10 @@ ${content}`);
     // 26/10: rå HTML-tags i teksten (fx en tabel om <meta name="robots" content="noindex">) blev til
     // RIGTIGE tags på siden - én artikel fik noindex. Tags uden for `kode` skrives nu som tekst.
     content = String(content).split('\n').map((l) => l.split(/(`[^`]*`)/).map((d) => (d.startsWith('`') ? d : d.replace(/<(\/?[a-zA-Z][^<>]*)>/g, '&lt;$1&gt;'))).join('')).join('\n');
-    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
+    // 26/10: en omskrivning ER en ændring af det, læseren ser - "updated" sættes her og ikke kun af
+    // stamp-updated.mjs (lokale omskrivninger 25/10 mistede ellers datoen, fordi frontmatter skrives forfra).
+    const updatedYaml = erstatSlug ? `updated: "${new Date().toISOString().slice(0, 10)}"\n` : '';
+    const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${updatedYaml}${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
     if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
     fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);

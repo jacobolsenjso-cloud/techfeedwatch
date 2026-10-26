@@ -76,7 +76,7 @@ export function stemmeBlok(hjerne, tekst) {
     if (hjerne.erfaringer) dele.push(`OWNER'S OWN EXPERIENCE (background - use only what is stated, never invent more):\n${hjerne.erfaringer.slice(0, 8000)}`);
     // 25/10 (Jacob): ejerens stemme får sit EGET faste afsnit sidst ("My take", minHoldningPrompt nedenfor).
     // Brødteksten bruger holdningerne til vinkel og eksempler, men skriver ikke i første person.
-    dele.push(`Let the owner's positions and experience shape the article's angle, emphasis and examples where they genuinely fit. Do NOT write first-person content in the article body - the owner's own short section is added separately at the end.`);
+    dele.push(`Let the owner's positions and experience shape the article's angle, emphasis and examples where they genuinely fit. Do NOT write first-person content in the article body - the owner's own short section is added separately at the end. Never mention AdSense or the owner's private life.`);
   } else {
     dele.push(`No stated position matches this topic: write NO first-person content (rule 18 applies in full).`);
   }
