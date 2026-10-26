@@ -45,10 +45,14 @@ jobs:
   omskriv:
     runs-on: ubuntu-26.04
     # 25/10: 150 (før 90). 8 omskrivninger, 4 ad gangen à ca. 26 min = ca. 1 time; faktatjekket har
-    # sit eget budget på 30 min. Når loftet rammes, gemmes intet - derfor luft. (Repoet er offentligt:
+    # sit eget budget (60 min, afkortet så jobbet altid slutter før loftet). Når loftet rammes, gemmes intet. (Repoet er offentligt:
     # GitHub-minutterne er gratis.)
     timeout-minutes: 150
     steps:
+      # 26/10: starttidspunktet, så faktatjekket kan afkorte sit budget og aldrig skubbe jobbet over loftet.
+      - name: Noter starttid
+        run: echo "JOB_START=$(date +%s)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v5
 
       # 23/10: omskrivningen kører gennem add-video.mjs og skal have hjernen med,

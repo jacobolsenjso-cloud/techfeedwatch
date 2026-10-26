@@ -17,7 +17,7 @@ import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
-import { laesHjerne, stemmeBlok, minHoldningPrompt, tjekMinHoldning, fletIndHoldning } from './src/lib/hjerne.mjs';
+import { laesHjerne, stemmeBlok, minHoldningPrompt, tjekMinHoldning, fletIndHoldning, senesteStemmeAfsnit } from './src/lib/hjerne.mjs';
 import { laeserTjek, retLaeserFund } from './src/lib/laesertjek.mjs';
 // Søgning først (fase B, 12/10): artiklen bygges på Google-søgningen; videoen er et supplement.
 import { undersoegSoegning, soegningTekst, daekning } from './src/lib/soegning.mjs';
@@ -1386,11 +1386,15 @@ ${content}`);
       // bedst - FØR slutkontrollen, så et tal i afsnittet bliver faktatjekket som alt andet.
       if (hjerneStemme && !isShort) {
         try {
-          const p = minHoldningPrompt(hjerne, `${soeg.emne || ''} ${targetQuestion || ''} ${videoTitel || ''}`, content, targetQuestion || safeTitle);
+          // 26/10: hans seneste stemme-afsnit fra andre artikler med, så historier og vendinger ikke gentages.
+          const seneste = senesteStemmeAfsnit('./src/content/videos', slug);
+          const p = minHoldningPrompt(hjerne, `${soeg.emne || ''} ${targetQuestion || ''} ${videoTitel || ''}`, content, targetQuestion || safeTitle, seneste);
           let mt = { ok: false, grund: 'ingen prompt' };
-          for (let forsoeg = 0; p && forsoeg < 2 && !mt.ok; forsoeg++) {
-            const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.4 } }).generateContent(p);
-            mt = tjekMinHoldning(r.response.text(), content);
+          for (let forsoeg = 0; p && forsoeg < 3 && !mt.ok; forsoeg++) {
+            // Et kasseret forsøg sendes tilbage med grunden, så næste forsøg kan rette præcis det.
+            const pp = forsoeg && mt.grund ? `${p}\n\nYOUR PREVIOUS ATTEMPT WAS REJECTED: ${mt.grund}. Write it again and avoid exactly that.` : p;
+            const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.5 } }).generateContent(pp);
+            mt = tjekMinHoldning(r.response.text(), content, seneste);
             if (!mt.ok) console.log(`   stemme forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);
           }
           if (mt.ok) for (const d of mt.dele) content = fletIndHoldning(content, d.sektion, d.tekst);

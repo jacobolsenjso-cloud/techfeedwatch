@@ -309,5 +309,24 @@
    }
   ],
   "usd": 2.4442
+ },
+ {
+  "dato": "2026-10-26T10:23:06.208Z",
+  "omskrevet": [],
+  "stoppet": [
+   {
+    "slug": "from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai",
+    "grund": "Sprunget over: kilden handler ikke om) - 0 nye kandidater"
+   }
+  ],
+  "usd": 0.0208
+ },
+ {
+  "dato": "2026-10-26T10:25:16.641Z",
+  "omskrevet": [
+   "from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai"
+  ],
+  "stoppet": [],
+  "usd": 0.3198
  }
 ]
