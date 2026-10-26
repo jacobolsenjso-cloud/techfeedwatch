@@ -33,9 +33,15 @@ export function emneAfsnit(hjerne, tekst) {
   const t = String(tekst || '').toLowerCase();
   const FOR_GENERELLE = new Set(['tech', 'computing', 'money', 'building']);
   const ud = [];
-  for (const linje of hjerne.emner.split('\n')) {
+  const alleLinjer = hjerne.emner.split('\n');
+  for (let li = 0; li < alleLinjer.length; li++) {
+    const linje = alleLinjer[li];
     const m = linje.match(/^- \*\*(.+?):?\*\*/);
     if (!m) continue;
+    // 26/10: underpunkter ("  - ...") under emnet hører med - flere pointer pr. emne giver
+    // robotten noget at vælge imellem, så de samme få eksempler ikke gentages.
+    const under = [];
+    for (let j = li + 1; j < alleLinjer.length && /^\s+- /.test(alleLinjer[j]); j++) under.push(alleLinjer[j].trimEnd());
     const navn = m[1].toLowerCase();
     const alle = navn.split(/[\s/&,()-]+/).filter((o) => o && !FOR_GENERELLE.has(o));
     // Ord på 4+ tegn matches som før (også "agents" i "agentic"). 25/10: korte forkortelser
@@ -46,7 +52,7 @@ export function emneAfsnit(hjerne, tekst) {
     // ("Kodning med AI" ville ellers ramme alle AI-artikler og skubbe det rigtige emne ud).
     const noegle = (navn.match(/\(([^)]*)\)/)?.[1] || '').split(/[\s,]+/);
     const korte = noegle.filter((o) => o.length >= 2 && o.length <= 3 && /^[a-z]+$/.test(o));
-    if (t.includes(navn) || lange.some((o) => t.includes(o)) || korte.some((o) => new RegExp(`\\b${o}\\b`).test(t))) ud.push(linje.trim());
+    if (t.includes(navn) || lange.some((o) => t.includes(o)) || korte.some((o) => new RegExp(`\\b${o}\\b`).test(t))) ud.push([linje.trim(), ...under].join('\n'));
   }
   // Det brede "AI & Tech" sidst, så et mere præcist emne (SEO, kodning, agenter) får pladsen først.
   ud.sort((a, b) => Number(/^- \*\*AI & Tech/.test(a)) - Number(/^- \*\*AI & Tech/.test(b)));
