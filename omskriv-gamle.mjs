@@ -114,7 +114,7 @@ const koersel1 = async (a) => {
   let ud = await koerAddVideo(a.slug, nyVideo);
   if (!nyVideo && VIDEO_STOP.test(ud) && !/^recipe:\s*3\b/m.test(fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8').replace(/\r/g, ''))) {
     const kandidater = await findVideoer(a.spm);
-    ud += `\nNY VIDEO: den gamle video kunne ikke bruges (${(ud.match(VIDEO_STOP) || [''])[0].slice(0, 80)}) - ${kandidater.length} nye kandidater`;
+    ud += `\nNY VIDEO: den gamle video kunne ikke bruges (${(ud.match(VIDEO_STOP) || [''])[0].replace('Sprunget over: ', '').slice(0, 80)}) - ${kandidater.length} nye kandidater`;
     for (const id of kandidater) {
       if (jobMin() > SENEST_NY_START_MIN) { ud += `\nNY VIDEO: stoppet - jobbet har kørt ${Math.round(jobMin())} min`; break; }
       brugteVideoer.add(id); // to parallelle omskrivninger må ikke tage samme video
@@ -139,7 +139,8 @@ for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
     for (const m of ud.matchAll(/^FORBRUG: (\{.*\})/gm)) { try { kørsel.usd += JSON.parse(m[1]).usd || 0; } catch { /* linjen var ikke hel */ } }
     const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
     // 24/10: succes = ny opskrift OG ændret indhold.
-    if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); iTraek = 0; continue; }
+    // 26/10: lykkes en artikel, fjernes dens gamle fejlnotat (ellers stod den som fejlet i status).
+    if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); delete fejl[a.slug]; iTraek = 0; continue; }
     // Den SIDSTE grund tæller (ved nye videoer er det den sidste kandidats grund).
     const grund = ([...ud.matchAll(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/g)].pop() || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
