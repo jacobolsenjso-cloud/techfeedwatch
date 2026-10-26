@@ -1,6 +1,6 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-10-19 på 444 artikler. **20 fund**, heraf 1 nye siden sidste kørsel og 1 forsvundet (rettet eller omskrevet).
+Målt 2026-10-26 på 460 artikler. **18 fund**, heraf 1 nye siden sidste kørsel og 3 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
@@ -10,9 +10,9 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
   > Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into [daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030/) in ways that were once considered science fiction.
 
-- **Fintech Evolution Reshaping Financial Services**  
-  `fintech-s-fragmented-future-deconstructing-the-six-pillars-of-digital.md` · forudsigelse om "2023" — året er passeret · først set 2026-09-21  
-  > Regulations like PSD2 and Open Banking are expected to fuel this growth further, with some predictions suggesting 1.3 billion mobile payment transactions by 2023.
+- **What is quantum computing used for today and in the future?**  
+  `do-we-know-what-quantum-computers-are-used-for.md` · forudsigelse om "2025" — året er passeret · først set 2026-10-26  
+  > - According to researcher Craig Gidney, by 2025, optimized models lowered that estimate to under 1 million qubits.
 
 - **Key Advantages of Augmented Reality in Workforce Training**  
   `key-advantages-of-augmented-reality-in-workforce-training.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-28  
@@ -22,7 +22,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
   > IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.
 
-## Regel 4 — relativ tid (12)
+## Regel 4 — relativ tid (10)
 
 - **What Quantum Computing Means for Business**  
   `beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -59,14 +59,6 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
 - **Open-Source AI and the Risk of Dual-Use Models**  
   `the-ai-paradox-open-source-national-security-and-the-geopolitical.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > Alibaba's Qwen 1.5 and the recently announced Qwen 3.8, a 2.4 trillion parameter open-weight model, claim to be second only to Fable 5, further supporting this view.
-
-- **The Best Way to Invest in Quantum Computing Today**  
-  `the-best-way-to-invest-in-quantum-computing-today.md` · "last year" betyder noget andet nu end da det blev skrevet · først set 2026-09-28  
-  > Xanadu generated roughly $4.6 million in revenue last year while carrying an accumulating deficit of over $183 million.
-
-- **The Best Way to Invest in Quantum Computing Today**  
-  `the-best-way-to-invest-in-quantum-computing-today.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-28  
-  > The balance sheet reflects the wider industry: Xanadu recently logged a $70.7 million net loss.
 
 - **What Causes AI Misalignment From Agent Task Focus?**  
   `the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
