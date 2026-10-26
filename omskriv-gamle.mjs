@@ -11,14 +11,14 @@
 //   ville den koste penge hver dag uden at lykkes. Den beholder sin gamle tekst.
 // - 3 fejl i træk = stop (typisk tom Gemini-kredit, set 9.-10/10).
 // - Hver kørsels resultat og MÅLTE pris (FORBRUG-linjerne) gemmes i src/data/omskriv-log.json.
-// Kør: node omskriv-gamle.mjs --antal=8 [--parallelt=4]
+// Kør: node omskriv-gamle.mjs --antal=3 [--parallelt=4]
 import fs from 'node:fs';
 import 'dotenv/config'; // 26/10: YOUTUBE_API_KEY til videosøgningen ved lokale kørsler (GitHub giver den som env)
 import { spawn } from 'node:child_process';
 import { laesHjerne } from './src/lib/hjerne.mjs';
 
 // 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
-const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=8').split('=')[1]) || 8;
+const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3; // 26/10 (Jacob): 3 om dagen (før 8)
 // 24/10 (Jacob): --kun=<slug> + --nyvideo=<url> målretter én bestemt artikel — fx når en
 // allerede udgivet artikel viser sig at bygge på en dårlig video (set 24/10: fabrikskanal
 // med baggrundsmusik oven i stemmen). --kun springer "gammel"-filteret over (artiklen må

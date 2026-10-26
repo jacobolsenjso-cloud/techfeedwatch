@@ -1,7 +1,7 @@
 name: Omskriv gamle artikler
 
 # 14/10-2026 (Jacob): de gamle artikler skrives om med robottens opskrift (omskriv-gamle.mjs).
-# 25/10 (Jacob: "én opskrift til alle artikler"): 8 om dagen (4 ad gangen), de Google har vist først, så nyeste.
+# 25/10 (Jacob: "én opskrift til alle artikler"). 26/10 (Jacob: 8 var for dyrt): 3 om dagen (alle 3 på én gang), de Google har vist først, så nyeste.
 # Hver omskrivning genbruger artiklens AI-billede eller laver ét, hvis den ikke har et.
 # Målt 25/10 (opskrift 3, fejlforsøg medregnet): ca. 4,40 kr. pr. færdig artikel.
 # Samme kørsel: daglig stikprøve (stikproeve.mjs) og faktatjek af dem, der venter (faktatjek-gamle.mjs).
@@ -17,8 +17,8 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        # 25/10 (Jacob): 8 om dagen (før 2) - 4 ad gangen, ca. 1 time
-        default: "8"
+        # 26/10 (Jacob): 3 om dagen (før 8 - for dyrt). Ca. 4,40 kr. pr. artikel = ca. 13 kr. om dagen
+        default: "3"
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
@@ -75,7 +75,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '8' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
