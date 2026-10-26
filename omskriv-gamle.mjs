@@ -67,7 +67,7 @@ console.log(kun
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
 // 25/10: uden Jacobs hjerne startes ingen omskrivning (ellers betales research for intet - add-video stopper alligevel).
 if (!laesHjerne()) { console.log('Stop: hjernen mangler (_hjerne / HJERNE_DIR) - ingen omskrivning uden Jacobs stemme.'); process.exit(1); }
-const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0 };
+const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0, soegninger: 0 };
 // 25/10 (Jacob: 8 om dagen): op til PARALLELT omskrivninger ad gangen. Én tager ca. 26 min (målt
 // 25/10), så 8 i træk ville spærre robottens kø i 3,5 time. Hver omskrivning skriver kun sine egne
 // filer (artikel, billede, cache pr. video), så de kan køre samtidig.
@@ -136,7 +136,7 @@ for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
     // Vis de vigtige linjer i GitHubs log (hele robotloggen er for stor til at blive vist)
     for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|STEMME|SLUTKONTROL|FORBRUG|NY VIDEO)|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med/.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
     // Én FORBRUG-linje pr. add-video-kørsel (flere ved nye videoer) - alle tælles med.
-    for (const m of ud.matchAll(/^FORBRUG: (\{.*\})/gm)) { try { kørsel.usd += JSON.parse(m[1]).usd || 0; } catch { /* linjen var ikke hel */ } }
+    for (const m of ud.matchAll(/^FORBRUG: (\{.*\})/gm)) { try { const j = JSON.parse(m[1]); kørsel.usd += j.usd || 0; kørsel.soegninger += j.soegninger || 0; } catch { /* linjen var ikke hel */ } }
     const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
     // 24/10: succes = ny opskrift OG ændret indhold.
     // 26/10: lykkes en artikel, fjernes dens gamle fejlnotat (ellers stod den som fejlet i status).

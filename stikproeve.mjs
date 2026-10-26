@@ -58,6 +58,7 @@ for (const a of kandidater.slice(0, antal)) {
 fs.writeFileSync(FUND, JSON.stringify(fund, null, 1) + '\n');
 // Pris (26/10, Jacob: den daglige rapport skal vise hele dagens pris): målt af forbrugstælleren i model.mjs
 koersel.usd = Math.round(forbrug.usd * 10000) / 10000;
+koersel.soegninger = forbrug.soegninger;
 const log = laes(LOG, []);
 log.push(koersel);
 fs.writeFileSync(LOG, JSON.stringify(log.slice(-120), null, 1) + '\n');

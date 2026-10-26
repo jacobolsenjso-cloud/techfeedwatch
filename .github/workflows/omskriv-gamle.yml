@@ -29,6 +29,7 @@ on:
         default: ""
       # 25/10 (Jacob: "bland"): artikler, Google ikke har vist, skrives ikke om, men faktatjekkes
       # (faktatjek-gamle.mjs, ca. 0,45 kr pr. artikel). 0 = spring faktatjekket over.
+      # 26/10 (Jacob): nu KUN artikler, stikprøven fandt fejl i, og højst 20 min - resten venter på omskrivning.
       tjek:
         description: "Antal gamle artikler der kun faktatjekkes"
         default: "10"

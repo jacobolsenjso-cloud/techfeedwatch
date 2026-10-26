@@ -103,7 +103,12 @@ export function hentModel(genAI, opts) {
 // Forbrugstæller (13/10): lægger tokens, Google-søgninger og billeder sammen for alle kald
 // gennem hentModel, så prisen pr. artikel kan MÅLES i stedet for at blive skønnet.
 // Priser fra ai.google.dev 12/10-2026 (USD pr. mio. tokens; fordobles 1/1-2027 for 3.8 Flash).
-// Google-søgninger: 5.000 gratis pr. md. (delt), derefter 14 USD pr. 1.000 — tælles, ikke prissat.
+// Google-søgninger: 5.000 gratis pr. md. (delt), derefter 14 USD pr. 1.000.
+// 26/10 (Lære): søgningerne blev talt, men ikke prissat - rapporten sagde 68 kr. for et døgn, Google
+// tog 306 kr. (2.471 søgninger 20.-26/10 = 228 kr. på fakturaen). Nu prissættes HVER søgning med
+// 0,014 USD. Tidligt på måneden (før de 5.000 gratis er brugt) er tallet derfor lidt for højt - hellere
+// det end for lavt.
+const PRIS_SOEGNING = 0.014;
 const PRIS = {
   'gemini-3.8-flash': { ind: 0.75, ud: 3.75 },
   'gemini-nano-banana-2.1': { ind: 1.5, ud: 7.5, billede: 30 },
@@ -118,8 +123,9 @@ export function taelForbrug(navn, r) {
   forbrug.ind += u.promptTokenCount || 0;
   forbrug.ud += ud;
   forbrug.billedTokens += billed;
-  forbrug.soegninger += r?.response?.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length || 0;
-  forbrug.usd += ((u.promptTokenCount || 0) * p.ind + ud * p.ud + billed * (p.billede || 0)) / 1e6;
+  const soeg = (r?.response?.candidates || []).reduce((n, c) => n + (c?.groundingMetadata?.webSearchQueries?.length || 0), 0);
+  forbrug.soegninger += soeg;
+  forbrug.usd += ((u.promptTokenCount || 0) * p.ind + ud * p.ud + billed * (p.billede || 0)) / 1e6 + soeg * PRIS_SOEGNING;
 }
 // Skrives når processen slutter. Linjen læses af målingerne. Ændr ikke formatet.
 process.on('exit', () => {

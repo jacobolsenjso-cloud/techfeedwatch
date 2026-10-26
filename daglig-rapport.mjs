@@ -88,6 +88,8 @@ const stikArtikler = stik24.reduce((n, p) => n + (p.artikler || []).length, 0);
 // Kørsler fra før 26/10 har ingen pris - så siges det, i stedet for at vise 0 som om det var gratis
 const umaalt = [...fakta24, ...stik24].some((p) => p.usd === undefined);
 const dagUsd = robotUsd + omskrivUsd + faktaUsd + stikUsd;
+// 26/10: Google-søgninger (14 USD pr. 1.000, når månedens 5.000 gratis er brugt) - gemt fra 26/10
+const dagSoeg = [...robot24, ...omskriv24, ...fakta24, ...stik24].reduce((s, p) => s + (p.soegninger || 0), 0);
 const tomme = robot24.filter((p) => !(p.udgivet || []).length && !p.loftNaaet).length;
 const klippet = robot24.reduce((s, p) => s + (p.klippet || 0), 0);
 const loftReddet = robot24.reduce((s, p) => s + (p.loftReddet || 0), 0); // 24/10: reddet af nyt forsøg
@@ -119,7 +121,7 @@ const tekst = [
   `**Robotten:** startet ${rob.i_alt} af 24 gange (Cloudflare-starteren, hver time). ${robot24.length} kørsler i logbogen, ${tomme} uden artikel. Videoer vurderet fuldt: ${vurderet}; sorteret fra af forhåndstjekket: ${sprunget}. Kanal-værn: ${kv.tjekket} kanaler tjekket, ${kv.afvist} videoer afvist${kv.fejlet ? `, ${kv.fejlet} opslag fejlet` : ''}.${loftReddet ? ` Gemini-svar reddet med dobbelt loft: ${loftReddet}.` : ''} Pris: ${kr(robotUsd)}${udgivet.length ? `, ${kr(robotUsd / udgivet.length)} pr. artikel` : ''}.`,
   `**Omskrivning af gamle artikler:** ${omskrevet.length} omskrevet, ${omskrivStop.length} stoppet. Pris: ${kr(omskrivUsd)}.`,
   `**Faktatjek og stikprøve:** ${faktaArtikler} artikler faktatjekket, ${stikArtikler} i stikprøven. Pris: ${kr(faktaUsd + stikUsd)}${umaalt ? ' (en del af kørslerne er fra før prisen blev målt)' : ''}.`,
-  `**Hele døgnets pris: ${kr(dagUsd)}** — robotten ${kr(robotUsd)} · omskrivning ${kr(omskrivUsd)} · faktatjek ${kr(faktaUsd)} · stikprøve ${kr(stikUsd)}. (Enkeltstående prøver uden for robotterne er ikke med.)`,
+  `**Hele døgnets pris: ${kr(dagUsd)}** — robotten ${kr(robotUsd)} · omskrivning ${kr(omskrivUsd)} · faktatjek ${kr(faktaUsd)} · stikprøve ${kr(stikUsd)}. Google-søgninger: ${dagSoeg} (med i prisen). (Enkeltstående prøver uden for robotterne er ikke med.)`,
   `**Brugt i ${maaned} (målt; logbøgerne startede 13.-14/10, så tidligere forbrug er ikke med):** ${kr(maanedUsd)}. Kreditten selv kan kun ses i Google AI Studio.`,
   '',
   `**Andre kørsler:** ${Object.entries(pr).filter(([n]) => n !== 'YouTube Auto Update').map(([n, v]) => `${n} ${v.i_alt}`).join(' · ') || 'ingen'}`,

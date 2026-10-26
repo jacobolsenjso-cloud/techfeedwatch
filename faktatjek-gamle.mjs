@@ -3,6 +3,7 @@
 // slutkontrol som robotten (src/lib/slutkontrol.mjs) på alt, læseren ser; forkerte eller
 // udokumenterede sætninger rettes eller fjernes. Stikprøvens fund (stikproeve.mjs) tages først.
 // Artiklen mærkes "factChecked: <dato>" og tjekkes ikke igen.
+// 26/10 (Jacob): kun stikprøvens fund (og opgivne omskrivninger), højst 20 min. Se filteret længere nede.
 //
 // Videoens transskript bruges som noter, KUN hvis det ligger i cachen — at hente det koster
 // (Gemini) og er ikke nødvendigt: faktatjekkeren søger selv på Google.
@@ -19,7 +20,8 @@ const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--a
 const kun = (process.argv.find((a) => a.startsWith('--kun=')) || '').split('=')[1] || '';
 // Tidsbudget: GitHub stopper jobbet ved loftet (150 min), og så gemmes INTET. Der startes ingen ny artikel
 // efter budgettet (standard 60 min - 26/10, Jacob: 30 min gav kun 5 af 10); resten tages næste dag.
-const minutter = Number((process.argv.find((a) => a.startsWith('--minutter=')) || '--minutter=60').split('=')[1]) || 60;
+// 26/10 (Jacob): 20 min (før 60) - Google-søgningerne koster, når månedens 5.000 gratis er brugt.
+const minutter = Number((process.argv.find((a) => a.startsWith('--minutter=')) || '--minutter=20').split('=')[1]) || 20;
 const start = Date.now();
 // 26/10: i GitHub sætter workflowet JOB_START (sekunder). Faktatjekket må aldrig skubbe hele jobbet
 // over loftet (150 min -> alt tabes): budgettet afkortes til det, der er tilbage minus 20 min luft.
@@ -51,7 +53,10 @@ const koe = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md
       && (!prio.has(f.replace(/\.md$/, '')) || !/^targetQuestion:/m.test(fm) || opgivetOmskriv(f.replace(/\.md$/, ''))),
     fund: fund.has(f.replace(/\.md$/, '')),
   };
-}).filter((a) => (kun ? a.slug === kun : a.tjekkes || a.fund)).sort((a, b) => Number(b.fund) - Number(a.fund) || b.dato.localeCompare(a.dato));
+// 26/10 (Jacob): KUN artikler, stikprøven har fundet fejl i (+ dem omskrivningen har opgivet, for de
+// bliver aldrig omskrevet). Alle andre bliver omskrevet med fuld slutkontrol inden for ca. 3 måneder -
+// at faktatjekke dem først ville være at betale to gange for samme artikel.
+}).filter((a) => (kun ? a.slug === kun : a.fund || (a.tjekkes && opgivetOmskriv(a.slug)))).sort((a, b) => Number(b.fund) - Number(a.fund) || b.dato.localeCompare(a.dato));
 
 console.log(`${koe.length} artikler venter på faktatjek — tager ${Math.min(antal, koe.length)} nu (nyeste først)`);
 if (process.argv.includes('--vis')) { for (const a of koe.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
@@ -108,6 +113,7 @@ for (const a of koe.slice(0, antal)) {
 }
 // Pris (26/10, Jacob: den daglige rapport skal vise hele dagens pris): målt af forbrugstælleren i model.mjs
 koersel.usd = Math.round(forbrug.usd * 10000) / 10000;
+koersel.soegninger = forbrug.soegninger;
 const log = laes(LOG, []);
 log.push(koersel);
 fs.writeFileSync(LOG, JSON.stringify(log.slice(-90), null, 1) + '\n');

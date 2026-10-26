@@ -14,11 +14,11 @@ try {
   const linjer = log.split(/\r?\n/);
   // FORBRUG fra alle processer (robotten selv + hver add-video). Ikke SOEG-FORBRUG: det er en
   // delmængde, der allerede er med i FORBRUG (Lære 13/10: regex fangede SOEG-FORBRUG først).
-  let usd = 0, kald = 0;
+  let usd = 0, kald = 0, soegninger = 0;
   for (const l of linjer) {
     const m = l.match(/(?:^|[^-A-Z])FORBRUG: (\{.*\})\s*$/);
     if (!m) continue;
-    try { const j = JSON.parse(m[1]); usd += Number(j.usd) || 0; kald += Number(j.kald) || 0; } catch { /* halv linje */ }
+    try { const j = JSON.parse(m[1]); usd += Number(j.usd) || 0; kald += Number(j.kald) || 0; soegninger += Number(j.soegninger) || 0; } catch { /* halv linje */ }
   }
   const alle = (re) => linjer.map((l) => l.match(re)).filter(Boolean).map((m) => m[1]);
   const post = {
@@ -45,6 +45,7 @@ try {
     fejl: linjer.filter((l) => /❌|Kritisk fejl|GEMINI STOPPET/.test(l)).map((l) => l.trim().slice(0, 200)).slice(0, 5),
     usd: Math.round(usd * 10000) / 10000,
     kald,
+    soegninger, // 26/10: Google-søgninger (koster 0,014 USD stk., når månedens gratis er brugt)
   };
   fs.mkdirSync('src/data', { recursive: true });
   fs.appendFileSync(FIL, JSON.stringify(post) + '\n', 'utf8');
