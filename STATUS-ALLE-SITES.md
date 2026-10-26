@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 211** — brug kun v211). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 212** — brug kun v212). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 211** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (26/10-2026 kl. 12:04, statusfil v211):** Ugentlig aflæsning gjort (8. punkt, `origin/main` `f30ea63e`): indekseret 38 -> 41, ikke indekseret 852 -> 889, sitemap 628 adresser; klik 28, eksponeringer 42, klikrate 66,7 %, position 3,1 - klik og position bliver ved med at stige, mens indekseringen ikke følger med. Links står helt stille: 1 eksternt link (alternativeto.net), 338 interne, Bing har stadig ingen data. Live (main før aflæsningen `6652a392`): Jacobs stemme som 2-3 korte afsnit, ny afslutning under alle 457 artikler, tabeller kun ved reelle sammenligninger; 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnit, tabeller og stikprøve.
+**Seneste for techfeedwatch (26/10-2026 kl. 12:09, statusfil v212):** Live (main `b9f5d450`): Jacobs stemme uden gentagelser (noterne er et kompas, de seneste ~20 afsnit tjekkes, højst én af hans historier pr. artikel, ingen AdSense-historie); hjernen udvidet med 40 nye punkter under 10 emner; gammel video der ikke passer, erstattes af den bedst passende nye; faktatjek 60 min inden for jobbets loft. Rettet i dag: en artikel fik noindex fra en tabel med rå HTML. Næste: se kørslen 27/10 kl. 07:37.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,18 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 26/10-2026 kl. 12:09 - Gennemgang af første kørsel + rettelser (Jacobs ja)
+- **Kørslen 07:37 (70 min):** 4 af 8 omskrevet (ca. 17 kr, ca. 4,30 kr pr. færdig); stoppet: 2 fordi den gamle video ikke passede, 1 tal uden kilde, 1 blokeret af Gemini (lignede eksisterende tekst). Faktatjek 5 (budget 30 min), 14 fejl rettet. Stikprøve 2 artikler, 0 fejl - men kun 3 af 16 tal kunne bekræftes af koden.
+- **Alvorlig fejl (rettet og set live):** HTML-artiklen fik en tabel med teksten `<meta name="robots" content="noindex">` - markdown sendte den videre som et RIGTIGT tag, så Google fik besked på ikke at vise artiklen. Robottens sitetjek stoppede kørslerne 09:17 og 10:17 (ingen nye artikler de to timer). Nu: add-video skriver tags som tekst, audit-content fanger rå HTML. Robotten kørte igen 11:17.
+- **Stemmen gentog sig:** "worth its weight in gold" i 3 af 4, Boeing/Volkswagen 2 af 4, AdSense-afslaget 2 af 4. Årsag: noterne har få eksempler pr. emne, og et eksempel-idiom i voice.md blev læst som en vending, der skulle bruges. Rettet: noterne er et kompas, de seneste ~20 afsnit vises og tjekkes (5 ord i træk = afvist), højst én historie pr. artikel, AdSense forbudt. De 4 artikler fik ny stemme og nyt faktatjek (6 fejl rettet i den øvrige tekst).
+- **Ny video:** passer den gamle video ikke, prøves op til 3 nye fra YouTube ud fra spørgsmålet. Testet: "what does ai engineering include" fik en video fra 365 Data Science og blev omskrevet. Udgivelse helt uden video er IKKE bygget (venter på at se, hvor ofte det sker).
+- **Faktatjek:** budget 60 min, afkortet automatisk så jobbet slutter før loftet på 150 min (ellers gemmes intet).
+- **Hjernen udvidet (Jacobs diktering):** 40 underpunkter under 10 emner; robotten læser nu underpunkterne med. Prøve: fintech-artikel brugte MobilePay-pointen ("banken kan ikke tilbageføre"), robot-artikel brugte industrirobotter/sikkerhedsstop. Udeladt (fortalt Jacob): pornoindustri (passer ikke til sitet/AdSense), Segway og gyroskopet som danske opfindelser (passer ikke - Segway er amerikansk), "Europas stærkeste kvantecomputer i Danmark" (kan ikke bekræftes), "næsten sikker på at tjene penge" (omskrevet: ingen garanti).
+- Lære: En tabel med HTML-kode som tekst blev til rigtig kode på siden. Alt, robotten skriver, er HTML i sidste ende - tegn som < og > skal behandles som tekst, og tjekket skal ligge i koden, ikke i min opmærksomhed.
+- Lære: `git switch main` fejlede tavst (urettede filer), og fletningen kørte på grenen - intet nåede main. Nu stopper scriptet, hvis grenen ikke er main, før der flettes.
+- Lære: Et eksempel i Jacobs noter ("Hvilket er guld værd!") blev brugt som skabelon. Eksempler i hjernen skal markeres som eksempler.
+
 
 ### 26/10-2026 kl. 12:04 - Ugentlig aflæsning: Search Console og links (8. punkt)
 - **Indeksering (aflæst i Jacobs Chrome, Googles data sidst opdateret 23/10):** indekseret 38 -> **41** (+3, første stigning siden 5/10), ikke indekseret 852 -> **889** (+37), sitemappet 608 -> **628** adresser (+20). Trækker man væksten fra, er den reelle bevægelse i "ikke indekseret" ca. +17.
