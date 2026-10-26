@@ -15,13 +15,49 @@
       "dato": "2026-10-24",
       "gsc": {
         "eksterneLinks": 1,
-        "linkendeSites": [{ "site": "alternativeto.net", "links": 1 }],
-        "linkedeSider": [{ "side": "https://techfeedwatch.com/", "links": 1 }],
-        "linktekster": ["techfeedwatch"],
+        "linkendeSites": [
+          {
+            "site": "alternativeto.net",
+            "links": 1
+          }
+        ],
+        "linkedeSider": [
+          {
+            "side": "https://techfeedwatch.com/",
+            "links": 1
+          }
+        ],
+        "linktekster": [
+          "techfeedwatch"
+        ],
         "interneLinks": 338
       },
       "bing": null,
       "note": "Første aflæsning (Claude, Jacobs Chrome, 14:44). Eneste eksterne link er AlternativeTo. Bing Webmaster Tools: sitet verificeret ca. 15:00 (BingSiteAuth.xml, 1b98f72e); Backlinks viste 'No data available' (nyt site) — derfor null. Sitemap sitemap-index.xml indsendt 15:11 (Jacobs ja), status 'Processing'."
+    },
+    {
+      "dato": "2026-10-26",
+      "gsc": {
+        "eksterneLinks": 1,
+        "linkendeSites": [
+          {
+            "site": "alternativeto.net",
+            "links": 1
+          }
+        ],
+        "linkedeSider": [
+          {
+            "side": "https://techfeedwatch.com/",
+            "links": 1
+          }
+        ],
+        "linktekster": [
+          "techfeedwatch"
+        ],
+        "interneLinks": 338
+      },
+      "bing": null,
+      "note": "Anden aflaesning. Intet nyt siden 24/10: stadig 1 eksternt link (alternativeto.net -> forsiden, ankertekst 'techfeedwatch') og 338 interne links - bit for bit identisk. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat 'No data available', derfor bing: null."
     }
   ]
 }

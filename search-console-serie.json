@@ -169,6 +169,29 @@
         "position": 3.2
       },
       "note": "Syvende aflaesning, tre dage efter den sjette. Indekseret 50 -> 38 (-12), ikke indekseret 837 -> 852 (+15), mens sitemappet voksede 601 -> 608 (+7). Tredje fald i traek paa indekserede sider: 82 -> 54 -> 50 -> 38 siden 5/10. De aarsager, der flyttede sig, er 'Crawlet - endnu ikke indekseret' 47 -> 59 (+12) og 'Registreret - endnu ikke indekseret' 523 -> 526 (+3); de fem andre staar bit for bit stille. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 852. NYT i brugerfladen: kolonnen 'Validering' staar paa 'Startet' for 'Registreret - endnu ikke indekseret' og for Dublet-Google, og 'Godkendt' for robots.txt - en validering er altsaa i gang, uden at jeg har sat den i gang i denne aflaesning. Effektiviteten fortsatte op: klik 22 -> 27, eksponeringer 35 -> 41, klikrate 62,9 -> 65,9 %, position 3,7 -> 3,2 i det rullende 28-dages vindue (22/9-19/10). Jeg har IKKE maalt hvorfor indekseringen falder, mens klik og position bliver bedre - det staar der kun, at begge ting sker samtidig."
+    },
+    {
+      "dato": "2026-10-26",
+      "adresser": 628,
+      "indekseret": 41,
+      "ikkeIndekseret": 889,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 561,
+        "Side med omdirigering": 147,
+        "Dublet uden kanonisk side valgt af brugeren": 65,
+        "Ikke fundet (404)": 63,
+        "Crawlet - endnu ikke indekseret": 49,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 28,
+        "eksponeringer": 42,
+        "klikrate": 66.7,
+        "position": 3.1
+      },
+      "note": "Ottende aflaesning, fire dage efter den syvende. Indekseret 38 -> 41 (+3) - foerste stigning siden 5/10. Ikke indekseret 852 -> 889 (+37), mens sitemappet voksede 608 -> 628 (+20). Googles indekseringsdata: 'Seneste opdatering: 23.10.2026'. Det, der flyttede sig: 'Registreret - endnu ikke indekseret' 526 -> 561 (+35) og 'Side med omdirigering' 135 -> 147 (+12), mens 'Crawlet - endnu ikke indekseret' faldt 59 -> 49 (-10). Dublet-bruger (65), 404 (63), robots.txt (3) og Dublet-Google (1) staar bit for bit stille. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 889. Validering staar 'Startet' for omdirigering, Registreret, Crawlet og Dublet-Google, 'Godkendt' for robots.txt, 'Ikke startet' for Dublet-bruger og 404. Effektiviteten steg videre: klik 27 -> 28, eksponeringer 41 -> 42, klikrate 65,9 -> 66,7 %, position 3,2 -> 3,1 i det rullende 28-dages vindue (27/9-24/10). Jeg har IKKE maalt hvorfor - det staar der kun, at det skete."
     }
   ]
 }
