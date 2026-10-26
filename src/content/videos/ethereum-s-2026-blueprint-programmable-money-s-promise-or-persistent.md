@@ -41,7 +41,7 @@ To illustrate how smart contracts work, consider a simple vending machine analog
 
 Similarly, a smart contract on Ethereum holds funds or assets and releases them only when all programmed conditions are fulfilled, ensuring transparency and immutability for transactions.
 
-This innovation allowed for the creation of an ecosystem supporting everything from digital collectibles like NFTs to complex financial instruments in decentralized finance (DeFi). To understand more about [How Do Smart Contracts Work on Ethereum? Code Your First One](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
+This innovation allowed for the creation of an ecosystem supporting everything from digital collectibles like NFTs to complex financial instruments in decentralized finance (DeFi). To understand more about [How Do Smart Contracts Work on Ethereum?](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
 
 ## Major upgrades that cut energy use and fees
 

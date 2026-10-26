@@ -37,7 +37,7 @@ The foundational design of Bitcoin prioritizes simplicity, security, and decentr
 
 This means it cannot perform complex conditional logic, loops, or state changes that define a "smart contract" in the way understood on platforms like Ethereum. Instead, Bitcoin Script is designed for basic, verifiable transactions, such as transferring ownership from one address to another, or requiring multiple signatures for a transaction.
 
-This limited functionality ensures that the Bitcoin network remains predictable, secure, and lightweight, minimizing potential vulnerabilities that arise from more complex programmable environments. For those interested in the solid capabilities of Ethereum's smart contracts, exploring [How Do Smart Contracts Work on Ethereum? Code Your First One](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity) offers a direct contrast.
+This limited functionality ensures that the Bitcoin network remains predictable, secure, and lightweight, minimizing potential vulnerabilities that arise from more complex programmable environments. For those interested in the solid capabilities of Ethereum's smart contracts, exploring [How Do Smart Contracts Work on Ethereum?](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity) offers a direct contrast.
 
 Beyond its scripting, Bitcoin’s architectural constraints further limit smart contract execution. The network maintains a strict block size limit, meaning each block can only contain a finite amount of data.
 
