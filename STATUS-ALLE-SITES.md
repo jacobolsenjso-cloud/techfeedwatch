@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 210** — brug kun v210). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 211** — brug kun v211). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,13 +8,13 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 210** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (25/10-2026 kl. 23:04, statusfil v210):** Live (main `6652a392`): Jacobs stemme som 2-3 korte afsnit fordelt i artiklen (ingen boks); ny afslutning under alle 457 artikler (én sætning i hans stemme + "Write to me", "More on <emne>", "Explore our guides" til emnets guide); tabeller kun ved reelle sammenligninger. 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnit, tabeller og stikprøve.
+**Seneste for techfeedwatch (26/10-2026 kl. 12:04, statusfil v211):** Ugentlig aflæsning gjort (8. punkt, `origin/main` `f30ea63e`): indekseret 38 -> 41, ikke indekseret 852 -> 889, sitemap 628 adresser; klik 28, eksponeringer 42, klikrate 66,7 %, position 3,1 - klik og position bliver ved med at stige, mens indekseringen ikke følger med. Links står helt stille: 1 eksternt link (alternativeto.net), 338 interne, Bing har stadig ingen data. Live (main før aflæsningen `6652a392`): Jacobs stemme som 2-3 korte afsnit, ny afslutning under alle 457 artikler, tabeller kun ved reelle sammenligninger; 8 omskrivninger/dag, ca. 38 kr/dag. Næste: se kørslen 26/10 kl. 07:37 - stemme-afsnit, tabeller og stikprøve.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
 - **Plan:** den nye opskrift ("søgning først"), artikelsiden og AI-billederne er live siden 13/10; de gamle artikler skrives om (loft 16/10: højst 3 nye + 3 omskrivninger om dagen). Næste beslutning: hvordan sitet opfylder Googles krav om menneskelig indsats og originalitet (1/10), før AdSense nr. 4, som Jacob selv sender.
 - **Overvågning:** `robot-status.json` (står `lastArticle.at` mere end et døgn tilbage, er noget galt), `build.json` (hvilken commit der er live), workflowet "Tomgangsalarm" (3 gange i døgnet; rød kørsel og mail ved 36 timers tomgang).
-- **Ældre åbne punkter, ikke genmålt 6/10 (detaljer i Bilag A i `STATUS-ARKIV.md`):** Search Console-måleserien (ugentlig aflæsning, seneste i git 22/10, `4caf87ec` — 7 punkter), miniature-fejlen for Shorts, brandsuffikset i `<title>` måler tegn i stedet for bredde, VideoObject uden `duration`, beslutningen om hvad Jacob selv skriver ("menneske i loopet"), AlternativeTo-forslaget.
+- **Ældre åbne punkter, ikke genmålt 6/10 (detaljer i Bilag A i `STATUS-ARKIV.md`):** Search Console-måleserien (ugentlig aflæsning, seneste i git 26/10, `f30ea63e` — 8 punkter; link-serien 2 punkter), miniature-fejlen for Shorts, brandsuffikset i `<title>` måler tegn i stedet for bredde, VideoObject uden `duration`, beslutningen om hvad Jacob selv skriver ("menneske i loopet"), AlternativeTo-forslaget.
 
 ### techmediaarch.com — målt 6/10 (kun læsning)
 - Kører på Astro (Cloudflare Workers) siden 25/9; forsiden svarer 200. GitHub `origin/main` = `13e2dc9` (6/10 kl. 11:29, "Robot: 1200-word minimum, more research, merge single sentences"). Repoet har 194 artikelfiler og 17 sider. AdSense-godkendt.
@@ -232,6 +232,16 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 26/10-2026 kl. 12:04 - Ugentlig aflæsning: Search Console og links (8. punkt)
+- **Indeksering (aflæst i Jacobs Chrome, Googles data sidst opdateret 23/10):** indekseret 38 -> **41** (+3, første stigning siden 5/10), ikke indekseret 852 -> **889** (+37), sitemappet 608 -> **628** adresser (+20). Trækker man væksten fra, er den reelle bevægelse i "ikke indekseret" ca. +17.
+- **Årsager der flyttede sig:** "Registreret - endnu ikke indekseret" 526 -> 561 (+35), "Side med omdirigering" 135 -> 147 (+12), "Crawlet - endnu ikke indekseret" 59 -> 49 (-10). Dublet-bruger (65), 404 (63), robots.txt (3) og Dublet-Google (1) står bit for bit stille. Fortsat 7 årsager; "Serverfejl (5xx)" er ikke på listen og skrives som 0 for at bevare formen. Summen passer: 889.
+- **Effektivitet (28 dage, 27/9-24/10):** klik 27 -> **28**, eksponeringer 41 -> **42**, klikrate 65,9 -> **66,7 %**, position 3,2 -> **3,1**. Femte uge i træk hvor klik og position bliver bedre, mens indekseringen ikke følger med. Jeg har IKKE målt hvorfor - kun at begge ting sker samtidig.
+- **Links (søjle A, 2. aflæsning):** **intet har flyttet sig**. Stadig 1 eksternt link (alternativeto.net -> forsiden, ankertekst "techfeedwatch"), 338 interne. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat "No data available" - derfor `bing: null`. Det største hul er uændret.
+- `serie.mjs` kører grønt: 8 punkter, alle tre kontroller passerer (årsagssum, klikrate, dato-rækkefølge). `link-serie.json` er gyldig JSON med 2 punkter.
+- **Fund, som Jacob bør kende:** repoet på pc'en stod på grenen `stemme-variation` (igangværende arbejde, ikke pushet). Måle-commit'en landede derfor først på den gren. Jeg rullede den tilbage, lagde de to JSON-filer på `main` via et midlertidigt git-worktree og pushede: `origin/main` = **`f30ea63e`** "Search Console: weekly reading". Grenen `stemme-variation` står igen præcis som før (`2df19fc6`), og dens arbejdskopi har de to opdaterede JSON-filer liggende som urettede ændringer. Intet af Jacobs igangværende arbejde er rørt.
+- Lære: tjek `git branch` FØR commit. En måleserie hører til på `main`; står arbejdskopien på en feature-gren, lander ugens tal usynligt der. Fremover: aflæsningen committer via et worktree af `main`, ikke i den gren, der tilfældigvis er tjekket ud.
+
 
 ### 25/10-2026 kl. 23:04 - Korte stemme-afsnit, afslutning med knapper, tabeller (Jacobs ønsker)
 - **Stemmen:** Jacob syntes, afsnittene var for lange. Nu 2-3 korte afsnit (2-3 sætninger hver) i hver sin sektion, hvor hans mening passer. Kvante-artiklen fik hans egen forklaring ("punkt 1, så 2, så 3 - kvantecomputeren ser alle på én gang").
