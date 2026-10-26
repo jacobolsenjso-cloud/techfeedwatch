@@ -161,7 +161,12 @@ async function belaegKald(genAI, hentModel, model, ss) {
       const r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384, thinkingConfig: { thinkingLevel: process.env.BELAEG_TAENK || 'low' } } }).generateContent(belaegPrompt(ss));
       const tekst = r.response.text() || '';
       const arr = JSON.parse((tekst.match(/\[[\s\S]*\]/) || ['[]'])[0]);
-      if (Array.isArray(arr)) return arr;
+      // 26/10 (Lære): målt på 3 artikler × 3 indstillinger (lav/medium/ingen tænkning, også med "You MUST
+      // search"): 0 af 9 kald søgte. Modellen svarede med url og citat fra hukommelsen, og et citat, der
+      // ikke stod på siden, blev dømt som FEJL - også i rigtige sætninger (Ethereum-sætningen 26/10).
+      // Derfor huskes det, om kaldet faktisk søgte; uden søgning kan svaret kun bekræfte, ikke dømme.
+      const soegte = (r.response.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length || 0) > 0;
+      if (Array.isArray(arr)) return arr.map((x) => (x && typeof x === 'object' ? { ...x, soegte } : x));
     } catch (e) { console.log(`   ⚠️ belæg-kald fejlede (forsøg ${forsoeg + 1}): ${String(e.message).split('\n')[0].slice(0, 200)}`); }
   }
   return null;
@@ -176,7 +181,7 @@ export async function belaeg(genAI, hentModel, model, ss) {
     svar.push(...del.map((x) => ({ ...x, n: x && Number(x.n) + i })));
   }
   const ikkeBelagt = [], ikkeFundet = [];
-  let usikre = 0;
+  let usikre = 0, udenSoegning = 0;
   for (let i = 0; i < ss.length; i++) {
     const s = ss[i];
     const b = svar.find((x) => x && x.n === i + 1) || {};
@@ -185,9 +190,11 @@ export async function belaeg(genAI, hentModel, model, ss) {
     if (!url || quote.split(' ').length < 5) { ikkeFundet.push(s); usikre++; continue; } // ingen side: usikker
     const k = await kontrollerBelaeg(s, url, quote);
     if (k === null) { usikre++; continue; } // siden kunne ikke hentes: skeptikeren (lag 3) afgør
+    if (!k.ok && !b.soegte) { udenSoegning++; usikre++; continue; } // gæt fra hukommelsen: skeptikeren (lag 3) afgør
     if (!k.ok) ikkeBelagt.push({ saetning: s, grund: k.grund });
   }
-  return { tjekket: ss.length, ikkeBelagt, ikkeFundet, usikre };
+  if (udenSoegning) console.log(`   ℹ️ Belæg: ${udenSoegning} sætning(er) ikke dømt - modellen søgte ikke (svaret var fra hukommelsen).`);
+  return { tjekket: ss.length, ikkeBelagt, ikkeFundet, usikre, udenSoegning };
 }
 
 // ---------- Selve slutkontrollen ----------
