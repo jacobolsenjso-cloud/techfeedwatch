@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 212** — brug kun v212). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 213** — brug kun v213). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 212** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (26/10-2026 kl. 12:09, statusfil v212):** Live (main `b9f5d450`): Jacobs stemme uden gentagelser (noterne er et kompas, de seneste ~20 afsnit tjekkes, højst én af hans historier pr. artikel, ingen AdSense-historie); hjernen udvidet med 40 nye punkter under 10 emner; gammel video der ikke passer, erstattes af den bedst passende nye; faktatjek 60 min inden for jobbets loft. Rettet i dag: en artikel fik noindex fra en tabel med rå HTML. Næste: se kørslen 27/10 kl. 07:37.
+**Seneste for techfeedwatch (26/10-2026 kl. 12:29, statusfil v213):** Fejltjek af dagens arbejde gjort (main `377d2e11`): alle tests grønne, sitetjek og indholdstjek 0 fejl, 460 af 460 sider med afslutning og 0 døde links, 7 ændrede artikler tjekket live. Rettet: 2 artikler havde mistet "Updated"-datoen (omskrivningen sætter den nu selv); AdSense-historien markeret "skrives aldrig" i hjernen. Robotten og omskrivningen kører samme kode fra main - næste robotkørsel 13:17, omskrivning 27/10 kl. 07:37.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,14 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 26/10-2026 kl. 12:29 - Fejltjek af dagens arbejde (Jacobs ønske)
+- **Tjekket:** syntaks i alle 11 ændrede scripts; tests (hjerne, slutkontrol, faktatjek 20, skriveregler 66, kildetjek) alle grønne; begge køer kører (`--vis`); workflows og datafiler gyldige; nyt build: indholdstjek 0 fejl, sitetjek 0 fejl, 460/460 sider med afslutning og 0 døde links; 7 ændrede artikler tjekket LIVE (ingen noindex, én canonical, afslutning, ingen boks, ingen AdSense, ingen "guld værd", ingen rå HTML); robotten grøn 11:17 og 12:17.
+- **Fund 1 (rettet):** kvante- og Clarity Act-artiklen havde mistet "Updated" - add-video skriver frontmatter forfra, og mine lokale omskrivninger 25/10 kørte uden stamp-updated. Nu sætter en omskrivning selv "updated". Begge artikler viser igen "Updated Oct 25, 2026" (set live).
+- **Fund 2 (rettet):** AdSense-historien stod stadig i hjernens erfaringer, som brødtekst-skriveren også får. Markeret "KUN baggrund - skrives ALDRIG i artikler"; skriveren har fået samme regel; koden afviser den i stemme-afsnit.
+- Robotten (nye artikler) og omskrivningen bruger samme add-video.mjs og samme hjerne fra main - alt det nye gælder begge.
+- Lære: En regel, der kun ligger i et efterfølgende trin (stamp-updated i workflowet), gælder ikke, når trinnet springes over (lokale kørsler). Reglen hører hjemme dér, hvor ændringen sker.
+
 
 ### 26/10-2026 kl. 12:09 - Gennemgang af første kørsel + rettelser (Jacobs ja)
 - **Kørslen 07:37 (70 min):** 4 af 8 omskrevet (ca. 17 kr, ca. 4,30 kr pr. færdig); stoppet: 2 fordi den gamle video ikke passede, 1 tal uden kilde, 1 blokeret af Gemini (lignede eksisterende tekst). Faktatjek 5 (budget 30 min), 14 fejl rettet. Stikprøve 2 artikler, 0 fejl - men kun 3 af 16 tal kunne bekræftes af koden.
