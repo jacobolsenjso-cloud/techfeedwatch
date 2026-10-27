@@ -2,6 +2,42 @@
 
 Ældre dagbog (7/10-2026 og tilbage) og Bilag A, flyttet ordret fra `STATUS-ALLE-SITES.md` 14/10-2026. Kun historik — **koden og den aktuelle statusfil er facit**. Nyeste flytning øverst.
 
+## Flyttet 27/10-2026 (statusfil v213 → v214)
+
+### 20/10-2026 kl. 12:43 - techfeedwatch: Key facts-boksen vises nu med 2 fakta (LIVE `499dd9d8`) + statusfilen committes igen
+- **Jacob kl. 12:40:** "du laver forslag 1 nu... så vender vi tilbage med dit forslag 2 om en uges tid".
+- **Rettet (`kildetjek.mjs`/`noegleFakta`, gren `udkast-faktaboks` -> fast-forward til main):** kravet "mindst 3 godkendte fakta, ellers ingen boks" er nu "mindst 2". Alle andre værn (According to-form, kilde matcher linkets domæne, højst 230 tegn) er uændrede. node --check OK; check-run "Cloudflare Pages" success; build.json = `499dd9d8`.
+- **Opfølgning ca. 27/10 (aftalt):** mål faktaboks-dækningen på ugens nye artikler + "KLIPPET" i morgenrapporterne, og tag stilling til forslag 2 (bed Gemini formulere researchens fakta på "According to X"-form).
+- **FUNDET OG RETTET: statusfilen i roden er versionsstyret** (commits "Status v160/v163/v164"), men v165-v167 blev ikke committet i formiddags - samlet op nu med commit "Status v168".
+- **Lære:** status-opskriften har et led mere end HOVEDPROMPT nævner: efter kopien til roden skal `git add STATUS-ALLE-SITES.md` + commit "Status v<N>: ..." på main (kun .md - pdf/docx er ikke versionsstyret).
+- Lokal gren `udkast-faktaboks` (flettet i main) kan slettes med Jacobs ok.
+
+
+### 20/10-2026 kl. 12:28 - techfeedwatch: fuld gennemgang af sitet + kvalitetsstatus for de nye artikler
+- **Jacob kl. 12:13:** fejltjek af hele siden + status på kvaliteten af de nye artikler.
+- **Live fejltjek (live = bygget main `9902ed3f`):** forsiden 6/6 OK (128 adresser); alle 63 liste-/emnesider identiske med den byggede main, 526 links 0 døde; de 18 nye artikler (sidste 7 dage) svarer alle 200 og er identiske med den byggede main; 161 billeder på dem OK. Nye måleværktøjer: `_udkast/_tjek-live-artikler.mjs` og `_udkast/_maal-nye-artikler.mjs`.
+- **Kvalitet (13 artikler siden 16/10):** ordtal 901-1453 (median 1191); webkilder i "## Sources" 3-13 (median 6). Robot 7 dage: 125 kørsler, 18 artikler udgivet, 6 kørsler afvist af kvalitetsværnet (ensidige sætninger, video-andel, for få tal, ubesvarede delspørgsmål), 13,52 USD. Nyeste artikel læst (robotics/agriculture 20/10): svar først, navngivne kilder med konkrete tal (GAO, USDA, ASME), FAQ med kilder, faktaboks - stærk.
+- **FUND: kun 6 af 13 nye artikler har "Key facts"-boksen.** Årsag målt i `kildetjek.mjs`/`noegleFakta`: alt-eller-intet-regel - under 3 godkendte fakta giver INGEN boks, og kravene er stramme ("According to X"-form, kilden skal matche linkets domæne, højst 230 tegn). Bevidst design (16/10), ikke en fejl - men dækningen er kun ca. 46 %. Forslag (venter på Jacob): tillad boksen med 2 fakta, eller løsn formkravet.
+- **Trafik (uændret siden aflæsningen 19/10):** indekseret 50, eksponeringer 35 - sitets problem er indeksering/synlighed, ikke sidefejl. Siden selv er fejlfri i alle målinger i dag.
+- **Lære:** mit artikel-tjek antog, at artikler ligger i roden - de ligger under `/video/`; 18 falske 404'er, fanget med reglen "mange fejl på én gang = scriptet er mistænkt før koden". Og `*>` i PowerShell skriver UTF-16 - brug `| Out-File -Encoding utf8`.
+
+
+### 20/10-2026 kl. 11:58 - techfeedwatch: ny fast regel - Claude opdaterer Google Drev; gren slettet
+- **Jacob kl. 11:57:** "du opdaterer Google Drev fremover" + "den lokale gren må du godt slette" + klip-beviset følges op om nogle dage.
+- Fælles-afsnittets linje "Google Drive opdateres af Jacob selv" rettet til den nye regel (opskriften i HOVEDPROMPT gælder igen: kopi til Downloads med versionsnummer i navnet, overskriv aldrig, tjek synkroniseringen på drive.google.com i Jacobs Chrome).
+- Lokal gren `udkast-lofter` slettet med `git branch -d` (alt var flettet i main, `9902ed3f`). Grenen lå aldrig på GitHub.
+- v166-filerne (md/pdf/docx) kopieret til roden og til Downloads (Drev); STATUS-ARKIV er uændret siden 14/10 og er ikke kopieret igen.
+- **Opfølgning aftalt:** om nogle dage måles morgenrapporterne for "KLIPPET" (før rettelsen: 6 klip på 6 dage).
+
+
+### 20/10-2026 kl. 11:52 - techfeedwatch: klippede Gemini-svar rettet - lofterne hævet (LIVE `9902ed3f`)
+- **Jacob:** "er der fejl der?" (issue #1) -> "ja, finde årsagen" -> "ja, du retter og går igang" -> "ja, du pusher til main".
+- **Årsag (målt i GitHubs kørselslogge via Jacobs Chrome, 3 af de 6 kørsler med klip undersøgt - mønsteret var ens):** Geminis tænkning tæller med i maxOutputTokens. Rettelses-kaldene efter faktaark-/redaktørtjek skriver HELE artiklen om, men havde loft 16384 - tænkningen brugte ~15.600-15.700, svaret blev klippet og rettelsen kasseret (#735 18/10: "længde 60 %", artiklen slap igennem med 1 ensidig sætning; #782 20/10: "længde 48 %" -> artikel AFVIST med 4 ensidige sætninger). #783 (20/10): transskript-kaldet ramte sit 32768-loft på en lang video (tænkning ~17.000 + transskript ~15.800).
+- **Rettet (`9902ed3f`, 2 filer, gren `udkast-lofter` -> fast-forward til main):** begge rettelses-kald 16384 -> 32768 (samme loft som hovedskrivningen fik 17/10); transskriptet 32768 -> 65536 (modellens maks, ai.google.dev). Læsertjekkets 8192 er bevidst og i orden (svarer kun med en sætningsliste, ikke hele artiklen). node --check OK; 0 kald tilbage på 16384; check-run "Cloudflare Pages" success; build.json = `9902ed3f` kl. 11:50.
+- **Ikke bevist endnu:** at klippene ophører - mål de kommende morgenrapporter (søg "KLIPPET"; 6 klip på 6 dage før rettelsen). Kasserede rettelser var også spildte penge: et fuldt Gemini-kald smidt væk hver gang.
+- **Lære:** et rettelses-kald skal have samme loft som det kald, hvis output det omskriver - 17/10 blev kun hovedskrivningen hævet, rettelses-kaldene blev glemt.
+- Lokal gren `udkast-lofter` (alt flettet i main) kan slettes med Jacobs ok.
+
 ## Flyttet 25/10-2026 (statusfil v209 → v210)
 
 ### 19/10-2026 kl. 16:46 - techfeedwatch: oprydning efter emne- og listesiderne

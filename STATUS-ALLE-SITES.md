@@ -1,6 +1,6 @@
 # Status på Jacobs tre sites
 
-Samlet 8. september 2026, opdateret 24. oktober (**version 213** — brug kun v213). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
+Samlet 8. september 2026, opdateret 24. oktober (**version 214** — brug kun v214). Målt direkte i repoerne og på de levende sites — ikke afskrevet fra ældre dokumenter.
 
 **Sådan bruges filen:** Start en ny session med "Læs `C:\Users\jacob\techfeedwatch\HOVEDPROMPT.md` og derefter `STATUS-ALLE-SITES.md`". Hovedprompten er arbejdsformen (og har faldgrubelisten); denne fil er, hvor vi står. De ældre dokumenter (se afsnit 5) er baggrund. **Koden i repoerne er altid facit.** Afsnit 7 er dagbogen — nyeste øverst.
 
@@ -8,7 +8,7 @@ Samlet 8. september 2026, opdateret 24. oktober (**version 213** — brug kun v2
 
 **Start sådan:** læs `HOVEDPROMPT.md` først (arbejdsform og faldgrubeliste), derefter dette afsnit. **Koden er facit.** Afsnit 2–4 er baggrund og kan være forældede; dagbogen (afsnit 7) viser den sidste uge, nyeste øverst. Ældre dagbog og Bilag A ligger i `STATUS-ARKIV.md` (flyttet 14/10) — læs den kun, når en ældre beslutning skal findes. Ret dette afsnit, hver gang noget ændrer sig, og slet det, der er løst.
 
-**Seneste for techfeedwatch (26/10-2026 kl. 12:29, statusfil v213):** Fejltjek af dagens arbejde gjort (main `377d2e11`): alle tests grønne, sitetjek og indholdstjek 0 fejl, 460 af 460 sider med afslutning og 0 døde links, 7 ændrede artikler tjekket live. Rettet: 2 artikler havde mistet "Updated"-datoen (omskrivningen sætter den nu selv); AdSense-historien markeret "skrives aldrig" i hjernen. Robotten og omskrivningen kører samme kode fra main - næste robotkørsel 13:17, omskrivning 27/10 kl. 07:37.
+**Seneste for techfeedwatch (27/10-2026 kl. 11:47, statusfil v214):** Pris og spild strammet op. Googles faktura viste 418 kr. 20.-26/10, heraf 228 kr. for Google-søgninger, som pristælleren ikke prissatte; nu gør den, og morgenrapporten viser "Hele døgnets pris" med søgninger. Omskrivning 4 om dagen (før 8). Faktatjek kun af stikprøvens fund, højst 20 min. Slutkontrollen smider ikke længere betalte artikler ud ved en Gemini-pause (10 min ventetid, 3 forsøg) eller dobbeltfund. AI-billede får et 3. forsøg uden tekst-ord. Jacob sætter selv et månedsloft i AI Studio. Opfølgning 3/11.
 
 ### techfeedwatch.com — målt 24/10 kl. 13:56
 - **Live:** `6f4f7db7` (se `https://techfeedwatch.com/build.json`, målt 24/10 kl. 14:16). **456 artikler** (robot-status.json).
@@ -232,6 +232,22 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 ---
 
 ## 7. Dagbog (nyeste øverst)
+
+### 27/10-2026 kl. 11:47 - Pris, spild og kvalitet (26/10 eftermiddag til 27/10)
+- **Filmora-artiklen uden AI-billede (26/10):** ny robotartikel; billedet blev afvist 2 gange for tekst ("text to video" + manuskript/undertekster i resuméet). Genskabt lokalt med samme afvisning; en prompt uden tekst-ord gav et rent billede, sat på live (`fe0a3e21`). 27/10: robotten laver nu selv et 3. forsøg med den prompt, når et billede afvises for tekst (`3ceee401`, testet 2 af 2 godkendt; ca. 0,03 USD ekstra, kun når det sker).
+- **Omskrivning:** 8 om dagen var for dyrt (Jacob) - nu 4 om dagen (`d3c9705a`).
+- **Prisen (Jacobs skærmbillede fra AI Studio: 306 kr. på ét døgn):** Google Cloud-fakturaen 20.-26/10 = 418 kr.: søgninger 228 kr. (2.471 stk., første gang betalt - de 5.000 gratis om måneden var brugt), tekst ud 143 kr., tekst/video ind 33 kr., billeder ca. 13 kr. Spidsen 25/10 var mine testkørsler. Pristælleren prissætter nu hver søgning med 0,014 USD; robot-, omskriv-, faktatjek- og stikprøvelog gemmer pris og antal søgninger; morgenrapporten viser "Hele døgnets pris" opdelt + "Google-søgninger" (`d3c9705a`, `5dfd1f63`). Set i rapporten 27/10: 6,14 USD og 97 søgninger. Normal drift skønnes ca. 3.000 søgninger/md. = under den gratis grænse.
+- **Faktatjek (Jacobs valg):** kun artikler, stikprøven har fundet fejl i (+ opgivne omskrivninger), højst 20 min. De øvrige gamle artikler venter på omskrivning med fuld slutkontrol - ellers betales der to gange (`5dfd1f63`). 27/10: 0 artikler, 0 kr.
+- **Belæg-tjekket søgte ikke:** målt 0 af 9 kald (lav, medium og ingen tænkning, også med "You MUST search"). Citat fra hukommelsen, der ikke stod på siden, blev dømt som fejl - også i rigtige sætninger. Nu: uden søgning kan svaret kun bekræfte, ikke dømme; skeptikeren afgør (`4044b653`).
+- **27/10 morgen: robotten 1 artikel på 10 kørsler (4,93 USD), omskrivningen 2 af 4.** Smidt ud efter betaling: "kunne ikke køre" (Gemini) 2 gange og "fanget sætning kunne ikke findes" 2 gange. Årsager: Nodes fetch giver op efter 5 min (set live under måling) og to fund på samme sætning (målt: alle 6 fund i 5 udgivne artikler kunne findes igen). Rettet (`2d725df5`): 10 min ventetid (undici, testet på Node 22 og 26), 3 forsøg med pause i skeptiker og belæg, et belæg-kald der fejler giver "usikre" i stedet for stop, dobbeltfund springes over / rettes i den sætning der ligner mest; reelt tvivlsomme fund stopper stadig artiklen og logges. Tests: 5 nye + 13 slutkontrol + hjerne grønne.
+- **Jacob:** sætter selv månedsloft i AI Studio ("Set spend cap", fx 1.000 kr.).
+- **Opfølgning 3/11:** artikler pr. dag, smidte artikler, dagspris. Derefter beslutning om skeptikeren skal tvinges til at søge (skøn 10-25 søgninger pr. artikel, 0-300 kr./md.; prøves på 3 artikler først).
+- **Det bør Jacob vide:** skeptikeren søgte 0 gange i 7 kald i min måling - den tjekker mest mod researchen og sin egen viden. Den ene omskrivning 27/10 stoppede med god grund (ubesvaret delspørgsmål).
+- Lære: Pristælleren talte søgningerne, men prissatte dem ikke, og jeg sammenlignede den kun med sig selv. Et måleværktøj for penge skal stemmes af mod den rigtige regning (Cloud-fakturaen), før tallet gives videre.
+- Lære: Jeg kaldte faktatjekket "dobbeltarbejde" uden at have læst koden - det var forkert. Læs koden, før en anbefaling gives.
+- Lære: At et kald er sat op til at søge på Google, betyder ikke, at det søger. Mål det (groundingMetadata), før en dom bygger på det.
+- Lære: "Midlertidig fejl hos Gemini" var vores egen 5-minutters grænse. En fejlbesked skal have årsagen med, ellers rettes det forkerte.
+
 
 ### 26/10-2026 kl. 12:29 - Fejltjek af dagens arbejde (Jacobs ønske)
 - **Tjekket:** syntaks i alle 11 ændrede scripts; tests (hjerne, slutkontrol, faktatjek 20, skriveregler 66, kildetjek) alle grønne; begge køer kører (`--vis`); workflows og datafiler gyldige; nyt build: indholdstjek 0 fejl, sitetjek 0 fejl, 460/460 sider med afslutning og 0 døde links; 7 ændrede artikler tjekket LIVE (ingen noindex, én canonical, afslutning, ingen boks, ingen AdSense, ingen "guld værd", ingen rå HTML); robotten grøn 11:17 og 12:17.
@@ -631,41 +647,6 @@ Google Drive: mappen "Site-status" (id `1p_AE747Jp-sXdbheiSytiO-zsLzIS3WI`). Dri
 - **Hjernen bor i `C:\Users\jacob\jacob-hjerne`** - BEVIDST uden for de offentlige repoer: `core.md`, `voice.md`, `beliefs.md`, `erfaringer.md`. Bygget af Jacobs egne ord; han gennemgår dem selv. NotebookLM droppet som mellemled - Jacob dikterede direkte.
 - **Hjerne-test (plan B):** to artikler (Runway/AI-video, hvor holdningerne er relevante, og gaming-pc vs. konsol som neutral kontrol) omskrevet med hjernen som stemme. Før/efter-dokument med markeringer af alt nyt sendt til Jacob i chatten. Fakta og kilder uændrede. **Venter på Jacobs dom.** Intet udgivet, intet ændret i robotten.
 - **Jacobs beslutninger 21/10:** Ars Technica, MIT Technology Review og TechCrunch bruges som KILDER og pejling - aldrig som råstof til omskrivning (ophavsret + originalitet). **Nyt forslag på listen** (tages op efter uge-opfølgningen ca. 27/10): lær robotten at foretrække kvalitetskilder i researchen.
-
-
-### 20/10-2026 kl. 12:43 - techfeedwatch: Key facts-boksen vises nu med 2 fakta (LIVE `499dd9d8`) + statusfilen committes igen
-- **Jacob kl. 12:40:** "du laver forslag 1 nu... så vender vi tilbage med dit forslag 2 om en uges tid".
-- **Rettet (`kildetjek.mjs`/`noegleFakta`, gren `udkast-faktaboks` -> fast-forward til main):** kravet "mindst 3 godkendte fakta, ellers ingen boks" er nu "mindst 2". Alle andre værn (According to-form, kilde matcher linkets domæne, højst 230 tegn) er uændrede. node --check OK; check-run "Cloudflare Pages" success; build.json = `499dd9d8`.
-- **Opfølgning ca. 27/10 (aftalt):** mål faktaboks-dækningen på ugens nye artikler + "KLIPPET" i morgenrapporterne, og tag stilling til forslag 2 (bed Gemini formulere researchens fakta på "According to X"-form).
-- **FUNDET OG RETTET: statusfilen i roden er versionsstyret** (commits "Status v160/v163/v164"), men v165-v167 blev ikke committet i formiddags - samlet op nu med commit "Status v168".
-- **Lære:** status-opskriften har et led mere end HOVEDPROMPT nævner: efter kopien til roden skal `git add STATUS-ALLE-SITES.md` + commit "Status v<N>: ..." på main (kun .md - pdf/docx er ikke versionsstyret).
-- Lokal gren `udkast-faktaboks` (flettet i main) kan slettes med Jacobs ok.
-
-
-### 20/10-2026 kl. 12:28 - techfeedwatch: fuld gennemgang af sitet + kvalitetsstatus for de nye artikler
-- **Jacob kl. 12:13:** fejltjek af hele siden + status på kvaliteten af de nye artikler.
-- **Live fejltjek (live = bygget main `9902ed3f`):** forsiden 6/6 OK (128 adresser); alle 63 liste-/emnesider identiske med den byggede main, 526 links 0 døde; de 18 nye artikler (sidste 7 dage) svarer alle 200 og er identiske med den byggede main; 161 billeder på dem OK. Nye måleværktøjer: `_udkast/_tjek-live-artikler.mjs` og `_udkast/_maal-nye-artikler.mjs`.
-- **Kvalitet (13 artikler siden 16/10):** ordtal 901-1453 (median 1191); webkilder i "## Sources" 3-13 (median 6). Robot 7 dage: 125 kørsler, 18 artikler udgivet, 6 kørsler afvist af kvalitetsværnet (ensidige sætninger, video-andel, for få tal, ubesvarede delspørgsmål), 13,52 USD. Nyeste artikel læst (robotics/agriculture 20/10): svar først, navngivne kilder med konkrete tal (GAO, USDA, ASME), FAQ med kilder, faktaboks - stærk.
-- **FUND: kun 6 af 13 nye artikler har "Key facts"-boksen.** Årsag målt i `kildetjek.mjs`/`noegleFakta`: alt-eller-intet-regel - under 3 godkendte fakta giver INGEN boks, og kravene er stramme ("According to X"-form, kilden skal matche linkets domæne, højst 230 tegn). Bevidst design (16/10), ikke en fejl - men dækningen er kun ca. 46 %. Forslag (venter på Jacob): tillad boksen med 2 fakta, eller løsn formkravet.
-- **Trafik (uændret siden aflæsningen 19/10):** indekseret 50, eksponeringer 35 - sitets problem er indeksering/synlighed, ikke sidefejl. Siden selv er fejlfri i alle målinger i dag.
-- **Lære:** mit artikel-tjek antog, at artikler ligger i roden - de ligger under `/video/`; 18 falske 404'er, fanget med reglen "mange fejl på én gang = scriptet er mistænkt før koden". Og `*>` i PowerShell skriver UTF-16 - brug `| Out-File -Encoding utf8`.
-
-
-### 20/10-2026 kl. 11:58 - techfeedwatch: ny fast regel - Claude opdaterer Google Drev; gren slettet
-- **Jacob kl. 11:57:** "du opdaterer Google Drev fremover" + "den lokale gren må du godt slette" + klip-beviset følges op om nogle dage.
-- Fælles-afsnittets linje "Google Drive opdateres af Jacob selv" rettet til den nye regel (opskriften i HOVEDPROMPT gælder igen: kopi til Downloads med versionsnummer i navnet, overskriv aldrig, tjek synkroniseringen på drive.google.com i Jacobs Chrome).
-- Lokal gren `udkast-lofter` slettet med `git branch -d` (alt var flettet i main, `9902ed3f`). Grenen lå aldrig på GitHub.
-- v166-filerne (md/pdf/docx) kopieret til roden og til Downloads (Drev); STATUS-ARKIV er uændret siden 14/10 og er ikke kopieret igen.
-- **Opfølgning aftalt:** om nogle dage måles morgenrapporterne for "KLIPPET" (før rettelsen: 6 klip på 6 dage).
-
-
-### 20/10-2026 kl. 11:52 - techfeedwatch: klippede Gemini-svar rettet - lofterne hævet (LIVE `9902ed3f`)
-- **Jacob:** "er der fejl der?" (issue #1) -> "ja, finde årsagen" -> "ja, du retter og går igang" -> "ja, du pusher til main".
-- **Årsag (målt i GitHubs kørselslogge via Jacobs Chrome, 3 af de 6 kørsler med klip undersøgt - mønsteret var ens):** Geminis tænkning tæller med i maxOutputTokens. Rettelses-kaldene efter faktaark-/redaktørtjek skriver HELE artiklen om, men havde loft 16384 - tænkningen brugte ~15.600-15.700, svaret blev klippet og rettelsen kasseret (#735 18/10: "længde 60 %", artiklen slap igennem med 1 ensidig sætning; #782 20/10: "længde 48 %" -> artikel AFVIST med 4 ensidige sætninger). #783 (20/10): transskript-kaldet ramte sit 32768-loft på en lang video (tænkning ~17.000 + transskript ~15.800).
-- **Rettet (`9902ed3f`, 2 filer, gren `udkast-lofter` -> fast-forward til main):** begge rettelses-kald 16384 -> 32768 (samme loft som hovedskrivningen fik 17/10); transskriptet 32768 -> 65536 (modellens maks, ai.google.dev). Læsertjekkets 8192 er bevidst og i orden (svarer kun med en sætningsliste, ikke hele artiklen). node --check OK; 0 kald tilbage på 16384; check-run "Cloudflare Pages" success; build.json = `9902ed3f` kl. 11:50.
-- **Ikke bevist endnu:** at klippene ophører - mål de kommende morgenrapporter (søg "KLIPPET"; 6 klip på 6 dage før rettelsen). Kasserede rettelser var også spildte penge: et fuldt Gemini-kald smidt væk hver gang.
-- **Lære:** et rettelses-kald skal have samme loft som det kald, hvis output det omskriver - 17/10 blev kun hovedskrivningen hævet, rettelses-kaldene blev glemt.
-- Lokal gren `udkast-lofter` (alt flettet i main) kan slettes med Jacobs ok.
 
 
 ### 19-20/10-2026 - AI Second Brain: undersøgt (Hasans metode), plan foreslået - intet kodet
