@@ -813,5 +813,10 @@
   "q": "how long does it take a quantum computer to crack a password",
   "tag": "Quantum Computing",
   "dato": "2026-10-27"
+ },
+ {
+  "q": "why are qubits hard to make",
+  "tag": "Quantum Computing",
+  "dato": "2026-10-27"
  }
 ]
