@@ -328,5 +328,24 @@
   ],
   "stoppet": [],
   "usd": 0.3198
+ },
+ {
+  "dato": "2026-10-27T06:37:24.522Z",
+  "omskrevet": [
+   "master-the-digital-spotlight-your-essential-guide-to-search-engine",
+   "ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path"
+  ],
+  "stoppet": [
+   {
+    "slug": "master-quant-finance-in-9-minutes-your-python-pandas-roadmap-to-smart",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"How do you access financial statements, company profiles, and options data using yfinance?\"). Artiklen skrives ikke."
+   },
+   {
+    "slug": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases",
+    "grund": "Fejl: Slutkontrol: faktatjekket kunne ikke køre (midlertidig fejl hos Gemini). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 1.8028,
+  "soegninger": 25
  }
 ]

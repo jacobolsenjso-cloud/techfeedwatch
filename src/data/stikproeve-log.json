@@ -21,5 +21,30 @@
     "fund": []
    }
   ]
+ },
+ {
+  "dato": "2026-10-27T06:53:46.750Z",
+  "artikler": [
+   {
+    "slug": "10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 6,
+    "fund": []
+   },
+   {
+    "slug": "why-is-my-iphone-hot-and-how-ios-regulates-heat",
+    "tjekket": 6,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 0,
+    "fund": []
+   }
+  ],
+  "usd": 0.0062,
+  "soegninger": 0
  }
 ]
