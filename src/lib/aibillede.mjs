@@ -34,6 +34,17 @@ Style: clean conceptual 3D illustration, soft studio lighting, dark charcoal bac
 Strict rules: absolutely NO text, letters, numbers, words or labels anywhere; NO logos, brand names or trademarked products; NO real or recognizable people or faces; no screenshots of real apps or websites.
 Avoid objects that usually carry writing: screens, monitors, phones, dashboards, charts, signs, documents, books, labels, price tags, banknotes and keyboards. Show the idea with shapes, light, materials and physical objects instead.`;
 }
+// 27/10 (Jacob valgte det): 3. forsøg, når et billede er afvist for TEKST. Filmora-artiklen 26/10
+// ("text to video") fik begge billeder afvist, fordi emnet selv handler om tekst (manuskript,
+// undertekster) - modellen tegnede papirstrimler med kragetæer. En prompt uden de ord og med abstrakte
+// former gav et rent billede i første forsøg. Koster ca. 0,03 USD ekstra, og kun når det sker.
+const TEKST_ORD = /\b(text|texts|script|scripts|scripting|subtitles?|captions?|prompts?|written|writing|words?|letters?|typing|typed|transcripts?|documents?|labels?|fonts?|typography)\b/gi;
+export function billedPromptUdenTekst({ titel, emne, resume }) {
+  const vask = (t) => String(t || '').replace(TEKST_ORD, '').replace(/\s{2,}/g, ' ').trim();
+  return billedPrompt({ titel: vask(titel), emne, resume: vask(resume) })
+    + '\nDepict the idea only with abstract shapes, ribbons of light and physical objects. Never draw paper, scripts, captions, subtitles, screens, signs or anything that looks like writing or characters.';
+}
+
 // (13/10) Den sidste linje i prompten er tilføjet, fordi 6 af de første 8 artikler fik det første
 // billede afvist for tekst — modellen skriver typisk på skærme, skilte, dokumenter og grafer.
 
@@ -102,17 +113,21 @@ export async function lavAiBillede(genAI, { slug, titel, emne, resume }, ud, { l
   let raa = null, forsoeg = 0;
   const fraCache = !tving && fs.existsSync(raaSti);
   if (fraCache) raa = fs.readFileSync(raaSti);
-  while (!raa && forsoeg < 2) {
+  let afvistForTekst = false;
+  // 2 almindelige forsøg; et 3. med billedPromptUdenTekst, hvis et af dem blev afvist for tekst (27/10)
+  while (!raa && (forsoeg < 2 || (forsoeg === 2 && afvistForTekst))) {
     forsoeg++;
     try {
       // Gennem hentModel (13/10): "prøv igen" ved forbigående fejl, og billedet tælles i FORBRUG
       const m = hentModel(genAI, { model: BILLED_MODEL, generationConfig: { responseModalities: ['IMAGE'], imageConfig: { aspectRatio: '16:9' } } });
-      const r = await m.generateContent(billedPrompt({ titel, emne, resume }));
+      const prompt = forsoeg === 3 ? billedPromptUdenTekst({ titel, emne, resume }) : billedPrompt({ titel, emne, resume });
+      if (forsoeg === 3) log('🖼️ AI-billede forsøg 3: prompt uden tekst-ord (de første blev afvist for tekst)');
+      const r = await m.generateContent(prompt);
       const del = (r.response.candidates?.[0]?.content?.parts || []).find((p) => p.inlineData);
       if (!del) { log(`🖼️ AI-billede forsøg ${forsoeg}: intet billede i svaret`); continue; }
       const buf = Buffer.from(del.inlineData.data, 'base64');
       const fund = await tjekBillede(genAI, buf);
-      if (fund && fund.length) { log(`🖼️ AI-billede forsøg ${forsoeg} afvist: ${fund.join(', ')}`); continue; }
+      if (fund && fund.length) { if (fund.includes('text')) afvistForTekst = true; log(`🖼️ AI-billede forsøg ${forsoeg} afvist: ${fund.join(', ')}`); continue; }
       if (fund === null) log(`🖼️ AI-billede forsøg ${forsoeg}: tjekket kunne ikke køre — billedet bruges`);
       raa = buf;
       fs.writeFileSync(raaSti, raa);
