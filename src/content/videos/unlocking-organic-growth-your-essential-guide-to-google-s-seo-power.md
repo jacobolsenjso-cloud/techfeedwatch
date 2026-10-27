@@ -79,7 +79,7 @@ First, **set up Google Search Console**. Verify ownership of your website by add
 
 Monitor the "Performance" reports to see which queries bring traffic, your average position in search results, and your impressions. Regularly check the "Index Coverage" and "Core Web Vitals" sections for any crawl errors or performance issues that could hinder your site's ranking.
 
-This is where you identify problems with how Google interacts with your site and address them directly. For broader strategies on improving search visibility, consider articles like [What Is SEO and How Search Engines Work](/video/master-the-digital-spotlight-your-essential-guide-to-search-engine) or [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
+This is where you identify problems with how Google interacts with your site and address them directly. For broader strategies on improving search visibility, consider articles like [SEO Explained: What It Is and How Search Engines Work](/video/master-the-digital-spotlight-your-essential-guide-to-search-engine) or [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
 
 Second, **implement Google Analytics**. The most solid way to do this is by first setting up Google Tag Manager. Create a new GTM account for your website, install its single code snippet into the header of every page, and then use GTM to deploy your Google Analytics tag.
 
