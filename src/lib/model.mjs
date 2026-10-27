@@ -12,6 +12,14 @@
 // Vi opdagede det, fordi en artikel på sitet kaldte 3.6 "Google's fastest AI
 // model to date", mens 3.8 var udkommet. Robotten selv var altså også
 // bagud — samme mønster, et sted ingen kiggede.
+import { Agent, setGlobalDispatcher } from 'undici';
+// 27/10 (Jacob: "når Gemini ikke svarer"): Nodes fetch giver op efter 5 minutter uden svar
+// ("fetch failed", målt 25/10 og igen 27/10 på kvantecomputer-artiklens skeptiker-kald). Lange
+// faktatjek med Google-søgning kan tage længere - og så blev en færdig, betalt artikel smidt ud.
+// Nu venter alle kald op til 10 minutter. Sider, koden selv henter, har deres egen kortere grænse.
+// Testet 27/10 på Node 22 (som GitHub bruger) og Node 26 (Jacobs pc).
+setGlobalDispatcher(new Agent({ headersTimeout: 10 * 60e3, bodyTimeout: 10 * 60e3 }));
+
 export const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
 
 // Prøv igen: gratis-niveauet står bagerst i køen, og Google svarer af og til

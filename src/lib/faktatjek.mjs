@@ -146,15 +146,26 @@ export async function skeptiker(genAI, hentModel, model, md, researchTekst, vide
   let usage = { ind: 0, ud: 0 };
   for (let i = 0; i < ss.length; i += 25) {
     const del = ss.slice(i, i + 25);
-    try {
-      const r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384 } })
-        .generateContent(skeptikerPrompt(del, researchTekst, videoNoter));
-      const fund = parseSkeptiker(r.response.text() || '', del);
-      if (!fund) return null;
-      ud.push(...fund);
-      const u = r.response.usageMetadata || {};
-      usage = { ind: usage.ind + (u.promptTokenCount || 0), ud: usage.ud + (u.candidatesTokenCount || 0) + (u.thoughtsTokenCount || 0) };
-    } catch { return null; }
+    // 27/10 (Jacob: "ikke betale for noget, man ikke får noget ud af"): før gav ét mislykket svar
+    // (afbrudt forbindelse eller ulæseligt svar) "kunne ikke køre", og en færdig, betalt artikel blev
+    // smidt ud (2 gange 27/10). Nu 3 forsøg med pause (20 s, 60 s), og årsagen skrives i loggen.
+    let fund = null, r = null;
+    for (let forsoeg = 1; forsoeg <= 3 && !fund; forsoeg++) {
+      try {
+        r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384 } })
+          .generateContent(skeptikerPrompt(del, researchTekst, videoNoter));
+        fund = parseSkeptiker(r.response.text() || '', del);
+        if (!fund) throw new Error('svaret kunne ikke læses');
+      } catch (e) {
+        fund = null;
+        console.log(`   ⚠️ Skeptiker-kald fejlede (forsøg ${forsoeg} af 3): ${String(e.message).split('\n')[0].slice(0, 160)}`);
+        if (forsoeg < 3) await new Promise((v) => setTimeout(v, (forsoeg === 1 ? 20 : 60) * 1000));
+      }
+    }
+    if (!fund) return null;
+    ud.push(...fund);
+    const u = r.response.usageMetadata || {};
+    usage = { ind: usage.ind + (u.promptTokenCount || 0), ud: usage.ud + (u.candidatesTokenCount || 0) + (u.thoughtsTokenCount || 0) };
   }
   return { tjekket: ss.length, fund: ud.filter((x) => x.dom === 'WRONG' || x.dom === 'UNSUPPORTED'), usage };
 }

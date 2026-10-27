@@ -34,21 +34,56 @@ function feltTekster(f) {
 }
 
 // Sætter en rettelse ind i det felt, hvor sætningen står (brødtekst eller et kort felt).
-function anvend(f, fund) {
-  let ikkeFundet = 0;
-  for (const x of fund) {
-    const r = anvendRettelser(f.brodtekst, [x]);
-    if (!r.ikkeFundet.length) { f.brodtekst = r.md; continue; }
-    let sat = false;
-    for (const k of ['titel', 'meta', 'resume']) {
-      if (!f[k]) continue;
-      const rr = anvendRettelser(f[k], [x]);
-      if (!rr.ikkeFundet.length) { f[k] = rr.md.trim(); sat = true; break; }
-    }
-    if (!sat) for (const q of f.faqs || []) { const rr = anvendRettelser(q.answer, [x]); if (!rr.ikkeFundet.length) { q.answer = rr.md.trim(); sat = true; break; } }
-    if (!sat) for (const k of f.faktaboks || []) { const rr = anvendRettelser(k.text, [x]); if (!rr.ikkeFundet.length) { k.text = rr.md.trim(); sat = true; break; } }
-    if (!sat) ikkeFundet++;
+// 27/10: ordene i en sætning (små bogstaver, kun bogstaver/tal) - til at sammenligne sætninger.
+const ordAf = (t) => String(t || '').toLowerCase().match(/[a-z0-9$%]+/g) || [];
+const andelFaelles = (a, b) => { const B = new Set(ordAf(b)); const A = ordAf(a); return A.length ? A.filter((w) => B.has(w)).length / A.length : 0; };
+
+function anvendEn(f, x) {
+  const r = anvendRettelser(f.brodtekst, [x]);
+  if (!r.ikkeFundet.length) { f.brodtekst = r.md; return true; }
+  for (const k of ['titel', 'meta', 'resume']) {
+    if (!f[k]) continue;
+    const rr = anvendRettelser(f[k], [x]);
+    if (!rr.ikkeFundet.length) { f[k] = rr.md.trim(); return true; }
   }
+  for (const q of f.faqs || []) { const rr = anvendRettelser(q.answer, [x]); if (!rr.ikkeFundet.length) { q.answer = rr.md.trim(); return true; } }
+  for (const k of f.faktaboks || []) { const rr = anvendRettelser(k.text, [x]); if (!rr.ikkeFundet.length) { k.text = rr.md.trim(); return true; } }
+  return false;
+}
+
+// 27/10 (Jacob: ingen betaling for artikler, der smides ud): "fanget sætning kunne ikke findes" stoppede
+// 2 færdige artikler 27/10. Målt samme dag: på 5 udgivne artikler kunne alle 6 fund findes igen - så
+// fejlen opstår, når to fund dækker samme sted (fx skeptikeren og kildetjekket med hver sin
+// sætningsdeling): den første rettelse fjerner teksten, og den anden finder den så ikke. Nu:
+//  1. allerede dækket af en anvendt rettelse (mindst 60 % fælles ord) -> sprunget over, intet at gøre
+//  2. ellers den sætning i artiklen, der ligner mest (mindst 75 % af ordene, begge veje) -> rettes dér
+//  3. ligner ingen sætning (under 50 %) og dens tal står heller ikke i artiklen -> sprunget over, logget
+//  4. kun det imellem tæller stadig som "kunne ikke findes" (artiklen stoppes, sætningen logges)
+function anvend(f, fund, log = console.log) {
+  let ikkeFundet = 0;
+  const anvendt = [];
+  const ikkeFundne = [];
+  for (const x of fund) {
+    if (anvendEn(f, x)) { anvendt.push(x.saetning); continue; }
+    if (anvendt.some((a) => andelFaelles(x.saetning, a) >= 0.6 || andelFaelles(a, x.saetning) >= 0.6)) {
+      log(`   ℹ️ fund allerede dækket af en anden rettelse: ${String(x.saetning).slice(0, 100)}`);
+      continue;
+    }
+    const tekster = [f.brodtekst, f.titel, f.meta, f.resume, ...(f.faqs || []).map((q) => q.answer), ...(f.faktaboks || []).map((k) => k.text)];
+    let bedst = '', andel = 0;
+    for (const t of tekster) for (const s of saetningerUdenOverskrifter(t || '')) {
+      const a = Math.min(andelFaelles(x.saetning, s), andelFaelles(s, x.saetning) + 0.15);
+      if (a > andel) { andel = a; bedst = s; }
+    }
+    if (andel >= 0.75 && anvendEn(f, { ...x, saetning: bedst })) { anvendt.push(bedst); log(`   ℹ️ fund rettet i den sætning, der ligner mest (${Math.round(andel * 100)} %)`); continue; }
+    // Kun sprunget over, hvis heller ikke fundets tal står nogen steder i artiklen - ellers kan påstanden
+    // stå der med andre ord, og så stoppes artiklen hellere end at udgive en mulig fejl.
+    const talIArtikel = paastandsTal(x.saetning).some((t) => tekster.some((tt) => String(tt || '').includes(t)));
+    if (andel < 0.5 && !talIArtikel) { log(`   ℹ️ fund står ikke i artiklen (højst ${Math.round(andel * 100)} % fælles ord, tallene heller ikke) - sprunget over: ${String(x.saetning).slice(0, 100)}`); continue; }
+    ikkeFundet++;
+    ikkeFundne.push(x.saetning);
+  }
+  anvend.sidsteIkkeFundne = ikkeFundne;
   // Tomme FAQ-svar og faktabokspunkter fjernes; en tom titel/meta må aldrig opstå.
   f.faqs = (f.faqs || []).filter((q) => q.answer.split(/\s+/).length >= 5);
   f.faktaboks = (f.faktaboks || []).filter((k) => k.text.split(/\s+/).length >= 5);
@@ -156,7 +191,9 @@ ${ss.map((x, i) => `${i + 1}. ${x}`).join('\n')}`;
 // fundet" kun usikker (skeptikeren afgør); kun "siden fundet, men citat/tal står der ikke" er fejl.
 const BELAEG_PR_KALD = 3;
 async function belaegKald(genAI, hentModel, model, ss) {
-  for (let forsoeg = 0; forsoeg < 2; forsoeg++) {
+  // 27/10: 3 forsøg med pause (20 s, 60 s) i stedet for 2 lige efter hinanden.
+  for (let forsoeg = 0; forsoeg < 3; forsoeg++) {
+    if (forsoeg) await new Promise((v) => setTimeout(v, (forsoeg === 1 ? 20 : 60) * 1000));
     try {
       const r = await hentModel(genAI, { model, tools: [{ googleSearch: {} }], generationConfig: { temperature: 0, maxOutputTokens: 16384, thinkingConfig: { thinkingLevel: process.env.BELAEG_TAENK || 'low' } } }).generateContent(belaegPrompt(ss));
       const tekst = r.response.text() || '';
@@ -167,7 +204,7 @@ async function belaegKald(genAI, hentModel, model, ss) {
       // Derfor huskes det, om kaldet faktisk søgte; uden søgning kan svaret kun bekræfte, ikke dømme.
       const soegte = (r.response.candidates?.[0]?.groundingMetadata?.webSearchQueries?.length || 0) > 0;
       if (Array.isArray(arr)) return arr.map((x) => (x && typeof x === 'object' ? { ...x, soegte } : x));
-    } catch (e) { console.log(`   ⚠️ belæg-kald fejlede (forsøg ${forsoeg + 1}): ${String(e.message).split('\n')[0].slice(0, 200)}`); }
+    } catch (e) { console.log(`   ⚠️ belæg-kald fejlede (forsøg ${forsoeg + 1} af 3): ${String(e.message).split('\n')[0].slice(0, 200)}`); }
   }
   return null;
 }
@@ -177,7 +214,9 @@ export async function belaeg(genAI, hentModel, model, ss) {
   const svar = [];
   for (let i = 0; i < ss.length; i += BELAEG_PR_KALD) {
     const del = await belaegKald(genAI, hentModel, model, ss.slice(i, i + BELAEG_PR_KALD));
-    if (del === null) return null;
+    // 27/10: lykkes et belæg-kald ikke efter 3 forsøg, bliver dets sætninger "usikre" (skeptikeren,
+    // der søger selv, afgør dem) - i stedet for at hele den betalte artikel smides ud.
+    if (del === null) { console.log(`   ℹ️ Belæg: ${Math.min(BELAEG_PR_KALD, ss.length - i)} sætning(er) usikre - kaldet lykkedes ikke.`); continue; }
     svar.push(...del.map((x) => ({ ...x, n: x && Number(x.n) + i })));
   }
   const ikkeBelagt = [], ikkeFundet = [];
@@ -237,8 +276,8 @@ export async function slutkontrol(genAI, hentModel, model, f, k, log = console.l
   udenRet.forEach((x, i) => { if (nye[i] && nye[i] !== x.saetning) x.rettet = nye[i]; });
   if (udenRet.length) log(`   ↻ rettet efter kilde: ${nye.filter(Boolean).length} af ${udenRet.length}${nye.filter(Boolean).map((t) => `\n     + ${t.slice(0, 160)}`).join('')}`);
 
-  const ikkeFundet = anvend(f, [...fund.values()]);
-  if (ikkeFundet) throw new Error(`Slutkontrol: ${ikkeFundet} fanget sætning(er) kunne ikke findes i artiklen. Artiklen skrives ikke.`);
+  const ikkeFundet = anvend(f, [...fund.values()], log);
+  if (ikkeFundet) throw new Error(`Slutkontrol: ${ikkeFundet} fanget sætning(er) kunne ikke findes i artiklen. Artiklen skrives ikke. ("${String(anvend.sidsteIkkeFundne[0] || '').slice(0, 90)}")`);
   // Rettelserne tjekkes én gang til - med alle tre lag. Holder en ikke, fjernes den.
   const rettede = [...fund.values()].filter((x) => x.rettet).map((x) => x.rettet);
   rap.fjernet = fund.size - rettede.length;
@@ -269,4 +308,4 @@ export async function slutkontrol(genAI, hentModel, model, f, k, log = console.l
   return rap;
 }
 
-export { brod, kilder };
+export { brod, kilder, anvend }; // anvend: eksporteret til testen _udkast/_test-anvend.mjs
