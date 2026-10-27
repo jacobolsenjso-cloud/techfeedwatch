@@ -5,6 +5,7 @@ channelTitle: "Toasty Bros"
 channelId: "UCwdEr_DVvYp6Maf-OTw7z_w"
 publishedAt: "2026-07-06T19:00:21Z"
 date: "2026-10-27"
+updated: "2026-10-27"
 tags:
   - "PC Building & Gaming"
   - "Hardware & Chips"
@@ -70,6 +71,8 @@ For processor specifications, according to [Valve](https://www.valvesoftware.com
 
 For system memory, according to Valve's Steam Hardware & Software Survey for September 2026, 42.22% of surveyed PC gamers had 32GB of system RAM. This established 32GB as the most common memory configuration across active gaming systems.
 
+Although I do not play games myself, modern releases have reached a point where stepping into them feels remarkably close to real life. That visual fidelity is why hardware demands shift so rapidly from one year to the next. Aiming well past baseline numbers ensures a machine stays capable instead of falling behind after a few software patches.
+
 ## How Do CPU, GPU, and RAM Specs Interact?
 The CPU, GPU, and RAM interact as an assembly line. Each part passes data to the next component. 
 
@@ -106,6 +109,8 @@ To keep a gaming PC balanced, follow these practical rules:
 - Match high-tier graphics cards with modern multi-core processors.
 - Provide enough system RAM so the operating system never swaps data to storage disks.
 - Install modern games onto solid-state drives rather than mechanical hard drives.
+
+While I have never built a computer myself, avoiding bottlenecks is a basic rule across any mechanical setup. Spending heavily on one top-tier chip while neglecting the supporting hardware leaves performance stranded. Choosing balanced components gives you steady results without wasting money on speed the machine cannot use.
 
 ## Toasty Bros Builds a $1,700 All-AMD Gaming PC
 Toasty Bros demonstrates component balance by assembling an all-AMD gaming desktop built for 1440p resolution play. 
