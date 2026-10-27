@@ -103,7 +103,8 @@ RULES
 - His notes are a COMPASS for how he thinks and talks - not a list of lines to insert. Express his view in NEW words that fit this exact article. Use at most ONE concrete example or story from his notes in the whole piece, and only where it fits that section precisely. Idioms quoted in his notes are only examples of his tone - never copy them.
 - Use ONLY what his notes state. Never invent experiences, details, numbers, dates or names. Do not mention employers, places, his age, family, partner or private life.
 - Never mention AdSense, Google rejecting his site, or anything about his site being rejected.${seneste.length ? `
-- His voice already appears in other recent articles (below). Do NOT reuse their stories, examples, idioms or phrasing.${overbrugte(seneste).length ? ` These are used up for now - do not use them at all: ${overbrugte(seneste).join('; ')}.` : ''}` : ''}
+- His voice already appears in other recent articles (below). Do NOT reuse their stories, examples, idioms or phrasing.${overbrugte(seneste).length ? ` These are used up for now - do not use them at all: ${overbrugte(seneste).join('; ')}.` : ''}${slidteVendinger(seneste).length ? `
+- WORN PHRASES - these already appear in several of his recent paragraphs. Do NOT use them or close variants; if the idea fits, say it in completely new words: ${slidteVendinger(seneste).map((v) => `"${v}"`).join(', ')}.` : ''}` : ''}
 - Do not repeat facts the article already gives. A number may only appear if the article already states it, with the same source.
 - If his notes say he has no experience with the topic, say that honestly in one short clause, then give his view.
 - No headings, no lists, no quotation marks around the whole text, no sign-off.
@@ -167,6 +168,39 @@ export function overbrugte(seneste) {
   const s10 = seneste.slice(0, 10);
   return Object.entries(ANEKDOTER).filter(([, re]) => s10.filter((x) => re.test(x)).length >= 2).map(([navn]) => navn);
 }
+// 27/10 (Jacob valgte A+B): vendinger, der går igen i hans seneste afsnit (2-4 ord i mindst 2 afsnit).
+// Målt 27/10: "common sense" stod i 5 af de nyeste stemme-afsnit (hans note "brug sund fornuft" i
+// core.md), og "I have no personal experience" gik igen - gaming-artiklen fik 3 afslag og ingen stemme.
+// Nu får modellen listen FØR den skriver, så den siger det samme med nye ord.
+const FYLDORD = new Set(('a an the and or but of to in on at for with by from as is are was were be been it its this that these those ' +
+  'i me my i\'m i\'ve we you your he his they them their not no so if than then just very can will would should could do does have has had ' +
+  'what when where which who how why there here about into over more most also only even really').split(' '));
+const MENING = new Set(['i', 'my', 'me', "i'm", "i've", 'think', 'believe', 'view', 'in', 'opinion', 'feel']);
+export function slidteVendinger(seneste = [], max = 12) {
+  const ord = (x) => x.toLowerCase().replace(/[^a-z0-9' ]+/g, ' ').split(/\s+/).filter(Boolean);
+  const taelling = new Map();
+  for (const afsnit of seneste) {
+    const w = ord(afsnit);
+    const her = new Set();
+    for (let n = 2; n <= 4; n++) for (let i = 0; i + n <= w.length; i++) her.add(w.slice(i, i + n).join(' '));
+    for (const g of her) taelling.set(g, (taelling.get(g) || 0) + 1);
+  }
+  const kandidater = [...taelling].filter(([g, n]) => {
+    if (n < 2) return false;
+    const w = g.split(' ');
+    const indhold = w.filter((x) => !FYLDORD.has(x));
+    if (w.every((x) => MENING.has(x) || FYLDORD.has(x)) && !indhold.some((x) => !MENING.has(x))) return false; // "in my view", "i think"
+    return indhold.length >= (w.length === 2 ? 2 : 1);
+  }).sort((a, b) => b[1] - a[1] || b[0].split(' ').length - a[0].split(' ').length);
+  const valgt = [];
+  for (const [g] of kandidater) {
+    if (valgt.some((v) => v.includes(g) || g.includes(v))) continue;
+    valgt.push(g);
+    if (valgt.length >= max) break;
+  }
+  return valgt;
+}
+
 // Fem ord i træk, der allerede står i et af de seneste afsnit = genbrugt formulering.
 function genbrugtFrase(tekst, seneste) {
   const ord = (x) => x.toLowerCase().replace(/[^a-z0-9' ]+/g, ' ').split(/\s+/).filter(Boolean);
@@ -200,19 +234,28 @@ const PRIVAT = /\b(54|fifty-four|girlfriend|partner|wife|children|kids|Scotland|
 const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*Olufsen|DS Dental|Beumer|Terma|Semco|Keolis|Region Midtjylland/i;
 // 25/10 kl. 21:33 (Jacob: "de afsnit er for lange ... der skal være flere afsnit"): 2-3 korte afsnit
 // (2-3 sætninger hver) i hver sin sektion i stedet for ét langt. Returnerer { ok, dele:[{sektion,tekst}] }.
-export function tjekMinHoldning(svar, artikel, seneste = []) {
+// 27/10 (Jacob valgte A+B): rens = true bruges efter 3 afslag. Så fjernes kun den sætning, der genbruger
+// en formulering, så længe afsnittet beholder mindst 2 sætninger (ellers droppes kun det afsnit) - i stedet
+// for at hele stemmen falder ud. Alle andre krav gælder uændret.
+export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = {}) {
   const raa = String(svar || '').trim();
   if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
   let j = null; try { j = JSON.parse((raa.match(/\[[\s\S]*\]/) || ['null'])[0]); } catch { /* nedenfor */ }
   if (!Array.isArray(j) || !j.length) return { ok: false, grund: 'svaret var ikke en JSON-liste med section/text' };
   const brod = String(artikel);
   const dele = [];
+  let renset = 0;
   for (const x of j.slice(0, 3)) {
-    const t = String(x?.text || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').replace(/\s*\n+\s*/g, ' ').trim();
+    let t = String(x?.text || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').replace(/\s*\n+\s*/g, ' ').trim();
     const sektion = String(x?.section || '').trim();
     if (!t) continue;
-    const ss = t.split(/(?<=[.!?])\s+/).filter((y) => y.split(/\s+/).length >= 3);
+    let ss = t.split(/(?<=[.!?])\s+/).filter((y) => y.split(/\s+/).length >= 3);
     if (ss.length < 1 || ss.length > 3) return { ok: false, grund: `et afsnit har ${ss.length} sætninger (skal være 2-3)` };
+    if (rens && genbrugtFrase(t, seneste)) {
+      const rene = ss.filter((s) => !genbrugtFrase(s, seneste));
+      if (rene.length < 2 || genbrugtFrase(rene.join(' '), seneste)) continue; // dette afsnit droppes
+      ss = rene; t = rene.join(' '); renset++;
+    }
     if (PRIVAT.test(t)) return { ok: false, grund: 'privat oplysning' };
     if (FIRMAER.test(t)) return { ok: false, grund: 'firmanavn' };
     if (/AdSense|rejected my (site|blog|application)/i.test(t)) return { ok: false, grund: 'AdSense-historien må ikke stå i artikler' };
@@ -229,5 +272,5 @@ export function tjekMinHoldning(svar, artikel, seneste = []) {
   const historier = Object.entries(ANEKDOTER).filter(([, re]) => dele.some((d) => re.test(d.tekst))).map(([navn]) => navn);
   if (historier.length > 1) return { ok: false, grund: `${historier.length} af hans historier i samme artikel (højst 1): ${historier.join(', ')}` };
   if (!dele.some((d) => /\b(I|I'm|I've|my|me)\b/.test(d.tekst))) return { ok: false, grund: 'ikke i første person' };
-  return { ok: true, dele };
+  return { ok: true, dele, renset };
 }
