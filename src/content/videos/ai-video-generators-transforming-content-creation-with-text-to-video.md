@@ -13,8 +13,8 @@ summary: "AI video generators are rapidly democratizing professional-grade conte
 metaDescription: "Explore how AI video generators transform content creation. Learn about text-to-video and image-to-video tools like Hailuo AI for cinematic output."
 targetQuestion: "what is ai video generator"
 duration: "6:13"
-viewCount: 27581
-viewsUpdated: "2026-10-25"
+viewCount: 27596
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

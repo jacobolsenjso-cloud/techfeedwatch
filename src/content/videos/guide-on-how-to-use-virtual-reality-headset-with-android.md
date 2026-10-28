@@ -12,8 +12,8 @@ summary: "Virtual reality headsets running on modified mobile operating systems 
 metaDescription: "Learn how to use virtual reality headset with android apps via direct APK downloads, native installers, store repositories, and SideQuest setup."
 targetQuestion: "how to use a virtual reality headset with android"
 duration: "8:01"
-viewCount: 60351
-viewsUpdated: "2026-10-25"
+viewCount: 61104
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

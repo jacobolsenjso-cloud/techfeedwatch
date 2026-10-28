@@ -13,8 +13,8 @@ summary: "Investing in high-demand companies like SpaceX pre-IPO offers unique o
 metaDescription: "Understand how to invest in SpaceX pre-IPO, exploring secondary markets, SPVs, and funds, along with critical risks like fees and lock-up periods."
 targetQuestion: "how to invest in spacex pre ipo"
 duration: "41:06"
-viewCount: 130044
-viewsUpdated: "2026-10-25"
+viewCount: 130069
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

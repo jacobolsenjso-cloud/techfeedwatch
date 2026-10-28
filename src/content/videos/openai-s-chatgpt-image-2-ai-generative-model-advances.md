@@ -13,8 +13,8 @@ summary: "OpenAI has released its latest iteration of AI image generation, spark
 metaDescription: "OpenAI's ChatGPT Image 2 advances AI image generation capabilities, reshaping creative industries and setting new benchmarks for multimodal AI."
 targetQuestion: "how could chatgpt images 2.0 fundamentally reshape graphic generation"
 duration: "14:24"
-viewCount: 68005
-viewsUpdated: "2026-10-25"
+viewCount: 68013
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

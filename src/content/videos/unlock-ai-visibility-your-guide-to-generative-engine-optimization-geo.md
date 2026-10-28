@@ -15,8 +15,8 @@ summary: "The emergence of generative AI has fundamentally altered consumer info
 metaDescription: "The emergence of generative AI has fundamentally altered consumer information retrieval, with a majority now consulting AI chatbots before purchasing."
 targetQuestion: "what does generative engine optimization mean"
 duration: "20:08"
-viewCount: 13358
-viewsUpdated: "2026-10-25"
+viewCount: 13570
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

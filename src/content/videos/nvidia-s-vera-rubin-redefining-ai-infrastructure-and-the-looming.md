@@ -15,8 +15,8 @@ summary: "Nvidia's upcoming Vera Rubin AI system represents a significant leap i
 metaDescription: "Nvidia's Vera Rubin AI system offers 10x more efficiency per watt, setting a new standard for AI data centers amid rising competition."
 targetQuestion: "what is nvidia vera rubin platform"
 duration: "14:00"
-viewCount: 265862
-viewsUpdated: "2026-10-25"
+viewCount: 267445
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

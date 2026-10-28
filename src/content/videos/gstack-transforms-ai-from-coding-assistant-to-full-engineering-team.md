@@ -13,8 +13,8 @@ summary: "G-Stack is an open-source framework developed by Y Combinator CEO Garr
 metaDescription: "Explore G-Stack, Y Combinator CEO Garry Tan's open-source framework transforming AI code models into an entire engineering team for rapid development."
 targetQuestion: "what is garry tan's gstack"
 duration: "1:19:40"
-viewCount: 273207
-viewsUpdated: "2026-10-25"
+viewCount: 273865
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

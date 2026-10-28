@@ -12,8 +12,8 @@ summary: "Search engine optimization (SEO) is the process of improving a website
 metaDescription: "Learn what SEO is and how search engines crawl, index, and rank pages to deliver unpaid traffic to websites across the internet."
 targetQuestion: "what is seo and how do search engines work"
 duration: "5:52"
-viewCount: 302424
-viewsUpdated: "2026-10-27"
+viewCount: 302426
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 recipe: 3

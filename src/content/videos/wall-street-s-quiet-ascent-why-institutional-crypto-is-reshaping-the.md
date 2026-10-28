@@ -13,8 +13,8 @@ summary: "Institutional adoption of crypto signifies the growing involvement of 
 metaDescription: "Understand institutional adoption of crypto: how big money, from MicroStrategy to JP Morgan, is integrating digital assets."
 targetQuestion: "what is institutional adoption of crypto"
 duration: "1:08:10"
-viewCount: 15350
-viewsUpdated: "2026-10-25"
+viewCount: 15358
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

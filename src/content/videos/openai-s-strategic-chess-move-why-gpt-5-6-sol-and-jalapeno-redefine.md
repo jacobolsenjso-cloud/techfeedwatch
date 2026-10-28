@@ -14,8 +14,8 @@ summary: "OpenAI's limited preview of GPT-5.6 Sol, influenced by government conc
 metaDescription: "OpenAI's GPT-5.6 Sol launch with government oversight and custom AI chip Jalapeño redefines frontier AI deployment and hardware strategy."
 targetQuestion: "what ai chips does openai use"
 duration: "15:44"
-viewCount: 54338
-viewsUpdated: "2026-10-25"
+viewCount: 54361
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

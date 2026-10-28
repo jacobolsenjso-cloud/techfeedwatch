@@ -13,8 +13,8 @@ summary: "Search engine optimization targets blue links and web traffic, while a
 metaDescription: "Wondering about the difference between AEO and SEO? Learn how answer engines pull citations, how ranking rules differ, and how to optimize for both."
 targetQuestion: "what is the difference between aeo and seo"
 duration: "4:33"
-viewCount: 19
-viewsUpdated: "2026-10-26"
+viewCount: 22
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 recipe: 3

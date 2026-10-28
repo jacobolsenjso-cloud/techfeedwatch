@@ -12,8 +12,8 @@ summary: "Humanoid robots can cause serious physical injuries, suffer catastroph
 metaDescription: "Can humanoid robots be dangerous? Explore the physical hazards, software glitches, and security risks facing modern bipedal machines."
 targetQuestion: "can humanoid robots be dangerous"
 duration: "10:34"
-viewCount: 345
-viewsUpdated: "2026-10-25"
+viewCount: 407
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

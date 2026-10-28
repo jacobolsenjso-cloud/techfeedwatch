@@ -15,8 +15,8 @@ summary: "The advent of AI-driven tools like Claude AI is redefining content cre
 metaDescription: "The advent of AI-driven tools like Claude AI is redefining content creation and search engine optimization."
 targetQuestion: "how to use ai for seo content writing"
 duration: "14:05"
-viewCount: 212
-viewsUpdated: "2026-09-16"
+viewCount: 215
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

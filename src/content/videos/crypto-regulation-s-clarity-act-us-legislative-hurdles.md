@@ -13,8 +13,8 @@ summary: "Cryptocurrency is regulated in the United States through an interlocki
 metaDescription: "Is cryptocurrency regulated in the US? Discover how federal agencies, state licensing, and tax codes govern digital assets across the nation."
 targetQuestion: "is cryptocurrency regulated in the us"
 duration: "42:43"
-viewCount: 10959
-viewsUpdated: "2026-10-25"
+viewCount: 10960
+viewsUpdated: "2026-10-28"
 thumbMax: false
 isShort: false
 recipe: 3

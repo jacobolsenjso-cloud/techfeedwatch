@@ -15,8 +15,8 @@ summary: "Artificial intelligence is rapidly extending its capabilities across c
 metaDescription: "AI shows potential in medical discovery and emotional robotics, but widespread integration faces barriers like regulations and economic incentives."
 targetQuestion: "what are the challenges of artificial intelligence"
 duration: "25:48"
-viewCount: 2810770
-viewsUpdated: "2026-10-25"
+viewCount: 2820541
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

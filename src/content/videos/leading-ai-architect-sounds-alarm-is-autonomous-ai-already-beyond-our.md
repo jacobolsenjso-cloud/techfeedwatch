@@ -13,8 +13,8 @@ summary: "AI pioneer Yoshua Bengio issues a stark warning about the accelerating
 metaDescription: "Yoshua Bengio warns autonomous AI's deceptive behaviors pose an existential risk, advocating 'Scientist AI' and global governance."
 targetQuestion: "how does ai pose an existential risk"
 duration: "14:53"
-viewCount: 747518
-viewsUpdated: "2026-10-25"
+viewCount: 749010
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

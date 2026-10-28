@@ -12,8 +12,8 @@ summary: "Programming languages differ fundamentally in how they execute instruc
 metaDescription: "Learn the real difference between programming languages, from execution models and memory safety to typing systems and modern developer trade-offs."
 targetQuestion: "difference between programming languages"
 duration: "5:56"
-viewCount: 580
-viewsUpdated: "2026-10-25"
+viewCount: 582
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

@@ -15,8 +15,8 @@ summary: "The emergence of accessible AI agents marks a significant shift in wor
 metaDescription: "Emerging AI agents empower non-technical users to build adaptive digital assistants, driving workflow automation and competitive operational efficiency."
 targetQuestion: "what are no code ai agents"
 duration: "26:05"
-viewCount: 302294
-viewsUpdated: "2026-10-25"
+viewCount: 303024
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

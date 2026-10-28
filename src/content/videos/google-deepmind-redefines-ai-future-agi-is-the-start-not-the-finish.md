@@ -14,8 +14,8 @@ summary: "Google DeepMind's 'From AGI to ASI' paper reframes Artificial General 
 metaDescription: "Google DeepMind's latest paper argues AGI is just the start of rapid AI scaling, leading to Artificial Superintelligence. Learn what comes next."
 targetQuestion: "difference between agi and superintelligence"
 duration: "13:33"
-viewCount: 149389
-viewsUpdated: "2026-10-25"
+viewCount: 149618
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

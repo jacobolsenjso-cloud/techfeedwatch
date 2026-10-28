@@ -12,8 +12,8 @@ summary: "Augmented reality already exists and functions across hundreds of mill
 metaDescription: "Does augmented reality exist? Yes, AR operates daily across enterprise tools and smartphones, though consumer holographic glasses face hardware hurdles."
 targetQuestion: "does augmented reality exist"
 duration: "7:18"
-viewCount: 1034
-viewsUpdated: "2026-10-25"
+viewCount: 1044
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

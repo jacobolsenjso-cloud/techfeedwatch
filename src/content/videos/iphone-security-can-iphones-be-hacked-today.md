@@ -12,8 +12,8 @@ summary: "Yes, iPhones can be hacked through sophisticated zero-click exploits, 
 metaDescription: "Can iPhones be hacked? Discover how zero-click spyware breaches iOS security, how Apple defends its devices, and how to protect your phone from attacks."
 targetQuestion: "can iphones be hacked"
 duration: "5:59"
-viewCount: 79
-viewsUpdated: "2026-10-25"
+viewCount: 84
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

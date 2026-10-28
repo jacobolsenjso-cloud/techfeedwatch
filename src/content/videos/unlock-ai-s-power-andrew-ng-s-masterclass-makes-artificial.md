@@ -15,8 +15,8 @@ summary: "Achieving true AI prowess goes beyond merely implementing algorithms; 
 metaDescription: "Achieving true AI prowess goes beyond merely implementing algorithms; it demands a fundamental organizational overhaul."
 targetQuestion: "what is organizational ai"
 duration: "1:41:53"
-viewCount: 89228
-viewsUpdated: "2026-10-25"
+viewCount: 89791
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

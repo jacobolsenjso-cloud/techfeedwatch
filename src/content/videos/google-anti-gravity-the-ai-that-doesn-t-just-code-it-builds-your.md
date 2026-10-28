@@ -14,8 +14,8 @@ summary: "Google Antigravity represents a fundamental shift from AI-assisted cod
 metaDescription: "Google Antigravity represents a fundamental shift from AI-assisted coding to autonomous agent-first development environments."
 targetQuestion: "is google antigravity agentic ai"
 duration: "22:17"
-viewCount: 121176
-viewsUpdated: "2026-10-25"
+viewCount: 122420
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

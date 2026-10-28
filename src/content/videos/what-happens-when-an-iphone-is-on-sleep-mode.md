@@ -11,7 +11,7 @@ summary: "When an iPhone enters Sleep mode, it silences incoming phone calls, al
 metaDescription: "Wondering what happens when an iPhone is on sleep mode? Learn how Sleep Focus silences calls, keeps your alarms active, and dims your lock screen."
 targetQuestion: "what happens when an iphone is on sleep mode"
 duration: "31:57"
-viewCount: 467
+viewCount: 468
 viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false

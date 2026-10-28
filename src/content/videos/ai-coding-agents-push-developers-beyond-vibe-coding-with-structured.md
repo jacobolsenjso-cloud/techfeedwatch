@@ -14,8 +14,8 @@ summary: "The advent of AI coding agents is reshaping software development by in
 metaDescription: "Discover how AI coding agents and spec-driven toolkits like Superpowers are revolutionizing software development, moving beyond 'vibe coding.'"
 targetQuestion: "how to use ai coding agents effectively"
 duration: "10:59"
-viewCount: 103410
-viewsUpdated: "2026-10-25"
+viewCount: 103988
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

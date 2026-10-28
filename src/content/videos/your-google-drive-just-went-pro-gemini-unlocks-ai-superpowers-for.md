@@ -14,8 +14,8 @@ summary: "The integration of Google Gemini into Drive transforms cloud storage f
 metaDescription: "The integration of Google Gemini into Drive transforms cloud storage from a static repository into an active, intelligent assistant."
 targetQuestion: "how do gemini ai tools enhance google drive"
 duration: "6:22"
-viewCount: 16364
-viewsUpdated: "2026-10-25"
+viewCount: 16585
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

@@ -14,8 +14,8 @@ summary: "Strategic SaaS pricing moves beyond simple cost recovery, anchoring fi
 metaDescription: "Strategic SaaS pricing moves beyond simple cost recovery, anchoring firmly on the quantifiable value a product delivers to an enterprise customer."
 targetQuestion: "b2b saas pricing models"
 duration: "17:46"
-viewCount: 166686
-viewsUpdated: "2026-10-25"
+viewCount: 167252
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 revised: true

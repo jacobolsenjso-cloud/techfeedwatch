@@ -13,8 +13,8 @@ summary: "NVIDIA's GTC event served as a platform to underscore its expansive st
 metaDescription: "NVIDIA GTC 2026 reveals Jensen Huang's vision for AI chip development and strategic cloud partnerships. Discover NVIDIA's AI hardware and market expansion."
 targetQuestion: "is nvidia an ai company"
 duration: "2:20:11"
-viewCount: 210551
-viewsUpdated: "2026-10-25"
+viewCount: 211149
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

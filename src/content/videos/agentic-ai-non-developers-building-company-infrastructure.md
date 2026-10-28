@@ -13,8 +13,8 @@ summary: "A new trend sees non-traditional developers leveraging agentic AI to c
 metaDescription: "Discover how agentic AI lets non-developers build critical company infrastructure, transforming workflows and democratizing software creation."
 targetQuestion: "how to use agentic ai for coding"
 duration: "34:23"
-viewCount: 170
-viewsUpdated: "2026-10-10"
+viewCount: 171
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:

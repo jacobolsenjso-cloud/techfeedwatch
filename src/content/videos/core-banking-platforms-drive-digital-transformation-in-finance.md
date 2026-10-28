@@ -13,8 +13,8 @@ summary: "Modern core banking platforms are proving vital for financial institut
 metaDescription: "Core banking platforms like Engine are essential for financial institutions' digital transformation, enabling rapid innovation and competitive advantage."
 targetQuestion: "what is core banking platform"
 duration: "34:35"
-viewCount: 121
-viewsUpdated: "2026-10-25"
+viewCount: 125
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
 faqs:
