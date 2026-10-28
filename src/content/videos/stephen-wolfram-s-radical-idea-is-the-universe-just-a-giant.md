@@ -47,7 +47,7 @@ Theoretical physicists classify these information-theoretic frameworks into dist
 
 Cellular automata provide one primary engine for simulating physical systems. In these grid models, simple local rules dictate whether a cell changes state based on its neighbors. Despite simple rules, complex behaviors spontaneously propagate across the grid.
 
-Quantum mechanics introduces a more dynamic computational mechanism. Readers interested in foundational hardware concepts can explore [What Quantum Computing Is, Explained Simply](/video/quantum-computing-separating-the-billions-in-hype-from-the-hard). Instead of classical bits, nature may operate on quantum bits that superpose states and process entangled logic.
+Quantum mechanics introduces a more dynamic computational mechanism. Readers interested in foundational hardware concepts can explore [Quantum computing explained simply and how it works](/video/quantum-computing-separating-the-billions-in-hype-from-the-hard). Instead of classical bits, nature may operate on quantum bits that superpose states and process entangled logic.
 
 According to research published by MIT mechanical engineering professor Seth Lloyd in a 2002 issue of *Physical Review Letters*, the observable universe has registered no more than 10^90 bits of information since the Big Bang. Lloyd calculated in that same 2002 paper that the cosmos has executed no more than 10^120 elementary operations throughout cosmic history. 
 

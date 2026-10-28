@@ -65,7 +65,7 @@ This process ensures transparency because the entire history of transactions is 
 
 The autonomous nature of blockchain means that transactions and interactions can be executed automatically through How Do Smart Contracts Work in Blockchain Technology, self-executing contracts with the terms of the agreement directly written into code.
 
-This programmatic execution further reduces the need for trust in human intermediaries, as the contract logic dictates the outcome, not an individual's discretion. [Smart Contracts: Trust, Efficiency, Security, and Scalability Issues](/video/smart-contracts-demystified-the-invisible-engine-powering-crypto-and/) digs deeper into these aspects.
+This programmatic execution further reduces the need for trust in human intermediaries, as the contract logic dictates the outcome, not an individual's discretion. [Can Smart Contracts Be Trusted? What You Should Know](/video/smart-contracts-demystified-the-invisible-engine-powering-crypto-and/) digs deeper into these aspects.
 
 The distributed consensus model, coupled with cryptographic security, makes it incredibly difficult and computationally expensive to alter past records.
 
