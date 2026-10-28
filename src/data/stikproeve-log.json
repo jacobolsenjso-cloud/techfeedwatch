@@ -46,5 +46,30 @@
   ],
   "usd": 0.0062,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-10-28T06:57:46.817Z",
+  "artikler": [
+   {
+    "slug": "robotics-for-kids-teaches-science-and-engineering-skills",
+    "tjekket": 9,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 5,
+    "fund": []
+   },
+   {
+    "slug": "will-a-gaming-pc-connect-to-a-tv-without-issues",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 8,
+    "fund": []
+   }
+  ],
+  "usd": 0.0076,
+  "soegninger": 0
  }
 ]

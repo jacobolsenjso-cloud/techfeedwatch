@@ -1,100 +1,152 @@
 ---
-title: "What Hybrid Quantum-Classical Computing Is"
-youtubeId: "spRN7DfzhrU"
-channelTitle: "Sabine Hossenfelder"
-channelId: "UC1yNl2E66ZzKApQdRuTQ4tw"
-publishedAt: "2026-06-30T15:00:18Z"
+title: "Hybrid quantum classical computing and how it works today"
+youtubeId: "Vk__RaHK9pA"
+channelTitle: "CodeLucky"
+channelId: "UCFMdEr1H3hhCIdoKwsK80Tw"
+publishedAt: "2026-01-03T19:47:35Z"
 date: "2026-07-11"
-updated: "2026-09-14"
+updated: "2026-10-28"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"
-summary: "Hybrid quantum-classical computing integrates traditional supercomputing with quantum processors to tackle complex computational challenges. This approach addresses the current limitations of quantum hardware, which still requires a massive number of stable qubits to achieve a true 'quantum advantage.' While investments surge from governments and major tech companies, the technology faces skepticism regarding its immediate practical applications beyond niche scenarios."
-metaDescription: "Explore hybrid quantum-classical computing, how it integrates traditional systems with quantum processors, its current uses."
+summary: "Hybrid quantum-classical computing unites conventional processors with specialized quantum chips to tackle complex mathematical problems. Classical processors direct program flow and manage optimization while quantum chips calculate specific subroutines. This coordinated architecture bypasses physical hardware limits by sharing computational tasks across both systems."
+metaDescription: "Learn how hybrid quantum classical computing combines CPUs and QPUs to speed up calculations, process simulation data, and handle hardware noise."
 targetQuestion: "what is hybrid quantum classical computing"
-duration: "1:09:01"
-viewCount: 202118
-viewsUpdated: "2026-10-25"
+duration: "5:59"
+viewCount: 612
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
-rewrittenAt: "2026-09-14"
+recipe: 3
+rewrittenAt: "2026-10-28"
 faqs:
-  - question: "What is the core difference between quantum and classical bits?"
-    answer: "Classical bits exist in a definite state of 0 or 1. Qubits, in contrast, can exist in superposition, allowing them to be 0, 1, or both simultaneously, and can be entangled, creating exponentially more states for calculation."
-  - question: "Why are hybrid quantum-classical approaches being used?"
-    answer: "Hybrid approaches combine the strengths of classical supercomputers with nascent quantum processors to overcome the current limitations of quantum hardware, which lacks the stability and qubit count needed for broad standalone applications. This allows researchers to explore quantum algorithms even with current noisy quantum systems."
-  - question: "What are the current practical applications of quantum computing?"
-    answer: "The only application for large-scale quantum computers that generates little doubt is the potential to break certain old encryption protocols. Other proposed uses in fields like quantum chemistry, material science, logistics, and finance have largely proven elusive or are now being addressed by advanced AI."
-  - question: "How much investment is going into quantum computing?"
-    answer: "Governments globally, including China and the US, are making significant investments. For example, the US government recently committed $2 billion, while major companies like IBM, Google, and Amazon continue to develop quantum hardware."
+  - question: "What is hybrid quantum computing?"
+    answer: "According to Microsoft Quantum, hybrid quantum computing is an architecture where classical computers and quantum processing units work together to solve problems. Classical machines manage program flow while quantum chips run targeted mathematical operations."
+  - question: "How is quantum computing different from classical computing?"
+    answer: "Classical machines calculate through deterministic binary bits that represent zeros or ones sequentially. In contrast, quantum processors rely on qubits that hold complex overlapping states to evaluate vast solution spaces simultaneously."
+  - question: "How does hybrid technology work in quantum computing?"
+    answer: "Classical systems set parameters and compile code into adaptive kernels that run on quantum hardware. According to Amazon Web Services, classical supercomputers then process the measurement batches returned by the quantum hardware."
+keyFacts:
+  - text: "The CUDA-Q platform provides an open-source programming model across CPUs, GPUs, and QPUs that supports adaptive quantum kernels defined under Quantum Intermediate Representation (QIR) specifications."
+    source: "NVIDIA"
+    url: "https://resources.nvidia.com/en-us-quantum-computing-resource-center/cuda-quantum"
+  - text: "Engineers executed an end-to-end NVIDIA CUDA-Q program connecting live qubits to a Pulse Processing Unit (PPU) controller and classical GPUs across the microsecond-speed NVIDIA NVQLink connection architecture."
+    source: "Quantum Machines in September 2026"
+    url: "https://www.quantum-machines.co/press-release/quantum-machines-nvidia-nvqlink-cuda/"
+  - text: "Integrating algorithmic synthesis with NVIDIA CUDA-Q kernels reduced the execution time of a hybrid quantum-classical simulation workflow from 67 minutes to 2.5 minutes on a single NVIDIA A100 GPU."
+    source: "Classiq in October 2026"
+    url: "https://www.classiq.io/insights/classiq-cuda-q-faster-hybrid-quantum-workflows"
 ---
 
-Hybrid quantum-classical computing represents an integrated approach where the strengths of conventional high-performance computing are combined with the unique capabilities of quantum processors. This synergy aims to address problems that neither system can efficiently solve alone, pushing the boundaries of computational science. It stands as the current operational model for many organizations exploring quantum technologies.
+Hybrid quantum-classical computing joins traditional computers with quantum processors to solve complex problems. Standard central processing units (standard computer processors) handle overall system logic.
 
-## The Foundations of Quantum Computing
+Meanwhile, quantum chips execute specialized mathematical routines that exceed normal computer capabilities. This team setup allows each computing platform to focus on its specific strengths during challenging calculations.
 
-Quantum computing operates on principles fundamentally different from classical computing, primarily through the use of quantum bits, or qubits. Unlike a [classical bit](/video/difference-between-qubit-and-classical-bit-explained/) that holds a definite state of either 0 or 1, a qubit can exist in a superposition of both states simultaneously.
+## How does a hybrid quantum-classical architecture operate?
 
-Due to this basic quantum feature, pairing a qubit possessing two states, 0 and 1, with an additional qubit yields a product state spanning 00, 01, 10, and 11. That makes four distinct states.
+A hybrid quantum-classical architecture operates by splitting a computational workload. It divides tasks between central processing units and quantum processing units.
 
-Introduce a third qubit, and you have eight possible combinations. Generally, for *n* qubits, the number of possible states is 2 to the *n*.
+The classical system initiates the workflow and assigns specific instructions to the quantum hardware. Engineers use specialized environments to manage this collaboration across diverse hardware types. According to [NVIDIA](https://www.nvidia.com/en-us/), the CUDA-Q platform provides an open-source programming model.
 
-While this exponential growth in possible states might seem unique, classical computers also manage exponentially growing bit combinations. The genuine quantum edge arises not simply from grouping qubits together, but from the capacity to entangle them.
+It connects CPUs (standard computer processors), GPUs (graphics processing units), and QPUs (quantum processing units). This platform supports adaptive quantum kernels (specialized computational routines running on a quantum chip). These kernels are defined under Quantum Intermediate Representation specifications (a standardized format for translating quantum code).
 
-Entanglement means that qubits become interlinked, where the state of one instantly influences the state of another, regardless of distance. This allows for complex combinations that cannot exist in a standard computer, such as sums of states like 01 + 10 with arbitrary prefactors.
+Physical connections between hardware components dictate how fast instructions move. According to Quantum Machines in September 2026, engineers executed an end-to-end NVIDIA CUDA-Q program.
 
-These entangled states dramatically expand the computational space, enabling quantum computers to perform certain calculations much faster than their classical counterparts. Even so, this major benefit only matters once a system reaches an adequately high count of stable qubits, roughly several hundred thousand to a million.
+It connected live qubits (the basic units of quantum information) to a Pulse Processing Unit controller. This controller is hardware that translates code into physical control pulses.
 
-## Hybrid Quantum-Classical Computing: An Evolving Strategy
+It also connected classical GPUs (graphics processing units) across the microsecond-speed NVIDIA NVQLink connection architecture. This architecture is a high-speed link connecting classical processors and quantum hardware. These high-speed channels let controllers update physical operations on the fly.
 
-The journey toward achieving a "quantum advantage" has faced significant hurdles, leading to a strategic shift across the industry. For years, the focus was on scaling quantum processors to achieve the critical qubit count needed for practical applications.
+A standard hybrid architecture divides duties across multiple system layers:
 
-IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026. These ambitious qubit targets have since disappeared from their public roadmaps, signaling that building fault-tolerant, large-scale quantum computers is proving more challenging than anticipated.
+- Classical processors run host applications, track variables, and manage optimization loops.
+- Hardware controllers convert digital code into physical microwave or radiofrequency pulses.
+- Quantum chips execute circuit operations on physical qubits and collect raw measurements.
+- Classical supercomputing clusters ingest quantum readout data for filtering and scientific analysis.
 
-This reassessment triggered a transition away from exclusively quantum methods toward hybrid models that unite conventional and quantum computers. These hybrid quantum approaches leverage existing classical supercomputing infrastructure to manage parts of a problem, while offloading specific, computationally intensive sub-routines to quantum processors.
+This coordinated structure allows developers to study [how quantum computing differs](/video/how-is-quantum-computing-different-from-classical-computing) from standard server processing. They can do this without building completely isolated quantum networks.
 
-This integrated model is often referred to by terms like "quantum-centric supercomputing," which is essentially newspeak for these hybrid strategies.
+A standard computer works through problems point by point, while a quantum processor evaluates multiple possibilities all at once. Handing step-by-step coordination over to regular processors while letting quantum chips do the heavy lifting matches the strengths of both tools. In my view, that practical division of labor is what keeps these complex setups workable.
 
-A clear illustration of this transition is IBM's recent disclosure that it simulated a big protein complex using quantum-centric supercomputing. This showcases the current operational reality: most of the calculation for such complex problems is still handled by a classical supercomputer.
+## Which algorithms rely on hybrid quantum workflows?
 
-Critically, the researchers themselves indicated in their paper that the results of the purely conventional and partly quantum computation were comparable. This highlights a key characteristic of current hybrid systems: the quantum contribution, while present and interesting for research, often doesn't yet provide a demonstrable acceleration or unique insight that can't be matched by classical methods.
+Hybrid quantum workflows power complex chemical simulations and combinatorial optimization algorithms. These algorithms exceed the capabilities of isolated classical computers.
 
-The advantage of these hybrid approaches, Sabine Hossenfelder notes, is often that it becomes difficult to definitively ascertain what specific part the quantum processor was uniquely good for. This integration allows companies to continue exploring quantum algorithms and hardware development without waiting for the elusive hundreds of thousands of stable qubits.
+Developers structure these routines as iterative calculations or sequential data pipelines. According to Amazon Web Services, Amazon Braket Hybrid Jobs assigns priority queueing to iterative algorithms.
 
-## Investment, Reality, and Eroding Promises
+These include VQE (Variational Quantum Eigensolver, an algorithm used to calculate molecular energy levels) and quantum machine learning. This priority scheduling ensures that subsequent quantum tasks run ahead of regular jobs. It prevents idle latency (unproductive waiting time) between classical optimization steps.
 
-Despite the current experimental nature and the absence of broad, practical applications, investment in quantum computing remains substantial, driven by national interest and technological competition. China has made quantum computing a part of its new five-year plan, signaling a strategic national commitment.
+Modern scientific applications increasingly split computational tasks into distinct stages. According to Amazon Web Services in October 2026, modern hybrid architectures increasingly use decoupled sequential pipelines. These pipelines are workflows where quantum and classical tasks run in separate, consecutive stages.
 
-Unsurprisingly, the US government has likewise sharply boosted its spending, committing a total of $2 billion to quantum computing recently. This surge in funding comes for a technology that, as of now, has zero broadly practical uses.
+Examples include quantum-classical auxiliary-field quantum Monte Carlo (QC-AFQMC, an advanced simulation algorithm). Another example is sample-based quantum diagonalization (SQD, a mathematical technique for finding molecular energy states). These workflows feed QPU (quantum processing unit) measurement batches into high-performance classical supercomputers.
 
-This influx of capital spurs new business ventures and manufacturing initiatives. GlobalFoundries, for example, promptly launched quantum technology solutions, establishing a new quantum business to cater to the nascent quantum industry. In a similar move, IBM is constructing a quantum foundry dedicated to quantum wafers to foster what it characterizes as America’s quantum leadership and innovation.
+| Workflow Architecture | Primary Hardware Role | Key Implementation Example |
+| --- | --- | --- |
+| Iterative optimization loops | QPU priority execution paired with classical optimizers | Variational Quantum Eigensolver (Amazon Web Services) |
+| Decoupled sequential pipelines | Classical supercomputers post-process QPU batches | QC-AFQMC and SQD algorithms (Amazon Web Services) |
+| Unified kernel acceleration | Microsecond CPU, GPU, and QPU links via NVQLink | NVIDIA CUDA-Q integration (Quantum Machines) |
 
-Major players like IBM, Google, and Amazon utilize superconducting circuits as qubits. These circuits benefit from the fact that they can be printed using established chip production methods on standard silicon wafers.
+## Co-processing reduces runtime and overcomes quantum noise
 
-While they are not standard microchips—requiring wires printed with materials that become superconducting at extremely low temperatures—the primary challenge has never been the production of the chips themselves. The real problem lies in effectively using these chips in combination and finding genuinely useful applications for them.
+Co-processing reduces execution runtime. It also shields calculations from physical qubit noise. It does this by pairing quantum sampling with classical post-processing techniques.
 
-The widespread enthusiasm for quantum computing often outpaces its current capabilities. Claims about quantum computing boosting AI or delivering personalized medicine are increasingly common, often appearing as marketing buzzwords—like "sprinkling AI on it," as the saying goes, "it's like the parsley of business."
+Current quantum hardware suffers from environmental noise and decoherence. Decoherence is the loss of a quantum state caused by environmental interference. This interference corrupts sensitive calculations.
 
-This trend of attaching quantum to other hyped technologies reflects the pressure to demonstrate relevance amidst significant investment. Many of the original, highly anticipated use cases for quantum computing have diminished over time.
+Combining quantum hardware with classical neural networks helps scientists extract accurate data despite physical noise. According to [IBM Research](https://research.ibm.com/), hybrid quantum workflows combine parameterized trial wavefunctions on quantum processors with classical neural network post-processing.
 
-Quantum chemistry, material science, logistics, and finance applications have eroded one after the other. This erosion is partly due to AI advancements performing tasks quantum computing was once expected to solve, and partly because researchers have struggled to find genuinely useful quantum applications, even theoretically.
+These wavefunctions are adjustable mathematical formulas describing a quantum system. According to IBM Research, this approach improves decoherence noise resilience (resistance to data-corrupting environmental interference). It also improves the precision of molecular ground-state calculations (computations finding a molecule's lowest possible energy state).
 
-## The Path Forward for Quantum Computing
+Classiq demonstrated that combining specialized processor kernels reduces computational runtimes. According to Classiq in October 2026, engineers integrated algorithmic synthesis with NVIDIA CUDA-Q kernels. The runtime dropped from 67 minutes to 2.5 minutes on a single NVIDIA A100 GPU.
 
-The single use case for sufficiently large quantum computers that virtually no one disputes is their capacity to crack certain older encryption protocols.
+In practice, industrial research teams do not need to wait for fault-tolerant hardware to study complex problems. Organizations can lease quantum processing time through cloud data centers right now. They run targeted simulations while using standard servers to verify the final mathematical output.
 
-This capability, however, is a niche use case and not a general-purpose solution for the average person or most businesses. Once older protocols are compromised, newer, quantum-resistant encryption methods will likely be implemented, limiting its long-term impact to legacy systems.
+## Communication latency and exponential classical compute restrict scaling
 
-The current field sees billions of dollars being allocated to quantum computing, which, as Sabine Hossenfelder puts it, "looks batshit crazy given the low expected return on investment."
+Physical communication delays between separate processors currently restrict the scalability of hybrid quantum systems. Exponential classical compute requirements also limit system growth.
 
-This perspective highlights the stark contrast when comparing quantum funding to other advanced scientific endeavors, such as nuclear fusion research, which receives a fraction of the investment despite a dramatically clearer pathway to practical returns. The quantum computing industry remains in a critical phase, balancing ambitious long-term potential with the immediate reality of limited practical applications.
+Data must travel back and forth between classical controllers and quantum cryostats. Cryostats are super-cooling refrigeration units that keep quantum processors near absolute zero.
 
-Future developments will likely focus on:
+Microsoft Quantum notes that these systems progress from batch execution to integrated systems. These integrated systems adjust quantum circuits while qubits remain coherent. System delays can cause qubits to lose their state before classical updates return.
 
-- Improving qubit stability
-- Increasing qubit counts
-- Refining hybrid quantum-classical algorithms to identify specific problems where quantum processors can offer a genuine, provable advantage
+Mitigating hardware errors also taxes standard computer hardware. According to the AWS Quantum Technologies Blog, classical subroutines mitigate the limits of quantum processors.
 
-Researchers continue to explore ways to leverage the unique properties of entanglement and superposition for optimization problems and complex simulations, but the road to widespread commercial utility for standalone quantum computers remains long and uncertain. Keeping an eye on verifiable breakthroughs in hybrid system performance and the emergence of genuinely indispensable quantum applications will be key indicators of progress.
+Subroutines are secondary programs running on standard computers. Techniques include circuit cutting (breaking a large quantum task into smaller pieces). Another technique is error mitigation (techniques that filter out hardware noise).
 
-[How Is Quantum Computing Different From Classical Computing?](/video/how-is-quantum-computing-different-from-classical-computing) and [What Hybrid Quantum Systems Are and How They Work](/video/quantum-leaps-how-real-world-quantum-computing-is-already-reshaping) provide additional context on these foundational concepts. The evolving role of companies and governments in this space is detailed further in What Quantum Computing Companies Are Building Now.
+According to the blog, these subroutines face exponentially increasing classical compute demands. These demands grow as qubit counts and circuit depths increase. Circuit depth means the number of consecutive operations executed by a quantum circuit.
+
+These scaling limits create distinct engineering obstacles:
+
+- Physical distance between cloud servers and cryogenic quantum chips creates data transmission latency.
+- Classical simulation costs scale exponentially when tracking deep, highly entangled quantum circuits (complex quantum calculations with many consecutive operations and linked qubits).
+- Short qubit coherence times terminate calculations if classical feedback loops run too slowly.
+
+Watching data travel back and forth between deep-freeze cooling units and regular hardware highlights how fragile the whole process remains. Speed is everything here, and signals need to move almost instantaneously, just like light traveling through fiber lines. Getting a clear look at these physical roadblocks helps separate real engineering hurdles from empty marketing.
+
+## CodeLucky explains the CPU-QPU coprocessor model and variational loops
+
+[CodeLucky](https://codelucky.com/) frames the quantum processing unit as a specialized coprocessor. A central processing unit manages this coprocessor directly across iterative computational loops.
+
+The creator points out that the industry remains in the Noisy Intermediate-Scale Quantum era. In this era, standalone quantum chips cannot complete long calculations without errors.
+
+In the video, CodeLucky illustrates the mechanics of the iterative variational loop through four distinct steps:
+
+1. The classical CPU guesses an initial set of parameters.
+2. The QPU executes a circuit using those specific parameters.
+3. The QPU measures the energy cost result and returns it to the host.
+4. The CPU runs a classical optimizer to adjust parameters and reduce cost.
+
+CodeLucky explains that the system cycles through this feedback routine hundreds or thousands of times to pinpoint the optimal result. The creator describes the Variational Quantum Eigensolver as the "Hello World" of hybrid computing for molecular ground-state calculations. CodeLucky notes that the Quantum Approximate Optimization Algorithm helps evaluate combinatorial choices out of trillions of possibilities.
+
+The video illustrates practical applications like managing logistics routes, designing electric vehicle batteries, and improving fertilizer manufacturing. CodeLucky adds that financial institutions can select investment mixes from millions of assets. CodeLucky states that integration with AWS and Azure will support transitions toward fault-tolerant systems over the next decade.
+
+## Sources
+
+- [Microsoft Quantum | Hybrid quantum computing](https://quantum.microsoft.com/en-us/insights/education/concepts/hybrid-quantum-computing) — microsoft.com
+- [Working with Amazon Braket Hybrid Jobs - Amazon Braket](https://docs.aws.amazon.com/braket/latest/developerguide/braket-jobs.html) — amazon.com
+- [Running scalable hybrid quantum-classical workflows by integrating Amazon Braket with AWS Batch | AWS Quantum Technologies Blog](https://aws.amazon.com/blogs/quantum-computing/running-scalable-hybrid-quantum-classical-workflows-by-integrating-amazon-braket-with-aws-batch/) — amazon.com
+- [CUDA Quantum 0.5 Delivers New Features for Quantum-Classical Computing](https://resources.nvidia.com/en-us-quantum-computing-resource-center/cuda-quantum) — nvidia.com
+- [Quantum machines nvidia nvqlink cuda](https://www.quantum-machines.co/press-release/quantum-machines-nvidia-nvqlink-cuda/) — quantum-machines.co
+- [Classiq + CUDA-Q: Faster Hybrid Quantum Workflows](https://www.classiq.io/insights/classiq-cuda-q-faster-hybrid-quantum-workflows) — classiq.io
+- [Considerations for evaluating thermodynamic properties with hybrid quantum-classical computing work-flows for ACS Spring 2021 - IBM Research](https://research.ibm.com/publications/considerations-for-evaluating-thermodynamic-properties-with-hybrid-quantum-classical-computing-work-flows) — ibm.com
+- [Quantum Chemistry with Quantum Computers and Neural Networks for ACS Spring 2021 - IBM Research](https://research.ibm.com/publications/quantum-chemistry-with-quantum-computers-and-neural-networks) — ibm.com
+- [Advancing hybrid quantum computing research with Amazon Braket and NVIDIA CUDA-Q | AWS Quantum Technologies Blog](https://aws.amazon.com/blogs/quantum-computing/advancing-hybrid-quantum-computing-research-with-amazon-braket-and-nvidia-cuda-q/) — amazon.com
+- [Hybrid Quantum-Classical Computing Explained - The Future of AI & Science](https://www.youtube.com/watch?v=Vk__RaHK9pA) — CodeLucky on YouTube

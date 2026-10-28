@@ -1,103 +1,128 @@
 ---
-title: "MKBHD's AR Glasses Prototypes Show Key Design Compromises"
-seoTitled: true
+title: "Different Types of AR Glasses: Optics and Hardware"
 youtubeId: "G0eKzU_fV00"
 channelTitle: "Marques Brownlee"
 channelId: "UCBJycsmduvYEL83R_U4JriQ"
 publishedAt: "2024-11-01T19:30:02Z"
 date: "2026-07-11"
-updated: "2026-08-19"
+updated: "2026-10-28"
 tags:
   - "AR & VR"
-summary: "The nascent field of augmented reality (AR) glasses is demonstrating distinct developmental paths, with tech giants showcasing advanced prototypes that underscore both immense potential and significant engineering hurdles. While Meta's Orion focuses on a tethered, highly refined experience, Snapchat's AR Spectacles prioritize an untethered, developer-focused approach. These early devices highlight critical challenges in display optics, power management, and intuitive human-computer interaction, signaling that true mainstream AR remains a future prospect. The differing strategies reflect the industry's experimental stage as it grapples with fundamental design compromises."
-metaDescription: "Early AR glasses prototypes show diverse design paths and significant challenges, indicating mainstream AR remains a future prospect."
+  - "Hardware & Chips"
+summary: "Augmented reality glasses fall into distinct categories based on optical architecture, display methods, and software tracking. While basic models project floating screens for media consumption, advanced units anchor digital objects directly onto the physical environment. Understanding how optical see-through waveguides differ from birdbath displays helps buyers choose the right hardware without falling for marketing hype."
+metaDescription: "Learn about the different types of AR glasses, optical waveguide displays, birdbath optics, and how spatial tracking separates smart glasses from monitors."
 targetQuestion: "different types of ar glasses"
 duration: "20:29"
-viewCount: 6927346
-viewsUpdated: "2026-10-25"
+viewCount: 6929728
+viewsUpdated: "2026-10-28"
 thumbMax: true
 isShort: false
-revised: true
+recipe: 3
+rewrittenAt: "2026-10-28"
 faqs:
-  - question: "What is the main difference between AR glasses and VR headsets?"
-    answer: "AR glasses overlay digital content onto the real world, allowing users to see and interact with both simultaneously. VR headsets, by contrast, fully immerse users in a virtual environment, blocking out the physical world."
-  - question: "What are the biggest technical challenges in developing AR glasses?"
-    answer: "Key challenges include miniaturizing powerful components into a glasses form factor, managing heat dissipation, achieving long battery life, creating high-resolution displays with a wide field of view, and developing intuitive input methods."
-  - question: "How do AR glasses typically handle user input?"
-    answer: "Early AR glasses use various input methods, including eye tracking (selecting items by looking at them), hand tracking (recognizing gestures), and advanced technologies like electromyography (EMG) wristbands that detect muscle impulses for subtle controls."
-  - question: "Why are current AR glasses prototypes not available to the public?"
-    answer: "These devices are still in an experimental stage, facing limitations such as short battery life, thermal constraints, high manufacturing costs, and bulky designs. Companies use them to refine technology and explore design compromises before developing consumer-ready products."
-rewrittenAt: "2026-08-19"
+  - question: "What are augmented reality glasses?"
+    answer: "Augmented reality glasses project computer graphics directly over your view of the physical world. According to SPIE, they use transparent optical combiners so you see reality and digital overlays simultaneously."
+  - question: "How does an AR glasses display work?"
+    answer: "Optical engines bounce light into a combiner lens positioned in front of your eyes. According to Dispelix, optical waveguides use nanostructured gratings and total internal reflection to route that light toward the viewer."
+  - question: "What are AR glasses used for?"
+    answer: "According to Allion, commercial devices serve functional roles like real-time sports metrics or personal entertainment via virtual cinema screens."
+keyFacts:
+  - text: "Optical see-through waveguides employ surface relief gratings (SRG) with sub-wavelength nanostructures to propagate light via total internal reflection, expanding the eyebox and creating virtual imagery at optical infinity."
+    source: "Dispelix"
+    url: "https://dispelix.com/resources/insights/optical-see-through-xr-displays/"
+  - text: "Prism and birdbath glasses such as the Viture Beast project a high-resolution, head-tracked virtual screen that mimics an ultrawide monitor, but lack depth-sensing cameras for world-anchored spatial mapping."
+    source: "PCMag's September 2026 hardware evaluations"
+    url: "https://www.pcmag.com/picks/the-best-smart-glasses"
 ---
 
-[Augmented reality](/video/what-premium-specs-mean-for-best-augmented-reality-glasses/) (AR) glasses represent a significant frontier in personal computing, aiming to integrate digital information directly into our perception of the real world. This technology promises a future where screens are no longer confined to physical devices but appear as interactive overlays visible only to the wearer.
+The market splits augmented reality glasses (eyewear that overlays digital images onto the real world) into four optical categories. These categories are prisms, free-form surfaces, birdbath optics, and optical waveguides.
 
-However, achieving this vision requires overcoming substantial engineering and design challenges, as demonstrated by early prototypes from major tech companies. These devices showcase innovative solutions while also revealing the fundamental compromises necessary at this stage of development.
+Devices range from simple heads-up notification prisms to screen-mirroring cinema glasses. They also include full spatial computing hardware (systems that map and interact with physical spaces).
 
-## The Vision for Augmented Reality Glasses
+True spatial units map physical rooms with onboard sensors. In contrast, basic display glasses merely place a flat virtual screen in front of your eyes.
 
-The concept of AR glasses occupies a unique space between virtual reality (VR) headsets and existing smartglasses. VR headsets offer deep immersion and advanced technology, but their bulk makes them impractical for everyday public use.
+## How do optical see-through glasses differ from video see-through?
+Optical see-through glasses allow natural light to pass straight through clear lenses. In contrast, video see-through headsets block real vision and display a digitized camera feed. 
 
-Smartglasses, conversely, prioritize a conventional glasses form factor, limiting them to basic functions like cameras, speakers, and minimal onboard computing. AR glasses aim for a "Goldilocks zone," combining the sophisticated digital overlays of VR with the discreet, wearable design of smartglasses.
+According to display architecture publications from the optics society SPIE, optical see-through glasses project computer-generated images directly into your eyes. They project images through semi-transparent combiners (optical elements that merge digital images with real-world light).
 
-This means packing powerful processors, advanced optics, and long-lasting batteries into a frame that resembles ordinary eyewear. The goal is to create a device that can project digital content directly into a user's field of view, tracking it to real-world objects and spaces, without isolating the user from their surroundings.
+You view the physical world with zero electronic delay. The real room stays visible even if the headset loses battery power.
 
-## Meta Orion: A Tethered Path to Refinement
+By contrast, video see-through hardware relies on outward-facing cameras. The system captures the room, processes the pixels, and redraws the physical world on opaque micro-displays inside the enclosure.
 
-Meta's Orion project exemplifies a highly refined, if tethered, approach to AR. This system consists of three main components:
+This happens when using [virtual reality and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) (extended reality devices). This approach creates perfect digital occlusion (blocking the physical world from view), where virtual items completely hide real objects.
 
-- The glasses themselves
-- A wireless compute puck that must remain within about 15 feet of the glasses
-- An electromyography (EMG) wristband
+However, video pass-through introduces hardware weight and motion sickness risks if cameras lag. Optical see-through hardware maintains safety because the user never loses direct eye contact with actual surroundings.
 
-The wristband is a standout innovation, measuring electrical impulses from the brain as they travel to the fingers.
+Optical designs follow distinct operational methods:
+- Direct physical vision with zero display latency (the delay before an image appears)
+- Battery-safe transparency if onboard electronics shut down
+- Lower power draw because cameras do not redraw every background pixel
 
-This allows for subtle, intuitive gestures to control the AR interface, even if the hand is out of sight. The prototype achieved about 80% accuracy with haptic feedback, suggesting a high potential for future development, possibly even enabling mid-air handwriting for text input.
+Although I have never used smart eyewear myself, safety has always been my first priority in any technical environment. During my years running heavy cranes offshore, having an unobstructed line of sight was essential for keeping people out of harm's way. Knowing that optical glass still lets you see the room if the power cuts out makes it a far more reassuring choice.
 
-The Orion glasses, weighing around 100 grams, offer a transparent view of the world with digital overlays. They feature a 70-degree field of view, allowing graphics to remain largely within the user's line of sight as they look around.
+## Waveguide lenses provide transparency while birdbath optics maximize brightness
+Waveguide lenses route light through flat glass for maximum real-world transparency. In comparison, birdbath optics bounce light off curved mirrors to deliver richer color and contrast.
 
-Demos included handling multi-window interfaces like Instagram and video calls floating in space, and an AI feature that could label real-world objects, such as ingredients on a table, with tracking blue dots. A shared 3D Pong game, anchored to a QR code, demonstrated multi-user AR experiences.
+According to optical manufacturer Avantier, the four primary optical architectures in augmented reality glasses are prisms, free-form surfaces, birdbath optics, and optical waveguides. Prisms reflect small status badges in a corner. Free-form optics shape light rays through molded plastic lenses. 
 
-The engineering behind Orion is complex. The frames are made of magnesium, chosen for its rigidity to maintain lens alignment and its effectiveness as a heat sink for the internal components. The glasses contain 7 custom-designed small sensors and cameras for eye and environment tracking, along with custom silicon to process data.
+Waveguide designs solve the bulk problem of older headsets. Waveguide manufacturer [Dispelix](https://dispelix.com/) states that optical see-through waveguides use surface relief gratings. These gratings feature sub-wavelength nanostructures (microscopic etched patterns smaller than a wave of light).
 
-Despite these advancements, thermal constraints mean the transparent plastic version overheats faster, and the battery life is limited to about two to three hours. The compute puck offloads significant processing, enabling the glasses to remain relatively light. Meta views Orion as a strategic prototype, not a consumer product, designed to push the boundaries of AR technology for future iterations.
+These structures guide light via total internal reflection (bouncing light within the glass core without loss). They form images at optical infinity (a focal distance where the eyes focus naturally as if looking far away).
 
-## Snapchat AR Spectacles: An Untethered, Developer-Focused Approach
+This engineering keeps the lens thin. It also expands the eyebox (the visual zone where your eye sees the full image).
 
-In contrast to Meta's tethered system, Snapchat's AR Spectacles adopt an untethered, all-in-one design, integrating all computing hardware directly into the glasses. This design choice results in a significantly bulkier and heavier device, weighing 228 grams.
+Birdbath systems position an overhead micro-OLED panel (a miniature high-resolution display). The system bounces light downward off a curved beamsplitter (a semi-transparent mirror that reflects and transmits light).
 
-The frames are primarily black plastic, with metal bands on each side acting as heat sinks to dissipate warmth from internal components. While heavier, the untethered nature offers greater freedom of movement without reliance on a separate compute unit.
+This architecture delivers high brightness and rich contrast at a much lower production cost. Avantier and Dispelix identify the mechanical trade-offs across these hardware formats:
 
-The display experience on the Snapchat Spectacles presents a different set of trade-offs. They boast a dramatically higher resolution, making menus and digital content appear much sharper than on the Meta Orion. However, this comes at the cost of a smaller 46-degree field of view.
+| Display Architecture | Hardware Mechanism | Visual Strengths | Main Hardware Trade-Off |
+| :--- | :--- | :--- | :--- |
+| Optical Waveguides | Surface relief gratings with total internal reflection | Thin lenses and natural daylight transparency | High manufacturing cost and lower light efficiency |
+| Birdbath Optics | Overhead displays reflecting off curved combiners | High contrast and rich color saturation | Bulkier frame profiles and darker tinted lenses |
+| Prisms | Optical combiners bouncing light to eye corners | Lightweight construction for telemetry | Limited field of view restricted to corner badges |
 
-This narrower view means digital elements can be clipped or disappear if the user turns their head even slightly, making the edges of the AR experience more noticeable. For instance, playing a golf game required constant head movement to keep both the club and the hole in view.
+According to optical manufacturer Avantier, birdbath optics have lower transmittance due to multiple reflections and transmissions, impacting image brightness. As a result, birdbath glasses behave like sunglasses indoors. Waveguides maintain transparent glass, but fabricating microscopic surface relief gratings remains expensive.
 
-A unique feature of the Snapchat Spectacles is their electrochromic tint, similar to technology used in some car sunroofs. This allows the lenses to transition from clear to tinted, enhancing the contrast and readability of overlaid digital content.
+## Screen-mirroring displays project virtual screens without true spatial anchoring
+Screen-mirroring glasses act as private monitors fixed to your head. In contrast, true spatial glasses anchor digital items to real physical furniture.
 
-This tint can create a more immersive, VR-like experience by fading out the real-world background when desired, such as for watching videos. Snapchat's approach is largely aimed at developers, encouraging experimentation with AR experiences on a self-contained device.
+According to PCMag hardware evaluations from September 2026, consumer prism glasses like the Viture Beast project a high-resolution virtual screen. This virtual display mimics an ultrawide desktop monitor.
 
-## Core Engineering Challenges and Trade-offs
+These units use a simple USB-C cord to draw video from smartphones, laptops, and game consoles. They track simple head rotations to pin a monitor in space.
 
-The development of AR glasses highlights several fundamental engineering challenges that current prototypes are grappling with.
+However, PCMag points out that screen-mirroring glasses lack depth-sensing cameras for world-anchored spatial mapping. If you walk toward a virtual window, the screen does not stay anchored to a physical desk. Instead, it floats along with your body. 
 
-**Weight and Form Factor:** Miniaturizing powerful components while maintaining a comfortable, wearable design is a primary hurdle. Meta's Orion achieves a lighter 100-gram form factor by offloading processing to an external puck.
+According to technology testing firm Allion, commercial hardware divides cleanly by real-world purpose:
+- Functional glasses provide minimalist notifications and performance data, like Form Swim Goggles.
+- Audio-visual glasses offer high-definition video projection for personal cinematic viewing.
+- Spatial AR glasses map physical geometry to blend interactive 3D digital objects into rooms.
 
-Snapchat's Spectacles integrate everything, leading to a heavier 228-gram design that is noticeably larger on the face. The choice between tethered and untethered systems directly impacts both weight and user freedom.
+If you want a lightweight display for watching movies on an airplane, screen-mirroring glasses work right out of the box. If you expect digital pets running across physical tables, display glasses will disappoint you.
 
-**Thermal Management:** Powerful processors generate heat, which must be efficiently dissipated to prevent overheating and maintain performance. Meta uses magnesium frames as a heat sink, while Snapchat employs metal bands on its plastic frames. The challenge is to manage heat without making the device uncomfortable or compromising its aesthetic.
+## Marques Brownlee compares Meta Orion and Snapchat AR Spectacles
+Reviewer Marques Brownlee tested two prototype augmented reality devices. He compared Meta Orion with Snapchat AR Spectacles to examine true spatial hardware.
 
-**Power Management:** Sustaining complex AR experiences requires significant battery power. Both prototypes demonstrate limited battery life, with Meta's Orion offering two to three hours. Integrating larger batteries or relying on external power sources are current compromises, but long-term viability requires substantial improvements in battery density and power efficiency.
+Brownlee notes that Meta Orion relies on a three-part hardware system. Users wear glasses weighing around 100 g. They carry a wireless computing puck that must stay within 15 ft.
 
-**Display Optics:** Achieving high-resolution, wide field-of-view displays in a transparent lens is technically demanding. Meta's 70-degree field of view offers broader immersion but with a lower resolution.
+Users also wear an electromyography wristband (a sensor that reads electrical muscle signals). The wristband reads electrical signals traveling through arm tendons to detect thumb gestures. Brownlee reported about 80% accuracy during his hands-on testing.
 
-Snapchat prioritizes sharper resolution but with a more restrictive 46-degree field of view. Technologies like micro-LED projectors and waveguides, made from materials like silicon carbide, are essential for refracting light at extreme angles without distortion.
+Meta Orion packs seven custom sensors and cameras for eye and environment tracking into magnesium frames. Brownlee observed that the device operates for roughly 2 to 3 hours per charge alongside an expansive 70° field of view.
 
-**Input Methods:** Interacting with AR content without physical controllers is another area of innovation. Eye tracking allows users to select items by looking at them, while hand tracking recognizes gestures. Meta's EMG wristband represents a leap towards more subtle, brain-to-muscle impulse-based control, offering a glimpse into future human-computer interaction.
+He tested an artificial intelligence demo where cameras scanned table ingredients and generated smoothie recipes. The system also pinned digital blue labels over fruits. In a two-player demo, two users scanned a QR code to play 3D Pong in an anchored space.
 
-## The Road Ahead for Mainstream AR
+Brownlee reported that the Snapchat glasses weigh 228 g and run for a 45-minute battery life. Their field of view (the visible area you can see) covers 46°, creating a narrower window than Meta's 70° display. Snap sells access to developers for 100 bucks a month under a one-year agreement to build apps for Snap OS.
 
-These early AR glasses are not consumer products but rather important experimental platforms. They serve to demonstrate the immense potential of augmented reality while exposing the significant engineering hurdles that remain. The differing strategies—Meta's focus on a highly refined, tethered experience versus Snapchat's untethered, developer-centric approach—reflect the industry's experimental stage.
+ True spatial AR glasses work, but consumer retail models remain several hardware generations away.
 
-True mainstream AR glasses will require advancements across multiple fronts: brighter, higher-resolution displays with wider fields of view, significantly longer battery life, and more compact, lighter designs. The cost of manufacturing these advanced components also needs to decrease substantially.
+Seeing prototypes like these makes it obvious how rapidly hardware is moving forward, even if store shelves are years away from stocking them. Tracking high-end trials helps us see where everyday gadgets will eventually end up. Staying curious about these early builds means you are properly prepared when the technology finally reaches the wider public.
 
-While the prototypes are not yet ready for public sale, they provide invaluable insights into the fundamental design compromises and technological breakthroughs needed to bring augmented reality from science fiction into everyday reality.
+## Sources
+
+- [AR Glasses: Waveguide Optics, Technology, and Key Types](https://avantierinc.com/resources/application-note/application-of-optical-waveguides-in-ar-glasses/) — avantierinc.com
+- [spie.org/Publications/Proceedings/Volume/13414](https://spie.org/Publications/Proceedings/Volume/13414) — spie.org
+- [Optical versus video see through mead mounted displays in medical visualization (PDF)](https://stars.library.ucf.edu/context/facultybib2000/article/3774/viewcontent/Optical_versus_video_see_through_mead_mounted_displays_in_medical_visualization.pdf) — ucf.edu
+- [Transparent XR displays from near-eye to head-up | Dispelix](https://dispelix.com/resources/insights/optical-see-through-xr-displays/) — dispelix.com
+- [The Best Smart Glasses We&#039;ve Tested for 2026 | PCMag](https://www.pcmag.com/picks/the-best-smart-glasses) — pcmag.com
+- [A Comprehensive Guide to AR Glasses: Types, Functions, and Potential Application Risks | Allion Labs](https://www.allion.com/tech_audio_video_augmented_reality/) — allion.com
+- [I Tried Real Augmented Reality Glasses!](https://www.youtube.com/watch?v=G0eKzU_fV00) — Marques Brownlee on YouTube
