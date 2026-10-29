@@ -71,5 +71,30 @@
   ],
   "usd": 0.0076,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-10-29T06:57:44.894Z",
+  "artikler": [
+   {
+    "slug": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases",
+    "tjekket": 2,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 2,
+    "fund": []
+   },
+   {
+    "slug": "how-to-use-text-to-video-in-filmora-ai-generator",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 5,
+    "usikker": 4,
+    "fund": []
+   }
+  ],
+  "usd": 0.0032,
+  "soegninger": 0
  }
 ]
