@@ -83,7 +83,7 @@ Such initiatives showcase how traditional finance is beginning to embrace these 
 - Enabling real-time risk assessment
 - Opening doors to entirely new asset classes
 
-For a deeper understanding of AI's role in the sector, consider [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). This transformative period suggests a future where financial services are more responsive, efficient, and interconnected, driven by the combined power of digital assets and intelligent automation.
+For a deeper understanding of AI's role in the sector, consider [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). This transformative period suggests a future where financial services are more responsive, efficient, and interconnected, driven by the combined power of digital assets and intelligent automation.
 
 ## How to approach tokenization while regulations evolve
 

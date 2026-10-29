@@ -35,7 +35,7 @@ Python’s broad adoption in finance stems from its unique combination of simpli
 
 This low learning curve allows financial analysts and data scientists, even those new to coding, to quickly become proficient in manipulating and analyzing financial data. Beyond its user-friendliness, Python is a preeminent choice for Machine Learning and Artificial Intelligence applications.
 
-Its design facilitates "complex calculations and handle diverse activities," making it ideal for the predictive modeling and quantitative analysis critical in finance. The language is well-equipped with libraries for neural system experimentation, enabling sophisticated forecasting and pattern recognition vital for market analysis and risk management strategies. [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping)
+Its design facilitates "complex calculations and handle diverse activities," making it ideal for the predictive modeling and quantitative analysis critical in finance. The language is well-equipped with libraries for neural system experimentation, enabling sophisticated forecasting and pattern recognition vital for market analysis and risk management strategies. [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping)
 
 This adaptability means Python finds application in various critical financial functions. In investment banks, as the coding channel NeedCode points out, quantitative analysts and engineers use Python to:
 

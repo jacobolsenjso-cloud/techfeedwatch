@@ -45,7 +45,7 @@ For everyday consumers, the benefits include enhanced navigation, instant langua
 
 Battery life remains a key constraint, often dictating the physical size and weight of the glasses, directly impacting their wearability and aesthetic appeal. Privacy concerns also factor heavily, particularly with always-on cameras and microphones.
 
-As Nate's Network points out, a recent market analysis identifies the Top 13 NEW AI Glasses projected for 2026, including models like Meta Ray-Ban Gen 2 and XREAL One Pro, demonstrating a clear trajectory towards more refined hardware and smarter software integration. This growth parallels the broader impact of artificial intelligence across industries, as discussed in [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping).
+As Nate's Network points out, a recent market analysis identifies the Top 13 NEW AI Glasses projected for 2026, including models like Meta Ray-Ban Gen 2 and XREAL One Pro, demonstrating a clear trajectory towards more refined hardware and smarter software integration. This growth parallels the broader impact of artificial intelligence across industries, as discussed in [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping).
 
 The ability to integrate AI directly into personal devices creates a new form of ambient intelligence, where technology adapts to the user's context rather than demanding constant attention. The foundational concepts behind technologies that integrate digital information with the physical world are evolving rapidly, as seen in Why Was Augmented Reality Invented to Change How We See the World?.
 

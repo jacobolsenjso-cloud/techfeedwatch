@@ -62,7 +62,7 @@ Output quality also varies widely. Simple, short clips with basic motion can be 
 
 Issues like visual artifacts, inconsistent character appearances across frames, or illogical movements are not uncommon. Users often encounter generation errors or download issues, necessitating retries or prompt adjustments. This requires a level of patience and iterative refinement from the creator, where the AI serves as a powerful assistant rather than a fully autonomous director.
 
-The ability to generate horizontal videos, often preferred for professional or YouTube content, is now a standard feature in many tools, but achieving high fidelity still demands careful prompt construction and sometimes post-production editing. The integration of AI into various industries, from content creation to finance, brings new pressures and capabilities; for instance, [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) highlights similar transformative impacts in a different sector.
+The ability to generate horizontal videos, often preferred for professional or YouTube content, is now a standard feature in many tools, but achieving high fidelity still demands careful prompt construction and sometimes post-production editing. The integration of AI into various industries, from content creation to finance, brings new pressures and capabilities; for instance, [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) highlights similar transformative impacts in a different sector.
 
 ## Where People Get AI Video Generation Wrong
 

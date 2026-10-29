@@ -67,7 +67,7 @@ Another misconception is that AR experiences are universally flawless. While imp
 
 Battery drain is a significant concern, as AR applications intensely utilize the camera, sensors, and processor. While the concept of "just pointing your camera" sounds simple, developing truly solid and accurate AR applications, particularly for precise tasks like indoor navigation, is technically challenging.
 
-It demands careful calibration, the creation of persistent anchors, and the ability to adapt to dynamic environments. Even in commercial sectors, the effective deployment of AR in areas like retail or manufacturing requires careful planning to ensure it genuinely adds value without introducing new complexities, much like [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) shows technology pressure in other industries.
+It demands careful calibration, the creation of persistent anchors, and the ability to adapt to dynamic environments. Even in commercial sectors, the effective deployment of AR in areas like retail or manufacturing requires careful planning to ensure it genuinely adds value without introducing new complexities, much like [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) shows technology pressure in other industries.
 
 ## The Growing Potential and Challenges of Android AR
 

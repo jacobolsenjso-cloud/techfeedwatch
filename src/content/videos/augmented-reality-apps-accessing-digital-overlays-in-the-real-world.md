@@ -89,7 +89,7 @@ Finally, a common oversight is limiting AR's potential solely to gaming or novel
 
 From visualizing complex architectural designs on-site to overlaying instructional guides for field technicians, or even transforming how retail and finance operate with interactive product displays or data visualizations, AR offers profound practical benefits.
 
-The integration of AR into sectors like retail and finance parallels the broader impact of advanced technologies on established industries, akin to how [How AI Is Used in Finance for Transformation](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). Understanding AR's diverse applications is essential to appreciating its long-term societal and economic impact.
+The integration of AR into sectors like retail and finance parallels the broader impact of advanced technologies on established industries, akin to how [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). Understanding AR's diverse applications is essential to appreciating its long-term societal and economic impact.
 
 ## The future balance between WebAR and native apps
 

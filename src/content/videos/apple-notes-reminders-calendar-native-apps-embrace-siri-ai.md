@@ -45,7 +45,7 @@ This inherent value proposition challenges the perceived necessity of external s
 
 The inherent "cost" of these apps is zero in monetary terms, as they are bundled with every Apple device. However, the opportunity cost for users often involves the perceived compromise on advanced features found in specialized apps. Yet, this perception often misses the growing capabilities and the substantial benefits of a unified system.
 
-When all your core productivity tools speak the same language, are updated simultaneously with the OS, and respect the same privacy framework, the overall efficiency gains can outweigh the niche features of disparate applications. This shift towards leveraging integrated native solutions aligns with broader trends in [Apple's AI Strategy Is Deliberate on Device Integration](/video/apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win), emphasizing cohesive device experiences.
+When all your core productivity tools speak the same language, are updated simultaneously with the OS, and respect the same privacy framework, the overall efficiency gains can outweigh the niche features of disparate applications. This shift towards leveraging integrated native solutions aligns with broader trends in [Apple Builds Its AI Strategy Around On-Device Privacy](/video/apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win), emphasizing cohesive device experiences.
 
 ## Siri AI and Native App Synergy
 
