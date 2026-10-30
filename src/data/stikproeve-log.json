@@ -96,5 +96,30 @@
   ],
   "usd": 0.0032,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-10-30T06:50:16.573Z",
+  "artikler": [
+   {
+    "slug": "from-ml-to-neural-networks-your-essential-guide-to-kicking-off-an-ai",
+    "tjekket": 5,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 2,
+    "fund": []
+   },
+   {
+    "slug": "apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 3,
+    "fund": []
+   }
+  ],
+  "usd": 0.0057,
+  "soegninger": 0
  }
 ]

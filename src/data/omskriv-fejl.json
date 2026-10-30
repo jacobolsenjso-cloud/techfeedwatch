@@ -56,5 +56,23 @@
   "recipe": 3,
   "dato": "2026-10-27",
   "forsoeg": 1
+ },
+ "ai-s-artificial-truth-why-your-bots-will-never-replace-revelation": {
+  "grund": "Fejl: Redaktørtjek: 4 ensidige sætninger efter rettelse (højst 2): \"When tasks demand genuine logic, causal deduction, or unfamiliar problem-solving\" · \"When software confronts edge cases in productio",
+  "recipe": 3,
+  "dato": "2026-10-30",
+  "forsoeg": 1
+ },
+ "claude-unlocked-beyond-the-chatbot-your-guide-to-the-full-ai-ecosystem": {
+  "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"Which underlying AI models power Claude's capabilities?\"). Artiklen skrives ikke.",
+  "recipe": 3,
+  "dato": "2026-10-30",
+  "forsoeg": 1
+ },
+ "gemini-s-hidden-arsenal-7-next-level-hacks-to-supercharge-your-ai": {
+  "grund": "Fejl: Redaktørtjek: 3 ensidige sætninger efter rettelse (højst 2): \"Systems do not need to choose between extensive background knowledge and fast pe\" · \"Security depends on maintaining a transparent t",
+  "recipe": 3,
+  "dato": "2026-10-30",
+  "forsoeg": 1
  }
 }
