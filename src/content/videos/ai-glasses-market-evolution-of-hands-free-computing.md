@@ -37,7 +37,7 @@ The form factors vary widely, from lightweight audio frames designed for discree
 
 This range indicates a deliberate effort by manufacturers to cater to different user needs, balancing aesthetics, functionality, and immersive experience. Companies like Meta with their Ray-Ban Gen 2 series, XREAL with the One Pro, Brilliant Labs with the Halo, and VITURE with the Luma Ultra, represent this evolving market where design and intelligence are becoming equally important.
 
-These developments allow for a deeper integration of digital tools into daily life, offering immediate access to information and augmented reality overlays that enhance productivity and engagement without requiring users to hold a phone. For insights into how such integrated AI can reshape daily tasks, explore [How Gemini AI Changes File Management in Google Drive](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
+These developments allow for a deeper integration of digital tools into daily life, offering immediate access to information and augmented reality overlays that enhance productivity and engagement without requiring users to hold a phone. For insights into how such integrated AI can reshape daily tasks, explore [How Gemini AI Tools Enhance Google Drive Search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
 
 The practical applications for AI glasses span several domains. In professional settings, they enable hands-free access to data, remote assistance, and streamlined workflows. For instance, a technician could view schematics superimposed on machinery while keeping their hands free, or a surgeon could access patient data without looking away from a procedure.
 

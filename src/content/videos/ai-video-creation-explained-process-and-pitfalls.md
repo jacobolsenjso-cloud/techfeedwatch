@@ -74,7 +74,7 @@ Another critical area of misunderstanding revolves around the ethical implicatio
 
 The need for solid verification systems and media literacy has never been more pressing. Just as [Zero Trust Security Shrinks Enterprise Network Attack Surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks) emphasizes verifying all interactions in cybersecurity, a similar approach becomes necessary for verifying the authenticity of digital media.
 
-The copyright and intellectual property implications of AI models trained on vast amounts of existing content are still largely unresolved, creating a complex legal field for creators and platforms alike. As AI continues to integrate into tools like [How Gemini AI Changes File Management in Google Drive](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), its capabilities expand, but so do the considerations around its responsible and transparent use.
+The copyright and intellectual property implications of AI models trained on vast amounts of existing content are still largely unresolved, creating a complex legal field for creators and platforms alike. As AI continues to integrate into tools like [How Gemini AI Tools Enhance Google Drive Search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), its capabilities expand, but so do the considerations around its responsible and transparent use.
 
 ## Why AI video demands human skill and ethical responsibility
 

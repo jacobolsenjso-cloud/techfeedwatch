@@ -57,7 +57,7 @@ The operational mechanism of AR apps, whether native or web-based, hinges on a s
 
 This foundational layer allows digital content to be precisely anchored and oriented within the physical space. Modern AR capabilities also incorporate environmental understanding, estimating lighting conditions to ensure virtual objects appear naturally integrated.
 
-As AI models become more sophisticated, they can even interpret complex scenes, allowing for more context-aware AR overlays. This deep reliance on advanced processing highlights why tools for managing digital assets, like [How Gemini AI Changes File Management in Google Drive](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), are increasingly relevant for developers handling the vast datasets AR applications generate.
+As AI models become more sophisticated, they can even interpret complex scenes, allowing for more context-aware AR overlays. This deep reliance on advanced processing highlights why tools for managing digital assets, like [How Gemini AI Tools Enhance Google Drive Search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), are increasingly relevant for developers handling the vast datasets AR applications generate.
 
 The "why it works that way" for AR is a blend of optical tracking, inertial measurement units (IMUs), and often AI-powered recognition. The device constantly localizes itself in space, creating a virtual map of its surroundings.
 
