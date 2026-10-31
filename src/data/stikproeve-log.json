@@ -121,5 +121,30 @@
   ],
   "usd": 0.0057,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-10-31T06:51:22.330Z",
+  "artikler": [
+   {
+    "slug": "how-do-you-define-what-gaming-pcs-actually-are",
+    "tjekket": 9,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 5,
+    "fund": []
+   },
+   {
+    "slug": "ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path",
+    "tjekket": 5,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 2,
+    "fund": []
+   }
+  ],
+  "usd": 0.005,
+  "soegninger": 0
  }
 ]
