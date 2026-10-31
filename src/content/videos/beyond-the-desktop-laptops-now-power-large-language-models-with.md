@@ -13,8 +13,8 @@ summary: "Running Large Language Models (LLMs) locally demands significant memor
 metaDescription: "Discover how much memory a local LLM needs to run effectively on your hardware. Understand the factors driving large AI model memory requirements."
 targetQuestion: "how much memory does a local llm need"
 duration: "20:12"
-viewCount: 570430
-viewsUpdated: "2026-10-28"
+viewCount: 572280
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

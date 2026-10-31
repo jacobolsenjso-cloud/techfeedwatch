@@ -12,8 +12,8 @@ tags:
 summary: "Cybersecurity challenges are rapidly transforming, moving beyond traditional perimeter defenses to target AI systems, cloud ecosystems, and neglected operational technology. New concepts like 'promptware' describe sophisticated AI attacks, while ransomware gangs increasingly use built-in system tools for stealth. This shift demands a proactive, adaptive defense strategy focusing on understanding these novel attack vectors and securing foundational infrastructure."
 metaDescription: "Cybersecurity challenges now target AI, cloud, and operational technology with promptware attacks and stealthy ransomware, requiring adaptive defense."
 duration: "40:49"
-viewCount: 2210
-viewsUpdated: "2026-10-28"
+viewCount: 2211
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

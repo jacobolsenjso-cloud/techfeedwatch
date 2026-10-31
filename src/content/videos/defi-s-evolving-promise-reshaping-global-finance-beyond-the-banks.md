@@ -14,8 +14,8 @@ summary: "Decentralized Finance (DeFi) represents a significant evolution in fin
 metaDescription: "Decentralized Finance leverages blockchain and smart contracts to offer permissionless services, bypassing traditional banks."
 targetQuestion: "what is decentralized finance (defi) and how does it work"
 duration: "18:58"
-viewCount: 132803
-viewsUpdated: "2026-10-19"
+viewCount: 132804
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 revised: true

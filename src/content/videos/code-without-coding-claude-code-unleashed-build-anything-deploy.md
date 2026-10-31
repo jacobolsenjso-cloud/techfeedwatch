@@ -13,8 +13,8 @@ summary: "No code AI agents enable individuals without programming expertise to 
 metaDescription: "Discover what a no code AI agent is and how it empowers non-technical users to build powerful applications."
 targetQuestion: "what is a no code ai agent"
 duration: "19:10"
-viewCount: 170449
-viewsUpdated: "2026-10-28"
+viewCount: 170978
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

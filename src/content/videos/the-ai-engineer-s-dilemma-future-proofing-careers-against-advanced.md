@@ -16,8 +16,8 @@ summary: "The rise of AI coding agents prompts a critical re-evaluation of essen
 metaDescription: "The rise of AI coding agents prompts a critical re-evaluation of essential skills for programmers and machine learning engineers."
 targetQuestion: "what is ai developer skills"
 duration: "14:41"
-viewCount: 8586
-viewsUpdated: "2026-10-28"
+viewCount: 8597
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 revised: true

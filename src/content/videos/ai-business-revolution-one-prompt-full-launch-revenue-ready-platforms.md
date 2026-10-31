@@ -13,8 +13,8 @@ summary: "Modern AI platforms are streamlining the creation of online businesses
 metaDescription: "Use AI to start an online business effortlessly. Discover how platforms build websites, backends, and marketing from one prompt."
 targetQuestion: "how to use ai to start an online business"
 duration: "9:57"
-viewCount: 57572
-viewsUpdated: "2026-10-28"
+viewCount: 57618
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

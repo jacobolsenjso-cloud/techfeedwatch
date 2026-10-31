@@ -14,8 +14,8 @@ summary: "The integration of AI is reshaping corporate structures, moving beyond
 metaDescription: "AI-native companies are disrupting traditional business models. Learn how AI as an operating system creates flatter structures & boosts productivity."
 targetQuestion: "what are ai native startups"
 duration: "10:28"
-viewCount: 331046
-viewsUpdated: "2026-10-28"
+viewCount: 332766
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

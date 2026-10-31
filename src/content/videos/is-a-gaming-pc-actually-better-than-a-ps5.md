@@ -12,8 +12,8 @@ summary: "A gaming PC delivers higher peak performance, better visual fidelity, 
 metaDescription: "Is a gaming PC better than a PS5? Compare performance, hardware costs, and long-term fees to see which system fits your gaming budget best."
 targetQuestion: "is a gaming pc better than ps5"
 duration: "10:13"
-viewCount: 1021
-viewsUpdated: "2026-10-29"
+viewCount: 1034
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 recipe: 3

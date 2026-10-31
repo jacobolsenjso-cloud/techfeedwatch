@@ -13,8 +13,8 @@ summary: "Quantum computing poses a significant, though not immediate, threat to
 metaDescription: "Understand how quantum computing could threaten Bitcoin's security and cryptographic foundation, and what solutions are being developed."
 targetQuestion: "how does quantum computing threaten bitcoin's security"
 duration: "25:42"
-viewCount: 17381
-viewsUpdated: "2026-10-25"
+viewCount: 17382
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"

@@ -12,8 +12,8 @@ summary: "Runway operates as a generative AI video platform that creates motion 
 metaDescription: "Is Runway a text to video tool? Runway generates high-definition video from text prompts, static images, and multimodal developer workflows."
 targetQuestion: "is runway a text to video tool"
 duration: "8:13"
-viewCount: 8250
-viewsUpdated: "2026-10-28"
+viewCount: 8254
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

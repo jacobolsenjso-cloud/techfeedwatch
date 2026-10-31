@@ -12,8 +12,8 @@ summary: "The notion that coding is dead is a pervasive misconception; instead, 
 metaDescription: "Coding is not dead, but transformed. Learn why AI changes software engineering, what skills future developers need, and how jobs evolve by 2026."
 targetQuestion: "why is coding dead"
 duration: "6:25"
-viewCount: 94
-viewsUpdated: "2026-10-28"
+viewCount: 95
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

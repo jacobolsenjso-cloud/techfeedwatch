@@ -13,8 +13,8 @@ summary: "Accessing quantum computing has moved from theoretical discussions to 
 metaDescription: "Learn how to access quantum computing today through cloud platforms like IBM Quantum Platform, making advanced hardware available for programming."
 targetQuestion: "how to access quantum computing"
 duration: "13:19"
-viewCount: 63487
-viewsUpdated: "2026-10-28"
+viewCount: 63850
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

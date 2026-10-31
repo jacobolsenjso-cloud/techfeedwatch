@@ -13,8 +13,8 @@ summary: "Despite recent market volatility and reported profit dips, institution
 metaDescription: "Understand why Robinhood CEO Vlad Tenev and other institutions are bullish on crypto, focusing on long-term market trends and adoption."
 targetQuestion: "what is institutional adoption"
 duration: "6:18"
-viewCount: 13264
-viewsUpdated: "2026-09-28"
+viewCount: 13265
+viewsUpdated: "2026-10-31"
 thumbMax: false
 isShort: false
 faqs:

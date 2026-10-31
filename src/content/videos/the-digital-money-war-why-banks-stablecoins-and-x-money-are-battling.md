@@ -13,8 +13,8 @@ summary: "Stablecoins bridge traditional finance and cryptocurrency, offering st
 metaDescription: "Understand the purpose of stablecoins in digital finance, how they offer stability, and their role in the evolving global financial field."
 targetQuestion: "what is the purpose of stablecoins"
 duration: "56:58"
-viewCount: 13970
-viewsUpdated: "2026-10-28"
+viewCount: 14003
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

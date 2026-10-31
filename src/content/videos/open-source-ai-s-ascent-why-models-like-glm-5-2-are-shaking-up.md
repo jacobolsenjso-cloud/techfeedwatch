@@ -15,8 +15,8 @@ summary: "The emergence of powerful open-source AI models such as GLM-5.2 repres
 metaDescription: "Explore how open-source AI models like GLM-5.2 provide cost-effective alternatives for enterprise integration with large context windows."
 targetQuestion: "how much does enterprise ai cost"
 duration: "28:52"
-viewCount: 111088
-viewsUpdated: "2026-10-28"
+viewCount: 111568
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

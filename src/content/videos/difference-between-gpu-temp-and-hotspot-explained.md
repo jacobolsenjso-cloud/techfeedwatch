@@ -13,8 +13,8 @@ summary: "Standard GPU temperature reflects an edge or average die reading, whil
 metaDescription: "Learn the difference between GPU temp and hotspot sensors, normal thermal deltas, and when high hotspot temperatures trigger throttling."
 targetQuestion: "difference between gpu temp and hotspot"
 duration: "11:12"
-viewCount: 64286
-viewsUpdated: "2026-10-28"
+viewCount: 64368
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

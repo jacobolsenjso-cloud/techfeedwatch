@@ -14,8 +14,8 @@ summary: "'Vibe coding' represents an intuitive, often unstructured approach to 
 metaDescription: "Vibe coding, popular with new developers, bypasses fundamental skills and blocks long-term career progression, demanding disciplined learning."
 targetQuestion: "why vibe coding is bad"
 duration: "6:02"
-viewCount: 457279
-viewsUpdated: "2026-10-28"
+viewCount: 462081
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

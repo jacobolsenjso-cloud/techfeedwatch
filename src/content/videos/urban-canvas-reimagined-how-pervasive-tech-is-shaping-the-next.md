@@ -14,8 +14,8 @@ summary: "The future of technology is increasingly defined by the deep integrati
 metaDescription: "AI integrates with systems, creating hyper-personalized environments that blur physical and virtual worlds, demanding ethical data governance."
 targetQuestion: "how is ai used in smart cities"
 duration: "3:45"
-viewCount: 34
-viewsUpdated: "2026-10-16"
+viewCount: 35
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 revised: true

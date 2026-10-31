@@ -15,8 +15,8 @@ summary: "The rise of AI in software development demands a critical re-evaluatio
 metaDescription: "The rise of AI in software development demands a critical re-evaluation of quality engineering, focusing on validating AI's outputs and underlying models."
 targetQuestion: "what is ai quality engineering"
 duration: "1:39:38"
-viewCount: 5807
-viewsUpdated: "2026-10-28"
+viewCount: 5865
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 revised: true

@@ -13,8 +13,8 @@ summary: "Physical qubits in quantum computing are built from microscopic system
 metaDescription: "Learn what qubits are made of in quantum computing, from superconducting transmon circuits and trapped ions to photons and silicon spin devices."
 targetQuestion: "what are qubits made of in quantum computing"
 duration: "18:17"
-viewCount: 392936
-viewsUpdated: "2026-10-28"
+viewCount: 393556
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-24"

@@ -13,8 +13,8 @@ summary: "Information technology builds, operates, and maintains technical infra
 metaDescription: "Learn the key difference between cybersecurity and information technology, including salary trends, daily responsibilities, and certifications."
 targetQuestion: "difference between cybersecurity and information technology"
 duration: "6:43"
-viewCount: 42
-viewsUpdated: "2026-10-28"
+viewCount: 44
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Educational robotics programs teach children engineering and programmi
 metaDescription: "Robotics for kids combines mechanical assembly, circuits, and coding to teach engineering fundamentals through hands-on classroom experiments."
 targetQuestion: "what is robotics for kids"
 duration: "4:55"
-viewCount: 1145
-viewsUpdated: "2026-10-28"
+viewCount: 1209
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 recipe: 3

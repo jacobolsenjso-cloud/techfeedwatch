@@ -14,8 +14,8 @@ summary: "The integration of AI code agents like Anthropic's Claude on platforms
 metaDescription: "AI code agents on Gemini platforms reshape developer roles by managing complex workflows, demanding new skills, and enhancing productivity."
 targetQuestion: "can ai agents code independently effectively"
 duration: "10:08"
-viewCount: 6385
-viewsUpdated: "2026-10-28"
+viewCount: 6414
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 faqs:

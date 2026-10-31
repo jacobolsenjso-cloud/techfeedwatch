@@ -15,8 +15,8 @@ summary: "Artificial Intelligence (AI) simulates human cognitive functions throu
 metaDescription: "AI learns from data for specific tasks, but faces data bias and lacks human-like understanding, with AGI a future goal."
 targetQuestion: "what is artificial intelligence and how does it work"
 duration: "26:19"
-viewCount: 2198330
-viewsUpdated: "2026-10-28"
+viewCount: 2212611
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 revised: true

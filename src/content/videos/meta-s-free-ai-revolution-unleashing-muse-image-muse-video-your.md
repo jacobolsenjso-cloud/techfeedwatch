@@ -13,8 +13,8 @@ summary: "Meta AI acts as an integrated virtual assistant that answers questions
 metaDescription: "Learn what Meta AI is used for across social apps, image editing, and smart glasses, along with its core features and key privacy questions."
 targetQuestion: "what is meta ai used for"
 duration: "20:45"
-viewCount: 36295
-viewsUpdated: "2026-10-29"
+viewCount: 36321
+viewsUpdated: "2026-10-31"
 thumbMax: true
 isShort: false
 recipe: 3
