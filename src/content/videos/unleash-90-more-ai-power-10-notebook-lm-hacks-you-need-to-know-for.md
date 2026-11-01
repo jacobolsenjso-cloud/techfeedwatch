@@ -96,7 +96,7 @@ Adopting these advanced NotebookLM usage tips significantly impacts productivity
 
 Integrating with Gemini eliminates data silos, enabling a holistic view of information critical for strategic decision-making. Deploying custom chatbots and interactive portfolios automates routine tasks and client interactions, ensuring consistent, accurate information delivery 24/7, thereby building trust and freeing up valuable human capital.
 
-The capacity to analyze personal journals over 3 years or refine content style with templates demonstrates a powerful shift towards personalized, AI-driven workflows that lead to measurable growth and a clear competitive advantage in a rapidly evolving technological field. [How Google NotebookLM Automates Research Tasks](/video/google-unleashes-notebooklm-the-autonomous-ai-that-just-made-your/) showcases this broader automation potential.
+The capacity to analyze personal journals over 3 years or refine content style with templates demonstrates a powerful shift towards personalized, AI-driven workflows that lead to measurable growth and a clear competitive advantage in a rapidly evolving technological field. [NotebookLM Guide: How to Use Google NotebookLM for Research](/video/google-unleashes-notebooklm-the-autonomous-ai-that-just-made-your/) showcases this broader automation potential.
 
 ## Common Mistakes That Limit NotebookLM to Basic Summaries
 
