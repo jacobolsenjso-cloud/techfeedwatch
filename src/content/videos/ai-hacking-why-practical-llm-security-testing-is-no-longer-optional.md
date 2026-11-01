@@ -13,8 +13,8 @@ summary: "Prompt injection testing is a critical cybersecurity practice designed
 metaDescription: "Understand prompt injection testing, a vital cybersecurity practice for AI. Learn how it safeguards large language models against adversarial attacks."
 targetQuestion: "what is prompt injection testing"
 duration: "16:46"
-viewCount: 440926
-viewsUpdated: "2026-10-31"
+viewCount: 441673
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

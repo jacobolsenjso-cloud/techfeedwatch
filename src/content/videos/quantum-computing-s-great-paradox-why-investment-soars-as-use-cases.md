@@ -13,8 +13,8 @@ summary: "Hybrid quantum-classical computing unites conventional processors with
 metaDescription: "Learn how hybrid quantum classical computing combines CPUs and QPUs to speed up calculations, process simulation data, and handle hardware noise."
 targetQuestion: "what is hybrid quantum classical computing"
 duration: "5:59"
-viewCount: 622
-viewsUpdated: "2026-10-31"
+viewCount: 623
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -14,8 +14,8 @@ summary: "A tactical approach to rapidly increasing website traffic by leveragin
 metaDescription: "A tactical approach to rapidly increasing website traffic by leveraging social media algorithms is gaining traction."
 targetQuestion: "how to use social media to drive traffic to your website"
 duration: "11:30"
-viewCount: 2164
-viewsUpdated: "2026-10-31"
+viewCount: 2168
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 revised: true

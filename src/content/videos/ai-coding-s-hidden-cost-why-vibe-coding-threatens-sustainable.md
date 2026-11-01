@@ -13,8 +13,8 @@ summary: "AI coding tools excel at generating basic code and prototypes but fall
 metaDescription: "AI coding tools are good for prototyping and expert augmentation, but struggle with complex software architecture, leading to technical debt."
 targetQuestion: "how good are ai coding tools"
 duration: "7:29"
-viewCount: 42100
-viewsUpdated: "2026-10-31"
+viewCount: 42240
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

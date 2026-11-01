@@ -12,8 +12,8 @@ summary: "Wondershare Filmora allows creators to generate edited video sequences
 metaDescription: "Learn how to use text to video in Wondershare Filmora, configure generation settings, manage AI credits, and customize generated timeline clips."
 targetQuestion: "how to use text to video in filmora"
 duration: "9:42"
-viewCount: 15577
-viewsUpdated: "2026-10-31"
+viewCount: 15576
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 recipe: 3

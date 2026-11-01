@@ -12,8 +12,8 @@ summary: "Information security requirements are mandatory specifications, contro
 metaDescription: "Learn what infosec requirements are, the core principles that govern them, and how frameworks like ISO 27001."
 targetQuestion: "what are infosec requirements"
 duration: "41:35"
-viewCount: 20
-viewsUpdated: "2026-10-19"
+viewCount: 22
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-15"

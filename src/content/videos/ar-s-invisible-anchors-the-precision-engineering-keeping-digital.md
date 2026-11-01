@@ -15,8 +15,8 @@ summary: "The remarkable stability of augmented reality objects, appearing fixed
 metaDescription: "The remarkable stability of augmented reality objects, appearing fixed in physical space, stems from advanced spatial computing technologies."
 targetQuestion: "what is slam in augmented reality"
 duration: "3:56"
-viewCount: 9
-viewsUpdated: "2026-09-22"
+viewCount: 10
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 revised: true

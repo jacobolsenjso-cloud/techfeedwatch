@@ -13,7 +13,7 @@ summary: "A no-code AI agent is an autonomous software tool built through visual
 metaDescription: "Discover what a no-code AI agent is, how autonomous workflows operate without software code, and the governance risks facing enterprise deployment."
 targetQuestion: "what is a no code ai agent"
 duration: "4:30"
-viewCount: 73341
+viewCount: 73371
 viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false

@@ -13,8 +13,8 @@ summary: "Anthropic's introduction of Claude Computer Use marks a significant st
 metaDescription: "Anthropic's Claude Computer Use signals a new era for AI agents. Understand its capabilities, market impact, and the intensifying competition."
 targetQuestion: "what can claude computer use do"
 duration: "5:00"
-viewCount: 1080940
-viewsUpdated: "2026-10-31"
+viewCount: 1081028
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 faqs:

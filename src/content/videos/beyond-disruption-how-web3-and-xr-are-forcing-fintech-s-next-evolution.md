@@ -14,8 +14,8 @@ summary: "The financial services sector stands at an inflection point, driven by
 metaDescription: "Super apps, FinTech-as-a-Service, and Web3 are redefining financial services due to technological disruption and customer demand."
 targetQuestion: "what is the future of financial services"
 duration: "44:57"
-viewCount: 25401
-viewsUpdated: "2026-10-31"
+viewCount: 25402
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 revised: true

@@ -14,8 +14,8 @@ summary: "Google Cloud's strategic commitment to its Tensor Processing Units (TP
 metaDescription: "Google Cloud is betting big on TPUs to democratize AI compute and challenge NVIDIA's market position, lowering TCO for AI workloads."
 targetQuestion: "what are google cloud tpus"
 duration: "53:31"
-viewCount: 72327
-viewsUpdated: "2026-10-31"
+viewCount: 72359
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 faqs:

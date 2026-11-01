@@ -15,8 +15,8 @@ summary: "Anthropic's Fable 5, touted as a frontier AI model, faced immediate ba
 metaDescription: "Anthropic's Fable 5, touted as a frontier AI model, faced immediate backlash over overly stringent safety filters that blocked harmless prompts."
 targetQuestion: "what happened to fable 5 anthropic"
 duration: "16:16"
-viewCount: 63080
-viewsUpdated: "2026-10-31"
+viewCount: 63084
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 revised: true

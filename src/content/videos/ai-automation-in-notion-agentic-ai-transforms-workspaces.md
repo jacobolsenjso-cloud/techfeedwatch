@@ -13,8 +13,8 @@ summary: "The integration of agentic AI into platforms like Notion signifies a p
 metaDescription: "The integration of agentic AI into platforms like Notion signifies a pivotal shift in digital productivity."
 targetQuestion: "what are notion ai agents"
 duration: "25:14"
-viewCount: 937
-viewsUpdated: "2026-10-31"
+viewCount: 941
+viewsUpdated: "2026-11-01"
 thumbMax: true
 isShort: false
 faqs:
