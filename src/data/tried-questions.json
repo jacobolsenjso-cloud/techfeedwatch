@@ -50,11 +50,6 @@
   "dato": "2026-09-19"
  },
  {
-  "q": "can qubit measure rna",
-  "tag": "Quantum Computing",
-  "dato": "2026-09-19"
- },
- {
   "q": "how much are virtual reality goggles",
   "tag": "AR & VR",
   "dato": "2026-09-20"
@@ -902,6 +897,16 @@
  {
   "q": "how does quantum computing work with ai",
   "tag": "Quantum Computing",
+  "dato": "2026-11-01"
+ },
+ {
+  "q": "can qubit measure rna",
+  "tag": "Quantum Computing",
+  "dato": "2026-11-01"
+ },
+ {
+  "q": "does pc building simulator 2 have dlc",
+  "tag": "PC Building & Gaming",
   "dato": "2026-11-01"
  }
 ]
