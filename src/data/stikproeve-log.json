@@ -146,5 +146,30 @@
   ],
   "usd": 0.005,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-01T06:54:51.555Z",
+  "artikler": [
+   {
+    "slug": "should-teachers-use-robots-in-education-classrooms",
+    "tjekket": 9,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 4,
+    "fund": []
+   },
+   {
+    "slug": "will-a-gaming-pc-connect-to-a-tv-without-issues",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 4,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.0068,
+  "soegninger": 0
  }
 ]

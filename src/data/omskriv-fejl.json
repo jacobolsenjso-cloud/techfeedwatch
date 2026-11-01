@@ -80,5 +80,11 @@
   "recipe": 3,
   "dato": "2026-10-31",
   "forsoeg": 1
+ },
+ "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube": {
+  "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What are the primary limitations and hallucination risks when using NotebookLM for video production?\"). Artiklen skrives ikke.",
+  "recipe": 3,
+  "dato": "2026-11-01",
+  "forsoeg": 1
  }
 }
