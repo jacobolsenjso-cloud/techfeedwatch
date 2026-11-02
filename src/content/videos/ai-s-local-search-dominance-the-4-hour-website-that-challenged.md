@@ -66,7 +66,7 @@ Claude identified and automatically fixed critical elements such as:
 
 This level of technical optimization, often overlooked by small businesses due to lack of expertise or budget, becomes accessible.
 
-AI agents can work in parallel; James launched **THREE separate agents** simultaneously to find missing alt text, analyze competitors, and identify content opportunities, multiplying the optimization effort. For businesses interested in understanding broader automation, exploring [AI Automation Brings Benefits to Small Businesses](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just) can provide further context.
+AI agents can work in parallel; James launched **THREE separate agents** simultaneously to find missing alt text, analyze competitors, and identify content opportunities, multiplying the optimization effort. For businesses interested in understanding broader automation, exploring [AI Automation for Small Businesses Drives Modern Workflows](/video/andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just) can provide further context.
 
 For continuous improvement, AI integrates with standard diagnostic tools. Businesses can run their sites through free tools like **Google PageSpeed Insights** and feed any identified errors directly into an AI, which can then automatically suggest and implement fixes.
 
