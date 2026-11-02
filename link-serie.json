@@ -58,6 +58,46 @@
       },
       "bing": null,
       "note": "Anden aflaesning. Intet nyt siden 24/10: stadig 1 eksternt link (alternativeto.net -> forsiden, ankertekst 'techfeedwatch') og 338 interne links - bit for bit identisk. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat 'No data available', derfor bing: null."
+    },
+    {
+      "dato": "2026-11-02",
+      "gsc": {
+        "eksterneLinks": 5,
+        "linkendeSites": [
+          {
+            "site": "github.com",
+            "links": 2
+          },
+          {
+            "site": "about.me",
+            "links": 1
+          },
+          {
+            "site": "alternativeto.net",
+            "links": 1
+          },
+          {
+            "site": "pinterest.com",
+            "links": 1
+          }
+        ],
+        "linkedeSider": [
+          {
+            "side": "https://techfeedwatch.com/",
+            "links": 5
+          }
+        ],
+        "linktekster": [
+          "https techfeedwatch com",
+          "techfeedwatch",
+          "techfeedwatch com",
+          "techfeedwatch com bner en ny fane",
+          "visit techfeedwatch"
+        ],
+        "interneLinks": 333
+      },
+      "bing": null,
+      "note": "Tredje aflaesning. Eksterne links 1 -> 5. Tre nye linkende sites siden 26/10: github.com (2 links), about.me (1) og pinterest.com (1); alternativeto.net (1) staar stadig. Alle fem links peger paa forsiden; ingen artikelside har endnu et eksternt link. Fem linktekster, 1-5 ud af 5 (MERE aabnet). Interne links 338 -> 333 (-5) - Googles stikproeve, ikke det reelle antal. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat 'No data available', derfor bing: null. Jeg har IKKE maalt hvor de tre nye links kommer fra - kun at de staar der."
     }
   ]
 }

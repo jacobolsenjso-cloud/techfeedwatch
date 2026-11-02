@@ -192,6 +192,29 @@
         "position": 3.1
       },
       "note": "Ottende aflaesning, fire dage efter den syvende. Indekseret 38 -> 41 (+3) - foerste stigning siden 5/10. Ikke indekseret 852 -> 889 (+37), mens sitemappet voksede 608 -> 628 (+20). Googles indekseringsdata: 'Seneste opdatering: 23.10.2026'. Det, der flyttede sig: 'Registreret - endnu ikke indekseret' 526 -> 561 (+35) og 'Side med omdirigering' 135 -> 147 (+12), mens 'Crawlet - endnu ikke indekseret' faldt 59 -> 49 (-10). Dublet-bruger (65), 404 (63), robots.txt (3) og Dublet-Google (1) staar bit for bit stille. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 889. Validering staar 'Startet' for omdirigering, Registreret, Crawlet og Dublet-Google, 'Godkendt' for robots.txt, 'Ikke startet' for Dublet-bruger og 404. Effektiviteten steg videre: klik 27 -> 28, eksponeringer 41 -> 42, klikrate 65,9 -> 66,7 %, position 3,2 -> 3,1 i det rullende 28-dages vindue (27/9-24/10). Jeg har IKKE maalt hvorfor - det staar der kun, at det skete."
+    },
+    {
+      "dato": "2026-11-02",
+      "adresser": 646,
+      "indekseret": 41,
+      "ikkeIndekseret": 889,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 561,
+        "Side med omdirigering": 147,
+        "Dublet uden kanonisk side valgt af brugeren": 65,
+        "Ikke fundet (404)": 63,
+        "Crawlet - endnu ikke indekseret": 49,
+        "Blokeret af robots.txt": 3,
+        "Dublet, Google valgte en anden kanonisk side": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 26,
+        "eksponeringer": 56,
+        "klikrate": 46.4,
+        "position": 2.6
+      },
+      "note": "Niende aflaesning, syv dage efter den ottende. Indekseringstallene er bit for bit identiske med 26/10: 41 indekserede, 889 ikke indekserede og alle syv viste aarsager uaendrede. Grunden er maalt: 'Seneste opdatering' staar fortsat paa 23.10.2026 - Google har ikke genberegnet indekseringsdata siden sidste aflaesning, saa der er intet nyt datasaet at laese. Sitemappet er vokset 628 -> 646 (+18). AENDRING i brugerfladen: valideringen for 'Side med omdirigering' er skiftet fra 'Startet' til 'Mislykkedes' - den validering, der var i gang 26/10, fejlede. Oevrige: 'Startet' for Registreret, Crawlet og Dublet-Google, 'Godkendt' for robots.txt, 'Ikke startet' for Dublet-bruger og 404. Effektiviteten delte sig: klik 28 -> 26 (-2), eksponeringer 42 -> 56, klikrate 66,7 -> 46,4 %, position 3,1 -> 2,6 i det rullende 28-dages vindue (4/10-31/10). Jeg har IKKE maalt hvorfor eksponeringerne steg mens klikkene faldt - det staar der kun, at det skete."
     }
   ]
 }
