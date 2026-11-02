@@ -425,5 +425,24 @@
   ],
   "usd": 2.2094,
   "soegninger": 24
+ },
+ {
+  "dato": "2026-11-02T06:37:23.162Z",
+  "omskrevet": [
+   "andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just",
+   "the-digital-money-war-why-banks-stablecoins-and-x-money-are-battling"
+  ],
+  "stoppet": [
+   {
+    "slug": "beyond-the-screen-10-mind-blowing-ar-use-cases-shaping-our-future",
+    "grund": "Fejl: Video-andel 38 % efter rettelse (højst 30 %). Artiklen skrives ikke."
+   },
+   {
+    "slug": "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas",
+    "grund": "Sprunget over: søgningen gav for lidt med kilde (5 delspørgsmål, 1 fakta, 1 kilder) — \"how do pinterest ads work\""
+   }
+  ],
+  "usd": 1.7521,
+  "soegninger": 24
  }
 ]

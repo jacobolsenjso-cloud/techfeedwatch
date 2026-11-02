@@ -33,23 +33,11 @@
   "dato": "2026-10-25",
   "forsoeg": 2
  },
- "andrew-ng-s-bold-vision-how-ai-can-empower-every-business-not-just": {
-  "grund": "Fejl: 4 sætninger med tal uden navngiven kilde efter rettelse (højst 1): \"According to JPMorgan Chase's April 2026 research report, small businesses adopt\" · \"According to JPMorgan Chase, large firms ",
-  "recipe": 3,
-  "dato": "2026-10-26",
-  "forsoeg": 1
- },
- "the-digital-money-war-why-banks-stablecoins-and-x-money-are-battling": {
-  "grund": "Sprunget over: kilden handler ikke om \"what is the purpose of stablecoins\" (2QfSQybsJsE)",
-  "recipe": 3,
-  "dato": "2026-10-26",
-  "forsoeg": 1
- },
  "beyond-the-screen-10-mind-blowing-ar-use-cases-shaping-our-future": {
-  "grund": "Sprunget over: ingen undertekster for WxzcD04rwc8 ([GoogleGenerativeAI Error]: Candidate was blocked due to RECITATION: The generated content was filtered because it may contain material that resemble",
+  "grund": "Fejl: Video-andel 38 % efter rettelse (højst 30 %). Artiklen skrives ikke.",
   "recipe": 3,
-  "dato": "2026-10-26",
-  "forsoeg": 1
+  "dato": "2026-11-02",
+  "forsoeg": 2
  },
  "master-quant-finance-in-9-minutes-your-python-pandas-roadmap-to-smart": {
   "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"How do you access financial statements, company profiles, and options data using yfinance?\"). Artiklen skrives ikke.",
@@ -85,6 +73,12 @@
   "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What are the primary limitations and hallucination risks when using NotebookLM for video production?\"). Artiklen skrives ikke.",
   "recipe": 3,
   "dato": "2026-11-01",
+  "forsoeg": 1
+ },
+ "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas": {
+  "grund": "Sprunget over: søgningen gav for lidt med kilde (5 delspørgsmål, 1 fakta, 1 kilder) — \"how do pinterest ads work\"",
+  "recipe": 3,
+  "dato": "2026-11-02",
   "forsoeg": 1
  }
 }

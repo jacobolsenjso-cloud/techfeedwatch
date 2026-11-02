@@ -1,66 +1,149 @@
 ---
-title: "The Purpose of Stablecoins: Stability and Utility"
-youtubeId: "2QfSQybsJsE"
-channelTitle: "Crypto Casey"
-channelId: "UCi7RBPfTtRkVchV6qO8PUzg"
-publishedAt: "2026-07-11T14:40:04Z"
+title: "Do Consumers Understand the Purpose of Stablecoins?"
+youtubeId: "s5u7uf0L-L8"
+channelTitle: "CNBC"
+channelId: "UCvJJ_dzjViJCoLf5uKUTwoA"
+publishedAt: "2025-10-01T16:01:36Z"
 date: "2026-07-12"
-updated: "2026-09-15"
+updated: "2026-11-02"
 tags:
   - "Fintech"
   - "Crypto"
-summary: "Stablecoins bridge traditional finance and cryptocurrency, offering stable digital assets pegged to fiat currencies like the US dollar. Their core purpose is to mitigate volatility in crypto markets and enable faster, cheaper global transactions. This utility has sparked a 'financial arms race' as banks, fintechs, and governments compete for control over future digital money."
-metaDescription: "Understand the purpose of stablecoins in digital finance, how they offer stability, and their role in the evolving global financial field."
+summary: "Stablecoins provide a digital alternative to volatile cryptocurrencies by tracking the value of national currencies like the U.S. dollar. People use them to send money across borders, settle business trades quickly, and protect savings against local currency inflation. However, central banks and regulators warn that these private tokens carry bank run risks and threaten sovereign debt markets."
+metaDescription: "Learn the real purpose of stablecoins, how dollar pegs work, and why businesses use these digital tokens for global payments."
 targetQuestion: "what is the purpose of stablecoins"
-duration: "56:58"
-viewCount: 14022
-viewsUpdated: "2026-11-01"
+duration: "10:40"
+viewCount: 80257
+viewsUpdated: "2026-11-02"
 thumbMax: true
 isShort: false
-rewrittenAt: "2026-09-15"
+recipe: 3
+rewrittenAt: "2026-11-02"
 faqs:
-  - question: "What is the main purpose of a stablecoin?"
-    answer: "Stablecoins are digital assets pegged to the value of fiat currencies like the US dollar, offering stability in crypto markets and facilitating fast, low-cost global transactions. They aim to provide a more open, higher-yield blockchain-based financial system."
-  - question: "How do stablecoins differ from traditional bank accounts or tokenized deposits?"
-    answer: "Stablecoins are separate digital assets designed to maintain a stable value, existing outside the traditional banking system. Tokenized deposits are actual bank deposits represented on a blockchain, remaining within regulated banking with existing risk frameworks."
-  - question: "Why are stablecoins considered 'currency power tools'?"
-    answer: "Stablecoins, particularly those pegged to the US dollar, currently dominate the $300 billion stablecoin market, making them a tool for dollar dominance. Other nations are now developing their own stablecoins and CBDCs to counter this global financial influence."
+  - question: "What are stablecoins backed by?"
+    answer: "According to the Financial Action Task Force, 95% of active stablecoins are backed by fiat currency. The Bank for International Settlements recorded that issuers held over $270 billion in reserve assets by December 2025, including U.S. Treasury bills."
+  - question: "What are stablecoins in crypto?"
+    answer: "Stablecoins are digital assets engineered to maintain a steady price target instead of swinging wildly like traditional cryptocurrencies. The Financial Action Task Force reported that stablecoins reached a global market capitalization of $316 billion in October 2025."
+  - question: "How do stablecoins work?"
+    answer: "Issuers take in traditional fiat deposits and mint equivalent digital tokens that circulate across blockchain rails. According to Bank for International Settlements Paper 170, roughly 98% of stablecoin value is U.S. dollar-denominated, primarily functioning as a private-sector store of value and medium of exchange in emerging and developing economies facing local macroeconomic instability."
 ---
 
-Stablecoins serve as a critical bridge in the evolving financial field, linking the stability of traditional fiat currencies with the efficiency and innovation of blockchain technology. Their fundamental purpose is to enable digital transactions with predictable value, avoiding the extreme volatility often associated with other cryptocurrencies.
+The primary purpose of stablecoins is to provide digital currency that keeps a steady value. They can move across internet networks almost instantly.
 
-This core function places stablecoins at the center of a significant global financial arms race, where banks, fintech companies, big tech firms, and governments vie for control over digital money. While traditional banks offer depositors interest rates as low as 0.6% annually, stablecoins and other digital financial products propose alternative avenues, driving a rapid transformation in how value moves and where yields are generated.
+Cryptocurrencies are often volatile (subject to rapid, unpredictable price changes). In contrast, stablecoins mirror national currencies like the U.S. dollar.
 
-For instance, the American Bankers Association actively lobbies against yield-style provisions for stablecoins in legislation like the Clarity Act, expressing concern over potential "deposit flight" from traditional banking systems. Banks loan out customer money at rates as high as 25% for credit cards, making a parallel, less regulated deposit system with potentially higher yields a significant threat to their established model.
+This setup lets people trade, save, and send payments without unexpected price swings. Stablecoins combine the stability of sovereign money (government-issued currency) with internet speed. By doing this, they link traditional banks to digital asset markets.
 
-The stablecoin ecosystem itself is diversifying. A new independent company, Open Standard, unveiled OpenUSD (OUSD), a US dollar stablecoin launching later in 2026.
+## How do stablecoins maintain their peg to the dollar?
+Stablecoins maintain their peg (a fixed exchange rate target) by holding reserve assets. These reserves include cash and government bonds equal to the total value of all issued tokens.
 
-This consortium-governed stablecoin is backed by over 140 major names in finance and tech including:
+When a user deposits traditional currency, the issuer creates new digital tokens on a blockchain (a shared digital ledger). When a user returns tokens, the issuer redeems them for real dollars. The issuer then removes those digital units from circulation.
 
-- Payment networks like Visa, Mastercard, and Stripe
-- Tech giants such as Google, IBM, and Samsung
-- Crypto players like Coinbase, Ripple, and Bybit
+According to the Financial Action Task Force, 95% of active stablecoins rely on fiat currency backing to hold their target price. Fiat currency is government-issued money like the U.S. dollar.
 
-Unlike single-issuer stablecoins such as USDC or USDT, OpenUSD distributes interest earned on its backing assets among its partners, rather than concentrating all income with one entity.
+The reserve assets act as collateral (property pledged as a guarantee). This guarantee ensures that holders can always redeem their tokens.
 
-It also promises zero fees for minting or redeeming, with no volume caps, targeting businesses that move money at an industrial scale. This structure highlights a key purpose of stablecoins: to offer more efficient, transparent, and potentially collaborative infrastructure for large-scale digital value transfer.
+Data published by the Financial Action Task Force and the [Bank for International Settlements](https://www.bis.org/) details the scale and makeup of these dollar-pegged reserves.
 
-However, understanding what constitutes a stablecoin versus other digital financial products is critical, as many get this distinction wrong. For example, Elon Musk’s X money, while offering features like 6% APY on deposits and a Visa debit card with 3% cashback, operates as a fiat system—a bank account integrated into a social media app.
+| Metric | Reported Value | Reporting Institution |
+| :--- | :--- | :--- |
+| Global Market Capitalization (October 2025) | $316 billion | Financial Action Task Force |
+| Daily Trading Volume (October 2025) | $156 billion | Financial Action Task Force |
+| Assets Under Management (December 2025) | More than $270 billion | Bank for International Settlements |
+| U.S. Treasury Bill Purchases (2025) | Approximately $35 billion | Bank for International Settlements |
 
-It currently has no stablecoin integration or other cryptocurrency support, serving as a direct competitor to traditional banks with higher interest rates on fiat deposits, not a crypto-native solution. Similarly, mega banks including JPMorgan, Citigroup, Bank of America, and Wells Fargo are developing their own "tokenized deposit networks."
+According to Bank for International Settlements Working Paper 1270, stablecoin issuers held more than $270 billion in assets under management by December 2025. The Financial Action Task Force reported that the global market capitalization of stablecoins reached $316 billion in October 2025.
 
-These are not stablecoins; they represent actual bank deposits on a blockchain, keeping funds within the regulated banking system while adding 24/7 instant programmability features. The distinction is significant: stablecoins are separate digital assets pegged to the US dollar, while tokenized deposits are bank money on a blockchain.
+Market capitalization means the total value of all tokens in circulation. That market was supported by $156 billion in daily trading volume.
 
-Beyond domestic finance, stablecoins are emerging as a global currency power tool. The US dollar currently backs approximately 99% of the $300 billion stablecoin market, reinforcing dollar dominance worldwide.
+The Bank for International Settlements recorded that issuers purchased approximately $35 billion of U.S. Treasury bills in 2025 alone. Treasury bills are short-term government debt instruments. They pay interest to token issuers while providing liquid cash when users want their money back.
 
-Other nations are responding, with the European Central Bank working on the digital euro (CBDC), and a consortium of 12 major EU banks building Kivalis, a MiCA-regulated euro stablecoin targeting a 2026 launch. China is redesigning the e-CNY (digital yuan) to counter dollar dominance, and countries like Japan, Singapore, Hong Kong, and South Korea are actively developing or attracting yen, Singapore dollar, Hong Kong dollar, and won stablecoins respectively.
+## Real-world uses span remittances, commerce, and inflation hedging
+People use stablecoins to send money across borders cheaply. They also use them to pay for goods directly. In unstable economies, people use them to protect their savings from rapid currency inflation.
 
-As Crypto Casey points out, these developments mean stablecoins are no longer just a crypto story but a critical component in international financial competition. The proliferation of stablecoins is intended to facilitate faster, cheaper, and more programmable global transactions, reshaping cross-border commerce and finance.
+According to Bank for International Settlements Paper 170 published in May 2026, roughly 98% of stablecoin value is U.S. dollar-denominated. That paper explains that citizens in emerging economies rely on these tokens as a store of value when their home currencies collapse.
 
-### The Bottom Line
+According to the Federal Reserve Bank of Richmond, individuals and businesses turn to stablecoins to access dollar liquidity (cash ready to spend). They also use them to bypass standard banking friction.
 
-The fundamental purpose of a stablecoin is to provide a reliable, low-volatility digital asset that enables efficient transactions on blockchain networks, serving as a critical link between traditional finance and the decentralized economy. This purpose is now amplified by global competition, driving innovation and challenging existing financial structures.
+The Richmond Fed notes that workers use them to lower remittance transaction costs. Families also use them to protect household savings against domestic currency depreciation (loss of purchasing value).
 
-While regulatory environments, particularly in the US, continue to constrain aspects like direct stablecoin yield, the overarching trend points towards more competition and diverse financial options. Individuals are increasingly considering how to achieve financial sovereignty by exploring various digital asset strategies, from active trading with platforms like [Bull Mania by iVantage](/video/altcoin-bull-market-signal-decoding-macroeconomic-impact) to passive income generation through AI crypto traders such as Go Baby Trade, or securing their assets with hardware wallets.
+Common applications for stablecoins include:
+- Remittance transfers sent home across borders without banking markups.
+- Corporate treasury settlements that clear outside standard banking hours.
+- Domestic currency shields for families facing rapid inflation.
+- Digital liquidity pairs (pools of two digital tokens that allow direct trading) used by traders across blockchain networks.
 
-As the market matures, understanding the specific nature and regulatory implications of different digital assets—whether stablecoins, tokenized deposits, or fiat-based digital accounts—will be essential for handling the future of finance.
+A remittance is money that an immigrant worker sends home to support family members in another country. Modern [stablecoin infrastructure](/video/the-silent-revolution-how-stablecoins-are-reshaping-the-global-battle) supports digital payments. Because of this network, international transfers move in minutes.
+
+Users do not need to wait days for correspondent banks to settle ledger accounts. Correspondent banks are intermediary institutions that handle cross-border payments between banks. To settle ledger accounts means to reconcile and balance financial records.
+
+In places where standard bank accounts are simply too expensive, digital payment tools can be a genuine lifeline for working families. Storing earnings securely without relying on physical cash makes a real difference, and I hope to see that access expand much further.
+
+## Are stablecoins as safe as traditional bank money?
+Stablecoins are not as safe as traditional commercial bank deposits. They lack government deposit insurance. They also lack direct central bank rescue facilities.
+
+When money sits in an insured commercial bank account, government safety nets protect the balance if the bank collapses. Stablecoin arrangements do not offer federal deposit insurance. This means token holders bear the default risk (the risk of financial failure) of the private issuer.
+
+According to J.P. Morgan Global Research, stablecoins fail three foundational central bank criteria for money: singleness, elasticity, and integrity.
+
+Singleness fails because secondary market trading prices periodically deviate from par (fall away from equal face value). This means a stablecoin can drop below one dollar during periods of market stress.
+
+Elasticity fails because token supply cannot expand without 100% upfront asset backing, according to J.P. Morgan Global Research.
+
+J.P. Morgan Global Research also established that integrity fails due to illicit finance vulnerabilities. It also fails due to the lack of a central bank lender of last resort (an emergency backup lender).
+
+The structural differences between bank cash and stablecoins include:
+- Commercial bank deposits carry government insurance, whereas private stablecoins offer no public guarantee.
+- Regulated banks maintain direct access to emergency central bank loans during liquidity panics.
+- Stablecoins trade on open markets where sudden sell-offs can break their fixed dollar target.
+
+An issuer could lose reserves through bad investments or banking freezes. If that happens, token holders cannot claim government compensation to recover their money.
+
+Without government deposit insurance, you shoulder the financial risk entirely on your own whenever you hold private tokens. Blockchain transfers are final with no bank manager to undo a mistaken transaction, so keeping safety front and center is essential.
+
+## Run risks and sovereign debt spillovers threaten financial stability
+Stablecoins threaten financial stability. Sudden panic redemptions can trigger fire sales (fast sales at deep discounts) of government debt. These events can also weaken national control over domestic money supplies.
+
+A run happens when thousands of depositors attempt to withdraw funds at the exact same moment. This panic quickly exhausts available liquid cash.
+
+According to the Financial Stability Board's October 2026 report to the G20, widespread stablecoin arrangements create serious cross-border financial stability vulnerabilities. The Financial Stability Board warned that mass redemptions could force issuers to dump sovereign debt into open markets.
+
+Rapid asset sales could cause bond prices to tumble. That drop could create panic across the broader financial system.
+
+According to Bank for International Settlements Working Paper 1270, issuers made massive purchases of Treasury bills. In 2025, these purchases exerted downward pressure on short-term Treasury yields.
+
+The Financial Stability Board also warned that stablecoins cause bank disintermediation. This happens when depositors pull money from local banks to buy digital dollars. This capital flight leaves domestic commercial banks with fewer resources to fund local mortgages and business loans.
+
+In an October 2025 address, Federal Reserve Board Governor Michael Barr warned that stablecoins carry significant run risks without comprehensive federal regulation. Governor Barr emphasized that strict capital, liquidity, and consumer protection rules must exist before stablecoins can safely modernize payments.
+
+## CNBC explores how merchants use stablecoins to cut payment fees
+[CNBC](https://www.cnbc.com/subscribe/cnbcplus?__source=plus|organic|social|bauoffer&tpcc=plus|organic|social|bauoffer) reports that businesses are turning to stablecoins to bypass traditional credit card processing networks. This change helps them eliminate expensive middleman transaction fees.
+
+In an investigative report, CNBC showed how small businesses struggle with standard electronic payments. CNBC reported that Wade Preston operates four retail locations for Prevail Coffee across Atlanta, Montgomery, and Birmingham.
+
+Wade Preston told CNBC. "If credit card transaction fees were a employee in my business, they would be by far the highest paid employee in our business."
+
+CNBC calculated that merchant credit card fees typically run between 3% and 4% per transaction. According to CNBC, U.S. merchants paid a record $187 billion in card processing fees in 2024.
+
+[Visa](https://www.visa.com/en-us) told CNBC that card interchange fees remain necessary to finance consumer fraud protection, network maintenance, and customer support. Interchange fees are transaction charges that merchants pay to card-issuing banks.
+
+To bypass these fees, Prevail Coffee piloted an application built on Coinbase's Base platform. This allows customers to pay directly from digital wallets.
+
+CNBC reported that international remittances to low- and middle-income nations reached an estimated $685 billion in 2024. Filmmaker Francisco Diez explained to CNBC that traditional bank wires to Argentina face high deductions and currency controls.
+
+Data from Chainalysis cited by CNBC showed a shift in emerging markets. Stablecoins have displaced bitcoin and ether as the most common cryptocurrency received there.
+
+I use a crypto card for daily purchases myself, so I completely understand why retailers want relief from steep card processing charges. Cutting out traditional payment middlemen helps shop owners protect their earnings while keeping checkout straightforward for regular customers.
+
+## Sources
+
+- [Stablecoin - Wikipedia](https://en.wikipedia.org/wiki/Stablecoin) — wikipedia.org
+- [The impact of stablecoins on the international monetary and financial system](https://www.bis.org/publications/paper-170-impact-stablecoins-international-monetary-and-financial-system) — bis.org
+- [Stablecoins and Financial Stability | Richmond Fed](https://www.richmondfed.org/publications/research/econ_focus/2025/q4_federal_reserve) — richmondfed.org
+- [Stablecoins and safe asset prices](https://www.bis.org/publications/working-paper-1270-stablecoins-and-safe-asset-prices) — bis.org
+- [What to Know About Stablecoins | J.P. Morgan Global Research](https://www.jpmorgan.com/insights/global-research/currencies/stablecoins) — jpmorgan.com
+- [Global Stablecoin Arrangements: Cross-border vulnerabilities and financial stability monitoring - Financial Stability Board](https://www.fsb.org/2026/10/global-stablecoin-arrangements-cross-border-vulnerabilities-and-financial-stability-monitoring/) — fsb.org
+- [Crypto-assets and Global Stablecoins - Financial Stability Board](https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/crypto-assets-and-global-stablecoins/) — fsb.org
+- [fsb.org/uploads/P121026-2.pdf](https://www.fsb.org/uploads/P121026-2.pdf) — fsb.org
+- [Speech by Governor Barr on stablecoins - Federal Reserve Board](https://www.federalreserve.gov/newsevents/speech/barr20251016a.htm) — federalreserve.gov
+- [How Stablecoins Could Help Small Businesses Slash Credit Card Fees](https://www.youtube.com/watch?v=s5u7uf0L-L8) — CNBC on YouTube

@@ -171,5 +171,30 @@
   ],
   "usd": 0.0068,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-02T06:55:17.344Z",
+  "artikler": [
+   {
+    "slug": "unlocking-ethereum-s-power-your-first-smart-contract-with-solidity",
+    "tjekket": 8,
+    "belagt": 5,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 1,
+    "fund": []
+   },
+   {
+    "slug": "meta-s-free-ai-revolution-unleashing-muse-image-muse-video-your",
+    "tjekket": 7,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 6,
+    "fund": []
+   }
+  ],
+  "usd": 0.0053,
+  "soegninger": 0
  }
 ]
