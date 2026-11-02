@@ -116,33 +116,6 @@
   "hvorfor": "\"next year\" betyder noget andet nu end da det blev skrevet",
   "foersteGang": "2026-09-21"
  },
- "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md#1#IBM's roadmap, for instance, once projected having more than": {
-  "regel": 1,
-  "navn": "udløbet dato",
-  "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "What Hybrid Quantum-Classical Computing Is",
-  "saetning": "IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.",
-  "hvorfor": "forudsigelse om \"2025\" — året er passeret",
-  "foersteGang": "2026-09-21"
- },
- "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md#4#Unsurprisingly, the US government has likewise sharply boost": {
-  "regel": 4,
-  "navn": "relativ tid",
-  "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "What Hybrid Quantum-Classical Computing Is",
-  "saetning": "Unsurprisingly, the US government has likewise sharply boosted its spending, committing a total of $2 billion to quantum computing recently.",
-  "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
-  "foersteGang": "2026-10-12"
- },
- "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md#4#For example, the US government recently committed $2 billion": {
-  "regel": 4,
-  "navn": "relativ tid",
-  "fil": "quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md",
-  "titel": "What Hybrid Quantum-Classical Computing Is",
-  "saetning": "For example, the US government recently committed $2 billion, while major companies like IBM, Google, and Amazon continue to develop quantum hardware.",
-  "hvorfor": "\"recently\" betyder noget andet nu end da det blev skrevet",
-  "foersteGang": "2026-09-21"
- },
  "the-ai-paradox-open-source-national-security-and-the-geopolitical.md#4#Alibaba's Qwen 1.5 and the recently announced Qwen 3.8, a 2.": {
   "regel": 4,
   "navn": "relativ tid",

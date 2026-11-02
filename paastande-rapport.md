@@ -1,10 +1,10 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-10-26 på 460 artikler. **18 fund**, heraf 1 nye siden sidste kørsel og 3 forsvundet (rettet eller omskrevet).
+Målt 2026-11-02 på 474 artikler. **15 fund**, heraf 0 nye siden sidste kørsel og 3 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
-## Regel 1 — udløbet dato (4)
+## Regel 1 — udløbet dato (3)
 
 - **What Are the Fundamental Differences Between AR and VR?**  
   `ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
@@ -18,11 +18,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `key-advantages-of-augmented-reality-in-workforce-training.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-28  
   > Recognizing this performance advantage, 26% of organizations have already integrated AR and VR tools into their operational programs, fueling an immersive tech market projected to exceed $157 billion by 2025.
 
-- **What Hybrid Quantum-Classical Computing Is**  
-  `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
-  > IBM's roadmap, for instance, once projected having more than 4,000 qubits by 2025, and scaling to 10,000 and up by 2026.
-
-## Regel 4 — relativ tid (10)
+## Regel 4 — relativ tid (8)
 
 - **What Quantum Computing Means for Business**  
   `beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -47,14 +43,6 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
 - **How Cloud Simulators Open Up Quantum Computing**  
   `quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality.md` · "next year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > However, the very next year, a quantum computer with 128 qubits could suddenly and handily beat any classical computer ever built for that specific problem.
-
-- **What Hybrid Quantum-Classical Computing Is**  
-  `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-10-12  
-  > Unsurprisingly, the US government has likewise sharply boosted its spending, committing a total of $2 billion to quantum computing recently.
-
-- **What Hybrid Quantum-Classical Computing Is**  
-  `quantum-computing-s-great-paradox-why-investment-soars-as-use-cases.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
-  > For example, the US government recently committed $2 billion, while major companies like IBM, Google, and Amazon continue to develop quantum hardware.
 
 - **Open-Source AI and the Risk of Dual-Use Models**  
   `the-ai-paradox-open-source-national-security-and-the-geopolitical.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
