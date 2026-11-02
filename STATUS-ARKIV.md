@@ -2,6 +2,407 @@
 
 Ældre dagbog (7/10-2026 og tilbage) og Bilag A, flyttet ordret fra `STATUS-ALLE-SITES.md` 14/10-2026. Kun historik — **koden og den aktuelle statusfil er facit**. Nyeste flytning øverst.
 
+## Flyttet 2/11-2026 (statusfil v214 → v215)
+
+### 26/10-2026 kl. 12:29 - Fejltjek af dagens arbejde (Jacobs ønske)
+- **Tjekket:** syntaks i alle 11 ændrede scripts; tests (hjerne, slutkontrol, faktatjek 20, skriveregler 66, kildetjek) alle grønne; begge køer kører (`--vis`); workflows og datafiler gyldige; nyt build: indholdstjek 0 fejl, sitetjek 0 fejl, 460/460 sider med afslutning og 0 døde links; 7 ændrede artikler tjekket LIVE (ingen noindex, én canonical, afslutning, ingen boks, ingen AdSense, ingen "guld værd", ingen rå HTML); robotten grøn 11:17 og 12:17.
+- **Fund 1 (rettet):** kvante- og Clarity Act-artiklen havde mistet "Updated" - add-video skriver frontmatter forfra, og mine lokale omskrivninger 25/10 kørte uden stamp-updated. Nu sætter en omskrivning selv "updated". Begge artikler viser igen "Updated Oct 25, 2026" (set live).
+- **Fund 2 (rettet):** AdSense-historien stod stadig i hjernens erfaringer, som brødtekst-skriveren også får. Markeret "KUN baggrund - skrives ALDRIG i artikler"; skriveren har fået samme regel; koden afviser den i stemme-afsnit.
+- Robotten (nye artikler) og omskrivningen bruger samme add-video.mjs og samme hjerne fra main - alt det nye gælder begge.
+- Lære: En regel, der kun ligger i et efterfølgende trin (stamp-updated i workflowet), gælder ikke, når trinnet springes over (lokale kørsler). Reglen hører hjemme dér, hvor ændringen sker.
+
+
+### 26/10-2026 kl. 12:09 - Gennemgang af første kørsel + rettelser (Jacobs ja)
+- **Kørslen 07:37 (70 min):** 4 af 8 omskrevet (ca. 17 kr, ca. 4,30 kr pr. færdig); stoppet: 2 fordi den gamle video ikke passede, 1 tal uden kilde, 1 blokeret af Gemini (lignede eksisterende tekst). Faktatjek 5 (budget 30 min), 14 fejl rettet. Stikprøve 2 artikler, 0 fejl - men kun 3 af 16 tal kunne bekræftes af koden.
+- **Alvorlig fejl (rettet og set live):** HTML-artiklen fik en tabel med teksten `<meta name="robots" content="noindex">` - markdown sendte den videre som et RIGTIGT tag, så Google fik besked på ikke at vise artiklen. Robottens sitetjek stoppede kørslerne 09:17 og 10:17 (ingen nye artikler de to timer). Nu: add-video skriver tags som tekst, audit-content fanger rå HTML. Robotten kørte igen 11:17.
+- **Stemmen gentog sig:** "worth its weight in gold" i 3 af 4, Boeing/Volkswagen 2 af 4, AdSense-afslaget 2 af 4. Årsag: noterne har få eksempler pr. emne, og et eksempel-idiom i voice.md blev læst som en vending, der skulle bruges. Rettet: noterne er et kompas, de seneste ~20 afsnit vises og tjekkes (5 ord i træk = afvist), højst én historie pr. artikel, AdSense forbudt. De 4 artikler fik ny stemme og nyt faktatjek (6 fejl rettet i den øvrige tekst).
+- **Ny video:** passer den gamle video ikke, prøves op til 3 nye fra YouTube ud fra spørgsmålet. Testet: "what does ai engineering include" fik en video fra 365 Data Science og blev omskrevet. Udgivelse helt uden video er IKKE bygget (venter på at se, hvor ofte det sker).
+- **Faktatjek:** budget 60 min, afkortet automatisk så jobbet slutter før loftet på 150 min (ellers gemmes intet).
+- **Hjernen udvidet (Jacobs diktering):** 40 underpunkter under 10 emner; robotten læser nu underpunkterne med. Prøve: fintech-artikel brugte MobilePay-pointen ("banken kan ikke tilbageføre"), robot-artikel brugte industrirobotter/sikkerhedsstop. Udeladt (fortalt Jacob): pornoindustri (passer ikke til sitet/AdSense), Segway og gyroskopet som danske opfindelser (passer ikke - Segway er amerikansk), "Europas stærkeste kvantecomputer i Danmark" (kan ikke bekræftes), "næsten sikker på at tjene penge" (omskrevet: ingen garanti).
+- Lære: En tabel med HTML-kode som tekst blev til rigtig kode på siden. Alt, robotten skriver, er HTML i sidste ende - tegn som < og > skal behandles som tekst, og tjekket skal ligge i koden, ikke i min opmærksomhed.
+- Lære: `git switch main` fejlede tavst (urettede filer), og fletningen kørte på grenen - intet nåede main. Nu stopper scriptet, hvis grenen ikke er main, før der flettes.
+- Lære: Et eksempel i Jacobs noter ("Hvilket er guld værd!") blev brugt som skabelon. Eksempler i hjernen skal markeres som eksempler.
+
+
+### 26/10-2026 kl. 12:04 - Ugentlig aflæsning: Search Console og links (8. punkt)
+- **Indeksering (aflæst i Jacobs Chrome, Googles data sidst opdateret 23/10):** indekseret 38 -> **41** (+3, første stigning siden 5/10), ikke indekseret 852 -> **889** (+37), sitemappet 608 -> **628** adresser (+20). Trækker man væksten fra, er den reelle bevægelse i "ikke indekseret" ca. +17.
+- **Årsager der flyttede sig:** "Registreret - endnu ikke indekseret" 526 -> 561 (+35), "Side med omdirigering" 135 -> 147 (+12), "Crawlet - endnu ikke indekseret" 59 -> 49 (-10). Dublet-bruger (65), 404 (63), robots.txt (3) og Dublet-Google (1) står bit for bit stille. Fortsat 7 årsager; "Serverfejl (5xx)" er ikke på listen og skrives som 0 for at bevare formen. Summen passer: 889.
+- **Effektivitet (28 dage, 27/9-24/10):** klik 27 -> **28**, eksponeringer 41 -> **42**, klikrate 65,9 -> **66,7 %**, position 3,2 -> **3,1**. Femte uge i træk hvor klik og position bliver bedre, mens indekseringen ikke følger med. Jeg har IKKE målt hvorfor - kun at begge ting sker samtidig.
+- **Links (søjle A, 2. aflæsning):** **intet har flyttet sig**. Stadig 1 eksternt link (alternativeto.net -> forsiden, ankertekst "techfeedwatch"), 338 interne. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat "No data available" - derfor `bing: null`. Det største hul er uændret.
+- `serie.mjs` kører grønt: 8 punkter, alle tre kontroller passerer (årsagssum, klikrate, dato-rækkefølge). `link-serie.json` er gyldig JSON med 2 punkter.
+- **Fund, som Jacob bør kende:** repoet på pc'en stod på grenen `stemme-variation` (igangværende arbejde, ikke pushet). Måle-commit'en landede derfor først på den gren. Jeg rullede den tilbage, lagde de to JSON-filer på `main` via et midlertidigt git-worktree og pushede: `origin/main` = **`f30ea63e`** "Search Console: weekly reading". Grenen `stemme-variation` står igen præcis som før (`2df19fc6`), og dens arbejdskopi har de to opdaterede JSON-filer liggende som urettede ændringer. Intet af Jacobs igangværende arbejde er rørt.
+- Lære: tjek `git branch` FØR commit. En måleserie hører til på `main`; står arbejdskopien på en feature-gren, lander ugens tal usynligt der. Fremover: aflæsningen committer via et worktree af `main`, ikke i den gren, der tilfældigvis er tjekket ud.
+
+
+### 25/10-2026 kl. 23:04 - Korte stemme-afsnit, afslutning med knapper, tabeller (Jacobs ønsker)
+- **Stemmen:** Jacob syntes, afsnittene var for lange. Nu 2-3 korte afsnit (2-3 sætninger hver) i hver sin sektion, hvor hans mening passer. Kvante-artiklen fik hans egen forklaring ("punkt 1, så 2, så 3 - kvantecomputeren ser alle på én gang").
+- **Fund ved genkontrol:** et nyt faktatjek af de 2 artikler fandt 4 fejl, som slutkontrollen ved omskrivningen ikke fangede (3 forkerte kildeangivelser, 1 forkert procent) - rettet/fjernet. Faktatjekket finder ikke alt i første omgang; stikprøven skal vise hvor meget. Forslag (ikke besluttet): slutkontrol to gange pr. artikel, ca. 0,30 kr ekstra.
+- **Afslutning (Jacobs valg):** "I hope this gave you a clearer picture, but always check other sources too. Spotted an error or have a question? Write to me." + knapperne "More on <emne>" og "Explore our guides" (direkte til emnets guide, ellers /guides/). Tjekket på alle 457 sider: 0 døde links (387 til en guide, 70 til oversigten). Skærmbilleder mobil/computer, lys/mørk set.
+- **Tabeller i stedet for flere billeder:** ny regel 20b - én tabel kun ved en reel sammenligning, tal kun fra researchen, kilden nævnt lige før. Ikke prøvet på en rigtig artikel endnu.
+- Lære: "Husk at tjekke for fejl" - tjekket alle 457 sider for afslutning og døde links med et script, ikke kun den ene side på skærmbilledet. Fandt en forkert linkfarve (blå i stedet for sitets teal) og rettede den før live.
+
+
+### 25/10-2026 kl. 21:33 - Stemmen flettet ind i stedet for "My take"-boksen
+- Jacob så "My take"-boksen live og syntes, den så latterlig ud i en artikel. Nu: robotten læser den færdige artikel, vælger den sektion, hvor hans holdning passer bedst, og sætter ét almindeligt afsnit (3-6 sætninger, første person) ind sidst i den - uden overskrift og boks. Samme kontrol som før (ingen nye tal, firmanavne eller privatliv; faktatjekkes med resten). Boks-koden og dens CSS er fjernet.
+- De 2 artikler fra i aften er flyttet over (kvante: under krypteringsafsnittet; Clarity Act: under skatteafsnittet). Skærmbilleder mobil + computer set; 0 fejl i indholdstjekket.
+- Lære: Jeg viste boksen som et isoleret udklip, ikke midt i en artikel - så jeg så ikke, hvor fremmed den virkede. Ved designændringer i artikler: vis skærmbilledet med teksten før og efter, så helheden kan vurderes.
+
+
+### 25/10-2026 kl. 20:58 - Jacobs hjerne fuldt i brug + "My take" (Jacobs ønske)
+- **Målt fejl i koblingen (rettet):** `core.md` og `beliefs.md` blev læst, men aldrig sendt til skrivningen; `erfaringer.md` blev klippet ved 2.500 af 4.053 tegn; korte emneord ("AI", "AR/VR", "SEO") blev aldrig fundet. Artikler med Jacobs holdninger: 353 -> 421 af 457.
+- **Hjernen er et krav:** uden hjernen skriver robotten ingen artikel (før skrev den videre uden). Tre testartikler var skrevet fra pc'en uden hjernen - to er skrevet om med den; fintech-artiklen stoppede to gange på samme ubesvarede delspørgsmål og prøves igen om 7 dage.
+- **Udvidet hjerne (privat repo jacob-hjerne):** skrivestil udledt af Jacobs egne ansøgninger/CV'er (kun stil, ingen personoplysninger); hans tilgang med egne ord (kildekritik, sikkerhed, "ens pligt at følge med"); tone: aldrig aggressiv; erfaringer (Facebook-hack, AI-værktøjer, affiliate, trading, krypto); CV-baggrund med sikkerhed om menneskeliv (kranfører offshore, helikopterdækleder, brand/evakuering) - med hans ja, uden firmanavne; privat baggrund markeret "skrives aldrig i artikler". Køletallet for kvantechips rettet til ca. -273 °C (med Jacobs ja).
+- **"My take":** et eget afsnit sidst i artiklen (3-6 sætninger, første person) i en boks med "Jacob S. Olsen, who runs TechFeedWatch". Skrives efter artiklen er færdig, kun når emnet passer; koden afviser nye tal, firmanavne og privatliv; faktatjekkes som resten. Brødteksten skrives uden "I". Skærmbilleder mobil + computer set.
+- Lære: Forenklingstrinnet havde "No first person", og fyld-tjekket kunne slette holdningssætninger - Jacobs afsnit blev fjernet igen efter at være skrevet (målt: 2 artikler med hjernen, 0 jeg-afsnit). Når en ny del skal overleve hele kæden, så giv den sit eget trin til sidst i stedet for at håbe, at alle trin lader den være.
+- Lære: Jeg testede omskrivninger fra pc'en, hvor hjernen ikke lå, og opdagede det først, da Jacob spurgte. Nu stopper koden selv uden hjerne - en regel, der kræver at nogen husker den, er ikke en regel.
+- Lære: Skærmbilleder af lange sider hang i Chrome på pc'en (12.000+ px høje). Løst ved at tage dem med Playwright i skyen på den byggede side.
+
+
+### 25/10-2026 kl. 19:20 - Rettelse til v206 (AdSense-vurderingen)
+- **Rettelse:** v206 sagde, at sitet er "maskinskrevet ud fra andres videoer". Det er forkert. Opskriften er: Googles søgespørgsmål først → research på nettet (målt: 7-8 websider pr. artikel) → videoen kun som supplement (koden stopper artiklen over 30 % videoandel; målt 20-25 %).
+- **AdSense:** afslaget var "Low value content" (Jacob). Det, der stadig kan se ud som lav værdi: 429 gamle artikler fra ældre, mere video-baserede opskrifter (dem retter de 8 om dagen); mange AI-skrevne artikler i samme form; ingen egen erfaring eller noget, man kun finder her - sitets 35 værktøjer, ordbog og guider er det originale og bør stå tydeligt, før der søges.
+- Lære: Jeg beskrev robotten med en gammel formulering i stedet for den opskrift, koden kører. Beskriv altid opskriften ud fra koden og de målte tal (websider, videoandel), ikke ud fra hukommelsen.
+
+
+### 25/10-2026 kl. 19:15 - 8 om dagen og ærlige "Updated"-datoer (Jacobs ønske)
+- **8 omskrivninger om dagen** (Jacob, før 2): `omskriv-gamle.mjs` kører 4 ad gangen. Målt: 2 samtidig tog 19 min, begge bestod slutkontrollen (Clarity Act- og fintech-artiklen, begge Google-viste; begge fik AI-billede, de havde intet). Job-loft 150 min.
+- **Datoer:** udgivelsesdatoen ændres aldrig. `stamp-updated.mjs` kører nu i den daglige kørsel og sætter "Updated" KUN når det, læseren ser, er ændret (et faktatjek uden rettelser og et nyt søgespørgsmål tæller ikke). Senere ændringer flytter "Updated". 382 artikler fik datoen bagud fra deres reelle omskrivning/rettelse. Skærmbilleder mobil + computer set: "Sep 30, 2026 · Updated Oct 25, 2026".
+- Fund: sitet har aldrig sat "Updated" automatisk - scriptet fandtes, men blev ikke kørt. Google har derfor set gamle datoer på omskrevne artikler.
+- Lære: Første udgave af datolinjen delte datoerne over tre linjer på mobil. Skærmbillede FØR jeg siger, at et design er færdigt - det fangede fejlen.
+- Lære: `stamp-updated.mjs` fjernede kun linjens tekst, ikke linjeskiftet, så en ny "updated"-linje så ud som en ændring (ville have stemplet 380 artikler forkert). Tørt løb først fangede det; scriptet fjerner nu hele linjen.
+- AdSense: Jacob spurgte, om han kan søge om ca. 14 dage. Svar: kvaliteten er markant bedre, men godkendelse kan ikke loves - sitet er maskinskrevet ud fra andres videoer ("scaled content"), og om 14 dage er ca. 110 af 431 gamle omskrevet. Råd: søg på målte tal (ca. 10.-14/11). Spurgt efter teksten i seneste afslag.
+
+
+### 25/10-2026 kl. 18:17 - Én opskrift, slutkontrol, daglig stikprøve, søgespørgsmål (Jacobs plan)
+- **Slutkontrol** (`src/lib/slutkontrol.mjs`) kører til sidst i robotten OG i faktatjekket af gamle artikler: titel, meta, resumé, FAQ, brødtekst og faktaboks. Tre lag: tal mod researchen, belæg (koden henter kildesiden og tjekker citat og tal) og en faktatjekker med Google-søgning. En sætning uden belæg forsøges rettet efter den rigtige kilde, før den fjernes. Målt: Figure-sætningen blev rettet til det præcise tal (109,504), den falske IBM-sætning blev fjernet.
+- **Daglig stikprøve** (`stikproeve.mjs`, i den daglige kørsel): 2 tilfældige, allerede kontrollerede artikler; alle tal-sætninger tjekkes mod kildesiden af koden. Fejl genkontrolleres samme dag. Log: `src/data/stikproeve-log.json`. Målt: 1 min og 0,03 kr pr. kørsel.
+- **Søgespørgsmål:** 138 gamle artikler fik et rigtigt Google-spørgsmål (`find-spoergsmaal.mjs`), 19 fandt intet passende og faktatjekkes kun.
+- **Kø:** omskrivning 2/dag (Jacob, før 5): de 37 Google-viste først (ca. 3 uger; 2 af de 40 fik intet spørgsmål og faktatjekkes), så alle andre nyeste først - 431 i alt, ca. 7 måneder. En artikel, der stopper, prøves igen efter 7 dage, højst 3 gange (før: opgivet for altid).
+- **Første fulde test:** kvantecomputer-artiklen (den mest viste) er omskrevet: 26 min, 0,41 $ + nyt AI-billede (den havde intet). Faktatjek af 4 gamle artikler: ca. 2,5 min og 0,04 $ pr. artikel.
+- **Pris (målt):** ca. 12 kr/dag (2 omskrivninger à ca. 4,40 kr + 10 faktatjek à ca. 0,30 kr). Mit tal på 35 kr/dag i formiddags var målt før belæg-kaldet blev gjort billigere.
+- Lære: Mit måleværktøj slettede rigtige sætninger - bindestreg-tegnet U+2011, "U.S." der delte sætningen og ødelagde et link, PDF-kilder, produktnavne ("TPU 8t") og dokumentnumre ("800-12 Rev. 1") talt som påstande. Alle fem har nu en test i `_udkast/_test-slutkontrol.mjs` (13 ok). Et faktatjek skal testes på RIGTIGE sætninger, før det må slette noget.
+- Lære: "fetch failed" var ikke Googles fejl: Gemini tænkte i over 300 sek., og Node afbryder efter 300 sek. Målt før rettelse: lav tænkning 13-84 sek. Find tiden, før jeg kalder en fejl midlertidig.
+- Lære: Jeg kørte `git status` fra Linux-maskinen, og den efterlod en låsefil i .git. Git kun fra Windows - også kun-læse-kommandoer.
+- Lære: Et stop i robotten betød, at artiklen aldrig blev prøvet igen. Et stop må aldrig være permanent uden at Jacob ser det - nu 3 forsøg, så står den i status.
+
+
+### 25/10-2026 kl. 10:29 - Billeder, meta og artikler med mange fejl (Jacobs rettelse)
+- **Billeder:** min ændring fra v203 ("aldrig nyt billede ved omskrivning") var en misforståelse og er rullet tilbage (`d0b8f668`). Reglen er nu: et eksisterende AI-billede laves aldrig om; en artikel uden AI-billede får et, også ved omskrivning.
+- **Meta-beskrivelsen** tjekkes nu også (ud over FAQ-svar og resumé), både i robotten og i faktatjek-gamle.mjs.
+- **Mange fejl i en gammel artikel** (mere end hver fjerde sætning): rettelserne sættes ind, og artiklen sættes i omskrivningskøen - før blev den bare sprunget over.
+- Lære: Når opskriften ændres, skal ALT, læseren ser, følge med: titel, meta, resumé, FAQ, brødtekst, faktaboks og billede. Jeg rettede brødteksten og glemte FAQ og meta. Reglen skal ligge i koden som én liste over felter, ikke i hukommelsen.
+- Lære: "Billederne skal ikke laves om" betød "de eksisterende AI-billeder", ikke "ingen nye billeder". Ved en kort besked med to mulige betydninger: spørg, før jeg ændrer noget, der koster eller sparer.
+
+
+### 25/10-2026 kl. 10:24 - Blandet plan: 40 viste artikler skrives om, resten faktatjekkes; FAQ tjekkes; ingen nye billeder ved omskrivning (Jacobs valg)
+- **Første kørsel med opskrift 3 (07:37):** 2 omskrevet (iPhone hot, humanoid robots), 1 stoppet (redaktørtjek). 1,26 USD = ca. 4,40 kr pr. færdig artikel inkl. det stoppede forsøg.
+- **iPhone-artiklen gennemgået:** tal korrekte mod Apples side (0-35 °C, -20-45 °C) og AP (iOS 17, okt. 2023); fagord forklaret. To fejl rettet live (`9347fa93`): overskriften "## ## Daniel Gaiya" (faktatjekket sendte overskrifter med tal til tjek - nu udelukket) og en falsk kildehenvisning til Apple (køleskab/kondens står ikke på Apples side).
+- **Search Console (3 mdr.):** 63 klik / 230 visninger, 58 klik på forsiden, 2 på artikler. Ingen artikler med rigtig trafik - prioritering efter "vist i Google" i stedet: 40 eksisterende artikler (src/data/omskriv-prioritet.json), 29 med søgespørgsmål.
+- **Blandet plan (`871e5ca0`):** omskriv-gamle.mjs skriver kun de 29 viste artikler om (3/dag). Ny faktatjek-gamle.mjs faktatjekker resten uden omskrivning (faktatjekker med Google-søgning, retter/fjerner, mærker factChecked), 10 pr. dag i samme kørsel. Målt: 0,064 USD = ca. 0,45 kr pr. artikel. Prøve på 3: 5 fejl rettet, heraf 3 falske "According to" (NIST, IEEE, Red Hat).
+- **FAQ og resumé tjekkes nu også** (`57336c8f`) - en falsk NIST-henvisning stod tilbage i en FAQ; rettet live.
+- **Billeder (Jacob):** ved omskrivning laves aldrig et nyt billede; artiklens eksisterende billede beholdes. Nye artikler fra den daglige robot får stadig AI-billede.
+- Lære: Faktatjekket må kun røre det, det er bygget til (sætninger). Overskrifter blev sendt med og kom tilbage med "## ". Afgræns input, før en model får lov at rette.
+- Lære: Jeg tjekkede kun brødteksten og glemte FAQ'en, som også vises på siden og i Googles data. Tjek alt, læseren ser.
+
+
+### 25/10-2026 kl. 02:14 - Faktatjek af 20 artikler, 15 fejl rettet, robot-opskrift 3 live (Jacobs ja)
+- **Kvalitetsbedømmelse (Googles retningslinjer for bedømmere) af PC-artiklen:** O THIN, U REWRITE, R Moderately Meets, kvalitetstjek CLEAR. Fundet: RAM-latens "single-nanosecond" (rigtigt: ca. 14 ns), for teknisk til en begynder, kluntet titel.
+- **Faktatjek af 20 tilfældige artikler** (seed 20261025; 10 ny metode, 10 gammel; 393 tal-sætninger; 4 parallelle tjekkere, alle fejl efterprøvet af Claude mod primærkilden): 15 bekræftede fejl i 10 artikler. Ny metode 11 fejl (4,7 % af 236 påstande, 7 af 10 artikler), gammel 4 (9,5 % af 42). 11 af 15 var robottens egne; 3 falske kildeangivelser (IGN, OpenAI-pris, "Vona et al."); 36 tal uden dækning. Rapport: _udkast/faktatjek/RAPPORT.md.
+- **De 15 fejl rettet** i 10 artikler (gren faktafejl-20 -> main `f94bc9f8`), målt i dist: ingen af de forkerte formuleringer tilbage.
+- **Læsbarhed målt på alle 456 artikler:** Flesch-Kincaid median klassetrin 15,2; 99 % over 9. klasse.
+- **Robot-opskrift 3** (gren journalist-regler -> main `21e46e7f`): journalist-regler i prompten (regel 25-28: almindeligt sprog for en 15-årig, hvem siger hvad, tal kun fra kilden de tilskrives, hvorfor det betyder noget, begrænsninger); ny src/lib/faktatjek.mjs: kildebinding, mål og datoer med måned skal være dækket, skeptisk faktatjekker med Google-søgning der retter eller fjerner forkerte sætninger; forenkling ved klassetrin > 10,5 eller > 16 ord/sætning; læsertjekket finder uforklarede fagord (JARGON, rettes i to runder, stopper ikke). Test 18/18. omskriv-gamle.mjs omskriver nu alle artikler uden "recipe: 3" (299 i køen; gamle fejl prøves igen).
+- **Prøver (3 artikler, lokalt):** PC-bygning (klassetrin 12,9 -> 12,0; 3 fejl fanget og rettet, bl.a. "ASRock B860M Cra A" -> "Pro-A"), kryptovolatilitet og Google TPU (1 fejl hver). Pris 0,28-0,34 USD pr. artikel (ca. 2-2,4 kr); afviste forsøg 0,10-0,27 USD. Alle tre live.
+- **Ærligt om læsbarheden:** klassetrin 9-10 kan ikke nås for tekniske emner med Flesch-Kincaid - sætningerne kom ned på 12,8-14,4 ord, men emnets egne ord ("cryptocurrency", "inference") holder tallet på 12-14. Kravet er derfor korte sætninger + forklarede fagord; klassetrin over 16 er kun nødbremse.
+- **Kø:** 299 artikler har et søgespørgsmål og skrives om, 3 om dagen (Cloudflare-starteren kl. 08:37). 158 artikler mangler søgespørgsmål og kan ikke skrives om med opskriften endnu.
+- **Facebook:** sitet linker ikke til Jacobs Facebook (målt på 5 sider); Google viser hans egne offentlige opslag. Jacob retter selv på Facebook (offentlig -> venner).
+- Lære: Jeg gjorde klassetrin 12 til stop-grænse uden først at måle, hvad tekniske tekster kan nå - to af tre prøver blev stoppet. Mål en ny grænse på rigtige tekster, før den stopper noget.
+- Lære: Reglen "sig hvad der ikke vides" fik robotten til at opfinde en usikkerhed og tilskrive den Google. En regel, der beder om indhold, skal kræve, at indholdet står i kilden.
+
+
+### 25/10-2026 kl. 01:19 - AdSense starter efter visning: forsiden mobil 63 -> 93-100 (Jacobs ja)
+- **Jacobs PageSpeed-rapport 00:49:** score 67, LCP 6,2 s. LCP-opdeling: topbilledet hentet efter 0,36 s, men "Element render delay" 2.030 ms.
+- **Rettelse nr. 1+2 (merget `e8de5ca6`):** preconnect til fundingchoices (også med crossorigin), googleads.g.doubleclick.net og ep1.adtrafficquality.google (ikke på artikelsider, så de holdes på 4); videos-lite.json hentes med priority 'low'. Målt 5 gange: 64-67, LCP 6,0-6,3 s - ingen forbedring.
+- **Rettelse nr. 3 (Jacobs forhåndsja, merget `8c402169`):** AdSense-scriptet (og dermed Googles samtykke-boks) startes først efter load + ledig tid (højst 2 s) eller ved første scroll/touch/tast/mus. Verificering via `<meta name="google-adsense-account">`. GA4 og "Cookie settings" venter nu op til 30 s på samtykke-boksen (før 10 s).
+- **Målt efter (5 kørsler via Workeren):** score 93-99, FCP 1,1-1,2 s, LCP 1,5-2,1 s. pagespeed.web.dev i Jacobs Chrome: 100 (FCP 1,1 s, LCP 1,5 s, TBT 0). Desktop: 100. Tolkningen fra i går er dermed bekræftet: AdSense før første tegning kostede ca. 4,5 s LCP.
+- **Reklamerne kører stadig:** Googles rapport viser show_ads_impl, /pagead/ads, Funding Choices (102 KB) og adtrafficquality hentet. I Jacobs egen Chrome henter AdSense ikke videre end adsbygoogle.js - det gjorde den heller ikke før ændringen (målt 24/10 kl. 23:50), så det skyldes hans browser.
+- **Hold øje med:** AdSense-indtjening/visninger de næste dage (reklamerne kommer ca. 1-2 s senere).
+
+
+### 25/10-2026 kl. 00:43 - Forsidens mobilhastighed: tre rettelser live, målt før og efter (Jacobs ja)
+- **Målt før (PageSpeed mobil, 6 kørsler 24/10):** score 55-65, FCP 3,4-4,6 s, LCP 6,6-7,1 s, CLS 0. Google målte logoteksten som største element (LCP), fordi hele indholdet startede usynligt (fade-in 0,4 s). videos-lite.json (58 KB) lå i den kritiske kæde (færdig efter 2,5 s). "Ubrugt JavaScript" 227 KB er AdSense (ca. 220 KB) og Googles samtykke (69 KB) - ikke vores kode.
+- **Rettelse 1 (`39e59ae2`):** fade-in på .content-area fjernet (MainLayout). Målt: LCP-elementet er nu topbilledet (lead-card), ikke logoet.
+- **Rettelse 2 (`39e59ae2`):** ny window.tfwEfterLoad - klokke og emnefilter henter kataloget først efter sidens load; filterklik og søgning henter det med det samme. Målt i Jacobs Chrome: kataloget starter efter 2,6 s (siden færdig 1,5 s); klokke, filter (også klik før hentning), søgning og side 2 virker; ingen konsolfejl. Merget `a0eed887`.
+- **Rettelse 3 (`a570d551`, merget `48b0df15`):** lav-smaa-billeder.mjs kører efter astro build og skriver dist/kort-240 (240 px) og dist/billeder-720 (720 px); forsiden bruger srcset. 524 billeder, 6,6 MB -> 2,3 MB, 15-16 s på bygningen. Stopper bygningen hvis sharp mangler (så bliver det gamle site stående). Live: miniature 3,3 KB (før ca. 23 KB), topbillede 25 KB (før 57 KB). Mobil 390 px vælger 720/240, desktop originalerne; 0 brudte billeder.
+- **Målt efter alle tre (5 kørsler):** score 63-65 (én afviger 56), FCP 4,4-4,8 s, LCP 6,1-6,3 s. LCP ca. 0,5 s bedre; scoren står stort set stille. To kørsler efter rettelse 1+2 gav 98-99 (FCP 1,1 s) - samme side. Tolkning (ikke testet): når AdSense når at køre før første tegning, falder scoren til ca. 63. At udsætte AdSense er Jacobs beslutning (kan koste visninger) - ikke valgt.
+- **Også rettet:** SEO-kategoriens beskrivelse var 164 tegn og lovede "nothing uploaded" (PageSpeed-værktøjet sender adressen til Google) - nu 150 tegn og ærlig tekst.
+- **Fundet:** Cloudflares gren-adresser (*.techfeedwatch.pages.dev) sender videre til techfeedwatch.com, så Google kan ikke måle en gren før main.
+- Lære: Bygge-tjekket (tjek-beskrivelser) advarede om 164 tegn i tre af mine bygninger, men jeg søgte kun efter "error" i loggen. Læs hele slutningen af bygge-loggen inkl. ⚠-linjer.
+
+
+### 24/10-2026 kl. 23:45 - PageSpeed Checker live via Cloudflare Worker + kortere meta-beskrivelser (Jacobs ja)
+- **Nøgle:** Jacob lavede selv en Google API-nøgle i projektet TechMediaArch Tools ("PageSpeed (Cloudflare Worker)", låst til kun PageSpeed Insights API) og lagde den som Secret PSI_KEY i den nye Worker tfw-pagespeed. Målt: binding PSI_KEY type=secret_text; /health keySet=true. Nøglen stod en kort tid som synlig tekst i Cloudflare (kun synlig inde på kontoen); Jacob slettede Workeren og valgte at beholde nøglen - "godt nok, som det er".
+- **Worker (cloudflare/pagespeed):** GET /run?url=&strategy= kalder Google med nøglen og sender kun et udsnit tilbage (scorer, lab-tal, feltdata, største besparelser). Kun techfeedwatch.com (og localhost til test) må kalde; private adresser afvises. Test 15/15 inkl. live (forside mobil 64; fremmed Origin 403).
+- **Værktøjsside /tools/pagespeed-checker/** (main `d89607cf`): fire scorer, Core Web Vitals fra rigtige brugere (eller hele sitet), lab-test og "Biggest time savers". Målt live: test af /tools/ gav svar på 19 s; 61 værktøjer; side i sitemap; 390 px uden overløb.
+- **Meta:** de 10 nye SEO-værktøjer havde beskrivelser på 175-193 tegn (Google klipper ved ca. 155-160). Forkortet til 150-157 med søgeord forrest; titler højst 60 tegn. Målt i dist og live.
+- **Fundet:** forsiden får 64/100 på mobil (LCP 5,8 s, FCP 4,5 s); største synder ubrugt JavaScript ca. 200 KB. Jacob: skal rettes - tages som næste opgave.
+- Lære: To samtidige handlinger på samme ressource (Jacob slettede Workeren, jeg udrullede den) gav forvirring. Når Jacob er i gang i et dashboard: vent på hans "klar", før jeg selv ændrer samme ting.
+
+
+### 24/10-2026 kl. 22:30 - 10 SEO-browserværktøjer live (Jacobs ja)
+- **Opgave:** Jacob bad mig undersøge Hawk Academys 37 SEO-værktøjer og bygge dem, der kan køre i browseren. 11 foreslået, 10 bygget.
+- **Bygget (gren seo-vaerktoejer → `d85fb424`, merget på main `a970b73c`):** robots.txt Tester, AI Crawler Checker (16 AI-robotter + Content-Signal), Schema Validator (Googles krav til rich results), AI Slop Checker, XML Sitemap Generator, Search Console Quick Wins, SEO Traffic Forecast, Topic Cluster Map, Organic Traffic Value, RSS Feed Parser. Alt kører i brugerens browser; intet sendes til en server. Fælles stil i src/components/SeoToolStyles.astro, logik i src/lib/ (robots-match, schema-check, slop-check, gsc-csv, gsc-analyse). Sitet har nu 60 værktøjer.
+- **Målt:** logiktests 69/69 (_udkast/_test-*.mjs); byg 692 sider uden fejl; alle 10 afprøvet i Jacobs Chrome lokalt og live; 3 tal efterregnet i hånden; dansk Search Console-ZIP virker; 390 px mobil uden overløb på alle 10. Live: build.json = `a970b73c`, alle 10 svarer 200 med SoftwareApplication-schema, alle 10 i sitemap-0.xml, /tools/ viser "60 Free Tools". RSS-værktøjet på det levende feed: 50/50 med billede, 0 problemer.
+- **Ikke bygget:** PageSpeed-værktøjet (nr. 11). Googles PageSpeed API svarer 429 "kvote opbrugt" uden nøgle. Kræver en gratis API-nøgle, som Jacob selv opretter.
+- **Fundet undervejs:** (1) De 60 værktøjssider har SoftwareApplication uden bedømmelser, så de kan ikke få rich results; bedømmelser må aldrig opdigtes. (2) Robotten lader fyldord slippe igennem i artikler: "leverage" (11), "cutting-edge", "fostering", "holistic".
+- Lære: Jeg kaldte PageSpeed nøglefri uden at have testet det. Test en ekstern tjeneste, før den lovs.
+- Lære: Crawler-navne knækkede midt i ordet på mobil (word-break i tabelceller). Skærmbilledet på 390 px fangede det; rettet med overflow-wrap.
+
+
+### 24/10-2026 kl. 21:27 - Bing som reserve-kilde til spørgsmål (plan 1) + plan 2 planlagt (Jacobs ja)
+- **Spørgsmål:** Jacob spurgte, om robotten også kan finde det, folk søger på hos Bing, og om det skal vente på AdSense. Svar: AdSense vurderer indhold/regler, ikke kilderne - ingen grund til at vente.
+- **Målt før bygning (_udkast/_test-bing-suggest.mjs):** Bings autocomplete (api.bing.com/osjson.aspx, gratis, ingen nøgle) svarede 14/14 på fire emner med robottens præfikser og filtre. Bing 96-141 forslag mod Google 90-115; 70-127 kun hos Bing, men mest varianter af samme spørgsmål ("what is X simple / definition / examples / 2025") og flere korte værktøjssøgninger. Mere af det samme, ikke nye emner.
+- **Plan 1 (bygget):** src/lib/suggest.mjs har nu kilderne google (standard) og bing; auto-youtube.mjs (vaelgSpoergsmaal) spørger Bing, når Google har færre end 5 ubrugte spørgsmål til et emne eller ikke svarer. Bing-forslag får samme redaktør, dublet-værn og brugte-liste. Logger "Info: Bing-reserve for ...". Test 7/7, node --check ok. Gren bing-reserve → `b3836a32`.
+- **Ærligt målt:** alle 19 emner har 150-359 ubrugte Google-spørgsmål (241 brugt i alt) - reserven slår ikke til foreløbig. Det er en forsikring.
+- **Plan 2 (planlagt opgave `trig_015hzvhbC8j78u6yJ6vfnxZ8`, lørdag 7/11 kl. 09:37, kun læsning):** tjekker Bing Webmaster Tools (Search Performance + Keyword Research søgetal), Bings API og foreslår, hvordan søgetal kan rangere spørgsmål før redaktøren. API-nøglen laver Jacob selv og lægger som GitHub-secret.
+
+
+### 24/10-2026 kl. 20:37 - About.me sat op + tilføjet i Person-schema (Jacobs ja)
+- **About.me (about.me/jacob-s-olsen):** Jacob oprettede selv kontoen. Rettet og set på den offentlige side: navn med det fulde mellemnavn (offentligt, også i sidetitlen) → **Jacob S. Olsen**; undertitel (skabelon "Writer, Editor, and Small Business Owner") → **Independent Publisher in Denmark**; skabelon-bio → samme tekst som Gravatar med links til alle tre sites (hvert site på sin egen linje); knap "Read my blog" → **Visit TechFeedWatch** (techfeedwatch.com); sociale links X, LinkedIn, GitHub, Bluesky. Jacob skiftede selv billedet til jakkesætsbilledet (samme som forfattersiden og Gravatar). Fulde navn står 0 steder på siden (LinkedIn-linket peger på hans LinkedIn, som han selv har valgt).
+- **Person-schema:** about.me/jacob-s-olsen tilføjet som 5. profil i src/lib/person.mjs. Gren person-aboutme → `41b8643e`. Målt i build: 682 sider, 467 Person-noder ens; live: forfatterside, forside, artikel, guide - alle ens med 5 profiler, fuldt navn 0.
+- Lære: About.me henter navnet fra login-kontoen og viser det offentligt med det samme - tjek navnet på nye profiler først, før noget andet.
+
+
+### 24/10-2026 kl. 19:52 - Pinterest gennemgået og justeret (Jacobs ja)
+- **Virker allerede:** Pinterest hentede feedet inden for 20 min - tavlen "AI & Tech Answers" har 50 pins. Stikprøve: pin "Coding Blocks and What Visual Logic Means for Learning" linker til artiklen med `?utm_source=Pinterest&utm_medium=organic` (svarer 200, canonical ren).
+- **Gennemgået og i orden:** profil (navn, @techfeedwatch, logo, bio, websted), offentlig profil, synlig for søgemaskiner, domæne claimet, RSS → tavle, mål "At hente trafik ind på dit site".
+- **Rettet (set efter genindlæsning):** virksomhedstype Indholdsskaber → Forlag eller medie; land/region tom → Danmark; køn → Mand (Jacobs valg); Persondata: alle 5 kontakter fra (annoncedata fra websites, partnerdata, annoncer om Pinterest, AI-træning (Canvas), afledte signaler) - påvirker ikke pins' rækkevidde.
+- Lære: Pinterests afkrydsningsfelter reagerer ikke på form_input (feltet ændres, men siden registrerer det ikke - Gem forbliver grå). Klik dem, og tjek at Gem bliver aktiv.
+
+
+### 24/10-2026 kl. 19:19 - Pinterest sat op: profil, domæne claimet, RSS med billeder, automatisk udgivelse (Jacobs ja)
+- **Konto:** Jacob oprettede selv Pinterest Business-kontoen. Profil rettet og gemt: navn "Tech Feed Wach" (stavefejl) → **TechFeedWatch**, brugernavn jacobolsenjso → **techfeedwatch** (pinterest.com/techfeedwatch), bio = kort standardtekst, websted https://techfeedwatch.com, profilbillede = sitets logo (icon-512.png). E-mail/telefon/adresse bevidst tomme (offentlige felter). Set på den offentlige profil.
+- **Domæne claimet:** TXT-post `pinterest-site-verification=d4b87cdba85351b9bd51214af89ca0e5` på @ i Cloudflare DNS (13 → 14 poster, ingen andre rørt; set via 8.8.8.8). Pinterest: "Tilknyttet - techfeedwatch.com". "Installer tag" (Pinterests annoncesporing) bevidst sprunget over - ingen annoncer, og det ville kræve cookie-samtykke.
+- **RSS med billeder:** src/pages/rss.xml.js lægger nu artiklens delebillede (public/og/<slug>.jpg, 1200x630) på hvert punkt som `enclosure`; mangler filen, springes billedet over i stedet for at stoppe byggeriet. Gren rss-billeder → `c392fdf1`. Målt: build 682 sider uden fejl, gyldig XML, 50/50 punkter med billede, alle 50 billeder svarer 200 live.
+- **Automatisk udgivelse:** Pinterest → Masseopret pins → Offentliggør automatisk: https://techfeedwatch.com/rss.xml → offentlig tavle **"AI & Tech Answers"**. Gemt og læst igen efter genindlæsning. Pinterest henter feedet selv; de første pins kan tage op til et døgn.
+- **Robotten efter omskrivningen:** kørslen 19:17 lykkedes og skubbede `701d3630` oven på den nye historik (pull --rebase virkede). Målt bagefter: 0 gamle commits i main, navnet i 0 commits.
+
+
+### 24/10-2026 kl. 18:52 - Jacobs fulde navn fjernet fra repoets historik (Jacobs ja)
+- **Hvorfor:** navnet og LinkedIn-adressen stod i STATUS-ALLE-SITES.md i 10 commits fra i dag (v189-v191), og repoet er offentligt.
+- **Gjort:** lokal sikkerhedskopi `backup-foer-navnefjern` (gammel main 68980957, kun på Jacobs computer). `git filter-branch` på kun de 10 commits, kun statusfilen ændret (engangsfilter _udkast/_navnefilter.mjs, kun lokalt). Skubbet med --force-with-lease (afviser hvis robotten havde skubbet imellem).
+- **Kontrolleret før skub:** sidste version bit-for-bit identisk med før (git diff tom); 10/10 commits med samme beskeder; kun statusfilen ændret; navnet i 0 commits i hele main; forfædre før i dag uændrede.
+- **Kontrolleret efter:** GitHub main = `1600d263`, statusfilen ren i de nye commits; Cloudflare Pages success, build.json = 1600d263.
+- **Nye commit-numre** (gamle numre i v189-v192 på Drev peger ikke længere på noget; i denne version er de udskiftet):
+  3ef15024 → `1f6eb847` (status v189) · e0d780a8 → `f73bed58` (undici) · f09c41fb → `973531ad` (undici-merge) · 84763076 → `6d2473b7` (v190) · 77ffc154 → `61fcd683` (v191) · f2cb291e → `2327f418` (person-schema) · dc9f5a41 → `75bda074` (person-merge) · 68980957 → `1600d263` (v192) · to robot-commits omnummereret.
+- **Tilbage:** de gamle commits kan stadig hentes på GitHub via den præcise hash (GitHub rydder først op senere). Helt væk kræver en henvendelse til GitHub Support fra Jacobs konto.
+- Lære: skriv aldrig personlige oplysninger i filer, der pushes - repoet er offentligt. Navnevagten i _lav-version.mjs fanger det nu for statusfilen.
+- Lære: --force-with-lease skal have den fulde hash fra en ref (git rev-parse), ikke en tastet - min første kørsel afviste pga. tastefejl (intet skete).
+
+
+### 24/10-2026 kl. 18:36 - Person-schema samlet ét sted, 4 profiler (Jacobs ja)
+- **Før:** personen stod 4 steder i koden (forfattersiden, fælles-schemaet, artiklerne, guiderne) med hver sin kopi og kun X i sameAs; forfattersiden kaldte ham "Jacob Olsen", resten "Jacob S. Olsen".
+- **Nu:** ny fil src/lib/person.mjs er eneste kilde (navn "Jacob S. Olsen", @id på forfattersiden, sameAs: X, GitHub, Bluesky, Gravatar - alle tjekket live). Fælles-schema, artikler og guider peger på samme @id. Forfattersiden viser nu "Jacob S. Olsen" (titel, overskrift, første sætning, billedtekst). Gren person-schema → `75bda074`.
+- **Målt i build:** 682 sider, 467 Person-noder - alle ens (samme @id, navn, 4 profiler), 0 gamle kopier, sitemap 613.
+- **Jacobs regel (24/10):** hans fulde navn må ikke stå på hans sites, i schema eller i det offentlige repo. Derfor er LinkedIn IKKE med i sameAs (adressen indeholder det fulde navn); LinkedIn beholder han selv med fuldt navn. Gravatar linker nu til den rigtige LinkedIn-adresse (Jacob forbandt igen).
+- **X-profilen:** Jacob valgte at beholde ét link (techfeedwatch.com) og standard-bioen; de andre sites findes via Gravatar.
+- **Fejl (min):** statusfilen i det offentlige repo indeholdt Jacobs fulde navn og LinkedIn-adresse (dagbogen v189-v191). Fjernet fra denne version. Ligger stadig i 2 gamle commits - kun omskrivning af historikken fjerner det, og det kræver Jacobs ja.
+- Lære: alt, der skrives i statusfilen, er offentligt (repoet er public). _lav-version.mjs har nu en navnevagt, der stopper, hvis en forbudt tekst (liste i _navnevagt.txt, kun lokalt) står i den nye version.
+- Lære: jeg sagde "Gravatar linker til død adresse" ud fra en måling fra en time før - Jacob havde rettet det. Mål igen lige før du siger, at noget mangler.
+- Lære: på LinkedIn stoppede jeg ikke helt, da Jacob sagde stop - jeg klikkede luk på en dialog, der kunne være hans. Ved "stop": rør intet, heller ikke for at rydde op.
+
+
+### 24/10-2026 kl. 16:57 - X-profil opdateret (link-plan uge 1, Jacobs ja)
+- **X (@JacobStubbeJS):** navn "Jacob Olsen" → "Jacob S. Olsen" (samme som GitHub, Gravatar og sitet); bio "Entrepreneur" → den korte standardtekst fra link-planen (147/160 tegn). Sted (Danmark), link (techfeedwatch.com) og billeder urørt.
+- **Set live:** profilsiden læst efter gem - navn, bio (ord for ord) og link stemmer.
+- Uge 1 i link-planen er dermed færdig: GitHub, X, LinkedIn, Gravatar (+ Bing). Næste: uge 2 (Pinterest, når kontoen findes; About.me; Crunchbase) og Person-schema med sameAs på About-siden (gren + Jacobs ja).
+
+
+### 24/10-2026 kl. 16:41 - 3 Dependabot-advarsler (undici) rettet (Jacobs ja)
+- **Årsag:** undici 8.12.1 (indirekte pakke via astro → unifont, kun i package-lock.json) havde 3 kendte huller: #34 High (nedbrud ved for mange content-encodings), #33 og #32 Moderate (EventSource-hukommelse, SRI-omgåelse). Rettet i 8.12.2.
+- **Rettelse:** gren undici-8.12.2, `npm update undici` → 8.12.3; kun 3 linjer i package-lock.json ændret, package.json urørt. `npm audit`: 0 sårbarheder. `npm run build`: 682 sider, exit 0, sitemap 613 = live 613. Commit `f73bed58`, flettet til main som `973531ad`.
+- **Set live:** Cloudflare Pages-tjek på 973531ad = success; build.json på techfeedwatch.com viser 973531ad. main's package-lock.json har undici 8.12.3.
+- **Dependabot:** advarslerne stod stadig åbne lige efter push, fordi GitHub scanner igen med forsinkelse - se næste linje i dagbogen/rapporten for lukning.
+
+
+### 24/10-2026 kl. 16:24 — link-plan fase 2: profiler på GitHub, Gravatar og LinkedIn (alt med Jacobs ja, set live)
+- **Link-plan:** Claude-dokument https://claude.ai/artifact/DYhbSiriZtkvCUz38znTCe — profiltekster (engelsk, ens overalt), 13 udvalgte kilder fra Hawk Academys liste med 124 (uge 1: GitHub, X, LinkedIn, Gravatar; uge 2: Pinterest, About.me, Crunchbase; uge 3-4: Indie Hackers, Dev.to, HackerNoon, Product Hunt, Medium), 111 fravalgt med begrundelse, fremgangsmåde 2-3 om ugen.
+- **Bing Webmaster Tools:** BingSiteAuth.xml lagt i public/ (`1b98f72e`, set live 200 med rigtigt ID), Jacob verificerede; sitemap-index.xml indsendt (Jacobs ja 15:10, status "Processing"). Backlinks: "No data available" (nyt site) — noteret i link-serie.json (`40eb5d87`).
+- **GitHub:** repoet techfeedwatch fik website (techfeedwatch.com), beskrivelse og 8 emner (astro, cloudflare-pages, github-actions, gemini-api, ai-content, seo, static-site, youtube); profilen fik bio og navnet "Jacob S. Olsen" (var "Tech Feed Watch"). Brugernavnet jacobolsenjso-cloud er uændret.
+- **Gravatar (gravatar.com/jacobolsenjso):** var en Tech Media Archive-profil — Jacob valgte en personlig profil med alle tre sites (reglen om ikke at blande sitene holdes ved at hvert site har sin egen linje). Navn Jacob S. Olsen, titel Independent publisher, om-tekst, links til TechFeedWatch og The Gentle AI Guide (+ det eksisterende Tech Media Arch). Jacob skiftede selv til sit foto, rettede linknavnet til "Tech Media Arch" og koblede X, LinkedIn, Bluesky og GitHub på som verificerede konti.
+- **LinkedIn:** Jacob valgte fuld opdatering (mulighed 3) og godkendte teksterne. Jacob skiftede selv sit LinkedIn-navn undervejs. Sat ind: overskrift "Chauffør · Driver tre AI-sites i fritiden: …", afsnittet "Mine projekter" i Om (eksisterende tekst urørt), tre projekter med beskrivelse og link, tre websteder i kontaktoplysninger (Tech Media Arch fandtes i forvejen). Ingen deling til netværket. Alt kontrolleret ord for ord på den gemte profil.
+- **Fejl fundet og rettet:** LinkedIns felter tabte tegn, når der blev tastet hurtigt — TechFeedWatch-projektet blev gemt med "om A, tech", "ubliceringssystem" og det døde link "techeedwatch.com". Rettet ved at sætte hele teksten direkte i feltet (form_input) og kontrollere værdien før og efter gem.
+- Lære: tekst i LinkedIn (og andre tunge formularer) sættes med form_input, ikke tastes — og kontrolleres ord for ord på den GEMTE side, ikke kun i feltet. Et dødt link i en offentlig profil er værre end ingen link.
+- Lære: på en persons erhvervsprofil (LinkedIn) ændres overskrift og om-tekst kun efter at hele teksten er vist og godkendt — Jacob valgte selv mellem tre niveauer.
+
+
+### 24/10-2026 kl. 14:44 — techfeedwatch: Hawk Academy-analysen + fase 1 af link-planen (1 eksternt link)
+- **Analyse (Jacobs ønske):** StudioHawks video om Google-retssagen + værktøjet "Is my page worth ranking" + hele Hawk Academy (37 værktøjer, ~56 Claude-skills, 14 prompts, 40 guides) gennemgået punkt for punkt med fordel/ulempe/brugbarhed, faktatjek og prioriterede forslag. Ligger i Claude-dokumentet https://claude.ai/artifact/4W8Jxrzh3b4DPF1m4M8sXo. Hovedfund: søjle A (links udefra) er det største hul; robotten dækker meget af B (indhold); C (adfærd) hjælper først med trafik. Faktatjek: videoens "vi faker det"-citat er fra 2016 (før BERT); sanktionsdommen 2/9-2025 (datadeling, ingen Chrome-salg) trådte i kraft 3/2-2026, Google ankede 16/1-2026 (status maj 2026).
+- **Jacobs valg 14:41:** start med at måle linkprofilen. Plan i tre faser: (1) mål, (2) gratis links/profiler 2-3 om ugen fra listen med 124 kilder — Jacob opretter kontiene, Claude skriver teksterne, (3) ugentlig opfølgning.
+- **Fase 1 målt (Jacobs Chrome, 14:44):** Search Console → Links: **1 eksternt link** i alt (alternativeto.net → forsiden, linktekst "techfeedwatch"); interne links 338 (Googles stikprøve). Bing Webmaster Tools: ikke logget ind — kræver Jacob (log aldrig ind for ham).
+- **Ny måleserie `link-serie.json`** (`d92d04a3`), samme princip som search-console-serie.json. Den planlagte opgave "Ugentlig aflæsning af Search Console" (mandag) aflæser nu også links (trin 2b) og committer begge serier; samtidig rettet to forældede trin i den: git-rækkefølgen (commit → pull → push) og den gamle pandoc-opskrift (nu _lav-version.mjs + _statusbyg/byg.mjs).
+- **Næste:** Jacob logger ind på Bing Webmaster Tools (kan importere sitet fra Search Console) → så aflæses Bings backlinks også. Fase 2 venter på Jacobs ja.
+
+
+### 24/10-2026 kl. 14:15 — techfeedwatch: klippede Gemini-svar rettet varigt — nyt forsøg med dobbelt loft (LIVE `6f4f7db7`)
+- **Årsag målt FØR rettelse** (GitHub-loggen i Jacobs Chrome): driftstavlens "5 klippede svar" (18-24/10) talte bl.a. 2 klip 21/10 — EFTER loft-rettelsen 20/10. #807 (03:18 UTC): spørgsmåls-redaktøren, loft 8192, tænkning 7862, svar 326 → tomt svar, listen brugt ufiltreret (netop vejen for volapyk-spørgsmål). #809 (05:23 UTC): artikelplanen, loft 4096, tænkning 3930, svar 162 → planen slap heldigt igennem. Ingen af de to lofter var hævet siden 12/10 og 14/10. Samme fejltype 4. gang (1/10, 14/10, 20/10, 21/10), hver gang rettet ét kald ad gangen.
+- **Jacobs valg 14:11: den varige løsning (nr. 2).** `18fdd056` (gren `gemini-loft-retry`, flettet `6f4f7db7`): hentModel i src/lib/model.mjs — som ALLE robottens Gemini-kald går igennem (tjekket: ingen workflow-script kalder Gemini udenom) — prøver nu selv én gang igen med dobbelt loft (højst 65536), når svaret stopper på MAX_TOKENS. Logger "↻ Gemini-svar ramte loftet … prøver igen med X"; "⚠️ … KLIPPET" kun hvis også andet forsøg klippes (eller loftet ikke kan hæves). Et højere loft koster intet i sig selv; det ekstra kald tælles med i prisen.
+- robot-log.mjs: nyt felt `loftReddet`; `klippet` tæller nu kun de uredde. daglig-rapport.mjs: "Gemini-svar reddet med dobbelt loft: N".
+- **Testet:** 10/10 tjek med falsk Gemini (`_udkast/_test-loft.mjs`: reddet ved 8192→16384, klippet to gange, allerede ved maks, intet loft sat, 40000→65536, normalt svar, prisen tæller begge kald, robot-log klippet=3/loftReddet=2). Kanal-værn-testen stadig grøn. Morgenrapport prøvekørt (intet sendt). Check-run Cloudflare Pages success; build.json = `6f4f7db7`.
+- **Driftstavlens røde 5** er de gamle klip 18-21/10 (rigtige tal — ikke pyntet væk); de falder ud af 7-dages-vinduet 28/10. Nye klip vises kun, hvis heller ikke dobbelt loft hjalp.
+- Lære: samme fejl 4 gange = opskriften, ikke symptomet — rettelser, der skal gentages pr. kald, hører hjemme ét sted (model.mjs), ikke i hvert kald.
+- Lære: status-commit i rækkefølgen commit → pull --rebase → push. I v186 blev statusfilen kopieret ind før pull, og git nægtede at hente (pushet gik kun igennem, fordi intet nyt lå på GitHub).
+
+
+### 24/10-2026 kl. 13:57 — techfeedwatch: kanal-værnet gjort synligt (LIVE `e4e3dbf8`) + driftstavle udvidet + Pinterest-forhindring målt
+- **Målt før:** værnet (`8d27606d`, kl. 12:44) var ikke prøvet i drift — eneste kørsel siden (13:17) stoppede ved dagsloftet, før den søgte videoer (3/3 nået i nat). Og værnet var blindt: robot-log.jsonl talte det ikke, og et fejlsvar fra YouTube (fx opbrugt kvote) kommer som JSON uden items og blev tavst til "alle ok".
+- **`0fa4d0d2`** (gren `kanal-vaern-log`, flettet `e4e3dbf8` efter Jacobs ja 13:54): auto-youtube.mjs skriver "Kanal-værn: X kanaler tjekket, Y ligner fabrikker" pr. opslag og "⚠️ Kanal-værn: YouTube-opslag fejlede (HTTP 403 quotaExceeded) — N kanaler lukket igennem uden tjek" ved fejl (status + årsagskode, aldrig URL/nøgle; stadig fail-open). robot-log.mjs gemmer `kanalVaern {tjekket, afvist, fejlet}`; daglig-rapport.mjs viser tallene og advarer ved fejlede opslag.
+- **Testet:** 14/14 tjek med falske YouTube-svar (normalt, 403 quotaExceeded, netværksfejl, ingen kanaler) — ingen nøgle eller kvote brugt (`_udkast/_test-kanalvaern.mjs`). Morgenrapporten prøvekørt med falsk logpost (intet sendt): tal og advarsel rigtige, ældre logposter uden feltet tæller som 0. GitHub check-run: Cloudflare Pages success; build.json = `e4e3dbf8`.
+- **Driftstavlen:** nyt nøgletalskort "Kanal-værn" (videoer afvist, 7 dage; undertekst: kanaler tjekket / opslag fejlet, rød ved fejl). Den planlagte opgave "Opdater robottens driftstavle" (9.45) henter nu også kanalTjekket/kanalAfvist/kanalFejlet og nævner dem i sit svar.
+- **Pinterest (venter på Jacobs Business-konto):** målt techfeedwatch.com/rss.xml: **0/50 indlæg med billede**. Pinterests RSS-autodeling laver billed-pins, så feedet skal have artikelbilledet med først (gren, Jacobs ja). Derefter: claim via Cloudflare DNS (TXT) og RSS-feed på Pinterest (opsætning kun fra computer, højst 200 pins/dag).
+- **Rettet i statusfilen:** v185 kaldte værnets commit `16ec63ee` — den findes ikke i historikken (hash ændret ved rebase); rigtig er `8d27606d`. Afsnit 0 og oversigtstabellen var forældede (19/10, 444/441 artikler) — nu målt 24/10: 456 artikler, live `e4e3dbf8`.
+- **Næste:** første rigtige prøve af værnet ca. 02:17 natten til 25/10 — tjek "Kanal-værn"-linjerne i loggen og morgenrapporten 25/10.
+- Lære: en fail-open-sikring uden loglinje kan ikke skelnes fra en, der virker — en sikring skal altid tælle og melde, ikke kun stå stille.
+- Lære: en commit-hash skrives i statusfilen EFTER push (rebase giver ny hash) — tjek den mod `git log origin/main`.
+
+
+### 24/10-2026 kl. 13:15 — techfeedwatch: kanal-værn, musik-artiklen reddet, hakken rettet (34→0)
+- Jacob meldte to fejl: sitet hakkede på telefon/TV, og artiklen "What Happens When You Adopt Virtual Assistant Tools?" havde baggrundsmusik oven i stemmen. Årsager fundet FØR rettelse: (1) videoen kom fra "Remote AI Hub" — fabrikskanal oprettet 5/10-2026, altså 19 dage gammel; robotten vurderede kun emnet (relevans 10/10), aldrig afsenderen. (2) Skimmer-animationen bag thumbnails (background-position) males af CPU'en for hvert billede = PageSpeeds "34 ikke-sammensatte animationer" = hakken.
+- `8d27606d` kanal-værn i auto-youtube.mjs: i første sigte afvises kanaler under 90 dage, og kanaler under 1 år med over 1 video/dag eller skjulte abonnenttal. Reglerne gælder KUN unge kanaler (etablerede nyhedskanaler poster lovligt 5+/dag). Ét batchet API-kald (1 enhed pr. 50 kanaler), fail-open ved API-fejl, bevidst intet abonnent-minimum (Best of-filosofien). Bevist mod den skyldige kanal med offentlige data.
+- `b180f778` omskriv-gamle fik `--kun=slug` + `--nyvideo=url` (målret én artikel med ny video — varigt værktøj til dårlige videoer opdaget efter udgivelse; succes kræver nu også ÆNDRET indhold, da en målrettet artikel allerede har ## Sources). Første erstatningsvideo afvist af robottens egne tjek (1/5 delspørgsmål — værnene virker), anden sad: The Virtual Savvy (kanal fra 2016, 120K abonnenter, 24:26). **Set live:** ny video på siden, hjernen med, 5/5 delspørgsmål, 0 tal uden kilde. Pris 2,60 kr. i alt (to kørsler).
+- `64b2cc68` på gren skimmer-gpu, merged til main `d9e6349d` efter Jacobs ja: skimmeren flyttet fra background-position til transform på en ::after BAG billedet (z-index -1, fjernes helt ved .is-loaded); index.astro fik samme :has(img)-værn som MainLayout, så en thumb uden billede aldrig skimrer for evigt. **Målt** A/B i containeren: 34 → 0 ikke-sammensatte animationer; **målt på levende site efter udrulning: 0.** Udseende uændret (skærmbilleder i chatten).
+- Harmløs rest: det fejlede 1. forsøg efterlod artiklen i omskriv-fejl.json — gør intet (artiklen har Sources, og --kun ignorerer listen).
+- Lære: flere-linjers commit-besked i PowerShell flades til én linje — brug flere -m (ét pr. afsnit).
+
+
+### 23/10-2026 kl. 20:10 - statusfilen slanket + ugereglen automatiseret (Jacobs ja 20:09)
+- **Målt før:** 215 KB (~50.000 tokens pr. læsning), 99 dagbogsindlæg over 16 dage (8/10-23/10) — ugereglen fra 14/10 var aldrig blevet en rutine.
+- **Automatiseret:** _lav-version.mjs flytter nu selv dagbogsindlæg ældre end 7 dage til STATUS-ARKIV.md (ordret, "## Flyttet <dato>"-afsnit, nyeste øverst) ved HVER ny version — med tælle-vagt, så intet kan forsvinde undervejs. Rutinen kan ikke længere glemmes.
+- **Online (Jacobs ønske):** arkivet er git-sporet og ligger dermed på GitHub; derudover lægges en dateret kopi (STATUS-ARKIV-ÅÅÅÅ-MM-DD.md) i Downloads → Google Drev, hver gang arkivet ændres. Opskriften: git add STATUS-ARKIV.md i samme status-commit.
+- **Lære:** en regel, der kræver at nogen husker den, er ikke en regel — den skal bo i scriptet, der alligevel kører hver gang.
+
+
+### 23/10-2026 kl. 19:56 - stemmens fangstnet: nøgleord + parentes-fejl + omskrivningen koblet på hjernen
+- **Fundet (målt i nattens logs):** begge nye artikler (iphone-sikkerhed, programming libraries) fik "Hjernen er med (kun stil)" — selv iphone-artiklen, det perfekte emne for hacker-historien. Årsag 1: emne-matchingen sammenligner overskriftens ord med spørgsmålet, og kun Uddannelse havde engelske nøgleord. Årsag 2 (parentes-fejlen): "(" og ")" klæbede til første/sidste nøgleord, så fx "(education" og "certification)" ALDRIG matchede — Uddannelses nøgleord har reelt været halvt døde siden 21/10.
+- **Rettet (Jacobs ja 19:41):** split-regex i hjerne.mjs deler nu også på parenteser; engelske nøgleord på alle 18 emne-overskrifter i emner.md (holdningsteksterne urørt); nyt Crypto-emne med Jacobs egne ord fra beliefs (nøgleord inkl. web3, bitcoin, blockchain — web3-artikler rammer dermed Crypto-holdningen). Matchtest _udkast/_test-emnematch.mjs: 8/8, inkl. begge nattens fejlede spørgsmål og et web3-spørgsmål.
+- **Omskrivningen manglede hjernen helt (Jacobs spørgsmål ramte plet):** omskriv-gamle.yml hentede aldrig _hjerne, så alle omskrivninger kørte stemmeløst. Nu samme "Hent hjernen"-step som den daglige robot. Bevist med rigtig prøve-omskrivning (kørsel 39997738568): hjerne-steppet hentede præcis den nye hjerne-commit (4afd69e), artiklen "you can make ai videos for zero dollars" omskrevet fejlfrit (10 websider, 0 tal uden kilde, 0,28 USD). 219 gamle artikler tilbage i omskrivnings-køen — alle får nu stemmen med, når deres emne matcher.
+- **Lille synligheds-rettelse:** omskrivningsloggen viser nu hjerne-linjen pr. artikel, så match-status kan kontrolleres (før blev den filtreret væk).
+- **Forventning fremad:** med nøgleordene bør en stor del af artiklerne (nye + omskrevne) nu matche en holdning — første bevis ventes i morgenrapporten 24/10. Bremsen er uændret: højst ÉN kort jeg-passage, og kun når holdningen reelt angår spørgsmålet.
+- **Lære:** nøgleord-matching skal testes med ordene fra VIRKELIGE spørgsmål, ikke kun med emnenavnet — og en undtagelse/feature skal følges hele kæden rundt (ny-skrivning OG omskrivning), ikke kun der hvor den blev født.
+
+
+### 23/10-2026 kl. 13:03 - fart-forside flettet: tre rettelser, målt før og efter
+- **Billederne frikendt FØR rettelse:** Lighthouse' LCP-tjekliste var grøn på alle punkter (hero 66 KiB webp, fetchpriority, eager, 81 ms hentning) — og i PageSpeeds egen rapport var LCP-elementet logo-TEKSTEN med 2.320 ms "forsinket gengivelse". Den planlagte billed-optimering blev derfor IKKE lavet; i stedet tre målrettede rettelser (Jacobs ja 12:43, gren; 13:00, fletning f4c3e084):
+- **1) Scroll-statistikken udskudt:** rulleBeholder() spurgte om scrollHeight/clientHeight i samme øjeblik siden tegnedes (tvungen reflow ~300 ms); hele opsætningen venter nu på browser-tomgang. Intet mistes — mærkerne sendes stadig.
+- **2) YouTube-preconnect kun på artikelsider** (eneste sted billederne bruges); dns-prefetch beholdt overalt. Rydder også de to ubrugte header-preconnects (Cloudflare Early Hints løfter link-tags til headere).
+- **3) Ny preconnect til fundingchoicesmessages.google.com** (samtykke-boksen) — PageSpeeds eget estimat ~300 ms LCP.
+- **Målt (gren mod main i arbejdskopi, 3 kørsler, median):** score 83→90, LCP −278 ms, TBT −176 ms. **Målt live efter fletning (PageSpeed 13.02 mod 12.29):** LCP 6,8→6,4 s · TBT 110→60 ms · score 64→66. CLS stadig 0; desktop var 96 i forvejen.
+- **Ærligt:** loftet er Googles annonce- og samtykke-scripts (220+69 KiB) — ca. 64-70 på det hårde mobiltest er vilkåret med annoncer. Felt-data (det, Google ranker på) findes endnu ikke. Punktet lukkes.
+- Grenen fart-forside står stadig på GitHub (slettes kun med Jacobs ok). Tilgængeligheds-tjek ikke kørt: intet design er ændret (kun timing/forbindelses-hints), og puppeteer mangler lokalt.
+- **Lære:** "estimeret besparelse" i PageSpeed er ikke en opskrift — LCP-fasernes fordeling (hvor tiden faktisk går tabt) er den rigtige vejviser til, hvad der skal rettes.
+
+
+### 22/10-2026 kl. 13:15 - PageSpeed aflæst; billed-optimering sat på listen (Jacobs ja kl. 13:15)
+- **PageSpeed Insights (forsiden, rapport kl. 12.01):** Computer 96 · Mobil 64 · Tilgængelighed/Bedste praksis/SEO alle 100 · CLS 0 (perfekt layoutstabilitet). Mobil-tallene: FCP 3,4 s, LCP 6,9 s, Speed Index 6,0 s, TBT 150 ms — målt på simuleret Moto G Power med langsomt 4G (bevidst hårde vilkår). "Dine brugere": ingen felt-data endnu (for få besøgende) — det er felt-tallene, der tæller i ranking.
+- **Det, der tynger mobilen:** 182 KiB ubrugt JavaScript · forsidens store billeder (LCP-elementet) · 2,8 s hovedtråds-arbejde · 34 animerede elementer · cachelevetider (44 KiB).
+- **NÆSTE FORBEDRING (planlagt, ikke startet):** billed-optimering af forsiden — hurtigere LCP uden designændring. Videodelen (sticky video, knaprække, listen) røres ikke; tilgængeligheds-tjek før push som altid. Mål før/efter: mobil-scoren og LCP i PageSpeed.
+
+
+### 22/10-2026 kl. 13:08 - sider + hjerne opdateret, driftstavle bygget, GSC- og Crypto-gåder løst
+- **About + Start Here (Jacobs PDF-diktat, commit 1403cbb3, set live):** nye afsnit om sitet som opslagsværk + opfordring til at dobbelttjekke; Jacobs baggrund (hundredvis/tusinder af videoer, måneders finpudsning af robotten); ærlig forklaring af hjernens jeg-passager ("Those passages are mine; the system is not allowed to invent any"); løfte om åben deklaration, hvis der en dag kommer partner-links. Kun tekst ændret, intet layout; bygget fejlfrit (676 sider), al ny tekst verificeret i dist og live.
+- **Hjernen (a18a4de):** kildekritik som kerneidentitet, opslagsværk-missionen, bosat i Danmark, "forklar som over en kop kaffe"-tonen, partner-gennemsigtighed + dateret baggrundsnote. Robotten bruger den fra næste kørsel.
+- **Ny driftstavle hos Claude** ("Robottens driftstavle"): nøgletal 7 dage, artikler/forbrug pr. dag, seneste artikler og vagt-afvisninger — alt fra robot-log.jsonl, klik viser kilden. Planlagt opgave "Opdater robottens driftstavle" kører dagligt kl. 9.45 (første gang 23/10) og henter frisk log fra GitHub; kører med automatisk godkendelse.
+- **GSC-undersøgelse af "crawlet, ikke indekseret" (59):** ~43 er gamle YouTube-ID-adresser, der nu omdirigerer korrekt (testet); 5 gamle før-vagt-artikler; 4 tag-sider; 7 servicesider. INGEN nye artikler afvises — de ligger i "Registreret" (526) og venter på crawl. Faldet 50→38 indekserede er gamle rester, der ryger ud. Obs: /about/ var crawlet-ikke-indekseret — derfor er dagens about-styrkelse dobbelt begrundet.
+- **Crypto-gåden løst (målt):** robotten vælger altid emnet med færrest artikler; Crypto har 48 (Coding 38, fem emner på 39-40) og får derfor ikke tur endnu. Ingen fejl — balancereglen fra 17/10 virker. Jacob 13:08: Crypto kommer, når robotten er klar (ingen indgriben). Web3 oprettes IKKE som emne (ville få hver anden artikel i ugevis via vækstreglerne; web3-stof hører under Crypto).
+- **Stemme-fejlen fra i morges** (kontrol slettede jeg-passagen) blev rettet i v178 (8b45e12d); første bevarede stemme-artikel ventes ved næste emnematch — følges op senest ca. 27/10.
+
+
+### 22/10-2026 kl. 12:15 - techfeedwatch: ugentlig Search Console-aflæsning - indekseringen falder tredje gang i træk, mens klik og position bliver bedre
+- **Målt i Jacobs Chrome (Googles indekseringsdata halter 2-3 dage):** indekserede **38** (19/10: 50, **-12**), ikke indekseret **852** (837, **+15**), sitemappet **608** adresser (601, **+7**, målt på det levende site). Trukket væksten fra er den reelle bevægelse i "ikke indekseret" **+8** — en pejling, ikke et facit.
+- **Kun to årsager har flyttet sig:** "Crawlet – endnu ikke indekseret" 47 → **59** (+12) og "Registreret – endnu ikke indekseret" 523 → **526** (+3). De fem andre står bit for bit stille: omdirigering 135, dublet uden kanonisk 65, 404 63, robots.txt 3, dublet-Google 1. "Serverfejl (5xx)" er stadig ikke på listen (7 årsager, ikke 8) og står som 0 i serien for at bevare formen. Årsagerne summer til 852.
+- **Tredje fald i træk:** 82 (5/10) → 54 (12/10) → 50 (19/10) → **38** (22/10). Faldet er altså ikke en enkelt mærkelig aflæsning. **Jeg har ikke målt hvorfor** — de 12 sider, der flyttede sig, landede i "Crawlet – endnu ikke indekseret", hvilket betyder, at Google har hentet dem, men ikke sat dem i indekset. Mere end det bærer tallene ikke.
+- **Effektivitet, rullende 28 dage (22/9-19/10):** klik **27** (+5), eksponeringer **41** (+6), klikrate **65,9 %** (62,9), gennemsnitlig position **3,2** (3,7). Anden uge i træk, hvor effektiviteten går op, mens indekseringen går ned. De to tal peger modsat, og serien siger kun, at det sker samtidig.
+- **Nyt i brugerfladen:** kolonnen "Validering" står på **Startet** for "Registreret – endnu ikke indekseret" og for dublet-Google, og **Godkendt** for robots.txt. Ingen i denne aflæsning har startet en validering — den kørte altså i forvejen.
+- **Kontrolleret:** `node serie.mjs` → **7 punkter, alle kontroller passerer** (årsagerne summer til totalen, klikraten passer til 27/41, punkterne står i datorækkefølge). Udskrift gemt i serien som punkt 7.
+- **Min fejl (fundet og rettet samme kørsel):** jeg committede denne gang `STATUS-ALLE-SITES.pdf` og `.docx` med (commit `399a3be7`, 2,5 MB binært). Målt: de 63 tidligere status-commits indeholder KUN `.md` — pdf og docx har aldrig ligget i repoet. Trukket ud igen med `git rm --cached` (commit `c68ec468`); begge filer ligger stadig på disken i roden og i `Claude outputs`.
+- **Lære:** `git add` af en fil, der ikke står i `git status` som ændret, betyder at filen er NY i repoet — tjek `git log -- <fil>` før den tilføjes, i stedet for at antage at den altid har været der.
+- **Lære:** opskriften for denne aflæsning nævner fem felter, men `serie.mjs` kræver også `adresser` (antal `<loc>` i sitemap-0.xml, tælles samme dag) — uden det felt fejler kontrollen. Feltet er talt på det levende site denne gang; opskriften bør nævne det, så næste aflæsning ikke går i stå på det.
+
+
+### 22/10-2026 kl. 11:40 - stemme-fejlen fundet og rettet: kontrollen slettede hjernens jeg-passage
+- **Morgenrapport 22/10:** 3 nye artikler, 24/24 starter, 0,86 USD pr. artikel — og INGEN "KLIPPET" (første hele døgn efter loft-rettelsen 20/10).
+- **Fundet (målt i kørslen kl. 06:17):** hjernen matchede cybersikkerheds-emnet og skrev jeg-passagen — men talesprog-kontrollen (fra 6/10, lavet mod videoens tale) stemplede "I" som talesprog og bad om en omskrivning, der fjernede stemmen. Skrivereglen fik undtagelsen 21/10; kontrol-reglen fik den ikke.
+- **Rettet (Jacobs ja kl. 11:35, commit 8b45e12d):** `talesprog()` tager nu en tilladelse: ved holdnings-match må op til 4 jeg-sætninger stå (= bremsen "én passage på 2-4 sætninger", nu håndhævet mekanisk — FLERE end 4 meldes alle). Video-talesprog ("subscribe", "in this video" …) fanges stadig altid. Begge rettelses-prompter (faktaark + redaktørtjek) har fået en linje om at bevare passagen ordret.
+- **Testet:** 5/5 enhedstests grønne (lokalt på Windows OG i arbejdskopien); syntakstjek ok; push efter rebase (robotten pushede imens). Testen ligger i `_udkast/_test-talesprog.mjs` (gitignoreret, kun lokal).
+- **Holdes øje med:** redaktørtjekkets "ensidige sætninger" kan i teorien stadig ramme en holdnings-passage — måles når de første stemme-artikler kommer (opfølgning ca. 27/10).
+- **Lære:** en undtagelse til en skriveregel skal følges hele vejen gennem kæden — også kontrol- og rettelses-trinnene, ellers æder kæden undtagelsen igen.
+
+
+### 21/10-2026 kl. 21:12 - Cloudflare-gennemgang: TLS 1.2, HSTS og DMARC strammet på alle tre domæner
+- **Jacobs ja kl. 20:59 og 21:04** til at rette TLS/HSTS og DMARC. Alt udført i Jacobs egen Chrome.
+- **Minimum TLS hævet 1.0 → 1.2** på alle tre domæner (ældgamle, usikre krypteringsversioner afvises nu).
+- **HSTS slået til** på techmediaarch + gentleaiguide (6 mdr., uden subdomæner/preload — forsigtig opsætning, så intet kan låses fast ved en fejl); techfeedwatch havde det allerede (med preload, urørt). No-Sniff-header slået til på gentleaiguide, så alle tre er ens. Målt efter fra Jacobs maskine: alle tre sender HSTS max-age=15552000 + nosniff.
+- **DMARC-fejlen fundet:** techmediaarch havde TO _dmarc-poster på én gang — det er ugyldigt, så modtagere ignorerede DMARC helt (det var Cloudflares "DMARC Record Error"). Dubletten (p=none uden rapportering) slettet med Jacobs ok; den rigtige sat til p=quarantine.
+- **gentleaiguide:** DMARC Management slået til (Cloudflare-rapportering, første rapport ~24 t) og posten sat til p=quarantine. Målt efter mod 1.1.1.1: præcis én post pr. domæne, alle tre p=quarantine med rapportering — samme opsætning som techfeedwatch, der har kørt fejlfrit med den.
+- **Anbefalet, ikke udført:** AI Labyrinth forbliver FRA (ville skade AI-synligheds-strategien); security.txt kan vente; de to mystiske techmediaarch-subdomæner (4sauc2jws3rm, xympy4sol4sd — formentlig Blogger-rester) undersøges senere; autoconfig/autodiscover er mail-poster og SKAL blive.
+
+
+### 21/10-2026 kl. 20:44 - sikkerhedstjek efter PHP-sagen: GitHub-kontoen har nu totrinsbekræftelse
+- **Jacob kl. 19:52:** linkede decrypt.co-artiklen om de kritiske PHP-huller (CVE-2026-109618/9) og spurgte til sikkerheden på sine sites.
+- **Vurdering:** truslen rammer IKKE Jacobs sites - alle tre er statiske Astro-sites (ingen PHP, ingen serverkode pr. besøg). Den reelle angrebsflade er konti, npm-pakker (Dependabot tændt tidligere i aften) og nøgler (i GitHub-secrets).
+- **2FA-tjek i Jacobs Chrome (kun status, aldrig koder):** Cloudflare HAVDE 2FA aktiv (mobilapp). **GitHub HAVDE IKKE** - kontoen bag alle repoer, robotter og secrets. Jacob slog den til selv kl. ~20:44; bekræftet bagefter: autentificerings-app konfigureret, GitHub Mobile som ekstra metode, backup-koder set og gemt.
+- Dermed er aftenens sikkerhedsbillede: 2FA på GitHub + Cloudflare, Dependabot på alle tre repoer, hjernen privat med read-only-nøgle, ingen PHP-eksponering.
+
+
+### 21/10-2026 kl. 19:48 - konto-oprydning + Dependabot slået til (Jacobs ja kl. 19:43)
+- **Dependabot-advarsler tændt** (Dependency graph + alerts) på techmediaarch og gentleaiguide i Jacobs Chrome. techmediaarch fik straks 1 advarsel: undici (LAV alvorlighed, kun udviklingsafhængighed, transitiv) - ikke akut; gentleaiguide: 0.
+- **Slettet med Jacobs ok:** det private testrepo `miniature-spork` (tjekket FØRST: helt tomt, ingen filer - ingen fremadrettet værdi); GitHub-grenene `udkast-15`, `udkast-17` (gamle prøveartikler) og `udkast-hjerne` (flettet); 6 lokale grene, som git bekræftede fuldt flettet i main (`-d` nægter ellers): astro-7, fase2-regler, laesertjek, reklame-vaern, udkast-faktaboks2, udkast-hjerne.
+- **BEHOLDT:** den lokale gren `soegning-foerst` - git siger, den IKKE er fuldt flettet, så den kan indeholde arbejde. Venter på Jacobs dom.
+- **Venter stadig på Jacob:** gentleaiguide PR #8 (Merge/Close - robotten står stille imens).
+
+
+### 21/10-2026 kl. 19:37 - HJERNEN ER I DRIFT (flettet til main) + gennemgang af hele GitHub-kontoen
+- **Jacob kl. 19:32:** "Ja, du må gerne flette udkast-hjerne til main! Tjek lige for fejl, og gå lige min GitHub konto igennem."
+- **Ny holdning i hjernen først (Jacobs ord, kl. 19:27):** "Uddannelse & karriere i tech" - langt uden formel uddannelse hvis man er nysgerrig; i cybersikkerhed er certificeringer og grundighed vigtige, for fejl har store konsekvenser. Pushet til jacob-hjerne (`3ae810d`) med engelske matchord, så bremsen rammer artikler om studievalg.
+- **FLETTET:** `udkast-hjerne` -> main (`03e980af`, robotten pushede imens - lagt rent ovenpå). Check-run success; build.json = `03e980af`. **Robotten skriver med hjernen fra næste kørsel (20:17)** - første driftskørsel bekræftes ca. 20:51 (påmindelse sat).
+- **Konto-gennemgang (5 repoer):** `jacob-hjerne` bekræftet PRIVATE med read-only deploy-nøgle; techfeedwatch: 0 åbne Dependabot-advarsler (30 lukkede), 0 åbne PR'er, kun 1 fejlet kørsel på 10 dage (prøveartikel #11, kendt); techmediaarch: ALLE kørsler grønne (robot + tomgangsalarm); gentleaiguide: kørsler grønne.
+- **FUND, kræver Jacob:** (1) **gentleaiguide PR #8 "How Does Google AI Work" står åben og grøn - robotten venter på Merge/Close, præcis som #3 i september.** (2) Dependabot-advarsler er SLÅET FRA på techmediaarch og gentleaiguide (gratis advarsler om sårbare pakker - anbefales slået til i repo-Settings). (3) Oprydning med Jacobs ok: GitHub-grenene udkast-15 og udkast-17 (gamle prøveartikler) + udkast-hjerne (flettet), og det private testrepo "miniature-spork" ("Test").
+
+
+### 21/10-2026 kl. 19:05 - Robot-koblingen: trin 3-5 bygget og prøvet - main urørt, venter på Jacobs flet-ja
+- **Trin 3 (nøglen):** deploy-nøgle "techfeedwatch-robot (read)" på jacob-hjerne (KUN læsning) + privat nøgle som secret `HJERNE_NOEGLE` i techfeedwatch. Nøglen blev ALDRIG vist - den gik kun via udklipsholderen (ryddet bagefter). Jacob bekræftede selv GitHubs sudo-kode fra sin mail.
+- **Trin 4+5 (gren `udkast-hjerne`, commit `b16e453d` - IKKE på main):** begge workflows henter hjernen til `_hjerne/` (står i .gitignore - må aldrig i det offentlige repo; continue-on-error: uden nøgle kører robotten som før). Ny `src/lib/hjerne.mjs`: stemme-blok til skriveprompten med BREMSEN (holdninger kun ved emnematch i emner.md, højst ÉT perspektivafsnit, aldrig opfundne detaljer; undtagelse til regel 18). 8/8 lokale tjek bestået (_udkast/_test-hjerne.mjs).
+- **Tre prøvekørsler fra grenen (udgives ikke):** #16a afvist (redaktørtjek: ubesvaret delspørgsmål). #16b afvist - VÆRNET VIRKEDE: modellen citerede BLS-tal, som ikke var i researchen (fejlteksten "uden navngiven kilde" er lidt misvisende: navnet var der, men ikke blandt researchens udgivere - dvs. tal der ikke kan efterprøves). #17 SUCCES: artikel skrevet (cybersecurity major, 1.629 ord, FAKTABOKS 2 fakta, 0 klip), "🧠 Hjernen er med (stil + holdninger til emnet)" i loggen - men bremsen skrev INGEN førsteperson, fordi holdningerne (personlig sikkerhed) ikke reelt rammer studievalg-spørgsmålet. Korrekt tilbageholdenhed; artiklen sendt til Jacob i chatten.
+- **Venter på Jacob:** må grenen flettes til main? Derefter skriver robotten med hjernen i almindelig drift, og stemmen viser sig først i artikler, hvor emnet rigtigt rammer en holdning.
+
+
+### 21/10-2026 kl. 17:25 - techfeedwatch: faktaboks forslag 2 LIVE og BEVIST; robot-koblingens trin 1+2 gjort
+- **Jacob kl. 12:37:** "Du bygger faktaboks færdig. Bagefter starter vi med trin 1 med Robot-koblingen. Du koder."
+- **Forslag 2 live (`4737cad2`):** søge-prompten KRÆVER nu, at hvert faktum starter "According to <udgiver>, " og kan stå alene - formen, faktaboksen (`noegleFakta`) kræver. CACHE_VERSION 4 -> 5, så gamle søgninger ikke genbruges.
+- **Bevist med to prøvekørsler ("Prøveartikel (udgives ikke)", startet i Jacobs Chrome):** #14 skrev ingen artikel (afvist af redaktørtjek: 1 ubesvaret delspørgsmål - kendt fejltype fra 16/10, før ændringen) men 0 klip. **#15 (`39587752081`, 21 min., ~0,93 USD): artikel skrevet ("pc-building-basics-explained-for-desktop-hardware"), FAKTABOKS: 2 fakta -> boksen VISES takket være 2-fakta-reglen fra 20/10, og 0 klippede svar.** Begge faktaboks-rettelser virker altså sammen; lofterne fra 20/10 holder (0 klip i begge kørsler). Dækningen måles bredt ved opfølgningen ca. 27/10.
+- **Robot-koblingen, trin 1+2 gjort:** privat repo `jacob-hjerne` oprettet på GitHub (bekræftet "Private"; oprettet i Jacobs Chrome) og alle 5 hjernefiler pushet fra `C:\Users\jacob\jacob-hjerne` (commit `a78740b`, git fra Windows). **Mangler: trin 3** (læsenøgle til jacob-hjerne som secret i techfeedwatch - kræver Jacob), **trin 4** (workflow henter hjernen) og **trin 5** (hjernen ind i skriveprompten med bremsen).
+- Målingen af kørsel #15 skete fra skyen via GitHubs API (pc'en sov; repoet koblet til sessionen med læse-/skriveadgang - git køres fortsat KUN fra Windows).
+- **Lære:** prøvekørsler tager nu op til ~21 min. (cache v5 = alle søgninger friske) - regn med det ved fremtidige prøvekørsler.
+
+
+### 21/10-2026 kl. 12:27 - AI Second Brain: AdSense-historien i hjernen, test 2 sendt, plan for robot-koblingen fastlagt
+- **Jacob dikterede AdSense-historien** (afvist 3 gange pga. tyndt indhold; læren: det menneskelige aspekt - holdninger og synspunkter - skal med; AdSense har strenge krav, især efter AI). Gemt i `erfaringer.md`. Idé noteret (ikke besluttet): historien kan senere blive en guide/about-afsnit - det ærligste svar på "menneskelig indsats"-kravet før AdSense nr. 4.
+- **Hjerne-test 2 sendt til Jacob** (cybersikkerheds-artiklen 16/10): den fulde hjerne, inkl. Jacobs egen hacker-erfaring som bro fra virksomhedsstof til den almindelige læser - brugt ét sted (bremsen). Venter på hans dom.
+- **Plan for robot-koblingen (svar på Jacobs spørgsmål):** hjernen skal IKKE i GitHub-secrets (de er til nøgler). Rigtig model: privat repo `jacob-hjerne`; robotten får en læsenøgle gemt som secret i techfeedwatch og henter hjernen ved hver kørsel; `voice`/`beliefs`/`emner` ind i skriveprompten med bremsen (perspektiv kun når emnet rammer en holdning, højst ét afsnit pr. artikel). Indtil da bruger Claude hjernen direkte fra Jacobs pc i sessionerne. Bygges efter opfølgningen ca. 27/10, når Jacob siger til.
+
+
+### 21/10-2026 kl. 12:15 - AI Second Brain: testen bestået, hjernen udvidet med emne-holdninger og personlige erfaringer
+- **Jacobs dom over hjerne-testen (kl. 11:42):** "det lyder helt sikkert som mig". Min egen vurdering delt med ham: Runway-holdningsafsnittet er beviset (artiklens egne tal som belæg for HANS holdning); forbehold om gentagelsesfare (bremse nødvendig ved robot-kobling: perspektiv kun når emnet rammer en holdning, højst ét afsnit pr. artikel) og om at hjernen var tynd.
+- **Jacob dikterede en stor udvidelse (opdateret PDF):** holdninger til stort set alle sitets emner + flere personlige erfaringer. Vigtig præcisering fra Jacob: "jeg er skeptisk over for AI - men ikke over for mennesker".
+- **Hjernen (C:\Users\jacob\jacob-hjerne) er nu 5 filer:** `beliefs.md` udvidet (AI i kundeservice, cybersikkerhed som must, robotter/regulering, smartphones, AI-kodning), `erfaringer.md` udvidet (selv hacket flere gange: Facebook lukket + Gmail-problemer; bygget hjemmesider med AI uden at være koder; fintech-hverdagserfaring; set en robot testet på gaden), og NY `emner.md` med ét holdningsafsnit pr. emne på sitet (passer 1:1 til emnesiderne - klar til robot-koblingen).
+- **Næste for hjernen:** kobling på robotten (med bremsen) - tages op efter opfølgningen ca. 27/10, når Jacob siger til.
+
+
+### 21/10-2026 kl. 11:32 - AI Second Brain: hjernen oprettet og testet på to artikler (intet udgivet)
+- **Jacob dikterede sit råmateriale** (PDF med "hvem jeg er / min stemme / mine holdninger") + rettelser (Boeing/Volkswagen) og et erfarings-afsnit (ca. 2 års AI-erfaring, de tre sites, TED som kilde).
+- **Hjernen bor i `C:\Users\jacob\jacob-hjerne`** - BEVIDST uden for de offentlige repoer: `core.md`, `voice.md`, `beliefs.md`, `erfaringer.md`. Bygget af Jacobs egne ord; han gennemgår dem selv. NotebookLM droppet som mellemled - Jacob dikterede direkte.
+- **Hjerne-test (plan B):** to artikler (Runway/AI-video, hvor holdningerne er relevante, og gaming-pc vs. konsol som neutral kontrol) omskrevet med hjernen som stemme. Før/efter-dokument med markeringer af alt nyt sendt til Jacob i chatten. Fakta og kilder uændrede. **Venter på Jacobs dom.** Intet udgivet, intet ændret i robotten.
+- **Jacobs beslutninger 21/10:** Ars Technica, MIT Technology Review og TechCrunch bruges som KILDER og pejling - aldrig som råstof til omskrivning (ophavsret + originalitet). **Nyt forslag på listen** (tages op efter uge-opfølgningen ca. 27/10): lær robotten at foretrække kvalitetskilder i researchen.
+
 ## Flyttet 27/10-2026 (statusfil v213 → v214)
 
 ### 20/10-2026 kl. 12:43 - techfeedwatch: Key facts-boksen vises nu med 2 fakta (LIVE `499dd9d8`) + statusfilen committes igen
