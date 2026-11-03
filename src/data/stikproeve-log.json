@@ -196,5 +196,30 @@
   ],
   "usd": 0.0053,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-03T06:56:21.462Z",
+  "artikler": [
+   {
+    "slug": "humanoid-hardware-what-humanoid-robots-are-made-of",
+    "tjekket": 8,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 7,
+    "usikker": 1,
+    "fund": []
+   },
+   {
+    "slug": "quantum-computing-separating-the-billions-in-hype-from-the-hard",
+    "tjekket": 7,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 4,
+    "usikker": 3,
+    "fund": []
+   }
+  ],
+  "usd": 0.0033,
+  "soegninger": 0
  }
 ]
