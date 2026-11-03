@@ -1303,5 +1303,10 @@
   "q": "what are humanoid robots made of",
   "tag": "Robotics",
   "dato": "2026-11-03"
+ },
+ {
+  "q": "can quantum computing break aes 256",
+  "tag": "Quantum Computing",
+  "dato": "2026-11-03"
  }
 ]
