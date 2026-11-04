@@ -48,3 +48,10 @@
 /build.json
   X-Robots-Tag: noindex
   Cache-Control: no-cache
+
+# /_astro/* (4/11-2026): filerne har et fingeraftryk i navnet (fx inter-latin….Dx4kXJAl.woff2),
+# så en ny udgave får altid et nyt navn. Derfor må browseren gemme dem et år uden at spørge igen.
+# Før: Cloudflares standard på 4 timer, så skrift og scripts blev tjekket mod serveren igen og igen.
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

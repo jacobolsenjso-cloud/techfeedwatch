@@ -267,6 +267,17 @@ const siteSchema = [
     <script is:inline>
       (function () {
         var GA_ID = 'G-2C7N1GP697';
+        // Intern trafik (Jacobs ja 4/11-2026): besøg siden én gang med ?intern=1, så husker browseren det,
+        // og alle hans egne besøg sendes med traffic_type=internal. Analytics-filteret "Internal Traffic"
+        // (Aktiv) smider dem væk. ?intern=0 fjerner markeringen. IP-filter virker ikke (Cloudflare WARP).
+        // try/catch: localStorage kan være spærret (fx privat vindue) - så sendes besøget bare normalt.
+        var intern = false;
+        try {
+          var ip = new URLSearchParams(location.search).get('intern');
+          if (ip === '1') localStorage.setItem('tfw-intern', '1');
+          if (ip === '0') localStorage.removeItem('tfw-intern');
+          intern = localStorage.getItem('tfw-intern') === '1';
+        } catch (e) {}
         var loaded = false;
 
         function loadAnalytics() {
@@ -277,7 +288,7 @@ const siteSchema = [
           s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
           document.head.appendChild(s);
           gtag('js', new Date());
-          gtag('config', GA_ID);
+          gtag('config', GA_ID, intern ? { traffic_type: 'internal' } : {});
         }
 
         function watchConsent() {
