@@ -295,10 +295,19 @@ const siteSchema = [
           if (typeof window.__tcfapi !== 'function') return;
           window.__tcfapi('addEventListener', 2, function (tcData, success) {
             if (!success || !tcData) return;
-            if (tcData.eventStatus !== 'tcloaded' && tcData.eventStatus !== 'useractioncomplete') return;
 
-            // Uden for GDPR-området gælder ingen samtykkekrav via TCF
-            if (tcData.gdprApplies === false) { loadAnalytics(); return; }
+            // Uden for GDPR-området gælder ingen samtykkekrav via TCF.
+            // 4/11-2026: dette tjek SKAL stå før eventStatus-tjekket. Uden for EU svarer Googles samtykkeboks
+            // gdprApplies:false UDEN eventStatus (målt), så det gamle tjek stoppede her, og Analytics startede
+            // aldrig for besøgende uden for EU. Måling sættes også til 'granted' - standarden øverst er 'denied'
+            // for alle, og uden opdatering blev besøgene ikke talt i de almindelige rapporter.
+            if (tcData.gdprApplies === false) {
+              gtag('consent', 'update', { analytics_storage: 'granted' });
+              loadAnalytics();
+              return;
+            }
+
+            if (tcData.eventStatus !== 'tcloaded' && tcData.eventStatus !== 'useractioncomplete') return;
 
             var p = tcData.purpose && tcData.purpose.consents;
             if (p && p[1]) {
