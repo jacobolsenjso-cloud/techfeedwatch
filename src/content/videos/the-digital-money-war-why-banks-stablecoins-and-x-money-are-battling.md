@@ -13,8 +13,8 @@ summary: "Stablecoins provide a digital alternative to volatile cryptocurrencies
 metaDescription: "Learn the real purpose of stablecoins, how dollar pegs work, and why businesses use these digital tokens for global payments."
 targetQuestion: "what is the purpose of stablecoins"
 duration: "10:40"
-viewCount: 80257
-viewsUpdated: "2026-11-02"
+viewCount: 80283
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 recipe: 3

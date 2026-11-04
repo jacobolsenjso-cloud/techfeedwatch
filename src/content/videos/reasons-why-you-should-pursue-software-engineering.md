@@ -12,8 +12,8 @@ summary: "Anyone evaluating whether to pursue software engineering today faces a
 metaDescription: "Wondering if you should pursue software engineering? Discover how market shifts, AI coding, and specialized systems affect your software engineering path."
 targetQuestion: "should i pursue software engineering"
 duration: "7:18"
-viewCount: 37072
-viewsUpdated: "2026-11-01"
+viewCount: 37697
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 faqs:

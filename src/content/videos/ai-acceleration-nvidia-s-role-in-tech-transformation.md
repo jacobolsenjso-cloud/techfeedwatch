@@ -13,8 +13,8 @@ summary: "The rapid advancement of Artificial Intelligence is reshaping industri
 metaDescription: "Explore AI acceleration, Nvidia's critical role in hardware, and the broad tech transformation impacting industries and society."
 targetQuestion: "why are gpus used for ai"
 duration: "2:32:24"
-viewCount: 5697
-viewsUpdated: "2026-11-01"
+viewCount: 5704
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 faqs:

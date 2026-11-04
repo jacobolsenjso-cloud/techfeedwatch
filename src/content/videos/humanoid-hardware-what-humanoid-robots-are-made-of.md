@@ -12,8 +12,8 @@ summary: "Modern humanoid robots rely on an engineered combination of lightweigh
 metaDescription: "Wondering what humanoid robots are made of? Learn how aerospace metals, high-grade polymers, and magnetic alloys build modern bipedal machines."
 targetQuestion: "what are humanoid robots made of"
 duration: "25:02"
-viewCount: 181
-viewsUpdated: "2026-11-03"
+viewCount: 182
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 recipe: 3

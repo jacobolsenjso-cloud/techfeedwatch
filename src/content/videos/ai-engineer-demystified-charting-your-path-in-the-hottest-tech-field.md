@@ -14,8 +14,8 @@ summary: "The decision to pursue a career in AI engineering requires a clear und
 metaDescription: "The decision to pursue a career in AI engineering requires a clear understanding of its evolving demands and specific skill sets."
 targetQuestion: "what skills does ai engineer need"
 duration: "5:44"
-viewCount: 193456
-viewsUpdated: "2026-11-01"
+viewCount: 193646
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 revised: true

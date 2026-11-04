@@ -16,8 +16,8 @@ summary: "The evolution of algorithmic trading strategies has heightened demand 
 metaDescription: "The evolution of algorithmic trading strategies has heightened demand for specialized, non-traditional data sources beyond standard market feeds."
 targetQuestion: "how hedge funds use alternative data"
 duration: "17:34"
-viewCount: 4727
-viewsUpdated: "2026-11-01"
+viewCount: 4733
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 revised: true

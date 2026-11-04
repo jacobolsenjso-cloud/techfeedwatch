@@ -13,8 +13,8 @@ summary: "Fintech innovation examples like digital wallets, instant payment rail
 metaDescription: "Explore real fintech innovation examples across digital wallets, open banking, and instant rails, alongside profitability data and new AI rules."
 targetQuestion: "fintech innovation examples"
 duration: "5:36"
-viewCount: 991
-viewsUpdated: "2026-11-01"
+viewCount: 997
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 recipe: 3

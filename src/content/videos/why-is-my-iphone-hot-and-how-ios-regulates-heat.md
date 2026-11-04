@@ -11,8 +11,8 @@ summary: "An iPhone gets hot when intensive background processing, high ambient 
 metaDescription: "Learn why your iPhone gets hot during charging or heavy use, what operating temperatures are safe, and how to cool your device safely."
 targetQuestion: "why is my iphone hot"
 duration: "7:49"
-viewCount: 20969
-viewsUpdated: "2026-11-01"
+viewCount: 21492
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 recipe: 3

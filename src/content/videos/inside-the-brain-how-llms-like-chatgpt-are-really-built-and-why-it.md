@@ -13,8 +13,8 @@ summary: "The foundational processes behind large language models (LLMs) like Ch
 metaDescription: "The foundational processes behind large language models (LLMs) like ChatGPT involve meticulous data preparation and tokenization."
 targetQuestion: "how does llm tokenization work"
 duration: "3:31:24"
-viewCount: 10174910
-viewsUpdated: "2026-11-01"
+viewCount: 10226655
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 revised: true

@@ -14,8 +14,8 @@ summary: "Quantum computing leverages the mind-bending principles of quantum mec
 metaDescription: "Quantum computing uses qubits and quantum mechanics to solve complex problems and holds potential to revolutionize fields."
 targetQuestion: "what is quantum computing and how does it work"
 duration: "21:51"
-viewCount: 3224
-viewsUpdated: "2026-11-01"
+viewCount: 3226
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 revised: true

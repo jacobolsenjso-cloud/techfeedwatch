@@ -13,8 +13,8 @@ summary: "The HP Reverb G2 stands out as the best overall Windows Mixed Reality 
 metaDescription: "What is the best Windows Mixed Reality headset? We compare the HP Reverb G2 and Samsung Odyssey+ amid Windows 11 deprecation rules."
 targetQuestion: "what is the best windows mixed reality headset"
 duration: "9:40"
-viewCount: 122
-viewsUpdated: "2026-11-01"
+viewCount: 124
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-16"

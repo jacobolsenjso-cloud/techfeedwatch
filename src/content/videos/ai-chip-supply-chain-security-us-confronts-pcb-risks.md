@@ -13,8 +13,8 @@ summary: "The global AI chips supply chain faces significant risks from its conc
 metaDescription: "AI chips supply chain faces critical vulnerabilities due to reliance on Chinese-made printed circuit boards. Learn about the hidden risks."
 targetQuestion: "ai chip supply chain"
 duration: "15:57"
-viewCount: 147276
-viewsUpdated: "2026-11-01"
+viewCount: 147592
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

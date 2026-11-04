@@ -11,8 +11,8 @@ summary: "Modern flagship Android phones now offer five to seven years of usable
 metaDescription: "How long do Android phones last? Modern devices now offer five to seven years of official updates and dependable hardware. Learn when to upgrade or repair."
 targetQuestion: "how long do android phones last"
 duration: "23:52"
-viewCount: 264
-viewsUpdated: "2026-11-02"
+viewCount: 438
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -13,8 +13,8 @@ summary: "Core Web Vitals are a set of three specific metrics—Largest Contentf
 metaDescription: "Understand what Core Web Vitals measure—loading speed, interactivity, and visual stability—and how they impact your website's Google ranking."
 targetQuestion: "what do core web vitals measure"
 duration: "7:00"
-viewCount: 16
-viewsUpdated: "2026-10-01"
+viewCount: 17
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-13"

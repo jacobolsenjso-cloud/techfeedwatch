@@ -12,8 +12,8 @@ summary: "AI video editing tools are software applications that use machine lear
 metaDescription: "What are AI video editing tools? Discover how machine learning models automate cuts, synthesize footage, and speed up post-production workflows."
 targetQuestion: "what are ai video editing tools"
 duration: "10:59"
-viewCount: 8408
-viewsUpdated: "2026-11-01"
+viewCount: 8567
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 faqs:

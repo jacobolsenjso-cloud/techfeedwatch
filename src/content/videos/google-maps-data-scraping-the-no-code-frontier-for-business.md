@@ -15,8 +15,8 @@ summary: "No-code tools enable individuals and businesses to extract vast amount
 metaDescription: "No-code tools enable individuals and businesses to extract vast amounts of public business data from platforms like Google Maps without programming."
 targetQuestion: "can you scrape google maps"
 duration: "3:44"
-viewCount: 38
-viewsUpdated: "2026-10-22"
+viewCount: 39
+viewsUpdated: "2026-11-04"
 thumbMax: true
 isShort: false
 revised: true
