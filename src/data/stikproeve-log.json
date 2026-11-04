@@ -221,5 +221,30 @@
   ],
   "usd": 0.0033,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-04T06:53:37.115Z",
+  "artikler": [
+   {
+    "slug": "difference-between-an-ai-assistant-and-a-chatbot",
+    "tjekket": 4,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 1,
+    "fund": []
+   },
+   {
+    "slug": "10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 6,
+    "fund": []
+   }
+  ],
+  "usd": 0.0053,
+  "soegninger": 0
  }
 ]
