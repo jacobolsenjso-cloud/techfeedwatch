@@ -77,7 +77,10 @@ for (const p of filer) {
     antalLd++;
     try {
       const o = JSON.parse(m[1]);
-      for (const n of (Array.isArray(o) ? o : [o])) {
+      // 5/11-2026: en @graph-beholder (organisation + person på alle sider, src/lib/entitet.mjs) har ingen @type selv -
+      // det er delene i den, der skal tjekkes. Uden dette gav hver side et falsk fund (målt: 722).
+      const noder = (Array.isArray(o) ? o : [o]).flatMap((x) => (x && Array.isArray(x['@graph']) ? x['@graph'] : [x]));
+      for (const n of noder) {
         if (!n['@type']) f('schema', navn, 'JSON-LD-node uden @type');
         const t = JSON.stringify(n);
         const hul = t.match(/"(undefined|NaN)"|\[object Object\]/);

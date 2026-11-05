@@ -1,4 +1,5 @@
 ---
+import { ORG_ID, PERSON_ID, BESKRIVELSE } from '../lib/entitet.mjs';
 import MainLayout from '../layouts/MainLayout.astro';
 import { durationToSeconds, formatSpan } from '../lib/time-saved.mjs';
 import { TOOLS } from '../lib/tools';
@@ -50,6 +51,11 @@ if (showTally) {
 // så en maskine kunne ikke se, HVAD siden var. AboutPage peger på personen bag
 // sitet via @id — noden selv står på /author/jacob-olsen, så den kun findes ét sted.
 const slug = page.file.split('/').pop().replace('.md', '');
+// Vagt (5/11-2026): schemaets beskrivelse SKAL stå ordret på about-siden. En regel, der kræver at nogen
+// husker den, er ikke en regel - så bygget stopper, hvis de to glider fra hinanden.
+if (slug === 'about' && !(typeof page.rawContent === 'function' ? page.rawContent() : '').includes(BESKRIVELSE)) {
+  throw new Error('about.md: første afsnit skal indeholde BESKRIVELSE fra src/lib/entitet.mjs ordret');
+}
 const sideSchema =
   slug === 'about'
     ? {
@@ -58,8 +64,11 @@ const sideSchema =
         "name": title,
         "url": "https://techfeedwatch.com/about",
         "description": description,
-        "mainEntity": { "@id": "https://techfeedwatch.com/author/jacob-olsen#person" },
-        "publisher": { "@id": "https://techfeedwatch.com/#organization" }
+        // 5/11-2026 (som techmediaarch): about-siden er sitets "entity home" - den handler om organisationen.
+        "about": { "@id": ORG_ID },
+        "mainEntity": { "@id": ORG_ID },
+        "author": { "@id": PERSON_ID },
+        "publisher": { "@id": ORG_ID }
       }
     : slug === 'contact'
       ? {

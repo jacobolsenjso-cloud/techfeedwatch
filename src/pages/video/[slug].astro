@@ -7,7 +7,7 @@ import { tagSlug } from '../../lib/tags';
 import { compareTimes } from '../../lib/time-saved.mjs';
 import { asQuestion, faellesOrd } from '../../lib/question.mjs';
 import { vaerktoejTil } from '../../lib/vaerktoej.mjs';
-import { personRef } from '../../lib/person.mjs';
+import { forfatterRef, udgiverRef, PERSON_TITEL, PERSON_BIO, BRAND, harJegAfsnit } from '../../lib/entitet.mjs';
 import viewHistory from '../../data/view-history.json';
 
 export async function getStaticPaths() {
@@ -85,6 +85,8 @@ const sourceChannelUrl: string | null = sourceChannelId
 // nederst. Så siger boksen øverst, at artiklen bygger på N websider OG en video — ikke
 // "researched with a video", som er sandt for de gamle artikler, men ikke for de nye.
 const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent() : '').split(/^## Sources\s*$/m)[1] || '';
+// 5/11-2026: har teksten et "I"-afsnit (Jacobs egne holdninger fra hans noter), siger forfatterboksen det.
+const jegAfsnit = harJegAfsnit(typeof video.rawContent === 'function' ? video.rawContent() : '');
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
 // Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
 // 13/10: har artiklen et AI-billede (public/billeder, src/lib/aibillede.mjs), bruges den store
@@ -302,18 +304,12 @@ const articleSchema = {
   "image": `https://techfeedwatch.com/og/${slug}.jpg`,
   "datePublished": new Date(date).toISOString(),
   "dateModified": new Date(showUpdated ? updated! : date).toISOString(),
-  // Forfatteren er sitet, ikke en person. Artiklen er skrevet af en sprogmodel
-  // efter regler Jacob har sat — han har ikke skrevet eller læst den. Schema.org
-  // tillader en Organization som author, og det er det sande svar. Stod der en
-  // Person, ville de strukturerede data påstå et forfatterskab som siden selv
-  // modsiger nederst.
-  "author": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/", "founder": personRef() },
-  "publisher": {
-    "@type": "Organization",
-    "name": "TechFeedWatch",
-    "url": "https://techfeedwatch.com/",
-    "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
-  },
+  // Forfatter = en navngiven person (Jacob 5/11-2026: som på techmediaarch). Google og AI-tjenester vægter, at der
+  // står et menneske bag. Det er ærligt, fordi forfatterboksen nederst siger præcis, hvordan artiklen er lavet
+  // (en sprogmodel efter Jacobs regler, udgives automatisk). Før 5/11 stod organisationen som author.
+  // author og publisher peger på de faste @id i src/lib/entitet.mjs, som MainLayout beskriver fuldt på hver side.
+  "author": forfatterRef(),
+  "publisher": udgiverRef(),
   // Skal matche <link rel="canonical">, som har afsluttende skråstreg. Uden den
   // pegede schemaet på en anden adresse end canonical (målt 20/9-2026) — to
   // adresser for samme side er netop dét, canonical findes for at undgå.
@@ -1132,13 +1128,9 @@ const metaDesc = rawMeta.length > 157
           <div class="article-byline">
             <img src="/jacob-olsen.png" alt="" class="byline-avatar" width="40" height="40" loading="lazy" decoding="async" />
             <div class="byline-text">
-              {/* "Analysis by Jacob S. Olsen" stod her før. På samme side siger
-                  forfatterboksen nederst at artiklen udgives uden at nogen har
-                  læst den — to modsatrettede påstande på én side, og præcis den
-                  slags overpåstand vi allerede har fjernet to andre steder.
-                  Nu står der hvad der faktisk er sandt: sitet udgiver den,
-                  Jacob står bag maskineriet og reglerne. */}
-              <span class="byline-name">Published by <a href="/author/jacob-olsen">TechFeedWatch</a></span>
+              {/* 5/11-2026 (Jacob, som techmediaarch): navnet bag sitet står i bylinen og fører ned til forfatterboksen,
+                 der siger ærligt, hvordan artiklen er lavet. Før stod "Published by TechFeedWatch". */}
+              <span class="byline-name">Published by <a href="#author" rel="author">Jacob S. Olsen</a></span>
               <span class="byline-meta">
                 <time datetime={date}>{new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                 {updatedLabel && (
@@ -1420,11 +1412,13 @@ const metaDesc = rawMeta.length > 157
           </div>
         )}
 
-        <div class="author-box">
+        <div class="author-box" id="author">
           <img src="/jacob-olsen.png" alt="Jacob S. Olsen" class="author-box-photo" width="80" height="80" />
           <div>
             <p class="author-box-name"><a href="/author/jacob-olsen" class="author-box-link">Jacob S. Olsen</a></p>
-            <p class="author-box-title">Runs TechFeedWatch, from Denmark</p>
+            <p class="author-box-title">{PERSON_TITEL}, {BRAND}</p>
+            {/* Biografi og titel fra src/lib/entitet.mjs (5/11-2026), ens med forfattersiden og schemaet */}
+            <p class="author-box-bio">{PERSON_BIO}</p>
             {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
                 Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
             {antalWebKilder > 0 ? (
@@ -1432,7 +1426,7 @@ const metaDesc = rawMeta.length > 157
             ) : (
               <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. It publishes automatically — I do not read every article before it goes live. The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
             )}
-            <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim. <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
+            <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim.{jegAfsnit && ' The paragraphs written as "I" are my own views, taken from my notes and put into words by the machine.'} <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
           </div>
         </div>
 

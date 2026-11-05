@@ -5,6 +5,8 @@ description: "Why this site exists, who runs it, and exactly how the articles ar
 
 # About TechFeedWatch
 
+TechFeedWatch gives straight answers to the questions people search for about AI, tech, fintech and crypto, in plain language. Every article credits the creator whose video it draws on and links to it. The site started in June 2026 and is run by Jacob S. Olsen, Founder & Editor, from Denmark.
+
 Writing about AI and what it can do is a long story. I could fill a hundred articles with it and still not be finished. But let me try to explain what this site is about, and why I think it matters — because I would like you to come away understanding it a little better than when you arrived.
 
 ## Don't be afraid of it. Learn it.
@@ -37,7 +39,7 @@ I go a long way for facts and verified sources — it is the thing I care most a
 
 ## Who runs this site
 
-My name is **Jacob S. Olsen**, and I run TechFeedWatch on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
+My name is **Jacob S. Olsen**. I am the Founder & Editor of TechFeedWatch, which I started in June 2026 and run on my own from Denmark. There is no company behind it and no editorial team — it is one person, a set of tools I built, and a publishing system I maintain.
 
 The short background: I have spent years of my spare time inside this subject — many hundreds of videos, if not thousands, and more articles than I can count, on AI, prompt engineering, how websites are built, and how search works. The publishing system behind this site took months of fine-tuning before I let it write in public, and tuning it is still most of the work.
 

@@ -8,7 +8,7 @@ import interLatinWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-n
 import RelatedTools from '../components/RelatedTools.astro';
 import { findTool } from '../lib/tools';
 import { ikonIndhold } from '../lib/logo.mjs';
-import { personRef } from '../lib/person.mjs';
+import { organisation, person, udgiverRef } from '../lib/entitet.mjs';
 
 // nocanonical: kun til 404-siden. Den bliver serveret på hver eneste adresse,
 // der ikke findes, så en canonical ville pege alle døde adresser hen på
@@ -40,7 +40,7 @@ const toolSchema = toolData ? {
   // Kun når værktøjet har en rigtig ændringsdato (`updated` i tools.ts).
   ...(toolData.updated ? { "dateModified": toolData.updated } : {}),
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "publisher": { "@type": "Organization", "name": "TechFeedWatch", "url": "https://techfeedwatch.com/" }
+  "publisher": udgiverRef()
 } : null;
 
 // Standard SEO beskrivelse hvis ingen er angivet
@@ -93,7 +93,8 @@ if (currentPath.startsWith('/video/')) {
   breadcrumbSchema.itemListElement.push({ "@type": "ListItem", "position": 2, "name": sectionName, "item": `https://techfeedwatch.com${currentPath}` });
 }
 
-// WebSite- + Organization-schema (kun forside): giver Google mulighed for søgefelt-udvidelse (sitelinks searchbox)
+// WebSite-schema (kun forside): giver Google mulighed for søgefelt-udvidelse (sitelinks searchbox).
+// Organisationen og personen står fra 5/11-2026 på ALLE sider (se @graph i <head>, src/lib/entitet.mjs).
 const siteSchema = [
   {
     "@context": "https://schema.org",
@@ -106,36 +107,8 @@ const siteSchema = [
       "@type": "SearchAction",
       "target": { "@type": "EntryPoint", "urlTemplate": "https://techfeedwatch.com/search?q={search_term_string}" },
       "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    // NewsMediaOrganization frem for Organization (20/9-2026). Hvorfor: de fire
-    // politik-felter nedenfor findes kun på denne type, og det er dem, Google
-    // bruger til at vurdere, om en udgiver er til at stole på. Sitet udgiver
-    // dateret redaktionelt indhold dagligt, krediterer sine kilder og har en
-    // offentlig rettelsespolitik — felterne peger på sider, der findes og er sande.
-    "@type": "NewsMediaOrganization",
-    "@id": "https://techfeedwatch.com/#organization",
-    "name": "TechFeedWatch",
-    "alternateName": "Tech Feed Watch",
-    "url": "https://techfeedwatch.com/",
-    "logo": "https://techfeedwatch.com/icon-512.png",
-    "email": "info@techfeedwatch.com",
-    "address": { "@type": "PostalAddress", "addressCountry": "DK" },
-    // sameAs er dét felt Google bruger til at knytte sitet til en profil andre
-    // steder. Uden det står sitet som en anonym adresse.
-    "sameAs": ["https://x.com/JacobStubbeJS"],
-    // Metoden står i prosa på about-siden ("A system I built picks a question…
-    // Those articles publish automatically — I do not read every one before it
-    // goes live"). Disse fire felter gør den prosa maskinlæsbar.
-    "publishingPrinciples": "https://techfeedwatch.com/about",
-    "ownershipFundingInfo": "https://techfeedwatch.com/about",
-    "correctionsPolicy": "https://techfeedwatch.com/corrections",
-    "actionableFeedbackPolicy": "https://techfeedwatch.com/contact",
-    // Personen bag: én henvisning (@id) til den fulde beskrivelse på
-    // forfattersiden. Navn og profiler kommer fra src/lib/person.mjs.
-    "founder": personRef()
+    },
+    "publisher": { "@id": "https://techfeedwatch.com/#organization" }
   }
 ];
 ---
@@ -525,6 +498,9 @@ const siteSchema = [
     
     {/* Indsætter vores nye Breadcrumb Schema på alle sider */}
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    {/* 5/11-2026 (som techmediaarch): organisationen og personen beskrevet fuldt på HVER side, så alle
+        henvisninger (@id) i artikler, guides og about har noget at pege på. Én kilde: src/lib/entitet.mjs. */}
+    <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": [organisation(), person()] })} />
 
     {/* WebSite + Organization schema, kun på forsiden */}
     {currentPath === '/' && <script type="application/ld+json" set:html={JSON.stringify(siteSchema)} />}

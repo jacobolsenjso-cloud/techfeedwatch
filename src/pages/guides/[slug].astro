@@ -2,7 +2,7 @@
 import { TAG_COLORS } from '../../lib/tags';
 import MainLayout from '../../layouts/MainLayout.astro';
 import FAQ from '../../components/FAQ.astro';
-import { personRef } from '../../lib/person.mjs';
+import { forfatterRef, udgiverRef, PERSON_TITEL, BRAND } from '../../lib/entitet.mjs';
 
 export async function getStaticPaths() {
   const allGuides = Object.values(import.meta.glob('../../content/guides/*.md', { eager: true }));
@@ -54,13 +54,8 @@ const schema = {
   "image": "https://techfeedwatch.com/og-default-v3.png",
   // Guiderne er Jacobs egne - derfor en Person som author (artiklerne har
   // sitet som author). Navn og profiler fra src/lib/person.mjs.
-  "author": personRef({ "jobTitle": "Founder of TechFeedWatch" }),
-  "publisher": {
-    "@type": "Organization",
-    "name": "TechFeedWatch",
-    "url": "https://techfeedwatch.com/",
-    "logo": { "@type": "ImageObject", "url": "https://techfeedwatch.com/icon-512.png", "width": 512, "height": 512 }
-  },
+  "author": forfatterRef(),
+  "publisher": udgiverRef(),
   // Fuld ISO-tid med tidszone, ikke bare "2026-07-23". Google accepterer den
   // bare dato, men melder den som ugyldig datetime — artikelsiderne har altid
   // gjort det rigtigt, guiderne gjorde ikke.
@@ -174,7 +169,7 @@ const schema = {
       <img src="/jacob-olsen.png" alt="Jacob S. Olsen" class="guide-author-photo" width="72" height="72" />
       <div>
         <p class="guide-author-name">Jacob S. Olsen</p>
-        <p class="guide-author-title">Runs TechFeedWatch, from Denmark</p>
+        <p class="guide-author-title">{PERSON_TITEL}, {BRAND}</p>
         <p class="guide-author-note">Guides are written with AI, and planned, checked and maintained by me. Unlike the articles on this site, they are not published automatically — <a href="/about">how that works</a>. If something here is wrong, <a href="/corrections">tell me</a>.</p>
       </div>
     </div>
