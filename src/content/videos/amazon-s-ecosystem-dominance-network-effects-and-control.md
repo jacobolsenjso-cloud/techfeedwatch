@@ -50,7 +50,7 @@ Consider the intricate layering: customers attract sellers, expanding product se
 
 Advanced logistics make delivery feel automatic, enhancing customer satisfaction and further solidifying their reliance on the platform. Concurrently, advertising monetizes the attention of this vast user base.
 
-Critically, the internal infrastructure that powered these operations—Amazon Web Services (AWS)—was transformed into one of the most important cloud businesses globally, extending Amazon's reach far beyond retail. AWS itself serves as a foundational element, supporting countless digital services, including many that leverage sophisticated [AI on Chip Shifts Data Center Compute to a Hybrid Model](/video/ai-on-a-chip-how-edge-ai-changes-data-center-compute) to handle vast data processing demands.
+Critically, the internal infrastructure that powered these operations—Amazon Web Services (AWS)—was transformed into one of the most important cloud businesses globally, extending Amazon's reach far beyond retail. AWS itself serves as a foundational element, supporting countless digital services, including many that leverage sophisticated [hybrid data center compute models](/video/ai-on-a-chip-how-edge-ai-changes-data-center-compute) to handle vast data processing demands.
 
 This integrated approach means that the same company can present entirely different faces to various stakeholders: convenience for customers, unparalleled access for sellers, solid infrastructure for developers leveraging [What Is a Frontier Model?FJERN, and a long-term compounding engine for investors. This multi-faceted utility is a hallmark of the operating model, allowing it to generate value from multiple angles simultaneously.
 

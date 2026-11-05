@@ -55,7 +55,7 @@ PEO focuses on ensuring content is structured and authoritative enough to be cho
 
 This strategy aims to make content concise, directly answer common questions, and provide clear, verifiable information that AI models can easily extract and present as an authoritative answer. The goal is to be the source that the AI chooses to summarize, rather than simply a link that users click on.
 
-This often means providing structured data and clear, direct responses to anticipated user queries. For more on AI Overviews, see [How Do AI Overviews Impact Organic Search Traffic for Creators?](/video/google-ai-overviews-impact-content-creators-traffic-seo).
+This often means providing structured data and clear, direct responses to anticipated user queries. For more on AI Overviews, see how they [impact organic search traffic](/video/google-ai-overviews-impact-content-creators-traffic-seo) for creators.
 
 **Generative Engine Optimization (GEO)** focuses on optimizing content for entirely generative AI systems that might create new content based on user prompts. This includes AI-powered content creation tools or platforms that dynamically generate experiences.
 
@@ -75,7 +75,7 @@ Programmatic SEO at scale is another significant component, leveraging AI to gen
 
 The purpose is to cover a wide range of specific long-tail queries, making a site a comprehensive resource that AI models are likely to draw from. This approach allows for hyper-personalization, particularly in B2C contexts, enabling businesses to perform 100 landing-page split tests to refine their messaging and improve conversion rates.
 
-The ability to quickly iterate and test content at this scale is a direct benefit of integrating AI into SEO workflows. For more on this, consider [AI SEO Optimization: A New Data-Driven Reality](/video/the-new-ai-seo-how-data-scraping-rewrites-visibility-strategy-for-saas).
+The ability to quickly iterate and test content at this scale is a direct benefit of integrating AI into SEO workflows. For more on this, consider the data-driven reality of [AI SEO optimization](/video/the-new-ai-seo-how-data-scraping-rewrites-visibility-strategy-for-saas).
 
 AI-first agency operations exemplify the practical application of these strategies. Agencies are increasingly using AI to streamline content creation, analysis, and optimization. This includes automating research, drafting content, and even generating code snippets for web development, using tools like Claude Code and Codex.
 

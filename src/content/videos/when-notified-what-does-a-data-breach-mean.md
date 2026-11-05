@@ -32,7 +32,7 @@ A data breach occurs when an unauthorized individual copies, views, transmits, o
 
 The National Institute of Standards and Technology (NIST) defines a data breach as an incident involving sensitive, protected, or confidential information being copied, transmitted, viewed, stolen, or used by an individual unauthorized to do so.
 
-In simple terms, systems lost custody of confidential information. Understanding [how does a data leak happen and how to prevent it](/video/how-does-a-data-leak-happen-and-how-to-prevent-it) provides early warning before full exfiltration takes place.
+In simple terms, systems lost custody of confidential information. Understanding [how data leaks happen](/video/how-does-a-data-leak-happen-and-how-to-prevent-it) and how to prevent them provides early warning before full exfiltration takes place.
 
 ## How a Data Breach Differs From a Security Incident
 
@@ -74,7 +74,7 @@ Failure to report breaches triggers severe penalties. Regulators levy fines reac
 
 A confirmed breach inflicts deep corporate damage well beyond immediate network repair bills. Legal fees, forensic investigator retainers, public relations management, and class-action settlements quickly accumulate. According to IBM's 2024 Cost of a Data Breach Report, the global average total cost of a data breach rose to $4.88 million in 2024, a 10% increase from $4.45 million in 2023.
 
-Operational disruptions compound these direct fiscal hits. Teams must rebuild servers, issue new login credentials, and manage incoming phone inquiries from alarmed consumers. These disruptions echo historical periods of heightened risk, such as when [data breaches June 2026 show evolving cyber threats](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for) challenged defensive measures across major industries.
+Operational disruptions compound these direct fiscal hits. Teams must rebuild servers, issue new login credentials, and manage incoming phone inquiries from alarmed consumers. These disruptions echo historical periods of heightened risk, such as when [data breaches in June 2026](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for) revealed evolving cyber threats that challenged defensive measures across major industries.
 
 Defensive technology adoption heavily dictates the final bill. According to IBM's 2024 Cost of a Data Breach Report, organizations that extensively integrated security artificial intelligence and automation within prevention workflows incurred $2.22 million lower breach costs on average than organizations that did not. Automation identifies network anomalies quickly, truncating the time adversaries spend harvesting records undetected.
 

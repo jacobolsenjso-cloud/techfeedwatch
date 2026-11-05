@@ -49,11 +49,11 @@ He adds, "I have no affiliate links on any of the websites or on any of the stuf
 - **Charter financial analysts**
 - **Charter in investment manager**
 
-The broader financial field for **Canadians**, who are the primary demographic for this advice, includes leveraging platforms like Well Simple for comprehensive financial services, or exploring online banks such as Tangerine and EQ for nearly free products with competitive interest rates. Understanding these strategic steps is key to [Building Financial Freedom with Strategic Investment Allocation](/video/financial-freedom-investing-building-wealth-intentionally) and ensuring sustainable progress.
+The broader financial field for **Canadians**, who are the primary demographic for this advice, includes leveraging platforms like Well Simple for comprehensive financial services, or exploring online banks such as Tangerine and EQ for nearly free products with competitive interest rates. Understanding these strategic steps is key to [building financial freedom](/video/financial-freedom-investing-building-wealth-intentionally) with strategic investment allocation and ensuring sustainable progress.
 
 The overall cost of poor debt management often manifests as compounded interest payments and missed opportunities for wealth growth. By systematically tackling debt and building savings, individuals reduce these "costs" and free up capital for future investments or large purchases.
 
-Understanding various fintech offerings can enhance these strategies; [Fintech Business Models Define Value and Revenue Strategies](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s) can illuminate how new financial tools might aid in budgeting and tracking. However, where people often get it wrong is failing to establish a solid emergency fund early, leading to new debt when emergencies strike, or misprioritizing low-interest debt repayment over higher-impact financial actions like maximizing employer-matched savings.
+Understanding various fintech offerings can enhance these strategies; examining [different fintech business models](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s) can illuminate how new financial tools might aid in budgeting and tracking. However, where people often get it wrong is failing to establish a solid emergency fund early, leading to new debt when emergencies strike, or misprioritizing low-interest debt repayment over higher-impact financial actions like maximizing employer-matched savings.
 
 ## How Phased Debt Management Leads to Financial Freedom
 

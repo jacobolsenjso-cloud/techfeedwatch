@@ -83,7 +83,7 @@ The historical record shows that even nations like the US, which "outcompeted co
 
 Satoshi Nakamoto’s innovation made it possible, "for the first time in history," to have money that "cannot be monopolized, cannot be corrupted, cannot be changed... cannot be weaponized." This technological shift offers a potential pathway to bolster individual economic sovereignty by removing the ability of a central authority to manipulate the monetary system, thereby providing individuals with greater control over the value they create.
 
-Questions about authority in new territories, such as "Elon Musk and Mars" with SpaceX suggesting that "nobody on Earth has any Authority on mars," also highlight the ongoing evolution of how property and governance are defined. For further insights into the regulatory field around such innovations, consider reading [FIT21 Vote Defines US Crypto Regulator Roles](/video/us-crypto-regulation-fit21-bill-vote-implications).
+Questions about authority in new territories, such as "Elon Musk and Mars" with SpaceX suggesting that "nobody on Earth has any Authority on mars," also highlight the ongoing evolution of how property and governance are defined. For further insights into the regulatory field around such innovations, consider how the [FIT21 vote defines regulatory roles](/video/us-crypto-regulation-fit21-bill-vote-implications) in US crypto.
 
 ## What To Actually Do
 
@@ -95,7 +95,7 @@ Money is a tool, but when controlled centrally, it can become a mechanism of con
 
 Third, engage with financial systems critically. Explore decentralized alternatives that promise to return control over value to individuals, as technologies like Bitcoin aim to do.
 
-While specific investments are not advice, understanding the principles behind these technologies can empower you to make more informed decisions about where you store your value and how you interact with the economy. Learn more about investment opportunities in innovative companies like [How to Invest in SpaceX Pre IPO Private Shares](/video/spacex-pre-ipo-investment-accessing-private-equity-options) which challenge traditional notions of ownership and governance.
+While specific investments are not advice, understanding the principles behind these technologies can empower you to make more informed decisions about where you store your value and how you interact with the economy. Learn more about investment opportunities in innovative companies, including how to invest in [SpaceX pre-IPO private shares](/video/spacex-pre-ipo-investment-accessing-private-equity-options), which challenge traditional notions of ownership and governance.
 
 Finally, practice what is known as the "division of labor" in your own life, recognizing that specialization and trade enhance efficiency and create collective value. Protecting the fruits of your labor, both intellectual and material, is a direct assertion of your individual sovereignty.
 

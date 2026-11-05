@@ -57,7 +57,7 @@ This is the FIRST truly essential global crypto use case with trillions on the l
 
 The infrastructure permits AI agents to purchase access to APIs, pay for cloud computing resources, or even transact with other agents for specialized services without delay or excessive fees.
 
-For instance, an autonomous agent tasked with market research could automatically pay for data access from multiple sources, processing each payment on a blockchain as needed. For businesses considering the deployment of such systems, understanding [What Open Source AI Agents Mean for Developers](/video/open-source-ai-agents-practical-use-development) can be an important step.
+For instance, an autonomous agent tasked with market research could automatically pay for data access from multiple sources, processing each payment on a blockchain as needed. For businesses considering the deployment of such systems, understanding the impact of [open source AI agents](/video/open-source-ai-agents-practical-use-development) can be an important step.
 
 ## Centralization risks and economic shifts in AI agent payments
 
@@ -69,11 +69,11 @@ This seismic shift also brings a major warning: the future of your money could b
 
 This concentration raises concerns about market dominance, censorship resistance, and the overall resilience of the financial system. The reliance on a limited number of service providers for these critical payment rails could create choke points and systemic risks.
 
-The risk of centralized control over autonomous funds is not merely theoretical; instances like a $344M Freeze have demonstrated the potential for significant financial disruptions when funds are held or managed by centralized entities within the crypto ecosystem. Securing these autonomous systems is paramount, and further details can be found in discussions around [What AI Agent Security Means for New Threats](/video/ai-agents-the-unseen-threat-bypassing-guardrails-and-redefining).
+The risk of centralized control over autonomous funds is not merely theoretical; instances like a $344M Freeze have demonstrated the potential for significant financial disruptions when funds are held or managed by centralized entities within the crypto ecosystem. Securing these autonomous systems is paramount, especially when addressing [new AI agent security threats](/video/ai-agents-the-unseen-threat-bypassing-guardrails-and-redefining).
 
 Certain blockchain networks are particularly well-suited to benefit from this transformation. As Coin Bureau host Louis points out, networks like Solana, Base, and Tron are positioned to thrive due to their high transaction throughput, low fees, and developer-friendly environments. These characteristics are critical for handling the immense volume and speed of AI-driven micro-transactions.
 
-Conversely, less efficient or more expensive networks may struggle to compete for this machine-to-machine payment volume. The ability of AI agents to engage in recursive loops and self-improving behaviors, often requiring continuous transactions, is a key driver for this demand, a concept further explored in [How Autonomous AI Agents Work Through Recursive Loops](/video/beyond-copilots-how-ai-is-building-self-improving-companies).
+Conversely, less efficient or more expensive networks may struggle to compete for this machine-to-machine payment volume. The ability of AI agents to [work through recursive loops](/video/beyond-copilots-how-ai-is-building-self-improving-companies) and self-improving behaviors, often requiring continuous transactions, is a key driver for this demand.
 
 ## Regulatory hurdles and blockchain competition shaping AI payments
 
@@ -83,4 +83,4 @@ Regulatory bodies globally will inevitably scrutinize this nascent sector. The c
 
 The debate between centralized and decentralized control over AI agent finance will remain central. While solutions from major companies offer convenience and infrastructure, truly decentralized alternatives aim to prevent the concentration of power and enhance resilience.
 
-The development of more solid identity solutions for AI agents and audit trails for their financial activities will also be critical to ensure transparency and accountability. The broader implications for business transformation, including topics like [Future of AI Agents: Reshaping Internet and Business Models](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution), will be shaped significantly by how these payment infrastructures evolve.
+The development of more solid identity solutions for AI agents and audit trails for their financial activities will also be critical to ensure transparency and accountability. The broader implications for business transformation, including how [AI agents reshape business models](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution), will be shaped significantly by how these payment infrastructures evolve.

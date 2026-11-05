@@ -77,7 +77,7 @@ The success of brands like Crocs also offers a valuable lesson in market resilie
 
 In 2024, the company, which also includes the casual footwear brand HeyDude, sold over $4 billion of product. This resurgence was largely driven by clever marketing and brand messaging focusing on customization with its charms, Jibbitz. This example highlights the power of understanding evolving consumer desires for personalization and effective brand revitalization strategies beyond just performance.
 
-It suggests that even non-traditional footwear can thrive with the right approach to branding and consumer engagement, contrasting with Nike's struggles related to innovation. For a broader understanding of how consumer behavior impacts market dynamics, consider [Why Is the US Middle Class Shrinking From Economic Pressures?](/video/us-middle-class-decline-financial-precarity-debt-spiral).
+It suggests that even non-traditional footwear can thrive with the right approach to branding and consumer engagement, contrasting with Nike's struggles related to innovation. For a broader understanding of how consumer behavior impacts market dynamics, consider why the [US middle class is shrinking](/video/us-middle-class-decline-financial-precarity-debt-spiral) from economic pressures.
 
 ## Why lack of innovation mattered more than macro trends
 
@@ -97,7 +97,7 @@ However, as the market diversified and competitors offered compelling alternativ
 
 This is a complex challenge, as even a company like Crocs, which had a big moment in U.S. culture during the early 2000s before its growth fell flat, found success by tapping into personalization. Nike is now dealing with an excess of inventory from major sales slowdowns as consumers turn to newer styles from other brands.
 
-This highlights a critical need to not only innovate but also to understand and respond to the evolving cultural currents that dictate consumer appeal. The role of data in understanding these shifts is critical, much like the precision needed in [What the Blockchain Oracle Problem Is](/video/the-data-bridge-why-blockchain-oracles-are-essential-for-real-world) for accurate data.
+This highlights a critical need to not only innovate but also to understand and respond to the evolving cultural currents that dictate consumer appeal. The role of data in understanding these shifts is critical, much like the precision needed to address the [blockchain oracle problem](/video/the-data-bridge-why-blockchain-oracles-are-essential-for-real-world) for accurate data.
 
 Now, all eyes are on the company’s new CEO, 32-year Nike veteran Elliott Hill, to turn the sportswear giant around. His challenge is not just to fix the operational issues but to reignite the innovation engine and redefine Nike's competitive edge in a significantly altered market field.
 
@@ -113,4 +113,4 @@ Nike's reliance on past successes and a perceived slowdown in groundbreaking pro
 
 The future of sportswear will likely be characterized by continued diversification, with multiple strong brands catering to a broader spectrum of consumer preferences. For Nike, a successful turnaround will require more than just operational adjustments; it demands a renewed commitment to innovation, a more nuanced understanding of emerging trends, and potentially a recalibration of its direct-to-consumer strategy to ensure it complements rather than hinders creativity.
 
-The challenge for CEO Elliott Hill is substantial, but the opportunity to redefine market leadership in a dynamic industry remains. For businesses facing similar strategic challenges, understanding risk management, as discussed in [What Is a Proactive Approach in Cyber Security for Business?](/video/cybersecurity-risk-management-essential-enterprise-strategies), can be highly relevant.
+The challenge for CEO Elliott Hill is substantial, but the opportunity to redefine market leadership in a dynamic industry remains. For businesses facing similar strategic challenges, understanding risk management through a [proactive approach to cyber security](/video/cybersecurity-risk-management-essential-enterprise-strategies) can be highly relevant.

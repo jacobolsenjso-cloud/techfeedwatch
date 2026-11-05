@@ -64,7 +64,7 @@ To illustrate, consider an individual who invests $200 a month at an average ret
 
 That extra $12,000 is not earned through harder work but from allowing time and compounding to perform the heavy lifting. Extending this commitment to 20 years yields an even more dramatic result, with the accumulated sum exceeding $100,000 from the same consistent monthly effort.
 
-This highlights how small, consistent actions, when sustained over time, lead to disproportionately large outcomes in wealth accumulation. Such long-term growth is a key component of [What Is Long Term Wealth Creation Through Volatility](/video/investing-in-volatile-markets-smart-personal-finance-strategies).
+This highlights how small, consistent actions, when sustained over time, lead to disproportionately large outcomes in wealth accumulation. Such long-term growth is a key component of [building wealth through volatility](/video/investing-in-volatile-markets-smart-personal-finance-strategies).
 
 ## How wealth accumulation drives financial security and social mobility
 
@@ -72,7 +72,7 @@ The ability to accumulate wealth has profound real-world implications, not just 
 
 It empowers individuals to fund retirement, education, or significant life events without relying solely on future earnings, which are susceptible to economic fluctuations.
 
-For businesses, understanding wealth accumulation principles can inform corporate investment strategies, ensuring capital is deployed in growth-oriented assets that enhance shareholder value and long-term viability. For instance, the strategic development of direct software products, as discussed in [How Do Solo Developers Build Wealth Selling Software?](/video/beyond-the-paycheck-how-solo-developers-forge-independent-wealth), leverages consistent effort and compounding returns in a different asset class.
+For businesses, understanding wealth accumulation principles can inform corporate investment strategies, ensuring capital is deployed in growth-oriented assets that enhance shareholder value and long-term viability. For instance, the strategic development of direct software products, as seen in how [solo developers build wealth](/video/beyond-the-paycheck-how-solo-developers-forge-independent-wealth) selling software, leverages consistent effort and compounding returns in a different asset class.
 
 Wealth accumulation impacts social mobility. By providing a pathway to financial independence, it can reduce reliance on social safety nets and foster economic resilience across communities. The quiet multiplication of wealth, free from the volatility of "viral crypto bets" or "lottery wins," creates a stable foundation for future generations.
 
@@ -90,7 +90,7 @@ Another subtle but critical factor is access to opportunities and scale. Wealthi
 
 For example, a 10% return on $1,000 feels negligible, but a 10% return on $1 million is genuinely life-changing. This creates a powerful "wealth feedback loop": more money leads to better opportunities, which leads to faster growth, ultimately leading to even more money.
 
-This cycle can perpetuate and exacerbate wealth disparities if broader access to growth-oriented investments remains limited, a concern also raised in discussions about [How Can AI Increase Wealth Inequality? Why Billionaires Worry](/video/ai-billionaires-conscience-awakens-the-real-reason-behind-their). The game, therefore, is not solely about individual discipline but also about strategic positioning—where money sits, its exposure, its duration, and the investor's ability to resist constant interference.
+This cycle can perpetuate and exacerbate wealth disparities if broader access to growth-oriented investments remains limited, echoing concerns about how [AI can increase wealth inequality](/video/ai-billionaires-conscience-awakens-the-real-reason-behind-their). The game, therefore, is not solely about individual discipline but also about strategic positioning—where money sits, its exposure, its duration, and the investor's ability to resist constant interference.
 
 ## Choosing true growth assets over the illusion of safety
 

@@ -41,7 +41,7 @@ Method 1 involves phishing, where an attacker sends a deceptive email containing
 
 Method 3 relies on malicious attachments disguised as an routine invoice; opening the document installs stealth malware that quietly captures records from infected workstations. In more aggressive scenarios, ransomware encrypts the entire database and forces victims to pay hefty ransoms in [Bitcoin](https://bitcoin.org/en/) for decryption keys.
 
-System architecture mistakes and human disloyalty create equally devastating entry points. Organizations adopting modern infrastructure frequently suffer exposure when engineering teams configure cloud storage buckets as public, instantly leaking confidential assets to the open internet. Teams managing these architectures often reference [Cloud Security 2024: Shared Responsibility for Data Protection](/video/cloud-security-essential-strategies-for-data-protection-in-2024) to clarify where vendor safeguards end and internal responsibilities begin.
+System architecture mistakes and human disloyalty create equally devastating entry points. Organizations adopting modern infrastructure frequently suffer exposure when engineering teams configure cloud storage buckets as public, instantly leaking confidential assets to the open internet. Teams managing these architectures often reference [shared responsibility for data protection](/video/cloud-security-essential-strategies-for-data-protection-in-2024) to clarify where vendor safeguards end and internal responsibilities begin.
 
 Internal operators also cause direct harm; a disgruntled employee can bypass firewalls entirely by copying restricted trade files directly onto a USB drive. Attackers also scan public networks for unpatched software, targeting known vulnerabilities left unaddressed by negligent IT maintenance. Historical incidents at [Yahoo](https://www.yahoo.com/), Equifax, and Facebook prove that scale offers zero defense against these vectors; no organization is immune.
 
@@ -51,11 +51,11 @@ Once attackers siphon corporate records, they liquidate the inventory on illicit
 
 The investigative timeline magnifies these damages: companies require an average of 287 days to detect and contain a breach. This long latency leaves customers vulnerable to identity theft, ruins commercial reputation, and triggers regulatory penalties that can reach up to 4% of revenue.
 
-For smaller enterprises, the damage is frequently terminal: 60% of small businesses close within 6 months of a major cyber attack. The ongoing threat environment documented in [Data Breaches June 2026 Show Evolving Cyber Threats](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for) shows that attackers continue to refine automated exfiltration tooling.
+For smaller enterprises, the damage is frequently terminal: 60% of small businesses close within 6 months of a major cyber attack. The ongoing threat environment documented in [June 2026 data breaches](/video/the-unyielding-cyber-onslaught-why-june-2026-was-a-wake-up-call-for) shows that attackers continue to refine automated exfiltration tooling.
 
 Preventing unauthorized exposure demands active friction at every network tier. Enforcing multi-factor authentication ensures that stolen passwords remain useless without physical device verification codes. Comprehensive data encryption transforms stored and moving plain text into unreadable ciphertext, nullifying the value of captured databases lacking explicit decryption keys.
 
-Organizations operating across integrated financial networks, such as those governed by [Open Banking: Data and Trust Drive Personalized Finance](/video/open-banking-data-and-trust-redefine-finance), rely heavily on programmatic verification routines. Continuous software patching eliminates exploitable system flaws before attackers discover them, while real-time security log monitoring flags anomalous traffic patterns, halts brute-force attempts mid-execution, and alerts defense squads before exfiltration begins.
+Organizations operating across integrated financial networks, such as those governed by [open banking frameworks](/video/open-banking-data-and-trust-redefine-finance), rely heavily on programmatic verification routines. Continuous software patching eliminates exploitable system flaws before attackers discover them, while real-time security log monitoring flags anomalous traffic patterns, halts brute-force attempts mid-execution, and alerts defense squads before exfiltration begins.
 
 ## Why Security Discipline Must Be an Operational Imperative
 

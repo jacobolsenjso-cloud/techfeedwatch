@@ -41,7 +41,7 @@ What employers truly seek are demonstrable skills, not just a lengthy employment
 
 Interestingly, many people begin building foundational cybersecurity skills without realizing it. Tasks encountered in entry-level IT careers, such as addressing phishing issues, managing multi-factor authentication (MFA) problems, or resolving account lockouts, are inherently cybersecurity-related.
 
-These experiences, even in a tier one help desk role, lay a practical groundwork for understanding digital threats and protective measures. Understanding the [Why Cybersecurity Matters for AI Agents](/video/protection-imperative-why-cybersecurity-matters-to-you) can highlight the relevance of these early experiences.
+These experiences, even in a tier one help desk role, lay a practical groundwork for understanding digital threats and protective measures. Understanding [why cybersecurity matters for AI agents](/video/protection-imperative-why-cybersecurity-matters-to-you) can highlight the relevance of these early experiences.
 
 ## Certifications and networking fundamentals you need
 
@@ -65,7 +65,7 @@ The path to securing an entry-level cybersecurity job typically presents two pri
 
 Spending "3 to 6 months at this job" provides invaluable real-world experience with technology infrastructure. This generalist IT experience helps solidify an understanding of systems before specializing in their security.
 
-After this initial IT phase, candidates can then target entry-level cybersecurity roles such as SOC (Security Operations Center) analyst, security analyst, or even network security administrator. For those interested in the day-to-day work, exploring what an [Cybersecurity Analyst: What the Role Really Entails](/video/analyst-what-a-cybersecurity-professional-actually-does) can offer deeper insights.
+After this initial IT phase, candidates can then target entry-level cybersecurity roles such as SOC (Security Operations Center) analyst, security analyst, or even network security administrator. For those interested in the day-to-day work, exploring [what a cybersecurity analyst does](/video/analyst-what-a-cybersecurity-professional-actually-does) can offer deeper insights.
 
 The second option, skipping the help desk entirely and moving directly into a SOC analyst role, is possible but generally less optimal. Lacking that basic tier one experience can make securing systems more challenging, as it's difficult to protect what one doesn't deeply comprehend from an operational standpoint.
 
@@ -83,7 +83,7 @@ For those diligently pursuing a cybersecurity career, a realistic timeline sugge
 
 The reality is that someone with fewer technical skills but a superior application strategy and presentation can often secure a position over a more technically proficient but less strategic candidate. It is about "playing the game right."
 
-As professionals advance, opportunities for further specialization and higher-level certifications emerge, including CySA+, CASP, OSCP, PenTest, and Linux+. The field demands continuous learning to stay ahead of evolving threats and technologies. Understanding [How Much Does Cybersecurity Pay and Career Outlook](/video/how-much-does-cybersecurity-pay-and-career-outlook) can provide context for future career planning.
+As professionals advance, opportunities for further specialization and higher-level certifications emerge, including CySA+, CASP, OSCP, PenTest, and Linux+. The field demands continuous learning to stay ahead of evolving threats and technologies. Understanding [cybersecurity pay and career outlook](/video/how-much-does-cybersecurity-pay-and-career-outlook) can provide context for future career planning.
 
 Ultimately, while the path to a cybersecurity job is not without its challenges, it is fundamentally "simple" in its requirements:
 

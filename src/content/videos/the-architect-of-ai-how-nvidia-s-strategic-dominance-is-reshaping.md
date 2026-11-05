@@ -45,7 +45,7 @@ This structural shift fundamentally redefines data center architecture:
 
 Where traditional facilities measure uptime and server virtualization ratios, AI factories prioritize token generation throughput per unit of energy.
 
-Building these modern processing plants requires specialized physical infrastructure to support continuous compute loads, as discussed in [Physical AI Infrastructure Powers Global AI Services](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction). Without synchronized hardware and low-latency networking fabrics, standard data center nodes experience communication stalls that leave processors idle.
+Building these modern processing plants requires [specialized physical infrastructure](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction) to support continuous compute loads. Without synchronized hardware and low-latency networking fabrics, standard data center nodes experience communication stalls that leave processors idle.
 
 ## Silicon, Interconnects, and Networking Powering the Hardware Architecture
 
@@ -55,7 +55,7 @@ According to NVIDIA's Enterprise AI Factory Validated Design specification, a fu
 
 According to NVIDIA's Blackwell architecture technical brief, Blackwell GPUs feature 208 billion transistors on TSMC's 4NP process, a 10 terabytes per second (TB/s) die interconnect, and a second-generation Transformer Engine that supports 4-bit floating point (FP4) precision to double model capacity per unit of memory.
 
-This hardware density allows clusters to retain massive neural networks directly within fast memory domains. Understanding [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) reveals how proprietary silicon interlinks keep processors fed with active calculations.
+This hardware density allows clusters to retain massive neural networks directly within fast memory domains. Understanding [Nvidia's GPU dominance in AI acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) reveals how proprietary silicon interlinks keep processors fed with active calculations.
 
 Networking fabrics inside the factory operate under strict scale-up and scale-out configurations:
 - Compute trays unify GPUs into single coherent processing engines using custom high-speed backplanes.
@@ -80,7 +80,7 @@ As artificial intelligence models grow, physical data center facilities face sev
 
 According to an official announcement from NVIDIA in October 2026, NVIDIA contributed Vera Rubin compute tray designs to the [Open Compute Project](https://www.opencompute.org/) via the MGX architecture and collaborated with partners to deploy an 800-volt direct current (DC) power standard for high-density AI infrastructure.
 
-Shifting to high-voltage direct current reduces power conversion losses while supporting multi-kilowatt rack densities. Analyzing [What NVIDIA Rubin Platform Means for Next Generation AI](/video/nvidia-rubin-the-ai-factory-reshaping-ai-hardware-future) highlights how standardized modular rack trays help facilities manage these thermal realities.
+Shifting to high-voltage direct current reduces power conversion losses while supporting multi-kilowatt rack densities. Analyzing the [NVIDIA Rubin platform](/video/nvidia-rubin-the-ai-factory-reshaping-ai-hardware-future) highlights how standardized modular rack trays help facilities manage these thermal realities.
 
 Financing these physical facilities introduces unprecedented economic capital requirements. According to an NVIDIA executive statement by Jensen Huang in August 2026, NVIDIA formed capital partnerships with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs, and KKR targeting over $500 billion in private financing to fund multi-gigawatt AI factory buildouts.
 

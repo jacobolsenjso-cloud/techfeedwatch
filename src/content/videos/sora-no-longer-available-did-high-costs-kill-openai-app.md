@@ -33,7 +33,7 @@ OpenAI retired Sora because the platform consumed massive computing power while 
 
 As a result, the standalone video generation tool and its associated creative interfaces are no longer accessible to the public.
 
-Earlier, [What Is Sora AI and How Does the Video Generator Work](/video/sora-ai-defined-generative-video-before-its-sudden-collapse) by producing fluid, high-resolution clips from simple prompts. Yet technical novelty alone could not sustain an expensive consumer platform that struggled to retain daily users.
+Earlier, [the Sora AI video generator](/video/sora-ai-defined-generative-video-before-its-sudden-collapse) worked by producing fluid, high-resolution clips from simple prompts. Yet technical novelty alone could not sustain an expensive consumer platform that struggled to retain daily users.
 
 ## OpenAI's Official Reasons and Timeline for Sunsetting Sora
 
@@ -58,9 +58,9 @@ While the software enjoyed a viral debut, consumer interest evaporated swiftly. 
 The tool faced severe structural hurdles compared to alternative developer ecosystems:
 
 - High operational overhead made free tiers and low-cost subscriptions economically impractical.
-- Platforms like [Google AI Tools Available with Free Access and Tiers](/video/free-google-ai-tools-reshape-productivity-and-market-dynamics) maintained diverse product ecosystems that easily subsidized operational compute.
+- Platforms like Google, which offer [free AI tools and tiers](/video/free-google-ai-tools-reshape-productivity-and-market-dynamics), maintained diverse product ecosystems that easily subsidized operational compute.
 - Standalone video feeds lacked social connections, giving users little incentive to return daily after trying the generator once.
-- Specialized developer pipelines, such as [What Happens When You Deploy a No-Code AI Agent?](/video/code-without-coding-claude-code-unleashed-build-anything-deploy), proved far more profitable for business workflows.
+- Specialized developer pipelines, such as [deploying no-code AI agents](/video/code-without-coding-claude-code-unleashed-build-anything-deploy), proved far more profitable for business workflows.
 
 Every server cluster dedicated to rendering short social media clips represented hardware unavailable for lucrative commercial products. Leadership chose to prioritize sustainable commercial software over an unprofitable creative novelty.
 

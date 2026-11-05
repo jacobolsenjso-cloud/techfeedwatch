@@ -69,7 +69,7 @@ Individuals or small teams interested in experimenting with these advanced capab
 
 The broader ecosystem includes various agentic nodes that can be plugged into workflows. The Node Code Website offers tools like an Inbox-to-Action Extractor and a Meeting Notes SOP Generator, hinting at a future where AI automates more administrative and preparatory tasks around the core design process.
 
-These tools, sometimes available on platforms like Gumroad, suggest a growing array of personalized AI productivity tools that support creative professionals in different ways. For a deeper look into such tools, refer to [What Are Personalized AI Productivity Tools Today?](/video/building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital).
+These tools, sometimes available on platforms like Gumroad, suggest a growing array of personalized AI productivity tools that support creative professionals in different ways. For a deeper look into such options, learn more about [personalized AI productivity tools](/video/building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital) today.
 
 However, it is not for those who prefer an entirely manual, intuition-driven approach without digital augmentation, or for projects where the design scope is extremely narrow and repetitive, not warranting the setup and learning curve of AI tools.
 

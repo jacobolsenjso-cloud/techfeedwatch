@@ -46,7 +46,7 @@ This structural skew has decoupled index gains from the remaining companies in t
 
 When market performance relies entirely on narrow tech leadership, any slowdown in infrastructure spending triggers outsized index declines.
 
-Investors often use algorithmic screening to manage these factor tilts. Understanding [What Is Python Used for in Finance, Trading, Risk?](/video/how-python-powers-wall-street-beyond-basic-financial-data-analysis) clarifies how institutional desks monitor these index anomalies. When balance sheets overextend, concentrated equity indices pass that exposure straight to retail portfolios.
+Investors often use algorithmic screening to manage these factor tilts. Understanding [Python's role in financial trading](/video/how-python-powers-wall-street-beyond-basic-financial-data-analysis) clarifies how institutional desks monitor these index anomalies. When balance sheets overextend, concentrated equity indices pass that exposure straight to retail portfolios.
 
 ## Historical Precedents for Extreme U.S. Equity Market Concentration
 
@@ -71,7 +71,7 @@ Holding the market-cap-weighted index presents three distinct structural trade-o
 - Asymmetrical downside risk, where poor earnings from two mega-caps can erase positive gains across smaller index constituents.
 - Muted exposure to mid-cap outperformance and traditional value sectors during cyclical economic rebounds.
 
-For instance, [AI Token Consumption Overstates Demand, Inflating Valuations](/video/ai-demand-are-token-consumption-metrics-inflating-valuations) details how speculative usage metrics can distort corporate fundamentals. If cloud revenues contract, market-cap-weighted funds experience the full force of that correction.
+For instance, [AI token consumption overstating demand](/video/ai-demand-are-token-consumption-metrics-inflating-valuations) highlights how speculative usage metrics can distort corporate fundamentals. If cloud revenues contract, market-cap-weighted funds experience the full force of that correction.
 
 ## Using Equal-Weight Funds and International Stocks to Spread Risk
 

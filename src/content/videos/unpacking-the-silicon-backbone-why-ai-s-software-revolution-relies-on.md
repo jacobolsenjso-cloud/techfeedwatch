@@ -85,7 +85,7 @@ The drive for parallel processing, while enabling unprecedented computational po
 
 Data centers housing these accelerators are increasingly experimenting with and deploying novel cooling solutions, including liquid cooling, to manage the extreme energy densities. This highlights a shift where advancements are not solely about shrinking transistors but also about efficient power delivery and thermal management.
 
-The industry is effectively adapting to a new era where raw computational capability must be balanced with practical operational concerns. Discover more about the challenges of AI chip supply in [AI Chips Supply Chain: Hidden Circuit Board Risks](/video/ai-chip-supply-chain-security-us-confronts-pcb-risks).
+The industry is effectively adapting to a new era where raw computational capability must be balanced with practical operational concerns. Discover more about [hidden circuit board risks](/video/ai-chip-supply-chain-security-us-confronts-pcb-risks) in the AI chip supply chain.
 
 ## Growing competition to rival Nvidia and expand chip supply
 
@@ -93,7 +93,7 @@ Looking ahead, the evolution of AI chips will continue along several key traject
 
 The competitive field among chip manufacturers is set to intensify. While Nvidia currently enjoys a strong position due to its mature CUDA software ecosystem, competitors like Intel, AMD, and major cloud providers (Google, Amazon) are investing heavily in their own hardware and software solutions.
 
-The success of these alternative platforms will hinge on their ability to build solid, developer-friendly ecosystems that can rival Nvidia's established advantage. Questions around which chips are best suited for particular tasks, such as training versus inference, will also become more pronounced. For more on this, see [How Are AI Chips Different From Just GPUs?](/video/modern-ai-chips-differ-from-gpus-for-specific-tasks).
+The success of these alternative platforms will hinge on their ability to build solid, developer-friendly ecosystems that can rival Nvidia's established advantage. Questions around which chips are best suited for particular tasks, such as training versus inference, will also become more pronounced. For more on this, see [how AI chips differ from GPUs](/video/modern-ai-chips-differ-from-gpus-for-specific-tasks).
 
 The ongoing challenge of meeting the overwhelming demand for AI hardware will necessitate creative solutions, from optimizing existing inventories to exploring new manufacturing capacities.
 

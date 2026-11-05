@@ -28,7 +28,7 @@ A cybersecurity engineer designs, implements, and maintains the technical contro
 
 ## Daily responsibilities from access control to incident response
 
-Understanding the day-to-day reality of this profession requires moving past abstract concepts of digital safety. At a mechanical level, [what a cybersecurity job is and how to get one](/video/a-cybersecurity-job-explained-roles-skills-pathways) centers on operational defense.
+Understanding the day-to-day reality of this profession requires moving past abstract concepts of digital safety. At a mechanical level, [working in cybersecurity](/video/a-cybersecurity-job-explained-roles-skills-pathways) centers on operational defense.
 
 Cybersecurity engineering is primarily a protection role. Systems builders construct applications, but security engineers continuously test whether those applications withstand malicious input, unauthorized privilege escalation, and lateral movement.
 
@@ -48,7 +48,7 @@ They enforce compliance architectures mapped directly against established standa
 - SOC 2
 - CIS Benchmarks
 
-Because organizations operate under strict compliance mandates, [NIST CSF: How to Apply the Cybersecurity Framework](/video/nist-csf-2-0-explained-for-small-businesses) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
+Because organizations operate under strict compliance mandates, the [NIST Cybersecurity Framework](/video/nist-csf-2-0-explained-for-small-businesses) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
 
 ## How cloud migration transformed modern security engineering
 

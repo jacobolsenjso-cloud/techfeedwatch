@@ -45,7 +45,7 @@ Beyond individual accelerators, AMD’s strategy recognizes that a single chip, 
 
 The company is presenting an integrated solution called the Helios rack-scale AI platform. This platform is a formidable ecosystem, combining 72 MI455X GPUs with next-generation AMD EPYC “Venice” CPUs.
 
-The integration of high-performance CPUs and GPUs on a single platform, complemented by massive HBM4 capacity, high-speed networking, and open technologies like UALink, directly challenges NVIDIA’s tightly integrated AI infrastructure. This holistic approach aims to provide a complete, scalable solution for data centers and cloud providers, mirroring NVIDIA's own full-stack strategy as seen in platforms like [How Nvidia Vera Rubin Boosts AI Performance 10x](/video/nvidia-s-vera-rubin-redefining-ai-infrastructure-and-the-looming).
+The integration of high-performance CPUs and GPUs on a single platform, complemented by massive HBM4 capacity, high-speed networking, and open technologies like UALink, directly challenges NVIDIA’s tightly integrated AI infrastructure. This holistic approach aims to provide a complete, scalable solution for data centers and cloud providers, mirroring NVIDIA's own full-stack strategy as seen in platforms like [NVIDIA Vera Rubin](/video/nvidia-s-vera-rubin-redefining-ai-infrastructure-and-the-looming).
 
 The introduction of the AMD Instinct MI400 series and the MI455X specifically targets NVIDIA Vera Rubin, a key component of NVIDIA's future AI infrastructure.
 
@@ -61,7 +61,7 @@ CUDA has become the de facto standard for AI development, with:
 - Extensive libraries
 - Widespread developer support
 
-This deep integration is a major reason for [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) in the AI sector.
+This deep integration is a major reason for [Nvidia's GPU dominance](/video/ai-acceleration-nvidia-s-role-in-tech-transformation) in the AI sector.
 
 AMD’s counter to CUDA is ROCm software. ROCm is an open-source platform designed to enable high-performance computing and GPU-accelerated applications across various AMD hardware. Unlike CUDA, ROCm embraces open standards and aims to provide greater flexibility and transparency for developers.
 
@@ -77,7 +77,7 @@ This search for diversity in their supply chains and a desire to avoid vendor lo
 
 For organizations considering AI infrastructure, the comparison between AMD and NVIDIA is no longer a clear-cut choice favoring a single vendor. Both companies offer compelling technologies, each with distinct advantages.
 
-If your organization has an established investment in NVIDIA’s ecosystem, including existing CUDA-based software, developer expertise, and a reliance on specific NVIDIA tools and libraries, transitioning to AMD may involve a learning curve and potential migration costs. NVIDIA continues to innovate, with offerings like [NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon) pushing performance boundaries.
+If your organization has an established investment in NVIDIA’s ecosystem, including existing CUDA-based software, developer expertise, and a reliance on specific NVIDIA tools and libraries, transitioning to AMD may involve a learning curve and potential migration costs. NVIDIA continues to innovate, with advances in [AI chips and memory technology](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon) pushing performance boundaries.
 
 However, if you are building new AI infrastructure from the ground up, or if your projects are less dependent on proprietary CUDA features, AMD's Instinct MI400 series and Helios platform present a viable and powerful alternative. The open-source nature of ROCm could appeal to companies prioritizing flexibility, cost-effectiveness, and the ability to customize their software stack.
 

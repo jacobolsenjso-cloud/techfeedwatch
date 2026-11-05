@@ -41,7 +41,7 @@ Incorporating a machine learning model or an LLM call inside a rigid step does n
 
 An AI agent, by contrast, decouples the objective from the execution path. According to Anthropic's engineering guide "Building Effective Agents" (December 2024), workflows orchestrate large language models and tools through predefined code paths, whereas AI agents dynamically direct their own processes and tool usage to accomplish tasks.
 
-The model acts as a reasoning engine, assessing input, reading context, and iteratively selecting tools from an exposed library. Teams exploring [What Is an AI Agent Loop in Business Automation](/video/loop-engineering-how-ai-agents-are-reshaping-business-automation-with) recognize that an agent continuously cycles through thought, action, and observation states until it completes the assigned goal.
+The model acts as a reasoning engine, assessing input, reading context, and iteratively selecting tools from an exposed library. Teams exploring [AI agent loops in business automation](/video/loop-engineering-how-ai-agents-are-reshaping-business-automation-with) recognize that an agent continuously cycles through thought, action, and observation states until it completes the assigned goal.
 
 Core differences between these mechanical approaches center on:
 
@@ -58,7 +58,7 @@ Financial transactions, data migration, and compliance audits rarely tolerate pr
 
 Traditional automation delivers zero-temperature certainty through verified algorithms. Deploying an autonomous system to evaluate a simple, predictable data mapping introduces unnecessary risks of hallucination, token exhaustion, and non-deterministic logic shifts.
 
-Organizations adopting [How AI Automates Routine Tasks in Modern Workflows](/video/beyond-buzzwords-how-ai-productivity-tools-reshape-real-world) recognize that rigid automation excels across several enterprise operational categories:
+Organizations using [AI to automate routine tasks](/video/beyond-buzzwords-how-ai-productivity-tools-reshape-real-world) recognize that rigid automation excels across several enterprise operational categories:
 
 1. High-frequency database extraction, transformation, and loading (ETL) pipelines requiring sub-second response times.
 2. Regulatory compliance reporting where every programmatic check must remain fully auditable and statically reproducible.
@@ -71,7 +71,7 @@ Operating autonomous systems alters resource consumption and risk profiles. Fixe
 
 According to Gartner analyst Erick Brethenoux in an October 2026 report, 40% of agentic AI projects will be canceled by the end of 2027 due to escalating costs, unclear business value, or inadequate risk controls. A single autonomous task can call an LLM half a dozen times to resolve tool choices, bloating operational expenses while human users wait seconds or minutes for responses.
 
-Deterministic pipelines follow static privilege boundaries. Agents require broad runtime tool permissions, exposing attack surfaces to prompt injection and malicious inputs. Engineering teams implementing [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems) must establish strict containment mechanisms to prevent agents from executing unauthorized actions or draining system resources.
+Deterministic pipelines follow static privilege boundaries. Agents require broad runtime tool permissions, exposing attack surfaces to prompt injection and malicious inputs. Engineering teams implementing [zero trust for AI agents](/video/zero-trust-for-ai-agents-securing-autonomous-systems) must establish strict containment mechanisms to prevent agents from executing unauthorized actions or draining system resources.
 
 | Operational Factor | Traditional Deterministic Automation | Autonomous AI Agent Systems |
 | :--- | :--- | :--- |

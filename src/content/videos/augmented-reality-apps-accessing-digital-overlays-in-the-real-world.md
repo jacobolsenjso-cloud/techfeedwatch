@@ -57,7 +57,7 @@ The operational mechanism of AR apps, whether native or web-based, hinges on a s
 
 This foundational layer allows digital content to be precisely anchored and oriented within the physical space. Modern AR capabilities also incorporate environmental understanding, estimating lighting conditions to ensure virtual objects appear naturally integrated.
 
-As AI models become more sophisticated, they can even interpret complex scenes, allowing for more context-aware AR overlays. This deep reliance on advanced processing highlights why tools for managing digital assets, like [How Gemini AI Tools Enhance Google Drive Search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), are increasingly relevant for developers handling the vast datasets AR applications generate.
+As AI models become more sophisticated, they can even interpret complex scenes, allowing for more context-aware AR overlays. This deep reliance on advanced processing highlights why tools for managing digital assets, like [Gemini AI in Google Drive](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for), are increasingly relevant for developers handling the vast datasets AR applications generate.
 
 The "why it works that way" for AR is a blend of optical tracking, inertial measurement units (IMUs), and often AI-powered recognition. The device constantly localizes itself in space, creating a virtual map of its surroundings.
 
@@ -69,7 +69,7 @@ For users, native apps might be free but often include in-app purchases or subsc
 
 Performance limitations on the web, such as constraints on model complexity and frame rates, mean developers must often optimize content more aggressively. For businesses, the "cost" of user friction – or rather, the benefit of frictionless access – is a major factor driving WebAR adoption, especially in marketing where instant engagement is paramount.
 
-Understanding these tradeoffs is vital for any enterprise considering AR implementation. For creators, mastering tools to build and refine these experiences, potentially through efficient content generation, mirrors the broader demand for skills like [Master Prompt Engineering in 29 Min for 2025 AI Productivity](/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025).
+Understanding these tradeoffs is vital for any enterprise considering AR implementation. For creators, mastering tools to build and refine these experiences, potentially through efficient content generation, mirrors the broader demand for skills like [prompt engineering for AI productivity](/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025).
 
 ## Common Misconceptions and Where Users Go Wrong
 
@@ -89,7 +89,7 @@ Finally, a common oversight is limiting AR's potential solely to gaming or novel
 
 From visualizing complex architectural designs on-site to overlaying instructional guides for field technicians, or even transforming how retail and finance operate with interactive product displays or data visualizations, AR offers profound practical benefits.
 
-The integration of AR into sectors like retail and finance parallels the broader impact of advanced technologies on established industries, akin to how [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). Understanding AR's diverse applications is essential to appreciating its long-term societal and economic impact.
+The integration of AR into sectors like retail and finance parallels the broader impact of advanced technologies on established industries, akin to how [AI is used in modern banks](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). Understanding AR's diverse applications is essential to appreciating its long-term societal and economic impact.
 
 ## The future balance between WebAR and native apps
 

@@ -80,7 +80,7 @@ The integration of GPUs and NPUs into consumer-grade hardware also enables a shi
 
 This approach enhances privacy, reduces latency, and allows for AI applications in environments with limited internet connectivity. For students focusing on "on-device AI, natural language processing, prompt engineering and hybrid cloud execution," devices like the Asus Vivobook 14 AI with its 50 tops NPU become indispensable tools.
 
-Such systems can efficiently run smaller, optimized models, making AI more ubiquitous and responsive. Understanding the full scope of this physical infrastructure is vital, as explored in [Physical AI Infrastructure Powers Global AI Services](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction).
+Such systems can efficiently run smaller, optimized models, making AI more ubiquitous and responsive. Understanding the full scope of how physical infrastructure [powers global AI services](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction) is vital.
 
 ## Budget hurdles and VRAM bottlenecks in local AI development
 

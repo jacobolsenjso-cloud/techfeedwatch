@@ -69,7 +69,7 @@ In engineering classrooms, tolerance rates vary. According to a study published 
 
 Hardware selection mitigates some of this physical strain. According to a study published in Simulation in Healthcare in July 2024 evaluating 34 participants using Meta Quest 2 and Meta Quest Pro headsets, cybersickness scores decreased on the Pro hardware due to improved display optics and precise interpupillary distance (IPD) adjustment mechanisms.
 
-Assessing the [best virtual reality goggles and why weight matters most](/video/best-virtual-reality-goggles-and-why-weight-matters-most) is critical when buying sets for young learners.
+Assessing the [best virtual reality goggles](/video/best-virtual-reality-goggles-and-why-weight-matters-most) and why weight matters is critical when buying sets for young learners.
 
 Financial viability depends entirely on scale. The Heliyon September 2025 review confirmed that high hardware procurement costs and lack of teacher training remain the primary barriers to adoption.
 
@@ -92,7 +92,7 @@ BioTech Whisperer points out that remote platforms allow students in rural commu
 
 ## Practical Guidelines for Launching a School VR Pilot
 
-School administrators should avoid purchasing headsets in bulk without initial testing. A successful pilot begins with a single academic department, such as biology or mechanical engineering, where spatial 3D visualization solves an existing curricular challenge. Understanding the [VR headsets difference between virtual reality and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) ensures schools invest in hardware matching their specific interactive goals.
+School administrators should avoid purchasing headsets in bulk without initial testing. A successful pilot begins with a single academic department, such as biology or mechanical engineering, where spatial 3D visualization solves an existing curricular challenge. Understanding the difference between [VR headsets and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) ensures schools invest in hardware matching their specific interactive goals.
 
 Institutions should establish short immersion sessions, limiting student headset exposure to 15-minute intervals to prevent visual fatigue and disorientation. Teachers need dedicated professional development sessions to master software controls before guiding students. By treating virtual reality as a targeted pedagogical supplement rather than a complete replacement for human instruction, schools maximize academic engagement while minimizing technical disruptions.
 

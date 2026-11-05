@@ -63,7 +63,7 @@ Small and medium-sized businesses, which often lack the extensive cybersecurity 
 
 The trajectory of AI-powered cyberattacks suggests several critical areas for future observation. The continuous development of frontier AI models, leveraging advancements in hardware like What are NVIDIA AI Chips and Their Role in AI?, will likely lead to even greater autonomy and capability.
 
-We can anticipate AI systems moving beyond executing pre-defined steps to dynamically adapting to defensive measures, learning from failed attempts, and discovering novel vulnerabilities. This will push the frontier of what autonomous AI agents can achieve, mirroring trends seen in other sectors like [AI Trading Agents Power Autonomous Retail Finance Trading](/video/ai-trading-agents-how-agentic-ai-changes-retail-investing-finance).
+We can anticipate AI systems moving beyond executing pre-defined steps to dynamically adapting to defensive measures, learning from failed attempts, and discovering novel vulnerabilities. This will push the frontier of what autonomous AI agents can achieve, mirroring trends seen in other sectors like [autonomous retail finance trading](/video/ai-trading-agents-how-agentic-ai-changes-retail-investing-finance).
 
 The cybersecurity industry will need to focus on developing equally advanced defensive AI. This includes:
 

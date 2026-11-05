@@ -72,7 +72,7 @@ Prompt engineering is expanding beyond simple text inputs. Modern generative AI 
 
 This can involve inputting "brand colors," personal selfies for style transfer (seen in the popularity of tools like profilepicture.ai), or a set of core images to generate infinite variations. This shift allows for a "baseline" or "visual base" from which to generate content, moving beyond starting every creation from scratch.
 
-These advancements mean that prompt engineers must understand not just textual nuances but also how visual inputs combine with verbal cues to influence AI outputs, opening up entirely new creative possibilities. To explore how AI can assist in content creation, see [What Is an AI-Powered Content Engine](/video/ai-content-optimization-how-ai-transforms-creator-workflows).
+These advancements mean that prompt engineers must understand not just textual nuances but also how visual inputs combine with verbal cues to influence AI outputs, opening up entirely new creative possibilities. To explore how AI can assist in content creation, learn how to build an [AI-powered content engine](/video/ai-content-optimization-how-ai-transforms-creator-workflows).
 
 ## Dealing with black box unpredictability and generative model glitches
 
@@ -90,7 +90,7 @@ In contrast, newer models like **Midjourney** have become "clever enough to know
 
 An important tool for mitigating unwanted outputs is the use of "negative queries" or "negative prompts." These instructions tell the AI what *not* to generate (e.g., "no distortions," "no blurred background").
 
-While not always perfectly effective, negative prompts provide another layer of control, helping to refine results by ruling out undesirable elements that might otherwise appear due to the AI's inherent randomness or learned biases. Understanding these nuances is key for anyone looking to master [AI Video Generator Usage: Mastering Free Text-to-Video Tools](/video/ai-video-generator-how-to-create-dynamic-visual-content).
+While not always perfectly effective, negative prompts provide another layer of control, helping to refine results by ruling out undesirable elements that might otherwise appear due to the AI's inherent randomness or learned biases. Understanding these nuances is key for anyone looking to [master free text-to-video tools](/video/ai-video-generator-how-to-create-dynamic-visual-content).
 
 ## Why prompt engineering will remain an essential human skill
 
@@ -102,4 +102,4 @@ The development of "prompt books," prompt libraries, and communities where users
 
 As **Guy Parsons** highlighted, the rapid evolution of these tools means that "within six months it's crazy to see how these tools... how that's all changed." Indeed, when we originally reached out to you it was around 6 months ago and you'd just written something called your prompt book, underscoring just how quickly the field shifts.
 
-This dynamic environment ensures that prompt engineering will continue to be a creative and intellectually engaging field, essential for harnessing the power of generative AI in an increasingly digital world. For further insight into the foundational differences of AI roles, consider [Difference Between Machine Learning Engineer and AI Engineer?](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path).
+This dynamic environment ensures that prompt engineering will continue to be a creative and intellectually engaging field, essential for harnessing the power of generative AI in an increasingly digital world. For further insight into the foundational differences of AI roles, explore the [difference between machine learning engineers](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path) and AI engineers.

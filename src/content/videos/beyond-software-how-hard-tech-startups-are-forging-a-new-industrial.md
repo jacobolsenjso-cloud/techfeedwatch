@@ -73,7 +73,7 @@ Hard tech also has profound strategic implications for national competitiveness 
 
 This global competition further underscores the importance of public-private partnerships to accelerate R&D and deployment.
 
-However, the complexities inherent in global supply chains and access to critical raw materials also present unique vulnerabilities and geopolitical considerations. The intersection of software and hardware, particularly with the advent of AI, means even deeply physical products now benefit from advanced intelligence, as explored by [How Nvidia's GPU Dominance Fuels AI Acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation).
+However, the complexities inherent in global supply chains and access to critical raw materials also present unique vulnerabilities and geopolitical considerations. The intersection of software and hardware, particularly with the advent of AI, means even deeply physical products now benefit from advanced intelligence, exemplified by how [Nvidia's GPUs fuel AI acceleration](/video/ai-acceleration-nvidia-s-role-in-tech-transformation).
 
 ## Key growth areas and challenges ahead for hard tech
 
@@ -81,7 +81,7 @@ The hard tech sector is poised for continued expansion, driven by persistent glo
 
 The integration of artificial intelligence will further enhance hard tech capabilities, leading to more autonomous systems and smarter physical infrastructure. This synergy will redefine what is possible in fields like advanced manufacturing and predictive maintenance.
 
-For instance, the principles guiding [Are AI-Native Service Companies Transforming the Service Sector?](/video/from-niche-to-ai-native-unpacking-the-playbook-for-next-gen-service) might even inspire new operational models within hard tech, though their core business remains physical.
+For instance, the principles guiding [AI-native service companies](/video/from-niche-to-ai-native-unpacking-the-playbook-for-next-gen-service) might even inspire new operational models within hard tech, though their core business remains physical.
 
 Investors will need to hone their abilities to discern genuine technical breakthroughs from ambitious but unfeasible projects. The emphasis will remain on early technical validation and the ability to demonstrate a clear path from prototype to scalable production.
 

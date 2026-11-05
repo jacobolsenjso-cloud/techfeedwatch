@@ -45,7 +45,7 @@ The core value proposition of OpenClaw lies in its agentic approach. Unlike trad
 
 This extends to programming itself, where these agents can interact with codebases, identify issues, write new code, and even debug, greatly accelerating development cycles. Discussion on the [Lex Fridman Podcast #491] has highlighted how such agentic systems, including OpenClaw, are moving beyond mere code generation to true autonomous problem-solving.
 
-This development suggests a future where AI handles more complex coding challenges, reducing the burden on human developers. The concept mirrors broader efforts to introduce [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption), making AI a more active participant in software creation.
+This development suggests a future where AI handles more complex coding challenges, reducing the burden on human developers. The concept mirrors broader efforts to [transform LLMs into agentic systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) using coding harnesses, making AI a more active participant in software creation.
 
 The implications of this autonomous capability are far-reaching. The framework supports the development of self-modifying AI agents, meaning the AI itself can adapt and improve its own code or operational logic based on performance or new requirements.
 

@@ -46,7 +46,7 @@ These metrics offer a standardized way to understand and [measure and improve] a
 
 ## How It Works to Enhance User Experience
 
-The operational mechanics of Core Web Vitals revolve around user-centric metrics, meaning they evaluate the actual experience of a visitor rather than just server-side processing or network speeds. Google integrates these measurements into its ranking algorithms, establishing them as a factor for [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
+The operational mechanics of Core Web Vitals revolve around user-centric metrics, meaning they evaluate the actual experience of a visitor rather than just server-side processing or network speeds. Google integrates these measurements into its ranking algorithms, establishing them as a factor in [how SEO works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
 
 A website performing well across LCP, FID, and CLS is likely to be favored in search results, increasing its visibility and organic traffic. That experience also affects how pages rank in search.
 
@@ -58,14 +58,14 @@ To illustrate how these metrics work in practice, consider the following:
 
 As CodeLucky points out, understanding these metrics means leveraging "best tools and easy-to-implement techniques to measure and improve your Core Web Vitals scores." This includes utilizing tools like Google's PageSpeed Insights, Lighthouse, or Search Console, which provide detailed reports and suggestions for improvement.
 
-These tools offer specific data points for LCP, FID, and CLS, allowing developers to diagnose issues and implement targeted solutions. For example, [AI Front End Development Tools Transform Web UI Creation](/video/ai-accelerates-front-end-development-reshaping-ui-creation-and) can also play a role in optimizing front-end performance, which directly impacts these metrics.
+These tools offer specific data points for LCP, FID, and CLS, allowing developers to diagnose issues and implement targeted solutions. For example, [AI front-end development tools](/video/ai-accelerates-front-end-development-reshaping-ui-creation-and) can also play a role in optimizing front-end performance, which directly impacts these metrics.
 
 ## Who It's For and Who Does Not Benefit
 
 Core Web Vitals are fundamentally for anyone involved in building, maintaining, or marketing a website that relies on organic search traffic or provides a service to users.
 
 **Who Benefits:**
-* **Website Owners and Businesses:** Those seeking to improve their Google search rankings will benefit directly. Better Core Web Vitals scores contribute positively to [How SEO Optimization Works Today](/video/seo-optimization-explained-how-modern-search-ranking-functions), leading to increased organic visibility. As highlighted in the fact sheet, this helps boost your SEO, increase conversions, and provide a smooth experience for your visitors! Businesses also see a direct correlation between improved user experience and higher conversion rates, lower bounce rates, and increased customer satisfaction. An e-commerce site with fast loading times and stable layouts keeps shoppers engaged, while a blog with good interactivity encourages readers to consume more content.
+* **Website Owners and Businesses:** Those seeking to improve their Google search rankings will benefit directly. Better Core Web Vitals scores contribute positively to [how SEO optimization works](/video/seo-optimization-explained-how-modern-search-ranking-functions), leading to increased organic visibility. As highlighted in the fact sheet, this helps boost your SEO, increase conversions, and provide a smooth experience for your visitors! Businesses also see a direct correlation between improved user experience and higher conversion rates, lower bounce rates, and increased customer satisfaction. An e-commerce site with fast loading times and stable layouts keeps shoppers engaged, while a blog with good interactivity encourages readers to consume more content.
 * **Web Developers and Designers:** These professionals gain a clear, standardized framework for building high-performing and user-friendly websites. The metrics provide concrete goals and benchmarks for their work, moving beyond subjective "fast" or "slow" assessments. Understanding LCP, FID, and CLS helps them prioritize optimization efforts and build sites with performance baked in from the start.
 * **Content Creators:** While not directly optimizing code, content creators benefit from their work being more discoverable and enjoyable to consume. A user who finds a page loads quickly and is stable is more likely to read, share, and return.
 * **Users:** Ultimately, Core Web Vitals serve the end-user. The entire initiative aims to make the web a faster, more reliable, and more pleasant place to browse. Users experience less frustration from slow loads, unresponsive interfaces, and unexpected layout shifts, leading to a smoother online experience across the board.

@@ -47,11 +47,11 @@ Theoretical physicists classify these information-theoretic frameworks into dist
 
 Cellular automata provide one primary engine for simulating physical systems. In these grid models, simple local rules dictate whether a cell changes state based on its neighbors. Despite simple rules, complex behaviors spontaneously propagate across the grid.
 
-Quantum mechanics introduces a more dynamic computational mechanism. Readers interested in foundational hardware concepts can explore [Quantum computing explained simply and how it works](/video/quantum-computing-separating-the-billions-in-hype-from-the-hard). Instead of classical bits, nature may operate on quantum bits that superpose states and process entangled logic.
+Quantum mechanics introduces a more dynamic computational mechanism. Readers interested in foundational hardware concepts can explore [how quantum computing works](/video/quantum-computing-separating-the-billions-in-hype-from-the-hard). Instead of classical bits, nature may operate on quantum bits that superpose states and process entangled logic.
 
 According to research published by MIT mechanical engineering professor Seth Lloyd in a 2002 issue of *Physical Review Letters*, the observable universe has registered no more than 10^90 bits of information since the Big Bang. Lloyd calculated in that same 2002 paper that the cosmos has executed no more than 10^120 elementary operations throughout cosmic history. 
 
-According to Alfred A. Knopf's 2006 publication of Seth Lloyd's book *Programming the Universe*, every physical collision between subatomic particles processes quantum information. Understanding these state changes mirrors investigations into [How Is Quantum Computing Different From Classical Computing?](/video/how-is-quantum-computing-different-from-classical-computing). Nature effectively functions as a massive quantum supercomputer calculating its own future.
+According to Alfred A. Knopf's 2006 publication of Seth Lloyd's book *Programming the Universe*, every physical collision between subatomic particles processes quantum information. Understanding these state changes mirrors investigations into the [differences between quantum and classical computing](/video/how-is-quantum-computing-different-from-classical-computing). Nature effectively functions as a massive quantum supercomputer calculating its own future.
 
 Evaluating the cosmos as a computing machine reveals specific operational trade-offs:
 
@@ -75,7 +75,7 @@ Mainstream physics relies on continuous symmetries that discrete grids struggle 
 
 According to the Stanford Encyclopedia of Philosophy, discrete computational models fail to reproduce continuous symmetries such as Lorentz invariance, rotational symmetry, and gauge invariance. When space is pixelated into a fixed grid, light moving diagonally across cells behaves differently than light moving along cardinal axes. High-energy astrophysical observations consistently detect unbroken Lorentz invariance, contradicting simple lattice models.
 
-Quantum nonlocality creates an equally severe obstacle for classical computation. Readers studying these physical dynamics often review [Understanding Quantum Computing Applications and Capabilities](/video/understanding-quantum-computing-applications-and-capabilities).
+Quantum nonlocality creates an equally severe obstacle for classical computation. Readers studying these physical dynamics often review [quantum computing applications and capabilities](/video/understanding-quantum-computing-applications-and-capabilities).
 
 According to the Stanford Encyclopedia of Philosophy, classical deterministic cellular automata fall into the class of local hidden-variable theories. These local models conflict directly with Bell's theorem and decades of verified quantum entanglement experiments. 
 

@@ -89,7 +89,7 @@ The primary challenge lies in the sophisticated design and iterative refinement 
 
 Developers entering this domain might mistakenly believe that a powerful base LLM alone will suffice. However, without a well-constructed harness, the LLM often struggles with task decomposition, coherent multi-step execution, and error handling.
 
-The "hidden cost" discussed in [How Good Are AI Coding Tools for Software Architecture?](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable) underscores this, indicating that poorly designed agentic systems can introduce more problems than they solve, leading to unreliable outputs and difficult-to-debug behaviors. The overhead in developing and maintaining skill files, solid memory systems, and secure tool integrations demands a different set of expertise than traditional software engineering or basic prompt creation.
+The [hidden costs of AI coding tools](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable) underscore this, indicating that poorly designed agentic systems can introduce more problems than they solve, leading to unreliable outputs and difficult-to-debug behaviors. The overhead in developing and maintaining skill files, solid memory systems, and secure tool integrations demands a different set of expertise than traditional software engineering or basic prompt creation.
 
 Integrating external systems and data sources—a core function enabled by tool loops and RAG—introduces new security and privacy considerations. Feeding private data to LLMs, even at inference time, requires careful governance and solid access controls to prevent data leakage or misuse.
 

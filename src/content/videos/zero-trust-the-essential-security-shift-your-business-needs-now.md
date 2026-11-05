@@ -65,7 +65,7 @@ Every section houses a designated dataset or program, with rigorous security rul
 
 This granular segmentation is key to stopping an attacker's lateral movement. Should an attacker breach a system within a given segment, like an external web server, their access remains restricted to that area. The intruder is unable to probe the wider network for additional assets or reach into distinct segments housing human resources software or financial databases.
 
-By halting lateral travel after an initial intrusion, microsegmentation keeps the incident confined to a single section. This transforms a potentially catastrophic incident into a manageable one, giving security teams precious time to detect and neutralize threats before they spread. Understanding [Zero Trust Security Shrinks Enterprise Network Attack Surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks) further illustrates this containment.
+By halting lateral travel after an initial intrusion, microsegmentation keeps the incident confined to a single section. This transforms a potentially catastrophic incident into a manageable one, giving security teams precious time to detect and neutralize threats before they spread. Understanding how [zero trust security shrinks attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks) further illustrates this containment.
 
 Finally, Zero Trust is not a "set it and forget it" solution. It is a dynamic and continuous process.
 
@@ -77,7 +77,7 @@ A device or user's security condition can shift rapidly; someone could authentic
 
 By its very nature, Zero Trust suits today's hybrid computing environments. Given widespread cloud adoption and off-site staffing, it establishes uniform protections for information and personnel everywhere. Identical strict authentication checks and usage rules govern whether staff reach an on-premise server at the workplace or a cloud program while working remotely.
 
-This simplifies security operations and helps maintain compliance with data protection regulations by precisely controlling and auditing who accesses what data, from where, and why. The importance of [Why Cloud Security Is So Important for Businesses](/video/cloud-security-s-rapid-evolution-why-architecture-first-consulting) highlights how this model can be applied effectively.
+This simplifies security operations and helps maintain compliance with data protection regulations by precisely controlling and auditing who accesses what data, from where, and why. Recognizing the importance of [cloud security for businesses](/video/cloud-security-s-rapid-evolution-why-architecture-first-consulting) highlights how this model can be applied effectively.
 
 Adopting a Zero Trust model yields compelling benefits, most significantly a dramatic reduction in risk. By eliminating implicit trust and enforcing least privilege access, organizations severely limit an attacker's ability to move through networks and access sensitive data.
 

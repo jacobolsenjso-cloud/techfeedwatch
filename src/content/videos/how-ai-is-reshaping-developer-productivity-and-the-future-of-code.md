@@ -45,7 +45,7 @@ These skills are not merely about an AI suggesting the next line of code; they i
 
 This modularity allows developers to assemble complex behaviors, moving beyond simple prompts to create agents capable of intricate, multi-step coding processes. Platforms like the [Loop Library](https://signals.forwardfuture.ai/loop-library/) provide examples of such pre-defined skills, with the associated [Loop Skill](https://github.com/Forward-Future/loop-library) on GitHub by Forward-Future illustrating how these components can be implemented and shared.
 
-This structured approach helps transform speculative "vibe coding" into a more predictable and manageable process, making software development more scalable and consistent. To learn more about this transformation, read [How AI Coding Agents Change Vibe Coding to Spec-Driven Dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured).
+This structured approach helps transform speculative "vibe coding" into a more predictable and manageable process, making software development more scalable and consistent. To learn more about this transformation, read how [AI coding agents change vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) to spec-driven development.
 
 ## How It Works
 
@@ -63,7 +63,7 @@ One model might excel at generating logical structures, while another might be b
 
 Infrastructure support for these agents is also evolving; for example, here.now provides free, instant web hosting for agents, demonstrating the accessibility of environments for deploying and running these AI-driven coding processes. As Matthew Berman points out, this systematic approach helps mitigate the unpredictability of "vibe coding" by enforcing best practices within the AI's operational framework.
 
-For a deeper dive into how these capabilities function, explore [What AI Agent Skills Are and How They Work](/video/beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and).
+For a deeper dive into how these capabilities function, explore [what AI agent skills are](/video/beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and) and how they work.
 
 Developers can choose between cloud-based and local AI coding solutions. Cloud environments offer scalability and access to powerful hardware, suitable for demanding tasks and collaborative projects.
 
@@ -83,7 +83,7 @@ However, this fundamental shift also presents challenges, particularly around th
 
 Developers must also learn to interact with AI agents effectively, moving from direct coding to guiding, reviewing, and orchestrating AI-driven workflows. This requires a different skillset focused on prompt engineering, system design, and AI model evaluation.
 
-While AI coding tools can significantly boost efficiency, they are not a silver bullet for projects with undefined requirements or poorly structured initial designs. Understanding the hidden costs and architectural implications of integrating these tools is important, as explored in [How Good Are AI Coding Tools for Software Architecture?](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable).
+While AI coding tools can significantly boost efficiency, they are not a silver bullet for projects with undefined requirements or poorly structured initial designs. Understanding the hidden costs and architectural implications of integrating these tools is important, especially when evaluating [AI coding tools for software architecture](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable).
 
 ## The shift from vibe coding to agent-driven development
 
@@ -91,4 +91,4 @@ The evolution of AI coding skills signifies a fundamental shift in software deve
 
 Developers are not replaced but augmented, transitioning to roles that emphasize guiding and validating AI agents rather than writing every line of code. Embracing these advanced AI capabilities means cultivating new human skills centered on collaboration with AI, ensuring that the promise of increased efficiency and higher-quality software becomes a reality.
 
-This transformative period redefines the pathway to becoming an AI engineer, requiring mastery of these new interaction paradigms, as detailed in [How to Become an AI Engineer in 2025 by Mastering New Skills](/video/beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025).
+This transformative period redefines the pathway to [becoming an AI engineer in 2025](/video/beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025), requiring mastery of these new interaction paradigms.

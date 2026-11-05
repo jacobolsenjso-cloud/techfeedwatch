@@ -59,7 +59,7 @@ Another notable project is "open-notebook" from github.com/lfnovo/open-notebook,
 
 Similarly, "headroom," located at github.com/chopratejas/headroom, points to an agent designed to optimize resource usage or performance, potentially managing computational overhead in development environments.
 
-These projects illustrate how open source AI agents move beyond simple chatbots, acting as autonomous systems capable of executing multi-step operations. For a deeper dive into their operational mechanics, see [How Autonomous AI Agents Work Through Recursive Loops](/video/beyond-copilots-how-ai-is-building-self-improving-companies).
+These projects illustrate how open source AI agents move beyond simple chatbots, acting as autonomous systems capable of executing multi-step operations. For a deeper dive into their operational mechanics, see how [autonomous AI agents work](/video/beyond-copilots-how-ai-is-building-self-improving-companies) through recursive loops.
 
 These agents are not just theoretical constructs; they are actively being developed and utilized in real-world scenarios. For instance, ElevenLabs offers "ElevenAgents," an open source project designed to allow users to build and deploy their own AI agents.
 

@@ -41,7 +41,7 @@ Classical computing never stands still when challenged. Days after Google's anno
 
 The threshold moved once more in 2022, when physicists Feng Pan and Pan Zhang replicated Google's results with superior fidelity on roughly 60 graphics cards, taking just hours to finish an operation previously thought unreachable. Parallel advancements followed alternative physical architectures. A group of Chinese researchers explored an entirely distinct strategy in 2020 based on light.
 
-Their photonic machine Jiuzhang sampled 76 particles of light in 200 seconds, setting a classical simulation benchmark estimate of two and a half billion years. Understanding [what is quantum computing and why is it important](/video/what-is-quantum-computing-and-why-is-it-important) requires recognizing this algorithmic friction: quantum engineers establish hardware speed records, and classical computer scientists design clever tensor-network strategies to narrow the gap.
+Their photonic machine Jiuzhang sampled 76 particles of light in 200 seconds, setting a classical simulation benchmark estimate of two and a half billion years. Understanding [quantum computing and its importance](/video/what-is-quantum-computing-and-why-is-it-important) requires recognizing this algorithmic friction: quantum engineers establish hardware speed records, and classical computer scientists design clever tensor-network strategies to narrow the gap.
 
 The industry expanded that benchmark in December 2024 with Google's Willow chip. Packing 105 qubits, the system ran its target benchmark in under five minutes. The classical estimate this time: 10 septillion years, a number outlasting the age of the cosmos by immense magnitudes.
 

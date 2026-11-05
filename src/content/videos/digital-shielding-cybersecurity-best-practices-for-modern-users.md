@@ -90,7 +90,7 @@ Where people often get it wrong is underestimating the threat, delaying action, 
 
 The widespread impact on society from these threats underlines the necessity of universal digital literacy in cybersecurity. It's not just about protecting individual data, but also about contributing to a more secure collective digital environment.
 
-By understanding common cyber threats explained in plain English and applying practical online safety tips, everyone can play a part in enhancing overall security. For those who find themselves drawn to this field, understanding [What a Cybersecurity Job Is and How to Get One](/video/a-cybersecurity-job-explained-roles-skills-pathways) can illuminate potential career pathways born from this essential knowledge.
+By understanding common cyber threats explained in plain English and applying practical online safety tips, everyone can play a part in enhancing overall security. For those who find themselves drawn to this field, understanding [how to get a cybersecurity job](/video/a-cybersecurity-job-explained-roles-skills-pathways) can illuminate potential career pathways born from this essential knowledge.
 
 ## Why simple digital security habits are essential for everyone
 

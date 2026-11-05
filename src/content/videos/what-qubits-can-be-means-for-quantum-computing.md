@@ -47,7 +47,7 @@ To grasp this distinction, consider flipping a standard coin and catching it aga
 
 Yet underneath your hand, the physical coin already rests at 100% heads or 100% tails. The probability reflects human ignorance rather than physical ambiguity. A qubit in superposition differs fundamentally: it has not settled on an outcome yet.
 
-It holds a genuine blend of both possibilities, allowing those mathematical possibilities to interact directly during calculation. For a wider perspective on structural definitions, see our guide on [Qubit in Quantum Computing Explained for Modern Scale](/video/qubit-in-quantum-computing-explained-for-modern-scale).
+It holds a genuine blend of both possibilities, allowing those mathematical possibilities to interact directly during calculation. For a wider perspective on structural definitions, explore [qubits in quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale) at modern scale.
 
 Physicists visualize this state using a geometric model called the Bloch sphere, which operates like a geographic globe. Imagine the Earth: the North Pole represents a definite classical state of zero, while the South Pole represents a definite state of one.
 
@@ -86,7 +86,7 @@ Hardware developers execute this process using real microscopic systems. In spin
 
 This design opens up exponential information capacity. When connected, $n$ qubits express $2$ to the power of $n$ possibilities simultaneously. Just three qubits can evaluate eight paths simultaneously.
 
-Pushing the hardware further, a register of 300 qubits can evaluate more possibilities at once than there are atoms in the observable universe. To understand why hardware setups struggle to stabilize these fragile states, review [The Engineering Roadblocks to Scalable Qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) and see [Why Qubits Are Useful in Complex Computing](/video/why-qubits-are-useful-in-complex-computing).
+Pushing the hardware further, a register of 300 qubits can evaluate more possibilities at once than there are atoms in the observable universe. To understand why hardware setups struggle to stabilize these fragile states, review the [engineering roadblocks to scalable qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) and see why qubits are useful in complex computing.
 
 ## Who Benefits from Quantum States and Who Does Not
 
@@ -100,7 +100,7 @@ Organizations that benefit include:
 Users who will not benefit include:
 - Everyday consumers running operating systems, media players, or standard office software.
 - Web servers running straightforward linear database queries, where classical bit switches operate faster and cheaper.
-- Standard software teams without access to quantum compilers; mastering this hardware requires distinct architectures, as outlined in [Why Quantum Computing Needs New Programming Logic](/video/quantum-computing-separating-engineering-reality-from-theoretical).
+- Standard software teams without access to quantum compilers; mastering this hardware requires distinct architectures, highlighting why quantum systems need [new programming logic](/video/quantum-computing-separating-engineering-reality-from-theoretical).
 
 ## How Qubits Turn Physics into Exponential Calculation Power
 

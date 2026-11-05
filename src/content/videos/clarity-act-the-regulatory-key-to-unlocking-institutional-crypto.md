@@ -63,7 +63,7 @@ Without such clarity, the risks associated with regulatory enforcement, market m
 
 This regulatory vacuum also impacts how tokenized assets are valued, audited, and taxed, adding layers of complexity that deter large-scale institutional engagement. The path to mainstream adoption, therefore, heavily depends on legislative action that provides concrete definitions and protections for digital assets.
 
-For insights into how existing financial players are engaging with the digital asset space, exploring articles like [Institutional Tokenized Assets Drive 24/7 Trading](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift) can provide further context.
+For insights into how existing financial players are engaging with the digital asset space, exploring how [tokenized assets drive 24/7 trading](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift) can provide further context.
 
 ## How Does Tokenization Intersect with AI and Benefit Investors?
 
@@ -83,7 +83,7 @@ Such initiatives showcase how traditional finance is beginning to embrace these 
 - Enabling real-time risk assessment
 - Opening doors to entirely new asset classes
 
-For a deeper understanding of AI's role in the sector, consider [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping). This transformative period suggests a future where financial services are more responsive, efficient, and interconnected, driven by the combined power of digital assets and intelligent automation.
+For a deeper understanding of AI's role in the sector, consider [where and how AI is used](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) across modern banks. This transformative period suggests a future where financial services are more responsive, efficient, and interconnected, driven by the combined power of digital assets and intelligent automation.
 
 ## How to approach tokenization while regulations evolve
 

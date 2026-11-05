@@ -79,7 +79,7 @@ If a single oracle, or a small group of oracles, controls the flow of informatio
 
 The security of data inputs is another significant ripple effect. The "hacker's delight" nature of many IoT devices highlights how a compromised hardware oracle could lead to devastating consequences for smart contracts. In the cheese drawer example, a malicious actor could "hack into that sensor" to trick it into continuously ordering new cheese, draining a user's Ether wallet.
 
-Such vulnerabilities emphasize the need for solid security measures, including multi-sensor consensus and cryptographic proofing, to ensure data integrity from physical sources. Addressing these issues is paramount for the broader adoption of applications that rely on [Oracle Network in Blockchain Bridges Data for Smart Contracts](/video/bridging-blockchains-how-oracle-networks-connect-smart-contracts-to).
+Such vulnerabilities emphasize the need for solid security measures, including multi-sensor consensus and cryptographic proofing, to ensure data integrity from physical sources. Addressing these issues is paramount for the broader adoption of applications that rely on [blockchain oracle networks](/video/bridging-blockchains-how-oracle-networks-connect-smart-contracts-to) to bridge data for smart contracts.
 
 ## Future developments in decentralized and secure oracle networks
 
@@ -95,6 +95,6 @@ Projects like Chainlink are actively working on these solutions, leveraging a ne
 
 We are also likely to see advancements in secure hardware solutions and cryptographic techniques to make "Hardware Oracle's" more resilient against tampering. This includes methods for cryptographic proofing to ensure data from a sensor has not been altered between its source and the smart contract.
 
-The concept of "data markets" where data is bought, sold, and rated based on reputation scores, could emerge, offering more transparent and resilient data feeds for smart contracts. These innovations are critical for further cementing trust in technologies like How Do Smart Contracts Work in Blockchain Technology and enhancing the capabilities of [Blockchain Explained Its Importance and Evolution](/video/algorand-s-ascent-reimagining-blockchain-s-core-trade-offs-for-the).
+The concept of "data markets" where data is bought, sold, and rated based on reputation scores, could emerge, offering more transparent and resilient data feeds for smart contracts. These innovations are critical for further cementing trust in technologies like smart contracts and enhancing the capabilities of [evolving blockchain networks](/video/algorand-s-ascent-reimagining-blockchain-s-core-trade-offs-for-the).
 
 The ongoing efforts aim to ensure that while oracles provide essential connections to the real world, they do so in a manner consistent with the decentralized and trustless principles of blockchain technology.

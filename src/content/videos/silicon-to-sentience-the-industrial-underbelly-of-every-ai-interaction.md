@@ -43,7 +43,7 @@ High-speed machines then integrate essential components into each server, includ
 
 Every cable is meticulously routed to maximize airflow and ensure reliability. Before any AI server enters a data center, it faces intense testing, running processors at full capacity, stressing memory, verifying storage, and using thermal cameras and AI-powered inspection systems to find imperfections.
 
-A server receives final approval only when it has cleared hundreds of individual quality inspections. This rigorous process highlights why 'What looks like an ordinary metal box is actually one of the world's most powerful computing machines.' The video [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) explains how specialized AI chips operate by handling such processing loads.
+A server receives final approval only when it has cleared hundreds of individual quality inspections. This rigorous process highlights why 'What looks like an ordinary metal box is actually one of the world's most powerful computing machines.' The video explains [how specialized AI chips operate](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) by handling such processing loads.
 
 ## Why AI requires specialized hyperscale data centers
 
@@ -75,7 +75,7 @@ The immense scale and precision required for manufacturing and deploying this in
 
 The energy consumption of these facilities is a growing concern, prompting innovation in areas like liquid cooling and renewable energy integration. A common misconception is viewing AI as purely a software phenomenon. In reality, AI’s capabilities are inextricably linked to this underlying hardware.
 
-Every generated answer is supported by a remarkable work of engineering, manufactured with microscopic accuracy inside some of the most sophisticated industrial facilities ever built. Understanding [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) helps clarify the practical implications of this hardware.
+Every generated answer is supported by a remarkable work of engineering, manufactured with microscopic accuracy inside some of the most sophisticated industrial facilities ever built. Understanding [how specialized AI chips work](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) helps clarify the practical implications of this hardware.
 
 ## Future advancements in chip efficiency and cooling technology
 

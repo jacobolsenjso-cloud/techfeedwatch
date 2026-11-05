@@ -79,7 +79,7 @@ First, **set up Google Search Console**. Verify ownership of your website by add
 
 Monitor the "Performance" reports to see which queries bring traffic, your average position in search results, and your impressions. Regularly check the "Index Coverage" and "Core Web Vitals" sections for any crawl errors or performance issues that could hinder your site's ranking.
 
-This is where you identify problems with how Google interacts with your site and address them directly. For broader strategies on improving search visibility, consider articles like [SEO Explained: What It Is and How Search Engines Work](/video/master-the-digital-spotlight-your-essential-guide-to-search-engine) or [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works).
+This is where you identify problems with how Google interacts with your site and address them directly. For broader strategies on improving search visibility, consider learning [how search engines work](/video/master-the-digital-spotlight-your-essential-guide-to-search-engine) and what SEO entails.
 
 Second, **implement Google Analytics**. The most solid way to do this is by first setting up Google Tag Manager. Create a new GTM account for your website, install its single code snippet into the header of every page, and then use GTM to deploy your Google Analytics tag.
 
@@ -87,6 +87,6 @@ This allows you to track basic page views and also set up more advanced "event" 
 
 Third, **connect and analyze the data from both platforms**. While GSC tells you *if* you're appearing in search and *what queries* users are typing, GA tells you *what they do* once they click through. If GSC shows a high impression count but low CTR for a specific page, it might indicate an unappealing meta description or title.
 
-If GA shows a high bounce rate on a landing page, it suggests the content or design isn't meeting user expectations. These insights, gleaned by comparing data, empower data-driven decisions. For instance, if you're concerned about [How Do AI Overviews Impact Organic Search Traffic for Creators?](/video/google-ai-overviews-impact-content-creators-traffic-seo), understanding your current performance through GSC and GA is the first step.
+If GA shows a high bounce rate on a landing page, it suggests the content or design isn't meeting user expectations. These insights, gleaned by comparing data, empower data-driven decisions. For instance, if you're concerned about [how AI Overviews impact organic traffic](/video/google-ai-overviews-impact-content-creators-traffic-seo), understanding your current performance through GSC and GA is the first step.
 
 Many free resources exist to deepen your understanding, including Google's own Academy courses and platforms like Analytics Mania, which offers valuable insights into Google Tag Manager versus Google Analytics. By integrating the technical feedback from Search Console with the behavioral insights from Analytics, and managing their implementation through Tag Manager, businesses can build and refine websites that perform well in search and effectively serve their audience.

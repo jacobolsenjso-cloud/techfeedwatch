@@ -35,7 +35,7 @@ According to [Anthropic](https://www.anthropic.com/)'s official announcement on 
 
 To mitigate this exposure, Anthropic restructured its product rollout. According to Anthropic's June 9, 2026 System Card for Claude Fable 5 and Claude Mythos 5, Anthropic divided the generation into Claude Fable 5, a generally available version equipped with strict safety filters blocking cyber and biological tasks, and Claude Mythos 5, an unrestricted version reserved for vetted defensive partners. 
 
-Enterprise leaders frequently ask [do open source AI pentesting tools enhance website security](/video/ai-pentesting-tools-open-source-platforms-automate-bug-bounties) when evaluating automated testing software. Releasing an unfiltered model with end-to-end weaponization skills into consumer tiers would bypass standard vendor disclosure timelines.
+Enterprise leaders frequently ask whether [open source AI pentesting tools](/video/ai-pentesting-tools-open-source-platforms-automate-bug-bounties) enhance website security when evaluating automated testing software. Releasing an unfiltered model with end-to-end weaponization skills into consumer tiers would bypass standard vendor disclosure timelines.
 
 ## Offensive Vulnerability Discovery and Exploit Capabilities Found in Testing
 
@@ -43,7 +43,7 @@ Testing revealed that Claude Mythos operates with unprecedented autonomous softw
 
 Beyond simply identifying coding errors, Mythos can turn theoretical flaws into active exploits. According to PwC's cybersecurity analysis on April 17, 2026, Anthropic reported that Claude Mythos Preview is approximately 100 times more successful at generating working exploits for discovered software flaws than Claude Opus 4.6.
 
-These breakthroughs highlight how [AI powered cyberattacks are transforming digital security](/video/ai-hacking-autonomous-agents-threaten-corporate-networks) across public and private sectors.
+These breakthroughs highlight how [AI-powered cyberattacks](/video/ai-hacking-autonomous-agents-threaten-corporate-networks) are transforming digital security across public and private sectors.
 
 Organizations monitoring frontier models point to several core operational concerns:
 - Autonomous detection of memory corruption flaws across decades-old legacy codebases
@@ -63,7 +63,7 @@ Giving trusted infrastructure operators exclusive access ensures vulnerability r
 
 The existence of offensive AI agents does not make enterprise defense impossible. According to Bain & Company's April 21, 2026 research report, independent testing by the UK AI Security Institute determined that Claude Mythos cannot reliably execute autonomous attacks against organizations that maintain hardened baseline defenses such as zero-trust architectures, network segmentation, and automated patching.
 
-Modern security standards neutralize many automated exploit payloads. Security architects studying [how to secure AI agents with zero trust cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems) consistently demonstrate that strict identity boundaries stop autonomous lateral spread.
+Modern security standards neutralize many automated exploit payloads. Security architects studying how to secure AI agents with [zero trust cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems) consistently demonstrate that strict identity boundaries stop autonomous lateral spread.
 
 Enterprise defense teams maintain practical advantages by enforcing core baseline controls:
 1. Strict zero-trust access controls that require continuous cryptographic identity validation

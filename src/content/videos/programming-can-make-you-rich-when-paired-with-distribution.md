@@ -33,7 +33,7 @@ Building a profitable digital product previously required deep engineering teams
 
 Platforms like Lovable and Replit handle visual prototyping. Even so, foundational JavaScript knowledge remains mandatory for scalable architectures. Developers entering the market study fundamental syntax through freeCodeCamp.
 
-They then complete project-based training on Full Stack Open. Aspiring engineers recognize that [AI Requires Programmers to Develop Architectural Thinking Skills](/video/the-ai-engineer-s-dilemma-future-proofing-careers-against-advanced) rather than basic syntax memorization. This mindset allows a founder at 22 to operate at enterprise scale.
+They then complete project-based training on Full Stack Open. Aspiring engineers recognize that AI requires programmers to [develop architectural thinking skills](/video/the-ai-engineer-s-dilemma-future-proofing-careers-against-advanced) rather than rely on basic syntax memorization. This mindset allows a founder at 22 to operate at enterprise scale.
 
 ## Programming Can Make You Rich If Founders Master Distribution
 
@@ -57,11 +57,11 @@ Achieving financial independence requires treating customer acquisition as a rep
 - Short-form content replication drives inbound traffic. Adapting winning social formats can deliver 117,000 views and 900 signups from a single video post.
 - Creator partnerships scale customer acquisition efficiently. Founders pay niche creators with 1,000 to 10,000 followers rates of $30 to $50 to build out Shorts.
 - Paid amplification recycles cash flow into Meta and TikTok advertising channels. Boosting effective posts can turn every $50 spent into around $130 in return.
-- Design polish maintains strong conversion rates. Teams learn [How to Make Claude Code Websites Look Better](/video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude) so prospective customers do not abandon unstyled interfaces.
+- Design polish maintains strong conversion rates. Teams learn how to [make Claude-coded websites look better](/video/ditch-the-vibe-coded-slop-build-agency-quality-websites-with-claude) so prospective customers do not abandon unstyled interfaces.
 
 A targeted resume optimization app built under this operational blueprint generated $123 in daily sales. It reached 16.5k in lifetime revenue and produced $1,400 in monthly recurring revenue without requiring code modifications for months.
 
-Reinvesting organic cash flow into targeted social distribution enables solo developers to reach goals faster. This method helps them hit the standard $5,000-per-month benchmark that separates side projects from durable wealth. Those evaluating traditional credentials should consider whether [Is an AI Postgraduate Program a Good Career Investment?](/video/the-ai-education-divide-is-a-postgraduate-program-worth-the-investment).
+Reinvesting organic cash flow into targeted social distribution enables solo developers to reach goals faster. This method helps them hit the standard $5,000-per-month benchmark that separates side projects from durable wealth. Those evaluating traditional credentials should consider whether an [AI postgraduate program](/video/the-ai-education-divide-is-a-postgraduate-program-worth-the-investment) is a good career investment.
 
 ## Converting code leverage into equity through distribution
 

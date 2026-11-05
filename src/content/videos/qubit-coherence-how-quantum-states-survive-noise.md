@@ -77,7 +77,7 @@ According to quantum computing company [IonQ](https://ionq.com/) in March 2025, 
 
 Modern quantum algorithms also rely on real-time classical processing to manage error mitigation. According to IBM Research in a November 20, 2024 Nature study, dynamic quantum circuits operated across two connected 127-qubit processors by executing classical feedback and mid-circuit measurements within runtimes limited to a fraction of the hardware's coherence time.
 
-Reviewing the [difference between qubit and classical bit](/video/difference-between-qubit-and-classical-bit-explained) mechanisms shows why completing active feedback cycles before phase coherence dissolves remains necessary for fault-tolerant architectures.
+Reviewing the [differences between qubits and classical bits](/video/difference-between-qubit-and-classical-bit-explained) shows why completing active feedback cycles before phase coherence dissolves remains necessary for fault-tolerant architectures.
 
 ## Isaac Sterling explains Brookhaven's 1.68 ms tantalum qubit breakthrough
 Isaac Sterling explains how researchers at [Brookhaven National Laboratory](https://www.bnl.gov/world/)'s C2QA center pushed transmon coherence to 1.68 milliseconds by redesigning the physical materials of the circuit.

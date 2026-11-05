@@ -39,7 +39,7 @@ Software development has advanced through successive waves of mechanical insulat
 
 Understanding assembly language makes you a better C or C++ programmer. Understanding C or C++ makes you a better [Python](https://www.python.org/) programmer, and so on. Each layer shielded the developer from physical silicon while demanding a firm grasp of the layer beneath it.
 
-When early educational initiatives expanded, programs like [Coding Bootcamps Offer Accelerated Software Engineering Paths](/video/coding-bootcamps-offer-accelerated-software-engineering-paths) emerged to translate these layered concepts into practical skills. Today, the core debate centers on whether artificial intelligence breaks this generational chain or simply forms the next logical rung on the ladder.
+When early educational initiatives expanded, programs like [accelerated software engineering bootcamps](/video/coding-bootcamps-offer-accelerated-software-engineering-paths) emerged to translate these layered concepts into practical skills. Today, the core debate centers on whether artificial intelligence breaks this generational chain or simply forms the next logical rung on the ladder.
 
 ## Why vibe coding still requires fundamental programming skills
 
@@ -55,7 +55,7 @@ True development competency means knowing which parts of a technical solution ca
 
 People who understand how to code are better vibe-coders precisely because they can read the abstraction layer resting directly beneath the prompt. When an automated agent outputs flawed routines, classically trained engineers look directly at the underlying Python, C++, or database queries to locate the structural breakdown.
 
-Analysis exploring how [Coding is Not Dead, but Rapidly Transforming by 2026](/video/coding-is-not-dead-but-rapidly-transforming-by-2026) confirms that technical discernment, rather than raw typing speed, defines developer value.
+Analysis exploring the [rapid transformation of coding by 2026](/video/coding-is-not-dead-but-rapidly-transforming-by-2026) confirms that technical discernment, rather than raw typing speed, defines developer value.
 
 ## Why automation amplifies technical expertise rather than replacing it
 
@@ -67,7 +67,7 @@ The same dynamic plays out across every creative and technical discipline touche
 
 If you actually have UI design skills, you have the opportunity to make a dramatic difference in the result because you understand negative space, hierarchy, and user empathy. Similarly, if you're a game designer, you design better games than those who are not, with or without AI. If you're a mathematician, you generate better mathematical tools with or without AI.
 
-Automation amplifies existing mastery rather than compensating for its absence. Teams relying purely on automated outputs face escalating technical debt, a dynamic documented in studies examining [How Good Are AI Coding Tools for Software Architecture?](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable).
+Automation amplifies existing mastery rather than compensating for its absence. Teams relying purely on automated outputs face escalating technical debt, a dynamic documented in studies examining [AI coding tools in software architecture](/video/ai-coding-s-hidden-cost-why-vibe-coding-threatens-sustainable).
 
 Without human architects who understand algorithmic efficiency, systems slowly degrade into unmaintainable patches of generated scripts. The shift forces organizations to value developers who master specification, verification, and systems integration, proving that foundational engineering remains indispensable.
 
@@ -75,7 +75,7 @@ Without human architects who understand algorithmic efficiency, systems slowly d
 
 The software industry is entering an era of rigorous verification where raw output volume matters less than structural precision. Watching how developer tooling evolves reveals that uncontrolled natural language scripting is giving way to disciplined orchestration.
 
-Trends detailed in reports on [How AI Coding Agents Change Vibe Coding to Spec-Driven Dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) show that enterprises now favor formal specifications, deterministic testing harnesses, and strict architectural contracts over loose conversational prompts.
+Trends detailed in reports on [spec-driven development with AI coding agents](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) show that enterprises now favor formal specifications, deterministic testing harnesses, and strict architectural contracts over loose conversational prompts.
 
 Career durability will hinge on intellectual passion rather than superficial tool adoption. Twenty years ago, the advice to aspiring technologists stressed that long-term success comes down to authentic enthusiasm for the craft.
 

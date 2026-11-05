@@ -31,7 +31,7 @@ The global supply chain for AI chips is under scrutiny for its hidden vulnerabil
 
 These essential pieces of hardware are not just passive connectors; they form the bedrock upon which every advanced AI chip operates, yet their manufacturing introduces significant geopolitical and security risks to the booming AI market.
 
-Printed circuit boards, often seen as a quiet component, are indispensable for modern electronics, sitting underneath nearly every chip and forming the interconnective tissue that allows processors to function. For AI chips, these [How Do Specialized AI Chips Work to Compute?](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/) specialized PCBs must meet stringent requirements for power delivery and signal integrity, making their design and fabrication highly complex.
+Printed circuit boards, often seen as a quiet component, are indispensable for modern electronics, sitting underneath nearly every chip and forming the interconnective tissue that allows processors to function. For [specialized AI chips](/video/unpacking-the-silicon-backbone-why-ai-s-software-revolution-relies-on/), these PCBs must meet stringent requirements for power delivery and signal integrity, making their design and fabrication highly complex.
 
 The core problem for the U.S. technology sector is that nearly all AI circuit boards—those used by giants such as Nvidia, Google, and Apple—are currently manufactured in China. This creates significant supply chain vulnerabilities, including potential opportunities for adversaries to introduce malicious components, as highlighted by a CNBC report.
 

@@ -35,7 +35,7 @@ Understanding the [difference between augmented reality and virtual reality](/vi
 
 Virtual reality devices like the Meta Quest 3 deliver total optical occlusion. They process computer vision internally, track your hands across three-dimensional coordinate planes, and project interactive synthetic environments directly over your eyes. Standalone VR hardware acts as an independent computer.
 
-Upcoming systems like the Steam Frame from Valve aim to replicate that standalone philosophy by packing local architecture directly onto your head, effectively putting a Steam Deck on your face to play 2D Steam libraries alongside spatial titles. When examining [what are the fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact), the primary distinction remains software autonomy: VR builds an entire room inside the visor.
+Upcoming systems like the Steam Frame from Valve aim to replicate that standalone philosophy by packing local architecture directly onto your head, effectively putting a Steam Deck on your face to play 2D Steam libraries alongside spatial titles. When examining the [differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact), the primary distinction remains software autonomy: VR builds an entire room inside the visor.
 
 XR glasses discard that ambition entirely in exchange for pure hardware reduction. Hardware such as the Viture Pro (referred to as Viture Beasts) or the XREAL Air 2 Pro (referred to as Xreal 1 Pro) contains no internal operating system, battery, or local processing unit.
 
@@ -71,7 +71,7 @@ XR glasses draw power directly from the host device. Connect them to an ASUS ROG
 
 Optical correction introduces unexpected costs across both ecosystems. The Viture Pro features built-in dial adjustments that let nearsighted users calibrate focus without external aids. Yet neither the Viture nor XREAL designs accommodate standard optical frames underneath their frames; severe astigmatism or complex prescriptions demand custom snap-on prescription lens inserts.
 
-Meta Quest headsets allow users to wear standard glasses directly inside the facial cavity—often using an included plastic spacer—though bespoke lens inserts remain the most comfortable upgrade. Those curious about pairing consumer hardware can reference our [How to Use a Virtual Reality Headset With Android](/video/guide-on-how-to-use-virtual-reality-headset-with-android).
+Meta Quest headsets allow users to wear standard glasses directly inside the facial cavity—often using an included plastic spacer—though bespoke lens inserts remain the most comfortable upgrade. Those curious about pairing consumer hardware can learn how to [use a virtual reality headset](/video/guide-on-how-to-use-virtual-reality-headset-with-android) with Android.
 
 ## The Economics of Single-Purpose Hardware
 

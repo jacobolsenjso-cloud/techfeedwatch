@@ -64,7 +64,7 @@ Advocates often claim that learning to code automatically turns children into ma
 
 According to an experimental study published in *Frontiers in Psychology*, primary school coding instruction yielded significant cognitive gains in pattern recognition and logic puzzle solving, but showed low improvement in pure arithmetic calculation. The researchers demonstrated that cognitive transfer from coding is largely restricted to structural logic rather than general calculation skills.
 
-Children learn how to construct relational systems, not calculate faster. Investigating [what happens when you ask why coding is important](/video/what-happens-when-you-ask-why-coding-is-important) reveals similar findings across adult learners.
+Children learn how to construct relational systems, not calculate faster. Investigating what happens when people ask [why coding is important](/video/what-happens-when-you-ask-why-coding-is-important) reveals similar findings across adult learners.
 
 Linguistic abilities play a massive role in technical learning. Natural language aptitude and communication ability are stronger predictors of learning to program than basic numeracy or mathematical knowledge. Programming mirrors language acquisition, relying heavily on grammar, vocabulary, and semantic comprehension.
 
@@ -74,7 +74,7 @@ Policy makers increasingly view computing literacy as basic civic infrastructure
 
 According to the Code.org Advocacy Coalition, 32 U.S. states required high schools to offer at least one computer science course by 2024. According to the Code.org Advocacy Coalition, 12 states made computer science a mandatory high school graduation requirement as of April 2025. This legislative push forces schools to train classroom educators in foundational computational concepts.
 
-Yet instructional equity varies widely across rural and urban districts. While mandates expand availability, access to experienced mentors and hardware infrastructure dictates program depth. Analyzing how [coding is not dead, but rapidly transforming by 2026](/video/coding-is-not-dead-but-rapidly-transforming-by-2026) explains why modern curricula must evolve beyond obsolete rote memorization.
+Yet instructional equity varies widely across rural and urban districts. While mandates expand availability, access to experienced mentors and hardware infrastructure dictates program depth. Analyzing how [coding is transforming by 2026](/video/coding-is-not-dead-but-rapidly-transforming-by-2026) rather than dying out explains why modern curricula must evolve beyond obsolete rote memorization.
 
 ## Bricks and Brains Tracks DHH's Transition to AI Coding
 
@@ -88,7 +88,7 @@ Bricks and Brains noted that by August 2026 on Lex Fridman, Hansson stated auton
 
 Bricks and Brains argued that while syntax matters less, underlying computational logic remains vital. The host illustrated that a child telling an assistant to make a robot stop at a wall only when carrying an object has designed two nested conditionals.
 
-Learning [how coding agents work and why developers use them](/video/how-coding-agents-work-and-why-developers-use-them) requires precise problem definition. Evaluating code from the outside requires deep structural judgment, which children develop by testing logic rather than hunting for misplaced commas.
+Learning [how coding agents work](/video/how-coding-agents-work-and-why-developers-use-them) and why developers use them requires precise problem definition. Evaluating code from the outside requires deep structural judgment, which children develop by testing logic rather than hunting for misplaced commas.
 
 ## Starting Your Child's Coding Journey at Home
 

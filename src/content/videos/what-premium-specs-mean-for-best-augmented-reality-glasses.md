@@ -31,7 +31,7 @@ Evaluating these devices requires looking past branding to examine specific hard
 
 Consumer AR hardware is shifting rapidly away from low-field-of-view visual accessories toward standalone spatial workstations. While legacy consumer displays constrained users to a narrow 46 degrees field of view, cutting-edge optical architectures push boundaries to 59 degrees without crossing into enterprise pricing.
 
-Understanding [How Augmented Reality Changes Spatial Interaction](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital) requires looking directly at optical mechanics, display engines, and spatial audio integration.
+Understanding [how augmented reality changes spatial interaction](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital) requires looking directly at optical mechanics, display engines, and spatial audio integration.
 
 ## Major optical and pricing breakthroughs in consumer AR glasses
 - **Expansive Visual Field:** A 59 degree field of view provides the largest available virtual display area on consumer AR glasses, casting a virtual display up to 267 inch.
@@ -75,7 +75,7 @@ Spatial position tracking makes extended productivity feasible. Simple head-worn
 2. **Steady Mode:** Software dampens movement so the screen smoothly follows head turns like a gimbal attached to your head.
 3. **Pinned Screen Mode:** The virtual screen anchors to a fixed spatial coordinate, allowing users to set it in one place, look around at physical surroundings, and look back with the display locked in place.
 
-Spatial stabilization relies on internal sensors that process motion in real time. Understanding [What SLAM Means for Anchoring Augmented Reality Objects](/video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital) illuminates how position tracking locks digital overlays to physical rooms.
+Spatial stabilization relies on internal sensors that process motion in real time. Understanding [how SLAM anchors augmented reality objects](/video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital) illuminates how position tracking locks digital overlays to physical rooms.
 
 Audio hardware plays an equally critical role in spatial immersion. Integrated acoustic designs use Bang & Olufsen co-tuned racetrack quad speakers built directly into the frame arms. A 5dB boost in low-frequency sensitivity adds a deeper, more intense bass response compared to standard acoustic drivers.
 
@@ -106,7 +106,7 @@ Devices like the RayNeo GT Max represent the strongest overall balance for consu
 
 Competitors such as the XREAL One Pro ($599) or Viture Beast ($549) offer strong software app integration and alternative optical builds, but they require a significantly larger financial investment for narrower field-of-view metrics.
 
-For users exploring the broader distinctions between display types, evaluating the [What Are the Fundamental Differences Between AR and VR?](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) helps clarify why lightweight video-passthrough glasses serve personal viewing and mobile productivity better than bulky VR headsets. 
+For users exploring the broader distinctions between display types, evaluating the [fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) helps clarify why lightweight video-passthrough glasses serve personal viewing and mobile productivity better than bulky VR headsets. 
 
 Additional features like 2D to 3D video conversion add extra value for media consumption. Testing 2D to 3D mode on YouTube with POV BASE jumping off of a skyscraper at night demonstrates real visual depth added to flat video files.
 

@@ -33,7 +33,7 @@ Rather than replacing standard consumer software or everyday processing tasks, t
 
 Classical computers encode information in binary bits that register strictly as zeros or ones. According to the U.S. National Science Foundation in January 2026, quantum computing utilizes qubits governed by superposition and entanglement to run complex calculations in parallel.
 
-Superposition permits qubits to represent combinations of zero and one simultaneously. Entanglement links the state of multiple qubits, enabling an interconnected calculation space that expands exponentially with every hardware addition. Readers exploring the fundamental mechanics can review how [qubit in quantum computing explained for modern scale](/video/qubit-in-quantum-computing-explained-for-modern-scale) operates within modern systems.
+Superposition permits qubits to represent combinations of zero and one simultaneously. Entanglement links the state of multiple qubits, enabling an interconnected calculation space that expands exponentially with every hardware addition. Readers exploring the fundamental mechanics can review how a [qubit in quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale) operates within modern systems.
 
 Quantum algorithms manipulate these states through computational interference to eliminate wrong answers while amplifying the correct outcome.
 

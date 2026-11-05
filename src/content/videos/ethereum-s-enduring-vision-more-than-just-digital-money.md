@@ -46,13 +46,13 @@ Millions of people currently engage with Ethereum for various applications, from
 
 At its heart, Ethereum is a blockchain—a distributed public ledger that immutably records all transactions. Unlike traditional databases, this ledger is maintained by a global network of computers, ensuring decentralization and resistance to censorship.
 
-Each block in the chain contains a bundle of validated transactions, linked cryptographically to the previous block, forming an unbreakable sequence. The underlying [How Does Ethereum Proof of Stake Work](/video/ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026) consensus mechanism secures the network and validates these transactions.
+Each block in the chain contains a bundle of validated transactions, linked cryptographically to the previous block, forming an unbreakable sequence. The underlying [proof-of-stake consensus mechanism](/video/ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026) secures the network and validates these transactions.
 
 What sets Ethereum apart from earlier cryptocurrencies like Bitcoin is its programmable nature. While Bitcoin primarily functions as a store of value and a medium for direct financial transfers, Ethereum introduces smart contracts. These are essentially self-executing computer programs stored on the blockchain.
 
-Once the predetermined conditions within the contract are met, the code automatically executes the specified actions, from transferring funds to releasing digital assets. This eliminates the need for intermediaries, fostering trustless interactions. To dive deeper into how these contracts operate, one can explore [How Do Smart Contracts Work on Ethereum?](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
+Once the predetermined conditions within the contract are met, the code automatically executes the specified actions, from transferring funds to releasing digital assets. This eliminates the need for intermediaries, fostering trustless interactions. To dive deeper into their operation, one can explore [how smart contracts work on Ethereum](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
 
-The execution of smart contracts and other operations on the Ethereum blockchain requires computational power, which is paid for using ETH, the network's native cryptocurrency. This payment mechanism, often referred to as "gas," incentivizes network validators and prevents spamming. Users interact with the network through various [Understanding Types of Ethereum Accounts for DApps](/video/ethereum-accounts-demystified-the-eoa-vs-contract-showdown-every-web3/) which hold ETH and facilitate transactions.
+The execution of smart contracts and other operations on the Ethereum blockchain requires computational power, which is paid for using ETH, the network's native cryptocurrency. This payment mechanism, often referred to as "gas," incentivizes network validators and prevents spamming. Users interact with the network through various [types of Ethereum accounts](/video/ethereum-accounts-demystified-the-eoa-vs-contract-showdown-every-web3/), which hold ETH and facilitate transactions.
 
 ## The Many Uses of Ethereum
 
@@ -76,7 +76,7 @@ As the network grew, transaction speeds could slow down, and transaction fees (g
 
 Another aspect that requires careful consideration is the cost and complexity of developing and deploying smart contracts. Errors in smart contract code can lead to irreversible vulnerabilities, as the immutable nature of blockchain means that once deployed, contracts are difficult to modify.
 
-This demands rigorous auditing and testing, increasing development overhead. Understanding [How Ethereum Works and Processes Smart Contracts](/video/ethereum-s-2026-blueprint-programmable-money-s-promise-or-persistent) is critical for anyone engaging with this technology. The concept of How Does Ethereum Gas Work in Accounts and Wallets? also highlights the variable transaction costs that can impact user experience and application design.
+This demands rigorous auditing and testing, increasing development overhead. Understanding [how Ethereum processes smart contracts](/video/ethereum-s-2026-blueprint-programmable-money-s-promise-or-persistent) is critical for anyone engaging with this technology. The concept of How Does Ethereum Gas Work in Accounts and Wallets? also highlights the variable transaction costs that can impact user experience and application design.
 
 The decentralized nature, while an advantage, also introduces user responsibility. Unlike traditional systems where banks or companies can revert transactions or recover lost passwords, interactions on Ethereum are typically final and require users to maintain control of their private keys and wallet security.
 

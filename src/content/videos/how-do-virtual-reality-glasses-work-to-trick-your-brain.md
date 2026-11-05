@@ -62,7 +62,7 @@ Full spatial immersion requires 6DoF, which adds translational movement along th
 3. Simultaneous Localization and Mapping (SLAM) routines calculate how those physical anchor points shift across the camera frames over time.
 4. The system determines precise physical movement and mirrors the displacement inside the virtual environment.
 
-Understanding these tracking paradigms is essential when evaluating the [best virtual reality goggles and why weight matters most](/video/best-virtual-reality-goggles-and-why-weight-matters-most) for comfort and spatial stability.
+Understanding these tracking paradigms is essential when evaluating the [best virtual reality goggles](/video/best-virtual-reality-goggles-and-why-weight-matters-most) and why weight matters most for comfort and spatial stability.
 
 ## Why Low Motion-to-Photon Latency Prevents Cybersickness
 

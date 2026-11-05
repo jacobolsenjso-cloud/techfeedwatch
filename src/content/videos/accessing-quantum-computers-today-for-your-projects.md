@@ -65,7 +65,7 @@ The availability of beginner-friendly courses targets individuals with "little t
 
 Businesses are increasingly looking to quantum computing for competitive advantage, particularly in areas where classical computation reaches its limits. Industries like finance seek to use quantum algorithms for portfolio optimization and risk assessment, while pharmaceutical companies explore faster drug discovery through quantum simulations.
 
-Universities integrate quantum computing into their curricula, preparing the next generation of researchers and engineers. Even though it's still an emerging technology, the range of [Understanding Quantum Computing Applications and Capabilities](/video/understanding-quantum-computing-applications-and-capabilities) is already vast, appealing to a diverse set of users.
+Universities integrate quantum computing into their curricula, preparing the next generation of researchers and engineers. Even though it's still an emerging technology, the range of [quantum computing applications and capabilities](/video/understanding-quantum-computing-applications-and-capabilities) is already vast, appealing to a diverse set of users.
 
 ## How cloud platforms bring quantum computing to beginners
 

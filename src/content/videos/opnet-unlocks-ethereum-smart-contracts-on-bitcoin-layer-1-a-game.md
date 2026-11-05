@@ -37,7 +37,7 @@ The foundational design of Bitcoin prioritizes simplicity, security, and decentr
 
 This means it cannot perform complex conditional logic, loops, or state changes that define a "smart contract" in the way understood on platforms like Ethereum. Instead, Bitcoin Script is designed for basic, verifiable transactions, such as transferring ownership from one address to another, or requiring multiple signatures for a transaction.
 
-This limited functionality ensures that the Bitcoin network remains predictable, secure, and lightweight, minimizing potential vulnerabilities that arise from more complex programmable environments. For those interested in the solid capabilities of Ethereum's smart contracts, exploring [How Do Smart Contracts Work on Ethereum?](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity) offers a direct contrast.
+This limited functionality ensures that the Bitcoin network remains predictable, secure, and lightweight, minimizing potential vulnerabilities that arise from more complex programmable environments. For those interested in the solid capabilities of Ethereum, exploring [how its smart contracts work](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity) offers a direct contrast.
 
 Beyond its scripting, Bitcoin’s architectural constraints further limit smart contract execution. The network maintains a strict block size limit, meaning each block can only contain a finite amount of data.
 
@@ -57,11 +57,11 @@ As Bitcoin Takeover points out, OPNET distinguishes itself by not being a rollup
 
 OPNET’s technical implementation leverages Bitcoin’s Native Scripting capabilities and utilizes the Witness Field, a part of Bitcoin transactions that allows for additional data without affecting the core transaction structure. This approach aims for Bitcoin Compliance, ensuring that the smart contract operations are recorded and secured by the Bitcoin network itself, inheriting its unparalleled security model.
 
-By making the Bitcoin network itself the validator of these extended operations, OPNET seeks to enable advanced functionalities for Decentralized Finance (DeFi) and Institutional Use, transforming Bitcoin into a more versatile financial layer. The integration of smart contracts with various blockchain technologies represents a significant step forward, as detailed in [What Are Smart Contracts and How Do They Work](/video/beyond-paper-decoding-smart-contracts-and-their-blockchain-revolution).
+By making the Bitcoin network itself the validator of these extended operations, OPNET seeks to enable advanced functionalities for Decentralized Finance (DeFi) and Institutional Use, transforming Bitcoin into a more versatile financial layer. The integration of smart contracts with various blockchain technologies represents a significant step forward, demonstrating [how smart contracts work](/video/beyond-paper-decoding-smart-contracts-and-their-blockchain-revolution).
 
 However, these innovations face significant challenges, particularly regarding scaling. While OPNET aims to run on Bitcoin's layer one, the fundamental constraints of Bitcoin's block size and 10-minute block time remain. A high fee environment is a persistent concern, especially as transaction volume for complex applications increases.
 
-Bitcoin maximalists also voice critiques, expressing concerns about the potential for "spam" transactions and the introduction of "competing tokens" that might dilute Bitcoin’s original purpose as a pure peer-to-peer electronic cash system. These debates underscore the ongoing tension between preserving Bitcoin's core identity and expanding its functional utility to include advanced applications like those discussed in [Crypto Utility Reshapes Finance with Smart Contracts DApps DeFi](/video/beyond-digital-cash-the-evolving-utility-of-crypto-networks).
+Bitcoin maximalists also voice critiques, expressing concerns about the potential for "spam" transactions and the introduction of "competing tokens" that might dilute Bitcoin’s original purpose as a pure peer-to-peer electronic cash system. These debates underscore the ongoing tension between preserving Bitcoin's core identity and expanding its functional utility to include advanced applications like [smart contracts, DApps, and DeFi](/video/beyond-digital-cash-the-evolving-utility-of-crypto-networks).
 
 ## How Layered Protocols Bring Smart Contracts to Bitcoin
 

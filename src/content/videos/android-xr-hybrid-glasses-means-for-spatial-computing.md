@@ -33,7 +33,7 @@ Extended reality (XR) is rapidly evolving beyond distinct augmented reality (AR)
 
 Android XR describes an operating system tailored for extended reality devices, bridging the gap between fully immersive virtual environments and digitally augmented real-world views. These are not merely VR headsets or AR smart glasses; they represent a new class of device that combines elements of both.
 
-A prime example is the XREAL AURA, which functions as Android XR glasses, specifically designed as a hybrid. This means users can transition between seeing their physical surroundings with digital overlays and entering more enclosed, virtual experiences smoothly. For a deeper understanding of these technologies, consider [What Are the Fundamental Differences Between AR and VR?](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/).
+A prime example is the XREAL AURA, which functions as Android XR glasses, specifically designed as a hybrid. This means users can transition between seeing their physical surroundings with digital overlays and entering more enclosed, virtual experiences smoothly. For a deeper understanding of these technologies, consider the [fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/).
 
 The core functionality of Android XR glasses relies on sophisticated display technology and solid interaction methods. While specific numbers for field of view (FOV) and resolution can vary, these metrics are always critical for user immersion and clarity.
 
@@ -47,7 +47,7 @@ The Android XR ecosystem supports two primary types of applications: Flat Apps a
 
 In contrast, Spatial Apps are built from the ground up for 3D interaction, leveraging the depth and environmental understanding of the XR device. These applications can integrate digital elements directly into the user's physical space, offering more immersive and contextual experiences.
 
-Beyond puck-based input, hand tracking also presents an intuitive way to interact with these virtual elements. This natural form of interaction is vital for reducing friction and accelerating the adoption of immersive technologies, as explored in [How VR Hand Tracking Drives Mainstream VR Adoption](/video/the-unseen-revolution-why-natural-hand-tracking-is-vr-s-missing-link).
+Beyond puck-based input, hand tracking also presents an intuitive way to interact with these virtual elements. This natural form of interaction is vital for reducing friction and accelerating the adoption of immersive technologies, showing how [VR hand tracking drives mainstream adoption](/video/the-unseen-revolution-why-natural-hand-tracking-is-vr-s-missing-link).
 
 ## How Does Android XR Enhance Everyday Computing and Entertainment?
 
@@ -63,7 +63,7 @@ Integration with established platforms and AI services further enhances Android 
 
 As Nathie points out, Gemini can interpret visual information from the glasses' camera, providing contextual assistance or information about the user's environment ("Gemini Can See"). This opens doors for advanced augmented reality applications, from intelligent navigation overlays in Google Maps to real-time information about objects viewed through the lenses.
 
-This integration into the broader Android XR Ecosystem suggests a future where digital assistance is always visually present and contextually aware. For more on real-world AR applications, see [What Are Some Examples of AR in Daily Life?](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030).
+This integration into the broader Android XR Ecosystem suggests a future where digital assistance is always visually present and contextually aware. For more on real-world applications, see [examples of AR in daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030).
 
 The performance of these hybrid devices is a critical factor influencing the user experience. Smooth rendering of virtual content, low latency for interactions, and efficient power management are all essential for sustained usability. As the Android XR ecosystem matures, continuous improvements in hardware and software optimization will be key to opening up the full potential of these devices.
 

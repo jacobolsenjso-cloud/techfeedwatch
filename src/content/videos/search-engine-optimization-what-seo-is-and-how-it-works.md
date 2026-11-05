@@ -50,7 +50,7 @@ Keyword research is "the first critical part of the project where you discover f
 
 Consider Google's perspective: if a user searches for "managed IT services," Google would prioritize a website with "10 mentions of managed IT services" over one with "zero mentions." If a website has zero mentions, Google does not prioritize it, "Because they're not relevant. Because if the user hits that website, they don't see anything that's related to them. What are they going to do? They're gonna bounce."
 
-This outcome is "not good for Google because users would think that Google has sent them to a poor quality website." This active incorporation of keywords and ensuring content relevance directly impacts visibility and [How SEO Optimization Works Today](/video/seo-optimization-explained-how-modern-search-ranking-functions).
+This outcome is "not good for Google because users would think that Google has sent them to a poor quality website." This active incorporation of keywords and ensuring content relevance directly impacts visibility and reflects [how SEO optimization works today](/video/seo-optimization-explained-how-modern-search-ranking-functions).
 
 ## The Misconception and Cost of Neglect
 A common pitfall arises when SEO is treated as an afterthought. Many businesses approach web designers who often "focus on the aesthetics" and elements like user interface (UI) and user experience (UX).

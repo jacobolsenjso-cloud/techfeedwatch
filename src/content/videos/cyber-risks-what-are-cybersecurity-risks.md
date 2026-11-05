@@ -40,7 +40,7 @@ The consequences of these risks materializing are often severe. They can include
 - The costs of incident response and system recovery
 - Substantial regulatory fines following data breaches
 
-Beyond financial penalties, organizations face significant reputational damage, erosion of customer trust, and long-term operational disruption. For instance, the transition away from supported operating systems like Windows 10 creates new exposures, where organizations continuing to use unsupported versions without extended security updates face significantly increased risks, as detailed in [What Windows 10 Extended Support Means for Users](/video/windows-10-extended-support-implications-for-business-security).
+Beyond financial penalties, organizations face significant reputational damage, erosion of customer trust, and long-term operational disruption. For instance, the transition away from supported operating systems like Windows 10 creates new exposures, where organizations continuing to use unsupported versions without [extended security updates](/video/windows-10-extended-support-implications-for-business-security) face significantly increased risks.
 
 Such situations highlight how a failure in basic asset management and lifecycle planning can directly escalate an organization's cyber risk profile. Understanding these interwoven elements allows organizations to move past reactive defense to a more strategic stance, focusing on managing the likelihood and impact of potential incidents.
 
@@ -54,13 +54,13 @@ The true cost of inaction is not just the immediate financial impact of a breach
 
 This reflects a failure to align security investments with business objectives and an insufficient understanding of the organization's unique [attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks). For example, while focusing on perimeter defenses, organizations might overlook internal threats or compromised credentials, which are often exploited in modern attacks.
 
-The rapid integration of AI into business operations introduces new vectors for attack, such as prompt injection, making frameworks like [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems) increasingly relevant. Without a clear understanding of what assets are most critical and what threats are most probable, resources are often misallocated, leaving organizations vulnerable where it matters most.
+The rapid integration of AI into business operations introduces new vectors for attack, such as prompt injection, making frameworks for [securing AI agents with zero trust](/video/zero-trust-for-ai-agents-securing-autonomous-systems) increasingly relevant. Without a clear understanding of what assets are most critical and what threats are most probable, resources are often misallocated, leaving organizations vulnerable where it matters most.
 
 ## Strategic Risk Reduction: Prioritizing People, Process, and Technology
 
 Effective cybersecurity hinges on a strategic approach to risk reduction that integrates people, processes, and technology. Organizations must first identify and classify their critical assets, understanding their value and potential exposure.
 
-This forms the bedrock for assessing vulnerabilities and designing targeted controls. It means moving beyond a "castle-and-moat" mentality to one where every access request is verified, regardless of origin, embodying the principles of [Does Zero Trust Security Model Protect Modern Digital Assets?](/video/zero-trust-the-essential-security-shift-your-business-needs-now).
+This forms the bedrock for assessing vulnerabilities and designing targeted controls. It means moving beyond a "castle-and-moat" mentality to one where every access request is verified, regardless of origin, embodying the principles of a [zero trust security model](/video/zero-trust-the-essential-security-shift-your-business-needs-now).
 
 Training and awareness for employees represent a critical human firewall, transforming potential vulnerabilities into a proactive line of defense against social engineering and phishing attacks. Process-wise, establishing clear incident response plans, conducting regular risk assessments, and adhering to compliance frameworks are fundamental.
 

@@ -37,7 +37,7 @@ A heavy part of that early rhythm involves pull requests (PRs). When teammates s
 
 As an engineer comes back from time off, dozens of PR notifications can queue up. A professional triages these by operational risk. Routine interface adjustments or basic UI updates demand far less mental overhead than complex system design shifts.
 
-Clearing these blockers for teammates keeps the entire team moving forward before individual feature tickets take priority. Those exploring [Reasons Why You Should Pursue Software Engineering](/video/reasons-why-you-should-pursue-software-engineering) often overlook this reality: writing code is a team sport where collaborative verification takes priority over solo production.
+Clearing these blockers for teammates keeps the entire team moving forward before individual feature tickets take priority. Those considering whether to [pursue software engineering](/video/reasons-why-you-should-pursue-software-engineering) often overlook this reality: writing code is a team sport where collaborative verification takes priority over solo production.
 
 Communication also extends into live technical alignment. Engineers do not build complex software in total isolation; they run pair programming sessions to diagnose elusive runtime errors or architect complex modules together.
 
@@ -57,9 +57,9 @@ This creates an operational dilemma across engineering organizations. When devel
 
 As Ruiz observes, "Now, it feels like we're entering this weird loop where AI writes most of our code and we're just reviewers. And if this keeps going, I do wonder if we start losing some of the craft and the critical thinking that comes from solving these problems ourselves."
 
-Evaluating machine-generated output requires immense technical discipline. If engineers accept AI output without strict scrutiny, subtle logical flaws enter production unnoticed. Understanding [What Is the Primary Goal of AI Agents in Software Development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development) helps explain why teams must treat automation as an assistant rather than an autonomous creator.
+Evaluating machine-generated output requires immense technical discipline. If engineers accept AI output without strict scrutiny, subtle logical flaws enter production unnoticed. Understanding the primary goal of [AI agents in software development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development) helps explain why teams must treat automation as an assistant rather than an autonomous creator.
 
-Without strict architectural guardrails, junior developers risk bypassing the vital problem-solving processes that build real engineering judgment. For teams evaluating structured training pathways, whether through traditional degrees or programs where [Coding Bootcamps Offer Accelerated Software Engineering Paths](/video/coding-bootcamps-offer-accelerated-software-engineering-paths), instilling critical evaluation over copy-paste speed remains imperative.
+Without strict architectural guardrails, junior developers risk bypassing the vital problem-solving processes that build real engineering judgment. For teams evaluating structured training pathways, whether through traditional degrees or [accelerated coding bootcamps](/video/coding-bootcamps-offer-accelerated-software-engineering-paths), instilling critical evaluation over copy-paste speed remains imperative.
 
 ## How Do Personal Projects and Continuous Learning Fit Into Engineering?
 

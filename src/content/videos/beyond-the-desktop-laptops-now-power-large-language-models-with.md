@@ -47,7 +47,7 @@ While quantization can introduce a slight degradation in output quality, the mem
 
 The type of memory is also paramount. Traditional system RAM, usually associated with the CPU, is generally insufficient for [LLM inference](/video/makora-s-ai-compiler-breakthrough-hand-tuned-code-faces-automated-gpu/) due to its lower bandwidth compared to GPU VRAM or unified memory. GPUs are designed for parallel processing, making them ideal for LLM computations, and their dedicated high-speed VRAM is where the model's weights must reside for optimal performance.
 
-Devices like the "Asus Flow Z13 (2025 version)" with its substantial "128GB" of unified system RAM highlight the shift towards integrating high-capacity, high-bandwidth memory directly into portable form factors, enabling a new class of local AI processing. For more on the specifics of GPU memory, consider [NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon).
+Devices like the "Asus Flow Z13 (2025 version)" with its substantial "128GB" of unified system RAM highlight the shift towards integrating high-capacity, high-bandwidth memory directly into portable form factors, enabling a new class of local AI processing. For more on the specifics of GPU memory, consider how [memory technology powers NVIDIA AI chips](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon).
 
 ## Why Do Local LLMs Need Such High Memory Capacity?
 
@@ -61,7 +61,7 @@ This illustrates that raw GPU power alone is not enough; sufficient VRAM or unif
 
 This distinction is critical for understanding why different hardware performs so differently with LLMs. The architectural approach taken by manufacturers like "Apple" with their unified memory systems offers a stark contrast to traditional "AMD" or Intel-based systems relying on discrete GPUs with separate VRAM pools.
 
-This unified approach can sometimes allow less raw computational power to achieve better LLM performance due to superior memory bandwidth and integration. The importance of dedicated computational units for AI is explored further in [Why Does AI Development Need GPU Power?](/video/the-2026-ai-student-s-dilemma-can-a-budget-laptop-really-keep-pace).
+This unified approach can sometimes allow less raw computational power to achieve better LLM performance due to superior memory bandwidth and integration. To understand the importance of dedicated computational units, explore [why AI development needs GPU power](/video/the-2026-ai-student-s-dilemma-can-a-budget-laptop-really-keep-pace).
 
 ## Matching hardware memory to your local model needs
 
@@ -81,4 +81,4 @@ If budget is a constraint, look into:
 
 For practical daily use, integrating AI tools like the "PLAUD NotePin" for voice capture might complement an AI workflow, though it does not directly relate to LLM execution.
 
-Ultimately, matching your hardware to the LLM's memory demands is critical for a smooth and productive local AI experience. For general productivity enhancements with AI, you may find [How Much Does AI Really Increase Developer Productivity?](/video/the-quiet-tech-recalibration-why-ai-isn-t-replacing-software) insightful.
+Ultimately, matching your hardware to the LLM's memory demands is critical for a smooth and productive local AI experience. For general productivity enhancements with AI, look into [how AI increases developer productivity](/video/the-quiet-tech-recalibration-why-ai-isn-t-replacing-software).

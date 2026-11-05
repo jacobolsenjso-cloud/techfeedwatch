@@ -41,13 +41,13 @@ To illustrate how smart contracts work, consider a simple vending machine analog
 
 Similarly, a smart contract on Ethereum holds funds or assets and releases them only when all programmed conditions are fulfilled, ensuring transparency and immutability for transactions.
 
-This innovation allowed for the creation of an ecosystem supporting everything from digital collectibles like NFTs to complex financial instruments in decentralized finance (DeFi). To understand more about [How Do Smart Contracts Work on Ethereum?](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
+This innovation allowed for the creation of an ecosystem supporting everything from digital collectibles like NFTs to complex financial instruments in decentralized finance (DeFi). To understand more, explore [how smart contracts work on Ethereum](/video/unlocking-ethereum-s-power-your-first-smart-contract-with-solidity).
 
 ## Major upgrades that cut energy use and fees
 
 Ethereum has undergone significant transformations to address its initial limitations, primarily its energy consumption and high transaction costs. The most impactful of these was The Merge, a monumental upgrade that transitioned the network from a Proof-of-Work (PoW) consensus mechanism to a Proof-of-Stake (PoS) system.
 
-This shift moved away from energy-intensive mining, where powerful computers competed to solve complex puzzles, to a system where validators stake their Ether (ETH) to secure the network and validate transactions. This change dramatically reduced Ethereum's energy footprint, aligning it with more sustainable operational models. For a deeper look, consider reading [How Does Ethereum Proof of Stake Work](/video/ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026).
+This shift moved away from energy-intensive mining, where powerful computers competed to solve complex puzzles, to a system where validators stake their Ether (ETH) to secure the network and validate transactions. This change dramatically reduced Ethereum's energy footprint, aligning it with more sustainable operational models. For a deeper look, consider exploring [how Ethereum proof of stake works](/video/ethereum-s-evolving-architecture-powering-web3-s-future-beyond-2026).
 
 Beyond The Merge, Layer 2 (L2) scaling solutions emerged as another critical innovation to improve network efficiency and reduce fees. These are separate blockchains built on top of the Ethereum mainnet, designed to handle a large volume of transactions off-chain before settling them efficiently back on the main network.
 
@@ -73,7 +73,7 @@ Smart contracts facilitate the fractional ownership, transfer, and management of
 
 These ripple effects consolidate Ethereum's position as the foundational layer for a truly decentralized digital economy. The innovations in scaling and consensus have not only improved existing applications but also created new possibilities for how individuals and organizations interact with digital assets and services.
 
-For a broader overview of the platform, read [Ethereum Blockchain: What Is It and What Is It Used For?](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
+For a broader overview of the platform, read about [what the Ethereum blockchain is](/video/ethereum-s-enduring-vision-more-than-just-digital-money) and what it is used for.
 
 ## Future network upgrades designed to scale Ethereum
 

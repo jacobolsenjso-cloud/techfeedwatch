@@ -31,7 +31,7 @@ The core difference between programming languages lies in how they execute instr
 
 ## Execution Models: How Compiled, Interpreted, and Bytecode Languages Differ
 
-Execution models determine how instructions written by humans become operational tasks on physical computer chips. Understanding these layers clarifies why system response times differ fundamentally across tech architectures, much like evaluating hardware mechanics in [Difference Between GPU Temp and Hotspot: Lifespan Impact](/video/difference-between-gpu-temp-and-hotspot-explained).
+Execution models determine how instructions written by humans become operational tasks on physical computer chips. Understanding these layers clarifies why system response times differ fundamentally across tech architectures, much like evaluating [GPU temp versus hotspot](/video/difference-between-gpu-temp-and-hotspot-explained) readings and their impact on lifespan.
 
 Compiled languages, such as C and Rust, translate source code directly into machine-readable binary before deployment. The operating system runs this native machine code directly on the processor with zero translation overhead during runtime. In contrast, purely interpreted languages execute source commands line by line through an external engine at runtime, introducing CPU latency while allowing instant script updates.
 
@@ -57,7 +57,7 @@ Programming paradigms govern the mental model developers use to structure system
 2. Object-oriented programming packages operations and data into reusable objects and classes to model complex software interactions.
 3. Functional programming models operations strictly around immutable states and pure mathematical transformations, avoiding side effects entirely.
 
-Just as analyzing search indexing shifts when contrasting [What Is the Difference Between GEO and SEO?](/video/beyond-seo-why-generative-engine-optimization-geo-is-your-2026-must) and [Is There a Big Difference Between AEO and SEO?](/video/beyond-seo-build-your-own-aeo-service-and-dominate-the-ai-powered), selecting a programming paradigm alters how systems evaluate, process, and return data.
+Just as analyzing search indexing shifts when comparing [GEO against SEO](/video/beyond-seo-why-generative-engine-optimization-geo-is-your-2026-must) or examining the difference between AEO and SEO, selecting a programming paradigm alters how systems evaluate, process, and return data.
 
 ## Memory Management and the Modern Push for Memory Safety
 

@@ -43,7 +43,7 @@ Devices such as the Oculus Quest or experiences like The Void exemplify VR’s s
 
 Augmented Reality, or AR, takes a different approach. It keeps us firmly rooted in our physical world while overlaying digital content. AR devices come in many forms, from notifications projected onto a car's windshield to digital information displayed through specialized eyeglasses.
 
-You have likely encountered AR through popular apps like Pokemon Go, which overlays digital creatures onto real-world scenes. However, traditional AR simply projects content; it does not inherently understand or interact with the physical surroundings. To learn more about this, see [What Is AR, How It Works, and Its Broad Impact](/video/augmented-reality-demystified-how-digital-overlays-are/).
+You have likely encountered AR through popular apps like Pokemon Go, which overlays digital creatures onto real-world scenes. However, traditional AR simply projects content; it does not inherently understand or interact with the physical surroundings. To learn more about this, see [how augmented reality works](/video/augmented-reality-demystified-how-digital-overlays-are/) and its broad impact.
 
 Spatial computing raises this concept significantly. It augments reality but goes a substantial step further by understanding the physical space and allowing projected digital content to interact with its surroundings.
 

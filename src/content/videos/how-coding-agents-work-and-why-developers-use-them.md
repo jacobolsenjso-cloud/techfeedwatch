@@ -40,7 +40,7 @@ It:
 
 Systems such as Claude Code and Codex interface directly with the operating system terminal, allowing them to draft changes across multiple files, run build scripts, and verify whether the code compiles properly.
 
-This iterative feedback loop transforms basic language generation into reliable system modification. As [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) illustrates, providing language models with execution runtimes shifts artificial intelligence from a passive conversationalist into an active collaborator.
+This iterative feedback loop transforms basic language generation into reliable system modification. Providing language models with execution runtimes shifts artificial intelligence from a passive conversationalist into an active collaborator, demonstrating how [coding harnesses transform LLMs](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) into agentic systems.
 
 The mechanical difference between standard language models and agentic workflows becomes obvious during complex software modifications. A standard chat interface requires the programmer to copy snippets back and forth, interpret compiler warnings, and manually manage dependencies. An agent automates this loop.
 
@@ -64,7 +64,7 @@ This dynamic drastically alters the economics of maintaining forks. Historically
 
 Graphic applications like MyPaint avoid adding copy-and-paste selection tools by design, while utilities like OBS, [KeePass](https://keepass.info/), and SpeedCrunch adhere to tight architectural roadmaps. Forking these repositories meant manually syncing upstream changes, reviewing patch rejections, and repairing broken interfaces. Coding agents make continuous local maintenance viable, lowering the operational tax of running bespoke software forks indefinitely.
 
-Understanding [how AI coding agents change vibe coding to spec-driven dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) requires recognizing where people misunderstand the technology. Agents do not replace foundational computational thinking. If a user cannot clearly define algorithmic rules—such as specifying the exact threshold for sound detection—the agent produces fragile, buggy output.
+Understanding how AI coding agents change [vibe coding to spec-driven development](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) requires recognizing where people misunderstand the technology. Agents do not replace foundational computational thinking. If a user cannot clearly define algorithmic rules—such as specifying the exact threshold for sound detection—the agent produces fragile, buggy output.
 
 The model handles syntactic execution, but the human remains responsible for architectural validation. A modest subscription to an agentic coding service removes the syntax barrier, letting developers modify software without mastering every specialized dialect.
 

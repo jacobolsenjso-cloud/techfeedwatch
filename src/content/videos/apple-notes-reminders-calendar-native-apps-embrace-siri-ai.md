@@ -45,7 +45,7 @@ This inherent value proposition challenges the perceived necessity of external s
 
 The inherent "cost" of these apps is zero in monetary terms, as they are bundled with every Apple device. However, the opportunity cost for users often involves the perceived compromise on advanced features found in specialized apps. Yet, this perception often misses the growing capabilities and the substantial benefits of a unified system.
 
-When all your core productivity tools speak the same language, are updated simultaneously with the OS, and respect the same privacy framework, the overall efficiency gains can outweigh the niche features of disparate applications. This shift towards leveraging integrated native solutions aligns with broader trends in [Apple Builds Its AI Strategy Around On-Device Privacy](/video/apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win), emphasizing cohesive device experiences.
+When all your core productivity tools speak the same language, are updated simultaneously with the OS, and respect the same privacy framework, the overall efficiency gains can outweigh the niche features of disparate applications. This shift towards leveraging integrated native solutions aligns with broader trends in [Apple's on-device AI strategy](/video/apple-s-ai-paradox-why-its-loss-might-be-its-greatest-win), emphasizing cohesive device experiences.
 
 ## Siri AI and Native App Synergy
 
@@ -63,7 +63,7 @@ This demonstrates that native apps are not closed systems but rather foundations
 
 While Parchment is a third-party app, its utility is significantly enhanced by its ability to interact with Apple's native ecosystem. An "Export Parchment Daily Note" shortcut, for example, allows users to smoothly move structured daily information into Apple's native Notes app, illustrating how external tools can leverage the strength of the built-in applications.
 
-This collaboration underscores a powerful trend: third-party innovation is increasingly focused on enhancing the native experience, not merely replacing it. Such approaches reflect principles seen in [How AI-Native Startups Use AI Core OS to Reshape Business](/video/ai-native-companies-how-startups-are-redefining-business-operations), where integration and leveraging core platforms are key.
+This collaboration underscores a powerful trend: third-party innovation is increasingly focused on enhancing the native experience, not merely replacing it. Such approaches reflect principles seen in how [AI-native startups reshape business](/video/ai-native-companies-how-startups-are-redefining-business-operations), where integration and leveraging core platforms are key.
 
 ## The Overlooked Value of System Cohesion
 

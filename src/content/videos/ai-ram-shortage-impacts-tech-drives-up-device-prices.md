@@ -37,11 +37,11 @@ Standard computing depends on DDR (Double Data Rate) memory, an architecture bui
 
 Large language models and neural networks operate under entirely different constraints. Training and running frontier models requires feeding billions of mathematical parameters through compute processors without encountering bandwidth bottlenecks.
 
-Standard DDR channels cannot sustain the thousands of gigabytes per second needed to keep modern AI accelerators fully saturated. To understand the underlying computing shifts driving this hardware, explore [Physical AI Infrastructure Powers Global AI Services](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction).
+Standard DDR channels cannot sustain the thousands of gigabytes per second needed to keep modern AI accelerators fully saturated. To understand the underlying computing shifts driving this hardware, explore how [physical AI infrastructure](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction) powers global AI services.
 
 To bypass that bottleneck, hardware designers rely on HBM. High Bandwidth Memory stacks multiple DRAM dies vertically directly beside the processor using an ultra-wide bus.
 
-This tight physical proximity shortens connection traces and maximizes throughput, allowing AI accelerators to execute tensor calculations without stalling. Readers comparing specialized silicon can review [How Are AI Chips Different From Just GPUs?](/video/modern-ai-chips-differ-from-gpus-for-specific-tasks) for deeper architecture context.
+This tight physical proximity shortens connection traces and maximizes throughput, allowing AI accelerators to execute tensor calculations without stalling. Readers comparing specialized silicon can review how [AI chips differ from GPUs](/video/modern-ai-chips-differ-from-gpus-for-specific-tasks) for deeper architecture context.
 
 The physical attributes distinguishing these memory classes include:
 
@@ -59,7 +59,7 @@ HBM designs consume disproportionate amounts of physical wafer area compared to 
 
 Every single wafer turned into stacked AI memory directly reduces the raw output of mainstream memory modules.
 
-According to TrendForce, [Samsung Electronics](https://www.samsung.com/dk/) Executive Vice President Kim Taewoo stated in September 2026 that HBM is projected to consume nearly 30 percent of the memory industry's total DRAM wafer capacity in 2027, up from roughly 20 percent in 2026. The shift exposes the fundamental physical reason [NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon) remains a central industry narrative.
+According to TrendForce, [Samsung Electronics](https://www.samsung.com/dk/) Executive Vice President Kim Taewoo stated in September 2026 that HBM is projected to consume nearly 30 percent of the memory industry's total DRAM wafer capacity in 2027, up from roughly 20 percent in 2026. The shift exposes the fundamental physical reason why [memory technology in NVIDIA AI chips](/video/nvidia-ai-chips-why-memory-technology-is-their-secret-weapon) remains a central industry narrative.
 
 The direct operational trade-offs required by HBM manufacturing include:
 

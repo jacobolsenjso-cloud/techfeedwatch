@@ -66,7 +66,7 @@ Decision paralysis, where too many options or an open-ended question causes the 
 
 An individual can ask Claude to draft an email, then refine it, asking the AI if the tone is appropriate for the context. This process quickly transforms a debilitating task into a manageable 30-second interaction. Similarly, AI can capture sudden bursts of clarity that often occur at inconvenient times, like a 2 AM brain dump.
 
-For years, valuable insights gained during these hours might evaporate by morning. Now, an AI setup can be instructed to simply receive, organize, and hold these thoughts without judgment, providing a reliable repository for later processing. This capability is akin to using [AI Automation in Notion: Agentic AI Manages and Executes Tasks](/video/ai-automation-in-notion-agentic-ai-transforms-workspaces) for a personalized thought organizer.
+For years, valuable insights gained during these hours might evaporate by morning. Now, an AI setup can be instructed to simply receive, organize, and hold these thoughts without judgment, providing a reliable repository for later processing. This capability is akin to using [AI automation in Notion](/video/ai-automation-in-notion-agentic-ai-transforms-workspaces) for a personalized thought organizer.
 
 ## How AI reduces friction without curing ADHD
 
@@ -80,4 +80,4 @@ The impact of AI is not about cure but about friction reduction, making daily li
 
 As Aaron Newcomer points out, his experience deploying AI systems for real companies, ranging from 10-person DTC startups to major international fashion brands, combined with four years of figuring out what works for his own neurodivergent brain, informs this perspective. This practical knowledge underscores how AI is not just a theoretical aid but a deployed, functional tool for enhancing productivity and reducing stress.
 
-The potential for AI to reshape operational efficiency is also explored in pieces like [How AI-Native Startups Use AI Core OS to Reshape Business](/video/ai-native-companies-how-startups-are-redefining-business-operations). While ongoing research continues to explore the full scope of AI's role in executive function support, its current ability to provide personalized, immediate assistance represents a significant advancement for individuals handling the complexities of ADHD.
+The potential for AI to reshape operational efficiency is also explored in [how AI-native startups reshape business](/video/ai-native-companies-how-startups-are-redefining-business-operations). While ongoing research continues to explore the full scope of AI's role in executive function support, its current ability to provide personalized, immediate assistance represents a significant advancement for individuals handling the complexities of ADHD.

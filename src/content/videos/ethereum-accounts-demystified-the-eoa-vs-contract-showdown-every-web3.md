@@ -76,11 +76,11 @@ Consider an instance where an EOA owner decides to swap tokens on a decentralize
 
 The smart contract, acting as a Contract Account, processes this request. It might then interact with another liquidity pool contract (another Contract Account) to facilitate the swap, deducting the appropriate gas fees, and finally sending the newly acquired tokens back to the user's EOA.
 
-All these steps are executed by the smart contract's pre-written code, ensuring trustless and automated operations. For a deeper dive into the underlying architecture, explore [How Ethereum Smart Contracts Run on the EVM](/video/the-world-computer-vision-deconstructing-ethereum-s-smart-contract).
+All these steps are executed by the smart contract's pre-written code, ensuring trustless and automated operations. For a deeper dive into the underlying architecture, explore [how Ethereum smart contracts run](/video/the-world-computer-vision-deconstructing-ethereum-s-smart-contract) on the EVM.
 
 This cooperative model is what enables the rich functionality of decentralized applications. EOAs provide the human interface and initial impetus, while Contract Accounts provide the automation, logic, and state management that defines the application itself.
 
-The security and immutability of these interactions are guaranteed by the underlying blockchain principles. For a more comprehensive overview of Ethereum's foundational purpose, see [Ethereum Blockchain: What Is It and What Is It Used For?](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
+The security and immutability of these interactions are guaranteed by the underlying blockchain principles. For a more comprehensive overview of Ethereum's foundational purpose, explore [what Ethereum is used for](/video/ethereum-s-enduring-vision-more-than-just-digital-money).
 
 ## Practical Tips for Handling EOAs and Smart Contracts
 
@@ -96,7 +96,7 @@ For aspiring developers, the focus shifts to creating and deploying smart contra
 
 Its behavior is entirely determined by its code. Therefore, rigorous testing and auditing are indispensable to ensure the contract functions as intended and contains no vulnerabilities.
 
-Tools like Remix Ethereum IDE can simplify this process for developers, as detailed in [Remix Ethereum IDE Simplifies Smart Contract Coding](/video/beyond-the-hello-world-the-realities-of-coding-ethereum-smart). Crafting secure and efficient smart contracts requires a deep understanding of Solidity, the primary language for Ethereum contracts, and the Ethereum Virtual Machine (EVM) execution environment.
+Tools like Remix Ethereum IDE can [simplify smart contract coding](/video/beyond-the-hello-world-the-realities-of-coding-ethereum-smart) for developers. Crafting secure and efficient smart contracts requires a deep understanding of Solidity, the primary language for Ethereum contracts, and the Ethereum Virtual Machine (EVM) execution environment.
 
 In summary, whether you are a user holding cryptocurrency or an innovator building decentralized applications for Web3, a clear grasp of EOA and Contract Accounts is essential. EOAs provide individual agency and control through private keys, initiating all actions.
 

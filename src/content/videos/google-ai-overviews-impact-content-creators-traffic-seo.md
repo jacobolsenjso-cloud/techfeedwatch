@@ -77,4 +77,4 @@ The creator community is also actively pressuring for specific user experience c
 - A commitment to not rewrite directions or core information
 - Clear, unambiguous attribution for all referenced material
 
-Understanding [How to Optimize Content for Google AI Overview](/video/google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival) remains a key part of these discussions. The ongoing tension between AI search platforms aiming to keep users on their pages and content publishers needing to draw traffic to their sites will continue to shape the future of digital content and its discoverability.
+Understanding how to [optimize content for Google AI Overviews](/video/google-s-ai-overviews-why-your-ai-hacks-are-dead-on-arrival) remains a key part of these discussions. The ongoing tension between AI search platforms aiming to keep users on their pages and content publishers needing to draw traffic to their sites will continue to shape the future of digital content and its discoverability.

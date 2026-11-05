@@ -45,7 +45,7 @@ As an oft-cited physicist in a Hacker News exchange pointed out, technically spe
 
 When engineers link multiple qubits together, the utility scales exponentially via entanglement. Entangled qubits share an interconnected identity where the mathematical state of one cannot be described independently of the rest, regardless of physical separation.
 
-While classical processors evaluate permutations one by one through brute-force clock cycles, an entangled quantum system addresses the problem holistically. This distinction defines [Quantum Computing: Why It's Faster for Complex Problems](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer), shifting the paradigm from raw processor clock speeds to exponential solution modeling.
+While classical processors evaluate permutations one by one through brute-force clock cycles, an entangled quantum system addresses the problem holistically. This distinction explains [why quantum computing is faster](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer) for complex problems, shifting the paradigm from raw processor clock speeds to exponential solution modeling.
 
 This capability targets specialized calculations that classical machines could never complete within a human lifetime. Qubits excel at tasks such as:
 
@@ -57,7 +57,7 @@ Classical architectures simulate molecules by approximating electron orbitals th
 
 Yet building software around this behavior requires respecting physical boundaries. As the pioneering physicist Asher Peres bluntly stated, quantum phenomena do not occur in a Hilbert space; they occur in a laboratory.
 
-That distinction separates chalk-talk theory from the punishing thermal reality of modern computing racks. For teams evaluating enterprise value, [What Is Quantum Computing and Why Is It Important](/video/what-is-quantum-computing-and-why-is-it-important) depends entirely on bridging mathematical elegance with viable laboratory hardware.
+That distinction separates chalk-talk theory from the punishing thermal reality of modern computing racks. For teams evaluating enterprise value, understanding [what makes quantum computing important](/video/what-is-quantum-computing-and-why-is-it-important) depends entirely on bridging mathematical elegance with viable laboratory hardware.
 
 ## The Hardware Friction Behind Quantum Scaling
 
@@ -81,7 +81,7 @@ Their findings highlight why hardware scaling remains fraught. The researchers r
 
 The study tracked erratic fluctuations in this metric throughout the 65-hour observation window, identifying near-resonant defects known as two-level systems within the chip materials. These microscopic material flaws switch back and forth spontaneously, generating low-frequency noise that pulls the transmon out of resonance and imposes a strict 0.8-millisecond limit on pure dephasing.
 
-Because these material defects fluctuate unpredictably, systems require near-continuous recalibration just to execute basic gate sequences. You can't just brute-force a quantum computer by cramming more qubits onto a chip without conquering this defect density. Understanding the mechanical friction documented in [The Engineering Roadblocks to Scalable Qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) explains why raw qubit counts tell only a fraction of the commercial story.
+Because these material defects fluctuate unpredictably, systems require near-continuous recalibration just to execute basic gate sequences. You can't just brute-force a quantum computer by cramming more qubits onto a chip without conquering this defect density. Understanding the mechanical friction and [roadblocks to scalable qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) explains why raw qubit counts tell only a fraction of the commercial story.
 
 ## Why Quantum Computing Needs Material Science Breakthroughs
 

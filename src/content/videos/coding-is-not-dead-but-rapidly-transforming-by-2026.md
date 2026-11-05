@@ -60,11 +60,11 @@ The impact of AI echoes across the entire software development industry, changin
 
 Developers must now master prompt engineering, effectively communicating their intent to AI tools to achieve desired outcomes. Critical evaluation skills are paramount, as accepting AI output without scrutiny can introduce subtle bugs or architectural debt.
 
-The demand for higher-level system design and architectural expertise increases, as humans must define the overall structure and ensure the various AI-generated components fit together cohesively. For example, understanding how [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) becomes critical for leveraging AI beyond simple code generation.
+The demand for higher-level system design and architectural expertise increases, as humans must define the overall structure and ensure the various AI-generated components fit together cohesively. For example, understanding how [coding harnesses transform LLMs](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) into agentic systems becomes critical for leveraging AI beyond simple code generation.
 
 The rise of AI coding agents shifts the focus from "vibe coding," or intuitive, unstructured development, towards more structured, spec-driven approaches. Developers are increasingly pushed to define clear requirements and specifications for AI to act upon, fundamentally changing the development workflow.
 
-This is highlighted in discussions around [How AI Coding Agents Change Vibe Coding to Spec-Driven Dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured). The developer community, including those learning web development or programming for beginners, must adapt to these new methodologies. Skills like collaboration, ethical considerations in AI usage, and understanding the security implications of AI-generated code are also becoming indispensable.
+This is highlighted in discussions around how [AI coding agents change vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) into spec-driven development. The developer community, including those learning web development or programming for beginners, must adapt to these new methodologies. Skills like collaboration, ethical considerations in AI usage, and understanding the security implications of AI-generated code are also becoming indispensable.
 
 ## Preparing for a future of human and AI collaboration
 
@@ -74,4 +74,4 @@ The signals to track include the increasing sophistication of AI debugging tools
 
 Learning to effectively manage and integrate tools like React.js, Node.js, or Django with AI assistants will be critical. The industry will continue to value individuals who can bridge the gap between abstract problem statements and functional software solutions, leveraging AI as a force multiplier.
 
-This requires a strong foundation in programming principles alongside continuous learning about emerging AI capabilities and best practices, aligning with insights on [Are AI Coding Skills Transforming Software Development?](/video/how-ai-is-reshaping-developer-productivity-and-the-future-of-code). Coding, far from being dead, is experiencing a profound rebirth, demanding a more cerebral and strategic approach from its practitioners.
+This requires a strong foundation in programming principles alongside continuous learning about emerging AI capabilities and best practices, aligning with insights on how [AI coding skills transform](/video/how-ai-is-reshaping-developer-productivity-and-the-future-of-code) software development. Coding, far from being dead, is experiencing a profound rebirth, demanding a more cerebral and strategic approach from its practitioners.

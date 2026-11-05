@@ -40,7 +40,7 @@ However, these claims often mask fundamental challenges. The most well-understoo
 
 While demonstrations have reached roughly 100 qubits with high precision, scaling beyond approximately 1,000 qubits introduces a critical problem: the more qubits manipulated, the more heat generated, overwhelming current cooling systems. This suggests that mass-producing functional, large-scale quantum computers capable of solving complex problems remains an unsolved engineering feat, as Sabine Hossenfelder points out, cautioning that many announcements are akin to claiming "we can mass-produce spaceships. It's just that they don't fly."
 
-Attempts, like IBM's announcement a few years back to build the world's largest super fridge, have yet to materialize into public breakthroughs. For deeper insights into these distinctions, consider exploring [How Is Quantum Computing Different From Classical Computing?](/video/how-is-quantum-computing-different-from-classical-computing).
+Attempts, like IBM's announcement a few years back to build the world's largest super fridge, have yet to materialize into public breakthroughs. For deeper insights into these distinctions, consider exploring [how quantum and classical computing differ](/video/how-is-quantum-computing-different-from-classical-computing).
 
 ## The State of Quantum Computing Investment and Realities
 

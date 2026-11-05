@@ -67,11 +67,11 @@ This infrastructure focus is evident in international markets as well. South Kor
 
 Similarly, South Korean companies POSCO International and LG CNS are testing tokenized trade receivables on the Injective blockchain. These examples illustrate a critical distinction: institutions are leveraging the *technology* that originated in decentralized crypto, but often integrating it into their own centralized "plumbing" rather than open networks.
 
-This means customers do not need to own crypto, manage wallets, or understand blockchain to benefit from these advancements. This movement towards tokenized assets, or "real-world assets" (RWA), is driving a fundamental shift in how traditional finance operates [Institutional Tokenized Assets Drive 24/7 Trading](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift).
+This means customers do not need to own crypto, manage wallets, or understand blockchain to benefit from these advancements. This movement towards tokenized assets, or "real-world assets" (RWA), is [driving a fundamental shift](/video/institutional-crypto-adoption-tokenized-assets-drive-tradfi-shift) in how traditional finance operates.
 
 The rise of prediction markets further exemplifies this institutional embrace. Companies like Robinhood are actively pursuing deals with various prediction market providers, including Forecast X, Kalshi, and potentially crypto.com, to offer these services on their platforms. This approach demonstrates a willingness to host and monetize diverse digital offerings, prioritizing liquidity and user engagement over developing proprietary solutions.
 
-Robinhood's strategy highlights how established platforms are integrating new crypto-adjacent services to expand their financial offerings, reinforcing the idea that institutions are now willing to participate in various facets of the digital asset ecosystem. This willingness to embrace new functionalities from the crypto world underscores the long-term bet many institutions are placing on blockchain technology [Robinhood Crypto and Institutions Bet Long-Term on Blockchain](/video/robinhood-crypto-bullishness-why-institutions-bet-long-term).
+Robinhood's strategy highlights how established platforms are integrating new crypto-adjacent services to expand their financial offerings, reinforcing the idea that institutions are now willing to participate in various facets of the digital asset ecosystem. This willingness to embrace new functionalities from the crypto world underscores the [long-term bet many institutions](/video/robinhood-crypto-bullishness-why-institutions-bet-long-term) are placing on blockchain technology.
 
 ## What To Watch Next
 

@@ -47,7 +47,7 @@ If the first concept generation misses your target, you modify the prompt or swi
 
 The software builds out the background elements in the same manner. In the cartographer example, the software creates the candlelit workspace, luminous charts, and mythical city view through the window.
 
-Establishing these static foundations before initiating motion prevents prompt drift. Visual creators studying how [AI Video Generators Harness Text to Create Cinematic Video](/video/ai-video-generators-transforming-content-creation-with-text-to-video) know that video generators require rigid visual anchors to maintain continuity across cuts.
+Establishing these static foundations before initiating motion prevents prompt drift. Visual creators studying how [AI video generators harness text](/video/ai-video-generators-transforming-content-creation-with-text-to-video) to create cinematic video know that these tools require rigid visual anchors to maintain continuity across cuts.
 
 ## Why Does AI Video Fail Across Multiple Scenes?
 
@@ -65,7 +65,7 @@ Managing resource consumption is part of the process. Users can opt for Seedance
 
 Iterating on imperfect outputs does not require starting over. Whenever an output strays from your vision, hitting Tab on that canvas lets you state precise corrections, such as having the character advance toward the structures.
 
-The system modifies the shot while honoring the locked references. As Ninja Tech notes, the creator's identity is unimportant compared to understanding the technique used to produce it. Structuring iterative prompts across scenes mirrors the lessons found where [Prompt Chaining Shows the Best Way to Create AI Videos](/video/prompt-chaining-shows-the-best-way-to-create-ai-videos).
+The system modifies the shot while honoring the locked references. As Ninja Tech notes, the creator's identity is unimportant compared to understanding the technique used to produce it. Structuring iterative prompts across scenes mirrors the best practices for using [prompt chaining to create AI videos](/video/prompt-chaining-shows-the-best-way-to-create-ai-videos).
 
 ## How Do You Edit and Refine Generative Shots?
 
@@ -73,7 +73,7 @@ Generative fragments do not make a coherent narrative until assembled. Once you 
 
 On the unified canvas, you merge all generated clips with a single action. Within minutes, the system arranges the video clips in sequence, incorporates mood-setting music with one click, and refines transition timing.
 
-The system handles the tedious cut adjustments that often bog down creators testing the [Best Text to Video AI Tools for Free Clips](/video/best-text-to-video-ai-tools-for-free-clips). Once the sequence matches the storyboard plan, you export the completed piece directly for publishing.
+The system handles the tedious cut adjustments that often bog down creators testing [text-to-video AI tools](/video/best-text-to-video-ai-tools-for-free-clips) for free clips. Once the sequence matches the storyboard plan, you export the completed piece directly for publishing.
 
 ## Step-by-step CapCut text to video production workflow
 

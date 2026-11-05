@@ -61,7 +61,7 @@ In Africa, notable examples are Piggyvest, Curry Buys A Lot, and Carbon. It is i
 
 To participate, users typically link their credit or debit cards to the app, which then automatically tracks purchases at affiliated retailers and credits the user's account with cashback or rewards. Some apps further incentivize usage through referral bonuses or task completion.
 
-Examples include Rakuten, Dosh, Swagbucks, Honey, Ibotta, and Drop. African equivalents encompass Jumia Pay, Pompei, Work World, and Conga Pay. This model highlights how [Fintech Business Models Define Value and Revenue Strategies](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s) can create value by bridging consumers and merchants.
+Examples include Rakuten, Dosh, Swagbucks, Honey, Ibotta, and Drop. African equivalents encompass Jumia Pay, Pompei, Work World, and Conga Pay. This model highlights how [fintech business models](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s) can create value by bridging consumers and merchants.
 
 **Peer-to-peer (P2P) lending apps** facilitate direct lending between individuals or businesses, bypassing traditional banks to earn interest income. These platforms connect borrowers with lenders through a digital interface. Borrowers apply for loans and undergo creditworthiness assessments.
 

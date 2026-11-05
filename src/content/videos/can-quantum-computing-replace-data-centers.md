@@ -31,7 +31,7 @@ faqs:
 
 The question of whether quantum systems can replace enterprise server farms stems from a fundamental misunderstanding of compute workloads. Classical facilities run on bits that represent a 0 or a 1. Every web page, transaction, and standard machine learning algorithm executes across vast sequences of binary operations.
 
-Quantum machines operate on qubits. Through superposition, a qubit exists simultaneously as a 0 and a 1 until measured, while entanglement links qubit states across physical distances. This distinction defines [how is quantum computing different from classical computing](/video/how-is-quantum-computing-different-from-classical-computing) at the hardware level.
+Quantum machines operate on qubits. Through superposition, a qubit exists simultaneously as a 0 and a 1 until measured, while entanglement links qubit states across physical distances. This distinction defines [how quantum computing differs](/video/how-is-quantum-computing-different-from-classical-computing) from classical computing at the hardware level.
 
 This architectural contrast means quantum processors do not execute standard operating systems or store file systems efficiently. They excel at evaluating massive combinatorial possibilities simultaneously. To understand the difference, consider Frontier, the world's fastest classical supercomputer located in Tennessee.
 
@@ -57,7 +57,7 @@ Hardware vendors are pursuing distinct engineering approaches to overcome these 
 
 Connecting these sensitive quantum processors to existing GPU infrastructure is essential for real-world integration. In October 2025, NVIDIA announced NVQLink, an interconnect system linking classical GPUs to quantum hardware with round-trip latencies below 4 microseconds. In a demonstration pairing an NVIDIA Grace Hopper Superchip with Quantinuum's Helios processor, NVQLink executed real-time error correction 32 times faster than required thresholds.
 
-This bridge proves that future server halls will not choose between GPUs and qubits; they will link them across high-speed system buses. Analyzing a [qubit in quantum computing explained for modern scale](/video/qubit-in-quantum-computing-explained-for-modern-scale) reveals why hybrid integration remains the only viable deployment route.
+This bridge proves that future server halls will not choose between GPUs and qubits; they will link them across high-speed system buses. Analyzing [qubits in modern quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale) reveals why hybrid integration remains the only viable deployment route.
 
 ## Industries That Benefit from Quantum Computing
 

@@ -49,7 +49,7 @@ A key point to understand is that shares purchased through secondary markets are
 
 Investors put money into the SPV, and a liquidity event typically occurs when the company goes public, allowing the SPV to sell its shares and distribute proceeds. While some SPVs might provide actual shares, this is generally not the case.
 
-A significant consideration for SPVs is the heavy fees often involved, which can eat into potential returns. [How Does Activist Investing Work to Influence Companies?](/video/activist-investing-how-shareholders-drive-corporate-change) and [Building Financial Freedom with Strategic Investment Allocation](/video/financial-freedom-investing-building-wealth-intentionally) provide further context on fund structures and investment strategies.
+A significant consideration for SPVs is the heavy fees often involved, which can eat into potential returns. Understanding activist investing and [strategic investment allocation](/video/financial-freedom-investing-building-wealth-intentionally) provides further context on fund structures and investment strategies.
 
 **ETFs and Mutual Funds** Finally, investors can gain indirect exposure through certain ETFs (Exchange-Traded Funds) and mutual funds. These options do not offer direct ownership of pre-IPO shares but provide a way to invest in a portfolio that includes private allocations to companies like SpaceX.
 

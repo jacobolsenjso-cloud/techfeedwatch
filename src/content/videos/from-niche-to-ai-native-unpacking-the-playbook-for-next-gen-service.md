@@ -60,7 +60,7 @@ Founding teams for these companies often share three core attributes:
 
 A great example of this integrated approach is the general legal team, an AI native law firm that YC recently backed. Its founders possess a unique mix of actual law firm experience at Cooley and Fenwick, alongside years of technical leadership at CaseText.
 
-They have proactively integrated shift work into their client service model to reduce cycle times and attract top legal talent, demonstrating how operational innovation can enhance service delivery. For deeper insights into how such firms leverage technology, exploring resources like [How AI-Native Startups Use AI Core OS to Reshape Business](/video/ai-native-companies-how-startups-are-redefining-business-operations) can be beneficial.
+They have proactively integrated shift work into their client service model to reduce cycle times and attract top legal talent, demonstrating how operational innovation can enhance service delivery. For deeper insights into how such firms leverage technology, learn how [AI-native startups reshape business](/video/ai-native-companies-how-startups-are-redefining-business-operations) with an AI core OS.
 
 ## How Do AI Native Services Companies Price and Profit?
 

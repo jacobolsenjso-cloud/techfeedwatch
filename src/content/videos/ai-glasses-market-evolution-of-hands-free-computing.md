@@ -37,7 +37,7 @@ The form factors vary widely, from lightweight audio frames designed for discree
 
 This range indicates a deliberate effort by manufacturers to cater to different user needs, balancing aesthetics, functionality, and immersive experience. Companies like Meta with their Ray-Ban Gen 2 series, XREAL with the One Pro, Brilliant Labs with the Halo, and VITURE with the Luma Ultra, represent this evolving market where design and intelligence are becoming equally important.
 
-These developments allow for a deeper integration of digital tools into daily life, offering immediate access to information and augmented reality overlays that enhance productivity and engagement without requiring users to hold a phone. For insights into how such integrated AI can reshape daily tasks, explore [How Gemini AI Tools Enhance Google Drive Search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
+These developments allow for a deeper integration of digital tools into daily life, offering immediate access to information and augmented reality overlays that enhance productivity and engagement without requiring users to hold a phone. For insights into how such integrated AI can reshape daily tasks, explore how Gemini can [enhance Google Drive search](/video/your-google-drive-just-went-pro-gemini-unlocks-ai-superpowers-for).
 
 The practical applications for AI glasses span several domains. In professional settings, they enable hands-free access to data, remote assistance, and streamlined workflows. For instance, a technician could view schematics superimposed on machinery while keeping their hands free, or a surgeon could access patient data without looking away from a procedure.
 
@@ -45,7 +45,7 @@ For everyday consumers, the benefits include enhanced navigation, instant langua
 
 Battery life remains a key constraint, often dictating the physical size and weight of the glasses, directly impacting their wearability and aesthetic appeal. Privacy concerns also factor heavily, particularly with always-on cameras and microphones.
 
-As Nate's Network points out, a recent market analysis identifies the Top 13 NEW AI Glasses projected for 2026, including models like Meta Ray-Ban Gen 2 and XREAL One Pro, demonstrating a clear trajectory towards more refined hardware and smarter software integration. This growth parallels the broader impact of artificial intelligence across industries, as discussed in [Where and How Is AI Used in Finance Across Modern Banks?](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping).
+As Nate's Network points out, a recent market analysis identifies the Top 13 NEW AI Glasses projected for 2026, including models like Meta Ray-Ban Gen 2 and XREAL One Pro, demonstrating a clear trajectory towards more refined hardware and smarter software integration. This growth parallels the broader impact of artificial intelligence across industries, including how [AI is used in finance](/video/xavier-gomez-unpacks-the-future-of-finance-ai-fintech-and-reshaping) across modern banks.
 
 The ability to integrate AI directly into personal devices creates a new form of ambient intelligence, where technology adapts to the user's context rather than demanding constant attention. The foundational concepts behind technologies that integrate digital information with the physical world are evolving rapidly, as seen in Why Was Augmented Reality Invented to Change How We See the World?.
 

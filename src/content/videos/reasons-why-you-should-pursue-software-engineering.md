@@ -31,7 +31,7 @@ Anyone asking whether they should pursue software engineering must confront an u
 
 ## The end of the easy tech hiring boom
 
-A decade of ultra-low interest rates and explosive digital expansion created an unprecedented distortion in tech hiring. Around 7 years ago, the path into the industry looked almost frictionless. Aspiring programmers realized that [Coding Bootcamps Offer Accelerated Software Engineering Paths](/video/coding-bootcamps-offer-accelerated-software-engineering-paths) without the friction of a four-year computer science degree.
+A decade of ultra-low interest rates and explosive digital expansion created an unprecedented distortion in tech hiring. Around 7 years ago, the path into the industry looked almost frictionless. Aspiring programmers realized that [coding bootcamps offer accelerated paths](/video/coding-bootcamps-offer-accelerated-software-engineering-paths) to software engineering without the friction of a four-year computer science degree.
 
 A candidate could spend three to six months learning foundational JavaScript or Python, build a couple of web portfolios, and secure a remote six-figure salary. Tech firms handed out catered meals, sleeping pods, and a shiny new MacBook on day one.
 
@@ -71,7 +71,7 @@ Conversely, the demand for specialized, high-barrier engineering disciplines con
 
 When developers ask whether they should enter the field, the answer hinges entirely on their chosen domain. Building another standard single-page web app provides minimal competitive leverage, but developing low-level network protocols or distributed storage engines offers immense career defensibility.
 
-Understanding technical boundaries has become paramount for career survival. For instance, distinguishing the [Difference Between Machine Learning Engineer and AI Engineer](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path) enables professionals to position their skills alongside enterprise capital investments rather than competing with automated commodity tooling. 
+Understanding technical boundaries has become paramount for career survival. For instance, distinguishing between [machine learning and AI engineers](/video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path) enables professionals to position their skills alongside enterprise capital investments rather than competing with automated commodity tooling. 
 
 Frameworks, libraries, and language abstractions cycle constantly. Engineers who tied their careers exclusively to a specific web framework found their skills depreciating within years.
 

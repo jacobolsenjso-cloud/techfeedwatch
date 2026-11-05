@@ -17,8 +17,8 @@ on:
     inputs:
       antal:
         description: "Antal artikler i denne kørsel"
-        # 26/10 (Jacob): 4 om dagen (før 8 - for dyrt). Ca. 4,40 kr. pr. artikel = ca. 18 kr. om dagen + faktatjek og stikprøve
-        default: "4"
+        # 5/11-2026 (Jacob): 3 om dagen, alle 7 dage (før 4; 26/10: 4, før 8 - for dyrt). Målt 26/10-4/11: ca. 0,51 USD pr. forsøg, ca. 6 af 10 lykkes
+        default: "3"
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
@@ -76,7 +76,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '4' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

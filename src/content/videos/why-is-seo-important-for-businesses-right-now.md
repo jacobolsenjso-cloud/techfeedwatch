@@ -42,7 +42,7 @@ Generative bots do not invent knowledge out of thin air; they pull from live ind
 * The current low-friction window for organic discovery will close within the next 18, 24 months as algorithmic qualification tightens.
 
 ## How AI chat engines rely on search rankings
-To grasp [What SEO Is and How It Works](/video/search-engine-optimization-what-seo-is-and-how-it-works), engineering teams must study retrieval mechanics. When users submit prompts into conversational engines, the underlying system executes fan-out queries across external databases.
+To grasp [how SEO works](/video/search-engine-optimization-what-seo-is-and-how-it-works), engineering teams must study retrieval mechanics. When users submit prompts into conversational engines, the underlying system executes fan-out queries across external databases.
 
 What most people don't understand is that these chat bots and the these different chat platforms and AI platforms, they actually use [Google](https://www.google.com/) Search as the number one thing that pulls information in for what you're ask asking about, what you're actually looking for.
 
@@ -75,7 +75,7 @@ Organic optimization, conversely, compounds over quarters. Developing comprehens
 
 Modern discovery algorithms require authoritative proof known as EEAT—Experience, Expertise, Authoritativeness, and Trustworthiness. AI generation platforms cannot fabricate genuine industry experience.
 
-They reward verified domain knowledge, field data, and authenticated author identities. Understanding [How SEO Optimization Works Today](/video/seo-optimization-explained-how-modern-search-ranking-functions) lets technical teams structure digital assets so automated scrapers identify proprietary insights immediately.
+They reward verified domain knowledge, field data, and authenticated author identities. Understanding [how modern SEO works](/video/seo-optimization-explained-how-modern-search-ranking-functions) lets technical teams structure digital assets so automated scrapers identify proprietary insights immediately.
 
 ## Why abandoning organic search for paid ads is risky
 Corporate decision-makers often justify stripping organic marketing budgets by citing the speed of generative creation tools. They assume automated publishing removes the need for technical optimization or specialized agency retainers. And so, that doesn't mean that you have to go find somebody that's going to charge you 5 grand, but abandoning optimization altogether damages organizational survival.
@@ -86,7 +86,7 @@ Relying exclusively on paid ad pipelines also exposes businesses to systemic pla
 
 If infrastructure costs spike or the AI bubble bursts, discovery tool pricing will explode. Advertising networks will raise bids to protect margins. Organizations that abandoned organic channels will have no defensive cushion when ad rates surge.
 
-Businesses must evaluate [How Does AI Change SEO for Automated Content Ranking?](/video/the-ai-content-deluge-how-automation-reshapes-seo-and-digital) across enterprise workflows. One, AI lead generation is easier now than it's ever been, but that accessibility creates severe distribution noise.
+Businesses must evaluate [how AI changes SEO](/video/the-ai-content-deluge-how-automation-reshapes-seo-and-digital) for automated content ranking across enterprise workflows. One, AI lead generation is easier now than it's ever been, but that accessibility creates severe distribution noise.
 
 Search systems respond to automated spam by raising qualification filters. Teams that delay structuring high-value content will find organic indexing far more punitive 18, 24 months from now.
 

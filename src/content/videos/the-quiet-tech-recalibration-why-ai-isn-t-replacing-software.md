@@ -56,7 +56,7 @@ In essence, the difficult work involves understanding the problem, designing a c
 
 Consider the distinctions: AI can quickly produce a function to sort a list. What it cannot do as effectively is determine whether sorting that list is the correct architectural choice for a system operating under specific performance constraints, how that function interacts with other components, or the security implications of its data handling within a larger application context.
 
-These considerations demand human expertise in [What Is the Primary Goal of AI Agents in Software Development](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development), design, and strategic thinking.
+These considerations demand human expertise in [software development with AI agents](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development), design, and strategic thinking.
 
 ## Controlled trials show AI tools actually slow developers down
 
@@ -94,7 +94,7 @@ The effort developers expend when using AI is directed towards the invisible, ha
 
 The best-case scenarios for AI usage, such as developers completing 26% more tasks 55% faster, often come with a critical caveat: AI acts as an amplifier. As Dora, a source of these findings, notes, AI makes teams with strong engineering practices perform better, while teams with weak practices perform worse.
 
-It doesn't magically instill good judgment or best practices; it magnifies whatever processes are already in place. This includes [What Are Personalized AI Productivity Tools Today?](/video/building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital), which can be highly effective when tailored to strong workflows.
+It doesn't magically instill good judgment or best practices; it magnifies whatever processes are already in place. This includes [personalized AI productivity tools](/video/building-your-ai-co-pilot-the-dawn-of-truly-personalized-digital), which can be highly effective when tailored to strong workflows.
 
 What AI is not inherently good at is judgment: deciding if code should exist, if it's correct, secure, scalable, resilient, or maintainable for the next person. These aspects require inferring context, understanding long-term implications, and taking responsibility for the outcome – which remains the whole job of a software engineer.
 

@@ -39,7 +39,7 @@ This public-key cryptography ensures that only the owner of the private key can 
 
 The primary threat from quantum computing stems from its ability to efficiently break the mathematical problems that underpin these cryptographic standards. Algorithms like Shor's algorithm are designed to factor large numbers rapidly, a task that is computationally infeasible for classical computers but central to the security of many public-key cryptosystems, including the elliptic curve cryptography used by Bitcoin.
 
-Another significant quantum algorithm, Grover's algorithm, offers a quadratic speedup for searching unsorted databases, which could accelerate brute-force attacks on hash functions. This difference in processing power forms the core of the quantum threat to digital assets. For a deeper understanding of these capabilities, readers can refer to [Understanding Quantum Computing Applications and Capabilities](/video/understanding-quantum-computing-applications-and-capabilities).
+Another significant quantum algorithm, Grover's algorithm, offers a quadratic speedup for searching unsorted databases, which could accelerate brute-force attacks on hash functions. This difference in processing power forms the core of the quantum threat to digital assets. For a deeper understanding of these capabilities, readers can explore [quantum computing applications](/video/understanding-quantum-computing-applications-and-capabilities).
 
 ## How Quantum Computing Threatens Bitcoin's Core Security
 

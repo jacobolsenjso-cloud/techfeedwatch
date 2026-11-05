@@ -37,7 +37,7 @@ Rather than relying on traditional optical see-through lenses, the UR XR1 utiliz
 
 In practice, a user can plug the glasses via USB-C directly into a laptop, using standard mouse and keyboard inputs to move and position up to seven virtual desktop monitors without external controllers.
 
-Unseen Reality set pre-orders at $599 ahead of a full $799 commercial release. Understanding how these display architectures function is central to evaluating [What Is AR, How It Works, and Its Broad Impact](/video/augmented-reality-demystified-how-digital-overlays-are) across professional work environments.
+Unseen Reality set pre-orders at $599 ahead of a full $799 commercial release. Understanding how these display architectures function is central to evaluating [the broad impact of AR](/video/augmented-reality-demystified-how-digital-overlays-are) across professional work environments.
 
 Complementing tethered monitors, media-focused form factors are prioritizing high-brightness optical engines. Geeks Loft introduced its Perisphere smart glasses, which feature dual 1920x1080 Full HD displays generating 1800 nits of brightness. Built with an integrated headphone chassis, the Perisphere includes a 2,500 milliamp hour battery supporting fast charging via USB-C for an August launch at $599.
 
@@ -47,7 +47,7 @@ Standalone spatial hardware is simultaneously expanding interactive multiplayer 
 
 Developers demonstrate real-time spatial interaction on the platform through shared lenses; for example, players in a four-player Block mini game can pick up virtual assets, sabotage opponents, and throw digital bombs in physical space, while interactive music software guides piano students by illuminating physical keys in real time.
 
-The hardware lists for pre-order at $2,195. Precise movement rendering in these spatial applications highlights [how VR hand tracking drives mainstream VR adoption](/video/the-unseen-revolution-why-natural-hand-tracking-is-vr-s-missing-link) across mixed-reality ecosystems.
+The hardware lists for pre-order at $2,195. Precise movement rendering in these spatial applications highlights how [hand tracking drives mainstream adoption](/video/the-unseen-revolution-why-natural-hand-tracking-is-vr-s-missing-link) across mixed-reality ecosystems.
 
 Open-source architecture is also entering the head-worn display market. Raven Prism introduced standalone smart glasses running native Linux on a 720p color waveguide display with a 30-degree field of view. To solve battery degradation during long sessions, the system uses two swappable frame-mounted batteries paired with a specialized four-slot charging case.
 
@@ -55,7 +55,7 @@ Swapping depleted batteries automatically triggers charging inside the case whil
 
 Google and Xreal detailed Project Auras, an AR device featuring a 70-degree field of view driven by dual internal chips and an external tethered power puck supplying four hours of compute time. Running Android XR with deep Gemini AI integration, the system allows users to reorganize spatial windows through voice commands, share active display views with the AI for debugging, and run up to five simultaneous screens alongside mirrored console inputs.
 
-As Google's Steven Sullivan points out, tethering specialized optics to external battery pucks provides the thermal head-room required to render complex 3D environments without adding neck fatigue. Exploring these continuous spatial displays reveals [What Are Some Examples of AR in Daily Life?](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030) as commercial deployments transition from enterprise tools into consumer accessories.
+As Google's Steven Sullivan points out, tethering specialized optics to external battery pucks provides the thermal head-room required to render complex 3D environments without adding neck fatigue. Exploring these continuous spatial displays reveals [examples of AR in daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030) as commercial deployments transition from enterprise tools into consumer accessories.
 
 ## Lightweight Modular Glasses Are Poised to Dominate Spatial Computing
 

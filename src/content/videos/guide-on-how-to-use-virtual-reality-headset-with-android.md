@@ -37,7 +37,7 @@ Manufacturers hid traditional mobile file structures behind custom user interfac
 
 For years, accessing standard mobile tools required workaround applications. Early adopters relied on third-party utilities like Mobile VR Station or external file managers to manually move application binaries into hardware directories. Meta later actively targeted and took down popular third-party tools such as VR Android File Manager from its platform, leaving users without direct control over their local file systems.
 
-Gamers seeking broader utility were left with clunky terminal commands or required constant tethering to external hardware. Understanding these platform constraints is essential when reviewing how [Spatial Systems and What Mixed Reality Means for Interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) applies across consumer hardware categories.
+Gamers seeking broader utility were left with clunky terminal commands or required constant tethering to external hardware. Understanding these platform constraints is essential when reviewing what [mixed reality means for interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) across consumer hardware categories.
 
 ## How modern updates enable direct APK installs
 
@@ -94,7 +94,7 @@ The ability to easily execute flat Android applications inside virtual reality f
 
 This software flexibility creates commercial tension for hardware manufacturers. When users can freely sideload mobile games, productivity suites, and alternative marketplaces, proprietary store ecosystems risk losing exclusive transaction fees.
 
-Hardware vendors must balance security controls against power users who expect open platform access. Understanding these platform shifts aligns with broader industry developments detailed in [Android XR Hybrid Glasses Means for Spatial Computing](/video/android-xr-hybrid-glasses-means-for-spatial-computing).
+Hardware vendors must balance security controls against power users who expect open platform access. Understanding these platform shifts aligns with broader industry developments regarding how [Android XR hybrid glasses](/video/android-xr-hybrid-glasses-means-for-spatial-computing) impact spatial computing.
 
 ## Future challenges for integrating 2D mobile apps into VR
 
@@ -102,4 +102,4 @@ The boundary between traditional mobile operating systems and spatial computing 
 
 Key technical signals to track include how system manufacturers address sandboxing for unverified binaries, automated window scaling for mobile interfaces, and real-time power conservation under increased processing loads.
 
-How developers handle mobile input mapping for VR motion controllers will dictate how functional standard apps feel in virtual spaces. Tracking enterprise adoption of hybrid hardware platforms reveals additional details on platform evolution, similar to trends outlined in [How to Use Augmented Reality on Android with ARCore](/video/android-augmented-reality-how-people-use-arcore-on-mobile-devices).
+How developers handle mobile input mapping for VR motion controllers will dictate how functional standard apps feel in virtual spaces. Tracking enterprise adoption of hybrid hardware platforms reveals additional details on platform evolution, similar to trends seen with [augmented reality on Android](/video/android-augmented-reality-how-people-use-arcore-on-mobile-devices) using ARCore.

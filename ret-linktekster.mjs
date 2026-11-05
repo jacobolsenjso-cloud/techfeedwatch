@@ -44,10 +44,16 @@ function hovedarbejde() {
   // mindst 6 ord, fordi de tre korteste fund 22/9 ("Ethereum World State",
   // "Zero Trust Security Model", "Bull Mania by iVantage") var begreber og
   // produktnavne midt i en sætning — ikke overskrifter.
+  // 5/11-2026: strammet. Før talte 50 % store forbogstaver som "titel", så naturlige linktekster med navne
+  // ("Nvidia's GPU dominance in AI acceleration") blev skiftet ud med HELE målets titel midt i sætningen igen.
+  // Nu: første ord med stort, og mindst 70 % af de bærende ord (småord tæller ikke). Rigtige titler ligger på ~100 %.
+  const SMAAORD = new Set(['a', 'an', 'the', 'of', 'in', 'on', 'at', 'to', 'for', 'and', 'or', 'with', 'by', 'vs', 'from', 'is', 'are']);
   const erTitelFormet = (t) => {
     const ord = t.trim().split(/\s+/);
     if (t.trim().length < 20 || ord.length < 6) return false;
-    return ord.filter((o) => /^[A-Z0-9]/.test(o)).length / ord.length >= 0.5;
+    if (!/^[A-Z0-9]/.test(ord[0])) return false;
+    const baerende = ord.filter((o) => !SMAAORD.has(o.toLowerCase()));
+    return baerende.filter((o) => /^[A-Z0-9]/.test(o)).length / baerende.length >= 0.7;
   };
   // Frontmatter røres aldrig: dér er et markdown-link ikke et link, men tekst
   // i en sætning, der også fodrer Article-schemaets description.

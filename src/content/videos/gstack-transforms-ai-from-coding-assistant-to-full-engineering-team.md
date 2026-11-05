@@ -66,7 +66,7 @@ This significantly reduces manual QA effort, moving towards what Tan calls a "le
 
 Garry Tan personally utilizes G-Stack to run 10 to 15 parallel Claude code sessions simultaneously, allowing him to manage tens of thousands of stars across multiple open-source projects and review hundreds of pull requests daily. This workflow enables him to ship 10, 15, 20, sometimes 50 PRs in any given day.
 
-The framework also provides a defense against supply chain attacks by facilitating thorough review of AI-generated code, a growing concern in AI-assisted development. This approach embodies the concept of [How Coding Harnesses Transform LLMs into Agentic Systems](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption), providing the structure needed for effective AI collaboration. The framework is publicly available at github.com/garytan/gstack.
+The framework also provides a defense against supply chain attacks by facilitating thorough review of AI-generated code, a growing concern in AI-assisted development. This approach embodies how [coding harnesses transform LLMs](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) into agentic systems, providing the structure needed for effective AI collaboration. The framework is publicly available at github.com/garytan/gstack.
 
 ### The Bottom Line
 

@@ -45,7 +45,7 @@ The ancient fable of wheat on a chessboard doubling illustrates the mechanics: a
 
 A quantum array of 256 logical qubits functions like four of those chessboards linked end to end. The resulting register holds 10 to the 77 states, represented by a staggering 78 digit number.
 
-Understanding [Quantum Computing: Why It's Faster for Complex Problems](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer) requires recognizing that this exponential headroom does not simply run desktop software faster. It constructs an entirely separate computational geometry.
+Understanding [why quantum computing is faster](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer) for complex problems requires recognizing that this exponential headroom does not simply run desktop software faster. It constructs an entirely separate computational geometry.
 
 ## Why error correction defines modern quantum hardware roadmaps
 
@@ -59,7 +59,7 @@ Starling aims to run 200 error-corrected qubits through 100 million operations i
 
 Simultaneously, competing architectures are hitting their stride. Hardware developer QuEra scheduled a system called Libra arriving on Amazon's Cloud in 2028. Libra aims to provide 256 error-corrected qubits with an error rate of about one error per million operations.
 
-While IBM builds circuits out of superconducting metals cooled near absolute zero, QuEra suspends neutral atoms in vacuum chambers using laser beams. Despite divergent physical designs, both efforts target identical scale. Overcoming the physical bottlenecks detailed in [The Engineering Roadblocks to Scalable Qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) represents the primary focus of both development tracks.
+While IBM builds circuits out of superconducting metals cooled near absolute zero, QuEra suspends neutral atoms in vacuum chambers using laser beams. Despite divergent physical designs, both efforts target identical scale. Overcoming the [engineering roadblocks to scalable qubits](/video/quantum-computing-separating-transformative-potential-from-immediate) represents the primary focus of both development tracks.
 
 ## The staggering scale of a 256 qubit system
 
@@ -77,7 +77,7 @@ This reality clarifies why quantum computing differs from standard memory expans
 
 Quantum states function like waves, which naturally cancel or reinforce one another. When wave peaks meet troughs, they cancel out, leaving flat water behind.
 
-An algorithm is a machine for arranging that cancellation so that the wrong answers wipe each other out and the right one is the only thing still standing when you look. Without specialized algorithms that induce constructive and destructive interference, quantum chips offer no operational advantage, which [Understanding Quantum Computing Applications and Capabilities](/video/understanding-quantum-computing-applications-and-capabilities) clarifies when filtering industrial workloads.
+An algorithm is a machine for arranging that cancellation so that the wrong answers wipe each other out and the right one is the only thing still standing when you look. Without specialized algorithms that induce constructive and destructive interference, quantum chips offer no operational advantage, an essential distinction when evaluating [quantum computing applications and capabilities](/video/understanding-quantum-computing-applications-and-capabilities) across industrial workloads.
 
 ## Where quantum hardware will actually be put to work
 

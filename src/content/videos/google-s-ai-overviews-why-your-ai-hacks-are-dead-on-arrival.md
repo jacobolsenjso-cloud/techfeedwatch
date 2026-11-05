@@ -62,7 +62,7 @@ For example, if a user searches for "best noise-cancelling headphones," Query Fa
 
 Critically, the SEO DeepDive podcast highlights that Google Search completely ignores specific "AI hacks." This includes llms.txt files and special AI markdown, which Google Search completely ignores. These files, much like older attempts to game search algorithms, have no impact on how Google's AI systems process or prioritize content.
 
-Similarly, why structured data is still critical for rich results (but not a citation cheat code) is a key point to remember; its primary role remains to help search engines understand content context, not to guarantee a specific AI citation. For a deeper understanding of how AI tools are reshaping content workflows, consider reading [What Is an AI-Powered Content Engine](/video/ai-content-optimization-how-ai-transforms-creator-workflows).
+Similarly, why structured data is still critical for rich results (but not a citation cheat code) is a key point to remember; its primary role remains to help search engines understand content context, not to guarantee a specific AI citation. For a deeper understanding of how AI tools are reshaping content workflows, explore how an [AI-powered content engine](/video/ai-content-optimization-how-ai-transforms-creator-workflows) works.
 
 ## How AI search changes content strategy and technical SEO
 
@@ -78,7 +78,7 @@ This also means that practices like simplistic content chunking, often touted as
 
 AI systems are sophisticated enough to process long-form content that covers multiple themes, provided it is well-organized and clearly written. The anxiety some people feel about rewriting content just for AI systems misunderstands how AI leverages existing web information.
 
-Instead, content should be designed to be comprehensive and logical for human readers first, which then makes it inherently usable by AI. For more on AI-driven optimization, explore [How to Use AI for SEO Content Optimization](/video/how-ai-powered-tools-are-redefining-your-seo-strategy).
+Instead, content should be designed to be comprehensive and logical for human readers first, which then makes it inherently usable by AI. For more on AI-driven strategy, explore how to use [AI for SEO content optimization](/video/how-ai-powered-tools-are-redefining-your-seo-strategy).
 
 ## Why AI hacks and content chunking do not work
 
@@ -96,7 +96,7 @@ Finally, the discussion around AI Overviews often overlooks the broader implicat
 
 The opportunity lies in being the authoritative source that the AI chooses to reference. This requires not only high-quality content but also strong domain authority and brand recognition.
 
-Companies focusing solely on quick AI "tricks" are missing the bigger picture: the need to build a lasting, trustworthy digital presence that naturally becomes a primary resource for both humans and AI. Understanding how these overviews impact traffic is critical, and you can learn more by reading [How Do AI Overviews Impact Organic Search Traffic for Creators?](/video/google-ai-overviews-impact-content-creators-traffic-seo).
+Companies focusing solely on quick AI "tricks" are missing the bigger picture: the need to build a lasting, trustworthy digital presence that naturally becomes a primary resource for both humans and AI. Understanding how [AI overviews impact organic search traffic](/video/google-ai-overviews-impact-content-creators-traffic-seo) is critical for creators.
 
 ## Why traditional SEO remains the best AI optimization strategy
 

@@ -55,7 +55,7 @@ For content optimization specifically, AI helps prepare material for citation by
 
 This involves optimizing content to a specific structure, ensuring passages are the right length to be easily processed by AI agents. Content outside the optimal passage length might be skipped by AI agents, which are "quite, quite lazy." AI tools can analyze existing content against these parameters and generate optimized versions.
 
-For instance, an AI might take an existing page with an "AI search readiness" score of fifty seven out of one hundred and propose modifications to boost it. [How AI Changes SEO Content Creation for Bottom-Funnel Needs](/video/ai-powered-precision-automating-high-intent-seo-content-without) and [How Generative AI Changes SEO and Search](/video/optimizing-for-generative-ai-search-the-new-frontier-beyond) explore this further.
+For instance, an AI might take an existing page with an "AI search readiness" score of fifty seven out of one hundred and propose modifications to boost it. Discussions on AI for bottom-funnel content and [how generative AI changes SEO](/video/optimizing-for-generative-ai-search-the-new-frontier-beyond) explore this further.
 
 The output from these AI systems is not just data; it includes actionable recommendations and even ready-to-use code. For example, after a schema analysis for a page like rankenstein.pro's "about" section reveals a "current health" of four out of ten with three identical JSON-LD blocks, the AI can generate optimized schema JSON.
 
