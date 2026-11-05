@@ -40,7 +40,7 @@ A modern flagship (a company's top-tier model) Android phone lasts between five 
 After that, hardware limits or ending software support slow them down. Replacing a worn battery at the three-year mark helps a lot. It allows many devices to stay safe and functional for their full software cycle.
 
 ## What determines when an Android phone needs replacing?
-A phone reaches the end of its life when software updates stop. It also ends when the battery fails to hold a charge. Core components can break down too. 
+A phone reaches the end of its life when software updates stop. It also ends when the battery fails to hold a charge. Core components can break down too.
 
 Hardware wear often shows up first in everyday handling. Drops can crack screens, loosen internal connectors, or break camera sensors. Charging ports wear out after thousands of cable insertions.
 
@@ -64,7 +64,7 @@ Top Android makers now guarantee up to seven years of operating system upgrades 
 
 This support window runs from their launch in October 2023 into 2030. It includes regular Android system upgrades, monthly security patches, and periodic Feature Drop additions.
 
-[Samsung Electronics](https://www.samsung.com/us/) matched that standard shortly afterward with its flagship line. According to Samsung Electronics, the Galaxy S24 series launched in 2024 receives seven generations of operating system upgrades.
+[Samsung Electronics](https://news.samsung.com/sg/samsung-galaxy-s24-series-is-now-available-worldwide) matched that standard shortly afterward with its flagship line. According to Samsung Electronics, the Galaxy S24 series launched in 2024 receives seven generations of operating system upgrades.
 
 It also receives seven years of security updates. These long commitments protect device security.
 
@@ -76,7 +76,7 @@ The table below contrasts modern support commitments using figures published by 
 
 | Entity or Device | Operating System Support | Security Updates | Spare Parts Availability |
 | --- | --- | --- | --- |
-| | Google Pixel 8 Series | 7 years | 7 years | 7 years | |
+| Google Pixel 8 Series | 7 years | 7 years | 7 years |
 | Samsung Galaxy S24 Series | 7 generations | 7 years | Unspecified by maker |
 | European Commission Standard | 5 years from end of sales | 5 years from end of sales | 7 years |
 
@@ -116,9 +116,7 @@ Hardware can outlast software promises. American Electronics points out that twe
 
 The creator notes that camera sensors and screens do not break when updates halt. However, devices lose defense against fresh exploits (newly discovered methods hackers use to attack software).
 
-Samsung committed to four operating system upgrades and five years of security patches for the Galaxy S22 Ultra. This commitment sets an end date in early 2027.
-
- Its updates run through Android 16 until February 2027.
+Samsung committed to four operating system upgrades and five years of security patches for the Galaxy S22 Ultra, so its updates run through Android 16 until February 2027.
 
 Foldable hardware introduces unique mechanical risks alongside software expiration dates. American Electronics notes that the Samsung Galaxy Z Fold4 cost approximately $1,800 at launch in August 2022. The creator stresses that buyers must weigh an approaching 2027 support deadline against expensive repairs for mechanical hinges and flexible screens.
 

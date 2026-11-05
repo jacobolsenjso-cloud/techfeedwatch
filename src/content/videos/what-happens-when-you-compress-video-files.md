@@ -67,7 +67,7 @@ High-bitrate mezzanine formats demonstrate how perceptual compression balances q
 
 In contrast, visually lossless compression at 220 Mbps preserves perceptual fidelity. At that rate, it reduces the file size to roughly 97 GB per hour.
 
-Streaming services also optimize distribution using dynamic ladders. According to the [Netflix](https://www.netflix.com/) Technology Blog study on shot-based dynamic optimization, content-adaptive compression ladders reduce required network bandwidth by over 20% to 50% relative to fixed bitrates. This optimization sustains the same target perceptual quality score on the Video Multimethod Assessment Fusion scale.
+Streaming services also optimize distribution using dynamic ladders. According to the [Netflix](https://research.netflix.com/publication/improving-our-video-encodes-for-legacy-devices) Technology Blog study on shot-based dynamic optimization, content-adaptive compression ladders reduce required network bandwidth by over 20% to 50% relative to fixed bitrates. This optimization sustains the same target perceptual quality score on the Video Multimethod Assessment Fusion scale.
 
 ## Aggressive compression produces macroblocking, banding, and ringing artifacts
 

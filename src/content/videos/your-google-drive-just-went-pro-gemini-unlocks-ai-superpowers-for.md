@@ -38,7 +38,7 @@ keyFacts:
     url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/ai-expanded-access"
 ---
 
-Gemini AI tools improve [Google](https://www.google.com/) Drive by turning regular file storage into an active helper. The assistant reads your documents and answers direct questions.
+Gemini AI tools improve [Google](https://support.google.com/drive/answer/16686008?hl=en) Drive by turning regular file storage into an active helper. The assistant reads your documents and answers direct questions.
 
 These tools also allow people to summarize large folders. Users can synthesize (combine) information across many files. They can also pull out facts without opening individual files.
 

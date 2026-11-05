@@ -49,7 +49,7 @@ Engineers fabricate these circuits using traditional semiconductor lithography t
 
 Trapped-ion and neutral-atom systems create qubits by suspending individual natural atoms inside ultra-high vacuum chambers using electromagnetic fields or focused laser beams. By relying on identical atoms provided by nature, these systems avoid the manufacturing imperfections found in fabricated solid-state circuits.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/), trapped-ion systems use charged atomic ions, such as beryllium or magnesium, held in place by radio-frequency Paul traps.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/programs-projects/quantum-computing-trapped-ions), trapped-ion systems use charged atomic ions, such as beryllium or magnesium, held in place by radio-frequency Paul traps.
 
 Laser or microwave pulses manipulate the internal electronic energy levels of each suspended ion to perform logic operations. Because the ions carry an electric charge, their mutual electrostatic repulsion enables multi-qubit entanglement across the chain.
 

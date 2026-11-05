@@ -50,7 +50,7 @@ Federal regulators divide their supervisory duties across distinct financial sec
 - Anti-money laundering enforcement managed by the Financial Crimes Enforcement Network
 - Derivatives trading and market integrity supervised by the Commodity Futures Trading Commission
 - Public disclosures and unregistered token offerings pursued by the Securities and Exchange Commission
-- Asset classification and federal tax reporting rules maintained by the [Internal Revenue Service](https://www.irs.gov/)
+- Asset classification and federal tax reporting rules maintained by the [Internal Revenue Service](https://www.irs.gov/pub/irs-drop/n-14-21.pdf)
 
 The Department of Justice also prosecutes criminal activity involving digital assets. Federal prosecutors target money laundering, sanctions evasion, and fraudulent schemes using established criminal codes. Federal bank regulatory agencies monitor how traditional lenders handle custodial digital assets (assets held on behalf of customers).
 

@@ -45,7 +45,7 @@ Then, mathematical formulas deliver the most relevant results for user queries (
 
 ## Search engines process content through crawling and indexing
 
-[Google](https://www.google.com/) processes web pages through three basic stages: crawling, indexing, and serving results. Crawling begins when computer programs called crawlers or spiders (automated scanning bots) discover web links. These spiders fetch content from across the internet.
+[Google](https://www.google.com/intl/en_us/search/howsearchworks/how-search-works/ranking-results) processes web pages through three basic stages: crawling, indexing, and serving results. Crawling begins when computer programs called crawlers or spiders (automated scanning bots) discover web links. These spiders fetch content from across the internet.
 
 Indexing happens next as the system parses (analyzes) text, images, and videos. It stores that page data inside a giant database. Serving occurs when a user runs a query, and the engine selects matching pages.
 
@@ -77,7 +77,7 @@ Search context includes details such as user location. The engine first decipher
 
 Relevance depends on matching the words in the query to the text on the page. Search engines look beyond simple keyword matches to evaluate whether a page answers the overall subject. Page quality algorithms evaluate whether the creator demonstrates real expertise and trustworthiness.
 
-Usability also affects page position in search results. A page that loads slowly or shifts content around frustrates readers, especially on mobile hardware. According to [Statcounter Global Stats](https://gs.statcounter.com/), mobile devices generated 59% of global internet traffic in September 2026.
+Usability also affects page position in search results. A page that loads slowly or shifts content around frustrates readers, especially on mobile hardware. According to [Statcounter Global Stats](https://gs.statcounter.com/search-engine-host-market-share/mobile/worldwide), mobile devices generated 59% of global internet traffic in September 2026.
 
 In that same period, Google captured 94.7% of the global mobile search engine market. Search engines prioritize sites that function smoothly on handheld devices. This priority exists because most web traffic originates on phones.
 

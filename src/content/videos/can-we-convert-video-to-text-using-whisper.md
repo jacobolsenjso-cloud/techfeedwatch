@@ -58,7 +58,7 @@ Choosing between cloud platforms and local engines involves balancing specific w
 ## Is AI transcription as accurate as human transcribers?
 AI transcription achieves impressive accuracy on clear recordings, but human transcribers still outperform automated models in noisy or high-stakes environments. The real-world performance gap widens whenever recordings feature overlapping voices, background interference, or heavy accents.
 
-According to [Rev](https://www.rev.com/)'s October 2025 evaluation of speech recognition, automated speech recognition (ASR) models typically achieve between 90% and 96% accuracy, whereas professional human transcriptionists guarantee 99%+ accuracy for court-admissible records and noisy recordings.
+According to [Rev](https://www.rev.com/blog/ai-vs-human-transcription-accuracy)'s October 2025 evaluation of speech recognition, automated speech recognition (ASR) models typically achieve between 90% and 96% accuracy, whereas professional human transcriptionists guarantee 99%+ accuracy for court-admissible records and noisy recordings.
 
 Benchmarks demonstrate that synthetic test conditions do not always reflect field performance. According to MLCommons in an MLPerf Inference benchmark published in September 2025, OpenAI's Whisper reference implementation achieved a word accuracy of 97.9329% on the LibriSpeech test-clean benchmark dataset.
 

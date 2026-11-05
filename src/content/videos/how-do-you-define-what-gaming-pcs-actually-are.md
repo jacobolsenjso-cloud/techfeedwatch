@@ -68,7 +68,7 @@ The core components that establish a functional gaming rig include:
 ## Should you build a custom rig or buy pre-built?
 Choosing between building a custom rig or buying a pre-built system involves trade-offs. It depends on whether you prioritize component customization and future upgrades over immediate convenience and single-vendor warranty support.
 
-According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s guide, assembling a custom gaming desktop allows users to select individual components from the power supply up. This approach ensures targeted frame rates and long-term modular upgradability.
+According to [Intel](https://www.intel.com/content/www/us/en/gaming/resources/how-to-build-a-gaming-pc.html)'s guide, assembling a custom gaming desktop allows users to select individual components from the power supply up. This approach ensures targeted frame rates and long-term modular upgradability.
 
 Custom builds allow owners to replace an aging graphics card or power unit without discarding the entire system. Pre-assembled desktops, by contrast, arrive tested out of the box with unified technical support coverage.
 

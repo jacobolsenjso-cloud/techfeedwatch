@@ -54,7 +54,7 @@ These qubits allow machines to evaluate many computational pathways at once. A s
 
 According to IBM, quantum computers suit three main computational domains beyond the reach of classical supercomputers. These machines simulate the quantum-mechanical behavior of physical materials. They also analyze complex mathematical structures in information. 
 
-According to [Microsoft Azure](https://azure.microsoft.com/en-us), classical computing architecture remains essential and far more efficient for general everyday workloads. Quantum processors do not replace traditional databases or web servers. Instead, they function as specialized accelerators for narrow, mathematically intensive problems. 
+According to [Microsoft Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-quantum-computing), classical computing architecture remains essential and far more efficient for general everyday workloads. Quantum processors do not replace traditional databases or web servers. Instead, they function as specialized accelerators for narrow, mathematically intensive problems. 
 
 The structural differences between the two architectures define how they handle real-world tasks:
 - Classical bits store a definite state of either zero or one at any given moment.
@@ -86,7 +86,7 @@ According to Microsoft Azure, qubits tackle specialized challenges like molecula
 ## Will quantum computers break modern encryption standards?
 Future quantum systems will break standard public-key encryption (digital security systems that protect online communications). This will happen unless organizations migrate to quantum-resistant mathematical defenses. Modern digital communications rely on mathematical problems that take classical computers thousands of years to crack.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST), cryptographically relevant quantum computers (machines powerful enough to crack modern cybersecurity) will eventually emerge. Running Shor's algorithm (a quantum method for quickly factoring large numbers), these machines will possess powerful computational capability.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/quantum-information-science/quantum-computing-explained) (NIST), cryptographically relevant quantum computers (machines powerful enough to crack modern cybersecurity) will eventually emerge. Running Shor's algorithm (a quantum method for quickly factoring large numbers), these machines will possess powerful computational capability.
 
 They will break widely used public-key encryption schemes (digital security systems that protect online communications). These vulnerable protocols include RSA (an encryption standard based on factoring large numbers). They also include elliptic-curve cryptography (a mathematical security method used to protect digital transactions).
 

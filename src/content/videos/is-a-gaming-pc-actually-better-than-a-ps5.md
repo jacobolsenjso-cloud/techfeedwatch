@@ -43,7 +43,7 @@ A PS5 is the better purchase if you want plug-and-play simplicity. It delivers m
 Neither machine wins every category. Each platform serves different budgets and daily habits.
 
 ## Does a gaming PC outperform the PS5?
-A high-end gaming PC easily beats the PS5. However, budget computers often struggle to match Sony's custom console hardware. 
+A high-end gaming PC easily beats the PS5. However, budget computers often struggle to match Sony's custom console hardware.
 
 According to Sony Interactive Entertainment, the base PS5 packs an 8-core AMD Zen 2 processor reaching 3.5 GHz. It also includes 16 GB of unified memory. Its graphics unit produces 10.28 teraflops.
 
@@ -60,11 +60,11 @@ Top-tier personal computers deliver several technical advantages over consoles:
 - Modding support (editing game files and graphics assets)
 
 ## Matching PS5 performance requires spending nearly double on PC
-Building a desktop computer with identical gaming power costs far more than buying the retail console. 
+Building a desktop computer with identical gaming power costs far more than buying the retail console.
 
-According to [CNET](https://www.cnet.com/), the base PlayStation 5 sells at retail starting around $449 to $499. Meanwhile, CNET reports that building or buying an equivalent desktop PC costs at least $800.
+According to [CNET](https://www.cnet.com/tech/gaming/ps5-vs-pc-vs-steam-machine-specs-pricing-performance/), the base PlayStation 5 sells at retail starting around $449 to $499. Meanwhile, CNET reports that building or buying an equivalent desktop PC costs at least $800.
 
-Upgraded hardware increases this pricing divide. According to [PC Gamer](https://www.pcgamer.com/), matching the PlayStation 5 Pro requires an AMD Radeon RX 7800 XT graphics card.
+Upgraded hardware increases this pricing divide. According to [PC Gamer](https://www.pcgamer.com/hardware/pc-vs-ps5-pro-making-pc-gaming-more-relevant-than-ever/), matching the PlayStation 5 Pro requires an AMD Radeon RX 7800 XT graphics card.
 
 That card alone retailed for roughly $475. Adding a processor, power supply, memory, storage, and case pushes that PC total much higher.
 
@@ -73,12 +73,12 @@ The following hardware comparison uses figures published by Sony Interactive Ent
 | Platform | Starting Retail Price | Target Graphics Baseline | Memory Configuration |
 | :--- | :--- | :--- | :--- |
 | PlayStation 5 | $449 to $499 (CNET) | 10.28 teraflops (Sony Interactive Entertainment) | 16 GB unified GDDR6 (Sony Interactive Entertainment) |
-| |
+| Equivalent gaming PC | At least $800 (CNET) | Matched by an Nvidia GeForce RTX 2070 Super or AMD Radeon RX 6700 (Digital Foundry) | Depends on the build |
 
-Putting together custom hardware is not something I have personal experience with, but the price difference is substantial. Spending twice as much only makes sense if you genuinely intend to put that extra computing power to use. Looking closely at the verified numbers helps you make a level-headed choice rather than making a rushed purchase.
+The price difference is substantial. Spending twice as much only makes sense if you genuinely intend to put that extra computing power to use. Looking closely at the verified numbers helps you make a level-headed choice rather than making a rushed purchase.
 
 ## What are the hidden long-term costs of console gaming?
-Consoles cost less up front. However, ongoing network fees and closed digital stores create substantial long-term ownership expenses. 
+Consoles cost less up front. However, ongoing network fees and closed digital stores create substantial long-term ownership expenses.
 
 Online access represents the largest recurring expense on consoles. According to Sony Interactive Entertainment, PS5 multiplayer requires a PlayStation Plus Essential membership.
 
@@ -114,7 +114,7 @@ In his testing, Gabriel Pilo demonstrated that the PS5 Pro targets 4K 60 frames 
 
 PSSR is an AI feature that sharpens lower-resolution images to fit higher-resolution screens. Pilo showed that games like Astro Bot achieve a solid 4K 60 output. Meanwhile, competitive shooters reach 120 frames per second.
 
-However, he noted that open-world titles like Rise of the Ronin run differently. 
+However, he noted that open-world titles like Rise of the Ronin run differently.
 
 Gabriel Pilo explained that he paid $650 for his PS5 Pro and $1400 for his personal computer. He calculated that rebuilding his custom PC today would cost $2,600.
 
@@ -127,7 +127,7 @@ While convenient, Pilo explained that one software update broke his HDMI televis
 In contrast, PC purchases remain locked to digital libraries. Pilo concluded: "If I was starting from scratch today, I definitely would be looking at getting a base PS5 Slim, not the Pro, and then using the savings of not going with a gaming PC to get an OLED TV, a disc drive for the PS5 Slim, and going through the used market to buy some games."
 
 ## How to choose between a gaming PC and PS5
-Choose a PS5 if you have a strict budget under the $600 figure cited by Gabriel Pilo. It is ideal if you prefer simple couch gaming on a television. 
+Choose a PS5 if you have a strict budget under the $600 figure cited by Gabriel Pilo. It is ideal if you prefer simple couch gaming on a television.
 
 Choose a gaming PC if you have more than the $800 baseline cited by CNET to spend. A PC works well if you want an open machine for productivity, modding, and uncapped frame rates. Check your existing display and your friend group's chosen platform before buying hardware.
 

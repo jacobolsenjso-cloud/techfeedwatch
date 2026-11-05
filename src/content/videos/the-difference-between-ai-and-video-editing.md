@@ -47,7 +47,7 @@ Non-linear editing software (digital programs that allow creators to cut and arr
 
 It handles these chores without replacing the editor's deliberate narrative structure. Traditional suites treat machine learning as an internal helper rather than an autonomous creator.
 
-According to [Adobe](https://www.adobe.com/) documentation comparing AI generation and traditional editing, manual workflows rely on filmed footage and pre-production planning. They use timeline assembly for frame-level precision.
+According to [Adobe](https://www.adobe.com/au/products/firefly/discover/ai-video-creation-vs-traditional-editing.html) documentation comparing AI generation and traditional editing, manual workflows rely on filmed footage and pre-production planning. They use timeline assembly for frame-level precision.
 
 In contrast, generative systems manufacture motion and assets automatically from scripts or reference images. These prompt systems show how [AI video generators harness text](/video/ai-video-generators-transforming-content-creation-with-text-to-video) to manufacture raw visual assets.
 
@@ -55,7 +55,7 @@ Professional platforms now integrate these computational models directly into st
 
 This system creates synchronized captions and supports text-based editing. It allows creators to cut timeline video directly from the transcript.
 
-Hardware integration has accelerated this timeline transition. According to [Apple](https://www.apple.com/) documentation, machine learning models running on the Apple Neural Engine automate Voice Isolation to separate speech from noise.
+Hardware integration has accelerated this timeline transition. According to [Apple](https://support.apple.com/guide/final-cut-pro/how-does-object-tracking-work-vere9b794f29/mac) documentation, machine learning models running on the Apple Neural Engine automate Voice Isolation to separate speech from noise.
 
 Apple documentation also confirms the software calculates object tracking directly on consumer chips. It runs these tracking calculations alongside Point Cloud algorithms (computational methods that map three-dimensional data points in space).
 

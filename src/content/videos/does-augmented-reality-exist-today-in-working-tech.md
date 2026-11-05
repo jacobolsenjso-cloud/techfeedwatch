@@ -54,7 +54,7 @@ These early military and academic systems required room-sized computers, physica
 ## Where is augmented reality used today?
 Augmented reality is used today across hundreds of millions of mobile consumer devices, industrial assembly plants, remote field engineering services, and digital retail platforms. Consumers frequently use functional AR tools without recognizing the underlying spatial computing architecture.
 
-Mobile hardware represents the largest deployment footprint. According to [Apple](https://www.apple.com/), the company launched its developer framework ARKit in 2017 to integrate computer vision, surface detection, and environmental light estimation directly into millions of iOS mobile devices.
+Mobile hardware represents the largest deployment footprint. According to Apple, the company launched its developer framework ARKit in 2017 to integrate computer vision, surface detection, and environmental light estimation directly into millions of iOS mobile devices.
 
 Similar platforms on competitor hardware allow users to place furniture into living rooms, preview retail purchases to scale, and play location-based multiplayer video games. The technology also powers live video filters that track facial landmarks with millimeter precision across social media platforms.
 

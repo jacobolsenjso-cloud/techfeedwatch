@@ -58,7 +58,7 @@ The following comparison draws on research from Gartner Peer Insights, Stanford 
 | Traditional Automation | Follows static, hardcoded rules | Rigid integration scripting |
 | No-Code AI Agent | Plans tasks and executes actions | Visual configuration and plain language |
 
-While I do not have much experience with autonomous agents yet, letting software make decisions on your behalf is a major step. An automated helper will only ever perform as well as the detailed context you give it at the start. Doing solid research beforehand helps you avoid messy surprises once an agent begins taking action.
+Letting software make decisions on your behalf is a major step. An automated helper will only ever perform as well as the detailed context you give it at the start. Doing solid research beforehand helps you avoid messy surprises once an agent begins taking action.
 
 ## Core architecture enabling autonomous execution without coding
 No-code AI agents operate through visual consoles. These consoles combine reasoning models, background event triggers, data retrieval systems, and pre-built tool connectors.
@@ -67,7 +67,7 @@ According to Google Cloud documentation, Vertex AI Agent Builder uses out-of-the
 
 Additionally, it uses vector search (searching information by conceptual meaning rather than exact keywords). These tools ground the agent in enterprise databases without manual coding. Grounding gives the agent reliable facts and prevents made-up answers.
 
-According to [Salesforce](https://www.salesforce.com/?bc=DB), the Agentforce Builder lets domain experts configure agents using natural language descriptions and built-in safety parameters. These platforms bundle complex backend code into intuitive visual blocks. Users connect data sources, define operational boundaries, and assign specific execution permissions.
+According to [Salesforce](https://www.salesforce.com/blog/easy-to-use-agentforce-builder/), the Agentforce Builder lets domain experts configure agents using natural language descriptions and built-in safety parameters. These platforms bundle complex backend code into intuitive visual blocks. Users connect data sources, define operational boundaries, and assign specific execution permissions.
 
 - Input perception: Visual triggers and data listeners detect system updates or user requests.
 - Planning engine: The underlying model determines the necessary steps to achieve the goal.

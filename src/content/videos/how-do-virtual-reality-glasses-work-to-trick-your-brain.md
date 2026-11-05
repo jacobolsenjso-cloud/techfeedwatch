@@ -68,7 +68,7 @@ Understanding these tracking paradigms is essential when evaluating the [best vi
 
 Motion-to-photon latency measures the exact time between a user moving their head and the corresponding visual frame illuminating on the headset display. When an individual turns their neck, the vestibular system inside the inner ear senses the acceleration instantly. If visual confirmation lags behind vestibular cues, the sensory mismatch triggers disorientation and motion sickness.
 
-Hardware and software engineers must keep that delay imperceptible to the human nervous system. According to enterprise display manufacturer [Varjo](https://varjo.com/), maintaining motion-to-photon latency below 20 milliseconds is necessary because larger delays cause the human brain to detect disconnects between vestibular signals and visual input, causing spatial disorientation.
+Hardware and software engineers must keep that delay imperceptible to the human nervous system. According to enterprise display manufacturer [Varjo](https://support.varjo.com/hc/en-us/latency), maintaining motion-to-photon latency below 20 milliseconds is necessary because larger delays cause the human brain to detect disconnects between vestibular signals and visual input, causing spatial disorientation.
 
 Achieving this benchmark requires high display refresh rates, such as 90 or 120 frames per second, coupled with aggressive rendering pipelines.
 
@@ -90,7 +90,7 @@ Virtual reality optics break this biological link. The convex lenses fix the phy
 
 According to a vision research paper published in the Journal of Vision in September 2024, the vergence-accommodation conflict occurs in virtual reality because the eyes accommodate to a fixed screen distance while converging on simulated 3D coordinates, causing a constant vergence offset that distorts perceived distances.
 
-According to developer documentation published by [Magic Leap](https://www.magicleap.com/), the physiological decoupling between ocular accommodation and vergence in near-eye displays represents a major cause of visual fatigue and cybersickness across extended reality hardware.
+According to developer documentation published by Magic Leap, the physiological decoupling between ocular accommodation and vergence in near-eye displays represents a major cause of visual fatigue and cybersickness across extended reality hardware.
 
 Researchers continue studying varifocal lens designs to resolve this fundamental physiological gap. Comparing these displays to transparent optical devices reveals why engineers evaluate the [difference between virtual reality and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) differently.
 

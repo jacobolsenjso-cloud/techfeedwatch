@@ -56,7 +56,7 @@ To distinguish the visual experiences across spatial computing formats:
 
 Optical see-through looks like faint, holographic light projected over direct human vision. In comparison, video pass-through looks like a digitized video feed of your room displaying solid, opaque computer models.
 
-According to [Varjo](https://varjo.com/)'s display technology guide, optical see-through displays project additive light through transparent lenses. These displays cannot display the color black, causing digital objects to look semi-translucent.
+According to [Varjo](https://support.varjo.com/hc/en-us/vr-ar-xr-which-technology-to-choose)'s display technology guide, optical see-through displays project additive light through transparent lenses. These displays cannot display the color black, causing digital objects to look semi-translucent.
 
 Because additive light cannot subtract real photons entering the eye, bright physical lighting bleeds through virtual objects. Wearers see digital forms as glowing, ghostly projections floating within their direct line of sight.
 
@@ -72,7 +72,7 @@ The resulting visual presentation creates distinct trade-offs for wearers:
 
 Digital objects visually interact with physical environments by casting synthetic shadows onto real floors. They also reflect room light and disappear behind physical obstacles when viewed from different angles.
 
-According to [Microsoft Learn](https://learn.microsoft.com/en-us/)'s mixed reality documentation, headsets visually blend physical and digital worlds along the reality-virtuality continuum. They use spatial mapping, surface recognition, and ambient lighting to anchor digital content into a user's physical surroundings. Sensors map walls, flat tables, and ceiling boundaries into a coordinate grid.
+According to [Microsoft Learn](https://learn.microsoft.com/en-us/windows/mixed-reality/discover/mixed-reality)'s mixed reality documentation, headsets visually blend physical and digital worlds along the reality-virtuality continuum. They use spatial mapping, surface recognition, and ambient lighting to anchor digital content into a user's physical surroundings. Sensors map walls, flat tables, and ceiling boundaries into a coordinate grid.
 
 Software calculates where ambient light sources sit in the room, creating simulated shadows under digital assets. A virtual bronze statue placed near a lamp shows realistic highlights on the illuminated side and darker tones on the reverse.
 

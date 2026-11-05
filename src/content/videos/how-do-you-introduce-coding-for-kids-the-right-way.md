@@ -52,7 +52,7 @@ According to the MIT Media Lab, its visual programming environment Scratch was d
 
 Scratch allows students to drag and drop functional blocks to build games, animations, and soundboards. Exploring [what using coding blocks means for everyday coders](/video/what-using-coding-blocks-means-for-everyday-coders) highlights why visual layouts build real procedural logic without syntactic exhaustion.
 
-According to [Code.org](https://code.org/en-US), its educational platform has reached over 150 million students globally, supporting over 232 million student projects with 48% female or gender-expansive participation. These platforms demonstrate that inclusive design broadens participation across young demographics.
+According to [Code.org](https://code.org/en-US/promote-computer-science), its educational platform has reached over 150 million students globally, supporting over 232 million student projects with 48% female or gender-expansive participation. These platforms demonstrate that inclusive design broadens participation across young demographics.
 
 However, visual platforms create transition hurdles. According to a study published in the *Journal of Statistics and Data Science Education* by Taylor & Francis in July 2022, visual block-based coding reduces syntactic frustration for novices, but students with low self-efficacy or poor prior instructional experiences continue to face significant friction when transitioning to text-based programming languages.
 

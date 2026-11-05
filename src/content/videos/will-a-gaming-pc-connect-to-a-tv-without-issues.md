@@ -57,11 +57,11 @@ Connecting these two displays requires choosing the correct cable generation. Th
 - Ultra High Speed HDMI cables open up the complete capabilities of modern hardware.
 - Active DisplayPort to HDMI adapters convert signals if your graphics card lacks a free HDMI jack.
 
-Bandwidth (data capacity) limits dictate what resolution and frame rate your screen can show. According to [HDMI Licensing Administrator](https://www.hdmi.org/), the HDMI 2.1 specification introduced the Ultra High Speed HDMI Cable supporting up to 48Gbps bandwidth.
+Bandwidth (data capacity) limits dictate what resolution and frame rate your screen can show. According to [HDMI Licensing Administrator](https://www.hdmi.org/spec2sub/ultrahdmicables), the HDMI 2.1 specification introduced the Ultra High Speed HDMI Cable supporting up to 48Gbps bandwidth.
 
 HDMI Licensing Administrator reports this 48Gbps capacity handles uncompressed video up to 4K resolution at 120Hz and 8K at 60Hz. That official specification also supports Variable Refresh Rate or VRR (a tool that matches screen speed to game speed). This feature eliminates screen tearing (visual glitches where frames overlap) during intense gameplay.
 
-You should always plug the display cord into the dedicated graphics card rather than the motherboard video jack. Motherboard ports run off integrated processor graphics (weaker visuals built directly into the central processor). Integrated graphics processors lack the power to render demanding 3D games smoothly. 
+You should always plug the display cord into the dedicated graphics card rather than the motherboard video jack. Motherboard ports run off integrated processor graphics (weaker visuals built directly into the central processor). Integrated graphics processors lack the power to render demanding 3D games smoothly.
 
 ## Enable Game Mode and PC Mode for low latency
 
@@ -69,7 +69,7 @@ You must switch your television picture setting to Game Mode to eliminate contro
 
 Televisions process images heavily to improve movie playback. However, this digital enhancement creates severe input lag (the delay between pressing a button and seeing the action) for computer users.
 
-According to [RTINGS.com](https://www.rtings.com/), standard TV picture processing modes introduce between 40 milliseconds and over 100 milliseconds of display latency. Latency is the delay before data arrives on the screen. That amount of lag makes your mouse cursor feel sluggish.
+According to [RTINGS.com](https://www.rtings.com/tv/reviews/best/by-usage/pc-monitor), standard TV picture processing modes introduce between 40 milliseconds and over 100 milliseconds of display latency. Latency is the delay before data arrives on the screen. That amount of lag makes your mouse cursor feel sluggish.
 
 It also ruins fast reflexes in action titles. RTINGS.com tests show that activating Game Mode bypasses post-processing to cut input lag below 15 milliseconds at 4K 60Hz. The same RTINGS.com benchmarks show Game Mode drops latency under 10 milliseconds when running at 120Hz.
 
@@ -86,7 +86,7 @@ According to RTINGS.com, achieving sharp text clarity from a PC desktop requires
 
 ## How does a TV compare to a gaming monitor?
 
-According to RTINGS.com, dedicated desktop computer monitors maintain an advantage in font rendering over televisions. Deciding between a desk display and a living room panel comes down to your physical viewing distance and workspace preferences. 
+According to RTINGS.com, dedicated desktop computer monitors maintain an advantage in font rendering over televisions. Deciding between a desk display and a living room panel comes down to your physical viewing distance and workspace preferences.
 
 The following performance comparisons draw directly from display testing published by RTINGS.com:
 
@@ -95,7 +95,6 @@ The following performance comparisons draw directly from display testing publish
 | Display Latency at 4K 60Hz (RTINGS.com) | 40 milliseconds to over 100 milliseconds | Below 15 milliseconds | Under 10 milliseconds |
 | Display Latency at 120Hz (RTINGS.com) | 40 milliseconds to over 100 milliseconds | Under 10 milliseconds | Under 5 milliseconds |
 | Text Clarity Rendering (RTINGS.com) | Discards color detail via compression | Sharp text with chroma 4:4:4 in PC Mode | Superior text due to standard RGB subpixels |
-| |
 
 For couch setups, modern displays narrow the performance gap significantly. According to RTINGS.com, premium gaming televisions like the LG C6 OLED support refresh rates up to 165Hz at 4K resolution. These screens provide this performance across four HDMI 2.1 ports.
 
@@ -109,7 +108,7 @@ Although I do not play video games myself, modern releases look remarkably lifel
 
 ## Route audio and configure wireless living room controls
 
-You route your PC audio through the HDMI connection directly into your television speakers or an external sound system. Windows treats your connected television as an audio playback device automatically. 
+You route your PC audio through the HDMI connection directly into your television speakers or an external sound system. Windows treats your connected television as an audio playback device automatically.
 
 Click the speaker icon on the Windows taskbar to choose your television or connected soundbar as the primary audio device. If you use a multi-channel home theater receiver, your graphics card passes surround sound formats over the same HDMI cord.
 

@@ -96,7 +96,7 @@ Slow pages frustrate visitors and cause high abandonment rates. When text or but
 ## How long does SEO take to show measurable results?
 Search engine optimization requires steady ongoing implementation over several months. Only then do organic rankings and traffic show substantial growth. New websites must earn crawl frequency, index coverage, and user trust over extended periods.
 
-SEO research firm [Backlinko](https://backlinko.com/) analyzed 4 million Google search results to examine organic traffic behavior. According to Backlinko, the top organic result earns an average click-through rate of 27.6%.
+SEO research firm [Backlinko](https://backlinko.com/google-ctr-stats) analyzed 4 million Google search results to examine organic traffic behavior. According to Backlinko, the top organic result earns an average click-through rate of 27.6%.
 
 Backlinko found that this top position is ten times more likely to receive a click than the tenth spot. Reaching those top spots requires persistent improvements rather than immediate fixes.
 

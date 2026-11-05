@@ -38,7 +38,7 @@ keyFacts:
     url: "https://support.google.com/gemininotebook/answer/17004255?hl=en"
 ---
 
-People use [Google](https://www.google.com/) NotebookLM for research by creating a project notebook and uploading source documents. Next, they ask questions focused directly on that uploaded text.
+People use [Google](https://support.google.com/gemininotebook/answer/17004255?hl=en) NotebookLM for research by creating a project notebook and uploading source documents. Next, they ask questions focused directly on that uploaded text.
 
 The system analyzes these materials and summarizes key themes for the user. It also provides factual answers tied directly to the uploaded files. In practice, it acts like an automated assistant that reads an assigned library before answering.
 
@@ -73,7 +73,7 @@ NotebookLM grounds its responses entirely in uploaded files. This stops artifici
 
 When someone asks a question, the platform searches the sources. It then builds its response directly around the actual text.
 
-According to [Carnegie Mellon University](https://www.cmu.edu/) Computing Services, researchers can query (search and question) multiple uploaded documents simultaneously. They can view in-text citations that link back to matching text excerpts in original source files. Clicking a numbered citation badge takes the user directly to the exact passage inside the source viewer.
+According to [Carnegie Mellon University](https://www.cmu.edu/computing/services/ai/tools/google-ai-tools/notebook-lm-how-to.html) Computing Services, researchers can query (search and question) multiple uploaded documents simultaneously. They can view in-text citations that link back to matching text excerpts in original source files. Clicking a numbered citation badge takes the user directly to the exact passage inside the source viewer.
 
 Standard chat tools pull information from general web training. NotebookLM avoids this problem by treating uploaded documents as the sole authority.
 
@@ -132,7 +132,7 @@ Finally, Ai Podcast shows an updated audio feature. In this feature, users can i
 
 The creator describes this tool as a replacement for standard workflow tools. Even so, everyday users should remember that autonomous research agents still require human oversight to verify facts and catch errors.
 
-While I do not have much experience with autonomous agents yet, letting software act on its own always demands caution. An assistant only works as effectively as the detailed instructions you provide, and missing context can easily lead things off track. Doing thorough research before relying on automated routines ensures you stay in complete control.
+Letting software act on its own always demands caution. An assistant only works as effectively as the detailed instructions you provide, and missing context can easily lead things off track. Doing thorough research before relying on automated routines ensures you stay in complete control.
 
 ## Sources
 

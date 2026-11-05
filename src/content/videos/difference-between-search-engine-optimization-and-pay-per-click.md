@@ -115,7 +115,7 @@ However, frequent users whose purchases were unaffected by ads accounted for mos
 
 ## Solutions 8 on Evolving SERPs and Paid Search Visibility
 
-Modern search interfaces continue to shift away from classic configurations. In a strategic analysis, agency [Solutions 8](https://sol8.com/) noted that viewing search through clean, distinct classifications was "very simple, very clean, very 2019."
+Modern search interfaces continue to shift away from classic configurations. In a strategic analysis, agency Solutions 8 noted that viewing search through clean, distinct classifications was "very simple, very clean, very 2019."
 
 Solutions 8 stated that "the bottom line is that search is not as tidy as it used to be." Automated summary layers and zero-click layouts now fundamentally change traditional funnel pathways.
 

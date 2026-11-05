@@ -45,7 +45,7 @@ Modern workflows link language models (programs that understand and generate tex
 ## What are the measurable benefits of automating content creation?
 Automating content creation saves individual working hours and standardizes routine formatting. It also helps small marketing teams produce regular material without hiring more staff.
 
-Resource shortages often slow down traditional marketing teams. According to the [Content Marketing Institute](https://contentmarketinginstitute.com/), 54% of B2B (business-to-business) marketers cite a lack of resources as their primary content challenge. The Content Marketing Institute also found that 45% of B2B organizations lack a scalable model for content creation.
+Resource shortages often slow down traditional marketing teams. According to the [Content Marketing Institute](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025), 54% of B2B (business-to-business) marketers cite a lack of resources as their primary content challenge. The Content Marketing Institute also found that 45% of B2B organizations lack a scalable model for content creation.
 
 Automating technical production steps delivers immediate speed for individual workers. According to McKinsey's The State of AI: Global Survey 2026, 80% of surveyed workers reported that artificial intelligence improved their individual productivity. Routine drafting and file conversions no longer require hours of manual effort.
 

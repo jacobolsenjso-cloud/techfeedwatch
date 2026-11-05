@@ -37,7 +37,7 @@ Once crawled, search engines catalog those pages inside an immense index. System
 
 Understanding [how HTML tags affect SEO](/video/master-html-seo-unlock-organic-traffic-with-these-essential-on-page) demonstrates how underlying code informs crawler interpretation. If a company does not expose clear topical signals, the search engine cannot match that business to user inquiries.
 
-According to [Google](https://www.google.com/) Search Central's official documentation, SEO improves organic search presence by making pages easier for automated search engines to crawl, index, and understand without paying for placements. Achieving top visibility yields compounding traffic, as SBDCNet reports that the top organic result on search engines earns an estimated click-through rate of 27.6%.
+According to [Google](https://developers.google.com/search/docs/fundamentals/do-i-need-seo) Search Central's official documentation, SEO improves organic search presence by making pages easier for automated search engines to crawl, index, and understand without paying for placements. Achieving top visibility yields compounding traffic, as SBDCNet reports that the top organic result on search engines earns an estimated click-through rate of 27.6%.
 
 The process requires technical coordination across several fundamental layers:
 
@@ -54,7 +54,7 @@ In contrast, organic optimization builds compounding equity. A 2009 study by Ber
 
 Because organic listings secure higher aggregate volume, companies investing in organic visibility build an acquisition asset that does not incur direct cost per click. Exploring [why SEO is important for businesses](/video/why-is-seo-important-for-businesses-right-now) clarifies how this organic advantage functions in competitive markets.
 
-Yet, raw volume does not directly equate to equivalent commercial conversion rates. A peer-reviewed study by [NYU Stern School of Business](https://www.stern.nyu.edu/) published by the ACM found that paid search ads generate higher direct conversion rates, order values, and profits per click than organic natural listings.
+Yet, raw volume does not directly equate to equivalent commercial conversion rates. A peer-reviewed study by [NYU Stern School of Business](https://pages.stern.nyu.edu/~aghose/organic_sponsored.pdf) published by the ACM found that paid search ads generate higher direct conversion rates, order values, and profits per click than organic natural listings.
 
 Google's 2025 Economic Impact Report methodology conservatively models organic search clicks as only 70% as commercially valuable as paid advertising clicks. The model notes that advertisers lack total message control over organic snippets and often buy ads even when ranking organically.
 

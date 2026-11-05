@@ -37,7 +37,7 @@ keyFacts:
     url: "https://cloud.google.com/blog/products/identity-security/powering-the-next-era-of-confidential-ai"
 ---
 
-[Apple](https://www.apple.com/)'s AI strategy focuses on embedding practical artificial intelligence directly into system software. The company avoids building an isolated chatbot.
+[Apple](https://support.apple.com/guide/iphone/get-started-with-apple-intelligence-iphc28624b81/ios)'s AI strategy focuses on embedding practical artificial intelligence directly into system software. The company avoids building an isolated chatbot.
 
 Instead, it pairs compact on-device models with privacy-focused cloud servers. Together, these tools handle everyday mobile tasks. This system prioritizes user data protection while pushing hardware sales across its ecosystem.
 
@@ -55,7 +55,7 @@ Private Cloud Compute isolates sensitive user prompts inside dedicated server en
 
 According to Apple Security Research on June 10, 2024, cloud servers delete personal data immediately after completing a prompt. The architecture contains no persistent storage for user interactions. Devices refuse to send data unless remote servers run cryptographically published software.
 
-The system expanded its infrastructure to handle growing model demands. According to Apple Security Research on June 8, 2026, Apple added [Google](https://www.google.com/) Cloud Platform nodes.
+The system expanded its infrastructure to handle growing model demands. According to Apple Security Research on June 8, 2026, Apple added [Google](https://cloud.google.com/blog/products/identity-security/powering-the-next-era-of-confidential-ai) Cloud Platform nodes.
 
 These nodes feature Google Titan security chips and Nvidia Confidential Computing GPUs. They also include Intel CPUs with TDX (Trust Domain Extensions, a security technology that isolates and protects data in memory).
 

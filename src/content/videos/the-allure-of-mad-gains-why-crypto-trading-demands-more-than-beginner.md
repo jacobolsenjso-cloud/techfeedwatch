@@ -54,7 +54,7 @@ Market structure also plays a direct part in these wild price swings:
 
 Capital movements trigger exaggerated price reactions in digital assets. This mechanism exists because of an imbalance between liquid reserves and total market valuations. Market values swing far more than the actual dollars entering or leaving the system.
 
-According to a [Bank for International Settlements](https://www.bis.org/) Working Paper published in June 2023, crypto volatility is structurally driven by the crypto multiplier. A modest net outflow of investor cash can destroy tens of billions of dollars in reported market value.
+According to a [Bank for International Settlements](https://www.bis.org/publications/working-paper-1104-crypto-multiplier) Working Paper published in June 2023, crypto volatility is structurally driven by the crypto multiplier. A modest net outflow of investor cash can destroy tens of billions of dollars in reported market value.
 
 According to a Bank for International Settlements Bulletin published in February 2023, extreme volatility erased over $1.8 trillion of crypto asset value across 2022.
 

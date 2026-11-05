@@ -49,7 +49,7 @@ Qubits hold data in superposition (existing in multiple states at once). They al
 
 According to Caltech Science Exchange, a standard computer bit strictly represents a 0 or a 1. A qubit can remain in a superposition of both states until an observer measures it.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST), quantum entanglement links two or more qubits together. Measuring one entangled qubit instantly determines the physical state of the other qubit. This connection lets quantum processors coordinate data across an interconnected network.
+According to the [National Institute of Standards and Technology](https://www.nist.gov/quantum-information-science/quantum-computing-explained) (NIST), quantum entanglement links two or more qubits together. Measuring one entangled qubit instantly determines the physical state of the other qubit. This connection lets quantum processors coordinate data across an interconnected network.
 
 The primary principles of quantum processing include:
 - Superposition lets a qubit hold probabilities of zero and one simultaneously.

@@ -49,14 +49,14 @@ Smart contracts fail when human developers introduce software flaws or design fa
 
 Automated code executes instructions literally. It cannot judge human intent, question strange orders, or pause itself when a thief drains a pool. If a programmer leaves a backdoor or mathematical error open, anyone can exploit it. 
 
-According to cybersecurity non-profit [OWASP](https://owasp.org/)'s Smart Contract Top 10 (2025), several critical vulnerabilities consistently compromise automated blockchain agreements:
+According to cybersecurity non-profit [OWASP](https://owasp.org/projects/smart-contract-top-10)'s Smart Contract Top 10 (2025), several critical vulnerabilities consistently compromise automated blockchain agreements:
 - Access control flaws that let unauthorized users take ownership of contract functions
 - Price oracle manipulation (tampering with external price data) that tricks the code with fake real-world asset values
 - Logic errors that produce unintended mathematical outcomes during execution
 - Lack of input validation that permits corrupted or harmful data entries
 - Reentrancy attacks (repeated unauthorized withdrawals) and unchecked external calls that drain funds before balances update
 
-Financial criminals exploit these flaws constantly to steal user assets. [Immunefi](https://immunefi.com/) is a blockchain security and bug bounty platform (a service that rewards ethical hackers).
+Financial criminals exploit these flaws constantly to steal user assets. [Immunefi](https://immunefi.com/blog/research/immunefi-crypto-losses-q1-2025-report/) is a blockchain security and bug bounty platform (a service that rewards ethical hackers).
 
 According to the Crypto Losses Q1 2025 Report from Immunefi, malicious exploits and hacks resulted in $1,623,133,800 in lost digital assets. These losses occurred across Web3 platforms (decentralized internet services built on blockchains) during the first quarter of 2025.
 

@@ -46,11 +46,11 @@ Optimus is a two-legged robot powered by onboard computers and custom actuators 
 
 Engineers adapted these networks from automotive self-driving systems. According to Tesla, Inc., Optimus adapts the vision and neural network architecture originally developed for Tesla's Full Self-Driving system to perform dangerous, repetitive, or boring tasks. It handles without relying on expensive laser-mapping hardware.
 
-According to [Wikipedia](https://www.wikipedia.org/), Tesla first revealed the humanoid project on August 19, 2021. The company displayed rough physical prototypes in 2022.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Optimus_(robot)), Tesla first revealed the humanoid project on August 19, 2021. The company displayed rough physical prototypes in 2022.
 
 Tesla later revealed an upgraded Generation 2 model in December 2023. The hardware uses custom electrical actuators positioned at key joints. These actuators duplicate human mechanical motions.
 
-According to [Business Insider](https://www.businessinsider.com/), Elon Musk discussed component manufacturing during a July 2026 earnings call. He stated that Tesla is building proprietary (privately developed) actuators, sensors, and gearboxes.
+According to [Business Insider](https://www.businessinsider.com/everything-we-know-about-teslas-optimus-humanoid-robot-2026-7), Elon Musk discussed component manufacturing during a July 2026 earnings call. He stated that Tesla is building proprietary (privately developed) actuators, sensors, and gearboxes.
 
 The company wants to achieve human and eventually superhuman hand dexterity (skill with hands). These mechanical systems focus on copying biological mobility:
 
@@ -86,7 +86,6 @@ The following table summarizes the rollout timeline and pricing figures document
 | Project Unveiling | August 19, 2021 | Concept announcement at Tesla AI Day (Wikipedia) |
 | Generation 2 Prototype | December 2023 | Upgraded bipedal balance demonstration (Wikipedia) |
 | Pilot Manufacturing | October 2026 | Earnings report details California pilot line (Manufacturing Dive) |
-| | | |
 | Mass Production Target | Long-term | Projected price of $20,000 to $30,000 per unit (TechRepublic) |
 
 Tesla intends to bring manufacturing costs down by sharing supply agreements, battery cells, and drive electronics. The company will share these parts between its electric vehicles and robotic platforms.

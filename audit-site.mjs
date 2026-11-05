@@ -104,6 +104,21 @@ for (const p of filer) {
     }
   }
 
+  // Tabeller (5/11-2026): faktatjekket satte en hel sætning ind i én celle og efterlod tomme rækker
+  // (målt: 6 artikler). Hver række skal have lige så mange celler som overskriften, ingen række må være
+  // tom, ingen celle over 25 ord, og en tabel skal have mindst 2 rækker.
+  // Kun artikler og guides: værktøjssidernes tabeller fyldes af JavaScript i browseren og er tomme i HTML.
+  for (const t of (/^\/(video|guides)\//.test(navn) ? h : '').matchAll(/<table\b[\s\S]*?<\/table>/g)) {
+    const th = (t[0].match(/<thead[\s\S]*?<\/thead>/)?.[0].match(/<th\b/g) || []).length;
+    const raekker = [...(t[0].match(/<tbody[\s\S]*?<\/tbody>/)?.[0] || '').matchAll(/<tr\b[\s\S]*?<\/tr>/g)].map((r) => [...r[0].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((c) => c[1].replace(/<[^>]+>/g, '').trim()));
+    const ord = (c) => c.split(/\s+/).filter(Boolean).length;
+    // Markdown fylder manglende celler op og klipper ekstra væk, så en forskudt række ses som tom første
+    // celle, og en sætning i én celle ses som en række, hvor kun første celle har tekst.
+    const daarlig = raekker.filter((r) => r.length !== th || !r[0] || (th > 1 && r.slice(1).every((c) => !c)) || r.some((c) => ord(c) > 25)).length;
+    if (daarlig) f('tabel', navn, `${daarlig} ødelagt(e) tabelrække(r)`);
+    else if (raekker.length < 2) f('tabel', navn, 'tabel med under 2 rækker');
+  }
+
   const ids = [...h.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
   const set = new Set(); const dub = new Set();
   for (const i of ids) (set.has(i) ? dub : set).add(i);

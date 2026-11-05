@@ -41,7 +41,7 @@ AI automation for small businesses uses intelligent software to perform routine 
 
 Small businesses automate repetitive data entry, bookkeeping routines, appointment scheduling, and standard inventory updates with modern software tools.
 
-Many small operations start with administrative duties that consume hours each week. According to the [U.S. Small Business Administration](https://www.sba.gov/), approximately 36 million small businesses operate in the United States. The same agency notes that 88% of those businesses maintain fewer than 20 employees.
+Many small operations start with administrative duties that consume hours each week. According to the U.S. Small Business Administration, approximately 36 million small businesses operate in the United States. The same agency notes that 88% of those businesses maintain fewer than 20 employees.
 
 Small teams often lack dedicated administrative staff to handle paperwork. Intelligent software steps in to organize messy receipts, categorize ledger expenses, and verify vendor invoices. Teams learn [how AI automates routine tasks](/video/beyond-buzzwords-how-ai-productivity-tools-reshape-real-world) across their standard office software.
 
@@ -60,7 +60,7 @@ Customer communication demands fast responses that small teams struggle to provi
 
 When a potential client requests information, software routes the lead to the correct staff member. Automated email systems send appointment confirmations and follow-up notices without human effort. This steady communication keeps clients engaged throughout the entire sales process.
 
-According to the [U.S. Chamber of Commerce](https://www.uschamber.com/) Technology Engagement Center's October 2026 report, 66% of small businesses use artificial intelligence. That report also found that AI-enabled small businesses are at least 7 percentage points more likely than non-users to report growth in sales, profits, and workforce size.
+According to the [U.S. Chamber of Commerce](https://www.uschamber.com/technology/2026-empowering-small-business-report) Technology Engagement Center's October 2026 report, 66% of small businesses use artificial intelligence. That report also found that AI-enabled small businesses are at least 7 percentage points more likely than non-users to report growth in sales, profits, and workforce size.
 
 The following survey data compiled by the U.S. Chamber of Commerce and Goldman Sachs highlights adoption rates and business impacts.
 

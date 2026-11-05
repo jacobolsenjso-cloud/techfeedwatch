@@ -55,7 +55,7 @@ The memory industry operates under strict physical manufacturing limitations. Bu
 
 When demand for high-end AI components accelerates, manufacturers cannot instantaneously summon new fabrication plants. Instead, they repartition existing wafer production lines.
 
-HBM designs consume disproportionate amounts of physical wafer area compared to standard DRAM modules. According to [Micron Technology](https://www.micron.com/) HBM Design Architecture Fellow Raghu Sreeramaneni at the Hot Chips 2026 conference on August 23, 2026, HBM3E requires roughly three times the silicon wafer area of conventional DDR5 for the same bit capacity due to massive interface parallelism and through-silicon via (TSV) architecture.
+HBM designs consume disproportionate amounts of physical wafer area compared to standard DRAM modules. According to Micron Technology HBM Design Architecture Fellow Raghu Sreeramaneni at the Hot Chips 2026 conference on August 23, 2026, HBM3E requires roughly three times the silicon wafer area of conventional DDR5 for the same bit capacity due to massive interface parallelism and through-silicon via (TSV) architecture.
 
 Every single wafer turned into stacked AI memory directly reduces the raw output of mainstream memory modules.
 

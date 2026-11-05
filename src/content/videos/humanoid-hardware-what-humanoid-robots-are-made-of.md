@@ -63,7 +63,7 @@ According to Patsnap Eureka, early humanoid prototypes used conventional aluminu
 
 Patsnap Eureka states that modern designs resolve this problem. They adopt specialized composites and high-temperature polymers rated up to 200°C.
 
-According to research from IDTechEx, [Covestro](https://www.covestro.com/), Patsnap Eureka, and 36Kr, distinct materials fulfill specific mechanical demands across the machine:
+According to research from IDTechEx, [Covestro](https://solutions.covestro.com/en/highlights/articles/stories/2026/humanoid-robotics-material-solutions), Patsnap Eureka, and 36Kr, distinct materials fulfill specific mechanical demands across the machine:
 
 | Material Type | Primary Robot Location | Key Engineering Benefit |
 | :--- | :--- | :--- |

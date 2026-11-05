@@ -40,7 +40,7 @@ AI video creation divides into three distinct technical categories based on the 
 
 According to Runway's beginner video production guide published on September 28, 2026, pure generative diffusion tools operate via text-to-video, image-to-video, and video-to-video prompts. They produce individual clips lasting between 3 and 30 seconds rather than complete finished films. In contrast, digital avatar engines bypass video editing entirely by focusing on corporate communication.
 
-According to [Synthesia](https://www.synthesia.io/)'s official feature documentation, creating talking-head and training videos requires only typing or pasting a script to animate digital avatars. This system provides access to over 240 stock or custom avatars speaking more than 140 languages without physical camera equipment.
+According to [Synthesia](https://www.synthesia.io/video)'s official feature documentation, creating talking-head and training videos requires only typing or pasting a script to animate digital avatars. This system provides access to over 240 stock or custom avatars speaking more than 140 languages without physical camera equipment.
 
 ## Single prompts generate complete scripts, footage, and audio automatically
 All-in-one platforms remove technical barriers by orchestrating multiple specialized models behind a single input box. Instead of forcing a creator to write a script, generate individual clips in one app, synthesize voice files in another, and stitch them inside video editing software, the system completes the workflow internally. 

@@ -94,7 +94,7 @@ According to Science Robotics, a study led by University of Plymouth roboticist 
 
 Classrooms are loud and chaotic. Current machine models struggle to parse (interpret) overlapping child speech. They also struggle to detect subtle signs of emotional confusion.
 
-Educators also voice strong skepticism toward automated teaching. According to a Big Ideas survey published by [Education Week](https://www.edweek.org/), 84 percent of K-12 educators disagreed with one major idea. They disagreed that student learning would improve if teachers used AI-powered robot assistants in classrooms.
+Educators also voice strong skepticism toward automated teaching. According to a Big Ideas survey published by [Education Week](https://www.edweek.org/technology/teachers-the-robots-are-coming-but-thats-not-a-bad-thing/2020/01), 84 percent of K-12 educators disagreed with one major idea. They disagreed that student learning would improve if teachers used AI-powered robot assistants in classrooms.
 
 Education Week found that over 90 percent of surveyed teachers rejected replacing low-performing educators with robots. Teachers recognize that empathy, behavioral discipline, and contextual encouragement require human emotional intelligence.
 

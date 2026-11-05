@@ -45,7 +45,7 @@ Classical computers search for a secret key by checking possibilities one by one
 
 They use quantum superposition (a physical state where particles can represent multiple values at once) to evaluate database entries. Readers can see [how quantum computing differs](/video/how-is-quantum-computing-different-from-classical-computing) from classical computing when examining these mathematical shortcuts.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST), Grover's algorithm provides a quadratic speedup rather than an exponential one. This distinction matters.
+According to the [National Institute of Standards and Technology](https://csrc.nist.gov/csrc/media/Events/2024/fifth-pqc-standardization-conference/documents/papers/on-practical-cost-of-grover.pdf) (NIST), Grover's algorithm provides a quadratic speedup rather than an exponential one. This distinction matters.
 
 An exponential speedup destroys an algorithm by reducing millions of years of work into hours. A quadratic speedup merely takes the square root of the total operation count.
 

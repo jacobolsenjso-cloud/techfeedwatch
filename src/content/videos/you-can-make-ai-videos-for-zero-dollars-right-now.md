@@ -44,7 +44,7 @@ Creators generate AI videos using cloud-based platforms that turn text scripts, 
 
 Some focus on photorealistic cinematic action, while others specialize in virtual workplace presentations.
 
-- Synthetic presenter platforms: According to [Synthesia](https://www.synthesia.io/), creators produce talking-head videos directly in a web browser from written scripts across more than 140 languages using synthetic avatars without physical cameras or studio sets.
+- Synthetic presenter platforms: According to [Synthesia](https://www.synthesia.io/features/ai-video-generator), creators produce talking-head videos directly in a web browser from written scripts across more than 140 languages using synthetic avatars without physical cameras or studio sets.
 - Design-integrated animators: According to Canva, its video generator turns text prompts into short clips with synchronized audio and animates static portrait photos into talking presenters across 40 languages.
 - Cinematic camera engines: According to Luma AI, its platform generates video clips from text prompts or still images while providing camera motion controls and start-and-end frame keyframing.
 - Multimodal foundation models: According to Google Cloud Documentation, the Veo 3.1 model handles text-to-video, image-to-video, and first-to-last-frame generation.

@@ -37,7 +37,7 @@ keyFacts:
     url: "https://deepmind.google/models/veo/"
 ---
 
-The best AI video generator depends on your target workflow because no single platform leads across text prompts, image animation, and post-generation editing. For cinematic control and high output resolution, [Google DeepMind](https://deepmind.google/)'s Veo series leads, while MiniMax and Alibaba dominate specific animation and video editing benchmarks.
+The best AI video generator depends on your target workflow because no single platform leads across text prompts, image animation, and post-generation editing. For cinematic control and high output resolution, [Google DeepMind](https://deepmind.google/models/veo/)'s Veo series leads, while MiniMax and Alibaba dominate specific animation and video editing benchmarks.
 
 Picking the right tool requires matching your production needs against clear trade-offs in physical accuracy, synchronized audio, and operating costs.
 

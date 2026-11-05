@@ -59,7 +59,7 @@ According to engineering consulting firm Exponent and device maker [Samsung Elec
 
 Those flaws included negative electrode deflection (bending) in cell corners, according to Exponent and Samsung Electronics. Sharp internal welding burrs (rough metal edges) also punctured the thin separator layer, according to Exponent and Samsung Electronics.
 
-Despite headline incidents, catastrophic failures do not occur often. According to [CNET](https://www.cnet.com/), baseline manufacturing quality control limits typical lithium-ion cell failure rates to roughly one in 10 million. Everyday wear or factory shortcuts create the primary risks.
+Despite headline incidents, catastrophic failures do not occur often. According to [CNET](https://www.cnet.com/tech/mobile/what-to-do-phone-laptop-battery-swell-bulge-hiss-fire/), baseline manufacturing quality control limits typical lithium-ion cell failure rates to roughly one in 10 million. Everyday wear or factory shortcuts create the primary risks.
 
 - Severe physical impacts that compress the battery pouch
 - Microscopic manufacturing burrs piercing internal layers

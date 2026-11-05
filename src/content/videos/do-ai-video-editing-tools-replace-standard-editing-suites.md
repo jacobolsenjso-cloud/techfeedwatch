@@ -53,7 +53,7 @@ They must also track moving subjects across thousands of individual frames. Acco
 
 They deploy convolutional and recurrent neural networks (AI models designed to analyze visual images and sequential data like audio). These models are triggered by user selections or text prompts. The software spots visual and audio patterns instantly.
 
-Text-based editing represents one of the largest shifts in this workflow. According to [Descript](https://www.descript.com/)'s official Help Center documentation, script-based video editing links video media directly to an AI-transcribed text document.
+Text-based editing represents one of the largest shifts in this workflow. According to [Descript](https://help.descript.com/getting-started/edit-like-a-doc)'s official Help Center documentation, script-based video editing links video media directly to an AI-transcribed text document.
 
 Editors cut, rearrange, or delete video clips by simply editing words inside a text processor. If an editor removes a spoken phrase from the transcript, the software automatically removes matching video frames from the timeline.
 
@@ -69,7 +69,7 @@ A solo editor handling social media or client interviews can finish rough cuts i
 ## Major NLEs (non-linear editors, the standard software programs used to edit video) integrate neural engines for masking and transcription
 Major non-linear editing platforms embed proprietary neural engines directly into their desktop applications. These engines handle masking, transcription, and frame extension locally.
 
-Traditional video editing required dedicated third-party plugins (add-on software) to execute complex visual effects. According to [Adobe](https://www.adobe.com/)'s April 2, 2025 press release, Premiere Pro introduced AI-powered Media Intelligence to search terabytes of footage in seconds. The same Adobe release announced automated Caption Translation to localize subtitles into 27 languages.
+Traditional video editing required dedicated third-party plugins (add-on software) to execute complex visual effects. According to [Adobe](https://news.adobe.com/news/downloads/pdfs/2025/04/nab-2025-press-release-final.pdf)'s April 2, 2025 press release, Premiere Pro introduced AI-powered Media Intelligence to search terabytes of footage in seconds. The same Adobe release announced automated Caption Translation to localize subtitles into 27 languages.
 
 Generative models now assist with timeline gaps as well. According to Adobe's official product documentation, the Generative Extend feature in Premiere Pro uses the Firefly Video Model. It adds newly generated frames to clips.
 

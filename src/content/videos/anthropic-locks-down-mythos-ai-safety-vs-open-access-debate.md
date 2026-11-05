@@ -31,7 +31,7 @@ The Mythos AI risk refers to the danger that autonomous frontier artificial inte
 
 ## Why Anthropic Withheld Claude Mythos from Public Release
 
-According to [Anthropic](https://www.anthropic.com/)'s official announcement on April 7, 2026, the company withheld Claude Mythos Preview from general public release because the model demonstrated autonomous capabilities to discover and exploit software vulnerabilities that could threaten global IT systems and national security. Anthropic determined that open deployment presented unprecedented asymmetric offensive advantages to malicious actors.
+According to [Anthropic](https://www.anthropic.com/glasswing)'s official announcement on April 7, 2026, the company withheld Claude Mythos Preview from general public release because the model demonstrated autonomous capabilities to discover and exploit software vulnerabilities that could threaten global IT systems and national security. Anthropic determined that open deployment presented unprecedented asymmetric offensive advantages to malicious actors.
 
 To mitigate this exposure, Anthropic restructured its product rollout. According to Anthropic's June 9, 2026 System Card for Claude Fable 5 and Claude Mythos 5, Anthropic divided the generation into Claude Fable 5, a generally available version equipped with strict safety filters blocking cyber and biological tasks, and Claude Mythos 5, an unrestricted version reserved for vetted defensive partners. 
 

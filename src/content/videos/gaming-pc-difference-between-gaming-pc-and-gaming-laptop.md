@@ -47,7 +47,7 @@ Marketing departments frequently assign matching series numbers to silicon inten
 
 A desktop graphics card draws high wattage directly from a dedicated power supply unit through thick gauge cables. A laptop equivalent must throttle back its operating frequencies to prevent rapid battery drain and internal component damage.
 
-Power delivery dictates frame generation. When a processor receives fewer watts, clock speeds drop and micro-stutters appear in demanding game engines. According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s hardware comparative guide, modern gaming laptops have narrowed the performance divide with desktops significantly, and overall system performance is determined more by specific internal components than by form factor alone.
+Power delivery dictates frame generation. When a processor receives fewer watts, clock speeds drop and micro-stutters appear in demanding game engines. According to [Intel](https://www.intel.com/content/www/us/en/gaming/resources/gaming-laptop-vs-desktop.html)'s hardware comparative guide, modern gaming laptops have narrowed the performance divide with desktops significantly, and overall system performance is determined more by specific internal components than by form factor alone.
 
 Modern system architectures feature dynamic boost algorithms that continuously monitor electrical supply. If a slim laptop chassis hits its thermal boundary or exhausts its peak delivery threshold, the system dials down core frequencies within milliseconds.
 

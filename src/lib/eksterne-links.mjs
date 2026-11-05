@@ -110,12 +110,56 @@ function ankerKandidater(titel, host) {
   return ud;
 }
 
+// ---------- Kildesider (5/11-2026, Jacob: links til selve kilden) ----------
+// Målt 5/11: 201 links i teksten pegede på en forside ("According to [Intel](intel.com)"), mens den
+// rigtige side stod i kildelisten nederst. En læser, der klikker, finder ikke kilden, og for en
+// bedømmer ligner det pyntekilder. Nu: står navnet som kilde, og har artiklen en kildeside fra samme
+// domæne, linkes der til DEN side. Har den ingen, linkes navnet slet ikke (aldrig til en forside).
+const KILDE_FOER = /\b(according to|per|data from|figures from|reported by|published by)\s+(the\s+)?$/i;
+const KILDE_EFTER = /^[^\s,.;]*\s+(reports?|reported|notes|noted|states|stated|found|finds|estimates?|estimated|says|said|documented|calculated|projects|projected|recorded|lists|explains|warns|confirms)\b/i;
+export function erKildeSted(linje, start, laengde) {
+  return KILDE_FOER.test(linje.slice(Math.max(0, start - 30), start)) || KILDE_EFTER.test(linje.slice(start + laengde));
+}
+const ordAf = (t) => String(t || '').toLowerCase().match(/[a-z0-9]{3,}/g) || [];
+// Den kildeside fra domænet, hvis titel ligner sætningen mest. null = ingen side fra domænet.
+export function bedsteKilde(kildeSider, hn, linje) {
+  const fra = (kildeSider || []).filter((k) => { try { return hovedNavn(new URL(k.url).hostname) === hn; } catch { return false; } });
+  if (!fra.length) return null;
+  const s = new Set(ordAf(linje));
+  const b = fra.map((k) => ({ k, n: ordAf(`${k.titel || ''} ${k.url}`).filter((w) => s.has(w)).length })).sort((a, b) => b.n - a.n)[0];
+  return { ...b.k, lighed: b.n };
+}
+// Kildesiden bruges, når navnet står som kilde, eller når sidens titel ligner sætningen (mindst 2 fælles ord).
+// Et produkt- eller firmanavn i en sætning om noget andet beholder sin officielle side.
+export const passerKilde = (k, linje, start, laengde) => !!k && (erKildeSted(linje, start, laengde) || k.lighed >= 2);
+export { hovedNavn };
+
 function saetInd(linjer, sted, url) {
   const l = linjer[sted.linje];
   linjer[sted.linje] = `${l.slice(0, sted.start)}[${sted.tekst}](${url})${l.slice(sted.start + sted.tekst.length)}`;
 }
 
-export async function tilfoejEksterneLinks(content, { beskrivelse = '', spoerg = null, log = console.log } = {}) {
+// Første "According to <navn>" i brødteksten, hvor navnet hører til domænet ("Tom's Hardware" -> tomshardware,
+// "Bureau of Labor Statistics" -> bls via forbogstaver).
+export function findKildeNavn(linjer, hn, brugteLinjer = new Set()) {
+  const re = /\b(?:According to|according to|Per)\s+(?:the\s+)?([A-Z][\w'’&.-]*(?:\s+(?:of|and|for|&)?\s*[A-Z][\w'’&.-]*){0,5})/g;
+  for (let i = 0; i < linjer.length; i++) {
+    if (!tilladt(linjer[i]) || brugteLinjer.has(i)) continue;
+    const renset = linjer[i].replace(/\[[^\]]*\]\([^)]*\)/g, (x) => ' '.repeat(x.length));
+    for (const m of renset.matchAll(re)) {
+      const navn = m[1].replace(/['’]s$/, '').replace(/[.,;:]+$/, '');
+      const norm = navn.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const forbogstaver = navn.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0].toLowerCase()).join('');
+      if (norm === hn || norm.startsWith(hn) || (hn.length >= 4 && norm.includes(hn)) || (forbogstaver.length >= 3 && forbogstaver === hn)) {
+        const start = m.index + m[0].length - m[1].length;
+        return { linje: i, start, tekst: linjer[i].substr(start, navn.length) };
+      }
+    }
+  }
+  return null;
+}
+
+export async function tilfoejEksterneLinks(content, { beskrivelse = '', spoerg = null, kildeSider = [], log = console.log } = {}) {
   try {
     const linjer = content.split('\n');
     const brugteLinjer = new Set();
@@ -183,6 +227,16 @@ export async function tilfoejEksterneLinks(content, { beskrivelse = '', spoerg =
         if (brugteDomaener.has(hn)) continue;
         const sted = findSted(linjer, navn, brugteLinjer);
         if (!sted) { afvist.push(`${u} ("${navn}" står ikke i artiklen)`); continue; }
+        // 5/11: har artiklen en kildeside fra domænet, er det den, der linkes til - ikke forsiden.
+        const kilde = bedsteKilde(kildeSider, hn, linjer[sted.linje]);
+        if (passerKilde(kilde, linjer[sted.linje], sted.start, sted.tekst.length) && !blokeret(kilde.url)) {
+          saetInd(linjer, sted, kilde.url);
+          brugteLinjer.add(sted.linje); brugteDomaener.add(hn);
+          sat.push({ kilde: 'kildeside', anker: sted.tekst, url: kilde.url });
+          antalB++;
+          continue;
+        }
+        if (erKildeSted(linjer[sted.linje], sted.start, sted.tekst.length)) { afvist.push(`${u} ("${navn}" står som kilde, men artiklen har ingen side fra ${hn} - ingen link til forsiden)`); continue; }
         const side = await hentSide(u);
         if (!side) { afvist.push(`${u} (svarer ikke)`); continue; }
         if (blokeret(side.url) || hovedNavn(new URL(side.url).hostname) !== hn) { afvist.push(`${u} (omdirigerer væk)`); continue; }
@@ -194,6 +248,19 @@ export async function tilfoejEksterneLinks(content, { beskrivelse = '', spoerg =
         sat.push({ kilde: 'officiel', anker: sted.tekst, url: ren });
         antalB++;
       }
+    }
+
+    // C) 5/11: "According to <kilde>" linkes til kildens egen side fra kildelisten (én pr. domæne).
+    for (const hn of [...new Set((kildeSider || []).map((k) => { try { return hovedNavn(new URL(k.url).hostname); } catch { return ''; } }).filter(Boolean))]) {
+      if (sat.length >= MAX_I_ALT) break;
+      if (brugteDomaener.has(hn)) continue;
+      const sted = findKildeNavn(linjer, hn, brugteLinjer);
+      if (!sted) continue;
+      const kilde = bedsteKilde(kildeSider, hn, linjer[sted.linje]);
+      if (!kilde || blokeret(kilde.url)) continue;
+      saetInd(linjer, sted, kilde.url);
+      brugteLinjer.add(sted.linje); brugteDomaener.add(hn);
+      sat.push({ kilde: 'kildeside', anker: sted.tekst, url: kilde.url });
     }
 
     log(`🔗 Eksterne links: ${sat.length} sat (${sat.map((s) => `${s.anker} → ${new URL(s.url).hostname}`).join(', ') || 'ingen'})` +

@@ -37,7 +37,7 @@ keyFacts:
 
 A humanoid robot is an automated machine engineered with an upright human form. It includes a torso, arms, and legs.
 
-According to the [International Federation of Robotics](https://ifr.org/), these human-like machines perform tasks in environments designed for people without requiring structural space modifications. They walk through standard doorways and climb normal staircases. They also handle tools built for human hands.
+According to the [International Federation of Robotics](https://ifr.org/ifr-press-releases/news/humanoid-robots-vision-and-reality-paper-published-by-ifr), these human-like machines perform tasks in environments designed for people without requiring structural space modifications. They walk through standard doorways and climb normal staircases. They also handle tools built for human hands.
 
 ## Why are humanoid robots built like people?
 Humanoid robots copy the human body because our modern physical world was engineered specifically for human limbs, heights, and manual reach. Factories, warehouses, and homes feature steps, narrow corridors, and work surfaces built around human geometry. Mobile platforms with wheels struggle over curbs, stairs, and loose debris.
@@ -52,7 +52,7 @@ Engineers select human morphology (body shape and structure) for specific mechan
 ## Sensors, actuators, and AI models drive humanoid movement
 Sensors collect environmental data, and motorized actuators (parts that create motion) execute joint movements. Meanwhile, artificial intelligence models process balance calculations to keep humanoids walking upright.
 
-Actuators function as motorized joints that turn electrical power into physical movement across the frame. According to [Unitree Robotics](https://www.unitree.com/), its compact G1 bipedal (two-legged) robot incorporates between 23 and 43 degrees of freedom across its moving joints.
+Actuators function as motorized joints that turn electrical power into physical movement across the frame. According to [Unitree Robotics](https://shop.unitree.com/products/unitree-g1), its compact G1 bipedal (two-legged) robot incorporates between 23 and 43 degrees of freedom across its moving joints.
 
 A degree of freedom measures an independent direction of mechanical movement in a joint. Sensors like optical cameras and depth detectors map the surrounding room in real time. Machine learning algorithms (problem-solving computer programs) then calculate torque (twisting force) adjustments to keep the machine balanced.
 

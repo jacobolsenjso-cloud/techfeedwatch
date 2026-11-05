@@ -99,7 +99,7 @@ Early robots required developers to program every single movement axis by hand. 
 
 According to arXiv research published in August 2025 by Longbing Cao, generative AI and multimodal large language models are integrating. Longbing Cao notes this integration is transitioning robots from mechanical replicas into interactive AI humanoids.
 
-Processing these massive models requires specialized hardware both in the data center and inside the robot chassis. According to [NVIDIA](https://www.nvidia.com/en-us/), humanoid robots require a three-computer AI architecture to achieve full physical autonomy. NVIDIA defines these three specific computing layers as:
+Processing these massive models requires specialized hardware both in the data center and inside the robot chassis. According to [NVIDIA](https://www.nvidia.com/en-us/use-cases/humanoid-robots/), humanoid robots require a three-computer AI architecture to achieve full physical autonomy. NVIDIA defines these three specific computing layers as:
 
 1. High-throughput AI supercomputers to train multimodal foundation models on petabytes of human video
 2. Deterministic physics simulators to validate balance, walking gaits, and safety policies across virtual spaces

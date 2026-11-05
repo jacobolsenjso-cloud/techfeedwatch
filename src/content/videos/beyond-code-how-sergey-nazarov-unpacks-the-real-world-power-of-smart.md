@@ -47,7 +47,7 @@ This happens whenever an account triggers a transaction. Once preset conditions 
 
 Smart contracts store persistent data inside blockchain accounts. They run code inside virtual machines (programs simulating computers) when triggered by incoming transactions.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NISTIR 8202), computer scientist Nick Szabo defined a smart contract in 1994. He defined it as a computerized transaction protocol that executes contractual terms. The same agency notes that modern smart contracts consist of code and data.
+According to the [National Institute of Standards and Technology](https://nvlpubs.nist.gov/nistpubs/ir/2018/nist.ir.8202.pdf) (NISTIR 8202), computer scientist Nick Szabo defined a smart contract in 1994. He defined it as a computerized transaction protocol that executes contractual terms. The same agency notes that modern smart contracts consist of code and data.
 
 This material is deployed across network nodes via signed transactions. Every participating node must derive identical results. Only then do they add the transaction to the distributed ledger (a shared record book).
 
@@ -68,7 +68,7 @@ According to IBM, these programs rely entirely on predetermined "if/when...then.
 
 Blockchains cannot access outside information on their own. Instead, they use secure external data bridges called oracles to import real-world events.
 
-Blockchains are deterministic (predictable) and isolated systems. According to blockchain oracle platform [Chainlink](https://chain.link/), blockchains cannot natively query external web services. Nodes must execute identical inputs to generate matching results.
+Blockchains are deterministic (predictable) and isolated systems. According to blockchain oracle platform [Chainlink](https://research.chain.link/Chainlink-Whitepaper-Next-Steps-in-the-Evolution-of-Decentralized-Oracle-Networks.pdf), blockchains cannot natively query external web services. Nodes must execute identical inputs to generate matching results.
 
 Nodes cannot fetch live data from traditional internet APIs (interfaces that allow different software programs to communicate). If so, different response times could break consensus (agreement among network computers on valid records) across the network.
 

@@ -56,7 +56,7 @@ Search engine rankings depend on automated quality calculations rather than dire
 ## Paid search ads rely on real-time auctions and Quality Score
 Paid search ads secure sponsored visibility through real-time automated auctions. In these auctions, an algorithm evaluates an advertiser's bid price and auction-time Quality Score. The Quality Score is a rating measuring an ad's relevance and usefulness to searchers.
 
-According to the [Federal Trade Commission](https://www.ftc.gov/) in Docket No. 9372, search result pages display two distinct classes of links.
+According to the [Federal Trade Commission](https://www.ftc.gov/system/files/documents/cases/docket_no_9372_opinion_of_the_commission_redacted_public_version.pdf) in Docket No. 9372, search result pages display two distinct classes of links.
 
 Commercial placements do not belong automatically to the highest monetary bidder. According to [Google Ads](https://business.google.com/us/google-ads/) Help, ad positions depend on Ad Rank. The system calculates this metric dynamically during every auction.
 

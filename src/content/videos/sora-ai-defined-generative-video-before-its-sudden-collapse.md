@@ -57,7 +57,7 @@ Sora provides end-to-end video synthesis across multiple formats alongside promp
 
 According to OpenAI's product release announcement on December 9, 2024, the public deployment model Sora Turbo supports generating videos at up to 1080p resolution. It creates clips up to 20 seconds in length in widescreen, vertical, or square aspect ratios.
 
-According to [Microsoft Azure](https://azure.microsoft.com/en-us)'s technical documentation updated in March 2026, the updated Sora 2 pipeline accepts text-to-video, image-to-video, and video-to-video inputs. It applies built-in safety filters designed to block intellectual property violations and explicit media.
+According to [Microsoft Azure](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/video-generation)'s technical documentation updated in March 2026, the updated Sora 2 pipeline accepts text-to-video, image-to-video, and video-to-video inputs. It applies built-in safety filters designed to block intellectual property violations and explicit media.
 
 OpenAI integrated several direct editing features into the web interface to help users control scene output:
 

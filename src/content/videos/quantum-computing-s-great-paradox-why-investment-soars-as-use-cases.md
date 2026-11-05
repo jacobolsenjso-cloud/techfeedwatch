@@ -46,7 +46,7 @@ Meanwhile, quantum chips execute specialized mathematical routines that exceed n
 
 A hybrid quantum-classical architecture operates by splitting a computational workload. It divides tasks between central processing units and quantum processing units.
 
-The classical system initiates the workflow and assigns specific instructions to the quantum hardware. Engineers use specialized environments to manage this collaboration across diverse hardware types. According to [NVIDIA](https://www.nvidia.com/en-us/), the CUDA-Q platform provides an open-source programming model.
+The classical system initiates the workflow and assigns specific instructions to the quantum hardware. Engineers use specialized environments to manage this collaboration across diverse hardware types. According to [NVIDIA](https://resources.nvidia.com/en-us-quantum-computing-resource-center/cuda-quantum), the CUDA-Q platform provides an open-source programming model.
 
 It connects CPUs (standard computer processors), GPUs (graphics processing units), and QPUs (quantum processing units). This platform supports adaptive quantum kernels (specialized computational routines running on a quantum chip). These kernels are defined under Quantum Intermediate Representation specifications (a standardized format for translating quantum code).
 
@@ -91,7 +91,7 @@ Co-processing reduces execution runtime. It also shields calculations from physi
 
 Current quantum hardware suffers from environmental noise and decoherence. Decoherence is the loss of a quantum state caused by environmental interference. This interference corrupts sensitive calculations.
 
-Combining quantum hardware with classical neural networks helps scientists extract accurate data despite physical noise. According to [IBM Research](https://research.ibm.com/), hybrid quantum workflows combine parameterized trial wavefunctions on quantum processors with classical neural network post-processing.
+Combining quantum hardware with classical neural networks helps scientists extract accurate data despite physical noise. According to [IBM Research](https://research.ibm.com/publications/quantum-chemistry-with-quantum-computers-and-neural-networks), hybrid quantum workflows combine parameterized trial wavefunctions on quantum processors with classical neural network post-processing.
 
 These wavefunctions are adjustable mathematical formulas describing a quantum system. According to IBM Research, this approach improves decoherence noise resilience (resistance to data-corrupting environmental interference). It also improves the precision of molecular ground-state calculations (computations finding a molecule's lowest possible energy state).
 

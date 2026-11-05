@@ -72,7 +72,7 @@ Cases also limit the physical length of graphics cards. In addition, cases limit
 
 Building a PC cuts out corporate assembly charges. However, retail pricing on individual components often offsets those savings.
 
-According to [Wikipedia](https://www.wikipedia.org/)'s entry on homebuilt computers, a custom-built computer is assembled by its user from commercial off-the-shelf components. It is not purchased as a complete, pre-assembled system from a manufacturer.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Homebuilt_computer)'s entry on homebuilt computers, a custom-built computer is assembled by its user from commercial off-the-shelf components. It is not purchased as a complete, pre-assembled system from a manufacturer.
 
 According to Wikipedia's entry on homebuilt computers, builders purchase individual high-grade parts at retail prices.
 
@@ -92,7 +92,7 @@ The primary difficulties involve handling fragile parts, managing heat output, a
 
 Physical mistakes during assembly can permanently ruin expensive electronics. Novice builders sometimes damage delicate contacts or drop heavy tools directly onto circuit boards. Proper workspace preparation reduces these physical risks.
 
-According to [Intel](https://www.intel.com/)'s thermal design documentation, an aftermarket cooling solution's thermal design power rating in watts must equal or exceed the processor's base power specification. If cooling falls short, excessive heat triggers automatic performance throttling (slowing down to cool off) to prevent chip destruction.
+According to [Intel](https://www.intel.com/content/www/us/en/support/articles/000005791.html)'s thermal design documentation, an aftermarket cooling solution's thermal design power rating in watts must equal or exceed the processor's base power specification. If cooling falls short, excessive heat triggers automatic performance throttling (slowing down to cool off) to prevent chip destruction.
 
 Builders regularly encounter several specific mechanical hurdles:
 

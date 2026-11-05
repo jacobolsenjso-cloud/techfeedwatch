@@ -43,7 +43,7 @@ According to the Financial Action Task Force, 95% of active stablecoins rely on 
 
 The reserve assets act as collateral (property pledged as a guarantee). This guarantee ensures that holders can always redeem their tokens.
 
-Data published by the Financial Action Task Force and the [Bank for International Settlements](https://www.bis.org/) details the scale and makeup of these dollar-pegged reserves.
+Data published by the Financial Action Task Force and the [Bank for International Settlements](https://www.bis.org/publications/paper-170-impact-stablecoins-international-monetary-and-financial-system) details the scale and makeup of these dollar-pegged reserves.
 
 | Metric | Reported Value | Reporting Institution |
 | :--- | :--- | :--- |

@@ -32,7 +32,7 @@ To work in cybersecurity, candidates must master core computer networking princi
 
 Candidates entering the field should prioritize roles like Security Operations Center (SOC) tier-one analysts, junior penetration testers, and network security technicians. These gateway positions expose new analysts to live telemetry, alert triage, and baseline security configurations.
 
-Organizations typically align their defensive teams with standard industrial classifications. According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST) Special Publication 800-181r1, also known as the NICE Workforce Framework for Cybersecurity, professional cyber roles divide into five distinct categories:
+Organizations typically align their defensive teams with standard industrial classifications. According to the National Institute of Standards and Technology (NIST) Special Publication 800-181r1, also known as the NICE Workforce Framework for Cybersecurity, professional cyber roles divide into five distinct categories:
 
 - Protection and Defense: Encompasses SOC tier-one analysts, incident responders, and vulnerability assessment specialists who safeguard active networks.
 - Implementation and Operation: Covers systems administrators and network security technicians who install access controls and maintain defensive infrastructure.

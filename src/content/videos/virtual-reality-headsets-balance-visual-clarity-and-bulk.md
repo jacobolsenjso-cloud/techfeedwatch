@@ -43,7 +43,7 @@ These devices combine near-eye optics, motion-tracking sensors, and directional 
 
 ## How do VR headsets create immersive virtual environments?
 
-VR headsets generate immersion through stereoscopic imagery, low-latency movement tracking, and directional audio. According to [Unity Technologies](https://unity.com/)' XR documentation, VR headsets achieve environmental presence through dual stereoscopic displays that present offset angles to each eye.
+VR headsets generate immersion through stereoscopic imagery, low-latency movement tracking, and directional audio. According to Unity Technologies' XR documentation, VR headsets achieve environmental presence through dual stereoscopic displays that present offset angles to each eye.
 
 They combine this visual output with three- or six-degrees-of-freedom (6DoF) inertial tracking and real-time spatial audio. The brain fuses these two separate perspectives into a single three-dimensional image with natural depth perception.
 

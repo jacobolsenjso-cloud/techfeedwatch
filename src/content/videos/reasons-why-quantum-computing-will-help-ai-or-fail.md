@@ -94,7 +94,7 @@ Building stable quantum processors requires solving several key hardware challen
 
 Human engineers face millions of parameter variations when tuning pulse shapes or placing gates to prevent cross-talk. Machine learning models identify efficient configurations far faster than traditional calibration scripts.
 
-According to [Anthropic](https://www.anthropic.com/) research published in October 2026, AI is actively helping quantum computing progress faster by using the Claude model in closed-loop systems to autonomously redesign quantum circuits and verify implementations with Lean proofs. This feedback loop allows classical models to streamline the hardware required for future quantum systems.
+According to [Anthropic](https://www.anthropic.com/research/designing-efficient-quantum-circuits) research published in October 2026, AI is actively helping quantum computing progress faster by using the Claude model in closed-loop systems to autonomously redesign quantum circuits and verify implementations with Lean proofs. This feedback loop allows classical models to streamline the hardware required for future quantum systems.
 
 ## Half-True Universe explains why quantum AI won't become Skynet
 

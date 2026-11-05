@@ -15,6 +15,7 @@
 //      videoskaberens egne fejl).
 // Det, der fanges, rettes eller fjernes. Rettelser tjekkes én gang til. Står der stadig noget,
 // kaster kontrollen en fejl, og artiklen udgives ikke.
+import { reparer } from './sammenhaeng.mjs';
 import { kildeBinding, maalUdenDaekning, skeptiker, anvendRettelser, talMaengde, maalI, saetningerUdenOverskrifter } from './faktatjek.mjs';
 
 export const LAESER_FELTER = ['titel', 'meta', 'resume', 'faq', 'brodtekst', 'faktaboks'];
@@ -239,7 +240,16 @@ export async function belaeg(genAI, hentModel, model, ss) {
 // ---------- Selve slutkontrollen ----------
 // f = { titel, meta, resume, faqs:[{question,answer}], brodtekst, faktaboks:[{text,source,url}] } (ændres på stedet)
 // k = { soeg, kanal, videoTekst, research, videoNoter }
+// 5/11-2026: efter kontrollen skrives de afsnit og FAQ-svar, den rørte, sammen igen (src/lib/sammenhaeng.mjs).
+// Målt 5/11: uden dette fik 7 artikler ødelagte tabeller og sætninger, der henviser til noget, der er væk.
 export async function slutkontrol(genAI, hentModel, model, f, k, log = console.log) {
+  const foer = { brodtekst: f.brodtekst, faqs: (f.faqs || []).map((q) => ({ ...q })) };
+  const rap = await kerne(genAI, hentModel, model, f, k, log);
+  rap.sammenhaeng = await reparer(genAI, hentModel, model, f, foer, log);
+  return rap;
+}
+
+async function kerne(genAI, hentModel, model, f, k, log) {
   const rap = { kildeOgMaal: 0, belaegTjekket: 0, ikkeBelagt: 0, belaegUsikre: 0, skeptikerTjekket: 0, fanget: 0, rettet: 0, fjernet: 0 };
   const helTekst = () => [brod(f.brodtekst), ...feltTekster(f).map((x) => x.tekst)].join('\n\n');
 

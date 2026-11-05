@@ -64,7 +64,7 @@ Standard libraries come packaged directly with a programming language. In contra
 
 According to the Python Software Foundation documentation for Python 3.15, standard libraries supply fundamental modules written in C and Python. These modules provide file access, data formatting, and networking without extra downloads. These built-in tools remain stable because language maintainers test them heavily alongside core language releases.
 
-Third-party libraries come from independent software creators, open-source volunteers, and commercial companies. The [Linux Foundation](https://www.linuxfoundation.org/) and Harvard Laboratory for Innovation Science Census III report analyzes these dependencies (external software requirements).
+Third-party libraries come from independent software creators, open-source volunteers, and commercial companies. The [Linux Foundation](https://www.linuxfoundation.org/research/census-iii) and Harvard Laboratory for Innovation Science Census III report analyzes these dependencies (external software requirements).
 
 It finds that third-party application-level software libraries serve as core building blocks across modern commercial applications. Developers install them through public registries using automation tools.
 

@@ -49,7 +49,7 @@ Cybersecurity tools fall into specific functional categories. These groups track
 
 Security teams avoid buying random software. Instead, they match their software with established industry standards.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST), cybersecurity tools map to the NIST Cybersecurity Framework 2.0. This framework outlines six core organizational functions:
+According to the [National Institute of Standards and Technology](https://www.nist.gov/news-events/news/2024/02/nist-releases-version-20-landmark-cybersecurity-framework) (NIST), cybersecurity tools map to the NIST Cybersecurity Framework 2.0. This framework outlines six core organizational functions:
 
 - Govern establishes policies, risk management strategies, and operational oversight.
 - Identify maps physical devices, software assets, vulnerabilities (system flaws or weaknesses), and organizational risks.
@@ -103,7 +103,7 @@ Organizations consolidate security tools by adopting unified platforms like Exte
 
 Unification replaces scattered products with systems that share telemetry (automated data about system activity and performance). This data flows smoothly across devices, identities, and networks.
 
-CISA identifies detecting malicious activity quickly and responding effectively to confirmed incidents as operational goals. According to [Fortinet](https://www.fortinet.com/), 57% of organizations planning Extended Detection and Response (XDR) implementations use network security as their primary foundation.
+CISA identifies detecting malicious activity quickly and responding effectively to confirmed incidents as operational goals. According to [Fortinet](https://www.fortinet.com/content/dam/fortinet/assets/white-papers/pov-consolidate-cybersecurity-vendors-for-detection-response.pdf), 57% of organizations planning Extended Detection and Response (XDR) implementations use network security as their primary foundation.
 
 They build this base before integrating endpoint, identity, and cloud security tools. Starting at the network level provides clear visibility into data moving between corporate assets.
 

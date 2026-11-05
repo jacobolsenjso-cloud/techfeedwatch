@@ -58,7 +58,7 @@ Today, healthcare institutions apply immersive hardware across several main disc
 - Stroke rehabilitation targeting motor control and balance exercises.
 - Exposure therapy for psychiatric phobias and post-traumatic stress disorders.
 
-While I have no personal experience with VR headsets myself, I think the hardware is remarkably good when it comes to soothing anxious patients. Stepping into an entirely different reality gives someone a helpful mental escape during uncomfortable procedures. It is heartening to see immersive tools provide meaningful comfort where it truly counts.
+I think the hardware is remarkably good when it comes to soothing anxious patients. Stepping into an entirely different reality gives someone a helpful mental escape during uncomfortable procedures. It is heartening to see immersive tools provide meaningful comfort where it truly counts.
 
 ## Clinical trials confirm measurable pain reduction and cognitive recovery
 Clinical trials confirm that virtual reality lowers inpatient pain scores. It also improves cognitive function (thinking and memory skills) after strokes. However, motor recovery results remain mixed.
@@ -87,7 +87,7 @@ That result fell short of the minimal clinically important difference range of 4
 ## How do regulators evaluate virtual reality medical devices?
 Regulatory agencies evaluate virtual reality medical devices by verifying technical software stability. They also check optical safety and validated clinical efficacy (proven ability to produce beneficial results) before granting market clearance.
 
-According to the [U.S. Food and Drug Administration](https://www.fda.gov/), virtual reality in medical devices is defined as a virtual world immersive experience that completely replaces a user's surrounding view with a simulated, immersive, and interactive virtual environment, typically using a head-mounted display. 
+According to the [U.S. Food and Drug Administration](https://www.fda.gov/medical-devices/digital-health-center-excellence/augmented-reality-and-virtual-reality-medical-devices), virtual reality in medical devices is defined as a virtual world immersive experience that completely replaces a user's surrounding view with a simulated, immersive, and interactive virtual environment, typically using a head-mounted display. 
 
 When a company markets a headset to treat an illness, regulators classify the system as medical software. Developers must submit rigorous clinical trial data. This data must prove the device produces repeatable health benefits.
 

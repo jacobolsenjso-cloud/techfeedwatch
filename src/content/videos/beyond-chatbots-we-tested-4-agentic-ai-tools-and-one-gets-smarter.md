@@ -83,7 +83,7 @@ This feedback loop lets the software solve dynamic problems. Human workers overs
 ## Where are enterprises deploying autonomous agentic workflows?
 Enterprises deploy agentic workflows across IT infrastructure, software maintenance, back-office operations, and automated customer support.
 
-A survey by MIT Sloan Management Review and [Boston Consulting Group](https://www.bcg.com/) found that 35% of respondents had adopted AI agents by 2023. MIT Sloan reported that another 44% planned to deploy them shortly.
+A survey by MIT Sloan Management Review and Boston Consulting Group found that 35% of respondents had adopted AI agents by 2023. MIT Sloan reported that another 44% planned to deploy them shortly.
 
 According to Gartner, 33% of enterprise software applications will incorporate agentic AI by 2028, rising from less than 1% in 2024. Gartner also projects that this transition will contribute to over $450 billion in software revenue.
 

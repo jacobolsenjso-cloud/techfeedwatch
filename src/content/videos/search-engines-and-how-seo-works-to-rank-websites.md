@@ -80,7 +80,7 @@ Backlinks remain influential as external endorsements of authority, though searc
 
 When an independent domain links to an external article, search engines treat that link as an editorial citation.
 
-According to [Ahrefs](https://ahrefs.com/), across over 1 billion web pages, 96.55% of all pages receive zero organic search traffic from Google, with 66.31% of analyzed pages having zero referring domain backlinks pointing to them. A total lack of external references leaves discovery algorithms with few signals to verify credibility.
+According to [Ahrefs](https://ahrefs.com/blog/search-traffic-study/), across over 1 billion web pages, 96.55% of all pages receive zero organic search traffic from Google, with 66.31% of analyzed pages having zero referring domain backlinks pointing to them. A total lack of external references leaves discovery algorithms with few signals to verify credibility.
 
  Search engines rely on diverse verification methods, yet links from relevant websites continue to support index trust.
 

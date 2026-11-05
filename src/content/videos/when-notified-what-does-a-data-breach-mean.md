@@ -42,7 +42,7 @@ For example, a distributed denial-of-service (DDoS) attack that knocks an ecomme
 
 A data breach requires the confirmed exposure or extraction of data. If an adversary accesses a database containing customer records or internal payroll logs, the event crosses the threshold into a breach.
 
-[Verizon](https://www.verizon.com/)'s 2024 Data Breach Investigations Report illustrated this boundary clearly: the research team analyzed 30,458 real-world security incidents and identified 10,626 confirmed data breaches across 94 countries. The remaining incidents disrupted operations without verified unauthorized data disclosure.
+[Verizon](https://www.verizon.com/business/resources/Tb2/infographics/2024-dbir-finance-snapshot.pdf)'s 2024 Data Breach Investigations Report illustrated this boundary clearly: the research team analyzed 30,458 real-world security incidents and identified 10,626 confirmed data breaches across 94 countries. The remaining incidents disrupted operations without verified unauthorized data disclosure.
 
 Evaluating whether an event constitutes a breach requires reviewing key attributes:
 - The specific asset involved (operational network versus customer database)

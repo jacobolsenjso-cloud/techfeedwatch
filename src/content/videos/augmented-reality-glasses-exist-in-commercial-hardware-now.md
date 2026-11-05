@@ -55,7 +55,7 @@ Enterprise customers utilize bulky headsets designed for high-precision industri
 
 These glasses plug into smartphones or gaming handhelds to project simulated theater screens. Recently, standalone frames entered the market. These frames house their own batteries, sensors, and processors directly on the spectacle frame itself.
 
-According to product specifications published by [Magic Leap](https://www.magicleap.com/), PCMag, and IGN, commercial spatial and display eyewear varies dramatically across design, optics, and price:
+According to product specifications published by [Magic Leap](https://www.magicleap.care/hc/en-us/articles/7813913215373-Product-Specifications), PCMag, and IGN, commercial spatial and display eyewear varies dramatically across design, optics, and price:
 
 | Device | Device Weight | Optical System | Retail Price |
 | :--- | :--- | :--- | :--- |
@@ -72,7 +72,7 @@ According to Magic Leap, its Magic Leap 2 enterprise AR device launched commerci
 
 They use optical prisms to project virtual desktop monitors. According to IGN, Snap opened commercial preorders in October 2026 for its standalone [SPECS](https://www.specs.com/) glasses at a price of $2,195. The hardware sports transparent waveguide lenses (optical components that route projected light directly into the wearer's eyes) and dual Snapdragon chips.
 
-To be completely honest, I have no personal experience with AR glasses myself, but I think the hardware is genuinely fantastic. They can deliver an entirely different experience of reality, like helping patients work through anxiety. That kind of practical value is why it pays to understand what these tools can actually do.
+I think the hardware is genuinely fantastic. They can deliver an entirely different experience of reality, like helping patients work through anxiety. That kind of practical value is why it pays to understand what these tools can actually do.
 
 ## What advanced AR prototypes are tech companies developing?
 Major technology companies are developing advanced laboratory prototypes. These prototypes integrate wide-angle optical displays, onboard computing, and spatial tracking into standard optical frames.

@@ -34,7 +34,7 @@ keyFacts:
     url: "https://investors.ionq.com/news/news-details/2026/IonQ-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx"
 ---
 
-According to [VanEck](https://www.vaneck.com/us/en/)'s factsheet, the VanEck Quantum Computing UCITS ETF combines early-stage pure plays with established enterprise patent holders. VanEck explicitly lists illiquidity, portfolio concentration, and small-cap volatility among its primary investor risk factors.
+According to [VanEck](https://www.vaneck.com/offshore/en/investments/quantum-computing-etf/)'s factsheet, the VanEck Quantum Computing UCITS ETF combines early-stage pure plays with established enterprise patent holders. VanEck explicitly lists illiquidity, portfolio concentration, and small-cap volatility among its primary investor risk factors.
 
 This structure captures exponential upside from early hardware breakthroughs while shielding capital from the fatal cash burn of speculative startups. Pure-play equities offer high torque for aggressive accounts, but diversified vehicles prevent complete capital loss during the prolonged research phase.
 
@@ -44,7 +44,7 @@ Pure-play stocks offer direct exposure to hardware breakthroughs, whereas divers
 
 Conversely, established tech titans finance quantum research labs using profits from cloud computing, enterprise software, and consumer hardware. If an experimental processor fails, the parent corporation absorbs the loss without threatening shareholders. Investors in diversified titans give up explosive, overnight returns in exchange for balance-sheet safety. 
 
-According to [IonQ](https://ionq.com/)'s Form 10-K filed with the U.S. Securities and Exchange Commission, pure-play hardware firm IonQ generated $130.0 million in GAAP revenue in 2025. That same SEC filing documented a 202% increase over the $43.1 million in revenue IonQ reported for 2024, making it the first dedicated quantum company to cross the nine-figure mark.
+According to [IonQ](https://investors.ionq.com/news/news-details/2026/IonQ-Announces-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx)'s Form 10-K filed with the U.S. Securities and Exchange Commission, pure-play hardware firm IonQ generated $130.0 million in GAAP revenue in 2025. That same SEC filing documented a 202% increase over the $43.1 million in revenue IonQ reported for 2024, making it the first dedicated quantum company to cross the nine-figure mark.
 
 Capital allocations between these two categories depend on risk tolerance and time horizon:
 

@@ -66,7 +66,7 @@ Waveguide lenses route light through flat glass for maximum real-world transpare
 
 According to optical manufacturer Avantier, the four primary optical architectures in augmented reality glasses are prisms, free-form surfaces, birdbath optics, and optical waveguides. Prisms reflect small status badges in a corner. Free-form optics shape light rays through molded plastic lenses. 
 
-Waveguide designs solve the bulk problem of older headsets. Waveguide manufacturer [Dispelix](https://dispelix.com/) states that optical see-through waveguides use surface relief gratings. These gratings feature sub-wavelength nanostructures (microscopic etched patterns smaller than a wave of light).
+Waveguide designs solve the bulk problem of older headsets. Waveguide manufacturer [Dispelix](https://dispelix.com/resources/insights/optical-see-through-xr-displays/) states that optical see-through waveguides use surface relief gratings. These gratings feature sub-wavelength nanostructures (microscopic etched patterns smaller than a wave of light).
 
 These structures guide light via total internal reflection (bouncing light within the glass core without loss). They form images at optical infinity (a focal distance where the eyes focus naturally as if looking far away).
 

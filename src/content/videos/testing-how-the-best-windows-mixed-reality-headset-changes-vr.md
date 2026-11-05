@@ -65,7 +65,7 @@ These trade-offs demonstrate how virtual reality headsets [balance visual clarit
 
 ## Does Windows 11 still support Mixed Reality headsets?
 
-Windows 11 no longer supports Windows Mixed Reality hardware on current installations. According to [Microsoft](https://www.microsoft.com/en-us) Learn's documentation on deprecated Windows client features, Microsoft officially deprecated Windows Mixed Reality in December 2023. This ended ongoing software feature development and confirmed the eventual sunset of native platform drivers.
+Windows 11 no longer supports Windows Mixed Reality hardware on current installations. According to [Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features) Learn's documentation on deprecated Windows client features, Microsoft officially deprecated Windows Mixed Reality in December 2023. This ended ongoing software feature development and confirmed the eventual sunset of native platform drivers.
 
 According to Microsoft Learn, Windows Mixed Reality and the Mixed Reality Portal app were officially removed from the operating system starting in Windows 11 version 24H2.
 

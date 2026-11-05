@@ -74,7 +74,7 @@ According to the National Institute of Standards and Technology (NIST), supercon
 
 Physical wiring and thermal loads between room-temperature electronics and dilution refrigerators represent a critical scaling bottleneck for multi-qubit processors. Every individual control line carries ambient heat downward, threatening to warm the mixing chamber.
 
-Engineers are developing cryogenic integrated circuits to manage signal routing inside the refrigerator itself. According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s June 2024 report at the IEEE Symposium on VLSI Technology & Circuits, the Pando Tree cryogenic control chip was engineered to operate directly at 10 to 20 millikelvin, demultiplexing control signals across up to 64 qubit terminals to reduce wiring congestion.
+Engineers are developing cryogenic integrated circuits to manage signal routing inside the refrigerator itself. According to [Intel](https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558)'s June 2024 report at the IEEE Symposium on VLSI Technology & Circuits, the Pando Tree cryogenic control chip was engineered to operate directly at 10 to 20 millikelvin, demultiplexing control signals across up to 64 qubit terminals to reduce wiring congestion.
 
 Moving the multiplexing circuitry directly adjacent to the quantum chip eliminates hundreds of analog cables.
 

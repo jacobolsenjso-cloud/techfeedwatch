@@ -127,7 +127,7 @@ The video highlights how developers test machines on real assembly lines rather 
 
 They transferred over 90,000 components across 1,250 operating hours to help assemble upwards of 30,000 vehicles. These long shifts expose component wear, network lag, and software edge cases (rare, unusual problems) that controlled demos hide.
 
-[Agility Robotics](https://www.agilityrobotics.com/) reports that its Digit fleet has logged over 65,000 hours in active working environments. The manufacturer also notes booking upwards of $300 million in multi-year commitments for its upcoming Digit 5 model. Architect of Machines notes that these customer orders prove industrial buyers see value in testing bipedal logistics.
+Agility Robotics reports that its Digit fleet has logged over 65,000 hours in active working environments. The manufacturer also notes booking upwards of $300 million in multi-year commitments for its upcoming Digit 5 model. Architect of Machines notes that these customer orders prove industrial buyers see value in testing bipedal logistics.
 
 Commercial humanoids balance dexterity (hand skill) and maintenance through specific mechanical tradeoffs:
 - Robotics company 1X engineered hands on its newest NEO robot with 25 degrees of freedom (independent directions in which joints move). This helps the machine handle intricate household items.

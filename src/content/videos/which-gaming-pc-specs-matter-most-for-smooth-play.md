@@ -59,7 +59,7 @@ Beyond these four core parts, motherboards (the main circuit boards), cooling fa
 ## Target Recommended Specs Rather Than Minimum Requirements
 Buyers should target recommended specifications because minimum requirements often produce sluggish frame rates and visual stutter. 
 
-Game publishers publish minimum specifications to show what hardware can barely boot the software. According to [Intel](https://www.intel.com/content/www/us/en/homepage.html)'s CPU selection guide, merely matching the publisher's minimum specifications is insufficient for smooth gameplay. Intel reports that maintaining frame rates above 60 frames per second requires hardware that meets or exceeds recommended system requirements.
+Game publishers publish minimum specifications to show what hardware can barely boot the software. According to [Intel](https://www.intel.com/content/www/us/en/gaming/resources/gaming-cpu.html)'s CPU selection guide, merely matching the publisher's minimum specifications is insufficient for smooth gameplay. Intel reports that maintaining frame rates above 60 frames per second requires hardware that meets or exceeds recommended system requirements.
 
 Frames per second (FPS, the count of visual updates each second) measures animation smoothness. A standard 60 FPS update rate keeps game controls responsive and animation fluid. Dropping below that target creates noticeable delay between button presses and on-screen reactions.
 
@@ -67,7 +67,7 @@ Targeting higher hardware tiers also prepares a system for newer software update
 
 According to Tom's Hardware's graphics card guide, an 8GB video RAM (VRAM, memory used for visual data) buffer may suffice for entry-level 1080p gaming. However, 12GB is strongly recommended for modern releases. In addition, 4K gaming generally requires at least 16GB of VRAM.
 
-For processor specifications, according to [Valve](https://www.valvesoftware.com/en/)'s Steam Hardware & Software Survey for September 2026, 8-core CPUs accounted for 30.06% of gaming systems. Meanwhile, 6-core CPUs represented 27.18% of surveyed machines.
+For processor specifications, according to Valve's Steam Hardware & Software Survey for September 2026, 8-core CPUs accounted for 30.06% of gaming systems. Meanwhile, 6-core CPUs represented 27.18% of surveyed machines.
 
 For system memory, according to Valve's Steam Hardware & Software Survey for September 2026, 42.22% of surveyed PC gamers had 32GB of system RAM. This established 32GB as the most common memory configuration across active gaming systems.
 

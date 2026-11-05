@@ -41,7 +41,7 @@ keyFacts:
 factChecked: "2026-10-26"
 ---
 
-Smart contracts on [Ethereum](https://remix.ethereum.org/) are automated computer programs. They live at specific addresses on the decentralized blockchain (a shared digital ledger).
+Smart contracts on [Ethereum](https://ethereum.org/developers/docs/smart-contracts/) are automated computer programs. They live at specific addresses on the decentralized blockchain (a shared digital ledger).
 
 An account submits a transaction to a contract address. Then, network nodes (connected computers) run the contract's code functions.
 

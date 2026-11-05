@@ -57,7 +57,7 @@ These tools decide whether search bots crawl, index, or ignore a webpage. Withou
 
 Search engines rely on distinct markup elements in the document head (the top section of page code) to determine indexing behavior:
 
-- The robots noindex rule: According to [Google](https://www.google.com/) Search Central documentation, webmasters place a noindex directive inside the head. This directive tells search engines to remove the page from search results entirely. Google notes that crawlers must be allowed to access the page in robots.txt to detect this rule. A robots.txt file is a text file that tells search bots which pages they can visit.
+- The robots noindex rule: According to [Google](https://developers.google.com/search/docs/appearance/title-link) Search Central documentation, webmasters place a noindex directive inside the head. This directive tells search engines to remove the page from search results entirely. Google notes that crawlers must be allowed to access the page in robots.txt to detect this rule. A robots.txt file is a text file that tells search bots which pages they can visit.
 - Default crawling parameters: According to Google Search Central documentation, the standard indexing and crawling instruction is index, follow. Site owners do not need to declare these values explicitly.
 - The canonical link element: According to Google Search Central documentation, a canonical tag goes in the head. This tag specifies which URL search engines should treat as the master version among duplicate pages.
 - International targeting links: According to Google Search Central documentation, alternate hreflang tags instruct search engines on localized users. These tags serve region-specific and language-specific versions of content to localized users.
@@ -106,7 +106,7 @@ The search engine treats paginated pages as standard independent URLs. Webmaster
 
 ## CodeLucky Explains Essential HTML Tags and Semantic Page Structure
 
-[CodeLucky](https://codelucky.com/) states that "a good HTML structure forms the foundation of effective search engine optimization strategy."
+CodeLucky states that "a good HTML structure forms the foundation of effective search engine optimization strategy."
 
 The creator advises webmasters to keep titles under 60 characters to prevent display cutoffs in search engine results. The tutorial recommends placing the primary keyword near the start of the title string. CodeLucky also advises using only one h1 tag per page to establish a clean document hierarchy.
 

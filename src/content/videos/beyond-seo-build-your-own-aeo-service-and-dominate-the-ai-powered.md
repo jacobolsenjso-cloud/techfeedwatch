@@ -84,7 +84,7 @@ Traditional SEO drives web traffic to conversion funnels (the step-by-step paths
 
 Standard SEO prioritizes overall domain authority (a website's overall credibility and trust score in search engines). It also prioritizes backlink volume (the number of external websites linking to a page) and comprehensive topic coverage. AEO prioritizes factual accuracy, direct machine readability, and sentence-level clarity.
 
-According to an October 2026 study published on [arXiv](https://arxiv.org/) titled "AX is the New AEO," classic SEO and AEO govern initial page retrieval. They determine whether an AI agent surfaces a page during that first step.
+According to an October 2026 study published on [arXiv](https://arxiv.org/pdf/2609.34951) titled "AX is the New AEO," classic SEO and AEO govern initial page retrieval. They determine whether an AI agent surfaces a page during that first step.
 
 Machine readability then determines whether the agent builds its answer from that primary source. If not, the engine falls back on third-party aggregators (sites that gather outside data). If an original site uses complex layouts or buried text, the AI borrows the facts from secondary directories instead.
 

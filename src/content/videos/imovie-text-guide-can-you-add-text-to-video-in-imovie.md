@@ -31,7 +31,7 @@ faqs:
 
 Yes, you can add text to video in iMovie on any Mac, iPhone, or iPad. The iMovie application lets you add text to video by overlaying title cards, lower thirds, captions, or scrolling credits directly onto your clips.
 
-[Apple](https://www.apple.com/) includes dozens of pre-formatted title styles that attach directly to the timeline. While the core workflow remains accessible for beginners, the platform relies heavily on fixed presets. Understanding how these tools behave on desktop versus mobile hardware prevents common layout issues during video editing.
+[Apple](https://support.apple.com/en-us/102340) includes dozens of pre-formatted title styles that attach directly to the timeline. While the core workflow remains accessible for beginners, the platform relies heavily on fixed presets. Understanding how these tools behave on desktop versus mobile hardware prevents common layout issues during video editing.
 
 ## How do you add text in iMovie on Mac?
 You add text on a Mac by selecting a style from the Titles browser and placing it onto the timeline. 

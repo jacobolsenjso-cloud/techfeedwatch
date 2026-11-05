@@ -49,7 +49,7 @@ Include structured design tokens (standardized values for design elements like s
 ## Why do Claude Code websites look like generic AI slop?
 Claude Code creates generic designs without strict visual boundaries. Language models naturally drift toward average patterns in their training data.
 
-According to [Anthropic](https://www.anthropic.com/)'s Claude Cookbook, Claude models tend to converge toward generic, "on distribution" frontend code without explicit aesthetic constraints. This code matches the most common statistical averages in training data. It creates an "AI slop" aesthetic (bland, mass-produced automated output).
+According to [Anthropic](https://docs.anthropic.com/en/docs/claude-code/mcp)'s Claude Cookbook, Claude models tend to converge toward generic, "on distribution" frontend code without explicit aesthetic constraints. This code matches the most common statistical averages in training data. It creates an "AI slop" aesthetic (bland, mass-produced automated output).
 
 When a user requests a site without clear instructions, the model picks the safest statistical options. This tendency leads to flat layouts and centered cards. It also creates predictable blue or purple gradient backgrounds.
 
@@ -87,7 +87,7 @@ According to Anthropic's Claude Code Documentation, Claude Code integrates modul
 
 This process avoids overloading context limits (the maximum data an AI holds at once). Storing rules in modular files keeps your active session fast and focused. You avoid pasting repetitive design guidelines into every message.
 
-According to Anthropic's official skills repository on [GitHub](https://github.com/), the frontend design skill enforces a technical quality floor. This floor covers responsive mobile layouts, visible keyboard focus indicators, and reduced-motion accessibility standards.
+According to Anthropic's official skills repository on [GitHub](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md), the frontend design skill enforces a technical quality floor. This floor covers responsive mobile layouts, visible keyboard focus indicators, and reduced-motion accessibility standards.
 
 This skill prevents common AI blunders like broken mobile menus or missing button highlights. It forces Claude to audit HTML elements before completing the task.
 

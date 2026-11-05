@@ -38,7 +38,7 @@ keyFacts:
 
 Gaming PC RAM (short-term system memory) is high-speed temporary storage. It holds active game files and code while your computer runs.
 
-According to [Intel](https://www.intel.com/content/www/us/en/homepage.html), this volatile memory (temporary storage that clears when powered down) works extremely fast. It lets the processor retrieve data orders of magnitude faster than accessing storage devices like SSDs or hard drives.
+According to [Intel](https://www.intel.com/content/www/us/en/gaming/resources/how-much-ram-gaming.html), this volatile memory (temporary storage that clears when powered down) works extremely fast. It lets the processor retrieve data orders of magnitude faster than accessing storage devices like SSDs or hard drives.
 
 Without enough system memory, your computer stutters. This allows the system to access game data quickly without having to fetch it from slower storage drives.
 

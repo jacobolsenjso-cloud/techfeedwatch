@@ -36,7 +36,7 @@ keyFacts:
     url: "https://filmora.wondershare.com/ai-script-to-video.html"
 ---
 
-To use text to video in [Wondershare](https://www.wondershare.com/) Filmora, open the software. Click the "AI Text to Video" or "AI Script to Video" shortcut on the startup window.
+To use text to video in [Wondershare](https://support.wondershare.com/how-tos/filmora-for-mobile/how-to-use-text-to-video-in-mobile.html) Filmora, open the software. Click the "AI Text to Video" or "AI Script to Video" shortcut on the startup window.
 
 Enter your written text prompt (instructions typed for the AI) into the input box. You can also paste an existing script there. Next, configure your voiceover and aspect ratio (the screen width versus height) settings.
 

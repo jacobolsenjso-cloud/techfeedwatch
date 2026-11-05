@@ -58,7 +58,7 @@ Consumer access expands across several common channels:
 - Cash-flow underwriting tools review recurring utility bill payments. These tools are software programs that evaluate borrowers using daily income and expenses. They avoid relying entirely on legacy credit scores (traditional ratings based on past borrowing history).
 - Low-cost international transfer apps deliver remittances directly into mobile wallets abroad. Remittances are sums of money sent to family or friends in another country.
 
-Payments remain the largest operational category in the sector. According to [Boston Consulting Group](https://www.bcg.com/), payments generated approximately $126 billion in scaled revenues in 2024. Boston Consulting Group reported that digital wallets accounted for $67 billion of that total.
+Payments remain the largest operational category in the sector. According to [Boston Consulting Group](https://www.bcg.com/press/1june2026-global-fintech-revenues-surpass-half-trillion-dollars), payments generated approximately $126 billion in scaled revenues in 2024. Boston Consulting Group reported that digital wallets accounted for $67 billion of that total.
 
 Merchant acquiring (services processing card payments for businesses) and vertical software (specialized programs for specific industries) generated $50 billion. According to Boston Consulting Group, challenger banks (digital-only banks that operate without physical branches) produced another $27 billion in scaled revenues in 2024.
 

@@ -41,7 +41,7 @@ An AI assistant connects directly to external databases and software programs. I
 
 Chatbots use rigid keyword scripts or conversational language prompts. In contrast, AI assistants combine large language models (AI trained on vast text data), robotic automation, and intelligent search systems. 
 
-Traditional chatbots follow predefined paths. According to [Salesforce](https://www.salesforce.com/?bc=DB), basic chatbots rely on scripted decision trees (flowcharts of choices). Conceptually, these decision trees date back to Joseph Weizenbaum's 1964 ELIZA program for simple information retrieval.
+Traditional chatbots follow predefined paths. According to [Salesforce](https://www.salesforce.com/agentforce/ai-agent-vs-chatbot/), basic chatbots rely on scripted decision trees (flowcharts of choices). Conceptually, these decision trees date back to Joseph Weizenbaum's 1964 ELIZA program for simple information retrieval.
 
 These programs match incoming text against fixed keyword libraries. According to IBM, rudimentary chatbots cannot parse (break down and analyze) user input that deviates from those pre-programmed keywords. When a user asks an unexpected question, a rule-based bot fails.
 
@@ -87,7 +87,7 @@ This shift saves administrative time. Organizations must monitor what actions th
 
 Connecting language models directly to critical databases creates security obligations. Modern enterprises often reevaluate their internal [cybersecurity](/video/difference-between-cybersecurity-and-information-technology) protocols (protection rules) before granting software agents write access to core infrastructure. If an assistant misinterprets instructions, automated tasks could corrupt business records.
 
-To be fair, I do not have extensive experience with software agents yet, but granting an algorithm the power to make independent decisions requires real caution. An assistant only performs as well as the detailed guidance you give it. Doing thorough research before turning over active tasks helps ensure you stay in control.
+Granting an algorithm the power to make independent decisions requires real caution. An assistant only performs as well as the detailed guidance you give it. Doing thorough research before turning over active tasks helps ensure you stay in control.
 
 ## When is a standard chatbot better than an AI assistant?
 

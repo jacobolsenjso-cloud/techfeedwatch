@@ -183,6 +183,11 @@ export function anvendRettelser(md, fund) {
     const re = new RegExp(ord.map((w) => w.replace(/\$/g, '\\$')).join('(?:\\]\\([^)]*\\)|[^A-Za-z0-9$%\\n])+?') + '(?:\\]\\([^)]*\\))?[^\\sA-Za-z0-9]*');
     const m = ny.match(re);
     if (!m) { ikkeFundet.push(f); continue; }
+    // 5/11-2026: en fejl i en tabelrække fjerner hele rækken. Før blev rettelsen sat ind som en hel sætning
+    // midt i rækken, og tabellen gik i stykker (målt i quantum-artiklen 5/11). src/lib/sammenhaeng.mjs fjerner
+    // tabellen, hvis der er under 2 rækker tilbage.
+    const lStart = ny.lastIndexOf('\n', m.index) + 1;
+    if (/^\s*\|/.test(ny.slice(lStart))) { const lSlut = ny.indexOf('\n', m.index); ny = ny.slice(0, lStart) + (lSlut < 0 ? '' : ny.slice(lSlut + 1)); continue; }
     ny = ny.slice(0, m.index) + String(f.rettet || '').replace(/^#+\s*/, '') + ny.slice(m.index + m[0].length);
     ny = ny.replace(/[ \t]{2,}/g, ' ');
   }

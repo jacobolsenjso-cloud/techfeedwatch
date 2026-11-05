@@ -38,7 +38,7 @@ keyFacts:
     url: "https://pytorch.org/blog/introducing-torchtpu/"
 ---
 
-A [Google](https://www.google.com/) Tensor Processing Unit, or TPU, is a specialized computer chip. Engineers designed it to speed up artificial intelligence workloads. 
+A [Google](https://cloud.google.com/blog/products/ai-machine-learning/an-in-depth-look-at-googles-first-tensor-processing-unit-tpu) Tensor Processing Unit, or TPU, is a specialized computer chip. Engineers designed it to speed up artificial intelligence workloads. 
 
 Google uses TPUs to train massive machine learning models (software trained on data). The chips also handle billions of daily user requests across its global web services.
 
@@ -51,7 +51,7 @@ Central processing units (CPUs) handle diverse operating system tasks and switch
 
 This structure works well for video rendering and experimental AI code. In contrast, TPUs are application-specific integrated circuits, or ASICs (chips built for a single purpose). Engineers stripped them down to perform large-scale matrix operations at high volume.
 
-According to Google Cloud Documentation, software cannot run on a TPU without the Accelerated Linear Algebra (XLA) compiler (a program translating code). The compiler transforms high-level framework graphs from the machine learning frameworks [PyTorch](https://pytorch.org/) or JAX into custom machine code.
+According to Google Cloud Documentation, software cannot run on a TPU without the Accelerated Linear Algebra (XLA) compiler (a program translating code). The compiler transforms high-level framework graphs from the machine learning frameworks [PyTorch](https://pytorch.org/blog/introducing-torchtpu/) or JAX into custom machine code.
 
 Hardware components show clear architectural trade-offs:
 - CPUs prioritize low latency (the delay before data arrives) for general tasks and diverse system operations.

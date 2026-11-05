@@ -43,7 +43,7 @@ Robotics for kids is an educational discipline that combines mechanical construc
 ## What technical concepts do children learn in robotics?
 Children learn how structural mechanics, electronic circuits, digital sensors, and algorithmic logic interact to control physical movement.
 
-According to [NASA](https://www.nasa.gov/), educational robotics programs introduce students in kindergarten through grade 4 to the fundamentals of autonomous and human-guided machines that complete tasks in the physical world. Young learners discover that machines do not possess innate intelligence. A robot only follows the specific sequence of instructions that a programmer writes.
+According to [NASA](https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-robotics-grades-k-4/), educational robotics programs introduce students in kindergarten through grade 4 to the fundamentals of autonomous and human-guided machines that complete tasks in the physical world. Young learners discover that machines do not possess innate intelligence. A robot only follows the specific sequence of instructions that a programmer writes.
 
 Students also study how electrical power flows through circuits, switches, and battery packs. They attach sensors that register environmental variables such as ambient light, physical pressure, and distance.
 

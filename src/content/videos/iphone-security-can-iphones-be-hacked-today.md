@@ -38,7 +38,7 @@ keyFacts:
     url: "https://citizenlab.ca/research/pegasus-spyware-infection-of-serbian-activist/"
 ---
 
-Yes, determined adversaries can definitely hack iPhones. [Apple](https://www.apple.com/) builds strong protective barriers into the operating system (the main software running a phone).
+Yes, determined adversaries can definitely hack iPhones. [Apple](https://support.apple.com/en-us/102174) builds strong protective barriers into the operating system (the main software running a phone).
 
 Even so, iPhones remain vulnerable to advanced software exploits (programs taking advantage of flaws) and deceptive scams. Everyday smartphone users face phishing attempts (fake messages designed to steal data) and credential theft.
 
@@ -74,7 +74,7 @@ Flaws in media processing engines offer persistent entry points for threat actor
 
 That federal record includes CoreGraphics flaw CVE-2026-86950. CISA added that flaw on September 29, 2026.
 
-Mercenary surveillance vendors turn these technical flaws into invisible spyware weapons. According to [The Citizen Lab](https://citizenlab.ca/) at the University of Toronto, forensic analysis confirmed a serious device compromise.
+Mercenary surveillance vendors turn these technical flaws into invisible spyware weapons. According to [The Citizen Lab](https://citizenlab.ca/research/pegasus-spyware-infection-of-serbian-activist/) at the University of Toronto, forensic analysis confirmed a serious device compromise.
 
 The analysis showed that a Serbian student activist's iPhone was infected across December 2025 and January 2026. That compromise used an iMessage zero-click chain to install NSO Group's Pegasus spyware. The software installed without the victim tapping any screen prompt.
 

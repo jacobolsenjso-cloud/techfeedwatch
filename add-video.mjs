@@ -14,6 +14,7 @@ import { erReklame } from './src/lib/reklame.mjs';
 import { hentSegmenter } from './src/lib/transskript.mjs';
 import { GEMINI_MODEL, hentModel } from './src/lib/model.mjs';
 import { tilfoejEksterneLinks } from './src/lib/eksterne-links.mjs';
+import { flydende } from './src/lib/flyd.mjs';
 // foersteAfsnit omdøbes ved import: add-video har sin egen lokale foersteAfsnit
 // (returnerer tekst), og navnet skjulte importen — loggen i prøve #3 viste "undefined ord".
 import { talesprog, tekstDiagram, uklareKilder, klistretSoegeord, lister, MIN_LISTER, foersteAfsnit as foersteAfsnitTal, delFoersteAfsnit, delLangeAfsnit, afsnitsTal, fyldKandidater, fjernSaetninger, ordretFraKilde, ordretAndel, tvungneLinks, fjernTvungneLinks, aiFraser } from './src/lib/skriveregler.mjs';
@@ -1345,6 +1346,15 @@ ${content}`);
       // satte faktaarkets nøgler i backticks (`2d`, `Justin_tech`).
       content = content.replace(/`([^`\n]*)`/g, '$1');
 
+      // Naturligt sprog (5/11-2026, Jacob: "alt AI-sprog skal fjernes", src/lib/flyd.mjs): en redaktør skriver hver
+      // sektion, så den flyder - kilden nævnes, hvor dens fakta begynder, gentagelser og AI-vendinger ud. Koden afviser
+      // en sektion med ændrede tal, links, tabeller eller nye navne. Før links, stemme og slutkontrol.
+      {
+        const fl = await flydende(genAI, hentModel, GEMINI_MODEL, content, { spoergsmaal: targetQuestion || safeTitle, navne: [...(soeg.navne || []), kildeNavn(channelTitle), channelTitle].filter(Boolean) });
+        content = fl.md;
+        console.log(`FLYD: ${JSON.stringify(fl.rap)}`);
+      }
+
       // Forbudte ord håndhæves her, ikke kun i prompten (src/lib/forbudt.mjs).
       const forbudte = findForbudte(content);
       if (forbudte.length) {
@@ -1358,6 +1368,8 @@ ${content}`);
       // ændres. Fejler noget, udgives artiklen uden — robotten stopper aldrig her.
       const ekst = await tilfoejEksterneLinks(content, {
         beskrivelse: videoBeskrivelse,
+        // 5/11: kildesiderne, så "According to X" linker til X' egen side og aldrig til en forside
+        kildeSider: brugteKilder(content, soeg),
         spoerg: async (p) => (await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0 } }).generateContent(p)).response.text(),
       });
       content = ekst.content;

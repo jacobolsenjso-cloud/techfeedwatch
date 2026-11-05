@@ -49,7 +49,7 @@ Virtual reality completely replaces the physical environment with an artificial 
 
 In contrast, augmented reality retains sight of real-world rooms and adds schematics or holograms over surfaces. Users exploring the [difference between virtual reality and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) encounter distinct optical designs.
 
-Aviation and space programs rely on complete isolation to replicate hazardous environments safely. According to [NASA](https://www.nasa.gov/), astronauts aboard the International Space Station tested virtual reality systems during the Pilote investigation.
+Aviation and space programs rely on complete isolation to replicate hazardous environments safely. According to [NASA](https://www.nasa.gov/missions/station/nine-ways-we-use-ar-and-vr-on-the-international-space-station/), astronauts aboard the International Space Station tested virtual reality systems during the Pilote investigation.
 
 This study evaluated haptic-driven remote operation of robotic arms and spacecraft, including the Canadarm2 and Soyuz vehicles. These synthetic recreations let astronauts practice critical docking procedures under simulated microgravity conditions without risking multi-million-dollar orbital hardware.
 
@@ -106,7 +106,7 @@ Software techniques such as dynamically restricting a user's peripheral field of
 
 ## Tech Court breaks down Meta's lightweight split-design VR glasses
 
-Tech Court reports that [Meta](https://www.meta.com/) has separated display optics from core computing hardware to dramatically reduce facial weight in its upcoming VR glasses.
+Tech Court reports that [Meta](https://www.meta.com/blog/what-is-virtual-reality-all-about/) has separated display optics from core computing hardware to dramatically reduce facial weight in its upcoming VR glasses.
 
 During its Connect 2026 conference, Meta revealed hardware that moves the processor, battery, and storage away from the headset into an external compute puck. According to Tech Court, this split layout leaves glasses weighing around 100 grams on the user's face.
 

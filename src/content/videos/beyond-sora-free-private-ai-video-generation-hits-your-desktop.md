@@ -55,7 +55,7 @@ According to Midjourney's official documentation, video animations created with 
 
 According to Runway's official Usage Rights documentation, users retain full ownership and commercial rights to all media uploaded to and generated through its platforms. This protects copyright ownership. Even so, enterprise security teams must inspect whether user uploads train future foundational systems. 
 
-Other vendors deploy multi-tenant infrastructure alongside distinct customer policies. According to [HeyGen](https://www.heygen.com/)'s Security Practices documentation, user data is protected under SOC 2 Type II, GDPR, CCPA, and EU AI Act compliance standards, with services hosted on Amazon Web Services using logical multi-tenant data separation. 
+Other vendors deploy multi-tenant infrastructure alongside distinct customer policies. According to [HeyGen](https://www.heygen.com/security)'s Security Practices documentation, user data is protected under SOC 2 Type II, GDPR, CCPA, and EU AI Act compliance standards, with services hosted on Amazon Web Services using logical multi-tenant data separation. 
 
 According to HeyGen's AI Ethics and Trust documentation, user video projects are set to private by default. Commercial vendor agreements prohibit third-party model providers from training on HeyGen customer data. 
 
