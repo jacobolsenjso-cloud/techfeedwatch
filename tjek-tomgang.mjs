@@ -13,7 +13,7 @@
 //
 // Rød hvis:
 //   - filen ikke kan hentes eller læses
-//   - sidste artikel er ældre end TOMGANG_TIMER timer (standard 36)
+//   - sidste artikel er ældre end TOMGANG_TIMER timer (standard 60)
 //   - ret-linktekster har meldt en advarsel inden for det sidste døgn
 //
 // Kør:  node tjek-tomgang.mjs
@@ -21,7 +21,10 @@
 import fs from 'node:fs';
 
 const URL = process.env.TOMGANG_URL || 'https://techfeedwatch.com/robot-status.json';
-const GRAENSE = Number(process.env.TOMGANG_TIMER || 36);
+// 5/11-2026: 36 -> 60 timer. Med fridage tirsdag, fredag og søndag (auto-youtube.mjs) er den normale pause
+// op til ca. 48 timer (fx mandag morgen -> onsdag morgen); 36 ville give falsk alarm hver uge. Samme grænse
+// som techmediaarch (TOMGANG_TIMER = 60).
+const GRAENSE = Number(process.env.TOMGANG_TIMER || 60);
 const nu = Date.now();
 
 function skriv(tekst) {

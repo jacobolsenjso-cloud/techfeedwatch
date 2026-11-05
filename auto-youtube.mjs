@@ -59,17 +59,20 @@ const MAX_NORMAL_PER_RUN = 1;
 // fire artikler hver eneste dag var et maskinaftryk; rigtige redaktioner
 // svinger og udgiver mindre i weekenden. Kvaliteten bestemmer stadig: godkender
 // kontrollerne kun én video en dag med loft 5, udgives én. En dag med 0 er OK.
-function dagensLoft() {
-  const nu = new Date();
+// 5/11-2026 (Jacob): samme takt som techmediaarch - højst 2 om dagen og fri tirsdag, fredag og søndag.
+// Hvorfor: Search Console viste 41 af ca. 930 sider indekseret, og kvalitetsgennemgangen 5/11 (10 artikler,
+// alle under 55 af 100) viste, at flere artikler med samme opskrift ikke hjælper. Kræfterne bruges i stedet
+// på at skrive de gamle artikler om (omskriv-gamle.mjs, uændret). Før: hverdage 2-3, weekend 1-3, hver dag.
+// Ugedagen regnes i UTC ligesom datoen i countPublishedToday, så en fridag går fra kl. 01 til 01 dansk
+// vintertid (02-02 sommertid). På udgivelsesdage er loftet 1 eller 2, fastlagt af datoen (samme dag =
+// samme loft i alle døgnets kørsler), så det ikke er præcis det samme antal hver dag.
+const FRIDAGE_UTC = [0, 2, 5]; // søndag, tirsdag, fredag (getUTCDay)
+function dagensLoft(nu = new Date()) {
+  if (FRIDAGE_UTC.includes(nu.getUTCDay())) return 0;
   const dato = nu.toISOString().split('T')[0];
   let h = 0;
   for (let i = 0; i < dato.length; i++) h = (Math.imul(31, h) + dato.charCodeAt(i)) | 0;
-  h = Math.abs(h);
-  const ugedag = nu.getUTCDay(); // 0 = søndag, 6 = lørdag
-  // Max 3 om dagen (Jacob, 16/10): med starteren nås loftet hver dag, og prisen fulgte med
-  // (målt 15/10: 6 artikler, 4,72 USD). Før: max 5 (15/9), hverdage 2-5.
-  const muligheder = (ugedag === 0 || ugedag === 6) ? [1, 2, 3] : [2, 3];
-  return muligheder[h % muligheder.length];
+  return [1, 2][Math.abs(h) % 2];
 }
 const MAX_PER_DAY = dagensLoft();
 
@@ -668,7 +671,9 @@ async function findNewestVideos() {
   // GitHub kører aldrig med flaget.
   const publishedToday = countPublishedToday();
   if (publishedToday >= MAX_PER_DAY && !process.argv.includes('--ignorer-loft')) {
-    console.log(`⏸️ Dagsloftet er nået: ${publishedToday}/${MAX_PER_DAY} artikler udgivet i dag. Springer denne kørsel over.`);
+    console.log(MAX_PER_DAY === 0
+      ? '⏸️ Dagsloftet er nået: fridag (tirsdag, fredag og søndag, UTC), loft 0 i dag. Springer denne kørsel over.' // "Dagsloftet er nået" læses af robot-log.mjs (loftNaaet) - bevar ordene
+      : `⏸️ Dagsloftet er nået: ${publishedToday}/${MAX_PER_DAY} artikler udgivet i dag. Springer denne kørsel over.`);
     return;
   }
   const remainingToday = MAX_PER_DAY - publishedToday;
