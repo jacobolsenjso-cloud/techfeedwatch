@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import { hentForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
@@ -487,9 +487,9 @@ function dedupeById(items, seen) {
 // dækning), prøves den næstbedste.
 const KANDIDATER = 4;
 
-function faktaarkScoreFor(videoUrl, tag, qArg) {
+function faktaarkScoreFor(videoUrl, tag, qArgs) {
   try {
-    const ud = execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg} --faktaark-only`, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+    const ud = execFileSync(process.execPath, ['add-video.mjs', videoUrl, '--tag', tag, ...qArgs, '--faktaark-only'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
     process.stdout.write(ud.split('\n').map((l) => '   │ ' + l).join('\n') + '\n');
     const m = ud.match(/FAKTAARK-SCORE:\s*(\d+)/);
     const score = m ? Number(m[1]) : 0;
@@ -512,7 +512,10 @@ const SKRIVE_MAERKE = '.cache/skrive-forsoeg';
 let skrevetForsoegFejlet = false;
 async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaal, visSpoergsmaal = spoergsmaal) {
   let processed = 0;
-  const qArg = visSpoergsmaal ? ` --question "${visSpoergsmaal.replace(/"/g, '')}"` : '';
+  // 5/11-2026 (CodeQL #6/#7, kritisk): argumenterne sendes hver for sig (execFileSync) i stedet for at blive sat ind i en
+  // kommandolinje. Spørgsmålet kommer fra Googles forslagsliste - et forslag med $(...) eller ` ville før være blevet kørt
+  // som kode på GitHubs maskine, hvor nøglerne ligger. Anførselstegn fjernes stadig, så teksten er som før.
+  const qArgs = visSpoergsmaal ? ['--question', visSpoergsmaal.replace(/"/g, '')] : [];
 
   // Første sigte: dubletter og ikke-engelsk lyd væk, så vi ikke betaler for dem.
   // 14/10: første sigte samler op til 2 x KANDIDATER; forhåndstjekket nedenfor sorterer dem, og
@@ -582,7 +585,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
   for (const videoId of kandidater) {
     const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
     console.log(`🔎 Vurderer kandidat: ${videoUrl}`);
-    const { score, blokeret } = faktaarkScoreFor(videoUrl, tag, qArg);
+    const { score, blokeret } = faktaarkScoreFor(videoUrl, tag, qArgs);
     console.log(`   score ${score}`);
     if (score > 0) rangeret.push({ videoId, score });
     blokeretITraek = blokeret ? blokeretITraek + 1 : 0;
@@ -603,7 +606,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
     fs.rmSync(SKRIVE_MAERKE, { force: true });
     try {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
-      execSync(`node add-video.mjs "${videoUrl}" --tag "${tag}"${qArg}`, { stdio: 'inherit' });
+      execFileSync(process.execPath, ['add-video.mjs', videoUrl, '--tag', tag, ...qArgs], { stdio: 'inherit' });
       // add-video kan afvise (sprogtjek, tyndt transskript) og alligevel slutte
       // pænt. Kun en faktisk skrevet artikel tæller mod dagens loft — ellers
       // æder afvisninger budgettet, og næste kandidat får aldrig chancen.
