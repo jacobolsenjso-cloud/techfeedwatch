@@ -1,15 +1,16 @@
 ---
-title: "Is quantum supremacy achieved in modern computing?"
+title: "Has Quantum Supremacy Actually Been Achieved?"
 youtubeId: "XfsNNtolfQo"
 channelTitle: "Cosmora SPACE"
 channelId: "UCAGMNn45IGn0RKF5ibPkdtA"
 publishedAt: "2026-09-17T18:52:35Z"
 date: "2026-11-05"
+updated: "2026-11-05"
 tags:
   - "Quantum Computing"
   - "Hardware & Chips"
-summary: "Quantum supremacy has been achieved in specialized laboratory benchmarks where experimental quantum processors drastically outpaced classical supercomputers. However, these synthetic calculations lack commercial utility, meaning practical quantum advantage remains unreached. Classical supercomputing algorithms also continue to advance, narrowing earlier speed gaps."
-metaDescription: "Has quantum supremacy been achieved? Learn how experimental processors beat classical supercomputers on benchmarks and what remains before practical use."
+summary: "Quantum supremacy has been achieved experimentally on synthetic math tests, but classical supercomputers continue to challenge those records. Multiple teams at Google and the University of Science and Technology of China have demonstrated quantum processors outperforming traditional hardware on specialized sampling tasks. However, these milestone calculations do not yet solve practical industrial problems or break everyday encryption."
+metaDescription: "Has quantum supremacy been achieved? Here is how Google and Chinese research teams reached the computing milestone and what remains unproven."
 targetQuestion: "is quantum supremacy achieved"
 duration: "17:20"
 viewCount: 504
@@ -17,157 +18,123 @@ viewsUpdated: "2026-11-05"
 thumbMax: true
 isShort: false
 recipe: 3
+rewrittenAt: "2026-11-05"
 faqs:
   - question: "What is meant by quantum supremacy?"
-    answer: "Quantum supremacy means a quantum computer beats a classical supercomputer on a calculation. The milestone focuses strictly on computational speed rather than practical or commercial utility."
-  - question: "What is Google quantum supremacy?"
-    answer: "According to Nature, Google achieved this milestone on October 23, 2019, when its 53-qubit Sycamore processor finished a sampling calculation in 200 seconds. Google calculated that the Summit supercomputer would need 10,000 years to match that benchmark."
-  - question: "What is quantum supremacy in quantum computing?"
-    answer: "Quantum supremacy is an experimental proof of concept showing that quantum hardware can process complex calculations faster than any binary machine. It validates theoretical quantum physics without solving everyday commercial problems."
+    answer: "According to Quanta Magazine, theoretical physicist John Preskill coined the term in 2012 to describe a programmable quantum machine outperforming classical computers on any calculation. The definition applies whether or not that calculation produces useful real-world results."
+  - question: "What is the difference between quantum supremacy and quantum advantage?"
+    answer: "According to Live Science, hardware developers use quantum advantage or utility to describe solving useful problems in chemistry or optimization rather than synthetic benchmarks. Quantum supremacy requires only that a quantum device outperforms classical computers on any specific test, according to Quanta Magazine."
+  - question: "What was Google's first quantum supremacy demonstration?"
+    answer: "According to Nature, Google researchers reported in October 2019 that their 53-qubit Sycamore processor ran a random sampling benchmark in 200 seconds. They calculated that a classical supercomputer would need an estimated 10,000 years to finish the same calculation."
+keyFacts:
+  - text: "Google's 2019 benchmark could be simulated on classical supercomputers in approximately 2.5 days with higher fidelity using hard-drive storage rather than the claimed 10,000-year timeline."
+    source: "IBM Quantum Computing Blog"
+    url: "https://www.ibm.com/quantum/blog/on-quantum-supremacy"
+  - text: "Demonstrating quantum supremacy confirms that physical quantum devices can outperform classical machines at specific operations, though the synthetic benchmarks used do not yet solve practical industrial problems."
+    source: "NASA Ames Research Center"
+    url: "https://www.nasa.gov/technology/computing/google-and-nasa-achieve-quantum-supremacy/"
+  - text: "Quantum hardware developers have increasingly pivoted their focus from synthetic quantum supremacy benchmarks to verifiable quantum utility and error-corrected logical qubits capable of solving chemistry and optimization problems."
+    source: "Live Science"
+    url: "https://www.livescience.com/technology/quantum/ibm-scientists-claim-theyve-achieved-quantum-advantage-and-theyve-dared-others-to-prove-them-wrong"
 ---
 
-Scientists have achieved quantum supremacy (when a quantum computer beats a classical supercomputer on any task) in laboratory experiments. These tests rely on highly specialized mathematical benchmarks.
+Yes, scientists have achieved quantum supremacy in controlled lab tests. Quantum supremacy simply means a quantum computer beats standard computers at a specific task.
 
-Quantum processors have completed narrow sampling calculations in minutes. Classical supercomputers would take days or centuries to finish the same work.
+These tests rely on narrow, synthetic math benchmarks, which are artificial performance tests. Quantum processors run these calculations far faster than any classical supercomputer can. Yet this milestone remains a moving target, because better classical software continually closes the gap.
 
-However, none of these demonstrations solve real-world problems. This leaves commercial quantum advantage (solving practical problems faster or cheaper than normal computers) unfulfilled.
+Physicists treat the milestone as a technical proof of concept rather than a finished product. A classical computer checks options sequentially, working through one step after another. A quantum system evaluates multiple possibilities at once using quantum mechanics, the physics governing tiny particles. That creates a massive speed leap for certain math problems.
 
-## How does quantum supremacy differ from quantum advantage?
+Superconducting chips conduct electricity with zero resistance, but they require extreme cooling. They chill to temperatures near absolute zero, the coldest temperature possible. Building and maintaining these processors costs millions of dollars in specialized facilities. Most businesses and researchers rent time over cloud networks to access this computing power.
 
-Quantum supremacy marks the moment a quantum device outperforms classical supercomputers on any calculation.
-In contrast, quantum advantage requires that calculation to be commercially useful.
+## Which quantum processors have claimed quantum supremacy?
+Several superconducting and optical quantum systems have claimed quantum supremacy in major announcements. Hardware teams at [Google](https://www.google.com/) and the University of Science and Technology of China built these machines. They designed them to solve specific sampling problems that overwhelm classical memory.
 
-The target of supremacy was proof of physics: showing that physical hardware could harness quantum mechanics to beat classical limits.
+According to Nature, Google researchers reported a milestone in October 2019. Their 53-qubit (quantum bit) Sycamore superconducting processor ran a random circuit sampling calculation in 200 seconds.
 
-Whether the calculation had practical value did not matter. Classical computers process bits that must be either a zero or a one.
+This calculation is a synthetic benchmark (a test that generates complex patterns of numbers). The Google team estimated that top classical supercomputers would take 10,000 years to finish that specific workload.
 
-Quantum machines use quantum bits, or qubits (basic units of quantum computing). These qubits exploit superposition (the ability to exist in multiple states at once) to evaluate massive combinations simultaneously.
+A year later, an optical architecture demonstrated a similar computational gap. According to Science, researchers at the University of Science and Technology of China reported in December 2020 on their Jiuzhang photonic processor. This system uses particles of light to compute.
 
-Because of this property, a quantum chip can process certain mathematical problems at remarkable speed. To reach quantum advantage, a system must perform useful work faster and cheaper than existing silicon. Examples include modeling molecular reactions or optimizing complex financial logistics.
+It solved a Gaussian boson sampling task (a mathematical benchmark that tracks photons) in 200 seconds. Science noted that the team detected up to 76 photons during the experiment. The team estimated that the classical Sunway TaihuLight supercomputer would need 2.5 billion years to match it.
 
-Industrial users need reliable software that runs without hardware crashes.
-Supremacy proved that the physics works under lab conditions.
-Advantage proves that the investment makes economic sense for real businesses.
+Hardware developers expanded those benchmarks to higher qubit counts. According to Nature, Google Quantum AI researchers demonstrated this progress in 2024. Upgraded 67-qubit and 70-qubit Sycamore processors maintained circuit sampling operations that resisted existing classical supercomputing simulation methods.
 
-The way I picture this distinction is simple: an ordinary computer checks step one, then step two, and then step three. A quantum setup reaches out across all points at once, which explains that sudden leap in calculation speed.
+According to Physical Review Letters, researchers at the University of Science and Technology of China demonstrated another milestone in March 2025. Their 105-qubit Zuchongzhi 3.0 superconducting processor sampled random circuits in hundreds of seconds. The authors in Physical Review Letters estimated that the classical Frontier supercomputer would require 5.9 billion years for the same calculation.
 
-## Processors like Sycamore and Jiuzhang demonstrated quantum supremacy
+The table below contrasts these prominent processor milestones using data documented by Nature, Science, and Physical Review Letters.
 
-Multiple research teams have demonstrated quantum supremacy by running specialized mathematical tests on custom experimental hardware.
+| Processor | Architecture | Benchmark Task | Classical Baseline Estimate |
+| :--- | :--- | :--- | :--- |
+| Sycamore (Google, 2019) | 53-qubit superconducting | Random circuit sampling | 10,000 years (reported by Nature) |
+| Jiuzhang (USTC, 2020) | 76-photon optical network | Gaussian boson sampling | 2.5 billion years (reported by Science) |
+| Zuchongzhi 3.0 (USTC, 2025) | 105-qubit superconducting | Random circuit sampling | 5.9 billion years (reported by Physical Review Letters) |
 
-According to Nature, [Google](https://www.google.com/) researchers published experimental results on October 23, 2019. They showed that their 53-qubit Sycamore processor completed a random circuit sampling task in 200 seconds.
+## Improved classical algorithms repeatedly challenge supremacy claims
+Classical computing algorithms (step-by-step problem-solving rules) regularly improve. These improvements shrink or erase margins previously cited as proof of quantum supremacy.
 
-A random circuit sampling task is a specialized mathematical test designed to evaluate quantum processing speed. Google estimated that an advanced classical supercomputer would require 10,000 years to execute the same task. The announcement marked the first public claim of supremacy.
+Whenever a quantum research team publishes an astronomical runtime comparison, classical computer scientists act. They analyze the problem to find mathematical shortcuts.
 
-Other laboratories quickly built competing hardware architectures to verify similar performance gains. According to Science, University of Science and Technology of China researchers reported findings on December 3, 2020. They reported that their photonic prototype Jiuzhang completed Gaussian boson sampling in 200 seconds.
+According to the [IBM](https://www.ibm.com/quantum/blog/on-quantum-supremacy) Quantum Computing Blog, Google's 2019 Sycamore benchmark could actually run on classical supercomputers in approximately 2.5 days. It could achieve higher fidelity (computational accuracy) by using hard-drive storage. IBM demonstrated that classical machines were not constrained by the 10,000-year estimate when storage architectures were configured properly.
 
-Gaussian boson sampling is a specialized calculation that measures how light particles travel through an optical circuit. Science noted the prototype detected up to 76 photons. It outpaced the Sunway TaihuLight supercomputer by an estimated factor of 100 trillion.
+Classical software techniques quickly advanced beyond traditional simulation methods. According to the University of Science and Technology of China, researchers showed new findings in 2023. They used classical tensor network algorithms (mathematical methods that efficiently simulate quantum systems) running on graphics chips.
 
-Superconducting chips continued to progress alongside light-based designs. According to Physical Review Letters, University of Science and Technology of China researchers reported progress in October 2021.
+These algorithms simulated Google's 2019 Sycamore benchmark in 14 seconds. The same team at the University of Science and Technology of China showed that the classical Frontier supercomputer could simulate that benchmark in 1.6 seconds.
 
-They reported that their 66-qubit superconducting processor Zuchongzhi 2.1 sampled random circuits using 56 qubits and 24 cycles. That demonstration achieved an estimated speedup 1,000 times greater than Google's 2019 Sycamore result.
+According to arXiv, multiple historical quantum supremacy claims based on noisy intermediate-scale quantum sampling benchmarks have subsequently been matched or simulated in minutes or hours by advances in classical tensor network contraction methods (mathematical techniques used to simulate quantum interactions). These rapid algorithmic breakthroughs highlight distinct challenges in the field:
 
-Performance figures expanded further in later photonic hardware iterations. According to Nature, University of Science and Technology of China researchers reported new milestones in May 2026.
+- Classical algorithms continue to evolve through tensor networks and custom memory management.
+- Supercomputers gain processing efficiency by simulating low-depth quantum circuits (quantum calculations with a limited number of sequential steps) directly.
+- Threshold claims shift whenever classical software engineers design more efficient mathematical models.
 
-They reported that their Jiuzhang 4.0 processor manipulated up to 3,050 photons (particles of light). It did this across an 8,176-mode circuit (an optical network of distinct light paths). Nature documented that Jiuzhang 4.0 solved Gaussian boson sampling in 25 microseconds.
+Because classical techniques advance alongside quantum hardware, quantum supremacy is not a permanent status.
 
-The following experiments documented by Nature, Science, and Physical Review Letters illustrate the milestone benchmarks achieved by physical quantum processors:
+This constant back-and-forth is exactly why I approach bold tech headlines with healthy skepticism. When an astronomical lab record gets matched by clever classical programming just months later, it proves that claims need independent verification before anyone accepts them as settled. Keeping a cool head and waiting for counter-evidence helps separate genuine technical strides from promotional excitement.
 
-| Quantum Processor | Research Organization | Benchmark Calculation | Recorded Runtime |
-| --- | --- | --- | --- |
-| Sycamore (53 qubits) | Google | Random circuit sampling | 200 seconds |
-| Jiuzhang (76 photons) | USTC | Gaussian boson sampling | 200 seconds |
-| Jiuzhang 4.0 (3,050 photons) | USTC | Gaussian boson sampling | 25 microseconds |
+## Does achieving quantum supremacy solve practical real-world problems?
+Achieving quantum supremacy does not mean a quantum computer can solve useful, commercial problems. The tests used in supremacy demonstrations exist strictly to prove computational separation between classical and quantum mechanics.
 
-## Can improved classical algorithms challenge quantum supremacy claims?
+Theoretical physicist John Preskill coined the term "quantum supremacy" in 2012, according to Quanta Magazine. He established this milestone for when a machine outperforms classical systems regardless of practical utility. The original definition centered on computational complexity rather than economic value.
 
-Yes, classical software developers frequently counter quantum supremacy claims.
-They write more efficient algorithms (step-by-step mathematical procedures) that simulate quantum circuits on classical hardware.
+NASA Ames Research Center noted that demonstrating supremacy confirms physical devices can outperform classical machines at specific operations. Synthetic benchmarks do not solve industrial problems, however. Random circuit sampling generates complex patterns of numbers that have no direct application in logistics, materials science, or financial modeling.
 
-Supremacy claims rely on comparing a quantum runtime against an estimated classical supercomputer runtime.
-When classical programmers find better ways to organize memory, that estimated classical runtime shrinks dramatically.
-The boundary between classical ability and quantum dominance shifts continuously.
+Hardware developers have shifted focus from synthetic benchmarks to verifiable quantum utility, according to [Live Science](https://www.livescience.com/technology/quantum/ibm-scientists-claim-theyve-achieved-quantum-advantage-and-theyve-dared-others-to-prove-them-wrong). They now target error-corrected logical qubits capable of solving chemistry and optimization tasks. Commercial utility demands reliable operations rather than abstract statistical speed.
 
-Pushback began almost immediately after Google published its initial Sycamore benchmark. According to the IBM Quantum Computing Blog, IBM researchers Edwin Pednault, Dmitri Maslov, John Gunnels, and Jay Gambetta argued on October 22, 2019.
+For daily technology users, this engineering divide provides practical protection:
 
-They stated that an ideal classical simulation of Google's benchmark could run on the Summit supercomputer in 2.5 days. They showed that using secondary storage disks could preserve classical simulation accuracy and nullify the original 10,000-year estimate.
+- Everyday internet encryption remains secure against existing quantum hardware.
+- Cloud services and enterprise databases operate without immediate risk of quantum decryption.
+- Commercial quantum computing remains confined to experimental cloud access for specialized research teams.
 
-Classical methods advanced further as mathematical modeling improved. According to Physical Review Letters, Chinese Academy of Sciences researchers Feng Pan and Pan Zhang reported findings in August 2022. They reported that a tensor-network contraction algorithm simulated Google's Sycamore circuit in approximately 15 hours on 512 GPUs (graphics processing units).
+Bridging the gap between synthetic tests and commercial utility requires building fault-tolerant machines that run correctly despite component errors. Until systems suppress hardware noise, random sampling remains an academic measurement.
 
-A tensor-network contraction algorithm is a classical mathematical method that reduces memory bottlenecks during simulations. They added that modern exascale supercomputers could run the same calculation in dozens of seconds. Exascale supercomputers are high-performance systems capable of at least one quintillion calculations per second.
+Choosing solid facts over panic is always the best mindset when discussing future encryption risks. When reliable hardware eventually matures, heavy data operations like hospitals and weather services will be the ones putting that calculation power to work. For the rest of us today, sticking to digital habits like long passwords and steady backups keeps everyday accounts thoroughly guarded.
 
-Classical programmers challenge supremacy claims through several specific methods:
-- Tensor-network contraction algorithms that reduce memory bottlenecks during complex simulations.
-- Secondary hard-drive storage schemes that prevent supercomputers from running out of active memory.
-- Mathematical approximations that retain necessary precision while discarding irrelevant data.
-- Specialized graphics processor arrays configured for dense matrix math.
+## Cosmora SPACE breaks down Google's Willow quantum chip milestone
+Cosmora SPACE examines Google's Willow processor as a significant turning point in superconducting hardware and real-time error suppression. The channel focuses on how Google's hardware design tackled physical noise that had stalled progress for decades.
 
-Approaching bold tech claims with healthy skepticism is the core reason I run this site. When classical programmers refine their code and shrink those theoretical margins, it proves why we must weigh verified results against industry hype.
+Mathematician Peter Shor proposed theoretical quantum error correction in 1995, as Cosmora SPACE highlights. Yet physical systems struggled to demonstrate it experimentally for nearly 30 years, Cosmora SPACE notes. Google built the Willow chip with 105 physical qubits inside a specialized facility in Santa Barbara, according to Cosmora SPACE.
 
-## Commercial quantum advantage has not yet arrived
+Cosmora SPACE explains that Google tested Willow on scaling grid arrays of physical qubits, starting at 3x3, advancing to 5x5, and reaching 7x7. Google researchers reported that the engineering team halved the logical error rate as they scaled up the grid size. They reached a below-threshold regime where adding physical qubits makes the system more stable.
 
-Commercial quantum advantage remains unachieved.
-Current systems cannot solve everyday industrial problems more efficiently than classical computers.
+To demonstrate raw processing capacity, Google ran a random circuit sampling benchmark on the processor. Cosmora SPACE notes that Willow completed the benchmark calculation in under five minutes. Google calculated that the classical Frontier supercomputer would require 10 septillion years to match that calculation, according to Cosmora SPACE. That number is written as a 10 followed by 24 zeros, Cosmora SPACE explains.
 
-Building an experimental machine for a single benchmark is fundamentally different from operating a practical data center tool. Today's quantum chips remain delicate prototypes that demand extreme operating conditions.
-
-These quantum chips require cryostats (specialized refrigeration units) cooled near absolute zero (the coldest possible temperature). This extreme cold prevents environmental heat from destroying fragile quantum states.
-
-A single quantum processor costs hundreds of thousands of dollars to manufacture and maintain. These economic and physical barriers restrict hardware access to large institutions.
-
-Ordinary consumers and small businesses will not own local quantum processors. Instead, corporate clients will rent processing capacity across cloud networks, similar to modern server hosting.
-
-Reliability remains the primary hurdle holding back useful deployment.
-Quantum states degrade when exposed to microscopic electrical noise or thermal interference.
-These disruptions trigger computational errors before a machine can finish complex real-world simulations.
-
-According to IBM Newsroom, IBM and the University of Chicago announced a development on July 30, 2026. They announced a step toward quantum advantage using logical circuits with a novel verification framework. This framework is designed to validate computational accuracy when classical verification is unavailable.
-
-Several conditions must be met before practical quantum deployment transforms enterprise computing:
-- Fault-tolerant error correction systems that combine noisy physical qubits into reliable logical qubits.
-- Purpose-built business algorithms capable of outperforming classical optimization and chemistry tools.
-- Solid verification frameworks to audit outputs when classical machines can no longer check the work.
-
-For ordinary users, these developments mean standard encryption tools and desktop applications will remain classical for years. Everyday systems do not require quantum chips.
-
-Practical quantum computing will operate quietly in the background.
-
-In my view, once major tech firms roll these processors out, the hardware will become remarkably powerful—far stronger than many people realize. Getting solid facts about that timeline replaces vague worry with genuine understanding, which helps us follow future developments with a calm mind.
-
-## Cosmora SPACE explains Google's Willow chip and error correction
-
-Cosmora SPACE explains how Google's Willow chip demonstrated real-time error reduction while completing an extreme random circuit sampling benchmark.
-
-Cosmora SPACE states that Google Quantum AI fabricated the 105-qubit Willow chip inside a specialized facility located in Santa Barbara. The video creator explains that quantum computing had been defined for nearly 30 years by the obstacle of errors.
-
-In 1995, mathematician Peter Shor proposed theoretical quantum error correction by grouping physical qubits into logical qubits. Cosmora SPACE notes that experimental systems failed to implement this theory for nearly three decades. This failure happened because adding qubits routinely increased system noise.
-
-According to Cosmora SPACE, Google announced in Nature on December 10th, 2024, that Willow operated below the physical error threshold.
-
-Cosmora SPACE reports that each scale increase cut the system error rate in half. According to the Google Blog, Google Quantum AI founder Hartmut Neven described the milestone as a historic accomplishment that the field has pursued for almost 30 years.
-
-To test raw execution speed, Google ran a random circuit sampling benchmark. Cosmora SPACE reports that Willow finished the benchmark in under 5 minutes. According to the Google Blog, Google estimated that the Frontier supercomputer would take 10 septillion (that is, 10^25) years to finish the calculation.
-
-That number is written as a 10 followed by 24 zeros. Cosmora SPACE points out that the universe is roughly 13.8 billion years old. Therefore, Frontier would have completed less than 1% of the workload even if it had commenced processing at the Big Bang.
-
-Cosmora SPACE emphasizes that this benchmark does not solve a practical problem. Neven suggested that Willow's computing speed hints at parallel universes within the many-worlds interpretation of quantum mechanics.
-
-Cosmora SPACE notes that outside physicists rejected this multiverse speculation. The physics community affirmed the peer-reviewed engineering results while emphasizing that mathematical speed tests do not prove cosmological theories.
+Cosmora SPACE stresses that random circuit sampling does not model drug molecules or crack cryptographic encryption formulas. The benchmark serves as a stress test for physical hardware rather than a commercial product. The video explains that Willow demonstrates physical error suppression on synthetic math, while the broader industry works toward commercial value.
 
 Try the numbers yourself in our [Quantum Speed-up Calculator](/tools/quantum-speedup-calculator).
 
 ## Sources
-- [On “quantum supremacy” | IBM Quantum Computing Blog](https://www.ibm.com/quantum/blog/on-quantum-supremacy) — ibm.com
+- [Google claims it has achieved 'quantum supremacy' – but IBM disagrees | Google | The Guardian](https://www.theguardian.com/technology/2019/oct/23/google-claims-it-has-achieved-quantum-supremacy-but-ibm-disagrees) — theguardian.com
+- [arxiv.org/pdf/2210.12753](https://arxiv.org/pdf/2210.12753) — arxiv.org
 - [Quantum Supremacy Using a Programmable Superconducting Processor](https://research.google/blog/quantum-supremacy-using-a-programmable-superconducting-processor/) — research.google
-- [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/31645734/) — nih.gov
-- [Quantum computation advantage (PDF)](https://www.kth.se/social/files/605a065cb6c2ee8b567f2a79/quantum-computation-advantage.pdf) — kth.se
-- [China’s Jiuzhang secures quantum advantage over Google’s Sycamore, billions of times faster: developer - Global Times](https://www.globaltimes.cn/content/1209006.shtml) — globaltimes.cn
-- [Robust quantum computational advantage with programmable 3050-photon Gaussian boson sampling](https://arxiv.org/html/2508.09092v3) — arxiv.org
-- [Chinese quantum computer sets record processing test](https://www.scmp.com/news/china/science/article/3140968/chinese-quantum-computer-sets-record-processing-test) — scmp.com
-- [2111.03011 Solving the sampling problem of the Sycamore quantum circuits](https://arxiv.org/abs/2111.03011) — arxiv.org
-- [PhysRevLett.129.090502](https://link.aps.org/doi/10.1103/PhysRevLett.129.090502) — aps.org
-- [en.ustc.edu.cn/info/1007/5168.htm](https://en.ustc.edu.cn/info/1007/5168.htm) — ustc.edu.cn
-- [Does chinas jiuzhang 40 computer herald age quantum supremacy](https://www.scmp.com/news/china/science/article/3353602/does-chinas-jiuzhang-40-computer-herald-age-quantum-supremacy) — scmp.com
-- [Quantum advantage through trusted quantum computation | IBM Quantum Computing Blog](https://www.ibm.com/quantum/blog/quantum-advantage) — ibm.com
-- [IBM and The University of Chicago Demonstrate Quantum Advantage, Establishing Trusted Quantum Computation on Logical Circuits](https://newsroom.ibm.com/2026-07-30-ibm-and-the-university-of-chicago-demonstrate-quantum-advantage,-establishing-trusted-quantum-computation-on-logical-circuits) — ibm.com
+- [On “quantum supremacy” | IBM Quantum Computing Blog](https://www.ibm.com/quantum/blog/on-quantum-supremacy) — ibm.com
+- [Zuchongzhi-3 Sets New Benchmark with 105-Qubit Superconducting Quantum Processor----Academic Divisions of Chinese Academy of Sciences](https://english.casad.cas.cn/newsroom/ma/202503/t20250306_903256.html) — cas.cn
+- [Jiuzhang (quantum computer) - Wikipedia](https://en.wikipedia.org/wiki/Jiuzhang_(quantum_computer)) — wikipedia.org
+- [Quantum Computing Quickly Scores Second Claim of Supremacy](https://www.engineering.org.cn/engi/EN/10.1016/j.eng.2021.07.006) — engineering.org.cn
+- [PhysRevLett.134.090601](https://link.aps.org/doi/10.1103/PhysRevLett.134.090601) — aps.org
+- [Raw Data for Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor | Division of Quantum Physics and Quantum Information](http://quantum.ustc.edu.cn/web/en/node/1196) — ustc.edu.cn
+- [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/40131086/) — nih.gov
+- [Quantum supremacy - Wikipedia](https://en.wikipedia.org/wiki/Quantum_supremacy) — wikipedia.org
+- [Google and NASA Achieve Quantum Supremacy - NASA](https://www.nasa.gov/technology/computing/google-and-nasa-achieve-quantum-supremacy/) — nasa.gov
+- [2005.06787 Classical Simulation of Quantum Supremacy Circuits](https://arxiv.org/abs/2005.06787) — arxiv.org
+- [IBM scientists claim they've achieved 'quantum advantage' &mdash; and they've dared others to prove them wrong | Live Science](https://www.livescience.com/technology/quantum/ibm-scientists-claim-theyve-achieved-quantum-advantage-and-theyve-dared-others-to-prove-them-wrong) — livescience.com
 - [Google’s Quantum Computer Just Achieved the “IMPOSSIBLE”](https://www.youtube.com/watch?v=XfsNNtolfQo) — Cosmora SPACE on YouTube

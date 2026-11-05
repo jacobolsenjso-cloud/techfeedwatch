@@ -147,7 +147,8 @@ export function findKildeNavn(linjer, hn, brugteLinjer = new Set()) {
     if (!tilladt(linjer[i]) || brugteLinjer.has(i)) continue;
     const renset = linjer[i].replace(/\[[^\]]*\]\([^)]*\)/g, (x) => ' '.repeat(x.length));
     for (const m of renset.matchAll(re)) {
-      const navn = m[1].replace(/['’]s$/, '').replace(/[.,;:]+$/, '');
+      // Navnet stopper ved sætningens slutning: målt 5/11 blev "Live Science. They" ellers til linkteksten.
+      const navn = m[1].split(/[.!?]\s/)[0].replace(/['’]s$/, '').replace(/[.,;:]+$/, '');
       const norm = navn.toLowerCase().replace(/[^a-z0-9]/g, '');
       const forbogstaver = navn.split(/\s+/).filter((w) => /^[A-Z]/.test(w)).map((w) => w[0].toLowerCase()).join('');
       if (norm === hn || norm.startsWith(hn) || (hn.length >= 4 && norm.includes(hn)) || (forbogstaver.length >= 3 && forbogstaver === hn)) {

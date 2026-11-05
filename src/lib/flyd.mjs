@@ -23,7 +23,13 @@ const linksAf = (t) => (String(t).match(LINK_FULD) || []).sort().join('\n');
 const snitLaengde = (t) => { const s = saetninger(t).filter((x) => !/^[-*]\s/.test(x)); return s.length ? s.reduce((a, x) => a + ordTal(x), 0) / s.length : 0; };
 const sammeTal = (a, b) => { const A = talMaengde(a), B = talMaengde(b); return A.size === B.size && [...A].every((x) => B.has(x)); };
 const harNavn = (s, navne) => navne.some((n) => n && n.length > 2 && s.includes(n));
-const talSaetningerUdenKilde = (t, navne) => saetninger(t).filter((s) => [...talMaengde(s)].some((x) => !/^(19|20)\d\d$/.test(x)) && !harNavn(s, navne)).length;
+// Et tal skal have sin kilde i samme sætning ELLER i sætningen lige før i samme afsnit (5/11: med krav om samme
+// sætning blev "According to" stående - 7,5 pr. 1.000 ord mod techmediaarchs 3,1).
+const talSaetningerUdenKilde = (t, navne) => String(t || '').split(/\n\s*\n/).reduce((sum, afsnit) => {
+  const ss = saetninger(afsnit);
+  return sum + ss.filter((s, i) => [...talMaengde(s)].some((x) => !/^(19|20)\d\d$/.test(x)) && !harNavn(s, navne) && !(i > 0 && harNavn(ss[i - 1], navne))).length;
+}, 0);
+const antalAccording = (t) => (String(t).match(/\baccording to\b/gi) || []).length;
 
 export function holderSektion(gammel, ny, navne = []) {
   const g = String(gammel), n = String(ny || '').trim();
@@ -39,10 +45,15 @@ export function holderSektion(gammel, ny, navne = []) {
   if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return 'et tal har mistet sin kilde';
   const lg = ordTal(g), ln = ordTal(n);
   if (ln > lg * 1.05 + 5) return `for langt (${ln} mod ${lg} ord)`;
-  if (ln < lg * 0.8) return `for meget fjernet (${ln} mod ${lg} ord)`;
+  // 72 %: målt 5/11 blev sektioner 21-29 % kortere, når gentagelser røg ud. Tal og navne er låst ovenfor.
+  if (ln < lg * 0.72) return `for meget fjernet (${ln} mod ${lg} ord)`;
   // 17,5 ord i snit pr. sektion: stadig 9.-10. klasse (robottens stop er 18, faktatjek.mjs ORD_STOP). Målt 5/11:
   // originalerne lå på 15 ord, og med grænsen 16 blev næsten al sammenskrivning afvist.
   if (snitLaengde(n) > Math.max(17.5, snitLaengde(g) + 1)) return `længere sætninger (${snitLaengde(n).toFixed(1)} mod ${snitLaengde(g).toFixed(1)} ord)`;
+  if (antalAccording(n) > Math.max(1, Math.min(antalAccording(g), 2))) return `for mange "according to" (${antalAccording(n)})`;
+  // 5/11: "According to X" blev byttet til "X notes that" (gaming-artiklen 3 -> 7). Faste kildevendinger i alt må ikke stige.
+  const faste = (t) => (String(t).match(/\baccording to\b|\b(reports|notes|states|explains|highlights|emphasizes|points out) that\b/gi) || []).length;
+  if (faste(n) > faste(g)) return `flere faste kildevendinger (${faste(n)} mod ${faste(g)})`;
   const iPerson = (t) => (t.match(/\b(I|I'm|I've|my|me)\b/g) || []).length;
   if (iPerson(n) !== iPerson(g)) return 'første person ændret';
   return '';
@@ -52,7 +63,7 @@ function prompt(dele, spoergsmaal) {
   return `You are the senior editor of a plain-English tech site. The article answers "${spoergsmaal}". Below are its sections (body text only). Rewrite each so it reads like a knowledgeable person explaining things to a friend - natural, flowing, human - while keeping every fact exactly.
 
 WHAT TO FIX
-- Mechanical attribution. Name a source where its facts begin, then let the text flow. Do not start sentence after sentence with "According to X", "X reports that", "X notes that", "X states that". Vary it naturally ("Intel's tests found ...", "In Cisco's words ...", "The same report adds ..."), and say it plainly without a source phrase when the sentence before already made the source clear - EXCEPT that every sentence containing a number must still name its source somewhere in that sentence.
+- Mechanical attribution. Name a source where its facts begin, then let the text flow. Do not start sentence after sentence with "According to X", "X reports that", "X notes that", "X states that". Vary it naturally ("Intel's tests found ...", "In Cisco's words ...", "The same report adds ..."), and say it plainly without a source phrase when the sentence before already made the source clear. Use the words "according to" AT MOST ONCE per section, and do not just swap it for another fixed formula ("X notes that", "X states that", "X highlights that", "X emphasizes that") - most sentences need no source phrase at all. A sentence with a number must name its source itself or directly follow a sentence in the same paragraph that names it.
 - Repetition: when a sentence restates the one before, merge them or drop the repeat.
 - AI-sounding phrasing: labels like "Why this matters for your setup:", "Here's the thing", "In today's world", "It's worth noting", "plays a crucial role", "key takeaway", "game-changer", "seamless", "robust", "landscape", "unlock", "harness", "elevate", "navigate", "delve"; empty wrap-up sentences; stiff connectors ("Additionally,", "Furthermore,", "Moreover,", "Conversely,") at the start of many sentences.
 - Choppy runs of very short sentences that belong together: join a few with "and", "but", "so", "because" - but keep sentences short: aim for 14-16 words on average, never above 17, for readers at a 9th-10th grade level. Join only where it truly helps the flow.
