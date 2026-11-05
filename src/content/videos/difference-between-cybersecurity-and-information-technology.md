@@ -5,114 +5,138 @@ channelTitle: "EndsightIT"
 channelId: "UCAdf6SJlyGXJga6czrD0fYA"
 publishedAt: "2026-05-06T18:00:11Z"
 date: "2026-10-22"
-updated: "2026-10-25"
+updated: "2026-11-05"
 tags:
   - "Cybersecurity"
   - "AI & Tech"
-summary: "Information technology builds, operates, and maintains technical infrastructure, while cybersecurity defends those systems and their underlying data from unauthorized access and external attacks. Although cybersecurity operates as a specialized branch within the IT umbrella, it prioritizes threat intelligence, risk mitigation, and compliance over general network availability. The two fields diverge significantly across core daily responsibilities, industry certifications, and long-term earnings potential."
-metaDescription: "Learn the key difference between cybersecurity and information technology, including salary trends, daily responsibilities, and certifications."
+summary: "Information technology manages and maintains digital infrastructure, while cybersecurity defends systems and data against attacks. Although cybersecurity developed as a specialized branch of IT, both fields feature distinct daily responsibilities, training pathways, and salary outlooks. This guide compares their operational focuses, career requirements, and industry growth trends."
+metaDescription: "Understand the difference between cybersecurity and information technology, including technical responsibilities, career paths, and salary figures."
 targetQuestion: "difference between cybersecurity and information technology"
 duration: "6:43"
 viewCount: 44
-viewsUpdated: "2026-10-31"
+viewsUpdated: "2026-11-05"
 thumbMax: true
 isShort: false
+recipe: 3
+rewrittenAt: "2026-11-05"
 faqs:
-  - question: "What is the core difference between IT and cybersecurity?"
-    answer: "Information technology manages the deployment, maintenance, and usability of digital infrastructure, whereas cybersecurity protects those networks and data from malicious attacks. Cybersecurity functions as a defense-oriented discipline within the broader IT field."
-  - question: "Does cybersecurity or IT pay more?"
-    answer: "Specialized cybersecurity roles generally earn more than entry-level and average IT jobs, with information security analysts earning a median wage of $129,180 in May 2025 according to the U.S. Bureau of Labor Statistics. However, advanced non-security IT positions can surpass this mark, such as computer network architects who earned $134,050."
-  - question: "Is cybersecurity IT or computer science?"
-    answer: "Cybersecurity operates primarily within information technology by defending enterprise infrastructure, though it applies theoretical concepts and secure coding principles from computer science. Most academic programs and enterprises treat cybersecurity as an applied technical discipline closely tied to IT operations."
   - question: "Which is better, cybersecurity or information technology?"
-    answer: "Neither path is universally better, as each satisfies different career strengths and technical interests. IT offers broader operational roles and clear entry pathways, while cybersecurity provides faster projected job growth and specialized analytical work."
-keyFacts:
-  - text: "Information technology encompasses equipment, software, firmware, and services used in the automatic acquisition, storage, analysis, evaluation, manipulation, management, transmission, or reception of data."
-    source: "National Institute of Standards and Technology (NIST) Special Publication 800-12 Rev. 1"
-    url: "https://csrc.nist.gov/glossary/term/information_technology"
-  - text: "Cybersecurity is defined as the prevention of damage to, unauthorized use of, exploitation of, and restoration of electronic information and communications systems to strengthen confidentiality, integrity, and availability."
-    source: "National Institute of Standards and Technology (NIST) Interagency Report 8074 Volume 2"
-    url: "https://csrc.nist.gov/glossary/term/cybersecurity"
-factChecked: "2026-10-25"
+    answer: "Neither discipline is universally superior because organizations depend on both to operate efficiently and safely. General IT suits professionals who enjoy infrastructure setup, while cybersecurity fits those focused on threat analysis and system defense."
+  - question: "Does cybersecurity or IT pay more?"
+    answer: "The U.S. Bureau of Labor Statistics reported a May 2024 median wage of $124,910 for information security analysts compared to $96,800 for network administrators. However, the same agency recorded higher median earnings for specialized IT positions, including $137,030 for database architects."
+  - question: "Is cybersecurity IT or computer science?"
+    answer: "Cybersecurity functions primarily as a specialized branch of information technology that incorporates defensive principles from computer science. CompTIA explains that IT degrees provide operational system foundations, while cybersecurity applies defensive tradecraft to those systems."
 ---
 
-Information technology focuses on building, maintaining, and operating the digital infrastructure that organizations rely on every day, whereas cybersecurity focuses specifically on protecting those systems, networks, and data from unauthorized access or malicious attack.
+Information technology (IT) builds and maintains computing systems. In contrast, cybersecurity safeguards those systems and data from malicious attacks.
 
-As the University of West Alabama notes, information technology is the broader discipline dedicated to designing and managing technology systems, while cybersecurity serves as a specialized subset tasked with shielding those assets from threats.
+IT keeps networks, software, and enterprise hardware running smoothly. This work helps organizations stay productive.
 
-According to the [National Institute of Standards and Technology](https://www.nist.gov/) (NIST) Special Publication 800-12 Rev. 1, information technology encompasses the equipment, software, firmware, and services used in the acquisition, storage, analysis, manipulation, management, transmission, or reception of data.
+Meanwhile, cybersecurity enforces defensive measures against unauthorized breaches (digital break-ins). In short, IT ensures business technology works, while cybersecurity ensures that technology remains protected.
 
-Conversely, NIST Interagency Report 8074 Volume 2 defines cybersecurity as the prevention of damage to, unauthorized use of, exploitation of, and restoration of electronic information and communications systems. IT ensures systems remain accessible and functional, while cybersecurity ensures those operations remain protected against compromise.
+## Is cybersecurity part of information technology?
 
-## How do IT and cybersecurity job responsibilities differ?
+Cybersecurity operates as a specialized area within the broader field of information technology. IT serves as the parent field responsible for moving, storing, and processing business data. Cybersecurity provides a defensive perimeter around those operational assets.
 
-IT professionals focus on availability, system uptime, and productivity, whereas cybersecurity professionals prioritize confidentiality, system integrity, and threat defense.
+The [National Institute of Standards and Technology](https://www.nist.gov/) defines IT as equipment or interconnected systems. These systems acquire, store, manipulate, manage, move, control, display, switch, or transmit data.
 
-A standard IT department handles the full lifecycle of workplace hardware and software. Systems administrators configure operating systems, deploy software updates, monitor server performance, and maintain network routing so employees can complete daily tasks.
+This definition covers office computers, routers, physical servers, and enterprise databases. IT departments keep these systems active so employees work without disruption.
 
-Helpdesk specialists diagnose connectivity issues, manage user accounts, and resolve workstation errors. Their performance metrics revolve around resolving tickets quickly, minimizing unexpected system outages, and optimizing digital workflows.
+The National Institute of Standards and Technology defines cybersecurity in Special Publication 800-12. It defines cybersecurity as the ability to protect or defend cyberspace from attacks.
 
-Cybersecurity staff monitor networks for suspicious activity, configure defensive perimeters, and mitigate vulnerabilities. Instead of troubleshooting general user software, security analysts evaluate firewall logs, monitor intrusion detection systems, and implement incident response plans. When an incident occurs, cybersecurity specialists trace the attack vector, isolate compromised assets, and remediate the underlying weakness.
+Cybersecurity focuses specifically on maintaining confidentiality, integrity, and data availability. Without standard IT infrastructure, cybersecurity specialists would have nothing to defend.
 
-The core divergence in operational focus appears across several functional areas:
-- Infrastructure support: IT teams install switches, configure email servers, and maintain database backups to keep daily operations smooth.
-- Defense implementation: Cybersecurity teams establish identity controls, monitor endpoint detection feeds, and conduct vulnerability audits.
-- Access administration: IT grants user permissions based on organizational needs, while cybersecurity audits those permissions against zero-trust standards.
-- Incident recovery: IT teams restore operational backups after outages, while security analysts preserve forensic evidence and neutralize the threat vector.
+## IT manages infrastructure while cybersecurity defends against digital threats
 
-According to the Federal Bureau of Investigation's Internet Crime Complaint Center (IC3), the bureau logged 880,418 cybercrime complaints in 2023, with monetary losses exceeding $12.5 billion.
+IT teams focus on productivity and accessibility. Meanwhile, cybersecurity teams prioritize threat prevention and defensive posture.
 
- General IT teams keep systems running, but dedicated cybersecurity staff are necessary to prevent catastrophic financial and operational losses.
+IT administrators work to keep services online and accessible to authorized staff. Security teams restrict access, inspect suspicious activity, and enforce strict digital boundaries.
 
-## Cybersecurity roles command higher median salaries and faster growth
+A standard enterprise separates these responsibilities across specific operational workflows:
 
-Cybersecurity roles frequently command higher median entry salaries than general support roles, although senior non-security IT leadership positions retain higher overall earning ceilings.
+- IT departments install operating systems, provision user accounts, fix printer failures, and configure local network switches.
+- Cybersecurity departments configure enterprise firewalls (security barriers that block unauthorized network traffic). They review system logs (digital records of computer and network activity) for anomalies. They also conduct penetration tests (simulated cyberattacks used to uncover security weaknesses).
+- IT specialists maintain continuous cloud service uptime and deploy application updates to end-user workstations.
+- Cybersecurity analysts deploy endpoint detection tools (software that monitors individual devices like laptops for threats). They investigate data breach attempts. They also educate workers against phishing scams (fraudulent messages designed to trick people into revealing sensitive information).
 
-According to the [U.S. Bureau of Labor Statistics](https://www.bls.gov/), computer and information technology occupations earned a median annual wage that significantly outperformed the median across all occupations nationwide. Specialized security staff sit above that general average. Information security analysts earned strong median annual wages alongside rapid projected employment growth, according to the U.S. Bureau of Labor Statistics.
+These operational priorities create natural friction inside an enterprise. IT engineers want simple systems that staff can access quickly from anywhere.
 
-Entry-level IT roles begin lower on the compensation ladder. The U.S. Bureau of Labor Statistics reported that computer support specialists earned lower median annual wages, representing entry-level and operational IT functions. These support positions act as common stepping stones for professionals building early technical experience before shifting into administration or security disciplines.
+Security teams enforce complex password requirements and multi-factor authentication (using extra verification steps). They also enforce strict device policies to minimize exposure.
 
-Senior technical careers on the IT side also produce significant earnings:
-- Computer network architects earned substantial median annual compensation according to the U.S. Bureau of Labor Statistics.
-- Computer and information systems managers earned top-tier median annual wages with strong projected employment growth, according to the U.S. Bureau of Labor Statistics.
+Weak security leads to data theft, compromised accounts, and system outages. Proper security protects user files and private records while maintaining operational performance across the network.
 
-Security specialists capture a wage premium early because enterprise risks carry severe penalties. Even so, individuals pursuing infrastructure architecture or executive technology management find competitive, high-paying career ceilings inside general IT.
+The following table compares core attributes across both technical fields using verified government and industry data:
 
-## Which certifications and skills does each career path require?
+| Attribute | Information Technology | Cybersecurity |
+| :--- | :--- | :--- |
+| Primary Goal | Maintain infrastructure and system uptime | Protect data and networks from attacks |
+| Defining Agency Definition | Data acquisition, storage, and movement (NIST) | Cyberspace defense and risk mitigation (NIST) |
+| Standard Entry Credential | CompTIA A+ certification | CompTIA Security+ certification |
+| According to the Bureau of Labor Statistics (BLS), the 2024 median annual wage was $96,800 for systems administrators and $124,910 for security analysts. |
+| According to the Bureau of Labor Statistics (BLS), the 2024–2034 job outlook projects a 4 percent decline for administrators and 29 percent growth for security analysts. |
 
-General IT careers require comprehensive knowledge of computer hardware, enterprise operating systems, and network protocols, while cybersecurity pathways require threat modeling, ethical hacking, and forensic skills.
+Having lost a personal account after an intrusion that could not be recovered, I view those extra protective hurdles with genuine appreciation rather than annoyance. Setting up unique passwords alongside two-factor verification feels slightly inconvenient when you just want to log in, but it prevents attackers from slipping past quiet gaps. A functional network means very little if intruders can walk right through an unmonitored door.
 
-Entry into general IT relies heavily on practical diagnostics and service administration. IT technicians must master Active Directory, dynamic routing protocols, endpoint imaging, and cloud productivity platforms. Troubleshooting demands patience, system familiarity, and communication skills to resolve issues for non-technical employees.
+## How do IT and cybersecurity career pathways differ?
 
-Cybersecurity practitioners need those core IT foundations, but they must also evaluate how malicious actors can manipulate them. Security engineers study packet inspection, security information and event management (SIEM) tools, penetration testing techniques, and regulatory compliance frameworks. The work demands analytical scrutiny and constant evaluation of defensive posture.
+IT careers begin with general technical troubleshooting. In contrast, cybersecurity careers require applied knowledge of defensive security techniques. Most technology professionals enter the workforce through general technical support before specializing in security.
 
-According to Beal University, general IT roles prioritize operational credentials like CompTIA A+ and Cisco Certified Network Associate (CCNA), whereas dedicated cybersecurity roles demand specialized certifications such as CompTIA Security+, Certified Ethical Hacker (CEH), and Certified Information Systems Security Professional (CISSP).
+The Computing Technology Industry Association reports that academic degrees in IT establish basic grounding. These programs cover operating systems, enterprise infrastructure, and networking.
 
-Security breakdowns can be deeply disruptive; when dealing with compromised accounts in the past, including a locked Facebook profile or Gmail problems, the value of solid authentication, password hygiene, and regular backups becomes indisputable. Proper security discipline demands distinct, vigilant processes beyond basic hardware maintenance.
+That knowledge teaches students how business hardware and software operate under normal conditions. CompTIA notes that specialized security credentials validate applied tradecraft (practical skills). These skills are required to identify vulnerabilities and counter attacks.
 
-## EndsightIT uses medical analogies to contrast IT and cybersecurity
+Certification paths guide candidates toward specific professional milestones:
 
-EndsightIT illustrates the structural division between IT and cybersecurity by comparing technical support to distinct medical specialties.
+1. Foundational technical certifications validate hardware assembly, desktop support, and basic networking skills.
+2. CompTIA states that its CompTIA A+ credential specifically validates entry-level operations, hardware troubleshooting, and technical support.
+3. CompTIA reports that its CompTIA Security+ credential evaluates core threat analysis, identity management, and risk mitigation.
+4. Advanced credentials validate security architecture, incident response protocols, and security compliance management.
 
-In an analysis presented by security practice leader Stephen Hicks, EndsightIT explains that expecting an IT technician to secure an enterprise is like visiting an eye doctor for a heart condition. As Hicks observed, "Both deal with medicine, but not the same level of skills."
+Entry-level IT roles include desktop technicians, helpdesk support agents, and junior network administrators. Professionals in these roles manage daily help tickets and repair broken hardware. Cybersecurity entry points include junior threat analysts and security operations center specialists who review system alerts.
 
-He noted that general IT workers oversee server clusters, patch desktop operating systems, and resolve technical issues with applications such as Adobe Reader. Cybersecurity professionals, meanwhile, manage complex tasks like conditional cloud access and multifactor authentication deployment.
+## Cybersecurity offers faster job growth and higher starting pay
 
-To emphasize the rapid evolution of threat vectors, EndsightIT cited an attack from Iran targeting Stryker Medical in America.
+Cybersecurity professionals earn higher median salaries than workers in standard computer administration roles. They also experience faster employment growth. The relentless expansion of cyber threats drives strong corporate demand for defensive specialists.
 
-Hicks pointed out that while the technical support team had to assist in remediating the technical systems afterward, "The way they got in was a phishing attack." Because social engineering bypasses pure hardware configurations, defense requires persistent training and threat assessment rather than routine hardware maintenance.
+The [U.S. Bureau of Labor Statistics](https://www.bls.gov/) reported that information security analysts earned a median annual wage of $124,910 in May 2024. In contrast, the U.S. Bureau of Labor Statistics reported a median annual wage of $96,800 for network and computer systems administrators in May 2024.
 
-EndsightIT concluded that organizations make a fundamental mistake when assuming standard IT specialists can double as full-scale defenders. General IT teams build the foundation and maintain connectivity, but specialized cybersecurity teams must protect that foundation against active threats.
+Across all computer occupations, the U.S. Bureau of Labor Statistics calculated a median annual wage of $109,470 in May 2025. That figure stands far above the national median of $50,980 for all American occupations in May 2025.
+
+Long-term employment projections display an even sharper divide between the two paths:
+
+- The U.S. Bureau of Labor Statistics projects employment for information security analysts to grow 29 percent between 2024 and 2034.
+- The U.S. Bureau of Labor Statistics projects employment for network administrators to decline 4 percent between 2024 and 2034.
+- Corporate adoption of cloud platforms and automated network management tools drives the projected decline in conventional administrator jobs.
+
+General IT salaries can still match or beat cybersecurity earnings at higher technical tiers. The U.S. Bureau of Labor Statistics documented that database architects earned a median wage of $137,030 in 2024.
+
+The same agency reported that computer network architects earned a median annual wage of $133,930 in 2024. Senior infrastructure architects command premium compensation. They earn high pay because they design the underlying systems that modern enterprises require.
+
+## EndsightIT explains why IT maintenance differs from cybersecurity specialization
+
+EndsightIT explains that general technical support requires fundamentally different expertise than active threat defense.
+
+Hicks explains that an injured driver visits a body shop after a wreck rather than a transmission shop. Similarly, an individual visits an eye specialist for vision problems rather than consulting a heart surgeon.
+
+Hicks notes that general IT technicians patch servers, troubleshoot Adobe Acrobat Reader, and repair broken printers. He emphasizes that those desktop maintenance responsibilities differ from managing enterprise firewalls and monitoring live network attacks.
+
+EndsightIT highlights that human professionals possess limited cognitive capacity (mental processing power) to track complex industry transformations. Hicks cites an attack by Iran against American medical manufacturer Stryker to show how threats bypass routine technical controls. Attackers penetrated Stryker using social engineering (manipulating people into breaking security rules) and phishing emails rather than attacking software bugs directly. 
+
+Hicks emphasizes that cybersecurity evolves more rapidly than any other industry in the world. General IT specialists focus on cloud infrastructure in Microsoft Azure and maintain computer cluster uptime for clients. Security practitioners track adversary spending.
+
+They monitor emerging attack vectors (the methods attackers use to breach a system). They also enforce conditional access policies (automated rules that grant or block access based on specific conditions like user identity or device security). This division allows general IT workers to optimize productivity while security specialists defend the organization.
+
+Separating these duties makes total sense to me because modern online adversaries adapt far too quickly for one person to track. When an administrator is busy fixing broken connections and maintaining servers, expecting them to also study sophisticated social engineering is asking for trouble. Dedicated defensive focus is necessary when a single oversight can compromise an entire operation.
 
 ## Sources
 
 - [information technology (IT) - Glossary | CSRC](https://csrc.nist.gov/glossary/term/information_technology) — nist.gov
 - [cybersecurity - Glossary | CSRC](https://csrc.nist.gov/glossary/term/cybersecurity) — nist.gov
-- [IT vs. Cybersecurity: Careers, Skills & Salary Guide | UWA Online](https://online.uwa.edu/news/it-career-path-vs-cybersecurity-career-path/) — uwa.edu
+- [Cyber and Network Security | NIST](https://www.nist.gov/itl/cyber-and-network-security) — nist.gov
+- [Tech Degrees and Industry Certifications: Better Together](https://www.comptia.org/en-us/blog/tech-degrees-and-industry-certifications-better-together/) — comptia.org
+- [Why We NEED Information Security Analysts](https://www.herzing.edu/blog/why-we-need-information-security-analysts) — herzing.edu
+- [Network System Administrator Degree Training Program | FNU](https://www.fnu.edu/programs/as-networking-system-administrator/) — fnu.edu
+- [It jobs information technology degree](https://www.keiseruniversity.edu/articles/it-jobs-information-technology-degree/) — keiseruniversity.edu
 - [Computer and Information Technology Occupations : Occupational Outlook Handbook: : U.S. Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/) — bls.gov
-- [Information Security Analysts : Occupational Outlook Handbook: : U.S. Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm) — bls.gov
-- [Computer and Information Systems Managers : Occupational Outlook Handbook: : U.S. Bureau of Labor Statistics](https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm) — bls.gov
-- [Cybersecurity vs. Information Technology: What’s the Difference?](https://onlineprograms.ecu.edu/blog/cybersecurity-vs-information-technology/) — ecu.edu
-- [Information Security vs. Cybersecurity: What’s the Difference? | The University of Tulsa](https://online.utulsa.edu/blog/information-security-vs-cybersecurity/) — utulsa.edu
-- [Cybersecurity vs it](https://beal.edu/cybersecurity-vs-it/) — beal.edu
+- [Median Wages | School of Computing | SIU](https://soc.siu.edu/resources/median-wages.php) — siu.edu
 - [IT vs Cybersecurity: Why You Need Both](https://www.youtube.com/watch?v=6EXEx8c3tnU) — EndsightIT on YouTube

@@ -246,5 +246,30 @@
   ],
   "usd": 0.0053,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-05T07:01:51.421Z",
+  "artikler": [
+   {
+    "slug": "do-we-know-what-quantum-computers-are-used-for",
+    "tjekket": 9,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 4,
+    "fund": []
+   },
+   {
+    "slug": "why-is-my-iphone-hot-and-how-ios-regulates-heat",
+    "tjekket": 6,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 0,
+    "fund": []
+   }
+  ],
+  "usd": 0.0052,
+  "soegninger": 0
  }
 ]
