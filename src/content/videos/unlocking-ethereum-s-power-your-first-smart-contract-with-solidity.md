@@ -136,7 +136,7 @@ Block Explorer loads a browser test environment provisioned with simulated accou
 
 Using sandboxed (isolated test) development tools allows beginners to observe gas mechanics and storage changes firsthand. They can test everything before committing irreversible code to the live Ethereum network.
 
-I am not a programmer myself, but running trial runs in a sandbox is simply good sense. It gives you room to spot errors and see how the mechanics behave without putting any real funds at risk. Taking the time to build that practical confidence makes navigating the technology far less intimidating.
+Running trial runs in a sandbox is simply good sense. It gives you room to spot errors and see how the mechanics behave without putting any real funds at risk. Taking the time to build that practical confidence makes navigating the technology far less intimidating.
 ## Sources
 
 - [Introduction to smart contracts | ethereum.org](https://ethereum.org/developers/docs/smart-contracts/) — ethereum.org

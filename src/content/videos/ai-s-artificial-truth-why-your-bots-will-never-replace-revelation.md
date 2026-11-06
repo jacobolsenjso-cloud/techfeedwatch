@@ -44,11 +44,11 @@ Machines excel at spotting statistical patterns, but they lack human common sens
 ## Why do AI models hallucinate and produce errors?
 AI models hallucinate (invent false claims) by guessing the most likely next words. They rely on statistical patterns rather than checking an internal index of facts.
 
-A language model links tokens (word fragments) using mathematical weights built during pre-training. That initial learning stage consumes massive datasets. The software then outputs fluent, authoritative text, even when the underlying claims are entirely made up.
+A language model links tokens (word fragments) using mathematical weights built during pre-training. That initial stage consumes massive datasets. The software then outputs fluent, authoritative text, even when the underlying claims are entirely made up.
 
-In Stanford HAI's 2026 AI Index Report, the AA-Omniscience benchmark tested 26 leading models. Across 6,000 multi-domain questions, hallucination rates swung between 22% and 94%.
+Testing shows how widespread this issue remains. In Stanford HAI's 2026 AI Index Report, the AA-Omniscience benchmark tested 26 leading models. Across 6,000 multi-domain questions, hallucination rates swung between 22% and 94%.
 
-These errors carry serious consequences in fields where factual accuracy is mandatory. In May 2024, Stanford HAI and the Regulation, Evaluation, and Governance Lab tested commercial legal models. The systems hallucinated in at least 1 out of 6 test queries. On specific legal tasks, their hallucination rates reached 69% to 88%.
+These errors carry serious consequences in fields where factual accuracy is mandatory. In May 2024, Stanford HAI and the Regulation, Evaluation, and Governance Lab tested commercial legal models. The systems hallucinated in at least 1 out of 6 test queries, and their error rates reached 69% to 88% on specific legal tasks.
 
 Statistical generation produces false answers for several clear reasons:
 - Training data contains factual conflicts that confuse statistical prediction.
@@ -61,20 +61,18 @@ Whenever I use software to gather facts, I treat the initial text as an unverifi
 ## Explainability gaps and systemic bias restrict enterprise adoption
 Enterprise adoption stalls because deep neural networks function as opaque black boxes. These systems hide how outputs form and reproduce societal prejudices.
 
-Modern neural networks contain billions of numerical parameters (adjustable settings) interacting across hundreds of processing layers. Human engineers can inspect incoming data and final answers. However, they cannot trace the exact path an algorithm took.
+Modern neural networks contain billions of numerical parameters (adjustable settings) interacting across hundreds of processing layers. Human engineers can inspect incoming data and final answers, but they cannot trace the exact path an algorithm took.
 
-This lack of interpretability creates severe compliance liabilities (legal risks from breaking industry rules) in regulated fields. According to the National Institute of Standards and Technology AI Risk Management Framework from January 2023, trustworthy AI deployment faces seven socio-technical challenges. These challenges require balancing reliability, explainability, safety, security, privacy, transparency, and bias mitigation.
+This lack of interpretability creates severe compliance liabilities (legal risks from breaking industry rules) in regulated fields. The National Institute of Standards and Technology AI Risk Management Framework from January 2023 outlines seven socio-technical challenges for trustworthy deployment. These challenges require balancing reliability, explainability, safety, security, privacy, transparency, and bias mitigation.
 
-Algorithmic prejudice deepens this trust barrier across hiring, banking, and criminal justice software. According to National Institute of Standards and Technology Special Publication 1270, AI bias cannot be solved solely through computational training data adjustments. The agency explains that statistical, cognitive, and systemic societal biases intersect across the entire engineering lifecycle.
+Algorithmic prejudice deepens this trust barrier across hiring, banking, and criminal justice software. According to National Institute of Standards and Technology Special Publication 1270, AI bias cannot be solved solely through computational training data adjustments. The publication explains that statistical, cognitive, and systemic societal biases intersect across the entire engineering lifecycle.
 
-Real-world harms keep rising as unmonitored systems reach commercial end users. According to [Stanford HAI](https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai)'s 2026 AI Index Report, recorded failures tracked by the AI Incident Database climbed to 362 incidents in 2025. That total rose from 233 incidents in 2024, highlighting growing operational risks.
+Real-world harms keep rising as unmonitored systems reach commercial end users. Records from [Stanford HAI](https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai)'s 2026 AI Index Report show that failures tracked by the AI Incident Database climbed to 362 incidents in 2025. That total rose from 233 incidents in 2024, highlighting growing operational risks.
 
 ## What energy and computing bottlenecks constrain AI scaling?
-AI scaling faces hard physical limits. Training and running big models consumes massive amounts of electricity, cooling water, and silicon chips.
+AI scaling faces hard physical limits. Training and running big models consumes massive amounts of electricity, cooling water, and silicon chips. Every prompt sent to a model triggers work across thousands of networked graphics chips that need continuous power and heavy cooling.
 
-Every prompt sent to a model triggers work across thousands of networked graphics chips. This hardware requires continuous electrical power, and it needs heavy cooling to prevent overheating.
-
-Power grids worldwide now strain to support expanding data centers. The International Energy Agency projects data center power use will jump from 485 terawatt-hours in 2025 to 950 terawatt-hours in 2030. AI workloads drive most of this growth.
+Power grids worldwide now strain to support expanding data centers. The International Energy Agency projects data center power use will jump from 485 terawatt-hours in 2025 to 950 terawatt-hours in 2030, with AI driving most of this growth.
 
 Expanding [physical AI infrastructure](/video/silicon-to-sentience-the-industrial-underbelly-of-every-ai-interaction) also clashes with local clean energy targets and strained municipal lines. Compute clusters (groups of connected computers) require high-density power hookups that local substations cannot provide without years of upgrades. When hardware supplies tighten and power runs short, smaller teams lose access to model training.
 
@@ -116,7 +114,6 @@ Engineers keep production systems reliable through structured operating rules:
 For everyday professionals, knowing these limits saves hours of wasted effort. Blind trust can slip false numbers into a client report or fail a customer in an emergency.
 
 ## Sources
-
 - [Nist.ai.100 1 (PDF)](https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf) — nist.gov
 - [Responsible AI | The 2026 AI Index Report | Stanford HAI](https://hai.stanford.edu/ai-index/2026-ai-index-report/responsible-ai) — stanford.edu
 - [Mapping the limitations of current AI systems | AISI Work](https://www.aisi.gov.uk/blog/mapping-the-limitations-of-current-ai-systems) — aisi.gov.uk

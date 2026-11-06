@@ -114,7 +114,7 @@ Testing on Intel hardware showed slightly higher sensitivity to memory speeds. G
 
 It also led to a 5% decline in Marvel Rivals and a 1% dip in Rainbow Six Siege. For most gamers, Gadget Ten recommends sticking to dependable 32GB DDR5-6000 kits and putting remaining funds toward the graphics card.
 
-I follow a lot of tech reporting, and I always appreciate creators who test claims against real workloads instead of marketing hype. Though I am not a gamer myself, paying steep premiums for a two-percent margin makes little practical sense. Relying on verified benchmark data helps everyday buyers put their money where it actually counts.
+I follow a lot of tech reporting, and I always appreciate creators who test claims against real workloads instead of marketing hype. Paying steep premiums for a two-percent margin makes little practical sense. Relying on verified benchmark data helps everyday buyers put their money where it actually counts.
 
 ## Sources
 

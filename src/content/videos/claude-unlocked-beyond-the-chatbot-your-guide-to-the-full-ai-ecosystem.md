@@ -25,7 +25,7 @@ faqs:
   - question: "What is Claude AI's capacity for processing documents?"
     answer: "According to Anthropic, Claude can ingest 200,000 tokens of text on baseline plans and up to 1 million tokens on enterprise tiers. Anthropic notes that document accuracy can degrade over long contexts due to context rot."
   - question: "What are the key features of Claude AI for developers?"
-    answer: "Claude 3.5 Sonnet solved 64% of problems in an agentic coding benchmark, according to Anthropic's Claude 3.5 Sonnet Model Card Addendum. Anthropic's platform documentation also highlights tool use, extended thinking, and an API for operating desktop software."
+    answer: "In 2024, Claude 3.5 Sonnet solved 64% of problems in an agentic coding benchmark, according to Anthropic's Claude 3.5 Sonnet Model Card Addendum. Anthropic's platform documentation also highlights tool use, extended thinking, and an API for operating desktop software."
   - question: "What vision features does Claude AI have?"
     answer: "According to Anthropic, Claude can transcribe handwritten text, interpret diagrams, and extract data from complex visual charts. It processes these multimodal inputs alongside standard text prompts."
 keyFacts:
@@ -35,20 +35,16 @@ keyFacts:
   - text: "Claude introduced an API feature called \"computer use\" on October 22, 2024, which allows the model to view screen captures, move a mouse cursor, click buttons, and type text to operate software."
     source: "Anthropic"
     url: "https://www.anthropic.com/news/3-5-models-and-computer-use"
-  - text: "Claude 3.5 Sonnet solved 64% of problems in an internal agentic software engineering benchmark, up from 38% solved by Claude 3 Opus."
+  - text: "In 2024, Claude 3.5 Sonnet solved 64% of problems in an internal agentic software engineering benchmark, up from 38% solved by Claude 3 Opus."
     source: "Anthropic's Claude 3.5 Sonnet Model Card Addendum"
     url: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
 ---
 
-[Claude](https://claude.com/download) AI includes several main features, starting with a large text-processing window.
+[Claude](https://claude.com/download) AI comes with several core capabilities, led by an expansive text-processing window. It features interactive workspaces called Artifacts alongside persistent team Projects.
 
-It offers interactive workspaces called Artifacts and persistent team Projects.
+The system gives users coding support and autonomous computer interaction. That means it can manage desktop tasks directly without human input. It also reads charts and images alongside plain text through multimodal vision analysis.
 
-Claude gives users coding support and autonomous computer interaction. That means it directly controls desktop tasks without human guidance.
-
-It also provides multimodal vision analysis by reading charts and images alongside text.
-
-[Anthropic](https://www.anthropic.com/news/3-5-models-and-computer-use) builds these tools around Constitutional AI, a training method focused on safety and accuracy.
+[Anthropic](https://www.anthropic.com/news/3-5-models-and-computer-use) shapes these tools using Constitutional AI. This training approach centers entirely on safety and accuracy.
 
 ## How do Artifacts and Projects work in Claude?
 
@@ -74,13 +70,11 @@ Artifacts handle several distinct types of generated assets:
 
 ## Claude processes massive documents with a 200,000-token context window
 
-Claude reads and analyzes massive texts using a standard context window that can hold hundreds of pages in a single prompt.
+Claude reviews massive documents in one prompt using a broad context window. That window represents the working memory an AI uses during a single chat. Anthropic sets the baseline limit at 200,000 tokens, which equals roughly 500 pages of text. The company notes that Pro, Max, Team, and Enterprise plans can reach 1 million tokens.
 
-A context window is the memory limit an AI model uses to process information during a single conversation. According to Anthropic, Claude can ingest a baseline context window of 200,000 tokens (units of text equal to roughly 500 pages). Anthropic's documentation notes that supported models on Pro, Max, Team, and Enterprise tiers can access up to 1 million tokens.
+Claude pairs this reading capacity with multimodal vision processing. The model transcribes handwritten notes, interprets technical diagrams, and extracts figures from dense financial charts.
 
-According to Anthropic, Claude pairs this reading capacity with multimodal vision processing. The model can transcribe handwritten notes, interpret complex technical diagrams, and pull data from dense financial charts.
-
-Massive memory introduces technical trade-offs, since model accuracy and recall can degrade across very long documents according to Anthropic's platform documentation. Anthropic calls this phenomenon context rot.
+Such large memory brings trade-offs. Anthropic warns that model accuracy and recall can drop across very long texts, an issue it calls context rot.
 
 Anthropic's platform documentation details the operational limits and tiers for Claude's context processing:
 
@@ -91,48 +85,30 @@ Anthropic's platform documentation details the operational limits and tiers for 
 
 ## Can Claude write code and control your computer?
 
-Claude writes complex code and reasons through logic step by step. It can also directly operate desktop applications through an automated API interface. An API (application programming interface) is software that lets different programs talk to and control each other.
+Claude writes complex code and reasons step by step. It can also run desktop programs through an application programming interface (API), which lets software talk to other tools.
 
-According to Anthropic's Claude 3.5 Sonnet Model Card Addendum, Claude 3.5 Sonnet solved 64% of problems in an internal agentic software engineering benchmark. This benchmark is a test measuring an AI system's ability to autonomously solve coding and software tasks. That marks an increase from the 38% solved by Claude 3 Opus.
+In 2024, Anthropic's Claude 3.5 Sonnet Model Card Addendum showed major coding gains. That model solved 64% of tasks in an internal agentic software engineering benchmark, up from 38% for Claude 3 Opus. This benchmark measures how well an AI independently solves software problems.
 
-According to Anthropic's platform documentation, Claude features extended thinking as an adaptive reasoning mode to work through complex logic before answering.
+Anthropic also added extended thinking, an adaptive reasoning mode that works through logic before answering. Developers gain access to tool calling to trigger outside software functions. They can use the Tool Search Tool to pick the right utility, plus the open Model Context Protocol to link data sources.
 
-Anthropic's platform documentation also notes that developers gain access to programmatic tool calling (allowing the model to trigger external software functions). Developers also get a Tool Search Tool (a feature that helps the model find the right tool for a task).
+On October 22, 2024, Anthropic launched an API feature called computer use. This tool lets the model inspect screens, move mouse cursors, click buttons, and enter text.
 
-In addition, they can use the open Model Context Protocol (an open standard for connecting AI models to external data sources and tools).
-
-According to Anthropic, Claude introduced an API feature called "computer use" on October 22, 2024. This tool allows the model to view screen captures, move a mouse cursor, click buttons, and type text.
-
-Although I am not a programmer, I rely on AI tools when building websites because I know how I want the final result to function. In my experience, code generation stays far more reliable when you ask concrete questions and tackle only one or two small items at a time. Handing over direct desktop controls to software is an entirely different level, so keeping a close eye on permissions is just sound practice.
+I rely on AI tools when building websites because I know how I want the final result to function. In my experience, code generation stays far more reliable when you ask concrete questions and tackle only one or two small items at a time. Handing over direct desktop controls to software is an entirely different level, so keeping a close eye on permissions is just sound practice.
 
 ## Constitutional AI guides model safety and alignment
 
-Constitutional AI trains the model to evaluate and correct its own outputs.
+Constitutional AI trains the model to evaluate and fix its own outputs. It relies on an explicit set of written ethical principles. The system prioritizes helpful, honest, and harmless answers during every chat.
 
-It relies on an explicit set of written ethical principles.
-
-As a result, the system prioritizes helpful, honest, and harmless responses in every chat.
-
-This focus reduces harmful outputs and toxic responses in professional work environments.
-
-Companies handle sensitive data and need reliable systems that decline dangerous or abusive requests.
-
-Understanding these controls helps teams implement [AI quality engineering](/video/ai-s-confidence-game-why-quality-engineering-defines-its-future-not) when evaluating output reliability.
+This training limits harmful responses in workplace environments. Businesses handle sensitive data, so they need models that decline risky or abusive requests. Understanding these controls helps teams implement [AI quality engineering](/video/ai-s-confidence-game-why-quality-engineering-defines-its-future-not) when testing output reliability.
 
 Teaching a model to evaluate its own behavior makes good sense to me. With so many security flaws appearing in modern software, systems that act independently risk stepping outside their intended boundaries. Establishing clear internal guardrails from the beginning provides a welcome layer of safety while development moves at such high speed.
 
 ## What are Claude's key limitations compared to competitors?
 
-Claude lacks native real-time web browsing, and it does not generate audio or images.
+Claude cannot browse the live web, and it does not create audio or images. Other commercial models generate pictures directly in chat, but Claude focuses on text, code, and documents. Users must still review important outputs by hand rather than relying on raw AI recall.
 
-According to Anthropic, Claude can ingest a baseline context window of 200,000 tokens. Claude 3.5 Sonnet also solved 64% of problems in an internal agentic software engineering benchmark.
-
-Other commercial models generate synthetic images directly in chat, but Claude focuses strictly on text, code, and document analysis.
-
-Users must review critical outputs manually rather than trusting raw AI recall.
-
-Users should weigh several key operational limitations before choosing Claude:
-- Context rot can degrade factual recall when processing hundreds of pages.
+Keep several key operational limits in mind:
+- Context rot can degrade factual recall across hundreds of pages.
 - Native web search is not built into standard chat interfaces.
 - Image generation and audio output are not supported.
 - Computer use remains an early API feature requiring developer oversight.
@@ -150,7 +126,6 @@ In another example, Futurepedia describes Cowork preparing for a meeting. It rea
 Futurepedia notes that developers using Claude Code rely on a claude.md file to store project instructions and guidelines.
 
 ## Sources
-
 - [What is Claude? · Claude 101 · Claude Academy](https://academy.claude.com/courses/claude-101/what-is-claude) — claude.com
 - [How large is the context window on paid Claude plans? | Claude Help Center](https://support.anthropic.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans) — anthropic.com
 - [Context windows - Claude Platform Docs](https://docs.anthropic.com/en/docs/build-with-claude/context-windows) — anthropic.com

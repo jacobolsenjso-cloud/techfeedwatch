@@ -8,6 +8,7 @@
 // 3-6 sætninger, før 2-4). Rammer intet, får prompten kun stilen.
 // Findes _hjerne ikke (lokal kørsel, manglende nøgle), returnerer laesHjerne null - og
 // siden 25/10 skriver robotten så INGEN artikel (add-video.mjs/omskriv-gamle.mjs stopper).
+import { lasJsonListe } from './sammenhaeng.mjs';
 import fs from 'node:fs';
 
 const DIR = process.env.HJERNE_DIR || '_hjerne';
@@ -237,11 +238,12 @@ const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*O
 // 27/10 (Jacob valgte A+B): rens = true bruges efter 3 afslag. Så fjernes kun den sætning, der genbruger
 // en formulering, så længe afsnittet beholder mindst 2 sætninger (ellers droppes kun det afsnit) - i stedet
 // for at hele stemmen falder ud. Alle andre krav gælder uændret.
-const INGEN_ERFARING = /\bI (?:do not|don't|did not|didn't|never|have never|haven't|have not)\b[^.]{0,30}\b(?:experience|expertise|an expert)\b|\bI'?m not (?:an? )?(?:expert|gamer|developer|programmer|specialist)\b|\b(?:no|little|limited) (?:personal |hands-on |real )?experience\b|\bnot something I have (?:personal )?experience\b/i;
+const INGEN_ERFARING = /\bI (?:do not|don't|did not|didn't|never|have never|haven't|have not)\b[^.]{0,30}\b(?:experience|expertise|an expert)\b|\bI(?:'?m| am) not (?:an? )?(?:expert|gamer|developer|programmer|coder|specialist|engineer)\b|\b(?:no|little|limited) (?:personal |hands-on |real )?experience\b|\bnot something I have (?:personal )?experience\b/i;
 export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = {}) {
   const raa = String(svar || '').trim();
   if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
-  let j = null; try { j = JSON.parse((raa.match(/\[[\s\S]*\]/) || ['null'])[0]); } catch { /* nedenfor */ }
+  // 6/11: lasJsonListe tåler rå linjeskift i strengene (ellers faldt stemmen ud på "Bad control character").
+  const j = lasJsonListe(raa);
   if (!Array.isArray(j) || !j.length) return { ok: false, grund: 'svaret var ikke en JSON-liste med section/text' };
   const brod = String(artikel);
   const dele = [];

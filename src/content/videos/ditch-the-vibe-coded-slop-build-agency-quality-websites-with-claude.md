@@ -78,7 +78,7 @@ To get these visual results, include these core elements in your project prompt:
 
 Modern [AI website builders](/video/beyond-drag-and-drop-ai-website-builders-redefine-digital-creation) often hide these styling choices behind simple drag-and-drop interfaces. Claude Code gives you direct access to the stylesheet (the code setting the visual design). Because of this access, you must define the creative rules yourself.
 
-I am not a programmer myself, but I have built websites using Claude and learned that the tool is only as good as the input you give it. Posing just one or two specific instructions at a time and asking the model to confirm its understanding keeps the layout on track. Taking that methodical approach saves you from untangling generic shortcuts later.
+I have built websites using Claude and learned that the tool is only as good as the input you give it. Posing just one or two specific instructions at a time and asking the model to confirm its understanding keeps the layout on track. Taking that methodical approach saves you from untangling generic shortcuts later.
 
 ## How do Claude Code skills and design systems enforce quality?
 Claude Code enforces visual standards through modular skill files and protocol connections. These tools inject structured design rules directly into the workspace.

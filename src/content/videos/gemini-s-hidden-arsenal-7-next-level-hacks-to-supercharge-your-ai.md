@@ -55,20 +55,16 @@ Agent Skills documentation outlines a three-stage progressive disclosure mechani
 
 - Discovery reads the top-level YAML metadata across registered packages without consuming large blocks of model memory.
 - Activation triggers when an incoming user prompt matches the exact scope outlined in the frontmatter description.
-- Execution injects the detailed instructions, file schemas, or bundled scripts directly into the active prompt environment.
+- Execution injects detailed instructions, file schemas, or bundled scripts directly into the active prompt environment.
 
-This layered delivery prevents context bloat, which occurs when excessive reference text fills active memory. Google AI Studio documentation shows that developers can also bundle Model Context Protocol tools inside these packages.
-
-These tools offer a standardized framework connecting AI systems to external data and applications. Packages can also include system plugins. Autonomous agents use those tools to query external programming interfaces without human oversight.
+This layered delivery prevents context bloat, which occurs when excessive reference text fills active memory. Google AI Studio documentation shows that developers can bundle Model Context Protocol tools inside these packages. These tools offer a standardized framework connecting AI systems to external data and applications. Packages can also include system plugins that autonomous agents use to query external programming interfaces without human oversight.
 
 ## Do Gemini agent skills replace Google Gems?
 Gemini agent skills do not replace Google Gems. Skills serve enterprise automation, while Gems handle general consumer customization. Gems act as persistent system prompts inside the consumer web interface, altering the tone or persona of a single chat conversation.
 
 Agent skills operate as callable, tool-assisted subroutines (reusable mini-programs) across software pipelines and multi-agent frameworks.
 
-Centralized administrative control further separates the two technologies. Google Cloud Documentation explains that organizations manage skills through the Skill Registry. This enterprise system provides private, low-latency (minimal delay) storage for shared procedural code and team documentation.
-
-Gems lack centralized deployment, version pinning (locking software to a specific approved release), and direct terminal execution hooks (triggers that run commands directly through a command-line interface).
+Centralized administrative control further separates the two technologies. Google Cloud Documentation explains that organizations manage skills through the Skill Registry. This enterprise system provides private, low-latency (minimal delay) storage for shared procedural code and team documentation. Gems lack centralized deployment, version pinning (locking software to a specific approved release), and direct terminal execution hooks (triggers that run commands directly through a command-line interface).
 
 The table below contrasts the technical parameters of both features.
 
@@ -86,18 +82,14 @@ Having spent plenty of time working with Gemini and Claude, I see a clear divide
 ## Agent skills boost coding task accuracy to 96.6%
 Equipping an autonomous model with structured agent skills produces measurable improvements. It aids both code synthesis and interface debugging (fixing software bugs).
 
-Standard foundation models frequently produce broken code because their training data predates recent software library updates. When an agent receives current API references via a skill, error rates drop dramatically. An API (application programming interface) allows different software programs to communicate.
+Standard foundation models frequently produce broken code because their training data predates recent software library updates. When an agent receives current API (application programming interface) references via a skill, error rates drop dramatically.
 
 A test reported by the Google Developers Blog showed that adding an agent skill for the Gemini API boosted benchmark coding task accuracy from 28.2% to 96.6%. The tested model previously failed because it generated obsolete code syntax. The skill package delivered live endpoint documentation, correct parameters, and current code primitives directly to the execution context.
 
-In industrial workspaces, a crane operator checks load indicators and hydraulic lines before lifting heavy cargo. This routine check prevents mechanical failure.
-
-Software agents demand the exact same systematic discipline. When an agent follows an isolated, step-by-step procedure, it stops guessing missing parameters and delivers reliable outputs.
+In industrial workspaces, a crane operator checks load indicators and hydraulic lines before lifting heavy cargo to prevent mechanical failure. Software agents demand the exact same systematic discipline. Following an isolated, step-by-step procedure stops an agent from guessing missing parameters and delivers reliable outputs.
 
 ## Routing collisions and edition tiers limit skill deployment
-Deploying agent skills introduces subtle security hazards and operational friction. The primary risk stems from how agents select which skill to run.
-
-Agents read only short frontmatter summaries during discovery. Because of this, ambiguous naming conventions trigger routing errors.
+Deploying agent skills introduces subtle security hazards and operational friction. The primary risk stems from how agents select which skill to run. Because agents read only short frontmatter summaries during discovery, ambiguous naming conventions trigger routing errors.
 
 The Google Cloud Blog explains that frontmatter ambiguity produces two distinct failure states:
 
@@ -106,9 +98,7 @@ The Google Cloud Blog explains that frontmatter ambiguity produces two distinct 
 
 To resolve these routing vulnerabilities, Google released skill-reach. This open-source evaluation utility detects frontmatter collisions and analyzes vocabulary overlap before deployment.
 
-Licensing rules also constrain enterprise implementation. According to Google Cloud Documentation, building and uploading custom skills requires Gemini Enterprise Standard, Plus, or Pay-as-you-go editions.
-
-The Frontline tier limits workers to Google-managed and pre-shared skills, which prevents deskless teams from publishing local automation workflows.
+Licensing rules also constrain enterprise implementation. Google Cloud Documentation notes that building and uploading custom skills requires Gemini Enterprise Standard, Plus, or Pay-as-you-go editions. The Frontline tier limits workers to Google-managed and pre-shared skills, which prevents deskless teams from publishing local automation workflows.
 
 When an agent acts on internal company records, loose instructions create severe data leaks. Administrators must establish clear naming conventions, test frontmatter with validation tools, and audit third-party script bundles.
 
@@ -117,9 +107,7 @@ In a walkthrough of productivity features, content creator Rob The AI Guy demons
 
 He outlines three methods for generating skills inside the Spark interface: manual creation, uploading ready-made community packages, or automated drafting through natural language prompts.
 
-During the demonstration, Rob The AI Guy instructs the interface to summarize unread emails into actionable to-do lists. He explains that unassisted models approach the same prompt differently on every run.
-
-In contrast, a skill functions as a strict standard operating procedure that the system follows every single time. Users trigger these saved procedures by typing a slash command into the sidebar or calling the specific skill name.
+During the demonstration, Rob The AI Guy instructs the interface to summarize unread emails into actionable to-do lists. He explains that unassisted models approach the same prompt differently on every run. A skill functions as a strict standard operating procedure that the system follows every single time. Users trigger these saved procedures by typing a slash command into the sidebar or calling the specific skill name.
 
 He also warns viewers about downloading community skills from public directories like [GitHub](https://github.com/). External files can contain hidden data-exfiltration commands (commands that steal data) that transmit sensitive company communications back to unauthorized third parties.
 
@@ -133,7 +121,6 @@ While simple email filtering illustrates basic automation, deploying external sc
 I rely on automated routines myself for recurring web searches and drafting follow-up emails, which saves noticeable effort during a busy week. Even so, importing pre-built packages from unknown creators introduces real hazards into your workflow. Taking a few minutes to research and verify external code before giving it access to your inbox prevents unnecessary headaches.
 
 ## Sources
-
 - [Create and manage skills &nbsp;|&nbsp; Gemini Enterprise &nbsp;|&nbsp; Google Cloud Documentation](https://docs.cloud.google.com/gemini/enterprise/docs/skills) — google.com
 - [Agent Skills Overview - Agent Skills](https://agentskills.io/home) — agentskills.io
 - [Closing the knowledge gap with agent skills - Google Developers Blog](https://developers.googleblog.com/closing-the-knowledge-gap-with-agent-skills/) — googleblog.com

@@ -11,6 +11,23 @@
 //      tilføje tal, navne eller links - KODEN kontrollerer det, og holder et svar ikke, bruges det ikke.
 import { talMaengde } from './faktatjek.mjs';
 
+// Læser modellens JSON-liste. 6/11-2026: svaret havde rå linjeskift inde i en tekststreng ("Bad control
+// character"), JSON.parse fejlede, og hele artiklen blev stående urørt. Nu escapes de, før der gives op.
+export function lasJsonListe(tekst) {
+  const raa = (String(tekst || '').match(/\[[\s\S]*\]/) || ['[]'])[0];
+  try { return JSON.parse(raa); } catch { /* prøv at reparere nedenfor */ }
+  let ud = '', iStreng = false, escaped = false;
+  for (const c of raa) {
+    if (iStreng && !escaped && c === '\n') { ud += '\\n'; continue; }
+    if (iStreng && !escaped && c === '\r') continue;
+    if (iStreng && !escaped && c === '\t') { ud += '\\t'; continue; }
+    if (c === '"' && !escaped) iStreng = !iStreng;
+    escaped = c === '\\' && !escaped;
+    ud += c;
+  }
+  try { return JSON.parse(ud); } catch { return []; }
+}
+
 const erTabelLinje = (l) => /^\s*\|/.test(l);
 const celler = (l) => l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|');
 const erSkille = (l) => /^[\s|:-]+$/.test(l) && /-{2,}/.test(l);
@@ -127,8 +144,8 @@ export async function skrivSammen(genAI, hentModel, model, dele, log = console.l
   let svar = [];
   try {
     // Lav tænkning: målt 5/11 brugte høj tænkning 7.862 af 8.192 tokens og nåede ikke at svare.
-    const r = await hentModel(genAI, { model, generationConfig: { temperature: 0, maxOutputTokens: 16384, thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(prompt(dele));
-    svar = JSON.parse(((r.response.text() || '').match(/\[[\s\S]*\]/) || ['[]'])[0]);
+    const r = await hentModel(genAI, { model, generationConfig: { temperature: 0, maxOutputTokens: 16384, responseMimeType: 'application/json', thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(prompt(dele));
+    svar = lasJsonListe(r.response.text());
   } catch (e) { log(`   ⚠️ sammenhæng: intet svar (${String(e.message).split('\n')[0].slice(0, 120)}) - teksten står som efter kontrollen`); return dele.map(() => ''); }
   return dele.map((d, i) => {
     const ny = String((Array.isArray(svar) ? svar : []).find((y) => y && y.n === i + 1)?.tekst || '').trim();
