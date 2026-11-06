@@ -33,6 +33,9 @@ const talSaetningerUdenKilde = (t, navne) => String(t || '').split(/\n\s*\n/).re
   return sum + ss.filter((s, i) => [...talMaengde(s)].some((x) => !/^(19|20)\d\d$/.test(x)) && !harNavn(s, navne) && !(i > 0 && harNavn(ss[i - 1], navne))).length;
 }, 0);
 const antalAccording = (t) => (String(t).match(/\baccording to\b/gi) || []).length;
+// Forstærkende ord må ikke blive flere (6/11: FAQ-svar fik "consistently" og "mainly", der gjorde påstanden stærkere).
+const ABSOLUT = /\b(always|never|consistently|mainly|mostly|primarily|all|every|only|entirely|completely|fully|guarantees?|guaranteed|proves?|proven|certainly|definitely|any)\b/gi;
+const flereAbsolutte = (g, n) => (String(n).match(ABSOLUT) || []).length > (String(g).match(ABSOLUT) || []).length;
 
 export function holderSektion(gammel, ny, navne = [], tidligere = '') {
   const g = String(gammel), n = String(ny || '').trim();
@@ -57,12 +60,35 @@ export function holderSektion(gammel, ny, navne = [], tidligere = '') {
   // 5/11: "According to X" blev byttet til "X notes that" (gaming-artiklen 3 -> 7). Faste kildevendinger i alt må ikke stige.
   const faste = (t) => (String(t).match(/\baccording to\b|\b(reports|notes|states|explains|highlights|emphasizes|points out) that\b/gi) || []).length;
   if (faste(n) > faste(g)) return `flere faste kildevendinger (${faste(n)} mod ${faste(g)})`;
+  if (flereAbsolutte(g, n)) return 'flere forstærkende ord (always/mainly/consistently ...)';
   const iPerson = (t) => (t.match(/\b(I|I'm|I've|my|me)\b/g) || []).length;
   if (iPerson(n) !== iPerson(g)) return 'første person ændret';
   return '';
 }
 
-function prompt(dele, spoergsmaal) {
+// FAQ-svar (6/11-2026, Jacob: "det skal selvfølgelig rettes"): målt i Claude-artiklen startede 3 af 4 svar
+// med "According to Anthropic". Samme lås som brødteksten, plus: ingen links eller markdown, svaret må ikke
+// blive en liste, og "according to" højst én gang.
+export function holderFaq(gammel, ny, navne = [], spoergsmaal = '') {
+  const g = String(gammel), n = String(ny || '').trim();
+  if (!n) return 'tomt svar';
+  if (/\n|\[|\]\(|^#|^\s*[-*]\s|\|/.test(n)) return 'markdown eller linjeskift i svaret';
+  if (!sammeTal(g, n)) return 'tal ændret';
+  const kendt = `${g} ${spoergsmaal}`.toLowerCase();
+  const midt = n.split(/(?<=[.!?:])\s+/).flatMap((s) => s.split(/\s+/).slice(1));
+  const nyeNavne = [...new Set(midt.map((w) => w.replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, '')).filter((w) => /^[A-Z]/.test(w) && !kendt.includes(w.toLowerCase().replace(/['’]s$/, ''))))];
+  if (nyeNavne.length) return `nye navne: ${nyeNavne.slice(0, 5).join(', ')}`;
+  if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return 'et tal har mistet sin kilde';
+  const lg = ordTal(g), ln = ordTal(n);
+  if (ln > lg * 1.1 + 4 || ln < lg * 0.7) return `længde ${ln} mod ${lg} ord`;
+  if (antalAccording(n) > Math.min(1, antalAccording(g))) return `"according to" ${antalAccording(n)} gange`;
+  const faste = (t) => (String(t).match(/\baccording to\b|\b(reports|notes|states|explains|highlights|emphasizes|points out) that\b/gi) || []).length;
+  if (faste(n) > faste(g)) return 'flere faste kildevendinger';
+  if (flereAbsolutte(g, n)) return 'flere forstærkende ord (always/mainly/consistently ...)';
+  return '';
+}
+
+function prompt(dele, spoergsmaal, faqs = []) {
   return `You are the senior editor of a plain-English tech site. The article answers "${spoergsmaal}". Below are its sections (body text only). Rewrite each so it reads like a knowledgeable person explaining things to a friend - natural, flowing, human - while keeping every fact exactly.
 
 WHAT TO FIX
@@ -75,14 +101,17 @@ WHAT TO FIX
 
 STRICT RULES
 - Keep every fact, number, date, name and claim (only a fact repeated from an earlier section may be dropped). Add nothing - no new facts, names, examples or opinions.
+- Keep the exact scope and strength of every claim: what a figure measures (which benchmark, test or group), every qualifier ("may", "some", "up to", "about", "in tests") and every limit. Never add intensifiers such as "always", "consistently", "mainly", "only" or "fully".
 - Keep every markdown link exactly as written, character for character: same link text, same address. Keep tables exactly as they are.
 - Keep lists as lists (you may tidy the wording of an item). Do not add headings.
 - Paragraphs written in the first person ("I", "my") are the site owner's own words: keep them exactly as they are.
 - Keep the length about the same or a little shorter.
 
-Return ONLY a JSON array: [{"n":1,"tekst":"<the rewritten section body in markdown>"}]
+${faqs.length ? `FAQ ANSWERS (items ${dele.length + 1}-${dele.length + faqs.length}): rewrite each answer so it starts by answering the question directly in plain words, then gives the support. Name the source once, naturally ("X says ...", "X's guide lists ..."), never open with "According to". Same facts and numbers, 1-3 sentences, plain text only - no links, no lists, no line breaks.
 
-${dele.map((d, i) => `### SECTION ${i + 1}${d.overskrift ? ` - "${d.overskrift}"` : ' (introduction)'}\n${d.tekst}`).join('\n\n')}`;
+` : ''}Return ONLY a JSON array: [{"n":1,"tekst":"<the rewritten section body in markdown, or the rewritten FAQ answer>"}]
+
+${dele.map((d, i) => `### SECTION ${i + 1}${d.overskrift ? ` - "${d.overskrift}"` : ' (introduction)'}\n${d.tekst}`).join('\n\n')}${faqs.map((q, i) => `\n\n### ${dele.length + i + 1}. FAQ - question: "${q.question}"\n${q.answer}`).join('')}`;
 }
 
 // Deler brødteksten (uden kildeliste) i sektioner ved ## overskrifter.
@@ -97,15 +126,17 @@ function sektioner(md) {
 }
 
 // Returnerer { md, rap }. Fejl i kaldet = artiklen uændret.
-export async function flydende(genAI, hentModel, model, md, { spoergsmaal = '', navne = [], log = console.log } = {}) {
+// faqs: [{question, answer}] - svarene rettes på stedet (6/11).
+export async function flydende(genAI, hentModel, model, md, { spoergsmaal = '', navne = [], faqs = [], log = console.log } = {}) {
   const s = sektioner(md);
   const kand = s.dele.map((d, i) => ({ ...d, i })).filter((d) => ordTal(d.tekst) >= 25);
-  const rap = { sektioner: kand.length, omskrevet: 0, afvist: 0, accordingFoer: (md.match(/\baccording to\b/gi) || []).length, accordingEfter: 0 };
-  if (!kand.length) return { md, rap };
+  const fq = (faqs || []).filter((q) => q && q.answer && ordTal(q.answer) >= 5);
+  const rap = { sektioner: kand.length, omskrevet: 0, afvist: 0, faq: fq.length, faqOmskrevet: 0, faqAfvist: 0, accordingFoer: (md.match(/\baccording to\b/gi) || []).length, accordingEfter: 0, faqAccordingFoer: fq.reduce((a, q) => a + antalAccording(q.answer), 0), faqAccordingEfter: 0 };
+  if (!kand.length && !fq.length) return { md, rap };
   let svar = [];
   try {
     // responseMimeType: modellen svarer i rent JSON (6/11: rå linjeskift i strengen gjorde svaret ulæseligt).
-    const r = await hentModel(genAI, { model, generationConfig: { temperature: 0.4, maxOutputTokens: 32768, responseMimeType: 'application/json', thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(prompt(kand, spoergsmaal));
+    const r = await hentModel(genAI, { model, generationConfig: { temperature: 0.4, maxOutputTokens: 32768, responseMimeType: 'application/json', thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(prompt(kand, spoergsmaal, fq));
     svar = lasJsonListe(r.response.text());
   } catch (e) { log(`   ⚠️ naturligt sprog: intet svar (${String(e.message).split('\n')[0].slice(0, 120)}) - teksten uændret`); rap.accordingEfter = rap.accordingFoer; return { md, rap }; }
   let krop = s.krop;
@@ -121,6 +152,14 @@ export async function flydende(genAI, hentModel, model, md, { spoergsmaal = '', 
     krop = krop.slice(0, d.start) + foran + ny + bagved + krop.slice(d.slut);
     rap.omskrevet++;
   }
+  fq.forEach((q, j) => {
+    const ny = String((Array.isArray(svar) ? svar : []).find((y) => y && y.n === kand.length + j + 1)?.tekst || '').trim().replace(/^["“]|["”]$/g, '');
+    if (!ny || ny === q.answer) return;
+    const grund = holderFaq(q.answer, ny, navne, q.question);
+    if (grund) { rap.faqAfvist++; log(`   ✗ FAQ-svar afvist (${grund}): ${q.question.slice(0, 60)}`); return; }
+    q.answer = ny.replace(/"/g, "'"); rap.faqOmskrevet++; // som robottens egen FAQ-rensning: ingen dobbelte anførselstegn
+  });
+  rap.faqAccordingEfter = fq.reduce((a, q) => a + antalAccording(q.answer), 0);
   const ud = krop + s.kilder;
   rap.accordingEfter = (ud.match(/\baccording to\b/gi) || []).length;
   return { md: ud, rap };

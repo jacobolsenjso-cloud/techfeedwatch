@@ -20,11 +20,11 @@ recipe: 3
 rewrittenAt: "2026-11-06"
 faqs:
   - question: "What are the main limitations of artificial intelligence?"
-    answer: "AI systems struggle with hallucinated facts, unexplainable decisions, embedded social bias, and high electrical power demands. A report from the UK AI Safety Institute in October 2025 also found models fail at long-horizon planning and adapting to new environments."
+    answer: "AI systems struggle with hallucinated facts, black-box decisions, embedded social bias, and heavy power demands. A UK AI Safety Institute report from October 2025 adds that models fail at long-horizon planning and adapting to new environments."
   - question: "What are the primary generative AI limitations?"
-    answer: "Generative AI tools predict text and pixels based on statistical patterns rather than real comprehension, leading to confident falsehoods. Stanford HAI's 2026 AI Index Report revealed hallucination rates between 22% and 94% across 26 popular models on a multi-domain benchmark."
+    answer: "Generative tools make mistakes because they predict words and pixels based on statistical patterns rather than genuine understanding. Testing across 26 popular models in Stanford HAI's 2026 AI Index Report revealed hallucination rates between 22% and 94% on a multi-domain benchmark."
   - question: "Can you use AI without limitations?"
-    answer: "No technical setup allows anyone to use AI without limitations because every model depends on bounded training data and finite compute. The National Institute of Standards and Technology notes that reliable deployment requires human oversight and active risk controls across seven distinct challenges."
+    answer: "No setup lets you run AI without limits because every system relies on bounded training data and finite computing hardware. The National Institute of Standards and Technology explains that dependable use requires human oversight and active risk controls across seven distinct challenges."
 keyFacts:
   - text: "The AA-Omniscience benchmark across 6,000 multi-domain questions documented hallucination rates ranging from 22% to 94% across 26 leading AI models."
     source: "Stanford HAI's 2026 AI Index Report"

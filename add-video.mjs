@@ -1351,7 +1351,8 @@ ${content}`);
       // sektion, så den flyder - kilden nævnes, hvor dens fakta begynder, gentagelser og AI-vendinger ud. Koden afviser
       // en sektion med ændrede tal, links, tabeller eller nye navne. Før links, stemme og slutkontrol.
       {
-        const fl = await flydende(genAI, hentModel, GEMINI_MODEL, content, { spoergsmaal: targetQuestion || safeTitle, navne: [...(soeg.navne || []), kildeNavn(channelTitle), channelTitle].filter(Boolean) });
+        // 6/11: FAQ-svarene med i samme kald (rettes på stedet i faqs).
+        const fl = await flydende(genAI, hentModel, GEMINI_MODEL, content, { spoergsmaal: targetQuestion || safeTitle, navne: [...(soeg.navne || []), kildeNavn(channelTitle), channelTitle].filter(Boolean), faqs });
         content = fl.md;
         console.log(`FLYD: ${JSON.stringify(fl.rap)}`);
       }

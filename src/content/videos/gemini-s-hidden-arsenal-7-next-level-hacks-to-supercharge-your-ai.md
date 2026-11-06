@@ -21,11 +21,11 @@ recipe: 3
 rewrittenAt: "2026-11-06"
 faqs:
   - question: "What is the definition of Gemini agent skills?"
-    answer: "According to Google Cloud Documentation, Gemini agent skills are modular instruction packages containing a markdown file, context data, and scripts for domain-specific tasks. They give autonomous agents standard procedures to complete complex jobs without human intervention."
+    answer: "Gemini agent skills are modular packages with markdown files, context data, and scripts for domain-specific tasks. Google Cloud Documentation explains that they give autonomous agents standard procedures to complete complex jobs without human intervention."
   - question: "Does Gemini support agent skills across all editions?"
     answer: "According to Google Cloud Documentation, custom skill creation requires Gemini Enterprise Standard, Plus, or Pay-as-you-go editions. Users on the Frontline edition can only use Google-managed or pre-shared organizational skills."
   - question: "How do agent skills improve coding performance?"
-    answer: "According to Google Developers Blog, giving an agent live documentation through a skill boosted coding task accuracy from 28.2% to 96.6%. The bundled primitives eliminate stale training data errors."
+    answer: "Agent skills improve coding accuracy by providing models with current library references. Tests shared by the Google Developers Blog showed accuracy jumped from 28.2% to 96.6% because bundled primitives eliminated errors from stale training data."
   - question: "How does Gemini use agent skills during a task?"
     answer: "According to Agent Skills documentation, an agent processes skills through a three-stage workflow of metadata discovery, intent activation, and instruction execution. This progressive disclosure protects the context window from token overload."
 keyFacts:

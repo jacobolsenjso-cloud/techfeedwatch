@@ -25,9 +25,9 @@ faqs:
   - question: "What is Claude AI's capacity for processing documents?"
     answer: "According to Anthropic, Claude can ingest 200,000 tokens of text on baseline plans and up to 1 million tokens on enterprise tiers. Anthropic notes that document accuracy can degrade over long contexts due to context rot."
   - question: "What are the key features of Claude AI for developers?"
-    answer: "In 2024, Claude 3.5 Sonnet solved 64% of problems in an agentic coding benchmark, according to Anthropic's Claude 3.5 Sonnet Model Card Addendum. Anthropic's platform documentation also highlights tool use, extended thinking, and an API for operating desktop software."
+    answer: "Claude offers developers adaptive extended thinking, tool calling, and an API for operating desktop software. Anthropic's 2024 Claude 3.5 Sonnet Model Card Addendum reports that the model solved 64% of tasks on an agentic coding benchmark."
   - question: "What vision features does Claude AI have?"
-    answer: "According to Anthropic, Claude can transcribe handwritten text, interpret diagrams, and extract data from complex visual charts. It processes these multimodal inputs alongside standard text prompts."
+    answer: "Claude can read handwritten notes, interpret diagrams, and extract data from dense visual charts. Anthropic designs the model to process these visual inputs right alongside standard text prompts."
 keyFacts:
   - text: "As token count grows across long contexts, model accuracy and recall can degrade, a technical phenomenon Anthropic identifies as context rot."
     source: "Anthropic's platform documentation"
