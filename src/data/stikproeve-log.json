@@ -271,5 +271,30 @@
   ],
   "usd": 0.0052,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-06T06:52:19.128Z",
+  "artikler": [
+   {
+    "slug": "how-do-you-effectively-use-search-engine-optimization",
+    "tjekket": 9,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 4,
+    "fund": []
+   },
+   {
+    "slug": "the-allure-of-mad-gains-why-crypto-trading-demands-more-than-beginner",
+    "tjekket": 8,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 6,
+    "fund": []
+   }
+  ],
+  "usd": 0.0055,
+  "soegninger": 0
  }
 ]
