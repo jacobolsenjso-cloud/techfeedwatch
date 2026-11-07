@@ -296,5 +296,30 @@
   ],
   "usd": 0.0055,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-07T06:46:35.274Z",
+  "artikler": [
+   {
+    "slug": "humanoid-robots-mimic-human-form-for-real-world-work",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 3,
+    "fund": []
+   },
+   {
+    "slug": "robotics-for-kids-teaches-science-and-engineering-skills",
+    "tjekket": 9,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.007,
+  "soegninger": 0
  }
 ]

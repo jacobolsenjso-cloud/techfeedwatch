@@ -47,10 +47,10 @@
   "forsoeg": 2
  },
  "ai-s-cognitive-cost-is-your-brain-on-screensaver-mode": {
-  "grund": "Fejl: Redaktørtjek: 14 ensidige sætninger efter rettelse (højst 2): \"When people accept machine answers without verifying them, they bypass the produ\" · \"Relying on AI weakens independent reasoning be",
+  "grund": "Fejl: Redaktørtjek: 21 ensidige sætninger efter rettelse (højst 2): \"When people accept generated answers without questioning them, they skip the men\" · \"Over time, this habit leads to passive accepta",
   "recipe": 3,
-  "dato": "2026-10-31",
-  "forsoeg": 1
+  "dato": "2026-11-07",
+  "forsoeg": 2
  },
  "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube": {
   "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What are the primary limitations and hallucination risks when using NotebookLM for video production?\"). Artiklen skrives ikke.",
@@ -80,6 +80,18 @@
   "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"Which slots and connections must be used for dual-channel memory and dedicated graphics cards?\"). Artiklen skrives ikke.",
   "recipe": 3,
   "dato": "2026-11-05",
+  "forsoeg": 1
+ },
+ "growers-use-robotics-in-agriculture-for-precision-farming": {
+  "grund": "Fejl: Redaktørtjek: 3 ensidige sætninger efter rettelse (højst 2): \"Workforce scarcity forms the primary driver of agricultural automation.\" · \"Automation converts volatile field labor expenses into p",
+  "recipe": 3,
+  "dato": "2026-11-07",
+  "forsoeg": 1
+ },
+ "how-do-you-define-what-gaming-pcs-actually-are": {
+  "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What is the market size and shipment volume of gaming PCs?\"). Artiklen skrives ikke.",
+  "recipe": 3,
+  "dato": "2026-11-07",
   "forsoeg": 1
  }
 }
