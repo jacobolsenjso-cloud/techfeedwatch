@@ -33,7 +33,11 @@ jobs:
     runs-on: ubuntu-26.04
 
     steps:
+      # ref: main (7/11-2026, kø-fejlen - som techmediaarch 4/11): uden den henter GitHub main, som den så ud, da
+      # kørslen blev BESTILT. En kørsel i kø bag en anden ville starte fra en gammel udgave og lave arbejdet igen.
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       # Jacobs hjerne (trin 4 af robot-koblingen, 21/10): stemme/holdninger fra det
       # PRIVATE repo jacob-hjerne, hentet med læsenøglen HJERNE_NOEGLE til mappen
@@ -138,8 +142,8 @@ jobs:
             # fejlen skjult af "|| echo" — artiklen gik tabt med et grønt flueben.
             # Nu: hent og læg vores commit ovenpå; fejler push alligevel, skal
             # kørslen blive RØD, så det bliver set.
-            git pull --rebase origin main
-            git push
+            # 7/11-2026: fælles udgivelse - 3 forsøg, datafiler flettes, konflikt i alt andet stopper (.github/udgiv.sh).
+            bash .github/udgiv.sh
           else
             echo "Ingen nye videoer fundet."
           fi

@@ -30,7 +30,11 @@ jobs:
   billeder:
     runs-on: ubuntu-26.04
     steps:
+      # ref: main (7/11-2026, kø-fejlen - som techmediaarch 4/11): uden den henter GitHub main, som den så ud, da
+      # kørslen blev BESTILT. En kørsel i kø bag en anden ville starte fra en gammel udgave og lave arbejdet igen.
       - uses: actions/checkout@v5
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -53,8 +57,8 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add public/billeder public/kort public/og src/data/ai-billeder-fejl.json
           if git commit -m "AI images for archive articles"; then
-            git pull --rebase origin main
-            git push
+            # 7/11-2026: fælles udgivelse - 3 forsøg, datafiler flettes, konflikt i alt andet stopper (.github/udgiv.sh).
+            bash .github/udgiv.sh
           else
             echo "Ingen nye billeder."
           fi
