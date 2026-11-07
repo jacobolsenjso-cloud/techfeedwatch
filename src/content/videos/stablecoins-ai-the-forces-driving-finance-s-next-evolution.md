@@ -15,8 +15,8 @@ summary: "Stablecoins are rapidly emerging as a foundational layer for global fi
 metaDescription: "Stablecoins are rapidly emerging as a foundational layer for global financial transactions, moving beyond speculative crypto assets to practical utility."
 targetQuestion: "what is autonomous finance"
 duration: "41:16"
-viewCount: 27950
-viewsUpdated: "2026-11-04"
+viewCount: 27990
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

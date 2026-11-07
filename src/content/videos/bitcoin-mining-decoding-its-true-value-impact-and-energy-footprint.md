@@ -14,8 +14,8 @@ summary: "Bitcoin mining underpins the network's security and ledger integrity t
 metaDescription: "Bitcoin mining underpins the network's security and ledger integrity through a competitive computational process called Proof-of-Work."
 targetQuestion: "what does bitcoin mining do"
 duration: "19:16"
-viewCount: 756654
-viewsUpdated: "2026-11-04"
+viewCount: 758344
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

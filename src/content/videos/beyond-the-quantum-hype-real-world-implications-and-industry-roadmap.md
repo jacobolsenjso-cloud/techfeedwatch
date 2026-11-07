@@ -13,8 +13,8 @@ summary: "Quantum computing promises to solve problems intractable for classical
 metaDescription: "Quantum computing could reshape AI, medicine, and energy. Understand the difference between quantum hype and practical application to stay ahead."
 targetQuestion: "what is the business case for quantum computing"
 duration: "11:40"
-viewCount: 838212
-viewsUpdated: "2026-11-04"
+viewCount: 838296
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

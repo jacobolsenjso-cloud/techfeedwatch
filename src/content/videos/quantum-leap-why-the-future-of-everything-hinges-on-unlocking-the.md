@@ -14,8 +14,8 @@ summary: "Quantum computing stands poised to redefine computational boundaries, 
 metaDescription: "Quantum computing stands poised to redefine computational boundaries, moving beyond classical limitations to address previously intractable problems."
 targetQuestion: "what applications does quantum computing have"
 duration: "1:26:29"
-viewCount: 356299
-viewsUpdated: "2026-11-04"
+viewCount: 356440
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

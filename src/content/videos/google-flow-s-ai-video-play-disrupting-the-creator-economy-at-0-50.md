@@ -14,8 +14,8 @@ summary: "Google's advanced AI video generation platform, Google Flow, signals a
 metaDescription: "Google Flow's AI platform democratizes complex visual content creation, offering an accessible subscription for rapid prototyping."
 targetQuestion: "how much does google flow ai cost"
 duration: "14:07"
-viewCount: 3233
-viewsUpdated: "2026-11-04"
+viewCount: 3245
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

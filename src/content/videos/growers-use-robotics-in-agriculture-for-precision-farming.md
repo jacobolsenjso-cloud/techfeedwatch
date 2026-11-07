@@ -13,8 +13,8 @@ summary: "Farmers deploy agricultural robotics to automate labor-intensive field
 metaDescription: "Learn how growers use robotics in agriculture for autonomous weed control, automated harvesting, precision spraying, and daily livestock operations."
 targetQuestion: "how to use robotics in agriculture"
 duration: "24:05"
-viewCount: 4965
-viewsUpdated: "2026-11-04"
+viewCount: 4995
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

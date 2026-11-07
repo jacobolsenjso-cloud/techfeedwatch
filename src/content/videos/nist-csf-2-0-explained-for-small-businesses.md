@@ -13,8 +13,8 @@ summary: "The NIST Cybersecurity Framework (CSF) offers a structured approach fo
 metaDescription: "Learn how to use the NIST Cybersecurity Framework (NIST CSF 2.0) to strengthen your organization's digital defenses, especially for small businesses."
 targetQuestion: "how to use the nist cybersecurity framework"
 duration: "7:58"
-viewCount: 317
-viewsUpdated: "2026-11-04"
+viewCount: 326
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

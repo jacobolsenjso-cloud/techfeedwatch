@@ -12,8 +12,8 @@ summary: "Meta has significantly altered its AI strategy with the launch of Muse
 metaDescription: "Meta AI changed its strategy with Muse Spark, a new proprietary model moving away from Llama, aiming for 'personal superintelligence' and new revenue."
 targetQuestion: "why did meta ai change"
 duration: "3:07"
-viewCount: 90934
-viewsUpdated: "2026-11-04"
+viewCount: 90986
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

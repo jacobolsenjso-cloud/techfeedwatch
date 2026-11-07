@@ -13,8 +13,8 @@ summary: "Google Antigravity is a full agentic AI development platform that lets
 metaDescription: "Is Google Antigravity agentic AI? Learn how Google Antigravity uses autonomous agents to write and test code across editors, terminals, and browsers."
 targetQuestion: "is google antigravity agentic ai"
 duration: "22:17"
-viewCount: 125263
-viewsUpdated: "2026-11-04"
+viewCount: 126662
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -13,8 +13,8 @@ summary: "Augmented Reality (AR) seeks to merge digital information with our phy
 metaDescription: "Augmented Reality (AR) seeks to merge digital information with our physical world, promising to enhance interaction rather than create distraction."
 targetQuestion: "what does augmented reality do"
 duration: "10:55"
-viewCount: 378355
-viewsUpdated: "2026-11-04"
+viewCount: 378375
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

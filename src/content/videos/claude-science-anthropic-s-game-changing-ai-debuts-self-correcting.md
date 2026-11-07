@@ -15,8 +15,8 @@ summary: "Anthropic's new Claude Science platform, powered by the agentic Sonnet
 metaDescription: "Anthropic's Claude Science platform, using Sonnet 5, plans, executes, and self-corrects scientific research tasks, accelerating discovery."
 targetQuestion: "how does claude science work"
 duration: "12:33"
-viewCount: 16916
-viewsUpdated: "2026-11-04"
+viewCount: 17035
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

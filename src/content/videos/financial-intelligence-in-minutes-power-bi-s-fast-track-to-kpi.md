@@ -14,8 +14,8 @@ summary: "The creation of interactive financial performance dashboards using too
 metaDescription: "The creation of interactive financial performance dashboards using tools like Power BI represents a significant evolution in business intelligence."
 targetQuestion: "power bi financial dashboard"
 duration: "22:13"
-viewCount: 250067
-viewsUpdated: "2026-11-04"
+viewCount: 250557
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

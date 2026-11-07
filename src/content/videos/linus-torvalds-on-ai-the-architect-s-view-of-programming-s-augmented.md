@@ -14,8 +14,8 @@ summary: "Large Language Models (LLMs) are increasingly integrated into software
 metaDescription: "Large Language Models (LLMs) are increasingly integrated into software development, offering assistance from code generation to bug detection."
 targetQuestion: "how to use ai to improve code quality"
 duration: "5:05"
-viewCount: 1445529
-viewsUpdated: "2026-11-04"
+viewCount: 1445714
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

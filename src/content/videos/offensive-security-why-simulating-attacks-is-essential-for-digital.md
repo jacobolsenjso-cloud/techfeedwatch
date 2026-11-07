@@ -13,8 +13,8 @@ summary: "Offensive security testing is a proactive cybersecurity discipline tha
 metaDescription: "Understand what offensive security testing is, why ethical hacking is critical for modern defense against evolving cyber threats."
 targetQuestion: "what is offensive security testing"
 duration: "52:55"
-viewCount: 10
-viewsUpdated: "2026-09-12"
+viewCount: 11
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

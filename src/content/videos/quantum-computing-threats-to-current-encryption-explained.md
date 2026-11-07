@@ -13,8 +13,8 @@ summary: "Recent breakthroughs in quantum computing algorithms are dramatically 
 metaDescription: "Quantum computing threats are accelerating. Discover how new algorithms could break encryption much faster, exposing sensitive data."
 targetQuestion: "what are quantum computing threats"
 duration: "49:48"
-viewCount: 570373
-viewsUpdated: "2026-11-04"
+viewCount: 570620
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-15"

@@ -13,8 +13,8 @@ summary: "The Cloud Engineer role continues its rapid evolution, moving beyond b
 metaDescription: "Explore the Cloud Engineer role in 2026, understanding required skills, expected salaries, and the reality of this rapidly evolving tech career."
 targetQuestion: "what skills do cloud engineers need"
 duration: "13:48"
-viewCount: 23469
-viewsUpdated: "2026-11-04"
+viewCount: 23842
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

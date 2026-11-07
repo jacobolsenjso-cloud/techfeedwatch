@@ -13,8 +13,8 @@ summary: "AI chips encompass a diverse range of specialized processors designed 
 metaDescription: "AI chips differ from GPUs as GPUs are a specific type of AI chip. Explore various AI processor architectures beyond GPUs and their distinct roles."
 targetQuestion: "how are ai chips different from gpus"
 duration: "10:53"
-viewCount: 4457
-viewsUpdated: "2026-11-04"
+viewCount: 4555
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

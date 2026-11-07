@@ -13,8 +13,8 @@ summary: "The digital landscape offers numerous tools for personal and professio
 metaDescription: "Explore Craft app's approach to digital productivity and knowledge management, comparing it to Notion, Evernote, and Apple Notes for a focused workspace."
 targetQuestion: "what is craft application"
 duration: "9:02"
-viewCount: 11651
-viewsUpdated: "2026-11-04"
+viewCount: 11813
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

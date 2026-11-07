@@ -12,8 +12,8 @@ summary: "Building wealth intentionally moves beyond traditional saving, emphasi
 metaDescription: "Understand intentional wealth building and financial freedom investing. Explore strategic capital allocation, risk management, and alternative investments."
 targetQuestion: "what is strategic asset allocation"
 duration: "48:34"
-viewCount: 64
-viewsUpdated: "2026-10-04"
+viewCount: 65
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

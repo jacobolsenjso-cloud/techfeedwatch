@@ -13,8 +13,8 @@ summary: "Artificial intelligence offers small businesses a potent strategy for 
 metaDescription: "Learn how small businesses can use AI for marketing to build professional websites quickly, dominate local SEO, and generate revenue."
 targetQuestion: "how to use ai for small business marketing"
 duration: "32:59"
-viewCount: 275639
-viewsUpdated: "2026-11-04"
+viewCount: 275984
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

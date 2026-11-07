@@ -14,8 +14,8 @@ summary: "The proliferation of open-source artificial intelligence tools is rapi
 metaDescription: "Open-source AI tools are revolutionizing development, accelerating AI agent creation & democratizing innovation. Discover the impact on developers."
 targetQuestion: "open source ai tools for developers"
 duration: "6:15"
-viewCount: 931641
-viewsUpdated: "2026-11-04"
+viewCount: 933052
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 faqs:

@@ -14,8 +14,8 @@ summary: "Effective online presence hinges on foundational digital principles, o
 metaDescription: "Effective online presence hinges on foundational digital principles, often overlooked in the pursuit of advanced strategies."
 targetQuestion: "what are seo fundamentals"
 duration: "1:00:39"
-viewCount: 224145
-viewsUpdated: "2026-11-01"
+viewCount: 224150
+viewsUpdated: "2026-11-07"
 thumbMax: false
 isShort: false
 revised: true

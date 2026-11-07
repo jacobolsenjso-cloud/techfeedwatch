@@ -14,8 +14,8 @@ summary: "The widespread accessibility of AI tools has shifted the focus from te
 metaDescription: "The widespread accessibility of AI tools has shifted the focus from technical expertise to practical application and strategic literacy."
 targetQuestion: "what is prompt engineering and how to learn it"
 duration: "29:00"
-viewCount: 1107164
-viewsUpdated: "2026-11-04"
+viewCount: 1109109
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 revised: true

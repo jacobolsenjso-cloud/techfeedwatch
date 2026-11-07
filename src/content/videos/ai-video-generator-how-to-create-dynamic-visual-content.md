@@ -13,8 +13,8 @@ summary: "AI video generators allow users to create video content from text or i
 metaDescription: "Learn how to use AI video generators to create compelling content from text and images, including the best free tools and key considerations."
 targetQuestion: "how to use an ai video generator"
 duration: "11:56"
-viewCount: 127909
-viewsUpdated: "2026-11-04"
+viewCount: 128050
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

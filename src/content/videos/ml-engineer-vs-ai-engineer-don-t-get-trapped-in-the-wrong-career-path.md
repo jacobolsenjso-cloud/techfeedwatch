@@ -13,8 +13,8 @@ summary: "The distinction between machine learning engineers and artificial inte
 metaDescription: "Understand the difference between machine learning engineer and ai engineer roles, comparing custom model training with software application integration."
 targetQuestion: "difference between machine learning engineer and ai engineer"
 duration: "5:37"
-viewCount: 446202
-viewsUpdated: "2026-11-04"
+viewCount: 449599
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 recipe: 3

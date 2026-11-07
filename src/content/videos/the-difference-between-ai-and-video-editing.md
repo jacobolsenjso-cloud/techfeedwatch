@@ -12,8 +12,8 @@ summary: "Video editing organizes recorded footage into a structured timeline, w
 metaDescription: "Understand the real difference between AI and video editing, comparing timeline assembly, automated software tools, and narrative pacing."
 targetQuestion: "difference between ai and video editing"
 duration: "18:22"
-viewCount: 666
-viewsUpdated: "2026-11-04"
+viewCount: 671
+viewsUpdated: "2026-11-07"
 thumbMax: true
 isShort: false
 recipe: 3
