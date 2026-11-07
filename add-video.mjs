@@ -1396,8 +1396,8 @@ ${content}`);
       console.log(`KILDETJEK: ${JSON.stringify({ videoAndel: Math.round(slut.va.andel * 100), videoAfsnitOrd: slut.va.afsnitOrd, ord: slut.va.ialt, talUdenKilde: slut.udenKilde.length, websider: brugteSider.length, delspoergsmaal: soeg.delspoergsmaal.length, outline: ob ? `${ob.brugt}/${ob.ialt}` : 'ingen', faqFraSoegninger: `${faqFraSoegninger(faqs, rigtigeSoegninger)}/${faqs.length}` })}`);
 
       // ===== JACOBS STEMME (25/10, Jacob: hans mening flettet ind - ingen boks, ingen overskrift) =====
-      // Skrives ud fra hjernen og den færdige tekst og sættes ind sidst i den sektion, hvor den passer
-      // bedst - FØR slutkontrollen, så et tal i afsnittet bliver faktatjekket som alt andet.
+      // Skrives ud fra hjernen og den færdige tekst og sættes ind lige efter det afsnit, den svarer på (7/11:
+      // også midt i en sektion; ellers sidst i sektionen) - FØR slutkontrollen, så et tal i afsnittet bliver faktatjekket som alt andet.
       if (hjerneStemme && !isShort) {
         try {
           // 26/10: hans seneste stemme-afsnit fra andre artikler med, så historier og vendinger ikke gentages.
@@ -1418,8 +1418,10 @@ ${content}`);
             const renset = tjekMinHoldning(sidsteSvar, content, seneste, { rens: true });
             if (renset.ok) { mt = renset; console.log(`   stemme: ${renset.renset} genbrugt(e) sætning(er) fjernet - resten bruges`); }
           }
-          if (mt.ok) for (const d of mt.dele) content = fletIndHoldning(content, d.sektion, d.tekst);
-          console.log(`STEMME: ${JSON.stringify({ med: mt.ok, afsnit: mt.ok ? mt.dele.length : 0, sektioner: mt.ok ? mt.dele.map((d) => d.sektion.slice(0, 50)) : [], grund: mt.ok ? '' : mt.grund })}`);
+          if (mt.ok) for (const d of mt.dele) content = fletIndHoldning(content, d.sektion, d.tekst, d.efter);
+          // 7/11: "midt" = hvor mange af hans afsnit der står inde i sektionen (ikke sidst) - så det kan måles i loggen.
+          const midt = mt.ok ? mt.dele.filter((d) => { const i = content.indexOf(d.tekst); return i >= 0 && !/^\s*(\n## |$)/.test(content.slice(i + d.tekst.length)); }).length : 0;
+          console.log(`STEMME: ${JSON.stringify({ med: mt.ok, afsnit: mt.ok ? mt.dele.length : 0, midt, sektioner: mt.ok ? mt.dele.map((d) => d.sektion.slice(0, 50)) : [], grund: mt.ok ? '' : mt.grund })}`);
         } catch (e) { console.log(`STEMME: ${JSON.stringify({ med: false, grund: e.message.split('\n')[0].slice(0, 120) })}`); }
       }
 

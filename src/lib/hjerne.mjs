@@ -88,6 +88,8 @@ export function stemmeBlok(hjerne, tekst) {
 // Først en "My take"-boks sidst i artiklen - Jacob: "ser latterligt ud ... find en anden løsning".
 // Nu: ét almindeligt afsnit (3-6 sætninger, første person) UDEN overskrift og boks, sat ind sidst i
 // den sektion, hvor hans holdning passer bedst - som en klummeskribent, der giver sin mening undervejs.
+// 7/11 ("mindre skridt"): modellen vælger også det afsnit, stemmen skal stå efter ("after"), så den kan stå
+// midt i en sektion; og der må komme én ekstra bemærkning på én sætning. Se fletIndHoldning.
 export function minHoldningPrompt(hjerne, emneTekst, artikel, spoergsmaal, seneste = []) {
   const holdninger = emneAfsnit(hjerne, emneTekst);
   if (!hjerne || !holdninger.length) return null;
@@ -96,7 +98,8 @@ export function minHoldningPrompt(hjerne, emneTekst, artikel, spoergsmaal, senes
   return `You add the site owner's own voice to an article that answers "${spoergsmaal}". He runs TechFeedWatch. Below are his own notes in Danish (who he is, his style, his positions, his experience) and the finished article. Write in English.
 
 TASK
-Write his view in the FIRST PERSON as 2 or 3 SHORT paragraphs (2-3 sentences each), and for each choose the article section where it fits most naturally - different sections, so his voice appears where it matters, not in one block. Each is inserted as an ordinary paragraph at the end of its section - no heading, no box - so it must read as a natural part of the article's flow.
+Write his view in the FIRST PERSON as 2 or 3 SHORT paragraphs (2-3 sentences each), and for each choose the article section where it fits most naturally - different sections, so his voice appears where it matters, not in one block. You may add ONE extra short remark of a single sentence where a quick personal aside fits better than a paragraph.
+For each item, also choose the exact paragraph in that section it should follow - the place where his view belongs, not automatically the end - and copy the first 8-12 words of that paragraph EXACTLY into "after". Pick the paragraph whose specific point he is reacting to - usually that is NOT the section's last paragraph; at least one item must sit BETWEEN two paragraphs of its section (in a section with 3 or more paragraphs), so his view runs through the article instead of closing each section. Never choose the first paragraph of the article, and never choose a paragraph that ends with a colon (it introduces a list or table). Each item is inserted as an ordinary paragraph right after that one - no heading, no box - so it must read as a natural part of the article's flow and pick up what that paragraph just said.
 
 RULES
 - Each paragraph 2-3 short sentences (5-8 sentences in total at most). Plain words, calm and conversational - as if explaining over a cup of coffee. Never aggressive, never preachy, never selling anything.
@@ -111,7 +114,7 @@ RULES
 - No headings, no lists, no quotation marks around the whole text, no sign-off.
 - If nothing in his notes genuinely bears on this question, output exactly NONE.
 
-Output ONLY a JSON array: [{"section": "<one heading copied exactly from the list>", "text": "<the paragraph>"}, ...] with 2-3 items in different sections - or NONE.
+Output ONLY a JSON array: [{"section": "<one heading copied exactly from the list>", "after": "<first 8-12 words of the paragraph it follows, copied exactly>", "text": "<the paragraph or remark>"}, ...] with 2-3 paragraphs in different sections (+ at most one single-sentence remark) - or NONE.
 
 SECTION HEADINGS
 ${overskrifter.map((h) => `- ${h}`).join('\n')}
@@ -211,15 +214,30 @@ function genbrugtFrase(tekst, seneste) {
   return '';
 }
 
-// Sætter afsnittet ind sidst i den valgte sektion (før næste "## "). Findes sektionen ikke:
-// som sidste afsnit før "## Sources". Returnerer den nye markdown.
-export function fletIndHoldning(md, sektion, tekst) {
+// Sætter afsnittet ind i den valgte sektion. 7/11-2026 (Jacob valgte "mindre skridt"): lige efter det afsnit, modellen
+// pegede på ("efter" = afsnittets første ord), så hans mening står dér, hvor den hører til - ikke altid sidst.
+// Findes afsnittet ikke, eller er det en overskrift, liste, tabel eller en indledning med kolon: sidst i sektionen
+// (før næste "## "). Findes sektionen ikke: som sidste afsnit før "## Sources". Returnerer den nye markdown.
+const ensOrd = (t) => String(t || '').toLowerCase().replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[^a-z0-9]+/g, ' ').trim();
+export function fletIndHoldning(md, sektion, tekst, efter = '') {
   const linjer = String(md).replace(/\r\n/g, '\n').split('\n');
   const start = linjer.findIndex((l) => l.replace(/^## /, '').trim() === String(sektion || '').trim() && /^## /.test(l));
   let slut;
   if (start >= 0) {
     slut = linjer.findIndex((l, i) => i > start && /^## /.test(l));
     if (slut < 0) slut = linjer.length;
+    const noegle = ensOrd(efter).split(' ').slice(0, 8).join(' ');
+    if (noegle.split(' ').length >= 4) {
+      for (let i = start + 1; i < slut; i++) {
+        const l = linjer[i];
+        if (!l.trim() || (i > start + 1 && linjer[i - 1].trim())) continue; // kun første linje i et afsnit
+        if (/^\s*(#|\||[-*] |\d+\. |!\[|<)/.test(l) || !ensOrd(l).startsWith(noegle)) continue;
+        let j = i; while (j + 1 < slut && linjer[j + 1].trim()) j++; // afsnittets sidste linje
+        if (/:\s*$/.test(linjer[j])) break; // indleder en liste/tabel - stemmen må ikke skille dem ad
+        linjer.splice(j + 1, 0, '', tekst.trim());
+        return linjer.join('\n').replace(/\n{3,}/g, '\n\n');
+      }
+    }
   } else {
     slut = linjer.findIndex((l) => /^## Sources\s*$/.test(l));
     if (slut < 0) slut = linjer.length;
@@ -248,7 +266,8 @@ export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = 
   const brod = String(artikel);
   const dele = [];
   let renset = 0;
-  for (const x of j.slice(0, 3)) {
+  let enkelte = 0; // 7/11: højst én kort bemærkning på én sætning - resten er afsnit på 2-3 sætninger
+  for (const x of j.slice(0, 4)) {
     let t = String(x?.text || '').trim().replace(/^["“]|["”]$/g, '').replace(/^#+.*\n/, '').replace(/\s*\n+\s*/g, ' ').trim();
     const sektion = String(x?.section || '').trim();
     if (!t) continue;
@@ -272,7 +291,8 @@ export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = 
     const nyeTal = [...t.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/[.,]$/, '')).filter((n) => !brod.includes(n));
     if (nyeTal.length) return { ok: false, grund: `tal, artiklen ikke har: ${nyeTal.join(', ')}` };
     if (dele.some((d) => d.sektion === sektion)) continue; // højst ét afsnit pr. sektion
-    dele.push({ sektion, tekst: t });
+    if (ss.length === 1 && ++enkelte > 1) continue; // en ekstra én-sætnings-bemærkning droppes
+    dele.push({ sektion, tekst: t, efter: String(x?.after || '').trim() });
   }
   if (!dele.length) return { ok: false, grund: 'ingen brugbare afsnit' };
   const historier = Object.entries(ANEKDOTER).filter(([, re]) => dele.some((d) => re.test(d.tekst))).map(([navn]) => navn);
