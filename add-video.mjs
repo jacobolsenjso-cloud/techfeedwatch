@@ -1408,7 +1408,8 @@ ${content}`);
           for (let forsoeg = 0; p && forsoeg < 3 && !mt.ok; forsoeg++) {
             // Et kasseret forsøg sendes tilbage med grunden, så næste forsøg kan rette præcis det.
             const pp = forsoeg && mt.grund ? `${p}\n\nYOUR PREVIOUS ATTEMPT WAS REJECTED: ${mt.grund}. Write it again and avoid exactly that.` : p;
-            const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.5 } }).generateContent(pp);
+            // 7/11 (Jacob: "tænkningen sættes til lav"): målt ca. 8.000 tænke-tokens pr. forsøg - lav tænkning som i flyd.
+            const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.5, thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(pp);
             sidsteSvar = r.response.text();
             mt = tjekMinHoldning(sidsteSvar, content, seneste);
             if (!mt.ok) console.log(`   stemme forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);

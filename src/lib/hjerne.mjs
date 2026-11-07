@@ -256,7 +256,7 @@ const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*O
 // 27/10 (Jacob valgte A+B): rens = true bruges efter 3 afslag. Så fjernes kun den sætning, der genbruger
 // en formulering, så længe afsnittet beholder mindst 2 sætninger (ellers droppes kun det afsnit) - i stedet
 // for at hele stemmen falder ud. Alle andre krav gælder uændret.
-const INGEN_ERFARING = /\bI (?:do not|don't|did not|didn't|never|have never|haven't|have not)\b[^.]{0,30}\b(?:experience|expertise|an expert)\b|\bI(?:'?m| am) not (?:an? )?(?:expert|gamer|developer|programmer|coder|specialist|engineer)\b|\b(?:no|little|limited) (?:personal |hands-on |real )?experience\b|\bnot something I have (?:personal )?experience\b/i;
+const INGEN_ERFARING = /\bI (?:do not|don't|did not|didn't|never|have never|haven't|have not)\b[^.]{0,30}\b(?:experience|expertise|an expert)\b|\bI(?:'?m| am) not (?:an? )?(?:expert|gamer|developer|programmer|coder|specialist|engineer)\b|\b(?:no|little|limited) (?:personal |hands-on |real )?experience\b|\bnot something I have (?:personal )?experience\b|\bI (?:do not|don't|never|rarely) (?:play (?:video |computer |PC )?games|game)\b/i; // 7/11: "I do not play games myself" (målt i gaming-testen)
 export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = {}) {
   const raa = String(svar || '').trim();
   if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
