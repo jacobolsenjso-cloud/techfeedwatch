@@ -529,5 +529,23 @@
   ],
   "usd": 1.3086,
   "soegninger": 22
+ },
+ {
+  "dato": "2026-11-08T06:37:24.354Z",
+  "omskrevet": [
+   "cybersecurity-frameworks-and-how-modern-teams-use-them"
+  ],
+  "stoppet": [
+   {
+    "slug": "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What copyright, monetization, and AI-disclosure rules apply to NotebookLM-generated YouTube videos?\"). Artiklen skrives ikke."
+   },
+   {
+    "slug": "search-engines-and-how-seo-works-to-rank-websites",
+    "grund": "Fejl: Læsertjek: 3 sætninger, en læser snubler over, efter rettelse (højst 2). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 1.1238,
+  "soegninger": 22
  }
 ]

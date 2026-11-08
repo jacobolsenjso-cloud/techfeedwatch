@@ -321,5 +321,30 @@
   ],
   "usd": 0.007,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-08T06:47:54.550Z",
+  "artikler": [
+   {
+    "slug": "master-html-seo-unlock-organic-traffic-with-these-essential-on-page",
+    "tjekket": 1,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 0,
+    "fund": []
+   },
+   {
+    "slug": "claude-unlocked-beyond-the-chatbot-your-guide-to-the-full-ai-ecosystem",
+    "tjekket": 8,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 6,
+    "fund": []
+   }
+  ],
+  "usd": 0.0037,
+  "soegninger": 0
  }
 ]

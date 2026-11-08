@@ -53,10 +53,10 @@
   "forsoeg": 2
  },
  "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube": {
-  "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What are the primary limitations and hallucination risks when using NotebookLM for video production?\"). Artiklen skrives ikke.",
+  "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What copyright, monetization, and AI-disclosure rules apply to NotebookLM-generated YouTube videos?\"). Artiklen skrives ikke.",
   "recipe": 3,
-  "dato": "2026-11-01",
-  "forsoeg": 1
+  "dato": "2026-11-08",
+  "forsoeg": 2
  },
  "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas": {
   "grund": "Sprunget over: søgningen gav for lidt med kilde (5 delspørgsmål, 1 fakta, 1 kilder) — \"how do pinterest ads work\"",
@@ -92,6 +92,12 @@
   "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What is the market size and shipment volume of gaming PCs?\"). Artiklen skrives ikke.",
   "recipe": 3,
   "dato": "2026-11-07",
+  "forsoeg": 1
+ },
+ "search-engines-and-how-seo-works-to-rank-websites": {
+  "grund": "Fejl: Læsertjek: 3 sætninger, en læser snubler over, efter rettelse (højst 2). Artiklen skrives ikke.",
+  "recipe": 3,
+  "dato": "2026-11-08",
   "forsoeg": 1
  }
 }
