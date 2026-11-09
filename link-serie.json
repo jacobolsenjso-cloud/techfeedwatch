@@ -98,6 +98,46 @@
       },
       "bing": null,
       "note": "Tredje aflaesning. Eksterne links 1 -> 5. Tre nye linkende sites siden 26/10: github.com (2 links), about.me (1) og pinterest.com (1); alternativeto.net (1) staar stadig. Alle fem links peger paa forsiden; ingen artikelside har endnu et eksternt link. Fem linktekster, 1-5 ud af 5 (MERE aabnet). Interne links 338 -> 333 (-5) - Googles stikproeve, ikke det reelle antal. Bing Webmaster Tools var logget ind, men Backlinks viser fortsat 'No data available', derfor bing: null. Jeg har IKKE maalt hvor de tre nye links kommer fra - kun at de staar der."
+    },
+    {
+      "dato": "2026-11-09",
+      "gsc": {
+        "eksterneLinks": 5,
+        "linkendeSites": [
+          {
+            "site": "github.com",
+            "links": 2
+          },
+          {
+            "site": "about.me",
+            "links": 1
+          },
+          {
+            "site": "alternativeto.net",
+            "links": 1
+          },
+          {
+            "site": "pinterest.com",
+            "links": 1
+          }
+        ],
+        "linkedeSider": [
+          {
+            "side": "https://techfeedwatch.com/",
+            "links": 5
+          }
+        ],
+        "linktekster": [
+          "https techfeedwatch com",
+          "techfeedwatch",
+          "techfeedwatch com",
+          "techfeedwatch com bner en ny fane",
+          "visit techfeedwatch"
+        ],
+        "interneLinks": 468
+      },
+      "bing": null,
+      "note": "Fjerde aflaesning. Intet nyt udefra siden 2/11: fortsat 5 eksterne links fra de samme fire sites (github.com 2, about.me 1, alternativeto.net 1, pinterest.com 1), alle fem peger stadig paa forsiden, og de fem linktekster er identiske. Ingen artikelside har endnu et eksternt link. Det eneste, der flyttede sig, er Googles interne-link-stikproeve: 333 -> 468 (+135) - en stikproeve, ikke det reelle antal, og sitemappet voksede kun 646 -> 658 i samme periode. Bing Webmaster Tools: Jacob er ikke logget ind (backlinks-adressen sender til signup-siden), derfor bing: null - jeg har ikke logget ind."
     }
   ]
 }
