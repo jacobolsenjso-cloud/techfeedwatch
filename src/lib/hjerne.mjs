@@ -110,7 +110,8 @@ RULES
 - His voice already appears in other recent articles (below). Do NOT reuse their stories, examples, idioms or phrasing.${overbrugte(seneste).length ? ` These are used up for now - do not use them at all: ${overbrugte(seneste).join('; ')}.` : ''}${slidteVendinger(seneste).length ? `
 - WORN PHRASES - these already appear in several of his recent paragraphs. Do NOT use them or close variants; if the idea fits, say it in completely new words: ${slidteVendinger(seneste).map((v) => `"${v}"`).join(', ')}.` : ''}` : ''}
 - Do not repeat facts the article already gives. A number may only appear if the article already states it, with the same source.
-- Write only where his notes give him a real view or real experience. Never claim experience he does not have, and never write that he lacks experience ("I do not have personal experience with ...") - choose another section, or write fewer paragraphs.
+${udenErfaring(hjerne).length ? `- He has NO personal experience with: ${udenErfaring(hjerne).map((e) => e.emne).join('; ')}. Never write that he watched, saw, used, tried, wore, played or built any of these - give his view on them instead.
+` : ''}- Write only where his notes give him a real view or real experience. Never claim experience he does not have, and never write that he lacks experience ("I do not have personal experience with ...") - choose another section, or write fewer paragraphs.
 - No headings, no lists, no quotation marks around the whole text, no sign-off.
 - If nothing in his notes genuinely bears on this question, output exactly NONE.
 
@@ -257,7 +258,23 @@ const FIRMAER = /M[æa]e?rsk|Musikhus|Concert Hall of Aarhus|AarBus|Bang\s*&\s*O
 // en formulering, så længe afsnittet beholder mindst 2 sætninger (ellers droppes kun det afsnit) - i stedet
 // for at hele stemmen falder ud. Alle andre krav gælder uændret.
 const INGEN_ERFARING = /\bI (?:do not|don't|did not|didn't|never|have never|haven't|have not)\b[^.]{0,30}\b(?:experience|expertise|an expert)\b|\bI(?:'?m| am) not (?:an? )?(?:expert|gamer|developer|programmer|coder|specialist|engineer)\b|\b(?:no|little|limited) (?:personal |hands-on |real )?experience\b|\bnot something I have (?:personal )?experience\b|\bI (?:do not|don't|never|rarely) (?:play (?:video |computer |PC )?games|game)\b/i; // 7/11: "I do not play games myself" (målt i gaming-testen)
-export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = {}) {
+// 9/11-2026 (målt i AR-artiklen 9/11: "While I have watched headsets help individuals tackle anxiety" - opdigtet;
+// noterne siger "ingen egen erfaring" med AR/VR). Emner i emner.md, hvis linje siger "ingen egen erfaring", giver
+// en liste af nøgleord. Et afsnit, der påstår egen erfaring ("I have watched/used/tried ...") OG nævner et af de
+// nøgleord, afvises. Reglen ligger i koden, så den ikke afhænger af, at modellen husker det.
+export function udenErfaring(hjerne) {
+  return String(hjerne?.emner || '').split('\n').map((l) => l.match(/^- \*\*(.+?)\s*\(([^)]*)\):?\*\*(.*)$/)).filter((m) => m && /ingen egen erfaring/i.test(m[3]))
+    .map((m) => ({ emne: m[1].trim(), ord: m[2].split(',').map((o) => o.trim().toLowerCase()).filter((o) => o.length >= 2) }));
+}
+const PAASTAAET_ERFARING = /\bI(?:'ve| have| had)? (?:personally |actually |already |once |often )?(?:watched|seen|used|tried|tested|worn|owned|played|built|assembled|experienced|set up)\b|\b(?:in my (?:own )?experience|from my own use|when I (?:used|tried|wore|played|built))\b/i;
+export function opdigtetErfaring(tekst, emner = []) {
+  if (!PAASTAAET_ERFARING.test(tekst)) return '';
+  const lav = String(tekst).toLowerCase();
+  const hit = emner.find((e) => e.ord.some((o) => new RegExp(`\\b${o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(lav)));
+  return hit ? hit.emne : '';
+}
+export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false, hjerne = null } = {}) {
+  const ingenErf = udenErfaring(hjerne);
   const raa = String(svar || '').trim();
   if (!raa || /^NONE\b/i.test(raa)) return { ok: false, grund: 'ingen holdning passer til emnet' };
   // 6/11: lasJsonListe tåler rå linjeskift i strengene (ellers faldt stemmen ud på "Bad control character").
@@ -274,6 +291,8 @@ export function tjekMinHoldning(svar, artikel, seneste = [], { rens = false } = 
     // 5/11-2026 (samme regel som techmediaarch 31/10): "Jeg har ingen erfaring med ..." lyder svagt midt i en
     // artikel - målt 5/11 i gaming-artiklen ("I have no experience building PCs myself"). Afsnittet springes over.
     if (INGEN_ERFARING.test(t)) continue;
+    const opdigtet = opdigtetErfaring(t, ingenErf);
+    if (opdigtet) return { ok: false, grund: `påstår egen erfaring med ${opdigtet}, som han ikke har - skriv hans holdning i stedet` };
     let ss = t.split(/(?<=[.!?])\s+/).filter((y) => y.split(/\s+/).length >= 3);
     if (ss.length < 1 || ss.length > 3) return { ok: false, grund: `et afsnit har ${ss.length} sætninger (skal være 2-3)` };
     if (rens && genbrugtFrase(t, seneste)) {

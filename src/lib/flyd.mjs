@@ -25,30 +25,59 @@ const snitLaengde = (t) => { const s = saetninger(t).filter((x) => !/^[-*]\s/.te
 // Ingen nye tal. Et tal må kun forsvinde, hvis det allerede står i en tidligere sektion (6/11: Claude-artiklen
 // gentog "200,000 tokens ... 64 %" under "begrænsninger" - den gentagelse skal kunne fjernes).
 const sammeTal = (a, b, tidligere = '') => { const A = talMaengde(a), B = talMaengde(b), T = talMaengde(tidligere); return [...B].every((x) => A.has(x)) && [...A].every((x) => B.has(x) || T.has(x)); };
-const harNavn = (s, navne) => navne.some((n) => n && n.length > 2 && s.includes(n));
+// 9/11-2026: også et kendetegnende ord af navnet tæller (målt: "In Samson's breakdown" blev afvist, fordi kilden
+// hed "AI Samson"; "As Ramos found" ligeså). Generiske ord (Tech, News, Research ...) tæller ikke alene.
+const GENERISK = new Set(['tech', 'news', 'channel', 'official', 'media', 'labs', 'studio', 'group', 'research', 'report', 'reports', 'review', 'reviews', 'daily', 'show', 'podcast', 'academy', 'university', 'institute', 'foundation', 'global', 'digital', 'online', 'world', 'team', 'with', 'from', 'guide']);
+const navneOrd = (n) => String(n).split(/[\s/&,()-]+/).map((w) => w.replace(/['’]s$/, '')).filter((w) => w.length >= 4 && /^[A-Z0-9]/.test(w) && !GENERISK.has(w.toLowerCase()));
+const esc = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const harNavn = (s, navne) => navne.some((n) => n && n.length > 2 && (s.includes(n) || navneOrd(n).some((w) => new RegExp(`\\b${esc(w)}\\b`).test(s))));
 // Et tal skal have sin kilde i samme sætning ELLER i sætningen lige før i samme afsnit (5/11: med krav om samme
 // sætning blev "According to" stående - 7,5 pr. 1.000 ord mod techmediaarchs 3,1).
-const talSaetningerUdenKilde = (t, navne) => String(t || '').split(/\n\s*\n/).reduce((sum, afsnit) => {
+const udenKildeListe = (t, navne) => String(t || '').split(/\n\s*\n/).flatMap((afsnit) => {
   const ss = saetninger(afsnit);
-  return sum + ss.filter((s, i) => [...talMaengde(s)].some((x) => !/^(19|20)\d\d$/.test(x)) && !harNavn(s, navne) && !(i > 0 && harNavn(ss[i - 1], navne))).length;
-}, 0);
+  // 9/11: et listenummer ("3.") er ikke et tal, der skal have en kilde (målt: "3." blev afvist som tal uden kilde).
+  const talI = (s) => [...talMaengde(s.replace(/^\s*(\d{1,2}[.)]|[-*])\s+/, '').replace(/^\d{1,2}[.)]$/, ''))];
+  return ss.filter((s, i) => talI(s).some((x) => !/^(19|20)\d\d$/.test(x)) && !harNavn(s, navne) && !(i > 0 && harNavn(ss[i - 1], navne)));
+});
+const talSaetningerUdenKilde = (t, navne) => udenKildeListe(t, navne).length;
+// 9/11-2026: afvisningen siger nu PRÆCIS hvad der er galt (sætningen, tallene, ordene), så andet forsøg kan rette
+// netop det. Målt 9/11 på 4 artikler: 10 af 23 sektioner og 5 af 12 FAQ-svar afvist i første forsøg.
+const nyUdenKilde = (g, n, navne) => { const gl = new Set(udenKildeListe(g, navne)); return udenKildeListe(n, navne).find((s) => !gl.has(s)) || ''; };
+const talForskel = (a, b) => { const A = talMaengde(a), B = talMaengde(b); return `mangler ${[...A].filter((x) => !B.has(x)).join(', ') || '-'}; nye ${[...B].filter((x) => !A.has(x)).join(', ') || '-'}`; };
+const nyeAbsolutte = (g, n) => { const t = (x) => (String(x).toLowerCase().match(ABSOLUT) || []); const gl = t(g); return t(n).filter((w) => { const i = gl.indexOf(w); if (i >= 0) { gl.splice(i, 1); return false; } return true; }); };
 const antalAccording = (t) => (String(t).match(/\baccording to\b/gi) || []).length;
 // Forstærkende ord må ikke blive flere (6/11: FAQ-svar fik "consistently" og "mainly", der gjorde påstanden stærkere).
 const ABSOLUT = /\b(always|never|consistently|mainly|mostly|primarily|all|every|only|entirely|completely|fully|guarantees?|guaranteed|proves?|proven|certainly|definitely|any)\b/gi;
 const flereAbsolutte = (g, n) => (String(n).match(ABSOLUT) || []).length > (String(g).match(ABSOLUT) || []).length;
 
-export function holderSektion(gammel, ny, navne = [], tidligere = '') {
+// Afvisningsgrunden på engelsk til andet forsøg (modellens prompt er engelsk). Den danske grund står med i [ ].
+const GRUNDE_EN = [
+  [/^længere sætninger/, 'the average sentence got too long - keep the average at 17 words or less by splitting long sentences (9th-10th grade readers)'],
+  [/^et tal har mistet sin kilde/, 'a sentence with a number no longer names its source, and neither does the sentence right before it in the same paragraph - name the source in that sentence or the one before'],
+  [/^tal ændret/, 'numbers changed - keep every number exactly as in the original (see missing/new)'],
+  [/^nye navne/, 'you added names or proper nouns that are not in the original'],
+  [/^flere forstærkende/, 'you added intensifiers that make claims stronger - remove the new ones listed'],
+  [/^(flere faste kildevendinger|for mange "according to")/, 'too many fixed source phrases ("according to", "X notes/states/reports that") - most sentences need no source phrase; vary it naturally'],
+  [/^(for langt|længde)/, 'the text got too long - keep about the same length or a little shorter'],
+  [/^for meget fjernet/, 'too much was removed - keep every fact'],
+  [/^første person/, 'the first-person paragraphs (the owner\'s own words) were changed - keep them exactly'],
+  [/^(links|tabel) ændret/, 'links or tables changed - keep them character for character'],
+];
+const engelsk = (g) => `${(GRUNDE_EN.find(([re]) => re.test(g)) || [null, 'rejected by the check'])[1]} [${g}]`;
+
+// kendt (9/11): hele artiklen - et navn, der står andre steder i artiklen (fx "SEO" i titlen), er ikke opdigtet.
+export function holderSektion(gammel, ny, navne = [], tidligere = '', kendt = '') {
   const g = String(gammel), n = String(ny || '').trim();
   if (!n) return 'tomt svar';
   if (/(^|\n)#{1,6}\s/.test(n)) return 'overskrift i svaret';
   if (tabelLinjer(g) !== tabelLinjer(n)) return 'tabel ændret';
   if (linksAf(g) !== linksAf(n)) return 'links ændret';
-  if (!sammeTal(g, n, tidligere)) return 'tal ændret';
-  const gLav = g.toLowerCase();
+  if (!sammeTal(g, n, tidligere)) return `tal ændret (${talForskel(g, n)})`;
+  const gLav = `${g}\n${kendt}`.toLowerCase();
   const midt = n.replace(LINK_FULD, ' ').split(/(?<=[.!?:])\s+|\n/).flatMap((s) => s.replace(/^[\s*-]*/, '').split(/\s+/).slice(1));
   const nyeNavne = [...new Set(midt.map((w) => w.replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, '')).filter((w) => /^[A-Z]/.test(w) && !gLav.includes(w.toLowerCase().replace(/['’]s$/, ''))))];
   if (nyeNavne.length) return `nye navne: ${nyeNavne.slice(0, 5).join(', ')}`;
-  if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return 'et tal har mistet sin kilde';
+  if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return `et tal har mistet sin kilde: "${nyUdenKilde(g, n, navne).slice(0, 160)}"`;
   const lg = ordTal(g), ln = ordTal(n);
   if (ln > lg * 1.05 + 5) return `for langt (${ln} mod ${lg} ord)`;
   // 72 %: målt 5/11 blev sektioner 21-29 % kortere, når gentagelser røg ud. Tal og navne er låst ovenfor.
@@ -60,7 +89,7 @@ export function holderSektion(gammel, ny, navne = [], tidligere = '') {
   // 5/11: "According to X" blev byttet til "X notes that" (gaming-artiklen 3 -> 7). Faste kildevendinger i alt må ikke stige.
   const faste = (t) => (String(t).match(/\baccording to\b|\b(reports|notes|states|explains|highlights|emphasizes|points out) that\b/gi) || []).length;
   if (faste(n) > faste(g)) return `flere faste kildevendinger (${faste(n)} mod ${faste(g)})`;
-  if (flereAbsolutte(g, n)) return 'flere forstærkende ord (always/mainly/consistently ...)';
+  if (flereAbsolutte(g, n)) return `flere forstærkende ord (nye: ${nyeAbsolutte(g, n).join(', ')})`;
   const iPerson = (t) => (t.match(/\b(I|I'm|I've|my|me)\b/g) || []).length;
   if (iPerson(n) !== iPerson(g)) return 'første person ændret';
   return '';
@@ -69,22 +98,22 @@ export function holderSektion(gammel, ny, navne = [], tidligere = '') {
 // FAQ-svar (6/11-2026, Jacob: "det skal selvfølgelig rettes"): målt i Claude-artiklen startede 3 af 4 svar
 // med "According to Anthropic". Samme lås som brødteksten, plus: ingen links eller markdown, svaret må ikke
 // blive en liste, og "according to" højst én gang.
-export function holderFaq(gammel, ny, navne = [], spoergsmaal = '') {
+export function holderFaq(gammel, ny, navne = [], spoergsmaal = '', artikel = '') {
   const g = String(gammel), n = String(ny || '').trim();
   if (!n) return 'tomt svar';
   if (/\n|\[|\]\(|^#|^\s*[-*]\s|\|/.test(n)) return 'markdown eller linjeskift i svaret';
-  if (!sammeTal(g, n)) return 'tal ændret';
-  const kendt = `${g} ${spoergsmaal}`.toLowerCase();
+  if (!sammeTal(g, n)) return `tal ændret (${talForskel(g, n)})`;
+  const kendt = `${g} ${spoergsmaal} ${artikel}`.toLowerCase();
   const midt = n.split(/(?<=[.!?:])\s+/).flatMap((s) => s.split(/\s+/).slice(1));
   const nyeNavne = [...new Set(midt.map((w) => w.replace(/^[^A-Za-z0-9]+|[^A-Za-z0-9]+$/g, '')).filter((w) => /^[A-Z]/.test(w) && !kendt.includes(w.toLowerCase().replace(/['’]s$/, ''))))];
   if (nyeNavne.length) return `nye navne: ${nyeNavne.slice(0, 5).join(', ')}`;
-  if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return 'et tal har mistet sin kilde';
+  if (talSaetningerUdenKilde(n, navne) > talSaetningerUdenKilde(g, navne)) return `et tal har mistet sin kilde: "${nyUdenKilde(g, n, navne).slice(0, 160)}"`;
   const lg = ordTal(g), ln = ordTal(n);
   if (ln > lg * 1.1 + 4 || ln < lg * 0.7) return `længde ${ln} mod ${lg} ord`;
   if (antalAccording(n) > Math.min(1, antalAccording(g))) return `"according to" ${antalAccording(n)} gange`;
   const faste = (t) => (String(t).match(/\baccording to\b|\b(reports|notes|states|explains|highlights|emphasizes|points out) that\b/gi) || []).length;
-  if (faste(n) > faste(g)) return 'flere faste kildevendinger';
-  if (flereAbsolutte(g, n)) return 'flere forstærkende ord (always/mainly/consistently ...)';
+  if (faste(n) > faste(g)) return `flere faste kildevendinger (${faste(n)} mod ${faste(g)}: "according to", "X notes/states/reports that")`;
+  if (flereAbsolutte(g, n)) return `flere forstærkende ord (nye: ${nyeAbsolutte(g, n).join(', ')})`;
   return '';
 }
 
@@ -139,26 +168,58 @@ export async function flydende(genAI, hentModel, model, md, { spoergsmaal = '', 
     const r = await hentModel(genAI, { model, generationConfig: { temperature: 0.4, maxOutputTokens: 32768, responseMimeType: 'application/json', thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(prompt(kand, spoergsmaal, fq));
     svar = lasJsonListe(r.response.text());
   } catch (e) { log(`   ⚠️ naturligt sprog: intet svar (${String(e.message).split('\n')[0].slice(0, 120)}) - teksten uændret`); rap.accordingEfter = rap.accordingFoer; return { md, rap }; }
+  // 9/11-2026 (Jacob: "det skal selvfølgelig rettes ... rigtig sat op"): afviste sektioner og FAQ-svar får ÉT
+  // forsøg mere, hvor modellen får sin afviste udgave og den præcise grund tilbage. Samme kontrol bagefter.
+  // Målt 9/11: SEO-artiklen 0 af 6 sektioner + 0 af 3 FAQ (alle afvist), og 4 testartikler 13/23 + 7/12.
+  const svarFor = (liste, n) => String((Array.isArray(liste) ? liste : []).find((y) => y && y.n === n)?.tekst || '').trim();
+  const tjekSek = (d, ny) => holderSektion(d.tekst, ny, navne, s.dele.slice(0, d.i).map((x) => x.tekst).join('\n\n'), md);
+  const tjekFaq = (q, ny) => holderFaq(q.answer, ny, navne, q.question, md);
+  const nyeSek = new Map(), nyeFaq = new Map(), afviste = [];
+  kand.forEach((d, k) => {
+    const ny = svarFor(svar, k + 1);
+    if (!ny || ny === d.tekst) return;
+    const grund = tjekSek(d, ny);
+    if (grund) { afviste.push({ d, ny, grund }); log(`   ✗ naturligt sprog afvist (${grund}): ${d.overskrift.slice(0, 60) || 'indledning'}`); } else nyeSek.set(d, ny);
+  });
+  fq.forEach((q, j) => {
+    const ny = svarFor(svar, kand.length + j + 1).replace(/^["“]|["”]$/g, '');
+    if (!ny || ny === q.answer) return;
+    const grund = tjekFaq(q, ny);
+    if (grund) { afviste.push({ q, ny, grund }); log(`   ✗ FAQ-svar afvist (${grund}): ${q.question.slice(0, 60)}`); } else nyeFaq.set(q, ny);
+  });
+  rap.andetForsoeg = afviste.length; rap.reddet = 0;
+  if (afviste.length) {
+    const sk = afviste.filter((a) => a.d), fk = afviste.filter((a) => a.q);
+    try {
+      const p2 = `${prompt(sk.map((a) => a.d), spoergsmaal, fk.map((a) => a.q))}\n\nYOUR FIRST REWRITE OF THESE ITEMS WAS REJECTED BY AN AUTOMATIC CHECK. Rewrite each again from the original above. Fix EXACTLY the problem named, keep the improvements that were fine, and follow every rule above:\n${[...sk, ...fk].map((a, k) => `- Item ${k + 1}: ${engelsk(a.grund)}\n  Your rejected version: ${a.ny.slice(0, 2500)}`).join('\n')}`;
+      const r2 = await hentModel(genAI, { model, generationConfig: { temperature: 0.3, maxOutputTokens: 32768, responseMimeType: 'application/json', thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(p2);
+      const svar2 = lasJsonListe(r2.response.text());
+      sk.forEach((a, k) => {
+        const ny = svarFor(svar2, k + 1);
+        const grund = !ny || ny === a.d.tekst ? 'intet nyt svar' : tjekSek(a.d, ny);
+        if (grund) { log(`   ✗ andet forsøg afvist (${grund}): ${a.d.overskrift.slice(0, 60) || 'indledning'}`); return; }
+        nyeSek.set(a.d, ny); rap.reddet++;
+      });
+      fk.forEach((a, k) => {
+        const ny = svarFor(svar2, sk.length + k + 1).replace(/^["“]|["”]$/g, '');
+        const grund = !ny || ny === a.q.answer ? 'intet nyt svar' : tjekFaq(a.q, ny);
+        if (grund) { log(`   ✗ andet forsøg afvist (${grund}): ${a.q.question.slice(0, 60)}`); return; }
+        nyeFaq.set(a.q, ny); rap.reddet++;
+      });
+    } catch (e) { log(`   ⚠️ naturligt sprog, andet forsøg: intet svar (${String(e.message).split('\n')[0].slice(0, 120)})`); }
+  }
   let krop = s.krop;
   // Bagfra, så positionerne passer
   for (const d of [...kand].reverse()) {
-    const ny = String((Array.isArray(svar) ? svar : []).find((y) => y && y.n === kand.indexOf(d) + 1)?.tekst || '').trim();
-    if (!ny || ny === d.tekst) continue;
-    const tidligere = s.dele.slice(0, d.i).map((x) => x.tekst).join('\n\n');
-    const grund = holderSektion(d.tekst, ny, navne, tidligere);
-    if (grund) { rap.afvist++; log(`   ✗ naturligt sprog afvist (${grund}): ${d.overskrift.slice(0, 60) || 'indledning'}`); continue; }
+    if (!nyeSek.has(d)) continue;
+    const ny = nyeSek.get(d);
     const gammelDel = krop.slice(d.start, d.slut);
     const foran = gammelDel.match(/^\s*/)[0], bagved = gammelDel.match(/\s*$/)[0];
     krop = krop.slice(0, d.start) + foran + ny + bagved + krop.slice(d.slut);
-    rap.omskrevet++;
   }
-  fq.forEach((q, j) => {
-    const ny = String((Array.isArray(svar) ? svar : []).find((y) => y && y.n === kand.length + j + 1)?.tekst || '').trim().replace(/^["“]|["”]$/g, '');
-    if (!ny || ny === q.answer) return;
-    const grund = holderFaq(q.answer, ny, navne, q.question);
-    if (grund) { rap.faqAfvist++; log(`   ✗ FAQ-svar afvist (${grund}): ${q.question.slice(0, 60)}`); return; }
-    q.answer = ny.replace(/"/g, "'"); rap.faqOmskrevet++; // som robottens egen FAQ-rensning: ingen dobbelte anførselstegn
-  });
+  rap.omskrevet = nyeSek.size; rap.afvist = afviste.filter((a) => a.d && !nyeSek.has(a.d)).length;
+  for (const [q, ny] of nyeFaq) q.answer = ny.replace(/"/g, "'"); // som robottens egen FAQ-rensning: ingen dobbelte anførselstegn
+  rap.faqOmskrevet = nyeFaq.size; rap.faqAfvist = afviste.filter((a) => a.q && !nyeFaq.has(a.q)).length;
   rap.faqAccordingEfter = fq.reduce((a, q) => a + antalAccording(q.answer), 0);
   const ud = krop + s.kilder;
   rap.accordingEfter = (ud.match(/\baccording to\b/gi) || []).length;

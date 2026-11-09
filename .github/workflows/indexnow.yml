@@ -52,8 +52,12 @@ jobs:
           # Filen findes først, når noget er blevet sendt. Uden dette tjek
           # fejler `git add` på den allerførste kørsel og gør jobbet rødt,
           # selv om intet er gået galt.
-          if [ -f indexnow-sendt.json ]; then git add indexnow-sendt.json; fi
-          if git commit -m "IndexNow: record submitted URLs"; then
+          # 9/11-2026: via .github/commit.sh - filen læses ikke af sitet, så commit'et får [CF-Pages-Skip]
+          # og Cloudflare bygger ikke sitet forgæves (34 sådanne commits 10/10-9/11).
+          KODE=1
+          if [ -f indexnow-sendt.json ]; then KODE=0; bash .github/commit.sh "IndexNow: record submitted URLs" indexnow-sendt.json || KODE=$?; fi
+          if [ "$KODE" -gt 1 ]; then exit "$KODE"; fi
+          if [ "$KODE" -eq 0 ]; then
             git pull --rebase origin main
             git push
           else

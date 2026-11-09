@@ -135,8 +135,12 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          if git commit -m "Automatisk tilføjet ny video"; then
+          # 9/11-2026: commit via .github/commit.sh - en kørsel, der kun skrev i robottens logbog, får
+          # [CF-Pages-Skip], så Cloudflare ikke bygger sitet forgæves (målt: 78 % af robottens commits).
+          # Kode: 0 = committet, 1 = intet at gemme, andet = fejl (kørslen bliver rød).
+          KODE=0; bash .github/commit.sh "Automatisk tilføjet ny video" || KODE=$?
+          if [ "$KODE" -gt 1 ]; then exit "$KODE"; fi
+          if [ "$KODE" -eq 0 ]; then
             # Andre kan have pushet, mens robotten kørte (op til en time).
             # Målt 15/9: kørsel #522 skrev en artikel, men push blev afvist og
             # fejlen skjult af "|| echo" — artiklen gik tabt med et grønt flueben.

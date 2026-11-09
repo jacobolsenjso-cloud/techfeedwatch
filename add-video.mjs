@@ -1411,12 +1411,12 @@ ${content}`);
             // 7/11 (Jacob: "tænkningen sættes til lav"): målt ca. 8.000 tænke-tokens pr. forsøg - lav tænkning som i flyd.
             const r = await hentModel(genAI, { model: GEMINI_MODEL, generationConfig: { maxOutputTokens: 8192, temperature: 0.5, thinkingConfig: { thinkingLevel: 'low' } } }).generateContent(pp);
             sidsteSvar = r.response.text();
-            mt = tjekMinHoldning(sidsteSvar, content, seneste);
+            mt = tjekMinHoldning(sidsteSvar, content, seneste, { hjerne });
             if (!mt.ok) console.log(`   stemme forsøg ${forsoeg + 1} kasseret: ${mt.grund}`);
           }
           // 27/10 (Jacob valgte B): 3 afslag for genbrugt formulering -> fjern kun de sætninger, ikke hele stemmen
           if (!mt.ok && sidsteSvar && /genbrugt formulering/.test(mt.grund)) {
-            const renset = tjekMinHoldning(sidsteSvar, content, seneste, { rens: true });
+            const renset = tjekMinHoldning(sidsteSvar, content, seneste, { rens: true, hjerne });
             if (renset.ok) { mt = renset; console.log(`   stemme: ${renset.renset} genbrugt(e) sætning(er) fjernet - resten bruges`); }
           }
           if (mt.ok) for (const d of mt.dele) content = fletIndHoldning(content, d.sektion, d.tekst, d.efter);

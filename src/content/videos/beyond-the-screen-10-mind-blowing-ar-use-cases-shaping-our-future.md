@@ -89,7 +89,7 @@ Teofilo shows how accelerometers (sensors that track speed and tilt) and gyrosco
 
 He illustrates modern use cases through mobile phone camera filters, retail furniture previews, and 3D models for students. Teofilo also identifies weak battery life and high device costs as major technical barriers.
 
-While I have watched headsets help individuals tackle anxiety by creating a whole new view of reality, simple everyday functions on a mobile screen are just as promising. Giving people factual 3D perspectives to learn from turns a regular handset into a genuinely educational companion.
+Headsets can help people tackle anxiety by creating a whole new view of reality, but I think simple everyday functions on a mobile screen are just as promising. Giving people factual 3D perspectives to learn from turns a regular handset into a genuinely educational companion.
 
 ## Sources
 
