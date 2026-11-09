@@ -346,5 +346,30 @@
   ],
   "usd": 0.0037,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-09T06:55:11.619Z",
+  "artikler": [
+   {
+    "slug": "google-unleashes-notebooklm-the-autonomous-ai-that-just-made-your",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 8,
+    "fund": []
+   },
+   {
+    "slug": "quantum-computing-separating-the-billions-in-hype-from-the-hard",
+    "tjekket": 7,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.0052,
+  "soegninger": 0
  }
 ]
