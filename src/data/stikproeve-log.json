@@ -371,5 +371,30 @@
   ],
   "usd": 0.0052,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-10T06:50:34.330Z",
+  "artikler": [
+   {
+    "slug": "gemini-s-hidden-arsenal-7-next-level-hacks-to-supercharge-your-ai",
+    "tjekket": 2,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 0,
+    "usikker": 2,
+    "fund": []
+   },
+   {
+    "slug": "how-do-you-effectively-use-search-engine-optimization",
+    "tjekket": 9,
+    "belagt": 4,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 4,
+    "fund": []
+   }
+  ],
+  "usd": 0.0035,
+  "soegninger": 0
  }
 ]

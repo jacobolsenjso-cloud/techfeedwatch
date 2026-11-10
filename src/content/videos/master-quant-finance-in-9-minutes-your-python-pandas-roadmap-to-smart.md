@@ -1,97 +1,117 @@
 ---
-title: "How to Use yfinance in Python for Quant Investing"
-targetQuestion: "how to use yfinance in python"
-seoTitled: true
-youtubeId: "b9RgHa1CnH4"
-channelTitle: "Daniel Boctor"
-channelId: "UCWglcpI-xTAXb_QYecQ2O4g"
-publishedAt: "2023-08-17T13:00:28Z"
+title: "Using yfinance in Python and How It Changes Market Data"
+youtubeId: "oWmWFGP9lOg"
+channelTitle: "Vincent Codes Finance"
+channelId: "UCuNrwdpvF1LBGJ2cNL5b68w"
+publishedAt: "2025-03-07T14:00:31Z"
 date: "2026-07-11"
-updated: "2026-08-18"
+updated: "2026-11-10"
 tags:
   - "Investing & Trading"
   - "Coding"
-  - "Business & Money"
-summary: "Computational finance, driven by Python's powerful libraries, is redefining how financial data is analyzed and understood. It translates complex financial concepts like risk, return, and portfolio performance into practical, reproducible code, moving beyond theoretical models to enable data-driven investment decisions. This analytical shift empowers professionals and individual investors alike to quantify market dynamics and refine wealth management strategies. The integration of programming skills with financial acumen is now essential for staying competitive in evolving financial markets."
-metaDescription: "Computational finance, driven by Python's powerful libraries, is redefining how financial data is analyzed and understood."
-duration: "9:01"
-viewCount: 252714
-viewsUpdated: "2026-11-07"
+summary: "To use yfinance in Python, install the package with pip and import it to query Yahoo Finance market data directly. The open-source library allows developers to download historical stock prices, balance sheets, and live quotes with minimal code setup. Because the tool scrapes public endpoints without official backing from Yahoo, projects must remain non-commercial and respect endpoint stability limits."
+metaDescription: "Learn how to use yfinance in Python to download historical stock prices, fetch company balance sheets, and stream market quotes for personal research."
+targetQuestion: "how to use yfinance in python"
+duration: "11:04"
+viewCount: 21517
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
-revised: true
+recipe: 3
+rewrittenAt: "2026-11-10"
 faqs:
-  - question: "What is quant finance with Python?"
-    answer: "Quant finance with Python uses programming and computational tools, primarily Python and its libraries, to analyze financial data, manage risk, and make investment decisions. It allows for the translation of complex financial concepts into reproducible code for data-driven insights."
-  - question: "Which Python libraries are commonly used in quantitative finance?"
-    answer: "Key libraries include NumPy for numerical operations, Pandas for data structuring and manipulation, and Matplotlib for data visualization. Libraries like yFinance are also used for fetching financial market data."
-  - question: "How are returns calculated in Python for quantitative finance?"
-    answer: "Single-period returns are found by comparing current and previous prices, often using a '1+R' format. For multi-period returns, geometric linking is used, which involves multiplying '1+R' values for each period, rather than simply adding returns, to accurately account for compounding and variance drag."
-  - question: "What is a wealth index and why is it used?"
-    answer: "A wealth index shows the cumulative growth of an initial investment, typically one dollar, over time. It is created by taking the cumulative product of '1+R' for each period and is useful for accurately comparing the performance of different securities from a common starting point."
-rewrittenAt: "2026-08-18"
+  - question: "What is yfinance library in python?"
+    answer: "The yfinance library is an open-source Python tool that provides a structured way to fetch publicly available data from Yahoo Finance endpoints. The Python Package Index distributes it under the Apache Software License."
+  - question: "What does yfinance do in python?"
+    answer: "It downloads historical market figures, balance sheets, and insider trading records directly into Python. The official yfinance documentation adds that it provides WebSocket classes for streaming quotes alongside screening tools to filter market equities."
+  - question: "Is yfinance real time?"
+    answer: "It can provide real-time data through dedicated streaming classes, but standard ticker calls pull delayed snapshots or historical figures. The official yfinance documentation lists WebSocket and AsyncWebSocket modules specifically for live price streaming."
+keyFacts:
+  - text: "Users install the library from PyPI using the terminal command `pip install yfinance` and import it into scripts using `import yfinance as yf`."
+    source: "Official yfinance documentation hosted on GitHub Pages"
+    url: "https://ranaroussi.github.io/yfinance/"
+  - text: "Yfinance is an open-source package distributed under the Apache Software License that provides a Pythonic wrapper around Yahoo Finance's publicly available web endpoints."
+    source: "Python Package Index (PyPI)"
+    url: "https://pypi.org/project/yfinance/"
+  - text: "Yfinance is not affiliated, endorsed, or vetted by Yahoo, Inc., and the underlying Yahoo Finance endpoints are restricted to personal, non-commercial research and educational use."
+    source: "Python Package Index (PyPI)"
+    url: "https://pypi.org/project/yfinance/"
 ---
 
-Quantitative finance with Python involves using programming and computational tools to analyze financial markets, manage risk, and inform investment decisions. Python, with its extensive libraries, provides a flexible and powerful environment for handling large datasets, performing complex calculations, and visualizing financial concepts. This approach moves financial analysis from theoretical models to practical, data-driven applications.
+You can use yfinance in Python by installing the open-source library (free code shared publicly). Next, you import it to request financial figures from public [Yahoo Finance](https://finance.yahoo.com/) endpoints (web addresses where software sends data requests).
 
-## The Foundation of Quant Finance with Python
+A developer writes simple ticker commands to download decades of stock prices, balance sheet metrics, and live quotes. Downloaded records load directly into data frames (two-dimensional tables of rows and columns). The tool bridges basic programming environments with financial market data for personal testing and analysis.
 
-Building a quantitative finance system in Python starts with essential libraries.
+## How do you install and set up yfinance?
+You install yfinance by typing `pip install yfinance` into your terminal, then import it with `import yfinance as yf`.
 
-- NumPy provides numerical computing capabilities
-- Pandas, built on NumPy, offers data structures like Series and DataFrames for organizing and manipulating financial data.
-- Matplotlib is used for creating visualizations.
+The official yfinance documentation on GitHub Pages notes that it installs directly from the [Python](https://www.python.org/) Package Index. Users run the pip command in their command line shell or inside a virtual environment. This simple setup avoids complex manual API key (unique digital access codes used to authenticate data requests) registrations or paid subscription accounts.
 
-Data acquisition is a key first step. Financial data can be imported from local files or remote sources using functions like `read_csv`. For live or historical market data, libraries such as `yFinance` can fetch information directly into a Pandas DataFrame.
+The Python Package Index lists yfinance as an open-source package under the Apache Software License. Developers standardise on the abbreviation `yf` to keep their script commands short and readable.
 
-Pandas offers two primary data structures. A Series is one-dimensional, suitable for data from a single asset like a stock. A DataFrame is two-dimensional, making it ideal for storing data from multiple assets, such as a portfolio of stocks.
+Isolating dependencies (supporting code libraries) prevents version conflicts from corrupting other tools on your machine. When developers build automated tools for [financial data analysis](/video/how-python-powers-wall-street-beyond-basic-financial-data-analysis), dedicated virtual environments protect system stability across updates.
 
-When working with real-world data, missing values (NA values) are common, especially when comparing assets with different start dates. These can be removed using methods like `dropna` to ensure clean data for analysis.
+Keeping software environments cleanly separated is just sound practice whenever you build digital tools. I am not a trained programmer myself, but creating isolated spaces prevents unexpected package collisions that disrupt the whole system. Taking an extra minute to lock down your configuration upfront prevents unneeded headaches later.
 
-Dataframes also have an index, often representing dates, and columns, which typically represent different assets. These can be accessed and manipulated using `loc` for label-based indexing or `iloc` for integer-based indexing.
+You can test your installation immediately by running a single verification line in your Python console. Checking the installed package version confirms that network firewalls allow external package downloads. Once the import command completes without producing an error message, your local machine can query external financial endpoints.
 
-## Calculating and Interpreting Returns
+## Download historical stock prices for single and multiple tickers
+You download historical stock prices with the download function. You pass it a ticker list, or query the history method on a Ticker object.
 
-A fundamental aspect of financial analysis is calculating returns. A common way to find a single-period return is to subtract the initial price from the final price, then divide by the initial price. This gives a decimal value that can be converted to a percentage.
+The official yfinance documentation on GitHub Pages explains that market queries default to dividend-adjusted values. This happens through the auto_adjust=True setting. It automatically recalculates historical open, high, low, and closing values. These updates account for share splits and cash distributions. Adjusted numbers give analysts an accurate view of total returns over multi-year horizons.
 
-In computational finance, a slightly modified "1+R" format is often used. This involves dividing the final price by the initial price, then subtracting one. This yields the same return value and is helpful for subsequent calculations.
+If you need unadjusted historical figures, set auto_adjust=False in your download query. Leaving out recalculations preserves the raw closing price printed on the exchange tape during that session. You might model backtested (simulated against historical data) investment growth. Or you might examine historical option strikes (the set prices at which options contracts can be exercised).
 
-For multi-period returns, simply adding single-period returns together is incorrect due to a phenomenon called variance drag. The correct method for multi-period returns is geometric linking.
+Downloading records for dozens of securities requires passing a symbol list into a single batch function. The library arranges downloaded data into multi-level tables. These tables contain daily open, high, low, close, and volume columns. You can define calendar ranges with start and end date strings formatted in year-month-day order.
 
-This involves adding one to each single-period return, multiplying all these values together, and then subtracting one. This process calculates the compound or geometric return, which reflects the true growth over time.
+- Specify the target ticker symbols as text strings.
+- Set custom calendar dates to restrict the historical evaluation window.
+- Configure the auto adjust parameter to select raw or dividend-adjusted market prices.
+- Run the download call to load structured trading rows into your workspace.
 
-Pandas offers a `percent_change` method to quickly convert a price series into a return series. It is important to note that this process will always result in the loss of one data point, as a return cannot be calculated for the very first period without a prior closing price.
+An analyst can calculate moving averages (average prices over specific time windows). They can backtest momentum filters (rules that trade based on price trends tested on historical data). They can also measure drawdowns (peak-to-trough investment losses) across market crashes with five lines of code.
 
-## Quantifying Risk and Performance
+Trading traditional stocks taught me that staring at raw ticker swings often clouds objective judgment. Having straightforward price histories laid out neatly lets you evaluate long-term trends calmly rather than reacting to daily market noise.
 
-Beyond returns, understanding risk is essential. Volatility, often measured by standard deviation, quantifies how much an asset's price fluctuates.
+## What company fundamentals and financials can you extract?
+You extract company fundamentals by creating a Ticker instance. Then, query its built-in properties for balance sheets, cash flows, and corporate actions. Calling balance sheet, income statement, or cashflow returns multi-period financial tables. These tables show revenue trends, operating expenses, asset valuations, and debt levels over consecutive quarters.
 
-Standard deviation is the square root of variance. Pandas DataFrames have a `.std()` method that simplifies this calculation.
+The official yfinance documentation on GitHub Pages notes that the library includes Screener and EquityQuery classes. These search classes scan hundreds of equities (company stocks). Developers can filter them by market capitalization (the total market value of a company's shares). They can also filter by valuation ratios (metrics comparing share prices to financial performance).
 
-For meaningful comparison, returns and volatility are typically annualized. If a single monthly return is known, it can be annualized by raising it to the 12th power, representing a compound return over a 12-month period.
+The Python Package Index describes yfinance as a wrapper around Yahoo Finance's public web endpoints. The underlying endpoints are restricted to personal, non-commercial research and educational use. yfinance is not affiliated, endorsed, or vetted by Yahoo, Inc.
 
-For a series of returns, the overall compound return for the entire sample is calculated first. Then, to find the equivalent monthly return, this compound growth is raised to the power of one divided by the total number of periods.
+According to the official documentation, the library also provides WebSocket and AsyncWebSocket classes for live streaming. These programming tools create continuous connections for live data transfer. Applications receive live market quotes rather than waiting on delayed page scrapes. When evaluating valuation metrics alongside [alternative data APIs](/video/the-algorithmic-edge-deconstructing-the-apis-powering-modern), fundamental indicators confirm operational health.
 
-This monthly return is then raised to the power of the number of periods per year (e.g., 12 for monthly data) to get the annualized return. Annualized volatility is simpler to calculate. It involves multiplying the per-period volatility by the square root of the number of periods per year.
+- Multi-year financial statements, including balance sheets and cash flow disclosures.
+- Live market quote streams through dedicated WebSocket and AsyncWebSocket modules.
+- Insider trade reports and major institutional shareholder ownership stakes.
+- Security screening tools that sort equities across market sectors and industries.
 
-A key risk-adjusted performance measure is the Sharpe Ratio. The raw Sharpe Ratio is calculated by scaling annualized returns by annualized volatility. A more complete Sharpe Ratio calculation would also incorporate a risk-free rate, such as that from Treasury bills, but the raw version provides a useful initial comparison.
+Accessing fundamental tables in code helps analysts build automated scoring models. You can compare price-to-earnings metrics (ratios comparing share price to earnings per share) across rivals. This comparison runs inside a single execution loop (a programming routine that automatically repeats tasks across a list).
 
-## Visualizing Financial Data and Drawdowns
+## Legal restrictions and technical limits of Yahoo Finance data
+Using yfinance carries strict non-commercial terms and lacks official customer support. It also faces constant risks of rate limits or service disruptions.
 
-Visualizing financial data helps in understanding trends and performance. Matplotlib can plot price series, but raw price plots often do not allow for easy comparison between assets starting at different points. To address this, a "wealth index" can be created.
+Commercial software products and paid quantitative hedge funds cannot legally deploy this library as their core market feed.
 
-This involves adding one to all single-period returns and then calculating the cumulative product. This shows the running product at each successive timestamp, effectively illustrating the growth of one dollar invested in each security.
+Because yfinance parses publicly accessible web endpoints, any layout or backend change made by Yahoo can break the library instantly. Developers frequently experience temporary parsing failures when website architects alter internal table formats.
 
-This provides an accurate visual comparison of performance. The wealth index typically starts with the first day's return, so a static starting value of one can be prepended to represent the initial investment.
+Relying on scraped public channels is always a fragile route because web architectures shift constantly without prior warning. Whenever I build automated helpers, I treat external feeds cautiously and cross-check the underlying numbers elsewhere.
 
-Drawdowns are another important metric for risk assessment. A drawdown is the return from a previous peak to the current price, indicating how much an investment has fallen from its highest point. To calculate drawdowns, the wealth index is used in conjunction with previous peaks.
+Frequent querying from an automated script will trigger rate limits from host servers. Sending hundreds of rapid requests causes Yahoo servers to return empty data or block your IP address temporarily.
 
-The cumulative maximum (`.cummax()`) function identifies the highest data point on or before each respective time step. Drawdowns are then calculated as the difference between the wealth index and these previous peaks, scaled by the previous peaks. A key statistic derived from drawdowns is the maximum drawdown, which is the largest percentage drop from a peak to a trough.
+Responsible coders add delays between successive ticker queries and cache downloaded data to local disk storage. If your system requires guaranteed uptime and microsecond execution, you must pay for a licensed commercial market data provider.
 
-This can be found by taking the minimum value of the drawdown series. The date associated with this maximum drawdown can also be identified. Plotting drawdowns with annotations for the maximum drawdown helps visualize periods of significant loss.
+## Vincent Codes Finance demonstrates uv setup and historical price downloads
+YouTube creator [Vincent Codes Finance](https://vincent.codes.finance/) demonstrates project environment creation with uv. Vincent introduces himself as a finance professor at HEC Montréal. He has spent 10 years using Python for financial data analysis. Instead of relying on standard pip, Vincent uses the uv tool to initialize his project environment with uv init.
 
-## Practical Applications and Continued Learning
+Vincent shows that Yahoo Finance provides intraday pricing down to a 1-minute frequency. According to [Vincent Codes Finance](https://github.com/Vincent-Codes-Finance), Yahoo limits these 1-minute intraday queries to a week at a time. He adds that the history only goes back 30 days.
 
-The foundational techniques of data acquisition, return calculation, risk assessment, and visualization in Python form the bedrock for more advanced quantitative finance applications. These include stochastic modeling, which involves using random variables to model financial markets, and portfolio insurance, which aims to protect portfolio value.
+Vincent Codes Finance also shows how to inspect mutual funds and ETFs using the SPY ETF as his primary example. ETFs are exchange-traded funds, which hold collections of assets and trade on stock exchanges like individual shares. Vincent Codes Finance notes that [Apple](https://www.apple.com/) makes up almost 7% of assets under management in the SPY ETF. When inspecting institutional ownership for Apple, he points out that Vanguard Group holds almost 10% of the company's shares.
 
-Other areas include asset pricing models, which determine the fair value of assets, and factor regressions, which identify drivers of asset returns. Proficiency in these computational methods is increasingly essential for financial professionals and individual investors seeking to make data-driven decisions in dynamic markets.
+## Sources
+
+- [yfinance documentation &#8212; yfinance](https://ranaroussi.github.io/yfinance/) — github.io
+- [yfinance · PyPI](https://pypi.org/project/yfinance/) — pypi.org
+- [GitHub - ranaroussi/yfinance: Download market data from Yahoo! Finance's API · GitHub](https://github.com/ranaroussi/yfinance) — github.com
+- [Scrape Financial Data from Yahoo! Finance with Python](https://www.youtube.com/watch?v=oWmWFGP9lOg) — Vincent Codes Finance on YouTube
