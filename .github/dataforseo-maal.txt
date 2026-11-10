@@ -1,0 +1,2 @@
+Udløser workflowet "DataForSEO-maaling" (.github/workflows/dataforseo-maaling.yml), når filen ændres.
+Første måling: 10/11-2026 (Jacobs ja til ca. $0,07).
