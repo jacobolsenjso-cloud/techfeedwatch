@@ -75,7 +75,7 @@ Spatial position tracking makes extended productivity feasible. Simple head-worn
 2. **Steady Mode:** Software dampens movement so the screen smoothly follows head turns like a gimbal attached to your head.
 3. **Pinned Screen Mode:** The virtual screen anchors to a fixed spatial coordinate, allowing users to set it in one place, look around at physical surroundings, and look back with the display locked in place.
 
-Spatial stabilization relies on internal sensors that process motion in real time. Understanding [how SLAM anchors augmented reality objects](/video/ar-s-invisible-anchors-the-precision-engineering-keeping-digital) illuminates how position tracking locks digital overlays to physical rooms.
+Spatial stabilization relies on internal sensors that process motion in real time. Understanding [how SLAM anchors augmented reality objects](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital/) illuminates how position tracking locks digital overlays to physical rooms.
 
 Audio hardware plays an equally critical role in spatial immersion. Integrated acoustic designs use Bang & Olufsen co-tuned racetrack quad speakers built directly into the frame arms. A 5dB boost in low-frequency sensitivity adds a deeper, more intense bass response compared to standard acoustic drivers.
 

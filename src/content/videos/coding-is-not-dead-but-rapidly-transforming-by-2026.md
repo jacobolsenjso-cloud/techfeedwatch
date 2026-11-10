@@ -64,7 +64,7 @@ The demand for higher-level system design and architectural expertise increases,
 
 The rise of AI coding agents shifts the focus from "vibe coding," or intuitive, unstructured development, towards more structured, spec-driven approaches. Developers are increasingly pushed to define clear requirements and specifications for AI to act upon, fundamentally changing the development workflow.
 
-This is highlighted in discussions around how [AI coding agents change vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) into spec-driven development. The developer community, including those learning web development or programming for beginners, must adapt to these new methodologies. Skills like collaboration, ethical considerations in AI usage, and understanding the security implications of AI-generated code are also becoming indispensable.
+This is highlighted in discussions around how [AI coding agents change vibe coding](/video/how-coding-agents-work-and-why-developers-use-them/) into spec-driven development. The developer community, including those learning web development or programming for beginners, must adapt to these new methodologies. Skills like collaboration, ethical considerations in AI usage, and understanding the security implications of AI-generated code are also becoming indispensable.
 
 ## Preparing for a future of human and AI collaboration
 

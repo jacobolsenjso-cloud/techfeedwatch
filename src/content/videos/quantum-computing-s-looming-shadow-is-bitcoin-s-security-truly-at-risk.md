@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-18"
 ---
 
-[Quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) presents a theoretical future threat to the security of Bitcoin and other blockchain networks. This risk primarily targets the cryptographic digital signatures that prove ownership and authorize transactions, rather than the underlying encryption of data or the mining process itself.
+[Quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale/) presents a theoretical future threat to the security of Bitcoin and other blockchain networks. This risk primarily targets the cryptographic digital signatures that prove ownership and authorize transactions, rather than the underlying encryption of data or the mining process itself.
 
 While a powerful quantum computer capable of breaking current cryptography is not an immediate concern, understanding this distinction is key to assessing the challenge.
 
@@ -39,7 +39,7 @@ While a powerful quantum computer capable of breaking current cryptography is no
 
 The concept of a cryptographically relevant quantum computer, or CRQC, describes a machine powerful enough to threaten existing cryptographic keys. Such a computer would need to be fault-tolerant and error-corrected, running complex algorithms at a scale far beyond what is currently available.
 
-Many headlines about [quantum computing](/video/the-best-way-to-invest-in-quantum-computing-today/) advancements refer to physical qubits, which are raw and prone to errors. Breaking crypto requires logical qubits, which are reliable and built from many physical qubits with error correction.
+Many headlines about [quantum computing](/video/do-we-know-what-quantum-computers-are-used-for/) advancements refer to physical qubits, which are raw and prone to errors. Breaking crypto requires logical qubits, which are reliable and built from many physical qubits with error correction.
 
 Current public roadmaps for quantum computing focus on making system performance reliable, not on cracking cryptographic keys. For example, IBM's roadmap discusses hundreds of reliable qubits, which is impressive engineering. However, it is still far from the thousands of accurate, stable qubits needed for practical cryptanalysis.
 

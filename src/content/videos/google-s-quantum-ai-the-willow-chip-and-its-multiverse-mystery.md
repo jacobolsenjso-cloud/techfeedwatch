@@ -53,7 +53,7 @@ Quantum computers use qubits instead of classical bits. A classical bit can be e
 
 A qubit can exist as both 0 and 1 simultaneously. This state is called superposition. It allows a quantum system to represent many possibilities at the same time.
 
-The true power of [quantum computing](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer/) emerges when qubits become entangled. Entanglement means that the state of one qubit instantly affects the state of another, no matter the distance between them.
+The true power of [quantum computing](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) emerges when qubits become entangled. Entanglement means that the state of one qubit instantly affects the state of another, no matter the distance between them.
 
 When qubits are entangled, the system's computational power grows exponentially. With over 100 qubits, like those in Willow, the number of possible states becomes astronomically large. This number can exceed the total number of atoms in the observable universe.
 

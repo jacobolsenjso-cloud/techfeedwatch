@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-[Quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) is a fundamentally new way of processing information, moving beyond the binary logic of zeros and ones used by classical computers. Instead, it harnesses the principles of quantum mechanics, allowing it to perform certain calculations in significantly fewer steps.
+[Quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale/) is a fundamentally new way of processing information, moving beyond the binary logic of zeros and ones used by classical computers. Instead, it harnesses the principles of quantum mechanics, allowing it to perform certain calculations in significantly fewer steps.
 
 This power comes from its ability to explore multiple computational paths simultaneously, a concept often likened to calculations unfolding across parallel universes.
 
@@ -41,7 +41,7 @@ This unique property means that a quantum system isn't limited to a single state
 
 Consider a simple analogy: imagine a very long cabinet with 1 million drawers, and you've hidden an item in one of them. A classical approach would require you to open, on average, half a million drawers to find the item.
 
-A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how [quantum computing](/video/quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality/) gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
+A quantum algorithm, leveraging superposition, could potentially find that item in just 1,000 steps. This dramatic speedup illustrates how [quantum computing](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) gains an advantage by effectively performing calculations across these "parallel worlds" of possibility.
 
 ## How Quantum Computers Process Information
 

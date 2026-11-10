@@ -120,7 +120,7 @@ Accepting that defensive barriers can crack is simply realistic when dealing wit
 
 Supply chain dependencies (relying on outside partners) represent another critical focal point. Robertson cites major software attacks against software providers SolarWinds and MOVEit. He warns that "your security is only as strong as the partners that you trust."
 
-Robertson notes that the full framework is available for free at nist.gov. There, teams can review implementation examples to [apply the cybersecurity framework](/video/nist-csf-2-0-explained-for-small-businesses) directly to their operations.
+Robertson notes that the full framework is available for free at nist.gov. There, teams can review implementation examples to apply the cybersecurity framework directly to their operations.
 
 ## Sources
 

@@ -83,7 +83,7 @@ Software compatibility has historically presented hurdles for teams outside Goog
 
 This software lets developers run PyTorch programs natively on TPUs using standard Python syntax. That update removed the requirement for custom code rewrites, enabling rapid testing.
 
-Enterprises choose [Google Cloud TPUs](/video/google-cloud-s-ai-play-betting-on-tpus-to-reshape-the-compute) when they need to process enormous batches of structured training data reliably.
+Enterprises choose Google Cloud TPUs when they need to process enormous batches of structured training data reliably.
 
 ## Nvidia GPUs remain preferable for custom code and prototyping
 Nvidia GPUs remain preferable when developers need broad software compatibility, custom hardware operations, or rapid prototyping cycles (early product testing).

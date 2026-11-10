@@ -59,7 +59,7 @@ For example, after "placing" a lamp in their living room via AR, an AI system co
 
 Companies specializing in these solutions, such as Vizbl, assist brands and retailers in converting traditional static product pages into interactive shopping experiences across diverse sectors. Their work spans categories like furniture, lighting, rugs, flooring, wall art, fashion, jewelry, and eyewear, demonstrating the wide applicability of these technologies.
 
-The adoption of [augmented reality on Android with ARCore](/video/android-augmented-reality-how-people-use-arcore-on-mobile-devices) showcases how widely accessible these immersive tools are becoming for everyday consumers. Understanding Augmented Reality Uses Computer Vision to Layer Digital Objects provides insight into the underlying technology enabling such sophisticated interactions.
+The adoption of [augmented reality on Android with ARCore](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital/) showcases how widely accessible these immersive tools are becoming for everyday consumers. Understanding Augmented Reality Uses Computer Vision to Layer Digital Objects provides insight into the underlying technology enabling such sophisticated interactions.
 
 ## Why Augmented Reality Is Essential for Modern Retailers
 

@@ -60,7 +60,7 @@ For example, imagine an AI agent tasked with managing cloud infrastructure. Init
 
 If this agent then spawns a sub-agent to optimize a database, that sub-agent might gain temporary raised access to database configurations. If exploited, this chain of spawned agents and inherited permissions could lead to broader system compromise than the initial agent’s access would suggest.
 
-This dynamic also illustrates "Why least privilege breaks down with autonomous agents" and highlights the need for a more granular, dynamic authorization framework specifically designed for agent-to-agent interactions. Understanding [how autonomous AI agents work](/video/beyond-copilots-how-ai-is-building-self-improving-companies) through recursive loops can shed light on these complex interactions.
+This dynamic also illustrates "Why least privilege breaks down with autonomous agents" and highlights the need for a more granular, dynamic authorization framework specifically designed for agent-to-agent interactions. Understanding [how autonomous AI agents work](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) through recursive loops can shed light on these complex interactions.
 
 ## Real Operational Threats and Unconventional Data Exfiltration
 

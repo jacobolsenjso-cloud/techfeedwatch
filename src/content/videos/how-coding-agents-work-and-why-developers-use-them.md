@@ -64,7 +64,7 @@ This dynamic drastically alters the economics of maintaining forks. Historically
 
 Graphic applications like MyPaint avoid adding copy-and-paste selection tools by design, while utilities like OBS, [KeePass](https://keepass.info/), and SpeedCrunch adhere to tight architectural roadmaps. Forking these repositories meant manually syncing upstream changes, reviewing patch rejections, and repairing broken interfaces. Coding agents make continuous local maintenance viable, lowering the operational tax of running bespoke software forks indefinitely.
 
-Understanding how AI coding agents change [vibe coding to spec-driven development](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) requires recognizing where people misunderstand the technology. Agents do not replace foundational computational thinking. If a user cannot clearly define algorithmic rules—such as specifying the exact threshold for sound detection—the agent produces fragile, buggy output.
+Understanding how AI coding agents change vibe coding to spec-driven development requires recognizing where people misunderstand the technology. Agents do not replace foundational computational thinking. If a user cannot clearly define algorithmic rules—such as specifying the exact threshold for sound detection—the agent produces fragile, buggy output.
 
 The model handles syntactic execution, but the human remains responsible for architectural validation. A modest subscription to an agentic coding service removes the syntax barrier, letting developers modify software without mastering every specialized dialect.
 

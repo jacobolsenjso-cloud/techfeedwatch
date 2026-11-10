@@ -72,7 +72,7 @@ Some entrepreneurs are using OpenClaw to automate one task per employee each day
 
 ## Handling the Risks of Autonomous AI
 
-The power of [autonomous AI agents](/video/beyond-copilots-how-ai-is-building-self-improving-companies/) comes with major security and control considerations. By default, an OpenClaw agent can perform any action a user can on their computer.
+The power of [autonomous AI agents](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) comes with major security and control considerations. By default, an OpenClaw agent can perform any action a user can on their computer.
 
 This broad access, while enabling extensive automation, also presents risks if not managed carefully. Early experiments with deploying agents in public online forums highlighted the potential for unintended data exposure, prompting the development of more strong security measures.
 
@@ -80,7 +80,7 @@ To mitigate these risks, users are encouraged to implement "safety layers" and s
 
 This approach ensures that the agent can only access data and perform actions within its designated "sandbox," greatly reducing the potential for it to compromise sensitive personal or professional information.
 
-While these safeguards are being developed and adopted by the community, the inherent independence of [autonomous agents](/video/beyond-copilots-how-ai-is-building-self-improving-companies/) means that continuous vigilance and careful configuration are essential. The founder acknowledges that the initial, unrestricted deployment was "reckless" and that large companies would not typically ship such a product without extensive legal and safety frameworks.
+While these safeguards are being developed and adopted by the community, the inherent independence of [autonomous agents](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) means that continuous vigilance and careful configuration are essential. The founder acknowledges that the initial, unrestricted deployment was "reckless" and that large companies would not typically ship such a product without extensive legal and safety frameworks.
 
 ## The Future of Collaborative Agents
 

@@ -75,7 +75,7 @@ Without human architects who understand algorithmic efficiency, systems slowly d
 
 The software industry is entering an era of rigorous verification where raw output volume matters less than structural precision. Watching how developer tooling evolves reveals that uncontrolled natural language scripting is giving way to disciplined orchestration.
 
-Trends detailed in reports on [spec-driven development with AI coding agents](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) show that enterprises now favor formal specifications, deterministic testing harnesses, and strict architectural contracts over loose conversational prompts.
+Trends detailed in reports on [spec-driven development with AI coding agents](/video/how-coding-agents-work-and-why-developers-use-them/) show that enterprises now favor formal specifications, deterministic testing harnesses, and strict architectural contracts over loose conversational prompts.
 
 Career durability will hinge on intellectual passion rather than superficial tool adoption. Twenty years ago, the advice to aspiring technologists stressed that long-term success comes down to authentic enthusiasm for the craft.
 

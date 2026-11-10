@@ -42,7 +42,7 @@ This binary system forms the foundation of all modern digital technology. Quantu
 
 This phenomenon is known as superposition. It allows a quantum computer to hold countless possibilities in its "head" simultaneously.
 
-The power of [quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) scales exponentially. Adding just one qubit can double the machine's computational power. Adding another doubles it again.
+The power of [quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale/) scales exponentially. Adding just one qubit can double the machine's computational power. Adding another doubles it again.
 
 By 100 qubits, the number of simultaneous possibilities becomes astronomically large. Another strange property of qubits is entanglement.
 
@@ -70,7 +70,7 @@ Running the same computation on the most powerful classical supercomputer on Ear
 
 In October 2025, Google pushed the boundaries further. Using a new algorithm called quantum echoes, they achieved the first verifiable quantum advantage in history. This was not an artificial benchmark designed to flatter the machine.
 
-It was a real computation, independently checked and published in the scientific journal Nature. This computation ran 13,000 times faster than the best classical algorithm on the planet's most powerful supercomputer. This documented and repeatable achievement confirmed [quantum computing](/video/quantum-leap-why-the-future-of-everything-hinges-on-unlocking-the/)'s ability to solve problems far beyond classical capabilities.
+It was a real computation, independently checked and published in the scientific journal Nature. This computation ran 13,000 times faster than the best classical algorithm on the planet's most powerful supercomputer. This documented and repeatable achievement confirmed [quantum computing](/video/does-quantum-computing-have-anything-to-do-with-ai/)'s ability to solve problems far beyond classical capabilities.
 
 ## Exploring the Fabric of Reality
 

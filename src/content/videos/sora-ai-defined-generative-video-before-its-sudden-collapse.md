@@ -80,7 +80,7 @@ These technical flaws stem from the gap between statistical pattern matching and
 - Complex multi-agent motions cause severe morphing, where limbs multiply or fuse into surrounding scenery.
 - Precise spatial relationships, such as tracking left versus right over rapid camera pans, often reverse mid-sequence.
 
-Because generative media carries these artifacts, spotting differences between [AI video and real video](/video/spotting-the-difference-between-ai-video-and-real-video) often comes down to scrutinizing fine spatial details. Viewers must inspect subtle elements like reflections, text stability, and object permanence.
+Because generative media carries these artifacts, spotting differences between [AI video and real video](/video/the-difference-between-ai-and-video-editing/) often comes down to scrutinizing fine spatial details. Viewers must inspect subtle elements like reflections, text stability, and object permanence.
 
 ## OpenAI rolled out Sora Turbo and Sora 2
 OpenAI transitioned Sora from a research demonstration into consumer products through successive releases of Sora Turbo and Sora 2.

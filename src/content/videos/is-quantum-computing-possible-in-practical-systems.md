@@ -83,7 +83,7 @@ These synthetic tests typically measure the time required to sample output distr
 
 Timelines for real-world utility extend well into the coming decade. According to McKinsey & Company, an estimated 5,000 quantum computers will be operational by 2030, but systems capable of solving economically significant and complex computational tasks are not expected until 2035 or later. 
 
-Until machines can reliably maintain logical qubits through deep circuit depths, enterprise tasks will remain on high-performance classical clusters. Research teams are still evaluating whether [quantum computing chips](/video/which-hardware-defines-quantum-computing-chips-today) based on superconducting loops, trapped ions, or neutral atoms will overcome these scaling barriers first.
+Until machines can reliably maintain logical qubits through deep circuit depths, enterprise tasks will remain on high-performance classical clusters. Research teams are still evaluating whether [quantum computing chips](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) based on superconducting loops, trapped ions, or neutral atoms will overcome these scaling barriers first.
 
 ## Addie LaMarr compares quantum computing to the ENIAC moment
 

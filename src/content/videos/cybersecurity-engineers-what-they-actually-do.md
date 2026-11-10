@@ -48,7 +48,7 @@ They enforce compliance architectures mapped directly against established standa
 - SOC 2
 - CIS Benchmarks
 
-Because organizations operate under strict compliance mandates, the [NIST Cybersecurity Framework](/video/nist-csf-2-0-explained-for-small-businesses) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
+Because organizations operate under strict compliance mandates, the [NIST Cybersecurity Framework](/video/cybersecurity-frameworks-and-how-modern-teams-use-them/) provides the structured baseline that engineers use to audit configurations, detect system drifts, and maintain defensible internal controls.
 
 ## How cloud migration transformed modern security engineering
 

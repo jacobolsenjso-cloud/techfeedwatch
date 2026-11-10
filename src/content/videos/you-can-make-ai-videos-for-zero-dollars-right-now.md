@@ -49,7 +49,7 @@ Some focus on photorealistic cinematic action, while others specialize in virtua
 - Cinematic camera engines: According to Luma AI, its platform generates video clips from text prompts or still images while providing camera motion controls and start-and-end frame keyframing.
 - Multimodal foundation models: According to Google Cloud Documentation, the Veo 3.1 model handles text-to-video, image-to-video, and first-to-last-frame generation.
 
-Finding the [easiest way to make AI videos](/video/what-is-the-easiest-way-to-make-ai-videos) often comes down to choosing between an all-in-one web editor and a dedicated prompt-to-video generation engine.
+Finding the easiest way to make AI videos often comes down to choosing between an all-in-one web editor and a dedicated prompt-to-video generation engine.
 
 ## Most AI video models generate short clips, not full movies
 Current AI video systems generate short visual bursts, typically between about 5 and 20 seconds per generation, rather than continuous full-length movies.

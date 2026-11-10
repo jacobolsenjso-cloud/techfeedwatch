@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-An [autonomous AI](/video/beyond-copilots-how-ai-is-building-self-improving-companies/) software engineer is a system designed to independently handle the entire software development lifecycle, from understanding a task to planning, coding, debugging, and deploying solutions.
+An [autonomous AI](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) software engineer is a system designed to independently handle the entire software development lifecycle, from understanding a task to planning, coding, debugging, and deploying solutions.
 
 Unlike earlier AI coding assistants that primarily generate code snippets or assist with specific programming challenges, systems like Devin, an autonomous AI software engineer, operate with a high degree of independence, mimicking the workflow of a human developer. This new class of AI can identify problems, formulate solutions, write and test code, and even contribute to existing projects without constant human intervention.
 

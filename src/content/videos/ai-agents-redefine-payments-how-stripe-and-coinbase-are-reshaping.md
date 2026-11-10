@@ -73,7 +73,7 @@ The risk of centralized control over autonomous funds is not merely theoretical;
 
 Certain blockchain networks are particularly well-suited to benefit from this transformation. As Coin Bureau host Louis points out, networks like Solana, Base, and Tron are positioned to thrive due to their high transaction throughput, low fees, and developer-friendly environments. These characteristics are critical for handling the immense volume and speed of AI-driven micro-transactions.
 
-Conversely, less efficient or more expensive networks may struggle to compete for this machine-to-machine payment volume. The ability of AI agents to [work through recursive loops](/video/beyond-copilots-how-ai-is-building-self-improving-companies) and self-improving behaviors, often requiring continuous transactions, is a key driver for this demand.
+Conversely, less efficient or more expensive networks may struggle to compete for this machine-to-machine payment volume. The ability of AI agents to [work through recursive loops](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) and self-improving behaviors, often requiring continuous transactions, is a key driver for this demand.
 
 ## Regulatory hurdles and blockchain competition shaping AI payments
 

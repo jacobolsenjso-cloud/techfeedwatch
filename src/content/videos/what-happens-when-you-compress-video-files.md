@@ -85,7 +85,7 @@ The visual breakdowns caused by severe data reduction manifest in several distin
 
 Advanced codecs mitigate these flaws by achieving superior compression efficiency at lower bitrates. According to the Alliance for Open Media specification data, the open AV1 codec achieves more than a 30% bitrate reduction compared to VP9.
 
-It also delivers roughly a 50% bitrate reduction compared to H.264/AVC at equivalent visual quality levels. These efficiency gains help streaming platforms prevent visible distortions during bandwidth constraints. Viewers examining synthetic media often look for these exact distortions when [spotting the difference](/video/spotting-the-difference-between-ai-video-and-real-video) between AI video and real video.
+It also delivers roughly a 50% bitrate reduction compared to H.264/AVC at equivalent visual quality levels. These efficiency gains help streaming platforms prevent visible distortions during bandwidth constraints. Viewers examining synthetic media often look for these exact distortions when [spotting the difference](/video/the-difference-between-ai-and-video-editing/) between AI video and real video.
 
 ## Lex Clips on how FFmpeg powers modern video compression
 

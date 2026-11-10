@@ -51,7 +51,7 @@ These synthetic tasks confirm speed scaling, but engineers still need fault-tole
 
 - Molecular modeling for solid-state batteries
 - Drug discovery pipelines
-- [quantum computing threats accelerate encryption breakdown](/video/quantum-computing-threats-to-current-encryption-explained) across global finance
+- [quantum computing threats accelerate encryption breakdown](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) across global finance
 
 ## Why quantum supremacy is not yet a commercial reality
 

@@ -65,7 +65,7 @@ Every section houses a designated dataset or program, with rigorous security rul
 
 This granular segmentation is key to stopping an attacker's lateral movement. Should an attacker breach a system within a given segment, like an external web server, their access remains restricted to that area. The intruder is unable to probe the wider network for additional assets or reach into distinct segments housing human resources software or financial databases.
 
-By halting lateral travel after an initial intrusion, microsegmentation keeps the incident confined to a single section. This transforms a potentially catastrophic incident into a manageable one, giving security teams precious time to detect and neutralize threats before they spread. Understanding how [zero trust security shrinks attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks) further illustrates this containment.
+By halting lateral travel after an initial intrusion, microsegmentation keeps the incident confined to a single section. This transforms a potentially catastrophic incident into a manageable one, giving security teams precious time to detect and neutralize threats before they spread. Understanding how zero trust security shrinks attack surfaces further illustrates this containment.
 
 Finally, Zero Trust is not a "set it and forget it" solution. It is a dynamic and continuous process.
 

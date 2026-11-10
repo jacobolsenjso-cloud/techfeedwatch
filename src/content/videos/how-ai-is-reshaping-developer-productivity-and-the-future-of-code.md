@@ -45,7 +45,7 @@ These skills are not merely about an AI suggesting the next line of code; they i
 
 This modularity allows developers to assemble complex behaviors, moving beyond simple prompts to create agents capable of intricate, multi-step coding processes. Platforms like the [Loop Library](https://signals.forwardfuture.ai/loop-library/) provide examples of such pre-defined skills, with the associated [Loop Skill](https://github.com/Forward-Future/loop-library) on GitHub by Forward-Future illustrating how these components can be implemented and shared.
 
-This structured approach helps transform speculative "vibe coding" into a more predictable and manageable process, making software development more scalable and consistent. To learn more about this transformation, read how [AI coding agents change vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) to spec-driven development.
+This structured approach helps transform speculative "vibe coding" into a more predictable and manageable process, making software development more scalable and consistent. To learn more about this transformation, read how [AI coding agents change vibe coding](/video/how-coding-agents-work-and-why-developers-use-them/) to spec-driven development.
 
 ## How It Works
 
@@ -63,7 +63,7 @@ One model might excel at generating logical structures, while another might be b
 
 Infrastructure support for these agents is also evolving; for example, here.now provides free, instant web hosting for agents, demonstrating the accessibility of environments for deploying and running these AI-driven coding processes. As Matthew Berman points out, this systematic approach helps mitigate the unpredictability of "vibe coding" by enforcing best practices within the AI's operational framework.
 
-For a deeper dive into how these capabilities function, explore [what AI agent skills are](/video/beyond-prompts-the-dawn-of-self-building-ai-workflow-skills-and) and how they work.
+For a deeper dive into how these capabilities function, explore [what AI agent skills are](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) and how they work.
 
 Developers can choose between cloud-based and local AI coding solutions. Cloud environments offer scalability and access to powerful hardware, suitable for demanding tasks and collaborative projects.
 

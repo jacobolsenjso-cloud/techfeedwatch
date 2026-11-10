@@ -70,7 +70,7 @@ Beyond basic web presence, these tools automate critical business functions. For
 
 This capability means a "fully functional lead funnel pops up," automating client acquisition processes in minutes. Similarly, generating customized SEO proposals, complete with strategies, transparent pricing, and timelines, becomes a quick, on-the-fly task, drastically shortening sales cycles.
 
-The ability to generate a "high-end asset like this in mere minutes" is a transformative advantage. For a deeper dive into task automation, see how [no-code AI agents automate work](/video/beyond-the-hype-how-no-code-ai-agents-will-reshape-workflows-by-2026).
+The ability to generate a "high-end asset like this in mere minutes" is a transformative advantage. For a deeper dive into task automation, see how [no-code AI agents automate work](/video/code-without-coding-claude-code-unleashed-build-anything-deploy/).
 
 ## Hidden costs regional limits and the challenge of driving traffic
 

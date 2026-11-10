@@ -96,4 +96,4 @@ Consider integrating image generation and automated publishing workflows to stre
 
 Indeed, "We’re starting to build custom AI agents and marketing systems for companies." Regularly monitor "Early SEO results" through platforms like Google Search Console to track performance and make data-driven adjustments.
 
-This iterative approach helps optimize the system over time, building on observed improvements, such as the "10–30%+ improvements in A/B tests" reported by Nobi. For a deeper understanding of [how data drives modern SEO](/video/the-new-ai-seo-how-data-scraping-rewrites-visibility-strategy-for-saas), review the emerging realities of AI optimization. 👉 Reach out: https://nobi.ai 👉 Learn more about Nobi: info@nobi.ai
+This iterative approach helps optimize the system over time, building on observed improvements, such as the "10–30%+ improvements in A/B tests" reported by Nobi. For a deeper understanding of [how data drives modern SEO](/video/seo-optimization-explained-how-modern-search-ranking-functions/), review the emerging realities of AI optimization. 👉 Reach out: https://nobi.ai 👉 Learn more about Nobi: info@nobi.ai

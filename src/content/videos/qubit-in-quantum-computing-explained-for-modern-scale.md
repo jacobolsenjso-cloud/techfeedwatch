@@ -45,7 +45,7 @@ The ancient fable of wheat on a chessboard doubling illustrates the mechanics: a
 
 A quantum array of 256 logical qubits functions like four of those chessboards linked end to end. The resulting register holds 10 to the 77 states, represented by a staggering 78 digit number.
 
-Understanding [why quantum computing is faster](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer) for complex problems requires recognizing that this exponential headroom does not simply run desktop software faster. It constructs an entirely separate computational geometry.
+Understanding [why quantum computing is faster](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) for complex problems requires recognizing that this exponential headroom does not simply run desktop software faster. It constructs an entirely separate computational geometry.
 
 ## Why error correction defines modern quantum hardware roadmaps
 
@@ -77,7 +77,7 @@ This reality clarifies why quantum computing differs from standard memory expans
 
 Quantum states function like waves, which naturally cancel or reinforce one another. When wave peaks meet troughs, they cancel out, leaving flat water behind.
 
-An algorithm is a machine for arranging that cancellation so that the wrong answers wipe each other out and the right one is the only thing still standing when you look. Without specialized algorithms that induce constructive and destructive interference, quantum chips offer no operational advantage, an essential distinction when evaluating [quantum computing applications and capabilities](/video/understanding-quantum-computing-applications-and-capabilities) across industrial workloads.
+An algorithm is a machine for arranging that cancellation so that the wrong answers wipe each other out and the right one is the only thing still standing when you look. Without specialized algorithms that induce constructive and destructive interference, quantum chips offer no operational advantage, an essential distinction when evaluating [quantum computing applications and capabilities](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) across industrial workloads.
 
 ## Where quantum hardware will actually be put to work
 

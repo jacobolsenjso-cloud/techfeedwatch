@@ -79,7 +79,7 @@ For example, systems like Claude Code and Codex exemplify this agentic approach,
 
 Whether you're building AI applications for healthcare, enterprise software, or any other industry, understanding harness engineering is essential for getting the most out of today's LLMs. In healthcare, an agentic system could potentially automate the initial analysis of patient records or streamline administrative tasks, going beyond simple summarization to proactively flag critical information or suggest next steps.
 
-In enterprise, such systems can manage intricate supply chains, automate customer service workflows, or even contribute to software development by integrating with version control and testing frameworks. [How AI Coding Agents Change Vibe Coding to Spec-Driven Dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) highlights how this approach transforms developer workflows by demanding more structured, specification-driven development over intuitive "vibe coding."
+In enterprise, such systems can manage intricate supply chains, automate customer service workflows, or even contribute to software development by integrating with version control and testing frameworks. [How Coding Agents Work and Why Developers Use Them](/video/how-coding-agents-work-and-why-developers-use-them/) highlights how this approach transforms developer workflows by demanding more structured, specification-driven development over intuitive "vibe coding."
 
 ## The Overlooked Engineering Challenges of Building AI Harnesses
 

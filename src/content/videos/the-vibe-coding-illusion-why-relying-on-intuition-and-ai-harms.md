@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-"[Vibe coding](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured/)" describes an intuitive, often unstructured approach to programming. It prioritizes quick results and immediate gratification over a deep understanding of underlying principles. While appealing, especially with AI assistance, this method can create major long-term challenges for developers.
+"[Vibe coding](/video/how-coding-agents-work-and-why-developers-use-them/)" describes an intuitive, often unstructured approach to programming. It prioritizes quick results and immediate gratification over a deep understanding of underlying principles. While appealing, especially with AI assistance, this method can create major long-term challenges for developers.
 
 ## The Allure of "Vibe Coding"
 

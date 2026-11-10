@@ -52,7 +52,7 @@ In reality, a complete defense is unattainable. Cyberattacks are persistent and 
 
 The true cost of inaction is not just the immediate financial impact of a breach but the cumulative erosion of trust, market share, and operational efficiency. Misguided defense often involves chasing every new security tool without a coherent strategy, or disproportionately protecting less critical assets while leaving high-value data exposed.
 
-This reflects a failure to align security investments with business objectives and an insufficient understanding of the organization's unique [attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks). For example, while focusing on perimeter defenses, organizations might overlook internal threats or compromised credentials, which are often exploited in modern attacks.
+This reflects a failure to align security investments with business objectives and an insufficient understanding of the organization's unique [attack surfaces](/video/zero-trust-the-essential-security-shift-your-business-needs-now/). For example, while focusing on perimeter defenses, organizations might overlook internal threats or compromised credentials, which are often exploited in modern attacks.
 
 The rapid integration of AI into business operations introduces new vectors for attack, such as prompt injection, making frameworks for [securing AI agents with zero trust](/video/zero-trust-for-ai-agents-securing-autonomous-systems) increasingly relevant. Without a clear understanding of what assets are most critical and what threats are most probable, resources are often misallocated, leaving organizations vulnerable where it matters most.
 

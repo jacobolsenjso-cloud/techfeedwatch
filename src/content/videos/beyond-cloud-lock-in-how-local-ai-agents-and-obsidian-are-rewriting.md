@@ -58,7 +58,7 @@ These platforms often push their own integrated AI assistants and closed ecosyst
 
 Obsidian, for example, stores all notes as simple markdown files on the user's computer. This format is highly advantageous for local AI agents. Markdown is easily readable and processable by both humans and machines.
 
-An agent can directly access an entire knowledge base stored in markdown. This makes it simple to integrate with various [coding agents](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured/), local large language models (LLMs), or other local tools.
+An agent can directly access an entire knowledge base stored in markdown. This makes it simple to integrate with various [coding agents](/video/how-coding-agents-work-and-why-developers-use-them/), local large language models (LLMs), or other local tools.
 
 This setup allows people to deploy AI that operates directly on their personal notes and files. It provides unprecedented analytical abilities and control over their data.
 

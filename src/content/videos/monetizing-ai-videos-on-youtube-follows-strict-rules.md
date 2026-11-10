@@ -66,7 +66,7 @@ Ad share means the advertising revenue paid to creators.
 
 Creators must treat software as an editorial assistant. It cannot serve as an autonomous replacement for human judgment.
 
-For instance, [AI video creation](/video/prompt-to-video-the-free-ai-shortcut-redefining-cinematic-content) requires human review. People must check the work to ensure factual accuracy and creative originality.
+For instance, [AI video creation](/video/you-can-make-ai-videos-for-zero-dollars-right-now/) requires human review. People must check the work to ensure factual accuracy and creative originality.
 
 ## Realistic synthetic media requires YouTube disclosure labels
 

@@ -71,7 +71,7 @@ XR glasses draw power directly from the host device. Connect them to an ASUS ROG
 
 Optical correction introduces unexpected costs across both ecosystems. The Viture Pro features built-in dial adjustments that let nearsighted users calibrate focus without external aids. Yet neither the Viture nor XREAL designs accommodate standard optical frames underneath their frames; severe astigmatism or complex prescriptions demand custom snap-on prescription lens inserts.
 
-Meta Quest headsets allow users to wear standard glasses directly inside the facial cavity—often using an included plastic spacer—though bespoke lens inserts remain the most comfortable upgrade. Those curious about pairing consumer hardware can learn how to [use a virtual reality headset](/video/guide-on-how-to-use-virtual-reality-headset-with-android) with Android.
+Meta Quest headsets allow users to wear standard glasses directly inside the facial cavity—often using an included plastic spacer—though bespoke lens inserts remain the most comfortable upgrade. Those curious about pairing consumer hardware can learn how to [use a virtual reality headset](/video/virtual-reality-headsets-balance-visual-clarity-and-bulk/) with Android.
 
 ## The Economics of Single-Purpose Hardware
 

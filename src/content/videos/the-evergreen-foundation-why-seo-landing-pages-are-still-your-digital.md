@@ -41,7 +41,7 @@ Unlike a general website page, a landing page is built with a singular objective
 
 The core idea is to align the content and design of this page precisely with the user's intent. When someone searches for a specific product or service, a well-optimized landing page provides exactly what they are looking for.
 
-This targeted approach helps improve both search engine visibility and the rate at which visitors take a desired action. It combines [technical SEO](/video/seo-for-developers-cracking-the-code-for-search-engine-domination-in/) elements with persuasive design and clear calls to action.
+This targeted approach helps improve both search engine visibility and the rate at which visitors take a desired action. It combines [technical SEO](/video/why-is-seo-important-for-businesses-right-now/) elements with persuasive design and clear calls to action.
 
 ## Why Dedicated Landing Pages Matter
 

@@ -38,7 +38,7 @@ Google's recent announcement at Google I/O confirmed its shift away from the tra
 
 ## The Rise of AI Overviews
 
-Google has begun rolling out AI Overviews, which are AI-generated summaries presented at the top of search results. This represents a significant departure from the previous [search engine](/video/beyond-google-how-marketers-win-in-the-ai-powered-search-era/) results page (SERP) layout.
+Google has begun rolling out AI Overviews, which are AI-generated summaries presented at the top of search results. This represents a significant departure from the previous [search engine](/video/how-do-you-effectively-use-search-engine-optimization/) results page (SERP) layout.
 
 These AI Overviews are now appearing for a large share of global queries, estimated to be between 50% and 60%. This widespread implementation means that a substantial portion of search traffic is now encountering these AI-generated summaries first.
 

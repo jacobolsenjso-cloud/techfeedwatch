@@ -62,7 +62,7 @@ This is particularly important for NISQ devices, as accurately modeling noise al
 
 ## Virtualizing Quantum Processing Units
 
-A significant challenge in integrating [quantum computing](/video/are-qubits-made-of-nanowires-in-quantum-computing/) into existing scientific workflows is the operational mismatch between classical supercomputers and QPUs. Supercomputers are typically accessed through batch-scheduled execution environments, where jobs are submitted to a queue and run when resources become available.
+A significant challenge in integrating [quantum computing](/video/qubit-in-quantum-computing-explained-for-modern-scale/) into existing scientific workflows is the operational mismatch between classical supercomputers and QPUs. Supercomputers are typically accessed through batch-scheduled execution environments, where jobs are submitted to a queue and run when resources become available.
 
 Quantum computers, in contrast, often have interactive, device-oriented semantics. To bridge this gap, the concept of a "virtual QPU" (VQPU) has emerged, allowing HPC systems to present themselves as quantum devices.
 
@@ -79,7 +79,7 @@ Further advancements in quantum virtualization, such as the DIQ quantum virtuali
 
 The ultimate goal of hybrid quantum-classical supercomputing is to integrate quantum accelerators into real-world scientific and industrial workflows. Fields like bioinformatics and artificial intelligence often rely on complex computational pipelines that utilize multiple tools, each with different computational resource requirements, all orchestrated on HPC systems.
 
-An integration layer, exemplified by the QBitBridge workflow integration framework, is essential for smoothly incorporating [quantum computing](/video/quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality/) into these existing workflows.
+An integration layer, exemplified by the QBitBridge workflow integration framework, is essential for smoothly incorporating [quantum computing](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) into these existing workflows.
 
 Consider a bioinformatics pipeline, which might involve numerous steps with intricate interdependencies, from processing raw gene sequences to generating reports. A quantum accelerator could be introduced to speed up a specific, computationally intensive step within this workflow.
 

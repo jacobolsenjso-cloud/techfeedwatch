@@ -56,7 +56,7 @@ They followed this with "Personal Computer," software designed to run persistent
 
 Within enterprises, Rob Seaman, EVP and GM of Slack, highlights how Slack, with 47 million daily active users, is positioning itself as an "operating system for the agentic enterprise," leveraging its rich channel-based context to facilitate human-agent interaction and agent distribution.
 
-Discussions on [how autonomous AI agents work](/video/beyond-copilots-how-ai-is-building-self-improving-companies) through recursive loops explore how agents function and integrate into larger systems. However, the lack of thorough process documentation within many enterprises presents a fundamental hurdle for implementing agents at scale, requiring significant internal preparation.
+Discussions on [how autonomous AI agents work](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) through recursive loops explore how agents function and integrate into larger systems. However, the lack of thorough process documentation within many enterprises presents a fundamental hurdle for implementing agents at scale, requiring significant internal preparation.
 
 ## The Inevitable Shift to an Agent-First Internet
 The future of AI agents is one of pervasive integration, fundamentally reshaping how we build and interact with the digital world. While the energy efficiency of computing has increased by 10,000 times, enabling more complex operations from models like GPT-5, Gemini-3, Llama-4, and Grok-4, the journey to an agent-first internet is fraught with technical and business model challenges.

@@ -45,7 +45,7 @@ As an oft-cited physicist in a Hacker News exchange pointed out, technically spe
 
 When engineers link multiple qubits together, the utility scales exponentially via entanglement. Entangled qubits share an interconnected identity where the mathematical state of one cannot be described independently of the rest, regardless of physical separation.
 
-While classical processors evaluate permutations one by one through brute-force clock cycles, an entangled quantum system addresses the problem holistically. This distinction explains [why quantum computing is faster](/video/quantum-computing-why-it-s-faster-not-just-a-bigger-supercomputer) for complex problems, shifting the paradigm from raw processor clock speeds to exponential solution modeling.
+While classical processors evaluate permutations one by one through brute-force clock cycles, an entangled quantum system addresses the problem holistically. This distinction explains [why quantum computing is faster](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) for complex problems, shifting the paradigm from raw processor clock speeds to exponential solution modeling.
 
 This capability targets specialized calculations that classical machines could never complete within a human lifetime. Qubits excel at tasks such as:
 

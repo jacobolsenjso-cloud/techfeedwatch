@@ -64,7 +64,7 @@ This involves transparently sharing the learning process, including challenges a
 
 Coding bootcamps attract a diverse group of individuals, each seeking to acquire new skills or pivot their careers. They are often ideal for "Complete beginners" who have no prior coding experience but possess a strong desire to enter the tech field.
 
-"College students" might use bootcamps to supplement their academic learning with practical skills, bridging the gap between theoretical knowledge and industry demands. [How AI Coding Agents Change Vibe Coding to Spec-Driven Dev](/video/ai-coding-agents-push-developers-beyond-vibe-coding-with-structured) provides further insight into how modern development practices are evolving, underscoring the relevance of practical, structured learning.
+"College students" might use bootcamps to supplement their academic learning with practical skills, bridging the gap between theoretical knowledge and industry demands. [How Coding Agents Work and Why Developers Use Them](/video/how-coding-agents-work-and-why-developers-use-them/) provides further insight into how modern development practices are evolving, underscoring the relevance of practical, structured learning.
 
 "Self-taught developers" also find value in bootcamps, using them to formalize their knowledge, fill gaps in their understanding, and gain structured experience. Perhaps the largest demographic benefiting from bootcamps are "Career changers" looking to transition into a more dynamic and in-demand industry.
 

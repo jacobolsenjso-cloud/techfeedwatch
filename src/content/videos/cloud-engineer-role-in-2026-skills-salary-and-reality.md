@@ -75,7 +75,7 @@ Work-life balance is generally solid, though on-call rotations are sometimes par
 
 The cloud engineering field demands a blend of technical proficiency and soft skills. Technical competencies span system design, networking, security, DevOps practices, and automation.
 
-Familiarity with major cloud platforms (AWS, Azure, [Google Cloud](/video/google-cloud-s-ai-play-betting-on-tpus-to-reshape-the-compute/)) and Infrastructure as Code tools is fundamental. However, the ability to handle ambiguity is equally important; real-world problems rarely come with clear instructions, requiring engineers to figure out solutions when documentation is sparse or client requirements are evolving.
+Familiarity with major cloud platforms (AWS, Azure, [Google Cloud](/video/google-tpus-new-inference-chips-and-cloud-ai-advantage/)) and Infrastructure as Code tools is fundamental. However, the ability to handle ambiguity is equally important; real-world problems rarely come with clear instructions, requiring engineers to figure out solutions when documentation is sparse or client requirements are evolving.
 
 Continuous learning is non-negotiable, as cloud providers regularly release new services and the AI field changes weekly. For those who enjoy constant evolution and problem-solving, cloud engineering offers a consistently engaging career.
 

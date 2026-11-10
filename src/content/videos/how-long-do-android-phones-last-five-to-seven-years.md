@@ -44,7 +44,7 @@ A phone reaches the end of its life when software updates stop. It also ends whe
 
 Hardware wear often shows up first in everyday handling. Drops can crack screens, loosen internal connectors, or break camera sensors. Charging ports wear out after thousands of cable insertions.
 
-Power buttons can also lose their click over time. Demanding apps can push older processors (the computer chips running the phone) to their limits. These include 3D games or tools for [augmented reality on Android](/video/android-augmented-reality-how-people-use-arcore-on-mobile-devices) (technology that overlays digital images onto the real world).
+Power buttons can also lose their click over time. Demanding apps can push older processors (the computer chips running the phone) to their limits. These include 3D games or tools for [augmented reality on Android](/video/beyond-the-screen-how-augmented-reality-reshapes-our-digital/) (technology that overlays digital images onto the real world).
 
 Security patches are software updates that fix security flaws. Once a phone stops receiving them, newly discovered system vulnerabilities remain unpatched.
 

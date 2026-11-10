@@ -56,7 +56,7 @@ Optical see-through hardware relies on transparent glass waveguides. According t
 
 Wearers view the real world through clear glass while glowing digital light paints interfaces across the room. Because projectors cannot beam darkness, virtual items on optical see-through displays appear slightly luminous or translucent against bright backgrounds.
 
-Video pass-through takes an opaque display approach that changes [what mixed reality looks like](/video/room-tech-and-how-mixed-reality-changes-what-spaces-look-like) in practice. According to official Apple specifications, the [Apple Vision Pro](https://www.apple.com/apple-vision-pro/) creates video pass-through using a 23-million-pixel micro-OLED display system paired with an Apple R1 chip that processes camera feeds at a 12-millisecond photon-to-photon latency.
+Video pass-through takes an opaque display approach that changes what mixed reality looks like in practice. According to official Apple specifications, the [Apple Vision Pro](https://www.apple.com/apple-vision-pro/) creates video pass-through using a 23-million-pixel micro-OLED display system paired with an Apple R1 chip that processes camera feeds at a 12-millisecond photon-to-photon latency.
 
 The user does not see the physical room directly. Instead, external cameras film the environment and recreate it on tiny digital monitors sitting millimeters from the eyes.
 

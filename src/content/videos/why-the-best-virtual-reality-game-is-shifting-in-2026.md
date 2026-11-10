@@ -52,7 +52,7 @@ Fast-paced action finds a home in Wrath: Aeon of Ruin, an old-school shooter sco
 
 Physics sandboxes provide comic relief through Space Control, a title divided across three narrative episodes that casts users into manual labor for Gloppo Inc. Meanwhile, espionage puzzlers like Fixer: Undercover ground puzzle-solving by forcing users to pick locks, rewire electronics, and crack safes while infiltrating facilities using handyman tools like wrenches and drills.
 
-Choosing the ideal title often hinges on matching the game type to your gear, making it valuable to assess the [best virtual reality headset for adults](/video/what-is-the-best-virtual-reality-headset-for-adults) before buying software. Similarly, players balancing mobile setups and tethered systems should track how the difference between [VR headsets and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) impacts tracking precision and field of view.
+Choosing the ideal title often hinges on matching the game type to your gear, making it valuable to assess the [best virtual reality headset for adults](/video/virtual-reality-headsets-balance-visual-clarity-and-bulk/) before buying software. Similarly, players balancing mobile setups and tethered systems should track how the difference between [VR headsets and XR glasses](/video/vr-headsets-difference-between-virtual-reality-and-xr-glasses) impacts tracking precision and field of view.
 
 ## Why agile developers are out-designing legacy VR franchises
 

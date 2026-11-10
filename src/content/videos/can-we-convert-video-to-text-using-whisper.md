@@ -77,7 +77,7 @@ According to Soniox's comparative evaluation published in March 2023, automated 
 | Crosstalk Conversations (Whisper) | 7.07% Word Error Rate | Soniox (Mar 2023) |
 | Broadcast News (Whisper) | 10.76% Word Error Rate | Soniox (Mar 2023) |
 
-Human specialists excel at researching obscure industry terms, deciphering muttered speech, and correctly attributing dialogue during fast-paced crosstalk. AI tools serve best when speed and cost matter most, particularly for drafting article notes, indexing internal media, or generating initial subtitles for [AI video creation](/video/prompt-to-video-the-free-ai-shortcut-redefining-cinematic-content). When transcripts serve as legal evidence or broadcast-ready subtitles, human verification remains necessary.
+Human specialists excel at researching obscure industry terms, deciphering muttered speech, and correctly attributing dialogue during fast-paced crosstalk. AI tools serve best when speed and cost matter most, particularly for drafting article notes, indexing internal media, or generating initial subtitles for [AI video creation](/video/you-can-make-ai-videos-for-zero-dollars-right-now/). When transcripts serve as legal evidence or broadcast-ready subtitles, human verification remains necessary.
 
 ## Video transcripts export as TXT, SRT, or WebVTT files
 Converting video to text yields several file types depending on how you plan to use the transcript. Speech recognition software outputs raw transcripts, structured data schemas, or synchronized subtitle files.

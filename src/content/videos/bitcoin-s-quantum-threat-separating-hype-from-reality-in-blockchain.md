@@ -39,7 +39,7 @@ This public-key cryptography ensures that only the owner of the private key can 
 
 The primary threat from quantum computing stems from its ability to efficiently break the mathematical problems that underpin these cryptographic standards. Algorithms like Shor's algorithm are designed to factor large numbers rapidly, a task that is computationally infeasible for classical computers but central to the security of many public-key cryptosystems, including the elliptic curve cryptography used by Bitcoin.
 
-Another significant quantum algorithm, Grover's algorithm, offers a quadratic speedup for searching unsorted databases, which could accelerate brute-force attacks on hash functions. This difference in processing power forms the core of the quantum threat to digital assets. For a deeper understanding of these capabilities, readers can explore [quantum computing applications](/video/understanding-quantum-computing-applications-and-capabilities).
+Another significant quantum algorithm, Grover's algorithm, offers a quadratic speedup for searching unsorted databases, which could accelerate brute-force attacks on hash functions. This difference in processing power forms the core of the quantum threat to digital assets. For a deeper understanding of these capabilities, readers can explore [quantum computing applications](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/).
 
 ## How Quantum Computing Threatens Bitcoin's Core Security
 
@@ -61,7 +61,7 @@ In such a scenario, the attacker could effectively:
 - Censor transactions
 - Double-spend their own coins, fundamentally compromising Bitcoin's decentralized security model
 
-[Quantum Computing Threats Accelerate Encryption Breakdown](/video/quantum-computing-threats-to-current-encryption-explained) details how such attacks could affect various cryptographic systems.
+[Quantum Computing Today: Limits and Potential](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/) details how such attacks could affect various cryptographic systems.
 
 The timeline for "Q Day," the hypothetical moment when a quantum machine can successfully crack Bitcoin's cryptography, is a subject of ongoing debate. One popular fear is that “Q Day,” where a quantum machine cracks Bitcoin’s cryptography, is closer than we think. Others insist it’s still decades away.
 

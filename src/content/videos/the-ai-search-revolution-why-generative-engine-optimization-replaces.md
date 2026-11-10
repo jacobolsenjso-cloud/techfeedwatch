@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-[Generative Engine Optimization](/video/unlock-ai-visibility-your-guide-to-generative-engine-optimization-geo/) (GEO) is a new approach to making online content discoverable by AI-powered search engines. It focuses on structuring information so that AI models can easily understand, process, and cite it in their responses. This shift is vital because many users now rely on AI summaries instead of clicking traditional search links, making GEO essential for digital visibility.
+Generative Engine Optimization (GEO) is a new approach to making online content discoverable by AI-powered search engines. It focuses on structuring information so that AI models can easily understand, process, and cite it in their responses. This shift is vital because many users now rely on AI summaries instead of clicking traditional search links, making GEO essential for digital visibility.
 
 ## The Emergence of Generative Engine Optimization
 

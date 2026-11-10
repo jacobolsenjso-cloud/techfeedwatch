@@ -75,7 +75,7 @@ Mainstream physics relies on continuous symmetries that discrete grids struggle 
 
 According to the Stanford Encyclopedia of Philosophy, discrete computational models fail to reproduce continuous symmetries such as Lorentz invariance, rotational symmetry, and gauge invariance. When space is pixelated into a fixed grid, light moving diagonally across cells behaves differently than light moving along cardinal axes. High-energy astrophysical observations consistently detect unbroken Lorentz invariance, contradicting simple lattice models.
 
-Quantum nonlocality creates an equally severe obstacle for classical computation. Readers studying these physical dynamics often review [quantum computing applications and capabilities](/video/understanding-quantum-computing-applications-and-capabilities).
+Quantum nonlocality creates an equally severe obstacle for classical computation. Readers studying these physical dynamics often review [quantum computing applications and capabilities](/video/quantum-computing-separating-transformative-potential-from-immediate-qur969/).
 
 According to the Stanford Encyclopedia of Philosophy, classical deterministic cellular automata fall into the class of local hidden-variable theories. These local models conflict directly with Bell's theorem and decades of verified quantum entanglement experiments. 
 

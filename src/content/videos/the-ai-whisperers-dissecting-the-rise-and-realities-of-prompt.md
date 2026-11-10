@@ -90,7 +90,7 @@ In contrast, newer models like **Midjourney** have become "clever enough to know
 
 An important tool for mitigating unwanted outputs is the use of "negative queries" or "negative prompts." These instructions tell the AI what *not* to generate (e.g., "no distortions," "no blurred background").
 
-While not always perfectly effective, negative prompts provide another layer of control, helping to refine results by ruling out undesirable elements that might otherwise appear due to the AI's inherent randomness or learned biases. Understanding these nuances is key for anyone looking to [master free text-to-video tools](/video/ai-video-generator-how-to-create-dynamic-visual-content).
+While not always perfectly effective, negative prompts provide another layer of control, helping to refine results by ruling out undesirable elements that might otherwise appear due to the AI's inherent randomness or learned biases. Understanding these nuances is key for anyone looking to [master free text-to-video tools](/video/which-tool-is-really-the-best-ai-video-generator/).
 
 ## Why prompt engineering will remain an essential human skill
 

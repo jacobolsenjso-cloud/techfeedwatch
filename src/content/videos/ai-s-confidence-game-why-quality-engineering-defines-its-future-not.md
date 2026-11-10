@@ -48,7 +48,7 @@ Subsequent shifts included the adoption of Agile methods, integrating testing in
 
 Tools such as Selenium have long been mainstays in automation, enduring for many years despite challenges from newer alternatives like Cypress and Playwright. However, a large shift occurred about 3 and a half years ago with the public release of advanced AI models.
 
-This event rapidly accelerated the conversation around artificial intelligence, bringing Large Language Models (LLMs), Retrieval Augmented Generation (RAG) applications, and [AI agents](/video/beyond-copilots-how-ai-is-building-self-improving-companies/) to the forefront of technology discussions. This rapid AI evolution has profoundly impacted quality engineering, demanding new approaches to ensure product reliability.
+This event rapidly accelerated the conversation around artificial intelligence, bringing Large Language Models (LLMs), Retrieval Augmented Generation (RAG) applications, and [AI agents](/video/beyond-chatbots-how-hermes-agent-s-7-levels-transform-you-into-an-ai/) to the forefront of technology discussions. This rapid AI evolution has profoundly impacted quality engineering, demanding new approaches to ensure product reliability.
 
 ## AI's Dual Role in Quality Assurance
 

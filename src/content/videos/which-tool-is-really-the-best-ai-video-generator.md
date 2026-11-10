@@ -71,7 +71,7 @@ According to Google DeepMind's technical documentation, the family later introdu
 
 According to Meta's research paper published on arXiv in October 2024, its Movie Gen suite utilizes a 30-billion-parameter transformer. This model outputs 1080p high-definition video at 16 frames per second for up to 16 seconds. Movie Gen incorporates synchronized audio synthesis, instruction-based editing, and personal identity conditioning into a unified pipeline.
 
-Combining audio waveforms directly into visual generation passes eliminates the drift that occurs when timing dialogue to silent video clips. Using specialized tools often proves necessary when [spotting the difference](/video/spotting-the-difference-between-ai-video-and-real-video) between AI video and real video.
+Combining audio waveforms directly into visual generation passes eliminates the drift that occurs when timing dialogue to silent video clips. Using specialized tools often proves necessary when [spotting the difference](/video/the-difference-between-ai-and-video-editing/) between AI video and real video.
 
 ## Physics errors and high costs prevent universal dominance
 Current systems continue to suffer from fundamental reasoning flaws and massive compute expenses, stopping any single vendor from dominating the industry. Photorealistic visual output often conceals impossible real-world mechanics.

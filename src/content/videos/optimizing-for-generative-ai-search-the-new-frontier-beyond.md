@@ -42,7 +42,7 @@ Search engine AI overviews, which generate concise answers and recommendations, 
 
 This shift has created a new "front page" for online discovery: the short, named lists of sites recommended by AI. This represents a fresh opportunity for businesses, similar to the early days of search engine optimization (SEO).
 
-Many larger brands are still slow to adapt, often having websites that are not yet built for how an AI reads and interprets content. This new field of optimization is known as Answer Engine Optimization (AEO) and [Generative Engine Optimization](/video/unlock-ai-visibility-your-guide-to-generative-engine-optimization-geo/) (GEO).
+Many larger brands are still slow to adapt, often having websites that are not yet built for how an AI reads and interprets content. This new field of optimization is known as Answer Engine Optimization (AEO) and [Generative Engine Optimization](/video/the-ai-search-revolution-why-generative-engine-optimization-replaces/) (GEO).
 
 ## Understanding Generative Engine Optimization (GEO)
 

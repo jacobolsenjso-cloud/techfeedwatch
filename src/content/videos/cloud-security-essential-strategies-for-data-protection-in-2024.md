@@ -72,7 +72,7 @@ The rapid proliferation of artificial intelligence (AI) technologies has introdu
 
 Every AI tool, from large language models like ChatGPT and Claude to image generators and AI-powered startup agents, runs not on individual devices but on massive clusters of GPUs located in hyper-scaled data centers—which are, by definition, cloud environments. This means AI is fundamentally a cloud problem.
 
-As companies worldwide rush to integrate AI into their operations, they are increasingly pushing sensitive data—including customer information, financial records, medical records, and proprietary source code—through AI systems running in the cloud. This data is processed, stored, and often logged with high retention rates, creating new [attack surfaces](/video/what-is-zero-trust-security-protecting-modern-enterprise-networks/) that were largely non-existent before the 2020s.
+As companies worldwide rush to integrate AI into their operations, they are increasingly pushing sensitive data—including customer information, financial records, medical records, and proprietary source code—through AI systems running in the cloud. This data is processed, stored, and often logged with high retention rates, creating new [attack surfaces](/video/zero-trust-the-essential-security-shift-your-business-needs-now/) that were largely non-existent before the 2020s.
 
 New AI-specific threats include:
 
