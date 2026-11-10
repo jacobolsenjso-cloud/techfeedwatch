@@ -14,8 +14,8 @@ summary: "Artificial intelligence is rapidly redefining the financial technology
 metaDescription: "Explore how FinTech AI is revolutionizing financial services, from fraud detection to robo-advisors, and its complex implications."
 targetQuestion: "how does ai affect fintech"
 duration: "9:00"
-viewCount: 12
-viewsUpdated: "2026-10-25"
+viewCount: 13
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

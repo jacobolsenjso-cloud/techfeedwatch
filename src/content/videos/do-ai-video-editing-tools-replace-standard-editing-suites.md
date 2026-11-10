@@ -13,8 +13,8 @@ summary: "AI video editing tools use machine learning models to automate repetit
 metaDescription: "Learn what AI video editing tools do, how neural engines speed up post-production, and where human creative editing remains essential for copyright."
 targetQuestion: "what are ai video editing tools"
 duration: "10:59"
-viewCount: 8620
-viewsUpdated: "2026-11-07"
+viewCount: 8672
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

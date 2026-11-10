@@ -11,8 +11,8 @@ summary: "When a cybersecurity incident is detected, response teams immediately 
 metaDescription: "Wondering what happens when a cybersecurity incident is detected?"
 targetQuestion: "what happens when a cybersecurity incident is detected"
 duration: "7:50"
-viewCount: 12
-viewsUpdated: "2026-10-28"
+viewCount: 17
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

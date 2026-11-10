@@ -13,8 +13,8 @@ summary: "Earning passive income with crypto is achievable by participating in b
 metaDescription: "Discover how to earn passive income with crypto by running blockchain nodes."
 targetQuestion: "how to earn passive income with crypto"
 duration: "52:55"
-viewCount: 147264
-viewsUpdated: "2026-11-07"
+viewCount: 147480
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

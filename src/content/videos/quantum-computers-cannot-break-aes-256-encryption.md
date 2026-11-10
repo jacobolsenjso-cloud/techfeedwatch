@@ -12,8 +12,8 @@ summary: "Quantum computers cannot break AES-256 encryption within any practical
 metaDescription: "Can quantum computing break AES-256? Discover why Grover's algorithm leaves 128 bits of security and why AES-256 remains safe from quantum attacks."
 targetQuestion: "can quantum computing break aes 256"
 duration: "5:26"
-viewCount: 10
-viewsUpdated: "2026-11-07"
+viewCount: 12
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -13,8 +13,8 @@ summary: "Quantum computing solves specialized problems in molecular simulation,
 metaDescription: "What is quantum computing used for? Explore real-world applications in chemistry, finance, logistics, and encryption, plus the hurdles ahead."
 targetQuestion: "what is quantum computing used for"
 duration: "26:25"
-viewCount: 105317
-viewsUpdated: "2026-11-07"
+viewCount: 105474
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

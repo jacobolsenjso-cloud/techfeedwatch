@@ -12,8 +12,8 @@ summary: "Wearable AI, specifically through smart glasses, is rapidly evolving f
 metaDescription: "Explore AI glasses, the next step in wearable tech. Get hands-free computing, AR, and real-time AI assistance seamlessly integrated into daily life."
 targetQuestion: "what are ai glasses and what do they do"
 duration: "18:37"
-viewCount: 60754
-viewsUpdated: "2026-11-07"
+viewCount: 61039
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

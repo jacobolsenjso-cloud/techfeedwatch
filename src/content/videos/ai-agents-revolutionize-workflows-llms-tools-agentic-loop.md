@@ -13,8 +13,8 @@ summary: "AI agents, powered by large language models, are transitioning from co
 metaDescription: "AI agents powered by LLMs are moving beyond chatbots to execute tasks autonomously. Understand the agentic loop and its impact on future automation."
 targetQuestion: "self correcting ai agents"
 duration: "11:35"
-viewCount: 266949
-viewsUpdated: "2026-11-07"
+viewCount: 267525
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

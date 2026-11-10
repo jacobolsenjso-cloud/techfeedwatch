@@ -14,8 +14,8 @@ summary: "The global AI landscape faces a fundamental tension between open-sourc
 metaDescription: "The AI paradox: Can open-source innovation coexist with national security in a world of advanced frontier models? Explore the geopolitics of AI."
 targetQuestion: "open source ai risks"
 duration: "21:40"
-viewCount: 42
-viewsUpdated: "2026-09-22"
+viewCount: 43
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

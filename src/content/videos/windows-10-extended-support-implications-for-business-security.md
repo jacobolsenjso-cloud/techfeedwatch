@@ -13,8 +13,8 @@ summary: "Microsoft has quietly extended free security updates for Windows 10 by
 metaDescription: "Understand what Windows 10 extended support is, its new end date, and the conditions for securing your system until October 2027."
 targetQuestion: "what is windows 10 extended support"
 duration: "1:01:47"
-viewCount: 242887
-viewsUpdated: "2026-11-07"
+viewCount: 242956
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

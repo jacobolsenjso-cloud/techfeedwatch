@@ -14,8 +14,8 @@ summary: "The integration of artificial intelligence into cryptocurrency trading
 metaDescription: "AI trading assistants in crypto offer efficiency and insights but present AI-specific risks, signaling a human-AI collaborative model."
 targetQuestion: "what is ai crypto trading bot"
 duration: "17:44"
-viewCount: 104372
-viewsUpdated: "2026-11-07"
+viewCount: 104633
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 revised: true

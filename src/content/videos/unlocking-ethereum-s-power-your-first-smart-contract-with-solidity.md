@@ -13,8 +13,8 @@ summary: "Smart contracts on Ethereum are self-executing programs stored on-chai
 metaDescription: "Learn how smart contracts work on Ethereum, from Solidity bytecode and EVM gas mechanics to account types, immutability, and security risks."
 targetQuestion: "how do smart contracts work on ethereum"
 duration: "24:52"
-viewCount: 112016
-viewsUpdated: "2026-11-07"
+viewCount: 112045
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

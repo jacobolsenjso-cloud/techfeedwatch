@@ -13,8 +13,8 @@ summary: "The cyber security field in June 2026 highlighted a persistent array o
 metaDescription: "Explore the key data breaches and cyber incidents from June 2026, revealing evolving threats and essential defense strategies."
 targetQuestion: "data breaches in june 2026"
 duration: "1:28:30"
-viewCount: 96
-viewsUpdated: "2026-11-04"
+viewCount: 97
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

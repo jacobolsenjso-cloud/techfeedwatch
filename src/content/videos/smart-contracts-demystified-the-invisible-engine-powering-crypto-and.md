@@ -13,8 +13,8 @@ summary: "Smart contracts run code automatically on a blockchain, but they canno
 metaDescription: "Can smart contracts be trusted? Discover how code flaws, independent security audits, and legal realities affect blockchain transactions."
 targetQuestion: "can smart contracts be trusted"
 duration: "4:17"
-viewCount: 1951958
-viewsUpdated: "2026-11-07"
+viewCount: 1952277
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

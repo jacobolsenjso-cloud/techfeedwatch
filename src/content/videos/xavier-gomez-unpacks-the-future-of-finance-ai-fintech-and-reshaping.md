@@ -13,8 +13,8 @@ summary: "Financial institutions use artificial intelligence to detect fraudulen
 metaDescription: "Learn how AI is used in finance to detect fraud, speed up underwriting, and cut costs, alongside key risks and leading analysis models."
 targetQuestion: "how is ai used in finance"
 duration: "4:15"
-viewCount: 3730
-viewsUpdated: "2026-11-07"
+viewCount: 3879
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

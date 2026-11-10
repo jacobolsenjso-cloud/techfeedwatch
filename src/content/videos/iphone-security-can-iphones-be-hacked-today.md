@@ -13,8 +13,8 @@ summary: "Yes, iPhones can be hacked despite Apple's strict operating system con
 metaDescription: "Can iPhones be hacked? Learn how zero-click exploits bypass iOS defenses, spot signs of compromise, and keep your Apple device secure."
 targetQuestion: "can iphones be hacked"
 duration: "5:59"
-viewCount: 90
-viewsUpdated: "2026-11-07"
+viewCount: 87
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

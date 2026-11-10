@@ -12,8 +12,8 @@ summary: "Search engine optimization (SEO) organizes web pages so search engines
 metaDescription: "Learn how SEO actually works across crawling, indexing, and ranking algorithms, and see how AI Overviews impact search traffic today."
 targetQuestion: "how does seo actually work"
 duration: "13:20"
-viewCount: 11832
-viewsUpdated: "2026-11-09"
+viewCount: 12285
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3

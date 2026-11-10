@@ -14,8 +14,8 @@ summary: "Kaspa's market performance post-smart contract launch indicates stabil
 metaDescription: "Kaspa's market performance post-smart contract launch indicates stabilization relative to the broader altcoin market, rather than an immediate price surge."
 targetQuestion: "does kaspa have smart contracts"
 duration: "9:51"
-viewCount: 5406
-viewsUpdated: "2026-11-01"
+viewCount: 5408
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 revised: true

@@ -14,8 +14,8 @@ summary: "The concept of a 'second brain,' a digital extension for personal know
 metaDescription: "Learn how AI is revolutionizing personal knowledge management systems. Discover how to build an AI second brain for enhanced productivity."
 targetQuestion: "what does an ai second brain do"
 duration: "2:53:51"
-viewCount: 152
-viewsUpdated: "2026-10-19"
+viewCount: 153
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

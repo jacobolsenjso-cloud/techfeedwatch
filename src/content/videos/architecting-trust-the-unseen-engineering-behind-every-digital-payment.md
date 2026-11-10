@@ -13,8 +13,8 @@ summary: "Digital payment systems facilitate the electronic transfer of funds, r
 metaDescription: "Understand how digital payment systems work, from asynchronous processing to security measures that prevent failures and guarantee transactions."
 targetQuestion: "how do digital payment systems work"
 duration: "31:40"
-viewCount: 743648
-viewsUpdated: "2026-11-07"
+viewCount: 744413
+viewsUpdated: "2026-11-10"
 thumbMax: false
 isShort: false
 rewrittenAt: "2026-09-12"

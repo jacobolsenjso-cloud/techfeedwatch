@@ -12,8 +12,8 @@ summary: "AI video generators leverage artificial intelligence to create videos 
 metaDescription: "Discover what AI video generators are and how to create dynamic content."
 targetQuestion: "what are ai video generators"
 duration: "11:32"
-viewCount: 162376
-viewsUpdated: "2026-11-07"
+viewCount: 162553
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 faqs:

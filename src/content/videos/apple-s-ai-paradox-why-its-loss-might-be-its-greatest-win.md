@@ -13,8 +13,8 @@ summary: "Apple approaches artificial intelligence by embedding compact models d
 metaDescription: "Learn how Apple executes its AI strategy through on-device intelligence, Private Cloud Compute data isolation, and strategic outside partnerships."
 targetQuestion: "what is apple's ai strategy"
 duration: "7:04"
-viewCount: 2329189
-viewsUpdated: "2026-11-07"
+viewCount: 2330773
+viewsUpdated: "2026-11-10"
 thumbMax: true
 isShort: false
 recipe: 3
