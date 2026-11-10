@@ -107,5 +107,24 @@ export function opdaterRedirects(fjernede, { dry = false, sti = REDIRECTS } = {}
     const ud = linjer.join('\n').replace(/\n+$/, '\n') + nye.join('\n') + '\n';
     fs.writeFileSync(sti, ud, 'utf8');
   }
-  return { nyeRegler: nye.length, flyttede };
+
+  // 10/11-2026: de gamle /video/<youtubeId>-adresser ligger i Cloudflare Bulk Redirects (listen "tfw_video_id"),
+  // ikke i _redirects (Pages-grænsen er 2.000 regler). Kopien står i cloudflare/bulk-redirects/tfw_video_id.csv.
+  // Peger en adresse dér på en artikel, der nu fjernes, rettes kopien direkte til det nye mål - og der skrives en
+  // tydelig BULK-linje: listen i Cloudflare skal importeres igen (indtil da virker det, men med 2 hop).
+  const BULK = 'cloudflare/bulk-redirects/tfw_video_id.csv';
+  let bulkFlyttet = 0;
+  if (fs.existsSync(BULK)) {
+    const ud = fs.readFileSync(BULK, 'utf8').split('\n').map((l) => {
+      const [s, t, k] = l.split(',');
+      const m = t?.match(/^https:\/\/techfeedwatch\.com\/video\/([^/]+)\/?$/);
+      const ny = m && nytMaal.get(m[1]);
+      if (!ny) return l;
+      bulkFlyttet++;
+      return `${s},https://techfeedwatch.com${ny},${k}`;
+    }).join('\n');
+    if (bulkFlyttet && !dry) fs.writeFileSync(BULK, ud, 'utf8');
+    if (bulkFlyttet) console.log(`BULK: ${bulkFlyttet} adresser i Cloudflare-listen tfw_video_id pegede på fjernede artikler - ${BULK} er rettet; IMPORTÉR LISTEN IGEN i Cloudflare (Bulk redirects -> tfw_video_id).`);
+  }
+  return { nyeRegler: nye.length, flyttede, bulkFlyttet };
 }
