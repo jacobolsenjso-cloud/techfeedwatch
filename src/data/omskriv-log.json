@@ -577,5 +577,23 @@
   ],
   "usd": 1.4226,
   "soegninger": 12
+ },
+ {
+  "dato": "2026-11-10T10:45:03.424Z",
+  "omskrevet": [],
+  "stoppet": [
+   {
+    "slug": "what-ai-coding-tools-mean-for-healthcare-documentation",
+    "grund": "Fejl: Talesprog efter rettelse: \"I\". Artiklen skrives ikke."
+   }
+  ],
+  "usd": 0.2682,
+  "soegninger": 4,
+  "dataforseo": {
+   "usd": 0,
+   "sendt": 0,
+   "fraHusk": 379,
+   "fejl": null
+  }
  }
 ]

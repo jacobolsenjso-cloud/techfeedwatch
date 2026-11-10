@@ -396,5 +396,30 @@
   ],
   "usd": 0.0035,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-10T10:50:05.554Z",
+  "artikler": [
+   {
+    "slug": "google-s-secret-ai-overhaul-5-gemini-updates-changing-everything-you",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 6,
+    "fund": []
+   },
+   {
+    "slug": "the-allure-of-mad-gains-why-crypto-trading-demands-more-than-beginner",
+    "tjekket": 8,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.005,
+  "soegninger": 0
  }
 ]
