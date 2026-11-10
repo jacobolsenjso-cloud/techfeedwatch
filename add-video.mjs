@@ -1119,6 +1119,8 @@ async function run() {
       const stilFoer = { tvungne: k.tvungne.length, ai: k.aiFr.length }; // til STIL-linjen (14/10)
       if (k.m.length) {
         console.log(`🔎 Kontrol mod faktaarket: ${k.m.join(' · ')} — beder om rettelse`);
+        // 10/11-2026: også sætningerne FØR rettelsen, så man kan se, hvad der blev bedt om at rette
+        for (const x of k.tale) console.log(`   før rettelse - talesprog "${x.ord}": ${String(x.saetning).replace(/\s+/g, ' ').trim().slice(0, 400)}`);
         const ubrugte = fakta.filter((f) => !k.brugte.includes(f)).slice(0, 12);
         try {
           // 32768 (20/10): rettelsen skriver HELE artiklen om, og tænkningen tæller med i
@@ -1171,9 +1173,12 @@ ${content}`);
       // en tegnet tekst-figur og et søgeord klistret ind i en sætning. Målt på alle
       // 420 artikler: reglerne gav 0 falske fund efter justering (8 talesprog, 3
       // klistrede, alle ægte). Uklare kilder og for få lister logges kun.
-      if (k.tale.length) throw new Error(`Talesprog efter rettelse: ${k.tale.map((x) => `"${x.ord}"`).join(', ')}. Artiklen skrives ikke.`);
-      if (k.diagram.length) throw new Error(`Tekst-diagram efter rettelse (${k.diagram.map((x) => x.type).join(', ')}). Artiklen skrives ikke.`);
-      if (k.klistret.length) throw new Error(`Søgeordet "${targetQuestion}" står stadig klistret ind i ${k.klistret.length} sætning(er). Artiklen skrives ikke.`);
+      // 10/11-2026 (Jacob): loggen skrev kun ordet ("I"), så ingen kunne se, om sætningen var forkert eller
+      // tjekket for strengt. Nu skrives hver afvist sætning på en AFVIST:-linje (omskriv-gamle.mjs viser dem også).
+      const visAfviste = (hvad, liste) => { for (const x of liste) console.log(`AFVIST: ${hvad}${x.ord ? ` "${x.ord}"` : ''}: ${String(x.saetning || x.tekst || '').replace(/\s+/g, ' ').trim().slice(0, 400)}`); };
+      if (k.tale.length) { visAfviste('talesprog', k.tale); throw new Error(`Talesprog efter rettelse: ${k.tale.map((x) => `"${x.ord}"`).join(', ')} i ${k.tale.length} sætning(er) - se AFVIST-linjerne. Artiklen skrives ikke.`); }
+      if (k.diagram.length) { visAfviste('tekst-diagram', k.diagram); throw new Error(`Tekst-diagram efter rettelse (${k.diagram.map((x) => x.type).join(', ')}). Artiklen skrives ikke.`); }
+      if (k.klistret.length) { visAfviste('klistret søgeord', k.klistret); throw new Error(`Søgeordet "${targetQuestion}" står stadig klistret ind i ${k.klistret.length} sætning(er) - se AFVIST-linjerne. Artiklen skrives ikke.`); }
       // Merværdi (8/10): en artikel, der for en stor del er videoens egne ord, giver
       // læseren intet, videoen ikke allerede gav - og Google kan læse undertekster.
       if (k.ordretPct > ORDRET_MAKS * 100) throw new Error(`${k.ordretPct} % af sætningerne er afskrevet fra videoen efter rettelse (højst ${ORDRET_MAKS * 100} %). Artiklen skrives ikke.`);
