@@ -36,6 +36,17 @@ const sections = [
   { title: 'Recently added', items: earlier },
 ].filter((s) => s.items.length > 0);
 
+// "Recently updated" (Jacob 10/11-2026): omskrivningen skriver 2-3 gamle artikler om hver dag, men det kunne
+// læseren ikke se - Latest sorterede kun efter udgivelsesdato. `updated` sættes af stamp-updated.mjs KUN når
+// teksten læseren ser er ændret, så listen viser rigtige omskrivninger, ikke tekniske ændringer.
+// Kun artikler, der ikke allerede står ovenfor, og hvis opdatering ligger EFTER udgivelsen (samme dag tæller ikke).
+const OPDATERET_ANTAL = 9;
+const vistOven = new Set(sections.flatMap((s) => s.items.map((a: any) => a.slug)));
+const opdateret = articles
+  .filter((a: any) => a.fm.updated && !vistOven.has(a.slug) && toDay(a.fm.updated) > a.day)
+  .sort((a: any, b: any) => new Date(b.fm.updated).valueOf() - new Date(a.fm.updated).valueOf() || new Date(b.fm.date).valueOf() - new Date(a.fm.date).valueOf())
+  .slice(0, OPDATERET_ANTAL);
+
 // 19/10: den allernyeste artikel vises som stort kort øverst og springes over i sin sektions gitter.
 // StortKort skal have artiklen i samme form som import.meta.glob giver (.file + .frontmatter).
 const foerste: any = sections[0]?.items[0] ?? null;
@@ -45,11 +56,12 @@ const foersteErIDag = !!foerste && foerste.day === todayStr;
 // Beskrivelsen lovede "today and yesterday", men siden viser også en
 // "Recently added"-sektion når de to dage er tynde. Den lovede altså noget
 // den ikke altid holdt.
-const description = "The newest AI, tech, fintech, and crypto articles on TechFeedWatch — today, yesterday, and what came in just before.";
+// 10/11-2026: + de senest omskrevne artikler (sektionen "Recently updated").
+const description = "The newest AI, tech, fintech, and crypto articles on TechFeedWatch — today, yesterday, what came in just before, and the articles we rewrote most recently.";
 // Listen skal beskrive DET DER STÅR PÅ SIDEN. Første forsøg listede alle 389
 // artikler på en side, der viser en håndfuld — schema må ikke love mere end
 // siden holder. `viste` er præcis de artikler, sektionerne rendrer.
-const viste = sections.flatMap((sek: any) => sek.items);
+const viste = [...sections.flatMap((sek: any) => sek.items), ...opdateret];
 // CollectionPage + ItemList (20/9-2026). Listesiderne havde kun en breadcrumb,
 // så en maskine kunne ikke se, at siden ER en liste, eller hvad der står på den.
 // ItemList giver rækkefølgen og adresserne; publisher peger på organisationen
@@ -101,6 +113,12 @@ const listeSchema = {
     .watch-card:hover .tma-grid-title { color: var(--teal-text); }
     .tma-grid-meta { font-size: 13px; color: #6b7280; margin: 0; }
     body.dark-mode .tma-grid-meta { color: #9ca3af; }
+
+    /* 10/11-2026: "Recently updated" - lidt luft over, så den ikke flyder sammen med teksten ovenfor */
+    .latest-opdateret { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border-color, #e5e7eb); }
+    .latest-opdateret-sub { color: #6b7280; font-size: 0.98rem; margin: -8px 0 18px 15px; }
+    body.dark-mode .latest-opdateret-sub { color: #9ca3af; }
+    .upd-badge { position: absolute; top: 8px; left: 8px; background: #6d28d9; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 
     .latest-empty { color: #6b7280; font-size: 1.05rem; padding: 20px 0; }
     body.dark-mode .latest-empty { color: #9ca3af; }
@@ -170,6 +188,39 @@ const listeSchema = {
         That is the last couple of days. <a href="/page/2">Keep reading from here</a>, or browse the
         whole archive by month in the <a href="/library#browse-by-month">library</a>.
       </p>
+    )}
+
+    {/* 10/11-2026 (Jacob): de senest omskrevne artikler nederst - samme kort, men datoen er opdateringsdatoen */}
+    {opdateret.length > 0 && (
+      <div class="latest-section latest-opdateret" id="recently-updated">
+        <h2 class="latest-day-title">Recently updated <span class="latest-count">{opdateret.length}</span></h2>
+        <p class="latest-opdateret-sub">Older articles we revised recently: rewritten with fresh sources, or corrected after a fact check.</p>
+        <div class="latest-grid">
+          {opdateret.map((item: any) => (
+            <a href={`/video/${item.slug}`} class="watch-card">
+              <div class="watch-card-thumb">
+                <img src={`/kort/${item.slug}.webp`} alt={item.fm.title} loading="lazy" />
+                <div class="upd-badge">UPDATED</div>
+              </div>
+              <div>
+                <h3 class="tma-grid-title">{item.fm.title}</h3>
+                <p class="tma-grid-meta">
+                  {item.fm.channelTitle && (
+                    <>
+                      <span class="card-source">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+                        {item.fm.channelTitle}
+                      </span>
+                      <span aria-hidden="true"> · </span>
+                    </>
+                  )}
+                  <span>Updated <time datetime={item.fm.updated}>{formatDate(item.fm.updated)}</time>{item.fm.minutesRead ? ` · ${item.fm.minutesRead} min read` : ''}</span>
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
     )}
   </div>
 </MainLayout>
