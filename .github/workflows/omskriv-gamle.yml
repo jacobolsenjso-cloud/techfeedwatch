@@ -84,6 +84,9 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Søgetal til køens rækkefølge (10/11-2026, src/lib/dataforseo.mjs). Mangler de, er køen som før.
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
 
       # 25/10 (Jacob: "en uafhængig stikprøve hver dag"): 2 tilfældige, allerede kontrollerede
       # artikler; koden henter kildesiderne og tjekker tallene. Fund kontrolleres i trinnet herunder.
@@ -113,7 +116,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json src/data/omskriv-prioritet.json src/data/stikproeve-log.json src/data/stikproeve-fund.json
+          git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json src/data/omskriv-prioritet.json src/data/stikproeve-log.json src/data/stikproeve-fund.json src/data/dataforseo.json
           if git commit -m "Archive articles rewritten with the search-first recipe"; then
             # 7/11-2026: fælles udgivelse - 3 forsøg, datafiler flettes, konflikt i alt andet stopper (.github/udgiv.sh).
             bash .github/udgiv.sh

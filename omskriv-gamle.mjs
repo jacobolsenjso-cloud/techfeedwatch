@@ -16,6 +16,7 @@ import fs from 'node:fs';
 import 'dotenv/config'; // 26/10: YOUTUBE_API_KEY til videosøgningen ved lokale kørsler (GitHub giver den som env)
 import { spawn } from 'node:child_process';
 import { laesHjerne } from './src/lib/hjerne.mjs';
+import { hentTal, ordn, normaliser, talTekst, logLinje } from './src/lib/dataforseo.mjs';
 
 // 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3; // 5/11 (Jacob): 3 om dagen, alle 7 dage, for prisens skyld (ca. 0,51 USD pr. forsøg; før 4, 26/10: 4, før 8)
@@ -60,14 +61,35 @@ const gamle = kun
     .sort((a, b) => (prio ? Number(!prio.has(a.slug)) - Number(!prio.has(b.slug)) : 0) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
+// Søgetal (DataForSEO, Jacob 10/11-2026: "samme setup som Tech Media Archive"): køen tager de artikler, folk
+// faktisk søger på, først. Hvert artikelspørgsmål (targetQuestion) slås op (src/lib/dataforseo.mjs; hukommelsen
+// i 30 dage gør det gratis efter første gang). Google-viste artikler (omskriv-prioritet.json) står stadig først;
+// inden for begge grupper: søgninger × lethed, derefter de ukendte, til sidst dem med under 20 søgninger -
+// og ved lige stand nyeste først som før. Fejler DataForSEO, er køen præcis som før (nyeste først).
+let dfsLinje = null, dfsLog = null;
+if (!kun) {
+  const dfs = await hentTal(gamle.map((a) => a.spm));
+  dfsLog = dfs.log;
+  const talFor = (a) => dfs.tal.get(normaliser(a.spm));
+  dfsLinje = logLinje(dfs.log, gamle, talFor);
+  const iPrio = prio ? gamle.filter((a) => prio.has(a.slug)) : [];
+  const resten = prio ? gamle.filter((a) => !prio.has(a.slug)) : gamle;
+  const ordnet = [...ordn(iPrio, talFor), ...ordn(resten, talFor)];
+  gamle.splice(0, gamle.length, ...ordnet);
+  for (const a of gamle) a.tal = talFor(a);
+}
+
 console.log(kun
   ? `Målrettet omskrivning af "${kun}"${nyVideo ? ' med ny video' : ''}`
-  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-viste først, så nyeste)`);
-// --vis: vis kun, hvilke artikler der står for tur — intet skrives, intet koster
-if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
+  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-viste først, så flest søgninger, så nyeste)`);
+if (dfsLinje) console.log(dfsLinje);
+// --vis: vis kun, hvilke artikler der står for tur — intet skrives (søgetal koster første gang ca. $0,06, derefter intet)
+if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}  (${talTekst(a.tal)})`); process.exit(0); }
 // 25/10: uden Jacobs hjerne startes ingen omskrivning (ellers betales research for intet - add-video stopper alligevel).
 if (!laesHjerne()) { console.log('Stop: hjernen mangler (_hjerne / HJERNE_DIR) - ingen omskrivning uden Jacobs stemme.'); process.exit(1); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0, soegninger: 0 };
+// Søgetallenes pris står for sig (DataForSEO-saldoen er en anden konto end Gemini/YouTube)
+if (dfsLog) kørsel.dataforseo = { usd: dfsLog.pris, sendt: dfsLog.sendt, fraHusk: dfsLog.fraHusk, fejl: dfsLog.fejl };
 // 25/10 (Jacob: 8 om dagen): op til PARALLELT omskrivninger ad gangen. Én tager ca. 26 min (målt
 // 25/10), så 8 i træk ville spærre robottens kø i 3,5 time. Hver omskrivning skriver kun sine egne
 // filer (artikel, billede, cache pr. video), så de kan køre samtidig.

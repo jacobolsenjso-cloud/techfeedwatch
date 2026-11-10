@@ -13,7 +13,8 @@
 # src/layouts, src/lib og astro.config.mjs). public/robot-status.json er IKKE med: den ligger på sitet
 # og læses af tomgangsalarmen.
 set -u
-UDEN_BYG='^(src/data/robot-log\.jsonl|src/data/tried-questions\.json|src/data/used-questions\.json|indexnow-sendt\.json)$'
+# 10/11-2026: src/data/dataforseo.json (søgetallenes hukommelse) læses kun af robotten, ikke af sitet.
+UDEN_BYG='^(src/data/robot-log\.jsonl|src/data/tried-questions\.json|src/data/used-questions\.json|src/data/dataforseo\.json|indexnow-sendt\.json)$'
 BESKED="$1"; shift
 if [ "$#" -gt 0 ]; then git add -- "$@"; else git add .; fi
 if git diff --cached --quiet; then exit 1; fi

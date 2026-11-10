@@ -9,6 +9,7 @@ import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 import { retSpoergsmaal, passerEmnet, redaktoerPrompt } from './src/lib/spoergsmaalsfilter.mjs';
 import { forhaandsScorer, SKAER } from './src/lib/forhaandstjek.mjs';
+import { hentTal, ordn, normaliser, gruppe, talTekst, logLinje } from './src/lib/dataforseo.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -218,11 +219,31 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
   }
   if (!forslag.length) return null;
   if (!ubrugte.length) return null;
+
+  // Søgetal (DataForSEO, Jacob 10/11-2026: "samme setup som Tech Media Archive"): alle ubrugte forslag slås op
+  // (src/lib/dataforseo.mjs; hukommelsen i 30 dage gør gentagne opslag gratis). Har mindst ét af dem nok
+  // søgninger, ordnes listen efter søgninger × lethed: loftet på 40 til redaktøren tager de bedste, og
+  // dublet-tjekket prøver dem i den rækkefølge. Uden tal (ingen nøgle, DataForSEO fejler, alle ukendte)
+  // vælges der efter klokkeslættet præcis som før.
+  const dfs = await hentTal(ubrugte);
+  const talFor = (q) => dfs.tal.get(normaliser(q));
+  console.log(logLinje(dfs.log, ubrugte, talFor));
+  if (dfs.log.fejl) console.log(`Info: DataForSEO gav ingen nye søgetal (${dfs.log.fejl}) - vælger med dem, hukommelsen har.`);
+  const medTal = ubrugte.some((q) => gruppe(talFor(q)) === 0);
+  if (medTal) {
+    // Klokkeslættet bestemmer stadig rækkefølgen blandt dem uden tal (ordn bevarer den)
+    const s0 = Math.floor(Date.now() / 3600e3) % ubrugte.length;
+    ubrugte = ordn([...ubrugte.slice(s0), ...ubrugte.slice(0, s0)], talFor);
+    console.log(`Info: Søgetal - bedste forslag: ${ubrugte.slice(0, 3).map((q) => `"${q}" (${talTekst(talFor(q))})`).join(', ')}`);
+  }
+
   // Højst 40 forslag til redaktøren (14/10, målt i prøve #11): med 100+ forslag tænkte modellen
   // 7.864 tokens og ramte loftet på 8192 — svaret blev klippet, og listen gik ufiltreret videre.
-  // Klokkeslættet vælger hvilke 40, så alle forslag kommer i spil over tid.
+  // Klokkeslættet vælger hvilke 40, så alle forslag kommer i spil over tid. Med søgetal: de 40 bedste.
   const MAX_TIL_REDAKTOER = 40;
-  if (ubrugte.length > MAX_TIL_REDAKTOER) {
+  if (medTal && ubrugte.length > MAX_TIL_REDAKTOER) {
+    ubrugte = ubrugte.slice(0, MAX_TIL_REDAKTOER);
+  } else if (ubrugte.length > MAX_TIL_REDAKTOER) {
     const s0 = Math.floor(Date.now() / 3600e3) % ubrugte.length;
     ubrugte = [...ubrugte.slice(s0), ...ubrugte.slice(0, s0)].slice(0, MAX_TIL_REDAKTOER);
   }
@@ -250,6 +271,10 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
         const godkendte = ubrugte.filter((_, i) => behold.has(i));
         const afviste = ubrugte.filter((_, i) => !behold.has(i));
         if (afviste.length) console.log(`Info: Spørgsmål afvist som uklare/slang: ${afviste.map((s) => `"${s}"`).join(', ')}`);
+        // Med søgetal står de samme forslag øverst ved hver kørsel; et afvist forslag ville så tage en af de
+        // 40 pladser igen og igen (redaktøren svarer ens med temperatur 0). Derfor på is i PROEVET_DAGE dage.
+        // Kun når der godkendes nogen - ellers kan det være redaktøren, der fejler.
+        if (medTal && godkendte.length) for (const s of afviste) markerSpoergsmaalProevet(s, tag);
         if (godkendte.length) ubrugte = godkendte;
       }
     } catch (e) {
@@ -267,16 +292,24 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
   // Klokkeslættet (timen) vælger startpunktet, så to kørsler i træk ikke
   // nødvendigvis tager det samme spørgsmål, hvis den første ikke fik udgivet noget.
   const MAX_DUBLET_TJEK = 6;
+  // Med søgetal: listen er allerede ordnet efter værdi - de bedste prøves først.
   const start = Math.floor(Date.now() / (1000 * 60 * 60)) % ubrugte.length;
-  const raekke = [...ubrugte.slice(start), ...ubrugte.slice(0, start)].slice(0, MAX_DUBLET_TJEK);
+  const raekke = medTal ? ubrugte.slice(0, MAX_DUBLET_TJEK)
+    : [...ubrugte.slice(start), ...ubrugte.slice(0, start)].slice(0, MAX_DUBLET_TJEK);
   const genAI = process.env.GEMINI_API_KEY ? new GoogleGenerativeAI(process.env.GEMINI_API_KEY) : null;
   const artikler = eksisterendeArtikler();
   let valgt = null;
   for (const q of raekke) {
     const { behold, afvist } = await fjernDubletter([q], { genAI, hentModel, model: GEMINI_MODEL, artikler });
-    if (afvist.length) { console.log(`Info: Dublet afvist: "${q}" ~ ${afvist[0].slug} [${afvist[0].lag}]`); continue; }
+    if (afvist.length) {
+      console.log(`Info: Dublet afvist: "${q}" ~ ${afvist[0].slug} [${afvist[0].lag}]`);
+      // Med søgetal ville samme dublet stå øverst hver time og tage en af de 6 pladser - på is i PROEVET_DAGE dage.
+      if (medTal) markerSpoergsmaalProevet(q, tag);
+      continue;
+    }
     if (behold.length) { valgt = q; console.log(`Info: Dublet-tjek bestået: "${q}" dækkes ikke af en eksisterende artikel.`); break; }
   }
+  if (valgt) console.log(`SOEGETAL-VALGT: "${valgt}" - ${talTekst(talFor(valgt))}${medTal ? '' : ' (valgt efter klokkeslæt - ingen af forslagene havde nok søgninger)'}`);
   if (!valgt) { alleVarDubletter = true; return null; }
   // Spørgsmålet gemmes IKKE her — først når en artikel faktisk er udgivet
   // (se markerSpoergsmaalBrugt). Målt 15/9: kørsel #523 brugte "what is ai
@@ -658,10 +691,14 @@ async function findNewestVideos() {
     // bruger et spørgsmål op.
     const foer = fs.existsSync('src/data/used-questions.json')
       ? fs.readFileSync('src/data/used-questions.json', 'utf8') : null;
+    // 10/11-2026: med søgetal lægges afviste forslag på is (tried-questions.json) - også den rulles tilbage.
+    const foerProevet = fs.existsSync(PROEVET) ? fs.readFileSync(PROEVET, 'utf8') : null;
     const q = await vaelgSpoergsmaal(dryTag, TOPIC_BY_TAG[dryTag]);
     if (!process.argv.includes('--keep')) {
       if (foer === null) fs.rmSync('src/data/used-questions.json', { force: true });
       else fs.writeFileSync('src/data/used-questions.json', foer, 'utf8');
+      if (foerProevet === null) fs.rmSync(PROEVET, { force: true });
+      else fs.writeFileSync(PROEVET, foerProevet, 'utf8');
     }
     console.log(`Ville søge på:   "${q || TOPIC_BY_TAG[dryTag]}"`);
     console.log(q ? '                 (spørgsmål fra autocomplete)' : '                 (emnet alene — intet spørgsmål fundet)');

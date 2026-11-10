@@ -46,6 +46,19 @@ try {
     usd: Math.round(usd * 10000) / 10000,
     kald,
     soegninger, // 26/10: Google-søgninger (koster 0,014 USD stk., når månedens gratis er brugt)
+    // 10/11-2026: søgetal fra DataForSEO (SOEGETAL-linjerne fra src/lib/dataforseo.mjs). Prisen står for sig,
+    // fordi det er en anden konto end Gemini/YouTube. valgt = det valgte spørgsmål med dets søgetal.
+    dataforseo: (() => {
+      const js = linjer.map((l) => l.match(/SOEGETAL: (\{.*\})\s*$/)).filter(Boolean).map((m) => { try { return JSON.parse(m[1]); } catch { return null; } }).filter(Boolean);
+      if (!js.length) return null;
+      return {
+        usd: Math.round(js.reduce((s, j) => s + (Number(j.usd) || 0), 0) * 1e6) / 1e6,
+        sendt: js.reduce((s, j) => s + (Number(j.sendt) || 0), 0),
+        medTal: js.reduce((s, j) => s + (Number(j.medTal) || 0), 0),
+        fejl: js.map((j) => j.fejl).filter(Boolean)[0] || null,
+        valgt: alle(/SOEGETAL-VALGT: (.*)$/).map((x) => x.slice(0, 160)),
+      };
+    })(),
   };
   fs.mkdirSync('src/data', { recursive: true });
   fs.appendFileSync(FIL, JSON.stringify(post) + '\n', 'utf8');

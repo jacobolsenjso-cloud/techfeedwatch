@@ -73,6 +73,9 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Søgetal til valget af spørgsmål (10/11-2026, src/lib/dataforseo.mjs). Mangler de, vælges der som før.
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
 
       # Robottens logbog (14/10): én linje pr. kørsel i src/data/robot-log.jsonl (pris, udfald,
       # advarsler). Den daglige rapport læser den. Slutter altid med kode 0.

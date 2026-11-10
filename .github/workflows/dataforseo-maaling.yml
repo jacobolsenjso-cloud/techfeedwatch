@@ -1,0 +1,69 @@
+name: DataForSEO-maaling
+
+# 10/11-2026 (Jacob: DataForSEO "samme setup som Tech Media Archive"): måler søgetal på hele sitet
+# (dataforseo-maaling.mjs, ca. $0,07 første gang), viser omskrivningskøen med søgetal og laver et tørt løb af
+# robottens valg af spørgsmål. Nøglerne ligger som GitHub-secrets; de skrives aldrig ud.
+# Startes ved et push af .github/dataforseo-maal.txt (også fra en gren, før koden er på main) eller i hånden.
+# Hukommelsen (src/data/dataforseo.json) gemmes på den gren, kørslen kom fra - så betales tallene ikke igen.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/dataforseo-maal.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-skriver
+  cancel-in-progress: false
+
+jobs:
+  maal:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Selvtest af søgetallene (uden net)
+        run: node test-dataforseo.mjs
+
+      - name: Mål søgetal på hele sitet
+        run: node dataforseo-maaling.mjs
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+
+      # Fra hukommelsen - koster intet
+      - name: Omskrivningskøen med søgetal (de næste 15)
+        run: node omskriv-gamle.mjs --vis --antal=15
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+
+      # Robottens valg af spørgsmål med søgetal (autocomplete + redaktør + dublet-tjek, intet udgives)
+      - name: Tørt løb af robottens spørgsmålsvalg
+        continue-on-error: true
+        run: node auto-youtube.mjs --dry-run
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+
+      - name: Gem hukommelsen
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          KODE=0; bash .github/commit.sh "DataForSEO: save search volume memory" src/data/dataforseo.json || KODE=$?
+          if [ "$KODE" -gt 1 ]; then exit "$KODE"; fi
+          if [ "$KODE" -eq 1 ]; then echo "Intet nyt at gemme."; exit 0; fi
+          if [ "${{ github.ref_name }}" = "main" ]; then bash .github/udgiv.sh; else git push -q origin HEAD:${{ github.ref_name }} && echo "Gemt på ${{ github.ref_name }}."; fi
