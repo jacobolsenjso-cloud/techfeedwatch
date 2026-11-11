@@ -595,5 +595,27 @@
    "fraHusk": 379,
    "fejl": null
   }
+ },
+ {
+  "dato": "2026-11-11T06:37:22.356Z",
+  "omskrevet": [
+   "how-much-does-cybersecurity-pay-and-career-outlook",
+   "productivity-software-and-what-it-means-for-modern-work",
+   "sora-ai-defined-generative-video-before-its-sudden-collapse"
+  ],
+  "stoppet": [
+   {
+    "slug": "claude-ai-for-business-launch-services-acquire-clients-faster",
+    "grund": "Fejl: Redaktørtjek: 3 ensidige sætninger efter rettelse (højst 2): \"Claude AI is good for processing long documents, writing software code, and draf\" · \"The system helps professionals cut drafting tim"
+   }
+  ],
+  "usd": 2.2673,
+  "soegninger": 22,
+  "dataforseo": {
+   "usd": 0,
+   "sendt": 0,
+   "fraHusk": 345,
+   "fejl": null
+  }
  }
 ]

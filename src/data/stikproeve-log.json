@@ -421,5 +421,30 @@
   ],
   "usd": 0.005,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-11T07:03:11.935Z",
+  "artikler": [
+   {
+    "slug": "are-programming-libraries-just-collections-of-code",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 8,
+    "fund": []
+   },
+   {
+    "slug": "the-difference-between-ai-and-video-editing",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 4,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.0061,
+  "soegninger": 0
  }
 ]
