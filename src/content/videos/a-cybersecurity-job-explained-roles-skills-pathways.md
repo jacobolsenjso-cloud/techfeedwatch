@@ -1,94 +1,106 @@
 ---
-title: "What a Cybersecurity Job Is and How to Get One"
-youtubeId: "WHdanHVyerg"
-channelTitle: "Jake's Tech"
-channelId: "UCuS7YbpU6K_ECGnWPn0L-rg"
-publishedAt: "2026-04-16T15:26:06Z"
+title: "Which Daily Tasks Define a Cybersecurity Job?"
+youtubeId: "Gfy8Ng1-ccI"
+channelTitle: "Cyber with Ben"
+channelId: "UCPk5EdfTqVkEzDQ89FeuOgA"
+publishedAt: "2025-05-14T15:00:06Z"
 date: "2026-08-29"
-updated: "2026-09-12"
+updated: "2026-11-12"
 tags:
   - "Cybersecurity"
-  - "AI & Tech"
-summary: "A cybersecurity job involves protecting digital systems, networks, and data from threats. While perceived barriers like extensive experience often deter aspirants, the field primarily values demonstrable skills over long years of formal employment. Entry requires a structured approach to learning, prioritizing hands-on experience and foundational knowledge in IT and networking. Strategic application and resume optimization are critical for landing roles in this growing sector."
-metaDescription: "Understand what a cybersecurity job entails and how to break into the field, focusing on essential skills, certifications."
+summary: "A cybersecurity job involves protecting computer systems, private networks, and sensitive data from digital attacks and unauthorized intrusions. Professionals in this sector monitor network traffic, identify technical vulnerabilities, and maintain digital defenses across diverse industries. While the field offers high wages and rapid job growth, employers expect candidates to show verified technical skills or prior IT experience before hiring them."
+metaDescription: "What is a cybersecurity job? Discover daily responsibilities, median salaries, hiring demand, and how to start a career in digital defense."
 targetQuestion: "what is a cybersecurity job"
-duration: "49:19"
-viewCount: 24495
-viewsUpdated: "2026-11-10"
+duration: "11:51"
+viewCount: 167860
+viewsUpdated: "2026-11-12"
 thumbMax: true
 isShort: false
-rewrittenAt: "2026-09-12"
+recipe: 3
+rewrittenAt: "2026-11-12"
 faqs:
-  - question: "Do you need years of experience to get a cybersecurity job?"
-    answer: "No, you don't need extensive job experience, though skills are absolutely necessary. The common belief that you need 10 years of specific experience to enter cybersecurity is a myth."
-  - question: "What are the best foundational certifications for a cybersecurity career?"
-    answer: "The Google Cybersecurity Professional Certificate provides excellent fundamentals. Following this, CompTIA's Network Plus and Security Plus are crucial for understanding network infrastructure and security principles."
-  - question: "Is prior IT support experience beneficial for a cybersecurity job?"
-    answer: "Yes, starting with 3 to 6 months in an entry-level IT job like help desk is recommended. This experience provides a foundational understanding of IT systems, which is essential for effective security."
-  - question: "How long does it typically take to land a cybersecurity job with no prior experience?"
-    answer: "With consistent effort and a structured approach, it is realistic to land a cybersecurity job within zero to one year. This timeline is optimistic and assumes diligent study and strategic job searching."
+  - question: "What does a standard cybersecurity job description include?"
+    answer: "A standard cybersecurity job focuses on planning, implementing, and monitoring security measures to protect computer networks and systems. Bureau of Labor Statistics details show workers also identify vulnerabilities, inspect digital incidents, and configure defenses against unauthorized access."
+  - question: "Is the cybersecurity job market bad right now?"
+    answer: "No, the job market remains strong and continues to face an ongoing shortage. CyberSeek counts just 74 available workers for every 100 job openings in the United States, and NCSES reports an unemployment rate between 1% and 2%."
+  - question: "Why is cybersecurity a good career choice?"
+    answer: "Cybersecurity offers high pay, strong projected job growth, and long-term career stability. According to the Bureau of Labor Statistics, information security analysts have a median annual wage of $129,180 with 21 percent employment growth from 2025 to 2035, while ISC2 reports a global cybersecurity workforce gap of 4.8 million professionals."
+keyFacts:
+  - text: "Information security analysts plan, implement, and monitor security measures to protect an organization's computer networks and systems, earning a median annual wage of $129,180 as of May 2025."
+    source: "U.S. Bureau of Labor Statistics (BLS)"
+    url: "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
+  - text: "The U.S. cybersecurity labor market maintained a supply-demand ratio of 74%, indicating that there were only 74 available cybersecurity workers for every 100 job openings."
+    source: "CyberSeek"
+    url: "https://www.cyberseek.org/docs/06-02-2025_CyberSeek_June_2025.pdf"
+  - text: "The active global cybersecurity workforce reached approximately 5.5 million professionals, yet the worldwide workforce shortage stood at an estimated 4.8 million unfilled roles."
+    source: "ISC2 2024 Cybersecurity Workforce Study"
+    url: "https://www.isc2.org/Insights/2024/10/Cybersecurity-Workforce-INSIGHTS-October-2024"
 ---
 
-A cybersecurity job fundamentally involves safeguarding an organization's digital assets from a myriad of threats, ranging from data breaches and malware to phishing attacks and insider risks. Professionals in this field protect sensitive information, maintain system integrity, and ensure the continuous availability of critical services.
+A cybersecurity job is a technical role focused on protecting digital systems. Workers protect computer networks, software applications, and private data from digital attacks.
 
-Success in this domain hinges less on extensive prior job titles and more on a clear demonstration of core technical abilities and analytical thinking.
+They spot vulnerabilities (security weaknesses), monitor incoming network traffic (data moving across networks), and contain unauthorized access attempts. These professionals keep essential systems running safely across private corporations, healthcare institutions, and government agencies.
 
-## Why you do not need years of experience
+Security specialists prevent criminals from stealing sensitive records, hijacking operational infrastructure, or disrupting essential services. They configure firewalls (barrier tools blocking suspicious data) and enforce identity protocols (rules verifying user identities). They also respond immediately when digital alarms trigger, combining investigative problem solving with active defense across complex computer systems.
 
-Many individuals looking to enter cybersecurity perceive a significant hurdle: the myth that they require "10 years of X experience" to break into the field. This widely circulated notion often discourages potential candidates, suggesting an insurmountable barrier. However, this is largely untrue.
+## Practical IT skills and baseline certifications launch security careers
 
-What employers truly seek are demonstrable skills, not just a lengthy employment history. They evaluate whether candidates can "think through problems," "reason about systems," "analyze logs," "identify suspicious activity," and "respond to issues appropriately." The source of these skills – be it from a lab, personal projects, or a formal job – is less important than the ability to apply them.
+Launching a security career requires a strong grounding in computer networking, operating systems, and recognized industry credentials. Data from the National Center for Science and Engineering Statistics (NCSES) shows that cybersecurity is rarely a true entry-level discipline. Employers routinely place a premium on prior IT, network administration, or software engineering experience. Many people enter the field after learning the [core difference between cybersecurity and IT](/video/difference-between-cybersecurity-and-information-technology) through hands-on system administration.
 
-Interestingly, many people begin building foundational cybersecurity skills without realizing it. Tasks encountered in entry-level IT careers, such as addressing phishing issues, managing multi-factor authentication (MFA) problems, or resolving account lockouts, are inherently cybersecurity-related.
+I often tell people that curiosity will get you quite far in tech, but security is an entirely different beast. You simply cannot afford sloppy guesswork when guarding critical systems, because a single oversight carries severe fallout. Having formal credentials and verified competence makes complete sense here.
 
-These experiences, even in a tier one help desk role, lay a practical groundwork for understanding digital threats and protective measures. Understanding [why cybersecurity matters for AI agents](/video/protection-imperative-why-cybersecurity-matters-to-you) can highlight the relevance of these early experiences.
+Defending enterprise environments requires complete familiarity with routing protocols (rules directing data between networks). Workers must also understand domain name systems (tools translating website names into numeric addresses) and data transmission standards. Hands-on experience debugging connectivity issues, managing server configurations, and resolving operational tickets builds practical intuition.
 
-## Certifications and networking fundamentals you need
+Under [NIST](https://www.nist.gov/news-events/events/2026/10/cyber-career-realities-revealed-panel-across-nice-framework-work-role) SP 800-181 Revision 1, the Workforce Framework for Cybersecurity (NICE Framework) organizes this work into 42 roles across five high-level categories:
 
-The pathway to a cybersecurity job has evolved, emphasizing structured learning and practical application. Instead of aimless self-study, a targeted approach with specific certifications has become paramount.
+- Oversight and Governance: Specialists establish security policies, manage legal compliance, and assess enterprise business risks.
+- Design and Development: Engineers architect secure networks, build protective hardware, and write defensible software code.
+- Implementation and Operation: Administrators manage daily system security, assign access rights, and maintain server protections.
+- Protection and Defense: Analysts monitor live network logs, patch vulnerabilities, and repel unauthorized intrusions.
+- Investigation: Digital detectives analyze compromised machines, extract forensic evidence, and track down cybercrime suspects.
 
-A strong starting point for foundational cybersecurity knowledge is the Google Cybersecurity Professional Certificate. This program provides essential principles and includes hands-on labs and projects, allowing learners to practice real-life cybersecurity tasks and test their aptitude for the field.
+CompTIA notes that foundational certifications like CompTIA Security+ validate entry-level baseline security operations. Advanced credentials like the CISSP (Certified Information Systems Security Professional) require verified hands-on work experience across specialized security domains. Professional [cybersecurity engineers](/video/cybersecurity-engineers-what-they-actually-do) rely on these advanced credentials to validate their expertise in enterprise architecture and threat modeling.
 
-Following foundational certifications, mastering network infrastructure is non-negotiable. CompTIA's Network Plus is a critical step for comprehending "how computers actually connect."
+Candidates preparing for security positions typically focus on several core milestones:
 
-Without a deep understanding of networking concepts, such as how traffic flows, how DHCP (Dynamic Host Configuration Protocol) and DNS (Domain Name System) operate, or how Access Control Lists (ACLs) and firewalls function, an aspiring professional "is not going to be a very good cybersecurity professional." As the adage goes, "You can't secure what you don't understand."
+- Master basic networking: Learn how IP addresses, subnets, ports, and firewalls control the flow of data packets.
+- Study core operating systems: Gain practical command over both Linux command-line environments and Windows server architectures.
+- Earn entry-level credentials: Pass standardized exams like CompTIA Security+ to demonstrate verified operational competence to recruiters.
+- Build laboratory experience: Configure home servers, analyze log files, and test defenses in controlled virtual environments.
 
-This networking knowledge is the bedrock upon which all other security concepts are built. Complementing this, the Security Plus certification further solidifies understanding of security concepts.
+## Information security analysts earn six figures amid booming demand
 
-While there are many certifications available, strategic choices are key. For instance, the CompTIA A+ certification, despite being a general entry into IT, can often be skipped for those aiming directly for cybersecurity. It involves "two tests" and can cost "half a grand," consuming significant study time that could be better allocated to cybersecurity-specific learning paths.
+Information security analysts plan, implement, and monitor measures to protect an organization's computer networks and systems. As of May 2025, they earn a median annual wage of $129,180 based on U.S. Bureau of Labor Statistics (BLS) data. The agency also projects employment for these analysts will grow 21% from 2025 to 2035. This expansion will add approximately 40,600 positions, generating about 14,100 job openings per year.
 
-Tools like AI, specifically GPT, have also become valuable resources to aid learning and prepare for certifications, like leveraging Jason Dion's practice tests for Network Plus and Security Plus. The emphasis is squarely on gaining "hands-on experience" by engaging with problems, analyzing data, and evaluating different solutions and their trade-offs.
+The following table summarizes official workforce statistics and industry growth measurements compiled by the U.S. Bureau of Labor Statistics, CyberSeek, ISC2, and the National Center for Science and Engineering Statistics:
 
-## Career paths to land an entry-level security role
+| Metric | Published Value | Reporting Source |
+| :--- | :--- | :--- |
+| Median Annual Wage | $129,180 as of May 2025 | U.S. Bureau of Labor Statistics |
+| Annual Job Openings | 14,100 openings per year | U.S. Bureau of Labor Statistics |
+| Worker Supply-Demand Ratio | 74 workers per 100 job openings | CyberSeek |
+| Active Global Workforce | 5.5 million professionals | ISC2 (2024 Workforce Study) |
+| Global Workforce Shortage | 4.8 million unfilled roles | ISC2 (2024 Workforce Study) |
+| Domestic Unemployment Rate | Between 1% and 2% | NCSES |
 
-The path to securing an entry-level cybersecurity job typically presents two primary options after acquiring foundational skills and certifications. The first, and often recommended, approach involves starting with an entry-level IT job, such as help desk, IT support, or tier one.
+CyberSeek measures a U.S. supply-demand ratio of 74%, meaning there are only 74 available workers for every 100 openings. Across the world, the ISC2 2024 Cybersecurity Workforce Study counts 5.5 million active professionals against an estimated shortage of 4.8 million unfilled roles. For domestic staff, National Center for Science and Engineering Statistics (NCSES) figures show an unemployment rate between 1% and 2% alongside an adult labor force participation rate near 90%.
 
-Spending "3 to 6 months at this job" provides invaluable real-world experience with technology infrastructure. This generalist IT experience helps solidify an understanding of systems before specializing in their security.
+## Cyber with Ben explains beginner career paths and industry demand
 
-After this initial IT phase, candidates can then target entry-level cybersecurity roles such as SOC (Security Operations Center) analyst, security analyst, or even network security administrator. For those interested in the day-to-day work, exploring [what a cybersecurity analyst does](/video/analyst-what-a-cybersecurity-professional-actually-does) can offer deeper insights.
+Ben points to strong market demand in 2025, citing over 3.5 million projected job openings. He also counters the belief that the profession strictly requires offensive hacking skills.
 
-The second option, skipping the help desk entirely and moving directly into a SOC analyst role, is possible but generally less optimal. Lacking that basic tier one experience can make securing systems more challenging, as it's difficult to protect what one doesn't deeply comprehend from an operational standpoint.
+In his view, starting as a Security Operations Center analyst offers an accessible technical foundation. These workers monitor networks, detect threats, and manage alerts using platforms like [Splunk](https://www.splunk.com/). By contrast, penetration testing involves simulating attacks and documenting vulnerabilities, which Ben considers less beginner-friendly due to advanced technical demands.
 
-Beyond skill acquisition, the job application process itself is a critical battleground. A common pitfall is relying solely on one-click applications found on platforms like LinkedIn, Indeed, or Easy Apply.
+Focusing on defense first is sound advice. Defending systems is where the everyday responsibility lies, from keeping backups safe to watching incoming alerts. Real defense takes patience and a calm head rather than flashy attack tricks.
 
-According to Jake's Tech, such applications are often "a waste of your time." A more effective strategy involves applying directly on company websites and meticulously tracking each application, noting who has replied and what remains in the pipeline.
+Other paths include cloud security engineers configuring permissions across AWS (Amazon Web Services), Google Cloud, and Microsoft Azure. Governance, risk, and compliance analysts audit policies against standards like NIST, ISO, and PCI. To build essential competence, Ben recommends pursuing baseline credentials such as CompTIA Network+ and Security+.
 
-Resume development also plays a pivotal role. Resumes must be tailored to specific positions, highlighting core skills such as understanding Microsoft environments, log analysis, incident response, and networking. Demonstrating real-world IT infrastructure understanding through labs is also critical.
+## Sources
 
-Utilizing AI tools to refine and iterate on resume content can significantly improve its impact. Jake's Tech offers a "100% free" resume workshop on jakestechlabs.com to assist with this, emphasizing how How do cybersecurity projects best appear on a resume?. Finally, interview preparation, including practicing talking about technical subjects, even to a camera, is essential for articulating one's skills effectively.
-
-## Realistic timeline and strategy for landing a job
-
-For those diligently pursuing a cybersecurity career, a realistic timeline suggests landing a job within "zero to one year" with consistent effort. This optimistic projection hinges on strategic learning and application. The broader field of job acquisition in 2026 and beyond emphasizes not just competence, but also strategic positioning.
-
-The reality is that someone with fewer technical skills but a superior application strategy and presentation can often secure a position over a more technically proficient but less strategic candidate. It is about "playing the game right."
-
-As professionals advance, opportunities for further specialization and higher-level certifications emerge, including CySA+, CASP, OSCP, PenTest, and Linux+. The field demands continuous learning to stay ahead of evolving threats and technologies. Understanding [cybersecurity pay and career outlook](/video/how-much-does-cybersecurity-pay-and-career-outlook) can provide context for future career planning.
-
-Ultimately, while the path to a cybersecurity job is not without its challenges, it is fundamentally "simple" in its requirements:
-
-- Follow a structured learning path
-- Gain hands-on experience
-- Apply strategically
-
-The only truly detrimental action is to not begin the journey at all.
+- [Cyber Career Realities Revealed: Panel Across NICE Framework Work Role Categories | NIST](https://www.nist.gov/news-events/events/2026/10/cyber-career-realities-revealed-panel-across-nice-framework-work-role) — nist.gov
+- [Information Security Analysts : Occupational Outlook Handbook: : U.S. Bureau of Labor Statistics](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm) — bls.gov
+- [06 02 2025 CyberSeek June 2025 (PDF)](https://www.cyberseek.org/docs/06-02-2025_CyberSeek_June_2025.pdf) — cyberseek.org
+- [The State of the Cybersecurity Workforce](https://www.isc2.org/Insights/2024/10/Cybersecurity-Workforce-INSIGHTS-October-2024) — isc2.org
+- [Ncses cwdi supply demand report (PDF)](https://ncses.nsf.gov/760/assets/0/files/ncses-cwdi-supply-demand-report.pdf) — nsf.gov
+- [ISC2 Certified in Cybersecurity and CompTIA Security+](https://www.isc2.org/Insights/2022/09/entry-level-cc-versus-security-plus) — isc2.org
+- [Which Cyber Security Job Is Right for You? (Full Career Path Breakdown)](https://www.youtube.com/watch?v=Gfy8Ng1-ccI) — Cyber with Ben on YouTube

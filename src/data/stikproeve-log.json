@@ -446,5 +446,30 @@
   ],
   "usd": 0.0061,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-12T06:58:30.265Z",
+  "artikler": [
+   {
+    "slug": "monetizing-ai-videos-on-youtube-follows-strict-rules",
+    "tjekket": 9,
+    "belagt": 2,
+    "fejl": 0,
+    "ikke_fundet": 3,
+    "usikker": 4,
+    "fund": []
+   },
+   {
+    "slug": "augmented-reality-glasses-exist-in-commercial-hardware-now",
+    "tjekket": 9,
+    "belagt": 2,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 5,
+    "fund": []
+   }
+  ],
+  "usd": 0.0057,
+  "soegninger": 0
  }
 ]
