@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated": "2026-11-12T00:43:38.364Z",
-  "articleCount": 454,
+  "updated": "2026-11-12T01:43:15.702Z",
+  "articleCount": 455,
   "lastArticle": {
-    "at": "2026-11-12T00:43:38.364Z",
+    "at": "2026-11-12T01:43:15.702Z",
     "slugs": [
-      "real-hardware-is-quantum-computing-real-today"
+      "why-quantum-computing-solves-complex-industry-calculations"
     ]
   },
   "lastLinkRepair": {
