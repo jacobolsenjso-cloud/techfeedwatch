@@ -19,7 +19,7 @@
 // portioner (sendes nu med som argument), fejl der flyttede markøren alligevel, Apple-token for ofte,
 // tom POST uden krop, for store metadata, ingen begrænsning på tilmeldinger.
 import { WorkerEntrypoint } from 'cloudflare:workers';
-import { gyldigtEndpoint, rensEmner, endpointId, nyeArtikler, valgtArtikel, beskedFor, vapidToken, metadataPasser } from './logik.mjs';
+import { gyldigtEndpoint, rensEmner, endpointId, nyeArtikler, valgtArtikel, beskedFor, vapidToken, metadataPasser, usDag } from './logik.mjs';
 
 const OPRINDELSER = ['https://techfeedwatch.com', 'http://localhost:4399'];
 // Gratis plan: højst 50 udgående forespørgsler pr. kald (artikellisten + 40 beskeder + reserve).
@@ -32,7 +32,8 @@ const cors = (req) => {
   return { 'access-control-allow-origin': OPRINDELSER.includes(o) ? o : OPRINDELSER[0], 'access-control-allow-methods': 'GET, POST, OPTIONS', 'access-control-allow-headers': 'content-type', vary: 'origin' };
 };
 const svar = (data, status, req) => new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json', 'cache-control': 'no-store', ...cors(req) } });
-const dag = (nu, foer = 0) => new Date(nu.getTime() - foer * 864e5).toISOString().slice(0, 10);
+// Udsendelsens dag = østkystdato (13/11-2026), så den ikke skifter midt i aftenens udsendelse (se usDag i logik.mjs)
+const dag = usDag;
 
 async function hentArtikler() {
   const r = await fetch('https://techfeedwatch.com/videos-lite.json', { cf: { cacheTtl: 300 } });
@@ -120,7 +121,7 @@ export default {
 
 // Kaldes kun af tfw-starter (service binding). Én portion pr. kald. Tilstanden sendes med fra kald til
 // kald (forrige), så den aldrig læses forældet fra KV midt i en udsendelse. KV bruges kun som vagt mellem
-// dagens tidspunkter (16:37, 17:37 ...), så ingen får to beskeder samme dag.
+// dagens tidspunkter (23:17, 23:37, 00:17, 00:37 UTC), så ingen får to beskeder samme dag.
 export class Sender extends WorkerEntrypoint {
   async sendPortion(forrige = null) {
     const env = this.env, nu = new Date();

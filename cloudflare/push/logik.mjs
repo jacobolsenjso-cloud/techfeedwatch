@@ -31,12 +31,20 @@ export async function endpointId(endpoint) {
   return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Artikler fra det sidste døgn (dato er en ren dag, "2026-10-17"): i dag og i går (UTC), nyeste først.
+// "Dagen" regnes i amerikansk østkysttid (Jacob 13/11-2026: beskeden skal ud om aftenen i USA, hvor læserne er).
+// Udsendelsen kører 23:17-00:37 UTC (18:17-19:37 i New York om vinteren, 19:17-20:37 om sommeren). Med
+// UTC-datoen ville dagen skifte midt i udsendelsen (ved UTC-midnat), og nogle kunne få to beskeder samme aften.
+// "en-CA" giver formen 2026-11-13.
+export const usDag = (nu, foer = 0) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date(nu.getTime() - foer * 864e5));
+
+// Artikler fra det sidste døgn (dato er en ren dag, "2026-10-17"): i dag og i går (østkystdato), nyeste først.
+// Artiklens dato er robottens UTC-dato; en artikel udgivet kl. 00-05 UTC har derfor datoen "i morgen" set fra
+// østkysten - den kommer med næste aften som "i går", så ingen artikel falder ud.
 // allerede: slugs der var med i GÅRSDAGENS udsendelse - de sendes ikke igen (review 17/10: uden det
 // kunne en læser med et smalt emne få samme artikel to dage i træk).
 export function nyeArtikler(alle, nu = new Date(), allerede = []) {
-  const idag = nu.toISOString().slice(0, 10);
-  const igaar = new Date(nu.getTime() - 864e5).toISOString().slice(0, 10);
+  const idag = usDag(nu);
+  const igaar = usDag(nu, 1);
   return alle.filter((a) => !a.isShort && [idag, igaar].includes(String(a.date).slice(0, 10)) && !allerede.includes(a.slug))
     // Samme dato: sorter på navnet, så udsendelsen og /besked altid vælger samme artikel
     // (rækkefølgen i artikellisten kan skifte fra byg til byg).

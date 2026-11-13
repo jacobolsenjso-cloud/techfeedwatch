@@ -26,10 +26,12 @@ export function opgaverTil(tid) {
   return ud;
 }
 
-// Push-beskeder (17/10): udsendelsen starter kl. 16:37 UTC (18:37 dansk sommertid, 17:37 vintertid).
-// Jacob valgte A: højst 1 besked om dagen pr. læser. 17:37-20:37 UTC fortsætter kun, hvis dagens
-// udsendelse ikke blev færdig (fx mange læsere); er den færdig, svarer tfw-push straks "allerede".
-export const erPushTid = (tid) => tid.getUTCMinutes() === 37 && tid.getUTCHours() >= 16 && tid.getUTCHours() <= 20;
+// Push-beskeder: amerikansk aften (Jacob 13/11-2026; før 16:37 UTC = midt på dagen i New York, og læserne er i USA).
+// Første forsøg 23:17 UTC (18:17 i New York om vinteren, 19:17 om sommeren); 23:37, 00:17 og 00:37 fortsætter kun,
+// hvis udsendelsen ikke blev færdig (fx mange læsere) - er den færdig, svarer tfw-push straks "allerede".
+// Jacob valgte A: højst 1 besked om dagen pr. læser; "dagen" regnes i østkystdato i tfw-push (usDag), fordi
+// udsendelsen krydser UTC-midnat.
+export const erPushTid = (tid) => [17, 37].includes(tid.getUTCMinutes()) && [23, 0].includes(tid.getUTCHours());
 
 // tfw-push sender højst 40 beskeder pr. kald (gratis plans grænse). Flere portioner efter hinanden,
 // til alle har fået deres - tilstanden gemmes i tfw-push, så ingen får to samme dag.

@@ -1,5 +1,5 @@
 // Selvtest af push-logikken (17/10). Kør: node cloudflare/push/test.mjs - intet net, ingen rigtige nøgler.
-import { gyldigtEndpoint, rensEmner, endpointId, nyeArtikler, valgtArtikel, beskedFor, vapidToken, metadataPasser } from './logik.mjs';
+import { gyldigtEndpoint, rensEmner, endpointId, nyeArtikler, valgtArtikel, beskedFor, vapidToken, metadataPasser, usDag } from './logik.mjs';
 let fejl = 0, n = 0;
 const t = (navn, ok) => { n++; console.log(`${ok ? 'OK  ' : 'FEJL'} ${navn}`); if (!ok) fejl++; };
 
@@ -33,6 +33,15 @@ t('samme dato: fast rækkefølge uanset listens orden', nyeArtikler([{ slug: 'z'
 const iMorgen = new Date('2026-10-18T16:37:00Z');
 t('dagen efter: a er "i går" men var med i går -> ikke igen', nyeArtikler(alle, iMorgen, ['a', 'b']).length === 0);
 t('dagen efter: uden gårsdagens liste ville a komme igen (det var fejlen)', nyeArtikler(alle, iMorgen).map((a) => a.slug).join() === 'a');
+// 13/11-2026: udsendelsen kører 23:17-00:37 UTC (amerikansk aften) og krydser UTC-midnat - det må aldrig give to beskeder
+const foerMidnat = new Date('2026-11-13T23:17:00Z'), efterMidnat = new Date('2026-11-14T00:37:00Z');
+t('samme udsendelse før og efter UTC-midnat = samme dag (samme vagt-nøgle)', usDag(foerMidnat) === '2026-11-13' && usDag(efterMidnat) === '2026-11-13');
+t('"i går" efter UTC-midnat er stadig 12/11', usDag(efterMidnat, 1) === '2026-11-12');
+t('sommertid: 23:17 UTC 15/7 er stadig 15/7 i New York', usDag(new Date('2026-07-15T23:17:00Z')) === '2026-07-15' && usDag(new Date('2026-07-16T00:37:00Z')) === '2026-07-15');
+const midnatListe = [{ slug: 'x', date: '2026-11-13' }, { slug: 'y', date: '2026-11-12' }];
+t('samme artikler før og efter UTC-midnat', nyeArtikler(midnatListe, foerMidnat).map((a) => a.slug).join() === nyeArtikler(midnatListe, efterMidnat).map((a) => a.slug).join());
+// En artikel udgivet 00:30 UTC 14/11 (= 19:30 i New York 13/11) har datoen 14/11 - den kommer med næste aften
+t('artikel med UTC-dato "i morgen" kommer med næste aften', nyeArtikler([{ slug: 'n', date: '2026-11-14' }], new Date('2026-11-14T23:17:00Z')).length === 1);
 t('metadata: almindelig tilmelding passer', metadataPasser({ e: 'https://fcm.googleapis.com/fcm/send/' + 'x'.repeat(160), t: ['AI & Tech', 'Crypto'] }));
 t('metadata: for stor afvises', !metadataPasser({ e: 'https://fcm.googleapis.com/' + 'x'.repeat(580), t: Array.from({ length: 18 }, (_, i) => 'Emne nummer ' + i + ' xxxxxxxx') }));
 const bes = beskedFor(alle[0], []);
