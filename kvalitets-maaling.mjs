@@ -67,7 +67,7 @@ async function bedoem(a) {
     if (PUNKTER.some((p) => typeof j[p] !== 'number')) throw new Error('mangler point');
     return { slug: a.slug, ...j, laveste: Math.min(...PUNKTER.map((p) => j[p])), nej: SPM.filter((q) => j[q] === false).length };
   } catch (e) {
-    return { slug: a.slug, fejl: String(e.message || e).slice(0, 150) };
+    return { slug: a.slug, fejl: String(e.message || e).slice(0, 1500) };
   }
 }
 
@@ -80,6 +80,7 @@ const ok = resultater.filter((r) => !r.fejl);
 const fejl = resultater.filter((r) => r.fejl);
 fs.writeFileSync('kvalitet-maaling.json', JSON.stringify(resultater, null, 1));
 
+if (fejl.length) console.log('FØRSTE FEJL I FULD LÆNGDE: ' + fejl[0].fejl);
 const snit = (p) => Math.round(ok.reduce((s, r) => s + r[p], 0) / (ok.length || 1));
 const median = (p) => { const v = ok.map((r) => r[p]).sort((a, b) => a - b); return v[Math.floor(v.length / 2)] ?? 0; };
 console.log(`\nRESULTAT: ${ok.length} bedømt, ${fejl.length} fejlede${fejl.length ? ' (' + fejl.map((f) => f.slug + ': ' + f.fejl).join(' | ') + ')' : ''}`);
@@ -96,3 +97,6 @@ console.log('\nDe 12 svageste (laveste point):');
 for (const r of [...ok].sort((a, b) => a.laveste - b.laveste).slice(0, 12)) console.log(`   ${r.laveste} ${r.slug} [${PUNKTER.map((p) => r[p]).join('/')}, eget: ${r.own ? 'ja' : 'nej'}] - ${r.weakest}`);
 console.log('\nDe 5 stærkeste:');
 for (const r of [...ok].sort((a, b) => b.laveste - a.laveste).slice(0, 5)) console.log(`   ${r.laveste} ${r.slug} [${PUNKTER.map((p) => r[p]).join('/')}]`);
+
+// Rød kørsel, hvis over halvdelen fejlede - en grøn kørsel uden resultater skjuler fejlen (Lære 13/11).
+if (fejl.length > resultater.length / 2) process.exit(1);
