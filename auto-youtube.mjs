@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { execFileSync } from 'child_process';
 import fs from 'fs';
-import { hentForslag } from './src/lib/suggest.mjs';
+import { hentForslag, PRAEFIKSER, godtForslag } from './src/lib/suggest.mjs';
 import { faellesOrd } from './src/lib/question.mjs';
 import { emneRaekke as beregnEmneRaekke } from './src/lib/emner.mjs';
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -9,7 +9,7 @@ import { GEMINI_MODEL, hentModel, geminiStop } from './src/lib/model.mjs';
 import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 import { retSpoergsmaal, passerEmnet, redaktoerPrompt } from './src/lib/spoergsmaalsfilter.mjs';
 import { forhaandsScorer, SKAER } from './src/lib/forhaandstjek.mjs';
-import { hentTal, ordn, normaliser, gruppe, talTekst, logLinje } from './src/lib/dataforseo.mjs';
+import { hentTal, ordn, normaliser, gruppe, talTekst, logLinje, hentSpoergsmaal, forslagLinje } from './src/lib/dataforseo.mjs';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -217,6 +217,16 @@ async function vaelgSpoergsmaal(tag, topic, udelad = new Set()) {
     ubrugte.push(...nye);
     console.log(`Info: Bing-reserve for "${tag}": ${foer} ubrugte fra Google -> +${nye.length} fra Bing.`);
   }
+
+  // Anden kilde (13/11-2026, Jacobs ja): spørgsmål fra DataForSEO med mindst 20 søgninger og sværhed højst 30 for
+  // emnets tre startord (src/lib/dataforseo.mjs, hentSpoergsmaal). Samme præfikser og filtre som autoforslagene;
+  // gemt i 30 dage, så kun første kørsel for et emne koster (ca. $0,07 for tre startord). Fejler det, kører vi videre.
+  const dfsForslag = await hentSpoergsmaal(froe, PRAEFIKSER, godtForslag);
+  console.log(forslagLinje(dfsForslag.log));
+  const fraDfs = dfsForslag.spoergsmaal.map((x) => x.q).filter((s) => !set.has(s) && !forslag.includes(s));
+  forslag.push(...fraDfs);
+  ubrugte.push(...fraDfs);
+  if (fraDfs.length) console.log(`Info: DataForSEO-forslag for "${tag}": +${fraDfs.length} ubrugte spørgsmål med søgetal.`);
   if (!forslag.length) return null;
   if (!ubrugte.length) return null;
 

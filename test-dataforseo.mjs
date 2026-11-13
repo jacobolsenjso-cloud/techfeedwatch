@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { oversaet, vaerdi, gruppe, hentTal, laesHusk, talTekst, ordn, normaliser, logLinje, MIN_SOEGNINGER, TAG, KD_MAKS, forSvaer } from './src/lib/dataforseo.mjs';
+import { oversaet, vaerdi, gruppe, hentTal, laesHusk, talTekst, ordn, normaliser, logLinje, MIN_SOEGNINGER, TAG, KD_MAKS, forSvaer, hentSpoergsmaal, praefiksFor, indeholderFrase } from './src/lib/dataforseo.mjs';
 
 let fejl = 0;
 const t = (navn, ok) => { console.log(`${ok ? 'OK  ' : 'FEJL'} ${navn}`); if (!ok) fejl++; };
@@ -88,5 +88,48 @@ r = await hentTal(['how does a vpn work'], { nu, fil });
 t('ødelagt hukommelsesfil: læses som tom, robotten kører videre', r.log.fraHusk === 0 && r.log.kald === 1);
 
 fs.rmSync(fil, { force: true });
+
+// 5. Anden kilde: spørgsmål fra DataForSEO (hentSpoergsmaal, 13/11-2026) - falsk fetch, midlertidige filer
+const ffil = path.join(os.tmpdir(), `_dfs-tfw-forslag-${process.pid}.json`);
+const hfil = path.join(os.tmpdir(), `_dfs-tfw-husk2-${process.pid}.json`);
+let forslagBody = null; kaldt = 0; svarKode = 20000; httpKode = 200; netNede = false;
+globalThis.fetch = async (url, opt) => {
+  kaldt++;
+  forslagBody = JSON.parse(opt.body)[0];
+  return { ok: true, status: 200, json: async () => ({ status_code: 20000, tasks: [{ status_code: svarKode, status_message: 'Ok.', cost: 0.0242,
+    result: [{ items: [
+      item('what is mixed reality', 900, 12),                 // spørgsmål + startord samlet → med
+      item('mixed reality headset', 2000, 10),                // intet spørgeord → ikke med
+      item('what is mixed results in reality', 300, 5),       // startordet ikke samlet → ikke med
+      item('how much does mixed reality cost reddit', 50, 3), // robottens filtre (reddit) → ikke med
+      item('Can Mixed Reality cause eye strain?', 140, 0),    // normaliseres → med
+    ] }] }] }) };
+};
+const PR = ['what is', 'how does', 'can', 'how much does'];
+const godt = (q) => !/\breddit\b/.test(q);
+t('præfiks: det længste vinder', praefiksFor('what is the best way to learn', ['what is', 'what is the best way to']) === 'what is the best way to' && praefiksFor('whatever', ['what']) === null);
+t('frase: samlet og med flertal', indeholderFrase('what are ai agents', 'ai agent') && !indeholderFrase('mixed results in reality', 'mixed reality'));
+let f1 = await hentSpoergsmaal(['Mixed Reality'], PR, godt, { nu, fil: ffil, husk_: hfil });
+t(`forslag: kun spørgsmål med startordet samlet, gennem filtrene (${f1.spoergsmaal.map((x) => x.q).join(' | ')})`,
+  f1.spoergsmaal.map((x) => x.q).join('|') === 'what is mixed reality|can mixed reality cause eye strain');
+t(`forslag: kaldet bærer "tfw", min. ${MIN_SOEGNINGER} søgninger og sværhed højst ${KD_MAKS}`, forslagBody.tag === 'tfw' && JSON.stringify(forslagBody.filters).includes(`"<=",${KD_MAKS}`) && JSON.stringify(forslagBody.filters).includes(`">=",${MIN_SOEGNINGER}`));
+t('forslag: alle fundne søgetal lagt i hukommelsen (gratis senere)', Object.keys(laesHusk(nu, hfil)).length === 5);
+t('forslag: log viser kald, fundet og pris', f1.log.kald === 1 && f1.log.fundet === 5 && f1.log.pris === 0.0242);
+kaldt = 0;
+const f2 = await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 10 * 864e5, fil: ffil, husk_: hfil });
+t('forslag: inden for 30 dage fra hukommelsen, intet kald', kaldt === 0 && f2.log.fraHusk === 1 && f2.spoergsmaal.length === 2);
+await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 31 * 864e5, fil: ffil, husk_: hfil });
+t('forslag: efter 30 dage hentes igen', kaldt === 1);
+const ffoer = fs.readFileSync(ffil, 'utf8');
+svarKode = 40203;
+const f3 = await hentSpoergsmaal(['smart glasses'], PR, godt, { nu, fil: ffil, husk_: hfil });
+t(`forslag: dagsloft nået - fejl i loggen, ingen forslag, filen uændret (${f3.log.fejl})`, /40203/.test(f3.log.fejl) && f3.spoergsmaal.length === 0 && fs.readFileSync(ffil, 'utf8') === ffoer);
+svarKode = 20000;
+delete process.env.DATAFORSEO_LOGIN; kaldt = 0;
+const f4 = await hentSpoergsmaal(['vr headset'], PR, godt, { nu, fil: ffil, husk_: hfil });
+t('forslag: uden nøgle - intet kald, fejl i loggen', kaldt === 0 && /nøglen mangler/.test(f4.log.fejl));
+process.env.DATAFORSEO_LOGIN = 'test';
+fs.rmSync(ffil, { force: true }); fs.rmSync(hfil, { force: true });
+
 console.log(fejl ? `\n${fejl} FEJL` : '\nalt OK');
 process.exit(fejl ? 1 : 0);

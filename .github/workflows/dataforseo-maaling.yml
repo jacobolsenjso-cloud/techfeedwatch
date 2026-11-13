@@ -44,6 +44,14 @@ jobs:
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
 
       # Fra hukommelsen - koster intet
+      # 13/11-2026: den anden kilde - DataForSEO-spørgsmål for alle 18 emner (ca. $1,30, gemt i 30 dage)
+      - name: Mål DataForSEO-forslagene (anden kilde til spørgsmål)
+        run: node dataforseo-forslag-maaling.mjs
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
       - name: Omskrivningskøen med søgetal (de næste 15)
         run: node omskriv-gamle.mjs --vis --antal=15
         env:
@@ -63,7 +71,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          KODE=0; bash .github/commit.sh "DataForSEO: save search volume memory" src/data/dataforseo.json || KODE=$?
+          KODE=0; bash .github/commit.sh "DataForSEO: save search volume memory" src/data/dataforseo.json src/data/dataforseo-forslag.json || KODE=$?
           if [ "$KODE" -gt 1 ]; then exit "$KODE"; fi
           if [ "$KODE" -eq 1 ]; then echo "Intet nyt at gemme."; exit 0; fi
           if [ "${{ github.ref_name }}" = "main" ]; then bash .github/udgiv.sh; else git push -q origin HEAD:${{ github.ref_name }} && echo "Gemt på ${{ github.ref_name }}."; fi

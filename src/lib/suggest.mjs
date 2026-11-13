@@ -36,7 +36,7 @@
 //   'what is the best way to'   17 forslag, 17 med 6+ ord, median 7
 //   'what happens when'         16 forslag, 12 med 6+ ord, median 8
 // Lære: antagelsen holdt for 3 af 6. Præfikser tilføjes kun efter måling.
-const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use', 'is', 'can', 'what does', 'how much does', 'difference between', 'should i', 'how long does it take to', 'what is the best way to', 'what happens when'];
+export const PRAEFIKSER = ['what is', 'how does', 'why', 'what are', 'how to use', 'is', 'can', 'what does', 'how much does', 'difference between', 'should i', 'how long does it take to', 'what is the best way to', 'what happens when'];
 
 // Ord der afslører en søgning sitet ikke skal skrive til: køb, kurser, priser,
 // og lande-varianter der peger på lokal lovgivning vi ikke dækker.
@@ -59,6 +59,15 @@ const KILDER = {
   bing: (q) => `https://api.bing.com/osjson.aspx?query=${encodeURIComponent(q)}&market=en-US`,
 };
 
+// Samme filtre for alle kilder (13/11-2026: også DataForSEO-forslagene i src/lib/dataforseo.mjs): længde 12-80 tegn,
+// ingen købs-/lande-/slangord, og forslaget skal stadig handle om emnet (mindst ét af emnets ord over 3 bogstaver).
+export function godtForslag(lav, emne) {
+  if (lav.length < 12 || lav.length > 80) return false;
+  if (AFVIS.test(lav) || SLANG.test(lav)) return false;
+  const kerne = emne.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  return !kerne.length || kerne.some((w) => lav.includes(w));
+}
+
 export async function hentForslag(emne, { timeoutMs = 8000, kilde = 'google' } = {}) {
   if (!KILDER[kilde]) throw new Error(`ukendt autocomplete-kilde: ${kilde}`);
   const ud = new Set();
@@ -75,11 +84,8 @@ export async function hentForslag(emne, { timeoutMs = 8000, kilde = 'google' } =
       for (const s of (j[1] || [])) {
         const lav = s.toLowerCase().trim();
         if (lav === q.toLowerCase()) continue;          // selve præfikset
-        if (lav.length < 12 || lav.length > 80) continue;
-        if (AFVIS.test(lav) || SLANG.test(lav)) continue;
-        // Google gætter videre — forslaget skal stadig handle om emnet.
-        const kerne = emne.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
-        if (kerne.length && !kerne.some((w) => lav.includes(w))) continue;
+        // Google gætter videre — forslaget skal stadig handle om emnet (godtForslag).
+        if (!godtForslag(lav, emne)) continue;
         ud.add(lav);
       }
     } catch { /* et enkelt præfiks der fejler må ikke vælte kørslen */ }

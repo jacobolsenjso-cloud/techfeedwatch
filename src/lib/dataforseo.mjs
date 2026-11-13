@@ -158,3 +158,98 @@ export function logLinje(log, liste, talFor) {
   // faa = for få søgninger (de for svære tælles for sig i forSvaer, selvom de også ligger bagerst)
   return `SOEGETAL: ${JSON.stringify({ spoergsmaal: liste.length, medTal: g[0], ukendt: g[1], faa: g[2] - svaer, forSvaer: svaer, fraHusk: log.fraHusk, sendt: log.sendt, fundet: log.fundet, kald: log.kald, usd: log.pris, fejl: log.fejl })}`;
 }
+
+// --- Anden kilde: spørgsmål FRA DataForSEO (Jacob 13/11-2026: "det skal selvfølgelig også rettes til") -----------
+// Hvorfor: Googles autoforslag giver højst ca. 10 forslag pr. præfiks og startord, og målt 11-13/11 havde kun 6-20 %
+// af dem mindst 20 søgninger om måneden (7/103, 35/169, 18/122). DataForSEO's "Keyword Suggestions" giver de søgninger
+// i databasen, der INDEHOLDER startordet (USA, engelsk), med søgetal og sværhed. Vi beder kun om dem med mindst
+// MIN_SOEGNINGER søgninger og sværhed højst KD_MAKS, de mest søgte først, og beholder dem, der er spørgsmål
+// (starter med et af robottens præfikser) og består robottens egne filtre (godt - fra src/lib/suggest.mjs).
+// De lægges i samme bunke som autoforslagene og går gennem samme redaktør, dublet-værn og brugte-liste.
+// Pris (dataforseo.com/pricing, 13/11-2026): $0,012 pr. kald + $0,00012 pr. fundet søgeord → ca. $0,024 pr. startord
+// med 100 svar. Ét kald pr. startord, gemt i FORSLAG_DAGE dage (src/data/dataforseo-forslag.json): robotten henter kun
+// for det emne, kørslen arbejder på (3 startord), så 18 emner × 3 = 54 startord koster ca. $1,30 hver 30. dag.
+// Søgetallene lægges også i den almindelige hukommelse, så hentTal ikke betaler for dem igen.
+// Fejler noget, kommer der bare ingen nye forslag (fejlen står i loggen) - robotten kører videre med autoforslagene.
+export const FORSLAG_DAGE = 30;
+export const FORSLAG_GRAENSE = 100;   // højst så mange søgeord pr. startord (de mest søgte)
+const FORSLAG_STD = 'src/data/dataforseo-forslag.json';
+const forslagFil = () => process.env.DATAFORSEO_FORSLAG || FORSLAG_STD;   // DATAFORSEO_FORSLAG kun til test
+
+// Hvilket præfiks starter spørgsmålet med? Det længste, der passer ("what is the best way to" før "what is").
+export function praefiksFor(q, praefikser) {
+  return [...praefikser].sort((a, b) => b.length - a.length).find((p) => q === p || q.startsWith(p + ' ')) || null;
+}
+
+// Står startordet SAMLET i spørgsmålet? DataForSEO matcher enkeltord, så "mixed reality" kan give "mixed results in
+// reality". Hvert ord må have flertals-s/-es ("ai agent" ⊂ "ai agents"); ordene skal stå i rækkefølge, side om side.
+export function indeholderFrase(q, froe) {
+  const ord = normaliser(froe).split(' ').filter(Boolean).map((w) => w.replace(/s$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return ord.length > 0 && new RegExp(`\\b${ord.map((w) => `${w}(s|es)?`).join(' ')}\\b`).test(normaliser(q));
+}
+
+function laesForslag(fil) {
+  try { return JSON.parse(fs.readFileSync(fil, 'utf8')); } catch { return {}; }
+}
+function gemForslag(alle, fil) {
+  fs.mkdirSync(path.dirname(fil), { recursive: true });
+  // Ét startord pr. linje, sorteret, så git-ændringer kan læses og datafletningen virker
+  const linjer = Object.entries(alle).sort(([a], [b]) => a.localeCompare(b)).map(([k, x]) => `${JSON.stringify(k)}:${JSON.stringify(x)}`);
+  fs.writeFileSync(fil, `{\n${linjer.join(',\n')}\n}\n`);
+}
+
+// froer: startordene (fx emnets tre første led). praefikser: robottens spørgeord. godt(q, froe): robottens filtre.
+// Returnerer { spoergsmaal: [{ q, t, froe }], log }. Svarene fra hukommelsen (under FORSLAG_DAGE dage) koster intet.
+export async function hentSpoergsmaal(froer, praefikser, godt = () => true, { nu = Date.now(), fil = forslagFil(), husk_ = huskFil() } = {}) {
+  const gemt = laesForslag(fil);
+  const graense = nu - FORSLAG_DAGE * 864e5;
+  const log = { froer: froer.length, fraHusk: 0, kald: 0, fundet: 0, spoergsmaal: 0, pris: 0, fejl: null };
+  const ud = [];
+  const set = new Set();
+  const laeg = (f, liste) => { for (const x of liste || []) if (!set.has(x.q)) { set.add(x.q); ud.push({ ...x, froe: f }); } };
+  const nye = [];
+  for (const f0 of froer) {
+    const f = normaliser(f0);
+    if (!f) continue;
+    const g = gemt[f];
+    if (g && Date.parse(g.d) >= graense) { laeg(f, g.s); log.fraHusk++; } else nye.push(f);
+  }
+  if (nye.length && !harNoegle()) log.fejl = 'nøglen mangler (DATAFORSEO_LOGIN/PASSWORD)';
+  else if (nye.length) {
+    const husk = laesHusk(nu, husk_);
+    const d = new Date(nu).toISOString().slice(0, 10);
+    for (const f of nye) {
+      try {
+        const r = await kald('dataforseo_labs/google/keyword_suggestions/live', [{
+          keyword: f, location_code: 2840, language_code: 'en', tag: TAG, limit: FORSLAG_GRAENSE,
+          include_seed_keyword: false, order_by: ['keyword_info.search_volume,desc'],
+          filters: [['keyword_info.search_volume', '>=', MIN_SOEGNINGER], 'and', ['keyword_properties.keyword_difficulty', '<=', KD_MAKS]],
+        }]);
+        const opg = r.j?.tasks?.[0];
+        if (!r.ok || opg?.status_code !== 20000) {
+          log.fejl = `HTTP ${r.status} ${opg?.status_code || r.j?.status_code || ''} ${skjul(opg?.status_message || r.j?.status_message || '')}`.trim();
+          break;   // fx dagsloftet: stop, resten prøves næste gang
+        }
+        const items = opg.result?.[0]?.items || [];
+        const s = [];
+        for (const it of items) {
+          const q = normaliser(it.keyword || '');
+          if (!gyldig(q)) continue;
+          const t = oversaet(it);
+          husk[q] = { d, t };   // søgetallet er betalt - gem det, så hentTal ikke spørger igen
+          if (praefiksFor(q, praefikser) && indeholderFrase(q, f) && godt(q, f)) s.push({ q, t });
+        }
+        gemt[f] = { d, s };
+        laeg(f, s);
+        log.kald++; log.fundet += items.length;
+        log.pris = Math.round((log.pris + (opg.cost || 0)) * 1e6) / 1e6;
+      } catch (e) { log.fejl = skjul(e.message); break; }
+    }
+    if (log.kald) { gemForslag(gemt, fil); gemHusk(husk, husk_); }
+  }
+  log.spoergsmaal = ud.length;
+  return { spoergsmaal: ud, log };
+}
+
+// Én linje til robottens log (offentlig: kun startord-antal, antal og pris).
+export const forslagLinje = (log) => `SOEGEFORSLAG: ${JSON.stringify(log)}`;

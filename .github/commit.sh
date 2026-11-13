@@ -14,7 +14,7 @@
 # og læses af tomgangsalarmen.
 set -u
 # 10/11-2026: src/data/dataforseo.json (søgetallenes hukommelse) læses kun af robotten, ikke af sitet.
-UDEN_BYG='^(src/data/robot-log\.jsonl|src/data/tried-questions\.json|src/data/used-questions\.json|src/data/dataforseo\.json|indexnow-sendt\.json)$'
+UDEN_BYG='^(src/data/robot-log\.jsonl|src/data/tried-questions\.json|src/data/used-questions\.json|src/data/dataforseo\.json|src/data/dataforseo-forslag\.json|indexnow-sendt\.json)$'
 BESKED="$1"; shift
 if [ "$#" -gt 0 ]; then git add -- "$@"; else git add .; fi
 if git diff --cached --quiet; then exit 1; fi
