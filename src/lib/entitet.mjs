@@ -41,7 +41,7 @@ export const organisation = () => ({
 });
 export const person = () => ({
   '@type': 'Person', '@id': PERSON_ID, name: PERSON_NAVN, jobTitle: PERSON_TITEL, description: PERSON_BIO,
-  url: PERSON_URL, image: `${SITE}/jacob-olsen.png`, sameAs: PERSON_SAMEAS,
+  url: PERSON_URL, image: `${SITE}/jacob-olsen.jpg`, sameAs: PERSON_SAMEAS,
   worksFor: { '@id': ORG_ID }, knowsAbout: ALLE_EMNER,
 });
 // Korte henvisninger i artikler og guides (navn med, så de også giver mening alene).
