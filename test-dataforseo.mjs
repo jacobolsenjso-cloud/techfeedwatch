@@ -3,6 +3,7 @@
 // Slutter med kode 1 ved fejl.
 import fs from 'node:fs';
 import os from 'node:os';
+import { godtForslag } from './src/lib/suggest.mjs';
 import path from 'node:path';
 import { oversaet, vaerdi, gruppe, hentTal, laesHusk, talTekst, ordn, normaliser, logLinje, MIN_SOEGNINGER, TAG, KD_MAKS, forSvaer, hentSpoergsmaal, praefiksFor, indeholderFrase } from './src/lib/dataforseo.mjs';
 
@@ -130,6 +131,12 @@ const f4 = await hentSpoergsmaal(['vr headset'], PR, godt, { nu, fil: ffil, husk
 t('forslag: uden nøgle - intet kald, fejl i loggen', kaldt === 0 && /nøglen mangler/.test(f4.log.fejl));
 process.env.DATAFORSEO_LOGIN = 'test';
 fs.rmSync(ffil, { force: true }); fs.rmSync(hfil, { force: true });
+
+// 6. Robottens filtre (src/lib/suggest.mjs, godtForslag) - spil er ikke teknik (13/11-2026)
+t('filter: "is pc building simulator 2 on steam" afvises', !godtForslag('is pc building simulator 2 on steam', 'PC building'));
+t('filter: "does pc building simulator 2 have multiplayer" afvises', !godtForslag('does pc building simulator 2 have multiplayer', 'PC building'));
+t('filter: "is a gaming pc better than ps5" er stadig med', godtForslag('is a gaming pc better than ps5', 'gaming PC'));
+t('filter: "how long does it take to build a gaming pc" er stadig med', godtForslag('how long does it take to build a gaming pc', 'gaming PC'));
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nalt OK');
 process.exit(fejl ? 1 : 0);

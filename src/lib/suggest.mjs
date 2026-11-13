@@ -46,6 +46,11 @@ const AFVIS = /\b(stock|stocks|etf|price|prices|buy|cheap|free|download|coupon|s
 // autocomplete-forslag, men "cooked" betyder "færdig/ødelagt" på nettet, og
 // overskrifts-værnet tvang ordet ind i overskriften. Listen er kort med vilje;
 // det egentlige filter er Gemini-tjekket i auto-youtube.mjs (vaelgSpoergsmaal).
+// Spil, ikke teknik (13/11-2026): "is pc building simulator 2 on steam" blev valgt i et tørt løb, og 21 af 278
+// prøvede spørgsmål var spil-spørgsmål (mest "pc building simulator ..."). "ps5"/"xbox" er IKKE med: "is a gaming
+// pc better than ps5" er en rigtig artikel på sitet.
+const SPIL = /\b(simulator|on steam|fortnite|minecraft|roblox|gta|valorant|league of legends)\b/i;
+
 const SLANG = /\b(cooked|goated|sus|cringe|rizz|lowkey|highkey|meme|memes|tier list|dank|based|mid|bussin|no cap|fr|lol|lmao|wtf|tbh)\b/i;
 
 // Kilder (24/10-2026, Jacobs plan 1): Google er standard. Bing bruges kun som reserve,
@@ -63,7 +68,7 @@ const KILDER = {
 // ingen købs-/lande-/slangord, og forslaget skal stadig handle om emnet (mindst ét af emnets ord over 3 bogstaver).
 export function godtForslag(lav, emne) {
   if (lav.length < 12 || lav.length > 80) return false;
-  if (AFVIS.test(lav) || SLANG.test(lav)) return false;
+  if (AFVIS.test(lav) || SLANG.test(lav) || SPIL.test(lav)) return false;
   const kerne = emne.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
   return !kerne.length || kerne.some((w) => lav.includes(w));
 }
