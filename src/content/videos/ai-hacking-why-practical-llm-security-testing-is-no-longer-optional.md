@@ -49,7 +49,7 @@ These challenges often involve manipulating the AI into revealing a secret code 
 
 As NetworkChuck points out, Jason Haddix—the guy who literally wrote the AI pentesting methodology—is back to show you Agent Breaker, a CTF you can host yourself, and the exact skills you need to start calling yourself an AI pentester. This particular CTF, which even a 12-year-old solved in 35 minutes, demonstrates that while the entry barrier can be low, the field quickly escalates in complexity and skill requirement.
 
-This kind of testing is critical for understanding the "unseen wall" that often prevents users from eliciting advanced responses or securely interacting with AI. [What Does Prompt Engineering Primarily Involve for AI](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/)
+This kind of testing is critical for understanding the "unseen wall" that often prevents users from eliciting advanced responses or securely interacting with AI. [What Prompt Engineering Means for Generative AI Interaction](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/)
 
 Sophisticated prompt injection, as Haddix emphasizes, requires a deep understanding of how LLMs process information and how different prompts can be chained together for a full attack. This involves not just single-turn interactions but developing multi-stage prompts that progressively break down an AI's defenses.
 
