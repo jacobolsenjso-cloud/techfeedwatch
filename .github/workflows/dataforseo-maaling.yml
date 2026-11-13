@@ -63,6 +63,8 @@ jobs:
         continue-on-error: true
         run: node auto-youtube.mjs --dry-run
         env:
+          # 13/11-2026: manglede fra 10/11 - det tørre løb stoppede straks ("YOUTUBE_API_KEY er ikke sat")
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
