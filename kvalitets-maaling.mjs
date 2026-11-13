@@ -24,6 +24,10 @@ function laes(fil) {
 
 const prompt = (a) => `You are an independent senior editor and a Google search quality rater. You did NOT write this article and you have no reason to be kind to it.
 Judge the article below honestly, as Google's guidance on helpful, people-first content would.
+TODAY IS ${new Date().toISOString().slice(0, 10)}. Your own knowledge stops earlier than today, so products, models, versions,
+reports and events from 2025 and 2026 may be real even if you have never heard of them. Do NOT treat a date, product
+or event as fabricated just because it is newer than your knowledge. For accuracy, flag only what is internally
+contradictory, clearly impossible, or wrong about things you do know. Unknown recent facts are "unverified", not wrong.
 
 Score 0-100 (be strict; 50 = typical average web article, 80+ = clearly better than what already ranks):
 - effort: how much real work went into it (depth, specifics, examples, structure) versus a quick rewrite
@@ -41,7 +45,7 @@ Answer yes/no:
 
 Also give:
 - weakest: the single biggest weakness, max 25 words
-- doubtful_facts: up to 3 short claims that may be wrong or outdated (empty list if none)
+- doubtful_facts: up to 3 short claims that look wrong for reasons OTHER than being newer than your knowledge (empty list if none)
 
 Return ONLY JSON: {"effort":0,"originality":0,"skill":0,"accuracy":0,"q1_firsthand":true,"q2_complete":true,"q3_trust":true,"q4_value":true,"q5_people":true,"own":true,"weakest":"","doubtful_facts":[]}
 
