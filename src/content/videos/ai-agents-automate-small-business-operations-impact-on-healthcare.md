@@ -13,8 +13,8 @@ summary: "AI agents are transforming small business operations by taking on comp
 metaDescription: "Explore how AI agents are automating small business operations, revolutionizing healthcare administration, and impacting Main Street businesses."
 targetQuestion: "how is ai used in healthcare administration"
 duration: "58:40"
-viewCount: 26819
-viewsUpdated: "2026-11-10"
+viewCount: 26878
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

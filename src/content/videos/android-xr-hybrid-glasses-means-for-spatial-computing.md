@@ -12,8 +12,8 @@ summary: "Android XR represents a significant evolution in extended reality, mer
 metaDescription: "Explore how Android XR hybrid glasses combine AR and VR, enabling new forms of spatial computing, productivity, and immersive entertainment."
 targetQuestion: "what are android xr glasses"
 duration: "12:00"
-viewCount: 296323
-viewsUpdated: "2026-11-10"
+viewCount: 419387
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

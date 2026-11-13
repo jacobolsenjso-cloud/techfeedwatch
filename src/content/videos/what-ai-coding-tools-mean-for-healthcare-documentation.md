@@ -12,8 +12,8 @@ summary: "Coding in healthcare is evolving beyond manual data entry, leveraging 
 metaDescription: "Explore how AI-powered tools are transforming coding in healthcare, improving physician efficiency, accelerating billing."
 targetQuestion: "what is coding in healthcare"
 duration: "12:22"
-viewCount: 100
-viewsUpdated: "2026-11-07"
+viewCount: 102
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

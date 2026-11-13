@@ -13,8 +13,8 @@ summary: "AMD is intensifying its challenge to NVIDIA's established dominance in
 metaDescription: "Understand how AMD AI chips compare to NVIDIA in the competitive AI accelerator market, focusing on hardware, software, and integrated platforms."
 targetQuestion: "how does amd compare to nvidia"
 duration: "10:53"
-viewCount: 32018
-viewsUpdated: "2026-11-10"
+viewCount: 32163
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

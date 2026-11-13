@@ -12,8 +12,8 @@ summary: "Optimus humanoid robots are general-purpose bipedal machines developed
 metaDescription: "Optimus humanoid robots are Tesla's bipedal machines built for physical labor. Here is how they work, what they cost, and when they launch."
 targetQuestion: "what are optimus humanoid robots"
 duration: "8:46"
-viewCount: 8262
-viewsUpdated: "2026-11-10"
+viewCount: 8639
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

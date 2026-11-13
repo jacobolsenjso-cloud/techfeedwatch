@@ -13,8 +13,8 @@ summary: "AI engineering includes the systems engineering, software infrastructu
 metaDescription: "Discover what AI engineering includes, from foundation model integration and systems architecture to resolving production bottlenecks and GPU expenses."
 targetQuestion: "what does ai engineering include"
 duration: "6:09"
-viewCount: 132272
-viewsUpdated: "2026-11-10"
+viewCount: 133109
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

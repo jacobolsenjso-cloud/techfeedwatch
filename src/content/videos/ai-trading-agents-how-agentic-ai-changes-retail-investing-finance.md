@@ -14,8 +14,8 @@ summary: "AI trading agents are transforming retail investing by moving beyond r
 metaDescription: "Explore AI trading agents for retail investors. Learn how agentic AI automates financial goals, manages portfolios, and shifts the future of finance."
 targetQuestion: "what are ai trading agents"
 duration: "8:36"
-viewCount: 419034
-viewsUpdated: "2026-11-10"
+viewCount: 420234
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

@@ -15,8 +15,8 @@ summary: "Smart contracts represent a fundamental shift in how digital agreement
 metaDescription: "Smart contracts on public blockchains offer transparency and autonomy, but have trade-offs in security, immutability, and efficiency."
 targetQuestion: "why are smart contracts stored and executed in a blockchain"
 duration: "5:24"
-viewCount: 9477
-viewsUpdated: "2026-11-10"
+viewCount: 9481
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

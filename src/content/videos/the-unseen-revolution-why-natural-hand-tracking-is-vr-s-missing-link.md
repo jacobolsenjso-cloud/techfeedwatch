@@ -14,8 +14,8 @@ summary: "Accurate hand tracking is fast becoming a pivotal technology for virtu
 metaDescription: "Accurate hand tracking is fast becoming a pivotal technology for virtual reality, promising to transform how users interact with digital environments."
 targetQuestion: "what is vr hand tracking"
 duration: "4:56"
-viewCount: 399998
-viewsUpdated: "2026-11-10"
+viewCount: 400002
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

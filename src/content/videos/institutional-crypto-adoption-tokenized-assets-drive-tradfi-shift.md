@@ -14,8 +14,8 @@ summary: "The integration of digital assets into mainstream finance is accelerat
 metaDescription: "Institutional crypto adoption is reshaping traditional finance. Explore tokenized assets, regulatory challenges, and the future of DeFi in TradFi."
 targetQuestion: "what is tokenized asset trading"
 duration: "44:06"
-viewCount: 6900
-viewsUpdated: "2026-11-10"
+viewCount: 6906
+viewsUpdated: "2026-11-13"
 thumbMax: false
 isShort: false
 faqs:

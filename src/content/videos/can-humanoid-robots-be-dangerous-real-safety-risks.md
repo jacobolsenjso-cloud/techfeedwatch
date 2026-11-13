@@ -13,8 +13,8 @@ summary: "Humanoid robots pose genuine physical dangers due to their sheer mecha
 metaDescription: "Can humanoid robots be dangerous to people? Explore physical crush risks, software glitches, safety standards, and real-world workplace hazards."
 targetQuestion: "can humanoid robots be dangerous"
 duration: "10:34"
-viewCount: 476
-viewsUpdated: "2026-11-10"
+viewCount: 479
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

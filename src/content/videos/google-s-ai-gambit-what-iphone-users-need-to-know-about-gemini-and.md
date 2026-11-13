@@ -15,8 +15,8 @@ summary: "Google's latest I/O event unveiled significant AI advancements, includ
 metaDescription: "Google's AI advancements at I/O 2026 could redefine tech for iPhone users. Learn how Gemini and Android XR impact Apple's ecosystem."
 targetQuestion: "is google gemini on iphone"
 duration: "6:44"
-viewCount: 29971
-viewsUpdated: "2026-11-10"
+viewCount: 29994
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

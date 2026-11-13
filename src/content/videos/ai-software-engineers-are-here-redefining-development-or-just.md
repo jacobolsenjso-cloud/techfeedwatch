@@ -14,8 +14,8 @@ summary: "The emergence of Devin, the first advertised autonomous AI software en
 metaDescription: "The emergence of Devin, the first advertised autonomous AI software engineer, signifies a notable advancement beyond traditional AI coding assistants."
 targetQuestion: "how does devin ai work"
 duration: "5:54"
-viewCount: 85837
-viewsUpdated: "2026-10-28"
+viewCount: 85839
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

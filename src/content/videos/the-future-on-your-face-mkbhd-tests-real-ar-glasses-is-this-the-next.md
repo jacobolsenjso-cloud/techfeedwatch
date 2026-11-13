@@ -13,8 +13,8 @@ summary: "Augmented reality glasses fall into distinct categories based on optic
 metaDescription: "Learn about the different types of AR glasses, optical waveguide displays, birdbath optics, and how spatial tracking separates smart glasses from monitors."
 targetQuestion: "different types of ar glasses"
 duration: "20:29"
-viewCount: 6939576
-viewsUpdated: "2026-11-10"
+viewCount: 6941925
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

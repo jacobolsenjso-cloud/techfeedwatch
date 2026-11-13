@@ -12,8 +12,8 @@ summary: "Gaming PC RAM provides fast temporary storage that feeds active game d
 metaDescription: "Wondering what gaming PC RAM actually does? Learn how memory speed, latency, and DDR generations impact your frame rates and gaming performance."
 targetQuestion: "what is gaming pc ram"
 duration: "9:38"
-viewCount: 1145
-viewsUpdated: "2026-11-10"
+viewCount: 1213
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

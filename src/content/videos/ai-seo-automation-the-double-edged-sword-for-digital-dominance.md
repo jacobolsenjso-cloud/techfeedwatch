@@ -14,8 +14,8 @@ summary: "AI-powered tools are fundamentally reshaping search engine optimizatio
 metaDescription: "Explore how AI SEO automation drives digital dominance through advanced tools and strategic insights, reshaping content and keyword research."
 targetQuestion: "can ai replace seo experts"
 duration: "5:24"
-viewCount: 63
-viewsUpdated: "2026-10-22"
+viewCount: 64
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

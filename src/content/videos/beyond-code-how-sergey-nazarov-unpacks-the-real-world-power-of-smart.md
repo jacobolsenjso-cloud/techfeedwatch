@@ -13,8 +13,8 @@ summary: "Smart contracts execute self-running computer code directly on decentr
 metaDescription: "Learn how smart contracts work in blockchain networks, from automated code execution to external oracle feeds and key security risks."
 targetQuestion: "how do smart contracts work in blockchain"
 duration: "11:25"
-viewCount: 21578
-viewsUpdated: "2026-11-07"
+viewCount: 21584
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

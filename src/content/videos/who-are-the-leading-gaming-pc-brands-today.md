@@ -12,8 +12,8 @@ summary: "Gaming PC brands range from multinational electronics makers to boutiq
 metaDescription: "Discover what gaming PC brands are, how major OEMs compare to boutique custom builders, and how to pick the right prebuilt desktop."
 targetQuestion: "what are gaming pc brands"
 duration: "6:29"
-viewCount: 500
-viewsUpdated: "2026-11-10"
+viewCount: 515
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

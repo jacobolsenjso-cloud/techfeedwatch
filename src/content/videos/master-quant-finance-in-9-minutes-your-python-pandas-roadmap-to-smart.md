@@ -13,8 +13,8 @@ summary: "To use yfinance in Python, install the package with pip and import it 
 metaDescription: "Learn how to use yfinance in Python to download historical stock prices, fetch company balance sheets, and stream market quotes for personal research."
 targetQuestion: "how to use yfinance in python"
 duration: "11:04"
-viewCount: 21522
-viewsUpdated: "2026-11-10"
+viewCount: 21635
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

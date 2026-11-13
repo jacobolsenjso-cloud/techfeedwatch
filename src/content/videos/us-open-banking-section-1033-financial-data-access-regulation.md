@@ -14,8 +14,8 @@ summary: "The US financial sector is on the cusp of a significant transformation
 metaDescription: "Section 1033 of Dodd-Frank compels US banks to share consumer data, driving Open Banking, competition, innovation."
 targetQuestion: "what is 1033 open banking"
 duration: "16:58"
-viewCount: 39
-viewsUpdated: "2026-11-07"
+viewCount: 40
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

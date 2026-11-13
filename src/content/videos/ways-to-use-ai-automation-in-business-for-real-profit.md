@@ -12,8 +12,8 @@ summary: "Businesses deploy AI automation by connecting predictive models to dai
 metaDescription: "Learn how to use AI automation in business by structuring data, selecting high-value workflows, and controlling recurring software costs."
 targetQuestion: "how to use ai automation in business"
 duration: "28:46"
-viewCount: 59
-viewsUpdated: "2026-11-07"
+viewCount: 61
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

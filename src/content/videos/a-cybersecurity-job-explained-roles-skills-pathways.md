@@ -12,8 +12,8 @@ summary: "A cybersecurity job involves protecting computer systems, private netw
 metaDescription: "What is a cybersecurity job? Discover daily responsibilities, median salaries, hiring demand, and how to start a career in digital defense."
 targetQuestion: "what is a cybersecurity job"
 duration: "11:51"
-viewCount: 167860
-viewsUpdated: "2026-11-12"
+viewCount: 168299
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

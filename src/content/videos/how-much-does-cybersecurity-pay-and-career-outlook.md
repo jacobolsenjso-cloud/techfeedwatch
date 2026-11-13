@@ -12,8 +12,8 @@ summary: "Average cybersecurity pay in the United States reaches $132,962 per ye
 metaDescription: "Find out how much cybersecurity pays across entry-level, analyst, and management roles, based on verified industry salary data and certifications."
 targetQuestion: "how much does cybersecurity pay"
 duration: "10:31"
-viewCount: 6832
-viewsUpdated: "2026-11-11"
+viewCount: 6876
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

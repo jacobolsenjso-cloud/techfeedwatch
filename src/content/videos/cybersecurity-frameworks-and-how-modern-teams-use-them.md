@@ -12,8 +12,8 @@ summary: "Cybersecurity frameworks provide structured systems of guidelines and 
 metaDescription: "Learn what cybersecurity frameworks are, how models like NIST CSF 2.0 organize defenses, and why organizations adopt them to manage digital risk."
 targetQuestion: "what are cybersecurity frameworks"
 duration: "7:02"
-viewCount: 31
-viewsUpdated: "2026-11-10"
+viewCount: 32
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

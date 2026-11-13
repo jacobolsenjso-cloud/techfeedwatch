@@ -13,8 +13,8 @@ summary: "Information technology manages and maintains digital infrastructure, w
 metaDescription: "Understand the difference between cybersecurity and information technology, including technical responsibilities, career paths, and salary figures."
 targetQuestion: "difference between cybersecurity and information technology"
 duration: "6:43"
-viewCount: 44
-viewsUpdated: "2026-11-05"
+viewCount: 45
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

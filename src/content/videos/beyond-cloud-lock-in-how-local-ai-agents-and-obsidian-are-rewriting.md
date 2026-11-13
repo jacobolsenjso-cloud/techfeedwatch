@@ -14,8 +14,8 @@ summary: "The advent of powerful local AI agents is fundamentally reshaping pers
 metaDescription: "Local AI agents and personal knowledge management are reshaping workflows. Discover why data sovereignty and open tools like Obsidian matter."
 targetQuestion: "what is local ai agent"
 duration: "29:25"
-viewCount: 33722
-viewsUpdated: "2026-11-10"
+viewCount: 33909
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

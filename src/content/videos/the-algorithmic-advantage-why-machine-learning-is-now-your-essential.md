@@ -14,8 +14,8 @@ summary: "The path to becoming proficient in machine learning is undergoing a fu
 metaDescription: "Individuals build machine learning skills through hands-on projects and online resources, bypassing degrees for practical, skill-focused career growth."
 targetQuestion: "can i become a machine learning engineer without a degree"
 duration: "16:46"
-viewCount: 718274
-viewsUpdated: "2026-11-10"
+viewCount: 718290
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

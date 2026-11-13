@@ -13,8 +13,8 @@ summary: "AI agent security presents unique challenges, as inherent vulnerabilit
 metaDescription: "AI agent security is complex. Learn why traditional defenses fail against autonomous AI agents and how to mitigate emerging threats."
 targetQuestion: "what is ai agent security"
 duration: "1:06:09"
-viewCount: 130
-viewsUpdated: "2026-11-10"
+viewCount: 131
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

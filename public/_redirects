@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (658) ---
+# --- Statiske (662) ---
 /tag/ai-&-tech /tag/ai-tech/ 301
 /tag/ai-&-tech/ /tag/ai-tech/ 301
 /tag/business-&-money /tag/business-money/ 301
@@ -661,6 +661,10 @@
 /video/unlock-ai-visibility-your-guide-to-generative-engine-optimization-geo/ /video/the-ai-search-revolution-why-generative-engine-optimization-replaces/ 301
 /video/what-is-zero-trust-security-protecting-modern-enterprise-networks /video/zero-trust-the-essential-security-shift-your-business-needs-now/ 301
 /video/what-is-zero-trust-security-protecting-modern-enterprise-networks/ /video/zero-trust-the-essential-security-shift-your-business-needs-now/ 301
+/video/can-quantum-computing-replace-data-centers /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/can-quantum-computing-replace-data-centers/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/V3IU077AXCA /video/how-is-quantum-computing-different-from-classical-computing/ 301
+/video/V3IU077AXCA/ /video/how-is-quantum-computing-different-from-classical-computing/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301

@@ -13,8 +13,8 @@ summary: "Gaming PC specifications list the core hardware parts that dictate how
 metaDescription: "Wondering what gaming PC specs mean? Learn how processors, graphics cards, and memory shape your gaming performance with our clear explainer."
 targetQuestion: "what are gaming pc specs"
 duration: "16:16"
-viewCount: 58178
-viewsUpdated: "2026-11-10"
+viewCount: 58561
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

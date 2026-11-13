@@ -12,8 +12,8 @@ summary: "Search engine optimization aligns website structure and content with a
 metaDescription: "Learn how SEO works across crawling, indexing, and ranking algorithms, and discover what factors search engines use to display web pages."
 targetQuestion: "how does seo work"
 duration: "10:56"
-viewCount: 8033
-viewsUpdated: "2026-11-10"
+viewCount: 8039
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

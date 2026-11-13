@@ -13,8 +13,8 @@ summary: "Sora AI is OpenAI's generative video model designed to transform writt
 metaDescription: "Learn what Sora AI is, how OpenAI's video generator uses diffusion transformers, and how creators access Sora Turbo through ChatGPT plans."
 targetQuestion: "what is sora ai"
 duration: "5:29"
-viewCount: 7535
-viewsUpdated: "2026-11-11"
+viewCount: 7536
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

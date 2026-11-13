@@ -13,8 +13,8 @@ summary: "Putting a gaming PC together requires careful component staging, corre
 metaDescription: "Learn how to put a gaming PC together safely with proper workspace prep, sequenced component installation, and secure high-power cable connections."
 targetQuestion: "how to put a gaming pc together"
 duration: "51:59"
-viewCount: 62683
-viewsUpdated: "2026-11-10"
+viewCount: 63369
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

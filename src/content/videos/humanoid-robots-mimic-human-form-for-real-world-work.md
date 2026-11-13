@@ -13,8 +13,8 @@ summary: "Humanoid robots are machines built with human morphology to operate di
 metaDescription: "Humanoid robots mimic the human body to work in spaces built for people. Learn what humanoid robots are, how they work, and where they operate today."
 targetQuestion: "what are humanoid robots"
 duration: "24:11"
-viewCount: 21528
-viewsUpdated: "2026-11-10"
+viewCount: 21579
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

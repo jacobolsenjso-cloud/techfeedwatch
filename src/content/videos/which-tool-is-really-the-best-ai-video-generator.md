@@ -13,8 +13,8 @@ summary: "No single AI video generator leads every category, as benchmark scores
 metaDescription: "Discover which AI video generator ranks best based on benchmark data from Arena AI and CVF evaluations across cinematic and avatar generation tools."
 targetQuestion: "what is the best ai video generator"
 duration: "10:18"
-viewCount: 110637
-viewsUpdated: "2026-11-12"
+viewCount: 110758
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

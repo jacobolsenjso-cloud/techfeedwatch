@@ -14,8 +14,8 @@ summary: "The emergence of quantum computing capabilities introduces theoretical
 metaDescription: "Shor's algorithm in quantum computing poses a theoretical threat to Bitcoin's cryptography, demanding proactive development and understanding."
 targetQuestion: "how does quantum computing threaten bitcoin"
 duration: "20:41"
-viewCount: 41464
-viewsUpdated: "2026-11-10"
+viewCount: 41496
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

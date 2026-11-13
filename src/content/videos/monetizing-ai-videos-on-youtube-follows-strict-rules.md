@@ -12,8 +12,8 @@ summary: "Creators can monetize AI-generated videos on YouTube through the YouTu
 metaDescription: "Learn if you can monetize AI videos on YouTube, the strict policies on inauthentic content, required synthetic labels, and channel earnings."
 targetQuestion: "can i monetize ai videos on youtube"
 duration: "23:13"
-viewCount: 15578
-viewsUpdated: "2026-11-10"
+viewCount: 15697
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

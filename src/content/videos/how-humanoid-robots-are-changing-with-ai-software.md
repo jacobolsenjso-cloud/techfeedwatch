@@ -12,8 +12,8 @@ summary: "Humanoid robots are physical mechanical machines, while artificial int
 metaDescription: "Are humanoid robots AI? Discover how robotics hardware differs from AI software, how embodied models work, and why physical bodies need digital brains."
 targetQuestion: "are humanoid robots ai"
 duration: "8:50"
-viewCount: 23756
-viewsUpdated: "2026-11-10"
+viewCount: 25265
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 recipe: 3

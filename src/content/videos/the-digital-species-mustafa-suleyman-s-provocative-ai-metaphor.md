@@ -14,8 +14,8 @@ summary: "Microsoft AI CEO Mustafa Suleyman posits that humanity is creating a '
 metaDescription: "Microsoft AI CEO Mustafa Suleyman defines AI as a new digital species, urging a fundamental reassessment of its nature and societal role."
 targetQuestion: "is ai a digital species"
 duration: "22:02"
-viewCount: 2919039
-viewsUpdated: "2026-11-10"
+viewCount: 2921571
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

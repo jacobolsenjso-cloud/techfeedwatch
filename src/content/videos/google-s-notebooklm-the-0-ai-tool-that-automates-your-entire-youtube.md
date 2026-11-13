@@ -14,8 +14,8 @@ summary: "Google's NotebookLM has evolved beyond a simple research assistant, no
 metaDescription: "NotebookLM, a free Google AI, provides an integrated content creation workflow, replacing multiple paid subscriptions and challenging agency models."
 targetQuestion: "how to use notebooklm to create youtube videos"
 duration: "8:40"
-viewCount: 37891
-viewsUpdated: "2026-11-10"
+viewCount: 37999
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

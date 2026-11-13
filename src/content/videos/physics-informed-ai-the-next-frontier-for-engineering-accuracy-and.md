@@ -15,8 +15,8 @@ summary: "Physics-Informed Machine Learning (PIML) is rapidly advancing, integra
 metaDescription: "Physics-Informed Machine Learning (PIML) is rapidly advancing, integrating established scientific principles into AI models to enhance their accuracy."
 targetQuestion: "what is physics informed machine learning"
 duration: "47:27"
-viewCount: 412310
-viewsUpdated: "2026-11-10"
+viewCount: 413630
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true

@@ -15,8 +15,8 @@ summary: "Deploying multiple AI coding agents simultaneously presents significan
 metaDescription: "Master parallel AI coding with Claude Code. Discover advanced setups for efficient multi-agent development and isolation."
 targetQuestion: "git worktrees ai agents"
 duration: "12:54"
-viewCount: 20130
-viewsUpdated: "2026-11-10"
+viewCount: 20150
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 faqs:

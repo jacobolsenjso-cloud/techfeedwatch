@@ -14,8 +14,8 @@ summary: "Optimizing for search engines demands a continuous understanding of al
 metaDescription: "Optimizing for search engines demands a continuous understanding of algorithmic shifts and user behavior."
 targetQuestion: "how ai is changing seo strategy"
 duration: "17:29"
-viewCount: 13908
-viewsUpdated: "2026-11-10"
+viewCount: 13915
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
 revised: true
