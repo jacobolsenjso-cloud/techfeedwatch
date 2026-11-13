@@ -52,7 +52,7 @@ Standard block workflows follow a consistent execution sequence:
 - Parameter configuration: Developers enter arguments, pick operational modes, or nest complementary reporter blocks into receptive target slots.
 - Script execution: The environment runs the visual graph directly or passes the translated code to an interpreter.
 
-This mechanical feedback loop allows beginners to understand control structures rapidly. When planning how to [introduce coding for kids](/video/how-do-you-introduce-coding-for-kids-the-right-way), educators often rely on this visual framework to separate algorithmic problem-solving from typing mechanics.
+This mechanical feedback loop allows beginners to understand control structures rapidly. When planning how to introduce coding for kids, educators often rely on this visual framework to separate algorithmic problem-solving from typing mechanics.
 
 ## Block interfaces rely on input slots, dropdowns, and reporters
 

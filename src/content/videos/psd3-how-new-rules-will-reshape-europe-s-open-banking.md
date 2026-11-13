@@ -62,7 +62,7 @@ They often sit on large amounts of information without knowing how to use it eff
 
 Internal data silos are a major barrier. Different departments may hold separate data sets.
 
-This means the left hand often does not know what the right hand is doing. Simply receiving raw open [banking data](/video/open-banking-data-and-trust-redefine-finance/) is not enough for these companies.
+This means the left hand often does not know what the right hand is doing. Simply receiving raw open banking data is not enough for these companies.
 
 They need the ability to absorb and process it meaningfully. Without this, the customer experience can remain poor. Businesses might miss opportunities for growth or efficiency.
 
@@ -74,7 +74,7 @@ Providers like Qwist help businesses with this important step. They go beyond ju
 
 ## Accelerating Business Decisions in a Fast-Paced Market
 
-The [financial services](/video/beyond-disruption-how-web3-and-xr-are-forcing-fintech-s-next-evolution/) industry is experiencing rapid acceleration. Business operations and strategies must adapt to this speed. Smart technology drives this fast pace.
+The financial services industry is experiencing rapid acceleration. Business operations and strategies must adapt to this speed. Smart technology drives this fast pace.
 
 The software technology world is on an acceleration curve. This directly impacts how executives and companies make decisions.
 

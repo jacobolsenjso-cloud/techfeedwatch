@@ -66,7 +66,7 @@ Web 3.0 proposes a different paradigm: user control. Through technologies like n
 
 This re-establishes a direct relationship between creators and consumers, potentially fostering new "creator economy" models where value exchange is more direct and transparent, without significant intermediary fees or censorship risks.
 
-The ability to exchange value and information directly, peer-to-peer, bypasses traditional gatekeepers, affecting financial services, content distribution, and even governance. This re-architecting could lead to a more open, permissionless financial system, as explored in [How Fintech, Web3 and XR Reshape Financial Services](/video/beyond-disruption-how-web3-and-xr-are-forcing-fintech-s-next-evolution).
+The ability to exchange value and information directly, peer-to-peer, bypasses traditional gatekeepers, affecting financial services, content distribution, and even governance. This re-architecting could lead to a more open, permissionless financial system, as explored in How Fintech, Web3 and XR Reshape Financial Services.
 
 The programming of smart contracts using languages like Solidity allows for automated, trustless execution of complex agreements, transforming everything from supply chain management to digital rights. Developers can explore these capabilities through What Is Smart Contract Development in Web3 with AI Tools?.
 

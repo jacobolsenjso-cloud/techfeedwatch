@@ -35,7 +35,7 @@ This necessitates a fundamental re-evaluation of banking foundations, moving bey
 
 ## The Enduring Challenge of Legacy Systems
 
-A significant hurdle for many established banks is their reliance on outdated [core banking](/video/core-banking-platforms-drive-digital-transformation-in-finance/) systems. Roughly 70% of banks continue to operate on platforms that are sometimes mainframe-based and often 30 years old. These systems were not designed for the demands of the modern digital era, leading to fragmented, siloed, and often poor-quality data.
+A significant hurdle for many established banks is their reliance on outdated core banking systems. Roughly 70% of banks continue to operate on platforms that are sometimes mainframe-based and often 30 years old. These systems were not designed for the demands of the modern digital era, leading to fragmented, siloed, and often poor-quality data.
 
 Processing is frequently batch-based, making real-time data availability a significant challenge. This technological debt severely limits a bank's ability to innovate, respond quickly to market changes, or meet the expectations of digitally native customers.
 

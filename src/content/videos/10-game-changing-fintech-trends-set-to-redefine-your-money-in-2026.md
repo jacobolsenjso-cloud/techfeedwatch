@@ -74,7 +74,7 @@ Established banks retain massive balance sheets (financial records of assets and
 
 However, McKinsey & Company noted that this total represents only about 4% of the $15 trillion financial services industry revenue pool. Incumbents (established legacy companies) maintain structural dominance in commercial lending, underwriting, and corporate cash management.
 
-To survive, consumer platforms have overhauled their [fintech business models](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s). They cut marketing spend and introduced paid subscription tiers. According to Boston Consulting Group and FT Partners, global fintech revenues reached $504 billion in 2025.
+To survive, consumer platforms have overhauled their fintech business models. They cut marketing spend and introduced paid subscription tiers. According to Boston Consulting Group and FT Partners, global fintech revenues reached $504 billion in 2025.
 
 Boston Consulting Group and FT Partners recorded 22% year-over-year revenue growth. They noted that 74% of the largest publicly traded fintech firms achieved profitability.
 

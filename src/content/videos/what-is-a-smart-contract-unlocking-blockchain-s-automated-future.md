@@ -106,6 +106,6 @@ Solutions to mitigate these issues, including improvements in security practices
 
 Smart contracts represent a significant shift in how digital agreements are conceived and enforced. They move beyond traditional models controlled by a few large entities.
 
-By [leveraging blockchain](/video/defi-s-evolving-promise-reshaping-global-finance-beyond-the-banks/) technology, they offer a platform that is open and publicly verifiable. This approach promises greater transparency and autonomy for all participants.
+By leveraging blockchain technology, they offer a platform that is open and publicly verifiable. This approach promises greater transparency and autonomy for all participants.
 
 The ongoing development of different blockchain virtual machines, like the EVM and those targeting Rust, highlights a dynamic and competitive environment. This continuous innovation aims to improve the efficiency, security, and accessibility of smart contract technology. As these foundational technologies evolve, they will continue to redefine the possibilities for digital agreements and decentralized applications.

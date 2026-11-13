@@ -53,7 +53,7 @@ The broader financial field for **Canadians**, who are the primary demographic f
 
 The overall cost of poor debt management often manifests as compounded interest payments and missed opportunities for wealth growth. By systematically tackling debt and building savings, individuals reduce these "costs" and free up capital for future investments or large purchases.
 
-Understanding various fintech offerings can enhance these strategies; examining [different fintech business models](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s) can illuminate how new financial tools might aid in budgeting and tracking. However, where people often get it wrong is failing to establish a solid emergency fund early, leading to new debt when emergencies strike, or misprioritizing low-interest debt repayment over higher-impact financial actions like maximizing employer-matched savings.
+Understanding various fintech offerings can enhance these strategies; examining different fintech business models can illuminate how new financial tools might aid in budgeting and tracking. However, where people often get it wrong is failing to establish a solid emergency fund early, leading to new debt when emergencies strike, or misprioritizing low-interest debt repayment over higher-impact financial actions like maximizing employer-matched savings.
 
 ## How Phased Debt Management Leads to Financial Freedom
 

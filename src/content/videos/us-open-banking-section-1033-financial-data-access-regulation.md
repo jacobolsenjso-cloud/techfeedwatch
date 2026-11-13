@@ -82,7 +82,7 @@ And, the right to switch accounts easily is a key consumer protection. These mea
 
 The future of Open Banking is closely tied to advancements in artificial intelligence. Consumers are increasingly turning to large language models (LLMs) like ChatGPT, Claude, or Gemini for financial advice.
 
-These AI tools can answer questions about loans or savings goals. To provide personalized and accurate guidance, these LLMs will need to use open [banking data](/video/open-banking-data-and-trust-redefine-finance/). This means integrating with data aggregators to access a consumer's financial accounts.
+These AI tools can answer questions about loans or savings goals. To provide personalized and accurate guidance, these LLMs will need to use open banking data. This means integrating with data aggregators to access a consumer's financial accounts.
 
 From a regulatory perspective, the financial industry is generally prepared for AI's role. Humans have long relied on agents like stockbrokers and tax preparers for financial expertise. AI tools will likely carry similar fiduciary responsibilities.
 

@@ -30,7 +30,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-AI code agents are sophisticated artificial intelligence tools accessible online, primarily through cloud platforms like Google Cloud. They function as intelligent collaborators in [software development](/video/the-build-in-public-revolution-transparency-as-a-catalyst-for-tech/), capable of understanding natural language instructions to generate, modify, and manage code.
+AI code agents are sophisticated artificial intelligence tools accessible online, primarily through cloud platforms like Google Cloud. They function as intelligent collaborators in software development, capable of understanding natural language instructions to generate, modify, and manage code.
 
 These agents, such as Anthropic's Claude integrated into Google Cloud's Gemini Agent Platform, enable developers to articulate their intent and have the AI translate it into functional software components, entire applications, or even manage project infrastructure.
 

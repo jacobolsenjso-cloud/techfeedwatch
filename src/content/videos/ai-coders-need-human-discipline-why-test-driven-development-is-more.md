@@ -29,7 +29,7 @@ faqs:
     answer: "Leaving an AI coding agent to write software without constraints frequently results in issues such as over-engineering, skipped logical steps, and broken linting rules. This leads to less maintainable, more complex, and potentially buggy codebases.  Test-Driven Development (TDD) AI represents a critical evolution in software engineering, combining the speed and generative power of artificial intelligence with the proven discipline of TDD."
 ---
 
-Test-Driven Development (TDD) with AI describes the practice of applying TDD's rigorous, test-first approach within [software development](/video/the-build-in-public-revolution-transparency-as-a-catalyst-for-tech/) pipelines that leverage artificial intelligence coding agents. This methodology acts as a critical framework for guiding AI tools, ensuring the generated code is functional, well-structured, and meets explicit requirements.
+Test-Driven Development (TDD) with AI describes the practice of applying TDD's rigorous, test-first approach within software development pipelines that leverage artificial intelligence coding agents. This methodology acts as a critical framework for guiding AI tools, ensuring the generated code is functional, well-structured, and meets explicit requirements.
 
 As development teams increasingly adopt AI for coding, integrating TDD becomes essential to maintain quality and prevent common pitfalls associated with autonomous code generation.
 

@@ -81,7 +81,7 @@ The goal is to provide clear, digestible information that LLMs can easily proces
 
 Some businesses choose to create GEO content that is not indexed by Google or even visible to the public. This content exists purely in the backend, designed specifically for LLM scraping. It can still use internal linking and basic SEO principles, but its primary audience is AI.
 
-However, content can also be created to serve both human users and LLM platforms. Landing pages, for instance, can be designed with a higher degree of structured data, making them effective for both conventional search and conversational AI. These pages can include calls to action and brand logos, providing a comprehensive [user experience](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates/) while also being optimized for LLMs.
+However, content can also be created to serve both human users and LLM platforms. Landing pages, for instance, can be designed with a higher degree of structured data, making them effective for both conventional search and conversational AI. These pages can include calls to action and brand logos, providing a comprehensive user experience while also being optimized for LLMs.
 
 Geographic specificity is another high-priority factor for LLMs, especially for local businesses. If a user in India searches for SEO services, an LLM will prioritize agencies located in India, not the US.
 

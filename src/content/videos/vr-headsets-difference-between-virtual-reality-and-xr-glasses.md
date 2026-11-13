@@ -29,13 +29,13 @@ The fundamental difference between virtual reality and XR glasses lies in the di
 
 XR glasses ditch the internal compute, cameras, and bulky straps to function purely as a wearable external monitor tethered to the devices already in your pocket.
 
-Understanding the [difference between augmented reality and virtual reality](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) clarifies why these form factors diverge so sharply in use. A virtual reality system demands your complete physical and sensory commitment. XR glasses merely request an open USB-C port, floating a flat screen in your line of sight without detaching you from physical reality.
+Understanding the difference between augmented reality and virtual reality clarifies why these form factors diverge so sharply in use. A virtual reality system demands your complete physical and sensory commitment. XR glasses merely request an open USB-C port, floating a flat screen in your line of sight without detaching you from physical reality.
 
 ## The Architectural Divide: Immersion Engines Versus Wearable Screens
 
 Virtual reality devices like the Meta Quest 3 deliver total optical occlusion. They process computer vision internally, track your hands across three-dimensional coordinate planes, and project interactive synthetic environments directly over your eyes. Standalone VR hardware acts as an independent computer.
 
-Upcoming systems like the Steam Frame from Valve aim to replicate that standalone philosophy by packing local architecture directly onto your head, effectively putting a Steam Deck on your face to play 2D Steam libraries alongside spatial titles. When examining the [differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact), the primary distinction remains software autonomy: VR builds an entire room inside the visor.
+Upcoming systems like the Steam Frame from Valve aim to replicate that standalone philosophy by packing local architecture directly onto your head, effectively putting a Steam Deck on your face to play 2D Steam libraries alongside spatial titles. When examining the differences between AR and VR, the primary distinction remains software autonomy: VR builds an entire room inside the visor.
 
 XR glasses discard that ambition entirely in exchange for pure hardware reduction. Hardware such as the Viture Pro (referred to as Viture Beasts) or the XREAL Air 2 Pro (referred to as Xreal 1 Pro) contains no internal operating system, battery, or local processing unit.
 

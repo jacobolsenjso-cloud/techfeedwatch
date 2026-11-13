@@ -58,7 +58,7 @@ The day-to-day management of such a system is less like complex coding and more 
 
 [How to Secure AI Agents with Zero Trust Cybersecurity](/video/zero-trust-for-ai-agents-securing-autonomous-systems) details protective measures for these systems. Understanding the [primary goal of AI agents](/video/code-is-sawdust-how-ai-agents-are-reshaping-software-development) in software development further illustrates their autonomous capabilities.
 
-For insights into future applications, examining the [future of AI agents](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution) and their impact on business models provides additional context. These systems represent a shift toward more solid, accountable AI deployments, moving beyond simple interactions to complex, goal-oriented operations.
+For insights into future applications, examining the future of AI agents and their impact on business models provides additional context. These systems represent a shift toward more solid, accountable AI deployments, moving beyond simple interactions to complex, goal-oriented operations.
 
 ### The Bottom Line
 

@@ -35,7 +35,7 @@ The convergence of artificial intelligence and no-code development platforms is 
 
 ## The Accessibility Revolution in Online Business
 
-The ability to create and launch online businesses has long been tied to technical skills, particularly coding. However, the rise of AI-powered [no-code tools](/video/google-maps-data-scraping-the-no-code-frontier-for-business/) is fundamentally changing this dynamic.
+The ability to create and launch online businesses has long been tied to technical skills, particularly coding. However, the rise of AI-powered no-code tools is fundamentally changing this dynamic.
 
 These platforms allow people to design, develop, and manage complex websites and digital content using visual interfaces and pre-built components, entirely bypassing traditional coding. When integrated with artificial intelligence, these tools automate tasks that once required specialized expertise, from generating written content and designing visuals to optimizing for search engines.
 

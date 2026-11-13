@@ -77,7 +77,7 @@ While the core software is free, operational costs often arise from API calls to
 
 To get started, explore repositories like GitHub, which host a vast array of open source AI agent projects. Start with projects that have active communities and clear documentation. Projects such as "last30days-skill," "agent-skills," "open-notebook," and "headroom" provide tangible examples of what is currently achievable.
 
-When selecting an agent, consider its compatibility with your existing tech stack and the ease of customization. Many open source AI tools empower developers for faster AI application creation. [Open-Source AI Tools Empower Developers for Faster AI Apps](/video/open-source-ai-how-developer-tools-are-fueling-the-next-wave-of) provides additional context on this topic.
+When selecting an agent, consider its compatibility with your existing tech stack and the ease of customization. Many open source AI tools empower developers for faster AI application creation. Open-Source AI Tools Empower Developers for Faster AI Apps provides additional context on this topic.
 
 A common pitfall is underestimating the complexity of deploying and managing these agents. While the code is open, setting up the necessary infrastructure, configuring API keys, and debugging agent behavior still requires technical expertise. Start with simpler projects and gradually increase complexity as your understanding grows.
 

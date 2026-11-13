@@ -27,13 +27,13 @@ faqs:
     answer: "Console devices like the PlayStation VR2 prioritize uncompressed graphics processing directly from external hardware, trading wireless mobility for raw graphical output and 120 Hz refresh rates."
 ---
 
-The best mixed reality headset for general consumers is the Meta Quest 3, which pairs high-resolution pancake optics with accessible standalone [spatial computing](/video/spatial-computing-unleashed-the-future-beyond-ar-and-vr-is-already/). For power users seeking desktop-grade immersion, the Samsung Galaxy XR establishes a new high-end benchmark through ultra-dense Micro-OLED panels and productivity-focused software.
+The best mixed reality headset for general consumers is the Meta Quest 3, which pairs high-resolution pancake optics with accessible standalone spatial computing. For power users seeking desktop-grade immersion, the Samsung Galaxy XR establishes a new high-end benchmark through ultra-dense Micro-OLED panels and productivity-focused software.
 
 ## What It Is: Finding the Best Mixed Reality Headset
 
 Mixed reality bridges physical surroundings with responsive digital content. Unlike dedicated virtual environments that isolate you completely, mixed reality relies on low-latency camera passthrough and depth calculation to position interactive 3D assets directly into your physical space.
 
-Understanding the [fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) helps clarify why this category has exploded: instead of projecting tiny text onto transparent lenses, modern mixed reality captures your surroundings using camera sensors, digitizes the feed, and composites real-time digital elements onto ultra-sharp internal displays.
+Understanding the fundamental differences between AR and VR helps clarify why this category has exploded: instead of projecting tiny text onto transparent lenses, modern mixed reality captures your surroundings using camera sensors, digitizes the feed, and composites real-time digital elements onto ultra-sharp internal displays.
 
 Choosing the right device requires assessing physical comfort, optical clarity, silicon efficiency, and ecosystem support. Meta established a dual-tier approach to capture both mainstream buyers and value seekers.
 
@@ -69,7 +69,7 @@ The Samsung Galaxy XR packs the upgraded Snapdragon XR2+ Gen 2 chipset alongside
 
 Hardware trade-offs remain persistent across every price point. Wireless standalone headsets like the Quest 3S run for approximately 2 hours on a single charge. The Galaxy XR provides 2 to 2.5 hours of uptime, and its panel refresh rate maxes out at 90 Hz to balance power draw against thermal thresholds.
 
-To bypass battery constraints entirely, users can route the Quest lineup to a gaming desktop via Meta Link or Air Link, turning mobile hardware into a high-throughput PC display. The underlying mechanics of these interfaces illustrate what [mixed reality means for interaction](/video/spatial-systems-and-what-mixed-reality-means-for-interaction) across physical spaces.
+To bypass battery constraints entirely, users can route the Quest lineup to a gaming desktop via Meta Link or Air Link, turning mobile hardware into a high-throughput PC display. The underlying mechanics of these interfaces illustrate what mixed reality means for interaction across physical spaces.
 
 ## Headset Picks for Everyday Users, Professionals, and Gamers
 

@@ -49,7 +49,7 @@ This fosters a deeper understanding that traditional methods cannot easily repli
 
 AR much improves how people learn and develop technical skills. It transforms passive learning into an active, exploratory process. For instance, a student can examine the intricate stages of a SpaceX Falcon 9 rocket.
 
-They can also compare the aerodynamic [differences between](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) a 2001 and a 2020 Formula 1 car. These detailed 3D models allow for a level of inspection and interaction impossible with physical models or flat images. Users can scale models, walk around them, and even virtually enter them to see internal components.
+They can also compare the aerodynamic differences between a 2001 and a 2020 Formula 1 car. These detailed 3D models allow for a level of inspection and interaction impossible with physical models or flat images. Users can scale models, walk around them, and even virtually enter them to see internal components.
 
 This immersive experience is not just about novelty; it drives genuine utility. By presenting complex information visually and interactively, AR helps learners grasp difficult concepts faster. It supports collaborative learning.
 

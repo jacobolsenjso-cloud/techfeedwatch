@@ -57,7 +57,7 @@ A common pitfall arises when SEO is treated as an afterthought. Many businesses 
 
 While UI and UX are vital for engaging visitors, they are distinct from the specific technical and content optimizations that drive search engine visibility. This often results in SEO becoming a "second stage, third stage afterthought" once a website is already built.
 
-This delay means "you're doubling up on the work" later, incurring additional costs and effort to restructure or rewrite content to achieve proper ranking. [What User Experience Means for Modern SEO Rankings](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates) highlights the importance of user experience, but it must work in tandem with search engine relevance.
+This delay means "you're doubling up on the work" later, incurring additional costs and effort to restructure or rewrite content to achieve proper ranking. What User Experience Means for Modern SEO Rankings highlights the importance of user experience, but it must work in tandem with search engine relevance.
 
 ## Why SEO Should Start Before You Build a Website
 Ultimately, SEO is not merely a technical exercise but a strategic imperative. It requires understanding Google's core mission to deliver the most relevant information quickly, and then building a website that genuinely meets that criterion.

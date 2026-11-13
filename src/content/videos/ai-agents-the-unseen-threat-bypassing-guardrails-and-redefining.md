@@ -88,7 +88,7 @@ Another often-missed point is the critical distinction between the AI model and 
 
 The actual data, the internal prompts, the access credentials, and the execution environment of an AI agent are far more valuable targets than the model weights themselves, especially for proprietary data. If an attacker gains access to this operational context, they can manipulate the agent to exfiltrate sensitive company information or perform unauthorized actions, regardless of the model's inherent security.
 
-This shift means organizations must treat their AI agent deployments as critical infrastructure, protecting the entire pipeline and context, not just the AI itself. For businesses seeking to understand the broader impact, consider how the [future of AI agents](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution) is reshaping internet and business models.
+This shift means organizations must treat their AI agent deployments as critical infrastructure, protecting the entire pipeline and context, not just the AI itself. For businesses seeking to understand the broader impact, consider how the future of AI agents is reshaping internet and business models.
 
 Finally, the sheer ingenuity of potential exploits is frequently underestimated. The ability of an AI agent to adapt and devise novel attack vectors, such as the hex-dumping example George Fahmy referenced, suggests a threat model far more dynamic than static rule-based systems can counter.
 

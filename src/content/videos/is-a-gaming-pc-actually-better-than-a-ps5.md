@@ -101,7 +101,7 @@ This stutter happens when a computer delays rendering while translating graphic 
 
 According to CNET, a PC provides modular upgradability. It also offers multipurpose utility for daily office tasks and creative work. Sony Interactive Entertainment has also released previous console exclusives on PC.
 
-These games include *God of War*, *Horizon Zero Dawn*, *Marvel's Spider-Man*, and *Ghost of Tsushima*. Understanding the [difference between a gaming PC and console](/video/difference-between-gaming-pc-and-console-explained) depends on your personal priorities.
+These games include *God of War*, *Horizon Zero Dawn*, *Marvel's Spider-Man*, and *Ghost of Tsushima*. Understanding the difference between a gaming PC and console depends on your personal priorities.
 
 Why this matters: if you only want to sit down and play games, a console saves setup time. If you need a desktop for homework or remote work, a gaming computer replaces two separate machines.
 

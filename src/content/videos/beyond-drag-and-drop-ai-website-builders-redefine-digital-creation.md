@@ -41,7 +41,7 @@ An AI website builder is a software platform that uses artificial intelligence a
 
 AI builders disrupt this model by allowing users to generate a complete website simply by providing a description of their business or preferences. For instance, a user might describe their venture as a "local bakery specializing in artisanal bread," and the AI would then generate a suitable website structure, design elements, and initial content.
 
-This approach democratizes web development, making it feasible for entrepreneurs, creators, freelancers, and [small business](/video/ai-s-local-search-dominance-the-4-hour-website-that-challenged/) owners to establish a digital storefront or portfolio without the traditional barriers.
+This approach democratizes web development, making it feasible for entrepreneurs, creators, freelancers, and small business owners to establish a digital storefront or portfolio without the traditional barriers.
 
 ## The Automation Advantage: From Design to Content
 

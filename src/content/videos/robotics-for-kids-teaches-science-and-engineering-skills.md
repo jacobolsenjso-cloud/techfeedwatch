@@ -64,7 +64,7 @@ These simple physical actions introduce cause-and-effect relationships. Young le
 
 Elementary and middle school classrooms transition students toward visual software interfaces. Children assemble digital instruction blocks on touchscreen tablets to command their machines.
 
-This visual format eliminates syntax punctuation errors while teaching foundational programming logic. Educators frequently use visual tools when they introduce [coding for kids](/video/how-do-you-introduce-coding-for-kids-the-right-way) to maintain student interest.
+This visual format eliminates syntax punctuation errors while teaching foundational programming logic. Educators frequently use visual tools when they introduce coding for kids to maintain student interest.
 
 Secondary school students advance to industrial programming languages like [Python](https://www.python.org/) and C++. Learners assemble bare circuit boards, connect jumper wires, and solder electronic connections. Students write raw syntax to calibrate sensor sensitivity and regulate electric motor voltage.
 

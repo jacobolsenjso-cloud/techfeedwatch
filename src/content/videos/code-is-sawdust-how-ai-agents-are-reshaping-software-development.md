@@ -37,7 +37,7 @@ The shift empowers development teams to accelerate cycles and tackle more comple
 
 ## The Rise of AI Orchestration in Software Development
 
-The advent of AI agents marks a significant evolution in [software development](/video/the-build-in-public-revolution-transparency-as-a-catalyst-for-tech/), shifting the primary focus from manual coding to the strategic orchestration of intelligent systems.
+The advent of AI agents marks a significant evolution in software development, shifting the primary focus from manual coding to the strategic orchestration of intelligent systems.
 
 Tools like Conductor exemplify this trend, allowing developers to manage and direct multiple coding agents. In this new paradigm, the developer's role resembles that of a conductor leading an orchestra or a CEO overseeing a team of specialized agents.
 

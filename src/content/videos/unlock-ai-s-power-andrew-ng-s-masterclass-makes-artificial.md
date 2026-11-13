@@ -36,7 +36,7 @@ Digital transformation with AI involves a fundamental reshaping of how businesse
 
 ## What is Digital Transformation with AI?
 
-True digital transformation with AI is more than a technical upgrade. It is a strategic imperative that redefines [business models](/video/beyond-the-buzz-deconstructing-the-business-models-driving-fintech-s/) and operational philosophies. Companies that embrace this transformation become "AI-first" enterprises.
+True digital transformation with AI is more than a technical upgrade. It is a strategic imperative that redefines business models and operational philosophies. Companies that embrace this transformation become "AI-first" enterprises.
 
 They use AI not just as a tool, but as a core driver of their operations. This means integrating AI abilities, particularly machine learning, into core business processes. It also means fostering a culture of data-driven decision-making.
 

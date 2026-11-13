@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-19"
 ---
 
-Learning practical AI skills means focusing on how to apply existing tools to daily tasks and workflows, rather than on technical coding. This approach helps people understand different AI categories, master effective prompting, and integrate AI into their work for increased productivity and creativity. The goal is to use AI as a powerful assistant, not to [become an AI](/video/beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025/) developer.
+Learning practical AI skills means focusing on how to apply existing tools to daily tasks and workflows, rather than on technical coding. This approach helps people understand different AI categories, master effective prompting, and integrate AI into their work for increased productivity and creativity. The goal is to use AI as a powerful assistant, not to become an AI developer.
 
 ## Handling the AI Learning Path
 

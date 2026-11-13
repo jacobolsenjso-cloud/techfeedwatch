@@ -55,7 +55,7 @@ For smaller enterprises, the damage is frequently terminal: 60% of small busines
 
 Preventing unauthorized exposure demands active friction at every network tier. Enforcing multi-factor authentication ensures that stolen passwords remain useless without physical device verification codes. Comprehensive data encryption transforms stored and moving plain text into unreadable ciphertext, nullifying the value of captured databases lacking explicit decryption keys.
 
-Organizations operating across integrated financial networks, such as those governed by [open banking frameworks](/video/open-banking-data-and-trust-redefine-finance), rely heavily on programmatic verification routines. Continuous software patching eliminates exploitable system flaws before attackers discover them, while real-time security log monitoring flags anomalous traffic patterns, halts brute-force attempts mid-execution, and alerts defense squads before exfiltration begins.
+Organizations operating across integrated financial networks, such as those governed by open banking frameworks, rely heavily on programmatic verification routines. Continuous software patching eliminates exploitable system flaws before attackers discover them, while real-time security log monitoring flags anomalous traffic patterns, halts brute-force attempts mid-execution, and alerts defense squads before exfiltration begins.
 
 ## Why Security Discipline Must Be an Operational Imperative
 

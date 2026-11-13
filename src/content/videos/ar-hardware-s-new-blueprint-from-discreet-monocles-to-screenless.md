@@ -64,7 +64,7 @@ More advanced systems are exploring **mixed waveguide optics**, which channel th
 
 For instance, one company demonstrated modules where a 9-millimeter thick unit could provide an 85-degree FOV, while a thinner 6-millimeter module offered a narrower 56-degree FOV. A "Crossfire" module, at 13 millimeters thick, achieved a wide 120-degree FOV by using two 2K display sources, one on each side, which combined to create an effective 3K resolution image.
 
-These waveguide systems can also incorporate polarizing elements or mechanical shutters to switch [between AR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) and VR modes by making the displays opaque. A significant advantage of some of these newer optical modules is their relatively affordable component cost, potentially in the tens of dollars per unit, which could help bring down the overall price of consumer AR headsets.
+These waveguide systems can also incorporate polarizing elements or mechanical shutters to switch between AR and VR modes by making the displays opaque. A significant advantage of some of these newer optical modules is their relatively affordable component cost, potentially in the tens of dollars per unit, which could help bring down the overall price of consumer AR headsets.
 
 Despite these innovations, display clarity and field of view remain critical considerations. Devices like the XREAL Light glasses, with 1080p per eye displays, offer readable text, but the experience is not as sharp or clear as a high-resolution monitor.
 

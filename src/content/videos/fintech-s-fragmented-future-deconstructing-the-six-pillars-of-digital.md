@@ -69,7 +69,7 @@ Popular models include peer-to-peer (P2P) lenders, which connect borrowers direc
 
 In emerging markets, companies like Jumo use mobile network data to generate credit scores for the unbanked, having issued $4 billion in loans with high collection rates. LendTech constantly innovates, often competing with or collaborating with traditional banks to offer more secure and efficient lending options.
 
-**BankTech** refers to technology specifically designed for banks. With banking becoming an activity rather than a physical location, many traditional banks are pursuing internal digital transformation. The goal is to create modular, API-driven digital [banking platforms](/video/core-banking-platforms-drive-digital-transformation-in-finance/) that offer unique customer experiences.
+**BankTech** refers to technology specifically designed for banks. With banking becoming an activity rather than a physical location, many traditional banks are pursuing internal digital transformation. The goal is to create modular, API-driven digital banking platforms that offer unique customer experiences.
 
 Since banks are not primarily technology institutions, BankTech companies step in to help their digital strategies. These technology providers enable banks to offer better, more secure, reliable, and sustainable services, giving them a competitive edge.
 

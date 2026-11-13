@@ -65,7 +65,7 @@ For example, an AI agent can now process overdue invoices not just by identifyin
 - Performing background checks
 - Managing patient onboarding
 
-By taking on these functions, AI agents can provide tens of hours of labor, directly addressing the pain points that keep [small business](/video/ai-s-local-search-dominance-the-4-hour-website-that-challenged/) owners up at night and allowing them to redirect their energy towards their clinical expertise.
+By taking on these functions, AI agents can provide tens of hours of labor, directly addressing the pain points that keep small business owners up at night and allowing them to redirect their energy towards their clinical expertise.
 
 ## Beyond Efficiency: Addressing Labor Shortages and Market Expansion
 

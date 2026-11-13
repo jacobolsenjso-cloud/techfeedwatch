@@ -61,7 +61,7 @@ The skill set required for front-end development is also evolving. While traditi
 
 This changes the iterative loop, making it faster to experiment with different designs and gather feedback. Companies offering these tools often use various monetization models, from free tiers to premium PRO access, sometimes accompanied by discounts like a 25% reduction using a code such as YT25, illustrating the growing commercial ecosystem around AI-assisted development.
 
-This model helps sustain innovation while providing accessible options for developers. The rise of [open-source AI tools](/video/open-source-ai-how-developer-tools-are-fueling-the-next-wave-of) also offers alternative pathways for innovation, democratizing access to powerful capabilities.
+This model helps sustain innovation while providing accessible options for developers. The rise of open-source AI tools also offers alternative pathways for innovation, democratizing access to powerful capabilities.
 
 ## Future autonomous agents and the challenges of generated code
 

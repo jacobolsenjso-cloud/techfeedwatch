@@ -26,7 +26,7 @@ faqs:
 
 Choosing the best virtual reality game requires balancing technical immersion against mechanical execution. Players looking for definitive experiences in 2026 will find that the answer splits across genres: Forefront establishes a standard for multiplayer scale, while Extra-Dimensional reclaims visual dominance for tethered hardware.
 
-Understanding the [fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/) makes clear why full immersion demands purposeful tactile physics rather than simple visual conversion.
+Understanding the fundamental differences between AR and VR makes clear why full immersion demands purposeful tactile physics rather than simple visual conversion.
 
 ## What Is the Best Virtual Reality Game Right Now
 

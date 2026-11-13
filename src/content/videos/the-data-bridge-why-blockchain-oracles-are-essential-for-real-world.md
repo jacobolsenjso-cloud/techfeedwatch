@@ -95,6 +95,6 @@ Projects like Chainlink are actively working on these solutions, leveraging a ne
 
 We are also likely to see advancements in secure hardware solutions and cryptographic techniques to make "Hardware Oracle's" more resilient against tampering. This includes methods for cryptographic proofing to ensure data from a sensor has not been altered between its source and the smart contract.
 
-The concept of "data markets" where data is bought, sold, and rated based on reputation scores, could emerge, offering more transparent and resilient data feeds for smart contracts. These innovations are critical for further cementing trust in technologies like smart contracts and enhancing the capabilities of [evolving blockchain networks](/video/algorand-s-ascent-reimagining-blockchain-s-core-trade-offs-for-the).
+The concept of "data markets" where data is bought, sold, and rated based on reputation scores, could emerge, offering more transparent and resilient data feeds for smart contracts. These innovations are critical for further cementing trust in technologies like smart contracts and enhancing the capabilities of evolving blockchain networks.
 
 The ongoing efforts aim to ensure that while oracles provide essential connections to the real world, they do so in a manner consistent with the decentralized and trustless principles of blockchain technology.

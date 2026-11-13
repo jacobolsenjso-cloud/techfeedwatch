@@ -87,7 +87,7 @@ According to Intel's "How to Choose: Pre-Built vs. Custom PC" guide, custom DIY 
 
 A pre-built manufacturer handles hardware troubleshooting for the entire rig under one support umbrella. Intel's guide also emphasizes that DIY builders must diagnose faulty components themselves and submit individual warranty claims to specific part manufacturers.
 
-While portable designs restrict upgrades, evaluating a [gaming PC and gaming laptop](/video/gaming-pc-difference-between-gaming-pc-and-gaming-laptop) or pre-built desktop highlights how modular tower construction protects long-term value through part replacements.
+While portable designs restrict upgrades, evaluating a gaming PC and gaming laptop or pre-built desktop highlights how modular tower construction protects long-term value through part replacements.
 
 - Component flexibility: DIY builders pick exact parts, whereas pre-builts use bundled parts
 - Warranty handling: Pre-builts offer full-system coverage, while DIY systems split warranties across manufacturers

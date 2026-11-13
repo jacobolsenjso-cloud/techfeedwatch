@@ -39,7 +39,7 @@ Qubit coherence is the state where a quantum bit keeps steady wave patterns. Thi
 
 [Argonne National Laboratory](https://www.anl.gov/article/what-is-quantum-coherence) explains that coherence enables a qubit to exist in superposition. Superposition allows a qubit to hold multiple possible values at once. Coherence also lets it perform constructive and destructive interference, combining quantum waves to amplify correct answers and cancel incorrect ones. When external noise disrupts this condition, the qubit loses data and behaves like a standard classical bit.
 
-Understanding the [difference between qubit and classical bit](/video/difference-between-qubit-and-classical-bit-explained) systems helps clarify this challenge. Classical bits sit reliably as zeros or ones inside memory chips. Qubits rely on fragile quantum waves instead, and these waves decay quickly if surroundings interfere.
+Understanding the difference between qubit and classical bit systems helps clarify this challenge. Classical bits sit reliably as zeros or ones inside memory chips. Qubits rely on fragile quantum waves instead, and these waves decay quickly if surroundings interfere.
 
 For everyday computer users, this limit explains why quantum processors stay inside research facilities. Engineers must first solve coherence loss. Until then, quantum systems cannot replace personal computers or run reliable office software.
 

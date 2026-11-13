@@ -80,7 +80,7 @@ Duplicated code climbed from around 8% to over 12%, a 50% increase. This pattern
 
 Security is another pressing concern. One peer-reviewed study examined over 700 real snippets of AI-generated code and discovered that more than a quarter, specifically 27%, contained a security weakness. Even more alarmingly, when researchers took verified secure code and tasked an AI with iteratively improving it, the number of critical vulnerabilities increased by nearly 40% after just five iterations.
 
-The clear conclusion: human expertise in the loop is essential, as the machine, left to its own devices, can degrade code quality and security. [Open-Source AI Tools Empower Developers for Faster AI Apps](/video/open-source-ai-how-developer-tools-are-fueling-the-next-wave-of) can be powerful, but require careful human oversight.
+The clear conclusion: human expertise in the loop is essential, as the machine, left to its own devices, can degrade code quality and security. Open-Source AI Tools Empower Developers for Faster AI Apps can be powerful, but require careful human oversight.
 
 These findings reshape the understanding of [developer roles](/video/ai-code-agents-on-google-cloud-reshaping-software-development/). While the "programmer" role (focused on rote coding) has seen a sharp decline, falling by something like a quarter in US data over the last two years, the broader category of "software developer" has grown and is projected to continue expanding.
 

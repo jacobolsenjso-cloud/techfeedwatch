@@ -83,4 +83,4 @@ Regulatory bodies globally will inevitably scrutinize this nascent sector. The c
 
 The debate between centralized and decentralized control over AI agent finance will remain central. While solutions from major companies offer convenience and infrastructure, truly decentralized alternatives aim to prevent the concentration of power and enhance resilience.
 
-The development of more solid identity solutions for AI agents and audit trails for their financial activities will also be critical to ensure transparency and accountability. The broader implications for business transformation, including how [AI agents reshape business models](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution), will be shaped significantly by how these payment infrastructures evolve.
+The development of more solid identity solutions for AI agents and audit trails for their financial activities will also be critical to ensure transparency and accountability. The broader implications for business transformation, including how AI agents reshape business models, will be shaped significantly by how these payment infrastructures evolve.

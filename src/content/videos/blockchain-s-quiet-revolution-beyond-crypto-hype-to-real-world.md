@@ -63,7 +63,7 @@ This structure ensures extreme security. To tamper with a single transaction, on
 
 ## Beyond Cryptocurrencies: Smart Contracts and Industry Disruption
 
-Blockchain's potential extends far beyond digital currencies. The Ethereum blockchain, for example, developed by Vitalik Buterin at the age of 22, introduced "[smart contracts](/video/beyond-digital-cash-the-evolving-utility-of-crypto-networks/)." These are self-executing agreements where contract terms are coded directly.
+Blockchain's potential extends far beyond digital currencies. The Ethereum blockchain, for example, developed by Vitalik Buterin at the age of 22, introduced "smart contracts." These are self-executing agreements where contract terms are coded directly.
 
 A smart contract automatically handles execution, management, performance, and payment, effectively containing its own "bank account" for agreements. Projects on Ethereum range from new stock market alternatives to models for democracy where politicians are more accountable.
 

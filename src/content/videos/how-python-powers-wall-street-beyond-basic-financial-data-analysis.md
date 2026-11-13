@@ -47,7 +47,7 @@ Beyond traditional market data, engineers utilize Python to crawl financial news
 
 The reach of Python extends beyond high finance. In consumer banks, data scientists increasingly turn to Python as a powerful tool. They use Python to analyze credit risk models and customer behavior, reducing the risk of lending by enabling more accurate assessments of borrower trustworthiness and financial stability.
 
-This also facilitates the creation of recommendation models for new customers across different markets. [Open Banking: Data and Trust Drive Personalized Finance](/video/open-banking-data-and-trust-redefine-finance)
+This also facilitates the creation of recommendation models for new customers across different markets. Open Banking: Data and Trust Drive Personalized Finance
 
 A critical component of Python’s strength in finance is its specialized library ecosystem, which provides solid tools for Data Analysis and numerical computing. Pandas, a core Python package, stands out for providing fast, flexible, and expressive data structures. It serves as the fundamental high-level building block for practical real-world data analysis.
 

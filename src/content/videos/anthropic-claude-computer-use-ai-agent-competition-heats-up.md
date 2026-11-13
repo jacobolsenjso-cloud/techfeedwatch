@@ -37,7 +37,7 @@ It represents a significant advancement in [AI agents](/video/ai-agents-automate
 
 Anthropic Claude Computer Use transforms the AI model from a conversational assistant into an active agent capable of operating a computer's interface. Users can issue a prompt, and Claude will then execute the necessary steps to fulfill that request.
 
-This includes fundamental operations like launching specific applications, handling file systems, and managing calendar entries. For instance, it can automatically open a calendar, click on a Zoom meeting link, and even use a [local AI](/video/beyond-cloud-lock-in-how-local-ai-agents-and-obsidian-are-rewriting/) voice model to participate in the conversation.
+This includes fundamental operations like launching specific applications, handling file systems, and managing calendar entries. For instance, it can automatically open a calendar, click on a Zoom meeting link, and even use a local AI voice model to participate in the conversation.
 
 The system is designed to handle complex, multi-step tasks. It can
 

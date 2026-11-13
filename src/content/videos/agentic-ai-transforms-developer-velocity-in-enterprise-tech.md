@@ -29,7 +29,7 @@ faqs:
 rewrittenAt: "2026-08-16"
 ---
 
-[Agentic AI](/video/agentic-ai-non-developers-building-company-infrastructure/) is poised to fundamentally transform game development on platforms like Roblox by automating repetitive tasks, streamlining complex workflows, and enhancing the overall efficiency of creation.
+Agentic AI is poised to fundamentally transform game development on platforms like Roblox by automating repetitive tasks, streamlining complex workflows, and enhancing the overall efficiency of creation.
 
 This approach allows developers to shift their focus from boilerplate coding and intricate debugging to innovative game design and creative problem-solving, accelerating the pace at which new experiences can be brought to life and maintained.
 
@@ -39,7 +39,7 @@ At its heart, [agentic AI](/video/beyond-chatbots-we-tested-4-agentic-ai-tools-a
 
 This creates a self-service environment where intelligent agents handle routine infrastructure setup, configuration, and troubleshooting, freeing human developers from these manual burdens.
 
-For a platform like Roblox, this means embedding AI-driven capabilities directly into Roblox Studio or associated developer tools. Instead of manually configuring every aspect of a game's backend or scripting common interactions from scratch, developers can leverage [AI agents](/video/beyond-cloud-lock-in-how-local-ai-agents-and-obsidian-are-rewriting/) that understand their intent and automatically generate the necessary code, assets, or environment configurations.
+For a platform like Roblox, this means embedding AI-driven capabilities directly into Roblox Studio or associated developer tools. Instead of manually configuring every aspect of a game's backend or scripting common interactions from scratch, developers can leverage AI agents that understand their intent and automatically generate the necessary code, assets, or environment configurations.
 
 This automation is powered by a collection of specialized "skills"—much like the 130 skills developed by some enterprise organizations—that can execute specific tasks, from deploying infrastructure blueprints to resolving operational issues. The goal is to bridge the gap between the inherent complexity of large-scale development and the need for rapid developer velocity.
 

@@ -31,7 +31,7 @@ The core difference between programming languages lies in how they execute instr
 
 ## Execution Models: How Compiled, Interpreted, and Bytecode Languages Differ
 
-Execution models determine how instructions written by humans become operational tasks on physical computer chips. Understanding these layers clarifies why system response times differ fundamentally across tech architectures, much like evaluating [GPU temp versus hotspot](/video/difference-between-gpu-temp-and-hotspot-explained) readings and their impact on lifespan.
+Execution models determine how instructions written by humans become operational tasks on physical computer chips. Understanding these layers clarifies why system response times differ fundamentally across tech architectures, much like evaluating GPU temp versus hotspot readings and their impact on lifespan.
 
 Compiled languages, such as C and Rust, translate source code directly into machine-readable binary before deployment. The operating system runs this native machine code directly on the processor with zero translation overhead during runtime. In contrast, purely interpreted languages execute source commands line by line through an external engine at runtime, introducing CPU latency while allowing instant script updates.
 

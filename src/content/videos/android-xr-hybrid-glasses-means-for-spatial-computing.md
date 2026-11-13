@@ -33,7 +33,7 @@ Extended reality (XR) is rapidly evolving beyond distinct augmented reality (AR)
 
 Android XR describes an operating system tailored for extended reality devices, bridging the gap between fully immersive virtual environments and digitally augmented real-world views. These are not merely VR headsets or AR smart glasses; they represent a new class of device that combines elements of both.
 
-A prime example is the XREAL AURA, which functions as Android XR glasses, specifically designed as a hybrid. This means users can transition between seeing their physical surroundings with digital overlays and entering more enclosed, virtual experiences smoothly. For a deeper understanding of these technologies, consider the [fundamental differences between AR and VR](/video/ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact/).
+A prime example is the XREAL AURA, which functions as Android XR glasses, specifically designed as a hybrid. This means users can transition between seeing their physical surroundings with digital overlays and entering more enclosed, virtual experiences smoothly. For a deeper understanding of these technologies, consider the fundamental differences between AR and VR.
 
 The core functionality of Android XR glasses relies on sophisticated display technology and solid interaction methods. While specific numbers for field of view (FOV) and resolution can vary, these metrics are always critical for user immersion and clarity.
 

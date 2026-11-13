@@ -48,7 +48,7 @@ Similarly, H1 tags are essential for structuring a page, signaling to search eng
 
 ## Enhancing User Experience and Technical Performance
 
-A website's technical performance and [user experience](/video/frontend-seo-s-technical-core-why-user-experience-now-dominates/) are critical factors for on-page SEO. Mobile-friendliness is no longer optional; websites must be responsive and display correctly across various devices. Tools exist to test a website's score in terms of mobile responsiveness, mirroring how search engines assess this aspect.
+A website's technical performance and user experience are critical factors for on-page SEO. Mobile-friendliness is no longer optional; websites must be responsive and display correctly across various devices. Tools exist to test a website's score in terms of mobile responsiveness, mirroring how search engines assess this aspect.
 
 Alongside mobile compatibility, website speed is paramount. Ideally, a website should load within seconds. Tools like Google PageSpeed Insights can analyze a site's loading performance, providing results in two to three minutes, and identifying areas for improvement.
 

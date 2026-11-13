@@ -97,7 +97,7 @@ The US tech industry is now strongly advocating for a shift in Washington's AI s
 
 Their argument is that American AI leadership should not be judged solely by the performance of a few frontier models. Instead, it should be measured by the nation's ability to build a wide, open ecosystem. This ecosystem should permeate every sector of the economy.
 
-This industry push directly challenges the [business models](/video/the-ai-horizon-decoding-the-enterprise-and-health-tech-revolution/) of companies that rely on keeping their best AI models proprietary. If open models become sufficiently capable for most tasks, closed model providers would need to justify premium pricing. This premium would be only for the most demanding applications.
+This industry push directly challenges the business models of companies that rely on keeping their best AI models proprietary. If open models become sufficiently capable for most tasks, closed model providers would need to justify premium pricing. This premium would be only for the most demanding applications.
 
 Washington faces a decision point. It can either protect existing closed AI champions. Or it can invest in a broader system that could make American AI more competitive, transparent, and resilient.
 

@@ -31,7 +31,7 @@ faqs:
 rewrittenAt: "2026-08-17"
 ---
 
-[Agentic AI](/video/agentic-ai-non-developers-building-company-infrastructure/) refers to intelligent systems designed to perform complex, multi-step tasks autonomously. In the context of open banking and financial services, these systems move beyond simple data sharing.
+Agentic AI refers to intelligent systems designed to perform complex, multi-step tasks autonomously. In the context of open banking and financial services, these systems move beyond simple data sharing.
 
 They can proactively manage and optimize personal or business finances. This technology enables automated financial workflows that previously needed human intervention.
 

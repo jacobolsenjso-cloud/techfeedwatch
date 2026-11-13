@@ -91,4 +91,4 @@ The evolution of AI coding skills signifies a fundamental shift in software deve
 
 Developers are not replaced but augmented, transitioning to roles that emphasize guiding and validating AI agents rather than writing every line of code. Embracing these advanced AI capabilities means cultivating new human skills centered on collaboration with AI, ensuring that the promise of increased efficiency and higher-quality software becomes a reality.
 
-This transformative period redefines the pathway to [becoming an AI engineer in 2025](/video/beyond-the-hype-a-practical-roadmap-to-ai-engineering-in-2025), requiring mastery of these new interaction paradigms.
+This transformative period redefines the pathway to becoming an AI engineer in 2025, requiring mastery of these new interaction paradigms.

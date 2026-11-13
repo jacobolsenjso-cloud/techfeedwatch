@@ -64,7 +64,7 @@ This prestigious award underscores the monumental impact AlphaFold has had on ba
 
 Beyond immediate applications, AlphaFold's success hints at a broader future where AI serves as the ultimate tool for science. Today, Hassabis leads Google DeepMind, pushing toward the same goal he set as a teenager: AGI.
 
-The principles and methodologies refined in projects like AlphaFold and AlphaGo contribute to this larger quest, building increasingly sophisticated AI systems capable of complex reasoning and problem-solving. This includes developing agentic AI systems that can execute multi-step plans in dynamic environments, highlighting the importance of [agentic AI for financial transformation](/video/decentralized-ai-banking-how-agentic-ai-reshapes-finance).
+The principles and methodologies refined in projects like AlphaFold and AlphaGo contribute to this larger quest, building increasingly sophisticated AI systems capable of complex reasoning and problem-solving. This includes developing agentic AI systems that can execute multi-step plans in dynamic environments, highlighting the importance of agentic AI for financial transformation.
 
 The eventual aim involves creating "virtual cells" — comprehensive AI models that simulate biological processes at a molecular level, offering unprecedented insights into life itself. Such developments could also influence how AI harnesses are used to enhance enterprise AI adoption, particularly in how [coding harnesses transform LLMs](/video/ai-coding-harnesses-impact-on-enterprise-ai-adoption) into agentic systems.
 

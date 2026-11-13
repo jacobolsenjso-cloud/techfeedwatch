@@ -37,7 +37,7 @@ Rather than relying on traditional optical see-through lenses, the UR XR1 utiliz
 
 In practice, a user can plug the glasses via USB-C directly into a laptop, using standard mouse and keyboard inputs to move and position up to seven virtual desktop monitors without external controllers.
 
-Unseen Reality set pre-orders at $599 ahead of a full $799 commercial release. Understanding how these display architectures function is central to evaluating [the broad impact of AR](/video/augmented-reality-demystified-how-digital-overlays-are) across professional work environments.
+Unseen Reality set pre-orders at $599 ahead of a full $799 commercial release. Understanding how these display architectures function is central to evaluating the broad impact of AR across professional work environments.
 
 Complementing tethered monitors, media-focused form factors are prioritizing high-brightness optical engines. Geeks Loft introduced its Perisphere smart glasses, which feature dual 1920x1080 Full HD displays generating 1800 nits of brightness. Built with an integrated headphone chassis, the Perisphere includes a 2,500 milliamp hour battery supporting fast charging via USB-C for an August launch at $599.
 

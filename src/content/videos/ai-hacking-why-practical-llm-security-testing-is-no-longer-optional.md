@@ -59,7 +59,7 @@ Prompt injection testing works by exploiting the fundamental nature of how large
 
 They interpret all input as instructions or information to process. When a prompt injection is successful, it essentially hijacks the AI's internal reasoning process, forcing it to prioritize the malicious instruction over its original programming or safety filters.
 
-This makes prompt injection a specific form of offensive security testing for AI systems, revealing blind spots that traditional software testing might miss. [What is Offensive Security Testing and Why Does it Matter?](/video/offensive-security-why-simulating-attacks-is-essential-for-digital)
+This makes prompt injection a specific form of offensive security testing for AI systems, revealing blind spots that traditional software testing might miss. What is Offensive Security Testing and Why Does it Matter?
 
 The criticality of this testing cannot be overstated. With AI becoming integral to critical infrastructure, financial services, and personal applications, prompt injection attacks pose significant risks.
 

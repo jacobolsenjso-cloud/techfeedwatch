@@ -61,7 +61,7 @@ By making the Bitcoin network itself the validator of these extended operations,
 
 However, these innovations face significant challenges, particularly regarding scaling. While OPNET aims to run on Bitcoin's layer one, the fundamental constraints of Bitcoin's block size and 10-minute block time remain. A high fee environment is a persistent concern, especially as transaction volume for complex applications increases.
 
-Bitcoin maximalists also voice critiques, expressing concerns about the potential for "spam" transactions and the introduction of "competing tokens" that might dilute Bitcoin’s original purpose as a pure peer-to-peer electronic cash system. These debates underscore the ongoing tension between preserving Bitcoin's core identity and expanding its functional utility to include advanced applications like [smart contracts, DApps, and DeFi](/video/beyond-digital-cash-the-evolving-utility-of-crypto-networks).
+Bitcoin maximalists also voice critiques, expressing concerns about the potential for "spam" transactions and the introduction of "competing tokens" that might dilute Bitcoin’s original purpose as a pure peer-to-peer electronic cash system. These debates underscore the ongoing tension between preserving Bitcoin's core identity and expanding its functional utility to include advanced applications like smart contracts, DApps, and DeFi.
 
 ## How Layered Protocols Bring Smart Contracts to Bitcoin
 

@@ -77,7 +77,7 @@ When choosing between both paths, buyers evaluate several operational factors:
 - Assembly Time: Pre-built systems run on the day of delivery, while custom projects demand hours of research, mounting, and cable routing.
 - Support and Warranties: Pre-built machines offer single-point customer service, while custom builds require managing individual manufacturer warranties for each component.
 
-Buyers often weigh form factors, such as choosing between a desktop [gaming PC and gaming laptop](/video/gaming-pc-difference-between-gaming-pc-and-gaming-laptop).
+Buyers often weigh form factors, such as choosing between a desktop gaming PC and gaming laptop.
 
 ## Standard office PCs can run lightweight titles
 Standard office PCs can run lightweight and older games, but they cannot handle modern graphical titles that demand dedicated hardware.

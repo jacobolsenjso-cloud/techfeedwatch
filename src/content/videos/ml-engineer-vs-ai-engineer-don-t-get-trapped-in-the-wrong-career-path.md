@@ -97,7 +97,7 @@ According to the Stanford Institute for Human-Centered Artificial Intelligence 2
 
 The Stanford report tracks the "Agentic AI" skill cluster (AI systems capable of acting autonomously to achieve goals). Job postings mentioning this cluster grew by over 280% between 2024 and 2025.
 
-Aspiring specialists often wonder how to build a [machine learning career](/video/the-algorithmic-advantage-why-machine-learning-is-now-your-essential) without a degree when reviewing formal math requirements. Model training roles often require deep advanced mathematics. In contrast, application orchestration rewards strong software engineering habits.
+Aspiring specialists often wonder how to build a machine learning career without a degree when reviewing formal math requirements. Model training roles often require deep advanced mathematics. In contrast, application orchestration rewards strong software engineering habits.
 
 I genuinely believe you can achieve a great deal in the tech space without a university degree if you have an active curiosity for new knowledge. While building complex algorithms from the ground up demands deep academic math, integrating existing tools relies far more on practical curiosity and steady testing. Staying eager to understand how new tools work lets you build valuable skills on your own terms.
 
