@@ -41,6 +41,11 @@ const opgivet = (f) => f?.recipe === 3 && ((f.forsoeg || 1) >= MAKS_FORSOEG || (
 // frem, faktatjekkes de uden omskrivning (faktatjek-gamle.mjs).
 const prioFil = laes('./src/data/omskriv-prioritet.json', null);
 const prio = prioFil ? new Set(prioFil.slugs) : null;
+// 13/11-2026 (Jacobs ja): artikler, Google har crawlet og VALGT FRA (Search Console, "Crawlet – endnu ikke
+// indekseret"), står allerforrest - Google har set dem og sagt nej, så en bedre udgave er den hurtigste vej ind.
+// Målt 13/11: 11 artikler i rækken, heraf var 8 allerede omskrevet (de står ikke i køen); de 3 gamle står i "afvist".
+const afvist = new Set(prioFil?.afvist || []);
+const gruppeFor = (a) => (afvist.has(a.slug) ? 0 : prio && prio.has(a.slug) ? 1 : 2);
 
 const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md')).map((f) => {
   const raw = fs.readFileSync(`./src/content/videos/${f}`, 'utf8').replace(/\r/g, '');
@@ -58,7 +63,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 const gamle = kun
   ? alle.filter((a) => kun.split(',').includes(a.slug) && a.spm) // 25/10: flere slugs med komma
   : alle.filter((a) => !a.ny && !a.short && a.spm && !opgivet(fejl[a.slug]))
-    .sort((a, b) => (prio ? Number(!prio.has(a.slug)) - Number(!prio.has(b.slug)) : 0) || b.dato.localeCompare(a.dato));
+    .sort((a, b) => gruppeFor(a) - gruppeFor(b) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
 // Søgetal (DataForSEO, Jacob 10/11-2026: "samme setup som Tech Media Archive"): køen tager de artikler, folk
@@ -72,16 +77,15 @@ if (!kun) {
   dfsLog = dfs.log;
   const talFor = (a) => dfs.tal.get(normaliser(a.spm));
   dfsLinje = logLinje(dfs.log, gamle, talFor);
-  const iPrio = prio ? gamle.filter((a) => prio.has(a.slug)) : [];
-  const resten = prio ? gamle.filter((a) => !prio.has(a.slug)) : gamle;
-  const ordnet = [...ordn(iPrio, talFor), ...ordn(resten, talFor)];
+  // Tre grupper i fast rækkefølge (afvist af Google → vist af Google → resten); søgetal ordner inden for hver
+  const ordnet = [0, 1, 2].flatMap((g) => ordn(gamle.filter((a) => gruppeFor(a) === g), talFor));
   gamle.splice(0, gamle.length, ...ordnet);
   for (const a of gamle) a.tal = talFor(a);
 }
 
 console.log(kun
   ? `Målrettet omskrivning af "${kun}"${nyVideo ? ' med ny video' : ''}`
-  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-viste først, så flest søgninger, så nyeste)`);
+  : `${gamle.length} gamle artikler kan skrives om — tager ${Math.min(antal, gamle.length)} nu (Google-afviste først, så Google-viste, så flest søgninger, så nyeste)`);
 if (dfsLinje) console.log(dfsLinje);
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives (søgetal koster første gang ca. $0,06, derefter intet)
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}  (${talTekst(a.tal)})`); process.exit(0); }

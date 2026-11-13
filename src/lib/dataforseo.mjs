@@ -66,20 +66,25 @@ export function oversaet(it) {
 export const KD_MAKS = 30;
 export const forSvaer = (t) => !!t && t.kd !== null && t.kd !== undefined && t.kd > KD_MAKS;
 
+// Faldende (Jacob 13/11-2026: tidløse artikler): søgningerne er faldet mindst FALD_MAKS % på et år - typisk en
+// nyhed, der dør ud. Målt 13/11: 852 af 5.014 brugbare søgeord, fx "why is crypto crashing" (-70 %), der var
+// førstevalget for Crypto, og "what is sora" (-76 %). Før vejede de ×0,7; nu lægges de bagerst som de for svære.
+export const FALD_MAKS = 50;
+export const faldende = (t) => !!t && t.a !== null && t.a !== undefined && t.a <= -FALD_MAKS;
+
 // Værdi = søgninger × lethed³. Lethed i 3. potens, så et let spørgsmål med færre søgninger slår et svært med
 // mange (sværhed 10 → ×0,73; sværhed 30 → ×0,34). Ukendt sværhed regnes som 50. Tidløs ×1,5 (Jacob vil have
-// tidløse artikler); faldet med mindst halvdelen på et år ×0,7 (ofte en nyhed, der er ved at dø ud).
-// Under MIN_SOEGNINGER eller for svær → 0.
+// tidløse artikler). Under MIN_SOEGNINGER, for svær eller faldende → 0.
 export function vaerdi(t) {
-  if (!t || (t.v || 0) < MIN_SOEGNINGER || forSvaer(t)) return 0;
+  if (!t || (t.v || 0) < MIN_SOEGNINGER || forSvaer(t) || faldende(t)) return 0;
   const lethed = 1 - (t.kd ?? 50) / 100;
-  return Math.round(t.v * Math.max(lethed, 0.05) ** 3 * (t.j ? 1.5 : 1) * (t.a !== null && t.a !== undefined && t.a <= -50 ? 0.7 : 1));
+  return Math.round(t.v * Math.max(lethed, 0.05) ** 3 * (t.j ? 1.5 : 1));
 }
 
-// Gruppe: 0 = kendt med nok søgninger og ikke for svær · 1 = ukendt (ikke i DataForSEO, eller ikke spurgt)
-// · 2 = kendt, men for få søgninger eller for svær.
+// Gruppe: 0 = kendt med nok søgninger, ikke for svær og ikke faldende · 1 = ukendt (ikke i DataForSEO, eller ikke
+// spurgt) · 2 = kendt, men for få søgninger, for svær eller faldende.
 // NB: null betyder "spurgt, men DataForSEO kendte det ikke" - det er IKKE det samme som 0 søgninger.
-export const gruppe = (t) => (t === undefined || t === null ? 1 : (t.v || 0) >= MIN_SOEGNINGER && !forSvaer(t) ? 0 : 2);
+export const gruppe = (t) => (t === undefined || t === null ? 1 : (t.v || 0) >= MIN_SOEGNINGER && !forSvaer(t) && !faldende(t) ? 0 : 2);
 
 // Rækkefølge: gruppe 0 efter værdi (størst først), derefter de ukendte, til sidst dem med for få søgninger.
 // Inden for samme gruppe og værdi bevares den rækkefølge, listen kom i (fx klokkeslæt eller dato).
@@ -146,17 +151,17 @@ export function talTekst(t) {
   if (t === undefined) return 'søgetal: ikke spurgt';
   if (t === null) return 'søgetal: ukendt hos DataForSEO';
   return [`${t.v} søgn./md`, t.kd !== null && t.kd !== undefined ? `sværhed ${t.kd}` : null, t.j ? 'tidløs' : null,
-    t.a !== null && t.a !== undefined && t.a <= -50 ? `faldende (${t.a} %)` : null,
+    faldende(t) ? `faldende (${t.a} %)` : null,
     forSvaer(t) ? `for svær (over ${KD_MAKS})` : null].filter(Boolean).join(' · ');
 }
 
 // Én linje til robottens log (offentlig - kun autocomplete-spørgsmål og antal, aldrig Search Console-data).
 export function logLinje(log, liste, talFor) {
   const g = [0, 0, 0];
-  let svaer = 0;
-  for (const x of liste) { g[gruppe(talFor(x))]++; if (forSvaer(talFor(x))) svaer++; }
-  // faa = for få søgninger (de for svære tælles for sig i forSvaer, selvom de også ligger bagerst)
-  return `SOEGETAL: ${JSON.stringify({ spoergsmaal: liste.length, medTal: g[0], ukendt: g[1], faa: g[2] - svaer, forSvaer: svaer, fraHusk: log.fraHusk, sendt: log.sendt, fundet: log.fundet, kald: log.kald, usd: log.pris, fejl: log.fejl })}`;
+  let svaer = 0, fald = 0;
+  // Gruppe 2 deles i tre, der tilsammen giver gruppen: for svær først, så faldende, resten = for få søgninger
+  for (const x of liste) { const t = talFor(x); g[gruppe(t)]++; if (forSvaer(t)) svaer++; else if (faldende(t)) fald++; }
+  return `SOEGETAL: ${JSON.stringify({ spoergsmaal: liste.length, medTal: g[0], ukendt: g[1], faa: g[2] - svaer - fald, forSvaer: svaer, faldende: fald, fraHusk: log.fraHusk, sendt: log.sendt, fundet: log.fundet, kald: log.kald, usd: log.pris, fejl: log.fejl })}`;
 }
 
 // --- Anden kilde: spørgsmål FRA DataForSEO (Jacob 13/11-2026: "det skal selvfølgelig også rettes til") -----------
@@ -173,6 +178,13 @@ export function logLinje(log, liste, talFor) {
 // Fejler noget, kommer der bare ingen nye forslag (fejlen står i loggen) - robotten kører videre med autoforslagene.
 export const FORSLAG_DAGE = 30;
 export const FORSLAG_GRAENSE = 100;   // højst så mange søgeord pr. startord (de mest søgte)
+// Kun spørgsmål (Jacob 13/11-2026, forslag 2): målt 13/11 gav AI & Tech, SEO og PC Building 0 spørgsmål af 226-300
+// svar, fordi de mest søgte søgeord med startordet ikke er spørgsmål ("chatgpt", "seo tools"). DataForSEO filtrerer
+// nu selv på, at søgeordet STARTER med et af robottens spørgeord (regex) - så alle 100 svar er spørgsmål.
+// FORSLAG_UDGAVE: svar gemt før filteret (uden u: 2) hentes igen, når robotten næste gang arbejder på emnet.
+export const FORSLAG_UDGAVE = 2;
+const escRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+export const spoergsmaalsRegex = (praefikser) => `^(${[...praefikser].sort((a, b) => b.length - a.length).map(escRe).join('|')}) `;
 const FORSLAG_STD = 'src/data/dataforseo-forslag.json';
 const forslagFil = () => process.env.DATAFORSEO_FORSLAG || FORSLAG_STD;   // DATAFORSEO_FORSLAG kun til test
 
@@ -212,7 +224,7 @@ export async function hentSpoergsmaal(froer, praefikser, godt = () => true, { nu
     const f = normaliser(f0);
     if (!f) continue;
     const g = gemt[f];
-    if (g && Date.parse(g.d) >= graense) { laeg(f, g.s); log.fraHusk++; } else nye.push(f);
+    if (g && Date.parse(g.d) >= graense && (g.u || 1) >= FORSLAG_UDGAVE) { laeg(f, g.s); log.fraHusk++; } else nye.push(f);
   }
   if (nye.length && !harNoegle()) log.fejl = 'nøglen mangler (DATAFORSEO_LOGIN/PASSWORD)';
   else if (nye.length) {
@@ -223,7 +235,8 @@ export async function hentSpoergsmaal(froer, praefikser, godt = () => true, { nu
         const r = await kald('dataforseo_labs/google/keyword_suggestions/live', [{
           keyword: f, location_code: 2840, language_code: 'en', tag: TAG, limit: FORSLAG_GRAENSE,
           include_seed_keyword: false, order_by: ['keyword_info.search_volume,desc'],
-          filters: [['keyword_info.search_volume', '>=', MIN_SOEGNINGER], 'and', ['keyword_properties.keyword_difficulty', '<=', KD_MAKS]],
+          filters: [['keyword_info.search_volume', '>=', MIN_SOEGNINGER], 'and', ['keyword_properties.keyword_difficulty', '<=', KD_MAKS],
+            'and', ['keyword', 'regex', spoergsmaalsRegex(praefikser)]],
         }]);
         const opg = r.j?.tasks?.[0];
         if (!r.ok || opg?.status_code !== 20000) {
@@ -239,7 +252,7 @@ export async function hentSpoergsmaal(froer, praefikser, godt = () => true, { nu
           husk[q] = { d, t };   // søgetallet er betalt - gem det, så hentTal ikke spørger igen
           if (praefiksFor(q, praefikser) && indeholderFrase(q, f) && godt(q, f)) s.push({ q, t });
         }
-        gemt[f] = { d, s };
+        gemt[f] = { d, u: FORSLAG_UDGAVE, s };
         laeg(f, s);
         log.kald++; log.fundet += items.length;
         log.pris = Math.round((log.pris + (opg.cost || 0)) * 1e6) / 1e6;

@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import { godtForslag } from './src/lib/suggest.mjs';
 import path from 'node:path';
-import { oversaet, vaerdi, gruppe, hentTal, laesHusk, talTekst, ordn, normaliser, logLinje, MIN_SOEGNINGER, TAG, KD_MAKS, forSvaer, hentSpoergsmaal, praefiksFor, indeholderFrase } from './src/lib/dataforseo.mjs';
+import { oversaet, vaerdi, gruppe, hentTal, laesHusk, talTekst, ordn, normaliser, logLinje, MIN_SOEGNINGER, TAG, KD_MAKS, forSvaer, faldende, hentSpoergsmaal, praefiksFor, indeholderFrase } from './src/lib/dataforseo.mjs';
 
 let fejl = 0;
 const t = (navn, ok) => { console.log(`${ok ? 'OK  ' : 'FEJL'} ${navn}`); if (!ok) fejl++; };
@@ -19,7 +19,12 @@ t('svingende kurve = ikke tidløs', oversaet(item('x', 500, 10, [2000, 100, 100,
 t(`værdi: 4400 søgn., sværhed 10, tidløs = 4400×0,9³×1,5 = 4811 (${vaerdi(a)})`, vaerdi(a) === 4811);
 t('under 20 søgninger = værdi 0', vaerdi(oversaet(item('x', MIN_SOEGNINGER - 1, 0))) === 0);
 t('ukendt sværhed regnes som 50 (100×0,5³ = 13)', vaerdi({ v: 100, kd: null, j: false, a: null }) === 13);
-t('faldet ≥ 50 % på et år ×0,7', vaerdi({ v: 1000, kd: 0, j: false, a: -70 }) === 700);
+// Faldende (13/11): faldet mindst 50 % på et år = værdi 0 og bagerst; -49 % er stadig med; ukendt udvikling er med
+t('faldet ≥ 50 % på et år = værdi 0 og gruppe 2', vaerdi({ v: 1000, kd: 0, j: false, a: -70 }) === 0 && gruppe({ v: 1000, kd: 0, a: -50 }) === 2 && faldende({ a: -50 }));
+t('faldet 49 % er stadig med (gruppe 0, fuld værdi)', gruppe({ v: 1000, kd: 0, a: -49 }) === 0 && vaerdi({ v: 1000, kd: 0, j: false, a: -49 }) === 1000);
+t('ukendt udvikling (null) er ikke "faldende"', !faldende({ v: 1000, a: null }) && gruppe({ v: 1000, kd: 0, a: null }) === 0);
+t('tekst viser "faldende"', talTekst({ v: 22200, kd: 14, j: false, a: -70 }).includes('faldende (-70 %)'));
+t('logLinje tæller for svær, faldende og for få hver for sig', /"faa":1,"forSvaer":1,"faldende":1/.test(logLinje({}, ['a', 'b', 'c', 'd'], (q) => ({ a: { v: 5, kd: 0, a: 0 }, b: { v: 500, kd: 60, a: -80 }, c: { v: 500, kd: 5, a: -80 }, d: { v: 500, kd: 5, a: 0 } })[q])));
 t('gruppe: ikke spurgt / ukendt / nok / for få = 1/1/0/2', gruppe(undefined) === 1 && gruppe(null) === 1 && gruppe({ v: 20 }) === 0 && gruppe({ v: 19 }) === 2);
 // Sværhedsreglen (13/11): over KD_MAKS (30) = for svær → værdi 0 og bagerst; 30 er stadig med; ukendt er ikke for svær
 t(`for svær: sværhed ${KD_MAKS + 1} = værdi 0 og gruppe 2`, vaerdi({ v: 4400, kd: KD_MAKS + 1, j: false, a: 0 }) === 0 && gruppe({ v: 4400, kd: KD_MAKS + 1 }) === 2 && forSvaer({ v: 4400, kd: KD_MAKS + 1 }));
@@ -114,6 +119,9 @@ let f1 = await hentSpoergsmaal(['Mixed Reality'], PR, godt, { nu, fil: ffil, hus
 t(`forslag: kun spørgsmål med startordet samlet, gennem filtrene (${f1.spoergsmaal.map((x) => x.q).join(' | ')})`,
   f1.spoergsmaal.map((x) => x.q).join('|') === 'what is mixed reality|can mixed reality cause eye strain');
 t(`forslag: kaldet bærer "tfw", min. ${MIN_SOEGNINGER} søgninger og sværhed højst ${KD_MAKS}`, forslagBody.tag === 'tfw' && JSON.stringify(forslagBody.filters).includes(`"<=",${KD_MAKS}`) && JSON.stringify(forslagBody.filters).includes(`">=",${MIN_SOEGNINGER}`));
+const reF = (forslagBody.filters.find((x) => Array.isArray(x) && x[0] === 'keyword') || [])[2] || '';
+t(`forslag: DataForSEO bedes kun om spørgsmål (regex ${reF})`, reF === '^(how much does|how does|what is|can) ' && new RegExp(reF).test('can mixed reality cause eye strain') && !new RegExp(reF).test('mixed reality headset') && !new RegExp(reF).test('canada mixed reality'));
+t('forslag: gemt med udgave 2', JSON.parse(fs.readFileSync(ffil, 'utf8'))['mixed reality'].u === 2);
 t('forslag: alle fundne søgetal lagt i hukommelsen (gratis senere)', Object.keys(laesHusk(nu, hfil)).length === 5);
 t('forslag: log viser kald, fundet og pris', f1.log.kald === 1 && f1.log.fundet === 5 && f1.log.pris === 0.0242);
 kaldt = 0;
@@ -121,6 +129,11 @@ const f2 = await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 10 * 86
 t('forslag: inden for 30 dage fra hukommelsen, intet kald', kaldt === 0 && f2.log.fraHusk === 1 && f2.spoergsmaal.length === 2);
 await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 31 * 864e5, fil: ffil, husk_: hfil });
 t('forslag: efter 30 dage hentes igen', kaldt === 1);
+// Svar gemt før spørgsmålsfilteret (ingen "u") hentes igen, selv om de er under 30 dage gamle
+{ const g = JSON.parse(fs.readFileSync(ffil, 'utf8')); g['old seed'] = { d: new Date(nu).toISOString().slice(0, 10), s: [] }; fs.writeFileSync(ffil, JSON.stringify(g)); }
+kaldt = 0;
+await hentSpoergsmaal(['old seed', 'mixed reality'], PR, godt, { nu: nu + 31 * 864e5 + 864e5, fil: ffil, husk_: hfil });
+t('forslag: gammelt svar uden spørgsmålsfilter hentes igen, nyt bruges fra hukommelsen', kaldt === 1);
 const ffoer = fs.readFileSync(ffil, 'utf8');
 svarKode = 40203;
 const f3 = await hentSpoergsmaal(['smart glasses'], PR, godt, { nu, fil: ffil, husk_: hfil });

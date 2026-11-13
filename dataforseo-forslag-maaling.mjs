@@ -13,7 +13,10 @@ if (!harNoegle()) { console.log('Stop: DATAFORSEO_LOGIN/PASSWORD mangler - intet
 // Emnerne læses fra auto-youtube.mjs (TOPIC_BY_TAG) - samme frø som robotten, uden at starte robotten
 const kilde = fs.readFileSync('auto-youtube.mjs', 'utf8');
 const blok = kilde.slice(kilde.indexOf('const TOPIC_BY_TAG'), kilde.indexOf('};', kilde.indexOf('const TOPIC_BY_TAG')));
-const emner = [...blok.matchAll(/^\s*"([^"]+)":\s*"([^"]+)"/gm)].map((m) => ({ tag: m[1], froe: m[2].split('|').map((x) => x.trim()).filter(Boolean).slice(0, 3) }));
+const alleEmner = [...blok.matchAll(/^\s*"([^"]+)":\s*"([^"]+)"/gm)].map((m) => ({ tag: m[1], froe: m[2].split('|').map((x) => x.trim()).filter(Boolean).slice(0, 3) }));
+// MAAL_EMNER="AI & Tech;SEO" måler kun de navngivne emner (13/11: spørgsmålsfilteret prøvet på de 3, der gav 0)
+const valgte = (process.env.MAAL_EMNER || '').split(';').map((x) => x.trim()).filter(Boolean);
+const emner = valgte.length ? alleEmner.filter((e) => valgte.includes(e.tag)) : alleEmner;
 const laes = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return []; } };
 const brugt = new Set([...laes('src/data/used-questions.json'), ...laes('src/data/tried-questions.json')].map((x) => x.q));
 

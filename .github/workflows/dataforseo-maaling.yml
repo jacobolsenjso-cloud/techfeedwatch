@@ -48,6 +48,8 @@ jobs:
       - name: Mål DataForSEO-forslagene (anden kilde til spørgsmål)
         run: node dataforseo-forslag-maaling.mjs
         env:
+          # Tom = alle 18 emner. 13/11: kun de tre, der gav 0 spørgsmål før spørgsmålsfilteret (ca. $0,22)
+          MAAL_EMNER: "AI & Tech;SEO;PC Building & Gaming"
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
