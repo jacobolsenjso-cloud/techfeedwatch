@@ -24,7 +24,8 @@ const URL = process.env.TOMGANG_URL || 'https://techfeedwatch.com/robot-status.j
 // 5/11-2026: 36 -> 60 timer. Med fridage tirsdag, fredag og søndag (auto-youtube.mjs) er den normale pause
 // op til ca. 48 timer (fx mandag morgen -> onsdag morgen); 36 ville give falsk alarm hver uge. Samme grænse
 // som techmediaarch (TOMGANG_TIMER = 60).
-const GRAENSE = Number(process.env.TOMGANG_TIMER || 60);
+// 13/11-2026: 100 timer - udgivelse kun mandag, onsdag og fredag (fredag tidligt -> mandag sent ca. 94 timer).
+const GRAENSE = Number(process.env.TOMGANG_TIMER || 100);
 const nu = Date.now();
 
 function skriv(tekst) {

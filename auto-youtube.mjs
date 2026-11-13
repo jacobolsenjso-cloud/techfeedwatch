@@ -67,7 +67,9 @@ const MAX_NORMAL_PER_RUN = 1;
 // Ugedagen regnes i UTC ligesom datoen i countPublishedToday, så en fridag går fra kl. 01 til 01 dansk
 // vintertid (02-02 sommertid). På udgivelsesdage er loftet 1 eller 2, fastlagt af datoen (samme dag =
 // samme loft i alle døgnets kørsler), så det ikke er præcis det samme antal hver dag.
-const FRIDAGE_UTC = [0, 2, 5]; // søndag, tirsdag, fredag (getUTCDay)
+// 13/11-2026 (Jacob: "kostprisen er for høj" - 3 dage om ugen, 1-2 artikler): udgivelse KUN mandag, onsdag og
+// fredag (UTC). Omskrivningerne kører de samme dage (omskriv-gamle.yml). Før: fri tirsdag, fredag og søndag.
+const FRIDAGE_UTC = [0, 2, 4, 6]; // søndag, tirsdag, torsdag, lørdag (getUTCDay)
 function dagensLoft(nu = new Date()) {
   if (FRIDAGE_UTC.includes(nu.getUTCDay())) return 0;
   const dato = nu.toISOString().split('T')[0];
@@ -722,7 +724,7 @@ async function findNewestVideos() {
   const publishedToday = countPublishedToday();
   if (publishedToday >= MAX_PER_DAY && !process.argv.includes('--ignorer-loft')) {
     console.log(MAX_PER_DAY === 0
-      ? '⏸️ Dagsloftet er nået: fridag (tirsdag, fredag og søndag, UTC), loft 0 i dag. Springer denne kørsel over.' // "Dagsloftet er nået" læses af robot-log.mjs (loftNaaet) - bevar ordene
+      ? '⏸️ Dagsloftet er nået: fridag (udgivelse kun mandag, onsdag og fredag, UTC), loft 0 i dag. Springer denne kørsel over.' // "Dagsloftet er nået" læses af robot-log.mjs (loftNaaet) - bevar ordene
       : `⏸️ Dagsloftet er nået: ${publishedToday}/${MAX_PER_DAY} artikler udgivet i dag. Springer denne kørsel over.`);
     return;
   }

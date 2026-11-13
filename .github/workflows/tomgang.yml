@@ -10,6 +10,8 @@ name: Tomgangsalarm
 # Grænsen er 60 timer (5/11-2026, før 36): med fridage tirsdag, fredag og søndag
 # (auto-youtube.mjs) er den normale pause op til ca. 48 timer, fx mandag morgen
 # til onsdag morgen. 60 timer giver luft til det uden at vente for længe.
+# 13/11-2026: 100 timer (før 60). Udgivelse kun mandag, onsdag og fredag: fredag tidligt til mandag sent er
+# op til ca. 94 timer. 60 ville give falsk alarm hver weekend.
 
 on:
   schedule:
@@ -24,7 +26,7 @@ on:
       timer:
         description: "Grænse i timer. Sæt 1 for at bevise, at alarmen og mailen virker."
         required: false
-        default: "60"
+        default: "100"
 
 permissions:
   contents: read
@@ -40,4 +42,4 @@ jobs:
       - name: Er robotten i live?
         run: node tjek-tomgang.mjs
         env:
-          TOMGANG_TIMER: ${{ github.event.inputs.timer || '60' }}
+          TOMGANG_TIMER: ${{ github.event.inputs.timer || '100' }}

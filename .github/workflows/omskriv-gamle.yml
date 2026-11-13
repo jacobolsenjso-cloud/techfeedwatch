@@ -22,7 +22,9 @@ on:
         # (før 2,27); kø 381 ≈ 127 dage i stedet for 168. Ca. +0,51 USD om dagen.
         # 13/11-2026 (Jacob): 6 forsøg om dagen (før 4). Målt 11-13/11: 10 af 12 lykkedes, $2,17-2,48 om dagen;
         # kø 337 ≈ 100 dage → ca. 65 dage. Ca. +1,0 USD om dagen (0,51 pr. forsøg). 6 med 4 ad gangen ≈ 2 runder.
-        default: "6"
+        # 13/11-2026 (Jacob: "kostprisen er for høj"): 3 forsøg (før 6), og kun mandag, onsdag og fredag - samme
+        # dage som de nye artikler (auto-youtube.mjs). Målt 11-13/11: ca. 83 % lykkes → ca. 2-3 omskrevet pr. dag.
+        default: "3"
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
@@ -47,7 +49,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 13/11-2026 (Jacob, pris): starteren kalder hver dag kl. 06:37 UTC uden valg. Så kører omskrivningen kun
+  # mandag, onsdag og fredag (UTC). Startes den i hånden ("Run workflow" udfylder antal), kører den altid.
+  dag:
+    runs-on: ubuntu-26.04
+    outputs:
+      koer: ${{ steps.dag.outputs.koer }}
+    steps:
+      - id: dag
+        run: |
+          D=$(date -u +%u)   # 1 = mandag ... 7 = søndag
+          if [ -n "${{ github.event.inputs.antal }}" ] || [ "$D" = 1 ] || [ "$D" = 3 ] || [ "$D" = 5 ]; then
+            echo "koer=ja" >> "$GITHUB_OUTPUT"; echo "Udgivelsesdag (eller startet i hånden) - omskriver."
+          else
+            echo "koer=nej" >> "$GITHUB_OUTPUT"; echo "Fridag: omskrivning kun mandag, onsdag og fredag (UTC)."
+          fi
+
   omskriv:
+    needs: dag
+    if: needs.dag.outputs.koer == 'ja'
     runs-on: ubuntu-26.04
     # 25/10: 150 (før 90). 8 omskrivninger, 4 ad gangen à ca. 26 min = ca. 1 time; faktatjekket har
     # sit eget budget (60 min, afkortet så jobbet altid slutter før loftet). Når loftet rammes, gemmes intet. (Repoet er offentligt:
@@ -84,7 +104,7 @@ jobs:
         run: npm install
 
       - name: Omskriv gamle artikler
-        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '6' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
+        run: node omskriv-gamle.mjs --antal=${{ github.event.inputs.antal || '3' }} "--kun=${{ github.event.inputs.kun || '' }}" "--nyvideo=${{ github.event.inputs.nyvideo || '' }}"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
