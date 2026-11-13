@@ -5,6 +5,7 @@ name: YouTube Auto Update
 # - Søgespørgsmål fra autocomplete er artiklens opgave (targetQuestion).
 # - Titler varieret (8 former, publikations-casing, åbningsords-værn).
 # - Dagsloft (5/11-2026, techmediaarchs takt): 1-2 om dagen efter datoen, 0 tirsdag, fredag og søndag (UTC) — loft, ikke mål.
+#   13/11-2026 (Jacob, pris): kun mandag, onsdag og fredag (UTC); 0 de andre dage.
 # - Kvalitetsværn: sprogtjek, min. varighed/kildetekst, tom-artikel-stop,
 #   audit-content kører FØR commit og standser jobbet ved fejl.
 #
