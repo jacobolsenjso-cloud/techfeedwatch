@@ -139,7 +139,10 @@ export function godkendSpoergsmaal(raa, rettet) {
 // kun falske fund (almindeligt sprog), så de er taget ud. "I" efterfulgt af et
 // ord med stort er et navn ("Have I Been Pwned"), ikke en fortæller.
 const TALE = /\b(?:you guys|hey (?:guys|everyone|folks)|what's up|welcome back|let's (?:dive|jump|get started|take a look|go ahead)|let me (?:show|walk|explain)|i'm going to|i am going to|i'll show|i will show|we're going to|we are going to (?:show|look|walk|cover)|gonna|wanna|gotta|in (?:this|today's|the next|my) (?:video|tutorial|episode|clip)|as you can see|like i said|as i (?:said|mentioned)|(?:click|smash|hit) the (?:like|subscribe|bell|link)|subscribe to (?:my|our|the) channel|link in the description|in the description below|comment below|stay tuned|on my screen|right here on|thanks for watching)\b/i;
-const FOERSTE_PERSON = /(?:^|[\s(])(?:I(?! [A-Z])|I'm|I’m|I've|I’ve|I'd|I’d|I'll|I’ll|my|me|myself)(?=[\s,.;:!?)]|$)/;
+// Romertal er ikke "jeg" (12/11-2026: en omskrivning blev stoppet på "...set after World War I."):
+// "I" efter War/Part/Phase/Chapter/kongenavne o.l., eller efter et ord med stort og sidst i sætningen.
+const ROMERTAL_FOER = 'War|Part|Phase|Chapter|Type|Class|Level|Stage|Tier|Gen|Generation|Season|Volume|Vol\\.|Book|Act|Title|Episode|Mark|Mk|Series|Version|Article|Section|Grade|Category|Henry|Elizabeth|Charles|Louis|George|James|Edward|William|Richard|Peter|Catherine|Napoleon|Alexander|Frederick';
+const FOERSTE_PERSON = new RegExp(String.raw`(?:^|[\s(])(?:I(?! [A-Z])(?<!\b(?:${ROMERTAL_FOER}) I)(?!(?<=[A-Z][a-z]+ I)(?:[,.;:!?)]|$))|I'm|I’m|I've|I’ve|I'd|I’d|I'll|I’ll|my|me|myself)(?=[\s,.;:!?)]|$)`);
 // tilladFoerstePerson (22/10, hjernen): når hjernen har en holdning til emnet, må
 // artiklen have ÉN kort passage i første person — skrivereglens undtagelse skal
 // også gælde kontrollen, ellers sletter rettelsen stemmen igen (målt 22/10 kl.

@@ -65,6 +65,14 @@ t('talesprog: "in this video" fanges', R.talesprog('Start.\n\nIn this video we c
 t('talesprog: citat i anførselstegn er tilladt', R.talesprog('As Ann puts it, "I still test every build. My team does too."').length === 0);
 t('talesprog: navnet "Have I Been Pwned" er ikke en fortæller', R.talesprog('Check Have I Been Pwned for leaks.').length === 0);
 t('talesprog: AI tæller ikke som "I"', R.talesprog('AI models need data.').length === 0);
+// Romertal (13/11-2026): omskrivningen 12/11 blev stoppet på "World War I" - romertal er ikke "jeg"
+t('talesprog: "World War I." sidst i sætningen er et romertal', R.talesprog('The game is set after World War I.').length === 0);
+t('talesprog: "World War I" midt i sætningen er et romertal', R.talesprog('World War I changed how armies used radio.').length === 0);
+t('talesprog: "Part I", "Phase I" og "Elizabeth I" er romertal', R.talesprog('Part I covers setup. Phase I trials start soon. Elizabeth I ruled England.').length === 0);
+t('talesprog: "Gen I hardware," er et romertal', R.talesprog('The Gen I hardware, sold in 2019, still works.').length === 0);
+t('talesprog: "I think" fanges stadig', R.talesprog('Here I think the price is too high.').length === 1);
+t('talesprog: "I" midt i sætningen fanges stadig ("than I do")', R.talesprog('It runs faster than I expected.').length === 1);
+t('talesprog: "I" sidst i sætningen efter et lille ord fanges stadig', R.talesprog('Nobody tests more than I.').length === 1);
 
 // --- 2c Tekst-diagrammer ---
 t('diagram: kassetegn fanges', R.tekstDiagram('Flow:\n\n┌──────┐\n│ App  │\n└──────┘').length === 1);
