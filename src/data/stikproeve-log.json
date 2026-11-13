@@ -471,5 +471,30 @@
   ],
   "usd": 0.0057,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-13T06:54:56.393Z",
+  "artikler": [
+   {
+    "slug": "master-html-seo-unlock-organic-traffic-with-these-essential-on-page",
+    "tjekket": 1,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 0,
+    "fund": []
+   },
+   {
+    "slug": "search-engine-optimization-how-seo-actually-works",
+    "tjekket": 5,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 5,
+    "usikker": 0,
+    "fund": []
+   }
+  ],
+  "usd": 0,
+  "soegninger": 0
  }
 ]

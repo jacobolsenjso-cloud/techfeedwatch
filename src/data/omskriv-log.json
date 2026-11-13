@@ -639,5 +639,23 @@
    "fraHusk": 342,
    "fejl": null
   }
+ },
+ {
+  "dato": "2026-11-13T06:37:23.138Z",
+  "omskrevet": [
+   "ai-agent-extension-mcp-vs-skills-for-llm-performance",
+   "analyst-what-a-cybersecurity-professional-actually-does",
+   "seo-optimization-explained-how-modern-search-ranking-functions",
+   "demystifying-ai-the-layman-s-guide-to-understanding-our-intelligent"
+  ],
+  "stoppet": [],
+  "usd": 2.1722,
+  "soegninger": 19,
+  "dataforseo": {
+   "usd": 0,
+   "sendt": 0,
+   "fraHusk": 338,
+   "fejl": null
+  }
  }
 ]

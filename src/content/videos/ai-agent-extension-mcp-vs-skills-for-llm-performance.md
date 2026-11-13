@@ -1,101 +1,131 @@
 ---
-title: "What Is MCP vs Skills for Extending AI Agents?"
-targetQuestion: "mcp vs skills"
+title: "Should You Choose MCP vs Skills for AI Agents?"
 youtubeId: "goU9VIXA8II"
 channelTitle: "IBM Technology"
 channelId: "UCKWaEZ-_VweaEx1j62do_vQ"
 publishedAt: "2026-07-07T11:00:35Z"
 date: "2026-08-01"
-updated: "2026-08-17"
+updated: "2026-11-13"
 tags:
   - "AI Agents"
-summary: "Extending AI agents requires a strategic choice between Model Context Protocol (MCP) and dedicated skills. This decision impacts an agent's performance, adaptability, and resource utilization when interacting with Large Language Models (LLMs). Understanding context engineering is key to optimizing AI agent functionality for specific workloads."
-metaDescription: "Choosing between Model Context Protocol (MCP) and Skills for AI agent extension is critical for LLM performance. Learn how context engineering helps."
+  - "AI & Tech"
+summary: "Model Context Protocol gives artificial intelligence models a standardized way to access external data sources, while Agent Skills provide local instructions and scripts for specific domain tasks. Both systems now share open-source governance under the Linux Foundation's Agentic AI Foundation. Understanding how each manages the context window helps developers balance token usage, latency, and system permissions."
+metaDescription: "Wondering about MCP vs skills for AI agents? Discover how Model Context Protocol connects tools while skills deliver step-by-step procedural workflows."
+targetQuestion: "mcp vs skills"
 duration: "8:03"
-viewCount: 138433
-viewsUpdated: "2026-11-10"
+viewCount: 139678
+viewsUpdated: "2026-11-13"
 thumbMax: true
 isShort: false
+recipe: 3
+rewrittenAt: "2026-11-13"
 faqs:
-  - question: "What is the main difference between Model Context Protocol (MCP) and skills for AI agents?"
-    answer: "MCP standardizes how AI models connect to and interact with external, real-time data sources like APIs and CRMs, handling authentication and data requests. Skills, however, package specific prompts, scripts, and resources to teach an LLM how to perform tasks consistently and embed domain knowledge, ensuring repeatable actions."
-  - question: "When should I choose MCP over skills for my AI agent?"
-    answer: "You should choose MCP when your AI agent needs to access real-time, dynamic data from external systems in a controlled and permissioned way. This is suitable for tasks like querying current system states, fetching live customer records, or integrating with existing tools and services."
-  - question: "When are skills more appropriate for extending an LLM's capabilities?"
-    answer: "Skills are more appropriate when you need to provide an LLM with specific domain knowledge or ensure that it performs a task in a consistent, repeatable manner. This is useful for tasks like formatting data according to specific rules, debugging code, running compliance checks, or any custom capability that requires deterministic output."
-  - question: "Can MCP and skills be used together in an AI agent?"
-    answer: "Yes, MCP and skills can be used together to create more powerful and versatile AI agents. MCP can be used to fetch real-time data from external sources, while skills can then process, analyze, or format that data according to specific business logic or domain expertise, combining dynamic data access with consistent task execution."
-rewrittenAt: "2026-08-17"
+  - question: "What is MCP vs skills?"
+    answer: "MCP connects models to live external tools using JSON-RPC, while Agent Skills supply structured folders of procedural instructions and scripts. As Anthropic's documentation explains, MCP manages system integrations while skills teach models domain-specific workflows."
+  - question: "What are agent skills vs MCP in terms of governance?"
+    answer: "Both technologies now operate under common open-source stewardship. Anthropic transferred MCP to the Linux Foundation's Agentic AI Foundation in December 2025 and donated the Agent Skills specification to the same foundation on October 22, 2026."
+  - question: "When to use MCP vs skills?"
+    answer: "Use MCP when an agent needs real-time read and write access to outside databases, services, or development environments. Anthropic suggests using Agent Skills instead when a model needs repeatable rules, local scripts, and structured procedures for domain tasks."
+  - question: "MCP vs skills which is better for token management?"
+    answer: "Agent Skills manage tokens better by using a three-stage progressive disclosure mechanism that loads only metadata at startup. Anthropic reports that loading complete MCP tool definitions upfront and passing intermediate results through the context window inflates token expenses and increases latency."
+keyFacts:
+  - text: "Agent Skills were introduced in October 2025 as structured directories containing instructions, scripts, and resources that provide language models with procedural domain knowledge."
+    source: "Anthropic"
+    url: "https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills"
+  - text: "Loading large volumes of tool definitions upfront and channeling intermediate tool outputs through the context window creates latency bottlenecks and inflates token expenses as agent tooling scales."
+    source: "Anthropic"
+    url: "https://www.anthropic.com/research/code-execution-with-mcp"
 ---
 
-[AI agents](/video/ai-agents-automate-small-business-operations-impact-on-healthcare/) and Large Language Models (LLMs) offer broad abilities, but their true power emerges when they can access specific external data or perform tasks in a highly consistent manner. Achieving this requires careful context engineering, which involves providing the model with the precise information it needs to generate accurate and relevant outputs.
+[Model Context Protocol](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) connects an artificial intelligence (AI) model to outside software systems. Meanwhile, Agent Skills teach the model step-by-step workflows for specific tasks.
 
-Two primary methods for extending LLM what it does in this way are the Model Context Protocol (MCP) and the use of dedicated skills.
+MCP supplies live external data through a standardized wire protocol, which is a standard format for transmitting data across a network. In contrast, skills package reusable instructions and scripts into local directories, or computer folders.
 
-## The Foundation: Context Engineering for LLMs
+These two tools complement each other. They do this by separating system access from domain procedure, meaning the specific rules for doing a job.
 
-At its core, an LLM functions as a sophisticated prediction machine, trained on vast amounts of information like books, magazines, and internet content. This training allows it to recognize patterns and answer a wide array of general questions.
+## What is the Model Context Protocol?
+Model Context Protocol is an open standard. It lets AI models interact directly with external tools, code repositories, and business data sources via JSON-RPC, a standard format for sending commands and data between programs.
 
-However, for an AI agent to perform specialized tasks, such as inspecting a specific database or updating customer information, the LLM needs more than just general knowledge. It requires specific context.
+[Anthropic](https://www.anthropic.com/research/code-execution-with-mcp) launched MCP on November 25, 2024. Before this standard existed, developers had to write custom code for every tool integration. Every database, issue tracker, and file store demanded bespoke API glue, or custom code written to connect different software programs.
 
-Prompt engineering involves giving the LLM a task with a specific role. Context engineering goes further by adding all necessary additional information. This might include details about how data should be formatted, how a particular database is configured, or even the results from a tool that has already fetched data.
+MCP replaced that tangle with a universal client-server architecture where one program requests services from another. A desktop application or agent host acts as an MCP client. This client opens communication with specialized MCP servers running locally or remotely.
 
-Providing the right context helps the LLM make the correct decision and generate the desired answer. The challenge lies in efficiently and reliably supplying this context to build effective [AI agents](/video/ai-s-inexorable-advance-is-the-saas-business-model-under-threat/).
+Whenever an assistant gains the power to trigger external actions, solid safeguards become vital. I always advocate taking security seriously, especially since an automated model can easily step outside intended boundaries if access is not strictly managed. Restricting exactly what outside tools can touch is a healthy precaution.
 
-## Model Context Protocol (MCP): Connecting to External Data
+The server exposes three primary capabilities to the language model:
+- Prompts that guide model interactions with predefined templates
+- Resources that supply read-only data such as text files or database records
+- Tools that let the model perform executable actions and write operations
 
-The Model Context Protocol (MCP) provides a standardized way for an AI model to interact with external data sources. Imagine an AI agent needing to access data from a customer relationship manager (CRM) or other service APIs. Instead of manually copying and pasting API documentation, tokens, and data into the LLM's context window, MCP streamlines this process.
+Anthropic transferred the Model Context Protocol to the Linux Foundation's Agentic AI Foundation in December 2025. This move ensured open governance across different model vendors. Because MCP operates through standard JSON-RPC network messages, it isolates credentials and system actions. The host controls exactly which servers an agent can touch.
 
-MCP works by abstracting service APIs into a format that an LLM can readily understand and use. It also handles authentication, which is vital for secure data access. This includes providing uniquely scoped tokens and managing read-write permissions as needed.
+## Skills package procedural domain knowledge into directories
+Agent Skills are structured directories containing instructions, scripts, and background resources. These resources provide language models with procedural domain knowledge.
 
-Behind the scenes, an MCP server integrates with the AI application or development environment. When the LLM needs information from an external service, it generates a specific JSON request. The MCP server then translates this JSON request into standard web calls, such as POST or GET requests, to interact with the actual service.
+Anthropic introduced Agent Skills in October 2025 to solve an operational gap. An integration protocol lets an agent query an API, which is an interface for connecting software programs, but the model still needs clear operating instructions. Standard language models generate text based on statistical probabilities, so they often skip mandatory validation steps or format outputs inconsistently.
 
-MCP acts as a standardized layer between the LLM and the necessary data sources. It is widely supported by almost all AI tools and is open source.
+Agent Skills turn complex procedures into dependable routines. Each skill lives inside a designated folder with a standard layout:
+- A root file named SKILL.md containing metadata and instructions
+- A scripts directory holding executable code for deterministic calculations
+- A reference folder storing schemas, policy documents, and style guides
 
-This approach is particularly useful for situations where an AI application needs real-time data access in a controlled and tightly permissioned way. Examples include:
+According to Anthropic, the company donated the Agent Skills specification to the Linux Foundation's Agentic AI Foundation on October 22, 2026. This donation placed both MCP and Agent Skills under identical foundation oversight.
 
-- Querying the status of virtual machines
-- Checking the state of a cluster
-- Retrieving specific customer records from a CRM
+Development teams store procedures as plain text and local code. This setup lets teams track, share, and version control [modular tools guide AI](/video/gemini-s-hidden-arsenal-7-next-level-hacks-to-supercharge-your-ai) behavior without retraining underlying neural networks, which are the core AI learning systems.
 
-## Skills: Embedding Domain Knowledge and Repeatable Actions
+The following comparison table synthesizes the distinct specifications documented by Anthropic and the Agent Skills organization:
 
-While MCP excels at connecting to real-time external data, there is another aspect to extending LLMs: providing domain knowledge and ensuring repeatable actions.
+| Feature | Model Context Protocol (MCP) | Agent Skills |
+| :--- | :--- | :--- |
+| Primary Purpose | Standardizes live connections to external tools and data | Packages procedural domain knowledge and workflows |
+| Debut Date | November 25, 2024 | October 2025 |
+| Underlying Architecture | JSON-RPC client-server protocol | Structured filesystem directory with markdown and scripts |
+| Stewardship Body | Agentic AI Foundation (transferred December 2025) | Agentic AI Foundation (donated October 22, 2026) |
 
-LLMs are known for their non-deterministic nature, meaning they might not always produce the exact same output for the same input, even when given similar context. This can be problematic when a specific task, like formatting sales data, needs to be done the exact same way every time.
+## Which approach uses fewer tokens and context window space?
+Agent Skills consume significantly fewer tokens at startup. They rely on a three-stage progressive disclosure mechanism that reveals information in steps only when needed, avoiding loading entire definitions at once.
 
-This is where skills become essential. A skill is a packaged unit that contains specific prompts, scripts, and resources, designed to teach an LLM how to perform a task consistently.
+Context windows have finite capacity. When an agent system loads dozens of tools simultaneously, the context fills up quickly, sometimes before the user types a single prompt. Anthropic notes that loading large volumes of tool definitions upfront creates latency bottlenecks, while channeling intermediate tool outputs through the context window inflates token expenses as tooling scales.
 
-Think of tasks like cleaning up Excel documents, debugging code, or running compliance checks. The prompts and scripts used for these tasks can be bundled into a skill.
+The official Agent Skills specification avoids this memory bloat through three distinct loading phases:
+1. Discovery: The agent scans available skills at startup and loads only the title and short description into memory.
+2. Activation: When a user request matches a skill description, the agent pulls the complete SKILL.md body into the context window.
+3. Execution: The model calls specialized scripts or reads detailed documentation files only when reaching that exact step in the workflow.
 
-A skill is typically structured as a markdown file within a folder, containing metadata. This metadata includes the skill's title, a clear description of when it should be used, and the actual prompt that will be passed to the LLM. A key feature of skills is their ability to be auto-loaded into the LLM's context window only when needed.
+This staged approach keeps the primary prompt clean. An MCP server exposes its complete tool schemas during initialization so the model understands the JSON arguments. Running complex workflows through MCP alone forces every intermediate data payload back through the context window. Combining both techniques lets developers store procedural steps inside skills while reserving MCP calls for retrieving targeted data payloads.
 
-For example, a code debugger skill would only be loaded when the agent is asked about code errors. Skills can also include additional resources and scripts within their folder, providing more context or abilities that are loaded alongside the main prompt.
+Feeding an AI too much information at once usually causes confusion. In my experience with prompt engineering, asking focused questions step by step gives far better results than dumping everything into the system right away.
 
-Skills work across all major AI tools and models and are open source. They are lightweight and effective for adding reusable, custom abilities to an AI agent, ensuring consistent output for specific, repetitive tasks, such as formatting customer contact information to include their name, contact details, and even their favorite type of cookie.
+## IBM Technology explains pairing MCP external data with domain skills
+IBM Technology explains that Model Context Protocol supplies external data from external systems. Meanwhile, Agent Skills provide the domain knowledge needed to process that data consistently. MCP standardizes how AI models talk to data sources. It abstracts services into a clean format with scoped read and write permissions.
 
-## Choosing Between MCP and Skills
+Instead of pasting API keys into prompts, the MCP server translates agent commands into standard network requests. IBM points to checking cluster state and querying virtual machine status as typical tasks for MCP connections.
 
-The decision to use Model Context Protocol (MCP), skills, or a combination of both depends on the specific requirements of the AI agent and its workload. Both approaches enhance the context window of an LLM, helping it to generate more accurate and useful outputs.
+An MCP server retrieves customer records from a CRM (customer relationship management software). Even so, it does not guarantee that the model formats the output properly. For instance, a sales team might need names, contact info, and favorite cookie flavors in an exact layout. Because language models behave non-deterministically (unpredictably), raw prompts often fail to repeat that format.
 
-MCP is the preferred choice when an AI application requires access to real-time, dynamic data from external sources. It acts as an integration layer, allowing agents to call specific tools and resources with controlled permissions.
+Skills help here because they are lightweight. They teach models how to perform tasks repeatedly. IBM's video highlights several tasks ideal for skills:
+- Cleaning up Excel documents
+- Running corporate compliance checks
+- Debugging code using Maven verify commands
+- Fetching and analyzing investment data
 
-If the agent needs to know "what VMs are currently running?" or "what is the current cluster state?", MCP provides the structured, secure pathway to retrieve this live information. However, setting up and configuring MCP can be quite involved, potentially becoming overkill for simpler, internal abilities.
+A code debugger skill only loads when a user asks about software errors. This selective behavior keeps the agent from clogging memory during unrelated tasks.
 
-Skills, on the other hand, are ideal for embedding specific domain knowledge or ensuring consistent, repeatable execution of tasks. They teach the model *how* to do something, rather than just fetching data.
+## Choosing between MCP tools and agent skills
+Choose MCP when your agent must reach across system boundaries to read or modify external software. Configure an MCP server if an assistant needs to read live database records, inspect server clusters, or update an issue tracker.
 
-If the goal is to consistently format data, debug code according to specific guidelines, or analyze investment data using a predefined script, skills offer a lightweight and effective solution. They address the non-deterministic nature of LLMs by providing a structured, reusable set of instructions.
+The protocol guarantees secure communication channels and precise access controls. When an agent can modify production systems, security boundaries protect infrastructure from unintended model actions.
 
-Both MCP and skills are open source and widely adopted in most AI tools today. They can be used locally, making them accessible for developers.
+Giving automated agents freedom to act on your behalf sounds exciting, but doing your homework first is essential because things can still go wrong. A model is only ever as capable as the specific background knowledge you provide it.
 
-Often, the most effective AI agents will use both. MCP can provide the real-time data, while skills can process and format that data according to specific, consistent business rules or domain expertise.
+Choose Agent Skills when you need an agent to follow strict operating rules without ballooning operational costs. If your team has standard operating procedures, documentation templates, or data formatting rules, package them into a skill folder. The progressive disclosure design keeps running costs low while enforcing reliable outputs.
 
-## Optimizing AI Agent Performance
+A skill provides the procedural playbook, guiding the model through a multi-step job. When that playbook requires fresh data, the agent invokes an MCP tool. This combination gives you reliable procedures without sacrificing live connectivity.
 
-Optimizing AI agent performance hinges on providing the LLM with the most relevant and accurate context for its tasks. By strategically employing MCP and skills, developers can much enhance an agent's what it does and reliability.
+## Sources
 
-MCP allows agents to interact dynamically with the outside world, pulling in fresh data as needed, which is critical for applications requiring up-to-the-minute information. This integration capability ensures that agents are not limited to their pre-trained knowledge but can operate on current realities.
-
-Conversely, skills empower agents with specialized knowledge and the ability to execute complex, multi-step processes with consistent results. This is particularly valuable in environments where precision and adherence to specific protocols are paramount.
-
-By combining these two methods, an AI agent can be both data-aware and task-proficient, leading to more intelligent, adaptable, and performant solutions for a wide range of applications. The strategic choice between MCP and skills, or their combined use, directly impacts an agent's ability to deliver precise and valuable outputs.
+- [Model Context Protocol - Wikipedia](https://en.wikipedia.org/wiki/Model_Context_Protocol) — wikipedia.org
+- [Equipping agents with Agent Skills \ Anthropic](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills) — anthropic.com
+- [Donating Agent Skills to the Agentic AI Foundation \ Anthropic](https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation) — anthropic.com
+- [Code execution with MCP for efficient agents \ Anthropic](https://www.anthropic.com/research/code-execution-with-mcp) — anthropic.com
+- [MCP vs Skills: Which Is Right for Your AI Agent and LLMs?](https://www.youtube.com/watch?v=goU9VIXA8II) — IBM Technology on YouTube
