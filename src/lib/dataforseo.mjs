@@ -59,17 +59,27 @@ export function oversaet(it) {
   };
 }
 
-// Værdi = søgninger × lethed. Ukendt sværhed regnes som 50. Tidløs ×1,5 (Jacob vil have tidløse artikler);
-// faldet med mindst halvdelen på et år ×0,7 (ofte en nyhed, der er ved at dø ud). Under MIN_SOEGNINGER → 0.
+// Sværhed over KD_MAKS = for svær til et lille site (Jacob 13/11-2026, samme regel som techmediaarch 4e92594):
+// målt 13/11 havde 65 af 193 brugbare spørgsmål sværhed > 30, og fire af dem lå i top 20 (fx "how does quantum
+// computing work", 4.400 søgn., sværhed 46). Dem kommer vi ikke op på - de lægges bagerst (gruppe 2).
+// Ukendt sværhed tæller IKKE som for svær (vi ved det ikke).
+export const KD_MAKS = 30;
+export const forSvaer = (t) => !!t && t.kd !== null && t.kd !== undefined && t.kd > KD_MAKS;
+
+// Værdi = søgninger × lethed³. Lethed i 3. potens, så et let spørgsmål med færre søgninger slår et svært med
+// mange (sværhed 10 → ×0,73; sværhed 30 → ×0,34). Ukendt sværhed regnes som 50. Tidløs ×1,5 (Jacob vil have
+// tidløse artikler); faldet med mindst halvdelen på et år ×0,7 (ofte en nyhed, der er ved at dø ud).
+// Under MIN_SOEGNINGER eller for svær → 0.
 export function vaerdi(t) {
-  if (!t || (t.v || 0) < MIN_SOEGNINGER) return 0;
+  if (!t || (t.v || 0) < MIN_SOEGNINGER || forSvaer(t)) return 0;
   const lethed = 1 - (t.kd ?? 50) / 100;
-  return Math.round(t.v * Math.max(lethed, 0.05) * (t.j ? 1.5 : 1) * (t.a !== null && t.a !== undefined && t.a <= -50 ? 0.7 : 1));
+  return Math.round(t.v * Math.max(lethed, 0.05) ** 3 * (t.j ? 1.5 : 1) * (t.a !== null && t.a !== undefined && t.a <= -50 ? 0.7 : 1));
 }
 
-// Gruppe: 0 = kendt med nok søgninger · 1 = ukendt (ikke i DataForSEO, eller ikke spurgt) · 2 = kendt, men for få.
+// Gruppe: 0 = kendt med nok søgninger og ikke for svær · 1 = ukendt (ikke i DataForSEO, eller ikke spurgt)
+// · 2 = kendt, men for få søgninger eller for svær.
 // NB: null betyder "spurgt, men DataForSEO kendte det ikke" - det er IKKE det samme som 0 søgninger.
-export const gruppe = (t) => (t === undefined || t === null ? 1 : (t.v || 0) >= MIN_SOEGNINGER ? 0 : 2);
+export const gruppe = (t) => (t === undefined || t === null ? 1 : (t.v || 0) >= MIN_SOEGNINGER && !forSvaer(t) ? 0 : 2);
 
 // Rækkefølge: gruppe 0 efter værdi (størst først), derefter de ukendte, til sidst dem med for få søgninger.
 // Inden for samme gruppe og værdi bevares den rækkefølge, listen kom i (fx klokkeslæt eller dato).
@@ -136,12 +146,15 @@ export function talTekst(t) {
   if (t === undefined) return 'søgetal: ikke spurgt';
   if (t === null) return 'søgetal: ukendt hos DataForSEO';
   return [`${t.v} søgn./md`, t.kd !== null && t.kd !== undefined ? `sværhed ${t.kd}` : null, t.j ? 'tidløs' : null,
-    t.a !== null && t.a !== undefined && t.a <= -50 ? `faldende (${t.a} %)` : null].filter(Boolean).join(' · ');
+    t.a !== null && t.a !== undefined && t.a <= -50 ? `faldende (${t.a} %)` : null,
+    forSvaer(t) ? `for svær (over ${KD_MAKS})` : null].filter(Boolean).join(' · ');
 }
 
 // Én linje til robottens log (offentlig - kun autocomplete-spørgsmål og antal, aldrig Search Console-data).
 export function logLinje(log, liste, talFor) {
   const g = [0, 0, 0];
-  for (const x of liste) g[gruppe(talFor(x))]++;
-  return `SOEGETAL: ${JSON.stringify({ spoergsmaal: liste.length, medTal: g[0], ukendt: g[1], faa: g[2], fraHusk: log.fraHusk, sendt: log.sendt, fundet: log.fundet, kald: log.kald, usd: log.pris, fejl: log.fejl })}`;
+  let svaer = 0;
+  for (const x of liste) { g[gruppe(talFor(x))]++; if (forSvaer(talFor(x))) svaer++; }
+  // faa = for få søgninger (de for svære tælles for sig i forSvaer, selvom de også ligger bagerst)
+  return `SOEGETAL: ${JSON.stringify({ spoergsmaal: liste.length, medTal: g[0], ukendt: g[1], faa: g[2] - svaer, forSvaer: svaer, fraHusk: log.fraHusk, sendt: log.sendt, fundet: log.fundet, kald: log.kald, usd: log.pris, fejl: log.fejl })}`;
 }
