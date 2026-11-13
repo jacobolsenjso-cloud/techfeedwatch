@@ -2,6 +2,8 @@
 import { TAG_COLORS } from '../../lib/tags';
 import fs from 'node:fs';
 import MainLayout from '../../layouts/MainLayout.astro';
+// 13/11-2026: gamle artikler noindex, indtil de er omskrevet (src/lib/noindex-gamle.mjs)
+import { venterPaaOmskrivning } from '../../lib/noindex-gamle.mjs';
 import FAQ from '../../components/FAQ.astro';
 import { tagSlug } from '../../lib/tags';
 import { compareTimes } from '../../lib/time-saved.mjs';
@@ -335,7 +337,7 @@ const metaDesc = rawMeta.length > 157
   : rawMeta;
 ---
 
-<MainLayout title={title} description={metaDesc} image={`https://techfeedwatch.com/og/${slug}.jpg`} imageWidth={1200} imageHeight={630} schema={pageSchema} noindex={isShort === true}>
+<MainLayout title={title} description={metaDesc} image={`https://techfeedwatch.com/og/${slug}.jpg`} imageWidth={1200} imageHeight={630} schema={pageSchema} noindex={isShort === true || venterPaaOmskrivning(video.frontmatter, slug)}>
 
   {isShort && <script is:inline>document.body.classList.add('shorts-mode');</script>}
 

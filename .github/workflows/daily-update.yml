@@ -62,7 +62,8 @@ jobs:
       # Selvtest af skrivereglerne (fase 2, 6/10-2026). Den kan fejle — og gør
       # den det, er en regel gået i stykker, og så skal robotten ikke skrive.
       - name: Selvtest af skrivereglerne
-        run: node test-skriveregler.mjs
+        # 13/11-2026: også noindex-reglen for gamle artikler (ingen Google-vist artikel må få noindex)
+        run: node test-skriveregler.mjs && node test-noindex-gamle.mjs
 
       # Outputtet gemmes også i en fil til robottens logbog (14/10). pipefail: uden den ville tee
       # skjule, hvis robotten fejlede, og kørslen blive grøn.

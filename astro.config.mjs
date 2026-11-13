@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { emneSlug, INDEX_GRAENSE } from './src/lib/emner.mjs';
+import { venterPaaOmskrivningFil } from './src/lib/noindex-gamle.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const videosDir = path.join(__dirname, 'src/content/videos');
@@ -16,6 +17,13 @@ const shortSlugs = new Set(
   fs.readdirSync(videosDir)
     .filter((file) => file.endsWith('.md'))
     .filter((file) => /isShort:\s*true/.test(fs.readFileSync(path.join(videosDir, file), 'utf-8')))
+    .map((file) => file.replace(/\.md$/, ''))
+);
+
+// Gamle artikler, der venter på omskrivning, har noindex og skal ikke stå i sitemappet (13/11-2026, Jacobs ja).
+const ventendeSlugs = new Set(
+  fs.readdirSync(videosDir)
+    .filter((file) => file.endsWith('.md') && venterPaaOmskrivningFil(path.join(videosDir, file)))
     .map((file) => file.replace(/\.md$/, ''))
 );
 
@@ -198,7 +206,8 @@ export default defineConfig({
         const emne = pathname.match(/^\/tag\/([^/]+)\/?$/);
         if (emne && (emneAntal.get(emne[1]) || 0) < INDEX_GRAENSE) return false;
         const match = pathname.match(/^\/video\/([^/]+)\/?$/);
-        return match ? !shortSlugs.has(match[1]) : true;
+        // 13/11-2026: gamle artikler med noindex (src/lib/noindex-gamle.mjs) står heller ikke i sitemappet
+        return match ? !shortSlugs.has(match[1]) && !ventendeSlugs.has(match[1]) : true;
       },
       // <lastmod> pr. artikel. Se articleDates ovenfor for hvorfor kun artikler
       // får en dato. Rører vi ikke item'et, kommer der slet ingen lastmod —

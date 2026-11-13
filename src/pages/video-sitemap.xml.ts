@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { venterPaaOmskrivning } from '../lib/noindex-gamle.mjs';
 
 // Video-sitemap efter Googles specifikation. Det almindelige sitemap kan ikke
 // bære video-udvidelser — @astrojs/sitemap's serialize() eksponerer kun url,
@@ -46,6 +47,8 @@ export const GET: APIRoute = () => {
     })
     // Shorts er nedlagt, men filteret bliver stående så et gensyn ikke smutter med
     .filter(({ fm }) => !fm.isShort && fm.youtubeId && fm.title)
+    // 13/11-2026: gamle artikler med noindex står heller ikke i video-sitemappet (src/lib/noindex-gamle.mjs)
+    .filter(({ fm, slug }) => !venterPaaOmskrivning(fm, slug))
     .sort((a, b) => new Date(b.fm.date).valueOf() - new Date(a.fm.date).valueOf());
 
   const urls = entries.map(({ slug, fm }) => {
