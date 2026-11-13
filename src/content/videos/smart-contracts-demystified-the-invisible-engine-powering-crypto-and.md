@@ -118,7 +118,7 @@ Simply Explained notes that while Bitcoin supports limited scripting, developers
 ## How to Safely Assess Smart Contracts Before Transacting
 Users can protect their assets by evaluating a smart contract's audit history and administrative controls before depositing any funds.
 
-When users approve an unverified transaction, they hand their savings to immutable software. Users must weigh the real [benefits and trade-offs](/video/what-is-a-smart-contract-unlocking-blockchain-s-automated-future) of self-custody before moving significant capital. Self-custody means holding and managing digital assets directly without an intermediary.
+When users approve an unverified transaction, they hand their savings to immutable software. Users must weigh the real [benefits and trade-offs](/video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/) of self-custody before moving significant capital. Self-custody means holding and managing digital assets directly without an intermediary.
 
 Evaluate these factors before connecting a wallet to any decentralized application:
 - Verify that reputable cybersecurity firms completed multiple independent audits on the exact deployed code version.

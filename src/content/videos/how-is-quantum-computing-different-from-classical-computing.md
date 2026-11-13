@@ -72,7 +72,7 @@ For businesses and researchers looking to engage with quantum computing, the pat
 
 Invest in training your technical teams to understand quantum algorithms and programming paradigms. Tools and quantum SDKs are becoming more accessible, allowing for experimentation and algorithm development on classical simulators or through cloud-based quantum services.
 
-This approach mirrors the early days of other transformative technologies, where foundational knowledge was key to later adoption. Exploring how to [master prompt engineering](/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025) for AI, for example, shares a similar emphasis on early skill development for future impact.
+This approach mirrors the early days of other transformative technologies, where foundational knowledge was key to later adoption. Exploring how to [master prompt engineering](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/) for AI, for example, shares a similar emphasis on early skill development for future impact.
 
 Stay informed about the rapid advancements in qubit technology, error correction, and quantum software. The field is progressing quickly, and what seems impractical today might become feasible tomorrow. Focus on building an understanding of the potential impact on your industry, particularly regarding future encryption standards and complex optimization challenges.
 

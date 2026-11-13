@@ -2,7 +2,7 @@
 # Filen sorteres af sort-redirects.mjs — tilføj gerne nye regler i bunden
 # og kør scriptet igen, så havner de det rigtige sted.
 
-# --- Statiske (838) ---
+# --- Statiske (862) ---
 /tag/ai-&-tech /tag/ai-tech/ 301
 /tag/ai-&-tech/ /tag/ai-tech/ 301
 /tag/business-&-money /tag/business-money/ 301
@@ -841,6 +841,30 @@
 /video/wall-street-s-quiet-panic-tokenized-stocks-prepare-to-reshape-global/ /tag/investing-trading/ 301
 /video/gSCo1cy3FCc /tag/investing-trading/ 301
 /video/gSCo1cy3FCc/ /tag/investing-trading/ 301
+/video/does-search-engine-optimization-help-your-business /video/how-do-you-effectively-use-search-engine-optimization/ 301
+/video/does-search-engine-optimization-help-your-business/ /video/how-do-you-effectively-use-search-engine-optimization/ 301
+/video/opvlar0lOE8 /video/how-do-you-effectively-use-search-engine-optimization/ 301
+/video/opvlar0lOE8/ /video/how-do-you-effectively-use-search-engine-optimization/ 301
+/video/what-is-a-smart-contract-unlocking-blockchain-s-automated-future /video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/ 301
+/video/what-is-a-smart-contract-unlocking-blockchain-s-automated-future/ /video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/ 301
+/video/Un7-hW6GAec /video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/ 301
+/video/Un7-hW6GAec/ /video/beyond-code-how-sergey-nazarov-unpacks-the-real-world-power-of-smart/ 301
+/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025 /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025/ /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/9c7zh2MkslY /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/9c7zh2MkslY/ /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/the-unseen-wall-why-most-ai-users-fail-to-elicit-advanced-responses /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/the-unseen-wall-why-most-ai-users-fail-to-elicit-advanced-responses/ /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/VnEoS2eQXsw /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/VnEoS2eQXsw/ /video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/ 301
+/video/the-machine-learning-engineer-ai-s-essential-architect-commanding /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/the-machine-learning-engineer-ai-s-essential-architect-commanding/ /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/xi6NN0ta6Ss /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/xi6NN0ta6Ss/ /video/ml-engineer-vs-ai-engineer-don-t-get-trapped-in-the-wrong-career-path/ 301
+/video/the-digital-bank-dilemma-why-n26-revolut-and-fintech-innovators /tag/fintech/ 301
+/video/the-digital-bank-dilemma-why-n26-revolut-and-fintech-innovators/ /tag/fintech/ 301
+/video/yQhsU1YVJKc /tag/fintech/ 301
+/video/yQhsU1YVJKc/ /tag/fintech/ 301
 
 # --- Dynamiske (3) ---
 /tag/ai-&-tech/page/* /tag/ai-tech/page/:splat 301

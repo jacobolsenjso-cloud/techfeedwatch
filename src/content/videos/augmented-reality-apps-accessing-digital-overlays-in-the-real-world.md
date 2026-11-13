@@ -69,7 +69,7 @@ For users, native apps might be free but often include in-app purchases or subsc
 
 Performance limitations on the web, such as constraints on model complexity and frame rates, mean developers must often optimize content more aggressively. For businesses, the "cost" of user friction – or rather, the benefit of frictionless access – is a major factor driving WebAR adoption, especially in marketing where instant engagement is paramount.
 
-Understanding these tradeoffs is vital for any enterprise considering AR implementation. For creators, mastering tools to build and refine these experiences, potentially through efficient content generation, mirrors the broader demand for skills like [prompt engineering for AI productivity](/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025).
+Understanding these tradeoffs is vital for any enterprise considering AR implementation. For creators, mastering tools to build and refine these experiences, potentially through efficient content generation, mirrors the broader demand for skills like [prompt engineering for AI productivity](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/).
 
 ## Common Misconceptions and Where Users Go Wrong
 

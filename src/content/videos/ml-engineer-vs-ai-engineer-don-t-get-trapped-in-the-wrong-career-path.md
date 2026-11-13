@@ -106,7 +106,7 @@ Government economic data shows rapid job growth and six-figure earnings across b
 
 Government agencies combine these related disciplines when measuring market compensation. According to the U.S. Bureau of Labor Statistics, employment of Computer and Information Research Scientists is projected to grow 22% between 2025 and 2035. The U.S. Bureau of Labor Statistics reported a national median annual wage of $140,300 in May 2025 for this group.
 
-The earnings reflect high demand for mathematical expertise and software reliability. Industry trends regarding [machine learning engineer salaries](/video/the-machine-learning-engineer-ai-s-essential-architect-commanding) show that companies pay top wages to engineers who can prevent pipeline failures. A broken training job can waste massive cloud computing budgets within hours.
+The earnings reflect high demand for mathematical expertise and software reliability. Industry trends regarding machine learning engineer salaries show that companies pay top wages to engineers who can prevent pipeline failures. A broken training job can waste massive cloud computing budgets within hours.
 
 Organizations must balance these payroll costs against actual product needs. Companies building unique predictive engines need the mathematical rigor of machine learning specialists. Businesses that simply need to summarize records or answer user queries achieve faster returns by hiring software-focused AI engineers.
 

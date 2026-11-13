@@ -54,7 +54,7 @@ To secure durable positioning, digital properties must address multiple foundati
 
 These organic initiatives function much like capital investment. Engineering a top-tier domain takes months or years of dedicated effort. However, published assets generate ongoing impressions without incremental distribution fees.
 
-When teams evaluate whether [search engine optimization helps](/video/does-search-engine-optimization-help-your-business) their business, the answer typically hinges on this compounding dynamic. Sustainable organic equity cushions businesses against escalating digital ad prices across competitive commercial verticals.
+When teams evaluate whether [search engine optimization helps](/video/how-do-you-effectively-use-search-engine-optimization/) their business, the answer typically hinges on this compounding dynamic. Sustainable organic equity cushions businesses against escalating digital ad prices across competitive commercial verticals.
 
 In June 2013, the Federal Trade Commission (FTC) issued a guidance letter to search engine companies. Under Section 5 of the FTC Act, search engines must clearly distinguish paid commercial results from natural algorithmic results through prominent labels, distinct shading, or visual borders.
 

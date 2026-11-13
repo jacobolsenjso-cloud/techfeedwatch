@@ -43,7 +43,7 @@ This process is highly iterative. Diffusion models, for instance, start with a "
 
 The quality and specificity of the output depend heavily on the input prompt. This highlights the growing importance of prompt engineering—the art and science of crafting detailed, effective instructions for AI systems. A poorly constructed prompt leads to vague, inconsistent, or nonsensical results, while a meticulously engineered prompt can direct the AI to produce remarkably specific and high-quality content.
 
-Developing this skill can significantly enhance productivity, much like learning to [master prompt engineering](/video/you-re-not-behind-yet-your-29-minute-roadmap-to-mastering-ai-in-2025) can for broader AI applications. The computational demands for generating high-resolution, long-duration, or intricate AI videos are substantial, requiring powerful GPUs and sophisticated algorithms to render these complex visual sequences efficiently.
+Developing this skill can significantly enhance productivity, much like learning to [master prompt engineering](/video/the-ai-whisperers-dissecting-the-rise-and-realities-of-prompt/) can for broader AI applications. The computational demands for generating high-resolution, long-duration, or intricate AI videos are substantial, requiring powerful GPUs and sophisticated algorithms to render these complex visual sequences efficiently.
 
 ## Practicalities: Cost, Quality, and Real-World Limitations
 
