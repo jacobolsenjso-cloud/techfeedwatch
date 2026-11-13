@@ -1,0 +1,46 @@
+name: Kvalitetsmaaling
+
+# 13/11-2026 (Jacobs ja til målingen i punkt 1): en uafhængig redaktør bedømmer artiklerne med ny opskrift.
+# Ændrer intet på sitet og gemmer intet i repoet. Resultatet står i loggen + bilaget kvalitet-maaling.
+# Startes ved et push af .github/kvalitet-maal.txt (også fra en gren). Pris ca. $1.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/kvalitet-maal.txt'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kvalitets-maaling
+  cancel-in-progress: false
+
+jobs:
+  maal:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Installer dependencies
+        run: npm install
+
+      - name: Bedøm artiklerne med ny opskrift
+        run: node kvalitets-maaling.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Gem resultatet som bilag
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kvalitet-maaling
+          path: kvalitet-maaling.json
+          if-no-files-found: ignore
