@@ -224,7 +224,8 @@ export async function hentSpoergsmaal(froer, praefikser, godt = () => true, { nu
     const f = normaliser(f0);
     if (!f) continue;
     const g = gemt[f];
-    if (g && Date.parse(g.d) >= graense && (g.u || 1) >= FORSLAG_UDGAVE) { laeg(f, g.s); log.fraHusk++; } else nye.push(f);
+    // Gemte svar går gennem filtrene igen (13/11: et filter tilføjet efter hentningen skal også virke på hukommelsen)
+    if (g && Date.parse(g.d) >= graense && (g.u || 1) >= FORSLAG_UDGAVE) { laeg(f, (g.s || []).filter((x) => godt(x.q, f))); log.fraHusk++; } else nye.push(f);
   }
   if (nye.length && !harNoegle()) log.fejl = 'nøglen mangler (DATAFORSEO_LOGIN/PASSWORD)';
   else if (nye.length) {

@@ -50,6 +50,10 @@ const AFVIS = /\b(stock|stocks|etf|price|prices|buy|cheap|free|download|coupon|s
 // prøvede spørgsmål var spil-spørgsmål (mest "pc building simulator ..."). "ps5"/"xbox" er IKKE med: "is a gaming
 // pc better than ps5" er en rigtig artikel på sitet.
 const SPIL = /\b(simulator|on steam|fortnite|minecraft|roblox|gta|valorant|league of legends)\b/i;
+// Nedbrud lige nu (13/11-2026): DataForSEO's førstevalg for AI & Tech blev "is janitor ai down" (14.800 søgn.) - et
+// spørgsmål, der er forældet efter få timer. Målt 13/11: 6 af 530 forslag ("is claude ai down", "why is crypto down"),
+// 0 af sitets 435 artikelspørgsmål.
+const NEDBRUD = /^(is|why is|why are) .+ (down|not working|offline)$/i;
 
 const SLANG = /\b(cooked|goated|sus|cringe|rizz|lowkey|highkey|meme|memes|tier list|dank|based|mid|bussin|no cap|fr|lol|lmao|wtf|tbh)\b/i;
 
@@ -68,7 +72,7 @@ const KILDER = {
 // ingen købs-/lande-/slangord, og forslaget skal stadig handle om emnet (mindst ét af emnets ord over 3 bogstaver).
 export function godtForslag(lav, emne) {
   if (lav.length < 12 || lav.length > 80) return false;
-  if (AFVIS.test(lav) || SLANG.test(lav) || SPIL.test(lav)) return false;
+  if (AFVIS.test(lav) || SLANG.test(lav) || SPIL.test(lav) || NEDBRUD.test(lav)) return false;
   const kerne = emne.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
   return !kerne.length || kerne.some((w) => lav.includes(w));
 }

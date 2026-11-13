@@ -127,6 +127,8 @@ t('forslag: log viser kald, fundet og pris', f1.log.kald === 1 && f1.log.fundet 
 kaldt = 0;
 const f2 = await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 10 * 864e5, fil: ffil, husk_: hfil });
 t('forslag: inden for 30 dage fra hukommelsen, intet kald', kaldt === 0 && f2.log.fraHusk === 1 && f2.spoergsmaal.length === 2);
+const f2b = await hentSpoergsmaal(['mixed reality'], PR, (q) => !/eye strain/.test(q), { nu: nu + 10 * 864e5, fil: ffil, husk_: hfil });
+t('forslag: et nyt filter virker også på svar fra hukommelsen', f2b.spoergsmaal.map((x) => x.q).join('|') === 'what is mixed reality');
 await hentSpoergsmaal(['mixed reality'], PR, godt, { nu: nu + 31 * 864e5, fil: ffil, husk_: hfil });
 t('forslag: efter 30 dage hentes igen', kaldt === 1);
 // Svar gemt før spørgsmålsfilteret (ingen "u") hentes igen, selv om de er under 30 dage gamle
@@ -150,6 +152,8 @@ t('filter: "is pc building simulator 2 on steam" afvises', !godtForslag('is pc b
 t('filter: "does pc building simulator 2 have multiplayer" afvises', !godtForslag('does pc building simulator 2 have multiplayer', 'PC building'));
 t('filter: "is a gaming pc better than ps5" er stadig med', godtForslag('is a gaming pc better than ps5', 'gaming PC'));
 t('filter: "how long does it take to build a gaming pc" er stadig med', godtForslag('how long does it take to build a gaming pc', 'gaming PC'));
+t('filter: nedbrud lige nu afvises ("is janitor ai down", "why is crypto down")', !godtForslag('is janitor ai down', 'AI') && !godtForslag('why is crypto down', 'crypto') && !godtForslag('is claude ai not working', 'AI'));
+t('filter: "down" midt i spørgsmålet er stadig med ("how does a crypto downturn work")', godtForslag('how does a crypto downturn work', 'crypto') && godtForslag('can ai slow down climate change', 'AI'));
 
 console.log(fejl ? `\n${fejl} FEJL` : '\nalt OK');
 process.exit(fejl ? 1 : 0);
