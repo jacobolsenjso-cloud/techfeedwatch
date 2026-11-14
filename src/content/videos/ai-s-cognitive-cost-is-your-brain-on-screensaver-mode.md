@@ -27,6 +27,7 @@ faqs:
     answer: "The primary issue is using single general-purpose chatbots for a wide range of tasks, from academic research to homework, rather than developing specialized educational AI."
   - question: "How can AI be designed to *improve* critical thinking?"
     answer: "Future AI should be purpose-built educational tools, like Socratic method AI, designed to challenge users to think harder and refuse to simply provide answers."
+factChecked: "2026-11-14"
 ---
 
 Artificial intelligence, particularly readily available generative tools, can indeed reduce critical [thinking skills](/video/the-ai-engineer-s-dilemma-future-proofing-careers-against-advanced/) by shifting the cognitive load away from the user. This reduction occurs when individuals passively accept AI-generated outputs without deeper engagement, minimizing the brain's natural effort to process information, evaluate arguments, or construct original ideas.

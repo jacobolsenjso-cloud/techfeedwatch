@@ -496,5 +496,30 @@
   ],
   "usd": 0,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-14T06:53:15.739Z",
+  "artikler": [
+   {
+    "slug": "real-hardware-is-quantum-computing-real-today",
+    "tjekket": 9,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 5,
+    "fund": []
+   },
+   {
+    "slug": "how-much-does-cybersecurity-pay-and-career-outlook",
+    "tjekket": 9,
+    "belagt": 1,
+    "fejl": 0,
+    "ikke_fundet": 6,
+    "usikker": 2,
+    "fund": []
+   }
+  ],
+  "usd": 0.0057,
+  "soegninger": 0
  }
 ]

@@ -367,5 +367,30 @@
   "artikler": [],
   "usd": 0,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-14T06:54:54.771Z",
+  "artikler": [
+   {
+    "slug": "ai-s-cognitive-cost-is-your-brain-on-screensaver-mode",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 0,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 0,
+    "skeptikerTjekket": 9,
+    "fanget": 0,
+    "rettet": 0,
+    "fjernet": 0,
+    "sammenhaeng": {
+     "tabeller": 0,
+     "afsnit": 0,
+     "faq": 0,
+     "afvist": 0
+    },
+    "roert": true
+   }
+  ],
+  "usd": 0.0139,
+  "soegninger": 0
  }
 ]
