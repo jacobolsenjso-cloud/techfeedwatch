@@ -392,5 +392,30 @@
   ],
   "usd": 0.0139,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-15T06:48:09.148Z",
+  "artikler": [
+   {
+    "slug": "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 0,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 0,
+    "skeptikerTjekket": 13,
+    "fanget": 1,
+    "rettet": 1,
+    "fjernet": 0,
+    "sammenhaeng": {
+     "tabeller": 0,
+     "afsnit": 1,
+     "faq": 0,
+     "afvist": 0
+    },
+    "roert": true
+   }
+  ],
+  "usd": 0.0617,
+  "soegninger": 0
  }
 ]

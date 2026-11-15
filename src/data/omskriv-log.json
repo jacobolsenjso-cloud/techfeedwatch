@@ -678,5 +678,29 @@
    "fraHusk": 287,
    "fejl": null
   }
+ },
+ {
+  "dato": "2026-11-15T06:37:31.196Z",
+  "omskrevet": [
+   "cybersecurity-engineers-what-they-actually-do"
+  ],
+  "stoppet": [
+   {
+    "slug": "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube",
+    "grund": "Fejl: Redaktørtjek: 1 delspørgsmål ubesvaret efter rettelse (\"What source materials and input limits does NotebookLM support for video research?\"). Artiklen skrives ikke."
+   },
+   {
+    "slug": "financial-intelligence-in-minutes-power-bi-s-fast-track-to-kpi",
+    "grund": "Fejl: Redaktørtjek: 1 reklamesætning(er) efter rettelse (\"During the presentation, Chandoo mentions a community contest offering $500 in g\"). Artiklen skrives ikke."
+   }
+  ],
+  "usd": 1.0418,
+  "soegninger": 15,
+  "dataforseo": {
+   "usd": 0,
+   "sendt": 0,
+   "fraHusk": 286,
+   "fejl": null
+  }
  }
 ]

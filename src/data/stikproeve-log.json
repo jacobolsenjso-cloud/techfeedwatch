@@ -521,5 +521,30 @@
   ],
   "usd": 0.0057,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-15T06:46:39.519Z",
+  "artikler": [
+   {
+    "slug": "what-happens-when-quantum-computing-processes-data",
+    "tjekket": 9,
+    "belagt": 2,
+    "fejl": 0,
+    "ikke_fundet": 7,
+    "usikker": 0,
+    "fund": []
+   },
+   {
+    "slug": "iphone-security-can-iphones-be-hacked-today",
+    "tjekket": 8,
+    "belagt": 2,
+    "fejl": 0,
+    "ikke_fundet": 4,
+    "usikker": 2,
+    "fund": []
+   }
+  ],
+  "usd": 0.0039,
+  "soegninger": 0
  }
 ]
