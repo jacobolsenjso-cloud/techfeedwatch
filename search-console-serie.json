@@ -238,6 +238,30 @@
         "position": 9.2
       },
       "note": "Tiende aflaesning, syv dage efter den niende. FOERSTE reelle bevaegelse siden 26/10: Google har genberegnet - 'Seneste opdatering' staar nu paa 06.11.2026 mod 23.10.2026 ved de to foregaaende aflaesninger. Indekseret 41 -> 46 (+5), ikke indekseret 889 -> 929 (+40), mens sitemappet voksede 646 -> 658 (+12). Det, der flyttede sig: 'Registreret - endnu ikke indekseret' 561 -> 595 (+34), 'Crawlet - endnu ikke indekseret' 49 -> 56 (+7), 'Side med omdirigering' 147 -> 150 (+3), 'Dublet, Google valgte en anden kanonisk side' 1 -> 4 (+3), 'Ikke fundet (404)' 63 -> 64 (+1), mens 'Dublet uden kanonisk side valgt af brugeren' faldt 65 -> 57 (-8). 'Blokeret af robots.txt' staar paa 3. Soegekonsollen viser fortsat 7 aarsager; 'Serverfejl (5xx)' er ikke paa listen og er skrevet som 0 for at bevare formen. Aarsagerne summer til 929. Validering: 'Mislykkedes' for omdirigering, Crawlet OG Dublet-Google (to nye fejlede valideringer siden 2/11, hvor kun omdirigering var mislykket), 'Startet' for Registreret, 'Godkendt' for robots.txt, 'Ikke startet' for Dublet-bruger og 404. Effektiviteten: klik 26 -> 26 (uaendret), eksponeringer 56 -> 62, klikrate 46,4 -> 41,9 %, position 2,6 -> 9,2 i det rullende 28-dages vindue (11/10-7/11). Alle fem viste forespoergsler har 0 klik og 1 eksponering. Jeg har IKKE maalt hvorfor positionen faldt fra 2,6 til 9,2 - det staar der kun, at den gjorde."
+    },
+    {
+      "dato": "2026-11-16",
+      "adresser": 271,
+      "indekseret": 39,
+      "ikkeIndekseret": 938,
+      "aarsager": {
+        "Registreret - endnu ikke indekseret": 600,
+        "Side med omdirigering": 150,
+        "Ikke fundet (404)": 64,
+        "Crawlet - endnu ikke indekseret": 59,
+        "Dublet uden kanonisk side valgt af brugeren": 57,
+        "Dublet, Google valgte en anden kanonisk side": 4,
+        "Blokeret af robots.txt": 3,
+        "Webadressen blev ekskluderet af tagget noindex": 1,
+        "Serverfejl (5xx)": 0
+      },
+      "effektivitet": {
+        "klik": 12,
+        "eksponeringer": 51,
+        "klikrate": 23.5,
+        "position": 19.7
+      },
+      "note": "Ellevte aflaesning, syv dage efter den tiende. Google har genberegnet: 'Seneste opdatering' staar paa 13.11.2026 mod 06.11.2026 sidst. Indekseret 46 -> 39 (-7), ikke indekseret 929 -> 938 (+9). STOERSTE aendring er sitemappet: 658 -> 271 adresser (-387), maalt to gange paa det levende site med cache-buster, samme tal. Aarsagen er maalt, ikke gaettet: sider er sat 'noindex, follow' og derfor taget ud af sitemappet - https://techfeedwatch.com/video/ai-the-s-p-500-why-tech-s-hottest-trend-is-redefining-diversification/ svarer 200, har <meta name=robots content='noindex, follow'> og staar IKKE i sitemappet, mens /video/10-game-changing-fintech-trends-set-to-redefine-your-money-in-2026/ fortsat staar der. Sitemappet rummer nu 99 /video/, 67 /tools/, 57 /glossary/, 18 /tag/, 10 /guides/, 6 /archive/ og 14 enkeltsider. Jeg har IKKE maalt hvem der satte noindex paa eller hvornaar. NY aarsag nr. 8 i listen: 'Webadressen blev ekskluderet af tagget noindex' = 1; Soegekonsollen har endnu kun set en enkelt, og tallet vil stige, efterhaanden som Google genbesoeger de noindex-satte sider. 'Serverfejl (5xx)' er fortsat ikke paa listen og er skrevet som 0 for at bevare formen. Det, der flyttede sig: 'Registreret - endnu ikke indekseret' 595 -> 600 (+5), 'Crawlet - endnu ikke indekseret' 56 -> 59 (+3) og den nye noindex-aarsag 0 -> 1; de fem andre staar bit for bit stille. Aarsagerne summer til 938. Validering: 'Mislykkedes' for omdirigering, Crawlet og Dublet-Google, 'Startet' for Registreret, 'Godkendt' for robots.txt, 'Ikke startet' for 404, Dublet-bruger og noindex. Effektiviteten faldt markant: klik 26 -> 12 (-14), eksponeringer 62 -> 51 (-11), klikrate 41,9 -> 23,5 %, position 9,2 -> 19,7 i det rullende 28-dages vindue (18/10-14/11), opdateret for 3,5 timer siden. Jeg har IKKE maalt hvorfor klikkene halveredes - det staar der kun, at det skete samtidig med at 387 adresser forsvandt ud af sitemappet."
     }
   ]
 }

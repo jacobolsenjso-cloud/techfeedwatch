@@ -138,6 +138,46 @@
       },
       "bing": null,
       "note": "Fjerde aflaesning. Intet nyt udefra siden 2/11: fortsat 5 eksterne links fra de samme fire sites (github.com 2, about.me 1, alternativeto.net 1, pinterest.com 1), alle fem peger stadig paa forsiden, og de fem linktekster er identiske. Ingen artikelside har endnu et eksternt link. Det eneste, der flyttede sig, er Googles interne-link-stikproeve: 333 -> 468 (+135) - en stikproeve, ikke det reelle antal, og sitemappet voksede kun 646 -> 658 i samme periode. Bing Webmaster Tools: Jacob er ikke logget ind (backlinks-adressen sender til signup-siden), derfor bing: null - jeg har ikke logget ind."
+    },
+    {
+      "dato": "2026-11-16",
+      "gsc": {
+        "eksterneLinks": 5,
+        "linkendeSites": [
+          {
+            "site": "github.com",
+            "links": 2
+          },
+          {
+            "site": "about.me",
+            "links": 1
+          },
+          {
+            "site": "alternativeto.net",
+            "links": 1
+          },
+          {
+            "site": "pinterest.com",
+            "links": 1
+          }
+        ],
+        "linkedeSider": [
+          {
+            "side": "https://techfeedwatch.com/",
+            "links": 5
+          }
+        ],
+        "linktekster": [
+          "https techfeedwatch com",
+          "techfeedwatch",
+          "techfeedwatch com",
+          "techfeedwatch com aabner en ny fane",
+          "visit techfeedwatch"
+        ],
+        "interneLinks": 432
+      },
+      "bing": null,
+      "note": "Femte aflaesning. Intet nyt udefra siden 2/11 - tredje aflaesning i traek med samme billede: 5 eksterne links fra de samme fire sites (github.com 2, about.me 1, alternativeto.net 1, pinterest.com 1), alle fem peger paa forsiden, og de fem linktekster er identiske (MERE aabnet, 1-5 ud af 5). Ingen artikelside har endnu et eksternt link - soejle A staar stille paa femte uge. Googles interne-link-stikproeve faldt 468 -> 432 (-36); det er en stikproeve, men det falder sammen med at sitemappet samme dag faldt 658 -> 271 adresser (se search-console-serie.json). Bing Webmaster Tools: Jacob ER logget ind denne gang, men Backlinks viser fortsat 'No data available', derfor bing: null."
     }
   ]
 }
