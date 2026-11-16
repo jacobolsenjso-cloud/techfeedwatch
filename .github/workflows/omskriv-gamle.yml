@@ -24,7 +24,10 @@ on:
         # kø 337 ≈ 100 dage → ca. 65 dage. Ca. +1,0 USD om dagen (0,51 pr. forsøg). 6 med 4 ad gangen ≈ 2 runder.
         # 13/11-2026 (Jacob: "kostprisen er for høj"): 3 forsøg (før 6), og kun mandag, onsdag og fredag - samme
         # dage som de nye artikler (auto-youtube.mjs). Målt 11-13/11: ca. 83 % lykkes → ca. 2-3 omskrevet pr. dag.
-        default: "3"
+        # 16/11-2026 (fejl 14-15/11): GitHub udfylder standardværdien, også når starteren kalder uden valg -
+        # med "3" troede dagskontrollen, at kørslen var startet i hånden, og omskrev lørdag og søndag.
+        # Nu tomt: tomt = 3 forsøg, kun man/ons/fre. Skriv selv et tal for at køre en anden dag.
+        default: ""
       # 24/10: målret én bestemt artikel (fx dårlig video opdaget efter udgivelse).
       # kun = artiklens slug; nyvideo = YouTube-URL der skal erstatte den gamle video.
       kun:
