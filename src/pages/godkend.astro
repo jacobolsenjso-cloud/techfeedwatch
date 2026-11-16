@@ -1,10 +1,12 @@
 ---
 // Godkend-siden (16/11-2026, Jacobs ja 09:35): Jacob læser nye og omskrevne artikler EFTER udgivelse
-// og trykker OK eller Fejl. Låst af Cloudflare Access (kun Jacobs Google-konto) - både /godkend og
+// og trykker OK eller Fejl. Låst af Cloudflare Access (kun Jacobs konto) - både /godkend og
 // /api/godkend. Svarene gemmes i Cloudflare KV (functions/api/godkend.js), aldrig i repoet, og
 // ændrer intet på sitet. noindex + ude af sitemappet + X-Robots-Tag (public/_headers).
 // Listen bygges ved hvert byg (robottens udgivelser bygger sitet) med de sidste 30 dage; siden
 // viser selv de sidste 7 dage ud fra dagens dato.
+// 16/11 (Jacob: "mere overskuelig, grønt flueben"): godkendte kort grønne med ✓, fejl røde med ✗,
+// filterknapper øverst (Alle / Ikke læst / Godkendt / Fejl) og "Fortryd" på færdige kort.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -31,26 +33,39 @@ const artikler = fs.readdirSync(MAPPE)
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Godkend artikler · TechFeedWatch</title>
-<style>
-  :root { color-scheme: light dark; --fg:#1d2433; --bg:#f7f8fa; --kort:#fff; --linje:#d5dae3; --dim:#5b6475; --ok:#1e8449; --fejl:#c0392b; --accent:#2f5bd3; }
-  @media (prefers-color-scheme: dark) { :root { --fg:#e6e9f0; --bg:#14171d; --kort:#1c2029; --linje:#3a4150; --dim:#9aa3b5; --ok:#4cc27a; --fejl:#ff7b6b; --accent:#7ea2ff; } }
+<style is:global>
+  /* is:global (16/11): kortene laves af JavaScript, og Astros afgrænsede stil ramte dem ikke. */
+  :root { color-scheme: light dark; --fg:#1d2433; --bg:#f4f6f9; --kort:#fff; --linje:#d5dae3; --dim:#5b6475; --ok:#1e8449; --okbg:#e8f6ee; --fejl:#c0392b; --fejlbg:#fdecea; --accent:#2f5bd3; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#e6e9f0; --bg:#14171d; --kort:#1c2029; --linje:#3a4150; --dim:#9aa3b5; --ok:#4cc27a; --okbg:#15301f; --fejl:#ff7b6b; --fejlbg:#3a1a17; --accent:#7ea2ff; } }
   body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
   main { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
-  h1 { font-size:24px; margin:0 0 6px; }
-  .intro { color:var(--dim); margin:0 0 6px; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  .intro { color:var(--dim); margin:0 0 4px; }
   .intro b { color:var(--fg); }
-  #taeller { font-weight:600; margin:14px 0 18px; }
-  .kort { background:var(--kort); border:1px solid var(--linje); border-radius:10px; padding:14px; margin:0 0 12px; }
+  #taeller { font-weight:600; margin:16px 0 10px; }
+  .filtre { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 18px; }
+  .filtre button { border-radius:999px; padding:6px 14px; min-height:36px; }
+  .filtre button.valgt { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+  .kort { background:var(--kort); border:1px solid var(--linje); border-left:6px solid var(--linje); border-radius:10px; padding:14px 16px; margin:0 0 12px; }
+  .kort.ok { border-color:var(--ok); background:var(--okbg); }
+  .kort.fejl { border-color:var(--fejl); background:var(--fejlbg); }
   .kort a.titel { color:var(--accent); font-weight:600; font-size:17px; text-decoration:none; }
-  .meta { color:var(--dim); font-size:14px; margin:4px 0 10px; }
+  .kort a.titel:hover { text-decoration:underline; }
+  .meta { color:var(--dim); font-size:14px; margin:4px 0 12px; }
   .knapper { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
-  button { font:inherit; padding:8px 16px; border-radius:8px; border:1px solid var(--linje); background:var(--bg); color:var(--fg); cursor:pointer; min-height:40px; }
-  button.ok { border-color:var(--ok); color:var(--ok); }
-  button.fejl { border-color:var(--fejl); color:var(--fejl); }
-  input { font:inherit; flex:1 1 200px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--linje); background:var(--bg); color:var(--fg); min-height:40px; box-sizing:border-box; }
-  .svar { font-weight:700; margin-top:8px; }
+  button { font:inherit; padding:8px 18px; border-radius:8px; border:1px solid var(--linje); background:var(--kort); color:var(--fg); cursor:pointer; min-height:42px; }
+  button.ok { border-color:var(--ok); color:var(--ok); font-weight:700; }
+  button.ok:hover { background:var(--ok); color:#fff; }
+  button.fejl { border-color:var(--fejl); color:var(--fejl); font-weight:700; }
+  button.fejl:hover { background:var(--fejl); color:#fff; }
+  button:disabled { opacity:.5; cursor:wait; }
+  input { font:inherit; flex:1 1 200px; min-width:0; padding:8px 10px; border-radius:8px; border:1px solid var(--linje); background:var(--kort); color:var(--fg); min-height:42px; box-sizing:border-box; }
+  .svar { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 10px; font-weight:700; font-size:18px; }
   .svar.ok { color:var(--ok); } .svar.fejl { color:var(--fejl); }
-  .svar small { font-weight:400; color:var(--dim); }
+  .svar .tegn { font-size:24px; line-height:1; }
+  .svar small { font-weight:400; font-size:14px; color:var(--dim); }
+  .svar .grund { font-weight:400; font-size:15px; color:var(--fg); flex-basis:100%; }
+  button.fortryd { background:none; border:none; padding:0; min-height:0; color:var(--dim); text-decoration:underline; font-size:14px; font-weight:400; }
   .fejlbesked { color:var(--fejl); font-weight:600; }
   .tom { color:var(--dim); }
 </style>
@@ -61,6 +76,7 @@ const artikler = fs.readdirSync(MAPPE)
   <p class="intro">Nye og omskrevne artikler fra de sidste 7 dage. Læs dem, du har lyst til, og tryk:</p>
   <p class="intro"><b>OK</b> – artiklen er i orden.<br><b>Fejl</b> – skriv kort, hvad der er galt (fx forkert fakta, dårligt sprog, forkert video).</p>
   <p id="taeller">Henter dine svar …</p>
+  <div class="filtre" id="filtre"></div>
   <div id="liste"></div>
   <noscript><p class="fejlbesked">Siden kræver JavaScript.</p></noscript>
 </main>
@@ -72,65 +88,86 @@ const artikler = fs.readdirSync(MAPPE)
   const artikler = alle.filter((a) => a.sidst >= syvDage);
   const liste = document.getElementById('liste');
   const taeller = document.getElementById('taeller');
+  const filtre = document.getElementById('filtre');
   const MDR = ['jan.', 'feb.', 'mar.', 'apr.', 'maj', 'jun.', 'jul.', 'aug.', 'sep.', 'okt.', 'nov.', 'dec.'];
   const datoTekst = (iso) => { const d = new Date(iso); return `${d.getDate()}. ${MDR[d.getMonth()]}`; };
   const tidTekst = (iso) => { const d = new Date(iso); return `${datoTekst(iso)} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; };
   let svar = {};
+  let filter = 'alle';
+  const redigerer = new Set(); // kort, Jacob har trykket "Fortryd" på
+  const status = (a) => svar[a.slug]?.status || 'ulaest';
+  const lav = (tag, klasse, tekst) => { const e = document.createElement(tag); if (klasse) e.className = klasse; if (tekst != null) e.textContent = tekst; return e; };
 
-  function opdaterTaeller() {
-    const s = artikler.map((a) => svar[a.slug]).filter(Boolean);
-    const ok = s.filter((x) => x.status === 'ok').length;
-    taeller.textContent = `${s.length} af ${artikler.length} læst denne uge · ${ok} godkendt · ${s.length - ok} fejl`;
+  function opdaterTop() {
+    const ok = artikler.filter((a) => status(a) === 'ok').length;
+    const fejl = artikler.filter((a) => status(a) === 'fejl').length;
+    taeller.textContent = `${ok + fejl} af ${artikler.length} læst denne uge · ${ok} godkendt · ${fejl} fejl`;
+    filtre.textContent = '';
+    for (const [noegle, navn, antal] of [['alle', 'Alle', artikler.length], ['ulaest', 'Ikke læst', artikler.length - ok - fejl], ['ok', 'Godkendt', ok], ['fejl', 'Fejl', fejl]]) {
+      const b = lav('button', filter === noegle ? 'valgt' : '', `${navn} (${antal})`);
+      b.onclick = () => { filter = noegle; opdaterTop(); tegn(); };
+      filtre.append(b);
+    }
   }
 
-  function visSvar(boks, s) {
-    boks.className = 'svar ' + s.status;
-    boks.textContent = '';
-    boks.append(s.status === 'ok' ? 'GODKENDT ' : 'FEJL ');
-    const lille = document.createElement('small');
-    lille.textContent = tidTekst(s.tid) + (s.status === 'fejl' && s.grund ? ` – "${s.grund}"` : '');
-    boks.append(lille);
-  }
-
-  async function gem(a, status, grund, boks) {
-    boks.className = 'svar'; boks.textContent = 'Gemmer …';
+  async function gem(a, nyStatus, grund, kort) {
+    // Knapperne låses, mens der gemmes - et dobbeltklik giver ellers to kald.
+    const knapperIKort = kort.querySelectorAll('button');
+    knapperIKort.forEach((b) => { b.disabled = true; });
+    kort.querySelector('.fejlbesked')?.remove();
     try {
-      const r = await fetch('/api/godkend', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ slug: a.slug, status, grund }) });
+      const r = await fetch('/api/godkend', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ slug: a.slug, status: nyStatus, grund }) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       svar[a.slug] = await r.json();
-      visSvar(boks, svar[a.slug]);
-      opdaterTaeller();
+      redigerer.delete(a.slug);
+      opdaterTop(); tegn();
     } catch (e) {
-      boks.className = 'svar fejl'; boks.textContent = `Kunne ikke gemme (${e.message}). Prøv igen.`;
+      knapperIKort.forEach((b) => { b.disabled = false; });
+      // Udløbet login (efter en uge) giver "Failed to fetch", fordi Access sender videre til login-siden.
+      kort.append(lav('p', 'fejlbesked', `Kunne ikke gemme (${e.message}). Genindlæs siden - måske skal du logge ind igen.`));
     }
+  }
+
+  function kortFor(a) {
+    const s = svar[a.slug];
+    const faerdig = s && !redigerer.has(a.slug);
+    const kort = lav('div', 'kort' + (faerdig ? ' ' + s.status : ''));
+    const link = lav('a', 'titel', a.titel); link.href = `/video/${a.slug}/`; link.target = '_blank'; link.rel = 'noopener';
+    kort.append(link, lav('div', 'meta', `${a.slags} · ${a.slags === 'Ny' ? 'udgivet' : 'omskrevet'} ${datoTekst(a.sidst)}${a.emne ? ' · ' + a.emne : ''}`));
+
+    if (faerdig) {
+      // Færdigt kort: stort grønt ✓ eller rødt ✗, tidspunkt, evt. grund og "Fortryd".
+      const boks = lav('div', 'svar ' + s.status);
+      const fortryd = lav('button', 'fortryd', 'Fortryd');
+      fortryd.onclick = () => { redigerer.add(a.slug); tegn(); };
+      boks.append(lav('span', 'tegn', s.status === 'ok' ? '✓' : '✗'), lav('span', '', s.status === 'ok' ? 'Godkendt' : 'Fejl'), lav('small', '', tidTekst(s.tid)), fortryd);
+      if (s.status === 'fejl' && s.grund) boks.append(lav('span', 'grund', `"${s.grund}"`));
+      kort.append(boks);
+      return kort;
+    }
+
+    const k = lav('div', 'knapper');
+    const ok = lav('button', 'ok', '✓ OK');
+    const fejl = lav('button', 'fejl', '✗ Fejl');
+    const grund = lav('input'); grund.placeholder = 'grund …'; grund.maxLength = 300; grund.value = s?.grund || '';
+    ok.onclick = () => gem(a, 'ok', '', kort);
+    fejl.onclick = () => { if (!grund.value.trim()) { grund.focus(); grund.placeholder = 'skriv kort, hvad der er galt'; return; } gem(a, 'fejl', grund.value.trim(), kort); };
+    k.append(ok, fejl, grund);
+    kort.append(k);
+    return kort;
   }
 
   function tegn() {
     liste.textContent = '';
-    if (!artikler.length) { liste.innerHTML = '<p class="tom">Ingen nye eller omskrevne artikler de sidste 7 dage.</p>'; return; }
-    for (const a of artikler) {
-      const kort = document.createElement('div'); kort.className = 'kort';
-      const link = document.createElement('a'); link.className = 'titel'; link.href = `/video/${a.slug}/`; link.target = '_blank'; link.rel = 'noopener'; link.textContent = a.titel;
-      const meta = document.createElement('div'); meta.className = 'meta';
-      meta.textContent = `${a.slags} · ${a.slags === 'Ny' ? 'udgivet' : 'omskrevet'} ${datoTekst(a.sidst)}${a.emne ? ' · ' + a.emne : ''}`;
-      const knapper = document.createElement('div'); knapper.className = 'knapper';
-      const ok = document.createElement('button'); ok.className = 'ok'; ok.textContent = 'OK';
-      const fejl = document.createElement('button'); fejl.className = 'fejl'; fejl.textContent = 'Fejl';
-      const grund = document.createElement('input'); grund.placeholder = 'grund …'; grund.maxLength = 300;
-      const boks = document.createElement('div');
-      ok.onclick = () => gem(a, 'ok', '', boks);
-      fejl.onclick = () => { if (!grund.value.trim()) { grund.focus(); grund.placeholder = 'skriv kort, hvad der er galt'; return; } gem(a, 'fejl', grund.value.trim(), boks); };
-      knapper.append(ok, fejl, grund);
-      kort.append(link, meta, knapper, boks);
-      if (svar[a.slug]) visSvar(boks, svar[a.slug]);
-      liste.append(kort);
-    }
+    const vis = artikler.filter((a) => filter === 'alle' || status(a) === filter);
+    if (!vis.length) { liste.append(lav('p', 'tom', artikler.length ? 'Ingen artikler i denne gruppe.' : 'Ingen nye eller omskrevne artikler de sidste 7 dage.')); return; }
+    for (const a of vis) liste.append(kortFor(a));
   }
 
   fetch('/api/godkend')
     .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-    .then((j) => { svar = j || {}; tegn(); opdaterTaeller(); })
-    .catch((e) => { tegn(); taeller.innerHTML = ''; const p = document.createElement('span'); p.className = 'fejlbesked'; p.textContent = `Kunne ikke hente dine svar (${e.message}). Er du logget ind?`; taeller.append(p); });
+    .then((j) => { svar = j || {}; opdaterTop(); tegn(); })
+    .catch((e) => { opdaterTop(); tegn(); taeller.textContent = ''; taeller.append(lav('span', 'fejlbesked', `Kunne ikke hente dine svar (${e.message}). Er du logget ind?`)); });
 </script>
 </body>
 </html>

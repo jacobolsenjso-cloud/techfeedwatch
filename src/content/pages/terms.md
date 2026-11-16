@@ -15,7 +15,7 @@ TechFeedWatch (techfeedwatch.com) is run by Jacob S. Olsen, a private individual
 
 ## What the articles are
 
-Every article starts from a question people search for. The question is researched with Google Search, and a language model writes the article from the sources found, with a video from a creator who covers the subject as one section (articles from before October 2026 were written from the video's transcript and are being rewritten). Articles are published automatically; I do not read every article before it goes live. The [About page](/about/) and the [Corrections page](/corrections/) explain this in full. Articles are general information, not professional advice — see the disclaimer below.
+Every article starts from a question people search for. The question is researched with Google Search, and a language model writes the article from the sources found, with a video from a creator who covers the subject as one section (articles from before October 2026 were written from the video's transcript and are being rewritten). Articles are published automatically; I do not read every article before it goes live, but I read a selection every week after publication. The [About page](/about/) and the [Corrections page](/corrections/) explain this in full. Articles are general information, not professional advice — see the disclaimer below.
 
 ## Sources and credit
 
