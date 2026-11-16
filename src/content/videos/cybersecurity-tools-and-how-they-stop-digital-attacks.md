@@ -11,8 +11,8 @@ summary: "Cybersecurity tools are specialized hardware and software programs tha
 metaDescription: "Learn what cybersecurity tools are, how core categories protect data, and why organizations are consolidating their digital defenses."
 targetQuestion: "what are cybersecurity tools"
 duration: "9:35"
-viewCount: 587
-viewsUpdated: "2026-11-13"
+viewCount: 593
+viewsUpdated: "2026-11-16"
 thumbMax: true
 isShort: false
 recipe: 3

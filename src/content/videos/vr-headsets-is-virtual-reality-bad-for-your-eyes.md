@@ -11,8 +11,8 @@ summary: "Virtual reality headsets do not cause permanent vision damage or physi
 metaDescription: "Is virtual reality bad for your eyes? Research shows VR causes temporary eye strain rather than permanent damage. Learn how to protect your vision."
 targetQuestion: "is virtual reality bad for your eyes"
 duration: "14:03"
-viewCount: 51183
-viewsUpdated: "2026-11-13"
+viewCount: 54589
+viewsUpdated: "2026-11-16"
 thumbMax: true
 isShort: false
 recipe: 3

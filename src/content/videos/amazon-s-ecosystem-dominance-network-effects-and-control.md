@@ -13,8 +13,8 @@ summary: "Amazon's operating model extends far beyond its retail facade, functio
 metaDescription: "Understand Amazon's unique operating model, its complex layers like AWS and Prime, and the profound implications for business and consumer behavior."
 targetQuestion: "what is amazon's operating model"
 duration: "46:31"
-viewCount: 42
-viewsUpdated: "2026-09-12"
+viewCount: 43
+viewsUpdated: "2026-11-16"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

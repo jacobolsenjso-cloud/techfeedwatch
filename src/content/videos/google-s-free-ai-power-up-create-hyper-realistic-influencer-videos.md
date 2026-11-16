@@ -13,8 +13,8 @@ summary: "AI influencers are digital personas built by combining large language 
 metaDescription: "Learn how AI influencers are created using generative software, character sheets, and voice tools, along with the legal rules governing virtual models."
 targetQuestion: "how are ai influencers created"
 duration: "10:33"
-viewCount: 34570
-viewsUpdated: "2026-11-13"
+viewCount: 38405
+viewsUpdated: "2026-11-16"
 thumbMax: true
 isShort: false
 recipe: 3

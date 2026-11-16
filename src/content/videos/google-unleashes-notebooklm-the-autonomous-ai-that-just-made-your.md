@@ -13,8 +13,8 @@ summary: "Google NotebookLM lets you ground artificial intelligence directly in 
 metaDescription: "Learn how to use Google NotebookLM for research by uploading documents, verifying in-text citations, and generating study notes or audio summaries."
 targetQuestion: "how to use google notebooklm for research"
 duration: "7:30"
-viewCount: 10681
-viewsUpdated: "2026-11-01"
+viewCount: 10683
+viewsUpdated: "2026-11-16"
 thumbMax: false
 isShort: false
 recipe: 3
