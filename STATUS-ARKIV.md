@@ -2,6 +2,31 @@
 
 Ældre dagbog (7/10-2026 og tilbage) og Bilag A, flyttet ordret fra `STATUS-ALLE-SITES.md` 14/10-2026. Kun historik — **koden og den aktuelle statusfil er facit**. Nyeste flytning øverst.
 
+## Flyttet 16/11-2026 (statusfil v215 → v216)
+
+### 2/11-2026 kl. 12:05 - Ugentlig aflæsning af Search Console (niende punkt) + links
+- **Indeksering står helt stille, og grunden er målt:** 41 indekserede / 889 ikke indekserede - bit for bit identisk med 26/10, og alle syv viste årsager uændrede (Registreret 561, Omdirigering 147, Dublet-bruger 65, 404 63, Crawlet 49, robots.txt 3, Dublet-Google 1). "Seneste opdatering" står fortsat på **23.10.2026**: Google har ikke genberegnet indekseringsdata i de syv dage, så der var intet nyt datasæt at læse. Sitemappet voksede 628 -> 646 adresser (+18).
+- **Ny i brugerfladen:** valideringen for "Side med omdirigering" er skiftet fra "Startet" til **"Mislykkedes"** - den validering, der kørte 26/10, fejlede. De øvrige står som før.
+- **Effektiviteten delte sig** (rullende 28-dages vindue, 4/10-31/10): klik 28 -> 26, eksponeringer 42 -> 56, klikrate 66,7 -> 46,4 %, position 3,1 -> 2,6. Flere eksponeringer, lidt færre klik. Jeg har ikke målt hvorfor.
+- **LINKS - det største hul flyttede sig:** eksterne links **1 -> 5**. Tre nye linkende sites: github.com (2 links), about.me (1), pinterest.com (1); alternativeto.net står stadig. Alle fem peger på forsiden - ingen artikelside har endnu et eksternt link. Interne links 338 -> 333 (Googles stikprøve). Bing Webmaster Tools var logget ind, men Backlinks viser fortsat "No data available" -> `bing: null`.
+- **Skrevet ned:** niende punkt i `search-console-serie.json` og tredje punkt i `link-serie.json`; `node serie.mjs` passerer alle tre kontroller (9 punkter), `link-serie.json` er gyldig JSON med 3 punkter. Commit `a7fb7dcd` er set på `origin/main`.
+
+
+### 27/10-2026 kl. 11:47 - Pris, spild og kvalitet (26/10 eftermiddag til 27/10)
+- **Filmora-artiklen uden AI-billede (26/10):** ny robotartikel; billedet blev afvist 2 gange for tekst ("text to video" + manuskript/undertekster i resuméet). Genskabt lokalt med samme afvisning; en prompt uden tekst-ord gav et rent billede, sat på live (`fe0a3e21`). 27/10: robotten laver nu selv et 3. forsøg med den prompt, når et billede afvises for tekst (`3ceee401`, testet 2 af 2 godkendt; ca. 0,03 USD ekstra, kun når det sker).
+- **Omskrivning:** 8 om dagen var for dyrt (Jacob) - nu 4 om dagen (`d3c9705a`).
+- **Prisen (Jacobs skærmbillede fra AI Studio: 306 kr. på ét døgn):** Google Cloud-fakturaen 20.-26/10 = 418 kr.: søgninger 228 kr. (2.471 stk., første gang betalt - de 5.000 gratis om måneden var brugt), tekst ud 143 kr., tekst/video ind 33 kr., billeder ca. 13 kr. Spidsen 25/10 var mine testkørsler. Pristælleren prissætter nu hver søgning med 0,014 USD; robot-, omskriv-, faktatjek- og stikprøvelog gemmer pris og antal søgninger; morgenrapporten viser "Hele døgnets pris" opdelt + "Google-søgninger" (`d3c9705a`, `5dfd1f63`). Set i rapporten 27/10: 6,14 USD og 97 søgninger. Normal drift skønnes ca. 3.000 søgninger/md. = under den gratis grænse.
+- **Faktatjek (Jacobs valg):** kun artikler, stikprøven har fundet fejl i (+ opgivne omskrivninger), højst 20 min. De øvrige gamle artikler venter på omskrivning med fuld slutkontrol - ellers betales der to gange (`5dfd1f63`). 27/10: 0 artikler, 0 kr.
+- **Belæg-tjekket søgte ikke:** målt 0 af 9 kald (lav, medium og ingen tænkning, også med "You MUST search"). Citat fra hukommelsen, der ikke stod på siden, blev dømt som fejl - også i rigtige sætninger. Nu: uden søgning kan svaret kun bekræfte, ikke dømme; skeptikeren afgør (`4044b653`).
+- **27/10 morgen: robotten 1 artikel på 10 kørsler (4,93 USD), omskrivningen 2 af 4.** Smidt ud efter betaling: "kunne ikke køre" (Gemini) 2 gange og "fanget sætning kunne ikke findes" 2 gange. Årsager: Nodes fetch giver op efter 5 min (set live under måling) og to fund på samme sætning (målt: alle 6 fund i 5 udgivne artikler kunne findes igen). Rettet (`2d725df5`): 10 min ventetid (undici, testet på Node 22 og 26), 3 forsøg med pause i skeptiker og belæg, et belæg-kald der fejler giver "usikre" i stedet for stop, dobbeltfund springes over / rettes i den sætning der ligner mest; reelt tvivlsomme fund stopper stadig artiklen og logges. Tests: 5 nye + 13 slutkontrol + hjerne grønne.
+- **Jacob:** sætter selv månedsloft i AI Studio ("Set spend cap", fx 1.000 kr.).
+- **Opfølgning 3/11:** artikler pr. dag, smidte artikler, dagspris. Derefter beslutning om skeptikeren skal tvinges til at søge (skøn 10-25 søgninger pr. artikel, 0-300 kr./md.; prøves på 3 artikler først).
+- **Det bør Jacob vide:** skeptikeren søgte 0 gange i 7 kald i min måling - den tjekker mest mod researchen og sin egen viden. Den ene omskrivning 27/10 stoppede med god grund (ubesvaret delspørgsmål).
+- Lære: Pristælleren talte søgningerne, men prissatte dem ikke, og jeg sammenlignede den kun med sig selv. Et måleværktøj for penge skal stemmes af mod den rigtige regning (Cloud-fakturaen), før tallet gives videre.
+- Lære: Jeg kaldte faktatjekket "dobbeltarbejde" uden at have læst koden - det var forkert. Læs koden, før en anbefaling gives.
+- Lære: At et kald er sat op til at søge på Google, betyder ikke, at det søger. Mål det (groundingMetadata), før en dom bygger på det.
+- Lære: "Midlertidig fejl hos Gemini" var vores egen 5-minutters grænse. En fejlbesked skal have årsagen med, ellers rettes det forkerte.
+
 ## Flyttet 2/11-2026 (statusfil v214 → v215)
 
 ### 26/10-2026 kl. 12:29 - Fejltjek af dagens arbejde (Jacobs ønske)
