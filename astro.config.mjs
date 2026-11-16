@@ -201,7 +201,8 @@ export default defineConfig({
         // workeren; history og watch-later er personlige og bor i browseren.
         // /search har ingen tekst uden JS. Paginering fra side 2 og frem er
         // rene lister på 130-160 ord — 40 tynde sider i indekset uden grund.
-        if (/^\/(offline|history|watch-later|search)\/?$/.test(pathname)) return false;
+        // 16/11-2026: /godkend er Jacobs låste side (Cloudflare Access) - aldrig i sitemappet.
+        if (/^\/(offline|history|watch-later|search|godkend)\/?$/.test(pathname)) return false;
         if (/\/page\/\d+\/?$/.test(pathname)) return false;
         const emne = pathname.match(/^\/tag\/([^/]+)\/?$/);
         if (emne && (emneAntal.get(emne[1]) || 0) < INDEX_GRAENSE) return false;

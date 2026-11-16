@@ -55,3 +55,14 @@
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Godkend-siden (16/11-2026): Jacobs låste side (Cloudflare Access). Aldrig i Google,
+# aldrig i cache - ellers kunne en gammel liste vises efter en ny udgivelse.
+
+/godkend
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/godkend/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
