@@ -702,5 +702,31 @@
    "fraHusk": 286,
    "fejl": null
   }
+ },
+ {
+  "dato": "2026-11-16T06:37:34.973Z",
+  "omskrevet": [],
+  "stoppet": [
+   {
+    "slug": "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas",
+    "grund": "Fejl: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent: [429 Too Many Requests] Your project has exceeded its mo"
+   },
+   {
+    "slug": "ai-powered-search-confronts-traditional-models-a-new-era-for",
+    "grund": "Fejl: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent: [429 Too Many Requests] Your project has exceeded its mo"
+   },
+   {
+    "slug": "qubit-in-quantum-computing-explained-for-modern-scale",
+    "grund": "Fejl: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent: [429 Too Many Requests] Your project has exceeded its mo"
+   }
+  ],
+  "usd": 0,
+  "soegninger": 0,
+  "dataforseo": {
+   "usd": 0,
+   "sendt": 0,
+   "fraHusk": 284,
+   "fejl": null
+  }
  }
 ]
