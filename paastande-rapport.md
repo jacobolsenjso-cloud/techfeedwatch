@@ -1,14 +1,10 @@
 # Påstande der kan være holdt op med at passe
 
-Målt 2026-11-09 på 486 artikler. **15 fund**, heraf 0 nye siden sidste kørsel og 0 forsvundet (rettet eller omskrevet).
+Målt 2026-11-16 på 407 artikler. **10 fund**, heraf 0 nye siden sidste kørsel og 5 forsvundet (rettet eller omskrevet).
 
 Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en påstand har en indbygget udløbsdato. Regel 1 og 2 er sikre fejl. Regel 3, 4 og 5 kræver, at et menneske kigger.
 
-## Regel 1 — udløbet dato (3)
-
-- **What Are the Fundamental Differences Between AR and VR?**  
-  `ar-vs-vr-unpacking-the-reality-of-immersive-tech-s-impact.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-21  
-  > Current projections suggest that by 2025, attractive AR and VR experiences will become commonplace, integrating into [daily life](/video/beyond-the-screen-how-augmented-reality-will-reshape-our-world-by-2030/) in ways that were once considered science fiction.
+## Regel 1 — udløbet dato (2)
 
 - **What is quantum computing used for today and in the future?**  
   `do-we-know-what-quantum-computers-are-used-for.md` · forudsigelse om "2025" — året er passeret · først set 2026-10-26  
@@ -18,7 +14,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `key-advantages-of-augmented-reality-in-workforce-training.md` · forudsigelse om "2025" — året er passeret · først set 2026-09-28  
   > Recognizing this performance advantage, 26% of organizations have already integrated AR and VR tools into their operational programs, fueling an immersive tech market projected to exceed $157 billion by 2025.
 
-## Regel 4 — relativ tid (8)
+## Regel 4 — relativ tid (5)
 
 - **What Quantum Computing Means for Business**  
   `beyond-the-quantum-hype-real-world-implications-and-industry-roadmap.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -28,21 +24,9 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `cloud-security-s-rapid-evolution-why-architecture-first-consulting.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > The financial repercussions of inadequate security are substantial; for instance, cyber-related business losses recently reported in Washington state alone exceeded 370 million dollars.
 
-- **Cybersecurity Engineers: What They Actually Do**  
-  `cybersecurity-engineers-what-they-actually-do.md` · "Last year" betyder noget andet nu end da det blev skrevet · først set 2026-10-05  
-  > Last year, 61% of companies were breached, while the average cost of a single breach is nearly $5 million.
-
-- **How Much Does Cybersecurity Pay and Career Outlook**  
-  `how-much-does-cybersecurity-pay-and-career-outlook.md` · "next year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
-  > While there are 4.4 million software developers in the US, with that number projected to grow over 5 million over the next year, there are approximately 500,000 open cybersecurity jobs in the US alone, with a global shortage of 3.5 million positions.
-
 - **Why Did Meta AI Change to Launch Muse Spark?**  
   `meta-muse-spark-new-proprietary-ai-model-its-implications.md` · "this year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > The release of Muse Spark coincides with a dramatic increase in capital expenditures, which Meta expects to reach as much as $135 billion this year.
-
-- **How Cloud Simulators Open Up Quantum Computing**  
-  `quantum-computing-s-cloud-ascent-beyond-the-lab-to-commercial-reality.md` · "next year" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
-  > However, the very next year, a quantum computer with 128 qubits could suddenly and handily beat any classical computer ever built for that specific problem.
 
 - **Open-Source AI and the Risk of Dual-Use Models**  
   `the-ai-paradox-open-source-national-security-and-the-geopolitical.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
@@ -52,7 +36,7 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
   `the-rogue-code-why-ai-s-sandbox-escapes-demand-urgent-alignment.md` · "recently" betyder noget andet nu end da det blev skrevet · først set 2026-09-21  
   > ## The Anatomy of an AI Sandbox Escape The tech world recently witnessed a significant event where an OpenAI model, believed to be GPT-6, executed an elaborate escape from its designated testing sandbox.
 
-## Regel 5 — rådnende henvisning (4)
+## Regel 5 — rådnende henvisning (3)
 
 - **AI Front End Development Tools Transform Web UI Creation**  
   `ai-accelerates-front-end-development-reshaping-ui-creation-and.md` · "the latest release" peger på noget, der bliver afløst · først set 2026-09-21  
@@ -61,10 +45,6 @@ Vagten afgør ikke, om en påstand er sand — den finder de steder, hvor en på
 - **How AI Agents Change SaaS Per-User Subscriptions**  
   `ai-s-inexorable-advance-is-the-saas-business-model-under-threat.md` · "the latest version" peger på noget, der bliver afløst · først set 2026-09-21  
   > The model also allows vendors to manage and update their software centrally, ensuring all users are on the latest version and reducing support complexities associated with disparate software installations.
-
-- **How Do You Introduce Coding for Kids the Right Way?**  
-  `how-do-you-introduce-coding-for-kids-the-right-way.md` · "the latest release" peger på noget, der bliver afløst · først set 2026-10-19  
-  > Bricks and Brains noted that by August 2026 on Lex Fridman, Hansson stated autonomous agents wrote all code for the latest release of his Linux operating system.
 
 - **NVIDIA AI Chips: Why Memory Technology Is Their Secret Weapon**  
   `nvidia-ai-chips-why-memory-technology-is-their-secret-weapon.md` · "the latest iteration" peger på noget, der bliver afløst · først set 2026-09-21  
