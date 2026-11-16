@@ -9,7 +9,7 @@ Most articles on TechFeedWatch are drafted by an automated system, as the [About
 
 ## Two kinds of content
 
-**Articles** answer one question people search for. The question is researched with Google Search, the article is built on the web pages Google cites, and one video from a creator or outlet who covers the subject adds a section of its own. They are drafted by a language model and published automatically. Articles written before October 2026 were drafted from the video's transcript alone; they are being rewritten with the current method, a few a day. Images marked "AI-generated" are made by an AI model.
+**Articles** answer one question people search for. The question is researched with Google Search, the article is built on the web pages Google cites, and one video from a creator or outlet who covers the subject adds a section of its own. They are drafted by a language model and published automatically, on Mondays, Wednesdays and Fridays; every week I read a selection of them after they go live and correct what I flag. Articles written before October 2026 were drafted from the video's transcript alone; they are being rewritten with the current method, two or three on each publishing day. Images marked "AI-generated" are made by an AI model.
 
 **Guides, the glossary and the free tools** are written with AI, and planned, checked and maintained by me, Jacob S. Olsen. Unlike the articles, they are not published automatically.
 

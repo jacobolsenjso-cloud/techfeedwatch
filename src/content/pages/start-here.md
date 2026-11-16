@@ -21,7 +21,7 @@ Use it like a reference book: look the thing up, get the straight answer, and go
 
 ## What is here
 
-**[Latest](/latest)** — the newest articles. A few a day, usually two or three.
+**[Latest](/latest)** — the newest articles. New ones on Mondays, Wednesdays and Fridays, one or two at a time.
 
 **[Best of each topic](/popular)** — the source videos that most outperformed their own channel's average, five per subject. This is the page to browse if you want the good stuff rather than the recent stuff, and it is built so a small channel with a strong video can beat a large one.
 
@@ -55,7 +55,7 @@ Learn it for your own sake. It will pay you back.
 
 I would rather tell you than have you work it out.
 
-A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search, keeps only facts backed by the pages Google cites, and finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question, with the sources listed at the end and the video as one section. Older articles were written from the video's transcript alone; they are being rewritten with this method, a few a day. Those articles publish automatically — I do not read every one before it goes live.
+A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search, keeps only facts backed by the pages Google cites, and finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question, with the sources listed at the end and the video as one section. Older articles were written from the video's transcript alone; they are being rewritten with this method, two or three on each publishing day. Those articles publish automatically — I do not read every one before it goes live, but every week I read a selection afterwards and correct what I flag.
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
