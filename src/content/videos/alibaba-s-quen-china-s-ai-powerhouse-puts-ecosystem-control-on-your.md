@@ -1,98 +1,115 @@
 ---
-title: "How Is Alibaba's AI Reshaping Competition Between Firms?"
-targetQuestion: "how is ai reshaping competition between firms"
-titleShortened: true
-seoTitled: true
-youtubeId: "AJsAV4ZqwTc"
-channelTitle: "Alejavi Rivera"
-channelId: "UCxcDzs-4quJV4QsairlFYNg"
-publishedAt: "2026-05-10T17:00:21Z"
+title: "Enterprise AI Reshapes Market Competition Between Firms"
+youtubeId: "kw8rQV3UQDk"
+channelTitle: "Where AI Preparation Meets Opportunity"
+channelId: "UC1ATG_JzQtTRoVPbkOl2fnQ"
+publishedAt: "2026-03-09T22:00:53Z"
 date: "2026-06-13"
-updated: "2026-08-14"
+updated: "2026-11-18"
 tags:
   - "AI & Tech"
-  - "AI Video"
-summary: "Alibaba's Quen AI, initially an open-source project, has rapidly evolved into a comprehensive AI ecosystem challenging Western tech giants. Its strategic focus on aggressive, free-tier offerings and deep integration capabilities positions it as a significant contender in the global AI race. This initiative highlights a broader geopolitical competition in artificial intelligence, with major implications for developers, enterprises, and individual users worldwide. Quen's multimodal functionalities and open architecture present both opportunities and challenges for the future of AI adoption and market dynamics."
-metaDescription: "Alibaba's Quen AI, initially an open-source project, has rapidly evolved into a comprehensive AI ecosystem challenging Western tech giants."
-duration: "29:54"
-viewCount: 234078
-viewsUpdated: "2026-11-16"
+  - "Business & Money"
+summary: "Artificial intelligence alters business competition by giving market leaders an advantage while commoditizing routine white-collar skills. Top performers pull ahead through proprietary systems, but most organizations struggle to turn individual productivity gains into company profits. High computational costs also keep foundational technology concentrated among incumbent tech platforms."
+metaDescription: "Discover how AI is reshaping competition between firms as top market leaders widen the gap and high computing costs create steep market barriers."
+targetQuestion: "how is ai reshaping competition between firms"
+duration: "11:33"
+viewCount: 16
+viewsUpdated: "2026-11-18"
 thumbMax: true
 isShort: false
-revised: true
+recipe: 3
+rewrittenAt: "2026-11-18"
 faqs:
-  - question: "What is Alibaba's Quen AI?"
-    answer: "Quen AI is a comprehensive artificial intelligence ecosystem developed by Alibaba, one of the world's largest technology companies. It started as an open-source project and has evolved to include various applications, web platforms, and desktop tools, aiming to challenge Western AI giants."
-  - question: "How does Quen AI's desktop application enhance its capabilities?"
-    answer: "The desktop application for Quen AI features a Model Context Protocol (MCP) that allows the AI to connect with and control local tools and the user's computer system. This enables tasks like managing files, creating folders, and generating and storing content directly on the device, extending the AI's functionality beyond chat."
-  - question: "Can Quen AI create custom applications or websites?"
-    answer: "Yes, through Quen Studio, users can leverage Quen AI to develop custom applications and even functional websites without needing programming knowledge. Examples include creating social networks or complex personal utility apps like meal planners with specific features and user interfaces."
-  - question: "Is Quen AI completely free to use?"
-    answer: "Alibaba initially offers many of Quen AI's functionalities completely free of charge and without limits, as part of an aggressive market entry strategy. However, for some advanced creative tools, while free usage is often available (sometimes with waiting queues), paid subscription options are also offered for enhanced access or faster processing."
-rewrittenAt: "2026-08-14"
+  - question: "What is AI competition?"
+    answer: "AI competition is the race among companies using machine learning and automated tools to secure commercial market advantage. The OECD found in July 2026 that AI patenting is associated with faster markup growth, primarily in the ICT sector."
+  - question: "What is AI wrapper competition?"
+    answer: "AI wrapper competition occurs when rival startups build simple product interfaces over the same underlying foundation models. Think tank Bruegel showed in July 2024 that soaring compute costs push these smaller players into distribution deals with major cloud providers."
+  - question: "Who represents primary frontier AI competition?"
+    answer: "Frontier AI competition is the battle between cash-rich tech giants and elite labs capable of paying enormous computing bills. Research from Bruegel in July 2024 shows that high training costs prevent smaller firms from developing these leading foundation models."
+keyFacts:
+  - text: "Concentration in AI innovation directly correlates with higher sales concentration, and while the AI startup ecosystem remains dynamic, early-stage AI firms are frequently acquired by large incumbents."
+    source: "OECD report \"Competition in the age of AI\" (July 2026)"
+    url: "https://www.oecd.org/en/publications/competition-in-the-age-of-ai_6f88a1ea-en.html"
+  - text: "A widening performance gap exists across sectors, with 60 percent of market leaders reporting double-digit revenue growth compared to only 21 percent of laggards."
+    source: "McKinsey & Company's report \"Growth favors the bold: AI as force multiplier\" (August 2026)"
+    url: "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/growth-favors-the-bold-ai-as-force-multiplier"
+  - text: "Escalating computational training costs for frontier foundation models create steep barriers to entry, forcing AI startups into co-opetition and distribution partnerships with incumbent hyperscale tech companies."
+    source: "Economic policy research published by Bruegel (July 2024)"
+    url: "https://www.bruegel.org/policy-brief/why-artificial-intelligence-creating-fundamental-challenges-competition-policy"
 ---
 
-Alibaba's Quen AI is rapidly emerging as a significant force in the global artificial intelligence arena, evolving from an open-source initiative into a comprehensive AI ecosystem. This strategic move by one of the world's largest technology companies positions Quen as a direct challenger to established Western AI platforms, distinguished by its aggressive free-tier offerings and deep integration capabilities.
+A performance gap is widening across business sectors, based on research from [McKinsey & Company](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/growth-favors-the-bold-ai-as-force-multiplier). The firm found that 60 percent of market leaders enjoy double-digit revenue growth. In comparison, only 21 percent of laggards (slower-moving companies) saw those gains.
 
-The initiative underscores a broader geopolitical competition in AI, with far-reaching implications for developers, enterprises, and individual users worldwide.
+Stanford researchers found that generative AI (tools that create new content) boosts average worker output. The largest gains went to lower-skilled employees.
 
-## The Rise of Quen AI and Alibaba's Strategic Investment
+The [OECD](https://www.oecd.org/en/publications/competition-in-the-age-of-ai_6f88a1ea-en.html) found that concentration in AI innovation directly correlates with higher sales concentration. Meanwhile, think tank Bruegel reports that computational training costs for frontier foundation models (advanced systems) create steep barriers. These expenses force startups into partnerships with incumbent hyperscale tech companies (giant, dominant technology providers).
 
-Quen AI represents a cornerstone of Alibaba's global strategy, aiming to disrupt the AI market with a distinctive approach. While many Western AI companies have begun to monetize their functionalities, Alibaba has committed over $50 billion to private artificial intelligence and cloud services over the next three years, a figure that surpasses its investment in the last ten years combined.
+## Which business functions feel the greatest impact from AI?
 
-This substantial financial backing signals a long-term vision to cultivate an extensive AI ecosystem, moving beyond a singular model to encompass a wide array of applications, web versions, intelligent agents, and developer access points.
+A study by Raymond looked at support workers using generative AI assistants. The tools delivered the largest productivity gains to less experienced and lower-skilled employees.
 
-The platform boasts a significant scale, with over 300 open-source models that have inspired more than 170,000 derivative projects. Its web-based creative suite, Quen Studio, alone serves over 1 million users, demonstrating its widespread adoption and capability.
+This dynamic levels baseline skills across departments. When junior staff perform like seasoned workers, standard skills lose their competitive premium (their extra market value).
 
-This aggressive strategy, centered on providing advanced AI functionalities without immediate cost, aims to foster dependency and widespread integration before considering monetization, a stark contrast to the prevailing trends in Silicon Valley.
+Using automated tools to assist with daily tasks can be genuinely helpful, but I am very cautious when companies replace human interaction entirely. When I call my bank with a problem, dealing with a bot rather than a real person is frustrating. Standard inquiries work fine automated, but genuine human judgment is hard to replicate.
 
-## Desktop Integration and System Control with Model Context Protocol
+Firms deploy these automation tools across several core business areas:
+- Customer service workflows to answer repetitive inquiries rapidly.
+- Software engineering pipelines (development processes) to draft and debug (fix) application code.
+- Marketing desks to produce drafts and campaign variations quickly.
+- Operations teams to generate automated performance summaries.
 
-One of Quen AI's most powerful features is its desktop application, available for various operating systems including:
+## AI adoption widens the performance gap separating industry leaders
 
-- Mac
-- Windows
-- iPhone
-- Android devices
+McKinsey & Company reports that top-performing organizations attribute 5 percent or more of their EBIT to AI. EBIT means earnings before interest and taxes, or operating profit. They achieve this by overhauling workflows and scaling systems enterprise-wide.
 
-This application introduces the Model Context Protocol (MCP), a mechanism that allows Quen AI models to connect with and control any tool, including the user's own computer system. This capability extends the AI's utility beyond conversational responses to direct interaction with the local environment.
+In a 2025 survey, McKinsey found that only 6 percent of organizations qualified as AI high performers. Those firms attributed 5 percent or more of their operating profit directly to these technologies.
 
-Through MCP, users can grant Quen AI permissions to manage files and execute tasks on their computer. For instance, by enabling a "File System" MCP, the AI can be instructed to list all files and their sizes within a specific folder, such as the downloads directory.
+The OECD links AI patenting to faster markup growth (price increases above production costs). This markup growth happens primarily in the information and communication technology sector.
 
-More complex commands are also possible, like creating new folders and automatically moving files into them based on user criteria. This means the AI can not only analyze existing data but also actively organize and manipulate digital assets on the user's device.
+## Can smaller firms use AI to challenge market incumbents?
 
-Quen AI can generate new documents or images and store them directly into designated folders on the computer, streamlining workflows and content creation processes. The system requires explicit user permission for such access, ensuring a degree of control over the AI's interaction with personal data.
+Bruegel found in July 2024 that escalating computational training costs for frontier foundation models create steep barriers to entry. These rising costs force AI startups into distribution deals and partnerships with incumbent hyperscale tech companies. Many [AI-native startups](/video/ai-native-companies-how-startups-are-redefining-business-operations) still run lean operations by using external models.
 
-## Advanced Application and Content Creation Capabilities
+Meanwhile, an OECD report published in July 2026 showed that concentration in AI innovation directly matches higher sales concentration. The organization also found that dominant corporate incumbents routinely acquire dynamic early-stage startups.
 
-Beyond desktop integration, Quen AI, particularly through its Quen Studio web version, offers extensive capabilities for developing custom applications and generating diverse content formats. The platform allows users to select from continuously updated models, with Quen 3.6 Plus currently offering a context window of 1 million tokens, enabling the processing of vast amounts of information.
+## Structural hurdles stop widespread AI adoption from driving profits
 
-Users can leverage Quen Studio to create functional websites or applications without requiring programming knowledge. For example, one can prompt the AI to design a social network with specific aesthetic and functional requirements, such as a "futuristic" theme with dark and neon colors, complete with features like posting, liking, commenting, and sharing.
+McKinsey & Company reports that enterprise-level EBIT gains from AI lag far behind individual productivity improvements. In McKinsey's 2026 survey, 80 percent of workers reported improved productivity, but only 37 percent of companies gained operating profits from AI.
 
-The AI can generate a functional prototype that allows immediate interaction. Similarly, Quen AI can be used to develop sophisticated personal utility applications.
+Broader adoption is still expanding rapidly across industries. The Stanford Institute for Human-Centered Artificial Intelligence found organizational AI adoption climbed to 78 percent in 2024 from 55 percent in 2023. Stanford also recorded global private investment in generative systems reaching $33.9 billion.
 
-An example includes a "Fit Menu AI" application designed to automate weekly meal planning, generate shopping lists, and adapt to dietary restrictions, budget constraints, cooking time, and even specific fitness goals like calorie and macronutrient targets. This demonstrates the AI's capacity to simplify complex daily routines and provide tailored solutions for individual needs.
+Many people rush into new tech thinking it instantly transforms everything, but rolling tools out safely requires patience. You have to know your systems inside out and understand what you are dealing with before expecting real returns. Blindly chasing trends without a clear plan usually leads to wasted effort.
 
-## Multimodal Creativity: Images, Video, and Beyond
+At the same time, an OECD report from July 2026 showed that non-generative AI adoption fails to generate significant increases in firm market power. Instead, faster markup growth remains concentrated within information and communication technology companies holding valuable patents.
 
-Quen AI extends its capabilities into multimodal content creation, enabling users to generate and edit images, videos, and even sounds. The platform's image generation models are highly capable, producing visually impressive results.
+## Where AI Preparation Meets Opportunity details how automation compresses margins
 
-However, when it comes to text embedded within generated images, particularly in languages other than Chinese or English, the AI may exhibit minor inaccuracies or typos. Despite this, its image editing features are particularly strong, allowing users to transform existing images with new elements or styles, such as placing a person in a selfie with a real lion, complete with realistic lighting and perspective adjustments.
+The video Where AI Preparation Meets Opportunity explains how automation speeds up routine work. This speed lowers entry barriers and triggers severe price competition.
 
-The platform also facilitates video creation from still images. Users can provide an image and specify actions or expressions, and Quen AI can generate a short video, typically within 3 to 5 minutes of processing. For more specialized creative endeavors, technology company Alibaba offers dedicated platforms, such as one incorporating its One 2.7 AI model.
+Host Imani compares current developments to historical shifts like steam power, electricity, and the internet. The channel points out the effects of automating cognitive tasks (mental tasks). It enables an individual specialist to surpass the output of an entire group from a decade earlier.
 
-While initially presented as entirely free, these creative tools illustrate a nuanced approach to monetization. Some advanced features or higher-priority processing might be offered through a closed-source version or a subscription model, with paid plans being relatively inexpensive, such as a Pro subscription costing €5 a month.
+This productivity surge creates an economic feedback loop. Lower operational friction invites new entrants, which forces competitors to cut product prices. Falling prices then pressure profit margins, forcing companies to adopt even more automation to survive.
 
-Users can often opt for a free, unlimited usage option by foregoing credit usage, though this might involve waiting queues due to server load. This balance reflects a strategy of attracting a large user base with free access while exploring avenues for revenue generation through enhanced services.
+## How firms can build defensible advantages in AI markets
 
-## Geopolitical Stakes and Future Outlook
+Companies can protect their market standing by combining proprietary data (exclusive private data) with deep operational restructuring. Earlier findings from the OECD and Bruegel show that simple software adoption without strong intellectual property often fails to yield real pricing power.
 
-Alibaba's Quen AI initiative is more than a technological advancement; it is a significant player in the ongoing geopolitical competition in artificial intelligence.
+Protecting internal data and maintaining steady oversight is where real security starts. In any technical setup, letting outside systems connect without strict boundaries introduces huge vulnerabilities. Keeping your core information locked down and verifying what automated systems produce is simply basic common sense.
 
-By offering aggressive free-tier products and fostering a comprehensive ecosystem, Quen AI directly challenges the market dominance and monetization strategies of Western tech giants. This approach has the potential to reshape market dynamics, influencing how AI technologies are developed, distributed, and adopted globally.
+To build genuine barriers to competition, management teams should focus on practical operational strengths:
+- Secure private data assets that external algorithms cannot access.
+- Redesign complex workflows rather than applying software patches to old processes.
+- Train employees to interpret and govern automated output safely.
+- Form direct customer relationships that generic digital platforms cannot replace.
 
-The strategic focus on accessibility and deep integration presents both substantial opportunities and potential challenges. For developers, it offers a powerful and largely unencumbered platform for innovation.
+## Sources
 
-For enterprises, it provides cost-effective access to advanced AI capabilities. For individual users, it democratizes access to sophisticated AI tools that were once exclusive.
-
-However, as the ecosystem matures, the balance between free access and monetization will likely evolve, as evidenced by the introduction of paid options for some creative tools. The long-term implications of Quen AI's expansion will undoubtedly contribute to a more diverse and competitive global AI market, with ongoing shifts in technology adoption and market leadership.
+- [Competition in the age of ai 6f88a1ea en](https://www.oecd.org/en/publications/competition-in-the-age-of-ai_6f88a1ea-en.html) — oecd.org
+- [The state of ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — mckinsey.com
+- [The Economics of Artificial Intelligence By Bhavani Nair | Published by Critical Debates in Humanities, Science and Global Justice](https://criticaldebateshsgj.scholasticahq.com/post/4227-the-economics-of-artificial-intelligence-by-bhavani-nair) — scholasticahq.com
+- [Growth favors the bold ai as force multiplier](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/growth-favors-the-bold-ai-as-force-multiplier) — mckinsey.com
+- [The state of ai 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-2025) — mckinsey.com
+- [Hai ai index report 2025 (PDF)](https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf) — amazonaws.com
+- [How AI Is Reshaping the Future of Work | Stanford Graduate School of Business](https://www.gsb.stanford.edu/exec-ed/difference/how-ai-reshaping-future-work) — stanford.edu
+- [Why artificial intelligence creating fundamental challenges competition policy](https://www.bruegel.org/policy-brief/why-artificial-intelligence-creating-fundamental-challenges-competition-policy) — bruegel.org
+- [AI Isn’t Just Job Cuts — It’s Reshaping the Entire Economy](https://www.youtube.com/watch?v=kw8rQV3UQDk) — Where AI Preparation Meets Opportunity on YouTube

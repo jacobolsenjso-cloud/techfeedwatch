@@ -1,5 +1,5 @@
 ---
-title: "How Do Pinterest Ads Work with AI Creatives? a 5.5x ROAS Case"
+title: "How Do Pinterest Ads Work with AI Creatives? A Case Study"
 targetQuestion: "how do pinterest ads work"
 seoTitled: true
 youtubeId: "Zpz8nFRw-Lg"
@@ -7,12 +7,12 @@ channelTitle: "Luc Bermond - EN"
 channelId: "UCuZr-oSyZ3hndfWOvf3r_KQ"
 publishedAt: "2026-06-11T18:30:33Z"
 date: "2026-06-15"
-updated: "2026-08-15"
+updated: "2026-11-18"
 tags:
   - "AI & Tech"
   - "Business & Money"
 summary: "An AI-powered advertising system recently reported generating $117,000 in revenue within 30 days on Pinterest, achieving a 5.5x return on ad spend (ROAS). This success highlights the increasing efficiency of generative AI in producing diverse creative assets for targeted campaigns. It also underscores Pinterest's emerging role as a less competitive platform for e-commerce, offering lower CPMs and high purchase intent for specific visual niches. The strategy emphasizes rapid iteration of AI creatives, strategic budget allocation, and a deep understanding of Pinterest's unique visual search algorithm and user behavior."
-metaDescription: "An AI-powered advertising system recently reported generating $117,000 in revenue within 30 days on Pinterest, achieving a 5.5x return on ad spend (ROAS)."
+metaDescription: "An AI-powered advertising system recently reported generating substantial revenue on Pinterest, achieving a high return on ad spend (ROAS)."
 duration: "9:57"
 viewCount: 35560
 viewsUpdated: "2026-11-16"
@@ -29,9 +29,10 @@ faqs:
   - question: "What campaign settings are recommended when starting on Pinterest?"
     answer: "For businesses with fewer than 20 products, a conversion campaign is suggested, while catalog sales are better for more than 20 products. It's wise to test both Performance+ and non-Performance+ campaign types, start with a low daily budget like $5 due to the learning phase, and optimize for checkout conversions."
 rewrittenAt: "2026-08-15"
+factChecked: "2026-11-18"
 ---
 
-Generative AI is proving to be a powerful ally in digital advertising, particularly on platforms like Pinterest. A recent campaign leveraging AI-powered creative generation on Pinterest achieved a remarkable $117,000 in revenue over 30 days, demonstrating a 5.5x return on ad spend (ROAS).
+Generative AI is proving to be a powerful ally in digital advertising, particularly on platforms like Pinterest. A recent campaign leveraging AI-powered creative generation on Pinterest achieved strong revenue, demonstrating a high return on ad spend (ROAS).
 
 This success underscores the potential for AI to drive significant e-commerce growth by efficiently producing diverse visual assets for highly targeted campaigns.
 
@@ -43,7 +44,7 @@ Unlike traditional social media platforms, Pinterest functions primarily as a vi
 
 The platform's audience also presents a valuable demographic for many e-commerce businesses. Campaigns targeting women aged 25 and older on Pinterest have shown a tendency to generate a higher Average Order Value (AOV), sometimes 20 to 30% more than on other platforms.
 
-This demographic, combined with the visual search nature, means that products with strong visual appeal, capable of achieving a Click-Through Rate (CTR) of more than 2%, are particularly well-suited for Pinterest advertising.
+This demographic, combined with the visual search nature, means that products with strong visual appeal, capable of achieving a high Click-Through Rate (CTR), are particularly well-suited for Pinterest advertising.
 
 ## AI's Role in Creative Iteration and Scaling
 
@@ -53,7 +54,7 @@ This iterative approach is important because Pinterest's algorithm, like many ot
 
 By continuously pushing new AI-generated creatives, advertisers can quickly identify winning visuals and marketing angles. This constant influx of fresh content helps the algorithm learn faster and more effectively, leading to stable ROAS even as ad spend scales.
 
-For instance, a campaign might start with a modest daily spend, then scale to $1,000, and eventually over $9,000 in daily revenue, all while maintaining a high ROAS of 5.5x. The ability of AI to generate diverse, inspirational, and high-quality visuals on demand is a significant factor in achieving such consistent performance.
+For instance, a campaign might start with a modest daily spend, then scale to $1,000, and eventually over $5,500 in daily revenue, all while maintaining a high ROAS of 5.5x. The ability of AI to generate diverse, inspirational, and high-quality visuals on demand is a significant factor in achieving such consistent performance.
 
 ## Strategic Account Setup and Budget Allocation
 
@@ -69,7 +70,7 @@ Budget allocation on Pinterest also differs from other platforms. Instead of con
 - Targeting options
 - Marketing angles
 
-For example, a total spend of $21,000 might be distributed among campaigns with daily budgets ranging from $12 to $100, such as $50, $30, $20, or $25 per day. This granular approach helps identify what works best without risking large sums on unproven strategies.
+For example, total ad spend might be distributed among campaigns with daily budgets ranging from modest amounts, such as $20, $25, $30, or $50 per day. This granular approach helps identify what works best without risking large sums on unproven strategies.
 
 ## Optimizing Campaign Performance
 
@@ -81,4 +82,4 @@ When setting up, it's advisable to start with a low daily budget, such as $5, du
 
 The visual nature of Pinterest means that creatives must be highly inspirational. AI tools excel at generating visuals that capture attention and encourage engagement, leading to higher CTRs and ultimately more conversions.
 
-This approach has proven successful not only in the US market but also in other regions, with some campaigns generating over 3,000 euro per day in European markets, indicating its broad applicability across various niches and geographies.
+This approach has proven successful not only in the US market but also in other regions, with some campaigns generating substantial daily revenue in European markets, indicating its broad applicability across various niches and geographies.

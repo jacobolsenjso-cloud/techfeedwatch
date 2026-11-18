@@ -423,5 +423,30 @@
   "artikler": [],
   "usd": 0,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-18T06:54:05.980Z",
+  "artikler": [
+   {
+    "slug": "ai-powered-pinterest-ads-the-secret-to-117k-in-30-days-and-5-5x-roas",
+    "kildeOgMaal": 0,
+    "belaegTjekket": 1,
+    "ikkeBelagt": 0,
+    "belaegUsikre": 1,
+    "skeptikerTjekket": 19,
+    "fanget": 7,
+    "rettet": 7,
+    "fjernet": 0,
+    "sammenhaeng": {
+     "tabeller": 0,
+     "afsnit": 0,
+     "faq": 0,
+     "afvist": 0
+    },
+    "roert": true
+   }
+  ],
+  "usd": 0.1643,
+  "soegninger": 2
  }
 ]

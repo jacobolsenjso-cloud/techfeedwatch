@@ -571,5 +571,30 @@
   ],
   "usd": 0,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-18T06:53:15.186Z",
+  "artikler": [
+   {
+    "slug": "beyond-seo-build-your-own-aeo-service-and-dominate-the-ai-powered",
+    "tjekket": 7,
+    "belagt": 3,
+    "fejl": 0,
+    "ikke_fundet": 1,
+    "usikker": 3,
+    "fund": []
+   },
+   {
+    "slug": "what-happens-when-you-step-into-mixed-reality",
+    "tjekket": 4,
+    "belagt": 2,
+    "fejl": 0,
+    "ikke_fundet": 2,
+    "usikker": 0,
+    "fund": []
+   }
+  ],
+  "usd": 0.0049,
+  "soegninger": 0
  }
 ]
