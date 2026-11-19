@@ -34,8 +34,8 @@ const updated: string | null = video.frontmatter.updated || null;
 const godkendt: string | null = video.frontmatter.godkendt || null;
 const godkendtTekst = godkendt ? new Date(`${godkendt}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
 const godkendSaetning = godkendt
-  ? ` I read this version in full and approved it on ${godkendtTekst}, before it was published.`
-  : ' It was published automatically, before November 2026, when I started approving every article before it goes live; it is being rewritten, and the new version will only be published after I have read and approved it.';
+  ? ` I read this version of the article in full and approved it on ${godkendtTekst}, before it was published.`
+  : ' This article was published automatically, before November 2026, when I started approving every article before it goes live; it is being rewritten, and the new version will only be published after I have read and approved it.';
 const showUpdated = updated && updated.slice(0, 10) !== String(date).slice(0, 10);
 const updatedLabel = showUpdated
   ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
@@ -665,6 +665,17 @@ const metaDesc = rawMeta.length > 157
     body.dark-mode .author-box-ai-note { color: #9ca3af; }
     .author-box-ai-note a { color: var(--teal-text); text-decoration: none; font-weight: 600; font-style: normal; }
     .author-box-ai-note a:hover { text-decoration: underline; }
+    /* 19/11-2026: fold-ud-boksen i forfatterboksen (mobil og computer). Knappen ligner et link i sitets tekstfarve
+       (FARVEREGEL: var(--teal-text) til tekst), pilen drejer, når den er åben. Mindst 44 px høj (tryk på mobil). */
+    .author-box-kort { margin-bottom: 8px; }
+    .author-box-mere > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--teal-text); font-weight: 600; font-size: 0.95rem; }
+    .author-box-mere > summary::-webkit-details-marker { display: none; }
+    .author-box-mere > summary::before { content: '▸'; display: inline-block; transition: transform 0.2s; }
+    .author-box-mere[open] > summary::before { transform: rotate(90deg); }
+    .author-box-mere > summary:hover { text-decoration: underline; }
+    .author-box-mere > summary:focus-visible { outline: 2px solid var(--teal-text); outline-offset: 2px; border-radius: 4px; }
+    .author-box-mere[open] > summary { margin-bottom: 8px; }
+    @media (prefers-reduced-motion: reduce) { .author-box-mere > summary::before { transition: none; } }
 
     .related-articles { margin-top: 45px; }
     .related-articles-title { font-size: 1.4rem; margin: 0 0 18px 0; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); }
@@ -1426,15 +1437,22 @@ const metaDesc = rawMeta.length > 157
             <p class="author-box-name"><a href="/author/jacob-olsen" class="author-box-link">Jacob S. Olsen</a></p>
             <p class="author-box-title">{PERSON_TITEL}, {BRAND}</p>
             {/* Biografi og titel fra src/lib/entitet.mjs (5/11-2026), ens med forfattersiden og schemaet */}
-            <p class="author-box-bio">{PERSON_BIO}</p>
-            {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
-                Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
-            {antalWebKilder > 0 ? (
-              <p class="author-box-bio">How this article was made: it starts from a question people search for on Google. A language model researches that question with Google Search and keeps only facts backed by the pages Google cites — every number names its source, and the {antalWebKilder} sources are listed above. A video from an independent creator on the subject adds one section and is credited on this page. Automatic checks reject drafts with unsourced numbers, one-sided claims or promotion.{godkendSaetning}{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
-            ) : (
-              <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material.{godkendSaetning} The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
-            )}
-            <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim.{jegAfsnit && ' The paragraphs written as "I" are my own views, taken from my notes and put into words by the machine.'} <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
+            {/* 19/11-2026 (Jacob valgte A): kun det vigtigste står fremme - hvem, og om Jacob har godkendt netop
+                denne udgave. Resten (biografi, hvordan artiklen blev lavet, maskineriet) ligger i en fold-ud-boks:
+                teksten står stadig i HTML'en, så Google og skærmlæsere læser den; læseren trykker for at se den. */}
+            <p class="author-box-bio author-box-kort">I build and run TechFeedWatch.{godkendSaetning}</p>
+            <details class="author-box-mere">
+              <summary>More about me and how this article was made</summary>
+              <p class="author-box-bio">{PERSON_BIO}</p>
+              {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
+                  Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
+              {antalWebKilder > 0 ? (
+                <p class="author-box-bio">How this article was made: it starts from a question people search for on Google. A language model researches that question with Google Search and keeps only facts backed by the pages Google cites — every number names its source, and the {antalWebKilder} sources are listed above. A video from an independent creator on the subject adds one section and is credited on this page. Automatic checks reject drafts with unsourced numbers, one-sided claims or promotion.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+              ) : (
+                <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+              )}
+              <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim.{jegAfsnit && ' The paragraphs written as "I" are my own views, taken from my notes and put into words by the machine.'} <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
+            </details>
           </div>
         </div>
 
