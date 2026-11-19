@@ -6,7 +6,7 @@
 //   node kladder.mjs --udfoer   Godkend -> live, Afvis -> kladder-afviste/, Omskriv -> ny version af kladden
 // En beslutning gælder kun den version, Jacob så. Godkend og Afvis fjerner kladden, så de kan aldrig ske to gange.
 import fs from 'node:fs';
-import { laesKladder, skrivKladde, fjernKladde, afvisKladde, visning, noegle, BESLUTNINGER_URL } from './src/lib/kladder.mjs';
+import { laesKladder, skrivKladde, fjernKladde, afvisKladde, visning, noegle, gyldigBilledSti, BESLUTNINGER_URL } from './src/lib/kladder.mjs';
 import { dekrypter } from './src/lib/kryptering.mjs';
 import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
 
@@ -168,6 +168,13 @@ export async function udfoer(opgaver, { kald = null, rod = process.cwd() } = {})
         if (k.type === 'ny' && fs.existsSync(live)) throw new Error(`der findes allerede en artikel med adressen /video/${k.slug}/`);
         if (k.type !== 'ny' && !fs.existsSync(live)) throw new Error(`den levende artikel /video/${k.slug}/ findes ikke mere`);
         fs.writeFileSync(live, tilLive(k, nu));
+        // Billederne, der blev holdt tilbage med kladden, lægges ud nu - samtidig med artiklen
+        for (const [sti, b64] of Object.entries(k.billeder || {})) {
+          if (!gyldigBilledSti(sti)) continue;
+          fs.mkdirSync(`${rod}/${sti.replace(/\/[^/]+$/, '')}`, { recursive: true });
+          fs.writeFileSync(`${rod}/${sti}`, Buffer.from(b64, 'base64'));
+          udgivne.push(sti);
+        }
         fjernKladde(k.id);
         udgivne.push(`src/content/videos/${k.slug}.md`);
         summary(`**Godkendt og live:** ${k.visning?.title || k.slug} — https://techfeedwatch.com/video/${k.slug}/ (${k.type})`);

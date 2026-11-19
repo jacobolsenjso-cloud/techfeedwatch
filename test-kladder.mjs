@@ -96,6 +96,17 @@ process.exitCode = 0;
 for (let i = 0; i < 5; i++) await K.gemKladde({ slug: `fyld-${i}`, markdown: md(`Fill Article Number ${i} Title`), type: 'ny' });
 tjek('kø-loftet: 6 kladder = fuld', K.antalVenter() === 6 && K.koeFuld());
 
+// --- Billederne holdes tilbage til Godkend (Jacob 19/11-2026) ---
+const billedData = Buffer.from('falsk-webp-billede-til-test').toString('base64');
+const kb = await K.gemKladde({ slug: 'med-billede', markdown: md('Article With an Image Held Back'), type: 'ny', billeder: { 'public/billeder/med-billede.webp': billedData, 'public/kort/med-billede.webp': billedData, '../ond.webp': billedData } });
+tjek('billedet ligger ikke på sitet, mens kladden venter', !fs.existsSync(path.join(ROD, 'public/billeder/med-billede.webp')) && !fs.existsSync(path.join(ROD, 'public/kort/med-billede.webp')));
+tjek('billedet er krypteret med kladden, og kun sitets billedmapper er tilladt', Object.keys(kb.billeder).length === 2 && !fs.readFileSync(path.join(ROD, K.KLADDE_DIR, `${kb.id}.kladde`), 'utf8').includes('falsk-webp'));
+await udfoer(aktuelle([{ id: kb.id, version: 1, handling: 'godkend', tid: '2026-11-19T17:00:00Z' }], await K.laesKladder()), { rod: ROD });
+tjek('Godkend: billedet og artiklen kommer ud samtidig', fs.existsSync(path.join(ROD, 'src/content/videos/med-billede.md')) && fs.readFileSync(path.join(ROD, 'public/billeder/med-billede.webp'), 'utf8') === 'falsk-webp-billede-til-test' && fs.existsSync(path.join(ROD, 'public/kort/med-billede.webp')) && !fs.existsSync(path.join(ROD, '../ond.webp')));
+const ka = await K.gemKladde({ slug: 'afvist-billede', markdown: md('Article With an Image That Is Rejected'), type: 'ny', billeder: { 'public/billeder/afvist-billede.webp': billedData } });
+await udfoer(aktuelle([{ id: ka.id, version: 1, handling: 'afvis', tid: '2026-11-19T17:30:00Z' }], await K.laesKladder()), { rod: ROD });
+tjek('Afvis: billedet kommer aldrig på sitet', !fs.existsSync(path.join(ROD, 'public/billeder/afvist-billede.webp')));
+
 // --- Godkend-funktionen (Cloudflare) med falsk KV og falsk Access ---
 const kv = new Map();
 const KV = { get: async (n, t) => (kv.has(n) ? (t === 'json' ? JSON.parse(kv.get(n)) : kv.get(n)) : null), put: async (n, v) => { kv.set(n, v); }, delete: async (n) => { kv.delete(n); }, list: async ({ prefix }) => ({ keys: [...kv.keys()].filter((n) => n.startsWith(prefix)).map((name) => ({ name })), list_complete: true }) };

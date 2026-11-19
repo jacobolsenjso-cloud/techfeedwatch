@@ -68,7 +68,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           # Kun stier, der findes (git add afviser HELE listen, hvis én sti mangler - fx kladder-afviste/ første gang)
-          stier=""; for s in src/content public/_kladder kladder-afviste src/data/kladde-log.json src/data/omskriv-fejl.json; do if [ -e "$s" ]; then stier="$stier $s"; fi; done
+          stier=""; for s in src/content public/_kladder public/billeder public/kort public/og kladder-afviste src/data/kladde-log.json src/data/omskriv-fejl.json; do if [ -e "$s" ]; then stier="$stier $s"; fi; done
           set +e
           bash .github/commit.sh "Drafts: carry out Jacob's decisions (run ${{ github.run_number }})" $stier
           kode=$?

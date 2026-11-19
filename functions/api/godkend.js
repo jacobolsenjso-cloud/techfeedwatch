@@ -65,6 +65,10 @@ async function kladder(request, env) {
       const f = await hentFil(`/_kladder/${id}.kladde`);
       const k = await dekrypterJson(await f.text(), env.KLADDE_NOEGLE);
       delete k.markdown; // siden bruger kun visningen
+      // Billedet, der holdes tilbage med kladden (Jacob 19/11-2026), vises på siden; resten sendes ikke med
+      const b = k.billeder || {}; const stor = b[`public/billeder/${k.slug}.webp`]; const og = b[`public/og/${k.slug}.jpg`];
+      k.billede = stor ? `data:image/webp;base64,${stor}` : og ? `data:image/jpeg;base64,${og}` : null;
+      delete k.billeder;
       ud.push(k);
     } catch (e) { ud.push({ id, fejl: `kladden kunne ikke læses (${e.message})` }); }
   }

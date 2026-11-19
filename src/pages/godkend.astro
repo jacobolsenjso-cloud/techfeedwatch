@@ -30,6 +30,7 @@
   .maerke.gammel { border-color:var(--fejl); color:var(--fejl); }
   h2 { font-size:21px; line-height:1.3; margin:4px 0 6px; }
   .meta { color:var(--dim); font-size:14px; margin:0 0 10px; }
+  img.billede { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:8px; margin:4px 0 4px; display:block; }
   .felter { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:15px; margin:0 0 12px; }
   .felter dt { color:var(--dim); font-weight:600; } .felter dd { margin:0; }
   .note { background:var(--bg); border-radius:8px; padding:10px 12px; margin:0 0 12px; font-size:15px; }
@@ -122,6 +123,10 @@
     if (k.version > 1) top.append(lav('span', 'maerke', `Version ${k.version}`));
     if ((Date.now() - Date.parse(k.oprettet)) / 864e5 > FORAELDET_DAGE) top.append(lav('span', 'maerke gammel', 'Forældet (over 30 dage)'));
     kort.append(top, lav('h2', '', v.title));
+    // Billedet øverst i artiklen: det nye, der holdes tilbage med kladden - ellers det, artiklen allerede har
+    const billedSrc = k.billede || (k.type !== 'ny' ? `/billeder/${k.slug}.webp` : null);
+    if (billedSrc) { const img = lav('img', 'billede'); img.src = billedSrc; img.alt = ''; img.loading = 'lazy'; img.onerror = () => img.remove(); kort.append(img); kort.append(lav('p', 'meta', k.billede ? 'Nyt billede – kommer først på sitet, når du godkender.' : 'Artiklens nuværende billede (uændret).')); }
+    else kort.append(lav('p', 'meta', 'Intet billede – artiklen får sitets emnekort.'));
     const meta = lav('p', 'meta', `Skrevet ${tidTekst(k.skrevet)} · ${v.ord} ord`);
     if (k.type !== 'ny') { const a = lav('a', '', 'se den nuværende udgave'); a.href = `/video/${k.slug}/`; a.target = '_blank'; a.rel = 'noopener'; meta.append(' · ', a); }
     kort.append(meta);

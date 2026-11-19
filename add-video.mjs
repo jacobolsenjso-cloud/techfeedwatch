@@ -1488,14 +1488,15 @@ ${content}`);
     const updatedYaml = erstatSlug ? `updated: "${new Date().toISOString().slice(0, 10)}"\n` : '';
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${updatedYaml}${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
-    // 19/11-2026 (Jacob): ALDRIG direkte i src/content/videos. Ny artikel og omskrivning bliver en krypteret
-    // kladde, som Jacob godkender på /godkend (kladder.mjs lægger den live). Fejler gemningen (fx mangler
-    // KLADDE_NOEGLE), kastes fejlen videre: hellere ingen artikel end en artikel, Jacob ikke har set.
-    await gemKladde({ slug, markdown, type: erstatSlug ? 'omskrevet' : 'ny' });
-    console.log(`✅ Succes! Kladde gemt: ${slug} (varighed ${duration}) - venter på Jacobs Godkend.`);
+    // 19/11-2026 (Jacob): billederne holdes tilbage sammen med kladden. De laves som før (samme stier), men
+    // bagefter flyttes alt nyt eller ændret ind i den krypterede kladde, og public/ stilles tilbage, som det var
+    // - så intet billede kommer på sitet eller på GitHub, før Jacob trykker Godkend (kladder.mjs lægger dem ud).
+    const billedStier = Object.values(sitetsStier(slug)).map((s) => s.replace(/^\.\//, ''));
+    const billederFoer = new Map(billedStier.map((s) => [s, fs.existsSync(s) ? fs.readFileSync(s) : null]));
     // Billede til artiklen (13/10): AI-genereret billede med "AI-generated" og "TechFeedWatch.com"
     // (src/lib/aibillede.mjs) — øverst i artiklen, på kortene og som delebillede. Fejler det,
-    // laves det abstrakte emnekort som før. Fejler stille: artiklen er allerede gemt.
+    // laves det abstrakte emnekort som før. Fejler stille: kladden gemmes alligevel.
+    try {
     if (!isShort) {
       // Har artiklen allerede et AI-billede (fx ved omskrivning af en gammel artikel), genbruges
       // det — ellers betales billedet to gange (14/10, Jacob: billeder og omskrivning slås sammen).
@@ -1503,11 +1504,22 @@ ${content}`);
       // 25/10 (Jacob): et eksisterende AI-billede laves aldrig om; en artikel UDEN AI-billede får et.
       else {
         const ai = await lavAiBillede(genAI, { slug, titel: safeTitle, emne: finalTags[0] || '', resume: safeSummary }, sitetsStier(slug));
-        if (!ai) await generateOgCard(videoId, slug);
+        if (!ai) await generateOgCard(videoId, slug, { titel: safeTitle, emne: finalTags[0] || '' });
       }
     } else {
-      await generateOgCard(videoId, slug);
+      await generateOgCard(videoId, slug, { titel: safeTitle, emne: finalTags[0] || '' });
     }
+    } catch (e) { console.log(`🖼️ Billedet kunne ikke laves: ${String(e.message).split('\n')[0]}`); }
+    const billeder = {};
+    for (const s of billedStier) {
+      const nu = fs.existsSync(s) ? fs.readFileSync(s) : null; const foer = billederFoer.get(s);
+      if (nu && (!foer || !nu.equals(foer))) { billeder[s] = nu.toString('base64'); if (foer) fs.writeFileSync(s, foer); else fs.rmSync(s); }
+    }
+    // 19/11-2026 (Jacob): ALDRIG direkte i src/content/videos. Ny artikel og omskrivning bliver en krypteret
+    // kladde, som Jacob godkender på /godkend (kladder.mjs lægger den live). Fejler gemningen (fx mangler
+    // KLADDE_NOEGLE), kastes fejlen videre: hellere ingen artikel end en artikel, Jacob ikke har set.
+    await gemKladde({ slug, markdown, type: erstatSlug ? 'omskrevet' : 'ny', billeder });
+    console.log(`✅ Succes! Kladde gemt: ${slug} (varighed ${duration}, ${Object.keys(billeder).length} billeder holdt tilbage) - venter på Jacobs Godkend.`);
   } catch (error) {
     console.log("❌ Fejl:", error.message);
   }
