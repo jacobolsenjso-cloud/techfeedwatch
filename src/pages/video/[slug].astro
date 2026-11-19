@@ -407,6 +407,38 @@ const metaDesc = rawMeta.length > 157
     /* Del-knap øverst til højre i byline-linjen (13/10) */
     .article-byline { display: flex; align-items: center; gap: 12px; }
     .byline-share { margin-left: auto; flex-shrink: 0; }
+    /* 19/11-2026: Listen · Share · Save under byline. Aktiv (gemt / læser op) = fast #0e7490 bag hvid tekst (FARVEREGEL). */
+    .byline-knapper { display: flex; flex-wrap: wrap; gap: 8px; }
+    .byline-knapper .action-pill.aktiv { background: #0e7490; color: #fff; border-color: #0e7490; }
+    .byline-knapper .action-pill[hidden] { display: none; } /* .action-pill sætter display - ellers ville "hidden" ikke virke */
+    /* Mobil: byline-linjen bryder om, og de tre knapper står på deres egen linje under navnet (ellers for bred) */
+    @media (max-width: 600px) { .article-byline { flex-wrap: wrap; } .byline-knapper { margin-left: 0; width: 100%; } }
+
+    /* 19/11-2026: "Was this article helpful?" lige efter artiklen (som techmediaarch, egen kode). Knapperne er mindst
+       44 px høje (tryk på mobil); valgt = fast #0e7490 bag hvid tekst, ellers sitets tekstfarver. */
+    .tfw-nyttig { margin: 40px 0 28px; padding: 24px 26px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--card-bg, #fff); }
+    .tfw-nyttig-titel { margin: 0 0 6px; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.01em; }
+    .tfw-nyttig-sub { margin: 0 0 16px; font-size: 0.92rem; color: #6b7280; }
+    body.dark-mode .tfw-nyttig-sub { color: #9ca3af; }
+    .tfw-nyttig-knapper { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .tfw-svar { display: inline-flex; align-items: center; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; }
+    .tfw-skille { width: 1px; align-self: stretch; margin: 10px 0; background: var(--border-color); }
+    .tfw-pille { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 18px; font: inherit; font-weight: 600; font-size: 1rem; color: var(--text-color); background: transparent; border: none; cursor: pointer; transition: background 0.15s; }
+    .tfw-pille svg { width: 20px; height: 20px; }
+    .tfw-pille.tfw-boks { border: 1px solid var(--border-color); border-radius: 12px; }
+    .tfw-pille:hover { background: var(--hover-bg); }
+    .tfw-pille.aktiv { background: #0e7490; color: #fff; }
+    .tfw-pille.tfw-boks.aktiv { border-color: #0e7490; }
+    .tfw-pille:focus-visible, .tfw-grund:focus-visible { outline: 2px solid var(--teal-text); outline-offset: 2px; }
+    .tfw-grunde { margin-top: 16px; }
+    .tfw-grunde-titel { margin: 0 0 8px; font-size: 0.92rem; font-weight: 600; }
+    .tfw-grunde-knapper { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tfw-grund { min-height: 44px; padding: 0 14px; font: inherit; font-size: 0.92rem; color: var(--text-color); background: transparent; border: 1px solid var(--border-color); border-radius: 999px; cursor: pointer; }
+    .tfw-grund:hover { background: var(--hover-bg); }
+    .tfw-grund.aktiv { background: #0e7490; color: #fff; border-color: #0e7490; }
+    .tfw-tak { margin: 12px 0 0; font-size: 0.92rem; font-weight: 600; color: var(--teal-text); }
+    .tfw-tak:empty { display: none; }
+    @media (max-width: 600px) { .tfw-nyttig { padding: 20px 18px; } .tfw-pille { padding: 0 14px; } }
     /* Linket "In the video: …" under videoen — tekstfarven skifter med lys/mørk (farvereglen) */
     .time-compare a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
     .time-compare a:hover { text-decoration: underline; }
@@ -1164,10 +1196,23 @@ const metaDesc = rawMeta.length > 157
             </div>
             {/* Del-knap øverst (13/10, Jacob). Klassen share-trigger giver den samme delefunktion
                 som knapperne under videoen og nederst (systemets delemenu, ellers kopieres linket). */}
-            <button type="button" class="action-pill share-trigger byline-share" aria-label="Share this article" title="Share">
-              <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-              <span class="share-text">Share</span>
-            </button>
+            {/* 19/11-2026 (Jacob, som techmediaarch): Listen · Share · Save under byline, så man kan gemme eller
+                få læst op uden at rulle ned. Listen og Save styrer de SAMME funktioner som knapperne under videoen
+                (som er urørte): Listen trykker på #listenBtn og vises kun, hvis browseren kan læse op; Save bruger watchLater. */}
+            <div class="byline-share byline-knapper">
+              <button type="button" class="action-pill byline-listen" hidden aria-pressed="false" aria-label="Listen to this article" title="Listen">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span class="byline-listen-tekst">Listen</span>
+              </button>
+              <button type="button" class="action-pill share-trigger" aria-label="Share this article" title="Share">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                <span class="share-text">Share</span>
+              </button>
+              <button type="button" class="action-pill tfw-gem" aria-pressed="false" aria-label="Save this article" title="Save">
+                <svg class="action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+                <span class="tfw-gem-tekst">Save</span>
+              </button>
+            </div>
           </div>
 
           <p class="source-credit">
@@ -1366,6 +1411,106 @@ const metaDesc = rawMeta.length > 157
           })();
         </script>
 
+        {/* 19/11-2026 (Jacob valgte A, efter techmediaarch - egen kode her): "Was this article helpful?" + Share + Save
+            lige efter artiklens tekst, dér hvor læseren er færdig. Erstatter Share-boksen efter Sources. Knapperne under
+            videoen er urørte (Jacobs regel 12/10); boksen bruger de samme gemte felter (interaction_<slug>, watchLater),
+            så Helpful/Saved står ens begge steder. Intet sendes nogen steder hen (Jacob: ingen måling). */}
+        <section class="tfw-nyttig" aria-labelledby="nyttig-titel" data-slug={slug} data-title={title} data-img={`/kort/${slug}.webp`}>
+          <h2 class="tfw-nyttig-titel" id="nyttig-titel">Was this article helpful?</h2>
+          <p class="tfw-nyttig-sub">One click. No account, nothing personal.</p>
+          <div class="tfw-nyttig-knapper">
+            <div class="tfw-svar" role="group" aria-label="Was this article helpful?">
+              <button type="button" class="tfw-pille tfw-ja" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"></path><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"></path></svg>
+                <span>Yes</span>
+              </button>
+              <span class="tfw-skille" aria-hidden="true"></span>
+              <button type="button" class="tfw-pille tfw-nej" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14V2"></path><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"></path></svg>
+                <span>No</span>
+              </button>
+            </div>
+            <button type="button" class="tfw-pille tfw-boks share-trigger" aria-label="Share this article">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span class="share-text">Share</span>
+            </button>
+            <button type="button" class="tfw-pille tfw-boks tfw-gem" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+              <span class="tfw-gem-tekst">Save</span>
+            </button>
+          </div>
+          <div class="tfw-grunde" hidden>
+            <p class="tfw-grunde-titel">What was the problem?</p>
+            <div class="tfw-grunde-knapper">
+              <button type="button" class="tfw-grund">Too basic</button>
+              <button type="button" class="tfw-grund">Too technical</button>
+              <button type="button" class="tfw-grund">Outdated</button>
+              <button type="button" class="tfw-grund">Didn't answer my question</button>
+            </div>
+          </div>
+          <p class="tfw-tak" role="status" aria-live="polite"></p>
+        </section>
+        <script is:inline>
+          // 19/11-2026: Listen/Save under byline + "Was this article helpful?"-boksen. Samme gemte felter som knapperne
+          // under videoen (interaction_<slug>, watchLater), som er urørte - deres udseende opdateres herfra, så alt står ens.
+          (function () {
+            function start() {
+              var boks = document.querySelector('.tfw-nyttig'); if (!boks) return;
+              var slug = boks.getAttribute('data-slug'), titel = boks.getAttribute('data-title'), img = boks.getAttribute('data-img');
+              var vLike = document.getElementById('likeBtn'), vDis = document.getElementById('dislikeBtn');
+              var vSave = document.getElementById('saveBtn'), vSaveTxt = document.getElementById('saveText'), vListen = document.getElementById('listenBtn');
+              var laes = function (k, d) { try { return JSON.parse(localStorage.getItem(k) || d); } catch (e) { return JSON.parse(d); } };
+              var gemt = function () { return laes('watchLater', '[]').some(function (v) { return v.slug === slug; }); };
+              var stemme = function () { try { return localStorage.getItem('interaction_' + slug) || 'none'; } catch (e) { return 'none'; } };
+              var ja = boks.querySelector('.tfw-ja'), nej = boks.querySelector('.tfw-nej'), grunde = boks.querySelector('.tfw-grunde'), tak = boks.querySelector('.tfw-tak');
+              function tegn() {
+                var s = stemme(), g = gemt();
+                ja.classList.toggle('aktiv', s === 'liked'); ja.setAttribute('aria-pressed', String(s === 'liked'));
+                nej.classList.toggle('aktiv', s === 'disliked'); nej.setAttribute('aria-pressed', String(s === 'disliked'));
+                document.querySelectorAll('.tfw-gem').forEach(function (b) { b.classList.toggle('aktiv', g); b.setAttribute('aria-pressed', String(g)); var t = b.querySelector('.tfw-gem-tekst'); if (t) t.textContent = g ? 'Saved' : 'Save'; });
+                if (vLike) vLike.classList.toggle('btn-active', s === 'liked');
+                if (vDis) vDis.classList.toggle('btn-active', s === 'disliked');
+                if (vSave) vSave.classList.toggle('btn-active', g);
+                if (vSaveTxt) vSaveTxt.innerHTML = g ? 'Saved' : 'Save';
+              }
+              function saetStemme(v) { var ny = stemme() === v ? 'none' : v; try { localStorage.setItem('interaction_' + slug, ny); } catch (e) {} return ny; }
+              ja.addEventListener('click', function () { var s = saetStemme('liked'); grunde.hidden = true; tak.textContent = s === 'liked' ? 'Thanks!' : ''; tegn(); });
+              nej.addEventListener('click', function () { var s = saetStemme('disliked'); grunde.hidden = s !== 'disliked'; tak.textContent = ''; tegn(); });
+              boks.querySelectorAll('.tfw-grund').forEach(function (b) {
+                b.addEventListener('click', function () {
+                  boks.querySelectorAll('.tfw-grund').forEach(function (x) { x.classList.toggle('aktiv', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+                  try { localStorage.setItem('tfw_grund_' + slug, b.textContent); } catch (e) {}
+                  tak.textContent = 'Thanks for telling me.';
+                });
+              });
+              document.querySelectorAll('.tfw-gem').forEach(function (b) {
+                b.addEventListener('click', function () {
+                  var w = laes('watchLater', '[]'); var i = w.findIndex(function (v) { return v.slug === slug; });
+                  if (i === -1) w.unshift({ slug: slug, title: titel, img: img, savedAt: Date.now() }); else w.splice(i, 1);
+                  try { localStorage.setItem('watchLater', JSON.stringify(w)); } catch (e) {}
+                  tegn();
+                });
+              });
+              // Videoens egne knapper: deres kode kører, derefter følger de nye med
+              [vLike, vDis, vSave].forEach(function (b) { if (b) b.addEventListener('click', function () { setTimeout(tegn, 0); }); });
+              // Listen under byline trykker på videoens Listen-knap og viser dens tilstand (vises kun, når den gør)
+              var top = document.querySelector('.byline-listen');
+              if (top && vListen) {
+                var spejl = function () {
+                  top.hidden = vListen.hidden;
+                  var sp = vListen.classList.contains('is-speaking'); top.classList.toggle('aktiv', sp); top.setAttribute('aria-pressed', String(sp));
+                  var l = document.getElementById('listenLabel'), t = top.querySelector('.byline-listen-tekst'); if (l && t) t.textContent = l.textContent;
+                };
+                top.addEventListener('click', function () { vListen.click(); setTimeout(spejl, 50); });
+                new MutationObserver(spejl).observe(vListen, { attributes: true, subtree: true, characterData: true, childList: true });
+                spejl();
+              }
+              tegn();
+            }
+            if (document.readyState !== 'loading') start(); else document.addEventListener('DOMContentLoaded', start);
+          })();
+        </script>
+
         {peopleAlsoAsk.length > 0 && (
           <aside class="paa" aria-labelledby="paa-heading">
             <h3 class="paa-title" id="paa-heading">People also ask</h3>
@@ -1390,16 +1535,7 @@ const metaDesc = rawMeta.length > 157
         {kildeHtml && <section class="video-content kilde-sektion" set:html={kildeHtml}></section>}
 
 
-        <div class="share-cta">
-          <div>
-            <p class="share-cta-title">Share this article</p>
-            <p class="share-cta-sub">Share this analysis with your network or save the link for later.</p>
-          </div>
-          <button type="button" class="share-cta-btn share-trigger" aria-label="Share this article">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-            <span class="share-text">Share</span>
-          </button>
-        </div>
+        {/* 19/11-2026: Share-boksen her er fjernet - Share står nu i "Was this article helpful?"-boksen ovenfor. */}
 
         {/* Forrige/næste artikel (13/10, Jacob): flyttet op lige efter del-boksen — det er her,
             en læser, der er færdig, vil videre. Inden for samme emne (se navEmne øverst). */}
