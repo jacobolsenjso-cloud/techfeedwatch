@@ -18,7 +18,7 @@ export const STARTET = '2026-06';
 export const STARTET_TEKST = 'June 2026';
 // Biografien (Jacob 5/11-2026: samme som techmediaarchs, med TechFeedWatch). Kun det, Jacob har sagt er sandt.
 // Vises i forfatterboksen, på forfattersiden og som Person.description.
-export const PERSON_BIO = 'Jacob builds and runs two websites himself, including TechFeedWatch, and set up the AI robots that research and draft their articles. Over the years he has done affiliate marketing, SEO, image and video editing and YouTube channel setup, and he has used Bitcoin and crypto wallets since 2011, so security questions are personal to him. He lives in Denmark.';
+export const PERSON_BIO = 'Jacob builds and runs three websites himself, including TechFeedWatch, and set up the AI robots that research and draft their articles. Over the years he has done affiliate marketing, SEO, image and video editing and YouTube channel setup, and he has used Bitcoin and crypto wallets since 2011, so security questions are personal to him. He lives in Denmark.';
 // Sitets EGNE profiler (en TechFeedWatch-side på YouTube, Pinterest, Facebook …). TOM indtil Jacob har
 // oprettet dem, og de linker tilbage til sitet. Jacobs personlige profiler står på personen (person.mjs).
 // Én linje pr. profil, fx 'https://www.pinterest.com/techfeedwatch/'.
