@@ -13,8 +13,8 @@ summary: "Prompt engineering is the specialized practice of crafting precise ins
 metaDescription: "Understand prompt engineering in generative AI: how crafting precise prompts guides models like DALL-E 2."
 targetQuestion: "what is prompt engineering in generative ai"
 duration: "3:28:42"
-viewCount: 28452
-viewsUpdated: "2026-11-16"
+viewCount: 28454
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

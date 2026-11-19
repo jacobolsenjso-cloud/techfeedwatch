@@ -12,8 +12,8 @@ summary: "Artificial intelligence powers automated decision-making by recognizin
 metaDescription: "Learn what artificial intelligence is and how it works. Discover how neural networks learn from data, why narrow AI dominates, and where real risks lie."
 targetQuestion: "what is artificial intelligence and how does it work"
 duration: "26:19"
-viewCount: 2268914
-viewsUpdated: "2026-11-16"
+viewCount: 2287398
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

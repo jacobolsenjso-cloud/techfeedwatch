@@ -14,8 +14,8 @@ summary: "Generative AI is fundamentally changing how users discover information
 metaDescription: "Understand Generative AI Search Optimization (GEO/AEO) and how to prepare your website for AI-driven search engines. Get ahead of the curve."
 targetQuestion: "how generative ai is changing seo"
 duration: "28:21"
-viewCount: 49832
-viewsUpdated: "2026-11-16"
+viewCount: 50554
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 faqs:

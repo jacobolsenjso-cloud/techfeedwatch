@@ -12,8 +12,8 @@ summary: "A qubit serves as the fundamental building block of quantum computing,
 metaDescription: "Understand what a qubit in quantum computing is, how logical error correction works, and why 256 qubits create an exponential state space."
 targetQuestion: "what is a qubit in quantum computing"
 duration: "7:45"
-viewCount: 583244
-viewsUpdated: "2026-11-16"
+viewCount: 584240
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 faqs:

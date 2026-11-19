@@ -12,8 +12,8 @@ summary: "Augmented reality glasses exist today as commercial hardware and exper
 metaDescription: "Do augmented reality glasses exist? Discover working commercial AR glasses, enterprise headsets, advanced prototypes, and the hardware hurdles they face."
 targetQuestion: "do augmented reality glasses exist"
 duration: "10:05"
-viewCount: 33139
-viewsUpdated: "2026-11-16"
+viewCount: 33426
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

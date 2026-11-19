@@ -12,8 +12,8 @@ summary: "Coding in healthcare translates medical diagnoses, procedures, and equ
 metaDescription: "Learn what coding in healthcare is, how standard code sets operate, and how certified specialists translate medical records into insurance claims."
 targetQuestion: "what is coding in healthcare"
 duration: "16:31"
-viewCount: 17663
-viewsUpdated: "2026-11-18"
+viewCount: 17689
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

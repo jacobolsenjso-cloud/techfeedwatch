@@ -14,8 +14,8 @@ summary: "The pursuit of independent wealth through software development is incr
 metaDescription: "The pursuit of independent wealth through software development is increasingly viable for solo practitioners."
 targetQuestion: "how much do solo developers make"
 duration: "8:51"
-viewCount: 2490731
-viewsUpdated: "2026-11-16"
+viewCount: 2491225
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 revised: true

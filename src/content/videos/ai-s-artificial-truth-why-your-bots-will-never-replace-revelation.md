@@ -12,8 +12,8 @@ summary: "Artificial intelligence systems generate convincing language, but they
 metaDescription: "Learn what AI limitations mean for reliability, bias, and power use. Discover benchmark failure rates and how to deploy machine learning safely."
 targetQuestion: "what are ai limitations"
 duration: "5:14"
-viewCount: 1929
-viewsUpdated: "2026-11-16"
+viewCount: 1934
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

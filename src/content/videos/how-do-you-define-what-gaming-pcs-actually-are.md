@@ -13,8 +13,8 @@ summary: "Gaming PCs are specialized desktop computers engineered with dedicated
 metaDescription: "What are gaming PCs? Learn how dedicated graphics hardware, powerful processors, and cooling systems set gaming computers apart from standard PCs."
 targetQuestion: "what are gaming pcs"
 duration: "26:18"
-viewCount: 245967
-viewsUpdated: "2026-11-16"
+viewCount: 251047
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

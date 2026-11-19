@@ -12,8 +12,8 @@ summary: "Hardware manufacturers showcased groundbreaking head-worn spatial comp
 metaDescription: "Smart glasses are advancing rapidly with wider fields of view, tethered computing options, and standalone Linux OS builds from top hardware vendors."
 targetQuestion: "what do smart glasses display look like"
 duration: "21:48"
-viewCount: 69970
-viewsUpdated: "2026-11-16"
+viewCount: 70221
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 faqs:

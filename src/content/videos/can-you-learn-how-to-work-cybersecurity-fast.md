@@ -12,8 +12,8 @@ summary: "Securing a career in cybersecurity requires establishing technical pro
 metaDescription: "Learn how to work in cybersecurity with this comprehensive guide covering foundational networking, entry-level jobs, salary data, and lab practice."
 targetQuestion: "how to work in cybersecurity"
 duration: "7:59"
-viewCount: 2011
-viewsUpdated: "2026-11-16"
+viewCount: 2021
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-19"

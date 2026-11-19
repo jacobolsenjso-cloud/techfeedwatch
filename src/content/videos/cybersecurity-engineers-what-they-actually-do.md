@@ -12,8 +12,8 @@ summary: "A cybersecurity engineer designs, builds, and maintains security contr
 metaDescription: "What does a cybersecurity engineer do? Learn daily job duties, core technical skills, analyst differences, and national salary expectations."
 targetQuestion: "what does a cybersecurity engineer do"
 duration: "15:09"
-viewCount: 6251
-viewsUpdated: "2026-11-16"
+viewCount: 6449
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

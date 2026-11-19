@@ -14,8 +14,8 @@ summary: "Peter Steinberger's OpenClaw project illustrates a significant evoluti
 metaDescription: "OpenClaw's autonomous AI agents independently pursue goals and interact digitally, shifting how humans work and creating new opportunities and challenges."
 targetQuestion: "what do autonomous ai agents do"
 duration: "17:36"
-viewCount: 422972
-viewsUpdated: "2026-11-16"
+viewCount: 423253
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 faqs:

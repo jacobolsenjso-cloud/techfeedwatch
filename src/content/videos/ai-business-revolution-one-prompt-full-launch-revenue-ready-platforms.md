@@ -13,8 +13,8 @@ summary: "Starting an online business with artificial intelligence requires usin
 metaDescription: "Learn how to use AI to start an online business with practical tools, marketing workflows, and realistic cost expectations from recent economic data."
 targetQuestion: "how to use ai to start an online business"
 duration: "9:57"
-viewCount: 57788
-viewsUpdated: "2026-11-16"
+viewCount: 57831
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

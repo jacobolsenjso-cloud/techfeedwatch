@@ -13,8 +13,8 @@ summary: "The future of AI infrastructure is evolving beyond massive, centralize
 metaDescription: "The future of AI infrastructure is evolving beyond massive, centralized data centers."
 targetQuestion: "what are ai chips used for"
 duration: "9:54"
-viewCount: 7939
-viewsUpdated: "2026-11-16"
+viewCount: 7941
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 faqs:

@@ -13,8 +13,8 @@ summary: "HTML tags directly control how automated search crawlers read, index, 
 metaDescription: "Learn how HTML tags affect SEO, control web indexing, build search snippets, and why Google ignores certain older metadata tags."
 targetQuestion: "how do html tags affect seo"
 duration: "6:04"
-viewCount: 709
-viewsUpdated: "2026-11-16"
+viewCount: 726
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

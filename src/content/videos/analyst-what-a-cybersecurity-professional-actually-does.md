@@ -12,8 +12,8 @@ summary: "A cybersecurity analyst defends computer networks, hardware, and digit
 metaDescription: "Learn what a cybersecurity analyst does, the skills required, hiring realities, and median pay based on federal data and industry studies."
 targetQuestion: "what is a cybersecurity analyst"
 duration: "10:23"
-viewCount: 1382
-viewsUpdated: "2026-11-16"
+viewCount: 1440
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3

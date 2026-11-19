@@ -13,8 +13,8 @@ summary: "Model Context Protocol gives artificial intelligence models a standard
 metaDescription: "Wondering about MCP vs skills for AI agents? Discover how Model Context Protocol connects tools while skills deliver step-by-step procedural workflows."
 targetQuestion: "mcp vs skills"
 duration: "8:03"
-viewCount: 140852
-viewsUpdated: "2026-11-16"
+viewCount: 141945
+viewsUpdated: "2026-11-19"
 thumbMax: true
 isShort: false
 recipe: 3
