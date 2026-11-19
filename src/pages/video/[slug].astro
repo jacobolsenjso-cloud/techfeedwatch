@@ -96,6 +96,27 @@ const kildeAfsnit = (typeof video.rawContent === 'function' ? video.rawContent()
 // 5/11-2026: har teksten et "I"-afsnit (Jacobs egne holdninger fra hans noter), siger forfatterboksen det.
 const jegAfsnit = harJegAfsnit(typeof video.rawContent === 'function' ? video.rawContent() : '');
 const antalWebKilder = (kildeAfsnit.match(/^- \[[^\]]*\]\(https?:\/\/(?!(?:www\.)?youtube\.com)/gm) || []).length;
+
+// 19/11-2026 (Jacob valgte A): "Verification record" — en foldbar linje under byline, i stedet for den gamle
+// kildelinje. Samme regel som på techmediaarch (28/10): KUN linjer, der er sande for netop denne artikel.
+// Mangler en dato i artiklen, står linjen der ikke (fx "Approved" før Jacob har godkendt den).
+const datoKort = (d: string) => new Date(`${String(d).slice(0, 10)}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const dag = (d: any) => (d ? String(d).slice(0, 10) : '');
+const omskrevet: string | null = video.frontmatter.rewrittenAt || null;
+const faktatjekket: string | null = video.frontmatter.factChecked || null;
+// "Rewritten" kun hvis det er en anden dag end udgivelsen; "Updated" kun hvis det er en anden dag end både
+// udgivelse, omskrivning, faktatjek og godkendelse — ellers ville boksen sige det samme to gange med to ord.
+// "with the current method" kun med webkilder: gamle artikler kan have rewrittenAt fra en ældre omskrivning.
+const visOmskrevet = !!omskrevet && dag(omskrevet) !== dag(date);
+const visOpdateret = !!showUpdated && ![dag(date), dag(omskrevet), dag(godkendt), dag(faktatjekket)].includes(dag(updated));
+// Kildernes hjemmesider i den rækkefølge, de står i artiklens "Sources" (YouTube tælles ikke - videoen står for sig)
+const kildeVaerter = [...new Set([...kildeAfsnit.matchAll(/^- \[[^\]]*\]\((https?:\/\/(?:www\.)?([^/)\s]+)[^)]*)\)/gm)]
+  .map((m) => m[2].toLowerCase())
+  .filter((h) => !/(^|\.)(youtube\.com|youtu\.be)$/.test(h)))];
+const verifResume = [
+  godkendt ? `Approved ${datoKort(godkendt)}` : '',
+  antalWebKilder > 0 ? `${antalWebKilder} web sources and a video` : 'Based on a video',
+].filter(Boolean).join(' · ');
 // Sitets eget billede (public/kort, lav-kortbilleder.mjs) under resuméet — kun hvis det findes.
 // 13/10: har artiklen et AI-billede (public/billeder, src/lib/aibillede.mjs), bruges den store
 // udgave (960x540) her, med en alt-tekst der siger, at det er AI-genereret. Ellers emnekortet.
@@ -321,7 +342,14 @@ const articleSchema = {
   // Skal matche <link rel="canonical">, som har afsluttende skråstreg. Uden den
   // pegede schemaet på en anden adresse end canonical (målt 20/9-2026) — to
   // adresser for samme side er netop dét, canonical findes for at undgå.
-  "mainEntityOfPage": { "@type": "WebPage", "@id": `${currentUrl}/` },
+  // 19/11-2026 (Jacob): godkendte artikler fortæller også maskinerne, at Jacob har læst og godkendt netop denne
+  // udgave og hvornår (schema.org WebPage: reviewedBy + lastReviewed). Kun når feltet godkendt findes - samme
+  // dato som "Approved" i Verification record, så siden og schemaet aldrig siger to forskellige ting.
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${currentUrl}/`,
+    ...(godkendt ? { "lastReviewed": dag(godkendt), "reviewedBy": forfatterRef() } : {})
+  },
   // Artiklen er en analyse af en video fra en tredjepart — det siger vi eksplicit.
   //
   // Som REN URL, ikke som en VideoObject. Da den var typet, talte Google den som
@@ -581,18 +609,39 @@ const metaDesc = rawMeta.length > 157
     @media (max-width: 600px) { .afslutning-knap { flex: 1 1 100%; } }
     body.dark-mode .byline-meta { color: #9ca3af; }
 
-    /* Kildeangivelse: gør det utvetydigt at videoen er en tredjeparts værk. */
-    .source-credit {
-      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-      margin: 0 0 18px 0; padding: 10px 14px;
+    /* Verification record (19/11-2026, Jacob valgte A): samme ramme som den gamle kildelinje, men foldbar.
+       Lukket: én linje (to på smal mobil). Åben: rækkerne nedenunder. Skaberen krediteres i begge tilstande. */
+    .verif {
+      margin: 0 0 18px 0;
       border: 1px solid var(--border-color); border-radius: 10px;
       background: var(--hover-bg);
       font-size: 0.86rem; color: #4b5563; line-height: 1.5;
     }
-    body.dark-mode .source-credit { color: #a1a1aa; }
-    .source-credit svg { width: 17px; height: 17px; flex-shrink: 0; color: #ff0000; }
-    .source-credit a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
-    .source-credit a:hover { text-decoration: underline; }
+    body.dark-mode .verif { color: #a1a1aa; }
+    .verif-linje { display: flex; align-items: center; gap: 8px; padding: 10px 14px; cursor: pointer; list-style: none; border-radius: 10px; }
+    .verif-linje::-webkit-details-marker { display: none; }
+    .verif-linje:focus-visible { outline: 2px solid var(--teal-text); outline-offset: 2px; }
+    .verif-ikon { width: 18px; height: 18px; flex-shrink: 0; color: var(--teal-text); }
+    .verif-tekst { flex: 1; min-width: 0; }
+    .verif-label { font-weight: 700; color: var(--teal-text); }
+    .verif-pil { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.2s ease; }
+    .verif[open] .verif-pil { transform: rotate(180deg); }
+    @media (prefers-reduced-motion: reduce) { .verif-pil { transition: none; } }
+    .verif-indhold { padding: 2px 14px 12px 40px; }
+    .verif dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 14px; }
+    .verif dt { font-weight: 600; color: var(--text-color); }
+    .verif dd { margin: 0; overflow-wrap: anywhere; }
+    .verif-note { margin: 10px 0 6px; font-size: 0.8rem; }
+    .verif a { color: var(--teal-text); font-weight: 600; text-decoration: none; }
+    .verif a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      /* Mobil: "Verification record" på egen linje, resuméet under - ellers starter linje 2 med "·" */
+      .verif-label, .verif-resume { display: block; }
+      .verif-skille { display: none; }
+      .verif-indhold { padding-left: 14px; }
+      .verif dl { grid-template-columns: 1fr; gap: 0; }
+      .verif dd { margin-bottom: 6px; }
+    }
     /* "Keep reading on TechFeedWatch" (14/10, Jacob): 2 kort, teal top-bjælke som indholdsfortegnelsen,
        så boksen ses som sitets egen og ikke en annonce. Computer: 2 side om side. Mobil: liste. */
     .inline-recs { margin: 34px 0; border: 1px solid var(--border-color); border-radius: 12px; background: var(--card-bg); overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.06); max-width: 600px; }
@@ -1215,19 +1264,39 @@ const metaDesc = rawMeta.length > 157
             </div>
           </div>
 
-          <p class="source-credit">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
-            <span>
-              {antalWebKilder > 0
-                ? <>Based on {antalWebKilder} web sources and a video by </>
-                : <>Researched with a video published on YouTube by{' '}</>}
-              {sourceChannel && sourceChannelUrl ? (
-                <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
-              ) : (
-                <a href={`https://www.youtube.com/watch?v=${youtubeId}`} target="_blank" rel="noopener nofollow">the original creator</a>
-              )}. TechFeedWatch is not affiliated with the creator, and all rights to the video remain theirs.
-            </span>
-          </p>
+          {/* 19/11-2026 (Jacob valgte A): Verification record som foldbar linje - afløser den gamle kildelinje.
+              <details> er indbygget i browseren: virker uden JavaScript, med tastatur og skærmlæser, og Google
+              læser indholdet, også når den er lukket. Lukket viser den det vigtigste: godkendt + kilder + skaber. */}
+          <details class="verif">
+            <summary class="verif-linje">
+              <svg class="verif-ikon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>{godkendt && <path d="m9 12 2 2 4-4"/>}</svg>
+              <span class="verif-tekst"><span class="verif-label">Verification record</span><span class="verif-resume"><span class="verif-skille"> · </span>{verifResume}{sourceChannel ? ` by ${sourceChannel}` : ''}</span></span>
+              <svg class="verif-pil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="verif-indhold">
+              <dl>
+                <dt>Published</dt><dd><time datetime={dag(date)}>{datoKort(date)}</time></dd>
+                {visOmskrevet && <><dt>Rewritten</dt><dd><time datetime={dag(omskrevet)}>{datoKort(omskrevet!)}</time>{antalWebKilder > 0 ? ', with the current method' : ''}</dd></>}
+                {visOpdateret && <><dt>Updated</dt><dd><time datetime={dag(updated)}>{datoKort(updated!)}</time></dd></>}
+                {faktatjekket && <><dt>Fact-checked</dt><dd><time datetime={dag(faktatjekket)}>{datoKort(faktatjekket)}</time>, claims checked again against current sources</dd></>}
+                {godkendt && <><dt>Approved</dt><dd><time datetime={dag(godkendt)}>{datoKort(godkendt)}</time>, read in full and approved by Jacob S. Olsen before publishing</dd></>}
+                <dt>Sources</dt>
+                <dd>
+                  {antalWebKilder > 0 && <>{antalWebKilder} web pages{kildeVaerter.length > 0 && <> ({kildeVaerter.slice(0, 3).join(', ')}{kildeVaerter.length > 3 ? ' …' : ''})</>} and </>}
+                  {antalWebKilder > 0 ? 'a video by' : 'A video by'}{' '}
+                  {sourceChannel && sourceChannelUrl ? (
+                    <a href={sourceChannelUrl} target="_blank" rel="noopener nofollow">{sourceChannel}</a>
+                  ) : (
+                    <a href={`https://www.youtube.com/watch?v=${youtubeId}`} target="_blank" rel="noopener nofollow">the original creator</a>
+                  )}
+                  {antalWebKilder > 0 && <> · <a href="#sources">See all</a></>}
+                </dd>
+                <dt>Written</dt><dd>{antalWebKilder > 0 ? 'With AI from the named sources' : "With AI from the video's transcript"}</dd>
+              </dl>
+              <p class="verif-note">TechFeedWatch is not affiliated with the creator, and all rights to the video remain theirs.</p>
+              <a class="verif-link" href="/editorial-guidelines/#verification-record">How we verify →</a>
+            </div>
+          </details>
 
           <div class="summary-box">
             {summary}
