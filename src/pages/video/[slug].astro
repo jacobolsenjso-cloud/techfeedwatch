@@ -1463,6 +1463,10 @@ const metaDesc = rawMeta.length > 157
               var gemt = function () { return laes('watchLater', '[]').some(function (v) { return v.slug === slug; }); };
               var stemme = function () { try { return localStorage.getItem('interaction_' + slug) || 'none'; } catch (e) { return 'none'; } };
               var ja = boks.querySelector('.tfw-ja'), nej = boks.querySelector('.tfw-nej'), grunde = boks.querySelector('.tfw-grunde'), tak = boks.querySelector('.tfw-tak');
+              // Google Analytics (Jacob 19/11-2026): hvert tryk sendes som en hændelse med artiklen og placeringen
+              // (byline / bund / video). Kun hvis Analytics kører - i EU først efter samtykke (MainLayout). Intet personligt.
+              var spor = function (navn, data) { try { if (typeof gtag === 'function') gtag('event', navn, Object.assign({ article: slug }, data)); } catch (e) {} };
+              var placering = function (el) { return el.closest('.byline-knapper') ? 'byline' : el.closest('.tfw-nyttig') ? 'bund' : 'video'; };
               function tegn() {
                 var s = stemme(), g = gemt();
                 ja.classList.toggle('aktiv', s === 'liked'); ja.setAttribute('aria-pressed', String(s === 'liked'));
@@ -1474,13 +1478,14 @@ const metaDesc = rawMeta.length > 157
                 if (vSaveTxt) vSaveTxt.innerHTML = g ? 'Saved' : 'Save';
               }
               function saetStemme(v) { var ny = stemme() === v ? 'none' : v; try { localStorage.setItem('interaction_' + slug, ny); } catch (e) {} return ny; }
-              ja.addEventListener('click', function () { var s = saetStemme('liked'); grunde.hidden = true; tak.textContent = s === 'liked' ? 'Thanks!' : ''; tegn(); });
-              nej.addEventListener('click', function () { var s = saetStemme('disliked'); grunde.hidden = s !== 'disliked'; tak.textContent = ''; tegn(); });
+              ja.addEventListener('click', function () { var s = saetStemme('liked'); grunde.hidden = true; tak.textContent = s === 'liked' ? 'Thanks!' : ''; tegn(); if (s === 'liked') spor('article_helpful', { answer: 'yes', placement: 'bund' }); });
+              nej.addEventListener('click', function () { var s = saetStemme('disliked'); grunde.hidden = s !== 'disliked'; tak.textContent = ''; tegn(); if (s === 'disliked') spor('article_helpful', { answer: 'no', placement: 'bund' }); });
               boks.querySelectorAll('.tfw-grund').forEach(function (b) {
                 b.addEventListener('click', function () {
                   boks.querySelectorAll('.tfw-grund').forEach(function (x) { x.classList.toggle('aktiv', x === b); x.setAttribute('aria-pressed', String(x === b)); });
                   try { localStorage.setItem('tfw_grund_' + slug, b.textContent); } catch (e) {}
                   tak.textContent = 'Thanks for telling me.';
+                  spor('article_helpful_reason', { reason: b.textContent });
                 });
               });
               document.querySelectorAll('.tfw-gem').forEach(function (b) {
@@ -1489,10 +1494,17 @@ const metaDesc = rawMeta.length > 157
                   if (i === -1) w.unshift({ slug: slug, title: titel, img: img, savedAt: Date.now() }); else w.splice(i, 1);
                   try { localStorage.setItem('watchLater', JSON.stringify(w)); } catch (e) {}
                   tegn();
+                  if (i === -1) spor('article_save', { placement: placering(b) });
                 });
               });
               // Videoens egne knapper: deres kode kører, derefter følger de nye med
               [vLike, vDis, vSave].forEach(function (b) { if (b) b.addEventListener('click', function () { setTimeout(tegn, 0); }); });
+              // Måling af videoens knapper (markup og kode urørt - kun en ekstra lytter): tilstanden læses EFTER deres kode
+              if (vLike) vLike.addEventListener('click', function () { setTimeout(function () { if (stemme() === 'liked') spor('article_helpful', { answer: 'yes', placement: 'video' }); }, 0); });
+              if (vDis) vDis.addEventListener('click', function () { setTimeout(function () { if (stemme() === 'disliked') spor('article_helpful', { answer: 'no', placement: 'video' }); }, 0); });
+              if (vSave) vSave.addEventListener('click', function () { setTimeout(function () { if (gemt()) spor('article_save', { placement: 'video' }); }, 0); });
+              // Share: alle del-knapper på siden (byline, bund, video). GA4's anbefalede hændelse "share".
+              document.querySelectorAll('.share-trigger').forEach(function (b) { b.addEventListener('click', function () { spor('share', { method: 'button', content_type: 'article', item_id: slug, placement: placering(b) }); }); });
               // Listen under byline trykker på videoens Listen-knap og viser dens tilstand (vises kun, når den gør)
               var top = document.querySelector('.byline-listen');
               if (top && vListen) {
