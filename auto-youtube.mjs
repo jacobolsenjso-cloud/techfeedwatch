@@ -10,6 +10,11 @@ import { fjernDubletter, eksisterendeArtikler } from './src/lib/dublet.mjs';
 import { retSpoergsmaal, passerEmnet, redaktoerPrompt } from './src/lib/spoergsmaalsfilter.mjs';
 import { forhaandsScorer, SKAER } from './src/lib/forhaandstjek.mjs';
 import { hentTal, ordn, normaliser, gruppe, talTekst, logLinje, hentSpoergsmaal, forslagLinje } from './src/lib/dataforseo.mjs';
+// 19/11-2026 (Jacob): robotten skriver kun KLADDER (src/lib/kladder.mjs) - Jacob godkender før udgivelse.
+import { kladdeLog, nyeSkrevetIDag, koeFuld, antalVenter, KLADDE_LOFT, optagetAfKladder } from './src/lib/kladder.mjs';
+// Videoer i køen og blandt de afviste tæller som brugt (uden nøgle: tomt - add-video kan så heller ikke gemme)
+let KLADDE_VIDEOER = new Set();
+try { KLADDE_VIDEOER = (await optagetAfKladder()).videoer; } catch (e) { console.log(`Info: kladderne kunne ikke læses (${e.message.slice(0, 80)})`); }
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
@@ -488,6 +493,7 @@ function loadExistingVideoIds() {
   if (fs.existsSync(red)) {
     for (const m of fs.readFileSync(red, 'utf-8').matchAll(/^\/video\/([A-Za-z0-9_-]{11})\/?\s/gm)) ids.add(m[1]);
   }
+  for (const id of KLADDE_VIDEOER) ids.add(id); // 19/11-2026: kladder i køen og afviste kladder
   return ids;
 }
 
@@ -504,9 +510,11 @@ function countPublishedToday() {
   for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
     const content = fs.readFileSync(`${dir}/${file}`, 'utf-8');
     const match = content.match(/^date:\s*"(.*?)"/m);
-    if (match && match[1] === today) count++;
+    // 19/11-2026: artikler, Jacob har godkendt i dag, har feltet "skrevet" og er talt med i kladde-loggen nedenfor
+    // på den dag, robotten SKREV dem - de tæller ikke igen.
+    if (match && match[1] === today && !/^skrevet:/m.test(content)) count++;
   }
-  return count;
+  return count + nyeSkrevetIDag(today);
 }
 
 // Fjerner dubletter på videoId. `seen` deles på tværs af kald, så normale og shorts aldrig overlapper.
@@ -649,13 +657,14 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
     console.log(`▶️ Behandler NY ${label}: ${videoUrl}`);
 
     fs.rmSync(SKRIVE_MAERKE, { force: true });
+    const kladderFoer = kladdeLog().length; // 19/11-2026: en gemt kladde = en skrevet artikel
     try {
       // Mærket sendes med, så artiklen havner under det emne robotten ledte efter.
       execFileSync(process.execPath, ['add-video.mjs', videoUrl, '--tag', tag, ...qArgs], { stdio: 'inherit' });
       // add-video kan afvise (sprogtjek, tyndt transskript) og alligevel slutte
       // pænt. Kun en faktisk skrevet artikel tæller mod dagens loft — ellers
       // æder afvisninger budgettet, og næste kandidat får aldrig chancen.
-      if (loadExistingVideoIds().has(videoId)) {
+      if (loadExistingVideoIds().has(videoId) || kladdeLog().length > kladderFoer) {
         processed++;
         existingIds.add(videoId); // undgår dubletbehandling inden for samme kørsel
         if (spoergsmaal) markerSpoergsmaalBrugt(spoergsmaal, tag); // først NU er spørgsmålet brugt
@@ -668,7 +677,7 @@ async function processGroup(items, label, maxCount, existingIds, tag, spoergsmaa
     // B (16/10): en artikel blev SKREVET (dyre trin betalt) men ikke gemt -> stop kørslen.
     // Målt 15/10: 44 % af robottens pris gik til kasserede artikler, ofte 2 i samme kørsel.
     // Afvisninger FØR skrivningen (sprog, relevans, faktaark) må stadig prøve næste kandidat.
-    if (!loadExistingVideoIds().has(videoId) && fs.existsSync(SKRIVE_MAERKE)) {
+    if (!loadExistingVideoIds().has(videoId) && kladdeLog().length <= kladderFoer && fs.existsSync(SKRIVE_MAERKE)) {
       skrevetForsoegFejlet = true;
       console.log('Info: STOP — en skrevet artikel blev kasseret. Ingen flere forsøg i denne kørsel (sparer penge); næste kørsel prøver igen.');
       break;
@@ -721,6 +730,12 @@ async function findNewestVideos() {
   // --ignorer-loft: kun til lokale testkørsler af selve kæden (kandidater →
   // faktaark → artikel), når dagens kvote allerede er brugt. Robotten på
   // GitHub kører aldrig med flaget.
+  // Kø-loft (19/11-2026, Jacob): ligger der KLADDE_LOFT kladder og venter på hans Godkend, skrives intet -
+  // det sparer penge på artikler, ingen når at læse. Tjekkes før alle API-kald.
+  if (koeFuld() && !process.argv.includes('--ignorer-loft')) {
+    console.log(`⏸️ Køen er fuld: ${antalVenter()}/${KLADDE_LOFT} kladder venter på Jacobs Godkend. Springer denne kørsel over.`);
+    return;
+  }
   const publishedToday = countPublishedToday();
   if (publishedToday >= MAX_PER_DAY && !process.argv.includes('--ignorer-loft')) {
     console.log(MAX_PER_DAY === 0

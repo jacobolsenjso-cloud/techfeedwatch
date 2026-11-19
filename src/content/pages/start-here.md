@@ -55,11 +55,11 @@ Learn it for your own sake. It will pay you back.
 
 I would rather tell you than have you work it out.
 
-A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search, keeps only facts backed by the pages Google cites, and finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question, with the sources listed at the end and the video as one section. Older articles were written from the video's transcript alone; they are being rewritten with this method, two or three on each publishing day. Those articles publish automatically — I do not read every one before it goes live, but every week I read a selection afterwards and correct what I flag.
+A system I built picks a question people search for on Google, within the subjects I have chosen. It researches that question with Google Search, keeps only facts backed by the pages Google cites, and finds a video on the subject from a creator or outlet who covers it. A language model writes the article to answer the question, with the sources listed at the end and the video as one section. Older articles were written from the video's transcript alone; they are being rewritten with this method, two or three on each publishing day. Since November 2026, nothing is published until I have read and approved it, and that includes every rewrite.
 
 What is mine is the machinery and the rules it follows: which subjects get covered and in what balance, which sources count, what gets rejected, and how sources are credited. When something goes wrong I fix the system rather than patch the one article.
 
-That is also why the articles are written plainly. I have not watched all of these videos or read all of these articles, and writing as though I had would be a small lie told several hundred times. The one exception: on subjects I have real opinions about, I have given the system those opinions in my own words, and an article may carry one short passage in the first person. Those words are mine. Where you are otherwise reading me is here and on the [about page](/about).
+That is also why the articles are written plainly. I have not watched all of these videos, and writing as though I had would be a small lie told several hundred times. The one exception: on subjects I have real opinions about, I have given the system those opinions in my own words, and an article may carry one short passage in the first person. Those words are mine. Where you are otherwise reading me is here and on the [about page](/about).
 
 The [about page](/about) has the longer version, and the [corrections policy](/corrections) explains what happens when something here is wrong.
 

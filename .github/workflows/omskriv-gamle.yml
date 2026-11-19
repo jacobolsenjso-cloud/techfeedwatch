@@ -111,6 +111,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 19/11-2026: omskrivningen gemmes som krypteret kladde (src/lib/kladder.mjs) - Jacob godkender før live
+          KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
           # Søgetal til køens rækkefølge (10/11-2026, src/lib/dataforseo.mjs). Mangler de, er køen som før.
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
@@ -128,6 +130,7 @@ jobs:
         run: node faktatjek-gamle.mjs --antal=${{ github.event.inputs.tjek || '10' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
 
       # 25/10 (Jacob): udgivelsesdatoen ændres aldrig; "Updated <dato>" sættes ved siden af, men KUN
       # når det, læseren ser, er ændret (omskrivning eller rettelse). Et faktatjek uden rettelser
@@ -144,6 +147,8 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add src/content/videos public/billeder public/kort public/og src/data/omskriv-fejl.json src/data/omskriv-log.json src/data/faktatjek-log.json src/data/omskriv-prioritet.json src/data/stikproeve-log.json src/data/stikproeve-fund.json src/data/dataforseo.json
+          # 19/11-2026: kladderne (findes først, når den første er skrevet - git add afviser en sti, der mangler)
+          for s in public/_kladder src/data/kladde-log.json; do if [ -e "$s" ]; then git add "$s"; fi; done
           if git commit -m "Archive articles rewritten with the search-first recipe"; then
             # 7/11-2026: fælles udgivelse - 3 forsøg, datafiler flettes, konflikt i alt andet stopper (.github/udgiv.sh).
             bash .github/udgiv.sh

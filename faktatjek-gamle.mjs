@@ -15,6 +15,9 @@ import { GEMINI_MODEL, hentModel, forbrug } from './src/lib/model.mjs';
 import { slutkontrol } from './src/lib/slutkontrol.mjs';
 import { cacheSti } from './src/lib/transskript.mjs';
 import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
+// 19/11-2026 (Jacob): faktatjekket retter ALDRIG direkte i en levende artikel - rettelsen bliver en krypteret
+// kladde (type "faktatjek"), som Jacob godkender på /godkend.
+import { gemKladde, koeFuld, antalVenter, KLADDE_LOFT, optagetAfKladder } from './src/lib/kladder.mjs';
 
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=10').split('=')[1]) || 10;
 const kun = (process.argv.find((a) => a.startsWith('--kun=')) || '').split('=')[1] || '';
@@ -58,8 +61,13 @@ const koe = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.md
 // at faktatjekke dem først ville være at betale to gange for samme artikel.
 }).filter((a) => (kun ? a.slug === kun : a.fund || (a.tjekkes && opgivetOmskriv(a.slug)))).sort((a, b) => Number(b.fund) - Number(a.fund) || b.dato.localeCompare(a.dato));
 
-console.log(`${koe.length} artikler venter på faktatjek — tager ${Math.min(antal, koe.length)} nu (nyeste først)`);
+// 19/11-2026: artikler med en kladde i køen springes over; kø-loftet gælder også her
+const iKoeen = (await optagetAfKladder()).slugs;
+koe.splice(0, koe.length, ...koe.filter((a) => !iKoeen.has(a.slug)));
+const plads = Math.max(0, KLADDE_LOFT - antalVenter());
+console.log(`${koe.length} artikler venter på faktatjek — tager ${Math.min(antal, koe.length, plads)} nu (nyeste først)${koeFuld() ? ` - køen er fuld (${antalVenter()}/${KLADDE_LOFT})` : ''}`);
 if (process.argv.includes('--vis')) { for (const a of koe.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}`); process.exit(0); }
+koe.splice(plads);
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const koersel = { dato: new Date().toISOString(), artikler: [] };
@@ -106,7 +114,11 @@ for (const a of koe.slice(0, antal)) {
   for (const q of faqs) { const nq = f.faqs.find((y) => y.question === q.question); nyFm = nq ? nyFm.replace(`answer: ${yaml(q.answer)}`, `answer: ${yaml(nq.answer)}`) : nyFm.replace(new RegExp(`\\s*- question: ${yaml(q.question).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n\\s*answer: ${yaml(q.answer).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`), ''); }
   for (const k of faktaboks) { const nk = f.faktaboks.find((y) => y.url === k.url && y.source === k.source); if (nk) nyFm = nyFm.replace(`text: ${yaml(k.text)}`, `text: ${yaml(nk.text)}`); }
   const ny = f.brodtekst;
-  fs.writeFileSync(`./src/content/videos/${a.slug}.md`, `---${nyFm.replace(/^factChecked:.*\n?/m, '').replace(/\s*$/, '')}\nfactChecked: "${idag}"\n---${ny}`);
+  // 19/11-2026: kladde i stedet for den levende fil. Uden fund (intet ændret) er der intet at godkende - så
+  // mærkes kun factChecked, ligesom før, for den ændrer ikke noget, læseren ser.
+  const nyFil = `---${nyFm.replace(/^factChecked:.*\n?/m, '').replace(/\s*$/, '')}\nfactChecked: "${idag}"\n---${ny}`;
+  if (nyFm.replace(/\r/g, '') === fm.replace(/\r/g, '') && ny.replace(/\r/g, '') === krop.replace(/\r/g, '')) fs.writeFileSync(`./src/content/videos/${a.slug}.md`, nyFil);
+  else await gemKladde({ slug: a.slug, markdown: nyFil, type: 'faktatjek' });
   console.log(`${a.slug}: SLUTKONTROL ${JSON.stringify(rap)}`);
   if (fund.delete(a.slug)) fs.writeFileSync(FUND, JSON.stringify({ slugs: [...fund] }, null, 1) + '\n');
   koersel.artikler.push({ slug: a.slug, ...rap, roert: true });

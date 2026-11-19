@@ -32,6 +32,8 @@ import { ALLE_EMNER } from './src/lib/emner.mjs';
 // Outline før tekst + FAQ fra rigtige Google-søgninger (12/10)
 import { lavOutline, strukturTekst, outlineBrugt, faqFraSoegninger } from './src/lib/artikelplan.mjs';
 import { hentForslag } from './src/lib/suggest.mjs';
+// 19/11-2026 (Jacob): intet går live uden hans Godkend - artiklen gemmes som krypteret kladde (src/lib/kladder.mjs)
+import { gemKladde } from './src/lib/kladder.mjs';
 // Videoen må højst levere så mange konkrete detaljer, at den forbliver et supplement (var 5).
 const MIN_VIDEO_DETALJER = 2;
 // Så mange ensidige sætninger må stå tilbage efter redaktørens rettelse (12/10, se stoppet nedenfor).
@@ -1486,9 +1488,11 @@ ${content}`);
     const updatedYaml = erstatSlug ? `updated: "${new Date().toISOString().slice(0, 10)}"\n` : '';
     const markdown = `---\ntitle: "${safeTitle}"\nyoutubeId: "${videoId}"\n${sourceYaml}date: "${date}"\n${updatedYaml}${tagsYaml}summary: "${safeSummary}"\n${metaYaml}${questionYaml}duration: "${duration}"\n${viewsYaml}isShort: ${isShort}\n${recipeYaml}${rewrittenYaml}${faqsYaml}${keyFactsYaml}---\n\n${content}\n`;
 
-    if (!fs.existsSync('./src/content/videos')) { fs.mkdirSync('./src/content/videos', { recursive: true }); }
-    fs.writeFileSync(`./src/content/videos/${slug}.md`, markdown);
-    console.log(`✅ Succes! Fil oprettet: ${slug}.md (varighed ${duration}).`);
+    // 19/11-2026 (Jacob): ALDRIG direkte i src/content/videos. Ny artikel og omskrivning bliver en krypteret
+    // kladde, som Jacob godkender på /godkend (kladder.mjs lægger den live). Fejler gemningen (fx mangler
+    // KLADDE_NOEGLE), kastes fejlen videre: hellere ingen artikel end en artikel, Jacob ikke har set.
+    await gemKladde({ slug, markdown, type: erstatSlug ? 'omskrevet' : 'ny' });
+    console.log(`✅ Succes! Kladde gemt: ${slug} (varighed ${duration}) - venter på Jacobs Godkend.`);
     // Billede til artiklen (13/10): AI-genereret billede med "AI-generated" og "TechFeedWatch.com"
     // (src/lib/aibillede.mjs) — øverst i artiklen, på kortene og som delebillede. Fejler det,
     // laves det abstrakte emnekort som før. Fejler stille: artiklen er allerede gemt.

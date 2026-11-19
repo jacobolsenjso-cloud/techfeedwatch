@@ -30,6 +30,12 @@ const { title, youtubeId, date, summary, isShort } = video.frontmatter;
 // hvis dét bumpede datoen, ville 367 artikler påstå at være opdaterede uden at
 // et ord var ændret. Præcis den slags falske signal sitet er ved at komme af med.
 const updated: string | null = video.frontmatter.updated || null;
+// 19/11-2026 (Jacob): sat af kladder.mjs, når Jacob har godkendt netop denne udgave - forfatterboksen siger det kun da
+const godkendt: string | null = video.frontmatter.godkendt || null;
+const godkendtTekst = godkendt ? new Date(`${godkendt}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) : '';
+const godkendSaetning = godkendt
+  ? ` I read this version in full and approved it on ${godkendtTekst}, before it was published.`
+  : ' It was published automatically, before November 2026, when I started approving every article before it goes live; it is being rewritten, and the new version will only be published after I have read and approved it.';
 const showUpdated = updated && updated.slice(0, 10) !== String(date).slice(0, 10);
 const updatedLabel = showUpdated
   ? new Date(updated).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
@@ -1424,9 +1430,9 @@ const metaDesc = rawMeta.length > 157
             {/* 13/10 (Jacob): teksten skal passe til den opskrift, artiklen faktisk blev skrevet med.
                 Nye artikler (har kildeliste) bygger på Google-søgning; gamle på videoens transskript. */}
             {antalWebKilder > 0 ? (
-              <p class="author-box-bio">How this article was made: it starts from a question people search for on Google. A language model researches that question with Google Search and keeps only facts backed by the pages Google cites — every number names its source, and the {antalWebKilder} sources are listed above. A video from an independent creator on the subject adds one section and is credited on this page. Automatic checks reject drafts with unsourced numbers, one-sided claims or promotion. It publishes automatically — I do not read every article before it goes live, but each week I read a selection after publication and correct what I flag.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+              <p class="author-box-bio">How this article was made: it starts from a question people search for on Google. A language model researches that question with Google Search and keeps only facts backed by the pages Google cites — every number names its source, and the {antalWebKilder} sources are listed above. A video from an independent creator on the subject adds one section and is credited on this page. Automatic checks reject drafts with unsourced numbers, one-sided claims or promotion.{godkendSaetning}{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
             ) : (
-              <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material. It publishes automatically — I do not read every article before it goes live, but each week I read a selection after publication and correct what I flag. The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
+              <p class="author-box-bio">How this article was made: every article starts from two things — a question people search for on Google, and a video from an independent creator on that subject. A language model writes the article to answer the question, using the video's transcript as its research material.{godkendSaetning} The creator is credited on this page.{aiBillede && ' The image at the top is AI-generated and labelled as such.'}</p>
             )}
             <p class="author-box-ai-note">What is mine is the machinery and the rules it follows: which subjects, which sources, what gets rejected, and what this site is allowed to claim.{jegAfsnit && ' The paragraphs written as "I" are my own views, taken from my notes and put into words by the machine.'} <a href="/about">More on that here</a> — and if something is wrong, <a href="/corrections">tell me</a>.</p>
           </div>

@@ -1,0 +1,78 @@
+# KLADDER (Jacob 19/11-2026): robotten udgiver ALDRIG selv. Jacob trykker Godkend / Omskriv / Afvis på
+# techfeedwatch.com/godkend, og her udføres det - hver time (kladder.mjs).
+#   Godkend -> kladden bliver til en levende artikel i src/content/videos (samme tjek som robottens udgivelser)
+#   Omskriv -> Gemini retter kladden efter Jacobs note (ny version, venter igen på Jacob)
+#   Afvis   -> kladden gemmes krypteret i kladder-afviste/ (slettes aldrig)
+# Startes af tfw-starter (Cloudflare, xx:37 hver time) - GitHubs egen tidsplan dropper de fleste kørsler (målt 15/10).
+# Ingen ny nøgle: beslutningerne læses fra den offentlige adresse /api/kladde-beslutninger; kun Jacob kan gemme dem.
+# Første trin (--tjek) kører uden npm install, så en time uden beslutninger koster ca. 15 sekunder.
+name: Kladder
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Egen gruppe (ikke site-skriver): GitHub erstatter en VENTENDE kørsel i samme gruppe, så en kladdekørsel kunne
+# aflyse robottens. Samtidige skub klares af .github/udgiv.sh (pull --rebase, 3 forsøg).
+concurrency:
+  group: kladder
+  cancel-in-progress: false
+
+jobs:
+  kladder:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Er der beslutninger at udføre?
+        id: tjek
+        env:
+          KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+        run: node kladder.mjs --tjek
+      - if: steps.tjek.outputs.noget == 'ja'
+        run: npm install
+      - name: Udfør Jacobs beslutninger
+        id: udfoer
+        if: steps.tjek.outputs.noget == 'ja'
+        timeout-minutes: 15
+        env:
+          KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node kladder.mjs --udfoer
+      # Samme sikkerhedsnet som robottens udgivelser (daily-update.yml): noget, der ødelægger sitet, når aldrig main
+      - name: Ret forældede linktekster
+        if: steps.udfoer.outputs.godkendt == 'ja'
+        run: node ret-linktekster.mjs --skriv
+      - name: Tjek indholdet
+        if: steps.udfoer.outputs.godkendt == 'ja'
+        run: node audit-content.mjs
+      - name: Tjek interne links
+        if: steps.udfoer.outputs.godkendt == 'ja'
+        run: node audit-interne-links.mjs
+      - name: Byg sitet
+        if: steps.udfoer.outputs.godkendt == 'ja'
+        run: npm run build
+      - name: Tjek det færdige site
+        if: steps.udfoer.outputs.godkendt == 'ja'
+        run: node audit-site.mjs
+      - name: Læg på main
+        if: steps.tjek.outputs.noget == 'ja'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Kun stier, der findes (git add afviser HELE listen, hvis én sti mangler - fx kladder-afviste/ første gang)
+          stier=""; for s in src/content public/_kladder kladder-afviste src/data/kladde-log.json src/data/omskriv-fejl.json; do if [ -e "$s" ]; then stier="$stier $s"; fi; done
+          set +e
+          bash .github/commit.sh "Drafts: carry out Jacob's decisions (run ${{ github.run_number }})" $stier
+          kode=$?
+          set -e
+          if [ "$kode" = "1" ]; then echo "Intet at lægge på main"; exit 0; fi
+          if [ "$kode" != "0" ]; then exit 1; fi
+          bash .github/udgiv.sh

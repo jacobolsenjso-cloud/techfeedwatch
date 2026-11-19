@@ -66,3 +66,8 @@
 /godkend/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+# Kladderne (19/11-2026): krypterede filer, som kun godkend-siden læser (functions/api/godkend.js). Aldrig i Google.
+/_kladder/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store

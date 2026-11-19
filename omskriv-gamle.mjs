@@ -17,6 +17,11 @@ import 'dotenv/config'; // 26/10: YOUTUBE_API_KEY til videosøgningen ved lokale
 import { spawn } from 'node:child_process';
 import { laesHjerne } from './src/lib/hjerne.mjs';
 import { hentTal, ordn, normaliser, talTekst, logLinje } from './src/lib/dataforseo.mjs';
+// 19/11-2026 (Jacob): omskrivningen rører ALDRIG den levende artikel - add-video --erstat gemmer en krypteret
+// kladde, som Jacob godkender på /godkend. Først da erstattes den levende artikel (kladder.mjs).
+import { koeFuld, antalVenter, KLADDE_LOFT, optagetAfKladder } from './src/lib/kladder.mjs';
+// Lykkedes omskrivningen? add-video skriver "KLADDE: {...}" med artiklens navn, når kladden er gemt.
+const kladdeGemt = (ud, slug) => [...String(ud).matchAll(/^KLADDE: (\{.*\})/gm)].some((m) => { try { return JSON.parse(m[1]).slug === slug; } catch { return false; } });
 
 // 5 om dagen fra 25/10 (Jacob). 16/10-25/10: 3 (prisen).
 const antal = Number((process.argv.find((a) => a.startsWith('--antal=')) || '--antal=3').split('=')[1]) || 3; // 5/11 (Jacob): 3 om dagen, alle 7 dage, for prisens skyld (ca. 0,51 USD pr. forsøg; før 4, 26/10: 4, før 8)
@@ -35,7 +40,11 @@ const fejl = laes(FEJL_FIL, {});
 // igen efter 7 dage - Gemini skriver forskelligt hver gang - højst 3 gange i alt. Derefter står den i
 // status til Jacob og faktatjekkes i stedet (faktatjek-gamle.mjs).
 const MAKS_FORSOEG = 3;
-const opgivet = (f) => f?.recipe === 3 && ((f.forsoeg || 1) >= MAKS_FORSOEG || (Date.now() - Date.parse(f.dato || 0)) < 7 * 864e5);
+// 19/11-2026: en omskrivning, Jacob har afvist, hviler 30 dage (afvistTil, sat af kladder.mjs)
+const opgivet = (f) => (f?.afvistTil && f.afvistTil > new Date().toISOString().slice(0, 10))
+  || (f?.recipe === 3 && ((f.forsoeg || 1) >= MAKS_FORSOEG || (Date.now() - Date.parse(f.dato || 0)) < 7 * 864e5));
+// Artikler, der allerede har en kladde i køen, skrives ikke om igen, før Jacob har besluttet sig
+const iKoeen = (await optagetAfKladder()).slugs;
 // 25/10 (Jacob: "én opskrift til alle artikler, nye som gamle"): artikler, Google har vist
 // (Search Console, 3 mdr.), skrives om først; derefter alle andre, nyeste først. Indtil de når
 // frem, faktatjekkes de uden omskrivning (faktatjek-gamle.mjs).
@@ -62,7 +71,7 @@ const alle = fs.readdirSync('./src/content/videos').filter((f) => f.endsWith('.m
 // den nye opskrift ikke skrive den). Ellers: den normale kø af gamle artikler.
 const gamle = kun
   ? alle.filter((a) => kun.split(',').includes(a.slug) && a.spm) // 25/10: flere slugs med komma
-  : alle.filter((a) => !a.ny && !a.short && a.spm && !opgivet(fejl[a.slug]))
+  : alle.filter((a) => !a.ny && !a.short && a.spm && !opgivet(fejl[a.slug]) && !iKoeen.has(a.slug))
     .sort((a, b) => gruppeFor(a) - gruppeFor(b) || b.dato.localeCompare(a.dato));
 if (kun && !gamle.length) { console.log(`Fejl: --kun=${kun} findes ikke (eller mangler targetQuestion).`); process.exit(1); }
 
@@ -90,6 +99,8 @@ if (dfsLinje) console.log(dfsLinje);
 // --vis: vis kun, hvilke artikler der står for tur — intet skrives (søgetal koster første gang ca. $0,06, derefter intet)
 if (process.argv.includes('--vis')) { for (const a of gamle.slice(0, antal)) console.log(`  ${a.dato}  ${a.slug}  (${talTekst(a.tal)})`); process.exit(0); }
 // 25/10: uden Jacobs hjerne startes ingen omskrivning (ellers betales research for intet - add-video stopper alligevel).
+// Kø-loft (19/11-2026): venter KLADDE_LOFT kladder på Jacob, betales der ikke for flere
+if (koeFuld()) { console.log(`Køen er fuld: ${antalVenter()}/${KLADDE_LOFT} kladder venter på Jacobs Godkend - ingen omskrivning i dag.`); console.log(`\nOMSKRIV: ${JSON.stringify({ omskrevet: 0, stoppet: 0, usd: 0, tilbage: gamle.length, koeFuld: true })}`); process.exit(0); }
 if (!laesHjerne()) { console.log('Stop: hjernen mangler (_hjerne / HJERNE_DIR) - ingen omskrivning uden Jacobs stemme.'); process.exit(1); }
 const kørsel = { dato: new Date().toISOString(), omskrevet: [], stoppet: [], usd: 0, soegninger: 0 };
 // Søgetallenes pris står for sig (DataForSEO-saldoen er en anden konto end Gemini/YouTube)
@@ -138,7 +149,7 @@ const SENEST_NY_START_MIN = 90;
 const koersel1 = async (a) => {
   const foer = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
   let ud = await koerAddVideo(a.slug, nyVideo);
-  if (!nyVideo && VIDEO_STOP.test(ud) && !/^recipe:\s*3\b/m.test(fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8').replace(/\r/g, ''))) {
+  if (!nyVideo && VIDEO_STOP.test(ud) && !kladdeGemt(ud, a.slug)) {
     const kandidater = await findVideoer(a.spm);
     ud += `\nNY VIDEO: den gamle video kunne ikke bruges (${(ud.match(VIDEO_STOP) || [''])[0].replace('Sprunget over: ', '').slice(0, 80)}) - ${kandidater.length} nye kandidater`;
     for (const id of kandidater) {
@@ -146,14 +157,15 @@ const koersel1 = async (a) => {
       brugteVideoer.add(id); // to parallelle omskrivninger må ikke tage samme video
       const ud2 = await koerAddVideo(a.slug, `https://www.youtube.com/watch?v=${id}`);
       ud += `\nNY VIDEO ${id}:\n${ud2}`;
-      if (/^recipe:\s*3\b/m.test(fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8').replace(/\r/g, ''))) break;
+      if (kladdeGemt(ud2, a.slug)) break;
       if (!VIDEO_STOP.test(ud2)) break; // stoppede af en anden grund end videoen - flere videoer hjælper ikke
     }
   }
   return { a, foer, ud };
 };
 let iTraek = 0, stop = false;
-const valgte = gamle.slice(0, antal);
+// Aldrig flere end der er plads til i køen (omskrivningerne kører parallelt og ville ellers kunne gå over loftet)
+const valgte = gamle.slice(0, Math.min(antal, KLADDE_LOFT - antalVenter()));
 for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
   if (i > 0 && jobMin() > SENEST_NY_START_MIN) { console.log(`\nIngen ny runde: jobbet har kørt ${Math.round(jobMin())} min (grænse ${SENEST_NY_START_MIN}).`); break; }
   const runde = await Promise.all(valgte.slice(i, i + PARALLELT).map(koersel1));
@@ -163,16 +175,17 @@ for (let i = 0; i < valgte.length && !stop; i += PARALLELT) {
     for (const l of ud.split('\n')) if (/^(KILDETJEK|LAESBARHED|STEMME|SLUTKONTROL|FLYD|FORBRUG|NY VIDEO|AFVIST)|Læsbarhed:|Succes!|Sprunget over|Fejl:|AI-billede|Hjernen er med|før rettelse - /.test(l.trim().replace(/^🧠 /, ''))) console.log('  ' + l.trim());
     // Én FORBRUG-linje pr. add-video-kørsel (flere ved nye videoer) - alle tælles med.
     for (const m of ud.matchAll(/^FORBRUG: (\{.*\})/gm)) { try { const j = JSON.parse(m[1]); kørsel.usd += j.usd || 0; kørsel.soegninger += j.soegninger || 0; } catch { /* linjen var ikke hel */ } }
-    const raw = fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8');
-    // 24/10: succes = ny opskrift OG ændret indhold.
+    // 19/11-2026: succes = kladden er gemt (add-video's KLADDE-linje). Den levende artikel skal være URØRT -
+    // er den ændret, er der en vej udenom Jacobs Godkend, og så stopper kørslen rødt.
+    if (fs.readFileSync(`./src/content/videos/${a.slug}.md`, 'utf8') !== foer) { console.log(`::error::${a.slug}: den levende artikel blev ændret af omskrivningen - det må kun ske ved Jacobs Godkend`); process.exitCode = 1; }
     // 26/10: lykkes en artikel, fjernes dens gamle fejlnotat (ellers stod den som fejlet i status).
-    if (/^recipe:\s*3\b/m.test(raw.replace(/\r/g, '')) && raw !== foer) { kørsel.omskrevet.push(a.slug); delete fejl[a.slug]; iTraek = 0; continue; }
+    if (kladdeGemt(ud, a.slug)) { kørsel.omskrevet.push(a.slug); delete fejl[a.slug]; iTraek = 0; continue; }
     // Den SIDSTE grund tæller (ved nye videoer er det den sidste kandidats grund).
     const grund = ([...ud.matchAll(/(Sprunget over:[^\n]*|Fejl: [^\n]*)/g)].pop() || [, 'ukendt'])[1].slice(0, 200);
     kørsel.stoppet.push({ slug: a.slug, grund });
     // Midlertidige fejl hos Google (500/503/429, overbelastet, timeout) er ikke artiklens skyld —
     // den prøves igen næste dag. Kun egentlige stop huskes (og prøves igen efter 7 dage, højst 3 gange).
-    const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed|midlertidig fejl/i.test(grund);
+    const midlertidig = /\[(500|502|503|504|429)\b|Internal Server Error|overloaded|high demand|UNAVAILABLE|RESOURCE_EXHAUSTED|ETIMEDOUT|ECONNRESET|fetch failed|midlertidig fejl|KLADDE_NOEGLE/i.test(grund);
     if (!midlertidig) fejl[a.slug] = { grund, recipe: 3, dato: new Date().toISOString().slice(0, 10), forsoeg: (fejl[a.slug]?.recipe === 3 ? (fejl[a.slug].forsoeg || 1) : 0) + 1 };
     iTraek++;
   }
