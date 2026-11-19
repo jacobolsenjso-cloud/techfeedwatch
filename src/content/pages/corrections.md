@@ -5,7 +5,7 @@ description: "What TechFeedWatch does when an article gets something wrong, how 
 
 # Corrections Policy
 
-TechFeedWatch publishes articles that answer questions people search for, drafted by a language model from sources found with Google Search, with other people's videos as a supplement, and most of that drafting is automated. Automation makes mistakes at a steady rate, so a policy for handling them is not a formality here — it is part of how the site works.
+TechFeedWatch publishes articles that answer questions people search for, drafted by a language model from sources found with Google Search, with other people's videos as a supplement, and most of that drafting is automated. Since November 2026 I read every draft in full and approve it before it goes live, and that includes every correction. Automation still makes mistakes at a steady rate, and so do I, so a policy for handling them is not a formality here — it is part of how the site works.
 
 ## How to report something
 
@@ -41,4 +41,4 @@ Where the site publishes numbers derived from its own archive, the method and it
 
 ---
 
-*This policy is maintained by Jacob S. Olsen, Denmark. Last reviewed October 2026.*
+*This policy is maintained by Jacob S. Olsen, Denmark. Last reviewed November 2026.*

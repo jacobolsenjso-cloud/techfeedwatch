@@ -5,7 +5,7 @@ description: "The rules every TechFeedWatch article must pass before it is publi
 
 # Editorial Guidelines
 
-Most articles on TechFeedWatch are drafted by an automated system, as the [About page](/about) explains. That makes the rules more important, not less: a person can use judgement, a system only does what it is told. This page lists the rules it is told to follow. Each one is checked in code before an article goes live, not just written down here.
+Most articles on TechFeedWatch are drafted by an automated system, as the [About page](/about) explains. That makes the rules more important, not less: a person can use judgement, a system only does what it is told. This page lists the rules it is told to follow. Each one is checked in code, not just written down here, and since November 2026 a draft that passes them still waits for me: I read it in full and approve it before it goes live.
 
 ## Two kinds of content
 
@@ -67,7 +67,19 @@ Every article credits the creator by name and channel and embeds the video, so y
 
 ## How much is published
 
-At most three new articles a day: two or three on weekdays, one to three at weekends, and none on a day when nothing passes the checks. On top of that, a few older articles a day are rewritten with the current method. Publishing less is always preferred to publishing something that fails.
+The system writes drafts on Mondays, Wednesdays and Fridays: up to two new articles and up to three rewrites of older ones, and none on a day when nothing passes the checks. It stops when six drafts are waiting for me. Nothing goes live until I have approved it, so some weeks fewer articles are published than written. Publishing less is always preferred to publishing something that fails.
+
+## Verification record
+
+Every article has a line under the byline marked **Verification record**. Click it to see the record for that article. It only shows what is true for that article; a line with nothing to report is left out.
+
+- **Published** - the day the article first went live.
+- **Rewritten** - the day an older article was last rewritten, and whether that was with the current method.
+- **Updated** - the day the content changed for another reason. Refreshing view counts does not count as an update.
+- **Fact-checked** - the day the claims in an older article were checked again against current sources and corrected where needed.
+- **Approved** - the day I read this version in full and approved it. Articles published before November 2026 do not have this line until their rewrite has been approved.
+- **Sources** - how many web pages the article is built on, which sites they come from, and the creator of the video. The full list is at the end of the article.
+- **Written** - how the text was drafted: with AI from the named sources, or, for the oldest articles, from the video's transcript.
 
 ## Money and independence
 
@@ -75,7 +87,7 @@ No creator, company or advertiser pays to be covered, and none is told about an 
 
 ## Reviews of the archive
 
-I review published articles in batches and fix the system when a pattern shows up. In October 2026, for example, 56 unattributed claims in 37 older articles were given named sources or rewritten, advertising sentences were removed from four articles, and one article that mainly promoted a product was taken down.
+I review published articles in batches and fix the system when a pattern shows up. In October 2026, for example, 56 unattributed claims in 37 older articles were given named sources or rewritten, advertising sentences were removed from four articles, and one article that mainly promoted a product was taken down. Older articles that are still waiting for their rewrite are fact-checked against current sources, and since November 2026 every correction from that check also waits for my approval.
 
 ## Corrections and removals
 
@@ -87,4 +99,4 @@ It is not a news agency. It does not do original reporting or interviews, and it
 
 ---
 
-*These guidelines are maintained by Jacob S. Olsen, Denmark. Last reviewed October 2026.*
+*These guidelines are maintained by Jacob S. Olsen, Denmark. Last reviewed November 2026.*
