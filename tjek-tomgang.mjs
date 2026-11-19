@@ -81,17 +81,24 @@ if (!status) {
   }
 }
 
-const at = status?.lastArticle?.at;
+// 19/11-2026 (kladder): robotten udgiver ikke selv mere - den skriver kladder, som Jacob godkender. Tomgang måles
+// derfor på "senest SKREVET" (kladde-loggen i repoet) eller senest live, hvad der er nyest. Og ligger køen fuld
+// (KLADDE_LOFT), holder robotten pause MED VILJE - så er der ingen alarm.
+const { senestSkrevet, antalVenter, koeFuld, KLADDE_LOFT } = await import('./src/lib/kladder.mjs');
+const skrevet = senestSkrevet();
+const live = status?.lastArticle?.at;
+const at = [live, skrevet].filter((x) => x && !Number.isNaN(Date.parse(x))).sort((a, b) => Date.parse(a) - Date.parse(b)).pop();
 const t = Date.parse(at);
-if (!at || Number.isNaN(t)) alarm(`robot-status.json har ingen gyldig lastArticle.at (fik ${JSON.stringify(at)})`);
+if (!at || Number.isNaN(t)) alarm(`hverken robot-status.json eller kladde-loggen har et gyldigt tidspunkt (fik ${JSON.stringify(live)})`);
 
 const timer = (nu - t) / 3600000;
-const slugs = (status.lastArticle.slugs || []).join(', ');
-skriv(`Sidste artikel: ${at} — ${timer.toFixed(1)} timer siden (grænse ${GRAENSE} t). ${slugs}`);
-skriv(`Artikler i alt: ${status.articleCount ?? '?'}`);
+const slugs = at === live ? (status.lastArticle.slugs || []).join(', ') : 'kladde';
+skriv(`Sidst skrevet: ${at} — ${timer.toFixed(1)} timer siden (grænse ${GRAENSE} t). ${slugs}`);
+skriv(`Artikler i alt: ${status.articleCount ?? '?'} · kladder der venter på Jacob: ${antalVenter()}/${KLADDE_LOFT}`);
 
-if (timer > GRAENSE) {
-  alarm(`Robotten har ikke udgivet i ${timer.toFixed(0)} timer (grænse ${GRAENSE}). Sidste: ${slugs || '?'} (${at}). Tjek Actions → YouTube Auto Update.`);
+if (koeFuld()) skriv(`Køen er fuld (${antalVenter()} kladder venter på Jacobs Godkend) - robotten holder pause med vilje, ingen alarm.`);
+else if (timer > GRAENSE) {
+  alarm(`Robotten har ikke skrevet i ${timer.toFixed(0)} timer (grænse ${GRAENSE}). Sidste: ${slugs || '?'} (${at}). Tjek Actions → YouTube Auto Update.`);
 }
 
 const adv = status.lastLinkWarning;

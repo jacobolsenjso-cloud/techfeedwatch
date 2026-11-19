@@ -61,6 +61,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
           PROEVE_EMNE: ${{ inputs.emne }}
 
       - name: Ret forældede linktekster

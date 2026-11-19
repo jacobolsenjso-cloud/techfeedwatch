@@ -117,11 +117,12 @@ function frontmatter(slug) {
 }
 
 // Laver begge billeder for én artikel. Kaster aldrig — returnerer null ved fejl.
-export async function generateOgCard(youtubeId, slug) {
+// 19/11-2026: fm (titel, emne) kan gives med - en kladde har endnu ingen fil i src/content/videos.
+export async function generateOgCard(youtubeId, slug, givet = null) {
   try {
     fs.mkdirSync(OG_DIR, { recursive: true });
     fs.mkdirSync(KORT_DIR, { recursive: true });
-    const fm = frontmatter(slug);
+    const fm = givet || frontmatter(slug);
     const ogSti = path.join(OG_DIR, `${slug}.jpg`);
     await sharp(kortSvg(fm)).jpeg({ quality: 84 }).toFile(ogSti);
     // Listekortet: 16:9 som kortenes ramme, 960x540 så det også er skarpt som forsidens tophistorie
