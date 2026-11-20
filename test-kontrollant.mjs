@@ -1,6 +1,6 @@
 // Selvtest af kontrollanten (20/11-2026) - uden net og uden Gemini: falske kildesider og et falsk Gemini, der svarer
 // ud fra prompten. Kører i robottens selvtest (daily-update.yml). Afslutter med kode 1 ved fejl.
-import { kildeliste, kildeSaetninger, lagC, citatPaaSiden, kontrollerMarkdown } from './src/lib/kontrollant.mjs';
+import { kildeliste, kildeSaetninger, lagC, citatPaaSiden, kontrollerMarkdown, vaernRettelse, erNavnloes } from './src/lib/kontrollant.mjs';
 import { laesFelter, medFelter } from './src/lib/artikelfelter.mjs';
 
 let fejl = 0, ok = 0;
@@ -47,6 +47,13 @@ const ps = (t) => kildeSaetninger({ titel: '', meta: '', resume: '', faqs: [], f
 tjek('emnet "PlayStation" er ikke en kilde', ps('A PlayStation 5 costs less upfront than most gaming PCs today.') === 0);
 tjek('"PlayStation\'s blog says" er en kilde', ps("PlayStation's official blog says the console supports 120 fps output.") === 1);
 tjek('"according to PlayStation" er en kilde', ps('According to PlayStation, the console supports 120 fps output.') === 1);
+// Værnene mod kontrollantens egne fejl (målt 20/11)
+tjek('værn: nyt link fjernes', vaernRettelse('Creator X explains it.', 'Engineer Y, known as [X](https://optin.example.com/page), explains it.') === 'Engineer Y, known as X, explains it.');
+tjek('værn: eksisterende link bevares', vaernRettelse('See [IBM](https://www.ibm.com/a) for it.', 'See [IBM](https://www.ibm.com/a) for this.').includes('(https://www.ibm.com/a)'));
+tjek('værn: kilde-link tilladt', vaernRettelse('IBM said so.', 'The [IBM blog](https://www.ibm.com/b) said so.', ['https://www.ibm.com/b']).includes('(https://www.ibm.com/b)'));
+tjek('værn: navnløs rettelse -> fjernes', vaernRettelse('In his analysis, 61% of firms were hit.', 'Industry research indicates that 61% of firms were hit.') === '');
+tjek('erNavnloes: "studies show"', erNavnloes('Studies show that most users skip the manual.'));
+tjek('erNavnloes: "researchers at MIT found" er navngivet', !erNavnloes('Researchers at MIT found that the chip runs cooler.'));
 const c = lagC(l.f);
 tjek('navnløs autoritet fanges', c.navnloese.length === 1 && /Researchers estimate/.test(c.navnloese[0]));
 tjek('meta-længde måles', c.meta === 11);

@@ -126,13 +126,13 @@ export function kildeSaetninger(f, kanal = '') {
   const liste = kildeliste(f.brodtekst);
   const kanalRe = kanal ? new RegExp(kanal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') : null;
   const ud = [];
-  const tilfoej = (tekst, links, felt) => {
+  const tilfoej = (tekst, links, felt, md = '') => {
     if (kanalRe && kanalRe.test(tekst)) return; // videoens sætninger: kilden er videoen, ikke en webside
     const urls = links.filter((u) => !/youtube\.com|youtu\.be|techfeedwatch\.com/.test(u) && !/^\//.test(u));
     const kandidater = urls.length ? urls : liste.filter((k) => kildeNavneRe(k.vaert).test(tekst)).map((k) => k.url);
-    if (kandidater.length) ud.push({ tekst, urls: [...new Set(kandidater)], felt, link: urls.length > 0 });
+    if (kandidater.length) ud.push({ tekst, md, urls: [...new Set(kandidater)], felt, link: urls.length > 0 });
   };
-  for (const s of saetningerMedLinks(f.brodtekst)) tilfoej(s.tekst, s.links, 'brodtekst');
+  for (const s of saetningerMedLinks(f.brodtekst)) tilfoej(s.tekst, s.links, 'brodtekst', s.md);
   const split = (t) => udenMd(t).split(/(?<=[.!?])\s+(?=[A-Z])/).filter((x) => x.split(/\s+/).length >= 5);
   for (const s of split(f.resume)) tilfoej(s, [], 'resume');
   for (const q of f.faqs || []) for (const s of split(q.answer)) tilfoej(s, [], 'faq');
@@ -229,11 +229,26 @@ ${fejl.map((x, i) => `${i + 1}. SENTENCE: ${x.tekst}\n   PROBLEM: ${x.grund}\n  
 }
 
 // ---------- C. Faste regler ----------
-const NAVNLOES = /\b(researchers|experts|scientists|analysts|studies|reports|critics|observers)\s+(estimate|say|believe|suggest|show|found|agree|warn|predict|argue)\b/i;
+const NAVNLOES = /\b(researchers|experts|scientists|analysts|studies|reports|critics|observers|industry research|research|data|surveys?)\s+(estimates?|says?|believes?|suggests?|shows?|found|agrees?|warns?|predicts?|argues?|indicates?)\b/i;
+export const erNavnloes = (s) => NAVNLOES.test(s) && !/\b(at|from|led by|by)\s+(the\s+)?[A-Z]/.test(s) && !/\[[^\]]+\]\(https?:/.test(s);
+
+// ---------- Værn mod kontrollantens egne fejl (20/11-2026, målt på 10 artikler) ----------
+// 1. En rettelse må ikke tilføje links, sætningen ikke havde (målt: et link til en tilmeldingsside blev sat ind).
+//    Tilladt er kun links, der stod i den oprindelige sætning, og artiklens egne kilder.
+// 2. En rettelse må ikke gøre kilden navnløs (målt: "In his analysis, 61%" -> "Industry research indicates 61%").
+//    Så fjernes sætningen hellere.
+export function vaernRettelse(foerMd, efter, tilladte = []) {
+  if (!efter) return '';
+  const ok = new Set([...String(foerMd || '').matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)].map((m) => m[1]).concat(tilladte));
+  let ud = String(efter).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (m, tekst, url) => (ok.has(url) ? m : tekst));
+  ud = ud.replace(/(?<!\]\()https?:\/\/\S+/g, (u) => (ok.has(u) ? u : '')).replace(/\s{2,}/g, ' ').trim();
+  if (erNavnloes(udenMd(ud)) && !erNavnloes(udenMd(foerMd))) return '';
+  return ud;
+}
 export function lagC(f) {
   const ss = saetningerMedLinks(f.brodtekst).map((s) => s.tekst);
   // Navngivet er det, når der står hvem: "researchers at MIT", "researchers led by Professor X", "a study by Y"
-  const navnloese = ss.filter((s) => NAVNLOES.test(s) && !/\b(at|from|led by|by)\s+(the\s+)?[A-Z]/.test(s) && !/\[[^\]]+\]\(https?:/.test(s));
+  const navnloese = ss.filter(erNavnloes);
   const afsnit = brod(f.brodtekst).split(/\n\s*\n/).filter((a) => !/^\s*(#|\||[-*] )/.test(a));
   const jegAfsnit = afsnit.filter((a) => /\b(I|I'm|I've|I'd|my|me|[Ww]e|[Oo]ur)\b/.test(udenMd(a).replace(/"[^"]*"/g, ''))).length;
   const meta = String(f.meta || '').length;
@@ -248,7 +263,7 @@ Report ONLY real problems of these types:
 - MISCONCEPTION: a statement that is false, or a popular misconception stated as fact (an explanation experts in the field reject), even if the article attributes it to a source.
 - CONTRADICTION: two places in the article that contradict each other. Report the wrong one.
 - OVERCLAIM: stronger than the evidence allows (never, always, guarantees, ultra-secure, will), or a prediction stated as fact.
-- UNNAMED: "researchers estimate", "experts say", "studies show" without saying who - or a person named without saying who they are.
+- UNNAMED: "researchers estimate", "experts say", "studies show" without saying who - or a person named without saying who they are. The video's own creator or channel, named by its channel name, IS named - do not report it.
 - UNSUPPORTED: a specific fact, date or figure that no reliable source supports.
 Do NOT report style, wording you would merely prefer, or simplifications that are still correct.
 When a misconception or wrong claim appears, report EVERY place it appears as its own item - headings, summary, FAQ answers, key facts, table rows and other sentences that repeat it in different words. One missed copy means the error is published.
@@ -296,8 +311,13 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   // Saml fund: kildefejl først (rettet ud fra kildens egen tekst), så ekspertens.
   const fund = [];
   const nyeA = await retKildefejl(genAI, a.fejl);
+  const kildeUrls = kildeliste(f.brodtekst).map((k) => k.url);
+  const mdAf = (tekst) => saetningerMedLinks(f.brodtekst).find((s) => s.tekst === tekst)?.md || tekst;
   a.fejl.forEach((x, i) => {
-    const fix = /^remove$/i.test(nyeA[i]) ? '' : nyeA[i];
+    let fix = /^remove$/i.test(nyeA[i]) ? '' : vaernRettelse(x.md || x.tekst, nyeA[i], [x.rigtigKilde?.url, x.delvis?.url, ...kildeUrls].filter(Boolean));
+    // 3. Forkert link, men rigtig påstand: koden skifter kun linket - sætningen skrives ikke om (målt: rigtige
+    //    sætninger blev til klodsede "According to X ..."-sætninger).
+    if (x.rigtigKilde && x.link && x.md && x.urls.length === 1 && x.md.includes(`(${x.urls[0]})`)) fix = x.md.split(`(${x.urls[0]})`).join(`(${x.rigtigKilde.url})`);
     fund.push({ lag: 'kilde', type: x.rigtigKilde ? 'WRONG_SOURCE' : x.delvis ? 'PARTLY' : 'NOT_IN_SOURCE', saetning: x.tekst, rettet: fix, grund: x.rigtigKilde ? `står hos ${x.rigtigKilde.url}, ikke den nævnte kilde` : x.grund });
   });
   const ordAf = (t) => new Set(String(t).toLowerCase().match(/[a-z0-9]+/g) || []);
@@ -306,14 +326,14 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
     const s = udenMd(x.sentence);
     if (x.type === 'META') { if (x.fix && !/^remove$/i.test(x.fix)) { rap.rettelser.push({ lag: 'ekspert', type: 'META', foer: f.meta, efter: x.fix.trim(), grund: String(x.why || '') }); f.meta = x.fix.trim(); } continue; }
     if (fund.some((y) => overlap(s, y.saetning) >= 0.6)) continue; // kildetjekket har allerede taget den
-    fund.push({ lag: 'ekspert', type: String(x.type || '').toUpperCase(), saetning: s, rettet: /^remove$/i.test(String(x.fix).trim()) ? '' : String(x.fix).trim(), grund: String(x.why || '') });
+    fund.push({ lag: 'ekspert', type: String(x.type || '').toUpperCase(), saetning: s, rettet: /^remove$/i.test(String(x.fix).trim()) ? '' : vaernRettelse(mdAf(s), String(x.fix).trim(), kildeUrls), grund: String(x.why || '') });
   }
 
   // Rettelserne læses igen (med søgning). Holder en ikke, bruges genkontrollens bud - eller sætningen fjernes.
   const medRet = fund.filter((x) => x.rettet);
   const igen = await genkontrol(genAI, f, medRet.map((x) => x.rettet));
   if (igen === null && medRet.length) rap.kunneIkke.push('genkontrol');
-  (igen || []).forEach((ny, i) => { if (ny !== null) { medRet[i].grund += ' (rettelsen holdt ikke - rettet igen)'; medRet[i].rettet = /^remove$/i.test(ny) ? '' : ny; } });
+  (igen || []).forEach((ny, i) => { if (ny !== null) { medRet[i].grund += ' (rettelsen holdt ikke - rettet igen)'; medRet[i].rettet = /^remove$/i.test(ny) ? '' : vaernRettelse(mdAf(medRet[i].saetning), ny, kildeUrls); } });
 
   if (fund.length) {
     const ikke = anvend(f, fund.map((x) => ({ saetning: x.saetning, rettet: x.rettet })), log);
