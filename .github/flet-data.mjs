@@ -43,7 +43,14 @@ if (fil.endsWith('.jsonl')) {
   const ud = Array.isArray(m) && Array.isArray(k) ? fletLister(b, m, k)
     : (m && k && typeof m === 'object' && typeof k === 'object' && !Array.isArray(m) && !Array.isArray(k)) ? fletObjekter(b, m, k)
     : k;
-  resultat = JSON.stringify(ud, null, 2) + (koersel.endsWith('\n') ? '\n' : '');
+  // 20/11-2026: kladdelisten (public/_kladder/liste.json) er kun en liste over id'er på kladder, der findes.
+  // Godkendte/afviste kladder slettes af Kladder-kørslen, mens omskrivningen tilføjer nye (målt 20/11: konflikten
+  // stoppede omskrivningen, og 3 betalte omskrivninger gik tabt). Efter fletningen beholdes derfor kun id'er,
+  // hvis kladdefil ligger i arbejdsmappen: main's sletninger og denne kørsels nye kladder vinder begge.
+  const endelig = fil === 'public/_kladder/liste.json' && Array.isArray(ud)
+    ? ud.filter((x, i, a) => x && /^[a-f0-9]{16}$/.test(x.id) && fs.existsSync(`public/_kladder/${x.id}.kladde`) && a.findIndex((y) => y && y.id === x.id) === i)
+    : ud;
+  resultat = JSON.stringify(endelig, null, 2) + (koersel.endsWith('\n') ? '\n' : '');
   JSON.parse(resultat);
 }
 fs.writeFileSync(fil, resultat);

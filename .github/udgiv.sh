@@ -17,8 +17,9 @@ for i in 1 2 3; do
     echo "::warning::git pull fejlede uden konflikt (forsøg $i af 3) - prøver igen om 15 sek."
     sleep 15; continue
   fi
-  if echo "$konflikt" | grep -qv '^src/data/'; then
-    echo "::error::Konflikt uden for src/data - intet udgives: $konflikt"
+  # 20/11-2026: kladdelisten flettes også (se flet-data.mjs) - Kladder-kørslen og omskrivningen ændrer den begge
+  if echo "$konflikt" | grep -qvE '^(src/data/|public/_kladder/liste\.json$)'; then
+    echo "::error::Konflikt uden for src/data og kladdelisten - intet udgives: $konflikt"
     git rebase --abort; exit 1
   fi
   echo "::warning::main ændrede datafiler under kørslen - begge udgaver flettes: $konflikt"
