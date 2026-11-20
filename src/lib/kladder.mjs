@@ -98,16 +98,35 @@ export async function laesKladder() {
 // billeder: { "public/billeder/<slug>.webp": base64, ... } - holdes tilbage i den krypterede kladde og lægges
 // først ud på sitet ved Godkend (Jacob 19/11-2026). Kun sitets tre billedmapper er tilladt.
 export const gyldigBilledSti = (s) => /^public\/(kort|billeder|og)\/[a-z0-9-]{1,200}\.(webp|jpg)$/.test(String(s));
+// 20/11-2026 (Jacob: "en ny konsulent, der dobbelttjekker"): kontrollanten (src/lib/kontrollant.mjs) tjekker
+// ALLE kladder - nye, omskrevne, faktatjek (gemKladde) og Jacobs "Omskriv"-noter (kladder.mjs) - lige før de
+// gemmes, så ingen vej udenom findes. Slået til med GitHub-variablen KONTROLLANT=til (fra, til den er målt -
+// Gemini-loftet var nået 20/11). Kontrollen må aldrig koste en betalt kladde: fejler den, gemmes kladden med en
+// besked, Jacob ser på /godkend.
+export async function kontrollerKladde(slug, markdown) {
+  if (process.env.KONTROLLANT !== 'til' || !process.env.GEMINI_API_KEY) return { markdown, kontrol: null };
+  try {
+    const { GoogleGenerativeAI } = await import('@google/generative-ai');
+    const { kontrollerMarkdown } = await import('./kontrollant.mjs');
+    return await kontrollerMarkdown(new GoogleGenerativeAI(process.env.GEMINI_API_KEY), markdown);
+  } catch (e) {
+    console.log(`::warning::Kontrollanten fejlede for ${slug}: ${String(e.message).split('\n')[0]}`);
+    return { markdown, kontrol: { kunneIkke: [`kontrollanten fejlede: ${String(e.message).split('\n')[0].slice(0, 160)}`], rettelser: [] } };
+  }
+}
 export async function gemKladde({ slug, markdown, type, billeder = {} }) {
   if (!TYPER.includes(type)) throw new Error(`ukendt kladdetype ${type}`);
   noegle();
   const nu = new Date().toISOString();
   const findes = (await laesKladder()).find((k) => k.slug === slug);
   const nyeBilleder = Object.fromEntries(Object.entries(billeder || {}).filter(([s]) => gyldigBilledSti(s)));
+  let kontrol;
+  ({ markdown, kontrol } = await kontrollerKladde(slug, markdown));
   const k = {
     id: findes?.id || crypto.randomBytes(8).toString('hex'), slug, type, version: (findes?.version || 0) + 1,
     oprettet: findes?.oprettet || nu, skrevet: nu, markdown, visning: await visning(markdown),
     billeder: Object.keys(nyeBilleder).length ? nyeBilleder : (findes?.billeder || {}),
+    ...(kontrol ? { kontrol } : {}),
   };
   await skrivKladde(k, { id: k.id, type, skrevet: nu });
   // Linjen læses af omskriv-gamle.mjs og auto-youtube.mjs (var kladden gemt?). Ændr ikke formatet.

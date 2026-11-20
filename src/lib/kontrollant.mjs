@@ -89,7 +89,14 @@ export async function hentKilde(url) {
 }
 const kildeDel = (k, prompt) => (k.pdf ? [{ inlineData: { mimeType: 'application/pdf', data: k.pdf } }, { text: prompt }] : prompt);
 // Står citatet på siden? (Kun for HTML - en PDF kan koden ikke læse.) De første 100 tegn skal stå ordret.
-export const citatPaaSiden = (k, q) => (k?.pdf ? null : !!q && norm(q).length >= 20 && norm(k.tekst).includes(norm(q).slice(0, 100)));
+// 20/11 (målt): modellen forkorter citater med "..." - hver del (mindst 15 tegn) skal så stå på siden.
+export const citatPaaSiden = (k, q) => {
+  if (k?.pdf) return null;
+  const dele = String(q || '').split(/\.{3}|…/).map((d) => norm(d)).filter((d) => d.length >= 15);
+  if (!dele.length) return false;
+  const side = norm(k.tekst);
+  return dele.every((d) => side.includes(d.slice(0, 100)));
+};
 const json = (t) => { try { const m = String(t || '').match(/\[[\s\S]*\]/); const a = m ? JSON.parse(m[0]) : null; return Array.isArray(a) ? a : null; } catch { return null; } };
 async function kald(genAI, input, { soeg = false, taenk = 'low', loft = 16384 } = {}) {
   for (let forsoeg = 1; forsoeg <= 3; forsoeg++) {
@@ -129,9 +136,10 @@ export function kildeSaetninger(f, kanal = '') {
 
 const domPrompt = (url, ss) => `Below is the text of a web page or document (${url}). An article attributes the numbered sentences to it.
 For each sentence decide, using ONLY this source:
-- SUPPORTED: the source states it, with the same meaning and the same figures.
-- PARTLY: some of it is in the source, some is not (say what is missing in "missing").
+- SUPPORTED: the source states the facts, figures, names and dates in the sentence. Different wording, a simpler explanation or a detail that follows directly from the source (for example a month that is the source's own publication date) is still SUPPORTED.
+- PARTLY: a SPECIFIC fact, figure, date, name or claim in the sentence is not in the source or differs from it (say exactly which in "missing"). Add "major": true if that part changes what a reader would believe (a wrong figure, date, name, finding or who said it); "major": false if it is a minor detail, framing or a reasonable simplification.
 - NO: the source does not say it, or says something different (say what the source actually says in "missing").
+Judge the facts, not the style.
 For SUPPORTED and PARTLY give "quote": one passage copied WORD FOR WORD from the source, at most 40 words, that backs it.
 Return ONLY a JSON array: [{"n":1,"verdict":"SUPPORTED","quote":"...","missing":""}]
 
@@ -143,12 +151,16 @@ function vurder(k, d) {
   const v = String(d?.verdict || '').toUpperCase();
   if (v !== 'SUPPORTED' && v !== 'PARTLY') return { ok: false, grund: String(d?.missing || 'the source does not say this').slice(0, 300) };
   const ok = citatPaaSiden(k, d.quote);
-  if (ok === false) return { ok: false, grund: 'the quoted passage is not on the page' };
-  if (v === 'PARTLY') return { ok: false, delvis: true, grund: `only partly in the source: ${String(d.missing || '').slice(0, 250)}`, quote: d.quote };
+  // Citatet står ikke ordret på siden: hverken bekræftet eller dømt (usikker) - samme lære som slutkontrollen 25/10:
+  // modellen gengiver ofte et rigtigt citat en anelse forkert. Ekspertlæsningen (lag B) læser stadig sætningen.
+  if (ok === false) return { ok: false, usikker: true, grund: 'the quoted passage is not on the page' };
+  // 20/11 (målt): "PARTLY" for småting gav klodsede omskrivninger af rigtige sætninger - kun væsentlige rettes.
+  if (v === 'PARTLY' && d.major === false) return { ok: true, mindre: String(d.missing || '').slice(0, 200), quote: d.quote };
+  if (v === 'PARTLY') return { ok: false, delvis: true, grund: `only partly in the source: ${String(d.missing || '').slice(0, 250)}`, quote: d.quote, url: d.url };
   return { ok: true, quote: d.quote };
 }
 
-async function lagA(genAI, f, kanal, log) {
+export async function lagA(genAI, f, kanal, log) {
   const ss = kildeSaetninger(f, kanal);
   const rap = { tjekket: ss.length, ok: 0, ikkeLaest: 0, fejl: [] };
   if (!ss.length) return rap;
@@ -161,13 +173,17 @@ async function lagA(genAI, f, kanal, log) {
     const svar = await kald(genAI, kildeDel(k, `${domPrompt(url, mine.map((s) => s.tekst))}\n\nSOURCE TEXT:\n${k.tekst || '(attached PDF)'}`));
     mine.forEach((s, i) => {
       const d = (svar || []).find((x) => x && Number(x.n) === i + 1);
-      domme.set(s.tekst, [...(domme.get(s.tekst) || []), d ? { url, laest: true, ...vurder(k, d) } : { url, laest: false }]);
+      if (process.env.KONTROL_DEBUG) log(`     [${new URL(url).hostname}] ${d?.verdict} citat-på-siden=${d ? citatPaaSiden(k, d.quote) : '-'} :: ${s.tekst.slice(0, 70)}\n        q: ${String(d?.quote || '').slice(0, 120)}\n        m: ${String(d?.missing || '').slice(0, 120)}`);
+      domme.set(s.tekst, [...(domme.get(s.tekst) || []), d ? { ...vurder(k, d), url, laest: true } : { url, laest: false }]);
     });
   }
   for (const s of ss) {
     const d = domme.get(s.tekst) || [];
     if (d.some((x) => x.ok)) { rap.ok++; continue; }
     if (!d.some((x) => x.laest)) { rap.ikkeLaest++; continue; } // ingen af kilderne kunne læses: ikke dømt
+    // Kandidaterne er alternativer (fx to IBM-sider): én, der bekræfter med et citat, der ikke står helt ordret, gør
+    // sætningen usikker - ikke forkert - selvom en anden kandidat siger nej.
+    if (d.some((x) => x.usikker)) { rap.usikre = (rap.usikre || 0) + 1; continue; }
     rap.fejl.push({ ...s, grund: d.filter((x) => x.laest).map((x) => `${x.url}: ${x.grund}`).join(' | '), delvis: d.find((x) => x.delvis) });
   }
   log(`   kontrollant A: ${rap.tjekket} kildesætninger - ${rap.ok} står i kilden, ${rap.fejl.length} gør ikke, ${rap.ikkeLaest} kilde(r) kunne ikke læses`);
@@ -196,11 +212,12 @@ async function retKildefejl(genAI, fejl) {
   if (!fejl.length) return [];
   const p = `Each numbered sentence below is from an article. It names a source, but that source does not say it as written.
 Rewrite each sentence so it states ONLY what the EVIDENCE supports, and name the source of the evidence in the sentence.
-If the original sentence had a link, write the source name as a markdown link: [Name](url). Plain English, same style, one or two sentences.
+Change as little as possible: keep the sentence's point, wording and style, and change only the part the evidence does not support. Do not start with "According to" unless the original did.
+If the original sentence had a link, write the source name as a markdown link: [Name](url) - the url of the EVIDENCE. Plain English, one or two sentences.
 If there is no evidence, or the evidence supports no part of the sentence, write "REMOVE".
 Return ONLY a JSON array: [{"n":1,"fix":"..."}]
 
-${fejl.map((x, i) => `${i + 1}. SENTENCE: ${x.tekst}\n   PROBLEM: ${x.grund}\n   EVIDENCE: ${x.rigtigKilde ? `(${x.rigtigKilde.titel} - ${x.rigtigKilde.url}) "${x.rigtigKilde.quote}"` : x.delvis?.quote ? `(${x.urls[0]}) "${x.delvis.quote}"` : '(none)'}`).join('\n')}`;
+${fejl.map((x, i) => `${i + 1}. SENTENCE: ${x.tekst}\n   PROBLEM: ${x.grund}\n   EVIDENCE: ${x.rigtigKilde ? `(${x.rigtigKilde.titel} - ${x.rigtigKilde.url}) "${x.rigtigKilde.quote}"` : x.delvis?.quote ? `(${x.delvis.url}) "${x.delvis.quote}"` : '(none)'}`).join('\n')}`;
   const svar = await kald(genAI, p);
   return fejl.map((_, i) => String((svar || []).find((y) => y && Number(y.n) === i + 1)?.fix || '').trim());
 }
@@ -228,10 +245,11 @@ Report ONLY real problems of these types:
 - UNNAMED: "researchers estimate", "experts say", "studies show" without saying who - or a person named without saying who they are.
 - UNSUPPORTED: a specific fact, date or figure that no reliable source supports.
 Do NOT report style, wording you would merely prefer, or simplifications that are still correct.
+When a misconception or wrong claim appears, report EVERY place it appears as its own item - headings, summary, FAQ answers, key facts, table rows and other sentences that repeat it in different words. One missed copy means the error is published.
 Use Google Search to check facts.
 For each problem: "sentence": copied WORD FOR WORD from the article (one sentence, FAQ answer sentence or table row); "type"; "why": one line; "fix": the corrected sentence in the same plain style (keep any markdown link and who said it), or "REMOVE".
 If the META is shorter than 120 or longer than 160 characters, add {"sentence": <the META text>, "type": "META", "why": "...", "fix": <a new meta description of 140-155 characters>}.
-${skal.length ? `These sentences break the site's rule "always name the source" - report each one (UNNAMED) with a fix that names who, or rephrases without the authority:\n${skal.map((s) => `- ${s}`).join('\n')}\n` : ''}
+${skal.length ? `These sentences break the site's rule "always name the source" - report each one (UNNAMED) with a fix that names who (a real, checkable source - if the claim comes from the video, attribute it to the video's speaker or channel). Never turn it into a plain statement of fact without a source; if no source can be named, "fix" is "REMOVE":\n${skal.map((s) => `- ${s}`).join('\n')}\n` : ''}
 Return ONLY a JSON array, [] if nothing is wrong: [{"sentence":"...","type":"MISCONCEPTION","why":"...","fix":"..."}]
 
 ${artikelTekst(f)}`;
@@ -243,7 +261,8 @@ async function genkontrol(genAI, f, rettede) {
 Return ONLY a JSON array: [{"n":1,"verdict":"OK"}]
 
 ${rettede.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
-  const svar = await kald(genAI, p, { soeg: true, taenk: 'high' });
+  // 20/11 (målt): høj tænkning her og i ekspertlæsningen gav 100.000 output-tokens (0,38 af 0,49 USD) - mellem er nok
+  const svar = await kald(genAI, p, { soeg: true, taenk: 'medium' });
   if (!svar) return null;
   return rettede.map((_, i) => { const d = svar.find((y) => y && Number(y.n) === i + 1); return d && String(d.verdict).toUpperCase() === 'WRONG' ? String(d.fix || 'REMOVE').trim() : null; });
 }
@@ -299,4 +318,13 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   rap.usd = Math.round((forbrug.usd - usdFoer) * 10000) / 10000;
   log(`   kontrollant: ${rap.rettelser.length} rettelse(r) (${rap.rettelser.filter((x) => !x.efter).length} fjernet), ${rap.usd} USD${rap.kunneIkke.length ? ` - kunne ikke: ${rap.kunneIkke.join(', ')}` : ''}`);
   return rap;
+}
+
+// Indgangen fra gemKladde: hele artiklens markdown ind, rettet markdown + rapport ud.
+export async function kontrollerMarkdown(genAI, markdown, log = console.log) {
+  const { laesFelter, medFelter } = await import('./artikelfelter.mjs');
+  const l = laesFelter(markdown);
+  const kanal = l.felt('channelTitle');
+  const kontrol = await kontrollant(genAI, l.f, { kanal, log });
+  return { markdown: medFelter(markdown, l).raw, kontrol };
 }

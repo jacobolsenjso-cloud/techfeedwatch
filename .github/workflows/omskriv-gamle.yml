@@ -155,3 +155,9 @@ jobs:
           else
             echo "Ingen omskrivninger."
           fi
+
+      # 20/11-2026: kørslen 20/11 stod GRØN, selvom alle omskrivninger og hele faktatjekket stoppede på Gemini-loftet
+      # ("monthly spending cap") - ingen fik besked. Nu bliver den RØD (= mail til Jacob), efter at loggene er gemt.
+      - name: Stoppede Gemini-loftet arbejdet?
+        if: always()
+        run: node .github/tjek-gemini-stop.mjs
