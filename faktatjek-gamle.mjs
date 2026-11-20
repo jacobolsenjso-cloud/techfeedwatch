@@ -14,7 +14,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODEL, hentModel, forbrug } from './src/lib/model.mjs';
 import { slutkontrol } from './src/lib/slutkontrol.mjs';
 import { cacheSti } from './src/lib/transskript.mjs';
-import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
+import { laesFelter, medFelter } from './src/lib/artikelfelter.mjs';
 // 19/11-2026 (Jacob): faktatjekket retter ALDRIG direkte i en levende artikel - rettelsen bliver en krypteret
 // kladde (type "faktatjek"), som Jacob godkender på /godkend.
 import { gemKladde, koeFuld, antalVenter, KLADDE_LOFT, optagetAfKladder } from './src/lib/kladder.mjs';
@@ -107,13 +107,8 @@ for (const a of koe.slice(0, antal)) {
     if (!pf.slugs.includes(a.slug)) { pf.slugs.unshift(a.slug); fs.writeFileSync('./src/data/omskriv-prioritet.json', JSON.stringify(pf, null, 1) + '\n'); }
     console.log(`${a.slug}: ${rap.fanget} fund — rettet nu og sat i omskrivningskøen`);
   }
-  // Frontmatter: kun de tjekkede felter skrives om; alt andet bevares tegn for tegn.
-  let nyFm = fm;
-  const saetFelt = (navn, gammel, ny) => { if (gammel && ny !== gammel) nyFm = nyFm.replace(`${navn}: ${yaml(gammel)}`, `${navn}: ${yaml(ny)}`); };
-  saetFelt('title', felt('title'), f.titel); saetFelt('metaDescription', felt('metaDescription'), f.meta); saetFelt('summary', felt('summary'), f.resume);
-  for (const q of faqs) { const nq = f.faqs.find((y) => y.question === q.question); nyFm = nq ? nyFm.replace(`answer: ${yaml(q.answer)}`, `answer: ${yaml(nq.answer)}`) : nyFm.replace(new RegExp(`\\s*- question: ${yaml(q.question).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\n\\s*answer: ${yaml(q.answer).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`), ''); }
-  for (const k of faktaboks) { const nk = f.faktaboks.find((y) => y.url === k.url && y.source === k.source); if (nk) nyFm = nyFm.replace(`text: ${yaml(k.text)}`, `text: ${yaml(nk.text)}`); }
-  const ny = f.brodtekst;
+  // Frontmatter: kun de tjekkede felter skrives om; alt andet bevares tegn for tegn (src/lib/artikelfelter.mjs, 20/11)
+  const { fm: nyFm, krop: ny } = medFelter(a.raw, { fm, felt, faqs, faktaboks, f });
   // 19/11-2026: kladde i stedet for den levende fil. Uden fund (intet ændret) er der intet at godkende - så
   // mærkes kun factChecked, ligesom før, for den ændrer ikke noget, læseren ser.
   const nyFil = `---${nyFm.replace(/^factChecked:.*\n?/m, '').replace(/\s*$/, '')}\nfactChecked: "${idag}"\n---${ny}`;

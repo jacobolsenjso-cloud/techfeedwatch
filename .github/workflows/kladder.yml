@@ -35,6 +35,10 @@ jobs:
         id: tjek
         env:
           KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+
+          # 20/11-2026: kontrollanten (src/lib/kontrollant.mjs) - slås til/fra med repo-variablen KONTROLLANT (til/fra)
+
+          KONTROLLANT: ${{ vars.KONTROLLANT }}
         run: node kladder.mjs --tjek
       - if: steps.tjek.outputs.noget == 'ja'
         run: npm install
@@ -44,6 +48,10 @@ jobs:
         timeout-minutes: 15
         env:
           KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+
+          # 20/11-2026: kontrollanten (src/lib/kontrollant.mjs) - slås til/fra med repo-variablen KONTROLLANT (til/fra)
+
+          KONTROLLANT: ${{ vars.KONTROLLANT }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node kladder.mjs --udfoer
       # Samme sikkerhedsnet som robottens udgivelser (daily-update.yml): noget, der ødelægger sitet, når aldrig main

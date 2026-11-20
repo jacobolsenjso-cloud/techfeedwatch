@@ -65,7 +65,7 @@ jobs:
       - name: Selvtest af skrivereglerne
         # 13/11-2026: også noindex-reglen for gamle artikler (ingen Google-vist artikel må få noindex)
         # 19/11-2026: også kladde-køen (kryptering, Godkend/Omskriv/Afvis, låsen) - fejler den, skrives intet
-        run: node test-skriveregler.mjs && node test-noindex-gamle.mjs && node test-kladder.mjs
+        run: node test-skriveregler.mjs && node test-noindex-gamle.mjs && node test-kladder.mjs && node test-kontrollant.mjs
 
       # Outputtet gemmes også i en fil til robottens logbog (14/10). pipefail: uden den ville tee
       # skjule, hvis robotten fejlede, og kørslen blive grøn.
@@ -78,6 +78,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # 19/11-2026: nye artikler gemmes som krypterede kladder (src/lib/kladder.mjs) - Jacob godkender før live
           KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+
+          # 20/11-2026: kontrollanten (src/lib/kontrollant.mjs) - slås til/fra med repo-variablen KONTROLLANT (til/fra)
+
+          KONTROLLANT: ${{ vars.KONTROLLANT }}
           # Søgetal til valget af spørgsmål (10/11-2026, src/lib/dataforseo.mjs). Mangler de, vælges der som før.
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}

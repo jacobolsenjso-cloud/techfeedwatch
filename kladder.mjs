@@ -6,7 +6,7 @@
 //   node kladder.mjs --udfoer   Godkend -> live, Afvis -> kladder-afviste/, Omskriv -> ny version af kladden
 // En beslutning gælder kun den version, Jacob så. Godkend og Afvis fjerner kladden, så de kan aldrig ske to gange.
 import fs from 'node:fs';
-import { laesKladder, skrivKladde, fjernKladde, afvisKladde, visning, noegle, gyldigBilledSti, BESLUTNINGER_URL } from './src/lib/kladder.mjs';
+import { laesKladder, skrivKladde, fjernKladde, afvisKladde, visning, noegle, gyldigBilledSti, BESLUTNINGER_URL, kontrollerKladde } from './src/lib/kladder.mjs';
 import { dekrypter } from './src/lib/kryptering.mjs';
 import { laesFelter, yaml } from './src/lib/artikelfelter.mjs';
 
@@ -190,8 +190,10 @@ export async function udfoer(opgaver, { kald = null, rod = process.cwd() } = {})
       } else if (o.handling === 'omskriv') {
         if (!kald && !gemini) gemini = await geminiKald();
         const r = await omskriv(k, note, kald || gemini.kald);
-        const { fejl: _f, fejltid: _ft, ...rest } = k;
-        await skrivKladde({ ...rest, version: k.version + 1, markdown: r.markdown, visning: await visning(r.markdown), note, aendringer: r.aendringer, aendret: r.aendret, rettet: nu });
+        const { fejl: _f, fejltid: _ft, kontrol: _k, ...rest } = k;
+        // 20/11-2026: også omskrivningen efter Jacobs note går gennem kontrollanten (src/lib/kladder.mjs kontrollerKladde)
+        const kt = await kontrollerKladde(k.slug, r.markdown);
+        await skrivKladde({ ...rest, version: k.version + 1, markdown: kt.markdown, visning: await visning(kt.markdown), note, aendringer: r.aendringer, aendret: r.aendret, rettet: nu, ...(kt.kontrol ? { kontrol: kt.kontrol } : {}) });
         summary(`**Omskrevet efter Jacobs note:** ${k.visning?.title || k.slug} (version ${k.version + 1}) — ${r.aendringer}`);
       }
     } catch (e) {

@@ -43,7 +43,7 @@ function erForbigaaende(e) {
 // ved at fejle kørslen (rød i GitHub = mail til Jacob), se slutningen af auto-youtube.mjs.
 export const geminiStop = { fejl: null };
 export function erBlokerende(e) {
-  return /\[40[123]\b|prepayment|credits are depleted|billing|API key not valid|API_KEY_INVALID|PERMISSION_DENIED|PerDay|per day|spending cap/i.test(String(e?.message || e));
+  return /\[40[123]\b|prepayment|credits are depleted|billing|API key not valid|API_KEY_INVALID|PERMISSION_DENIED|PerDay|per day|spending cap|project has exceeded its/i.test(String(e?.message || e));
 }
 
 export async function medGentag(fn, { onVent = null } = {}) {

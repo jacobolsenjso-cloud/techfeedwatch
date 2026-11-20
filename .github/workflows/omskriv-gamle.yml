@@ -113,6 +113,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           # 19/11-2026: omskrivningen gemmes som krypteret kladde (src/lib/kladder.mjs) - Jacob godkender før live
           KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+
+          # 20/11-2026: kontrollanten (src/lib/kontrollant.mjs) - slås til/fra med repo-variablen KONTROLLANT (til/fra)
+
+          KONTROLLANT: ${{ vars.KONTROLLANT }}
           # Søgetal til køens rækkefølge (10/11-2026, src/lib/dataforseo.mjs). Mangler de, er køen som før.
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
@@ -131,6 +135,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           KLADDE_NOEGLE: ${{ secrets.KLADDE_NOEGLE }}
+
+          # 20/11-2026: kontrollanten (src/lib/kontrollant.mjs) - slås til/fra med repo-variablen KONTROLLANT (til/fra)
+
+          KONTROLLANT: ${{ vars.KONTROLLANT }}
 
       # 25/10 (Jacob): udgivelsesdatoen ændres aldrig; "Updated <dato>" sættes ved siden af, men KUN
       # når det, læseren ser, er ændret (omskrivning eller rettelse). Et faktatjek uden rettelser
@@ -155,3 +163,9 @@ jobs:
           else
             echo "Ingen omskrivninger."
           fi
+
+      # 20/11-2026: kørslen 20/11 stod GRØN, selvom alle omskrivninger og hele faktatjekket stoppede på Gemini-loftet
+      # ("monthly spending cap") - ingen fik besked. Nu bliver den RØD (= mail til Jacob), efter at loggene er gemt.
+      - name: Stoppede Gemini-loftet arbejdet?
+        if: always()
+        run: node .github/tjek-gemini-stop.mjs

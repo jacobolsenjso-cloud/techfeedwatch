@@ -39,6 +39,11 @@
   .artikel { font-size:16px; } .artikel img { max-width:100%; height:auto; } .artikel table { border-collapse:collapse; display:block; overflow-x:auto; }
   .artikel td, .artikel th { border:1px solid var(--linje); padding:4px 8px; }
   .artikel .aendret { background:var(--gul); outline:3px solid var(--gul); border-left:4px solid var(--gulkant); padding-left:6px; }
+  /* Kontrollanten (20/11-2026): rapporten og de rettede sætninger (blå - gul er Jacobs note) */
+  .kontrol { background:var(--bg); border-left:4px solid var(--accent); border-radius:8px; padding:10px 12px; margin:0 0 12px; font-size:15px; }
+  .kontrol .rettelse { border-top:1px solid var(--linje); padding:8px 0; }
+  .kontrol del { display:block; color:var(--dim); } .kontrol .efter { font-weight:600; }
+  .artikel .kontrolleret { border-left:4px solid var(--accent); padding-left:6px; }
   .knapper { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:8px; }
   button { font:inherit; padding:8px 18px; border-radius:8px; border:1px solid var(--linje); background:var(--kort); color:var(--fg); cursor:pointer; min-height:44px; }
   button.godkend { border-color:var(--ok); background:var(--ok); color:#fff; font-weight:700; }
@@ -103,6 +108,37 @@
   }
 
   // Markér de afsnit, robotten ændrede efter Jacobs note (gult)
+  // Kontrollanten (20/11-2026): en linje med hvad der er tjekket, og rettelserne foldet ud nedenunder
+  const TYPE_DK = { WRONG_SOURCE: 'forkert kilde', NOT_IN_SOURCE: 'står ikke i kilden', PARTLY: 'kun delvis i kilden', MISCONCEPTION: 'faktuel fejl', CONTRADICTION: 'selvmodsigelse', OVERCLAIM: 'overdrevet', UNNAMED: 'kilden ikke navngivet', UNSUPPORTED: 'uden belæg', META: 'meta-beskrivelse' };
+  function kontrolBoks(kt) {
+    const b = lav('div', 'kontrol');
+    const r = kt.rettelser || [];
+    const dele = [];
+    if (kt.kildeTjekket !== undefined) dele.push(`${kt.kildeTjekket} kildesætninger holdt op mod kildernes egen tekst (${kt.kildeOk || 0} stod der${kt.kildeIkkeLaest ? `, ${kt.kildeIkkeLaest} kunne ikke læses` : ''})`);
+    if (kt.ekspertFund !== undefined) dele.push(`ekspertlæsning: ${kt.ekspertFund} fund`);
+    dele.push(r.length ? `${r.length} rettet (${r.filter((x) => !x.efter).length} fjernet)` : 'intet at rette');
+    if (kt.usd) dele.push(`pris $${kt.usd}`);
+    b.append(lav('div', '', `Kontrollant: ${dele.join(' · ')}.`));
+    if (kt.regler?.jegAfsnit > 1) b.append(lav('div', 'meta', `${kt.regler.jegAfsnit} afsnit i din stemme (jeg/vi).`));
+    if (kt.kunneIkke?.length) b.append(lav('div', 'fejlbesked', `Kontrollen kunne ikke køre helt: ${kt.kunneIkke.join(', ')}.`));
+    if (r.length) {
+      const d = lav('details'); d.append(lav('summary', '', `Se rettelserne (${r.length}) - markeret med blåt i artiklen`));
+      for (const x of r) {
+        const li = lav('div', 'rettelse');
+        li.append(lav('div', 'meta', `${TYPE_DK[x.type] || x.type}: ${x.grund || ''}`));
+        li.append(lav('del', '', x.foer));
+        li.append(lav('div', x.efter ? 'efter' : 'meta', x.efter || '(fjernet)'));
+        d.append(li);
+      }
+      b.append(d);
+    }
+    return b;
+  }
+  function markerKontrol(div, kt) {
+    const efter = (kt?.rettelser || []).map((x) => x.efter).filter(Boolean).map((t) => t.replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/\s+/g, ' ').trim().slice(0, 40));
+    if (!efter.length) return;
+    for (const el of div.querySelectorAll('p, li, td')) { const t = el.textContent.replace(/\s+/g, ' '); if (efter.some((e) => e && t.includes(e))) el.classList.add('kontrolleret'); }
+  }
   function markerAendret(div, aendret) {
     if (!aendret || !aendret.length) return;
     const ren = (t) => t.replace(/\s+/g, ' ').trim();
@@ -143,10 +179,13 @@
       kort.append(n);
     }
     if (k.fejl) kort.append(lav('p', 'fejlbesked', `Omskrivningen lykkedes ikke: ${k.fejl}. Prøv en anden note, eller godkend/afvis som den er.`));
+    // 20/11-2026: kontrollantens rapport (src/lib/kontrollant.mjs) - hvad der er tjekket, og hver rettelse med før/efter
+    if (k.kontrol) kort.append(kontrolBoks(k.kontrol));
 
     const d = lav('details'); if (k.version > 1) d.open = true;
     d.append(lav('summary', '', `Læs hele artiklen (${v.ord} ord)`));
     const art = lav('div', 'artikel'); art.innerHTML = v.html; markerAendret(art, k.aendret);
+    markerKontrol(art, k.kontrol);
     d.append(art);
     if (v.keyFacts?.length) { d.append(lav('h3', '', 'Faktaboks')); const ul = lav('ul'); for (const f of v.keyFacts) ul.append(lav('li', '', `${f.text} (${f.source})`)); d.append(ul); }
     if (v.faqs?.length) { d.append(lav('h3', '', 'FAQ')); for (const q of v.faqs) { d.append(lav('p', '', '')); d.lastChild.append(lav('b', '', q.question), document.createElement('br'), q.answer); } }
