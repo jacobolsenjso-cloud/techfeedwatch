@@ -265,6 +265,7 @@ Report ONLY real problems of these types:
 - OVERCLAIM: stronger than the evidence allows (never, always, guarantees, ultra-secure, will), or a prediction stated as fact.
 - UNNAMED: "researchers estimate", "experts say", "studies show" without saying who - or a person named without saying who they are. The video's own creator or channel, named by its channel name, IS named - do not report it.
 - UNSUPPORTED: a specific fact, date or figure that no reliable source supports.
+The article is based on a video you cannot see. Examples, analogies, demonstrations and statements that describe what the video or its speaker shows come from the video - never report those as UNSUPPORTED just because you cannot find them online. Report them only if they are factually wrong (MISCONCEPTION).
 Do NOT report style, wording you would merely prefer, or simplifications that are still correct.
 When a misconception or wrong claim appears, report EVERY place it appears as its own item - headings, summary, FAQ answers, key facts, table rows and other sentences that repeat it in different words. One missed copy means the error is published.
 Use Google Search to check facts.
@@ -295,7 +296,7 @@ ${rettede.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
 export async function kontrollant(genAI, f, { kanal = '', log = console.log } = {}) {
   const usdFoer = forbrug.usd;
   const foer = { brodtekst: f.brodtekst, faqs: (f.faqs || []).map((q) => ({ ...q })) };
-  const rap = { model: KONTROL_MODEL, kildeTjekket: 0, kildeOk: 0, kildeIkkeLaest: 0, ekspertFund: 0, regler: null, rettelser: [], kunneIkke: [], usd: 0 };
+  const rap = { model: KONTROL_MODEL, kildeTjekket: 0, kildeOk: 0, kildeIkkeLaest: 0, ekspertFund: 0, regler: null, rettelser: [], ikkeRettet: [], kunneIkke: [], usd: 0 };
 
   const a = await lagA(genAI, f, kanal, log);
   Object.assign(rap, { kildeTjekket: a.tjekket, kildeOk: a.ok, kildeIkkeLaest: a.ikkeLaest });
@@ -326,6 +327,9 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
     const s = udenMd(x.sentence);
     if (x.type === 'META') { if (x.fix && !/^remove$/i.test(x.fix)) { rap.rettelser.push({ lag: 'ekspert', type: 'META', foer: f.meta, efter: x.fix.trim(), grund: String(x.why || '') }); f.meta = x.fix.trim(); } continue; }
     if (fund.some((y) => overlap(s, y.saetning) >= 0.6)) continue; // kildetjekket har allerede taget den
+    // Værn 5 (20/11, målt): "uden belæg" rettes eller slettes aldrig af sig selv - kontrollanten kan ikke se videoen,
+    // og en kørsel ville slette videoens eget eksempel som "opdigtet". Jacob ser fundet og afgør det selv.
+    if (String(x.type).toUpperCase() === 'UNSUPPORTED') { rap.ikkeRettet.push({ lag: 'ekspert', type: 'UNSUPPORTED', saetning: s, grund: String(x.why || '') }); continue; }
     fund.push({ lag: 'ekspert', type: String(x.type || '').toUpperCase(), saetning: s, rettet: /^remove$/i.test(String(x.fix).trim()) ? '' : vaernRettelse(mdAf(s), String(x.fix).trim(), kildeUrls), grund: String(x.why || '') });
   }
 
@@ -334,6 +338,12 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   const igen = await genkontrol(genAI, f, medRet.map((x) => x.rettet));
   if (igen === null && medRet.length) rap.kunneIkke.push('genkontrol');
   (igen || []).forEach((ny, i) => { if (ny !== null) { medRet[i].grund += ' (rettelsen holdt ikke - rettet igen)'; medRet[i].rettet = /^remove$/i.test(ny) ? '' : vaernRettelse(mdAf(medRet[i].saetning), ny, kildeUrls); } });
+
+  // Værn 6 (20/11, målt): en "rettelse", der er identisk med sætningen, er ingen rettelse - den vises som "ikke rettet"
+  const norm = (t) => udenMd(t).replace(/\s+/g, ' ').toLowerCase();
+  for (let i = fund.length - 1; i >= 0; i--) {
+    if (fund[i].rettet && norm(fund[i].rettet) === norm(fund[i].saetning)) { rap.ikkeRettet.unshift({ lag: fund[i].lag, type: fund[i].type, saetning: fund[i].saetning, grund: fund[i].grund.replace(' (rettelsen holdt ikke - rettet igen)', '') }); fund.splice(i, 1); }
+  }
 
   if (fund.length) {
     const ikke = anvend(f, fund.map((x) => ({ saetning: x.saetning, rettet: x.rettet })), log);

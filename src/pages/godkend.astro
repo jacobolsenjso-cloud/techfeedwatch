@@ -121,6 +121,12 @@
     b.append(lav('div', '', `Kontrollant: ${dele.join(' · ')}.`));
     if (kt.regler?.jegAfsnit > 1) b.append(lav('div', 'meta', `${kt.regler.jegAfsnit} afsnit i din stemme (jeg/vi).`));
     if (kt.kunneIkke?.length) b.append(lav('div', 'fejlbesked', `Kontrollen kunne ikke køre helt: ${kt.kunneIkke.join(', ')}.`));
+    // Fund, kontrollanten ikke selv måtte eller kunne rette (20/11-2026) - teksten er urørt, Jacob afgør det
+    if (kt.ikkeRettet?.length) {
+      const d2 = lav('details'); d2.append(lav('summary', '', `Fundet, men ikke rettet - tjek selv (${kt.ikkeRettet.length})`));
+      for (const x of kt.ikkeRettet) { const li = lav('div', 'rettelse'); li.append(lav('div', 'meta', `${TYPE_DK[x.type] || x.type}: ${x.grund || ''}`)); li.append(lav('div', '', x.saetning)); d2.append(li); }
+      b.append(d2);
+    }
     if (r.length) {
       const d = lav('details'); d.append(lav('summary', '', `Se rettelserne (${r.length}) - markeret med blåt i artiklen`));
       for (const x of r) {

@@ -92,6 +92,8 @@ const svarPaa = (p) => {
   if (/senior subject-matter expert/.test(p)) return [
     { sentence: 'Short meta.', type: 'META', why: 'too short', fix: 'Learn how entanglement links qubits, how scientists measured it on real processors, and what it does and does not do for quantum computing today.' },
     { sentence: 'Researchers estimate that cracking RSA requires 4,000 logical qubits working together.', type: 'UNNAMED', why: 'who?', fix: 'A 2019 study by Craig Gidney and Martin Ekerå estimated that cracking RSA-2048 needs about 20 million noisy qubits.' },
+    { sentence: 'Some Channel explains that cards can be sorted fast in this example.', type: 'UNSUPPORTED', why: 'no source online', fix: 'REMOVE' },
+    { sentence: 'Entanglement links qubits into one shared state.', type: 'OVERCLAIM', why: 'too strong', fix: 'Entanglement links qubits into one shared  state.' },
   ];
   if (/An editor corrected these sentences/.test(p)) return [{ n: 1, verdict: 'OK' }];
   if (/coheren|sammenh|paragraph/i.test(p)) return [];
@@ -112,5 +114,7 @@ tjek('rapport: navnløs rettet', r.markdown.includes('Craig Gidney') && !r.markd
 tjek('IBM-sætningen urørt', r.markdown.includes('all 27 qubits of a processor in October 2021'));
 tjek('kilder og video urørt', r.markdown.includes('## Sources') && r.markdown.includes('Some Channel explains'));
 tjek('ingen "kunne ikke"', !k.kunneIkke.length, JSON.stringify(k.kunneIkke));
+tjek('uden belæg: videoens sætning bliver, vises som ikke rettet', r.markdown.includes('Some Channel explains') && k.ikkeRettet.some((x) => x.type === 'UNSUPPORTED') && !k.rettelser.some((x) => x.type === 'UNSUPPORTED'));
+tjek('rettelse = samme sætning: ikke i rettelser, men i ikke rettet', !k.rettelser.some((x) => /one shared state/.test(x.foer)) && k.ikkeRettet.some((x) => /one shared state/.test(x.saetning)), JSON.stringify(k.ikkeRettet));
 console.log(`test-kontrollant: ${ok} ok, ${fejl} fejl`);
 if (fejl) process.exit(1);
