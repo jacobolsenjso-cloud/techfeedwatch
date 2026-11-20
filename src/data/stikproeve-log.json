@@ -596,5 +596,30 @@
   ],
   "usd": 0.0049,
   "soegninger": 0
+ },
+ {
+  "dato": "2026-11-20T09:22:57.766Z",
+  "artikler": [
+   {
+    "slug": "google-s-notebooklm-the-0-ai-tool-that-automates-your-entire-youtube",
+    "tjekket": 6,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 6,
+    "usikker": 0,
+    "fund": []
+   },
+   {
+    "slug": "how-much-does-cybersecurity-pay-and-career-outlook",
+    "tjekket": 9,
+    "belagt": 0,
+    "fejl": 0,
+    "ikke_fundet": 9,
+    "usikker": 0,
+    "fund": []
+   }
+  ],
+  "usd": 0,
+  "soegninger": 0
  }
 ]
