@@ -58,7 +58,13 @@ export function kildeNavneRe(vaert) {
   const navn = led.length >= 2 ? led[led.length - 2] : led[0];
   const ord = [...new Set([...(KENDTE[navn] || []), navn])].filter((x) => x.length >= 2);
   // Korte navne (IBM, MIT, NIST) kun med store bogstaver - ellers matcher "mit" i "submit". Lange: uden hensyn til store/små.
-  const res = ord.map((o) => (o.length <= 4 ? new RegExp(`\\b${o.toUpperCase()}\\b`) : new RegExp(`\\b${o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')));
+  // 20/11 (målt): navnet alene er ikke nok - i en artikel OM PlayStation nævnte 21 af 26 sætninger "PlayStation" og blev
+  // alle holdt op mod blog.playstation.com. Navnet skal stå som kilde: "according to X", "X says/reports/...", "X's study".
+  const res = ord.map((o) => {
+    const n = o.length <= 4 ? o.toUpperCase() : o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const fl = o.length <= 4 ? '' : 'i';
+    return new RegExp(`(\\b(according to|per|cited by|reported by|published by|data from|figures from|research from|by)\\s+(the\\s+)?${n}\\b)|(\\b${n}('s)?\\s+([\\w-]+\\s+){0,3}?(says|said|reports?|reported|explains?|explained|notes?|noted|states?|stated|found|finds|estimates?|estimated|announced|describes?|described|highlights?|highlighted|shows?|showed|confirms?|confirmed|lists?|listed|recommends?|warns?|warned|defines?|defined|demonstrated|measured|calculated|walkthrough|documentation|data|survey|study|report|research|researchers|scientists|engineers|team|blog|guide|tests?)\\b)`, fl);
+  });
   return { test: (s) => res.some((r) => r.test(s)) };
 }
 

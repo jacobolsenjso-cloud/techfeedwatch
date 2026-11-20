@@ -15,9 +15,10 @@ Robotten skriver **kladder** → Jacob trykker **Godkend / Omskriv / Afvis** på
 ## Vejen fra spørgsmål til artikel
 1. `auto-youtube.mjs` vælger emne og spørgsmål (Google-forslag + DataForSEO), finder videoer og kalder `add-video.mjs`.
 2. `add-video.mjs` skriver artiklen (faktaark → outline → tekst → slutkontrol → Jacobs stemme) og laver AI-billedet.
-3. **`src/lib/kladder.mjs` gemmer det hele krypteret** (`src/lib/kryptering.mjs`, nøgle `KLADDE_NOEGLE`): `public/_kladder/<id>.kladde` + `liste.json` (kun id). Billederne holdes tilbage i kladden. Kø-loft 6.
-4. Jacob læser på `techfeedwatch.com/godkend` (Cloudflare Access). Beslutningen gemmes i KV `b:<id>` af `functions/api/godkend.js`.
-5. `kladder.mjs` (kørslen "Kladder") henter beslutningerne fra `/api/kladde-beslutninger` og: **Godkend** → `src/content/videos/<slug>.md` + billeder i `public/billeder|kort|og` + byg-tjek → main · **Omskriv** → Gemini retter efter noten, ny version · **Afvis** → `kladder-afviste/` (krypteret, slettes aldrig).
+3. **Kontrollanten** (`src/lib/kontrollant.mjs`, 20/11-2026) tjekker hver kladde lige før den gemmes - i `gemKladde` og efter Jacobs "Omskriv"-note (`kontrollerKladde`): A) hver sætning, der nævner en kilde, holdes op mod kildens egen tekst (også PDF); B) ekspertlæsning af hele artiklen med søgning (misforståelser, selvmodsigelser, overdrivelser, navnløse kilder); C) faste regler. Rettelser + rapport gemmes i kladden og vises på /godkend. Kontakt: repo-variablen `KONTROLLANT` (`til`/tom). Selvtest: `test-kontrollant.mjs`. Måling: `_maal-kontrollant.mjs` (lokal).
+4. **`src/lib/kladder.mjs` gemmer det hele krypteret** (`src/lib/kryptering.mjs`, nøgle `KLADDE_NOEGLE`): `public/_kladder/<id>.kladde` + `liste.json` (kun id). Billederne holdes tilbage i kladden. Kø-loft 6.
+5. Jacob læser på `techfeedwatch.com/godkend` (Cloudflare Access). Beslutningen gemmes i KV `b:<id>` af `functions/api/godkend.js`.
+6. `kladder.mjs` (kørslen "Kladder") henter beslutningerne fra `/api/kladde-beslutninger` og: **Godkend** → `src/content/videos/<slug>.md` + billeder i `public/billeder|kort|og` + byg-tjek → main · **Omskriv** → Gemini retter efter noten, ny version · **Afvis** → `kladder-afviste/` (krypteret, slettes aldrig).
 Omskrivning af gamle artikler (`omskriv-gamle.mjs` → `add-video.mjs --erstat`) og faktatjek (`faktatjek-gamle.mjs`) går samme vej: kladde først, live efter Godkend.
 
 ## Kørslerne (`.github/workflows/`)
@@ -43,7 +44,7 @@ Omskrivning af gamle artikler (`omskriv-gamle.mjs` → `add-video.mjs --erstat`)
 - **Workers:** `tfw-starter` (tidsplan + push-kald), `tfw-push` (app-beskeder, `cloudflare/push/`), `cloudflare/pagespeed/` og `cloudflare/transskript-proxy/` (status ikke målt; transskript-vejen lukket 16/9 — YouTube blokerer datacentre). Sendes op med `npx wrangler deploy` i mappen.
 
 ## GitHub-nøgler (secrets — kun navne)
-`GEMINI_API_KEY`, `YOUTUBE_API_KEY`, `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD`, `HJERNE_NOEGLE` (læsenøgle til jacob-hjerne), `KLADDE_NOEGLE` (samme værdi som i Cloudflare). Starterens `GITHUB_TOKEN` ligger i Workeren.
+`GEMINI_API_KEY`, `YOUTUBE_API_KEY`, `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD`, `HJERNE_NOEGLE` (læsenøgle til jacob-hjerne), `KLADDE_NOEGLE` (samme værdi som i Cloudflare). Starterens `GITHUB_TOKEN` ligger i Workeren. Repo-variabel (ikke hemmelig): `KONTROLLANT` (`til` = kontrollanten kører). Gemini-loftet: når det rammes, bliver omskrivningen rød (`.github/tjek-gemini-stop.mjs`), robotten var det i forvejen.
 
 ## Datafiler (`src/data/`) — hvem skriver dem
 | Fil | Skrives af | Til |

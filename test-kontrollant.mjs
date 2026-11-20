@@ -43,6 +43,10 @@ tjek('MIT-sætningen peger på mit.edu', ks.some((s) => /Gottesman/.test(s.tekst
 tjek('videoens sætning tjekkes ikke mod websider', !ks.some((s) => /Some Channel explains/.test(s.tekst)));
 tjek('FAQ og faktaboks er med', ks.some((s) => s.felt === 'faq') && ks.some((s) => s.felt === 'faktaboks'));
 tjek('"mit" i "submit" er ikke MIT', !kildeSaetninger({ titel: '', meta: '', resume: '', faqs: [], faktaboks: [], brodtekst: 'Please submit the form to the office today now.\n\n## Sources\n- [M](https://news.mit.edu/x) — mit.edu\n' }).length);
+const ps = (t) => kildeSaetninger({ titel: '', meta: '', resume: '', faqs: [], faktaboks: [], brodtekst: `${t}\n\n## Sources\n- [PS Blog](https://blog.playstation.com/x) — playstation.com\n` }).length;
+tjek('emnet "PlayStation" er ikke en kilde', ps('A PlayStation 5 costs less upfront than most gaming PCs today.') === 0);
+tjek('"PlayStation\'s blog says" er en kilde', ps("PlayStation's official blog says the console supports 120 fps output.") === 1);
+tjek('"according to PlayStation" er en kilde', ps('According to PlayStation, the console supports 120 fps output.') === 1);
 const c = lagC(l.f);
 tjek('navnløs autoritet fanges', c.navnloese.length === 1 && /Researchers estimate/.test(c.navnloese[0]));
 tjek('meta-længde måles', c.meta === 11);
