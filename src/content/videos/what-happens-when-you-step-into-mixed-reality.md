@@ -11,8 +11,8 @@ summary: "Mixed reality bridges physical and virtual worlds by enabling digital 
 metaDescription: "What is mixed reality? Learn how spatial mapping and advanced headsets blend digital objects with your physical room in real time."
 targetQuestion: "what is mixed reality"
 duration: "7:57"
-viewCount: 193
-viewsUpdated: "2026-11-19"
+viewCount: 198
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

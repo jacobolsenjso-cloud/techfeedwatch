@@ -12,8 +12,8 @@ summary: "Virtual reality in healthcare replaces a patient's physical view with 
 metaDescription: "Discover how virtual reality in healthcare transforms medical training, pain management, and stroke recovery through evidence-based clinical trials."
 targetQuestion: "what is virtual reality in healthcare"
 duration: "1:06:32"
-viewCount: 1115
-viewsUpdated: "2026-11-16"
+viewCount: 1116
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

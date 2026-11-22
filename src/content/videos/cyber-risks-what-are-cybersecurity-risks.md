@@ -11,8 +11,8 @@ summary: "Cybersecurity risks represent the potential for an adverse event that 
 metaDescription: "Understand what cybersecurity risks are, how they impact organizations, and why strategic risk management is essential for protection."
 targetQuestion: "what are cybersecurity risks"
 duration: "5:52"
-viewCount: 6
-viewsUpdated: "2026-10-07"
+viewCount: 8
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

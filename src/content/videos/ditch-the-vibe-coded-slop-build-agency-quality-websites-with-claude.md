@@ -13,8 +13,8 @@ summary: "Default code from AI assistants often looks generic because models gra
 metaDescription: "Learn how to make Claude Code websites look better by using custom typography, visual references, and modular design skills to avoid generic AI layouts."
 targetQuestion: "how to make claude code websites look better"
 duration: "16:05"
-viewCount: 57122
-viewsUpdated: "2026-11-19"
+viewCount: 57558
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

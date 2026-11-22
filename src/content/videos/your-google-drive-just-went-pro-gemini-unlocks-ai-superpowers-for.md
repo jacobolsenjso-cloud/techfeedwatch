@@ -13,8 +13,8 @@ summary: "Gemini AI tools transform Google Drive from simple cloud storage into 
 metaDescription: "Learn how Gemini AI tools enhance Google Drive with cross-file summaries, AI overviews, and automated research inside your Workspace files."
 targetQuestion: "how do gemini ai tools enhance google drive"
 duration: "6:22"
-viewCount: 17747
-viewsUpdated: "2026-11-19"
+viewCount: 17913
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

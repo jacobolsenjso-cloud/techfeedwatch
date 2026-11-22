@@ -13,8 +13,8 @@ summary: "Quantum supremacy has been achieved experimentally on synthetic math t
 metaDescription: "Has quantum supremacy been achieved? Here is how Google and Chinese research teams reached the computing milestone and what remains unproven."
 targetQuestion: "is quantum supremacy achieved"
 duration: "17:20"
-viewCount: 509
-viewsUpdated: "2026-11-19"
+viewCount: 511
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

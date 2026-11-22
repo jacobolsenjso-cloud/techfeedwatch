@@ -12,8 +12,8 @@ summary: "A gaming PC uses modular parts and an open operating system, while a P
 metaDescription: "Wondering about the difference between a gaming PC and PlayStation? Compare hardware, prices, game libraries, and performance before you buy."
 targetQuestion: "difference between gaming pc and playstation"
 duration: "10:54"
-viewCount: 33521
-viewsUpdated: "2026-11-19"
+viewCount: 199658
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

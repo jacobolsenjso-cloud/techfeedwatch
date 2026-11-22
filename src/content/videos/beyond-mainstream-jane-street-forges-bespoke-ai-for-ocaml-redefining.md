@@ -14,8 +14,8 @@ summary: "Jane Street, a prominent quantitative trading firm, has custom-enginee
 metaDescription: "Jane Street, a quantitative trading firm, builds custom AI coding assistants for OCaml to address tooling scarcity and boost productivity."
 targetQuestion: "how does jane street use ai"
 duration: "16:57"
-viewCount: 95811
-viewsUpdated: "2026-11-19"
+viewCount: 95988
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 revised: true

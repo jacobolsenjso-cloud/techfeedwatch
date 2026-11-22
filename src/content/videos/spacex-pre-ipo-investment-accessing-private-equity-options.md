@@ -13,8 +13,8 @@ summary: "Investors can buy SpaceX pre-IPO shares directly through secondary mar
 metaDescription: "Learn how to invest in SpaceX pre-IPO stock through secondary marketplaces, venture funds, and public vehicles with clear rules on eligibility and risk."
 targetQuestion: "how to invest in spacex pre ipo"
 duration: "3:08"
-viewCount: 130164
-viewsUpdated: "2026-11-19"
+viewCount: 130170
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

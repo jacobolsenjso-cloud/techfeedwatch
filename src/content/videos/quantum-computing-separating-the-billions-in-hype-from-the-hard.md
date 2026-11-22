@@ -13,8 +13,8 @@ summary: "Quantum computing replaces binary bits with qubits that calculate mult
 metaDescription: "Quantum computing explained simply: discover how qubits, superposition, and wave interference work, what problems they solve."
 targetQuestion: "quantum computing explained simply"
 duration: "25:56"
-viewCount: 11177
-viewsUpdated: "2026-11-19"
+viewCount: 11195
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

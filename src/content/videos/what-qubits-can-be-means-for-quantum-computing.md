@@ -12,8 +12,8 @@ summary: "A qubit can exist in a continuous, mathematically weighted superpositi
 metaDescription: "Wondering what qubits can be? Learn how quantum superposition, probability amplitudes, and the Bloch sphere redefine computing states."
 targetQuestion: "what states can qubits be in"
 duration: "9:56"
-viewCount: 330
-viewsUpdated: "2026-11-19"
+viewCount: 332
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

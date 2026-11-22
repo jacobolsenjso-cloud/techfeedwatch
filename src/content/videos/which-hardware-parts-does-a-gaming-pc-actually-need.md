@@ -12,8 +12,8 @@ summary: "A functional gaming PC requires eight balanced hardware parts operatin
 metaDescription: "Discover what a gaming PC needs to run modern releases smoothly, from balanced GPU and CPU hardware to essential memory and power requirements."
 targetQuestion: "what does a gaming pc need"
 duration: "23:33"
-viewCount: 450550
-viewsUpdated: "2026-11-19"
+viewCount: 469342
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

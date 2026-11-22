@@ -12,8 +12,8 @@ summary: "Schools deploy robots primarily as programmable STEM kits, social co-t
 metaDescription: "Learn how to use robots in education, from hands-on STEM kits and telepresence systems to teaching assistants that support human educators."
 targetQuestion: "how to use robots in education"
 duration: "31:27"
-viewCount: 1075
-viewsUpdated: "2026-11-19"
+viewCount: 1081
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

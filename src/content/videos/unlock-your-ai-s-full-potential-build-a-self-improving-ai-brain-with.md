@@ -15,8 +15,8 @@ summary: "Generic AI chatbots offer broad utility but suffer from a fundamental 
 metaDescription: "Architecting AI Brains with local knowledge bases creates self-improving, secure expert assistants for personalized professional learning."
 targetQuestion: "how to build local ai assistant"
 duration: "7:50"
-viewCount: 2303
-viewsUpdated: "2026-11-16"
+viewCount: 2306
+viewsUpdated: "2026-11-22"
 thumbMax: false
 isShort: false
 revised: true

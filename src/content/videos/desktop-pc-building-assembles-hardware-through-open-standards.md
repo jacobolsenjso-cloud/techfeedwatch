@@ -13,8 +13,8 @@ summary: "PC building is the process of selecting individual hardware components
 metaDescription: "Learn what PC building is, how custom hardware works, what parts you need, and whether assembling your own system saves money over buying pre-built PCs."
 targetQuestion: "what is pc building"
 duration: "20:06"
-viewCount: 1140893
-viewsUpdated: "2026-11-19"
+viewCount: 1152680
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

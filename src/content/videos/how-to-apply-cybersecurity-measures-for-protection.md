@@ -12,8 +12,8 @@ summary: "Applying cybersecurity involves a strategic blend of technology, proce
 metaDescription: "Learn how to apply cybersecurity effectively, from understanding threats and implementing solutions to managing costs and common mistakes."
 targetQuestion: "how to apply cybersecurity"
 duration: "9:29"
-viewCount: 12803
-viewsUpdated: "2026-11-19"
+viewCount: 12976
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

@@ -12,8 +12,8 @@ summary: "Video compression reduces file sizes by identifying temporal redundanc
 metaDescription: "Discover what happens when you compress videos, from motion estimation to quantization and visual artifacts, explaining how codecs reduce file sizes."
 targetQuestion: "what happens when i compress videos"
 duration: "20:30"
-viewCount: 25717
-viewsUpdated: "2026-11-19"
+viewCount: 25725
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

@@ -14,8 +14,8 @@ summary: "Perplexity AI is challenging traditional search paradigms with its 'an
 metaDescription: "Perplexity AI's answer engine synthesizes LLM and web data to provide direct, citable, verified answers, enhancing factual accuracy over link lists."
 targetQuestion: "how does perplexity ai work"
 duration: "3:02:16"
-viewCount: 940760
-viewsUpdated: "2026-11-19"
+viewCount: 940858
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 revised: true

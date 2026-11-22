@@ -13,8 +13,8 @@ summary: "Content automation connects software tools to handle repetitive media 
 metaDescription: "Learn how to automate content creation using AI tools, connect production workflows, and balance speed against search quality and audience trust."
 targetQuestion: "how to automate content creation"
 duration: "11:36"
-viewCount: 38538
-viewsUpdated: "2026-11-19"
+viewCount: 40649
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

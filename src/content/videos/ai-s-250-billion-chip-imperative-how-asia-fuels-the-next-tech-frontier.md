@@ -14,8 +14,8 @@ summary: "The burgeoning demand for artificial intelligence capabilities is resh
 metaDescription: "The AI chip industry demands unprecedented investment. Discover how Asia's semiconductor giants are at the core of the global AI infrastructure race."
 targetQuestion: "how big is ai chip market"
 duration: "1:35:14"
-viewCount: 6525
-viewsUpdated: "2026-11-19"
+viewCount: 6532
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

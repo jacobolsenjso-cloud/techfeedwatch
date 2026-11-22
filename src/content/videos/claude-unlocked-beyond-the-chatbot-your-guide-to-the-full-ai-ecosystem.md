@@ -13,8 +13,8 @@ summary: "Claude AI combines a massive context window with specialized tools lik
 metaDescription: "Explore the primary features of Claude AI, including Artifacts, Projects, extended context windows, coding benchmarks, and computer use."
 targetQuestion: "what are the primary features of claude ai"
 duration: "12:47"
-viewCount: 187029
-viewsUpdated: "2026-11-19"
+viewCount: 188013
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

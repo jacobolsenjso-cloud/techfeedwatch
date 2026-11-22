@@ -13,8 +13,8 @@ summary: "The Mythos AI risk centers on an advanced frontier model's autonomous 
 metaDescription: "Learn what the Mythos AI risk is, why Anthropic withheld the model, and how enterprise security architectures defend against automated AI exploits."
 targetQuestion: "what is the mythos ai risk"
 duration: "5:37"
-viewCount: 1113564
-viewsUpdated: "2026-11-19"
+viewCount: 1114221
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-13"

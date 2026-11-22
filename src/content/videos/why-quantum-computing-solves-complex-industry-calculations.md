@@ -12,8 +12,8 @@ summary: "Quantum computing processes information using quantum physics to evalu
 metaDescription: "Find out what quantum computing does, how qubits process complex calculations, and why these systems work alongside classical computers today."
 targetQuestion: "what does quantum computing do"
 duration: "1:42:10"
-viewCount: 11214
-viewsUpdated: "2026-11-19"
+viewCount: 12139
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

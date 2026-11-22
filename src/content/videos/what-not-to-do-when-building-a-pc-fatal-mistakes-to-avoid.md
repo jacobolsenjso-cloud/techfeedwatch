@@ -12,8 +12,8 @@ summary: "Building a personal computer requires careful handling of sensitive co
 metaDescription: "Learn what not to do when building a PC, from avoiding bent CPU socket pins and mismatched power cables to seating memory and heatsinks correctly."
 targetQuestion: "what not to do when building a pc"
 duration: "18:27"
-viewCount: 101633
-viewsUpdated: "2026-11-19"
+viewCount: 102279
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

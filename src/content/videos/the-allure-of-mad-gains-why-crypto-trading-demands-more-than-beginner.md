@@ -13,8 +13,8 @@ summary: "Crypto market volatility measures how fast and dramatically digital cu
 metaDescription: "What is crypto market volatility? Learn what drives rapid digital asset price swings, how shocks spread to stocks, and how to manage portfolio risks."
 targetQuestion: "what is crypto market volatility"
 duration: "19:41"
-viewCount: 572943
-viewsUpdated: "2026-11-19"
+viewCount: 575448
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

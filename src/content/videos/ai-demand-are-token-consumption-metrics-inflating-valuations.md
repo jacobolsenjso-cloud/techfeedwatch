@@ -14,8 +14,8 @@ summary: "The soaring demand signals for artificial intelligence, often measured
 metaDescription: "The soaring demand signals for artificial intelligence, often measured by token consumption, may be significantly overstated."
 targetQuestion: "what is ai valuation concern"
 duration: "4:45"
-viewCount: 193639
-viewsUpdated: "2026-11-19"
+viewCount: 193669
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 faqs:

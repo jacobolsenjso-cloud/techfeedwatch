@@ -12,8 +12,8 @@ summary: "An iPhone charges from empty to 50 percent in roughly 30 minutes when 
 metaDescription: "Find out how long does it take an iPhone to charge using fast wired adapters, MagSafe, and standard chargers, plus why speeds drop after 80 percent."
 targetQuestion: "how long does it take an iphone to charge"
 duration: "4:24"
-viewCount: 64340
-viewsUpdated: "2026-11-19"
+viewCount: 64873
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 recipe: 3

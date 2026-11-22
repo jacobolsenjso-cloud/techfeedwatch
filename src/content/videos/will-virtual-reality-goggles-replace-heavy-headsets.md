@@ -13,8 +13,8 @@ summary: "Virtual reality goggles are head-mounted displays that isolate vision 
 metaDescription: "Learn what virtual reality goggles are, how stereoscopic lenses create depth, and how modern tracking hardware powers fully immersive digital environments."
 targetQuestion: "what are virtual reality goggles"
 duration: "9:09"
-viewCount: 80185
-viewsUpdated: "2026-11-19"
+viewCount: 80321
+viewsUpdated: "2026-11-22"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-19"
