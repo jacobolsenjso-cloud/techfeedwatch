@@ -13,8 +13,8 @@ summary: "The advent of advanced AI models like ChatGPT forces a re-evaluation o
 metaDescription: "Explore how ChatGPT and advanced AI challenge our understanding of truth, reality, and computation, transforming human knowledge."
 targetQuestion: "how does ai determine truth"
 duration: "4:14:34"
-viewCount: 903104
-viewsUpdated: "2026-11-22"
+viewCount: 903318
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

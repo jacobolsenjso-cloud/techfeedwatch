@@ -14,8 +14,8 @@ summary: "The integration of large language models like Claude into personal kno
 metaDescription: "LLMs integrate into personal knowledge management, transforming static notes into AI second brains for advanced analysis and productivity."
 targetQuestion: "how to use ai as second brain"
 duration: "7:38"
-viewCount: 790
-viewsUpdated: "2026-11-22"
+viewCount: 797
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

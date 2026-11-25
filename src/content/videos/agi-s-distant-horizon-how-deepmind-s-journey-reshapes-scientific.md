@@ -12,8 +12,8 @@ summary: "AlphaFold fundamentally changed biological research by accurately pred
 metaDescription: "Understand why AlphaFold is important for science and medicine, revolutionizing protein structure prediction and accelerating drug discovery."
 targetQuestion: "why is alphafold important"
 duration: "40:57"
-viewCount: 335803
-viewsUpdated: "2026-11-22"
+viewCount: 336300
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

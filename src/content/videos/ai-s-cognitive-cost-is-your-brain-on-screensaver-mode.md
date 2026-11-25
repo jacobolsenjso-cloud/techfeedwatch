@@ -13,8 +13,8 @@ summary: "AI tools, particularly general-purpose chatbots, can measurably reduce
 metaDescription: "AI tools can reduce critical thinking by lowering neural engagement and memory recall."
 targetQuestion: "how does ai reduce critical thinking"
 duration: "21:47"
-viewCount: 276680
-viewsUpdated: "2026-11-22"
+viewCount: 277229
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-12"

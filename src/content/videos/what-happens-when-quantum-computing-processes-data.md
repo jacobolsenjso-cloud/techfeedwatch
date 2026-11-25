@@ -12,8 +12,8 @@ summary: "Quantum computing processes complex calculations by manipulating subat
 metaDescription: "Learn how quantum computing works, from qubits and superposition to quantum gates, hybrid architectures, and future fault-tolerant systems."
 targetQuestion: "how does quantum computing work"
 duration: "5:28"
-viewCount: 15942
-viewsUpdated: "2026-11-22"
+viewCount: 16022
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

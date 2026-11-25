@@ -14,8 +14,8 @@ summary: "The FIFA World Cup 2026, set to be the largest in history across three
 metaDescription: "The FIFA World Cup 2026 faces scale, finance, and political hurdles. Discover how tech integration will redefine this massive global sporting event."
 targetQuestion: "2026 world cup logistics"
 duration: "13:03"
-viewCount: 146236
-viewsUpdated: "2026-11-22"
+viewCount: 146260
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

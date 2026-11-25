@@ -13,8 +13,8 @@ summary: "Google Gemini features span native multimodal processing, an expansive
 metaDescription: "Discover the core Google Gemini features, including multimodal data processing, massive context windows, Workspace tools, and current limitations."
 targetQuestion: "what are google gemini features"
 duration: "8:53"
-viewCount: 3914
-viewsUpdated: "2026-11-16"
+viewCount: 3915
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

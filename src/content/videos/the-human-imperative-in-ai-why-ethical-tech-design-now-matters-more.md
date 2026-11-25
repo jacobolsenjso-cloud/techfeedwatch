@@ -13,8 +13,8 @@ summary: "The rapid progression of artificial intelligence technology presents a
 metaDescription: "As AI reshapes our world, understanding its societal impact and the urgent need for ethical tech governance is paramount for digital equity."
 targetQuestion: "what is ethical ai design"
 duration: "16:00"
-viewCount: 33962
-viewsUpdated: "2026-11-22"
+viewCount: 34120
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

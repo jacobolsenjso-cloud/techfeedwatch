@@ -12,8 +12,8 @@ summary: "Nike, the world's largest sportswear brand, is facing significant mark
 metaDescription: "Nike is struggling with innovation, ceding market share to rivals like On Running and Hoka, and grappling with excess inventory."
 targetQuestion: "why is nike having problems"
 duration: "32:22"
-viewCount: 1063416
-viewsUpdated: "2026-11-22"
+viewCount: 1064450
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -13,8 +13,8 @@ summary: "Google designs custom Tensor Processing Units to accelerate the heavy 
 metaDescription: "Discover what a Google TPU is used for, how these specialized chips accelerate AI workloads, and how they compare directly with Nvidia GPUs."
 targetQuestion: "what is a google tpu used for"
 duration: "4:27"
-viewCount: 13469
-viewsUpdated: "2026-11-19"
+viewCount: 13471
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

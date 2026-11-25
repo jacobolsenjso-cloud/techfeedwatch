@@ -13,8 +13,8 @@ summary: "As organizations increasingly migrate operations to cloud platforms, r
 metaDescription: "As organizations increasingly migrate operations to cloud platforms, robust cloud security becomes paramount."
 targetQuestion: "security of the cloud vs security in the cloud"
 duration: "8:12"
-viewCount: 18511
-viewsUpdated: "2026-11-22"
+viewCount: 18778
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

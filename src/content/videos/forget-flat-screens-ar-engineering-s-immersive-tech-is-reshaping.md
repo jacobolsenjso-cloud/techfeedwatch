@@ -14,8 +14,8 @@ summary: "Augmented Reality (AR) is undergoing a critical shift, moving beyond c
 metaDescription: "Augmented Reality (AR) is undergoing a critical shift, moving beyond consumer-focused novelties to establish itself as a powerful enterprise tool."
 targetQuestion: "what is augmented reality training"
 duration: "1:04:19"
-viewCount: 60306
-viewsUpdated: "2026-11-22"
+viewCount: 60318
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 revised: true

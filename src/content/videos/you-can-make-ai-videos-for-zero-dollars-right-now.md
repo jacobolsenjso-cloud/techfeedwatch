@@ -13,8 +13,8 @@ summary: "You can create AI videos today using web-based generative models and s
 metaDescription: "Can you make AI videos? Learn how text-to-video generators, character prompts, and free editors turn basic text into finished cinematic footage."
 targetQuestion: "can i make ai videos"
 duration: "5:08"
-viewCount: 31420
-viewsUpdated: "2026-11-22"
+viewCount: 31460
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-23"

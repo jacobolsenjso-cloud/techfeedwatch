@@ -12,8 +12,8 @@ summary: "The difference between an AI assistant and a chatbot centers on autono
 metaDescription: "Learn the difference between an AI assistant and a chatbot, covering software architectures, enterprise workflows, and task execution."
 targetQuestion: "difference between an ai assistant and a chatbot"
 duration: "24:46"
-viewCount: 1880
-viewsUpdated: "2026-11-22"
+viewCount: 1883
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

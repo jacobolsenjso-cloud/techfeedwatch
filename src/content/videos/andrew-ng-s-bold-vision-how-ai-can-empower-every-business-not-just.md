@@ -13,8 +13,8 @@ summary: "AI automation for small businesses applies intelligent software to man
 metaDescription: "Learn what AI automation for small businesses involves, how everyday firms apply practical software tools, and why real operational hurdles still remain."
 targetQuestion: "what is ai automation for small businesses"
 duration: "11:17"
-viewCount: 1330380
-viewsUpdated: "2026-11-22"
+viewCount: 1331191
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

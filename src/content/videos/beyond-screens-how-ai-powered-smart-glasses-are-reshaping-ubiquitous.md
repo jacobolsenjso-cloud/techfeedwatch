@@ -16,8 +16,8 @@ summary: "The long-anticipated convergence of AI and Extended Reality (XR) is po
 metaDescription: "The long-anticipated convergence of AI and Extended Reality (XR) is poised to redefine computing beyond conventional screens."
 targetQuestion: "how does ai smart glasses work"
 duration: "16:07"
-viewCount: 542909
-viewsUpdated: "2026-11-22"
+viewCount: 542997
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 revised: true

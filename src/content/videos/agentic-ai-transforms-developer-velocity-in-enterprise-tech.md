@@ -13,8 +13,8 @@ summary: "Agentic AI is fundamentally reshaping enterprise software development 
 metaDescription: "Agentic AI is fundamentally reshaping enterprise software development by embedding intelligent automation directly into platform workflows."
 targetQuestion: "how agentic ai is applied in software development today"
 duration: "5:49"
-viewCount: 1690
-viewsUpdated: "2026-11-22"
+viewCount: 1704
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

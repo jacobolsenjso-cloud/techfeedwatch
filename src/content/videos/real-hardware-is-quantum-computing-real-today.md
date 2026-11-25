@@ -12,8 +12,8 @@ summary: "Quantum computing is real physical hardware, but it cannot yet run eve
 metaDescription: "Is quantum computing real? Discover how real quantum hardware works, what benchmarks prove today, and when fault-tolerant systems will arrive."
 targetQuestion: "is quantum computing real"
 duration: "18:23"
-viewCount: 91222
-viewsUpdated: "2026-11-22"
+viewCount: 91908
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -13,8 +13,8 @@ summary: "AI agent orchestration provides a structured framework for managing mu
 metaDescription: "Discover what AI agent orchestration is, how it enables autonomous AI teams with structured roles."
 targetQuestion: "what is ai agent orchestration"
 duration: "53:07"
-viewCount: 533
-viewsUpdated: "2026-11-22"
+viewCount: 550
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-09-14"

@@ -13,8 +13,8 @@ summary: "Connecting a gaming PC to a television requires only a standard HDMI c
 metaDescription: "Can a gaming PC connect to a TV? Learn which HDMI cables work, how to enable Game Mode to stop input lag, and how TVs compare to gaming monitors."
 targetQuestion: "can a gaming pc connect to a tv"
 duration: "34:31"
-viewCount: 14853
-viewsUpdated: "2026-11-22"
+viewCount: 15039
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

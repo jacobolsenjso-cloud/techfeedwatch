@@ -13,8 +13,8 @@ summary: "Gemini agent skills are modular packages that provide autonomous AI ag
 metaDescription: "Learn what Gemini agent skills are, how they work through progressive disclosure, and how they differ from standard custom prompts."
 targetQuestion: "what are gemini agent skills"
 duration: "11:40"
-viewCount: 9992
-viewsUpdated: "2026-11-22"
+viewCount: 10024
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

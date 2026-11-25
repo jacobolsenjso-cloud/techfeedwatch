@@ -15,8 +15,8 @@ summary: "Ethereum smart contracts represent a foundational shift from tradition
 metaDescription: "Ethereum smart contracts represent a foundational shift from traditional agreements, embedding logic directly onto an immutable public ledger."
 targetQuestion: "what is evm smart contract"
 duration: "43:53"
-viewCount: 10184
-viewsUpdated: "2026-11-22"
+viewCount: 10216
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 revised: true

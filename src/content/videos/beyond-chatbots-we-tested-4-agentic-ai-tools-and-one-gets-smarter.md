@@ -13,8 +13,8 @@ summary: "Agentic AI tools execute multi-step workflows autonomously by setting 
 metaDescription: "Learn what agentic AI tools are, how autonomous systems plan tasks, and why enterprise deployments face serious cost and security risks."
 targetQuestion: "what are agentic ai tools"
 duration: "8:49"
-viewCount: 39547
-viewsUpdated: "2026-11-22"
+viewCount: 39754
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 recipe: 3

@@ -13,8 +13,8 @@ summary: "Quantum computing will eventually accelerate specialized artificial in
 metaDescription: "Will quantum computing help AI? Discover how quantum hardware impacts machine learning, its major technical bottlenecks, and where practical gains occur."
 targetQuestion: "will quantum computing help ai"
 duration: "8:35"
-viewCount: 114
-viewsUpdated: "2026-11-16"
+viewCount: 115
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 rewrittenAt: "2026-10-17"

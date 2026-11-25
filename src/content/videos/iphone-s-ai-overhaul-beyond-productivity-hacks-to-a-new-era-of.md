@@ -15,8 +15,8 @@ summary: "The integration of advanced AI, particularly large language models, in
 metaDescription: "Explore how AI transforms the iPhone into a powerful personal productivity machine. Uncover the future of personalized AI and voice interfaces."
 targetQuestion: "what does iphone ai do"
 duration: "19:08"
-viewCount: 215009
-viewsUpdated: "2026-11-22"
+viewCount: 215698
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 faqs:

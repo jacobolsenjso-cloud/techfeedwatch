@@ -15,8 +15,8 @@ summary: "The Looky L1 emerges as a distinctive AI wearable, designed not for co
 metaDescription: "The Looky L1 AI wearable continuously logs daily moments, using AI to transform them into personalized summaries and unique comic strip narratives."
 targetQuestion: "what is looki l1"
 duration: "14:45"
-viewCount: 42893
-viewsUpdated: "2026-11-22"
+viewCount: 42919
+viewsUpdated: "2026-11-25"
 thumbMax: true
 isShort: false
 revised: true
