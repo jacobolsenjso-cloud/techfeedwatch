@@ -104,14 +104,23 @@ export const citatPaaSiden = (k, q) => {
   return dele.every((d) => side.includes(d.slice(0, 100)));
 };
 const json = (t) => { try { const m = String(t || '').match(/\[[\s\S]*\]/); const a = m ? JSON.parse(m[0]) : null; return Array.isArray(a) ? a : null; } catch { return null; } };
+// Tidsgrænse (20/11-2026, målt): et Gemini-kald uden svar ventede for evigt - to målinger døde i stilhed samme dag.
+// Nu opgives et kald efter grænsen og prøves igen (højst 3 gange). Kaldtiderne gemmes, så grænserne kan sættes efter tal.
+// Målt 20/11 (82 kald): low median 3 s / længst 8 s · medium median 55 s / længst 300+ s · high median 389 s.
+export const KALD_GRAENSE_SEK = { low: 90, medium: 360, high: 420 };
+export const kaldTider = [];
+const medGraense = (p, sek) => { let tm; return Promise.race([p, new Promise((_, nej) => { tm = setTimeout(() => nej(new Error(`intet svar efter ${sek} s`)), sek * 1000); })]).finally(() => clearTimeout(tm)); };
 async function kald(genAI, input, { soeg = false, taenk = 'low', loft = 16384 } = {}) {
   for (let forsoeg = 1; forsoeg <= 3; forsoeg++) {
+    const t0 = Date.now();
     try {
-      const r = await hentModel(genAI, { model: KONTROL_MODEL, ...(soeg ? { tools: [{ googleSearch: {} }] } : {}), generationConfig: { temperature: 0, maxOutputTokens: loft, thinkingConfig: { thinkingLevel: taenk } } }).generateContent(input);
+      const r = await medGraense(hentModel(genAI, { model: KONTROL_MODEL, ...(soeg ? { tools: [{ googleSearch: {} }] } : {}), generationConfig: { temperature: 0, maxOutputTokens: loft, thinkingConfig: { thinkingLevel: taenk } } }).generateContent(input), KALD_GRAENSE_SEK[taenk] || 300);
+      kaldTider.push({ taenk, soeg, sek: Math.round((Date.now() - t0) / 1000) });
       const a = json(r.response.text());
       if (a) return a;
       throw new Error('svaret kunne ikke læses');
     } catch (e) {
+      kaldTider.push({ taenk, soeg, sek: Math.round((Date.now() - t0) / 1000), fejl: String(e.message).slice(0, 60) });
       console.log(`   ⚠️ kontrollant-kald fejlede (forsøg ${forsoeg} af 3): ${String(e.message).split('\n')[0].slice(0, 160)}`);
       if (forsoeg < 3) await new Promise((v) => setTimeout(v, forsoeg * 20000));
     }
@@ -120,6 +129,8 @@ async function kald(genAI, input, { soeg = false, taenk = 'low', loft = 16384 } 
 }
 
 // ---------- A. Kildetekst ----------
+const erForside = (url) => { try { const u = new URL(url); return /^\/?(index\.html?)?$/i.test(u.pathname) && !u.search; } catch { return false; } };
+const TILLAEGGER = /\b(according to|says?|said|explains?|explained|describes?|described|reports?|reported|notes?|noted|states?|stated|found|finds|warns?|defines?|highlights?|shows?|confirms?)\b/i;
 // Hvilke sætninger nævner hvilke kilder? Et link i sætningen gælder alene (linket SKAL sige det);
 // ellers alle artiklens kilder, hvis navn står i sætningen (fx "IBM" -> alle ibm.com-sider: én skal sige det).
 export function kildeSaetninger(f, kanal = '') {
@@ -173,8 +184,14 @@ export async function lagA(genAI, f, kanal, log) {
   const urls = [...new Set(ss.flatMap((s) => s.urls))];
   const domme = new Map(); // tekst -> [{url, ok, grund, quote}]
   for (const url of urls) {
-    const k = await hentKilde(url);
     const mine = ss.filter((s) => s.urls.includes(url));
+    // 20/11 (målt): "[NIST](https://www.nist.gov/) describes ..." gik igennem - en forside er aldrig belæg for en påstand.
+    // Koden afgør det: sætninger, der tillægger kilden noget, og kun peger på en forside, regnes som forkert kilde.
+    if (erForside(url)) {
+      for (const s of mine) if (s.link && TILLAEGGER.test(s.tekst)) domme.set(s.tekst, [...(domme.get(s.tekst) || []), { url, laest: true, ok: false, grund: 'the link goes to the front page of the site, not to a page that says this' }]);
+      continue;
+    }
+    const k = await hentKilde(url);
     if (!k) { for (const s of mine) domme.set(s.tekst, [...(domme.get(s.tekst) || []), { url, laest: false }]); continue; }
     const svar = await kald(genAI, kildeDel(k, `${domPrompt(url, mine.map((s) => s.tekst))}\n\nSOURCE TEXT:\n${k.tekst || '(attached PDF)'}`));
     mine.forEach((s, i) => {
@@ -289,6 +306,82 @@ ${rettede.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
   return rettede.map((_, i) => { const d = svar.find((y) => y && Number(y.n) === i + 1); return d && String(d.verdict).toUpperCase() === 'WRONG' ? String(d.fix || 'REMOVE').trim() : null; });
 }
 
+
+// ---------- D. Påstand for påstand (20/11-2026, Jacob: "det skal rettes en gang for alle") ----------
+// Hvorfor: ekspertlæsningen (B) læser hele artiklen i ét hug og vælger selv, hvad den hæfter sig ved - målt 20/11
+// fandt den 5 fejl i én kørsel og 1 i den næste på samme artikel. Her deler KODEN hele artiklen op (hver sætning,
+// overskrift, tabelrække, FAQ-svar og faktapunkt), og hver bunke tjekkes med søgning - intet kan springes over.
+// Det lukker også hullet i lag A: "NIST/MIT/en undersøgelse siger ..." tjekkes mod det, kilden faktisk siger,
+// også når kilden ikke står i artiklens kildeliste (målt 20/11: en falsk NIST-påstand gik igennem A).
+const BUNKE = 15, SAMTIDIGE = 4;
+export function alleUdsagn(f) {
+  const ud = [], set = new Set();
+  const add = (t, felt) => { const s = udenMd(t).replace(/\s+/g, ' ').trim(); if (s.split(/\s+/).length >= 4 && !set.has(s)) { set.add(s); ud.push({ tekst: s, felt }); } };
+  const split = (t) => udenMd(t).split(/(?<=[.!?])\s+(?=[A-Z"(\[])/);
+  for (const s of split(f.resume)) add(s, 'resume');
+  for (const q of f.faqs || []) for (const s of split(q.answer)) add(s, 'faq');
+  for (const k of f.faktaboks || []) add(k.text, 'faktaboks');
+  for (const linje of brod(f.brodtekst).split('\n')) {
+    const l = linje.trim();
+    if (!l || /^>/.test(l)) continue;
+    if (/^#{2,}\s/.test(l)) { add(l, 'overskrift'); continue; }
+    if (/^\|/.test(l)) { if (!/^\|[\s:|-]+\|?$/.test(l)) add(l, 'tabel'); continue; }
+    for (const s of split(l.replace(/^[-*]\s+|^\d+\.\s+/, ''))) add(s, 'brodtekst');
+  }
+  return ud;
+}
+const udsagnPrompt = (f, kanal, ss) => `You are a careful fact-checker for a tech website. Below is the full article for context, then numbered statements copied from it.
+Check EVERY numbered statement, one by one, with Google Search. A statement is OK if a reader would not be misled by it. Otherwise report it as one of:
+- WRONG_FACT: a figure, date, price, spec, name or event that is wrong.
+- MISCONCEPTION: an explanation experts reject, or a popular myth stated as fact.
+- WRONG_ATTRIBUTION: the statement says a named organization, company, study or person says, found or defines something, and that source does not say it (or says something different). Search for what that source actually says.
+- OVERCLAIM: stronger than the evidence (always, never, every, guarantees, ensures, will) or a prediction stated as fact.
+- UNNAMED: an authority without a name ("studies show", "researchers estimate", "experts say"), or a person named without saying who they are. The video's own channel or speaker, named by name, IS named.
+- CONTRADICTION: contradicts another place in the article.
+The article is based on a YouTube video${kanal ? ` by "${kanal}"` : ''} that you cannot see. Statements that report what the video or its speaker says, shows or uses as an example come from the video: do not report them just because you cannot find them online - only if they are factually wrong.
+Do not report style, wording you would merely prefer, or simplifications that are still correct. When unsure, search before deciding.
+For each problem: "fix" = the statement corrected with as few changes as possible, in the same style, keeping any markdown link and who said it (a table row stays a table row, a heading stays a heading); or "REMOVE" if it cannot be made true.
+Return ONLY a JSON array with one item per problem - leave out OK statements, [] if all are OK: [{"n":3,"type":"WRONG_FACT","why":"one line: what is actually true","fix":"..."}]
+
+ARTICLE:
+${artikelTekst(f)}
+
+STATEMENTS:
+${ss.map((s, i) => `${i + 1}. ${s}`).join('\n')}`;
+async function iBunker(opg, n, fn) {
+  const ud = new Array(opg.length); let i = 0;
+  await Promise.all(Array.from({ length: Math.min(n, opg.length) }, async () => { while (i < opg.length) { const j = i++; ud[j] = await fn(opg[j]); } }));
+  return ud;
+}
+export async function lagD(genAI, f, kanal, log) {
+  // Kun til måling (målestokken): KONTROL_UDEN_D=1 slår lag D fra, så før/efter kan sammenlignes på samme kode
+  if (process.env.KONTROL_UDEN_D) return { tjekket: 0, fund: [], tabt: 0, bunker: 0 };
+  const alle = alleUdsagn(f);
+  const bunker = [];
+  for (let i = 0; i < alle.length; i += BUNKE) bunker.push(alle.slice(i, i + BUNKE).map((x) => x.tekst));
+  const svar = await iBunker(bunker, SAMTIDIGE, (ss) => kald(genAI, udsagnPrompt(f, kanal, ss), { soeg: true, taenk: 'medium', loft: 16384 }));
+  const fund = [];
+  svar.forEach((sv, b) => (sv || []).forEach((x) => {
+    const s = bunker[b][Number(x?.n) - 1];
+    if (s && x.type && x.fix !== undefined) fund.push({ sentence: s, type: String(x.type).toUpperCase(), why: x.why, fix: x.fix, lag: 'påstand' });
+  }));
+  const tabt = svar.filter((x) => x === null).length;
+  log(`   kontrollant D: ${alle.length} påstande i ${bunker.length} bunker - ${fund.length} fund${tabt ? ` - ${tabt} bunke(r) fejlede` : ''}${fund.length ? '\n' + fund.map((x) => `     - [${x.type}] ${x.sentence.slice(0, 110)} (${String(x.why).slice(0, 110)})`).join('\n') : ''}`);
+  return { tjekket: alle.length, fund, tabt, bunker: bunker.length };
+}
+
+async function bekraeftSletninger(genAI, f, sletninger) {
+  if (!sletninger.length) return [];
+  const p = `A checker wants to DELETE these sentences from an article titled "${f.titel}" because it believes they are wrong. Check each ORIGINAL sentence with Google Search, in the context of the article.
+"WRONG" if the sentence really is false or misleading; "OK" if it is accurate (a correct statement, a correct simplification, or a correct step in an explanation).
+Return ONLY a JSON array: [{"n":1,"verdict":"WRONG"}]
+
+${sletninger.map((x, i) => `${i + 1}. ${x.saetning}\n   (checker's reason: ${String(x.grund).slice(0, 200)})`).join('\n')}`;
+  const svar = await kald(genAI, p, { soeg: true, taenk: 'medium' });
+  if (!svar) return null;
+  return sletninger.map((_, i) => String(svar.find((y) => y && Number(y.n) === i + 1)?.verdict || '').toUpperCase() === 'OK');
+}
+
 // ---------- Kontrollanten ----------
 // f = { titel, meta, resume, faqs, brodtekst, faktaboks } (som laesFelter giver det) - ÆNDRES på stedet.
 // Fejler et lag hos Gemini, kører resten, og rapporten siger det (kunneIkke) - kladden gemmes alligevel, så
@@ -298,12 +391,18 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   const foer = { brodtekst: f.brodtekst, faqs: (f.faqs || []).map((q) => ({ ...q })) };
   const rap = { model: KONTROL_MODEL, kildeTjekket: 0, kildeOk: 0, kildeIkkeLaest: 0, ekspertFund: 0, regler: null, rettelser: [], ikkeRettet: [], kunneIkke: [], usd: 0 };
 
-  const a = await lagA(genAI, f, kanal, log);
-  Object.assign(rap, { kildeTjekket: a.tjekket, kildeOk: a.ok, kildeIkkeLaest: a.ikkeLaest });
   const regler = lagC(f);
   rap.regler = { navnloese: regler.navnloese.length, jegAfsnit: regler.jegAfsnit, meta: regler.meta };
-
-  const b = await kald(genAI, ekspertPrompt(f, regler.navnloese), { soeg: true, taenk: 'high', loft: 32768 });
+  // A, B og D læser alle den urørte artikel - de køres samtidig (20/11: ellers ca. 15 min pr. artikel)
+  const [a, b, d] = await Promise.all([
+    lagA(genAI, f, kanal, log),
+    // 20/11 (målt): høj tænkning tog 6½ min pr. kald og ramte grænsen 2 af 6 gange - påstandstjekket (D) tager nu
+    // det systematiske, så ekspertlæsningen kører med mellem
+    kald(genAI, ekspertPrompt(f, regler.navnloese), { soeg: true, taenk: 'medium', loft: 32768 }),
+    lagD(genAI, f, kanal, log),
+  ]);
+  Object.assign(rap, { kildeTjekket: a.tjekket, kildeOk: a.ok, kildeIkkeLaest: a.ikkeLaest, paastandeTjekket: d.tjekket, paastandFund: d.fund.length });
+  if (d.tabt) rap.kunneIkke.push(`påstandstjek (${d.tabt} af ${d.bunker} bunker)`);
   if (b === null) rap.kunneIkke.push('ekspertlæsning');
   const ekspert = (b || []).filter((x) => x && x.sentence && x.fix !== undefined);
   rap.ekspertFund = ekspert.length;
@@ -323,14 +422,21 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   });
   const ordAf = (t) => new Set(String(t).toLowerCase().match(/[a-z0-9]+/g) || []);
   const overlap = (s, t) => { const A = ordAf(s), B = ordAf(t); return A.size ? [...A].filter((w) => B.has(w)).length / A.size : 0; };
-  for (const x of ekspert) {
+  // Påstandstjekket (D) først - det er det mest systematiske; ekspertens fund på samme sætning springes så over
+  // 20/11 (målt): KEY FACTS vises for modellen som "tekst (kilde)" - den kopierer kilden med, og rettelsen kunne så
+  // ikke findes i faktaboksen. Står sætningen i faktaboksen uden parentesen, bruges den uden.
+  const fb = (f.faktaboks || []).map((k) => udenMd(k.text).replace(/\s+/g, ' ').trim());
+  const udenKilde = (t) => { const u = String(t || '').replace(/\s*\((?:[^()]|\([^()]*\))*\)\s*$/, '').trim(); return u !== String(t || '').trim() && fb.some((k) => k === u || k.startsWith(u.slice(0, 80))) ? u : t; };
+  for (const x0 of [...d.fund, ...ekspert]) {
+    const x = { ...x0, sentence: udenKilde(udenMd(x0.sentence)), fix: typeof x0.fix === 'string' && !/^remove$/i.test(x0.fix.trim()) ? udenKilde(x0.fix) : x0.fix };
     const s = udenMd(x.sentence);
+    const lag = x.lag || 'ekspert';
     if (x.type === 'META') { if (x.fix && !/^remove$/i.test(x.fix)) { rap.rettelser.push({ lag: 'ekspert', type: 'META', foer: f.meta, efter: x.fix.trim(), grund: String(x.why || '') }); f.meta = x.fix.trim(); } continue; }
     if (fund.some((y) => overlap(s, y.saetning) >= 0.6)) continue; // kildetjekket har allerede taget den
     // Værn 5 (20/11, målt): "uden belæg" rettes eller slettes aldrig af sig selv - kontrollanten kan ikke se videoen,
     // og en kørsel ville slette videoens eget eksempel som "opdigtet". Jacob ser fundet og afgør det selv.
-    if (String(x.type).toUpperCase() === 'UNSUPPORTED') { rap.ikkeRettet.push({ lag: 'ekspert', type: 'UNSUPPORTED', saetning: s, grund: String(x.why || '') }); continue; }
-    fund.push({ lag: 'ekspert', type: String(x.type || '').toUpperCase(), saetning: s, rettet: /^remove$/i.test(String(x.fix).trim()) ? '' : vaernRettelse(mdAf(s), String(x.fix).trim(), kildeUrls), grund: String(x.why || '') });
+    if (String(x.type).toUpperCase() === 'UNSUPPORTED') { rap.ikkeRettet.push({ lag, type: 'UNSUPPORTED', saetning: s, grund: String(x.why || '') }); continue; }
+    fund.push({ lag, type: String(x.type || '').toUpperCase(), saetning: s, rettet: /^remove$/i.test(String(x.fix).trim()) ? '' : vaernRettelse(mdAf(s), String(x.fix).trim(), kildeUrls), grund: String(x.why || '') });
   }
 
   // Rettelserne læses igen (med søgning). Holder en ikke, bruges genkontrollens bud - eller sætningen fjernes.
@@ -339,10 +445,18 @@ export async function kontrollant(genAI, f, { kanal = '', log = console.log } = 
   if (igen === null && medRet.length) rap.kunneIkke.push('genkontrol');
   (igen || []).forEach((ny, i) => { if (ny !== null) { medRet[i].grund += ' (rettelsen holdt ikke - rettet igen)'; medRet[i].rettet = /^remove$/i.test(ny) ? '' : vaernRettelse(mdAf(medRet[i].saetning), ny, kildeUrls); } });
 
+  // Værn 7 (20/11, målt): en sletning fra ekspert/påstandstjek bekræftes med søgning - en korrekt sætning om CNOT
+  // blev slettet som "forkert". Siger bekræftelsen, at sætningen er rigtig, bliver den stående (vises som "tjek selv").
+  const sletninger = fund.filter((x) => x.lag !== 'kilde' && !x.rettet);
+  const dom = await bekraeftSletninger(genAI, f, sletninger);
+  if (dom === null && sletninger.length) rap.kunneIkke.push('bekræftelse af sletninger');
+  (dom || []).forEach((ok, i) => { if (ok) { const x = sletninger[i]; rap.ikkeRettet.push({ lag: x.lag, type: x.type, saetning: x.saetning, grund: `${x.grund} - men en ny søgning siger, at sætningen er rigtig; ikke slettet` }); fund.splice(fund.indexOf(x), 1); } });
+
   // Værn 6 (20/11, målt): en "rettelse", der er identisk med sætningen, er ingen rettelse - den vises som "ikke rettet"
-  const norm = (t) => udenMd(t).replace(/\s+/g, ' ').toLowerCase();
+  // 20/11 (målt): sammenlignes MED links - en rettelse, der kun skifter et forkert link til det rigtige, er en rigtig rettelse
+  const norm = (t) => String(t || '').replace(/\*\*|__|`/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
   for (let i = fund.length - 1; i >= 0; i--) {
-    if (fund[i].rettet && norm(fund[i].rettet) === norm(fund[i].saetning)) { rap.ikkeRettet.unshift({ lag: fund[i].lag, type: fund[i].type, saetning: fund[i].saetning, grund: fund[i].grund.replace(' (rettelsen holdt ikke - rettet igen)', '') }); fund.splice(i, 1); }
+    if (fund[i].rettet && norm(fund[i].rettet) === norm(mdAf(fund[i].saetning))) { rap.ikkeRettet.unshift({ lag: fund[i].lag, type: fund[i].type, saetning: fund[i].saetning, grund: fund[i].grund.replace(' (rettelsen holdt ikke - rettet igen)', '') }); fund.splice(i, 1); }
   }
 
   if (fund.length) {

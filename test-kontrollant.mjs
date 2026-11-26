@@ -1,6 +1,6 @@
 // Selvtest af kontrollanten (20/11-2026) - uden net og uden Gemini: falske kildesider og et falsk Gemini, der svarer
 // ud fra prompten. Kører i robottens selvtest (daily-update.yml). Afslutter med kode 1 ved fejl.
-import { kildeliste, kildeSaetninger, lagC, citatPaaSiden, kontrollerMarkdown, vaernRettelse, erNavnloes } from './src/lib/kontrollant.mjs';
+import { kildeliste, kildeSaetninger, lagC, citatPaaSiden, kontrollerMarkdown, vaernRettelse, erNavnloes, alleUdsagn } from './src/lib/kontrollant.mjs';
 import { laesFelter, medFelter } from './src/lib/artikelfelter.mjs';
 
 let fejl = 0, ok = 0;
@@ -26,6 +26,12 @@ Entanglement links qubits into one shared state.
 According to [IBM](https://www.ibm.com/blog/a), scientists entangled all 27 qubits of a processor in October 2021. MIT highlights that the Gottesman-Knill theorem proves classical simulation is possible. Some Channel explains that cards can be sorted fast in this example.
 
 Researchers estimate that cracking RSA requires 4,000 logical qubits working together.
+
+The first working quantum computer was built in 1850 by Charles Babbage in London.
+
+A CNOT gate flips the target qubit whenever the control qubit is one.
+
+The [NIST](https://www.nist.gov/) describes entanglement as a shared state of two particles.
 
 ## Sources
 - [IBM blog](https://www.ibm.com/blog/a) — ibm.com
@@ -93,9 +99,12 @@ const svarPaa = (p) => {
     { sentence: 'Short meta.', type: 'META', why: 'too short', fix: 'Learn how entanglement links qubits, how scientists measured it on real processors, and what it does and does not do for quantum computing today.' },
     { sentence: 'Researchers estimate that cracking RSA requires 4,000 logical qubits working together.', type: 'UNNAMED', why: 'who?', fix: 'A 2019 study by Craig Gidney and Martin Ekerå estimated that cracking RSA-2048 needs about 20 million noisy qubits.' },
     { sentence: 'Some Channel explains that cards can be sorted fast in this example.', type: 'UNSUPPORTED', why: 'no source online', fix: 'REMOVE' },
+    { sentence: 'MIT built a 16-qubit superconducting processor to study entanglement structure. (MIT)', type: 'OVERCLAIM', why: 'test', fix: 'MIT built a 16-qubit processor to study how entanglement is structured. (MIT)' },
     { sentence: 'Entanglement links qubits into one shared state.', type: 'OVERCLAIM', why: 'too strong', fix: 'Entanglement links qubits into one shared  state.' },
   ];
   if (/An editor corrected these sentences/.test(p)) return [{ n: 1, verdict: 'OK' }];
+  if (/careful fact-checker/.test(p)) { const ud = []; const m = p.match(/^(\d+)\. The first working quantum computer.*$/m); if (m) ud.push({ n: Number(m[1]), type: 'WRONG_FACT', why: 'Babbage built no quantum computer', fix: 'REMOVE' }); const c = p.match(/^(\d+)\. A CNOT gate flips.*$/m); if (c) ud.push({ n: Number(c[1]), type: 'MISCONCEPTION', why: 'wrong', fix: 'REMOVE' }); return ud; }
+  if (/wants to DELETE/.test(p)) return [...p.matchAll(/^(\d+)\. (.*)$/gm)].map((m) => ({ n: Number(m[1]), verdict: /CNOT/.test(m[2]) ? 'OK' : 'WRONG' }));
   if (/coheren|sammenh|paragraph/i.test(p)) return [];
   return [];
 };
@@ -114,6 +123,13 @@ tjek('rapport: navnløs rettet', r.markdown.includes('Craig Gidney') && !r.markd
 tjek('IBM-sætningen urørt', r.markdown.includes('all 27 qubits of a processor in October 2021'));
 tjek('kilder og video urørt', r.markdown.includes('## Sources') && r.markdown.includes('Some Channel explains'));
 tjek('ingen "kunne ikke"', !k.kunneIkke.length, JSON.stringify(k.kunneIkke));
+tjek('D: påstand uden for kildelisten fanget og fjernet', !r.markdown.includes('Charles Babbage') && k.rettelser.some((x) => x.lag === 'påstand' && x.type === 'WRONG_FACT'), JSON.stringify(k.rettelser.map((x) => x.lag + '/' + x.type)));
+tjek('sletning bekræftes: korrekt CNOT-sætning bliver stående som "tjek selv"', r.markdown.includes('A CNOT gate flips') && k.ikkeRettet.some((x) => /CNOT/.test(x.saetning)), JSON.stringify(k.ikkeRettet.map((x) => x.saetning.slice(0, 30))));
+tjek('forside-link: "[NIST](forside) describes" fanget af koden', !r.markdown.includes('nist.gov/) describes') && k.rettelser.some((x) => x.lag === 'kilde' && /shared state of two particles/.test(x.foer)), JSON.stringify(k.rettelser.map((x) => x.lag + ':' + x.foer.slice(0, 30))));
+tjek('faktaboks: rettelse med "(kilde)" til sidst sættes ind', r.markdown.includes('MIT built a 16-qubit processor to study how entanglement is structured.') && !r.markdown.includes('(MIT) (MIT)'));
+tjek('D: alle påstande tælles', k.paastandeTjekket >= 8, String(k.paastandeTjekket));
+const ud = alleUdsagn({ resume: 'One two three four five.', faqs: [{ answer: 'Alpha beta gamma delta. Epsilon zeta eta theta.' }], faktaboks: [{ text: 'Key fact with four words.' }], brodtekst: '## A heading with words\n\n| Col a | Col b |\n|---|---|\n| row one | value two |\n\nBody sentence number one here. Body sentence number two here.\n\n## Sources\n- [x](https://x.com) — x.com\n' });
+tjek('D: overskrift, tabelrække, FAQ, faktaboks og brødtekst med - kilder og skillelinje ikke', ud.length === 9 && ud.some((x) => x.felt === 'tabel' && /row one/.test(x.tekst)) && !ud.some((x) => /---|x\.com/.test(x.tekst)), JSON.stringify(ud.map((x) => x.felt + ':' + x.tekst)));
 tjek('uden belæg: videoens sætning bliver, vises som ikke rettet', r.markdown.includes('Some Channel explains') && k.ikkeRettet.some((x) => x.type === 'UNSUPPORTED') && !k.rettelser.some((x) => x.type === 'UNSUPPORTED'));
 tjek('rettelse = samme sætning: ikke i rettelser, men i ikke rettet', !k.rettelser.some((x) => /one shared state/.test(x.foer)) && k.ikkeRettet.some((x) => /one shared state/.test(x.saetning)), JSON.stringify(k.ikkeRettet));
 console.log(`test-kontrollant: ${ok} ok, ${fejl} fejl`);

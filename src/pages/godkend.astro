@@ -109,12 +109,13 @@
 
   // Markér de afsnit, robotten ændrede efter Jacobs note (gult)
   // Kontrollanten (20/11-2026): en linje med hvad der er tjekket, og rettelserne foldet ud nedenunder
-  const TYPE_DK = { WRONG_SOURCE: 'forkert kilde', NOT_IN_SOURCE: 'står ikke i kilden', PARTLY: 'kun delvis i kilden', MISCONCEPTION: 'faktuel fejl', CONTRADICTION: 'selvmodsigelse', OVERCLAIM: 'overdrevet', UNNAMED: 'kilden ikke navngivet', UNSUPPORTED: 'uden belæg', META: 'meta-beskrivelse' };
+  const TYPE_DK = { WRONG_SOURCE: 'forkert kilde', NOT_IN_SOURCE: 'står ikke i kilden', PARTLY: 'kun delvis i kilden', MISCONCEPTION: 'faktuel fejl', CONTRADICTION: 'selvmodsigelse', OVERCLAIM: 'overdrevet', UNNAMED: 'kilden ikke navngivet', UNSUPPORTED: 'uden belæg', META: 'meta-beskrivelse', WRONG_FACT: 'forkert fakta', WRONG_ATTRIBUTION: 'kilden siger det ikke' };
   function kontrolBoks(kt) {
     const b = lav('div', 'kontrol');
     const r = kt.rettelser || [];
     const dele = [];
     if (kt.kildeTjekket !== undefined) dele.push(`${kt.kildeTjekket} kildesætninger holdt op mod kildernes egen tekst (${kt.kildeOk || 0} stod der${kt.kildeIkkeLaest ? `, ${kt.kildeIkkeLaest} kunne ikke læses` : ''})`);
+    if (kt.paastandeTjekket !== undefined) dele.push(`${kt.paastandeTjekket} påstande tjekket én for én med søgning (${kt.paastandFund || 0} fund)`);
     if (kt.ekspertFund !== undefined) dele.push(`ekspertlæsning: ${kt.ekspertFund} fund`);
     dele.push(r.length ? `${r.length} rettet (${r.filter((x) => !x.efter).length} fjernet)` : 'intet at rette');
     if (kt.usd) dele.push(`pris $${kt.usd}`);
